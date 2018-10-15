@@ -1,7 +1,6 @@
 **/.ipynb_checkpoints
 **/__pycache__
 data/
-build/
 *.json
 *.params
 *.DS_Store
@@ -11,4 +10,7 @@ build/
 /chapter_gluon-basics/mydict
 *egg-info*
 dist*
-utils.py
+build/chapter*
+build/_build
+build/img
+build/data
