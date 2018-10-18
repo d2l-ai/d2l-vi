@@ -1,5 +1,6 @@
 # Long Short-term Memory (LSTM)
 
+@TODO(smolix/astonzhang): the data set was just changed from lyrics to time machine, so descriptions/hyperparameters have to change.
 
 This section describes another commonly used gated recurrent neural network: long short-term memory (LSTM) [1]. Its structure is slightly more complicated than that of a gated recurrent unit.
 
@@ -38,7 +39,7 @@ Next, LSTM needs to compute the candidate memory cell $\tilde{\boldsymbol{C}}_t$
 
 For time step $t$, the candidate memory cell $\tilde{\boldsymbol{C}}_t \in \mathbb{R}^{n \times h}$ is calculated by the following formula:
 
-$\tilde{\boldsymbol{C}}_t = \text{tanh}(\boldsymbol{X}_t \boldsymbol{W}_{xc} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hc} + \boldsymbol{b}_c),$
+$$\tilde{\boldsymbol{C}}_t = \text{tanh}(\boldsymbol{X}_t \boldsymbol{W}_{xc} + \boldsymbol{H}_{t-1} \boldsymbol{W}_{hc} + \boldsymbol{b}_c),$$
 
 Here, $\boldsymbol{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\boldsymbol{W}_{hc} \in \mathbb{R}^{h \times h}$ are weight parameters and $\boldsymbol{b}_c \in \mathbb{R}^{1 \times h}$ is a bias parameter.
 
@@ -47,7 +48,7 @@ Here, $\boldsymbol{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\boldsymbol{W}_{hc}
 
 We can control flow of information in the hidden state use input, forget, and output gates with an element value range between $[0, 1]$. This is also generally achieved by using multiplication by element (symbol $\odot$). The computation of the current time step memory cell $\boldsymbol{C}_t \in \mathbb{R}^{n \times h}$ combines the information of the previous time step memory cells and the current time step candidate memory cells, and controls the flow of information through forget gate and input gate:
 
-$\boldsymbol{C}_t = \boldsymbol{F}_t \odot \boldsymbol{C}_{t-1} + \boldsymbol{I}_t \odot \tilde{\boldsymbol{C}}_t.$
+$$\boldsymbol{C}_t = \boldsymbol{F}_t \odot \boldsymbol{C}_{t-1} + \boldsymbol{I}_t \odot \tilde{\boldsymbol{C}}_t.$$
 
 
 As shown in Figure 6.9, the forget gate controls whether the information in the memory cell $\boldsymbol{C}_{t-1}$ of the last time step is passed to the current time step, and the input gate can control how the input of the current time step $\boldsymbol{X}_t$ flows into the memory cells of the current time step through the candidate memory cell $\tilde{\boldsymbol{C}}_t$. If the forget gate is always approximately 1 and the input gate is always approximately 0, the past memory cells will be saved over time and passed to the current time step. This design can cope with the vanishing gradient problem in recurrent neural networks and better capture dependencies for time series with large time step distances.
@@ -59,7 +60,7 @@ As shown in Figure 6.9, the forget gate controls whether the information in the 
 
 With memory cells, we can also control the flow of information from memory cells to the hidden state $\boldsymbol{H}_t \in \mathbb{R}^{n \times h}$ through the output gate:
 
-$\boldsymbol{H}_t = \boldsymbol{O}_t \odot \text{tanh}(\boldsymbol{C}_t).$
+$$\boldsymbol{H}_t = \boldsymbol{O}_t \odot \text{tanh}(\boldsymbol{C}_t).$$
 
 The tanh function here ensures that the hidden state element value is between -1 and 1. It should be noted that when the output gate is approximately 1, the memory cell information will be passed to the hidden state for use by the output layer; and when the output gate is approximately 0, the memory cell information is only retained by itself. Figure 6.10 shows the computation of the hidden state in LSTM.
 
@@ -71,12 +72,15 @@ The tanh function here ensures that the hidden state element value is between -1
 Below we begin to implement and display LSTM. As with the experiments in the previous sections, we still use the lyrics of the Jay Chou data set to train the model to write lyrics.
 
 ```{.python .input  n=1}
-import gluonbook as gb
+import sys
+sys.path.insert(0, '..')
+
+import d2l
 from mxnet import nd
 from mxnet.gluon import rnn
 
 (corpus_indices, char_to_idx, idx_to_char,
- vocab_size) = gb.load_data_jay_lyrics()
+ vocab_size) = d2l.load_data_time_machine()
 ```
 
 ## Implementation from Scratch
@@ -89,7 +93,7 @@ The code below initializes the model parameters. The hyper-parameter `num_hidden
 
 ```{.python .input  n=2}
 num_inputs, num_hiddens, num_outputs = vocab_size, 256, vocab_size
-ctx = gb.try_gpu()
+ctx = d2l.try_gpu()
 
 def get_params():
     def _one(shape):
@@ -151,17 +155,17 @@ As in the previous section, during model training, we only use adjacent sampling
 
 ```{.python .input  n=5}
 num_epochs, num_steps, batch_size, lr, clipping_theta = 160, 35, 32, 1e2, 1e-2
-pred_period, pred_len, prefixes = 40, 50, ['分开', '不分开']
+pred_period, pred_len, prefixes = 40, 50, ['traveller', 'time traveller']
 ```
 
 We create a string of lyrics based on the currently trained model every 40 epochs.
 
 ```{.python .input}
-gb.train_and_predict_rnn(lstm, get_params, init_lstm_state, num_hiddens,
-                         vocab_size, ctx, corpus_indices, idx_to_char,
-                         char_to_idx, False, num_epochs, num_steps, lr,
-                         clipping_theta, batch_size, pred_period, pred_len,
-                         prefixes)
+d2l.train_and_predict_rnn(lstm, get_params, init_lstm_state, num_hiddens,
+                          vocab_size, ctx, corpus_indices, idx_to_char,
+                          char_to_idx, False, num_epochs, num_steps, lr,
+                          clipping_theta, batch_size, pred_period, pred_len,
+                          prefixes)
 ```
 
 ## Gluon Implementation
@@ -170,11 +174,11 @@ In Gluon, we can directly call the `LSTM` class in the `rnn` module.
 
 ```{.python .input  n=6}
 lstm_layer = rnn.LSTM(num_hiddens)
-model = gb.RNNModel(lstm_layer, vocab_size)
-gb.train_and_predict_rnn_gluon(model, num_hiddens, vocab_size, ctx,
-                               corpus_indices, idx_to_char, char_to_idx,
-                               num_epochs, num_steps, lr, clipping_theta,
-                               batch_size, pred_period, pred_len, prefixes)
+model = d2l.RNNModel(lstm_layer, vocab_size)
+d2l.train_and_predict_rnn_gluon(model, num_hiddens, vocab_size, ctx,
+                                corpus_indices, idx_to_char, char_to_idx,
+                                num_epochs, num_steps, lr, clipping_theta,
+                                batch_size, pred_period, pred_len, prefixes)
 ```
 
 ## Summary
@@ -184,18 +188,17 @@ gb.train_and_predict_rnn_gluon(model, num_hiddens, vocab_size, ctx,
 * LSTM can cope with the gradient attenuation problem in the recurrent neural networks and better capture dependencies for time series with large time step distances.
 
 
-## exercise
+## Exercises
 
 * Adjust the hyper-parameters and observe and analyze the impact on running time, perplexity, and the written lyrics.
 * Under the same conditions, compare the running time of an LSTM, GRU and recurrent neural network without gates.
 * Since the candidate memory cells ensure that the value range is between -1 and 1 using the tanh function, why does the hidden state need to use the tanh function again to ensure that the output value range is between -1 and 1?
 
 
-## Scan the QR Code to Access [Discussions](https://discuss.gluon.ai/t/topic/4049)
-
-![](../img/qr_lstm.svg)
-
-
 ## References
 
 [1] Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8), 1735-1780.
+
+## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2368)
+
+![](../img/qr_lstm.svg)

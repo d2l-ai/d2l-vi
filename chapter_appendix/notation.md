@@ -50,19 +50,19 @@ The main symbols used in this book are listed below.
 
 |||
 |:--|:-:|
-|$\frac{dy}{dx}$|$y$ derivative of $x$|
-|$\frac{\partial y}{\partial x}$|$y$ partial derivative of $x$|
-|$\nabla_{\cdot} y$|$y$ gradient of $\cdot$|
+|$\frac{dy}{dx}$|Derivative of $y$ with respect to $x$|
+|$\frac{\partial y}{\partial x}$|Partial derivative of $y$ with respect to $x$|
+|$\nabla_{\cdot} y$|Gradient of $y$ with respect to $\cdot$|
 
 
 ## Probability and Statistics
 
 |||
 |:--|:-:|
-|$\mathbb{P}(\cdot)$|Probability distribution|
-|$\cdot \sim \mathbb{P}$|The probability distribution of the random variable $\cdot$ is $\mathbb{P}$|
-|$\mathbb{P}(\cdot \mid \cdot)$|Conditional probability distribution|
-|$\mathbb{E}_\cdot\left(f(\cdot)\right)$|The mathematical expectation of the function $f(\cdot)$ for $\cdot$|
+|$\mathbb{P}(\cdot)$ | Probability distribution |
+|$\cdot \sim \mathbb{P}$ | Random variable $\cdot$ obeys the probability distribution $\mathbb{P}$ |
+|$\mathbb{P}(\cdot \mid\cdot)$|Conditional probability|
+|$\mathbb{E}_{\cdot}\left(f(\cdot)\right)$|Expectation of $f(\cdot)$ with respect to $\cdot$|
 
 
 ## Complexity
