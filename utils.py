@@ -56,15 +56,12 @@ class Line(object):
         if self.is_label:
             file_writer.write(self.line_str)
             file_writer.write('\n')
-            # file_writer.write('\n')
             return Line('')
 
         if self.heading > 0:
             file_writer.write(BEGIN_BLOCK_COMMENT)
             file_writer.write(self.line_str)
-            # file_writer.write('\n')
             file_writer.write(END_BLOCK_COMMENT)
-            # file_writer.write('\n')
             file_writer.write('#'*self.heading + HEADER_INDICATOR)
             return Line('')
 
@@ -72,7 +69,6 @@ class Line(object):
             if last_line.is_blank_line:
                 file_writer.write(BEGIN_BLOCK_COMMENT)
             file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
-            # file_writer.write('\n')
             return self
 
 
