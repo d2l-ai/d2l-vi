@@ -24,53 +24,36 @@ def compare_files(filename1, filename2):
 
 
 class TestBlockComment(object):
-    def test_1(self):
-        input_md = './tests/input_1.md'
-        output_md = './tests/output_1.md'
+    def check(self, input_md, output_md):
         temp_file_md = './tests/temp_ouput.md'
         block_comment(input_md, temp_file_md)
         print(filecmp.cmp(output_md, temp_file_md))
         assert filecmp.cmp(output_md, temp_file_md), compare_files(
             output_md, temp_file_md
         )
+
+    def test_1(self):
+        input_md = './tests/input_1.md'
+        output_md = './tests/output_1.md'
+        self.check(input_md, output_md)
 
     def test_2(self):
         """multiple blank lines"""
         input_md = './tests/input_2.md'
         output_md = './tests/output_2.md'
-        temp_file_md = './tests/temp_ouput.md'
-        block_comment(input_md, temp_file_md)
-        print(filecmp.cmp(output_md, temp_file_md))
-        assert filecmp.cmp(output_md, temp_file_md), compare_files(
-            output_md, temp_file_md
-        )
+        self.check(input_md, output_md)
 
     def test_with_double_hythen(self):
         input_md = './tests/input_3.md'
         output_md = './tests/output_3.md'
-        temp_file_md = './tests/temp_ouput.md'
-        block_comment(input_md, temp_file_md)
-        print(filecmp.cmp(output_md, temp_file_md))
-        assert filecmp.cmp(output_md, temp_file_md), compare_files(
-            output_md, temp_file_md
-        )
+        self.check(input_md, output_md)
 
     def test_with_header(self):
         input_md = './tests/input_4.md'
         output_md = './tests/output_4.md'
-        temp_file_md = './tests/temp_ouput.md'
-        block_comment(input_md, temp_file_md)
-        print(filecmp.cmp(output_md, temp_file_md))
-        assert filecmp.cmp(output_md, temp_file_md), compare_files(
-            output_md, temp_file_md
-        )
+        self.check(input_md, output_md)
 
     def test_with_code_block(self):
         input_md = './tests/input_5.md'
         output_md = './tests/output_5.md'
-        temp_file_md = './tests/temp_ouput.md'
-        block_comment(input_md, temp_file_md)
-        print(filecmp.cmp(output_md, temp_file_md))
-        assert filecmp.cmp(output_md, temp_file_md), compare_files(
-            output_md, temp_file_md
-        )
+        self.check(input_md, output_md)
