@@ -47,7 +47,7 @@ class Line(object):
         """last_line is a Line instance"""
         if last_line.is_blank_line and not self.is_blank_line:
             file_writer.write(BEGIN_BLOCK_COMMENT)
-        if self.is_blank_line:
+        elif self.is_blank_line:
             if last_line.is_blank_line:
                 return
             file_writer.write(END_BLOCK_COMMENT)
@@ -55,6 +55,7 @@ class Line(object):
             file_writer.write('\n')
         elif self.is_label:
             file_writer.write(self.line_str)
+            file_writer.write('\n')
         elif self.heading == 0:
             file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
         else:
