@@ -44,3 +44,13 @@ class TestBlockComment(object):
             assert filecmp.cmp(output_md, temp.name), compare_files(
                 output_md, temp.name
             )
+
+    def test_with_double_hythen(self):
+        input_md = './tests/input_3.md'
+        output_md = './tests/output_3.md'
+        with tempfile.NamedTemporaryFile() as temp:
+            block_comment(input_md, temp.name)
+            print(filecmp.cmp(output_md, temp.name))
+            assert filecmp.cmp(output_md, temp.name), compare_files(
+                output_md, temp.name
+            )
