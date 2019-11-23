@@ -4,5 +4,4 @@
 ## B
 :label:`chapter_B`
 
-## __translate the above header__
 b

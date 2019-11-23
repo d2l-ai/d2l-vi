@@ -1,16 +1,19 @@
 <!--
+# A
+-->
+
+# __translate the above header__
 :label:`chapter_A`
--->
-
-__translate the above block__
 
 <!--
+## B
+-->
+
+## __translate the above header__
 :label:`chapter_B`
--->
-
-__translate the above block__
 
 <!--
-b-->
+b
+-->
 
 __translate the above block__

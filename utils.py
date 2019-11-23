@@ -26,10 +26,11 @@ def is_blank_line(line):
 
 class Line(object):
     def __init__(self, line_str):
-        self.line_str = line_str.strip()
+        # since -- will close block comment
+        self.line_str = line_str.strip().replace(' -- ', ' \-\- ')
         self.is_blank_line = is_blank_line(line_str)
         m = MARK_RE_MD.match(line_str)
-        self.is_label = m is not None and m[1] == 'label' 
+        self.is_label = m is not None and m[1] == 'label'
         self.heading = 0
         if self.line_str.startswith('#'):
             cnt = 0
@@ -45,25 +46,35 @@ class Line(object):
 
     def process(self, file_writer, last_line):
         """last_line is a Line instance"""
-        if last_line.is_blank_line and not self.is_blank_line:
-            file_writer.write(BEGIN_BLOCK_COMMENT)
-        elif self.is_blank_line:
-            if last_line.is_blank_line:
-                return
+        if self.is_blank_line:
+            if last_line.is_blank_line or last_line.is_label:
+                return Line('')
             file_writer.write(END_BLOCK_COMMENT)
             file_writer.write(TRANSLATE_INDICATOR)
             file_writer.write('\n')
-        elif self.is_label:
+            return Line('')
+
+        if self.is_label:
             file_writer.write(self.line_str)
             file_writer.write('\n')
-        elif self.heading == 0:
-            file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
-        else:
+            file_writer.write('\n')
+            return Line('')
+
+        if self.heading > 0:
             file_writer.write(BEGIN_BLOCK_COMMENT)
             file_writer.write(self.line_str)
-            file_writer.write(END_BLOCK_COMMENT)
             file_writer.write('\n')
+            file_writer.write(END_BLOCK_COMMENT)
+            # file_writer.write('\n')
             file_writer.write('#'*self.heading + HEADER_INDICATOR)
+            return Line('')
+
+        elif self.heading == 0:
+            if last_line.is_blank_line:
+                file_writer.write(BEGIN_BLOCK_COMMENT)
+            file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
+            file_writer.write('\n')
+            return self
 
 
 def block_comment(input_md, output_md):
@@ -72,8 +83,7 @@ def block_comment(input_md, output_md):
             codecs.open(output_md, 'w', encoding='utf-8') as output_handle:
         for line_str in input_handle:
             this_line = Line(line_str)
-            this_line.process(output_handle, last_line)
-            last_line = this_line
+            last_line = this_line.process(output_handle, last_line)
 
         output_handle.write(END_BLOCK_COMMENT)
         output_handle.write(TRANSLATE_INDICATOR)
