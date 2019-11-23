@@ -54,3 +54,23 @@ class TestBlockComment(object):
             assert filecmp.cmp(output_md, temp.name), compare_files(
                 output_md, temp.name
             )
+
+    def test_with_header(self):
+        input_md = './tests/input_4.md'
+        output_md = './tests/output_4.md'
+        with tempfile.NamedTemporaryFile() as temp:
+            block_comment(input_md, temp.name)
+            print(filecmp.cmp(output_md, temp.name))
+            assert filecmp.cmp(output_md, temp.name), compare_files(
+                output_md, temp.name
+            )
+
+    def test_with_code_block(self):
+        input_md = './tests/input_5.md'
+        output_md = './tests/output_5.md'
+        with tempfile.NamedTemporaryFile() as temp:
+            block_comment(input_md, temp.name)
+            print(filecmp.cmp(output_md, temp.name))
+            assert filecmp.cmp(output_md, temp.name), compare_files(
+                output_md, temp.name
+            )
