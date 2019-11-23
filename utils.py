@@ -15,6 +15,7 @@ import pdb
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '__translate the above block__\n'
+HEADER_INDICATOR = ' __translate the above header__\n'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
 
@@ -25,11 +26,22 @@ def is_blank_line(line):
 
 class Line(object):
     def __init__(self, line_str):
-        self.is_header = False
-        self.line_str = line_str
+        self.line_str = line_str.strip()
         self.is_blank_line = is_blank_line(line_str)
         m = MARK_RE_MD.match(line_str)
         self.is_label = m is not None and m[1] == 'label' 
+        self.heading = 0
+        if self.line_str.startswith('#'):
+            cnt = 0
+            # pdb.set_trace()
+            for c in self.line_str:
+                if c == '#':
+                    cnt += 1
+                elif c == ' ':
+                    self.heading = cnt
+                    break
+                else:
+                    assert False, self.line_str
 
     def process(self, file_writer, last_line):
         """last_line is a Line instance"""
@@ -41,8 +53,16 @@ class Line(object):
             file_writer.write(END_BLOCK_COMMENT)
             file_writer.write(TRANSLATE_INDICATOR)
             file_writer.write('\n')
-        else:
+        elif self.is_label:
+            file_writer.write(self.line_str)
+        elif self.heading == 0:
             file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
+        else:
+            file_writer.write(BEGIN_BLOCK_COMMENT)
+            file_writer.write(self.line_str)
+            file_writer.write(END_BLOCK_COMMENT)
+            file_writer.write('\n')
+            file_writer.write('#'*self.heading + HEADER_INDICATOR)
 
 
 def block_comment(input_md, output_md):
