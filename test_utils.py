@@ -15,6 +15,7 @@ def compare_files(filename1, filename2):
         for line1, line2 in zip(file1, file2):
             cnt += 1
             if line1 != line2:
+                print(filename1)
                 print('line {}: {} != {}'.format(cnt, line1, line2))
                 return False
         if file1 or file2:
