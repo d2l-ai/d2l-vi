@@ -1,16 +1,11 @@
 # encoding=utf8
 import codecs
-from collections import OrderedDict
-import csv
 import filecmp
-import os
 import re
 import sys
-import tempfile
-import pdb
 
 # reload(sys)
-# sys.setdefaultencoding('utf8') 
+# sys.setdefaultencoding('utf8')
 
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
