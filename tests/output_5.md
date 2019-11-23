@@ -22,4 +22,3 @@ fashion-mnist
 softmax-regression-scratch
 softmax-regression-gluon
 ```
-
