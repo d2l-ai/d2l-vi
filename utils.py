@@ -44,7 +44,9 @@ class Line(object):
         """last_line is a Line instance"""
         if self.is_math:
             file_writer.write(self.line_str)
+            file_writer.write('\n')
             return self
+
         if in_code_block or self.is_code_marker:
             file_writer.write(self.line_str)
             return Line('```')
