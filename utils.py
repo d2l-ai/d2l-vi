@@ -28,6 +28,7 @@ class Line(object):
         self.is_label = m is not None and m[1] == 'label'
         self.heading = 0
         self.is_code_marker = line_str.startswith('```')
+        self.is_math = line_str.startswith('$')
         if self.line_str.startswith('#'):
             cnt = 0
             for c in self.line_str:
@@ -41,12 +42,15 @@ class Line(object):
 
     def process(self, file_writer, last_line, in_code_block):
         """last_line is a Line instance"""
+        if self.is_math:
+            file_writer.write(self.line_str)
+            return self
         if in_code_block or self.is_code_marker:
             file_writer.write(self.line_str)
             return Line('```')
 
         if self.is_blank_line:
-            if last_line.is_blank_line or last_line.is_label or last_line.is_code_marker:
+            if last_line.is_blank_line or last_line.is_label or last_line.is_code_marker or last_line.is_math:
                 return Line('')
             if last_line.heading > 0:
                 file_writer.write('\n')
