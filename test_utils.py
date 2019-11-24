@@ -26,7 +26,7 @@ def compare_files(filename1, filename2):
 
 class TestBlockComment(object):
     def check(self, input_md, output_md):
-        temp_file_md = './tests/temp_ouput.md'
+        temp_file_md = './tests/temp_output.md'
         block_comment(input_md, temp_file_md)
         print(filecmp.cmp(output_md, temp_file_md))
         assert filecmp.cmp(output_md, temp_file_md), compare_files(
@@ -62,4 +62,9 @@ class TestBlockComment(object):
     def test_header_no_label(self):
         input_md = './tests/input_6.md'
         output_md = './tests/output_6.md'
+        self.check(input_md, output_md)
+
+    def test_math(self):
+        input_md = './tests/input_7.md'
+        output_md = './tests/output_7.md'
         self.check(input_md, output_md)
