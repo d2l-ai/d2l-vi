@@ -26,4 +26,4 @@ graffle/*/*.svg
 graffle/*/*.pdf
 build/
 .pytest_cache/
-tests/temp_out.md
+tests/temp_output.md
