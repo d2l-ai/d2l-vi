@@ -1,11 +1,13 @@
 <!--
-# preface
+# a
 -->
 
 # __translate the above header__
 
+$$ bb $$
+
 <!--
-aa
+c
 -->
 
 __translate the above block__
