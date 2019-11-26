@@ -59,12 +59,12 @@ class TestBlockComment(object):
     #     output_md = './tests/output_5.md'
     #     self.check(input_md, output_md)
 
-    # def test_header_no_label(self):
-    #     input_md = './tests/input_6.md'
-    #     output_md = './tests/output_6.md'
-    #     self.check(input_md, output_md)
+    def test_header_no_label(self):
+        input_md = './tests/input_6.md'
+        output_md = './tests/output_6.md'
+        self.check(input_md, output_md)
 
-    # def test_math(self):
-    #     input_md = './tests/input_7.md'
-    #     output_md = './tests/output_7.md'
-    #     self.check(input_md, output_md)
+    def test_math(self):
+        input_md = './tests/input_7.md'
+        output_md = './tests/output_7.md'
+        self.check(input_md, output_md)

@@ -89,8 +89,15 @@ class IsCodeMarker(MyLine):
     pass
 
 
-class IsMath(MyLine):
-    pass
+class MathLine(MyLine):
+    def __init__(self, line_str, in_code_block):
+        super(MathLine, self).__init__(line_str, in_code_block)
+        self.end_comment_if_next_line_blank = False
+
+    def _process(self, file_writer, last_line):
+        file_writer.write(self.line_str)
+        file_writer.write('\n')
+        return self
 
 
 class LabelLine(MyLine):
@@ -114,6 +121,8 @@ class Line(object):
             self.line_type = BlankLine(line_str, in_code_block)
         elif line_str.startswith('#'):
             self.line_type = HeaderLine(line_str, in_code_block)
+        elif line_str.startswith('$'):
+            self.line_type = MathLine(line_str, in_code_block)
         elif m is not None and m[1] == 'label':
             self.line_type = LabelLine(line_str, in_code_block)
         else:
@@ -122,10 +131,6 @@ class Line(object):
     def process(self, file_writer, last_line):
         return self.line_type.process(file_writer, last_line)
         """last_line is a Line instance"""
-        # if self.is_math:
-        #     file_writer.write(self.line_str)
-        #     file_writer.write('\n')
-        #     return self
 
         # if in_code_block or self.is_code_marker:
         #     file_writer.write(self.line_str)
