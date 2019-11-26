@@ -49,10 +49,10 @@ class TestBlockComment(object):
         output_md = './tests/output_3.md'
         self.check(input_md, output_md)
 
-    # def test_with_header(self):
-    #     input_md = './tests/input_4.md'
-    #     output_md = './tests/output_4.md'
-    #     self.check(input_md, output_md)
+    def test_with_header(self):
+        input_md = './tests/input_4.md'
+        output_md = './tests/output_4.md'
+        self.check(input_md, output_md)
 
     # def test_with_code_block(self):
     #     input_md = './tests/input_5.md'
