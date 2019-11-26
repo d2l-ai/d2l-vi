@@ -2,10 +2,10 @@
 # preface
 -->
 
-# __translate the above header__
+# *translate the above header*
 
 <!--
 aa
 -->
 
-__translate the above block__
+*translate the above block*
