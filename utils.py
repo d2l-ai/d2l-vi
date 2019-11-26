@@ -119,20 +119,6 @@ class Line(object):
         else:
             self.line_type = NormalLine(line_str, in_code_block)
 
-        # self.heading = 0
-        # self.is_code_marker = line_str.startswith('```')
-        # self.is_math = line_str.startswith('$')
-        # if self.line_str.startswith('#'):
-        #     cnt = 0
-        #     for c in self.line_str:
-        #         if c == '#':
-        #             cnt += 1
-        #         elif c == ' ':
-        #             self.heading = cnt
-        #             break
-        #         else:
-        #             assert False, self.line_str
-
     def process(self, file_writer, last_line):
         return self.line_type.process(file_writer, last_line)
         """last_line is a Line instance"""
@@ -143,35 +129,6 @@ class Line(object):
 
         # if in_code_block or self.is_code_marker:
         #     file_writer.write(self.line_str)
-        #     return self
-
-        # if self.is_blank_line:
-        #     if last_line.is_blank_line or last_line.is_label or last_line.is_code_marker or last_line.is_math:
-        #         return Line('')
-        #     if last_line.heading > 0:
-        #         file_writer.write('\n')
-        #         return self
-        #     file_writer.write(END_BLOCK_COMMENT)
-        #     file_writer.write(TRANSLATE_INDICATOR)
-        #     file_writer.write('\n')
-        #     return self
-
-        # if self.is_label:
-        #     file_writer.write(self.line_str)
-        #     file_writer.write('\n')
-        #     return self
-
-        # if self.heading > 0:
-        #     file_writer.write(BEGIN_BLOCK_COMMENT)
-        #     file_writer.write(self.line_str)
-        #     file_writer.write(END_BLOCK_COMMENT)
-        #     file_writer.write('#'*self.heading + HEADER_INDICATOR)
-        #     return self
-
-        # elif self.heading == 0:
-        #     if last_line.is_blank_line:
-        #         file_writer.write(BEGIN_BLOCK_COMMENT)
-        #     file_writer.write(self.line_str.replace(' -- ', ' \-\- '))
         #     return self
 
 
