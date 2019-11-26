@@ -2,7 +2,7 @@
 # a
 -->
 
-# __translate the above header__
+# *translate the above header*
 
 $$ bb $$
 
@@ -10,4 +10,4 @@ $$ bb $$
 c
 -->
 
-__translate the above block__
+*translate the above block*
