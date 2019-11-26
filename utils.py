@@ -42,7 +42,7 @@ class NormalLine(MyLine):
         self.end_comment_if_next_line_blank = True
 
     def _process(self, file_writer, last_line):
-        if last_line is None or isinstance(last_line, BlankLine):
+        if isinstance(last_line, BlankLine):
             file_writer.write(BEGIN_BLOCK_COMMENT)
         file_writer.write(self.line_str)
 
@@ -77,7 +77,7 @@ class Header(MyLine):
                 assert False, self.line_str
 
     def _process(self, file_writer, last_line):
-        assert last_line is None or isinstance(last_line, BlankLine),\
+        assert isinstance(last_line, BlankLine),\
             last_line.line_str
         file_writer.write(BEGIN_BLOCK_COMMENT)
         file_writer.write(self.line_str)
@@ -165,7 +165,7 @@ class Line(object):
 
 
 def block_comment(input_md, output_md):
-    last_line = None
+    last_line = BlankLine('', False)
     in_code_block = False
     with codecs.open(input_md, 'r', encoding='utf-8') as input_handle,\
             codecs.open(output_md, 'w', encoding='utf-8') as output_handle:

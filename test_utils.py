@@ -38,11 +38,11 @@ class TestBlockComment(object):
         output_md = './tests/output_1.md'
         self.check(input_md, output_md)
 
-    # def test_2(self):
-    #     """multiple blank lines"""
-    #     input_md = './tests/input_2.md'
-    #     output_md = './tests/output_2.md'
-    #     self.check(input_md, output_md)
+    def test_2(self):
+        """multiple blank lines"""
+        input_md = './tests/input_2.md'
+        output_md = './tests/output_2.md'
+        self.check(input_md, output_md)
 
     # def test_with_double_hythen(self):
     #     input_md = './tests/input_3.md'
