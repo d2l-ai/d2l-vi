@@ -44,10 +44,10 @@ class TestBlockComment(object):
         output_md = './tests/output_2.md'
         self.check(input_md, output_md)
 
-    # def test_with_double_hythen(self):
-    #     input_md = './tests/input_3.md'
-    #     output_md = './tests/output_3.md'
-    #     self.check(input_md, output_md)
+    def test_with_double_hythen(self):
+        input_md = './tests/input_3.md'
+        output_md = './tests/output_3.md'
+        self.check(input_md, output_md)
 
     # def test_with_header(self):
     #     input_md = './tests/input_4.md'
