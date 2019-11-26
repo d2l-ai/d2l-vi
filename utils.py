@@ -85,8 +85,15 @@ class HeaderLine(MyLine):
         file_writer.write('#'*self.heading + HEADER_INDICATOR)
 
 
-class IsCodeMarker(MyLine):
-    pass
+class CodeMarkerLine(MyLine):
+    def __init__(self, line_str, in_code_block):
+        super(CodeMarkerLine, self).__init__(line_str, in_code_block)
+        self.end_comment_if_next_line_blank = False
+
+    def _process(self, file_writer, last_line):
+        """ the print is printed in the super class"""
+        file_writer.write(self.line_str)
+
 
 
 class MathLine(MyLine):
@@ -112,44 +119,37 @@ class LabelLine(MyLine):
         return self
 
 
-class Line(object):
-    def __init__(self, line_str, in_code_block=False):
-        # since -- will close block comment
-        self.line_str = line_str.replace(' -- ', ' \-\- ')
-        m = MARK_RE_MD.match(line_str)
-        if is_blank_line(line_str):
-            self.line_type = BlankLine(line_str, in_code_block)
-        elif line_str.startswith('#'):
-            self.line_type = HeaderLine(line_str, in_code_block)
-        elif line_str.startswith('$'):
-            self.line_type = MathLine(line_str, in_code_block)
-        elif m is not None and m[1] == 'label':
-            self.line_type = LabelLine(line_str, in_code_block)
-        else:
-            self.line_type = NormalLine(line_str, in_code_block)
-
-    def process(self, file_writer, last_line):
-        return self.line_type.process(file_writer, last_line)
-        """last_line is a Line instance"""
-
-        # if in_code_block or self.is_code_marker:
-        #     file_writer.write(self.line_str)
-        #     return self
-
-
 def block_comment(input_md, output_md):
     last_line = BlankLine('', False)
     in_code_block = False
     with codecs.open(input_md, 'r', encoding='utf-8') as input_handle,\
             codecs.open(output_md, 'w', encoding='utf-8') as output_handle:
         for line_str in input_handle:
-            this_line = Line(line_str, in_code_block)
-            last_line = this_line.process(output_handle, last_line)
-            # if this_line.is_code_marker:
-            #     in_code_block = not in_code_block
+            line_str = line_str.replace(' -- ', ' \-\- ')
+            match = MARK_RE_MD.match(line_str)
+            if is_blank_line(line_str):
+                line_type = BlankLine
+            elif line_str.startswith('#'):
+                line_type = HeaderLine
+            elif line_str.startswith('$'):
+                line_type = MathLine
+            elif line_str.startswith('```'):
+                in_code_block = not in_code_block
+                line_type = CodeMarkerLine
+            elif match is not None and match[1] == 'label':
+                line_type = LabelLine
+            else:
+                line_type = NormalLine
 
-        # if last_line.is_blank_line or last_line.is_label or last_line.is_code_marker:
-        #     return
+            this_line = line_type(line_str, in_code_block)
+            last_line = this_line.process(output_handle, last_line)
+
+        assert in_code_block is False
+
+        # TODO: simplify 5 lines below
+        if isinstance(last_line, BlankLine) or isinstance(last_line, LabelLine)\
+                or isinstance(last_line, CodeMarkerLine):
+            return
         output_handle.write(END_BLOCK_COMMENT)
         output_handle.write(TRANSLATE_INDICATOR)
 
