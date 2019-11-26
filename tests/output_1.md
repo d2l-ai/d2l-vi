@@ -3,11 +3,11 @@ dive into
 deep learning
 -->
 
-__translate the above block__
+*translate the above block*
 
 <!--
 * a
 * b
 -->
 
-__translate the above block__
+*translate the above block*

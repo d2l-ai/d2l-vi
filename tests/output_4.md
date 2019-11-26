@@ -2,18 +2,18 @@
 # A
 -->
 
-# __translate the above header__
+# *translate the above header*
 :label:`chapter_A`
 
 <!--
 ## B
 -->
 
-## __translate the above header__
+## *translate the above header*
 :label:`chapter_B`
 
 <!--
 b
 -->
 
-__translate the above block__
+*translate the above block*

@@ -9,8 +9,8 @@ import sys
 
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
-TRANSLATE_INDICATOR = '__translate the above block__\n'
-HEADER_INDICATOR = ' __translate the above header__\n'
+TRANSLATE_INDICATOR = '*translate the above block*\n'
+HEADER_INDICATOR = ' *translate the above header*\n'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
 
