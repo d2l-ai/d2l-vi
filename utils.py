@@ -49,7 +49,7 @@ class Line(object):
 
         if in_code_block or self.is_code_marker:
             file_writer.write(self.line_str)
-            return Line('```')
+            return self
 
         if self.is_blank_line:
             if last_line.is_blank_line or last_line.is_label or last_line.is_code_marker or last_line.is_math:
