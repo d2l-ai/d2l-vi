@@ -149,6 +149,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scroing function             | hàm tính điểm                                                  |                         |
 | sentiment classification     | phân loại cảm xúc                                              |                         |
 | spam email                   | email rác                                                      |                         |
+| speech recognition           | nhận dạng giọng nơi                                            |                         |
 | supervised learning          | học có giám sát                                                |                         |
 
 ## T
