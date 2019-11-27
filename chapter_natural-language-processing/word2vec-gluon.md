@@ -1,9 +1,18 @@
 # Implementation of Word2vec
+<<<<<<< HEAD
 
 
 This section is a practice exercise for the two previous sections. We use the skip-gram model from the ["Word Embedding (word2vec)”](word2vec.md) section and negative sampling from the ["Approximate Training" ](approx-training.md) section as examples to introduce the implementation of word embedding model training on a corpus. We will also introduce some implementation tricks, such as subsampling and mask variables.
 
 First, import the packages and modules required for the experiment.
+=======
+:label:`sec_word2vec_gluon`
+
+In this section, we will train a skip-gram model defined in
+:numref:`sec_word2vec`.
+
+First, import the packages and modules required for the experiment, and load the PTB dataset.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=1}
 import sys
@@ -11,6 +20,7 @@ sys.path.insert(0, '..')
 
 import collections
 import d2l
+<<<<<<< HEAD
 import math
 from mxnet import autograd, gluon, nd
 from mxnet.gluon import data as gdata, loss as gloss, nn
@@ -93,6 +103,11 @@ compare_counts('the')
 ```
 
 But the low-frequency word "join" is completely preserved.
+=======
+from mxnet import autograd, gluon, np, npx
+from mxnet.gluon import nn
+npx.set_np()
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=8}
 compare_counts('join')
@@ -203,11 +218,11 @@ for batch in data_iter:
 
 ## The Skip-Gram Model
 
-We will implement the skip-gram model by using embedding layers and mini-batch multiplication. These methods are also often used to implement other natural language processing applications.
+We will implement the skip-gram model by using embedding layers and minibatch multiplication. These methods are also often used to implement other natural language processing applications.
 
 ### Embedding Layer
 
-The layer in which the obtained word is embedded is called the embedding layer, which can be obtained by creating an `nn.Embedding` instance in Gluon. The weight of the embedding layer is a matrix whose number of rows is the dictionary size (`input_dim`) and whose number of columns is the dimension of each word vector (`output_dim`). We set the dictionary size to 20 and the word vector dimension to 4.
+The layer in which the obtained word is embedded is called the embedding layer, which can be obtained by creating an `nn.Embedding` instance in Gluon. The weight of the embedding layer is a matrix whose number of rows is the dictionary size (`input_dim`) and whose number of columns is the dimension of each word vector (`output_dim`). We set the dictionary size to $20$ and the word vector dimension to $4$.
 
 ```{.python .input  n=15}
 embed = nn.Embedding(input_dim=20, output_dim=4)
@@ -215,57 +230,74 @@ embed.initialize()
 embed.weight
 ```
 
-The input of the embedding layer is the index of the word. When we enter the index $i$ of a word, the embedding layer returns the $i$th row of the weight matrix as its word vector. Below we enter an index of shape (2,3) into the embedding layer. Because the dimension of the word vector is 4, we obtain a word vector of shape (2,3,4).
+The input of the embedding layer is the index of the word. When we enter the index $i$ of a word, the embedding layer returns the $i^\mathrm{th}$ row of the weight matrix as its word vector. Below we enter an index of shape ($2$, $3$) into the embedding layer. Because the dimension of the word vector is 4, we obtain a word vector of shape ($2$, $3$, $4$).
 
 ```{.python .input  n=16}
-x = nd.array([[1, 2, 3], [4, 5, 6]])
+x = np.array([[1, 2, 3], [4, 5, 6]])
 embed(x)
 ```
 
-### Mini-batch Multiplication
+### Minibatch Multiplication
 
-We can multiply the matrices in two mini-batches one by one, by the mini-batch multiplication operation `batch_dot`. Suppose the first batch contains $n$ matrices $\boldsymbol{X}_1, \ldots, \boldsymbol{X}_n$ with a shape of $a\times b$, and the second batch contains $n$ matrices $\boldsymbol{Y}_1, \ldots, \boldsymbol{Y}_n$ with a shape of $b\times c$. The output of matrix multiplication on these two batches are $n$ matrices $\boldsymbol{X}_1\boldsymbol{Y}_1, \ldots, \boldsymbol{X}_n\boldsymbol{Y}_n$ with a shape of $a\times c$. Therefore, given two NDArrays of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the shape of the mini-batch multiplication output is ($n$, $a$, $c$).
+We can multiply the matrices in two minibatches one by one, by the minibatch multiplication operation `batch_dot`. Suppose the first batch contains $n$ matrices $\mathbf{X}_1, \ldots, \mathbf{X}_n$ with a shape of $a\times b$, and the second batch contains $n$ matrices $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ with a shape of $b\times c$. The output of matrix multiplication on these two batches are $n$ matrices $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ with a shape of $a\times c$. Therefore, given two `ndarray`s of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the shape of the minibatch multiplication output is ($n$, $a$, $c$).
 
 ```{.python .input  n=17}
-X = nd.ones((2, 1, 4))
-Y = nd.ones((2, 4, 6))
-nd.batch_dot(X, Y).shape
+X = np.ones((2, 1, 4))
+Y = np.ones((2, 4, 6))
+npx.batch_dot(X, Y).shape
 ```
 
 ### Skip-gram Model Forward Calculation
 
-In forward calculation, the input of the skip-gram model contains the central target word index `center` and the concatenated context and noise word index `contexts_and_negatives`. In which, the `center` variable has the shape (batch size, 1), while the `contexts_and_negatives` variable has the shape (batch size, `max_len`). These two variables are first transformed from word indexes to word vectors by the word embedding layer, and then the output of shape (batch size, 1, `max_len`) is obtained by mini-batch multiplication. Each element in the output is the inner product of the central target word vector and the context word vector or noise word vector.
+In forward calculation, the input of the skip-gram model contains the central target word index `center` and the concatenated context and noise word index `contexts_and_negatives`. In which, the `center` variable has the shape (batch size, 1), while the `contexts_and_negatives` variable has the shape (batch size, `max_len`). These two variables are first transformed from word indexes to word vectors by the word embedding layer, and then the output of shape (batch size, 1, `max_len`) is obtained by minibatch multiplication. Each element in the output is the inner product of the central target word vector and the context word vector or noise word vector.
 
 ```{.python .input  n=18}
 def skip_gram(center, contexts_and_negatives, embed_v, embed_u):
     v = embed_v(center)
     u = embed_u(contexts_and_negatives)
-    pred = nd.batch_dot(v, u.swapaxes(1, 2))
+    pred = npx.batch_dot(v, u.swapaxes(1, 2))
     return pred
 ```
 
+<<<<<<< HEAD
 ## To train a model
+=======
+Verify that the output shape should be (batch size, 1, `max_len`).
+
+```{.python .input}
+skip_gram(np.ones((2, 1)), np.ones((2, 4)), embed, embed).shape
+```
+
+## Training
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 Before training the word embedding model, we need to define the loss function of the model.
 
 
 ### Binary Cross Entropy Loss Function
 
-According to the definition of the loss function in negative sampling, we can directly use Gluon's binary cross entropy loss function `SigmoidBinaryCrossEntropyLoss`.
+According to the definition of the loss function in negative sampling, we can directly use Gluon's binary cross-entropy loss function `SigmoidBinaryCrossEntropyLoss`.
 
 ```{.python .input  n=19}
 loss = gloss.SigmoidBinaryCrossEntropyLoss()
 ```
 
-It is worth mentioning that we can use the mask variable to specify the partial predicted value and label that participate in loss function calculation in the mini-batch: when the mask is 1, the predicted value and label of the corresponding position will participate in the calculation of the loss function; When the mask is 0, the predicted value and label of the corresponding position do not participate in the calculation of the loss function. As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
+It is worth mentioning that we can use the mask variable to specify the partial predicted value and label that participate in loss function calculation in the minibatch: when the mask is 1, the predicted value and label of the corresponding position will participate in the calculation of the loss function; When the mask is 0, the predicted value and label of the corresponding position do not participate in the calculation of the loss function. As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
 
 ```{.python .input}
+<<<<<<< HEAD
 pred = nd.array([[1.5, 0.3, -1, 2], [1.1, -0.6, 2.2, 0.4]])
 # 1 and 0 in the label variables label represent context words and the noise
 # words, respectively
 label = nd.array([[1, 0, 0, 0], [1, 1, 0, 0]])
 mask = nd.array([[1, 1, 1, 1], [1, 1, 1, 0]])  # Mask variable
 loss(pred, label, mask) * mask.shape[1] / mask.sum(axis=1)
+=======
+pred = np.array([[.5]*4]*2)
+label = np.array([[1, 0, 1, 0]]*2)
+mask = np.array([[1, 1, 1, 1], [1, 1, 0, 0]])
+loss(pred, label, mask)
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 Next, as a comparison, we will implement binary cross-entropy loss function calculation from scratch and calculate the predicted value with a mask of 1 and the loss of the label based on the mask variable `mask`.
@@ -278,9 +310,9 @@ print('%.7f' % ((sigmd(1.5) + sigmd(-0.3) + sigmd(1) + sigmd(-2)) / 4))
 print('%.7f' % ((sigmd(1.1) + sigmd(-0.6) + sigmd(-2.2)) / 3))
 ```
 
-### Initialize Model Parameters
+### Initializing Model Parameters
 
-We construct the embedding layers of the central and context words, respectively, and set the hyper-parameter word vector dimension `embed_size` to 100.
+We construct the embedding layers of the central and context words, respectively, and set the hyperparameter word vector dimension `embed_size` to 100.
 
 ```{.python .input  n=20}
 embed_size = 100
@@ -312,10 +344,19 @@ def train(net, lr, num_epochs):
                      mask.shape[1] / mask.sum(axis=1))
             l.backward()
             trainer.step(batch_size)
+<<<<<<< HEAD
             l_sum += l.sum().asscalar()
             n += l.size
         print('epoch %d, loss %.2f, time %.2fs'
               % (epoch + 1, l_sum / n, time.time() - start))
+=======
+            metric.add(l.sum(), l.size)
+            if (i+1) % 50 == 0:
+                animator.add(epoch+(i+1)/len(data_iter),
+                             (metric[0]/metric[1],))
+    print('loss %.3f, %d tokens/sec on %s ' % (
+        metric[0]/metric[1], metric[1]/timer.stop(), ctx))
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 Now, we can train a skip-gram model using negative sampling.
@@ -331,12 +372,21 @@ After training the word embedding model, we can represent similarity in meaning 
 ```{.python .input  n=23}
 def get_similar_tokens(query_token, k, embed):
     W = embed.weight.data()
+<<<<<<< HEAD
     x = W[token_to_idx[query_token]]
     # The added 1e-9 is for numerical stability
     cos = nd.dot(W, x) / (nd.sum(W * W, axis=1) * nd.sum(x * x) + 1e-9).sqrt()
     topk = nd.topk(cos, k=k+1, ret_typ='indices').asnumpy().astype('int32')
     for i in topk[1:]:  # Remove the input words
         print('cosine sim=%.3f: %s' % (cos[i].asscalar(), (idx_to_token[i])))
+=======
+    x = W[vocab[query_token]]
+    # Compute the cosine similarity. Add 1e-9 for numerical stability
+    cos = np.dot(W, x) / np.sqrt(np.sum(W * W, axis=1) * np.sum(x * x) + 1e-9)
+    topk = npx.topk(cos, k=k+1, ret_typ='indices').asnumpy().astype('int32')
+    for i in topk[1:]:  # Remove the input words
+        print('cosine sim=%.3f: %s' % (cos[i], (vocab.idx_to_token[i])))
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 get_similar_tokens('chip', 3, net[0])
 ```
@@ -354,9 +404,10 @@ get_similar_tokens('chip', 3, net[0])
 * We use the `batchify` function to specify the mini-batch reading method in the `DataLoader` instance and print the shape of each variable in the first batch read. How should these shapes be calculated?
 * Try to find synonyms for other words.
 * Tune the hyper-parameters and observe and analyze the experimental results.
-* When the data set is large, we usually sample the context words and the noise words for the central target word in the current mini-batch only when updating the model parameters. In other words, the same central target word may have different context words or noise words in different epochs. What are the benefits of this sort of training? Try to implement this training method.
+* When the dataset is large, we usually sample the context words and the noise words for the central target word in the current minibatch only when updating the model parameters. In other words, the same central target word may have different context words or noise words in different epochs. What are the benefits of this sort of training? Try to implement this training method.
 
 
+<<<<<<< HEAD
 
 
 
@@ -367,5 +418,8 @@ get_similar_tokens('chip', 3, net[0])
 [2] Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., & Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In Advances in neural information processing systems (pp. 3111-3119).
 
 ## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2387)
+=======
+## [Discussions](https://discuss.mxnet.io/t/2387)
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ![](../img/qr_word2vec-gluon.svg)

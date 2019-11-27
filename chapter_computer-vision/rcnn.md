@@ -1,7 +1,17 @@
 # Region-based CNNs (R-CNNs)
 
 
+<<<<<<< HEAD
 Region-based convolutional neural networks or regions with CNN features (R-CNNs) are a pioneering approach that applies deep models to object detection[1]. In this section, we will discuss R-CNNs and a series of improvements made to them: Fast R-CNN[3], Faster R-CNN[4], and Mask R-CNN[5]. Due to space limitations, we will confine our discussion to the designs of these models.
+=======
+Region-based convolutional neural networks or regions with CNN features (R-CNNs)
+are a pioneering approach that applies deep models to object detection
+:cite:`Girshick.Donahue.Darrell.ea.2014`. In this section, we will discuss
+R-CNNs and a series of improvements made to them: Fast R-CNN
+:cite:`Girshick.2015`, Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN
+:cite:`He.Gkioxari.Dollar.ea.2017`. Due to space limitations, we will confine
+our discussion to the designs of these models.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 
 ## R-CNNs
@@ -25,6 +35,7 @@ Although R-CNN models use pre-trained CNNs to effectively extract image features
 The main performance bottleneck of an R-CNN model is the need to independently extract features for each proposed region. As these regions have a high degree of overlap, independent feature extraction results in a high volume of repetitive computations. Fast R-CNN improves on the R-CNN by only performing CNN forward computation on the image as a whole.
 
 ![Fast R-CNN model. ](../img/fast-rcnn.svg)
+<<<<<<< HEAD
 
 Figure 9.6 shows a Fast R-CNN model. It's primary computation steps are described below:
 
@@ -36,28 +47,74 @@ Figure 9.6 shows a Fast R-CNN model. It's primary computation steps are describe
 The RoI pooling layer in Fast R-CNN is somewhat different from the pooling layers we have discussed before. In a normal pooling layer, we set the pooling window, padding, and stride to control the output shape. In an RoI pooling layer, we can directly specify the output shape of each region, such as specifying the height and width of each region as $h_2,w_2$. Assuming that the height and width of the RoI window are $h$ and $w$, this window is divided into a grid of sub-windows with the shape $h_2 \times w_2$. The size of each sub-window is about $(h/h_2) \times (w/w_2)$. The sub-window height and width must always be integers and the largest element is used as the output for a given sub-window. This allows the RoI pooling layer to extract features of the same shape from RoIs of different shapes.
 
 In Figure 9.7, we select an $3\times 3$ region as an RoI of the $4 \times 4$ input. For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a single $2\times 2$ output. When we divide the region into four sub-windows, they respectively contain the elements 0, 1, 4, and 5 (5 is the largest); 2 and 6 (6 is the largest); 8 and 9 (9 is the largest); and 10.
+=======
+:label:`fig_fast_r-cnn`
+
+:numref:`fig_fast_r-cnn` shows a Fast R-CNN model. It is primary computation
+steps are described below:
+
+1. Compared to an R-CNN model, a Fast R-CNN model uses the entire image as the
+   CNN input for feature extraction, rather than each proposed region. Moreover,
+   this network is generally trained to update the model parameters. As the
+   input is an entire image, the CNN output shape is $1 \times c \times h_1
+   \times w_1$.
+1. Assuming selective search generates $n$ proposed regions, their different
+   shapes indicate regions of interests (RoIs) of different shapes on the CNN
+   output. Features of the same shapes must be extracted from these RoIs (here
+   we assume that the height is $h_2$ and the width is $w_2$). Fast R-CNN
+   introduces RoI pooling, which uses the CNN output and RoIs as input to output
+   a concatenation of the features extracted from each proposed region with the
+   shape $n \times c \times h_2 \times w_2$.
+1. A fully connected layer is used to transform the output shape to $n \times
+   d$, where $d$ is determined by the model design.
+1. During category prediction, the shape of the fully connected layer output is
+   again transformed to $n \times q$ and we use softmax regression ($q$ is the
+   number of categories). During bounding box prediction, the shape of the fully
+   connected layer output is again transformed to $n \times 4$. This means that
+   we predict the category and bounding box for each proposed region.
+
+The RoI pooling layer in Fast R-CNN is somewhat different from the pooling
+layers we have discussed before. In a normal pooling layer, we set the pooling
+window, padding, and stride to control the output shape. In an RoI pooling
+layer, we can directly specify the output shape of each region, such as
+specifying the height and width of each region as $h_2, w_2$. Assuming that the
+height and width of the RoI window are $h$ and $w$, this window is divided into
+a grid of sub-windows with the shape $h_2 \times w_2$. The size of each
+sub-window is about $(h/h_2) \times (w/w_2)$. The sub-window height and width
+must always be integers and the largest element is used as the output for a
+given sub-window. This allows the RoI pooling layer to extract features of the
+same shape from RoIs of different shapes.
+
+In :numref:`fig_roi`, we select an $3\times 3$ region as an RoI of the $4 \times
+4$ input. For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a
+single $2\times 2$ output. When we divide the region into four sub-windows, they
+respectively contain the elements 0, 1, 4, and 5 (5 is the largest); 2 and 6 (6
+is the largest); 8 and 9 (9 is the largest); and 10.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ![$2\times 2$ RoI pooling layer. ](../img/roi.svg)
 
 We use the `ROIPooling` function to demonstrate the RoI pooling layer computation. Assume that the CNN extracts the feature `X` with both a height and width of 4 and only a single channel.
 
 ```{.python .input  n=4}
-from mxnet import nd
+from mxnet import np, npx
 
-X = nd.arange(16).reshape((1, 1, 4, 4))
+npx.set_np()
+
+X = np.arange(16).reshape(1, 1, 4, 4)
 X
 ```
 
-Assume that the height and width of the image are both 40 pixels and that selective search generates two proposed regions on the image. Each region is expressed as five elements: the region's object category and the $x,y$ coordinates of its upper-left and bottom-right corners.
+Assume that the height and width of the image are both 40 pixels and that selective search generates two proposed regions on the image. Each region is expressed as five elements: the region's object category and the $x, y$ coordinates of its upper-left and bottom-right corners.
 
 ```{.python .input  n=5}
-rois = nd.array([[0, 0, 0, 20, 20], [0, 0, 10, 30, 30]])
+rois = np.array([[0, 0, 0, 20, 20], [0, 0, 10, 30, 30]])
 ```
 
-Because the height and width of `X` are $1/10$ of the height and width of the image, the coordinates of the two proposed regions are multiplied by 0.1 according to the `spatial_scale`, and then the RoIs are labeled on `X` as `X[:,:,0:3,0:3]` and `X[:,:,1:4,0:4]`, respectively. Finally, we divide the two RoIs into a sub-window grid and extract features with a height and width of 2.
+Because the height and width of `X` are $1/10$ of the height and width of the image, the coordinates of the two proposed regions are multiplied by 0.1 according to the `spatial_scale`, and then the RoIs are labeled on `X` as `X[:, :, 0:3, 0:3]` and `X[:, :, 1:4, 0:4]`, respectively. Finally, we divide the two RoIs into a sub-window grid and extract features with a height and width of 2.
 
 ```{.python .input  n=6}
-nd.ROIPooling(X, rois, pooled_size=(2, 2), spatial_scale=0.1)
+npx.roi_pooling(X, rois, pooled_size=(2, 2), spatial_scale=0.1)
 ```
 
 ## Faster R-CNN
@@ -116,6 +173,6 @@ As shown in 9.9, Mask R-CNN is a modification to the Faster R-CNN model. Mask R-
 
 [6] GluonCV Toolkit. https://gluon-cv.mxnet.io/
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2447)
+## [Discussions](https://discuss.mxnet.io/t/2447)
 
 ![](../img/qr_rcnn.svg)

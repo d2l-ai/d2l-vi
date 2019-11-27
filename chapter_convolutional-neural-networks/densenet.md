@@ -2,37 +2,60 @@
 
 ResNet significantly changed the view of how to parametrize the functions in deep networks. DenseNet is to some extent the logical extension of this. To understand how to arrive at it, let's take a small detour to theory. Recall the Taylor expansion for functions. For scalars it can be written as
 
-$$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3)$$
+$$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3).$$
 
 ## Function Decomposition
 
 The key point is that it decomposes the function into increasingly higher order terms. In a similar vein, ResNet decomposes functions into 
 
-$$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x})$$
+$$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x}).$$
 
 That is, ResNet decomposes $f$ into a simple linear term and a more complex nonlinear one. What if we want to go beyond two terms? A solution was proposed by [Huang et al, 2016](https://arxiv.org/abs/1608.06993) in the form of DenseNet, an architecture that reported record performance on the ImageNet dataset. 
 
+<<<<<<< HEAD:chapter_convolutional-neural-networks/densenet.md
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet.svg)
+=======
+![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
+:label:`fig_densenet_block`
+>>>>>>> 1ec5c63... copy from d2l-en (#16):chapter_convolutional-modern/densenet.md
 
-The key difference between ResNet and DenseNet is that in the latter case outputs are *concatenated* rather than added. As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
+As shown in :numref:`fig_densenet_block`, the key difference between ResNet and DenseNet is that in the latter case outputs are *concatenated* rather than added. As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
 
-$$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right]$$
+$$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
 
-In the end, all these functions are combined in an MLP to reduce the number of features again. In terms of implementation this is quite simple - rather than adding terms, we concatenate them. The name DenseNet arises from the fact that the dependency graph between variables becomes quite dense. The last layer of such a chain is densely connected to all previous layers. The main components that compose a DenseNet are dense blocks and transition layers. The former defines how the inputs and outputs are concatenated, while the latter controls the number of channels so that it is not too large.
+In the end, all these functions are combined in an MLP to reduce the number of features again. In terms of implementation this is quite simple---rather than adding terms, we concatenate them. The name DenseNet arises from the fact that the dependency graph between variables becomes quite dense. The last layer of such a chain is densely connected to all previous layers. The main components that compose a DenseNet are dense blocks and transition layers. The former defines how the inputs and outputs are concatenated, while the latter controls the number of channels so that it is not too large. The dense connections are shown in :numref:`fig_densenet`.
 
+<<<<<<< HEAD:chapter_convolutional-neural-networks/densenet.md
 ![Dense connections in DenseNet](../img/DenseNetDense.svg)
 
 ## Dense Blocks
 
 DenseNet uses the modified "batch normalization, activation, and convolution" architecture of ResNet (see the exercise in the [previous section](resnet.md)). First, we implement this architecture in the `conv_block` function.
+=======
+![Dense connections in DenseNet](../img/densenet.svg)
+:label:`fig_densenet`
+
+
+## Dense Blocks
+
+DenseNet uses the modified "batch normalization, activation, and convolution"
+architecture of ResNet (see the exercise in :numref:`sec_resnet`).
+First, we implement this architecture in the
+`conv_block` function.
+>>>>>>> 1ec5c63... copy from d2l-en (#16):chapter_convolutional-modern/densenet.md
 
 ```{.python .input  n=1}
 import sys
 sys.path.insert(0, '..')
 
 import d2l
+<<<<<<< HEAD:chapter_convolutional-neural-networks/densenet.md
 from mxnet import gluon, init, nd
+=======
+from mxnet import np, npx
+>>>>>>> 1ec5c63... copy from d2l-en (#16):chapter_convolutional-modern/densenet.md
 from mxnet.gluon import nn
+npx.set_np()
 
 def conv_block(num_channels):
     blk = nn.Sequential()
@@ -57,7 +80,7 @@ class DenseBlock(nn.Block):
             Y = blk(X)
             # Concatenate the input and output of each block on the channel
             # dimension
-            X = nd.concat(X, Y, dim=1)
+            X = np.concatenate((X, Y), axis=1)
         return X
 ```
 
@@ -66,7 +89,7 @@ In the following example, we define a convolution block with two blocks of 10 ou
 ```{.python .input  n=8}
 blk = DenseBlock(2, 10)
 blk.initialize()
-X = nd.random.uniform(shape=(4, 3, 8, 8))
+X = np.random.uniform(size=(4, 3, 8, 8))
 Y = blk(X)
 Y.shape
 ```
@@ -103,7 +126,7 @@ net.add(nn.Conv2D(64, kernel_size=7, strides=2, padding=3),
         nn.MaxPool2D(pool_size=3, strides=2, padding=1))
 ```
 
-Then, similar to the four residual blocks that ResNet uses, DenseNet uses four dense blocks. Similar to ResNet, we can set the number of convolutional layers used in each dense block. Here, we set it to 4, consistent with the ResNet-18 in the previous section. Furthermore, we set the number of channels (i.e. growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
+Then, similar to the four residual blocks that ResNet uses, DenseNet uses four dense blocks. Similar to ResNet, we can set the number of convolutional layers used in each dense block. Here, we set it to 4, consistent with the ResNet-18 in the previous section. Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2. Here, we use the transition layer to halve the height and width and halve the number of channels.
 
@@ -166,6 +189,6 @@ d2l.train_ch5(net, train_iter, test_iter, batch_size, trainer, ctx,
 
 [1] Huang, G., Liu, Z., Weinberger, K. Q., & van der Maaten, L. (2017). Densely connected convolutional networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (Vol. 1, No. 2).
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2360)
+## [Discussions](https://discuss.mxnet.io/t/2360)
 
 ![](../img/qr_densenet.svg)

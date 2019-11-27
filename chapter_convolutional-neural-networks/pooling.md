@@ -1,4 +1,45 @@
 # Pooling
+<<<<<<< HEAD
+=======
+:label:`sec_pooling`
+
+
+Often, as we process images, we want to gradually
+reduce the spatial resolution of our hidden representations,
+aggregating information so that
+the higher up we go in the network,
+the larger the receptive field (in the input)
+to which each hidden node is sensitive.
+
+Often our ultimate task asks some global question about the image,
+e.g., *does it contain a cat?*
+So typically the nodes of our final layer should be sensitive
+to the entire input.
+By gradually aggregating information, yielding coarser and coarser maps,
+we accomplish this goal of ultimately learning a global representation,
+while keeping all of the advantages of convolutional layers at the intermediate layers of processing.
+
+
+Moreover, when detecting lower-level features, such as edges
+(as discussed in :numref:`sec_conv_layer`),
+we often want our representations to be somewhat invariant to translation.
+For instance, if we take the image `X`
+with a sharp delineation between black and white
+and shift the whole image by one pixel to the right,
+i.e., `Z[i, j] = X[i, j+1]`,
+then the output for the new image `Z` might be vastly different.
+The edge will have shifted by one pixel and with it all the activations.
+In reality, objects hardly ever occur exactly at the same place.
+In fact, even with a tripod and a stationary object,
+vibration of the camera due to the movement of the shutter
+might shift everything by a pixel or so
+(high-end cameras are loaded with special features to address this problem).
+
+This section introduces pooling layers,
+which serve the dual purposes of
+mitigating the sensitivity of convolutional layers to location
+and of spatially downsampling representations.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 As we process images (or other data sources) we will eventually want to reduce the resolution of the images. After all, we typically want to output an estimate that does not depend on the dimensionality of the original image. Secondly, when detecting lower-level features, such as edge detection (we covered this in the section on [convolutional layers](conv-layer.md)), we often want to have some degree of invariance to translation. For instance, if we take the image `X` with a sharp delineation between black and white and if we shift it by one pixel to the right, i.e. `Z[i,j] = X[i,j+1]`, then the output for for the new image `Z` will be vastly different. The edge will have shifted by one pixel and with it all the activations. In reality objects hardly ever occur exactly at the same place. In fact, even with a tripod and a stationary object, vibration of the camera due to the movement of the shutter might shift things by a pixel or so (this is why high end cameras have a special option to fix this). Given that, we need a mathematical device to address the problem.
 
@@ -8,34 +49,65 @@ This section introduces pooling layers, which were proposed to alleviate the exc
 
 Like convolutions, pooling computes the output for each element in a fixed-shape window (also known as a pooling window) of input data. Different from the cross-correlation computation of the inputs and kernels in the convolutional layer, the pooling layer directly calculates the maximum or average value of the elements in the pooling window. These operations are called maximum pooling or average pooling respectively. In maximum pooling, the pooling window starts from the top left of the input array, and slides in the input array from left to right and top to bottom. When the pooling window slides to a certain position, the maximum value of the input subarray in the window is the element at the corresponding location in the output array.
 
-![Maximum pooling with a pooling window shape of $2\times 2$. The shaded portions represent the first output element and the input element used for its computation: $\max(0,1,3,4)=4$](../img/pooling.svg)
+![Maximum pooling with a pooling window shape of $2\times 2$. The shaded portions represent the first output element and the input element used for its computation: $\max(0, 1, 3, 4)=4$](../img/pooling.svg)
+:label:`fig_pooling`
 
+<<<<<<< HEAD
 The output array in the figure above has a height of 2 and a width of 2. The four elements are derived from the maximum value of $\text{max}$:
+=======
+The output array in :numref:`fig_pooling` above has a height of 2 and a width of 2.
+The four elements are derived from the maximum value of $\text{max}$:
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 $$
-\max(0,1,3,4)=4,\\
-\max(1,2,4,5)=5,\\
-\max(3,4,6,7)=7,\\
-\max(4,5,7,8)=8.\\
+\max(0, 1, 3, 4)=4,\\
+\max(1, 2, 4, 5)=5,\\
+\max(3, 4, 6, 7)=7,\\
+\max(4, 5, 7, 8)=8.\\
 $$
 
+<<<<<<< HEAD
 Average pooling works like maximum pooling, only with the maximum operator replaced by the average operator. The pooling layer with a pooling window shape of $p \times q$ is called the $p \times q$ pooling layer. The pooling operation is called $p \times q$ pooling.
 
 Let us return to the object edge detection example mentioned at the beginning of this section. Now we will use the output of the convolutional layer as the input for $2\times 2$ maximum pooling. Set the convolutional layer input as `X` and the pooling layer output as `Y`. Whether or not the values of `X[i, j]` and `X[i, j+1]` are different, or `X[i, j+1]` and `X[i, j+2]` are different, the pooling layer outputs all include `Y[i, j]=1`. That is to say, using the $2\times 2$ maximum pooling layer, we can still detect if the pattern recognized by the convolutional layer moves no more than one element in height and width.
 
 As shown below, we implement the forward computation of the pooling layer in the `pool2d` function. This function is very similar to the `corr2d` function in the section on [convolutions](conv-layer.md). The only difference lies in the computation of the output `Y`.
+=======
+A pooling layer with a pooling window shape of $p \times q$
+is called a $p \times q$ pooling layer.
+The pooling operation is called $p \times q$ pooling.
 
-```{.python .input  n=11}
-from mxnet import nd
+Let's return to the object edge detection example
+mentioned at the beginning of this section.
+Now we will use the output of the convolutional layer
+as the input for $2\times 2$ maximum pooling.
+Set the convolutional layer input as `X` and the pooling layer output as `Y`. Whether or not the values of `X[i, j]` and `X[i, j+1]` are different,
+or `X[i, j+1]` and `X[i, j+2]` are different,
+the pooling layer outputs all include `Y[i, j]=1`.
+That is to say, using the $2\times 2$ maximum pooling layer,
+we can still detect if the pattern recognized by the convolutional layer
+moves no more than one element in height and width.
+
+In the code below, we implement the forward computation
+of the pooling layer in the `pool2d` function.
+This function is similar to the `corr2d` function
+in :numref:`sec_conv_layer`.
+However, here we have no kernel, computing the output
+as either the max or the average of each region in the input..
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
+
+```{.python .input  n=3}
+from mxnet import np, npx
 from mxnet.gluon import nn
+npx.set_np()
 
 def pool2d(X, pool_size, mode='max'):
     p_h, p_w = pool_size
-    Y = nd.zeros((X.shape[0] - p_h + 1, X.shape[1] - p_w + 1))
+    Y = np.zeros((X.shape[0] - p_h + 1, X.shape[1] - p_w + 1))
     for i in range(Y.shape[0]):
         for j in range(Y.shape[1]):
             if mode == 'max':
-                Y[i, j] = X[i: i + p_h, j: j + p_w].max()
+                Y[i, j] = np.max(X[i: i + p_h, j: j + p_w])
             elif mode == 'avg':
                 Y[i, j] = X[i: i + p_h, j: j + p_w].mean()
     return Y
@@ -43,8 +115,8 @@ def pool2d(X, pool_size, mode='max'):
 
 We can construct the input array `X` in the above diagram to validate the output of the two-dimensional maximum pooling layer.
 
-```{.python .input  n=13}
-X = nd.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+```{.python .input  n=4}
+X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
 pool2d(X, (2, 2))
 ```
 
@@ -59,7 +131,7 @@ pool2d(X, (2, 2), 'avg')
 Like the convolutional layer, the pooling layer can also change the output shape by padding the two sides of the input height and width and adjusting the window stride. The pooling layer works in the same way as the convolutional layer in terms of padding and strides. We will demonstrate the use of padding and stride in the pooling layer through the two-dimensional maximum pooling layer MaxPool2D in the `nn` module. We first construct an input data of shape `(1, 1, 4, 4)`, where the first two dimensions are batch and channel.
 
 ```{.python .input  n=15}
-X = nd.arange(16).reshape((1, 1, 4, 4))
+X = np.arange(16).reshape(1, 1, 4, 4)
 X
 ```
 
@@ -91,7 +163,7 @@ pool2d(X)
 When processing multi-channel input data, the pooling layer pools each input channel separately, rather than adding the inputs of each channel by channel as in a convolutional layer. This means that the number of output channels for the pooling layer is the same as the number of input channels. Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 
 ```{.python .input  n=9}
-X = nd.concat(X, X + 1, dim=1)
+X = np.concatenate((X, X + 1), axis=1)
 X
 ```
 
@@ -117,8 +189,8 @@ pool2d(X)
 1. What is the computational cost of the pooling layer? Assume that the input to the pooling layer is of size $c\times h\times w$, the pooling window has a shape of $p_h\times p_w$ with a padding of $(p_h, p_w)$ and a stride of $(s_h, s_w)$.
 1. Why do you expect maximum pooling and average pooling to work differently?
 1. Do we need a separate minimum pooling layer? Can you replace it with another operation?
-1. Is there another operation between average and maximum pooling that you could consider (hint - recall the softmax)? Why might it not be so popular?
+1. Is there another operation between average and maximum pooling that you could consider (hint: recall the softmax)? Why might it not be so popular?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2352)
+## [Discussions](https://discuss.mxnet.io/t/2352)
 
 ![](../img/qr_pooling.svg)

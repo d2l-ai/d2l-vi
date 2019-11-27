@@ -1,8 +1,26 @@
 # Fully Convolutional Networks (FCN)
+<<<<<<< HEAD
 
 We previously discussed semantic segmentation using each pixel in an image for category prediction. A fully convolutional network (FCN) uses a convolutional neural network to transform image pixels to pixel categories. Unlike the convolutional neural networks previously introduced, an FCN transforms the height and width of the intermediate layer feature map back to the size of input image through the transposed convolution layer, so that the predictions have a one-to-one correspondence with input image in spatial dimension (height and width). Given a position on the spatial dimension, the output of the channel dimension will be a category prediction of the pixel corresponding to the location.
 
 We will first import the package or module needed for the experiment and then explain the transposed convolution layer.
+=======
+:label:`sec_fcn`
+
+We previously discussed semantic segmentation using each pixel in an image for
+category prediction. A fully convolutional network (FCN)
+:cite:`Long.Shelhamer.Darrell.2015` uses a convolutional neural network to
+transform image pixels to pixel categories. Unlike the convolutional neural
+networks previously introduced, an FCN transforms the height and width of the
+intermediate layer feature map back to the size of input image through the
+transposed convolution layer, so that the predictions have a one-to-one
+correspondence with input image in spatial dimension (height and width). Given a
+position on the spatial dimension, the output of the channel dimension will be a
+category prediction of the pixel corresponding to the location.
+
+We will first import the package or module needed for the experiment and then
+explain the transposed convolution layer.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=2}
 import sys
@@ -10,6 +28,7 @@ sys.path.insert(0, '..')
 
 %matplotlib inline
 import d2l
+<<<<<<< HEAD
 from mxnet import gluon, image, init, nd
 from mxnet.gluon import data as gdata, loss as gloss, model_zoo, nn
 import numpy as np
@@ -66,10 +85,21 @@ In the literature, transposed convolution is also sometimes referred to as fract
 ## Construct a Model
 
 Here, we demonstrate the most basic design of a fully convolutional network model. As shown in Figure 9.11, the fully convolutional network first uses the convolutional neural network to extract image features, then transforms the number of channels into the number of categories through the $1\times 1$ convolution layer, and finally transforms the height and width of the feature map to the size of the input image by using the transposed convolution layer. The model output has the same height and width as the input image and has a one-to-one correspondence in spatial positions. The final output channel contains the category prediction of the pixel of the corresponding spatial position.
+=======
+from mxnet import gluon, image, init, np, npx
+from mxnet.gluon import nn
+
+npx.set_np()
+```
+
+## Constructing a Model
+
+Here, we demonstrate the most basic design of a fully convolutional network model. As shown in :numref:`fig_fcn`, the fully convolutional network first uses the convolutional neural network to extract image features, then transforms the number of channels into the number of categories through the $1\times 1$ convolution layer, and finally transforms the height and width of the feature map to the size of the input image by using the transposed convolution layer :numref:`sec_transposed_conv`. The model output has the same height and width as the input image and has a one-to-one correspondence in spatial positions. The final output channel contains the category prediction of the pixel of the corresponding spatial position.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ![Fully convolutional network. ](../img/fcn.svg)
 
-Below, we use a ResNet-18 model pre-trained on the ImageNet data set to extract image features and record the network instance as `pretrained_net`. As you can see, the last two layers of the model member variable `features` are the global maximum pooling layer `GlobalAvgPool2D` and example flattening layer `Flatten`. The `output` module contains the fully connected layer used for output. These layers are not required for a fully convolutional network.
+Below, we use a ResNet-18 model pre-trained on the ImageNet dataset to extract image features and record the network instance as `pretrained_net`. As you can see, the last two layers of the model member variable `features` are the global maximum pooling layer `GlobalAvgPool2D` and example flattening layer `Flatten`. The `output` module contains the fully connected layer used for output. These layers are not required for a fully convolutional network.
 
 ```{.python .input  n=5}
 pretrained_net = model_zoo.vision.resnet18_v2(pretrained=True)
@@ -84,14 +114,30 @@ for layer in pretrained_net.features[:-2]:
     net.add(layer)
 ```
 
-Given an input of a height and width of 320 and 480 respectively, the forward computation of `net` will reduce the height and width of the input to $1/32$ of the original, i.e. 10 and 15.
+Given an input of a height and width of 320 and 480 respectively, the forward computation of `net` will reduce the height and width of the input to $1/32$ of the original, i.e., 10 and 15.
 
 ```{.python .input  n=7}
-X = nd.random.uniform(shape=(1, 3, 320, 480))
+X = np.random.uniform(size=(1, 3, 320, 480))
 net(X).shape
 ```
 
+<<<<<<< HEAD
 Next, we transform the number of output channels to the number of categories of Pascal VOC2012 (21) through the $1\times 1$ convolution layer. Finally, we need to magnify the height and width of the feature map by a factor of 32 to change them back to the height and width of the input image. Recall the calculation method for the convolution layer output shape described in the section ["Padding and Stride"](../chapter_convolutional-neural-networks/padding-and-strides.md). Because $(320-64+16\times2+32)/32=10$ and $(480-64+16\times2+32)/32=15$, we construct a transposed convolution layer with a stride of 32 and set the height and width of the convolution kernel to 64 and the padding to 16. It is not difficult to see that, if the stride is $s$, the padding is $s/2$ (assuming $s/2$ is an integer), and the height and width of the convolution kernel are $2s$, the transposed convolution kernel will magnify both the height and width of the input by a factor of $s$.
+=======
+Next, we transform the number of output channels to the number of categories of
+Pascal VOC2012 (21) through the $1\times 1$ convolution layer. Finally, we need
+to magnify the height and width of the feature map by a factor of 32 to change
+them back to the height and width of the input image. Recall the calculation
+method for the convolution layer output shape described in
+:numref:`sec_padding`. Because
+$(320-64+16\times2+32)/32=10$ and $(480-64+16\times2+32)/32=15$, we construct a
+transposed convolution layer with a stride of 32 and set the height and width of
+the convolution kernel to 64 and the padding to 16. It is not difficult to see
+that, if the stride is $s$, the padding is $s/2$ (assuming $s/2$ is an integer),
+and the height and width of the convolution kernel are $2s$, the transposed
+convolution kernel will magnify both the height and width of the input by a
+factor of $s$.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=8}
 num_classes = 21
@@ -100,9 +146,9 @@ net.add(nn.Conv2D(num_classes, kernel_size=1),
                            strides=32))
 ```
 
-## Initialize the Transposed Convolution Layer
+## Initializing the Transposed Convolution Layer
 
-We already know that the transposed convolution layer can magnify a feature map. In image processing, sometimes we need to magnify the image, i.e. upsampling. There are many methods for upsampling, and one common method is bilinear interpolation. Simply speaking, in order to get the pixel of the output image at the coordinates $(x, y)$, the coordinates are first mapped to the coordinates of the input image $(x', y')$. This can be done based on the ratio of the size of thee input to the size of the output. The mapped values $x'$ and $y'$ are usually real numbers. Then, we find the four pixels closest to the coordinate $(x', y')$ on the input image. Finally, the pixels of the output image at coordinates $(x, y)$ are calculated based on these four pixels on the input image and their relative distances to $(x', y')$. Upsampling by bilinear interpolation can be implemented by transposed convolution layer of the convolution kernel constructed using the following `bilinear_kernel` function. Due to space limitations, we only give the implementation of the `bilinear_kernel` function and will not discuss the principles of the algorithm.
+We already know that the transposed convolution layer can magnify a feature map. In image processing, sometimes we need to magnify the image, i.e., upsampling. There are many methods for upsampling, and one common method is bilinear interpolation. Simply speaking, in order to get the pixel of the output image at the coordinates $(x, y)$, the coordinates are first mapped to the coordinates of the input image $(x', y')$. This can be done based on the ratio of the size of thee input to the size of the output. The mapped values $x'$ and $y'$ are usually real numbers. Then, we find the four pixels closest to the coordinate $(x', y')$ on the input image. Finally, the pixels of the output image at coordinates $(x, y)$ are calculated based on these four pixels on the input image and their relative distances to $(x', y')$. Upsampling by bilinear interpolation can be implemented by transposed convolution layer of the convolution kernel constructed using the following `bilinear_kernel` function. Due to space limitations, we only give the implementation of the `bilinear_kernel` function and will not discuss the principles of the algorithm.
 
 ```{.python .input  n=9}
 def bilinear_kernel(in_channels, out_channels, kernel_size):
@@ -111,13 +157,13 @@ def bilinear_kernel(in_channels, out_channels, kernel_size):
         center = factor - 1
     else:
         center = factor - 0.5
-    og = np.ogrid[:kernel_size, :kernel_size]
-    filt = (1 - abs(og[0] - center) / factor) * \
-           (1 - abs(og[1] - center) / factor)
-    weight = np.zeros((in_channels, out_channels, kernel_size, kernel_size),
-                      dtype='float32')
+    og = (np.arange(kernel_size).reshape(-1, 1),
+          np.arange(kernel_size).reshape(1, -1))
+    filt = (1 - np.abs(og[0] - center) / factor) * \
+           (1 - np.abs(og[1] - center) / factor)
+    weight = np.zeros((in_channels, out_channels, kernel_size, kernel_size))
     weight[range(in_channels), range(out_channels), :, :] = filt
-    return nd.array(weight)
+    return np.array(weight)
 ```
 
 Now, we will experiment with bilinear interpolation upsampling implemented by transposed convolution layers. Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
@@ -131,12 +177,16 @@ Read the image `X` and record the result of upsampling as `Y`. In order to print
 
 ```{.python .input}
 img = image.imread('../img/catdog.jpg')
-X = img.astype('float32').transpose((2, 0, 1)).expand_dims(axis=0) / 255
+X = np.expand_dims(img.astype('float32').transpose(2, 0, 1), axis=0) / 255
 Y = conv_trans(X)
-out_img = Y[0].transpose((1, 2, 0))
+out_img = Y[0].transpose(1, 2, 0)
 ```
 
+<<<<<<< HEAD
 As you can see, the transposed convolution layer magnifies both the height and width of the image by a factor of 2. It is worth mentioning that, besides to the difference in coordinate scale, the image magnified by bilinear interpolation and original image printed in the ["Object Detection and Bounding Box"](bounding-box.md) section look the same.
+=======
+As you can see, the transposed convolution layer magnifies both the height and width of the image by a factor of 2. It is worth mentioning that, besides to the difference in coordinate scale, the image magnified by bilinear interpolation and original image printed in :numref:`sec_bbox` look the same.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input}
 d2l.set_figsize()
@@ -154,9 +204,9 @@ net[-1].initialize(init.Constant(bilinear_kernel(num_classes, num_classes,
 net[-2].initialize(init=init.Xavier())
 ```
 
-## Read the Data Set
+## Reading the Dataset
 
-We read the data set using the method described in the previous section. Here, we specify shape of the randomly cropped output image as $320\times 480$, so both the height and width are divisible by 32.
+We read the dataset using the method described in the previous section. Here, we specify shape of the randomly cropped output image as $320\times 480$, so both the height and width are divisible by 32.
 
 ```{.python .input  n=13}
 crop_size, batch_size, colormap2label = (320, 480), 32, nd.zeros(256**3)
@@ -181,9 +231,15 @@ Now we can start training the model. The loss function and accuracy calculation 
 ctx = d2l.try_all_gpus()
 loss = gloss.SoftmaxCrossEntropyLoss(axis=1)
 net.collect_params().reset_ctx(ctx)
+<<<<<<< HEAD
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1,
                                                       'wd': 1e-3})
 d2l.train(train_iter, test_iter, net, loss, trainer, ctx, num_epochs=5)
+=======
+trainer = gluon.Trainer(net.collect_params(), 'sgd',
+                        {'learning_rate': lr, 'wd': wd})
+d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, ctx)
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 ## Prediction
@@ -193,21 +249,21 @@ During predicting, we need to standardize the input image in each channel and tr
 ```{.python .input  n=13}
 def predict(img):
     X = test_iter._dataset.normalize_image(img)
-    X = X.transpose((2, 0, 1)).expand_dims(axis=0)
-    pred = nd.argmax(net(X.as_in_context(ctx[0])), axis=1)
-    return pred.reshape((pred.shape[1], pred.shape[2]))
+    X = np.expand_dims(X.transpose(2, 0, 1), axis=0)
+    pred = net(X.as_in_context(ctx[0])).argmax(axis=1)
+    return pred.reshape(pred.shape[1], pred.shape[2])
 ```
 
-To visualize the predicted categories for each pixel, we map the predicted categories back to their labeled colors in the data set.
+To visualize the predicted categories for each pixel, we map the predicted categories back to their labeled colors in the dataset.
 
 ```{.python .input  n=14}
 def label2image(pred):
-    colormap = nd.array(d2l.VOC_COLORMAP, ctx=ctx[0], dtype='uint8')
+    colormap = np.array(d2l.VOC_COLORMAP, ctx=ctx[0], dtype='uint8')
     X = pred.astype('int32')
     return colormap[X, :]
 ```
 
-The size and shape of the images in the test data set vary. Because the model uses a transposed convolution layer with a stride of 32, when the height or width of the input image is not divisible by 32, the height or width of the transposed convolution layer output deviates from the size of the input image. In order to solve this problem, we can crop multiple rectangular areas in the image with heights and widths as integer multiples of 32, and then perform forward computation on the pixels in these areas. When combined, these areas must completely cover the input image. When a pixel is covered by multiple areas, the average of the transposed convolution layer output in the forward computation of the different areas can be used as an input for the softmax operation to predict the category.
+The size and shape of the images in the test dataset vary. Because the model uses a transposed convolution layer with a stride of 32, when the height or width of the input image is not divisible by 32, the height or width of the transposed convolution layer output deviates from the size of the input image. In order to solve this problem, we can crop multiple rectangular areas in the image with heights and widths as integer multiples of 32, and then perform forward computation on the pixels in these areas. When combined, these areas must completely cover the input image. When a pixel is covered by multiple areas, the average of the transposed convolution layer output in the forward computation of the different areas can be used as an input for the softmax operation to predict the category.
 
 For the sake of simplicity, we only read a few large test images and crop an area with a shape of $320\times480$ from the top-left corner of the image. Only this area is used for prediction. For the input image, we print the cropped area first, then print the predicted result, and finally print the labeled category.
 
@@ -243,6 +299,6 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n);
 
 [2] Dumoulin, V., & Visin, F. (2016). A guide to convolution arithmetic for deep learning. arXiv preprint arXiv:1603.07285.
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2454)
+## [Discussions](https://discuss.mxnet.io/t/2454)
 
 ![](../img/qr_fcn.svg)

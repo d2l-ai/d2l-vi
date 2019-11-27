@@ -1,4 +1,46 @@
+<<<<<<< HEAD
 # Forward Propagation, Back Propagation, and Computational Graphs
+=======
+# Forward Propagation, Backward Propagation, and Computational Graphs
+:label:`sec_backprop`
+
+In the previous sections, we used minibatch
+stochastic gradient descent to train our models.
+When we implemented the algorithm,
+we only worried about the calculations involved
+in *forward propagation* through the model.
+In other words, we implemented the calculations
+required for the model to generate output
+corresponding to come given input,
+but when it came time to calculate the gradients of each of our parameters,
+we invoked the `backward` function,
+relying on the `autograd` module to figure out what to do.
+
+The automatic calculation of gradients profoundly simplifies
+the implementation of deep learning algorithms.
+Before automatic differentiation,
+even small changes to complicated models would require
+recalculating lots of derivatives by hand.
+Even academic papers would too often have to allocate
+lots of page real estate to deriving update rules.
+
+While we plan to continue relying on `autograd`,
+and we have already come a long way
+without every discussing how these gradients
+are calculated efficiently under the hood,
+it is important that you know
+how updates are actually calculated
+if you want to go beyond a shallow understanding of deep learning.
+
+In this section, we will peel back the curtain on some of the details
+of backward propagation (more commonly called *backpropagation* or *backprop*).
+To convey some insight for both the techniques and how they are implemented,
+we will rely on both mathematics and computational graphs
+to describe the mechanics behind neural network computations.
+To start, we will focus our exposition on
+a simple multilayer perceptron with a single hidden layer
+and $\ell_2$ norm regularization.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 In the previous sections we used a mini-batch stochastic gradient descent optimization algorithm to train the model. During the implementation of the algorithm, we only calculated the forward propagation of the model, which is to say, we calculated the model output for the input, then called the auto-generated `backward` function to then finally calculate the gradient through the `autograd` module. The automatic gradient calculation, when based on back-propagation, significantly simplifies the implementation of the deep learning model training algorithm. In this section we will use both mathematical and computational graphs to describe forward and back propagation. More specifically, we will explain forward and back propagation through a sample model with a single hidden layer perceptron with $\ell_2$ norm regularization. This section will help understand a bit better what goes on behind the scenes when we invoke a deep network.
 
@@ -8,9 +50,17 @@ Forward propagation refers to the calculation and storage of intermediate variab
 
 For the sake of simplicity, let’s assume that the input example is $\mathbf{x}\in \mathbb{R}^d$ and there is no bias term. Here the intermediate variable is:
 
-$$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x}$$
+$$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x},$$
 
+<<<<<<< HEAD
 $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ is the weight parameter of the hidden layer. After entering the intermediate variable $\mathbf{z}\in \mathbb{R}^h$ into the activation function $\phi$ operated by the basic elements, we will obtain a hidden layer variable with the vector length of $h$,
+=======
+where $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$
+is the weight parameter of the hidden layer.
+After entering the intermediate variable $\mathbf{z}\in \mathbb{R}^h$
+into the activation function $\phi$ operated by the basic elements,
+we will obtain a hidden layer variable with the vector length of $h$,
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 $$\mathbf{h}= \phi (\mathbf{z}).$$
 
@@ -22,7 +72,12 @@ Assuming the loss function is $l$ and the example label is $y$, we can then calc
 
 $$L = l(\mathbf{o}, y).$$
 
+<<<<<<< HEAD
 According to the definition of $\ell_2$ norm regularization, given the hyper-parameter $\lambda$, the regularization term is
+=======
+According to the definition of $\ell_2$ norm regularization,
+given the hyperparameter $\lambda$, the regularization term is
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 $$s = \frac{\lambda}{2} \left(\|\mathbf{W}^{(1)}\|_F^2 + \|\mathbf{W}^{(2)}\|_F^2\right),$$
 
@@ -30,14 +85,31 @@ where the Frobenius norm of the matrix is equivalent to the calculation of the $
 
 $$J = L + s.$$
 
+<<<<<<< HEAD
 We refer to $J$ as the objective function of a given data example and refer to it as the ‘objective function’ in the following discussion.
+=======
+We refer to $J$ as the objective function of a given data example
+and refer to it as the *objective function* in the following discussion.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 
 ## Computational Graph of Forward Propagation
 
+<<<<<<< HEAD
 Plotting computational graphs helps us visualize the dependencies of operators and variables within the calculation. The figure below contains the graph associated with the simple network described above. The lower left corner signifies the input and the upper right corner the output. Notice that the direction of the arrows (which illustrate data flow) are primarily rightward and upward.
+=======
+Plotting computational graphs helps us visualize
+the dependencies of operators and variables within the calculation.
+:numref:`fig_forward` contains the graph associated
+with the simple network described above.
+The lower-left corner signifies the input
+and the upper right corner the output.
+Notice that the direction of the arrows (which illustrate data flow)
+are primarily rightward and upward.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ![Computational Graph](../img/forward.svg)
+:label:`fig_forward`
 
 
 ## Back Propagation
@@ -46,11 +118,38 @@ Back propagation refers to the method of calculating the gradient of neural netw
 
 $$\frac{\partial \mathsf{Z}}{\partial \mathsf{X}} = \text{prod}\left(\frac{\partial \mathsf{Z}}{\partial \mathsf{Y}}, \frac{\partial \mathsf{Y}}{\partial \mathsf{X}}\right).$$
 
+<<<<<<< HEAD
 Here we use the $\text{prod}$ operator to multiply its arguments after the necessary operations, such as transposition and swapping input positions have been carried out. For vectors this is straightforward: it is simply matrix-matrix multiplication and for higher dimensional tensors we use the appropriate counterpart. The operator $\text{prod}$ hides all the notation overhead.
 
 The parameters of the simple network with one hidden layer are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$. The objective of back propagation is to calculate the gradients $\partial J/\partial \mathbf{W}^{(1)}$ and $\partial J/\partial \mathbf{W}^{(2)}$. To accompish this we will apply the chain rule and calculate in turn the gradient of each intermediate variable and parameter. The order of calculations are reversed relative to those performed in forward propagation, since we need to start with the outcome of the compute graph and work our way towards the parameters. The first step is to calculate the gradients of the objective function $J=L+s$ with respect to the loss term $L$ and the regularization term $s$.
+=======
+Here we use the $\text{prod}$ operator
+to multiply its arguments after the necessary operations,
+such as transposition and swapping input positions have been carried out.
+For vectors, this is straightforward:
+it is simply matrix-matrix multiplication
+and for higher dimensional tensors we use the appropriate counterpart.
+The operator $\text{prod}$ hides all the notation overhead.
 
-$$\frac{\partial J}{\partial L} = 1 \text{ and } \frac{\partial J}{\partial s} = 1$$
+The parameters of the simple network with one hidden layer
+are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$.
+The objective of backpropagation is to
+calculate the gradients $\partial J/\partial \mathbf{W}^{(1)}$
+and $\partial J/\partial \mathbf{W}^{(2)}$.
+To accomplish this, we will apply the chain rule
+and calculate, in turn, the gradient of
+each intermediate variable and parameter.
+The order of calculations are reversed
+relative to those performed in forward propagation,
+since we need to start with the outcome of the compute graph
+and work our way towards the parameters.
+The first step is to calculate the gradients
+of the objective function $J=L+s$
+with respect to the loss term $L$
+and the regularization term $s$.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
+
+$$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
 
 Next we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
 
@@ -58,21 +157,21 @@ $$
 \frac{\partial J}{\partial \mathbf{o}}
 = \text{prod}\left(\frac{\partial J}{\partial L}, \frac{\partial L}{\partial \mathbf{o}}\right)
 = \frac{\partial L}{\partial \mathbf{o}}
-\in \mathbb{R}^q
+\in \mathbb{R}^q.
 $$
 
 Next we calculate the gradients of the regularization term with respect to both parameters.
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
-\text{ and }
-\frac{\partial s}{\partial \mathbf{W}^{(2)}} = \lambda \mathbf{W}^{(2)}$$
+\; \text{and} \;
+\frac{\partial s}{\partial \mathbf{W}^{(2)}} = \lambda \mathbf{W}^{(2)}.$$
 
 Now we are able calculate the gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ of the model parameters closest to the output layer. Using the chain rule yields:
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(2)}}
 = \text{prod}\left(\frac{\partial J}{\partial \mathbf{o}}, \frac{\partial \mathbf{o}}{\partial \mathbf{W}^{(2)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(2)}}\right)
-= \frac{\partial J}{\partial \mathbf{o}} \mathbf{h}^\top + \lambda \mathbf{W}^{(2)}
+= \frac{\partial J}{\partial \mathbf{o}} \mathbf{h}^\top + \lambda \mathbf{W}^{(2)}.
 $$
 
 To obtain the gradient with respect to $\mathbf{W}^{(1)}$ we need to continue back propagation along the output layer to the hidden layer. The gradient $\partial J/\partial \mathbf{h}\in \mathbb{R}^h$ of the hidden layer variable is
@@ -83,7 +182,15 @@ $$
 = {\mathbf{W}^{(2)}}^\top \frac{\partial J}{\partial \mathbf{o}}.
 $$
 
+<<<<<<< HEAD
 Since the activation function $\phi$ applies element-wise, calculating the gradient $\partial J/\partial \mathbf{z}\in \mathbb{R}^h$ of the intermediate variable $\mathbf{z}$ requires the use of the element-wise multiplication operator. We denote it by $\odot$.
+=======
+Since the activation function $\phi$ applies elementwise,
+calculating the gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$
+of the intermediate variable $\mathbf{z}$
+requires that we use the elementwise multiplication operator,
+which we denote by $\odot$.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
@@ -101,7 +208,25 @@ $$
 
 ## Training a Model
 
+<<<<<<< HEAD
 When training networks, forward and backward propagation depend on each other. In particular, for forward propagation we traverse the compute graph in the direction of dependencies and compute all the variables on its path. These are then used for backpropagation where the compute order on the graph is reversed. One of the consequences is that we need to retain the intermediate values until backpropagation is complete. This is also one of the reasons why backpropagation requires significantly more memory than plain 'inference' - we end up computing tensors as gradients and need to retain all the intermediate variables to invoke the chain rule. Another reason is that we typically train with minibatches containing more than one variable, thus more intermediate activations need to be stored.
+=======
+When training networks, forward and backward propagation depend on each other. In particular, for forward propagation,
+we traverse the compute graph in the direction of dependencies
+and compute all the variables on its path.
+These are then used for backpropagation
+where the compute order on the graph is reversed.
+One of the consequences is that we need to retain
+the intermediate values until backpropagation is complete.
+This is also one of the reasons why backpropagation
+requires significantly more memory than plain "inference"---we end up
+computing tensors as gradients
+and need to retain all the intermediate variables
+to invoke the chain rule.
+Another reason is that we typically train
+with minibatches containing more than one variable,
+thus more intermediate activations need to be stored.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ## Summary
 
@@ -114,7 +239,7 @@ When training networks, forward and backward propagation depend on each other. I
 ## Exercises
 
 1. Assume that the inputs $\mathbf{x}$ are matrices. What is the dimensionality of the gradients?
-1. Add a bias to the hidden layer of the model described in this chapter.
+1. Add a bias to the hidden layer of the model described in this section.
     * Draw the corresponding compute graph.
     * Derive the forward and backward propagation equations.
 1. Compute the memory footprint for training and inference in model described in the current chapter.
@@ -123,6 +248,6 @@ When training networks, forward and backward propagation depend on each other. I
     * Can you partition it over more than one GPU?
     * What are the advantages and disadvantages over training on a smaller minibatch?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2344)
+## [Discussions](https://discuss.mxnet.io/t/2344)
 
 ![](../img/qr_backprop.svg)

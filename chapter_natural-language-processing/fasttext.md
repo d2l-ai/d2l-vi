@@ -1,4 +1,8 @@
 # Subword Embedding (fastText)
+<<<<<<< HEAD
+=======
+:label:`sec_fasttext`
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 English words usually have internal structures and formation methods. For example, we can deduce the relationship between "dog", "dogs", and "dogcatcher" by their spelling. All these words have the same root, "dog", but they use different suffixes to change the meaning of the word. Moreover, this association can be extended to other words. For example, the relationship between "dog" and "dogs" is just like the relationship between "cat" and "cats". The relationship between "boy" and "boyfriend" is just like the relationship between "girl" and "girlfriend". This characteristic is not unique to English. In French and Spanish, a lot of verbs can have more than 40 different forms depending on the context. In Finnish, a noun may have more than 15 forms. In fact, morphology, which is an important branch of linguistics, studies the internal structure and formation of words.
 
@@ -30,11 +34,15 @@ The rest of the fastText process is consistent with the skip-gram model, so it i
 
 
 
+<<<<<<< HEAD
 
 ## Reference
 
 [1] Bojanowski, P., Grave, E., Joulin, A., & Mikolov, T. (2016). Enriching word vectors with subword information. arXiv preprint arXiv:1607.04606.
 
 ## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2388)
+=======
+## [Discussions](https://discuss.mxnet.io/t/2388)
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ![](../img/qr_fasttext.svg)

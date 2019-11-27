@@ -1,6 +1,15 @@
 # Single Shot Multibox Detection (SSD)
 
+<<<<<<< HEAD
 In the previous few sections, we have introduced bounding boxes, anchor boxes, multiscale object detection, and data sets. Now, we will use this background knowledge to construct an object detection model: single shot multibox detection (SSD)[1]. This quick and easy model is already widely used. Some of the design concepts and implementation details of this model are also applicable to other object detection models.
+=======
+In the previous few sections, we have introduced bounding boxes, anchor boxes,
+multiscale object detection, and datasets. Now, we will use this background
+knowledge to construct an object detection model: single shot multibox detection
+(SSD) :cite:`Liu.Anguelov.Erhan.ea.2016`. This quick and easy model is already
+widely used. Some of the design concepts and implementation details of this
+model are also applicable to other object detection models.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 
 ## Model
@@ -14,11 +23,39 @@ Next, we will describe the implementation of the modules in the figure. First, w
 
 ### Category Prediction Layer
 
+<<<<<<< HEAD
 Set the number of object categories to $q$. In this case, the number of anchor box categories is $q+1$, with 0 indicating an anchor box that only contains background. For a certain scale, set the height and width of the feature map to $h$ and $w$, respectively. If we use each element as the center to generate $a$ anchor boxes, we need to classify a total of $hwa$ anchor boxes. If we use a fully connected layer (FCN) for the output, this will likely result in an excessive number of model parameters. Recall how we used convolutional layer channels to output category predictions in the ["Network in Network (NiN)"](../chapter_convolutional-neural-networks/nin.md) section. SSD uses the same method to reduce the model complexity.
 
 Specifically, the category prediction layer uses a convolutional layer that maintains the input height and width. Thus, the output and input have a one-to-one correspondence to the spatial coordinates along the width and height of the feature map. Assuming that the output and input have the same spatial coordinates $(x,y)$, the channel for the coordinates $(x,y)$ on the output feature map contains the category predictions for all anchor boxes generated using the input feature map coordinates $(x,y)$ as the center. Therefore, there are $a(q+1)$ output channels, with the output channels indexed as $i(q+1) + j$ ($0 \leq j \leq q$) representing the predictions of the category index $j$ for the anchor box index $i$.
 
 Now, we will define a category prediction layer of this type. After we specify the parameters $a$ and $q$, it uses a $3\times3$ convolutional layer with a padding of 1. The heights and widths of the input and output of this convolutional layer remain unchanged.
+=======
+Set the number of object categories to $q$. In this case, the number of anchor
+box categories is $q+1$, with 0 indicating an anchor box that only contains
+background. For a certain scale, set the height and width of the feature map to
+$h$ and $w$, respectively. If we use each element as the center to generate $a$
+anchor boxes, we need to classify a total of $hwa$ anchor boxes. If we use a
+fully connected layer (FCN) for the output, this will likely result in an
+excessive number of model parameters. Recall how we used convolutional layer
+channels to output category predictions in :numref:`sec_nin`. SSD uses the
+same method to reduce the model complexity.
+
+Specifically, the category prediction layer uses a convolutional layer that
+maintains the input height and width. Thus, the output and input have a
+one-to-one correspondence to the spatial coordinates along the width and height
+of the feature map. Assuming that the output and input have the same spatial
+coordinates $(x, y)$, the channel for the coordinates $(x, y)$ on the output
+feature map contains the category predictions for all anchor boxes generated
+using the input feature map coordinates $(x, y)$ as the center. Therefore, there
+are $a(q+1)$ output channels, with the output channels indexed as $i(q+1) + j$
+($0 \leq j \leq q$) representing the predictions of the category index $j$ for
+the anchor box index $i$.
+
+Now, we will define a category prediction layer of this type. After we specify
+the parameters $a$ and $q$, it uses a $3\times3$ convolutional layer with a
+padding of 1. The heights and widths of the input and output of this
+convolutional layer remain unchanged.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=1}
 import sys
@@ -26,9 +63,16 @@ sys.path.insert(0, '..')
 
 %matplotlib inline
 import d2l
+<<<<<<< HEAD
 from mxnet import autograd, contrib, gluon, image, init, nd
 from mxnet.gluon import loss as gloss, nn
 import time
+=======
+from mxnet import autograd, contrib, gluon, image, init, np, npx
+from mxnet.gluon import nn
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
+
+npx.set_np()
 
 def cls_predictor(num_anchors, num_classes):
     return nn.Conv2D(num_anchors * (num_classes + 1), kernel_size=3,
@@ -55,19 +99,19 @@ def forward(x, block):
     block.initialize()
     return block(x)
 
-Y1 = forward(nd.zeros((2, 8, 20, 20)), cls_predictor(5, 10))
-Y2 = forward(nd.zeros((2, 16, 10, 10)), cls_predictor(3, 10))
+Y1 = forward(np.zeros((2, 8, 20, 20)), cls_predictor(5, 10))
+Y2 = forward(np.zeros((2, 16, 10, 10)), cls_predictor(3, 10))
 (Y1.shape, Y2.shape)
 ```
 
-The channel dimension contains the predictions for all anchor boxes with the same center. We first move the channel dimension to the final dimension. Because the batch size is the same for all scales, we can convert the prediction results to binary format (batch size, height $\times$ width $\times$ number of channels) to facilitate subsequent concatenation on the 1st dimension.
+The channel dimension contains the predictions for all anchor boxes with the same center. We first move the channel dimension to the final dimension. Because the batch size is the same for all scales, we can convert the prediction results to binary format (batch size, height $\times$ width $\times$ number of channels) to facilitate subsequent concatenation on the $1^{\mathrm{st}}$ dimension.
 
 ```{.python .input  n=4}
 def flatten_pred(pred):
-    return pred.transpose((0, 2, 3, 1)).flatten()
+    return npx.batch_flatten(pred.transpose(0, 2, 3, 1))
 
 def concat_preds(preds):
-    return nd.concat(*[flatten_pred(p) for p in preds], dim=1)
+    return np.concatenate([flatten_pred(p) for p in preds], axis=1)
 ```
 
 Thus, regardless of the different shapes of `Y1` and `Y2`, we can still concatenate the prediction results for the two different scales of the same batch.
@@ -93,8 +137,13 @@ def down_sample_blk(num_channels):
 
 By testing forward computation in the height and width downsample block, we can see that it changes the number of input channels and halves the height and width.
 
+<<<<<<< HEAD
 ```{.python .input  n=8}
 forward(nd.zeros((2, 3, 20, 20)), down_sample_blk(10)).shape
+=======
+```{.python .input  n=7}
+forward(np.zeros((2, 3, 20, 20)), down_sample_blk(10)).shape
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 ### Base Network Block
@@ -108,7 +157,7 @@ def base_net():
         blk.add(down_sample_blk(num_filters))
     return blk
 
-forward(nd.zeros((2, 3, 256, 256)), base_net()).shape
+forward(np.zeros((2, 3, 256, 256)), base_net()).shape
 ```
 
 ### The Complete Model
@@ -131,7 +180,7 @@ Now, we will define the forward computation process for each module. In contrast
 ```{.python .input  n=11}
 def blk_forward(X, blk, size, ratio, cls_predictor, bbox_predictor):
     Y = blk(X)
-    anchors = contrib.ndarray.MultiBoxPrior(Y, sizes=size, ratios=ratio)
+    anchors = npx.multibox_prior(Y, sizes=size, ratios=ratio)
     cls_preds = cls_predictor(Y)
     bbox_preds = bbox_predictor(Y)
     return (Y, anchors, cls_preds, bbox_preds)
@@ -169,17 +218,20 @@ class TinySSD(nn.Block):
                 getattr(self, 'cls_%d' % i), getattr(self, 'bbox_%d' % i))
         # In the reshape function, 0 indicates that the batch size remains
         # unchanged
-        return (nd.concat(*anchors, dim=1),
-                concat_preds(cls_preds).reshape(
-                    (0, -1, self.num_classes + 1)), concat_preds(bbox_preds))
+        anchors = np.concatenate(anchors, axis=1)
+        cls_preds = concat_preds(cls_preds)
+        cls_preds = cls_preds.reshape(
+            cls_preds.shape[0], -1, self.num_classes + 1)
+        bbox_preds = concat_preds(bbox_preds)
+        return anchors, cls_preds, bbox_preds
 ```
 
-We now create an SSD model instance and use it to perform forward computation on image mini-batch `X`, which has a height and width of 256 pixels. As we verified previously, the first module outputs a feature map with the shape $32 \times 32$. Because modules two to four are height and width downsample blocks, module five is a global pooling layer, and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
+We now create an SSD model instance and use it to perform forward computation on image minibatch `X`, which has a height and width of 256 pixels. As we verified previously, the first module outputs a feature map with the shape $32 \times 32$. Because modules two to four are height and width downsample blocks, module five is a global pooling layer, and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 
 ```{.python .input}
 net = TinySSD(num_classes=1)
 net.initialize()
-X = nd.zeros((32, 3, 256, 256))
+X = np.zeros((32, 3, 256, 256))
 anchors, cls_preds, bbox_preds = net(X)
 
 print('output anchors:', anchors.shape)
@@ -193,14 +245,18 @@ Now, we will explain, step by step, how to train the SSD model for object detect
 
 ### Data Reading and Initialization
 
-We read the Pikachu data set we created in the previous section.
+We read the Pikachu dataset we created in the previous section.
 
 ```{.python .input  n=14}
 batch_size = 32
 train_iter, _ = d2l.load_data_pikachu(batch_size)
 ```
 
+<<<<<<< HEAD
 There is 1 category in the Pikachu data set. After defining the module, we need to initialize the model parameters and define the optimization algorithm.
+=======
+There is 1 category in the Pikachu dataset. After defining the module, we need to initialize the model parameters and define the optimization algorithm.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 ```{.python .input  n=15}
 ctx, net = d2l.try_gpu(), TinySSD(num_classes=1)
@@ -209,7 +265,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd',
                         {'learning_rate': 0.2, 'wd': 5e-4})
 ```
 
-### Define Loss and Evaluation Functions
+### Defining Loss and Evaluation Functions
 
 Object detection is subject to two types of losses. The first is anchor box category loss. For this, we can simply reuse the cross-entropy loss function we used in image classification. The second loss is positive anchor box offset loss. Offset prediction is a normalization problem. However, here, we do not use the squared loss introduced previously. Rather, we use the $L_1$ norm loss, which is the absolute value of the difference between the predicted value and the ground-truth value. The mask variable `bbox_masks` removes negative anchor boxes and padding anchor boxes from the loss calculation. Finally, we add the anchor box category and offset losses to find the final loss function for the model.
 
@@ -229,15 +285,15 @@ We can use the accuracy rate to evaluate the classification results. As we use t
 def cls_eval(cls_preds, cls_labels):
     # Because the category prediction results are placed in the final
     # dimension, argmax must specify this dimension
-    return (cls_preds.argmax(axis=-1) == cls_labels).sum().asscalar()
+    return float((cls_preds.argmax(axis=-1) == cls_labels).sum())
 
 def bbox_eval(bbox_preds, bbox_labels, bbox_masks):
-    return ((bbox_labels - bbox_preds) * bbox_masks).abs().sum().asscalar()
+    return float((np.abs((bbox_labels - bbox_preds) * bbox_masks)).sum())
 ```
 
-### Train the Model
+### Training the Model
 
-During model training, we must generate multiscale anchor boxes (`anchors`) in the model's forward computation process and predict the category (`cls_preds`) and offset (`bbox_preds`) for each anchor box. Afterwards, we label the category (`cls_labels`) and offset (`bbox_labels`) of each generated anchor box based on the label information `Y`. Finally, we calculate the loss function using the predicted and labeled category and offset values. To simplify the code, we do not evaluate the training data set here.
+During model training, we must generate multiscale anchor boxes (`anchors`) in the model's forward computation process and predict the category (`cls_preds`) and offset (`bbox_preds`) for each anchor box. Afterwards, we label the category (`cls_labels`) and offset (`bbox_labels`) of each generated anchor box based on the label information `Y`. Finally, we calculate the loss function using the predicted and labeled category and offset values. To simplify the code, we do not evaluate the training dataset here.
 
 ```{.python .input  n=19}
 for epoch in range(20):
@@ -252,14 +308,15 @@ for epoch in range(20):
             # offset of each
             anchors, cls_preds, bbox_preds = net(X)
             # Label the category and offset of each anchor box
-            bbox_labels, bbox_masks, cls_labels = contrib.nd.MultiBoxTarget(
-                anchors, Y, cls_preds.transpose((0, 2, 1)))
+            bbox_labels, bbox_masks, cls_labels = npx.multibox_target(
+                anchors, Y, cls_preds.transpose(0, 2, 1))
             # Calculate the loss function using the predicted and labeled
             # category and offset values
             l = calc_loss(cls_preds, cls_labels, bbox_preds, bbox_labels,
                           bbox_masks)
         l.backward()
         trainer.step(batch_size)
+<<<<<<< HEAD
         acc_sum += cls_eval(cls_preds, cls_labels)
         n += cls_labels.size
         mae_sum += bbox_eval(bbox_preds, bbox_labels, bbox_masks)
@@ -268,6 +325,15 @@ for epoch in range(20):
     if (epoch + 1) % 5 == 0:
         print('epoch %2d, class err %.2e, bbox mae %.2e, time %.1f sec' % (
             epoch + 1, 1 - acc_sum / n, mae_sum / m, time.time() - start))
+=======
+        metric.add(cls_eval(cls_preds, cls_labels), cls_labels.size,
+                   bbox_eval(bbox_preds, bbox_labels, bbox_masks),
+                   bbox_labels.size)
+    cls_err, bbox_mae = 1-metric[0]/metric[1], metric[2]/metric[3]
+    animator.add(epoch+1, (cls_err, bbox_mae))
+print('class err %.2e, bbox mae %.2e' % (cls_err, bbox_mae))
+print('%.1f exampes/sec on %s' % (train_iter.num_image/timer.stop(), ctx))
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 ## Prediction
@@ -277,7 +343,7 @@ In the prediction stage, we want to detect all objects of interest in the image.
 ```{.python .input  n=20}
 img = image.imread('../img/pikachu.jpg')
 feature = image.imresize(img, 256, 256).astype('float32')
-X = feature.transpose((2, 0, 1)).expand_dims(axis=0)
+X = np.expand_dims(feature.transpose(2, 0, 1), axis=0)
 ```
 
 Using the `MultiBoxDetection` function, we predict the bounding boxes based on the anchor boxes and their predicted offsets. Then, we use non-maximum suppression to remove similar bounding boxes.
@@ -285,9 +351,9 @@ Using the `MultiBoxDetection` function, we predict the bounding boxes based on t
 ```{.python .input  n=21}
 def predict(X):
     anchors, cls_preds, bbox_preds = net(X.as_in_context(ctx))
-    cls_probs = cls_preds.softmax().transpose((0, 2, 1))
-    output = contrib.nd.MultiBoxDetection(cls_probs, bbox_preds, anchors)
-    idx = [i for i, row in enumerate(output[0]) if row[0].asscalar() != -1]
+    cls_probs = npx.softmax(cls_preds).transpose(0, 2, 1)
+    output = npx.multibox_detection(cls_probs, bbox_preds, anchors)
+    idx = [i for i, row in enumerate(output[0]) if row[0] != -1]
     return output[0, idx]
 
 output = predict(X)
@@ -301,11 +367,11 @@ d2l.set_figsize((5, 5))
 def display(img, output, threshold):
     fig = d2l.plt.imshow(img.asnumpy())
     for row in output:
-        score = row[1].asscalar()
+        score = float(row[1])
         if score < threshold:
             continue
         h, w = img.shape[0:2]
-        bbox = [row[2:6] * nd.array((w, h, w, h), ctx=row.context)]
+        bbox = [row[2:6] * np.array((w, h, w, h), ctx=row.context)]
         d2l.show_bboxes(fig.axes, bbox, '%.2f' % score, 'w')
 
 display(img, output, threshold=0.3)
@@ -325,7 +391,7 @@ display(img, output, threshold=0.3)
 
 ### Loss Function
 
-For the predicted offsets, replace $L_1$ norm loss with $L_1$ regularization loss. This loss function uses a square function around zero for greater smoothness. This is the regularized area controlled by the hyper-parameter $\sigma$:
+For the predicted offsets, replace $L_1$ norm loss with $L_1$ regularization loss. This loss function uses a square function around zero for greater smoothness. This is the regularized area controlled by the hyperparameter $\sigma$:
 
 $$
 f(x) =
@@ -340,11 +406,11 @@ When $\sigma$ is large, this loss is similar to the $L_1$ norm loss. When the va
 ```{.python .input  n=23}
 sigmas = [10, 1, 0.5]
 lines = ['-', '--', '-.']
-x = nd.arange(-2, 2, 0.1)
+x = np.arange(-2, 2, 0.1)
 d2l.set_figsize()
 
 for l, s in zip(lines, sigmas):
-    y = nd.smooth_l1(x, scalar=s)
+    y = npx.smooth_l1(x, scalar=s)
     d2l.plt.plot(x.asnumpy(), y.asnumpy(), l, label='sigma=%.1f' % s)
 d2l.plt.legend();
 ```
@@ -357,9 +423,9 @@ As you can see, by increasing $\gamma$, we can effectively reduce the loss when 
 
 ```{.python .input  n=24}
 def focal_loss(gamma, x):
-    return -(1 - x) ** gamma * x.log()
+    return -(1 - x) ** gamma * np.log(x)
 
-x = nd.arange(0.01, 1, 0.01)
+x = np.arange(0.01, 1, 0.01)
 for l, gamma in zip(lines, [0, 1, 5]):
     y = d2l.plt.plot(x.asnumpy(), focal_loss(gamma, x).asnumpy(), l,
                      label='gamma=%.1f' % gamma)
@@ -379,6 +445,6 @@ d2l.plt.legend();
 
 [2] Lin, T. Y., Goyal, P., Girshick, R., He, K., & Dollár, P. (2018). Focal loss for dense object detection. IEEE transactions on pattern analysis and machine intelligence.
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2453)
+## [Discussions](https://discuss.mxnet.io/t/2453)
 
 ![](../img/qr_ssd.svg)

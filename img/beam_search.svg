@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="364pt" height="234pt" viewBox="0 0 364 234" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="363pt" height="234pt" viewBox="0 0 363 234" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -27,7 +27,11 @@
 <path style="stroke:none;" d="M 2.328125 -0.703125 L 2.4375 -0.015625 C 2.207031 0.0351562 2.007812 0.0625 1.84375 0.0625 C 1.550781 0.0625 1.328125 0.015625 1.171875 -0.078125 C 1.015625 -0.171875 0.898438 -0.289062 0.828125 -0.4375 C 0.765625 -0.582031 0.734375 -0.890625 0.734375 -1.359375 L 0.734375 -4.046875 L 0.15625 -4.046875 L 0.15625 -4.671875 L 0.734375 -4.671875 L 0.734375 -5.828125 L 1.53125 -6.296875 L 1.53125 -4.671875 L 2.328125 -4.671875 L 2.328125 -4.046875 L 1.53125 -4.046875 L 1.53125 -1.328125 C 1.53125 -1.097656 1.539062 -0.953125 1.5625 -0.890625 C 1.59375 -0.828125 1.640625 -0.773438 1.703125 -0.734375 C 1.765625 -0.691406 1.851562 -0.671875 1.96875 -0.671875 C 2.0625 -0.671875 2.179688 -0.679688 2.328125 -0.703125 Z M 2.328125 -0.703125 "/>
 </symbol>
 <symbol overflow="visible" id="glyph0-8">
+<<<<<<< HEAD:img/beam_search.svg
 <path style="stroke:none;" d="M 0.59375 1.78125 L 0.59375 -4.671875 L 1.3125 -4.671875 L 1.3125 -4.0625 C 1.476562 -4.300781 1.664062 -4.476562 1.875 -4.59375 C 2.09375 -4.707031 2.359375 -4.765625 2.671875 -4.765625 C 3.066406 -4.765625 3.414062 -4.660156 3.71875 -4.453125 C 4.019531 -4.253906 4.25 -3.96875 4.40625 -3.59375 C 4.5625 -3.21875 4.640625 -2.8125 4.640625 -2.375 C 4.640625 -1.894531 4.550781 -1.460938 4.375 -1.078125 C 4.207031 -0.691406 3.960938 -0.394531 3.640625 -0.1875 C 3.316406 0.0078125 2.972656 0.109375 2.609375 0.109375 C 2.347656 0.109375 2.113281 0.0507812 1.90625 -0.0625 C 1.695312 -0.175781 1.523438 -0.316406 1.390625 -0.484375 L 1.390625 1.78125 Z M 1.3125 -2.3125 C 1.3125 -1.707031 1.429688 -1.257812 1.671875 -0.96875 C 1.921875 -0.6875 2.21875 -0.546875 2.5625 -0.546875 C 2.90625 -0.546875 3.203125 -0.691406 3.453125 -0.984375 C 3.710938 -1.285156 3.84375 -1.75 3.84375 -2.375 C 3.84375 -2.96875 3.71875 -3.410156 3.46875 -3.703125 C 3.226562 -4.003906 2.9375 -4.15625 2.59375 -4.15625 C 2.257812 -4.15625 1.960938 -3.992188 1.703125 -3.671875 C 1.441406 -3.359375 1.3125 -2.90625 1.3125 -2.3125 Z M 1.3125 -2.3125 "/>
+=======
+<path style="stroke:none;" d=""/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </symbol>
 <symbol overflow="visible" id="glyph0-9">
 <path style="stroke:none;" d="M 3.359375 0 L 2.5625 0 L 2.5625 -5.046875 C 2.375 -4.859375 2.125 -4.671875 1.8125 -4.484375 C 1.5 -4.304688 1.222656 -4.175781 0.984375 -4.09375 L 0.984375 -4.859375 C 1.421875 -5.054688 1.804688 -5.300781 2.140625 -5.59375 C 2.472656 -5.894531 2.707031 -6.1875 2.84375 -6.46875 L 3.359375 -6.46875 Z M 3.359375 0 "/>
@@ -86,6 +90,7 @@
   <use xlink:href="#glyph0-2" x="91.82175" y="13.205566"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph0-3" x="93.82155" y="13.205566"/>
   <use xlink:href="#glyph0-4" x="101.31855" y="13.205566"/>
 </g>
@@ -123,10 +128,56 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-14" x="5.999512" y="140.352823"/>
   <use xlink:href="#glyph0-15" x="8.499712" y="140.352823"/>
+=======
+  <use xlink:href="#glyph0-1" x="87.9087" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-2" x="93.072" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-3" x="95.0718" y="13.2056"/>
+  <use xlink:href="#glyph0-4" x="102.5688" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-5" x="107.5746" y="13.2056"/>
+  <use xlink:href="#glyph0-6" x="112.0746" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-4" x="114.5748" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-7" x="119.5806" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="124.5864" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-9" x="127.0866" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-10" x="87.2341" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="93.7339" y="23.5"/>
+  <use xlink:href="#glyph0-12" x="98.7397" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="103.7455" y="23.5"/>
+  <use xlink:href="#glyph0-2" x="108.7513" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="110.7511" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="115.7569" y="23.5"/>
+  <use xlink:href="#glyph0-6" x="120.7627" y="23.5"/>
+  <use xlink:href="#glyph0-4" x="123.2665" y="23.5"/>
+  <use xlink:href="#glyph0-5" x="128.2723" y="23.5"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-14" x="5.9995" y="140"/>
+  <use xlink:href="#glyph0-15" x="8.4997" y="140"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 215.085938 237.550781 C 217.820312 240.285156 217.820312 244.714844 215.085938 247.449219 C 212.355469 250.183594 207.921875 250.183594 205.1875 247.449219 C 202.453125 244.714844 202.453125 240.285156 205.1875 237.550781 C 207.921875 234.816406 212.355469 234.816406 215.085938 237.550781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-1" x="63.136165" y="105.352783"/>
+=======
+  <use xlink:href="#glyph1-1" x="63.1362" y="105.3528"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph1-2" x="63.136165" y="122.852783"/>
@@ -145,7 +196,11 @@
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 215.085938 272.550781 C 217.820312 275.285156 217.820312 279.714844 215.085938 282.449219 C 212.355469 285.183594 207.921875 285.183594 205.1875 282.449219 C 202.453125 279.714844 202.453125 275.285156 205.1875 272.550781 C 207.921875 269.816406 212.355469 269.816406 215.085938 272.550781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-5" x="62.887874" y="140.352823"/>
+=======
+  <use xlink:href="#glyph1-5" x="62.8879" y="140.3528"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 160.5 277.5 L 197.238281 277.5 " transform="matrix(1,0,0,1,-144,-140)"/>
 <path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 201.238281 277.5 L 197.238281 277.5 M 197.238281 276 L 201.238281 277.5 L 197.238281 279 " transform="matrix(1,0,0,1,-144,-140)"/>
@@ -156,7 +211,11 @@
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 316.585938 206.550781 C 319.320312 209.285156 319.320312 213.714844 316.585938 216.449219 C 313.855469 219.183594 309.421875 219.183594 306.6875 216.449219 C 303.953125 213.714844 303.953125 209.285156 306.6875 206.550781 C 309.421875 203.816406 313.855469 203.816406 316.585938 206.550781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-2" x="164.636135" y="74.352783"/>
+=======
+  <use xlink:href="#glyph1-2" x="164.6362" y="74.3528"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph1-1" x="164.636135" y="56.852783"/>
@@ -193,7 +252,11 @@
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 316.585938 354.550781 C 319.320312 357.285156 319.320312 361.714844 316.585938 364.449219 C 313.855469 367.183594 309.421875 367.183594 306.6875 364.449219 C 303.953125 361.714844 303.953125 357.285156 306.6875 354.550781 C 309.421875 351.816406 313.855469 351.816406 316.585938 354.550781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-4" x="164.636135" y="222.352783"/>
+=======
+  <use xlink:href="#glyph1-4" x="164.6362" y="222.3528"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 262.5 331.367188 L 300.441406 353.089844 " transform="matrix(1,0,0,1,-144,-140)"/>
 <path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 303.914062 355.078125 L 300.441406 353.089844 M 301.1875 351.789062 L 303.914062 355.078125 L 299.695312 354.390625 " transform="matrix(1,0,0,1,-144,-140)"/>
@@ -215,7 +278,11 @@
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 423.585938 242.550781 C 426.320312 245.285156 426.320312 249.714844 423.585938 252.449219 C 420.855469 255.183594 416.421875 255.183594 413.6875 252.449219 C 410.953125 249.714844 410.953125 245.285156 413.6875 242.550781 C 416.421875 239.816406 420.855469 239.816406 423.585938 242.550781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-3" x="271.387844" y="110.352883"/>
+=======
+  <use xlink:href="#glyph1-3" x="271.3879" y="110.3529"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph1-1" x="271.636135" y="56.852783"/>
@@ -253,7 +320,11 @@
 </g>
 <path style="fill-rule:nonzero;fill:rgb(69.802856%,85.096741%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 423.585938 337.050781 C 426.320312 339.785156 426.320312 344.214844 423.585938 346.949219 C 420.855469 349.683594 416.421875 349.683594 413.6875 346.949219 C 410.953125 344.214844 410.953125 339.785156 413.6875 337.050781 C 416.421875 334.316406 420.855469 334.316406 423.585938 337.050781 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph1-3" x="271.387844" y="204.852783"/>
+=======
+  <use xlink:href="#glyph1-3" x="271.3879" y="204.8528"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 372.5 329.59375 L 406.179688 338.648438 " transform="matrix(1,0,0,1,-144,-140)"/>
 <path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 410.042969 339.6875 L 406.179688 338.648438 M 406.570312 337.199219 L 410.042969 339.6875 L 405.789062 340.097656 " transform="matrix(1,0,0,1,-144,-140)"/>
@@ -288,6 +359,7 @@
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:4,4;stroke-miterlimit:10;" d="M 425.363281 245.550781 L 464.5 234.203125 " transform="matrix(1,0,0,1,-144,-140)"/>
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:4,4;stroke-miterlimit:10;" d="M 425.417969 340.257812 L 464 330.351562 " transform="matrix(1,0,0,1,-144,-140)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<<<<<<< HEAD:img/beam_search.svg
   <use xlink:href="#glyph0-1" x="193.65845" y="13.205566"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
@@ -368,6 +440,82 @@
   <use xlink:href="#glyph0-7" x="345.76273" y="23.5"/>
   <use xlink:href="#glyph0-4" x="348.26653" y="23.5"/>
   <use xlink:href="#glyph0-6" x="353.27233" y="23.5"/>
+=======
+  <use xlink:href="#glyph0-1" x="194.9087" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-2" x="200.072" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-3" x="202.0718" y="13.2056"/>
+  <use xlink:href="#glyph0-4" x="209.5688" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-5" x="214.5746" y="13.2056"/>
+  <use xlink:href="#glyph0-6" x="219.0746" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-4" x="221.5748" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-7" x="226.5806" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="231.5864" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-16" x="234.0866" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-10" x="194.2341" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="200.7339" y="23.5"/>
+  <use xlink:href="#glyph0-12" x="205.7397" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="210.7455" y="23.5"/>
+  <use xlink:href="#glyph0-2" x="215.7513" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="217.7511" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="222.7569" y="23.5"/>
+  <use xlink:href="#glyph0-6" x="227.7627" y="23.5"/>
+  <use xlink:href="#glyph0-4" x="230.2665" y="23.5"/>
+  <use xlink:href="#glyph0-5" x="235.2723" y="23.5"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="312.9087" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-2" x="318.072" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-3" x="320.0718" y="13.2056"/>
+  <use xlink:href="#glyph0-4" x="327.5688" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-5" x="332.5746" y="13.2056"/>
+  <use xlink:href="#glyph0-6" x="337.0746" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-4" x="339.5748" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-7" x="344.5806" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="349.5864" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-17" x="352.0866" y="13.2056"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-10" x="312.2341" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="318.7339" y="23.5"/>
+  <use xlink:href="#glyph0-12" x="323.7397" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="328.7455" y="23.5"/>
+  <use xlink:href="#glyph0-2" x="333.7513" y="23.5"/>
+  <use xlink:href="#glyph0-13" x="335.7511" y="23.5"/>
+  <use xlink:href="#glyph0-11" x="340.7569" y="23.5"/>
+  <use xlink:href="#glyph0-6" x="345.7627" y="23.5"/>
+  <use xlink:href="#glyph0-4" x="348.2665" y="23.5"/>
+  <use xlink:href="#glyph0-5" x="353.2723" y="23.5"/>
+>>>>>>> 1ec5c63... copy from d2l-en (#16):img/beam-search.svg
 </g>
 </g>
 </svg>

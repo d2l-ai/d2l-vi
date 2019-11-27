@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # Multilayer Perceptron in Gluon
+=======
+# Concise Implementation of Multilayer Perceptron
+:label:`sec_mlp_gluon`
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 Now that we learned how multilayer perceptrons (MLPs) work in theory, let's implement them. We begin, as always, by importing modules.
 
@@ -7,8 +12,14 @@ import sys
 sys.path.insert(0, '..')
 
 import d2l
+<<<<<<< HEAD
 from mxnet import gluon, init
 from mxnet.gluon import loss as gloss, nn
+=======
+from mxnet import gluon, init, npx
+from mxnet.gluon import nn
+npx.set_np()
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 ```
 
 ## The Model
@@ -22,7 +33,12 @@ net.add(nn.Dense(10))
 net.initialize(init.Normal(sigma=0.01))
 ```
 
+<<<<<<< HEAD
 One minor detail is of note when invoking `net.add()`. It adds one or more layers to the network. That is, an equivalent to the above lines would be `net.add(nn.Dense(256, activation='relu'), nn.Dense(10))`. Also note that Gluon automagically infers the missing parameteters, such as the fact that the second layer needs a matrix of size $256 \times 10$. This happens the first time the network is invoked.
+=======
+Again, note that as always, Gluon automatically
+infers the missing input dimensions to each layer.
+>>>>>>> 1ec5c63... copy from d2l-en (#16)
 
 We use almost the same steps for softmax regression training as we do for reading and training the model.
 
@@ -43,6 +59,6 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None,
 1. Try out different activation functions. Which ones work best?
 1. Try out different initializations of the weights.
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2340)
+## [Discussions](https://discuss.mxnet.io/t/2340)
 
 ![](../img/qr_mlp-gluon.svg)
