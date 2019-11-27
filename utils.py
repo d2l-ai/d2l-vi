@@ -9,7 +9,7 @@ import sys
 
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
-TRANSLATE_INDICATOR = '*translate the above block*\n'
+TRANSLATE_INDICATOR = '*translate the above block*'
 HEADER_INDICATOR = ' *translate the above header*\n'
 IMAGE_CAPTION_INDICATOR = '*translate the image caption here*'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
@@ -25,7 +25,6 @@ class MyLine(object):
         self.line_str = line_str.replace(' -- ', ' \-\- ')
         self.in_code_block = in_code_block
         self.end_comment_if_next_line_blank = None
-        self.need_blank_line_next = False
 
     def process(self, file_writer, last_line):
         if self.in_code_block:
@@ -53,25 +52,19 @@ class BlankLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(BlankLine, self).__init__(line_str, in_code_block)
         self.end_comment_if_next_line_blank = False
-        # self.need_blank_line_next = True
 
     def _process(self, file_writer, last_line):
-        # TODO: add need_blank_line_next to MyLine
-        if isinstance(last_line, HeaderLine) or isinstance(last_line, BlankLine)\
-            or isinstance(last_line, ImageLine) or isinstance(last_line, LabelLine):
-        if last_line.need_blank_line_next:
-            file_writer.write('\n')
-        elif last_line.end_comment_if_next_line_blank:
+        if last_line.end_comment_if_next_line_blank:
             file_writer.write(END_BLOCK_COMMENT)
             file_writer.write(TRANSLATE_INDICATOR)
             file_writer.write('\n')
+        file_writer.write('\n')
 
 
 class HeaderLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(HeaderLine, self).__init__(line_str, in_code_block)
-        self.end_comment_if_next_line_blank = True
-        self.need_blank_line_next = True
+        self.end_comment_if_next_line_blank = False
         self.heading = 0
         cnt = 0
         for char in self.line_str:
@@ -96,7 +89,6 @@ class ImageLine(MyLine):
     def __init(self, line_str, in_code_block):
         assert not in_code_block
         super(ImageLine, self).__init__(line_str, in_code_block)
-        self.need_blank_line_next = True
 
     def _process(self, file_writer, last_line):
         close_square_bracket_id = self.line_str.index(']')
@@ -128,7 +120,7 @@ class MathLine(MyLine):
 
     def _process(self, file_writer, last_line):
         file_writer.write(self.line_str)
-        file_writer.write('\n')
+        # file_writer.write('\n')
         return self
 
 
@@ -136,7 +128,6 @@ class LabelLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(LabelLine, self).__init__(line_str, in_code_block)
         self.end_comment_if_next_line_blank = False
-        self.need_blank_line_next = True
 
     def _process(self, file_writer, last_line):
         assert isinstance(last_line, HeaderLine) or isinstance(last_line, ImageLine), last_line.line_str
