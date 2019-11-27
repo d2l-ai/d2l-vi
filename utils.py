@@ -120,7 +120,6 @@ class MathLine(MyLine):
 
     def _process(self, file_writer, last_line):
         file_writer.write(self.line_str)
-        # file_writer.write('\n')
         return self
 
 
@@ -167,8 +166,6 @@ def block_comment(input_md, output_md):
         assert in_code_block is False
 
         # TODO: simplify 5 lines below
-        print(last_line)
-        print(last_line.line_str)
         if isinstance(last_line, BlankLine) or isinstance(last_line, LabelLine)\
                 or isinstance(last_line, CodeMarkerLine) or isinstance(last_line, ImageLine):
             return
