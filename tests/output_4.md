@@ -17,3 +17,11 @@ b
 -->
 
 *translate the above block*
+
+
+<!--
+![caption](path.png)
+-->
+
+![*translate the image caption here*](path.png)
+:label:`figure1`
