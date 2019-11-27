@@ -29,5 +29,6 @@ jobs:
         pip install pytest
         pytest
     - name: build html
+      run: |
         pip install git+https://github.com/d2l-ai/d2l-book
         d2lbook build html
