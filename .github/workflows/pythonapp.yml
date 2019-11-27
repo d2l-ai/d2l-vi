@@ -30,5 +30,6 @@ jobs:
         pytest
     - name: build html
       run: |
+        sudo apt-get install pandoc
         pip install git+https://github.com/d2l-ai/d2l-book
         d2lbook build html
