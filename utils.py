@@ -155,6 +155,6 @@ def block_comment(input_md, output_md):
 
 
 if __name__ == '__main__':
-    input_md = './chapter_preface/preface.md'
-    output_md = './chapter_preface/preface_commented.md'
+    input_md = './chapter_preface/index.md'
+    output_md = './chapter_preface/index_vn.md'
     block_comment(input_md, output_md)

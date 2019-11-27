@@ -9,8 +9,7 @@ Dive into Deep Learning
 ```toc
 :maxdepth: 1
 
-chapter_preface/preface
-chapter_install/install
+chapter_preface/index_vn
 ```
 
 ```toc
