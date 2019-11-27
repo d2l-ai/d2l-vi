@@ -1,5 +1,5 @@
 # Multilayer Perceptron
-:label:`chapter_mlp`
+:label:`sec_mlp`
 
 In the previous chapters, we showed how you could implement multiclass logistic regression (also called softmax regression)
 for classifying images of clothing into the 10 possible categories.
@@ -14,15 +14,17 @@ using deep neural networks.
 
 ## Hidden Layers
 
-Recall that for linear regression and softmax regression,
-we mapped our inputs directly to our outputs
+Let's recall linear regression and softmax regression
+with an example as illustrated in :numref:`fig_singlelayer`.
+In general, we mapped our inputs directly to our outputs
 via a single linear transformation:
 
 $$
-\hat{\mathbf{o}} = \mathrm{softmax}(\mathbf{W} \mathbf{x} + \mathbf{b})
+\hat{\mathbf{o}} = \mathrm{softmax}(\mathbf{W} \mathbf{x} + \mathbf{b}).
 $$
 
 ![Single layer perceptron with 5 output units.](../img/singlelayer.svg)
+:label:`fig_singlelayer`
 
 If our labels really were related to our input data
 by an approximately linear function, then this approach would be perfect.
@@ -42,7 +44,7 @@ In these cases, linear models might perform well,
 and they might even be hard to beat.
 
 But what about classifying images in FashionMNIST?
-Should increasing the intensity of the pixel at location (13,17)
+Should increasing the intensity of the pixel at location (13, 17)
 always increase the likelihood that the image depicts a pocketbook?
 That seems ridiculous because we all know
 that you cannot make sense out of an image
@@ -50,7 +52,7 @@ without accounting for the interactions among pixels.
 
 
 
-### From one to many
+### From One to Many
 
 As another case, consider trying to classify images
 based on whether they depict *cats* or *dogs* given black-and-white images.
@@ -77,9 +79,10 @@ many layers of neurons on top of each other.
 Each layer feeds into the layer above it, until we generate an output.
 This architecture is commonly called a *multilayer perceptron*,
 often abbreviated as *MLP*.
-The neural network diagram for an MLP looks like this:
+The neural network diagram for an MLP looks like :numref:`fig_nlp`.
 
 ![Multilayer perceptron with hidden layers. This example contains a hidden layer with 5 hidden units in it. ](../img/mlp.svg)
+:label:`fig_nlp`
 
 The multilayer perceptron above has 4 inputs and 3 outputs,
 and the hidden layer in the middle contains 5 hidden units.
@@ -92,14 +95,14 @@ Likewise, the neurons in the hidden layer
 are fully connected to the neurons in the output layer.
 
 
-### From linear to nonlinear
+### From Linear to Nonlinear
 
 We can write out the calculations that define this one-hidden-layer MLP in mathematical notation as follows:
 $$
 \begin{aligned}
-    \mathbf{h} & = \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1 \\
-    \mathbf{o} & = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 \\
-    \hat{\mathbf{y}} & = \mathrm{softmax}(\mathbf{o})
+    \mathbf{h} & = \mathbf{W}_1 \mathbf{x} + \mathbf{b}_1, \\
+    \mathbf{o} & = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2, \\
+    \hat{\mathbf{y}} & = \mathrm{softmax}(\mathbf{o}).
 \end{aligned}
 $$
 
@@ -107,7 +110,7 @@ By adding another layer, we have added two new sets of parameters,
 but what have we gained in exchange?
 In the model defined above, we do not achieve anything for our troubles!
 
-That's because our hidden units are just a linear function of the inputs
+That is because our hidden units are just a linear function of the inputs
 and the outputs (pre-softmax) are just a linear function of the hidden units.
 A linear function of a linear function is itself a linear function.
 That means that for any values of the weights,
@@ -115,24 +118,24 @@ we could just collapse out the hidden layer
 yielding an equivalent single-layer model using
 $\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ and $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
-$$\mathbf{o} = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 = \mathbf{W}_2 (\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 = (\mathbf{W}_2 \mathbf{W}_1) \mathbf{x} + (\mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2) = \mathbf{W} \mathbf{x} + \mathbf{b}$$
+$$\mathbf{o} = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 = \mathbf{W}_2 (\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 = (\mathbf{W}_2 \mathbf{W}_1) \mathbf{x} + (\mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2) = \mathbf{W} \mathbf{x} + \mathbf{b}.$$
 
 In order to get a benefit from multilayer architectures,
-we need another key ingredient—a nonlinearity $\sigma$ to be applied to each of the hidden units after each layer's linear transformation.
-The most popular choice for the nonlinearity these days is the rectified linear unit (ReLU) $\mathrm{max}(x,0)$.
+we need another key ingredient---a nonlinearity $\sigma$ to be applied to each of the hidden units after each layer's linear transformation.
+The most popular choice for the nonlinearity these days is the rectified linear unit (ReLU) $\mathrm{max}(x, 0)$.
 After incorporating these non-linearities
 it becomes impossible to merge layers.
 
 $$
 \begin{aligned}
-    \mathbf{h} & = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) \\
-    \mathbf{o} & = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 \\
-    \hat{\mathbf{y}} & = \mathrm{softmax}(\mathbf{o})
+    \mathbf{h} & = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1), \\
+    \mathbf{o} & = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2, \\
+    \hat{\mathbf{y}} & = \mathrm{softmax}(\mathbf{o}).
 \end{aligned}
 $$
 
 Clearly, we could continue stacking such hidden layers,
-e.g. $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$
+e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$
 and $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$
 on top of each other to obtain a true multilayer perceptron.
 
@@ -148,7 +151,7 @@ we can model any function at all!
 *Actually learning that function is the hard part.*
 
 Moreover, just because a single-layer network *can* learn any function
-doesn't mean that you should try to solve all of your problems with single-layer networks.
+does not mean that you should try to solve all of your problems with single-layer networks.
 It turns out that we can approximate many functions
 much more compactly if we use deeper (vs wider) neural networks.
 We’ll get more into the math in a subsequent chapter,
@@ -156,33 +159,34 @@ but for now let’s actually build an MLP.
 In this example, we’ll implement a multilayer perceptron
 with two hidden layers and one output layer.
 
-### Vectorization and mini-batch
+### Vectorization and Minibatch
 
-As before, by the matrix $\mathbf{X}$, we denote a mini-batch of inputs.
+As before, by the matrix $\mathbf{X}$, we denote a minibatch of inputs.
 The calculations to produce outputs from an MLP with two hidden layers
 can thus be expressed:
 
 $$
 \begin{aligned}
-    \mathbf{H}_1 & = \sigma(\mathbf{W}_1 \mathbf{X} + \mathbf{b}_1) \\
-    \mathbf{H}_2 & = \sigma(\mathbf{W}_2 \mathbf{H}_1 + \mathbf{b}_2) \\
-    \mathbf{O} & = \mathrm{softmax}(\mathbf{W}_3 \mathbf{H}_2 + \mathbf{b}_3)
+    \mathbf{H}_1 & = \sigma(\mathbf{W}_1 \mathbf{X} + \mathbf{b}_1), \\
+    \mathbf{H}_2 & = \sigma(\mathbf{W}_2 \mathbf{H}_1 + \mathbf{b}_2), \\
+    \mathbf{O} & = \mathrm{softmax}(\mathbf{W}_3 \mathbf{H}_2 + \mathbf{b}_3).
 \end{aligned}
 $$
 
 With some abuse of notation, we define the nonlinearity $\sigma$
-to apply to its inputs on a row-wise fashion, i.e. one observation at a time.
+to apply to its inputs on a row-wise fashion, i.e., one observation at a time.
 Note that we are also using the notation for *softmax* in the same way to denote a row-wise operation.
-Often, as in this chapter, the activation functions that we apply to hidden layers are not merely row-wise, but component wise.
+Often, as in this section, the activation functions that we apply to hidden layers are not merely row-wise, but component wise.
 That means that after computing the linear portion of the layer,
 we can calculate each nodes activation without looking at the values taken by the other hidden units.
 This is true for most activation functions
-(the batch normalization operation will be introduced in :numref:`chapter_batch_norm` is a notable exception to that rule).
+(the batch normalization operation will be introduced in :numref:`sec_batch_norm` is a notable exception to that rule).
 
 ```{.python .input  n=1}
 %matplotlib inline
 import d2l
-from mxnet import autograd, nd
+from mxnet import autograd, np, npx
+npx.set_np()
 ```
 
 ## Activation Functions
@@ -210,11 +214,11 @@ the `relu` function as a basic native operator.
 As you can see, the activation function is piece-wise linear.
 
 ```{.python .input  n=2}
-x = nd.arange(-8.0, 8.0, 0.1)
+x = np.arange(-8.0, 8.0, 0.1)
 x.attach_grad()
 with autograd.record():
-    y = x.relu()
-d2l.set_figsize((4, 2.5))    
+    y = npx.relu(x)
+d2l.set_figsize((4, 2.5))
 d2l.plot(x, y, 'x', 'relu(x)')
 ```
 
@@ -225,7 +229,7 @@ when the input takes value precisely equal to  0.
 In these cases, we go with the left-hand-side (LHS) derivative
 and say that the derivative is 0 when the input is 0.
 We can get away with this because the input may never actually be zero.
-There's an old adage that if subtle boundary conditions matter,
+There is an old adage that if subtle boundary conditions matter,
 we are probably doing (*real*) mathematics, not engineering.
 That conventional wisdom may apply here.
 See the derivative of the ReLU function plotted below.
@@ -237,22 +241,22 @@ d2l.plot(x, x.grad, 'x', 'grad of relu')
 
 Note that there are many variants to the ReLU function, such as the parameterized ReLU (pReLU) of [He et al., 2015](https://arxiv.org/abs/1502.01852). This variation adds a linear term to the ReLU, so some information still gets through, even when the argument is negative.
 
-$$\mathrm{pReLU}(x) = \max(0, x) + \alpha \min(0, x)$$
+$$\mathrm{pReLU}(x) = \max(0, x) + \alpha \min(0, x).$$
 
-The reason for using the ReLU is that its derivatives are particularly well behaved - either they vanish or they just let the argument through. This makes optimization better behaved and it reduces the issue of the vanishing gradient problem (more on this later).
+The reason for using the ReLU is that its derivatives are particularly well behaved: either they vanish or they just let the argument through. This makes optimization better behaved and it reduces the issue of the vanishing gradient problem (more on this later).
 
 ### Sigmoid Function
 
-The sigmoid function transforms its inputs which take values in $\mathbb{R}$ to the interval $(0,1)$.
+The sigmoid function transforms its inputs which take values in $\mathbb{R}$ to the interval $(0, 1)$.
 For that reason, the sigmoid is often called a *squashing* function:
 it squashes any input in the range (-inf, inf)
-to some value in the range (0,1).
+to some value in the range (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
 In the earliest neural networks, scientists
 were interested in modeling biological neurons
-which either *fire* or *don't fire*.
+which either *fire* or *do not fire*.
 Thus the pioneers of this field, going all the way back to McCulloch and Pitts in the 1940s, were focused on thresholding units.
 A thresholding function takes either value $0$
 (if the input is below the threshold)
@@ -278,7 +282,7 @@ approaches a linear transformation.
 
 ```{.python .input  n=4}
 with autograd.record():
-    y = x.sigmoid()
+    y = npx.sigmoid(x)
 d2l.plot(x, y, 'x', 'sigmoid(x)')
 ```
 
@@ -308,7 +312,7 @@ We plot the tanh function blow. Note that as the input nears 0, the tanh functio
 
 ```{.python .input  n=6}
 with autograd.record():
-    y = x.tanh()
+    y = np.tanh(x)
 d2l.plot(x, y, 'x', 'tanh(x)')
 ```
 
@@ -350,8 +354,8 @@ required researchers to code up thousands of lines of C and Fortran.
 1. Show that a multilayer perceptron using only ReLU (or pReLU) constructs a continuous piecewise linear function.
 1. Show that $\mathrm{tanh}(x) + 1 = 2 \mathrm{sigmoid}(2x)$.
 1. Assume we have a multilayer perceptron *without* nonlinearities between the layers. In particular, assume that we have $d$ input dimensions, $d$ output dimensions and that one of the layers had only $d/2$ dimensions. Show that this network is less expressive (powerful) than a single layer perceptron.
-1. Assume that we have a nonlinearity that applies to one minibatch at a time. What kinds of problems to you expect this to cause?
+1. Assume that we have a nonlinearity that applies to one minibatch at a time. What kinds of problems do you expect this to cause?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2338)
+## [Discussions](https://discuss.mxnet.io/t/2338)
 
 ![](../img/qr_mlp.svg)

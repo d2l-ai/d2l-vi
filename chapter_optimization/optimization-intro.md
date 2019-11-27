@@ -1,6 +1,6 @@
 # Optimization and Deep Learning
 
-In this section, we will discuss the relationship between optimization and deep learning as well as the challenges of using optimization in deep learning. For a deep learning problem, we will usually define a loss function first. Once we have the loss function, we can use an optimization algorithm in attempt to minimize the loss. In optimization, a loss function is often referred to as the objective function of the optimization problem. By tradition and convention most optimization algorithms are concerned with *minimization*. If we ever need to maximize an objective there's a simple solution - just flip the sign on the objective.
+In this section, we will discuss the relationship between optimization and deep learning as well as the challenges of using optimization in deep learning. For a deep learning problem, we will usually define a loss function first. Once we have the loss function, we can use an optimization algorithm in attempt to minimize the loss. In optimization, a loss function is often referred to as the objective function of the optimization problem. By tradition and convention most optimization algorithms are concerned with *minimization*. If we ever need to maximize an objective there is a simple solution: just flip the sign on the objective.
 
 ## Optimization and Estimation
 
@@ -8,11 +8,11 @@ Although optimization provides a way to minimize the loss function for deep
 learning, in essence, the goals of optimization and deep learning are
 fundamentally different. The former is primarily concerned with minimizing an
 objective whereas the latter is concerned with finding a suitable model, given a
-finite amount of data.  In :numref:`chapter_model_selection`,
+finite amount of data.  In :numref:`sec_model_selection`,
 we discussed the difference between these two goals in detail. For instance,
 training error and generalization error generally differ: since the objective
 function of the optimization algorithm is usually a loss function based on the
-training data set, the goal of optimization is to reduce the training error.
+training dataset, the goal of optimization is to reduce the training error.
 However, the goal of statistical inference (and thus of deep learning) is to
 reduce the generalization error.  To accomplish the latter we need to pay
 attention to overfitting in addition to using the optimization algorithm to
@@ -22,9 +22,10 @@ reduce the training error. We begin by importing a few libraries with a function
 %matplotlib inline
 import d2l
 from mpl_toolkits import mplot3d
-import numpy as np
+from mxnet import np, npx
+npx.set_np()
 
-# Save to the d2l package.
+# Saved in the d2l package for later use
 def annotate(text, xy, xytext):
     d2l.plt.gca().annotate(text, xy=xy, xytext=xytext,
                            arrowprops=dict(arrowstyle='->'))
@@ -47,7 +48,7 @@ annotate('expected risk', (1.1, -1.05), (0.95, -0.5))
 
 In this chapter, we are going to focus specifically on the performance of the
 optimization algorithm in minimizing the objective function, rather than a
-model's generalization error.  In :numref:`chapter_linear_regression`
+model's generalization error.  In :numref:`sec_linear_regression`
 we distinguished between analytical solutions and numerical solutions in
 optimization problems. In deep learning, most objective functions are
 complicated and do not have analytical solutions. Instead, we must use numerical
@@ -85,17 +86,18 @@ d2l.plot(x, [x**3], 'x', 'f(x)')
 annotate('saddle point', (0, -0.2), (-0.52, -5.0))
 ```
 
-Saddle points in higher dimensions are even more insidious, as the example below shows. Consider the function $f(x, y) = x^2 - y^2$. It has its saddle point at $(0,0)$. This is a maximum with respect to $y$ and a minimum with respect to $x$. Moreover, it *looks* like a saddle, which is where this mathematical property got its name.
+Saddle points in higher dimensions are even more insidious, as the example below shows. Consider the function $f(x, y) = x^2 - y^2$. It has its saddle point at $(0, 0)$. This is a maximum with respect to $y$ and a minimum with respect to $x$. Moreover, it *looks* like a saddle, which is where this mathematical property got its name.
 
 ```{.python .input  n=5}
-x, y = np.mgrid[-1: 1: 101j, -1: 1: 101j]
+x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
+                   indexing='ij')
 
 z = x**2 - y**2
 
 ax = d2l.plt.figure().add_subplot(111, projection='3d')
 ax.plot_wireframe(x, y, z, **{'rstride': 10, 'cstride': 10})
 ax.plot([0], [0], [0], 'rx')
-ticks = [-1,  0, 1]
+ticks = [-1, 0, 1]
 d2l.plt.xticks(ticks)
 d2l.plt.yticks(ticks)
 ax.set_zticks(ticks)
@@ -105,7 +107,7 @@ d2l.plt.ylabel('y');
 
 We assume that the input of a function is a $k$-dimensional vector and its
 output is a scalar, so its Hessian matrix will have $k$ eigenvalues
-(refer to :numref:`chapter_math`).
+(refer to :numref:`sec_geometry-linear-algebric-ops`).
 The solution of the
 function could be a local minimum, a local maximum, or a saddle point at a
 position where the function gradient is zero:
@@ -114,11 +116,11 @@ position where the function gradient is zero:
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are all negative, we have a local maximum for the function.
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.
 
-For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high. This makes saddle points more likely than local minima. We will discuss some exceptions to this situation in the next section when introducing convexity. In short, convex functions are those where the eigenvalues of the Hessian are never negative. Sadly, though, most deep learning problems do not fall into this category. Nonetheless it's a great tool to study optimization algorithms.
+For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high. This makes saddle points more likely than local minima. We will discuss some exceptions to this situation in the next section when introducing convexity. In short, convex functions are those where the eigenvalues of the Hessian are never negative. Sadly, though, most deep learning problems do not fall into this category. Nonetheless it is a great tool to study optimization algorithms.
 
 ### Vanishing Gradients
 
-Probably the most insidious problem to encounter are vanishing gradients. For instance, assume that we want to minimize the function $f(x) = \tanh(x)$ and we happen to get started at $x = 4$. As we can see, the gradient of $f$ is close to nil. More specifically $f'(x) = 1 - \tanh^2(x)$ and thus $f'(4) = 0.0013$. Consequently optimization will get stuck for a long time before we make progress. This turns out to be one of the reasons that training deep learning models was quite tricky prior to the introduction of the ReLu activation function.
+Probably the most insidious problem to encounter are vanishing gradients. For instance, assume that we want to minimize the function $f(x) = \tanh(x)$ and we happen to get started at $x = 4$. As we can see, the gradient of $f$ is close to nil. More specifically $f'(x) = 1 - \tanh^2(x)$ and thus $f'(4) = 0.0013$. Consequently optimization will get stuck for a long time before we make progress. This turns out to be one of the reasons that training deep learning models was quite tricky prior to the introduction of the ReLU activation function.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
@@ -126,7 +128,7 @@ d2l.plot(x, [np.tanh(x)], 'x', 'f(x)')
 annotate('vanishing gradient', (4, 1), (2, 0.0))
 ```
 
-As we saw, optimization for deep learning is full of challenges. Fortunately there exists a robust range of algorithms that perform well and that are easy to use even for beginners. Furthermore, it isn't really necessary to find *the* best solution. Local optima or even approximate solutions thereof are still very useful.
+As we saw, optimization for deep learning is full of challenges. Fortunately there exists a robust range of algorithms that perform well and that are easy to use even for beginners. Furthermore, it is not really necessary to find *the* best solution. Local optima or even approximate solutions thereof are still very useful.
 
 ## Summary
 
@@ -141,16 +143,16 @@ As we saw, optimization for deep learning is full of challenges. Fortunately the
 1. Consider a simple multilayer perceptron with a single hidden layer of, say, $d$ dimensions in the hidden layer and a single output. Show that for any local minimum there are at least $d!$ equivalent solutions that behave identically.
 1. Assume that we have a symmetric random matrix $\mathbf{M}$ where the entries
    $M_{ij} = M_{ji}$ are each drawn from some probability distribution
-   $p_{ij}$. Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e. that the
-   distribution is symmetric (see e.g. :cite:`Wigner.1958` for details).
-    * Prove that the distribution over eigenvalues is also symmetric. That is, for any eigenvector $\mathbf{v}$ the probability that the associated eigenvalue $\lambda$ satisfies $\Pr(\lambda > 0) = \Pr(\lambda < 0)$.
-    * Why does the above *not* imply $\Pr(\lambda > 0) = 0.5$?
+   $p_{ij}$. Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the
+   distribution is symmetric (see e.g., :cite:`Wigner.1958` for details).
+    * Prove that the distribution over eigenvalues is also symmetric. That is, for any eigenvector $\mathbf{v}$ the probability that the associated eigenvalue $\lambda$ satisfies $P(\lambda > 0) = P(\lambda < 0)$.
+    * Why does the above *not* imply $P(\lambda > 0) = 0.5$?
 1. What other challenges involved in deep learning optimization can you think of?
 1. Assume that you want to balance a (real) ball on a (real) saddle.
     * Why is this hard?
     * Can you exploit this effect also for optimization algorithms?
 
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2371)
+## [Discussions](https://discuss.mxnet.io/t/2371)
 
 ![](../img/qr_optimization-intro.svg)

@@ -1,12 +1,13 @@
 # Concise Implementation of Multilayer Perceptron
-:label:`chapter_mlp_gluon`
+:label:`sec_mlp_gluon`
 
 Now that we learned how multilayer perceptrons (MLPs) work in theory, let's implement them. We begin, as always, by importing modules.
 
 ```{.python .input}
 import d2l
-from mxnet import gluon, init
+from mxnet import gluon, init, npx
 from mxnet.gluon import nn
+npx.set_np()
 ```
 
 ## The Model
@@ -23,11 +24,6 @@ net.add(nn.Dense(256, activation='relu'),
 net.initialize(init.Normal(sigma=0.01))
 ```
 
-Note that as above we can invoke `net.add()` multiple times in succession,
-but we can also invoke it a single time, passing in
-multiple layers to be added the network.
-Thus, we could have equivalently written
-`net.add(nn.Dense(256, activation='relu'), nn.Dense(10))`.
 Again, note that as always, Gluon automatically
 infers the missing input dimensions to each layer.
 
@@ -47,6 +43,6 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 1. Try out different activation functions. Which ones work best?
 1. Try out different initializations of the weights.
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2340)
+## [Discussions](https://discuss.mxnet.io/t/2340)
 
 ![](../img/qr_mlp-gluon.svg)

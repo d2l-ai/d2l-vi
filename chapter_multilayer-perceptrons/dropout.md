@@ -1,8 +1,8 @@
 # Dropout
-:label:`chapter_dropout`
+:label:`sec_dropout`
 
 Just now, we introduced the classical approach
-of regularizing statistical models by penalyzing
+of regularizing statistical models by penalizing
 the $\ell_2$ norm of the weights.
 In probabilistic terms, we could justify this technique
 by arguing that we have assumed a prior belief
@@ -24,7 +24,7 @@ For every feature, a linear model must assign
 either a positive or a negative weight.
 They lack the flexibility to account for context.
 
-In more formal texts, you’ll see this fundamental tension
+In more formal text, you’ll see this fundamental tension
 between generalizability and flexibility
 discussed as the *bias-variance tradeoff*.
 Linear models have high bias
@@ -60,7 +60,7 @@ Yet even in these situations, when there is no true pattern to be learned, neura
 Let's think briefly about what we expect from a good statistical model.
 We want it to do well on unseen test data.
 One way we can accomplish this is by asking
-what constitutes a a 'simple' model?
+what constitutes a "simple" model?
 Simplicity can come in the form
 of a small number of dimensions,
 which is what we did when discussing fitting a model
@@ -95,7 +95,7 @@ misses out on what is happening internally in the network.
 Their proposed idea is called *dropout*,
 and it is now a standard technique
 that is widely used for training neural networks.
-Throughout trainin, on each iteration,
+Throughout training, on each iteration,
 dropout regularization consists simply of zeroing out
 some fraction (typically 50%) of the nodes in each layer
 before calculating the subsequent layer.
@@ -115,7 +115,7 @@ At each training iteration, just add noise
 sampled from a distribution with mean zero
 $\epsilon \sim \mathcal{N}(0,\sigma^2)$ to the input $\mathbf{x}$ ,
 yielding a perturbed point $\mathbf{x}' = \mathbf{x} + \epsilon$.
-In expectation, $\mathbf{E}[\mathbf{x}'] = \mathbf{x}$.
+In expectation, $E[\mathbf{x}'] = \mathbf{x}$.
 
 In the case of dropout regularization,
 one can debias each layer
@@ -133,23 +133,23 @@ h' =
 $$
 
 By design, the expectation remains unchanged,
-i.e., $\mathbf{E}[h'] = h$.
+i.e., $E[h'] = h$.
 Intermediate activations $h$ are replaced by a random variable $h'$
 with matching expectation.
-The name 'dropout' arises from the notion
-that some neurons 'drop out' of the computation
+The name "dropout" arises from the notion
+that some neurons "drop out" of the computation
 for the purpose of computing the final result.
 During training, we replace intermediate activations with random variables.
 
 ## Dropout in Practice
 
-Recall the multilayer perceptron (:numref:`chapter_mlp`) with a hidden layer and 5 hidden units. Its architecture is given by
+Recall the multilayer perceptron (:numref:`sec_mlp`) with a hidden layer and 5 hidden units. Its architecture is given by
 
 $$
 \begin{aligned}
-    h & = \sigma(W_1 x + b_1) \\
-    o & = W_2 h + b_2 \\
-    \hat{y} & = \mathrm{softmax}(o)
+    h & = \sigma(W_1 x + b_1), \\
+    o & = W_2 h + b_2, \\
+    \hat{y} & = \mathrm{softmax}(o).
 \end{aligned}
 $$
 
@@ -158,12 +158,12 @@ we are essentially removing each hidden unit with probability $p$,
 (i.e., setting their output to $0$).
 We can view the result as a network containing
 only a subset of the original neurons.
-In the image below, $h_2$ and $h_5$ are removed.
+In :numref:`fig_dropout2`, $h_2$ and $h_5$ are removed.
 Consequently, the calculation of $y$ no longer depends on $h_2$ and $h_5$
 and their respective gradient also vanishes when performing backprop.
 In this way, the calculation of the output layer
 cannot be overly dependent on any one element of $h_1, \ldots, h_5$.
-Intuitively, deep learning researchers often explain the inutition thusly:
+Intuitively, deep learning researchers often explain the intuition thusly:
 we do not want the network's output to depend
 too precariously on the exact activation pathway through the network.
 The original authors of the dropout technique
@@ -171,10 +171,11 @@ described their intuition as an effort
 to prevent the *co-adaptation* of feature detectors.
 
 ![MLP before and after dropout](../img/dropout2.svg)
+:label:`fig_dropout2`
 
 At test time, we typically do not use dropout.
 However, we note that there are some exceptions:
-some researchers use dropout at test time as a heuristic appraoch
+some researchers use dropout at test time as a heuristic approach
 for estimating the *confidence* of neural network predictions:
 if the predictions agree across many different dropout masks,
 then we might say that the network is more confident.
@@ -188,28 +189,29 @@ To implement the dropout function for a single layer,
 we must draw as many samples from a Bernoulli (binary) random variable
 as our layer has dimensions, where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ (drop) with probability $p$.
 One easy way to implement this is to first draw samples
-from the uniform distribution $U[0,1]$.
+from the uniform distribution $U[0, 1]$.
 then we can keep those nodes for which the corresponding
 sample is greater than $p$, dropping the rest.
 
 In the following code, we implement a `dropout` function
-that drops out the elements in the NDArray input `X`
+that drops out the elements in the `ndarray` input `X`
 with probability `drop_prob`,
 rescaling the remainder as described above
 (dividing the survivors by `1.0-drop_prob`).
 
 ```{.python .input  n=1}
 import d2l
-from mxnet import autograd, gluon, init, nd
+from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
+npx.set_np()
 
 def dropout(X, drop_prob):
     assert 0 <= drop_prob <= 1
     # In this case, all elements are dropped out
     if drop_prob == 1:
-        return X.zeros_like()
-    mask = nd.random.uniform(0, 1, X.shape) > drop_prob
-    return mask * X / (1.0-drop_prob)
+        return np.zeros_like(X)
+    mask = np.random.uniform(0, 1, X.shape) > drop_prob
+    return mask.astype(np.float32) * X / (1.0-drop_prob)
 ```
 
 We can test out the `dropout` function on a few examples.
@@ -217,7 +219,7 @@ In the following lines of code, we pass our input `X`
 through the dropout operation, with probabilities 0, 0.5, and 1, respectively.
 
 ```{.python .input  n=2}
-X = nd.arange(16).reshape((2, 8))
+X = np.arange(16).reshape(2, 8)
 print(dropout(X, 0))
 print(dropout(X, 0.5))
 print(dropout(X, 1))
@@ -226,26 +228,26 @@ print(dropout(X, 1))
 ### Defining Model Parameters
 
 Again, we can use the Fashion-MNIST dataset,
-introduced in :numref:`chapter_softmax_scratch`.
+introduced in :numref:`sec_softmax_scratch`.
 We will define a multilayer perceptron with two hidden layers.
 The two hidden layers both have 256 outputs.
 
 ```{.python .input  n=3}
 num_inputs, num_outputs, num_hiddens1, num_hiddens2 = 784, 10, 256, 256
 
-W1 = nd.random.normal(scale=0.01, shape=(num_inputs, num_hiddens1))
-b1 = nd.zeros(num_hiddens1)
-W2 = nd.random.normal(scale=0.01, shape=(num_hiddens1, num_hiddens2))
-b2 = nd.zeros(num_hiddens2)
-W3 = nd.random.normal(scale=0.01, shape=(num_hiddens2, num_outputs))
-b3 = nd.zeros(num_outputs)
+W1 = np.random.normal(scale=0.01, size=(num_inputs, num_hiddens1))
+b1 = np.zeros(num_hiddens1)
+W2 = np.random.normal(scale=0.01, size=(num_hiddens1, num_hiddens2))
+b2 = np.zeros(num_hiddens2)
+W3 = np.random.normal(scale=0.01, size=(num_hiddens2, num_outputs))
+b3 = np.zeros(num_outputs)
 
 params = [W1, b1, W2, b2, W3, b3]
 for param in params:
     param.attach_grad()
 ```
 
-### Define the Model
+### Defining the Model
 
 The model defined below concatenates the fully-connected layer
  and the activation function ReLU,
@@ -254,24 +256,24 @@ The model defined below concatenates the fully-connected layer
  It is generally recommended to set
  a lower dropout probability closer to the input layer.
  Below we set it to 0.2 and 0.5 for the first and second hidden layer respectively.
- By using the `is_training` function described in :numref:`chapter_autograd`,
+ By using the `is_training` function described in :numref:`sec_autograd`,
  we can ensure that dropout is only active during training.
 
 ```{.python .input  n=4}
 drop_prob1, drop_prob2 = 0.2, 0.5
 
 def net(X):
-    X = X.reshape((-1, num_inputs))
-    H1 = (nd.dot(X, W1) + b1).relu()
+    X = X.reshape(-1, num_inputs)
+    H1 = npx.relu(np.dot(X, W1) + b1)
     # Use dropout only when training the model
     if autograd.is_training():
         # Add a dropout layer after the first fully connected layer
         H1 = dropout(H1, drop_prob1)
-    H2 = (nd.dot(H1, W2) + b2).relu()
+    H2 = npx.relu(np.dot(H1, W2) + b2)
     if autograd.is_training():
         # Add a dropout layer after the second fully connected layer
         H2 = dropout(H2, drop_prob2)
-    return nd.dot(H2, W3) + b3
+    return np.dot(H2, W3) + b3
 ```
 
 ### Training and Testing
@@ -282,8 +284,8 @@ This is similar to the training and testing of multilayer perceptrons described 
 num_epochs, lr, batch_size = 10, 0.5, 256
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
-d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, 
-             lambda batch_size: d2l.sgd(params, lr, batch_size))
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
+              lambda batch_size: d2l.sgd(params, lr, batch_size))
 ```
 
 ## Concise Implementation
@@ -294,7 +296,7 @@ after each fully-connected layer, passing in the dropout probability
 as the only argument to its constructor.
 During training, the `Dropout` layer will randomly
 drop out outputs of the previous layer
-(or equivalently, the inputs to the subequent layer)
+(or equivalently, the inputs to the subsequent layer)
 according to the specified dropout probability.
 When MXNet is not in training mode,
 the `Dropout` layer simply passes the data through during testing.
@@ -337,6 +339,6 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 1. Replace the dropout activation with a random variable that takes on values of $[0, \gamma/2, \gamma]$. Can you design something that works better than the binary dropout function? Why might you want to use it? Why not?
 
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2343)
+## [Discussions](https://discuss.mxnet.io/t/2343)
 
 ![](../img/qr_dropout.svg)
