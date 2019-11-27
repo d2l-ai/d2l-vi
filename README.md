@@ -1,4 +1,4 @@
-## Thứ tự dịch các phần
+## Thứ tự dịch
 
 * [ ] Preface
 * [ ] Introduction
