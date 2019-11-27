@@ -49,7 +49,7 @@ class TestBlockComment(object):
         output_md = './tests/output_3.md'
         self.check(input_md, output_md)
 
-    def test_with_header(self):
+    def test_with_label(self):
         input_md = './tests/input_4.md'
         output_md = './tests/output_4.md'
         self.check(input_md, output_md)

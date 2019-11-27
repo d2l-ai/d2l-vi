@@ -11,6 +11,7 @@ BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '*translate the above block*\n'
 HEADER_INDICATOR = ' *translate the above header*\n'
+IMAGE_CAPTION_INDICATOR = '*translate the image caption here*'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
 
@@ -24,6 +25,7 @@ class MyLine(object):
         self.line_str = line_str.replace(' -- ', ' \-\- ')
         self.in_code_block = in_code_block
         self.end_comment_if_next_line_blank = None
+        self.need_blank_line_next = False
 
     def process(self, file_writer, last_line):
         if self.in_code_block:
@@ -51,9 +53,13 @@ class BlankLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(BlankLine, self).__init__(line_str, in_code_block)
         self.end_comment_if_next_line_blank = False
+        # self.need_blank_line_next = True
 
     def _process(self, file_writer, last_line):
-        if isinstance(last_line, HeaderLine):
+        # TODO: add need_blank_line_next to MyLine
+        if isinstance(last_line, HeaderLine) or isinstance(last_line, BlankLine)\
+            or isinstance(last_line, ImageLine) or isinstance(last_line, LabelLine):
+        if last_line.need_blank_line_next:
             file_writer.write('\n')
         elif last_line.end_comment_if_next_line_blank:
             file_writer.write(END_BLOCK_COMMENT)
@@ -65,6 +71,7 @@ class HeaderLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(HeaderLine, self).__init__(line_str, in_code_block)
         self.end_comment_if_next_line_blank = True
+        self.need_blank_line_next = True
         self.heading = 0
         cnt = 0
         for char in self.line_str:
@@ -83,6 +90,24 @@ class HeaderLine(MyLine):
         file_writer.write(self.line_str)
         file_writer.write(END_BLOCK_COMMENT)
         file_writer.write('#'*self.heading + HEADER_INDICATOR)
+
+
+class ImageLine(MyLine):
+    def __init(self, line_str, in_code_block):
+        assert not in_code_block
+        super(ImageLine, self).__init__(line_str, in_code_block)
+        self.need_blank_line_next = True
+
+    def _process(self, file_writer, last_line):
+        close_square_bracket_id = self.line_str.index(']')
+        assert self.line_str[close_square_bracket_id+1] == '(', self.line_str
+        # assert self.line_str.endswith(')'), self.line_str
+        file_writer.write(BEGIN_BLOCK_COMMENT)
+        file_writer.write(self.line_str)
+        file_writer.write(END_BLOCK_COMMENT)
+        file_writer.write(
+            '![' + IMAGE_CAPTION_INDICATOR + ']' + self.line_str[close_square_bracket_id+1:]
+        )
 
 
 class CodeMarkerLine(MyLine):
@@ -111,11 +136,12 @@ class LabelLine(MyLine):
     def __init__(self, line_str, in_code_block):
         super(LabelLine, self).__init__(line_str, in_code_block)
         self.end_comment_if_next_line_blank = False
+        self.need_blank_line_next = True
 
     def _process(self, file_writer, last_line):
-        assert isinstance(last_line, HeaderLine), last_line.line_str
+        assert isinstance(last_line, HeaderLine) or isinstance(last_line, ImageLine), last_line.line_str
         file_writer.write(self.line_str)
-        file_writer.write('\n')
+        # file_writer.write('\n')
         return self
 
 
@@ -132,6 +158,8 @@ def block_comment(input_md, output_md):
                 line_type = BlankLine
             elif line_str.startswith('#'):
                 line_type = HeaderLine
+            elif line_str.startswith('!['):
+                line_type = ImageLine
             elif line_str.startswith('$'):
                 line_type = MathLine
             elif line_str.startswith('```'):
@@ -148,8 +176,10 @@ def block_comment(input_md, output_md):
         assert in_code_block is False
 
         # TODO: simplify 5 lines below
+        print(last_line)
+        print(last_line.line_str)
         if isinstance(last_line, BlankLine) or isinstance(last_line, LabelLine)\
-                or isinstance(last_line, CodeMarkerLine):
+                or isinstance(last_line, CodeMarkerLine) or isinstance(last_line, ImageLine):
             return
         output_handle.write(END_BLOCK_COMMENT)
         output_handle.write(TRANSLATE_INDICATOR)
