@@ -1,8 +1,8 @@
 # Networks Using Blocks (VGG)
-:label:`chapter_vgg`
+:label:`sec_vgg`
 
 While AlexNet proved that deep convolutional neural networks
-can achieve good results, it didn't offer a general template
+can achieve good results, it did not offer a general template
 to guide subsequent researchers in designing new networks.
 In the following sections, we will introduce several heuristic concepts
 commonly used to design deep networks.
@@ -20,7 +20,7 @@ The idea of using blocks first emerged from the
 [Visual Geometry Group](http://www.robots.ox.ac.uk/~vgg/) (VGG)
 at Oxford University.
 In their eponymously-named VGG network,
-It's easy to implement these repeated structures in code
+It is easy to implement these repeated structures in code
 with any modern deep learning framework by using loops and subroutines.
 
 
@@ -30,7 +30,7 @@ The basic building block of classic convolutional networks
 is a sequence of the following layers:
 (i) a convolutional layer
 (with padding to maintain the resolution),
-(ii) a nonlinearity such as a ReLu,
+(ii) a nonlinearity such as a ReLU,
 One VGG block consists of a sequence of convolutional layers,
 followed by a max pooling layer for spatial downsampling.
 In the original VGG paper :cite:`Simonyan.Zisserman.2014`,
@@ -46,8 +46,9 @@ and the number of output channels `num_channels`.
 
 ```{.python .input  n=1}
 import d2l
-from mxnet import gluon, nd
+from mxnet import np, npx
 from mxnet.gluon import nn
+npx.set_np()
 
 def vgg_block(num_convs, num_channels):
     blk = nn.Sequential()
@@ -66,7 +67,7 @@ the first consisting mostly of convolutional and pooling layers
 and a second consisting of fully-connected layers.
 The convolutional portion of the net connects several `vgg_block` modules
 in succession.
-Below, the variable `conv_arch` consists of a list of tuples (one per block),
+In :numref:`fig_vgg`, the variable `conv_arch` consists of a list of tuples (one per block),
 where each contains two values: the number of convolutional layers
 and the number of output channels,
 which are precisely the arguments requires to call
@@ -74,6 +75,7 @@ the `vgg_block` function.
 The fully-connected module is identical to that covered in AlexNet.
 
 ![Designing a network from building blocks](../img/vgg.svg)
+:width:`400px`
 :label:`fig_vgg`
 
 The original VGG network had 5 convolutional blocks,
@@ -111,7 +113,7 @@ with a height and width of 224 to observe the output shape of each layer.
 
 ```{.python .input  n=4}
 net.initialize()
-X = nd.random.uniform(shape=(1, 1, 224, 224))
+X = np.random.uniform(size=(1, 1, 224, 224))
 for blk in net:
     X = blk(X)
     print(blk.name, 'output shape:\t', X.shape)
@@ -147,7 +149,7 @@ d2l.train_ch5(net, train_iter, test_iter, num_epochs, lr)
 
 * VGG-11 constructs a network using reusable convolutional blocks. Different VGG models can be defined by the differences in the number of convolutional layers and output channels in each block.
 * The use of blocks leads to very compact representations of the network definition. It allows for efficient design of complex networks.
-* In their work Simonyan and Ziserman experimented with various architectures. In particular, they found that several layers of deep and narrow convolutions (i.e. $3 \times 3$) were more effective than fewer layers of wider convolutions.
+* In their work Simonyan and Ziserman experimented with various architectures. In particular, they found that several layers of deep and narrow convolutions (i.e., $3 \times 3$) were more effective than fewer layers of wider convolutions.
 
 ## Exercises
 
@@ -156,6 +158,6 @@ d2l.train_ch5(net, train_iter, test_iter, num_epochs, lr)
 1. Try to change the height and width of the images in Fashion-MNIST from 224 to 96. What influence does this have on the experiments?
 1. Refer to Table 1 in :cite:`Simonyan.Zisserman.2014` to construct other common models, such as VGG-16 or VGG-19.
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2355)
+## [Discussions](https://discuss.mxnet.io/t/2355)
 
 ![](../img/qr_vgg.svg)

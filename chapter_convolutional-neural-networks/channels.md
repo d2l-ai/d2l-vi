@@ -1,8 +1,8 @@
 # Multiple Input and Output Channels
-:label:`chapter_channels`
+:label:`sec_channels`
 
 While we have described the multiple channels
-that comprise each image (e.g. color images have the standard RGB channels
+that comprise each image (e.g., color images have the standard RGB channels
 to indicate the amount of red, green and blue),
 until now, we simplified all of our numerical examples
 by working with just a single input and a single output channel.
@@ -42,29 +42,31 @@ This is the result of a two-dimensional cross-correlation
 between multi-channel input data and
 a *multi-input channel* convolution kernel.
 
-In the figure below, we demonstrate an example
+In :numref:`fig_conv_multi_in`, we demonstrate an example
 of a two-dimensional cross-correlation with two input channels.
 The shaded portions are the first output element
 as well as the input and kernel array elements used in its computation:
 $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$.
 
 ![Cross-correlation computation with 2 input channels. The shaded portions are the first output element as well as the input and kernel array elements used in its computation: $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$. ](../img/conv-multi-in.svg)
+:label:`fig_conv_multi_in`
 
 
-To make sure we reall understand what's going on here,
+To make sure we really understand what is going on here,
 we can implement cross-correlation operations with multiple input channels ourselves.
 Notice that all we are doing is performing one cross-correlation operation
 per channel and then adding up the results using the `add_n` function.
 
 ```{.python .input  n=1}
 import d2l
-from mxnet import nd
+from mxnet import np, npx
+npx.set_np()
 
 def corr2d_multi_in(X, K):
     # First, traverse along the 0th dimension (channel dimension) of X and K.
     # Then, add them together by using * to turn the result list into a
     # positional argument of the add_n function
-    return nd.add_n(*[d2l.corr2d(x, k) for x, k in zip(X, K)])
+    return sum(d2l.corr2d(x, k) for x, k in zip(X, K))
 ```
 
 We can construct the input array `X` and the kernel array `K`
@@ -72,9 +74,9 @@ corresponding to the values in the above diagram
 to validate the output of the cross-correlation operation.
 
 ```{.python .input  n=2}
-X = nd.array([[[0, 1, 2], [3, 4, 5], [6, 7, 8]],
+X = np.array([[[0, 1, 2], [3, 4, 5], [6, 7, 8]],
               [[1, 2, 3], [4, 5, 6], [7, 8, 9]]])
-K = nd.array([[[0, 1], [2, 3]], [[1, 2], [3, 4]]])
+K = np.array([[[0, 1], [2, 3]], [[1, 2], [3, 4]]])
 
 corr2d_multi_in(X, K)
 ```
@@ -92,7 +94,7 @@ typically downsampling to trade off spatial resolution
 for greater *channel depth*.
 Intuitively, you could think of each channel
 as responding to some different set of features.
-Reality is a bit more complicated than the most naive intepretations of this intuition since representations aren't learned independent but are rather optimized to be jointly useful.
+Reality is a bit more complicated than the most naive interpretations of this intuition since representations are not learned independent but are rather optimized to be jointly useful.
 So it may not be that a single channel learns an edge detector but rather that some direction in channel space corresponds to detecting edges.
 
 
@@ -108,7 +110,7 @@ so that the shape of the convolution kernel
 is $c_o\times c_i\times k_h\times k_w$.
 In cross-correlation operations,
 the result on each output channel is calculated
-from the convolution kernel corrsponding to that output channel
+from the convolution kernel corresponding to that output channel
 and takes input from all channels in the input array.
 
 We implement a cross-correlation function
@@ -119,7 +121,7 @@ def corr2d_multi_in_out(X, K):
     # Traverse along the 0th dimension of K, and each time, perform
     # cross-correlation operations with input X. All of the results are merged
     # together using the stack function
-    return nd.stack(*[corr2d_multi_in(X, k) for k in K])
+    return np.stack([corr2d_multi_in(X, k) for k in K])
 ```
 
 We construct a convolution kernel with 3 output channels
@@ -127,7 +129,7 @@ by concatenating the kernel array `K` with `K+1`
 (plus one for each element in `K`) and `K+2`.
 
 ```{.python .input  n=4}
-K = nd.stack(K, K + 1, K + 2)
+K = np.stack((K, K + 1, K + 2))
 K.shape
 ```
 
@@ -145,10 +147,10 @@ corr2d_multi_in_out(X, K)
 
 ## $1\times 1$ Convolutional Layer
 
-At first, a $1 \times 1$ convolution, i.e. $k_h = k_w = 1$,
-doesn't seem to make much sense.
+At first, a $1 \times 1$ convolution, i.e., $k_h = k_w = 1$,
+does not seem to make much sense.
 After all, a convolution correlates adjacent pixels.
-A $1 \times 1$ convolution obviously doesn't.
+A $1 \times 1$ convolution obviously does not.
 Nonetheless, they are popular operations that are sometimes included
 in the designs of complex deep networks.
 Let's see in some detail what it actually does.
@@ -161,7 +163,7 @@ among adjacent elements in the height and width dimensions.
 The only computation of the $1\times 1$ convolution occurs
 on the channel dimension.
 
-The figure below shows the cross-correlation computation
+:numref:`fig_conv_1x1` shows the cross-correlation computation
 using the $1\times 1$ convolution kernel
 with 3 input channels and 2 output channels.
 Note that the inputs and outputs have the same height and width.
@@ -178,6 +180,7 @@ Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights
 
 
 ![The cross-correlation computation uses the $1\times 1$ convolution kernel with 3 input channels and 2 output channels. The inputs and outputs have the same height and width. ](../img/conv-1x1.svg)
+:label:`fig_conv_1x1`
 
 Let's check whether this works in practice:
 we implement the $1 \times 1$ convolution
@@ -189,10 +192,10 @@ to the data shape before and after the matrix multiplication.
 def corr2d_multi_in_out_1x1(X, K):
     c_i, h, w = X.shape
     c_o = K.shape[0]
-    X = X.reshape((c_i, h * w))
-    K = K.reshape((c_o, c_i))
-    Y = nd.dot(K, X)  # Matrix multiplication in the fully connected layer
-    return Y.reshape((c_o, h, w))
+    X = X.reshape(c_i, h * w)
+    K = K.reshape(c_o, c_i)
+    Y = np.dot(K, X)  # Matrix multiplication in the fully connected layer
+    return Y.reshape(c_o, h, w)
 ```
 
 When performing $1\times 1$ convolution,
@@ -200,13 +203,13 @@ the above function is equivalent to the previously implemented cross-correlation
 Let's check this with some reference data.
 
 ```{.python .input  n=7}
-X = nd.random.uniform(shape=(3, 3, 3))
-K = nd.random.uniform(shape=(2, 3, 1, 1))
+X = np.random.uniform(size=(3, 3, 3))
+K = np.random.uniform(size=(2, 3, 1, 1))
 
 Y1 = corr2d_multi_in_out_1x1(X, K)
 Y2 = corr2d_multi_in_out(X, K)
 
-(Y1 - Y2).norm().asscalar() < 1e-6
+np.abs(Y1 - Y2).sum() < 1e-6
 ```
 
 ## Summary
@@ -232,6 +235,6 @@ Y2 = corr2d_multi_in_out(X, K)
 1. Are the variables `Y1` and `Y2` in the last example of this section exactly the same? Why?
 1. How would you implement convolutions using matrix multiplication when the convolution window is not $1\times 1$?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2351)
+## [Discussions](https://discuss.mxnet.io/t/2351)
 
 ![](../img/qr_channels.svg)

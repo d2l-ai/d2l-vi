@@ -1,5 +1,5 @@
 # Weight Decay
-:label:`chapter_weight_decay`
+:label:`sec_weight_decay`
 
 Now that we have characterized the problem of overfitting
 and motivated the need for capacity control,
@@ -51,7 +51,7 @@ But how precisely should we measure
 the distance between a function and zero?
 There is no single right answer.
 In fact, entire branches of mathematics,
-e.g. in functional analysis and the theory of Banach spaces
+e.g., in functional analysis and the theory of Banach spaces
 are devoted to answering this issue.
 
 For our present purposes, a very simple interpretation will suffice:
@@ -70,9 +70,9 @@ Now, if the weight vector becomes too large,
 our learning algorithm will find more profit in
 minimizing the norm $|| \mathbf{w} ||^2$
 versus minimizing the training error.
-That's exactly what we want.
+That is exactly what we want.
 To illustrate things in code, let's revive our previous example
-from :numref:`chapter_linear_regression` for linear regression.
+from :numref:`sec_linear_regression` for linear regression.
 There, our loss was given by
 
 $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
@@ -86,9 +86,9 @@ we need to add $||mathbf{w}||^2$, but how much should we add?
 To address this, we need to add a new hyperparameter,
 that we will call the *regularization constant* and denote by $\lambda$:
 
-$$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\boldsymbol{w}\|^2$$
+$$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$
 
-This non-negatice parameter $\lambda \geq 0$
+This non-negative parameter $\lambda \geq 0$
 governs the amount of regularization.
 For $\lambda = 0$, we recover our original loss function,
 whereas for $\lambda > 0$ we ensure that $\mathbf{w}$ cannot grow too large. The astute reader might wonder why we are squaring
@@ -104,7 +104,7 @@ In fact, several other choices are valid
 and are popular throughout statistics.
 While L2-regularized linear models constitute
 the classic *ridge regression* algorithm
-L1-regularizaed linear regression
+L1-regularized linear regression
 is a similarly fundamental model in statistics
 popularly known as *lasso regression*.
 
@@ -115,7 +115,7 @@ This encourages our learning algorithm to discover models
 which distribute their weight across a larger number of features,
 which might make them more robust in practice
 since they do not depend precariously on a single feature.
-The stochastic gradient descent updates for L2-regularied regression
+The stochastic gradient descent updates for L2-regularized regression
 are as follows:
 
 $$
@@ -127,8 +127,8 @@ $$
 As before, we update $\mathbf{w}$ based on the amount
 by which our estimate differs from the observation.
 However, we also shrink the size of $\mathbf{w}$ towards $0$.
-That's why the method is sometimes called "weight decay":
-because the penalty term literally causes our optimization algorthm
+That is why the method is sometimes called "weight decay":
+because the penalty term literally causes our optimization algorithm
 to *decay* the magnitude of the weight at each step of training.
 This is more convenient than having to pick
 the number of parameters as we did for polynomials.
@@ -136,10 +136,10 @@ In particular, we now have a continuous mechanism
 for adjusting the complexity of $f$.
 Small values of $\lambda$ correspond to unconstrained $\mathbf{w}$,
 whereas large values of $\lambda$ constrain $\mathbf{w}$ considerably.
-Since we don't want to have large bias terms either,
+Since we do not want to have large bias terms either,
 we often add $b^2$ as a penalty, too.
 
-## High-dimensional Linear Regression
+## High-Dimensional Linear Regression
 
 For high-dimensional regression it is difficult
 to pick the 'right' dimensions to omit.
@@ -148,23 +148,25 @@ We will illustrate this below.
 First, we will generate some synthetic data as before
 
 $$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ where }
-\epsilon \sim \mathcal{N}(0, 0.01)$$
+\epsilon \sim \mathcal{N}(0, 0.01).$$
 
 representing our label as a linear function of our inputs,
 corrupted by Gaussian noise with zero mean and variance 0.01.
 To observe the effects of overfitting more easily,
 we can make our problem high-dimensional,
 setting the data dimension to $d = 200$
-and working with a relatively small number of training examples—here we'll set the sample size to 20:
+and working with a relatively small number of training 
+examples---here we will set the sample size to 20:
 
 ```{.python .input  n=2}
 %matplotlib inline
 import d2l
-from mxnet import autograd, gluon, init, nd
+from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
+npx.set_np()
 
 n_train, n_test, num_inputs, batch_size = 20, 100, 200, 1
-true_w, true_b = nd.ones((num_inputs, 1)) * 0.01, 0.05
+true_w, true_b = np.ones((num_inputs, 1)) * 0.01, 0.05
 train_data = d2l.synthetic_data(true_w, true_b, n_train)
 train_iter = d2l.load_array(train_data, batch_size)
 test_data = d2l.synthetic_data(true_w, true_b, n_test)
@@ -182,25 +184,25 @@ The $\ell_2$ is just one among an infinite class of norms call p-norms,
 many of which you might encounter in the future.
 In general, for some number $p$, the $\ell_p$ norm is defined as
 
-$$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p$$
+$$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p.$$
 
-### Initialize Model Parameters
+### Initializing Model Parameters
 
-First, we'll define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
+First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 
 ```{.python .input  n=5}
 def init_params():
-    w = nd.random.normal(scale=1, shape=(num_inputs, 1))
-    b = nd.zeros(shape=(1,))
+    w = np.random.normal(scale=1, size=(num_inputs, 1))
+    b = np.zeros(1)
     w.attach_grad()
     b.attach_grad()
     return [w, b]
 ```
 
-### Define $\ell_2$ Norm Penalty
+### Defining $\ell_2$ Norm Penalty
 
 Perhaps the most convenient way to implement this penalty
-is to square all terms in place and summ them up.
+is to square all terms in place and sum them up.
 We divide by $2$ by convention
 (when we take the derivative of a quadratic function,
 the $2$ and $1/2$ cancel out, ensuring that the expression
@@ -211,15 +213,15 @@ def l2_penalty(w):
     return (w**2).sum() / 2
 ```
 
-### Define Training and Testing
+### Defining the Train and Test Functions
 
 The following code defines how to train and test the model
-separately on the training data set and the test data set.
+separately on the training dataset and the test dataset.
 Unlike the previous sections, here, the $\ell_2$ norm penalty term
 is added when calculating the final loss function.
 The linear network and the squared loss
-haven't changed since the previous chapter,
-so we'll just import them via `d2l.linreg` and `d2l.squared_loss`
+have not changed since the previous chapter,
+so we will just import them via `d2l.linreg` and `d2l.squared_loss`
 to reduce clutter.
 
 ```{.python .input  n=7}
@@ -229,7 +231,7 @@ def train(lambd):
     num_epochs, lr = 100, 0.003
     animator = d2l.Animator(xlabel='epochs', ylabel='loss', yscale='log',
                             xlim=[1, num_epochs], legend=['train', 'test'])
-    for epoch in range(1, num_epochs+1):
+    for epoch in range(1, num_epochs + 1):
         for X, y in train_iter:
             with autograd.record():
                 # The L2 norm penalty term has been added
@@ -239,7 +241,7 @@ def train(lambd):
         if epoch % 5 == 0:
             animator.add(epoch+1, (d2l.evaluate_loss(net, train_iter, loss),
                                    d2l.evaluate_loss(net, test_iter, loss)))
-    print('l2 norm of w:', w.norm().asscalar())
+    print('l1 norm of w:', np.abs(w).sum())
 ```
 
 ### Training without Regularization
@@ -276,11 +278,11 @@ Moreover, this integration serves a computational benefit,
 allowing implementation tricks to add weight decay to the algorithm,
 without any additional computational overhead.
 Since the weight decay portion of the update
-depdends only on the current value of each parameter,
+depends only on the current value of each parameter,
 and the optimizer must to touch each parameter once anyway.
 
 In the following code, we specify
-the weight decay hyper-parameter directly
+the weight decay hyperparameter directly
 through the `wd` parameter when instantiating our `Trainer`.
 By default, Gluon decays both weights and biases simultaneously.
 Note that we can have *different* optimizers
@@ -297,7 +299,7 @@ def train_gluon(wd):
     loss = gluon.loss.L2Loss()
     num_epochs, lr = 100, 0.003
     # The weight parameter has been decayed. Weight names generally end with
-    # "weight".
+    # "weight"
     trainer_w = gluon.Trainer(net.collect_params('.*weight'), 'sgd',
                               {'learning_rate': lr, 'wd': wd})
     # The bias parameter has not decayed. Bias names generally end with "bias"
@@ -317,7 +319,7 @@ def train_gluon(wd):
         if epoch % 5 == 0:
             animator.add(epoch+1, (d2l.evaluate_loss(net, train_iter, loss),
                                    d2l.evaluate_loss(net, test_iter, loss)))
-    print('L2 norm of w:', net[0].weight.data().norm().asscalar())
+    print('L1 norm of w:', np.abs(net[0].weight.data()).sum())
 ```
 
 The plots look just the same as when we implemented weight decay from scratch
@@ -343,7 +345,7 @@ Unfortunately, RKHS-based algorithms
 do not always scale well to massive amounts of data.
 For the purposes of this book, we limit ourselves
 to simply summing over the weights for different layers,
-e.g. via $\sum_l \|\mathbf{w}_l\|^2$,
+e.g., via $\sum_l \|\mathbf{w}_l\|^2$,
 which is equivalent to weight decay applied to all layers.
 
 
@@ -352,7 +354,7 @@ which is equivalent to weight decay applied to all layers.
 * Regularization is a common method for dealing with overfitting. It adds a penalty term to the loss function on the training set to reduce the complexity of the learned model.
 * One particular choice for keeping the model simple is weight decay using an $\ell_2$ penalty. This leads to weight decay in the update steps of the learning algorithm.
 * Gluon provides automatic weight decay functionality in the optimizer by setting the hyperparameter `wd`.
-* You can have different optimizers within the same training loop, e.g. for different sets of parameters.
+* You can have different optimizers within the same training loop, e.g., for different sets of parameters.
 
 
 ## Exercises
@@ -362,8 +364,8 @@ which is equivalent to weight decay applied to all layers.
 1. What would the update equations look like if instead of $\|\mathbf{w}\|^2$ we used $\sum_i |w_i|$ as our penalty of choice (this is called $\ell_1$ regularization).
 1. We know that $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$. Can you find a similar equation for matrices (mathematicians call this the [Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm))?
 1. Review the relationship between training error and generalization error. In addition to weight decay, increased training, and the use of a model of suitable complexity, what other ways can you think of to deal with overfitting?
-1. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via $p(w|x) \propto p(x|w) p(w)$. How can you identify $p(w)$ with regularization?
+1. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via $P(w \mid x) \propto P(x \mid w) P(w)$. How can you identify $P(w)$ with regularization?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2342)
+## [Discussions](https://discuss.mxnet.io/t/2342)
 
 ![](../img/qr_weight-decay.svg)

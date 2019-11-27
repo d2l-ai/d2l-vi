@@ -1,12 +1,12 @@
 # Deep Convolutional Neural Networks (AlexNet)
-:label:`chapter_alexnet`
+:label:`sec_alexnet`
 
 
 Although convolutional neural networks were well known
 in the computer vision and machine learning communities
 following the introduction of LeNet,
 they did not immediately dominate the field.
-Although LeNet achieved good results on early small data sets,
+Although LeNet achieved good results on early small datasets,
 the performance and feasability of training convolutional networks
 on larger, more realistic datasets had yet to be established
 In fact, for much of the intervening time between the early 1990s
@@ -16,7 +16,7 @@ such as support vector machines.
 
 
 For computer vision, this comparison is perhaps not fair.
-That's although the inputs to convolutional networks
+That is although the inputs to convolutional networks
 consist of raw or lightly-processed (e.g., by centering) pixel values, practitioners would never feed raw pixels into traditional models.
 Instead, typical computer vision pipelines
 consisted of manually engineering feature extraction pipelines.
@@ -83,10 +83,12 @@ which achieved excellent performance in the ImageNet challenge.
 
 Interestingly in the lowest layers of the network,
 the model learned featrue extractors that resembled some traditional filters.
-The figure below is reproduced from this paper
+:numref:`fig_filters` is reproduced from this paper
 and describes lower-level image descriptors.
 
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
+:width:`400px`
+:label:`fig_filters`
 
 Higher layers in the network might build upon these representations
 to represent larger structures, like eyes, noses, blades of grass, etc.
@@ -108,7 +110,7 @@ The ultimate breakthrough in 2012 can be attributed to two key factors.
 Deep models with many layers require large amounts of data
 in order to enter the regime
 where they signficantly outperform traditional methods
-based on convex optimizations (e.g. linear and kernel methods).
+based on convex optimizations (e.g., linear and kernel methods).
 However, given the limited storage capacity of computers,
 the relative expense of sensors,
 and the comparatively tighter research budgets in the 1990s,
@@ -117,7 +119,7 @@ Numerous papers addressed the UCI collection of datasets,
 many of which contained only hundreds or (a few) thousands of images
 captured in unnatural settings with low resolution.
 
-In 2009, the ImageNet data set was released,
+In 2009, the ImageNet dataset was released,
 challenging researchers to learn models from 1 million examples,
 1,000 each from 1,000 distinct categories of objects.
 The researchers, led by Fei-Fei Li, who introduced this dataset
@@ -144,7 +146,7 @@ convex objectives were preferred.
 
 Graphical processing units (GPUs) proved to be a game changer
 in make deep learning feasible.
-These chips had long been develoepd for accelerating
+These chips had long been developed for accelerating
 graphics processing to benefit computer games.
 In particular, they were optimized for high throughput 4x4 matrix-vector products, which are needed for many computer graphics tasks.
 Fortunately, this math is strikingly similar
@@ -166,7 +168,7 @@ They require lots of chip area,
 a sophisticated support structure
 (memory interfaces, caching logic between cores,
 high speed interconnects, etc.),
-and they're comparatively bad at any single task.
+and they are comparatively bad at any single task.
 Modern laptops have up to 4 cores,
 and even high end servers rarely exceed 64 cores,
 simply because it is not cost effective.
@@ -181,7 +183,7 @@ For instance, NVIDIA's latest Volta generation offers up to 120 TFlops per chip 
 (and up to 24 TFlops for more general purpose ones),
 while floating point performance of CPUs has not exceeded 1 TFlop to date.
 The reason for why this is possible is actually quite simple:
-firstly, power consumption tends to grow *quadratically* with clock frequency.
+first, power consumption tends to grow *quadratically* with clock frequency.
 Hence, for the power budget of a CPU core that runs 4x faster (a typical number),
 you can use 16 GPU cores at 1/4 the speed,
 which yields 16 x 1/4 = 4x the performance.
@@ -189,7 +191,7 @@ Furthermore, GPU cores are much simpler
 (in fact, for a long time they weren't even *able*
 to execute general purpose code),
 which makes them more energy efficient.
-Lastly, many operations in deep learning require high memory bandwidth.
+Last, many operations in deep learning require high memory bandwidth.
 Again, GPUs shine here with buses that are at least 10x as wide as many CPUs.
 
 Back to 2012. A major breakthrough came
@@ -215,12 +217,13 @@ by a phenomenally large margin.
 This network proved, for the first time,
 that the features obtained by learning can transcend manually-design features, breaking the previous paradigm in computer vision.
 The architectures of AlexNet and LeNet are *very similar*,
-as the diagram below illustrates.
+as :numref:`fig_alexnet` illustrates.
 Note that we provide a slightly streamlined version of AlexNet
 removing some of the design quirks that were needed in 2012
 to make the model fit on two small GPUs.
 
 ![LeNet (left) and AlexNet (right)](../img/alexnet.svg)
+:label:`fig_alexnet`
 
 The design philosophies of AlexNet and LeNet are very similar,
 but there are also significant differences.
@@ -264,18 +267,19 @@ Second, AlexNet changed the sigmoid activation function to a simpler ReLU activa
 ### Capacity Control and Preprocessing
 
 AlexNet controls the model complexity of the fully-connected layer
-by dropout (:numref:`chapter_dropout`),
+by dropout (:numref:`sec_dropout`),
 while LeNet only uses weight decay.
 To augment the data even further, the training loop of AlexNet
 added a great deal of image augmentation,
 such as flipping, clipping, and color changes.
 This makes the model more robust and the larger sample size effectively reduces overfitting.
-We will discuss data augmentation in greater detail in :numref:`chapter_image_augmentation`.
+We will discuss data augmentation in greater detail in :numref:`sec_image_augmentation`.
 
 ```{.python .input  n=1}
 import d2l
-from mxnet import gluon, nd
+from mxnet import np, npx
 from mxnet.gluon import nn
+npx.set_np()
 
 net = nn.Sequential()
 # Here, we use a larger 11 x 11 window to capture objects. At the same time,
@@ -310,14 +314,14 @@ net.add(nn.Conv2D(96, kernel_size=11, strides=4, activation='relu'),
 We construct a single-channel data instance with both height and width of 224 to observe the output shape of each layer. It matches our diagram above.
 
 ```{.python .input  n=2}
-X = nd.random.uniform(shape=(1, 1, 224, 224))
+X = np.random.uniform(size=(1, 1, 224, 224))
 net.initialize()
 for layer in net:
     X = layer(X)
     print(layer.name, 'output shape:\t', X.shape)
 ```
 
-## Reading Data
+## Reading the Dataset
 
 Although AlexNet uses ImageNet in the paper, we use Fashion-MNIST here
 since training an ImageNet model to convergence could take hours or days
@@ -350,7 +354,7 @@ d2l.train_ch5(net, train_iter, test_iter, num_epochs, lr)
 
 ## Summary
 
-* AlexNet has a similar structure to that of LeNet, but uses more convolutional layers and a larger parameter space to fit the large-scale data set ImageNet.
+* AlexNet has a similar structure to that of LeNet, but uses more convolutional layers and a larger parameter space to fit the large-scale dataset ImageNet.
 * Today AlexNet has been surpassed by much more effective architectures but it is a key step from shallow to deep networks that are used nowadays.
 * Although it seems that there are only a few more lines in AlexNet's implementation than in LeNet, it took the academic community many years to embrace this conceptual change and take advantage of its excellent experimental results. This was also due to the lack of efficient computational tools.
 * Dropout, ReLU and preprocessing were the other key steps in achieving excellent performance in computer vision tasks.
@@ -358,16 +362,16 @@ d2l.train_ch5(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 
 1. Try increasing the number of epochs. Compared with LeNet, how are the results different? Why?
-1. AlexNet may be too complex for the Fashion-MNIST data set.
+1. AlexNet may be too complex for the Fashion-MNIST dataset.
     * Try to simplify the model to make the training faster, while ensuring that the accuracy does not drop significantly.
     * Can you design a better model that works directly on $28 \times 28$ images.
 1. Modify the batch size, and observe the changes in accuracy and GPU memory.
-1. Rooflines
+1. Rooflines:
     * What is the dominant part for the memory footprint of AlexNet?
     * What is the dominant part for computation in AlexNet?
     * How about memory bandwidth when computing the results?
 1. Apply dropout and ReLU to LeNet5. Does it improve? How about preprocessing?
 
-## Scan the QR Code to [Discuss](https://discuss.mxnet.io/t/2354)
+## [Discussions](https://discuss.mxnet.io/t/2354)
 
 ![](../img/qr_alexnet.svg)
