@@ -125,6 +125,7 @@ def block_comment(input_md, output_md):
     with codecs.open(input_md, 'r', encoding='utf-8') as input_handle,\
             codecs.open(output_md, 'w', encoding='utf-8') as output_handle:
         for line_str in input_handle:
+            line_str = line_str.rstrip() + '\n'
             line_str = line_str.replace(' -- ', ' \-\- ')
             match = MARK_RE_MD.match(line_str)
             if is_blank_line(line_str):
