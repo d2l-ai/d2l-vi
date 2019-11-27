@@ -3,6 +3,7 @@ import codecs
 import filecmp
 import re
 import sys
+import argparse
 
 # reload(sys)
 # sys.setdefaultencoding('utf8')
@@ -14,6 +15,9 @@ HEADER_INDICATOR = ' *translate the above header*\n'
 IMAGE_CAPTION_INDICATOR = '*translate the image caption here*'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
+
+parser = argparse.ArgumentParser(description='Dịch Dive into Deep Learning')
+parser.add_argument('--convert', type=str, help='path to md file')
 
 
 def is_blank_line(line):
@@ -174,6 +178,9 @@ def block_comment(input_md, output_md):
 
 
 if __name__ == '__main__':
-    input_md = './chapter_preface/index.md'
-    output_md = './chapter_preface/index_vn.md'
+    args = parser.parse_args()
+    # input_md = './chapter_preface/index.md'
+    # output_md = './chapter_preface/index_vn.md'
+    input_md = args.convert
+    output_md = input_md[:-len('.md')] + '_vn.md'
     block_comment(input_md, output_md)
