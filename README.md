@@ -1,28 +1,21 @@
-# Dive into Deep Learning (D2L Book)
+## Thứ tự dịch
 
-[![Build Status](http://ci.diveintodeeplearning.org/job/en/job/master/badge/icon)](http://ci.diveintodeeplearning.org/job/en/job/master/)
-
-[Book website](http://en.diveintodeeplearning.org/) | [STAT 157 Course at UC Berkeley, Spring 2019](http://courses.d2l.ai/berkeley-stat-157/index.html)
-
-
-## Contribute ([learn how](https://d2l.ai/chapter_appendix_tools/how-to-contribute.html))
-
-This open source book has benefited from pedagogical suggestions, typo corrections, and other improvements from community contributors. Your help is valuable for making the book better for everyone. We will [acknowledge](https://www.d2l.ai/chapter_preface/preface.html#Acknowledgments) each contributor in the book and send a free book (hard copy) to each contributor when it is published. 
-
-**Dear contributors, please email your GitHub ID, name, and mailing address to d2lbook.en@gmail.com. Thanks.**
-
-[Chinese version](https://github.com/d2l-ai/d2l-zh) | [Discuss and report issues](https://discuss.mxnet.io/)
-
-
-## Citing this book
-
-Please use the following bibtex entry to cite this book:
-
-```
-@book{zhang-et-al-2019,
-    title={Dive into Deep Learning},
-    author={Aston Zhang and Zachary C. Lipton and Mu Li and Alexander J. Smola},
-    note={\url{http://www.d2l.ai}},
-    year={2019}
-}
-```
+* [ ] Preface
+* [ ] Introduction
+* [ ] Preliminaries
+* [ ] Mathematics for Deep Learning
+* [ ] Tools for Deep Learning
+* [ ] Linear Neural Networks
+* [ ] Multilayer Perceptrons
+* [ ] Deep Learning Computation
+* [ ] Convolutional Neural Networks
+* [ ] Modern Convolutional Networks
+* [ ] Recurrent Neural Networks
+* [ ] Modern Recurrent Networks
+* [ ] Attention Mechanisms
+* [ ] Optimization Algorithms
+* [ ] Computational Performance
+* [ ] Computer Vision
+* [ ] Natural Language Processing
+* [ ] Recommender Systems
+* [ ] Generative Adversarial Networks
