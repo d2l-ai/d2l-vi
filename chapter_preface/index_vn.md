@@ -1,3 +1,5 @@
+<!-- ========================== Begin Part 1 ================================-->
+
 <!--
 # Preface
 -->
@@ -42,7 +44,9 @@ and playing a growing role in basic sciences---from astrophysics to biology.
 
 *translate the above block*
 
+<!-- ========================== End Part 1 ================================-->
 
+<!-- ========================== Begin Part 2 ================================-->
 
 <!--
 ## About This Book
@@ -175,6 +179,9 @@ using such an integrated workflow.
 
 *translate the above block*
 
+<!-- ========================== End Part 2 ================================-->
+
+<!-- ========================== Begin Part 3 ================================-->
 
 <!--
 ### Learning by Doing
@@ -259,6 +266,9 @@ we can just use the Gluon version in subsequent tutorials.
 
 *translate the above block*
 
+<!-- ========================== End Part 3 ================================-->
+
+<!-- ========================== Begin Part 4 ================================-->
 
 <!--
 ### Content and Structure
@@ -331,7 +341,9 @@ and natural language processing, respectively.
 
 *translate the above block*
 
+<!-- ========================== End Part 4 ================================-->
 
+<!-- ========================== Begin Part 5 ================================-->
 
 <!--
 ### Code
@@ -413,6 +425,9 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 
 *translate the above block*
 
+<!-- ========================== End Part 5 ================================-->
+
+<!-- ========================== Begin Part 6 ================================-->
 
 <!--
 ### Target Audience
@@ -540,3 +555,36 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 -->
 
 ![*translate the image caption here*](../img/qr_preface.svg)
+
+<!-- ========================== End Part 6 ================================-->
+
+### Những người thực hiện
+Bản dịch trong trang này được thực hiện bởi:
+<!--
+Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
+hữu ích vào từng phần tương ứng. Mỗi dòng một tên.
+
+Lưu ý:
+* Mỗi tên chỉ xuất hiện một lần: Nếu bạn đã dịch hoặc review phần 1 của trang này
+thì không cần điền vào các phần sau nữa.
+* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
+với dấu `@` ở đầu. Ví dụ: @aivivn.
+-->
+
+<!-- Part 1 -->
+*
+
+<!-- Part 2 -->
+*
+
+<!-- Part 3 -->
+*
+
+<!-- Part 4 -->
+*
+
+<!-- Part 5 -->
+*
+
+<!-- Part 6 -->
+*
