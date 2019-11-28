@@ -94,10 +94,12 @@ Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/bl
     * Copy các công thức toán từ bản gốc (các đoạn có `$`)
     * Giữ các dòng gán nhãn (bắt đầu với `:label:`)
     * Không tự thêm bớt các dòng trắng
-3. Ngắt các đoạn dài thành các dòng ngắn khoảng 80-100 ký tự. Markdown sẽ coi
-những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
+     
+%% 3. Ngắt các đoạn dài thành các dòng ngắn khoảng 80-100 ký tự. Markdown sẽ coi
+%% những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
 
 ### Review
+
 Chọn một Pull Request trong [danh sách này](https://github.com/aivivn/d2l-vn/pulls) và bắt đầu review.
 
 Khi Review, bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:
