@@ -1,6 +1,9 @@
-## Đóng góp vào dự án
+# Dự án dịch sách ["Dive into Deep Learning"](https://www.d2l.ai/)
 
-Có ba công việc chính bạn có thể đóng góp vào dự án: Dịch, Review, và Hỗ trợ kỹ thuật. Các bạn xem thêm thông tin chi tiết tại [Đóng góp vào dự án](instruction.md).
+Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
+
+## Hướng dẫn đóng góp vào dự án
+https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
 
 ## Thứ tự dịch
 
