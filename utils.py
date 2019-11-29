@@ -13,6 +13,10 @@ END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '*dịch đoạn phía trên*'
 HEADER_INDICATOR = ' *dịch tiêu đề phía trên*\n'
 IMAGE_CAPTION_INDICATOR = '*dịch chú thích ảnh phía trên*'
+START_FILE = '<!===================== Bắt đầu dịch Phần 1 ==================== -->\n'
+END_FILE = '<!===================== Kết thúc dịch Phần 1 ==================== -->\n'
+SUFIX_PATH = 'contributors_template_vn.md'
+
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
 
@@ -145,7 +149,10 @@ def block_comment(input_md, output_md):
     last_line = BlankLine('', False)
     in_code_block = False
     with codecs.open(input_md, 'r', encoding='utf-8') as input_handle,\
-            codecs.open(output_md, 'w', encoding='utf-8') as output_handle:
+            codecs.open(output_md, 'w', encoding='utf-8') as output_handle,\
+            codecs.open(SUFIX_PATH, 'r', encoding='utf-8') as surfix_handle:
+        output_handle.write(START_FILE)
+        output_handle.write('\n')
         for line_str in input_handle:
             line_str = line_str.rstrip() + '\n'
             line_str = line_str.replace(' -- ', ' \-\- ')
@@ -174,9 +181,16 @@ def block_comment(input_md, output_md):
         # TODO: simplify 5 lines below
         if isinstance(last_line, BlankLine) or isinstance(last_line, LabelLine)\
                 or isinstance(last_line, CodeMarkerLine) or isinstance(last_line, ImageLine):
-            return
-        output_handle.write(END_BLOCK_COMMENT)
-        output_handle.write(TRANSLATE_INDICATOR)
+            print('skip')
+        else:
+            output_handle.write(END_BLOCK_COMMENT)
+            output_handle.write(TRANSLATE_INDICATOR)
+
+        output_handle.write('\n')
+        output_handle.write(END_FILE)
+        output_handle.write('\n')
+        for line in surfix_handle:
+            output_handle.write(line)
 
 
 if __name__ == '__main__':
