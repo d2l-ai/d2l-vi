@@ -1,9 +1,9 @@
-<!-- ========================== Begin Part 1 ================================-->
+<!-- =================== Bắt đầu dịch Phần 1 ================================-->
 <!--
 # Installation
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 :label:`chap_installation`
 
 <!--
@@ -19,7 +19,7 @@ and the code needed to run the book itself.
 ## Installing Miniconda
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 The simplest way to get going will be to install
@@ -77,7 +77,7 @@ conda create --name d2l -y
 ## Downloading the D2L Notebooks
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Next, we need to download the code of this book. You can use the
@@ -107,15 +107,15 @@ conda install python=3.7 pip -y
 ```
 
 
-<!-- ========================== End Part 1 ================================-->
+<!-- =================== Kết thúc dịch Phần 1 ================================-->
 
-<!-- ========================== Begin Part 2 ================================-->
+<!-- =================== Bắt đầu dịch Phần 2 ================================-->
 
 <!--
 ## Installing MXNet and the `d2l` Package
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Before installing MXNet, please first check
@@ -184,7 +184,7 @@ To exit the environment, run `conda deactivate`.
 ## Upgrading to a New Version
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Both this book and MXNet are keeping improving. Please check a new version from time to time.
@@ -200,15 +200,15 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 2 ================================-->
+<!-- =================== Kết thúc dịch Phần 2 ================================-->
 
-<!-- ========================== Begin Part 3 ================================-->
+<!-- =================== Bắt đầu dịch Phần 3 ================================-->
 
 <!--
 ## GPU Support
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 :label:`sec_gpu`
 
 <!--
@@ -262,7 +262,7 @@ You can find all available MXNet versions via `pip search mxnet`.
 ## Exercises
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 1. Download the code for the book and install the runtime environment.
@@ -275,15 +275,15 @@ You can find all available MXNet versions via `pip search mxnet`.
 ## [Discussions](https://discuss.mxnet.io/t/2315)
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 ![](../img/qr_install.svg)
 -->
 
-![*translate the image caption here*](../img/qr_install.svg)
+![*dịch chú thích ảnh phía trên*](../img/qr_install.svg)
 
-<!-- ========================== End Part 3 ================================-->
+<!-- =================== Kết thúc dịch Phần 3 ================================-->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -298,11 +298,11 @@ thì không cần điền vào các phần sau nữa.
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Part 1 -->
+<!-- Phần 1 -->
 *
 
-<!-- Part 2 -->
+<!-- Phần 2 -->
 *
 
-<!-- Part 3 -->
+<!-- Phần 3 -->
 *
