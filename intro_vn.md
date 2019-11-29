@@ -45,11 +45,10 @@ sự chung tay của cộng đồng. Mọi sự đóng góp đều đáng quý v
 giáo trình trong các trường đại học. Hy vọng một ngày chúng ta có thể nhìn thấy
 một trường của Việt Nam trong danh sách này:
 
-![img](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
+![Danh sách các trường đại học sử dụng cuốn sách này](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
 
 #### Trình tự dịch
 Đây cũng là các nội dung được đề cập trong cuốn sách:
-## Thứ tự dịch
 
 * Preface
 * Introduction
