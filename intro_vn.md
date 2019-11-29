@@ -8,7 +8,8 @@ các diễn đàn liên quan đến học máy và học sâu với lượng th�
 một tăng. Một trong các diễn đàn tiếng Việt nổi bật nhất là [Forum Machine Learning cơ bản](https://www.facebook.com/groups/machinelearningcoban/) và [Diễn đàn Machine Learning cơ bản](https://forum.machinelearningcoban.com/) với hơn 35 ngàn thành viên và hàng chục chủ đề mới mỗi ngày.
 
 Qua các diễn đàn đó, chúng tôi nhận ra rằng nhu cầu tìm hiểu lĩnh vực này ngày
-một tăng trong khi lượng tài liệu tiếng Việt còn rất hạn chế. Đặc biệt, các tài liệu tiếng Việt còn chưa nhất quán trong cách dịch,
+một tăng trong khi lượng tài liệu tiếng Việt còn rất hạn chế.
+Đặc biệt, các tài liệu tiếng Việt còn chưa nhất quán trong cách dịch,
 khiến độc giả bối rối trước quá nhiều thông tin nhưng
 lại quá ít thông tin đầy đủ. Việc này thúc đẩy chúng tôi tìm và dịch những cuốn sách
 được quan tâm nhiều về lĩnh vực này.
