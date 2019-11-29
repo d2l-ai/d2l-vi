@@ -10,7 +10,7 @@ import argparse
 
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
-TRANSLATE_INDICATOR = '*translate the above block*'
+TRANSLATE_INDICATOR = '*dịch đoạn phía trên*'
 HEADER_INDICATOR = ' *translate the above header*\n'
 IMAGE_CAPTION_INDICATOR = '*translate the image caption here*'
 # Our special mark in markdown, e.g. :label:`chapter_intro`

@@ -1,12 +1,28 @@
+<!--
 # STYLE GUIDE
+-->
 
-## Nhìn chung
+# *translate the above header*
 
-* Rõ ràng, trôi chảy, thực tế, và nhất quán
+<!--
+## In General
+-->
+
+## *translate the above header*
+
+<!--
 * Be clear, engaging, pragmatic, and consistent
+-->
 
+*translate the above block*
+
+<!--
 ## Text
+-->
 
+## *translate the above header*
+
+<!--
 * Chapters and Sections
     * Provide an overview at the beginning of each chapter
     * Be consistent in the structure of each section
@@ -38,9 +54,17 @@
         * mini-batch stochastic gradient descent vs stochastic gradient descent
     * List
         * https://github.com/mli/gluon-tutorials-zh/blob/master/TERMINOLOGY.md
+-->
 
+*translate the above block*
+
+<!--
 ## Math
+-->
 
+## *translate the above header*
+
+<!--
 * Be consistent in math format
     * https://github.com/goodfeli/dlbook_notation/blob/master/notation_example.pdf
 * Reference
@@ -50,9 +74,17 @@
     * e.g., comma and period
 * Assignment sumbol
     * \leftarrow
+-->
 
+*translate the above block*
+
+<!--
 ## Figure
+-->
 
+## *translate the above header*
+
+<!--
 * Software
     * Use OmniGraffle to make figures.
       * Export pdf (infinite canvas) in 100%, then use pdf2svg to convert to svg
@@ -77,9 +109,17 @@
 * Reference
     * e.g., Figure 7.1 (manually)
 * matplotlib
+-->
 
+*translate the above block*
+
+<!--
 ## Code
+-->
 
+## *translate the above header*
+
+<!--
 * Each line must have <=80 characters (limited by page width)
 * Use utils.py to encapsulate classes/functions that are repetitively used
     * Give full implementation when it is used for the first time
@@ -130,20 +170,47 @@
     * `.1` → `1.0`
     * 1. → `1.0`
     * remove namescope
+-->
 
+*translate the above block*
+
+<!--
 ## References
+-->
 
+## *translate the above header*
+
+<!--
 * Refer to [d2lbook](http://book.d2l.ai/examples/markdown.html#cross-references)how to add references for figure, table and equations.
+-->
 
+*translate the above block*
+
+<!--
 ## QR Code
+-->
 
+## *translate the above header*
+
+<!--
 * https://www.the-qrcode-generator.com/
     * 75pixel, SVG
+-->
+
+*translate the above block*
 
 
+<!--
 ## References
+-->
 
+## *translate the above header*
+
+<!--
 * The bibfile is `d2l.bib` on the root folder
 * Use bibtool generate consistent keys, install it by * `brew install bib-tool`
 * Then after inserting entry into `d2l.bib`, run
   `bibtool -f "%3n(author).%d(year)" d2l.bib -o d2l.bib`
+-->
+
+*translate the above block*

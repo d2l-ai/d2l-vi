@@ -22,7 +22,7 @@ Neural networks then, the antecedents of the deep learning models
 that we focus on in this book, were regarded as outmoded tools.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -42,7 +42,7 @@ changing the way movies are made, diseases are diagnosed,
 and playing a growing role in basic sciences---from astrophysics to biology.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 1 ================================-->
 
@@ -59,7 +59,7 @@ This book represents our attempt to make deep learning approachable,
 teaching you both the *concepts*, the *context*, and the *code*.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 ### One Medium Combining Code, Math, and HTML
@@ -84,7 +84,7 @@ has been realized to a far greater degree in the past ten years,
 owing in part to the development of powerful, well-documented frameworks.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -104,7 +104,7 @@ Our goal in this book is to present a unified resource
 to bring would-be practitioners up to speed.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -140,7 +140,7 @@ Moreover, too many resources are hidden behind the paywalls
 of commercial course providers.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 We set out to create a resource that could
@@ -154,7 +154,7 @@ and (5) be complemented by a [forum](http://discuss.mxnet.io)
 for interactive discussion of technical details and to answer questions.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 These goals were often in conflict.
@@ -177,7 +177,7 @@ We believe that this might be the first book published
 using such an integrated workflow.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 2 ================================-->
 
@@ -198,7 +198,7 @@ While experts love this book precisely for its thoroughness,
 for beginners, this property limits its usefulness as an introductory text.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 In this book, we will teach most concepts *just in time*.
@@ -210,7 +210,7 @@ we want you to taste the satisfaction of training your first model
 before worrying about more esoteric probability distributions.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 Aside from a few preliminary notebooks that provide a crash course
@@ -227,7 +227,7 @@ start your own research projects by leveraging our code.
 Just copy a notebook and start modifying it.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 We will interleave the runnable code with background material as needed.
@@ -242,7 +242,7 @@ at the expense of requiring the reader
 to trust us with some curatorial decisions.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 Throughout, we will be working with the MXNet library,
@@ -264,7 +264,7 @@ Once we have taught you how some component works,
 we can just use the Gluon version in subsequent tutorials.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 3 ================================-->
 
@@ -281,7 +281,7 @@ The book can be roughly divided into three parts,
 which are presented by different colors in :numref:`fig_book_org`:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 ![Book structure](../img/book-org.svg)
@@ -304,7 +304,7 @@ cover the most basic concepts and techniques of deep learning,
 such as linear regression, multilayer perceptrons and regularization.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -325,7 +325,7 @@ These sections will get you up to speed on the basic tools
 behind most modern applications of deep learning.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 * Part three discusses scalability, efficiency, and applications.
@@ -339,7 +339,7 @@ major applications of deep learning in computer vision
 and natural language processing, respectively.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 4 ================================-->
 
@@ -369,7 +369,7 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -385,7 +385,7 @@ please consult :ref:`chap_installation`
 to update your code and runtime environment.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 At times, to avoid unnecessary repetition, we encapsulate
@@ -398,7 +398,7 @@ The `d2l` package is light-weight and only requires
 the following packages and modules as dependencies:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -423,7 +423,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 5 ================================-->
 
@@ -458,7 +458,7 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -477,7 +477,7 @@ The authors of this book and broader MXNet developer community
 frequently participate in forum discussions.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -497,14 +497,14 @@ alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) and Rachel Hu (Amazon) co-authored the *Mathematics for Deep Learning* chapter in the Appendix with us and are the major contributors to that chapter.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 We thank Amazon Web Services, especially Swami Sivasubramanian,
 Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writing this book. Without the available time, resources, discussions with colleagues, and continuous encouragement this book would not have happened.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -525,7 +525,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 * If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -541,7 +541,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 1. Create an account on the forum and introduce yourself.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--

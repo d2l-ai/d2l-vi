@@ -13,7 +13,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 ## Installing Miniconda
@@ -30,7 +30,7 @@ and then execute the installation from the command line
 using `sh <FILENAME> -b`. For macOS users:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 # The file name is subject to changes
@@ -42,7 +42,7 @@ sh Miniconda3-latest-MacOSX-x86_64.sh -b
 For Linux users:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 # The file name is subject to changes
@@ -54,7 +54,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 Next, initialize the shell so we can run `conda` directly.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 ~/miniconda3/bin/conda init
@@ -66,7 +66,7 @@ Now close and re-open your current shell. You should be able to create a new
 environment as following:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 conda create --name d2l -y
@@ -85,7 +85,7 @@ Next, we need to download the code of this book. You can use the
 Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) available:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 mkdir d2l-en && cd d2l-en
@@ -99,7 +99,7 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 conda activate d2l
@@ -127,7 +127,7 @@ proceed to :ref:`sec_gpu` for instructions
 to install a GPU-supported MXNet.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 Otherwise, you can install the CPU version.
@@ -136,7 +136,7 @@ through the first few chapters but you will want
 to access GPUs before running larger models.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 # For Windows users
@@ -152,7 +152,7 @@ We also install the `d2l` package that encapsulates frequently used
 functions and classes in this book.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 pip install d2l==0.11.0
@@ -163,7 +163,7 @@ pip install d2l==0.11.0
 Once they are installed, we now open the Jupyter notebook by running:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 jupyter notebook
@@ -177,7 +177,7 @@ before running the code of the book or updating MXNet or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -190,7 +190,7 @@ To exit the environment, run `conda deactivate`.
 Both this book and MXNet are keeping improving. Please check a new version from time to time.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!--
 1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
@@ -198,7 +198,7 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 3. For the CPU version, MXNet can be upgraded by `pip install -U --pre mxnet`.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 <!-- ========================== End Part 2 ================================-->
 
@@ -221,7 +221,7 @@ If you have installed the CPU-only version,
 you may need to remove it first by running:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 pip uninstall mxnet
@@ -236,7 +236,7 @@ then you can install MXNet
 with the following command:
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 ```bash
 # For Windows users
@@ -255,7 +255,7 @@ e.g., `cu100` for CUDA 10.0 and `cu90` for CUDA 9.0.
 You can find all available MXNet versions via `pip search mxnet`.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
@@ -268,7 +268,7 @@ You can find all available MXNet versions via `pip search mxnet`.
 1. Download the code for the book and install the runtime environment.
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
 
 
 <!--
