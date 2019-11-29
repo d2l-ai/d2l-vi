@@ -287,7 +287,7 @@ which are presented by different colors in :numref:`fig_book_org`:
 ![Book structure](../img/book-org.svg)
 -->
 
-![*translate the image caption here*](../img/book-org.svg)
+![*dịch chú thích ảnh phía trên*](../img/book-org.svg)
 :label:`fig_book_org`
 
 
@@ -554,7 +554,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ![](../img/qr_preface.svg)
 -->
 
-![*translate the image caption here*](../img/qr_preface.svg)
+![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
 
 <!-- ========================== End Part 6 ================================-->
 

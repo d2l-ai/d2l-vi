@@ -23,5 +23,5 @@ b
 ![caption](path.png)
 -->
 
-![*translate the image caption here*](path.png)
+![*dịch chú thích ảnh phía trên*](path.png)
 :label:`figure1`

@@ -281,7 +281,7 @@ You can find all available MXNet versions via `pip search mxnet`.
 ![](../img/qr_install.svg)
 -->
 
-![*translate the image caption here*](../img/qr_install.svg)
+![*dịch chú thích ảnh phía trên*](../img/qr_install.svg)
 
 <!-- ========================== End Part 3 ================================-->
 

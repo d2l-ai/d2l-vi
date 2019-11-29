@@ -12,7 +12,7 @@ BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '*dịch đoạn phía trên*'
 HEADER_INDICATOR = ' *dịch tiêu đề phía trên*\n'
-IMAGE_CAPTION_INDICATOR = '*translate the image caption here*'
+IMAGE_CAPTION_INDICATOR = '*dịch chú thích ảnh phía trên*'
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
 
