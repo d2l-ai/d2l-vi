@@ -571,20 +571,20 @@ thì không cần điền vào các phần sau nữa.
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Part 1 -->
+<!-- Phần 1 -->
 *
 
-<!-- Part 2 -->
+<!-- Phần 2 -->
 *
 
-<!-- Part 3 -->
+<!-- Phần 3 -->
 *
 
-<!-- Part 4 -->
+<!-- Phần 4 -->
 *
 
-<!-- Part 5 -->
+<!-- Phần 5 -->
 *
 
-<!-- Part 6 -->
+<!-- Phần 6 -->
 *
