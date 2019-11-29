@@ -133,7 +133,9 @@ class LabelLine(MyLine):
         self.end_comment_if_next_line_blank = False
 
     def _process(self, file_writer, last_line):
-        assert isinstance(last_line, HeaderLine) or isinstance(last_line, ImageLine), last_line.line_str
+        assert isinstance(last_line, HeaderLine) or isinstance(last_line, ImageLine), 'last line: {}\nthis_line: {}'.format(
+                last_line.line_str, self.line_str
+            )
         file_writer.write(self.line_str)
         # file_writer.write('\n')
         return self
