@@ -1,10 +1,10 @@
-<!-- ========================== Begin Part 1 ================================-->
+<!-- =================== Bắt đầu dịch Phần 1 ================================-->
 
 <!--
 # Preface
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 
 <!--
 Just a few years ago, there were no legions of deep learning scientists
@@ -44,15 +44,15 @@ and playing a growing role in basic sciences---from astrophysics to biology.
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 1 ================================-->
+<!-- =================== Kết thúc dịch Phần 1 ================================-->
 
-<!-- ========================== Begin Part 2 ================================-->
+<!-- =================== Bắt đầu dịch Phần 2 ================================-->
 
 <!--
 ## About This Book
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 This book represents our attempt to make deep learning approachable,
@@ -65,7 +65,7 @@ teaching you both the *concepts*, the *context*, and the *code*.
 ### One Medium Combining Code, Math, and HTML
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 For any computing technology to reach its full impact,
@@ -179,15 +179,15 @@ using such an integrated workflow.
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 2 ================================-->
+<!-- =================== Kết thúc dịch Phần 2 ================================-->
 
-<!-- ========================== Begin Part 3 ================================-->
+<!-- =================== Bắt đầu dịch Phần 3 ================================-->
 
 <!--
 ### Learning by Doing
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 Many textbooks teach a series of topics, each in exhaustive detail.
@@ -266,15 +266,15 @@ we can just use the Gluon version in subsequent tutorials.
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 3 ================================-->
+<!-- =================== Kết thúc dịch Phần 3 ================================-->
 
-<!-- ========================== Begin Part 4 ================================-->
+<!-- =================== Bắt đầu dịch Phần 4 ================================-->
 
 <!--
 ### Content and Structure
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 The book can be roughly divided into three parts,
@@ -287,7 +287,7 @@ which are presented by different colors in :numref:`fig_book_org`:
 ![Book structure](../img/book-org.svg)
 -->
 
-![*translate the image caption here*](../img/book-org.svg)
+![*dịch chú thích ảnh phía trên*](../img/book-org.svg)
 :label:`fig_book_org`
 
 
@@ -341,15 +341,15 @@ and natural language processing, respectively.
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 4 ================================-->
+<!-- =================== Kết thúc dịch Phần 4 ================================-->
 
-<!-- ========================== Begin Part 5 ================================-->
+<!-- =================== Bắt đầu dịch Phần 5 ================================-->
 
 <!--
 ### Code
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 :label:`sec_code`
 
 <!--
@@ -425,15 +425,15 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 
 *dịch đoạn phía trên*
 
-<!-- ========================== End Part 5 ================================-->
+<!-- =================== Kết thúc dịch Phần 5 ================================-->
 
-<!-- ========================== Begin Part 6 ================================-->
+<!-- =================== Bắt đầu dịch Phần 6 ================================-->
 
 <!--
 ### Target Audience
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 This book is for students (undergraduate or graduate),
@@ -465,7 +465,7 @@ you may want to peruse this [Python tutorial](http://learnpython.org/).
 ### Forum
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 Associated with this book, we have launched a discussion forum,
@@ -484,7 +484,7 @@ frequently participate in forum discussions.
 ## Acknowledgments
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 We are indebted to the hundreds of contributors for both
@@ -511,7 +511,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## Summary
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Deep learning has revolutionized pattern recognition, introducing technology that now powers a wide range of  technologies, including computer vision, natural language processing, automatic speech recognition.
@@ -532,7 +532,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## Exercises
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 1. Register an account on the discussion forum of this book [discuss.mxnet.io](https://discuss.mxnet.io/).
@@ -548,15 +548,15 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## [Discussions](https://discuss.mxnet.io/t/2311)
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 ![](../img/qr_preface.svg)
 -->
 
-![*translate the image caption here*](../img/qr_preface.svg)
+![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
 
-<!-- ========================== End Part 6 ================================-->
+<!-- =================== Kết thúc dịch Phần 6 ================================-->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -571,20 +571,20 @@ thì không cần điền vào các phần sau nữa.
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Part 1 -->
+<!-- Phần 1 -->
 *
 
-<!-- Part 2 -->
+<!-- Phần 2 -->
 *
 
-<!-- Part 3 -->
+<!-- Phần 3 -->
 *
 
-<!-- Part 4 -->
+<!-- Phần 4 -->
 *
 
-<!-- Part 5 -->
+<!-- Phần 5 -->
 *
 
-<!-- Part 6 -->
+<!-- Phần 6 -->
 *
