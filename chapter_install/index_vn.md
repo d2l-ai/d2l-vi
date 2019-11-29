@@ -3,7 +3,7 @@
 # Installation
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 :label:`chap_installation`
 
 <!--
@@ -19,7 +19,7 @@ and the code needed to run the book itself.
 ## Installing Miniconda
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 The simplest way to get going will be to install
@@ -77,7 +77,7 @@ conda create --name d2l -y
 ## Downloading the D2L Notebooks
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Next, we need to download the code of this book. You can use the
@@ -115,7 +115,7 @@ conda install python=3.7 pip -y
 ## Installing MXNet and the `d2l` Package
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Before installing MXNet, please first check
@@ -184,7 +184,7 @@ To exit the environment, run `conda deactivate`.
 ## Upgrading to a New Version
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 Both this book and MXNet are keeping improving. Please check a new version from time to time.
@@ -208,7 +208,7 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 ## GPU Support
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 :label:`sec_gpu`
 
 <!--
@@ -262,7 +262,7 @@ You can find all available MXNet versions via `pip search mxnet`.
 ## Exercises
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 1. Download the code for the book and install the runtime environment.
@@ -275,7 +275,7 @@ You can find all available MXNet versions via `pip search mxnet`.
 ## [Discussions](https://discuss.mxnet.io/t/2315)
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 ![](../img/qr_install.svg)

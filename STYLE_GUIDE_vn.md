@@ -2,13 +2,13 @@
 # STYLE GUIDE
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 
 <!--
 ## In General
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Be clear, engaging, pragmatic, and consistent
@@ -20,7 +20,7 @@
 ## Text
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Chapters and Sections
@@ -62,7 +62,7 @@
 ## Math
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Be consistent in math format
@@ -82,7 +82,7 @@
 ## Figure
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Software
@@ -117,7 +117,7 @@
 ## Code
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Each line must have <=80 characters (limited by page width)
@@ -178,7 +178,7 @@
 ## References
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Refer to [d2lbook](http://book.d2l.ai/examples/markdown.html#cross-references)how to add references for figure, table and equations.
@@ -190,7 +190,7 @@
 ## QR Code
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * https://www.the-qrcode-generator.com/
@@ -204,7 +204,7 @@
 ## References
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * The bibfile is `d2l.bib` on the root folder

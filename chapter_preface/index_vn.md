@@ -4,7 +4,7 @@
 # Preface
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 
 <!--
 Just a few years ago, there were no legions of deep learning scientists
@@ -52,7 +52,7 @@ and playing a growing role in basic sciences---from astrophysics to biology.
 ## About This Book
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 This book represents our attempt to make deep learning approachable,
@@ -65,7 +65,7 @@ teaching you both the *concepts*, the *context*, and the *code*.
 ### One Medium Combining Code, Math, and HTML
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 For any computing technology to reach its full impact,
@@ -187,7 +187,7 @@ using such an integrated workflow.
 ### Learning by Doing
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 Many textbooks teach a series of topics, each in exhaustive detail.
@@ -274,7 +274,7 @@ we can just use the Gluon version in subsequent tutorials.
 ### Content and Structure
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 The book can be roughly divided into three parts,
@@ -349,7 +349,7 @@ and natural language processing, respectively.
 ### Code
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 :label:`sec_code`
 
 <!--
@@ -433,7 +433,7 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 ### Target Audience
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 This book is for students (undergraduate or graduate),
@@ -465,7 +465,7 @@ you may want to peruse this [Python tutorial](http://learnpython.org/).
 ### Forum
 -->
 
-### *translate the above header*
+### *dịch tiêu đề phía trên*
 
 <!--
 Associated with this book, we have launched a discussion forum,
@@ -484,7 +484,7 @@ frequently participate in forum discussions.
 ## Acknowledgments
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 We are indebted to the hundreds of contributors for both
@@ -511,7 +511,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## Summary
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 * Deep learning has revolutionized pattern recognition, introducing technology that now powers a wide range of  technologies, including computer vision, natural language processing, automatic speech recognition.
@@ -532,7 +532,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## Exercises
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 1. Register an account on the discussion forum of this book [discuss.mxnet.io](https://discuss.mxnet.io/).
@@ -548,7 +548,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 ## [Discussions](https://discuss.mxnet.io/t/2311)
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 
 <!--
 ![](../img/qr_preface.svg)

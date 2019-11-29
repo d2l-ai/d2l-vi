@@ -2,7 +2,7 @@
 # Linear Neural Networks
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 :label:`chapter_linear`
 
 <!--

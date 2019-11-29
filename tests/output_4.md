@@ -2,14 +2,14 @@
 # A
 -->
 
-# *translate the above header*
+# *dịch tiêu đề phía trên*
 :label:`chapter_A`
 
 <!--
 ## B
 -->
 
-## *translate the above header*
+## *dịch tiêu đề phía trên*
 :label:`chapter_B`
 
 <!--
