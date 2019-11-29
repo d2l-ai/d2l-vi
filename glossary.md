@@ -7,6 +7,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 
 *Chú ý giữ thứ tự theo bảng chữ cái để tiện tra cứu.*
 
+**Mục lục:**
+
+[A](#a) [B](#b) [C](#c) [D](#d) [E](#e) [F](#f) [G](#g)
+[H](#h) [I](#i) [J](#k) [K](#k) [L](#l) [M](#m) [N](#n)
+[O](#0) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u)
+[V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
 
 ## A
 | English                   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
