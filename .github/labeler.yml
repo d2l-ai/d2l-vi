@@ -1,2 +1,6 @@
+deploy:
+  - config.ini
+  - deploy.sh
+
 preface:
   - chapter_preface/*
