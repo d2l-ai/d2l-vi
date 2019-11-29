@@ -10,4 +10,4 @@ $$ bb $$
 c
 -->
 
-*translate the above block*
+*dịch đoạn phía trên*
