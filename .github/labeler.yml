@@ -4,3 +4,11 @@ deploy:
 
 preface:
   - chapter_preface/*
+
+install:
+  - chapter_install/*
+
+utility:
+  - utils.py
+  - test_utils.py
+  - tests/*
