@@ -73,8 +73,18 @@ một trường của Việt Nam trong danh sách này:
 
 
 ### Hướng dẫn đóng góp
+Dự án này đang được triển khai tại https://github.com/aivivn/d2l-vn.
 
-Có ba công việc chính bạn có thể đóng góp vào dự án: Dịch, Review, và Hỗ trợ kỹ thuật.
+Bạn có thể làm gì để đóng góp vào dự án:
+
+* Tham gia dịch thông qua các Pull Request
+* Tham gia review các Pull Request
+* Hỗ trợ kỹ thuật
+* Sửa các lỗi chính tả, ngữ pháp, những điểm chưa nhất quán trong cách dịch
+* Start GitHub repo của dự án
+* Chia sẻ dự án tới nhiều người hơn
+
+Dưới đây là chi tiết về ba việc quan trọng nhất:
 
 #### Dịch
 
