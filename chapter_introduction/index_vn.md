@@ -96,6 +96,10 @@ natural language processing, healthcare, and genomics.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 1 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 2 ==================== -->
+
 <!--
 ## A Motivating Example
 -->
@@ -181,6 +185,10 @@ to choose the parameters is called a *learning algorithm*.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 2 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 3 ==================== -->
+
 <!--
 Before we can go ahead and engage the learning algorithm,
 we have to define the problem precisely,
@@ -244,6 +252,10 @@ As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 
 ![*dịch chú thích ảnh phía trên*](../img/ml-loop.svg)
 :label:`fig_ml_loop`
+
+<!===================== Kết thúc dịch Phần 3 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 4 ==================== -->
 
 <!--
 To summarize, rather than code up a wake word recognizer,
@@ -309,6 +321,9 @@ offering a unified set of tools for tackling diverse problems.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 4 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 5 ==================== -->
 
 <!--
 ## The Key Components: Data, Models, and Algorithms
@@ -384,6 +399,10 @@ given a standard set of features such as age, vital signs, diagnoses, etc.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 5 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 6 ==================== -->
+
 <!--
 When every example is characterized by the same number of numerical values,
 we say that the data consists of *fixed-length* vectors
@@ -455,6 +474,9 @@ actively conspiring, or even being aware.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 6 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 7 ==================== -->
 
 <!--
 ### Models
@@ -520,6 +542,10 @@ Because lower is better, these functions are sometimes called
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 7 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 8 ==================== -->
+
 <!--
 When trying to predict numerical values,
 the most common objective function is squared error $(y-\hat{y})^2$.
@@ -570,6 +596,9 @@ reporting the following two quantities:
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 8 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 9 ==================== -->
 
 <!--
 ### Optimization algorithms
@@ -613,6 +642,10 @@ for when we talk about more problems throughout the book.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 9 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 10 ==================== -->
 
 <!--
 ### Supervised learning
@@ -681,6 +714,10 @@ of something unknown given a particular set of available data:
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 10 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 11 ==================== -->
+
 <!--
 Even with the simple description "predict targets from inputs"
 supervised learning can take a great many forms
@@ -720,6 +757,10 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 11 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 12 ==================== -->
 
 <!--
 ![Supervised learning.](../img/supervised-learning.svg)
@@ -782,6 +823,9 @@ our outputs and targets as real-valued numbers.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 12 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 13 ==================== -->
 
 <!--
 We denote any individual target $y_i$
@@ -849,6 +893,10 @@ the high-level idea behind linear regression
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 13 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 14 ==================== -->
+
 <!--
 In this case, we could produce the parameters
 that exactly matched the contractor's prices.
@@ -883,6 +931,10 @@ of noise from a Laplace distribution.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 14 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 15 ==================== -->
 
 <!--
 #### Classification
@@ -964,6 +1016,10 @@ In MXNet Gluon, the corresponding loss function can be found [here](https://mxne
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 15 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 16 ==================== -->
+
 <!--
 Note that the most likely class is not necessarily
 the one that you are going to use for your decision.
@@ -1037,6 +1093,10 @@ but mistaking a rattler for a garter could be deadly.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 16 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 17 ==================== -->
 
 <!--
 #### Tagging
@@ -1118,6 +1178,9 @@ has [hosted a competition](http://bioasq.org/) to do precisely this.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 17 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 18 ==================== -->
 
 <!--
 #### Search and ranking
@@ -1163,7 +1226,9 @@ There are entire academic conferences devoted to this subject.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 18 ==================== -->
 
+<!===================== Bắt đầu dịch Phần 19 ==================== -->
 
 <!--
 #### Recommender systems
@@ -1243,6 +1308,10 @@ incentives, and feedback loops, are important open research questions.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 19 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 20 ==================== -->
+
 <!--
 #### Sequence Learning
 -->
@@ -1303,6 +1372,10 @@ a number of special cases are worth mentioning:
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 20 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 21 ==================== -->
 
 <!--
 **Tagging and Parsing**. This involves annotating a text sequence with attributes.
@@ -1389,6 +1462,9 @@ across long temporal distances. This is an active area of research.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 21 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 22 ==================== -->
 
 <!--
 ### Unsupervised learning
@@ -1469,6 +1545,9 @@ We will devote a few notebooks to them.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 22 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 23 ==================== -->
 
 <!--
 ### Interacting with an Environment
@@ -1549,6 +1628,9 @@ two settings that explicitly consider interaction with an environment.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 23 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 24 ==================== -->
 
 <!--
 ### Reinforcement learning
@@ -1607,6 +1689,10 @@ from the original supervised problem.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 24 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 25 ==================== -->
+
 <!--
 That being said, RL can also address many problems
 that supervised learning cannot.
@@ -1662,6 +1748,9 @@ potentially giving up some short-run reward in exchange for knowledge.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 25 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 26 ==================== -->
 
 <!--
 #### MDPs, bandits, and friends
@@ -1695,7 +1784,9 @@ is the classic *multi-armed bandit problem*.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 26 ==================== -->
 
+<!===================== Bắt đầu dịch Phần 27 ==================== -->
 
 <!--
 ## Roots
@@ -1767,6 +1858,10 @@ in industry and the natural sciences.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 27 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 28 ==================== -->
 
 <!--
 A second influence for machine learning came from Information Theory
@@ -1844,6 +1939,10 @@ and provided predictable results with strong theoretical guarantees.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 28 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 29 ==================== -->
+
 <!--
 ## The Road to Deep Learning
 -->
@@ -1915,6 +2014,10 @@ over the past decade.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 29 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 30 ==================== -->
+
 <!--
 * Novel methods for capacity control, such as Dropout
   :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`
@@ -1922,6 +2025,11 @@ over the past decade.
   This was achieved by applying noise injection :cite:`Bishop.1995`
   throughout the network, replacing weights by random variables
   for training purposes.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Attention mechanisms solved a second problem
   that had plagued statistics for over a century:
   how to increase the memory and complexity of a system without
@@ -1935,12 +2043,22 @@ over the past decade.
   increased accuracy for long sentences, since the model
   no longer needed to remember the entire sentence before
   commencing the generation of a new sentence.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
   :cite:`Sukhbaatar.Weston.Fergus.ea.2015` and the Neural Programmer-Interpreter :cite:`Reed.De-Freitas.2015`
   allowed statistical modelers to describe iterative approaches to reasoning. These tools allow for an internal state of the deep network
   to be modified repeatedly, thus carrying out subsequent steps
   in a chain of reasoning, similar to how a processor
   can modify memory for a computation.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Another key development was the invention of GANS
   :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
   Traditionally, statistical methods for density estimation
@@ -1956,6 +2074,11 @@ over the past decade.
   Examples of galloping Zebras :cite:`Zhu.Park.Isola.ea.2017`
   and of fake celebrity faces :cite:`Karras.Aila.Laine.ea.2017`
   are both testimony to this progress.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * In many cases, a single GPU is insufficient to process
   the large amounts of data available for training.
   Over the past decade the ability to build parallel
@@ -1971,7 +2094,12 @@ over the past decade.
   and subsequently by :cite:`You.Gitman.Ginsburg.2017`
   and :cite:`Jia.Song.He.ea.2018` pushed the size up to 64k observations,
   reducing training time for ResNet50 on ImageNet to less than 7 minutes.
-  For comparison---initially training times were measured in the order of days.
+  For comparison\-\-initially training times were measured in the order of days.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * The ability to parallelize computation has also contributed quite crucially
   to progress in reinforcement learning, at least whenever simulation is an
   option. This has led to significant progress in computers achieving
@@ -1981,6 +2109,11 @@ over the past decade.
   of how to achieve this in AlphaGo. In a nutshell,
   reinforcement learning works best if plenty of (state, action, reward)triples are available, i.e., whenever it is possible to try out lots of things to learn how they relate to each
   other. Simulation provides such an avenue.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Deep Learning frameworks have played a crucial role
   in disseminating ideas. The first generation of frameworks
   allowing for easy modeling encompassed
@@ -2014,6 +2147,10 @@ putting it firmly into the grasp of programmers.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 30 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 31 ==================== -->
+
 <!--
 ## Success Stories
 -->
@@ -2046,19 +2183,38 @@ solutions to problems that were considered intractable previously.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 31 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 32 ==================== -->
+
 <!--
 * Intelligent assistants, such as Apple's Siri, Amazon's Alexa, or Google's
   assistant are able to answer spoken questions with a reasonable degree of
   accuracy. This includes menial tasks such as turning on light switches (a boon to the disabled) up to making barber's appointments and offering phone support dialog. This is likely the most noticeable sign that AI is affecting our lives.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * A key ingredient in digital assistants is the ability to recognize speech
   accurately. Gradually the accuracy of such systems has increased to the point
   where they reach human parity :cite:`Xiong.Wu.Alleva.ea.2018` for certain
   applications.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Object recognition likewise has come a long way. Estimating the object in a
   picture was a fairly challenging task in 2010. On the ImageNet benchmark
   :cite:`Lin.Lv.Zhu.ea.2010` achieved a top-5 error rate of 28%. By 2017,
   :cite:`Hu.Shen.Sun.2018` reduced this error rate to 2.25%. Similarly stunning
   results have been achieved for identifying birds, or diagnosing skin cancer.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Games used to be a bastion of human intelligence.
   Starting from TDGammon [23], a program for playing Backgammon
   using temporal difference (TD) reinforcement learning,
@@ -2076,6 +2232,11 @@ solutions to problems that were considered intractable previously.
   structured strategies :cite:`Brown.Sandholm.2017`.
   This illustrates the impressive progress in games
   and the fact that advanced algorithms played a crucial part in them.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 * Another indication of progress in AI is the advent of self-driving cars
   and trucks. While full autonomy is not quite within reach yet,
   excellent progress has been made in this direction,
@@ -2089,6 +2250,10 @@ solutions to problems that were considered intractable previously.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 32 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 33 ==================== -->
 
 <!--
 Again, the above list barely scratches the surface of where machine learning has impacted practical applications. For instance, robotics, logistics, computational biology, particle physics, and astronomy owe some of their most impressive recent advances at least in parts to machine learning. ML is thus becoming a ubiquitous tool for engineers and scientists.
@@ -2148,6 +2313,10 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 33 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 34 ==================== -->
+
 <!--
 ## Summary
 -->
@@ -2190,7 +2359,7 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 ![*dịch chú thích ảnh phía trên*](../img/qr_introduction.svg)
 
-<!===================== Kết thúc dịch Phần 1 ==================== -->
+<!===================== Kết thúc dịch Phần 34 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -2221,4 +2390,88 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
+*
+
+<!-- Phần 7 -->
+*
+
+<!-- Phần 8 -->
+*
+
+<!-- Phần 9 -->
+*
+
+<!-- Phần 10 -->
+*
+
+<!-- Phần 11 -->
+*
+
+<!-- Phần 12 -->
+*
+
+<!-- Phần 13 -->
+*
+
+<!-- Phần 14 -->
+*
+
+<!-- Phần 15 -->
+*
+
+<!-- Phần 16 -->
+*
+
+<!-- Phần 17 -->
+*
+
+<!-- Phần 18 -->
+*
+
+<!-- Phần 19 -->
+*
+
+<!-- Phần 20 -->
+*
+
+<!-- Phần 21 -->
+*
+
+<!-- Phần 22 -->
+*
+
+<!-- Phần 23 -->
+*
+
+<!-- Phần 24 -->
+*
+
+<!-- Phần 25 -->
+*
+
+<!-- Phần 26 -->
+*
+
+<!-- Phần 27 -->
+*
+
+<!-- Phần 28 -->
+*
+
+<!-- Phần 29 -->
+*
+
+<!-- Phần 30 -->
+*
+
+<!-- Phần 31 -->
+*
+
+<!-- Phần 32 -->
+*
+
+<!-- Phần 33 -->
+*
+
+<!-- Phần 34 -->
 *
