@@ -121,7 +121,6 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 
 
 ## GPU Support
-
 :label:`sec_gpu`
 
 By default, MXNet is installed without GPU support
