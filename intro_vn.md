@@ -51,25 +51,25 @@ một trường của Việt Nam trong danh sách này:
 Đây cũng là các nội dung được đề cập trong cuốn sách:
 ## Thứ tự dịch
 
-* [ ] Preface
-* [ ] Introduction
-* [ ] Preliminaries
-* [ ] Mathematics for Deep Learning
-* [ ] Tools for Deep Learning
-* [ ] Linear Neural Networks
-* [ ] Multilayer Perceptrons
-* [ ] Deep Learning Computation
-* [ ] Convolutional Neural Networks
-* [ ] Modern Convolutional Networks
-* [ ] Recurrent Neural Networks
-* [ ] Modern Recurrent Networks
-* [ ] Attention Mechanisms
-* [ ] Optimization Algorithms
-* [ ] Computational Performance
-* [ ] Computer Vision
-* [ ] Natural Language Processing
-* [ ] Recommender Systems
-* [ ] Generative Adversarial Networks
+* Preface
+* Introduction
+* Preliminaries
+* Mathematics for Deep Learning
+* Tools for Deep Learning
+* Linear Neural Networks
+* Multilayer Perceptrons
+* Deep Learning Computation
+* Convolutional Neural Networks
+* Modern Convolutional Networks
+* Recurrent Neural Networks
+* Modern Recurrent Networks
+* Attention Mechanisms
+* Optimization Algorithms
+* Computational Performance
+* Computer Vision
+* Natural Language Processing
+* Recommender Systems
+* Generative Adversarial Networks
 
 
 ### Hướng dẫn đóng góp
