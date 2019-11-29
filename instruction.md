@@ -52,11 +52,11 @@ Có ba công việc chính bạn có thể đóng góp vào dự án: Dịch, Re
 
 Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
 ```
-<!-- ========================== Begin Part x ================================-->
+<!-- =================== Bắt đầu dịch Phần x ================================-->
 ```
 và
 ```
-<!-- ========================== End Part x ================================-->
+<!-- =================== Kết thúc dịch Phần x ================================-->
 ```
 
 Việc chia nhỏ một file ra nhiều phần khiến một Pull Request mất không quá nhiều thời gian trong cả việc thực hiện lẫn review.
