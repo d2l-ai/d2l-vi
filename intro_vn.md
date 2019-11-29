@@ -70,6 +70,11 @@ một trường của Việt Nam trong danh sách này:
 * Recommender Systems
 * Generative Adversarial Networks
 
+#### Diễn đàn
+
+Nội dung cuốn sách này rất phong phú và có nhiều bài tập ở cuối mỗi phần. Các
+bạn có thể tham gia thảo luận nội dung và bài tập của cuốn sách
+[tại đây](https://forum.machinelearningcoban.com/c/d2l).
 
 ### Hướng dẫn đóng góp
 
