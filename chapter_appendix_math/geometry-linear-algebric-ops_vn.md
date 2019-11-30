@@ -90,7 +90,7 @@ khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các ph
 định của một vector là một vector cột, trong một ma trận biểu diễn một tập dữ
 liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
 trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
-này phù hợp với cách triển khai mô hình học sâu.
+này phù hợp với cách triển khai các mô hình học sâu.
 
 <!===================== Kết thúc dịch Phần 1 ==================== -->
 
