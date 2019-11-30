@@ -35,6 +35,8 @@ thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector ri�
 -->
 
 ## Ý nghĩa hình học của Vector
+
+<!--
 First, we need to discuss the two common geometric interpretations of vectors,
 as either points or directions in space.
 Fundamentally, a vector is a list of numbers such as the Python list below.
