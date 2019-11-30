@@ -152,7 +152,7 @@ sau đó đi theo một hướng cho bởi một vector khác, như được cho
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
 -->
 
-![Phép cộng vector có thể biểu diễn bằng cách đều tiên đi theo một vector, sau dó đi theo vector kia.](../img/VecAdd.svg)
+![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau dó đi theo vector kia.](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
 <!===================== Kết thúc dịch Phần 2 ==================== -->
