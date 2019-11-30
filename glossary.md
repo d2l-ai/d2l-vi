@@ -27,7 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
-| back-propagation | lan truyền ngược | |
+| back-propagation        | lan truyền ngược                                               |                       |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -38,10 +38,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
-| code (danh từ) | mã nguồn | |
-| code (động từ) | viết mã | |
+| code (danh từ)      | mã nguồn                                                       |               |
+| code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
-| confidence interval | khoảng tin cậy | |
+| confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
 | cross validation    | kiểm định chéo                                                 |               |
@@ -59,16 +59,16 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dropout             |                                                                |               |
 
 ## E
-| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|-------------------|----------------------------------------------------------------|-------------------------|
-| early stopping    | dừng sớm                                                       |                         |
-| eigen-decomposition | phân tích trị riêng | |
-| end-to-end        | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
-| error analysis    | phân tích lỗi                                                  |                         |
-| error rate        | tỉ lệ lỗi                                                      |                         |
-| evaluation metric | phép đánh giá                                                  |                         |
-| example           | mẫu                                                            |                         |
-| Eyeball dev set   | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
+| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|---------------------|----------------------------------------------------------------|-----------------------|
+| early stopping      | dừng sớm                                                       |                       |
+| eigen-decomposition | phân tích trị riêng                                            |                       |
+| end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
+| error analysis      | phân tích lỗi                                                  |                       |
+| error rate          | tỉ lệ lỗi                                                      |                       |
+| evaluation metric   | phép đánh giá                                                  |                       |
+| example             | mẫu                                                            |                       |
+| Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
 | English        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -80,9 +80,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit            | fit                                                            |               |
 
 ## G
-| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|------------------|----------------------------------------------------------------|-------------------------|
-| gradient descent | hạ dốc                                                         | http://bit.ly/2BvfPYA |
+| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
+|------------------|----------------------------------------------------------------|----------------------------------------------|
+| gradient descent | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 
 ## H
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
