@@ -28,7 +28,7 @@ và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đ
 đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều
 cần thảo luận trong lĩnh vực này. Trong mục này, chúng ta sẽ đi sâu hơn, nhấn
 mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới
-thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng (glossay).
+thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
 
 <!--
 ## Geometry of Vectors
