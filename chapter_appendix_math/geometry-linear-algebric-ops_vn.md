@@ -41,7 +41,7 @@ Fundamentally, a vector is a list of numbers such as the Python list below.
 -->
 
 Trước hết, chúng ta cần thảo luận hai diễn giải hình học phổ biến của vector,
-là điểm hoặc phương trong không gian. Về cơ bản, một vector là một danh sách các
+điểm hoặc hướng trong không gian. Về cơ bản, một vector là một danh sách các
 số giống như danh sách trong Python dưới đây:
 
 ```{.python .input}
