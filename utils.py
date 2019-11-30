@@ -169,7 +169,7 @@ def block_comment(input_md, output_md, add_prefix_suffix=False):
             elif line_str.startswith('```'):
                 in_code_block = not in_code_block
                 line_type = CodeMarkerLine
-            elif match is not None and match[1] == 'label':
+            elif match is not None and match[1] in ['label', 'eqlabel']:
                 line_type = LabelLine
             else:
                 line_type = NormalLine
