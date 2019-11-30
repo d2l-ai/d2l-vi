@@ -188,6 +188,7 @@ using such an integrated workflow.
 -->
 
 ### *dịch tiêu đề phía trên*
+### Học thông qua làm
 
 <!--
 Many textbooks teach a series of topics, each in exhaustive detail.
@@ -199,6 +200,8 @@ for beginners, this property limits its usefulness as an introductory text.
 -->
 
 *dịch đoạn phía trên*
+Nhiều sách giáo trình dạy một chuỗi các chủ đề, đầy đủ chi tiết cho từng cái. Lấy ví dụ, quyển sách giáo trình tuyệt vời của Bishop :cite:`Bishop.2006`, dạy mỗi chủ đề rất kỹ lưỡng, để mà đến được chương hồi quy tuyến tính đòi hỏi một số lượng công việc không nhỏ.
+Trong khi những chuyên gia yêu thích quyển sách này chính vì sự kỹ lưỡng của nó, đối với người bắt đầu, đặc điểm này làm giới hạn việc sử dụng nó như là tài liệu giới thiệu
 
 <!--
 In this book, we will teach most concepts *just in time*.
@@ -211,6 +214,9 @@ before worrying about more esoteric probability distributions.
 -->
 
 *dịch đoạn phía trên*
+Trong quyển sách này, chúng tôi sẽ dạy hầu hết các khái niệm *đúng thời điểm*.
+Hay nói cách khác, bạn sẽ học các khái niệm tại ngay thời điểm mà chúng cần thiết để hoàn tất phần thực hành.
+Trong khi chúng tôi sẽ dành một chút thời gian để dạy các phần cơ bản ngoài lề, như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn nếm trải sự thoả mãn của việc huấn luyện mô hình đầu tiên mình trước khi bận tâm nhiều về các lý thuyết phân phối xác suất.
 
 <!--
 Aside from a few preliminary notebooks that provide a crash course
@@ -228,6 +234,13 @@ Just copy a notebook and start modifying it.
 -->
 
 *dịch đoạn phía trên*
+Bên cạnh một vài notebook cơ bản cung cấp một khoá học từ đầu về nền tảng toán học cơ bản, mỗi chương tiếp theo sẽ giới thiệu cả một số lượng hợp lý các khái niệm mới và đồng thời cung cấp các ví dụ chạy độc lập---sử dụng các tập hợp dữ liệu thực tế.
+Việc này đưa ra một thách thức về tính tổ chức.
+Một vài mô hình có thể được nhóm lại với nhau một cách có logic trong một notebook riêng lẻ.
+Và một vài ý tưởng có thể được dạy dể dàng bằng cách thực thi một số mô hình kế tiếp nhau.
+Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách *1 ví dụ hiện hành, 1 notebook*:
+Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách dễ dàng nhất có thể bằng cách tận dụng code của chúng tôi.
+Chỉ việc sao chép một notebook và bắt đầu sửa đổi nó.
 
 <!--
 We will interleave the runnable code with background material as needed.
@@ -243,6 +256,10 @@ to trust us with some curatorial decisions.
 -->
 
 *dịch đoạn phía trên*
+Chúng tôi sẽ xen kẽ code có thể chạy được với tài liệu nền tảng khi cần thiết.
+Nói chung, chúng tôi sẽ thường xuyên gây lỗi ở phía tạo ra công cụ có sẵn trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần nền tảng sau).
+Ví dụ, chúng tôi có thể sử dụng *hạ dốc ngẫu nhiên* trước khi giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó hoạt động.
+Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết để giải quyết vấn đề nhanh chóng, đòi hỏi người đọc phải tin tưởng vào một số quyết định triển khai của chúng tôi.
 
 <!--
 Throughout, we will be working with the MXNet library,
@@ -265,6 +282,13 @@ we can just use the Gluon version in subsequent tutorials.
 -->
 
 *dịch đoạn phía trên*
+Xuyên suốt giáo trình, chúng ta sẽ làm việc với thư viện MXNet, một thư viện có đầy đủ các đặc tính hiếm có đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
+Quyển sách này sẽ dạy về khái niệm học sâu từ đầu.
+Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn về mô hình mà thông thường sẽ được che giấu khỏi người dùng bởi những lớp trừu tượng bậc cao Gluon.
+Điều này xuất hiện đặc biệt trong các hướng dẫn cơ bản, nơi chúng tôi muốn bạn hiểu mọi thứ sẽ diễn ra trong một lớp nhất định hoặc phần tối ưu hoá.
+Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản của một ví dụ: một khi chúng tôi hiện thực mọi thứ từ đầu, dựa vào chỉ giao diện Numpy và sự phân biệt tự động, và một ví dụ khác, thực tế hơn, khi chúng tôi viết code vắn tắt sử dụng Gluon.
+Một khi chúng tôi đã dạy bạn cách một vài bộ phận hoạt động,
+chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
