@@ -86,7 +86,7 @@ cấu trúc dữ liệu hữu ích: chúng cho phép chúng ta tổ chức dữ 
 biến thể khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
 (điểm dữ liệu) khác nhau, trong khi các cột có thể tương ứng với các thuộc tính
 khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các phần mềm dạng bảng
-(spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù hướng mặc
+(spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù chiều mặc
 định của một vector là một vector cột, trong một ma trận biểu diễn một tập dữ
 liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
 trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
