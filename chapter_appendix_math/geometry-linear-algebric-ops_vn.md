@@ -83,7 +83,7 @@ Những biểu diễn này thường có những cách diễn giải khác nhau.
 trọng số được biểu diễn bằng các vector hàng. Tuy nhiên, việc linh động sử
 dụng các cách biểu diễn này mang lại nhiều lợi ích. Ma trận là những
 cấu trúc dữ liệu hữu ích: chúng cho phép chúng ta tổ chức dữ liệu với nhiều
-<biến thể> khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
+biến thể khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
 (điểm dữ liệu) khác nhau, trong khi các cột có thể tương ứng với các thuộc tính
 khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các phần mềm dạng bảng
 (spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù hướng mặc
