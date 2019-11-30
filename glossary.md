@@ -47,22 +47,27 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | cross validation    | kiểm định chéo                                                 |               |
 
 ## D
-| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|---------------------|----------------------------------------------------------------|---------------|
-| data mismatch       | dữ liệu không tương đồng                                       |               |
-| deep learning       | học sâu                                                        |               |
-| development set     | tập phát triển                                                 |               |
-| dev set             | tập phát triển                                                 |               |
-| dev set performance | chất lượng trên tập phát triển                                 |               |
-| distribution        | phân phối                                                      |               |
-| domain adaptation   | thích ứng miền                                                 |               |
-| dropout             |                                                                |               |
+| English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|------------------------|----------------------------------------------------------------|---------------|
+| data                   | dữ liệu                                                        |               |
+| datapoint (data point) | điểm dữ liệu                                                   |               |
+| data mismatch          | dữ liệu không tương đồng                                       |               |
+| dataset (data set)     | tập dữ liệu                                                    |               |
+| deep learning          | học sâu                                                        |               |
+| development set        | tập phát triển                                                 |               |
+| dev set                | tập phát triển                                                 |               |
+| dev set performance    | chất lượng trên tập phát triển                                 |               |
+| distribution           | phân phối                                                      |               |
+| domain adaptation      | thích ứng miền                                                 |               |
+| dropout                |                                                                |               |
 
 ## E
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |---------------------|----------------------------------------------------------------|-----------------------|
 | early stopping      | dừng sớm                                                       |                       |
 | eigen-decomposition | phân tích trị riêng                                            |                       |
+| eigenvalue          | trị riêng                                                      |                       |
+| eigenvector         | vector riêng                                                   |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
 | error rate          | tỉ lệ lỗi                                                      |                       |
@@ -184,6 +189,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underfit         | underfit                                                       | http://bit.ly/2BvfPYA |
 
 ## V
-| English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|-----------------------------|----------------------------------------------------------------|-------------------------|
+| English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-----------------------------|----------------------------------------------------------------|-----------------------|
 | variance (bias as variance) | phương sai                                                     | http://bit.ly/32HJI3S |
+| vector                      | vector                                                         |                       |
