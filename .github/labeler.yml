@@ -8,6 +8,9 @@ preface:
 install:
   - chapter_install/*
 
+introduction:
+    - chapter_introduction/*
+
 utility:
   - utils.py
   - test_utils.py
