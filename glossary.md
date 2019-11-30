@@ -27,6 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
+| back-propagation        | lan truyền ngược                                               |                       |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -37,7 +38,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
+| code (danh từ)      | mã nguồn                                                       |               |
+| code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
+| confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
 | cross validation    | kiểm định chéo                                                 |               |
@@ -55,15 +59,16 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dropout             |                                                                |               |
 
 ## E
-| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|-------------------|----------------------------------------------------------------|-------------------------|
-| early stopping    | dừng sớm                                                       |                         |
-| end-to-end        | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
-| error analysis    | phân tích lỗi                                                  |                         |
-| error rate        | tỉ lệ lỗi                                                      |                         |
-| evaluation metric | phép đánh giá                                                  |                         |
-| example           | mẫu                                                            |                         |
-| Eyeball dev set   | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
+| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|---------------------|----------------------------------------------------------------|-----------------------|
+| early stopping      | dừng sớm                                                       |                       |
+| eigen-decomposition | phân tích trị riêng                                            |                       |
+| end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
+| error analysis      | phân tích lỗi                                                  |                       |
+| error rate          | tỉ lệ lỗi                                                      |                       |
+| evaluation metric   | phép đánh giá                                                  |                       |
+| example             | mẫu                                                            |                       |
+| Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
 | English        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -75,9 +80,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit            | fit                                                            |               |
 
 ## G
-| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|------------------|----------------------------------------------------------------|-------------------------|
-| gradient descent | hạ dốc                                                         | http://bit.ly/2BvfPYA |
+| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
+|------------------|----------------------------------------------------------------|----------------------------------------------|
+| gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| 
 
 ## H
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
@@ -114,27 +120,27 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | multitask learning | học đa nhiệm                                                   |               |
 
 ## N
-| English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
-|-----------------------------------|----------------------------------------------------------------|--------------------------------------------------|
-| natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                                  |
-| negative sample/example           | mẫu âm                                                         |                                                  |
-| neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG  |
+| English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                               |
+|-----------------------------------|----------------------------------------------------------------|---------------------------------------------|
+| natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                             |
+| negative sample/example           | mẫu âm                                                         |                                             |
+| neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 
 ## O
-| English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
-|-----------------------------------|----------------------------------------------------------------|--------------------------------------------------|
-| optimizing metric                 | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA                          |
-| overfit                           | overfit                                                        | http://bit.ly/2BvfPYA                          |
+| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-------------------|----------------------------------------------------------------|-----------------------|
+| optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
+| overfit           | overfit                                                        | http://bit.ly/2BvfPYA |
 
 ## P
-| English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|-------------------------|----------------------------------------------------------------|-------------------------|
+| English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-------------------------|----------------------------------------------------------------|-----------------------|
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
-| plateau (danh từ)       | vùng nằm ngang                                                 |                         |
-| plateau (động từ)       | nằm ngang                                                      |                         |
+| plateau (danh từ)       | vùng nằm ngang                                                 |                       |
+| plateau (động từ)       | nằm ngang                                                      |                       |
 | pipeline                | pipeline                                                       | http://bit.ly/2OyYuEf |
-| positive sample/example | mẫu dương                                                      |                         |
-| precision               | precision                                                      |                         |
+| positive sample/example | mẫu dương                                                      |                       |
+| precision               | precision                                                      |                       |
 
 ## R
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -147,16 +153,17 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | running time           | thời gian chạy                                                 |               |
 
 ## S
-| English                      | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|------------------------------|----------------------------------------------------------------|-------------------------|
+| English                      | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|------------------------------|----------------------------------------------------------------|-----------------------|
 | sampling with replacement    | lấy mẫu có hoàn lại                                            | http://bit.ly/34wQuKr |
 | sampling without replacement | lấy mẫu không hoàn lại                                         | http://bit.ly/34wQuKr |
 | satisficing metric           | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
-| scroing function             | hàm tính điểm                                                  |                         |
-| sentiment classification     | phân loại cảm xúc                                              |                         |
-| spam email                   | email rác                                                      |                         |
-| speech recognition           | nhận dạng giọng nơi                                            |                         |
-| supervised learning          | học có giám sát                                                |                         |
+| scroing function             | hàm tính điểm                                                  |                       |
+| sentiment classification     | phân loại cảm xúc                                              |                       |
+| spam email                   | email rác                                                      |                       |
+| stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
+| speech recognition           | nhận dạng giọng nơi                                            |                       |
+| supervised learning          | học có giám sát                                                |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
