@@ -69,6 +69,10 @@ Matrices are useful data structures: they allow us to organize data that have di
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 1 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 2 ==================== -->
+
 <!--
 Given a vector, the first interpretation
 that we should give it is as a point in space.
@@ -132,6 +136,10 @@ and then follow the directions given by the other, as is seen in :numref:`fig_ad
 
 ![*dịch chú thích ảnh phía trên*](../img/VecAdd.svg)
 :label:`fig_add-vec`
+
+<!===================== Kết thúc dịch Phần 2 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 3 ==================== -->
 
 <!--
 Vector subtraction has a similar interpretation.
@@ -208,6 +216,10 @@ If we compute the dot product of these two vectors, we see that
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 3 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 4 ==================== -->
 
 $$
 \mathbf{v}\cdot\mathbf{w} = rs\cos(\theta) = \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta).
@@ -310,6 +322,10 @@ so again we can use the angle.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 4 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 5 ==================== -->
+
 <!--
 ### Cosine Similarity
 -->
@@ -381,6 +397,10 @@ and see that it is $2x + y = 1$ or equivalently $y = 1 - 2x$.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 5 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 6 ==================== -->
 
 <!--
 If we now look at what happens when we ask about the set of points with
@@ -503,6 +523,10 @@ predictions = X_test.reshape(2000, -1).dot(w.flatten()) > -1500000
 np.mean(predictions.astype(y_test.dtype) == y_test, dtype=np.float64)
 ```
 
+<!===================== Kết thúc dịch Phần 6 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 7 ==================== -->
+
 <!--
 ## Geometry of Linear Transformations
 -->
@@ -567,6 +591,10 @@ as a weighted sum of these *basis vectors*.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 7 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 8 ==================== -->
 
 <!--
 Let's draw what happens when we use the specific matrix
@@ -646,6 +674,10 @@ distorts the entire space in whatever dimension space we are dealing with.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 8 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 9 ==================== -->
 
 <!--
 ## Linear Dependence
@@ -730,6 +762,10 @@ no compression occurs and the operation can be undone.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 9 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 10 ==================== -->
+
 <!--
 ## Rank
 -->
@@ -792,6 +828,10 @@ is well defined and understand the meaning.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 10 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 11 ==================== -->
 
 <!--
 ## Invertibility
@@ -876,6 +916,10 @@ M_inv = np.array([[2, -1], [-0.5, 0.5]])
 M_inv.dot(M)
 ```
 
+<!===================== Kết thúc dịch Phần 11 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 12 ==================== -->
+
 <!--
 ### Numerical Issues
 -->
@@ -933,6 +977,10 @@ and generally avoiding inversion in practice is a good rule of thumb.
 -->
 
 *dịch đoạn phía trên*
+
+<!===================== Kết thúc dịch Phần 12 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 13 ==================== -->
 
 <!--
 ## Determinant
@@ -1073,6 +1121,10 @@ that $n\times n$ matrices scale $n$-dimensional volumes.
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 13 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 14 ==================== -->
+
 <!--
 ## Tensors and Common Linear Algebra Operations
 -->
@@ -1145,6 +1197,10 @@ This gives the compact expression:
 $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
+
+<!===================== Kết thúc dịch Phần 13 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 14 ==================== -->
 
 <!--
 ### Common Examples from Linear Algebra
@@ -1257,17 +1313,53 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
+<!===================== Kết thúc dịch Phần 14 ==================== -->
+
+<!===================== Bắt đầu dịch Phần 15 ==================== -->
+
 <!--
 ## Summary
 -->
 
 ## *dịch tiêu đề phía trên*
+
+<!--
 * Vectors can be interpreted geometrically as either points or directions in space.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
+-->
+
+*dịch đoạn phía trên*
+
+<--
 * Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
@@ -1279,7 +1371,13 @@ Either notation allows for concise and efficient representation of tensor contra
 -->
 
 ## *dịch tiêu đề phía trên*
+
+<!--
 1. What is the angle between
+-->
+
+*dịch đoạn phía trên*
+
 $$
 \vec v_1 = \begin{bmatrix}
 1 \\ 0 \\ -1 \\ 2
@@ -1287,20 +1385,49 @@ $$
 3 \\ 1 \\ 0 \\ 1
 \end{bmatrix}?
 $$
+
+<!--
 2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
+-->
+
+*dịch đoạn phía trên*
+
 $$
 \begin{bmatrix}
 2 & 3\\
 1 & 2
 \end{bmatrix}.
 $$
+
+<!--
 4. Which of the following sets of vectors are linearly independent?
+-->
+
+*dịch đoạn phía trên*
+
  * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$
+
+<!--
 5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+-->
+
+*dịch đoạn phía trên*
+
+<!--
 7. How can you write $\mathrm{tr}(\mathbf{A}^4)$ in Einstein notation for an arbitrary matrix $A$?
 -->
 
@@ -1319,7 +1446,7 @@ $$
 
 ![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
 
-<!===================== Kết thúc dịch Phần 1 ==================== -->
+<!===================== Kết thúc dịch Phần 15 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -1350,4 +1477,31 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
+*
+
+<!-- Phần 7 -->
+*
+
+<!-- Phần 8 -->
+*
+
+<!-- Phần 9 -->
+*
+
+<!-- Phần 10 -->
+*
+
+<!-- Phần 11 -->
+*
+
+<!-- Phần 12 -->
+*
+
+<!-- Phần 13 -->
+*
+
+<!-- Phần 14 -->
+*
+
+<!-- Phần 15 -->
 *
