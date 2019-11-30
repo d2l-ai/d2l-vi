@@ -22,7 +22,7 @@ and introducing a few fundamental concepts, including of eigenvalues and eigenve
 -->
 
 Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập cơ bản về đại số tuyến
-tính và cách nó được dùng để thể biện các phép biến đổi dữ liệu cơ bản.
+tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
 Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu
 và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đựng đầy
 đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều
