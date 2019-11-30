@@ -27,6 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
+| back-propagation | lan truyền ngược | |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -37,7 +38,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
+| code (danh từ) | mã nguồn | |
+| code (động từ) | viết mã | |
 | computer vision     | thị giác máy tính                                              |               |
+| confidence interval | khoảng tin cậy | |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
 | cross validation    | kiểm định chéo                                                 |               |
@@ -58,6 +62,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
 |-------------------|----------------------------------------------------------------|-------------------------|
 | early stopping    | dừng sớm                                                       |                         |
+| eigen-decomposition | phân tích trị riêng | |
 | end-to-end        | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis    | phân tích lỗi                                                  |                         |
 | error rate        | tỉ lệ lỗi                                                      |                         |
