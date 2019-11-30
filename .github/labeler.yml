@@ -11,6 +11,9 @@ install:
 introduction:
     - chapter_introduction/*
 
+math:
+    - chapter_appendix_math/*
+
 utility:
   - utils.py
   - test_utils.py
