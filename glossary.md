@@ -59,6 +59,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dev set performance    | chất lượng trên tập phát triển                                 |               |
 | distribution           | phân phối                                                      |               |
 | domain adaptation      | thích ứng miền                                                 |               |
+| dot product            | tích vô hướng (hoặc tích trong)                                |               |
 | dropout                |                                                                |               |
 
 ## E
@@ -130,11 +131,14 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                             |
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
+| norm                              | chuẩn                                                          |                                             |
 
 ## O
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------|----------------------------------------------------------------|-----------------------|
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
+| orthogonal        | trực giao                                                      |                       |
+| orthonormal       | trực chuẩn                                                     |                       |
 | overfit           | overfit                                                        | http://bit.ly/2BvfPYA |
 
 ## P
