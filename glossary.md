@@ -52,7 +52,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data                   | dữ liệu                                                        |               |
 | datapoint (data point) | điểm dữ liệu                                                   |               |
 | data mismatch          | dữ liệu không tương đồng                                       |               |
-| dataset (data set)     | cơ sở dữ liệu                                                  |               |
+| dataset (data set)     | tập dữ liệu                                                  |               |
 | deep learning          | học sâu                                                        |               |
 | development set        | tập phát triển                                                 |               |
 | dev set                | tập phát triển                                                 |               |
