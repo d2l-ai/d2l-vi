@@ -12,3 +12,6 @@ utility:
   - utils.py
   - test_utils.py
   - tests/*
+
+glosssary:
+  - glossary.md
