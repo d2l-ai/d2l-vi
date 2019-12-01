@@ -697,7 +697,7 @@ as a weighted sum of these *basis vectors*.
 Let's draw what happens when we use the specific matrix
 -->
 
-*dịch đoạn phía trên*
+Cùng xét ví dụ với một ma trận cụ thể
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -718,13 +718,20 @@ can skew, rotate, and scale the grid,
 but the grid structure must remain as you see in :numref:`fig_grid-transform`.
 -->
 
-*dịch đoạn phía trên*
+Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng
+$2\cdot[1,0]^\top + -1\cdot[0,1]^\top$, và bởi vậy ta biến ma trận $A$ sẽ biến
+đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$. Nếu chúng ta xem xét kỹ lưỡng điều này, bằng cách xem
+lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận
+có thể làm lệch, xoay và trước co giãn <scale - từ này học trong hình học lớp 8 mà mình quên> lưới đó, nhưng cấu trúc của lưới giữ nguyên như trong :numref:`fig_grid-transform`.
+
+<!-- câu này mấy bác Tàu viết quá rườm ra, mình sẽ xem lại và tách thành nhiều câu -->
 
 <!--
 ![The matrix $\mathbf{A}$ acting on the given basis vectors.  Notice how the entire grid is transported along with it.](../img/GridTransform.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/GridTransform.svg)
+![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Chú ý việc
+toàn bộ lưới cũng bị biến đổi theo.](../img/GridTransform.svg)
 :label:`fig_grid-transform`
 
 <!--
@@ -735,13 +742,16 @@ All they can do is take the original coordinates on our space
 and skew, rotate, and scale them.
 -->
 
-*dịch đoạn phía trên*
+Đây là điểm quan trọng nhất để hình dung các phép biến đổi tuyến tính thông qua
+ma trận. Ma trận không thể làm biến dạng một vài phần của không gian khác với
+các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm lệch, xoay và
+co giãn chúng.
 
 <!--
 Some distortions can be severe.  For instance the matrix
 -->
 
-*dịch đoạn phía trên*
+Một vài phép biển đổi có thể rất kỳ dị <?>. Chẳng hạn ma trận
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -759,7 +769,11 @@ because we will never know where the vector $[1,2]^\top$ came from---was
 it $[1,1]^\top$ or $[0, -1]^\top$?
 -->
 
-*dịch đoạn phía trên*
+Nén toàn bộ mặt phẳng hai chiều thành một đường thẳng.
+Xác định và làm việc với các phép biến đổi này là chủ để của một phần sau, nhưng
+nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này khác cơ bản so với các
+phép biến đổi trên đây. Ví dụ, kết quả từ ma trận $\mathbf{A}$ có thể bị "bẻ cong lại" thành dạng ban đầu. Kết quả từ ma trận $\mathbf{B}$ thì không thể vì sẽ
+không thể biết vector $[1,2]^\top$ đến từ đâu -- từ $[1,1]^\top$ hay $[0, -1]^\top$?
 
 <!--
 While this picture was for a $2\times2$ matrix,
