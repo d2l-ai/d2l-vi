@@ -302,8 +302,12 @@ Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
 một thư viện có đầy đủ các đặc tính hiếm có
 đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
 Quyển sách này sẽ dạy về khái niệm học sâu từ đầu.
-Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn về mô hình mà thông thường sẽ được che giấu khỏi người dùng bởi những lớp trừu tượng bậc cao Gluon.
-Điều này xuất hiện đặc biệt trong các hướng dẫn cơ bản, nơi chúng tôi muốn bạn hiểu mọi thứ sẽ diễn ra trong một lớp nhất định hoặc phần tối ưu hoá.
+Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn
+về mô hình mà thông thường sẽ được che giấu khỏi người dùng
+bởi những lớp trừu tượng bậc cao Gluon.
+Điều này xuất hiện đặc biệt trong các hướng dẫn cơ bản,
+nơi chúng tôi muốn bạn hiểu mọi thứ sẽ diễn ra trong một lớp nhất định
+hoặc phần tối ưu hoá.
 Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
 của một ví dụ: một khi chúng tôi hiện thực mọi thứ từ đầu,
 chỉ dựa vào giao diện Numpy và việc tính đạo hàm tự động,
