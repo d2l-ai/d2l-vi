@@ -510,13 +510,20 @@ where all the points on one side have dot product below a threshold,
 and the other side above as we see in :numref:`fig_space-division`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, nếu tự hỏi tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
+hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường
+hợp mà hình chiếu lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$. Bởi vậy,
+Hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
+thể cắt mặt phẳng thành hai nửa, ở đó tất cả những điểm thuộc một nửa có tích vô
+hướng nhỏ hơn một ngưỡng, và những điểm thuộc nửa còn lại có tích vô hướng lớn
+hơn ngưỡng đó. Xem hình :numref:`fig_space-division`.
 
 <!--
 ![If we now consider the inequality version of the expression, we see that our hyperplane (in this case: just a line) separates the space into two halves.](../img/SpaceDivision.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/SpaceDivision.svg)
+![Nhìn từ khía cạnh bất phương trình, ta thấy rằng siêu phẳng (là đường thẳng
+trong trường hợp này) chia không gian ra thành hai nửa.](../img/SpaceDivision.svg)
 :label:`fig_space-division`
 
 <!--
@@ -527,13 +534,16 @@ we obtain a plane at right angles to the given vector $\mathbf{w}$.
 The two inequalities again define the two sides of the plane as is shown in :numref:`fig_higher-division`.
 -->
 
-*dịch đoạn phía trên*
+Tương tự với không gian nhiều chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
+các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một
+mặt phẳng vuông góc với vector $\mathbf{w}$. Hai bất phương trình một lần nữa
+định nghĩa hai phía của mặt bẳng nhưng trong hình :numref:`fig_higher-division`.
 
 <!--
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất khì không gian nào chia không gian đó ra hai nửa](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
@@ -551,7 +561,16 @@ to be to find a non-linear embedding such that the target classes
 can be separated cleanly by hyperplanes.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù không thể minh hoạ trong không gian nhiều chiều hơn, ta vẫn có thể tổng
+quát điều này cho không gian mười, một trăm, hay một tỷ chiều. Việc này thường
+xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể coi các
+mô hình phân loại tuyến tính trong :numref:`sec_softmax` như những phương pháp
+đi tìm siêu phẳng phân chia các lớp dữ liệu khác nhau. Trong văn cảnh này, những
+siêu phẳng đó thường được gọi là *mặt phẳng quyết định*. Phần lớn các mô hình
+phân loại tìm được qua học sâu kết thúc bởi một tầng tuyến tính truyền vào một
+softmax, bởi vậy ta có thể diễn giải ý nghĩa của mạng nơ-ron sâu là tìm một
+<phép chuyển đổi> phi tuyến sao cho các lớp dữ liệu có thể được phân chia bởi các
+siêu phẳng.
 
 <!--
 To give a hand-built example, notice that we can produce a reasonable model
@@ -561,7 +580,10 @@ by just taking the vector between their means to define the decision plane
 and eyeball a crude threshold.  First we will load the data and compute the averages.
 -->
 
-*dịch đoạn phía trên*
+Xét ví dụ sau. Chú ý rằng chúng ta có thể tạo một mô hình đủ tốt để phân loại
+những bức ảnh áo thun và quần nhỏ xíu từ tập dữ liệu Fashion MNIST (Xem :numref:`sec_fashion_mnist`) bằng cách lấy vector giữa điểm trung bình của mỗi lớp để
+định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên chúng
+ta tải dữ liệu và tính hai ảnh trung bình:
 
 ```{.python .input}
 # Load in the dataset
@@ -584,7 +606,9 @@ ave_1 = np.mean(X_train_1, axis=0)
 It can be informative to examine these averages in detail, so let's plot what they look like.  In this case, we see that the average indeed resembles a blurry image of a t-shirt.
 -->
 
-*dịch đoạn phía trên*
+Để có cái nhìn rõ hơn, ta có thể biểu diễn các ảnh trung bình này. Trong trường
+hợp này, chúng ta thấy rằng ảnh trung bình của áo thun có dạng
+một phiên bản mở của một chiếc áo thun.
 
 ```{.python .input}
 # Plot average t-shirt
@@ -597,7 +621,8 @@ d2l.plt.show()
 In the second case, we again see that the average resembles a blurry image of trousers.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình của quần có dạng
+một ảnh phiên bản mờ một chiếc quần.
 
 ```{.python .input}
 # Plot average trousers
@@ -609,7 +634,8 @@ d2l.plt.show()
 In a fully machine learned solution, we would learn the threshold from the dataset.  In this case, I simply eyeballed a threshold that looked good on the training data by hand.
 -->
 
-*dịch đoạn phía trên*
+Trong lời giải hoàn chỉnh, ta sẽ học được ngưỡng từ tập dữ liệu. Trong trường
+hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng và cho kết quả khá tốt.
 
 ```{.python .input}
 # Print test set accuracy with eyeballed threshold
