@@ -131,7 +131,7 @@ và (iv) phần kỹ thuật yêu cầu để huấn luyện mô hình một cá
 xử lý những khó khăn trong tính toán và tận dụng thật tốt phần cứng hiện có.
 Đào tạo kỹ năng suy nghĩ thấu đáo cần thiết để định hình bài toán,
 kiến thức toán để giải chúng, và các công cụ phần mềm để triển khai
-những giải pháp đó tất cả trong một hàm chứa nhiều thách thức lớn.
+những giải pháp đó, tất cả trong một nơi, hàm chứa nhiều thách thức lớn.
 Mục tiêu của chúng tôi trong cuốn sách này là trình
 bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng bắt kịp.
 
