@@ -66,7 +66,7 @@ dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
 ### One Medium Combining Code, Math, and HTML
 -->
 
-### Một tài liệu bao gồm Code, Toán, và HTML
+### Một phương tiện truyền tải kết hợp Code, Toán, và HTML
 
 <!--
 For any computing technology to reach its full impact,
@@ -93,13 +93,13 @@ tối thiểu thời gian chuẩn bị cần thiết để trang bị
 kiến thức cập nhật cho những người mới bắt đầu.
 Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản,
 và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu
-sao cho họ có thể dễ dàng chỉnh sửa, ứng dụng,
+sao cho họ có thể dễ dàng chỉnh sửa, áp dụng,
 và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
 Lấy ứng dụng các trang web động làm ví dụ.
 Mặc dù các công ty công nghệ lớn, như Amazon,
 phát triển thành công các ứng dụng web
 định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công
-nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhận ra ở một tầm cao mới
+nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới
 từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh
 mẽ và với tài liệu đầy đủ.
 
@@ -170,7 +170,7 @@ of commercial course providers.
 -->
 
 Chúng tôi bắt đầu dự án sách này từ tháng 7/2017 khi cần trình bày
-giao diện MXNet (khi đó còn mới) Gluon tới người dùng.
+giao diện MXNet Gluon (khi đó còn mới) tới người dùng.
 Tại thời điểm đó, không có một nguồn tài liệu nào vừa đồng thời
 (i) cập nhật; (ii) bao gồm đầy đủ các khía
 cạnh của học máy hiện đại với đầy đủ chiều sâu kỹ thuật;
@@ -193,6 +193,8 @@ Một mặt khác, trong khi nhiều sách giáo trình đã ra đời,
 (cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu),
 những nguồn tài liệu này lại không đi kèm
 với việc diễn giải dưới dạng mã nguồn để hiểu rõ hơn về các khái niệm.
+Điều này khiến người đọc đôi khi mù tịt về cách thực thi chúng.
+Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học tốn phí.  
 
 <!--
 We set out to create a resource that could
