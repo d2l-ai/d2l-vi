@@ -91,7 +91,8 @@ khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các ph
 liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
 trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
 này phù hợp với cách triển khai các mô hình học sâu.
-Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số các minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
+Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số
+minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
 
 <!===================== Kết thúc dịch Phần 1 ==================== -->
 
