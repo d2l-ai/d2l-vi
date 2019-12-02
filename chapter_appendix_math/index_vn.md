@@ -21,9 +21,9 @@ One of the wonderful parts of modern deep learning is the fact that much of it c
 Một trong những điểm tuyệt vời nhất của học sâu hiện đại là nó có thể được hiểu
 và sử dụng mà không cần hiểu cặn kẽ nền tảng toán học đằng sau. Đây là một dấu
 hiệu thể hiện lĩnh vực này đã trưởng này. Giống như hầu hết các nhà phát
-triển phần mềm không cần bận tâm đến lý thuyết hàm số tính toán được (cần
-dịch lại), những người làm việc với học sâu cũng không cần bận tâm đến nền
-tảng lý thuyết của học <maximum likelihood> (hợp lý cực đại?).
+triển phần mềm không cần bận tâm đến lý thuyết hàm số khả tính,
+những người làm việc với học sâu cũng không cần bận tâm đến nền
+tảng lý thuyết của học hợp lý cực đại (maximum likelihood).
 
 <!--
 But, we are not quite there yet.
