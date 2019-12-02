@@ -21,7 +21,7 @@ highlighting some geometric interpretations of linear algebra operations,
 and introducing a few fundamental concepts, including of eigenvalues and eigenvectors.
 -->
 
-Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập cơ bản về đại số tuyến
+Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến
 tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
 Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu
 và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đựng đầy
