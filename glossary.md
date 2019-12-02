@@ -19,6 +19,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |---------------------------|----------------------------------------------------------------|---------------|
 | accuracy                  | độ chính xác                                                   |               |
 | activation function       | hàm kích hoạt                                                  |               |
+| agent                     | tác nhân                                                       |               |
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
@@ -28,6 +29,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược                                               |                       |
+| batch                   | batch                                                          |                       |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -72,6 +74,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
 | error rate          | tỉ lệ lỗi                                                      |                       |
+| estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
@@ -99,6 +102,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hidden unit             | nút ẩn                                                         |                                                  |
 | human-level performance | chất lượng mức con người                                       | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
 | hyperparameter          | siêu tham số                                                   |                                                  |
+| hypothesis test         | kiểm chứng thống kê                                                   |                                                  |
 
 ## I
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -120,6 +124,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |--------------------|----------------------------------------------------------------|---------------|
 | machine learning   | học máy                                                        |               |
 | metric             | phép đo                                                        |               |
+| minibatch          | minibatch                                                      |               |
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
@@ -150,10 +155,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | pipeline                | pipeline                                                       | http://bit.ly/2OyYuEf |
 | positive sample/example | mẫu dương                                                      |                       |
 | precision               | precision                                                      |                       |
+| probability theory      | lý thuyết xác suất                                             |                       |
 
 ## R
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |------------------------|----------------------------------------------------------------|---------------|
+| random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
 | regularization         | regularization                                                 |               |
