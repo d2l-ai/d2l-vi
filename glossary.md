@@ -19,6 +19,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |---------------------------|----------------------------------------------------------------|---------------|
 | accuracy                  | độ chính xác                                                   |               |
 | activation function       | hàm kích hoạt                                                  |               |
+| agent                     | tác nhân                                                       |               |
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
@@ -28,6 +29,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược                                               |                       |
+| batch                   | batch                                                          |                       |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -122,6 +124,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |--------------------|----------------------------------------------------------------|---------------|
 | machine learning   | học máy                                                        |               |
 | metric             | phép đo                                                        |               |
+| minibatch          | minibatch                                                      |               |
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
