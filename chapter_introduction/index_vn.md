@@ -59,7 +59,7 @@ ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
 liên kết ID của người dùng với ID của món hàng được yêu cầu.
 Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
 (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
-hầu như phần lớn là ta có thể lập trình được từ những nguyên tắc cơ bản nhất
+hầu như phần lớn ta có thể lập trình được từ những nguyên tắc cơ bản nhất
 và tự tin chạy ứng dụng *trước khi nhìn thấy bất kì khách hàng thực sự nào*.
 Khả năng phát triển những sản phầm và hệ thống tự động từ những nguyên tắc suy luận cơ bản nhất,
 thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức.
