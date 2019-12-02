@@ -215,7 +215,7 @@ cho con đường trở thành một nhà khoa học học máy ứng dụng;
 (3) bao gồm mã thực thi được, trình bày cho
 người đọc *làm thế nào* giải quyết các bài toán trên thực tế;
 (4) tài liệu này có thể cập nhật một cách nhanh chóng, bằng cả chúng tôi và cộng động ở quy mô lớn;
-và (5) được bổ sung bởi một [diễn đàn](http://discuss.mxnet.io)
+và (5) được bổ sung bởi một [diễn đàn](http://discuss.mxnet.io) (và [diễn đàn tiếng Việt](https://forum.machinelearningcoban.com/c/d2l) của nhóm dịch)
 cho những thảo luận nhanh chóng các chi tiết kỹ thuật và hỏi đáp.
 
 <!--
