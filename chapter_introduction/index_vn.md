@@ -24,13 +24,13 @@ that our program should take in every conceivable circumstance.
 
 Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày
 đều được tạo ra bởi lập trình viên phần mềm từ những nguyên lý cơ bản nhất.
-Giả sử như chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
-Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn để một cách cặn kẽ,
-chúng ta có thể phác thảo lên được những nét chính của một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
+Giả sử chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
+Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ,
+chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
 (i) người dùng tương tác với ứng dụng thông qua một giao diện chạy trên trình duyệt web hoặc ứng dụng trên điện thoại;
-(ii) ứng dụng của chúng ta tương tác với một hệ thống cơ sở dữ liệu hạng thương phẩm
+(ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại
 để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
-và (iii) ở trung tâm của ứng dụng, các logic nghiệp vụ (hay cũng có thể nói *bộ não*) của cả ứng dụng này
+và (iii) ở trung tâm của ứng dụng, các logic kinh doanh (hay cũng có thể nói *bộ não*) của cả ứng dụng này
 được viết ra với những chi tiết tỉ mỉ về những hành động thích hợp mà ứng dụng của chúng ta nên làm theo
 trong mọi trường hợp có thể tưởng tượng ra được.
 
@@ -52,18 +52,18 @@ And when you are able to devise solutions that work $100\%$ of the time,
 *you should not be using machine learning*.
 -->
 
-Để xây dựng được *bộ não* của ứng dụng này, ta phải bước qua tất cả mọi trường hợp ngách 
+Để xây dựng *bộ não* của ứng dụng này, ta phải bước qua tất cả mọi trường hợp đặc biệt 
 mà chúng ta lường trước sẽ gặp phải, qua đó đặt ra những quy tắc thích hợp.
 Mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng,
 ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
 liên kết ID của người dùng với ID của món hàng được yêu cầu.
 Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
-(sẽ cần vài lần chạy kiểm tra để xử lý hết được những chỗ hiểm hóc),
+(sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
 hầu như phần lớn là ta có thể lập trình được từ những nguyên tắc cơ bản nhất
-và tự tin giới thiệu sản phẩm *trước khi nhìn thấy bất kì khách hàng thực sự nào*.
+và tự tin chạy ứng dụng *trước khi nhìn thấy bất kì khách hàng thực sự nào*.
 Khả năng phát triển những sản phầm và hệ thống tự động từ những nguyên tắc suy luận cơ bản nhất,
 thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức.
-Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong 100% tất cả các tình huống,
+Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống,
 *bạn không nên sử dụng học máy*.
 
 <!--
