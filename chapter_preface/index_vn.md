@@ -26,11 +26,11 @@ Chỉ một vài năm trước, không có nhiều nhà khoa học học sâu ph
 phẩm và dịch vụ thông minh tại các công ty lớn và công ty khởi nghiệp. Khi người
 trẻ nhất trong nhóm tác giả chúng tôi tiến vào lĩnh vực này, học máy còn chưa xuất
 hiện thường xuyên trên truyền thông. Cha mẹ chúng tôi từng không có ý niệm gì
-về học máy chứ chưa nói đến việc chúng tôi theo đuổi lĩnh vực này thay vì y khoa
+về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa
 hay luật khoa. Học máy từng là một lĩnh vực nghiên cứu với chỉ một tập nhỏ các
 ứng dụng thực tế. Và những ứng dụng đó, chẳng hạn nhận dạng giọng nói hay thị giác
 máy tính, đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân
-thành các lĩnh vực hoàn toàn riêng, ở đó học máy chỉnh là một thành phần nhỏ. Các
+thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ. Các
 mạng nơ-ron, tiền đề của các mô hình học sâu mà chúng ta tập trung vào trong cuốn
 sách này, từng được coi là các công cụ lỗi thời.
 
@@ -52,13 +52,13 @@ changing the way movies are made, diseases are diagnosed,
 and playing a growing role in basic sciences---from astrophysics to biology.
 -->
 
-Trong chỉ khoảng năm năm gần đây, học sâu đã "làm chủ" thế giới bằng những sự
-bất ngờ, dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác
+Trong chỉ khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu, 
+dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác
 nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động,
 học tăng cường, và mô hình hoá thống kê. Với những tiến bộ này, chúng ta bây
-giờ có thể xây dựng xe tự lái (với lượng tự động ngày càng cao), hệ thống trả
+giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), hệ thống trả
 lời tự động, giúp con người đào sâu vào cả núi email, và các phần mềm chiến
-thắng nhiều người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được
+thắng những người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được
 xem là không thể đạt được trong nhiều thập kỷ tới. Những công cụ này đã và đang
 gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách
 tạo ra các bộ phim, cách chẩn đoán bệnh, đóng một vài trò ngày càng tăng trong các
