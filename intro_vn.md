@@ -95,11 +95,11 @@ Dưới đây là chi tiết về ba việc quan trọng nhất:
 
 Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
 ```
-<!-- =================== Bắt đầu dịch Phần x ================================-->
+<!-- =================== Bắt đầu dịch Phần x ================================ -->
 ```
 và
 ```
-<!-- =================== Kết thúc dịch Phần x ================================-->
+<!-- =================== Kết thúc dịch Phần x ================================ -->
 ```
 
 Việc chia nhỏ một file ra nhiều phần khiến một Pull Request mất không quá nhiều thời gian trong cả việc thực hiện lẫn review.
