@@ -1,4 +1,4 @@
-<!===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 1 ==================== -->
 
 <!--
 # Geometry and Linear Algebraic Operations
@@ -69,9 +69,9 @@ Matrices are useful data structures: they allow us to organize data that have di
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 1 ==================== -->
+<!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 2 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 2 ==================== -->
 
 <!--
 Given a vector, the first interpretation
@@ -137,9 +137,9 @@ and then follow the directions given by the other, as is seen in :numref:`fig_ad
 ![*dịch chú thích ảnh phía trên*](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
-<!===================== Kết thúc dịch Phần 2 ==================== -->
+<!-- =================== Kết thúc dịch Phần 2 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 3 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 3 ==================== -->
 
 <!--
 Vector subtraction has a similar interpretation.
@@ -217,9 +217,9 @@ If we compute the dot product of these two vectors, we see that
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 3 ==================== -->
+<!-- =================== Kết thúc dịch Phần 3 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 4 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 4 ==================== -->
 
 $$
 \mathbf{v}\cdot\mathbf{w} = rs\cos(\theta) = \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta).
@@ -322,9 +322,9 @@ so again we can use the angle.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 4 ==================== -->
+<!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 5 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 5 ==================== -->
 
 <!--
 ### Cosine Similarity
@@ -398,9 +398,9 @@ and see that it is $2x + y = 1$ or equivalently $y = 1 - 2x$.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 5 ==================== -->
+<!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 6 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 6 ==================== -->
 
 <!--
 If we now look at what happens when we ask about the set of points with
@@ -523,9 +523,9 @@ predictions = X_test.reshape(2000, -1).dot(w.flatten()) > -1500000
 np.mean(predictions.astype(y_test.dtype) == y_test, dtype=np.float64)
 ```
 
-<!===================== Kết thúc dịch Phần 6 ==================== -->
+<!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 7 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 7 ==================== -->
 
 <!--
 ## Geometry of Linear Transformations
@@ -592,9 +592,9 @@ as a weighted sum of these *basis vectors*.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 7 ==================== -->
+<!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 8 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 8 ==================== -->
 
 <!--
 Let's draw what happens when we use the specific matrix
@@ -675,9 +675,9 @@ distorts the entire space in whatever dimension space we are dealing with.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 8 ==================== -->
+<!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 9 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 9 ==================== -->
 
 <!--
 ## Linear Dependence
@@ -762,9 +762,9 @@ no compression occurs and the operation can be undone.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 9 ==================== -->
+<!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 10 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 10 ==================== -->
 
 <!--
 ## Rank
@@ -829,9 +829,9 @@ is well defined and understand the meaning.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 10 ==================== -->
+<!-- =================== Kết thúc dịch Phần 10 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 11 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 11 ==================== -->
 
 <!--
 ## Invertibility
@@ -916,9 +916,9 @@ M_inv = np.array([[2, -1], [-0.5, 0.5]])
 M_inv.dot(M)
 ```
 
-<!===================== Kết thúc dịch Phần 11 ==================== -->
+<!-- =================== Kết thúc dịch Phần 11 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 12 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 12 ==================== -->
 
 <!--
 ### Numerical Issues
@@ -978,9 +978,9 @@ and generally avoiding inversion in practice is a good rule of thumb.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 12 ==================== -->
+<!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 13 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 13 ==================== -->
 
 <!--
 ## Determinant
@@ -1121,9 +1121,9 @@ that $n\times n$ matrices scale $n$-dimensional volumes.
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 13 ==================== -->
+<!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 14 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 14 ==================== -->
 
 <!--
 ## Tensors and Common Linear Algebra Operations
@@ -1198,9 +1198,9 @@ $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
 
-<!===================== Kết thúc dịch Phần 13 ==================== -->
+<!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 14 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 14 ==================== -->
 
 <!--
 ### Common Examples from Linear Algebra
@@ -1313,9 +1313,9 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
-<!===================== Kết thúc dịch Phần 14 ==================== -->
+<!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
-<!===================== Bắt đầu dịch Phần 15 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
 
 <!--
 ## Summary
@@ -1446,7 +1446,7 @@ $$
 
 ![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
 
-<!===================== Kết thúc dịch Phần 15 ==================== -->
+<!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
