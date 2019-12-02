@@ -90,7 +90,7 @@ nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ b�
 cụ cấp tiến được "bảo trì" thường xuyên.
 Các ý tưởng chính cần được chắt lọc rõ ràng,
 tối thiểu thời gian chuẩn bị cần thiết để trang bị
-kiến thức cập nhật cho những người mới bắt đầu.
+kiến thức đương thời cho những người mới bắt đầu.
 Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản,
 và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu
 sao cho họ có thể dễ dàng chỉnh sửa, áp dụng,
