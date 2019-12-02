@@ -133,7 +133,7 @@ xử lý những khó khăn trong tính toán và tận dụng thật tốt ph�
 kiến thức toán để giải chúng, và các công cụ phần mềm để triển khai
 những giải pháp đó tất cả trong một hàm chứa nhiều thách thức lớn.
 Mục tiêu của chúng tôi trong cuốn sách này là trình
-bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng tiếp cận.
+bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng bắt kịp.
 
 
 <!--
