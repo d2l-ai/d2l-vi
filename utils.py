@@ -13,8 +13,8 @@ END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '*dịch đoạn phía trên*'
 HEADER_INDICATOR = ' *dịch tiêu đề phía trên*\n'
 IMAGE_CAPTION_INDICATOR = '*dịch chú thích ảnh phía trên*'
-START_FILE = '<!===================== Bắt đầu dịch Phần 1 ==================== -->\n'
-END_FILE = '<!===================== Kết thúc dịch Phần 1 ==================== -->\n'
+START_FILE = '<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->\n'
+END_FILE = '<!-- ===================== Kết thúc dịch Phần 1 ==================== -->\n'
 SUFIX_PATH = 'contributors_template_vn.md'
 
 # Our special mark in markdown, e.g. :label:`chapter_intro`
