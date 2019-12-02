@@ -50,17 +50,17 @@ Phần phụ lục này nhằm cung cấp cho bạn nền tảng toán học c�
 lý thuyết cốt lõi của học sâu hiện đại, nhưng đây không phải là toàn bộ kiến
 thức cần thiết. Chúng ta sẽ bắt đầu xem xét đại số tuyến tính sâu hơn. Chúng tôi
 phát triển ý nghĩa hình học của các đại lượng và toán tử đại số tuyến tính,
-việc này cho phép chúng ta minh hoạc hiệu ứng của nhiều phép biến đổi dữ liệu.
-Một thành phần chủ chốt là sự phát triển của các cơ sở của phân tích trị riêng (glossary).
+việc này cho phép chúng ta minh hoạ hiệu ứng của nhiều phép biến đổi dữ liệu.
+Một thành phần chủ chốt là sự phát triển của các kiến thức nền tảng liên quan tới phân tích trị riêng.
 
 <!--
 We next develop the theory of differential calculus to the point that we can fully understand why the gradient is the direction of steepest descent, and why back-propagation takes the form it does.  Integral calculus is then discussed to the degree needed to support our next topic, probability theory.
 -->
 
-Tiếp theo, chúng ta phát triển lý thuyết tính toán đạo hàm để có thể hiểu cặn kẽ
-tại sao gradient là hướng hạ dốc nhất, và tại sao lan truyền ngược (glossary)
-có công thức như vậy. Tính toán tích phân được thảo luận tiếp sau đó ở mức cần
-thiết để hỗ trợ chủ đề tiếp theo -- lý thuyết xác suất (glossary).
+Tiếp theo, chúng ta phát triển lý thuyết giải tích vi phân để có thể hiểu cặn kẽ
+tại sao gradient là hướng hạ dốc nhất, và tại sao lan truyền ngược
+có công thức như vậy. Giải tích tích phân được thảo luận tiếp sau đó ở mức cần
+thiết để hỗ trợ chủ đề tiếp theo -- lý thuyết xác suất.
 
 <!--
 Problems encountered in practice frequently are not certain, and thus we need a language to speak about uncertain things.  We review the theory of random variables and the most commonly encountered distributions so we may discuss models probabilistically.  This provides the foundation for the naive Bayes classifier, a probabilistic classification technique.
@@ -68,9 +68,9 @@ Problems encountered in practice frequently are not certain, and thus we need a 
 
 Các vấn đề gặp phải trên thực tế thường không chắc chắn, và bởi vậy chúng ta cần
 một ngôn ngữ để nói về những điều không chắc chắn. Chúng ta sẽ ôn tập lại lý
-thuyết biến ngẫu nhiên (glossary) và những phân phối thường gặp nhất để có thể
-thảo luận <models probabilistically>. Việc này cung cấp nền tảng cho bộ phân loại
-Naive Bayes (dịch?), một phương pháp phân loại dựa trên thống kê.
+thuyết biến ngẫu nhiên và những phân phối thường gặp nhất để có thể
+thảo luận các mô hình dưới góc nhìn xác suất. Việc này cung cấp nền tảng cho bộ phân loại
+Naive Bayes, một phương pháp phân loại dựa trên xác suất.
 
 <!--
 Closely related to probability theory is the study of statistics.  While statistics is far too large a field to do justice in a short section, we will introduce fundamental concepts that all machine learning practitioners should be aware of, in particular: evaluating and comparing estimators, conducting hypothesis tests, and constructing confidence intervals.
@@ -79,15 +79,15 @@ Closely related to probability theory is the study of statistics.  While statist
 Liên quan mật thiết tới lý thuyết xác suất là lý thuyết thống kê. Trong khi
 thống kê là một mảng quá lớn để ôn tập trong một mục ngắn, chúng tôi sẽ giới
 thiệu các khái niệm cơ bản mà mọi người làm học máy cần biết, cụ thể: đánh giá
-và so sánh các bộ ước lượng (glossary), thực hiện kiểm chứng thống kê (glossary),
-và xây dựng khoảng tin cậy (glossary).
+và so sánh các bộ ước lượng, thực hiện kiểm chứng thống kê,
+và xây dựng khoảng tin cậy.
 
 <!--
 Last, we turn to the topic of information theory, which is the mathematical study of information storage and transmission.  This provides the core language by which we may discuss quantitatively how much information a model holds on a domain of discourse.
 -->
 
 Cuối cùng, chúng ta sẽ thảo luận chủ đề lý thuyết thông tin qua nghiên cứu toán
-học của lưu trữ và truyền tải thông tin. Phần này cung cấp ngôn ngữ cơ bản ở đó
+học về lưu trữ và truyền tải thông tin. Phần này cung cấp ngôn ngữ cơ bản ở đó
 chúng ta thảo luận một cách định lượng lượng thông tin một mô hình <holds on a
 domain of discourse>.
 
