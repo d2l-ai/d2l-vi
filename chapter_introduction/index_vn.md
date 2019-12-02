@@ -4,7 +4,7 @@
 # Introduction
 -->
 
-# *dịch tiêu đề phía trên*
+# Giới thiệu
 :label:`chap_introduction`
 
 <!--
