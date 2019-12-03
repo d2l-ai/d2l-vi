@@ -339,7 +339,7 @@ For some encoding (such as counting the number of occurrences of words in some v
 so again we can use the angle.
 -->
 
-Ví dụ tương tự có thể tìm thấy bất cứ đầu. Trong văn bản, chúng ta có thể
+Ví dụ tương tự có thể tìm thấy bất cứ đâu. Trong văn bản, chúng ta có thể
 muốn chủ đề được thảo luận không thay đổi nếu chúng ta viết văn bản dài gấp
 hai nhưng nói về cùng một thứ. Trong một số cách mã hóa (như đếm số lượng xuất hiện
 của một từ trong từ điển), việc này tương đương với nhân đôi vector mã hóa
