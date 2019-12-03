@@ -148,33 +148,36 @@ we see that the vector $\mathbf{u}-\mathbf{v}$ is the direction
 that takes us from the point $\mathbf{u}$ to the point $\mathbf{v}$.
 -->
 
-*dịch đoạn phía trên*
+Hiệu của hai vector có một cách diễn giải tương tự.
+Bằng cách biểu diễn $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
+ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{u}$ tới
+điểm $\mathbf{v}$.
 
 
 <!--
 ## Dot Products and Angles
 -->
 
-## *dịch tiêu đề phía trên*
+## Tích vô hướng và Góc
+
+<!--
 As we saw in :numref:`sec_linear-algebra`,
 if we take two column vectors say $\mathbf{u}$ and $\mathbf{v}$,
 we can form their dot product by computing:
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy trong :numref:`sec_linear-algebra`, tích vô hướng của hai vector cột
+$\mathbf{u}$ và $\mathbf{v}$ có thể được tính bởi:
 
 $$\mathbf{u}^\top\mathbf{v} = \sum_i u_i\cdot v_i.$$
 :eqlabel:`eq_dot_def`
--->
-
-*dịch đoạn phía trên*
 
 <!--
 Because :eqref:`eq_dot_def` is symmetric, we will mirror the notation
 of classical multiplication and write
 -->
 
-*dịch đoạn phía trên*
+Vì biểu thức :eqref:`eq_dot_def` đối xứng, chúng ta có thể viết:
 
 $$
 \mathbf{u}\cdot\mathbf{v} = \mathbf{u}^\top\mathbf{v} = \mathbf{v}^\top\mathbf{u},
@@ -184,26 +187,27 @@ $$
 to highlight the fact that exchanging the order of the vectors will yield the same answer.
 -->
 
-*dịch đoạn phía trên*
+để nhấn mạnh rằng phép đổi chỗ hai vector sẽ cho kết quả như nhau.
 
 <!--
 The dot product :eqref:`eq_dot_def` also admits a geometric interpretation: it is closely related to the angle between two vectors.  Consider the angle shown in :numref:`fig_angle`.
 -->
 
-*dịch đoạn phía trên*
+Tích vô hướng :eqref:`eq_dot_def` cũng có diễn giải hình học: nó liên quan
+mật thiết tới góc giữa hai vector. Xem góc hiển thị trong :numref:`fig_angle`.
 
 <!--
 ![Between any two vectors in the plane there is a well defined angle $\theta$.  We will see this angle is intimately tied to the dot product.](../img/VecAngle.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/VecAngle.svg)
+![Có một định nghĩa về góc ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg)
 :label:`fig_angle`
 
 <!--
 To start, let's consider two specific vectors:
 -->
 
-*dịch đoạn phía trên*
+Xét hai vector:
 
 $$
 \mathbf{v} = (r,0) \; \text{and} \; \mathbf{w} = (s\cos(\theta), s \sin(\theta)).
@@ -215,7 +219,9 @@ and the vector $\mathbf{w}$ is of length $s$ and at angle $\theta$ with the $x$-
 If we compute the dot product of these two vectors, we see that
 -->
 
-*dịch đoạn phía trên*
+Vector $\mathbf{v}$ có độ dài $r$ và song song với trục $x$, vector $\mathbf{w}$
+có độ dài $s$ và tạo một góc $\theta$ với trục $x$. Nếu tính tích vô hướng
+của hai vector này, ta sẽ thấy rằng
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
 
