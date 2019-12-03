@@ -88,8 +88,7 @@ Last, we turn to the topic of information theory, which is the mathematical stud
 
 Cuối cùng, chúng ta sẽ thảo luận chủ đề lý thuyết thông tin qua nghiên cứu toán
 học về lưu trữ và truyền tải thông tin. Phần này cung cấp ngôn ngữ cơ bản ở đó
-chúng ta thảo luận một cách định lượng lượng thông tin một mô hình <holds on a
-domain of discourse>.
+chúng ta thảo luận một cách định lượng lượng thông tin một mô hình hàm chứa.
 
 <!--
 Taken together, these form the core of the mathematical concepts needed to begin down the path towards a deep understanding of deep learning.
