@@ -82,16 +82,16 @@ the location of the points in space compared
 to a fixed reference called the *origin*.  This can be seen in :numref:`fig_grid`.
 -->
 
-Cách hiểu thứ nhất của một vector là một điểm trong không gian.
+Cách thứ nhất để giải thích một vector là coi nó như một điểm trong không gian.
 Trong không gian hai hoặc ba chiều, chúng ta có thể biểu diễn các điểm này bằng
-việc sử dụng các thành phần của vector để định nghiac bị trí của điểm trong
+việc sử dụng các thành phần của vector để định nghĩa vị trí của điểm trong
 không gian so với một điểm tham chiều được gọi là *gốc tọa độ*. Xem :numref:`fig_grid`.
 
 <!--
 ![An illustration of visualizing vectors as points in the plane.  The first component of the vector gives the $x$-coordinate, the second component gives the $y$-coordinate.  Higher dimensions are analogous, although much harder to visualize.](../img/GridPoints.svg)
 -->
 
-![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tạo độ $x$, thành phần thứ hai là tọa độ $y$. Tương tự với số chiều cao hơn, mặc dù khó biểu diễn hơn](../img/GridPoints.svg)
+![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tọa độ $x$, thành phần thứ hai là tọa độ $y$. Tương tự với số chiều cao hơn, mặc dù khó hình dung hơn](../img/GridPoints.svg)
 :label:`fig_grid`
 
 <!--
@@ -124,7 +124,7 @@ to take $2$ steps to the right and $3$ steps up.
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
-Cách hiểu thứ hai của vector là một hướng trong không gian. Chúng ta không những
+Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian. Chúng ta không những
 có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
 và bên trên $3$ đơn vị so với gốc toạ độ, chúng ta cũng có thể coi nó thể hiện
 một hướng -- hướng $2$ bước về bên phải và $3$ bước lên trên. Theo cách này,
@@ -152,7 +152,7 @@ sau đó đi theo một hướng cho bởi một vector khác, như được cho
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
 -->
 
-![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau dó đi theo vector kia.](../img/VecAdd.svg)
+![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau đó đi theo vector kia.](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
 <!===================== Kết thúc dịch Phần 2 ==================== -->
