@@ -144,7 +144,7 @@ In particular, we follow the directions given by one vector,
 and then follow the directions given by the other, as is seen in :numref:`fig_add-vec`.
 -->
 
-Một trong những lợi ý của việc dịch chuyển này là phép cộng vector có thể được
+Một trong những lợi ý của việc chuyển cách hiểu này là phép cộng vector có thể được
 hiểu theo nghĩa hình học. Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
 sau đó đi theo một hướng cho bởi một vector khác, như được cho trong :numref:`fig_add-vec`.
 
