@@ -235,7 +235,7 @@ $$
 With some simple algebraic manipulation, we can rearrange terms to obtain
 -->
 
-*dịch đoạn phía trên*
+Với một vài biến đổi đơn giản, chúng ta có thể sắp xếp lại các thành phần để được
 
 $$
 \theta = \arccos\left(\frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}\right).
@@ -251,26 +251,28 @@ Indeed, for any two vectors $\mathbf{v}$ and $\mathbf{w}$,
 the angle between the two vectors is
 -->
 
-*dịch đoạn phía trên*
+Một cách ngắn gọn, với hai vector cụ thể này,
+tích vô hướng kết hợp với chuẩn thể hiện góc giữa hai vector. Việc này cũng đúng trong trường hợp tổng quát.
+Ta sẽ không viết biểu diễn ở đây, tuy nhiên, nếu viết $\|\mathbf{v} - \mathbf{w}\|^2$
+bằng hai cách: cách thứ nhất với tích vô hướng, và cách thứ hai sử dụng công thức tính cos,
+ta có thể thấy được quan hệ giữa chúng.
+Thật vậy, với hai vector $\mathbf{v}$ và $\mathbf{w}$ bất kỳ, góc giữa chúng là
 
 $$\theta = \arccos\left(\frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}\right).$$
 :eqlabel:`eq_angle_forumla`
--->
-
-*dịch đoạn phía trên*
 
 <!--
 This is a nice result since nothing in the computation references two-dimensions.
 Indeed, we can use this in three or three million dimensions without issue.
 -->
 
-*dịch đoạn phía trên*
+Kết quả này tổng quát cho không gian nhiều chiều vì nó không sử dụng điều gì đặc biệt trong không gian hai chiều.
 
 <!--
 As a simple example, let's see how to compute the angle between a pair of vectors:
 -->
 
-*dịch đoạn phía trên*
+Xét ví dụ đơn giản tính góc giữa cặp vector:
 
 ```{.python .input}
 %matplotlib inline
@@ -296,7 +298,13 @@ and two vectors are orthogonal if and only if $\mathbf{v}\cdot\mathbf{w} = 0$.
 This will prove to be a helpful formula when understanding objects geometrically.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ không sử dụng đoạn mã này bây giờ, nhưng sẽ hữu ích để biết rằng nếu
+góc giữa hai vector là $\pi/2$
+(hay $90^{\circ}$) thì hai vector đó được gọi là *trực giao*. Xem xét kỹ biểu
+thức trên, ta thấy rằng việc này xảy ra khi $\theta = \pi/2$,
+tức $\cos(\theta) = 0$. Điều này chứng tỏ tích vô hướng phải bằng không, và hai
+vector là trực giao nếu và chỉ nếu $\mathbf{v}\cdot\mathbf{w} = 0$. Đẳng thức này
+sẽ hữu ích khi xem xét các đối tượng dưới con mắt hình học.
 
 <!--
 It is reasonable to ask: why is computing the angle useful?
@@ -316,7 +324,18 @@ keeps the same direction and just changes the length.
 The angle considers the darker image identical.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tự hỏi tại sao tính góc lại hữu ích?
+Câu trả lời nằm ở tính bất biến ta mong đợi từ dữ liệu. Xét một bức ảnh,
+và một bức ảnh thứ hai giống hệt nhưng với các điểm ảnh với độ sáng chỉ bằng $10\%$
+ảnh ban đầu. Giá trị của từng điểm ảnh trong ảnh thứ hai nhìn chung khác xa
+so với ảnh ban đầu. Bởi vậy, nếu tính khoảng cách giữa ảnh ban đầu và ảnh tối hơn,
+khoảng cách có thể rất lớn. Tuy nhiên, trong hầu hết các ứng dụng ML, *nội dung*
+của hai bức ảnh là như nhau -- nó vẫn là một bức ảnh của một con mèo đối với
+một bộ phân loại chó mèo. Tuy nhiên, nếu xem xét góc giữa hai ảnh, không khó
+để thấy rằng với bất kỳ vector $\mathbf{v}$, góc giữa $\mathbf{v}$ và $0.1\cdot\mathbf{v}$
+bằng không. Việc này tương ứng với việc nhân vector với một số (dương) giữ
+nguyên hướng và chỉ thay đổi độ dài của vector đó. Khi xét tới góc, hai bức
+ảnh được coi là như nhau.
 
 <!--
 Examples like this are everywhere.
@@ -326,7 +345,11 @@ For some encoding (such as counting the number of occurrences of words in some v
 so again we can use the angle.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ tương tự có thể tìm thấy bất cứ đâu. Trong văn bản, chúng ta có thể
+muốn chủ đề được thảo luận không thay đổi nếu chúng ta viết văn bản dài gấp
+hai nhưng nói về cùng một thứ. Trong một số cách mã hóa (như đếm số lượng xuất hiện
+của một từ trong từ điển), việc này tương đương với nhân đôi vector mã hóa
+của văn bản, bởi vậy chúng ta lại có thể sử dụng góc.
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
