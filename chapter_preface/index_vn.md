@@ -239,7 +239,7 @@ start your own research projects by leveraging our code.
 Just copy a notebook and start modifying it.
 -->
 
-Bên cạnh một vài notebook cơ bản cung cấp một khoá học từ đầu
+Bên cạnh một vài notebook cơ bản cung cấp một khoá học nhanh
 về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý
 các khái niệm mới và đồng thời cung cấp các ví dụ chạy độc lập---sử dụng
 các tập dữ liệu thực tế.
