@@ -201,7 +201,7 @@ for beginners, this property limits its usefulness as an introductory text.
 Có nhiều cuốn sách dạy một chuỗi các chủ đề khác nhau vô cùng thấu đáo.
 Ví dụ như, cuốn sách tuyệt vời :cite:`Bishop.2006` của Bishop,
 dạy mỗi chủ đề rất kỹ lưỡng, tới nỗi đến được chương hồi quy tuyến tính
-đòi hỏi một số lượng công việc không hề nhỏ.
+đòi hỏi công sức bỏ ra không hề nhỏ.
 Trong khi các chuyên gia thì yêu thích quyển sách này
 chính vì sự kỹ lưỡng của nó, đối với những người mới bắt đầu,
 đặc điểm này làm giới hạn việc sử dụng nó như là một tài liệu giới thiệu.
