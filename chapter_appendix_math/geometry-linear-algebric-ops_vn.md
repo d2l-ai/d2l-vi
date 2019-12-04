@@ -134,7 +134,7 @@ ta coi tất cả các vector trong hình :numref:`fig_arrow` là như nhau.
 ![Any vector can be visualized as an arrow in the plane.  In this case, every vector drawn is a representation of the vector $(2,3)$.](../img/ParVec.svg)
 -->
 
-![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector đều biểu diễn vector $(2,3)$.](../img/ParVec.svg)
+![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector trong hình đều biểu diễn vector $(2,3)$.](../img/ParVec.svg)
 :label:`fig_arrow`
 
 <!--
