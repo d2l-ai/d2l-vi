@@ -309,7 +309,7 @@ bởi những lớp trừu tượng bậc cao Gluon.
 nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng
 hoặc bộ tối ưu nào đó.
 Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
-của một ví dụ: một khi chúng tôi hiện thực mọi thứ từ đầu,
+của một ví dụ: một phiên bản trong đó chúng tôi hiện thực mọi thứ từ đầu,
 chỉ dựa vào giao diện Numpy và việc tính đạo hàm tự động,
 và một ví dụ khác, thực tế hơn, khi chúng tôi viết mã ngắn gọn sử dụng Gluon.
 Một khi chúng tôi đã dạy bạn cách một vài thành phần hoạt động như thế nào,
