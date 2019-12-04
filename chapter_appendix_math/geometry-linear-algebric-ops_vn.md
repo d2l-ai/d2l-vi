@@ -107,13 +107,16 @@ the location of the points in space compared
 to a fixed reference called the *origin*.  This can be seen in :numref:`fig_grid`.
 -->
 
-*dịch đoạn phía trên*
+Cách thứ nhất để giải thích một vector là coi nó như một điểm trong không gian.
+Trong không gian hai hoặc ba chiều, chúng ta có thể biểu diễn các điểm này bằng
+việc sử dụng các thành phần của vector để định nghĩa vị trí của điểm trong
+không gian so với một điểm tham chiều được gọi là *gốc tọa độ*. Xem :numref:`fig_grid`.
 
 <!--
 ![An illustration of visualizing vectors as points in the plane.  The first component of the vector gives the $x$-coordinate, the second component gives the $y$-coordinate.  Higher dimensions are analogous, although much harder to visualize.](../img/GridPoints.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/GridPoints.svg)
+![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tọa độ $x$, thành phần thứ hai là tọa độ $y$. Tương tự với số chiều cao hơn, mặc dù khó hình dung hơn](../img/GridPoints.svg)
 :label:`fig_grid`
 
 <!--
@@ -125,7 +128,16 @@ as collections of points in space and picturing the task
 as discovering how to separate two distinct clusters of points.
 -->
 
-*dịch đoạn phía trên*
+Góc nhìn hình học này cho phép chúng ta xem xét bài toán ở một mức trừu tượng hơn.
+Không giống như khi đối mặt với các bài toán khó hình dung như phân loại ảnh chó mèo, chúng ta có thể bắt đầu xem xét các bài toán này một cách trừu tượng hơn như là
+một tập hợp của các điểm trong không gian. Việc phân loại ảnh chó mèo có thể coi
+như việc tìm ra cách phân biệt hai nhóm điểm riêng biệt trong không gian.
+
+<!-- Nhóm tác giả không phải là người bản xứ nói tiếng Anh. Thực tế, bản tiếng
+Anh này được dịch từ bản tiếng Trung rất nổi tiếng ở Trung Quốc. Khi dịch, tôi
+nghĩ chúng ta có thể sửa đổi câu văn đi một chút cho phù hợp với tiếng Việt.
+Đoạn này sẽ không hiển thị trên web vì nó đã được comment.
+-->
 
 <!--
 In parallel, there is a second point of view
@@ -137,13 +149,17 @@ to take $2$ steps to the right and $3$ steps up.
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
-*dịch đoạn phía trên*
+Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian. Chúng ta không những
+có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
+và bên trên $3$ đơn vị so với gốc toạ độ, chúng ta cũng có thể coi nó thể hiện
+một hướng -- hướng $2$ bước về bên phải và $3$ bước lên trên. Theo cách này,
+ta coi tất cả các vector trong hình :numref:`fig_arrow` là như nhau.
 
 <!--
 ![Any vector can be visualized as an arrow in the plane.  In this case, every vector drawn is a representation of the vector $(2,3)$.](../img/ParVec.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ParVec.svg)
+![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector trong hình đều biểu diễn vector $(2,3)$.](../img/ParVec.svg)
 :label:`fig_arrow`
 
 <!--
@@ -153,13 +169,15 @@ In particular, we follow the directions given by one vector,
 and then follow the directions given by the other, as is seen in :numref:`fig_add-vec`.
 -->
 
-*dịch đoạn phía trên*
+Một trong những lợi ý của việc chuyển cách hiểu này là phép cộng vector có thể được
+hiểu theo nghĩa hình học. Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
+sau đó đi theo một hướng cho bởi một vector khác, như được cho trong :numref:`fig_add-vec`.
 
 <!--
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/VecAdd.svg)
+![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau đó đi theo vector kia.](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
@@ -1541,10 +1559,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
-*
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
