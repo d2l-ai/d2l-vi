@@ -219,7 +219,7 @@ before worrying about more esoteric probability distributions.
 Trong quyển sách này, chúng tôi sẽ dạy hầu hết các khái niệm *vừa đủ*.
 Hay nói cách khác, bạn sẽ học các khái niệm tại ngay thời điểm
 mà chúng cần thiết để hoàn tất phần thực hành.
-Trong khi chúng tôi sẽ dành một chút thời gian để dạy các phần cơ bản ngoài lề,
+Trong khi chúng tôi sẽ dành một chút thời gian để dạy kiến thức căn bản mở đầu,
 như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn được tận hưởng
 sự thoả mãn của việc huấn luyện mô hình đầu tiên trước khi bận tâm tới
 các lý thuyết phân phối xác suất.
