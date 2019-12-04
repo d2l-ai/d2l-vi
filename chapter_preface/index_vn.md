@@ -306,7 +306,7 @@ Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chu
 về mô hình mà thông thường sẽ được che giấu khỏi người dùng
 bởi những lớp trừu tượng bậc cao Gluon.
 Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản,
-nơi chúng tôi muốn bạn hiểu mọi thứ sẽ diễn ra trong một lớp nhất định
+nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng
 hoặc phần tối ưu hoá.
 Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
 của một ví dụ: một khi chúng tôi hiện thực mọi thứ từ đầu,
