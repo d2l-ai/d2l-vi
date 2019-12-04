@@ -243,7 +243,7 @@ Bên cạnh một vài notebook cơ bản cung cấp một khoá học từ đ�
 về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý
 các khái niệm mới và đồng thời cung cấp các ví dụ chạy độc lập---sử dụng
 các tập dữ liệu thực tế.
-Việc này dẫn đến một thách thức về cách thức tổ chức.
+Việc này dẫn đến một thách thức về cách tổ chức.
 Một vài mô hình có thể được nhóm lại một cách có logic trong một notebook
 riêng lẻ.
 Và một vài ý tưởng có thể được dạy dể dàng bằng cách thực thi một số mô hình
