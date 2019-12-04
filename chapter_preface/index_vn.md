@@ -198,7 +198,7 @@ While experts love this book precisely for its thoroughness,
 for beginners, this property limits its usefulness as an introductory text.
 -->
 
-Có nhiều cuốn sách dạy một chuỗi các chủ đề, đầy đủ chi tiết cho từng cái một.
+Có nhiều cuốn sách dạy một chuỗi các chủ đề khác nhau vô cùng thấu đáo.
 Ví dụ như, cuốn sách tuyệt vời :cite:`Bishop.2006` của Bishop,
 dạy mỗi chủ đề rất kỹ lưỡng, để mà đến được chương hồi quy tuyến tính
 đòi hỏi một số lượng công việc không hề nhỏ.
