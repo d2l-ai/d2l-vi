@@ -4,7 +4,7 @@
 # Geometry and Linear Algebraic Operations
 -->
 
-# *dịch tiêu đề phía trên*
+# Các phép toán Hình Học và Đại Số Tuyến Tính
 :label:`sec_geometry-linear-algebric-ops`
 
 <!--
@@ -21,19 +21,30 @@ highlighting some geometric interpretations of linear algebra operations,
 and introducing a few fundamental concepts, including of eigenvalues and eigenvectors.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến
+tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
+Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu
+và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đựng đầy
+đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều
+cần thảo luận trong lĩnh vực này. Trong mục này, chúng ta sẽ đi sâu hơn, nhấn
+mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới
+thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
 
 <!--
 ## Geometry of Vectors
 -->
 
-## *dịch tiêu đề phía trên*
+## Ý nghĩa hình học của Vector
+
+<!--
 First, we need to discuss the two common geometric interpretations of vectors,
 as either points or directions in space.
 Fundamentally, a vector is a list of numbers such as the Python list below.
 -->
 
-*dịch đoạn phía trên*
+Trước hết, chúng ta cần thảo luận hai diễn giải hình học phổ biến của vector:
+điểm hoặc hướng trong không gian. Về cơ bản, một vector là một danh sách các
+số giống như danh sách trong Python dưới đây:
 
 ```{.python .input}
 v = [1, 7, 0, 1]
@@ -43,7 +54,7 @@ v = [1, 7, 0, 1]
 Mathematicians most often write this as either a *column* or *row* vector, which is to say either as
 -->
 
-*dịch đoạn phía trên*
+Các nhà toán học thường viết chúng dưới dạng một vector *cột* hoặc *hàng*, tức:
 
 $$
 \mathbf{x} = \begin{bmatrix}1\\7\\0\\1\end{bmatrix},
@@ -53,7 +64,7 @@ $$
 or
 -->
 
-*dịch đoạn phía trên*
+hoặc
 
 $$
 \mathbf{x}^\top = \begin{bmatrix}1 & 7 & 0 & 1\end{bmatrix}.
@@ -67,7 +78,21 @@ However, it can be beneficial to be flexible.
 Matrices are useful data structures: they allow us to organize data that have different modalities of variation. For example, rows in our matrix might correspond to different houses (data points), while columns might correspond to different attributes. This should sound familiar if you have ever used spreadsheet software or have read :numref:`sec_pandas`. Thus, although the default orientation of a single vector is a column vector, in a matrix that represents a tabular dataset, it is more conventional to treat each data point as a row vector in the matrix. And, as we will see in later chapters, this convention will enable common deep learning practices. For example, along the outermost axis of an `ndarray`, we can access or enumerate minibatches of data points, or just data points if no minibatch exists.
 -->
 
-*dịch đoạn phía trên*
+Những biểu diễn này thường có những cách diễn giải khác nhau. Các điểm dữ liệu
+được biểu diễn bằng các vector cột và các trọng số dùng trong các tổng có
+trọng số được biểu diễn bằng các vector hàng. Tuy nhiên, việc linh động sử
+dụng các cách biểu diễn này mang lại nhiều lợi ích. Ma trận là những
+cấu trúc dữ liệu hữu ích: chúng cho phép chúng ta tổ chức dữ liệu với nhiều
+biến thể khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
+(điểm dữ liệu) khác nhau, trong khi các cột có thể tương ứng với các thuộc tính
+khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các phần mềm dạng bảng
+(spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù chiều mặc
+định của một vector là một vector cột, trong một ma trận biểu diễn một tập dữ
+liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
+trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
+này phù hợp với cách triển khai các mô hình học sâu.
+Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số
+minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
