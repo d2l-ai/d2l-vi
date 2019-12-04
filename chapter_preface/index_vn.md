@@ -222,7 +222,7 @@ mà chúng cần thiết để hoàn tất phần thực hành.
 Trong khi chúng tôi sẽ dành một chút thời gian để dạy kiến thức căn bản mở đầu,
 như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn được tận hưởng
 sự thoả mãn của việc huấn luyện mô hình đầu tiên trước khi bận tâm tới
-các lý thuyết phân phối xác suất.
+các lý thuyết phân phối xác suất phức tạp.
 
 <!--
 Aside from a few preliminary notebooks that provide a crash course
@@ -301,7 +301,7 @@ we can just use the Gluon version in subsequent tutorials.
 Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
 một thư viện với một đặc tính hiếm có, đó là vừa
 đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
-Quyển sách này sẽ dạy về khái niệm học sâu từ đầu.
+Cuốn sách này sẽ dạy về khái niệm học sâu từ đầu.
 Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn
 về mô hình mà thông thường sẽ được che giấu khỏi người dùng
 bởi những lớp trừu tượng bậc cao Gluon.
