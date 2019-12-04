@@ -249,7 +249,7 @@ riêng lẻ.
 Và một vài ý tưởng có thể được dạy dể dàng bằng cách thực thi một số mô hình
 kế tiếp nhau.
 Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách
-*1 ví dụ độc lập, 1 notebook*:
+*mỗi notebook một ví dụ hoạt động được*:
 Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách
 dễ dàng nhất có thể bằng cách tận dụng mã nguồn của chúng tôi.
 Bạn chỉ cần sao chép một notebook và bắt đầu sửa đổi trên đó.
