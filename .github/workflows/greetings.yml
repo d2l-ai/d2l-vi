@@ -10,4 +10,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Message that will be displayed on users'' first issue'
-        pr-message: 'Message that will be displayed on users'' Đây là Pull Request đầu tiên mà bạn nộp trong repo này. Nếu bạn nộp Pull Reqeust để dịch một phần, bạn vui lòng đoc kỹ [hướng dẫn](https://d2l.aivivn.com/intro_vn.html#dich) trước khi dịch'
+        pr-message: 'Message that will be displayed on users'' Đây là Pull Request đầu tiên mà bạn nộp trong repo này. Nếu bạn nộp Pull Request để dịch một phần, bạn vui lòng đoc kỹ [hướng dẫn](https://d2l.aivivn.com/intro_vn.html#dich) trước khi dịch'
