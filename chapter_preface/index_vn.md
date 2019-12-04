@@ -299,7 +299,7 @@ we can just use the Gluon version in subsequent tutorials.
 -->
 
 Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
-một thư viện có đầy đủ các đặc tính hiếm có
+một thư viện với một đặc tính hiếm có, đó là vừa
 đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
 Quyển sách này sẽ dạy về khái niệm học sâu từ đầu.
 Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn
