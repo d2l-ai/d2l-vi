@@ -384,11 +384,18 @@ của văn bản, bởi vậy chúng ta lại có thể sử dụng góc.
 ### Cosine Similarity
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ tương tự cosin
+
+<!--
 In ML contexts where the angle is employed
 to measure the closeness of two vectors,
 practitioners adopt the term *cosine similarity*
 to refer to the portion
+-->
+
+Trong văn cảnh học máy với góc được dùng để chỉ khoảng cách giữa hai vector,
+người làm ML sử dụng thuật ngữ *độ tương tự cosin* để chỉ đại lượng
+
 $$
 \cos(\theta) = \frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}.
 $$
@@ -403,14 +410,16 @@ are sampled randomly with mean $0$,
 their cosine will nearly always be close to $0$.
 -->
 
-*dịch đoạn phía trên*
-
+Hàm cosin lấy giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá
+trị nhỏ nhất bằng $-1$ khi chúng cùng phương khác hướng, và $0$ khi hai vector
+trực giao. Chú ý rằng nếu các thành phần của hai vector nhiều chiều được lấy
+mẫu ngẫu nhiên với kỳ vọng $0$, cosin giữa chúng sẽ luôn gần với $0$.
 
 <!--
 ## Hyperplanes
 -->
 
-## *dịch tiêu đề phía trên*
+## Siêu phẳng
 
 <!--
 In addition to working with vectors, another key object
@@ -421,13 +430,24 @@ In an $n$-dimensional vector space, a hyperplane has $d-1$ dimensions
 and divides the space into two half-spaces.
 -->
 
-*dịch đoạn phía trên*
+Ngoài việc làm việc với vector, một khái niệm quan trọng khác bạn phải nắm vững
+khi đi sâu vào đại số tuyến tính là *siêu phẳng*, một khái niệm tổng quát của
+đường thẳng (trong không gian hai chiều) hoặc một mặt phẳng (trong không gian
+ba chiều). Trong một không gian vector $d$ chiều, một siêu phẳng có $d-1$ chiều
+và chia không gian thành hai nửa không gian.
 
 <!--
 Let's start with an example.
 Suppose that we have a column vector $\mathbf{w}=[2,1]^\top$. We want to know, "what are the points $\mathbf{v}$ with $\mathbf{w}\cdot\mathbf{v} = 1$?"
 By recalling the connection between dot products and angles above :eqref:`eq_angle_forumla`,
 we can see that this is equivalent to
+-->
+
+Xét ví dụ sau. Giả sử ta có một vector cột $\mathbf{w}=[2,1]^\top$. Ta muốn
+biết "tập hợp những điểm $\mathbf{v}$ sao cho $\mathbf{w}\cdot\mathbf{v} = 1$?"
+Sử dụng mối quan hệ giữa tích vô hướng và góc ở :eqref:`eq_angle_forumla` ở trên,
+ta có thể thấy điều này tương đương với
+
 $$
 \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta) = 1 \; \iff \; \|\mathbf{v}\|\cos(\theta) = \frac{1}{\|\mathbf{w}\|} = \frac{1}{\sqrt{5}}.
 $$
@@ -436,7 +456,8 @@ $$
 ![Recalling trigonometry, we see the formula $\|\mathbf{v}\|\cos(\theta)$ is the length of the projection of the vector $\mathbf{v}$ onto the direction of $\mathbf{w}$](../img/ProjVec.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ProjVec.svg)
+![Nhắc lại trong lượng giác, chúng ta coi $\|\mathbf{v}\|\cos(\theta)$ là độ
+dài hình chiếu của vector $\mathbf{v}$ lên hướng của vector $\mathbf{w}$](../img/ProjVec.svg)
 :label:`fig_vector-project`
 
 <!--
@@ -450,7 +471,11 @@ If we wanted, we could find the equation for this line
 and see that it is $2x + y = 1$ or equivalently $y = 1 - 2x$.
 -->
 
-*dịch đoạn phía trên*
+Nếu xem xét ý nghĩa hình học của biểu diễn này, chúng ta thấy rằng việc này
+tương đương với việc độ dài hình chiếu của $\mathbf{v}$ lên hướng của
+$\mathbf{w}$ chính là $1/\|\mathbf{w}\|$ như được biểu diễn trong :numref:`fig_vector-project`. Tập hợp các điểm thỏa mãn điều kiện này là một đường
+thẳng vuông góc với vector $\mathbf{w}$. Ta có thể tìm được phương trình của
+đường thẳng này là $2x + y = 1$ hoặc $y = 1 - 2x$.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
