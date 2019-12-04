@@ -305,7 +305,7 @@ Quyển sách này sẽ dạy về khái niệm học sâu từ đầu.
 Thỉnh thoảng, chúng tôi sẽ muốn đào sâu vào những chi tiết chuẩn
 về mô hình mà thông thường sẽ được che giấu khỏi người dùng
 bởi những lớp trừu tượng bậc cao Gluon.
-Điều này xuất hiện đặc biệt trong các hướng dẫn cơ bản,
+Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản,
 nơi chúng tôi muốn bạn hiểu mọi thứ sẽ diễn ra trong một lớp nhất định
 hoặc phần tối ưu hoá.
 Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
