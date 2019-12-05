@@ -4,7 +4,7 @@
 # Preface
 -->
 
-# *dịch tiêu đề phía trên*
+# Lời nói đầu
 
 <!--
 Just a few years ago, there were no legions of deep learning scientists
@@ -22,7 +22,12 @@ Neural networks then, the antecedents of the deep learning models
 that we focus on in this book, were regarded as outmoded tools.
 -->
 
-*dịch đoạn phía trên*
+Chỉ một vài năm trước, không có nhiều nhà khoa học học sâu (_deep learning_) phát triển các sản phẩm và dịch vụ thông minh tại các công ty lớn và công ty khởi nghiệp.
+Khi người trẻ nhất trong nhóm tác giả chúng tôi tiến vào lĩnh vực này, học máy (_machine learning_) còn chưa xuất hiện thường xuyên trên truyền thông.
+Cha mẹ chúng tôi từng không có ý niệm gì về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa
+hay luật khoa. Học máy từng là một lĩnh vực nghiên cứu với chỉ một tập nhỏ các
+ứng dụng thực tế. Và những ứng dụng đó, chẳng hạn nhận dạng giọng nói (_speech recognition_) hay thị giác máy tính (_computer vision_), đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ.
+Các mạng nơ-ron (_neural network_), tiền đề của các mô hình học sâu mà chúng ta tập trung vào trong cuốn sách này, từng được coi là các công cụ lỗi thời.
 
 
 <!--
@@ -42,7 +47,17 @@ changing the way movies are made, diseases are diagnosed,
 and playing a growing role in basic sciences---from astrophysics to biology.
 -->
 
-*dịch đoạn phía trên*
+Trong chỉ khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu, 
+dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác
+nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (_natural language processing_), nhận dạng giọng nói tự động (_automatic speech recognition_),
+học tăng cường (_reinforcement learning_), và mô hình hoá thống kê (_statistical modeling_). Với những tiến bộ này, chúng ta bây
+giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), hệ thống trả
+lời tự động, giúp con người đào sâu vào cả núi email, và các phần mềm chiến
+thắng những người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được
+xem là không thể đạt được trong nhiều thập kỷ tới. Những công cụ này đã và đang
+gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách
+tạo ra các bộ phim, cách chẩn đoán bệnh, đóng một vài trò ngày càng tăng trong các
+ngành khoa học cơ bản -- từ vật lý thiên văn tới sinh học.
 
 <!-- =================== Kết thúc dịch Phần 1 ================================-->
 
@@ -652,7 +667,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
 *
