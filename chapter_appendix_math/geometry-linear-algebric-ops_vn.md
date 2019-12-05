@@ -598,7 +598,7 @@ as a weighted sum of these *basis vectors*.
 -->
 
 <> Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
-thông qua cách nó biến đổi *hai vecor cụ thể*:
+thông qua cách nó biến đổi *hai vector cụ thể*:
 $[1,0]^\top$ và $[0,1]^\top$.
 Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
 (tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
