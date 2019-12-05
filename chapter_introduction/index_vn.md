@@ -30,9 +30,7 @@ chúng ta có thể phác thảo một giải pháp vận hành được, phần
 (i) người dùng tương tác với ứng dụng thông qua một giao diện chạy trên trình duyệt web hoặc ứng dụng trên điện thoại;
 (ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại
 để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
-và (iii) ở trung tâm của ứng dụng, các logic kinh doanh (hay cũng có thể nói *bộ não*) của cả ứng dụng này
-được viết ra với những chi tiết tỉ mỉ về những hành động thích hợp mà ứng dụng của chúng ta nên làm theo
-trong mọi trường hợp có thể tưởng tượng ra được.
+và (iii) (cũng là cốt lõi của ứng dụng) các logic nghiệp vụ (hay cũng có thể nói *bộ não*) mô tả cách thức xử lí cụ thể của ứng dụng trong từng tình huống có thể xảy ra.
 
 <!--
 To build the *brains* of our application,
@@ -52,17 +50,17 @@ And when you are able to devise solutions that work $100\%$ of the time,
 *you should not be using machine learning*.
 -->
 
-Để xây dựng *bộ não* của ứng dụng này, ta phải bước qua tất cả mọi trường hợp đặc biệt 
-mà chúng ta lường trước sẽ gặp phải, qua đó đặt ra những quy tắc thích hợp.
-Mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng,
+Để xây dựng *bộ não* của ứng dụng này, ta phải xem xét tất cả mọi trường hợp mà chúng ta cho rằng sẽ gặp phải
+, qua đó đặt ra những quy tắc thích hợp.
+Ví dụ, mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng,
 ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
 liên kết ID của người dùng với ID của món hàng được yêu cầu.
 Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
 (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
 hầu như phần lớn ta có thể lập trình được từ những nguyên tắc cơ bản nhất
-và tự tin chạy ứng dụng *trước khi nhìn thấy bất kì khách hàng thực sự nào*.
+và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
 Khả năng phát triển những sản phầm và hệ thống tự động từ những nguyên tắc suy luận cơ bản nhất,
-thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức.
+thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
 Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống,
 *bạn không nên sử dụng học máy*.
 
@@ -74,10 +72,10 @@ Imagine huddling around the whiteboard with the smartest minds you know,
 but this time you are tackling one of the following problems:
 -->
 
-May mắn thay cho cộng đồng đang tăng trường của các nhà khoa học về học máy,
+May mắn thay cho cộng đồng đang tăng trưởng của các nhà khoa học về học máy,
 nhiều tác vụ mà chúng ta muốn tự động hoá không dễ dàng bị khuất phục bởi sự tài tình của con người.
 Thử tưởng tượng bạn đang quây quần bên tấm bảng trắng với những bộ não thông minh nhất mà bạn biết,
-nhưng lần này bạn đang đương đầu với những vấn để dưới đây:
+nhưng lần này bạn đang đương đầu với một trong những vấn đề dưới đây:
 
 <!--
 * Write a program that predicts tomorrow's weather given geographic
@@ -125,7 +123,7 @@ natural language processing, healthcare, and genomics.
 -->
 
 Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa 
-cũng không thể lập trình lên được từ con số 0.
+cũng không thể lập trình lên được từ con số không.
 Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần 
 lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
 Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng)
@@ -138,7 +136,7 @@ Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm,
 thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường,
 chất lượng của nó sẽ tăng lên.
 Tương phản với hệ thống thương mại điện tử tất định của chúng ta,
-khi mà nó luôn tuân theo cùng logic thương mại đã có,
+khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có,
 mặc cho đã tích luỹ thêm bao nhiêu là kinh nghiệm,
 tận cho tới khi lập trình viên tự quyết định rằng đã tới lúc cập nhật phần mềm này.
 Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy,
