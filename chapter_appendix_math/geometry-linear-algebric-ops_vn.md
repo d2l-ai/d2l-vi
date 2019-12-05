@@ -548,7 +548,7 @@ nhìn trọn vẹn về ý nghĩa hình học của vector, độ dài, và góc
 khái niệm quan trọng chúng ta đã bỏ qua, đó là ý nghĩa hình học của
 các phép biến đổi tuyến tính thể hiện bởi các ma trận. Hiểu một cách đầy đủ cách
 ma trận được dùng để biến đổi dữ liệu giữa hai không gian nhiều chiều khác nhau
-cần một lượng thực hành đáng kể và nằm ngoài phạm vu của phần mục lục này. Tuy nhiên,
+cần một lượng thực hành đáng kể và nằm ngoài phạm vi của phần mục lục này. Tuy nhiên,
 chúng ta có thể xây dựng ý niệm trong không gian hai chiều.
 
 <!--
