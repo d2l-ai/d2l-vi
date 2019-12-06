@@ -622,7 +622,7 @@ In the second case, we again see that the average resembles a blurry image of tr
 -->
 
 Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình có dạng
-một ảnh phiên bản mờ một chiếc quần.
+một ảnh phiên bản mờ một chiếc quần dài.
 
 ```{.python .input}
 # Plot average trousers
