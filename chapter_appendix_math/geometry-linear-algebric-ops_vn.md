@@ -537,7 +537,7 @@ The two inequalities again define the two sides of the plane as is shown in :num
 Tương tự với không gian đa chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
 các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một
 mặt phẳng vuông góc với vector $\mathbf{w}$. Hai bất phương trình một lần nữa
-định nghĩa hai phía của mặt bẳng nhưng trong hình :numref:`fig_higher-division`.
+định nghĩa hai phía của mặt bẳng như trong hình :numref:`fig_higher-division`.
 
 <!--
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
