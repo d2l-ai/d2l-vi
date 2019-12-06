@@ -510,13 +510,13 @@ where all the points on one side have dot product below a threshold,
 and the other side above as we see in :numref:`fig_space-division`.
 -->
 
-Tiếp theo, nếu tự hỏi tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
+Tiếp theo, nếu tự hỏi về tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
 hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường
 hợp mà hình chiếu của chúng lên $\mathbf{w}$ lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$. Bởi vậy,
-Hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
-thể cắt mặt phẳng thành hai nửa, ở đó tất cả những điểm thuộc một nửa có tích vô
-hướng nhỏ hơn một ngưỡng, và những điểm thuộc nửa còn lại có tích vô hướng lớn
-hơn ngưỡng đó. Xem hình :numref:`fig_space-division`.
+Vì thế, hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
+thể cắt mặt phẳng thành hai nửa: một nửa chứa tất cả điểm có tích vô
+hướng nhỏ hơn một mức ngưỡng và nửa còn lại chứa những điểm có tích vô hướng lớn
+hơn mức ngưỡng đó. Xem hình :numref:`fig_space-division`.
 
 <!--
 ![If we now consider the inequality version of the expression, we see that our hyperplane (in this case: just a line) separates the space into two halves.](../img/SpaceDivision.svg)
