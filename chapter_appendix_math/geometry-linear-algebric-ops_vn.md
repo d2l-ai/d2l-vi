@@ -522,7 +522,7 @@ hơn mức ngưỡng đó. Xem hình :numref:`fig_space-division`.
 ![If we now consider the inequality version of the expression, we see that our hyperplane (in this case: just a line) separates the space into two halves.](../img/SpaceDivision.svg)
 -->
 
-![Nhìn từ khía cạnh bất phương trình, ta thấy rằng siêu phẳng (là đường thẳng
+![Nếu nhìn từ dạng bất phương trình, ta thấy rằng siêu phẳng (chỉ là một đường thẳng
 trong trường hợp này) chia không gian ra thành hai nửa.](../img/SpaceDivision.svg)
 :label:`fig_space-division`
 
