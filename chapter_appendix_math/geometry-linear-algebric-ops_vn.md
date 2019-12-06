@@ -582,7 +582,7 @@ and eyeball a crude threshold.  First we will load the data and compute the aver
 
 Xét ví dụ sau. Chú ý rằng chúng ta có thể tạo một mô hình đủ tốt để phân loại
 những bức ảnh áo thun và quần nhỏ xíu từ tập dữ liệu Fashion MNIST (Xem :numref:`sec_fashion_mnist`) bằng cách lấy vector giữa điểm trung bình của mỗi lớp để
-định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên chúng
+định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên, chúng
 ta tải dữ liệu và tính hai ảnh trung bình:
 
 ```{.python .input}
