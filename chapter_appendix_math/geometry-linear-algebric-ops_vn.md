@@ -766,7 +766,7 @@ it $[1,1]^\top$ or $[0, -1]^\top$?
 -->
 
 nén toàn bộ mặt phẳng hai chiều thành một đường thẳng.
-Xác định và làm việc với các phép biến đổi này là chủ để của một phần sau, nhưng nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này khác cơ bản so với các phép biến đổi trên đây.
+Xác định và làm việc với các phép biến đổi này là chủ để của phần sau, nhưng nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này cơ bản khác so với các phép biến đổi ở trên.
 Ví dụ, kết quả từ ma trận $\mathbf{A}$ có thể bị "bẻ cong lại" thành dạng ban đầu.
 Kết quả từ ma trận $\mathbf{B}$ thì không thể vì sẽ không thể biết vector $[1,2]^\top$ đến từ đâu -- từ $[1,1]^\top$ hay $[0, -1]^\top$?
 
