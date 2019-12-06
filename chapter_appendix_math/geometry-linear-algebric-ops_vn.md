@@ -563,7 +563,7 @@ can be separated cleanly by hyperplanes.
 
 Mặc dù không thể minh hoạ trong không gian nhiều chiều hơn, ta vẫn có thể tổng
 quát điều này cho không gian mười, một trăm hay một tỷ chiều. Việc này thường
-xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể coi các
+xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể hiểu các
 mô hình phân loại tuyến tính trong :numref:`sec_softmax` như những phương pháp
 đi tìm siêu phẳng phân chia các lớp dữ liệu khác nhau. Trong văn cảnh này, những
 siêu phẳng đó thường được gọi là *mặt phẳng quyết định*. Phần lớn các mô hình
