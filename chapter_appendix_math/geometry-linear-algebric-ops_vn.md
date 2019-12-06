@@ -534,7 +534,7 @@ we obtain a plane at right angles to the given vector $\mathbf{w}$.
 The two inequalities again define the two sides of the plane as is shown in :numref:`fig_higher-division`.
 -->
 
-Tương tự với không gian nhiều chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
+Tương tự với không gian đa chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
 các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một
 mặt phẳng vuông góc với vector $\mathbf{w}$. Hai bất phương trình một lần nữa
 định nghĩa hai phía của mặt bẳng nhưng trong hình :numref:`fig_higher-division`.
