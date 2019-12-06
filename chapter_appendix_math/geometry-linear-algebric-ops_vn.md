@@ -621,7 +621,7 @@ d2l.plt.show()
 In the second case, we again see that the average resembles a blurry image of trousers.
 -->
 
-Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình của quần có dạng
+Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình có dạng
 một ảnh phiên bản mờ một chiếc quần.
 
 ```{.python .input}
