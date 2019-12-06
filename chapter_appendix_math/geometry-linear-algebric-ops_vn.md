@@ -635,7 +635,7 @@ In a fully machine learned solution, we would learn the threshold from the datas
 -->
 
 Trong lời giải hoàn chỉnh, ta sẽ học được ngưỡng từ tập dữ liệu. Trong trường
-hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng và cho kết quả khá tốt.
+hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng mà cho kết quả khá tốt trên tập huấn luyện.
 
 ```{.python .input}
 # Print test set accuracy with eyeballed threshold
