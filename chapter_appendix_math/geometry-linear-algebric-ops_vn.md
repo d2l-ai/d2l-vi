@@ -607,7 +607,7 @@ It can be informative to examine these averages in detail, so let's plot what th
 -->
 
 Để có cái nhìn rõ hơn, ta có thể biểu diễn các ảnh trung bình này. Trong trường
-hợp này, chúng ta thấy rằng ảnh trung bình của áo thun có dạng
+hợp này, chúng ta thấy rằng ảnh trung bình của áo thun cũng ở dạng
 một phiên bản mờ của một chiếc áo thun.
 
 ```{.python .input}
