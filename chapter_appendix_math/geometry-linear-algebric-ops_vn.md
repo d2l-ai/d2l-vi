@@ -634,7 +634,7 @@ d2l.plt.show()
 In a fully machine learned solution, we would learn the threshold from the dataset.  In this case, I simply eyeballed a threshold that looked good on the training data by hand.
 -->
 
-Trong lời giải hoàn chỉnh, ta sẽ học được ngưỡng từ tập dữ liệu. Trong trường
+Trong lời giải học máy hoàn chỉnh, ta sẽ học được mức ngưỡng từ tập dữ liệu. Trong trường
 hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng mà cho kết quả khá tốt trên tập huấn luyện.
 
 ```{.python .input}
