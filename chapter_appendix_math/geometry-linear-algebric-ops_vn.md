@@ -719,7 +719,7 @@ but the grid structure must remain as you see in :numref:`fig_grid-transform`.
 -->
 
 Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng $2\cdot[1,0]^\top + -1\cdot[0,1]^\top$,
-và bởi vậy ta biến ma trận $A$ sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$.
+và bởi vậy ta biết ma trận $A$ sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$.
 Nếu chúng ta xem xét kỹ lưỡng điều này, bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm lệch, xoay và trước co giãn <scale - từ này học trong hình học lớp 8 mà mình quên> lưới đó, nhưng cấu trúc của lưới giữ nguyên như trong :numref:`fig_grid-transform`.
 
 <!-- câu này mấy bác Tàu viết quá rườm rà, mình sẽ xem lại và tách thành nhiều câu -->
