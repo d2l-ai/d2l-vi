@@ -741,7 +741,7 @@ and skew, rotate, and scale them.
 -->
 
 Đây là điểm quan trọng nhất để hình dung các phép biến đổi tuyến tính thông qua ma trận.
-Ma trận không thể làm biến dạng một vài phần của không gian khác với các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm lệch, xoay và co giãn chúng.
+Ma trận không thể làm biến dạng một vài phần của không gian khác với các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm xiên, xoay và co giãn chúng.
 
 <!--
 Some distortions can be severe.  For instance the matrix
