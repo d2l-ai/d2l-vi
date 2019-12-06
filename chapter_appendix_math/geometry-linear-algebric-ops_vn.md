@@ -728,8 +728,8 @@ Nếu chúng ta xem xét kỹ lưỡng điều này, bằng cách xem lưới c�
 ![The matrix $\mathbf{A}$ acting on the given basis vectors.  Notice how the entire grid is transported along with it.](../img/GridTransform.svg)
 -->
 
-![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Chú ý việc
-toàn bộ lưới cũng bị biến đổi theo.](../img/GridTransform.svg)
+![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc
+toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg)
 :label:`fig_grid-transform`
 
 <!--
