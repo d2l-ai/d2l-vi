@@ -138,8 +138,8 @@ Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/bl
     * Giữ các dòng gán nhãn (bắt đầu với `:label:`)
     * Không tự thêm bớt các dòng trắng
      
-3. Ngắt các đoạn dài thành các dòng ngắn khoảng 60-80 ký tự. Markdown sẽ coi
-những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
+3. Xuống dòng sau mỗi câu. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn.
+Việc này giúp công đoạn review được thuận tiện hơn.
 
 #### Review
 
