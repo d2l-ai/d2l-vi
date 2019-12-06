@@ -241,14 +241,14 @@ Just copy a notebook and start modifying it.
 
 Bên cạnh một vài notebook cơ bản cung cấp một khoá học cấp tốc
 về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý các khái niệm mới
-và đồng thời cung cấp các ví dụ chạy độc lập---sử dụng các tập dữ liệu thực tế.
+và đồng thời cung cấp các ví dụ đơn hoàn chỉnh---sử dụng các tập dữ liệu thực tế.
 Và đây là cả thách thức về cách tổ chức nội dung.
 Một vài mô hình có thể được nhóm lại một cách có logic trong một notebook
 riêng lẻ.
 Và một vài ý tưởng có thể được dạy tốt nhất bằng cách thực thi một số mô hình
 kế tiếp nhau.
 Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách
-*mỗi notebook một ví dụ hoạt động được*:
+*mỗi notebook là một ví dụ hoàn chỉnh*:
 Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách
 dễ dàng nhất có thể bằng cách tận dụng mã nguồn của chúng tôi.
 Bạn chỉ cần sao chép một notebook và bắt đầu sửa đổi trên đó.
@@ -268,7 +268,8 @@ to trust us with some curatorial decisions.
 
 Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng
 khi cần thiết.
-Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
+Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ
+trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
 Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi
 giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
 Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết
