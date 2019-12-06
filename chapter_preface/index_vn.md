@@ -268,7 +268,7 @@ to trust us with some curatorial decisions.
 
 Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng
 khi cần thiết.
-Thông thường, chúng tôi sẽ tiếp cận bằng cách sử dụng các khái niệm, công cụ hay thư viện lập trình trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
+Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
 Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi
 giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
 Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết
