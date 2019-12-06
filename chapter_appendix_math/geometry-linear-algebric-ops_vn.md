@@ -512,7 +512,7 @@ and the other side above as we see in :numref:`fig_space-division`.
 
 Tiếp theo, nếu tự hỏi tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
 hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường
-hợp mà hình chiếu lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$. Bởi vậy,
+hợp mà hình chiếu của chúng lên $\mathbf{w}$ lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$. Bởi vậy,
 Hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
 thể cắt mặt phẳng thành hai nửa, ở đó tất cả những điểm thuộc một nửa có tích vô
 hướng nhỏ hơn một ngưỡng, và những điểm thuộc nửa còn lại có tích vô hướng lớn
