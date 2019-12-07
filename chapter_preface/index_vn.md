@@ -282,7 +282,7 @@ dạng kết hợp này.
 ### Learning by Doing
 -->
 
-### *dịch tiêu đề phía trên*
+### Học bằng cách thực hành
 
 <!--
 Many textbooks teach a series of topics, each in exhaustive detail.
@@ -293,7 +293,13 @@ While experts love this book precisely for its thoroughness,
 for beginners, this property limits its usefulness as an introductory text.
 -->
 
-*dịch đoạn phía trên*
+Có nhiều cuốn sách dạy rất chi tiết một chuỗi các chủ đề khác nhau.
+Ví dụ như, cuốn sách tuyệt vời :cite:`Bishop.2006` của Bishop,
+dạy mỗi chủ đề rất kỹ lưỡng tới nỗi để đến được chương hồi quy tuyến tính cũng
+đòi hỏi công sức bỏ ra không hề nhỏ.
+Trong khi các chuyên gia yêu thích quyển sách này
+chính vì sự kỹ lưỡng của nó, nhưng với những người mới bắt đầu,
+thì đặc điểm này lại hạn chế việc dùng cuốn sách như tài liệu nhập môn.
 
 <!--
 In this book, we will teach most concepts *just in time*.
@@ -305,7 +311,13 @@ we want you to taste the satisfaction of training your first model
 before worrying about more esoteric probability distributions.
 -->
 
-*dịch đoạn phía trên*
+Trong quyển sách này, chúng tôi sẽ dạy hầu hết các khái niệm *ở mức vừa đủ*.
+Hay nói cách khác, bạn sẽ chỉ học các khái niệm tại ngay thời điểm
+cần thiết để hoàn tất phần thực hành.
+Trong khi chúng tôi sẽ dành một chút thời gian để dạy kiến thức căn bản sơ bộ,
+như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn được tận hưởng
+cảm giác mãn nguyện của việc huấn luyện mô hình đầu tiên trước khi bận tâm tới
+các lý thuyết phân phối xác suất.
 
 <!--
 Aside from a few preliminary notebooks that provide a crash course
@@ -322,7 +334,19 @@ start your own research projects by leveraging our code.
 Just copy a notebook and start modifying it.
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh một vài notebook cơ bản cung cấp một khoá học cấp tốc
+về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý các khái niệm mới
+và đồng thời cung cấp các ví dụ đơn hoàn chỉnh---sử dụng các tập dữ liệu thực tế.
+Và đây là cả thách thức về cách tổ chức nội dung.
+Một vài mô hình có thể được nhóm lại một cách có logic trong một notebook
+riêng lẻ.
+Và một vài ý tưởng có thể được dạy tốt nhất bằng cách thực thi một số mô hình
+kế tiếp nhau.
+Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách
+*mỗi notebook là một ví dụ hoàn chỉnh*:
+Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách
+dễ dàng nhất có thể bằng cách tận dụng mã nguồn của chúng tôi.
+Bạn chỉ cần sao chép một notebook và bắt đầu sửa đổi trên đó.
 
 <!--
 We will interleave the runnable code with background material as needed.
@@ -337,7 +361,15 @@ at the expense of requiring the reader
 to trust us with some curatorial decisions.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng
+khi cần thiết.
+Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ
+trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
+Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi
+giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
+Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết
+để giải quyết vấn đề nhanh chóng và đòi hỏi người đọc phải
+tin tưởng vào một số quyết định triển khai của chúng tôi.
 
 <!--
 Throughout, we will be working with the MXNet library,
@@ -359,7 +391,22 @@ Once we have taught you how some component works,
 we can just use the Gluon version in subsequent tutorials.
 -->
 
-*dịch đoạn phía trên*
+Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
+một thư viện với một đặc tính hiếm có, đó là vừa
+đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
+Cuốn sách này sẽ dạy về khái niệm học sâu từ đầu.
+Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết 
+về mô hình mà thông thường sẽ được che giấu khỏi người dùng
+bởi những lớp trừu tượng bậc cao Gluon.
+Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản,
+nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng
+hoặc bộ tối ưu nào đó.
+Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
+của một ví dụ: một phiên bản trong đó chúng tôi hiện thực mọi thứ từ đầu,
+chỉ dựa vào giao diện Numpy và việc tính đạo hàm tự động,
+và một phiên bản khác, thực tế hơn, khi chúng tôi viết mã ngắn gọn sử dụng Gluon.
+Một khi chúng tôi đã dạy bạn cách một số thành phần hoạt động cụ thể như thế nào,
+chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
@@ -673,7 +720,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Sẩm Thế Hải
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
 *
