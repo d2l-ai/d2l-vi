@@ -565,10 +565,10 @@ the following packages and modules as dependencies:
 Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói
 những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến
 trong cuốn sách này trong gói thư viện `d2l`.
-Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc nhiều phần chèn vào
-được lưu ở trong gói thư viện, chúng tôi sẽ đánh dấu bằng dòng
+Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện
+cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
 `# Lưu lại trong gói thư viện d2l để sử dụng sau`.
-Gói thư viện `d2l` thì nhẹ và chỉ phụ thuộc vào những gói thư viện và module sau:
+Gói thư viện `d2l` thì nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
