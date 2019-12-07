@@ -780,13 +780,13 @@ distorts the entire space in whatever dimension space we are dealing with.
 ## Linear Dependence
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Độc lập Tuyến tính
+(to glossary)
 <!--
 Consider again the matrix
 -->
 
-*dịch đoạn phía trên*
+Quay lại với ma trận
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -810,7 +810,13 @@ means that we can write any linear combination of those two columns
 entirely in terms of say $\mathbf{b}_2$ since
 -->
 
-*dịch đoạn phía trên*
+Ma trận này nén toàn bộ mặt phẳng xuống thành một đường thằng $y = 2x$.
+Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu chỉ nhìn vào ma trận?
+Câu trả lời là tất nhiên có thể.
+Đặt $\mathbf{b}_1 = [2,4]^\top$ và $\mathbf{b}_2 = [-1, -2]^\top$
+là hai cột của $\mathbf{B}$.
+Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi sử dụng ma trận $\mathbf{B}$ như tổng có trọng số của các cột của ma trận này dưới dạng like $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$. Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
+Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này hoàn toàn chỉ dùng $\mathbf{b}_2$:
 
 $$
 a_1\mathbf{b}_1 + a_2\mathbf{b}_2 = -2a_1\mathbf{b}_2 + a_2\mathbf{b}_2 = (a_2-2a_1)\mathbf{b}_2.
@@ -827,7 +833,9 @@ $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$ captures this.
 To make this more symmetrical between the two vectors, we will write this as
 -->
 
-*dịch đoạn phía trên*
+Điều này chỉ ra rằng một trong hai cột là dư thừa vì nó không định nghĩa một hướng duy nhất trong không gian.
+Việc này không quá bất ngờ bởi ta đã tấy rằng mà trận này biến toàn bộ mặt phẳng xuống thành một đường thẳng.
+Hơn nữa, ta có thể nhận thấy điều này vì hai cột này phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng
 
 $$
 \mathbf{b}_1  + 2\cdot\mathbf{b}_2 = 0.
@@ -839,7 +847,7 @@ $\mathbf{v}_1, \ldots \mathbf{v}_k$ are *linearly dependent*
 if there exist coefficients $a_1, \ldots, a_k$ *not all equal to zero* so that
 -->
 
-*dịch đoạn phía trên*
+Tổng quát, ta sẽ nói rằng một tập hợp các vector $\mathbf{v}_1, \ldots \mathbf{v}_k$ là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k *không đồng thời bằng không* sao cho
 
 $$
 \sum_{i=1}^k a_i\mathbf{v_i} = 0.
@@ -857,7 +865,10 @@ If the columns of a matrix are linearly independent,
 no compression occurs and the operation can be undone.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta có thể giải một vector dưới dạng một tổ hợp nào đó của các vector khác, <>.
+Bởi vậy, một tổ hợp tuyến tính của các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang nén không gian xuống một không gian ít chiều hơn.
+Nếu không có sự phụ thuộc tuyến tính, cúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
+Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể nghịch đảo được.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
