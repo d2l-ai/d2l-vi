@@ -269,7 +269,7 @@ to trust us with some curatorial decisions.
 Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng
 khi cần thiết.
 Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ
-trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
+trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau).
 Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi
 giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
 Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết
@@ -300,7 +300,7 @@ Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
 một thư viện với một đặc tính hiếm có, đó là vừa
 đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
 Cuốn sách này sẽ dạy về khái niệm học sâu từ đầu.
-Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết 
+Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết
 về mô hình mà thông thường sẽ được che giấu khỏi người dùng
 bởi những lớp trừu tượng bậc cao Gluon.
 Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản,
@@ -396,7 +396,7 @@ and natural language processing, respectively.
 ### Code
 -->
 
-### *dịch tiêu đề phía trên*
+### Mã nguồn
 :label:`sec_code`
 
 <!--
@@ -416,7 +416,19 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-*dịch đoạn phía trên*
+Hầu hết các phần của cuốn sách này đều bao gồm mã nguồn hoạt động được, bởi vì
+chúng tôi tin rằng kinh nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
+Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc thử và lỗi,
+tinh chỉnh mã nguồn từ từ và quan sát kết quả.
+Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
+chính xác làm cách nào để tinh chỉnh mã nguồn để đạt được kết quả mong muốn.
+Thật đáng tiếc là hiện tại những lý thuyết đẹp đẽ đó vẫn chưa được khám phá.
+Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật,
+bởi vì phần toán học để xác định những mô hình có thể quá khó và hơn nữa bởi vì nhu cầu
+tìm hiểu về những chủ đề này mới chỉ được tăng cao gần đây.
+Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển,
+những phiên bản tiếp theo của quyển sách này sẽ có thể cung cấp những cái nhìn sâu sắc hơn
+mà phiên bản hiện tại không thể làm được.
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -432,7 +444,17 @@ please consult :ref:`chap_installation`
 to update your code and runtime environment.
 -->
 
-*dịch đoạn phía trên*
+Hầu hết mã nguồn trong cuốn sách này được dựa theo Apache MXNet.
+MXNet là một framework mã nguồn mở dành cho học sâu
+và là lựa chọn yêu thích của AWS (Amazon Web Services),
+và cả ở nhiều trường đại học và công ty.
+Tất cả mã nguồn trong cuốn sách này đã được kiểm thử trên phiên bản mới nhất của MXNet.
+Tuy nhiên, bởi vì học sâu phát triển thường xuyên, một vài mã nguồn
+*trong phiên bản sách in* có thể không hoạt động đúng trên những phiên bản MXNet sau này.
+Dù vậy, chúng tôi dự định sẽ giữ phiên bản online được cập nhật.
+Trong trường hợp bạn gặp phải bất cứ vấn đề nào,
+hãy tham khảo :ref:`chap_installation`
+để cập nhật mã nguồn và môi trường thực thi.
 
 <!--
 At times, to avoid unnecessary repetition, we encapsulate
@@ -445,7 +467,13 @@ The `d2l` package is light-weight and only requires
 the following packages and modules as dependencies:
 -->
 
-*dịch đoạn phía trên*
+Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói
+những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến
+trong cuốn sách này trong gói thư viện `d2l`.
+Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc nhiều phần chèn vào
+được lưu ở trong gói thư viện, chúng tôi sẽ đánh dấu bằng dòng
+`# Lưu lại trong gói thư viện d2l để sử dụng sau`.
+Gói thư viện `d2l` thì nhẹ và chỉ phụ thuộc vào những gói thư viện và module sau:
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -470,7 +498,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi sẽ mô tả một phần tổng quát chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
