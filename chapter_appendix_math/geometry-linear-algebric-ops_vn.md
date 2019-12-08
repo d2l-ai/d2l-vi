@@ -570,7 +570,7 @@ siêu phẳng như trên thường được gọi là *mặt phẳng quyết đ�
 phân loại tìm được qua học sâu đều kết thúc bởi một tầng tuyến tính và theo sau là một tầng
 softmax, bởi vậy ta có thể diễn giải ý nghĩa của mạng nơ-ron sâu giống như việc tìm một
 <phép chuyển đổi> phi tuyến sao cho các lớp mục tiêu có thể được phân chia bởi các
-siêu phẳng.
+siêu phẳng một cách gọn gàng.
 
 <!--
 To give a hand-built example, notice that we can produce a reasonable model
