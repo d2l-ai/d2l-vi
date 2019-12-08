@@ -781,7 +781,6 @@ distorts the entire space in whatever dimension space we are dealing with.
 -->
 
 ## Phụ thuộc Tuyến tính
-(to glossary)
 <!--
 Consider again the matrix
 -->
