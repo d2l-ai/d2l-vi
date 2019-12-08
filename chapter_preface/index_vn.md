@@ -615,9 +615,9 @@ về hầu hết các phần toán được đề cập trong cuốn sách này.
 Hầu hết thời gian, chúng tôi sẽ ưu tiên trực giác và ý tưởng
 hơn là sự chặt chẽ của toán học.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
-Chẳng hạn, Phân tích tuyến tính của Bela Bollobas :trích dẫn: `Bollobas.1999`
+Chẳng hạn, Phân tích tuyến tính của Bela Bollobas :cite:`Bollobas.1999`
 bao gồm đại số tuyến tính và phân tích chức năng ở độ sâu lớn.
-Tất cả về số liệu thống kê :trích dẫn: `Wasserman.2013` là một hướng dẫn tuyệt vời để học thống kê.
+Tất cả về số liệu thống kê :cite:`Wasserman.2013` là một hướng dẫn tuyệt vời để học thống kê.
 Và nếu bạn chưa sử dụng Python trước đây,
 bạn có thể muốn xem [hướng dẫn Python](http://learnpython.org/).
 
