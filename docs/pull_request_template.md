@@ -1,22 +1,12 @@
-# Lưu ý
+## Pull Request checklist
 
-## Với tác giả của Pull Request
+**Đánh dấu tick (x, không có dấu cách xung quanh) vào các mục dưới đây**
 
-**Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): close #**
+* [ ] Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): close #
 
-Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
-```
-<!-- =================== Bắt đầu dịch Phần x ================================ -->
-```
-và
-```
-<!-- =================== Kết thúc dịch Phần x ================================ -->
-```
+* [ ] Bản dịch này có bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
 
-1. Thuật ngữ
-Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) khi dịch. Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
-
-2. Giữ đúng format của bản gốc:
+* [ ] Format của bản gốc có được giữ nguyên không?
     * Các phần in nghiêng, in đậm
     * Tiêu đề (số lượng dấu `#` đầu dòng)
     * Bảng biểu, chú thích cho bảng (dòng phía trên mỗi bảng bắt đầu bằng dấu `:`)
@@ -27,17 +17,17 @@ Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/bl
     * Giữ các dòng gán nhãn (bắt đầu với `:label:`)
     * Không tự thêm bớt các dòng trắng
      
-3. Xuống dòng sau mỗi câu. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
+* [ ] Trong một đoạn văn, mỗi câu văn đã được viết trong một dòng, giữa các dòng không có dòng trắng. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
 
-4. Điền tên của bạn vào mục "Những người thực hiện" ở cuối file.
+* [ ] Điền tên của bạn và vào mục "Những người thực hiện" ở cuối file.
 
-5. Sau khi được approve, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này.
+* [ ] Pull Request này đã sẵn sàng cho việc Review chưa?
+
+* [ ] **Sau khi được approve**, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này.
 
 ## Với reviewer
 
-1. **Bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:**
+1. Chỉ review nếu Pull Request này đã sẵn sàng cho việc review.
+
+2. **Bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:**
 ![img](https://user-images.githubusercontent.com/19977/58752991-f39d0880-846c-11e9-8c03-c7aded86ee9b.png)
-
-2. Bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) khi review. Nếu bạn cho rằng một từ trong bảng thuật ngữ không hợp lý, vui lòng [tạo một issue](https://github.com/aivivn/d2l-vn/issues/new) và bàn luận riêng trong issue đó.
-
-3. Nếu bạn có những phản hồi hữu ích, tên của bạn sẽ được tác giả chính của Pull Request đó điền vào cuối file mục "Những người thực hiện".
