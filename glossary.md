@@ -192,6 +192,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
+| transcribe               | ghi thoại                                                      |               |
+| transcription            | bản ghi thoại                                                  |               |
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
