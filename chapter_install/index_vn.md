@@ -106,7 +106,7 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-Bây giờ ta sẽ muốn kích hoạt môi trường `d2l` và cài đặt `pip`.
+Bây giờ ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
 Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
 
 ```bash
