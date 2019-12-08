@@ -780,7 +780,7 @@ distorts the entire space in whatever dimension space we are dealing with.
 ## Linear Dependence
 -->
 
-## Độc lập Tuyến tính
+## Phụ thuộc Tuyến tính
 (to glossary)
 <!--
 Consider again the matrix
