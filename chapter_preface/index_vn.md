@@ -669,7 +669,7 @@ bản thảo tiếng Anh và tiếng Trung.
 Mọi người đã giúp cải thiện nội dung và đưa ra những phản hồi rất có giá trị.
 Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này
 đẫ làm cho nó tốt hơn cho tất cả mọi người.
-Tài khoản GitHub hoặc tên các bạn đóng góp  (không theo trình tự):
+Tài khoản GitHub hoặc tên các bạn đóng góp (không theo trình tự):
 alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) và Rachel Hu (Amazon) đồng tác giả chương *Toán học cho Học sâu* trong Phụ lục với chúng tôi và là những người đóng góp chính cho chương đó.
 
@@ -723,7 +723,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 4. Create an account on the forum and introduce yourself.
 -->
 
-1. Đăng ký một tài khoản trên diễn đàn của cuốn sách này [discussion.mxnet.io] (https://discuss.mxnet.io/).
+1. Đăng ký một tài khoản trên diễn đàn của cuốn sách này [discussion.mxnet.io](https://discuss.mxnet.io/).
 2. Cài đặt Python trên máy tính của bạn.
 3. Làm theo các liên kết ở cuối phần dẫn đến diễn đàn, ở đó bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
 4. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
@@ -775,4 +775,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Trần Thị Hồng Hạnh
-* Nguyễn Cảnh Thướng
