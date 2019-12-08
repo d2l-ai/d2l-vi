@@ -779,7 +779,7 @@ we can start to get a feeling for how the matrix multiplication
 distorts the entire space in whatever dimension space we are dealing with.
 -->
 
-Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho mâ trận bậc cao hơn.
+Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho ma trận bậc cao hơn.
 Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem ma trận đó biến đổi các vector này như thế nào, chúng ta có thể có ý niệm về việc phép nhân ma trận đã làm biến dạng toàn bộ không gian như thế nào trong bất kỳ chiều không gian nào chúng ta đang làm việc với.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
