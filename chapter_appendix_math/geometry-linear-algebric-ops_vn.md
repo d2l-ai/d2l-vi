@@ -604,7 +604,7 @@ $[1,0]^\top$ và $[0,1]^\top$.
 Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
 (tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
 (tính toán cho chỉ hai vector).
-Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa là thông qua chúng, ta có thể biểu diễn bất kì vector nào trong không gian dưới dạng tổng có trọng số của những vector này.
+Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa  là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
 
 <!===================== Kết thúc dịch Phần 7 ==================== -->
 
