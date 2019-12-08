@@ -80,13 +80,14 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
-| English        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|----------------|----------------------------------------------------------------|---------------|
-| F1 score       | chỉ số F1                                                      |               |
-| false negative | âm tính giả                                                    |               |
-| false positive | dương tính giả                                                 |               |
-| feature        | đặc trưng                                                      |               |
-| fit            | fit                                                            |               |
+| English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|-----------------|----------------------------------------------------------------|---------------|
+| F1 score        | chỉ số F1                                                      |               |
+| false negative  | âm tính giả                                                    |               |
+| false positive  | dương tính giả                                                 |               |
+| feature         | đặc trưng                                                      |               |
+| fit             | fit                                                            |               |
+| first principle | định đề cơ bản                                                 |               |
 
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
@@ -116,6 +117,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | learning curve      | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
 | learning algorithm  | thuật toán học                                                 |                         |
 | linear algebra      | đại số tuyến tính                                              |                         |
+| linear dependence   | phụ thuộc tuyến tính                                           |                         |
+| linear independence | độc lâp tuyến tính                                             |                         |
 | linear regression   | hồi quy tuyến tính                                             |                         |
 | logistic regression | hồi quy logistic                                               |                         |
 
