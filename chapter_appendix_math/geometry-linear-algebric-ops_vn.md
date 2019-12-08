@@ -654,7 +654,7 @@ np.mean(predictions.astype(y_test.dtype) == y_test, dtype=np.float64)
 ## Geometry of Linear Transformations
 -->
 
-## *dịch tiêu đề phía trên*
+## Ý nghĩa hình học của các Phép biến đổi Tuyến tính
 
 <!--
 Through :numref:`sec_linear-algebra` and the above discussions,
@@ -666,13 +666,19 @@ and is beyond the scope of this appendix.
 However, we can start building up intuition in two dimensions.
 -->
 
-*dịch đoạn phía trên*
+Thông qua :numref:`sec_linear-algebra` và các thảo luận phía trên, ta có một cái
+nhìn trọn vẹn về ý nghĩa hình học của vector, độ dài, và góc. Tuy nhiên, có một
+khái niệm quan trọng chúng ta đã bỏ qua, đó là ý nghĩa hình học của
+các phép biến đổi tuyến tính thể hiện bởi các ma trận. Hiểu một cách đầy đủ cách
+ma trận được dùng để biến đổi dữ liệu giữa hai không gian nhiều chiều khác nhau
+cần một lượng thực hành đáng kể và nằm ngoài phạm vi của phần phụ lục này. Tuy nhiên,
+chúng ta có thể xây dựng ý niệm trong không gian hai chiều.
 
 <!--
 Suppose that we have some matrix:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một ma trận:
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -686,7 +692,8 @@ $\mathbf{v} = [x, y]^\top$,
 we multiply and see that
 -->
 
-*dịch đoạn phía trên*
+Nếu muốn áp dụng ma trận này vào một vector bất kỳ
+$\mathbf{v} = [x, y]^\top$, ta thực hiện phép nhân và thấy rằng
 
 $$
 \begin{aligned}
@@ -713,7 +720,14 @@ where we can write any vector in our space
 as a weighted sum of these *basis vectors*.
 -->
 
-*dịch đoạn phía trên*
+Thoạt nhìn đây là một phép tính khá kì lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
+Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
+thông qua cách nó biến đổi *hai vector cụ thể*:
+$[1,0]^\top$ và $[0,1]^\top$.
+Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
+(tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
+(tính toán cho chỉ hai vector).
+Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa  là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
@@ -1606,7 +1620,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 7 -->
-*
+* Nguyễn Xuân Tú
+* Hoàng Trọng Tuấn
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 8 -->
 *
