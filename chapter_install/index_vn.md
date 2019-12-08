@@ -92,7 +92,7 @@ Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) avai
 
 Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
 Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về mã nguồn và giải nén.
-Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa có, hãy chạy lệnh `sudo apt install unzip`):
+Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
 
 ```bash
 mkdir d2l-en && cd d2l-en
