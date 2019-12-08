@@ -23,7 +23,7 @@ that our program should take in every conceivable circumstance.
 -->
 
 Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày
-đều được tạo ra bởi lập trình viên phần mềm từ những nguyên lý cơ bản nhất.
+đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
 Giả sử chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
 Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ,
 chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
@@ -57,9 +57,9 @@ ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
 liên kết ID của người dùng với ID của món hàng được yêu cầu.
 Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
 (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
-hầu như phần lớn ta có thể lập trình được từ những nguyên tắc cơ bản nhất
+hầu như phần lớn ta có thể lập trình được từ những định đề cơ bản
 và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
-Khả năng phát triển những sản phầm và hệ thống tự động từ những nguyên tắc suy luận cơ bản nhất,
+Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản,
 thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
 Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống,
 *bạn không nên sử dụng học máy*.
@@ -90,7 +90,7 @@ information, satellite images, and a trailing window of past weather.
 
 * Viết một chương trình dự báo thời tiết ngày mai, cho biết trước thông tin địa lý,
 hình ảnh vệ tinh, và một chuỗi dữ liệu thời tiết trong quá khứ.
-* Viết một chương trình lấy đầu vào là một câu hỏi, biểu diễn dưới định dạng chữ tự do,
+* Viết một chương trình lấy đầu vào là một câu hỏi, được diễn đạt không theo khuôn mẫu nào,
 và trả lời nó một cách chính xác.
 * Viết một chương trình hiển thị ra cho người dùng những sản phẩm mà họ có khả năng cao sẽ thích,
 nhưng lại ít có khả năng gặp được khi duyệt qua môt cách tự nhiên.
