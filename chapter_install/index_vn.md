@@ -13,7 +13,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-Để giúp bạn sẵn sàng cho những bài học thực hành, bạn cần phải được chuẩn bị một môi trường để chạy Python, Jupyter notebook, những thư viện liên quan và đoạn code cần thiết cho những bài tập trong cuốn sách này.
+Để giúp bạn sẵn sàng cho những bài học thực hành, bạn cần phải được chuẩn bị một môi trường để chạy Python, Jupyter notebook, những thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
@@ -90,8 +90,8 @@ Next, we need to download the code of this book. You can use the
 Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) available:
 -->
 
-Tiếp theo, ta cần tải về đoạn code của cuốn sách này.
-Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về và giải nén đoạn code.
+Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
+Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về mã nguồn và giải nén.
 Một cách khác, nếu bạn đã có lệnh `unzip` (nếu không có, hãy chạy `sudo apt install unzip`):
 
 ```bash
