@@ -3,7 +3,7 @@
 # Installation
 -->
 
-# *dịch tiêu đề phía trên*
+# Cài đặt
 :label:`chap_installation`
 
 <!--
@@ -13,13 +13,13 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-*dịch đoạn phía trên*
+Để giúp bạn sẵn sàng cho những bài học thực hành, bạn cần phải được chuẩn bị một môi trường để chạy Python, Jupyter notebook, những thư viện liên quan và đoạn code cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
 -->
 
-## *dịch tiêu đề phía trên*
+## Cài đặt Miniconda
 
 <!--
 The simplest way to get going will be to install
@@ -30,7 +30,11 @@ and then execute the installation from the command line
 using `sh <FILENAME> -b`. For macOS users:
 -->
 
-*dịch đoạn phía trên*
+Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
+Phiên bản Python 3.x là phiên bản được khuyến khích.
+Bạn có thể bỏ qua những bước sau đây nếu conda đã được cài đặt.
+Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
+Với người dùng macOS:
 
 ```bash
 # The file name is subject to changes
@@ -42,7 +46,7 @@ sh Miniconda3-latest-MacOSX-x86_64.sh -b
 For Linux users:
 -->
 
-*dịch đoạn phía trên*
+Với người dùng Linux:
 
 ```bash
 # The file name is subject to changes
@@ -54,7 +58,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 Next, initialize the shell so we can run `conda` directly.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, khởi tạo shell để ta có thể chạy trực tiếp lệnh `conda`.
 
 ```bash
 ~/miniconda3/bin/conda init
@@ -66,7 +70,8 @@ Now close and re-open your current shell. You should be able to create a new
 environment as following:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ hãy đóng và mở lại shell hiện tại.
+Bạn đã có thể tạo một môi trường mới bằng lệnh sau:
 
 ```bash
 conda create --name d2l -y
@@ -77,7 +82,7 @@ conda create --name d2l -y
 ## Downloading the D2L Notebooks
 -->
 
-## *dịch tiêu đề phía trên*
+## Tải về notebook của D2L
 
 <!--
 Next, we need to download the code of this book. You can use the
@@ -85,7 +90,9 @@ Next, we need to download the code of this book. You can use the
 Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) available:
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần tải về đoạn code của cuốn sách này.
+Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về và giải nén đoạn code.
+Một cách khác, nếu bạn đã có lệnh `unzip` (nếu không có, hãy chạy `sudo apt install unzip`):
 
 ```bash
 mkdir d2l-en && cd d2l-en
@@ -99,7 +106,8 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta sẽ muốn kích hoạt môi trường `d2l` và cài đặt `pip`.
+Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
 
 ```bash
 conda activate d2l
