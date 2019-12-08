@@ -575,7 +575,7 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 ### Target Audience
 -->
 
-### Đối tượng mục tiêu
+### Đối tượng người đọc
 
 <!--
 This book is for students (undergraduate or graduate),
@@ -600,11 +600,11 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-Cuốn sách này dành cho các bạn sinh viên (đang học đại học hoặc đã ra trường),
+Cuốn sách này dành cho các bạn sinh viên (đang học đại học hoặc sau đại học),
 các kỹ sư, và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
 về những kỹ thuật thực tế của học sâu.
 Bởi vì chúng tôi giải thích mọi khái niệm từ đầu,
-bạn không bắt buộc phải có nền tảng từ trước về học sâu hay học máy.
+bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
 Việc giải thích đầy đủ các phương pháp học sâu
 đòi hỏi một số kiến thức về toán học và lập trình,
 nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản,
@@ -612,14 +612,14 @@ bao gồm (rất cơ bản của) đại số tuyến tính, tính toán, xác s
 và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
 về hầu hết các phần toán được đề cập trong cuốn sách này.
-Hầu hết thời gian, chúng tôi sẽ ưu tiên trực giác và ý tưởng
-hơn là sự chặt chẽ của toán học.
+Hầu hết thời gian, chúng tôi sẽ ưu tiên giải thích trực quan và các ý tưởng
+hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
 Chẳng hạn, Phân tích tuyến tính của Bela Bollobas :cite:`Bollobas.1999`
-bao gồm đại số tuyến tính và phân tích chức năng ở độ sâu lớn.
-Tất cả về số liệu thống kê :cite:`Wasserman.2013` là một hướng dẫn tuyệt vời để học thống kê.
+bao gồm cả đại số tuyến tính và phân tích hàm chức năng ở mức độ rất chi tiết.
+Cuốn "Tất cả về số liệu thống kê" :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
 Và nếu bạn chưa sử dụng Python trước đây,
-bạn có thể muốn xem [hướng dẫn Python](http://learnpython.org/).
+bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
 
 
 <!--
@@ -638,12 +638,12 @@ The authors of this book and broader MXNet developer community
 frequently participate in forum discussions.
 -->
 
-Gắn liền với cuốn sách này, chúng tôi đã tạo ra một diễn đàn thảo luận
+Gắn liền với cuốn sách này, chúng tôi đã tạo ra một diễn đàn trực tuyến
 tại [discuss.mxnet.io](https://discuss.mxnet.io/).
 Khi bạn có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
-ở cuối phần để tham gia vào các cuộc thảo luận của nó.
-Các tác giả của cuốn sách này và rộng hơn, cộng đồng nhà phát triển MXNet
+ở cuối phần để tham gia vào các cuộc thảo luận.
+Các tác giả của cuốn sách này và rộng hơn là cộng đồng nhà phát triển MXNet
 thường xuyên tham gia thảo luận trong diễn đàn.
 
 
@@ -664,12 +664,12 @@ alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) and Rachel Hu (Amazon) co-authored the *Mathematics for Deep Learning* chapter in the Appendix with us and are the major contributors to that chapter.
 -->
 
-Chúng tôi mắc nợ hàng trăm người đóng góp cho cả hai
+Chúng tôi xin gửi lời cảm ơn chân thành tới hàng trăm người đã đóng góp cho cả hai
 bản thảo tiếng Anh và tiếng Trung.
-Họ đã giúp cải thiện nội dung và đưa ra những phản hồi có giá trị.
+Mọi người đã giúp cải thiện nội dung và đưa ra những phản hồi rất có giá trị.
 Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này
-để làm cho nó tốt hơn cho tất cả mọi người.
-GitHub ID hoặc tên của họ là (không theo thứ tự đặc biệt):
+đẫ làm cho nó tốt hơn cho tất cả mọi người.
+Tài khoản GitHub hoặc tên các bạn đóng góp  (không theo trình tự)::
 alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) và Rachel Hu (Amazon) đồng tác giả chương *Toán học cho Học sâu* trong Phụ lục với chúng tôi và là những người đóng góp chính cho chương đó.
 
@@ -679,7 +679,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 -->
 
 Chúng tôi cảm ơn Amazon Web Services, đặc biệt là Swami Sivasubramanian,
-Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này. Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, sẽ không thể có cuốn sách này.
+Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này. Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, cuốn sách này sẽ không thể thành hiện thực.
 
 
 <!--
@@ -700,14 +700,14 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
 -->
 
-* Học sâu đã cách mạng hóa nhận dạng mẫu, giới thiệu công nghệ hiện đang cung cấp cho nhiều công nghệ, bao gồm thị giác máy tính, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
-* Để áp dụng thành công việc học sâu, bạn phải hiểu được cách giải quyết một vấn đề, toán học về mô hình hóa, các thuật toán để những mô hình của bạn phù hợp với dữ liệu, và các kỹ thuật để thực hiện tất cả những điều này.
-* Cuốn sách này đưa ra một nguồn tài nguyên toàn diện, bao gồm văn xuôi, số liệu, toán học, và mã, tất cả ở cùng một nơi.
+* HHọc sâu đã cách mạng hóa nhận dạng mẫu, giới thiệu công nghệ hiện cốt lõi đang dùng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
+* Để áp dụng thành công việc học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán phù hợp với mô hình và dữ liệu của bạn và các kỹ thuật để thực hiện tất cả những điều này.
+* Cuốn sách như là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, số liệu, công thức toán và code, tất cả trong một.
 * Để trả lời các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/.
-* Apache MXNet là một thư viện mạnh mẽ để mã hóa các mô hình học sâu và chạy chúng song song trên các lõi GPU.
+* Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
 * Conda là trình quản lý gói Python đảm bảo rằng tất cả các phụ thuộc phần mềm đều được đáp ứng.
-* Tất cả các sổ ghi chép (notebook) có sẵn để tải xuống trên GitHub và các cấu hình conda cần thiết để chạy mã của cuốn sách này được thể hiện trong tệp `môi trường.yml`.
+* Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này đều được viết trong tệp `môi trường.yml`.
 * Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt trình điều khiển cần thiết và cập nhật cấu hình của bạn.
 
 <!--
@@ -723,9 +723,9 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 4. Create an account on the forum and introduce yourself.
 -->
 
-1. Đăng ký một tài khoản trên diễn đàn thảo luận của cuốn sách này [discussion.mxnet.io] (https://discuss.mxnet.io/).
+1. Đăng ký một tài khoản trên diễn đàn của cuốn sách này [discussion.mxnet.io] (https://discuss.mxnet.io/).
 2. Cài đặt Python trên máy tính của bạn.
-3. Theo các liên kết ở cuối phần dẫn đến diễn đàn, nơi bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
+3. Làm theo các liên kết ở cuối phần dẫn đến diễn đàn, ở đó bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
 4. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
 
 <!--
@@ -775,3 +775,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Trần Thị Hồng Hạnh
+* Nguyễn Cảnh Thướng
