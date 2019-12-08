@@ -601,14 +601,14 @@ you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
 Cuốn sách này dành cho các bạn sinh viên (đang học đại học hoặc sau đại học),
-các kỹ sư, và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
+các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
 về những kỹ thuật thực tế của học sâu.
 Bởi vì chúng tôi giải thích mọi khái niệm từ đầu,
 bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
 Việc giải thích đầy đủ các phương pháp học sâu
 đòi hỏi một số kiến thức về toán học và lập trình,
 nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản,
-bao gồm (rất cơ bản của) đại số tuyến tính, tính toán, xác suất,
+bao gồm (rất cơ bản của) đại số tuyến tính, giải tích, xác suất,
 và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
 về hầu hết các phần toán được đề cập trong cuốn sách này.
@@ -706,7 +706,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * Để trả lời các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/.
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
-* Conda là trình quản lý gói Python đảm bảo rằng tất cả các phụ thuộc phần mềm đều được đáp ứng.
+* Conda là trình quản lý gói mở rộng Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
 * Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này đều được viết trong tệp `môi trường.yml`.
 * Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt trình điều khiển cần thiết và cập nhật cấu hình của bạn.
 
@@ -763,7 +763,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Sẩm Thế Hải
-* Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 
