@@ -606,7 +606,6 @@ Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô
 (tính toán cho chỉ hai vector).
 Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa là thông qua chúng, ta có thể biểu diễn bất kì vector nào trong không gian dưới dạng tổng có trọng số của những vector này.
 
-
 <!===================== Kết thúc dịch Phần 7 ==================== -->
 
 <!===================== Bắt đầu dịch Phần 8 ==================== -->
