@@ -605,7 +605,6 @@ Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô
 (tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
 (tính toán cho chỉ hai vector). Những vector này là ví dụ của *cơ sở*,
 Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa là thông qua chúng, ta có thể biểu diễn bất kì vector nào trong không gian dưới dạng tổng có trọng số của những vector này.
-tổng có trọng số của nhưng *vector cơ sở* này.
 
 
 <!===================== Kết thúc dịch Phần 7 ==================== -->
