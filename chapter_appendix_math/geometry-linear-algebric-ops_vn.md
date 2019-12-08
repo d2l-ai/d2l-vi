@@ -543,7 +543,7 @@ mặt phẳng vuông góc với vector $\mathbf{w}$. Hai bất phương trình m
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![Siêu phẳng trong bất khì không gian nào chia không gian đó ra hai nửa](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất kì không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
