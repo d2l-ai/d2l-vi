@@ -846,7 +846,7 @@ $\mathbf{v}_1, \ldots \mathbf{v}_k$ are *linearly dependent*
 if there exist coefficients $a_1, \ldots, a_k$ *not all equal to zero* so that
 -->
 
-Tổng quát, ta sẽ nói rằng một tập hợp các vector $\mathbf{v}_1, \ldots \mathbf{v}_k$ là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k *không đồng thời bằng không* sao cho
+Tổng quát, ta sẽ nói rằng: Một tập hợp các vector $\mathbf{v}_1, \ldots \mathbf{v}_k$ là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k *không đồng thời bằng không* sao cho
 
 $$
 \sum_{i=1}^k a_i\mathbf{v_i} = 0.
