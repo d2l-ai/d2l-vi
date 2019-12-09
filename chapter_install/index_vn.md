@@ -32,7 +32,7 @@ using `sh <FILENAME> -b`. For macOS users:
 
 Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
 Phiên bản Python 3.x được khuyên dùng.
-Bạn có thể bỏ qua những bước sau đây nếu conda đã được cài đặt.
+Bạn có thể bỏ qua những bước sau đây nếu đã cài đặt conda.
 Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
 Với người dùng macOS:
 
@@ -58,7 +58,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 Next, initialize the shell so we can run `conda` directly.
 -->
 
-Tiếp theo, khởi tạo shell để ta có thể chạy trực tiếp lệnh `conda`.
+Tiếp theo, khởi tạo shell để chạy trực tiếp lệnh `conda`.
 
 ```bash
 ~/miniconda3/bin/conda init
@@ -70,7 +70,7 @@ Now close and re-open your current shell. You should be able to create a new
 environment as following:
 -->
 
-Bây giờ hãy đóng và mở lại shell hiện tại.
+Bây giờ, hãy đóng và mở lại shell hiện tại.
 Bạn đã có thể tạo một môi trường mới bằng lệnh sau:
 
 ```bash
@@ -91,7 +91,7 @@ Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) avai
 -->
 
 Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
-Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về mã nguồn và giải nén.
+Bạn có thể tải mã nguồn từ [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) và giải nén.
 Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
 
 ```bash
@@ -106,7 +106,7 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-Bây giờ ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
+Bây giờ, ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
 Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
 
 ```bash
