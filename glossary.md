@@ -23,6 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
+| attention mechanisms | attention mechanisms                                      |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -46,6 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
+| convolution neural networks | mạng neuron chập                                       |               |
 | cross validation    | kiểm định chéo                                                 |               |
 
 ## D
@@ -150,6 +152,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
+| multilayer perceptrons             | perceptron đa lớp                                   | |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
 | plateau (động từ)       | nằm ngang                                                      |                       |
 | pipeline                | pipeline                                                       | http://bit.ly/2OyYuEf |
@@ -162,6 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------------|----------------------------------------------------------------|---------------|
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
+| recurrent neural network|   recurrent neural network/ mạng neuron hồi quy               |               |
 | recognition            | nhận dạng                                                      |               |
 | regularization         | regularization                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
