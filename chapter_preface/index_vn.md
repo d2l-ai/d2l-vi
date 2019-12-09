@@ -612,10 +612,10 @@ về đại số tuyến tính, giải tích, xác suất,
 và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
 về hầu hết các phần toán được đề cập trong cuốn sách này.
-Hầu hết thời gian, chúng tôi sẽ ưu tiên giải thích trực quan và các ý tưởng
+Phần lớn thời gian, chúng tôi sẽ ưu tiên giải thích trực quan và các ý tưởng
 hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
-Chẳng hạn, Phân tích tuyến tính của Bela Bollobas :cite:`Bollobas.1999`
+Chẳng hạn, cuốn "Phân tích tuyến tính" của Bela Bollobas :cite:`Bollobas.1999`
 bao gồm cả đại số tuyến tính và phân tích hàm chức năng ở mức độ rất chi tiết.
 Cuốn "Tất cả về số liệu thống kê" :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
 Và nếu bạn chưa sử dụng Python trước đây,
@@ -642,9 +642,9 @@ Gắn liền với cuốn sách này, chúng tôi đã tạo ra một diễn đ�
 tại [discuss.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: Diễn đàn tiếng Việt Machine Learning cơ bản [https://machinelearningcoban.com](https://machinelearningcoban.com/).
 Khi bạn có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
-ở cuối phần để tham gia vào các cuộc thảo luận.
+ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
 Các tác giả của cuốn sách này và rộng hơn là cộng đồng nhà phát triển MXNet
-thường xuyên tham gia thảo luận trong diễn đàn.
+cũng thường xuyên tham gia thảo luận trong diễn đàn.
 
 
 <!--
@@ -703,11 +703,11 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * Học sâu đã cách mạng hóa nhận dạng khuôn mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
 * Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán để fit mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
 * Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, số liệu, công thức toán và code, tất cả trong một.
-* Để trả lời các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Nhóm dịch: https://machinelearningcoban.com).
+* Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Nhóm dịch: https://machinelearningcoban.com).
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
 * Conda là trình quản lý gói mở rộng Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
-* Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này đều được viết trong tệp `môi trường.yml`.
+* Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này, tất cả đều được viết trong tệp `môi trường.yml`.
 * Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt trình điều khiển cần thiết và cập nhật cấu hình của bạn.
 
 <!--
@@ -725,7 +725,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 
 1. Đăng ký tài khoản diễn đàn của cuốn sách này [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
 1. Cài đặt Python trên máy tính.
-1. Làm theo các liên kết ở cuối phần dẫn đến diễn đàn, ở đó bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
+1. Làm theo hướng dẫn ở các liên kết đến diễn đàn ở cuối phần này, ở các liên kết diễn đàn đó bạn sẽ có thể nhận được giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
 1. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
 
 <!--
