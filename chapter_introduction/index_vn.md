@@ -377,7 +377,7 @@ offering a unified set of tools for tackling diverse problems.
 ## The Key Components: Data, Models, and Algorithms
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thành phần chính: Dữ liệu, Mô hình và Thuật toán
 
 <!--
 In our *wake-word* example, we described a dataset
@@ -393,23 +393,35 @@ First, we'd like to shed more light on some core components
 that will follow us around, no matter what kind of ML problem we take on:
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ *wake-word*, chúng tôi đã mô tả một bộ dữ liệu
+bao gồm các đoạn âm thanh và các nhãn nhị phân
+giúp các bạn hiểu hơn về cách chúng ta có thể *huấn luyện*
+một mô hình để xấp xỉ ánh xạ từ các đoạn âm thanh đến phân loại.
+Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết
+với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các ví dụ 
+đã được gán nhãn, loại bài toán này được gọi là *học có giám sát*,
+và đây chỉ là một trong số rất nhiều *loại* học máy.
+Trong phần tiếp theo, chúng tôi sẽ đi sâu vào các vấn đề ML khác nhau.
+Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi 
+sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề ML nào:
 
 <!--
-1. The *data* that we can learn from.
-2. A *model* of how to transform the data.
-3. A *loss* function that quantifies the *badness* of our model.
-4. An *algorithm* to adjust the model's parameters to minimize the loss.
+ 1. The *data* that we can learn from.
+ 2. A *model* of how to transform the data.
+ 3. A *loss* function that quantifies the *badness* of our model.
+ 4. An *algorithm* to adjust the model's parameters to minimize the loss.
 -->
 
-*dịch đoạn phía trên*
-
+1. *Dữ liệu* mà chúng ta có thể học.
+2. Một *mô hình* về cách chuyển đổi dữ liệu.
+3. Một *hàm mất mát* định lượng *độ tệ* mô hình của chúng ta.
+4. Một *thuật toán* điều chỉnh các tham số của mô hình để giảm thiểu mất mát.
 
 <!--
 ### Data
 -->
 
-### *dịch tiêu đề phía trên*
+### Dữ liệu
 
 <!--
 It might go without saying that you cannot do data science without data.
@@ -430,7 +442,22 @@ can then simply be called the *features*,
 (or often, the *inputs*, *covariates*, or *independent variables*).
 -->
 
-*dịch đoạn phía trên*
+Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
+Chúng ta có thể mất hàng trăm trang cân nhắc chính xác những gì cấu thành dữ liệu,
+nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế
+và tập trung vào các thuộc tính quan trọng cần quan tâm.
+Thông thường, chúng ta quan tâm đến một bộ *ví dụ*
+(còn được gọi là *điểm dữ liệu*, *mẫu* hoặc *trường hợp*).
+Để làm việc với dữ liệu một cách hữu ích, chúng ta thường
+cần phải đưa ra một đại diện số thích hợp.
+Mỗi *ví dụ* thường bao gồm một bộ
+thuộc tính số gọi là *đặc trưng*.
+Trong các bài toán học tập có giám sát ở trên,
+một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán,
+(đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
+Các đặc trưng nhất định mô hình dựa vào để đưa ra dự đoán
+có thể được gọi đơn giản là các *đặc trưng*,
+(hoặc thường là *đầu vào*, *đồng biến* hoặc *biến độc lập*).
 
 <!--
 If we were working with image data,
@@ -445,7 +472,16 @@ whether or not a patient will survive,
 given a standard set of features such as age, vital signs, diagnoses, etc.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta đang làm việc với dữ liệu hình ảnh,
+mỗi bức ảnh riêng lẻ có thể tạo thành một *ví dụ*
+được biểu diễn bởi một danh sách các giá trị số theo thứ tự
+tương ứng với độ sáng của từng pixel.
+Một bức ảnh màu $200\times 200$ sẽ bao gồm $200\times200\times3=120000$
+giá trị số, tương ứng với độ sáng
+của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí không gian.
+Trong một nhiệm vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
+xem một bệnh nhân liệu có sống sót hay không,
+dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các dấu hiệu quan trọng, chẩn đoán, v.v.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
@@ -2438,7 +2474,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 6 -->
 *
