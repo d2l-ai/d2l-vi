@@ -13,7 +13,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-Để giúp bạn sẵn sàng cho những bài học thực hành, bạn cần phải được chuẩn bị một môi trường để chạy Python, Jupyter notebook, những thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
+Để sẵn sàng cho những bài học thực hành, bạn cần bị một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
