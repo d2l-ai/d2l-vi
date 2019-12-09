@@ -152,7 +152,7 @@ That is why we use ML.
 
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
 Hãy thử viết nó chỉ một mình bạn không có gì ngoài một chiếc máy tính và ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
-Bạn sẽ viết một chương trình như vậy bằng cách nào theo những nguyên tắc tiền đề truyền thống?
+Bạn sẽ viết một chương trình như vậy từ những định đề cơ bản như thế nào?
 Thử nghĩ về nó... vấn đề này khó quá.
 Mỗi giây, chiếc micro sẽ thu thập cỡ tầm 44,000 mẫu.
 Mỗi mẫu là một phép đo biên độ của sóng âm.
