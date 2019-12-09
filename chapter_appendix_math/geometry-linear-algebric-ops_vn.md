@@ -865,7 +865,7 @@ no compression occurs and the operation can be undone.
 -->
 
 Trong trường hợp này, ta có thể biểu diễn một vector dưới dạng một tổ hợp nào đó của các vector khác, điều này khiến cho sự tồn tại của nó trở nên dư thừa.
-Bởi vậy, một tổ hợp tuyến tính của các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang nén không gian xuống một không gian ít chiều hơn.
+Bởi vậy, một phụ thuộc tuyến tính của các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang làm giảm số chiều không gian.
 Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
 Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể nghịch đảo được.
 
