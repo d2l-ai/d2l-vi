@@ -816,7 +816,7 @@ Câu trả lời là có thể.
 là hai cột của $\mathbf{B}$.
 Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi bằng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$.
 Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
-Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này hoàn toàn chỉ dùng $\mathbf{b}_2$:
+Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này mà chỉ dùng $\mathbf{b}_2$:
 
 $$
 a_1\mathbf{b}_1 + a_2\mathbf{b}_2 = -2a_1\mathbf{b}_2 + a_2\mathbf{b}_2 = (a_2-2a_1)\mathbf{b}_2.
