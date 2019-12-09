@@ -2,7 +2,7 @@
 
 **Đánh dấu tick (x, không có dấu cách xung quanh) vào các mục dưới đây**
 
-* [ ] Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): close #
+* [ ] Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): Close #
 
 * [ ] Bản dịch này có bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
 
@@ -19,7 +19,7 @@
      
 * [ ] Trong một đoạn văn, mỗi câu văn đã được viết trong một dòng, giữa các dòng không có dòng trắng. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
 
-* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm [hướng dẫn hoăc yêu cầu dịch hình](img/README.md).
+* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm [hướng dẫn hoặc yêu cầu dịch hình](img/README.md).
 
 * [ ] Điền tên của bạn và vào mục "Những người thực hiện" ở cuối file.
 
