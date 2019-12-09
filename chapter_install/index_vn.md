@@ -31,7 +31,7 @@ using `sh <FILENAME> -b`. For macOS users:
 -->
 
 Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
-Phiên bản Python 3.x là phiên bản được khuyến khích.
+Phiên bản Python 3.x được khuyên dùng.
 Bạn có thể bỏ qua những bước sau đây nếu conda đã được cài đặt.
 Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
 Với người dùng macOS:
