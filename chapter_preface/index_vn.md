@@ -600,15 +600,15 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-Cuốn sách này dành cho các bạn sinh viên (đang học đại học hoặc sau đại học),
+Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học),
 các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
 về những kỹ thuật thực tế của học sâu.
 Bởi vì chúng tôi giải thích mọi khái niệm từ đầu,
 bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
 Việc giải thích đầy đủ các phương pháp học sâu
 đòi hỏi một số kiến thức về toán học và lập trình,
-nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản,
-bao gồm (rất cơ bản của) đại số tuyến tính, giải tích, xác suất,
+nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản
+về đại số tuyến tính, giải tích, xác suất,
 và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
 về hầu hết các phần toán được đề cập trong cuốn sách này.
@@ -639,7 +639,7 @@ frequently participate in forum discussions.
 -->
 
 Gắn liền với cuốn sách này, chúng tôi đã tạo ra một diễn đàn trực tuyến
-tại [discuss.mxnet.io](https://discuss.mxnet.io/).
+tại [discuss.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: Diễn đàn tiếng Việt Machine Learning cơ bản [https://machinelearningcoban.com](https://machinelearningcoban.com/).
 Khi bạn có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
 ở cuối phần để tham gia vào các cuộc thảo luận.
@@ -700,10 +700,10 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
 -->
 
-* Học sâu đã cách mạng hóa nhận dạng mẫu, giới thiệu công nghệ hiện cốt lõi đang dùng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
-* Để áp dụng thành công việc học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán phù hợp với mô hình và dữ liệu của bạn và các kỹ thuật để thực hiện tất cả những điều này.
-* Cuốn sách như là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, số liệu, công thức toán và code, tất cả trong một.
-* Để trả lời các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/.
+* Học sâu đã cách mạng hóa nhận dạng khuôn mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
+* Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán để fit mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
+* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, số liệu, công thức toán và code, tất cả trong một.
+* Để trả lời các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Nhóm dịch: https://machinelearningcoban.com).
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
 * Conda là trình quản lý gói mở rộng Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
@@ -723,10 +723,10 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 4. Create an account on the forum and introduce yourself.
 -->
 
-1. Đăng ký một tài khoản trên diễn đàn của cuốn sách này [discussion.mxnet.io](https://discuss.mxnet.io/).
-2. Cài đặt Python trên máy tính của bạn.
-3. Làm theo các liên kết ở cuối phần dẫn đến diễn đàn, ở đó bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
-4. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
+1. Đăng ký một tài khoản trên diễn đàn của cuốn sách này [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
+1. Cài đặt Python trên máy tính của bạn.
+1. Làm theo các liên kết ở cuối phần dẫn đến diễn đàn, ở đó bạn sẽ có thể tìm kiếm sự giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
+1. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2311)
