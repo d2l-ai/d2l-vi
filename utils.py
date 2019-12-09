@@ -5,9 +5,6 @@ import re
 import sys
 import argparse
 
-# reload(sys)
-# sys.setdefaultencoding('utf8')
-
 BEGIN_BLOCK_COMMENT = '<!--\n'
 END_BLOCK_COMMENT = '-->\n\n'
 TRANSLATE_INDICATOR = '*dịch đoạn phía trên*'
