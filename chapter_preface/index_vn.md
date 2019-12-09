@@ -274,7 +274,7 @@ we can just use the Gluon version in subsequent tutorials.
 ### Content and Structure
 -->
 
-### *Nội dung và kết cấu sách*
+### Nội dung và kết cấu sách
 
 <!--
 The book can be roughly divided into three parts,
@@ -304,13 +304,13 @@ cover the most basic concepts and techniques of deep learning,
 such as linear regression, multilayer perceptrons and regularization.
 -->
 
-* Phần đầu đi qua các kiến thức cơ bản và điều kiện sơ bộ. 
+* Phần đầu cuốn sách đi qua các kiến thức cơ bản và điều kiện sơ bộ. 
 :numref:`chap_introduction` giới thiệu về học sâu.
 Sau đó, qua :numref:`chap_preliminaries`, chúng tôi đẩy nhanh tốc độ tới những
-kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ và thao tác (thao túng) dữ liệu, và cách
-áp dụng những phép tính dựa trên những khái niệm cơ bản từ đại số tuyến tính, giải tích, và thống kê.
-:numref:`chap_linear` and :numref:`chap_perceptrons`
-đi qua những khái niệm và kỹ thuật cơ bản của học sâu, ví dụ như hồi quy tuyến tính, mạng perceptrons nhiều lớp và regularization.
+kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu, và cách
+áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích, và thống kê.
+:numref:`chap_linear` and :numref:`chap_perceptrons` đi qua những khái niệm và kỹ thuật cơ bản của học sâu,
+ví dụ như hồi quy tuyến tính, mạng perceptrons nhiều lớp và regularization.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -332,12 +332,11 @@ behind most modern applications of deep learning.
 -->
 
 * Năm chương tiếp theo tập trung vào những kỹ thuật học sâu hiện đại.
-:numref:`chap_computation` miêu tả những thành phần thiết yếu của những phép tính trong học sâu
-và tạo nền tảng cho chúng ta triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
-nơ-ron chập, một công cụ mạnh mẽ đang là xương sống của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp theo, 
-trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu recurrent neural networks (RNNs), những mô hình khai thác
-cấu trúc tạm thời hoặc tuần tự trong dữ liệu, và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
-Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật attention mechanisms và chúng
+:numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu
+và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
+nơ-ron chập, một công cụ mạnh mẽ đang là xương sống của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp đến, 
+trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng neuron phản hồi (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu, và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
+ Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật attention mechanisms, một kỹ thuật
 gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên. Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản 
 đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
 
@@ -600,7 +599,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Ngô Thế Anh Khoa
 
 <!-- Phần 5 -->
 *
