@@ -811,7 +811,7 @@ entirely in terms of say $\mathbf{b}_2$ since
 
 Ma trận này nén toàn bộ mặt phẳng xuống thành một đường thằng $y = 2x$.
 Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu chỉ nhìn vào ma trận?
-Câu trả lời đúng thật là có thể.
+Câu trả lời là có thể.
 Đặt $\mathbf{b}_1 = [2,4]^\top$ và $\mathbf{b}_2 = [-1, -2]^\top$
 là hai cột của $\mathbf{B}$.
 Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi sử dụng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số của các cột của ma trận này, chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$. Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
