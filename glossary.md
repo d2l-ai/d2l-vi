@@ -23,6 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
+| attention mechanisms | attention mechanisms                                                |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -46,6 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
+| convolution neural networks | mạng neuron chập                                       |               |
 | cross validation    | kiểm định chéo                                                 |               |
 
 ## D
@@ -132,6 +134,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
+| multilayer perceptrons             | perceptron đa lớp                              |               |
 | multitask learning | học đa nhiệm                                                   |               |
 
 ## N
@@ -167,6 +170,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
+| recurrent neural network|   recurrent neural network/ mạng neuron hồi quy               |               |
 | regularization         | regularization                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
