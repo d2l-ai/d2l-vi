@@ -567,7 +567,7 @@ những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo
 trong cuốn sách này trong gói thư viện `d2l`.
 Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện
 cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
-`# Lưu lại trong gói thư viện d2l để sử dụng sau`.
+`# Saved in the d2l package for later use (Lưu lại trong gói thư viện d2l để sử dụng sau)`.
 Thư viện `d2l` khá nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
 ```{.python .input  n=1}
