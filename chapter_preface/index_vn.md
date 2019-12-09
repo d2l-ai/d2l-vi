@@ -514,13 +514,13 @@ in places the present edition cannot.
 Hầu hết các phần của cuốn sách này đều bao gồm mã nguồn hoạt động được, bởi vì
 chúng tôi tin rằng kinh nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
 Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc thử và lỗi,
-tinh chỉnh mã nguồn từ từ và quan sát kết quả.
+thay đổi mã nguồn từ từ và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
-chính xác làm cách nào để tinh chỉnh mã nguồn để đạt được kết quả mong muốn.
+chính xác cách thay đổi mã nguồn như thế nào để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết đẹp đẽ đó vẫn chưa được khám phá.
 Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật,
-bởi vì phần toán học để xác định những mô hình có thể quá khó và hơn nữa bởi vì nhu cầu
-tìm hiểu về những chủ đề này mới chỉ được tăng cao gần đây.
+bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc
+tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
 Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển,
 những phiên bản tiếp theo của quyển sách này sẽ có thể cung cấp những cái nhìn sâu sắc hơn
 mà phiên bản hiện tại không thể làm được.
@@ -544,7 +544,7 @@ MXNet là một framework mã nguồn mở dành cho học sâu
 và là lựa chọn yêu thích của AWS (Amazon Web Services),
 và cả ở nhiều trường đại học và công ty.
 Tất cả mã nguồn trong cuốn sách này đã được kiểm thử trên phiên bản mới nhất của MXNet.
-Tuy nhiên, bởi vì học sâu phát triển thường xuyên, một vài mã nguồn
+Tuy nhiên, bởi vì học sâu phát triển rất nhanh, một vài đoạn mã 
 *trong phiên bản sách in* có thể không hoạt động đúng trên những phiên bản MXNet sau này.
 Dù vậy, chúng tôi dự định sẽ giữ phiên bản online được cập nhật.
 Trong trường hợp bạn gặp phải bất cứ vấn đề nào,
@@ -568,7 +568,7 @@ trong cuốn sách này trong gói thư viện `d2l`.
 Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện
 cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
 `# Lưu lại trong gói thư viện d2l để sử dụng sau`.
-Gói thư viện `d2l` thì nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
+Thư viện `d2l` khá nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -593,7 +593,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-Chúng tôi sẽ mô tả một phần tổng quát chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
+Chúng tôi sẽ mô tả bao quát chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
