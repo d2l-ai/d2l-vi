@@ -127,8 +127,8 @@ proceed to :ref:`sec_gpu` for instructions
 to install a GPU-supported MXNet.
 -->
 
-Trước khi cài đặt MXNet, hãy kiểm máy của bạn đã có card màn hình đúng chuẩn hay chưa (không phải những card màn hình hỗ trợ hiển thị trên các máy tính xách tay thông thường).
-Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt một framework MXNet có chức năng hỗ trợ card màn hình.
+Trước khi cài đặt MXNet, kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
+Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt một phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
@@ -138,7 +138,7 @@ to access GPUs before running larger models.
 -->
 
 Ngược lại, bạn có thể cài đặt phiên bản sử dụng chỉ CPU.
-Phiên bản này cũng thừa đủ để bạn có thể tiến hành các chương đầu tiên nhưng bạn sẽ phải sử dụng phiên bản hỗ trợ card màn hình khi chạy trên những mô hình lớn hơn.
+Phiên bản này cũng thừa đủ để bạn có thể tiến hành các chương đầu tiên nhưng bạn sẽ phải sử dụng GPU để có thể chạy những mô hình lớn hơn.
 
 ```bash
 # For Windows users
@@ -154,7 +154,7 @@ We also install the `d2l` package that encapsulates frequently used
 functions and classes in this book.
 -->
 
-Chúng ta cũng sẽ cài đặt gói thư viện `d2l` mà bao gồm các hàm và lớp thường xuyên được sử dụng trong cuốn sách này.
+Ta cũng sẽ cài đặt gói thư viện `d2l` mà bao gồm các hàm và lớp thường xuyên được sử dụng trong cuốn sách này.
 
 ```bash
 pip install d2l==0.11.0
@@ -165,7 +165,7 @@ pip install d2l==0.11.0
 Once they are installed, we now open the Jupyter notebook by running:
 -->
 
-Một khi đã cài đặt xong, chúng ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
+Một khi đã cài đặt xong, ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
 
 ```bash
 jupyter notebook
@@ -180,9 +180,9 @@ To exit the environment, run `conda deactivate`.
 -->
 
 Vào thời điểm này, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thông thường sẽ được tự động mở) trên trình duyệt Web của bạn.
-Sau đó chúng ta đã có thể thực thi các mã nguồn trong từng phần của cuốn sách này.
+Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
 Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi thực thi mã nguồn trong sách, cập nhật MXNet hoặc là gói thư viện `d2l`.
-Thực thi lệnh `conda deactivate` để ngừng kích hoạt môi trường.
+Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
 
 <!--
@@ -196,7 +196,7 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 -->
 
 Cả cuốn sách này và MXNet đều đang tiếp tục được cải thiện.
-Hãy luôn cập nhật phiên bản mới mọi lúc.
+Thỉnh thoảng, hãy kiểm tra liệu chúng đã có phiên bản mới.
 
 <!--
 1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
