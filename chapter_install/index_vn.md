@@ -13,7 +13,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-Để giúp bạn sẵn sàng cho những bài học thực hành, bạn cần phải được chuẩn bị một môi trường để chạy Python, Jupyter notebook, những thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
+Để sẵn sàng cho những bài học thực hành, bạn cần một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
@@ -31,7 +31,7 @@ using `sh <FILENAME> -b`. For macOS users:
 -->
 
 Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
-Phiên bản Python 3.x là phiên bản được khuyến khích.
+Phiên bản Python 3.x được khuyên dùng.
 Bạn có thể bỏ qua những bước sau đây nếu conda đã được cài đặt.
 Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
 Với người dùng macOS:
@@ -92,7 +92,7 @@ Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) avai
 
 Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
 Bạn có thể dùng [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) để tải về mã nguồn và giải nén.
-Một cách khác, nếu bạn đã có lệnh `unzip` (nếu không có, hãy chạy `sudo apt install unzip`):
+Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
 
 ```bash
 mkdir d2l-en && cd d2l-en
@@ -106,7 +106,7 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-Bây giờ ta sẽ muốn kích hoạt môi trường `d2l` và cài đặt `pip`.
+Bây giờ ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
 Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
 
 ```bash
