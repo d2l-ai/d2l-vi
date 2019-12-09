@@ -834,7 +834,7 @@ To make this more symmetrical between the two vectors, we will write this as
 
 Điều này chỉ ra rằng một trong hai cột là dư thừa vì nó không định nghĩa một hướng độc nhất trong không gian.
 Việc này cũng không quá bất ngờ bởi vì ma trận này đã biến toàn bộ mặt phẳng xuống thành một đường thẳng.
-Hơn nữa, điều này cũng có thể nhận thấy do hai cột trên phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng
+Hơn nữa, điều này có thể được nhận thấy do hai cột trên phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng
 
 $$
 \mathbf{b}_1  + 2\cdot\mathbf{b}_2 = 0.
