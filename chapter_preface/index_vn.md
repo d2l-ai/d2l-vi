@@ -575,7 +575,7 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 ### Target Audience
 -->
 
-### Đối tượng người đọc
+### Đối tượng độc giả
 
 <!--
 This book is for students (undergraduate or graduate),
