@@ -362,7 +362,7 @@ behind most modern applications of deep learning.
 :numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu
 và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
 nơ-ron chập, một công cụ mạnh mẽ đang là xương sống của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp đến, 
-trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng neuron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu, và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
+trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng nơ-ron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
  Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật attention mechanisms, một kỹ thuật
 gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên. Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản 
 đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
