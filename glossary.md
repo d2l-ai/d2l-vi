@@ -170,7 +170,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
-| recurrent neural network|   recurrent neural network/ mạng neuron hồi quy               |               |
+| recurrent neural network|   mạng nơ-ron hồi quy               |               |
 | regularization         | regularization                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
