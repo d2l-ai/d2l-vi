@@ -86,7 +86,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false negative      | âm tính giả                                                    |               |
 | false positive      | dương tính giả                                                 |               |
 | feature             | đặc trưng                                                      |               |
-| fit                 | fit                                                            |               |
+| fit                 | khớp                                                           | #96           |
 | first principle     | định đề cơ bản                                                 |               |
 | functional anaylsis | giải tích hàm                                                  |               |
 
@@ -143,12 +143,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | norm                              | chuẩn                                                          |                                             |
 
 ## O
-| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
-|-------------------|----------------------------------------------------------------|-----------------------|
-| optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
-| orthogonal        | trực giao                                                      |                       |
-| orthonormal       | trực chuẩn                                                     |                       |
-| overfit           | overfit                                                        | http://bit.ly/2BvfPYA |
+| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại             |
+|-------------------|----------------------------------------------------------------|---------------------------|
+| optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA     |
+| orthogonal        | trực giao                                                      |                           |
+| orthonormal       | trực chuẩn                                                     |                           |
+| overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA #96 |
 
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -200,10 +200,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | tune parameters          | điều chỉnh tham số                                             |               |
 
 ## U
-| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|------------------|----------------------------------------------------------------|-------------------------|
-| unavoidable bias | độ chệch không tránh được                                      |                         |
-| underfit         | underfit                                                       | http://bit.ly/2BvfPYA |
+| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại             |
+|------------------|----------------------------------------------------------------|---------------------------|
+| unavoidable bias | độ chệch không tránh được                                      |                           |
+| underfit         | chưa khớp                                                      | http://bit.ly/2BvfPYA #96 |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
