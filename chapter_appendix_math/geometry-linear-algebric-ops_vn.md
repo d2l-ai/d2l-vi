@@ -995,7 +995,7 @@ is well defined and understand the meaning.
 ## Invertibility
 -->
 
-## *dịch tiêu đề phía trên*
+## Tính nghịch đảo (khả nghịch)
 
 <!--
 We have seen above that multiplication by a matrix with linearly dependent columns
@@ -1004,7 +1004,10 @@ cannot be undone, i.e., there is no inverse operation that can always recover th
 we should always be able to undo it.  Consider the matrix
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã thấy ở trên phép nhân một ma trận với các cột phụ thuộc tuyến tính
+không thể hoàn tác, tức là không có thao tác nghịch đảo nào có thể khôi phục đầu vào. Tuy nhiên, nhân một ma trận hạng đầy đủ
+(ví dụ, một số $\mathbf{A}$ là ma trận $n \times n$ với thứ hạng $n$),
+chúng ta luôn có thể hoàn tác nó. Xét ma trận
 
 $$
 \mathbf{I} = \begin{bmatrix}
@@ -1023,7 +1026,11 @@ To find a matrix which undoes what our matrix $\mathbf{A}$ has done,
 we want to find a matrix $\mathbf{A}^{-1}$ such that
 -->
 
-*dịch đoạn phía trên*
+đây là ma trận với các số 1 dọc theo đường chéo và các số 0 ở những vị trí còn lại.
+Chúng tôi gọi đó là ma trận *đơn vị*.
+Đây là ma trận giúp dữ liệu của chúng ta không thay đổi khi áp dụng.
+Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ của chúng tôi đã làm,
+chúng tôi muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
 $$
 \mathbf{A}^{-1}\mathbf{A} = \mathbf{A}\mathbf{A}^{-1} =  \mathbf{I}.
@@ -1039,7 +1046,13 @@ which has the property that as long as the determinant is not zero, we can find 
 As an example, if $\mathbf{A}$ is the general $2 \times 2$ matrix
 -->
 
-*dịch đoạn phía trên*
+Nếu ta coi đây là một hệ thống, ta có $n \times n$ chưa biết
+(các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ phương trình
+(đẳng thức cần giữ giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và mỗi giá trị của $\mathbf{I}$)
+vì vậy chúng ta nên mong đợi có giải pháp tồn tại.
+Thật vậy, trong phần tiếp theo chúng ta sẽ thấy một đại lượng được gọi là *định thức*,
+có thuộc tính miễn là định thức không bằng 0, chúng ta có thể tìm ra giải pháp. Chúng tôi gọi một ma trận $\mathbf{A}^{-1}$ như vậy là ma trận *nghịch đảo*.
+Ví dụ: nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1052,7 +1065,7 @@ $$
 then we can see that the inverse is
 -->
 
-*dịch đoạn phía trên*
+thì nghịch đảo của ma trận này là
 
 $$
  \frac{1}{ad-bc}  \begin{bmatrix}
@@ -1066,7 +1079,8 @@ We can test to see this by seeing that multiplying
 by the inverse given by the formula above works in practice.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể kiểm chứng điều này khi nhận thấy rằng nhân
+nghịch đảo dựa theo công thức trên hoạt động trong thực tế.
 
 ```{.python .input}
 M = np.array([[1, 2], [1, 4]])
