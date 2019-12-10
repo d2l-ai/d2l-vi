@@ -452,7 +452,7 @@ Thông thường, chúng ta quan tâm đến một bộ *ví dụ*
 cần phải đưa ra một đại diện số thích hợp.
 Mỗi *ví dụ* thường bao gồm một bộ
 thuộc tính số gọi là *đặc trưng*.
-Trong các bài toán học tập có giám sát ở trên,
+Trong các bài toán học có giám sát ở trên,
 một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán,
 (đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
 Các đặc trưng nhất định mô hình dựa vào để đưa ra dự đoán
