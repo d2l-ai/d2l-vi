@@ -134,7 +134,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
-| multilayer perceptrons             | perceptron đa lớp                              |               |
 | multitask learning | học đa nhiệm                                                   |               |
 
 ## N
