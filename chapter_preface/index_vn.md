@@ -290,34 +290,6 @@ Cuốn sách này có thể được chia thành ba phần, với các phần đ
 ![Bố cục cuốn sách](../img/book-org.svg)
 :label:`fig_book_org`
 
-1.Giới thiệu
-
-2.Sơ bộ
-
-3.Mạng Neuron tuyến tính
-
-4.Perceptron nhiều lớp
-
-5.Phép tính trong học sâu
-
-6.Mạng neuron chập
-
-7.Mạng neuron chập hiện đại
-
-8.Mạng neuron hồi quy
-
-9.Mạng neuron hồi quy hiện đại
-
-10.Attention Mechanisms
-
-11.Thuật toán tối ưu
-
-12.Hiệu suất tính toán
-
-13.Thị giác máy tính
-
-14.Xử lý ngôn ngữ tự nhiên
-
 <!--
 * The first part covers basics and preliminaries.
 :numref:`chap_introduction` offers an introduction to deep learning.
@@ -336,8 +308,8 @@ such as linear regression, multilayer perceptrons and regularization.
 Sau đó, qua :numref:`chap_preliminaries`, chúng tôi đẩy nhanh tốc độ về những
 kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
 áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và thống kê.
-:numref:`chap_linear` and :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
-ví dụ như hồi quy tuyến tính, mạng perceptrons nhiều lớp và regularization.
+:numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
+ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và regularization.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -385,7 +357,7 @@ chúng tôi bàn luận một số thuật toán tối ưu được sử dụng 
 Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
 chất lượng tính toán của mã học sâu.
 Trong :numref:`chap_cv` and :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của
-học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên
+học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
