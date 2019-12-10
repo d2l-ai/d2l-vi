@@ -379,7 +379,7 @@ major applications of deep learning in computer vision
 and natural language processing, respectively.
 -->
 
-* Phần ba thảo luận quy mô mở rộng, hiệu quả, và ứng dụng.
+* Phần ba thảo luận quy mô mở rộng, hiệu quả và ứng dụng.
 Đầu tiên, trong :numref:`chap_optimization`,
 chúng tôi bàn luận một số thuật toán tối ưu được sử dụng để huấn luyện các mô hình học sâu.
 Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
