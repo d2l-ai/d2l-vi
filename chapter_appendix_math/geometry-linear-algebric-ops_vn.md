@@ -1356,9 +1356,9 @@ $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
 
-<!-- =================== Kết thúc dịch Phần 13 ==================== -->
+<!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
-<!-- =================== Bắt đầu dịch Phần 14 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
 
 <!--
 ### Common Examples from Linear Algebra
@@ -1471,9 +1471,9 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
-<!-- =================== Kết thúc dịch Phần 14 ==================== -->
+<!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
-<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 16 ==================== -->
 
 <!--
 ## Summary
@@ -1604,7 +1604,7 @@ $$
 
 ![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
 
-<!-- =================== Kết thúc dịch Phần 15 ==================== -->
+<!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -1635,19 +1635,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-* Vũ Hữu Tiệp
 * Hoàng Trọng Tuấn
-* Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 7 -->
 * Nguyễn Xuân Tú
-* Hoàng Trọng Tuấn
-* Lê Khắc Hồng Phúc
 
 <!-- Phần 8 -->
-* Vũ Hữu Tiệp
-* Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 
 <!-- Phần 9 -->
@@ -1669,4 +1663,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 15 -->
+*
+
+<!-- Phần 16 -->
 *
