@@ -1026,7 +1026,7 @@ To find a matrix which undoes what our matrix $\mathbf{A}$ has done,
 we want to find a matrix $\mathbf{A}^{-1}$ such that
 -->
 
-đây là ma trận với các số 1 dọc theo đường chéo và các số 0 ở những vị trí còn lại.
+đây là ma trận với các phần tử dọc theo đường chéo bằng 1 và các phẩn tử còn lại bằng 0.
 Chúng ta gọi đó là ma trận *đơn vị*.
 Đây là ma trận không làm thay đổi dữ liệu.
 Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm,
