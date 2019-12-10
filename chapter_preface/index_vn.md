@@ -617,7 +617,7 @@ hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
 Chẳng hạn, cuốn "Phân tích tuyến tính" của Bela Bollobas :cite:`Bollobas.1999`
 bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
-Cuốn "Tất cả về số liệu thống kê" :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
+Cuốn "All of Statistics" :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
 Và nếu bạn chưa sử dụng Python trước đây,
 bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
 
