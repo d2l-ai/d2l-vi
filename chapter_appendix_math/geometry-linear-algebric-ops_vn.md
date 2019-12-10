@@ -1046,7 +1046,7 @@ which has the property that as long as the determinant is not zero, we can find 
 As an example, if $\mathbf{A}$ is the general $2 \times 2$ matrix
 -->
 
-Nếu ta coi đây là một hệ thống, ta có $n \times n$ chưa biết
+Nếu ta coi đây là một hệ phương trình, ta có $n \times n$ biến
 (các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ phương trình
 (đẳng thức cần giữ giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và mỗi giá trị của $\mathbf{I}$)
 vì vậy ta nên mong đợi tồn tại một nghiệm.
