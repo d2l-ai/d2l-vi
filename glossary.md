@@ -47,7 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
-| convolution neural networks | mạng neuron chập                                       |               |
+| convolution neural networks | mạng nơ-ron tích chập                                       |               |
 | cross validation    | kiểm định chéo                                                 |               |
 
 ## D
