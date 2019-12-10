@@ -1006,7 +1006,7 @@ we should always be able to undo it.  Consider the matrix
 
 Chúng ta đã thấy ở trên phép nhân một ma trận với các cột phụ thuộc tuyến tính
 không thể hoàn tác, tức là không có thao tác nghịch đảo nào có thể khôi phục đầu vào. Tuy nhiên, nhân một ma trận hạng đầy đủ
-(ví dụ, một số $\mathbf{A}$ là ma trận $n \times n$ với thứ hạng $n$),
+(ví dụ, một ma trận $\mathbf{A}$ kích thước $n \times n$ nào đó với hạng $n$),
 chúng ta luôn có thể hoàn tác nó. Xét ma trận
 
 $$
