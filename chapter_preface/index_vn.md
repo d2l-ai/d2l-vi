@@ -334,7 +334,7 @@ such as linear regression, multilayer perceptrons and regularization.
 * Phần đầu cuốn sách trình bày các kiến thức cơ bản và điều kiện sơ bộ. 
 :numref:`chap_introduction` giới thiệu về học sâu.
 Sau đó, qua :numref:`chap_preliminaries`, chúng tôi đẩy nhanh tốc độ về những
-kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu, và cách
+kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
 áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích, và thống kê.
 :numref:`chap_linear` and :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
 ví dụ như hồi quy tuyến tính, mạng perceptrons nhiều lớp và regularization.
