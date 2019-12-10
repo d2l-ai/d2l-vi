@@ -287,7 +287,7 @@ Cuốn sách này có thể được chia thành ba phần, với các phần đ
 ![Book structure](../img/book-org.svg)
 -->
 
-![Kết cấu sách](../img/book-org.svg)
+![Bố cục cuốn sách](../img/book-org.svg)
 :label:`fig_book_org`
 
 1.Giới thiệu
