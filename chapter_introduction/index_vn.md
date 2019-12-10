@@ -341,7 +341,9 @@ We can "program" a cat detector by providing our machine learning system
 with many examples of cats and dogs, such as the images below:
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, thay vì tạo ra một chương trình nhận dạng từ đánh thức, ta tạo ra một chương trình có thể *học* cách nhận dạng các từ đánh thức, *khi được cho xem một tập lớn những ví dụ đã được gán nhãn*.
+Ta có thể gọi việc định nghĩa hành vi của một chương trình bằng cách cho nó xem một tập dữ liệu là *lập trình với dữ liệu*.
+Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cho hệ thống học máy của ta xem qua một loạt ví dụ về ảnh chó và mèo, ví dụ như trong hình dưới đây:
 
 <!--
 | ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
@@ -349,7 +351,9 @@ with many examples of cats and dogs, such as the images below:
 |cat|cat|dog|dog|
 -->
 
-*dịch đoạn phía trên*
+| ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|mèo|mèo|chó|chó|
 
 <!--
 This way the detector will eventually learn to emit a very large positive number if it is a cat, a very large negative number if it is a dog,
@@ -357,7 +361,9 @@ and something closer to zero if it is not sure,
 and this barely scratches the surface of what ML can do.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này bộ phát hiện sẽ dần học cách trả ra một số dương lớn nếu đó là một con mèo, hoặc một số âm lớn nếu đó là một con chó,
+hoặc một giá trị gần với không nếu nó không chắc.
+Đấy mới chỉ là ví dụ nhỏ về những gì mà học máy có thể làm được mà thôi.
 
 <!--
 Deep learning is just one among many popular methods
@@ -367,7 +373,9 @@ and not deep learning. To see why deep learning is important,
 we should pause for a moment to highlight a couple crucial points.
 -->
 
-*dịch đoạn phía trên*
+Học sâu chỉ là một trong nhiều phương pháp phổ biến để giải quyết những vấn đề học máy.
+Tới giờ chúng ta mới chỉ nói tổng quát về học máy chứ chưa nói về học sâu.
+Để thấy được tại sao học sâu lại quan trọng, ta nên dừng lại một chút để làm rõ một vài điểm quan trọng.
 
 <!--
 First, the problems that we have discussed thus far---learning
@@ -393,7 +401,17 @@ natural language processing, medical informatics, and other application areas,
 offering a unified set of tools for tackling diverse problems.
 -->
 
-*dịch đoạn phía trên*
+Trước hết, những vấn đề mà chúng ta đã thảo luận
+---học từ tín hiệu âm thanh thô, từ những giá trị pixel của tấm ảnh, hoặc dịch những câu có độ dài bất kỳ sang một ngôn ngữ khác---
+là những vấn đề học sâu có thể xử lý tốt còn học máy thì không.
+Mô hình sâu thì *sâu* chính là ở chỗ nó có thể học nhiều *tầng* tính toán.
+Hoá ra những mô hình đa tầng (có thứ bậc) có khả năng đương đầu với dữ liệu tri giác cấp độ thấp theo cái cách mà những công cụ trước đây không thể.
+Trước đây, một phần quan trọng trong việc áp dụng học máy tới những vấn đề trên, đó là nghĩ ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có thể cáng đáng.
+Một lợi thế quan trọng của học sâu đó là nó không chỉ thay thế những mô hình *nông* ở phía sau cùng của những pipeline học máy truyền thống,
+mà nó còn thay thế cả quá trình trích xuất đặc trưng (feature engineering) tốn nhiều công sức.
+Hơn nữa, với việc thay thế công đoạn *tiền xử lý theo từng phân ngành riêng biệt*,
+học sâu đã xoá bỏ nhiều ranh giới mà trước đây chia cắt lĩnh vực thị giác máy tính, nhận dạng hội thoại, xử lý ngôn ngữ tự nhiên, tin học y tế và nhiều lĩnh vực ứng dụng khác.
+Học sâu cung cấp một bộ công cụ thống nhất để giải quyết nhiều vấn đề khác nhau.
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
