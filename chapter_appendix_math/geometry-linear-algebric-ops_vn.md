@@ -1051,7 +1051,7 @@ Nếu ta coi đây là một hệ thống, ta có $n \times n$ chưa biết
 (đẳng thức cần giữ giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và mỗi giá trị của $\mathbf{I}$)
 vì vậy chúng ta nên mong đợi có giải pháp tồn tại.
 Thật vậy, trong phần tiếp theo chúng ta sẽ thấy một đại lượng được gọi là *định thức*,
-có thuộc tính miễn là định thức không bằng 0, chúng ta có thể tìm ra giải pháp. Chúng tôi gọi một ma trận $\mathbf{A}^{-1}$ như vậy là ma trận *nghịch đảo*.
+có đặc điểm miễn là định thức khác 0, ta có thể tìm được ngiệm. Một ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
 Ví dụ: nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
