@@ -128,7 +128,7 @@ to install a GPU-supported MXNet.
 -->
 
 Trước khi cài đặt MXNet, kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
-Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt một phiên bản MXNet có hỗ trợ GPU.
+Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
@@ -137,7 +137,7 @@ through the first few chapters but you will want
 to access GPUs before running larger models.
 -->
 
-Ngược lại, bạn có thể cài đặt phiên bản sử dụng chỉ CPU.
+Ngược lại, bạn có thể cài đặt phiên bản chỉ sử dụng CPU.
 Phiên bản này cũng thừa đủ để bạn có thể tiến hành các chương đầu tiên nhưng bạn sẽ phải sử dụng GPU để có thể chạy những mô hình lớn hơn.
 
 ```bash
@@ -179,9 +179,9 @@ before running the code of the book or updating MXNet or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
-Vào thời điểm này, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thông thường sẽ được tự động mở) trên trình duyệt Web của bạn.
+ Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
 Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
-Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi thực thi mã nguồn trong sách, cập nhật MXNet hoặc là gói thư viện `d2l`.
+Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách, cập nhật MXNet hoặc là gói thư viện `d2l`.
 Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
 
