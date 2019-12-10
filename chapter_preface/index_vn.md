@@ -274,7 +274,7 @@ we can just use the Gluon version in subsequent tutorials.
 ### Content and Structure
 -->
 
-### Nội dung và kết cấu sách
+### Nội dung và Bố cục
 
 <!--
 The book can be roughly divided into three parts,
