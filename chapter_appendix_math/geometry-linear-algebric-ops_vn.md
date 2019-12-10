@@ -1028,7 +1028,7 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 
 đây là ma trận với các số 1 dọc theo đường chéo và các số 0 ở những vị trí còn lại.
 Chúng ta gọi đó là ma trận *đơn vị*.
-Đây là ma trận giúp dữ liệu của chúng ta không thay đổi khi áp dụng.
+Đây là ma trận không làm thay đổi dữ liệu.
 Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ của chúng tôi đã làm,
 chúng tôi muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
