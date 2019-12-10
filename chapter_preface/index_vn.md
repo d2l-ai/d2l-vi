@@ -702,7 +702,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 
 * Học sâu đã cách mạng hóa nhận dạng khuôn mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
 * Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán để fit mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
-* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, hình minh hoạ, công thức toán và code, tất cả trong một.
+* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, hình minh hoạ, công thức toán và đoạn mã, tất cả trong một.
 * Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Nhóm dịch: https://machinelearningcoban.com).
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
