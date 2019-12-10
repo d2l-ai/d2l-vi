@@ -331,7 +331,7 @@ cover the most basic concepts and techniques of deep learning,
 such as linear regression, multilayer perceptrons and regularization.
 -->
 
-* Phần đầu cuốn sách đi qua các kiến thức cơ bản và điều kiện sơ bộ. 
+* Phần đầu cuốn sách trình bày các kiến thức cơ bản và điều kiện sơ bộ. 
 :numref:`chap_introduction` giới thiệu về học sâu.
 Sau đó, qua :numref:`chap_preliminaries`, chúng tôi đẩy nhanh tốc độ tới những
 kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu, và cách
