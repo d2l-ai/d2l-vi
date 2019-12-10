@@ -1030,7 +1030,7 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 Chúng ta gọi đó là ma trận *đơn vị*.
 Đây là ma trận không làm thay đổi dữ liệu.
 Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ của chúng tôi đã làm,
-chúng tôi muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
+ta muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
 $$
 \mathbf{A}^{-1}\mathbf{A} = \mathbf{A}\mathbf{A}^{-1} =  \mathbf{I}.
