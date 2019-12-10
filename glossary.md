@@ -155,6 +155,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
+| perceptron              | perceptron                              |               |
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
 | plateau (động từ)       | nằm ngang                                                      |                       |
