@@ -511,19 +511,19 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-Hầu hết các phần của cuốn sách này đều bao gồm mã nguồn hoạt động được, bởi vì
-chúng tôi tin rằng kinh nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
-Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc thử và lỗi,
-thay đổi mã nguồn từ từ và quan sát kết quả.
+Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì
+chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
+Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc cứ dùng thử và kiểm tra lỗi,
+thay đổi mã nguồn từng chút một và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
-chính xác cách thay đổi mã nguồn như thế nào để đạt được kết quả mong muốn.
+chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết đẹp đẽ đó vẫn chưa được khám phá.
 Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật,
 bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc
 tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
 Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển,
-những phiên bản tiếp theo của quyển sách này sẽ có thể cung cấp những cái nhìn sâu sắc hơn
-mà phiên bản hiện tại không thể làm được.
+những phiên bản tiếp theo của quyển sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn
+mà phiên bản hiện tại chưa làm được.
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -539,14 +539,14 @@ please consult :ref:`chap_installation`
 to update your code and runtime environment.
 -->
 
-Hầu hết mã nguồn trong cuốn sách này được dựa theo Apache MXNet.
+Hầu hết mã nguồn trong cuốn sách được dựa theo Apache MXNet.
 MXNet là một framework mã nguồn mở dành cho học sâu
 và là lựa chọn yêu thích của AWS (Amazon Web Services),
 và cả ở nhiều trường đại học và công ty.
 Tất cả mã nguồn trong cuốn sách này đã được kiểm thử trên phiên bản mới nhất của MXNet.
 Tuy nhiên, bởi vì học sâu phát triển rất nhanh, một vài đoạn mã 
-*trong phiên bản sách in* có thể không hoạt động đúng trên những phiên bản MXNet sau này.
-Dù vậy, chúng tôi dự định sẽ giữ phiên bản online được cập nhật.
+*trong phiên bản sách in* có thể không hoạt động chuẩn trên những phiên bản MXNet sau này.
+Dù vậy, chúng tôi dự định sẽ giữ phiên bản trực tuyến luôn được cập nhật.
 Trong trường hợp bạn gặp phải bất cứ vấn đề nào,
 hãy tham khảo :ref:`chap_installation`
 để cập nhật mã nguồn và môi trường thực thi.
@@ -593,7 +593,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-Chúng tôi sẽ mô tả bao quát chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
+Chúng tôi sẽ mô tả tổng quan chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
