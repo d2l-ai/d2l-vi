@@ -80,14 +80,15 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
-| English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|-----------------|----------------------------------------------------------------|---------------|
-| F1 score        | chỉ số F1                                                      |               |
-| false negative  | âm tính giả                                                    |               |
-| false positive  | dương tính giả                                                 |               |
-| feature         | đặc trưng                                                      |               |
-| fit             | fit                                                            |               |
-| first principle | định đề cơ bản                                                 |               |
+| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|---------------------|----------------------------------------------------------------|---------------|
+| F1 score            | chỉ số F1                                                      |               |
+| false negative      | âm tính giả                                                    |               |
+| false positive      | dương tính giả                                                 |               |
+| feature             | đặc trưng                                                      |               |
+| fit                 | fit                                                            |               |
+| first principle     | định đề cơ bản                                                 |               |
+| functional anaylsis | giải tích hàm                                                  |               |
 
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
