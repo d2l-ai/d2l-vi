@@ -513,7 +513,7 @@ in places the present edition cannot.
 
 Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì
 chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
-Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc cứ dùng thử và kiểm tra lỗi,
+Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc thử nghiệm và kiểm tra lỗi,
 thay đổi mã nguồn từng chút một và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
 chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
@@ -593,7 +593,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-Chúng tôi sẽ mô tả tổng quan chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
+Chúng tôi có một bản tổng quan chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
