@@ -1,5 +1,3 @@
-<!===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Appendix: Mathematics for Deep Learning
 -->
@@ -112,8 +110,6 @@ naive-bayes
 statistics
 information-theory
 ```
-
-<!===================== Kết thúc dịch Phần 1 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
