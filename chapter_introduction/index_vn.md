@@ -407,8 +407,8 @@ sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề
 
 <!--
 1. The *data* that we can learn from.
- 2. A *model* of how to transform the data.
- 3. A *loss* function that quantifies the *badness* of our model.
+2. A *model* of how to transform the data.
+3. A *loss* function that quantifies the *badness* of our model.
 4. An *algorithm* to adjust the model's parameters to minimize the loss.
 -->
 
@@ -446,8 +446,8 @@ Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không 
 Chúng ta có thể rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu,
 nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế
 và tập trung vào các thuộc tính quan trọng cần quan tâm.
-Thông thường, chúng ta quan tâm đến một bộ *ví dụ*
-(còn được gọi là *điểm dữ liệu*, *mẫu* hoặc *trường hợp*).
+Thông thường, chúng ta quan tâm đến một bộ *mẫu*
+(còn được gọi là *điểm dữ liệu*, *ví dụ* hoặc *trường hợp*).
 Để làm việc với dữ liệu một cách hữu ích, chúng ta thường
 cần phải đưa ra một con số đại diện thích hợp.
 Mỗi *ví dụ* thường bao gồm một bộ
@@ -476,11 +476,11 @@ Nếu chúng ta đang làm việc với dữ liệu hình ảnh,
 mỗi bức ảnh riêng lẻ có thể tạo thành một *ví dụ*
 được biểu diễn bởi một danh sách các giá trị số theo thứ tự
 tương ứng với độ sáng của từng pixel.
-Một bức ảnh màu $200\times 200$ sẽ bao gồm $200\times200\times3=120000$
+Một bức ảnh màu có kích thước $200\times 200$ sẽ bao gồm $200\times200\times3=120000$
 giá trị số, tương ứng với độ sáng
 của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí không gian.
-Trong một nhiệm vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
-xem một bệnh nhân liệu có sống sót hay không,
+Trong một tác vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
+xem một bệnh nhân liệu có cơ hội sống sót hay không,
 dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các dấu hiệu quan trọng, chẩn đoán, v.v.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
