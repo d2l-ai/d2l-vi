@@ -1,5 +1,3 @@
-<!===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Appendix: Mathematics for Deep Learning
 -->
@@ -100,7 +98,7 @@ thiết để bắt đầu đi tới con đường hiểu sâu về học sâu.
 ```toc
 :maxdepth: 2
 
-geometry-linear-algebric-ops
+geometry-linear-algebric-ops_vn
 eigen-decomposition
 single-variable-calculus
 multivariable-calculus
@@ -112,8 +110,6 @@ naive-bayes
 statistics
 information-theory
 ```
-
-<!===================== Kết thúc dịch Phần 1 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
