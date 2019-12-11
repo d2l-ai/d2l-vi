@@ -309,7 +309,7 @@ Sau đó, qua :numref:`chap_preliminaries`, chúng tôi đẩy nhanh tốc độ
 kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
 áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và thống kê.
 :numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
-ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và regularization.
+ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và điều chuẩn.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
