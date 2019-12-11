@@ -723,7 +723,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 4. Create an account on the forum and introduce yourself.
 -->
 
-1. Đăng ký tài khoản diễn đàn của cuốn sách này [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
+1. Đăng ký tài khoản diễn đàn của cuốn sách tại [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
 1. Cài đặt Python trên máy tính.
 1. Làm theo hướng dẫn ở các liên kết đến diễn đàn ở cuối phần này, ở các liên kết diễn đàn đó bạn sẽ có thể nhận được giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
 1. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
