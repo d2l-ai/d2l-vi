@@ -100,7 +100,7 @@ thiết để bắt đầu đi tới con đường hiểu sâu về học sâu.
 ```toc
 :maxdepth: 2
 
-geometry-linear-algebric-ops
+geometry-linear-algebric-ops_vn
 eigen-decomposition
 single-variable-calculus
 multivariable-calculus
