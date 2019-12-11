@@ -413,7 +413,7 @@ sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề
 -->
 
 1. *Dữ liệu* mà chúng ta có thể học.
-2. Một *mô hình* về cách chuyển đổi dữ liệu.
+2. Một *mô hình* về cách biến đổi dữ liệu.
 3. Một *hàm mất mát* định lượng *độ tệ* mô hình của chúng ta.
 4. Một *thuật toán* điều chỉnh các tham số của mô hình để giảm thiểu mất mát.
 
