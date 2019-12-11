@@ -443,7 +443,7 @@ can then simply be called the *features*,
 -->
 
 Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
-Chúng ta có thể mất hàng trăm trang cân nhắc chính xác những gì cấu thành dữ liệu,
+Chúng ta có thể rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu,
 nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế
 và tập trung vào các thuộc tính quan trọng cần quan tâm.
 Thông thường, chúng ta quan tâm đến một bộ *ví dụ*
