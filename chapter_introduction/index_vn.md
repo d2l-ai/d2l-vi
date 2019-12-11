@@ -449,7 +449,7 @@ và tập trung vào các thuộc tính quan trọng cần quan tâm.
 Thông thường, chúng ta quan tâm đến một bộ *ví dụ*
 (còn được gọi là *điểm dữ liệu*, *mẫu* hoặc *trường hợp*).
 Để làm việc với dữ liệu một cách hữu ích, chúng ta thường
-cần phải đưa ra một đại diện số thích hợp.
+cần phải đưa ra một con số đại diện thích hợp.
 Mỗi *ví dụ* thường bao gồm một bộ
 thuộc tính số gọi là *đặc trưng*.
 Trong các bài toán học có giám sát ở trên,
