@@ -398,7 +398,7 @@ bao gồm các đoạn âm thanh và các nhãn nhị phân
 giúp các bạn hiểu hơn về cách chúng ta có thể *huấn luyện*
 một mô hình để xấp xỉ ánh xạ từ các đoạn âm thanh đến phân loại.
 Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết
-với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các ví dụ 
+với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu
 đã được gán nhãn, loại bài toán này được gọi là *học có giám sát*,
 và đây chỉ là một trong số rất nhiều *loại* học máy.
 Trong phần tiếp theo, chúng tôi sẽ đi sâu vào các vấn đề ML khác nhau.
