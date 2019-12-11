@@ -355,7 +355,7 @@ and natural language processing, respectively.
 Đầu tiên, trong :numref:`chap_optimization`,
 chúng tôi bàn luận một số thuật toán tối ưu được sử dụng để huấn luyện các mô hình học sâu.
 Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
-chất lượng tính toán của mã học sâu.
+chất lượng tính toán của mã nguồn học sâu.
 Trong :numref:`chap_cv` and :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của
 học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
