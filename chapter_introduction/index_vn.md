@@ -409,7 +409,7 @@ sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề
 1. The *data* that we can learn from.
  2. A *model* of how to transform the data.
  3. A *loss* function that quantifies the *badness* of our model.
- 4. An *algorithm* to adjust the model's parameters to minimize the loss.
+4. An *algorithm* to adjust the model's parameters to minimize the loss.
 -->
 
 1. *Dữ liệu* mà chúng ta có thể học.
