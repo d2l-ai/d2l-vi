@@ -612,7 +612,7 @@ về đại số tuyến tính, giải tích, xác suất,
 và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
 về hầu hết các phần toán được đề cập trong cuốn sách này.
-Phần lớn thời gian, chúng tôi sẽ ưu tiên giải thích trực quan và các ý tưởng
+Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng
 hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
 Chẳng hạn, cuốn "Phân tích tuyến tính" của Bela Bollobas :cite:`Bollobas.1999`
