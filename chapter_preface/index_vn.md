@@ -638,7 +638,7 @@ The authors of this book and broader MXNet developer community
 frequently participate in forum discussions.
 -->
 
-Gắn liền với cuốn sách này, chúng tôi đã tạo ra một diễn đàn trực tuyến
+Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến
 tại [discuss.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: Diễn đàn tiếng Việt Machine Learning cơ bản [https://machinelearningcoban.com](https://machinelearningcoban.com/).
 Khi bạn có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
