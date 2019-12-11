@@ -708,7 +708,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
 * Conda là trình quản lý gói mở rộng Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
 * Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này, tất cả đều được viết trong tệp `môi trường.yml`.
-* Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt trình điều khiển cần thiết và cập nhật cấu hình của bạn.
+* Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt các driver cần thiết và cập nhật cấu hình của bạn.
 
 <!--
 ## Exercises
