@@ -4,7 +4,6 @@ import filecmp
 import tempfile
 
 from qcore.asserts import assert_eq
-
 from utils import block_comment
 
 
