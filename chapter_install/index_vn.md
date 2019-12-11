@@ -127,7 +127,7 @@ proceed to :ref:`sec_gpu` for instructions
 to install a GPU-supported MXNet.
 -->
 
-Trước khi cài đặt MXNet, kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
+Trước khi cài đặt MXNet, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
 Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
@@ -181,7 +181,7 @@ To exit the environment, run `conda deactivate`.
 
  Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
 Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
-Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách, cập nhật MXNet hoặc là gói thư viện `d2l`.
+Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
 Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
 
@@ -196,7 +196,7 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 -->
 
 Cả cuốn sách này và MXNet đều đang tiếp tục được cải thiện.
-Thỉnh thoảng, hãy kiểm tra liệu chúng đã có phiên bản mới.
+Thỉnh thoảng, hãy kiểm tra xem đã có phiên bản mới hay chưa.
 
 <!--
 1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
@@ -206,7 +206,7 @@ Thỉnh thoảng, hãy kiểm tra liệu chúng đã có phiên bản mới.
 
 1. Đường dẫn https://d2l.ai/d2l-en.zip luôn luôn trỏ đến phiên bản mới nhất.
 2. Để cập nhật gói thư viện `d2l` hãy sử dụng lệnh `pip install d2l --upgrade`.
-3. Đối với phiên bản chỉ CPU, có thể cập nhật MXNet sử dụng lệnh `pip install -U --pre mxnet`.
+3. Đối với phiên bản CPU, MXNet có thể được cập nhật bằng lệnh `pip install -U --pre mxnet`.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
