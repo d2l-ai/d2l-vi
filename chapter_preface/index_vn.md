@@ -718,9 +718,9 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 
 <!--
 1. Register an account on the discussion forum of this book [discuss.mxnet.io](https://discuss.mxnet.io/).
-2. Install Python on your computer.
-3. Follow the links at the bottom of the section to the forum, where you will be able to seek out help and discuss the book and find answers to your questions by engaging the authors and broader community.
-4. Create an account on the forum and introduce yourself.
+1. Install Python on your computer.
+1. Follow the links at the bottom of the section to the forum, where you will be able to seek out help and discuss the book and find answers to your questions by engaging the authors and broader community.
+1. Create an account on the forum and introduce yourself.
 -->
 
 1. Đăng ký tài khoản diễn đàn của cuốn sách tại [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
