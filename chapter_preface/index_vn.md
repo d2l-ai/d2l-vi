@@ -640,7 +640,7 @@ frequently participate in forum discussions.
 
 Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến
 tại [discuss.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: Diễn đàn tiếng Việt Machine Learning cơ bản [https://machinelearningcoban.com](https://machinelearningcoban.com/).
-Khi bạn có câu hỏi về bất kỳ phần nào của cuốn sách,
+Khi có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
 ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
 Các tác giả của cuốn sách này và rộng hơn là cộng đồng nhà phát triển MXNet
