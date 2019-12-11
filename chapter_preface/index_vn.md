@@ -615,9 +615,9 @@ về hầu hết các phần toán được đề cập trong cuốn sách này.
 Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng
 hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
-Chẳng hạn, cuốn "Phân tích tuyến tính" của Bela Bollobas :cite:`Bollobas.1999`
+Chẳng hạn, cuốn "Giải tích tuyến tính" (Linear Analysis) của Bela Bollobas :cite:`Bollobas.1999`
 bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
-Cuốn "All of Statistics" :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
+Cuốn "Tất cả về Thống kê" (All of Statistics) :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
 Và nếu bạn chưa sử dụng Python,
 bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
 
@@ -639,11 +639,11 @@ frequently participate in forum discussions.
 -->
 
 Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến
-tại [discuss.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: Diễn đàn tiếng Việt Machine Learning cơ bản [https://machinelearningcoban.com](https://machinelearningcoban.com/).
+tại [discuss.mxnet.io](https://discuss.mxnet.io/) (và tại [Diễn đàn dó nhóm dịch tạo](https://forum.machinelearningcoban.com/c/d2l)).
 Khi có câu hỏi về bất kỳ phần nào của cuốn sách,
 bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
 ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
-Các tác giả của cuốn sách này và rộng hơn là cộng đồng nhà phát triển MXNet
+Các tác giả của cuốn sách này và rộng hơn là cộng đồng phát triển MXNet
 cũng thường xuyên tham gia thảo luận trong diễn đàn.
 
 
@@ -668,8 +668,8 @@ Chúng tôi xin gửi lời cảm ơn chân thành tới hàng trăm người đ
 bản thảo tiếng Anh và tiếng Trung.
 Mọi người đã giúp cải thiện nội dung và đưa ra những phản hồi rất có giá trị.
 Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này
-để làm cho nó tốt hơn cho tất cả mọi người.
-Tài khoản GitHub hoặc tên các bạn đóng góp (không theo trình tự):
+giúp nó tốt hơn cho tất cả mọi người.
+Tài khoản GitHub hoặc tên các bạn đóng góp (không theo trình tự cụ thể nào):
 alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) và Rachel Hu (Amazon) đồng tác giả chương *Toán học cho Học sâu* trong Phụ lục với chúng tôi và là những người đóng góp chính cho chương đó.
 
@@ -701,13 +701,13 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 -->
 
 * Học sâu đã cách mạng hóa nhận dạng khuôn mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
-* Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách đặt vấn đề, mô hình hóa dạng toán, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
-* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các đoạn viết, hình minh hoạ, công thức toán và đoạn mã, tất cả trong một.
-* Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Nhóm dịch: https://machinelearningcoban.com).
+* Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách biến đổi bài toán, toán học của việc mô hình hóa, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
+* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các diễn giải, hình minh hoạ, công thức toán và mã nguồn, tất cả trong một.
+* Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Diễn đàn của nhóm dịch tại https://forum.machinelearningcoban.com/c/d2l).
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
-* Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu dễ dàng bằng cách sử dụng Apache MXNet.
-* Conda là trình quản lý gói mở rộng Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
-* Tất cả các notebook đều có thể tải xuống từ GitHub cũng như các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này, tất cả đều được viết trong tệp `môi trường.yml`.
+* Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu một cách dễ dàng bằng cách sử dụng Apache MXNet.
+* Conda là trình quản lý gói Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
+* Tất cả các notebook đều có thể tải xuống từ GitHub và các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này được viết trong tệp `môi trường.yml`.
 * Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt các driver cần thiết và cập nhật cấu hình của bạn.
 
 <!--
