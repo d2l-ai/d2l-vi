@@ -250,7 +250,7 @@ then you can install MXNet
 with the following command:
 -->
 
-Sau đó, chúng tôi cần tìm phiên bản CUDA mà bạn đã cài đặt.
+Sau đó, ta cần tìm phiên bản CUDA mà bạn đã cài đặt.
 Bạn có thể kiểm tra nó thông qua lệnh `nvcc --version` hoặc `cat /usr/local/cuda/version.txt`.
 Giả sử, bạn đã cài đặt CUDA 10.1,
 bạn có thể cài đặt MXNet
