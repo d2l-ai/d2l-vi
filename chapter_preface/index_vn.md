@@ -513,7 +513,7 @@ in places the present edition cannot.
 
 Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì
 chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
-Hiện tại, một số kĩ năng nhất định chỉ có thể được rèn luyện thông qua việc thử nghiệm và kiểm tra lỗi,
+Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai,
 thay đổi mã nguồn từng chút một và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
 chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
