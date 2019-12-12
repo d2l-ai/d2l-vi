@@ -23,7 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
-| attention mechanisms | attention mechanisms                                                |               |
+| attention mechanisms | cơ chế chú ý                                                |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -170,8 +170,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
-| recurrent neural network|   mạng nơ-ron hồi quy               |               |
-| regularization         | regularization                                                 |               |
+| recurrent neural network|   mạng nơ-ron truy hồi               |               |
+| regularization         | điều chuẩn                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
 | running time           | thời gian chạy                                                 |               |
