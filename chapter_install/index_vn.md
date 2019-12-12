@@ -128,7 +128,7 @@ to install a GPU-supported MXNet.
 -->
 
 Trước khi cài đặt MXNet, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
-Nếu bạn đang cài đặt trên một GPU server, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
+Nếu bạn đang cài đặt trên một máy chủ GPU, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
@@ -138,7 +138,7 @@ to access GPUs before running larger models.
 -->
 
 Ngược lại, bạn có thể cài đặt phiên bản chỉ sử dụng CPU.
-Phiên bản này cũng thừa đủ để bạn có thể tiến hành các chương đầu tiên nhưng bạn sẽ phải sử dụng GPU để có thể chạy những mô hình lớn hơn.
+Phiên bản này cũng thừa đủ để có thể tiến hành các chương đầu tiên nhưng bạn sẽ cần sử dụng GPU để có thể chạy những mô hình lớn hơn.
 
 ```bash
 # For Windows users
