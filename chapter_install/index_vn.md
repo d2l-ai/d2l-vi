@@ -229,13 +229,10 @@ If you have installed the CPU-only version,
 you may need to remove it first by running:
 -->
 
-Mặc định, MXNet sẽ được cài đặt mà không có sự hỗ trợ từ GPU
-nhằm đảm bảo rằng nó sẽ chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
-Một phần của cuốn sách này yêu cầu hoặc gợi ý bạn nên chạy với GPU.
-Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads),
-thì bạn nên cài đặt MXNet có hỗ trợ GPU.
-Nếu bạn đã cài đặt phiên bản dành riêng cho CPU,
-bạn có thể cần xoá nó trước bằng cách chạy lệnh:
+Phiên bản MXNet mặc định được cài đặt không hỗ trợ GPU đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
+Một phần của cuốn sách này yêu cầu hoặc khuyến khích chạy trên GPU.
+Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads), thì bạn nên cài đặt bản MXNet có hỗ trợ GPU.
+Trong trường hợp bạn đã cài đặt phiên bản dành riêng cho CPU, bạn có thể cần xoá nó trước bằng cách chạy lệnh:
 
 ```bash
 pip uninstall mxnet
@@ -251,10 +248,8 @@ with the following command:
 -->
 
 Sau đó, ta cần tìm phiên bản CUDA mà bạn đã cài đặt.
-Bạn có thể kiểm tra nó thông qua lệnh `nvcc --version` hoặc `cat /usr/local/cuda/version.txt`.
-Giả sử, bạn đã cài đặt CUDA 10.1,
-bạn có thể cài đặt MXNet
-với lệnh sau:
+Bạn có thể kiểm tra thông qua lệnh `nvcc --version` hoặc `cat /usr/local/cuda/version.txt`.
+Giả sử, bạn đã cài đặt CUDA 10.1, bạn có thể cài đặt MXNet với lệnh sau:
 
 ```bash
 # Dành cho người dùng Windows
@@ -273,10 +268,8 @@ e.g., `cu100` for CUDA 10.0 and `cu90` for CUDA 9.0.
 You can find all available MXNet versions via `pip search mxnet`.
 -->
 
-Tương tự phiên bản CPU, MXNet hỗ trợ GPU có thể được nâng cấp bằng lệnh
-`pip install -U --pre mxnet-cu101`.
-Bạn có thể thay đổi các chữ số cuối theo phiên bản CUDA của bạn,
-ví dụ, `cu100` cho CUDA phiên bản 10.0 và `cu90` cho CUDA phiên bản 9.0.
+Tương tự phiên bản CPU, MXNet hỗ trợ GPU có thể được nâng cấp bằng lệnh `pip install -U --pre mxnet-cu101`.
+Bạn có thể thay đổi các chữ số cuối theo phiên bản CUDA của bạn, ví dụ, `cu100` cho CUDA phiên bản 10.0 và `cu90` cho CUDA phiên bản 9.0.
 Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông qua lệnh `pip search mxnet`.
 
 
@@ -290,7 +283,7 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 1. Download the code for the book and install the runtime environment.
 -->
 
-1. Tải xuống mã nguồn dành cho cuốn sách và cài đặt môi trường Runtime.
+1. Tải xuống mã nguồn dành cho cuốn sách và cài đặt môi trường chạy.
 
 
 <!--
