@@ -1027,7 +1027,7 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 
 đây là ma trận với các phần tử dọc theo đường chéo bằng 1 và các phẩn tử còn lại bằng 0.
 Chúng ta gọi đó là ma trận *đơn vị*.
-Đây là ma trận không làm thay đổi dữ liệu.
+Đây là ma trận không làm thay đổi dữ liệu khi nhân với nó.
 Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
 $$
@@ -1046,8 +1046,8 @@ As an example, if $\mathbf{A}$ is the general $2 \times 2$ matrix
 
 Nếu ta coi đây là một hệ phương trình, ta có $n \times n$ biến (các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ phương trình
 (đẳng thức cần giữ giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và mỗi giá trị của $\mathbf{I}$)
-vì vậy ta nên mong đợi tồn tại một nghiệm.
-Thật vậy, trong phần tiếp theo chúng ta sẽ thấy một đại lượng được gọi là *định thức*, có đặc điểm miễn là định thức khác 0, ta có thể tìm được ngiệm. Một ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
+nên ta dự đoán sẽ tồn tại một nghiệm hệ phương trình.
+Thật vậy, trong phần tiếp theo chúng ta sẽ thấy một đại lượng được gọi là *định thức* với tính chất: khi định thức khác 0, ta có thể tìm được nghiệm. Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
 Ví dụ: nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
@@ -1075,7 +1075,7 @@ We can test to see this by seeing that multiplying
 by the inverse given by the formula above works in practice.
 -->
 
-Chúng ta có thể kiểm chứng điều này khi nhận thấy rằng nhân nghịch đảo dựa theo công thức trên hoạt động trong thực tế.
+Chúng ta có thể kiểm chứng điều này trong thực tế khi nhân ma trận trên với nghịch đảo của nó.
 
 ```{.python .input}
 M = np.array([[1, 2], [1, 4]])
