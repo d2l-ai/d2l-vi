@@ -700,7 +700,7 @@ Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng c�
 * If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
 -->
 
-* Học sâu đã cách mạng hóa nhận dạng khuôn mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên, nhận dạng giọng nói tự động.
+* Học sâu đã cách mạng hóa nhận dạng mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên và nhận dạng giọng nói tự động.
 * Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách biến đổi bài toán, toán học của việc mô hình hóa, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
 * Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các diễn giải, hình minh hoạ, công thức toán và mã nguồn, tất cả trong một.
 * Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Diễn đàn của nhóm dịch tại https://forum.machinelearningcoban.com/c/d2l).
