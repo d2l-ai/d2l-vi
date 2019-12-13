@@ -195,7 +195,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
-| transcribe               | ghi thoại                                                      |               |
+| transcribe               | phiên thoại                                                    |               |
 | transcription            | bản ghi thoại                                                  |               |
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
@@ -205,7 +205,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
 |------------------|----------------------------------------------------------------|-------------------------|
 | unavoidable bias | độ chệch không tránh được                                      |                         |
-| underfit         | chưa khớp                                                      | http://bit.ly/2BvfPYA  |
+| underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
