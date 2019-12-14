@@ -1144,19 +1144,20 @@ and generally avoiding inversion in practice is a good rule of thumb.
 ## Determinant
 -->
 
-## *dịch tiêu đề phía trên*
+## Định thức
 The geometric view of linear algebra gives an intuitive way
 to interpret a a fundamental quantity known as the *determinant*.
 Consider the grid image from before, but now with a highlighted region (:numref:`fig_grid-filled`).
 -->
 
-*dịch đoạn phía trên*
+Góc nhìn hình học của đại số tuyến tính cung cấp một cái nhìn trực quan để diễn giải một đại lượng cơ bản được gọi là *định thức*.
+Xét hình lưới trước đây với một vùng được tô màu (:numref:`fig_grid-filled`).
 
 <!--
 ![The matrix $\mathbf{A}$ again distorting the grid.  This time, I want to draw particular attention to what happens to the highlighted square.](../img/GridTransformFilled.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/GridTransformFilled.svg)
+![Ma trận $\mathbf{A}$ vẫn làm biến dạng lưới. Lần này, tôi muốn dồn sự chú ý vào điều đã xảy ra với hình vuông được tô màu.](../img/GridTransformFilled.svg)
 :label:`fig_grid-filled`
 
 <!--
@@ -1168,7 +1169,9 @@ There is no reason this parallelogram should have the same area
 that we started with, and indeed in the specific case shown here of
 -->
 
-*dịch đoạn phía trên*
+Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được cho bởi $(0, 1)$ và $(1, 0)$.
+Sau khi ma trận $\mathbf{A}$ biến đổi hình vuong này, ta thấy rằng nó trở thành một hình bình hành.
+Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1182,13 +1185,13 @@ it is an exercise in coordinate geometry to compute
 the area of this parallelogram and obtain that the area is $5$.
 -->
 
-*dịch đoạn phía trên*
+bạn có thể tính được diện tích hình bình hành bằng $5$ như một bài tập hình học tọa độ nhỏ.
 
 <!--
 In general, if we have a matrix
 -->
 
-*dịch đoạn phía trên*
+Tổng quát, nếu ta có một ma trận
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1203,13 +1206,14 @@ of the resulting parallelogram is $ad-bc$.
 This area is referred to as the *determinant*.
 -->
 
-*dịch đoạn phía trên*
+với một vài phép tính, ta có thể thấy rằng diện tích của hình bình hành là $ad-bc$.
+Diện tích này được coi là *định thức*.
 
 <!--
 Let's check this quickly with some example code.
 -->
 
-*dịch đoạn phía trên*
+Cùng kiểm tra nhanh điều này với một đoạn mã ví dụ.
 
 ```{.python .input}
 import numpy as np
@@ -1226,13 +1230,16 @@ we say the area is negated.
 Let's see now that when the determinant is zero, we learn more.
 -->
 
-*dịch đoạn phía trên*
+Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm.
+<!--
+Lưu ý là mấy bác Tàu này rất thích chơi chữ, mình cứ dịch đơn giản dễ hiểu và gần gũi với tiếng Việt.
+-->
 
 <!--
 Let's consider
 -->
 
-*dịch đoạn phía trên*
+Xét
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -1253,7 +1260,7 @@ a matrix $A$ is invertible if and only if
 the determinant is not equal to zero.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta tính định thức của ma trận này, ta nhận được we get $2\cdot(-2 ) - 4\cdot(-1) = 0$.
 
 <!--
 As a final comment, imagine that we have any figure drawn on the plane.
@@ -1268,7 +1275,10 @@ We see that for any figure, the determinant gives the (signed) number
 that a matrix scales the area of any figure.
 -->
 
-*dịch đoạn phía trên*
+Hãy tưởng tượng ta có một hình bất kỳ trên mặt phẳng.
+Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nhỏ sao cho diện tính của hình đó bằng số lượng hình vuông trong cách chia này.
+Bây giờ nếu ta biến đổi hình đó bằng một ma trận, ta biến đổi các hình vuông nhỏ thành các hình bình hành với diện tích bằng với định thức của ma trận.
+Ta thấy rằng với bất kỳ hình nào, định thức cho ta một con số (có dấu) mà ma trận co giãn diện tích của một hình bất kỳ.
 
 <!--
 Computing determinants for larger matrices can be laborious,
@@ -1277,7 +1287,7 @@ The determinant remains the factor
 that $n\times n$ matrices scale $n$-dimensional volumes.
 -->
 
-*dịch đoạn phía trên*
+Việc tính định thức cho các ma trận lớn có thể phức tạp hơn, nhưng ý tưởng là như nhau. Định thức vẫn có tính chất rằng ma trận $n\times n$ co giãn các khối thể tích trong không gian $n$ chiều.
 
 <!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
