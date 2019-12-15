@@ -47,6 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
 | cross validation    | kiểm định chéo                                                 |               |
+| cost function       | hàm phí tổn                                                    |               |
 
 ## D
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -123,6 +124,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear independence | độc lâp tuyến tính                                             |                         |
 | linear regression   | hồi quy tuyến tính                                             |                         |
 | logistic regression | hồi quy logistic                                               |                         |
+| loss function       | hàm mất mát                                                    |                         |
 
 ## M
 | English            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -146,6 +148,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## O
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------|----------------------------------------------------------------|-----------------------|
+| objective function | hàm mục tiêu                                                  |                       |
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
