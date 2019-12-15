@@ -4,7 +4,7 @@
 # Introduction
 -->
 
-# *dịch tiêu đề phía trên*
+# Giới thiệu
 :label:`chap_introduction`
 
 <!--
@@ -22,7 +22,15 @@ spells out in methodical detail the appropriate action
 that our program should take in every conceivable circumstance.
 -->
 
-*dịch đoạn phía trên*
+Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày
+đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
+Giả sử chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
+Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ,
+chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
+(i) người dùng tương tác với ứng dụng thông qua một giao diện chạy trên trình duyệt web hoặc ứng dụng trên điện thoại;
+(ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại
+để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
+và (iii) (cũng là cốt lõi của ứng dụng) các logic nghiệp vụ (hay cũng có thể nói *bộ não*) mô tả cách thức xử lí cụ thể của ứng dụng trong từng tình huống có thể xảy ra.
 
 <!--
 To build the *brains* of our application,
@@ -42,7 +50,19 @@ And when you are able to devise solutions that work $100\%$ of the time,
 *you should not be using machine learning*.
 -->
 
-*dịch đoạn phía trên*
+Để xây dựng *bộ não* của ứng dụng này, ta phải xem xét tất cả mọi trường hợp mà chúng ta cho rằng sẽ gặp phải
+, qua đó đặt ra những quy tắc thích hợp.
+Ví dụ, mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng,
+ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
+liên kết ID của người dùng với ID của món hàng được yêu cầu.
+Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
+(sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
+hầu như phần lớn ta có thể lập trình được từ những định đề cơ bản
+và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
+Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản,
+thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
+Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống,
+*bạn không nên sử dụng học máy*.
 
 <!--
 Fortunately for the growing community of ML scientists,
@@ -52,7 +72,10 @@ Imagine huddling around the whiteboard with the smartest minds you know,
 but this time you are tackling one of the following problems:
 -->
 
-*dịch đoạn phía trên*
+May mắn thay cho cộng đồng đang tăng trưởng của các nhà khoa học về học máy,
+nhiều tác vụ mà chúng ta muốn tự động hoá không dễ dàng bị khuất phục bởi sự tài tình của con người.
+Thử tưởng tượng bạn đang quây quần bên tấm bảng trắng với những bộ não thông minh nhất mà bạn biết,
+nhưng lần này bạn đang đương đầu với một trong những vấn đề dưới đây:
 
 <!--
 * Write a program that predicts tomorrow's weather given geographic
@@ -65,7 +88,12 @@ information, satellite images, and a trailing window of past weather.
   enjoy but unlikely, in the natural course of browsing, to encounter.
 -->
 
-*dịch đoạn phía trên*
+* Viết một chương trình dự báo thời tiết ngày mai, cho biết trước thông tin địa lý,
+hình ảnh vệ tinh, và một chuỗi dữ liệu thời tiết trong quá khứ.
+* Viết một chương trình lấy đầu vào là một câu hỏi, được diễn đạt không theo khuôn mẫu nào,
+và trả lời nó một cách chính xác.
+* Viết một chương trình hiển thị ra cho người dùng những sản phẩm mà họ có khả năng cao sẽ thích,
+nhưng lại ít có khả năng gặp được khi duyệt qua môt cách tự nhiên.
 
 <!--
 In each of these cases, even elite programmers
@@ -94,7 +122,27 @@ driving innovations in areas as diverse as computer vision,
 natural language processing, healthcare, and genomics.
 -->
 
-*dịch đoạn phía trên*
+Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa 
+cũng không thể lập trình lên được từ con số không.
+Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần 
+lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
+Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng)
+có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính 
+vượt ra khỏi khả năng thấu hiểu của nhận thức chúng ta
+(mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
+Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến
+mà có thể *học* từ *kinh nghiệm*.
+Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm,
+thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường,
+chất lượng của nó sẽ tăng lên.
+Tương phản với hệ thống thương mại điện tử tất định của chúng ta,
+khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có,
+mặc cho đã tích luỹ thêm bao nhiêu là kinh nghiệm,
+tận cho tới khi lập trình viên tự quyết định rằng đã tới lúc cập nhật phần mềm này.
+Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy,
+và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kĩ thuật
+đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính,
+xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
@@ -104,7 +152,7 @@ natural language processing, healthcare, and genomics.
 ## A Motivating Example
 -->
 
-## *dịch tiêu đề phía trên*
+## Một ví dụ tạo động lực
 
 <!--
 Before we could begin writing, the authors of this book,
@@ -124,7 +172,15 @@ our everyday interactions with a smart phone
 can engage several machine learning models.
 -->
 
-*dịch đoạn phía trên*
+Trước khi có thể bắt đầu viết, những tác giả của cuốn sách này, giống nhiều người đi làm khác, cần phải uống cà phê.
+Chúng tôi leo lên xe và bắt đầu lái.
+Sử dụng một chiếc iPhone, Alex nói "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
+Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
+Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại của câu lệnh đó.
+Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và khởi động ứng dụng Bản đồ để hoàn thành yêu cầu của chúng tôi.
+Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài tuyến đường đến đó.
+Kế bên mỗi tuyến đường, điện thoại hiển thị con số thời gian di chuyển dự tính.
+Trong khi chúng tôi bịa ra câu chuyện này để tiện cho việc giảng dạy, điều này cho thấy rằng chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với một chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
 
 <!--
 Imagine just writing a program to respond to a *wake word*
@@ -142,7 +198,16 @@ We do not know how to write such a program from scratch either.
 That is why we use ML.
 -->
 
-*dịch đoạn phía trên*
+Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
+Hãy thử viết nó chỉ một mình bạn không có gì ngoài một chiếc máy tính và ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
+Bạn sẽ viết một chương trình như vậy từ những định đề cơ bản như thế nào?
+Thử nghĩ về nó... vấn đề này khó quá.
+Mỗi giây, chiếc micro sẽ thu thập cỡ tầm 44,000 mẫu.
+Mỗi mẫu là một phép đo biên độ của sóng âm.
+Quy tắc nào có thể ánh xạ một cách tin cậy từ một đoạn âm thanh thô đến các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
+Nếu bạn không biết xử lý điều này như thế nào, đừng lo lắng.
+Chúng tôi cũng không biết làm cách nào để viết một chương trình như vậy từ đầu.
+Đó là lý do vì sao chúng tôi sử dụng học máy.
 
 <!--
 ![Identify an awake word.](../img/wake-word.svg)
@@ -170,7 +235,13 @@ Then we use the dataset to determine the best possible set of parameters, those 
 with respect to some measure of performance on the task of interest.
 -->
 
-*dịch đoạn phía trên*
+Và sau đây là thủ thuật.
+Thậm chí ngay cả khi chúng ta không thể nói cho một cái máy tính biết cách để ánh xạ từ đầu vào đến đầu ra như thế nào, thường chúng ta vẫn có khả năng làm việc đó bằng bộ não của mình.
+Hay nói cách khác, thậm chí nếu chúng ta không biết *cách lập trình một cái máy tính* để nhận dạng từ "Alexa", chính chúng ta lại *có khả năng* để nhận thức được từ "Alexa".
+Với khả năng này, chúng ta có thể thu thập một *tập dữ liệu* lớn các mẫu âm thanh kèm nhãn mà *có chứa* hoặc *không có chứa* hiệu lệnh đánh thức.
+Trong cách tiếp cận học máy, chúng ta không thiết kế một hệ thống *rõ ràng* để nhận dạng hiệu lệnh đánh thức.
+Thay vào đó, chúng ta định nghĩa ra một chương trình linh hoạt có những hành vi được xác định bởi những *tham số*.
+Sau đó chúng ta sử dụng tập dữ liệu để xác định tập hợp các tham số tốt nhất có thể, mà sẽ cải thiện được hiệu suất của chương trình thoả mãn một số yêu cầu về hiệu suất trong nhiệm vụ được giao.
 
 <!--
 You can think of the parameters as knobs that we can turn,
@@ -183,7 +254,10 @@ And the *meta-program* that uses our dataset
 to choose the parameters is called a *learning algorithm*.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể xem những tham số như là các núm quay mà ta có thể điều chỉnh, để thay đổi hành vi của chương trình.
+Khi đã cố định các tham số, chúng ta gọi chương trình này là một *mô hình*.
+Tập hợp của tất cả các chương trình khác nhau (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách thay đổi các tham số được gọi là một *nhóm* các mô hình.
+Và *siêu chương trình* mà sử dụng tập dữ liệu của chúng ta để chọn ra các tham số được gọi là *thuật toán học*.
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
 
@@ -267,7 +341,9 @@ We can "program" a cat detector by providing our machine learning system
 with many examples of cats and dogs, such as the images below:
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, thay vì tạo ra một chương trình nhận dạng từ đánh thức, ta tạo ra một chương trình có thể *học* cách nhận dạng các từ đánh thức, *khi được cho xem một tập lớn những ví dụ đã được gán nhãn*.
+Ta có thể gọi việc xác định hành vi của một chương trình bằng cách cho nó xem một tập dữ liệu là *lập trình với dữ liệu*.
+Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cung cấp cho hệ thống học máy rất nhiều mẫu ảnh chó và mèo, ví dụ như trong hình dưới đây:
 
 <!--
 | ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
@@ -275,7 +351,9 @@ with many examples of cats and dogs, such as the images below:
 |cat|cat|dog|dog|
 -->
 
-*dịch đoạn phía trên*
+| ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|mèo|mèo|chó|chó|
 
 <!--
 This way the detector will eventually learn to emit a very large positive number if it is a cat, a very large negative number if it is a dog,
@@ -283,7 +361,9 @@ and something closer to zero if it is not sure,
 and this barely scratches the surface of what ML can do.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này bộ phát hiện sẽ dần học cách trả về một số dương lớn nếu đó là một con mèo, hoặc một số âm lớn nếu đó là một con chó,
+hoặc một giá trị gần với không nếu nó không chắc chắn.
+Đấy mới chỉ là ví dụ nhỏ về những gì mà học máy có thể làm được.
 
 <!--
 Deep learning is just one among many popular methods
@@ -293,7 +373,9 @@ and not deep learning. To see why deep learning is important,
 we should pause for a moment to highlight a couple crucial points.
 -->
 
-*dịch đoạn phía trên*
+Học sâu chỉ là một trong nhiều phương pháp phổ biến để giải quyết những bài toán học máy.
+Tới giờ chúng ta mới chỉ nói tổng quát về học máy chứ chưa nói về học sâu.
+Để thấy được tại sao học sâu lại quan trọng, ta nên dừng lại một chút để làm rõ một vài điểm thiết yếu.
 
 <!--
 First, the problems that we have discussed thus far---learning
@@ -319,7 +401,14 @@ natural language processing, medical informatics, and other application areas,
 offering a unified set of tools for tackling diverse problems.
 -->
 
-*dịch đoạn phía trên*
+Thứ nhất, những vấn đề mà chúng ta đã thảo luận
+---học từ tín hiệu âm thanh thô, từ những giá trị điểm ảnh của tấm ảnh, hoặc dịch những câu có độ dài bất kỳ sang một ngôn ngữ khác---
+là những vấn đề học sâu có thể xử lý tốt còn học máy thì không.
+Mô hình sâu thực sự *sâu* theo nghĩa nó có thể học nhiều *tầng* tính toán.
+Những mô hình đa tầng (có thứ bậc) này có khả năng xử lý dữ liệu tri giác mức thấp theo cái cách mà những công cụ trước đây không thể.
+Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có thể cáng đáng.
+Thứ hai, bằng cách thay thế các kỹ thuật "tiền xử lý theo từng phân ngành", học sâu đã loại bỏ ranh giới giữa thị giác máy tính, nhận dạng tiếng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực khác.
+Học sâu cung cấp một tập hợp các công cụ xử lý những loại bài toán khác nhau.
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
@@ -2375,7 +2464,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
+* Vũ Hữu Tiệp
+* Sâm Thế Hải
+* Hoàng Trọng Tuấn
 
 <!-- Phần 2 -->
 *

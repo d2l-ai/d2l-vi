@@ -3,7 +3,7 @@
 # Installation
 -->
 
-# *dịch tiêu đề phía trên*
+# Cài đặt
 :label:`chap_installation`
 
 <!--
@@ -13,13 +13,13 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-*dịch đoạn phía trên*
+Để sẵn sàng cho những bài học thực hành, bạn cần một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
 -->
 
-## *dịch tiêu đề phía trên*
+## Cài đặt Miniconda
 
 <!--
 The simplest way to get going will be to install
@@ -30,7 +30,11 @@ and then execute the installation from the command line
 using `sh <FILENAME> -b`. For macOS users:
 -->
 
-*dịch đoạn phía trên*
+Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
+Phiên bản Python 3.x được khuyên dùng.
+Bạn có thể bỏ qua những bước sau đây nếu đã cài đặt conda.
+Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
+Với người dùng macOS:
 
 ```bash
 # The file name is subject to changes
@@ -42,7 +46,7 @@ sh Miniconda3-latest-MacOSX-x86_64.sh -b
 For Linux users:
 -->
 
-*dịch đoạn phía trên*
+Với người dùng Linux:
 
 ```bash
 # The file name is subject to changes
@@ -54,7 +58,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 Next, initialize the shell so we can run `conda` directly.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, khởi tạo shell để chạy trực tiếp lệnh `conda`.
 
 ```bash
 ~/miniconda3/bin/conda init
@@ -66,7 +70,8 @@ Now close and re-open your current shell. You should be able to create a new
 environment as following:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy đóng và mở lại shell hiện tại.
+Bạn đã có thể tạo một môi trường mới bằng lệnh sau:
 
 ```bash
 conda create --name d2l -y
@@ -77,7 +82,7 @@ conda create --name d2l -y
 ## Downloading the D2L Notebooks
 -->
 
-## *dịch tiêu đề phía trên*
+## Tải về notebook của D2L
 
 <!--
 Next, we need to download the code of this book. You can use the
@@ -85,7 +90,9 @@ Next, we need to download the code of this book. You can use the
 Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) available:
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
+Bạn có thể tải mã nguồn từ [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) và giải nén.
+Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
 
 ```bash
 mkdir d2l-en && cd d2l-en
@@ -99,7 +106,8 @@ Now we will want to activate the `d2l` environment and install `pip`.
 Enter `y` for the queries that follow this command.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
+Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
 
 ```bash
 conda activate d2l
@@ -115,7 +123,7 @@ conda install python=3.7 pip -y
 ## Installing MXNet and the `d2l` Package
 -->
 
-## *dịch tiêu đề phía trên*
+## Cài đặt MXNet và gói thư viện `d2l`
 
 <!--
 Before installing MXNet, please first check
@@ -127,7 +135,8 @@ proceed to :ref:`sec_gpu` for instructions
 to install a GPU-supported MXNet.
 -->
 
-*dịch đoạn phía trên*
+Trước khi cài đặt MXNet, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
+Nếu bạn đang cài đặt trên một máy chủ GPU, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
@@ -136,7 +145,8 @@ through the first few chapters but you will want
 to access GPUs before running larger models.
 -->
 
-*dịch đoạn phía trên*
+Ngược lại, bạn có thể cài đặt phiên bản chỉ sử dụng CPU.
+Phiên bản này cũng thừa đủ để có thể tiến hành các chương đầu tiên nhưng bạn sẽ cần sử dụng GPU để có thể chạy những mô hình lớn hơn.
 
 ```bash
 # For Windows users
@@ -152,7 +162,7 @@ We also install the `d2l` package that encapsulates frequently used
 functions and classes in this book.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng sẽ cài đặt gói thư viện `d2l` mà bao gồm các hàm và lớp thường xuyên được sử dụng trong cuốn sách này.
 
 ```bash
 pip install d2l==0.11.0
@@ -163,7 +173,7 @@ pip install d2l==0.11.0
 Once they are installed, we now open the Jupyter notebook by running:
 -->
 
-*dịch đoạn phía trên*
+Một khi đã cài đặt xong, ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
 
 ```bash
 jupyter notebook
@@ -177,20 +187,24 @@ before running the code of the book or updating MXNet or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
-*dịch đoạn phía trên*
+ Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
+Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
+Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
+Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
 
 <!--
 ## Upgrading to a New Version
 -->
 
-## *dịch tiêu đề phía trên*
+## Nâng cấp lên Phiên bản Mới
 
 <!--
 Both this book and MXNet are keeping improving. Please check a new version from time to time.
 -->
 
-*dịch đoạn phía trên*
+Cả cuốn sách này và MXNet đều đang tiếp tục được cải thiện.
+Thỉnh thoảng, hãy kiểm tra xem đã có phiên bản mới hay chưa.
 
 <!--
 1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
@@ -198,7 +212,9 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 3. For the CPU version, MXNet can be upgraded by `pip install -U --pre mxnet`.
 -->
 
-*dịch đoạn phía trên*
+1. Đường dẫn https://d2l.ai/d2l-en.zip luôn luôn trỏ đến phiên bản mới nhất.
+2. Để cập nhật gói thư viện `d2l` hãy sử dụng lệnh `pip install d2l --upgrade`.
+3. Đối với phiên bản CPU, MXNet có thể được cập nhật bằng lệnh `pip install -U --pre mxnet`.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
@@ -299,7 +315,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Phạm Hồng Vinh
+* Sâm Thế Hải
+* Nguyễn Cảnh Thướng
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 *

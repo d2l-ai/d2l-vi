@@ -4,7 +4,7 @@
 # Geometry and Linear Algebraic Operations
 -->
 
-# *dịch tiêu đề phía trên*
+# Các phép toán Hình Học và Đại Số Tuyến Tính
 :label:`sec_geometry-linear-algebric-ops`
 
 <!--
@@ -21,19 +21,30 @@ highlighting some geometric interpretations of linear algebra operations,
 and introducing a few fundamental concepts, including of eigenvalues and eigenvectors.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến
+tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
+Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu
+và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đựng đầy
+đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều
+cần thảo luận trong lĩnh vực này. Trong mục này, chúng ta sẽ đi sâu hơn, nhấn
+mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới
+thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
 
 <!--
 ## Geometry of Vectors
 -->
 
-## *dịch tiêu đề phía trên*
+## Ý nghĩa hình học của Vector
+
+<!--
 First, we need to discuss the two common geometric interpretations of vectors,
 as either points or directions in space.
 Fundamentally, a vector is a list of numbers such as the Python list below.
 -->
 
-*dịch đoạn phía trên*
+Trước hết, chúng ta cần thảo luận hai diễn giải hình học phổ biến của vector:
+điểm hoặc hướng trong không gian. Về cơ bản, một vector là một danh sách các
+số giống như danh sách trong Python dưới đây:
 
 ```{.python .input}
 v = [1, 7, 0, 1]
@@ -43,7 +54,7 @@ v = [1, 7, 0, 1]
 Mathematicians most often write this as either a *column* or *row* vector, which is to say either as
 -->
 
-*dịch đoạn phía trên*
+Các nhà toán học thường viết chúng dưới dạng một vector *cột* hoặc *hàng*, tức:
 
 $$
 \mathbf{x} = \begin{bmatrix}1\\7\\0\\1\end{bmatrix},
@@ -53,7 +64,7 @@ $$
 or
 -->
 
-*dịch đoạn phía trên*
+hoặc
 
 $$
 \mathbf{x}^\top = \begin{bmatrix}1 & 7 & 0 & 1\end{bmatrix}.
@@ -67,7 +78,21 @@ However, it can be beneficial to be flexible.
 Matrices are useful data structures: they allow us to organize data that have different modalities of variation. For example, rows in our matrix might correspond to different houses (data points), while columns might correspond to different attributes. This should sound familiar if you have ever used spreadsheet software or have read :numref:`sec_pandas`. Thus, although the default orientation of a single vector is a column vector, in a matrix that represents a tabular dataset, it is more conventional to treat each data point as a row vector in the matrix. And, as we will see in later chapters, this convention will enable common deep learning practices. For example, along the outermost axis of an `ndarray`, we can access or enumerate minibatches of data points, or just data points if no minibatch exists.
 -->
 
-*dịch đoạn phía trên*
+Những biểu diễn này thường có những cách diễn giải khác nhau. Các điểm dữ liệu
+được biểu diễn bằng các vector cột và các trọng số dùng trong các tổng có
+trọng số được biểu diễn bằng các vector hàng. Tuy nhiên, việc linh động sử
+dụng các cách biểu diễn này mang lại nhiều lợi ích. Ma trận là những
+cấu trúc dữ liệu hữu ích: chúng cho phép chúng ta tổ chức dữ liệu với nhiều
+biến thể khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
+(điểm dữ liệu) khác nhau, trong khi các cột có thể tương ứng với các thuộc tính
+khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các phần mềm dạng bảng
+(spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù chiều mặc
+định của một vector là một vector cột, trong một ma trận biểu diễn một tập dữ
+liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
+trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
+này phù hợp với cách triển khai các mô hình học sâu.
+Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số
+minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
@@ -82,13 +107,16 @@ the location of the points in space compared
 to a fixed reference called the *origin*.  This can be seen in :numref:`fig_grid`.
 -->
 
-*dịch đoạn phía trên*
+Cách thứ nhất để giải thích một vector là coi nó như một điểm trong không gian.
+Trong không gian hai hoặc ba chiều, chúng ta có thể biểu diễn các điểm này bằng
+việc sử dụng các thành phần của vector để định nghĩa vị trí của điểm trong
+không gian so với một điểm tham chiều được gọi là *gốc tọa độ*. Xem :numref:`fig_grid`.
 
 <!--
 ![An illustration of visualizing vectors as points in the plane.  The first component of the vector gives the $x$-coordinate, the second component gives the $y$-coordinate.  Higher dimensions are analogous, although much harder to visualize.](../img/GridPoints.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/GridPoints.svg)
+![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tọa độ $x$, thành phần thứ hai là tọa độ $y$. Tương tự với số chiều cao hơn, mặc dù khó hình dung hơn](../img/GridPoints.svg)
 :label:`fig_grid`
 
 <!--
@@ -100,7 +128,16 @@ as collections of points in space and picturing the task
 as discovering how to separate two distinct clusters of points.
 -->
 
-*dịch đoạn phía trên*
+Góc nhìn hình học này cho phép chúng ta xem xét bài toán ở một mức trừu tượng hơn.
+Không giống như khi đối mặt với các bài toán khó hình dung như phân loại ảnh chó mèo, chúng ta có thể bắt đầu xem xét các bài toán này một cách trừu tượng hơn như là
+một tập hợp của các điểm trong không gian. Việc phân loại ảnh chó mèo có thể coi
+như việc tìm ra cách phân biệt hai nhóm điểm riêng biệt trong không gian.
+
+<!-- Nhóm tác giả không phải là người bản xứ nói tiếng Anh. Thực tế, bản tiếng
+Anh này được dịch từ bản tiếng Trung rất nổi tiếng ở Trung Quốc. Khi dịch, tôi
+nghĩ chúng ta có thể sửa đổi câu văn đi một chút cho phù hợp với tiếng Việt.
+Đoạn này sẽ không hiển thị trên web vì nó đã được comment.
+-->
 
 <!--
 In parallel, there is a second point of view
@@ -112,13 +149,17 @@ to take $2$ steps to the right and $3$ steps up.
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
-*dịch đoạn phía trên*
+Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian. Chúng ta không những
+có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
+và bên trên $3$ đơn vị so với gốc toạ độ, chúng ta cũng có thể coi nó thể hiện
+một hướng -- hướng $2$ bước về bên phải và $3$ bước lên trên. Theo cách này,
+ta coi tất cả các vector trong hình :numref:`fig_arrow` là như nhau.
 
 <!--
 ![Any vector can be visualized as an arrow in the plane.  In this case, every vector drawn is a representation of the vector $(2,3)$.](../img/ParVec.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ParVec.svg)
+![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector trong hình đều biểu diễn vector $(2,3)$.](../img/ParVec.svg)
 :label:`fig_arrow`
 
 <!--
@@ -128,13 +169,15 @@ In particular, we follow the directions given by one vector,
 and then follow the directions given by the other, as is seen in :numref:`fig_add-vec`.
 -->
 
-*dịch đoạn phía trên*
+Một trong những lợi ý của việc chuyển cách hiểu này là phép cộng vector có thể được
+hiểu theo nghĩa hình học. Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
+sau đó đi theo một hướng cho bởi một vector khác, như được cho trong :numref:`fig_add-vec`.
 
 <!--
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/VecAdd.svg)
+![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau đó đi theo vector kia.](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
@@ -148,33 +191,36 @@ we see that the vector $\mathbf{u}-\mathbf{v}$ is the direction
 that takes us from the point $\mathbf{u}$ to the point $\mathbf{v}$.
 -->
 
-*dịch đoạn phía trên*
+Hiệu của hai vector có một cách diễn giải tương tự.
+Bằng cách biểu diễn $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
+ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{u}$ tới
+điểm $\mathbf{v}$.
 
 
 <!--
 ## Dot Products and Angles
 -->
 
-## *dịch tiêu đề phía trên*
+## Tích vô hướng và Góc
+
+<!--
 As we saw in :numref:`sec_linear-algebra`,
 if we take two column vectors say $\mathbf{u}$ and $\mathbf{v}$,
 we can form their dot product by computing:
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy trong :numref:`sec_linear-algebra`, tích vô hướng của hai vector cột
+$\mathbf{u}$ và $\mathbf{v}$ có thể được tính bởi:
 
 $$\mathbf{u}^\top\mathbf{v} = \sum_i u_i\cdot v_i.$$
 :eqlabel:`eq_dot_def`
--->
-
-*dịch đoạn phía trên*
 
 <!--
 Because :eqref:`eq_dot_def` is symmetric, we will mirror the notation
 of classical multiplication and write
 -->
 
-*dịch đoạn phía trên*
+Vì biểu thức :eqref:`eq_dot_def` đối xứng, chúng ta có thể viết:
 
 $$
 \mathbf{u}\cdot\mathbf{v} = \mathbf{u}^\top\mathbf{v} = \mathbf{v}^\top\mathbf{u},
@@ -184,26 +230,27 @@ $$
 to highlight the fact that exchanging the order of the vectors will yield the same answer.
 -->
 
-*dịch đoạn phía trên*
+để nhấn mạnh rằng phép đổi chỗ hai vector sẽ cho kết quả như nhau.
 
 <!--
 The dot product :eqref:`eq_dot_def` also admits a geometric interpretation: it is closely related to the angle between two vectors.  Consider the angle shown in :numref:`fig_angle`.
 -->
 
-*dịch đoạn phía trên*
+Tích vô hướng :eqref:`eq_dot_def` cũng có diễn giải hình học: nó liên quan
+mật thiết tới góc giữa hai vector. Xem góc hiển thị trong :numref:`fig_angle`.
 
 <!--
 ![Between any two vectors in the plane there is a well defined angle $\theta$.  We will see this angle is intimately tied to the dot product.](../img/VecAngle.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/VecAngle.svg)
+![Có một định nghĩa về góc ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg)
 :label:`fig_angle`
 
 <!--
 To start, let's consider two specific vectors:
 -->
 
-*dịch đoạn phía trên*
+Xét hai vector:
 
 $$
 \mathbf{v} = (r,0) \; \text{and} \; \mathbf{w} = (s\cos(\theta), s \sin(\theta)).
@@ -215,7 +262,9 @@ and the vector $\mathbf{w}$ is of length $s$ and at angle $\theta$ with the $x$-
 If we compute the dot product of these two vectors, we see that
 -->
 
-*dịch đoạn phía trên*
+Vector $\mathbf{v}$ có độ dài $r$ và song song với trục $x$, vector $\mathbf{w}$
+có độ dài $s$ và tạo một góc $\theta$ với trục $x$. Nếu tính tích vô hướng
+của hai vector này, ta sẽ thấy rằng
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
 
@@ -229,7 +278,7 @@ $$
 With some simple algebraic manipulation, we can rearrange terms to obtain
 -->
 
-*dịch đoạn phía trên*
+Với một vài biến đổi đơn giản, chúng ta có thể sắp xếp lại các thành phần để được
 
 $$
 \theta = \arccos\left(\frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}\right).
@@ -245,26 +294,28 @@ Indeed, for any two vectors $\mathbf{v}$ and $\mathbf{w}$,
 the angle between the two vectors is
 -->
 
-*dịch đoạn phía trên*
+Một cách ngắn gọn, với hai vector cụ thể này,
+tích vô hướng kết hợp với chuẩn thể hiện góc giữa hai vector. Việc này cũng đúng trong trường hợp tổng quát.
+Ta sẽ không viết biểu diễn ở đây, tuy nhiên, nếu viết $\|\mathbf{v} - \mathbf{w}\|^2$
+bằng hai cách: cách thứ nhất với tích vô hướng, và cách thứ hai sử dụng công thức tính cos,
+ta có thể thấy được quan hệ giữa chúng.
+Thật vậy, với hai vector $\mathbf{v}$ và $\mathbf{w}$ bất kỳ, góc giữa chúng là
 
 $$\theta = \arccos\left(\frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}\right).$$
 :eqlabel:`eq_angle_forumla`
--->
-
-*dịch đoạn phía trên*
 
 <!--
 This is a nice result since nothing in the computation references two-dimensions.
 Indeed, we can use this in three or three million dimensions without issue.
 -->
 
-*dịch đoạn phía trên*
+Kết quả này tổng quát cho không gian nhiều chiều vì nó không sử dụng điều gì đặc biệt trong không gian hai chiều.
 
 <!--
 As a simple example, let's see how to compute the angle between a pair of vectors:
 -->
 
-*dịch đoạn phía trên*
+Xét ví dụ đơn giản tính góc giữa cặp vector:
 
 ```{.python .input}
 %matplotlib inline
@@ -290,7 +341,13 @@ and two vectors are orthogonal if and only if $\mathbf{v}\cdot\mathbf{w} = 0$.
 This will prove to be a helpful formula when understanding objects geometrically.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ không sử dụng đoạn mã này bây giờ, nhưng sẽ hữu ích để biết rằng nếu
+góc giữa hai vector là $\pi/2$
+(hay $90^{\circ}$) thì hai vector đó được gọi là *trực giao*. Xem xét kỹ biểu
+thức trên, ta thấy rằng việc này xảy ra khi $\theta = \pi/2$,
+tức $\cos(\theta) = 0$. Điều này chứng tỏ tích vô hướng phải bằng không, và hai
+vector là trực giao nếu và chỉ nếu $\mathbf{v}\cdot\mathbf{w} = 0$. Đẳng thức này
+sẽ hữu ích khi xem xét các đối tượng dưới con mắt hình học.
 
 <!--
 It is reasonable to ask: why is computing the angle useful?
@@ -310,7 +367,18 @@ keeps the same direction and just changes the length.
 The angle considers the darker image identical.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tự hỏi tại sao tính góc lại hữu ích?
+Câu trả lời nằm ở tính bất biến ta mong đợi từ dữ liệu. Xét một bức ảnh,
+và một bức ảnh thứ hai giống hệt nhưng với các điểm ảnh với độ sáng chỉ bằng $10\%$
+ảnh ban đầu. Giá trị của từng điểm ảnh trong ảnh thứ hai nhìn chung khác xa
+so với ảnh ban đầu. Bởi vậy, nếu tính khoảng cách giữa ảnh ban đầu và ảnh tối hơn,
+khoảng cách có thể rất lớn. Tuy nhiên, trong hầu hết các ứng dụng ML, *nội dung*
+của hai bức ảnh là như nhau -- nó vẫn là một bức ảnh của một con mèo đối với
+một bộ phân loại chó mèo. Tuy nhiên, nếu xem xét góc giữa hai ảnh, không khó
+để thấy rằng với bất kỳ vector $\mathbf{v}$, góc giữa $\mathbf{v}$ và $0.1\cdot\mathbf{v}$
+bằng không. Việc này tương ứng với việc nhân vector với một số (dương) giữ
+nguyên hướng và chỉ thay đổi độ dài của vector đó. Khi xét tới góc, hai bức
+ảnh được coi là như nhau.
 
 <!--
 Examples like this are everywhere.
@@ -320,7 +388,11 @@ For some encoding (such as counting the number of occurrences of words in some v
 so again we can use the angle.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ tương tự có thể tìm thấy bất cứ đâu. Trong văn bản, chúng ta có thể
+muốn chủ đề được thảo luận không thay đổi nếu chúng ta viết văn bản dài gấp
+hai nhưng nói về cùng một thứ. Trong một số cách mã hóa (như đếm số lượng xuất hiện
+của một từ trong từ điển), việc này tương đương với nhân đôi vector mã hóa
+của văn bản, bởi vậy chúng ta lại có thể sử dụng góc.
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
@@ -330,11 +402,18 @@ so again we can use the angle.
 ### Cosine Similarity
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ tương tự cosin
+
+<!--
 In ML contexts where the angle is employed
 to measure the closeness of two vectors,
 practitioners adopt the term *cosine similarity*
 to refer to the portion
+-->
+
+Trong văn cảnh học máy với góc được dùng để chỉ khoảng cách giữa hai vector,
+người làm ML sử dụng thuật ngữ *độ tương tự cosin* để chỉ đại lượng
+
 $$
 \cos(\theta) = \frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}.
 $$
@@ -349,14 +428,16 @@ are sampled randomly with mean $0$,
 their cosine will nearly always be close to $0$.
 -->
 
-*dịch đoạn phía trên*
-
+Hàm cosin lấy giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá
+trị nhỏ nhất bằng $-1$ khi chúng cùng phương khác hướng, và $0$ khi hai vector
+trực giao. Chú ý rằng nếu các thành phần của hai vector nhiều chiều được lấy
+mẫu ngẫu nhiên với kỳ vọng $0$, cosin giữa chúng sẽ luôn gần với $0$.
 
 <!--
 ## Hyperplanes
 -->
 
-## *dịch tiêu đề phía trên*
+## Siêu phẳng
 
 <!--
 In addition to working with vectors, another key object
@@ -367,13 +448,24 @@ In an $n$-dimensional vector space, a hyperplane has $d-1$ dimensions
 and divides the space into two half-spaces.
 -->
 
-*dịch đoạn phía trên*
+Ngoài việc làm việc với vector, một khái niệm quan trọng khác bạn phải nắm vững
+khi đi sâu vào đại số tuyến tính là *siêu phẳng*, một khái niệm tổng quát của
+đường thẳng (trong không gian hai chiều) hoặc một mặt phẳng (trong không gian
+ba chiều). Trong một không gian vector $d$ chiều, một siêu phẳng có $d-1$ chiều
+và chia không gian thành hai nửa không gian.
 
 <!--
 Let's start with an example.
 Suppose that we have a column vector $\mathbf{w}=[2,1]^\top$. We want to know, "what are the points $\mathbf{v}$ with $\mathbf{w}\cdot\mathbf{v} = 1$?"
 By recalling the connection between dot products and angles above :eqref:`eq_angle_forumla`,
 we can see that this is equivalent to
+-->
+
+Xét ví dụ sau. Giả sử ta có một vector cột $\mathbf{w}=[2,1]^\top$. Ta muốn
+biết "tập hợp những điểm $\mathbf{v}$ sao cho $\mathbf{w}\cdot\mathbf{v} = 1$?"
+Sử dụng mối quan hệ giữa tích vô hướng và góc ở :eqref:`eq_angle_forumla` ở trên,
+ta có thể thấy điều này tương đương với
+
 $$
 \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta) = 1 \; \iff \; \|\mathbf{v}\|\cos(\theta) = \frac{1}{\|\mathbf{w}\|} = \frac{1}{\sqrt{5}}.
 $$
@@ -382,7 +474,8 @@ $$
 ![Recalling trigonometry, we see the formula $\|\mathbf{v}\|\cos(\theta)$ is the length of the projection of the vector $\mathbf{v}$ onto the direction of $\mathbf{w}$](../img/ProjVec.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ProjVec.svg)
+![Nhắc lại trong lượng giác, chúng ta coi $\|\mathbf{v}\|\cos(\theta)$ là độ
+dài hình chiếu của vector $\mathbf{v}$ lên hướng của vector $\mathbf{w}$](../img/ProjVec.svg)
 :label:`fig_vector-project`
 
 <!--
@@ -396,7 +489,11 @@ If we wanted, we could find the equation for this line
 and see that it is $2x + y = 1$ or equivalently $y = 1 - 2x$.
 -->
 
-*dịch đoạn phía trên*
+Nếu xem xét ý nghĩa hình học của biểu diễn này, chúng ta thấy rằng việc này
+tương đương với việc độ dài hình chiếu của $\mathbf{v}$ lên hướng của
+$\mathbf{w}$ chính là $1/\|\mathbf{w}\|$ như được biểu diễn trong :numref:`fig_vector-project`. Tập hợp các điểm thỏa mãn điều kiện này là một đường
+thẳng vuông góc với vector $\mathbf{w}$. Ta có thể tìm được phương trình của
+đường thẳng này là $2x + y = 1$ hoặc $y = 1 - 2x$.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
@@ -413,13 +510,20 @@ where all the points on one side have dot product below a threshold,
 and the other side above as we see in :numref:`fig_space-division`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, nếu tự hỏi về tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
+hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường
+hợp mà hình chiếu của chúng lên $\mathbf{w}$ lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$.
+Vì thế, hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
+thể cắt mặt phẳng thành hai nửa: một nửa chứa tất cả điểm có tích vô
+hướng nhỏ hơn một mức ngưỡng và nửa còn lại chứa những điểm có tích vô hướng lớn
+hơn mức ngưỡng đó. Xem hình :numref:`fig_space-division`.
 
 <!--
 ![If we now consider the inequality version of the expression, we see that our hyperplane (in this case: just a line) separates the space into two halves.](../img/SpaceDivision.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/SpaceDivision.svg)
+![Nếu nhìn từ dạng bất phương trình, ta thấy rằng siêu phẳng (chỉ là một đường thẳng
+trong trường hợp này) chia không gian ra thành hai nửa.](../img/SpaceDivision.svg)
 :label:`fig_space-division`
 
 <!--
@@ -430,13 +534,16 @@ we obtain a plane at right angles to the given vector $\mathbf{w}$.
 The two inequalities again define the two sides of the plane as is shown in :numref:`fig_higher-division`.
 -->
 
-*dịch đoạn phía trên*
+Tương tự với không gian đa chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
+các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một
+mặt phẳng vuông góc với vectơ cho trước $\mathbf{w}$. Hai bất phương trình một lần nữa
+định nghĩa hai phía của mặt bẳng như trong hình :numref:`fig_higher-division`.
 
 <!--
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất kì không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
@@ -454,7 +561,16 @@ to be to find a non-linear embedding such that the target classes
 can be separated cleanly by hyperplanes.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù không thể minh hoạ trong không gian nhiều chiều hơn, ta vẫn có thể tổng
+quát điều này cho không gian mười, một trăm hay một tỷ chiều. Việc này thường
+xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể hiểu các
+mô hình phân loại tuyến tính trong :numref:`sec_softmax` cũng giống như những phương pháp
+đi tìm siêu phẳng để phân chia các lớp mục tiêu khác nhau. Ở trường hợp này, những
+siêu phẳng như trên thường được gọi là *mặt phẳng quyết định*. Phần lớn các mô hình
+phân loại tìm được qua học sâu đều kết thúc bởi một tầng tuyến tính và theo sau là một tầng
+softmax, bởi vậy ta có thể diễn giải ý nghĩa của mạng nơ-ron sâu giống như việc tìm một
+embedding phi tuyến sao cho các lớp mục tiêu có thể được phân chia bởi các
+siêu phẳng một cách gọn gàng.
 
 <!--
 To give a hand-built example, notice that we can produce a reasonable model
@@ -464,7 +580,10 @@ by just taking the vector between their means to define the decision plane
 and eyeball a crude threshold.  First we will load the data and compute the averages.
 -->
 
-*dịch đoạn phía trên*
+Xét ví dụ sau. Chú ý rằng, ta có thể tạo một mô hình đủ tốt để phân loại
+những bức ảnh nhỏ xíu có áo thun và quần từ tập dữ liệu Fashion MNIST (Xem :numref:`sec_fashion_mnist`) bằng cách lấy vector giữa điểm trung bình của mỗi lớp để
+định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên, chúng
+ta tải dữ liệu và tính hai ảnh trung bình:
 
 ```{.python .input}
 # Load in the dataset
@@ -487,7 +606,9 @@ ave_1 = np.mean(X_train_1, axis=0)
 It can be informative to examine these averages in detail, so let's plot what they look like.  In this case, we see that the average indeed resembles a blurry image of a t-shirt.
 -->
 
-*dịch đoạn phía trên*
+Để có cái nhìn rõ hơn, ta có thể biểu diễn các ảnh trung bình này. Trong trường
+hợp này, chúng ta thấy rằng ảnh trung bình của áo thun cũng ở dạng
+một phiên bản mờ của một chiếc áo thun.
 
 ```{.python .input}
 # Plot average t-shirt
@@ -500,7 +621,8 @@ d2l.plt.show()
 In the second case, we again see that the average resembles a blurry image of trousers.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình có dạng
+một ảnh phiên bản mờ một chiếc quần dài.
 
 ```{.python .input}
 # Plot average trousers
@@ -512,7 +634,8 @@ d2l.plt.show()
 In a fully machine learned solution, we would learn the threshold from the dataset.  In this case, I simply eyeballed a threshold that looked good on the training data by hand.
 -->
 
-*dịch đoạn phía trên*
+Trong lời giải học máy hoàn chỉnh, ta sẽ học được mức ngưỡng từ tập dữ liệu. Trong trường
+hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng mà cho kết quả khá tốt trên tập huấn luyện.
 
 ```{.python .input}
 # Print test set accuracy with eyeballed threshold
@@ -531,7 +654,7 @@ np.mean(predictions.astype(y_test.dtype) == y_test, dtype=np.float64)
 ## Geometry of Linear Transformations
 -->
 
-## *dịch tiêu đề phía trên*
+## Ý nghĩa hình học của các Phép biến đổi Tuyến tính
 
 <!--
 Through :numref:`sec_linear-algebra` and the above discussions,
@@ -543,13 +666,19 @@ and is beyond the scope of this appendix.
 However, we can start building up intuition in two dimensions.
 -->
 
-*dịch đoạn phía trên*
+Thông qua :numref:`sec_linear-algebra` và các thảo luận phía trên, ta có một cái
+nhìn trọn vẹn về ý nghĩa hình học của vector, độ dài, và góc. Tuy nhiên, có một
+khái niệm quan trọng chúng ta đã bỏ qua, đó là ý nghĩa hình học của
+các phép biến đổi tuyến tính thể hiện bởi các ma trận. Hiểu một cách đầy đủ cách
+ma trận được dùng để biến đổi dữ liệu giữa hai không gian nhiều chiều khác nhau
+cần một lượng thực hành đáng kể và nằm ngoài phạm vi của phần phụ lục này. Tuy nhiên,
+chúng ta có thể xây dựng ý niệm trong không gian hai chiều.
 
 <!--
 Suppose that we have some matrix:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một ma trận:
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -563,7 +692,8 @@ $\mathbf{v} = [x, y]^\top$,
 we multiply and see that
 -->
 
-*dịch đoạn phía trên*
+Nếu muốn áp dụng ma trận này vào một vector bất kỳ
+$\mathbf{v} = [x, y]^\top$, ta thực hiện phép nhân và thấy rằng
 
 $$
 \begin{aligned}
@@ -590,7 +720,14 @@ where we can write any vector in our space
 as a weighted sum of these *basis vectors*.
 -->
 
-*dịch đoạn phía trên*
+Thoạt nhìn đây là một phép tính khá kì lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
+Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
+thông qua cách nó biến đổi *hai vector cụ thể*:
+$[1,0]^\top$ và $[0,1]^\top$.
+Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
+(tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
+(tính toán cho chỉ hai vector).
+Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa  là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
@@ -600,7 +737,7 @@ as a weighted sum of these *basis vectors*.
 Let's draw what happens when we use the specific matrix
 -->
 
-*dịch đoạn phía trên*
+Cùng xét ví dụ với một ma trận cụ thể
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -621,13 +758,18 @@ can skew, rotate, and scale the grid,
 but the grid structure must remain as you see in :numref:`fig_grid-transform`.
 -->
 
-*dịch đoạn phía trên*
+Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng $2\cdot[1,0]^\top + -1\cdot[0,1]^\top$,
+và bởi vậy ta biết ma trận $A$ sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$.
+Bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm xiên, xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ nguyên như trong :numref:`fig_grid-transform`.
+
+<!-- câu này mấy bác Tàu viết quá rườm rà, mình sẽ xem lại và tách thành nhiều câu -->
 
 <!--
 ![The matrix $\mathbf{A}$ acting on the given basis vectors.  Notice how the entire grid is transported along with it.](../img/GridTransform.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/GridTransform.svg)
+![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc
+toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg)
 :label:`fig_grid-transform`
 
 <!--
@@ -638,13 +780,14 @@ All they can do is take the original coordinates on our space
 and skew, rotate, and scale them.
 -->
 
-*dịch đoạn phía trên*
+Đây là điểm quan trọng nhất để hình dung các phép biến đổi tuyến tính thông qua ma trận.
+Ma trận không thể làm biến dạng một vài phần của không gian khác với các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm xiên, xoay và co giãn chúng.
 
 <!--
 Some distortions can be severe.  For instance the matrix
 -->
 
-*dịch đoạn phía trên*
+Một vài phép biển đổi có thể rất kỳ dị. Chẳng hạn ma trận
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -662,7 +805,10 @@ because we will never know where the vector $[1,2]^\top$ came from---was
 it $[1,1]^\top$ or $[0, -1]^\top$?
 -->
 
-*dịch đoạn phía trên*
+nén toàn bộ mặt phẳng hai chiều thành một đường thẳng.
+Xác định và làm việc với các phép biến đổi này là chủ đề của phần sau, nhưng nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này cơ bản khác so với các phép biến đổi ở trên.
+Ví dụ, kết quả từ ma trận $\mathbf{A}$ có thể bị "bẻ cong lại" thành dạng ban đầu.
+Kết quả từ ma trận $\mathbf{B}$ thì không thể vì sẽ không thể biết vector $[1,2]^\top$ đến từ đâu -- từ $[1,1]^\top$ hay $[0, -1]^\top$?
 
 <!--
 While this picture was for a $2\times2$ matrix,
@@ -673,7 +819,8 @@ we can start to get a feeling for how the matrix multiplication
 distorts the entire space in whatever dimension space we are dealing with.
 -->
 
-*dịch đoạn phía trên*
+Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho ma trận bậc cao hơn.
+Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem ma trận đó biến đổi các vector này như thế nào, ta có thể phần nào hình dung được phép nhân ma trận đã làm biến dạng toàn bộ không gian đa chiều như thế nào.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
@@ -683,13 +830,12 @@ distorts the entire space in whatever dimension space we are dealing with.
 ## Linear Dependence
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Phụ thuộc Tuyến tính
 <!--
 Consider again the matrix
 -->
 
-*dịch đoạn phía trên*
+Quay lại với ma trận
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -713,7 +859,14 @@ means that we can write any linear combination of those two columns
 entirely in terms of say $\mathbf{b}_2$ since
 -->
 
-*dịch đoạn phía trên*
+Ma trận này nén toàn bộ mặt phẳng xuống thành một đường thằng $y = 2x$.
+Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu chỉ nhìn vào ma trận?
+Câu trả lời là có thể.
+Đặt $\mathbf{b}_1 = [2,4]^\top$ và $\mathbf{b}_2 = [-1, -2]^\top$
+là hai cột của $\mathbf{B}$.
+Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi bằng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$.
+Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
+Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này mà chỉ dùng $\mathbf{b}_2$:
 
 $$
 a_1\mathbf{b}_1 + a_2\mathbf{b}_2 = -2a_1\mathbf{b}_2 + a_2\mathbf{b}_2 = (a_2-2a_1)\mathbf{b}_2.
@@ -730,7 +883,9 @@ $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$ captures this.
 To make this more symmetrical between the two vectors, we will write this as
 -->
 
-*dịch đoạn phía trên*
+Điều này chỉ ra rằng một trong hai cột là dư thừa vì nó không định nghĩa một hướng độc nhất trong không gian.
+Việc này cũng không quá bất ngờ bởi vì ma trận này đã biến toàn bộ mặt phẳng xuống thành một đường thẳng.
+Hơn nữa, điều này có thể được nhận thấy do hai cột trên phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng
 
 $$
 \mathbf{b}_1  + 2\cdot\mathbf{b}_2 = 0.
@@ -742,7 +897,7 @@ $\mathbf{v}_1, \ldots \mathbf{v}_k$ are *linearly dependent*
 if there exist coefficients $a_1, \ldots, a_k$ *not all equal to zero* so that
 -->
 
-*dịch đoạn phía trên*
+Tổng quát, ta sẽ nói rằng: một tập hợp các vector $\mathbf{v}_1, \ldots \mathbf{v}_k$ là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k$ *không đồng thời bằng không* sao cho
 
 $$
 \sum_{i=1}^k a_i\mathbf{v_i} = 0.
@@ -760,7 +915,10 @@ If the columns of a matrix are linearly independent,
 no compression occurs and the operation can be undone.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta có thể biểu diễn một vector dưới dạng một tổ hợp nào đó của các vector khác, điều này khiến cho sự tồn tại của nó trở nên dư thừa.
+Bởi vậy, sự phụ thuộc tuyến tính giữa các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang làm giảm số chiều không gian.
+Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
+Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể đảo ngược (khả nghịch) được.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
@@ -1198,9 +1356,9 @@ $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
 
-<!-- =================== Kết thúc dịch Phần 13 ==================== -->
+<!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
-<!-- =================== Bắt đầu dịch Phần 14 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
 
 <!--
 ### Common Examples from Linear Algebra
@@ -1313,9 +1471,9 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
-<!-- =================== Kết thúc dịch Phần 14 ==================== -->
+<!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
-<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 16 ==================== -->
 
 <!--
 ## Summary
@@ -1446,7 +1604,7 @@ $$
 
 ![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
 
-<!-- =================== Kết thúc dịch Phần 15 ==================== -->
+<!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -1462,10 +1620,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
-*
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
@@ -1477,13 +1635,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Hoàng Trọng Tuấn
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 7 -->
-*
+* Nguyễn Xuân Tú
 
 <!-- Phần 8 -->
-*
+* Phạm Hồng Vinh
 
 <!-- Phần 9 -->
 *
@@ -1504,4 +1663,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 15 -->
+*
+
+<!-- Phần 16 -->
 *

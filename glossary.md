@@ -71,6 +71,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
+| embedding           | embedding                                                |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
 | error rate          | tỉ lệ lỗi                                                      |                       |
@@ -80,13 +81,15 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
-| English        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|----------------|----------------------------------------------------------------|---------------|
-| F1 score       | chỉ số F1                                                      |               |
-| false negative | âm tính giả                                                    |               |
-| false positive | dương tính giả                                                 |               |
-| feature        | đặc trưng                                                      |               |
-| fit            | fit                                                            |               |
+| English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|-----------------|----------------------------------------------------------------|---------------|
+| F1 score        | chỉ số F1                                                      |               |
+| false negative  | âm tính giả                                                    |               |
+| false positive  | dương tính giả                                                 |               |
+| feature         | đặc trưng                                                      |               |
+| fit             | khớp                                                           |               |
+| first principle | định đề cơ bản                                                 |               |
+| functional anaylsis | giải tích hàm                                              |               |
 
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
@@ -116,6 +119,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | learning curve      | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
 | learning algorithm  | thuật toán học                                                 |                         |
 | linear algebra      | đại số tuyến tính                                              |                         |
+| linear dependence   | phụ thuộc tuyến tính                                           |                         |
+| linear independence | độc lâp tuyến tính                                             |                         |
 | linear regression   | hồi quy tuyến tính                                             |                         |
 | logistic regression | hồi quy logistic                                               |                         |
 
@@ -144,11 +149,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
-| overfit           | overfit                                                        | http://bit.ly/2BvfPYA |
+| overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA |
 
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
+| pattern recognition     | nhận dạng mẫu                                            |                       |
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
 | plateau (động từ)       | nằm ngang                                                      |                       |
@@ -189,6 +195,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
+| transcribe               | phiên thoại                                                    |               |
+| transcription            | bản ghi thoại                                                  |               |
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
@@ -197,7 +205,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
 |------------------|----------------------------------------------------------------|-------------------------|
 | unavoidable bias | độ chệch không tránh được                                      |                         |
-| underfit         | underfit                                                       | http://bit.ly/2BvfPYA |
+| underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
