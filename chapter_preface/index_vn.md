@@ -416,22 +416,21 @@ chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướn
 ### Content and Structure
 -->
 
-### *dịch tiêu đề phía trên*
+### Nội dung và Bố cục
 
 <!--
 The book can be roughly divided into three parts,
 which are presented by different colors in :numref:`fig_book_org`:
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách này có thể được chia thành ba phần, với các phần được thể hiện bởi những màu khác nhau trong :numref:`fig_book_org`:
 
 <!--
 ![Book structure](../img/book-org.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/book-org.svg)
+![Bố cục cuốn sách](../img/book-org.svg)
 :label:`fig_book_org`
-
 
 <!--
 * The first part covers basics and preliminaries.
@@ -446,7 +445,13 @@ cover the most basic concepts and techniques of deep learning,
 such as linear regression, multilayer perceptrons and regularization.
 -->
 
-*dịch đoạn phía trên*
+* Phần đầu cuốn sách trình bày các kiến thức cơ bản và những việc cần chuẩn bị sơ bộ. 
+:numref:`chap_introduction` giới thiệu về học sâu.
+Sau đó, qua :numref:`chap_preliminaries`, chúng tôi nhanh chóng trang bị cho bạn những
+kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
+áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và xác suất.
+:numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
+ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và điều chuẩn.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -467,7 +472,14 @@ These sections will get you up to speed on the basic tools
 behind most modern applications of deep learning.
 -->
 
-*dịch đoạn phía trên*
+* Năm chương tiếp theo tập trung vào những kỹ thuật học sâu hiện đại.
+:numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu
+và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
+nơ-ron tích chập (Convolutional neural networks/CNNs), một công cụ mạnh mẽ đang là nền tảng của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp đến, 
+trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng nơ-ron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
+ Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật cơ chế chú ý (attention mechanisms), một kỹ thuật
+gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên. Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản
+đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
 
 <!--
 * Part three discusses scalability, efficiency, and applications.
@@ -481,8 +493,13 @@ major applications of deep learning in computer vision
 and natural language processing, respectively.
 -->
 
-*dịch đoạn phía trên*
-
+* Phần ba thảo luận quy mô mở rộng, hiệu quả và ứng dụng.
+Đầu tiên, trong :numref:`chap_optimization`,
+chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
+Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
+chất lượng tính toán của mã nguồn học sâu.
+Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của
+học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
@@ -795,7 +812,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
-*
+* Ngô Thế Anh Khoa
 
 <!-- Phần 5 -->
 *
