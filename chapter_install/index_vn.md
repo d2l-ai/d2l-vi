@@ -224,7 +224,7 @@ Thỉnh thoảng, hãy kiểm tra xem đã có phiên bản mới hay chưa.
 ## GPU Support
 -->
 
-## *dịch tiêu đề phía trên*
+## Hỗ trợ GPU
 :label:`sec_gpu`
 
 <!--
@@ -237,7 +237,10 @@ If you have installed the CPU-only version,
 you may need to remove it first by running:
 -->
 
-*dịch đoạn phía trên*
+Phiên bản MXNet mặc định được cài đặt không hỗ trợ GPU để đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
+Một phần của cuốn sách này yêu cầu hoặc khuyến khích chạy trên GPU.
+Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads), thì bạn nên cài đặt bản MXNet có hỗ trợ GPU.
+Trong trường hợp bạn đã cài đặt phiên bản dành riêng cho CPU, bạn có thể cần xoá nó trước bằng cách chạy lệnh:
 
 ```bash
 pip uninstall mxnet
@@ -252,13 +255,15 @@ then you can install MXNet
 with the following command:
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta cần tìm phiên bản CUDA mà bạn đã cài đặt.
+Bạn có thể kiểm tra thông qua lệnh `nvcc --version` hoặc `cat /usr/local/cuda/version.txt`.
+Giả sử, bạn đã cài đặt CUDA 10.1, bạn có thể cài đặt MXNet với lệnh sau:
 
 ```bash
-# For Windows users
+# Dành cho người dùng Windows
 pip install mxnet-cu101==1.6.0b20190926
 
-# For Linux and macOS users
+# Dành cho người dùng Linux và macOS
 pip install mxnet-cu101==1.6.0b20191122
 ```
 
@@ -271,33 +276,35 @@ e.g., `cu100` for CUDA 10.0 and `cu90` for CUDA 9.0.
 You can find all available MXNet versions via `pip search mxnet`.
 -->
 
-*dịch đoạn phía trên*
+Tương tự phiên bản CPU, MXNet hỗ trợ GPU có thể được nâng cấp bằng lệnh `pip install -U --pre mxnet-cu101`.
+Bạn có thể thay đổi các chữ số cuối theo phiên bản CUDA của bạn, ví dụ, `cu100` cho CUDA phiên bản 10.0 và `cu90` cho CUDA phiên bản 9.0.
+Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông qua lệnh `pip search mxnet`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Download the code for the book and install the runtime environment.
 -->
 
-*dịch đoạn phía trên*
+1. Tải xuống mã nguồn dành cho cuốn sách và cài đặt môi trường chạy.
 
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2315)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/2315)
 
 <!--
 ![](../img/qr_install.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_install.svg)
+![](../img/qr_install.svg)
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
@@ -324,4 +331,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Đoàn Võ Duy Thanh
