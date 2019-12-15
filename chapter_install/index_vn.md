@@ -229,7 +229,7 @@ If you have installed the CPU-only version,
 you may need to remove it first by running:
 -->
 
-Phiên bản MXNet mặc định được cài đặt không hỗ trợ GPU đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
+Phiên bản MXNet mặc định được cài đặt không hỗ trợ GPU để đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
 Một phần của cuốn sách này yêu cầu hoặc khuyến khích chạy trên GPU.
 Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads), thì bạn nên cài đặt bản MXNet có hỗ trợ GPU.
 Trong trường hợp bạn đã cài đặt phiên bản dành riêng cho CPU, bạn có thể cần xoá nó trước bằng cách chạy lệnh:
@@ -296,7 +296,7 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 ![](../img/qr_install.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_install.svg)
+![](../img/qr_install.svg)
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
