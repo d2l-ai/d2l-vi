@@ -123,7 +123,7 @@ conda install python=3.7 pip -y
 ## Installing MXNet and the `d2l` Package
 -->
 
-## *dịch tiêu đề phía trên*
+## Cài đặt MXNet và gói thư viện `d2l`
 
 <!--
 Before installing MXNet, please first check
@@ -135,7 +135,8 @@ proceed to :ref:`sec_gpu` for instructions
 to install a GPU-supported MXNet.
 -->
 
-*dịch đoạn phía trên*
+Trước khi cài đặt MXNet, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
+Nếu bạn đang cài đặt trên một máy chủ GPU, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
@@ -144,7 +145,8 @@ through the first few chapters but you will want
 to access GPUs before running larger models.
 -->
 
-*dịch đoạn phía trên*
+Ngược lại, bạn có thể cài đặt phiên bản chỉ sử dụng CPU.
+Phiên bản này cũng thừa đủ để có thể tiến hành các chương đầu tiên nhưng bạn sẽ cần sử dụng GPU để có thể chạy những mô hình lớn hơn.
 
 ```bash
 # For Windows users
@@ -160,7 +162,7 @@ We also install the `d2l` package that encapsulates frequently used
 functions and classes in this book.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng sẽ cài đặt gói thư viện `d2l` mà bao gồm các hàm và lớp thường xuyên được sử dụng trong cuốn sách này.
 
 ```bash
 pip install d2l==0.11.0
@@ -171,7 +173,7 @@ pip install d2l==0.11.0
 Once they are installed, we now open the Jupyter notebook by running:
 -->
 
-*dịch đoạn phía trên*
+Một khi đã cài đặt xong, ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
 
 ```bash
 jupyter notebook
@@ -185,20 +187,24 @@ before running the code of the book or updating MXNet or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
-*dịch đoạn phía trên*
+ Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
+Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
+Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
+Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
 
 <!--
 ## Upgrading to a New Version
 -->
 
-## *dịch tiêu đề phía trên*
+## Nâng cấp lên Phiên bản Mới
 
 <!--
 Both this book and MXNet are keeping improving. Please check a new version from time to time.
 -->
 
-*dịch đoạn phía trên*
+Cả cuốn sách này và MXNet đều đang tiếp tục được cải thiện.
+Thỉnh thoảng, hãy kiểm tra xem đã có phiên bản mới hay chưa.
 
 <!--
 1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
@@ -206,7 +212,9 @@ Both this book and MXNet are keeping improving. Please check a new version from 
 3. For the CPU version, MXNet can be upgraded by `pip install -U --pre mxnet`.
 -->
 
-*dịch đoạn phía trên*
+1. Đường dẫn https://d2l.ai/d2l-en.zip luôn luôn trỏ đến phiên bản mới nhất.
+2. Để cập nhật gói thư viện `d2l` hãy sử dụng lệnh `pip install d2l --upgrade`.
+3. Đối với phiên bản CPU, MXNet có thể được cập nhật bằng lệnh `pip install -U --pre mxnet`.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
