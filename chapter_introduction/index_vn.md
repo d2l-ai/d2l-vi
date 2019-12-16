@@ -711,7 +711,7 @@ They then update the parameter in the direction that reduces the loss.
 Một khi đã có dữ liệu, mô hình và một hàm mục tiêu rõ ràng, ta cần một thuật toán có khả năng tìm kiếm các tham số khả dĩ tốt nhất để tối thiểu hoá hàm mất mát.
 Các thuật toán tối ưu phổ biến nhất cho mạng nơ-ron đi theo một hướng tiếp cận được gọi là hạ gradient.
 Một cách ngắn gọn, mỗi tham số được kiểm tra xem nếu nó thay đổi chỉ một lượng nhỏ thì hàm mất mát thay đổi như thế nào.
-Sau đó tham số này được cập nhật theo hướng làm giảm hàm mất mát.
+Sau đó các tham số này được cập nhật theo hướng làm giảm hàm mất mát.
 
 
 <!--
