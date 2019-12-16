@@ -759,7 +759,7 @@ Our goal is to produce a model $f_\theta$ that maps any input $\mathbf{x}_i$
  to a prediction $f_{\theta}(\mathbf{x}_i)$.
 -->
 
-Học có giám sát giải quyết tác dụ dự đoán *mục tiêu* khi cho trước *đầu vào*.
+Học có giám sát giải quyết tác vụ dự đoán *mục tiêu* khi cho trước *đầu vào*.
 Các mục tiêu, mà chúng ta thường gọi là *nhãn*, thường được ký hiệu bằng $y$. <!-- $y$ chuẩn hơn *y* -->
 Dữ liệu đầu vào, cũng thường được gọi là *đặc trưng* hoặc hiệp biến, thường được ký hiệu là $\mathbf{x}$.
 Mỗi cặp (đầu vào, mục tiêu) được gọi là một *mẫu*.
