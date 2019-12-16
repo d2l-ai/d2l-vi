@@ -950,7 +950,7 @@ should suggest regression.
 -->
 
 Rất nhiều bài toán thực tế có thể được mô tả thông qua các bài toán hồi quy.
-Dự đoán điểm số một thành viên gán cho một bộ phi có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán tốt để đạt được điều này năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
+Dự đoán điểm số một người dùng gán cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán tốt để đạt được điều này năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
 Dự đoán thời gian nằm viện của một bệnh nhân cũng là một bài toán hồi quy.
 Một quy tắc dễ nhớ là các bài toán mà ta phải trả lời cho câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.) có thể được coi là các bài toán hồi quy.
 
