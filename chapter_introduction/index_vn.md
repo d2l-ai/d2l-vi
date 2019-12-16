@@ -594,12 +594,11 @@ On our way to discussing deep neural networks,
 we will discuss some more traditional methods.
 -->
 
-Phần lớn học máy đều liên quan đến *biến đổi* dữ liệu theo một cách đó.
+Phần lớn học máy đều liên quan đến *biến đổi* dữ liệu theo một cách nào đó.
 Đó có thể là một hệ thống nhận ảnh đầu vào và dự đoán bức ảnh có chứa khuôn mặt cười hay không.
-Hoặc đó cũng có thể là một hệ thống nhận vào những dữ liệu đo đạc từ cảm biến và
+Hoặc đó cũng có thể là một hệ thống nhận vào dữ liệu đo đạc từ cảm biến và
 dự đoán xem những số liệu đó là *bình thường* hay *bất thường*.
-Ở đây chúng ta gọi *mô hình* là một hệ thống tính toán một dạng dữ liệu đầu vào 
-và trả ra những kết quả dự đoán mà có thể ở một dạng khác.
+Ở đây chúng ta gọi *mô hình* là một hệ thống tính toán lấy đầu vào là một dạng dữ liệu và trả về kết quả dự đoán có thể ở một dạng dữ liệu khác.
 
 <!--
 ###  Objective functions
@@ -617,10 +616,9 @@ constituted an improvement or a decline.
 -->
 
 Trước đây, chúng tôi giới thiệu học máy theo kiểu "học từ kinh nghiệm".
-*Học* ở đây tức là có *tiến bộ* qua thời gian với một bài toán nào đó.
-Nhưng ai sẽ có nhiệm vụ chỉ ra như thế nào là tiến bộ?
-Giả sử chúng ta đề xuất một bản cập nhật cho mô hình nhưng sẽ có người không đồng ý rằng 
-bản cập nhật của chúng ta là cải tiến hay lại đang cải lùi.
+*Học* ở đây tức là có *tiến bộ* ở một tác vụ nào đó theo thời gian.
+Nhưng ai sẽ chỉ ra như thế nào là tiến bộ?
+Thử tưởng tượng bạn đang đề xuất cập nhật mô hình nhưng một số người có thể không đồng ý liệu việc đó giúp cải thiện mô hình hay không.
 
 <!--
 In order to develop a formal mathematical system of learning machines,
@@ -638,13 +636,13 @@ Because lower is better, these functions are sometimes called
 -->
 
 Để có thể phát triển một mô hình toán học chính quy cho học máy,
-chúng ta cần những phương pháp đo đạc chính quy xem mô hình của mình đang tốt (hoặc tệ) như thế nào.
+chúng ta cần những phép đo chính quy xem mô hình đang tốt (hoặc tệ) như thế nào.
 Trong học máy, hoặc nói rộng ra là lĩnh vực tối ưu hoá, ta gọi chúng là các hàm mục tiêu (_objective function_).
 Theo quy ước, ta thường định nghĩa các hàm tối ưu sao cho giá trị càng thấp thì mô hình càng tốt.
-Đấy chỉ là một quy ước ngầm.
+Đây chỉ là một quy ước ngầm.
 Bạn cũng có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt,
 sau đó lấy một hàm $f' = -f$ tương đương với giá trị càng thấp thì mô hình càng tốt.
-Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi dưới tên *hàm mất mát* (_loss function_) và *hàm phí tổn* (_cost function_)
+Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi dưới tên *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_)
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
