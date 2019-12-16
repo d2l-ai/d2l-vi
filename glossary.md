@@ -23,7 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
-| attention mechanisms | cơ chế chú ý                                                |               |
+| attention mechanisms      | cơ chế tập trung                                               |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -89,8 +89,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false negative  | âm tính giả                                                    |               |
 | false positive  | dương tính giả                                                 |               |
 | feature         | đặc trưng                                                      |               |
-| fit             | fit                                                            |               |
+| fit             | khớp                                                           |               |
 | first principle | định đề cơ bản                                                 |               |
+| functional anaylsis | giải tích hàm                                              |               |
 
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
@@ -150,12 +151,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
-| overfit           | overfit                                                        | http://bit.ly/2BvfPYA |
+| overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA |
 
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | perceptron              | perceptron                              |               |
+| pattern recognition     | nhận dạng mẫu                                            |                       |
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
 | plateau (động từ)       | nằm ngang                                                      |                       |
@@ -197,6 +199,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
+| transcribe               | phiên thoại                                                    |               |
+| transcription            | bản ghi thoại                                                  |               |
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
@@ -205,7 +209,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
 |------------------|----------------------------------------------------------------|-------------------------|
 | unavoidable bias | độ chệch không tránh được                                      |                         |
-| underfit         | underfit                                                       | http://bit.ly/2BvfPYA |
+| underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |

@@ -416,22 +416,21 @@ chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướn
 ### Content and Structure
 -->
 
-### *dịch tiêu đề phía trên*
+### Nội dung và Bố cục
 
 <!--
 The book can be roughly divided into three parts,
 which are presented by different colors in :numref:`fig_book_org`:
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách này có thể được chia thành ba phần, với các phần được thể hiện bởi những màu khác nhau trong :numref:`fig_book_org`:
 
 <!--
 ![Book structure](../img/book-org.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/book-org.svg)
+![Bố cục cuốn sách](../img/book-org.svg)
 :label:`fig_book_org`
-
 
 <!--
 * The first part covers basics and preliminaries.
@@ -446,7 +445,13 @@ cover the most basic concepts and techniques of deep learning,
 such as linear regression, multilayer perceptrons and regularization.
 -->
 
-*dịch đoạn phía trên*
+* Phần đầu cuốn sách trình bày các kiến thức cơ bản và những việc cần chuẩn bị sơ bộ. 
+:numref:`chap_introduction` giới thiệu về học sâu.
+Sau đó, qua :numref:`chap_preliminaries`, chúng tôi nhanh chóng trang bị cho bạn những
+kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
+áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và xác suất.
+:numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
+ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và điều chuẩn.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -467,7 +472,14 @@ These sections will get you up to speed on the basic tools
 behind most modern applications of deep learning.
 -->
 
-*dịch đoạn phía trên*
+* Năm chương tiếp theo tập trung vào những kỹ thuật học sâu hiện đại.
+:numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu
+và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
+nơ-ron tích chập (Convolutional neural networks/CNNs), một công cụ mạnh mẽ đang là nền tảng của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp đến, 
+trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng nơ-ron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
+ Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật cơ chế chú ý (attention mechanisms), một kỹ thuật
+gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên. Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản
+đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
 
 <!--
 * Part three discusses scalability, efficiency, and applications.
@@ -481,8 +493,13 @@ major applications of deep learning in computer vision
 and natural language processing, respectively.
 -->
 
-*dịch đoạn phía trên*
-
+* Phần ba thảo luận quy mô mở rộng, hiệu quả và ứng dụng.
+Đầu tiên, trong :numref:`chap_optimization`,
+chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
+Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
+chất lượng tính toán của mã nguồn học sâu.
+Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của
+học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
@@ -491,7 +508,7 @@ and natural language processing, respectively.
 ### Code
 -->
 
-### *dịch tiêu đề phía trên*
+### Mã nguồn
 :label:`sec_code`
 
 <!--
@@ -511,7 +528,19 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-*dịch đoạn phía trên*
+Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì
+chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
+Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai,
+thay đổi mã nguồn từng chút một và quan sát kết quả.
+Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
+chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
+Thật đáng tiếc là hiện tại những lý thuyết đẹp đẽ đó vẫn chưa được khám phá.
+Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật,
+bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc
+tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
+Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển,
+những phiên bản tiếp theo của quyển sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn
+mà phiên bản hiện tại chưa làm được.
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -527,7 +556,17 @@ please consult :ref:`chap_installation`
 to update your code and runtime environment.
 -->
 
-*dịch đoạn phía trên*
+Hầu hết mã nguồn trong cuốn sách được dựa theo Apache MXNet.
+MXNet là một framework mã nguồn mở dành cho học sâu
+và là lựa chọn yêu thích của AWS (Amazon Web Services),
+và cả ở nhiều trường đại học và công ty.
+Tất cả mã nguồn trong cuốn sách này đã được kiểm thử trên phiên bản mới nhất của MXNet.
+Tuy nhiên, bởi vì học sâu phát triển rất nhanh, một vài đoạn mã 
+*trong phiên bản sách in* có thể không hoạt động chuẩn trên những phiên bản MXNet sau này.
+Dù vậy, chúng tôi dự định sẽ giữ phiên bản trực tuyến luôn được cập nhật.
+Trong trường hợp bạn gặp phải bất cứ vấn đề nào,
+hãy tham khảo :ref:`chap_installation`
+để cập nhật mã nguồn và môi trường thực thi.
 
 <!--
 At times, to avoid unnecessary repetition, we encapsulate
@@ -540,7 +579,13 @@ The `d2l` package is light-weight and only requires
 the following packages and modules as dependencies:
 -->
 
-*dịch đoạn phía trên*
+Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói
+những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến
+trong cuốn sách này trong gói thư viện `d2l`.
+Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện
+cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
+`# Saved in the d2l package for later use (Lưu lại trong gói thư viện d2l để sử dụng sau)`.
+Thư viện `d2l` khá nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -565,7 +610,7 @@ import zipfile
 We offer a detailed overview of these functions and classes in :numref:`sec_d2l`.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi có một bản tổng quan chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
@@ -575,7 +620,7 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 ### Target Audience
 -->
 
-### *dịch tiêu đề phía trên*
+### Đối tượng độc giả
 
 <!--
 This book is for students (undergraduate or graduate),
@@ -600,14 +645,33 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học),
+các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
+về những kỹ thuật thực tế của học sâu.
+Bởi vì chúng tôi giải thích mọi khái niệm từ đầu,
+bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
+Việc giải thích đầy đủ các phương pháp học sâu
+đòi hỏi một số kiến thức về toán học và lập trình,
+nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản
+về đại số tuyến tính, giải tích, xác suất,
+và lập trình Python.
+Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
+về hầu hết các phần toán được đề cập trong cuốn sách này.
+Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng
+hơn là giải thích chặt chẽ bằng toán.
+Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
+Chẳng hạn, cuốn "Giải tích tuyến tính" (Linear Analysis) của Bela Bollobas :cite:`Bollobas.1999`
+bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
+Cuốn "Tất cả về Thống kê" (All of Statistics) :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
+Và nếu bạn chưa sử dụng Python,
+bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
 
 
 <!--
 ### Forum
 -->
 
-### *dịch tiêu đề phía trên*
+### Diễn đàn
 
 <!--
 Associated with this book, we have launched a discussion forum,
@@ -619,14 +683,20 @@ The authors of this book and broader MXNet developer community
 frequently participate in forum discussions.
 -->
 
-*dịch đoạn phía trên*
+Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến
+tại [discuss.mxnet.io](https://discuss.mxnet.io/) (và tại [Diễn đàn dó nhóm dịch tạo](https://forum.machinelearningcoban.com/c/d2l)).
+Khi có câu hỏi về bất kỳ phần nào của cuốn sách,
+bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
+ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
+Các tác giả của cuốn sách này và rộng hơn là cộng đồng phát triển MXNet
+cũng thường xuyên tham gia thảo luận trong diễn đàn.
 
 
 <!--
 ## Acknowledgments
 -->
 
-## *dịch tiêu đề phía trên*
+## Lời cảm ơn
 
 <!--
 We are indebted to the hundreds of contributors for both
@@ -639,21 +709,29 @@ alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) and Rachel Hu (Amazon) co-authored the *Mathematics for Deep Learning* chapter in the Appendix with us and are the major contributors to that chapter.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi xin gửi lời cảm ơn chân thành tới hàng trăm người đã đóng góp cho cả hai
+bản thảo tiếng Anh và tiếng Trung.
+Mọi người đã giúp cải thiện nội dung và đưa ra những phản hồi rất có giá trị.
+Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này
+giúp nó tốt hơn cho tất cả mọi người.
+Tài khoản GitHub hoặc tên các bạn đóng góp (không theo trình tự cụ thể nào):
+alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
+cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) và Rachel Hu (Amazon) đồng tác giả chương *Toán học cho Học sâu* trong Phụ lục với chúng tôi và là những người đóng góp chính cho chương đó.
 
 <!--
 We thank Amazon Web Services, especially Swami Sivasubramanian,
 Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writing this book. Without the available time, resources, discussions with colleagues, and continuous encouragement this book would not have happened.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi cảm ơn Amazon Web Services, đặc biệt là Swami Sivasubramanian,
+Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này. Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, cuốn sách này sẽ không thể thành hiện thực.
 
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Deep learning has revolutionized pattern recognition, introducing technology that now powers a wide range of  technologies, including computer vision, natural language processing, automatic speech recognition.
@@ -667,14 +745,21 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 * If you plan to run this code on GPUs, do not forget to install the necessary drivers and update your configuration.
 -->
 
-*dịch đoạn phía trên*
-
+* Học sâu đã cách mạng hóa nhận dạng mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên và nhận dạng giọng nói tự động.
+* Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách biến đổi bài toán, toán học của việc mô hình hóa, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
+* Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các diễn giải, hình minh hoạ, công thức toán và mã nguồn, tất cả trong một.
+* Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Diễn đàn của nhóm dịch tại https://forum.machinelearningcoban.com/c/d2l).
+* Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
+* Gluon là một thư viện cấp cao giúp việc viết mã các mô hình học sâu một cách dễ dàng bằng cách sử dụng Apache MXNet.
+* Conda là trình quản lý gói Python đảm bảo tất cả các phần mềm phụ thuộc đều được đáp ứng đủ.
+* Tất cả các notebook đều có thể tải xuống từ GitHub và các cấu hình conda cần thiết để chạy mã nguồn của cuốn sách này được viết trong tệp `môi trường.yml`.
+* Nếu bạn có kế hoạch chạy mã này trên GPU, đừng quên cài đặt các driver cần thiết và cập nhật cấu hình của bạn.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Register an account on the discussion forum of this book [discuss.mxnet.io](https://discuss.mxnet.io/).
@@ -683,14 +768,16 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 1. Create an account on the forum and introduce yourself.
 -->
 
-*dịch đoạn phía trên*
-
+1. Đăng ký tài khoản diễn đàn của cuốn sách tại [discussion.mxnet.io](https://discuss.mxnet.io/). (Nhóm dịch: [https://machinelearningcoban.com](https://machinelearningcoban.com)).
+1. Cài đặt Python trên máy tính.
+1. Làm theo hướng dẫn ở các liên kết đến diễn đàn ở cuối phần này, ở các liên kết diễn đàn đó bạn sẽ có thể nhận được giúp đỡ và thảo luận về cuốn sách cũng như tìm ra câu trả lời cho câu hỏi của bạn bằng cách thu hút các tác giả và cộng đồng lớn hơn.
+1. Tạo một tài khoản trên diễn đàn và giới thiệu bản thân.
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2311)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/2311)
 
 <!--
 ![](../img/qr_preface.svg)
@@ -721,15 +808,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Sẩm Thế Hải
-* Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
-*
+* Ngô Thế Anh Khoa
 
 <!-- Phần 5 -->
 *
 
 <!-- Phần 6 -->
-*
+* Trần Thị Hồng Hạnh

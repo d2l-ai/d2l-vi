@@ -11,14 +11,15 @@
 
 intro_vn
 chapter_preface/index_vn
-chapter_install/index
+chapter_install/index_vn
 ```
 
 ```toc
 :maxdepth: 2
 :numbered:
 
-chapter_introduction/index
+chapter_introduction/index_vn
+chapter_appendix_math/index_vn
 ```
 
 ```toc
