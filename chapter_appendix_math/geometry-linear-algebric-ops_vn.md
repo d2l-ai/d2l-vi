@@ -1169,7 +1169,7 @@ There is no reason this parallelogram should have the same area
 that we started with, and indeed in the specific case shown here of
 -->
 
-Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được cho bởi $(0, 1)$ và $(1, 0)$.
+Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được tạo bởi $(0, 1)$ và $(1, 0)$.
 Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng nó trở thành một hình bình hành.
 Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này
 
