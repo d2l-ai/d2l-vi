@@ -921,7 +921,7 @@ Chẳng hạn bạn đang ở thị trường cho một căn nhà mới.
 Bạn có thể đánh giá giá trị thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, giá bán của căn nhà, là một *số thực*.
 Nếu bạn còn nhớ định nghĩa chính thống của số thực, bạn có thể băn khoăn.
 Nhà đất có lẽ không bao giờ bán với giá tới từng cent chứ chưa nói đến các số vô tỉ.
-Trong trường hợp này, khi mục tiêu thực sự rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng ngôn ngữ này một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
+Trong trường hợp này, khi mục tiêu thực sự rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
