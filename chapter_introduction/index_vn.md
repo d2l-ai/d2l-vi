@@ -693,7 +693,7 @@ reporting the following two quantities:
 ### Optimization algorithms
 -->
 
-### *dịch tiêu đề phía trên*
+### Các thuật toán tối ưu
 
 <!--
 Once we have got some data source and representation,
@@ -708,14 +708,17 @@ if you perturbed that parameter just a small amount.
 They then update the parameter in the direction that reduces the loss.
 -->
 
-*dịch đoạn phía trên*
+Một khi đã có dữ liệu, mô hình và một hàm mục tiêu rõ ràng, ta cần một thuật toán có khả năng tìm kiếm các tham số khả dĩ tốt nhất để tối thiểu hoá hàm mất mát.
+Các thuật toán tối ưu phổ biến nhất cho mạng nơ-ron đi theo một hướng tiếp cận được gọi là hạ gradient.
+Một cách ngắn gọn, mỗi tham số được kiểm tra xem nếu nó thay đổi chỉ một lượng nhỏ thì hàm mất mát thay đổi như thế nào.
+Sau đó tham số này được cập nhật theo hướng làm giảm hàm mất mát.
 
 
 <!--
 ## Kinds of Machine Learning
 -->
 
-## *dịch tiêu đề phía trên*
+## Các kiểu Học Máy
 
 <!--
 In the following sections, we discuss a few *kinds*
@@ -730,7 +733,9 @@ to motivate the reader and provide us with some common language
 for when we talk about more problems throughout the book.
 -->
 
-*dịch đoạn phía trên*
+Trong các mục tiếp theo, chúng ta thảo luận một vài *kiểu* bài toán học máy một cách chi tiết hơn. Chúng ta bắt đầu mới một danh sách *các mục tiêu*, tức một danh sách các tác vụ chúng ta muốn học máy thực hiện.
+Chú ý rằng các mục tiêu được gắn với một tập các kỹ thuật của việc đạt được chúng *như thế nào*, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
+Danh sách dưới đây là một tập con các bài toán mà Học Máy có thể xử lý để tạo động lực cho độc giả và cung cấp một ngôn ngữ chung khi nói về nhiều bài toán hơn xuyên suốt cuốn sách.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
