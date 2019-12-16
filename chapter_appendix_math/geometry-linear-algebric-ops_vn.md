@@ -1262,7 +1262,7 @@ the determinant is not equal to zero.
 
 Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$.
 Điều này là có lý bởi ma trận $\mathbf{B}$ đã nén hình vuông ban đầu xuống thành một đoạn thẳng với diện tích bằng không.
-Thật vậy, nén không gian xuống với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau khi phép biến đổi nhân ma trận.
+Thật vậy, nén một hình xuống không gian mới với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi.
 Do đó chúng ta suy ra được kết quả sau: một ma trận $A$ nghịch đảo được nếu và chỉ nếu định thức khác không.
 
 <!--
