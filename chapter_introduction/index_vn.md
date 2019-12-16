@@ -480,7 +480,7 @@ giá trị số, tương ứng với độ sáng
 của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí trong không gian.
 Trong một tác vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
 xem một bệnh nhân liệu có cơ hội sống sót hay không,
-dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các dấu hiệu quan trọng, chẩn đoán, v.v.
+dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các triệu chứng quan trọng, thông số chẩn đoán, .v.v.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
