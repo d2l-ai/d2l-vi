@@ -820,7 +820,9 @@ We will visit many of these problems in depth
 throughout the first 9 parts of this book.
 -->
 
-*dịch đoạn phía trên*
+Ngay cả với mô tả đơn giản "dự đoán mục tiêu từ đầu vào", học có giám sát có thể có nhiều dạng và đòi hỏi quyết định nên dùng mô hình nào nên, phục thuộc vào (giữa nhiều yếu tố khác) kiểu, kích thước, và số lượng đầu vào và đầu ra.
+Ví dụ, ta sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi ký tự hay dữ liệu chuỗi thời gian) và để xử lý các biểu diễn vector với chiều dài cố định.
+Chúng ta sẽ đai sâu vào rất nhiều bài toán dạng này thông qua 9 phần đầu của cuốn sách.
 
 <!--
 Informally, the learning process looks something like this:
@@ -833,7 +835,9 @@ and other times we might need to employ human annotators to label the data,
 (e.g., assigning images to categories).
 -->
 
-*dịch đoạn phía trên*
+Một cách dễ hiểu, quá trình học tương tự với:
+Lấy một tập mẫu lớn ở đó các hiệp biến đã biết trước và chọn từ chúng một tập con ngẫu nhiên, thu thập các nhãn chính xác cho chúng. <!-- cần thảo luận đưa ground truth vào glossary -->
+Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ liệu bệnh nhân đã qua đời trong năm tiếp theo?), khi khác chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
 
 <!--
 Together, these inputs and corresponding labels comprise the training set.
@@ -845,7 +849,10 @@ using its outputs as predictions of the corresponding label.
 The full process in drawn in :numref:`fig_supervised_learning`.
 -->
 
-*dịch đoạn phía trên*
+Những đầu vào và nhãn tương ứng này cùng tạo nên tập huấn luyện.
+Chúng ta đưa tập dữ liệu huấn luyện vào một thuật toán học có giám sát -- một hàm số mà đầu vào là tập dữ liệu và đầu ra là một hàm số khác thể hiện *mô hình đã học được*.
+Cuối cùng, ta có thể đưa dữ liệu chưa nhìn thấy vào mô hình đã học được, sử dụng đầu ra của nó như là giá trị dự đoán của các nhãn tương ứng.
+Toàn bộ quá trình được mô tả trong :numref:`fig_supervised_learning`.
 
 <!-- =================== Kết thúc dịch Phần 11 ==================== -->
 
