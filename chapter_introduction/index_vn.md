@@ -917,7 +917,7 @@ our outputs and targets as real-valued numbers.
 -->
 
 Điều khiến một bài toán là *hồi quy* thực ra đến từ đầu ra.
-Chẳng hạn bạn đang ở thị trường cho một căn nhà mới.
+Chẳng hạn bạn đang thị sát thị trường cho một căn nhà mới.
 Bạn có thể đánh giá giá trị thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, giá bán của căn nhà, là một *số thực*.
 Nếu bạn còn nhớ định nghĩa chính thống của số thực, bạn có thể băn khoăn.
 Nhà đất có lẽ không bao giờ bán với giá tới từng cent chứ chưa nói đến các số vô tỉ.
