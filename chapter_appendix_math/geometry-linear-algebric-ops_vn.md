@@ -1260,7 +1260,7 @@ a matrix $A$ is invertible if and only if
 the determinant is not equal to zero.
 -->
 
-Nếu ta tính định thức của ma trận này, ta nhận được we get $2\cdot(-2 ) - 4\cdot(-1) = 0$.
+Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$.
 
 <!--
 As a final comment, imagine that we have any figure drawn on the plane.
