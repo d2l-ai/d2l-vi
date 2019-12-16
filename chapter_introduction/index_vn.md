@@ -1029,7 +1029,7 @@ of noise from a Laplace distribution.
 #### Classification
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Phân loại
 
 <!--
 While regression models are great for addressing *how many?* questions,
@@ -1046,7 +1046,12 @@ It is treated with a different set of algorithms
 than those used for regression (although many techniques will carry over).
 -->
 
-*dịch đoạn phía trên*
+Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
+Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
+Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
+Nó cũng cần hiểu chữ viết tay thậm chí một cách ổn định. <!-- need more dicussion-->
+Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical charactor recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại*.
+Nó được thiết kế bởi một tập các thuật toán khác với hồi quy (mặc dù có nhiều kỹ thuật chung).
 
 <!--
 In classification, we want our model to look at a feature vector,
@@ -1063,7 +1068,12 @@ While in regression, we sought a *regressor* to output a real value $\hat{y}$,
 in classification, we seek a *classifier*, whose output $\hat{y}$ is the predicted class assignment.
 -->
 
-*dịch đoạn phía trên*
+Trong phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục nào (được gọi là *lớp*) trong số một tập (rời rạc) các lựa chọn.
+Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
+Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
+Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
+Trong khi với hồi quy, ta tìm một *bộ hồi quy* (glossary) để đưa ra một giá trị thực $\hat{y}$, trong phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
+<!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
 <!--
 For reasons that we will get into as the book gets more technical,
@@ -1090,7 +1100,7 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-*dịch đoạn phía trên*
+
 
 <!--
 When we have more than two possible classes,
