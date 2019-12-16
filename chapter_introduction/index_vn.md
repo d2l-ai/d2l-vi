@@ -766,7 +766,7 @@ Mỗi cặp (đầu vào, mục tiêu) được gọi là một *mẫu*.
 Thi thoảng, khi văn cảnh rõ ràng hơn, chúng ta có thể sử dụng thuật ngữ *các ví dụ* để chỉ một tập các đầu vào, ngay cả khi mục tiêu tương ứng là chưa biết.
 Ta ký hiệu bất cứ một mẫu cụ thể nào với một chỉ số dưới, thường là $i$, ví dụ ($\mathbf{x}_i, y_i$).
 Một tập dữ liệu là một tập của $n$ mẫu $\{\mathbf{x}_i, y_i\}_{i=1}^n$.
-Mục đích của chúng ta là tạo một mô hình $f_\theta$ ánh xạ bất kỳ đầu vào $\mathbf{x}_i$ nào tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
+Mục đích của chúng ta là tạo một mô hình $f_\theta$ ánh xạ bất kỳ đầu vào $\mathbf{x}_i$ tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
 
 <!--
 To ground this description in a concrete example,
