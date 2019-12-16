@@ -740,7 +740,7 @@ for when we talk about more problems throughout the book.
 ### Supervised learning
 -->
 
-### *dịch tiêu đề phía trên*
+### Học có giám sát
 
 <!--
 Supervised learning addresses the task of
@@ -759,7 +759,14 @@ Our goal is to produce a model $f_\theta$ that maps any input $\mathbf{x}_i$
  to a prediction $f_{\theta}(\mathbf{x}_i)$.
 -->
 
-*dịch đoạn phía trên*
+Học có giám sát giải quyết tác dụ dự đoán *mục tiêu* khi cho trước *đầu vào*.
+Các mục tiêu, mà chúng ta thường gọi là *nhãn*, thường được ký hiệu bằng $y$. <!-- $y$ chuẩn hơn *y* -->
+Dữ liệu đầu vào, cũng thường được gọi là *đặc trưng* hoặc hiệp biến, thường được ký hiệu là $\mathbf{x}$.
+Mỗi cặp (đầu vào, mục tiêu) được gọi là một *mẫu*.
+Thi thoảng, khi văn cảnh rõ ràng hơn, chúng ta có thể sử dụng thuật ngữ *các ví dụ* để chỉ một tập các đầu vào, ngay cả khi mục tiêu tương ứng là chưa biết.
+Ta ký hiệu bất cứ một mẫu cụ thể nào với một chỉ số dưới, thường là $i$, ví dụ ($\mathbf{x}_i, y_i$).
+Một tập dữ liệu là một tập của $n$ mẫu $\{\mathbf{x}_i, y_i\}_{i=1}^n$.
+Mục đích của chúng ta là tạo một mô hình $f_\theta$ ánh xạ bất kỳ đầu vào $\mathbf{x}_i$ nào tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
 
 <!--
 To ground this description in a concrete example,
@@ -772,7 +779,9 @@ The input data $\mathbf{x}$ might be vital signs
 such as heart rate, diastolic and systolic blood pressure, etc.
 -->
 
-*dịch đoạn phía trên*
+Một ví dụ cụ thể hơn, nếu chúng ta đang làm việc trong lĩnh vực chăm sóc sức khoẻ, chúng ta có thể mong muốn dự đoán liệu rằng một bệnh nhân có bị đau tim không.
+Việc *bị đau tim* hay *không bị đau tim* sẽ là nhãn $y$. <!-- đây nhé -->
+Dữ liệu đầu vào $\mathbf{x}$ có thể là các dấu hiệu quan trọng như nhịp tim, huyết áp tâm trương và tâm thu, v.v.
 
 <!--
 The supervision comes into play because for choosing the parameters $\theta$, we (the supervisors) provide the model with a dataset
@@ -780,7 +789,7 @@ consisting of *labeled examples* ($\mathbf{x}_i, y_i$),
 where each example $\mathbf{x}_i$ is matched with the correct label.
 -->
 
-*dịch đoạn phía trên*
+Sự giám sát xuất hiện ở đây bởi để chọn các tham số $\theta$, chúng ta (các giám sát viên) cung cấp cho mô hình một tập dữ liệu chứa các *mẫu được gán nhãn* ($\mathbf{x}_i, y_i$), ở đó mỗi mẫu $\mathbf{x}_i$ tương ứng một nhãn cho trước.
 
 <!--
 In probabilistic terms, we typically are interested in estimating
@@ -793,7 +802,9 @@ can be described crisply as estimating the probability
 of something unknown given a particular set of available data:
 -->
 
-*dịch đoạn phía trên*
+Theo thuật ngữ xác suất, ta thường quan tâm tới việc đánh giá xác suất có điều kiện $P(y|$\mathbf{x})$. <!-- mình tự sửa để chính xác hơn -->
+Mặc dù chỉ là một trong số nhiều mô hình trong học máy, học có giám sát là nhân tố chính đem đến sự thành công cho các ứng dụng của học máy trong công nghiệp.
+Một phần, đó là bởi rất nhiều tác vụ có thể được mô tả dưới dạng ước luộng xác suất của một đại lượng chưa biết cho trước một tập dữ liệu cụ thể:
 
 <!--
 * Predict cancer vs not cancer, given a CT image.
@@ -801,7 +812,9 @@ of something unknown given a particular set of available data:
 * Predict the price of a stock next month based on this month's financial reporting data.
 -->
 
-*dịch đoạn phía trên*
+* Dự đoán có bị ung thư hay không cho trước một bức ảnh CT.
+* Dự đoán bản dịch chính xác trong tiếng Pháp cho trước một câu trong tiếng Anh.
+* Dự đoán giá của một cổ phiếu trong tháng tới dựa trên dữ liệu báo cáo tài chính của tháng này.
 
 <!-- =================== Kết thúc dịch Phần 10 ==================== -->
 
