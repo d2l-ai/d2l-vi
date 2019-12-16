@@ -326,9 +326,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Sâm Thế Hải
 * Nguyễn Cảnh Thướng
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
 * Đoàn Võ Duy Thanh
