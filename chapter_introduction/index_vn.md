@@ -393,17 +393,16 @@ First, we'd like to shed more light on some core components
 that will follow us around, no matter what kind of ML problem we take on:
 -->
 
-Trong ví dụ *wake-word*, chúng tôi đã mô tả một bộ dữ liệu
-bao gồm các đoạn âm thanh và các nhãn nhị phân
-giúp các bạn hiểu hơn về cách chúng ta có thể *huấn luyện*
-một mô hình để xấp xỉ ánh xạ từ các đoạn âm thanh đến phân loại.
+Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu
+bao gồm các đoạn âm thanh và các nhãn nhị phân,
+giúp các bạn hiểu một cách chung chung về cách chúng ta có thể *huấn luyện*
+một mô hình để phân loại các đoạn âm thanh.
 Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết
 với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu
-đã được gán nhãn, loại bài toán này được gọi là *học có giám sát*,
-và đây chỉ là một trong số rất nhiều *loại* học máy.
-Trong phần tiếp theo, chúng tôi sẽ đi sâu vào các vấn đề ML khác nhau.
+đã được gán nhãn. Đây là ví dụ về bài toán *học có giám sát*,
+ đây chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học tới trong các chương sau.
 Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi 
-sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề ML nào:
+sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
 
 <!--
 1. The *data* that we can learn from.
@@ -414,7 +413,7 @@ sẽ theo chúng ta xuyên suốt, bất kể chúng ta gặp phải vấn đề
 
 1. *Dữ liệu* mà chúng ta có thể học.
 2. Một *mô hình* về cách biến đổi dữ liệu.
-3. Một *hàm mất mát* định lượng *độ tệ* mô hình của chúng ta.
+3. Một hàm *mất mát* định lượng *độ lỗi* của mô hình.
 4. Một *thuật toán* điều chỉnh các tham số của mô hình để giảm thiểu mất mát.
 
 <!--
@@ -443,19 +442,19 @@ can then simply be called the *features*,
 -->
 
 Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
-Chúng ta có thể rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu,
+Chúng ta sẽ tốn rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu,
 nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế
 và tập trung vào các thuộc tính quan trọng cần quan tâm.
 Thông thường, chúng ta quan tâm đến một bộ *mẫu*
 (còn được gọi là *điểm dữ liệu*, *ví dụ* hoặc *trường hợp*).
 Để làm việc với dữ liệu một cách hữu ích, chúng ta thường
-cần phải đưa ra một con số đại diện thích hợp.
+cần phải có một cách biễu diễn phù hợp dưới dạng số.
 Mỗi *ví dụ* thường bao gồm một bộ
 thuộc tính số gọi là *đặc trưng*.
 Trong các bài toán học có giám sát ở trên,
 một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán,
 (đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
-Các đặc trưng nhất định mô hình dựa vào để đưa ra dự đoán
+Các đặc trưng nhất định mà mô hình dựa vào để đưa ra dự đoán
 có thể được gọi đơn giản là các *đặc trưng*,
 (hoặc thường là *đầu vào*, *đồng biến* hoặc *biến độc lập*).
 
@@ -473,12 +472,12 @@ given a standard set of features such as age, vital signs, diagnoses, etc.
 -->
 
 Nếu chúng ta đang làm việc với dữ liệu hình ảnh,
-mỗi bức ảnh riêng lẻ có thể tạo thành một *ví dụ*
+mỗi bức ảnh riêng lẻ có thể tạo thành một *mẫu*
 được biểu diễn bởi một danh sách các giá trị số theo thứ tự
 tương ứng với độ sáng của từng pixel.
 Một bức ảnh màu có kích thước $200\times 200$ sẽ bao gồm $200\times200\times3=120000$
 giá trị số, tương ứng với độ sáng
-của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí không gian.
+của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí trong không gian.
 Trong một tác vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
 xem một bệnh nhân liệu có cơ hội sống sót hay không,
 dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các dấu hiệu quan trọng, chẩn đoán, v.v.
