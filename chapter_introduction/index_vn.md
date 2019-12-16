@@ -814,7 +814,7 @@ Một phần, đó là bởi rất nhiều tác vụ có thể được mô tả
 
 * Dự đoán có bị ung thư hay không cho trước một bức ảnh CT.
 * Dự đoán bản dịch chính xác trong tiếng Pháp cho trước một câu trong tiếng Anh.
-* Dự đoán giá của một cổ phiếu trong tháng tới dựa trên dữ liệu báo cáo tài chính của tháng này.
+* Dự đoán giá của cổ phiếu trong tháng tới dựa trên dữ liệu báo cáo tài chính của tháng này.
 
 <!-- =================== Kết thúc dịch Phần 10 ==================== -->
 
