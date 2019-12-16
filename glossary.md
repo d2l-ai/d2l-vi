@@ -96,6 +96,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
 |------------------|----------------------------------------------------------------|----------------------------------------------|
+| Gaussian noise   | nhiễu Gauss                                                    |                              |
 | gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | ground truth     | cơ sở thực tế                                                  |                              | 
 
