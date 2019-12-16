@@ -64,7 +64,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distribution           | phân phối                                                      |               |
 | domain adaptation      | thích ứng miền                                                 |               |
 | dot product            | tích vô hướng (hoặc tích trong)                                |               |
-| dropout                |                                                                |               |
+| dropout                | dropout                                                        |               |
 
 ## E
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
