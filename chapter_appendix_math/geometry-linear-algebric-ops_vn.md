@@ -1230,7 +1230,7 @@ we say the area is negated.
 Let's see now that when the determinant is zero, we learn more.
 -->
 
-Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm.
+Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm. Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu. Còn khi định thức bằng không thì sao?
 <!--
 Lưu ý là mấy bác Tàu này rất thích chơi chữ, mình cứ dịch đơn giản dễ hiểu và gần gũi với tiếng Việt.
 -->
