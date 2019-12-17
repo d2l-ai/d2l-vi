@@ -989,7 +989,7 @@ the high-level idea behind linear regression
 -->
 
 Tuy nhiên, nếu bạn có thể biến bài toán của bạn thành "Có đúng là \_?" thì khả năng cao đó là bài toán phân loại, một dạng khác của bài toán học có giám sát mà chúng ta thảo luận trong phần tiếp.
-Ngay cả khi bạn chưa bao giờ làm việc với học máy trước đây, bạn đã có thể làm việc với các bài toán hồi quy một cách không chính thức.
+Ngay cả khi bạn chưa từng làm việc với học máy, bạn có thể đã làm việc với các bài toán hồi quy một cách không chính thức.
 Ví dụ, hãy tưởng tượng bạn cần sửa chữa đường ống cống và người thợ đã dành $x_1=3$ giờ để thông cống rồi gửi hoá đơn $y_1 = \$350$.
 Bây giờ bạn của bạn thuê cùng người thợ trong $x_2 = 2$ tiếng và cô ấy nhận được hoá đơn là $y_2 = \$250$.
 Nếu một người sau đó hỏi bạn dự tính giá phải trả để thông cống, bạn có thể có một vài giả sử có lý, chẳng hạn nhiều thời gian sẽ tốn nhiều tiền hơn.
