@@ -274,10 +274,11 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-Trước khi chúng ta có thể tiếp tục và bắt đầu các thuật toán học, chúng ta phải định nghĩa vấn đề một cách chính xác, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một nhóm các mô hình thích hợp. Trong trường hợp này, mô hình của chúng ta nhận một đoạn âm thanh làm *đầu vào*, và tạo ra một lựa chọn giữa ``{yes, no}`` làm đầu ra. Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
+Trước khi chúng ta có thể tiếp tục và bắt đầu các thuật toán học, chúng ta phải định nghĩa vấn đề một cách chính xác, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một nhóm các mô hình thích hợp. 
+Trong trường hợp này, mô hình của chúng ta nhận một đoạn âm thanh làm *đầu vào*, và tạo ra một lựa chọn giữa ``{yes, no}`` làm đầu ra.
+Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
 
 
- 
 <!--
 If we choose the right family of models,
 then there should exist one setting of the knobs
@@ -294,7 +295,10 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-Nếu chúng ta lựa chọn đúng nhóm các mô hình, thì sẽ tồn tại một thiết lập của các núm quay mà mô hình sẽ đưa ra ``yes`` mỗi khi nghe thấy từ "Alexa". Bởi vì sự lựa chọn của các hiệu lệnh đánh thức là tùy ý, chúng ta có thể sẽ cần một nhóm các mô hình đủ mạnh mà với một thiết lập khác của các núm quay, nó sẽ đưa ra ``yes`` mỗi khi nghe từ "Apricot (quả mơ)". Chúng ta hy vọng rằng cùng một mô hình sẽ phù hợp cho *nhận dạng "Alexa"* và *nhận dạng "Apricot"*, bởi vì chúng dường như, theo trực giác, là những nhiệm vụ tương tự. Tuy nhiên, chúng ta có thể cần một nhóm các mô hình hoàn toàn khác nếu chúng ta phải làm việc với các đầu vào và đầu ra khác nhau cơ bản, ví dụ như nếu chúng ta muốn ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung.
+Nếu chúng ta lựa chọn đúng nhóm các mô hình, sẽ tồn tại một thiết lập của các núm quay mà mô hình sẽ đưa ra ``yes`` mỗi khi nghe thấy từ "Alexa".
+Vì ta có thể lựa chọn một hiệu lệnh đánh thức bất kì, chúng ta có thể sẽ cần một nhóm các mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``yes`` mỗi khi nghe từ "Apricot (quả mơ)". 
+Chúng ta hy vọng rằng cùng một mô hình sẽ phù hợp cho cả *nhận dạng "Alexa"* và *nhận dạng "Apricot"*, bởi vì theo trực giác, chúng dường như là những nhiệm vụ tương tự.
+Tuy nhiên, chúng ta có thể cần một nhóm các mô hình hoàn toàn khác nếu chúng ta phải làm việc với các đầu vào và đầu ra nếu chúng căn bản là khác biệt so với ví dụ trên, chẳng hạn khi ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung.
 
 <!--
 As you might guess, if we just set all of the knobs randomly,
@@ -305,14 +309,14 @@ by which we discover the right setting of the knobs
 coercing the desired behavior from our model.
 -->
 
-Như bạn có thể đoán, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình của chúng ta sẽ không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào. Trong học sâu, *học* là một quá trình mà chúng ta khám phá ra các thiết lập đúng của các núm quay theo như hành vi mong muồn từ mô hình của chúng ta.
+Như bạn có thể đoán, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình của chúng ta sẽ không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
+Trong học sâu, *học* là một quá trình mà chúng ta khám phá ra các thiết lập đúng của các núm quay để đạt được hành vi mong muốn từ mô hình của chúng ta.
 
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
-Như trong hình :numref:`fig_ml_loop`, quá trình huấn luyện thường giống
-như trong hình dưới đây:
+Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` : 
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -321,9 +325,9 @@ như trong hình dưới đây:
 1. Repeat until the model is awesome.
 -->
 
-1. Khởi tạo với một mô hình ngẫu nhiền mà không thể làm bất cứ điều gì hữu ích.
-2. Thu thập một số dữ liệu đã được dán nhán của bạn (ví dụ., đoạn âm thanh và nhãn ``{yes, no}` tương ứng).
-3. Tinh chỉnh các núm quay để mô hình dự đoán chính xác hơn với những dữ liệu đó.
+1. Khởi tạo mô hình một cách ngẫu nhiên mà chưa thể thực hiện tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{yes, no}` tương ứng).
+3. Tinh chỉnh các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
 4. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
 <!--
