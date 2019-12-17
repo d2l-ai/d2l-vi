@@ -1072,7 +1072,7 @@ Trong phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, v
 Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
 Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
 Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
-Trong khi với hồi quy, ta tìm một *bộ hồi quy* (glossary) để đưa ra một giá trị thực $\hat{y}$, trong phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
+Với hồi quy, ta tìm một *bộ hồi quy* (glossary) để đưa ra một giá trị thực $\hat{y}$. Trong khi đó với phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
 <!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
 <!--
@@ -1100,7 +1100,15 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-
+Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, sẽ khó hơn để tối ưu hoá một mô hình và đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*. Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó biểu diễn mô hình dưới ngôn ngữ xác suất. Cho trước một mẫu $\mathbf{x}$, mô hình của chúng ta gán một xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
+Vì là các xác suất, chúng phải là các số dương có tổng bằng $1$.
+Bởi vậy ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
+Việc này dễ nhận thấy đối với phân loại nhị phân.
+Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
+Trở lại với ví dụ phân loại động vật, một bộ phân loại có thể nhìn một bức ảnh và đưa ra xác suất để bức ảnh đó là mèo $P(y=\text{mèo} \mid x) = 0.9$.
+Chúng ta có thể diễn giải giá trị này bằng cách nói rằng bộ phân loại $90\%$ tin rằng bức ảnh chứa một con mèo.
+Độ lớn xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
+Đó không phải là ký hiệu duy nhất của sự không chắc chắn, chúng ta sẽ thảo luận các ký hiệu khác trong các chương nâng cao.
 
 <!--
 When we have more than two possible classes,
@@ -1113,7 +1121,8 @@ the common loss function for classification problems is called cross-entropy.
 In MXNet Gluon, the corresponding loss function can be found [here](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss).
 -->
 
-*dịch đoạn phía trên*
+Khi có nhiều hơn hai lớp, ta gọi bài toán này là *phân loại đa lớp*. <!-- to glossary -->
+Bài toán phân loại chữ viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]` là một trong số các ví dụ điển hình.
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
