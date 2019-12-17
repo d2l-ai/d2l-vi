@@ -1022,7 +1022,7 @@ whereas the $L_1$ loss corresponds to an assumption
 of noise from a Laplace distribution.
 -->
 
-Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss, <!-- to glossary -->
+Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss,
 trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
