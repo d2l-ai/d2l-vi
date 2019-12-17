@@ -1011,7 +1011,7 @@ and the least mean squares loss, or
 where
 -->
 
-và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [L2 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
