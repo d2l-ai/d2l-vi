@@ -650,7 +650,7 @@ In these cases, it is common to optimize a *surrogate objective*.
 Khi cố gắng dự đoán một giá trị số thực, hàm mục tiêu phổ biến nhất là hàm bình phương lỗi $(y-\hat{y})^2$.
 Với bài toán phân loại, hàm mục tiêu phổ biến nhất là tối thiểu hoá tỉ lệ lỗi, nghĩa là tỉ lệ mẫu mà mô hình dự đoán lệch với nhãn thực tế.
 Một vài hàm mục tiêu (ví dụ bình phương lỗi) khá dễ để tối ưu.
-Các hàm khác (như tỉ lệ lỗi) lại khó hơn để tối ưu một cách trực tiếp bởi các hàm này không khả vi hoặc phức tạp.
+Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu một cách trực tiếp hơn bởi các hàm này không khả vi hoặc phức tạp.
 Trong những trường hợp này, người ta thường tối thiểu hoá một *hàm mục tiêu thay thế* (discuss more in glossary).
 
 <!--
