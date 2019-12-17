@@ -932,7 +932,7 @@ We will unpack it more thoroughly in the subsequent chapters.
 
 Ký hiệu mục tiêu là $y_i$ (tương ứng với mẫu $\mathbf{x_i}$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
 Khi các mục tiêu lấy các giá trị bất kỳ trong một khoảng, chúng ta gọi đây là bài toán hồi quy.
-Mục đích của chúng ta là tạo ra một mô hình mà các giá trị dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. Chúng ta ký hiệu mục tiêu dự đoán cho một mẫu là $\hat{y}_i$.
+Mục đích của chúng ta là tạo ra một mô hình mà các giá trị dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. Chúng ta ký hiệu mục tiêu dự đoán của một mẫu là $\hat{y}_i$.
 Đừng quá lo lắng nếu có quá nhiều ký hiệu.
 Chúng ta sẽ tìm hiểu kỹ từng kỳ hiệu trong các chương tiếp theo.
 
