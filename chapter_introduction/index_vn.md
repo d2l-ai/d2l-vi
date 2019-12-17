@@ -718,7 +718,7 @@ Sau đó các tham số này được cập nhật theo hướng làm giảm hà
 ## Kinds of Machine Learning
 -->
 
-## Các kiểu Học Máy
+## Các dạng Học Máy
 
 <!--
 In the following sections, we discuss a few *kinds*
