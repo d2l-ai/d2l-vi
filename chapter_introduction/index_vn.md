@@ -961,7 +961,11 @@ Do not worry if the notation is bogging you down.
 We will unpack it more thoroughly in the subsequent chapters.
 -->
 
-*dịch đoạn phía trên*
+Ký hiệu mục tiêu là $y_i$ (tương ứng với mẫu $\mathbf{x_i}$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
+Khi các mục tiêu lấy các giá trị bất kỳ trong một khoảng, chúng ta gọi đây là bài toán hồi quy.
+Mục đích của chúng ta là tạo ra một mô hình mà các giá trị dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. Chúng ta ký hiệu mục tiêu dự đoán của một mẫu là $\hat{y}_i$.
+Đừng quá lo lắng nếu có quá nhiều ký hiệu.
+Chúng ta sẽ tìm hiểu kỹ từng kỳ hiệu trong các chương tiếp theo.
 
 
 <!--
@@ -976,14 +980,18 @@ A good rule of thumb is that any *How much?* or *How many?* problem
 should suggest regression.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều bài toán thực tế có thể được mô tả thông qua các bài toán hồi quy.
+Dự đoán điểm số một người dùng gán cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán tốt để đạt được điều này năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
+Dự đoán thời gian nằm viện của một bệnh nhân cũng là một bài toán hồi quy.
+Một quy tắc dễ nhớ là các bài toán mà ta phải trả lời cho câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.) có thể được coi là các bài toán hồi quy.
 
 <!--
 * "How many hours will this surgery take?": *regression*
 * "How many dogs are in this photo?": *regression*.
 -->
 
-*dịch đoạn phía trên*
+* "Ca phẫu thuật này sẽ mất bao lâu?": *hồi quy*
+* "Có bao nhiêu chú chó trong bức ảnh?": *hồi quy*
 
 <!--
 However, if you can easily pose your problem as "Is this a _ ?",
@@ -1011,7 +1019,16 @@ the high-level idea behind linear regression
 (and you just implicitly designed a linear model with a bias term).
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu bạn có thể biến bài toán của bạn thành "Có đúng là \_?" thì khả năng cao đó là bài toán phân loại, một dạng khác của bài toán học có giám sát mà chúng ta thảo luận trong phần tiếp.
+Ngay cả khi bạn chưa từng làm việc với học máy, bạn có thể đã làm việc với các bài toán hồi quy một cách không chính thức.
+Ví dụ, hãy tưởng tượng bạn cần sửa chữa đường ống cống và người thợ đã dành $x_1=3$ giờ để thông cống rồi gửi hoá đơn $y_1 = \$350$.
+Bây giờ bạn của bạn thuê cùng người thợ trong $x_2 = 2$ tiếng và cô ấy nhận được hoá đơn là $y_2 = \$250$.
+Nếu một người sau đó hỏi bạn dự tính giá phải trả để thông cống, bạn có thể có một vài giả sử có lý, chẳng hạn nhiều thời gian sẽ tốn nhiều tiền hơn.
+Bạn cũng có thể giả sử rằng có một mức phí cơ bản và sau đó người thợ tính tiền theo giờ.
+Nếu giả sử này là đúng, thì cho trước hai điểm dữ liệu, bạn đã có thể tính được cách mà người thợ xây dựng bảng giá: \$100 một giờ cộng với \$50 cho việc tới nhà bạn.
+Nếu bạn theo được logic tới đây thì bạn đã có thể hiểu ý tưởng sơ lược đằng sau hồi quy tuyến tính (và bạn vô tình đã thiết kế một mô hình tuyến tính với thành phần điều chỉnh).
+<!-- Lưu ý rằng bias này có ý nghĩa khác với bias trong "bias-variance trade off. Bias này là đại lượng thường được thêm vào công thức của các quan hệ tuyến tính để điều chỉnh giá trị. Nó cũng chính là số hạng tự do mà chúng ta thường dùng trong chương trình phổ thông. Mọi người có thể thảo luận cách dịch. Mình sẽ xoá dòng này sau khi thảo luận xong.--> 
+
 
 <!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
