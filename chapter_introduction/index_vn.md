@@ -1234,7 +1234,7 @@ encounters an image of the Town Musicians of Bremen.
 Một vài bài toán phân loại không phù hợp với các mô hình phân loại nhị phân hoặc đa lớp.
 Ví dụ, chúng ta có thể huấn luyện một bộ phân loại nhị phân thông thường để phân loại mèo và chó.
 Với khả năng hiện tại của thị giác máy tính, việc này có thể được thực hiện dễ dàng bằng các công cụ sẵn có.
-Tuy nhiên, bất kể mô hình của bạn chính xác đến đâu, mô hình có thể gặp rắc rối khi thấy bức ảnh Những Nhạc Sĩ thành Bremen. <!-- https://www.google.com/search?q=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&oq=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&aqs=chrome..69i57j0l2.7126j0j9&sourceid=chrome&ie=UTF-8 -->
+Tuy nhiên, bất kể mô hình của bạn chính xác đến đâu, nó có thể gặp rắc rối khi thấy bức ảnh Những Nhạc Sĩ thành Bremen. <!-- https://www.google.com/search?q=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&oq=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&aqs=chrome..69i57j0l2.7126j0j9&sourceid=chrome&ie=UTF-8 -->
 
 <!--
 ![A cat, a roster, a dog and a donkey](../img/stackedanimals.jpg)
