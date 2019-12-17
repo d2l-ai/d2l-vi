@@ -1142,13 +1142,14 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng loại có thể xảy ra nhất không nhất thiết là loại mà ta sẽ sử dụng để quyết định.
+Giả sử rằng ta tìm được một cây nấm rất đẹp trong sân sau như hình :numref:`fig_death_cap`.
 
 <!--
 ![Death cap---do not eat!](../img/death_cap.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/death_cap.jpg)
+![Nấm độc---đừng ăn](../img/death_cap.jpg)
 :width:`200px`
 :label:`fig_death_cap`
 
@@ -1169,7 +1170,14 @@ i.e., we need to multiply the probability of the outcome
 with the benefit (or harm) associated with it:
 -->
 
-*dịch đoạn phía trên*
+Giờ giả sử ta xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
+Giả sử output của bộ phân loại phát hiện chất độc $P(y=\mathrm{death cap}|\mathrm{image}) = 0.2$.
+Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
+Dù vậy, đừng dại mà ăn nhé.
+Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ bị chết vì nấm độc.
+Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
+Ta có thể có một cách nhìn chính quy hơn.
+Cơ bản là, chúng ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
 $$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
 
@@ -1193,7 +1201,13 @@ Usually, this is referred to as *hierarchical classification*.
 One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), who organized the animals in a hierarchy.
 -->
 
-*dịch đoạn phía trên*
+Sự thận trọng của chúng ta đã được xác nhận: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
+Việc phân loại có thể còn phức tạp hơn là so với chỉ phân loại nhị phân, đa chủng loại, hoặc thậm chí phân loại đa-nhãn.
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (hierarchy).
+Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
+Vậy nên không phải tất cả các lần phân loại sai đều như nhau---nếu ta mắc lỗi khi phân loại, ta thường muốn rằng mình phân loại sai thành một lớp có liên quan chứ không phải tới một lớp xa xôi khác.
+Thông thường, việc này được nói đến như là *phân loại cấp bậc (hierarchical classification)*.
+Một ví dụ là [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loài động vật theo hệ thống phân cấp.
 
 <!--
 In the case of animal classification,
@@ -1207,7 +1221,9 @@ might be close on the phylogenetic tree,
 but mistaking a rattler for a garter could be deadly.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp phân loại động vật, sẽ không quá tệ nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng mô hình sẽ bị phạt rất nặng nếu nhầm lẫn chó poodle với một con khủng long.
+Hệ phân cấp nào là phù hợp sẽ phụ thuộc vào ta dự định dùng mô hình như thế nào.
+Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này thì nghiêm trọng chết người.
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
