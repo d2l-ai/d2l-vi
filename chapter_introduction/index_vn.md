@@ -734,7 +734,7 @@ for when we talk about more problems throughout the book.
 -->
 
 Trong các mục tiếp theo, chúng ta thảo luận một vài *dạng* bài toán học máy một cách chi tiết hơn. Chúng ta bắt đầu mới một danh sách *các mục tiêu*, tức một danh sách các tác vụ chúng ta muốn học máy thực hiện.
-Chú ý rằng các mục tiêu được gắn với một tập các kỹ thuật của việc đạt được chúng *như thế nào*, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
+Chú ý rằng các mục tiêu được gắn với một tập các kỹ thuật giúp trả lời câu hỏi "làm sao" để đạt được chúng, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
 Danh sách dưới đây là một tập con các bài toán mà Học Máy có thể xử lý nhằm tạo động lực cho độc giả đồng thời cung cấp một ngôn ngữ chung khi ta nói về nhiều bài toán hơn xuyên suốt cuốn sách.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
