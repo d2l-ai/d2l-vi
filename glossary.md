@@ -46,6 +46,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
+| cross entropy       | cross entropy                                                  |               |
 | cross validation    | kiểm định chéo                                                 |               |
 | cost function       | hàm chi phí                                                    |               |
 
@@ -137,6 +138,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
+| multitask classification | phân loại đa lớp                                         |               |
 | multitask learning | học đa nhiệm                                                   |               |
 
 ## N
@@ -175,6 +177,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
 | regularization         | regularization                                                 |               |
+| regressor              | bộ hồi quy                                                     |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
 | running time           | thời gian chạy                                                 |               |
