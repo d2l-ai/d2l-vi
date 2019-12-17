@@ -897,7 +897,7 @@ to the full table containing all of the feature vectors as $X$.
 
 Nếu bạn sống ở New York hoặc San Francisco, và bạn không phải là CEO của Amazon, Google, Microsoft, hay Facebook, vector đặc trưng (diện tích, số phòng ngủ, số phòng tắm, khoảng cách đi bộ) của căn nhà của bạn có thể có dạng $[100, 0, .5, 60]$.
 Tuy nhiên, nếu bạn sống ở Pittsburgh, vector đó có thể là $[3000, 4, 3, 10]$.
-Vector đặc trưng là thiết yếu trong hầu hết các thuật toán học máy.
+Vector đặc trưng là thiết yếu trong hầu hết các thuật toán học máy cổ điển.
 Chúng ta sẽ tiếp tục ký hiệu vector đặc trưng tương ứng với bất ký mẫu $i$ nào bởi $\mathbf{x}_i$ và có thể đặt $X$ là toàn bộ bảng chứa tất cả các vector đặc trưng.
 
 <!--
