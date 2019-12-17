@@ -1217,7 +1217,7 @@ but mistaking a rattler for a garter could be deadly.
 #### Tagging
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Gán thẻ
 
 <!--
 Some classification problems do not fit neatly
@@ -1231,18 +1231,17 @@ we might find ourselves in trouble when the classifier
 encounters an image of the Town Musicians of Bremen.
 -->
 
-*dịch đoạn phía trên*
+Một vài bài toán phân loại không phù hợp với các mô hình phân loại nhị phân hoặc đa lớp.
+Ví dụ, chúng ta có thể huấn luyện một bộ phân loại nhị phân thông thường để phân loại mèo và chó.
+Với khả năng hiện tại của thị giác máy tính, việc này có thể được thực hiện dễ dàng bằng các công cụ sẵn có.
+Tuy nhiên, bất kể mô hình của bạn chính xác đến đâu, mô hình có thể gặp rắc rối khi thấy bức ảnh Những Nhạc Sĩ thành Bremen. <!-- https://www.google.com/search?q=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&oq=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&aqs=chrome..69i57j0l2.7126j0j9&sourceid=chrome&ie=UTF-8 -->
 
 <!--
 ![A cat, a roster, a dog and a donkey](../img/stackedanimals.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/stackedanimals.jpg)
+![Mèo, gà trống, chó và lừa](../img/stackedanimals.jpg)
 :width:`300px`
--->
-
-*dịch đoạn phía trên*
-
 
 <!--
 As you can see, there is a cat in the picture,
@@ -1256,7 +1255,9 @@ saying the image depicts a cat *and* a dog *and* a donkey
 *and* a rooster *and* a bird.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy trong ảnh có một con mèo, một con gà trống, một con chó, một con lừa và một con chim, cùng với một vài cây ở hậu cảnh.
+Tuỳ vào mục đích cuối cùng của mô hình, sẽ không hợp lý nếu coi đây là một bài toán phân loại nhị phân.
+Thay vào đó, ta có thể cho mô hình lựa chọn nói rằng bức ảnh có một con mèo *và* một con chó *và* một con cừu *và* một con gà trống *và* một con chim.
 
 <!--
 The problem of learning to predict classes that are
@@ -1273,7 +1274,16 @@ and posts about "machine learning" could also deal
 with "programming languages".
 -->
 
-*dịch đoạn phía trên*
+Bài toán học để dự đoán các lớp *không xung khắc* được gọi là phân loại đa nhãn.
+Các bài toán tự động gán thẻ là các ví dụ điển hình của phân loại đa nhãn.
+Nghĩ về các thẻ mà một người có thể gán cho một blog công nghệ, ví dụ "học máy", "công nghệ", "ngôn ngữ lập trình", "linux", "điện toán đám mây" hay "AWS".
+Một bài báo thông thường có thể có từ 5-10 thẻ bởi các khái niệm này có liên quan với nhau.
+Các bài về "điện toán đám mây" khả năng cao đề cập "AWS" và các bài về "học máy" cũng có thể dính dáng tới "ngôn ngữ lập trình".
+
+<!--
+Từ *mutually exclusive* được dịch là *xung khắc*. Giáo trình xác suất thống kê, Tống Đình Quỳ, tái bản lần thứ năm, NXB ĐHBKHN, trang 21
+https://i.ibb.co/HYSGx87/Screen-Shot-2019-12-16-at-11-57-21-PM.png
+-->
 
 <!--
 We also have to deal with this kind of problem when dealing
@@ -1291,7 +1301,11 @@ Indeed, for several years, the BioASQ organization
 has [hosted a competition](http://bioasq.org/) to do precisely this.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng phải xử lý các vấn đề này trong nghiên cứu y sinh, ở đó việc gán thẻ cho các bài báo một cách chính xác là quan trọng bởi nó cho phép các nhà nghiên cứu tổng hợp đầy đủ các tài liệu liên quan.
+Tại Thư Viện Y Khoa Quốc Gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sư tập với khoảng 28 nghìn thẻ.
+Đây là một quá trình tốn thời gian và những người gán nhãn thường có một năm trễ kể từ khi lưu trữ tới khi gán thẻ.
+Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho tới khi được kiểm chứng lại một cách thủ công.
+Thực vậy, BioASQ đã [tổ chức một cuộc thi]((http://bioasq.org/) dành riêng cho việc này.
 
 <!-- =================== Kết thúc dịch Phần 17 ==================== -->
 
@@ -2539,10 +2553,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 16 -->
 *
-
-<!-- Phần 17 -->
-*
-
 <!-- Phần 18 -->
 *
 
