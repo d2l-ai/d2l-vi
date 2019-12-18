@@ -1337,7 +1337,7 @@ Thực vậy, BioASQ đã [tổ chức một cuộc thi]((http://bioasq.org/) d�
 #### Search and ranking
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Tìm kiếm và xếp hạng
 
 <!--
 Sometimes we do not just want to assign each example to a bucket
@@ -1356,7 +1356,12 @@ Even if the result set is the same,
 the ordering within the set matters.
 -->
 
-*dịch đoạn phía trên*
+Đôi khi ta không chỉ muốn gán một lớp hoặc một giá trị vào một mẫu.
+Trong lĩnh vực thu thập thông tin (_intromation retrieval_), ta muốn gán thứ hạng cho một tập các mẫu.
+Lấy ví dụ trong tìm kiếm web, mục tiêu không dừng lại ở việc xác định liệu một trang nào đó có liên quan tới một từ khoá mà xa hơn, trang nào trong số vô vàn kết quả trả về có *liên quan nhất* tới một người dùng.
+Ta thực sự quan tâm đến thứ tự của các kết quả tìm kiếm liên quan và thuật toán cần đưa ra một tập con có thứ tự của các thành phần trong một tập lớn hơn.
+Nói cách khác, nếu được hỏi đưa ra năm chữ cái từ bảng chữ cái, hai kết quả ``A B C D E`` và ``C A B E D`` là khác nhau.
+Ngay cả khi hai tập kết quả là như nhau, thứ tự các phần tử trong mỗi tập mới là điều quan trọng.
 
 <!--
 One possible solution to this problem is to first assign
@@ -1375,7 +1380,11 @@ to obtain query-dependent relevance scores.
 There are entire academic conferences devoted to this subject.
 -->
 
-*dịch đoạn phía trên*
+Một giải pháp khả dĩ cho bài toán này là trước tiên gán cho mỗi phần tử trong tập hợp một điểm liên quan tương ứng và sau đó trả về những phẩn tử có điểm cao nhất.
+[PageRank](https://en.wikipedia.org/wiki/PageRank), vũ khí bí mật đằng sau cỗ máy tìm kiếm của Google là một trong những ví dụ đầu tiên của hệ thống tính điểm kiểu này.
+Tuy nhiên, điều bất thường là nó không phụ thuộc vào từ khoá tìm kiếm.
+Chúng phụ thuộc vào một bộ lọc đơn giản để xác định tập hợp các trang liên quan rồi sau đó mới dùng PageRank để sắp xếp các kết quả có chứa cụm tìm kiếm.
+Có cả những hội thảo khoa học chuyên nghiên cứu về lĩnh vực này.
 
 <!-- =================== Kết thúc dịch Phần 18 ==================== -->
 
@@ -2575,9 +2584,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 16 -->
 *
-<!-- Phần 18 -->
-*
-
 <!-- Phần 19 -->
 *
 
