@@ -1046,7 +1046,7 @@ It is treated with a different set of algorithms
 than those used for regression (although many techniques will carry over).
 -->
 
-Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
+Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *có bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
 Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
 Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
 Nó cũng cần hiểu chữ viết tay thậm chí một cách ổn định. <!-- need more dicussion-->
