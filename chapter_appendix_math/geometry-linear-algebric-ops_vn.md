@@ -1095,7 +1095,6 @@ phần lớn trường hợp chúng ta không mong muốn *sử dụng* ma trậ
 nghịch đảo để giải quyết một vấn đề thực tế. Nhìn chung, có rất nhiều thuật
 toán số học ổn định hơn trong việc giải các phương trình tuyến tính như là
 
-
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b},
 $$
@@ -1136,6 +1135,7 @@ thấy điều này không có nghĩa ma trận nghịch đảo cũng là ma tr�
 là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó),
 phép nghịch đảo ma trận vẫn sẽ trích xuất tất cả các giá trị không âm và đòi hỏi chúng ta phải
 lưu trữ 1\text{M}^2$ giá trị---tương đương với $1$ nghìn tỉ giá trị!
+
 <!--
 While we do not have time to dive all the way into the thorny numerical issues
 frequently encountered when working with linear algebra,
