@@ -1142,7 +1142,7 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-Lưu ý rằng loại có thể xảy ra nhất không nhất thiết là loại mà ta sẽ sử dụng để quyết định.
+Lưu ý rằng �lớp có khả năng xảy ra nhất không nhất thiết là lớp mà quyết định sử dụng.
 Giả sử rằng ta tìm được một cây nấm rất đẹp trong sân sau như hình :numref:`fig_death_cap`.
 
 <!--
