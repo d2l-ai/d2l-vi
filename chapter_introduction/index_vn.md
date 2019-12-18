@@ -1143,7 +1143,7 @@ as shown in :numref:`fig_death_cap`.
 -->
 
 Lưu ý rằng �lớp có khả năng xảy ra nhất không nhất thiết là lớp mà quyết định sử dụng.
-Giả sử rằng ta tìm được một cây nấm rất đẹp trong sân sau như hình :numref:`fig_death_cap`.
+Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
 ![Death cap---do not eat!](../img/death_cap.jpg)
