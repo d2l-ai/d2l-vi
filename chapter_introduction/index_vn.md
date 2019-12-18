@@ -1223,7 +1223,7 @@ but mistaking a rattler for a garter could be deadly.
 
 Trong trường hợp phân loại động vật, sẽ không quá tệ nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng sẽ rất nghiêm trọng nếu nếu nhầm lẫn chó poodle với một con khủng long.
 Hệ phân cấp nào là phù hợp phụ thuộc vào việc ta dự định dùng mô hình như thế nào.
-Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này thì nghiêm trọng chết người.
+Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này có thể gây chết người.
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
