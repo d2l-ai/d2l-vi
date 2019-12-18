@@ -2597,7 +2597,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-<<<<<<< HEAD
 * Mai Sơn Hải
 
 <!-- Phần 17 -->
