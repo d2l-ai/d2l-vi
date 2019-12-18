@@ -1168,7 +1168,7 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-Lưu ý rằng �lớp có khả năng xảy ra nhất do mô hình dự đoán không nhất thiết là lớp mà ta quyết định sử dụng.
+Lưu ý rằng lớp có khả năng xảy ra nhất do mô hình dự đoán không nhất thiết là lớp mà ta quyết định sử dụng.
 Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
