@@ -706,7 +706,7 @@ reporting the following two quantities:
 ### Optimization algorithms
 -->
 
-### *dịch tiêu đề phía trên*
+### Các thuật toán tối ưu
 
 <!--
 Once we have got some data source and representation,
@@ -721,14 +721,17 @@ if you perturbed that parameter just a small amount.
 They then update the parameter in the direction that reduces the loss.
 -->
 
-*dịch đoạn phía trên*
+Một khi đã có dữ liệu, mô hình và một hàm mục tiêu rõ ràng, ta cần một thuật toán có khả năng tìm kiếm các tham số khả dĩ tốt nhất để tối thiểu hoá hàm mất mát.
+Các thuật toán tối ưu phổ biến nhất cho mạng nơ-ron đi theo một hướng tiếp cận được gọi là hạ gradient.
+Một cách ngắn gọn, tại mỗi bước, ta kiểm tra xem hàm mất mát thay đổi như thế nào nếu mỗi tham số thay đổi chỉ một lượng nhỏ.
+Sau đó các tham số này được cập nhật theo hướng làm giảm hàm mất mát.
 
 
 <!--
 ## Kinds of Machine Learning
 -->
 
-## *dịch tiêu đề phía trên*
+## Các dạng Học Máy
 
 <!--
 In the following sections, we discuss a few *kinds*
@@ -743,7 +746,9 @@ to motivate the reader and provide us with some common language
 for when we talk about more problems throughout the book.
 -->
 
-*dịch đoạn phía trên*
+Trong các mục tiếp theo, chúng ta thảo luận một vài *dạng* bài toán học máy một cách chi tiết hơn. Chúng ta bắt đầu với một danh sách *các mục tiêu*, tức một danh sách các tác vụ chúng ta muốn học máy thực hiện.
+Chú ý rằng các mục tiêu được gắn với một tập các kỹ thuật giúp trả lời câu hỏi "làm sao" để đạt được chúng, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
+Danh sách dưới đây là một tập con các bài toán mà Học Máy có thể xử lý nhằm tạo động lực cho độc giả, đồng thời cung cấp một ngôn ngữ chung khi ta nói về những bài toán khác xuyên suốt cuốn sách.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
@@ -956,7 +961,11 @@ Do not worry if the notation is bogging you down.
 We will unpack it more thoroughly in the subsequent chapters.
 -->
 
-*dịch đoạn phía trên*
+Ký hiệu mục tiêu là $y_i$ (tương ứng với mẫu $\mathbf{x_i}$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
+Khi các mục tiêu lấy các giá trị bất kỳ trong một khoảng, chúng ta gọi đây là bài toán hồi quy.
+Mục đích của chúng ta là tạo ra một mô hình mà các giá trị dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. Chúng ta ký hiệu mục tiêu dự đoán của một mẫu là $\hat{y}_i$.
+Đừng quá lo lắng nếu có quá nhiều ký hiệu.
+Chúng ta sẽ tìm hiểu kỹ từng kỳ hiệu trong các chương tiếp theo.
 
 
 <!--
@@ -971,14 +980,18 @@ A good rule of thumb is that any *How much?* or *How many?* problem
 should suggest regression.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều bài toán thực tế có thể được mô tả thông qua các bài toán hồi quy.
+Dự đoán điểm số một người dùng gán cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán tốt để đạt được điều này năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
+Dự đoán thời gian nằm viện của một bệnh nhân cũng là một bài toán hồi quy.
+Một quy tắc dễ nhớ là các bài toán mà ta phải trả lời cho câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.) có thể được coi là các bài toán hồi quy.
 
 <!--
 * "How many hours will this surgery take?": *regression*
 * "How many dogs are in this photo?": *regression*.
 -->
 
-*dịch đoạn phía trên*
+* "Ca phẫu thuật này sẽ mất bao lâu?": *hồi quy*
+* "Có bao nhiêu chú chó trong bức ảnh?": *hồi quy*
 
 <!--
 However, if you can easily pose your problem as "Is this a _ ?",
@@ -1006,7 +1019,16 @@ the high-level idea behind linear regression
 (and you just implicitly designed a linear model with a bias term).
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu bạn có thể biến bài toán của bạn thành "Có đúng là \_?" thì khả năng cao đó là bài toán phân loại, một dạng khác của bài toán học có giám sát mà chúng ta thảo luận trong phần tiếp.
+Ngay cả khi bạn chưa từng làm việc với học máy, bạn có thể đã làm việc với các bài toán hồi quy một cách không chính thức.
+Ví dụ, hãy tưởng tượng bạn cần sửa chữa đường ống cống và người thợ đã dành $x_1=3$ giờ để thông cống rồi gửi hoá đơn $y_1 = \$350$.
+Bây giờ bạn của bạn thuê cùng người thợ trong $x_2 = 2$ tiếng và cô ấy nhận được hoá đơn là $y_2 = \$250$.
+Nếu một người sau đó hỏi bạn dự tính giá phải trả để thông cống, bạn có thể có một vài giả sử có lý, chẳng hạn nhiều thời gian sẽ tốn nhiều tiền hơn.
+Bạn cũng có thể giả sử rằng có một mức phí cơ bản và sau đó người thợ tính tiền theo giờ.
+Nếu giả sử này là đúng, thì cho trước hai điểm dữ liệu, bạn đã có thể tính được cách mà người thợ xây dựng bảng giá: \$100 một giờ cộng với \$50 cho việc tới nhà bạn.
+Nếu bạn theo được logic tới đây thì bạn đã có thể hiểu ý tưởng sơ lược đằng sau hồi quy tuyến tính (và bạn vô tình đã thiết kế một mô hình tuyến tính với thành phần điều chỉnh).
+<!-- Lưu ý rằng bias này có ý nghĩa khác với bias trong "bias-variance trade off. Bias này là đại lượng thường được thêm vào công thức của các quan hệ tuyến tính để điều chỉnh giá trị. Nó cũng chính là số hạng tự do mà chúng ta thường dùng trong chương trình phổ thông. Mọi người có thể thảo luận cách dịch. Mình sẽ xoá dòng này sau khi thảo luận xong.--> 
+
 
 <!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
@@ -1024,7 +1046,10 @@ the [L1 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet
 where
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình ước tính chi phí của người thợ sửa ống cống.
+Đôi khi việc này là không khả thi, ví dụ một biến thể nào đó gây ra bởi các yếu tố ngoài hai đặc trưng kể trên.
+Trong những trường hợp này, ta sẽ cố học các mô hình sao cho nó tối thiểu hoá khoảng cách giữa các giá trị dự đoán và các giá trị thực sự.
+Trong hầu hết các chương, chúng ta sẽ tập trong vào một trong hai hàm mất mát phổ biến nhất: hàm [mất mát L1](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L1Loss), ở đó
 
 $$l(y, y') = \sum_i |y_i-y_i'|$$
 
@@ -1034,7 +1059,7 @@ and the least mean squares loss, or
 where
 -->
 
-*dịch đoạn phía trên*
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
@@ -1045,7 +1070,8 @@ whereas the $L_1$ loss corresponds to an assumption
 of noise from a Laplace distribution.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss,
+trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
@@ -1233,7 +1259,7 @@ Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm g�
 #### Tagging
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Gán thẻ
 
 <!--
 Some classification problems do not fit neatly
@@ -1247,18 +1273,17 @@ we might find ourselves in trouble when the classifier
 encounters an image of the Town Musicians of Bremen.
 -->
 
-*dịch đoạn phía trên*
+Một vài bài toán phân loại không phù hợp với các mô hình phân loại nhị phân hoặc đa lớp.
+Ví dụ, chúng ta có thể huấn luyện một bộ phân loại nhị phân thông thường để phân loại mèo và chó.
+Với khả năng hiện tại của thị giác máy tính, việc này có thể được thực hiện dễ dàng bằng các công cụ sẵn có.
+Tuy nhiên, bất kể mô hình của bạn chính xác đến đâu, nó có thể gặp rắc rối khi thấy bức ảnh Những Nhạc Sĩ thành Bremen. <!-- https://www.google.com/search?q=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&oq=Nh%E1%BB%AFng+nh%E1%BA%A1c+s%C4%A9+th%C3%A0nh+bremen&aqs=chrome..69i57j0l2.7126j0j9&sourceid=chrome&ie=UTF-8 -->
 
 <!--
 ![A cat, a roster, a dog and a donkey](../img/stackedanimals.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/stackedanimals.jpg)
+![Mèo, gà trống, chó và lừa](../img/stackedanimals.jpg)
 :width:`300px`
--->
-
-*dịch đoạn phía trên*
-
 
 <!--
 As you can see, there is a cat in the picture,
@@ -1272,7 +1297,9 @@ saying the image depicts a cat *and* a dog *and* a donkey
 *and* a rooster *and* a bird.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy trong ảnh có một con mèo, một con gà trống, một con chó, một con lừa và một con chim, cùng với một vài cây ở hậu cảnh.
+Tuỳ vào mục đích cuối cùng của mô hình, sẽ không hợp lý nếu coi đây là một bài toán phân loại nhị phân.
+Thay vào đó, ta có thể cho mô hình lựa chọn nói rằng bức ảnh có một con mèo *và* một con chó *và* một con cừu *và* một con gà trống *và* một con chim.
 
 <!--
 The problem of learning to predict classes that are
@@ -1289,7 +1316,16 @@ and posts about "machine learning" could also deal
 with "programming languages".
 -->
 
-*dịch đoạn phía trên*
+Bài toán học để dự đoán các lớp *không xung khắc* được gọi là phân loại đa nhãn.
+Các bài toán tự động gán thẻ là các ví dụ điển hình của phân loại đa nhãn.
+Nghĩ về các thẻ mà một người có thể gán cho một blog công nghệ, ví dụ "học máy", "công nghệ", "ngôn ngữ lập trình", "linux", "điện toán đám mây" hay "AWS".
+Một bài báo thông thường có thể có từ 5-10 thẻ bởi các khái niệm này có liên quan với nhau.
+Các bài về "điện toán đám mây" khả năng cao đề cập "AWS" và các bài về "học máy" cũng có thể dính dáng tới "ngôn ngữ lập trình".
+
+<!--
+Từ *mutually exclusive* được dịch là *xung khắc*. Giáo trình xác suất thống kê, Tống Đình Quỳ, tái bản lần thứ năm, NXB ĐHBKHN, trang 21
+https://i.ibb.co/HYSGx87/Screen-Shot-2019-12-16-at-11-57-21-PM.png
+-->
 
 <!--
 We also have to deal with this kind of problem when dealing
@@ -1307,7 +1343,11 @@ Indeed, for several years, the BioASQ organization
 has [hosted a competition](http://bioasq.org/) to do precisely this.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng phải xử lý các vấn đề này trong nghiên cứu y sinh, ở đó việc gán thẻ cho các bài báo một cách chính xác là quan trọng bởi nó cho phép các nhà nghiên cứu tổng hợp đầy đủ các tài liệu liên quan.
+Tại Thư Viện Y Khoa Quốc Gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sư tập với khoảng 28 nghìn thẻ.
+Đây là một quá trình tốn thời gian và những người gán nhãn thường có một năm trễ kể từ khi lưu trữ tới khi gán thẻ.
+Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho tới khi được kiểm chứng lại một cách thủ công.
+Thực vậy, BioASQ đã [tổ chức một cuộc thi]((http://bioasq.org/) dành riêng cho việc này.
 
 <!-- =================== Kết thúc dịch Phần 17 ==================== -->
 
@@ -2554,11 +2594,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
+<<<<<<< HEAD
 * Mai Sơn Hải
 
 <!-- Phần 17 -->
 *
 
+=======
+*
+>>>>>>> 1a7ce99ed7077494a08e05c26b7921fbb73a7e57
 <!-- Phần 18 -->
 *
 

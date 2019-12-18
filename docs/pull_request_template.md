@@ -1,6 +1,6 @@
 ## Pull Request checklist
 
-**Đánh dấu tick (x, không có dấu cách xung quanh) vào các mục dưới đây**
+**Đánh dấu tick (sau khi "Create Pull Request") vào các mục dưới đây**
 
 * [ ] Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): Close #
 
@@ -19,7 +19,7 @@
      
 * [ ] Trong một đoạn văn, mỗi câu văn đã được viết trong một dòng, giữa các dòng không có dòng trắng. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
 
-* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm [hướng dẫn hoặc yêu cầu dịch hình](img/README.md).
+* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm [hướng dẫn hoặc yêu cầu dịch hình](../img/README.md).
 
 * [ ] Điền tên của bạn và vào mục "Những người thực hiện" ở cuối file.
 
