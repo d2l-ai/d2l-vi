@@ -1176,7 +1176,7 @@ Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ bị chết vì nấm độc.
 Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
-Ta có thể có một cách nhìn chính quy hơn.
+Ta có thể nhìn việc này một cách chính quy hơn.
 Cơ bản là, chúng ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
 $$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
