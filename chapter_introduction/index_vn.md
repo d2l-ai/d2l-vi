@@ -1142,8 +1142,8 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-Lưu ý rằng loại có thể xảy ra nhất không nhất thiết là loại mà ta sẽ sử dụng để quyết định.
-Giả sử rằng ta tìm được một cây nấm rất đẹp trong sân sau như hình :numref:`fig_death_cap`.
+Lưu ý rằng �lớp có khả năng xảy ra nhất không nhất thiết là lớp mà quyết định sử dụng.
+Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
 ![Death cap---do not eat!](../img/death_cap.jpg)
@@ -1170,16 +1170,16 @@ i.e., we need to multiply the probability of the outcome
 with the benefit (or harm) associated with it:
 -->
 
-Giờ giả sử ta xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
-Giả sử output của bộ phân loại phát hiện chất độc $P(y=\mathrm{death cap}|\mathrm{image}) = 0.2$.
+Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
 Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ bị chết vì nấm độc.
 Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
-Ta có thể có một cách nhìn chính quy hơn.
-Cơ bản là, chúng ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
+Ta có thể nhìn việc này một cách chính quy hơn.
+Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
+$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
@@ -1202,12 +1202,12 @@ One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnae
 -->
 
 Sự thận trọng của chúng ta đã được xác nhận: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
-Việc phân loại có thể còn phức tạp hơn là so với chỉ phân loại nhị phân, đa chủng loại, hoặc thậm chí phân loại đa-nhãn.
-Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (hierarchy).
+Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (__hierarchy__).
 Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
-Vậy nên không phải tất cả các lần phân loại sai đều như nhau---nếu ta mắc lỗi khi phân loại, ta thường muốn rằng mình phân loại sai thành một lớp có liên quan chứ không phải tới một lớp xa xôi khác.
-Thông thường, việc này được nói đến như là *phân loại cấp bậc (hierarchical classification)*.
-Một ví dụ là [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loài động vật theo hệ thống phân cấp.
+Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp xa xôi khác.
+Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
+Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo hệ thống phân cấp.
 
 <!--
 In the case of animal classification,
@@ -1221,9 +1221,9 @@ might be close on the phylogenetic tree,
 but mistaking a rattler for a garter could be deadly.
 -->
 
-Trong trường hợp phân loại động vật, sẽ không quá tệ nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng mô hình sẽ bị phạt rất nặng nếu nhầm lẫn chó poodle với một con khủng long.
-Hệ phân cấp nào là phù hợp sẽ phụ thuộc vào ta dự định dùng mô hình như thế nào.
-Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này thì nghiêm trọng chết người.
+Trong trường hợp phân loại động vật, sẽ không quá tệ nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng sẽ rất nghiêm trọng nếu nếu nhầm lẫn chó poodle với một con khủng long.
+Hệ phân cấp nào là phù hợp phụ thuộc vào việc ta dự định dùng mô hình như thế nào.
+Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này có thể gây chết người.
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
