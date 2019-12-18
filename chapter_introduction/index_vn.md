@@ -1540,7 +1540,14 @@ Below is a very simple example of annotating a sentence
 with tags indicating which words refer to named entities.
 -->
 
-*dịch đoạn phía trên*
+**Gán thẻ và Phân tích cú pháp**.
+Đây là bài toán gán các thuộc tính cho chuỗi các từ.
+Nói cách khác, số lượng đầu vào và đầu ra là như nhau.
+Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ngữ.
+Hoặc ta cũng có thể muốn biết từ nào là thực thể được đặt tên. <!-- hmm, thảo luận -->
+Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
+Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
+Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các thực thể được đặt tên. <!-- nhờ các bác làm về NLP giúp phần này -->
 
 ```text
 Tom has dinner in Washington with Sally.
@@ -1559,13 +1566,11 @@ since thousands of samples correspond to a single spoken word.
 These are ``seq2seq`` problems where the output is much shorter than the input.
 -->
 
-*dịch đoạn phía trên*
+**Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm của một người (:numref:`fig_speech`), và đầu ra $y$ là một đoạn chữ ghi lại những gì người đó nói.
+Thử thách ở đây là việc có rất nhiều các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) hơn so với chữ, nghĩa là không có một phép tương ứng 1:1 nào giữa âm thanh và chữ viết, bởi vì một tiếng nói có thể tương ứng với hàng ngàn mẫu âm thanh.
+Có các bài toán ``seq2seq`` mà đầu ra ngắn hơn rất nhiều so với đầu vào.
 
-<!--
 ![`-D-e-e-p- L-ea-r-ni-ng-`](../img/speech.png)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/speech.png)
 :width:`700px`
 :label:`fig_speech`
 
@@ -1578,7 +1583,10 @@ While it is easy for *humans* to recognize a bad audio file,
 this is not quite so trivial for computers.
 -->
 
-*dịch đoạn phía trên*
+**Chữ ra Tiếng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của nhận dạng tiếng nói.
+Nói cách khác, đầu vào $\mathbf{x}$ là chữ và đầu ra $y$ là tệp tin âm thanh.
+Trong trường hợp này, đầu ra *dài hơn nhiều* so với đầu vào.
+Trong khi việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người*, việc đó là không đơn giản với các máy tính.
 
 <!--
 **Machine Translation**. Unlike the case of speech recognition, where corresponding
@@ -1592,12 +1600,14 @@ of the peculiar tendency of Germans
 to place the verbs at the end of sentences.
 -->
 
-*dịch đoạn phía trên*
+**Dịch máy**. Không giống trường hợp nhận dạng tiếng nói, ở đó các đầu vào và đầu ra tương ứng xuất hiện theo cùng thứ tự (sau khi căn chỉnh), việc đảo trật tự trong dịch máy có thể rất quan trọng.
+Nói cách khác, trong khi chúng ta vẫn chuyênr đổi một chuỗi sang một chuỗi khác, không có giả sử nào về việc số lượng đầu vào và đầu ra hay thứ tự của các cặp là như nhau.
+Xét ví dụ dưới đây về việc động từ được đặt ở cuối câu trong tiếng Đức.
 
 ```text
-German:           Haben Sie sich schon dieses grossartige Lehrwerk angeschaut?
-English:          Did you already check out this excellent tutorial?
-Wrong alignment:  Did you yourself already this excellent tutorial looked-at?
+Tiếng Đức:           Haben Sie sich schon dieses grossartige Lehrwerk angeschaut?
+Tiếng Anh:          Did you already check out this excellent tutorial?
+Căn chỉnh sai:  Did you yourself already this excellent tutorial looked-at?
 ```
 
 
@@ -1611,7 +1621,10 @@ real-world knowledge and the prior state of the conversation
 across long temporal distances. This is an active area of research.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều bài toán liên quan xuất hiện trong các tác vụ học khác.
+Ví dụ, xác định thứ tự ở đó một người dùng đọc một trang mạng là một bài toán phân tích sắp xếp bối cảnh hai chiều.
+Các bài toán hội thoại chứa đựng mọi loại phức tạp khác, ở đó xác định sẽ nói gì tiếp theo đòi hỏi kiến thức thực tế và trạng thái trước đó của cuộc hội thoại trong một khoảng thời gian dài.
+Vấn đề này đang được nhiều nhà nghiên cứu quan tâm.
 
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
 
@@ -2583,10 +2596,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 20 -->
 *
-
-<!-- Phần 21 -->
-*
-
 <!-- Phần 22 -->
 *
 
