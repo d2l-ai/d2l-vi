@@ -1109,7 +1109,7 @@ Việc này dễ nhận thấy đối với phân loại nhị phân.
 Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
 Trở lại với ví dụ phân loại động vật, một bộ phân loại có thể nhìn một bức ảnh và đưa ra xác suất để bức ảnh đó là mèo $P(y=\text{mèo} \mid x) = 0.9$.
 Chúng ta có thể diễn giải giá trị này tương ứng với việc bộ phân loại $90\%$ tin rằng bức ảnh đó chứa một con mèo.
-Độ lớn xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
+Giá trị xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
 Đó không phải là ký hiệu duy nhất của sự không chắc chắn, chúng ta sẽ thảo luận các ký hiệu khác trong các chương nâng cao.
 
 <!--
