@@ -916,7 +916,7 @@ we will abuse language just a bit cn continue to describe
 our outputs and targets as real-valued numbers.
 -->
 
-Điều khiến một bài toán là *hồi quy* thực ra đến từ đầu ra.
+Để xác định một bài toán là *hồi quy* hay không, ta dựa vào đầu ra của nó.
 Chẳng hạn bạn đang thị sát thị trường cho một căn nhà mới.
 Bạn có thể đánh giá giá trị thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, giá bán của căn nhà, là một *số thực*.
 Nếu bạn còn nhớ định nghĩa chính thống của số thực, bạn có thể băn khoăn.
