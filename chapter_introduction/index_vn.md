@@ -1046,7 +1046,10 @@ the [L1 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet
 where
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình ước tính chi phí của người thợ sửa ống cống.
+Đôi khi việc này là không khả thi, ví dụ một biến thể nào đó gây ra bởi các yếu tố ngoài hai đặc trưng kể trên.
+Trong những trường hợp này, ta sẽ cố học các mô hình sao cho nó tối thiểu hoá khoảng cách giữa các giá trị dự đoán và các giá trị thực sự.
+Trong hầu hết các chương, chúng ta sẽ tập trong vào một trong hai hàm mất mát phổ biến nhất: hàm [mất mát L1](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L1Loss), ở đó
 
 $$l(y, y') = \sum_i |y_i-y_i'|$$
 
@@ -1056,7 +1059,7 @@ and the least mean squares loss, or
 where
 -->
 
-*dịch đoạn phía trên*
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
@@ -1067,7 +1070,8 @@ whereas the $L_1$ loss corresponds to an assumption
 of noise from a Laplace distribution.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss,
+trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
