@@ -1004,7 +1004,7 @@ cannot be undone, i.e., there is no inverse operation that can always recover th
 we should always be able to undo it.  Consider the matrix
 -->
 
-Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không có thao tác nghịch đảo nào có thể khôi phục lại đầu vào. 
+Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không tồn tại thao tác đảo nào có thể khôi phục lại đầu vào. 
 Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận $\mathbf{A}$ kích thước $n \times n$ nào đó với hạng $n$), chúng ta luôn có thể hoàn tác nó. 
 Xét ma trận
 
@@ -1026,9 +1026,9 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 -->
 
 đây là ma trận với các phần tử trên đường chéo có giá trị 1 và các phẩn tử còn lại có giá trị 0.
-Chúng ta gọi đó là ma trận *đơn vị*.
-Đây là ma trận không làm thay đổi dữ liệu khi nhân với nó.
-Để tìm một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta muốn tìm một ma trận $\mathbf{A}^{-1}$ sao cho
+Ma trận này được gọi là ma trận *đơn vị*.
+�Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này.
+Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
 $$
 \mathbf{A}^{-1}\mathbf{A} = \mathbf{A}\mathbf{A}^{-1} =  \mathbf{I}.
@@ -1044,11 +1044,12 @@ which has the property that as long as the determinant is not zero, we can find 
 As an example, if $\mathbf{A}$ is the general $2 \times 2$ matrix
 -->
 
-Nếu coi đây là một hệ phương trình, ta có $n \times n$ biến (các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ số phương trình
-(đẳng thức cần thỏa mãn giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và mỗi giá trị của $\mathbf{I}$)
-nên ta dự đoán sẽ tồn tại một nghiệm hệ phương trình.
-Thật vậy, trong phần tiếp theo chúng ta sẽ thấy một đại lượng được gọi là *định thức* với tính chất: ta chỉ tìm được nghiệm duy nhất khi định thức khác 0. Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
-Ví dụ: nếu $\mathbf{A}$ là ma trận $2 \times 2$
+Nếu coi đây là một hệ phương trình, ta có $n \times n$ biến (các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ phương trình
+(đẳng thức cần thỏa mãn giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và giá trị tương ứng của $\mathbf{I}$)
+nên nhìn chung hệ phương trình có nghiệm.
+Thật vậy, phần tiếp theo sẽ giới thiệu một đại lượng được gọi là *định thức* với tính chất: nghiệm tồn tại khi đại lượng này khác 0.
+Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
+Ví dụ, nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1075,7 +1076,7 @@ We can test to see this by seeing that multiplying
 by the inverse given by the formula above works in practice.
 -->
 
-bằng công thức ma trận nghịch đảo trình bày ở trên.
+Việc này có thể kiểm chứng bằng công thức ma trận nghịch đảo trình bày ở trên.
 
 ```{.python .input}
 M = np.array([[1, 2], [1, 4]])
