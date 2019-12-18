@@ -1203,7 +1203,7 @@ One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnae
 
 Sự thận trọng của chúng ta đã được xác nhận: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
 Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
-Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (hierarchy).
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (__hierarchy__).
 Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
 Vậy nên không phải tất cả các lần phân loại sai đều như nhau---nếu ta mắc lỗi khi phân loại, ta thường muốn rằng mình phân loại sai thành một lớp có liên quan chứ không phải tới một lớp xa xôi khác.
 Thông thường, việc này được nói đến như là *phân loại cấp bậc (hierarchical classification)*.
