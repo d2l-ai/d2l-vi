@@ -1103,7 +1103,7 @@ and we will discuss others in more advanced chapters.
 Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*. 
 Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất. 
 Cho trước một mẫu $\mathbf{x}$, mô hình cần gán một giá trị xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
-Vì là các xác suất, chúng phải là các số dương có tổng bằng $1$.
+Vì là các giá trị xác suất, chúng phải là các số dương có tổng bằng $1$.
 Bởi vậy ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
 Việc này dễ nhận thấy đối với phân loại nhị phân.
 Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
