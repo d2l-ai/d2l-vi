@@ -1234,7 +1234,7 @@ Sự thận trọng của chúng ta là chính đáng: như bất kỳ nhà nghi
 Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
 Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (__hierarchy__).
 Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
-Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp xa xôi khác.
+Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp khác xa nào đó.
 Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
 Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo hệ thống phân cấp.
 
