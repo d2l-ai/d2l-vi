@@ -1051,7 +1051,7 @@ Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong 
 Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
 Nó cũng cần hiểu chữ viết tay thậm chí một cách ổn định. <!-- need more dicussion-->
 Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical charactor recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại*.
-Nó được thiết kế bởi một tập các thuật toán khác với hồi quy (mặc dù có nhiều kỹ thuật chung).
+Nó được thiết kế bởi một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
 
 <!--
 In classification, we want our model to look at a feature vector,
