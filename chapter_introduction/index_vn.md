@@ -1171,7 +1171,7 @@ with the benefit (or harm) associated with it:
 -->
 
 Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
-Giả sử output của bộ phân loại phát hiện chất độc $P(y=\mathrm{death cap}|\mathrm{image}) = 0.2$.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
 Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ bị chết vì nấm độc.
