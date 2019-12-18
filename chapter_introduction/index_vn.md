@@ -1179,7 +1179,7 @@ Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm tr�
 Ta có thể nhìn việc này một cách chính quy hơn.
 Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
+$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
