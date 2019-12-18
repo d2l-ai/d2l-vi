@@ -1170,7 +1170,7 @@ i.e., we need to multiply the probability of the outcome
 with the benefit (or harm) associated with it:
 -->
 
-Giờ giả sử ta xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
+Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
 Giả sử output của bộ phân loại phát hiện chất độc $P(y=\mathrm{death cap}|\mathrm{image}) = 0.2$.
 Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
 Dù vậy, đừng dại mà ăn nhé.
