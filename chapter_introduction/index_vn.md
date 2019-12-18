@@ -1168,7 +1168,7 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-Lưu ý rằng �lớp có khả năng xảy ra nhất không nhất thiết là lớp mà quyết định sử dụng.
+Lưu ý rằng �lớp có khả năng xảy ra nhất do mô hình dự đoán không nhất thiết là lớp mà ta quyết định sử dụng.
 Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
@@ -1212,6 +1212,9 @@ Hence, the loss $L$ incurred by eating the mushroom
 is $L(a=\mathrm{eat}| x) = 0.2 * \infty + 0.8 * 0 = \infty$,
 whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+-->
+
+Do đó, sự tổn hại $L$ do ăn phải nấm là $L(a=\mathrm{ăn}}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
