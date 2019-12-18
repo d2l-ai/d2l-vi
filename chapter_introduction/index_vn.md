@@ -879,7 +879,7 @@ and the corresponding *feature vector* would be one row in the table.
 
 Có lẽ tác vụ học có giám sát đơn giản nhất là *hồi quy*.
 Xét ví dụ một tập dữ liệu thu thập được từ cơ sở dữ liệu buôn bán nhà.
-Chúng ta có thể xây dựng một bảng, ở đó mỗi hàng tương ứng với một nhà và mỗi cột tương ứng với một thuộc tính liên quan nào đó, chẳng hạn diện tích nhà, số lượng phòng ngủ, số lượng phòng tắm và thời gian (theo phút) để đi bộ tới trung tâm thành phố.
+Chúng ta có thể xây dựng một bảng dữ liệu, ở đó mỗi hàng tương ứng với một nhà và mỗi cột tương ứng với một thuộc tính liên quan nào đó, chẳng hạn như diện tích nhà, số lượng phòng ngủ, số lượng phòng tắm và thời gian (theo phút) để đi bộ tới trung tâm thành phố.
 Trong tập dữ liệu này mỗi *mẫu* là một căn nhà cụ thể, và *vector đặc trưng* tương ứng là một hàng trong bảng.
 
 <!--
