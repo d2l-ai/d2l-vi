@@ -1125,6 +1125,7 @@ In MXNet Gluon, the corresponding loss function can be found [here](https://mxne
 
 Khi có nhiều hơn hai lớp, ta gọi bài toán này là *phân loại đa lớp*. <!-- to glossary -->
 Bài toán phân loại chữ viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]` là một trong số các ví dụ điển hình.
+Trong khi các hàm mất mát thường được sử dụng trong các bài toán hồi quy là hàm mất mát L1 hoặc L2, hàm mất mát phổ biến cho bài toán phân loại được gọi là cross-entropy, hàm tương ứng trong MXNet Gluon có thể xem tại [đây](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss)
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
