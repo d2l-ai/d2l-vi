@@ -998,7 +998,7 @@ the [L1 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet
 where
 -->
 
-Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình tính giá của người thợ sửa đường ống cống.
+Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình ước tính chi phí của người thợ sửa ống cống.
 Đôi khi việc này là không khả thi, ví dụ một biến thể nào đó gây ra bởi các yếu tố ngoài hai đặc trưng kể trên.
 Trong những trường hợp này, ta sẽ cố học các mô hình sao cho nó tối thiểu hoá khoảng cách giữa các giá trị dự đoán và các giá trị thực sự.
 Trong hầu hết các chương, chúng ta sẽ tập trong vào một trong hai hàm mất mát phổ biến nhất: hàm [mất mát L1](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L1Loss), ở đó
