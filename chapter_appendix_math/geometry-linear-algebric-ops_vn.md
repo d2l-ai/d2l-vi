@@ -1090,8 +1090,7 @@ In general, there are far more numerically stable algorithms
 for solving linear equations like
 -->
 
-Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, phần lớn trường hợp chúng ta không mong muốn *sử dụng* ma trận
-nghịch đảo để giải quyết một vấn đề thực tế.
+Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, phần lớn trường hợp chúng ta không mong muốn *sử dụng* ma trận nghịch đảo để giải quyết một vấn đề thực tế.
 Nhìn chung, có rất nhiều thuật toán số học ổn định hơn trong việc giải các phương trình tuyến tính như là
 
 $$
@@ -1127,7 +1126,8 @@ the inverse will typically have almost every entry non-negative,
 requiring us to store all $1\text{M}^2$ entries---that is $1$ trillion entries!
 -->
 
-Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa thớt*, có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0. Nếu nhìn vào các ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là ma trận thưa thớt.
+Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa thớt*, có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0.
+Nếu nhìn vào các ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là ma trận thưa thớt.
 Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó), phép nghịch đảo ma trận vẫn sẽ trích xuất tất cả các giá trị không âm và đòi hỏi chúng ta phải lưu trữ 1\text{M}^2$ giá trị---tương đương với $1$ nghìn tỉ giá trị!
 
 <!--
