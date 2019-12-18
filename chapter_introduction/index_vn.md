@@ -1385,7 +1385,7 @@ There are entire academic conferences devoted to this subject.
 #### Recommender systems
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Hệ thống gợi ý
 :label:`subsec_recommender_systems`
 
 <!--
@@ -1402,7 +1402,11 @@ Similar problems pop up in other recommendation settings,
 e.g., for retail products, music, or news recommendation.
 -->
 
-*dịch đoạn phía trên*
+Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và sắp xếp.
+Chúng có chung mục đích là hiển thị một tập các kết quả liên quan tới người dùng.
+Sự khác biệt chính là nó nhấn mạnh tới *cá nhân hoá* tới từng người dùng cụ thể với trường hợp hệ thống gợi ý.
+Ví dụ, với gợi ý phim ảnh, trang kết quả cho một fan của phim khoa học viễn tưởng và cho một người sảnh sòi hài Peter Sellers có thể khác nhau một cách đáng kể.
+Tương tự với các bài toán gợi ý khác như các hệ thống gợi ý sản phẩm bán lẻ, âm nhạc hoặc tin tức.
 
 <!--
 In some cases, customers provide explicit feedback communicating
@@ -1417,7 +1421,10 @@ to estimate some score $y_{ij}$, such as an estimated rating
 or the probability of purchase, given a user $u_i$ and product $p_j$.
 -->
 
-*dịch đoạn phía trên*
+Trong một vài trường hợp, khách hàng cung cấp phản hồi trực tiếp (_explicit feedback_) học thích một sản phẩm cụ thể như thế nào (ví dụ các đánh giá sản phẩm và phản hồi trên Amazon, IMDB, GoodReads, v.v.).
+Trong vài trường hợp khác, họ cung cấp phản hồi gián tiếp (_implicit feedback_), ví dụ như bỏ qua các bài hát trong một danh sách nhạc.
+Việc này có thể chỉ ra sự không thoả mãn hoặc có thể chỉ đơn giản là bài hát không phù hợp trong bối cảnh.
+Trong những diễn giải đơn giản nhất, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như một ước lượng đánh giá hoặc xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
 
 <!--
 Given such a model, then for any given user,
@@ -1429,13 +1436,15 @@ when computing such scores. :numref:`fig_deeplearning_amazon` is an example
 of deep learning books recommended by Amazon based on personalization algorithms tuned to capture the author's preferences.
 -->
 
-*dịch đoạn phía trên*
+Cho trước hình này, với một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm lớn nhất $y_{ij}$ để gợi ý cho khách hàng.
+Các hệ thống nâng cao này sử dụng hành vi người dùng và các tính chất của sản phẩm để tính điểm.
+:numref:`fig_deeplearning_amazon` là một ví dụ về các cuốn sách học sâu được gợi ý bởi Amazon dựa trên các thuật toán cá nhân hoá sử dụng các thông tin của tác giả.
 
 <!--
 ![Deep learning books recommended by Amazon.](../img/deeplearning_amazon.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/deeplearning_amazon.png)
+![Các sách học sâu được gợi ý bởi Amazon.](../img/deeplearning_amazon.png)
 :label:`fig_deeplearning_amazon`
 
 <!--
@@ -1457,7 +1466,12 @@ Many of these problems about how to deal with censoring,
 incentives, and feedback loops, are important open research questions.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù có giá trị kinh tế lớn, các hệ thống gợi ý được xây dựng đơn thuần theo các mô hình dự đoán cũng có những hạn chế nghiêm trọng.
+Ban đầu, ta chỉ quan sát các *phản hồi được kiểm duyệt*.
+Người dùng thường có xu hướng đánh giá các bộ phim họ thực sự thích hoặc ghét: bạn có thể để ý rằng các bộ phim nhận được rất nhiều đánh giá 5 và 1 sao nhưng rất ít các bộ phim với 3 sao.
+Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán gợi ý tại thời điểm đó, nhưng các thuật toán gợi ý không luôn khai thác được chi tiết này.
+Bởi vậy có khả năng xảy ra các vòng phản hồi luẩn quẩn ở đó một hệ thống gợi ý đẩy lên một sản phẩm rồi sau đó sản phẩm đó được trả về thường xuyên hơn bởi nó được mua nhiều hơn.
+Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệt, ưu đãi và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
 
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
