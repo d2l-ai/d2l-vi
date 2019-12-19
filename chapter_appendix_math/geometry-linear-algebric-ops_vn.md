@@ -1091,7 +1091,7 @@ for solving linear equations like
 -->
 
 Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, chúng ta nên tránh *sử dụng* chúng khi giải quyết các bài toán thực tế.
-Nhìn chung, có rất nhiều thuật toán số học ổn định hơn trong việc giải các phương trình tuyến tính như là
+Nhìn chung, có rất nhiều phương pháp tính toán ổn định hơn trong việc giải các phương trình tuyến tính dạng
 
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b},
