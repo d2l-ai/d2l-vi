@@ -1679,7 +1679,7 @@ across long temporal distances. This is an active area of research.
 ### Unsupervised learning
 -->
 
-### *dịch tiêu đề phía trên*
+### Học Không giám sát
 
 <!--
 All the examples so far were related to *Supervised Learning*,
@@ -1695,7 +1695,12 @@ You just recognize the pattern as quickly as possible
 and imitate their actions.
 -->
 
-*dịch đoạn phía trên*
+Tất cả các ví dụ phía trên đều liên quan tới *Học có Giám sát*, ví dụ, những tình huống ta nạp vào mô hình lượng dữ liệu khổng lồ chứa cả các đặc trưng và giá trị mục tiêu tương ứng.
+Có thể coi như người học có giám sát giống như đang làm một công việc được miêu ta vô cùng cụ thể cùng với một ông sếp cực kỳ hãm tài.
+Ông sếp đứng ngai bên vai bạn và nói chi tiết bạn phải làm gì trong từng tình huống một cho tới khi bạn học được cách liên hệ từ tình huống tới hành động.
+Làm việc cho ông sếp kiểu này nghe khá là nản.
+Nhưng ở khía cạnh khác, thì rất dễ để làm ông sếp này hài lòng.
+Chỉ việc tìm ra những khuông mẫu nhanh nhất có thể và bắt chước lại những hành động trong đó.
 
 <!--
 In a completely opposite way, it could be frustrating
