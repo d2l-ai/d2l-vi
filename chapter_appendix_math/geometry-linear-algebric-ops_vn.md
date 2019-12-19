@@ -1112,7 +1112,7 @@ Just as division by a small number can lead to numerical instability,
 so can inversion of a matrix which is close to having low rank.
 -->
 
-Thực hiện phép chia một số cho dù nhỏ có thể dẫn đến mất ổn định số học, do đó việc nghịch đảo một ma trận cũng đưa lại hệ quả tương tự.
+Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận gần với hạng thấp cũng đưa lại hệ quả tương tự.
 
 <!--
 Moreover, it is common that the matrix $\mathbf{A}$ is *sparse*,
