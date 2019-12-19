@@ -19,6 +19,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |---------------------------|----------------------------------------------------------------|---------------|
 | accuracy                  | độ chính xác                                                   |               |
 | activation function       | hàm kích hoạt                                                  |               |
+| adversarial learning      | học đối kháng                                                  |               |
 | agent                     | tác nhân                                                       |               |
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
@@ -154,6 +155,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------|----------------------------------------------------------------|-----------------------|
 | objective function | hàm mục tiêu                                                  |                       |
+| offline learning  | học ngoại tuyến                                                |                       |
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
@@ -193,7 +195,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification     | phân loại cảm xúc                                              |                       |
 | spam email                   | email rác                                                      |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
-| speech recognition           | nhận dạng giọng nơi                                            |                       |
+| speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
 | surrogate objective          | mục tiêu đại diện                                              |                       |
 
@@ -216,6 +218,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------|----------------------------------------------------------------|-------------------------|
 | unavoidable bias | độ chệch không tránh được                                      |                         |
 | underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
+| unsupervised learning | học không giám sát                                        |                         |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
