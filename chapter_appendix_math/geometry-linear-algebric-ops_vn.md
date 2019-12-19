@@ -1090,7 +1090,7 @@ In general, there are far more numerically stable algorithms
 for solving linear equations like
 -->
 
-Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, phần lớn trường hợp chúng ta không mong muốn *sử dụng* ma trận nghịch đảo để giải quyết một vấn đề thực tế.
+Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, chúng ta nên tránh *sử dụng* chúng khi giải quyết các bài toán thực tế.
 Nhìn chung, có rất nhiều thuật toán số học ổn định hơn trong việc giải các phương trình tuyến tính như là
 
 $$
