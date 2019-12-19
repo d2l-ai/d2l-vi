@@ -1137,7 +1137,7 @@ we want to provide you with some intuition about when to proceed with caution,
 and generally avoiding inversion in practice is a good rule of thumb.
 -->
 
-Mặc dù chúng tôi không có thời gian để đi sâu vào các vấn đề số học phức tạp thường gặp khi làm việc với đại số tuyến tính, chúng tôi vẫn mong muốn có thể đem đến các chú ý cần thiết để bạn cẩn trọng, cũng như tránh tối đa việc thực hiện phép nghịch đảo.
+Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
