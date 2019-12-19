@@ -46,7 +46,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
-| cross entropy       | cross entropy                                                  |               |
+| cross entropy       | entropy chéo                                                  |               |
 | cross validation    | kiểm định chéo                                                 |               |
 | cost function       | hàm chi phí                                                    |               |
 | covariate           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
