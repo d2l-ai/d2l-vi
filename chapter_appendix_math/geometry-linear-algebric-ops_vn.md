@@ -1082,7 +1082,7 @@ M_inv.dot(M)
 ### Numerical Issues
 -->
 
-### Vấn đề số học
+### Vấn đề tính toán
 While the inverse of a matrix is useful in theory,
 we must say that most of the time we do not wish
 to *use* the matrix inverse to solve a problem in practice.
