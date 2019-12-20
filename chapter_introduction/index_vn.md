@@ -692,7 +692,7 @@ Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: d
 
 * **Lỗi huấn luyện:**
 Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
-Bạn có thể coi đây như điểm của sinh viên trên một bài thi thử được dùng để chuẩn bị cho một bài thi thật.
+Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
 Ngay cả khi kết quả khả quan, việc này không đảm bảo sự thành công trên bài thi thật.
 
 * **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra không dùng để huấn luyện mô hình.
