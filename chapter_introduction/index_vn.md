@@ -1116,7 +1116,7 @@ trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ m�
 #### Classification
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Phân loại
 
 <!--
 While regression models are great for addressing *how many?* questions,
@@ -1133,7 +1133,12 @@ It is treated with a different set of algorithms
 than those used for regression (although many techniques will carry over).
 -->
 
-*dịch đoạn phía trên*
+Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *có bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
+Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
+Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
+Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động còn ổn định hơn nữa.
+Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical charactor recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại*.
+Nó được thiết kế bởi một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
 
 <!--
 In classification, we want our model to look at a feature vector,
@@ -1150,7 +1155,12 @@ While in regression, we sought a *regressor* to output a real value $\hat{y}$,
 in classification, we seek a *classifier*, whose output $\hat{y}$ is the predicted class assignment.
 -->
 
-*dịch đoạn phía trên*
+Trong phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục nào (được gọi là *lớp*) trong số một tập (rời rạc) các lựa chọn.
+Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
+Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
+Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
+Với hồi quy, ta tìm một *bộ hồi quy* để đưa ra một giá trị thực $\hat{y}$. Trong khi đó với phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
+<!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
 <!--
 For reasons that we will get into as the book gets more technical,
@@ -1177,7 +1187,17 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-*dịch đoạn phía trên*
+Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*. 
+Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất. 
+Cho trước một mẫu $\mathbf{x}$, mô hình cần gán một giá trị xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
+Vì là các giá trị xác suất, chúng phải là các số dương có tổng bằng $1$.
+Bởi vậy, ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
+Việc này dễ nhận thấy đối với phân loại nhị phân.
+Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
+Trở lại với ví dụ phân loại động vật, một bộ phân loại có thể nhìn một bức ảnh và đưa ra xác suất để bức ảnh đó là mèo $P(y=\text{mèo} \mid x) = 0.9$.
+Chúng ta có thể diễn giải giá trị này tương ứng với việc bộ phân loại $90\%$ tin rằng bức ảnh đó chứa một con mèo.
+Giá trị xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
+Đó không phải là ký hiệu duy nhất của sự không chắc chắn, chúng ta sẽ thảo luận các ký hiệu khác trong các chương nâng cao.
 
 <!--
 When we have more than two possible classes,
@@ -1190,7 +1210,9 @@ the common loss function for classification problems is called cross-entropy.
 In MXNet Gluon, the corresponding loss function can be found [here](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss).
 -->
 
-*dịch đoạn phía trên*
+Khi có nhiều hơn hai lớp, ta gọi bài toán này là *phân loại đa lớp*. <!-- to glossary -->
+Bài toán phân loại chữ viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]` là một trong số các ví dụ điển hình.
+Trong khi các hàm mất mát thường được sử dụng trong các bài toán hồi quy là hàm mất mát L1 hoặc L2, hàm mất mát phổ biến cho bài toán phân loại được gọi là entropy chéo (_cross-entropy_), hàm tương ứng trong MXNet Gluon có thể xem [tại đây](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss)
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
