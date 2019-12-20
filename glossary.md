@@ -19,7 +19,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |---------------------------|----------------------------------------------------------------|---------------|
 | accuracy                  | độ chính xác                                                   |               |
 | activation function       | hàm kích hoạt                                                  |               |
-| adversarial learning      | học đối kháng                                                  |               |
 | agent                     | tác nhân                                                       |               |
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
@@ -202,7 +201,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |--------------------------|----------------------------------------------------------------|---------------|
 | test set                 | tập kiểm tra                                                   |               |
 | test set performance     | chất lượng trên tập kiểm tra                                   |               |
-| timestep                 | bước thời gian                                                 |               |
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
