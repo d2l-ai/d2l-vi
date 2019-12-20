@@ -698,7 +698,7 @@ Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo b�
 * **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
 Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
 Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
-Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất tệ mặc dù có kết quả tốt trong bài thi thử.
+Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
