@@ -274,8 +274,8 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-Trước khi chúng ta có thể tiếp tục và bắt đầu các thuật toán học, chúng ta phải định nghĩa vấn đề một cách chính xác, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một nhóm các mô hình thích hợp. 
-Trong trường hợp này, mô hình của chúng ta nhận một đoạn âm thanh làm *đầu vào*, và tạo ra một lựa chọn giữa ``{yes, no}`` làm đầu ra.
+Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một loại mô hình thích hợp.
+Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``
 Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
 
 
@@ -295,10 +295,10 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-Nếu chúng ta lựa chọn đúng nhóm các mô hình, sẽ tồn tại một thiết lập của các núm quay mà mô hình sẽ đưa ra ``yes`` mỗi khi nghe thấy từ "Alexa".
-Vì ta có thể lựa chọn một hiệu lệnh đánh thức bất kì, chúng ta có thể sẽ cần một nhóm các mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``yes`` mỗi khi nghe từ "Apricot (quả mơ)". 
-Chúng ta hy vọng rằng cùng một mô hình sẽ phù hợp cho cả *nhận dạng "Alexa"* và *nhận dạng "Apricot"*, bởi vì theo trực giác, chúng dường như là những nhiệm vụ tương tự.
-Tuy nhiên, chúng ta có thể cần một nhóm các mô hình hoàn toàn khác nếu chúng ta phải làm việc với các đầu vào và đầu ra nếu chúng căn bản là khác biệt so với ví dụ trên, chẳng hạn khi ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung.
+Nếu chúng ta lựa chọn đúng loại mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
+Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một loại mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot (quả mơ)".
+Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* là tương tự nhau, có thể sử dụng chung một loại mô hình.
+Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các loại mô hình hoàn toàn khác nhau.
 
 <!--
 As you might guess, if we just set all of the knobs randomly,
@@ -309,8 +309,8 @@ by which we discover the right setting of the knobs
 coercing the desired behavior from our model.
 -->
 
-Như bạn có thể đoán, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình của chúng ta sẽ không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
-Trong học sâu, *học* là một quá trình mà chúng ta khám phá ra các thiết lập đúng của các núm quay để đạt được hành vi mong muốn từ mô hình của chúng ta.
+ Dễ dàng nhận thấy, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình sẽ hầu như không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
+Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng của các núm quay để mô hình có thể  hành xử như chúng ta mong muốn.
 
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
@@ -325,9 +325,9 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 1. Repeat until the model is awesome.
 -->
 
-1. Khởi tạo mô hình một cách ngẫu nhiên mà chưa thể thực hiện tác vụ có ích nào.
-2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{yes, no}` tương ứng).
-3. Tinh chỉnh các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
+1. Khởi tạo mô hình một cách ngẫu nhiên chưa thể thực hiện tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
+3. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
 4. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
 <!--
