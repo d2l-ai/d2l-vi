@@ -919,7 +919,7 @@ our outputs and targets as real-valued numbers.
 Để xác định một bài toán là *hồi quy* hay không, ta dựa vào đầu ra của nó.
 Chẳng hạn, bạn đang khảo sát thị trường cho một căn nhà mới.
 Bạn có thể ước lượng giá thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, hay giá bán của căn nhà, là một *số thực*.
-Nếu bạn còn nhớ định nghĩa chính thống của số thực, bạn có thể băn khoăn.
+Nếu bạn còn nhớ định nghĩa toán học của số thực, bạn có thể băn khoăn.
 Nhà đất có lẽ không bao giờ bán với giá lẻ tới từng cent chứ đừng nói đến nhỏ hơn cent (các số vô tỉ).
 Trong trường hợp này, khi mục tiêu thực sự là các số rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
 
