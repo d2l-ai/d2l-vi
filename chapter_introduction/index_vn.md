@@ -695,7 +695,7 @@ Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
 Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
 Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo bài thi thật đạt kết quả tốt.```
 
-* **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra không dùng để huấn luyện mô hình.
+* **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
 Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
 Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp*.
 Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất tệ mặc dù có kết quả tốt trong bài thi thử.
