@@ -213,7 +213,7 @@ Chúng tôi cũng không biết làm cách nào để viết một chương trì
 ![Identify an awake word.](../img/wake-word.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/wake-word.svg)
+![Xác định một hiệu lệnh đánh thức](../img/wake-word.svg)
 :label:`fig_wake_word`
 
 <!--
@@ -274,7 +274,10 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-*dịch đoạn phía trên*
+Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một loại mô hình thích hợp.
+Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``
+Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
+
 
 <!--
 If we choose the right family of models,
@@ -292,7 +295,10 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta lựa chọn đúng loại mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
+Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một loại mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot (quả mơ)".
+Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* là tương tự nhau, có thể sử dụng chung một loại mô hình.
+Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các loại mô hình hoàn toàn khác nhau.
 
 <!--
 As you might guess, if we just set all of the knobs randomly,
@@ -303,13 +309,14 @@ by which we discover the right setting of the knobs
 coercing the desired behavior from our model.
 -->
 
-*dịch đoạn phía trên*
+ Dễ dàng nhận thấy, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình sẽ hầu như không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
+Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng của các núm quay để mô hình có thể  hành xử như chúng ta mong muốn.
 
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
-*dịch đoạn phía trên*
+Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` : 
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -318,13 +325,16 @@ As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 1. Repeat until the model is awesome.
 -->
 
-*dịch đoạn phía trên*
+1. Khởi tạo mô hình một cách ngẫu nhiên chưa thể thực hiện tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
+3. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
+4. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
 <!--
 ![A typical training process. ](../img/ml-loop.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ml-loop.svg)
+![Một quá trình huấn luyện điển hình](../img/ml-loop.svg)
 :label:`fig_ml_loop`
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
