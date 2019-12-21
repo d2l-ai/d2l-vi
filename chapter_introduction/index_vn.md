@@ -514,7 +514,7 @@ Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được b
 Ta có nguy cơ mất đi thông tin trong các phần bị cắt bỏ. 
 Hơn nữa, dữ liệu văn bản bài trừ các cách biểu diễn có độ dài cố định, thậm chí bất hợp tác hơn.
 Suy xét về các đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
-Một số ngắn gọn như: "nó bốc mùi!". Những người khác thì lan man trên các trang.
+Một số bình luận ngắn gọn như: "nó bốc mùi!". Những người khác thì bình luận lan man trên các trang.
 Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là sự so sánh mềm mại mà các mô hình hiện đại có thể xử lý dữ liệu với dữ liệu có *độ dài biến đổi*.
 
 <!--
@@ -528,7 +528,7 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-Trên tổng quan, chúng ta có càng nhiều dữ liệu thì công việc của chúng ta sẽ càng dễ dàng hơn.
+Trên tổng quan, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ càng dễ dàng hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
 Sự thay đổi trạng thái từ (tương đối nhỏ) sang dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
 Để lái xe về nhà, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
@@ -567,8 +567,8 @@ Trong các ứng dụng có độ nhạy của học máy, như kiểm soát d�
 Một chế độ thất bại thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không được biểu diễn trong dữ liệu huấn luyện.
 Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong tự nhiên chưa từng thấy da đen trước đây.
 Thất bại cũng có thể xảy ra khi dữ liệu không chỉ đại diện cho một số nhóm người, mà còn phản ánh cả định kiến từ xã hội.
-Một ví dụ nếu như các quyến định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong lịch sử.
-Lưu ý rằng tất cả điều này có thể xảy ra mà không có nhà khoa học dữ liệu nào có âm mưu chủ động, hoặc thậm chí nhận thức được.
+Một ví dụ nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong lịch sử.
+Lưu ý rằng tất cả điều này có thể xảy ra mà không có nhà khoa học dữ liệu nào có âm mưu chủ động, hoặc thậm chí là nhận thức được.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
