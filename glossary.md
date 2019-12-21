@@ -153,7 +153,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------|----------------------------------------------------------------|-----------------------|
 | objective function | hàm mục tiêu                                                  |                       |
-| offline learning  | học ngoại tuyến                                                |                       |
+| offline learning  |                                               |                       |
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
