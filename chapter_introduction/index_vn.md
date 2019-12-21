@@ -515,7 +515,7 @@ Ta có nguy cơ mất đi thông tin trong các phần bị cắt bỏ.
 Hơn nữa, dữ liệu văn bản bài trừ các cách biểu diễn có độ dài cố định, thậm chí bất hợp tác hơn.
 Suy xét về các đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
 Một số ngắn gọn như: "nó bốc mùi!". Những người khác thì lan man trên các trang.
-Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là sự so sánh grace mà các mô hình hiện đại có thể xử lý dữ liệu với dữ liệu có *độ dài biến đổi*.
+Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là sự so sánh mềm mại mà các mô hình hiện đại có thể xử lý dữ liệu với dữ liệu có *độ dài biến đổi*.
 
 <!--
 Generally, the more data we have, the easier our job becomes.
@@ -528,11 +528,11 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-Generally, the more data we have, the easier our job becomes.
-When we have more data, we can train more powerful models, and rely less heavily on pre-conceived assumptions.
-The regime change from (comparatively small) to big data is a major contributor to the success of modern deep learning.
-To drive the point home, many of the most exciting models in deep learning either do not work without large datasets.
-Some others work in the low-data regime, but no better than traditional approaches.
+Trên tổng quan, chúng ta có càng nhiều dữ liệu thì công việc của chúng ta sẽ càng dễ dàng hơn.
+Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
+Sự thay đổi trạng thái từ (tương đối nhỏ) sang dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
+Để lái xe về nhà, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
+Một số người khác làm việc với trạng thái dữ liệu ở mức thấp, nhưng không tốt hơn các cách tiếp cận truyền thống.
 
 <!--
 Finally it is not enough to have lots of data and to process it cleverly.
@@ -559,16 +559,16 @@ Note that this can all happen without the data scientist
 actively conspiring, or even being aware.
 -->
 
-Finally it is not enough to have lots of data and to process it cleverly.
-We need the *right* data. If the data is full of mistakes, or if the chosen features are not predictive of the target quantity of interest, learning is going to fail.
-The situation is captured well by the cliché: *garbage in, garbage out*.
-Moreover, poor predictive performance is not the only potential consequence.
-In sensitive applications of machine learning, like predictive policing, resumé screening, and risk models used for lending, we must be especially alert to the consequences of garbage data.
-One common failure mode occurs in datasets where some groups of people are unrepresented in the training data.
-Imagine applying a skin cancer recognition system in the wild that had never seen black skin before.
-Failure can also occur when the data does not merely under-represent some groups, but reflects societal prejudices.
-For example if past hiring decisions are used to train a predictive model that will be used to screen resumes, then machine learning models could inadvertently capture and automate historical injustices.
-Note that this can all happen without the data scientist actively conspiring, or even being aware.
+Cuối cùng nó chưa đủ để có nhiều dữ liệu và xử lý nó một cách khéo léo.
+Ta cần dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các tính năng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
+Tình huống được nắm bắt tốt bởi những lời sáo rỗng: *rác vào, rác ra*.
+Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
+Trong các ứng dụng có độ nhạy của học máy, như kiểm soát dự đoán, sàng lọc tiếp tục và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
+Một chế độ thất bại thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không được biểu diễn trong dữ liệu huấn luyện.
+Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong tự nhiên chưa từng thấy da đen trước đây.
+Thất bại cũng có thể xảy ra khi dữ liệu không chỉ đại diện cho một số nhóm người, mà còn phản ánh cả định kiến từ xã hội.
+Một ví dụ nếu như các quyến định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong lịch sử.
+Lưu ý rằng tất cả điều này có thể xảy ra mà không có nhà khoa học dữ liệu nào có âm mưu chủ động, hoặc thậm chí nhận thức được.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
