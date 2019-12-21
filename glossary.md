@@ -97,7 +97,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------|----------------------------------------------------------------|----------------------------------------------|
 | gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | 
-| ground truth     | cơ sở thực tế                                                  |                              | 
+| ground truth     | cơ sở thực tế                                                  | http://bit.ly/2Mg4aCU                             | 
 
 
 ## H
