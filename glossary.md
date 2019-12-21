@@ -84,6 +84,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
+| explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
@@ -116,6 +117,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
+| implicit feedback | phản hồi gián tiếp                                     |               |
 | iteration | vòng lặp                                                       |               |
 
 ## L
