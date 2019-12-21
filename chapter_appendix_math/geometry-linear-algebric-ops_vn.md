@@ -1313,7 +1313,7 @@ Việc tính định thức cho các ma trận lớn có thể phức tạp hơn
 ## Tensors and Common Linear Algebra Operations
 -->
 
-## *dịch tiêu đề phía trên*
+## Tensors và các Phép Toán Đại Số Tuyến Tính Thông Dụng
 
 <!--
 In :numref:`sec_linear-algebra` the concept of tensors was introduced.
@@ -1323,7 +1323,8 @@ and see how it can provide a unified view
 on a number of matrix and vector operations.
 -->
 
-*dịch đoạn phía trên*
+Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`.
+Trong mục này, chúng ta sẽ đi sâu hơn vào tensor contraction (cần thảo luận từ này) (tương đương với phép nhân ma trận), và xem chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
 
 <!--
 With matrices and vectors we knew how to multiply them to transform data.
@@ -1331,7 +1332,9 @@ We need to have a similar definition for tensors if they are to be useful to us.
 Think about matrix multiplication:
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã biết cách nhân ma trận và vector như thế nào để biến đổi dữ liệu.
+Chúng ta cần một định nghĩa tương tự với tensor nếu điều này hữu ích.
+Xem lại phép nhân ma trận:
 
 $$
 \mathbf{C} = \mathbf{A}\mathbf{B},
@@ -1341,7 +1344,7 @@ $$
 or equivalently
 -->
 
-*dịch đoạn phía trên*
+hoặc tương đương
 
 $$ c_{i, j} = \sum_{k} a_{i, k}b_{k, j}.$$
 
@@ -1353,7 +1356,10 @@ so we need specify exactly which indices we want to sum over.
 For instance we could consider
 -->
 
-*dịch đoạn phía trên*
+Việc này có thể lặp lại với tensor.
+Với tensor, không có một trường hợp tổng quát để chọn tổng theo chỉ số nào.
+Bởi vậy, ta cần chỉ ra chính xác những chỉ số nào mà ta muốn tính tổng theo.
+Ví dụ, ta có thể xét
 
 $$
 y_{il} = \sum_{jk} x_{ijkl}a_{jk}.
@@ -1365,7 +1371,8 @@ It can represent a far more flexible family of transformations
 that matrix multiplication alone.
 -->
 
-*dịch đoạn phía trên*
+Phép biến đổi này được gọi là một *tensor contraction*.
+Nó có thể biểu diễn được các phép biến đổi một cách linh động ngoài phép nhân ma trận.
 
 <!--
 As a often-used notational simplification,
@@ -1376,8 +1383,9 @@ where the summation is implicitly taken over all repeated indices.
 This gives the compact expression:
 -->
 
-*dịch đoạn phía trên*
-
+Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng tính theo chính xác những chỉ số đó xảy ra nhiều hơn một lần trong cách biểu diễn. <!-- more discussion -->
+Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* ở đó tổng được lấy trên mọi chỉ số lặp lại. <!-- more discussion -->
+Việc này cho chúng ta một phép biểu diễn ngắn gọn:
 $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
