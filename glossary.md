@@ -23,6 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
+| attention mechanisms      | cơ chế tập trung                                               |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -46,6 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
+| convolution neural networks | mạng nơ-ron tích chập                                       |               |
 | cross entropy       | entropy chéo                                                  |               |
 | cross validation    | kiểm định chéo                                                 |               |
 | cost function       | hàm chi phí                                                    |               |
@@ -162,6 +164,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
+| perceptron              | perceptron                              |               |
 | pattern recognition     | nhận dạng mẫu                                            |                       |
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
@@ -177,8 +180,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
-| regularization         | regularization                                                 |               |
+| recurrent neural network|   mạng nơ-ron truy hồi               |               |
 | regressor              | bộ hồi quy                                                     |               |
+| regularization         | điều chuẩn                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
 | running time           | thời gian chạy                                                 |               |
