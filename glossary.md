@@ -189,7 +189,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
 | speech recognition           | nhận dạng giọng nơi                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
-| surrogate objective          | mục tiêu đại diện                                              |                       |
+| surrogate objective          | mục tiêu đại diện                                              | http://bit.ly/2PIxkN1                      |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
