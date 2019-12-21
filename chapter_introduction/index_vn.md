@@ -487,7 +487,9 @@ If we wanted to train a model to recognize cancer in microscopy images,
 fixed-length inputs means we have one less thing to worry about.
 -->
 
-*dịch đoạn phía trên*
+Khi mỗi mẫu được mô tả bởi cùng một giá trị số, ta nói rằng dữ liệu bao gồm các vector có *chiều dài cố định* và ta mô tả độ dài (không đổi) của vector là *chiều* của dữ liệu.
+Bạn có thể hình dung, chiều dài cố định có thể là một thuộc tính thuận tiện.
+Nếu ta mong muốn huấn luyện một mô hình để nhận biết ung thư qua hình ảnh trong kính hiển vi, độ dài cố định của đầu vào cho ta biết sẽ có ít hơn một điều phải lo lắng.
 
 <!--
 However, not all data can easily be represented as fixed length vectors.
@@ -506,7 +508,14 @@ is the comparative grace with which modern models
 can handle *varying-length* data.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có chiều dài cố định.
+Đôi khi ta có thể mong đợi hình ảnh trong kính hiển vi đến từ thiết bị tiêu chuẩn, ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng.
+Đối với hình ảnh, ta có thể suy xét để cắt xén tất cả chúng nhằm có được kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
+Ta có nguy cơ mất đi thông tin trong các phần bị cắt bỏ. 
+Hơn nữa, dữ liệu văn bản bài trừ các cách biểu diễn có độ dài cố định, thậm chí bất hợp tác hơn.
+Suy xét về các đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
+Một số ngắn gọn như: "nó bốc mùi!". Những người khác thì lan man trên các trang.
+Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là sự so sánh grace mà các mô hình hiện đại có thể xử lý dữ liệu với dữ liệu có *độ dài biến đổi*.
 
 <!--
 Generally, the more data we have, the easier our job becomes.
@@ -519,7 +528,11 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-*dịch đoạn phía trên*
+Generally, the more data we have, the easier our job becomes.
+When we have more data, we can train more powerful models, and rely less heavily on pre-conceived assumptions.
+The regime change from (comparatively small) to big data is a major contributor to the success of modern deep learning.
+To drive the point home, many of the most exciting models in deep learning either do not work without large datasets.
+Some others work in the low-data regime, but no better than traditional approaches.
 
 <!--
 Finally it is not enough to have lots of data and to process it cleverly.
@@ -546,7 +559,16 @@ Note that this can all happen without the data scientist
 actively conspiring, or even being aware.
 -->
 
-*dịch đoạn phía trên*
+Finally it is not enough to have lots of data and to process it cleverly.
+We need the *right* data. If the data is full of mistakes, or if the chosen features are not predictive of the target quantity of interest, learning is going to fail.
+The situation is captured well by the cliché: *garbage in, garbage out*.
+Moreover, poor predictive performance is not the only potential consequence.
+In sensitive applications of machine learning, like predictive policing, resumé screening, and risk models used for lending, we must be especially alert to the consequences of garbage data.
+One common failure mode occurs in datasets where some groups of people are unrepresented in the training data.
+Imagine applying a skin cancer recognition system in the wild that had never seen black skin before.
+Failure can also occur when the data does not merely under-represent some groups, but reflects societal prejudices.
+For example if past hiring decisions are used to train a predictive model that will be used to screen resumes, then machine learning models could inadvertently capture and automate historical injustices.
+Note that this can all happen without the data scientist actively conspiring, or even being aware.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
