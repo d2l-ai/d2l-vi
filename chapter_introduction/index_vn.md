@@ -1402,7 +1402,7 @@ Similar problems pop up in other recommendation settings,
 e.g., for retail products, music, or news recommendation.
 -->
 
-Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và sắp xếp.
+Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và xếp hạng.
 Chúng có chung mục đích là hiển thị một tập các kết quả liên quan tới người dùng.
 Sự khác biệt chính là nó nhấn mạnh tới *cá nhân hoá* tới từng người dùng cụ thể với trường hợp hệ thống gợi ý.
 Ví dụ, với gợi ý phim ảnh, trang kết quả cho một fan của phim khoa học viễn tưởng và cho một người sảnh sòi hài Peter Sellers có thể khác nhau một cách đáng kể.
