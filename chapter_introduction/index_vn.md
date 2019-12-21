@@ -1503,7 +1503,7 @@ in some source language and predicting their translation in another language.
 
 Việc này không ảnh hưởng nhiều nếu đầu vào của mô hình thật sự có cùng kích thước và nếu các đầu vào liên tiếp thật sự không liên quan đến nhau.
 Tuy nhiên chúng ta sẽ xử lý các video như thế nào khi chúng có thể có số lượng khung hình khác nhau.
-Sự thật là dự đoán của chúng ta về việc điều gì đang xảy ra ở mỗi khung hình sẽ chính xác hơn nếu quan sát thêm các khung kình kề nó.
+Sự thật là dự đoán của chúng ta về việc điều gì đang xảy ra ở mỗi khung hình sẽ chính xác hơn nếu quan sát thêm các khung hình kề nó.
 Hiện tượng tương tự xảy ra trong ngôn ngữ.
 Một bài toán học sâu phổ biến là dịch máy (_machine translation_): tác vụ lấy đầu vào là các câu trong một ngôn ngữ nguồn và trả về bản dịch của chúng ở một ngôn ngữ khác.
 
