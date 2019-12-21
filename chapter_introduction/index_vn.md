@@ -1502,7 +1502,7 @@ in some source language and predicting their translation in another language.
 -->
 
 Việc này không ảnh hưởng nhiều nếu đầu vào của mô hình thật sự có cùng kích thước và nếu các đầu vào liên tiếp thật sự không liên quan đến nhau.
-Tuy nhiên chúng ta sẽ xử lý các video như thế nào khi chúng có thể có số lượng khung hình khác nhau.
+Tuy nhiên chúng ta sẽ xử lý các video như thế nào khi chúng có thể có số lượng khung hình khác nhau?
 Sự thật là dự đoán của chúng ta về việc điều gì đang xảy ra ở mỗi khung hình sẽ chính xác hơn nếu quan sát thêm các khung hình kề nó.
 Hiện tượng tương tự xảy ra trong ngôn ngữ.
 Một bài toán học sâu phổ biến là dịch máy (_machine translation_): tác vụ lấy đầu vào là các câu trong một ngôn ngữ nguồn và trả về bản dịch của chúng ở một ngôn ngữ khác.
@@ -1519,7 +1519,7 @@ and just make its predictions based on the most recent measurements.
 
 Các bài toán này cũng xảy ra trong y khoa.
 Với một mô hình theo dõi bệnh nhân trong chế độ đặc biệt, ta có thể mong muốn nó đưa ra cảnh báo nếu nguy cơ tử vong trong 24 giờ tới vượt một ngưỡng nào đó.
-Dĩ nhiên ta chắc chắn không muốn hô mình này bỏ qua mọi lịch sử bệnh lý và chỉ đưa ra dự đoán dựa trên các thống số gần nhất.
+Dĩ nhiên, ta chắc chắn không muốn mô mình này bỏ qua mọi lịch sử bệnh lý và chỉ đưa ra dự đoán dựa trên các thông số gần nhất.
 
 <!--
 These problems are among the most exciting applications of machine learning
@@ -1537,7 +1537,7 @@ Chúng đòi hỏi một mô hình có khả năng lấy một chuỗi các đ�
 Những bài toán này này đôi khi được gọi là ``seq2seq``.
 Dịch ngôn ngữ là một bài toán ``seq2seq``.
 Chuyển đổi từ một bài nói thành chữ cũng là một bài toán ``seq2seq``.
-Mặc dù không thể xét xét mọi dạng của biến đổi chuỗi, một bài trường hợp đặc biệt rất đáng được lưu tâm:
+Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, một vài trường hợp đặc biệt rất đáng được lưu tâm:
 
 <!-- =================== Kết thúc dịch Phần 20 ==================== -->
 
