@@ -921,7 +921,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 ![Supervised learning.](../img/supervised-learning.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/supervised-learning.svg)
+![Học có giám sát.](../img/supervised-learning.svg)
 :label:`fig_supervised_learning`
 
 
@@ -929,7 +929,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 #### Regression
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Hồi quy
 
 <!--
 Perhaps the simplest supervised learning task
@@ -943,7 +943,10 @@ In this dataset each *example* would be a specific house,
 and the corresponding *feature vector* would be one row in the table.
 -->
 
-*dịch đoạn phía trên*
+Có lẽ tác vụ học có giám sát đơn giản nhất là *hồi quy*.
+Xét ví dụ một tập dữ liệu thu thập được từ cơ sở dữ liệu buôn bán nhà.
+Chúng ta có thể xây dựng một bảng dữ liệu, ở đó mỗi hàng tương ứng với một nhà và mỗi cột tương ứng với một thuộc tính liên quan nào đó, chẳng hạn như diện tích nhà, số lượng phòng ngủ, số lượng phòng tắm và thời gian (theo phút) để đi bộ tới trung tâm thành phố.
+Trong tập dữ liệu này, mỗi *mẫu* là một căn nhà cụ thể và *vector đặc trưng* tương ứng là một hàng trong bảng.
 
 <!--
 If you live in New York or San Francisco,
@@ -958,7 +961,10 @@ to any example $i$ as $\mathbf{x}_i$ and we can compactly refer
 to the full table containing all of the feature vectors as $X$.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn sống ở New York hoặc San Francisco và bạn không phải là CEO của Amazon, Google, Microsoft hay Facebook, thì vector đặc trưng (diện tích, số phòng ngủ, số phòng tắm, khoảng cách đi bộ) của căn nhà của bạn có thể có dạng $[100, 0, 0.5, 60]$.
+Tuy nhiên, nếu bạn sống ở Pittsburgh, vector đó có thể là $[3000, 4, 3, 10]$.
+Vector đặc trưng là thiết yếu trong hầu hết các thuật toán học máy cổ điển.
+Chúng ta sẽ tiếp tục ký hiệu vector đặc trưng tương ứng với bất ký mẫu $i$ nào bởi $\mathbf{x}_i$ và có thể đặt $X$ là toàn bộ bảng chứa tất cả các vector đặc trưng.
 
 <!--
 What makes a problem a *regression* is actually the outputs.
@@ -976,7 +982,12 @@ we will abuse language just a bit cn continue to describe
 our outputs and targets as real-valued numbers.
 -->
 
-*dịch đoạn phía trên*
+Để xác định một bài toán là *hồi quy* hay không, ta dựa vào đầu ra của nó.
+Chẳng hạn, bạn đang khảo sát thị trường cho một căn nhà mới.
+Bạn có thể ước lượng giá thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, hay giá bán của căn nhà, là một *số thực*.
+Nếu bạn còn nhớ định nghĩa toán học của số thực, bạn có thể băn khoăn.
+Nhà đất có lẽ không bao giờ bán với giá lẻ tới từng cent chứ đừng nói đến nhỏ hơn cent (các số vô tỉ).
+Trong trường hợp này, khi mục tiêu thực sự là các số rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
