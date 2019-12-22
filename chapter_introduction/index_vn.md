@@ -1993,13 +1993,13 @@ As a result, researchers have studied a number of
 *special cases* of reinforcement learning problems.
 -->
 
-Vấn đề chung của học tập tăng cường là một thiết lập rất tổng quát.
-Các hành động có ảnh hưởng đến các quan sát tiếp theo.
-Những phần thưởng chỉ được khi sự quan sát tương ứng với các hành động được chọn.
+Vấn đề chung của học tăng cường là một thiết lập rất tổng quát.
+Các hành động này có ảnh hưởng đến các quan sát tiếp theo.
+Những phần thưởng chỉ nhận được khi sự quan sát tương ứng với các hành động được chọn.
 Môi trường có thể được quan sát đầy đủ hoặc chỉ một phần.
-Sự tính toán cho tất cả sự phức tạp này cùng một lúc có thể yêu cầu quá nhiều nhà nghiên cứu.
+Sự tính toán cho tất cả sự phức tạp này cùng một lúc có thể yêu cầu sự tham gia của quá nhiều nhà nghiên cứu.
 Hơn nữa, không phải mọi vấn đề thực tế đều thể hiện tất cả sự phức tạp này.
-Vì vậy, các nhà nghiên cứu đã nghiên cứu một số *trường hợp đặc biệt* về những vấn đề học tập tăng cường.
+Vì vậy, các nhà nghiên cứu đã nghiên cứu một số *trường hợp đặc biệt* về những bài toán học tăng cường.
 
 <!--
 When the environment is fully observed,
@@ -2011,9 +2011,9 @@ with initially unknown rewards, this problem
 is the classic *multi-armed bandit problem*.
 -->
 
-Khi môi trường được quan sát đầy đủ, ta gọi vấn đề học tập tăng cường là *(Quy trình Quyết định của Markov - Markov Decision Process* (MDP).
-Khi ở trạng thái không phụ thuộc vào các hành động trước đó, ta gọi vấn đề là *contextual bandit problem*.
-When there is no state, just a set of available actions with initially unknown rewards, this problem is the classic *multi-armed bandit problem*.
+Khi ở môi trường được quan sát đầy đủ, ta gọi vấn đề học tăng cường là *(Quy trình Quyết định của Markov - Markov Decision Process* (MDP).
+Khi ở trạng thái không phụ thuộc vào các hành động trước đó, ta gọi vấn đề là *bài toán trộm ngữ cảnh (contextual bandit problem)*.
+Khi không ở trong một trạng thái nào, chỉ là một tập hợp các hành động có sẵn với phần thưởng chưa biết ban đầu, vấn đề kinh điển này sẽ là *bài toán trộm đa nhánh (multi-armed bandit problem)*.
 
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
 
