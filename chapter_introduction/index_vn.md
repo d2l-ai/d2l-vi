@@ -1896,7 +1896,7 @@ Moreover, the environment may not even tell us which actions led to the reward.
 
 Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
 Ví dụ, trong học có giám sát, chúng ta luôn mong rằng dữ liệu huấn luyện sẽ đi với nhãn phù hợp. 
-Tuy nhiên ở học tăng cường, chúng ta không giả định việc đó qua từng sự quan sát, môi trường sẽ cho chúng ta biết hành động tối ưu. 
+Tuy nhiên, học tăng cường không đòi hỏi nhãn chính xác cho từng điểm dữ liệu, thay vào đó, môi trường sẽ cho chúng ta biết hành động tối ưu. 
 Nhìn chung, chúng ta sẽ nhận được phần thưởng. 
 Hơn nữa, môi trường có thể sẽ không cho ta biết những hành động nào dẫn tới phần thưởng. 
 
@@ -1915,8 +1915,8 @@ what actions along the way led to the promotion.
 -->
 
 Lấy cờ tướng làm ví dụ nhé. 
-Phần thưởng thật sự sẽ đến vào cuối trò chơi, khi thắng, ta sẽ được 1 điểm hoặc khi thua, ta sẽ nhận về -1 điểm. 
-Vì vậy, việc học tăng cường phải giải quyết vấn đề *phân bổ tín nhiệm*: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
+Phần thưởng thật sự sẽ đến vào cuối trò chơi. khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
+Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố tín nhiệm”: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
 Tương tự với ví dụ một nhân viên sẽ được thăng chức vào ngày 11/10. 
 Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. 
 Để thăng chức sau này đòi hỏi quá trình tìm hiểu hành động nào đã dẫn đến việc thăng chức. 
@@ -1948,7 +1948,7 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
-Cuối cùng, tại 1 thời điểm cho trước, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
+Cuối cùng, tại bất kỳ thời điểm nào, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
 Những người học tăng cường phải luôn luôn lựa chọn việc *khai thác* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
