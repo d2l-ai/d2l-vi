@@ -1934,7 +1934,7 @@ might require considering its previous observations before entering the closet.
 
 Những người học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát 1 phần. 
 Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
-Ví dụ như 1 con robot hút bụi bị kẹt trong một trong nhiều nhà kho giống nhau ở 1 căn nhà. 
+Hãy nói về con robot hút bụi bị kẹt trong một trong nhiều nhà kho giống nhau ở 1 căn nhà. 
 Việc can thiệp vào vị trí chính xác (hay tình trạng) của robot có thể cần đến những quan sát trước đó của nó trước khi đi vào phòng. 
 
 <!--
@@ -1948,8 +1948,13 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
+<<<<<<< HEAD
 Cuối cùng, tại 1 thời điểm cho trước, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
 Những người học tăng cường phải luôn luôn lựa chọn việc *khai thác* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
+=======
+Cuối cùng, tại bất kỳ thời điểm nào, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, nhưng sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử qua.
+Những người học tăng cường phải luôn luôn lựa chọn việc *khai thác* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
+>>>>>>> 8a2193de304dfea78002d78c6cb83844a98822a4
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
