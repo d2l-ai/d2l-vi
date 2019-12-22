@@ -2025,7 +2025,7 @@ is the classic *multi-armed bandit problem*.
 ## Roots
 -->
 
-## *dịch tiêu đề phía trên*
+## Nguồn gốc
 
 <!--
 Although many deep learning methods are recent inventions,
@@ -2044,7 +2044,11 @@ relating current and voltage in a resistor
 is perfectly described by a linear model.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù có nhiều phương pháp học sâu là những phát minh gần đây, con người đã có mong muốn phân tích dữ liệu và dự đoán kết quả của tương lai trong nhiều thế kỷ.
+Và trong thực tế, phần lớn khoa học tự nhiên đều có nguồn gốc từ điều này.
+Một ví dụ như bản phân phối Bernoulli được đặt theo tên của [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli), và bản phân phối Gausian được phát hiện bởi [Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
+He invented for instance the least mean squares algorithm, which is still used today for countless problems from insurance calculations to medical diagnostics.
+These tools gave rise to an experimental approach in the natural sciences---for instance, Ohm's law relating current and voltage in a resistor is perfectly described by a linear model.
 
 <!--
 Even in the middle ages, mathematicians had a keen intuition of estimates.
@@ -2052,13 +2056,14 @@ For instance, the geometry book of [Jacob Köbel (1460-1533)](https://www.maa.or
 averaging the length of 16 adult men's feet to obtain the average foot length.
 -->
 
-*dịch đoạn phía trên*
+Even in the middle ages, mathematicians had a keen intuition of estimates.
+For instance, the geometry book of [Jacob Köbel (1460-1533)](https://www.maa.org/press/periodicals/convergence/mathematical-treasures-jacob-kobels-geometry) illustrates averaging the length of 16 adult men's feet to obtain the average foot length.
 
 <!--
 ![Estimating the length of a foot](../img/koebel.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/koebel.jpg)
+![Ước tính chiều dài của một bàn chân](../img/koebel.jpg)
 :width:`500px`
 :label:`fig_koebel`
 
@@ -2073,7 +2078,11 @@ averaging only over the remainder.
 This is one of the earliest examples of the trimmed mean estimate.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_koebel` illustrates how this estimator works.
+The 16 adult men were asked to line up in a row, when leaving church.
+Their aggregate length was then divided by 16 to obtain an estimate for what now amounts to 1 foot.
+This "algorithm" was later improved to deal with misshapen feet---the 2 men with the shortest and longest feet respectively were sent away, averaging only over the remainder.
+This is one of the earliest examples of the trimmed mean estimate.
 
 <!--
 Statistics really took off with the collection and availability of data.
@@ -2090,7 +2099,10 @@ has as long and enduring a history as its productive use
 in industry and the natural sciences.
 -->
 
-*dịch đoạn phía trên*
+Statistics really took off with the collection and availability of data.
+One of its titans, [Ronald Fisher (1890-1962)](https://en.wikipedia.org/wiki/Ronald_Fisher), contributed significantly to its theory and also its applications in genetics.
+Many of his algorithms (such as Linear Discriminant Analysis) and formula (such as the Fisher Information Matrix) are still in frequent use today (even the Iris dataset that he released in 1936 is still used sometimes to illustrate machine learning algorithms).
+Fisher was also a proponent of eugenics, which should remind us that the morally dubious use data science has as long and enduring a history as its productive use in industry and the natural sciences.
 
 <!-- =================== Kết thúc dịch Phần 27 ==================== -->
 
