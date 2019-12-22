@@ -1703,7 +1703,7 @@ across long temporal distances. This is an active area of research.
 ### Unsupervised learning
 -->
 
-### Học Không giám sát
+### Học không giám sát
 
 <!--
 All the examples so far were related to *Supervised Learning*,
@@ -1720,7 +1720,7 @@ and imitate their actions.
 -->
 
 Tất cả các ví dụ phía từ trước đến nay đều liên quan tới *Học có Giám sát*, ví dụ, những tình huống mà ta nạp vào mô hình lượng dữ liệu khổng lồ gồm cả các đặc trưng và giá trị mục tiêu tương ứng.
-Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc được miêu ta vô cùng cụ thể cùng với một ông sếp cực kỳ hãm tài.
+Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc được miêu tả vô cùng cụ thể cùng với một ông sếp cực kỳ hãm tài.
 Ông sếp đứng ngay bên vai bạn và chỉ bảo chi tiết những điều phải làm trong từng tình huống một cho tới khi bạn học được cách liên kết các tình huống với hành động tương ứng.
 Làm việc cho ông sếp kiểu này có vẻ khá là nản.
 Nhưng ở góc cạnh khác, thì làm hài lòng ông sếp này rất là dễ.
