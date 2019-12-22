@@ -1917,7 +1917,7 @@ what actions along the way led to the promotion.
 Lấy cờ tướng làm ví dụ nhé. 
 Phần thưởng thật sự sẽ đến vào cuối trò chơi. 
 Khi chúng ta thắng, chúng ta sẽ được 1 điểm hoặc khi chúng ta thua, chúng ta sẽ nhận được -1 điểm. 
-Vì vậy, việc học tăng cường phải giải quyết vấn đế “phân bố tín nhiệm”: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
+Vì vậy, việc học tăng cường phải giải quyết vấn đề *phân bổ tín nhiệm*: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
 Tương tự với ví dụ một nhân viên sẽ được thăng chức vào ngày 11/10. 
 Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. 
 Để thăng chức sau này đòi hỏi quá trình tìm hiểu hành động nào đã dẫn đến việc thăng chức. 
