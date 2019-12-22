@@ -1934,7 +1934,7 @@ might require considering its previous observations before entering the closet.
 -->
 
 Những người học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát 1 phần. 
-Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về trạng thái hiện tại. 
+Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
 Ví dụ như 1 con robot hút bụi bị kẹt trong một trong nhiều nhà kho giống nhau ở 1 căn nhà. 
 Can thiệp vào vị trí chính xác (hay tình trạng) của robot có thể cần đến những quan sát trước đó của nó trước khi đi vào phòng. 
 
