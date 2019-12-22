@@ -1280,7 +1280,7 @@ Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ sẽ chết vì nấm độc.
 Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
-Ta có thể nhìn việc này một cách chính quy hơn.
+Ta có thể nhìn việc này một cách hợp thức hơn.
 Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
 $$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
@@ -1292,7 +1292,7 @@ whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 -->
 
-Do đó, sự tổn hại $L$ do ăn phải nấm là $L(a=\mathrm{ăn}}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
@@ -1310,7 +1310,7 @@ One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnae
 
 Sự thận trọng của chúng ta là chính đáng: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
 Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
-Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (__hierarchy__).
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (_hierarchy_).
 Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
 Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp khác xa nào đó.
 Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
