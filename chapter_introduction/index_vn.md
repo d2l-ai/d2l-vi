@@ -1894,7 +1894,7 @@ In general, we just get some reward.
 Moreover, the environment may not even tell us which actions led to the reward.
 -->
 
-*dịch đoạn phía trên*
+Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà phương thức học có giám sát không thể. Ví dụ, trong phương thức học có giám sát, chúng ta luôn mong rằng tập huấn luyện sẽ đi với nhãn phù hợp. Tuy nhiên trong phương thức học tăng cường, chúng ta không đòi hỏi việc đó qua từng sự quan sát , môi trường sẽ cho chúng ta biết hành động tối ưu. Nói chung, chúng ta sẽ nhận được phần thưởng. Ngoài ra, môi trường có thể không cho chúng ta biết những hành động nào dẫn tới phần thưởng. 
 
 <!--
 Consider for example the game of chess.
@@ -1910,7 +1910,7 @@ Getting more promotions in the future requires figuring out
 what actions along the way led to the promotion.
 -->
 
-*dịch đoạn phía trên*
+Lấy cờ tướng làm ví dụ nhé. Phần thưởng thật sự sẽ đến vào cuối trò chơi. Khi chúng ta thắng, chúng ta sẽ được 1 điểm hoặc khi chúng ta thua, chúng ta sẽ nhận được -1 điểm. Vì vậy, việc học tăng cường phải giải quyết vấn đế “phân bố tín nhiệm”: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. Tương tự với ví dụ một nhân viên sẽ được thăng chức vào ngày 11/10. Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. Để thăng chức sau này đòi hỏi quá trình tìm hiểu hành động nào đã dẫn đến việc thăng chức. 
 
 <!--
 Reinforcement learners may also have to deal
@@ -1923,7 +1923,7 @@ Inferring the precise location (and thus state) of the robot
 might require considering its previous observations before entering the closet.
 -->
 
-*dịch đoạn phía trên*
+Những người học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát 1 phần. Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về trạng thái hiện tại. Ví dụ như 1 con robot hút bụi bị kẹt trong một trong nhiều nhà kho giống nhau ở 1 căn nhà. Can thiệp vào vị trí chính xác (hay tình trạng) của robot có thể cần đến những quan sát trước đó của nó trước khi đi vào phòng. 
 
 <!--
 Finally, at any given point, reinforcement learners
@@ -1936,7 +1936,7 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, tại 1 thời điểm cho trước, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. Những người học tăng cường phải luôn luôn lựa chọn việc *khai phá* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
