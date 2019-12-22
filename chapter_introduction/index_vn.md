@@ -1915,8 +1915,7 @@ what actions along the way led to the promotion.
 -->
 
 Lấy cờ tướng làm ví dụ nhé. 
-Phần thưởng thật sự sẽ đến vào cuối trò chơi. 
-Khi chúng ta thắng, chúng ta sẽ được 1 điểm hoặc khi chúng ta thua, chúng ta sẽ nhận về -1 điểm. 
+Phần thưởng thật sự sẽ đến vào cuối trò chơi, khi chúng ta thắng, chúng ta sẽ được 1 điểm hoặc khi chúng ta thua, chúng ta sẽ nhận về -1 điểm. 
 Vì vậy, việc học tăng cường phải giải quyết vấn đề *phân bổ tín nhiệm*: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
 Tương tự với ví dụ một nhân viên sẽ được thăng chức vào ngày 11/10. 
 Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. 
@@ -1950,7 +1949,7 @@ potentially giving up some short-run reward in exchange for knowledge.
 -->
 
 Cuối cùng, tại 1 thời điểm cho trước, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
-Những người học tăng cường phải luôn luôn lựa chọn việc *khai phá* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
+Những người học tăng cường phải luôn luôn lựa chọn việc *khai thác* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
@@ -2583,9 +2582,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 * Sâm Thế Hải
 * Hoàng Trọng Tuấn
-* Lê Đàm Hồng Lộc
-
-
 
 <!-- Phần 2 -->
 *
@@ -2653,7 +2649,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 25 -->
-*
+* Lê Đàm Hồng Lộc
 
 <!-- Phần 26 -->
 *
