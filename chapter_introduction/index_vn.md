@@ -528,7 +528,7 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-Trên tổng quan, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ càng dễ dàng hơn.
+Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ càng dễ dàng hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
 Sự thay đổi trạng thái từ (tương đối nhỏ) sang dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
 Để lái xe về nhà, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
