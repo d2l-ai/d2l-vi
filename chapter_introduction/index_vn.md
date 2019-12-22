@@ -1933,7 +1933,7 @@ Inferring the precise location (and thus state) of the robot
 might require considering its previous observations before entering the closet.
 -->
 
-Những người học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát 1 phần. 
+Những mô hình học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát một khía cạnh
 Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
 Hãy nói về con robot hút bụi bị kẹt trong một trong nhiều nhà kho giống nhau ở 1 căn nhà. 
 Việc can thiệp vào vị trí chính xác (hay tình trạng) của robot có thể cần đến những quan sát trước đó của nó trước khi đi vào phòng. 
