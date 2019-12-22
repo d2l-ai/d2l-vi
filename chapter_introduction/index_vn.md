@@ -1949,7 +1949,7 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
-Cuối cùng, tại 1 thời điểm cho trước, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
+Cuối cùng, tại bất kỳ thời điểm nào, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, nhưng sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử qua.
 Những người học tăng cường phải luôn luôn lựa chọn việc *khai phá* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
