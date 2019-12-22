@@ -1703,7 +1703,7 @@ across long temporal distances. This is an active area of research.
 ### Unsupervised learning
 -->
 
-### *dịch tiêu đề phía trên*
+### Học Không giám sát
 
 <!--
 All the examples so far were related to *Supervised Learning*,
@@ -1719,7 +1719,12 @@ You just recognize the pattern as quickly as possible
 and imitate their actions.
 -->
 
-*dịch đoạn phía trên*
+Tất cả các ví dụ phía từ trước đến nay đều liên quan tới *Học có Giám sát*, ví dụ, những tình huống mà ta nạp vào mô hình lượng dữ liệu khổng lồ gồm cả các đặc trưng và giá trị mục tiêu tương ứng.
+Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc được miêu ta vô cùng cụ thể cùng với một ông sếp cực kỳ hãm tài.
+Ông sếp đứng ngay bên vai bạn và chỉ bảo chi tiết những điều phải làm trong từng tình huống một cho tới khi bạn học được cách liên kết các tình huống với hành động tương ứng.
+Làm việc cho ông sếp kiểu này có vẻ khá là nản.
+Nhưng ở góc cạnh khác, thì làm hài lòng ông sếp này rất là dễ.
+Chỉ việc nhận ra những khuôn mẫu nhanh nhất có thể và bắt chước lại những hành động theo khuôn mẫu đó.
 
 <!--
 In a completely opposite way, it could be frustrating
@@ -1734,7 +1739,13 @@ in later chapters. To whet your appetite for now,
 we describe a few of the questions you might ask:
 -->
 
-*dịch đoạn phía trên*
+Trong một diễn biến đối lập, sẽ rất là bực mình nếu phải làm cho một ông sếp chẳng có bất kỳ ý tưởng nào là ông ta muốn bạn làm gì.
+Tuy nhiên, nếu định trở thành data scientist, tốt hơn hãy làm quen với điều này.
+Ông sếp có thể chỉ dúi vào tay bạn một chồng dữ liệu to sụ và bảo *làm tý data science với cái này đi!*
+Nghe có vẻ mơ hồ nhưng đời là vậy đấy.
+Chúng ta gọi những kiểu vấn đề như thế này là *học không giám sát*, và những loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
+Ta sẽ đề cập tới một số kỹ thuật học không giám sát ở các chương sau.
+Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài thắc mắc bạn có thể  sẽ băn khoăn:
 
 <!--
 * Can we find a small number of prototypes
@@ -1776,7 +1787,24 @@ to check whether real and fake data are the same.
 We will devote a few notebooks to them.
 -->
 
-*dịch đoạn phía trên*
+Liệu có thể dùng một lượng nhỏ nguyên mẫu để tóm tắt dữ liệu một cách chính xác?
+Cho một bộ ảnh, liệu có thể nhóm chúng thành những ảnh phong cảnh, chó, trẻ con, mèo, đỉnh núi, vân vân?
+Tương tự, với một bộ dữ liệu duyệt web của người dùng, liệu có thể chia họ thành các nhóm người dùng có hành vi giống nhau?
+Vấn đề như này thường được gọi là *phân nhóm (clustering)*.
+* Liệu ta có tìm được một lượng nhỏ các tham số  mà vẫn tóm lược chính xác những thuộc tính cốt lõi của dữ liệu?
+Quỹ đạo bay của quả bóng được miêu tả tương đối tốt bởi số liệu vận tốc, đường kính và khối lượng của quả bóng.
+Người thợ may thì phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may quần áo vừa vặn.
+Những điều kể trên được gọi là bài toán *ước lượng không gian con (subspace estimation)*.
+Nếu chúng phụ thuộc tuyến tính với nhau, bài toán này được gọi là *phép phân tích thành phần chính (principal component analysis)*.
+* Liệu có tồn tại cách biểu diễn lại các đối tượng (cấu trúc tùy ý) trong không gian Euclid (ví dụ: không gian vector trong $\mathbb{R}^n$) mà những thuộc tính mang tính ký hiệu có thể được ghép khớp với nhau.
+Điều này được gọi là *học cách tái biểu diễn* được dùng để miêu tả các thực thể và mối quan hệ giữa chúng, giống như Rome $-$ Italy $+$ France $=$ Paris.
+* Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát?
+Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tội phạm, vị trí, trình độ học vấn, mức lương, vv, liệu có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
+Những lĩnh vực liên quan tới *nguyên nhân - kết quả* và *mô hình đồ thị xác suất (probabilistic graphical models)* sẽ giải quyết bài toán này.
+Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *GAN - generative adversarial networks (__mô hình mạng sinh dữ liệu đối nghịch __)*.
+GAN cho ta một thủ tục để sinh tổng hợp dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
+Còn các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật giả này có giống nhau không.
+Chúng tôi sẽ viết vài mục về chủ đề này sau.
 
 <!-- =================== Kết thúc dịch Phần 22 ==================== -->
 
