@@ -1513,37 +1513,37 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
