@@ -1246,10 +1246,11 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng lớp có khả năng xảy ra nhất do mô hình dự đoán không nhất thiết là lớp mà ta quyết định sử dụng.
+Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
-![Death cap---do not eat!](../img/death_cap.jpg)
+![Nấm độc---đừng ăn!](../img/death_cap.jpg)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/death_cap.jpg)
@@ -1273,15 +1274,25 @@ i.e., we need to multiply the probability of the outcome
 with the benefit (or harm) associated with it:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
+Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
+Dù vậy, đừng dại mà ăn nhé.
+Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ sẽ chết vì nấm độc.
+Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
+Ta có thể nhìn việc này một cách chính quy hơn.
+Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
+$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
 is $L(a=\mathrm{eat}| x) = 0.2 * \infty + 0.8 * 0 = \infty$,
 whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+-->
+
+Do đó, sự tổn hại $L$ do ăn phải nấm là $L(a=\mathrm{ăn}}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
@@ -1297,7 +1308,13 @@ Usually, this is referred to as *hierarchical classification*.
 One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), who organized the animals in a hierarchy.
 -->
 
-*dịch đoạn phía trên*
+Sự thận trọng của chúng ta là chính đáng: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
+Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (__hierarchy__).
+Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
+Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp khác xa nào đó.
+Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
+Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo hệ thống phân cấp.
 
 <!--
 In the case of animal classification,
@@ -1311,7 +1328,10 @@ might be close on the phylogenetic tree,
 but mistaking a rattler for a garter could be deadly.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp phân loại động vật, cũng không tệ lắm nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng sẽ rất nghiêm trọng nếu ta nhầm lẫn chó poodle với một con khủng long.
+Hệ phân cấp nào là phù hợp phụ thuộc vào việc ta dự định dùng mô hình như thế nào.
+Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này có thể dẫn tới hậu quả chết người.
+
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
@@ -2656,7 +2676,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-*
+* Mai Sơn Hải
 <!-- Phần 18 -->
 *
 
