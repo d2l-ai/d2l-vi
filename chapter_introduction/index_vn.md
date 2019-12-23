@@ -1919,7 +1919,7 @@ Phần thưởng thật sự sẽ đến vào cuối trò chơi. khi thắng, ta
 Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố tín nhiệm”: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
 Tương tự với ví dụ một nhân viên sẽ được thăng chức vào ngày 11/10. 
 Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. 
-Để thăng chức sau này đòi hỏi quá trình tìm hiểu hành động nào đã dẫn đến việc thăng chức. 
+Để thăng chức sau này đòi hỏi quá trình tìm hiểu đâu là những hành động dẫn đến sự thăng chức này.
 
 <!--
 Reinforcement learners may also have to deal
