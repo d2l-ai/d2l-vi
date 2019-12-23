@@ -507,7 +507,7 @@ một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán
 (đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
 Các đặc trưng nhất định mà mô hình dựa vào để đưa ra dự đoán
 có thể được gọi đơn giản là các *đặc trưng*,
-(hoặc thường là *đầu vào*, *đồng biến* hoặc *biến độc lập*).
+(hoặc thường là *đầu vào*, *hiệp biến* hoặc *biến độc lập*).
 
 <!--
 If we were working with image data,
