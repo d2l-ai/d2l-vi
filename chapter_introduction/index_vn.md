@@ -1601,7 +1601,7 @@ to place the verbs at the end of sentences.
 -->
 
 **Dịch máy**. Không giống trường hợp nhận dạng tiếng nói, ở đó các đầu vào và đầu ra tương ứng xuất hiện theo cùng thứ tự (sau khi căn chỉnh), việc đảo trật tự trong dịch máy có thể rất quan trọng.
-Nói cách khác, trong khi chúng ta vẫn chuyênr đổi một chuỗi sang một chuỗi khác, không có giả sử nào về việc số lượng đầu vào và đầu ra hay thứ tự của các cặp là như nhau.
+Nói cách khác, trong khi chúng ta vẫn chuyển đổi từ chuỗi này sang chuỗi khác, ta không thể giả định số lượng đầu vào và đầu ra cũng như thứ tự của các cặp là như nhau.
 Xét ví dụ dưới đây về việc động từ được đặt ở cuối câu trong tiếng Đức.
 
 ```text
