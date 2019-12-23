@@ -1536,7 +1536,7 @@ Những bài toán này nằm trong những ứng dụng thú vị nhất của 
 Chúng đòi hỏi một mô hình có khả năng lấy một chuỗi các đầu vào hoặc đưa ra một chuỗi các đầu ra (hoặc cả hai!).
 Những bài toán này này đôi khi được gọi là ``seq2seq``.
 Dịch ngôn ngữ là một bài toán ``seq2seq``.
-Chuyển đổi từ một bài nói thành chữ cũng là một bài toán ``seq2seq``.
+Phiên thoại từ một bài nói thành chữ cũng là một bài toán ``seq2seq``.
 Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, một vài trường hợp đặc biệt rất đáng được lưu tâm:
 
 <!-- =================== Kết thúc dịch Phần 20 ==================== -->
