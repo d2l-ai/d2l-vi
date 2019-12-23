@@ -135,7 +135,6 @@ Our goal in this book is to present a unified resource
 to bring would-be practitioners up to speed.
 -->
 
-=======
 Kiểm định tiềm năng của học sâu có những thách thức riêng biệt
 vì bất kỳ ứng dụng riêng lẻ nào cũng bao gồm nhiều lĩnh vực khác nhau.
 Ứng dụng học sâu đòi hỏi những hiểu biết đồng thời

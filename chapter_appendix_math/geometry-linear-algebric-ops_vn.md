@@ -1092,7 +1092,7 @@ M_inv.dot(M)
 ### Numerical Issues
 -->
 
-### *dịch tiêu đề phía trên*
+### Vấn đề tính toán
 While the inverse of a matrix is useful in theory,
 we must say that most of the time we do not wish
 to *use* the matrix inverse to solve a problem in practice.
@@ -1100,7 +1100,8 @@ In general, there are far more numerically stable algorithms
 for solving linear equations like
 -->
 
-*dịch đoạn phía trên*
+Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, chúng ta nên tránh *sử dụng* chúng khi giải quyết các bài toán thực tế.
+Nhìn chung, có rất nhiều phương pháp tính toán ổn định hơn trong việc giải các phương trình tuyến tính dạng
 
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b},
@@ -1110,7 +1111,7 @@ $$
 than computing the inverse and multiplying to get
 -->
 
-*dịch đoạn phía trên*
+so với việc tính ma trận nghịch đảo và thực hiện phép nhân để có
 
 $$
 \mathbf{x} = \mathbf{A}^{-1}\mathbf{b}.
@@ -1121,7 +1122,7 @@ Just as division by a small number can lead to numerical instability,
 so can inversion of a matrix which is close to having low rank.
 -->
 
-*dịch đoạn phía trên*
+Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận gần với hạng thấp cũng đưa lại hệ quả tương tự.
 
 <!--
 Moreover, it is common that the matrix $\mathbf{A}$ is *sparse*,
@@ -1135,7 +1136,9 @@ the inverse will typically have almost every entry non-negative,
 requiring us to store all $1\text{M}^2$ entries---that is $1$ trillion entries!
 -->
 
-*dịch đoạn phía trên*
+Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (_sparse_), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0.
+Nếu thử một vài ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là một ma trận thưa.
+Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó), ma trận nghịch đảo vẫn hầu như có tất cả các thành phần không âm và đòi hỏi chúng ta phải lưu trữ 1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử!
 
 <!--
 While we do not have time to dive all the way into the thorny numerical issues
@@ -1144,7 +1147,7 @@ we want to provide you with some intuition about when to proceed with caution,
 and generally avoiding inversion in practice is a good rule of thumb.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
@@ -1510,37 +1513,37 @@ Either notation allows for concise and efficient representation of tensor contra
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
 -->
 
 *dịch đoạn phía trên*
 
-<--
+<!--
 * Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
@@ -1677,7 +1680,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 12 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 13 -->
 *
