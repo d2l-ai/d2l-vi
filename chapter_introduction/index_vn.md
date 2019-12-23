@@ -1586,7 +1586,7 @@ this is not quite so trivial for computers.
 **Chữ ra Tiếng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của nhận dạng tiếng nói.
 Nói cách khác, đầu vào $\mathbf{x}$ là chữ và đầu ra $y$ là tệp tin âm thanh.
 Trong trường hợp này, đầu ra *dài hơn nhiều* so với đầu vào.
-Trong khi việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người*, việc đó là không đơn giản với các máy tính.
+Trong khi việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người*, việc đó là không đơn giản với máy tính.
 
 <!--
 **Machine Translation**. Unlike the case of speech recognition, where corresponding
