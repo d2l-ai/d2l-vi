@@ -705,7 +705,11 @@ owing to non-differentiability or other complications.
 In these cases, it is common to optimize a *surrogate objective*.
 -->
 
-*dịch đoạn phía trên*
+Khi cố gắng dự đoán một giá trị số thực, hàm mục tiêu phổ biến nhất là hàm bình phương lỗi $(y-\hat{y})^2$.
+Với bài toán phân loại, hàm mục tiêu phổ biến nhất là tối thiểu hoá tỉ lệ lỗi, nghĩa là tỉ lệ mẫu mà mô hình dự đoán lệch với nhãn thực tế.
+Một vài hàm mục tiêu (ví dụ bình phương lỗi) khá dễ để tối ưu.
+Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu một cách trực tiếp hơn bởi các hàm này không khả vi hoặc phức tạp.
+Trong những trường hợp này, người ta thường tối thiểu hoá một *hàm mục tiêu thay thế* (_surrogate function_).
 
 <!--
 Typically, the loss function is defined
@@ -722,7 +726,10 @@ and the test data (which is held out for evaluation),
 reporting the following two quantities:
 -->
 
-*dịch đoạn phía trên*
+Thông thường, hàm mất mát được định nghĩa theo các tham số mô hình và phụ thuộc vào tập dữ liệu.
+Những giá trị tham số mô hình tốt nhất được học bằng cách tối tiểu hoá hàm mất mát trên một *tập huấn luyện* bao gồm các *mẫu* được thu thập cho việc huấn luyện.
+Tuy nhiên, mô hình hoạt động tốt trên tập huấn luyện không có nghĩa là nó sẽ hoạt động tốt trên dữ liệu kiểm tra (mà mô hình chưa nhìn thấy).
+Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). Sau đó ta quan sát hai đại lượng:
 
 <!--
  * **Training Error:**
@@ -741,7 +748,15 @@ reporting the following two quantities:
  despite doing well on practice exams.
 -->
 
-*dịch đoạn phía trên*
+* **Lỗi huấn luyện:**
+Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
+Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
+Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo bài thi thật đạt kết quả tốt.```
+
+* **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
+Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
+Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
+Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
