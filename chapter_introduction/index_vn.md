@@ -836,7 +836,8 @@ and other times we might need to employ human annotators to label the data,
 -->
 
 Một cách dễ hiểu, quá trình học tương tự với:
-Lấy một tập mẫu lớn ở đó các hiệp biến đã biết trước và chọn từ chúng một tập con ngẫu nhiên, thu thập các nhãn chính xác cho chúng. <!-- cần thảo luận đưa ground truth vào glossary -->
+Lấy một tập mẫu lớn ở đó các hiệp biến đã biết trước.
+Từ đó chọn ra một tập con ngẫu nhiên, thu thập các nhãn gốc cho chúng.
 Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ liệu bệnh nhân đã qua đời trong năm tiếp theo?), khi khác chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
 
 <!--
