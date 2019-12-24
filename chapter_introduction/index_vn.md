@@ -2569,7 +2569,7 @@ than the potential of malevolent superintelligence to destroy humanity.
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Machine learning studies how computer systems can leverage *experience* (often data) to improve performance at specific tasks. It combines ideas from statistics, data mining, artificial intelligence, and optimization. Often, it is used as a means of implementing artificially-intelligent solutions.
@@ -2578,13 +2578,21 @@ than the potential of malevolent superintelligence to destroy humanity.
 * Whole system optimization is a key component in obtaining good performance. The availability of efficient deep learning frameworks has made design and implementation of this significantly easier.
 -->
 
-*dịch đoạn phía trên*
+* Học máy nghiên cứu cách các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện cất lượng trong những tác vụ cụ thể. Nó bao gồm các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. Nó thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
+
+* Là một nhóm về học máy, học biểu diễn tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
+Điều này thường đặt được bởi một quá trình biến đổi được huấn luyện.
+
+* Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiển triển đáng kể trong tính toán, chủ yếu bằng GPU.
+
+* Tối ưu hóa cả hệ thống là một thành phần quan trọng trong việc đạt được chất lượng tốt.
+Sự sẵn có của các nền tảng học sâu hiệu quả giúp việc thiết kế và triển khai việc này dễ hơn một cách đáng kể.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Which parts of code that you are currently writing could be "learned", i.e., improved by learning and automatically determining design choices that are made in your code? Does your code include heuristic design choices?
@@ -2593,19 +2601,29 @@ than the potential of malevolent superintelligence to destroy humanity.
 1. Where else can you apply the end-to-end training approach? Physics? Engineering? Econometrics?
 -->
 
-*dịch đoạn phía trên*
+1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", nghĩa là có thể được cải thiện bằng cách học và tự động xác định lựa chọn thiết kế?
+Mã nguồn của bạn có bao gồm các lựa chọn thiết kế heuristic không? <!-- TODO -->
+
+2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng không có cách cụ thể nào tự động hóa chúng?
+Những bài toán này có thể là ứng viên cho việc áp dụng học sâu.
+
+3. Từ góc nhìn sự phát triển của trí tuệ nhân tạo nhưng một cuộc cách mạng công nghiệp mới, mối quan hệ giữa thuật toán và dữ liệu là gì?
+Nó có tương tự như máy hơi nước và than đá không (sự khác nhau căn bản là gì)?
+
+4. Bạn có thể áp dụng hướng tiếp cận học đầu-cuối ở đâu?
+Vật lý? Kỹ thuật? Kinh tế lượng?
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2310)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/2310)
 
 <!--
 ![](../img/qr_introduction.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_introduction.svg)
+![](../img/qr_introduction.svg)
 
 <!-- =================== Kết thúc dịch Phần 34 ==================== -->
 
