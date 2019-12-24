@@ -2403,7 +2403,7 @@ putting it firmly into the grasp of programmers.
 ## Success Stories
 -->
 
-## *dịch tiêu đề phía trên*
+## Các câu chuyện thành công
 
 <!--
 Artificial Intelligence has a long history of delivering results
@@ -2422,14 +2422,22 @@ and ranking on the Internet. In other words, artificial intelligence
 and machine learning are pervasive, albeit often hidden from sight.
 -->
 
-*dịch đoạn phía trên*
+Trí Tuệ Nhân Tạocó một lịch sử dài của việc mang đến những kết quả khó có thể đạt được bằng cách khác.
+Ví dụ, thư tín được sắp xếp sử dụng nhận dạng ký tự quang.
+Những hệ thống này được triển khai từ những năm 90 (đây là nguồn của các bộ dữ liệu chữ viết tay nổi tiếng MNIST và USPS).
+Các hệ thống tương tự áp dụng vào đọc ngân phiếu nộp tiền và ngân hàng và tính điểm tín dụng cho ứng viên.
+Các giao dịch tài chính được kiểm tra lừa đảo một cách tự động.
+Điều này định hình rất nhiều hệ thống trả tiền điện tử như Paypal, Strip,  Stripe, AliPay, WeChat, Apple, Visa và MasterCard.
+Các chương trình máy tính cho cờ tướng đã phát triển hàng thập kỷ.
+Học máy đứng sau các hệ thống tìm kiếm, gợi ý, cá nhân hóa và xếp hạng trên mạng Internet.
+Nói cách khác, trí tuệ nhân tạo và học máy xuất hiện mọi nơi.
 
 <!--
 It is only recently that AI has been in the limelight, mostly due to
 solutions to problems that were considered intractable previously.
 -->
 
-*dịch đoạn phía trên*
+Chỉ tới gần đây AI đã trở lên nổi bật, phần lớn bởi các giải pháp cho các bài toán được coi là không khả thi trước đây.
 
 <!-- =================== Kết thúc dịch Phần 31 ==================== -->
 
