@@ -1505,13 +1505,13 @@ Either notation allows for concise and efficient representation of tensor contra
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Vectors can be interpreted geometrically as either points or directions in space.
 -->
 
-*dịch đoạn phía trên*
+Vector có thể được thể hiện trong hình học là các điểm hoặc các hướng trong không gian.
 
 <!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
