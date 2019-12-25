@@ -1739,7 +1739,7 @@ in later chapters. To whet your appetite for now,
 we describe a few of the questions you might ask:
 -->
 
-Trong một diễn biến đối lập, sẽ rất là bực mình nếu phải làm cho một ông sếp chẳng có bất kỳ ý tưởng nào là ông ta muốn bạn làm gì.
+Trong một viễn cảnh trái ngược, sẽ rất là bực mình nếu phải làm cho một ông sếp chẳng có bất kỳ ý tưởng nào là ông ta muốn bạn làm gì.
 Tuy nhiên, nếu định trở thành data scientist, tốt hơn hãy làm quen với điều này.
 Ông sếp có thể chỉ dúi vào tay bạn một chồng dữ liệu to sụ và bảo *làm tý data science với cái này đi!*
 Nghe có vẻ mơ hồ nhưng đời là vậy đấy.
@@ -1801,7 +1801,7 @@ Nếu chúng phụ thuộc tuyến tính với nhau, bài toán này được g�
 * Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát?
 Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tội phạm, vị trí, trình độ học vấn, mức lương, vv, liệu có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
 Những lĩnh vực liên quan tới *nguyên nhân - kết quả* và *mô hình đồ thị xác suất (probabilistic graphical models)* sẽ giải quyết bài toán này.
-Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *GAN - generative adversarial networks (__mô hình mạng sinh dữ liệu đối nghịch __)*.
+Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mô hình mạng sinh đối kháng (_GAN - generative adversarial networks_)*.
 GAN cho ta một thủ tục để sinh tổng hợp dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
 Còn các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật giả này có giống nhau không.
 Chúng tôi sẽ viết vài mục về chủ đề này sau.
@@ -2698,7 +2698,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 22 -->
-*
+* Mai Sơn Hải
 
 <!-- Phần 23 -->
 *
