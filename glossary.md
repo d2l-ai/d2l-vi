@@ -21,7 +21,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | activation function       | hàm kích hoạt                                                  |               |
 | adversarial learning      | học đối kháng                                                  |  http://bit.ly/2MhRgnP             |
 | agent                     | tác nhân                                                       |               |
-| algorithm's performance   | chất lượng của thuật toán                                      |               |
+| algorithm's performance   | chất lượng thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
 
