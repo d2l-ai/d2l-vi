@@ -1471,7 +1471,7 @@ Ban đầu, ta chỉ quan sát các *phản hồi được kiểm duyệt*.
 Người dùng thường có xu hướng đánh giá các bộ phim họ thực sự thích hoặc ghét: bạn có thể để ý rằng các bộ phim nhận được rất nhiều đánh giá 5 và 1 sao nhưng rất ít các bộ phim với 3 sao.
 Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán gợi ý đang được dùng, nhưng các thuật toán gợi ý không luôn để ý đến chi tiết này.
 Bởi vậy có khả năng xảy ra các vòng phản hồi (_feedback loop_) luẩn quẩn mà ở đó một hệ thống gợi ý đẩy lên một sản phẩm và sau đó nó cho rằng sản phẩm này tốt hơn (do được mua nhiều hơn) rồi cuối cùng sản phẩm đó lại được hệ thống gợi ý thường xuyên hơn nữa.
-Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệt, ưu đãi và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
+Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệt, động cơ [của việc đánh giá] và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
 
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
