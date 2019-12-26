@@ -1792,7 +1792,7 @@ impact the future observations of the agent.
 Sự đơn giản của học ngoại tuyến có sự hấp dẫn riêng của nó.
 Ưu thế là ta chỉ cần quan tâm đến vấn đề nhận dạng khuôn mẫu mà không cần phân tâm tới những vấn đề khác.
 Nhược điểm lại là khả năng cấu thành bài toán khá hạn chế.
-Nếu bạn đã đọc sê-ri Robots của Asimov hoặc là người có tham vọng, bạn có thể đang tưởng tượng ra trí tuệ nhân tạo không những biết đưa ra dự đoán mà còn có thể tương tác với thế giới.
+Nếu bạn đã đọc loạt truyện ngắn Robots của Asimov hoặc là người có tham vọng, bạn có thể đang tưởng tượng ra trí tuệ nhân tạo không những biết đưa ra dự đoán mà còn có thể tương tác với thế giới.
 Chúng ta muốn nghĩ tới những tác nhân thông minh chứ không chỉ những mô hình dự đoán.
 Tức là ta phải nhắm tới việc chọn *hành động* chứ không chỉ đưa ra những *dự đoán*.
 Hơn thế nữa, không giống với dự đoán, hành động còn có ảnh hưởng đến môi trường.
