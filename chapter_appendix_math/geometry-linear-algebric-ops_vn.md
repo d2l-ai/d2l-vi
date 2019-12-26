@@ -1511,31 +1511,34 @@ Either notation allows for concise and efficient representation of tensor contra
 * Vectors can be interpreted geometrically as either points or directions in space.
 -->
 
-Vector có thể được thể hiện trong hình học là các điểm hoặc các hướng trong không gian.
+Vector có thể được thể hiện trong hình học bằng các điểm hoặc bằng các đường trong không gian.
 
 <!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-*dịch đoạn phía trên*
+* Tích vô hướng xác định ......
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
-*dịch đoạn phía trên*
+* Siêu phẳng (_hyperplane_) là sự khái quát hóa không gian nhiều chiều thành các đường thẳng và mặt phẳng.
+Chúng có thể được dùng để xác định các mặt phẳng quyết định trong bước cuối cùng của bài toán phân loại.
 
 <!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
-*dịch đoạn phía trên*
+* Phép nhân ma trận có thể được biểu diễn bằng hình học như là việc bóp méo đồng nhất của các hệ tọa độ cơ sở. as uniform distortions of the underlying coordinates.
+Cách này biểu diễn một cách rất hạn chế, nhưng lại gọn gàng về mặt toán học, cách ta biến đổi các vectors. _____ lưu ý từ transform ____
 
 <!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
-*dịch đoạn phía trên*
+* Độc lập tuyến tính là cách nói khi một tập hợp các vector là trong cùng một không gian ít chiều hơn ta mong đợi (giả như bạn có vector $3$ trong không gian $2$ chiều).
+Hạng của ma trận là kích thước của tập con lớp nhất của nó mà là độc lập tuyến tính.
 
 <!--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
@@ -1554,13 +1557,13 @@ Vector có thể được thể hiện trong hình học là các điểm hoặc
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What is the angle between
 -->
 
-*dịch đoạn phía trên*
+1. Góc giữa hai vectors này là gì
 
 $$
 \vec v_1 = \begin{bmatrix}
@@ -1593,7 +1596,7 @@ $$
 4. Which of the following sets of vectors are linearly independent?
 -->
 
-*dịch đoạn phía trên*
+4. Các cặp vectors nào là độc lập tuyến tính
 
  * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
@@ -1622,7 +1625,7 @@ $$
 ## [Discussions](https://discuss.mxnet.io/t/5147)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/5147)
 
 <!--
 ![](../img/qr_geometry-linear-algebric-ops.svg)
@@ -1692,4 +1695,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-*
+* Mai Sơn Hải
