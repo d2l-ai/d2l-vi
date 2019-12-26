@@ -1897,8 +1897,8 @@ Moreover, the environment may not even tell us which actions led to the reward.
 Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
 Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện sẽ đi với nhãn tương ứng. 
 Tuy nhiên với học tăng cường, ta không giả định là môi trường sẽ cho chúng ta biết hành động nào là tối ưu cho mỗi quan sát (điểm dữ liệu).
-Nhìn chung, chúng ta sẽ nhận được phần thưởng. 
-Hơn nữa, môi trường có thể sẽ không cho ta biết những hành động nào dẫn tới phần thưởng. 
+Nhìn chung, chúng ta sẽ được thưởng. 
+Hơn nữa, môi trường có thể sẽ không cho ta biết những hành động nào sẽ được thưởng. 
 
 <!--
 Consider for example the game of chess.
@@ -1916,7 +1916,7 @@ what actions along the way led to the promotion.
 
 Lấy cờ tướng làm ví dụ nhé. 
 Phần thưởng thật sự sẽ đến vào cuối trò chơi. khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
-Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố tín nhiệm”: xác định hành động nào sẽ được tuyên dương hay khiển trách dựa theo kết quả. 
+Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố tín nhiệm”: xác định hành động nào sẽ được thưởng hay bị phạt dựa theo kết quả. 
 Tương tự với một nhân viên sẽ được thăng chức vào ngày 11/10. 
 Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt 1 năm qua. 
 Để thăng chức sau này đòi hỏi quá trình tìm hiểu đâu là những hành động dẫn đến sự thăng chức này.
@@ -1948,7 +1948,7 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
-Cuối cùng, tại bất kỳ thời điểm nào, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
+Cuối cùng, tại một thời điểm bất kỳ, các thuật toán học tăng cường đều biết đến một giải pháp đang là tốt nhất, tuy nhiên có thể sẽ có những giải pháp khác tốt hơn mà nó chưa bao giờ thử tới. 
 Các thuật toán học tăng cường phải luôn lựa chọn giữa việc tiếp tục *khai thác* giải pháp đang là tốt nhất, hay bỏ qua điểm thưởng tiềm năng ngắn hạn để *khám phá* thêm những giải pháp khác và thu về kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
