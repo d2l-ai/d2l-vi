@@ -1949,7 +1949,7 @@ potentially giving up some short-run reward in exchange for knowledge.
 -->
 
 Cuối cùng, tại bất kỳ thời điểm nào, những người học tăng cường sẽ biết đến 1 cách giải quyết tốt, những sẽ có những cách giải quyết khác tốt hơn mà họ chưa bao giờ thử. 
-Những người học tăng cường phải luôn luôn lựa chọn việc *khai thác* giải pháp tốt nhất được biết đến hiện tại, hay *khám phá* thêm những giải pháp khác, từ bỏ một số phần thưởng ngắn hạn để đổi lại kiến thức. 
+Các thuật toán học tăng cường phải luôn lựa chọn giữa việc tiếp tục *khai thác* giải pháp đang là tốt nhất, hay bỏ qua điểm thưởng tiềm năng ngắn hạn để *khám phá* thêm những giải pháp khác và thu về kiến thức. 
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
