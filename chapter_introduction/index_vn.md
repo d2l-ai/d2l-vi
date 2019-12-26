@@ -1932,10 +1932,10 @@ Inferring the precise location (and thus state) of the robot
 might require considering its previous observations before entering the closet.
 -->
 
-Những mô hình học tăng cường còn có thể phải giải quyết vấn đề của việc quan sát một khía cạnh
+Những mô hình học tăng cường còn có thể phải đương đầu với vấn đề về những quan sát không hoàn chỉnh.
 Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
 Lấy ví dụ khi robot hút bụi trong nhà bị kẹt tại một trong nhiều nhà kho giống y như nhau. 
-Việc can thiệp vào vị trí chính xác (hay tình trạng) của robot có thể cần đến những quan sát trước đó của nó trước khi đi vào phòng. 
+Việc can thiệp vào vị trí chính xác (trạng thái) của robot có thể cần đến những quan sát từ trước khi nó đi vào phòng. 
 
 <!--
 Finally, at any given point, reinforcement learners
