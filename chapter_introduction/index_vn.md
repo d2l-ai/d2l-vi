@@ -1895,7 +1895,7 @@ Moreover, the environment may not even tell us which actions led to the reward.
 -->
 
 Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
-Ví dụ, trong học có giám sát, chúng ta luôn mong rằng dữ liệu huấn luyện sẽ đi với nhãn phù hợp. 
+Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện sẽ đi với nhãn tương ứng. 
 Tuy nhiên, học tăng cường không đòi hỏi nhãn chính xác cho từng điểm dữ liệu, thay vào đó, môi trường sẽ cho chúng ta biết hành động tối ưu. 
 Nhìn chung, chúng ta sẽ nhận được phần thưởng. 
 Hơn nữa, môi trường có thể sẽ không cho ta biết những hành động nào dẫn tới phần thưởng. 
