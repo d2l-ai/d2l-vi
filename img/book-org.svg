@@ -421,646 +421,696 @@
     </g>
   </defs>
   <g
-     id="surface1">
+     id="surface1"
+     style="">
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 163.199219 129 L 273.199219 129 L 273.199219 156 L 163.199219 156 Z M 163.199219 129 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16025" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16037">
       <use
          xlink:href="#glyph0-3"
          x="16.9284"
          y="199.2056"
-         id="use16035" />
+         id="use16035"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16091">
       <use
          xlink:href="#glyph0-3"
          x="73.9686"
          y="199.2056"
-         id="use16089" />
+         id="use16089"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16117">
       <use
          xlink:href="#glyph0-3"
          x="102.9828"
          y="199.2056"
-         id="use16115" />
+         id="use16115"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(100%, 100%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 16.5 L 407 16.5 L 407 43.5 L 297 43.5 Z M 297 16.5 "
        id="path16147"
        transform="matrix(1,0,0,1,-162,59)" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16159">
       <use
          xlink:href="#glyph0-3"
          x="145.4835"
          y="91.85278"
-         id="use16157" />
+         id="use16157"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16211">
       <use
          xlink:href="#glyph0-3"
          x="202.0179"
          y="91.85278"
-         id="use16209" />
+         id="use16209"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 91.5 L 407 91.5 L 407 118.5 L 297 118.5 Z M 297 91.5 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16241" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16253">
       <use
          xlink:href="#glyph0-3"
          x="162.9804"
          y="161.7056"
-         id="use16251" />
+         id="use16251"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16273">
       <use
          xlink:href="#glyph0-3"
          x="186.9978"
          y="161.7056"
-         id="use16271" />
+         id="use16271"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16307">
       <use
          xlink:href="#glyph0-3"
          x="224.5296"
          y="161.7056"
-         id="use16305" />
+         id="use16305"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(100%, 100%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 -20.5 L 407 -20.5 L 407 6.5 L 297 6.5 Z M 297 -20.5 "
        id="path16351"
        transform="matrix(1,0,0,1,-162,59)" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16363">
       <use
          xlink:href="#glyph0-3"
          x="166.496"
          y="54.852783"
-         id="use16361" />
+         id="use16361"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(39.99939%,74.902344%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(39%, 74%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 463.398438 91.5 L 573.398438 91.5 L 573.398438 118.5 L 463.398438 118.5 Z M 463.398438 91.5 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16409" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16425">
       <use
          xlink:href="#glyph0-3"
          x="336.062"
          y="161.7056"
-         id="use16423" />
+         id="use16423"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(39.99939%,74.902344%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(39%, 74%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 463.398438 157.601562 L 573.398438 157.601562 L 573.398438 184.601562 L 463.398438 184.601562 Z M 463.398438 157.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16505" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16521">
       <use
          xlink:href="#glyph0-3"
          x="332.3889"
          y="227.8056"
-         id="use16519" />
+         id="use16519"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16575">
       <use
          xlink:href="#glyph0-3"
          x="392.9265"
          y="227.8056"
-         id="use16573" />
+         id="use16573"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(39.99939%,74.902344%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(39%, 74%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 226.800781 L 407 226.800781 L 407 253.800781 L 297 253.800781 Z M 297 226.800781 "
        id="path16611"
        transform="matrix(1,0,0,1,-162,59)" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16627">
       <use
          xlink:href="#glyph0-3"
          x="159.2279"
          y="297.0056"
-         id="use16625" />
+         id="use16625"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16657">
       <use
          xlink:href="#glyph0-3"
          x="190.7423"
          y="297.0056"
-         id="use16655" />
+         id="use16655"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16693">
       <use
          xlink:href="#glyph0-3"
          x="233.2889"
          y="297.0056"
-         id="use16691" />
+         id="use16691"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(39.99939%,74.902344%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(39%, 74%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 163.199219 226.800781 L 273.199219 226.800781 L 273.199219 253.800781 L 163.199219 253.800781 Z M 163.199219 226.800781 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16725" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16741">
       <use
          xlink:href="#glyph0-3"
          x="28.0228"
          y="302.1528"
-         id="use16739" />
+         id="use16739"
+         style="" />
     </g>
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 6.5 L 352 10.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16797" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 14.601562 L 352 10.601562 M 353.5 10.601562 L 352 14.601562 L 350.5 10.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16799" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 303.832031 118.5 L 272.050781 127.40625 "
        id="path16801"
        transform="matrix(1,0,0,1,-162,59)" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 268.199219 128.488281 L 272.050781 127.40625 M 272.453125 128.851562 L 268.199219 128.488281 L 271.644531 125.964844 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16803" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 118.5 L 352 123.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16805" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 127.101562 L 352 123.101562 M 353.5 123.101562 L 352 127.101562 L 350.5 123.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16807" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 385.984375 118.5 L 478.933594 155.421875 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16809" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 482.648438 156.898438 L 478.933594 155.421875 M 479.484375 154.027344 L 482.648438 156.898438 L 478.378906 156.816406 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16811" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 518.398438 118.5 L 518.398438 151.699219 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16813" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 518.398438 155.699219 L 518.398438 151.699219 M 519.898438 151.699219 L 518.398438 155.699219 L 516.898438 151.699219 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16815" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 194 L 352 220.898438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16817" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 224.898438 L 352 220.898438 M 353.5 220.898438 L 352 224.898438 L 350.5 220.898438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16819" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 218.199219 214 L 218.199219 220.898438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16821" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 218.199219 224.898438 L 218.199219 220.898438 M 219.699219 220.898438 L 218.199219 224.898438 L 216.699219 220.898438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16823" />
     <path
-       style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(100%, 100%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 -57.601562 L 407 -57.601562 L 407 -30.601562 L 297 -30.601562 Z M 297 -57.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16825" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16837">
       <use
          xlink:href="#glyph0-3"
          x="168.9877"
          y="17.75278"
-         id="use16835" />
+         id="use16835"
+         style="" />
     </g>
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 -30.601562 L 352 -26.398438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16883" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 -22.398438 L 352 -26.398438 M 353.5 -26.398438 L 352 -22.398438 L 350.5 -26.398438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16885" />
     <path
-       style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(100%, 100%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 54 L 407 54 L 407 81 L 297 81 Z M 297 54 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16887" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16899">
       <use
          xlink:href="#glyph0-3"
          x="147.7357"
          y="129.35278"
-         id="use16897" />
+         id="use16897"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 163.199219 187 L 273.199219 187 L 273.199219 214 L 163.199219 214 Z M 163.199219 187 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path16975" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g16987">
       <use
          xlink:href="#glyph0-3"
          x="14.9267"
          y="257.2056"
-         id="use16985" />
+         id="use16985"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17011">
       <use
          xlink:href="#glyph0-3"
          x="47.9441"
          y="257.2056"
-         id="use17009" />
+         id="use17009"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17065">
       <use
          xlink:href="#glyph0-3"
          x="104.9843"
          y="257.2056"
-         id="use17063" />
+         id="use17063"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 463.398438 226.800781 L 573.398438 226.800781 L 573.398438 253.800781 L 463.398438 253.800781 Z M 463.398438 226.800781 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17095" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17111">
       <use
          xlink:href="#glyph0-3"
          x="317.3837"
          y="302.1528"
-         id="use17109" />
+         id="use17109"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17149">
       <use
          xlink:href="#glyph0-3"
          x="354.9146"
          y="302.1528"
-         id="use17147" />
+         id="use17147"
+         style="" />
     </g>
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 43.5 L 352 48.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17183" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 52.101562 L 352 48.101562 M 353.5 48.101562 L 352 52.101562 L 350.5 48.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17185" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 389.566406 194 L 475.28125 224.804688 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17187" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 479.046875 226.15625 L 475.28125 224.804688 M 475.789062 223.394531 L 479.046875 226.15625 L 474.773438 226.214844 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17189" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 81 L 352 85.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17191" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 89.601562 L 352 85.601562 M 353.5 85.601562 L 352 89.601562 L 350.5 85.601562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17193" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 218.199219 156 L 218.199219 181.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17195" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 218.199219 185.101562 L 218.199219 181.101562 M 219.699219 181.101562 L 218.199219 185.101562 L 216.699219 181.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17197" />
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 129 L 407 129 L 407 156 L 297 156 Z M 297 129 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17199" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17211">
       <use
          xlink:href="#glyph0-3"
          x="158.2387"
          y="199.2056"
-         id="use17209" />
+         id="use17209"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17245">
       <use
          xlink:href="#glyph0-3"
          x="200.2561"
          y="199.2056"
-         id="use17243" />
+         id="use17243"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17271">
       <use
          xlink:href="#glyph0-3"
          x="229.2703"
          y="199.2056"
-         id="use17269" />
+         id="use17269"
+         style="" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill-rule:nonzero;fill:rgb(69%, 85%, 100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 297 167 L 407 167 L 407 194 L 297 194 Z M 297 167 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17301" />
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17313">
       <use
          xlink:href="#glyph0-3"
          x="156.237"
          y="237.2056"
-         id="use17311" />
+         id="use17311"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17337">
       <use
          xlink:href="#glyph0-3"
          x="189.2544"
          y="237.2056"
-         id="use17335" />
+         id="use17335"
+         style="" />
     </g>
     <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
+       style="fill:rgb(0%, 0%, 0%);fill-opacity:1"
        id="g17371">
       <use
          xlink:href="#glyph0-3"
          x="231.2718"
          y="237.2056"
-         id="use17369" />
+         id="use17369"
+         style="" />
     </g>
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 156 L 352 161.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17401" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 352 165.101562 L 352 161.101562 M 353.5 161.101562 L 352 165.101562 L 350.5 161.101562 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17403" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 407 79.894531 L 457.644531 91.308594 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17405" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 461.546875 92.1875 L 457.644531 91.308594 M 457.972656 89.84375 L 461.546875 92.1875 L 457.316406 92.769531 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17407" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 236.667969 156 L 328.765625 223.320312 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17409" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 331.996094 225.679688 L 328.765625 223.320312 M 329.652344 222.105469 L 331.996094 225.679688 L 327.882812 224.53125 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17411" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 463.398438 240.300781 L 412.898438 240.300781 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17413" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 408.898438 240.300781 L 412.898438 240.300781 M 412.898438 241.800781 L 408.898438 240.300781 L 412.898438 238.800781 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17415" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 485.9375 184.601562 L 389.910156 224.535156 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17417" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 386.21875 226.070312 L 389.910156 224.535156 M 390.484375 225.917969 L 386.21875 226.070312 L 389.335938 223.148438 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17419" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 463.398438 183.777344 L 278.949219 226.296875 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17421" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%, 0%, 0%);stroke-opacity:1;stroke-miterlimit:10"
        d="M 275.050781 227.195312 L 278.949219 226.296875 M 279.285156 227.757812 L 275.050781 227.195312 L 278.613281 224.835938 "
        transform="matrix(1,0,0,1,-162,59)"
        id="path17423" />
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="166.875"
-     y="18.500002"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.00000028px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;"
+     x="188.0882"
+     y="17.439342"
      id="text17434"><tspan
        sodipodi:role="line"
        id="tspan1560"
-       x="166.875"
-       y="18.500002">1. Giới Thiệu</tspan></text>
+       x="188.0882"
+       y="17.439342">1. Giới Thiệu</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="172.87939"
-     y="55.471684"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.00000028px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;"
+     x="189.31963"
+     y="54.941353"
      id="text17434-4"><tspan
        sodipodi:role="line"
        id="tspan1558"
-       x="172.87939"
-       y="55.471684">2. Sơ Bộ</tspan></text>
+       x="189.31963"
+       y="54.941353">2. Sơ Bộ</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="141.80118"
-     y="92.053009"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.00000028px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;"
+     x="187.40956"
+     y="86.74971"
      id="text17434-4-1"><tspan
        sodipodi:role="line"
-       id="tspan1556"
-       x="141.80118"
-       y="92.053009">3. Mạng Nơ-ron Tuyến Tính</tspan></text>
+       id="tspan246"
+       x="188.79628"
+       y="86.74971">3. Mạng Nơ-ron </tspan><tspan
+       sodipodi:role="line"
+       id="tspan248"
+       x="187.40956"
+       y="99.24971">Tuyến Tính</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="149.95703"
-     y="129.60156"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="187.08014"
+     y="122.70728"
      id="text17434-4-1-9"><tspan
        sodipodi:role="line"
-       id="tspan1580"
-       x="149.95703"
-       y="129.60156">4. Perceptron Đa Tầng</tspan></text>
+       id="tspan250"
+       x="188.32819"
+       y="122.70728">4. Perceptron </tspan><tspan
+       sodipodi:role="line"
+       id="tspan252"
+       x="187.08014"
+       y="133.95728">Đa Tầng</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="151.04688"
-     y="167.10156"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="189.76097"
+     y="161.26793"
      id="text17434-4-1-9-2"><tspan
        sodipodi:role="line"
-       id="tspan1600"
-       x="151.04688"
-       y="167.10156">5. Tính Toán Học Sâu</tspan></text>
+       id="tspan254"
+       x="191.00902"
+       y="161.26793">5. Tính Toán </tspan><tspan
+       sodipodi:role="line"
+       id="tspan256"
+       x="189.76097"
+       y="172.51793">Học Sâu</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="9.9355431"
-     y="204.15234"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="53.422611"
+     y="199.37938"
      id="text17434-4-1-9-2-0"><tspan
        sodipodi:role="line"
-       id="tspan1620"
-       x="9.9355431"
-       y="204.15234">6. Mạng Nơ-ron Tích Chập</tspan></text>
+       id="tspan262"
+       x="53.422611"
+       y="199.37938">6. Mạng Nơ-ron</tspan><tspan
+       sodipodi:role="line"
+       id="tspan264"
+       x="53.422611"
+       y="210.62938">Tích Chập</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="53.500164"
-     y="257.983"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="56.151814"
+     y="256.92233"
      id="text17434-4-1-9-2-0-4"><tspan
        sodipodi:role="line"
        id="tspan1806"
-       x="54.609539"
-       y="257.983">7. Mạng Tích Chập </tspan><tspan
+       x="57.39986"
+       y="256.92233">7. Mạng Tích Chập </tspan><tspan
        sodipodi:role="line"
        id="tspan1808"
-       x="53.500164"
-       y="267.983">Hiện Đại</tspan></text>
+       x="56.151814"
+       y="268.17233">Hiện Đại</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="146.17578"
-     y="204.69531"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="190.19318"
+     y="205.22565"
      id="text17434-4-1-9-2-0-7"><tspan
        sodipodi:role="line"
        id="tspan1670"
-       x="146.17578"
-       y="204.69531">8. Mạng Nơ-ron Truy Hồi</tspan></text>
+       x="190.19318"
+       y="205.22565">8. Mạng Nơ-ron Truy Hồi</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="143.75977"
-     y="242.10156"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="188.83783"
+     y="237.3286"
      id="text17434-4-1-9-2-0-7-5"><tspan
        sodipodi:role="line"
-       id="tspan1700"
-       x="143.75977"
-       y="242.10156">9. Mạng Truy Hồi Hiện Đại</tspan></text>
+       id="tspan258"
+       x="188.83783"
+       y="237.3286">9. Mạng Truy Hồi</tspan><tspan
+       sodipodi:role="line"
+       id="tspan260"
+       x="188.83783"
+       y="248.5786"> Hiện Đại</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="317.13959"
-     y="303.0069"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="354.79303"
+     y="302.47656"
      id="text17434-4-1-9-2-0-7-5-6"><tspan
        sodipodi:role="line"
        id="tspan1720"
-       x="317.13959"
-       y="303.0069">10. Cơ Chế Tập Trung</tspan></text>
+       x="354.79303"
+       y="302.47656">10. Cơ Chế Tập Trung</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="316.7756"
-     y="167.94255"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.00000028px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;"
+     x="357.08069"
+     y="167.41223"
      id="text17434-4-1-9-2-0-7-5-6-8"><tspan
        sodipodi:role="line"
        id="tspan1740"
-       x="316.7756"
-       y="167.94255">11. Thuật Toán Tối Ưu</tspan></text>
+       x="357.08069"
+       y="167.41223">11. Thuật Toán Tối Ưu</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="314.24414"
-     y="233.68359"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="356.67053"
+     y="232.62292"
      id="text17434-4-1-9-2-0-7-5-6-8-4"><tspan
        sodipodi:role="line"
        id="tspan1760"
-       x="314.24414"
-       y="233.68359">12. Hiệu Năng Tính Toán</tspan></text>
+       x="356.67053"
+       y="232.62292">12. Hiệu Năng Tính Toán</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.00000028px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;"
      x="187.53197"
      y="297.54825"
      id="text17434-4-1-9-2-0-7-5-6-2"><tspan
@@ -1074,12 +1124,12 @@
        y="307.54825">Tự Nhiên</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="14.885461"
-     y="302.57031"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+     x="55.720879"
+     y="302.03998"
      id="text17434-4-1-9-2-0-4-7"><tspan
        sodipodi:role="line"
        id="tspan1800"
-       x="14.885461"
-       y="302.57031">13. Thị Giác Máy Tính</tspan></text>
+       x="55.720879"
+       y="302.03998">13. Thị Giác Máy Tính</tspan></text>
 </svg>
