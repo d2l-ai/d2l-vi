@@ -487,9 +487,9 @@ If we wanted to train a model to recognize cancer in microscopy images,
 fixed-length inputs means we have one less thing to worry about.
 -->
 
-Khi mỗi mẫu được mô tả bởi cùng một giá trị số, ta nói rằng dữ liệu bao gồm các vector có *chiều dài cố định* và ta mô tả độ dài (không đổi) của vector là *chiều* của dữ liệu.
+Khi mỗi mẫu được biểu diễn bởi cùng một số lượng các giá trị, ta nói rằng dữ liệu bao gồm các vector có *độ dài cố định* và ta mô tả độ dài (không đổi) của vector là *chiều* của dữ liệu.
 Bạn có thể hình dung, chiều dài cố định có thể là một thuộc tính thuận tiện.
-Nếu ta mong muốn huấn luyện một mô hình để nhận biết ung thư qua hình ảnh trong kính hiển vi, độ dài cố định của đầu vào cho ta biết sẽ có ít hơn một điều phải lo lắng.
+Nếu ta mong muốn huấn luyện một mô hình để nhận biết ung thư qua hình ảnh từ kính hiển vi, độ dài cố định của đầu vào cho ta biết sẽ có ít hơn một điều phải lo lắng.
 
 <!--
 However, not all data can easily be represented as fixed length vectors.
@@ -509,13 +509,13 @@ can handle *varying-length* data.
 -->
 
 Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có chiều dài cố định.
-Đôi khi ta có thể mong đợi hình ảnh trong kính hiển vi đến từ thiết bị tiêu chuẩn, ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng.
-Đối với hình ảnh, ta có thể suy xét để cắt xén tất cả chúng nhằm có được kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
+Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng.
+Đối với hình ảnh, ta có thể tính đến việc cắt xén nhằm đưa chúng về kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
 Ta có nguy cơ mất đi thông tin trong các phần bị cắt bỏ. 
-Hơn nữa, dữ liệu văn bản bài trừ các cách biểu diễn có độ dài cố định, thậm chí bất hợp tác hơn.
+Hơn nữa, dữ liệu văn bản không thích hợp với cách biểu diễn dưới dạng vector có độ dài cố định.
 Suy xét về các đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
-Một số bình luận ngắn gọn như: "nó bốc mùi!". Những người khác thì bình luận lan man trên các trang.
-Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là sự so sánh mềm mại mà các mô hình hiện đại có thể xử lý dữ liệu với dữ liệu có *độ dài biến đổi*.
+Một số bình luận ngắn gọn như: "nó bốc mùi!". Có người thì bình luận lan man hàng trang.
+Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là các mô hình học sâu hiện đại có thể xử lý dữ liệu có *độ dài biến đổi* một cách uyển chuyển hơn.
 
 <!--
 Generally, the more data we have, the easier our job becomes.
@@ -530,9 +530,9 @@ but no better than traditional approaches.
 
 Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ càng dễ dàng hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
-Sự thay đổi trạng thái từ (tương đối nhỏ) sang dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
-Để lái xe về nhà, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
-Một số người khác làm việc với trạng thái dữ liệu ở mức thấp, nhưng không tốt hơn các cách tiếp cận truyền thống.
+Từ dữ liệu nhỏ chuyển sang làm việc với dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
+Để cho rõ hơn, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
+Một số người vẫn áp dụng học sâu với số dữ liệu ít ỏi mà mình có được, nhưng trong trường hợp này nó không tốt hơn các cách tiếp cận truyền thống.
 
 <!--
 Finally it is not enough to have lots of data and to process it cleverly.
@@ -559,15 +559,15 @@ Note that this can all happen without the data scientist
 actively conspiring, or even being aware.
 -->
 
-Cuối cùng nó chưa đủ để có nhiều dữ liệu và xử lý nó một cách khéo léo.
+Cuối cùng, có nhiều dữ liệu và xử lý dữ liệu một cách khéo léo vẫn là chưa đủ.
 Ta cần dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các tính năng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
-Tình huống được nắm bắt tốt bởi những lời sáo rỗng: *rác vào, rác ra*.
+Tình huống trên có thể được khái quát bởi thuật ngữ: *đưa rác vào thì nhận rác ra* (*garbage in, garbage out*).
 Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
-Trong các ứng dụng có độ nhạy của học máy, như kiểm soát dự đoán, sàng lọc tiếp tục và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
-Một chế độ thất bại thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không được biểu diễn trong dữ liệu huấn luyện.
-Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong tự nhiên chưa từng thấy da đen trước đây.
+Trong các ứng dụng có độ nhạy của học máy như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
+Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
+Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
 Thất bại cũng có thể xảy ra khi dữ liệu không chỉ đại diện cho một số nhóm người, mà còn phản ánh cả định kiến từ xã hội.
-Một ví dụ nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong lịch sử.
+Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong quá khứ.
 Lưu ý rằng tất cả điều này có thể xảy ra mà không có nhà khoa học dữ liệu nào có âm mưu chủ động, hoặc thậm chí là nhận thức được.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
