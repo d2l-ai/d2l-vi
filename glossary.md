@@ -102,6 +102,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
 |------------------|----------------------------------------------------------------|----------------------------------------------|
 | Gaussian noise   | nhiễu Gauss                                                    |                              |
+| generative model | mô hình sinh                                                   |                              |
 | gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
