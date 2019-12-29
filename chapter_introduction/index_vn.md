@@ -1566,7 +1566,7 @@ since thousands of samples correspond to a single spoken word.
 These are ``seq2seq`` problems where the output is much shorter than the input.
 -->
 
-**Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm của một người (:numref:`fig_speech`), và đầu ra $y$ là một đoạn chữ ghi lại những gì người đó nói.
+**Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm của một người (:numref:`fig_speech`) và đầu ra $y$ là một đoạn chữ ghi lại những gì người đó nói.
 Thử thách ở đây là việc có rất nhiều các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) hơn so với chữ, nghĩa là không có một phép ánh xạ 1:1 nào giữa âm thanh và chữ viết, bởi vì một tiếng nói có thể tương ứng với hàng ngàn mẫu âm thanh.
 Có các bài toán ``seq2seq`` mà đầu ra ngắn hơn rất nhiều so với đầu vào.
 
@@ -1622,8 +1622,8 @@ across long temporal distances. This is an active area of research.
 -->
 
 Rất nhiều bài toán liên quan xuất hiện trong các tác vụ học khác.
-Ví dụ, xác định thứ tự ở đó một người dùng đọc một trang mạng là một bài toán phân tích sắp xếp bối cảnh hai chiều.
-Các bài toán hội thoại chứa đựng mọi loại phức tạp khác, ở đó xác định sẽ nói gì tiếp theo đòi hỏi kiến thức thực tế và trạng thái trước đó của cuộc hội thoại trong một khoảng thời gian dài.
+Ví dụ, xác định thứ tự ở đó một người dùng đọc một trang mạng là một bài toán phân tích sắp xếp bố cục hai chiều.
+Các bài toán hội thoại gặp phải mọi loại phức tạp khác, như việc xác định câu nói tiếp theo đòi hỏi kiến thức thực tế cũng như trạng thái trước đó của cuộc hội thoại trong một khoảng thời gian dài.
 Vấn đề này đang được nhiều nhà nghiên cứu quan tâm.
 
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
