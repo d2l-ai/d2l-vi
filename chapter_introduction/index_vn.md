@@ -508,13 +508,13 @@ is the comparative grace with which modern models
 can handle *varying-length* data.
 -->
 
-Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có chiều dài cố định.
-Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng.
+Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có độ dài cố định.
+Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng được.
 Đối với hình ảnh, ta có thể tính đến việc cắt xén nhằm đưa chúng về kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
-Ta có nguy cơ mất đi thông tin trong các phần bị cắt bỏ. 
+Và ta có nguy cơ sẽ mất đi thông tin trong các phần bị cắt bỏ. 
 Hơn nữa, dữ liệu văn bản không thích hợp với cách biểu diễn dưới dạng vector có độ dài cố định.
-Suy xét về các đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
-Một số bình luận ngắn gọn như: "nó bốc mùi!". Có người thì bình luận lan man hàng trang.
+Suy xét một chút về những đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
+Ta có thể thấy được số bình luận ngắn gọn như: "nó bốc mùi!", một số khác thì bình luận lan man hàng trang.
 Một lợi thế lớn của việc học sâu so với các phương pháp truyền thống đó là các mô hình học sâu hiện đại có thể xử lý dữ liệu có *độ dài biến đổi* một cách uyển chuyển hơn.
 
 <!--
@@ -528,7 +528,7 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ càng dễ dàng hơn.
+Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc của ta sẽ suôn sẻ hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
 Từ dữ liệu nhỏ chuyển sang làm việc với dữ liệu lớn là một sự đóng góp cơ bản cho sự thành công của học sâu hiện đại.
 Để cho rõ hơn, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
@@ -559,8 +559,8 @@ Note that this can all happen without the data scientist
 actively conspiring, or even being aware.
 -->
 
-Cuối cùng, có nhiều dữ liệu và xử lý dữ liệu một cách khéo léo vẫn là chưa đủ.
-Ta cần dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các tính năng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
+Cuối cùng, có nhiều dữ liệu và xử lý dữ liệu một cách khéo léo thôi thì chưa đủ.
+Ta cần những dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các tính năng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
 Tình huống trên có thể được khái quát bởi thuật ngữ: *đưa rác vào thì nhận rác ra* (*garbage in, garbage out*).
 Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
 Trong các ứng dụng có độ nhạy của học máy như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
