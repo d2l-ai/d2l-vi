@@ -57,7 +57,7 @@ Mathematicians most often write this as either a *column* or *row* vector, which
 Các nhà toán học thường viết chúng dưới dạng một vector *cột* hoặc *hàng*, tức:
 
 $$
-\mathbf{x} = \begin{ma-trận-b}1\\7\\0\\1\end{ma-trận-b},
+\mathbf{x} = \begin{bmatrix}1\\7\\0\\1\end{bmatrix},
 $$
 
 <!--
@@ -67,7 +67,7 @@ or
 hoặc
 
 $$
-\mathbf{x}^\top = \begin{ma-trận-b}1 & 7 & 0 & 1\end{ma-trận-b}.
+\mathbf{x}^\top = \begin{bmatrix}1 & 7 & 0 & 1\end{bmatrix}.
 $$
 
 <!--
@@ -681,9 +681,9 @@ Suppose that we have some matrix:
 Giả sử ta có một ma trận:
 
 $$
-\mathbf{A} = \begin{ma-trận-b}
+\mathbf{A} = \begin{bmatrix}
 a & b \\ c & d
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -697,10 +697,10 @@ $\mathbf{v} = [x, y]^\top$, ta thực hiện phép nhân và thấy rằng
 
 $$
 \begin{aligned}
-\mathbf{A}\mathbf{v} & = \begin{ma-trận-b}a & b \\ c & d\end{ma-trận-b}\begin{ma-trận-b}x \\ y\end{ma-trận-b} \\
-& = \begin{ma-trận-b}ax+by\\ cx+dy\end{ma-trận-b} \\
-& = x\begin{ma-trận-b}a \\ c\end{ma-trận-b} + y\begin{ma-trận-b}b \\d\end{ma-trận-b} \\
-& = x\left\{\mathbf{A}\begin{ma-trận-b}1\\0\end{ma-trận-b}\right\} + y\left\{\mathbf{A}\begin{ma-trận-b}0\\1\end{ma-trận-b}\right\}.
+\mathbf{A}\mathbf{v} & = \begin{bmatrix}a & b \\ c & d\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} \\
+& = \begin{bmatrix}ax+by\\ cx+dy\end{bmatrix} \\
+& = x\begin{bmatrix}a \\ c\end{bmatrix} + y\begin{bmatrix}b \\d\end{bmatrix} \\
+& = x\left\{\mathbf{A}\begin{bmatrix}1\\0\end{bmatrix}\right\} + y\left\{\mathbf{A}\begin{bmatrix}0\\1\end{bmatrix}\right\}.
 \end{aligned}
 $$
 
@@ -740,10 +740,10 @@ Let's draw what happens when we use the specific matrix
 Cùng xét ví dụ với một ma trận cụ thể
 
 $$
-\mathbf{A} = \begin{ma-trận-b}
+\mathbf{A} = \begin{bmatrix}
 1 & 2 \\
 -1 & 3
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -790,9 +790,9 @@ Some distortions can be severe.  For instance the matrix
 Một vài phép biển đổi có thể rất kỳ dị. Chẳng hạn ma trận
 
 $$
-\mathbf{B} = \begin{ma-trận-b}
+\mathbf{B} = \begin{bmatrix}
 2 & -1 \\ 4 & -2
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -838,9 +838,9 @@ Consider again the matrix
 Quay lại với ma trận
 
 $$
-\mathbf{B} = \begin{ma-trận-b}
+\mathbf{B} = \begin{bmatrix}
 2 & -1 \\ 4 & -2
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -945,9 +945,9 @@ amongst all subsets of columns. For example, the matrix
 *dịch đoạn phía trên*
 
 $$
-\mathbf{B} = \begin{ma-trận-b}
+\mathbf{B} = \begin{bmatrix}
 2 & 4 \\ -1 & -2
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -959,12 +959,12 @@ For a more challenging example, we can consider
 *dịch đoạn phía trên*
 
 $$
-\mathbf{C} = \begin{ma-trận-b}
+\mathbf{C} = \begin{bmatrix}
 1& 3 & 0 & -1 & 0 \\
 -1 & 0 & 1 & 1 & -1 \\
 0 & 3 & 1 & 0 & -1 \\
 2 & 3 & -1 & -2 & 1
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -1009,12 +1009,12 @@ Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận
 Xét ma trận
 
 $$
-\mathbf{I} = \begin{ma-trận-b}
+\mathbf{I} = \begin{bmatrix}
 1 & 0 & \cdots & 0 \\
 0 & 1 & \cdots & 0 \\
 \vdots & \vdots & \ddots & \vdots \\
 0 & 0 & \cdots & 1
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -1052,10 +1052,10 @@ Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đ
 Ví dụ, nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
-\mathbf{A} = \begin{ma-trận-b}
+\mathbf{A} = \begin{bmatrix}
 a & b \\
 c & d
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -1065,10 +1065,10 @@ then we can see that the inverse is
 thì nghịch đảo của ma trận này là
 
 $$
- \frac{1}{ad-bc}  \begin{ma-trận-b}
+ \frac{1}{ad-bc}  \begin{bmatrix}
 d & -b \\
 -c & a
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -1187,10 +1187,10 @@ Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng
 Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này
 
 $$
-\mathbf{A} = \begin{ma-trận-b}
+\mathbf{A} = \begin{bmatrix}
 1 & -1 \\
 2 & 3
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -1207,10 +1207,10 @@ In general, if we have a matrix
 Tổng quát, nếu ta có một ma trận
 
 $$
-\mathbf{A} = \begin{ma-trận-b}
+\mathbf{A} = \begin{bmatrix}
 a & b \\
 c & d
-\end{ma-trận-b},
+\end{bmatrix},
 $$
 
 <!--
@@ -1255,9 +1255,9 @@ Let's consider
 Xét
 
 $$
-\mathbf{B} = \begin{ma-trận-b}
+\mathbf{B} = \begin{bmatrix}
 2 & 4 \\ -1 & -2
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -1569,18 +1569,18 @@ Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu c�
 1. Góc giữa hai vectors là gì
 
 $$
-\vec v_1 = \begin{ma-trận-b}
+\vec v_1 = \begin{bmatrix}
 1 \\ 0 \\ -1 \\ 2
-\end{ma-trận-b}, \qquad \vec v_2 = \begin{ma-trận-b}
+\end{bmatrix}, \qquad \vec v_2 = \begin{bmatrix}
 3 \\ 1 \\ 0 \\ 1
-\end{ma-trận-b}?
+\end{bmatrix}?
 $$
 
 <!--
-2. True or false: $\begin{ma-trận-b}1 & 2\\0&1\end{ma-trận-b}$ and $\begin{ma-trận-b}1 & -2\\0&1\end{ma-trận-b}$ are inverses of one another?
+2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
 -->
 
-2. Đúng hay sai: $\begin{ma-trận-b}1 & 2\\0&1\end{ma-trận-b}$ and $\begin{ma-trận-b}1 & -2\\0&1\end{ma-trận-b}$ có là nghịch đảo của ma trận khác?
+2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có là nghịch đảo của ma trận khác?
 
 <!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
@@ -1590,10 +1590,10 @@ Giả sử ta vẽ ra một hình trong mặt phẳng với diện tích $100\ma
 Diện tích đó sẽ bằng bao nhiêu sau khi biến đổi hình đó bằng ma trận
 
 $$
-\begin{ma-trận-b}
+\begin{bmatrix}
 2 & 3\\
 1 & 2
-\end{ma-trận-b}.
+\end{bmatrix}.
 $$
 
 <!--
@@ -1602,22 +1602,22 @@ $$
 
 4. Trong các cặp vector sau, cặp nào là độc lập tuyến tính?
 
- * $\left\{\begin{ma-trận-p}1\\0\\-1\end{ma-trận-p}, \begin{ma-trận-p}2\\1\\-1\end{ma-trận-p}, \begin{ma-trận-p}3\\1\\1\end{ma-trận-p}\right\}$
- * $\left\{\begin{ma-trận-p}3\\1\\1\end{ma-trận-p}, \begin{ma-trận-p}1\\1\\1\end{ma-trận-p}, \begin{ma-trận-p}0\\0\\0\end{ma-trận-p}\right\}$
- * $\left\{\begin{ma-trận-p}1\\1\\0\end{ma-trận-p}, \begin{ma-trận-p}0\\1\\-1\end{ma-trận-p}, \begin{ma-trận-p}1\\0\\1\end{ma-trận-p}\right\}$
+ * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
+ * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
+ * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$
 
 <!--
-5. Suppose that you have a matrix written as $A = \begin{ma-trận-b}c\\d\end{ma-trận-b}\cdot\begin{ma-trận-b}a & b\end{ma-trận-b}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
+5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
 -->
 
-5. Giả sử ta có ma trận viết là $A = \begin{ma-trận-b}c\\d\end{ma-trận-b}\cdot\begin{ma-trận-b}a & b\end{ma-trận-b}$ với vài lựa chọn $a, b, c$, và $d$.
+5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với vài lựa chọn $a, b, c$, và $d$.
 Đúng hay sai: ma trận nào có định thức luôn luôn bằng $0$?
 
 <!--
-6. The vectors $e_1 = \begin{ma-trận-b}1\\0\end{ma-trận-b}$ and $e_2 = \begin{ma-trận-b}0\\1\end{ma-trận-b}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
 -->
 
-6. Các vector $e_1 = \begin{ma-trận-b}1\\0\end{ma-trận-b}$ and $e_2 = \begin{ma-trận-b}0\\1\end{ma-trận-b}$ là trực giao.
+6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
 Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao?
 
 <!--
