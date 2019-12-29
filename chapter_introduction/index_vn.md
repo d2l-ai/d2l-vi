@@ -1841,11 +1841,11 @@ The breakthrough [deep Q-network that beat humans at Atari games using only the 
 and the [AlphaGo program that dethroned the world champion at the board game Go](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/) are two prominent examples.
 -->
 
-Nếu bạn muốn dùng học máy để phát triển một tác nhân có hành động tương tác với môi trường, khả năng cao là bạn sẽ tập trung vô *học tăng cường* (*reinforcemnent learning RL*).
+Nếu bạn muốn dùng học máy để phát triển một tác nhân tương tác với môi trường và đưa ra hành động, khả năng cao là bạn sẽ tập trung vào *học tăng cường* (*reinforcemnent learning -- RL*).
 Nó có ứng dụng trong ngành robotics, hệ thống đối thoại và cả việc phát triển AI cho trò chơi điện tử.
 *Học sâu tăng cường* (*Deep reinforcement learning DRL*) áp dụng kĩ thuật học sâu cho những vấn để của học tăng cường đã trở nên phổ biến trong thời gian gần đây.
-Hai ví dụ tiêu biểu nhất là thành tựu bứt phá của [mạng-Q sâu đánh bại con ngừoi trong các trò chơi điện tử Atari từ đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
-và [chương trình AlphaGo mà đã thắng nhà vô địch thế giới trong trờ chơi cờ vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/)
+Hai ví dụ tiêu biểu nhất là thành tựu bứt phá của [mạng-Q sâu đánh bại con người trong các trò chơi điện tử Atari chỉ sử dụng đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
+và [chương trình AlphaGo thắng nhà vô địch thế giới trong trờ chơi cờ vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/)
 
 <!--
 Reinforcement learning gives a very general statement of a problem,
@@ -1863,12 +1863,12 @@ from observations (of the environment) to actions.
 The goal of reinforcement learning is to produce a good policy.
 -->
 
-Học tăng cường mô tả bài toán theo cách rất tổng quát, trong đó tác nhân tương tác với môi trường qua một chuỗi các *bước thời gian*. <!--glossary-->
+Học tăng cường mô tả bài toán theo cách rất tổng quát, trong đó tác nhân tương tác với môi trường qua một chuỗi các *bước thời gian* (*timesteps*).
 Tại mỗi bước thời gian $t$, tác nhân sẽ nhận được một quan sát $o_t$ từ môi trường và phải chọn một hành động $a_t$ để tương tác với môi trường thông qua một cơ chế nào đó (đôi khi còn được gọi là bộ dẫn động).
 Sau cùng, tác nhân sẽ nhận được một điểm thưởng $r_t$ từ môi trường.
-Sau đó nó lại nhận một quan sát khác và chọn ra một hành động, cứ tiếp tục như thế.
-Hành vi của tác nhân học tăng cường được điều khiển bởi một *chính sách* (*policy*).
-Nói ngắn gọn, một *chính sách* chỉ là một hàm ánh xạ từ những quan sát (từ môi trường) tới các hành động.
+Sau đó tác nhân lại nhận một quan sát khác và chọn ra một hành động, cứ tiếp tục như thế.
+Hành vi của tác nhân học tăng cường được kiểm soát bởi một *chính sách* (*policy*).
+Nói ngắn gọn, một *chính sách* là một hàm ánh xạ từ những quan sát (từ môi trường) tới các hành động.
 Mục tiêu của học tăng cường là tạo ra một chính sách tốt.
 
 <!--
@@ -1889,7 +1889,7 @@ from the original supervised problem.
 
 Thật khó để đánh giá thấp sự tổng quát của mô hình học tăng cường.
 Ví dụ, ta có thể chuyển bất cứ bài toán học có giám sát nào thành một bài toán học tăng cường.
-Chẳng hạn như với một bài toán phân loại, ta có thể tạo một tác nhân học tăng cường với một *hành động* cho mỗi lớp.
+Chẳng hạn với một bài toán phân loại, ta có thể tạo một tác nhân học tăng cường với một *hành động* tương ứng với mỗi lớp.
 Sau đó ta có thể tạo một môi trường mà trả về điểm thưởng đúng bằng với giá trị của hàm mất mát từ bài toán học có giám sát ban đầu.
 
 <!-- =================== Kết thúc dịch Phần 24 ==================== -->
