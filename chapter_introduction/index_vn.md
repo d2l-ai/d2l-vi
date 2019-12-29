@@ -1759,10 +1759,10 @@ this is sometimes called *offline learning*.
 For supervised learning, the process looks like :numref:`fig_data_collection`.
 -->
 
-Cho tới giờ, chúng ta chưa thảo luận về việc dữ liệu tới từ đâu hoặc chuyện gì thực sự sẽ *xảy ra* khi một mô hình học máy trả ra kết quả dự đoán.
-Điều này là do học có giám sát và học không giám sát đối mặt với vấn đề trên theo hướng rất đơn giản.
-Trước hết chúng ta thu thập một tập dữ liệu lớn, sau đó cho hệ thống nhận dạng khuôn mẫu học trên đó mà không có bất kì tương tác nào với môi trường nữa.
-Bởi vì toàn bộ việc học diễn ra khi thuật toán đã được ngắt kết nối khỏi môi trường, đôi khi ta gọi đó là *học ngoại tuyến* (*offline learning*). <!--glossary-->
+Cho tới giờ, chúng ta chưa thảo luận về việc dữ liệu tới từ đâu hoặc chuyện gì thực sự sẽ *xảy ra* khi một mô hình học máy trả về kết quả dự đoán.
+Điều này là do học có giám sát và học không giám sát chưa giải quyết các vấn đề một cách thấu đáo.
+Trong cả hai cách học, chúng ta đưa vào một lượng dữ liệu lớn từ đầu rồi cho mô hình học mà không cho nó trở lại tương tác với môi trường.
+Bởi vì toàn bộ việc học diễn ra khi thuật toán đã được ngắt kết nối khỏi môi trường, đôi khi ta gọi đó là *học ngoại tuyến* (*offline learning*).
 Quá trình này cho học có giám sát được mô tả trong :numref:`fig_data_collection`.
 
 <!--
@@ -1790,12 +1790,12 @@ impact the future observations of the agent.
 -->
 
 Sự đơn giản của học ngoại tuyến có sự hấp dẫn riêng của nó.
-Ưu thế là ta chỉ cần quan tâm đến vấn đề nhận dạng khuôn mẫu mà không cần phân tâm tới những vấn đề khác.
-Nhược điểm lại là khả năng cấu thành bài toán khá hạn chế.
+Ưu điểm là ta chỉ cần quan tâm đến vấn đề nhận dạng mẫu mà không bị phân tâm bởi những vấn đề khác.
+Nhưng nhược điểm là sự hạn chế trong việc định hình các bài toán.
 Nếu bạn đã đọc loạt truyện ngắn Robots của Asimov hoặc là người có tham vọng, bạn có thể đang tưởng tượng ra trí tuệ nhân tạo không những biết đưa ra dự đoán mà còn có thể tương tác với thế giới.
-Chúng ta muốn nghĩ tới những tác nhân thông minh chứ không chỉ những mô hình dự đoán.
+Chúng ta muốn nghĩ tới những *tác nhân* (*agent*) thông minh chứ không chỉ những mô hình dự đoán.
 Tức là ta phải nhắm tới việc chọn *hành động* chứ không chỉ đưa ra những *dự đoán*.
-Hơn thế nữa, không giống với dự đoán, hành động còn có ảnh hưởng đến môi trường.
+Hơn thế nữa, không giống dự đoán, hành động còn tác động đến môi trường.
 Nếu muốn tạo ra những tác nhân thông minh, chúng ta phải tính tới cả các hành động mà có thể ảnh hưởng tới những quan sát của tác nhân đó trong tương lai.
 
 
@@ -1805,7 +1805,7 @@ opens a whole set of new modeling questions.
 Does the environment:
 -->
 
-Cân nhắc về việc tương tác với môi trường mở ra một loạt những câu hỏi mới về cách mô hình hoá vấn đề.
+Xem xét việc tương tác với môi trường mở ra một loạt những câu hỏi mới về cách mô hình hoá.
 Liệu môi trường có:
 
 <!--
@@ -1820,7 +1820,7 @@ Liệu môi trường có:
 * Muốn giúp đỡ, chẳng hạn: khi người dùng đọc văn bản vào một hệ thống nhận dạng giọng nói?
 * Muốn đánh bại, chẳng hạn: một môi trường đối kháng giống như bộ lọc thư rác (chống lại những người viết thư rác) hay là chơi game (với đối thủ)?
 * Không quan tâm (có rất nhiều trường hợp thế này)?
-* Xu hướng thay đổi (dữ liệu trong tương lai có giống với trong quá khứ không, hay là khuôn mẫu sẽ thay đổi theo thời gian một cách tự nhiên hoặc do phản ứng với những công cụ tự động)?
+* Có xu hướng thay đổi (dữ liệu trong tương lai có giống với trong quá khứ không, hay là khuôn mẫu có thay đổi theo thời gian một cách tự nhiên hoặc do phản ứng với những công cụ tự động)?
 
 <!--
 This last question raises the problem of *distribution shift*,
@@ -1832,9 +1832,9 @@ We will briefly describe reinforcement learning and adversarial learning,
 two settings that explicitly consider interaction with an environment.
 -->
 
-Câu hỏi cuối cùng nêu lên vấn đề về *dịch chuyển phân phối* (*distribution shift*), khi mà dữ liệu huấn luyện và dữ liệu kiểm tra khác nhau.
+Câu hỏi cuối cùng nêu lên vấn đề về *dịch chuyển phân phối* (*distribution shift*) khi dữ liệu huấn luyện và dữ liệu kiểm tra khác nhau.
 Vấn đề này giống như khi chúng ta làm bài kiểm tra viết bởi giảng viên nhưng lại làm bài tập về nhà do trợ giảng chuẩn bị.
-Chúng ta sẽ thảo luận sơ qua về học tăng cường và học đối kháng, hai thiết lập học đặc biệt có xét tới môi trường.
+Chúng ta sẽ thảo luận sơ qua về học tăng cường (*reinforcement learning*) và học đối kháng (*adversarial training*), hai thiết lập đặc biệt có xét tới tương tác với môi trường.
 
 <!-- =================== Kết thúc dịch Phần 23 ==================== -->
 
