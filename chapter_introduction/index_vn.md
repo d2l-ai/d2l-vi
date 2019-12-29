@@ -1486,7 +1486,7 @@ the model immediately forgets what it just saw.
 
 Cho tới hiện tại, chúng ta đã gặp các bài toán mà ở đó mô hình nhận đầu vào với kích thước cố định và đưa ra kết quả cũng với kích thước cố định.
 Trước đây chúng ta xem xét dự đoán giá nhà từ một tập các đặc trưng cố định: diện tích, số phòng ngủ, số phòng tắm và thời gian đi bộ tới trung tâm thành phố.
-Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao đánh giá.
+Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao xếp loại.
 Trong những trường hợp này, một khi chúng ta đưa cho mô hình một đầu vào có độ dài cố định để dự đoán một đầu ra, mô hình ngay lập tức "quên" dữ liệu nó vừa thấy.
 
 <!--
