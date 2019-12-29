@@ -210,6 +210,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |--------------------------|----------------------------------------------------------------|---------------|
 | test set                 | tập kiểm tra                                                   |               |
 | test set performance     | chất lượng trên tập kiểm tra                                   |               |
+| timestep                 | bước thời gian                                                 |               |
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
 | training set performance | chất lượng trên tập huấn luyện                                 |               |
