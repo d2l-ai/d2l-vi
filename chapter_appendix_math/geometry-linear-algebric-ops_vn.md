@@ -57,7 +57,7 @@ Mathematicians most often write this as either a *column* or *row* vector, which
 Các nhà toán học thường viết chúng dưới dạng một vector *cột* hoặc *hàng*, tức:
 
 $$
-\mathbf{x} = \begin{bmatrix}1\\7\\0\\1\end{bmatrix},
+\mathbf{x} = \begin{ma-trận-b}1\\7\\0\\1\end{ma-trận-b},
 $$
 
 <!--
@@ -67,7 +67,7 @@ or
 hoặc
 
 $$
-\mathbf{x}^\top = \begin{bmatrix}1 & 7 & 0 & 1\end{bmatrix}.
+\mathbf{x}^\top = \begin{ma-trận-b}1 & 7 & 0 & 1\end{ma-trận-b}.
 $$
 
 <!--
@@ -681,9 +681,9 @@ Suppose that we have some matrix:
 Giả sử ta có một ma trận:
 
 $$
-\mathbf{A} = \begin{bmatrix}
+\mathbf{A} = \begin{ma-trận-b}
 a & b \\ c & d
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -697,10 +697,10 @@ $\mathbf{v} = [x, y]^\top$, ta thực hiện phép nhân và thấy rằng
 
 $$
 \begin{aligned}
-\mathbf{A}\mathbf{v} & = \begin{bmatrix}a & b \\ c & d\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} \\
-& = \begin{bmatrix}ax+by\\ cx+dy\end{bmatrix} \\
-& = x\begin{bmatrix}a \\ c\end{bmatrix} + y\begin{bmatrix}b \\d\end{bmatrix} \\
-& = x\left\{\mathbf{A}\begin{bmatrix}1\\0\end{bmatrix}\right\} + y\left\{\mathbf{A}\begin{bmatrix}0\\1\end{bmatrix}\right\}.
+\mathbf{A}\mathbf{v} & = \begin{ma-trận-b}a & b \\ c & d\end{ma-trận-b}\begin{ma-trận-b}x \\ y\end{ma-trận-b} \\
+& = \begin{ma-trận-b}ax+by\\ cx+dy\end{ma-trận-b} \\
+& = x\begin{ma-trận-b}a \\ c\end{ma-trận-b} + y\begin{ma-trận-b}b \\d\end{ma-trận-b} \\
+& = x\left\{\mathbf{A}\begin{ma-trận-b}1\\0\end{ma-trận-b}\right\} + y\left\{\mathbf{A}\begin{ma-trận-b}0\\1\end{ma-trận-b}\right\}.
 \end{aligned}
 $$
 
@@ -740,10 +740,10 @@ Let's draw what happens when we use the specific matrix
 Cùng xét ví dụ với một ma trận cụ thể
 
 $$
-\mathbf{A} = \begin{bmatrix}
+\mathbf{A} = \begin{ma-trận-b}
 1 & 2 \\
 -1 & 3
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -790,9 +790,9 @@ Some distortions can be severe.  For instance the matrix
 Một vài phép biển đổi có thể rất kỳ dị. Chẳng hạn ma trận
 
 $$
-\mathbf{B} = \begin{bmatrix}
+\mathbf{B} = \begin{ma-trận-b}
 2 & -1 \\ 4 & -2
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -838,9 +838,9 @@ Consider again the matrix
 Quay lại với ma trận
 
 $$
-\mathbf{B} = \begin{bmatrix}
+\mathbf{B} = \begin{ma-trận-b}
 2 & -1 \\ 4 & -2
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -945,9 +945,9 @@ amongst all subsets of columns. For example, the matrix
 *dịch đoạn phía trên*
 
 $$
-\mathbf{B} = \begin{bmatrix}
+\mathbf{B} = \begin{ma-trận-b}
 2 & 4 \\ -1 & -2
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -959,12 +959,12 @@ For a more challenging example, we can consider
 *dịch đoạn phía trên*
 
 $$
-\mathbf{C} = \begin{bmatrix}
+\mathbf{C} = \begin{ma-trận-b}
 1& 3 & 0 & -1 & 0 \\
 -1 & 0 & 1 & 1 & -1 \\
 0 & 3 & 1 & 0 & -1 \\
 2 & 3 & -1 & -2 & 1
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -1009,12 +1009,12 @@ Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận
 Xét ma trận
 
 $$
-\mathbf{I} = \begin{bmatrix}
+\mathbf{I} = \begin{ma-trận-b}
 1 & 0 & \cdots & 0 \\
 0 & 1 & \cdots & 0 \\
 \vdots & \vdots & \ddots & \vdots \\
 0 & 0 & \cdots & 1
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -1052,10 +1052,10 @@ Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đ
 Ví dụ, nếu $\mathbf{A}$ là ma trận $2 \times 2$
 
 $$
-\mathbf{A} = \begin{bmatrix}
+\mathbf{A} = \begin{ma-trận-b}
 a & b \\
 c & d
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -1065,10 +1065,10 @@ then we can see that the inverse is
 thì nghịch đảo của ma trận này là
 
 $$
- \frac{1}{ad-bc}  \begin{bmatrix}
+ \frac{1}{ad-bc}  \begin{ma-trận-b}
 d & -b \\
 -c & a
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -1187,10 +1187,10 @@ Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng
 Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này
 
 $$
-\mathbf{A} = \begin{bmatrix}
+\mathbf{A} = \begin{ma-trận-b}
 1 & -1 \\
 2 & 3
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -1207,10 +1207,10 @@ In general, if we have a matrix
 Tổng quát, nếu ta có một ma trận
 
 $$
-\mathbf{A} = \begin{bmatrix}
+\mathbf{A} = \begin{ma-trận-b}
 a & b \\
 c & d
-\end{bmatrix},
+\end{ma-trận-b},
 $$
 
 <!--
@@ -1255,9 +1255,9 @@ Let's consider
 Xét
 
 $$
-\mathbf{B} = \begin{bmatrix}
+\mathbf{B} = \begin{ma-trận-b}
 2 & 4 \\ -1 & -2
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
@@ -1511,47 +1511,50 @@ Either notation allows for concise and efficient representation of tensor contra
 * Vectors can be interpreted geometrically as either points or directions in space.
 -->
 
-Vector có thể được thể hiện trong hình học bằng các điểm hoặc bằng các đường trong không gian.
+Vector có thể được thể hiện trong hình học bằng các điểm hoặc bằng các đường có hướng trong không gian.
 
 <!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-* Tích vô hướng xác định ......
+* Tích vô hướng định nghĩa khái niệm góc giữa các không gian tùy ý nhiều chiều.
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
-* Siêu phẳng (_hyperplane_) là sự khái quát hóa không gian nhiều chiều thành các đường thẳng và mặt phẳng.
-Chúng có thể được dùng để xác định các mặt phẳng quyết định trong bước cuối cùng của bài toán phân loại.
+* Siêu phẳng (_hyperplane_) là sự khái quát hóa nhiều chiều thành các đường thẳng và mặt phẳng.
+Chúng có thể được dùng để định ra mặt phẳng ra quyết định dùng trong bước cuối cùng của bài toán phân loại.
 
 <!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
-* Phép nhân ma trận có thể được biểu diễn bằng hình học như là việc bóp méo đồng nhất của các hệ tọa độ cơ sở. as uniform distortions of the underlying coordinates.
-Cách này biểu diễn một cách rất hạn chế, nhưng lại gọn gàng về mặt toán học, cách ta biến đổi các vectors. _____ lưu ý từ transform ____
+* Phép nhân ma trận có thể được biểu diễn hình học như việc bóp méo đồng nhất các gốc tọa độ cơ sở.
+Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
 
 <!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
-* Độc lập tuyến tính là cách nói khi một tập hợp các vector là trong cùng một không gian ít chiều hơn ta mong đợi (giả như bạn có vector $3$ trong không gian $2$ chiều).
-Hạng của ma trận là kích thước của tập con lớp nhất của nó mà là độc lập tuyến tính.
+* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn ta mong đợi (giả như bạn có vector $3$ trong không gian $2$ chiều).
+Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
 
 <!--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
 -->
 
-*dịch đoạn phía trên*
+* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác mà hoàn tác lại hành động trước đó.
+Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (_numerical instability_) của nó.
 
 <!--
 * Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
 
-*dịch đoạn phía trên*
+* Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
+Định thức khác không nghĩa là một ma trận là khả nghịch (không-độc nhất) và một định thức bằng không nghĩa là ma trận đó là không khả nghịch (độc nhất).
+* Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
 
 <!--
 ## Exercises
@@ -1563,62 +1566,65 @@ Hạng của ma trận là kích thước của tập con lớp nhất của nó
 1. What is the angle between
 -->
 
-1. Góc giữa hai vectors này là gì
+1. Góc giữa hai vectors là gì
 
 $$
-\vec v_1 = \begin{bmatrix}
+\vec v_1 = \begin{ma-trận-b}
 1 \\ 0 \\ -1 \\ 2
-\end{bmatrix}, \qquad \vec v_2 = \begin{bmatrix}
+\end{ma-trận-b}, \qquad \vec v_2 = \begin{ma-trận-b}
 3 \\ 1 \\ 0 \\ 1
-\end{bmatrix}?
+\end{ma-trận-b}?
 $$
 
 <!--
-2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
+2. True or false: $\begin{ma-trận-b}1 & 2\\0&1\end{ma-trận-b}$ and $\begin{ma-trận-b}1 & -2\\0&1\end{ma-trận-b}$ are inverses of one another?
 -->
 
-*dịch đoạn phía trên*
+2. Đúng hay sai: $\begin{ma-trận-b}1 & 2\\0&1\end{ma-trận-b}$ and $\begin{ma-trận-b}1 & -2\\0&1\end{ma-trận-b}$ có là nghịch đảo của ma trận khác?
 
 <!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta vẽ ra một hình trong mặt phẳng với diện tích $100\mathrm{m}^2$.
+Diện tích đó sẽ bằng bao nhiêu sau khi biến đổi hình đó bằng ma trận
 
 $$
-\begin{bmatrix}
+\begin{ma-trận-b}
 2 & 3\\
 1 & 2
-\end{bmatrix}.
+\end{ma-trận-b}.
 $$
 
 <!--
 4. Which of the following sets of vectors are linearly independent?
 -->
 
-4. Các cặp vectors nào là độc lập tuyến tính
+4. Trong các cặp vector sau, cặp nào là độc lập tuyến tính?
 
- * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
- * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
- * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$
-
-<!--
-5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
--->
-
-*dịch đoạn phía trên*
+ * $\left\{\begin{ma-trận-p}1\\0\\-1\end{ma-trận-p}, \begin{ma-trận-p}2\\1\\-1\end{ma-trận-p}, \begin{ma-trận-p}3\\1\\1\end{ma-trận-p}\right\}$
+ * $\left\{\begin{ma-trận-p}3\\1\\1\end{ma-trận-p}, \begin{ma-trận-p}1\\1\\1\end{ma-trận-p}, \begin{ma-trận-p}0\\0\\0\end{ma-trận-p}\right\}$
+ * $\left\{\begin{ma-trận-p}1\\1\\0\end{ma-trận-p}, \begin{ma-trận-p}0\\1\\-1\end{ma-trận-p}, \begin{ma-trận-p}1\\0\\1\end{ma-trận-p}\right\}$
 
 <!--
-6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+5. Suppose that you have a matrix written as $A = \begin{ma-trận-b}c\\d\end{ma-trận-b}\cdot\begin{ma-trận-b}a & b\end{ma-trận-b}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
 -->
 
-*dịch đoạn phía trên*
+5. Giả sử ta có ma trận viết là $A = \begin{ma-trận-b}c\\d\end{ma-trận-b}\cdot\begin{ma-trận-b}a & b\end{ma-trận-b}$ với vài lựa chọn $a, b, c$, và $d$.
+Đúng hay sai: ma trận nào có định thức luôn luôn bằng $0$?
+
+<!--
+6. The vectors $e_1 = \begin{ma-trận-b}1\\0\end{ma-trận-b}$ and $e_2 = \begin{ma-trận-b}0\\1\end{ma-trận-b}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+-->
+
+6. Các vector $e_1 = \begin{ma-trận-b}1\\0\end{ma-trận-b}$ and $e_2 = \begin{ma-trận-b}0\\1\end{ma-trận-b}$ là trực giao.
+Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao?
 
 <!--
 7. How can you write $\mathrm{tr}(\mathbf{A}^4)$ in Einstein notation for an arbitrary matrix $A$?
 -->
 
-*dịch đoạn phía trên*
+7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý?
 
 
 <!--
@@ -1631,7 +1637,7 @@ $$
 ![](../img/qr_geometry-linear-algebric-ops.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
+![](../img/qr_geometry-linear-algebric-ops.svg)
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
