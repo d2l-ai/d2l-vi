@@ -1994,8 +1994,8 @@ As a result, researchers have studied a number of
 -->
 
 Vấn đề chung của học tăng cường là một thiết lập rất tổng quát.
-Các hành động này có ảnh hưởng đến các quan sát tiếp theo.
-Những phần thưởng chỉ nhận được khi sự quan sát tương ứng với các hành động được chọn.
+Các hành động này có ảnh hưởng đến những quan sát có tính tuần tự.
+Những phần thưởng chỉ nhận được khi sự quan sát này tương ứng với các hành động được chọn.
 Môi trường có thể được quan sát đầy đủ hoặc chỉ một phần.
 Sự tính toán cho tất cả sự phức tạp này cùng một lúc có thể yêu cầu sự tham gia của quá nhiều nhà nghiên cứu.
 Hơn nữa, không phải mọi vấn đề thực tế đều thể hiện tất cả sự phức tạp này.
