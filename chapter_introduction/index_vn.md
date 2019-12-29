@@ -213,7 +213,7 @@ Chúng tôi cũng không biết làm cách nào để viết một chương trì
 ![Identify an awake word.](../img/wake-word.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/wake-word.svg)
+![Xác định một hiệu lệnh đánh thức](../img/wake-word.svg)
 :label:`fig_wake_word`
 
 <!--
@@ -274,7 +274,10 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-*dịch đoạn phía trên*
+Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một loại mô hình thích hợp.
+Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``
+Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
+
 
 <!--
 If we choose the right family of models,
@@ -292,7 +295,10 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta lựa chọn đúng loại mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
+Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một loại mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot (quả mơ)".
+Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* là tương tự nhau, có thể sử dụng chung một loại mô hình.
+Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các loại mô hình hoàn toàn khác nhau.
 
 <!--
 As you might guess, if we just set all of the knobs randomly,
@@ -303,13 +309,14 @@ by which we discover the right setting of the knobs
 coercing the desired behavior from our model.
 -->
 
-*dịch đoạn phía trên*
+ Dễ dàng nhận thấy, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình sẽ hầu như không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
+Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng của các núm quay để mô hình có thể  hành xử như chúng ta mong muốn.
 
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
-*dịch đoạn phía trên*
+Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` : 
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -318,13 +325,16 @@ As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 1. Repeat until the model is awesome.
 -->
 
-*dịch đoạn phía trên*
+1. Khởi tạo mô hình một cách ngẫu nhiên chưa thể thực hiện tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
+3. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
+4. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
 <!--
 ![A typical training process. ](../img/ml-loop.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ml-loop.svg)
+![Một quá trình huấn luyện điển hình](../img/ml-loop.svg)
 :label:`fig_ml_loop`
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
@@ -418,7 +428,7 @@ Học sâu cung cấp một tập hợp các công cụ xử lý những loại 
 ## The Key Components: Data, Models, and Algorithms
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thành phần chính: Dữ liệu, Mô hình và Thuật toán
 
 <!--
 In our *wake-word* example, we described a dataset
@@ -434,7 +444,16 @@ First, we'd like to shed more light on some core components
 that will follow us around, no matter what kind of ML problem we take on:
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu
+bao gồm các đoạn âm thanh và các nhãn nhị phân,
+giúp các bạn hiểu một cách chung chung về cách chúng ta có thể *huấn luyện*
+một mô hình để phân loại các đoạn âm thanh.
+Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết
+với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu
+đã được gán nhãn. Đây là ví dụ về bài toán *học có giám sát*,
+ đây chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học tới trong các chương sau.
+Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi 
+sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
 
 <!--
 1. The *data* that we can learn from.
@@ -443,14 +462,16 @@ that will follow us around, no matter what kind of ML problem we take on:
 4. An *algorithm* to adjust the model's parameters to minimize the loss.
 -->
 
-*dịch đoạn phía trên*
-
+1. *Dữ liệu* mà chúng ta có thể học.
+2. Một *mô hình* về cách biến đổi dữ liệu.
+3. Một hàm *mất mát* định lượng *độ lỗi* của mô hình.
+4. Một *thuật toán* điều chỉnh các tham số của mô hình để giảm thiểu mất mát.
 
 <!--
 ### Data
 -->
 
-### *dịch tiêu đề phía trên*
+### Dữ liệu
 
 <!--
 It might go without saying that you cannot do data science without data.
@@ -471,7 +492,22 @@ can then simply be called the *features*,
 (or often, the *inputs*, *covariates*, or *independent variables*).
 -->
 
-*dịch đoạn phía trên*
+Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
+Chúng ta sẽ tốn rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu,
+nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế
+và tập trung vào các thuộc tính quan trọng cần quan tâm.
+Thông thường, chúng ta quan tâm đến một bộ *mẫu*
+(còn được gọi là *điểm dữ liệu*, *ví dụ* hoặc *trường hợp*).
+Để làm việc với dữ liệu một cách hữu ích, chúng ta thường
+cần phải có một cách biễu diễn phù hợp dưới dạng số.
+Mỗi *ví dụ* thường bao gồm một bộ
+thuộc tính số gọi là *đặc trưng*.
+Trong các bài toán học có giám sát ở trên,
+một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán,
+(đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
+Các đặc trưng nhất định mà mô hình dựa vào để đưa ra dự đoán
+có thể được gọi đơn giản là các *đặc trưng*,
+(hoặc thường là *đầu vào*, *hiệp biến* hoặc *biến độc lập*).
 
 <!--
 If we were working with image data,
@@ -486,7 +522,16 @@ whether or not a patient will survive,
 given a standard set of features such as age, vital signs, diagnoses, etc.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta đang làm việc với dữ liệu hình ảnh,
+mỗi bức ảnh riêng lẻ có thể tạo thành một *mẫu*
+được biểu diễn bởi một danh sách các giá trị số theo thứ tự
+tương ứng với độ sáng của từng pixel.
+Một bức ảnh màu có kích thước $200\times 200$ sẽ bao gồm $200\times200\times3=120000$
+giá trị số, tương ứng với độ sáng
+của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí trong không gian.
+Trong một tác vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán
+xem một bệnh nhân liệu có cơ hội sống sót hay không,
+dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các triệu chứng quan trọng, thông số chẩn đoán, .v.v.
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
@@ -660,7 +705,11 @@ owing to non-differentiability or other complications.
 In these cases, it is common to optimize a *surrogate objective*.
 -->
 
-*dịch đoạn phía trên*
+Khi cố gắng dự đoán một giá trị số thực, hàm mục tiêu phổ biến nhất là hàm bình phương lỗi $(y-\hat{y})^2$.
+Với bài toán phân loại, hàm mục tiêu phổ biến nhất là tối thiểu hoá tỉ lệ lỗi, nghĩa là tỉ lệ mẫu mà mô hình dự đoán lệch với nhãn thực tế.
+Một vài hàm mục tiêu (ví dụ bình phương lỗi) khá dễ để tối ưu.
+Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu một cách trực tiếp hơn bởi các hàm này không khả vi hoặc phức tạp.
+Trong những trường hợp này, người ta thường tối thiểu hoá một *hàm mục tiêu thay thế* (_surrogate function_).
 
 <!--
 Typically, the loss function is defined
@@ -677,7 +726,10 @@ and the test data (which is held out for evaluation),
 reporting the following two quantities:
 -->
 
-*dịch đoạn phía trên*
+Thông thường, hàm mất mát được định nghĩa theo các tham số mô hình và phụ thuộc vào tập dữ liệu.
+Những giá trị tham số mô hình tốt nhất được học bằng cách tối tiểu hoá hàm mất mát trên một *tập huấn luyện* bao gồm các *mẫu* được thu thập cho việc huấn luyện.
+Tuy nhiên, mô hình hoạt động tốt trên tập huấn luyện không có nghĩa là nó sẽ hoạt động tốt trên dữ liệu kiểm tra (mà mô hình chưa nhìn thấy).
+Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). Sau đó ta quan sát hai đại lượng:
 
 <!--
  * **Training Error:**
@@ -696,7 +748,15 @@ reporting the following two quantities:
  despite doing well on practice exams.
 -->
 
-*dịch đoạn phía trên*
+* **Lỗi huấn luyện:**
+Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
+Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
+Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo bài thi thật đạt kết quả tốt.```
+
+* **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
+Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
+Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
+Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
@@ -851,7 +911,9 @@ We will visit many of these problems in depth
 throughout the first 9 parts of this book.
 -->
 
-*dịch đoạn phía trên*
+Ngay cả với mô tả đơn giản là "dự đoán mục tiêu từ đầu vào", học có giám sát đã có nhiều hình thái đa dạng và đòi hỏi đưa ra nhiều quyết định mô hình hoá khác nhau, phụ thuộc vào kiểu, kích thước, số lượng của cặp đầu vào và đầu ra cũng như các yếu tố khác.
+Ví dụ, ta sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi ký tự hay dữ liệu chuỗi thời gian) và để xử lý các biểu diễn vector với chiều dài cố định.
+Chúng ta sẽ đào sâu vào rất nhiều bài toán dạng này thông qua 9 phần đầu của cuốn sách.
 
 <!--
 Informally, the learning process looks something like this:
@@ -864,7 +926,10 @@ and other times we might need to employ human annotators to label the data,
 (e.g., assigning images to categories).
 -->
 
-*dịch đoạn phía trên*
+Một cách dễ hiểu, quá trình học tương tự với:
+Lấy một tập mẫu lớn ở đó các hiệp biến đã biết trước.
+Từ đó chọn ra một tập con ngẫu nhiên, thu thập các nhãn gốc cho chúng.
+Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ liệu bệnh nhân đã qua đời trong năm tiếp theo?), khi khác chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
 
 <!--
 Together, these inputs and corresponding labels comprise the training set.
@@ -876,7 +941,10 @@ using its outputs as predictions of the corresponding label.
 The full process in drawn in :numref:`fig_supervised_learning`.
 -->
 
-*dịch đoạn phía trên*
+Những đầu vào và nhãn tương ứng này cùng tạo nên tập huấn luyện.
+Chúng ta đưa tập dữ liệu huấn luyện vào một thuật toán học có giám sát -- một hàm số mà đầu vào là tập dữ liệu và đầu ra là một hàm số khác thể hiện *mô hình đã học được*.
+Cuối cùng, ta có thể đưa dữ liệu chưa nhìn thấy vào mô hình đã học được, sử dụng đầu ra của nó như là giá trị dự đoán của các nhãn tương ứng.
+Toàn bộ quá trình được mô tả trong :numref:`fig_supervised_learning`.
 
 <!-- =================== Kết thúc dịch Phần 11 ==================== -->
 
@@ -886,7 +954,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 ![Supervised learning.](../img/supervised-learning.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/supervised-learning.svg)
+![Học có giám sát.](../img/supervised-learning.svg)
 :label:`fig_supervised_learning`
 
 
@@ -894,7 +962,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 #### Regression
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Hồi quy
 
 <!--
 Perhaps the simplest supervised learning task
@@ -908,7 +976,10 @@ In this dataset each *example* would be a specific house,
 and the corresponding *feature vector* would be one row in the table.
 -->
 
-*dịch đoạn phía trên*
+Có lẽ tác vụ học có giám sát đơn giản nhất là *hồi quy*.
+Xét ví dụ một tập dữ liệu thu thập được từ cơ sở dữ liệu buôn bán nhà.
+Chúng ta có thể xây dựng một bảng dữ liệu, ở đó mỗi hàng tương ứng với một nhà và mỗi cột tương ứng với một thuộc tính liên quan nào đó, chẳng hạn như diện tích nhà, số lượng phòng ngủ, số lượng phòng tắm và thời gian (theo phút) để đi bộ tới trung tâm thành phố.
+Trong tập dữ liệu này, mỗi *mẫu* là một căn nhà cụ thể và *vector đặc trưng* tương ứng là một hàng trong bảng.
 
 <!--
 If you live in New York or San Francisco,
@@ -923,7 +994,10 @@ to any example $i$ as $\mathbf{x}_i$ and we can compactly refer
 to the full table containing all of the feature vectors as $X$.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn sống ở New York hoặc San Francisco và bạn không phải là CEO của Amazon, Google, Microsoft hay Facebook, thì vector đặc trưng (diện tích, số phòng ngủ, số phòng tắm, khoảng cách đi bộ) của căn nhà của bạn có thể có dạng $[100, 0, 0.5, 60]$.
+Tuy nhiên, nếu bạn sống ở Pittsburgh, vector đó có thể là $[3000, 4, 3, 10]$.
+Vector đặc trưng là thiết yếu trong hầu hết các thuật toán học máy cổ điển.
+Chúng ta sẽ tiếp tục ký hiệu vector đặc trưng tương ứng với bất ký mẫu $i$ nào bởi $\mathbf{x}_i$ và có thể đặt $X$ là toàn bộ bảng chứa tất cả các vector đặc trưng.
 
 <!--
 What makes a problem a *regression* is actually the outputs.
@@ -941,7 +1015,12 @@ we will abuse language just a bit cn continue to describe
 our outputs and targets as real-valued numbers.
 -->
 
-*dịch đoạn phía trên*
+Để xác định một bài toán là *hồi quy* hay không, ta dựa vào đầu ra của nó.
+Chẳng hạn, bạn đang khảo sát thị trường cho một căn nhà mới.
+Bạn có thể ước lượng giá thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, hay giá bán của căn nhà, là một *số thực*.
+Nếu bạn còn nhớ định nghĩa toán học của số thực, bạn có thể băn khoăn.
+Nhà đất có lẽ không bao giờ bán với giá lẻ tới từng cent chứ đừng nói đến nhỏ hơn cent (các số vô tỉ).
+Trong trường hợp này, khi mục tiêu thực sự là các số rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
@@ -1046,7 +1125,10 @@ the [L1 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet
 where
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình ước tính chi phí của người thợ sửa ống cống.
+Đôi khi việc này là không khả thi, ví dụ một biến thể nào đó gây ra bởi các yếu tố ngoài hai đặc trưng kể trên.
+Trong những trường hợp này, ta sẽ cố học các mô hình sao cho nó tối thiểu hoá khoảng cách giữa các giá trị dự đoán và các giá trị thực sự.
+Trong hầu hết các chương, chúng ta sẽ tập trong vào một trong hai hàm mất mát phổ biến nhất: hàm [mất mát L1](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L1Loss), ở đó
 
 $$l(y, y') = \sum_i |y_i-y_i'|$$
 
@@ -1056,7 +1138,7 @@ and the least mean squares loss, or
 where
 -->
 
-*dịch đoạn phía trên*
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
@@ -1067,7 +1149,8 @@ whereas the $L_1$ loss corresponds to an assumption
 of noise from a Laplace distribution.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss,
+trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
@@ -1077,7 +1160,7 @@ of noise from a Laplace distribution.
 #### Classification
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Phân loại
 
 <!--
 While regression models are great for addressing *how many?* questions,
@@ -1094,7 +1177,12 @@ It is treated with a different set of algorithms
 than those used for regression (although many techniques will carry over).
 -->
 
-*dịch đoạn phía trên*
+Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *có bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
+Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
+Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
+Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động còn ổn định hơn nữa.
+Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical charactor recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại*.
+Nó được thiết kế bởi một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
 
 <!--
 In classification, we want our model to look at a feature vector,
@@ -1111,7 +1199,12 @@ While in regression, we sought a *regressor* to output a real value $\hat{y}$,
 in classification, we seek a *classifier*, whose output $\hat{y}$ is the predicted class assignment.
 -->
 
-*dịch đoạn phía trên*
+Trong phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục nào (được gọi là *lớp*) trong số một tập (rời rạc) các lựa chọn.
+Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
+Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
+Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
+Với hồi quy, ta tìm một *bộ hồi quy* để đưa ra một giá trị thực $\hat{y}$. Trong khi đó với phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
+<!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
 <!--
 For reasons that we will get into as the book gets more technical,
@@ -1138,7 +1231,17 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-*dịch đoạn phía trên*
+Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*. 
+Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất. 
+Cho trước một mẫu $\mathbf{x}$, mô hình cần gán một giá trị xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
+Vì là các giá trị xác suất, chúng phải là các số dương có tổng bằng $1$.
+Bởi vậy, ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
+Việc này dễ nhận thấy đối với phân loại nhị phân.
+Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
+Trở lại với ví dụ phân loại động vật, một bộ phân loại có thể nhìn một bức ảnh và đưa ra xác suất để bức ảnh đó là mèo $P(y=\text{mèo} \mid x) = 0.9$.
+Chúng ta có thể diễn giải giá trị này tương ứng với việc bộ phân loại $90\%$ tin rằng bức ảnh đó chứa một con mèo.
+Giá trị xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
+Đó không phải là ký hiệu duy nhất của sự không chắc chắn, chúng ta sẽ thảo luận các ký hiệu khác trong các chương nâng cao.
 
 <!--
 When we have more than two possible classes,
@@ -1151,7 +1254,9 @@ the common loss function for classification problems is called cross-entropy.
 In MXNet Gluon, the corresponding loss function can be found [here](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss).
 -->
 
-*dịch đoạn phía trên*
+Khi có nhiều hơn hai lớp, ta gọi bài toán này là *phân loại đa lớp*. <!-- to glossary -->
+Bài toán phân loại chữ viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]` là một trong số các ví dụ điển hình.
+Trong khi các hàm mất mát thường được sử dụng trong các bài toán hồi quy là hàm mất mát L1 hoặc L2, hàm mất mát phổ biến cho bài toán phân loại được gọi là entropy chéo (_cross-entropy_), hàm tương ứng trong MXNet Gluon có thể xem [tại đây](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss)
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
@@ -1164,10 +1269,11 @@ Assume that you find this beautiful mushroom in your backyard
 as shown in :numref:`fig_death_cap`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng lớp có khả năng xảy ra nhất theo dự đoán của mô hình không nhất thiết là lớp mà ta quyết định sử dụng.
+Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
-![Death cap---do not eat!](../img/death_cap.jpg)
+![Nấm độc---đừng ăn!](../img/death_cap.jpg)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/death_cap.jpg)
@@ -1191,15 +1297,25 @@ i.e., we need to multiply the probability of the outcome
 with the benefit (or harm) associated with it:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
+Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
+Dù vậy, đừng dại mà ăn nhé.
+Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ sẽ chết vì nấm độc.
+Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
+Ta có thể nhìn việc này một cách hợp thức hơn.
+Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
+$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
 is $L(a=\mathrm{eat}| x) = 0.2 * \infty + 0.8 * 0 = \infty$,
 whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+-->
+
+Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
@@ -1215,7 +1331,13 @@ Usually, this is referred to as *hierarchical classification*.
 One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), who organized the animals in a hierarchy.
 -->
 
-*dịch đoạn phía trên*
+Sự thận trọng của chúng ta là chính đáng: như bất kỳ nhà nghiên cứu nấm nào cũng sẽ nói, cây nấm ở trên thực sự *là* nấm độc.
+Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
+Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (_hierarchy_).
+Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
+Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp khác xa nào đó.
+Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
+Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo hệ thống phân cấp.
 
 <!--
 In the case of animal classification,
@@ -1229,7 +1351,10 @@ might be close on the phylogenetic tree,
 but mistaking a rattler for a garter could be deadly.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp phân loại động vật, cũng không tệ lắm nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng sẽ rất nghiêm trọng nếu ta nhầm lẫn chó poodle với một con khủng long.
+Hệ phân cấp nào là phù hợp phụ thuộc vào việc ta dự định dùng mô hình như thế nào.
+Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này có thể dẫn tới hậu quả chết người.
+
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
@@ -1394,7 +1519,7 @@ Có cả những hội thảo khoa học chuyên nghiên cứu về lĩnh vực 
 #### Recommender systems
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Hệ thống gợi ý
 :label:`subsec_recommender_systems`
 
 <!--
@@ -1411,7 +1536,11 @@ Similar problems pop up in other recommendation settings,
 e.g., for retail products, music, or news recommendation.
 -->
 
-*dịch đoạn phía trên*
+Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và xếp hạng.
+Chúng có chung mục đích là hiển thị một tập các kết quả liên quan tới người dùng.
+Sự khác biệt chính là nó nhấn mạnh tới *cá nhân hoá* cho từng người dùng cụ thể với trường hợp hệ thống gợi ý.
+Ví dụ, với gợi ý phim ảnh, trang kết quả cho một fan của phim khoa học viễn tưởng và cho một người sành sỏi hài Peter Sellers có thể khác nhau một cách đáng kể.
+Tương tự với các bài toán gợi ý khác như các hệ thống gợi ý sản phẩm bán lẻ, âm nhạc hoặc tin tức.
 
 <!--
 In some cases, customers provide explicit feedback communicating
@@ -1426,7 +1555,10 @@ to estimate some score $y_{ij}$, such as an estimated rating
 or the probability of purchase, given a user $u_i$ and product $p_j$.
 -->
 
-*dịch đoạn phía trên*
+Trong một vài trường hợp, khách hàng cung cấp phản hồi trực tiếp (_explicit feedback_) họ thích một sản phẩm cụ thể như thế nào (ví dụ các đánh giá sản phẩm và phản hồi trên Amazon, IMDB, GoodReads, v.v.).
+Trong vài trường hợp khác, họ cung cấp phản hồi gián tiếp (_implicit feedback_), ví dụ như bỏ qua các bài hát trong một danh sách nhạc.
+Việc này có thể chỉ ra sự không thoả mãn hoặc có thể chỉ đơn giản là bài hát không phù hợp trong bối cảnh.
+Trong cách trình bày đơn giản nhất, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như một ước lượng đánh giá hoặc xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
 
 <!--
 Given such a model, then for any given user,
@@ -1438,13 +1570,15 @@ when computing such scores. :numref:`fig_deeplearning_amazon` is an example
 of deep learning books recommended by Amazon based on personalization algorithms tuned to capture the author's preferences.
 -->
 
-*dịch đoạn phía trên*
+Cho trước mô hình, với một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm lớn nhất $y_{ij}$ để gợi ý cho khách hàng.
+Các hệ thống đang vận hành còn cao cấp hơn nữa. Chúng sử dụng hành vi của người dùng và các thuộc tính sản phẩm để tính điểm.
+:numref:`fig_deeplearning_amazon` là một ví dụ về các cuốn sách học sâu được gợi ý bởi Amazon dựa trên các thuật toán cá nhân hoá sử dụng các thông tin của tác giả.
 
 <!--
 ![Deep learning books recommended by Amazon.](../img/deeplearning_amazon.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/deeplearning_amazon.png)
+![Các sách học sâu được gợi ý bởi Amazon.](../img/deeplearning_amazon.png)
 :label:`fig_deeplearning_amazon`
 
 <!--
@@ -1466,7 +1600,12 @@ Many of these problems about how to deal with censoring,
 incentives, and feedback loops, are important open research questions.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù có giá trị kinh tế lớn, các hệ thống gợi ý được xây dựng đơn thuần theo các mô hình dự đoán cũng có những hạn chế nghiêm trọng.
+Ban đầu, ta chỉ quan sát các *phản hồi được kiểm duyệt*.
+Người dùng thường có xu hướng đánh giá các bộ phim họ thực sự thích hoặc ghét: bạn có thể để ý rằng các bộ phim nhận được rất nhiều đánh giá 5 và 1 sao nhưng rất ít các bộ phim với 3 sao.
+Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán gợi ý đang được dùng, nhưng các thuật toán gợi ý không luôn để ý đến chi tiết này.
+Bởi vậy có khả năng xảy ra các vòng phản hồi (_feedback loop_) luẩn quẩn mà ở đó một hệ thống gợi ý đẩy lên một sản phẩm và sau đó nó cho rằng sản phẩm này tốt hơn (do được mua nhiều hơn) rồi cuối cùng sản phẩm đó lại được hệ thống gợi ý thường xuyên hơn nữa.
+Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệt, động cơ [của việc đánh giá] và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
 
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
@@ -2550,7 +2689,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 6 -->
 *
@@ -2583,9 +2722,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
+* Mai Sơn Hải
+<!-- Phần 18 -->
 *
+
 <!-- Phần 19 -->
-*
+* Vũ Đình Quyền
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 20 -->
 *

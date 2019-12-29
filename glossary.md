@@ -23,6 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
+| attention mechanisms      | cơ chế tập trung                                               |               |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -46,8 +47,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
+| convolution neural networks | mạng nơ-ron tích chập                                       |               |
+| cross entropy       | entropy chéo                                                  |               |
 | cross validation    | kiểm định chéo                                                 |               |
 | cost function       | hàm chi phí                                                    |               |
+| covariate           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
 
 ## D
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -60,10 +64,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | development set        | tập phát triển                                                 |               |
 | dev set                | tập phát triển                                                 |               |
 | dev set performance    | chất lượng trên tập phát triển                                 |               |
+| differentiable         | khả vi                                                         |               |
 | distribution           | phân phối                                                      |               |
 | domain adaptation      | thích ứng miền                                                 |               |
 | dot product            | tích vô hướng (hoặc tích trong)                                |               |
-| dropout                |                                                                |               |
+| dropout                | dropout                                                        |               |
 
 ## E
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -79,6 +84,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
+| explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
@@ -95,8 +101,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
 |------------------|----------------------------------------------------------------|----------------------------------------------|
+| Gaussian noise   | nhiễu Gauss                                                    |                              |
 | gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
-| 
+| ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
 ## H
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
@@ -111,6 +118,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
+| implicit feedback | phản hồi gián tiếp                                     |               |
 | iteration | vòng lặp                                                       |               |
 
 ## L
@@ -135,6 +143,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified      | bị phân loại nhầm                                              |               |
 | mislabeled         | bị gán nhãn nhầm                                               |               |
 | model              | mô hình                                                        |               |
+| multitask classification | phân loại đa lớp                                         |               |
 | multitask learning | học đa nhiệm                                                   |               |
 
 ## N
@@ -149,6 +158,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------|----------------------------------------------------------------|-----------------------|
 | objective function | hàm mục tiêu                                                  |                       |
+| offline learning  |                                               |                       |
 | optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
@@ -157,6 +167,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |-------------------------|----------------------------------------------------------------|-----------------------|
+| perceptron              | perceptron                              |               |
 | pattern recognition     | nhận dạng mẫu                                            |                       |
 | performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
@@ -172,7 +183,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | random variable        | biến ngẫu nhiên                                                |               |
 | recall                 | recall                                                         |               |
 | recognition            | nhận dạng                                                      |               |
-| regularization         | regularization                                                 |               |
+| recurrent neural network|   mạng nơ-ron truy hồi               |               |
+| regressor              | bộ hồi quy                                                     |               |
+| regularization         | điều chuẩn                                                 |               |
 | reinforcement learning | học tăng cường                                                 |               |
 | reward function        | hàm điểm thưởng                                                |               |
 | running time           | thời gian chạy                                                 |               |
@@ -187,8 +200,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification     | phân loại cảm xúc                                              |                       |
 | spam email                   | email rác                                                      |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
-| speech recognition           | nhận dạng giọng nơi                                            |                       |
+| speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
+| surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1                      |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -209,6 +223,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------|----------------------------------------------------------------|-------------------------|
 | unavoidable bias | độ chệch không tránh được                                      |                         |
 | underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
+| unsupervised learning | học không giám sát                                        |                         |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
