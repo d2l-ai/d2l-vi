@@ -1541,7 +1541,7 @@ with tags indicating which words refer to named entities.
 -->
 
 **Gán thẻ và Phân tích cú pháp**.
-Đây là bài toán gán các thuộc tính cho chuỗi các từ.
+Đây là bài toán gán chú thích cho chuỗi các từ.
 Nói cách khác, số lượng đầu vào và đầu ra là như nhau.
 Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ngữ.
 Hoặc ta cũng có thể muốn biết từ nào là thực thể được đặt tên. <!-- hmm, thảo luận -->
