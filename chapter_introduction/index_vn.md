@@ -1547,7 +1547,7 @@ Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ng�
 Hoặc ta cũng có thể muốn biết từ nào là thực thể được đặt tên. <!-- hmm, thảo luận -->
 Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
 Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
-Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các thực thể được đặt tên. <!-- nhờ các bác làm về NLP giúp phần này -->
+Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng. 
 
 ```text
 Tom has dinner in Washington with Sally.
@@ -1586,7 +1586,7 @@ this is not quite so trivial for computers.
 **Chữ ra Tiếng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của nhận dạng tiếng nói.
 Nói cách khác, đầu vào $\mathbf{x}$ là chữ và đầu ra $y$ là tệp tin âm thanh.
 Trong trường hợp này, đầu ra *dài hơn nhiều* so với đầu vào.
-Trong khi việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người*, việc đó là không đơn giản với máy tính.
+Việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người* nhưng lại không hề đơn giản với máy tính.
 
 <!--
 **Machine Translation**. Unlike the case of speech recognition, where corresponding
