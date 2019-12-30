@@ -2202,7 +2202,7 @@ from a machine and a human based on textual interactions.
 -->
 
 Ảnh hưởng thứ hai đối với học máy đến từ Lý Thuyết Thông Tin [(Claude Shannon, 1916-2001)](https://en.wikipedia.org/wiki/Claude_Shannon) và Lý Thuyết Điện Toán của [Alan Turing (1912-1954)](https://en.wikipedia.org/wiki/Alan_Turing).
-Turing đã đặt ra câu hỏi "Liệu máy móc có thể suy nghĩ?" trong bài báo nổi tiếng của mình [Máy tính và trí thông minh](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) (Mind, Tháng 10 1950).
+Turing đã đặt ra câu hỏi "Liệu máy móc có thể suy nghĩ?" trong bài báo nổi tiếng của mình [Máy Tính và Trí Thông Minh](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) (Mind, Tháng 10 1950).
 Tại đó ông ấy đã giới thiệu về Turning test: một máy tính được xem là thông minh nếu như người đánh giá khó có thể phân biệt phản hồi mà anh ta nhận được thông qua tương tác văn bản xuất phát từ máy tính hay con người.
 
 <!--
@@ -2226,10 +2226,10 @@ Một ảnh hưởng khác có thể được tìm thấy trong khoa học thầ
 Sau cùng, loài người thể hiện rất rõ ràng bản năng thông minh của mình.
 Sẽ là hợp lý nếu chúng ta có thể giải thích và phân tích ngược khả năng này.
 Một trong những thuật toán lâu đời nhất được truyền cảm hứng từ hiện tượng đó được giới thiệu bởi [Donald Hebb (1904-1985)](https://en.wikipedia.org/wiki/Donald_O._Hebb).
-Trong cuốn sách đột phát của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng sự củng cố tích cực.
+Trong cuốn sách đột phát của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng sự tăng cường tích cực.
 Điều này về sau được biết đến với cái tên là luật học Hebbian.
 Nó là nguyên mẫu từ thuật toán perceptron của Rosenblatt và là nền tảng của rất nhiều thuật toán stochastic gradient descent đặt nền móng cho học sâu ngày nay:
-Củng cố các hành vi mong muốn và giảm bớt các hành vi không mong muốn để đạt được các thông số tốt trong một mạng nơ-ron.
+Tăng cường các hành vi mong muốn và giảm bớt các hành vi không mong muốn để đạt được những thông số tốt trong một mạng nơ-ron.
 
 <!--
 Biological inspiration is what gave *neural networks* their name.
