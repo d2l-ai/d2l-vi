@@ -1898,7 +1898,7 @@ Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà
 Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện sẽ đi với nhãn tương ứng. 
 Tuy nhiên với học tăng cường, ta không giả định rằng môi trường sẽ chỉ ra hành động nào là tối ưu tại mỗi quan sát (điểm dữ liệu).
 Nhìn chung, chúng ta sẽ được thưởng. 
-Hơn nữa, môi trường có thể sẽ không cho ta biết những hành động nào sẽ được thưởng. 
+Hơn nữa, môi trường có thể sẽ không cho biết những hành động nào dẫn tới điểm thưởng đấy. 
 
 <!--
 Consider for example the game of chess.
