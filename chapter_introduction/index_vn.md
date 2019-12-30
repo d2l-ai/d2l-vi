@@ -122,12 +122,12 @@ driving innovations in areas as diverse as computer vision,
 natural language processing, healthcare, and genomics.
 -->
 
-Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa 
+Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa
 cũng không thể lập trình lên được từ con số không.
-Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần 
+Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần
 lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
 Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng)
-có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính 
+có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính
 vượt ra khỏi khả năng thấu hiểu của nhận thức chúng ta
 (mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
 Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến
@@ -316,7 +316,7 @@ Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng c�
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
-Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` : 
+Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` :
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -452,7 +452,7 @@ Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* 
 với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu
 đã được gán nhãn. Đây là ví dụ về bài toán *học có giám sát*,
  đây chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học tới trong các chương sau.
-Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi 
+Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi
 sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
 
 <!--
@@ -1106,7 +1106,7 @@ Nếu một người sau đó hỏi bạn dự tính giá phải trả để th�
 Bạn cũng có thể giả sử rằng có một mức phí cơ bản và sau đó người thợ tính tiền theo giờ.
 Nếu giả sử này là đúng, thì cho trước hai điểm dữ liệu, bạn đã có thể tính được cách mà người thợ xây dựng bảng giá: \$100 một giờ cộng với \$50 cho việc tới nhà bạn.
 Nếu bạn theo được logic tới đây thì bạn đã có thể hiểu ý tưởng sơ lược đằng sau hồi quy tuyến tính (và bạn vô tình đã thiết kế một mô hình tuyến tính với thành phần điều chỉnh).
-<!-- Lưu ý rằng bias này có ý nghĩa khác với bias trong "bias-variance trade off. Bias này là đại lượng thường được thêm vào công thức của các quan hệ tuyến tính để điều chỉnh giá trị. Nó cũng chính là số hạng tự do mà chúng ta thường dùng trong chương trình phổ thông. Mọi người có thể thảo luận cách dịch. Mình sẽ xoá dòng này sau khi thảo luận xong.--> 
+<!-- Lưu ý rằng bias này có ý nghĩa khác với bias trong "bias-variance trade off. Bias này là đại lượng thường được thêm vào công thức của các quan hệ tuyến tính để điều chỉnh giá trị. Nó cũng chính là số hạng tự do mà chúng ta thường dùng trong chương trình phổ thông. Mọi người có thể thảo luận cách dịch. Mình sẽ xoá dòng này sau khi thảo luận xong.-->
 
 
 <!-- =================== Kết thúc dịch Phần 13 ==================== -->
@@ -1138,7 +1138,7 @@ and the least mean squares loss, or
 where
 -->
 
-và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó 
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
@@ -1231,8 +1231,8 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*. 
-Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất. 
+Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*.
+Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất.
 Cho trước một mẫu $\mathbf{x}$, mô hình cần gán một giá trị xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
 Vì là các giá trị xác suất, chúng phải là các số dương có tổng bằng $1$.
 Bởi vậy, ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
@@ -1710,7 +1710,7 @@ Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ng�
 Hoặc ta cũng có thể muốn biết từ nào là danh từ riêng.
 Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
 Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
-Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng (Ent). 
+Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng (Ent).
 
 ```text
 Tom has dinner in Washington with Sally.
@@ -2201,7 +2201,9 @@ for a human evaluator to distinguish between the replies
 from a machine and a human based on textual interactions.
 -->
 
-*dịch đoạn phía trên*
+Ảnh hưởng thứ hai đối với học máy đến từ Lý Thuyết Thông Tin [(Claude Shannon, 1916-2001)](https://en.wikipedia.org/wiki/Claude_Shannon) và Lý Thuyết Điện Toán của [Alan Turing (1912-1954)](https://en.wikipedia.org/wiki/Alan_Turing).
+Turing đã đặt ra câu hỏi "Liệu máy móc có thể suy nghĩ?" trong bài báo nổi tiếng của mình [Máy tính và trí thông minh](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) (Mind, Tháng 10 1950).
+Tại đó ông ấy đã giới thiệu về Turning test: một máy tính được xem là thông minh nếu như người đánh giá khó có thể phân biệt phản hồi mà anh ta nhận được thông qua tương tác văn bản xuất phát từ máy tính hay con người.
 
 <!--
 Another influence can be found in neuroscience and psychology.
@@ -2220,7 +2222,14 @@ and diminish undesirable behavior to obtain good settings
 of the parameters in a neural network.
 -->
 
-*dịch đoạn phía trên*
+Một ảnh hưởng khác có thể được tìm thấy trong khoa học thần kinh và tâm lý học.
+Sau cùng, loài người thể hiện rất rõ ràng bản năng thông minh của mình.
+Sẽ là hợp lý nếu chúng ta có thể giải thích và phân tích ngược khả năng này.
+Một trong những thuật toán lâu đời nhất được truyền cảm hứng từ hiện tượng đó được giới thiệu bởi [Donald Hebb (1904-1985)](https://en.wikipedia.org/wiki/Donald_O._Hebb).
+Trong cuốn sách đột phát của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng sự củng cố tích cực.
+Điều này về sau được biết đến với cái tên là luật học Hebbian.
+Nó là nguyên mẫu từ thuật toán perceptron của Rosenblatt và là nền tảng của rất nhiều thuật toán stochastic gradient descent đặt nền móng cho học sâu ngày nay:
+Củng cố các hành vi mong muốn và giảm bớt các hành vi không mong muốn để đạt được các thông số tốt trong một mạng nơ-ron.
 
 <!--
 Biological inspiration is what gave *neural networks* their name.
@@ -2232,14 +2241,17 @@ but the name stuck. At its heart, lie a few key principles
 that can be found in most networks today:
 -->
 
-*dịch đoạn phía trên*
+Niềm cảm hứng từ sinh học đã tạo nên cái tên *Mạng nơ-ron*.
+Trong suốt hơn một thế kỷ (trở lại với mô hình của Alexander Bain, 1873 và James Sherrington, 1890), các nhà ngiên cứu đã cố gắng lắp ráp các mạch tính toán nhằm tạo ra những mạng lưới nơ-ron tương tác.
+Theo thời gian, yếu tố sinh học ngày càng giảm đi nhưng tên gọi của nó thì vẫn ở lại. Những nguyên tắc thứ yếu của mạng nơ-ron vẫn có thể tìm thấy ở hầu hết các mạng ngày nay:
 
 <!--
 * The alternation of linear and nonlinear processing units, often referred to as *layers*.
 * The use of the chain rule (also known as *backpropagation*) for adjusting parameters in the entire network at once.
 -->
 
-*dịch đoạn phía trên*
+* Sự đan xen giữa các đơn vị xử lý tuyến tính và phi tuyến tính, thường được đề đề cập tới như là *các tầng*.
+* Việc sử dụng quy tắc chuỗi (còn được biết đến là *backpropagation*) để điều chỉnh các tham số trong toàn bộ mạng cùng lúc.
 
 <!--
 After initial rapid progress, research in neural networks
@@ -2254,7 +2266,10 @@ was a popular tool for testing the efficacy of algorithms.
 MNIST with its 60,000 handwritten digits was considered huge.
 -->
 
-*dịch đoạn phía trên*
+Sau những tiến bộ nhanh chóng ban đầu, các nghiên cứu về mạng nơ-ron giảm dần trong khoảng từ 1995 tới 2005 bởi một vài lí do.
+Thứ nhất là huấn luyện mạng rất tốt kém tài nguyên tính toán.
+Mặc dù lượng RAM đã dồi dào vào cuối thế kỷ trước, sức mạnh tính toán vẫn còn hạn chế.
+Thứ hai là tập dữ liệu vẫn còn tương đối nhỏ. Lúc đó tập dữ liệu Fisher's Iris từ năm 1932 vẫn là công cụ phổ biến để kiểm tra tính hiệu quả của các thuật toán. MNIST với 60,000 ký tự viết tay được xem là rất lớn
 
 <!--
 Given the scarcity of data and computation,
@@ -2264,7 +2279,8 @@ Unlike neural networks, they did not require weeks to train
 and provided predictable results with strong theoretical guarantees.
 -->
 
-*dịch đoạn phía trên*
+Với sự khan hiếm của dữ liệu và tài nguyên tính toán, các công cụ thống kê mạnh như Phương Pháp Kernel, Cây Quyết Định và Mô Hình Dạng Đồ Thị đã chứng tỏ sự vượt trội trong thực nghiệm.
+Khác với mạng nơ-ron, chúng không đòi hỏi nhiều tuần huấn luyện nhưng vẫn đưa ra những kết quả dự đoán với sự đảm bảo vững chắc về lý thuyết .
 
 <!-- =================== Kết thúc dịch Phần 28 ==================== -->
 
@@ -2779,7 +2795,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 28 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 29 -->
 *
