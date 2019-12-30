@@ -2203,7 +2203,7 @@ from a machine and a human based on textual interactions.
 
 Ảnh hưởng thứ hai đối với học máy đến từ Lý Thuyết Thông Tin [(Claude Shannon, 1916-2001)](https://en.wikipedia.org/wiki/Claude_Shannon) và Lý Thuyết Điện Toán của [Alan Turing (1912-1954)](https://en.wikipedia.org/wiki/Alan_Turing).
 Turing đã đặt ra câu hỏi "Liệu máy móc có thể suy nghĩ?" trong bài báo nổi tiếng của mình [Máy Tính và Trí Thông Minh](https://en.wikipedia.org/wiki/Computing_Machinery_and_Intelligence) (Mind, Tháng 10 1950).
-Tại đó ông ấy đã giới thiệu về Turning test: một máy tính được xem là thông minh nếu như người đánh giá khó có thể phân biệt phản hồi mà anh ta nhận được thông qua tương tác văn bản xuất phát từ máy tính hay con người.
+Tại đó ông ấy đã giới thiệu về phép thử Turing: một máy tính được xem là thông minh nếu như người đánh giá khó có thể phân biệt phản hồi mà anh ta nhận được thông qua tương tác văn bản xuất phát từ máy tính hay con người.
 
 <!--
 Another influence can be found in neuroscience and psychology.
