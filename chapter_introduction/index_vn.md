@@ -1547,7 +1547,7 @@ Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ng�
 Hoặc ta cũng có thể muốn biết từ nào là danh từ riêng.
 Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
 Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
-Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng. 
+Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng (Ent). 
 
 ```text
 Tom has dinner in Washington with Sally.
