@@ -1615,7 +1615,8 @@ Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệ
 #### Sequence Learning
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Học chuỗi
+<!-- cần bàn thêm từ này -->
 
 <!--
 So far, we have looked at problems where we have
@@ -1631,7 +1632,10 @@ into the model to generate an output,
 the model immediately forgets what it just saw.
 -->
 
-*dịch đoạn phía trên*
+Cho tới hiện tại, chúng ta đã gặp các bài toán mà ở đó mô hình nhận đầu vào với kích thước cố định và đưa ra kết quả cũng với kích thước cố định.
+Trước đây chúng ta xem xét dự đoán giá nhà từ một tập các đặc trưng cố định: diện tích, số phòng ngủ, số phòng tắm và thời gian đi bộ tới trung tâm thành phố.
+Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao xếp loại.
+Trong những trường hợp này, một khi chúng ta đưa cho mô hình một đầu vào có độ dài cố định để dự đoán một đầu ra, mô hình ngay lập tức "quên" dữ liệu nó vừa thấy.
 
 <!--
 This might be fine if our inputs truly all have the same dimensions
@@ -1645,7 +1649,11 @@ is machine translation: the task of ingesting sentences
 in some source language and predicting their translation in another language.
 -->
 
-*dịch đoạn phía trên*
+Việc này không ảnh hưởng nhiều nếu đầu vào của mô hình thật sự có cùng kích thước và nếu các đầu vào liên tiếp thật sự không liên quan đến nhau.
+Tuy nhiên chúng ta sẽ xử lý các video như thế nào khi chúng có thể có số lượng khung hình khác nhau?
+Sự thật là dự đoán của chúng ta về việc gì đang xảy ra ở mỗi khung hình sẽ chính xác hơn nếu quan sát thêm các khung hình kề nó.
+Hiện tượng tương tự xảy ra trong ngôn ngữ.
+Một bài toán học sâu phổ biến là dịch máy (_machine translation_): tác vụ lấy đầu vào là các câu trong một ngôn ngữ nguồn và trả về bản dịch của chúng ở một ngôn ngữ khác.
 
 <!--
 These problems also occur in medicine.
@@ -1657,7 +1665,9 @@ everything it knows about the patient history each hour
 and just make its predictions based on the most recent measurements.
 -->
 
-*dịch đoạn phía trên*
+Các bài toán này cũng xảy ra trong y khoa.
+Với một mô hình theo dõi bệnh nhân trong chế độ đặc biệt, ta có thể mong muốn nó đưa ra cảnh báo nếu nguy cơ tử vong trong 24 giờ tới vượt một ngưỡng nào đó.
+Dĩ nhiên, ta chắc chắn không muốn mô mình này bỏ qua mọi lịch sử bệnh lý và chỉ đưa ra dự đoán dựa trên các thông số gần nhất.
 
 <!--
 These problems are among the most exciting applications of machine learning
@@ -1670,7 +1680,12 @@ While it is impossible to consider all types of sequence transformations,
 a number of special cases are worth mentioning:
 -->
 
-*dịch đoạn phía trên*
+Những bài toán này nằm trong những ứng dụng thú vị nhất của học máy và chúng là các ví dụ của *học chuỗi*.
+Chúng đòi hỏi một mô hình có khả năng lấy một chuỗi các đầu vào hoặc đưa ra một chuỗi các đầu ra (hoặc cả hai!).
+Những bài toán này này đôi khi được gọi là ``seq2seq``.
+Dịch ngôn ngữ là một bài toán ``seq2seq``.
+Phiên thoại từ một bài nói thành chữ cũng là một bài toán ``seq2seq``.
+Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, một vài trường hợp đặc biệt rất đáng được lưu tâm:
 
 <!-- =================== Kết thúc dịch Phần 20 ==================== -->
 
