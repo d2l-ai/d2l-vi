@@ -199,6 +199,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | satisficing metric           | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
 | scroing function             | hàm tính điểm                                                  |                       |
 | sentiment classification     | phân loại cảm xúc                                              |                       |
+| sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity | 
 | spam email                   | email rác                                                      |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
 | speech recognition           | nhận dạng giọng nói                                            |                       |
