@@ -1914,7 +1914,7 @@ Getting more promotions in the future requires figuring out
 what actions along the way led to the promotion.
 -->
 
-Lấy cờ tướng làm ví dụ nhé. 
+Lấy cờ tướng làm ví dụ. 
 Phần thưởng thật sự sẽ đến vào cuối trò chơi. khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
 Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố công trạng: xác định hành động nào sẽ được thưởng hay bị phạt dựa theo kết quả. 
 Tương tự với một nhân viên sẽ được thăng chức vào ngày 11/10. 
