@@ -1544,7 +1544,7 @@ with tags indicating which words refer to named entities.
 Đây là bài toán gán chú thích cho chuỗi các từ.
 Nói cách khác, số lượng đầu vào và đầu ra là như nhau.
 Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ngữ.
-Hoặc ta cũng có thể muốn biết từ nào là thực thể được đặt tên. <!-- hmm, thảo luận -->
+Hoặc ta cũng có thể muốn biết từ nào là danh từ riêng.
 Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
 Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
 Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng. 
