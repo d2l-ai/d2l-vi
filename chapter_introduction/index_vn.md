@@ -1796,7 +1796,7 @@ Nếu bạn đã đọc loạt truyện ngắn Robots của Asimov hoặc là ng
 Chúng ta muốn nghĩ tới những *tác nhân* (*agent*) thông minh chứ không chỉ những mô hình dự đoán.
 Tức là ta phải nhắm tới việc chọn *hành động* chứ không chỉ đưa ra những *dự đoán*.
 Hơn thế nữa, không giống dự đoán, hành động còn tác động đến môi trường.
-Nếu muốn tạo ra những tác nhân thông minh, chúng ta phải tính tới cả các hành động mà có thể ảnh hưởng tới những quan sát của tác nhân đó trong tương lai.
+Nếu muốn huấn luyện một tác nhân thông mình, chúng ta phải tính đến cách những hành động của nó có thể tác động đến những gì nó nhận lại trong tương lai.
 
 
 <!--
