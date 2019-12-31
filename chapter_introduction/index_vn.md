@@ -2524,7 +2524,7 @@ whether to grant bail use statistical data as input.
 More frivolously, we can ask Alexa to switch on the coffee machine.
 -->
 
-Thông thường, câu hỏi về ngày tận thế của A, hay điểm cực hạn <!-- TODO --> của AI đã được nêu lên trong các bài viết phi kỹ thuật về AI.
+Thông thường, câu hỏi về ngày tận thế của AI, hay điểm cực hạn <!-- TODO --> của AI đã được nêu lên trong các bài viết phi kỹ thuật về AI.
 Đã có những nỗi lo sợ về việc các hệ thống học máy bằng cách nào đó sẽ trở nên có cảm xúc và ra quyết định độc lập với những lập trình viên (và chủ nhân) về những điều ảnh hưởng trực tiếp tới sự sống của nhân loại.
 Trong phạm vi nào đó, AI đã ảnh hưởng tới sự sống của con người một cách trực tiếp, chẳng hạn như điểm tín dụng được tính tự động, tự động điều hướng xe hơi, hay các quyết định về việc liệu có chấp nhận bảo lãnh hay không sử dụng đầu vào là dữ liệu thống kê.
 Phù phiếm hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
