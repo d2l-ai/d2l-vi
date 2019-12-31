@@ -2569,7 +2569,7 @@ With what we know today, this strikes us a much more pressing concern
 than the potential of malevolent superintelligence to destroy humanity.
 -->
 
-Một sự lo lắng khác là Ai có thể sử dụng trong cuộc sống thường nhật như thế nào.
+Một lo lắng khác là AI có thể sử dụng trong cuộc sống thường nhật như thế nào.
 Nhiều khả năng rất nhiều tác vụ đơn giản đang được thực hiện bởi tài xế xe tải và trợ lý cửa hàng có thể và sẽ bị tự động hóa.
 Các robot nông trại sẽ nhiều khả năng giảm giá của nông nghiệp hữu cơ mà còn tự động quá trình thu hoạch.
 Thời điểm này của cuộc cách mạng công nghiệp có thể gây tác hại rộng khắp tới xã hội (tài xế xe tải và trợ lý cửa hàng là một vài trong số những ngành phổ biến nhất ở nhiều địa phương). <!-- state = bang của Mỹ -->
