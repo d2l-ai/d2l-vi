@@ -2573,7 +2573,7 @@ Một lo lắng khác là AI có thể sử dụng trong cuộc sống thường
 Nhiều khả năng rất nhiều tác vụ đơn giản đang được thực hiện bởi tài xế xe tải và trợ lý cửa hàng có thể và sẽ bị tự động hóa.
 Các robot nông trại sẽ nhiều khả năng giảm giá của nông nghiệp hữu cơ mà còn tự động quá trình thu hoạch.
 Thời điểm này của cuộc cách mạng công nghiệp có thể gây tác hại rộng khắp tới xã hội (tài xế xe tải và trợ lý cửa hàng là một vài trong số những ngành phổ biến nhất ở nhiều địa phương). <!-- state = bang của Mỹ -->
-Hơn nữa, các mô hình thống kê, khi được áp dụng không cẩn thận, có thể dẫn đến các quyết định phân biệt chủng tộc, giới tính hoặc tuổi và gây nên những nỗi lo có cơ sở về tính công bằng nếu được tự động đưa ra các quyết định.
+Hơn nữa, các mô hình thống kê, khi được áp dụng không cẩn thận, có thể dẫn đến các quyết định phân biệt chủng tộc, giới tính hoặc tuổi và gây nên những nỗi lo có cơ sở về tính công bằng nếu được tự động hóa để đưa ra các quyết định có nhiều hệ lụy.
 Việc sử dụng các thuật toán này một cách cẩn thận là rất quan trọng.
 Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo lớn hơn tiềm năng hủy diệt loài người của các hệ siêu trí tuệ. 
 
