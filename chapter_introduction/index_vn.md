@@ -2580,8 +2580,8 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 * Học máy nghiên cứu cách các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện cất lượng trong những tác vụ cụ thể. Nó bao gồm các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. Nó thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
 
-* Là một nhóm về học máy, học biểu diễn tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
-Điều này thường đặt được bởi một quá trình biến đổi được huấn luyện.
+* Là một nhóm về học máy, học biểu diễn (_representational learning_) tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
+Điều này thường đạt được bởi một quá trình biến đổi được huấn luyện.
 
 * Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiển triển đáng kể trong tính toán, chủ yếu bằng GPU.
 
