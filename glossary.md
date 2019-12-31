@@ -23,6 +23,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance   | chất lượng của thuật toán                                      |               |
 | avoidable bias            | độ chệch tránh được                                            |               |
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
+| artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                          |               |
 | attention mechanisms      | cơ chế tập trung                                               |               |
 
 ## B
@@ -175,6 +176,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (danh từ)       | vùng nằm ngang                                                 |                       |
 | plateau (động từ)       | nằm ngang                                                      |                       |
 | pipeline                | pipeline                                                       | http://bit.ly/2OyYuEf |
+| policy (trong Học Tăng cường) | chính sách                                               |                       |
 | positive sample/example | mẫu dương                                                      |                       |
 | precision               | precision                                                      |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
