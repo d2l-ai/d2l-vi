@@ -563,7 +563,7 @@ Cuối cùng, có nhiều dữ liệu và xử lý dữ liệu một cách khéo
 Ta cần những dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các đặc trưng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
 Tình huống trên có thể được khái quát bởi thuật ngữ: *đưa rác vào thì nhận rác ra* (*garbage in, garbage out*).
 Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
-Trong các ứng dụng có độ nhạy của học máy như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
+Trong các ứng dụng học máy có tính nhạy cảm như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
 Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
 Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
 Thất bại cũng có thể xảy ra khi dữ liệu không đại diện cho một nhóm người, mà còn phản ánh cả các định kiến xã hội cho nhóm người đó.
