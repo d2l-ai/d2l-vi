@@ -2031,7 +2031,11 @@ In general, we just get some reward.
 Moreover, the environment may not even tell us which actions led to the reward.
 -->
 
-*dịch đoạn phía trên*
+Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
+Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện đi kèm nhãn tương ứng. 
+Tuy nhiên với học tăng cường, ta không giả định rằng môi trường sẽ chỉ ra hành động nào là tối ưu tại mỗi quan sát (điểm dữ liệu).
+Nhìn chung, mô hình sẽ nhận được một điểm thưởng nào đó.
+Tuy nhiên, môi trường có thể sẽ không chỉ ra những hành động nào đã dẫn tới điểm thưởng đó. 
 
 <!--
 Consider for example the game of chess.
@@ -2047,7 +2051,12 @@ Getting more promotions in the future requires figuring out
 what actions along the way led to the promotion.
 -->
 
-*dịch đoạn phía trên*
+Lấy cờ tướng làm ví dụ. 
+Phần thưởng thật sự sẽ đến vào cuối trò chơi. Khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
+Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố công trạng": xác định hành động nào sẽ được thưởng hay bị phạt dựa theo kết quả. 
+Tương tự như khi một nhân viên được thăng chức vào ngày 11/10. 
+Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt một năm qua. 
+Để thăng chức sau này đòi hỏi quá trình tìm hiểu đâu là những hành động dẫn đến sự thăng chức này.
 
 <!--
 Reinforcement learners may also have to deal
@@ -2060,7 +2069,10 @@ Inferring the precise location (and thus state) of the robot
 might require considering its previous observations before entering the closet.
 -->
 
-*dịch đoạn phía trên*
+Học tăng cường còn phải đương đầu với vấn đề về những quan sát không hoàn chỉnh.
+Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
+Lấy ví dụ khi robot hút bụi trong nhà bị kẹt tại một trong nhiều nhà kho giống y như nhau. 
+Việc can thiệp vào vị trí chính xác (trạng thái) của robot có thể cần đến những quan sát từ trước khi nó đi vào phòng. 
 
 <!--
 Finally, at any given point, reinforcement learners
@@ -2073,7 +2085,8 @@ or to *explore* the space of strategies,
 potentially giving up some short-run reward in exchange for knowledge.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, tại một thời điểm bất kỳ, các thuật toán học tăng cường có thể biết một chính sách tốt, tuy nhiên có thể có những chính sách khác tốt hơn mà tác nhân chưa bao giờ thử tới. 
+Các thuật toán học tăng cường phải luôn lựa chọn giữa việc liệu rằng tiếp tục *khai thác* chính sách tốt nhất hiện thời hay *khám phá* thêm những giải pháp khác, tức bỏ qua những điểm thưởng ngắn hạn để thu về thêm kiến thức.
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
@@ -2770,7 +2783,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 25 -->
-*
+* Lê Đàm Hồng Lộc
 
 <!-- Phần 26 -->
 *
