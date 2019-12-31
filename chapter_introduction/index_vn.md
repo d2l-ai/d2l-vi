@@ -2583,7 +2583,7 @@ than the potential of malevolent superintelligence to destroy humanity.
 * Là một nhóm về học máy, học biểu diễn (_representational learning_) tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
 Điều này thường đạt được bởi một quá trình biến đổi được huấn luyện.
 
-* Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiển triển đáng kể trong tính toán, chủ yếu bằng GPU.
+* Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiến triển đáng kể trong điện toán, chủ yếu bằng GPU.
 
 * Tối ưu hóa cả hệ thống là một thành phần quan trọng trong việc đạt được chất lượng tốt.
 Sự sẵn có của các nền tảng học sâu hiệu quả giúp việc thiết kế và triển khai việc này dễ hơn một cách đáng kể.
