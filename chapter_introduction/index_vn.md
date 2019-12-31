@@ -1761,7 +1761,7 @@ For supervised learning, the process looks like :numref:`fig_data_collection`.
 
 Cho tới giờ, chúng ta chưa thảo luận về việc dữ liệu tới từ đâu hoặc chuyện gì thực sự sẽ *xảy ra* khi một mô hình học máy trả về kết quả dự đoán.
 Điều này là do học có giám sát và học không giám sát chưa giải quyết các vấn đề một cách thấu đáo.
-Trong cả hai cách học trên, chúng ta đưa vào một lượng dữ liệu lớn từ đầu rồi cho mô hình học mà không cho nó tương tác với môi trường.
+Trong cả hai cách học, chúng ta yêu cầu mô hình học từ một lượng dữ liệu lớn đã được cung cấp từ đầu mà không cho nó tương tác trở lại với môi trường trong suốt quá trình học.
 Bởi vì toàn bộ việc học diễn ra khi thuật toán đã được ngắt kết nối khỏi môi trường, đôi khi ta gọi đó là *học ngoại tuyến* (*offline learning*).
 Quá trình này cho học có giám sát được mô tả trong :numref:`fig_data_collection`.
 
