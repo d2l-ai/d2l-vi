@@ -2529,7 +2529,6 @@ Thông thường, câu hỏi về ngày tận thế của AI, hay điểm cực 
 Trong phạm vi nào đó, AI đã ảnh hưởng tới sự sống của con người một cách trực tiếp, chẳng hạn như điểm tín dụng được tính tự động, tự động điều hướng xe hơi, hay các quyết định về việc liệu có chấp nhận bảo lãnh hay không sử dụng đầu vào là dữ liệu thống kê.
 Phù phiếm hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
 
-
 <!--
 Fortunately, we are far from a sentient AI system
 that is ready to manipulate its human creators (or burn their coffee).
