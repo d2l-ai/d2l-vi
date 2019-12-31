@@ -2548,7 +2548,7 @@ May mắn thay, chúng ta còn xa một hệ thống AI có cảm xúc sẵn sà
 Thứ nhất, các hệ thống Ai được thiết kế, huấn luyện và triển khai trong một môi trường cụ thể hướng mục đích.
 Trong khi hành vi của chúng có thể tạo ra ảo giác về trí tuệ phổ quát, đó là một tổ hợp của các quy tắc và các mô hình thống kê.
 Thứ hai, hiện tại các công cụ cho *trí tuệ nhân tạo phổ quát* đơn giản là không tồn tại.
-Chúng không thể tự cải thiện, tự suy luận, không thể thay đổi, mở rộng và tự cải thiện cấu trúc trong khi cố gắng giải quyết các tác vụ thông thường.
+Chúng không thể tự cải thiện, hoài nghi bản thân, không thể thay đổi, mở rộng và tự cải thiện cấu trúc trong khi cố gắng giải quyết các tác vụ thông thường.
 
 <!--
 A much more pressing concern is how AI is being used in our daily lives.
@@ -2571,7 +2571,7 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 Một lo lắng khác là AI có thể sử dụng trong cuộc sống thường nhật như thế nào.
 Nhiều khả năng rất nhiều tác vụ đơn giản đang được thực hiện bởi tài xế xe tải và trợ lý cửa hàng có thể và sẽ bị tự động hóa.
-Các robot nông trại sẽ nhiều khả năng giảm giá của nông nghiệp hữu cơ mà còn tự động quá trình thu hoạch.
+Các robot nông trại sẽ nhiều khả năng làm giảm chi phí của nông nghiệp hữu cơ nhưng cũng sẽ tự động hóa quá trình thu hoạch.
 Thời điểm này của cuộc cách mạng công nghiệp có thể gây tác hại rộng khắp tới xã hội (tài xế xe tải và trợ lý cửa hàng là một vài trong số những ngành phổ biến nhất ở nhiều địa phương). <!-- state = bang của Mỹ -->
 Hơn nữa, các mô hình thống kê, khi được áp dụng không cẩn thận, có thể dẫn đến các quyết định phân biệt chủng tộc, giới tính hoặc tuổi và gây nên những nỗi lo có cơ sở về tính công bằng nếu được tự động hóa để đưa ra các quyết định có nhiều hệ lụy.
 Việc sử dụng các thuật toán này một cách cẩn thận là rất quan trọng.
