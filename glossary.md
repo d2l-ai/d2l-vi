@@ -44,7 +44,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | code (danh từ)      | mã nguồn                                                       |               |
 | code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
-| computing (trong Computer Science) | điện toán                                                      |               |
+| computing (trong Khoa Học Máy Tính) | điện toán                                                      |               |
 | confidence interval | khoảng tin cậy                                                 |               |
 | constrain           | ràng buộc                                                      |               |
 | convex optimization | tối ưu lồi                                                     |               |
