@@ -566,7 +566,7 @@ Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm t�
 Trong các ứng dụng học máy có tính nhạy cảm như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
 Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
 Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
-Thất bại cũng có thể xảy ra khi dữ liệu không đại diện cho một nhóm người, mà còn phản ánh cả các định kiến xã hội cho nhóm người đó.
+Thất bại cũng có thể xảy ra khi dữ liệu không đại diện đầy đủ và chính xác cho một số nhóm người, nhưng lại đánh giá nhóm người này dựa vào định kiến của xã hội.
 Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong quá khứ.
 Lưu ý rằng tất cả điều này có thể xảy ra ngay cả khi không có nhà khoa học dữ liệu nào chủ động âm mưu hoặc thậm chí là có nhận thức về nó.
 
