@@ -108,7 +108,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Gaussian noise   | nhiễu Gauss                                                    |                              |
 | generative model | mô hình sinh                                                   |                              |
 | generative adversarial network | mạng sinh đối kháng                              |                              |
-| gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| gradient descent | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| graphical model | mô hình biểu đồ                                             | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
 ## H
@@ -185,7 +186,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | precision               | precision                                                      |                       |
 | principal component analysis (PCA) | phân tích thành phần chủ đạo                        |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
-| probabilistic graphical model | mô hình đồ thị xác suất                                  |                       |
 
 ## R
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
