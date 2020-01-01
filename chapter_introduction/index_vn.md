@@ -2268,7 +2268,7 @@ MNIST with its 60,000 handwritten digits was considered huge.
 
 Sau những tiến bộ nhanh chóng ban đầu, các nghiên cứu về mạng nơ-ron giảm dần trong khoảng từ 1995 tới 2005 bởi một vài lí do.
 Thứ nhất là huấn luyện mạng rất tốt kém tài nguyên tính toán.
-Mặc dù lượng RAM đã dồi dào vào cuối thế kỷ trước, sức mạnh tính toán vẫn còn hạn chế.
+Mặc dù dung lượng RAM đã dồi dào vào cuối thế kỷ trước, sức mạnh tính toán vẫn còn hạn chế.
 Thứ hai là tập dữ liệu vẫn còn tương đối nhỏ. Lúc đó tập dữ liệu Fisher's Iris từ năm 1932 vẫn là công cụ phổ biến để kiểm tra tính hiệu quả của các thuật toán. MNIST với 60,000 ký tự viết tay đã được xem là rất lớn.
 
 <!--
