@@ -119,6 +119,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hidden unit             | nút ẩn                                                         |                                                  |
 | human-level performance | chất lượng mức con người                                       | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
 | hyperparameter          | siêu tham số                                                   |                                                  |
+| hyperplane              | siêu phẳng                                                     |                                                  |
 | hypothesis test         | kiểm chứng thống kê                                                   |                                                  |
 
 ## I
