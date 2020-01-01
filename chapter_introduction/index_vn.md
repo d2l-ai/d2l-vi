@@ -1887,7 +1887,7 @@ that was exactly equal to the loss function
 from the original supervised problem.
 -->
 
-Thật khó để đánh giá thấp sự tổng quát của mô hình học tăng cường.
+Thật khó để nói quá lên sự tổng quát của mô hình học tăng cường.
 Ví dụ, ta có thể chuyển bất cứ bài toán học có giám sát nào thành một bài toán học tăng cường.
 Chẳng hạn với một bài toán phân loại, ta có thể tạo một tác nhân học tăng cường với một *hành động* tương ứng với mỗi lớp.
 Sau đó ta có thể tạo một môi trường mà trả về điểm thưởng đúng bằng với giá trị của hàm mất mát từ bài toán học có giám sát ban đầu.
