@@ -2225,7 +2225,7 @@ of the parameters in a neural network.
 Một ảnh hưởng khác có thể được tìm thấy trong khoa học thần kinh và tâm lý học.
 Sau cùng, loài người thể hiện rất rõ ràng bản năng thông minh của mình.
 Sẽ là hợp lý nếu chúng ta có thể giải thích và phân tích ngược khả năng này.
-Một trong những thuật toán lâu đời nhất được truyền cảm hứng từ hiện tượng đó được giới thiệu bởi [Donald Hebb (1904-1985)](https://en.wikipedia.org/wiki/Donald_O._Hebb).
+Một trong những thuật toán lâu đời nhất lấy cảm hứng từ câu hỏi trên được giới thiệu bởi [Donald Hebb (1904-1985)](https://en.wikipedia.org/wiki/Donald_O._Hebb).
 Trong cuốn sách đột phát của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng sự tăng cường tích cực.
 Điều này về sau được biết đến với cái tên là luật học Hebbian.
 Nó là nguyên mẫu từ thuật toán perceptron của Rosenblatt và là nền tảng của rất nhiều thuật toán hạ gradient ngẫu nhiên đã đặt nền móng cho học sâu ngày nay:
