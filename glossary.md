@@ -43,7 +43,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
-| clustering          | phân nhóm                                                      |               |
+| clustering          | phân cụm                                                      |               |
 | code (danh từ)      | mã nguồn                                                       |               |
 | code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
