@@ -43,6 +43,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
+| clustering          | phân nhóm                                                      |               |
 | code (danh từ)      | mã nguồn                                                       |               |
 | code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
@@ -106,6 +107,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------|----------------------------------------------------------------|----------------------------------------------|
 | Gaussian noise   | nhiễu Gauss                                                    |                              |
 | generative model | mô hình sinh                                                   |                              |
+| generative adversarial network | mạng sinh đối kháng                              |                              |
 | gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
@@ -180,7 +182,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | policy (trong Học Tăng cường) | chính sách                                               |                       |
 | positive sample/example | mẫu dương                                                      |                       |
 | precision               | precision                                                      |                       |
+| principal component analysis (PCA) | phân tích thành phần chủ đạo                        |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
+| probabilistic graphical model | mô hình đồ thị xác suất                                  |                       |
 
 ## R
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -209,6 +213,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
 | surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1                      |
+| subspace estimation          | ước lượng không gian con                                       |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
