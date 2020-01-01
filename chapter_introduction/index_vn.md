@@ -2251,7 +2251,7 @@ Theo thời gian, yếu tố sinh học ngày càng giảm đi nhưng tên gọi
 -->
 
 * Sự đan xen giữa các đơn vị xử lý tuyến tính và phi tuyến tính, thường được đề đề cập tới như là *các tầng*.
-* Việc sử dụng quy tắc chuỗi (còn được biết đến là *backpropagation*) để điều chỉnh các tham số trong toàn bộ mạng cùng lúc.
+* Việc sử dụng quy tắc chuỗi (còn được biết đến là *lan truyền ngược -- backpropagation*) để điều chỉnh các tham số trong toàn bộ mạng cùng lúc.
 
 <!--
 After initial rapid progress, research in neural networks
