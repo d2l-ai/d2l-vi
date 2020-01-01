@@ -184,7 +184,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | policy (trong Học Tăng cường) | chính sách                                               |                       |
 | positive sample/example | mẫu dương                                                      |                       |
 | precision               | precision                                                      |                       |
-| principal component analysis (PCA) | phân tích thành phần chủ đạo                        |                       |
+| principal component analysis (PCA) | phân tích thành phần chính                        |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
 
 ## R
