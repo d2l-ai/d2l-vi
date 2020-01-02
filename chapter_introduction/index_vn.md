@@ -1739,13 +1739,13 @@ in later chapters. To whet your appetite for now,
 we describe a few of the questions you might ask:
 -->
 
-Trong một viễn cảnh trái ngược, sẽ rất là bực mình nếu vớ phải người sếp chẳng có bất kỳ ý tưởng nào là ông ta muốn bạn làm cái gì.
-Tuy nhiên, nếu định trở thành data scientist, tốt hơn hãy làm quen với điều này.
-Ông ta có thể chỉ dúi vào tay bạn một chồng dữ liệu to sụ và bảo *làm tý data science với cái này đi!*
-Nghe thì có vẻ mơ hồ nhưng đời là vậy đấy.
+Trong một viễn cảnh trái ngược, nếu gặp phải người sếp chẳng có bất kỳ ý tưởng nào về chuyện họ muốn bạn làm cái gì thì sẽ rất là khó chịu.
+Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt hơn hãy làm quen với điều này.
+Ông ta có thể chỉ đưa cho bạn một đống dữ liệu to sụ và bảo *làm tý data science với cái này đi!*
+Nghe có vẻ khá mơ hồ bởi vì đúng là nó mơ hồ thật.
 Chúng ta gọi những loại vấn đề như thế này là *học không giám sát*, với chúng, loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
 Ta sẽ đề cập tới một số kỹ thuật học không giám sát ở các chương sau.
-Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài thắc mắc bạn có thể  sẽ băn khoăn:
+Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài thắc mắc bạn có thể sẽ thắc mắc:
 
 <!--
 * Can we find a small number of prototypes
@@ -1758,9 +1758,9 @@ This problem is typically known as *clustering*.
 -->
 
 Liệu có thể dùng một lượng nhỏ nguyên mẫu để tóm lược dữ liệu một cách chính xác?
-Giả sử với một bộ ảnh, liệu có thể nhóm chúng thành các ảnh phong cảnh, chó, trẻ con, mèo, đỉnh núi, vân vân?
+Giả sử với một bộ ảnh, liệu có thể nhóm chúng thành các ảnh phong cảnh, chó, trẻ con, mèo, đỉnh núi, v.v.?
 Tương tự, với bộ dữ liệu duyệt web của người dùng, liệu có thể chia họ thành các nhóm người dùng có hành vi giống nhau?
-Vấn đề như này thường được gọi là *phân nhóm (_clustering_)*.
+Vấn đề như này thường được gọi là *phân cụm* (_clustering_).
 
 <!--
 * Can we find a small number of parameters
@@ -1774,11 +1774,11 @@ These problems are referred to as *subspace estimation* problems.
 If the dependence is linear, it is called *principal component analysis*.
 -->
 
-* Liệu ta có tìm được một lượng nhỏ các tham số  mà vẫn tóm lược được chính xác những thuộc tính cốt lõi của dữ liệu?
+* Liệu ta có tìm được một lượng nhỏ các tham số mà vẫn tóm lược được chính xác những thuộc tính cốt lõi của dữ liệu?
 Như là quỹ đạo bay của quả bóng được miêu tả tương đối tốt bởi số liệu vận tốc, đường kính và khối lượng của quả bóng.
 Như là người thợ may thì phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
-Những điều kể trên được gọi là bài toán *ước lượng không gian con (_subspace estimation_)*.
-Nếu sự phụ thuộc là tuyến tính, bài toán này được gọi là *phép phân tích thành phần chính (_PCA - principal component analysis_)*.
+Những ví dụ trên được gọi là bài toán *ước lượng không gian con* (_subspace estimation_).
+Nếu mối quan hệ phụ thuộc là tuyến tính, bài toán này được gọi là phép *phân tích thành phần chủ đạo* (_PCA - principal component analysis -- PCA_).
 
 <!--
 * Is there a representation of (arbitrarily structured) objects
@@ -1789,8 +1789,8 @@ to describe entities and their relations,
 such as Rome $-$ Italy $+$ France $=$ Paris.
 -->
 
-* Liệu có tồn tại cách biểu diễn lại các đối tượng (có cấu trúc tùy ý) trong không gian Euclid (ví dụ: không gian vector $\mathbb{R}^n$) chiều mà những thuộc tính mang tính ký hiệu có thể được ghép khớp với nhau.
-Điều này được gọi là *học cách tái biểu diễn* được dùng để miêu tả các thực thể và mối quan hệ giữa chúng, giống như Rome $-$ Italy $+$ France $=$ Paris.
+* Liệu có tồn tại cách biểu diễn các đối tượng (có cấu trúc tùy ý) trong không gian Euclid (ví dụ: không gian vector $\mathbb{R}^n$) mà những thuộc tính đặc trưng có thể được ghép khớp với nhau?
+Phương pháp này được gọi là *học biểu diễn* và được dùng để miêu tả các thực thể và mối quan hệ giữa chúng, giống như Rome $-$ Italy $+$ France $=$ Paris.
 
 <!--
 * Is there a description of the root causes
@@ -1805,7 +1805,7 @@ The fields concerned with *causality* and
 
 * Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát?
 Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tội phạm, vị trí, trình độ học vấn, mức lương, vv, liệu có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
-Những lĩnh vực liên quan tới *nguyên nhân - kết quả* và *mô hình đồ thị xác suất (probabilistic graphical models)* sẽ giải quyết bài toán này.
+Những lĩnh vực liên quan tới *nhân quả* và *mô hình đồ thị xác suất* (*probabilistic graphical models*) sẽ giải quyết bài toán này.
 
 <!--
 * Another important and exciting recent development in unsupervised learning
@@ -1817,8 +1817,8 @@ to check whether real and fake data are the same.
 We will devote a few notebooks to them.
 -->
 
-Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mô hình mạng sinh đối kháng (_GAN - generative adversarial networks_)*.
-GAN cho ta một thủ tục để sinh tổng hợp dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
+Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mạng sinh đối kháng* (_generative adversarial network -- GAN_)*.
+GAN cho ta một quy trình sinh dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
 Cùng các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật giả này có giống nhau không.
 Chúng tôi sẽ viết vài mục về chủ đề này sau.
 
