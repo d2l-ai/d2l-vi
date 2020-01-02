@@ -406,15 +406,15 @@ To complete the story of how to work with hypothesis testing, we need to now int
 ### Statistical Significance
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ tin cậy thống kê
 
 <!--
 The *statistical significance* measures the probability of erroneously reject the null hypothesis, $H_0$, when it should not be rejected, i.e.,
 -->
 
-*dịch đoạn phía trên*
+*Độ tin cậy thống kê* đo xác suất sai khi loại bỏ giả thuyết rỗng, $H_0$, trong khi đúng ra không nên loại bỏ nó. 
 
-$$ \text{statistical significance }= 1 - \alpha = P(\text{reject } H_0 \mid H_0 \text{ is true} ).$$
+$$ \text{đô tin cậy thống kê }= 1 - \alpha = P(\text{loại bỏ } H_0 \mid H_0 \text{ là đúng} ).$$
 
 <!--
 It is also referred to as the *type I error* or *false positive*. 
@@ -422,7 +422,9 @@ The $\alpha$, is called as the *significance level* and its commonly used value 
 The level of statistical significance level can be explained as the level of risk that we are willing to take, when we reject a true null hypothesis.
 -->
 
-*dịch đoạn phía trên*
+Đây còn được gọi là *lỗi loại I* hay *dương tính giả*.
+$\alpha$ ở đây là *mức độ tin cậy* và thường được chọn ở giá trị $5\%$, tức là $1-\alpha = 95\%$.
+Mức độ tin cậy thống kê còn có thể hiểu như mức độ rủi ro mà chúng ta chấp nhận khi loại bỏ nhầm một giả thuyết rỗng chính xác.
 
 <!--
 :numref:`fig_statistical_significance` shows the the observations' values and probability of a given normal distribution in a two-sample hypothesis test. 
@@ -430,13 +432,14 @@ If the observation data point is located outsides the $95\%$ threshold, it will 
 Hence, there might be something wrong with the null hypothesis and we will reject it.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_statistical_significance` thể hiện các giá trị quan sát và xác suất của một phân phối chuẩn trong một bài kiểm định thống kê hai-mẫu.
+Nếu các điểm giá trị quan sát nằm ngoài ngưỡng $95\%$, đó sẽ là một quan sát rất khó xảy ra dưới giả định của giả thuyết rỗng.
 
 <!--
 ![Statistical significance.](../img/statistical_significance.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/statistical_significance.svg)
+![Độ tin cậy thống kê](../img/statistical_significance.svg)
 :label:`fig_statistical_significance`
 
 <!-- =================== Kết thúc dịch Phần 7 ================================-->
