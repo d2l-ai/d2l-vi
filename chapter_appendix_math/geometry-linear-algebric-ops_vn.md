@@ -1511,33 +1511,33 @@ Either notation allows for concise and efficient representation of tensor contra
 * Vectors can be interpreted geometrically as either points or directions in space.
 -->
 
-Vector có thể được thể hiện trong hình học bằng các điểm hoặc bằng các đường có hướng trong không gian.
+Về phương diện hình học vector có thể được hiểu như là điểm hoặc hướng trong không gian.
 
 <!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-* Tích vô hướng định nghĩa khái niệm góc giữa các không gian tùy ý nhiều chiều.
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kì.
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
-* Siêu phẳng (_hyperplane_) là sự khái quát hóa nhiều chiều thành các đường thẳng và mặt phẳng.
+* Siêu phẳng (_hyperplane_) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
 Chúng có thể được dùng để định ra mặt phẳng ra quyết định dùng trong bước cuối cùng của bài toán phân loại.
 
 <!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
-* Phép nhân ma trận có thể được biểu diễn hình học như việc bóp méo đồng nhất các gốc tọa độ cơ sở.
+* Phép nhân ma trận có thể được biểu diễn hình học như việc biến dạng một cách đồng nhất các các điểm toạ độ.
 Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
 
 <!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
-* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn ta mong đợi (giả như bạn có vector $3$ trong không gian $2$ chiều).
+* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chỉ nằm trong không gian $2$ chiều).
 Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
 
 <!--
@@ -1553,7 +1553,7 @@ Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu c�
 -->
 
 * Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
-Định thức khác không nghĩa là một ma trận là khả nghịch (không-độc nhất) và một định thức bằng không nghĩa là ma trận đó là không khả nghịch (độc nhất).
+Định thức khác không nghĩa là một ma trận là khả nghịch (không độc nhất) và một định thức bằng không nghĩa là ma trận đó là không khả nghịch (độc nhất).
 * Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
 
 <!--
@@ -1566,7 +1566,7 @@ Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu c�
 1. What is the angle between
 -->
 
-1. Góc giữa hai vectors là gì
+1. Góc giữa hai vectors dưới đây là bao nhiêu?
 
 $$
 \vec v_1 = \begin{bmatrix}
@@ -1580,7 +1580,7 @@ $$
 2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
 -->
 
-2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có là nghịch đảo của ma trận khác?
+2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ và $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có phải là nghịch đảo của nhau?
 
 <!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
@@ -1600,7 +1600,7 @@ $$
 4. Which of the following sets of vectors are linearly independent?
 -->
 
-4. Trong các cặp vector sau, cặp nào là độc lập tuyến tính?
+4. Trong các nhóm vector sau, nhóm nào là độc lập tuyến tính?
 
  * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
@@ -1610,14 +1610,14 @@ $$
 5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
 -->
 
-5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với vài lựa chọn $a, b, c$, và $d$.
-Đúng hay sai: ma trận nào có định thức luôn luôn bằng $0$?
+5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với các giá trị $a, b, c$, và $d$ nào đó.
+Đúng hay sai: một ma trận như thế luôn có định thức bằng $0$?
 
 <!--
 6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
 -->
 
-6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
+6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ và $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
 Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao?
 
 <!--
