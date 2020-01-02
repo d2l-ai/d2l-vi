@@ -61,6 +61,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |------------------------|----------------------------------------------------------------|---------------|
 | data                   | dữ liệu                                                        |               |
+| data science           | khoa học dữ liệu                                               |               |
+| data scientist         | nhà khoa học dữ liệu                                           |               |
 | datapoint (data point) | điểm dữ liệu                                                   |               |
 | data mismatch          | dữ liệu không tương đồng                                       |               |
 | dataset (data set)     | tập dữ liệu                                                    |               |
