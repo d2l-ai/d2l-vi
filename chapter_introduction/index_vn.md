@@ -2607,7 +2607,7 @@ Mã nguồn của bạn có sử dụng các quy tắc thiết kế dựa trên 
 2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng không có cách cụ thể nào tự động hóa chúng?
 Những bài toán này có thể là ứng viên cho việc áp dụng học sâu.
 
-3. Từ góc nhìn sự phát triển của trí tuệ nhân tạo nhưng một cuộc cách mạng công nghiệp mới, mối quan hệ giữa thuật toán và dữ liệu là gì?
+3. Từ góc nhìn sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới, mối quan hệ giữa thuật toán và dữ liệu là gì?
 Nó có tương tự như máy hơi nước và than đá không (sự khác nhau căn bản là gì)?
 
 4. Bạn có thể áp dụng hướng tiếp cận học đầu-cuối ở đâu?
