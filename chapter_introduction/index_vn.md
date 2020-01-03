@@ -530,7 +530,7 @@ but no better than traditional approaches.
 
 Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc sẽ suôn sẻ hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
-Từ dữ liệu nhỏ chuyển sang làm việc với dữ liệu lớn là một đóng góp cơ bản cho sự thành công của học sâu hiện đại.
+Việc chuyển từ dữ liệu nhỏ sang dữ liệu lớn là một đóng góp chính cho sự thành công của học sâu hiện đại.
 Để cho rõ hơn, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
 Một số người vẫn áp dụng học sâu với số dữ liệu ít ỏi mà mình có được, nhưng trong trường hợp này nó không tốt hơn các cách tiếp cận truyền thống.
 
@@ -567,8 +567,8 @@ Trong các ứng dụng học máy có tính nhạy cảm như: dự đoán hàn
 Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
 Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
 Thất bại cũng có thể xảy ra khi dữ liệu không đại diện đầy đủ và chính xác cho một số nhóm người, nhưng lại đánh giá nhóm người này dựa vào định kiến của xã hội.
-Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hoá những bất công trong quá khứ.
-Lưu ý rằng tất cả điều này có thể xảy ra ngay cả khi không có nhà khoa học dữ liệu nào chủ động âm mưu hoặc thậm chí là có nhận thức về nó.
+Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình học được từ những bất công trong quá khứ.
+Lưu ý rằng tất cả vấn đề trên có thể xảy ra mà không hề có tác động xấu nào của nhà khoa học dữ liệu hoặc thậm chí họ còn không ý thức được về các vấn đề đó.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
@@ -2490,6 +2490,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Đoàn Võ Duy Thanh
+* Phạm Chí Thành
 
 <!-- Phần 7 -->
 *
