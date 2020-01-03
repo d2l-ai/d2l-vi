@@ -2294,7 +2294,7 @@ Việc này đạt được bằng các áp dụng thêm nhiễu :cite:`Bishop.1
 -->
 
 * Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
-:cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một <!--wtf??--> cấu trúc con trỏ có thể học được. <!-- khả huấn?-->
+:cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một  cấu trúc con trỏ có thể học được.
 Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này cho phép tăng đáng kể độ chính xác của các câu dài bởi mô hình không cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
 <!--
@@ -2358,7 +2358,7 @@ Trong rất nhiều trường hợp, một GPU là không đủ để xử lý m
 Khả năng xây dựng các thuật toán huấn luyện phân bổ song song đã cải tiến đáng kể trong thập kỷ vừa rồi.
 Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào việc xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
 Đồng thời, batch nhỏ hạn chế sự hiệu quả của GPU.
-Bởi vậy, huấn luyện trên 1024 GPU với kích thước minibatch, chẳng hạn 32 ảnh trong một batch, cấu thành một minimath lớn với 32 ngàn ảnh.
+Bởi vậy, huấn luyện trên 1024 GPU với 32 ảnh trong một batch chẳng hạn, sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
 Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sau đó là :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
 
 
@@ -2374,11 +2374,11 @@ Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sa
   other. Simulation provides such an avenue.
 -->
 
-* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự tiến triển của học tăng cường, ít nhất bất cứ khi nào có lựa chọn là tạo môi trường giả lập.
-Việc này đã dẫn tới một tiến triển đáng kể trong việc các máy tính đạt được chất lượng vượt con người trong cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo). 
+* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự tiến triển của học tăng cường, ít nhất là khi có thể tạo và sử dụng môi trường giả lập.
+Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo)  khi máy tính đạt được chất lượng vượt con người. 
 Xem thêm mô tả về cách đạt được điều này trong Alphago tại :cite:`Silver.Huang.Maddison.ea.2016`.
 Tóm lại, học tăng cường làm việc tốt nhất nếu có sẵn cực nhiều bộ (trạng thái, hành động, phần thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
-Mô phẳng cung cấp <!-- TODO -->
+Mô phỏng giả lập cung cấp một môi trường như thế.
 
 <!--
 * Deep Learning frameworks have played a crucial role
@@ -2399,10 +2399,10 @@ Mô phẳng cung cấp <!-- TODO -->
 -->
 
 * Các nền tảng Học Sâu đóng một vai trò thiết yếu trong việc thực hiện hóa các ý tưởng.
-Thế hệ các nền tảng đầu tiên cho phép mô hình hóa dễ dàng bao gồm [Caffe](https://github.com/BVLC/caffe), [Torch](https://github.com/torch), và [Theano](https://github.com/Theano/Theano).
+Các framework thế hệ đầu tiên cho phép dễ dàng mô hình hóa bao gồm [Caffe](https://github.com/BVLC/caffe), [Torch](https://github.com/torch), và [Theano](https://github.com/Theano/Theano).
 Rất nhiều bài báo được viết về cách sử dụng các công cụ này.
 Hiện tại, chúng bị thay thế bởi [TensorFlow](https://github.com/tensorflow/tensorflow), thường được sử dụng thông qua API mức cao [Keras](https://github.com/keras-team/keras), [CNTK](https://github.com/Microsoft/CNTK), [Caffe 2](https://github.com/caffe2/caffe2) và [Apache MxNet](https://github.com/apache/incubator-mxnet).
-Thế hệ thứ ba của các công cụ -- công cụ <!-- TODO --> cho học sâu -- được <!-- TODO --> bởi [Chainer](https://github.com/chainer/chainer), công cụ này sử dụng cú pháp tương tự như Python NumPy để mô tả các mô hình.
+Thế hệ công cụ thứ ba -- công cụ học sâu dạng mệnh lệnh -- được tiên phong bởi [Chainer](https://github.com/chainer/chainer), công cụ này sử dụng cú pháp tương tự như Python NumPy để mô tả các mô hình.
 Ý tưởng này được áp dụng bởi [PyTorch](https://github.com/pytorch/pytorch) và [Gluon API](https://github.com/apache/incubator-mxnet) của MXNet.
 Khóa học này sử dụng nhóm công cụ cuối cùng để dạy về học sâu.
 
@@ -2419,7 +2419,7 @@ putting it firmly into the grasp of programmers.
 -->
 
 Sự phân chia công việc giữa (i) các nhà nghiên cứu hệ thống xây dựng các công cụ tốt hơn và (ii) các nhà mô hình hóa thống kê xây dựng các mạng tốt hơn đã đơn giản hóa công việc một cách đáng kể.
-Ví dụ, huấn luyện một mô hình hồi quy logistic tuyến tính từng là một bài tập về nhà không đơn giản cho những sinh viên mới ngành học máy tại Đại học Carnegie Mellon năm 2014.
+Ví dụ, huấn luyện một mô hình hồi quy logistic tuyến tính từng là một bài tập về nhà không đơn giản cho tân nghiên cứu sinh tiến sĩ ngành học máy tại Đại học Carnegie Mellon năm 2014.
 Hiện tại, tác vụ này có thể đạt được với ít hơn 10 dòng mã, khiến việc này trở nên đơn giản với các lập trình viên.
 
 <!-- =================== Kết thúc dịch Phần 30 ==================== -->
