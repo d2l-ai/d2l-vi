@@ -2544,7 +2544,7 @@ while trying to solve general tasks.
 -->
 
 May mắn thay, chúng ta còn xa một hệ thống AI có cảm xúc sẵn sàng điều khiển chủ nhân của nó (hay đốt cháy cà phê của họ).
-Thứ nhất, các hệ thống Ai được thiết kế, huấn luyện và triển khai trong một môi trường cụ thể hướng mục đích.
+Thứ nhất, các hệ thống AI được thiết kế, huấn luyện và triển khai trong một môi trường cụ thể hướng mục đích.
 Trong khi hành vi của chúng có thể tạo ra ảo giác về trí tuệ phổ quát, đó là một tổ hợp của các quy tắc và các mô hình thống kê.
 Thứ hai, hiện tại các công cụ cho *trí tuệ nhân tạo phổ quát* đơn giản là không tồn tại.
 Chúng không thể tự cải thiện, hoài nghi bản thân, không thể thay đổi, mở rộng và tự cải thiện cấu trúc trong khi cố gắng giải quyết các tác vụ thông thường.
