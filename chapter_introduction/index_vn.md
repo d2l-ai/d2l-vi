@@ -2581,12 +2581,12 @@ than the potential of malevolent superintelligence to destroy humanity.
 * Học máy nghiên cứu cách các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện cất lượng trong những tác vụ cụ thể. Nó bao gồm các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. Nó thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
 
 * Là một nhóm về học máy, học biểu diễn (_representational learning_) tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
-Điều này thường đạt được bởi một quá trình biến đổi được huấn luyện.
+Điều này thường đạt được bằng cách học một quá trình biến đổi gồm nhiều bước.
 
 * Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiến triển đáng kể trong điện toán, chủ yếu bằng GPU.
 
 * Tối ưu hóa cả hệ thống là một thành phần quan trọng trong việc đạt được chất lượng tốt.
-Sự sẵn có của các nền tảng học sâu hiệu quả giúp việc thiết kế và triển khai việc này dễ hơn một cách đáng kể.
+Sự sẵn có của các framework học sâu hiệu quả giúp việc thiết kế và triển khai việc này dễ hơn một cách đáng kể.
 
 <!--
 ## Exercises
@@ -2602,7 +2602,7 @@ Sự sẵn có của các nền tảng học sâu hiệu quả giúp việc thi�
 -->
 
 1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", nghĩa là có thể được cải thiện bằng cách học và tự động xác định lựa chọn thiết kế?
-Mã nguồn của bạn có bao gồm các lựa chọn thiết kế heuristic không? <!-- TODO -->
+Mã nguồn của bạn có sử dụng các quy tắc thiết kế dựa trên trực giác không ?
 
 2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng không có cách cụ thể nào tự động hóa chúng?
 Những bài toán này có thể là ứng viên cho việc áp dụng học sâu.
