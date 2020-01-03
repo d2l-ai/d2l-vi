@@ -2275,7 +2275,7 @@ over the past decade.
   for training purposes.
 -->
 * Các phương pháp tiên tiến trong việc kiểm soát sức chứa, như Dropout :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`, đã giúp làm giảm sự nguy hiểm của quá khớp.
-Việc này đạt được bằng các áp dụng <> nhiễu :cite:`Bishop.1995` trong mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
+Việc này đạt được bằng các áp dụng thêm nhiễu :cite:`Bishop.1995` xuyên suốt khắp mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
 
 <!--
 * Attention mechanisms solved a second problem
@@ -2293,9 +2293,9 @@ Việc này đạt được bằng các áp dụng <> nhiễu :cite:`Bishop.1995
   commencing the generation of a new sentence.
 -->
 
-* Cơ chế tập trung giải quyết vấn đề thứ hai của thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
+* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
 :cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một <!--wtf??--> cấu trúc con trỏ có thể học được. <!-- khả huấn?-->
-Thay vì phải nhớ toàn bộ câu, ví dụ cho dịch máy với cách biểu diễn với số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này cho phép tăng đáng kể độ chính xác của các câu dài bởi mô hình không cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
+Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này cho phép tăng đáng kể độ chính xác của các câu dài bởi mô hình không cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
 <!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
@@ -2305,8 +2305,8 @@ Thay vì phải nhớ toàn bộ câu, ví dụ cho dịch máy với cách bi�
   in a chain of reasoning, similar to how a processor
   can modify memory for a computation.
 -->
-* Thiết kế nhiều bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Programmer-Interpreter Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các bộ mô hình hóa thống kê mô tả các hướng tiếp cận lặp cho <thảo luận> (_reasoning_).
-Các công cụ này cho phép một bước bên thong của mạng nơ-ron sâu được biến đổi lặp lại, bởi vậy chuyển các bước tiếp theo trong một chuỗi <thảo luận>, tương tự như cách một bộ xử lý thay đổi bộ nhớ cho một phép tính toán.
+* Thiết kế nhiều bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Programmer-Interpreter Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kì.
+Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đấy có thể thực hiện một chuỗi các bước suy luận. Điều này tương tự như cách bộ vi xử lý chỉnh sửa bộ nhớ đệm khi thực hiện một phép tính toán.
 <!-- Thực sự mình cũng không hiểu vừa dịch cái gì, chờ thảo luận với mọi người -->
 
 <!--
@@ -2331,7 +2331,7 @@ Các công cụ này cho phép một bước bên thong của mạng nơ-ron sâ
 Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật độ xác suất và các mô hình sinh (_generative models_) tập trung vào việc tìm các phân phối xác suất hợp lý và các thuật toán (thường là gần đúng) để lấy mẫu từ các phân phối đó.
 Kết quả là, những thuật toán này bị hạn chế bởi sự thiếu linh động kế thừa từ các mô hình thống kê.
 Phát kiến quan trọng của GAN là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi [có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm].
-Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (<!--filled later -->) không thể phân biệt dữ liệu thật và giả.
+Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (giống như bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
 Qua khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu, nó phát triển phương pháp đánh giá hàm mật độ xác suất thành một loạt các kỹ thuật.
 Các ví dụ về <!-- TODO --> Ngựa vằn :cite:`Zhu.Park.Isola.ea.2017` và các khuôn mặt người nổi tiếng giả là các minh chứng của quá trình này.
 
