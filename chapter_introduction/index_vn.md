@@ -2340,7 +2340,7 @@ and provided predictable results with strong theoretical guarantees.
 ## The Road to Deep Learning
 -->
 
-## *dịch tiêu đề phía trên*
+## Con đường tới Học Sâu
 
 <!--
 Much of this changed with the ready availability of large amounts of data,
@@ -2353,13 +2353,15 @@ became relevant (and vice versa).
 This is best illustrated in :numref:`tab_intro_decade`.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều trong số này thay đổi với sự sẵn có của lượng lớn dữ liệu nhờ vào Mạng Lưới Toàn Cầu (World Wide Web), sự phát triển của các công ty với hàng triệu người dùng trực tuyến, sự phổ biến của các cảm biến rẻ với chất lượng cao, bộ lưu trữ dữ liệu rẻ (luật Kryder), và tính toán chi phí thấp (theo luật Moore), đặc biệt là các GPU - mà ban đầu được thiết kế cho trò chơi máy tính.
+Bỗng nhiên các thuật toán và mô hình tưởng chừng như không khả thi về mặt tính toán trở nên có thể.
+Điều này được minh họa trong :numref:`tab_intro_decade`.
 
 <!--
 :Dataset versus computer memory and computational power
 -->
 
-*dịch đoạn phía trên*
+:Liên hệ giữa tập dữ liệu với bộ nhớ máy tính và năng lực tính toán
 
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
@@ -2370,6 +2372,16 @@ This is best illustrated in :numref:`tab_intro_decade`.
 |2000|10 M (web pages)|100 MB|1 GF (Intel Core)|
 |2010|10 G (advertising)|1 GB|1 TF (Nvidia C2050)|
 |2020|1 T (social network)|100 GB|1 PF (Nvidia DGX-2)|
+:label:`tab_intro_decade`
+-->
+|Thập kỷ|Tập dữ liệu|Bộ nhớ|Số lượng phép tính dấu phẩy động trên giây|
+|:--|:-|:-|:-|
+|1970|100 (Iris)|1 KB|100 KF (Intel 8080)|
+|1980|1 K (Giá nhà ở Boston)|100 KB|1 MF (Intel 80186)|
+|1990|10 K (Nhận dạng ký tự quang học)|10 MB|10 MF (Intel 80486)|
+|2000|10 M (các trang web)|100 MB|1 GF (Intel Core)|
+|2010|10 G (quảng cáo)|1 GB|1 TF (Nvidia C2050)|
+|2020|1 T (mạng xã hội)|100 GB|1 PF (Nvidia DGX-2)|
 :label:`tab_intro_decade`
 
 <!--
@@ -2392,7 +2404,10 @@ were essentially "rediscovered" in the past decade,
 after laying comparatively dormant for considerable time.
 -->
 
-*dịch đoạn phía trên*
+Sự thật là RAM đã không theo kịp với tốc độ phát triển của dữ liệu.
+Đồng thời, sự tiến bộ trong năng lực tính toán đã vượt lên sự sẵn có của dữ liệu.
+Điều này nghĩa là các mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (thường đạt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số bởi khả năng tính toán đã tăng. Kéo theo đó, tiêu điểm trong học máy và thống kê đã dịch chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
+Đây cũng là một trong những lý do những kỹ thuật cổ điển trong học sâu như perceptron đa tầng :cite:`McCulloch.Pitts.1943`, mạng nơ-ron tích chập, :cite:`LeCun.Bottou.Bengio.ea.1998`, bộ nhớ ngắn hạn dài (_Long Short-Term Memory_ -- LSTM) :cite:`Hochreiter.Schmidhuber.1997`, và học Q :cite:`Watkins.Dayan.1992`, đã được "tái khám phá" trong thập kỷ trước, sau khi tương đối chìm trong một khoảng thời gian dài.
 
 <!--
 The recent progress in statistical models, applications, and algorithms,
@@ -2405,7 +2420,9 @@ of the ideas that have helped researchers achieve tremendous progress
 over the past decade.
 -->
 
-*dịch đoạn phía trên*
+Những tiến bộ gần đây trong các mô hình thống kê, các ứng dụng và các thuật toán đôi khi được liên hệ với Sự bùng nổ kỷ Cambry: thời điểm phát triển nhanh chóng trong sự tiến hoá của các loài.
+Thật sự, các kĩ thuật tiên tiến nhất hiện nay không chỉ đơn thuần là các kĩ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
+Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đang được những thành tựu khổng lồ trong thập kỉ vừa qua.
 
 <!-- =================== Kết thúc dịch Phần 29 ==================== -->
 
