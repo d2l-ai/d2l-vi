@@ -2423,7 +2423,7 @@ and machine learning are pervasive, albeit often hidden from sight.
 -->
 
 Trí Tuệ Nhân Tạo có một lịch sử lâu dài trong việc mang đến những kết quả khó có thể đạt được bằng các phương pháp khác.
-Ví dụ, thư tín được sắp xếp sử dụng nhận dạng ký tự quang.
+Ví dụ, thư tín được sắp xếp sử dụng công nghệ nhận dạng ký tự quang.
 Những hệ thống này được triển khai từ những năm 90 (đây là nguồn của các bộ dữ liệu chữ viết tay nổi tiếng MNIST và USPS).
 Các hệ thống tương tự áp dụng vào đọc ngân phiếu nộp tiền vào ngân hàng và tính điểm tín dụng cho ứng viên.
 Các giao dịch tài chính được kiểm tra lừa đảo một cách tự động.
