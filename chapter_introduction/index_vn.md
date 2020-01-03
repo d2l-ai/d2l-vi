@@ -2208,7 +2208,7 @@ became relevant (and vice versa).
 This is best illustrated in :numref:`tab_intro_decade`.
 -->
 
-Rất nhiều trong số này thay đổi với sự sẵn có của lượng lớn dữ liệu nhờ vào World Wide Web, sự phát triển của các công ty với hàng triệu người dùng online, sự phổ biến của các cảm biến rẻ, chất lượng cao, bộ nhớ dữ liệu rẻ (luật Kryder), và tính toán chi phí thấp (luật Moore), đặc biệt là các GPU ban đầu được thiết kế cho chơi game.
+Rất nhiều trong số này thay đổi với sự sẵn có của lượng lớn dữ liệu nhờ vào World Wide Web, sự phát triển của các công ty với hàng triệu người dùng online, sự phổ biến của các cảm biến rẻ chất lượng cao, bộ nhớ dữ liệu rẻ (luật Kryder), và tính toán chi phí thấp (luật Moore), đặc biệt là các GPU ban đầu được thiết kế cho chơi game.
 Bỗng nhiên các thuật toán và mô hình tưởng chừng như không khả thi về mặt tính toán trở nên có thể.
 Điều này được minh họa trong :numref:`tab_intro_decade`.
 
@@ -2234,7 +2234,7 @@ Bỗng nhiên các thuật toán và mô hình tưởng chừng như không kh�
 |1970|100 (Iris)|1 KB|100 KF (Intel 8080)|
 |1980|1 K (Giá nhà ở Boston)|100 KB|1 MF (Intel 80186)|
 |1990|10 K (Nhận dạng ký tự quang học)|10 MB|10 MF (Intel 80486)|
-|2000|10 M (trang webs)|100 MB|1 GF (Intel Core)|
+|2000|10 M (các trang web)|100 MB|1 GF (Intel Core)|
 |2010|10 G (quảng cáo)|1 GB|1 TF (Nvidia C2050)|
 |2020|1 T (mạng xã hội)|100 GB|1 PF (Nvidia DGX-2)|
 :label:`tab_intro_decade`
@@ -2259,7 +2259,7 @@ were essentially "rediscovered" in the past decade,
 after laying comparatively dormant for considerable time.
 -->
 
-Sự thật là RAM đã không phát triển cùng với sự lớn lên của dữ liệu.
+Sự thật là RAM đã không theo kịp với sự phát triển của dữ liệu.
 Đồng thời, sự tiến bộ trong năng lực tính toán đã vượt lên sự sẵn có của dữ liệu.
 Điều này nghĩa là các mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (điều này thường đặt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số bởi chi phí tính toán tăng. Kéo theo đó, <sweek spot> trong học máy và thống kê dịch chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
 Đây cũng là một trong những lý do những kỹ thuật cổ điển trong học sâu như perceptron đa tầng :cite:`McCulloch.Pitts.1943`, mạng nơ-ron tích chập, :cite:`LeCun.Bottou.Bengio.ea.1998`, bộ nhớ ngắn hạn hướng dài hạn (_Long Short-Term Memory_) :cite:`Hochreiter.Schmidhuber.1997`, và học Q :cite:`Watkins.Dayan.1992`, đã được "tái khám phá" trong thập kỷ trước, sau khi tương đối chìm trong một khoảng thời gian dài.
@@ -2275,7 +2275,9 @@ of the ideas that have helped researchers achieve tremendous progress
 over the past decade.
 -->
 
-Những tiến bộ gần đây trong các mô hình thống kê, các ứng dụng và các thuật toán đôi khi được liên hệ với Sự Bùng Nổ Cambrian: thời điểm phát triể nhanh chóng trong sự tiến hoá của các loài.
+Những tiến bộ gần đây trong các mô hình thống kê, các ứng dụng và các thuật toán đôi khi được liên hệ với Sự Bùng Nổ Cambrian: thời điểm phát triển nhanh chóng trong sự tiến hoá của các loài.
+Thật sự, các kĩ thuật tiên tiến nhất hiện nay không chỉ đơn thuần là các kĩ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
+Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đang được những thành tựu khổng lồ trong thập kỉ vừa qua.
 
 <!-- =================== Kết thúc dịch Phần 29 ==================== -->
 
