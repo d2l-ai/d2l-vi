@@ -2261,7 +2261,7 @@ after laying comparatively dormant for considerable time.
 
 Sự thật là RAM đã không theo kịp với sự phát triển của dữ liệu.
 Đồng thời, sự tiến bộ trong năng lực tính toán đã vượt lên sự sẵn có của dữ liệu.
-Điều này nghĩa là các mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (điều này thường đặt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số bởi chi phí tính toán tăng. Kéo theo đó, <sweek spot> trong học máy và thống kê dịch chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
+Điều này nghĩa là các mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (điều này thường đạt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số bởi khả năng tính toán đã tăng. Kéo theo đó, tiêu điểm trong học máy và thống kê đã dịch chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
 Đây cũng là một trong những lý do những kỹ thuật cổ điển trong học sâu như perceptron đa tầng :cite:`McCulloch.Pitts.1943`, mạng nơ-ron tích chập, :cite:`LeCun.Bottou.Bengio.ea.1998`, bộ nhớ ngắn hạn hướng dài hạn (_Long Short-Term Memory_) :cite:`Hochreiter.Schmidhuber.1997`, và học Q :cite:`Watkins.Dayan.1992`, đã được "tái khám phá" trong thập kỷ trước, sau khi tương đối chìm trong một khoảng thời gian dài.
 
 <!--
