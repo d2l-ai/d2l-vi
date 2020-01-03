@@ -2677,7 +2677,9 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
 Again, the above list barely scratches the surface of where machine learning has impacted practical applications. For instance, robotics, logistics, computational biology, particle physics, and astronomy owe some of their most impressive recent advances at least in parts to machine learning. ML is thus becoming a ubiquitous tool for engineers and scientists.
 -->
 
-*dịch đoạn phía trên*
+Danh sách trên đây chỉ lướt qua những ứng dụng mà học máy có ảnh hưởng lớn.
+Ngoài ra, robot, hậu cần, sinh học điện toán, vật lý hạt và thiên văn học cũng tạo ra những thành quả ấn tượng gần đây phần nào nhờ vào học máy.
+Bởi vậy, Học Máy đang trở thành một công cụ phổ biến cho các kỹ sư và nhà khoa học.
 
 <!--
 Frequently, the question of the AI apocalypse, or the AI singularity
@@ -2692,7 +2694,10 @@ whether to grant bail use statistical data as input.
 More frivolously, we can ask Alexa to switch on the coffee machine.
 -->
 
-*dịch đoạn phía trên*
+Gần đây, câu hỏi về ngày tận thế do AI, hay điểm kì dị (*singularity*) của AI đã được nhắc tới trong các bài viết phi kỹ thuật về AI.
+Đã có những nỗi lo sợ về việc các hệ thống học máy bằng cách nào đó sẽ trở nên có cảm xúc và ra quyết định độc lập với những lập trình viên (và chủ nhân) về những điều ảnh hưởng trực tiếp tới sự sống của nhân loại.
+Trong phạm vi nào đó, AI đã ảnh hưởng tới sự sống của con người một cách trực tiếp, chẳng hạn như điểm tín dụng được tính tự động, tự động điều hướng xe hơi, hay các quyết định về việc liệu có chấp nhận bảo lãnh hay không sử dụng đầu vào là dữ liệu thống kê.
+Phù phiếm hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
 
 <!--
 Fortunately, we are far from a sentient AI system
@@ -2708,7 +2713,11 @@ extend and improve their own architecture
 while trying to solve general tasks.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, chúng ta còn xa một hệ thống AI có cảm xúc sẵn sàng điều khiển chủ nhân của nó (hay đốt cháy cà phê của họ).
+Thứ nhất, các hệ thống AI được thiết kế, huấn luyện và triển khai trong một môi trường cụ thể hướng mục đích.
+Trong khi hành vi của chúng có thể tạo ra ảo giác về trí tuệ phổ quát, đó là một tổ hợp của các quy tắc và các mô hình thống kê.
+Thứ hai, hiện tại các công cụ cho *trí tuệ nhân tạo phổ quát* đơn giản là không tồn tại.
+Chúng không thể tự cải thiện, hoài nghi bản thân, không thể thay đổi, mở rộng và tự cải thiện cấu trúc trong khi cố gắng giải quyết các tác vụ thông thường.
 
 <!--
 A much more pressing concern is how AI is being used in our daily lives.
@@ -2729,7 +2738,13 @@ With what we know today, this strikes us a much more pressing concern
 than the potential of malevolent superintelligence to destroy humanity.
 -->
 
-*dịch đoạn phía trên*
+Một mối lo cấp bách hơn đó là AI có thể được sử dụng trong cuộc sống thường nhật như thế nào.
+Nhiều khả năng rất nhiều tác vụ đơn giản đang được thực hiện bởi tài xế xe tải và trợ lý cửa hàng có thể và sẽ bị tự động hóa.
+Các robot nông trại sẽ không những có khả năng làm giảm chi phí của nông nghiệp hữu cơ mà còn tự động hóa quá trình thu hoạch.
+Thời điểm này của cuộc cách mạng công nghiệp có thể có những hậu quả lan rộng khắp toàn xã hội (tài xế xe tải và trợ lý cửa hàng là một vài trong số những ngành phổ biến nhất ở nhiều địa phương). <!-- state = bang của Mỹ -->
+Hơn nữa, các mô hình thống kê, khi được áp dụng không cẩn thận, có thể dẫn đến các quyết định phân biệt chủng tộc, giới tính hoặc tuổi tác và gây nên những nỗi lo có cơ sở về tính công bằng nếu chúng được tự động hóa để đưa ra các quyết định có nhiều hệ lụy.
+Việc sử dụng các thuật toán này một cách cẩn thận là rất quan trọng.
+Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo lớn hơn tiềm năng hủy diệt loài người của các hệ siêu trí tuệ. 
 
 <!-- =================== Kết thúc dịch Phần 33 ==================== -->
 
