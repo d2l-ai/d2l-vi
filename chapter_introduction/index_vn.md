@@ -547,7 +547,9 @@ If we wanted to train a model to recognize cancer in microscopy images,
 fixed-length inputs means we have one less thing to worry about.
 -->
 
-*dịch đoạn phía trên*
+Khi mỗi mẫu được biểu diễn bởi cùng một số lượng các giá trị, ta nói rằng dữ liệu bao gồm các vector có *độ dài cố định* và ta mô tả độ dài (không đổi) của vector là *chiều* của dữ liệu.
+Bạn có thể hình dung, chiều dài cố định có thể là một thuộc tính thuận tiện.
+Nếu ta mong muốn huấn luyện một mô hình để nhận biết ung thư qua hình ảnh từ kính hiển vi, độ dài cố định của đầu vào sẽ giúp ta loại bỏ một vấn đề cần quan tâm.
 
 <!--
 However, not all data can easily be represented as fixed length vectors.
@@ -566,7 +568,14 @@ is the comparative grace with which modern models
 can handle *varying-length* data.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có độ dài cố định.
+Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng được.
+Đối với hình ảnh, ta có thể tính đến việc cắt xén nhằm đưa chúng về kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
+Và ta có nguy cơ sẽ mất đi thông tin trong các phần bị cắt bỏ. 
+Hơn nữa, dữ liệu văn bản không thích hợp với cách biểu diễn dưới dạng vector có độ dài cố định.
+Suy xét một chút về những đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
+Ta có thể thấy được số bình luận ngắn gọn như: "nó bốc mùi!", một số khác thì bình luận lan man hàng trang.
+Một lợi thế lớn của học sâu so với các phương pháp truyền thống đó là các mô hình học sâu hiện đại có thể xử lý dữ liệu có *độ dài biến đổi* một cách uyển chuyển hơn.
 
 <!--
 Generally, the more data we have, the easier our job becomes.
@@ -579,7 +588,11 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc sẽ suôn sẻ hơn.
+Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
+Việc chuyển từ dữ liệu nhỏ sang dữ liệu lớn là một đóng góp chính cho sự thành công của học sâu hiện đại.
+Để cho rõ hơn, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
+Một số người vẫn áp dụng học sâu với số dữ liệu ít ỏi mà mình có được, nhưng trong trường hợp này nó không tốt hơn các cách tiếp cận truyền thống.
 
 <!--
 Finally it is not enough to have lots of data and to process it cleverly.
@@ -606,7 +619,16 @@ Note that this can all happen without the data scientist
 actively conspiring, or even being aware.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, có nhiều dữ liệu và xử lý dữ liệu một cách khéo léo thôi thì chưa đủ.
+Ta cần những dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, hoặc nếu các đặc trưng được chọn lại không dự đoán được số lượng mục tiêu cần quan tâm, việc học sẽ thất bại.
+Tình huống trên có thể được khái quát bởi thuật ngữ: *đưa rác vào thì nhận rác ra* (*garbage in, garbage out*).
+Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
+Trong các ứng dụng học máy có tính nhạy cảm như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
+Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
+Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
+Thất bại cũng có thể xảy ra khi dữ liệu không đại diện đầy đủ và chính xác cho một số nhóm người, nhưng lại đánh giá nhóm người này dựa vào định kiến của xã hội.
+Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình học được từ những bất công trong quá khứ.
+Lưu ý rằng tất cả vấn đề trên có thể xảy ra mà không hề có tác động xấu nào của nhà khoa học dữ liệu hoặc thậm chí họ còn không ý thức được về các vấn đề đó.
 
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
@@ -2764,7 +2786,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 6 -->
-*
+* Đoàn Võ Duy Thanh
+* Phạm Chí Thành
 
 <!-- Phần 7 -->
 *
