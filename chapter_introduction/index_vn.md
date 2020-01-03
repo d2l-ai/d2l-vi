@@ -2398,7 +2398,7 @@ Mô phỏng giả lập cung cấp một môi trường như thế.
   It is the latter group that this course uses to teach deep learning.
 -->
 
-* Các nền tảng Học Sâu đóng một vai trò thiết yếu trong việc thực hiện hóa các ý tưởng.
+* Các framework Học Sâu đóng một vai trò thiết yếu trong việc thực hiện hóa các ý tưởng.
 Các framework thế hệ đầu tiên cho phép dễ dàng mô hình hóa bao gồm [Caffe](https://github.com/BVLC/caffe), [Torch](https://github.com/torch), và [Theano](https://github.com/Theano/Theano).
 Rất nhiều bài báo được viết về cách sử dụng các công cụ này.
 Hiện tại, chúng bị thay thế bởi [TensorFlow](https://github.com/tensorflow/tensorflow), thường được sử dụng thông qua API mức cao [Keras](https://github.com/keras-team/keras), [CNTK](https://github.com/Microsoft/CNTK), [Caffe 2](https://github.com/caffe2/caffe2) và [Apache MxNet](https://github.com/apache/incubator-mxnet).
