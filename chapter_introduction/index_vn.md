@@ -2491,7 +2491,7 @@ Các kết quả kinh ngạc tương tự cũng đạt được trong việc xá
 * Các trò chơi từng là một pháo đài của trí tuệ loài người.
 Bắt đầu từ TDGammon [23], một chương chình chơi Backgammon (một môn cờ) sử dụng học tăng cường sai khác thời gian (_temporal difference_ -- TD), tiến triển trong giải thuật và tính toán đã dẫn đến các thuật toán cho một loạt các ứng dụng.
 Không giống Backgamon, cờ tướng có một không gian trạng thái phức tạp hơn nhiều tập các nước đi.
-DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng các hệ song song khổng lồ, phần cứng cho mục đích đặc biệt và tìm kiếm hiệu quả trên toàn bộ cây các nước đi của trò chơi.
+DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
 Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
 Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
 Thách thức trong Poker là không gian trạng thái lớn và nó không được quan sát hoàn toàn (ta không biết các quân bài của đối thủ).
@@ -2512,10 +2512,10 @@ Những điều này thể hiện một tiến triển ấn tượng trong các 
 -->
 
 * Dấu hiệu khác của tiến triển trong AI là sự phát triển của xe hơi và xe tải tự lái.
-Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất cho phép tự động từng phần.
+Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất hỗ trợ bán tự động.
 Điều khiến tự động hoàn toàn mang nhiều thách thức là việc lái xe chuẩn mực đòi khỏi khả năng tiếp nhận, suy đoán và tích hợp các quy tắc vào hệ thống.
 Tại thời điểm hiện tại, học máy được sử dụng chủ yếu trong phần thị giác máy tính của các bài toán này.
-Phần còn lại được điều chỉnh bởi các kỹ sư.
+Phần còn lại vẫn phụ thuộc chủ yếu bởi những điều chỉnh của các kỹ sư.
 
 <!-- =================== Kết thúc dịch Phần 32 ==================== -->
 
