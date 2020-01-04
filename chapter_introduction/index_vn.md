@@ -2223,7 +2223,7 @@ of the parameters in a neural network.
 -->
 
 Một ảnh hưởng khác có thể được tìm thấy trong khoa học thần kinh và tâm lý học.
-Sau cùng, loài người thể hiện rất rõ ràng bản năng thông minh của mình.
+Trên hết, loài người thể hiện rất rõ ràng hành vi thông minh của mình.
 Sẽ là hợp lý nếu chúng ta có thể giải thích và phân tích ngược khả năng này.
 Một trong những thuật toán lâu đời nhất lấy cảm hứng từ câu hỏi trên được giới thiệu bởi [Donald Hebb (1904-1985)](https://en.wikipedia.org/wiki/Donald_O._Hebb).
 Trong cuốn sách đột phá của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng cách dựa trên những phản hồi tích cực.
