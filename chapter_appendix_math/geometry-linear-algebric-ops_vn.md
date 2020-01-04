@@ -1430,7 +1430,7 @@ Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng
 ### Expressing in Code
 -->
 
-### Biểu diễn bằng viết mã
+### Biểu diễn khi lập trình
 
 <!--
 Tensors may flexibly be operated on in code as well.
@@ -1502,7 +1502,7 @@ by providing integer indices for each tensor.
 For example, the same tensor contraction can also be written as:
 -->
 
-Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách viết mã.
+Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách lập trình.
 Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
 Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
