@@ -1397,7 +1397,7 @@ Let's see how many of the linear algebraic definitions
 we have seen before can be expressed in this compressed tensor notation:
 -->
 
-Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã học dưới dạng compressed tensor này:
+Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã học dưới biểu diễn tensor nén gọn này:
 
 <!--
 * $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
@@ -1423,7 +1423,7 @@ Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng
 ### Expressing in Code
 -->
 
-### Biểu diễn bằng code
+### Biểu diễn bằng viết mã
 
 <!--
 Tensors may flexibly be operated on in code as well.
@@ -1431,7 +1431,7 @@ As seen in :numref:`sec_linear-algebra`,
 we can create tensors as is shown below.
 -->
 
-Tensor cũng có thể được thao tác linh hoạt bằng code.
+Tensor cũng có thể được thao tác linh hoạt dưới dạng mã.
 Như đã thấy ở :numref:`sec_linear-algebra`, ta có thể tạo tensor bằng những cách bên dưới.
 
 ```{.python .input}
@@ -1495,7 +1495,7 @@ by providing integer indices for each tensor.
 For example, the same tensor contraction can also be written as:
 -->
 
-Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động từ code.
+Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách viết mã.
 Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
 Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
