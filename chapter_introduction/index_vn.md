@@ -2375,9 +2375,9 @@ Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sa
 -->
 
 * Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là khi có thể tạo và sử dụng môi trường giả lập.
-Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo)  khi máy tính đạt được chất lượng vượt mức con người. 
+Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo) khi máy tính đạt được chất lượng vượt mức con người. 
 Xem thêm mô tả về cách đạt được điều này trong Alphago tại :cite:`Silver.Huang.Maddison.ea.2016`.
-Tóm lại, học tăng cường làm việc tốt nhất nếu có sẵn cực nhiều bộ (trạng thái, hành động, phần thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
+Tóm lại, học tăng cường làm việc tốt nhất nếu có sẵn cực nhiều bộ (trạng thái, hành động, điểm thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
 Mô phỏng giả lập cung cấp một môi trường như thế.
 
 <!--
