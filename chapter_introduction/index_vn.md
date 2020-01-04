@@ -2044,11 +2044,11 @@ relating current and voltage in a resistor
 is perfectly described by a linear model.
 -->
 
-Mặc dù có nhiều phương pháp học sâu là những phát minh gần đây, nhưng mong muốn phân tích dữ liệu để dự đoán kết quả tương lai của con người đã tồi tại trong nhiều thế kỷ.
+Mặc dù có nhiều phương pháp học sâu được phát minh gần đây, nhưng mong muốn phân tích dữ liệu để dự đoán kết quả tương lai của con người đã tồi tại trong nhiều thế kỷ.
 Và trong thực tế, phần lớn khoa học tự nhiên đều có nguồn gốc từ điều này.
 Ví dụ, bản phân phối Bernoulli được đặt theo tên của [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli), và bản phân phối Gausian được phát hiện bởi [Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
-Ông đã phát minh ra thuật toán bình phương nhỏ nhất, thuật toán này vẫn được sử dụng cho rất nhiều vấn đề từ tính toán bảo hiểm cho đến chẩn đoán y khoa.
-Những công cụ này đã mở đường cho một cách tiếp cận trong việc thử nghiệm với khoa học tự nhiên -- ví dụ, Định luật Ohm mô tả rằng dòng điện và điện áp trong một điện trở được diễn tả hoàn hảo bằng mô hình tuyến tính.
+Ông đã phát minh ra thuật toán trung bình bình phương nhỏ nhất, thuật toán này vẫn được sử dụng cho rất nhiều vấn đề từ tính toán bảo hiểm cho đến chẩn đoán y khoa.
+Những công cụ này đã mở đường cho một cách tiếp cận dựa trên thử nghiệm trong các ngành khoa học tự nhiên -- ví dụ, định luật Ohm mô tả rằng dòng điện và điện áp trong một điện trở được diễn tả hoàn hảo bằng một mô hình tuyến tính.
 
 <!--
 Even in the middle ages, mathematicians had a keen intuition of estimates.
@@ -2057,7 +2057,7 @@ averaging the length of 16 adult men's feet to obtain the average foot length.
 -->
 
 Ngay cả trong thời kỳ trung cổ, các nhà toán học đã có một trực giác nhạy bén trong các ước tính của mình.
-Chẳng hạn như, cuốn sách hình học của [Jacob Köbel (1460-1533)](https://www.maa.org/press/periodicals/convergence/mathematical-treasures-jacob-kobels-geometry) minh hoạ về trung bình chiều dài 16 bàn chân của những người đàn ông trưởng thành để có được chiều dài bàn chân trung bình.
+Chẳng hạn, cuốn sách hình học của [Jacob Köbel (1460-1533)](https://www.maa.org/press/periodicals/convergence/mathematical-treasures-jacob-kobels-geometry) minh hoạ việc lấy trung bình chiều dài 16 bàn chân của những người đàn ông trưởng thành để có được chiều dài bàn chân trung bình.
 
 <!--
 ![Estimating the length of a foot](../img/koebel.jpg)
@@ -2081,8 +2081,8 @@ This is one of the earliest examples of the trimmed mean estimate.
 :numref:`fig_koebel` minh hoạ cách các công cụ ước tính này hoạt động.
 16 người đàn ông trưởng thành được yêu cầu xếp hàng nối tiếp nhau khi rời nhà thờ.
 Tổng chiều dài của các bàn chân sau đó được chia cho 16 để có được ước tính trị số hiện tại tầm 1 feet.
-"Thuật toán" này đã được cải tiến ngay sau đó nhằm giải quyết trường hợp bàn chân bị biến dạng -- 2 người đàn ông có bàn chân ngắn nhất và dài nhất tương ứng được gửi đi, trung bình chỉ trong phần còn lại.
-Đây là một trong những ví dụ đầu tiên về ước tính cắt xén trung bình.
+"Thuật toán" này đã được cải tiến ngay sau đó nhằm giải quyết trường hợp bàn chân bị biến dạng -- 2 người đàn ông có bàn chân ngắn nhất và dài nhất tương ứng được loại ra, trung bình chỉ được tính trong phần còn lại.
+Đây là một trong những ví dụ đầu tiên về ước tính trung bình cắt ngọn.
 
 <!--
 Statistics really took off with the collection and availability of data.
@@ -2101,7 +2101,7 @@ in industry and the natural sciences.
 
 Thống kê thật sự khởi sắc với việc thu thập và có sẵn dữ liệu.
 Một trong số những người phi thường đã đóng góp lớn vào lý thuyết và ứng dụng của nó trong di truyền học, đó là [Ronald Fisher (1890-1962)](https://en.wikipedia.org/wiki/Ronald_Fisher).
-Nhiều thuật toán của ông (như Phân tích biệt thức tuyến tính - Linear Discriminant Analysis) hay công thức (như Ma trận thông tin Fisher - Fisher Information Matrix) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông phát hành vào năm 1936 đôi khi vẫn được sử dụng để minh hoạ cho các thuật toán học máy).
+Nhiều thuật toán của ông (như Phân tích biệt thức tuyến tính - Linear Discriminant Analysis) hay công thức (như Ma trận thông tin Fisher - Fisher Information Matrix) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông công bố năm 1936 đôi khi vẫn được sử dụng để minh hoạ cho các thuật toán học máy).
 Fisher cũng là một người ủng hộ thuyết ưu sinh, điều này luôn gợi nhớ ta về mọi sự mập mờ về góc độ đạo đức khi sử dụng khoa học dữ liệu đã tồn tại lâu đời và bền vững cùng lịch sử cũng như việc sử dụng nó trong công nghiệp và khoa học tự nhiên.
 
 <!-- =================== Kết thúc dịch Phần 27 ==================== -->
