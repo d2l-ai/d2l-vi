@@ -268,13 +268,13 @@ If a model suffers from high variance, we often say it is *overfitting* and lack
 ### Evaluating Estimators in Code
 -->
 
-### *dịch tiêu đề phía trên*
+### Đánh giá các Bộ ước lượng bằng Code
 
 <!--
 Since the standard deviation of an estimator has been implementing in MXNet by simply calling `a.std()` for a `ndarray` "a", we will skip it but implement the statistical bias and the mean squared error in MXNet.
 -->
 
-*dịch đoạn phía trên*
+Vì độ lệch chuẩn của bộ ướng lượng đã được triển khai trong MXNet bằng cách gọi `a.std()` for a `ndarray` "a", chúng ta sẽ bỏ qua bước này và thực hiện tính độ chệch thống kê và trung bình bình phương trong MXNet.
 
 ```{.python .input}
 # Statistical bias
@@ -292,7 +292,9 @@ Here, we use a $\theta = 1$ and $\sigma = 4$.
 As the estimator is a function of the given samples, here we use the mean of the samples as an estimator for true $\theta$ in this normal distribution $\mathcal{N}(\theta, \sigma^2)$ .
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cho phương trình sự đánh đổi độ chệch-phương sai, cùng thực nghiệm một phân phối chuẩn $\mathcal{N}(\theta, \sigma^2)$ với $10,000$ mẫu.
+Ở đây, chúng ta sử dụng $\theta = 1$ và $\sigma = 4$.
+Với bộ ước lượng là một hàm số từ các mẫu đã cho, ở đây chúng ta sử dụng trung bình của các mẫu như là bộ ước lượng cho giá trị thực $\theta$ trong phân phối chuẩn này $\mathcal{N}(\theta, \sigma^2)$ .
 
 ```{.python .input}
 theta_true = 1
@@ -307,7 +309,7 @@ theta_est
 Let's validate the trade-off equation by calculating the summation of the squared bias and the variance of our estimator. First, calculate the MSE of our estimator.
 -->
 
-*dịch đoạn phía trên*
+Cùng xác định phương trình đánh đổi bằng cách tính tổng độ chệch bình phương và phương sai từ bộ ước lượng của chúng ta. Đầu tiên, tính trung bình bình phương sai số của bộ ước lượng:
 
 ```{.python .input}
 mse(samples, theta_true)
@@ -317,7 +319,7 @@ mse(samples, theta_true)
 Next, we calculate $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ as below. As you can see, the two values agree to numerical precision.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta tính \mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy hai giá trị trên có giá trị gần giống nhau.
 
 ```{.python .input}
 bias = stat_bias(theta_true, theta_est)
@@ -869,7 +871,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 6 -->
 *
