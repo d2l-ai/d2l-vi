@@ -462,7 +462,7 @@ Recall that a *type I error* is error caused by rejecting the null hypothesis wh
 A type II error is usually denoted as $\beta$, and hence the corresponding statistical power is $1-\beta$.
 -->
 
-Gợi nhớ lại, *lỗi loại I* là lỗi do việc bác bỏ giả thuyết gốc khi nó là đúng, còn *lỗi loại II* xảy ra do việc không loại trừ giả thuyết gốc khi nó là sai.
+Gợi nhớ lại, *lỗi loại I* là lỗi do việc bác bỏ giả thuyết gốc khi nó là đúng, còn *lỗi loại II* xảy ra do việc không bác bỏ giả thuyết gốc khi nó là sai.
 Lỗi loại II thường được kí hiệu là $\beta$, vậy nên năng lực thống kê tương ứng là $1-\beta$.
 
 <!--
