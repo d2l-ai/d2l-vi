@@ -43,6 +43,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |---------------------|----------------------------------------------------------------|---------------|
 | classifier          | bộ phân loại                                                   |               |
+| clustering          | phân cụm                                                      |               |
 | code (danh từ)      | mã nguồn                                                       |               |
 | code (động từ)      | viết mã                                                        |               |
 | computer vision     | thị giác máy tính                                              |               |
@@ -60,6 +61,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |------------------------|----------------------------------------------------------------|---------------|
 | data                   | dữ liệu                                                        |               |
+| data science           | khoa học dữ liệu                                               |               |
+| data scientist         | nhà khoa học dữ liệu                                           |               |
 | datapoint (data point) | điểm dữ liệu                                                   |               |
 | data mismatch          | dữ liệu không tương đồng                                       |               |
 | dataset (data set)     | tập dữ liệu                                                    |               |
@@ -106,7 +109,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------|----------------------------------------------------------------|----------------------------------------------|
 | Gaussian noise   | nhiễu Gauss                                                    |                              |
 | generative model | mô hình sinh                                                   |                              |
-| gradient descent | hạ gradient )                                                  | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| generative adversarial network | mạng đối sinh                                 |                              |
+| gradient descent | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| graphical model | mô hình dạng đồ thị                                             | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
 ## H
@@ -117,6 +122,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hidden unit             | nút ẩn                                                         |                                                  |
 | human-level performance | chất lượng mức con người                                       | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
 | hyperparameter          | siêu tham số                                                   |                                                  |
+| hyperplane              | siêu phẳng                                                     |                                                  |
 | hypothesis test         | kiểm chứng thống kê                                                   |                                                  |
 
 ## I
@@ -183,6 +189,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | policy (trong Học Tăng cường) | chính sách                                               |                       |
 | positive sample/example | mẫu dương                                                      |                       |
 | precision               | precision                                                      |                       |
+| principal component analysis (PCA) | phân tích thành phần chính                        |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
 
 ## R
@@ -213,6 +220,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
 | surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1                      |
+| subspace estimation          | ước lượng không gian con                                       |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
