@@ -111,7 +111,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | generative model | mô hình sinh                                                   |                              |
 | generative adversarial network | mạng đối sinh                                 |                              |
 | gradient descent | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
-| graphical model | mô hình dạng đồ thị                                             | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| graphical model | mô hình đồ thị                                             | |
 | ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
 
 ## H
