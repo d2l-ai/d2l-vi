@@ -225,6 +225,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |--------------------------|----------------------------------------------------------------|---------------|
+| tensor contraction | phép co tensor |  | 
 | test set                 | tập kiểm tra                                                   |               |
 | test set performance     | chất lượng trên tập kiểm tra                                   |               |
 | timestep                 | bước thời gian                                                 |               |
