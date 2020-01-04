@@ -129,13 +129,14 @@ In this section, we introduce three common methods to evaluate and compare estim
 ### Mean Squared Error
 -->
 
-### *dịch tiêu đề phía trên*
+### Sai số toàn phương trung bình
 
 <!--
 Perhaps the simplest metric used to evaluate estimators is the *mean squared error (MSE)* (or *$l_2$ loss*) of an estimator can be defined as
 -->
 
-*dịch đoạn phía trên*
+Có lẽ phép đo đơn giản nhất được sử dụng để đánh giá bộ ước lượng là *sai số toàn phương trung bình (MSE)* (hay *mất mát $l_2$*).
+Sai số toàn phương trung bình của một bộ ước lượng được định nghĩa
 
 $$\mathrm{MSE} (\hat{\theta}_n, \theta) = E[(\hat{\theta}_n - \theta)^2].$$
 :eqlabel:`eq_mse_est`
@@ -146,21 +147,24 @@ MSE is always non-negative. If you have read :numref:`sec_linear_regression`, yo
 As a measure to evaluate an estimator, the closer its value to zero, the closer the estimator is close to the true parameter $\theta$.
 -->
 
-*dịch đoạn phía trên*
+Phép đo cho phép ta định lượng độ lệch bình phương trung bình so với giá trị thực.
+MSE luôn dương. Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là làm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
+Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không, bộ ước lượng càng gần với tham số thực $\theta$.
 
 
 <!--
 ### Statistical Bias
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ chệch thống kê
 
 <!--
 The MSE provides a natural metric, but we can easily imagine multiple different phenomena that might make it large.  
 Two that we will see are fundamentally important are the fluctuation in the estimator due to randomness in the dataset, and systematic error in the estimator due to the estimation procedure.
 -->
 
-*dịch đoạn phía trên*
+MSE cung cấp một phép đo tự nhiên, nhưng ta có thể dễ dàng nghĩ tới những trường hợp khác nhau có thể làm cho giá trị MSE lớn.
+Hai trường hợp về cơ bản quan trọng mà ta sẽ thấy đó là biến động của bộ ước lượng do sự ngẫu nhiên trong bộ dữ liệu và sai số hệ thống trong bộ ước lượng do thủ tục ước lượng. 
 
 
 <!--
@@ -168,7 +172,9 @@ First, let's measure the systematic error.
 For an estimator $\hat{\theta}_n$, the mathematical illustration of *statistical bias* can be defined as
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta hãy đo sai số hệ thống.
+Với một bộ ước lượng $\hat{\theta}_n$, biểu diễn toán học của *độ chệch thống kê* được định nghĩa
+
 
 $$\mathrm{bias}(\hat{\theta}_n) = E(\hat{\theta}_n - \theta) = E(\hat{\theta}_n) - \theta.$$
 :eqlabel:`eq_bias`
@@ -179,7 +185,8 @@ In this case, we say $\hat{\theta}_n$ is an unbiased estimator.
 In general, an unbiased estimator is better than a biased estimator since its expectation is the same as the true parameter.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng khi $\mathrm{bias}(\hat{\theta}_n) = 0$, kỳ vọng của bộ ước lượng $\hat{\theta}_n$ sẽ bằng với giá trị thực của tham số.
+Tổng quát, một bộ ước lượng không thiên lệch sẽ tốt hơn một bộ ước lượng thiên lệch vì kỳ vọng của nó sẽ bằng tới tham số thực.
 
 
 <!--
@@ -188,7 +195,9 @@ There are cases where unbiased estimators do not exist without further assumptio
 This may seem like a significant flaw in an estimator, however the majority of estimators encountered in practice are at least asymptotically unbiased in the sense that the bias tends to zero as the number of available samples tends to infinity: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 -->
 
-*dịch đoạn phía trên*
+Cũng đáng để nhắc rằng, dù vậy, những bộ ước lượng thiên lệch thường xuyên được sử dụng trong thực tế.
+Có những trường hợp các bộ ước lượng không thiên lệch không tồn tại mà không cần giả định thêm hoặc khó để tính toán.
+Đây có thể xem như một khuyết điểm lớn trong bộ ước lượng, tuy nhiên phần lớn các bộ ước lượng gặp trong thực tiễn đều ít nhất tiệm cận không thiên lệch theo nghĩa độ chệch có xu hướng tiến  về không khi số lượng mẫu có được tiến về vô cực: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
