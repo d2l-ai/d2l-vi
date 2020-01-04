@@ -166,6 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                                                          |                                             |
+| null hypothesis                   | giả thuyết gốc                                                          |                                             |
 
 ## O
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -216,6 +217,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification     | phân loại cảm xúc                                              |                       |
 | sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity | 
 | spam email                   | email rác                                                      |                       |
+| statistical significance     | ý nghĩa thống kê                                               |                       |
+| statistical significant      | có ý nghĩa thống kê                                            |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
 | speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
