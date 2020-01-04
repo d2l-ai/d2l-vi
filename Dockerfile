@@ -10,7 +10,7 @@ RUN apt-get update \
 
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
-RUN mkdir mly
-WORKDIR /mly
+RUN mkdir d2l
+WORKDIR /d2l
 
 # CMD ["d2lbook", "build", "html"]
