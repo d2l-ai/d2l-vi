@@ -135,6 +135,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear dependence   | phụ thuộc tuyến tính                                           |                         |
 | linear independence | độc lâp tuyến tính                                             |                         |
 | linear regression   | hồi quy tuyến tính                                             |                         |
+| linear discriminant analysis | phân tích biệt thức tuyến tính                        |                         |
 | Long Short-term Memory (LSTM) | bộ nhớ ngắn hạn dài                            |                         |
 | logistic regression | hồi quy logistic                                               |                         |
 | loss function       | hàm mất mát                                                    |                         |
