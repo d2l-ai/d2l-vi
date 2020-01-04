@@ -129,7 +129,7 @@ In this section, we introduce three common methods to evaluate and compare estim
 ### Mean Squared Error
 -->
 
-### Sai số toàn phương trung bình
+### Trung bình bình phương sai số
 
 <!--
 Perhaps the simplest metric used to evaluate estimators is the *mean squared error (MSE)* (or *$l_2$ loss*) of an estimator can be defined as
@@ -147,7 +147,7 @@ MSE is always non-negative. If you have read :numref:`sec_linear_regression`, yo
 As a measure to evaluate an estimator, the closer its value to zero, the closer the estimator is close to the true parameter $\theta$.
 -->
 
-Phép đo cho phép ta định lượng độ lệch bình phương trung bình so với giá trị thực.
+Điều này cho phép ta định lượng độ lệch bình phương trung bình so với giá trị thực.
 MSE luôn dương. Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là làm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
 Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không, bộ ước lượng càng gần với tham số thực $\theta$.
 
