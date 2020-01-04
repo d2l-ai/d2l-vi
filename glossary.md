@@ -206,6 +206,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification     | phân loại cảm xúc                                              |                       |
 | sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity | 
 | spam email                   | email rác                                                      |                       |
+| statistical significance     | ý nghĩa thống kê                                               |                       |
 | statistical significant      | có ý nghĩa thống kê                                            |                       |
 | statistical significance     | ý nghĩa thống kê                                               |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
