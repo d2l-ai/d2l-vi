@@ -942,11 +942,11 @@ is the largest number of linearly independent columns
 amongst all subsets of columns. For example, the matrix
 -->
 
-Nếu ta có một ma trận $n\times m$ tổng quát, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào không gian có số chiều như thế nào.
+Với một ma trận tổng quát $n\times m$, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào không gian có bao nhiêu chiều.
 Để trả lời cho câu hỏi này, ta dùng khái niệm *hạng* (_rank_).
 Trong mục trước, chúng ta lưu ý rằng một hệ phụ thuộc tuyến tính *nén* không gian xuống một không gian khác với số chiều thấp hơn.
 Chúng ta sẽ sử dụng tính chất này để định nghĩa hạng.
-Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng lớn nhất các cột độc lập tuyến tính trong số mọi tập con các cột của ma trận đó. Ví dụ, ma trận
+Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng lớn nhất các cột độc lập tuyến tính trong mọi tập con các cột của ma trận đó. Ví dụ, ma trận
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -960,7 +960,7 @@ but either column by itself is not linearly dependent.
 For a more challenging example, we can consider
 -->
 
-có $\mathrm{rank}(B)=1$ vì hai cột của nó là phụ thuộc tuyến tính, nhưng bản thân mỗi cột là không phụ thuộc tuyến tính.
+có $\mathrm{rank}(B)=1$ vì hai cột của nó là phụ thuộc tuyến tính và bản thân mỗi cột là không phụ thuộc tuyến tính.
 Xét một ví dụ phức tạp hơn
 
 $$
@@ -978,7 +978,7 @@ the first two columns are linearly independent,
 however any of the four collections of three columns are dependent.
 -->
 
-Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính, trong khi tập hợp ba cột bất kỳ là phụ thuộc tuyến tính.
+Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính, trong khi tập hợp ba cột bất kỳ trong ma trận đều phụ thuộc tuyến tính.
 
 <!--
 This procedure, as described, is very inefficient.
@@ -992,7 +992,7 @@ is well defined and understand the meaning.
 
 Quá trình được mô tả ở trên rất không hiệu quả.
 Nó đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên.
-Sau đây chúng ta sẽ thấy một các hiệu quả hơn để tính hạng của một ma trận, nhưng bây giờ việc này là đủ để hiểu khái niệm và ý nghĩa của hạng.
+Sau này chúng ta sẽ thấy một cách hiệu quả hơn để tính hạng của ma trận, nhưng bây giờ những gì được nói đến ở trên là đủ để hiểu khái niệm và ý nghĩa của hạng.
 
 <!-- =================== Kết thúc dịch Phần 10 ==================== -->
 
