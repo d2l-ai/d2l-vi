@@ -1454,9 +1454,9 @@ we can consider the Einstein summation seen above
 and strip out the indices themselves to get the implementation:
 -->
 
-Tổng Einstein đã được cài đặt thông qua hàm ```np.einsum```.
+Phép tính tổng Einstein đã được lập trình thông qua hàm ```np.einsum```.
 Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor để thao tác trên đó.
-Ví dụ, để cài đặt phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
+Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
 
 ```{.python .input}
 # Reimplement matrix multiplication
@@ -1480,7 +1480,7 @@ $$
 it can be implemented via Einstein summation as:
 -->
 
-nó có thể được cài đặt thông qua phép tổng Einstein như sau:
+nó có thể được thực hiện thông qua phép tổng Einstein như sau:
 
 ```{.python .input}
 np.einsum("ijk, il, j -> kl", B, A, v)
