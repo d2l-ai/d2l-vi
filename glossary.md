@@ -157,7 +157,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                                                          |                                             |
-| null hypothesis                   | giả thuyết rỗng                                                          |                                             |
+| null hypothesis                   | giả thuyết gốc                                                          |                                             |
 
 ## O
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
