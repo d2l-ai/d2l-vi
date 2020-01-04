@@ -17,9 +17,9 @@ To be able to discuss uncertainty in estimated values, we must learn some statis
 
 
 <!--
-The earliest reference of *statistics* can be traced back to an Arab scholar Al-Kindi in the $9^{\mathrm{th}}$-century, who gave a detailed description of how to use statistics and frequency analysis to decipher encrypted messages. 
-After 800 years, the modern statistics arose from Germany in 1700s, when the researchers focused on the demographic and economic data collection and analysis. 
-Today, statistics is the science subject that concerns the collection, processing, analysis, interpretation and visualization of data. 
+The earliest reference of *statistics* can be traced back to an Arab scholar Al-Kindi in the $9^{\mathrm{th}}$-century, who gave a detailed description of how to use statistics and frequency analysis to decipher encrypted messages.
+After 800 years, the modern statistics arose from Germany in 1700s, when the researchers focused on the demographic and economic data collection and analysis.
+Today, statistics is the science subject that concerns the collection, processing, analysis, interpretation and visualization of data.
 What is more, the core theory of statistics has been widely used in the research within academia, industry, and government.
 -->
 
@@ -27,9 +27,9 @@ What is more, the core theory of statistics has been widely used in the research
 
 
 <!--
-More specifically, statistics can be divided to *descriptive statistics* and *statistical inference*. 
-The former focus on summarizing and illustrating the features of a collection of observed data, which is referred to as a *sample*. 
-The sample is drawn from a *population*, denotes the total set of similar individuals, items, or events of our experiment interests. 
+More specifically, statistics can be divided to *descriptive statistics* and *statistical inference*.
+The former focus on summarizing and illustrating the features of a collection of observed data, which is referred to as a *sample*.
+The sample is drawn from a *population*, denotes the total set of similar individuals, items, or events of our experiment interests.
 Contrary to descriptive statistics, *statistical inference* further deduces the characteristics of a population from the given *samples*, based on the assumptions that the sample distribution can replicate the population distribution at some degree.
 -->
 
@@ -37,8 +37,8 @@ Contrary to descriptive statistics, *statistical inference* further deduces the 
 
 
 <!--
-You may wonder: “What is the essential difference between machine learning and statistics?” Fundamentally speaking, statistics focuses on the inference problem. 
-This type of problems includes modeling the relationship between the variables, such as causal inference, and testing the statistically significance of model parameters, such as A/B testing. 
+You may wonder: “What is the essential difference between machine learning and statistics?” Fundamentally speaking, statistics focuses on the inference problem.
+This type of problems includes modeling the relationship between the variables, such as causal inference, and testing the statistically significance of model parameters, such as A/B testing.
 In contrast, machine learning emphasizes on making accurate predictions, without explicitly programming and understanding each parameter's functionality.
 -->
 
@@ -46,9 +46,9 @@ In contrast, machine learning emphasizes on making accurate predictions, without
 
 
 <!--
-In this section, we will introduce three types of statistics inference methods: evaluating and comparing estimators, conducting hypothesis tests, and constructing confidence intervals. 
-These methods can help us infer the characteristics of a given population, i.e., the true parameter $\theta$. 
-For brevity, we assume that the true parameter $\theta$ of a given population is a scalar value. 
+In this section, we will introduce three types of statistics inference methods: evaluating and comparing estimators, conducting hypothesis tests, and constructing confidence intervals.
+These methods can help us infer the characteristics of a given population, i.e., the true parameter $\theta$.
+For brevity, we assume that the true parameter $\theta$ of a given population is a scalar value.
 It is straightforward to extend to the case where $\theta$ is a vector or a tensor, thus we omit it in our discussion.
 -->
 
@@ -65,7 +65,7 @@ It is straightforward to extend to the case where $\theta$ is a vector or a tens
 ## Đánh giá và So sánh các Bộ ước lượng
 
 <!--
-In statistics, an *estimator* is a function of given samples used to estimate the true parameter $\theta$. 
+In statistics, an *estimator* is a function of given samples used to estimate the true parameter $\theta$.
 We will write $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ for the estimate of $\theta$ after observing the samples {$x_1, x_2, \ldots, x_n$}.
 -->
 
@@ -90,7 +90,7 @@ We constructed the $y$ coordinate so every point is visible and the relationship
 -->
 
 Như một ví dụ, bên dưới là mật độ của phân phối Gauss với kỳ vọng là không và phương sai là một, cùng với một tập các mẫu lấy ra từ phân phối đó.
-Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn. 
+Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn.
 
 ```{.python .input}
 import d2l
@@ -148,7 +148,7 @@ $$\mathrm{MSE} (\hat{\theta}_n, \theta) = E[(\hat{\theta}_n - \theta)^2].$$
 
 <!--
 This allows us to quantify the average squared deviation from the true value.  
-MSE is always non-negative. If you have read :numref:`sec_linear_regression`, you will recognize it as the most commonly used regression loss function. 
+MSE is always non-negative. If you have read :numref:`sec_linear_regression`, you will recognize it as the most commonly used regression loss function.
 As a measure to evaluate an estimator, the closer its value to zero, the closer the estimator is close to the true parameter $\theta$.
 -->
 
@@ -170,7 +170,7 @@ Two that we will see are fundamentally important are the fluctuation in the esti
 
 
 <!--
-First, let's measure the systematic error. 
+First, let's measure the systematic error.
 For an estimator $\hat{\theta}_n$, the mathematical illustration of *statistical bias* can be defined as
 -->
 
@@ -204,7 +204,7 @@ This may seem like a significant flaw in an estimator, however the majority of e
 ### Variance and Standard Deviation
 -->
 
-### *dịch tiêu đề phía trên*
+### Phương Sai và Độ Lệch Chuẩn
 
 <!--
 Second, let's measure the randomness in the estimator.  
@@ -212,7 +212,9 @@ Recall from :numref:`sec_random_variables`, the *standard deviation* (or *standa
 We may measure the degree of fluctuation of an estimator by measuring the standard deviation or variance of that estimator.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, cùng tính độ ngẫu nhiên trong bộ ước lượng.
+Từ :numref:`sec_random_variables`, **độ lệch chuẩn** (còn được gọi là **sai số chuẩn**) được định nghĩa là căn bậc hai của phương sai.
+Chúng ta có thể đo được độ dao động của bộ ước lượng bằng cách tính độ lệch chuẩn hoặc phương sai của bộ ước lượng đó.
 
 $$\sigma_{\hat{\theta}_n} = \sqrt{\mathrm{Var} (\hat{\theta}_n )} = \sqrt{E[(\hat{\theta}_n - E(\hat{\theta}_n))^2]}.$$
 :eqlabel:`eq_var_est`
@@ -223,14 +225,14 @@ In this equation we do not compare to the true population value $\theta$, but in
 Thus we are not measuring how far the estimator tends to be from the true value, but instead we measuring the fluctuation of the estimator itself.
 -->
 
-*dịch đoạn phía trên*
-
-
+Việc so sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là khá quan trọng.
+Trong công thức này thay vì so sánh tập hợp dữ liệu thực $\theta$, chúng ta sử dụng $E(\hat{\theta}_n)$, giá trị trung bình mẫu kỳ vọng.
+Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính nó (bộ ước lượng).
 <!--
 ### The Bias-Variance Trade-off
 -->
 
-### *dịch tiêu đề phía trên*
+### Sự đánh đổi Độ Chệch-Phương Sai
 
 <!--
 It is intuitively clear that these two components contribute to the mean squared error.  
@@ -238,7 +240,8 @@ What is somewhat shocking is that we can show that this is actually a *decomposi
 That is to say that we can write the mean squared error as the sum of the variance and the square or the bias.
 -->
 
-*dịch đoạn phía trên*
+Cả hai yếu tố trên rõ ràng đều ảnh hưởng đến trung bình bình phương sai số.
+Một điều ngạc nhiên là chúng ta có thể chứng minh trung bình bình phương sai số được phân tách từ hai thành phần đó. Điều này có nghĩa là chúng ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch.
 
 $$
 \begin{aligned}
@@ -249,16 +252,21 @@ $$
 $$
 
 <!--
-We refer the above formula as *bias-variance trade-off*. 
-The mean squared error can be divided into precisely two sources of error: the error from high bias and the error from high variance. 
-On the one hand, the bias error is commonly seen in a simple model (such as a linear regression model), which cannot extract high dimensional relations between the features and the outputs. 
-If a model suffers from high bias error, we often say it is *underfitting* or lack of *generalization* as introduced in (:numref:`sec_model_selection`). 
-On the flip side, the other error source---high variance usually results from a too complex model, which overfits the training data. 
-As a result, an *overfitting* model is sensitive to small fluctuations in the data. 
+We refer the above formula as *bias-variance trade-off*.
+The mean squared error can be divided into precisely two sources of error: the error from high bias and the error from high variance.
+On the one hand, the bias error is commonly seen in a simple model (such as a linear regression model), which cannot extract high dimensional relations between the features and the outputs.
+If a model suffers from high bias error, we often say it is *underfitting* or lack of *generalization* as introduced in (:numref:`sec_model_selection`).
+On the flip side, the other error source---high variance usually results from a too complex model, which overfits the training data.
+As a result, an *overfitting* model is sensitive to small fluctuations in the data.
 If a model suffers from high variance, we often say it is *overfitting* and lack of *flexibility* as introduced in (:numref:`sec_model_selection`).
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*.
+Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành hai nguồn sai số khác nhau: sai số từ độ chệch cao và sai số từ phương sai cao.
+Sai số độ chệch thường xuất hiện ở mô hình đơn giản (ví dụ mô hình hồi quy tuyến tính), nơi mà các những quan hệ đa chiều giữa các đặc trưng và đầu ra không tồn tại.
+Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* hoặc là thiếu sự *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`).
+Ngược lại, một mô hình *quá khớp* lại rất nhạy cảm với sự dao động trong dữ liệu.
+Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở (:numref:`sec_model_selection`).
 
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
@@ -287,8 +295,8 @@ def mse(data, true_theta):
 ```
 
 <!--
-To illustrate the equation of the bias-variance trade-off, let's simulate of normal distribution $\mathcal{N}(\theta, \sigma^2)$ with $10,000$ samples. 
-Here, we use a $\theta = 1$ and $\sigma = 4$. 
+To illustrate the equation of the bias-variance trade-off, let's simulate of normal distribution $\mathcal{N}(\theta, \sigma^2)$ with $10,000$ samples.
+Here, we use a $\theta = 1$ and $\sigma = 4$.
 As the estimator is a function of the given samples, here we use the mean of the samples as an estimator for true $\theta$ in this normal distribution $\mathcal{N}(\theta, \sigma^2)$ .
 -->
 
@@ -336,37 +344,37 @@ np.square(samples.std()) + np.square(bias)
 
 
 <!--
-The most commonly encountered topic in statistical inference is hypothesis testing. 
-While hypothesis testing was popularized in the early 20th century, the first use can be traced back to John Arbuthnot in the 1700s. 
-John tracked 80-year birth records in London and concluded that more men were born than women each year. 
+The most commonly encountered topic in statistical inference is hypothesis testing.
+While hypothesis testing was popularized in the early 20th century, the first use can be traced back to John Arbuthnot in the 1700s.
+John tracked 80-year birth records in London and concluded that more men were born than women each year.
 Following that, the modern significance testing is the intelligence heritage by Karl Pearson who invented $p$-value and Pearson's chi-squared test), William Gosset who is the father of Student's t-distribution, and Ronald Fisher who initialed the null hypothesis and the significance test.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-A *hypothesis test* is a way of evaluating some evidence against the default statement about a population. 
-We refer the default statement as the *null hypothesis* $H_0$, which we try to reject using the observed data. 
-Here, we use $H_0$ as a starting point for the statistical significance testing. 
-The *alternative hypothesis* $H_A$ (or $H_1$) is a statement that is contrary to the null hypothesis. 
-A null hypothesis is often stated in a declarative form which posits a relationship between variables. 
+A *hypothesis test* is a way of evaluating some evidence against the default statement about a population.
+We refer the default statement as the *null hypothesis* $H_0$, which we try to reject using the observed data.
+Here, we use $H_0$ as a starting point for the statistical significance testing.
+The *alternative hypothesis* $H_A$ (or $H_1$) is a statement that is contrary to the null hypothesis.
+A null hypothesis is often stated in a declarative form which posits a relationship between variables.
 It should reflect the brief as explicit as possible, and be testable by statistics theory.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Imagine you are a chemist. After spending thousands of hours in the lab, you develop a new medicine which can dramatically improve one's ability to understand math. 
-To show its magic power, you need to test it. 
+Imagine you are a chemist. After spending thousands of hours in the lab, you develop a new medicine which can dramatically improve one's ability to understand math.
+To show its magic power, you need to test it.
 Naturally, you may need some volunteers to take the medicine and see whether it can help them learn math better. How do you get started?
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-First, you will need carefully random selected two groups of volunteers, so that there is no difference between their math understanding ability measured by some metrics. 
-The two groups are commonly referred to as the test group and the control group. 
-The *test group* (or *treatment group*) is a group of individuals who will experience the medicine, while the *control group* represents the group of users who are set aside as a benchmark, i.e., identical environment setups except taking this medicine. 
+First, you will need carefully random selected two groups of volunteers, so that there is no difference between their math understanding ability measured by some metrics.
+The two groups are commonly referred to as the test group and the control group.
+The *test group* (or *treatment group*) is a group of individuals who will experience the medicine, while the *control group* represents the group of users who are set aside as a benchmark, i.e., identical environment setups except taking this medicine.
 In this way, the influence of all the variables are minimized, except the impact of the independent variable in the treatment.
 -->
 
@@ -382,9 +390,9 @@ In this case, our null hypothesis will be that there is no difference between th
 
 <!--
 This is still not fully formal.  
-There are many details you have to think of carefully. 
-For example, what is the suitable metrics to test their math understanding ability? 
-How many volunteers for your test so you can be confident to claim the effectiveness of your medicine? 
+There are many details you have to think of carefully.
+For example, what is the suitable metrics to test their math understanding ability?
+How many volunteers for your test so you can be confident to claim the effectiveness of your medicine?
 How long should you run the test? How do you decided if there is a difference between the two groups?  
 Do you care about the average performance only, or do you also the range of variation of the scores. And so on.
 -->
@@ -423,16 +431,16 @@ The *statistical significance* measures the probability of erroneously reject th
 $$ \text{statistical significance }= 1 - \alpha = P(\text{reject } H_0 \mid H_0 \text{ is true} ).$$
 
 <!--
-It is also referred to as the *type I error* or *false positive*. 
-The $\alpha$, is called as the *significance level* and its commonly used value is $5\%$, i.e., $1-\alpha = 95\%$. 
+It is also referred to as the *type I error* or *false positive*.
+The $\alpha$, is called as the *significance level* and its commonly used value is $5\%$, i.e., $1-\alpha = 95\%$.
 The level of statistical significance level can be explained as the level of risk that we are willing to take, when we reject a true null hypothesis.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-:numref:`fig_statistical_significance` shows the the observations' values and probability of a given normal distribution in a two-sample hypothesis test. 
-If the observation data point is located outsides the $95\%$ threshold, it will be a very unlikely observation under the null hypothesis assumption. 
+:numref:`fig_statistical_significance` shows the the observations' values and probability of a given normal distribution in a two-sample hypothesis test.
+If the observation data point is located outsides the $95\%$ threshold, it will be a very unlikely observation under the null hypothesis assumption.
 Hence, there might be something wrong with the null hypothesis and we will reject it.
 -->
 
@@ -464,7 +472,7 @@ The *statistical power* (or *sensitivity*) measures the probability of reject th
 $$ \text{statistical power }= P(\text{reject } H_0  \mid H_0 \text{ is false} ).$$
 
 <!--
-Recall that a *type I error* is error caused by rejecting the null hypothesis when it is true, whereas a *type II error* is resulted from failing to reject the null hypothesis when it is false. 
+Recall that a *type I error* is error caused by rejecting the null hypothesis when it is true, whereas a *type II error* is resulted from failing to reject the null hypothesis when it is false.
 A type II error is usually denoted as $\beta$, and hence the corresponding statistical power is $1-\beta$.
 -->
 
@@ -472,7 +480,7 @@ A type II error is usually denoted as $\beta$, and hence the corresponding stati
 
 
 <!--
-Intuitively, statistical power can be interpreted as how likely our test will detect a real discrepancy of some minimum magnitude at a desired statistical significance level. 
+Intuitively, statistical power can be interpreted as how likely our test will detect a real discrepancy of some minimum magnitude at a desired statistical significance level.
 $80\%$ is a commonly used statistical power threshold. The higher the statistical power, the more likely we are to detect true differences.
 -->
 
@@ -489,8 +497,8 @@ However, if we think our sample population true mean is close to $0.01$, then we
 *dịch đoạn phía trên*
 
 <!--
-We can imagine the power as a water filter. In this analogy, a high power hypothesis test is like a high quality water filtration system that will reduce harmful substances in the water as much as possible. 
-On the other hand, a smaller discrepancy is like a low quality water filter, where some relative small substances may easily escape from the gaps. 
+We can imagine the power as a water filter. In this analogy, a high power hypothesis test is like a high quality water filtration system that will reduce harmful substances in the water as much as possible.
+On the other hand, a smaller discrepancy is like a low quality water filter, where some relative small substances may easily escape from the gaps.
 Similarly, if the statistical power is not of enough high power, then the test may not catch the smaller discrepancy.
 -->
 
@@ -516,7 +524,7 @@ Different choices of test statistic can lead to statistical test with drasticall
 *dịch đoạn phía trên*
 
 <!--
-Often, $T(X)$ (the distribution of the test statistic under our null hypothesis) will follow, at least approximately, a common probability distribution such as a normal distribution when considered under the null hypothesis. 
+Often, $T(X)$ (the distribution of the test statistic under our null hypothesis) will follow, at least approximately, a common probability distribution such as a normal distribution when considered under the null hypothesis.
 If we can derive explicitly such a distribution, and then measure our test statistic on our dataset, we can safely reject the null hypothesis if our statistic is far outside the range that we would expect.  Making this quantitative leads us to the notion of $p$-values.
 -->
 
@@ -538,8 +546,8 @@ The *$p$-value* (or the *probability value*) is the probability that $T(X)$ is a
 $$ p\text{-value} = P_{H_0}(T(X) \geq T(x)).$$
 
 <!--
-If the $p$-value is smaller than or equal to a pre-defined and fixed statistical significance level $\alpha$, we may reject the null hypothesis. 
-Otherwise, we will conclude that we are lack of evidence to reject the null hypothesis. 
+If the $p$-value is smaller than or equal to a pre-defined and fixed statistical significance level $\alpha$, we may reject the null hypothesis.
+Otherwise, we will conclude that we are lack of evidence to reject the null hypothesis.
 For a given population distribution, the *region of rejection* will be the interval contained of all the points which has a $p$-value smaller than the statistical significance level $\alpha$.
 -->
 
@@ -553,13 +561,13 @@ For a given population distribution, the *region of rejection* will be the inter
 ### *dịch tiêu đề phía trên*
 
 <!--
-Normally there are two kinds of significance test: the one-sided test and the two-sided test. 
-The *one-sided test* (or *one-tailed test*) is applicable when the null hypothesis and the alternative hypothesis only have one direction. 
-For example, the null hypothesis may state that the true parameter $\theta$ is less than or equal to a value $c$. 
-The alternative hypothesis would be that $\theta$ is greater than $c$. 
+Normally there are two kinds of significance test: the one-sided test and the two-sided test.
+The *one-sided test* (or *one-tailed test*) is applicable when the null hypothesis and the alternative hypothesis only have one direction.
+For example, the null hypothesis may state that the true parameter $\theta$ is less than or equal to a value $c$.
+The alternative hypothesis would be that $\theta$ is greater than $c$.
 That is, the region of rejection is on only one side of the sampling distribution.  
-Contrary to the one-sided test, the *two-sided test* (or *two-tailed test*) is applicable when the region of rejection is on both sides of the sampling distribution. 
-An example in this case may have a null hypothesis state that the true parameter $\theta$ is equal to a value $c$. 
+Contrary to the one-sided test, the *two-sided test* (or *two-tailed test*) is applicable when the region of rejection is on both sides of the sampling distribution.
+An example in this case may have a null hypothesis state that the true parameter $\theta$ is equal to a value $c$.
 The alternative hypothesis would be that $\theta$ is not equal to $c$.
 -->
 
@@ -592,8 +600,8 @@ After getting familiar with the above concepts, let's go through the general ste
 *dịch đoạn phía trên*
 
 <!--
-To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take. 
-Then we calculate the test statistic of the sample, taking an extreme value of the test statistic as evidence against the null hypothesis. 
+To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take.
+Then we calculate the test statistic of the sample, taking an extreme value of the test statistic as evidence against the null hypothesis.
 If the test statistic falls within the reject region, we may reject the null hypothesis in favor of the alternative.
 -->
 
@@ -614,7 +622,7 @@ Hypothesis testing is applicable in a variety of scenarios such as the clinical 
 
 
 <!--
-When estimating the value of a parameter $\theta$, point estimators like $\hat \theta$ are of limited utility since they contain no notion of uncertainty. 
+When estimating the value of a parameter $\theta$, point estimators like $\hat \theta$ are of limited utility since they contain no notion of uncertainty.
 Rather, it would be far better if we could produce an interval that would contain the true parameter $\theta$ with high probability.  
 If you were interested in such ideas a century ago, then you would have been excited to read "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" by Jerzy Neyman :cite:`Neyman.1937`, who first introduced the concept of confidence interval in 1937.
 -->
@@ -647,14 +655,14 @@ $$P_{\theta} (C_n \ni \theta) \geq 1 - \alpha, \forall \theta.$$
 :eqlabel:`eq_confidence`
 
 <!--
-Here $\alpha \in (0, 1)$, and $1 - \alpha$ is called the *confidence level* or *coverage* of the interval. 
+Here $\alpha \in (0, 1)$, and $1 - \alpha$ is called the *confidence level* or *coverage* of the interval.
 This is the same $\alpha$ as the significance level as we discussed about above.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Note that :eqref:`eq_confidence` is about variable $C_n$, not about the fixed $\theta$. 
+Note that :eqref:`eq_confidence` is about variable $C_n$, not about the fixed $\theta$.
 To emphasize this, we write $P_{\theta} (C_n \ni \theta)$ rather than $P_{\theta} (\theta \in C_n)$.
 -->
 
@@ -667,7 +675,7 @@ To emphasize this, we write $P_{\theta} (C_n \ni \theta)$ rather than $P_{\theta
 ### *dịch tiêu đề phía trên*
 
 <!--
-It is very tempting to interpret a $95\%$ confidence interval as an interval where you can be $95\%$ sure the true parameter lies, however this is sadly not true. 
+It is very tempting to interpret a $95\%$ confidence interval as an interval where you can be $95\%$ sure the true parameter lies, however this is sadly not true.
  The true parameter is fixed, and it is the interval that is random.  
  Thus a better interpretation would be to say that if you generated a large number of confidence intervals by this procedure, $95\%$ of the generated intervals would contain the true parameter.
 -->
@@ -766,9 +774,9 @@ Thus we know that we have found our $95\%$ confidence interval:
 $$\left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right].$$
 :eqlabel:`eq_gauss_confidence`
 
-It is safe to say that :eqref:`eq_gauss_confidence` is one of the most used formula in statistics. 
-Let's close our discussion of statistics by implementing it. 
-For simplicity, we assume we are in the asymptotic regime. 
+It is safe to say that :eqref:`eq_gauss_confidence` is one of the most used formula in statistics.
+Let's close our discussion of statistics by implementing it.
+For simplicity, we assume we are in the asymptotic regime.
 Small values of $N$ should include the correct value of `t_star` obtained either programmatically or from a $t$-table.
 -->
 
@@ -863,7 +871,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
