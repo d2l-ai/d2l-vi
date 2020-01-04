@@ -62,14 +62,15 @@ It is straightforward to extend to the case where $\theta$ is a vector or a tens
 ## Evaluating and Comparing Estimators
 -->
 
-## *dịch tiêu đề phía trên*
+## Đánh giá và So sánh các Bộ ước lượng
 
 <!--
 In statistics, an *estimator* is a function of given samples used to estimate the true parameter $\theta$. 
 We will write $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ for the estimate of $\theta$ after observing the samples {$x_1, x_2, \ldots, x_n$}.
 -->
 
-*dịch đoạn phía trên*
+Trong thống kê, một *bộ ước lượng* là một hàm sử dụng những mẫu có sẵn để ước lượng giá trị thực của tham số $\theta$.
+Ta gọi $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ là ước lượng của $\theta$ sau khi quan sát các mẫu {$x_1, x_2, \ldots, x_n$}.
 
 <!--
 We've seen simple examples of estimators before in section :numref:`sec_maximum_likelihood`.  
@@ -78,14 +79,18 @@ Similarly, an exercise asked you to show that the maximum likelihood estimate of
 These estimators will almost never give the true value of the parameter, but ideally for a large number of samples the estimate will be close.
 -->
 
-*dịch đoạn phía trên*
+Ta đã thấy nhiều ví dụ đơn giản của bộ ước lượng trong phần :numref:`sec_maximum_likelihood`.
+Nếu bạn có một số mẫu ngẫu nhiên từ phân phối Bernoulli, thì ước lượng hợp lý cực đại (*maximum likelihood estimate*) cho xác xuất của biến ngẫu nhiên có thể có được bằng cách đếm số lần biến cố một xuất hiện và chia cho tổng số mẫu.
+Tương tự, một bài tập yêu cầu bạn chứng minh rằng ước lượng hợp lý cực đại của kỳ vọng của một phân phối Gauss với một số lượng mẫu cho trước là giá trị trung bình của tập mẫu.
+Các bộ ước lượng này dường như sẽ không bao giờ cho ra giá trị chính xác của tham số, nhưng với trường hợp số lượng mẫu lớn, ước lượng có được sẽ gần với giá trị thực.
 
 <!--
 As an example, we show below the true density of a Gaussian random variable with mean zero and variance one, along with a collection samples from that Gaussian.  
 We constructed the $y$ coordinate so every point is visible and the relationship to the original density is clearer.
 -->
 
-*dịch đoạn phía trên*
+Như một ví dụ, bên dưới là mật độ của phân phối Gauss với kỳ vọng là không và phương sai là một, cùng với một tập các mẫu lấy ra từ phân phối đó.
+Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn. 
 
 ```{.python .input}
 import d2l
@@ -119,7 +124,8 @@ There can be many ways to compute an estimator of a parameter $\hat{\theta}_n$.
 In this section, we introduce three common methods to evaluate and compare estimators: the mean squared error, the standard deviation, and statistical bias.
 -->
 
-*dịch đoạn phía trên*
+Có thể có nhiều cách để tính toán một bộ ước lượng cho một tham số $\hat{\theta}_n$.
+Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đánh giá và so sánh các bộ ước lượng: trung bình bình phương sai số, độ lệch chuẩn và độ chệch thống kê.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
@@ -853,7 +859,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Phạm Hồng Vinh
+* Vũ Hữu Tiệp
 
 <!-- Phần 3 -->
 *
