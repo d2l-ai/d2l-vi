@@ -1,6 +1,9 @@
+alias d2l_build='docker build -t d2l .'
+
+# force bulding from scratch
 # alias d2l_build='docker build -t d2l . --no-cache'
-# alias d2l_build='docker build -t d2l .'
-alias d2l_build='docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .'
+# force building from line after ARG
+# alias d2l_build='docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .'
 
 # to specify the current directory (inside mly project folder):
 # use `pwd` if you are in unix;
