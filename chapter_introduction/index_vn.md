@@ -2241,7 +2241,7 @@ but the name stuck. At its heart, lie a few key principles
 that can be found in most networks today:
 -->
 
-Niềm cảm hứng từ sinh học đã tạo nên cái tên *Mạng nơ-ron*.
+Niềm cảm hứng từ sinh học đã tạo nên cái tên *mạng nơ-ron*.
 Trong suốt hơn một thế kỷ (từ mô hình của Alexander Bain, 1873 và James Sherrington, 1890), các nhà ngiên cứu đã cố gắng lắp ráp các mạch tính toán tương tự như các mạng tương tác giữa các nơ-ron.
 Theo thời gian, yếu tố sinh học ngày càng giảm đi nhưng tên gọi của nó thì vẫn ở lại.
 Những nguyên tắc thứ yếu của mạng nơ-ron vẫn có thể tìm thấy ở hầu hết các mạng ngày nay:
