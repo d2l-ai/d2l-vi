@@ -1371,7 +1371,7 @@ It can represent a far more flexible family of transformations
 that matrix multiplication alone.
 -->
 
-Phép biến đổi này được gọi là một *tensor contraction*.
+Phép biến đổi này được gọi là một phép *co tensor*.
 Nó có thể biểu diễn được các phép biến đổi một cách linh động hơn nhiều so với phép nhân ma trận đơn thuần.
 
 <!--
