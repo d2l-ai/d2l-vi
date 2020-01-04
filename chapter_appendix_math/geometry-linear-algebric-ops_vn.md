@@ -1397,14 +1397,14 @@ $$
 ### Common Examples from Linear Algebra
 -->
 
-### *dịch tiêu đề phía trên*
+### Một số ví dụ thông dụng trong Đại Số Tuyến Tính
 
 <!--
 Let's see how many of the linear algebraic definitions
 we have seen before can be expressed in this compressed tensor notation:
 -->
 
-*dịch đoạn phía trên*
+Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã học dưới biểu diễn tensor nén gọn này:
 
 <!--
 * $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
@@ -1414,25 +1414,32 @@ we have seen before can be expressed in this compressed tensor notation:
 * $\mathrm{tr}(\mathbf{A}) = \sum_i a_{ii}$
 -->
 
-*dịch đoạn phía trên*
+* $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
+* $\|\mathbf{v}\|_2^{2} = \sum_i v_iv_i$
+* $(\mathbf{A}\mathbf{v})_i = \sum_j a_{ij}v_j$
+* $(\mathbf{A}\mathbf{B})_{ik} = \sum_j a_{ij}b_{jk}$
+* $\mathrm{tr}(\mathbf{A}) = \sum_i a_{ii}$
 
 <!--
 In this way, we can replace a myriad of specialized notations with short tensor expressions.
 -->
 
-*dịch đoạn phía trên*
+Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng chỉ với những biểu diễn tensor ngắn.
 
 <!--
 ### Expressing in Code
 -->
 
-### *dịch tiêu đề phía trên*
+### Biểu diễn bằng viết mã
+
+<!--
 Tensors may flexibly be operated on in code as well.
 As seen in :numref:`sec_linear-algebra`,
 we can create tensors as is shown below.
 -->
 
-*dịch đoạn phía trên*
+Tensor cũng có thể được thao tác linh hoạt dưới dạng mã.
+Như đã thấy ở :numref:`sec_linear-algebra`, ta có thể tạo tensor bằng những cách bên dưới.
 
 ```{.python .input}
 # Define tensors
@@ -1454,7 +1461,9 @@ we can consider the Einstein summation seen above
 and strip out the indices themselves to get the implementation:
 -->
 
-*dịch đoạn phía trên*
+Phép tính tổng Einstein đã được lập trình thông qua hàm ```np.einsum```.
+Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor để thao tác trên đó.
+Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
 
 ```{.python .input}
 # Reimplement matrix multiplication
@@ -1467,7 +1476,8 @@ For instance if we want to compute
 what would be traditionally written as
 -->
 
-*dịch đoạn phía trên*
+Đây là một ký hiệu cực kỳ linh hoạt.
+Giả sử ta muốn tính toán một phép tính thường được ghi một cách truyền thống là
 
 $$
 c_{kl} = \sum_{ij} \mathbf{B}_{ijk}\mathbf{A}_{il}v_j.
@@ -1477,7 +1487,7 @@ $$
 it can be implemented via Einstein summation as:
 -->
 
-*dịch đoạn phía trên*
+nó có thể được thực hiện thông qua phép tổng Einstein như sau:
 
 ```{.python .input}
 np.einsum("ijk, il, j -> kl", B, A, v)
@@ -1492,7 +1502,9 @@ by providing integer indices for each tensor.
 For example, the same tensor contraction can also be written as:
 -->
 
-*dịch đoạn phía trên*
+Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách viết mã.
+Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
+Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
 ```{.python .input}
 np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
@@ -1502,7 +1514,7 @@ np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
 Either notation allows for concise and efficient representation of tensor contractions in code.
 -->
 
-*dịch đoạn phía trên*
+Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chính xác và hiệu quả.
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
@@ -1696,7 +1708,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 15 -->
-*
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
+* Vũ Hữu Tiệp
 
 <!-- Phần 16 -->
 *
