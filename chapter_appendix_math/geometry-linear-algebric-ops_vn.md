@@ -1417,7 +1417,7 @@ Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến 
 In this way, we can replace a myriad of specialized notations with short tensor expressions.
 -->
 
-Với cách này, ta có thể thay thế vô số ký hiệu đặc biệt chỉ với những biểu diễn tensor ngắn.
+Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng chỉ với những biểu diễn tensor ngắn.
 
 <!--
 ### Expressing in Code
@@ -1495,9 +1495,9 @@ by providing integer indices for each tensor.
 For example, the same tensor contraction can also be written as:
 -->
 
-Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, với bất kỳ lý do nào mà ta cần phải tạo một phép tensor contraction bằng cách lập trình.
+Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động từ code.
 Vì lý do này, `einsum` cho phép một cách ký hiệu thay thế bằng cách cung cấp các indices nguyên cho mỗi tensor.
-Ví dụ, cùng một phép tensor contraction có thể được viết bằng:
+Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
 ```{.python .input}
 np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
@@ -1507,7 +1507,7 @@ np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
 Either notation allows for concise and efficient representation of tensor contractions in code.
 -->
 
-Cả hai cách ký hiệu đều biểu diễn phép tensor contraction với code một cách chính xác và hiệu quả.
+Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chính xác và hiệu quả.
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
