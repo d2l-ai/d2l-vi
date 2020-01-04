@@ -489,7 +489,7 @@ Một trong những ứng dụng phổ biến nhất của năng lực thống k
 Xác suất bạn bác bỏ giả thuyết gốc khi nó là sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có.
 Và như bạn đã có thể đoán trước, hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể bị phát hiện với xác suất cao.
 Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ.
-Giả sử ta muốn bác bỏ một giả thuyết gốc rằng mẫu của ta được lấy từ một phân phối Gauss với kỳ vọng là 0, phương sai là 1, và ta tin rằng giá trị trung bình của tập mẫu gần với 1.
+Giả sử ta muốn bác bỏ một giả thuyết gốc rằng mẫu của ta được lấy từ một phân phối Gauss với kỳ vọng là không, phương sai là một, và ta tin rằng giá trị trung bình của tập mẫu gần với một.
 Chỉ cần cỡ mẫu là $8$, ta có thể làm vậy với tỉ lệ lỗi chấp nhận được.
 Tuy nhiên, nếu ta cho rằng giá trị trung bình thực sự của tổng thể gần với $0.01$, thì ta cần cỡ mẫu khoảng $80000$ để có thể phát hiện được sự sai lệch.
 
