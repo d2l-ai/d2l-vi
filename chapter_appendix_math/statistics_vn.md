@@ -455,7 +455,11 @@ The *statistical power* (or *sensitivity*) measures the probability of reject th
 
 *Năng lực thống kê* (hay còn gọi là *độ nhạy*) là xác suất bác bỏ giả thuyết gốc, $H_0$, biết rằng nó nên bị bác bỏ, tức là:
 
+<!--
 $$ \text{statistical power }= P(\text{reject } H_0  \mid H_0 \text{ is false} ).$$
+-->
+
+$$ \text{năng lực thống kê}= P(\text{bác bỏ} H_0  \mid H_0 \text{là sai} ).$$
 
 <!--
 Recall that a *type I error* is error caused by rejecting the null hypothesis when it is true, whereas a *type II error* is resulted from failing to reject the null hypothesis when it is false. 
