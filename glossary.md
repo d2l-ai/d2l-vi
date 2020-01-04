@@ -133,6 +133,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | learning algorithm  | thuật toán học                                                 |                         |
 | linear algebra      | đại số tuyến tính                                              |                         |
 | linear dependence   | phụ thuộc tuyến tính                                           |                         |
+|Linear Discriminant Analysis (LDA) | Phân tích biệt thức tuyến tính | |
 | linear independence | độc lâp tuyến tính                                             |                         |
 | linear regression   | hồi quy tuyến tính                                             |                         |
 | Long Short-term Memory (LSTM) | bộ nhớ ngắn hạn dài                            |                         |
