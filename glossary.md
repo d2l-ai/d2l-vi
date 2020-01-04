@@ -208,7 +208,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | spam email                   | email rác                                                      |                       |
 | statistical significance     | ý nghĩa thống kê                                               |                       |
 | statistical significant      | có ý nghĩa thống kê                                            |                       |
-| statistical significance     | ý nghĩa thống kê                                               |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
 | speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
