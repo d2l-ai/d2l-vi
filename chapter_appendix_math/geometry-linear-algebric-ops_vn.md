@@ -1455,7 +1455,7 @@ and strip out the indices themselves to get the implementation:
 -->
 
 Tổng Einstein đã được cài đặt thông qua hàm ```np.einsum```.
-Những indices xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor sẽ được thao tác trên.
+Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor để thao tác trên đó.
 Ví dụ, để cài đặt phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
 
 ```{.python .input}
@@ -1496,7 +1496,7 @@ For example, the same tensor contraction can also be written as:
 -->
 
 Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động từ code.
-Vì lý do này, `einsum` cho phép một cách ký hiệu thay thế bằng cách cung cấp các indices nguyên cho mỗi tensor.
+Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
 Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
 ```{.python .input}
