@@ -2229,7 +2229,7 @@ Một trong những thuật toán lâu đời nhất lấy cảm hứng từ câ
 Trong cuốn sách đột phá của mình về Tổ Chức Hành Vi :cite:`Hebb.Hebb.1949`, ông ấy cho rằng các nơ-ron học bằng sự tăng cường tích cực.
 Điều này về sau được biết đến với cái tên là luật học Hebbian.
 Nó là nguyên mẫu cho thuật toán perceptron của Rosenblatt và là nền tảng của rất nhiều thuật toán hạ gradient ngẫu nhiên đã đặt nền móng cho học sâu ngày nay:
-Tăng cường các hành vi mong muốn và giảm bớt các hành vi không mong muốn để đạt được những thông số tốt trong một mạng nơ-ron.
+tăng cường các hành vi mong muốn và giảm bớt các hành vi không mong muốn để đạt được những thông số tốt trong một mạng nơ-ron.
 
 <!--
 Biological inspiration is what gave *neural networks* their name.
