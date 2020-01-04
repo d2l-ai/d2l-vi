@@ -125,7 +125,7 @@ In this section, we introduce three common methods to evaluate and compare estim
 -->
 
 Có thể có nhiều cách để tính toán một bộ ước lượng cho một tham số $\hat{\theta}_n$.
-Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đánh giá và so sánh các bộ ước lượng: sai số toàn phương trung bình, độ lệch chuẩn và độ chệch thống kê.
+Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đánh giá và so sánh các bộ ước lượng: trung bình bình phương sai số, độ lệch chuẩn và độ chệch thống kê.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
