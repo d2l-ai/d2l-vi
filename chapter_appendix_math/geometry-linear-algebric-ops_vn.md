@@ -1324,7 +1324,7 @@ on a number of matrix and vector operations.
 -->
 
 Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`.
-Trong mục này, chúng ta sẽ đi sâu hơn vào tensor contraction (cần thảo luận từ này) (tương đương với phép nhân ma trận), và xem chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
+Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận), và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
 
 <!--
 With matrices and vectors we knew how to multiply them to transform data.
@@ -1333,7 +1333,7 @@ Think about matrix multiplication:
 -->
 
 Chúng ta đã biết cách nhân ma trận và vector như thế nào để biến đổi dữ liệu.
-Chúng ta cần một định nghĩa tương tự với tensor nếu điều này hữu ích.
+Để tensor trở nên hữu ích, ta cần một định nghĩa tương tự như thế.
 Xem lại phép nhân ma trận:
 
 $$
@@ -1356,8 +1356,8 @@ so we need specify exactly which indices we want to sum over.
 For instance we could consider
 -->
 
-Việc này có thể lặp lại với tensor.
-Với tensor, không có một trường hợp tổng quát để chọn tổng theo chỉ số nào.
+Cách thức biểu diễn này có thể lặp lại với tensor.
+Với tensor, không có một trường hợp tổng quát để chọn tính tổng theo chỉ số nào.
 Bởi vậy, ta cần chỉ ra chính xác những chỉ số nào mà ta muốn tính tổng theo.
 Ví dụ, ta có thể xét
 
@@ -1372,7 +1372,7 @@ that matrix multiplication alone.
 -->
 
 Phép biến đổi này được gọi là một *tensor contraction*.
-Nó có thể biểu diễn được các phép biến đổi một cách linh động ngoài phép nhân ma trận.
+Nó có thể biểu diễn được các phép biến đổi một cách linh động hơn nhiều so với phép nhân ma trận đơn thuần.
 
 <!--
 As a often-used notational simplification,
@@ -1383,9 +1383,9 @@ where the summation is implicitly taken over all repeated indices.
 This gives the compact expression:
 -->
 
-Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng tính theo chính xác những chỉ số đó xảy ra nhiều hơn một lần trong cách biểu diễn. <!-- more discussion -->
-Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* ở đó tổng được lấy trên mọi chỉ số lặp lại. <!-- more discussion -->
-Việc này cho chúng ta một phép biểu diễn ngắn gọn:
+Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng chỉ được tính theo những chỉ số mà xuất hiện nhiều hơn một lần trong biểu thức.
+Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* với quy ước rằng phép tính tổng sẽ được lấy trên các chỉ số xuất hiện nhiều lần.
+Từ đó, ta có một phép biểu diễn ngắn gọn:
 $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
