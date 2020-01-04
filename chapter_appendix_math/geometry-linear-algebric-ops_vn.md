@@ -1332,7 +1332,7 @@ We need to have a similar definition for tensors if they are to be useful to us.
 Think about matrix multiplication:
 -->
 
-Chúng ta đã biết cách nhân ma trận và vector như thế nào để biến đổi dữ liệu.
+Chúng ta đã biết cách nhân với ma trận và vector như thế nào để biến đổi dữ liệu.
 Để tensor trở nên hữu ích, ta cần một định nghĩa tương tự như thế.
 Xem lại phép nhân ma trận:
 
