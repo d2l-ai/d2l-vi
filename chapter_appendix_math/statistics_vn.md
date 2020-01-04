@@ -466,7 +466,7 @@ Recall that a *type I error* is error caused by rejecting the null hypothesis wh
 A type II error is usually denoted as $\beta$, and hence the corresponding statistical power is $1-\beta$.
 -->
 
-Gợi nhớ lại, *lỗi loại I* là lỗi do việc bác bỏ giả thuyết gốc khi nó là đúng, còn *lỗi loại II* xảy ra do việc không bác bỏ giả thuyết gốc khi nó là sai.
+Nhắc lại, *lỗi loại I* là lỗi do việc bác bỏ giả thuyết gốc khi nó đúng, còn *lỗi loại II* xảy ra do việc không bác bỏ giả thuyết gốc khi nó sai.
 Lỗi loại II thường được kí hiệu là $\beta$, vậy nên năng lực thống kê tương ứng là $1-\beta$.
 
 <!--
@@ -474,7 +474,7 @@ Intuitively, statistical power can be interpreted as how likely our test will de
 $80\%$ is a commonly used statistical power threshold. The higher the statistical power, the more likely we are to detect true differences.
 -->
 
-Một cách trực quan, năng lực thống kê có thể được xem như khả năng kiểm định của chúng ta phát hiện được một sai lệch thực sự với độ lớn tối thiểu nào đó, ở một mức ý nghĩa thống kê mong muốn.
+Một cách trực quan, năng lực thống kê có thể được xem như khả năng phép kiểm định phát hiện được một sai lệch thực sự với độ lớn tối thiểu nào đó, ở một mức ý nghĩa thống kê mong muốn.
 $80%$ là một ngưỡng phổ biến cho năng lực thống kê. Năng lực thống kê càng cao, ta càng có nhiều khả năng phát hiện được những sai lệch thực sự hơn.
 
 <!--
@@ -488,7 +488,9 @@ However, if we think our sample population true mean is close to $0.01$, then we
 Một trong những ứng dụng phổ biến nhất của năng lực thống kê là để xác định số lượng mẫu cần thiết.
 Xác suất bạn bác bỏ giả thuyết gốc khi nó là sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có.
 Và như bạn đã có thể đoán trước, hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể bị phát hiện với xác suất cao.
-Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ. Giả sử ta muốn bác bỏ một giả thuyết gốc rằng mẫu của ta được lấy từ một phân phối Gauss với giá trị trung bình 0, phương sai 1, và ta tin rằng trung bình của tập mẫu thực sự gần với 1. Chỉ cần cỡ mẫu là $8$, ta có thể làm vậy với tỉ lệ lỗi chấp nhận được.
+Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ.
+Giả sử ta muốn bác bỏ một giả thuyết gốc rằng mẫu của ta được lấy từ một phân phối Gauss với giá trị trung bình 0, phương sai 1, và ta tin rằng trung bình của tập mẫu thực sự gần với 1.
+Chỉ cần cỡ mẫu là $8$, ta có thể làm vậy với tỉ lệ lỗi chấp nhận được.
 Tuy nhiên, nếu ta cho rằng giá trị trung bình thực sự của tổng thể gần với $0.01$, thì ta cần cỡ mẫu khoảng $80000$ để có thể phát hiện được sự sai lệch.
 
 <!--
@@ -497,7 +499,8 @@ On the other hand, a smaller discrepancy is like a low quality water filter, whe
 Similarly, if the statistical power is not of enough high power, then the test may not catch the smaller discrepancy.
 -->
 
-Ta có thể hình dung năng lực thống kê như một cái máy lọc nước. Trong phép so sánh này, một kiểm định với năng lực cao giống như một hệ thống lọc nước chất lượng tốt, loại bỏ được các chất nguy hiểm trong nước càng nhiều càng tốt.
+Ta có thể hình dung năng lực thống kê như một cái máy lọc nước.
+Trong phép so sánh này, một kiểm định với năng lực cao giống như một hệ thống lọc nước chất lượng tốt, loại bỏ được các chất nguy hiểm trong nước càng nhiều càng tốt.
 Ngược lại, một sự sai lệch nhỏ hơn giống như một cái máy lọc chất lượng kém, có thể để các chất tương đối nhỏ thoát dễ dàng qua những kẽ hở.
 Tương tự, nếu năng lực thống kê không đủ cao, thì kiểm định có thể không bắt được các sai lệch nhỏ hơn.
 
