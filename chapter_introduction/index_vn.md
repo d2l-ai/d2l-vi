@@ -2442,7 +2442,7 @@ solutions to problems that were considered intractable previously.
 -->
 
 * Các trợ lý thông minh, như Apple Siri, Amazon Alexa, hay Google Home có khả năng trả lời các câu hỏi thoại với độ chính xác chấp nhận được.
-Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt hẹn cắt tóc và đưa ra hội thoại hỗ trợ qua điện thoại <!-- TODO -->. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
+Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
 
 <!--
 * A key ingredient in digital assistants is the ability to recognize speech
@@ -2466,7 +2466,7 @@ Dần dần độ chính xác của những hệ thống này cải thiện tớ
 Đánh giá một vật thể trong ảnh là một tác vụ khó năm 2010.
 Trong bảng xếp hạng ImageNet, :cite:`Lin.Lv.Zhu.ea.2010` đạt được tỉ lệ lỗi top-5 là 28%.
 Tới 2017, :cite:`Hu.Shen.Sun.2018` giảm tỉ lệ lỗi này xuống còn 2.25%.
-Các kết quả kinh ngạc tương tự cũng đạt được trong việc xác định chim hay chẩn đoán ung thư da.
+Các kết quả kinh ngạc tương tự cũng đã đạt được trong việc xác định chim cũng như chẩn đoán ung thư da.
 
 <!--
 * Games used to be a bastion of human intelligence.
@@ -2490,7 +2490,7 @@ Các kết quả kinh ngạc tương tự cũng đạt được trong việc xá
 
 * Các trò chơi từng là một pháo đài của trí tuệ loài người.
 Bắt đầu từ TDGammon [23], một chương chình chơi Backgammon (một môn cờ) sử dụng học tăng cường sai khác thời gian (_temporal difference_ -- TD), tiến triển trong giải thuật và tính toán đã dẫn đến các thuật toán cho một loạt các ứng dụng.
-Không giống Backgamon, cờ tướng có một không gian trạng thái phức tạp hơn nhiều tập các nước đi.
+Không giống Backgamon, cờ vua có một không gian trạng thái  và tập các nước đi phức tạp hơn nhiều.
 DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
 Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
 Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
