@@ -2280,7 +2280,7 @@ Unlike neural networks, they did not require weeks to train
 and provided predictable results with strong theoretical guarantees.
 -->
 
-Với sự khan hiếm của dữ liệu và tài nguyên tính toán, các công cụ thống kê mạnh như Phương Pháp Kernel, Cây Quyết Định và Mô Hình Dạng Đồ Thị đã chứng tỏ sự vượt trội trong thực nghiệm.
+Với sự khan hiếm của dữ liệu và tài nguyên tính toán, các công cụ thống kê mạnh như Phương Pháp Hạt Nhân, Cây Quyết Định và Mô Hình Đồ Thị đã chứng tỏ sự vượt trội trong thực nghiệm.
 Khác với mạng nơ-ron, chúng không đòi hỏi nhiều tuần huấn luyện nhưng vẫn đưa ra những kết quả dự đoán với sự đảm bảo vững chắc về lý thuyết .
 
 <!-- =================== Kết thúc dịch Phần 28 ==================== -->
