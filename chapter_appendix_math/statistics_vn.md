@@ -453,7 +453,7 @@ Hence, there might be something wrong with the null hypothesis and we will rejec
 The *statistical power* (or *sensitivity*) measures the probability of reject the null hypothesis, $H_0$, when it should be rejected, i.e.,
 -->
 
-Năng lực thống kê (hay còn gọi là *độ nhạy*) là xác suất bác bỏ giả thuyết gốc, $H_0$, biết rằng nó nên bị bác bỏ, tức là:
+*Năng lực thống kê* (hay còn gọi là *độ nhạy*) là xác suất bác bỏ giả thuyết gốc, $H_0$, biết rằng nó nên bị bác bỏ, tức là:
 
 $$ \text{statistical power }= P(\text{reject } H_0  \mid H_0 \text{ is false} ).$$
 
