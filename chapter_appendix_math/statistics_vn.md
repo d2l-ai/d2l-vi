@@ -204,7 +204,7 @@ This may seem like a significant flaw in an estimator, however the majority of e
 ### Variance and Standard Deviation
 -->
 
-### *dịch tiêu đề phía trên*
+### Phương Sai và Độ Lệch Chuẩn
 
 <!--
 Second, let's measure the randomness in the estimator.  
@@ -212,7 +212,9 @@ Recall from :numref:`sec_random_variables`, the *standard deviation* (or *standa
 We may measure the degree of fluctuation of an estimator by measuring the standard deviation or variance of that estimator.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, cùng tính độ ngẫu nhiên trong bộ ước lượng.
+Từ :numref:`sec_random_variables`, **độ lệch chuẩn** (còn được gọi là **sai số chuẩn**) được định nghĩa là căn bậc hai của phương sai.
+Chúng ta có thể đo được độ dao động của bộ ước lượng bằng cách tính độ lệch chuẩn hoặc phương sai của bộ ước lượng đó.
 
 $$\sigma_{\hat{\theta}_n} = \sqrt{\mathrm{Var} (\hat{\theta}_n )} = \sqrt{E[(\hat{\theta}_n - E(\hat{\theta}_n))^2]}.$$
 :eqlabel:`eq_var_est`
@@ -223,14 +225,16 @@ In this equation we do not compare to the true population value $\theta$, but in
 Thus we are not measuring how far the estimator tends to be from the true value, but instead we measuring the fluctuation of the estimator itself.
 -->
 
-*dịch đoạn phía trên*
+Việc so sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là khá quan trọng.
+Trong công thức này thay vì so sánh tập hợp dữ liệu thực $\theta$, chúng ta sử dụng $E(\hat{\theta}_n)$, giá trị trung bình mẫu kỳ vọng.
+Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính nó (bộ ước lượng).
 
 
 <!--
 ### The Bias-Variance Trade-off
 -->
 
-### *dịch tiêu đề phía trên*
+### Sự đánh đổi Độ Chệch-Phương Sai
 
 <!--
 It is intuitively clear that these two components contribute to the mean squared error.  
@@ -238,7 +242,8 @@ What is somewhat shocking is that we can show that this is actually a *decomposi
 That is to say that we can write the mean squared error as the sum of the variance and the square or the bias.
 -->
 
-*dịch đoạn phía trên*
+Cả hai yếu tố trên rõ ràng đều ảnh hưởng đến trung bình bình phương sai số.
+Một điều ngạc nhiên là chúng ta có thể chứng minh trung bình bình phương sai số được phân tách từ hai thành phần đó. Điều này có nghĩa là chúng ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch.
 
 $$
 \begin{aligned}
@@ -258,7 +263,12 @@ As a result, an *overfitting* model is sensitive to small fluctuations in the da
 If a model suffers from high variance, we often say it is *overfitting* and lack of *flexibility* as introduced in (:numref:`sec_model_selection`).
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*.
+Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành hai nguồn sai số khác nhau: sai số từ độ chệch cao và sai số từ phương sai cao.
+Sai số độ chệch thường xuất hiện ở mô hình đơn giản (ví dụ mô hình hồi quy tuyến tính), nơi mà các những quan hệ đa chiều giữa các đặc trưng và đầu ra không tồn tại.
+Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* hoặc là thiếu sự *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`).
+Ngược lại, một mô hình *quá khớp* lại rất nhạy cảm với sự dao động trong dữ liệu.
+Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở (:numref:`sec_model_selection`).
 
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
@@ -866,7 +876,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 5 -->
 *
