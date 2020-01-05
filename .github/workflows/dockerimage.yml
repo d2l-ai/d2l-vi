@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: build html and tex
 
 on: [push]
 
@@ -11,11 +11,3 @@ jobs:
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
     - name: Build html and tex
       run: docker run -i -v `pwd`:/d2l d2l
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v1
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: _build/pdf/d2l-en.tex
