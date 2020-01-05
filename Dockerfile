@@ -36,4 +36,4 @@ RUN rm source-sans-pro
 
 RUN fc-cache -f -v
 
-CMD ["d2lbook", "build", "all"]
+CMD ["d2lbook", "build", "pdf"]
