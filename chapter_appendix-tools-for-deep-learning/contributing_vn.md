@@ -95,23 +95,23 @@ Git là một trong những Hệ thống Quản lý Phiên bản Phân tán nổ
 
 #### Đăng nhập vào Github
 
-Enter the [address](https://github.com/d2l-ai/d2l-en/) of the book's code repository in your browser. Click on the `Fork` button in the red box at the top-right of :numref:`fig_git_fork`, to make a copy of the repository of this book. This is now *your copy* and you can change it any way you want.
+Nhập [địa chỉ] (https://github.com/d2l-ai/d2l-en/) của kho lưu trữ mã sách trong trình duyệt của bạn. Nhấp vào nút `Fork` trong hộp màu đỏ ở góc trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của kho lưu trữ của cuốn sách này. Đây là *bản sao của bạn* và bạn có thể thay đổi nó theo bất kỳ cách nào bạn muốn.
 
 ![The code repository page.](../img/git-fork.png)
 :width:`700px`
 :label:`fig_git_fork`
 
 
-Now, the code repository of this book will be copied to your username, such as `astonzhang/d2l-en` shown at the top-left of the screenshot :numref:`fig_git_forked`.
+Bây giờ, kho lưu trữ mã của cuốn sách này sẽ được sao chép vào tên người dùng của bạn, chẳng hạn như `duythanhvn/d2l-vn` được hiển thị ở phía trên bên trái của ảnh chụp màn hình :numref:`fig_git_forked`.
 
 ![Copy the code repository.](../img/git-forked.png)
 :width:`700px`
 :label:`fig_git_forked`
 
 
-### Cloning the Repository
+### Nhân bản kho lưu trữ
 
-To clone the repository (i.e., to make a local copy) we need to get its repository address. The green button in :numref:`fig_git_clone` displays this. Make sure that your local copy is up to date with the main repository if you decide to keep this fork around for longer. For now simply follow the instructions in :numref:`chap_installation` to get started. The main difference is that you are now downloading *your own fork* of the repository.
+Để sao chép kho lưu trữ (tức là, để tạo một bản sao cục bộ), chúng ta cần lấy địa chỉ kho lưu trữ của nó. Nút màu xanh lá cây trong :numref:`fig_git_clone` hiển thị cái này. Đảm bảo rằng bản sao cục bộ của bạn được cập nhật với kho lưu trữ chính nếu bạn quyết định giữ bản ngã ba này lâu hơn. Bây giờ chỉ cần làm theo các hướng dẫn trong :numref:`chap_installation` để bắt đầu. Sự khác biệt chính là bây giờ bạn đang tải xuống *fork của riêng bạn* của kho lưu trữ.
 
 ![ Git clone. ](../img/git-clone.png)
 :width:`700px`
@@ -119,16 +119,16 @@ To clone the repository (i.e., to make a local copy) we need to get its reposito
 
 ```
 # Replace your_github_username with your GitHub username
-git clone https://github.com/your_github_username/d2l-en.git
+git clone https://github.com/your_github_username/d2l-vn.git
 ```
 
 
 ### Editing the Book and Push
 
-Now it is time to edit the book. It is best to edit the notebooks in Jupyter following instructions in :numref:`sec_jupyter`. Make the changes and check that they are OK. Assume we have modified a typo in the file `~/d2l-en/chapter_appendix_tools/how-to-contribute.md`.
-You can then check which files you have changed:
+Bây giờ là lúc để chỉnh sửa cuốn sách. Tốt nhất là chỉnh sửa sổ ghi chép trong Jupyter theo hướng dẫn sau :numref:`sec_jupyter`. Thực hiện các thay đổi và kiểm tra xem chúng có ổn không. Giả sử chúng tôi đã sửa một lỗi đánh máy trong tệp `~/d2l-en/chapter_appendix_tools/how-to-contribute.md`.
+Sau đó, bạn có thể kiểm tra những tập tin bạn đã thay đổi:
 
-At this point Git will prompt that the `chapter_appendix_tools/how-to-contribute.md` file has been modified.
+Tại thời điểm này, Git sẽ nhắc rằng tệp `chapter_appendix_tools/how-to-contribute.md` đã được sửa đổi.
 
 ```
 mylaptop:d2l-en me$ git status
@@ -143,7 +143,7 @@ Changes not staged for commit:
 ```
 
 
-After confirming that this is what you want, execute the following command:
+Sau khi xác nhận rằng đây là những gì bạn muốn, hãy thực hiện lệnh sau:
 
 ```
 git add chapter_appendix_tools/how-to-contribute.md
@@ -151,40 +151,38 @@ git commit -m 'fix typo in git documentation'
 git push
 ```
 
+Mã đã thay đổi sau đó sẽ nằm trong fork cá nhân của kho lưu trữ. Để yêu cầu bổ sung thay đổi của bạn, bạn phải tạo một yêu cầu kéo cho kho lưu trữ chính thức của cuốn sách.
 
-The changed code will then be in your personal fork of the repository. To request the addition of your change, you have to create a pull request for the official repository of the book.
+### Yêu cầu kéo (Pull Request)
 
-### Pull Request
-
-As shown in :numref:`fig_git_newpr`, go to your fork of the repository on GitHub and select "New pull request". This will open up a screen that shows you the changes between your edits and what is current in the main repository of the book.
+Như được hiển thị trong :numref:`fig_git_newpr`, đi đến fork của kho lưu trữ trên GitHub và chọn "Yêu cầu kéo mới". Điều này sẽ mở ra một màn hình cho bạn thấy những thay đổi giữa các chỉnh sửa của bạn và những gì hiện có trong kho lưu trữ chính của cuốn sách.
 
 ![Pull Request.](../img/git-newpr.png)
 :width:`700px`
 :label:`fig_git_newpr`
 
 
-### Submitting Pull Request
+### Gửi lên một Yêu cầu kéo
 
-Finally, submit a pull request by clicking the button as shown in :numref:`fig_git_createpr`. Make sure to describe the changes you have made in the pull request. This will make it easier for the authors to review it and to merge it with the book. Depending on the changes, this might get accepted right away, rejected, or more likely, you will get some feedback on the changes. Once you have incorporated them, you are good to go.
+Cuối cùng, gửi yêu cầu kéo bằng cách nhấp vào nút như được hiển thị trong :numref:`fig_git_createpr`. Đảm bảo mô tả các thay đổi bạn đã thực hiện trong yêu cầu kéo. Điều này sẽ giúp các tác giả dễ dàng xem xét nó và hợp nhất nó với cuốn sách. Tùy thuộc vào các thay đổi, điều này có thể được chấp nhận ngay lập tức, bị từ chối hoặc nhiều khả năng, bạn sẽ nhận được một số phản hồi về các thay đổi. 
 
-![Create Pull Request.](../img/git-createpr.png)
+![Tạo một Yêu cầu kéo.](../img/git-createpr.png)
 :width:`700px`
 :label:`fig_git_createpr`
 
+Yêu cầu kéo của bạn sẽ xuất hiện trong số danh sách các yêu cầu trong kho lưu trữ chính. Chúng tôi sẽ cố gắng hết sức để xử lý nó nhanh chóng.
 
-Your pull request will appear among the list of requests in the main repository. We will make every effort to process it quickly.
-
-## Summary
+## Tổng quan
 
 * You can use GitHub to contribute to this book.
 * Forking a repository is the first step to contributing, since it allows you to edit things locally and only contribute back once you are ready.
 * Pull requests are how contributions are being bundled up. Try not to submit huge pull requests since this makes them hard to understand and incorporate. Better send several smaller ones.
 
-## Exercises
+## Thực hành
 
-1. Star and fork the `d2l-en` repository.
-1. Find some code that needs improvement and submit a pull request.
-1. Find a reference that we missed and submit a pull request.
+1. Đánh dấu sao và **Fork** kho lưu trữ dự án `d2l-vn` về tài khoản của bạn.
+2. Tìm kiếm một nội dung bạn nghĩ rằng có thể cải thiện và gửi yêu cầu kéo (Pull Request).
+3. Tìm một trích dẫn, thông tin tham khảo mà chúng tôi thiếu sót và gửi yêu cầu kéo.
 
 ## [Thảo luận]
 
