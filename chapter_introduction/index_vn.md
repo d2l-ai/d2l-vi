@@ -2332,7 +2332,7 @@ Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật �
 Kết quả là, những thuật toán này cũng bị hạn chế bởi sự thiếu linh động do kế thừa từ chính các mô hình thống kê đó.
 Phát kiến quan trọng của GAN là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi [có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm].
 Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống như bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
-Qua khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu, nó phát triển phương pháp đánh giá hàm mật độ xác suất thành một loạt các kỹ thuật.
+Khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu đã thúc đẩy phương pháp đánh giá hàm mật độ xác suất khai sinh một loạt các kỹ thuật.
 Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu.Park.Isola.ea.2017` và tạo giả khuôn mặt người nổi tiếng là các minh chứng của quá trình này.
 
 <!--
@@ -2356,7 +2356,7 @@ Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu
 
 Trong rất nhiều trường hợp, một GPU là không đủ để xử lý một lượng lớn dữ liệu sẵn có cho huấn luyện.
 Khả năng xây dựng các thuật toán huấn luyện phân tán song song đã cải tiến đáng kể trong thập kỷ vừa rồi.
-Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào việc xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
+Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào cách xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
 Đồng thời, batch nhỏ hạn chế sự hiệu quả của GPU.
 Bởi vậy, huấn luyện trên 1024 GPU với 32 ảnh trong một batch chẳng hạn, sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
 Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sau đó là :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
