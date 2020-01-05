@@ -12,6 +12,7 @@ RUN apt-get install -y python3.7 \
   && apt-get install -y unzip \
   && apt-get install -y fontconfig
 
+
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.7 get-pip.py
 
@@ -24,7 +25,7 @@ RUN apt-get install -y pandoc
 ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
-# install fonts
+# re install fonts
 RUN wget https://www.fontsquirrel.com/fonts/download/source-serif-pro
 RUN unzip -o source-serif-pro -d ~/.fonts/
 RUN rm source-serif-pro
