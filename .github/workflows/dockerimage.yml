@@ -1,6 +1,6 @@
 name: Docker Image CI
 
-on: [push, commit]
+on: [push]
 
 jobs:
 
