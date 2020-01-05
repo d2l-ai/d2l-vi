@@ -9,10 +9,10 @@ install:
   - chapter_install/*
 
 tools:
-  - chapter_introduction/*
+  - chapter_appendix-tools-for-deep-learning/*
 
 introduction:
-    - chapter_appendix-tools-for-deep-learning/*
+   - chapter_introduction/*
 
 math:
     - chapter_appendix_math/*
