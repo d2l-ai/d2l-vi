@@ -9,7 +9,8 @@ RUN apt-get install -y python3.7 \
   && apt-get install -y git \
   && apt-get install -y curl \
   && apt-get install -y wget \
-  && apt-get install -y unzip
+  && apt-get install -y unzip \
+  && apt-get install -y fontconfig
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.7 get-pip.py
