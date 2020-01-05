@@ -21,7 +21,7 @@ RUN apt-get install -y pandoc
 ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
-CMD ["d2lbook", "build", "pdf"]
+CMD ["d2lbook", "build", "all"]
 
   # && apt-get install -y wget \
   # && apt-get install -y unzip \
