@@ -332,7 +332,7 @@ np.square(samples.std()) + np.square(bias)
 ## Conducting Hypothesis Tests
 -->
 
-## Kiểm Tra Giả Thuyết
+## Kiểm Định Giả Thuyết
 
 <!--
 The most commonly encountered topic in statistical inference is hypothesis testing. 
@@ -341,8 +341,8 @@ John tracked 80-year birth records in London and concluded that more men were bo
 Following that, the modern significance testing is the intelligence heritage by Karl Pearson who invented $p$-value and Pearson's chi-squared test), William Gosset who is the father of Student's t-distribution, and Ronald Fisher who initialed the null hypothesis and the significance test.
 -->
 
-Chủ đề thường gặp nhất trong suy luận thống kê là kiểm tra giả thuyết. 
-Mặc dù kiểm tra giả thuyết đã bắt đầu trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot vào những năm 1700.
+Chủ đề thường gặp nhất trong suy luận thống kê là kiểm định giả thuyết. 
+Mặc dù kiểm định giả thuyết đã bắt đầu trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot vào những năm 1700.
 John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng nam giới được sinh ra nhiều hơn mỗi năm so với nữ giới. 
 Tiếp đó, một thử nghiệm độ tin cậy hiện đại là di sản tình báo của Karl Pearson, người đã phát minh ra $p$-value và bài kiểm tra Pearson chi-squared, William Gosses, cha đẻ của phân-phối-t student, và Ronald Fisher, người đã khởi xướng giả thuyết không và kiểm định độ tin cậy. 
 
@@ -355,7 +355,7 @@ A null hypothesis is often stated in a declarative form which posits a relations
 It should reflect the brief as explicit as possible, and be testable by statistics theory.
 -->
 
-Một bài *kiểm tra giả thuyết* là cách để đánh giá các trường hợp không tuân theo quy tắc mặc định của một phân phối. 
+Một bài *kiểm định giả thuyết* là cách để đánh giá các trường hợp không tuân theo quy tắc mặc định của một phân phối. 
 Chúng ta xem quy tắc mặc định là *giả thuyết không* $H_0$, khi mà chúng ta cố gắng không sử dụng các dữ liệu quan sát được. 
 Tại đây, chúng tả sử dụng $H_0$ là điểm bắt đầu cho thử nghiệm thống kê về độ tin cậy.
 *Giả thuyết thay thế* $H_A$ (hay $H_1$) là sự đối lập với giả thuyết không.
@@ -413,14 +413,14 @@ In this way, hypothesis testing provides framework for experimental design and r
 If we can now show that the null hypothesis is very unlikely to be true, we may reject it with confidence.
 -->
 
-Bằng cách này, kiểm tra giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và đưa ra lý luận về sự chắc chắn từ các kết quả quan sát được.
+Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và đưa ra lý luận về sự chắc chắn từ các kết quả quan sát được.
 Nếu chúng ta chứng minh được giả định không khả năng rất cao là không đúng, thì chúng ta có thể tự tin phủ định nó.  
 
 <!--
 To complete the story of how to work with hypothesis testing, we need to now introduce some additional terminology and make some of our concepts above formal.
 -->
 
-Để hoàn thành câu chuyện về cách làm việc với kiểm tra giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và hiểu các khái niệm một cách chính thức hơn. 
+Để hoàn thành câu chuyện về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và hiểu các khái niệm một cách chính thức hơn. 
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 
