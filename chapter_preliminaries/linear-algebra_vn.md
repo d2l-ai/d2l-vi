@@ -4,7 +4,7 @@
 # Linear Algebra
 -->
 
-# *dịch tiêu đề phía trên*
+# Đại số tuyến tính
 :label:`sec_linear-algebra`
 
 <!--
@@ -12,14 +12,14 @@ Now that you can store and manipulate data, let's briefly review the subset of b
 Below, we introduce the basic mathematical objects, arithmetic, and operations in linear algebra, expressing each both through mathematical notation and the corresponding implementation in code.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng nhanh chóng ôn lại những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
 
 
 <!--
 ## Scalars
 -->
 
-## *dịch tiêu đề phía trên*
+## Số vô hướng
 
 <!--
 If you never studied linear algebra or machine learning, then your past experience with math probably consisted of thinking about one number at a time.
@@ -31,7 +31,13 @@ In this equation, each of the terms---$5$, $9$, and $32$---are scalar values.
 The placeholders $c$ and $f$ are called *variables* and they represented unknown scalar values.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn chưa từng học đại số tuyến tính hay học máy, chắc kinh nghiệm toán học của bạn chỉ bao gồm suy luận trên từng con số riêng lẻ.
+Nếu bạn đã từng phải cân bằng sổ chi tiêu hoặc chỉ đơn giản là trả tiền cho bữa ăn, bạn chắc chắn là đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
+Ví dụ, nhiệt độ tại Palo Alto là $$52$$ độ Fahrenheit.
+Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *vô hướng* (*scalar*).
+Nếu bạn muốn chuyển giá trị nhiệt độ trên sang độ Celsius (thang đo nhiệt độ hợp lý hơn theo hệ mét), bạn sẽ phải tính biểu thức $c = \frac{5}{9}(f - 32)$ với giá trị $f$ bằng $52$.
+Trong phương trình trên, mỗi hệ thức --- $5$, $9$ và $32$ --- là các scalar.
+Các ký hiệu số hạng $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
 
 <!--
 In this book, we adopt the mathematical notation where scalar variables are denoted by ordinary lower-cased letters (e.g., $x$, $y$, and $z$).
@@ -41,14 +47,19 @@ The symbol $\in$ can be pronounced "in" and simply denotes membership in a set.
 Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are numbers whose value can only be $0$ or $1$.
 -->
 
-*dịch đoạn phía trên*
+Trong quyển sách này, chúng ta sẽ theo quy ước kí hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
+Chúng ta kí hiệu không gian (liên tiếp) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
+Vì tính thiết thực, chúng ta sẽ bỏ qua việc định nghĩa chặt chẽ *không gian* là gì, bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách nói chính quy rằng $x$ là một số thực vô hướng.
+Kí hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ phần tử trong một tập hợp.
+Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để kí hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
 In MXNet code, a scalar is represented by an `ndarray` with just one element.
 In the next snippet, we instantiate two scalars and perform some familiar arithmetic operations with them, namely addition, multiplication, division, and exponentiation.
 -->
 
-*dịch đoạn phía trên*
+Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng `ndarray` với chỉ một phần tử.
+Trong đoạn mã dưới đây, chúng ta khỏi tạo hai số vô hướng và thực hiện các phép tính cộng, trừ, nhân, chia, luỹ thừa quen thuộc với chúng.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
