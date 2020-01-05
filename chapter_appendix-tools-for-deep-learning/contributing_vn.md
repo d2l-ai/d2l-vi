@@ -8,9 +8,9 @@ Những đóng góp từ [độc giả](https://github.com/aivivn/d2l-vn/graphs/
 
 ## Cách thức Đóng góp
 
-Có ba công việc chính bạn có thể đóng góp vào dự án: Dịch, Review, và Hỗ trợ kỹ thuật.
+Có ba công việc chính bạn có thể đóng góp vào dự án hiện tại: Dịch thuật, Phản biện nội dung (Review), và Hỗ trợ kỹ thuật.
 
-### Dịch
+### Dịch thuật
 
 Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
 ```
@@ -21,9 +21,9 @@ và
 <!-- =================== Kết thúc dịch Phần x ================================-->
 ```
 
-Việc chia nhỏ một file ra nhiều phần khiến một Pull Request mất không quá nhiều thời gian trong cả việc thực hiện lẫn review.
+Việc chia nhỏ một tệp ra nhiều phần khiến một Pull Request không mất quá nhiều thời gian trong cả việc thực hiện lẫn việc phản biện nội dung.
 
-(xem ví dụ [tại đây](https://github.com/aivivn/d2l-vn/blame/master/chapter_preface/index_vn.md#L1-L47).)
+(Xem ví dụ [tại đây](https://github.com/aivivn/d2l-vn/blame/master/chapter_preface/index_vn.md#L1-L47).)
 
 
 **Các bước thực hiện khi dịch một *phần* của một file `.md`:**
