@@ -11,8 +11,6 @@ jobs:
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
     - name: Build html and tex
       run: docker run -i -v `pwd`:/d2l d2l
-  job2:
-    needs: build_html_tex
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
