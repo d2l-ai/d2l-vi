@@ -1551,7 +1551,7 @@ Về phương diện hình học vector có thể được hiểu như là đi�
 -->
 
 * Siêu phẳng (_hyperplane_) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
-Chúng có thể được dùng để định ra mặt phẳng ra quyết định dùng trong bước cuối cùng của bài toán phân loại.
+Chúng có thể được dùng để định nghĩa mặt phẳng quyết định được dùng trong bước cuối cùng của bài toán phân loại.
 
 <!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
@@ -1580,7 +1580,7 @@ Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu c�
 -->
 
 * Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
-Định thức khác không nghĩa là một ma trận là khả nghịch (không độc nhất) và một định thức bằng không nghĩa là ma trận đó là không khả nghịch (độc nhất).
+Một ma trận là khả nghịch khi và chỉ khi định thức của nó khác không.
 * Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
 
 <!--
