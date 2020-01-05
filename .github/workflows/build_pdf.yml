@@ -1,4 +1,5 @@
 name: build pdf
+on: [push, pull_request]
 jobs:
    build_pdf:
     needs: build_html_tex
