@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l . && docker run -i -t -v `pwd`:/d2l d2l
+      run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
+      run: docker run -i -t -v `pwd`:/d2l d2l
       
-
