@@ -2441,8 +2441,8 @@ solutions to problems that were considered intractable previously.
   accuracy. This includes menial tasks such as turning on light switches (a boon to the disabled) up to making barber's appointments and offering phone support dialog. This is likely the most noticeable sign that AI is affecting our lives.
 -->
 
-* Các trợ lý thông minh, như Apple Siri, Amazon Alexa, hay Google Home có khả năng trả lời các câu hỏi thoại với độ chính xác chấp nhận được.
-Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
+* Các trợ lý thông minh như: Apple Siri, Amazon Alexa, hay Google Assistant có khả năng trả lời các câu hỏi thoại với độ chính xác chấp nhận được.
+Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt lịch hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
 
 <!--
 * A key ingredient in digital assistants is the ability to recognize speech
@@ -2494,7 +2494,7 @@ Không giống Backgamon, cờ vua có một không gian trạng thái  và tậ
 DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
 Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
 Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
-Thách thức trong Poker là không gian trạng thái lớn và nó không được quan sát hoàn toàn (ta không biết các quân bài của đối thủ).
+Thách thức trong Poker là không gian của trạng thái lớn và nó không được quan sát hoàn toàn (ta không biết các quân bài của đối thủ).
 Libratus vượt chất lượng con người trong môn Poker sử dụng các chiến thuật có cấu trúc một cách hiệu quả :cite:`Brown.Sandholm.2017`.
 Những điều này thể hiện một tiến triển ấn tượng trong các trò chơi và tầm quan trọng của các thuật toán nâng cao trong đó.
 
@@ -2511,7 +2511,7 @@ Những điều này thể hiện một tiến triển ấn tượng trong các 
   The rest is heavily tuned by engineers.
 -->
 
-* Dấu hiệu khác của tiến triển trong AI là sự phát triển của xe hơi và xe tải tự lái.
+* Dấu hiệu khác của tiến triển trong AI là sự phát triển của xe hơi và xe tải tự hành.
 Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất hỗ trợ bán tự động.
 Điều khiến tự động hoàn toàn mang nhiều thách thức là việc lái xe chuẩn mực đòi khỏi khả năng tiếp nhận, suy đoán và tích hợp các quy tắc vào hệ thống.
 Tại thời điểm hiện tại, học máy được sử dụng chủ yếu trong phần thị giác máy tính của các bài toán này.
