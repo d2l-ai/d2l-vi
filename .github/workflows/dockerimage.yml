@@ -9,6 +9,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
-    - uses: xu-cheng/latex-action@master
-      with:
-          root_file: _build/pdf/d2l-en.tex
+    - name: build pdf
+      run: docker run -i -v `pwd`:/d2l d2l
