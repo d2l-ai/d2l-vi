@@ -3,15 +3,6 @@ name: build html and tex
 on: [push]
 
 jobs:
-  build_html_tex:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
-    - name: Build html and tex
-      run: docker run -i -v `pwd`:/d2l d2l
-
   build_pdf:
     needs: build_html_tex
     runs-on: ubuntu-latest
@@ -22,3 +13,13 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: _build/pdf/d2l-en.tex
+
+  build_html_tex:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
+    - name: Build html and tex
+      run: docker run -i -v `pwd`:/d2l d2l
+
