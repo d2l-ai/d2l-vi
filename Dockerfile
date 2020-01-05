@@ -25,15 +25,4 @@ RUN apt-get install -y pandoc
 ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
-# install fonts
-# RUN wget https://www.fontsquirrel.com/fonts/download/source-serif-pro
-# RUN unzip -o source-serif-pro -d ~/.fonts/
-# RUN rm source-serif-pro
-
-# RUN wget https://www.fontsquirrel.com/fonts/download/source-sans-pro
-# RUN unzip -o source-sans-pro -d ~/.fonts/
-# RUN rm source-sans-pro
-
-# RUN fc-cache -f -v
-
 CMD ["d2lbook", "build", "pdf"]

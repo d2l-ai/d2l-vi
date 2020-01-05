@@ -11,7 +11,7 @@ jobs:
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
     - name: build html, tex, then pdf
       run: docker run -i -v `pwd`:/d2l d2l
-    - uses: xu-cheng/latex-action@master
-      with:
-          working_directory: _build/pdf/
-          root_file: d2l-en.tex
+    # - uses: xu-cheng/latex-action@master
+    #   with:
+    #       working_directory: _build/pdf/
+    #       root_file: d2l-en.tex
