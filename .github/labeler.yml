@@ -8,8 +8,11 @@ preface:
 install:
   - chapter_install/*
 
+tools:
+  - chapter_introduction/*
+
 introduction:
-    - chapter_introduction/*
+    - chapter_appendix-tools-for-deep-learning/*
 
 math:
     - chapter_appendix_math/*
