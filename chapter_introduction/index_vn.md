@@ -2306,7 +2306,7 @@ Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách bi
   can modify memory for a computation.
 -->
 * Thiết kế đa bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Bộ Lập trình-Phiên dịch Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kì.
-Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đấy có thể thực hiện một chuỗi các bước suy luận. Điều này tương tự như cách bộ vi xử lý chỉnh sửa bộ nhớ đệm khi thực hiện một phép tính toán.
+Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đấy có thể thực hiện một chuỗi các bước suy luận. Điều này cũng tương tự như cách bộ vi xử lý thay đổi bộ nhớ khi thực hiện một phép tính toán.
 <!-- Thực sự mình cũng không hiểu vừa dịch cái gì, chờ thảo luận với mọi người -->
 
 <!--
