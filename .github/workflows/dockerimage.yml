@@ -3,19 +3,16 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-
-  build:
-
+  build_html_tex:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
-    - name: Build html
+    - name: Build html and tex
       run: docker run -i -v `pwd`:/d2l d2l
   job2:
-    needs: build
+    needs: build_html_tex
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
