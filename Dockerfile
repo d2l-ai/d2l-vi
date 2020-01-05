@@ -25,11 +25,11 @@ RUN pip3 install git+https://github.com/aivivn/d2l-book
 
 # install fonts
 RUN wget https://www.fontsquirrel.com/fonts/download/source-serif-pro
-RUN unzip source-serif-pro -d ~/.fonts/
+RUN unzip -o source-serif-pro -d ~/.fonts/
 RUN rm source-serif-pro
 
 RUN wget https://www.fontsquirrel.com/fonts/download/source-sans-pro
-RUN unzip source-sans-pro -d ~/.fonts/
+RUN unzip -o source-sans-pro -d ~/.fonts/
 RUN rm source-sans-pro
 
 CMD ["d2lbook", "build", "pdf"]
