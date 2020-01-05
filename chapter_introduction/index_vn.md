@@ -1861,7 +1861,7 @@ Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt hơn h
 Nghe có vẻ khá mơ hồ bởi vì đúng là nó mơ hồ thật.
 Chúng ta gọi những loại vấn đề như thế này là *học không giám sát*, với chúng, loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
 Ta sẽ đề cập tới một số kỹ thuật học không giám sát ở các chương sau.
-Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài thắc mắc bạn có thể sẽ thắc mắc:
+Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài câu hỏi bạn có thể sẽ thắc mắc:
 
 <!--
 * Can we find a small number of prototypes
@@ -1894,7 +1894,7 @@ If the dependence is linear, it is called *principal component analysis*.
 Như là quỹ đạo bay của quả bóng được miêu tả tương đối tốt bởi số liệu vận tốc, đường kính và khối lượng của quả bóng.
 Như là người thợ may thì phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
 Những ví dụ trên được gọi là bài toán *ước lượng không gian con* (_subspace estimation_).
-Nếu mối quan hệ phụ thuộc là tuyến tính, bài toán này được gọi là phép *phân tích thành phần chủ đạo* (_PCA - principal component analysis -- PCA_).
+Nếu mối quan hệ phụ thuộc là tuyến tính, bài toán này được gọi là phép *phân tích thành phần chính* (_principal component analysis_ -- PCA).
 
 <!--
 * Is there a representation of (arbitrarily structured) objects
@@ -1933,7 +1933,7 @@ to check whether real and fake data are the same.
 We will devote a few notebooks to them.
 -->
 
-Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mạng sinh đối kháng* (_generative adversarial network -- GAN_)*.
+Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mạng sinh đối kháng* (_generative adversarial network_ -- GAN).
 GAN cho ta một quy trình sinh dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
 Cùng các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật giả này có giống nhau không.
 Chúng tôi sẽ viết vài mục về chủ đề này sau.
