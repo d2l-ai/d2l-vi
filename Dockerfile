@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-FROM xucheng/texlive-full:latest
 MAINTAINER fnndsc "vuhuutiep@gmail.com"
 
 RUN apt-get update \
@@ -23,4 +22,6 @@ WORKDIR /d2l
 ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
+FROM xucheng/texlive-full:latest
+RUN rm -rf /var/lib/apt/lists/*
 CMD ["d2lbook", "build", "all"]
