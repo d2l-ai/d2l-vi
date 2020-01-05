@@ -22,4 +22,4 @@ WORKDIR /d2l
 ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/aivivn/d2l-book
 
-CMD ["d2lbook", "build", "html"]
+CMD ["d2lbook", "build", "all"]
