@@ -2102,7 +2102,8 @@ in industry and the natural sciences.
 Thống kê thật sự khởi sắc với việc thu thập và có sẵn dữ liệu.
 Một trong số những người phi thường đã đóng góp lớn vào lý thuyết và ứng dụng của nó trong di truyền học, đó là [Ronald Fisher (1890-1962)](https://en.wikipedia.org/wiki/Ronald_Fisher).
 Nhiều thuật toán của ông (như Phân tích biệt thức tuyến tính - Linear Discriminant Analysis) hay công thức (như Ma trận thông tin Fisher - Fisher Information Matrix) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông công bố năm 1936 đôi khi vẫn được sử dụng để minh hoạ cho các thuật toán học máy).
-Fisher cũng là một người ủng hộ thuyết ưu sinh, điều này luôn gợi nhớ ta về mọi sự mập mờ về góc độ đạo đức khi sử dụng khoa học dữ liệu đã tồn tại lâu đời và bền vững cùng lịch sử cũng như việc sử dụng nó trong công nghiệp và khoa học tự nhiên.
+Fisher cũng là một người ủng hộ thuyết ưu sinh. 
+Điều này nhắc chúng ta rằng việc áp dụng khoa học dữ liệu vào những ứng dụng mờ ám trên phương diện đạo đức cũng như các ứng dụng có ích trong công nghiệp và khoa học tự nhiên đều đã có lịch sử tồn tại và phát triển lâu đời.
 
 <!-- =================== Kết thúc dịch Phần 27 ==================== -->
 
