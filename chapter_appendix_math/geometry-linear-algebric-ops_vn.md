@@ -1532,62 +1532,68 @@ Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chín
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Vectors can be interpreted geometrically as either points or directions in space.
 -->
 
-*dịch đoạn phía trên*
+Về phương diện hình học vector có thể được hiểu như là điểm hoặc hướng trong không gian.
 
 <!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-*dịch đoạn phía trên*
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kì.
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
 -->
 
-*dịch đoạn phía trên*
+* Siêu phẳng (_hyperplane_) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
+Chúng có thể được dùng để định ra mặt phẳng ra quyết định dùng trong bước cuối cùng của bài toán phân loại.
 
 <!--
 * Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
 -->
 
-*dịch đoạn phía trên*
+* Phép nhân ma trận có thể được biểu diễn hình học như việc biến dạng một cách đồng nhất các các điểm toạ độ.
+Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
 
 <!--
 * Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
 -->
 
-*dịch đoạn phía trên*
+* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chỉ nằm trong không gian $2$ chiều).
+Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
 
 <!--
 * When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
 -->
 
-*dịch đoạn phía trên*
+* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác mà hoàn tác lại hành động trước đó.
+Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (_numerical instability_) của nó.
 
 <!--
 * Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
 
-*dịch đoạn phía trên*
+* Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
+Định thức khác không nghĩa là một ma trận là khả nghịch (không độc nhất) và một định thức bằng không nghĩa là ma trận đó là không khả nghịch (độc nhất).
+* Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What is the angle between
 -->
 
-*dịch đoạn phía trên*
+1. Góc giữa hai vectors dưới đây là bao nhiêu?
 
 $$
 \vec v_1 = \begin{bmatrix}
@@ -1601,13 +1607,14 @@ $$
 2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
 -->
 
-*dịch đoạn phía trên*
+2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ và $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có phải là nghịch đảo của nhau?
 
 <!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta vẽ ra một hình trong mặt phẳng với diện tích $100\mathrm{m}^2$.
+Diện tích đó sẽ bằng bao nhiêu sau khi biến đổi hình đó bằng ma trận
 
 $$
 \begin{bmatrix}
@@ -1620,7 +1627,7 @@ $$
 4. Which of the following sets of vectors are linearly independent?
 -->
 
-*dịch đoạn phía trên*
+4. Trong các nhóm vector sau, nhóm nào là độc lập tuyến tính?
 
  * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
@@ -1630,32 +1637,34 @@ $$
 5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
 -->
 
-*dịch đoạn phía trên*
+5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với các giá trị $a, b, c$, và $d$ nào đó.
+Đúng hay sai: một ma trận như thế luôn có định thức bằng $0$?
 
 <!--
 6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
 -->
 
-*dịch đoạn phía trên*
+6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ và $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
+Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao?
 
 <!--
 7. How can you write $\mathrm{tr}(\mathbf{A}^4)$ in Einstein notation for an arbitrary matrix $A$?
 -->
 
-*dịch đoạn phía trên*
+7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý?
 
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/5147)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/5147)
 
 <!--
 ![](../img/qr_geometry-linear-algebric-ops.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_geometry-linear-algebric-ops.svg)
+![](../img/qr_geometry-linear-algebric-ops.svg)
 
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
@@ -1721,4 +1730,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 16 -->
-*
+* Mai Sơn Hải
