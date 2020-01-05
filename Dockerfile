@@ -1,4 +1,4 @@
-# FROM ubuntu:latest
+FROM ubuntu:latest
 FROM xucheng/texlive-full:latest
 MAINTAINER fnndsc "vuhuutiep@gmail.com"
 
