@@ -9,8 +9,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build --build-arg D2L_VER=$(date +%Y%m%d-%H%M%S) -t d2l .
-    - name: build html, tex, then pdf
+    - name: build html, tex
       run: docker run -i -v `pwd`:/d2l d2l
+
+# building pdf has some weird issues with fonts
+# might be revist later
     # - uses: xu-cheng/latex-action@master
     #   with:
     #       working_directory: _build/pdf/
