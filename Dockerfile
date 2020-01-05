@@ -32,4 +32,6 @@ RUN wget https://www.fontsquirrel.com/fonts/download/source-sans-pro
 RUN unzip -o source-sans-pro -d ~/.fonts/
 RUN rm source-sans-pro
 
+RUN fc-cache -f -v
+
 CMD ["d2lbook", "build", "pdf"]
