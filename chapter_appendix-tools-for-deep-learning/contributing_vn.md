@@ -8,12 +8,8 @@ Contributions by [readers](https://github.com/d2l-ai/d2l-en/graphs/contributors)
 ![Contributing to the book.](../img/contribute.svg)
 :label:`fig_contribute`
 
-1. Truy cập vào kho chứa của dự án [tại đây](https://github.com/aivivn/d2l-vn), chọn Fork để lấy dự án về tài khoản Github của bạn.
-2. Truy cập vào trang chủ tài khoản Github của bạn và tìm đến Kho chứa dự án vừa lấy về. Bạn có thể chọn sử dụng Github Desktop để lấy về máy tính, hoặc sử dụng đường dẫn được Github cung cấp dưới dạng HTTPS hoặc SSH để lấy dự án về máy tính dưới dạng Git.
-3. 
 
-
-## Hướng dẫn Đóng góp cho Người dịch thuật
+## Hướng dẫn Đóng góp
 
 ### Cài đặt Git
 
