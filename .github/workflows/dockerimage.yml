@@ -13,4 +13,5 @@ jobs:
       run: docker run -i -v `pwd`:/d2l d2l
     - uses: xu-cheng/latex-action@master
       with:
-          root_file: _build/pdf/d2l-en.tex
+          working_directory: _build/pdf/
+          root_file: d2l-en.tex
