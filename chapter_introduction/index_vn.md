@@ -1979,7 +1979,7 @@ potentially giving up some short-run reward in exchange for knowledge.
 #### MDPs, bandits, and friends
 -->
 
-#### MDPs, những kẻ cướp, và những người bạn
+#### MDPs, những kẻ trộm, và những người bạn
 
 <!--
 The general reinforcement learning problem
