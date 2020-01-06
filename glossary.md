@@ -234,7 +234,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scalar | số vô hướng | |
 | sensitivity | độ nhạy | |
 | statistical power | năng lực thống kê | | 
-| significance test | kiểm định ý nghĩa thống kê | |
+| significance test | kiểm định ý nghĩa | |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
