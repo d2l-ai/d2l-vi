@@ -107,9 +107,9 @@ Extensive literature considers column vectors to be the default orientation of v
 In math, a vector $\mathbf{x}$ can be written as
 -->
 
-Chúng ta trỏ tới một phần tử bất kì trong vector bằng kí hiệu viết dưới.
+Một phần tử bất kì trong vector có thể được ký hiệu sử dụng chỉ số dưới.
 Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
-Lưu ý rằng phần từ $x_i$ là một số vô hướng, vậy nên ta không viết nét đậm cho nó.
+Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
 Rất nhiều tài liệu tham khảo coi vector cột là chiều mặc định của vector, vậy nên quyển sách này cũng vậy.
 Trong toán, một vector có thể được viết như sau
 
