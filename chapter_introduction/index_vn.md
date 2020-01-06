@@ -2512,7 +2512,7 @@ Những điều này thể hiện một tiến triển ấn tượng trong các 
 -->
 
 * Dấu hiệu khác của tiến triển trong AI là sự phát triển của xe hơi và xe tải tự hành.
-Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất hỗ trợ bán tự động.
+Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với việc các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất hỗ trợ bán tự động.
 Điều khiến tự động hoàn toàn mang nhiều thách thức là việc lái xe chuẩn mực đòi khỏi khả năng tiếp nhận, suy đoán và tích hợp các quy tắc vào hệ thống.
 Tại thời điểm hiện tại, học máy được sử dụng chủ yếu trong phần thị giác máy tính của các bài toán này.
 Phần còn lại vẫn phụ thuộc chủ yếu bởi những điều chỉnh của các kỹ sư.
