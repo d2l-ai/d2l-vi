@@ -392,7 +392,7 @@ Học sâu cung cấp một tập hợp các công cụ xử lý những loại 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
-<!-- =================== Bắt đầu dịch Phần 5 ==================== -->
+<!-- =================== Bắt đầu dịch Phần 5 / revise ============ -->
 
 <!--
 ## The Key Components: Data, Models, and Algorithms
@@ -414,10 +414,10 @@ First, we'd like to shed more light on some core components
 that will follow us around, no matter what kind of ML problem we take on:
 -->
 
-Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu bao gồm các đoạn âm thanh và các nhãn nhị phân, giúp các bạn hiểu một cách chung chung về cách chúng ta có thể *huấn luyện* một mô hình để phân loại các đoạn âm thanh.
-Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu đã được gán nhãn.
-Đây là ví dụ về bài toán *học có giám sát*, đây chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học tới trong các chương sau.
-Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
+Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu bao gồm các đoạn âm thanh và các nhãn nhị phân, giúp các bạn hiểu một cách chung chung về cách *huấn luyện* một mô hình để phân loại các đoạn âm thanh.
+Với loại bài toán này, ta cố gắng dự đoán một *nhãn* chưa biết với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu đã được gán nhãn.
+Đây là ví dụ về bài toán *học có giám sát* và chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học trong các chương sau.
+Trước hết, chúng tôi muốn giải thích rõ hơn về các thành phần cốt lõi sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
 
 <!--
 1. The *data* that we can learn from.
@@ -456,13 +456,13 @@ can then simply be called the *features*,
 (or often, the *inputs*, *covariates*, or *independent variables*).
 -->
 
-Có thể nói rằng bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
+Có một sự thật hiển nhiên là bạn không thể làm khoa học dữ liệu mà không có dữ liệu.
 Chúng ta sẽ tốn rất nhiều giấy mực để cân nhắc chính xác những gì cấu thành nên dữ liệu, nhưng bây giờ chúng ta sẽ rẽ sang khía cạnh thực tế và tập trung vào các thuộc tính quan trọng cần quan tâm.
 Thông thường, chúng ta quan tâm đến một bộ *mẫu* (còn được gọi là *điểm dữ liệu*, *ví dụ* hoặc *trường hợp*).
-Để làm việc với dữ liệu một cách hữu ích, chúng ta thường cần phải có một cách biễu diễn phù hợp dưới dạng số.
+Để làm việc với dữ liệu một cách hữu ích, chúng ta thường cần có một cách biễu diễn chúng phù hợp dưới dạng số.
 Mỗi *ví dụ* thường bao gồm một bộ thuộc tính số gọi là *đặc trưng*.
-Trong các bài toán học có giám sát ở trên, một đặc trưng đặc biệt được chọn như *mục tiêu* dự đoán, (đôi khi được gọi là *nhãn* hoặc *biến phụ thuộc*).
-Các đặc trưng nhất định mà mô hình dựa vào để đưa ra dự đoán có thể được gọi đơn giản là các *đặc trưng*, (hoặc thường là *đầu vào*, *hiệp biến* hoặc *biến độc lập*).
+Trong các bài toán học có giám sát ở trên, một đặc trưng đặc biệt được chọn làm *mục tiêu* dự đoán, (còn được gọi là *nhãn* hoặc *biến phụ thuộc*).
+Các đặc trưng mà mô hình dựa vào để đưa ra dự đoán có thể được gọi đơn giản là các *đặc trưng*, (hoặc thường là *đầu vào*, *hiệp biến* hoặc *biến độc lập*).
 
 <!--
 If we were working with image data,
@@ -481,7 +481,7 @@ Nếu chúng ta đang làm việc với dữ liệu hình ảnh, mỗi bức ả
 Một bức ảnh màu có kích thước $200\times 200$ sẽ bao gồm $200\times200\times3=120000$ giá trị số, tương ứng với độ sáng của các kênh màu đỏ, xanh lá cây và xanh dương cho từng vị trí trong không gian.
 Trong một tác vụ truyền thống hơn, chúng ta có thể cố gắng dự đoán xem một bệnh nhân liệu có cơ hội sống sót hay không, dựa trên bộ đặc trưng tiêu chuẩn cho trước như tuổi, các triệu chứng quan trọng, thông số chẩn đoán, .v.v.
 
-<!-- =================== Kết thúc dịch Phần 5 ==================== -->
+<!-- =================== Kết thúc dịch Phần 5 =================== -->
 
 <!-- =================== Bắt đầu dịch Phần 6 ==================== -->
 
@@ -516,13 +516,13 @@ is the comparative grace with which modern models
 can handle *varying-length* data.
 -->
 
-Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vector có độ dài cố định.
-Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc hình dạng được.
+Tuy nhiên, không phải tất cả dữ liệu có thể được dễ dàng biểu diễn dưới dạng vector có độ dài cố định.
+Đôi khi ta có thể mong đợi hình ảnh từ kính hiển vi đến từ thiết bị tiêu chuẩn, nhưng ta không thể mong đợi hình ảnh được khai thác từ Internet sẽ hiển thị với cùng độ phân giải hoặc tỉ lệ được.
 Đối với hình ảnh, ta có thể tính đến việc cắt xén nhằm đưa chúng về kích thước tiêu chuẩn, nhưng chiến lược này chỉ đưa ta đến đấy mà thôi.
 Và ta có nguy cơ sẽ mất đi thông tin trong các phần bị cắt bỏ. 
 Hơn nữa, dữ liệu văn bản không thích hợp với cách biểu diễn dưới dạng vector có độ dài cố định.
 Suy xét một chút về những đánh giá của khách hàng để lại trên các trang Thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
-Ta có thể thấy được số bình luận ngắn gọn như: "nó bốc mùi!", một số khác thì bình luận lan man hàng trang.
+Ta có thể thấy có những bình luận ngắn gọn như: "nó bốc mùi!", một số khác thì bình luận lan man hàng trang.
 Một lợi thế lớn của học sâu so với các phương pháp truyền thống đó là các mô hình học sâu hiện đại có thể xử lý dữ liệu có *độ dài biến đổi* một cách uyển chuyển hơn.
 
 <!--
@@ -536,7 +536,7 @@ Some others work in the low-data regime,
 but no better than traditional approaches.
 -->
 
-Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc sẽ suôn sẻ hơn.
+Nhìn chung, chúng ta có càng nhiều dữ liệu thì công việc sẽ càng dễ dàng hơn.
 Khi ta có nhiều dữ liệu hơn, ta có thể huấn luyện ra những mô hình mạnh mẽ hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
 Việc chuyển từ dữ liệu nhỏ sang dữ liệu lớn là một đóng góp chính cho sự thành công của học sâu hiện đại.
 Để cho rõ hơn, nhiều mô hình thú vị nhất trong học sâu có thể không hoạt động nếu như không có bộ dữ liệu lớn.
@@ -572,13 +572,14 @@ Ta cần những dữ liệu *đúng*. Nếu dữ liệu mang đầy lỗi, ho�
 Tình huống trên có thể được khái quát bởi thuật ngữ: *đưa rác vào thì nhận rác ra* (*garbage in, garbage out*).
 Hơn nữa, chất lượng dự đoán kém không phải hậu quả tiềm tàng duy nhất.
 Trong các ứng dụng học máy có tính nhạy cảm như: dự đoán hành vi phạm pháp, sàng lọc hồ sơ cá nhân và mô hình rủi ro được sử dụng để cho vay, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
-Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu mà ở đó một số nhóm người không tồn tại trong dữ liệu huấn luyện.
-Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy da màu đen.
+Một dạng lỗi thường thấy xảy ra trong các bộ dữ liệu là khi một nhóm người không tồn tại trong dữ liệu huấn luyện.
+Hãy hình dung khi áp dụng một hệ thống nhận diện ung thư da trong thực tế mà trước đây nó chưa từng thấy qua da màu đen.
 Thất bại cũng có thể xảy ra khi dữ liệu không đại diện đầy đủ và chính xác cho một số nhóm người, nhưng lại đánh giá nhóm người này dựa vào định kiến của xã hội.
 Một ví dụ, nếu như các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng nhằm sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình học được từ những bất công trong quá khứ.
 Lưu ý rằng tất cả vấn đề trên có thể xảy ra mà không hề có tác động xấu nào của nhà khoa học dữ liệu hoặc thậm chí họ còn không ý thức được về các vấn đề đó.
 
-<!-- =================== Kết thúc dịch Phần 6 ==================== -->
+
+<!-- =================== Kết thúc dịch Phần 6 =================== -->
 
 <!-- =================== Bắt đầu dịch Phần 7 ==================== -->
 
