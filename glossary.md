@@ -26,6 +26,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                          |               |
 | attention mechanisms      | cơ chế tập trung                                               |               |
+| alternative hypothesis | giả thuyết đối | |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -92,6 +93,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example             | mẫu                                                            |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
+| effect size | hệ số ảnh hưởng | |
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -123,7 +125,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | human-level performance | chất lượng mức con người                                       | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
 | hyperparameter          | siêu tham số                                                   |                                                  |
 | hyperplane              | siêu phẳng                                                     |                                                  |
-| hypothesis test         | kiểm chứng thống kê                                                   |                                                  |
+| hypothesis test         | kiểm định giả thuyết                                                   |                                                  |
 
 ## I
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -177,6 +179,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
 | overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA |
+| one-sided test | kiểm định một phía | |
+| one-tailed test | kiểm định một đuôi | |
 
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -192,6 +196,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | precision               | precision                                                      |                       |
 | principal component analysis (PCA) | phân tích thành phần chính                        |                       |
 | probability theory      | lý thuyết xác suất                                             |                       |
+| population | tổng thể | |
+| p-value | trị số p | |
 
 ## R
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -206,6 +212,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reward function        | hàm điểm thưởng                                                |               |
 | root mean squared error (RMSE)| căn bậc hai trung bình bình phương sai số | | 
 | running time           | thời gian chạy                                                 |               |
+| region of rejection | miền bác bỏ | |
 
 ## S
 | English                      | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -224,6 +231,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | supervised learning          | học có giám sát                                                |                       |
 | surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1                      |
 | subspace estimation          | ước lượng không gian con                                       |                       |
+| scalar | số vô hướng | |
+| sensitivity | độ nhạy | |
+| statistical power | năng lực thống kê | | 
+| significance test | kiểm định ý nghĩa | |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -240,6 +251,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
+| test statistic | tiêu chuẩn kiểm định | |
+| two-sided test | kiểm định hai phía | |
+| two-tailed test | kiểm định hai đuôi | |
 
 ## U
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
