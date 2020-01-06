@@ -82,8 +82,8 @@ In math notation, we will usually denote vectors as bold-faced, lower-cased lett
 Bạn có thể nghĩ vector đơn giản là một dãy các số vô hướng.
 Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của vector.
 Khi các vector biễu diễn cho mẫu trong tập dữ liệu, các giá trị của nó mang theo những ý nghĩa từ thực tế.
-Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên mội vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
-Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, chúng ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức sống, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
+Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
+Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức sống, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
 Trong kí hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
 
 <!--
@@ -110,7 +110,7 @@ In math, a vector $\mathbf{x}$ can be written as
 Một phần tử bất kì trong vector có thể được ký hiệu sử dụng chỉ số dưới.
 Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
 Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
-Rất nhiều tài liệu tham khảo coi vector cột là chiều mặc định của vector, vậy nên quyển sách này cũng vậy.
+Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, quyển sách này cũng vậy.
 Trong toán, một vector có thể được viết như sau
 
 $$\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix},$$
