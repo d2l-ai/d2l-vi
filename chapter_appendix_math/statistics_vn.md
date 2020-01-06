@@ -148,7 +148,7 @@ As a measure to evaluate an estimator, the closer its value to zero, the closer 
 -->
 
 Điều này cho phép ta định lượng trung bình bình phương độ lệch so với giá trị thực.
-MSE là một đại lượng luôn dương.
+MSE là một đại lượng không âm.
 Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là hàm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
 Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không thì bộ ước lượng càng gần với tham số thực $\theta$.
 
@@ -186,7 +186,7 @@ In general, an unbiased estimator is better than a biased estimator since its ex
 -->
 
 Lưu ý rằng khi $\mathrm{bias}(\hat{\theta}_n) = 0$, kỳ vọng của bộ ước lượng $\hat{\theta}_n$ sẽ bằng với giá trị thực của tham số.
-Tổng quát, một bộ ước lượng không thiên lệch sẽ tốt hơn một bộ ước lượng thiên lệch vì kỳ vọng của nó sẽ bằng tới tham số thực.
+Nhìn chung, một bộ ước lượng không thiên lệch sẽ tốt hơn một bộ ước lượng thiên lệch vì kỳ vọng của nó sẽ bằng với tham số thực.
 
 
 <!--
@@ -196,7 +196,7 @@ This may seem like a significant flaw in an estimator, however the majority of e
 -->
 
 Cũng đáng để nhắc rằng, dù vậy, những bộ ước lượng thiên lệch thường xuyên được sử dụng trong thực tế.
-Có những trường hợp các bộ ước lượng không thiên lệch không tồn tại mà không cần giả định thêm hoặc khó để tính toán.
+Có những trường hợp các bộ ước lượng không thiên lệch không tồn tại nếu không có thêm giả định hoặc nó rất khó để tính toán.
 Đây có thể xem như một khuyết điểm lớn trong bộ ước lượng, tuy nhiên phần lớn các bộ ước lượng gặp trong thực tiễn đều ít nhất tiệm cận không thiên lệch theo nghĩa độ chệch có xu hướng tiến về không khi số lượng mẫu có được tiến về vô cực: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
