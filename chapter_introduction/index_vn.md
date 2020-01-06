@@ -2510,8 +2510,8 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   throughout the network, replacing weights by random variables
   for training purposes.
 -->
-
-*dịch đoạn phía trên*
+* Các phương pháp tiên tiến trong việc kiểm soát năng lực, như Dropout :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`, đã giúp làm giảm sự nguy hiểm của quá khớp.
+Việc này đạt được bằng cách áp dụng thêm nhiễu :cite:`Bishop.1995` xuyên suốt khắp mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
 
 <!--
 * Attention mechanisms solved a second problem
@@ -2529,7 +2529,9 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   commencing the generation of a new sentence.
 -->
 
-*dịch đoạn phía trên*
+* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
+:cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một cấu trúc con trỏ có thể học được.
+Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này cho phép tăng đáng kể độ chính xác của các câu dài bởi mô hình không cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
 <!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
@@ -2539,8 +2541,9 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   in a chain of reasoning, similar to how a processor
   can modify memory for a computation.
 -->
-
-*dịch đoạn phía trên*
+* Thiết kế đa bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Bộ Lập trình-Phiên dịch Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kì.
+Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đấy có thể thực hiện một chuỗi các bước suy luận. Điều này cũng tương tự như cách bộ vi xử lý thay đổi bộ nhớ khi thực hiện một phép tính toán.
+<!-- Thực sự mình cũng không hiểu vừa dịch cái gì, chờ thảo luận với mọi người -->
 
 <!--
 * Another key development was the invention of GANS
@@ -2560,7 +2563,13 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   are both testimony to this progress.
 -->
 
-*dịch đoạn phía trên*
+* Một bước phát triển quan trọng khác là sự ra đời của GAN :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
+Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật độ xác suất và các mô hình sinh (_generative models_) tập trung vào việc tìm các phân phối xác suất hợp lý và các thuật toán (thường là xấp xỉ) để lấy mẫu từ các phân phối đó.
+Kết quả là, những thuật toán này cũng bị hạn chế bởi sự thiếu linh động do kế thừa từ chính các mô hình thống kê đó.
+Phát kiến quan trọng của GAN là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi [có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm].
+Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống như bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
+Khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu đã thúc đẩy phương pháp đánh giá hàm mật độ xác suất khai sinh một loạt các kỹ thuật.
+Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu.Park.Isola.ea.2017` và tạo giả khuôn mặt người nổi tiếng là các minh chứng của quá trình này.
 
 <!--
 * In many cases, a single GPU is insufficient to process
@@ -2581,7 +2590,13 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   For comparison\-\-initially training times were measured in the order of days.
 -->
 
-*dịch đoạn phía trên*
+Trong rất nhiều trường hợp, một GPU là không đủ để xử lý một lượng lớn dữ liệu sẵn có cho huấn luyện.
+Khả năng xây dựng các thuật toán huấn luyện phân tán song song đã cải tiến đáng kể trong thập kỷ vừa rồi.
+Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào cách xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
+Đồng thời, batch nhỏ hạn chế sự hiệu quả của GPU.
+Bởi vậy, huấn luyện trên 1024 GPU với 32 ảnh trong một batch chẳng hạn, sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
+Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sau đó là :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
+
 
 <!--
 * The ability to parallelize computation has also contributed quite crucially
@@ -2595,7 +2610,11 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   other. Simulation provides such an avenue.
 -->
 
-*dịch đoạn phía trên*
+* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là khi có thể tạo và sử dụng môi trường giả lập.
+Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo) khi máy tính đạt được chất lượng vượt mức con người. 
+Xem thêm mô tả về cách đạt được điều này trong Alphago tại :cite:`Silver.Huang.Maddison.ea.2016`.
+Tóm lại, học tăng cường làm việc tốt nhất nếu có sẵn cực nhiều bộ (trạng thái, hành động, điểm thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
+Mô phỏng giả lập cung cấp một môi trường như thế.
 
 <!--
 * Deep Learning frameworks have played a crucial role
@@ -2615,7 +2634,13 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   It is the latter group that this course uses to teach deep learning.
 -->
 
-*dịch đoạn phía trên*
+* Các framework Học Sâu đóng một vai trò thiết yếu trong việc thực hiện hóa các ý tưởng.
+Các framework thế hệ đầu tiên cho phép dễ dàng mô hình hóa bao gồm [Caffe](https://github.com/BVLC/caffe), [Torch](https://github.com/torch), và [Theano](https://github.com/Theano/Theano).
+Rất nhiều bài báo được viết về cách sử dụng các công cụ này.
+Hiện tại, chúng bị thay thế bởi [TensorFlow](https://github.com/tensorflow/tensorflow), thường được sử dụng thông qua API mức cao [Keras](https://github.com/keras-team/keras), [CNTK](https://github.com/Microsoft/CNTK), [Caffe 2](https://github.com/caffe2/caffe2) và [Apache MxNet](https://github.com/apache/incubator-mxnet).
+Thế hệ công cụ thứ ba -- công cụ học sâu dạng mệnh lệnh -- được tiên phong bởi [Chainer](https://github.com/chainer/chainer), công cụ này sử dụng cú pháp tương tự như Python NumPy để mô tả các mô hình.
+Ý tưởng này được áp dụng bởi [PyTorch](https://github.com/pytorch/pytorch) và [Gluon API](https://github.com/apache/incubator-mxnet) của MXNet.
+Khóa học này sử dụng nhóm công cụ cuối cùng để dạy về học sâu.
 
 <!--
 The division of labor between systems researchers building better tools
@@ -2629,7 +2654,9 @@ By now, this task can be accomplished with less than 10 lines of code,
 putting it firmly into the grasp of programmers.
 -->
 
-*dịch đoạn phía trên*
+Sự phân chia công việc giữa (i) các nhà nghiên cứu hệ thống xây dựng các công cụ tốt hơn và (ii) các nhà mô hình hóa thống kê xây dựng các mạng tốt hơn đã đơn giản hóa công việc một cách đáng kể.
+Ví dụ, huấn luyện một mô hình hồi quy logistic tuyến tính từng là một bài tập về nhà không đơn giản cho tân nghiên cứu sinh tiến sĩ ngành học máy tại Đại học Carnegie Mellon năm 2014.
+Hiện tại, tác vụ này có thể đạt được với ít hơn 10 dòng mã, khiến việc này trở nên đơn giản với các lập trình viên.
 
 <!-- =================== Kết thúc dịch Phần 30 ==================== -->
 
