@@ -2274,7 +2274,7 @@ over the past decade.
   throughout the network, replacing weights by random variables
   for training purposes.
 -->
-* Các phương pháp tiên tiến trong việc kiểm soát sức chứa, như Dropout :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`, đã giúp làm giảm sự nguy hiểm của quá khớp.
+* Các phương pháp tiên tiến trong việc kiểm soát năng lực, như Dropout :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`, đã giúp làm giảm sự nguy hiểm của quá khớp.
 Việc này đạt được bằng cách áp dụng thêm nhiễu :cite:`Bishop.1995` xuyên suốt khắp mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
 
 <!--
