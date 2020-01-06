@@ -2193,7 +2193,7 @@ Các thuật toán học tăng cường phải luôn lựa chọn giữa việc 
 #### MDPs, bandits, and friends
 -->
 
-#### *dịch tiêu đề phía trên*
+#### MDPs, những kẻ trộm, và những người bạn
 
 <!--
 The general reinforcement learning problem
@@ -2207,7 +2207,13 @@ As a result, researchers have studied a number of
 *special cases* of reinforcement learning problems.
 -->
 
-*dịch đoạn phía trên*
+Các bài toán học tăng cường thường có một thiết lập rất tổng quát.
+Các hành động của tác nhân có ảnh hưởng đến những quan sát về sau.
+Những điểm thưởng chỉ nhận được khi sự quan sát này tương ứng với các hành động được chọn.
+Môi trường có thể được quan sát đầy đủ hoặc chỉ một phần.
+Tính toán tất cả sự phức tạp này cùng lúc có thể cần sự tham gia của quá nhiều nhà nghiên cứu.
+Hơn nữa, không phải mọi vấn đề thực tế đều thể hiện tất cả sự phức tạp này.
+Vì vậy, các nhà nghiên cứu đã nghiên cứu một số *trường hợp đặc biệt* về những bài toán học tăng cường.
 
 <!--
 When the environment is fully observed,
@@ -2219,7 +2225,9 @@ with initially unknown rewards, this problem
 is the classic *multi-armed bandit problem*.
 -->
 
-*dịch đoạn phía trên*
+Khi ở môi trường được quan sát đầy đủ, ta gọi vấn đề học tăng cường là *Quá trình Quyết định Markov* (*Markov Decision Process* -- MDP).
+Khi trạng thái không phụ thuộc vào các hành động trước đó, ta gọi bài toán này là *bài toán trộm ngữ cảnh* (*contextual bandit problem*).
+Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, vấn đề kinh điển này sẽ là *bài toán trộm đa nhánh* (*multi-armed bandit problem*).
 
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
 
