@@ -149,7 +149,7 @@ As a measure to evaluate an estimator, the closer its value to zero, the closer 
 
 Điều này cho phép ta định lượng trung bình bình phương độ lệch so với giá trị thực.
 MSE là một đại lượng luôn dương.
-Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là làm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
+Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là hàm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
 Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không thì bộ ước lượng càng gần với tham số thực $\theta$.
 
 
