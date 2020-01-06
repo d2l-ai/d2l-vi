@@ -179,7 +179,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthogonal        | trực giao                                                      |                       |
 | orthonormal       | trực chuẩn                                                     |                       |
 | overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA |
-| one-sided/one-tailed test | kiểm định một phía/đuôi | |
+| one-sided test | kiểm định một phía | |
+| one-tailed test | kiểm định một đuôi | |
 
 ## P
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -251,7 +252,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
 | test statistic | tiêu chuẩn kiểm định | |
-| two-sided/two-tailed test | kiểm định hai phía/đuôi | |
+| two-sided test | kiểm định hai phía | |
+| two-tailed test | kiểm định hai đuôi | |
 
 ## U
 | English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
