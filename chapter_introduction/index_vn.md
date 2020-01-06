@@ -2685,7 +2685,8 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
   accuracy. This includes menial tasks such as turning on light switches (a boon to the disabled) up to making barber's appointments and offering phone support dialog. This is likely the most noticeable sign that AI is affecting our lives.
 -->
 
-*dịch đoạn phía trên*
+* Các trợ lý thông minh như: Apple Siri, Amazon Alexa, hay Google Assistant có khả năng trả lời các câu hỏi thoại với độ chính xác chấp nhận được.
+Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt lịch hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
 
 <!--
 * A key ingredient in digital assistants is the ability to recognize speech
@@ -2694,7 +2695,8 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
   applications.
 -->
 
-*dịch đoạn phía trên*
+* Một thành phần chính trong trợ lý số là khả năng nhận dạng chính xác tiếng nói.
+Dần dần độ chính xác của những hệ thống này cải thiện tới mức tương đương con người (:cite:`Xiong.Wu.Alleva.ea.2018`) cho những ứng dụng cụ thể.
 
 <!--
 * Object recognition likewise has come a long way. Estimating the object in a
@@ -2704,7 +2706,11 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
   results have been achieved for identifying birds, or diagnosing skin cancer.
 -->
 
-*dịch đoạn phía trên*
+* Tương tự, nhận dạng vật thể cũng đã tiến một bước dài.
+Đánh giá một vật thể trong ảnh là một tác vụ khó năm 2010.
+Trong bảng xếp hạng ImageNet, :cite:`Lin.Lv.Zhu.ea.2010` đạt được tỉ lệ lỗi top-5 là 28%.
+Tới 2017, :cite:`Hu.Shen.Sun.2018` giảm tỉ lệ lỗi này xuống còn 2.25%.
+Các kết quả kinh ngạc tương tự cũng đã đạt được trong việc xác định chim cũng như chẩn đoán ung thư da.
 
 <!--
 * Games used to be a bastion of human intelligence.
@@ -2726,7 +2732,15 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
   and the fact that advanced algorithms played a crucial part in them.
 -->
 
-*dịch đoạn phía trên*
+* Các trò chơi từng là một pháo đài của trí tuệ loài người.
+Bắt đầu từ TDGammon [23], một chương chình chơi Backgammon (một môn cờ) sử dụng học tăng cường sai khác thời gian (_temporal difference_ -- TD), tiến triển trong giải thuật và tính toán đã dẫn đến các thuật toán cho một loạt các ứng dụng.
+Không giống Backgamon, cờ vua có một không gian trạng thái  và tập các nước đi phức tạp hơn nhiều.
+DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
+Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
+Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
+Thách thức trong Poker là không gian của trạng thái lớn và nó không được quan sát hoàn toàn (ta không biết các quân bài của đối thủ).
+Libratus vượt chất lượng con người trong môn Poker sử dụng các chiến thuật có cấu trúc một cách hiệu quả :cite:`Brown.Sandholm.2017`.
+Những điều này thể hiện một tiến triển ấn tượng trong các trò chơi và tầm quan trọng của các thuật toán nâng cao trong đó.
 
 <!--
 * Another indication of progress in AI is the advent of self-driving cars
@@ -2741,7 +2755,11 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
   The rest is heavily tuned by engineers.
 -->
 
-*dịch đoạn phía trên*
+* Dấu hiệu khác của tiến triển trong AI là sự phát triển của xe hơi và xe tải tự hành.
+Trong khi hệ thống tự động hoàn toàn còn xa mới đạt được, tiến triển ấn tượng đã được tạo ra theo hướng này với việc các công ty như Tesla, NVIDIA và Waymo ra mắt các sản phẩm ít nhất hỗ trợ bán tự động.
+Điều khiến tự động hoàn toàn mang nhiều thách thức là việc lái xe chuẩn mực đòi khỏi khả năng tiếp nhận, suy đoán và tích hợp các quy tắc vào hệ thống.
+Tại thời điểm hiện tại, học máy được sử dụng chủ yếu trong phần thị giác máy tính của các bài toán này.
+Phần còn lại vẫn phụ thuộc chủ yếu bởi những điều chỉnh của các kỹ sư.
 
 <!-- =================== Kết thúc dịch Phần 32 ==================== -->
 
