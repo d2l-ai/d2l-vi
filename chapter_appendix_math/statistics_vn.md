@@ -573,7 +573,7 @@ The alternative hypothesis would be that $\theta$ is not equal to $c$.
 ### General Steps of Hypothesis Testing
 -->
 
-### *dịch tiêu đề phía trên*
+### Các Bước Tổng quát của Kiểm định Giả thuyết
 
 <!--
 After getting familiar with the above concepts, let's go through the general steps of hypothesis testing.
