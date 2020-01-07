@@ -332,7 +332,7 @@ np.square(samples.std()) + np.square(bias)
 ## Conducting Hypothesis Tests
 -->
 
-## Kiểm Định Giả Thuyết
+## Tiến Hành Kiểm Định Giả Thuyết
 
 <!--
 The most commonly encountered topic in statistical inference is hypothesis testing. 
