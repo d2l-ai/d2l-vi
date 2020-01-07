@@ -274,7 +274,7 @@ If a model suffers from high variance, we often say it is *overfitting* and lack
 Since the standard deviation of an estimator has been implementing in MXNet by simply calling `a.std()` for a `ndarray` "a", we will skip it but implement the statistical bias and the mean squared error in MXNet.
 -->
 
-Vì độ lệch chuẩn của bộ ướng lượng đã được triển khai trong MXNet bằng cách gọi `a.std()` for a `ndarray` "a", chúng ta sẽ bỏ qua bước này và thực hiện tính độ chệch thống kê và trung bình bình phương trong MXNet.
+Vì độ lệch chuẩn của bộ ước lượng đã được triển khai trong MXNet bằng cách gọi `a.std()` của đối tượng `ndarray` "a", chúng ta sẽ bỏ qua bước này và thực hiện tính độ chệch thống kê và trung bình bình phương sai số trong MXNet.
 
 ```{.python .input}
 # Statistical bias
