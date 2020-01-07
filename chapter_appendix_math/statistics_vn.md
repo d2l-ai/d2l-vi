@@ -213,7 +213,7 @@ We may measure the degree of fluctuation of an estimator by measuring the standa
 -->
 
 Tiếp theo, cùng tính độ ngẫu nhiên trong bộ ước lượng.
-Từ :numref:`sec_random_variables`, **độ lệch chuẩn** (còn được gọi là **sai số chuẩn**) được định nghĩa là căn bậc hai của phương sai.
+Nhắc lại từ :numref:`sec_random_variables`, *độ lệch chuẩn* (còn được gọi là *sai số chuẩn*) được định nghĩa là căn bậc hai của phương sai.
 Chúng ta có thể đo được độ dao động của bộ ước lượng bằng cách tính độ lệch chuẩn hoặc phương sai của bộ ước lượng đó.
 
 $$\sigma_{\hat{\theta}_n} = \sqrt{\mathrm{Var} (\hat{\theta}_n )} = \sqrt{E[(\hat{\theta}_n - E(\hat{\theta}_n))^2]}.$$
