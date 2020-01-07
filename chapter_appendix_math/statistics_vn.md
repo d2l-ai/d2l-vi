@@ -381,7 +381,7 @@ In this way, the influence of all the variables are minimized, except the impact
 
 Đầu tiên, bạn cần lựa chọn cẩn thận 2 nhóm tình nguyện viên để đảm bảo rằng không có sự khác biệt đáng kể về khả năng hiểu toán của họ dựa trên các tiêu chuẩn đo lường được. 
 Hai nhóm này thường được gọi là nhóm thử nghiệm và nhóm kiểm soát.
-*Nhóm thử nghiệm* (hay *nhóm trị liệu*) là một nhóm bao gồm những người được sử dụng thuốc, trong khi *nhóm kiểm soát* đại diện cho nhóm người dùng được đặt làm chuẩn, tức là, họ có các yếu tố môi trường giống hết với nhóm thử nghiệm trừ việc sử dụng thuốc. 
+*Nhóm thử nghiệm* (hay *nhóm trị liệu*) là một nhóm bao gồm những người được sử dụng thuốc, trong khi *nhóm kiểm soát* đại diện cho nhóm người dùng được đặt làm chuẩn; tức là, họ có các yếu tố môi trường giống hết với nhóm thử nghiệm trừ việc sử dụng thuốc. 
 Bằng cách này, sự ảnh hưởng của tất cả các biến được giảm thiểu, trừ sự tác động của biến độc lập trong quá trình điều trị.
 <!--
 Second, after a period of taking the medicine, you will need to measure the two groups' math understanding by the same metrics, such as letting the volunteers do the same tests after learning a new math formula.
