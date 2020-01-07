@@ -201,7 +201,7 @@ That is why we use ML.
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
 Hãy thử tự viết nó chỉ với một chiếc máy tính và một trình soạn thảo mã nguồn như minh hoạ trong :numref:`fig_wake_word`.
 Bạn sẽ viết một chương trình như vậy từ đầu như thế nào?
-Thử nghĩ về nó... đây là một vấn đề khó.
+Hãy thử nghĩ về nó xem... vấn đề này khó đấy.
 Cứ mỗi giây, chiếc mic sẽ thu thập cỡ tầm 44,000 mẫu tín hiệu.
 Mỗi mẫu là một giá trị biên độ của sóng âm.
 Quy tắc đáng tin cậy nào có thể từ một đoạn âm thanh thô đưa ra các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
@@ -254,7 +254,7 @@ And the *meta-program* that uses our dataset
 to choose the parameters is called a *learning algorithm*.
 -->
 
-Bạn có thể coi những tham số như các núm quay có thể được điều chỉnh để thay đổi hành vi của chương trình.
+Bạn có thể coi những tham số như các núm vặn có thể điều chỉnh để thay đổi hành vi của chương trình.
 Sau khi đã cố định các tham số, chúng ta gọi chương trình này là một *mô hình*.
 Tập hợp của tất cả các chương trình khác nhau (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách thay đổi các tham số được gọi là một *nhóm* các mô hình.
 Và *siêu chương trình* sử dụng tập dữ liệu để chọn ra các tham số được gọi là *thuật toán học*.
@@ -295,7 +295,7 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-Nếu chúng ta lựa chọn đúng nhóm mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
+Nếu chúng ta lựa chọn đúng nhóm mô hình, sẽ tồn tại một cách thiết lập các núm vặn mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
 Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một nhóm mô hình đủ mạnh để, với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot" ("quả mơ").
 Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* cũng tương tự nhau và có thể sử dụng chung một nhóm mô hình.
 Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các nhóm mô hình hoàn toàn khác nhau.
