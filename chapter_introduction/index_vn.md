@@ -176,7 +176,7 @@ Trước khi có thể bắt đầu viết, những tác giả của cuốn sác
 Chúng tôi leo lên xe và bắt đầu lái.
 Sử dụng một chiếc iPhone, Alex nói "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
 Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
-Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại của câu lệnh đó.
+Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcription_) của câu lệnh đó.
 Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và khởi động ứng dụng Bản đồ để hoàn thành yêu cầu của chúng tôi.
 Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài tuyến đường đến đó.
 Kế bên mỗi tuyến đường, điện thoại hiển thị con số thời gian di chuyển dự tính.
@@ -199,12 +199,12 @@ That is why we use ML.
 -->
 
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
-Hãy thử viết nó chỉ một mình bạn không có gì ngoài một chiếc máy tính và ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
+Hãy thử viết nó chỉ một mình trong khi bạn không có gì ngoài một chiếc máy tính và một ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
 Bạn sẽ viết một chương trình như vậy từ những định đề cơ bản như thế nào?
-Thử nghĩ về nó... vấn đề này khó quá.
+Thử nghĩ về nó... đây là một vấn đề khó.
 Mỗi giây, chiếc micro sẽ thu thập cỡ tầm 44,000 mẫu.
-Mỗi mẫu là một phép đo biên độ của sóng âm.
-Quy tắc nào có thể ánh xạ một cách tin cậy từ một đoạn âm thanh thô đến các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
+Mỗi mẫu là một đo đạc biên độ của sóng âm.
+Quy tắc nào có thể ánh xạ một cách đáng tin cậy từ một đoạn âm thanh thô đến các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
 Nếu bạn không biết xử lý điều này như thế nào, đừng lo lắng.
 Chúng tôi cũng không biết làm cách nào để viết một chương trình như vậy từ đầu.
 Đó là lý do vì sao chúng tôi sử dụng học máy.
@@ -237,11 +237,11 @@ with respect to some measure of performance on the task of interest.
 
 Và sau đây là thủ thuật.
 Thậm chí ngay cả khi chúng ta không thể nói cho một cái máy tính biết cách để ánh xạ từ đầu vào đến đầu ra như thế nào, thường chúng ta vẫn có khả năng làm việc đó bằng bộ não của mình.
-Hay nói cách khác, thậm chí nếu chúng ta không biết *cách lập trình một cái máy tính* để nhận dạng từ "Alexa", chính chúng ta lại *có khả năng* để nhận thức được từ "Alexa".
+Hay nói cách khác, thậm chí nếu chúng ta không biết *cách lập trình một cái máy tính* để nhận dạng từ "Alexa", chính chúng ta lại *có khả năng* nhận thức được từ "Alexa".
 Với khả năng này, chúng ta có thể thu thập một *tập dữ liệu* lớn các mẫu âm thanh kèm nhãn mà *có chứa* hoặc *không có chứa* hiệu lệnh đánh thức.
 Trong cách tiếp cận học máy, chúng ta không thiết kế một hệ thống *rõ ràng* để nhận dạng hiệu lệnh đánh thức.
 Thay vào đó, chúng ta định nghĩa ra một chương trình linh hoạt có những hành vi được xác định bởi những *tham số*.
-Sau đó chúng ta sử dụng tập dữ liệu để xác định tập hợp các tham số tốt nhất có thể, mà sẽ cải thiện được hiệu suất của chương trình thoả mãn một số yêu cầu về hiệu suất trong nhiệm vụ được giao.
+Sau đó chúng ta sử dụng tập dữ liệu để xác định tập hợp các tham số tốt nhất có thể mà sẽ cải thiện được hiệu suất của chương trình, thoả mãn một số yêu cầu về hiệu suất trong nhiệm vụ được giao.
 
 <!--
 You can think of the parameters as knobs that we can turn,
@@ -254,7 +254,7 @@ And the *meta-program* that uses our dataset
 to choose the parameters is called a *learning algorithm*.
 -->
 
-Bạn có thể xem những tham số như là các núm quay mà ta có thể điều chỉnh, để thay đổi hành vi của chương trình.
+Bạn có thể xem những tham số như các núm quay mà ta có thể điều chỉnh, để thay đổi hành vi của chương trình.
 Khi đã cố định các tham số, chúng ta gọi chương trình này là một *mô hình*.
 Tập hợp của tất cả các chương trình khác nhau (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách thay đổi các tham số được gọi là một *nhóm* các mô hình.
 Và *siêu chương trình* mà sử dụng tập dữ liệu của chúng ta để chọn ra các tham số được gọi là *thuật toán học*.
