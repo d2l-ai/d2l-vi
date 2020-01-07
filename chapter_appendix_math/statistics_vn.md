@@ -370,7 +370,7 @@ Naturally, you may need some volunteers to take the medicine and see whether it 
 
 Hình dung rằng bạn là một nhà hóa học. Sau hàng ngàn giờ nghiên cứu trong phòng thí nghiệm, bạn đã phát triển được một loại thuốc mới giúp cải thiện đáng kể khả năng hiểu về toán của con người. 
 Để chứng minh sức mạnh ma thuật của thuốc, bạn cần kiểm tra nó.
-Thông thường, bạn cần một số tình nguyện viên sử dụng loại thuốc này để kiểm tra xem liệu nó có gúp họ học toán tốt hơn không. Bạn sẽ bắt đầu như thế nào? 
+Thông thường, bạn cần một số tình nguyện viên sử dụng loại thuốc này để kiểm tra xem liệu nó có giúp họ học toán tốt hơn hay không. Bạn sẽ bắt đầu điều này như thế nào? 
 
 <!--
 First, you will need carefully random selected two groups of volunteers, so that there is no difference between their math understanding ability measured by some metrics. 
