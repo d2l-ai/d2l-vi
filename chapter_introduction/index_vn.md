@@ -22,14 +22,11 @@ spells out in methodical detail the appropriate action
 that our program should take in every conceivable circumstance.
 -->
 
-Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày
-đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
+Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
 Giả sử chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
-Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ,
-chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
+Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ, chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
 (i) người dùng tương tác với ứng dụng thông qua một giao diện chạy trên trình duyệt web hoặc ứng dụng trên điện thoại;
-(ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại
-để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
+(ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
 và (iii) (cũng là cốt lõi của ứng dụng) các logic nghiệp vụ (hay cũng có thể nói *bộ não*) mô tả cách thức xử lí cụ thể của ứng dụng trong từng tình huống có thể xảy ra.
 
 <!--
@@ -50,19 +47,11 @@ And when you are able to devise solutions that work $100\%$ of the time,
 *you should not be using machine learning*.
 -->
 
-Để xây dựng *bộ não* của ứng dụng này, ta phải xem xét tất cả mọi trường hợp mà chúng ta cho rằng sẽ gặp phải
-, qua đó đặt ra những quy tắc thích hợp.
-Ví dụ, mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng,
-ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu,
-liên kết ID của người dùng với ID của món hàng được yêu cầu.
-Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên,
-(sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc),
-hầu như phần lớn ta có thể lập trình được từ những định đề cơ bản
-và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
-Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản,
-thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
-Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống,
-*bạn không nên sử dụng học máy*.
+Để xây dựng *bộ não* của ứng dụng này, ta phải xem xét tất cả mọi trường hợp mà chúng ta cho rằng sẽ gặp phải, qua đó đặt ra những quy tắc thích hợp.
+Ví dụ, mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng, ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu, liên kết ID của người dùng với ID của món hàng được yêu cầu.
+Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên, (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc), hầu như phần lớn ta có thể lập trình được từ những định đề cơ bản và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
+Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản, thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
+Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống, *bạn không nên sử dụng học máy*.
 
 <!--
 Fortunately for the growing community of ML scientists,
@@ -72,10 +61,8 @@ Imagine huddling around the whiteboard with the smartest minds you know,
 but this time you are tackling one of the following problems:
 -->
 
-May mắn thay cho cộng đồng đang tăng trưởng của các nhà khoa học về học máy,
-nhiều tác vụ mà chúng ta muốn tự động hoá không dễ dàng bị khuất phục bởi sự tài tình của con người.
-Thử tưởng tượng bạn đang quây quần bên tấm bảng trắng với những bộ não thông minh nhất mà bạn biết,
-nhưng lần này bạn đang đương đầu với một trong những vấn đề dưới đây:
+May mắn thay cho cộng đồng đang tăng trưởng của các nhà khoa học về học máy, nhiều tác vụ mà chúng ta muốn tự động hoá không dễ dàng bị khuất phục bởi sự tài tình của con người.
+Thử tưởng tượng bạn đang quây quần bên tấm bảng trắng với những bộ não thông minh nhất mà bạn biết, nhưng lần này bạn đang đương đầu với một trong những vấn đề dưới đây:
 
 <!--
 * Write a program that predicts tomorrow's weather given geographic
@@ -88,12 +75,9 @@ information, satellite images, and a trailing window of past weather.
   enjoy but unlikely, in the natural course of browsing, to encounter.
 -->
 
-* Viết một chương trình dự báo thời tiết ngày mai, cho biết trước thông tin địa lý,
-hình ảnh vệ tinh, và một chuỗi dữ liệu thời tiết trong quá khứ.
-* Viết một chương trình lấy đầu vào là một câu hỏi, được diễn đạt không theo khuôn mẫu nào,
-và trả lời nó một cách chính xác.
-* Viết một chương trình hiển thị ra cho người dùng những sản phẩm mà họ có khả năng cao sẽ thích,
-nhưng lại ít có khả năng gặp được khi duyệt qua môt cách tự nhiên.
+* Viết một chương trình dự báo thời tiết ngày mai, cho biết trước thông tin địa lý, hình ảnh vệ tinh, và một chuỗi dữ liệu thời tiết trong quá khứ.
+* Viết một chương trình lấy đầu vào là một câu hỏi, được diễn đạt không theo khuôn mẫu nào, và trả lời nó một cách chính xác.
+* Viết một chương trình hiển thị ra cho người dùng những sản phẩm mà họ có khả năng cao sẽ thích, nhưng lại ít có khả năng gặp được khi duyệt qua môt cách tự nhiên.
 
 <!--
 In each of these cases, even elite programmers
@@ -122,27 +106,13 @@ driving innovations in areas as diverse as computer vision,
 natural language processing, healthcare, and genomics.
 -->
 
-Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa
-cũng không thể lập trình lên được từ con số không.
-Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần
-lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
-Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng)
-có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính
-vượt ra khỏi khả năng thấu hiểu của nhận thức chúng ta
-(mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
-Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến
-mà có thể *học* từ *kinh nghiệm*.
-Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm,
-thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường,
-chất lượng của nó sẽ tăng lên.
-Tương phản với hệ thống thương mại điện tử tất định của chúng ta,
-khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có,
-mặc cho đã tích luỹ thêm bao nhiêu là kinh nghiệm,
-tận cho tới khi lập trình viên tự quyết định rằng đã tới lúc cập nhật phần mềm này.
-Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy,
-và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kĩ thuật
-đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính,
-xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
+Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa cũng không thể lập trình lên được từ con số không.
+Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
+Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng) có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính vượt ra khỏi khả năng thấu hiểu của nhận thức chúng ta (mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
+Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến mà có thể *học* từ *kinh nghiệm*.
+Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm, thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường, chất lượng của nó sẽ tăng lên.
+Tương phản với hệ thống thương mại điện tử tất định của chúng ta, khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có, mặc cho đã tích luỹ thêm bao nhiêu là kinh nghiệm, tận cho tới khi lập trình viên tự quyết định rằng đã tới lúc cập nhật phần mềm này.
+Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy, và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kĩ thuật đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
