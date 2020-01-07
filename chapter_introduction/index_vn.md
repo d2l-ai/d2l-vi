@@ -414,8 +414,7 @@ First, we'd like to shed more light on some core components
 that will follow us around, no matter what kind of ML problem we take on:
 -->
 
-Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu bao gồm các đoạn âm thanh và các nhãn nhị phân,
-giúp các bạn hiểu một cách chung chung về cách chúng ta có thể *huấn luyện* một mô hình để phân loại các đoạn âm thanh.
+Trong ví dụ về *từ đánh thức*, chúng tôi đã mô tả một bộ dữ liệu bao gồm các đoạn âm thanh và các nhãn nhị phân, giúp các bạn hiểu một cách chung chung về cách chúng ta có thể *huấn luyện* một mô hình để phân loại các đoạn âm thanh.
 Với loại bài toán này, chúng tôi cố gắng dự đoán một *nhãn* chưa biết với *đầu vào* cho trước, dựa trên tập dữ liệu cho trước bao gồm các mẫu đã được gán nhãn.
 Đây là ví dụ về bài toán *học có giám sát*, đây chỉ là một trong số rất nhiều *dạng* bài toán học máy khác nhau mà chúng ta sẽ học tới trong các chương sau.
 Đầu tiên, chúng tôi muốn làm rõ hơn về một số thành phần cốt lõi sẽ theo chúng ta xuyên suốt tất cả các bài toán học máy:
