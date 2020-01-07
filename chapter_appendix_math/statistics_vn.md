@@ -267,7 +267,7 @@ If a model suffers from high variance, we often say it is *overfitting* and lack
 Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*.
 Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành hai nguồn sai số khác nhau: sai số từ độ chệch cao và sai số từ phương sai cao.
 Sai số độ chệch thường xuất hiện ở mô hình đơn giản (ví dụ mô hình hồi quy tuyến tính), khi nó không thể chiết xuất những quan hệ đa chiều giữa các đặc trưng và đầu ra.
-Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* hoặc là thiếu sự *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`).
+Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* (*underfitting*) hoặc là thiếu sự *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`).
 Ngược lại, một mô hình *quá khớp* (*overfitting*) lại rất nhạy cảm với những dao động nhỏ trong dữ liệu.
 Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở (:numref:`sec_model_selection`).
 
