@@ -274,8 +274,8 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một loại mô hình thích hợp.
-Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``
+Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một nhóm mô hình thích hợp.
+Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``.
 Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
 
 
@@ -295,10 +295,10 @@ say if we wanted to map from images to captions,
 or from English sentences to Chinese sentences.
 -->
 
-Nếu chúng ta lựa chọn đúng loại mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
-Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một loại mô hình đủ mạnh để với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot (quả mơ)".
-Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* là tương tự nhau, có thể sử dụng chung một loại mô hình.
-Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các loại mô hình hoàn toàn khác nhau.
+Nếu chúng ta lựa chọn đúng nhóm mô hình, sẽ tồn tại một cách thiết lập các núm quay mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
+Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một nhóm mô hình đủ mạnh để, với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot" ("quả mơ").
+Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* là tương tự nhau và có thể sử dụng chung một nhóm mô hình.
+Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các nhóm mô hình hoàn toàn khác nhau.
 
 <!--
 As you might guess, if we just set all of the knobs randomly,
@@ -309,14 +309,14 @@ by which we discover the right setting of the knobs
 coercing the desired behavior from our model.
 -->
 
- Dễ dàng nhận thấy, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình sẽ hầu như không có khả năng nhận dạng "Alexa", "Apricot", hay bất cứ từ tiếng Anh nào.
-Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng của các núm quay để mô hình có thể  hành xử như chúng ta mong muốn.
+ Dễ dàng nhận thấy, nếu như chúng ta chỉ thiết lập một cách ngẫu nhiên các núm quay, mô hình sẽ hầu như không có khả năng nhận dạng "Alexa", "Apricot" hay bất cứ từ tiếng Anh nào.
+Trong học sâu, *học* là quá trình khám phá ra thiết lập đúng của các núm quay để mô hình có thể hành xử như chúng ta mong muốn.
 
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
-Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop` :
+Quá trình huấn luyện thường giống như mô tả trong hình :numref:`fig_ml_loop`:
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -326,9 +326,9 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 -->
 
 1. Khởi tạo mô hình một cách ngẫu nhiên chưa thể thực hiện tác vụ có ích nào.
-2. Thu thập một số dữ liệu đã được gán nhán (ví dụ., đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
-3. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
-4. Lặp lại cho đến khi có một mô hình tuyệt vời.
+1. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
+1. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
+1. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
 <!--
 ![A typical training process. ](../img/ml-loop.svg)
@@ -351,7 +351,7 @@ We can "program" a cat detector by providing our machine learning system
 with many examples of cats and dogs, such as the images below:
 -->
 
-Tóm lại, thay vì tạo ra một chương trình nhận dạng từ đánh thức, ta tạo ra một chương trình có thể *học* cách nhận dạng các từ đánh thức, *khi được cho xem một tập lớn những ví dụ đã được gán nhãn*.
+Tóm lại, thay vì tự lập trình một chương trình nhận dạng từ đánh thức, ta tạo ra một chương trình có thể *học* cách nhận dạng các từ đánh thức, *khi được cho xem một tập lớn những ví dụ đã được gán nhãn*.
 Ta có thể gọi việc xác định hành vi của một chương trình bằng cách cho nó xem một tập dữ liệu là *lập trình với dữ liệu*.
 Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cung cấp cho hệ thống học máy rất nhiều mẫu ảnh chó và mèo, ví dụ như trong hình dưới đây:
 
@@ -371,8 +371,7 @@ and something closer to zero if it is not sure,
 and this barely scratches the surface of what ML can do.
 -->
 
-Bằng cách này bộ phát hiện sẽ dần học cách trả về một số dương lớn nếu đó là một con mèo, hoặc một số âm lớn nếu đó là một con chó,
-hoặc một giá trị gần với không nếu nó không chắc chắn.
+Bằng cách này bộ phát hiện sẽ dần học cách trả về một số dương lớn nếu đó là một con mèo, hoặc một số âm lớn nếu đó là một con chó, hoặc một giá trị gần với không nếu nó không chắc chắn.
 Đấy mới chỉ là ví dụ nhỏ về những gì mà học máy có thể làm được.
 
 <!--
@@ -415,10 +414,10 @@ Thứ nhất, những vấn đề mà chúng ta đã thảo luận
 ---học từ tín hiệu âm thanh thô, từ những giá trị điểm ảnh của tấm ảnh, hoặc dịch những câu có độ dài bất kỳ sang một ngôn ngữ khác---
 là những vấn đề học sâu có thể xử lý tốt còn học máy thì không.
 Mô hình sâu thực sự *sâu* theo nghĩa nó có thể học nhiều *tầng* tính toán.
-Những mô hình đa tầng (có thứ bậc) này có khả năng xử lý dữ liệu tri giác mức thấp theo cái cách mà những công cụ trước đây không thể.
-Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có thể cáng đáng.
-Thứ hai, bằng cách thay thế các kỹ thuật "tiền xử lý theo từng phân ngành", học sâu đã loại bỏ ranh giới giữa thị giác máy tính, nhận dạng tiếng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực khác.
-Học sâu cung cấp một tập hợp các công cụ xử lý những loại bài toán khác nhau.
+Những mô hình đa tầng (hoặc có thứ bậc) này có khả năng xử lý dữ liệu tri giác mức thấp theo cái cách mà những công cụ trước đây không thể.
+Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có thể chịu trách nhiệm.
+Một lợi thế then chốt của học sâu là nó không chỉ thay thế mô hình *nông* ở thành phần cuối cùng của pipeline học tập truyền thống mà còn thay thế quá trình thiết kế đặc trưng tốn nhiều công sức.
+Thứ hai, bằng cách thay thế các kỹ thuật "tiền xử lý theo từng phân ngành", học sâu đã loại bỏ ranh giới giữa thị giác máy tính, nhận dạng tiếng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực khác, cung cấp một tập hợp các công cụ xử lý những loại bài toán khác nhau.
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
