@@ -875,7 +875,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 * Vũ Hữu Tiệp
 * Phạm Hồng Vinh
-* Minh Đức
+* Phạm Minh Đức
 
 <!-- Phần 8 -->
 *
