@@ -663,8 +663,7 @@ we will discuss some more traditional methods.
 
 Phần lớn học máy đều liên quan đến *biến đổi* dữ liệu theo một cách nào đó.
 Đó có thể là một hệ thống nhận ảnh đầu vào và dự đoán bức ảnh có chứa khuôn mặt cười hay không.
-Hoặc đó cũng có thể là một hệ thống nhận vào dữ liệu đo đạc từ cảm biến và
-dự đoán xem những số liệu đó là *bình thường* hay *bất thường*.
+Hoặc đó cũng có thể là một hệ thống nhận vào dữ liệu đo đạc từ cảm biến và dự đoán xem những số liệu đó là *bình thường* hay *bất thường*.
 Ở đây chúng ta gọi *mô hình* là một hệ thống tính toán lấy đầu vào là một dạng dữ liệu và trả về kết quả dự đoán có thể ở một dạng dữ liệu khác.
 
 <!--
@@ -702,13 +701,11 @@ Because lower is better, these functions are sometimes called
 *loss functions* or *cost functions*.
 -->
 
-Để có thể phát triển một mô hình toán học chính quy cho học máy,
-chúng ta cần những phép đo chính quy xem mô hình đang tốt (hoặc tệ) như thế nào.
+Để có thể phát triển một mô hình toán học chính quy cho học máy, chúng ta cần những phép đo chính quy xem mô hình đang tốt (hoặc tệ) như thế nào.
 Trong học máy, hoặc nói rộng ra là lĩnh vực tối ưu hoá, ta gọi chúng là các hàm mục tiêu (_objective function_).
 Theo quy ước, ta thường định nghĩa các hàm tối ưu sao cho giá trị càng thấp thì mô hình càng tốt.
 Đây chỉ là một quy ước ngầm.
-Bạn cũng có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt,
-sau đó lấy một hàm $f' = -f$ tương đương với giá trị càng thấp thì mô hình càng tốt.
+Bạn cũng có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt, sau đó lấy một hàm $f' = -f$ tương đương với giá trị càng thấp thì mô hình càng tốt.
 Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi dưới tên *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_)
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
@@ -751,7 +748,8 @@ reporting the following two quantities:
 Thông thường, hàm mất mát được định nghĩa theo các tham số mô hình và phụ thuộc vào tập dữ liệu.
 Những giá trị tham số mô hình tốt nhất được học bằng cách tối tiểu hoá hàm mất mát trên một *tập huấn luyện* bao gồm các *mẫu* được thu thập cho việc huấn luyện.
 Tuy nhiên, mô hình hoạt động tốt trên tập huấn luyện không có nghĩa là nó sẽ hoạt động tốt trên dữ liệu kiểm tra (mà mô hình chưa nhìn thấy).
-Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). Sau đó ta quan sát hai đại lượng:
+Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). 
+Sau đó ta quan sát hai đại lượng:
 
 <!--
  * **Training Error:**
@@ -775,7 +773,8 @@ Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
 Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
 Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo bài thi thật đạt kết quả tốt.```
 
-* **Lỗi kiểm tra:** Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
+* **Lỗi kiểm tra:** 
+Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
 Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
 Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
 Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
