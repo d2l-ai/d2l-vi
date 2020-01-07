@@ -243,7 +243,8 @@ That is to say that we can write the mean squared error as the sum of the varian
 -->
 
 Cả hai yếu tố trên rõ ràng đều ảnh hưởng đến trung bình bình phương sai số.
-Một điều ngạc nhiên là chúng ta có thể chứng minh trung bình bình phương sai số được phân tách từ hai thành phần đó. Điều này có nghĩa là chúng ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch.
+Một điều ngạc nhiên là chúng ta có thể chứng minh trung bình bình phương sai số có thể phân tách thành hai thành phần đó. 
+Điều này có nghĩa là chúng ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch.
 
 $$
 \begin{aligned}
