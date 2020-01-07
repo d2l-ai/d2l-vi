@@ -319,7 +319,7 @@ mse(samples, theta_true)
 Next, we calculate $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ as below. As you can see, the two values agree to numerical precision.
 -->
 
-Tiếp theo, chúng ta tính \mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy hai giá trị trên có giá trị gần giống nhau.
+Tiếp theo, chúng ta tính $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy hai giá trị có giá trị gần giống nhau.
 
 ```{.python .input}
 bias = stat_bias(theta_true, theta_est)
