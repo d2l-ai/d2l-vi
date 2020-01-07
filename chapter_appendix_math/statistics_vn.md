@@ -406,15 +406,15 @@ To complete the story of how to work with hypothesis testing, we need to now int
 ### Statistical Significance
 -->
 
-### Độ tin cậy thống kê
+### Ý nghĩa thống kê
 
 <!--
 The *statistical significance* measures the probability of erroneously reject the null hypothesis, $H_0$, when it should not be rejected, i.e.,
 -->
 
-*Ý nghĩa thống kê* đo xác suất lỗi khi loại bỏ giả thuyết rỗng, $H_0$, trong khi đúng ra không nên loại bỏ nó. 
+*Ý nghĩa thống kê* đo xác suất lỗi khi loại bỏ giả thuyết gốc, $H_0$, trong khi đúng ra không nên loại bỏ nó. 
 
-$$ \text{ý nghĩa thống kê }= 1 - \alpha = P(\text{loại bỏ } H_0 \mid H_0 \text{ là đúng} ).$$
+$$ \text{ý nghĩa thống kê }= 1 - \alpha = P(\text{loại bỏ} H_0 \mid H_0 \text{là đúng} ).$$
 
 <!--
 It is also referred to as the *type I error* or *false positive*. 
