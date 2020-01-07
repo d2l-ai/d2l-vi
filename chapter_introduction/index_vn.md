@@ -680,8 +680,8 @@ Because lower is better, these functions are sometimes called
 Trong học máy, hay rộng hơn là lĩnh vực tối ưu hoá, ta gọi chúng là các hàm mục tiêu (_objective function_).
 Theo quy ước, ta thường định nghĩa các hàm tối ưu sao cho giá trị càng thấp thì mô hình càng tốt.
 Nhưng đó cũng chỉ là một quy ước ngầm.
-Bạn có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt, sau đó đặt một hàm tương đương $f' = -f$, nhưng với giá trị càng thấp thì mô hình càng tốt.
-Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi là *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_)
+Bạn có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt, sau đó đặt một hàm tương đương $f' = -f$, có giá trị càng thấp thì mô hình càng tốt.
+Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi là *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_).
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
