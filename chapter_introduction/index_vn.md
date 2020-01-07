@@ -172,7 +172,7 @@ our everyday interactions with a smart phone
 can engage several machine learning models.
 -->
 
-Trước khi có thể bắt đầu viết, những tác giả của cuốn sách này, giống nhiều người đi làm khác, cần phải uống cà phê.
+Giống như nhiều người đi làm khác, những tác giả của cuốn sách này cần phải uống cà phê trước khi có thể bắt đầu viết.
 Chúng tôi leo lên xe và bắt đầu lái.
 Sử dụng một chiếc iPhone, Alex nói "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
 Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
@@ -180,8 +180,7 @@ Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcript
 Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và khởi động ứng dụng Bản đồ để hoàn thành yêu cầu.
 Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài lộ trình tới đích.
 Kế bên mỗi tuyến đường, điện thoại hiển thị con số thời gian di chuyển dự tính.
-Trong khi chúng tôi bịa ra câu chuyện này để tiện cho việc giảng dạy, điều này cho thấy rằng chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với một chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
-
+Mặc dù đây chỉ là câu chuyện dựng lên cho mục đích giảng dạy, nó cũng cho chúng ta thấy rằng chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với một chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
 <!--
 Imagine just writing a program to respond to a *wake word*
 like "Alexa", "Okay, Google" or "Siri".
