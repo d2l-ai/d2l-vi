@@ -177,8 +177,8 @@ Chúng tôi leo lên xe và bắt đầu lái.
 Sử dụng một chiếc iPhone, Alex nói "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
 Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
 Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcription_) của câu lệnh đó.
-Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và khởi động ứng dụng Bản đồ để hoàn thành yêu cầu của chúng tôi.
-Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài tuyến đường đến đó.
+Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và khởi động ứng dụng Bản đồ để hoàn thành yêu cầu.
+Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài lộ trình tới đích.
 Kế bên mỗi tuyến đường, điện thoại hiển thị con số thời gian di chuyển dự tính.
 Trong khi chúng tôi bịa ra câu chuyện này để tiện cho việc giảng dạy, điều này cho thấy rằng chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với một chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
 
@@ -199,12 +199,12 @@ That is why we use ML.
 -->
 
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
-Hãy thử viết nó chỉ một mình trong khi bạn không có gì ngoài một chiếc máy tính và một ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
-Bạn sẽ viết một chương trình như vậy từ những định đề cơ bản như thế nào?
+Hãy thử một mình viết nó với không gì ngoài một chiếc máy tính và một ứng dụng soạn thảo mã nguồn, như được minh hoạ trong :numref:`fig_wake_word`.
+Bạn sẽ viết một chương trình như vậy từ đầu như thế nào?
 Thử nghĩ về nó... đây là một vấn đề khó.
-Mỗi giây, chiếc micro sẽ thu thập cỡ tầm 44,000 mẫu.
-Mỗi mẫu là một đo đạc biên độ của sóng âm.
-Quy tắc nào có thể ánh xạ một cách đáng tin cậy từ một đoạn âm thanh thô đến các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
+Mỗi giây, chiếc micro sẽ thu thập cỡ tầm 44,000 mẫu tín hiệu.
+Mỗi mẫu là một giá trị biên độ của sóng âm.
+Quy tắc đáng tin cậy nào có thể ánh xạ từ một đoạn âm thanh thô đến các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
 Nếu bạn không biết xử lý điều này như thế nào, đừng lo lắng.
 Chúng tôi cũng không biết làm cách nào để viết một chương trình như vậy từ đầu.
 Đó là lý do vì sao chúng tôi sử dụng học máy.
@@ -236,12 +236,12 @@ with respect to some measure of performance on the task of interest.
 -->
 
 Và sau đây là thủ thuật.
-Thậm chí ngay cả khi chúng ta không thể nói cho một cái máy tính biết cách để ánh xạ từ đầu vào đến đầu ra như thế nào, thường chúng ta vẫn có khả năng làm việc đó bằng bộ não của mình.
+Ngay cả khi không thể nói cho một cái máy tính biết cách để ánh xạ từ đầu vào đến đầu ra như thế nào, chúng ta vẫn thường có khả năng làm việc đó bằng bộ não của mình.
 Hay nói cách khác, thậm chí nếu chúng ta không biết *cách lập trình một cái máy tính* để nhận dạng từ "Alexa", chính chúng ta lại *có khả năng* nhận thức được từ "Alexa".
-Với khả năng này, chúng ta có thể thu thập một *tập dữ liệu* lớn các mẫu âm thanh kèm nhãn mà *có chứa* hoặc *không có chứa* hiệu lệnh đánh thức.
+Với khả năng này, chúng ta có thể thu thập một *tập dữ liệu* lớn các mẫu âm thanh kèm nhãn mà *có chứa* hoặc *không chứa* hiệu lệnh đánh thức.
 Trong cách tiếp cận học máy, chúng ta không thiết kế một hệ thống *rõ ràng* để nhận dạng hiệu lệnh đánh thức.
-Thay vào đó, chúng ta định nghĩa ra một chương trình linh hoạt có những hành vi được xác định bởi những *tham số*.
-Sau đó chúng ta sử dụng tập dữ liệu để xác định tập hợp các tham số tốt nhất có thể mà sẽ cải thiện được hiệu suất của chương trình, thoả mãn một số yêu cầu về hiệu suất trong nhiệm vụ được giao.
+Thay vào đó, chúng ta định nghĩa một chương trình linh hoạt mà hành vi của nó được xác định bởi những *tham số*.
+Sau đó chúng ta sử dụng tập dữ liệu để xác định tập các tham số tốt nhất có khả năng cải thiện chất lượng của chương trình, thoả mãn một số yêu cầu về chất lượng trong nhiệm vụ được giao.
 
 <!--
 You can think of the parameters as knobs that we can turn,
@@ -254,10 +254,10 @@ And the *meta-program* that uses our dataset
 to choose the parameters is called a *learning algorithm*.
 -->
 
-Bạn có thể xem những tham số như các núm quay mà ta có thể điều chỉnh, để thay đổi hành vi của chương trình.
+Bạn có thể coi những tham số như các núm quay có thể được điều chỉnh để thay đổi hành vi của chương trình.
 Khi đã cố định các tham số, chúng ta gọi chương trình này là một *mô hình*.
 Tập hợp của tất cả các chương trình khác nhau (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách thay đổi các tham số được gọi là một *nhóm* các mô hình.
-Và *siêu chương trình* mà sử dụng tập dữ liệu của chúng ta để chọn ra các tham số được gọi là *thuật toán học*.
+Và *siêu chương trình* sử dụng tập dữ liệu để chọn ra các tham số được gọi là *thuật toán học*.
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
 
@@ -274,8 +274,8 @@ If all goes according to plan the model's guesses will
 typically be correct as to whether (or not) the snippet contains the wake word.
 -->
 
-Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra, và lựa chọn một nhóm mô hình thích hợp.
-Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị giữa ``{đúng, sai}``.
+Trước khi tiếp tục và bắt đầu với các thuật toán học, chúng ta phải xác định vấn đề rõ ràng, hiểu chính xác bản chất của đầu vào và đầu ra và lựa chọn một nhóm mô hình thích hợp.
+Trong trường hợp này, mô hình của chúng ta nhận *đầu vào* là một đoạn âm thanh, và *đầu ra* là một giá trị trong ``{đúng, sai}``.
 Nếu tất cả diễn ra như kế hoạch, mô hình thường dự đoán chính xác liệu đoạn âm thanh có chứa hiệu lệnh kích hoạt hay không.
 
 
@@ -326,7 +326,7 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 -->
 
 1. Khởi tạo mô hình một cách ngẫu nhiên chưa thể thực hiện tác vụ có ích nào.
-1. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}` tương ứng).
+1. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}`` tương ứng).
 1. Thay đổi các núm quay để mô hình dự đoán chính xác hơn trên những mẫu đó.
 1. Lặp lại cho đến khi có một mô hình tuyệt vời.
 
@@ -415,7 +415,7 @@ Thứ nhất, những vấn đề mà chúng ta đã thảo luận
 là những vấn đề học sâu có thể xử lý tốt còn học máy thì không.
 Mô hình sâu thực sự *sâu* theo nghĩa nó có thể học nhiều *tầng* tính toán.
 Những mô hình đa tầng (hoặc có thứ bậc) này có khả năng xử lý dữ liệu tri giác mức thấp theo cái cách mà những công cụ trước đây không thể.
-Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có thể chịu trách nhiệm.
+Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm ra những kỹ thuật thủ công để biến đổi dữ liệu sang một hình thức nào đó mà những mô hình *nông* có khả năng xử lý.
 Một lợi thế then chốt của học sâu là nó không chỉ thay thế mô hình *nông* ở thành phần cuối cùng của pipeline học tập truyền thống mà còn thay thế quá trình thiết kế đặc trưng tốn nhiều công sức.
 Thứ hai, bằng cách thay thế các kỹ thuật "tiền xử lý theo từng phân ngành", học sâu đã loại bỏ ranh giới giữa thị giác máy tính, nhận dạng tiếng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực khác, cung cấp một tập hợp các công cụ xử lý những loại bài toán khác nhau.
 
