@@ -292,7 +292,7 @@ Here, we use a $\theta = 1$ and $\sigma = 4$.
 As the estimator is a function of the given samples, here we use the mean of the samples as an estimator for true $\theta$ in this normal distribution $\mathcal{N}(\theta, \sigma^2)$ .
 -->
 
-Để minh họa cho phương trình sự đánh đổi độ chệch-phương sai, cùng thực nghiệm một phân phối chuẩn $\mathcal{N}(\theta, \sigma^2)$ với $10,000$ mẫu.
+Để minh họa cho phương trình sự đánh đổi độ chệch-phương sai, cùng giả lập một phân phối chuẩn $\mathcal{N}(\theta, \sigma^2)$ với $10,000$ mẫu.
 Ở đây, chúng ta sử dụng $\theta = 1$ và $\sigma = 4$.
 Với bộ ước lượng là một hàm số từ các mẫu đã cho, ở đây chúng ta sử dụng trung bình của các mẫu như là bộ ước lượng cho giá trị thực $\theta$ trong phân phối chuẩn này $\mathcal{N}(\theta, \sigma^2)$ .
 
