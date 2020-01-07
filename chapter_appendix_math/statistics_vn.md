@@ -391,7 +391,7 @@ In this case, our null hypothesis will be that there is no difference between th
 
 Thứ hai, sau một thời gian sử dụng thuốc, bạn cần đo khả năng hiểu toán của hai nhóm trên bằng cùng tiêu chuẩn đo lường, ví dụ như cho các tình nguyện viên làm cùng một bài kiểm tra sau khi học một công thức toán mới. 
 Sau đó bạn có thể thu thập kết quả về sự thể hiện của họ và so sánh chúng. 
-Trong trường hợp này, giả thuyết không của chúng ta đó là không có sự khác biệt nào giữa hai nhóm, và giả thuyết thay thế là có sự khác biệt.  
+Trong trường hợp này, giả thuyết gốc của chúng ta đó là không có sự khác biệt nào giữa hai nhóm, và giả thuyết đối là có sự khác biệt.  
 
 <!--
 This is still not fully formal.  
