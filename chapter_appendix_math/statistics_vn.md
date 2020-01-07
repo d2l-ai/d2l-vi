@@ -412,15 +412,15 @@ To complete the story of how to work with hypothesis testing, we need to now int
 ### Statistical Significance
 -->
 
-### *dịch tiêu đề phía trên*
+### Ý nghĩa thống kê
 
 <!--
 The *statistical significance* measures the probability of erroneously reject the null hypothesis, $H_0$, when it should not be rejected, i.e.,
 -->
 
-*dịch đoạn phía trên*
+*Ý nghĩa thống kê* đo xác suất lỗi khi loại bỏ giả thuyết gốc, $H_0$, trong khi đúng ra không nên loại bỏ nó. 
 
-$$ \text{statistical significance }= 1 - \alpha = P(\text{reject } H_0 \mid H_0 \text{ is true} ).$$
+$$ \text{ý nghĩa thống kê }= 1 - \alpha = P(\text{loại bỏ} H_0 \mid H_0 \text{là đúng} ).$$
 
 <!--
 It is also referred to as the *type I error* or *false positive*. 
@@ -428,7 +428,9 @@ The $\alpha$, is called as the *significance level* and its commonly used value 
 The level of statistical significance level can be explained as the level of risk that we are willing to take, when we reject a true null hypothesis.
 -->
 
-*dịch đoạn phía trên*
+Đây còn được gọi là *lỗi loại I* hay *dương tính giả*.
+$\alpha$ ở đây là *mức ý nghĩa* và thường được chọn ở giá trị $5\%$, tức là $1-\alpha = 95\%$.
+Mức ý nghĩa thống kê còn có thể hiểu như mức độ rủi ro mà chúng ta chấp nhận khi loại bỏ nhầm một giả thuyết gốc chính xác.
 
 <!--
 :numref:`fig_statistical_significance` shows the the observations' values and probability of a given normal distribution in a two-sample hypothesis test. 
@@ -436,13 +438,15 @@ If the observation data point is located outsides the $95\%$ threshold, it will 
 Hence, there might be something wrong with the null hypothesis and we will reject it.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_statistical_significance` thể hiện các giá trị quan sát và xác suất của một phân phối chuẩn trong một bài kiểm định thống kê hai mẫu.
+Nếu các điểm dữ liệu quan sát nằm ngoài ngưỡng $95\%$, đó sẽ là một quan sát rất khó xảy ra dưới giả định của giả thuyết gốc.
+Do đó, giả thuyết gốc có điều gì đó không đúng và chúng ta sẽ loại bỏ nó.
 
 <!--
 ![Statistical significance.](../img/statistical_significance.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/statistical_significance.svg)
+![Ý nghĩa thống kê](../img/statistical_significance.svg)
 :label:`fig_statistical_significance`
 
 <!-- =================== Kết thúc dịch Phần 7 ================================-->
@@ -875,7 +879,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Lê Khắc Hồng Phúc
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
+* Phạm Minh Đức
 
 <!-- Phần 8 -->
 *
