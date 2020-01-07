@@ -181,6 +181,7 @@ Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đ
 Khi đã khởi động xong, ứng dụng Bản đồ xác định một vài lộ trình tới đích.
 Kế bên mỗi tuyến đường, điện thoại hiển thị con số thời gian di chuyển dự tính.
 Mặc dù đây chỉ là câu chuyện dựng lên cho mục đích giảng dạy, nó cũng cho chúng ta thấy rằng chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với một chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
+
 <!--
 Imagine just writing a program to respond to a *wake word*
 like "Alexa", "Okay, Google" or "Siri".
