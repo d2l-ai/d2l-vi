@@ -225,7 +225,7 @@ In this equation we do not compare to the true population value $\theta$, but in
 Thus we are not measuring how far the estimator tends to be from the true value, but instead we measuring the fluctuation of the estimator itself.
 -->
 
-Việc so sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là khá quan trọng.
+So sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là một việc quan trọng.
 Trong công thức này thay vì so sánh tập hợp dữ liệu thực $\theta$, chúng ta sử dụng $E(\hat{\theta}_n)$, giá trị trung bình mẫu kỳ vọng.
 Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính nó (bộ ước lượng).
 
