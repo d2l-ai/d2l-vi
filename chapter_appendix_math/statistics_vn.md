@@ -414,7 +414,7 @@ If we can now show that the null hypothesis is very unlikely to be true, we may 
 -->
 
 Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và đưa ra lý luận về sự chắc chắn từ các kết quả quan sát được.
-Nếu chúng ta chứng minh được giả định không khả năng rất cao là không đúng, thì chúng ta có thể tự tin phủ định nó.  
+Nếu chúng ta chứng minh được giả thuyết gốc khả năng rất cao là không đúng, thì chúng ta có thể tự tin bác bỏ nó.  
 
 <!--
 To complete the story of how to work with hypothesis testing, we need to now introduce some additional terminology and make some of our concepts above formal.
