@@ -360,7 +360,7 @@ Chúng ta xem quy tắc mặc định là *giả thuyết gốc* $H_0$, giả th
 Tại đây, chúng tả sử dụng $H_0$ là điểm bắt đầu cho thử nghiệm thống kê về độ tin cậy.
 *Giả thuyết thay thế* $H_A$ (hay $H_1$) là sự đối lập với giả thuyết không.
 Giả thuyết gốc thường được định nghĩa dưới dạng khai báo mà ở đó đặt ra các mối quan hệ với các biến. 
-Nó nên được phản ánh một cách ngắn gọn nhất, và có thể kiểm chứng được bằng lý thuyết thống kê.
+Nó nên được phản ánh mệnh đề một cách rõ ràng nhất, và có thể kiểm chứng được bằng lý thuyết thống kê.
 
 <!--
 Imagine you are a chemist. After spending thousands of hours in the lab, you develop a new medicine which can dramatically improve one's ability to understand math. 
