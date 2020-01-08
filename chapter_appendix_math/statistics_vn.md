@@ -28,7 +28,7 @@ What is more, the core theory of statistics has been widely used in the research
 Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ 9. Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và tần số để giải mã những thông điệp mã hoá.
 Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế.
 Ngày này, thống kê là chủ đề khoa học bao gồm việc thu thập, xử lý, phân tích, diễn dịch và mô tả dữ liệu. 
-Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuyệt, công nghiệp và chính phủ.
+Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ.
 <!--
 More specifically, statistics can be divided to *descriptive statistics* and *statistical inference*. 
 The former focus on summarizing and illustrating the features of a collection of observed data, which is referred to as a *sample*. 
