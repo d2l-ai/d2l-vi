@@ -699,7 +699,7 @@ owing to non-differentiability or other complications.
 In these cases, it is common to optimize a *surrogate objective*.
 -->
 
-Khi muốn dự đoán một giá trị bằng số, hàm mục tiêu phổ biến nhất là hàm bình phương sai số $(y-\hat{y})^2$.
+Khi muốn dự đoán một giá trị số, hàm mục tiêu phổ biến nhất là hàm bình phương sai số $(y-\hat{y})^2$.
 Với bài toán phân loại, mục tiêu phổ biến nhất là tối thiểu hóa tỉ lệ lỗi, tức tỉ lệ mẫu mà dự đoán của mô hình lệch với nhãn thực tế.
 Một vài hàm mục tiêu (ví dụ như bình phương sai số) khá dễ tối ưu hóa.
 Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu hóa trực tiếp, có thể do các hàm này không khả vi hoặc những vấn đề khác.
@@ -750,7 +750,7 @@ Ngay cả khi kết quả thi thử khả quan, không thể đảm bảo rằng
 
 * **Lỗi kiểm tra:** 
 Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
-Đại lượng này có thể bị chênh lệch đáng kể so với lỗi huấn luyện.
+Đại lượng này có thể chênh lệch đáng kể so với lỗi huấn luyện.
 Khi một mô hình hoạt động tốt trên tập huấn luyện nhưng lại không có khả năng tổng quát hóa trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
 Theo ngôn ngữ thường ngày, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
