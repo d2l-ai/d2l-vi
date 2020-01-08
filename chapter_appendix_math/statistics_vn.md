@@ -356,7 +356,7 @@ It should reflect the brief as explicit as possible, and be testable by statisti
 -->
 
 Một bài *kiểm định giả thuyết* là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể. 
-Chúng ta xem quy tắc mặc định là *giả thuyết gốc* $H_0$, giả thuyết mà chúng ta cố gắng bác bỏ thông qua các dữ liệu quan sát được. 
+Chúng ta gọi các mệnh đề mặc định là *giả thuyết gốc* $H_0$, giả thuyết mà chúng ta cố gắng bác bỏ thông qua các dữ liệu quan sát được. 
 Tại đây, chúng tả sử dụng $H_0$ là điểm bắt đầu cho thử nghiệm thống kê về độ tin cậy.
 *Giả thuyết đối* $H_A$ (hay $H_1$) là sự đối lập với giả thuyết gốc.
 Giả thuyết gốc thường được định nghĩa dưới dạng khai báo mà ở đó đặt ra các mối quan hệ với các biến. 
