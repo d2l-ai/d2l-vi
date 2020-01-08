@@ -49,7 +49,7 @@ In contrast, machine learning emphasizes on making accurate predictions, without
 Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?".
 Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận.
 Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B.
-Ngược lại, học máy đề cao việc dự đoán chính xác, thay vì trực tiếp lập trình và hiểu rõ chức năng của từng tham số. 
+Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách rõ ràng và hiểu rõ chức năng của từng tham số. 
 
 <!--
 In this section, we will introduce three types of statistics inference methods: evaluating and comparing estimators, conducting hypothesis tests, and constructing confidence intervals. 
