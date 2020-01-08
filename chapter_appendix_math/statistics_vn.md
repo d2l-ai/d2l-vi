@@ -413,7 +413,7 @@ In this way, hypothesis testing provides framework for experimental design and r
 If we can now show that the null hypothesis is very unlikely to be true, we may reject it with confidence.
 -->
 
-Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và đưa ra lý luận về sự chắc chắn từ các kết quả quan sát được.
+Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và cách suy luận về sự chắc chắn của những kết quả quan sát được.
 Nếu chúng ta chứng minh được giả thuyết gốc khả năng rất cao là không đúng, thì chúng ta có thể tự tin bác bỏ nó.  
 
 <!--
