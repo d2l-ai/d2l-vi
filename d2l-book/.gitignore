@@ -1,0 +1,5 @@
+/d2lbook.egg-info/
+/dist/
+*.pyc
+**/.ipynb_checkpoints/*
+/docs/_build/
