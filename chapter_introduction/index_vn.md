@@ -609,10 +609,15 @@ On our way to discussing deep neural networks,
 we will discuss some more traditional methods.
 -->
 
-Phần lớn học máy đều liên quan đến *biến đổi* dữ liệu theo một cách nào đó.
-Đó có thể là một hệ thống nhận ảnh đầu vào và dự đoán bức ảnh có chứa khuôn mặt cười hay không.
-Hoặc đó cũng có thể là một hệ thống nhận vào dữ liệu đo đạc từ cảm biến và dự đoán xem những số liệu đó là *bình thường* hay *bất thường*.
-Ở đây chúng ta gọi *mô hình* là một hệ thống tính toán lấy đầu vào là một dạng dữ liệu và trả về kết quả dự đoán có thể ở một dạng dữ liệu khác.
+Phần lớn học máy đều liên quan đến việc *biến đổi* dữ liệu theo một cách nào đó.
+Có thể ta muốn xây dựng một hệ thống nhận ảnh đầu vào và dự đoán *mức độ cười* của khuôn mặt trong ảnh.
+Hoặc đó cũng có thể là một hệ thống nhận vào dữ liệu đo đạc từ cảm biến và dự đoán độ *bình thường* hay *bất thường* của chúng.
+Ở đây chúng ta gọi *mô hình* là một hệ thống tính toán nhận đầu vào là một dạng dữ liệu và sau đó trả về kết quả dự đoán, có thể ở một dạng dữ liệu khác.
+Cụ thể, ta quan tâm tới các mô hình thống kê mà ta có thể ước lượng được từ dữ liệu.
+Dù các mô hình đơn giản hoàn toàn có thể giải quyết các bài toán đơn giản phù hợp, những bài toán được để tâm tới trong cuốn sách này sẽ đẩy các phương pháp cổ điển tới giới hạn của chúng.
+Điểm khác biệt chính của học sâu so với các phương pháp cổ điển là các mô hình mạnh mẽ mà nó nhắm vào.
+Những mô hình đó bao gồm rất nhiều phép biến đổi dữ liệu liên tiếp, được liên kết với nhau từ trên xuống dưới, và đó cũng là ý nghĩa của cái tên "học sâu".
+Trong quá trình thảo luận về các mạng nơ-ron sâu, ta cũng sẽ nhắc tới các phương pháp truyền thống.
 
 <!--
 ###  Objective functions
@@ -629,10 +634,10 @@ and some people might disagree on whether the proposed update
 constituted an improvement or a decline.
 -->
 
-Trước đây, chúng tôi giới thiệu học máy theo kiểu "học từ kinh nghiệm".
-*Học* ở đây tức là có *tiến bộ* ở một tác vụ nào đó theo thời gian.
-Nhưng ai sẽ chỉ ra như thế nào là tiến bộ?
-Thử tưởng tượng bạn đang đề xuất cập nhật mô hình nhưng một số người có thể không đồng ý liệu việc đó giúp cải thiện mô hình hay không.
+Trước đó, chúng tôi có giới thiệu học máy là việc "học từ kinh nghiệm".
+*Học* ở đây tức là việc *tiến bộ* ở một tác vụ nào đó theo thời gian.
+Nhưng ai biết được như thế nào là tiến bộ?
+Thử tưởng tượng ta đang đề xuất cập nhật mô hình, nhưng một số người có thể có bất đồng về việc bản cập nhật này có giúp cải thiện mô hình hay không.
 
 <!--
 In order to develop a formal mathematical system of learning machines,
@@ -650,11 +655,11 @@ Because lower is better, these functions are sometimes called
 -->
 
 Để có thể phát triển một mô hình toán học chính quy cho học máy, chúng ta cần những phép đo chính quy xem mô hình đang tốt (hoặc tệ) như thế nào.
-Trong học máy, hoặc nói rộng ra là lĩnh vực tối ưu hoá, ta gọi chúng là các hàm mục tiêu (_objective function_).
+Trong học máy, hay rộng hơn là lĩnh vực tối ưu hoá, ta gọi chúng là các hàm mục tiêu (_objective function_).
 Theo quy ước, ta thường định nghĩa các hàm tối ưu sao cho giá trị càng thấp thì mô hình càng tốt.
-Đây chỉ là một quy ước ngầm.
-Bạn cũng có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt, sau đó lấy một hàm $f' = -f$ tương đương với giá trị càng thấp thì mô hình càng tốt.
-Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi dưới tên *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_)
+Nhưng đó cũng chỉ là một quy ước ngầm.
+Bạn có thể lấy một hàm $f$ sao cho giá trị càng cao thì càng tốt, sau đó đặt một hàm tương đương $f' = -f$, có giá trị càng thấp thì mô hình càng tốt.
+Chính vì ta mong muốn hàm có giá trị thấp, nó còn được gọi là *hàm mất mát* (_loss function_) và *hàm chi phí* (_cost function_).
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
@@ -672,11 +677,11 @@ owing to non-differentiability or other complications.
 In these cases, it is common to optimize a *surrogate objective*.
 -->
 
-Khi cố gắng dự đoán một giá trị số thực, hàm mục tiêu phổ biến nhất là hàm bình phương lỗi $(y-\hat{y})^2$.
-Với bài toán phân loại, hàm mục tiêu phổ biến nhất là tối thiểu hoá tỉ lệ lỗi, nghĩa là tỉ lệ mẫu mà mô hình dự đoán lệch với nhãn thực tế.
-Một vài hàm mục tiêu (ví dụ bình phương lỗi) khá dễ để tối ưu.
-Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu một cách trực tiếp hơn bởi các hàm này không khả vi hoặc phức tạp.
-Trong những trường hợp này, người ta thường tối thiểu hoá một *hàm mục tiêu thay thế* (_surrogate function_).
+Khi muốn dự đoán một giá trị số, hàm mục tiêu phổ biến nhất là hàm bình phương sai số $(y-\hat{y})^2$.
+Với bài toán phân loại, mục tiêu phổ biến nhất là tối thiểu hóa tỉ lệ lỗi, tức tỉ lệ mẫu mà dự đoán của mô hình lệch với nhãn thực tế.
+Một vài hàm mục tiêu (ví dụ như bình phương sai số) khá dễ tối ưu hóa.
+Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu hóa trực tiếp, có thể do các hàm này không khả vi hoặc những vấn đề khác.
+Trong những trường hợp như vậy, ta thường tối ưu hóa một *hàm mục tiêu thay thế* (_surrogate objective_).
 
 <!--
 Typically, the loss function is defined
@@ -694,9 +699,9 @@ reporting the following two quantities:
 -->
 
 Thông thường, hàm mất mát được định nghĩa theo các tham số mô hình và phụ thuộc vào tập dữ liệu.
-Những giá trị tham số mô hình tốt nhất được học bằng cách tối tiểu hoá hàm mất mát trên một *tập huấn luyện* bao gồm các *mẫu* được thu thập cho việc huấn luyện.
+Những giá trị tham số mô hình tốt nhất được học bằng cách tối thiểu hóa hàm mất mát trên một *tập huấn luyện* bao gồm các *mẫu* được thu thập cho việc huấn luyện.
 Tuy nhiên, mô hình hoạt động tốt trên tập huấn luyện không có nghĩa là nó sẽ hoạt động tốt trên dữ liệu kiểm tra (mà mô hình chưa nhìn thấy).
-Bởi vậy, chúng ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). 
+Bởi vậy, ta thường chia dữ liệu sẵn có thành hai phần: dữ liệu huấn luyện (để khớp các tham số mô hình) và dữ liệu kiểm tra (được giữ lại cho việc đánh giá). 
 Sau đó ta quan sát hai đại lượng:
 
 <!--
@@ -718,14 +723,14 @@ Sau đó ta quan sát hai đại lượng:
 
 * **Lỗi huấn luyện:**
 Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
-Bạn có thể coi đây như điểm của sinh viên trên bài thi thử được dùng để chuẩn bị cho bài thi thật.
-Ngay cả khi kết quả thi thử khả quan, nó cũng không đảm bảo bài thi thật đạt kết quả tốt.```
+Bạn có thể coi nó như điểm của một sinh viên trên bài thi thử để chuẩn bị cho bài thi thật.
+Ngay cả khi kết quả thi thử khả quan, không thể đảm bảo rằng bài thi thật sẽ đạt kết quả tốt.
 
 * **Lỗi kiểm tra:** 
 Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
-Đại lượng này có thể tệ hơn đáng kể so với lỗi huấn luyện.
-Khi một mô hình hoạt đồng tốt trên tập huấn luyện nhưng không tổng quát hóa tốt trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
-Theo ngôn ngữ thông thường, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
+Đại lượng này có thể chênh lệch đáng kể so với lỗi huấn luyện.
+Khi một mô hình hoạt động tốt trên tập huấn luyện nhưng lại không có khả năng tổng quát hóa trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
+Theo ngôn ngữ thường ngày, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
@@ -750,11 +755,10 @@ if you perturbed that parameter just a small amount.
 They then update the parameter in the direction that reduces the loss.
 -->
 
-Một khi đã có dữ liệu, mô hình và một hàm mục tiêu rõ ràng, ta cần một thuật toán có khả năng tìm kiếm các tham số khả dĩ tốt nhất để tối thiểu hoá hàm mất mát.
-Các thuật toán tối ưu phổ biến nhất cho mạng nơ-ron đi theo một hướng tiếp cận được gọi là hạ gradient.
-Một cách ngắn gọn, tại mỗi bước, ta kiểm tra xem hàm mất mát thay đổi như thế nào nếu mỗi tham số thay đổi chỉ một lượng nhỏ.
+Một khi ta có dữ liệu, một mô hình và một hàm mục tiêu rõ ràng, ta cần một thuật toán có khả năng tìm kiếm các tham số khả dĩ tốt nhất để tối thiểu hóa hàm mất mát.
+Các thuật toán tối ưu phổ biến nhất cho mạng nơ-ron đều theo một hướng tiếp cận gọi là hạ gradient.
+Một cách ngắn gọn, tại mỗi bước và với mỗi tham số, ta kiểm tra xem hàm mất mát thay đổi như thế nào nếu ta thay đổi tham số đó bởi một lượng nhỏ.
 Sau đó các tham số này được cập nhật theo hướng làm giảm hàm mất mát.
-
 
 <!--
 ## Kinds of Machine Learning
