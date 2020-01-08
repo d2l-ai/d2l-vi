@@ -152,7 +152,7 @@ xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trú
 ## A Motivating Example
 -->
 
-## Một ví dụ tạo động lực
+## Một ví dụ truyền cảm hứng
 
 <!--
 Before we could begin writing, the authors of this book,
