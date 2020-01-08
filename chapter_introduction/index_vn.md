@@ -746,7 +746,7 @@ Sau đó ta quan sát hai đại lượng:
 * **Lỗi huấn luyện:**
 Lỗi trên dữ liệu được dùng để huấn luyện mô hình.
 Bạn có thể coi nó như điểm của một sinh viên trên bài thi thử để chuẩn bị cho bài thi thật.
-Ngay cả khi kết quả thi thử khả quan, không thể đảm bảo rằng bài thi thật sẽ đạt kết quả tốt.```
+Ngay cả khi kết quả thi thử khả quan, không thể đảm bảo rằng bài thi thật sẽ đạt kết quả tốt.
 
 * **Lỗi kiểm tra:** 
 Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
