@@ -659,7 +659,7 @@ constituted an improvement or a decline.
 Trước đó, chúng tôi có giới thiệu học máy là việc "học từ kinh nghiệm".
 *Học* ở đây tức là việc *tiến bộ* ở một tác vụ nào đó theo thời gian.
 Nhưng ai biết được như thế nào là tiến bộ?
-Thử tưởng tượng ta đang đề xuất cập nhật mô hình, nhưng một số người có thể có bất đồng về việc cập nhật có giúp cải thiện mô hình hay không.
+Thử tưởng tượng ta đang đề xuất cập nhật mô hình, nhưng một số người có thể có bất đồng về việc bản cập nhật này có giúp cải thiện mô hình hay không.
 
 <!--
 In order to develop a formal mathematical system of learning machines,
