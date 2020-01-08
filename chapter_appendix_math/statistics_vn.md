@@ -36,7 +36,7 @@ The sample is drawn from a *population*, denotes the total set of similar indivi
 Contrary to descriptive statistics, *statistical inference* further deduces the characteristics of a population from the given *samples*, based on the assumptions that the sample distribution can replicate the population distribution at some degree.
 -->
 
-Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* và *thống kê suy luận*.
+Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
 Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*.
 Mẫu được thu về từ một phân phối - một biểu diễn tất cả bộ những cá thể, vật dụng hay sự kiện tượng tự trong vấn đề mà chúng ta quan tâm.
 Đối nghịch với thống kê mô tả, *thống kê suy luận* dự đoán những đặc điểm của một phân phối qua những mẫu có sẵn, dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối thực.
