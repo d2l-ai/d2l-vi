@@ -509,7 +509,7 @@ Different choices of test statistic can lead to statistical test with drasticall
 
 *Tiêu chuẩn kiểm định* $T(x)$ là một số vô hướng có khả năng khái quát một đặc tính nào đó của dữ liệu mẫu.
 Mục đích của việc đặt ra một thống kê như vậy là để nó có thể giúp ta phân biệt giữa các phân phối khác nhau và tiến hành kiểm định thống kê.
-Nhắc lại ví dụ về nhà hóa học, nếu ta muốn chỉ ra rằng một tổng thể có chất lượng tốt hơn một tổng thể khác, việc lấy giá trị trung bình làm tiêu chuẩn kiểm định có vẻ hợp lý.
+Khi nhìn lại ví dụ về nhà hóa học, nếu ta muốn chỉ ra rằng một tổng thể có chất lượng tốt hơn một tổng thể khác, việc lấy giá trị trung bình làm tiêu chuẩn kiểm định có vẻ hợp lý.
 Các chọn lựa tiêu chuẩn kiểm định khác nhau có thể dẫn đến các phép kiểm định thống kê với năng lực thống kê khác nhau rõ rệt.
 
 <!--
