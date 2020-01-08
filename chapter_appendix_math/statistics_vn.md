@@ -268,7 +268,7 @@ If a model suffers from high variance, we often say it is *overfitting* and lack
 ### Evaluating Estimators in Code
 -->
 
-### Đánh giá các Bộ ước lượng bằng Code
+### Đánh giá các Bộ ước lượng qua lập trình
 
 <!--
 Since the standard deviation of an estimator has been implementing in MXNet by simply calling `a.std()` for a `ndarray` "a", we will skip it but implement the statistical bias and the mean squared error in MXNet.
