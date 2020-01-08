@@ -589,12 +589,12 @@ Sau khi làm quen với các khái niệm ở trên, hãy đi qua các bước t
 5. Make the decision to keep or reject the null hypothesis based on the $p$-value and the statistical significance level $\alpha$.
 -->
 
-1. Đặt ra câu hỏi và thành lập một giả thuyết null $H_0$.
-2. Đặt mức độ quan trọng thống kê $\alpha$ và một số mũ thống kê ($1 - \beta$).
+1. Diễn giả vấn đề và thành lập giả thuyết gốc $H_0$.
+2. Chọn mức độ ý nghĩa thống kê $\alpha$ và năng lực thống kê ($1 - \beta$).
 3. Thu được các mẫu sau các thử nghiệm.
-Lượng mẫu cần thiết sẽ phụ thuộc vào số mũ thống kê, và kích thước tác động mong muốn.
-4. Tính toán the test statistic $p$-giá trị.
-5. Đưa ra quyết định về giữ hay loại giả thuyết null dựa trên $p$-giá trị và statistical significance level $\alpha$.
+Số lượng mẫu cần thiết sẽ phụ thuộc vào năng lực thống kê, và hệ số ảnh hưởng kỳ vọng.
+4. Tính toán tiêu chuẩn kiểm định và $p$-giá trị.
+5. Đưa ra quyết định về giữ hay loại giả thuyết gốc dựa trên $p$-giá trị và mức độ ý nghĩa giống kê $\alpha$.
 
 <!--
 To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take. 
