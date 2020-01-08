@@ -2,7 +2,7 @@
 
 .. only:: html
 
-   References
+   Tài liệu tham khảo
    ==========
 
 ```
