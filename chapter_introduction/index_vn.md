@@ -107,11 +107,12 @@ natural language processing, healthcare, and genomics.
 -->
 
 Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa cũng không thể lập trình lên được từ con số không.
-Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta cần lại đi theo một khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
-Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng) có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu các phép tính vượt ra khỏi khả năng thấu hiểu của nhận thức chúng ta (mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
+Có nhiều lý do khác nhau. 
+Đôi khi chương trình mà chúng ta cần lại đi theo một khuôn mẫu thay đổi theo thời gian và chương trình của chúng ta cần phải thích ứng với điều đó.
+Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng) có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu phép tính vượt ngoài khả năng thấu hiểu của nhận thức chúng ta (mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
 Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến mà có thể *học* từ *kinh nghiệm*.
 Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm, thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường, chất lượng của nó sẽ tăng lên.
-Tương phản với hệ thống thương mại điện tử tất định của chúng ta, khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có, mặc cho đã tích luỹ thêm bao nhiêu là kinh nghiệm, tận cho tới khi lập trình viên tự quyết định rằng đã tới lúc cập nhật phần mềm này.
+Tương phản với hệ thống thương mại điện tử tất định của chúng ta, khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có, mặc cho đã tích luỹ thêm bao nhiêu kinh nghiệm, tận cho tới khi lập trình viên tự *học* và quyết định rằng đã tới lúc cập nhật phần mềm này.
 Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy, và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kĩ thuật đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
