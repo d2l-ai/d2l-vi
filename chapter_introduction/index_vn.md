@@ -849,7 +849,7 @@ can be described crisply as estimating the probability
 of something unknown given a particular set of available data:
 -->
 
-Theo thuật ngữ xác suất, ta thường quan tâm tới việc đánh giá xác suất có điều kiện $P(y|$\mathbf{x})$. <!-- mình tự sửa để chính xác hơn -->
+Theo thuật ngữ xác suất, ta thường quan tâm tới việc đánh giá xác suất có điều kiện $P(y|\mathbf{x})$. <!-- mình tự sửa để chính xác hơn -->
 Mặc dù chỉ là một trong số nhiều mô hình trong học máy, học có giám sát là nhân tố chính đem đến sự thành công cho các ứng dụng của học máy trong công nghiệp.
 Một phần, đó là bởi rất nhiều tác vụ có thể được mô tả dưới dạng ước lượng xác suất của một đại lượng chưa biết cho trước một tập dữ liệu cụ thể:
 
@@ -1421,7 +1421,7 @@ Ta cũng phải xử lý các vấn đề này trong nghiên cứu y sinh, ở �
 Tại Thư Viện Y Khoa Quốc Gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sư tập với khoảng 28 nghìn thẻ.
 Đây là một quá trình tốn thời gian và những người gán nhãn thường có một năm trễ kể từ khi lưu trữ tới khi gán thẻ.
 Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho tới khi được kiểm chứng lại một cách thủ công.
-Thực vậy, BioASQ đã [tổ chức một cuộc thi]((http://bioasq.org/) dành riêng cho việc này.
+Thực vậy, BioASQ đã [tổ chức một cuộc thi](http://bioasq.org/) dành riêng cho việc này.
 
 <!-- =================== Kết thúc dịch Phần 17 ==================== -->
 
