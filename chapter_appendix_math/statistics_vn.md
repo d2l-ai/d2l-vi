@@ -343,7 +343,7 @@ Following that, the modern significance testing is the intelligence heritage by 
 
 Chủ đề thường gặp nhất trong suy luận thống kê là kiểm định giả thuyết. 
 Mặc dù kiểm định giả thuyết đã bắt đầu trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot vào những năm 1700.
-John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng nam giới được sinh ra nhiều hơn mỗi năm so với nữ giới. 
+John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng mỗi năm nhiều nam giới được sinh ra hơn so với nữ giới. 
 Tiếp đó, phép thử nghiệm độ tin cậy hiện đại là di sản trí tuệ của Karl Pearson, người đã phát minh ra $p$-value (_trị số p_) và bài kiểm định Chi bình phương Pearson (_Pearson's chi-squared test_), William Gosses, cha đẻ của phân phối Student và Ronald Fisher, người đã khởi xướng giả thuyết gốc và kiểm định độ tin cậy. 
 
 <!--
