@@ -699,7 +699,7 @@ owing to non-differentiability or other complications.
 In these cases, it is common to optimize a *surrogate objective*.
 -->
 
-Khi muốn dự đoán một giá trị bằng số, hàm mục tiêu phổ biến nhất là hàm bình phương sai số $(y-\hat{y})^2$.
+Khi muốn dự đoán một giá trị số, hàm mục tiêu phổ biến nhất là hàm bình phương sai số $(y-\hat{y})^2$.
 Với bài toán phân loại, mục tiêu phổ biến nhất là tối thiểu hóa tỉ lệ lỗi, tức tỉ lệ mẫu mà dự đoán của mô hình lệch với nhãn thực tế.
 Một vài hàm mục tiêu (ví dụ như bình phương sai số) khá dễ tối ưu hóa.
 Các hàm khác (như tỉ lệ lỗi) lại khó tối ưu hóa trực tiếp, có thể do các hàm này không khả vi hoặc những vấn đề khác.
