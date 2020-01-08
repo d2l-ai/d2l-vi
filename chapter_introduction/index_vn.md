@@ -750,7 +750,7 @@ Ngay cả khi kết quả thi thử khả quan, không thể đảm bảo rằng
 
 * **Lỗi kiểm tra:** 
 Đây là lỗi trên tập kiểm tra (không dùng để huấn luyện mô hình).
-Đại lượng này có thể bị chênh lệch đáng kể so với lỗi huấn luyện.
+Đại lượng này có thể chênh lệch đáng kể so với lỗi huấn luyện.
 Khi một mô hình hoạt động tốt trên tập huấn luyện nhưng lại không có khả năng tổng quát hóa trên dữ liệu chưa gặp, ta nói rằng mô hình bị *quá khớp* (overfit).
 Theo ngôn ngữ thường ngày, đây là hiện tượng "học lệch tủ" khi kết quả bài thi thật rất kém mặc dù có kết quả cao trong bài thi thử.
 
