@@ -38,7 +38,7 @@ Contrary to descriptive statistics, *statistical inference* further deduces the 
 
 Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
 Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*.
-Mẫu được thu về từ một phân phối - một biểu diễn tất cả bộ những cá thể, vật dụng hay sự kiện tượng tự trong vấn đề mà chúng ta quan tâm.
+Mẫu được lấy ra từ một *tổng thể* (*population*), là biểu diễn của toàn bộ những cá thể, đồ vật hay sự kiện tương tự nhau mà thí nghiệm của ta quan tâm.
 Đối nghịch với thống kê mô tả, *thống kê suy luận* dự đoán những đặc điểm của một phân phối qua những mẫu có sẵn, dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối thực.
 <!--
 You may wonder: “What is the essential difference between machine learning and statistics?” Fundamentally speaking, statistics focuses on the inference problem. 
