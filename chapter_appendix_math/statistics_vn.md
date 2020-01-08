@@ -46,7 +46,8 @@ This type of problems includes modeling the relationship between the variables, 
 In contrast, machine learning emphasizes on making accurate predictions, without explicitly programming and understanding each parameter's functionality.
 -->
 
-Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?" Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận.
+Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?".
+Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận.
 Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B.
 Ngược lại, học máy đề cao việc dự đoán chính xác, thay vì trực tiếp lập trình và hiểu rõ chức năng của từng tham số. 
 
