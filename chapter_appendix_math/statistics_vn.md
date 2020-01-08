@@ -60,7 +60,7 @@ It is straightforward to extend to the case where $\theta$ is a vector or a tens
 
 Trong chương này, chúng tôi sẽ giới thiệu ba loại phương pháp thống kê suy luận: đánh giá và so sánh các phép ước tính, kiểm tra các giả thuyết và xây dựng khoảng tin cậy.
 Những phương pháp này có thể giúp chúng ta suy luận ra những đặc tính của một tổng thể, hay nói cách khác, tham số thật $\theta$.
-Để cho ngắn gọn, chúng tôi giả sử tham số thực *\theta$ của một phân phối cho trước là một số thực.
+Để cho ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng.
 Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là rất đơn giản nên chúng tôi sẽ không đề cập đến vấn đề này. 
 <!-- =================== Kết thúc dịch Phần 1 ================================-->
 
