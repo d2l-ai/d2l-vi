@@ -589,7 +589,12 @@ Sau khi làm quen với các khái niệm ở trên, hãy đi qua các bước t
 5. Make the decision to keep or reject the null hypothesis based on the $p$-value and the statistical significance level $\alpha$.
 -->
 
-*dịch đoạn phía trên*
+1. Đặt ra câu hỏi và thành lập một giả thuyết null $H_0$.
+2. Đặt mức độ quan trọng thống kê $\alpha$ và một số mũ thống kê ($1 - \beta$).
+3. Thu được các mẫu sau các thử nghiệm.
+Lượng mẫu cần thiết sẽ phụ thuộc vào số mũ thống kê, và kích thước tác động mong muốn.
+4. Tính toán the test statistic $p$-giá trị.
+5. Đưa ra quyết định về giữ hay loại giả thuyết null dựa trên $p$-giá trị và statistical significance level $\alpha$.
 
 <!--
 To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take. 
@@ -597,20 +602,22 @@ Then we calculate the test statistic of the sample, taking an extreme value of t
 If the test statistic falls within the reject region, we may reject the null hypothesis in favor of the alternative.
 -->
 
-*dịch đoạn phía trên*
+Để tiến hành kiểm định một giả thuyết, ta bắt đầu bằng định nghĩa giả thuyết gốc và mức độ rủi ro ta sẵn sàng nhận.
+Sau đó tính toán tiêu chuẩn kiểm định của mẫu, lấy cực trị của tiêu chuẩn kiểm định như bằng chứng phủ định giả thuyết gốc.
+Nếu tiêu chuẩn kiểm định rơi vào vùng phủ định, ta có thể bác bỏ giả thuyết gốc và chọn giả thuyết khác thay thế.
 
 <!--
 Hypothesis testing is applicable in a variety of scenarios such as the clinical trails and A/B testing.
 -->
 
-*dịch đoạn phía trên*
+Kiểm định giả thuyết thích hợp trong nhiều tình huống đa dạng như thử nghiệm lâm sàng (*clinical trails*) và kiểm định A/B.
 
 
 <!--
 ## Constructing Confidence Intervals
 -->
 
-## *dịch tiêu đề phía trên*
+## Xây dựng Khoảng tin cậy 
 
 
 <!--
@@ -619,13 +626,16 @@ Rather, it would be far better if we could produce an interval that would contai
 If you were interested in such ideas a century ago, then you would have been excited to read "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" by Jerzy Neyman :cite:`Neyman.1937`, who first introduced the concept of confidence interval in 1937.
 -->
 
-*dịch đoạn phía trên*
+Khi ước lượng giá trị của biến $\theta$, bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
+Hơn nữa, sẽ tốt hơn nhiều nếu ta có thể tính ra một khoảng chứa tham số $\theta$ thực sự với xác suất cao.
+Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) cuả Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
 
 <!--
 To be useful, a confidence interval should be as small as possible for a given degree of certainty. Let's see how to derive it.
 -->
 
-*dịch đoạn phía trên*
+Để hữu dụng, khoảng tin cậy nên càng bé càng tốt với một mức độ chắc chắn cho trước.
+Hãy xem ta *derive* điều này như thế nào.
 
 <!-- =================== Kết thúc dịch Phần 10 ================================-->
 
