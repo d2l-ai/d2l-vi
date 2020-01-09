@@ -195,7 +195,7 @@ There are cases where unbiased estimators do not exist without further assumptio
 This may seem like a significant flaw in an estimator, however the majority of estimators encountered in practice are at least asymptotically unbiased in the sense that the bias tends to zero as the number of available samples tends to infinity: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 -->
 
-Cũng đáng để nhắc rằng, dù vậy, những bộ ước lượng thiên lệch thường xuyên được sử dụng trong thực tế.
+Cũng đáng để tâm rằng, dù vậy, những bộ ước lượng thiên lệch vẫn thường xuyên được sử dụng trong thực tế.
 Có những trường hợp các bộ ước lượng không thiên lệch không tồn tại nếu không có thêm giả định hoặc nó rất khó để tính toán.
 Đây có thể xem như một khuyết điểm lớn trong bộ ước lượng, tuy nhiên phần lớn các bộ ước lượng gặp trong thực tiễn đều ít nhất tiệm cận không thiên lệch theo nghĩa độ chệch có xu hướng tiến về không khi số lượng mẫu có được tiến về vô cực: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 
