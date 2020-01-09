@@ -489,8 +489,8 @@ Một trong những ứng dụng phổ biến nhất của năng lực thống k
 Xác suất bạn bác bỏ giả thuyết gốc khi nó là sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có.
 Và như bạn đã có thể đoán trước, hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể bị phát hiện với xác suất cao.
 Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ.
-Giả sử ta muốn bác bỏ một giả thuyết gốc rằng mẫu của ta được lấy từ một phân phối Gauss với kỳ vọng là không, phương sai là một, và ta tin rằng giá trị trung bình của tập mẫu gần với một.
-Chỉ cần cỡ mẫu là $8$, ta có thể làm vậy với tỉ lệ lỗi chấp nhận được.
+Giả sử ta có giả thuyết gốc rằng các mẫu được lấy từ một phân phối Gauss với kỳ vọng là không và phương sai là một.
+Nếu ta tin rằng giá trị trung bình của tập mẫu gần với một, ta chỉ cần $8$ mẫu là có thể bác bỏ giả thuyết gốc với tỉ lệ lỗi chấp nhận được.
 Tuy nhiên, nếu ta cho rằng giá trị trung bình thực sự của tổng thể gần với $0.01$, thì ta cần cỡ mẫu khoảng $80000$ để có thể phát hiện được sự sai lệch.
 
 <!--
@@ -501,8 +501,8 @@ Similarly, if the statistical power is not of enough high power, then the test m
 
 Ta có thể hình dung năng lực thống kê như một cái máy lọc nước.
 Trong phép so sánh này, một kiểm định với năng lực cao giống như một hệ thống lọc nước chất lượng tốt, loại bỏ được các chất nguy hiểm trong nước càng nhiều càng tốt.
-Ngược lại, một sự sai lệch nhỏ hơn giống như một cái máy lọc chất lượng kém, có thể để các chất tương đối nhỏ thoát dễ dàng qua những kẽ hở.
-Tương tự, nếu năng lực thống kê không đủ cao, thì kiểm định có thể không bắt được các sai lệch nhỏ hơn.
+Ngược lại, các sai lệch nhỏ cũng giống các chất cặn bẩn nhỏ, một cái máy lọc chất lượng kém sẽ để lọt các chất bẩn nhỏ đó.
+Tương tự, nếu năng lực thống kê không đủ cao, thì kiểm định có thể không bắt được các sai lệch nhỏ.
 
 <!-- =================== Kết thúc dịch Phần 8 ================================-->
 
