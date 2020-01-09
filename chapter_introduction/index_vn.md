@@ -179,7 +179,7 @@ Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
 Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcription_) của câu lệnh đó.
 Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và tự khởi động ứng dụng Bản đồ để hoàn thành yêu cầu đó.
 Khởi động xong, ứng dụng Bản đồ tự xác định một vài lộ trình tới đích.
-Kế bên mỗi tuyến đường, điện thoại hiển thị thời gian di chuyển dự tính.
+Đến mỗi tuyến đường, ứng dụng lại cập nhật và hiển thị thời gian di chuyển dự tính mới.
 Mặc dù đây chỉ là câu chuyện dựng lên cho mục đích giảng dạy, nó cũng cho thấy chỉ trong khoảng vài giây, những tương tác hàng ngày của chúng ta với chiếc điện thoại thông minh có thể liên quan đến nhiều mô hình học máy.
 
 <!--
