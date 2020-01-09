@@ -325,8 +325,8 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 1. Repeat until the model is awesome.
 -->
 
-1. Khởi tạo mô hình một cách ngẫu nhiên mà chưa thể thực hiện tác vụ có ích nào.
-1. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}`` tương ứng).
+1. Khởi tạo mô hình một cách ngẫu nhiên. Lúc này nó vẫn chưa thể thực hiện bất kì tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}`` tương ứng).
 3. Thay đổi các núm vặn để mô hình dự đoán chính xác hơn trên các mẫu.
 4. Lặp lại cho đến khi có một mô hình hoạt động tốt.
 
