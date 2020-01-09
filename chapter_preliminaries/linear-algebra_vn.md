@@ -238,7 +238,8 @@ Thus, the transpose of $\mathbf{A}$ in :eqref:`eq_matrix_def` is a $n \times m$ 
 
 Đôi khi, ta muốn hoán đổi các trục.
 Khi ta hoán đổi các dòng với các cột của ma trận, kết quả có được là *chuyển vị* (*transpose*) của ma trận đó.
-
+Về lý thuyết, chuyển vị của ma trận $\mathbf{A}$ được ký hiệu là $\mathbf{A}^\top$ và nếu $\mathbf{B} = \mathbf{A}^\top$ thì $b_{ij} = a_{ji}$ với mọi $i$ và $j$.
+Do đó, chuyển vị của $\mathbf{A}$ trong :eqref:`eq_matrix_def` là một ma trận $n \times m$:
 
 $$
 \mathbf{A}^\top =
@@ -254,7 +255,7 @@ $$
 In code, we access a matrix's transpose via the `T` attribute.
 -->
 
-*dịch đoạn phía trên*
+Khi lập trình, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
 
 ```{.python .input  n=7}
 A.T
@@ -262,6 +263,9 @@ A.T
 
 <!--
 As a special type of the square matrix, a *symmetric matrix* $\mathbf{A}$ is equal to its transpose: $\mathbf{A} = \mathbf{A}^\top$.
+-->
+
+Như một biến thể đặc biệt của ma trận vuông, *ma trận đối xứng* (*symmetric matrix*) $\mathbf{A}$ là một ma trận có chuyển vị bằng chính nó: $\mathbf{A} = \mathbf{A}^\top$.
 
 ```{.python .input}
 B = np.array([[1, 2, 3], [2, 0, 4], [3, 4, 5]])
@@ -281,7 +285,12 @@ And, as we will see in later chapters, this convention will enable common deep l
 For example, along the outermost axis of an `ndarray`, we can access or enumerate minibatches of data points, or just data points if no minibatch exists.
 -->
 
-*dịch đoạn phía trên*
+Ma trận là một cấu trúc dữ liệu hữu ích: chúng cho phép ta tổ chức dữ liệu có nhiều phương thức biến thể khác nhau.
+Ví dụ, các dòng trong ma trận của chúng ta có thể tượng trưng cho các căn nhà khác nhau (các điểm dữ liệu), còn các cột có thể tượng trưng cho những thuộc tính khác nhau của ngôi nhà.
+Bạn có thể thấy quen thuộc với điều này nếu đã từng sử dụng các phần mềm lập bảng tính hoặc đã đọc :numref:`sec_pandas`.
+Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tiện lợi hơn nếu ta coi một điểm dữ liệu như một vector dòng trong ma trận.
+Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ cho phép sự xuất hiện của những kỹ thuật học sâu thông dụng.
+Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không các batch nhỏ nào cả. 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
