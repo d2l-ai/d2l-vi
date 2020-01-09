@@ -345,8 +345,7 @@ np.square(samples.std()) + np.square(bias)
 ## Conducting Hypothesis Tests
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Tiến Hành Kiểm Định Giả Thuyết
 
 <!--
 The most commonly encountered topic in statistical inference is hypothesis testing. 
@@ -355,7 +354,10 @@ John tracked 80-year birth records in London and concluded that more men were bo
 Following that, the modern significance testing is the intelligence heritage by Karl Pearson who invented $p$-value and Pearson's chi-squared test), William Gosset who is the father of Student's t-distribution, and Ronald Fisher who initialed the null hypothesis and the significance test.
 -->
 
-*dịch đoạn phía trên*
+Chủ đề thường gặp nhất trong suy luận thống kê là kiểm định giả thuyết. 
+Tuy kiểm định giả thuyết trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot từ tận những năm 1700.
+John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng mỗi năm nhiều nam giới được sinh ra hơn so với nữ giới. 
+Tiếp đó, phép thử nghiệm độ tin cậy hiện đại là di sản trí tuệ của Karl Pearson, người đã phát minh ra $p$-value (_trị số p_) và bài kiểm định Chi bình phương Pearson (_Pearson's chi-squared test_), William Gosses, cha đẻ của phân phối Student và Ronald Fisher, người đã khởi xướng giả thuyết gốc và kiểm định độ tin cậy. 
 
 <!--
 A *hypothesis test* is a way of evaluating some evidence against the default statement about a population. 
@@ -366,7 +368,12 @@ A null hypothesis is often stated in a declarative form which posits a relations
 It should reflect the brief as explicit as possible, and be testable by statistics theory.
 -->
 
-*dịch đoạn phía trên*
+Một bài *kiểm định giả thuyết* là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể. 
+Chúng ta gọi các mệnh đề mặc định là *giả thuyết gốc* $H_0$, giả thuyết mà chúng ta cố gắng bác bỏ thông qua các dữ liệu quan sát được. 
+Tại đây, chúng tả sử dụng $H_0$ là điểm bắt đầu cho việc thử nghiệm độ tin cậy thống kê.
+*Giả thuyết đối* $H_A$ (hay $H_1$) là mệnh đề đối lập với giả thuyết gốc.
+Giả thuyết gốc thường được định nghĩa dưới dạng khai báo mà mà ở đó nó ấn định mối quan hệ giữa các biến. 
+Nó nên phản ánh mệnh đề một cách rõ ràng nhất, và có thể kiểm chứng được bằng lý thuyết thống kê.
 
 <!--
 Imagine you are a chemist. After spending thousands of hours in the lab, you develop a new medicine which can dramatically improve one's ability to understand math. 
@@ -374,7 +381,9 @@ To show its magic power, you need to test it.
 Naturally, you may need some volunteers to take the medicine and see whether it can help them learn math better. How do you get started?
 -->
 
-*dịch đoạn phía trên*
+Hình dung rằng bạn là một nhà hóa học. Sau hàng ngàn giờ nghiên cứu trong phòng thí nghiệm, bạn đã phát triển được một loại thuốc mới giúp cải thiện đáng kể khả năng hiểu về toán của con người. 
+Để chứng minh sức mạnh ma thuật của thuốc, bạn cần kiểm tra nó.
+Thông thường, bạn cần một số tình nguyện viên sử dụng loại thuốc này để kiểm tra xem liệu nó có giúp họ học toán tốt hơn hay không. Bạn sẽ bắt đầu điều này như thế nào? 
 
 <!--
 First, you will need carefully random selected two groups of volunteers, so that there is no difference between their math understanding ability measured by some metrics. 
@@ -383,15 +392,19 @@ The *test group* (or *treatment group*) is a group of individuals who will exper
 In this way, the influence of all the variables are minimized, except the impact of the independent variable in the treatment.
 -->
 
-*dịch đoạn phía trên*
-
+Đầu tiên, bạn cần cẩn thận lựa chọn ngẫu nhiên hai nhóm tình nguyện viên để đảm bảo rằng không có sự khác biệt đáng kể dựa trên các tiêu chuẩn đo lường được về khả năng hiểu toán của họ. 
+Hai nhóm này thường được gọi là nhóm thử nghiệm và nhóm kiểm soát.
+*Nhóm thử nghiệm* (hay *nhóm trị liệu*) là nhóm người được cho sử dụng thuốc, trong khi *nhóm kiểm soát* đại diện cho nhóm người dùng được đặt làm chuẩn; tức là, họ có các yếu tố môi trường giống hệt với nhóm thử nghiệm trừ việc sử dụng thuốc. 
+Bằng cách này, sự ảnh hưởng của tất cả các biến được giảm thiểu, trừ sự tác động của biến độc lập trong quá trình điều trị.
 <!--
 Second, after a period of taking the medicine, you will need to measure the two groups' math understanding by the same metrics, such as letting the volunteers do the same tests after learning a new math formula.
 Then, you can collect their performance and compare the results.  
 In this case, our null hypothesis will be that there is no difference between the two groups, and our alternate will be that there is.
 -->
 
-*dịch đoạn phía trên*
+Thứ hai, sau một thời gian sử dụng thuốc, bạn cần đo khả năng hiểu toán của hai nhóm trên bằng cùng tiêu chuẩn đo lường, ví dụ như cho các tình nguyện viên làm cùng một bài kiểm tra sau khi học một công thức toán mới. 
+Sau đó bạn có thể thu thập kết quả về sự năng lực của họ và so sánh chúng. 
+Trong trường hợp này, giả thuyết gốc của chúng ta đó là không có sự khác biệt nào giữa hai nhóm, và giả thuyết đối là có sự khác biệt.  
 
 <!--
 This is still not fully formal.  
@@ -402,20 +415,25 @@ How long should you run the test? How do you decided if there is a difference be
 Do you care about the average performance only, or do you also the range of variation of the scores. And so on.
 -->
 
-*dịch đoạn phía trên*
-
+Quy trình trên vẫn chưa được xem là chính thức.
+Có rất nhiều chi tiết mà bạn phải suy nghĩ cẩn trọng.
+Ví dụ, đâu là tiêu chuẩn đo lường thích hợp để kiểm tra khả năng hiểu toán?
+Bao nhiêu tình nguyện viên thực hiện bài kiểm tra là đủ để bạn có thể tự tin khẳng định sự hiệu quả của thuốc?
+Bài kiểm tra nên kéo dài trong bao lâu? Làm cách nào để bạn quyết định được có sự khác biệt rõ rệt giữa hai nhóm?
+Bạn chỉ quan tâm đến hiệu suất trung bình hay cả phạm vi biến thiên của các điểm số, v.v...
 <!--
 In this way, hypothesis testing provides framework for experimental design and reasoning about certainty in observed results.  
 If we can now show that the null hypothesis is very unlikely to be true, we may reject it with confidence.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và cách suy luận về sự chắc chắn của những kết quả quan sát được.
+Nếu chúng ta chứng minh được giả thuyết gốc khả năng rất cao là không đúng, thì chúng ta có thể tự tin bác bỏ nó.  
 
 <!--
 To complete the story of how to work with hypothesis testing, we need to now introduce some additional terminology and make some of our concepts above formal.
 -->
 
-*dịch đoạn phía trên*
+Để hoàn thành câu chuyện về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và hiểu các khái niệm một cách chính thức hơn. 
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 
@@ -892,7 +910,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 6 -->
-*
+* Nguyễn Lê Quang Nhật
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
 * Lê Khắc Hồng Phúc
