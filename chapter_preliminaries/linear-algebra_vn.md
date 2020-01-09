@@ -32,12 +32,12 @@ In this equation, each of the terms---$5$, $9$, and $32$---are scalar values.
 The placeholders $c$ and $f$ are called *variables* and they represented unknown scalar values.
 -->
 
-Nếu bạn chưa từng học đại số tuyến tính hay học máy, chắc kinh nghiệm toán học của bạn chỉ bao gồm suy luận trên từng con số riêng lẻ.
+Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ từng làm việc với từng con số riêng lẻ.
 Nếu bạn đã từng phải cân bằng sổ chi tiêu hoặc chỉ đơn giản là trả tiền cho bữa ăn, bạn chắc chắn là đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
 Ví dụ, nhiệt độ tại Palo Alto là $52$ độ Fahrenheit.
 Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *vô hướng* (*scalar*).
 Nếu bạn muốn chuyển giá trị nhiệt độ trên sang độ Celsius (thang đo nhiệt độ hợp lý hơn theo hệ mét), bạn sẽ phải tính biểu thức $c = \frac{5}{9}(f - 32)$ với giá trị $f$ bằng $52$.
-Trong phương trình trên, mỗi số hạng --- $5$, $9$ và $32$ --- là các scalar.
+Trong phương trình trên, mỗi số hạng --- $5$, $9$ và $32$ --- là các số vô hướng.
 Các ký hiệu số hạng $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
 
 <!--
