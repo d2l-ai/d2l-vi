@@ -778,9 +778,9 @@ to motivate the reader and provide us with some common language
 for when we talk about more problems throughout the book.
 -->
 
-Trong các mục tiếp theo, chúng ta thảo luận một vài *dạng* bài toán học máy một cách chi tiết hơn. Chúng ta bắt đầu với một danh sách *các mục tiêu*, tức một danh sách các tác vụ chúng ta muốn học máy thực hiện.
-Chú ý rằng các mục tiêu được gắn với một tập các kỹ thuật giúp trả lời câu hỏi "làm sao" để đạt được chúng, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
-Danh sách dưới đây là một tập con các bài toán mà Học Máy có thể xử lý nhằm tạo động lực cho độc giả, đồng thời cung cấp một ngôn ngữ chung khi ta nói về những bài toán khác xuyên suốt cuốn sách.
+Trong các mục tiếp theo, chúng ta thảo luận chi tiết hơn một số *dạng* bài toán học máy. Chúng ta bắt đầu với một danh sách *các mục tiêu*, tức một danh sách các tác vụ chúng ta muốn học máy thực hiện.
+Chú ý rằng các mục tiêu sẽ được gắn liền với một tập các kỹ thuật để đạt được mục tiêu đó, bao gồm các kiểu dữ liệu, mô hình, kỹ thuật huấn luyện, v.v.
+Danh sách dưới đây là một tuyển tập các bài toán mà Học Máy có thể xử lý nhằm tạo động lực cho độc giả, đồng thời cung cấp một ngôn ngữ chung khi nói về những bài toán khác xuyên suốt cuốn sách.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
@@ -809,14 +809,14 @@ Our goal is to produce a model $f_\theta$ that maps any input $\mathbf{x}_i$
  to a prediction $f_{\theta}(\mathbf{x}_i)$.
 -->
 
-Học có giám sát giải quyết tác vụ dự đoán *mục tiêu* khi cho trước *đầu vào*.
-Các mục tiêu, mà chúng ta thường gọi là *nhãn*, thường được ký hiệu bằng $y$. <!-- $y$ chuẩn hơn *y* -->
-Dữ liệu đầu vào, cũng thường được gọi là *đặc trưng* hoặc hiệp biến, thường được ký hiệu là $\mathbf{x}$.
+Học có giám sát giải quyết tác vụ dự đoán *mục tiêu* với *đầu vào* cho trước.
+Các mục tiêu, thường được gọi là *nhãn*, phần lớn được ký hiệu bằng $y$. <!-- $y$ chuẩn hơn *y* -->
+Dữ liệu đầu vào, thường được gọi là *đặc trưng* hoặc hiệp biến, thông thường được ký hiệu là $\mathbf{x}$.
 Mỗi cặp (đầu vào, mục tiêu) được gọi là một *mẫu*.
-Thi thoảng, khi văn cảnh rõ ràng hơn, chúng ta có thể sử dụng thuật ngữ *các ví dụ* để chỉ một tập các đầu vào, ngay cả khi mục tiêu tương ứng là chưa biết.
+Thi thoảng, khi văn cảnh rõ ràng hơn, chúng ta có thể sử dụng thuật ngữ *các mẫu* để chỉ một tập các đầu vào, ngay cả khi chưa xác định được mục tiêu tương ứng.
 Ta ký hiệu bất cứ một mẫu cụ thể nào với một chỉ số dưới, thường là $i$, ví dụ ($\mathbf{x}_i, y_i$).
 Một tập dữ liệu là một tập của $n$ mẫu $\{\mathbf{x}_i, y_i\}_{i=1}^n$.
-Mục đích của chúng ta là tạo một mô hình $f_\theta$ ánh xạ bất kỳ đầu vào $\mathbf{x}_i$ tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
+Mục đích của chúng ta là xây dựng một mô hình $f_\theta$ ánh xạ bất kỳ đầu vào $\mathbf{x}_i$ tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
 
 <!--
 To ground this description in a concrete example,
@@ -829,7 +829,7 @@ The input data $\mathbf{x}$ might be vital signs
 such as heart rate, diastolic and systolic blood pressure, etc.
 -->
 
-Một ví dụ cụ thể hơn, nếu chúng ta đang làm việc trong lĩnh vực chăm sóc sức khoẻ, chúng ta có thể mong muốn dự đoán liệu rằng một bệnh nhân có bị đau tim không.
+Một ví dụ cụ thể hơn, trong lĩnh vực chăm sóc sức khoẻ, chúng ta có thể muốn dự đoán liệu một bệnh nhân có bị đau tim hay không.
 Việc *bị đau tim* hay *không bị đau tim* sẽ là nhãn $y$. <!-- đây nhé -->
 Dữ liệu đầu vào $\mathbf{x}$ có thể là các dấu hiệu quan trọng như nhịp tim, huyết áp tâm trương và tâm thu, v.v.
 
@@ -853,8 +853,8 @@ of something unknown given a particular set of available data:
 -->
 
 Theo thuật ngữ xác suất, ta thường quan tâm tới việc đánh giá xác suất có điều kiện $P(y|\mathbf{x})$. <!-- mình tự sửa để chính xác hơn -->
-Mặc dù chỉ là một trong số nhiều mô hình trong học máy, học có giám sát là nhân tố chính đem đến sự thành công cho các ứng dụng của học máy trong công nghiệp.
-Một phần, đó là bởi rất nhiều tác vụ có thể được mô tả dưới dạng ước lượng xác suất của một đại lượng chưa biết cho trước một tập dữ liệu cụ thể:
+Dù chỉ là một trong số nhiều mô hình trong học máy, học có giám sát là nhân tố chính đem đến sự thành công cho các ứng dụng của học máy trong công nghiệp.
+Một phần vì rất nhiều tác vụ có thể được mô tả dưới dạng ước lượng xác suất của một đại lượng chưa biết cho trước trong một tập dữ liệu cụ thể:
 
 <!--
 * Predict cancer vs not cancer, given a CT image.
