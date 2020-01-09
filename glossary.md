@@ -33,7 +33,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|----------------------------------------------------------------|-----------------------|
 | background noise        | nhiễu nền                                                      | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược                                               |                       |
-| batch                   | batch                                                          |                       |
+| batch                   |                                                                |                       |
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
@@ -154,7 +154,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | machine learning         | học máy                                                        |               |
 | mean squared error (MSE) | trung bình bình phương sai số                                  |               |
 | metric                   | phép đo                                                        |               |
-| minibatch                | minibatch                                                      |               |
+| minibatch                |                                                                |               |
 | misclassified            | bị phân loại nhầm                                              |               |
 | mislabeled               | bị gán nhãn nhầm                                               |               |
 | model                    | mô hình                                                        |               |
