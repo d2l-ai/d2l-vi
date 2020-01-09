@@ -176,7 +176,7 @@ Các tác giả của cuốn sách cũng giống như nhiều người lao độ
 Chúng tôi leo lên xe và bắt đầu lái.
 Sở hữu chiếc iPhone, Alex gọi "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
 Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
-Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcription_) của câu lệnh đó.
+Chiếc điện thoại nhanh chóng hiển thị bản ghi thoại (_transcription_) của câu lệnh.
 Nó cũng nhận ra rằng chúng tôi đang yêu cầu chỉ dẫn đường đi và tự khởi động ứng dụng Bản đồ để hoàn thành yêu cầu đó.
 Khởi động xong, ứng dụng Bản đồ tự xác định một vài lộ trình tới đích.
 Đến mỗi tuyến đường, ứng dụng lại cập nhật và hiển thị thời gian di chuyển dự tính mới.
@@ -241,7 +241,7 @@ Hay nói cách khác, thậm chí nếu chúng ta không biết *cách lập tr�
 Với khả năng này, chúng ta có thể thu thập một *tập dữ liệu* lớn các mẫu âm thanh kèm nhãn mà *có chứa* hoặc *không chứa* hiệu lệnh đánh thức.
 Trong cách tiếp cận học máy, chúng ta không thiết kế một hệ thống *rõ ràng* để nhận dạng hiệu lệnh đánh thức.
 Thay vào đó, chúng ta định nghĩa một chương trình linh hoạt mà hành vi của nó được xác định bởi những *tham số*.
-Sau đó chúng ta sử dụng tập dữ liệu để xác định tập các tham số tốt nhất có khả năng cải thiện chất lượng của chương trình, thoả mãn một số yêu cầu về chất lượng trong nhiệm vụ được giao.
+Sau đó chúng ta sử dụng tập dữ liệu để xác định bộ các tham số tốt nhất có khả năng cải thiện chất lượng của chương trình, cũng như thoả mãn một số yêu cầu về chất lượng trong nhiệm vụ được giao.
 
 <!--
 You can think of the parameters as knobs that we can turn,
