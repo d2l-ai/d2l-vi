@@ -517,8 +517,8 @@ Often, $T(X)$ (the distribution of the test statistic under our null hypothesis)
 If we can derive explicitly such a distribution, and then measure our test statistic on our dataset, we can safely reject the null hypothesis if our statistic is far outside the range that we would expect.  Making this quantitative leads us to the notion of $p$-values.
 -->
 
-Thường thì $T(X)$ (phân phối của tiêu chuẩn kiểm định dưới giả thuyết gốc) sẽ tuân theo, hay ít nhất xấp xỉ một phân phối phổ biến như phân phối chuẩn, khi được xem xét dưới giả thuyết gốc.
-Nếu ta có thể rõ ràng chỉ ra một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu, ta có thể yên tâm bác bỏ giả thuyết gốc nếu thống kê đó nằm xa bên ngoài khoảng mà ta dự đoán.
+Thường thì $T(X)$ (phân phối của tiêu chuẩn kiểm định dưới giả thuyết gốc) sẽ (xấp xỉ) tuân theo một phân phối phổ biến như phân phối chuẩn, khi được xem xét dưới giả thuyết gốc.
+Nếu ta có thể rõ ràng chỉ ra một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu, ta có thể yên tâm bác bỏ giả thuyết gốc nếu thống kê đó nằm xa bên ngoài khoảng mong đợi.
 Việc đưa ra một con số như vậy dẫn đến ý tưởng của trị số $p$.
 
 <!--
@@ -567,7 +567,7 @@ Thường thì có hai loại kiểm định ý nghĩa thống kê: kiểm đị
 Ví dụ, giả thuyết gốc có thể cho rằng tham số thực $\theta$ nhỏ hơn hoặc bằng một giá trị $c$.
 Giả thuyết đối sẽ là $\theta$ lớn hơn $c$.
 Nói cách khác, miền bác bỏ chỉ nằm ở một bên của phân phối mẫu.
-Traí lại với kiểm định một phía, *kiểm định hai phía* (hay *kiểm định hai đuôi*) có thể được áp dụng khi miền bác bỏ nằm ở cả hai phía của phân phối mẫu.
+Trái với kiểm định một phía, *kiểm định hai phía* (hay *kiểm định hai đuôi*) có thể được áp dụng khi miền bác bỏ nằm ở cả hai phía của phân phối mẫu.
 Ví dụ cho trường hợp này có thể là một giả thuyết gốc cho rằng tham số thực $\theta$ bằng một giá trị $c$.
 Giả thuyết đối lúc này sẽ là $\theta$ không bằng $c$.
 
