@@ -177,21 +177,24 @@ In this sense, the dimensionality of an `ndarray`'s some axis will be the length
 ## Matrices
 -->
 
-## *dịch tiêu đề phía trên*
+## Ma trận
 
 <!--
 Just as vectors generalize scalars from order $0$ to order $1$, matrices generalize vectors from order $1$ to order $2$.
 Matrices, which we will typically denote with bold-faced, capital letters (e.g., $\mathbf{X}$, $\mathbf{Y}$, and $\mathbf{Z}$), are represented in code as `ndarray`s with $2$ axes.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như vector mở rộng số vô hướng từ bậc $0$ sang bậc $1$, ma trận mở rộng vector từ bậc $1$ sang bậc $2$.
+Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$).
+Ma trận được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
 
 <!--
 In math notation, we use $\mathbf{A} \in \mathbb{R}^{m \times n}$ to express that the matrix $\mathbf{A}$ consists of $m$ rows and $n$ columns of real-valued scalars.
 Visually, we can illustrate any matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ as a table, where each element $a_{ij}$ belongs to the $i^{\mathrm{th}}$ row and $j^{\mathrm{th}}$ column:
 -->
 
-*dịch đoạn phía trên*
+Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ $m$ dòng và $n$ cột chứa các giá trị số thực.
+Về mặt hình ảnh, ta có thể minh họa bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ như một bảng biểu mà mỗi phần tử $a_{ij}$ nằm ở dòng thứ $i$ và cột thứ $j$ của bảng:   
 
 $$\mathbf{A}=\begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \\ \end{bmatrix}.$$
 :eqlabel:`eq_matrix_def`
@@ -202,13 +205,14 @@ For any $\mathbf{A} \in \mathbb{R}^{m \times n}$, the shape of $\mathbf{A}$ is (
 Specifically, when a matrix has the same number of rows and columns, its shape becomes a square; thus, it is called a *square matrix*.
 -->
 
-*dịch đoạn phía trên*
+Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$, dạng của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
+Trong trường hợp đặc biệt, nếu một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; vì vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
 
 <!--
 We can create an $m \times n$ matrix in MXNet by specifying a shape with two components $m$ and $n$ when calling any of our favorite functions for instantiating an `ndarray`.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tạo một ma trận $m \times n$ trong MXNet bằng cách khai báo dạng của nó với hai thành phần $m$ và $n$ khi đang sử dụng bất kỳ hàm nào của chúng tôi để khởi tạo một `ndarray`.
 
 ```{.python .input  n=6}
 A = np.arange(20).reshape(5, 4)
@@ -221,8 +225,9 @@ When the scalar elements of a matrix $\mathbf{A}$, such as in :eqref:`eq_matrix_
 To keep notation simple, commas are inserted to separate indices only when necessary, such as $a_{2, 3j}$ and $[\mathbf{A}]_{2i-1, 3}$.
 -->
 
-*dịch đoạn phía trên*
-
+Ta có thể truy cập phần tử vô hướng $a_{ij}$ của ma trận $\mathbf{A}$ trong :eqref:`eq_matrix_def` bằng cách khai báo chỉ số dòng ($i$) và chỉ số cột ($j$), như là $[\mathbf{A}]_{ij}$.
+Khi thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`, vẫn chưa biết, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
+Nhằm giữ cho các ký hiệu đơn giản, dấu phẩy thường được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
 
 <!--
 Sometimes, we want to flip the axes.
@@ -231,7 +236,9 @@ Formally, we signify a matrix $\mathbf{A}$'s transpose by $\mathbf{A}^\top$ and 
 Thus, the transpose of $\mathbf{A}$ in :eqref:`eq_matrix_def` is a $n \times m$ matrix:
 -->
 
-*dịch đoạn phía trên*
+Đôi khi, ta muốn hoán đổi các trục.
+Khi ta hoán đổi các dòng với các cột của ma trận, kết quả có được là *chuyển vị* (*transpose*) của ma trận đó.
+
 
 $$
 \mathbf{A}^\top =
