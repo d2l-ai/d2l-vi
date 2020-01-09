@@ -172,7 +172,7 @@ our everyday interactions with a smart phone
 can engage several machine learning models.
 -->
 
-Giống như nhiều nhân viên khác, những tác giả của cuốn sách này cần những tách cà phê trước khi có thể bắt đầu viết.
+Các tác giả của cuốn sách cũng giống như nhiều người lao động khác, cần một tách cà phê trước khi bắt đầu công việc biên soạn của mình. 
 Chúng tôi leo lên xe và bắt đầu lái.
 Sở hữu chiếc iPhone, Alex gọi "Hey Siri" để đánh thức hệ thống nhận dạng giọng nói của điện thoại.
 Sau đó Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle".
