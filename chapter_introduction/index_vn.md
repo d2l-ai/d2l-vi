@@ -200,7 +200,7 @@ That is why we use ML.
 
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
 Hãy thử tự viết nó chỉ với một chiếc máy tính và một trình soạn thảo mã nguồn như minh hoạ trong :numref:`fig_wake_word`.
-Bạn sẽ viết một chương trình như vậy từ đầu như thế nào?
+Bạn sẽ bắt đầu viết một chương trình như vậy như thế nào?
 Thử nghĩ xem... vấn đề này khó đấy.
 Cứ mỗi giây, chiếc mic sẽ thu thập cỡ tầm 44,000 mẫu tín hiệu.
 Mỗi mẫu là một giá trị biên độ của sóng âm.
@@ -296,7 +296,7 @@ or from English sentences to Chinese sentences.
 -->
 
 Nếu chúng ta lựa chọn đúng nhóm mô hình, sẽ tồn tại một cách thiết lập các núm vặn mà mô hình sẽ đưa ra ``đúng`` mỗi khi nghe thấy từ "Alexa".
-Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, ta có thể sẽ muốn có một nhóm mô hình đủ mạnh để, với một thiết lập khác của các núm quay, nó sẽ đưa ra ``đúng`` mỗi khi nghe từ "Apricot" ("quả mơ").
+Bởi vì việc lựa chọn hiệu lệnh đánh thức nào là tuỳ ý, chúng ta sẽ muốn có một nhóm mô hình đủ mạnh để trong trường hợp với một thiết lập khác của các núm quay, nó sẽ đưa ra kết quả ``đúng`` mỗi khi nghe từ "Apricot" ("quả mơ").
 Bằng trực giác ta có thể nhận thấy rằng việc *nhận dạng "Alexa"* và *nhận dạng "Apricot"* cũng tương tự nhau và có thể sử dụng chung một nhóm mô hình.
 Tuy nhiên, trong trường hợp có sự khác biệt về bản chất ở đầu vào và đầu ra, chẳng hạn như việc ánh xạ từ hình ảnh sang chú thích, hoặc từ câu tiếng Anh sang câu tiếng Trung thì ta có thể sẽ phải sử dụng các nhóm mô hình hoàn toàn khác nhau.
 
@@ -327,8 +327,8 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 
 1. Khởi tạo mô hình một cách ngẫu nhiên mà chưa thể thực hiện tác vụ có ích nào.
 1. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}`` tương ứng).
-1. Thay đổi các núm vặn để mô hình dự đoán chính xác hơn trên những mẫu đó.
-1. Lặp lại cho đến khi có một mô hình tuyệt vời.
+3. Thay đổi các núm vặn để mô hình dự đoán chính xác hơn trên các mẫu.
+4. Lặp lại cho đến khi có một mô hình hoạt động tốt.
 
 <!--
 ![A typical training process. ](../img/ml-loop.svg)
@@ -353,7 +353,7 @@ with many examples of cats and dogs, such as the images below:
 
 Tóm lại, thay vì tự lập trình một chương trình nhận dạng từ đánh thức, ta tạo ra một chương trình có thể *học* cách nhận dạng các từ đánh thức *khi được cho xem một tập lớn những ví dụ đã được gán nhãn*.
 Ta có thể gọi việc xác định hành vi của một chương trình bằng cách cho nó xem một tập dữ liệu là *lập trình với dữ liệu*.
-Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cung cấp cho hệ thống học máy rất nhiều mẫu ảnh chó và mèo, ví dụ như trong hình dưới đây:
+Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cung cấp cho hệ thống học máy nhiều mẫu ảnh chó và mèo, ví dụ như các hình ảnh dưới đây:
 
 <!--
 | ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
@@ -410,9 +410,7 @@ natural language processing, medical informatics, and other application areas,
 offering a unified set of tools for tackling diverse problems.
 -->
 
-Thứ nhất, những vấn đề mà chúng ta đã thảo luận
----học từ tín hiệu âm thanh thô, từ những giá trị điểm ảnh của tấm ảnh, hoặc dịch những câu có độ dài bất kỳ sang một ngôn ngữ khác---
-là những vấn đề học sâu có thể xử lý tốt còn học máy truyền thống thì không.
+Thứ nhất, những vấn đề mà chúng ta đã thảo luận--học từ tín hiệu âm thanh thô, từ những giá trị điểm ảnh của tấm ảnh, hoặc dịch những câu có độ dài bất kỳ sang một ngôn ngữ khác--là những vấn đề học sâu có thể xử lý tốt còn học máy truyền thống thì không.
 Mô hình sâu thực sự *sâu* theo nghĩa nó có thể học nhiều *tầng* tính toán.
 Những mô hình đa tầng (hoặc có thứ bậc) này có khả năng xử lý dữ liệu tri giác mức thấp theo cái cách mà những công cụ trước đây không thể.
 Trước đây, một phần quan trọng trong việc áp dụng học máy vào các bài toán này là tìm thủ công những kỹ thuật biến đổi dữ liệu sang một hình thức mà những mô hình *nông* có khả năng xử lý.
