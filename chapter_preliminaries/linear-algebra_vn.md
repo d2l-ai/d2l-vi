@@ -140,13 +140,13 @@ Hãy quay lại với những khái niệm từ :numref:`sec_ndarray`.
 Một vector đơn thuần là một dãy các số.
 Và cũng tương tự như mỗi dãy đều có độ dài, mỗi vector cũng vậy.
 Trong kí hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
-Độ dài của một vector còn hay được gọi là số **chiều** của vector.
+Độ dài của một vector còn được gọi là số **chiều** của vector.
 
 <!--
 As with an ordinary Python array, we can access the length of an `ndarray` by calling Python's built-in `len()` function.
 -->
 
-Cũng giống như một dãy thông thường trong Python, chúng ta có thể xem số độ dài của của một `ndarray` bằng cách gọi hàm `len()` có sẵn theo Python. 
+Cũng giống như một dãy thông thường trong Python, chúng ta có thể xem độ dài của của một `ndarray` bằng cách gọi hàm `len()` có sẵn theo Python. 
 
 ```{.python .input  n=4}
 len(x)
@@ -160,7 +160,7 @@ For `ndarray`s with just one axis, the shape has just one element.
 
 Khi một `ndarray` biễu diễn một vector (với chính xác một trục), ta cũng có thể xem độ dài của nó qua thuộc tính `.shape` (hình dạng).
 Hình dạng là một cặp (*tuple*) liệt kê độ dài (số chiều) dọc theo mỗi trục của `ndarray`.
-Cho các `ndarray` với duy nhất một trục, hình dạng của nó chỉ có một phần tử.
+Với các `ndarray` có duy nhất một trục, hình dạng của nó chỉ có một phần tử.
 
 ```{.python .input  n=5}
 x.shape
@@ -176,7 +176,7 @@ In this sense, the dimensionality of an `ndarray`'s some axis will be the length
 Lưu ý rằng từ "chiều" thường có rất nhiều nghĩa trong các ngữ cảnh ở đây và điều này thường khiến mọi người bị nhầm lẫn.
 Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc một *trục* để chỉ về độ dài của nó, tức là số phần tử trong một vector, hay một trục.
 Tuy nhiên, chúng ta sử dụng số chiều của một `ndarray` để chỉ số trục của `ndarray` đó.
-Theo nghĩa này, số chiều của một trục của một `ndarray` là để độ dài của trục đó. 
+Theo nghĩa này, chiều của một trục của một `ndarray` là độ dài của trục đó. 
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
 
