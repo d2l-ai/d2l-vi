@@ -201,7 +201,7 @@ That is why we use ML.
 Tưởng tượng rằng ta mới viết một chương trình để phản hồi một *hiệu lệnh đánh thức* như là "Alexa", "Okay, Google" hoặc "Siri".
 Hãy thử tự viết nó chỉ với một chiếc máy tính và một trình soạn thảo mã nguồn như minh hoạ trong :numref:`fig_wake_word`.
 Bạn sẽ viết một chương trình như vậy từ đầu như thế nào?
-Hãy thử nghĩ về nó xem... vấn đề này khó đấy.
+Thử nghĩ xem... vấn đề này khó đấy.
 Cứ mỗi giây, chiếc mic sẽ thu thập cỡ tầm 44,000 mẫu tín hiệu.
 Mỗi mẫu là một giá trị biên độ của sóng âm.
 Quy tắc đáng tin cậy nào có thể từ một đoạn âm thanh thô đưa ra các dự đoán ``{có, không}`` để xác định đoạn âm thanh đó có chứa hiệu lệnh đánh thức hay không?
