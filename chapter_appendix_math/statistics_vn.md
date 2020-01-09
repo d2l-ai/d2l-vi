@@ -573,13 +573,13 @@ The alternative hypothesis would be that $\theta$ is not equal to $c$.
 ### General Steps of Hypothesis Testing
 -->
 
-### Các Bước Tổng quát của Kiểm định Giả thuyết
+### Các bước kiểm định giả thuyết thông thường
 
 <!--
 After getting familiar with the above concepts, let's go through the general steps of hypothesis testing.
 -->
 
-Sau khi làm quen với các khái niệm ở trên, hãy đi qua các bước tổng quát để kiểm định giả thuyết.
+Sau khi làm quen với các khái niệm ở trên, hãy cùng xem các bước kiểm định giả thuyết thông thường.
 
 <!--
 1. State the question and establish a null hypotheses $H_0$.
@@ -589,12 +589,12 @@ Sau khi làm quen với các khái niệm ở trên, hãy đi qua các bước t
 5. Make the decision to keep or reject the null hypothesis based on the $p$-value and the statistical significance level $\alpha$.
 -->
 
-1. Diễn giả vấn đề và thành lập giả thuyết gốc $H_0$.
-2. Chọn mức độ ý nghĩa thống kê $\alpha$ và năng lực thống kê ($1 - \beta$).
-3. Thu được các mẫu sau các thử nghiệm.
-Số lượng mẫu cần thiết sẽ phụ thuộc vào năng lực thống kê, và hệ số ảnh hưởng kỳ vọng.
-4. Tính toán tiêu chuẩn kiểm định và $p$-giá trị.
-5. Đưa ra quyết định về giữ hay loại giả thuyết gốc dựa trên $p$-giá trị và mức độ ý nghĩa giống kê $\alpha$.
+1. Đặt câu hỏi và đưa ra giả thuyết gốc $H_0$.
+2. Chọn mức ý nghĩa thống kê $\alpha$ và năng lực thống kê ($1 - \beta$).
+3. Thu các mẫu sau các thử nghiệm.
+Số lượng mẫu cần thiết sẽ phụ thuộc vào năng lực thống kê, và hệ số ảnh hưởng mong muốn.
+4. Tính tiêu chuẩn kiểm định và trị số $p$.
+5. Quyết định chấp nhận hoặc bác bỏ giả thuyết gốc dựa trên trị số $p$ và mức ý nghĩa thống kê $\alpha$.
 
 <!--
 To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take. 
@@ -602,22 +602,22 @@ Then we calculate the test statistic of the sample, taking an extreme value of t
 If the test statistic falls within the reject region, we may reject the null hypothesis in favor of the alternative.
 -->
 
-Để tiến hành kiểm định một giả thuyết, ta bắt đầu bằng định nghĩa giả thuyết gốc và mức độ rủi ro ta sẵn sàng nhận.
-Sau đó tính toán tiêu chuẩn kiểm định của mẫu, lấy cực trị của tiêu chuẩn kiểm định như bằng chứng phủ định giả thuyết gốc.
-Nếu tiêu chuẩn kiểm định rơi vào vùng phủ định, ta có thể bác bỏ giả thuyết gốc và chọn giả thuyết khác thay thế.
+Để tiến hành kiểm định giả thuyết, ta bắt đầu với việc định nghĩa giả thuyết gốc và mức rủi ro chấp nhận được.
+Sau đó ta tính tiêu chuẩn kiểm định của mẫu, lấy cực trị của tiêu chuẩn kiểm định làm bằng chứng để phủ định giả thuyết gốc.
+Nếu tiêu chuẩn kiểm định rơi vào miền bác bỏ, ta có thể bác bỏ giả thuyết gốc và hướng sang giả thuyết đối.
 
 <!--
 Hypothesis testing is applicable in a variety of scenarios such as the clinical trails and A/B testing.
 -->
 
-Kiểm định giả thuyết thích hợp trong nhiều tình huống đa dạng như thử nghiệm lâm sàng (*clinical trails*) và kiểm định A/B.
+Kiểm định giả thuyết áp dụng được trong nhiều tình huống như thử nghiệm lâm sàng (*clinical trails*) và kiểm định A/B.
 
 
 <!--
 ## Constructing Confidence Intervals
 -->
 
-## Xây dựng Khoảng tin cậy 
+## Xây dựng khoảng tin cậy 
 
 
 <!--
@@ -626,16 +626,16 @@ Rather, it would be far better if we could produce an interval that would contai
 If you were interested in such ideas a century ago, then you would have been excited to read "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" by Jerzy Neyman :cite:`Neyman.1937`, who first introduced the concept of confidence interval in 1937.
 -->
 
-Khi ước lượng giá trị của biến $\theta$, bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
-Hơn nữa, sẽ tốt hơn nhiều nếu ta có thể tính ra một khoảng chứa tham số $\theta$ thực sự với xác suất cao.
+Khi ước lượng giá trị của tham số $\theta$, bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
+Thay vào đó, sẽ tốt hơn nhiều nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thực sự với xác suất cao.
 Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) cuả Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
 
 <!--
 To be useful, a confidence interval should be as small as possible for a given degree of certainty. Let's see how to derive it.
 -->
 
-Để hữu dụng, khoảng tin cậy nên càng bé càng tốt với một mức độ chắc chắn cho trước.
-Hãy xem ta *derive* điều này như thế nào.
+Để có tính hữu dụng, khoảng tin cậy nên càng bé càng tốt với một mức độ chắc chắn cho trước.
+Hãy cùng xem xét cách tính khoảng tin cậy.
 
 <!-- =================== Kết thúc dịch Phần 10 ================================-->
 
