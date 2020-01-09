@@ -13,7 +13,7 @@ However, it is often unclear when improvements are significant, or only the resu
 To be able to discuss uncertainty in estimated values, we must learn some statistics.
 -->
 
-Không có gì để tranh cãi, khả năng huấn luyện các mô hình hiện đại với độ chính xác cao là rất quan trọng trong việc trở thành một chuyên gia học sâu hàng đầu.
+Không có gì để tranh cãi, khả năng huấn luyện các mô hình hiện đại với độ chính xác cao là rất quan trọng trong việc trở thành một chuyên gia Học sâu hàng đầu.
 Tuy nhiên, thường khó có thể biết được những cải tiến trong mô hình là đáng kể hay chúng chỉ là kết quả của những biến động ngẫu nhiên trong quá trình huấn luyện.
 Để có thể thảo luận về tính bất định trong các giá trị ước lượng, chúng ta cần có hiểu biết về thống kê.
 
