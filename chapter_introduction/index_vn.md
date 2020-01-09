@@ -257,7 +257,7 @@ to choose the parameters is called a *learning algorithm*.
 Bạn có thể coi những tham số như các núm vặn có thể điều chỉnh để thay đổi hành vi của chương trình.
 Sau khi đã cố định các tham số, chúng ta gọi chương trình này là một *mô hình*.
 Tập hợp của tất cả các chương trình khác nhau (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách thay đổi các tham số được gọi là một *nhóm* các mô hình.
-Và *siêu chương trình* sử dụng tập dữ liệu để chọn ra các tham số được gọi là *thuật toán học*.
+Và *chương trình học tham số* sử dụng tập dữ liệu để chọn ra các tham số được gọi là *thuật toán học*.
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
 
