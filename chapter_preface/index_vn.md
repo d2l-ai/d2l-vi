@@ -24,9 +24,9 @@ that we focus on in this book, were regarded as outmoded tools.
 
 Chỉ một vài năm trước, không có nhiều nhà khoa học học sâu (_deep learning_) phát triển các sản phẩm và dịch vụ thông minh tại các công ty lớn và công ty khởi nghiệp.
 Khi người trẻ nhất trong nhóm tác giả chúng tôi tiến vào lĩnh vực này, học máy (_machine learning_) còn chưa xuất hiện thường xuyên trên truyền thông.
-Cha mẹ chúng tôi từng không có ý niệm gì về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa
-hay luật khoa. Học máy từng là một lĩnh vực nghiên cứu với chỉ một tập nhỏ các
-ứng dụng thực tế. Và những ứng dụng đó, chẳng hạn nhận dạng giọng nói (_speech recognition_) hay thị giác máy tính (_computer vision_), đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ.
+Cha mẹ chúng tôi từng không có ý niệm gì về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa hay luật khoa.
+Học máy từng là một lĩnh vực nghiên cứu với chỉ một tập nhỏ các ứng dụng thực tế.
+Và những ứng dụng đó, chẳng hạn nhận dạng giọng nói (_speech recognition_) hay thị giác máy tính (_computer vision_), đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ.
 Các mạng nơ-ron (_neural network_), tiền đề của các mô hình học sâu mà chúng ta tập trung vào trong cuốn sách này, từng được coi là các công cụ lỗi thời.
 
 
@@ -47,17 +47,9 @@ changing the way movies are made, diseases are diagnosed,
 and playing a growing role in basic sciences---from astrophysics to biology.
 -->
 
-Trong chỉ khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu, 
-dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác
-nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (_natural language processing_), nhận dạng giọng nói tự động (_automatic speech recognition_),
-học tăng cường (_reinforcement learning_), và mô hình hoá thống kê (_statistical modeling_). Với những tiến bộ này, chúng ta bây
-giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), hệ thống trả
-lời tự động, giúp con người đào sâu vào cả núi email, và các phần mềm chiến
-thắng những người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được
-xem là không thể đạt được trong nhiều thập kỷ tới. Những công cụ này đã và đang
-gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách
-tạo ra các bộ phim, cách chẩn đoán bệnh, đóng một vài trò ngày càng tăng trong các
-ngành khoa học cơ bản -- từ vật lý thiên văn tới sinh học.
+Trong chỉ khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu, dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (_natural language processing_), nhận dạng giọng nói tự động (_automatic speech recognition_), học tăng cường (_reinforcement learning_), và mô hình hoá thống kê (_statistical modeling_).
+Với những tiến bộ này, chúng ta bây giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), hệ thống trả lời tự động, giúp con người đào sâu vào cả núi email, và các phần mềm chiến thắng những người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được xem là không thể đạt được trong nhiều thập kỷ tới.
+Những công cụ này đã và đang gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách tạo ra các bộ phim, cách chẩn đoán bệnh, đóng một vài trò ngày càng tăng trong các ngành khoa học cơ bản -- từ vật lý thiên văn tới sinh học.
 
 <!-- =================== Kết thúc dịch Phần 1 ================================-->
 
@@ -74,8 +66,7 @@ This book represents our attempt to make deep learning approachable,
 teaching you both the *concepts*, the *context*, and the *code*.
 -->
 
-Cuốn sách này được viết với mong muốn học sâu dễ tiếp cận hơn,
-dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
+Cuốn sách này được viết với mong muốn học sâu dễ tiếp cận hơn, dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
 
 <!--
 ### One Medium Combining Code, Math, and HTML
@@ -100,23 +91,11 @@ has been realized to a far greater degree in the past ten years,
 owing in part to the development of powerful, well-documented frameworks.
 -->
 
-Để bất kỳ kỹ thuật tính toán nào đạt được tầm ảnh hưởng sâu rộng,
-nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ bởi nhưng công
-cụ cấp tiến được "bảo trì" thường xuyên.
-Các ý tưởng chính cần được chắt lọc rõ ràng,
-tối thiểu thời gian chuẩn bị cần thiết để trang bị
-kiến thức đương thời cho những người mới bắt đầu.
-Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản,
-và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu
-sao cho họ có thể dễ dàng chỉnh sửa, áp dụng,
-và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
+Để bất kỳ kỹ thuật tính toán nào đạt được tầm ảnh hưởng sâu rộng, nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ bởi nhưng công cụ cấp tiến được "bảo trì" thường xuyên.
+Các ý tưởng chính cần được chắt lọc rõ ràng, tối thiểu thời gian chuẩn bị cần thiết để trang bị kiến thức đương thời cho những người mới bắt đầu.
+Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản, và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu sao cho họ có thể dễ dàng chỉnh sửa, áp dụng, và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
 Lấy ứng dụng các trang web động làm ví dụ.
-Mặc dù các công ty công nghệ lớn, như Amazon,
-phát triển thành công các ứng dụng web
-định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công
-nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới
-từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh
-mẽ và với tài liệu đầy đủ.
+Mặc dù các công ty công nghệ lớn, như Amazon, phát triển thành công các ứng dụng web định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh mẽ và với tài liệu đầy đủ.
 
 <!--
 Testing the potential of deep learning presents unique challenges
@@ -135,19 +114,10 @@ Our goal in this book is to present a unified resource
 to bring would-be practitioners up to speed.
 -->
 
-Kiểm định tiềm năng của học sâu có những thách thức riêng biệt
-vì bất kỳ ứng dụng riêng lẻ nào cũng bao gồm nhiều lĩnh vực khác nhau.
-Ứng dụng học sâu đòi hỏi những hiểu biết đồng thời
-(i) động lực để biến đổi một bài toán theo một hướng cụ thể;
-(ii) kiến thức toán học của một hướng tiếp cận mô hình hoá;
-(iii) những thuật toán tối ưu cho việc khớp mô hình với dữ liệu;
-và (iv) phần kỹ thuật yêu cầu để huấn luyện mô hình một cách hiệu quả,
-xử lý những khó khăn trong tính toán và tận dụng thật tốt phần cứng hiện có.
-Đào tạo kỹ năng suy nghĩ thấu đáo cần thiết để định hình bài toán,
-kiến thức toán để giải chúng, và các công cụ phần mềm để triển khai
-những giải pháp đó, tất cả trong một nơi, hàm chứa nhiều thách thức lớn.
-Mục tiêu của chúng tôi trong cuốn sách này là trình
-bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng bắt kịp.
+Kiểm định tiềm năng của học sâu có những thách thức riêng biệt vì bất kỳ ứng dụng riêng lẻ nào cũng bao gồm nhiều lĩnh vực khác nhau.
+Ứng dụng học sâu đòi hỏi những hiểu biết đồng thời (i) động lực để biến đổi một bài toán theo một hướng cụ thể; (ii) kiến thức toán học của một hướng tiếp cận mô hình hoá; (iii) những thuật toán tối ưu cho việc khớp mô hình với dữ liệu; và (iv) phần kỹ thuật yêu cầu để huấn luyện mô hình một cách hiệu quả, xử lý những khó khăn trong tính toán và tận dụng thật tốt phần cứng hiện có.
+Đào tạo kỹ năng suy nghĩ thấu đáo cần thiết để định hình bài toán, kiến thức toán để giải chúng, và các công cụ phần mềm để triển khai những giải pháp đó, tất cả trong một nơi, hàm chứa nhiều thách thức lớn.
+Mục tiêu của chúng tôi trong cuốn sách này là trình bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng bắt kịp.
 
 
 <!--
@@ -183,30 +153,12 @@ Moreover, too many resources are hidden behind the paywalls
 of commercial course providers.
 -->
 
-Chúng tôi bắt đầu dự án sách này từ tháng 7/2017 khi cần trình bày
-giao diện MXNet Gluon (khi đó còn mới) tới người dùng.
-Tại thời điểm đó, không có một nguồn tài liệu nào vừa đồng thời
-(i) cập nhật; (ii) bao gồm đầy đủ các khía
-cạnh của học máy hiện đại với đầy đủ chiều sâu kỹ thuật;
-và (iii) xem kẽ các giải trình mà người ta mong đợi từ một cuốn
-sách giáo trình với mã có thể thực thi,
-điều thường được tìm thấy trong các bài hướng dẫn thực hành.
-Chúng tôi tìm thấy một lượng
-lớn các đoạn mã ví dụ về việc sử dụng một nền tảng học sâu (ví dụ làm thế nào
-để thực hiện các phép toán cơ bản với ma trận trên TensorFlow)
-hoặc để triển khai những kỹ thuật cụ thể (ví dụ các đoạn mã cho LeNet,
-AlexNet, ResNet,...) dưới dạng một bài blog hoặc trên GitHub.
-Tuy nhiên, những ví dụ này thường tập trung vào khía
-cạnh *làm thế nào* để triển khai một hướng tiếp cận cho trước,
-mà bỏ qua các thảo luận về việc *tại sao* một thuật toán được tạo như thế.
-Trong khi các chủ đề lẻ tẻ đã được đề cập trong các bài blog, ví dụ trên
-trang web [Distill](http://distill.pub) hoặc các blog cá nhân, họ chỉ đề cập
-đến một vài chủ đề được chọn về học sâu, và thường thiếu mã nguồn đi kèm.
-Một mặt khác, trong khi nhiều sách giáo trình đã ra đời,
-đáng chú ý nhất là :cite:`Goodfellow.Bengio.Courville.2016`
-(cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu),
-những nguồn tài liệu này lại không đi kèm
-với việc diễn giải dưới dạng mã nguồn để hiểu rõ hơn về các khái niệm.
+Chúng tôi bắt đầu dự án sách này từ tháng 7/2017 khi cần trình bày giao diện MXNet Gluon (khi đó còn mới) tới người dùng.
+Tại thời điểm đó, không có một nguồn tài liệu nào vừa đồng thời (i) cập nhật; (ii) bao gồm đầy đủ các khía cạnh của học máy hiện đại với đầy đủ chiều sâu kỹ thuật; và (iii) xem kẽ các giải trình mà người ta mong đợi từ một cuốn sách giáo trình với mã có thể thực thi, điều thường được tìm thấy trong các bài hướng dẫn thực hành.
+Chúng tôi tìm thấy một lượng lớn các đoạn mã ví dụ về việc sử dụng một nền tảng học sâu (ví dụ làm thế nào để thực hiện các phép toán cơ bản với ma trận trên TensorFlow) hoặc để triển khai những kỹ thuật cụ thể (ví dụ các đoạn mã cho LeNet, AlexNet, ResNet,...) dưới dạng một bài blog hoặc trên GitHub.
+Tuy nhiên, những ví dụ này thường tập trung vào khía cạnh *làm thế nào* để triển khai một hướng tiếp cận cho trước, mà bỏ qua các thảo luận về việc *tại sao* một thuật toán được tạo như thế.
+Trong khi các chủ đề lẻ tẻ đã được đề cập trong các bài blog, ví dụ trên trang web [Distill](http://distill.pub) hoặc các blog cá nhân, họ chỉ đề cập đến một vài chủ đề được chọn về học sâu, và thường thiếu mã nguồn đi kèm.
+Một mặt khác, trong khi nhiều sách giáo trình đã ra đời, đáng chú ý nhất là :cite:`Goodfellow.Bengio.Courville.2016` (cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu), những nguồn tài liệu này lại không đi kèm với việc diễn giải dưới dạng mã nguồn để hiểu rõ hơn về các khái niệm.
 Điều này khiến người đọc đôi khi mù tịt về cách thực thi chúng.
 Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học tốn phí.  
 
@@ -222,12 +174,9 @@ and (5) be complemented by a [forum](http://discuss.mxnet.io)
 for interactive discussion of technical details and to answer questions.
 -->
 
-Chúng tôi đặt mục tiêu tạo ra một tài liệu mà có thể
-(1) miễn phí cho mọi người;
-(2) cung cấp chiều sâu kỹ thuật đầy đủ tạo điểm bắt đầu
-cho con đường trở thành một nhà khoa học học máy ứng dụng;
-(3) bao gồm mã thực thi được, trình bày cho
-người đọc *làm thế nào* giải quyết các bài toán trên thực tế;
+Chúng tôi đặt mục tiêu tạo ra một tài liệu mà có thể (1) miễn phí cho mọi người;
+(2) cung cấp chiều sâu kỹ thuật đầy đủ tạo điểm bắt đầu cho con đường trở thành một nhà khoa học học máy ứng dụng;
+(3) bao gồm mã thực thi được, trình bày cho người đọc *làm thế nào* giải quyết các bài toán trên thực tế;
 (4) tài liệu này có thể cập nhật một cách nhanh chóng, bằng cả chúng tôi và cộng động ở quy mô lớn;
 và (5) được bổ sung bởi một [diễn đàn](http://discuss.mxnet.io) (và [diễn đàn tiếng Việt](https://forum.machinelearningcoban.com/c/d2l) của nhóm dịch)
 cho những thảo luận nhanh chóng các chi tiết kỹ thuật và hỏi đáp.
@@ -257,21 +206,11 @@ Những mục tiêu này từng có xung đột.
 Các công thức, định lý, và các trích dẫn được quản lý tốt nhất trên LaTex.
 Mã được giải thích tốt nhất bằng Python.
 Và trang web phù hợp với HTML và JavaScript.
-Hơn nữa, chúng tôi muốn nội dung vừa có thể truy cập được bằng
-mã nguồn có thể thực thi, bằng một cuốn sách như một tập tin PDF tải về được,
-và ở trên internet như một trang web.
-Hiện tại không tồn tại công cụ
-nào phù hợp một cách hoàn hảo cho những nhu cầu này,
-bởi vậy chúng tôi phải tự tạo công cụ cho riêng mình.
-Chúng tôi mô tả hướng tiếp cận một cách chi tiết trong
-:numref:`chapter_contribute`. Chúng tôi tổ chức dự án trên
-GitHub để chia sẻ mã nguồn và cho phép sửa đổi,
-Jupyter notebook để kết hợp mã, các phương trình và nội dung chữ,
-Sphinx như một bộ máy tạo nhiều tập tin đầu ra, và Discourse để tạo diễn đàn.
-Trong khi hệ thống này còn chưa hoàn hảo, những sự lựa chọn này
-cung cấp một giải pháp chấp nhận được trong số các giải pháp tương tự.
-Chúng tôi tin rằng đây có thể là cuốn sách đầu tiên được xuất bản dưới
-dạng kết hợp này.
+Hơn nữa, chúng tôi muốn nội dung vừa có thể truy cập được bằng mã nguồn có thể thực thi, bằng một cuốn sách như một tập tin PDF tải về được, và ở trên internet như một trang web.
+Hiện tại không tồn tại công cụ nào phù hợp một cách hoàn hảo cho những nhu cầu này, bởi vậy chúng tôi phải tự tạo công cụ cho riêng mình.
+Chúng tôi mô tả hướng tiếp cận một cách chi tiết trong :numref:`chapter_contribute`. Chúng tôi tổ chức dự án trên GitHub để chia sẻ mã nguồn và cho phép sửa đổi, Jupyter notebook để kết hợp mã, các phương trình và nội dung chữ, Sphinx như một bộ máy tạo nhiều tập tin đầu ra, và Discourse để tạo diễn đàn.
+Trong khi hệ thống này còn chưa hoàn hảo, những sự lựa chọn này cung cấp một giải pháp chấp nhận được trong số các giải pháp tương tự.
+Chúng tôi tin rằng đây có thể là cuốn sách đầu tiên được xuất bản dưới dạng kết hợp này.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
 
@@ -293,12 +232,8 @@ for beginners, this property limits its usefulness as an introductory text.
 -->
 
 Có nhiều cuốn sách dạy rất chi tiết một chuỗi các chủ đề khác nhau.
-Ví dụ như, cuốn sách tuyệt vời :cite:`Bishop.2006` của Bishop,
-dạy mỗi chủ đề rất kỹ lưỡng tới nỗi để đến được chương hồi quy tuyến tính cũng
-đòi hỏi công sức bỏ ra không hề nhỏ.
-Trong khi các chuyên gia yêu thích quyển sách này
-chính vì sự kỹ lưỡng của nó, nhưng với những người mới bắt đầu,
-thì đặc điểm này lại hạn chế việc dùng cuốn sách như tài liệu nhập môn.
+Ví dụ như, cuốn sách tuyệt vời :cite:`Bishop.2006` của Bishop, dạy mỗi chủ đề rất kỹ lưỡng tới nỗi để đến được chương hồi quy tuyến tính cũng đòi hỏi công sức bỏ ra không hề nhỏ.
+Trong khi các chuyên gia yêu thích quyển sách này chính vì sự kỹ lưỡng của nó, nhưng với những người mới bắt đầu, thì đặc điểm này lại hạn chế việc dùng cuốn sách như tài liệu nhập môn.
 
 <!--
 In this book, we will teach most concepts *just in time*.
@@ -311,12 +246,8 @@ before worrying about more esoteric probability distributions.
 -->
 
 Trong quyển sách này, chúng tôi sẽ dạy hầu hết các khái niệm *ở mức vừa đủ*.
-Hay nói cách khác, bạn sẽ chỉ học các khái niệm tại ngay thời điểm
-cần thiết để hoàn tất phần thực hành.
-Trong khi chúng tôi sẽ dành một chút thời gian để dạy kiến thức căn bản sơ bộ,
-như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn được tận hưởng
-cảm giác mãn nguyện của việc huấn luyện mô hình đầu tiên trước khi bận tâm tới
-các lý thuyết phân phối xác suất.
+Hay nói cách khác, bạn sẽ chỉ học các khái niệm tại ngay thời điểm cần thiết để hoàn tất phần thực hành.
+Trong khi chúng tôi sẽ dành một chút thời gian để dạy kiến thức căn bản sơ bộ, như là đại số tuyến tính và xác suất, chúng tôi muốn các bạn được tận hưởng cảm giác mãn nguyện của việc huấn luyện mô hình đầu tiên trước khi bận tâm tới các lý thuyết phân phối xác suất.
 
 <!--
 Aside from a few preliminary notebooks that provide a crash course
@@ -333,18 +264,12 @@ start your own research projects by leveraging our code.
 Just copy a notebook and start modifying it.
 -->
 
-Bên cạnh một vài notebook cơ bản cung cấp một khoá học cấp tốc
-về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý các khái niệm mới
-và đồng thời cung cấp các ví dụ đơn hoàn chỉnh---sử dụng các tập dữ liệu thực tế.
+Bên cạnh một vài notebook cơ bản cung cấp một khoá học cấp tốc về nền tảng toán học, mỗi chương tiếp theo sẽ giới thiệu một lượng hợp lý các khái niệm mới và đồng thời cung cấp các ví dụ đơn hoàn chỉnh---sử dụng các tập dữ liệu thực tế.
 Và đây là cả thách thức về cách tổ chức nội dung.
-Một vài mô hình có thể được nhóm lại một cách có logic trong một notebook
-riêng lẻ.
-Và một vài ý tưởng có thể được dạy tốt nhất bằng cách thực thi một số mô hình
-kế tiếp nhau.
-Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách
-*mỗi notebook là một ví dụ hoàn chỉnh*:
-Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách
-dễ dàng nhất có thể bằng cách tận dụng mã nguồn của chúng tôi.
+Một vài mô hình có thể được nhóm lại một cách có logic trong một notebook riêng lẻ.
+Và một vài ý tưởng có thể được dạy tốt nhất bằng cách thực thi một số mô hình kế tiếp nhau.
+Mặt khác, có một lợi thế lớn về việc tuân thủ theo chính sách *mỗi notebook là một ví dụ hoàn chỉnh*:
+Điều này giúp bạn bắt đầu các dự án nghiên cứu của mình một cách dễ dàng nhất có thể bằng cách tận dụng mã nguồn của chúng tôi.
 Bạn chỉ cần sao chép một notebook và bắt đầu sửa đổi trên đó.
 
 <!--
@@ -360,15 +285,10 @@ at the expense of requiring the reader
 to trust us with some curatorial decisions.
 -->
 
-Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng
-khi cần thiết.
-Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ
-trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
-Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi
-giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
-Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết
-để giải quyết vấn đề nhanh chóng và đòi hỏi người đọc phải
-tin tưởng vào một số quyết định triển khai của chúng tôi.
+Chúng tôi sẽ xen kẽ mã nguồn có thể thực thi với kiến thức nền tảng khi cần thiết.
+Thông thường, chúng tôi sẽ tập trung vào việc tạo ra những công cụ trước khi giải thích chúng đầy đủ (và chúng tôi sẽ theo sát bằng cách giải thích phần kiến thức nền tảng sau). 
+Ví dụ, chúng tôi có thể sử dụng *hạ gradient ngẫu nhiên* trước khi giải thích đầy đủ tại sao nó lại hữu ích hoặc tại sao nó lại hoạt động.
+Điều này giúp cung cấp cho người thực hành những phương tiện cần thiết để giải quyết vấn đề nhanh chóng và đòi hỏi người đọc phải tin tưởng vào một số quyết định triển khai của chúng tôi.
 
 <!--
 Throughout, we will be working with the MXNet library,
@@ -390,22 +310,12 @@ Once we have taught you how some component works,
 we can just use the Gluon version in subsequent tutorials.
 -->
 
-Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet,
-một thư viện với một đặc tính hiếm có, đó là vừa
-đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
+Xuyên cuốn sách, chúng ta sẽ làm việc với thư viện MXNet, một thư viện với một đặc tính hiếm có, đó là vừa đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
 Cuốn sách này sẽ dạy về khái niệm học sâu từ đầu.
-Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết 
-về mô hình mà thông thường sẽ được che giấu khỏi người dùng
-bởi những lớp trừu tượng bậc cao Gluon.
-Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản,
-nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng
-hoặc bộ tối ưu nào đó.
-Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản
-của một ví dụ: một phiên bản trong đó chúng tôi hiện thực mọi thứ từ đầu,
-chỉ dựa vào giao diện Numpy và việc tính đạo hàm tự động,
-và một phiên bản khác, thực tế hơn, khi chúng tôi viết mã ngắn gọn sử dụng Gluon.
-Một khi chúng tôi đã dạy bạn cách một số thành phần hoạt động cụ thể như thế nào,
-chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
+Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết về mô hình mà thông thường sẽ được che giấu khỏi người dùng bởi những lớp trừu tượng bậc cao Gluon.
+Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản, nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng hoặc bộ tối ưu nào đó.
+Trong những trường hợp này, chúng tôi sẽ thường trình bày hai phiên bản của một ví dụ: một phiên bản trong đó chúng tôi hiện thực mọi thứ từ đầu, chỉ dựa vào giao diện Numpy và việc tính đạo hàm tự động, và một phiên bản khác, thực tế hơn, khi chúng tôi viết mã ngắn gọn sử dụng Gluon.
+Một khi chúng tôi đã dạy bạn cách một số thành phần hoạt động cụ thể như thế nào, chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
 
@@ -446,11 +356,8 @@ such as linear regression, multilayer perceptrons and regularization.
 
 * Phần đầu cuốn sách trình bày các kiến thức cơ bản và những việc cần chuẩn bị sơ bộ. 
 :numref:`chap_introduction` giới thiệu về học sâu.
-Sau đó, qua :numref:`chap_preliminaries`, chúng tôi nhanh chóng trang bị cho bạn những
-kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách
-áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và xác suất.
-:numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu,
-ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và điều chuẩn.
+Sau đó, qua :numref:`chap_preliminaries`, chúng tôi nhanh chóng trang bị cho bạn những kiến thức nền cần thiết để thực hành học sâu như cách lưu trữ, thao tác dữ liệu và cách áp dụng những phép tính dựa trên những khái niệm cơ bản trong đại số tuyến tính, giải tích và xác suất.
+:numref:`chap_linear` và :numref:`chap_perceptrons` giới thiệu những khái niệm và kỹ thuật cơ bản của học sâu, ví dụ như hồi quy tuyến tính, mạng perceptron đa lớp và điều chuẩn.
 
 <!--
 * The next five chapters focus on modern deep learning techniques.
@@ -472,13 +379,11 @@ behind most modern applications of deep learning.
 -->
 
 * Năm chương tiếp theo tập trung vào những kỹ thuật học sâu hiện đại.
-:numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu
-và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn. Sau đó, chúng tôi sẽ giới thiệu mạng
-nơ-ron tích chập (Convolutional neural networks/CNNs), một công cụ mạnh mẽ đang là nền tảng của hầu hết các hệ thống thị giác máy tính hiện đại. Tiếp đến, 
-trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng nơ-ron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
- Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật cơ chế chú ý (attention mechanisms), một kỹ thuật
-gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên. Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản
-đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
+:numref:`chap_computation` miêu tả những thành phần thiết yếu của các phép tính trong học sâu và tạo nền tảng để chúng tôi triển khai những mô hình phức tạp hơn.
+Sau đó, chúng tôi sẽ giới thiệu mạng nơ-ron tích chập (Convolutional neural networks/CNNs), một công cụ mạnh mẽ đang là nền tảng của hầu hết các hệ thống thị giác máy tính hiện đại.
+Tiếp đến, trong :numref:`chap_rnn` và :numref:`chap_modern_rnn`, chúng tôi giới thiệu mạng nơ-ron hồi quy (recurrent neural networks/RNNs), một loại mô hình khai thác cấu trúc tạm thời hoặc tuần tự trong dữ liệu và thường được sử dụng để xử lý ngôn ngữ tự nhiên và dự đoán chuỗi thời gian.
+Trong :numref:`chap_attention`, chúng tôi giới thiệu một lớp mô hình mới sử dụng kỹ thuật cơ chế chú ý (attention mechanisms), một kỹ thuật gần đây đã thay thế RNNs trong xử lý ngôn ngữ tự nhiên.
+Những phần này sẽ giúp bạn nhanh chóng nắm được những công cụ cơ bản đứng sau hầu hết các ứng dụng hiện đại của học sâu. 
 
 <!--
 * Part three discusses scalability, efficiency, and applications.
@@ -493,12 +398,9 @@ and natural language processing, respectively.
 -->
 
 * Phần ba thảo luận quy mô mở rộng, hiệu quả và ứng dụng.
-Đầu tiên, trong :numref:`chap_optimization`,
-chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
-Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến 
-chất lượng tính toán của mã nguồn học sâu.
-Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của
-học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
+Đầu tiên, trong :numref:`chap_optimization`, chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
+Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến chất lượng tính toán của mã nguồn học sâu.
+Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
 <!-- =================== Kết thúc dịch Phần 4 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
@@ -527,19 +429,12 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì
-chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
-Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai,
-thay đổi mã nguồn từng chút một và quan sát kết quả.
-Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết
-chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
+Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì chúng tôi tin rằng trải nghiệm học bằng cách tương tác đóng vai trò quan trọng trong học sâu.
+Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai, thay đổi mã nguồn từng chút một và quan sát kết quả.
+Lý tưởng nhất là sử dụng một lý thuyết toán học đẹp đẽ nào đó có thể cho chúng ta biết chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết đẹp đẽ đó vẫn chưa được khám phá.
-Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật,
-bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc
-tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
-Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển,
-những phiên bản tiếp theo của quyển sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn
-mà phiên bản hiện tại chưa làm được.
+Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn cho nhiều vấn đề kĩ thuật, bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
+Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển, những phiên bản tiếp theo của quyển sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn mà phiên bản hiện tại chưa làm được.
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -556,16 +451,11 @@ to update your code and runtime environment.
 -->
 
 Hầu hết mã nguồn trong cuốn sách được dựa theo Apache MXNet.
-MXNet là một framework mã nguồn mở dành cho học sâu
-và là lựa chọn yêu thích của AWS (Amazon Web Services),
-và cả ở nhiều trường đại học và công ty.
+MXNet là một framework mã nguồn mở dành cho học sâu và là lựa chọn yêu thích của AWS (Amazon Web Services), và cả ở nhiều trường đại học và công ty.
 Tất cả mã nguồn trong cuốn sách này đã được kiểm thử trên phiên bản mới nhất của MXNet.
-Tuy nhiên, bởi vì học sâu phát triển rất nhanh, một vài đoạn mã 
-*trong phiên bản sách in* có thể không hoạt động chuẩn trên những phiên bản MXNet sau này.
+Tuy nhiên, bởi vì học sâu phát triển rất nhanh, một vài đoạn mã *trong phiên bản sách in* có thể không hoạt động chuẩn trên những phiên bản MXNet sau này.
 Dù vậy, chúng tôi dự định sẽ giữ phiên bản trực tuyến luôn được cập nhật.
-Trong trường hợp bạn gặp phải bất cứ vấn đề nào,
-hãy tham khảo :ref:`chap_installation`
-để cập nhật mã nguồn và môi trường thực thi.
+Trong trường hợp bạn gặp phải bất cứ vấn đề nào, hãy tham khảo :ref:`chap_installation` để cập nhật mã nguồn và môi trường thực thi.
 
 <!--
 At times, to avoid unnecessary repetition, we encapsulate
@@ -578,11 +468,8 @@ The `d2l` package is light-weight and only requires
 the following packages and modules as dependencies:
 -->
 
-Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói
-những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến
-trong cuốn sách này trong gói thư viện `d2l`.
-Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện
-cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
+Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến trong cuốn sách này trong gói thư viện `d2l`.
+Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
 `# Saved in the d2l package for later use (Lưu lại trong gói thư viện d2l để sử dụng sau)`.
 Thư viện `d2l` khá nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
@@ -644,26 +531,15 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học),
-các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc
-về những kỹ thuật thực tế của học sâu.
-Bởi vì chúng tôi giải thích mọi khái niệm từ đầu,
-bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
-Việc giải thích đầy đủ các phương pháp học sâu
-đòi hỏi một số kiến thức về toán học và lập trình,
-nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản
-về đại số tuyến tính, giải tích, xác suất,
-và lập trình Python.
-Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm
-về hầu hết các phần toán được đề cập trong cuốn sách này.
-Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng
-hơn là giải thích chặt chẽ bằng toán.
+Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học), các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc về những kỹ thuật thực tế của học sâu.
+Bởi vì chúng tôi giải thích mọi khái niệm từ đầu, bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
+Việc giải thích đầy đủ các phương pháp học sâu đòi hỏi một số kiến thức về toán học và lập trình, nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản về đại số tuyến tính, giải tích, xác suất, và lập trình Python.
+Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm về hầu hết các phần toán được đề cập trong cuốn sách này.
+Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
-Chẳng hạn, cuốn "Giải tích tuyến tính" (Linear Analysis) của Bela Bollobas :cite:`Bollobas.1999`
-bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
+Chẳng hạn, cuốn "Giải tích tuyến tính" (Linear Analysis) của Bela Bollobas :cite:`Bollobas.1999` bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
 Cuốn "Tất cả về Thống kê" (All of Statistics) :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
-Và nếu bạn chưa sử dụng Python,
-bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
+Và nếu bạn chưa sử dụng Python, bạn có thể muốn xem cuốn [hướng dẫn Python](http://learnpython.org/).
 
 
 <!--
@@ -682,13 +558,9 @@ The authors of this book and broader MXNet developer community
 frequently participate in forum discussions.
 -->
 
-Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến
-tại [discuss.mxnet.io](https://discuss.mxnet.io/) (và tại [Diễn đàn dó nhóm dịch tạo](https://forum.machinelearningcoban.com/c/d2l)).
-Khi có câu hỏi về bất kỳ phần nào của cuốn sách,
-bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR
-ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
-Các tác giả của cuốn sách này và rộng hơn là cộng đồng phát triển MXNet
-cũng thường xuyên tham gia thảo luận trong diễn đàn.
+Gắn liền với cuốn sách, chúng tôi đã tạo ra một diễn đàn trực tuyến tại [discuss.mxnet.io](https://discuss.mxnet.io/) (và tại [Diễn đàn dó nhóm dịch tạo](https://forum.machinelearningcoban.com/c/d2l)).
+Khi có câu hỏi về bất kỳ phần nào của cuốn sách, bạn có thể tìm thấy trang thảo luận liên quan bằng cách quét mã QR ở cuối mỗi chương để tham gia vào các cuộc thảo luận.
+Các tác giả của cuốn sách này và rộng hơn là cộng đồng phát triển MXNet cũng thường xuyên tham gia thảo luận trong diễn đàn.
 
 
 <!--
@@ -708,11 +580,9 @@ alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) and Rachel Hu (Amazon) co-authored the *Mathematics for Deep Learning* chapter in the Appendix with us and are the major contributors to that chapter.
 -->
 
-Chúng tôi xin gửi lời cảm ơn chân thành tới hàng trăm người đã đóng góp cho cả hai
-bản thảo tiếng Anh và tiếng Trung.
+Chúng tôi xin gửi lời cảm ơn chân thành tới hàng trăm người đã đóng góp cho cả hai bản thảo tiếng Anh và tiếng Trung.
 Mọi người đã giúp cải thiện nội dung và đưa ra những phản hồi rất có giá trị.
-Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này
-giúp nó tốt hơn cho tất cả mọi người.
+Cụ thể, chúng tôi cảm ơn tất cả những người đóng góp cho dự thảo tiếng Anh này giúp nó tốt hơn cho tất cả mọi người.
 Tài khoản GitHub hoặc tên các bạn đóng góp (không theo trình tự cụ thể nào):
 alxnorden, avinashingit, bowen0701, brettkoonce, Chaitanya Prakash Bapat,
 cryptonaut, Davide Fiocco, edgarroman, gkutiel, John Mitro, Liang Pu, Rahul Agarwal, Mohamed Ali Jamaoui, Michael (Stu) Stewart, Mike Müller, NRauschmayr, Prakhar Srivastav, sad-, sfermigier, Sheng Zha, sundeepteki, topecongiro, tpdi, vermicelli, Vishaal Kapoor, vishwesh5, YaYaB, Yuhong Chen, Evgeniy Smirnov, lgov, Simon Corston-Oliver, IgorDzreyev, Ha Nguyen, pmuens, alukovenko, senorcinco, vfdev-5, dsweet, Mohammad Mahdi Rahimi, Abhishek Gupta, uwsd, DomKM, Lisa Oakley, Bowen Li, Aarush Ahuja, prasanth5reddy, brianhendee, mani2106, mtn, lkevinzc, caojilin, Lakshya, Fiete Lüer, Surbhi Vijayvargeeya, Muhyun Kim, dennismalmgren, adursun, Anirudh Dagar, liqingnz, Pedro Larroy, lgov, ati-ozgur, Jun Wu, Matthias Blume, Lin Yuan, geogunow, Josh Gardner, Maximilian Böther, Rakib Islam, Leonard Lausen, Abhinav Upadhyay, rongruosong, Steve Sedlmeyer, ruslo, Rafael Schlatter, liusy182, Giannis Pappas, ruslo, ati-ozgur, qbaza, dchoi77, Adam Gerson. Notably, Brent Werness (Amazon) và Rachel Hu (Amazon) đồng tác giả chương *Toán học cho Học sâu* trong Phụ lục với chúng tôi và là những người đóng góp chính cho chương đó.
@@ -722,8 +592,8 @@ We thank Amazon Web Services, especially Swami Sivasubramanian,
 Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writing this book. Without the available time, resources, discussions with colleagues, and continuous encouragement this book would not have happened.
 -->
 
-Chúng tôi cảm ơn Amazon Web Services, đặc biệt là Swami Sivasubramanian,
-Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này. Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, cuốn sách này sẽ không thể thành hiện thực.
+Chúng tôi cảm ơn Amazon Web Services, đặc biệt là Swami Sivasubramanian, Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này.
+Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, cuốn sách này sẽ không thể thành hiện thực.
 
 
 <!--
@@ -801,20 +671,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 1 -->
 * Vũ Hữu Tiệp
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
 * Sẩm Thế Hải
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 4 -->
 * Ngô Thế Anh Khoa
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 * Trần Thị Hồng Hạnh
