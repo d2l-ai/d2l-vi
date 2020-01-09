@@ -26,7 +26,7 @@ What is more, the core theory of statistics has been widely used in the research
 -->
 
 Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ chín.
-Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần xuất để giải mã những thông điệp mã hoá.
+Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần suất để giải mã những thông điệp mã hoá.
 Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế.
 Hiện nay, thống kê là chủ đề khoa học bao gồm việc thu thập, xử lý, phân tích, diễn dịch và biễu diễn dữ liệu. 
 Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ.
