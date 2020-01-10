@@ -1175,7 +1175,7 @@ in classification, we seek a *classifier*, whose output $\hat{y}$ is the predict
 Trong bài toán phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục nào (được gọi là *lớp*) trong số một tập (rời rạc) các lựa chọn.
 Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
 Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
-Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
+Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{chó, mèo\}}$.
 Trong khi với bài toán hồi quy, ta cần tìm một *bộ hồi quy* để đưa ra một giá trị thực $\hat{y}$, thì với bài toán phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
 <!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
@@ -1271,7 +1271,7 @@ with the benefit (or harm) associated with it:
 -->
 
 Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
-Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{\text{nấm độc}}|\mathrm{\text{bức ảnh}}) = 0.2$.
 Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ sẽ chết vì nấm độc.
@@ -1279,7 +1279,7 @@ Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm tr�
 Ta có thể nhìn việc này theo khía cạnh lý thuyết.
 Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
+$$L(\mathrm{\text{hành động}}| x) = E_{y \sim p(y| x)}[\mathrm{\text{MấtMát}}(\mathrm{\text{hành động}},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
@@ -1288,7 +1288,7 @@ whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 -->
 
-Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{\text{bỏ đi}}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
