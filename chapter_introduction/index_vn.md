@@ -814,7 +814,7 @@ Các mục tiêu, thường được gọi là *nhãn*, phần lớn được k�
 Dữ liệu đầu vào, thường được gọi là *đặc trưng* hoặc hiệp biến, thông thường được ký hiệu là $\mathbf{x}$.
 Mỗi cặp (đầu vào, mục tiêu) được gọi là một *mẫu*.
 Thi thoảng, khi văn cảnh rõ ràng hơn, chúng ta có thể sử dụng thuật ngữ *các mẫu* để chỉ một tập các đầu vào, ngay cả khi chưa xác định được mục tiêu tương ứng.
-Ta ký hiệu bất cứ một mẫu cụ thể nào với một chỉ số dưới, thường là $i$, ví dụ ($\mathbf{x}_i, y_i$).
+Ta ký hiệu một mẫu cụ thể với một chỉ số dưới, thường là $i$, ví dụ ($\mathbf{x}_i, y_i$).
 Một tập dữ liệu là một tập của $n$ mẫu $\{\mathbf{x}_i, y_i\}_{i=1}^n$.
 Mục đích của chúng ta là xây dựng một mô hình $f_\theta$ ánh xạ đầu vào bất kỳ $\mathbf{x}_i$ tới một dự đoán $f_{\theta}(\mathbf{x}_i)$.
 
