@@ -1152,8 +1152,8 @@ than those used for regression (although many techniques will carry over).
 Trong khi các mô hình hồi quy hiệu quả trong việc trả lời các câu hỏi *có bao nhiêu?*,
  rất nhiều bài toán không phù hợp với nhóm câu hỏi này.
 Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
-Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
-Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động còn mạnh mẽ hơn nữa.
+Tác vụ này bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy cần tự động hiểu nội dung chữ trong bức ảnh.
+Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động càng mạnh mẽ hơn.
 Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical character recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại* (_classification_).
 Nó được giải quyết với một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
 
@@ -1279,7 +1279,7 @@ Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm tr�
 Ta có thể nhìn việc này theo khía cạnh lý thuyết.
 Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{\text{hành động}}| x) = E_{y \sim p(y| x)}[\mathrm{\text{MấtMát}}(\mathrm{\text{hành động}},y)].$$
+$$L(\mathrm{\text{hành động}}| x) = E_{y \sim p(y| x)}[\mathrm{\text{mất_mát}}(\mathrm{\text{hành động}},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
