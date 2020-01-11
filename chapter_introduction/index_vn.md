@@ -886,7 +886,7 @@ throughout the first 9 parts of this book.
 
 Ngay cả với mô tả đơn giản là "dự đoán mục tiêu từ đầu vào", học có giám sát đã có nhiều hình thái đa dạng và đòi hỏi đưa ra nhiều quyết định mô hình hoá khác nhau, tuỳ thuộc vào kiểu, kích thước, số lượng của cặp đầu vào và đầu ra cũng như các yếu tố khác.
 Ví dụ, ta sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi ký tự hay dữ liệu chuỗi thời gian) và các biểu diễn vector với chiều dài cố định.
-Chúng ta sẽ đào sâu vào rất nhiều bài toán dạng này thông qua 9 phần đầu của cuốn sách.
+Chúng ta sẽ đào sâu vào rất nhiều bài toán dạng này thông qua chín phần đầu của cuốn sách.
 
 <!--
 Informally, the learning process looks something like this:
