@@ -721,7 +721,7 @@ Matrix-matrix multiplication can be simply called *matrix multiplication*, and s
 ## Norms
 -->
 
-## *dịch tiêu đề phía trên*
+## Các tiêu chuẩn
 
 <!--
 Some of the most useful operators in linear algebra are *norms*.
