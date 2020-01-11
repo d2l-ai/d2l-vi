@@ -1376,7 +1376,7 @@ saying the image depicts a cat *and* a dog *and* a donkey
 
 Bạn có thể thấy trong ảnh có một con mèo, một con gà trống, một con chó, một con lừa và một con chim, cùng với một vài cái cây ở hậu cảnh.
 Tuỳ vào mục đích cuối cùng của mô hình, sẽ không hợp lý nếu coi đây là một bài toán phân loại nhị phân.
-Thay vào đó, ta có thể muốn cho mô hình lựa chọn nói rằng bức ảnh có một con mèo *và* một con chó *và* một con cừu *và* một con gà trống *và* một con chim.
+Thay vào đó, có thể chúng ta muốn cung cấp cho mô hình tuỳ chọn để mô tả bức ảnh gồm một con mèo *và* một con chó *và* một con lừa *và* một con gà trống *và* một con chim.
 
 <!--
 The problem of learning to predict classes that are
@@ -1421,8 +1421,8 @@ has [hosted a competition](http://bioasq.org/) to do precisely this.
 -->
 
 Ta cũng phải xử lý các vấn đề này trong nghiên cứu y sinh, ở đó việc gán thẻ cho các bài báo một cách chính xác là quan trọng bởi nó cho phép các nhà nghiên cứu tổng hợp đầy đủ các tài liệu liên quan.
-Tại Thư viện Y khoa Quốc gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sư tập với khoảng 28 nghìn thẻ.
-Đây là một quá trình tốn thời gian và những người gán nhãn thường có một năm chậm trễ kể từ khi lưu trữ tới khi gán thẻ.
+Tại Thư viện Y khoa Quốc gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sưu tập với khoảng 28 nghìn thẻ.
+Đây là một quá trình tốn thời gian và những người gán nhãn thường bị chậm một năm kể từ khi lưu trữ cho tới lúc gán thẻ.
 Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho tới khi được kiểm chứng lại một cách thủ công.
 Thực vậy, BioASQ đã [tổ chức một cuộc thi](http://bioasq.org/) dành riêng cho việc này.
 
@@ -1455,8 +1455,8 @@ the ordering within the set matters.
 
 Đôi khi ta không chỉ muốn gán một lớp hoặc một giá trị vào một mẫu.
 Trong lĩnh vực thu thập thông tin (_information retrieval_), ta muốn gán thứ hạng cho một tập các mẫu.
-Lấy ví dụ trong tìm kiếm trang web, mục tiêu không chỉ dừng lại ở việc xác định liệu một trang nào đó có liên quan tới từ khoá tìm kiếm mà còn xa hơn, trang nào trong số vô vàn kết quả trả về có *liên quan nhất* tới người dùng.
-Ta thực sự rất quan tâm đến thứ tự của các kết quả tìm kiếm và thuật toán cần đưa ra các tập con có thứ tự từ những thành phần trong một tập lớn hơn.
+Lấy ví dụ trong tìm kiếm trang web, mục tiêu không chỉ dừng lại ở việc xác định liệu một trang web có liên quan tới từ khoá tìm kiếm, mà xa hơn, trang web nào trong số vô vàn kết quả trả về *liên quan nhất* tới người dùng.
+Chúng ta rất quan tâm đến thứ tự của các kết quả tìm kiếm và thuật toán cần đưa ra các tập con có thứ tự từ những thành phần trong một tập lớn hơn.
 Nói cách khác, nếu được hỏi đưa ra năm chữ cái từ bảng chữ cái, hai kết quả ``A B C D E`` và ``C A B E D`` là khác nhau.
 Ngay cả khi các phần tử trong hai tập kết quả là như nhau, thứ tự các phần tử trong mỗi tập mới là điều quan trọng.
 
