@@ -475,7 +475,7 @@ $80\%$ is a commonly used statistical power threshold. The higher the statistica
 -->
 
 Một cách trực quan, năng lực thống kê có thể được xem như khả năng phép kiểm định phát hiện được một sai lệch thực sự với độ lớn tối thiểu nào đó, ở một mức ý nghĩa thống kê mong muốn.
-$80%$ là một ngưỡng phổ biến cho năng lực thống kê. Năng lực thống kê càng cao, ta càng có nhiều khả năng phát hiện được những sai lệch thực sự hơn.
+$80%$ là một ngưỡng phổ biến cho năng lực thống kê. Năng lực thống kê càng cao, ta càng có nhiều khả năng phát hiện được những sai lệch thực sự.
 
 <!--
 One of the most common uses of statistical power is in determining the number of samples needed.  
@@ -486,8 +486,8 @@ However, if we think our sample population true mean is close to $0.01$, then we
 -->
 
 Một trong những ứng dụng phổ biến nhất của năng lực thống kê là để xác định số lượng mẫu cần thiết.
-Xác suất bạn bác bỏ giả thuyết gốc khi nó là sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có.
-Và như bạn đã có thể đoán trước, hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể bị phát hiện với xác suất cao.
+Xác suất bạn bác bỏ giả thuyết gốc khi nó sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có.
+Có thể đoán trước rằng hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể được phát hiện với xác suất cao.
 Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ.
 Giả sử ta có giả thuyết gốc rằng các mẫu được lấy từ một phân phối Gauss với kỳ vọng là không và phương sai là một.
 Nếu ta tin rằng giá trị trung bình của tập mẫu gần với một, ta chỉ cần $8$ mẫu là có thể bác bỏ giả thuyết gốc với tỉ lệ lỗi chấp nhận được.
