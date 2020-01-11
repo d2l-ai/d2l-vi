@@ -903,7 +903,7 @@ Một cách dễ hiểu, quá trình học gồm những bước sau:
 Lấy một tập mẫu lớn với các hiệp biến đã biết trước.
 Từ đó chọn ra một tập con ngẫu nhiên và thu thập các nhãn gốc cho chúng.
 Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ, liệu bệnh nhân đã qua đời trong năm tiếp theo?).
-Trong trường hợp khác, chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
+Trong trường hợp khác, chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ, gán một bức ảnh vào một hạng mục nào đó).
 
 <!--
 Together, these inputs and corresponding labels comprise the training set.
