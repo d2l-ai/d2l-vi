@@ -4,7 +4,7 @@
 # Statistics
 -->
 
-# *dịch tiêu đề phía trên*
+# Thống kê
 :label:`sec_statistics`
 
 <!--
@@ -13,7 +13,9 @@ However, it is often unclear when improvements are significant, or only the resu
 To be able to discuss uncertainty in estimated values, we must learn some statistics.
 -->
 
-*dịch đoạn phía trên*
+Không có gì để tranh cãi, khả năng huấn luyện các mô hình hiện đại với độ chính xác cao là rất quan trọng trong việc trở thành một chuyên gia Học sâu hàng đầu.
+Tuy nhiên, thường khó có thể biết được những cải tiến trong mô hình là đáng kể hay chúng chỉ là kết quả của những biến động ngẫu nhiên trong quá trình huấn luyện.
+Để có thể thảo luận về tính bất định trong các giá trị ước lượng, chúng ta cần có hiểu biết về thống kê.
 
 
 <!--
@@ -23,9 +25,11 @@ Today, statistics is the science subject that concerns the collection, processin
 What is more, the core theory of statistics has been widely used in the research within academia, industry, and government.
 -->
 
-*dịch đoạn phía trên*
-
-
+Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ chín.
+Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần suất để giải mã những thông điệp mã hoá.
+Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế.
+Hiện nay, thống kê là chủ đề khoa học bao gồm việc thu thập, xử lý, phân tích, diễn dịch và biễu diễn dữ liệu. 
+Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ.
 <!--
 More specifically, statistics can be divided to *descriptive statistics* and *statistical inference*. 
 The former focus on summarizing and illustrating the features of a collection of observed data, which is referred to as a *sample*. 
@@ -33,17 +37,20 @@ The sample is drawn from a *population*, denotes the total set of similar indivi
 Contrary to descriptive statistics, *statistical inference* further deduces the characteristics of a population from the given *samples*, based on the assumptions that the sample distribution can replicate the population distribution at some degree.
 -->
 
-*dịch đoạn phía trên*
-
-
+Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
+Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*.
+Mẫu được lấy ra từ một *tổng thể* (*population*), là biểu diễn của toàn bộ những cá thể, đồ vật hay sự kiện tương tự nhau mà thí nghiệm của ta quan tâm.
+Trái với thống kê mô tả, *thống kê suy luận* dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối tổng thể.
 <!--
 You may wonder: “What is the essential difference between machine learning and statistics?” Fundamentally speaking, statistics focuses on the inference problem. 
 This type of problems includes modeling the relationship between the variables, such as causal inference, and testing the statistically significance of model parameters, such as A/B testing. 
 In contrast, machine learning emphasizes on making accurate predictions, without explicitly programming and understanding each parameter's functionality.
 -->
 
-*dịch đoạn phía trên*
-
+Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?".
+Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận.
+Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B.
+Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách rõ ràng và hiểu rõ chức năng của từng tham số. 
 
 <!--
 In this section, we will introduce three types of statistics inference methods: evaluating and comparing estimators, conducting hypothesis tests, and constructing confidence intervals. 
@@ -52,8 +59,10 @@ For brevity, we assume that the true parameter $\theta$ of a given population is
 It is straightforward to extend to the case where $\theta$ is a vector or a tensor, thus we omit it in our discussion.
 -->
 
-*dịch đoạn phía trên*
-
+Trong chương này, chúng tôi sẽ giới thiệu ba loại phương pháp thống kê suy luận: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy.
+Những phương pháp này có thể giúp chúng ta suy luận ra những đặc tính của một tổng thể, hay nói cách khác, tham số thật $\theta$.
+Để cho ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng.
+Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là rất đơn giản nên chúng tôi sẽ không đề cập đến vấn đề này. 
 <!-- =================== Kết thúc dịch Phần 1 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 2 ================================-->
@@ -900,7 +909,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Ngô Thế Anh Khoa
 
 <!-- Phần 2 -->
 * Phạm Hồng Vinh
