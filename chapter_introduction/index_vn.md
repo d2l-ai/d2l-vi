@@ -884,8 +884,8 @@ We will visit many of these problems in depth
 throughout the first 9 parts of this book.
 -->
 
-Ngay cả với mô tả đơn giản là "dự đoán mục tiêu từ đầu vào", học có giám sát đã có nhiều hình thái đa dạng và đòi hỏi đưa ra nhiều quyết định mô hình hoá khác nhau, phụ thuộc vào kiểu, kích thước, số lượng của cặp đầu vào và đầu ra cũng như các yếu tố khác.
-Ví dụ, ta sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi ký tự hay dữ liệu chuỗi thời gian) và để xử lý các biểu diễn vector với chiều dài cố định.
+Ngay cả với mô tả đơn giản là "dự đoán mục tiêu từ đầu vào", học có giám sát đã có nhiều hình thái đa dạng và đòi hỏi đưa ra nhiều quyết định mô hình hoá khác nhau, tuỳ thuộc vào kiểu, kích thước, số lượng của cặp đầu vào và đầu ra cũng như các yếu tố khác.
+Ví dụ, ta sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi ký tự hay dữ liệu chuỗi thời gian) và các biểu diễn vector với chiều dài cố định.
 Chúng ta sẽ đào sâu vào rất nhiều bài toán dạng này thông qua 9 phần đầu của cuốn sách.
 
 <!--
@@ -899,10 +899,11 @@ and other times we might need to employ human annotators to label the data,
 (e.g., assigning images to categories).
 -->
 
-Một cách dễ hiểu, quá trình học tương tự với:
-Lấy một tập mẫu lớn ở đó các hiệp biến đã biết trước.
-Từ đó chọn ra một tập con ngẫu nhiên, thu thập các nhãn gốc cho chúng.
-Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ liệu bệnh nhân đã qua đời trong năm tiếp theo?), khi khác chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
+Một cách dễ hiểu, quá trình học gồm những bước sau:
+Lấy một tập mẫu lớn với các hiệp biến đã biết trước.
+Từ đó chọn ra một tập con ngẫu nhiên và thu thập các nhãn gốc cho chúng.
+Đôi khi những nhãn này có thể đã có sẵn trong dữ liệu (ví dụ liệu bệnh nhân đã qua đời trong năm tiếp theo?).
+Trong trường hợp khác, chúng ta cần thuê người gán nhãn cho dữ liệu (ví dụ gán một bức ảnh vào một hạng mục nào đó).
 
 <!--
 Together, these inputs and corresponding labels comprise the training set.
@@ -915,7 +916,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 -->
 
 Những đầu vào và nhãn tương ứng này cùng tạo nên tập huấn luyện.
-Chúng ta đưa tập dữ liệu huấn luyện vào một thuật toán học có giám sát -- một hàm số mà đầu vào là tập dữ liệu và đầu ra là một hàm số khác thể hiện *mô hình đã học được*.
+Chúng ta đưa tập dữ liệu huấn luyện vào một thuật toán học có giám sát -- một hàm số với đầu vào là tập dữ liệu và đầu ra là một hàm số khác thể hiện *mô hình đã học được*.
 Cuối cùng, ta có thể đưa dữ liệu chưa nhìn thấy vào mô hình đã học được, sử dụng đầu ra của nó như là giá trị dự đoán của các nhãn tương ứng.
 Toàn bộ quá trình được mô tả trong :numref:`fig_supervised_learning`.
 
