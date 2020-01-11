@@ -68,7 +68,7 @@ x + y, x * y, x / y, x ** y
 ## Vectors
 -->
 
-## *dịch tiêu đề phía trên*
+## Vector
 
 <!--
 You can think of a vector as simply a list of scalar values.
@@ -79,14 +79,20 @@ If we were studying the risk of heart attacks hospital patients potentially face
 In math notation, we will usually denote vectors as bold-faced, lower-cased letters (e.g., $\mathbf{x}$, $\mathbf{y}$, and $\mathbf{z})$.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể nghĩ vector đơn giản là một dãy các số vô hướng.
+Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của vector.
+Khi các vector biễu diễn cho mẫu trong tập dữ liệu, các giá trị của nó mang theo những ý nghĩa từ thực tế.
+Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
+Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức khỏe, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
+Trong kí hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
 
 <!--
 In MXNet, we work with vectors via $1$-dimensional `ndarray`s.
 In general `ndarray`s can have arbitrary lengths, subject to the memory limits of your machine.
 -->
 
-*dịch đoạn phía trên*
+Trong MXNet, chúng ta làm việc với vector thông qua các `ndarray` $1$-chiều.
+Tổng quát lên, `ndarray` có thể có chiều dài bất kì, giới hạn bởi bộ nhớ máy tính.
 
 ```{.python .input  n=2}
 x = np.arange(4)
@@ -101,7 +107,11 @@ Extensive literature considers column vectors to be the default orientation of v
 In math, a vector $\mathbf{x}$ can be written as
 -->
 
-*dịch đoạn phía trên*
+Một phần tử bất kì trong vector có thể được ký hiệu sử dụng chỉ số dưới.
+Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
+Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
+Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, quyển sách này cũng vậy.
+Trong toán học, một vector có thể được viết như sau
 
 $$\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix},$$
 :eqlabel:`eq_vec_def`
@@ -112,7 +122,8 @@ where $x_1, \ldots, x_n$ are elements of the vector.
 In code, we access any element by indexing into the `ndarray`.
 -->
 
-*dịch đoạn phía trên*
+trong đó $x_1, \ldots, x_n$ là các phần tử của vector.
+Trong mã nguồn, chúng ta sử dụng chỉ số để truy cập tới các phần tử trong `ndarray`.
 
 ```{.python .input  n=3}
 x[3]
