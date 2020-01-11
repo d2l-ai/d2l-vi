@@ -721,7 +721,7 @@ Matrix-matrix multiplication can be simply called *matrix multiplication*, and s
 ## Norms
 -->
 
-## Các tiêu chuẩn
+## Chuẩn
 
 <!--
 Some of the most useful operators in linear algebra are *norms*.
@@ -729,14 +729,17 @@ Informally, the norm of a vector tells us how *big* a vector is.
 The notion of *size* under consideration here concerns not dimensionality but rather the magnitude of the components.
 -->
 
-*dịch đoạn phía trên*
+Một trong những toán tử hữu dụng nhất của đại số tuyến tính là toán tử *chuẩn*.
+Nói dân dã thì, các chuẩn của một vector cho ta biết một vector *lớn* tầm nào.
+Dấu hiệu của *kích thước* đang xét ở đây không chỉ đề cập tới số chiều mà còn cả độ lớn của các thành phần.
 
 <!--
 In linear algebra, a vector norm is a function $f$ that maps a vector to a scalar, satisfying a handful of properties.
 Given any vector $\mathbf{x}$, the first property says that if we scale all the elements of a vector by a constant factor $\alpha$, its norm also scales by the *absolute value* of the same constant factor:
 -->
 
-*dịch đoạn phía trên*
+Trong đại số tuyến tính, chuẩn của một vector là hàm $f$ mà ánh xạ vector thành số vô hướng, thỏa mãn một vàivài thuộc tính.
+Cho vector bất kỳ $\mathbf{x}$, thuộc tính đầu tiên là nếu chúng ta scale tất cả thành phần của một vector bằng một factor không đổi $\alpha$, chuẩn của nó cũng scale với *giá trị tuyệt đối* của factor không đổi tương tự:
 
 $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 
@@ -745,7 +748,7 @@ $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 The second property is the familiar triangle inequality:
 -->
 
-*dịch đoạn phía trên*
+Thuộc tính thứ hai là the familiar triangle inequality:
 
 $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 
@@ -754,7 +757,7 @@ $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 The third property simply says that the norm must be non-negative:
 -->
 
-*dịch đoạn phía trên*
+Thuộc tính thứ ba đơn giản là chuẩn đó phải không âm:
 
 $$f(\mathbf{x}) \geq 0.$$
 
@@ -763,7 +766,8 @@ That makes sense, as in most contexts the smallest *size* for anything is 0.
 The final property requires that the smallest norm is achieved and only achieved by a vector consisting of all zeros.
 -->
 
-*dịch đoạn phía trên*
+Điều này nghĩa là, trong đa số trường hợp thì *kích thước* nhỏ nhất sẽ là 0.
+Thuộc tính cuối cùng yêu cầu chuẩn nhỏ nhất thu được chỉ khi thu được một vector chứa toàn 0.
 
 $$\forall i, [\mathbf{x}]_i = 0 \Leftrightarrow f(\mathbf{x})=0.$$
 
@@ -775,7 +779,11 @@ Suppose that the elements in the $n$-dimensional vector $\mathbf{x}$ are $x_1, \
 The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares of the vector elements:
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể để ý là các chuẩn nghe rất giống thước đo khoảng cách.
+Và nếu còn nhớ khoảng cách Euclidean (như định lý Pythagoras) hồi cấp 3, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhớ giùm.
+Thực tế là, khoảng cách Euclidean là một chuẩn: đặc biệt là chuẩn $\ell_2$.
+Giả sử rằng các thành phần trong vector $n$ chiều  $\mathbf{x}$ là $x_1, \ldots, x_n$.
+*Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần của vector: 
 
 $$\|\mathbf{x}\|_2 = \sqrt{\sum_{i=1}^n x_i^2},$$
 
@@ -784,7 +792,7 @@ where the subscript $2$ is often omitted in $\ell_2$ norms, i.e., $\|\mathbf{x}\
 In code, we can calculate the $\ell_2$ norm of a vector by calling `linalg.norm`.
 -->
 
-*dịch đoạn phía trên*
+Số $2$ nhỏ ở dưới thường được lược đi trong chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ thì tương đương vớivới $\|\mathbf{x}\|_2$.   
 
 ```{.python .input  n=18}
 u = np.array([3, -4])
@@ -796,7 +804,7 @@ In deep learning, we work more often with the squared $\ell_2$ norm.
 You will also frequently encounter the $\ell_1$ *norm*, which is expressed as the sum of the absolute values of the vector elements:
 -->
 
-*dịch đoạn phía trên*
+Trong học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
 
 $$\|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.$$
 
@@ -805,7 +813,8 @@ As compared with the $\ell_2$ norm, it is less influenced by outliers.
 To calculate the $\ell_1$ norm, we compose the absolute value function with a sum over the elements.
 -->
 
-*dịch đoạn phía trên*
+So sánh với chuẩn $\ell_2$, nó ít bị ảnh ưởng bởi outliers hơn.
+Để tính chuẩn $\ell_1$, chúng ta viết hàm giá trị tuyệt đối với một tổng toàn bộ các thành phần.
 
 ```{.python .input  n=19}
 np.abs(u).sum()
@@ -816,7 +825,7 @@ Both the $\ell_2$ norm and the $\ell_1$ norm
 are special cases of the more general $\ell_p$ *norm*:
 -->
 
-*dịch đoạn phía trên*
+Cả hai chuẩn $\ell_2$ và $\ell_1$ đều là trường hợp đặc biệt của một chuẩn tổng quát hơn, *chuẩn* $\ell_p$:
 
 $$\|\mathbf{x}\|_p = \left(\sum_{i=1}^n \left|x_i \right|^p \right)^{1/p}.$$
 
@@ -824,7 +833,7 @@ $$\|\mathbf{x}\|_p = \left(\sum_{i=1}^n \left|x_i \right|^p \right)^{1/p}.$$
 Analogous to $\ell_2$ norms of vectors, the *Frobenius norm* of a matrix $\mathbf{X} \in \mathbb{R}^{m \times n}$ is the square root of the sum of the squares of the matrix elements:
 -->
 
-*dịch đoạn phía trên*
+Tương tự với chuẩn $\ell_2$ của vector, *chuẩn Frobenius* của một ma trận $\mathbf{X} \in \mathbb{R}^{m \times n}$ là căn bậc hai của tổng các bình phương của các thành phần trong ma trận:
 
 $$\|\mathbf{X}\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n x_{ij}^2}.$$
 
@@ -833,7 +842,9 @@ The Frobenius norm satisfies all the properties of vector norms.
 It behaves as if it were an $\ell_2$ norm of a matrix-shaped vector. Invoking `linalg.norm` will calculate the Frobenius norm of a matrix.
 -->
 
-*dịch đoạn phía trên*
+Chuẩn Frobenius thỏa mãn tất cả các thuộc tính của chuẩn vector.
+Nó behave như một chuẩn $\ell_2$ của một vector có kích thước ma trận.
+Gọi `linalg.norm` sẽ tính toán chuẩn Frobenius của ma trận.
 
 ```{.python .input}
 np.linalg.norm(np.ones((4, 9)))
