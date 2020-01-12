@@ -580,27 +580,31 @@ hinking back to our chemist example, if we wish to show that one population perf
 Different choices of test statistic can lead to statistical test with drastically different statistical power.
 -->
 
-*dịch đoạn phía trên*
+*Tiêu chuẩn kiểm định* $T(x)$ là một số vô hướng có khả năng khái quát một đặc tính nào đó của dữ liệu mẫu.
+Mục đích của việc đặt ra một thống kê như vậy là để nó có thể giúp ta phân biệt giữa các phân phối khác nhau và tiến hành kiểm định thống kê.
+Nhìn lại ví dụ về nhà hóa học, nếu ta muốn chỉ ra rằng một tổng thể có chất lượng tốt hơn một tổng thể khác, việc lấy giá trị trung bình làm tiêu chuẩn kiểm định có vẻ hợp lý.
+Các chọn lựa tiêu chuẩn kiểm định khác nhau có thể dẫn đến các phép kiểm định thống kê với năng lực thống kê khác nhau rõ rệt.
 
 <!--
 Often, $T(X)$ (the distribution of the test statistic under our null hypothesis) will follow, at least approximately, a common probability distribution such as a normal distribution when considered under the null hypothesis. 
 If we can derive explicitly such a distribution, and then measure our test statistic on our dataset, we can safely reject the null hypothesis if our statistic is far outside the range that we would expect.  Making this quantitative leads us to the notion of $p$-values.
 -->
 
-*dịch đoạn phía trên*
-
+Thường thì $T(X)$ (phân phối của tiêu chuẩn kiểm định dưới giả thuyết gốc) sẽ (xấp xỉ) tuân theo một phân phối phổ biến như phân phối chuẩn, khi được xem xét dưới giả thuyết gốc.
+Nếu ta có thể rõ ràng chỉ ra một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu, ta có thể yên tâm bác bỏ giả thuyết gốc nếu thống kê đó nằm xa bên ngoài khoảng mong đợi.
+Việc đưa ra một con số như vậy dẫn đến ý tưởng của trị số $p$.
 
 <!--
 ### $p$-value
 -->
 
-### *dịch tiêu đề phía trên*
+### Trị số $p$
 
 <!--
 The *$p$-value* (or the *probability value*) is the probability that $T(X)$ is at least as extreme as the observed test statistic $T(x)$ assuming that the null hypothesis is *true*, i.e.,
 -->
 
-*dịch đoạn phía trên*
+*Trị số $p$* (hay còn gọi là *trị số xác suất*) là xác suất mà $T(X)$ lớn hơn hoặc bằng tiêu chuẩn kiểm định ta thu được, giả sử rằng giả thuyết gốc đúng, tức là: 
 
 $$ p\text{-value} = P_{H_0}(T(X) \geq T(x)).$$
 
@@ -610,14 +614,15 @@ Otherwise, we will conclude that we are lack of evidence to reject the null hypo
 For a given population distribution, the *region of rejection* will be the interval contained of all the points which has a $p$-value smaller than the statistical significance level $\alpha$.
 -->
 
-*dịch đoạn phía trên*
-
+Nếu trị số $p$ nhỏ hơn hoặc bằng một mức ý nghĩa thống kê cố định cho trước, ta có thể bác bỏ giả thuyết gốc.
+Còn nếu không, ta kết luận không có đủ bằng chứng để bác bỏ giả thuyết gốc.
+Với một phân phối của tổng thể, *miền bác bỏ* là khoảng chứa tất cả các điểm có trị số $p$ nhỏ hơn mức ý nghĩa thống kê $\alpha$.
 
 <!--
 ### One-side Test and Two-sided Test
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiểm định một phía và kiểm định hai phía
 
 <!--
 Normally there are two kinds of significance test: the one-sided test and the two-sided test. 
@@ -630,7 +635,14 @@ An example in this case may have a null hypothesis state that the true parameter
 The alternative hypothesis would be that $\theta$ is not equal to $c$.
 -->
 
-*dịch đoạn phía trên*
+Thường thì có hai loại kiểm định ý nghĩa thống kê: kiểm định một phía và kiểm định hai phía.
+*Kiểm định một phía* (hay *kiểm định một đuôi*) có thể được áp dụng khi giả thuyết gốc và giả thuyết đối chỉ đi theo một hướng.
+Ví dụ, giả thuyết gốc có thể cho rằng tham số thực $\theta$ nhỏ hơn hoặc bằng một giá trị $c$.
+Giả thuyết đối sẽ là $\theta$ lớn hơn $c$.
+Nói cách khác, miền bác bỏ chỉ nằm ở một bên của phân phối mẫu.
+Trái với kiểm định một phía, *kiểm định hai phía* (hay *kiểm định hai đuôi*) có thể được áp dụng khi miền bác bỏ nằm ở cả hai phía của phân phối mẫu.
+Ví dụ cho trường hợp này có thể là một giả thuyết gốc cho rằng tham số thực $\theta$ bằng một giá trị $c$.
+Giả thuyết đối lúc này sẽ là $\theta$ không bằng $c$.
 
 <!-- =================== Kết thúc dịch Phần 9 ================================-->
 
