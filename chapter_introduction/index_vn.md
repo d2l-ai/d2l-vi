@@ -1151,12 +1151,13 @@ It is treated with a different set of algorithms
 than those used for regression (although many techniques will carry over).
 -->
 
-Trong khi các mô hình hồi quy hiệu quả cho việc trả lời các câu hỏi *có bao nhiêu?*, rất nhiều bài toán không phù hợp với nhóm mô hình này.
+Trong khi các mô hình hồi quy hiệu quả trong việc trả lời các câu hỏi *có bao nhiêu?*,
+ rất nhiều bài toán không phù hợp với nhóm câu hỏi này.
 Ví dụ, một ngân hàng muốn thêm chức năng quét ngân phiếu trong ứng dụng di động của họ.
-Việc này sẽ bao gồm việc khách hàng chụp một bức ảnh của ngân phiếu với camera của điện thoại và mô hình học máy sẽ cần phải tự động hiểu nội dung chữ trong bức ảnh.
-Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động còn ổn định hơn nữa.
-Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical charactor recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại*.
-Nó được thiết kế bởi một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
+Tác vụ này bao gồm việc khách hàng chụp một tấm ngân phiếu với camera của điện thoại và mô hình học máy cần tự động hiểu nội dung chữ trong bức ảnh.
+Hiểu được cả chữ viết tay sẽ giúp ứng dụng hoạt động càng mạnh mẽ hơn.
+Kiểu hệ thống này được gọi là nhận dạng ký tự quang học (_optical character recognition_ -- OCR), và kiểu bài toán mà nó giải quyết được gọi là *phân loại* (_classification_).
+Nó được giải quyết với một tập các thuật toán khác với thuật toán dùng trong hồi quy (mặc dù có nhiều kỹ thuật chung).
 
 <!--
 In classification, we want our model to look at a feature vector,
@@ -1173,11 +1174,11 @@ While in regression, we sought a *regressor* to output a real value $\hat{y}$,
 in classification, we seek a *classifier*, whose output $\hat{y}$ is the predicted class assignment.
 -->
 
-Trong phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục nào (được gọi là *lớp*) trong số một tập (rời rạc) các lựa chọn.
+Trong bài toán phân loại, ta muốn mô hình nhìn vào một vector đặc trưng, ví dụ như các giá trị điểm ảnh trong một bức ảnh, và sau đó dự đoán mẫu đó rơi vào hạng mục (được gọi là *lớp*) nào trong một tập các lựa chọn (rời rạc).
 Với chữ số viết tay, ta có thể có 10 lớp tương ứng với các chữ số từ 0 tới 9.
 Dạng đơn giản nhất của phân loại là khi chỉ có hai lớp, khi đó ta gọi bài toán này là phân loại nhị phân.
-Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{cat, dog\}}$.
-Với hồi quy, ta tìm một *bộ hồi quy* để đưa ra một giá trị thực $\hat{y}$. Trong khi đó với phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
+Ví dụ, tập dữ liệu $X$ có thể chứa các bức ảnh động vật và các *nhãn* $Y$ có thể là các lớp $\mathrm{\{chó, mèo\}}$.
+Trong khi với bài toán hồi quy, ta cần tìm một *bộ hồi quy* để đưa ra một giá trị thực $\hat{y}$, thì với bài toán phân loại, ta tìm một *bộ phân loại* để dự đoán lớp $\hat{y}$.
 <!-- Mình phải nói là mấy bác Tàu này thi thoảng còn viết sai ngữ pháp, rất thích dùng các câu dài với các dấu phẩy vô tội vạ. Tuy nhiên, do cùng không nói tiếng Anh nên khá dễ để hiểu ý tứ của các bác. Mình đánh giá cao nội dung và cấu trúc của cuốn sách mặc dù diễn đạt chưa được tốt lắm .-->
 
 <!--
@@ -1205,17 +1206,17 @@ It is not the only notion of uncertainty
 and we will discuss others in more advanced chapters.
 -->
 
-Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ *mèo* hoặc *chó*.
+Khi cuốn sách đi sâu hơn vào các vấn đề kỹ thuật, chúng ta sẽ bàn về các lý do tại sao lại khó hơn để tối ưu hoá một mô hình mà đầu ra là các giá trị hạng mục rời rạc, ví dụ, *mèo* hoặc *chó*.
 Trong những trường hợp này, thường sẽ dễ hơn khi thay vào đó, ta biểu diễn mô hình dưới ngôn ngữ xác suất.
 Cho trước một mẫu $\mathbf{x}$, mô hình cần gán một giá trị xác suất $\hat{y}_k$ cho mỗi nhãn $k$.
 Vì là các giá trị xác suất, chúng phải là các số dương có tổng bằng $1$.
 Bởi vậy, ta chỉ cần $K-1$ số để gán xác suất cho $K$ hạng mục.
 Việc này dễ nhận thấy đối với phân loại nhị phân.
-Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt xấp là $0.4$ ($40\%$).
+Nếu một đồng xu không đều có xác suất ra mặt ngửa là $0.6$ ($60\%$), thì xác suất ra mặt sấp là $0.4$ ($40\%$).
 Trở lại với ví dụ phân loại động vật, một bộ phân loại có thể nhìn một bức ảnh và đưa ra xác suất để bức ảnh đó là mèo $P(y=\text{mèo} \mid x) = 0.9$.
 Chúng ta có thể diễn giải giá trị này tương ứng với việc bộ phân loại $90\%$ tin rằng bức ảnh đó chứa một con mèo.
-Giá trị xác suất của một lớp được dự đoán mang ý nghĩa về sự không chắc chắn. <!-- Hmm -->
-Đó không phải là ký hiệu duy nhất của sự không chắc chắn, chúng ta sẽ thảo luận các ký hiệu khác trong các chương nâng cao.
+Giá trị xác suất của lớp được dự đoán truyền đạt một ý niệm về sự không chắc chắn. <!-- Hmm -->
+Tuy nhiên, đó không phải là ý niệm duy nhất về sự không chắc chắn, chúng ta sẽ thảo luận thêm về những loại khác trong các chương nâng cao.
 
 <!--
 When we have more than two possible classes,
@@ -1230,7 +1231,7 @@ In MXNet Gluon, the corresponding loss function can be found [here](https://mxne
 
 Khi có nhiều hơn hai lớp, ta gọi bài toán này là *phân loại đa lớp*. <!-- to glossary -->
 Bài toán phân loại chữ viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]` là một trong số các ví dụ điển hình.
-Trong khi các hàm mất mát thường được sử dụng trong các bài toán hồi quy là hàm mất mát L1 hoặc L2, hàm mất mát phổ biến cho bài toán phân loại được gọi là entropy chéo (_cross-entropy_), hàm tương ứng trong MXNet Gluon có thể xem [tại đây](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss)
+Trong khi các hàm mất mát thường được sử dụng trong các bài toán hồi quy là hàm mất mát L1 hoặc L2, hàm mất mát phổ biến cho bài toán phân loại được gọi là entropy chéo (_cross-entropy_), hàm tương ứng trong MXNet Gluon có thể tìm được [tại đây](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss)
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
@@ -1247,10 +1248,10 @@ Lưu ý rằng lớp có khả năng xảy ra nhất theo dự đoán của mô 
 Giả sử bạn tìm được một cây nấm rất đẹp trong sân nhà như hình :numref:`fig_death_cap`.
 
 <!--
-![Nấm độc---đừng ăn!](../img/death_cap.jpg)
+![Death cap—do not eat!](../img/death_cap.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/death_cap.jpg)
+![Nấm độc---đừng ăn!](../img/death_cap.jpg)
 :width:`200px`
 :label:`fig_death_cap`
 
@@ -1272,15 +1273,15 @@ with the benefit (or harm) associated with it:
 -->
 
 Bây giờ giả sử ta đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán liệu một cây nấm có độc hay không dựa trên ảnh chụp.
-Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{nấm độc}|\mathrm{bức ảnh}) = 0.2$.
+Giả sử bộ phân loại phát hiện chất độc đưa ra $P(y=\mathrm{\text{nấm độc}}|\mathrm{\text{bức ảnh}}) = 0.2$.
 Nói cách khác, bộ phân loại này chắc chắn rằng $80\%$ cây này *không phải* nấm độc.
 Dù vậy, đừng dại mà ăn nhé.
 Vì việc có bữa tối ngon lành không đáng gì so với rủi ro $20\%$ sẽ chết vì nấm độc.
 Nói cách khác, hậu quả của *rủi ro không chắc chắn* nghiêm trọng hơn nhiều so với lợi ích thu được.
-Ta có thể nhìn việc này một cách hợp thức hơn.
+Ta có thể nhìn việc này theo khía cạnh lý thuyết.
 Về cơ bản, ta cần tính toán rủi ro kỳ vọng mà mình sẽ gánh chịu, ví dụ, ta nhân xác suất xảy ra kết quả đó với lợi ích (hoặc hậu quả) đi liền tương ứng:
 
-$$L(\mathrm{hành động}| x) = E_{y \sim p(y| x)}[\mathrm{mất mát}(\mathrm{hành động},y)].$$
+$$L(\mathrm{\text{hành động}}| x) = E_{y \sim p(y| x)}[\mathrm{\text{mất_mát}}(\mathrm{\text{hành động}},y)].$$
 
 <!--
 Hence, the loss $L$ incurred by eating the mushroom
@@ -1289,7 +1290,7 @@ whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 -->
 
-Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{bỏ đi}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+Do đó, mất mát $L$ do ăn phải nấm là $L(a=\mathrm{ăn}| x) = 0.2 * \infty + 0.8 * 0 = \infty$, mặc dù phí tổn do bỏ nấm đi là $L(a=\mathrm{\text{bỏ đi}}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
 
 <!--
 Our caution was justified: as any mycologist would tell us,
@@ -1309,9 +1310,9 @@ Sự thận trọng của chúng ta là chính đáng: như bất kỳ nhà nghi
 Việc phân loại có thể còn phức tạp hơn nhiều so với phân loại nhị phân, đa lớp, hoặc thậm chí đa nhãn.
 Ví dụ, có vài biến thể của phân loại để xử lý vấn đề phân cấp bậc (_hierarchy_).
 Việc phân cấp giả định rằng tồn tại các mối quan hệ giữa các lớp với nhau.
-Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp liên quan thay vì một lớp khác xa nào đó.
-Thông thường, việc này được gọi là *phân loại cấp bậc (hierarchical classification)*.
-Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo hệ thống phân cấp.
+Vậy nên không phải tất cả các lỗi đều như nhau---nếu bắt buộc có lỗi, ta sẽ mong rằng các mẫu bị phân loại nhầm thành một lớp họ hàng thay vì một lớp khác xa nào đó.
+Thông thường, việc này được gọi là *phân loại cấp bậc* (*hierarchical classification*).
+Một trong những ví dụ đầu tiên về việc xây dựng hệ thống phân cấp là từ [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã sắp xếp các loại động vật theo một hệ thống phân cấp.
 
 <!--
 In the case of animal classification,
@@ -1325,7 +1326,7 @@ might be close on the phylogenetic tree,
 but mistaking a rattler for a garter could be deadly.
 -->
 
-Trong trường hợp phân loại động vật, cũng không tệ lắm nếu phân loại nhầm hai giống chó xù poodle và schnauzer, nhưng sẽ rất nghiêm trọng nếu ta nhầm lẫn chó poodle với một con khủng long.
+Trong trường hợp phân loại động vật, cũng không tệ lắm nếu phân loại nhầm hai giống chó xù poodle và schnauzer với nhau, nhưng sẽ rất nghiêm trọng nếu ta nhầm lẫn chó poodle với một con khủng long.
 Hệ phân cấp nào là phù hợp phụ thuộc vào việc ta dự định dùng mô hình như thế nào.
 Ví dụ, rắn đuôi chuông và rắn sọc không độc có thể nằm gần nhau trong cây phả hệ, nhưng phân loại nhầm hai loài này có thể dẫn tới hậu quả chết người.
 
