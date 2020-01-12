@@ -1586,6 +1586,9 @@ Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệ
 
 <!-- =================== Bắt đầu dịch Phần 20 ==================== -->
 
+
+<!-- Revise lần 2 - mục 1.3.1.6 - Bắt đầu -->
+
 <!--
 #### Sequence Learning
 -->
@@ -1765,8 +1768,10 @@ Các bài toán hội thoại gặp phải mọi loại phức tạp khác, như
 Vấn đề này đang được nhiều nhà nghiên cứu quan tâm.
 
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 22 ==================== -->
+
+<!-- Revise lần 2 - mục 1.3.1.6 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.3.2 - Bắt đầu -->
 
 <!--
 ### Unsupervised learning
@@ -1892,8 +1897,10 @@ Cùng các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra 
 Chúng tôi sẽ viết vài mục về chủ đề này sau.
 
 <!-- =================== Kết thúc dịch Phần 22 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 23 ==================== -->
+
+<!-- Revise lần 2 - mục 1.3.2 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.3.3 - Bắt đầu -->
 
 <!--
 ### Interacting with an Environment
@@ -1993,8 +2000,10 @@ Vấn đề này giống như khi chúng ta làm bài kiểm tra cho bởi giả
 Chúng ta sẽ thảo luận sơ qua về học tăng cường (*reinforcement learning*) và học đối kháng (*adversarial training*), đây là hai thiết lập đặc biệt có xét tới tương tác với môi trường.
 
 <!-- =================== Kết thúc dịch Phần 23 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 24 ==================== -->
+
+<!-- Revise lần 2 - mục 1.3.3 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.3.4 & 1.3.4.1 - Bắt đầu -->
 
 <!--
 ### Reinforcement learning
@@ -2139,7 +2148,6 @@ Cuối cùng, tại một thời điểm bất kỳ, các thuật toán học t�
 Các thuật toán học tăng cường phải luôn lựa chọn giữa việc liệu rằng tiếp tục *khai thác* chính sách tốt nhất hiện thời hay *khám phá* thêm những giải pháp khác, tức bỏ qua những điểm thưởng ngắn hạn để thu về thêm kiến thức.
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 26 ==================== -->
 
 <!--
@@ -2183,8 +2191,10 @@ Khi trạng thái không phụ thuộc vào các hành động trước đó, ta
 Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, vấn đề kinh điển này sẽ là *bài toán trộm đa nhánh* (*multi-armed bandit problem*).
 
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 27 ==================== -->
+
+<!-- Revise lần 2 - mục 1.3.4 & 1.3.4.1 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.4 - Bắt đầu -->
 
 <!--
 ## Roots
@@ -2368,8 +2378,10 @@ Với sự khan hiếm của dữ liệu và tài nguyên tính toán, các côn
 Khác với mạng nơ-ron, chúng không đòi hỏi nhiều tuần huấn luyện nhưng vẫn đưa ra những kết quả dự đoán với sự đảm bảo vững chắc về lý thuyết .
 
 <!-- =================== Kết thúc dịch Phần 28 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 29 ==================== -->
+
+<!-- Revise lần 2 - mục 1.4 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.5 - Bắt đầu -->
 
 <!--
 ## The Road to Deep Learning
@@ -2620,8 +2632,10 @@ Ví dụ, huấn luyện một mô hình hồi quy logistic tuyến tính từng
 Hiện tại, tác vụ này có thể đạt được với ít hơn 10 dòng mã, khiến việc này trở nên đơn giản với các lập trình viên.
 
 <!-- =================== Kết thúc dịch Phần 30 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 31 ==================== -->
+
+<!-- Revise lần 2 - mục 1.5 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.6 - Bắt đầu -->
 
 <!--
 ## Success Stories
@@ -2827,8 +2841,10 @@ Việc sử dụng các thuật toán này một cách cẩn thận là rất qu
 Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo lớn hơn tiềm năng hủy diệt loài người của các hệ siêu trí tuệ. 
 
 <!-- =================== Kết thúc dịch Phần 33 ==================== -->
-
 <!-- =================== Bắt đầu dịch Phần 34 ==================== -->
+
+<!-- Revise lần 2 - mục 1.6 - Kết thúc -->
+<!-- Revise lần 2 - mục 1.7, 1.8 & 1.9 - Bắt đầu -->
 
 <!--
 ## Summary
@@ -2891,6 +2907,8 @@ Vật lý? Kỹ thuật? Kinh tế lượng?
 ![](../img/qr_introduction.svg)
 
 <!-- =================== Kết thúc dịch Phần 34 ==================== -->
+
+<!-- Revise lần 2 - mục 1.7, 1.8 & 1.9 - Kết thúc -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
