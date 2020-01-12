@@ -284,7 +284,7 @@ For example, along the outermost axis of an `ndarray`, we can access or enumerat
 ## Tensors
 -->
 
-## *dịch tiêu đề phía trên*
+## Tensor
 
 <!--
 Just as vectors generalize scalars, and matrices generalize vectors, we can build data structures with even more axes. 
@@ -293,14 +293,18 @@ Vectors, for example, are first-order tensors, and matrices are second-order ten
 Tensors are denoted with capital letters of a special font face (e.g., $\mathsf{X}$, $\mathsf{Y}$, and $\mathsf{Z}$) and their indexing mechanism (e.g., $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) is similar to that of matrices.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như vector mở rộng số vô hướng và ma trận mở rộng vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
+Tensor cho chúng ta một cách đa dụng để miêu tả các `ndarray` với số trục bất kỳ.
+Ví dụ, vector là các tensor bậc một còn ma trận là các tensor bậc hai.
+Tensor được ký hiệu với ký tự viết hoa sử dụng một mặt chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
 
 <!--
 Tensors will become more important when we start working with images, which arrive as `ndarray`s with 3 axes corresponding to the height, width, and a *channel* axis for stacking the color channels (red, green, and blue). 
 For now, we will skip over higher order tensors and focus on the basics.
 -->
 
-*dịch đoạn phía trên*
+Tensor sẽ trở nên rất quan trọng khi ta bắt đầu làm việc với hình ảnh, thường được biểu diễn dưới dạng `ndarray` với 3 trục tương ứng với chiều cao, chiều rộng và một trục *kênh* (*channel*) để xếp chồng các kênh màu (đỏ, xanh lá và xanh dương).
+Tạm thời, ta sẽ bỏ qua các tensor bậc cao hơn và tập trung vào những thứ cơ bản trước. 
 
 ```{.python .input  n=9}
 X = np.arange(24).reshape(2, 3, 4)
@@ -311,7 +315,7 @@ X
 ## Basic Properties of Tensor Arithmetic
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thuộc tính cơ bản của phép toán tensor
 
 <!--
 Scalars, vectors, matrices, and tensors of an arbitrary number of axes have some nice properties that often come in handy.
@@ -320,7 +324,10 @@ Similarly, given any two tensors with the same shape, the result of any binary e
 For example, adding two matrices of the same shape performs elementwise addition over these two matrices.
 -->
 
-*dịch đoạn phía trên*
+Số vô hướng, vector, ma trận và tensor với một số trục bất kỳ có một vài thuộc tính rất hữu dụng.
+Ví dụ, bạn có thể để ý từ định nghĩa của phép toán theo thành phần (_elementwise_), bất kỳ phép toán theo thành phần một ngôi nào cũng không làm thay đổi dạng của toán hạng của nó.
+Tương tự, cho hai tensor bất kỳ có cùng dạng, kết quả của bất kỳ phép toán theo thành phần hai ngôi sẽ là một tensor có cùng dạng.
+Ví dụ, cộng hai ma trận có cùng dạng sẽ thực hiện phép cộng theo thành phần giữa hai ma trận này.  
 
 ```{.python .input}
 A = np.arange(20).reshape(5, 4)
@@ -334,7 +341,9 @@ Consider matrix $\mathbf{B} \in \mathbb{R}^{m \times n}$ whose element of row $i
 The Hadamard product of matrices $\mathbf{A}$ (defined in :eqref:`eq_matrix_def`) and $\mathbf{B}$
 -->
 
-*dịch đoạn phía trên*
+Đặc biệt, phép nhân theo thành phần của hai ma trận được gọi là *phép nhân Hadamard* (*Hadamard product* -- ký hiệu toán học là $\odot$).
+Xét ma trận $\mathbf{B} \in \mathbb{R}^{m \times n}$ có phần tử dòng $i$ và cột $j$ là $b_{ij}$.
+Phép nhân Hadamard giữa ma trận $\mathbf{A}$ (khai báo ở :eqref:`eq_matrix_def`) và $\mathbf{B}$ là
 
 $$
 \mathbf{A} \odot \mathbf{B} =
@@ -354,7 +363,7 @@ A * B
 Multiplying or adding a tensor by a scalar also does not change the shape of the tensor, where each element of the operand tensor will be added or multiplied by the scalar.
 -->
 
-*dịch đoạn phía trên*
+Nhân hoặc cộng một tensor với một số vô hướng cũng sẽ không thay đổi dạng của tensor, mỗi phần tử của tensor sẽ được cộng hoặc nhân cho số vô hướng đó.
 
 ```{.python .input}
 a = 2
