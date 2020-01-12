@@ -1422,7 +1422,7 @@ has [hosted a competition](http://bioasq.org/) to do precisely this.
 
 Ta cũng phải xử lý các vấn đề này trong nghiên cứu y sinh, ở đó việc gán thẻ cho các bài báo một cách chính xác là quan trọng bởi nó cho phép các nhà nghiên cứu tổng hợp đầy đủ các tài liệu liên quan.
 Tại Thư viện Y khoa Quốc gia, một số chuyên gia gán nhãn duyệt qua tất cả các bài báo được lưu trên PubMed để gán chúng với các thuật ngữ y khoa (_MeSH_) liên quan -- một bộ sưu tập với khoảng 28 nghìn thẻ.
-Đây là một quá trình tốn thời gian và những người gán nhãn thường bị chậm một năm kể từ khi lưu trữ cho tới lúc gán thẻ.
+Đây là một quá trình tốn thời gian và những người gán nhãn thường bị trễ một năm kể từ khi lưu trữ cho tới lúc gán thẻ.
 Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho tới khi được kiểm chứng lại một cách thủ công.
 Thực vậy, BioASQ đã [tổ chức một cuộc thi](http://bioasq.org/) dành riêng cho việc này.
 
@@ -1478,7 +1478,7 @@ There are entire academic conferences devoted to this subject.
 -->
 
 Một giải pháp khả dĩ cho bài toán này là trước tiên gán cho mỗi phần tử trong tập hợp một số điểm về sự phù hợp và sau đó trả về những phẩn tử có điểm cao nhất.
-[PageRank](https://en.wikipedia.org/wiki/PageRank), vũ khí bí mật đằng sau cỗ máy tìm kiếm của Google là một trong những ví dụ đầu tiên của hệ thống tính điểm kiểu này.
+[PageRank](https://en.wikipedia.org/wiki/PageRank), vũ khí bí mật đằng sau cỗ máy tìm kiếm của Google, là một trong những ví dụ đầu tiên của hệ thống tính điểm kiểu này.
 Tuy nhiên, điều bất thường là nó không phụ thuộc vào từ khoá tìm kiếm.
 Chúng phụ thuộc vào một bộ lọc đơn giản để xác định tập hợp các trang phù hợp rồi sau đó mới dùng PageRank để sắp xếp các kết quả có chứa cụm tìm kiếm.
 Có cả những hội thảo khoa học chuyên nghiên cứu về lĩnh vực này.
