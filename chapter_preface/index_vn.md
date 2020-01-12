@@ -1,5 +1,5 @@
 <!-- =================== Bắt đầu dịch Phần 1 ================================-->
-
+<!-- Revise lần 2 - mục 1 - Bắt đầu -->
 <!--
 # Preface
 -->
@@ -67,6 +67,9 @@ teaching you both the *concepts*, the *context*, and the *code*.
 -->
 
 Cuốn sách này được viết với mong muốn học sâu dễ tiếp cận hơn, dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
+
+<!-- Revise lần 2 - mục 1 - Kết thúc -->
+<!-- Revise lần 2 - mục 2 - Bắt đầu -->
 
 <!--
 ### One Medium Combining Code, Math, and HTML
@@ -213,8 +216,10 @@ Trong khi hệ thống này còn chưa hoàn hảo, những sự lựa chọn n�
 Chúng tôi tin rằng đây có thể là cuốn sách đầu tiên được xuất bản dưới dạng kết hợp này.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
-
 <!-- =================== Bắt đầu dịch Phần 3 ================================-->
+
+<!-- Revise lần 2 - mục 2 - Kết thúc -->
+<!-- Revise lần 2 - mục 3 - Bắt đầu -->
 
 <!--
 ### Learning by Doing
@@ -318,8 +323,10 @@ Trong những trường hợp này, chúng tôi sẽ thường trình bày hai p
 Một khi chúng tôi đã dạy bạn cách một số thành phần hoạt động cụ thể như thế nào, chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
-
 <!-- =================== Bắt đầu dịch Phần 4 ================================-->
+
+<!-- Revise lần 2 - mục 3 - Kết thúc -->
+<!-- Revise lần 2 - mục 4 - Bắt đầu -->
 
 <!--
 ### Content and Structure
@@ -401,9 +408,12 @@ and natural language processing, respectively.
 Đầu tiên, trong :numref:`chap_optimization`, chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
 Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến chất lượng tính toán của mã nguồn học sâu.
 Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
-<!-- =================== Kết thúc dịch Phần 4 ================================-->
 
+<!-- =================== Kết thúc dịch Phần 4 ================================-->
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
+
+<!-- Revise lần 2 - mục 4 - Kết thúc -->
+<!-- Revise lần 2 - mục 5 - Bắt đầu -->
 
 <!--
 ### Code
@@ -499,8 +509,10 @@ We offer a detailed overview of these functions and classes in :numref:`sec_d2l`
 Chúng tôi có một bản tổng quan chi tiết về những hàm và lớp này trong :numref:`sec_d2l`.
 
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
-
 <!-- =================== Bắt đầu dịch Phần 6 ================================-->
+
+<!-- Revise lần 2 - mục 5 - Kết thúc -->
+<!-- Revise lần 2 - mục 6 - Bắt đầu -->
 
 <!--
 ### Target Audience
@@ -655,6 +667,7 @@ Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng ngh
 ![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
+<!-- Revise lần 2 - mục 6 - Kết thúc -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
