@@ -146,7 +146,7 @@ Trong kí hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{
 As with an ordinary Python array, we can access the length of an `ndarray` by calling Python's built-in `len()` function.
 -->
 
-Cũng giống như một dãy thông thường trong Python, chúng ta có thể xem độ dài của của một `ndarray` bằng cách gọi hàm `len()` có sẵn theo Python. 
+Cũng giống như một dãy thông thường trong Python, chúng ta có thể xem độ dài của của một `ndarray` bằng cách gọi hàm `len()` có sẵn của Python. 
 
 ```{.python .input  n=4}
 len(x)
