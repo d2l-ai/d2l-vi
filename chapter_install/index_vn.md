@@ -1,5 +1,5 @@
 <!-- =================== Bắt đầu dịch Phần 1 ================================-->
-<!-- Revise lần 2 - mục 1 - Bắt đầu -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU ===================================>
 <!--
 # Installation
 -->
@@ -193,8 +193,9 @@ Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn s
 Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
 Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
-<!-- Revise lần 2 - mục 1 - Kết thúc -->
-<!-- Revise lần 2 - mục 2 - Bắt đầu -->
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================>
 
 <!--
 ## Upgrading to a New Version
@@ -310,7 +311,8 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 ![](../img/qr_install.svg)
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
-<!-- Revise lần 2 - mục 2 - Kết thúc -->
+
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================>
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
