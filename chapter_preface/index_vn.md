@@ -1,5 +1,5 @@
 <!-- =================== Bắt đầu dịch Phần 1 ================================-->
-
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU ===================================>
 <!--
 # Preface
 -->
@@ -67,6 +67,10 @@ teaching you both the *concepts*, the *context*, and the *code*.
 -->
 
 Cuốn sách này được viết với mong muốn học sâu dễ tiếp cận hơn, dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================>
 
 <!--
 ### One Medium Combining Code, Math, and HTML
@@ -216,6 +220,10 @@ Chúng tôi tin rằng đây có thể là cuốn sách đầu tiên được xu
 
 <!-- =================== Bắt đầu dịch Phần 3 ================================-->
 
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================>
+
 <!--
 ### Learning by Doing
 -->
@@ -318,8 +326,11 @@ Trong những trường hợp này, chúng tôi sẽ thường trình bày hai p
 Một khi chúng tôi đã dạy bạn cách một số thành phần hoạt động cụ thể như thế nào, chúng tôi có thể chỉ sử dụng phiên bản Gluon trong những hướng dẫn tiếp theo.
 
 <!-- =================== Kết thúc dịch Phần 3 ================================-->
-
 <!-- =================== Bắt đầu dịch Phần 4 ================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================>
 
 <!--
 ### Content and Structure
@@ -401,9 +412,13 @@ and natural language processing, respectively.
 Đầu tiên, trong :numref:`chap_optimization`, chúng tôi bàn luận một số thuật toán tối ưu phổ biến được sử dụng để huấn luyện các mô hình học sâu.
 Chương tiếp theo, :numref:`chap_performance` khảo sát những yếu tố chính ảnh hưởng đến chất lượng tính toán của mã nguồn học sâu.
 Trong :numref:`chap_cv` và :numref:`chap_nlp`, chúng tôi minh họa lần lượt những ứng dụng chính của học sâu trong thị giác máy tính và xử lý ngôn ngữ tự nhiên.
-<!-- =================== Kết thúc dịch Phần 4 ================================-->
 
+<!-- =================== Kết thúc dịch Phần 4 ================================-->
 <!-- =================== Bắt đầu dịch Phần 5 ================================-->
+
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================>
 
 <!--
 ### Code
@@ -501,6 +516,10 @@ Chúng tôi có một bản tổng quan chi tiết về những hàm và lớp n
 <!-- =================== Kết thúc dịch Phần 5 ================================-->
 
 <!-- =================== Bắt đầu dịch Phần 6 ================================-->
+
+<!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================>
+
+<!-- ========================================= REVISE PHẦN 6 - BẮT ĐẦU ===================================>
 
 <!--
 ### Target Audience
@@ -655,6 +674,7 @@ Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng ngh
 ![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
+<!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================>
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
