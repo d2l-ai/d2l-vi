@@ -1610,9 +1610,9 @@ into the model to generate an output,
 the model immediately forgets what it just saw.
 -->
 
-Cho tới hiện tại, chúng ta đã gặp các bài toán mà ở đó mô hình nhận đầu vào với kích thước cố định và đưa ra kết quả cũng với kích thước cố định.
+Cho tới giờ, chúng ta đã gặp các bài toán mà ở đó mô hình nhận đầu vào với kích thước cố định và đưa ra kết quả cũng với kích thước cố định.
 Trước đây chúng ta xem xét dự đoán giá nhà từ một tập các đặc trưng cố định: diện tích, số phòng ngủ, số phòng tắm và thời gian đi bộ tới trung tâm thành phố.
-Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao xếp loại.
+Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao đánh giá.
 Trong những trường hợp này, một khi chúng ta đưa cho mô hình một đầu vào có độ dài cố định để dự đoán một đầu ra, mô hình ngay lập tức "quên" dữ liệu nó vừa thấy.
 
 <!--
@@ -1627,9 +1627,9 @@ is machine translation: the task of ingesting sentences
 in some source language and predicting their translation in another language.
 -->
 
-Việc này không ảnh hưởng nhiều nếu đầu vào của mô hình thật sự có cùng kích thước và nếu các đầu vào liên tiếp thật sự không liên quan đến nhau.
-Tuy nhiên chúng ta sẽ xử lý các video như thế nào khi chúng có thể có số lượng khung hình khác nhau?
-Sự thật là dự đoán của chúng ta về việc gì đang xảy ra ở mỗi khung hình sẽ chính xác hơn nếu quan sát thêm các khung hình kề nó.
+Việc này không ảnh hưởng nhiều nếu mọi đầu vào đều có cùng kích thước và nếu các đầu vào liên tiếp thật sự không liên quan đến nhau.
+Nhưng ta sẽ xử lý các đoạn video như thế nào khi mỗi đoạn có thể có số lượng khung hình khác nhau?
+Và dự đoán của chúng ta về việc gì đang xảy ra ở mỗi khung hình có thể sẽ chính xác hơn nếu ta xem xét cả các khung hình kề nó.
 Hiện tượng tương tự xảy ra trong ngôn ngữ.
 Một bài toán học sâu phổ biến là dịch máy (_machine translation_): tác vụ lấy đầu vào là các câu trong một ngôn ngữ nguồn và trả về bản dịch của chúng ở một ngôn ngữ khác.
 
@@ -1644,8 +1644,8 @@ and just make its predictions based on the most recent measurements.
 -->
 
 Các bài toán này cũng xảy ra trong y khoa.
-Với một mô hình theo dõi bệnh nhân trong chế độ đặc biệt, ta có thể mong muốn nó đưa ra cảnh báo nếu nguy cơ tử vong trong 24 giờ tới vượt một ngưỡng nào đó.
-Dĩ nhiên, ta chắc chắn không muốn mô mình này bỏ qua mọi lịch sử bệnh lý và chỉ đưa ra dự đoán dựa trên các thông số gần nhất.
+Với một mô hình theo dõi bệnh nhân trong phòng hồi sức tích cực, ta có thể muốn nó đưa ra cảnh báo nếu nguy cơ tử vong của họ trong 24 giờ tới vượt một ngưỡng nào đó.
+Dĩ nhiên, ta chắc chắn không muốn mô mình này vứt bỏ mọi số liệu trong quá khứ và chỉ đưa ra dự đoán dựa trên các thông số mới nhất.
 
 <!--
 These problems are among the most exciting applications of machine learning
@@ -1659,11 +1659,11 @@ a number of special cases are worth mentioning:
 -->
 
 Những bài toán này nằm trong những ứng dụng thú vị nhất của học máy và chúng là các ví dụ của *học chuỗi*.
-Chúng đòi hỏi một mô hình có khả năng lấy một chuỗi các đầu vào hoặc đưa ra một chuỗi các đầu ra (hoặc cả hai!).
-Những bài toán này này đôi khi được gọi là ``seq2seq``.
+Chúng đòi hỏi một mô hình có khả năng nhận các chuỗi đầu vào hoặc dự đoán các chuỗi đầu ra. 
+Thậm chí có mô hình phải thỏa mãn cả hai tiêu chí đó, và những bài toán sử dụng nó đôi khi được gọi là ``seq2seq``.
 Dịch ngôn ngữ là một bài toán ``seq2seq``.
-Phiên thoại từ một bài nói thành chữ cũng là một bài toán ``seq2seq``.
-Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, một vài trường hợp đặc biệt rất đáng được lưu tâm:
+Chuyển một bài nói về dạng văn bản cũng là một bài toán ``seq2seq``.
+Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, có một vài trường hợp đặc biệt đáng được lưu tâm:
 
 <!-- =================== Kết thúc dịch Phần 20 ==================== -->
 
@@ -1682,13 +1682,13 @@ with tags indicating which words refer to named entities.
 -->
 
 **Gán thẻ và Phân tích cú pháp**.
-Đây là bài toán gán chú thích cho chuỗi các từ.
+Đây là bài toán chú thích cho một chuỗi văn bản.
 Nói cách khác, số lượng đầu vào và đầu ra là như nhau.
 Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ngữ.
-Hoặc ta cũng có thể muốn biết từ nào là danh từ riêng.
-Mục đích nói chung là phân tích và chú thích các từ dựa trên các giả sử về cấu trúc và ngữ pháp.
-Việc này nghe có vẻ phức tạp hơn vẻ bề ngoài của nó.
-Dưới đây là một ví dụ đơn giản về việc chú thích một câu với thẻ để chỉ ra từ nào là các danh từ riêng (Ent).
+Hoặc ta cũng có thể muốn biết từ nào là thực thể có tên.
+Mục tiêu tổng quát là phân tích và chú thích văn bản dựa trên các giả định về cấu trúc và ngữ pháp.
+Việc này nghe có vẻ phức tạp hơn thực tế.
+Dưới đây là một ví dụ rất đơn giản về việc chú thích một câu bằng các thẻ đánh dấu thực thể có tên.
 
 ```text
 Tom has dinner in Washington with Sally.
@@ -1707,8 +1707,8 @@ since thousands of samples correspond to a single spoken word.
 These are ``seq2seq`` problems where the output is much shorter than the input.
 -->
 
-**Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm của một người (:numref:`fig_speech`) và đầu ra $y$ là một đoạn chữ ghi lại những gì người đó nói.
-Thử thách ở đây là việc có rất nhiều các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) hơn so với chữ, nghĩa là không có một phép ánh xạ 1:1 nào giữa âm thanh và chữ viết, bởi vì một tiếng nói có thể tương ứng với hàng ngàn mẫu âm thanh.
+**Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm giọng nói của một người (:numref:`fig_speech`) và đầu ra $y$ là một văn bản ghi lại những gì người đó nói.
+Thử thách ở đây là việc số lượng các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) nhiều hơn hẳn so với văn bản, nghĩa là không tồn tại một phép ánh xạ 1:1 nào giữa âm thanh và văn bản, bởi một từ có thể tương ứng với hàng ngàn mẫu âm thanh.
 Có các bài toán ``seq2seq`` mà đầu ra ngắn hơn rất nhiều so với đầu vào.
 
 ![`-D-e-e-p- L-ea-r-ni-ng-`](../img/speech.png)
@@ -1724,9 +1724,9 @@ While it is easy for *humans* to recognize a bad audio file,
 this is not quite so trivial for computers.
 -->
 
-**Chữ ra Tiếng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của nhận dạng tiếng nói.
-Nói cách khác, đầu vào $\mathbf{x}$ là chữ và đầu ra $y$ là tệp tin âm thanh.
-Trong trường hợp này, đầu ra *dài hơn nhiều* so với đầu vào.
+**Chuyển văn bản thành giọng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của bài toán nhận dạng giọng nói nói.
+Nói cách khác, đầu vào $\mathbf{x}$ là văn bản và đầu ra $y$ là tệp tin âm thanh.
+Trong trường hợp này, đầu ra *dài hơn rất nhiều* so với đầu vào.
 Việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người* nhưng lại không hề đơn giản với máy tính.
 
 <!--
@@ -1741,9 +1741,9 @@ of the peculiar tendency of Germans
 to place the verbs at the end of sentences.
 -->
 
-**Dịch máy**. Không giống trường hợp nhận dạng tiếng nói, ở đó các đầu vào và đầu ra tương ứng xuất hiện theo cùng thứ tự (sau khi căn chỉnh), việc đảo trật tự trong dịch máy có thể rất quan trọng.
-Nói cách khác, trong khi chúng ta vẫn chuyển đổi từ chuỗi này sang chuỗi khác, ta không thể giả định số lượng đầu vào và đầu ra cũng như thứ tự của các cặp là như nhau.
-Xét ví dụ dưới đây về việc động từ được đặt ở cuối câu trong tiếng Đức.
+**Dịch máy**. Khác với nhận dạng giọng nói, khi các đầu vào và đầu ra tương ứng có cùng thứ tự (sau khi căn chỉnh), trong dịch máy việc đảo thứ tự lại có thể rất quan trọng.
+Nói cách khác, ta vẫn chuyển đổi từ chuỗi này sang chuỗi khác, nhưng ta không thể giả định số lượng đầu vào và đầu ra cũng như thứ tự của các điểm dữ liệu tương ứng là giống nhau.
+Xét ví dụ minh họa dưới đây về việc động từ được đặt một cách kì lạ ở cuối câu trong tiếng Đức.
 
 ```text
 Tiếng Đức:           Haben Sie sich schon dieses grossartige Lehrwerk angeschaut?
@@ -1763,9 +1763,9 @@ across long temporal distances. This is an active area of research.
 -->
 
 Rất nhiều bài toán liên quan xuất hiện trong các tác vụ học khác.
-Ví dụ, xác định thứ tự ở đó một người dùng đọc một trang mạng là một bài toán phân tích sắp xếp bố cục hai chiều.
-Các bài toán hội thoại gặp phải mọi loại phức tạp khác, như việc xác định câu nói tiếp theo đòi hỏi kiến thức thực tế cũng như trạng thái trước đó của cuộc hội thoại trong một khoảng thời gian dài.
-Vấn đề này đang được nhiều nhà nghiên cứu quan tâm.
+Chẳng hạn, xác định thứ tự người dùng đọc một trang mạng là một bài toán phân tích bố cục hai chiều.
+Các bài toán hội thoại thì chứa đủ các loại vấn đề phức tạp khác, như việc xác định câu nói tiếp theo đòi hỏi kiến thức thực tế cũng như trạng thái rất lâu trước đó của cuộc hội thoại.
+Đây là một lĩnh vực nghiên cứu đang phát triển.
 
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
 
