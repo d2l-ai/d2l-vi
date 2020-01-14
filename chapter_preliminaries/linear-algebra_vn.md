@@ -13,7 +13,7 @@ Below, we introduce the basic mathematical objects, arithmetic, and operations i
 -->
 
 Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng nhanh chóng ôn lại những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
-Dưới đây chúng ta giới thiệu các đối tượng toán học, số học, phép tính trong đại số tuyến tính, biểu diễn chúng dưới ký hiệu toán học và mã nguồn. 
+Dưới đây, chúng ta giới thiệu các đối tượng toán học, số học, phép tính trong đại số tuyến tính, biểu diễn chúng dưới ký hiệu toán học và mã nguồn. 
 
 
 <!--
@@ -51,7 +51,7 @@ Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are nu
 Trong quyển sách này, chúng ta sẽ theo quy ước kí hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
 Chúng ta kí hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
 Vì tính thiết thực, chúng ta sẽ bỏ qua việc định nghĩa chặt chẽ *không gian* là gì, bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách nói chính quy rằng $x$ là một số thực vô hướng.
-Kí hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ phần tử trong một tập hợp.
+Kí hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ của phần tử trong một tập hợp.
 Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để kí hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
@@ -60,7 +60,7 @@ In the next snippet, we instantiate two scalars and perform some familiar arithm
 -->
 
 Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng `ndarray` với chỉ một phần tử.
-Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính cộng, trừ, nhân, chia, luỹ thừa quen thuộc với chúng.
+Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính cộng, trừ, nhân, chia, lũy thừa quen thuộc với chúng.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
