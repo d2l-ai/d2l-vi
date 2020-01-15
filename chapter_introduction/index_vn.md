@@ -1612,7 +1612,7 @@ the model immediately forgets what it just saw.
 
 Cho tới giờ, chúng ta đã gặp các bài toán mà ở đó mô hình nhận đầu vào với kích thước cố định và đưa ra kết quả cũng với kích thước cố định.
 Trước đây chúng ta xem xét dự đoán giá nhà từ một tập các đặc trưng cố định: diện tích, số phòng ngủ, số phòng tắm và thời gian đi bộ tới trung tâm thành phố.
-Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một số lượng lớp cố định, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao đánh giá.
+Ta cũng đã thảo luận cách ánh xạ từ một bức ảnh (với kích thước cố định) tới các dự đoán xác suất nó thuộc vào một tập cố định các lớp, hoặc lấy một mã người dùng và mã sản phẩm để dự đoán số sao đánh giá.
 Trong những trường hợp này, một khi chúng ta đưa cho mô hình một đầu vào có độ dài cố định để dự đoán một đầu ra, mô hình ngay lập tức "quên" dữ liệu nó vừa thấy.
 
 <!--
@@ -1659,8 +1659,8 @@ a number of special cases are worth mentioning:
 -->
 
 Những bài toán này nằm trong những ứng dụng thú vị nhất của học máy và chúng là các ví dụ của *học chuỗi*.
-Chúng đòi hỏi một mô hình có khả năng nhận các chuỗi đầu vào hoặc dự đoán các chuỗi đầu ra. 
-Thậm chí có mô hình phải thỏa mãn cả hai tiêu chí đó, và những bài toán sử dụng nó đôi khi được gọi là ``seq2seq``.
+Chúng đòi hỏi một mô hình có khả năng nhận chuỗi các đầu vào hoặc dự đoán chuỗi các đầu ra. 
+Thậm chí có mô hình phải thỏa mãn cả hai tiêu chí đó, và những bài toán có cấu trúc như vậy còn được gọi là ``seq2seq`` (*sequence to sequence: chuỗi sang chuỗi*).
 Dịch ngôn ngữ là một bài toán ``seq2seq``.
 Chuyển một bài nói về dạng văn bản cũng là một bài toán ``seq2seq``.
 Mặc dù không thể xét hết mọi dạng của biến đổi chuỗi, có một vài trường hợp đặc biệt đáng được lưu tâm:
@@ -1685,10 +1685,10 @@ with tags indicating which words refer to named entities.
 Đây là bài toán chú thích cho một chuỗi văn bản.
 Nói cách khác, số lượng đầu vào và đầu ra là như nhau.
 Ví dụ, ta có thể muốn biết vị trí của động từ và chủ ngữ.
-Hoặc ta cũng có thể muốn biết từ nào là thực thể có tên.
+Hoặc ta cũng có thể muốn biết từ nào là danh từ riêng.
 Mục tiêu tổng quát là phân tích và chú thích văn bản dựa trên các giả định về cấu trúc và ngữ pháp.
 Việc này nghe có vẻ phức tạp hơn thực tế.
-Dưới đây là một ví dụ rất đơn giản về việc chú thích một câu bằng các thẻ đánh dấu thực thể có tên.
+Dưới đây là một ví dụ rất đơn giản về việc chú thích một câu bằng các thẻ đánh dấu danh từ riêng.
 
 ```text
 Tom has dinner in Washington with Sally.
@@ -1724,7 +1724,7 @@ While it is easy for *humans* to recognize a bad audio file,
 this is not quite so trivial for computers.
 -->
 
-**Chuyển văn bản thành giọng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của bài toán nhận dạng giọng nói nói.
+**Chuyển văn bản thành giọng nói** (_Text-to-Speech_ hay TTS) là bài toán ngược của bài toán nhận dạng giọng nói.
 Nói cách khác, đầu vào $\mathbf{x}$ là văn bản và đầu ra $y$ là tệp tin âm thanh.
 Trong trường hợp này, đầu ra *dài hơn rất nhiều* so với đầu vào.
 Việc nhận dạng các tệp tin âm thanh chất lượng kém không khó với *con người* nhưng lại không hề đơn giản với máy tính.
@@ -1764,7 +1764,7 @@ across long temporal distances. This is an active area of research.
 
 Rất nhiều bài toán liên quan xuất hiện trong các tác vụ học khác.
 Chẳng hạn, xác định thứ tự người dùng đọc một trang mạng là một bài toán phân tích bố cục hai chiều.
-Các bài toán hội thoại thì chứa đủ các loại vấn đề phức tạp khác, như việc xác định câu nói tiếp theo đòi hỏi kiến thức thực tế cũng như trạng thái rất lâu trước đó của cuộc hội thoại.
+Các bài toán hội thoại thì chứa đủ các loại vấn đề phức tạp khác, như việc xác định câu nói tiếp theo đòi hỏi kiến thức thực tế cũng như trạng thái trước đó rất lâu của cuộc hội thoại.
 Đây là một lĩnh vực nghiên cứu đang phát triển.
 
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
