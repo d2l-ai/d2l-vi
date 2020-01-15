@@ -293,8 +293,8 @@ Vectors, for example, are first-order tensors, and matrices are second-order ten
 Tensors are denoted with capital letters of a special font face (e.g., $\mathsf{X}$, $\mathsf{Y}$, and $\mathsf{Z}$) and their indexing mechanism (e.g., $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) is similar to that of matrices.
 -->
 
-Cũng giống như vector mở rộng số vô hướng và ma trận mở rộng vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
-Tensor cho chúng ta một cách đa dụng để miêu tả các `ndarray` với số trục bất kỳ.
+Cũng giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
+Tensor cho chúng ta một phương pháp tổng quát để miêu tả các `ndarray` với số trục bất kỳ.
 Ví dụ, vector là các tensor bậc một còn ma trận là các tensor bậc hai.
 Tensor được ký hiệu với ký tự viết hoa sử dụng một mặt chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
 
