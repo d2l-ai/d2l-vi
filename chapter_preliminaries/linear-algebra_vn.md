@@ -158,8 +158,8 @@ The shape is a tuple that lists the length (dimensionality) along each axis of t
 For `ndarray`s with just one axis, the shape has just one element.
 -->
 
-Khi một `ndarray` biễu diễn một vector (với chính xác một trục), ta cũng có thể xem độ dài của nó qua thuộc tính `.shape` (hình dạng).
-Hình dạng là một cặp (*tuple*) liệt kê độ dài (số chiều) dọc theo mỗi trục của `ndarray`.
+Khi một `ndarray` biễu diễn một vector (với chính xác một trục), ta cũng có thể xem độ dài của nó qua thuộc tính `.shape` (kích thước).
+Kích thước là một `tuple` liệt kê độ dài (số chiều) dọc theo mỗi trục của `ndarray`.
 Với các `ndarray` có duy nhất một trục, kích thước của nó chỉ có một phần tử.
 
 ```{.python .input  n=5}
