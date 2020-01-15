@@ -1708,7 +1708,7 @@ These are ``seq2seq`` problems where the output is much shorter than the input.
 -->
 
 **Tự động nhận dạng giọng nói**. Với nhận dạng giọng nói, chuỗi đầu vào $\mathbf{x}$ là một bản thu âm giọng nói của một người (:numref:`fig_speech`) và đầu ra $y$ là một văn bản ghi lại những gì người đó nói.
-Thử thách ở đây là việc số lượng các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) nhiều hơn hẳn so với văn bản, nghĩa là không tồn tại một phép ánh xạ 1:1 nào giữa âm thanh và văn bản, bởi một từ có thể tương ứng với hàng ngàn mẫu âm thanh.
+Thử thách ở đây là việc số lượng các khung âm thanh (âm thanh thường được lấy mẫu ở 8kHz or 16kHz) nhiều hơn hẳn so với số lượng từ, nghĩa là không tồn tại một phép ánh xạ 1:1 nào giữa các khung âm thanh và các từ, bởi một từ có thể tương ứng với hàng ngàn mẫu âm thanh.
 Có các bài toán ``seq2seq`` mà đầu ra ngắn hơn rất nhiều so với đầu vào.
 
 ![`-D-e-e-p- L-ea-r-ni-ng-`](../img/speech.png)
