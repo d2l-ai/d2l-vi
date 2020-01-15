@@ -970,8 +970,8 @@ to the full table containing all of the feature vectors as $X$.
 
 Nếu bạn sống ở New York hoặc San Francisco và bạn không phải là CEO của Amazon, Google, Microsoft hay Facebook, thì vector đặc trưng (diện tích, số phòng ngủ, số phòng tắm, khoảng cách đi bộ) của căn nhà của bạn có thể có dạng $[100, 0, 0.5, 60]$.
 Tuy nhiên, nếu bạn sống ở Pittsburgh, vector đó có thể là $[3000, 4, 3, 10]$.
-Vector đặc trưng là thiết yếu trong hầu hết các thuật toán học máy cổ điển.
-Chúng ta sẽ tiếp tục ký hiệu vector đặc trưng tương ứng với bất ký mẫu $i$ nào bởi $\mathbf{x}_i$ và có thể đặt $X$ là toàn bộ bảng chứa tất cả các vector đặc trưng.
+Các vector đặc trưng như vậy là thiết yếu trong hầu hết các thuật toán học máy cổ điển.
+Chúng ta sẽ tiếp tục ký hiệu vector đặc trưng tương ứng với bất ký mẫu $i$ nào bởi $\mathbf{x}_i$ và có thể đặt $X$ là bảng chứa tất cả các vector đặc trưng.
 
 <!--
 What makes a problem a *regression* is actually the outputs.
@@ -991,10 +991,11 @@ our outputs and targets as real-valued numbers.
 
 Để xác định một bài toán là *hồi quy* hay không, ta dựa vào đầu ra của nó.
 Chẳng hạn, bạn đang khảo sát thị trường cho một căn nhà mới.
-Bạn có thể ước lượng giá thị trường của một căn nhà khi biết trước những đặc trưng phía trên. Giá trị mục tiêu, hay giá bán của căn nhà, là một *số thực*.
-Nếu bạn còn nhớ định nghĩa toán học của số thực, bạn có thể băn khoăn.
-Nhà đất có lẽ không bao giờ bán với giá lẻ tới từng cent chứ đừng nói đến nhỏ hơn cent (các số vô tỉ).
-Trong trường hợp này, khi mục tiêu thực sự là các số rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu như các số thực.
+Bạn có thể ước lượng giá thị trường của một căn nhà khi biết những đặc trưng phía trên. 
+Giá trị mục tiêu, hay giá bán của căn nhà, là một *số thực*.
+Nếu bạn còn nhớ định nghĩa toán học của số thực, bạn có thể đang cảm thấy băn khoăn.
+Nhà đất có lẽ không bao giờ bán với giá được tính bằng các phần nhỏ hơn cent, chứ đừng nói đến việc giá bán được biểu diễn bằng các số vô tỉ.
+Trong những trường hợp này, khi mục tiêu thực sự là các số rời rạc, nhưng việc làm tròn có thể chấp nhận được, chúng ta sẽ lạm dụng cách dùng từ một chút để tiếp tục mô tả đầu ra và mục tiêu là các số thực.
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
@@ -1014,12 +1015,12 @@ Do not worry if the notation is bogging you down.
 We will unpack it more thoroughly in the subsequent chapters.
 -->
 
-Ký hiệu mục tiêu là $y_i$ (tương ứng với mẫu $\mathbf{x_i}$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
-Khi các mục tiêu lấy các giá trị bất kỳ trong một khoảng, chúng ta gọi đây là bài toán hồi quy.
-Mục đích của chúng ta là tạo ra một mô hình mà các giá trị dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. Chúng ta ký hiệu mục tiêu dự đoán của một mẫu là $\hat{y}_i$.
-Đừng quá lo lắng nếu có quá nhiều ký hiệu.
-Chúng ta sẽ tìm hiểu kỹ từng kỳ hiệu trong các chương tiếp theo.
-
+Ta ký hiệu mục tiêu bất kỳ là $y_i$ (tương ứng với mẫu $\mathbf{x}_i$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
+Khi các mục tiêu mang các giá trị bất kỳ trong một khoảng nào đó, chúng ta gọi đây là bài toán hồi quy.
+Mục đích của chúng ta là tạo ra một mô hình mà các dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. 
+Chúng ta ký hiệu dự đoán mục tiêu của một mẫu là $\hat{y}_i$.
+Đừng quá lo lắng nếu các ký hiệu đang làm bạn nản chí.
+Chúng ta sẽ tìm hiểu kỹ từng ký hiệu trong các chương tiếp theo.
 
 <!--
 Lots of practical problems are well-described regression problems.
@@ -1033,10 +1034,10 @@ A good rule of thumb is that any *How much?* or *How many?* problem
 should suggest regression.
 -->
 
-Rất nhiều bài toán thực tế có thể được mô tả thông qua các bài toán hồi quy.
-Dự đoán điểm số một người dùng gán cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán tốt để đạt được điều này năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
+Rất nhiều bài toán thực tế là các bài toán hồi quy.
+Dự đoán điểm đánh giá của một người dùng cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán vĩ đại để đạt được điều này vào năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
 Dự đoán thời gian nằm viện của một bệnh nhân cũng là một bài toán hồi quy.
-Một quy tắc dễ nhớ là các bài toán mà ta phải trả lời cho câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.) có thể được coi là các bài toán hồi quy.
+Một quy tắc dễ nhớ là khi ta phải trả lời câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.), khá chắc chắn đó là bài toán hồi quy.
 
 <!--
 * "How many hours will this surgery take?": *regression*
@@ -1072,14 +1073,14 @@ the high-level idea behind linear regression
 (and you just implicitly designed a linear model with a bias term).
 -->
 
-Tuy nhiên, nếu bạn có thể biến bài toán của bạn thành "Có đúng là \_?" thì khả năng cao đó là bài toán phân loại, một dạng khác của bài toán học có giám sát mà chúng ta thảo luận trong phần tiếp.
+Tuy nhiên, nếu bạn có thể diễn đạt bài toán của bạn bằng câu hỏi "Đây có phải là \_?" thì khả năng cao đó là bài toán phân loại, một dạng khác của bài toán học có giám sát mà chúng ta sẽ thảo luận trong phần tiếp theo.
 Ngay cả khi bạn chưa từng làm việc với học máy, bạn có thể đã làm việc với các bài toán hồi quy một cách không chính thức.
 Ví dụ, hãy tưởng tượng bạn cần sửa chữa đường ống cống và người thợ đã dành $x_1=3$ giờ để thông cống rồi gửi hoá đơn $y_1 = \$350$.
-Bây giờ bạn của bạn thuê cùng người thợ trong $x_2 = 2$ tiếng và cô ấy nhận được hoá đơn là $y_2 = \$250$.
-Nếu một người sau đó hỏi bạn dự tính giá phải trả để thông cống, bạn có thể có một vài giả sử có lý, chẳng hạn nhiều thời gian sẽ tốn nhiều tiền hơn.
+Bây giờ bạn của bạn thuê cũng thuê người thợ đó trong $x_2 = 2$ tiếng và cô ấy nhận được hoá đơn là $y_2 = \$250$.
+Nếu một người khác sau đó hỏi bạn giá dự tính phải trả cho việc thông cống, bạn có thể có một vài giả sử có lý, chẳng hạn như mất nhiều thời gian sẽ tốn nhiều tiền hơn.
 Bạn cũng có thể giả sử rằng có một mức phí cơ bản và sau đó người thợ tính tiền theo giờ.
-Nếu giả sử này là đúng, thì cho trước hai điểm dữ liệu, bạn đã có thể tính được cách mà người thợ xây dựng bảng giá: \$100 một giờ cộng với \$50 cho việc tới nhà bạn.
-Nếu bạn theo được logic tới đây thì bạn đã có thể hiểu ý tưởng sơ lược đằng sau hồi quy tuyến tính (và bạn vô tình đã thiết kế một mô hình tuyến tính với thành phần điều chỉnh).
+Nếu giả sử này là đúng, thì với hai điểm dữ liệu trên, bạn đã có thể tính được cách mà người thợ tính tiền công: \$100 cho mỗi giờ cộng với \$50 để có mặt tại nhà bạn.
+Nếu bạn theo được logic tới đây thì bạn đã hiểu ý tưởng tổng quan của hồi quy tuyến tính (và bạn đã vô tình thiết kế một mô hình tuyến tính với thành phần điều chỉnh).
 <!-- Lưu ý rằng bias này có ý nghĩa khác với bias trong "bias-variance trade off. Bias này là đại lượng thường được thêm vào công thức của các quan hệ tuyến tính để điều chỉnh giá trị. Nó cũng chính là số hạng tự do mà chúng ta thường dùng trong chương trình phổ thông. Mọi người có thể thảo luận cách dịch. Mình sẽ xoá dòng này sau khi thảo luận xong.-->
 
 
@@ -1099,9 +1100,9 @@ the [L1 loss](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet
 where
 -->
 
-Trong trường hợp này, chúng ta có thể tìm được các tham số chính xác cho mô hình ước tính chi phí của người thợ sửa ống cống.
+Trong trường hợp này, chúng ta có thể tìm được các tham số sao cho mô hình ước tính chính xác được chi phí người thợ sửa ống cống đưa ra.
 Đôi khi việc này là không khả thi, ví dụ một biến thể nào đó gây ra bởi các yếu tố ngoài hai đặc trưng kể trên.
-Trong những trường hợp này, ta sẽ cố học các mô hình sao cho nó tối thiểu hoá khoảng cách giữa các giá trị dự đoán và các giá trị thực sự.
+Trong những trường hợp này, ta sẽ cố học các mô hình sao cho khoảng cách giữa các giá trị dự đoán và các giá trị thực sự được tối thiểu hoá.
 Trong hầu hết các chương, chúng ta sẽ tập trong vào một trong hai hàm mất mát phổ biến nhất: hàm [mất mát L1](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L1Loss), ở đó
 
 $$l(y, y') = \sum_i |y_i-y_i'|$$
@@ -1123,8 +1124,7 @@ whereas the $L_1$ loss corresponds to an assumption
 of noise from a Laplace distribution.
 -->
 
-Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss,
-trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
+Như chúng ta sẽ thấy về sau, mất mát $L_2$ tương ứng với giả sử rằng dữ liệu của chúng ta có nhiễu Gauss, trong khi mất mát $L_1$ tương ứng với giả sử nhiễu đến từ một phân phối Laplace.
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
