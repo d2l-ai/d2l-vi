@@ -184,7 +184,7 @@ Just as vectors generalize scalars from order $0$ to order $1$, matrices general
 Matrices, which we will typically denote with bold-faced, capital letters (e.g., $\mathbf{X}$, $\mathbf{Y}$, and $\mathbf{Z}$), are represented in code as `ndarray`s with $2$ axes.
 -->
 
-Cũng giống như vector mở rộng số vô hướng từ bậc $0$ sang bậc $1$, ma trận mở rộng vector từ bậc $1$ sang bậc $2$.
+Cũng giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận khái quát vector từ bậc $1$ sang bậc $2$.
 Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$).
 Ma trận được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
 
@@ -193,7 +193,7 @@ In math notation, we use $\mathbf{A} \in \mathbb{R}^{m \times n}$ to express tha
 Visually, we can illustrate any matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ as a table, where each element $a_{ij}$ belongs to the $i^{\mathrm{th}}$ row and $j^{\mathrm{th}}$ column:
 -->
 
-Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ $m$ dòng và $n$ cột chứa các giá trị số thực.
+Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ $m$ hàng và $n$ cột các giá trị số thực.
 Về mặt hình ảnh, ta có thể minh họa bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ như một bảng biểu mà mỗi phần tử $a_{ij}$ nằm ở dòng thứ $i$ và cột thứ $j$ của bảng:   
 
 $$\mathbf{A}=\begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \\ \end{bmatrix}.$$
@@ -205,14 +205,14 @@ For any $\mathbf{A} \in \mathbb{R}^{m \times n}$, the shape of $\mathbf{A}$ is (
 Specifically, when a matrix has the same number of rows and columns, its shape becomes a square; thus, it is called a *square matrix*.
 -->
 
-Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$, dạng của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
+Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$, kích thước của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
 Trong trường hợp đặc biệt, nếu một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; vì vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
 
 <!--
 We can create an $m \times n$ matrix in MXNet by specifying a shape with two components $m$ and $n$ when calling any of our favorite functions for instantiating an `ndarray`.
 -->
 
-Ta có thể tạo một ma trận $m \times n$ trong MXNet bằng cách khai báo dạng của nó với hai thành phần $m$ và $n$ khi đang sử dụng bất kỳ hàm nào của chúng tôi để khởi tạo một `ndarray`.
+Ta có thể tạo một ma trận $m \times n$ trong MXNet bằng cách khai báo kích thước của nó với hai thành phần $m$ và $n$ khi sử dụng bất kỳ hàm khởi tạo `ndarray` nào mà ta thích.
 
 ```{.python .input  n=6}
 A = np.arange(20).reshape(5, 4)
@@ -265,7 +265,7 @@ A.T
 As a special type of the square matrix, a *symmetric matrix* $\mathbf{A}$ is equal to its transpose: $\mathbf{A} = \mathbf{A}^\top$.
 -->
 
-Như một biến thể đặc biệt của ma trận vuông, *ma trận đối xứng* (*symmetric matrix*) $\mathbf{A}$ là một ma trận có chuyển vị bằng chính nó: $\mathbf{A} = \mathbf{A}^\top$.
+Là một biến thể đặc biệt của ma trận vuông, *ma trận đối xứng* (*symmetric matrix*) $\mathbf{A}$ có chuyển vị bằng chính nó: $\mathbf{A} = \mathbf{A}^\top$.
 
 ```{.python .input}
 B = np.array([[1, 2, 3], [2, 0, 4], [3, 4, 5]])
@@ -290,7 +290,7 @@ Ví dụ, các dòng trong ma trận của chúng ta có thể tượng trưng c
 Bạn có thể thấy quen thuộc với điều này nếu đã từng sử dụng các phần mềm lập bảng tính hoặc đã đọc :numref:`sec_pandas`.
 Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tiện lợi hơn nếu ta coi một điểm dữ liệu như một vector dòng trong ma trận.
 Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ cho phép sự xuất hiện của những kỹ thuật học sâu thông dụng.
-Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không các batch nhỏ nào cả. 
+Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không có batch nhỏ nào cả. 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
