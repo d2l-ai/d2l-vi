@@ -1743,12 +1743,12 @@ to place the verbs at the end of sentences.
 
 **Dịch máy**. Khác với nhận dạng giọng nói, khi các đầu vào và đầu ra tương ứng có cùng thứ tự (sau khi căn chỉnh), trong dịch máy việc đảo thứ tự lại có thể rất quan trọng.
 Nói cách khác, ta vẫn chuyển đổi từ chuỗi này sang chuỗi khác, nhưng ta không thể giả định số lượng đầu vào và đầu ra cũng như thứ tự của các điểm dữ liệu tương ứng là giống nhau.
-Xét ví dụ minh họa dưới đây về việc động từ được đặt một cách kì lạ ở cuối câu trong tiếng Đức.
+Xét ví dụ minh họa dưới đây về trật tự từ kì lạ khi dịch tiếng Anh sang tiếng Việt.
 
 ```text
-Tiếng Đức:           Haben Sie sich schon dieses grossartige Lehrwerk angeschaut?
 Tiếng Anh:          Did you already check out this excellent tutorial?
-Căn chỉnh sai:  Did you yourself already this excellent tutorial looked-at?
+Tiếng Việt:           Bạn đã xem qua hướng dẫn tuyệt vời này chưa?
+Căn chỉnh sai:  Đã chưa bạn xem qua này tuyệt vời hướng dẫn?
 ```
 
 
