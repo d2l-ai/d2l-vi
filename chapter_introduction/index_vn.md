@@ -1015,12 +1015,12 @@ Do not worry if the notation is bogging you down.
 We will unpack it more thoroughly in the subsequent chapters.
 -->
 
-Ta ký hiệu mục tiêu bất kỳ là $y_i$ (tương ứng với mẫu $\mathbf{x_i}$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
+Ta ký hiệu mục tiêu bất kỳ là $y_i$ (tương ứng với mẫu $\mathbf{x}_i$) và tập tất cả các mục tiêu là $\mathbf{y}$ (tương ứng với tất cả các mẫu $X$).
 Khi các mục tiêu mang các giá trị bất kỳ trong một khoảng nào đó, chúng ta gọi đây là bài toán hồi quy.
 Mục đích của chúng ta là tạo ra một mô hình mà các dự đoán của nó xấp xỉ với các giá trị mục tiêu thực sự. 
 Chúng ta ký hiệu dự đoán mục tiêu của một mẫu là $\hat{y}_i$.
 Đừng quá lo lắng nếu các ký hiệu đang làm bạn nản chí.
-Chúng ta sẽ tìm hiểu kỹ từng kỳ hiệu trong các chương tiếp theo.
+Chúng ta sẽ tìm hiểu kỹ từng ký hiệu trong các chương tiếp theo.
 
 <!--
 Lots of practical problems are well-described regression problems.
@@ -1035,9 +1035,9 @@ should suggest regression.
 -->
 
 Rất nhiều bài toán thực tế là các bài toán hồi quy.
-Dự đoán điểm của một người dùng đánh giá một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán vĩ đại để đạt được điều này vào năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
+Dự đoán điểm đánh giá của một người dùng cho một bộ phim có thể được coi là một bài toán hồi quy và nếu bạn thiết kế một thuật toán vĩ đại để đạt được điều này vào năm 2009, bạn có thể đã giành [giải thưởng Netflix một triệu Đô-la](https://en.wikipedia.org/wiki/Netflix_Prize).
 Dự đoán thời gian nằm viện của một bệnh nhân cũng là một bài toán hồi quy.
-Một quy tắc dễ nhớ là khi ta phải trả lời câu hỏi *bao nhiêu*, khá chắc chắn đó là bài toán hồi quy.
+Một quy tắc dễ nhớ là khi ta phải trả lời câu hỏi *bao nhiêu* (*bao lâu*, *bao xa*, v.v.), khá chắc chắn đó là bài toán hồi quy.
 
 <!--
 * "How many hours will this surgery take?": *regression*
@@ -1113,7 +1113,7 @@ and the least mean squares loss, or
 where
 -->
 
-và hàm thứ hai là mất mát trung bình bình phương sai số, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó
+và hàm thứ hai là mất mát trung bình bình phương nhỏ nhất, hoặc [mất mát L2](http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss), ở đó
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
