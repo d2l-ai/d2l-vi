@@ -2229,7 +2229,7 @@ is perfectly described by a linear model.
 
 Mặc dù có nhiều phương pháp học sâu được phát minh gần đây, nhưng mong muốn phân tích dữ liệu để dự đoán kết quả tương lai của con người đã tồi tại trong nhiều thế kỷ.
 Và trong thực tế, phần lớn khoa học tự nhiên đều có nguồn gốc từ điều này.
-Ví dụ, bản phân phối Bernoulli được đặt theo tên của [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli), và bản phân phối Gausian được phát hiện bởi [Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
+Ví dụ, phân phối Bernoulli được đặt theo tên của [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli), và bản phân phối Gausian được phát hiện bởi [Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
 Ông đã phát minh ra thuật toán trung bình bình phương nhỏ nhất, thuật toán này vẫn được sử dụng cho rất nhiều vấn đề từ tính toán bảo hiểm cho đến chẩn đoán y khoa.
 Những công cụ này đã mở đường cho một cách tiếp cận dựa trên thử nghiệm trong các ngành khoa học tự nhiên -- ví dụ, định luật Ohm mô tả rằng dòng điện và điện áp trong một điện trở được diễn tả hoàn hảo bằng một mô hình tuyến tính.
 
@@ -2284,7 +2284,7 @@ in industry and the natural sciences.
 
 Thống kê thật sự khởi sắc với việc thu thập và có sẵn dữ liệu.
 Một trong số những người phi thường đã đóng góp lớn vào lý thuyết và ứng dụng của nó trong di truyền học, đó là [Ronald Fisher (1890-1962)](https://en.wikipedia.org/wiki/Ronald_Fisher).
-Nhiều thuật toán của ông (như Phân tích biệt thức tuyến tính - Linear Discriminant Analysis) hay công thức (như Ma trận thông tin Fisher - Fisher Information Matrix) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông công bố năm 1936 đôi khi vẫn được sử dụng để minh hoạ cho các thuật toán học máy).
+Nhiều thuật toán và công thức của ông (như Phân tích biệt thức tuyến tính - Linear Discriminant Analysis hay Ma trận thông tin Fisher - Fisher Information Matrix) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông công bố năm 1936 đôi khi vẫn được sử dụng để minh hoạ cho các thuật toán học máy).
 Fisher cũng là một người ủng hộ thuyết ưu sinh. 
 Điều này nhắc chúng ta rằng việc áp dụng khoa học dữ liệu vào những ứng dụng mờ ám trên phương diện đạo đức cũng như các ứng dụng có ích trong công nghiệp và khoa học tự nhiên đều đã có lịch sử tồn tại và phát triển lâu đời.
 
@@ -2353,7 +2353,7 @@ Những nguyên tắc thứ yếu của mạng nơ-ron vẫn có thể tìm th�
 * The use of the chain rule (also known as *backpropagation*) for adjusting parameters in the entire network at once.
 -->
 
-* Sự đan xen giữa các đơn vị xử lý tuyến tính và phi tuyến tính, thường được đề đề cập tới như là *các tầng*.
+* Sự đan xen giữa các đơn vị xử lý tuyến tính và phi tuyến tính, thường được đề cập tới như là *các tầng*.
 * Việc sử dụng quy tắc chuỗi (còn được biết đến là *lan truyền ngược -- backpropagation*) để điều chỉnh các tham số trong toàn bộ mạng cùng lúc.
 
 <!--
@@ -2384,6 +2384,7 @@ and provided predictable results with strong theoretical guarantees.
 
 Với sự khan hiếm của dữ liệu và tài nguyên tính toán, các công cụ thống kê mạnh như Phương Pháp Hạt Nhân, Cây Quyết Định và Mô Hình Đồ Thị đã chứng tỏ sự vượt trội trong thực nghiệm.
 Khác với mạng nơ-ron, chúng không đòi hỏi nhiều tuần huấn luyện nhưng vẫn đưa ra những kết quả dự đoán với sự đảm bảo vững chắc về lý thuyết .
+<!-- Phần revise kết thúc tại đây, TODO(tiepvupsu) xóa trước khi merge -->
 
 <!-- =================== Kết thúc dịch Phần 28 ==================== -->
 
