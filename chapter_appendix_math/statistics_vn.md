@@ -714,7 +714,7 @@ To be useful, a confidence interval should be as small as possible for a given d
 ### Definition
 -->
 
-### Định Nghĩa
+### Định nghĩa
 
 <!--
 Mathematically, a *confidence interval* for the true parameter $\theta$ is an interval $C_n$ that computed from the sample data such that
