@@ -753,7 +753,7 @@ It is very tempting to interpret a $95\%$ confidence interval as an interval whe
  Thus a better interpretation would be to say that if you generated a large number of confidence intervals by this procedure, $95\%$ of the generated intervals would contain the true parameter.
 -->
 
-Việc cho rằng một khoảng tin cậy $95\%$ là khoảng mà $95\%$ các giá trị thực phân bố thật hấp dẫn, tuy nhiên điều này đáng buồn lại không chính xác.
+Thât hấp dẫn khi cho rằng một khoảng tin cậy $95\%$ là tương đương với việc chắc chắn $95\%$ giá trị phân bố thật ở trong khoảng đó, tuy nhiên đáng buồn thay là điều này lại không chính xác.
 Tham số thật là cố định và khoảng tin cậy mới là ngẫu nhiên. 
 Vậy nên một cách diễn giải tốt hơn đó là nếu bạn tạo ra một số lượng lớn các khoảng tin cậy theo quy trình này, thì $95\%$ các khoảng được tạo sẽ chứa tham số thật.
 
