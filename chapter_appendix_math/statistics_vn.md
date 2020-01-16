@@ -738,7 +738,7 @@ Note that :eqref:`eq_confidence` is about variable $C_n$, not about the fixed $\
 To emphasize this, we write $P_{\theta} (C_n \ni \theta)$ rather than $P_{\theta} (\theta \in C_n)$.
 -->
 
-Chú ý rằng :eqref:`eq_confidence` được dùng để tính biến $C_n$, chứ không phải giá trị cố định θ. 
+Chú ý rằng :eqref:`eq_confidence` là về biến số $C_n$, chứ không phải giá trị cố định $\theta$. 
 Để nhấn mạnh điều này, chúng ta viết $P_{\theta} (C_n \ni \theta)$ thay cho $P_{\theta} (\theta \in C_n)$
 
 <!--
