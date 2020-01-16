@@ -767,7 +767,7 @@ An in-depth discussion of these points can be found in :cite:`Morey.Hoekstra.Rou
 Điều này nghe có vẻ tiểu tiết, nhưng lại có một ý nghĩa quan trọng trong việc diễn giải các kết quả.
 Cụ thể, chúng ta có thể thỏa mãn :eqref:`eq_confidence` bằng cách tạo ra các khoảng *gần như chắc chắn*không chứa tham số thật, miễn là số lượng các khoảng này đủ nhỏ.
 Chúng ta kết luận mục này bằng cách đưa ra ba giả thuyết nghe hợp lý nhưng lại không chính xác.
-Một sự thảo luận sâu hơn về những điểm dưới đây có thể tìm thấy ở  :cite:`Morey.Hoekstra.Rouder.ea.2016`.  
+Thảo luận sâu hơn về những điểm dưới đây có thể tham khảo thêm ở :cite:`Morey.Hoekstra.Rouder.ea.2016`.  
 
 <!--
 * **Fallacy 1**. Narrow confidence intervals mean we can estimate the parameter precisely.
