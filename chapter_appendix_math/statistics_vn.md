@@ -720,7 +720,7 @@ To be useful, a confidence interval should be as small as possible for a given d
 Mathematically, a *confidence interval* for the true parameter $\theta$ is an interval $C_n$ that computed from the sample data such that
 -->
 
-Về mặt toán học, một *khoảng tin cậy* của giá trị thực $\theta$ là khoảng $C_n$ được tính từ dữ liệu mẫu sao cho:
+Về mặt toán học, một *khoảng tin cậy* của tham số thực $\theta$ là khoảng $C_n$ được tính từ dữ liệu mẫu sao cho:
 
 $$P_{\theta} (C_n \ni \theta) \geq 1 - \alpha, \forall \theta.$$
 :eqlabel:`eq_confidence`
