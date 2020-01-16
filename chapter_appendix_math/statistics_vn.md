@@ -730,7 +730,7 @@ Here $\alpha \in (0, 1)$, and $1 - \alpha$ is called the *confidence level* or *
 This is the same $\alpha$ as the significance level as we discussed about above.
 -->
 
-Ở đây $\alpha \in (0, 1)$, và $1 - \alpha$ được gọi là *mức độ tin cậy* hoặc *độ phủ* của khoảng tin cậy.
+Với $\alpha \in (0, 1)$, và $1 - \alpha$ được gọi là *mức độ tin cậy* hoặc *độ phủ* của khoảng đó.
 Nó cũng chính là hệ số $\alpha$ của mức ý nghĩa thống kê mà chúng ta đã bàn luận ở trên. 
 
 <!--
