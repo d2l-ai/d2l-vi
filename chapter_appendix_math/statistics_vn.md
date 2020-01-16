@@ -776,7 +776,7 @@ Thảo luận sâu hơn về những điểm dưới đây có thể tham khảo
 -->
 
 * **Ngụy biện 1**. Khoảng tin cậy hẹp cho phép chúng ta dự đoán các giá trị một cách chính xác.
-* **Ngụy biện 2**. Các giá trị nằm trong khoảng tin cậy có nhiều khả năng là giá trị thực hơn là các giá trị nằm bên ngoài.  
+* **Ngụy biện 2**: Các giá trị nằm trong khoảng tin cậy có nhiều khả năng là giá trị thực hơn là các giá trị nằm bên ngoài.  
 * **Ngụy biện 3**. Xác xuất mà một khoảng được quan sát với độ tin cậy $95\%$ chứa các giá trị thực là $95\%$.
 
 <!--
