@@ -745,7 +745,7 @@ Chú ý rằng :eqref:`eq_confidence` là về biến số $C_n$, chứ không p
 ### Interpretation
 -->
 
-### Diễn Giải
+### Diễn giải
 
 <!--
 It is very tempting to interpret a $95\%$ confidence interval as an interval where you can be $95\%$ sure the true parameter lies, however this is sadly not true. 
