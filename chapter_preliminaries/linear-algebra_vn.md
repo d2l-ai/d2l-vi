@@ -173,7 +173,7 @@ However, we use the dimensionality of an `ndarray` to refer to the number of axe
 In this sense, the dimensionality of an `ndarray`'s some axis will be the length of that axis.
 -->
 
-Lưu ý rằng từ "chiều" thường có rất nhiều nghĩa trong các ngữ cảnh ở đây và điều này thường khiến mọi người bị nhầm lẫn.
+Lưu ý rằng ở đây, từ "chiều" thường có rất nhiều nghĩa trong các ngữ cảnh và điều này thường khiến mọi người bị nhầm lẫn.
 Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector, hay một trục.
 Tuy nhiên, chúng ta sử dụng số chiều của một `ndarray` để chỉ số trục của `ndarray` đó.
 Theo nghĩa này, chiều của một trục của một `ndarray` là độ dài của trục đó. 
