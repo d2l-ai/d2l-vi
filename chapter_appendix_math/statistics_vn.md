@@ -989,6 +989,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 * Nguyễn Lê Quang Nhật
+* Nguyễn Cảnh Thướng
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 12 -->
 *
