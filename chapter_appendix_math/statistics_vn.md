@@ -784,7 +784,7 @@ Sufficed to say, confidence intervals are subtle objects.  H
 owever, if you keep the interpretation clear, they can be powerful tools.
 -->
 
-Có thể nói, các khoảng tin cậy là những đối tượng khó đoán.
+Có thể nói, các khoảng tin cậy là những đối tượng khó ước lượng.
 Tuy nhiên nếu như bạn diễn giải chúng một cách rõ ràng, thì chúng có thể trở thành những công cụ mạnh mẽ.
 
 <!-- =================== Kết thúc dịch Phần 11 ================================-->
