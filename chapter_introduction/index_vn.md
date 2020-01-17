@@ -1815,7 +1815,7 @@ in later chapters. To whet your appetite for now,
 we describe a few of the questions you might ask:
 -->
 
-Trong một viễn cảnh trái ngược, nếu gặp phải người sếp không biết họ muốn bạn làm cái gì thì sẽ rất là khó chịu.
+Trong một hoàn cảnh hoàn toàn trái ngược, nếu gặp phải người sếp không biết họ muốn bạn làm cái gì thì sẽ rất là khó chịu.
 Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt nhất hãy làm quen với điều này.
 Ông ta có thể chỉ đưa cho bạn một đống dữ liệu to sụ và bảo *sử dụng khoa học dữ liệu với cái này đi!*
 Nghe có vẻ khá mơ hồ bởi vì đúng là nó mơ hồ thật.
@@ -1852,7 +1852,7 @@ If the dependence is linear, it is called *principal component analysis*.
 
 * Liệu ta có tìm được một lượng nhỏ các tham số mà vẫn tóm lược được chính xác những thuộc tính cốt lõi của dữ liệu?
 Như là quỹ đạo bay của quả bóng được miêu tả tương đối tốt bởi số liệu vận tốc, đường kính và khối lượng của quả bóng.
-Như là người thợ may thì đã phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
+Như một người thợ may chỉ cần một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
 Những ví dụ trên được gọi là bài toán *ước lượng không gian con* (_subspace estimation_).
 Nếu mối quan hệ phụ thuộc là tuyến tính, bài toán này được gọi là phép *phân tích thành phần chính* (_principal component analysis_ -- PCA).
 
@@ -1880,7 +1880,7 @@ The fields concerned with *causality* and
 -->
 
 * Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát được?
-Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tệ nạn, vị trí, trình độ học vấn, mức lương, vv, liệu ta có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
+Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tệ nạn, vị trí, trình độ học vấn, mức lương, vv, liệu ta có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dựa vào dữ liệu thực nghiệm?
 Những lĩnh vực liên quan tới *nhân quả* và *mô hình đồ thị xác suất* (*probabilistic graphical models*) sẽ giải quyết bài toán này.
 
 <!--
