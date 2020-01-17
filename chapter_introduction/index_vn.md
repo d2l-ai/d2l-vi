@@ -1960,10 +1960,10 @@ Sự đơn giản của học ngoại tuyến có nét đẹp của nó.
 Ưu điểm là ta chỉ cần quan tâm đến vấn đề nhận dạng mẫu mà không bị phân tâm bởi những vấn đề khác.
 Nhưng nhược điểm là sự hạn chế trong việc thiết lập các bài toán.
 Nếu bạn đã đọc loạt truyện ngắn Robots của Asimov hoặc là người có tham vọng, bạn có thể đang tưởng tượng ra trí tuệ nhân tạo không những biết đưa ra dự đoán mà còn có thể tương tác với thế giới.
-Chúng ta muốn nghĩ tới những *tác nhân* (*agent*) thông minh chứ không chỉ những mô hình dự đoán.
+Chúng ta muốn nghĩ tới những *tác nhân* (*agent*) thông minh chứ không chỉ những *mô hình* dự đoán.
 Tức là ta phải nhắm tới việc chọn *hành động* chứ không chỉ đưa ra những *dự đoán*.
 Hơn thế nữa, không giống dự đoán, hành động còn tác động đến môi trường.
-Nếu muốn huấn luyện một tác nhân thông mình, chúng ta phải tính đến cách những hành động của nó có thể tác động đến những gì nó nhận lại trong tương lai.
+Nếu muốn huấn luyện một tác nhân thông minh, chúng ta phải tính đến cách những hành động của nó có thể tác động đến những gì nó nhận lại trong tương lai.
 
 
 <!--
@@ -1984,8 +1984,8 @@ Liệu môi trường có:
 -->
 
 * Nhớ những gì ta đã làm trước đó?
-* Muốn giúp đỡ chúng tôi, chẳng hạn: một người dùng đọc văn bản vào một bộ nhận dạng giọng nói?
-* Muốn đánh bại chúng tôi, chẳng hạn: một thiết lập đối kháng giống như bộ lọc thư rác (chống lại những kẻ viết thư rác) hay là chơi game (với đối thủ)?
+* Muốn giúp đỡ chúng ta, chẳng hạn: một người dùng đọc văn bản vào một bộ nhận dạng giọng nói?
+* Muốn đánh bại chúng ta, chẳng hạn: một thiết lập đối kháng giống như bộ lọc thư rác (chống lại những kẻ viết thư rác) hay là chơi game (với đối thủ)?
 * Không quan tâm (có rất nhiều trường hợp thế này)?
 * Có xu hướng thay đổi (dữ liệu trong tương lai có giống với trong quá khứ không, hay là khuôn mẫu có thay đổi theo thời gian một cách tự nhiên hoặc do phản ứng với những công cụ tự động)?
 
@@ -1999,9 +1999,9 @@ We will briefly describe reinforcement learning and adversarial learning,
 two settings that explicitly consider interaction with an environment.
 -->
 
-Câu hỏi cuối cùng nêu lên vấn đề về *dịch chuyển phân phối* (*distribution shift*) khi dữ liệu huấn luyện và dữ liệu kiểm tra khác nhau.
-Vấn đề này giống như khi chúng ta làm bài kiểm tra cho bởi giảng viên nhưng lại làm bài tập về nhà do trợ giảng chuẩn bị.
-Chúng ta sẽ thảo luận sơ qua về học tăng cường (*reinforcement learning*) và học đối kháng (*adversarial training*), đây là hai thiết lập đặc biệt có xét tới tương tác với môi trường.
+Câu hỏi cuối cùng nêu lên vấn đề về *dịch chuyển phân phối* (*distribution shift*), khi dữ liệu huấn luyện và dữ liệu kiểm tra khác nhau.
+Vấn đề này giống như khi chúng ta phải làm bài kiểm tra được cho bởi giảng viên trong khi bài tập về nhà lại do trợ giảng chuẩn bị.
+Chúng ta sẽ thảo luận sơ qua về học tăng cường (*reinforcement learning*) và học đối kháng (*adversarial learning*), đây là hai thiết lập đặc biệt có xét tới tương tác với môi trường.
 
 <!-- =================== Kết thúc dịch Phần 23 ==================== -->
 
