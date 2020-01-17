@@ -1799,7 +1799,7 @@ Tất cả các ví dụ từ trước đến nay đều liên quan tới lĩnh 
 Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc có tính chuyên môn cao cùng với một ông sếp cực kỳ hãm tài.
 Ông sếp đứng ngay bên cạnh bạn và chỉ bảo chi tiết những điều phải làm trong từng tình huống một cho tới khi bạn học được cách liên kết các tình huống đó với hành động tương ứng.
 Làm việc với ông sếp kiểu này có vẻ khá là chán.
-Nhưng ở khía cạnh khác, thì làm ông này hài lòng rất là dễ.
+Nhưng ở một khía cạnh khác, thì làm ông sếp này hài lòng rất là dễ dàng.
 Bạn chỉ việc nhận ra những khuôn mẫu thật nhanh và bắt chước lại những hành động theo khuôn mẫu đó.
 
 <!--
@@ -1819,7 +1819,7 @@ Trong một hoàn cảnh hoàn toàn trái ngược, nếu gặp phải người
 Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt nhất hãy làm quen với điều này.
 Ông ta có thể chỉ đưa cho bạn một đống dữ liệu to sụ và bảo *sử dụng khoa học dữ liệu với cái này đi!*
 Nghe có vẻ khá mơ hồ bởi vì đúng là nó mơ hồ thật.
-Chúng ta gọi những loại vấn đề như thế này là *học không giám sát* (*unsupervised learning*), với chúng, loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
+Chúng ta gọi những loại vấn đề như thế này là *học không giám sát* (*unsupervised learning*); với chúng, loại câu hỏi và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
 Ta sẽ đề cập tới một số kỹ thuật học không giám sát ở các chương sau.
 Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài câu hỏi bạn có thể sẽ hỏi:
 
@@ -1880,7 +1880,7 @@ The fields concerned with *causality* and
 -->
 
 * Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát được?
-Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tệ nạn, vị trí, trình độ học vấn, mức lương, vv, liệu ta có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dựa vào dữ liệu thực nghiệm?
+Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tệ nạn, vị trí, trình độ học vấn, mức lương, v.v.. thì liệu ta có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dựa vào dữ liệu thực nghiệm?
 Những lĩnh vực liên quan tới *nhân quả* và *mô hình đồ thị xác suất* (*probabilistic graphical models*) sẽ giải quyết bài toán này.
 
 <!--
