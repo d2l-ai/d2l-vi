@@ -1795,12 +1795,12 @@ You just recognize the pattern as quickly as possible
 and imitate their actions.
 -->
 
-Tất cả các ví dụ từ trước đến nay đều là *Học có giám sát*, ví dụ, những tình huống mà ta nạp vào mô hình lượng dữ liệu khổng lồ gồm cả các đặc trưng và giá trị mục tiêu tương ứng.
-Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc được miêu tả vô cùng cụ thể cùng với một ông sếp cực kỳ hãm tài.
-Ông sếp đứng ngay bên vai bạn và chỉ bảo chi tiết những điều phải làm trong từng tình huống một cho tới khi bạn học được cách liên kết các tình huống đó với hành động tương ứng.
-Làm việc với ông sếp kiểu này có vẻ khá là nản.
-Nhưng ở góc cạnh khác, thì làm ông này hài lòng rất là dễ.
-Chỉ việc nhận ra những khuôn mẫu thật nhanh và bắt chước lại những hành động theo khuôn mẫu đó.
+Tất cả các ví dụ từ trước đến nay đều liên quan tới lĩnh vực *Học có giám sát*, ví dụ, những trường hợp mà ta nạp vào mô hình lượng dữ liệu khổng lồ gồm cả các đặc trưng và giá trị mục tiêu tương ứng.
+Bạn có thể tưởng tượng người học có giám sát giống như anh nhân viên đang làm một công việc có tính chuyên môn cao cùng với một ông sếp cực kỳ hãm tài.
+Ông sếp đứng ngay bên cạnh bạn và chỉ bảo chi tiết những điều phải làm trong từng tình huống một cho tới khi bạn học được cách liên kết các tình huống đó với hành động tương ứng.
+Làm việc với ông sếp kiểu này có vẻ khá là chán.
+Nhưng ở khía cạnh khác, thì làm ông này hài lòng rất là dễ.
+Bạn chỉ việc nhận ra những khuôn mẫu thật nhanh và bắt chước lại những hành động theo khuôn mẫu đó.
 
 <!--
 In a completely opposite way, it could be frustrating
@@ -1815,13 +1815,13 @@ in later chapters. To whet your appetite for now,
 we describe a few of the questions you might ask:
 -->
 
-Trong một viễn cảnh trái ngược, nếu gặp phải người sếp chẳng có bất kỳ ý tưởng nào về chuyện họ muốn bạn làm cái gì thì sẽ rất là khó chịu.
-Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt hơn hãy làm quen với điều này.
-Ông ta có thể chỉ đưa cho bạn một đống dữ liệu to sụ và bảo *làm tý data science với cái này đi!*
+Trong một viễn cảnh trái ngược, nếu gặp phải người sếp không biết họ muốn bạn làm cái gì thì sẽ rất là khó chịu.
+Tuy nhiên, nếu định trở thành nhà khoa học dữ liệu, tốt nhất hãy làm quen với điều này.
+Ông ta có thể chỉ đưa cho bạn một đống dữ liệu to sụ và bảo *sử dụng khoa học dữ liệu với cái này đi!*
 Nghe có vẻ khá mơ hồ bởi vì đúng là nó mơ hồ thật.
-Chúng ta gọi những loại vấn đề như thế này là *học không giám sát*, với chúng, loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
+Chúng ta gọi những loại vấn đề như thế này là *học không giám sát* (*unsupervised learning*), với chúng, loại và lượng câu hỏi ta có thể đặt ra chỉ bị giới hạn bởi trí tưởng tượng của chính mình.
 Ta sẽ đề cập tới một số kỹ thuật học không giám sát ở các chương sau.
-Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài câu hỏi bạn có thể sẽ thắc mắc:
+Bây giờ, để gợi cho bạn đọc chút hứng khởi, chúng tôi sẽ diễn giải một vài câu hỏi bạn có thể sẽ hỏi:
 
 <!--
 * Can we find a small number of prototypes
@@ -1833,7 +1833,7 @@ can we group them into users with similar behavior?
 This problem is typically known as *clustering*.
 -->
 
-Liệu có thể dùng một lượng nhỏ nguyên mẫu để tóm lược dữ liệu một cách chính xác?
+* Liệu có thể dùng một lượng nhỏ nguyên mẫu để tóm lược dữ liệu một cách chính xác?
 Giả sử với một bộ ảnh, liệu có thể nhóm chúng thành các ảnh phong cảnh, chó, trẻ con, mèo, đỉnh núi, v.v.?
 Tương tự, với bộ dữ liệu duyệt web của người dùng, liệu có thể chia họ thành các nhóm người dùng có hành vi giống nhau?
 Vấn đề như này thường được gọi là *phân cụm* (_clustering_).
@@ -1852,7 +1852,7 @@ If the dependence is linear, it is called *principal component analysis*.
 
 * Liệu ta có tìm được một lượng nhỏ các tham số mà vẫn tóm lược được chính xác những thuộc tính cốt lõi của dữ liệu?
 Như là quỹ đạo bay của quả bóng được miêu tả tương đối tốt bởi số liệu vận tốc, đường kính và khối lượng của quả bóng.
-Như là người thợ may thì phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
+Như là người thợ may thì đã phát triển một lượng nhỏ các số đo để miêu tả hình dáng cơ thể người tương đối chuẩn xác để may ra quần áo vừa vặn.
 Những ví dụ trên được gọi là bài toán *ước lượng không gian con* (_subspace estimation_).
 Nếu mối quan hệ phụ thuộc là tuyến tính, bài toán này được gọi là phép *phân tích thành phần chính* (_principal component analysis_ -- PCA).
 
@@ -1865,8 +1865,8 @@ to describe entities and their relations,
 such as Rome $-$ Italy $+$ France $=$ Paris.
 -->
 
-* Liệu có tồn tại cách biểu diễn các đối tượng (có cấu trúc tùy ý) trong không gian Euclid (ví dụ: không gian vector $\mathbb{R}^n$) mà những thuộc tính đặc trưng có thể được ghép khớp với nhau?
-Phương pháp này được gọi là *học biểu diễn* và được dùng để miêu tả các thực thể và mối quan hệ giữa chúng, giống như Rome $-$ Italy $+$ France $=$ Paris.
+* Liệu có tồn tại cách biểu diễn các đối tượng (có cấu trúc bất kỳ) trong không gian Euclid (ví dụ: không gian vector $\mathbb{R}^n$) mà những thuộc tính đặc trưng có thể được ghép khớp với nhau?
+Phương pháp này được gọi là *học biểu diễn* (*representation learning*) và được dùng để miêu tả các thực thể và mối quan hệ giữa chúng, giống như Rome $-$ Ý $+$ Pháp $=$ Paris.
 
 <!--
 * Is there a description of the root causes
@@ -1879,8 +1879,8 @@ The fields concerned with *causality* and
 *probabilistic graphical models* address this problem.
 -->
 
-* Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát?
-Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tội phạm, vị trí, trình độ học vấn, mức lương, vv, liệu có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
+* Liệu có tồn tại cách miêu tả những nguyên nhân gốc rễ của lượng dữ liệu mà ta đang quan sát được?
+Ví dụ, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, mức độ ô nhiễm, tệ nạn, vị trí, trình độ học vấn, mức lương, vv, liệu ta có thể khám phá ra cách chúng liên hệ với nhau chỉ đơn thuần dự vào dữ liệu thực nghiệm?
 Những lĩnh vực liên quan tới *nhân quả* và *mô hình đồ thị xác suất* (*probabilistic graphical models*) sẽ giải quyết bài toán này.
 
 <!--
@@ -1893,9 +1893,9 @@ to check whether real and fake data are the same.
 We will devote a few notebooks to them.
 -->
 
-Một bước phát triển quan trọng thú vị gần đây của học không giám sát là sự ra đời của *mạng sinh đối kháng* (_generative adversarial network_ -- GAN).
+Một bước phát triển quan trọng và thú vị gần đây của học không giám sát là sự ra đời của *mạng đối sinh* (_generative adversarial network_ -- GAN).
 GAN cho ta một quy trình sinh dữ liệu, kể cả những dữ liệu cấu trúc phức tạp như hình ảnh và âm thanh.
-Cùng các cơ chế toán thống kê chạy ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật giả này có giống nhau không.
+Cùng các cơ chế toán thống kê ẩn bên dưới sẽ kiểm tra xem liệu những dữ liệu thật và giả này có giống nhau không.
 Chúng tôi sẽ viết vài mục về chủ đề này sau.
 
 <!-- =================== Kết thúc dịch Phần 22 ==================== -->
