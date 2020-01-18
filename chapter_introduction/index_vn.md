@@ -1544,7 +1544,7 @@ when computing such scores. :numref:`fig_deeplearning_amazon` is an example
 of deep learning books recommended by Amazon based on personalization algorithms tuned to capture the author's preferences.
 -->
 
-Với một mô hình như vậy, cho một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm lớn nhất $y_{ij}$ để gợi ý cho khách hàng.
+Với một mô hình như vậy, cho một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm $y_{ij}$ lớn nhất để gợi ý cho khách hàng.
 Các hệ thống đang vận hành trong thương mại còn cao cấp hơn nữa. Chúng sử dụng hành vi của người dùng và các thuộc tính sản phẩm để tính điểm.
 :numref:`fig_deeplearning_amazon` là một ví dụ về các cuốn sách học sâu được gợi ý bởi Amazon dựa trên các thuật toán cá nhân hoá được điều chỉnh phù hợp với sở thích của tác giả cuốn sách này.
 
