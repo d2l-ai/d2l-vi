@@ -2872,15 +2872,16 @@ Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo l�
 * Whole system optimization is a key component in obtaining good performance. The availability of efficient deep learning frameworks has made design and implementation of this significantly easier.
 -->
 
-* Học máy nghiên cứu cách các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện cất lượng trong những tác vụ cụ thể. Nó bao gồm các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. Nó thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
+* Học máy nghiên cứu cách mà các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện chất lượng trong những tác vụ cụ thể. 
+Lĩnh vực này kết hợp các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. 
+Học máy thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
 
-* Là một nhóm về học máy, học biểu diễn (_representational learning_) tập trung vào cách tự động tìm kiếm một cách thích hợp để biểu diễn dữ liệu.
-Điều này thường đạt được bằng cách học một quá trình biến đổi gồm nhiều bước.
+* Là một nhánh của học máy, học biểu diễn (_representational learning_) tập trung vào việc tự động tìm kiếm phương pháp biểu diễn dữ liệu thích hợp, phần lớn thông qua việc học một quá trình biến đổi gồm nhiều bước.
 
-* Rất nhiều tiến triển gần đây trong học sâu được kích hoạt bởi một lượng lớn dữ liệu thu được từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, và bởi tiến triển đáng kể trong điện toán, chủ yếu bằng GPU.
+* Hầu hết các tiến triển gần đây trong học sâu đạt được nhờ một lượng lớn dữ liệu thu thập từ các cảm biến giá rẻ và các ứng dụng quy mô Internet, cùng với sự phát triển đáng kể trong điện toán, chủ yếu là GPU.
 
-* Tối ưu hóa cả hệ thống là một thành phần quan trọng trong việc đạt được chất lượng tốt.
-Sự sẵn có của các framework học sâu hiệu quả giúp việc thiết kế và triển khai việc này dễ hơn một cách đáng kể.
+* Việc tối ưu hóa toàn bộ hệ thống là yếu tố chính để đạt được chất lượng tốt.
+Sự sẵn có của các framework học sâu hiệu quả giúp cho việc thiết kế và triển khai tối ưu hóa trở nên dễ dàng hơn rất nhiều.
 
 <!--
 ## Exercises
@@ -2895,16 +2896,16 @@ Sự sẵn có của các framework học sâu hiệu quả giúp việc thiết
 1. Where else can you apply the end-to-end training approach? Physics? Engineering? Econometrics?
 -->
 
-1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", nghĩa là có thể được cải thiện bằng cách học và tự động xác định lựa chọn thiết kế?
-Mã nguồn của bạn có sử dụng các quy tắc thiết kế dựa trên trực giác không ?
+1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", tức có thể được cải thiện bằng cách học và tự động xác định các lựa chọn thiết kế?
+Trong mã nguồn của bạn có hiện diện các lựa chọn thiết kế dựa trên trực giác không?
 
-2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng không có cách cụ thể nào tự động hóa chúng?
-Những bài toán này có thể là ứng viên cho việc áp dụng học sâu.
+2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng lại không có cách cụ thể nào để tự động hóa?
+Những bài toán này có thể rất phù hợp để áp dụng học sâu.
 
-3. Từ góc nhìn sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới, mối quan hệ giữa thuật toán và dữ liệu là gì?
-Nó có tương tự như máy hơi nước và than đá không (đâu là sự khác nhau căn bản)?
+3. Nếu xem sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới thì mối quan hệ giữa thuật toán và dữ liệu là gì?
+Nó có tương tự như động cơ hơi nước và than đá không (sự khác nhau căn bản là gì)?
 
-4. Bạn có thể áp dụng hướng tiếp cận học đầu-cuối ở đâu?
+4. Bạn còn có thể áp dụng phương pháp huấn luyện đầu-cuối ở lĩnh vực nào nữa?
 Vật lý? Kỹ thuật? Kinh tế lượng?
 
 <!--
