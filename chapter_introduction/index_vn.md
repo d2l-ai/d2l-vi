@@ -2872,7 +2872,7 @@ Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo l�
 * Whole system optimization is a key component in obtaining good performance. The availability of efficient deep learning frameworks has made design and implementation of this significantly easier.
 -->
 
-* Học máy nghiên cứu cách các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện chất lượng trong những tác vụ cụ thể. 
+* Học máy nghiên cứu cách mà các hệ thống máy tính tận dụng *kinh nghiệm* (thường là dữ liệu) để cải thiện chất lượng trong những tác vụ cụ thể. 
 Lĩnh vực này kết hợp các ý tưởng từ thống kê, khai phá dữ liệu, trí tuệ nhân tạo và tối ưu hóa. 
 Học máy thường được sử dụng như một công cụ để triển khai các giải pháp trí tuệ nhân tạo.
 
@@ -2902,7 +2902,7 @@ Trong mã nguồn của bạn có hiện diện các lựa chọn thiết kế d
 2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng lại không có cách cụ thể nào để tự động hóa?
 Những bài toán này có thể rất phù hợp để áp dụng học sâu.
 
-3. Nếu coi sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới thì mối quan hệ giữa thuật toán và dữ liệu là gì?
+3. Nếu xem sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới thì mối quan hệ giữa thuật toán và dữ liệu là gì?
 Nó có tương tự như động cơ hơi nước và than đá không (sự khác nhau căn bản là gì)?
 
 4. Bạn còn có thể áp dụng phương pháp huấn luyện đầu-cuối ở lĩnh vực nào nữa?
