@@ -573,7 +573,7 @@ The alternative hypothesis would be that $\theta$ is not equal to $c$.
 ### General Steps of Hypothesis Testing
 -->
 
-### Các bước kiểm định giả thuyết thông thường
+### Các bước thông thường kiểm định giả thuyết
 
 <!--
 After getting familiar with the above concepts, let's go through the general steps of hypothesis testing.
@@ -627,8 +627,8 @@ If you were interested in such ideas a century ago, then you would have been exc
 -->
 
 Khi ước lượng giá trị của tham số $\theta$, bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
-Thay vào đó, sẽ tốt hơn nhiều nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thực sự với xác suất cao.
-Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) cuả Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
+Thay vào đó, nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thật sự với xác suất cao sẽ tốt hơn nhiều.
+Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ bạn nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) cuả Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
 
 <!--
 To be useful, a confidence interval should be as small as possible for a given degree of certainty. Let's see how to derive it.
