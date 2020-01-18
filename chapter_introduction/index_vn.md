@@ -2899,7 +2899,7 @@ Sự sẵn có của các framework học sâu hiệu quả giúp cho việc thi
 1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", tức có thể được cải thiện bằng cách học và tự động xác định các lựa chọn thiết kế?
 Trong mã nguồn của bạn có hiện diện các lựa chọn thiết kế dựa trên trực giác không?
 
-2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng lại không có cách cụ thể nào để tự động hóa chúng?
+2. Những bài toán nào bạn từng gặp có nhiều cách giải quyết, nhưng lại không có cách cụ thể nào để tự động hóa?
 Những bài toán này có thể rất phù hợp để áp dụng học sâu.
 
 3. Nếu coi sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới thì mối quan hệ giữa thuật toán và dữ liệu là gì?
