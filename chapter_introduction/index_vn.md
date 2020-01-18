@@ -1513,7 +1513,7 @@ e.g., for retail products, music, or news recommendation.
 
 Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và xếp hạng.
 Tuy có chung mục đích hiển thị một tập các kết quả liên quan tới người dùng, hệ thống gợi ý nhấn mạnh việc *cá nhân hoá* cho từng người dùng cụ thể.
-Ví dụ, với gợi ý phim ảnh, trang kết quả cho một fan của phim khoa học viễn tưởng và cho một người sành sỏi hài Peter Sellers có thể khác nhau một cách đáng kể.
+Ví dụ khi gợi ý phim ảnh, kết quả gợi ý cho một fan của phim khoa học viễn tưởng và cho một người sành sỏi hài Peter Sellers có thể khác nhau một cách đáng kể.
 Các bài toán gợi ý khác có thể bao gồm hệ thống gợi ý sản phẩm bán lẻ, âm nhạc hoặc tin tức.
 
 <!--
