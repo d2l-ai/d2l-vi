@@ -1532,7 +1532,7 @@ or the probability of purchase, given a user $u_i$ and product $p_j$.
 Trong một vài trường hợp, khách hàng cung cấp phản hồi trực tiếp (_explicit feedback_) thể hiện mức độ yêu thích một sản phẩm cụ thể (ví dụ các đánh giá sản phẩm và phản hồi trên Amazon, IMDB, Goodreads, v.v.).
 Trong những trường hợp khác, họ cung cấp phản hồi gián tiếp (_implicit feedback_), ví dụ như bỏ qua các bài hát trong một danh sách nhạc.
 Những bài hát đó có thể đã không làm hài lòng người nghe, hoặc chỉ đơn thuần là không phù hợp với bối cảnh.
-Diễn giải một cách đơn giản, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như một ước lượng đánh giá hoặc ước lượng xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
+Diễn giải một cách đơn giản, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như ước lượng điểm đánh giá hoặc ước lượng xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
 
 <!--
 Given such a model, then for any given user,
