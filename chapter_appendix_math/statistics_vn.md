@@ -823,7 +823,7 @@ $$
 we obtain a random variable following a well-known distribution called the *Student's t-distribution on* $n-1$ *degrees of freedom*.
 -->
 
-Chúng ta có được một biến ngẫu nhiên thuộc phân phối nổi tiếng *phân phối t Student trên n - 1 bậc tự do*
+Chúng ta có được một biến ngẫu nhiên thuộc phân phối nổi tiếng *phân phối t Student trên n - 1 bậc tự do*.
 
 <!--
 This distribution is very well studied, and it is known, for instance, that as $n\rightarrow \infty$, it is approximately a standard Gaussian, and thus by looking up values of the Gaussian c.d.f. in a table, we may conclude that the value of $T$ is in the interval $[-1.96, 1.96]$ at least $95\%$ of the time.  
