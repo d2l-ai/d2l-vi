@@ -729,17 +729,17 @@ Informally, the norm of a vector tells us how *big* a vector is.
 The notion of *size* under consideration here concerns not dimensionality but rather the magnitude of the components.
 -->
 
-Một trong những toán tử hữu dụng nhất của đại số tuyến tính là toán tử *chuẩn*.
+Một trong những toán tử hữu dụng nhất của đại số tuyến tính là *chuẩn* (*norm*).
 Nói dân dã thì, các chuẩn của một vector cho ta biết một vector *lớn* tầm nào.
-Dấu hiệu của *kích thước* đang xét ở đây không chỉ đề cập tới số chiều mà còn cả độ lớn của các thành phần.
+Thuật ngữ *kích thước* đang xét ở đây không nói tới số chiều không gian mà đúng hơn là về độ lớn của các thành phần.
 
 <!--
 In linear algebra, a vector norm is a function $f$ that maps a vector to a scalar, satisfying a handful of properties.
 Given any vector $\mathbf{x}$, the first property says that if we scale all the elements of a vector by a constant factor $\alpha$, its norm also scales by the *absolute value* of the same constant factor:
 -->
 
-Trong đại số tuyến tính, chuẩn của một vector là hàm $f$ mà ánh xạ vector thành số vô hướng, thỏa mãn một vàivài thuộc tính.
-Cho vector bất kỳ $\mathbf{x}$, thuộc tính đầu tiên là nếu chúng ta scale tất cả thành phần của một vector bằng một factor không đổi $\alpha$, chuẩn của nó cũng scale với *giá trị tuyệt đối* của factor không đổi tương tự:
+Trong đại số tuyến tính, chuẩn của một vector là hàm số $f$ mà ánh xạ vector thành số vô hướng, thỏa mãn các tính chất sau.
+Cho vector $\mathbf{x}$ bất kỳ, tính chất đầu tiên phát biểu rằng nếu chúng ta co giãn toàn bộ các phần tử của một vector bằng một hằng số $\alpha$, chuẩn của vector đó cũng co giãn theo với *giá trị tuyệt đối* của hằng số đó :
 
 $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 
@@ -748,7 +748,7 @@ $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 The second property is the familiar triangle inequality:
 -->
 
-Thuộc tính thứ hai là the familiar triangle inequality:
+Tính chất thứ hai là một bất đẳng thức tam giác:
 
 $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 
@@ -757,7 +757,7 @@ $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 The third property simply says that the norm must be non-negative:
 -->
 
-Thuộc tính thứ ba đơn giản là chuẩn đó phải không âm:
+Tính chất thứ ba là chuẩn đó phải không âm:
 
 $$f(\mathbf{x}) \geq 0.$$
 
@@ -766,8 +766,8 @@ That makes sense, as in most contexts the smallest *size* for anything is 0.
 The final property requires that the smallest norm is achieved and only achieved by a vector consisting of all zeros.
 -->
 
-Điều này nghĩa là, trong đa số trường hợp thì *kích thước* nhỏ nhất sẽ là 0.
-Thuộc tính cuối cùng yêu cầu chuẩn nhỏ nhất thu được chỉ khi thu được một vector chứa toàn 0.
+Điều này nghĩa là, trong hầu hết các trường hợp thì *kích thước* nhỏ nhất sẽ là 0.
+Tính chất cuối cùng yêu cầu chuẩn nhỏ nhất thu được khi và chỉ khi toàn bộ thành phần của vector đó là 0.
 
 $$\forall i, [\mathbf{x}]_i = 0 \Leftrightarrow f(\mathbf{x})=0.$$
 
@@ -779,11 +779,11 @@ Suppose that the elements in the $n$-dimensional vector $\mathbf{x}$ are $x_1, \
 The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares of the vector elements:
 -->
 
-Bạn có thể để ý là các chuẩn nghe rất giống thước đo khoảng cách.
-Và nếu còn nhớ khoảng cách Euclidean (như định lý Pythagoras) hồi cấp 3, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhớ giùm.
-Thực tế là, khoảng cách Euclidean là một chuẩn: đặc biệt là chuẩn $\ell_2$.
-Giả sử rằng các thành phần trong vector $n$ chiều  $\mathbf{x}$ là $x_1, \ldots, x_n$.
-*Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần của vector: 
+Bạn chắc sẽ7 để ý là các chuẩn có vẻ giống như một thước đo khoảng cách.
+Và nếu bạn vẫn nhớ về khoảng cách Euclidean (như định lý Pythagoras) học hồi cấp 3, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc một chút.
+Thực tế là, khoảng cách Euclidean cũng là một chuẩn: cụ thể là $\ell_2$.
+Giả sử rằng các thành phần trong vector $n$ chiều $\mathbf{x}$ là $x_1, \ldots, x_n$.
+*Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần trong vector: 
 
 $$\|\mathbf{x}\|_2 = \sqrt{\sum_{i=1}^n x_i^2},$$
 
@@ -792,7 +792,7 @@ where the subscript $2$ is often omitted in $\ell_2$ norms, i.e., $\|\mathbf{x}\
 In code, we can calculate the $\ell_2$ norm of a vector by calling `linalg.norm`.
 -->
 
-Số $2$ nhỏ ở dưới thường được lược đi trong chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ thì tương đương vớivới $\|\mathbf{x}\|_2$.   
+Số $2$ nhỏ ở dưới thường được lược đi trong chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ thì tương đương với $\|\mathbf{x}\|_2$.   
 
 ```{.python .input  n=18}
 u = np.array([3, -4])
@@ -804,7 +804,8 @@ In deep learning, we work more often with the squared $\ell_2$ norm.
 You will also frequently encounter the $\ell_1$ *norm*, which is expressed as the sum of the absolute values of the vector elements:
 -->
 
-Trong học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
+Trong Học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
+Bạn cũng hay gặp *chuẩn* $\ell_1$, chuẩn được biểu diễn bằng tổng các giá trị tuyệt đối của các thành phần trong vector.
 
 $$\|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.$$
 
@@ -813,8 +814,8 @@ As compared with the $\ell_2$ norm, it is less influenced by outliers.
 To calculate the $\ell_1$ norm, we compose the absolute value function with a sum over the elements.
 -->
 
-So sánh với chuẩn $\ell_2$, nó ít bị ảnh ưởng bởi outliers hơn.
-Để tính chuẩn $\ell_1$, chúng ta viết hàm giá trị tuyệt đối với một tổng toàn bộ các thành phần.
+So với chuẩn $\ell_2$, nó ít bị ảnh ưởng bởi các giá trị ngoại biên hơn.
+Để tính chuẩn $\ell_1$, chúng ta dùng hàm giá trị tuyệt đối rồi lấy tổng toàn bộ các thành phần.
 
 ```{.python .input  n=19}
 np.abs(u).sum()
@@ -842,9 +843,9 @@ The Frobenius norm satisfies all the properties of vector norms.
 It behaves as if it were an $\ell_2$ norm of a matrix-shaped vector. Invoking `linalg.norm` will calculate the Frobenius norm of a matrix.
 -->
 
-Chuẩn Frobenius thỏa mãn tất cả các thuộc tính của chuẩn vector.
-Nó behave như một chuẩn $\ell_2$ của một vector có kích thước ma trận.
-Gọi `linalg.norm` sẽ tính toán chuẩn Frobenius của ma trận.
+Chuẩn Frobenius thỏa mãn tất cả các tính chất của một chuẩn vector.
+Nó giống như là chuẩn $\ell_2$ của một vector nhưng với hình dạng của ma trận.
+Dùng hàm `linalg.norm` sẽ tính toán chuẩn Frobenius của ma trận.
 
 ```{.python .input}
 np.linalg.norm(np.ones((4, 9)))
