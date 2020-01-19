@@ -2672,13 +2672,13 @@ and ranking on the Internet. In other words, artificial intelligence
 and machine learning are pervasive, albeit often hidden from sight.
 -->
 
-Trí Tuệ Nhân Tạo có một lịch sử lâu dài trong việc mang đến những kết quả khó có thể đạt được bằng các phương pháp khác.
-Ví dụ, thư tín được sắp xếp sử dụng công nghệ nhận dạng ký tự quang.
+Trí Tuệ Nhân Tạo có một lịch sử lâu dài trong việc mang đến những kết quả mà khó có thể đạt được bằng các phương pháp khác.
+Ví dụ, sắp xếp thư tín sử dụng công nghệ nhận dạng ký tự quang.
 Những hệ thống này được triển khai từ những năm 90 (đây là nguồn của các bộ dữ liệu chữ viết tay nổi tiếng MNIST và USPS).
-Các hệ thống tương tự áp dụng vào đọc ngân phiếu nộp tiền vào ngân hàng và tính điểm tín dụng cho ứng viên.
+Các hệ thống tương tự cũng được áp dụng vào đọc ngân phiếu nộp tiền vào ngân hàng và tính điểm tín dụng cho ứng viên.
 Các giao dịch tài chính được kiểm tra lừa đảo một cách tự động.
 Đây là nền tảng phát triển cho rất nhiều hệ thống thanh toán điện tử như Paypal, Stripe, AliPay, WeChat, Apple, Visa và MasterCard.
-Các chương trình máy tính cho cờ tướng đã phát triển hàng thập kỷ.
+Các chương trình máy tính cho cờ vua đã phát triển trong hàng thập kỷ.
 Học máy đứng sau các hệ thống tìm kiếm, gợi ý, cá nhân hóa và xếp hạng trên mạng Internet.
 Nói cách khác, trí tuệ nhân tạo và học máy xuất hiện mọi nơi tuy đôi khi ta không để ý thấy.
 
@@ -2700,7 +2700,7 @@ Chỉ tới gần đây AI mới được chú ý đến, chủ yếu là bởi 
 -->
 
 * Các trợ lý thông minh như: Apple Siri, Amazon Alexa, hay Google Assistant có khả năng trả lời các câu hỏi thoại với độ chính xác chấp nhận được.
-Những việc này bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt lịch hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
+Việc này cũng bao gồm những tác vụ đơn giản như bật đèn (hữu ích cho người tàn tật) tới đặt lịch hẹn cắt tóc và đưa ra các đoạn hội thoại để hỗ trợ các tổng đài chăm sóc khách hàng. Đây có lẽ là tín hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng tới cuộc sống thường ngày.
 
 <!--
 * A key ingredient in digital assistants is the ability to recognize speech
@@ -2710,7 +2710,7 @@ Những việc này bao gồm những tác vụ đơn giản như bật đèn (h
 -->
 
 * Một thành phần chính trong trợ lý số là khả năng nhận dạng chính xác tiếng nói.
-Dần dần độ chính xác của những hệ thống này cải thiện tới mức tương đương con người (:cite:`Xiong.Wu.Alleva.ea.2018`) cho những ứng dụng cụ thể.
+Dần dần độ chính xác của những hệ thống này được cải thiện tới mức tương đương con người (:cite:`Xiong.Wu.Alleva.ea.2018`) cho vài ứng dụng cụ thể.
 
 <!--
 * Object recognition likewise has come a long way. Estimating the object in a
@@ -2721,9 +2721,9 @@ Dần dần độ chính xác của những hệ thống này cải thiện tớ
 -->
 
 * Tương tự, nhận dạng vật thể cũng đã tiến một bước dài.
-Đánh giá một vật thể trong ảnh là một tác vụ khó năm 2010.
+Đánh giá một vật thể trong ảnh là một tác vụ khó trong năm 2010.
 Trong bảng xếp hạng ImageNet, :cite:`Lin.Lv.Zhu.ea.2010` đạt được tỉ lệ lỗi top-5 là 28%.
-Tới 2017, :cite:`Hu.Shen.Sun.2018` giảm tỉ lệ lỗi này xuống còn 2.25%.
+Tới 2017, :cite:`Hu.Shen.Sun.2018` giảm tỉ lệ lỗi này xuống còn 2,25%.
 Các kết quả kinh ngạc tương tự cũng đã đạt được trong việc xác định chim cũng như chẩn đoán ung thư da.
 
 <!--
@@ -2748,13 +2748,13 @@ Các kết quả kinh ngạc tương tự cũng đã đạt được trong việ
 
 * Các trò chơi từng là một pháo đài của trí tuệ loài người.
 Bắt đầu từ TDGammon [23], một chương chình chơi Backgammon (một môn cờ) sử dụng học tăng cường sai khác thời gian (_temporal difference_ -- TD), tiến triển trong giải thuật và tính toán đã dẫn đến các thuật toán cho một loạt các ứng dụng.
-Không giống Backgamon, cờ vua có một không gian trạng thái  và tập các nước đi phức tạp hơn nhiều.
-DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
+Không giống Backgamon, cờ vua có một không gian trạng thái và tập các nước đi phức tạp hơn nhiều.
+DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, bằng cách sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và thuật toán tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
 Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
 Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
-Thách thức trong Poker là không gian của trạng thái lớn và nó không được quan sát hoàn toàn (ta không biết các quân bài của đối thủ).
+Thách thức trong Poker là không gian của trạng thái lớn và nó không được quan sát đầy đủ (ta không biết các quân bài của đối thủ).
 Libratus vượt chất lượng con người trong môn Poker sử dụng các chiến thuật có cấu trúc một cách hiệu quả :cite:`Brown.Sandholm.2017`.
-Những điều này thể hiện một tiến triển ấn tượng trong các trò chơi và tầm quan trọng của các thuật toán nâng cao trong đó.
+Những điều này thể hiện một sự tiến triển ấn tượng trong các trò chơi và tầm quan trọng của các thuật toán nâng cao trong đó.
 
 <!--
 * Another indication of progress in AI is the advent of self-driving cars
@@ -2803,7 +2803,7 @@ More frivolously, we can ask Alexa to switch on the coffee machine.
 Gần đây, câu hỏi về ngày tận thế do AI, hay điểm kì dị (*singularity*) của AI đã được nhắc tới trong các bài viết phi kỹ thuật về AI.
 Đã có những nỗi lo sợ về việc các hệ thống học máy bằng cách nào đó sẽ trở nên có cảm xúc và ra quyết định độc lập với những lập trình viên (và chủ nhân) về những điều ảnh hưởng trực tiếp tới sự sống của nhân loại.
 Trong phạm vi nào đó, AI đã ảnh hưởng tới sự sống của con người một cách trực tiếp, chẳng hạn như điểm tín dụng được tính tự động, tự động điều hướng xe hơi, hay các quyết định về việc liệu có chấp nhận bảo lãnh hay không sử dụng đầu vào là dữ liệu thống kê.
-Phù phiếm hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
+Hoặc ít nghiêm trọng hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
 
 <!--
 Fortunately, we are far from a sentient AI system
@@ -2819,9 +2819,9 @@ extend and improve their own architecture
 while trying to solve general tasks.
 -->
 
-May mắn thay, chúng ta còn xa một hệ thống AI có cảm xúc sẵn sàng điều khiển chủ nhân của nó (hay đốt cháy cà phê của họ).
+May mắn thay, chúng ta còn xa mới đạt được một hệ thống AI có cảm xúc sẵn sàng điều khiển chủ nhân của nó (hay đốt cháy cà phê của họ).
 Thứ nhất, các hệ thống AI được thiết kế, huấn luyện và triển khai trong một môi trường cụ thể hướng mục đích.
-Trong khi hành vi của chúng có thể tạo ra ảo giác về trí tuệ phổ quát, đó là một tổ hợp của các quy tắc và các mô hình thống kê.
+Trong khi hành vi của chúng có thể tạo ra ảo giác về trí tuệ phổ quát, đó vẫn là một tổ hợp của các quy tắc và các mô hình thống kê.
 Thứ hai, hiện tại các công cụ cho *trí tuệ nhân tạo phổ quát* đơn giản là không tồn tại.
 Chúng không thể tự cải thiện, hoài nghi bản thân, không thể thay đổi, mở rộng và tự cải thiện cấu trúc trong khi cố gắng giải quyết các tác vụ thông thường.
 
@@ -2850,7 +2850,7 @@ Các robot nông trại sẽ không những có khả năng làm giảm chi phí
 Thời điểm này của cuộc cách mạng công nghiệp có thể có những hậu quả lan rộng khắp toàn xã hội (tài xế xe tải và trợ lý cửa hàng là một vài trong số những ngành phổ biến nhất ở nhiều địa phương). <!-- state = bang của Mỹ -->
 Hơn nữa, các mô hình thống kê, khi được áp dụng không cẩn thận, có thể dẫn đến các quyết định phân biệt chủng tộc, giới tính hoặc tuổi tác và gây nên những nỗi lo có cơ sở về tính công bằng nếu chúng được tự động hóa để đưa ra các quyết định có nhiều hệ lụy.
 Việc sử dụng các thuật toán này một cách cẩn thận là rất quan trọng.
-Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo lớn hơn tiềm năng hủy diệt loài người của các hệ siêu trí tuệ. 
+Với những gì ta biết ngày nay, việc này dấy lên một nỗi lo lớn hơn so với khả năng hủy diệt loài người của các siêu trí tuệ độc ác. 
 
 <!-- =================== Kết thúc dịch Phần 33 ==================== -->
 <!-- =================== Bắt đầu dịch Phần 34 ==================== -->
