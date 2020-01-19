@@ -1579,7 +1579,7 @@ Mặc dù có giá trị kinh tế lớn, các hệ thống gợi ý được x�
 Người dùng thường có xu hướng đánh giá các bộ phim họ thực sự thích hoặc ghét: bạn có thể để ý rằng các bộ phim nhận được rất nhiều đánh giá 5 và 1 sao nhưng rất ít các bộ phim với 3 sao.
 Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán gợi ý đang được dùng, nhưng các thuật toán gợi ý không luôn để ý đến chi tiết này.
 Vì vậy, các vòng phản hồi (_feedback loop_) luẩn quẩn có thể xảy ra khi mà hệ thống gợi ý đẩy lên một sản phẩm và cho rằng sản phẩm này tốt hơn (do được mua nhiều hơn), từ đó sản phẩm này lại được hệ thống gợi ý thường xuyên hơn nữa.
-Rất nhiều trong số các vấn đề về cách xử lý với kiểm duyệt, động cơ [của việc đánh giá] và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
+Rất nhiều trong số các vấn đề về cách xử lý với kiểm duyệt, động cơ của việc đánh giá và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
 
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
