@@ -1512,10 +1512,9 @@ e.g., for retail products, music, or news recommendation.
 -->
 
 Hệ thống gợi ý là một bài toán khác liên quan đến tìm kiếm và xếp hạng.
-Chúng có chung mục đích là hiển thị một tập các kết quả liên quan tới người dùng.
-Sự khác biệt chính là nó nhấn mạnh tới *cá nhân hoá* cho từng người dùng cụ thể với trường hợp hệ thống gợi ý.
-Ví dụ, với gợi ý phim ảnh, trang kết quả cho một fan của phim khoa học viễn tưởng và cho một người sành sỏi hài Peter Sellers có thể khác nhau một cách đáng kể.
-Tương tự với các bài toán gợi ý khác như các hệ thống gợi ý sản phẩm bán lẻ, âm nhạc hoặc tin tức.
+Tuy có chung mục đích hiển thị một tập các kết quả liên quan tới người dùng, hệ thống gợi ý nhấn mạnh việc *cá nhân hoá* cho từng người dùng cụ thể.
+Ví dụ khi gợi ý phim ảnh, kết quả gợi ý cho một fan của phim khoa học viễn tưởng và cho một người sành sỏi hài Peter Sellers có thể khác nhau một cách đáng kể.
+Các bài toán gợi ý khác có thể bao gồm hệ thống gợi ý sản phẩm bán lẻ, âm nhạc hoặc tin tức.
 
 <!--
 In some cases, customers provide explicit feedback communicating
@@ -1530,10 +1529,10 @@ to estimate some score $y_{ij}$, such as an estimated rating
 or the probability of purchase, given a user $u_i$ and product $p_j$.
 -->
 
-Trong một vài trường hợp, khách hàng cung cấp phản hồi trực tiếp (_explicit feedback_) họ thích một sản phẩm cụ thể như thế nào (ví dụ các đánh giá sản phẩm và phản hồi trên Amazon, IMDB, GoodReads, v.v.).
-Trong vài trường hợp khác, họ cung cấp phản hồi gián tiếp (_implicit feedback_), ví dụ như bỏ qua các bài hát trong một danh sách nhạc.
-Việc này có thể chỉ ra sự không thoả mãn hoặc có thể chỉ đơn giản là bài hát không phù hợp trong bối cảnh.
-Trong cách trình bày đơn giản nhất, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như một ước lượng đánh giá hoặc xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
+Trong một vài trường hợp, khách hàng cung cấp phản hồi trực tiếp (_explicit feedback_) thể hiện mức độ yêu thích một sản phẩm cụ thể (ví dụ các đánh giá sản phẩm và phản hồi trên Amazon, IMDB, Goodreads, v.v.).
+Trong những trường hợp khác, họ cung cấp phản hồi gián tiếp (_implicit feedback_), ví dụ như khi bỏ qua bài hát trong danh sách chơi nhạc.
+Những bài hát đó có thể đã không làm hài lòng người nghe, hoặc chỉ đơn thuần là không phù hợp với bối cảnh.
+Diễn giải một cách đơn giản, những hệ thống này được huấn luyện để ước lượng một điểm $y_{ij}$ nào đó, ví dụ như ước lượng điểm đánh giá hoặc ước lượng xác suất mua hàng, của một người dùng $u_i$ tới một sản phẩm $p_j$.
 
 <!--
 Given such a model, then for any given user,
@@ -1545,9 +1544,9 @@ when computing such scores. :numref:`fig_deeplearning_amazon` is an example
 of deep learning books recommended by Amazon based on personalization algorithms tuned to capture the author's preferences.
 -->
 
-Cho trước mô hình, với một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm lớn nhất $y_{ij}$ để gợi ý cho khách hàng.
-Các hệ thống đang vận hành còn cao cấp hơn nữa. Chúng sử dụng hành vi của người dùng và các thuộc tính sản phẩm để tính điểm.
-:numref:`fig_deeplearning_amazon` là một ví dụ về các cuốn sách học sâu được gợi ý bởi Amazon dựa trên các thuật toán cá nhân hoá sử dụng các thông tin của tác giả.
+Với một mô hình như vậy, cho một người dùng bất kỳ, ta có thể thu thập một tập các sản phẩm với điểm $y_{ij}$ lớn nhất để gợi ý cho khách hàng.
+Các hệ thống đang vận hành trong thương mại còn cao cấp hơn nữa. Chúng sử dụng hành vi của người dùng và các thuộc tính sản phẩm để tính điểm.
+:numref:`fig_deeplearning_amazon` là một ví dụ về các cuốn sách học sâu được gợi ý bởi Amazon dựa trên các thuật toán cá nhân hoá được điều chỉnh phù hợp với sở thích của tác giả cuốn sách này.
 
 <!--
 ![Deep learning books recommended by Amazon.](../img/deeplearning_amazon.png)
@@ -1575,12 +1574,12 @@ Many of these problems about how to deal with censoring,
 incentives, and feedback loops, are important open research questions.
 -->
 
-Mặc dù có giá trị kinh tế lớn, các hệ thống gợi ý được xây dựng đơn thuần theo các mô hình dự đoán cũng có những hạn chế nghiêm trọng.
+Mặc dù có giá trị kinh tế lớn, các hệ thống gợi ý được xây dựng đơn thuần theo các mô hình dự đoán về bản chất có những hạn chế nghiêm trọng.
 Ban đầu, ta chỉ quan sát các *phản hồi được kiểm duyệt*.
 Người dùng thường có xu hướng đánh giá các bộ phim họ thực sự thích hoặc ghét: bạn có thể để ý rằng các bộ phim nhận được rất nhiều đánh giá 5 và 1 sao nhưng rất ít các bộ phim với 3 sao.
 Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán gợi ý đang được dùng, nhưng các thuật toán gợi ý không luôn để ý đến chi tiết này.
-Bởi vậy có khả năng xảy ra các vòng phản hồi (_feedback loop_) luẩn quẩn mà ở đó một hệ thống gợi ý đẩy lên một sản phẩm và sau đó nó cho rằng sản phẩm này tốt hơn (do được mua nhiều hơn) rồi cuối cùng sản phẩm đó lại được hệ thống gợi ý thường xuyên hơn nữa.
-Rất nhiều trong số các bài toán về cách xử lý với kiểm duyệt, động cơ [của việc đánh giá] và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
+Vì vậy, các vòng phản hồi (_feedback loop_) luẩn quẩn có thể xảy ra khi mà hệ thống gợi ý đẩy lên một sản phẩm và cho rằng sản phẩm này tốt hơn (do được mua nhiều hơn), từ đó sản phẩm này lại được hệ thống gợi ý thường xuyên hơn nữa.
+Rất nhiều trong số các vấn đề về cách xử lý với kiểm duyệt, động cơ của việc đánh giá và vòng phản hồi là các câu hỏi quan trọng cho nghiên cứu.
 
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
