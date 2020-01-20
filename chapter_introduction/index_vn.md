@@ -2032,7 +2032,7 @@ and the [AlphaGo program that dethroned the world champion at the board game Go]
 
 Nếu bạn muốn dùng học máy để phát triển một tác nhân tương tác với môi trường và đưa ra hành động, khả năng cao là bạn sẽ cần tập trung vào *học tăng cường* (*reinforcemnent learning* -- RL).
 Học tăng cường có các ứng dụng trong ngành công nghệ robot, hệ thống đối thoại và cả việc phát triển AI cho trò chơi điện tử.
-*Học sâu tăng cường* (*Deep reinforcement learning* -- DRL) áp dụng kĩ thuật học sâu để giải quyết những vấn để của học tăng cường, đã trở nên phổ biến trong thời gian gần đây.
+*Học sâu tăng cường* (*Deep reinforcement learning* -- DRL) áp dụng kĩ thuật học sâu để giải quyết những vấn đề của học tăng cường và đã trở nên phổ biến trong thời gian gần đây.
 Hai ví dụ tiêu biểu nhất là thành tựu đột phá của [mạng-Q sâu đánh bại con người trong các trò chơi điện tử Atari chỉ sử dụng đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
 và [chương trình AlphaGo chiếm ngôi vô địch thế giới trong môn Cờ Vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/).
 
@@ -2097,7 +2097,7 @@ Moreover, the environment may not even tell us which actions led to the reward.
 -->
 
 Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
-Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện đi kèm với đúng nhãn. 
+Lấy ví dụ ở trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện phải đi kèm với đúng nhãn. 
 Tuy nhiên với học tăng cường, ta không giả định rằng môi trường sẽ chỉ ra hành động nào là tối ưu tại mỗi quan sát (điểm dữ liệu).
 Nhìn chung, mô hình sẽ chỉ nhận được một điểm thưởng nào đó.
 Hơn thế nữa, môi trường có thể sẽ không chỉ ra những hành động nào đã dẫn tới điểm thưởng đó. 
