@@ -2029,11 +2029,11 @@ The breakthrough [deep Q-network that beat humans at Atari games using only the 
 and the [AlphaGo program that dethroned the world champion at the board game Go](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/) are two prominent examples.
 -->
 
-Nếu bạn muốn dùng học máy để phát triển một tác nhân tương tác với môi trường và đưa ra hành động, khả năng cao là bạn sẽ cần tập trung vào *học tăng cường* (*reinforcemnent learning -- RL*).
-Học tăng cường còn các ứng dụng trong ngành công nghệ robot, hệ thống đối thoại và cả việc phát triển AI cho trò chơi điện tử.
-*Học sâu tăng cường* (*Deep reinforcement learning DRL*) áp dụng kĩ thuật học sâu để giải quyết những vấn để của học tăng cường, đã trở nên phổ biến trong thời gian gần đây.
-Hai ví dụ tiêu biểu nhất là thành tựu bứt phá của [mạng-Q sâu đánh bại con người trong các trò chơi điện tử Atari chỉ sử dụng đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
-và [chương trình AlphaGo chiếm ngôi vô địch thế giới trong môn Cờ Vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/)
+Nếu bạn muốn dùng học máy để phát triển một tác nhân tương tác với môi trường và đưa ra hành động, khả năng cao là bạn sẽ cần tập trung vào *học tăng cường* (*reinforcemnent learning* -- RL).
+Học tăng cường có các ứng dụng trong ngành công nghệ robot, hệ thống đối thoại và cả việc phát triển AI cho trò chơi điện tử.
+*Học sâu tăng cường* (*Deep reinforcement learning* -- DRL) áp dụng kĩ thuật học sâu để giải quyết những vấn đề của học tăng cường và đã trở nên phổ biến trong thời gian gần đây.
+Hai ví dụ tiêu biểu nhất là thành tựu đột phá của [mạng-Q sâu đánh bại con người trong các trò chơi điện tử Atari chỉ sử dụng đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
+và [chương trình AlphaGo chiếm ngôi vô địch thế giới trong môn Cờ Vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/).
 
 <!--
 Reinforcement learning gives a very general statement of a problem,
@@ -2063,7 +2063,7 @@ Mục tiêu của học tăng cường là tạo ra một chính sách tốt.
 ![The interaction between reinforcement learning and an environment.](../img/rl-environment.svg)
 -->
 
-![Sự tương tác giữa học tăng cường và môi trường](../img/rl-environment.svg)
+![Sự tương tác giữa học tăng cường và môi trường.](../img/rl-environment.svg)
 
 <!--
 It is hard to overstate the generality of the RL framework.
@@ -2075,7 +2075,7 @@ that was exactly equal to the loss function
 from the original supervised problem.
 -->
 
-Thật khó để nói quá lên sự tổng quát của mô hình học tăng cường.
+Tính tổng quát của mô hình học tăng cường không phải là một thứ được nói quá lên.
 Ví dụ, ta có thể chuyển bất cứ bài toán học có giám sát nào thành một bài toán học tăng cường.
 Chẳng hạn với một bài toán phân loại, ta có thể tạo một tác nhân học tăng cường với một *hành động* tương ứng với mỗi lớp.
 Sau đó ta có thể tạo một môi trường mà trả về điểm thưởng đúng bằng với giá trị của hàm mất mát từ bài toán học có giám sát ban đầu.
@@ -2096,10 +2096,10 @@ Moreover, the environment may not even tell us which actions led to the reward.
 -->
 
 Vì thế, học tăng cường có thể giải quyết nhiều vấn đề mà học có giám sát không thể.
-Ví dụ, trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện đi kèm nhãn tương ứng. 
+Lấy ví dụ ở trong học có giám sát, chúng ta luôn đòi hỏi dữ liệu huấn luyện phải đi kèm với đúng nhãn. 
 Tuy nhiên với học tăng cường, ta không giả định rằng môi trường sẽ chỉ ra hành động nào là tối ưu tại mỗi quan sát (điểm dữ liệu).
-Nhìn chung, mô hình sẽ nhận được một điểm thưởng nào đó.
-Tuy nhiên, môi trường có thể sẽ không chỉ ra những hành động nào đã dẫn tới điểm thưởng đó. 
+Nhìn chung, mô hình sẽ chỉ nhận được một điểm thưởng nào đó.
+Hơn thế nữa, môi trường có thể sẽ không chỉ ra những hành động nào đã dẫn tới điểm thưởng đó. 
 
 <!--
 Consider for example the game of chess.
@@ -2115,12 +2115,13 @@ Getting more promotions in the future requires figuring out
 what actions along the way led to the promotion.
 -->
 
-Lấy cờ tướng làm ví dụ. 
-Phần thưởng thật sự sẽ đến vào cuối trò chơi. Khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
-Vì vậy, việc học tăng cường phải giải quyết "bài toán phân bố công trạng": xác định hành động nào sẽ được thưởng hay bị phạt dựa theo kết quả. 
+Lấy cờ vua làm ví dụ. 
+Phần thưởng thật sự sẽ đến vào cuối trò chơi. 
+Khi thắng, ta sẽ được 1 điểm, hoặc khi thua, ta sẽ nhận về -1 điểm. 
+Vì vậy, việc học tăng cường phải giải quyết *bài toán phân bố công trạng* (*credit assignment problem*): xác định hành động nào sẽ được thưởng hay bị phạt dựa theo kết quả. 
 Tương tự như khi một nhân viên được thăng chức vào ngày 11/10. 
-Việc thăng chức này phản ánh những việc làm có cân nhắc kĩ càng trong suốt một năm qua. 
-Để thăng chức sau này đòi hỏi quá trình tìm hiểu đâu là những hành động dẫn đến sự thăng chức này.
+Việc thăng chức khả năng cao phản ánh những việc làm tốt của nhân viên này trong suốt một năm qua. 
+Để được thăng chức sau này đòi hỏi nhân viên đó phải nhận ra đâu là những hành động dẫn đến việc thăng chức này.
 
 <!--
 Reinforcement learners may also have to deal
@@ -2135,8 +2136,8 @@ might require considering its previous observations before entering the closet.
 
 Học tăng cường còn phải đương đầu với vấn đề về những quan sát không hoàn chỉnh.
 Có nghĩa là quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng lúc này.
-Lấy ví dụ khi robot hút bụi trong nhà bị kẹt tại một trong nhiều nhà kho giống y như nhau. 
-Việc can thiệp vào vị trí chính xác (trạng thái) của robot có thể cần đến những quan sát từ trước khi nó đi vào phòng. 
+Lấy ví dụ, khi robot hút bụi bị kẹt tại một trong nhiều phòng giống y như nhau trong căn nhà. 
+Việc can thiệp vào vị trí chính xác (cũng là trạng thái) của robot có thể cần đến những quan sát từ trước khi nó đi vào phòng. 
 
 <!--
 Finally, at any given point, reinforcement learners
@@ -2150,7 +2151,7 @@ potentially giving up some short-run reward in exchange for knowledge.
 -->
 
 Cuối cùng, tại một thời điểm bất kỳ, các thuật toán học tăng cường có thể biết một chính sách tốt, tuy nhiên có thể có những chính sách khác tốt hơn mà tác nhân chưa bao giờ thử tới. 
-Các thuật toán học tăng cường phải luôn lựa chọn giữa việc liệu rằng tiếp tục *khai thác* chính sách tốt nhất hiện thời hay *khám phá* thêm những giải pháp khác, tức bỏ qua những điểm thưởng ngắn hạn để thu về thêm kiến thức.
+Các thuật toán học tăng cường phải luôn lựa chọn giữa việc tiếp tục *khai thác* chính sách tốt nhất hiện thời hay *khám phá* thêm những giải pháp khác, tức bỏ qua những điểm thưởng ngắn hạn để thu về thêm kiến thức.
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 <!-- =================== Bắt đầu dịch Phần 26 ==================== -->
@@ -2175,7 +2176,7 @@ As a result, researchers have studied a number of
 
 Các bài toán học tăng cường thường có một thiết lập rất tổng quát.
 Các hành động của tác nhân có ảnh hưởng đến những quan sát về sau.
-Những điểm thưởng chỉ nhận được khi sự quan sát này tương ứng với các hành động được chọn.
+Những điểm thưởng nhận được tương ứng chỉ với các hành động được chọn.
 Môi trường có thể được quan sát đầy đủ hoặc chỉ một phần.
 Tính toán tất cả sự phức tạp này cùng lúc có thể cần sự tham gia của quá nhiều nhà nghiên cứu.
 Hơn nữa, không phải mọi vấn đề thực tế đều thể hiện tất cả sự phức tạp này.
@@ -2191,9 +2192,9 @@ with initially unknown rewards, this problem
 is the classic *multi-armed bandit problem*.
 -->
 
-Khi ở môi trường được quan sát đầy đủ, ta gọi vấn đề học tăng cường là *Quá trình Quyết định Markov* (*Markov Decision Process* -- MDP).
+Khi ở môi trường được quan sát đầy đủ, ta gọi bài toán học tăng cường này là *Quá trình Quyết định Markov* (*Markov Decision Process* -- MDP).
 Khi trạng thái không phụ thuộc vào các hành động trước đó, ta gọi bài toán này là *bài toán trộm ngữ cảnh* (*contextual bandit problem*).
-Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, vấn đề kinh điển này sẽ là *bài toán trộm đa nhánh* (*multi-armed bandit problem*).
+Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, bài toán kinh điển này là *bài toán trộm đa nhánh* (*multi-armed bandit problem*).
 
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
 
