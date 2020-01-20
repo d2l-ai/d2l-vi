@@ -550,11 +550,11 @@ And if you have not used Python before,
 you may want to peruse this [Python tutorial](http://learnpython.org/).
 -->
 
-Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học), các kỹ sư và các nhà nghiên cứu, những người tìm kiếm một nền tảng vững chắc về những kỹ thuật thực tế của học sâu.
+Cuốn sách này dành cho các bạn sinh viên (đại học hoặc sau đại học), các kỹ sư và các nhà nghiên cứu; những người tìm kiếm một nền tảng vững chắc về những kỹ thuật thực tế của học sâu.
 Bởi vì chúng tôi giải thích mọi khái niệm từ đầu, bạn không bắt buộc phải có nền tảng về học sâu hay học máy.
 Việc giải thích đầy đủ các phương pháp học sâu đòi hỏi một số kiến thức về toán học và lập trình, nhưng chúng tôi sẽ chỉ giả định rằng bạn nắm được một số kiến thức cơ bản về đại số tuyến tính, giải tích, xác suất, và lập trình Python.
 Hơn nữa, trong phần Phụ lục, chúng tôi cung cấp thêm về hầu hết các phần toán được đề cập trong cuốn sách này.
-Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và các ý tưởng hơn là giải thích chặt chẽ bằng toán.
+Phần lớn thời gian, chúng tôi sẽ ưu tiên dùng cách giải thích trực quan và mô tả các ý tưởng hơn là giải thích chặt chẽ bằng toán.
 Có rất nhiều cuốn sách tuyệt vời có thể thu hút bạn đọc quan tâm sâu hơn nữa.
 Chẳng hạn, cuốn "Giải tích tuyến tính" (Linear Analysis) của Bela Bollobas :cite:`Bollobas.1999` bao gồm cả đại số tuyến tính và giải tích hàm ở mức độ rất chi tiết.
 Cuốn "Tất cả về Thống kê" (All of Statistics) :cite:`Wasserman.2013` là hướng dẫn tuyệt vời để học thống kê.
@@ -612,7 +612,7 @@ Raju Gulabani, Charlie Bell, and Andrew Jassy for their generous support in writ
 -->
 
 Chúng tôi cảm ơn Amazon Web Services, đặc biệt là Swami Sivasubramanian, Raju Gulabani, Charlie Bell, và Andrew Jassy vì sự hỗ trợ hào phóng của họ trong việc viết cuốn sách này.
-Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, cuốn sách này sẽ không thể thành hiện thực.
+Nếu không có thời gian, tài nguyên, mọi sự thảo luận cùng các đồng nghiệp, cũng như những khuyến khích liên tục, sự xuất hiện của cuốn sách này sẽ không thể thành hiện thực.
 
 
 <!--
@@ -671,7 +671,7 @@ Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng ngh
 ![](../img/qr_preface.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
+![](../img/qr_preface.svg)
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 <!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================>
@@ -696,3 +696,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 * Ngô Thế Anh Khoa
 * Trần Thị Hồng Hạnh
+* Đoàn Võ Duy Thanh
