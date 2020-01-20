@@ -780,8 +780,8 @@ The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares
 -->
 
 Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một thước đo khoảng cách.
-Và nếu còn nhớ khái niệm khoảng cách Euclidean (nhớ định lý Pythagoras không) học hồi cấp 3, thì mong khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc được một chút.
-Thực tế là, khoảng cách Euclidean cũng là một chuẩn: cụ thể là $\ell_2$.
+Và nếu còn nhớ khái niệm khoảng cách Euclid (nhớ định lý Pythagoras không) học hồi cấp 3, thì mong khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc được một chút.
+Thực tế là, khoảng cách Euclid cũng là một chuẩn: cụ thể là $\ell_2$.
 Giả sử rằng các thành phần trong vector $n$ chiều $\mathbf{x}$ là $x_1, \ldots, x_n$.
 *Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần trong vector: 
 
