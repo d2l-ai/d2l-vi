@@ -2676,7 +2676,7 @@ Trí Tuệ Nhân Tạo có một lịch sử lâu dài trong việc mang đến 
 Ví dụ, sắp xếp thư tín sử dụng công nghệ nhận dạng ký tự quang.
 Những hệ thống này được triển khai từ những năm 90 (đây là nguồn của các bộ dữ liệu chữ viết tay nổi tiếng MNIST và USPS).
 Các hệ thống tương tự cũng được áp dụng vào đọc ngân phiếu nộp tiền vào ngân hàng và tính điểm tín dụng cho ứng viên.
-Các giao dịch tài chính được kiểm tra lừa đảo một cách tự động.
+Các giao dịch tài chính được kiểm tra có phải lừa đảo không một cách tự động.
 Đây là nền tảng phát triển cho rất nhiều hệ thống thanh toán điện tử như Paypal, Stripe, AliPay, WeChat, Apple, Visa và MasterCard.
 Các chương trình máy tính cho cờ vua đã phát triển trong hàng thập kỷ.
 Học máy đứng sau các hệ thống tìm kiếm, gợi ý, cá nhân hóa và xếp hạng trên mạng Internet.
@@ -2751,7 +2751,7 @@ Bắt đầu từ TDGammon [23], một chương chình chơi Backgammon (một m
 Không giống Backgamon, cờ vua có một không gian trạng thái và tập các nước đi phức tạp hơn nhiều.
 DeepBlue chiến thắng Gary Kasparov, Campbell et al. :cite:`Campbell.Hoane-Jr.Hsu.2002`, bằng cách sử dụng phần cứng chuyên biệt, đa luồng khổng lồ và thuật toán tìm kiếm hiệu quả trên toàn bộ cây trò chơi.
 Cờ vây còn khó hơn vì không gian trạng thái khổng lồ của nó.
-Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo.
+Năm 2015, AlphaGo đạt tới đẳng cấp con người, :cite:`Silver.Huang.Maddison.ea.2016` nhờ sử dụng Học Sâu kết hợp với lấy mẫu cây Monte Carlo (*Monte Carlo tree sampling*).
 Thách thức trong Poker là không gian của trạng thái lớn và nó không được quan sát đầy đủ (ta không biết các quân bài của đối thủ).
 Libratus vượt chất lượng con người trong môn Poker sử dụng các chiến thuật có cấu trúc một cách hiệu quả :cite:`Brown.Sandholm.2017`.
 Những điều này thể hiện một sự tiến triển ấn tượng trong các trò chơi và tầm quan trọng của các thuật toán nâng cao trong đó.
