@@ -97,7 +97,7 @@ owing in part to the development of powerful, well-documented frameworks.
 
 Để một công nghệ điện toán đạt được tầm ảnh hưởng sâu rộng, nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ bởi nhưng công cụ cấp tiến được "bảo trì" thường xuyên.
 Các ý tưởng chính cần được chắt lọc rõ ràng, tối thiểu thời gian chuẩn bị cần thiết cho người mới bắt đầu để họ có thể trang bị các kiến thức đương thời.
-Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản, và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu sao cho họ có thể dễ dàng chỉnh sửa, áp dụng, và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
+Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản, và các đoạn mã nguồn được lấy làm ví dụ cần phải đơn giản với những người mới bắt đầu sao cho họ có thể dễ dàng chỉnh sửa, áp dụng, và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
 Lấy ứng dụng các trang web động làm ví dụ.
 Mặc dù các công ty công nghệ lớn như Amazon phát triển thành công các ứng dụng web định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh mẽ và với tài liệu đầy đủ.
 
@@ -163,8 +163,8 @@ Chúng tôi tìm thấy một lượng lớn các đoạn mã ví dụ về vi�
 Tuy nhiên, những ví dụ này thường tập trung vào khía cạnh *làm thế nào* để triển khai một hướng tiếp cận cho trước, mà bỏ qua việc thảo luận *tại sao* một thuật toán được tạo như thế.
 Nhiều chủ đề đã được đề cập đến trong các bài blog, ví dụ như trang [Distill](http://distill.pub) hoặc các trang cá nhân, chúng thường chỉ đề cập đến một vài chủ đề được chọn về học sâu và thường thiếu mã nguồn đi kèm.
 Một mặt khác, trong khi nhiều sách giáo trình đã ra đời, đáng chú ý nhất là :cite:`Goodfellow.Bengio.Courville.2016` (cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu), những nguồn tài liệu này lại không đi kèm với việc diễn giải dưới dạng mã nguồn để làm rõ hơn các khái niệm.
-Điều này khiến người đọc đôi khi mù tịt về cách thực thi chúng.
-Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học tốn phí.  
+Điều này khiến người đọc đôi khi mơ hồ về cách thực thi chúng.
+Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học có phí. 
 
 <!--
 We set out to create a resource that could
