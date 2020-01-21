@@ -1016,7 +1016,7 @@ or other excellent resources :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea
 
 <!-- ===================== Kết thúc dịch Phần 12 ==================== -->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
