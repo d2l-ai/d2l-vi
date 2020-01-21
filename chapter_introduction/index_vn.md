@@ -2937,101 +2937,15 @@ thì không cần điền vào các phần sau nữa.
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Vũ Hữu Tiệp
 * Sâm Thế Hải
 * Hoàng Trọng Tuấn
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 6 -->
 * Đoàn Võ Duy Thanh
 * Phạm Chí Thành
-
-<!-- Phần 7 -->
-*
-
-<!-- Phần 8 -->
-*
-
-<!-- Phần 9 -->
-*
-
-<!-- Phần 10 -->
-*
-
-<!-- Phần 11 -->
-*
-
-<!-- Phần 12 -->
-*
-
-<!-- Phần 13 -->
-*
-
-<!-- Phần 14 -->
-*
-
-<!-- Phần 15 -->
-*
-
-<!-- Phần 16 -->
 * Mai Sơn Hải
-<!-- Phần 18 -->
-*
-
-<!-- Phần 19 -->
 * Vũ Đình Quyền
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 20 -->
-*
-<!-- Phần 22 -->
-* Mai Sơn Hải
-
-<!-- Phần 23 -->
-*
-
-<!-- Phần 24 -->
-*
-
-<!-- Phần 25 -->
 * Lê Đàm Hồng Lộc
-
-<!-- Phần 26 -->
-*
-
-<!-- Phần 27 -->
-*
-
-<!-- Phần 28 -->
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 29 -->
-*
-
-<!-- Phần 30 -->
-*
-
-<!-- Phần 31 -->
-*
-
-<!-- Phần 32 -->
-*
-
-<!-- Phần 33 -->
-*
-
-<!-- Phần 34 -->
-*
