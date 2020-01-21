@@ -870,7 +870,8 @@ $$\left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\ha
 :eqlabel:`eq_gauss_confidence`
 
 Không quá khi nói rằng :eqref:`eq_gauss_confidence` là một trong những công thức sử dụng nhiều nhất trong thống kê. 
-Cùng kết thúc cuộc bàn luận về thống kê của chúng ta bằng cách thực hiện nó. Để cho đơn giản, hãy giả sử chúng ta đang làm việc chế độ tiệm cận. 
+Cùng kết thúc cuộc bàn luận về thống kê của chúng ta bằng cách thực hiện nó. 
+Để cho đơn giản, hãy giả sử chúng ta đang làm việc ở vùng tiệm cận. 
 Các giá trị $N$ nhỏ nên bao gồm giá trị chính xác `t_star` xác định được bằng phương pháp lập trình hoặc trích xuất từ bảng-$t$.
 
 ```{.python .input}
