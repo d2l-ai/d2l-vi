@@ -22,12 +22,12 @@ Neural networks then, the antecedents of the deep learning models
 that we focus on in this book, were regarded as outmoded tools.
 -->
 
-Chỉ một vài năm trước, không có nhiều nhà khoa học học sâu (_deep learning_) phát triển các sản phẩm và dịch vụ thông minh tại các công ty lớn và công ty khởi nghiệp.
+Chỉ một vài năm trước, không có nhiều nhà khoa học học sâu (_deep learning_) phát triển các sản phẩm và dịch vụ thông minh tại các công ty lớn cũng như các công ty khởi nghiệp.
 Khi người trẻ nhất trong nhóm tác giả chúng tôi tiến vào lĩnh vực này, học máy (_machine learning_) còn chưa xuất hiện thường xuyên trên truyền thông.
-Cha mẹ chúng tôi từng không có ý niệm gì về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa hay luật khoa.
-Học máy từng là một lĩnh vực nghiên cứu với chỉ một tập nhỏ các ứng dụng thực tế.
-Và những ứng dụng đó, chẳng hạn nhận dạng giọng nói (_speech recognition_) hay thị giác máy tính (_computer vision_), đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ.
-Các mạng nơ-ron (_neural network_), tiền đề của các mô hình học sâu mà chúng ta tập trung vào trong cuốn sách này, từng được coi là các công cụ lỗi thời.
+Cha mẹ chúng tôi còn không có ý niệm gì về học máy chứ chưa nói đến việc hiểu tại sao chúng tôi theo đuổi lĩnh vực này thay vì y khoa hay luật khoa.
+Học máy từng là một lĩnh vực nghiên cứu tiên phong với chỉ một số lượng nhỏ các ứng dụng thực tế.
+Những ứng dụng như nhận dạng giọng nói (_speech recognition_) hay thị giác máy tính (_computer vision_), đòi hỏi quá nhiều kiến thức chuyên biệt khiến chúng thường được phân thành các lĩnh vực hoàn toàn riêng mà trong đó học máy chỉ là một thành phần nhỏ.
+Các mạng nơ-ron (_neural network_), tiền đề của các mô hình học sâu mà chúng ta tập trung vào trong cuốn sách này, đã từng bị coi là các công cụ lỗi thời.
 
 
 <!--
@@ -47,9 +47,9 @@ changing the way movies are made, diseases are diagnosed,
 and playing a growing role in basic sciences---from astrophysics to biology.
 -->
 
-Trong chỉ khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu, dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (_natural language processing_), nhận dạng giọng nói tự động (_automatic speech recognition_), học tăng cường (_reinforcement learning_), và mô hình hoá thống kê (_statistical modeling_).
-Với những tiến bộ này, chúng ta bây giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), hệ thống trả lời tự động, giúp con người đào sâu vào cả núi email, và các phần mềm chiến thắng những người giỏi nhất trong các môn cờ như cờ vây, một kỳ tích từng được xem là không thể đạt được trong nhiều thập kỷ tới.
-Những công cụ này đã và đang gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách tạo ra các bộ phim, cách chẩn đoán bệnh, đóng một vài trò ngày càng tăng trong các ngành khoa học cơ bản -- từ vật lý thiên văn tới sinh học.
+Chỉ trong khoảng năm năm gần đây, học sâu đã mang đến nhiều bất ngờ trên quy mô toàn cầu và dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (_natural language processing_), nhận dạng giọng nói tự động (_automatic speech recognition_), học tăng cường (_reinforcement learning_), và mô hình hoá thống kê (_statistical modeling_).
+Với những tiến bộ này, chúng ta bây giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), xây dựng các hệ thống giúp trả lời thư tự động khi con người ngập trong núi email, hay lập trình phần mềm chơi cờ vây có thể thắng cả nhà vô địch thế giới, một kỳ tích từng được xem là không thể đạt được trong nhiều thập kỷ tới.
+Những công cụ này đã và đang gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách tạo ra các bộ phim, cách chẩn đoán bệnh và đóng một vài trò ngày càng tăng trong các ngành khoa học cơ bản -- từ vật lý thiên văn tới sinh học.
 
 <!-- =================== Kết thúc dịch Phần 1 ================================-->
 
@@ -66,7 +66,7 @@ This book represents our attempt to make deep learning approachable,
 teaching you both the *concepts*, the *context*, and the *code*.
 -->
 
-Cuốn sách này được viết với mong muốn học sâu dễ tiếp cận hơn, dạy bạn từ *khái niệm*, *bối cảnh*, tới *lập trình*.
+Cuốn sách này được viết với mong muốn làm cho học sâu dễ tiếp cận hơn. Nó sẽ dạy bạn từ *khái niệm*, *bối cảnh*, cho tới cách *lập trình*.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================>
 
