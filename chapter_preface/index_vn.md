@@ -76,7 +76,7 @@ Cuốn sách này được viết với mong muốn làm cho học sâu dễ ti�
 ### One Medium Combining Code, Math, and HTML
 -->
 
-### Một phương tiện truyền tải kết hợp Code, Toán, và HTML
+### Một phương tiện truyền tải kết hợp Mã nguồn, Toán, và HTML
 
 <!--
 For any computing technology to reach its full impact,
@@ -95,11 +95,11 @@ has been realized to a far greater degree in the past ten years,
 owing in part to the development of powerful, well-documented frameworks.
 -->
 
-Để bất kỳ kỹ thuật tính toán nào đạt được tầm ảnh hưởng sâu rộng, nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ bởi nhưng công cụ cấp tiến được "bảo trì" thường xuyên.
-Các ý tưởng chính cần được chắt lọc rõ ràng, tối thiểu thời gian chuẩn bị cần thiết để trang bị kiến thức đương thời cho những người mới bắt đầu.
-Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản, và các đoạn mã nguồn ví dụ cần phải đơn giản với những người mới bắt đầu sao cho họ có thể dễ dàng chỉnh sửa, áp dụng, và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
+Để một công nghệ điện toán đạt được tầm ảnh hưởng sâu rộng, nó phải dễ hiểu, có tài liệu đầy đủ, và được hỗ trợ bởi nhưng công cụ cấp tiến được "bảo trì" thường xuyên.
+Các ý tưởng chính cần được chắt lọc rõ ràng, tối thiểu thời gian chuẩn bị cần thiết cho người mới bắt đầu để họ có thể trang bị các kiến thức đương thời.
+Các thư viện cấp tiến nên tự động hoá các tác vụ đơn giản, và các đoạn mã nguồn được lấy làm ví dụ cần phải đơn giản với những người mới bắt đầu sao cho họ có thể dễ dàng chỉnh sửa, áp dụng, và mở rộng những ứng dụng thông thường thành các ứng dụng họ cần.
 Lấy ứng dụng các trang web động làm ví dụ.
-Mặc dù các công ty công nghệ lớn, như Amazon, phát triển thành công các ứng dụng web định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh mẽ và với tài liệu đầy đủ.
+Mặc dù các công ty công nghệ lớn như Amazon phát triển thành công các ứng dụng web định hướng bởi cơ sở dữ liệu từ những năm 1990, tiềm năng của công nghệ này để hỗ trợ các doanh nghiệp sáng tạo chỉ được nhân rộng lên ở một tầm cao mới từ khoảng mười năm nay, nhờ vào sự phát triển của các nền tảng mạnh mẽ và với tài liệu đầy đủ.
 
 <!--
 Testing the potential of deep learning presents unique challenges
@@ -119,8 +119,8 @@ to bring would-be practitioners up to speed.
 -->
 
 Kiểm định tiềm năng của học sâu có những thách thức riêng biệt vì bất kỳ ứng dụng riêng lẻ nào cũng bao gồm nhiều lĩnh vực khác nhau.
-Ứng dụng học sâu đòi hỏi những hiểu biết đồng thời (i) động lực để biến đổi một bài toán theo một hướng cụ thể; (ii) kiến thức toán học của một hướng tiếp cận mô hình hoá; (iii) những thuật toán tối ưu cho việc khớp mô hình với dữ liệu; và (iv) phần kỹ thuật yêu cầu để huấn luyện mô hình một cách hiệu quả, xử lý những khó khăn trong tính toán và tận dụng thật tốt phần cứng hiện có.
-Đào tạo kỹ năng suy nghĩ thấu đáo cần thiết để định hình bài toán, kiến thức toán để giải chúng, và các công cụ phần mềm để triển khai những giải pháp đó, tất cả trong một nơi, hàm chứa nhiều thách thức lớn.
+Ứng dụng học sâu đòi hỏi những hiểu biết đồng thời về (i) động lực để mô hình hoá một bài toán theo một hướng cụ thể; (ii) kiến thức toán học của một phương pháp mô hình hoá; (iii) những thuật toán tối ưu để khớp mô hình với dữ liệu; và (iv) phần kỹ thuật yêu cầu để huấn luyện mô hình một cách hiệu quả, xử lý những khó khăn trong tính toán và tận dụng thật tốt phần cứng hiện có.
+Việc đào tạo kỹ năng suy nghĩ thấu đáo cần thiết để định hình bài toán, cung cấp kiến thức toán để giải chúng, và hướng dẫn cách dùng các công cụ phần mềm để triển khai những giải pháp đó, tất cả trong một nơi, hàm chứa nhiều thách thức lớn.
 Mục tiêu của chúng tôi trong cuốn sách này là trình bày một nguồn tài liệu tổng hợp giúp những học viên nhanh chóng bắt kịp.
 
 
@@ -158,13 +158,13 @@ of commercial course providers.
 -->
 
 Chúng tôi bắt đầu dự án sách này từ tháng 7/2017 khi cần trình bày giao diện MXNet Gluon (khi đó còn mới) tới người dùng.
-Tại thời điểm đó, không có một nguồn tài liệu nào vừa đồng thời (i) cập nhật; (ii) bao gồm đầy đủ các khía cạnh của học máy hiện đại với đầy đủ chiều sâu kỹ thuật; và (iii) xem kẽ các giải trình mà người ta mong đợi từ một cuốn sách giáo trình với mã có thể thực thi, điều thường được tìm thấy trong các bài hướng dẫn thực hành.
-Chúng tôi tìm thấy một lượng lớn các đoạn mã ví dụ về việc sử dụng một nền tảng học sâu (ví dụ làm thế nào để thực hiện các phép toán cơ bản với ma trận trên TensorFlow) hoặc để triển khai những kỹ thuật cụ thể (ví dụ các đoạn mã cho LeNet, AlexNet, ResNet,...) dưới dạng một bài blog hoặc trên GitHub.
-Tuy nhiên, những ví dụ này thường tập trung vào khía cạnh *làm thế nào* để triển khai một hướng tiếp cận cho trước, mà bỏ qua các thảo luận về việc *tại sao* một thuật toán được tạo như thế.
-Trong khi các chủ đề lẻ tẻ đã được đề cập trong các bài blog, ví dụ trên trang web [Distill](http://distill.pub) hoặc các blog cá nhân, họ chỉ đề cập đến một vài chủ đề được chọn về học sâu, và thường thiếu mã nguồn đi kèm.
-Một mặt khác, trong khi nhiều sách giáo trình đã ra đời, đáng chú ý nhất là :cite:`Goodfellow.Bengio.Courville.2016` (cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu), những nguồn tài liệu này lại không đi kèm với việc diễn giải dưới dạng mã nguồn để hiểu rõ hơn về các khái niệm.
-Điều này khiến người đọc đôi khi mù tịt về cách thực thi chúng.
-Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học tốn phí.  
+Tại thời điểm đó, không có một nguồn tài liệu nào vừa đồng thời (i) cập nhật; (ii) bao gồm đầy đủ các khía cạnh của học máy hiện đại với đầy đủ chiều sâu kỹ thuật; và (iii) xem kẽ các giải trình mà người ta mong đợi từ một cuốn sách giáo trình với mã nguồn có thể thực thi, điều thường được tìm thấy trong các bài hướng dẫn thực hành.
+Chúng tôi tìm thấy một lượng lớn các đoạn mã ví dụ về việc sử dụng một nền tảng học sâu (ví dụ làm thế nào để thực hiện các phép toán cơ bản với ma trận trên TensorFlow) hoặc để triển khai những kỹ thuật cụ thể (ví dụ các đoạn mã cho LeNet, AlexNet, ResNet,...) trong các bài blog hoặc là trên GitHub.
+Tuy nhiên, những ví dụ này thường tập trung vào khía cạnh *làm thế nào* để triển khai một hướng tiếp cận cho trước, mà bỏ qua việc thảo luận *tại sao* một thuật toán được tạo như thế.
+Nhiều chủ đề đã được đề cập đến trong các bài blog, ví dụ như trang [Distill](http://distill.pub) hoặc các trang cá nhân, chúng thường chỉ đề cập đến một vài chủ đề được chọn về học sâu và thường thiếu mã nguồn đi kèm.
+Một mặt khác, trong khi nhiều sách giáo trình đã ra đời, đáng chú ý nhất là :cite:`Goodfellow.Bengio.Courville.2016` (cuốn này cung cấp một bản khảo sát xuất sắc về các khái niệm phía sau học sâu), những nguồn tài liệu này lại không đi kèm với việc diễn giải dưới dạng mã nguồn để làm rõ hơn các khái niệm.
+Điều này khiến người đọc đôi khi mơ hồ về cách thực thi chúng.
+Bên cạnh đó, rất nhiều tài liệu lại được cung cấp dưới dạng các khoá học có phí. 
 
 <!--
 We set out to create a resource that could
@@ -179,11 +179,11 @@ for interactive discussion of technical details and to answer questions.
 -->
 
 Chúng tôi đặt mục tiêu tạo ra một tài liệu mà có thể (1) miễn phí cho mọi người;
-(2) cung cấp chiều sâu kỹ thuật đầy đủ tạo điểm bắt đầu cho con đường trở thành một nhà khoa học học máy ứng dụng;
-(3) bao gồm mã thực thi được, trình bày cho người đọc *làm thế nào* giải quyết các bài toán trên thực tế;
-(4) tài liệu này có thể cập nhật một cách nhanh chóng, bằng cả chúng tôi và cộng động ở quy mô lớn;
+(2) cung cấp chiều sâu kỹ thuật đầy đủ, là điểm khởi đầu trên con đường trở thành một nhà khoa học học máy ứng dụng;
+(3) bao gồm mã nguồn thực thi được, trình bày cho người đọc *làm thế nào* giải quyết các bài toán trên thực tế;
+(4) tài liệu này có thể cập nhật một cách nhanh chóng bởi các tác giả cũng như cộng động ở quy mô lớn;
 và (5) được bổ sung bởi một [diễn đàn](http://discuss.mxnet.io) (và [diễn đàn tiếng Việt](https://forum.machinelearningcoban.com/c/d2l) của nhóm dịch)
-cho những thảo luận nhanh chóng các chi tiết kỹ thuật và hỏi đáp.
+để nhanh chóng thảo luận và hỏi đáp về các chi tiết kỹ thuật.
 
 <!--
 These goals were often in conflict.
@@ -206,14 +206,14 @@ We believe that this might be the first book published
 using such an integrated workflow.
 -->
 
-Những mục tiêu này từng có xung đột.
+Các mục tiêu này thường không tương thích với nhau.
 Các công thức, định lý, và các trích dẫn được quản lý tốt nhất trên LaTex.
 Mã được giải thích tốt nhất bằng Python.
 Và trang web phù hợp với HTML và JavaScript.
-Hơn nữa, chúng tôi muốn nội dung vừa có thể truy cập được bằng mã nguồn có thể thực thi, bằng một cuốn sách như một tập tin PDF tải về được, và ở trên internet như một trang web.
-Hiện tại không tồn tại công cụ nào phù hợp một cách hoàn hảo cho những nhu cầu này, bởi vậy chúng tôi phải tự tạo công cụ cho riêng mình.
-Chúng tôi mô tả hướng tiếp cận một cách chi tiết trong :numref:`chapter_contribute`. Chúng tôi tổ chức dự án trên GitHub để chia sẻ mã nguồn và cho phép sửa đổi, Jupyter notebook để kết hợp mã, các phương trình và nội dung chữ, Sphinx như một bộ máy tạo nhiều tập tin đầu ra, và Discourse để tạo diễn đàn.
-Trong khi hệ thống này còn chưa hoàn hảo, những sự lựa chọn này cung cấp một giải pháp chấp nhận được trong số các giải pháp tương tự.
+Hơn nữa, chúng tôi muốn nội dung của nó vừa có thể được truy cập dưới dạng mã nguồn có thể thực thi, vừa có thể tải về như một cuốn sách dưới định dạng PDF, và lại ở trên internet như một trang web.
+Hiện tại không có một công cụ nào là hoàn hảo cho những nhu cầu này, bởi vậy chúng tôi phải tự tạo công cụ cho riêng mình.
+Chúng tôi mô tả hướng tiếp cận một cách chi tiết trong :numref:`chapter_contribute`. Chúng tôi tổ chức dự án trên GitHub để chia sẻ mã nguồn và cho phép sửa đổi, Jupyter notebook để kết hợp đoạn mã, phương trình toán và nội dung chữ, sử dụng Sphinx như một bộ máy tạo nhiều tập tin đầu ra, và Discourse để tạo diễn đàn.
+Trong khi hệ thống này còn chưa hoàn hảo, những lựa chọn này cung cấp một giải pháp chấp nhận được trong số các giải pháp tương tự.
 Chúng tôi tin rằng đây có thể là cuốn sách đầu tiên được xuất bản dưới dạng kết hợp này.
 
 <!-- =================== Kết thúc dịch Phần 2 ================================-->
