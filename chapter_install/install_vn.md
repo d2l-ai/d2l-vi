@@ -314,7 +314,7 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy

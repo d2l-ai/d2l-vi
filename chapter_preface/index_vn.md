@@ -676,7 +676,7 @@ Nếu không có thời gian, tài nguyên, mọi sự thảo luận cùng các 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 <!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================-->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
