@@ -671,7 +671,7 @@ Nếu không có thời gian, tài nguyên, thảo luận cùng các đồng ngh
 ![](../img/qr_preface.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_preface.svg)
+![](../img/qr_preface.svg)
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 <!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================-->
