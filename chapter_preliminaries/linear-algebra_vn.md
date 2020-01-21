@@ -325,9 +325,9 @@ For example, adding two matrices of the same shape performs elementwise addition
 -->
 
 Số vô hướng, vector, ma trận và tensor với một số trục bất kỳ có một vài thuộc tính rất hữu dụng.
-Ví dụ, bạn có thể để ý từ định nghĩa của phép toán theo thành phần (_elementwise_), bất kỳ phép toán theo thành phần một ngôi nào cũng không làm thay đổi dạng của toán hạng của nó.
-Tương tự, cho hai tensor bất kỳ có cùng dạng, kết quả của bất kỳ phép toán theo thành phần hai ngôi sẽ là một tensor có cùng dạng.
-Ví dụ, cộng hai ma trận có cùng dạng sẽ thực hiện phép cộng theo thành phần giữa hai ma trận này.  
+Ví dụ, bạn có thể để ý từ định nghĩa của phép toán theo từng phần tử (_elementwise_), bất kỳ phép toán theo từng phần tử một ngôi nào cũng không làm thay đổi kích thước của toán hạng của nó.
+Tương tự, cho hai tensor bất kỳ có cùng kích thước, kết quả của bất kỳ phép toán theo từng phần tử hai ngôi sẽ là một tensor có cùng kích thước.
+Ví dụ, cộng hai ma trận có cùng kích thước sẽ thực hiện phép cộng theo từng phần tử giữa hai ma trận này.  
 
 ```{.python .input}
 A = np.arange(20).reshape(5, 4)
@@ -341,7 +341,7 @@ Consider matrix $\mathbf{B} \in \mathbb{R}^{m \times n}$ whose element of row $i
 The Hadamard product of matrices $\mathbf{A}$ (defined in :eqref:`eq_matrix_def`) and $\mathbf{B}$
 -->
 
-Đặc biệt, phép nhân theo thành phần của hai ma trận được gọi là *phép nhân Hadamard* (*Hadamard product* -- ký hiệu toán học là $\odot$).
+Đặc biệt, phép nhân theo phần tử của hai ma trận được gọi là *phép nhân Hadamard* (*Hadamard product* -- ký hiệu toán học là $\odot$).
 Xét ma trận $\mathbf{B} \in \mathbb{R}^{m \times n}$ có phần tử dòng $i$ và cột $j$ là $b_{ij}$.
 Phép nhân Hadamard giữa ma trận $\mathbf{A}$ (khai báo ở :eqref:`eq_matrix_def`) và $\mathbf{B}$ là
 
@@ -363,7 +363,7 @@ A * B
 Multiplying or adding a tensor by a scalar also does not change the shape of the tensor, where each element of the operand tensor will be added or multiplied by the scalar.
 -->
 
-Nhân hoặc cộng một tensor với một số vô hướng cũng sẽ không thay đổi dạng của tensor, mỗi phần tử của tensor sẽ được cộng hoặc nhân cho số vô hướng đó.
+Nhân hoặc cộng một tensor với một số vô hướng cũng sẽ không thay đổi kích thước của tensor, mỗi phần tử của tensor sẽ được cộng hoặc nhân cho số vô hướng đó.
 
 ```{.python .input}
 a = 2
