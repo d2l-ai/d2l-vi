@@ -14,7 +14,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-Để sẵn sàng cho những bài học thực hành, bạn cần một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
+Để sẵn sàng cho việc thực hành, bạn cần một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
@@ -34,7 +34,7 @@ using `sh <FILENAME> -b`. For macOS users:
 Cách đơn giản nhất để bắt đầu là cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html).
 Phiên bản Python 3.x được khuyên dùng.
 Bạn có thể bỏ qua những bước sau đây nếu đã cài đặt conda.
-Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ command line sử dụng câu lệnh `sh <FILENAME> -b`.
+Tải về tập tin sh tương ứng của Miniconda từ trang web và sau đó thực thi phần cài đặt từ cửa sổ dòng lệnh sử dụng câu lệnh `sh <FILENAME> -b`.
 Với người dùng macOS:
 
 ```bash
@@ -93,7 +93,7 @@ Alternatively, if you have `unzip` (otherwise run `sudo apt install unzip`) avai
 
 Tiếp theo, ta cần tải về mã nguồn của cuốn sách này.
 Bạn có thể tải mã nguồn từ [đường dẫn này](https://d2l.ai/d2l-en-0.7.0.zip) và giải nén.
-Một cách khác, nếu bạn đã có cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
+Một cách khác, nếu bạn đã cài đặt sẵn `unzip` (nếu chưa, hãy chạy lệnh `sudo apt install unzip`):
 
 ```bash
 mkdir d2l-en && cd d2l-en
@@ -108,7 +108,7 @@ Enter `y` for the queries that follow this command.
 -->
 
 Bây giờ, ta sẽ kích hoạt môi trường `d2l` và cài đặt `pip`.
-Hãy nhập `y` cho phần truy vấn theo sau lệnh này:
+Hãy nhập `y` để trả lời các câu hỏi theo sau lệnh này:
 
 ```bash
 conda activate d2l
@@ -188,7 +188,7 @@ before running the code of the book or updating MXNet or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
- Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
+Bây giờ, bạn có thể truy cập vào địa chỉ http://localhost:8888 (thường sẽ được tự động mở) trên trình duyệt Web.
 Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn sách này.
 Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
 Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
@@ -333,3 +333,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 * Lê Khắc Hồng Phúc
 * Đoàn Võ Duy Thanh
+* Vũ Hữu Tiệp
