@@ -318,7 +318,7 @@ Once we have taught you how some component works,
 we can just use the Gluon version in subsequent tutorials.
 -->
 
-Xuyên suốt cuốn sách, chúng ta sẽ làm việc với thư viện MXNet; một thư viện với một đặc tính hiếm có, đó là vừa đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
+Xuyên suốt cuốn sách, chúng ta sẽ làm việc với thư viện MXNet; đây là một thư viện với một đặc tính hiếm có, đó là vừa đủ linh hoạt để nghiên cứu và đủ nhanh để tạo ra sản phẩm.
 Cuốn sách này sẽ dạy về khái niệm học sâu từ đầu.
 Thỉnh thoảng, chúng tôi sẽ muốn đào sâu hơn vào những chi tiết về mô hình mà thông thường sẽ được che giấu khỏi người dùng bởi những lớp trừu tượng bậc cao Gluon.
 Điều này đặc biệt hay xuất hiện trong các hướng dẫn cơ bản, nơi chúng tôi muốn bạn hiểu về tất cả mọi thứ đang diễn ra trong một tầng hoặc bộ tối ưu nào đó.
