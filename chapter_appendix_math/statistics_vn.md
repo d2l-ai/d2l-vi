@@ -807,7 +807,7 @@ Cùng bàn về ví dụ kinh điển nhất, khoảng tin cậy cho giá trị 
 Giả sử chúng ta thu thập n mẫu $\{x_i\}_{i=1}^n$ từ Gaussian $\mathcal{N}(\mu, \sigma^2)$.
 Chúng ta có thể tính toán ước lượng trung bình và độ lệch chuẩn bằng công thức:
 
-$$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{and}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
+$$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{và}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
 
 <!--
 If we now consider the random variable
