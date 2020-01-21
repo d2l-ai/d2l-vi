@@ -448,7 +448,7 @@ Hầu hết các phần của cuốn sách đều bao gồm mã nguồn thực t
 Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai, thay đổi mã nguồn từng chút một và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học khác biệt nào đó có thể cho chúng ta biết chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết khác biệt đó vẫn chưa được khám phá ra.
-Mặc dù chúng tôi đã cố gắng hết sức, nhưng vẫn chưa có cách giải thích trọn vẹn nào cho nhiều vấn đề kĩ thuật, bởi vì phần toán học để mô tả những mô hình đấy có thể là rất khó và công cuộc tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
+Mặc dù chúng tôi đã cố gắng hết sức, vẫn chưa có cách giải thích trọn vẹn nào cho nhiều vấn đề kỹ thuật, bởi vì phần toán học để mô tả những mô hình đó có thể là rất khó và công cuộc tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
 Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển, những phiên bản tiếp theo của cuốn sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn mà phiên bản hiện tại chưa làm được.
 
 <!--
