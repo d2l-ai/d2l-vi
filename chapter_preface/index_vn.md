@@ -243,7 +243,6 @@ Có nhiều cuốn sách dạy rất chi tiết về một chuỗi các chủ đ
 Ví dụ như trong cuốn sách tuyệt vời :cite:`Bishop.2006` này của Bishop, mỗi chủ đề được dạy rất kỹ lưỡng tới nỗi để đến được chương hồi quy tuyến tính cũng đòi hỏi không ít công sức phải bỏ ra.
 Các chuyên gia yêu thích quyển sách này chính vì sự kỹ lưỡng mà nó mang lại, nhưng với những người mới bắt đầu thì đây là điểm hạn chế việc sử dụng cuốn sách này như một tài liệu nhập môn.
 
-
 <!--
 In this book, we will teach most concepts *just in time*.
 In other words, you will learn concepts at the very moment
