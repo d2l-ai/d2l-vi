@@ -444,7 +444,7 @@ future editions of this book will be able to provide insights
 in places the present edition cannot.
 -->
 
-Hầu hết các phần của cuốn sách đều bao gồm mã nguồn hoạt động được, bởi vì chúng tôi tin rằng trải nghiệm học thông qua tương tác đóng một vai trò quan trọng trong học sâu.
+Hầu hết các phần của cuốn sách đều bao gồm mã nguồn thực thi được, bởi vì chúng tôi tin rằng trải nghiệm học thông qua tương tác đóng một vai trò quan trọng trong học sâu.
 Hiện tại, một số kinh nghiệm nhất định chỉ có thể được hình thành thông qua phương pháp thử và sai, thay đổi mã nguồn từng chút một và quan sát kết quả.
 Lý tưởng nhất là sử dụng một lý thuyết toán học khác biệt nào đó có thể cho chúng ta biết chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết khác biệt đó vẫn chưa được khám phá.
