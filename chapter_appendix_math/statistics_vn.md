@@ -887,7 +887,7 @@ sigma_hat = samples.std(ddof=1)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Statistics focuses on inference problems, whereas deep learning emphasizes on making accurate predictions without explicitly programming and understanding.
@@ -897,14 +897,17 @@ sigma_hat = samples.std(ddof=1)
 * Hypothesis testing is a way of evaluating some evidence against the default statement about a population.
 -->
 
-*dịch đoạn phía trên*
-
+* Thống kê tập trung vào các vấn đề suy luận, trong khi học sâu chú trọng vào đưa ra các dự đoán chuẩn xác mà không cần một phương pháp lập trình hay kiến thức rõ ràng. 
+* Ba phương pháp suy luận thống kê thông dụng nhất: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết, và tạo các khoảng tin cậy. 
+* Ba bộ ước lượng thông dụng nhất: độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số. 
+* Một khoảng tin cậy là khoảng ước tính của tập tham số thực mà chúng ta có thể tạo ra bằng cách cung cấp các mẫu. 
+* Kiểm định giả thuyết là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Let $X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} \mathrm{Unif}(0, \theta)$, where "iid" stands for *independent and identically distributed*. Consider the following estimators of $\theta$:
@@ -917,13 +920,20 @@ $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
 1. Run the confidence interval code with $N=2$ and $\alpha = 0.5$ for $100$ independently generated dataset, and plot the resulting intervals (in this case `t_star = 1.0`).  You will see several very short intervals which are very far from containing the true mean $0$.  Does this contradict the interpretation of the confidence interval?  Do you feel comfortable using short intervals to indicate high precision estimates?
 -->
 
-*dịch đoạn phía trên*
+1. Cho $X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} \mathrm{Unif}(0, \theta)$, với "iid" là viết tắt của *phân phối độc lập và giống nhau - independent and identically distributed*. Xét bộ ước lượng $\theta$ dưới đây:
+$$\hat{\theta} = \max \{X_1, X_2, \ldots, X_n \};$$
+$$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
+    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số của $\hat{\theta}.$
+    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số $\tilde{\theta}.$
+    * Bộ ước lượng nào tốt hơn?
+1. Trở lại ví dụ về nhà hóa học của chúng ta ở phần mở đầu, liệt kê 5 bước để tiến hành kiểm định giả thuyết hai chiều? Cho biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $1 - \beta = 0.8$.
+1. Chạy đoạn mã lập trình khoảng tin cậy biết $N=2$ và $\alpha = 0.5$ với $100$ dữ liệu được tạo độc lập, sau đó vẽ đồ thị các khoảng kết quả (trường hợp này `t_star = 1.0`). Ban sẽ thấy một vài khoảng rất nhỏ nằm cách xa khoảng chứa trung bình thực $0$. Điều này có mâu thuẫn với việc giải thích khoảng tin cậy không? Bạn có thoải mái khi sử dụng các khoảng nhỏ này để thể hiện các ước tính với độ chính xác cao?
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/5156)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Bàn luận](https://discuss.mxnet.io/t/5156)
 
 <!--
 ![](../img/qr_statistics.svg)
@@ -998,4 +1008,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 13 -->
-*
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc  
+* Phạm Hồng Vinh  
