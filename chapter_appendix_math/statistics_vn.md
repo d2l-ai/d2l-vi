@@ -795,7 +795,7 @@ Tuy nhiên nếu như ta diễn giải chúng một cách rõ ràng, thì chúng
 ### A Gaussian Example
 -->
 
-### *dịch tiêu đề phía trên*
+### Một ví dụ về Gaussian
 
 <!--
 Let's discuss the most classical example, the confidence interval for the mean of a Gaussian of unknown mean and variance.  
@@ -803,15 +803,17 @@ Suppose we collect $n$ samples $\{x_i\}_{i=1}^n$ from our Gaussian $\mathcal{N}(
 We can compute estimators for the mean and standard deviation by taking
 -->
 
-*dịch đoạn phía trên*
+Cùng bàn về ví dụ kinh điển nhất, khoảng tin cậy cho giá trị trung bình của một phân phối Gaussian với trung bình và phương sai chưa xác định. 
+Giả sử chúng ta thu thập $n$ mẫu $\{x_i\}_{i=1}^n$ từ phân phối Gaussian $\mathcal{N}(\mu, \sigma^2)$.
+Chúng ta có thể tính bộ ước lượng cho giá trị trung bình và độ lệch chuẩn bằng công thức:
 
-$$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{and}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
+$$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{và}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
 
 <!--
 If we now consider the random variable
 -->
 
-*dịch đoạn phía trên*
+Nếu bây giờ chúng ta xem xét biến ngẫu nhiên:
 
 $$
 T = \frac{\hat\mu_n - \mu}{\hat\sigma_n/\sqrt{n}},
@@ -821,20 +823,21 @@ $$
 we obtain a random variable following a well-known distribution called the *Student's t-distribution on* $n-1$ *degrees of freedom*.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có được một biến ngẫu nhiên theo *phân phối t Student trên* $n - 1$ *bậc tự do*.
 
 <!--
 This distribution is very well studied, and it is known, for instance, that as $n\rightarrow \infty$, it is approximately a standard Gaussian, and thus by looking up values of the Gaussian c.d.f. in a table, we may conclude that the value of $T$ is in the interval $[-1.96, 1.96]$ at least $95\%$ of the time.  
 For finite values of $n$, the interval needs to be somewhat larger, but are well known and precomputed in tables.
 -->
 
-*dịch đoạn phía trên*
+Phân phối này đã được nghiên cứu rất chi tiết, và đã được chứng minh là khi $n\rightarrow \infty$, nó xấp xỉ với một phân phối Gaussian tiêu chuẩn, và do đó bằng cách nhìn vào các giá trị phân phối tích lũy của Gausian trong bảng, chúng ta có thể kết luận rằng giá trị $T$ nằm trong khoảng $[-1.96, 1.96]$ tối thiểu là $95\%$ các trường hợp. 
+Với giá trị $n$ hữu hạn, khoảng tin cậy sẽ lớn hơn, nhưng chúng vẫn rõ ràng và thường được tính sẵn và trình bày thành bảng. 
 
 <!--
 Thus, we may conclude that for large $n$,
 -->
 
-*dịch đoạn phía trên*
+Do đó, chúng ta có thể kết luận với giá trị $n$ lớn:
 
 $$
 P\left(\frac{\hat\mu_n - \mu}{\hat\sigma_n/\sqrt{n}} \in [-1.96, 1.96]\right) \ge 0.95.
@@ -844,7 +847,7 @@ $$
 Rearranging this by multiplying both sides by $\hat\sigma_n/\sqrt{n}$ and then adding $\hat\mu_n$, we obtain
 -->
 
-*dịch đoạn phía trên*
+Sắp xếp lại công thức này bằng cách nhân hai vế với $\hat\sigma_n/\sqrt{n}$ và thêm vào $\hat\mu_n$, ta có:
 
 $$
 P\left(\mu \in \left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right]\right) \ge 0.95.
@@ -861,7 +864,15 @@ For simplicity, we assume we are in the asymptotic regime.
 Small values of $N$ should include the correct value of `t_star` obtained either programmatically or from a $t$-table.
 -->
 
-*dịch đoạn phía trên*
+Như vậy chúng ta đã xác định được khoảng tin cậy $95\%$ cần tìm:
+
+$$\left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right].$$
+:eqlabel:`eq_gauss_confidence`
+
+Không quá khi nói rằng :eqref:`eq_gauss_confidence` là một trong những công thức sử dụng nhiều nhất trong thống kê. 
+Cùng kết thúc cuộc bàn luận về thống kê của chúng ta bằng cách thực hiện nó. 
+Để cho đơn giản, hãy giả sử chúng ta đang làm việc ở vùng tiệm cận. 
+Các giá trị $N$ nhỏ nên bao gồm giá trị chính xác `t_star` xác định được bằng phương pháp lập trình hoặc trích xuất từ bảng-$t$.
 
 ```{.python .input}
 # Number of samples
@@ -1005,7 +1016,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 
 <!-- Phần 12 -->
-*
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh 
+* Lê Khắc Hồng Phúc   
 
 <!-- Phần 13 -->
 * Nguyễn Lê Quang Nhật
