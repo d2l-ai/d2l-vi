@@ -84,7 +84,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
-| elementwise         | theo từng phần tử                                              |                       |
+| elementwise         | (theo) từng phần tử                                              |                       |
 | embedding           | embedding                                                      |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
