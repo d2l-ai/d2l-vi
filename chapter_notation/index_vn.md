@@ -44,7 +44,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 ## Set Theory
 -->
 
-## Lý thuyết tập hợp
+## Lý thuyết Tập hợp
 
 
 <!--
