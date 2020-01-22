@@ -805,7 +805,7 @@ We can compute estimators for the mean and standard deviation by taking
 
 Cùng bàn về ví dụ kinh điển nhất, khoảng tin cậy cho giá trị trung bình của một phân phối Gaussian với trung bình và phương sai chưa xác định. 
 Giả sử chúng ta thu thập $n$ mẫu $\{x_i\}_{i=1}^n$ từ phân phối Gaussian $\mathcal{N}(\mu, \sigma^2)$.
-Chúng ta có thể tính toán ước lượng trung bình và độ lệch chuẩn bằng công thức:
+Chúng ta có thể tính bộ ước lượng cho giá trị trung bình và độ lệch chuẩn bằng công thức:
 
 $$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{và}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
 
