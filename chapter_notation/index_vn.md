@@ -98,7 +98,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathbf{(\cdot)}^\top$: chuyển vị của một vector hoặc một ma trận
 * $\mathbf{X}^{-1}$: nghịch đảo của ma trận $\mathbf{X}$
 * $\odot$: tích Hadamard (theo từng thành phần)
-* $\lvert \mathcal{X} \rvert$: Cardinality (số phần tử) của tập $\mathcal{X}$
+* $\lvert \mathcal{X} \rvert$: card (số phần tử) của tập $\mathcal{X}$
 * $\|\cdot\|_p$: chuẩn $\ell_p$
 * $\|\cdot\|$: chuẩn $\ell_2$
 * $\langle \mathbf{x}, \mathbf{y} \rangle$: tích vô hướng của hai vector  $\mathbf{x}$ và $\mathbf{y}$
