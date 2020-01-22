@@ -32,7 +32,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 
 * $x$: một số vô hướng
 * $\mathbf{x}$: một vector
-* $\mathbf{X}$: một matrix
+* $\mathbf{X}$: một ma trận
 * $\mathsf{X}$: một tensor
 * $\mathbf{I}$: một ma trận đồng nhất
 * $x_i$, $[\mathbf{x}]_i$: phần tử thứ $i$ của vector $\mathbf{x}$
