@@ -2515,7 +2515,7 @@ Việc này đạt được bằng cách thêm nhiễu :cite:`Bishop.1995` xuyê
 
 * Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào để tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
 :cite:`Bahdanau.Cho.Bengio.2014` đã tìm ra một giải pháp tinh tế bằng cách sử dụng một cấu trúc con trỏ có thể học được.
-Thay vì phải nhớ toàn một bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này giúp tăng đáng kể độ chính xác của các câu dài vì lúc này mô hình không còn cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
+Ví dụ trong dịch máy, thay vì phải nhớ toàn một bộ câu với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này giúp tăng đáng kể độ chính xác của các câu dài vì lúc này mô hình không còn cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
 <!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
@@ -2548,8 +2548,8 @@ Những công cụ này cho phép các trạng thái nội tại của mạng n�
 
 * Một bước phát triển quan trọng khác là sự ra đời của GAN :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
 Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật độ xác suất và các mô hình sinh (_generative models_) tập trung vào việc tìm các phân phối xác suất hợp lý và các thuật toán (thường là xấp xỉ) để lấy mẫu từ các phân phối đó.
-Vì vậy, những thuật toán này có rất nhiều hạn chế bởi sự thiếu linh động của việc kế thừa từ chính các mô hình thống kê đó.
-Phát kiến quan trọng của GANs là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi (có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm).
+Vì vậy, những thuật toán này có rất nhiều hạn chế và sự thiếu linh động khi kế thừa chính các mô hình thống kê đó.
+Phát kiến quan trọng của GANs là thay thế các thuật toán lấy mẫu đó bởi một thuật toán với các tham số khả vi (*differentiable*: có thể tính đạo hàm để áp dụng các thuật toán tối ưu dựa trên đó) bất kỳ.
 Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
 Khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu đã thúc đẩy phương pháp đánh giá hàm mật độ xác suất khai sinh một loạt các kỹ thuật.
 Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu.Park.Isola.ea.2017` và tạo giả khuôn mặt người nổi tiếng là các minh chứng của quá trình này.
@@ -2576,7 +2576,7 @@ Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu
 Trong rất nhiều trường hợp, một GPU là không đủ để xử lý một lượng lớn dữ liệu sẵn có cho huấn luyện.
 Khả năng xây dựng các thuật toán huấn luyện phân tán song song đã cải tiến đáng kể trong thập kỷ vừa rồi.
 Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào cách xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
-Đồng thời, batch nhỏ hạn chế sự hiệu quả của GPU.
+Đồng thời, batch nhỏ lại hạn chế sự hiệu quả của GPU.
 Bởi vậy, nếu ta huấn luyện trên 1024 GPU với 32 ảnh trong một batch sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
 Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, tiếp tục bởi :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
 
@@ -2593,11 +2593,11 @@ Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, tiếp t
   other. Simulation provides such an avenue.
 -->
 
-* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là khi có thể tạo và sử dụng môi trường giả lập.
-Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo) khi máy tính đạt được chất lượng vượt mức con người. 
+* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là với ứng dụng mà có thể tạo và sử dụng môi trường giả lập.
+Việc này đã dẫn tới sự tiến triển đáng kể ở môn cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo). Máy tính đạt được chất lượng vượt mức con người ở các ứng dụng này.
 Xem thêm mô tả về cách đạt được điều này trong Alphago tại :cite:`Silver.Huang.Maddison.ea.2016`.
-Tóm lại, học tăng cường làm việc tốt nhất nếu có cực nhiều bộ (trạng thái, hành động, điểm thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
-Mô phỏng giả lập cung cấp một môi trường như thế.
+Tóm lại, học tăng cường làm việc tốt nhất nếu có cực nhiều bộ (trạng thái, hành động, điểm thưởng) để mô hình có thể thử và học cách chúng được liên hệ với nhau như thế nào.
+Các phần mềm mô phỏng giả lập cung cấp một môi trường như thế.
 
 <!--
 * Deep Learning frameworks have played a crucial role
