@@ -102,7 +102,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\|\cdot\|_p$: chuẩn $\ell_p$
 * $\|\cdot\|$: chuẩn $\ell_2$
 * $\langle \mathbf{x}, \mathbf{y} \rangle$: tích vô hướng của hai vector  $\mathbf{x}$ và $\mathbf{y}$
-* $\sum$: tổng của một dãy số
+* $\sum$: tổng của một dãy
 * $\prod$: tích của một dãy
 
 
