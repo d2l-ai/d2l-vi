@@ -449,7 +449,7 @@ Hiện tại, một số kinh nghiệm nhất định chỉ có thể được h
 Lý tưởng nhất là sử dụng một lý thuyết toán học khác biệt nào đó có thể cho chúng ta biết chính xác cách thay đổi mã nguồn để đạt được kết quả mong muốn.
 Thật đáng tiếc là hiện tại những lý thuyết khác biệt đó vẫn chưa được khám phá ra.
 Mặc dù chúng tôi đã cố gắng hết sức, vẫn chưa có cách giải thích trọn vẹn nào cho nhiều vấn đề kỹ thuật, bởi vì phần toán học để mô tả những mô hình đó có thể là rất khó và công cuộc tìm hiểu về những chủ đề này mới chỉ tăng cao trong thời gian gần đây.
-Chúng tôi hi vọng rằng khi mà những lý thuyết về học sâu phát triển, những phiên bản tiếp theo của cuốn sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn mà phiên bản hiện tại chưa làm được.
+Chúng tôi hy vọng rằng khi mà những lý thuyết về học sâu phát triển, những phiên bản tiếp theo của cuốn sách sẽ có thể cung cấp những cái nhìn sâu sắc hơn mà phiên bản hiện tại chưa làm được.
 
 <!--
 Most of the code in this book is based on Apache MXNet.
@@ -484,7 +484,7 @@ the following packages and modules as dependencies:
 -->
 
 Để tránh việc lặp lại không cần thiết, chúng tôi đóng gói những hàm, lớp,... mà thường xuyên được chèn vào và tham khảo đến trong cuốn sách này trong gói thư viện `d2l`.
-Đối với bất kì đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
+Đối với bất kỳ đoạn mã nguồn nào như là một hàm, một lớp, hoặc các khai báo thư viện cần được đóng gói, chúng tôi sẽ đánh dấu bằng dòng
 `# Saved in the d2l package for later use (Lưu lại trong gói thư viện d2l để sử dụng sau)`.
 Thư viện `d2l` khá nhẹ và chỉ phụ thuộc vào những gói thư viện và mô-đun sau:
 
@@ -634,7 +634,7 @@ Nếu không có thời gian, tài nguyên, mọi sự thảo luận cùng các 
 -->
 
 * Học sâu đã cách mạng hóa nhận dạng mẫu, đưa ra công nghệ cốt lõi hiện được sử dụng trong nhiều ứng dụng công nghệ, bao gồm thị giác máy, xử lý ngôn ngữ tự nhiên và nhận dạng giọng nói tự động.
-* Để áp dụng thành công kĩ thuật học sâu, bạn phải hiểu được cách biến đổi bài toán, toán học của việc mô hình hóa, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
+* Để áp dụng thành công kỹ thuật học sâu, bạn phải hiểu được cách biến đổi bài toán, toán học của việc mô hình hóa, các thuật toán để khớp mô hình theo dữ liệu của bạn, và các kỹ thuật để thực hiện tất cả những điều này.
 * Cuốn sách này là một nguồn tài liệu toàn diện, bao gồm các diễn giải, hình minh hoạ, công thức toán và mã nguồn, tất cả trong một.
 * Để tìm câu trả lời cho các câu hỏi liên quan đến cuốn sách này, hãy truy cập diễn đàn của chúng tôi tại https://discuss.mxnet.io/. (Diễn đàn của nhóm dịch tại https://forum.machinelearningcoban.com/c/d2l).
 * Apache MXNet là một thư viện mạnh mẽ để lập trình các mô hình học sâu và chạy chúng song song trên các GPU.
