@@ -7,9 +7,10 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
 
 ## Thứ tự dịch
 
-* [ ] Preface
-* [ ] Introduction
-* [ ] Preliminaries
+* [x] Preface
+* [x] Notation
+* [x] Introduction
+* [-] Preliminaries
 * [ ] Mathematics for Deep Learning
 * [ ] Tools for Deep Learning
 * [ ] Linear Neural Networks
