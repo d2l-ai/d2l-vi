@@ -4,21 +4,21 @@
 # Notation
 -->
 
-# *dịch tiêu đề phía trên*
+# Ký hiệu
 :label:`chap_notation`
 
 <!--
 The notation used throughout this book is summarized below.
 -->
 
-*dịch đoạn phía trên*
+Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dưới đây.
 
 
 <!--
 ## Numbers
 -->
 
-## *dịch tiêu đề phía trên*
+## Số
 
 <!--
 * $x$: A scalar
@@ -30,7 +30,13 @@ The notation used throughout this book is summarized below.
 * $x_{ij}$, $[\mathbf{X}]_{ij}$: The element of matrix $\mathbf{X}$ at row $i$ and column $j$
 -->
 
-*dịch đoạn phía trên*
+* $x$: một số vô hướng
+* $\mathbf{x}$: một vector
+* $\mathbf{X}$: một matrix
+* $\mathsf{X}$: một tensor
+* $\mathbf{I}$: một ma trận đồng nhất
+* $x_i$, $[\mathbf{x}]_i$: phần tử thứ $i$ của vector $\mathbf{x}$
+* $x_{ij}$, $[\mathbf{X}]_{ij}$: phần tử ở hàng thứ $i$, cột thứ $j$ của ma trận $\mathbf{X}$
 
 
 
@@ -38,7 +44,7 @@ The notation used throughout this book is summarized below.
 ## Set Theory
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết tập hợp
 
 
 <!--
@@ -52,14 +58,21 @@ The notation used throughout this book is summarized below.
 * $\mathcal{A}\setminus\mathcal{B}$: Subtraction of set $\mathcal{B}$ from set $\mathcal{A}$
 -->
 
-*dịch đoạn phía trên*
+* $\mathcal{X}$: một tập hợp
+* $\mathbb{Z}$: tập hợp các số nguyên
+* $\mathbb{R}$: tập hợp các số thực
+* $\mathbb{R}^n$: tập các vector thực trong không gian $n$ chiều
+* $\mathbb{R}^{a\times b}$: tâp hợp các ma trận thực với $a$ hàng và $b$ cột
+* $\mathcal{A}\cup\mathcal{B}$: hợp của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
+* $\mathcal{A}\cap\mathcal{B}$: giao của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
+* $\mathcal{A}\setminus\mathcal{B}$: hiệu của tập $\mathcal{A}$ và tập $\mathcal{B}$ (là tập hợp gồm các phần tử thuộc $\mathcal{A}$ nhưng không thuộc $\mathcal{B}$)
 
 
 <!--
 ## Functions and Operators
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm số và các Phép toán
 
 
 <!--
