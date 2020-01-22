@@ -2411,7 +2411,7 @@ became relevant (and vice versa).
 This is best illustrated in :numref:`tab_intro_decade`.
 -->
 
-Con đường tới học sâu đã có rất nhiều thay đổi cùng với sự sẵn có của lượng lớn dữ liệu nhờ vào Mạng Lưới Toàn Cầu (World Wide Web), sự phát triển của các công ty với hàng triệu người dùng trực tuyến, sự phổ biến của các cảm biến rẻ với chất lượng cao, bộ lưu trữ dữ liệu rẻ (luật Kryder), và tính toán chi phí thấp (theo luật Moore), đặc biệt là các GPU - mà ban đầu được thiết kế cho trò chơi máy tính.
+Con đường tới học sâu đã có rất nhiều thay đổi cùng với sự sẵn có của lượng lớn dữ liệu nhờ vào Mạng Lưới Toàn Cầu (World Wide Web)-- sự phát triển của các công ty với hàng triệu người dùng trực tuyến, sự phổ biến của các cảm biến giá rẻ với chất lượng cao, bộ lưu trữ dữ liệu giá rẻ (theo quy luật Kryder), và tính toán chi phí thấp (theo định luật Moore)-- đặc biệt là các GPU, với thiết kế ban đầu được dành cho việc xử lý các trò chơi máy tính.
 Và rồi những thuật toán và mô hình tưởng chừng không khả thi về mặt tính toán đã không còn ngoài tầm với.
 Điều này được minh họa trong :numref:`tab_intro_decade`.
 
