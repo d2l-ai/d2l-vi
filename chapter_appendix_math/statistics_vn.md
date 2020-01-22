@@ -830,7 +830,7 @@ This distribution is very well studied, and it is known, for instance, that as $
 For finite values of $n$, the interval needs to be somewhat larger, but are well known and precomputed in tables.
 -->
 
-Phân phối này đã được nghiên cứu rất chi tiết, và đã được chứng minh, là khi $n\rightarrow \infty$, nó xấp xỉ với một phân phối Gaussian tiêu chuẩn, và do đó bằng cách nhìn vào các giá trị phân phối tích lũy của Gausian trong bảng, chúng ta có thể kết luận rằng giá trị $T$ nằm trong khoảng $[-1.96, 1.96]$ tối thiểu là $95\%$ các trường hợp. 
+Phân phối này đã được nghiên cứu rất chi tiết, và đã được chứng minh là khi $n\rightarrow \infty$, nó xấp xỉ với một phân phối Gaussian tiêu chuẩn, và do đó bằng cách nhìn vào các giá trị phân phối tích lũy của Gausian trong bảng, chúng ta có thể kết luận rằng giá trị $T$ nằm trong khoảng $[-1.96, 1.96]$ tối thiểu là $95\%$ các trường hợp. 
 Với giá trị $n$ hữu hạn, khoảng tin cậy sẽ lớn hơn, nhưng chúng khá phổ biến và đã được tính toán sẵn trong các bảng. 
 
 <!--
