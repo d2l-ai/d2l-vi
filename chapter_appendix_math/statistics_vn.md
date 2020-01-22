@@ -899,7 +899,7 @@ sigma_hat = samples.std(ddof=1)
 
 * Thống kê tập trung vào các vấn đề suy luận, trong khi học sâu chú trọng vào đưa ra các dự đoán chuẩn xác mà không cần một phương pháp lập trình hay kiến thức rõ ràng. 
 * Ba phương pháp suy luận thống kê thông dụng nhất: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết, và tạo các khoảng tin cậy. 
-* Ba bộ ước lượng thông dụng nhất: phương sai, độ lệch chuẩn, và trung bình bình phương sai số. 
+* Ba bộ ước lượng thông dụng nhất: độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số. 
 * Một khoảng tin cậy là khoảng ước tính của tập tham số thực mà chúng ta có thể tạo ra bằng cách cung cấp các mẫu. 
 * Kiểm định giả thuyết là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể.
 
