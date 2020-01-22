@@ -2513,7 +2513,7 @@ Việc này đạt được bằng cách thêm nhiễu :cite:`Bishop.1995` xuyê
   commencing the generation of a new sentence.
 -->
 
-* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
+* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào để tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
 :cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một cấu trúc con trỏ có thể học được.
 Thay vì phải nhớ toàn một bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này giúp tăng đáng kể độ chính xác của các câu dài vì lúc này mô hình không còn cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
