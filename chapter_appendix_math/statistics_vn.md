@@ -924,7 +924,7 @@ $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
 $$\hat{\theta} = \max \{X_1, X_2, \ldots, X_n \};$$
 $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
     * Tìm phương sai, độ lệch chuẩn, và trung bình bình phương sai số của $\hat{\theta}.$
-    * Tìm phương sai, độ lệch chuẩn, và trung bình bình phương sai số $\tilde{\theta}.$
+    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số $\tilde{\theta}.$
     * Bộ ước lượng nào tốt hơn?
 1. Trở lại ví dụ về nhà hóa học của chúng ta ở phần mở đầu, liệt kê 5 bước để tiến hành kiểm định giả thuyết hai chiều? Cho biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $1 - \beta = 0.8$.
 1. Chạy đoạn mã lập trình khoảng tin cậy biết $N=2$ và $\alpha = 0.5$ với $100$ dữ liệu được tạo độc lập, sau đó vẽ đồ thị các khoảng kết quả (trường hợp này `t_star = 1.0`). Ban sẽ thấy một vài khoảng rất nhỏ nằm cách xa khoảng chứa trung bình thực $0$. Điều này có mâu thuẫn với việc giải thích khoảng tin cậy không? Bạn có thoải mái khi sử dụng các khoảng nhỏ này để thể hiện các ước tính với độ chính xác cao?
