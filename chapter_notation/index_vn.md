@@ -94,7 +94,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $f(\cdot)$: một hàm số
 * $\log(\cdot)$: logarit tự nhiên
 * $\exp(\cdot)$: hàm $e$ mũ
-* $\mathbf{1}_\mathcal{X}$: The indicator function <!-- Thảo luận -->
+* $\mathbf{1}_\mathcal{X}$: hàm đặc trưng (trả về 1 nếu đối số là một phần tử thuộc $\mathcal{X}$, trả về 0 trong trường hợp còn lại).
 * $\mathbf{(\cdot)}^\top$: chuyển vị của một vector hoặc một ma trận
 * $\mathbf{X}^{-1}$: nghịch đảo của ma trận $\mathbf{X}$
 * $\odot$: tích Hadamard (theo từng thành phần)
