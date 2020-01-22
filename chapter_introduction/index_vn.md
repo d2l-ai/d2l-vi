@@ -2411,8 +2411,8 @@ became relevant (and vice versa).
 This is best illustrated in :numref:`tab_intro_decade`.
 -->
 
-Rất nhiều trong số này thay đổi với sự sẵn có của lượng lớn dữ liệu nhờ vào Mạng Lưới Toàn Cầu (World Wide Web), sự phát triển của các công ty với hàng triệu người dùng trực tuyến, sự phổ biến của các cảm biến rẻ với chất lượng cao, bộ lưu trữ dữ liệu rẻ (luật Kryder), và tính toán chi phí thấp (theo luật Moore), đặc biệt là các GPU - mà ban đầu được thiết kế cho trò chơi máy tính.
-Bỗng nhiên các thuật toán và mô hình tưởng chừng như không khả thi về mặt tính toán trở nên có thể.
+Con đường tới học sâu đã có rất nhiều thay đổi cùng với sự sẵn có của lượng lớn dữ liệu nhờ vào Mạng Lưới Toàn Cầu (World Wide Web)-- sự phát triển của các công ty với hàng triệu người dùng trực tuyến, sự phổ biến của các cảm biến giá rẻ với chất lượng cao, bộ lưu trữ dữ liệu giá rẻ (theo quy luật Kryder), và tính toán chi phí thấp (theo định luật Moore)-- đặc biệt là các GPU, với thiết kế ban đầu được dành cho việc xử lý các trò chơi máy tính.
+Và rồi những thuật toán và mô hình tưởng chừng không khả thi về mặt tính toán đã không còn ngoài tầm với.
 Điều này được minh họa trong :numref:`tab_intro_decade`.
 
 <!--
@@ -2463,9 +2463,9 @@ after laying comparatively dormant for considerable time.
 -->
 
 Sự thật là RAM đã không theo kịp với tốc độ phát triển của dữ liệu.
-Đồng thời, sự tiến bộ trong năng lực tính toán đã vượt lên sự sẵn có của dữ liệu.
-Điều này nghĩa là các mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (thường đạt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số bởi khả năng tính toán đã tăng. Kéo theo đó, tiêu điểm trong học máy và thống kê đã dịch chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
-Đây cũng là một trong những lý do những kỹ thuật cổ điển trong học sâu như perceptron đa tầng :cite:`McCulloch.Pitts.1943`, mạng nơ-ron tích chập, :cite:`LeCun.Bottou.Bengio.ea.1998`, bộ nhớ ngắn hạn dài (_Long Short-Term Memory_ -- LSTM) :cite:`Hochreiter.Schmidhuber.1997`, và học Q :cite:`Watkins.Dayan.1992`, đã được "tái khám phá" trong thập kỷ trước, sau khi tương đối chìm trong một khoảng thời gian dài.
+Đồng thời, sự tiến bộ trong năng lực tính toán đã vượt lên tốc độ phát triển của dữ liệu có sẵn.
+Vì vậy, mô hình thống kê cần phải trở nên hiệu quả hơn về bộ nhớ (thường đạt được bằng cách thêm các thành phần phi tuyến) đồng thời có thể tập trung thời gian cho việc tối ưu các tham số nhờ sự gia tăng trong khả năng tính toán. Kéo theo đó, tiêu điểm trong học máy và thống kê đã chuyển từ các mô hình tuyến tính (tổng quát) và các phương pháp hạt nhân (_kernel methods_) sang các mạng nơ-ron sâu. <!-- thêm nơ-ron để tránh nhầm lẫn -->
+Đây cũng là một trong những lý do những kỹ thuật cổ điển trong học sâu như perceptron đa tầng :cite:`McCulloch.Pitts.1943`, mạng nơ-ron tích chập, :cite:`LeCun.Bottou.Bengio.ea.1998`, bộ nhớ ngắn hạn dài (_Long Short-Term Memory_ -- LSTM) :cite:`Hochreiter.Schmidhuber.1997`, và học Q :cite:`Watkins.Dayan.1992`, đã được "tái khám phá" trong thập kỷ trước sau một khoảng thời gian dài ít được sử dụng.
 
 <!--
 The recent progress in statistical models, applications, and algorithms,
@@ -2479,8 +2479,8 @@ over the past decade.
 -->
 
 Những tiến bộ gần đây trong các mô hình thống kê, các ứng dụng và các thuật toán đôi khi được liên hệ với Sự bùng nổ kỷ Cambry: thời điểm phát triển nhanh chóng trong sự tiến hoá của các loài.
-Thật sự, các kỹ thuật tiên tiến nhất hiện nay không chỉ đơn thuần là các kỹ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
-Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đang được những thành tựu khổng lồ trong thập kỉ vừa qua.
+Thật vậy, các kỹ thuật tiên tiến nhất hiện nay không chỉ đơn thuần chỉ là hệ quả của việc các kỹ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
+Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đạt được những thành tựu khổng lồ trong thập kỷ vừa qua.
 
 <!-- =================== Kết thúc dịch Phần 29 ==================== -->
 
@@ -2495,7 +2495,7 @@ Danh sách dưới đây còn chưa thấm vào đâu với số lượng nhữn
   for training purposes.
 -->
 * Các phương pháp tiên tiến trong việc kiểm soát năng lực, như Dropout :cite:`Srivastava.Hinton.Krizhevsky.ea.2014`, đã giúp làm giảm sự nguy hiểm của quá khớp.
-Việc này đạt được bằng cách áp dụng thêm nhiễu :cite:`Bishop.1995` xuyên suốt khắp mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
+Việc này đạt được bằng cách thêm nhiễu :cite:`Bishop.1995` xuyên suốt khắp mạng, thay các trọng số bởi các biến ngẫu nhiên cho mục đích huấn luyện.
 
 <!--
 * Attention mechanisms solved a second problem
@@ -2513,9 +2513,9 @@ Việc này đạt được bằng cách áp dụng thêm nhiễu :cite:`Bishop.
   commencing the generation of a new sentence.
 -->
 
-* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
-:cite:`Bahdanau.Cho.Bengio.2014` tìm ra một giải pháp tinh tế bằng cách sử dụng một cấu trúc con trỏ có thể học được.
-Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này cho phép tăng đáng kể độ chính xác của các câu dài bởi mô hình không cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
+* Cơ chế tập trung giải quyết vấn đề thứ hai đã ám ảnh ngành thống kê trong hơn một thế kỷ: làm thế nào để tăng bộ nhớ và độ phức tạp của một hệ thống mà không làm tăng lượng tham số cần học.
+:cite:`Bahdanau.Cho.Bengio.2014` đã tìm ra một giải pháp tinh tế bằng cách sử dụng một cấu trúc con trỏ có thể học được.
+Ví dụ trong dịch máy, thay vì phải nhớ toàn một bộ câu với cách biểu diễn có số chiều cố định, ta chỉ cần lưu một con trỏ tới trạng thái trung gian của quá trình dịch. Việc này giúp tăng đáng kể độ chính xác của các câu dài vì lúc này mô hình không còn cần nhớ toàn bộ câu trước khi chuyển sang tạo câu tiếp theo.
 
 <!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
@@ -2526,8 +2526,7 @@ Thay vì phải nhớ toàn bộ câu, ví dụ trong dịch máy với cách bi
   can modify memory for a computation.
 -->
 * Thiết kế đa bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Bộ Lập trình-Phiên dịch Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kỳ.
-Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đấy có thể thực hiện một chuỗi các bước suy luận. Điều này cũng tương tự như cách bộ vi xử lý thay đổi bộ nhớ khi thực hiện một phép tính toán.
-<!-- Thực sự mình cũng không hiểu vừa dịch cái gì, chờ thảo luận với mọi người -->
+Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đó có thể thực hiện một chuỗi các bước suy luận, tương tự như cách bộ vi xử lý thay đổi bộ nhớ khi thực hiện một phép tính toán.
 
 <!--
 * Another key development was the invention of GANS
@@ -2549,9 +2548,9 @@ Những công cụ này cho phép các trạng thái nội tại của mạng n�
 
 * Một bước phát triển quan trọng khác là sự ra đời của GAN :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
 Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật độ xác suất và các mô hình sinh (_generative models_) tập trung vào việc tìm các phân phối xác suất hợp lý và các thuật toán (thường là xấp xỉ) để lấy mẫu từ các phân phối đó.
-Kết quả là, những thuật toán này cũng bị hạn chế bởi sự thiếu linh động do kế thừa từ chính các mô hình thống kê đó.
-Phát kiến quan trọng của GAN là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi [có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm].
-Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống như bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
+Vì vậy, những thuật toán này có rất nhiều hạn chế và sự thiếu linh động khi kế thừa chính các mô hình thống kê đó.
+Phát kiến quan trọng của GANs là thay thế các thuật toán lấy mẫu đó bởi một thuật toán với các tham số khả vi (*differentiable*: có thể tính đạo hàm để áp dụng các thuật toán tối ưu dựa trên đó) bất kỳ.
+Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
 Khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu đã thúc đẩy phương pháp đánh giá hàm mật độ xác suất khai sinh một loạt các kỹ thuật.
 Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu.Park.Isola.ea.2017` và tạo giả khuôn mặt người nổi tiếng là các minh chứng của quá trình này.
 
@@ -2577,9 +2576,9 @@ Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu
 Trong rất nhiều trường hợp, một GPU là không đủ để xử lý một lượng lớn dữ liệu sẵn có cho huấn luyện.
 Khả năng xây dựng các thuật toán huấn luyện phân tán song song đã cải tiến đáng kể trong thập kỷ vừa rồi.
 Một trong những thách thức chính trong việc thiết kế các thuật toán cho quy mô lớn là việc thuật toán tối ưu học sâu -- hạ gradient ngẫu nhiên -- phụ thuộc vào cách xử lý một lượng nhỏ dữ liệu, được gọi là minibatch.
-Đồng thời, batch nhỏ hạn chế sự hiệu quả của GPU.
-Bởi vậy, huấn luyện trên 1024 GPU với 32 ảnh trong một batch chẳng hạn, sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
-Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sau đó là :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
+Đồng thời, batch nhỏ lại hạn chế sự hiệu quả của GPU.
+Bởi vậy, nếu ta huấn luyện trên 1024 GPU với 32 ảnh trong một batch sẽ cấu thành một minibatch lớn với 32 ngàn ảnh.
+Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, tiếp tục bởi :cite:`You.Gitman.Ginsburg.2017` và :cite:`Jia.Song.He.ea.2018` đẩy kích thước lên tới 64 ngàn mẫu, giảm thời gian huấn luyện ResNet50 trên ImageNet xuống dưới bảy phút so với thời gian huấn luyện hàng nhiều ngày trước đó.
 
 
 <!--
@@ -2594,11 +2593,11 @@ Các công trình gần đây, khởi nguồn bởi Li :cite:`Li.2017`, rồi sa
   other. Simulation provides such an avenue.
 -->
 
-* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là khi có thể tạo và sử dụng môi trường giả lập.
-Việc này đã dẫn tới sự tiến triển đáng kể ở cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo) khi máy tính đạt được chất lượng vượt mức con người. 
+* Khả năng song song hóa việc tính toán cũng đã góp phần quan trọng cho sự phát triển của học tăng cường, ít nhất là với ứng dụng mà có thể tạo và sử dụng môi trường giả lập.
+Việc này đã dẫn tới sự tiến triển đáng kể ở môn cờ vây, các game Atari, Starcraft, và trong giả lập vật lý (ví dụ, sử dụng MuJoCo). Máy tính đạt được chất lượng vượt mức con người ở các ứng dụng này.
 Xem thêm mô tả về cách đạt được điều này trong Alphago tại :cite:`Silver.Huang.Maddison.ea.2016`.
-Tóm lại, học tăng cường làm việc tốt nhất nếu có sẵn cực nhiều bộ (trạng thái, hành động, điểm thưởng), nghĩa là bất cứ khi nào có thể thử rất nhiều thứ để chúng [các bộ này] học cách liên hệ với nhau.
-Mô phỏng giả lập cung cấp một môi trường như thế.
+Tóm lại, học tăng cường làm việc tốt nhất nếu có cực nhiều bộ (trạng thái, hành động, điểm thưởng) để mô hình có thể thử và học cách chúng được liên hệ với nhau như thế nào.
+Các phần mềm mô phỏng giả lập cung cấp một môi trường như thế.
 
 <!--
 * Deep Learning frameworks have played a crucial role
@@ -2640,7 +2639,7 @@ putting it firmly into the grasp of programmers.
 
 Sự phân chia công việc giữa (i) các nhà nghiên cứu hệ thống xây dựng các công cụ tốt hơn và (ii) các nhà mô hình hóa thống kê xây dựng các mạng tốt hơn đã đơn giản hóa công việc một cách đáng kể.
 Ví dụ, huấn luyện một mô hình hồi quy logistic tuyến tính từng là một bài tập về nhà không đơn giản cho tân nghiên cứu sinh tiến sĩ ngành học máy tại Đại học Carnegie Mellon năm 2014.
-Hiện tại, tác vụ này có thể đạt được với ít hơn 10 dòng mã, khiến việc này trở nên đơn giản với các lập trình viên.
+Hiện nay, tác vụ này có thể đạt được với ít hơn 10 dòng mã, khiến việc này trở nên đơn giản với các lập trình viên.
 
 <!-- =================== Kết thúc dịch Phần 30 ==================== -->
 <!-- =================== Bắt đầu dịch Phần 31 ==================== -->
