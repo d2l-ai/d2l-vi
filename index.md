@@ -12,6 +12,7 @@
 intro_vn
 chapter_preface/index_vn
 chapter_install/install_vn
+chapter_notation/index_vn
 ```
 
 ```toc
