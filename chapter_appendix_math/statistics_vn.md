@@ -923,7 +923,7 @@ $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
 1. Cho $X_1, X_2, \ldots, X_n \overset{\text{iid}}{\sim} \mathrm{Unif}(0, \theta)$, với "iid" là viết tắt của *phân phối độc lập và giống nhau - independent and identically distributed*. Xét bộ ước lượng $\theta$ dưới đây:
 $$\hat{\theta} = \max \{X_1, X_2, \ldots, X_n \};$$
 $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
-    * Tìm phương sai, độ lệch chuẩn, và trung bình bình phương sai số của $\hat{\theta}.$
+    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số của $\hat{\theta}.$
     * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số $\tilde{\theta}.$
     * Bộ ước lượng nào tốt hơn?
 1. Trở lại ví dụ về nhà hóa học của chúng ta ở phần mở đầu, liệt kê 5 bước để tiến hành kiểm định giả thuyết hai chiều? Cho biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $1 - \beta = 0.8$.
