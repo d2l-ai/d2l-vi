@@ -48,11 +48,11 @@ The symbol $\in$ can be pronounced "in" and simply denotes membership in a set.
 Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are numbers whose value can only be $0$ or $1$.
 -->
 
-Trong quyển sách này, chúng ta sẽ theo quy ước kí hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
-Chúng ta kí hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
+Trong quyển sách này, chúng ta sẽ theo quy ước ký hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
+Chúng ta ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
 Vì tính thiết thực, chúng ta sẽ bỏ qua việc định nghĩa chặt chẽ *không gian* là gì, bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách nói chính quy rằng $x$ là một số thực vô hướng.
-Kí hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ của phần tử trong một tập hợp.
-Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để kí hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
+Ký hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ của phần tử trong một tập hợp.
+Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
 In MXNet code, a scalar is represented by an `ndarray` with just one element.
@@ -96,7 +96,7 @@ Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của v
 Khi các vector biễu diễn cho mẫu trong tập dữ liệu, các giá trị của nó mang theo những ý nghĩa từ thực tế.
 Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
 Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức khỏe, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
-Trong kí hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
+Trong ký hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
 
 <!--
 In MXNet, we work with vectors via $1$-dimensional `ndarray`s.
@@ -104,7 +104,7 @@ In general `ndarray`s can have arbitrary lengths, subject to the memory limits o
 -->
 
 Trong MXNet, chúng ta làm việc với vector thông qua các `ndarray` $1$-chiều.
-Tổng quát lên, `ndarray` có thể có chiều dài bất kì, giới hạn bởi bộ nhớ máy tính.
+Tổng quát lên, `ndarray` có thể có chiều dài bất kỳ, giới hạn bởi bộ nhớ máy tính.
 
 ```{.python .input  n=2}
 x = np.arange(4)
@@ -119,7 +119,7 @@ Extensive literature considers column vectors to be the default orientation of v
 In math, a vector $\mathbf{x}$ can be written as
 -->
 
-Một phần tử bất kì trong vector có thể được ký hiệu sử dụng chỉ số dưới.
+Một phần tử bất kỳ trong vector có thể được ký hiệu sử dụng chỉ số dưới.
 Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
 Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
 Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, quyển sách này cũng vậy.
@@ -162,7 +162,7 @@ The length of a vector is commonly called the *dimension* of the vector.
 Hãy quay lại với những khái niệm từ :numref:`sec_ndarray`.
 Một vector đơn thuần là một dãy các số.
 Và mỗi dãy số đều có độ dài, mỗi vector cũng tương tự như vậy.
-Trong kí hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
+Trong ký hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
 Độ dài của một vector còn được gọi là số **chiều** của vector.
 
 <!--

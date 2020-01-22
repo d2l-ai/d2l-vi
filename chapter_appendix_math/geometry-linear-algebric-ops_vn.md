@@ -543,7 +543,7 @@ mặt phẳng vuông góc với vectơ cho trước $\mathbf{w}$. Hai bất phư
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![Siêu phẳng trong bất kì không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất kỳ không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
@@ -720,7 +720,7 @@ where we can write any vector in our space
 as a weighted sum of these *basis vectors*.
 -->
 
-Thoạt nhìn đây là một phép tính khá kì lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
+Thoạt nhìn đây là một phép tính khá kỳ lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
 Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
 thông qua cách nó biến đổi *hai vector cụ thể*:
 $[1,0]^\top$ và $[0,1]^\top$.
@@ -1544,7 +1544,7 @@ Về phương diện hình học vector có thể được hiểu như là đi�
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kì.
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ.
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
