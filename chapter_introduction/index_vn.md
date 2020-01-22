@@ -22,9 +22,9 @@ spells out in methodical detail the appropriate action
 that our program should take in every conceivable circumstance.
 -->
 
-Mãi tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
+Cho tới tận gần đây, gần như tất cả mọi chương trình máy tính mà chúng ta tương tác hàng ngày đều được tạo ra bởi lập trình viên phần mềm từ những định đề cơ bản.
 Giả sử chúng ta muốn viết một ứng dụng quản lý hệ thống thương mại điện tử.
-Sau khi túm tụm lại xung quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ, chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
+Sau khi tụm lại quanh chiếc bảng trắng để suy nghĩ về vấn đề một cách cặn kẽ, chúng ta có thể phác thảo một giải pháp vận hành được, phần nào sẽ nhìn giống như sau:
 (i) người dùng tương tác với ứng dụng thông qua một giao diện chạy trên trình duyệt web hoặc ứng dụng trên điện thoại;
 (ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại để theo dõi trạng thái của từng người dùng và duy trì hồ sơ lịch sử các giao dịch;
 và (iii) (cũng là cốt lõi của ứng dụng) các logic nghiệp vụ (hay cũng có thể nói *bộ não*) mô tả cách thức xử lí cụ thể của ứng dụng trong từng tình huống có thể xảy ra.
@@ -50,8 +50,8 @@ And when you are able to devise solutions that work $100\%$ of the time,
 Để xây dựng *bộ não* của ứng dụng này, ta phải xem xét tất cả mọi trường hợp mà chúng ta cho rằng sẽ gặp phải, qua đó đặt ra những quy tắc thích hợp.
 Ví dụ, mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng, ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu, liên kết ID của người dùng với ID của món hàng được yêu cầu.
 Mặc dù hầu như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên, (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp hiểm hóc), hầu như phần lớn ta có thể lập trình được từ những định đề cơ bản và tự tin chạy ứng dụng *trước khi được dùng bởi một khách hàng thực sự nào*.
-Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản, thường là trong những điều kiện mới lạ, là một kì công trong suy luận và nhận thức của con người.
-Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống, *bạn không nên sử dụng học máy*.
+Khả năng phát triển những sản phầm và hệ thống tự động từ những định đề cơ bản, thường là trong những điều kiện mới lạ, là một kỳ công trong suy luận và nhận thức của con người.
+Và khi bạn có thể tạo ra một giải pháp hoạt động được trong mọi tình huống, *bạn không nên sử dụng học máy*.
 
 <!--
 Fortunately for the growing community of ML scientists,
@@ -107,13 +107,13 @@ natural language processing, healthcare, and genomics.
 -->
 
 Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa cũng không thể lập trình lên được từ con số không.
-Có nhiều lý do khác nhau. 
+Có nhiều lý do khác nhau.
 Đôi khi chương trình mà chúng ta cần lại đi theo một khuôn mẫu thay đổi theo thời gian và chương trình của chúng ta cần phải thích ứng với điều đó.
 Trong trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng) có thể là quá phức tạp, yêu cầu hàng ngàn hàng triệu phép tính vượt ngoài khả năng thấu hiểu của nhận thức chúng ta (mặc dù mắt của chúng ta có thể xử lý tác vụ này một cách dễ dàng).
-Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến mà có thể *học* từ *kinh nghiệm*.
+Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kỹ thuật tiên tiến mà có thể *học* từ *kinh nghiệm*.
 Khi thuật toán ML tích luỹ thêm nhiều kinh nghiệm, thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường, chất lượng của nó sẽ tăng lên.
 Tương phản với hệ thống thương mại điện tử tất định của chúng ta, khi mà nó luôn tuân theo cùng logic nghiệp vụ đã có, mặc cho đã tích luỹ thêm bao nhiêu kinh nghiệm, tận cho tới khi lập trình viên tự *học* và quyết định rằng đã tới lúc cập nhật phần mềm này.
-Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy, và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kĩ thuật đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
+Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất trong học máy, và tập trung đặc biệt vào học sâu, một tập hợp hùng mạnh những kỹ thuật đang thúc đẩy sự đổi mới ở nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên, chăm sóc y tế và nghiên cứu cấu trúc gen.
 
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
@@ -291,13 +291,13 @@ Quá trình huấn luyện thường giống như mô tả trong hình :numref:`
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
-1. Grab some of your labeled data (e.g., audio snippets and corresponding ``{yes, no}`` labels)
-1. Tweak the knobs so the model sucks less with respect to those examples
-1. Repeat until the model is awesome.
+2. Grab some of your labeled data (e.g., audio snippets and corresponding ``{yes, no}`` labels)
+3. Tweak the knobs so the model sucks less with respect to those examples
+4. Repeat until the model is awesome.
 -->
 
-1. Khởi tạo mô hình một cách ngẫu nhiên. Lúc này nó vẫn chưa thể thực hiện bất kì tác vụ có ích nào.
-2. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{đúng, sai}`` tương ứng).
+1. Khởi tạo mô hình một cách ngẫu nhiên. Lúc này nó vẫn chưa thể thực hiện bất kỳ tác vụ có ích nào.
+2. Thu thập một số dữ liệu đã được gán nhán (ví dụ như đoạn âm thanh kèm nhãn ``{có, không}`` tương ứng).
 3. Thay đổi các núm vặn để mô hình dự đoán chính xác hơn trên các mẫu.
 4. Lặp lại cho đến khi có một mô hình hoạt động tốt.
 
@@ -1742,7 +1742,7 @@ to place the verbs at the end of sentences.
 
 **Dịch máy**. Khác với nhận dạng giọng nói, khi các đầu vào và đầu ra tương ứng có cùng thứ tự (sau khi căn chỉnh), trong dịch máy việc đảo thứ tự lại có thể rất quan trọng.
 Nói cách khác, ta vẫn chuyển đổi từ chuỗi này sang chuỗi khác, nhưng ta không thể giả định số lượng đầu vào và đầu ra cũng như thứ tự của các điểm dữ liệu tương ứng là giống nhau.
-Xét ví dụ minh họa dưới đây về trật tự từ kì lạ khi dịch tiếng Anh sang tiếng Việt.
+Xét ví dụ minh họa dưới đây về trật tự từ kỳ lạ khi dịch tiếng Anh sang tiếng Việt.
 
 ```text
 Tiếng Anh:          Did you already check out this excellent tutorial?
@@ -2031,7 +2031,7 @@ and the [AlphaGo program that dethroned the world champion at the board game Go]
 
 Nếu bạn muốn dùng học máy để phát triển một tác nhân tương tác với môi trường và đưa ra hành động, khả năng cao là bạn sẽ cần tập trung vào *học tăng cường* (*reinforcemnent learning* -- RL).
 Học tăng cường có các ứng dụng trong ngành công nghệ robot, hệ thống đối thoại và cả việc phát triển AI cho trò chơi điện tử.
-*Học sâu tăng cường* (*Deep reinforcement learning* -- DRL) áp dụng kĩ thuật học sâu để giải quyết những vấn đề của học tăng cường và đã trở nên phổ biến trong thời gian gần đây.
+*Học sâu tăng cường* (*Deep reinforcement learning* -- DRL) áp dụng kỹ thuật học sâu để giải quyết những vấn đề của học tăng cường và đã trở nên phổ biến trong thời gian gần đây.
 Hai ví dụ tiêu biểu nhất là thành tựu đột phá của [mạng-Q sâu đánh bại con người trong các trò chơi điện tử Atari chỉ sử dụng đầu vào hình ảnh](https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
 và [chương trình AlphaGo chiếm ngôi vô địch thế giới trong môn Cờ Vây](https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/).
 
@@ -2479,8 +2479,8 @@ over the past decade.
 -->
 
 Những tiến bộ gần đây trong các mô hình thống kê, các ứng dụng và các thuật toán đôi khi được liên hệ với Sự bùng nổ kỷ Cambry: thời điểm phát triển nhanh chóng trong sự tiến hoá của các loài.
-Thật vậy, các kĩ thuật tiên tiến nhất hiện nay không chỉ đơn thuần chỉ là hệ quả của việc các kĩ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
-Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đạt được những thành tựu khổng lồ trong thập kỉ vừa qua.
+Thật vậy, các kỹ thuật tiên tiến nhất hiện nay không chỉ đơn thuần chỉ là hệ quả của việc các kỹ thuật cũ được áp dụng với các nguồn tài nguyên hiện tại.
+Danh sách dưới đây còn chưa thấm vào đâu với số lượng những ý tưởng đã và đang giúp các nhà nghiên cứu đạt được những thành tựu khổng lồ trong thập kỷ vừa qua.
 
 <!-- =================== Kết thúc dịch Phần 29 ==================== -->
 
@@ -2525,7 +2525,8 @@ Ví dụ trong dịch máy, thay vì phải nhớ toàn một bộ câu với c�
   in a chain of reasoning, similar to how a processor
   can modify memory for a computation.
 -->
-* Thiết kế đa bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Bộ Lập trình-Phiên dịch Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kì.
+
+* Thiết kế đa bước, ví dụ thông qua các Mạng Bộ Nhớ (_MemNets_) :cite:`Sukhbaatar.Weston.Fergus.ea.2015` và Bộ Lập trình-Phiên dịch Nơ-ron :cite:`Reed.De-Freitas.2015` cho phép các các nhà nghiên cứu mô hình hóa thống kê mô tả các hướng tiếp cận tới việc suy luận (_reasoning_) qua nhiều chu kỳ.
 Những công cụ này cho phép các trạng thái nội tại của mạng nơ-ron sâu được biến đổi liên tục, từ đó có thể thực hiện một chuỗi các bước suy luận, tương tự như cách bộ vi xử lý thay đổi bộ nhớ khi thực hiện một phép tính toán.
 
 <!--
@@ -2799,7 +2800,7 @@ whether to grant bail use statistical data as input.
 More frivolously, we can ask Alexa to switch on the coffee machine.
 -->
 
-Gần đây, câu hỏi về ngày tận thế do AI, hay điểm kì dị (*singularity*) của AI đã được nhắc tới trong các bài viết phi kỹ thuật về AI.
+Gần đây, câu hỏi về ngày tận thế do AI, hay điểm kỳ dị (*singularity*) của AI đã được nhắc tới trong các bài viết phi kỹ thuật về AI.
 Đã có những nỗi lo sợ về việc các hệ thống học máy bằng cách nào đó sẽ trở nên có cảm xúc và ra quyết định độc lập với những lập trình viên (và chủ nhân) về những điều ảnh hưởng trực tiếp tới sự sống của nhân loại.
 Trong phạm vi nào đó, AI đã ảnh hưởng tới sự sống của con người một cách trực tiếp, chẳng hạn như điểm tín dụng được tính tự động, tự động điều hướng xe hơi, hay các quyết định về việc liệu có chấp nhận bảo lãnh hay không sử dụng đầu vào là dữ liệu thống kê.
 Hoặc ít nghiêm trọng hơn, ta có thể yêu cầu Alexa bật máy pha cà phê. <!-- câu này chả thấy liên quan -->
@@ -2890,9 +2891,9 @@ Sự sẵn có của các framework học sâu hiệu quả giúp cho việc thi
 
 <!--
 1. Which parts of code that you are currently writing could be "learned", i.e., improved by learning and automatically determining design choices that are made in your code? Does your code include heuristic design choices?
-1. Which problems that you encounter have many examples for how to solve them, yet no specific way to automate them? These may be prime candidates for using deep learning.
-1. Viewing the development of artificial intelligence as a new industrial revolution, what is the relationship between algorithms and data? Is it similar to steam engines and coal (what is the fundamental difference)?
-1. Where else can you apply the end-to-end training approach? Physics? Engineering? Econometrics?
+2. Which problems that you encounter have many examples for how to solve them, yet no specific way to automate them? These may be prime candidates for using deep learning.
+3. Viewing the development of artificial intelligence as a new industrial revolution, what is the relationship between algorithms and data? Is it similar to steam engines and coal (what is the fundamental difference)?
+4. Where else can you apply the end-to-end training approach? Physics? Engineering? Econometrics?
 -->
 
 1. Phần nào của mã nguồn mà bạn đang viết có thể "được học", tức có thể được cải thiện bằng cách học và tự động xác định các lựa chọn thiết kế?

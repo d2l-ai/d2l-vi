@@ -84,6 +84,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
+| elementwise         | (theo) từng phần tử                                              |                       |
 | embedding           | embedding                                                      |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
@@ -223,6 +224,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scroing function             | hàm tính điểm                                                  |                       |
 | sentiment classification     | phân loại cảm xúc                                              |                       |
 | sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity |
+| shape (trong Đại số Tuyến tính) | kích thước                                                  |                       |
 | spam email                   | email rác                                                      |                       |
 | statistical significance     | ý nghĩa thống kê                                               |                       |
 | statistical significant      | có ý nghĩa thống kê                                            |                       |
