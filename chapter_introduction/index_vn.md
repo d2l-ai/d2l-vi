@@ -2549,7 +2549,7 @@ Những công cụ này cho phép các trạng thái nội tại của mạng n�
 * Một bước phát triển quan trọng khác là sự ra đời của GAN :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
 Trong quá khứ, các phương pháp thống kê để đánh giá hàm mật độ xác suất và các mô hình sinh (_generative models_) tập trung vào việc tìm các phân phối xác suất hợp lý và các thuật toán (thường là xấp xỉ) để lấy mẫu từ các phân phối đó.
 Vì vậy, những thuật toán này có rất nhiều hạn chế bởi sự thiếu linh động của việc kế thừa từ chính các mô hình thống kê đó.
-Phát kiến quan trọng của GANs là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi [có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm].
+Phát kiến quan trọng của GANs là thay thế thuật toán lấy mẫu bất kỳ bởi các tham số khả vi (có thể tối ưu được dựa vào các phương pháp tối ưu dựa trên đạo hàm).
 Các phương pháp này sau đó được điều chỉnh sao cho bộ phân loại (có hiệu quả giống bài kiểm tra hai mẫu trong xác suất) không thể phân biệt giữa dữ liệu thật và giả.
 Khả năng sử dụng các thuật toán bất kỳ để sinh dữ liệu đã thúc đẩy phương pháp đánh giá hàm mật độ xác suất khai sinh một loạt các kỹ thuật.
 Các ví dụ về biến đổi Ngựa thường thành Ngựa Vằn :cite:`Zhu.Park.Isola.ea.2017` và tạo giả khuôn mặt người nổi tiếng là các minh chứng của quá trình này.
