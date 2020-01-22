@@ -4,21 +4,21 @@
 # Notation
 -->
 
-# *dịch tiêu đề phía trên*
+# Ký hiệu
 :label:`chap_notation`
 
 <!--
 The notation used throughout this book is summarized below.
 -->
 
-*dịch đoạn phía trên*
+Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dưới đây.
 
 
 <!--
 ## Numbers
 -->
 
-## *dịch tiêu đề phía trên*
+## Số
 
 <!--
 * $x$: A scalar
@@ -30,7 +30,13 @@ The notation used throughout this book is summarized below.
 * $x_{ij}$, $[\mathbf{X}]_{ij}$: The element of matrix $\mathbf{X}$ at row $i$ and column $j$
 -->
 
-*dịch đoạn phía trên*
+* $x$: một số vô hướng
+* $\mathbf{x}$: một vector
+* $\mathbf{X}$: một ma trận
+* $\mathsf{X}$: một tensor
+* $\mathbf{I}$: một ma trận đồng nhất
+* $x_i$, $[\mathbf{x}]_i$: phần tử thứ $i$ của vector $\mathbf{x}$
+* $x_{ij}$, $[\mathbf{X}]_{ij}$: phần tử ở hàng thứ $i$, cột thứ $j$ của ma trận $\mathbf{X}$
 
 
 
@@ -38,7 +44,7 @@ The notation used throughout this book is summarized below.
 ## Set Theory
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết Tập hợp
 
 
 <!--
@@ -52,14 +58,21 @@ The notation used throughout this book is summarized below.
 * $\mathcal{A}\setminus\mathcal{B}$: Subtraction of set $\mathcal{B}$ from set $\mathcal{A}$
 -->
 
-*dịch đoạn phía trên*
+* $\mathcal{X}$: một tập hợp
+* $\mathbb{Z}$: tập hợp các số nguyên
+* $\mathbb{R}$: tập hợp các số thực
+* $\mathbb{R}^n$: tập các vector thực trong không gian $n$ chiều
+* $\mathbb{R}^{a\times b}$: tâp hợp các ma trận thực với $a$ hàng và $b$ cột
+* $\mathcal{A}\cup\mathcal{B}$: hợp của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
+* $\mathcal{A}\cap\mathcal{B}$: giao của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
+* $\mathcal{A}\setminus\mathcal{B}$: hiệu của tập $\mathcal{A}$ và tập $\mathcal{B}$ (là tập hợp gồm các phần tử thuộc $\mathcal{A}$ nhưng không thuộc $\mathcal{B}$)
 
 
 <!--
 ## Functions and Operators
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm số và các Phép toán
 
 
 <!--
@@ -78,14 +91,26 @@ The notation used throughout this book is summarized below.
 * $\prod$: Series multiplication
 -->
 
-*dịch đoạn phía trên*
+* $f(\cdot)$: một hàm số
+* $\log(\cdot)$: logarit tự nhiên
+* $\exp(\cdot)$: hàm $e$ mũ
+* $\mathbf{1}_\mathcal{X}$: hàm đặc trưng (trả về 1 nếu đối số là một phần tử thuộc $\mathcal{X}$, trả về 0 trong trường hợp còn lại).
+* $\mathbf{(\cdot)}^\top$: chuyển vị của một vector hoặc một ma trận
+* $\mathbf{X}^{-1}$: nghịch đảo của ma trận $\mathbf{X}$
+* $\odot$: tích Hadamard (theo từng thành phần)
+* $\lvert \mathcal{X} \rvert$: card (số phần tử) của tập $\mathcal{X}$
+* $\|\cdot\|_p$: chuẩn $\ell_p$
+* $\|\cdot\|$: chuẩn $\ell_2$
+* $\langle \mathbf{x}, \mathbf{y} \rangle$: tích vô hướng của hai vector  $\mathbf{x}$ và $\mathbf{y}$
+* $\sum$: tổng của một dãy
+* $\prod$: tích của một dãy
 
 
 <!--
 ## Calculus
 -->
 
-## *dịch tiêu đề phía trên*
+## Giải tích
 
 <!--
 * $\frac{dy}{dx}$: Derivative of $y$ with respect to $x$
@@ -95,13 +120,17 @@ The notation used throughout this book is summarized below.
 * $\int f(x) \;dx$: Indefinite integral of $f$ with respect to $x$
 -->
 
-*dịch đoạn phía trên*
+* $\frac{dy}{dx}$: đạo hàm của $y$ theo $x$
+* $\frac{\partial y}{\partial x}$: đạo hàm riêng của $y$ theo $x$
+* $\nabla_{\mathbf{x}} y$: Gradient của $y$ theo vector $\mathbf{x}$
+* $\int_a^b f(x) \;dx$: tích phân của $f$ từ $a$ đến $b$ theo $x$
+* $\int f(x) \;dx$: nguyên hàm của $f$ theo $x$
 
 <!--
 ## Probability and Information Theory
 -->
 
-## *dịch tiêu đề phía trên*
+## Xác suất và Lý thuyết Thông tin
 
 <!--
 * $P(\cdot)$: Probability distribution
@@ -119,7 +148,19 @@ The notation used throughout this book is summarized below.
 * $D_{\mathrm{KL}}(P\|Q)$: KL-divergence of distributions $P$ and $Q$
 -->
 
-*dịch đoạn phía trên*
+* $P(\cdot)$: phân phối xác suất
+* $z \sim P$: biến ngẫu nhiên $z$ tuân theo phân phối xác suất $P$
+* $P(X \mid Y)$: xác suất của $X$ với điều kiện $Y$
+* $p(x)$: hàm mật độ xác suất
+* ${E}_{x} [f(x)]$: kỳ vọng của $f$ theo $x$
+* $X \perp Y$: hai biến ngẫu nhiên $X$ và $Y$ là độc lập
+* $X \perp Y \mid Z$: hai biến ngẫu nhiên $X$ và $Y$ là độc lập có điều kiện nếu cho trước biến ngẫu nhiên $Z$
+* $\mathrm{Var}(X)$: phương sai của biến ngẫu nhiên $X$
+* $\sigma_X$: độ lệch chuẩn của biến ngẫu nhiên $X$
+* $\mathrm{Cov}(X, Y)$: hiệp phương sai của hai biến ngẫu nhiên $X$ và $Y$
+* $\rho(X, Y)$: độ tương quan của hai biến ngẫu nhiên $X$ và $Y$
+* $H(X)$: Entropy của biến ngẫu nhiên $X$
+* $D_{\mathrm{KL}}(P\|Q)$: phân kỳ KL của hai phân phối $P$ và $Q$
 
 
 
@@ -127,20 +168,20 @@ The notation used throughout this book is summarized below.
 ## Complexity
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ phức tạp
 
 <!--
 * $\mathcal{O}$: Big O notation
 -->
 
-*dịch đoạn phía trên*
+* $\mathcal{O}$: Ký hiệu Big O
 
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/4367)
 -->
 
-## *dịch tiêu đề phía trên*
+## [Thảo luận](https://discuss.mxnet.io/t/4367)
 
 <!--
 ![](../img/qr_notation.svg)
@@ -162,5 +203,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
-
+Vũ Hữu Tiệp
+Đoàn Nguyễn Duy Thanh
+Lê Khắc Hồng Phúc
