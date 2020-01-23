@@ -675,19 +675,19 @@ A.shape, x.shape, np.dot(A, x)
 ## Matrix-Matrix Multiplication
 -->
 
-## *dịch tiêu đề phía trên*
+## Phép nhân ma trận
 
 <!--
 If you have gotten the hang of dot products and matrix-vector products, then *matrix-matrix multiplication* should be straightforward.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn đã quen thuộc với tích của ma trận và vector, tích của hai ma trận cũng tương tự như thế.
 
 <!--
 Say that we have two matrices $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$:
 -->
 
-*dịch đoạn phía trên*
+Giải sử ta có hai ma trận $\mathbf{A} \in \mathbb{R}^{n \times k}$ và $\mathbf{B} \in \mathbb{R}^{k \times m}$:
 
 $$\mathbf{A}=\begin{bmatrix}
  a_{11} & a_{12} & \cdots & a_{1k} \\
@@ -701,17 +701,14 @@ $$\mathbf{A}=\begin{bmatrix}
 \vdots & \vdots & \ddots & \vdots \\
  b_{k1} & b_{k2} & \cdots & b_{km} \\
 \end{bmatrix}.$$
--->
-
-*dịch đoạn phía trên*
-
 
 <!--
 Denote by $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ the row vector representing the $i^\mathrm{th}$ row of the matrix $\mathbf{A}$, and let $\mathbf{b}_{j} \in \mathbb{R}^k$ be the column vector from the $j^\mathrm{th}$ column of the matrix $\mathbf{B}$.
 To produce the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$, it is easiest to think of $\mathbf{A}$ in terms of its row vectors and $\mathbf{B}$ in terms of its column vectors:
 -->
 
-*dịch đoạn phía trên*
+Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
+Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ các cột của ma trận $\mathbf{B}$:
 
 $$\mathbf{A}=
 \begin{bmatrix}
@@ -730,7 +727,7 @@ $$
 Then the matrix product $\mathbf{C} \in \mathbb{R}^{n \times m}$ is produced as we simply compute each element $c_{ij}$ as the dot product $\mathbf{a}^\top_i \mathbf{b}_j$:
 -->
 
-*dịch đoạn phía trên*
+Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo bằng cách tính mỗi phần tử $c_{ij}$ như tích vô hướng  $\mathbf{a}^\top_i \mathbf{b}_j$:
 
 $$\mathbf{C} = \mathbf{AB} = \begin{bmatrix}
 \mathbf{a}^\top_{1} \\
@@ -757,7 +754,11 @@ Here, `A` is a matrix with $5$ rows and $4$ columns, and `B` is a matrix with $
 After multiplication, we obtain a matrix with $5$ rows and $3$ columns.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể coi tích hai ma trận $\mathbf{AB}$ như việc tính $m$ phép nhân ma trận và vector sau đó ghép các kết quả với nhau để tạo ra một ma trận $n \times m$.
+Giống như tích vô hướng và phép nhân ma trận và vector, ta có thể tính phép nhân hai ma trận bằng cách sử dụng hàm `dot`.
+Trong đoạn mã dưới đây, chúng ta tính phép nhân giữa `A` và `B`.
+Ở đây, `A` là một ma trận với $5$ hàng $4$ cột và `B` là một ma trận với `4` hàng `3` cột.
+Sau phép nhân này, ta thu được một ma trận với $5$ hàng $3$ cột.
 
 ```{.python .input  n=17}
 B = np.ones(shape=(4, 3))
@@ -768,7 +769,7 @@ np.dot(A, B)
 Matrix-matrix multiplication can be simply called *matrix multiplication*, and should not be confused with the Hadamard product.
 -->
 
-*dịch đoạn phía trên*
+Phép nhân hai ma trận có thể được gọi đơn giản là *phép nhân ma trận* và không nên nhầm lẫn với phép nhân Hadamard.
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
@@ -1052,7 +1053,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 9 -->
-*
+* Vũ Hữu Tiệp
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
