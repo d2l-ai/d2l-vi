@@ -210,6 +210,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regressor                      | bộ hồi quy                                                     |               |
 | regularization                 | điều chuẩn                                                     |               |
 | reinforcement learning         | học tăng cường                                                 |               |
+| representation learning | học biểu diễn | |
 | reward function                | hàm điểm thưởng                                                |               |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số                      |               |
 | running time                   | thời gian chạy                                                 |               |
