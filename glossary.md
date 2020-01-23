@@ -165,6 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## N
 | English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                               |
 |-----------------------------------|----------------------------------------------------------------|---------------------------------------------|
+| named entity | danh từ riêng | |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                             |
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
@@ -210,6 +211,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regressor                      | bộ hồi quy                                                     |               |
 | regularization                 | điều chuẩn                                                     |               |
 | reinforcement learning         | học tăng cường                                                 |               |
+| representation learning | học biểu diễn | |
 | reward function                | hàm điểm thưởng                                                |               |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số                      |               |
 | running time                   | thời gian chạy                                                 |               |
