@@ -687,7 +687,7 @@ Nếu bạn đã quen thuộc với tích của ma trận và vector, tích củ
 Say that we have two matrices $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$:
 -->
 
-Giải sử ta có hai ma trận $\mathbf{A} \in \mathbb{R}^{n \times k}$ và $\mathbf{B} \in \mathbb{R}^{k \times m}$:
+Giả sử ta có hai ma trận $\mathbf{A} \in \mathbb{R}^{n \times k}$ và $\mathbf{B} \in \mathbb{R}^{k \times m}$:
 
 $$\mathbf{A}=\begin{bmatrix}
  a_{11} & a_{12} & \cdots & a_{1k} \\
@@ -708,7 +708,7 @@ To produce the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$, it is easiest
 -->
 
 Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
-Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ các cột của ma trận $\mathbf{B}$:
+Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ các cột của ma trận $\mathbf{B}$:
 
 $$\mathbf{A}=
 \begin{bmatrix}
@@ -754,8 +754,8 @@ Here, `A` is a matrix with $5$ rows and $4$ columns, and `B` is a matrix with $
 After multiplication, we obtain a matrix with $5$ rows and $3$ columns.
 -->
 
-Ta có thể coi tích hai ma trận $\mathbf{AB}$ như việc tính $m$ phép nhân ma trận và vector sau đó ghép các kết quả với nhau để tạo ra một ma trận $n \times m$.
-Giống như tích vô hướng và phép nhân ma trận và vector, ta có thể tính phép nhân hai ma trận bằng cách sử dụng hàm `dot`.
+Ta có thể coi tích hai ma trận $\mathbf{AB}$ như việc tính $m$ phép nhân ma trận và vector, sau đó ghép các kết quả với nhau để tạo ra một ma trận $n \times m$.
+Giống như tích vô hướng và phép nhân ma trận-vector, ta có thể tính phép nhân hai ma trận bằng cách sử dụng hàm `dot`.
 Trong đoạn mã dưới đây, chúng ta tính phép nhân giữa `A` và `B`.
 Ở đây, `A` là một ma trận với $5$ hàng $4$ cột và `B` là một ma trận với `4` hàng `3` cột.
 Sau phép nhân này, ta thu được một ma trận với $5$ hàng $3$ cột.
