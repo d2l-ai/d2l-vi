@@ -436,8 +436,8 @@ To express the sum of the elements in a vector $\mathbf{x}$ of length $d$, we wr
 -->
 
 Một phép toán hữu ích mà ta có thể thực hiện trên bất kỳ tensor nào là phép tính tổng các phần tử của nó.
-Ký hiệu toán học của tổng là $\sum$.
-Để biểu diễn tổng các phần tử trong một vector $\mathbf{x}$ với độ dài $d$, ta viết $\sum_{i=1}^d x_i$.
+Ký hiệu toán học của phép tính tổng là $\sum$.
+Ta biểu diễn phép tính tổng các phần tử của một vector $\mathbf{x}$ với độ dài $d$ dưới dạng $\sum_{i=1}^d x_i$.
 Trong mã nguồn, ta chỉ cần gọi hàm `sum`.
 
 ```{.python .input  n=11}
@@ -450,7 +450,7 @@ We can express sums over the elements of tensors of arbitrary shape.
 For example, the sum of the elements of an $m \times n$ matrix $\mathbf{A}$ could be written $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 -->
 
-Ta có thể biểu diễn tổng các phần tử của những tensor với kích thước tùy ý.
+Ta có thể biểu diễn phép tính tổng các phần tử của tensor có kích thước tùy ý.
 Ví dụ, tổng các phẩn tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 
 ```{.python .input  n=12}
