@@ -45,7 +45,7 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
     * [ ] Custom Layers
     * [ ] File I/O
     * [ ] GPUs
-* [  ] Convolutional Neural Networks
+* [ ] Convolutional Neural Networks
     * [ ] From Dense Layers to Convolutions
     * [ ] Convolutions for Images
     * [ ] Padding and Stride
