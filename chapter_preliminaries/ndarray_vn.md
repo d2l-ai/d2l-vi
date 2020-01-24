@@ -583,7 +583,7 @@ Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
-
+* Đoàn Nguyễn Duy Thanh
 <!-- Phần 1 -->
 *
 
