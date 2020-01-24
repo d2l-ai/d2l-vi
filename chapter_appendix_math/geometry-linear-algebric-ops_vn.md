@@ -1685,15 +1685,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 2 -->
 * Lê Khắc Hồng Phúc
 
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
 <!-- Phần 6 -->
 * Hoàng Trọng Tuấn
 * Nguyễn Cảnh Thướng
@@ -1704,28 +1695,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 8 -->
 * Phạm Hồng Vinh
 
-<!-- Phần 9 -->
-*
-
-<!-- Phần 10 -->
-*
-
 <!-- Phần 11 -->
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 12 -->
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 13 -->
-*
-
-<!-- Phần 14 -->
-*
-
-<!-- Phần 15 -->
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-* Vũ Hữu Tiệp
 
 <!-- Phần 16 -->
 * Mai Sơn Hải

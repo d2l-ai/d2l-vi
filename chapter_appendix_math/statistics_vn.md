@@ -973,54 +973,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 3 -->
-* Phạm Hồng Vinh
-* Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Đoàn Võ Duy Thanh
 
 <!-- Phần 4 -->
 * Nguyễn Lê Quang Nhật
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-* Vũ Hữu Tiệp
-
-<!-- Phần 5 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 6 -->
-* Nguyễn Lê Quang Nhật
-* Đoàn Võ Duy Thanh
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
-* Lê Khắc Hồng Phúc
-* Vũ Hữu Tiệp
-* Phạm Hồng Vinh
 * Phạm Minh Đức
-
-<!-- Phần 8 -->
-* Phạm Minh Đức
-
-<!-- Phần 9 -->
-*
-
-<!-- Phần 10 -->
-*
 
 <!-- Phần 11 -->
-* Nguyễn Lê Quang Nhật
 * Nguyễn Cảnh Thướng
-* Vũ Hữu Tiệp
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 12 -->
-* Nguyễn Lê Quang Nhật
-* Phạm Hồng Vinh 
-* Lê Khắc Hồng Phúc   
-
-<!-- Phần 13 -->
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc  
-* Phạm Hồng Vinh  

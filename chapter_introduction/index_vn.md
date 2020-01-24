@@ -332,7 +332,7 @@ Chúng ta có thể "lập trình" một bộ phát hiện mèo bằng cách cun
 |cat|cat|dog|dog|
 -->
 
-| ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
+| ![cat1](../img/cat3.jpg) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
 |:---------------:|:---------------:|:---------------:|:---------------:|
 |mèo|mèo|chó|chó|
 
