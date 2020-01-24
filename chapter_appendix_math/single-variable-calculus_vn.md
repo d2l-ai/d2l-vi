@@ -4,7 +4,7 @@
 # Single Variable Calculus
 -->
 
-# *dịch tiêu đề phía trên*
+# Giải tích đơn biến
 :label:`sec_single_variable_calculus`
 
 <!--
@@ -12,39 +12,44 @@ In :numref:`sec_calculus`, we saw the basic elements of differential calculus.
 This section takes a deeper dive into the fundamentals of calculus and how we can understand and apply it in the context of machine learning.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_calculus`,  chúng ta đã xem qua những thành phần cơ bản nhất của giải tích vi phân.
+Trong mục này chúng ta sẽ đi sâu vào kiến thức giải tích cơ bản và cách áp dụng chúng trong trong ngữ cảnh học máy.
 
 <!--
 ## Differential Calculus
 -->
 
-## *dịch tiêu đề phía trên*
+## Vi phân
 
 <!--
 Differential calculus is fundamentally the study of how functions behave under small changes.  To see why this is so core to deep learning, let's consider an example.
 -->
 
-*dịch đoạn phía trên*
+Vi phân là nhánh toán học nghiên cứu về hành vi của các hàm số dưới các biến đổi nhỏ.
+Để thấy được tại sao đây lại là cốt lõi của học sâu, hãy cùng xem ví dụ dưới đây.
 
 <!--
 Suppose that we have a deep neural network where the weights are, for convenience, concatenated into a single vector $\mathbf{w} = (w_1, \ldots, w_n)$.  
 Given a training dataset, we consider the loss of our neural network on this dataset, which we will write as $\mathcal{L}(\mathbf{w})$.
 -->
 
-*dịch đoạn phía trên*
+Giả sử chúng ta có một mạng nơ-ron sâu với các trọng số được biễu diễn bằng một vector duy nhất $\mathbf{w} = (w_1, \ldots, w_n)$.
+Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát của mạng nơ-ron trên tập huấn luyện đấy và kí hiệu nó bằng $\mathcal{L}(\mathbf{w})$.
 
 <!--
 This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, so it is nearly impossible to tell what set of weights $\mathbf{w}$ will minimize the loss. 
 Thus, in practice, we often start by initializing our weights *randomly*, and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
 -->
 
-*dịch đoạn phía trên*
+Đây là một hàm số cực kì phức tạp, chứa đựng chất lượng của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, do vậy hầu như là không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ nào sẽ tối thiểu hoá mất mát.
+Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và đi từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--
 The question then becomes something that on the surface is no easier: how do we find the direction which makes the weights decrease as quickly as possible?  To dig into this, let's first examine the case with only a single weight: $L(\mathbf{w}) = L(x)$ for a single real value $x$.
 -->
 
-*dịch đoạn phía trên*
+Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị mất mát nhanh nhất có thể? <!-- Cái này bản gốc viết sai rồi, sao lại giảm weights nhanh nhất có thể -->
+Chúng ta sẽ đi sâu vào câu hỏi trên trong trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  cho một số thực $x$ duy nhất.
 
 <!-- ===================== Kết thúc dịch Phần  1 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 2 ==================== -->
