@@ -945,7 +945,7 @@ $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
 -->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2315)
+* [Tiếng Anh](https://discuss.mxnet.io/t/5156)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 <!--
