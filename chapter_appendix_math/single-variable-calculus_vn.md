@@ -765,7 +765,7 @@ Taylor series are often helpful to answer such questions.
 -->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2315)
+* [Tiếng Anh](https://discuss.mxnet.io/t/5149)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 <!--
