@@ -665,13 +665,12 @@ Nếu không có thời gian, tài nguyên, mọi sự thảo luận cùng các 
 ## [Discussions](https://discuss.mxnet.io/t/2311)
 -->
 
-## [Thảo luận](https://discuss.mxnet.io/t/2311)
-
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2311)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 <!--
 ![](../img/qr_preface.svg)
 -->
-
-![](../img/qr_preface.svg)
 
 <!-- =================== Kết thúc dịch Phần 6 ================================-->
 <!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================-->

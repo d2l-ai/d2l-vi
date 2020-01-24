@@ -302,8 +302,9 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 ## [Discussions](https://discuss.mxnet.io/t/2315)
 -->
 
-## [Thảo luận](https://discuss.mxnet.io/t/2315)
-
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2315)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 <!--
 ![](../img/qr_install.svg)
 -->

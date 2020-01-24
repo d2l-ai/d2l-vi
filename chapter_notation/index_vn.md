@@ -181,13 +181,12 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 ## [Discussions](https://discuss.mxnet.io/t/4367)
 -->
 
-## [Thảo luận](https://discuss.mxnet.io/t/4367)
-
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/4367)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 <!--
 ![](../img/qr_notation.svg)
 -->
-
-![](../img/qr_notation.svg)
 
 <!-- ===================== Kết thúc dịch Phần 1 ==================== -->
 
