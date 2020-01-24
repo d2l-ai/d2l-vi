@@ -62,3 +62,5 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
 * [ ] Natural Language Processing
 * [ ] Recommender Systems
 * [ ] Generative Adversarial Networks
+* [ ] Appendix: Mathematics for Deep Learning
+* [ ] Appendix: Tools for Deep Learning
