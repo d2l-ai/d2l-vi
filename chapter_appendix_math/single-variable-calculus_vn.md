@@ -764,13 +764,15 @@ Taylor series are often helpful to answer such questions.
 ## [Discussions](https://discuss.mxnet.io/t/5149)
 -->
 
-## *dịch tiêu đề phía trên*
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2315)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 <!--
 ![](../img/qr_single-variable-calculus.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/qr_single-variable-calculus.svg)
+
 
 <!-- ===================== Kết thúc dịch Phần 12 ==================== -->
 
