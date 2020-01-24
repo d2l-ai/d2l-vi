@@ -1664,8 +1664,6 @@ Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao
 ![](../img/qr_geometry-linear-algebric-ops.svg)
 -->
 
-![](../img/qr_geometry-linear-algebric-ops.svg)
-
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 ### Những người thực hiện
