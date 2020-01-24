@@ -2418,9 +2418,6 @@ Và rồi những thuật toán và mô hình tưởng chừng không khả thi 
 <!--
 :Dataset versus computer memory and computational power
 -->
-
-:Liên hệ giữa tập dữ liệu với bộ nhớ máy tính và năng lực tính toán
-
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
 |:--|:-|:-|:-|
@@ -2432,6 +2429,9 @@ Và rồi những thuật toán và mô hình tưởng chừng không khả thi 
 |2020|1 T (social network)|100 GB|1 PF (Nvidia DGX-2)|
 :label:`tab_intro_decade`
 -->
+
+:Liên hệ giữa tập dữ liệu với bộ nhớ máy tính và năng lực tính toán
+
 |Thập kỷ|Tập dữ liệu|Bộ nhớ|Số lượng phép tính dấu phẩy động trên giây|
 |:--|:-|:-|:-|
 |1970|100 (Iris)|1 KB|100 KF (Intel 8080)|
