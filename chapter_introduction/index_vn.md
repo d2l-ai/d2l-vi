@@ -2911,8 +2911,9 @@ Vật lý? Kỹ thuật? Kinh tế lượng?
 ## [Discussions](https://discuss.mxnet.io/t/2310)
 -->
 
-## [Thảo luận](https://discuss.mxnet.io/t/2310)
-
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2310)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 <!--
 ![](../img/qr_introduction.svg)
 -->
