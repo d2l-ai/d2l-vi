@@ -727,7 +727,7 @@ $$
 Then the matrix product $\mathbf{C} \in \mathbb{R}^{n \times m}$ is produced as we simply compute each element $c_{ij}$ as the dot product $\mathbf{a}^\top_i \mathbf{b}_j$:
 -->
 
-Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo bằng cách tính mỗi phần tử $c_{ij}$ bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
+Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo bằng cách tính từng phần tử $c_{ij}$ của nó bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
 
 $$\mathbf{C} = \mathbf{AB} = \begin{bmatrix}
 \mathbf{a}^\top_{1} \\
