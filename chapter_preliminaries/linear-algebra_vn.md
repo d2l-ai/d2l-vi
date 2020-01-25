@@ -1033,7 +1033,6 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 ![](../img/qr_linear-algebra.svg)
 -->
 
-![](../img/qr_linear-algebra.svg) <!-- có lẽ nhóm mình bỏ luôn cái QR code này đi nhỉ? -->
 
 <!-- ===================== Kết thúc dịch Phần 12 ==================== -->
 
