@@ -916,7 +916,7 @@ np.linalg.norm(np.ones((4, 9)))
 ### Norms and Objectives
 -->
 
-### Chẩn và Mục tiêu
+### Chuẩn và Mục tiêu
 :label:`subsec_norms_and_objectives`
 
 <!--
@@ -1076,4 +1076,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
-
