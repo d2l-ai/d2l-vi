@@ -465,7 +465,7 @@ To reduce the row dimension (axis $0$) by summing up elements of all the rows, w
 Since the input matrix reduces along axis $0$ to generate the output vector, the dimension of axis $0$ of the input is lost in the output shape.
 -->
 
-Mặc định, hàm `sum` sẽ *rút gọn* tensor dọc theo tất cả các trục của nó, trả về kết quả là một số vô hướng.
+Theo mặc định, hàm `sum` sẽ *rút gọn* tensor dọc theo tất cả các trục của nó và trả về kết quả là một số vô hướng.
 Ta cũng có thể chỉ định các trục được rút gọn bằng phép tổng.
 Lấy ma trận làm ví dụ, để rút gọn theo chiều hàng (trục $0$) bằng việc tính tổng tất cả các hàng, ta đặt `axis=0` khi gọi hàm `sum`.
 
