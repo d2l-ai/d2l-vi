@@ -681,7 +681,7 @@ A.shape, x.shape, np.dot(A, x)
 If you have gotten the hang of dot products and matrix-vector products, then *matrix-matrix multiplication* should be straightforward.
 -->
 
-Nếu bạn đã quen thuộc với tích của ma trận và vector, tích của hai ma trận cũng tương tự như thế.
+Nếu bạn đã quen thuộc với tích vô hướng và tích ma trận-vector, tích của hai ma trận cũng tương tự như thế.
 
 <!--
 Say that we have two matrices $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$:
