@@ -284,7 +284,11 @@ The example below shows what happens when we concatenate two matrices along rows
 We can see that, the first output `ndarray`'s axis-$0$ length ($6$) is the sum of the two input `ndarray`s' axis-$0$ lengths ($3 + 3$); while the second output `ndarray`'s axis-$1$ length ($8$) is the sum of the two input `ndarray`s' axis-$1$ lengths ($4 + 4$).
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể *nối* nhiều `ndarray` với nhau, xếp chồng chúng lên nhau để tạo ra một `ndarray` lớn hơn.
+Ta chỉ cần cung cấp một danh sách các `ndarray` và khai báo chúng được nối theo trục nào.
+Ví dụ dưới đây thể hiện các nối hai ma trận theo hàng (trục $0$, phần tử đầu tiên của kích thước) và theo cột (trục $1$, phần tử thứ hai của kích thước).
+Ta có thể thấy rằng, cách thứ nhất tạo một `ndarray` với độ dài trục $0$ ($6$) bằng tổng các độ dài trục $0$ của hai `ndarray` đầu vào ($3 + 3$);
+trong khi cách thứ hai tạo một `ndarray` với độ dài trục $1$ ($8$) bằng tổng các độ dài trục $1$ của hai `ndarray` đầu vào ($4 + 4$).
 
 ```{.python .input  n=14}
 x = np.arange(12).reshape(3, 4)
@@ -298,7 +302,9 @@ Take `x == y` as an example.
 For each position, if `x` and `y` are equal at that position, the corresponding entry in the new `ndarray` takes a value of $1$, meaning that the logical statement `x == y` is true at that position; otherwise that position takes $0$.
 -->
 
-*dịch đoạn phía trên*
+Đôi khi, ta muốn tạo một `ndarray` nhị phân thông qua các *mệnh đề logic*.
+Lấy `x == y` làm ví dụ.
+Với mỗi vị trí, nếu `x` và `y` bằng nhau thì phần tử tương ứng trong `ndarray` mới lấy giá trị $1$, nghĩa là mệnh đề logic `x == y` là đúng tại vị trí đó; ngược lại vị trí đó lấy giá trị $0$.
 
 ```{.python .input  n=15}
 x == y
@@ -308,7 +314,7 @@ x == y
 Summing all the elements in the `ndarray` yields an `ndarray` with only one element.
 -->
 
-*dịch đoạn phía trên*
+Lấy tổng mọi phần tử trong một `ndarray` tạo ra một `ndarray` với chỉ một phần tử.
 
 ```{.python .input  n=16}
 x.sum()
@@ -318,7 +324,7 @@ x.sum()
 For stylistic convenience, we can write `x.sum()`as `np.sum(x)`.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể thay `x.sum()` bởi `np.sum(x)`.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
