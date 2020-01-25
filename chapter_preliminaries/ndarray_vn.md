@@ -173,7 +173,7 @@ np.zeros((2, 3, 4))
 Similarly, we can create tensors with each element set to 1 as follows:
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta có thể tạo các tensor với các thành phần bằng 1 như sau:
 
 ```{.python .input  n=8}
 np.ones((2, 3, 4))
@@ -186,7 +186,9 @@ The following snippet creates an `ndarray` with shape ($3$, $4$).
 Each of its elements is randomly sampled from a standard Gaussian (normal) distribution with a mean of $0$ and a standard deviation of $1$.
 -->
 
-*dịch đoạn phía trên*
+Ta thường muốn lấy mẫu ngẫu nhiên cho mỗi phần tử trong một `ndarray` từ một phân phối xác suất.
+Ví dụ, khi xây dựng các mảng để chứa các tham số trong một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
+Đoạn mã dưới đây tạo một `ndarray` với kích thước $3$, $4$) với các phần tử được lấy mẫu ngẫu nhiên từ một phân phối Gauss (phân phói chuẩn) với trugn bình bằng $0$ và độ lệch chuẩn $1$.
 
 ```{.python .input  n=10}
 np.random.normal(0, 1, size=(3, 4))
@@ -197,7 +199,8 @@ We can also specify the exact values for each element in the desired `ndarray` b
 Here, the outermost list corresponds to axis $0$, and the inner list to axis $1$.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể khởi tạo giá trị chính xác cho mỗi phần tử trong `ndarray` mong muốn bằng cách đưa vào một mảng Python (hoặc mảng của mảng) chứa các giá trị số.
+Ở đây, mảng ngoài cùng tương ứng với trục $0$, và mảng bên trong tương ứng với trục $1$.
 
 ```{.python .input  n=9}
 np.array([[2, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
