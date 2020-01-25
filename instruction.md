@@ -43,59 +43,16 @@ một trường của Việt Nam trong danh sách này:
 
 ![img](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
 
-
 ## Hướng dẫn đóng góp
 
 Có ba công việc chính bạn có thể đóng góp vào dự án: Dịch, Review, và Hỗ trợ kỹ thuật.
 
 ### Dịch
+Nếu bạn đã quen với GitHub, bạn có thể tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/). Cách này yêu cầu người đóng góp tạo một forked repo rồi tạo pull request từ forked repo đó. Sẽ có thể phức tạp với các bạn chưa quen với GitHub.
 
-Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
-```
-<!-- =================== Bắt đầu dịch Phần x ================================-->
-```
-và
-```
-<!-- =================== Kết thúc dịch Phần x ================================-->
-```
+Ngoài ra, có một cách đơn giản hơn mà bạn có thể trực tiếp dịch trên trình duyệt mà không cần cài đặt Git hay fork repo này về GitHub của bạn. Bạn có thể tham khảo :n
 
-Việc chia nhỏ một file ra nhiều phần khiến một Pull Request mất không quá nhiều thời gian trong cả việc thực hiện lẫn review.
-
-(xem ví dụ [tại đây](https://github.com/aivivn/d2l-vn/blame/master/chapter_preface/index_vn.md#L1-L47).)
-
-
-**Các bước thực hiện khi dịch một *phần* của một file `.md`:**
-
-1. Tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/)
-
-2. Luôn luôn giữ bản forked của mình cập nhật với bản chính trong repo này
-
-3. Tìm các issues liên quan đến việc dịch [tại đây](https://github.com/aivivn/d2l-vn/issues).
-
-4. Dịch và tạo một Pull Request.
-
-5. Trả lời các bình luận từ các reviewers
-
-6. Điền tên mình và tên các reviewer có các phản hồi hữu ích (từ góc nhìn người dịch chính) vào cuối file, mục "Những người thực hiện".
-
-
-**Lưu ý:**
-
-1. Thuật ngữ
-Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) khi dịch. Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
-
-2. Giữ đúng format của bản gốc:
-    * Các phần in nghiêng, in đậm
-    * Tiêu đề (số lượng dấu `#` đầu dòng)
-    * Bảng biểu, chú thích cho bảng (dòng phía trên mỗi bảng bắt đầu bằng dấu `:`)
-    * Dịch các từ trong hình vẽ nếu cần. Các dòng có hình có dạng: `![caption](path)`
-    * Dịch các chú thích hình vẽ (thay các cụm `*dịch chú thích ảnh phía trên*` bằng bản dịch tiếng Việt)
-    * Không dịch các phần code (nằm giữa hai dấu `````)
-    * Copy các công thức toán từ bản gốc (các đoạn có `$`)
-    * Giữ các dòng gán nhãn (bắt đầu với `:label:`)
-    * Không tự thêm bớt các dòng trắng
-3. Ngắt các đoạn dài thành các dòng ngắn khoảng 80-100 ký tự. Markdown sẽ coi
-những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
+Tất nhiên bạn vẫn cần tạo một GitHub account để làm việc này.
 
 ### Review
 Chọn một Pull Request trong [danh sách này](https://github.com/aivivn/d2l-vn/pulls) và bắt đầu review.

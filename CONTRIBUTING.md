@@ -1,21 +1,25 @@
 ## Hướng dẫn dịch trực tiếp trên trình duyệt
+:label:`chap_contribution_guideline`
 Cả cuốn sách được chia thành nhiều file, mỗi file được chia thành nhiều phần nhỏ, mỗi phần chỉ khoảng 2-3 đoạn văn. Việc chia nhỏ thế này khiến việc dịch và review không lấy quá nhiều thời gian của một người.
 
 Các bước dịch như sau:
+
 ### Bước 1: Chọn phần cần dịch
 Tới [tab issue](https://github.com/aivivn/d2l-vn/issues), tìm xem issue nào chưa có người dịch, tức cột "Assignee" còn trống như trong hình dưới đây:
-![img](./translation_team/step1.png)
+![](./translation_team/step1.png)
 Giả sử bạn chọn issue ở hàng có mũi tên đỏ, tương ứng với file [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), phần 5.
 
 Nhớ số issue (ở ví dụ này là 393 trong phần khoanh đỏ) để dùng ở bước 7.
+
 ### Bước 2: Đăng ký dịch
 Trước khi thực hiện việc dịch chương này, bạn cần tự "Assign" issue này cho mình để tránh trường hợp có nhiều người cùng làm một việc một lúc.
-![img](./translation_team/step2.png)
+![](./translation_team/step2.png)
 
 
 ### Bước 3: Tìm file tương ứng
 Sau khi vào file tương ứng, ở ví dụ này là [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), bạn click vào nút "Edit" hình chiếc bút chì để bắt đầu tìm phần cần dịch.
-![img](./translation_team/step3.png)
+![](./translation_team/step3.png)
+
 ### Bước 4: Tìm phần tương ứng
 Mỗi phần được bắt đầu bởi dòng:
 ```
@@ -23,7 +27,7 @@ Mỗi phần được bắt đầu bởi dòng:
 ```
 như trong hình:
 
-![img](./translation_team/step4.png)
+![](./translation_team/step4.png)
 chúng ta cần dịch từ sau dòng này đến trước dòng
 ```
 <!-- ===================== Kết thúc dịch Phần x ==================== -->
@@ -50,26 +54,29 @@ và chỉ chỉnh sửa các dòng này.
 Nếu đây là lần đầu tiên bạn đóng góp vào file này, bạn cần kéo xuống cuối file và điền tên mình vào mục "Những người thực hiện" và mục tương ứng. Mục này nhằm ghi nhận đóng góp của bạn.
 
 **Lưu ý: Tên bạn sẽ chỉ xuất hiện trên trang web chính thức nếu Pull Request bạn tạo được merged sau khi trả lời các phản biện.**
-![img](./translation_team/step5.png)
+![](./translation_team/step5.png)
+
 ### Bước 6: Commit changes
 Sau khi dịch lần đầu xong phần của mình, bạn cần kéo xuống cuối trang để "Commit changes". Trước khi click vào nút "Commit changes", bạn cần đặt tiêu đề cho commit, cũng là tiêu đề cho Pull Request bạn sắp tạo. Tiêu đề này giống với tiêu đề trong Issue bạn nhận ban đầu (chỉ cần copy paste là được).
 
 
-![img](./translation_team/step6.png)
+![](./translation_team/step6.png)
 Click "Commit changes".
 
 ### Bước 7: Tạo Pull Request
 Sau khi click "Commit changes", trang tạo Pull Request sẽ tự động mở ra. Bạn chỉ cần điền số issue tương ứng, trong ví dụ này là 393, vào sau cụm "Close#" như trong hình. Lưu ý không có dấu cách giữa `#` và số issue. Việc này sẽ giúp issue tự động được đóng sau khi Pull Request này được merged.
 
-![img](./translation_team/step7.png)
-Click "CLick pull request".
-# Bước 8: Kiểm tra checklist
+![](./translation_team/step7.png)
+
+Click "Create pull request".
+
+### Bước 8: Kiểm tra checklist
 Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây. Nếu Pull Request đã sẵn sàng được review, bạn click vào dòng thứ hai từ dưới lên:
 "Pull Request này đã sẵn sàng cho việc Review chưa?"
 
-Trong ví dụ này, tôi chưa dịch trọn vẹn phần đã nhận nên tôi chưa tick.
+Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
 
-![img](./translation_team/step8.png)
+![](./translation_team/step8.png)
 
 ### Sau khi đã nộp Pull Request
 Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số bình luận/gợi ý từ các reviewer. **Việc này là hoàn toàn bình thường**, những người làm việc trong nhóm này thường có rất nhiều góp ý xây dựng giúp bản dịch được trọn vẹn và nhất quán với các phần khác. Họ sẽ gợi ý bạn cách sửa, bạn có thể chấp nhận gợi ý hoặc phản hồi lại các phản hồi đó.

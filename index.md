@@ -10,6 +10,7 @@
 :maxdepth: 1
 
 intro_vn
+CONTRIBUTING
 chapter_preface/index_vn
 chapter_install/install_vn
 chapter_notation/index_vn
