@@ -9,6 +9,7 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
 
 * [x] Đã dịch xong
 * [-] Đang dịch 
+* [ ] Chưa bắt đầu
 
 ### Mục lục
 * [x] Lời nói đầu
