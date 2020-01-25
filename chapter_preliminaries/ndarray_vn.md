@@ -85,7 +85,10 @@ For instance, there are $12$ elements in the `ndarray` `x`.
 Unless otherwise specified, a new `ndarray` will be stored in main memory and designated for CPU-based computation.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, chúng ta sử dụng `arange` để tạo một vector hàng `x` chứa $12$ số nguyên đầu tiên bắt đầu từ $0$, chúng sẽ được mặc định khởi tạo là các số thực.
+Mỗi giá trị trong một `ndarray` được gọi là một *phần tử* của `ndarray` đó.
+Như vậy, có $12$ phần tử trong `ndarray` `x`.
+Nếu không nói gì thêm, một `ndarray` mới sẽ được lưu trong bộ nhớ chính và được tính toán trên CPU.
 
 ```{.python .input  n=2}
 x = np.arange(12)
@@ -96,7 +99,7 @@ x
 We can access an `ndarray`'s *shape* (the length along each axis) by inspecting its `shape` property.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể lấy `shape` (độ dài theo mỗi trục) của `ndarray` bằng thuộc tính `shape`.
 
 ```{.python .input  n=3}
 x.shape
@@ -107,7 +110,8 @@ If we just want to know the total number of elements in an `ndarray`, i.e., the 
 Because we are dealing with a vector here, the single element of its `shape` is identical to its `size`.
 -->
 
-*dịch đoạn phía trên*
+Nếu chỉ muốn biết tổng số phần tử của một `ndarray`, nghĩa là tích của tất cả các thành phần trong `shape`, ta có thể sử dụng thuộc tính `size`.
+Vì ta đang làm việc với một vector, phần tử duy nhất của `shape` và `size` của nó là như nhau.
 
 ```{.python .input  n=4}
 x.size
@@ -121,7 +125,11 @@ To reiterate, although the shape has changed, the elements in `x` have not.
 Note that the `size` is unaltered by reshaping.
 -->
 
-*dịch đoạn phía trên*
+Để thay đổi kích thước của một `ndarray` mà không làm thay đổi số lượng phần tử cũng như giá trị của chúng, ta có thể gọi hàm `reshape`.
+Ví dụ, ta có thể biến đổi `ndarray` `x` trong ví dụ trên, từ một vector hàng với kích thước ($12$,) sang một ma trận kích thước ($3$, $4$).
+`ndarray` mới này chứa đúng $12$ phần tử, nhưng được xem như một ma trận với $3$ hàng và $4$ cột.
+Mặc dù kích thước thay đổi, các phần tử của `x` vẫn giữ nguyên.
+Chú ý rằng `size` giữ nguyên khi thay đổi kích thước.
 
 ```{.python .input  n=5}
 x = x.reshape(3, 4)
