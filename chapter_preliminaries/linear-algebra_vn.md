@@ -427,7 +427,7 @@ a + X, (a * X).shape
 ## Reduction
 -->
 
-## *dịch tiêu đề phía trên*
+## Rút gọn
 
 <!--
 One useful operation that we can perform with arbitrary tensors is to calculate the sum of their elements.
@@ -435,7 +435,10 @@ In mathematical notation, we express sums using the $\sum$ symbol.
 To express the sum of the elements in a vector $\mathbf{x}$ of length $d$, we write $\sum_{i=1}^d x_i$. In code, we can just call the `sum` function.
 -->
 
-*dịch đoạn phía trên*
+Một phép toán hữu ích mà ta có thể thực hiện trên bất kỳ tensor nào là phép tính tổng các phần tử của nó.
+Ký hiệu toán học của phép tính tổng là $\sum$.
+Ta biểu diễn phép tính tổng các phần tử của một vector $\mathbf{x}$ với độ dài $d$ dưới dạng $\sum_{i=1}^d x_i$.
+Trong mã nguồn, ta chỉ cần gọi hàm `sum`.
 
 ```{.python .input  n=11}
 x = np.arange(4)
@@ -447,7 +450,8 @@ We can express sums over the elements of tensors of arbitrary shape.
 For example, the sum of the elements of an $m \times n$ matrix $\mathbf{A}$ could be written $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể biểu diễn phép tính tổng các phần tử của tensor có kích thước tùy ý.
+Ví dụ, tổng các phẩn tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 
 ```{.python .input  n=12}
 A.shape, A.sum()
@@ -461,7 +465,9 @@ To reduce the row dimension (axis $0$) by summing up elements of all the rows, w
 Since the input matrix reduces along axis $0$ to generate the output vector, the dimension of axis $0$ of the input is lost in the output shape.
 -->
 
-*dịch đoạn phía trên*
+Theo mặc định, hàm `sum` sẽ *rút gọn* tensor dọc theo tất cả các trục của nó và trả về kết quả là một số vô hướng.
+Ta cũng có thể chỉ định các trục được rút gọn bằng phép tổng.
+Lấy ma trận làm ví dụ, để rút gọn theo chiều hàng (trục $0$) bằng việc tính tổng tất cả các hàng, ta đặt `axis=0` khi gọi hàm `sum`.
 
 ```{.python .input}
 A_sum_axis0 = A.sum(axis=0)
@@ -473,7 +479,8 @@ Specifying `axis=1` will reduce the column dimension (axis $1$) by summing up el
 Thus, the dimension of axis $1$ of the input is lost in the output shape.
 -->
 
-*dịch đoạn phía trên*
+Việc đặt `axis=1` sẽ rút gọn theo cột (trục $1$) bằng việc tính tổng tất cả các cột.
+Do đó, kích thước trục $1$ của đầu vào sẽ không còn trong kích thước của đầu ra.
 
 ```{.python .input}
 A_sum_axis1 = A.sum(axis=1)
@@ -485,7 +492,7 @@ Reducing a matrix along both rows and columns via summation
 is equivalent to summing up all the elements of the matrix.
 -->
 
-*dịch đoạn phía trên*
+Việc rút gọn ma trận dọc theo cả hàng và cột bằng phép tổng tương đương với việc cộng tất cả các phần tử trong ma trận đó lại.
 
 ```{.python .input}
 A.sum(axis=[0, 1])  # Same as A.sum()
@@ -497,7 +504,9 @@ We calculate the mean by dividing the sum by the total number of elements.
 In code, we could just call `mean` on tensors of arbitrary shape.
 -->
 
-*dịch đoạn phía trên*
+Một đại lượng liên quan là *trung bình cộng*.
+Ta tính trung bình cộng bằng cách chia tổng các phần tử cho số lượng phần tử.
+Trong mã nguồn, ta chỉ cần gọi hàm `mean` với đầu vào là các tensor có kích thước tùy ý.
 
 ```{.python .input  n=13}
 A.mean(), A.sum() / A.size
@@ -507,7 +516,7 @@ A.mean(), A.sum() / A.size
 Like `sum`, `mean` can also reduce a tensor along the specified axes.
 -->
 
-*dịch đoạn phía trên*
+Giống như `sum`, hàm `mean` cũng có thể rút gọn tensor dọc theo các trục được chỉ định.
 
 ```{.python .input}
 A.mean(axis=0), A.sum(axis=0) / A.shape[0]
@@ -1044,7 +1053,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 *
