@@ -268,14 +268,16 @@ We repeat them here for ease of reference.
 ### Derivative Rules
 -->
 
-### *dịch tiêu đề phía trên*
+### Quy tắc tính đạo hàm
 
 <!--
 If every derivative needed to be separately computed and stored in a table, differential calculus would be near impossible.  
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-*dịch đoạn phía trên*
+Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, sẽ không thể có ...
+Toán học đã mang lại một món quá ...
+Như được đề cập tại ...
 
 <!--
 * **Sum rule.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
@@ -283,13 +285,15 @@ It is a gift of mathematics that we can generalize the above derivatives and com
 * **Chain rule.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 -->
 
-*dịch đoạn phía trên*
+* **Quy tắc tổng.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
+* **Quy tắc tích.** $\frac{d}{dx}\left(g(x)\cdot h(x)\right) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$.
+* **Quy tắc chuỗi.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 
 <!--
 Let's see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
 -->
 
-*dịch đoạn phía trên*
+* Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này. Với quy tắc tổng, ...
 
 $$
 \begin{aligned}
