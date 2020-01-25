@@ -18,7 +18,7 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
 * [ ] 2. Preliminaries
     * [-] 2.1. Data Manipulation
     * [ ] 2.2. Data Preprocessing
-    * [-] 2.3. Linear Algebra
+    * [-] 2.3. Đại số tuyến tính
     * [ ] 2.4. Calculus
     * [ ] 2.5. Automatic Differentiation
     * [ ] 2.6. Probability
@@ -147,7 +147,7 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
     * 16.1. Generative Adversarial Networks
     * 16.2. Deep Convolutional Generative Adversarial Networks
 * [ ] 17. Appendix: Mathematics for Deep Learning
-    * [-] 17.1. Geometry and Linear Algebraic Operations
+    * [-] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính (xong giai đoạn 1)
     * [ ] 17.2. Eigendecompositions
     * [-] 17.3. Single Variable Calculus
     * [ ] 17.4. Multivariable Calculus
@@ -155,7 +155,7 @@ https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
     * [ ] 17.6. Random Variables
     * [ ] 17.7. Maximum Likelihood
     * [ ] 17.8. Naive Bayes
-    * [-] 17.9. Statistics
+    * [-] 17.9. Thống kê
     * [ ] 17.10. Information Theory
 * [ ] 18. Appendix: Tools for Deep Learning¶
     * [ ] 18.1. Using Jupyter
