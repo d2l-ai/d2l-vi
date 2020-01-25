@@ -1,5 +1,6 @@
 ## Hướng dẫn dịch trực tiếp trên trình duyệt
 :label:`chap_contribution_guideline`
+
 Cả cuốn sách được chia thành nhiều file, mỗi file được chia thành nhiều phần nhỏ, mỗi phần chỉ khoảng 2-3 đoạn văn. Việc chia nhỏ thế này khiến việc dịch và review không lấy quá nhiều thời gian của một người.
 
 Các bước dịch như sau:
