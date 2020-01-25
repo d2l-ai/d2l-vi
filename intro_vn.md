@@ -97,6 +97,7 @@ Nếu bạn đã quen với GitHub, bạn có thể tham khảo cách [đóng g�
 Ngoài ra, có một cách đơn giản hơn mà bạn có thể trực tiếp dịch trên trình duyệt mà không cần cài đặt Git hay fork repo này về GitHub của bạn, như trong hướng dẫn tại :ref:`chap_contribution_guidline`.
 
 Tất nhiên bạn vẫn cần tạo một GitHub account để làm việc này.
+
 #### Review
 
 Chọn một Pull Request trong [danh sách này](https://github.com/aivivn/d2l-vn/pulls) và bắt đầu review.
