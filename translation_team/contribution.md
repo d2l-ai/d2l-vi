@@ -1,3 +1,9 @@
+## Hướng dẫn dịch trực tiếp trên trình duyệt
+
+### Bước 1: Chọn phần cần dịch
+Tới [tab issue](https://github.com/aivivn/d2l-vn/issues), tìm xem issue nào chưa có người dịch, tức cột Assignee còn trống như trong hình dưới đây:
+![img](step1.png)
+
 ### Một vài quy tắc dịch:
 * Không dịch các danh từ riêng
 * Không dịch code
