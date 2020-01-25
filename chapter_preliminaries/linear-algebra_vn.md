@@ -947,7 +947,7 @@ So while we reserve the right to introduce more mathematics much later on, we wi
 -->
 
 Chỉ trong mục này, chúng tôi đã trang bị cho bạn tất cả những kiến thức đại số tuyến tính cần thiết để hiểu một lượng lớn các mô hình học máy hiện đại.
-Vẫn có nhiều kiến thức đại số tuyến tính và toán hữu dụng khác cho học máy.
+Vẫn còn rất nhiều kiến thức đại số tuyến tính, phần lớn đều hữu dụng cho học máy.
 Ví dụ, phân tính ma trận ra các thành phần, và các phép khai triển này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
 Có cả một ngành nhỏ của học máy tập trung vào khai triển ma trận và tổng quát chúng lên cho tensor hạng lớn để khám phá cấu trúc trong các tập dữ liệu và giải các bài toán dự đoán.
 Tuy nhiên, cuốn sách này chỉ tập trung vào học sâu.
