@@ -332,8 +332,8 @@ For stylistic convenience, we can write `x.sum()`as `np.sum(x)`.
 ## Broadcasting Mechanism
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Cơ chế Quảng bá
+<!-- bàn thêm từ này -->
 <!--
 In the above section, we saw how to perform elementwise operations on two `ndarray`s of the same shape. Under certain conditions, even when shapes differ, we can still perform elementwise operations by invoking the *broadcasting mechanism*.
 These mechanisms work in the following way:
@@ -341,13 +341,17 @@ First, expand one or both arrays by copying elements appropriately so that after
 Second, carry out the elementwise operations on the resulting arrays.
 -->
 
-*dịch đoạn phía trên*
+Trong mục trên đây, ta thấy cách thực hiện các phép toán theo từng thành phần lên hai `ndarray` đồng kích thước.
+Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng thành phần bằng cách sử dụng *cơ chế quảng bá*.
+Cơ chế này làm việc theo cách sau:
+Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau cách biến đổi này, hai `ndarray` có cùng kích thước.
+Thứ hai, áp dụng các phép toàn từng thành phần lên hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-*dịch đoạn phía trên*
+Trong hầu hết các trường hợp, chúng ta quảng bá một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
@@ -360,7 +364,8 @@ Since `a` and `b` are $3\times1$ and $1\times2$ matrices respectively, their sha
 We *broadcast* the entries of both matrices into a larger $3\times2$ matrix as follows: for matrix `a` it replicates the columns and for matrix `b` it replicates the rows before adding up both elementwise.
 -->
 
-*dịch đoạn phía trên*
+Vì `a` và `b` là các ma trận có kích thước lần lượt là $3\times1$ và $1\times2$, kích thước của chúng không khớp nếu ta muốn thực hiện phép cộng.
+Ta *quảng bá* các phần tử của cả hai ma trận thành các ma trận $3\times2$ như sau: lặp lại các cột trong ma trận `a` và các hàng trong ma trận `b` trước khi cộng chúng theo từng thành phần.
 
 ```{.python .input  n=18}
 a + b
