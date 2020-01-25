@@ -6,7 +6,9 @@ Các bước dịch như sau:
 
 ### Bước 1: Chọn phần cần dịch
 Tới [tab issue](https://github.com/aivivn/d2l-vn/issues), tìm xem issue nào chưa có người dịch, tức cột "Assignee" còn trống như trong hình dưới đây:
+
 ![](./translation_team/step1.png)
+
 Giả sử bạn chọn issue ở hàng có mũi tên đỏ, tương ứng với file [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), phần 5.
 
 Nhớ số issue (ở ví dụ này là 393 trong phần khoanh đỏ) để dùng ở bước 7.
