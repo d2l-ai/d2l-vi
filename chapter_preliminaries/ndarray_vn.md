@@ -141,14 +141,21 @@ We invoke this capability by placing `-1` for the dimension that we would like `
 In our case, instead of calling `x.reshape(3, 4)`, we could have equivalently called `x.reshape(-1, 4)` or `x.reshape(3, -1)`.
 -->
 
-*dịch đoạn phía trên*
+Thay đổi kích thước bằng cách chỉ ra mọi chiều một cách thủ công là không cần thiết.
+Nếu kích thước mong muốn là một ma trận với kích thước (chiều_cao, chiều_rộng), thì sau khi biết chiều_rộng, chiều_cao sẽ được ngầm suy ra.
+Tại sao ta lại cần phải tự làm phép tính chia?
+Trong ví dụ trên đây, để có được một ma trận với $3$ hàng, chúng ta chỉ rõ ra rằng nó nên có $3$ hàng và $4$ cột.
+May mắn thay, `ndarray` có thể tự động tính được một chiều nếu biết các chiều còn lại.
+Ta có thể đạt được điều này bằng cách đặt `-1` cho chiều đó.
+Trong trường hợp này, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
 
 <!--
 The `empty` method grabs a chunk of memory and hands us back a matrix without bothering to change the value of any of its entries.
 This is remarkably efficient but we must be careful because the entries might take arbitrary values, including very big ones!
 -->
 
-*dịch đoạn phía trên*
+Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không làm thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
+Việc này có hiệu quả tính toán đáng kể nhưng ta phải thật cẩn trọng bởi các giá trị có thể lấy những giá trị bất kỳ, bao gồm các cố rất lớn!
 
 ```{.python .input  n=6}
 np.empty((3, 4))
@@ -159,7 +166,8 @@ Typically, we will want our matrices initialized either with zeros, ones, some o
 We can create an `ndarray` representing a tensor with all elements set to $0$ and a shape of ($2$, $3$, $4$) as follows:
 -->
 
-*dịch đoạn phía trên*
+Thông thường, ta sẽ muốn các ma trận được khởi tạo bởi toàn giá trị không, một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
+Ta có thể tạo một `ndarray` biểu diễn một tensor với tất cả các phần tử bằng $0$ và có kích thước ($2$, $3$, $4$) như sau:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
