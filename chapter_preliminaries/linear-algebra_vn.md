@@ -479,7 +479,7 @@ Specifying `axis=1` will reduce the column dimension (axis $1$) by summing up el
 Thus, the dimension of axis $1$ of the input is lost in the output shape.
 -->
 
-Việc đặt `axis=1` sẽ rút gọn chiều cột (trục $1$) bằng việc tính tổng tất cả các cột.
+Việc đặt `axis=1` sẽ rút gọn theo cột (trục $1$) bằng việc tính tổng tất cả các cột.
 Do đó, kích thước trục $1$ của đầu vào sẽ không còn trong kích thước của đầu ra.
 
 ```{.python .input}
@@ -492,7 +492,7 @@ Reducing a matrix along both rows and columns via summation
 is equivalent to summing up all the elements of the matrix.
 -->
 
-Việc rút gọn ma trận dọc theo cả chiều hàng và cột bằng phép tổng tương đương với việc tính tổng tất cả các phần tử trong ma trận đó.
+Việc rút gọn ma trận dọc theo cả hàng và cột bằng phép tổng tương đương với việc cộng tất cả các phần tử trong ma trận đó lại.
 
 ```{.python .input}
 A.sum(axis=[0, 1])  # Same as A.sum()
