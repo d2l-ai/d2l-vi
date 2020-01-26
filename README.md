@@ -3,7 +3,9 @@
 Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 
 ## Hướng dẫn đóng góp vào dự án
-https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop
+* [Hướng dẫn dịch trực tiếp trên trình duyệt](CONTRIBUTING.md).
+* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop)
+
 
 ## Thứ tự dịch
 
