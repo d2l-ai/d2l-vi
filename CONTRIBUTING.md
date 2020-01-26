@@ -1,60 +1,89 @@
-### Hướng dẫn đóng góp
+## Hướng dẫn dịch trực tiếp trên trình duyệt
 
-#### Dịch (thông qua Pull Request)
+Cả cuốn sách được chia thành nhiều file, mỗi file được chia thành nhiều phần nhỏ, mỗi phần chỉ khoảng 2-3 đoạn văn. Việc chia nhỏ thế này khiến việc dịch và review không lấy quá nhiều thời gian của một người.
 
-Mỗi Pull Request liên quan tới việc dịch chỉ dịch một phần của một file `.md` nằm giữa hai dòng:
+Các bước dịch như sau:
+
+### Bước 1: Chọn phần cần dịch
+Tới [tab issue](https://github.com/aivivn/d2l-vn/issues), tìm xem issue nào chưa có người dịch, tức cột "Assignee" còn trống như trong hình dưới đây:
+
+![](./translation_team/step01.png)
+
+Giả sử bạn chọn issue ở hàng có mũi tên đỏ, tương ứng với file [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), phần 5.
+
+Nhớ số issue (ở ví dụ này là 393 trong phần khoanh đỏ) để dùng ở bước 7.
+
+### Bước 2: Đăng ký dịch
+Trước khi thực hiện việc dịch chương này, bạn cần tự "Assign" issue này cho mình để tránh trường hợp có nhiều người cùng làm một việc một lúc.
+![](./translation_team/step02.png)
+
+
+### Bước 3: Tìm file tương ứng
+Sau khi vào file tương ứng, ở ví dụ này là [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), bạn click vào nút "Edit" hình chiếc bút chì để bắt đầu tìm phần cần dịch.
+![](./translation_team/step03.png)
+
+### Bước 4: Tìm phần tương ứng
+Mỗi phần được bắt đầu bởi dòng:
 ```
-<!-- =================== Bắt đầu dịch Phần x ================================-->
+<!-- ===================== Bắt đầu dịch Phần x ==================== -->
 ```
-và
+như trong hình:
+
+![](./translation_team/step04.png)
+chúng ta cần dịch từ sau dòng này đến trước dòng
 ```
-<!-- =================== Kết thúc dịch Phần x ================================-->
+<!-- ===================== Kết thúc dịch Phần x ==================== -->
 ```
+tương ứng.
 
-Việc chia nhỏ một file ra nhiều phần khiến một Pull Request mất không quá nhiều thời gian trong cả việc thực hiện lẫn review.
+### Bước 5: Bắt đầu dịch
+Khi dịch, bạn tìm các dòng dạng:
+```
+## *dịch tiêu đề phía trên*
 
-(xem ví dụ [tại đây](https://github.com/aivivn/d2l-vn/blame/master/chapter_preface/index_vn.md#L1-L47).)
+*dịch đoạn phía trên*
+```
+và chỉ chỉnh sửa các dòng này.
+
+**Một vài quy tắc dịch:**
+* Không dịch các danh từ riêng
+* Trong một đoạn, mỗi câu dịch nên để riêng một dòng (xem dòng 268, 269, 270 trong hình ví dụ ở **Bước 4**).
+* Không dịch code
+* Không nhất thiết phải dừng từng từ từng câu nhưng phải dịch đúng ý.
+* Các thuật ngữ cần được dịch một cách nhất quán
+* Nếu một thuật ngữ chưa có trong bảng thuật ngữ, bạn có thể đề xuất một cách dịch bằng cách tạo một PR mới
+
+Nếu đây là lần đầu tiên bạn đóng góp vào file này, bạn cần kéo xuống cuối file và điền tên mình vào mục "Những người thực hiện" và mục tương ứng. Mục này nhằm ghi nhận đóng góp của bạn.
+
+**Lưu ý: Tên bạn sẽ chỉ xuất hiện trên trang web chính thức nếu Pull Request bạn tạo được merged sau khi trả lời các phản biện.**
+![](./translation_team/step05.png)
+
+### Bước 6: Commit changes
+Sau khi dịch lần đầu xong phần của mình, bạn cần kéo xuống cuối trang để "Commit changes". Trước khi click vào nút "Commit changes", bạn cần đặt tiêu đề cho commit, cũng là tiêu đề cho Pull Request bạn sắp tạo. Tiêu đề này giống với tiêu đề trong Issue bạn nhận ban đầu (chỉ cần copy paste là được).
 
 
-**Các bước thực hiện khi dịch một *phần* của một file `.md`:**
+![](./translation_team/step06.png)
+Click "Commit changes".
 
-1. Tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/)
+### Bước 7: Tạo Pull Request
+Sau khi click "Commit changes", trang tạo Pull Request sẽ tự động mở ra. Bạn chỉ cần điền số issue tương ứng, trong ví dụ này là 393, vào sau cụm "Close#" như trong hình. Lưu ý không có dấu cách giữa `#` và số issue. Việc này sẽ giúp issue tự động được đóng sau khi Pull Request này được merged.
 
-2. Luôn luôn giữ bản forked của mình cập nhật với bản chính trong repo này
+![](./translation_team/step07.png)
 
-3. Tìm các issues liên quan đến việc dịch [tại đây](https://github.com/aivivn/d2l-vn/issues).
+Click "Create pull request".
 
-4. Dịch và tạo một Pull Request.
+### Bước 8: Kiểm tra checklist
+Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây. Nếu Pull Request đã sẵn sàng được review, bạn click vào dòng thứ hai từ dưới lên:
+"Pull Request này đã sẵn sàng cho việc Review chưa?"
 
-5. Trả lời các bình luận từ các reviewers
+Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
 
-6. Điền tên mình và tên các reviewer có các phản hồi hữu ích (từ góc nhìn người dịch chính) vào cuối file, mục "Những người thực hiện".
+![](./translation_team/step08.png)
 
+### Sau khi đã nộp Pull Request
+Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số bình luận/gợi ý từ các reviewer. **Việc này là hoàn toàn bình thường**, những người làm việc trong nhóm này thường có rất nhiều góp ý xây dựng giúp bản dịch được trọn vẹn và nhất quán với các phần khác. Họ sẽ gợi ý bạn cách sửa, bạn có thể chấp nhận gợi ý hoặc phản hồi lại các phản hồi đó.
 
-**Lưu ý:**
+### Sau khi Pull Request được approve
+Cuối cùng, nếu bạn thấy phần phản hồi nào hữu ích, bạn có thể điền tên user tương ứng vào dưới tên bạn ở mục "Những người thực hiện". Cả người dịch và người review đều xứng đáng được ghi công.
 
-1. Thuật ngữ
-Luôn luôn bám sát [Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md) khi dịch. Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
-
-2. Giữ đúng format của bản gốc:
-    * Các phần in nghiêng, in đậm
-    * Tiêu đề (số lượng dấu `#` đầu dòng)
-    * Bảng biểu, chú thích cho bảng (dòng phía trên mỗi bảng bắt đầu bằng dấu `:`)
-    * Dịch các từ trong hình vẽ nếu cần. Các dòng có hình có dạng: `![caption](path)`
-    * Dịch các chú thích hình vẽ (thay các cụm `*dịch chú thích ảnh phía trên*` bằng bản dịch tiếng Việt)
-    * Không dịch các phần code (nằm giữa hai dấu `````)
-    * Copy các công thức toán từ bản gốc (các đoạn có `$`)
-    * Giữ các dòng gán nhãn (bắt đầu với `:label:`)
-    * Không tự thêm bớt các dòng trắng
-     
-3. Ngắt các đoạn dài thành các dòng ngắn khoảng 60-80 ký tự. Markdown sẽ coi
-những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
-
-#### Review
-
-Chọn một Pull Request trong [danh sách này](https://github.com/aivivn/d2l-vn/pulls) và bắt đầu review.
-
-Khi Review, bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:
-![img](https://user-images.githubusercontent.com/19977/58752991-f39d0880-846c-11e9-8c03-c7aded86ee9b.png)
-
-Nếu bạn có những phản hồi hữu ích, tên của bạn sẽ được tác giả chính của Pull Request đó điền vào cuối file mục "Những người thực hiện".
+Cảm ơn đóng góp của bạn.
