@@ -94,7 +94,7 @@ Dưới đây là chi tiết về ba việc quan trọng nhất:
 #### Dịch
 Nếu bạn đã quen với GitHub, bạn có thể tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/). Cách này yêu cầu người đóng góp tạo một forked repo rồi tạo pull request từ forked repo đó. Sẽ có thể phức tạp với các bạn chưa quen với GitHub.
 
-Ngoài ra, có một cách đơn giản hơn mà bạn có thể trực tiếp dịch trên trình duyệt mà không cần cài đặt Git hay fork repo này về GitHub của bạn, như trong hướng dẫn tại :ref:`chap_contribution_guidline`.
+Ngoài ra, có một cách đơn giản hơn mà bạn có thể trực tiếp dịch trên trình duyệt mà không cần cài đặt Git hay fork repo này về GitHub của bạn, như trong [hướng dẫn tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)
 
 Tất nhiên bạn vẫn cần tạo một GitHub account để làm việc này.
 
