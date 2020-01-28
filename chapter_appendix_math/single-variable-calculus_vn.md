@@ -359,7 +359,6 @@ where in the second line we view the function $g$ as having its input ($h(x)$) s
 
 Chú ý là ở dòng thứ hai trong chuỗi khai triển trên, chúng ta đã xem đối số $h(x)$ của hàm $g$ như là bị dịch đi bởi một lượng rất nhỏ $\epsilon \frac{dh}{dx}(x)$.
 
-
 <!--
 These rule provide us with a flexible set of tools to compute essentially any expression desired.  For instance,
 -->
