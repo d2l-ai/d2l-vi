@@ -339,7 +339,7 @@ and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to ze
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
 -->
 
-Cuối cùng, theo quy tắc đạo hàm của hàm số hợp, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
+Cuối cùng, theo quy tắc đạo hàm của hàm hợp, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
 
 $$
 \begin{aligned}
