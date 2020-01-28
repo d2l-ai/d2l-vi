@@ -380,7 +380,7 @@ $$
 Where each line has used the following rules:
 -->
 
-Mỗi dòng của ví dụ này đã sử dụng các luật sau:
+Mỗi dòng của ví dụ này đã sử dụng các quy tắc sau:
 
 <!--
 1. The chain rule and derivative of logarithm.
