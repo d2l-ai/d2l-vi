@@ -339,14 +339,14 @@ and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to ze
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, theo quy tắc đạo hàm của hàm số hợp, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
 
 $$
 \begin{aligned}
 f(x+\epsilon) & = g(h(x+\epsilon)) \\
 & \approx g\left(h(x) + \epsilon \frac{dh}{dx}(x)\right) \\
 & \approx g(h(x)) + \epsilon \frac{dh}{dx}(x) \frac{dg}{dh}(h(x))\\
-& = f(x) + \epsilon \frac{dg}{dh}(h(x))\frac{dh}{dx}(x),
+& = f(x) + \epsilon \frac{dg}{dh}(h(x))\frac{dh}{dx}(x).
 \end{aligned}
 $$
 
@@ -357,13 +357,15 @@ $$
 where in the second line we view the function $g$ as having its input ($h(x)$) shifted by the tiny quantity $\epsilon \frac{dh}{dx}(x)$.
 -->
 
-*dịch đoạn phía trên*
+Chú ý là ở dòng thứ hai trong chuỗi khai triển trên, chúng ta đã xem đối số $h(x)$ của hàm $g$ như là bị dịch đi bởi một lượng rất nhỏ $\epsilon \frac{dh}{dx}(x)$.
+
 
 <!--
 These rule provide us with a flexible set of tools to compute essentially any expression desired.  For instance,
 -->
 
-*dịch đoạn phía trên*
+Các luật này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như là bất kỳ diễn tả toán học nào mà bạn muốn.
+Chẳng hạn như trong ví dụ sau:
 
 $$
 \begin{aligned}
@@ -379,7 +381,7 @@ $$
 Where each line has used the following rules:
 -->
 
-*dịch đoạn phía trên*
+Mỗi dòng của ví dụ này đã sử dụng các luật sau:
 
 <!--
 1. The chain rule and derivative of logarithm.
@@ -388,26 +390,30 @@ Where each line has used the following rules:
 4. The sum rule, derivative of linear functions, derivative of constants.
 -->
 
-*dịch đoạn phía trên*
+1. Luật đạo hàm của hàm hợp và công thức đạo hàm của hàm logarithm.
+2. Luật đạo hàm của tổng.
+3. Đạo hàm của hằng số, luật đạo hàm của hàm hợp, và luật đạo hàm của lũy thừa.
+4. Luật đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
 
 <!--
 Two things should be clear after doing this example:
 -->
 
-*dịch đoạn phía trên*
+Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều:
 
 <!--
 1. Any function we can write down using sums, products, constants, powers, exponentials, and logarithms can have its derivate computed mechanically by following these rules.
 2. Having a human follow these rules can be tedious and error prone!
 -->
 
-*dịch đoạn phía trên*
+1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, exponentials, và logarithms, bằng cách sử dụng những quy luật trên một cách máy móc.
+2. Quá trình dùng những quy luật này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
 
 <!--
 Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!  Indeed backpropagation, which we will revisit later in this section, is exactly that.
 -->
 
-*dịch đoạn phía trên*
+Rất may là hai điều này gộp chung lại chỉ dấu cho chúng ta một cách để tiếp tục: đây chính là cơ hội lý tưởng để máy tính có thể tự động hóa! Thật vậy, kỹ thuật lan truyền ngược mà chúng ta sẽ gặp lại sau đây chính xác là hiện thực hóa ý tưởng này.
 
 <!-- ===================== Kết thúc dịch Phần 6 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 7 ==================== -->
@@ -803,7 +809,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Duy-Nguyen Ta
 
 <!-- Phần 7 -->
 *
