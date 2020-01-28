@@ -17,7 +17,7 @@ Nhớ số issue (ở ví dụ này là 393 trong phần khoanh đỏ) để dù
 Trước khi thực hiện việc dịch chương này, bạn cần tự "Assign" issue này cho mình để tránh trường hợp có nhiều người cùng làm một việc một lúc.
 ![](./translation_team/step02.png)
 
-Nếu bạn chưa là collaborator của repo này, bạn sẽ không thể tự "Assign". Bạn cần để lại comment vào trong issue đó và cc @duythanh hoặc @tiepvupsu. Chúng tôi sẽ assign issue đó cho bạn.
+Nếu bạn chưa là collaborator của repo này, bạn sẽ không thể tự "Assign". Bạn cần để lại comment vào trong issue đó và cc @duythanhvn hoặc @tiepvupsu. Chúng tôi sẽ assign issue đó cho bạn.
 
 ### Bước 3: Tìm file tương ứng
 Sau khi vào file tương ứng, ở ví dụ này là [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), bạn click vào nút "Edit" hình chiếc bút chì để bắt đầu tìm phần cần dịch.
