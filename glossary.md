@@ -94,7 +94,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
-| expression (math)   | diễn tả toán học                                               |                       |
+| expression (math)   | biểu thức                                              |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
 
