@@ -43,6 +43,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
 |-------------------------------------|----------------------------------------------------------------|------------------------|
+| chain rule                          | luật đạo hàm của hàm hợp                                       |                        |
 | classifier                          | bộ phân loại                                                   |                        |
 | clustering                          | phân cụm                                                       |                        |
 | code (danh từ)                      | mã nguồn                                                       |                        |
@@ -93,6 +94,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
+| expression (math)   | diễn tả toán học                                               |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
 
