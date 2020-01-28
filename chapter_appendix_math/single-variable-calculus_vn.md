@@ -406,7 +406,7 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 -->
 
 1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, exponentials, và logarithms, bằng cách sử dụng những quy tắc trên một cách máy móc.
-2. Quá trình dùng những quy luật này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
+2. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
 
 <!--
 Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!  Indeed backpropagation, which we will revisit later in this section, is exactly that.
