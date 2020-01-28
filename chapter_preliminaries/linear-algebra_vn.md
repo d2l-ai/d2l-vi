@@ -929,7 +929,7 @@ Oftentimes, the objectives, perhaps the most important components of deep learni
 Tuy không muốn đi quá nhanh, chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
 Trong học sâu, ta thường cố giải các bài toán tối ưu: *tối đa hóa* xác suất xảy ra của dữ liệu quan sát được; *tối thiểu hóa* khoảng cách giữa dự đoán và nhãn gốc.
 Gán các biểu diễn vector cho các đối tượng (như từ, sản phẩm hay các bài báo) để tối thiểu khoảng cách giữa các đối tượng tương tự nhau và tối đa khoảng cách giữa các đối tượng khác nhau.
- Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu, thường được biễu diễn diễn theo chuẩn.
+ Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu, thường được biễu diễn diễn theo *chuẩn* (*norm*).
 
 <!--
 ## More on Linear Algebra
