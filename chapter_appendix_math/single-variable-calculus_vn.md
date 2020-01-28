@@ -390,7 +390,7 @@ Mỗi dòng của ví dụ này đã sử dụng các quy tắc sau:
 -->
 
 1. Luật đạo hàm của hàm hợp và công thức đạo hàm của hàm logarithm.
-2. Luật đạo hàm của tổng.
+2. Quy tắc đạo hàm của tổng.
 3. Đạo hàm của hằng số, luật đạo hàm của hàm hợp, và luật đạo hàm của lũy thừa.
 4. Luật đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
 
