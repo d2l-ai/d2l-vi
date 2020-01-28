@@ -926,7 +926,7 @@ np.linalg.norm(np.ones((4, 9)))
 ### Norms and Objectives
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuẩn và Mục tiêu
 :label:`subsec_norms_and_objectives`
 
 <!--
@@ -936,15 +936,16 @@ Assign vector representations to items (like words, products, or news articles) 
 Oftentimes, the objectives, perhaps the most important components of deep learning algorithms (besides the data), are expressed as norms.
 -->
 
-*dịch đoạn phía trên*
-
-
+Tuy không muốn đi quá nhanh, chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
+Trong học sâu, ta thường cố giải các bài toán tối ưu: *tối đa hóa* xác suất xảy ra của dữ liệu quan sát được; *tối thiểu hóa* khoảng cách giữa dự đoán và nhãn gốc.
+Gán các biểu diễn vector cho các đối tượng (như từ, sản phẩm hay các bài báo) để tối thiểu khoảng cách giữa các đối tượng tương tự nhau và tối đa khoảng cách giữa các đối tượng khác nhau.
+ Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu, thường được biễu diễn diễn theo *chuẩn* (*norm*).
 
 <!--
 ## More on Linear Algebra
 -->
 
-## *dịch tiêu đề phía trên*
+## Bàn thêm về Đại số Tuyến Tính
 
 <!--
 In just this section, we have taught you all the linear algebra that you will need to understand a remarkable chunk of modern deep learning.
@@ -956,7 +957,13 @@ And we believe you will be much more inclined to learn more mathematics once you
 So while we reserve the right to introduce more mathematics much later on, we will wrap up this section here.
 -->
 
-*dịch đoạn phía trên*
+Chỉ trong mục này, chúng tôi đã trang bị cho bạn tất cả những kiến thức đại số tuyến tính cần thiết để hiểu một lượng lớn các mô hình học máy hiện đại.
+Vẫn còn rất nhiều kiến thức đại số tuyến tính, phần lớn đều hữu dụng cho học máy.
+Một ví dụ là phép phân tích ma trận ra các thành phần, và các phép khai triển này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
+Có cả một ngành nhỏ của học máy tập trung vào khai triển ma trận và tổng quát chúng lên cho tensor hạng lớn để khám phá cấu trúc trong các tập dữ liệu và giải các bài toán dự đoán.
+Tuy nhiên, cuốn sách này chỉ tập trung vào học sâu.
+Và chúng tôi tin rằng bạn sẽ muốn học thêm nhiều về toán một khi bạn đã triển khai được các mô hình học máy hữu dụng cho các tập dữ liệu thực tế.
+Bởi vậy, trong khi vẫn còn nhiều kiến thức toán cần bàn thêm ở phần sau, chúng tôi sẽ kết thúc mục này ở đây.
 
 <!--
 If you are eager to learn more about linear algebra,
@@ -964,7 +971,7 @@ you may refer to either :numref:`sec_geometry-linear-algebric-ops`
 or other excellent resources :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea.2008`.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể tham khảo :numref:`sec_geometry-linear-algebric-ops` hoặc các nguồn tài liệu xuất sắc tại :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea.2008`.
 
 <!-- =================== Kết thúc dịch Phần 11 ==================== -->
 
@@ -974,7 +981,7 @@ or other excellent resources :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Scalars, vectors, matrices, and tensors are basic mathematical objects in linear algebra.
@@ -986,14 +993,20 @@ or other excellent resources :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea
 * We can perform a variety of operations over scalars, vectors, matrices, and tensors with `ndarray` functions.
 -->
 
-*dịch đoạn phía trên*
+* Số vô hướng, vector, ma trận, và tensor là các đối tượng toán học cơ bản trong đại số tuyến tính.
+* Vector là dạng tổng quát của số vô hướng và ma trận là dạng tổng quát của vector.
+* Trong cách biểu diễn `ndarray`, các số vô hướng, vector, ma trận và tensor lần lượt có 0, 1, 2 và một số lượng tùy ý các trục.
+* Một tensor có thể thu gọn theo một số trục bằng `sum` và `mean`.
+* Phép nhân theo từng phần tử của hai ma trận được gọi là tích Hadamard của chúng. Phép toán này khác với phép nhân ma trận.
+* Trong học sâu, chúng ta thường làm việc với các chuẩn như chuẩn $\ell_1$, chuẩn $\ell_2$ và chuẩn Frobenius.
+* Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm số `ndarray`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Prove that the transpose of a matrix $\mathbf{A}$'s transpose is $\mathbf{A}$: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
@@ -1007,22 +1020,29 @@ or other excellent resources :cite:`Strang.1993,Kolter.2008,Petersen.Pedersen.ea
 9. Feed a tensor with 3 or more axes to the `linalg.norm` function and observe its output. What does this function compute for `ndarray`s of arbitrary shape?
 -->
 
-*dịch đoạn phía trên*
-
-
-
+1. Chứng minh rằng chuyển vị của chuyển vị của một ma trận là chính nó: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
+2. Cho hai ma trận $\mathbf{A}$ và $\mathbf{B}$, chứng minh rằng tổng của chuyển vị bằng chuyển vị của tổng: $\mathbf{A}^\top + \mathbf{B}^\top = (\mathbf{A} + \mathbf{B})^\top$.
+3. Cho một ma trận vuông $\mathbf{A}$, liệu rằng $\mathbf{A} + \mathbf{A}^\top$ có luôn đối xứng? Tại sao?
+4. Chúng ta định nghĩa `X` với kích thước ($2$, $3$, $4$) trong mục này. Kết quả của `len(X)` là gì?
+5. Cho một tensor `X` với kích thước bất kỳ, liệu `len(X)` có luôn tương ứng với độ dài của một trục nhất định của `X`? Đó là trục nào?
+6. Chạy `A / A.sum(axis=1)` và xem điều gì xảy ra. Bạn có phân tích được nguyên nhân không? 
+7. Khi di chuyển giữa hai điểm ở Manhattan (đường phố hình bàn cờ), khoảng cách tính bằng tọa độ (tức độ dài các đại lộ và phố) mà bạn cần di chuyển là bao nhiêu? Bạn có thể đi theo đường chéo không? (Xem thêm bản đồ Manhattan, New York để trả lời câu hỏi này)
+8. Xét một tensor với kích thước ($2$, $3$, $4$). Kích thước của kết quả nếu tính tổng theo trục $0$, $1$ và $2$ sẽ như thế nào?
+9. Đưa một tensor với 3 trục hoặc hơn vào hàm `linalg.norm`và quan sát kết quả. Hàm này thực hiện việc gì cho các `ndarray` với kích thước bất kỳ?
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2317)
 -->
 
-## *dịch tiêu đề phía trên*
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2317)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+
 
 <!--
 ![](../img/qr_linear-algebra.svg)
 -->
 
-![](../img/qr_linear-algebra.svg)
 
 <!-- ===================== Kết thúc dịch Phần 12 ==================== -->
 
@@ -1067,9 +1087,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
-
-<!-- Phần 11 -->
-*
-
-<!-- Phần 12 -->
-*
