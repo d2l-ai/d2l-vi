@@ -215,7 +215,7 @@ np.array([[2, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
 ## Operations
 -->
 
-## *dịch tiêu đề phía trên*
+## Phép toán
 
 <!--
 This book is not about software engineering.
@@ -226,7 +226,12 @@ These apply a standard scalar operation to each element of an array.
 For functions that take two arrays as inputs, elementwise operations apply some standard binary operator on each pair of corresponding elements from the two arrays. We can create an elementwise function from any function that maps from a scalar to a scalar.
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách này không nói về kỹ thuật phần mềm.
+Chúng tôi không chỉ hứng thú với việc đơn giản đọc và ghi dữ liệu vào/từ các mảng mà còn muốn thực hiện các phép toán toán học trên các mảng này.
+Một vài phép toán đơn giản và hữu ích nhất là các phép toán tác động lên *từng phần tử* (*elementwise*).
+Những phép toán này hoạt động như những phép toán chuẩn trên số vô hướng áp dụng lên từng phần tử của mảng.
+Với những hàm nhận hai mảng đầu vào, phép toán theo từng thành phần được áp dụng trên từng cặp phần tử tương ứng của hai mảng.
+Ta có thể tạo một hàm theo từng phần tử từ một hàm bất kỳ ánh xạ từ một số vô hướng tới một số vô hướng.
 
 <!--
 In mathematical notation, we would denote such a *unary* scalar operator (taking one input) by the signature $f: \mathbb{R} \rightarrow \mathbb{R}$.
@@ -235,6 +240,12 @@ Likewise, we denote a *binary* scalar operator (taking two real inputs, and yiel
 Given any two vectors $\mathbf{u}$ and $\mathbf{v}$ *of the same shape*, and a binary operator $f$, we can produce a vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ by setting $c_i \gets f(u_i, v_i)$ for all $i$, where $c_i, u_i$, and $v_i$ are the $i^\mathrm{th}$ elements of vectors $\mathbf{c}, \mathbf{u}$, and $\mathbf{v}$.
 Here, we produced the vector-valued $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \mathbb{R}^d$ by *lifting* the scalar function to an elementwise vector operation.
 -->
+
+* Trong toán học, ta ký hiệu một toán tử *đơn ngôi* vô hướng (lấy một đầu vào) bởi $f: \mathbb{R} \rightarrow \mathbb{R}$.
+Điều này nghĩa là hàm số ánh xạ từ một số thực bất kỳ ($\mathbb{R}$) sang một số thực khác.
+Tương tự, ta ký hiệu một toán tử *hai ngôi* vô hướng (lấy hai đầu vào, trả về một đầu ra) bởi $f: \mathbb{R}, \mathbb{R} \rightarrow \mathbb{R}$.
+Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$, ở đó $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
+Ở đây, chúng ta tạo một hàm trả về vector $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \mathbb{R}^d$ bằng cách áp dụng hàm $f$ lên từng phần tử.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
