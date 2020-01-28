@@ -405,7 +405,7 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 2. Having a human follow these rules can be tedious and error prone!
 -->
 
-1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, exponentials, và logarithms, bằng cách sử dụng những quy luật trên một cách máy móc.
+1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, exponentials, và logarithms, bằng cách sử dụng những quy tắc trên một cách máy móc.
 2. Quá trình dùng những quy luật này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
 
 <!--
