@@ -19,13 +19,13 @@ Trong mục này chúng ta sẽ đi sâu vào kiến thức giải tích cơ b�
 ## Differential Calculus
 -->
 
-## Vi phân
+## Giải tích vi phân
 
 <!--
 Differential calculus is fundamentally the study of how functions behave under small changes.  To see why this is so core to deep learning, let's consider an example.
 -->
 
-Vi phân là nhánh toán học nghiên cứu về hành vi của các hàm số dưới các biến đổi nhỏ.
+Giải tích vi phân là nhánh toán học nghiên cứu về hành vi của các hàm số dưới các biến đổi nhỏ.
 Để thấy được tại sao đây lại là cốt lõi của học sâu, hãy cùng xem ví dụ dưới đây.
 
 <!--
@@ -49,7 +49,7 @@ The question then becomes something that on the surface is no easier: how do we 
 -->
 
 Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị mất mát nhanh nhất có thể? <!-- Cái này bản gốc viết sai rồi, sao lại giảm weights nhanh nhất có thể -->
-Chúng ta sẽ đi sâu vào câu hỏi trên trong trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  cho một số thực $x$ duy nhất.
+Để trả lời câu hỏi này, trước hết ta hãy xét trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  cho một số thực $x$ duy nhất.
 
 <!-- ===================== Kết thúc dịch Phần  1 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 2 ==================== -->
@@ -794,6 +794,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
+* Phạm Hồng Vĩnh
 
 <!-- Phần 2 -->
 *
