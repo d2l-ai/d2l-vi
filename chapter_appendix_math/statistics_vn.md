@@ -591,7 +591,7 @@ Sau khi làm quen với các khái niệm ở trên, hãy cùng xem các bước
 
 1. Đặt câu hỏi và đưa ra giả thuyết gốc $H_0$.
 2. Chọn mức ý nghĩa thống kê $\alpha$ và năng lực thống kê ($1 - \beta$).
-3. Thu các mẫu sau các thử nghiệm.
+3. Thu thập mẫu qua các thử nghiệm.
 Số lượng mẫu cần thiết sẽ phụ thuộc vào năng lực thống kê, và hệ số ảnh hưởng mong muốn.
 4. Tính tiêu chuẩn kiểm định và trị số $p$.
 5. Quyết định chấp nhận hoặc bác bỏ giả thuyết gốc dựa trên trị số $p$ và mức ý nghĩa thống kê $\alpha$.
