@@ -363,7 +363,7 @@ Chú ý là ở dòng thứ hai trong chuỗi khai triển trên, chúng ta đã
 These rule provide us with a flexible set of tools to compute essentially any expression desired.  For instance,
 -->
 
-Các luật này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như là bất kỳ diễn tả toán học nào mà bạn muốn.
+Các quy tắc này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như là bất kỳ biểu thức nào mà ta muốn.
 Chẳng hạn như trong ví dụ sau:
 
 $$
