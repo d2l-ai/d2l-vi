@@ -573,7 +573,7 @@ The alternative hypothesis would be that $\theta$ is not equal to $c$.
 ### General Steps of Hypothesis Testing
 -->
 
-### Các bước thông thường kiểm định giả thuyết
+### Các bước thông thường trong kiểm định giả thuyết
 
 <!--
 After getting familiar with the above concepts, let's go through the general steps of hypothesis testing.
@@ -610,7 +610,7 @@ Nếu tiêu chuẩn kiểm định rơi vào miền bác bỏ, ta có thể bác
 Hypothesis testing is applicable in a variety of scenarios such as the clinical trails and A/B testing.
 -->
 
-Kiểm định giả thuyết áp dụng được trong nhiều tình huống như thử nghiệm lâm sàng (*clinical trails*) và kiểm định A/B.
+Kiểm định giả thuyết áp dụng được trong nhiều tình huống như thử nghiệm lâm sàng (*clinical trials*) và kiểm định A/B.
 
 
 <!--
@@ -626,9 +626,9 @@ Rather, it would be far better if we could produce an interval that would contai
 If you were interested in such ideas a century ago, then you would have been excited to read "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" by Jerzy Neyman :cite:`Neyman.1937`, who first introduced the concept of confidence interval in 1937.
 -->
 
-Khi ước lượng giá trị của tham số $\theta$, bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
+Khi ước lượng giá trị của tham số $\theta$, sử dụng bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
 Thay vào đó, nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thật sự với xác suất cao sẽ tốt hơn nhiều.
-Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ bạn nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) cuả Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
+Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ bạn nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) của Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
 
 <!--
 To be useful, a confidence interval should be as small as possible for a given degree of certainty. Let's see how to derive it.
