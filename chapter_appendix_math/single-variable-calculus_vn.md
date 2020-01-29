@@ -389,10 +389,10 @@ Mỗi dòng của ví dụ này đã sử dụng các quy tắc sau:
 4. The sum rule, derivative of linear functions, derivative of constants.
 -->
 
-1. Luật đạo hàm của hàm hợp và công thức đạo hàm của hàm logarithm.
+1. Quy tắc dây chuyền và công thức đạo hàm của hàm logarithm.
 2. Quy tắc đạo hàm của tổng.
 3. Đạo hàm của hằng số, quy tắc dây chuyền, và quy tắc đạo hàm của lũy thừa.
-4. Luật đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
+4. Quy tắc đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
 
 <!--
 Two things should be clear after doing this example:
@@ -405,14 +405,14 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 2. Having a human follow these rules can be tedious and error prone!
 -->
 
-1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, exponentials, và logarithms, bằng cách sử dụng những quy tắc trên một cách máy móc.
+1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, hàm mũ, và hàm logarithms, bằng cách sử dụng những quy tắc trên một cách máy móc.
 2. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
 
 <!--
 Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!  Indeed backpropagation, which we will revisit later in this section, is exactly that.
 -->
 
-Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một cách để tiếp tục: đây chính là cơ hội lý tưởng để máy tính có thể tự động hóa! Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
+Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một cách để tiếp tục: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
 
 <!-- ===================== Kết thúc dịch Phần 6 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 7 ==================== -->
