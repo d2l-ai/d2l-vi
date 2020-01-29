@@ -412,7 +412,7 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!  Indeed backpropagation, which we will revisit later in this section, is exactly that.
 -->
 
-Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một cách để tiếp tục: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
+Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
 
 <!-- ===================== Kết thúc dịch Phần 6 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 7 ==================== -->
