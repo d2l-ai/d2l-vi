@@ -11,7 +11,8 @@
 
 intro_vn
 chapter_preface/index_vn
-chapter_install/index_vn
+chapter_install/install_vn
+chapter_notation/index_vn
 ```
 
 ```toc
@@ -19,7 +20,6 @@ chapter_install/index_vn
 :numbered:
 
 chapter_introduction/index_vn
-chapter_appendix_math/index_vn
 ```
 
 ```toc

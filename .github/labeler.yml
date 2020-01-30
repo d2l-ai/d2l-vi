@@ -5,6 +5,9 @@ deploy:
 preface:
   - chapter_preface/*
 
+notation:
+  - chapter_notation/*
+
 install:
   - chapter_install/*
 

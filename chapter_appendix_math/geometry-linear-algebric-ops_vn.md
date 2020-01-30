@@ -543,7 +543,7 @@ mặt phẳng vuông góc với vectơ cho trước $\mathbf{w}$. Hai bất phư
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![Siêu phẳng trong bất kì không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất kỳ không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
@@ -720,7 +720,7 @@ where we can write any vector in our space
 as a weighted sum of these *basis vectors*.
 -->
 
-Thoạt nhìn đây là một phép tính khá kì lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
+Thoạt nhìn đây là một phép tính khá kỳ lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
 Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
 thông qua cách nó biến đổi *hai vector cụ thể*:
 $[1,0]^\top$ và $[0,1]^\top$.
@@ -1544,7 +1544,7 @@ Về phương diện hình học vector có thể được hiểu như là đi�
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
 -->
 
-* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kì.
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ.
 
 <!--
 * Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
@@ -1664,8 +1664,6 @@ Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao
 ![](../img/qr_geometry-linear-algebric-ops.svg)
 -->
 
-![](../img/qr_geometry-linear-algebric-ops.svg)
-
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 ### Những người thực hiện
@@ -1687,15 +1685,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 2 -->
 * Lê Khắc Hồng Phúc
 
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
 <!-- Phần 6 -->
 * Hoàng Trọng Tuấn
 * Nguyễn Cảnh Thướng
@@ -1706,28 +1695,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 8 -->
 * Phạm Hồng Vinh
 
-<!-- Phần 9 -->
-*
-
-<!-- Phần 10 -->
-*
-
 <!-- Phần 11 -->
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 12 -->
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 13 -->
-*
-
-<!-- Phần 14 -->
-*
-
-<!-- Phần 15 -->
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-* Vũ Hữu Tiệp
 
 <!-- Phần 16 -->
 * Mai Sơn Hải

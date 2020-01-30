@@ -15,18 +15,18 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 [V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
 
 ## A
-| English                   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|---------------------------|----------------------------------------------------------------|---------------|
-| accuracy                  | độ chính xác                                                   |               |
-| activation function       | hàm kích hoạt                                                  |               |
-| adversarial learning      | học đối kháng                                                  |  http://bit.ly/2MhRgnP             |
-| agent                     | tác nhân                                                       |               |
-| algorithm's performance   | chất lượng thuật toán                                      |               |
-| avoidable bias            | độ chệch tránh được                                            |               |
-| artificial data synthesis | tổng hợp dữ liệu nhân tạo                                      |               |
-| artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                          |               |
-| attention mechanisms      | cơ chế tập trung                                               |               |
-| alternative hypothesis | giả thuyết đối | |
+| English                               | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|---------------------------------------|----------------------------------------------------------------|-----------------------|
+| accuracy                              | độ chính xác                                                   |                       |
+| activation function                   | hàm kích hoạt                                                  |                       |
+| adversarial learning                  | học đối kháng                                                  | http://bit.ly/2MhRgnP |
+| agent                                 | tác nhân                                                       |                       |
+| algorithm's performance               | chất lượng thuật toán                                          |                       |
+| avoidable bias                        | độ chệch tránh được                                            |                       |
+| artificial data synthesis             | tổng hợp dữ liệu nhân tạo                                      |                       |
+| artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                                      |                       |
+| attention mechanisms                  | cơ chế tập trung                                               |                       |
+| alternative hypothesis                | giả thuyết đối                                                 |                       |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -41,22 +41,22 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | bounding box            | khung chứa                                                     | http://bit.ly/2sbhDVj |
 
 ## C
-| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|---------------------|----------------------------------------------------------------|---------------|
-| classifier          | bộ phân loại                                                   |               |
-| clustering          | phân cụm                                                      |               |
-| code (danh từ)      | mã nguồn                                                       |               |
-| code (động từ)      | viết mã                                                        |               |
-| computer vision     | thị giác máy tính                                              |               |
-| computing (trong Khoa Học Máy Tính) | điện toán                                                      |               |
-| confidence interval | khoảng tin cậy                                                 |               |
-| constrain           | ràng buộc                                                      |               |
-| convex optimization | tối ưu lồi                                                     |               |
-| convolution neural networks | mạng nơ-ron tích chập                                       |               |
-| cross entropy       | entropy chéo                                                  |               |
-| cross validation    | kiểm định chéo                                                 |               |
-| cost function       | hàm chi phí                                                    |               |
-| covariate           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
+| English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
+|-------------------------------------|----------------------------------------------------------------|------------------------|
+| classifier                          | bộ phân loại                                                   |                        |
+| clustering                          | phân cụm                                                       |                        |
+| code (danh từ)                      | mã nguồn                                                       |                        |
+| code (động từ)                      | viết mã                                                        |                        |
+| computer vision                     | thị giác máy tính                                              |                        |
+| computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
+| confidence interval                 | khoảng tin cậy                                                 |                        |
+| constrain                           | ràng buộc                                                      |                        |
+| convex optimization                 | tối ưu lồi                                                     |                        |
+| convolution neural networks         | mạng nơ-ron tích chập                                          |                        |
+| cross entropy                       | entropy chéo                                                   |                        |
+| cross validation                    | kiểm định chéo                                                 |                        |
+| cost function                       | hàm chi phí                                                    |                        |
+| covariate                           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
 
 ## D
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -84,7 +84,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
-| embedding           | embedding                                                |                       |
+| elementwise         | (theo) từng phần tử                                              |                       |
+| embedding           | embedding                                                      |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
 | error rate          | tỉ lệ lỗi                                                      |                       |
@@ -93,7 +94,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example             | mẫu                                                            |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
-| effect size | hệ số ảnh hưởng | |
+| effect size         | hệ số ảnh hưởng                                                |                       |
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -107,25 +108,25 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | functional anaylsis | giải tích hàm                                              |               |
 
 ## G
-| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
-|------------------|----------------------------------------------------------------|----------------------------------------------|
-| Gaussian noise   | nhiễu Gauss                                                    |                              |
-| generative model | mô hình sinh                                                   |                              |
-| generative adversarial network | mạng đối sinh                                 |                              |
-| gradient descent | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
-| graphical model | mô hình đồ thị                                             | |
-| ground truth     | nhãn gốc                                                 |http://bit.ly/34TljJ0                              | 
+| English                        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
+|--------------------------------|----------------------------------------------------------------|----------------------------------------------|
+| Gaussian noise                 | nhiễu Gauss                                                    |                                              |
+| generative model               | mô hình sinh                                                   |                                              |
+| generative adversarial network | mạng đối sinh                                                  |                                              |
+| gradient descent               | hạ gradient                                                    | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
+| graphical model                | mô hình đồ thị                                                 |                                              |
+| ground truth                   | nhãn gốc                                                       | http://bit.ly/34TljJ0                        |
 
 ## H
-| English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                    |
-|-------------------------|----------------------------------------------------------------|--------------------------------------------------|
-| hand-engineering        | thiết kế thủ công                                              |                                                  |
-| heuristic               | thực nghiệm                                                    |                                                  |
-| hidden unit             | nút ẩn                                                         |                                                  |
+| English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
+|-------------------------|----------------------------------------------------------------|----------------------------------------------|
+| hand-engineering        | thiết kế thủ công                                              |                                              |
+| heuristic               | thực nghiệm                                                    |                                              |
+| hidden unit             | nút ẩn                                                         |                                              |
 | human-level performance | chất lượng mức con người                                       | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
-| hyperparameter          | siêu tham số                                                   |                                                  |
-| hyperplane              | siêu phẳng                                                     |                                                  |
-| hypothesis test         | kiểm định giả thuyết                                                   |                                                  |
+| hyperparameter          | siêu tham số                                                   |                                              |
+| hyperplane              | siêu phẳng                                                     |                                              |
+| hypothesis test         | kiểm định giả thuyết                                           |                                              |
 
 ## I
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -134,41 +135,42 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | iteration | vòng lặp                                                       |               |
 
 ## L
-| English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|---------------------|----------------------------------------------------------------|-------------------------|
-| layer               | tầng                                                           |                         |
-| learning curve      | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
-| learning algorithm  | thuật toán học                                                 |                         |
-| linear algebra      | đại số tuyến tính                                              |                         |
-| linear dependence   | phụ thuộc tuyến tính                                           |                         |
-| linear independence | độc lâp tuyến tính                                             |                         |
-| linear regression   | hồi quy tuyến tính                                             |                         |
-| linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính                        |                         |
-| Long Short-term Memory (LSTM) | bộ nhớ ngắn hạn dài                            |                         |
-| logistic regression | hồi quy logistic                                               |                         |
-| loss function       | hàm mất mát                                                    |                         |
+| English                            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|------------------------------------|----------------------------------------------------------------|-----------------------|
+| layer                              | tầng                                                           |                       |
+| learning curve                     | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
+| learning algorithm                 | thuật toán học                                                 |                       |
+| linear algebra                     | đại số tuyến tính                                              |                       |
+| linear dependence                  | phụ thuộc tuyến tính                                           |                       |
+| linear independence                | độc lâp tuyến tính                                             |                       |
+| linear regression                  | hồi quy tuyến tính                                             |                       |
+| linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính                                 |                       |
+| Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài                                            |                       |
+| logistic regression                | hồi quy logistic                                               |                       |
+| loss function                      | hàm mất mát                                                    |                       |
 
 ## M
-| English            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|--------------------|----------------------------------------------------------------|---------------|
-| machine learning   | học máy                                                        |               |
-| mean squared error (MSE) | trung bình bình phương sai số |   |
-| metric             | phép đo                                                        |               |
-| minibatch          | minibatch                                                      |               |
-| misclassified      | bị phân loại nhầm                                              |               |
-| mislabeled         | bị gán nhãn nhầm                                               |               |
-| model              | mô hình                                                        |               |
-| multitask classification | phân loại đa lớp                                         |               |
-| multitask learning | học đa nhiệm                                                   |               |
+| English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|--------------------------|----------------------------------------------------------------|---------------|
+| machine learning         | học máy                                                        |               |
+| mean squared error (MSE) | trung bình bình phương sai số                                  |               |
+| metric                   | phép đo                                                        |               |
+| minibatch                | minibatch                                                      |               |
+| misclassified            | bị phân loại nhầm                                              |               |
+| mislabeled               | bị gán nhãn nhầm                                               |               |
+| model                    | mô hình                                                        |               |
+| multi-class classification | phân loại đa lớp                                               |               |
+| multitask learning       | học đa nhiệm                                                   |               |
 
 ## N
 | English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                               |
 |-----------------------------------|----------------------------------------------------------------|---------------------------------------------|
+| named entity | danh từ riêng | |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                             |
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                                                          |                                             |
-| null hypothesis                   | giả thuyết gốc                                                          |                                             |
+| null hypothesis                   | giả thuyết gốc                                                 |                                             |
 
 ## O
 | English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -183,36 +185,37 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | one-tailed test | kiểm định một đuôi | |
 
 ## P
-| English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
-|-------------------------|----------------------------------------------------------------|-----------------------|
-| perceptron              | perceptron                              |               |
-| pattern recognition     | nhận dạng mẫu                                            |                       |
-| performance             | chất lượng                                                     | http://bit.ly/36IzQcB |
-| plateau (danh từ)       | vùng nằm ngang                                                 |                       |
-| plateau (động từ)       | nằm ngang                                                      |                       |
-| pipeline                | pipeline                                                       | http://bit.ly/2OyYuEf |
-| policy (trong Học Tăng cường) | chính sách                                               |                       |
-| positive sample/example | mẫu dương                                                      |                       |
-| precision               | precision                                                      |                       |
-| principal component analysis (PCA) | phân tích thành phần chính                        |                       |
-| probability theory      | lý thuyết xác suất                                             |                       |
-| population | tổng thể | |
-| p-value | trị số p | |
+| English                            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|------------------------------------|----------------------------------------------------------------|-----------------------|
+| perceptron                         | perceptron                                                     |                       |
+| pattern recognition                | nhận dạng mẫu                                                  |                       |
+| performance                        | chất lượng                                                     | http://bit.ly/36IzQcB |
+| plateau (danh từ)                  | vùng nằm ngang                                                 |                       |
+| plateau (động từ)                  | nằm ngang                                                      |                       |
+| pipeline                           | pipeline                                                       | http://bit.ly/2OyYuEf |
+| policy (trong Học Tăng cường)      | chính sách                                                     |                       |
+| positive sample/example            | mẫu dương                                                      |                       |
+| precision                          | precision                                                      |                       |
+| principal component analysis (PCA) | phân tích thành phần chính                                     |                       |
+| probability theory                 | lý thuyết xác suất                                             |                       |
+| population                         | tổng thể                                                       |                       |
+| p-value                            | trị số p                                                       |                       |
 
 ## R
-| English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|------------------------|----------------------------------------------------------------|---------------|
-| random variable        | biến ngẫu nhiên                                                |               |
-| recall                 | recall                                                         |               |
-| recognition            | nhận dạng                                                      |               |
-| recurrent neural network|   mạng nơ-ron truy hồi               |               |
-| regressor              | bộ hồi quy                                                     |               |
-| regularization         | điều chuẩn                                                 |               |
-| reinforcement learning | học tăng cường                                                 |               |
-| reward function        | hàm điểm thưởng                                                |               |
-| root mean squared error (RMSE)| căn bậc hai trung bình bình phương sai số | | 
-| running time           | thời gian chạy                                                 |               |
-| region of rejection | miền bác bỏ | |
+| English                        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|--------------------------------|----------------------------------------------------------------|---------------|
+| random variable                | biến ngẫu nhiên                                                |               |
+| recall                         | recall                                                         |               |
+| recognition                    | nhận dạng                                                      |               |
+| recurrent neural network       | mạng nơ-ron truy hồi                                           |               |
+| regressor                      | bộ hồi quy                                                     |               |
+| regularization                 | điều chuẩn                                                     |               |
+| reinforcement learning         | học tăng cường                                                 |               |
+| representation learning | học biểu diễn | |
+| reward function                | hàm điểm thưởng                                                |               |
+| root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số                      |               |
+| running time                   | thời gian chạy                                                 |               |
+| region of rejection            | miền bác bỏ                                                    |               |
 
 ## S
 | English                      | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -222,24 +225,25 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | satisficing metric           | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
 | scroing function             | hàm tính điểm                                                  |                       |
 | sentiment classification     | phân loại cảm xúc                                              |                       |
-| sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity | 
+| sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity |
+| shape (trong Đại số Tuyến tính) | kích thước                                                  |                       |
 | spam email                   | email rác                                                      |                       |
 | statistical significance     | ý nghĩa thống kê                                               |                       |
 | statistical significant      | có ý nghĩa thống kê                                            |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
 | speech recognition           | nhận dạng giọng nói                                            |                       |
 | supervised learning          | học có giám sát                                                |                       |
-| surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1                      |
+| surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1 |
 | subspace estimation          | ước lượng không gian con                                       |                       |
-| scalar | số vô hướng | |
-| sensitivity | độ nhạy | |
-| statistical power | năng lực thống kê | | 
-| significance test | kiểm định ý nghĩa | |
+| scalar                       | số vô hướng                                                    |                       |
+| sensitivity                  | độ nhạy                                                        |                       |
+| statistical power            | năng lực thống kê                                              |                       |
+| significance test            | kiểm định ý nghĩa                                              |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |--------------------------|----------------------------------------------------------------|---------------|
-| tensor contraction | phép co tensor |  | 
+| tensor contraction       | phép co tensor                                                 |               |
 | test set                 | tập kiểm tra                                                   |               |
 | test set performance     | chất lượng trên tập kiểm tra                                   |               |
 | timestep                 | bước thời gian                                                 |               |
@@ -251,16 +255,16 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
-| test statistic | tiêu chuẩn kiểm định | |
-| two-sided test | kiểm định hai phía | |
-| two-tailed test | kiểm định hai đuôi | |
+| test statistic           | tiêu chuẩn kiểm định                                           |               |
+| two-sided test           | kiểm định hai phía                                             |               |
+| two-tailed test          | kiểm định hai đuôi                                             |               |
 
 ## U
-| English          | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại           |
-|------------------|----------------------------------------------------------------|-------------------------|
-| unavoidable bias | độ chệch không tránh được                                      |                         |
-| underfit         | dưới khớp                                                      | http://bit.ly/2BvfPYA  |
-| unsupervised learning | học không giám sát                                        |                         |
+| English               | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-----------------------|----------------------------------------------------------------|-----------------------|
+| unavoidable bias      | độ chệch không tránh được                                      |                       |
+| underfit              | dưới khớp                                                      | http://bit.ly/2BvfPYA |
+| unsupervised learning | học không giám sát                                             |                       |
 
 ## V
 | English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |

@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="293pt"
@@ -40,8 +39,8 @@
      id="namedview139"
      showgrid="false"
      inkscape:zoom="2.4543604"
-     inkscape:cx="218.58457"
-     inkscape:cy="-24.334359"
+     inkscape:cx="149.93125"
+     inkscape:cy="24.558216"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -223,55 +222,6 @@
        style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;"
        d="M 16.355469 31.15625 C 15.703125 31.898438 14.65625 32.246094 13.578125 32.246094 C 12.5 32.246094 11.453125 31.898438 10.644531 31.265625 C 10.40625 31.082031 10.066406 31.125 9.882812 31.363281 C 9.699219 31.605469 9.742188 31.941406 9.980469 32.128906 C 10.972656 32.914062 12.257812 33.335938 13.578125 33.335938 C 14.894531 33.335938 16.183594 32.914062 17.183594 32.136719 C 17.425781 31.953125 17.46875 31.617188 17.28125 31.375 C 17.097656 31.125 16.75 31.09375 16.355469 31.15625 Z M 10.90625 26.253906 C 10.90625 25.652344 10.363281 25.164062 9.761719 25.164062 C 9.160156 25.164062 8.671875 25.652344 8.671875 26.253906 C 8.671875 26.855469 9.160156 27.34375 9.761719 27.34375 C 10.363281 27.34375 10.851562 26.855469 10.90625 26.253906 Z M 13.632812 12.632812 C 6.351562 12.632812 0.5 18.484375 0.5 25.707031 C 0.5 32.933594 6.351562 38.785156 13.578125 38.785156 C 20.800781 38.785156 26.65625 32.933594 26.65625 25.707031 C 26.65625 18.484375 20.800781 12.632812 13.632812 12.632812 Z M 22.351562 28.976562 C 21.0625 32.859375 17.597656 35.820312 13.488281 35.820312 C 9.371094 35.820312 5.90625 32.859375 4.726562 28.769531 C 3.429688 28.652344 2.40625 27.484375 2.40625 26.023438 C 2.40625 24.640625 3.332031 23.507812 4.554688 23.300781 C 6.832031 21.710938 8.695312 19.496094 9.273438 17.796875 L 9.273438 17.785156 C 10.480469 20.652344 15.875 23.441406 21.902344 23.300781 L 22.230469 23.269531 C 23.625 23.269531 24.746094 24.511719 24.746094 26.035156 C 24.746094 27.539062 23.636719 28.769531 22.351562 28.976562 Z M 18.535156 26.253906 C 18.535156 25.652344 17.992188 25.164062 17.390625 25.164062 C 16.789062 25.164062 16.300781 25.652344 16.300781 26.253906 C 16.300781 26.855469 16.789062 27.34375 17.390625 27.34375 C 17.992188 27.34375 18.480469 26.855469 18.535156 26.253906 Z M 18.535156 26.253906 "
        id="path106" />
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g126">
-      <use
-         xlink:href="#glyph0-12"
-         x="252.3328"
-         y="26.31898"
-         id="use108" />
-      <use
-         xlink:href="#glyph0-13"
-         x="255.3298"
-         y="26.31898"
-         id="use110" />
-      <use
-         xlink:href="#glyph0-4"
-         x="259.8298"
-         y="26.31898"
-         id="use112" />
-      <use
-         xlink:href="#glyph0-14"
-         x="264.6628"
-         y="26.31898"
-         id="use114" />
-      <use
-         xlink:href="#glyph0-15"
-         x="269.1628"
-         y="26.31898"
-         id="use116" />
-      <use
-         xlink:href="#glyph0-5"
-         x="271.6648"
-         y="26.31898"
-         id="use118" />
-      <use
-         xlink:href="#glyph0-16"
-         x="274.1668"
-         y="26.31898"
-         id="use120" />
-      <use
-         xlink:href="#glyph0-7"
-         x="279.1708"
-         y="26.31898"
-         id="use122" />
-      <use
-         xlink:href="#glyph0-17"
-         x="284.3368"
-         y="26.31898"
-         id="use124" />
-    </g>
     <path
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
        d="M 111.5 35.257812 L 129.601562 35.179688 "
@@ -308,5 +258,16 @@
          y="33.359081"
          style="font-size:9px;text-align:center;text-anchor:middle;stroke-width:0.75"
          id="tspan155">cụm kích hoạt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="267.52588"
+       y="26.38719"
+       id="text874"><tspan
+         sodipodi:role="line"
+         id="tspan872"
+         x="267.52588"
+         y="26.38719"
+         style="stroke-width:0.75">{có, không}</tspan></text>
   </g>
 </svg>
