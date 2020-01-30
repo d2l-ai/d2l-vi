@@ -33,7 +33,7 @@ Throughout the book, when we say `ndarray`, we are referring to MXNet's `ndarray
 
 Nếu bạn từng làm việc với NumPy, gói tính toán phổ biến nhất trong Python, bạn sẽ thấy mục này quen thuộc.
 Việc này có chủ đích.
-Chúng tôi thiết kế các `ndarray` trong MXNet là một dạng mở rộng của các `ndarray` trong NumPy với một vài tính chất đặc biệt.
+Chúng tôi thiết kế các `ndarray` trong MXNet là một dạng mở rộng của các `ndarray` trong NumPy với một vài tính năng đặc biệt.
 Thứ nhất, `ndarray` trong MXNet hỗ trợ tính toán phi đồng bộ <!-- TODO --> trên CPU, GPU, và các kiến trúc phân tán đám mây, trong khi NumPy chỉ hỗ trợ tính toán trên CPU.
 Thứ hai, `ndaray` trong MXNet hỗ trợ tính đạo hàm tự động.
 Những tính chất này khiến `ndarray` của MXNet phù hợp với học sâu.
