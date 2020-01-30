@@ -5,7 +5,7 @@
 # Data Manipulation
 -->
 
-# *dịch tiêu đề phía trên*
+# Làm việc với Dữ liệu
 :label:`sec_ndarray`
 
 <!--
@@ -16,7 +16,11 @@ To start, we introduce the $n$-dimensional array (`ndarray`), MXNet's primary to
 In MXNet, `ndarray` is a class and we call any instance "an `ndarray`".
 -->
 
-*dịch đoạn phía trên*
+Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và xử lý dữ liệu.
+Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
+Thật vô lý khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy trước tiên hãy làm quen với dữ liệu tổng hợp.
+Để bắt đầu, chúng tôi giới thiệu mảng $n$ chiều (`ndarray`) -- công cụ chính trong MXNET để lưu trữ và biến đổi dữ liệu.
+Trong MXNet, `ndarray` là một lớp và mỗi thực thể của lớp đó là "một `ndarray`".
 
 <!--
 If you have worked with NumPy, the most widely-used scientific computing package in Python, then you will find this section familiar.
@@ -27,7 +31,13 @@ These properties make MXNet's `ndarray` suitable for deep learning.
 Throughout the book, when we say `ndarray`, we are referring to MXNet's `ndarray` unless otherwise stated.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn từng làm việc với NumPy, gói tính toán phổ biến nhất trong Python, bạn sẽ thấy mục này quen thuộc.
+Việc này có chủ đích.
+Chúng tôi thiết kế các `ndarray` trong MXNet là một dạng mở rộng của các `ndarray` trong NumPy với một vài tính năng đặc biệt.
+Thứ nhất, `ndarray` trong MXNet hỗ trợ tính toán phi đồng bộ <!-- TODO --> trên CPU, GPU, và các kiến trúc phân tán đám mây, trong khi NumPy chỉ hỗ trợ tính toán trên CPU.
+Thứ hai, `ndaray` trong MXNet hỗ trợ tính đạo hàm tự động.
+Những tính chất này khiến `ndarray` của MXNet phù hợp với học sâu.
+Thông qua cuốn sách, nếu không nói gì thêm, chúng ta ngầm hiểu `ndarray` là `ndarray` của MXNet.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -596,7 +606,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 *
