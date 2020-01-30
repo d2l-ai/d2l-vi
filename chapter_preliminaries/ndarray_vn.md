@@ -99,7 +99,7 @@ x
 We can access an `ndarray`'s *shape* (the length along each axis) by inspecting its `shape` property.
 -->
 
-Chúng ta có thể lấy `shape` (độ dài theo mỗi trục) của `ndarray` bằng thuộc tính `shape`.
+Chúng ta có thể lấy *kích thước* (độ dài theo mỗi trục) của `ndarray` bằng thuộc tính `shape`.
 
 ```{.python .input  n=3}
 x.shape
