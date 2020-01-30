@@ -498,7 +498,8 @@ This tells us the slope of our original function $f$ and therefore, the function
 In other words, the function $f$ curves up, and has a single minimum as is shown in :numref:`fig_positive-second`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, cân nhắc trường hợp derivative thứ hai $f^{(2)}(x)$ là hằng số dương.
+
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
