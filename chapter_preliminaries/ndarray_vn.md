@@ -46,10 +46,10 @@ The following sections will revisit this material in the context practical examp
 On the other hand, if you already have some background and want to go deeper into the mathematical content, just skip this section.
 -->
 
-Trong mục này, mục tiêu của chúng tôi là trang bị cho bạn các kiến thức toán cơ bản và cài đặt các công cụ tính toán mà bạn sẽ xây dựng dần khi thông qua cuốn sách.
+Trong mục này, mục tiêu của chúng tôi là trang bị cho bạn các kiến thức toán cơ bản và cài đặt các công cụ tính toán mà bạn sẽ xây dựng dựa trên nó xuyên suốt cuốn sách này.
 Đừng lo nếu bạn gặp khó khăn với các khái niệm toán khó hiểu hoặc các hàm trong thư viện tính toán.
-Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng văn cảnh với ví dụ thực tiễn.
-Nếu bạn đã có kiến thức và muốn đi sâu vào các nội dung toán, bạn có thể bỏ qua mục này.
+Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm ví dụ thực tiễn.
+Nếu bạn đã có kiến thức nền tảng và muốn đi sâu vào các nội dung toán, bạn có thể bỏ qua mục này.
 
 <!--
 To start, we import the `np` (`numpy`) and `npx` (`numpy_extension`) modules from MXNet.
@@ -76,7 +76,7 @@ Arrays with more than two axes do not have special mathematical names---we simpl
 Một `ndarray` biểu diễn một mảng (có thể nhiều chiều).
 Với một trục, một `ndarray` tương ứng với một *vector* trong toán.
 Với hai trục, một `ndarray` tương ứng với một *ma trận*.
-Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*
+Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
