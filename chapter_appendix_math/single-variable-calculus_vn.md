@@ -57,7 +57,7 @@ To help us visualize what happens, let's graph an example function, $f(x) = \sin
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
 Nếu bạn muốn mọi thứ cho thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
-Để giúp chúng ta minh hoạ chuyện gì sẽ diễn ra, hãy cũng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
+Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 ```{.python .input}
 %matplotlib inline
@@ -78,7 +78,7 @@ However, if we reduce our range to something smaller like $[1.75,2.25]$, we see 
 -->
 
 Trong một khoảng lớn thế này, cách biến đổi của hàm số không hề đơn giản.
-Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25ư$, ta thấy đồ thị trở nên đơn giản hơn nhiều.
+Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25]$, ta thấy đồ thị trở nên đơn giản hơn nhiều.
 
 ```{.python .input}
 # Plot a the same function in a tiny range
@@ -91,7 +91,7 @@ d2l.plot(x_med, ys, 'x', 'f(x)')
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
-Đỉnh điểm, nếu ta sẽ phóng to một đoạn rất nhỏ ra, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
+Đỉnh điểm, nếu ta muốn phóng to một đoạn rất nhỏ ra, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
 
 ```{.python .input}
 # Plot a the same function in a tiny range
