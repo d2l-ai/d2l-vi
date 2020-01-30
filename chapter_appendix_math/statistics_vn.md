@@ -652,13 +652,13 @@ Giả thuyết đối lúc này sẽ là $\theta$ không bằng $c$.
 ### General Steps of Hypothesis Testing
 -->
 
-### *dịch tiêu đề phía trên*
+### Các bước thông thường trong kiểm định giả thuyết
 
 <!--
 After getting familiar with the above concepts, let's go through the general steps of hypothesis testing.
 -->
 
-*dịch đoạn phía trên*
+Sau khi làm quen với các khái niệm ở trên, hãy cùng xem các bước kiểm định giả thuyết thông thường.
 
 <!--
 1. State the question and establish a null hypotheses $H_0$.
@@ -668,7 +668,12 @@ After getting familiar with the above concepts, let's go through the general ste
 5. Make the decision to keep or reject the null hypothesis based on the $p$-value and the statistical significance level $\alpha$.
 -->
 
-*dịch đoạn phía trên*
+1. Đặt câu hỏi và đưa ra giả thuyết gốc $H_0$.
+2. Chọn mức ý nghĩa thống kê $\alpha$ và năng lực thống kê ($1 - \beta$).
+3. Thu thập mẫu qua các thử nghiệm.
+Số lượng mẫu cần thiết sẽ phụ thuộc vào năng lực thống kê, và hệ số ảnh hưởng mong muốn.
+4. Tính tiêu chuẩn kiểm định và trị số $p$.
+5. Quyết định chấp nhận hoặc bác bỏ giả thuyết gốc dựa trên trị số $p$ và mức ý nghĩa thống kê $\alpha$.
 
 <!--
 To conduct a hypothesis test, we start by defining a null hypothesis and a level of risk that we are willing to take. 
@@ -676,20 +681,22 @@ Then we calculate the test statistic of the sample, taking an extreme value of t
 If the test statistic falls within the reject region, we may reject the null hypothesis in favor of the alternative.
 -->
 
-*dịch đoạn phía trên*
+Để tiến hành kiểm định giả thuyết, ta bắt đầu với việc định nghĩa giả thuyết gốc và mức rủi ro chấp nhận được.
+Sau đó ta tính tiêu chuẩn kiểm định của mẫu, lấy cực trị của tiêu chuẩn kiểm định làm bằng chứng để phủ định giả thuyết gốc.
+Nếu tiêu chuẩn kiểm định rơi vào miền bác bỏ, ta có thể bác bỏ giả thuyết gốc và hướng sang giả thuyết đối.
 
 <!--
 Hypothesis testing is applicable in a variety of scenarios such as the clinical trails and A/B testing.
 -->
 
-*dịch đoạn phía trên*
+Kiểm định giả thuyết áp dụng được trong nhiều tình huống như thử nghiệm lâm sàng (*clinical trials*) và kiểm định A/B.
 
 
 <!--
 ## Constructing Confidence Intervals
 -->
 
-## *dịch tiêu đề phía trên*
+## Xây dựng khoảng tin cậy 
 
 
 <!--
@@ -698,13 +705,16 @@ Rather, it would be far better if we could produce an interval that would contai
 If you were interested in such ideas a century ago, then you would have been excited to read "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" by Jerzy Neyman :cite:`Neyman.1937`, who first introduced the concept of confidence interval in 1937.
 -->
 
-*dịch đoạn phía trên*
+Khi ước lượng giá trị của tham số $\theta$, sử dụng bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định.
+Thay vào đó, nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thật sự với xác suất cao sẽ tốt hơn nhiều.
+Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ bạn nên đọc cuốn "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*) của Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937.
 
 <!--
 To be useful, a confidence interval should be as small as possible for a given degree of certainty. Let's see how to derive it.
 -->
 
-*dịch đoạn phía trên*
+Để có tính hữu dụng, khoảng tin cậy nên càng bé càng tốt với một mức độ chắc chắn cho trước.
+Hãy cùng xem xét cách tính khoảng tin cậy.
 
 <!-- =================== Kết thúc dịch Phần 10 ================================-->
 
@@ -980,7 +990,18 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 7 -->
+*
+
+<!-- Phần 8 -->
+*
+
+<!-- Phần 9 -->
+*
+
+<!-- Phần 10 -->
+* Mai Sơn Hải
 * Phạm Minh Đức
+
 
 <!-- Phần 11 -->
 * Nguyễn Cảnh Thướng
