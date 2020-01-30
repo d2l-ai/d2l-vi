@@ -56,7 +56,7 @@ To help us visualize what happens, let's graph an example function, $f(x) = \sin
 -->
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
-Nếu bạn muốn mọi thứ cho thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
+Nếu bạn muốn mọi thứ thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
 Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 ```{.python .input}
