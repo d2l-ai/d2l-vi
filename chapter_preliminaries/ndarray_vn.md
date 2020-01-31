@@ -188,7 +188,7 @@ Each of its elements is randomly sampled from a standard Gaussian (normal) distr
 
 Ta thường muốn lấy mẫu ngẫu nhiên cho mỗi phần tử trong một `ndarray` từ một phân phối xác suất.
 Ví dụ, khi xây dựng các mảng để chứa các tham số trong một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
-Đoạn mã dưới đây tạo một `ndarray` với kích thước $3$, $4$) với các phần tử được lấy mẫu ngẫu nhiên từ một phân phối Gauss (phân phói chuẩn) với trugn bình bằng $0$ và độ lệch chuẩn $1$.
+Đoạn mã dưới đây tạo một `ndarray` có kích thước ($3$, $4$) với các phần tử được lấy mẫu ngẫu nhiên từ một phân phối Gauss (phân phối chuẩn) với trung bình bằng $0$ và độ lệch chuẩn $1$.
 
 ```{.python .input  n=10}
 np.random.normal(0, 1, size=(3, 4))
