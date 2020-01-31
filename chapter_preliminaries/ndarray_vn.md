@@ -47,7 +47,7 @@ Thông qua cuốn sách, nếu không nói gì thêm, chúng ta ngầm hiểu `n
 ## Getting Started
 -->
 
-## *dịch tiêu đề phía trên*
+## Bắt đầu
 
 <!--
 In this section, we aim to get you up and running, equipping you with the the basic math and numerical computing tools that you will build on as you progress through the book.
@@ -56,7 +56,10 @@ The following sections will revisit this material in the context practical examp
 On the other hand, if you already have some background and want to go deeper into the mathematical content, just skip this section.
 -->
 
-*dịch đoạn phía trên*
+Trong mục này, mục tiêu của chúng tôi là trang bị cho bạn các kiến thức toán cơ bản và cài đặt các công cụ tính toán mà bạn sẽ xây dựng dựa trên nó xuyên suốt cuốn sách này.
+Đừng lo nếu bạn gặp khó khăn với các khái niệm toán khó hiểu hoặc các hàm trong thư viện tính toán.
+Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm ví dụ thực tiễn.
+Nếu bạn đã có kiến thức nền tảng và muốn đi sâu vào các nội dung toán, bạn có thể bỏ qua mục này.
 
 <!--
 To start, we import the `np` (`numpy`) and `npx` (`numpy_extension`) modules from MXNet.
@@ -64,7 +67,9 @@ Here, the `np` module includes functions supported by NumPy, while the `npx` mod
 When using `ndarray`, we almost always invoke the `set_np` function: this is for compatibility of `ndarray` processing by other components of MXNet.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta cần khai báo mô-đun `np` (`numpy`) và `npx` (`numpy_extension`) từ MXNet.
+Ở đây, mô-đun `np` bao gồm các hàm số hỗ trợ bởi NumPy, trong khi mô-đun `npx` chứa một tập các hàm mở rộng được phát triển để hỗ trợ học sâu trong một môi trường giống với NumPy.
+Khi sử dụng `ndarray`, ta luôn cần gọi hàm `set_np`: để đảm bảo sự tương thích của việc xử lý `ndarray` bằng các thành phần khác của MXNet.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -78,7 +83,10 @@ With two axes, an `ndarray` corresponds to a *matrix*.
 Arrays with more than two axes do not have special mathematical names---we simply call them *tensors*.
 -->
 
-*dịch đoạn phía trên*
+Một `ndarray` biểu diễn một mảng (có thể nhiều chiều).
+Với một trục, một `ndarray` tương ứng với một *vector* trong toán.
+Với hai trục, một `ndarray` tương ứng với một *ma trận*.
+Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
