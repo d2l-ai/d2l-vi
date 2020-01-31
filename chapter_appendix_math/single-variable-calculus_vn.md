@@ -629,13 +629,14 @@ As we can see above, the denominator of $2$ is there to cancel out the $2$ we ge
 Same logic applies for the first derivative and the value itself.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn với số $2$ ta có khi lấy đạo hàm của $x^2$ hai lần, khi mà những thành phần khác đều bằng không.
+Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị.
 
 <!--
 If we push the logic further to $n=3$, we will conclude that
 -->
 
-*dịch đoạn phía trên*
+Nếu ta mở rộng cách lập luận này cho trường hợp $n=3$, ta sẽ kết luận được
 
 $$
 f(x) \approx \frac{\frac{d^3f}{dx^3}(x_0)}{6}(x-x_0)^3 + \frac{\frac{d^2f}{dx^2}(x_0)}{2}(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
@@ -645,14 +646,14 @@ $$
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
 -->
 
-*dịch đoạn phía trên*
+với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được nếu ta lấy đạo hàm của $x^3$ ba lần.
 
 
 <!--
 Furthermore, we can get a degree $n$ polynomial by
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, ta có thể lấy một phương trình bậc $n$ bằng cách
 
 $$
 P_n(x) = \sum_{i = 0}^{n} \frac{f^{(i)}(x_0)}{i!}(x-x_0)^{i}.
@@ -662,7 +663,7 @@ $$
 where the notation
 -->
 
-*dịch đoạn phía trên*
+với quy ước
 
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
