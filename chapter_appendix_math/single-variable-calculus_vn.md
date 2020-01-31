@@ -60,7 +60,9 @@ If you wish to be concrete, think a number like $\epsilon = 0.0000001$.
 To help us visualize what happens, let's graph an example function, $f(x) = \sin(x^x)$, over the $[0, 3]$.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
+Nếu bạn muốn mọi thứ thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
+Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 ```{.python .input}
 %matplotlib inline
@@ -80,7 +82,8 @@ At this large scale, the function's behavior is not simple.
 However, if we reduce our range to something smaller like $[1.75,2.25]$, we see that the graph becomes much simpler.
 -->
 
-*dịch đoạn phía trên*
+Trong một khoảng lớn thế này, cách biến đổi của hàm số không hề đơn giản.
+Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25]$, ta thấy đồ thị trở nên đơn giản hơn nhiều.
 
 ```{.python .input}
 # Plot a the same function in a tiny range
@@ -93,7 +96,7 @@ d2l.plot(x_med, ys, 'x', 'f(x)')
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
-*dịch đoạn phía trên*
+Đỉnh điểm, nếu ta muốn phóng to một đoạn rất nhỏ ra, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
 
 ```{.python .input}
 # Plot a the same function in a tiny range
@@ -109,13 +112,15 @@ The only question we need to answer is, "How large is the change in the output c
 Is it half as large?  Twice as large?"
 -->
 
-*dịch đoạn phía trên*
+Đây là một trong những quan sát căn bản nhất trong giải tích: hành vi của các hàm số phổ biến có thể được mô hình bằng một đường thẳng trên một khoảng đủ nhỏ.
+Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi ta dịch chuyển giá trị $x$ với một giá trị nhỏ, kết quả trả về của $f(x)$ sẽ cũng chỉ bị dịch chuyển với một giá trị nhỏ.
+Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi trong giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi trong giá trị đầu vào? Nó sẽ bằng một nửa? Hay nó sẽ lớn gấp đôi?" 
 
 <!--
 Thus, we can consider the ratio of the change in the output of a function for a small change in the input of the function.  We can write this formally as
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với thay đổi nhỏ của đầu vào trong một hàm số. Chúng ta biễu diễn nó một cách toán học là:
 
 $$
 \frac{L(x+\epsilon) - L(x)}{(x+\epsilon) - x} = \frac{L(x+\epsilon) - L(x)}{\epsilon}.
