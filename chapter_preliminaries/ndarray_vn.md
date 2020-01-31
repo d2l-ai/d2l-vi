@@ -286,7 +286,7 @@ We can see that, the first output `ndarray`'s axis-$0$ length ($6$) is the sum o
 
 Ta cũng có thể *nối* nhiều `ndarray` với nhau, xếp chồng chúng lên nhau để tạo ra một `ndarray` lớn hơn.
 Ta chỉ cần cung cấp một danh sách các `ndarray` và khai báo chúng được nối theo trục nào.
-Ví dụ dưới đây thể hiện các nối hai ma trận theo hàng (trục $0$, phần tử đầu tiên của kích thước) và theo cột (trục $1$, phần tử thứ hai của kích thước).
+Ví dụ dưới đây thể hiện cách nối hai ma trận theo hàng (trục $0$, phần tử đầu tiên của kích thước) và theo cột (trục $1$, phần tử thứ hai của kích thước).
 Ta có thể thấy rằng, cách thứ nhất tạo một `ndarray` với độ dài trục $0$ ($6$) bằng tổng các độ dài trục $0$ của hai `ndarray` đầu vào ($3 + 3$);
 trong khi cách thứ hai tạo một `ndarray` với độ dài trục $1$ ($8$) bằng tổng các độ dài trục $1$ của hai `ndarray` đầu vào ($4 + 4$).
 
