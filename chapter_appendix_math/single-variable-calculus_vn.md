@@ -799,7 +799,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
-* Phạm Hồng Vĩnh
+* Phạm Hồng Vinh
 * Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
