@@ -304,7 +304,7 @@ For each position, if `x` and `y` are equal at that position, the corresponding 
 
 Đôi khi, ta muốn tạo một `ndarray` nhị phân thông qua các *mệnh đề logic*.
 Lấy `x == y` làm ví dụ.
-Với mỗi vị trí, nếu `x` và `y` bằng nhau thì phần tử tương ứng trong `ndarray` mới lấy giá trị $1$, nghĩa là mệnh đề logic `x == y` là đúng tại vị trí đó; ngược lại vị trí đó lấy giá trị $0$.
+Với mỗi vị trí, nếu giá trị của`x` và `y` tại vị trí đó bằng nhau thì phần tử tương ứng trong `ndarray` mới lấy giá trị $1$, nghĩa là mệnh đề logic `x == y` là đúng tại vị trí đó; ngược lại vị trí đó lấy giá trị $0$.
 
 ```{.python .input  n=15}
 x == y
