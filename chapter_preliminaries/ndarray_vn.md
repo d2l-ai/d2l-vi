@@ -248,8 +248,8 @@ We can call elementwise operations on any two tensors of the same shape.
 In the following example, we use commas to formulate a $5$-element tuple, where each element is the result of an elementwise operation.
 -->
 
-Trong MXNet, các phép toán tiêu chuẩn (`+`, `-`, `*`, `/`, và `**`) là các phép toán theo từng thành phần có các tensor đồng kích thước bất kỳ.
-Ta có thể gọi những phép toàn theo từng thành phần lên hai tensor đồng kích thước.
+Trong MXNet, các phép toán tiêu chuẩn (`+`, `-`, `*`, `/`, và `**`) là các phép toán theo từng phần tử trên các tensor đồng kích thước bất kỳ.
+Ta có thể gọi những phép toán theo từng phần tử lên hai tensor đồng kích thước.
 Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử, ở đó mỗi phần tử là kết quả của một phép toán theo từng thành phần.
 
 ```{.python .input  n=11}
