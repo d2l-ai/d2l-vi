@@ -563,7 +563,9 @@ A positive second derivative leads to a upwards curve, while a negative second d
 Let's take this one step further. Consider the function $g(x) = ax^{2}+ bx + c$.  We can then compute that
 -->
 
-*dịch đoạn phía trên*
+Hãy thử tiến xa hơn một bước.
+Xét hàm $g(x) = ax^{2}+ bx + c$.
+Ta có thể tính được
 
 $$
 \begin{aligned}
@@ -577,7 +579,10 @@ If we have some original function $f(x)$ in mind, we may compute the first two d
 Similarly to the previous section where we saw that the first derivative gave the best approximation with a straight line, this construction provides the best approximation by a quadratic.  Let's visualize this for $f(x) = \sin(x)$.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ để khiến chúng phù hợp với tính toán này.
+Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một là xấp xỉ tốt nhất của một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
+Hãy hình dung khái niệm này trong trường hợp $f(x) = \sin(x)$.
+
 
 ```{.python .input}
 # Compute sin
@@ -596,26 +601,27 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 We will extend this idea to the idea of a *Taylor series* in the next section.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ mở rộng từ ý tưởng này tới ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
 
 <!--
 ### Taylor Series
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuỗi Taylor
 
 
 <!--
 The *Taylor series* provides a method to approximate the function $f(x)$ if we are given values for the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
 -->
 
-*dịch đoạn phía trên*
+*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
+Ý tưởng là tìm một hàm số bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
 We saw the case of $n=2$ in the previous section and a little algebra shows this is
 -->
 
-*dịch đoạn phía trên*
+Ta đã thấy với trường hợp $n=2$ ở chương trước và với một chút đại số, ta có được
 
 $$
 f(x) \approx \frac{1}{2}\frac{d^2f}{dx^2}(x_0)(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
@@ -829,7 +835,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 9 -->
-*
+* Phạm Hồng Vinh
 
 <!-- Phần 10 -->
 *
