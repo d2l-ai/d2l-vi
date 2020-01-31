@@ -285,7 +285,9 @@ We can call elementwise operations on any two tensors of the same shape.
 In the following example, we use commas to formulate a $5$-element tuple, where each element is the result of an elementwise operation.
 -->
 
-*dịch đoạn phía trên*
+Trong MXNet, các phép toán tiêu chuẩn (`+`, `-`, `*`, `/`, và `**`) là các phép toán theo từng phần tử trên các tensor đồng kích thước bất kỳ.
+Ta có thể gọi những phép toán theo từng phần tử lên hai tensor đồng kích thước.
+Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử, ở đó mỗi phần tử là kết quả của một phép toán theo từng phần tử.
 
 ```{.python .input  n=11}
 x = np.array([1, 2, 4, 8])
@@ -297,7 +299,7 @@ x + y, x - y, x * y, x / y, x ** y  # The ** operator is exponentiation
 Many more operations can be applied elementwise, including unary operators like exponentiation.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán một ngôi như hàm mũ cơ số $e$.
 
 ```{.python .input  n=12}
 np.exp(x)
@@ -308,7 +310,8 @@ In addition to elementwise computations, we can also perform linear algebra oper
 We will explain the crucial bits of linear algebra (with no assumed prior knowledge) in :numref:`sec_linear-algebra`.
 -->
 
-*dịch đoạn phía trên*
+Ngoài các phép tính theo từng phần tử, ta cũng có thể thực hiện các phép toán đại số tuyến tính, bao gồm tích vô hướng của hai vector và phép nhân ma trận.
+Chúng tôi sẽ giải thích những điểm quan trọng của đại số tuyến tính (mà không cần kiến thức nền tảng) trong :numref:`sec_linear-algebra`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
