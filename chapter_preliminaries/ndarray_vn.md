@@ -166,7 +166,7 @@ Typically, we will want our matrices initialized either with zeros, ones, some o
 We can create an `ndarray` representing a tensor with all elements set to $0$ and a shape of ($2$, $3$, $4$) as follows:
 -->
 
-Thông thường, ta sẽ muốn các ma trận được khởi tạo bởi toàn giá trị không, một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
+Thông thường, ta sẽ muốn các ma trận được khởi tạo bởi toàn giá trị không, giá trị một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
 Ta có thể tạo một `ndarray` biểu diễn một tensor với tất cả các phần tử bằng $0$ và có kích thước ($2$, $3$, $4$) như sau:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
