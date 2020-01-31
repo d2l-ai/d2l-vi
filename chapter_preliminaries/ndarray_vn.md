@@ -262,7 +262,7 @@ x + y, x - y, x * y, x / y, x ** y  # The ** operator is exponentiation
 Many more operations can be applied elementwise, including unary operators like exponentiation.
 -->
 
-Rất nhiều các phép toán khác có thể được áp dụng theo từng thành phần, bao gồm các phép toán đơn ngôi như hàm mũ cơ số $e$.
+Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán một ngôi như hàm mũ cơ số $e$.
 
 ```{.python .input  n=12}
 np.exp(x)
