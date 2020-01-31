@@ -115,7 +115,7 @@ Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi tron
 Thus, we can consider the ratio of the change in the output of a function for a small change in the input of the function.  We can write this formally as
 -->
 
-Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra và sự thay đổi của đầu vào trong một hàm số. Chúng ta biễu diễn nó một cách toán học là:
+Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với thay đổi nhỏ của đầu vào trong một hàm số. Chúng ta biễu diễn nó một cách toán học là:
 
 $$
 \frac{L(x+\epsilon) - L(x)}{(x+\epsilon) - x} = \frac{L(x+\epsilon) - L(x)}{\epsilon}.
