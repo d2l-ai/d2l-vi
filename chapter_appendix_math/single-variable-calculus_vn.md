@@ -498,8 +498,11 @@ This tells us the slope of our original function $f$ and therefore, the function
 In other words, the function $f$ curves up, and has a single minimum as is shown in :numref:`fig_positive-second`.
 -->
 
-Đầu tiên, cân nhắc trường hợp derivative thứ hai $f^{(2)}(x)$ là hằng số dương.
-
+Đầu tiên, cân nhắc trường hợp đạo hàm bậc hai $f^{(2)}(x)$ là hằng số dương.
+Điều này nghĩa là, độ nghiêng của đạo hàm bậc nhất là dương.
+Vì vậy, đạo hàm đầu tiên $f^{(1)}(x)$ có thể start out âm, trở thành không tại một điểm, và rồi tiến tới không ở cuối cùng.
+Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm, flattens out, rồi tăng lên.
+Nói cách khác, hàm $f$ sẽ cong lên, và có một single minimum như được thể hiện trong :numref:`fig_positive-second`.
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
