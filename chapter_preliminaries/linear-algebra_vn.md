@@ -637,7 +637,7 @@ The matrix-vector product $\mathbf{A}\mathbf{x}$ is simply a column vector of le
 -->
 
 Mỗi $\mathbf{a}^\top_{i} \in \mathbb{R}^n$ là một vector hàng thể hiện hàng thứ $i$ của ma trận $\mathbf{A}$.
-Tích giữa ma trận và vector $\mathbf{A}\mathbf{x}$ đơn giản chỉ là một vector cột với chiều dài $m$, với phần tử thứ $i$ là kết quả của tích vô hướng $\mathbf{a}^\top_i \mathbf{x}$:
+Tích giữa ma trận và vector $\mathbf{A}\mathbf{x}$ đơn giản chỉ là một vector cột với chiều dài $m$, với phần tử thứ $i$ là kết quả của phép tích vô hướng $\mathbf{a}^\top_i \mathbf{x}$:
 
 $$
 \mathbf{A}\mathbf{x}
