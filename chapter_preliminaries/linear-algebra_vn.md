@@ -665,7 +665,7 @@ As we will see in subsequent chapters, we can also use matrix-vector products to
 Chúng ta có thể nghĩ đến việc nhân một ma trận $\mathbf{A}\in \mathbb{R}^{m \times n}$ với một vector như một phép biến hình, chiếu vector từ không gian $\mathbb{R}^{n}$ thành $\mathbb{R}^{m}$.
 Những phép biến hình này trở nên rất hữu dụng. 
 Ví dụ, chúng ta có thể biểu diễn phép xoay là tích với một ma trận vuông.
-Bạn sẽ thấy ở những chương tiếp theo, chúng ta cũng có thể sử dụng tích giữa ma trận và vector để thực hiện hầu hết những tính toán cần thiết khi tính mỗi lớp trong một mạng nơ-ron dựa theo kết quả của lớp trước đó.
+Bạn sẽ thấy ở những chương tiếp theo, chúng ta cũng có thể sử dụng tích giữa ma trận và vector để thực hiện hầu hết những tính toán cần thiết khi tính các tầng trong một mạng nơ-ron dựa theo kết quả của tầng trước đó.
 
 <!--
 Expressing matrix-vector products in code with `ndarray`s, we use the same `dot` function as for dot products.
