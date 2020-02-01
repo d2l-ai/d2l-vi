@@ -621,7 +621,7 @@ Let's start off by visualizing the matrix $\mathbf{A}$ in terms of its row vecto
 
 Giờ đây, khi đã biết cách tính toán tích vô hướng, chúng ta có thể bắt đầu hiểu *tích giữa ma trận và vector*.
 Bạn có thể xem lại cách ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ và vector $\mathbf{x} \in \mathbb{R}^n$ được định nghĩa và biểu diễn trong :eqref:`eq_matrix_def` và :eqref:`eq_vec_def`.
-Ta sẽ bắt đầu bằng việc hiện thị ma trận $\mathbf{A}$ qua các vector hàng của nó. 
+Ta sẽ bắt đầu bằng việc biểu diễn ma trận $\mathbf{A}$ qua các vector hàng của nó. 
 
 $$\mathbf{A}=
 \begin{bmatrix}
