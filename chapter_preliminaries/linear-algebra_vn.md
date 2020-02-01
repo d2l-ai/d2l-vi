@@ -609,7 +609,7 @@ Tích vô hướng tỏ ra hữu dụng trong nhiều trường hợp.
 Ví dụ, với một tập các giá trị co trước, biểu thị bởi vector $\mathbf{x}  \in \mathbb{R}^d$, và một tập các trọng số được biểu thị bởi $\mathbf{w} \in \mathbb{R}^d$, tổng trọng số của các giá trị trong $\mathbf{x}$ theo các trọng số trong $\mathbf{w}$ có thể được thể hiện bởi tích vô hướng $\mathbf{x}^\top \mathbf{w}$.
 Khi các trọng số không âm và có tổng bằng một($\left(\sum_{i=1}^{d} {w_i} = 1\right)$), tích vô hướng thể hiện phép tính trung bình trọng số.
 Sau khi được chuẩn hoá thành hai vector đơn vị, tích vô hướng của hai vector đó là giá trị cosin của góc giữa hai vector đó.
-Chúng tôi sẽ giới thiệu khái niệm về độ dài ở các phần sau trong mục này. 
+Chúng tôi sẽ giới thiệu khái niệm về *độ dài* ở các phần sau trong mục này. 
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
