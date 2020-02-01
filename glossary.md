@@ -39,7 +39,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | big data                | big data                                                       |                       |
 | Blackbox dev set        | tập phát triển Blackbox                                        | http://bit.ly/2MVHcl7 |
 | bounding box            | khung chứa                                                     | http://bit.ly/2sbhDVj |
-| broadcast            | broadcast                                                     | 
+| broadcast            | lan truyền                                                     | 
 
 ## C
 | English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
