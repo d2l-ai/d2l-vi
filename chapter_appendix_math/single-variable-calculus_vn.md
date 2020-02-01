@@ -508,7 +508,7 @@ Nói cách khác, hàm $f$ sẽ cong lên, và có một single minimum như đ�
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/posSecDer.svg)
+![Nếu chúng ta giả định rằng đạo hàm bậc hai là hằng số dương, rồi đạo hàm bậc nhất sẽ tăng, có nghĩa rằng chính hàm đó có một minimum.](../img/posSecDer.svg)
 :label:`fig_positive-second`
 
 
@@ -519,13 +519,16 @@ Hence, the function $f$ itself increases, flattens out, then decreases.
 In other words, the function $f$ curves down, and has a single maximum as is shown in :numref:`fig_negative-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ hai, nếu đạo hàm bậc hai là hằng số âm, nghĩa là đạo hàm bậc nhất là giảm.
+Nghĩa là đạo hàm bậc nhất có thể start out dương, tiến về không ở một điểm, và rồi giảm về âm.
+Do vậy, hàm số $f$ cong xuống, flattens out, rồi giảm.
+Nói cách khác, hàm số $f$ cong xuống, và có một single maximum như trong hình :numref:`fig_negative-second`.
 
 <!--
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/negSecDer.svg)
+![Nếu giả định đạo hàm bậc hai là hằng số âm, với đạo hàm bậc nhất giảm dần, nghĩa là hàm số tự thân có một maximum ](../img/negSecDer.svg)
 :label:`fig_negative-second`
 
 
@@ -534,13 +537,14 @@ Third, if the second derivative is a always zero, then the first derivative will
 This means that $f$ increases (or decreases) at a fixed rate, and $f$ is itself a straight line  as is shown in :numref:`fig_zero-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ ba, nếu đạo hàm bậc hai luôn bằng không, thì đạo hàm bậc nhất sẽ không thay đổi---là hằng số!
+Nghĩa là hàm $f$ tăng (hoặc giảm) với tốc độ cố định, và $f$ là một đường thẳng giống như trong hình :numref:`fig_zero-second`.
 
 <!--
 ![If we assume the second derivative is zero, then the fist derivative is constant, which implies the function itself is a straight line.](../img/zeroSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/zeroSecDer.svg)
+![Nếu ta giả định đạo hàm bậc hai bằng không, thì đạo hàm bậc nhất là hằng số, nghĩa là hàm số này là một đường thẳng](../img/zeroSecDer.svg)
 :label:`fig_zero-second`
 
 <!--
@@ -548,7 +552,8 @@ To summarize, the second derivative can be interpreted as describing the way tha
 A positive second derivative leads to a upwards curve, while a negative second derivative means that $f$ curves downwards, and a zero second derivative means that $f$ does not curve at all.
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của hàm $f$.
+Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ không cong tý nào hết.
 
 <!-- ===================== Kết thúc dịch Phần 8 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 9 ==================== -->
