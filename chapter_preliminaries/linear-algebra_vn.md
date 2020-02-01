@@ -664,7 +664,7 @@ As we will see in subsequent chapters, we can also use matrix-vector products to
 
 Chúng ta có thể nghĩ đến việc nhân một ma trận $\mathbf{A}\in \mathbb{R}^{m \times n}$ với một vector như một phép biến hình, chiếu vector từ không gian $\mathbb{R}^{n}$ thành $\mathbb{R}^{m}$.
 Những phép biến hình này trở nên rất hữu dụng. 
-Ví dụ, chúng ta có thể biểu thị phép xoay bởi tích với một ma trận vuông.
+Ví dụ, chúng ta có thể biểu diễn phép xoay là tích với một ma trận vuông.
 Bạn sẽ thấy ở những chương tiếp theo, chúng ta cũng có thể sử dụng tích giữa ma trận và vector để thực hiện hầu hết những tính toán cần thiết khi tính mỗi lớp trong một mạng nơ-ron dựa theo kết quả của lớp trước đó.
 
 <!--
