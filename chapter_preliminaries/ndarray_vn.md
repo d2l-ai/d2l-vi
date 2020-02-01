@@ -155,7 +155,7 @@ This is remarkably efficient but we must be careful because the entries might ta
 -->
 
 Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không làm thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
-Việc này có hiệu quả tính toán đáng kể nhưng ta phải thật cẩn trọng bởi các phần tử đó có thể lấy những giá trị bất kỳ, bao gồm các cố rất lớn!
+Việc này có hiệu quả tính toán đáng kể nhưng ta phải thật cẩn trọng bởi các phần tử đó có thể lấy những giá trị bất kỳ, bao gồm các số rất lớn!
 
 ```{.python .input  n=6}
 np.empty((3, 4))
