@@ -662,7 +662,7 @@ For example, we can represent rotations as multiplications by a square matrix.
 As we will see in subsequent chapters, we can also use matrix-vector products to describe the most intensive calculations required when computing each layer in a neural network given the values of the previous layer.
 -->
 
-Chúng ta có thể nghĩ đến việc nhân một ma trận $\mathbf{A}\in \mathbb{R}^{m \times n}$ với một vector như một phép biến hình chiếu vector $\mathbb{R}^{n}$ thành $\mathbb{R}^{m}$.
+Chúng ta có thể nghĩ đến việc nhân một ma trận $\mathbf{A}\in \mathbb{R}^{m \times n}$ với một vector như một phép biến hình, chiếu vector từ không gian $\mathbb{R}^{n}$ thành $\mathbb{R}^{m}$.
 Những phép biến hình này trở nên rất hữu dụng. 
 Ví dụ, chúng ta có thể biểu thị phép xoay bởi tích với một ma trận vuông.
 Bạn sẽ thấy ở những chương tiếp theo, chúng ta cũng có thể sử dụng tích giữa ma trận và vector để thực hiện hầu hết những tính toán cần thiết khi tính mỗi lớp trong một mạng nơ-ron dựa theo kết quả của lớp trước đó.
