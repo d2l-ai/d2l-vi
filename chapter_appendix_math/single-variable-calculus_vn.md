@@ -579,10 +579,9 @@ If we have some original function $f(x)$ in mind, we may compute the first two d
 Similarly to the previous section where we saw that the first derivative gave the best approximation with a straight line, this construction provides the best approximation by a quadratic.  Let's visualize this for $f(x) = \sin(x)$.
 -->
 
-Nếu ta đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ để khiến chúng phù hợp với tính toán này.
+Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
 Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một là xấp xỉ tốt nhất của một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
-Hãy hình dung khái niệm này trong trường hợp $f(x) = \sin(x)$.
-
+Cùng minh hoạ với trường hợp $f(x) = \sin(x)$.
 
 ```{.python .input}
 # Compute sin
