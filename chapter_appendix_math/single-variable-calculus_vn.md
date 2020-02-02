@@ -683,7 +683,7 @@ In this case, for well behaved functions (known as real analytic functions) like
 -->
 
 Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
-Trong trường hợp này, các hàm giải tích thực như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vố số các số hạng.
+Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vố số các số hạng.
 
 $$
 f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}.
