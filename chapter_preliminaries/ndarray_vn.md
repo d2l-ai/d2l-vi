@@ -365,7 +365,7 @@ We *broadcast* the entries of both matrices into a larger $3\times2$ matrix as f
 -->
 
 Vì `a` và `b` là các ma trận có kích thước lần lượt là $3\times1$ và $1\times2$, kích thước của chúng không khớp nếu ta muốn thực hiện phép cộng.
-Ta *quảng bá* các phần tử của cả hai ma trận thành các ma trận $3\times2$ như sau: lặp lại các cột trong ma trận `a` và các hàng trong ma trận `b` trước khi cộng chúng theo từng thành phần.
+Ta *lan truyền* các phần tử của cả hai ma trận thành các ma trận $3\times2$ như sau: lặp lại các cột trong ma trận `a` và các hàng trong ma trận `b` trước khi cộng chúng theo từng phần tử.
 
 ```{.python .input  n=18}
 a + b
