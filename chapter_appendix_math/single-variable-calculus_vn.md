@@ -522,7 +522,7 @@ In other words, the function $f$ curves down, and has a single maximum as is sho
 Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất là nghịch biến.
 Nghĩa là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
 Do vậy, hàm số $f$ tăng lên, đi ngang, rồi giảm.
-Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại đơn như trong hình :numref:`fig_negative-second`.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại đơn như trong :numref:`fig_negative-second`.
 
 <!--
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
