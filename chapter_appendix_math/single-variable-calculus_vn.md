@@ -275,9 +275,9 @@ If every derivative needed to be separately computed and stored in a table, diff
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, sẽ không thể có ...
-Toán học đã mang lại một món quá ...
-Như được đề cập tại ...
+Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, có thể đã không có giải tích vi phân.
+Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm phía ở phần trên và giúp tính các đạo hàm phức tạo hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
+Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là chuẩn hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
 
 <!--
 * **Sum rule.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
@@ -287,13 +287,14 @@ Như được đề cập tại ...
 
 * **Quy tắc tổng.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
 * **Quy tắc tích.** $\frac{d}{dx}\left(g(x)\cdot h(x)\right) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$.
-* **Quy tắc chuỗi.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
+* **Quy tắc dây chuyền.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 
 <!--
 Let's see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
 -->
 
-* Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này. Với quy tắc tổng, ...
+* Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này.
+* Với quy tắc tổng, xét dãy suy luận sau đây:
 
 $$
 \begin{aligned}
@@ -309,14 +310,15 @@ By comparing this result with the fact that $f(x+\epsilon) \approx f(x) + \epsil
 The intuition here is: when we change the input $x$, $g$ and $h$ jointly contribute to the change of the output by $\frac{dg}{dx}(x)$ and $\frac{dh}{dx}(x)$.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta thấy rằng $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi. 
 
 
 <!--
 The product is more subtle, and will require a new observation about how to work with these expressions.  We will begin as before using :eqref:`eq_small_change`:
 -->
 
-*dịch đoạn phía trên*
+Tích phức hợp hơn một chút và đòi hỏi một quan sát mới.
+Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
 
 $$
 \begin{aligned}
@@ -337,8 +339,12 @@ As a general convention in this appendix, we will use "$\approx$" to denote that
 However, if we wish to be more formal we may examine the difference quotient
 -->
 
-*dịch đoạn phía trên*
-
+Việc này giống với những tính toán trước đây, và dễ thấy kết quả ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$), <!-- Hmm -->
+Chúng ta sẽ gọi số hạng này là *số hạng bậc cao*, bởi số mũ của $\epsilon^2$ cao hơn số mũ của $\epsilon^1$.
+Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên bây giờ ta có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số rất nhỏ.
+Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao hơn.
+Ta sẽ quy ước sử dụng "$\approx$" để ký hiệu rằng hai số hạng bằng nhau với sai số là các thành phần bậc cao.
+Tuy nhiên, nếu ta muốn viết phần dư một cách chính xác
 $$
 \frac{f(x+\epsilon) - f(x)}{\epsilon} = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x) + \epsilon \frac{dg}{dx}(x)\frac{dh}{dx}(x),
 $$
@@ -347,13 +353,17 @@ $$
 and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to zero as well.
 -->
 
-*dịch đoạn phía trên*
+và thấy rằng khi $\epsilon \rightarrow 0$, về phải cũng tiến về không.
 
 <!--
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
 -->
 
+<<<<<<< HEAD
 Cuối cùng, theo quy tắc dây chuyền, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
+=======
+Cuối cùng, với quy tắc chuỗi, chúng ta có thể làm tương tự sử dụng :eqref:`eq_small_change` và thấy rằng
+>>>>>>> calculus part 5
 
 $$
 \begin{aligned}
