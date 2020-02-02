@@ -210,7 +210,7 @@ $$
 Often times, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
 -->
 
-Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất và gắn bó với nó, tuy nhiên điều này cũng không phải là chắc chắn.
+Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
 Sẽ là tốt nhất nếu chúng ta làm quen với tất cả các ký hiệu này.
 Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn biểu thức như sau:
 
