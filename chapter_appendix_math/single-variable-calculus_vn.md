@@ -173,7 +173,7 @@ It was not solved until 1986 that the *backpropagation algorithm* introduced in 
 Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
 Đây là một cách tính toán không hiệu quả, đòi hỏi hai đánh giá đối với hàm mất mát để thấy được sự tác động của một biến lên hàm mất mát đó.  
 Nếu chúng ta sử dụng phương pháp này với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi vài nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
-Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán Lan Truyền Ngược* được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính toán sự ảnh hưởng từ các thay đổi *bất kỳ* của trọng số tới hàm mất mát trong cùng thời điểm tính toán như là dự đoán duy nhất của mạng đối với tập dữ liệu. 
+Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán Lan Truyền Ngược* được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính sức ảnh hưởng của những thay đổi đồng thời *bất kỳ* từ trọng số lên hàm mất mát, mà chỉ cần mô hình sử dụng các phép tính dùng để dự đoán trên tập dữ liệu. 
 
 <!--
 Back in our example, this value $8$ is different for different values of $x$, so it makes sense to define it as a function of $x$.  
