@@ -158,7 +158,7 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
     * [ ] 17.6. Random Variables
     * [ ] 17.7. Maximum Likelihood
     * [ ] 17.8. Naive Bayes
-    * [-] 17.9. Thống kê
+    * [-] 17.9. Thống kê (xong giai đoạn 1)
     * [ ] 17.10. Information Theory
 * [ ] 18. Appendix: Tools for Deep Learning
     * [ ] 18.1. Using Jupyter
