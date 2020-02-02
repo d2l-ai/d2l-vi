@@ -20,9 +20,9 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 * [x] Giới thiệu
 * [ ] 2. Preliminaries
     * [-] 2.1. Data Manipulation
-    * [ ] 2.2. Data Preprocessing
+    * [-] 2.2. Data Preprocessing
     * [-] 2.3. Đại số Tuyến tính
-    * [ ] 2.4. Calculus
+    * [-] 2.4. Calculus
     * [ ] 2.5. Automatic Differentiation
     * [ ] 2.6. Probability
     * [ ] 2.7. Documentation
@@ -158,9 +158,9 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
     * [ ] 17.6. Random Variables
     * [ ] 17.7. Maximum Likelihood
     * [ ] 17.8. Naive Bayes
-    * [-] 17.9. Thống kê
+    * [x] 17.9. Thống kê
     * [ ] 17.10. Information Theory
-* [ ] 18. Appendix: Tools for Deep Learning¶
+* [ ] 18. Appendix: Tools for Deep Learning
     * [ ] 18.1. Using Jupyter
     * [ ] 18.2. Using Amazon SageMaker
     * [ ] 18.3. Using AWS EC2 Instances
