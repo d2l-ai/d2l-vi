@@ -215,19 +215,20 @@ The last equation is worth explicitly calling out.
 It tells us that if you take any function and change the input by a small amount, the output would change by that small amount scaled by the derivative.
 -->
 
-*dịch đoạn phía trên*
+Cần phải nói rõ hơn về phương trình cuối cùng. 
+Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và thay đổi đầu vào một lượng nhỏ, sự thay đổi của đầu ra sẽ bằng với lượng nhỏ đó nhân với đạo hàm.  
 
 <!--
 In this way, we can understand the derivative as the scaling factor that tells us how large of change we get in the output from a change in the input.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra nhận được từ một biến thiên của đầu vào. 
 
 <!--
 ## Rules of Calculus
 -->
 
-## *dịch tiêu đề phía trên*
+## Quy tắc Giải tích
 :label:`sec_derivative_table`
 
 <!--
@@ -236,20 +237,23 @@ A full formal treatment of calculus would derive everything from first principle
 We will not indulge in this temptation here, but rather provide an understanding of the common rules encountered.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm hiện. 
+Cách giải đầy đủ chính thống của giải tích sẽ là đạo hàm mọi thứ từ ngay từ đầu. 
+Tuy nhiên chúng ta sẽ không dung túng cho sự cám dỗ đó ở đây, mà thay vào đó cung cấp một nền tảng về những quy tắc phổ biến thường gặp. 
 
 <!--
 ### Common Derivatives
 -->
 
-### *dịch tiêu đề phía trên*
+### Đạo hàm thông thường
 
 <!--
 As was seen in :numref:`sec_calculus`, when computing derivatives one can often times use a series of rules to reduce the computation to a few core functions.  
 We repeat them here for ease of reference.
 -->
 
-*dịch đoạn phía trên*
+Theo :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ phương trình thành các hàm lõi. 
+Chúng tôi nhắc lại chúng ở đây để tham khảo. 
 
 <!--
 * **Derivative of constants.** $\frac{d}{dx}c = 0$.
@@ -814,7 +818,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 5 -->
 *
