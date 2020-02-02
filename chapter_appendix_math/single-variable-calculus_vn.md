@@ -683,7 +683,7 @@ In this case, for well behaved functions (known as real analytic functions) like
 -->
 
 Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
-Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vố số các số hạng.
+Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vô số các số hạng.
 
 $$
 f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}.
@@ -734,7 +734,7 @@ Chuỗi Taylor có hai ứng dụng chính:
 -->
 
 1. Ứng dụng lý thuyết:
-Khi ta muốn tìm hiểu một hàm số rất phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
+Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
 
 <!--
 2. *Numerical applications*: Some functions like $e^{x}$ or $\cos(x)$ are  difficult for machines to compute.  
