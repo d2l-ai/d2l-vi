@@ -706,7 +706,7 @@ $$
 Let's see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
 -->
 
-Hãy cùng tìm hiểu điều này bằng mã nguồn và quan sát việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$.
+Hãy cùng tìm hiểu điều này bằng cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
 
 ```{.python .input}
 # Compute the exponential function
