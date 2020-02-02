@@ -547,7 +547,7 @@ sum_A
 For instance, since `sum_A` still keeps its $2$ axes after summing each row, we can divide `A` by `sum_A` with broadcasting.
 -->
 
-Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` qua broadcast.
+Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua sự lan truyền.
 
 ```{.python .input}
 A / sum_A
