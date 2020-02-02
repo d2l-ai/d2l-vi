@@ -620,7 +620,7 @@ The *Taylor series* provides a method to approximate the function $f(x)$ if we a
 We saw the case of $n=2$ in the previous section and a little algebra shows this is
 -->
 
-Ta đã thấy với trường hợp $n=2$ ở chương trước và với một chút đại số, ta có được
+Ta đã thấy với trường hợp $n=2$ ở chương trước và với một chút biến đổi đại số, ta có được
 
 $$
 f(x) \approx \frac{1}{2}\frac{d^2f}{dx^2}(x_0)(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
