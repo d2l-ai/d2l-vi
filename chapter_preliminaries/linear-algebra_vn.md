@@ -578,7 +578,7 @@ Given two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their *dot product*
 
 Cho đến giờ, chúng ta mới chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
 Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng có một mục riêng.
-Tuy nhiên, một trong những phép tính cơ bản nhất là tích vô hướng.
+Ngoài các phép tính trên từng hạng tử, một phép tính cơ bản khác là tích vô hướng.
 Với hai vector $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ cho trước, *tích vô hướng* (_dot product_) $\mathbf{x}^\top \mathbf{y}$ (hoặc $\langle \mathbf{x}, \mathbf{y}  \rangle$) là tổng các tích của những phần tử có cùng vị trí:
 $\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 
