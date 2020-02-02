@@ -351,7 +351,7 @@ Thứ hai, áp dụng các phép toàn từng phần tử lên hai mảng mới 
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-Trong hầu hết các trường hợp, chúng ta quảng bá một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
+Trong hầu hết các trường hợp, chúng ta lan truyền một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
