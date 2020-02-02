@@ -272,3 +272,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------|----------------------------------------------------------------|-----------------------|
 | variance (bias as variance) | phương sai                                                     | http://bit.ly/32HJI3S |
 | vector                      | vector                                                         |                       |
+
+## W
+| English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-----------------------------|----------------------------------------------------------------|-----------------------|
+| well-behaved function (analytic function)     | hàm khả vi vô hạn                                              |                       |
