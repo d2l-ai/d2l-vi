@@ -5,7 +5,7 @@
 # Data Preprocessing
 -->
 
-# *dịch tiêu đề phía trên*
+# Tiền xử lý dữ liệu
 :label:`sec_pandas`
 
 <!--
@@ -17,13 +17,14 @@ So, we will briefly walk through steps for preprocessing raw data with `pandas` 
 We will cover more data preprocessing techniques in later chapters.
 -->
 
-*dịch đoạn phía trên*
+Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật để manipulate dữ liệu được lưu sẵn trong các `ndarray`.
+Để...
 
 <!--
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc bộ dữ liệu
 
 <!--
 As an example, we begin by creating an artificial dataset that is stored in a csv (comma-separated values) file `../data/house_tiny.csv`. 
