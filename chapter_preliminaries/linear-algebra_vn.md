@@ -557,7 +557,7 @@ A / sum_A
 If we want to calculate the cumulative sum of elements of `A` along some axis, say `axis=0` (row by row), we can call the `cumsum` function. This function will not reduce the input tensor along any axis.
 -->
 
-Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi được hàm `cumsum`. Và nếu tensor là đầu vào thì hàm số sẽ không bị giảm chiều theo bất kì trục nào. 
+Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Khi đó hàm này sẽ không giảm số chiều của tensor đầu vào theo bất cứ trục nào.
 
 ```{.python .input}
 A.cumsum(axis=0)
