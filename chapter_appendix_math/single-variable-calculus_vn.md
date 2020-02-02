@@ -211,7 +211,7 @@ Often times, it is intuitively useful to unravel the definition of derivative :e
 -->
 
 Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
-Sẽ là tốt nhất nếu chúng ta làm quen với tất cả các ký hiệu này.
+Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
 Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn biểu thức như sau:
 
 $$
