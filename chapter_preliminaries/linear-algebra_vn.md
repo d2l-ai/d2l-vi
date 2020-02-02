@@ -576,7 +576,7 @@ However, one of the most fundamental operations is the dot product.
 Given two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their *dot product* $\mathbf{x}^\top \mathbf{y}$ (or $\langle \mathbf{x}, \mathbf{y}  \rangle$) is a sum over the products of the elements at the same position: $\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 -->
 
-Cho đến giờ, chúng ta mỡi chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
+Cho đến giờ, chúng ta mới chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
 Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng có một mục riêng.
 Tuy nhiên, một trong những phép tính cơ bản nhất là tích vô hướng.
 Với hai vector $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ cho trước, *tích vô hướng* (_dot product_) $\mathbf{x}^\top \mathbf{y}$ (hoặc $\langle \mathbf{x}, \mathbf{y}  \rangle$) là tổng các tích của những phần tử có cùng vị trí:
