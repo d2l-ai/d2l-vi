@@ -681,14 +681,15 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-*dịch đoạn phía trên*
+Quả thật, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$.
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
 In this case, for well behaved functions (known as real analytic functions) like $\cos(x)$ or $e^{x}$, we can write out the infinite number of terms and approximate the exactly same function
 -->
 
-*dịch đoạn phía trên*
+Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
+Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vô số các số hạng.
 
 $$
 f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}.
@@ -699,7 +700,9 @@ Take $f(x) = e^{x}$ as am example. Since $e^{x}$ is its own derivative, we know 
 Therefore, $e^{x}$ can be reconstructed by taking the Taylor series at $x_0 = 0$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Lấy hàm $f(x) = e^{x}$ làm ví dụ. 
+Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$.
+Do đó, hàm $e^{x}$ có thể được dựng lại bằng cách tính chuỗi Taylor tại $x_0 = 0$:
 
 $$
 e^{x} = \sum_{n = 0}^\infty \frac{x^{n}}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots.
@@ -709,7 +712,7 @@ $$
 Let's see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng tìm hiểu điều này bằng cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
 
 ```{.python .input}
 # Compute the exponential function
@@ -730,13 +733,14 @@ d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
 Taylor series have two primary applications:
 -->
 
-*dịch đoạn phía trên*
+Chuỗi Taylor có hai ứng dụng chính:
 
 <!--
 1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables we turn it into a polynomial that we can work with directly.
 -->
 
-*dịch đoạn phía trên*
+1. *Ứng dụng lý thuyết*:
+Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
 
 <!--
 2. *Numerical applications*: Some functions like $e^{x}$ or $\cos(x)$ are  difficult for machines to compute.  
@@ -744,7 +748,10 @@ They can store tables of values at a fixed precision (and this is often done), b
 Taylor series are often helpful to answer such questions.
 -->
 
-*dịch đoạn phía trên*
+2. *Ứng dụng số*:
+Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
+Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
+Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
 
 <!-- ===================== Kết thúc dịch Phần 11 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 12 ==================== -->
@@ -841,7 +848,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 11 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 12 -->
 *
