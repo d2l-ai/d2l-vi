@@ -611,7 +611,7 @@ We will formally introduce this notion of *length* later in this section.
 ## Matrix-Vector Products
 -->
 
-## *dịch tiêu đề phía trên*
+## Tích giữa ma trận và vector
 
 <!--
 Now that we know how to calculate dot products, we can begin to understand *matrix-vector products*.
@@ -619,7 +619,9 @@ Recall the matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ and the vector $\math
 Let's start off by visualizing the matrix $\mathbf{A}$ in terms of its row vectors
 -->
 
-*dịch đoạn phía trên*
+Giờ đây, khi đã biết cách tính toán tích vô hướng, chúng ta có thể bắt đầu hiểu *tích giữa ma trận và vector*.
+Bạn có thể xem lại cách ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ và vector $\mathbf{x} \in \mathbb{R}^n$ được định nghĩa và biểu diễn trong :eqref:`eq_matrix_def` và :eqref:`eq_vec_def`.
+Ta sẽ bắt đầu bằng việc biểu diễn ma trận $\mathbf{A}$ qua các vector hàng của nó. 
 
 $$\mathbf{A}=
 \begin{bmatrix}
@@ -628,16 +630,14 @@ $$\mathbf{A}=
 \vdots \\
 \mathbf{a}^\top_m \\
 \end{bmatrix},$$
--->
-
-*dịch đoạn phía trên*
 
 <!--
 where each $\mathbf{a}^\top_{i} \in \mathbb{R}^n$ is a row vector representing the $i^\mathrm{th}$ row of the matrix $\mathbf{A}$.
 The matrix-vector product $\mathbf{A}\mathbf{x}$ is simply a column vector of length $m$, whose $i^\mathrm{th}$ element is the dot product $\mathbf{a}^\top_i \mathbf{x}$:
 -->
 
-*dịch đoạn phía trên*
+Mỗi $\mathbf{a}^\top_{i} \in \mathbb{R}^n$ là một vector hàng thể hiện hàng thứ $i$ của ma trận $\mathbf{A}$.
+Tích giữa ma trận và vector $\mathbf{A}\mathbf{x}$ đơn giản chỉ là một vector cột với chiều dài $m$, với phần tử thứ $i$ là kết quả của phép tích vô hướng $\mathbf{a}^\top_i \mathbf{x}$:
 
 $$
 \mathbf{A}\mathbf{x}
@@ -662,7 +662,10 @@ For example, we can represent rotations as multiplications by a square matrix.
 As we will see in subsequent chapters, we can also use matrix-vector products to describe the most intensive calculations required when computing each layer in a neural network given the values of the previous layer.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể nghĩ đến việc nhân một ma trận $\mathbf{A}\in \mathbb{R}^{m \times n}$ với một vector như một phép biến hình, chiếu vector từ không gian $\mathbb{R}^{n}$ thành $\mathbb{R}^{m}$.
+Những phép biến hình này hóa ra lại trở nên rất hữu dụng. 
+Ví dụ, chúng ta có thể biểu diễn phép xoay là tích với một ma trận vuông.
+Bạn sẽ thấy ở những chương tiếp theo, chúng ta cũng có thể sử dụng tích giữa ma trận và vector để thực hiện hầu hết những tính toán cần thiết khi tính các tầng trong một mạng nơ-ron dựa theo kết quả của tầng trước đó.
 
 <!--
 Expressing matrix-vector products in code with `ndarray`s, we use the same `dot` function as for dot products.
@@ -670,7 +673,7 @@ When we call `np.dot(A, x)` with a matrix `A` and a vector `x`, the matrix-vecto
 Note that the column dimension of `A` (its length along axis $1$) must be the same as the dimension of `x` (its length).
 -->
 
-*dịch đoạn phía trên*
+Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện tính toán tích giữa ma trận và vector. Lưu ý rằng số chiều của cột `A` (chiều dài theo trục $1$) phải bằng với số chiều của vector `x` (chiều dài của nó).
 
 ```{.python .input  n=16}
 A.shape, x.shape, np.dot(A, x)
