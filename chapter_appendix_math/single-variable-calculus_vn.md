@@ -502,7 +502,7 @@ In other words, the function $f$ curves up, and has a single minimum as is shown
 Điều này nghĩa là độ nghiêng của đạo hàm bậc nhất là dương.
 Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi tăng lên dương ở cuối cùng.
 Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm xuống, đi ngang, rồi tăng lên.
-Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong hình :numref:`fig_positive-second`.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong :numref:`fig_positive-second`.
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
