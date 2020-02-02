@@ -733,7 +733,7 @@ Chuỗi Taylor có hai ứng dụng chính:
 1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables we turn it into a polynomial that we can work with directly.
 -->
 
-1. Ứng dụng lý thuyết:
+1. *Ứng dụng lý thuyết*:
 Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
 
 <!--
@@ -742,7 +742,7 @@ They can store tables of values at a fixed precision (and this is often done), b
 Taylor series are often helpful to answer such questions.
 -->
 
-2. Ứng dụng số:
+2. *Ứng dụng số*:
 Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
 Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
 Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
