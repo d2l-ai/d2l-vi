@@ -151,7 +151,7 @@ for epsilon in [0.1, 0.001, 0.0001, 0.00001]:
 <!--
 Now, if we are observant, we will notice that the output of this number is suspiciously close to $8$.  
 Indeed, if we decrease $\epsilon$, we will see value becomes progressively closer to $8$.  
-Thus we may conclude, correctly, that the value we seek (the degree a change in the input changes the output) should be $8$ tại điểm $x=4$..  
+Thus we may conclude, correctly, that the value we seek (the degree a change in the input changes the output) should be $8$ at the point $x=4$.  
 The way that a mathematician encodes this fact is
 -->
 
