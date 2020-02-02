@@ -675,7 +675,7 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-Quả thực, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$.
+Quả thật, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$.
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
