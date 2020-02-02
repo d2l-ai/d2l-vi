@@ -341,11 +341,11 @@ First, expand one or both arrays by copying elements appropriately so that after
 Second, carry out the elementwise operations on the resulting arrays.
 -->
 
-Trong mục trên đây, ta thấy cách thực hiện các phép toán theo từng thành phần lên hai `ndarray` đồng kích thước.
-Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng thành phần bằng cách sử dụng *cơ chế quảng bá*.
+Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử lên hai `ndarray` đồng kích thước.
+Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng phần tử bằng cách sử dụng *cơ chế lan truyền* (_broadcasting mechanism_).
 Cơ chế này làm việc theo cách sau:
-Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau cách biến đổi này, hai `ndarray` có cùng kích thước.
-Thứ hai, áp dụng các phép toàn từng thành phần lên hai mảng mới này.
+Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
+Thứ hai, áp dụng các phép toàn từng phần tử lên hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
