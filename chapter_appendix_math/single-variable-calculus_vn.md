@@ -614,7 +614,7 @@ The *Taylor series* provides a method to approximate the function $f(x)$ if we a
 -->
 
 *Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
-Ý tưởng là tìm một hàm số bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
+Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
 We saw the case of $n=2$ in the previous section and a little algebra shows this is
