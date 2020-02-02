@@ -653,7 +653,7 @@ với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được nếu
 Furthermore, we can get a degree $n$ polynomial by
 -->
 
-Hơn nữa, ta có thể lấy một phương trình bậc $n$ bằng cách
+Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách
 
 $$
 P_n(x) = \sum_{i = 0}^{n} \frac{f^{(i)}(x_0)}{i!}(x-x_0)^{i}.
