@@ -359,11 +359,7 @@ và thấy rằng khi $\epsilon \rightarrow 0$, về phải cũng tiến về kh
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
 -->
 
-<<<<<<< HEAD
 Cuối cùng, theo quy tắc dây chuyền, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
-=======
-Cuối cùng, với quy tắc chuỗi, chúng ta có thể làm tương tự sử dụng :eqref:`eq_small_change` và thấy rằng
->>>>>>> calculus part 5
 
 $$
 \begin{aligned}
