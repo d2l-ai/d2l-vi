@@ -9,9 +9,15 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 
 ## Thứ tự dịch
 
+Với các mục con (2.1, 2.2, ...)
 * [x] Đã dịch xong
 * [-] Đang dịch 
 * [ ] Chưa bắt đầu
+
+Với các chương (2., 3., ...)
+* [ ] Chưa revise
+* [-] Đang revise
+* [x] Đã revise xong.
 
 ### Mục lục
 * [x] Lời nói đầu
@@ -150,7 +156,7 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
     * 16.1. Generative Adversarial Networks
     * 16.2. Deep Convolutional Generative Adversarial Networks
 * [ ] 17. Appendix: Mathematics for Deep Learning
-    * [-] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính (xong giai đoạn 1)
+    * [x] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính
     * [ ] 17.2. Eigendecompositions
     * [-] 17.3. Single Variable Calculus
     * [ ] 17.4. Multivariable Calculus
