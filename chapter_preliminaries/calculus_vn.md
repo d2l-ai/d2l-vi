@@ -18,9 +18,10 @@ an inscribed polygon with more sides of equal length better approximates
 the circle. This process is also known as the *method of exhaustion*.
 -->
 
-Tìm diện tích của một đa giác vẫn là một bí ẩn cho tới tận $2.500$ năm trước, khi một người Hy Lạp cổ chia đa giác thành các tam giác và cộng diện tích của chúng lại.
+Tìm diện tích của một đa giác vẫn là một bí ẩn cho tới tận $2.500$ năm trước, khi người Hy Lạp cổ chia đa giác thành các tam giác và cộng diện tích của chúng lại.
 Để tìm diện tích của các hình cong, như hình tròn, người Hy Lạp cổ đại đặt các đa giác nội tiếp bên trong các hình cong đó.
-Như trong :numref:`fig_circle_area`, một đa giác nội tiếp với càng nhiều cạnh đều nhau thì càng xấp xỉ đúng diện tích của hình tròn. Quy trình này còn được biết đến như *phương pháp vét kiệt*.
+Như trong :numref:`fig_circle_area`, một đa giác nội tiếp với càng nhiều cạnh bằng nhau thì càng xấp xỉ đúng hình tròn. 
+Quy trình này còn được biết đến như *phương pháp vét kiệt*.
 
 <!--
 ![Find the area of a circle with the method of exhaustion.](../img/polygon_circle.svg)
@@ -41,7 +42,7 @@ such problems are ubiquitous in deep learning.
 -->
 
 Phương pháp vét kiệt chính là khởi nguồn của *giải tích tích phân* (sẽ được miêu tả trong :numref:`sec_integral_calculus`).
-Hơn $2.000$ năm sau, nhánh còn lại của giải tích, *giải tích vi phân* mới được sáng tạo.
+Hơn $2.000$ năm sau, nhánh còn lại của giải tích, *giải tích vi phân* ra đời.
 Trong những ứng dụng quan trọng nhất của giải tích vi phân, các bài toán tối ưu hoá sẽ tìm *cách tốt nhất* để thực hiện một công việc gì đấy.
 Như đã bàn đến trong :numref:`subsec_norms_and_objectives`, các bài toán như vậy vô cùng phổ biến trong học sâu.
 
@@ -62,14 +63,14 @@ that guide as to how to produce models whose validity extends
 beyond the exact set of data points used to train them.
 -->
 
-Trong học sâu, chúng ta *đào tạo* các mô hình, cập nhật chúng liên tục sao cho chúng càng lúc càng tốt hơn khi thấy càng nhiều dữ liệu hơn.
+Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi thấy nhiều dữ liệu hơn.
 Thường thì trở nên tốt hơn tức là tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
 Câu này lắt léo hơn ta tưởng nhiều.
 Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà ta chưa từng nhìn thấy.
 Nhưng chúng ta chỉ có thể đào tạo mô hình trên dữ liệu mà ta đang có thể thấy.
-Do đó ta có thể chia việc huấn luyện mô hình thành hai vấn đề:
+Do đó ta có thể phân tích việc huấn luyện mô hình thành hai vấn đề chính:
 i) *tối ưu hoá*: quy trình huấn luyện mô hình trên dữ liệu đã thấy.
-ii) *tổng quát hoá*: dựa trên các nguyên tắc toán học và sự uyên thâm của người huấn luyện, sẽ có các phương pháp để tạo ra các mô hình mà tính hiệu quả của nó vượt ra khỏi tập dữ liệu huấn luyện.
+ii) *tổng quát hoá*: dựa trên các nguyên tắc toán học và sự uyên thâm của người huấn luyện để tạo ra các mô hình mà tính hiệu quả của nó vượt ra khỏi tập dữ liệu huấn luyện.
 
 <!--
 To help you understand
