@@ -171,7 +171,7 @@ It was not solved until 1986 that the *backpropagation algorithm* introduced in 
 -->
 
 Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
-Đây là một cách tính toán không hiệu quả, đòi hỏi hai đánh giá đối với hàm mất mát để thấy được sự tác động của một biến lên hàm mất mát đó.  
+Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.  
 Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
 Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (_backpropagation algorithm_) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
 
