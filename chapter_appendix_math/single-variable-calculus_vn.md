@@ -212,7 +212,7 @@ Often times, it is intuitively useful to unravel the definition of derivative :e
 
 Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
 Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
-Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn biểu thức như sau:
+Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
 
 $$
 \frac{d}{dx}\left[x^4+\cos\left(\frac{x^2+1}{2x-1}\right)\right].
