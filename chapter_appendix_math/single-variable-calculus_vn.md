@@ -180,7 +180,7 @@ Back in our example, this value $8$ is different for different values of $x$, so
 More formally, this value dependent rate of change is referred to as the *derivative* which is written as
 -->
 
-Trở lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
+Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
 Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là:
 
 $$\frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon}.$$
