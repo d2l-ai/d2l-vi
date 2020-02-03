@@ -252,7 +252,7 @@ As was seen in :numref:`sec_calculus`, when computing derivatives one can often 
 We repeat them here for ease of reference.
 -->
 
-Theo :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ phương trình thành các hàm cơ bản. 
+Như ở :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ tính toán thành các hàm cơ bản. 
 Chúng tôi nhắc lại chúng ở đây để tham khảo. 
 
 <!--
