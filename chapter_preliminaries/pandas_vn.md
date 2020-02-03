@@ -75,7 +75,7 @@ This dataset has $4$ rows and $3$ columns, where each row describes the number o
 Bộ dữ liệu này có $4$ hàng và $3$ cột, trong đó mỗi hàng biểu thị số phòng ("NumRooms"), kiểu lối đi ("Alley"), và giá ("Price") của căn nhà.
 
 ```{.python .input}
-# If pandas is not installed, just uncomment the following line (Nếu pandas chưa được cài đặt, hãy gỡ comment dòng dưới đây:):
+# If pandas is not installed, just uncomment the following line:
 # !pip install pandas
 import pandas as pd
 
@@ -99,7 +99,7 @@ To handle missing data, typical methods include *imputation* and *deletion*, whe
 -->
 
 Để ý rằng giá trị "NaN" là các giá trị bị thiếu.
-Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy cho* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy cho  sẽ thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
+Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy cho* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy cho sẽ thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
 Dưới đây chúng ta xem xét phương pháp quy cho.
 
 <!--
