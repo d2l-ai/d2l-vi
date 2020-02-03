@@ -530,13 +530,13 @@ A.mean(axis=0), A.sum(axis=0) / A.shape[0]
 ### Non-Reduction Sum
 -->
 
-### *dịch tiêu đề phía trên*
+### Tổng không rút gọn
 
 <!--
 However, sometimes it can be useful to keep the number of axes unchanged when invoking `sum` or `mean` by setting `keepdims=True`.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, việc giữ lại số các trục đôi khi lại tỏ ra hữu dụng khi dùng hàm `sum` hoặc `mean`, bằng cách đặt `keepdims=True`.
 
 ```{.python .input}
 sum_A = A.sum(axis=1, keepdims=True)
@@ -547,7 +547,7 @@ sum_A
 For instance, since `sum_A` still keeps its $2$ axes after summing each row, we can divide `A` by `sum_A` with broadcasting.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua sự lan truyền.
 
 ```{.python .input}
 A / sum_A
@@ -557,7 +557,7 @@ A / sum_A
 If we want to calculate the cumulative sum of elements of `A` along some axis, say `axis=0` (row by row), we can call the `cumsum` function. This function will not reduce the input tensor along any axis.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Khi đó hàm này sẽ không giảm số chiều của tensor đầu vào theo bất cứ trục nào.
 
 ```{.python .input}
 A.cumsum(axis=0)
@@ -567,7 +567,7 @@ A.cumsum(axis=0)
 ## Dot Products
 -->
 
-## *dịch tiêu đề phía trên*
+## Tích vô hướng
 
 <!--
 So far, we have only performed elementwise operations, sums, and averages. 
@@ -576,7 +576,11 @@ However, one of the most fundamental operations is the dot product.
 Given two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their *dot product* $\mathbf{x}^\top \mathbf{y}$ (or $\langle \mathbf{x}, \mathbf{y}  \rangle$) is a sum over the products of the elements at the same position: $\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 -->
 
-*dịch đoạn phía trên*
+Cho đến giờ, chúng ta mới chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
+Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng có một mục riêng.
+Ngoài các phép tính trên từng hạng tử, một phép tính cơ bản khác là tích vô hướng.
+Với hai vector $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ cho trước, *tích vô hướng* (_dot product_) $\mathbf{x}^\top \mathbf{y}$ (hoặc $\langle \mathbf{x}, \mathbf{y}  \rangle$) là tổng các tích của những phần tử có cùng vị trí:
+$\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 
 ```{.python .input  n=14}
 y = np.ones(4)
@@ -587,7 +591,7 @@ x, y, np.dot(x, y)
 Note that we can express the dot product of two vectors equivalently by performing an elementwise multiplication and then a sum:
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta có thể thể hiện tích vô hướng của hai vector một cách tương tự bằng việc thực hiện tích từng phần tử tương ứng rồi lấy tổng:
 
 ```{.python .input  n=15}
 np.sum(x * y)
@@ -601,7 +605,11 @@ After normalizing two vectors to have the unit length, the dot products express 
 We will formally introduce this notion of *length* later in this section.
 -->
 
-*dịch đoạn phía trên*
+Tích vô hướng tỏ ra hữu dụng trong nhiều trường hợp.
+Ví dụ, với một tập các giá trị cho trước, biểu thị bởi vector $\mathbf{x}  \in \mathbb{R}^d$, và một tập các trọng số được biểu thị bởi $\mathbf{w} \in \mathbb{R}^d$, tổng trọng số của các giá trị trong $\mathbf{x}$ theo các trọng số trong $\mathbf{w}$ có thể được thể hiện bởi tích vô hướng $\mathbf{x}^\top \mathbf{w}$.
+Khi các trọng số không âm và có tổng bằng một($\left(\sum_{i=1}^{d} {w_i} = 1\right)$), tích vô hướng thể hiện phép tính *trung bình trọng số* (_weighted average_).
+Sau khi được chuẩn hoá thành hai vector đơn vị, tích vô hướng của hai vector đó là giá trị cos của góc giữa hai vector đó.
+Chúng tôi sẽ giới thiệu khái niệm về *độ dài* ở các phần sau trong mục này. 
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
