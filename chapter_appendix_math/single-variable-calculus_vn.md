@@ -256,7 +256,7 @@ Như ở :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng 
 Chúng tôi nhắc lại chúng ở đây để tham khảo. 
 
 <!--
-* **Derivative of constants.** $\frac{d}{dx}c = 0$.
+* **Đạo hàm hằng số.** $\frac{d}{dx}c = 0$.
 * **Derivative of linear functions.** $\frac{d}{dx}(ax) = a$.
 * **Power rule.** $\frac{d}{dx}x^n = nx^{n-1}$.
 * **Derivative of exponentials.** $\frac{d}{dx}e^x = e^x$.
