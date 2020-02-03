@@ -134,7 +134,8 @@ This is already enough to start to play around with in code.
 For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we can see how large this value is at the point $x = 4$ as follows.
 -->
 
-*dịch đoạn phía trên*
+Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành viết mã.
+Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
 ```{.python .input}
 # Define our function
@@ -154,7 +155,10 @@ Thus we may conclude, correctly, that the value we seek (the degree a change in 
 The way that a mathematician encodes this fact is
 -->
 
-*dịch đoạn phía trên*
+Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này là xấp xỉ $8$.
+Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$.
+Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
+Cách mà một nhà toán học giải mã vấn đề trên là:
 
 $$
 \lim_{\epsilon \rightarrow 0}\frac{L(4+\epsilon) - L(4)}{\epsilon} = 8.
@@ -167,14 +171,18 @@ If we tried to do this with even a paltry few thousand parameters, it would requ
 It was not solved until 1986 that the *backpropagation algorithm* introduced in :cite:`Rumelhart.Hinton.Williams.ea.1988` provided a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-*dịch đoạn phía trên*
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
+Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.  
+Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
+Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (_backpropagation algorithm_) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
 
 <!--
 Back in our example, this value $8$ is different for different values of $x$, so it makes sense to define it as a function of $x$.  
 More formally, this value dependent rate of change is referred to as the *derivative* which is written as
 -->
 
-*dịch đoạn phía trên*
+Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
+Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là:
 
 $$\frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon}.$$
 :eqlabel:`eq_der_def`
@@ -184,7 +192,8 @@ Different texts will use different notations for the derivative.
 For instance, all of the below notations indicate the same thing:
 -->
 
-*dịch đoạn phía trên*
+Các văn bản khác nhau sẽ sử dụng các ký hiệu khác nhau cho đạo hàm.
+Chẳng hạn, tất cả các ký hiệu dưới đây diễn giải cùng một ý nghĩa:
 
 $$
 \frac{df}{dx} = \frac{d}{dx}f = f' = \nabla_xf = D_xf = f_x.
@@ -202,7 +211,14 @@ $$
 Often times, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
 -->
 
-*dịch đoạn phía trên*
+Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
+Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
+Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
+
+$$
+\frac{d}{dx}\left[x^4+\cos\left(\frac{x^2+1}{2x-1}\right)\right].
+$$
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 4 ==================== -->
@@ -824,7 +840,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 *
