@@ -259,7 +259,7 @@ Chúng tôi nhắc lại chúng ở đây để tham khảo.
 * **Đạo hàm hằng số.** $\frac{d}{dx}c = 0$.
 * **Đạo hàm hàm tuyến tính.** $\frac{d}{dx}(ax) = a$.
 * **Quy tắc số mũ** $\frac{d}{dx}x^n = nx^{n-1}$.
-* **Derivative of exponentials.** $\frac{d}{dx}e^x = e^x$.
+* **Đạo hàm hàm mũ e.** $\frac{d}{dx}e^x = e^x$.
 * **Derivative of the logarithm.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 -->
 
