@@ -44,6 +44,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
 |-------------------------------------|----------------------------------------------------------------|------------------------|
+| chain rule | quy tắc dây chuyền |  |
 | classifier                          | bộ phân loại                                                   |                        |
 | clustering                          | phân cụm                                                       |                        |
 | code (danh từ)                      | mã nguồn                                                       |                        |
@@ -96,6 +97,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
+| expression (math) | biểu thức (toán học) | | 
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
