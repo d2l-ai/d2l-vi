@@ -135,7 +135,7 @@ For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we ca
 -->
 
 Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành viết mã.
-Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì chúng ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
+Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
 ```{.python .input}
 # Define our function
