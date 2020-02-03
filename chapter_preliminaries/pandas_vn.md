@@ -141,8 +141,8 @@ Now that all the entries in `inputs` and `outputs` are numerical, they can be co
 Once data are in this format, they can be further manipulated with those `ndarray` functionalities that we have introduced in :numref:`sec_ndarray`.
 -->
 
-Giờ thì toàn bộ các giá trị trong `inputs` và `outputs` đã ở dạng số, chúng đã có thể được chuyển sang định dang `ndarray`.
-Khi đã ở định dạng này, chúng có thể được biến đổi và xử lý với những chức năng của `ndarray` mà ta đã giới thiệu ở :numref:`sec_ndarray`.
+Giờ thì toàn bộ các giá trị trong `inputs` và `outputs` đã ở dạng số, chúng đã có thể được chuyển sang định dạng `ndarray`.
+Khi đã ở định dạng này, chúng có thể được biến đổi và xử lý với những chức năng của `ndarray` đã được giới thiệu ở :numref:`sec_ndarray`.
 
 ```{.python .input}
 from mxnet import np
@@ -163,7 +163,7 @@ X, y
 -->
 
 * Cũng như nhiều gói mở rộng trong hệ sinh thái khổng lồ của Python, `pandas` có thể làm việc được với `ndarray`.
-* Phương pháp quy cho hoặc xoá bỏ có thể dùng để xử lý dữ liệu thiếu.
+* Phương pháp quy cho hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
 
 <!--
 ## Exercises
@@ -182,7 +182,7 @@ Tạo một tập dữ liệu với nhiều hàng và cột hơn.
 2. Convert the preprocessed dataset to the `ndarray` format.
 -->
 
-1. Xoá cột mà có nhiều giá trị bị thiếu nhất.
+1. Xoá cột có nhiều giá trị bị thiếu nhất.
 2. Chuyển bộ dữ liệu đã được xử lý sang định dạng `ndarray`.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
