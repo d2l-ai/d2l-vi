@@ -237,7 +237,7 @@ A full formal treatment of calculus would derive everything from first principle
 We will not indulge in this temptation here, but rather provide an understanding of the common rules encountered.
 -->
 
-Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm hiện. 
+Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm cụ thể.
 Cách giải đầy đủ chính thống của giải tích sẽ là đạo hàm mọi thứ từ ngay từ đầu. 
 Tuy nhiên chúng ta sẽ không dung túng cho sự cám dỗ đó ở đây, mà thay vào đó cung cấp một nền tảng về những quy tắc phổ biến thường gặp. 
 
