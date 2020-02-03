@@ -317,7 +317,7 @@ Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \app
 The product is more subtle, and will require a new observation about how to work with these expressions.  We will begin as before using :eqref:`eq_small_change`:
 -->
 
-Tích phức hợp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
+Đối với tích thì phức tạp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
 Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
 
 $$
