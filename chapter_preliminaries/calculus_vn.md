@@ -284,7 +284,7 @@ def set_figsize(figsize=(3.5, 2.5)):
 The following `set_axes` function sets properties of axes of figures produced by `matplotlib`.
 -->
 
-Hàm `set_axes` sau đây cấu hình thuộc tính của các trục biểu đồ tạo bởi `matplotlib`.
+Hàm `set_axes` sau cấu hình thuộc tính của các trục biểu đồ tạo bởi `matplotlib`.
 
 ```{.python .input}
 # Saved in the d2l package for later use
