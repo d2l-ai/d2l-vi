@@ -377,7 +377,7 @@ Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The *partia
 -->
 
 Cho $y = f(x_1, x_2, \ldots, x_n)$ là một hàm với $n$ biến.
-Đạo hàm riêng của $y$ theo tham số thứ $i$ $x_i$ là
+*Đạo hàm riêng* của $y$ theo tham số thứ $i$ $x_i$ là
 
 $$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$
 
