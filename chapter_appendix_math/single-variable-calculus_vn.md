@@ -275,8 +275,8 @@ If every derivative needed to be separately computed and stored in a table, diff
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, có thể đã không có giải tích vi phân.
-Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm phía ở phần trên và giúp tính các đạo hàm phức tạo hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
+Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, giải tích vi phân gần như là không khả thi.
+Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạo hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
 Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là chuẩn hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
 
 <!--
@@ -317,7 +317,7 @@ Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \app
 The product is more subtle, and will require a new observation about how to work with these expressions.  We will begin as before using :eqref:`eq_small_change`:
 -->
 
-Tích phức hợp hơn một chút và đòi hỏi một quan sát mới.
+Tích phức hợp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
 Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
 
 $$
@@ -353,7 +353,7 @@ $$
 and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to zero as well.
 -->
 
-và thấy rằng khi $\epsilon \rightarrow 0$, về phải cũng tiến về không.
+và thấy rằng khi $\epsilon \rightarrow 0$, vế phải cũng tiến về không.
 
 <!--
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
