@@ -254,7 +254,9 @@ In the following,
 the `use_svg_display` function specifies the `matplotlib` package to output the svg figures for sharper images.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cách hiểu này của đạo hàm, ta sẽ dùng `matplotlib`, một thư viện vẽ biểu đồ thông dụng trong Python.
+Ta cần định nghĩa một số hàm để cấu hình thuộc tính của các biểu đồ được tạo ra bởi `matplotlib`.
+Trong đoạn mã sau, hàm `use_svg_display` chỉ định `matplotlib` tạo các biểu đồ ở dạng svg để có được chất lượng ảnh sắc nét hơn.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -267,7 +269,8 @@ def use_svg_display():
 We define the `set_figsize` function to specify the figure sizes. Note that here we directly use `d2l.plt` since the import statement `from matplotlib import pyplot as plt` has been marked for being saved in the `d2l` package in the preface.
 -->
 
-*dịch đoạn phía trên*
+Ta định nghĩa hàm `set_figsize` để chỉ định kích thước của biểu đồ.
+Lưu ý rằng ở đây ta đang dùng trực tiếp `d2l.plt` do câu lệnh `from matplotlib import pyplot as plt` đã được đánh dấu để lưu vào gói `d2l` trong phần Lời nói đầu.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -281,7 +284,7 @@ def set_figsize(figsize=(3.5, 2.5)):
 The following `set_axes` function sets properties of axes of figures produced by `matplotlib`.
 -->
 
-*dịch đoạn phía trên*
+Hàm `set_axes` sau cấu hình thuộc tính của các trục biểu đồ tạo bởi `matplotlib`.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -305,7 +308,7 @@ to plot multiple curves succinctly
 since we will need to visualize many curves throughout the book.
 -->
 
-*dịch đoạn phía trên*
+Với ba hàm cấu hình biểu đồ trên, ta định nghĩa hàm `plot` để vẽ nhiều đồ thị một cách nhanh chóng vì ta sẽ cần minh họa khá nhiều đồ thị xuyên suốt cuốn sách.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -342,7 +345,7 @@ def plot(X, Y=None, xlabel=None, ylabel=None, legend=[], xlim=None,
 Now we can plot the function $u = f(x)$ and its tangent line $y = 2x - 3$ at $x=1$, where the coefficient $2$ is the slope of the tangent line.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể vẽ đồ thị của hàm số $u = f(x)$ và đường tiếp tuyến của nó $y = 2x - 3$ tại $x=1$, với hệ số $2$ là độ dốc của tiếp tuyến.
 
 ```{.python .input}
 x = np.arange(0, 3, 0.1)
@@ -357,7 +360,7 @@ plot(x, [f(x), 2 * x - 3], 'x', 'f(x)', legend=['f(x)', 'Tangent line (x=1)'])
 ## Partial Derivatives
 -->
 
-## *dịch tiêu đề phía trên*
+## Đạo hàm riêng 
 
 <!--
 So far we have dealt with the differentiation of functions of just one variable.
@@ -365,14 +368,16 @@ In deep learning, functions often depend on *many* variables.
 Thus, we need to extend the ideas of differentiation to these *multivariate* functions.
 -->
 
-*dịch đoạn phía trên*
-
+Cho tới giờ, ta đã làm việc với đạo hàm của các hàm một biến.
+Trong học sâu, các hàm lại thường phụ thuộc vào *nhiều* biến.
+Do đó, ta cần mở rộng ý tưởng của đạo hàm cho các hàm *nhiều biến* đó.
 
 <!--
 Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The *partial derivative* of $y$ with respect to its $i^\mathrm{th}$  parameter $x_i$ is
 -->
 
-*dịch đoạn phía trên*
+Cho $y = f(x_1, x_2, \ldots, x_n)$ là một hàm với $n$ biến.
+*Đạo hàm riêng* của $y$ theo tham số thứ $i$ $x_i$ là
 
 $$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$
 
@@ -382,7 +387,8 @@ To calculate $\frac{\partial y}{\partial x_i}$, we can simply treat $x_1, \ldots
 For notation of partial derivatives, the following are equivalent:
 -->
 
-*dịch đoạn phía trên*
+Để tính $\frac{\partial y}{\partial x_i}$, ta chỉ cần coi $x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n$ là các hằng số và tính đạo hàm của $y$ theo $x_i$.
+Để biểu diễn đạo hàm riêng, các ký hiệu sau đây đều có ý nghĩa tương đương:
 
 $$\frac{\partial y}{\partial x_i} = \frac{\partial f}{\partial x_i} = f_{x_i} = f_i = D_i f = D_{x_i} f.$$
 
@@ -554,7 +560,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 5 -->
 *
