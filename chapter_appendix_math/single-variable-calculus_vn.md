@@ -260,7 +260,7 @@ Chúng tôi nhắc lại chúng ở đây để tham khảo.
 * **Đạo hàm hàm tuyến tính.** $\frac{d}{dx}(ax) = a$.
 * **Quy tắc số mũ** $\frac{d}{dx}x^n = nx^{n-1}$.
 * **Đạo hàm hàm mũ e.** $\frac{d}{dx}e^x = e^x$.
-* **Derivative of the logarithm.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
+* **Đàm hàm hàm logarit.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 -->
 
 *dịch đoạn phía trên*
