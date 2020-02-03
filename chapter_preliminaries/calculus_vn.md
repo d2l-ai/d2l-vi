@@ -270,7 +270,7 @@ We define the `set_figsize` function to specify the figure sizes. Note that here
 -->
 
 Ta định nghĩa hàm `set_figsize` để chỉ định kích thước của biểu đồ.
-Lưu ý rằng ở đây ta đang dùng trực tiếp `d2l.plt` do câu lệnh `from matplotlib import pyplot as plt` đã được đánh dấu để lưu trong phần Lời nói đầu.
+Lưu ý rằng ở đây ta đang dùng trực tiếp `d2l.plt` do câu lệnh `from matplotlib import pyplot as plt` đã được đánh dấu để lưu vào gói `d2l` trong phần Lời nói đầu.
 
 ```{.python .input}
 # Saved in the d2l package for later use
