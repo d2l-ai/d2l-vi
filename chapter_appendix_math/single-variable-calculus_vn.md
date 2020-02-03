@@ -275,8 +275,8 @@ If every derivative needed to be separately computed and stored in a table, diff
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, giải tích vi phân gần như là không khả thi.
-Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạo hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
+Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, giải tích vi phân sẽ gần như là không khả thi.
+Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạp hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
 Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là chuẩn hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
 
 <!--
@@ -339,12 +339,12 @@ As a general convention in this appendix, we will use "$\approx$" to denote that
 However, if we wish to be more formal we may examine the difference quotient
 -->
 
-Việc này giống với những tính toán trước đây, và dễ thấy kết quả ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$), <!-- Hmm -->
+Việc này giống với những tính toán trước đây, và dễ thấy kết quả của ta ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$) là số hạng được nhân với $\epsilon$, nhưng vấn đề là ở số hạng nhân với giá trị $\epsilon^{2}$.
 Chúng ta sẽ gọi số hạng này là *số hạng bậc cao*, bởi số mũ của $\epsilon^2$ cao hơn số mũ của $\epsilon^1$.
 Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên bây giờ ta có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số rất nhỏ.
 Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao hơn.
 Ta sẽ quy ước sử dụng "$\approx$" để ký hiệu rằng hai số hạng bằng nhau với sai số là các thành phần bậc cao.
-Tuy nhiên, nếu ta muốn viết phần dư một cách chính xác
+Tuy nhiên, nếu ta muốn chứng minh một cách toán học hơn, ta có thể xét phương trình
 $$
 \frac{f(x+\epsilon) - f(x)}{\epsilon} = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x) + \epsilon \frac{dg}{dx}(x)\frac{dh}{dx}(x),
 $$
@@ -353,7 +353,7 @@ $$
 and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to zero as well.
 -->
 
-và thấy rằng khi $\epsilon \rightarrow 0$, vế phải cũng tiến về không.
+và thấy rằng khi $\epsilon \rightarrow 0$, số hạng bên phải cũng tiến về không.
 
 <!--
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
