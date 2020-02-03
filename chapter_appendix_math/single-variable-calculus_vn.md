@@ -239,7 +239,7 @@ We will not indulge in this temptation here, but rather provide an understanding
 
 Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm cụ thể.
 Cách giải đầy đủ chính thống của giải tích sẽ là đạo hàm mọi thứ ngay từ đầu. 
-Tuy nhiên chúng ta sẽ không tính toán dựa trên định nghĩa, mà thay vào đó cung cấp một nền tảng về những quy tắc phổ biến thường gặp. 
+Tuy nhiên chúng ta sẽ không tính toán dựa trên định nghĩa, mà thay vào đó cung cấp một nền tảng giúp hiểu những quy tắc phổ biến thường gặp. 
 
 <!--
 ### Common Derivatives
