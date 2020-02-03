@@ -157,7 +157,7 @@ The way that a mathematician encodes this fact is
 
 Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này là xấp xỉ $8$.
 Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$.
-Vì vậy chúng ta có thể kết luận, một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
+Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
 
 $$
 \lim_{\epsilon \rightarrow 0}\frac{L(4+\epsilon) - L(4)}{\epsilon} = 8.
