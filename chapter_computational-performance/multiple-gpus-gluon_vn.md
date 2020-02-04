@@ -297,6 +297,9 @@ How would you modify training such that you have an overlap of up to two steps f
 ## [Discussions](https://discuss.mxnet.io/t/2384)
 -->
 
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2384)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ### Những người thực hiện
