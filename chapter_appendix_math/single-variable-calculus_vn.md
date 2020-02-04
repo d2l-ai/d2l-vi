@@ -508,7 +508,7 @@ Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một c�
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
 -->
 
-![Nếu giả định rằng đạo hàm bậc hai là hằng số dương, thì đạo hàm bậc nhất tăng dần, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
+![Nếu giả định rằng đạo hàm bậc hai là hằng số dương, thì đạo hàm bậc nhất đồng biến, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
 :label:`fig_positive-second`
 
 
@@ -528,7 +528,7 @@ Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
 -->
 
-![Nếu giả định đạo hàm bậc hai là một hằng số âm, thì đạo hàm bậc nhất là nghịch biến, nghĩa là hàm số tự thân có một cực đại.](../img/negSecDer.svg)
+![Nếu giả định đạo hàm bậc hai là một hằng số âm, thì đạo hàm bậc nhất nghịch biến, nghĩa là hàm số có một cực đại.](../img/negSecDer.svg)
 :label:`fig_negative-second`
 
 
@@ -537,8 +537,8 @@ Third, if the second derivative is a always zero, then the first derivative will
 This means that $f$ increases (or decreases) at a fixed rate, and $f$ is itself a straight line  as is shown in :numref:`fig_zero-second`.
 -->
 
-Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất sẽ không đổi---là hằng số!
-Nghĩa là hàm $f$ tăng lên (hoặc giảm xuống) với tốc độ cố định, và đồ thị $f$ là một đường thẳng giống như trong hình :numref:`fig_zero-second`.
+Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất là hằng số!
+Nghĩa là hàm $f$ tăng (hoặc giảm) với tốc độ cố định, và đồ thị $f$ là một đường thẳng giống như trong :numref:`fig_zero-second`.
 
 <!--
 ![If we assume the second derivative is zero, then the fist derivative is constant, which implies the function itself is a straight line.](../img/zeroSecDer.svg)
@@ -553,7 +553,7 @@ A positive second derivative leads to a upwards curve, while a negative second d
 -->
 
 Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
-Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ không cong tý nào hết.
+Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
 <!-- ===================== Kết thúc dịch Phần 8 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 9 ==================== -->
