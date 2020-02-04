@@ -245,7 +245,7 @@ Tuy nhiên bây giờ chúng ta sẽ không làm theo sự cám dỗ này mà th
 ### Common Derivatives
 -->
 
-### Đạo hàm thông thường
+### Đạo hàm phổ biến
 
 <!--
 As was seen in :numref:`sec_calculus`, when computing derivatives one can often times use a series of rules to reduce the computation to a few core functions.  
