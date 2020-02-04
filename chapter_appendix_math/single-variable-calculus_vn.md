@@ -524,13 +524,17 @@ This tells us the slope of our original function $f$ and therefore, the function
 In other words, the function $f$ curves up, and has a single minimum as is shown in :numref:`fig_positive-second`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, xét trường hợp đạo hàm bậc hai $f^{(2)}(x)$ là một hằng số dương.
+Điều này nghĩa là độ nghiêng của đạo hàm bậc nhất là dương.
+Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi tăng lên dương ở cuối cùng.
+Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm xuống, đi ngang, rồi tăng lên.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong :numref:`fig_positive-second`.
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/posSecDer.svg)
+![Nếu giả định rằng đạo hàm bậc hai là hằng số dương, thì đạo hàm bậc nhất đồng biến, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
 :label:`fig_positive-second`
 
 
@@ -541,13 +545,16 @@ Hence, the function $f$ itself increases, flattens out, then decreases.
 In other words, the function $f$ curves down, and has a single maximum as is shown in :numref:`fig_negative-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất là nghịch biến.
+Nghĩa là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
+Do vậy, hàm số $f$ tăng lên, đi ngang, rồi giảm.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại đơn như trong :numref:`fig_negative-second`.
 
 <!--
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/negSecDer.svg)
+![Nếu giả định đạo hàm bậc hai là một hằng số âm, thì đạo hàm bậc nhất nghịch biến, nghĩa là hàm số có một cực đại.](../img/negSecDer.svg)
 :label:`fig_negative-second`
 
 
@@ -556,13 +563,14 @@ Third, if the second derivative is a always zero, then the first derivative will
 This means that $f$ increases (or decreases) at a fixed rate, and $f$ is itself a straight line  as is shown in :numref:`fig_zero-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất là hằng số!
+Nghĩa là hàm $f$ tăng (hoặc giảm) với tốc độ cố định, và đồ thị $f$ là một đường thẳng giống như trong :numref:`fig_zero-second`.
 
 <!--
 ![If we assume the second derivative is zero, then the fist derivative is constant, which implies the function itself is a straight line.](../img/zeroSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/zeroSecDer.svg)
+![Nếu ta giả định đạo hàm bậc hai bằng không, thì đạo hàm bậc nhất là hằng số, nên đồ thị hàm này là một đường thẳng.](../img/zeroSecDer.svg)
 :label:`fig_zero-second`
 
 <!--
@@ -570,7 +578,8 @@ To summarize, the second derivative can be interpreted as describing the way tha
 A positive second derivative leads to a upwards curve, while a negative second derivative means that $f$ curves downwards, and a zero second derivative means that $f$ does not curve at all.
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
+Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
 <!-- ===================== Kết thúc dịch Phần 8 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 9 ==================== -->
@@ -858,7 +867,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 8 -->
-*
+* Mai Sơn Hải
 
 <!-- Phần 9 -->
 * Phạm Hồng Vinh
