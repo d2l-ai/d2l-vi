@@ -52,7 +52,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | code (động từ)                      | viết mã                                                        |                        |
 | computer vision                     | thị giác máy tính                                              |                        |
 | computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
-| computational graph                 | đồ hình tính toán                                              |                        |
+| computational graph                 | đồ thị tính toán                                              |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
