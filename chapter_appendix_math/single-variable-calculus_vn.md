@@ -477,7 +477,7 @@ This gives us the rate of change of $f$ at any point.
 -->
 
 Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
-Đó là lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
+Bắt đầu bằng việc lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
 Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
 <!--
