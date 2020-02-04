@@ -30,3 +30,6 @@ utility:
 
 type:glosssary:
   - glossary.md
+
+type:figures:
+  - img/*
