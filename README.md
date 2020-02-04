@@ -25,11 +25,11 @@ Với các chương (2., 3., ...)
 * [x] Ký hiệu
 * [x] Giới thiệu
 * [ ] 2. Preliminaries
-    * [-] 2.1. Data Manipulation
+    * [-] 2.1. Làm việc với Dữ liệu
     * [-] 2.2. Data Preprocessing
-    * [-] 2.3. Đại số Tuyến tính
+    * [x] 2.3. Đại số Tuyến tính
     * [-] 2.4. Calculus
-    * [ ] 2.5. Automatic Differentiation
+    * [-] 2.5. Automatic Differentiation
     * [ ] 2.6. Probability
     * [ ] 2.7. Documentation
 * [ ] 3. Linear Neural Networks
@@ -107,14 +107,14 @@ Với các chương (2., 3., ...)
     * [ ] 11.10. Adam
     * [ ] 11.11. Learning Rate Scheduling
 * [ ] 12. Computational Performance
-    * [ ] 12.1. Compilers and Interpreters
+    * [-] 12.1. Compilers and Interpreters
     * [ ] 12.2. Asynchronous Computation
     * [ ] 12.3. Automatic Parallelism
     * [ ] 12.4. Hardware
     * [ ] 12.5. Training on Multiple GPUs
     * [ ] 12.6. Concise Implementation for Multiple GPUs
     * [ ] 12.6. Parameter Servers
-* [ ] 13. kComputer Vision
+* [ ] 13. Computer Vision
     * [ ] 13.1. Image Augmentation
     * [ ] 13.2. Fine Tuning
     * [ ] 13.3. Object Detection and Bounding Boxes
