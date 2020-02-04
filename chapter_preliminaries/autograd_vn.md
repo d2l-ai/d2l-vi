@@ -51,7 +51,7 @@ npx.set_np()
 ## A Simple Example
 -->
 
-## *dịch tiêu đề phía trên*
+## Một ví dụ đơn giản
 
 <!--
 As a toy example, say that we are interested
@@ -61,7 +61,9 @@ with respect to the column vector $\mathbf{x}$.
 To start, let's create the variable `x` and assign it an initial value.
 -->
 
-*dịch đoạn phía trên*
+Lấy một ví dụ đơn giản.
+Giả sử chúng ta muốn tính vi phân của hàm số $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo vector cột $\mathbf{x}$.
+Để bắt đầu, hãy tạo biến `x` và gán cho nó một giá trị ban đầu.
 
 ```{.python .input  n=2}
 x = np.arange(4)
@@ -79,7 +81,8 @@ thousands or millions of times
 and could quickly run out of memory.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng trước khi có thể tính độ dốc của $y$ theo $\mathbf{x}$, chúng ta cần một nơi để lưu giữ nó.
+Đặc biệt quan trọng rằng ta không cấp thêm bộ nhớ mới mỗi khi muốn tính đạo hàm theo một biến xác định, bởi vì ta thường sẽ muốn cập nhật cùng một tham số hàng ngàn hàng vạn lần và như vậy bộ nhớ sẽ hết rất nhanh.
 
 <!--
 Note also that a gradient of a scalar-valued function
@@ -92,7 +95,9 @@ We allocate memory for an `ndarray`'s gradient
 by invoking its `attach_grad` method.
 -->
 
-*dịch đoạn phía trên*
+Cũng lưu ý rằng bản thân giá trị độ dốc của hàm số đơn trị theo một vector $\mathbf{x}$ là một vector với cùng kích thước.
+Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị độ dốc tính theo `x` như một đặc trưng của chính bản thân `ndarray` `x`.
+Chúng ta cấp bộ nhớ cho độ dốc của một `ndarray` bằng cách gọi hàm `attach_grad`.
 
 ```{.python .input  n=3}
 x.attach_grad()
