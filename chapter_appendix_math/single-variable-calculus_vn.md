@@ -491,7 +491,7 @@ To keep the notation clean, we will denote the $n$-th derivative as
 Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
 Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
 Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
-Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm bao nhiêu lần nữa cũng được để có cái gọi là đạo hàm cấp $n$.
+Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
 Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
 
 $$
