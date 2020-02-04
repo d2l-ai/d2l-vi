@@ -28,5 +28,5 @@ utility:
   - test_utils.py
   - tests/*
 
-type: glosssary:
+type:glosssary:
   - glossary.md
