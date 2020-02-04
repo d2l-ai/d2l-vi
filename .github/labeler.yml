@@ -2,25 +2,25 @@ deploy:
   - config.ini
   - deploy.sh
 
-chapter: preface:
+chapter:preface:
   - chapter_preface/*
 
-chapter: notation:
+chapter:notation:
   - chapter_notation/*
 
-chapter: install:
+chapter:install:
   - chapter_install/*
 
-chapter: introduction:
+chapter:introduction:
     - chapter_introduction/*
 
-chapter: math:
+chapter:math:
     - chapter_appendix_math/*
 
-chapter: preliminaries:
+chapter:preliminaries:
     - chapter_preliminaries/*
 
-chapter: computational-performance:
+chapter:computational-performance:
     - chapter_computational-performance/*
 
 utility:
