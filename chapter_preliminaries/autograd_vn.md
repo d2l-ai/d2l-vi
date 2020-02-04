@@ -38,10 +38,10 @@ filling in the partial derivatives with respect to each parameter.
 -->
 
 Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic diferentiation*).
-Trong khi nhiều thư viện yêu cầu ta phải biên dịch một *đồ hình biểu tượng* (*symbolic graph*) để có thể tự động tính đạo hàm, `autograd` cho phép ta tính đạo hàm ngay lập tức thông qua các dòng lệnh cầu khiến thường thấy.
-Mỗi khi dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ hình và theo dõi xem dữ liệu nào kết với các phép tính nào sẽ tạo ra kết quả.
-Với đồ hình này `autograd` sau đó có thể lan truyền ngược đạo hàm lại theo ý muốn.
-*Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ hình tính toán* và điền vào đó các đạo hàm riêng theo từng tham số. 
+Trong khi nhiều thư viện yêu cầu ta phải biên dịch một *đồ thị biểu tượng* (*symbolic graph*) để có thể tự động tính đạo hàm, `autograd` cho phép ta tính đạo hàm ngay lập tức thông qua các dòng lệnh cầu khiến thường thấy.
+Mỗi khi dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết với các phép tính nào sẽ tạo ra kết quả.
+Với đồ thị này `autograd` sau đó có thể lan truyền ngược đạo hàm lại theo ý muốn.
+*Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ thị tính toán* và điền vào đó các đạo hàm riêng theo từng tham số. 
 
 ```{.python .input  n=1}
 from mxnet import autograd, np, npx
