@@ -431,7 +431,7 @@ Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một h�
 ### Linear Approximation
 -->
 
-### Xấp Xỉ Tuyến Tính
+### Xấp xỉ Tuyến tính
 
 <!--
 When working with derivatives, it is often useful to geometrically interpret the approximation used above.  In particular, note that the equation
@@ -450,7 +450,7 @@ In this way we say that the derivative gives a linear approximation to the funct
 -->
 
 xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$.
-Theo cách này, chúng ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
+Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
 
 ```{.python .input}
 # Compute sin
@@ -468,7 +468,7 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ### Higher Order Derivatives
 -->
 
-### Đạo hàm cấp cao
+### Đạo hàm Cấp cao
 
 <!--
 Let's now do something that may on the surface seem strange.  
@@ -476,8 +476,8 @@ Take a function $f$ and compute the derivative $\frac{df}{dx}$.
 This gives us the rate of change of $f$ at any point.
 -->
 
-Bây giờ hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
-Lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
+Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
+Đó là lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
 Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
 <!--
@@ -834,7 +834,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 7 -->
-* Duy-Nguyen Ta
 
 <!-- Phần 8 -->
 *
