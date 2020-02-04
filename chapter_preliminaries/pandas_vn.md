@@ -18,13 +18,17 @@ We will cover more data preprocessing techniques in later chapters.
 -->
 
 Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật để manipulate dữ liệu được lưu sẵn trong các `ndarray`.
-Để...
+Để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường bắt đầu bằng việc tiền xử lý dữ liệu thô, chứ không phải là có ngay dữ liệu ngăn nắp được chuẩn bị sẵn ở format `ndarray`
+Trong số các công cụ phân tích data phổ biến trong Python, package `pandas` được dùng phổ biến.
+Giống nhiều packages khác trong hệ sinh thái Python, `pandas` có thể kết hợp với `ndarray`.
+Vì thế, chúng ta sẽ tóm tắt qua các bước để tiền xử lý dữ liệu thô với `pandas` và biến đổi chúng sang định dạng `ndarray`.
+Chúng ta sẽ bao quát nhiều kỹ thuật xử lý dữ liệu hơn ở các chương sau.
 
 <!--
 ## Reading the Dataset
 -->
 
-## Đọc bộ dữ liệu
+## Đọc tập dữ liệu
 
 <!--
 As an example, we begin by creating an artificial dataset that is stored in a csv (comma-separated values) file `../data/house_tiny.csv`. 
@@ -33,7 +37,10 @@ The following `mkdir_if_not_exist` function ensures that the directory `../data`
 The comment `# Saved in the d2l package for later use` is a special mark where the following function, class, or import statements are also saved in the `d2l` package so that we can directly invoke `d2l.mkdir_if_not_exist()` later.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, ta bắt đầu bằng tạo tập dữ liệu nhân tạo chứa trong một file csv (giá trị tách nhau bởi dấu phẩy - *comma-separated values*) `../data/house_tiny.csv`.
+Dữ liệu trong các định dạng khác thì cách xử lý cũng tương tự.
+Hàm `mkdir_if_not_exist` để đảm bảo rằng thư mục `../data` là có tồn tại.
+Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong package d2l để dùng sau*) là dấu hiệu riêng cho để các hàm, các lớp, hoặc lệnh import sau này được lưu trong gói `d2l` có thể được gọi trực tiếp `d2l.mkdir_if_not_exist()` sau này.
 
 ```{.python .input}
 import os
@@ -50,7 +57,7 @@ def mkdir_if_not_exist(path):
 Below we write the dataset row by row into a csv file.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây ta viết tệp dữ liệu theo cách hàng nối hàng vào trong file csv.
 
 ```{.python .input}
 data_file = '../data/house_tiny.csv'
