@@ -17,12 +17,12 @@ So, we will briefly walk through steps for preprocessing raw data with `pandas` 
 We will cover more data preprocessing techniques in later chapters.
 -->
 
-Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật để manipulate dữ liệu được lưu sẵn trong các `ndarray`.
-Để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường bắt đầu bằng việc tiền xử lý dữ liệu thô, chứ không phải là có ngay dữ liệu ngăn nắp được chuẩn bị sẵn ở format `ndarray`
-Trong số các công cụ phân tích data phổ biến trong Python, package `pandas` được dùng phổ biến.
-Giống nhiều packages khác trong hệ sinh thái Python, `pandas` có thể kết hợp với `ndarray`.
-Vì thế, chúng ta sẽ tóm tắt qua các bước để tiền xử lý dữ liệu thô với `pandas` và biến đổi chúng sang định dạng `ndarray`.
-Chúng ta sẽ bao quát nhiều kỹ thuật xử lý dữ liệu hơn ở các chương sau.
+Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật thao tác dữ liệu được lưu trong dạng `ndarray`.
+Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không phải luôn có ngay dữ liệu ngăn nắp đã chuẩn bị sẵn trong định dạng `ndarray`
+Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` hay được sử dụng nhiều.
+Giống nhiều gói khác trong hệ sinh thái Python, `pandas` có thể làm việc cùng định dạng `ndarray`.
+Vì vậy, chúng ta sẽ đi nhanh qua các bước để tiền xử lý dữ liệu thô bằng `pandas` rồi đổi chúng sang dạng `ndarray`.
+Sau đó ta sẽ bao quát nhiều kỹ thuật xử lý dữ liệu hơn trong các chương sau.
 
 <!--
 ## Reading the Dataset
@@ -37,10 +37,10 @@ The following `mkdir_if_not_exist` function ensures that the directory `../data`
 The comment `# Saved in the d2l package for later use` is a special mark where the following function, class, or import statements are also saved in the `d2l` package so that we can directly invoke `d2l.mkdir_if_not_exist()` later.
 -->
 
-Ví dụ, ta bắt đầu bằng tạo tập dữ liệu nhân tạo chứa trong một file csv (giá trị tách nhau bởi dấu phẩy - *comma-separated values*) `../data/house_tiny.csv`.
-Dữ liệu trong các định dạng khác thì cách xử lý cũng tương tự.
-Hàm `mkdir_if_not_exist` để đảm bảo rằng thư mục `../data` là có tồn tại.
-Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong package d2l để dùng sau*) là dấu hiệu riêng cho để các hàm, các lớp, hoặc lệnh import sau này được lưu trong gói `d2l` có thể được gọi trực tiếp `d2l.mkdir_if_not_exist()` sau này.
+Lấy một ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
+Dữ liệu trong các định dạng khác cũng có thể được xử lý tương tự.
+Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` có tồn tại.
+Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là nhãn riêng cho các hàm, các lớp hoặc các lệnh import sau này được lưu trong gói `d2l` để ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()` sau này.
 
 ```{.python .input}
 import os
@@ -57,7 +57,7 @@ def mkdir_if_not_exist(path):
 Below we write the dataset row by row into a csv file.
 -->
 
-Dưới đây ta viết tệp dữ liệu theo cách hàng nối hàng vào trong file csv.
+Sau đây ta ghi tệp dữ liệu vào file csv theo kiểu hàng nối hàng.
 
 ```{.python .input}
 data_file = '../data/house_tiny.csv'
