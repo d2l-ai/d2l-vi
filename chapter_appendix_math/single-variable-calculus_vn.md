@@ -310,7 +310,8 @@ By comparing this result with the fact that $f(x+\epsilon) \approx f(x) + \epsil
 The intuition here is: when we change the input $x$, $g$ and $h$ jointly contribute to the change of the output by $\frac{dg}{dx}(x)$ and $\frac{dh}{dx}(x)$.
 -->
 
-Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta thấy rằng $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi. 
+Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta thấy rằng $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi.
+Việc này có thể giải thích như sau: khi ta thay đổi đầu vào $x$, $g$ và $h$ cùng đóng góp tới sự thay đổi $\frac{dg}{dx}(x)$ và $\frac{dh}{dx}(x)$ ở đầu ra.
 
 
 <!--
