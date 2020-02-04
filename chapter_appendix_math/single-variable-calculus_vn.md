@@ -785,7 +785,7 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Derivatives can be used to express how functions change when we change the input by a small amount.
@@ -793,15 +793,17 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 * Derivatives can be iterated to get second or higher order derivatives.  Each increase in order provides more fine grained information on the behavior of the function.
 * Using information in the derivatives of a single data point, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
-
-*dịch đoạn phía trên*
+* Đạm hàm có thể sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
+* Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo quy tắc để tính đạo hàm phức tạp tùy ý.
+* Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta nhiều thông tin chi tiết hơn về hành vi của hàm số.
+* Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ khai triển Taylor.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What is the derivative of $x^3-4x+1$?
@@ -810,7 +812,10 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 4. Where is the minimum of $f(x) = x\log(x)$ for $x\ge0$ (where we assume that $f$ takes the limiting value of $0$ at $f(0)$)?
 -->
 
-*dịch đoạn phía trên*
+1. Đạo hàm của $x^3-4x+1$ là gì?
+2. Đạo hàm của $\log(\frac{1}{x})$ là gì?
+3. Đúng hay Sai: Nếu $f'(x) = 0$ thì $f$ có cực đại hoặc cực tiểu tại $x$?
+4. Cực tiểu của $f(x) = x\log(x)$ với $x\ge0$ ở đâu (ở đây ta giả sử rằng $f$ có giới hạn bằng $0$ tại $f(0)$)?
 
 
 <!--
@@ -879,4 +884,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 12 -->
-*
+* Nguyễn Văn Tâm
