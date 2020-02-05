@@ -94,8 +94,8 @@ by an infinitesimally small amount.
 -->
 
 Chúng ta sẽ bắt đầu bằng việc nói tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
-Trong học sâu, ta thường chọn những hàm mất mát có tính khả vi theo các tham số của mô hình.
-Nói đơn giản, có nghĩa là với mỗi tham số, ta có thể xác định hàm mất mát tăng hoặc giảm nhanh như thế nào khi ta *tăng* hoặc *giảm* tham số đó chỉ một lượng cực nhỏ.
+Trong học sâu, ta thường chọn những hàm mất mát khả vi theo các tham số của mô hình.
+Nói đơn giản, với mỗi tham số, ta có thể xác định hàm mất mát tăng hoặc giảm nhanh như thế nào khi tham số đó *tăng* hoặc *giảm* chỉ một lượng cực nhỏ.
 
 <!--
 Suppose that we have a function $f: \mathbb{R} \rightarrow \mathbb{R}$,
@@ -125,8 +125,8 @@ the variation $h$ in $x$, which approaches $0$.
 nếu giới hạn này tồn tại.
 Nếu $f'(a)$ tồn tại, $f$ được gọi là *khả vi* (_differentiable_) tại $a$.
 Nếu $f$ khả vi tại mọi điểm trong một khoảng, thì hàm này được gọi là khả vi trong khoảng đó.
-Ta có thể giải nghĩa đạo hàm $f'(x)$ trong :eqref:`eq_derivative` như là mức độ thay đổi *tức thời* của hàm $f$ theo biến $x$.
-Cái gọi là mức độ thay đổi tức thời được dựa trên độ biến thiên $h$ trong $x$ khi $h$ tiến về $0$.
+Ta có thể giải nghĩa đạo hàm $f'(x)$ trong :eqref:`eq_derivative` như là tốc độ thay đổi *tức thời* của hàm $f$ theo biến $x$.
+Cái gọi là tốc độ thay đổi tức thời được dựa trên độ biến thiên $h$ trong $x$ khi $h$ tiến về $0$.
 
 <!--
 To illustrate derivatives,
