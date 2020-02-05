@@ -27,6 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                                      |                       |
 | attention mechanisms                  | cơ chế tập trung                                               |                       |
 | alternative hypothesis                | giả thuyết đối                                                 |                       |
+| automatic differentiation             | tính vi phân tự động                                           |                       |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -51,6 +52,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | code (động từ)                      | viết mã                                                        |                        |
 | computer vision                     | thị giác máy tính                                              |                        |
 | computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
+| computational graph                 | đồ thị tính toán                                              |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
@@ -242,6 +244,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sensitivity                  | độ nhạy                                                        |                       |
 | statistical power            | năng lực thống kê                                              |                       |
 | significance test            | kiểm định ý nghĩa                                              |                       |
+| symbolic graph               | đồ thị biểu tượng                                             |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
