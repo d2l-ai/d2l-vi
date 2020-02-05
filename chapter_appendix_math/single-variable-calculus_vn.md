@@ -870,34 +870,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Hồng Vinh
 * Vũ Hữu Tiệp
 
-<!-- Phần 2 -->
-*
-
 <!-- Phần 3 -->
 * Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
 * Đoàn Võ Duy Thanh
-* Phạm Hồng Vinh
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
 
 <!-- Phần 6 -->
-* Duy-Nguyen Ta
-
-<!-- Phần 7 -->
+* Tạ H. Duy Nguyên
 
 <!-- Phần 8 -->
 * Mai Sơn Hải
-
-<!-- Phần 9 -->
-* Phạm Hồng Vinh
-
-<!-- Phần 10 -->
-*
 
 <!-- Phần 11 -->
 * Phạm Minh Đức

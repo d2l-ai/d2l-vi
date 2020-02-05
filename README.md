@@ -25,12 +25,12 @@ Với các chương (2., 3., ...)
 * [x] Ký hiệu
 * [x] Giới thiệu
 * [ ] 2. Preliminaries
-    * [-] 2.1. Làm việc với Dữ liệu
-    * [-] 2.2. Data Preprocessing
+    * [-] 2.1. Thao tác với Dữ liệu
+    * [-] 2.2. Tiền Xử lý Dữ liệu
     * [x] 2.3. Đại số Tuyến tính
-    * [-] 2.4. Calculus
-    * [-] 2.5. Automatic Differentiation
-    * [ ] 2.6. Probability
+    * [-] 2.4. Giải tích
+    * [-] 2.5. Tính vi phân Tự động
+    * [-] 2.6. Probability
     * [ ] 2.7. Documentation
 * [ ] 3. Linear Neural Networks
     * [ ] 3.1. Linear Regression
@@ -153,12 +153,12 @@ Với các chương (2., 3., ...)
     * [ ] 15.9. Factorization Machines
     * [ ] 15.10. Deep Factorization Machines
 * [ ] 16. Generative Adversarial Networks
-    * 16.1. Generative Adversarial Networks
-    * 16.2. Deep Convolutional Generative Adversarial Networks
+    * [ ] 16.1. Generative Adversarial Networks
+    * [ ] 16.2. Deep Convolutional Generative Adversarial Networks
 * [ ] 17. Appendix: Mathematics for Deep Learning
     * [x] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính
     * [ ] 17.2. Eigendecompositions
-    * [-] 17.3. Single Variable Calculus
+    * [x] 17.3. Giải tích một biến
     * [ ] 17.4. Multivariable Calculus
     * [ ] 17.5. Integral Calculus
     * [ ] 17.6. Random Variables
