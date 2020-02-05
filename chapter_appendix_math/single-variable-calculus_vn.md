@@ -793,7 +793,7 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 * Derivatives can be iterated to get second or higher order derivatives.  Each increase in order provides more fine grained information on the behavior of the function.
 * Using information in the derivatives of a single data point, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
-* Đạm hàm có thể sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
+* Đạo hàm có thể được sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
 * Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo quy tắc để tính đạo hàm phức tạp tùy ý.
 * Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta nhiều thông tin chi tiết hơn về hành vi của hàm số.
 * Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ khai triển Taylor.
