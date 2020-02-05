@@ -4,7 +4,7 @@
 # Computational Performance
 -->
 
-# Hiệu năng tính toán
+# Hiệu năng Tính toán
 :label:`chap_performance`
 
 <!--
