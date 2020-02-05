@@ -79,7 +79,7 @@ here we give a very brief primer on differential calculus
 that is commonly used in deep learning.
 -->
 
-Để giúp bạn hiểu các bài toán tối ưu và các phương pháp tối ưu trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương vỡ lòng ngắn về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
+Để giúp bạn hiểu các bài toán tối ưu và các phương pháp tối ưu trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương ngắn vỡ lòng về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
