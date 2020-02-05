@@ -142,14 +142,15 @@ print(inputs)
 ## Conversion to the  `ndarray` Format
 -->
 
-## *dịch tiêu đề phía trên*
+## Chuyển sang định dạng `ndarray`
 
 <!--
 Now that all the entries in `inputs` and `outputs` are numerical, they can be converted to the `ndarray` format.
 Once data are in this format, they can be further manipulated with those `ndarray` functionalities that we have introduced in :numref:`sec_ndarray`.
 -->
 
-*dịch đoạn phía trên*
+Giờ thì toàn bộ các giá trị trong `inputs` và `outputs` đã ở dạng số, chúng đã có thể được chuyển sang định dạng `ndarray`.
+Khi đã ở định dạng này, chúng có thể được biến đổi và xử lý với những chức năng của `ndarray` đã được giới thiệu ở :numref:`sec_ndarray`.
 
 ```{.python .input}
 from mxnet import np
@@ -162,34 +163,35 @@ X, y
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Like many other extension packages in the vast ecosystem of Python, `pandas` can work together with `ndarray`.
 * Imputation and deletion can be used to handle missing data.
 -->
 
-*dịch đoạn phía trên*
-
+* Cũng như nhiều gói mở rộng trong hệ sinh thái khổng lồ của Python, `pandas` có thể làm việc được với `ndarray`.
+* Phương pháp quy cho hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 Create a raw dataset with more rows and columns.
 -->
 
-*dịch đoạn phía trên*
+Tạo một tập dữ liệu với nhiều hàng và cột hơn.
 
 <!--
 1. Delete the column with the most missing values.
 2. Convert the preprocessed dataset to the `ndarray` format.
 -->
 
-*dịch đoạn phía trên*
+1. Xoá cột có nhiều giá trị bị thiếu nhất.
+2. Chuyển bộ dữ liệu đã được xử lý sang định dạng `ndarray`.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
