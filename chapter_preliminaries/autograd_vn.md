@@ -18,7 +18,7 @@ can be a pain (and often error-prone).
 -->
 
 Như đã giải thích trong :numref:`sec_calculus`, vi phân là phép tính thiết yếu trong hầu như tất cả mọi thuật toán học sâu.
-Mặc dù các phép toán trong việc tính đạo hàm khá trực quan, chỉ yêu cầu một chút kiến thức giải tích, với những mô hình phức tạp, tính rõ ràng ra các quy tắc cập nhật khá là đau khổ (và thường rất dễ sai).
+Mặc dù các phép toán trong việc tính đạo hàm khá trực quan và chỉ yêu cầu một chút kiến thức giải tích, nhưng với các mô hình phức tạp, việc tự tính rõ ràng từng bước khá là mệt (và thường rất dễ sai).
 
 <!--
 The `autograd` package expedites this work
@@ -39,9 +39,9 @@ filling in the partial derivatives with respect to each parameter.
 
 Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic diferentiation*).
 Trong khi nhiều thư viện yêu cầu ta phải biên dịch một *đồ thị biểu tượng* (*symbolic graph*) để có thể tự động tính đạo hàm, `autograd` cho phép ta tính đạo hàm ngay lập tức thông qua các dòng lệnh cầu khiến thường thấy.
-Mỗi khi dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết với các phép tính nào sẽ tạo ra kết quả.
+Mỗi khi đưa dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết hợp với các phép tính nào sẽ tạo ra kết quả.
 Với đồ thị này `autograd` sau đó có thể lan truyền ngược đạo hàm lại theo ý muốn.
-*Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ thị tính toán* và điền vào đó các đạo hàm riêng theo từng tham số. 
+*Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ thị tính toán* và điền vào đó các giá trị đạo hàm riêng theo từng tham số. 
 
 ```{.python .input  n=1}
 from mxnet import autograd, np, npx
