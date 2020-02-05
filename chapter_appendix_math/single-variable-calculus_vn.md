@@ -134,7 +134,8 @@ This is already enough to start to play around with in code.
 For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we can see how large this value is at the point $x = 4$ as follows.
 -->
 
-*dịch đoạn phía trên*
+Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành viết mã.
+Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
 ```{.python .input}
 # Define our function
@@ -154,7 +155,10 @@ Thus we may conclude, correctly, that the value we seek (the degree a change in 
 The way that a mathematician encodes this fact is
 -->
 
-*dịch đoạn phía trên*
+Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này là xấp xỉ $8$.
+Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$.
+Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
+Cách mà một nhà toán học giải mã vấn đề trên là:
 
 $$
 \lim_{\epsilon \rightarrow 0}\frac{L(4+\epsilon) - L(4)}{\epsilon} = 8.
@@ -167,14 +171,18 @@ If we tried to do this with even a paltry few thousand parameters, it would requ
 It was not solved until 1986 that the *backpropagation algorithm* introduced in :cite:`Rumelhart.Hinton.Williams.ea.1988` provided a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-*dịch đoạn phía trên*
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
+Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.  
+Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
+Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (_backpropagation algorithm_) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
 
 <!--
 Back in our example, this value $8$ is different for different values of $x$, so it makes sense to define it as a function of $x$.  
 More formally, this value dependent rate of change is referred to as the *derivative* which is written as
 -->
 
-*dịch đoạn phía trên*
+Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
+Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là:
 
 $$\frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon}.$$
 :eqlabel:`eq_der_def`
@@ -184,7 +192,8 @@ Different texts will use different notations for the derivative.
 For instance, all of the below notations indicate the same thing:
 -->
 
-*dịch đoạn phía trên*
+Các văn bản khác nhau sẽ sử dụng các ký hiệu khác nhau cho đạo hàm.
+Chẳng hạn, tất cả các ký hiệu dưới đây diễn giải cùng một ý nghĩa:
 
 $$
 \frac{df}{dx} = \frac{d}{dx}f = f' = \nabla_xf = D_xf = f_x.
@@ -202,7 +211,14 @@ $$
 Often times, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
 -->
 
-*dịch đoạn phía trên*
+Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
+Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
+Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
+
+$$
+\frac{d}{dx}\left[x^4+\cos\left(\frac{x^2+1}{2x-1}\right)\right].
+$$
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 4 ==================== -->
@@ -276,14 +292,16 @@ Chúng tôi nhắc lại chúng ở đây để tham khảo.
 ### Derivative Rules
 -->
 
-### *dịch tiêu đề phía trên*
+### Quy tắc tính đạo hàm
 
 <!--
 If every derivative needed to be separately computed and stored in a table, differential calculus would be near impossible.  
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-*dịch đoạn phía trên*
+Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, giải tích vi phân sẽ gần như là không khả thi.
+Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạp hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
+Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là chuẩn hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
 
 <!--
 * **Sum rule.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
@@ -291,13 +309,16 @@ It is a gift of mathematics that we can generalize the above derivatives and com
 * **Chain rule.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 -->
 
-*dịch đoạn phía trên*
+* **Quy tắc tổng.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
+* **Quy tắc tích.** $\frac{d}{dx}\left(g(x)\cdot h(x)\right) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$.
+* **Quy tắc dây chuyền.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 
 <!--
 Let's see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
 -->
 
-*dịch đoạn phía trên*
+* Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này.
+* Với quy tắc tổng, xét dãy suy luận sau đây:
 
 $$
 \begin{aligned}
@@ -313,14 +334,16 @@ By comparing this result with the fact that $f(x+\epsilon) \approx f(x) + \epsil
 The intuition here is: when we change the input $x$, $g$ and $h$ jointly contribute to the change of the output by $\frac{dg}{dx}(x)$ and $\frac{dh}{dx}(x)$.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta thấy rằng $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi.
+Việc này có thể giải thích như sau: khi ta thay đổi đầu vào $x$, $g$ và $h$ cùng đóng góp tới sự thay đổi $\frac{dg}{dx}(x)$ và $\frac{dh}{dx}(x)$ ở đầu ra.
 
 
 <!--
 The product is more subtle, and will require a new observation about how to work with these expressions.  We will begin as before using :eqref:`eq_small_change`:
 -->
 
-*dịch đoạn phía trên*
+Đối với tích thì phức tạp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
+Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
 
 $$
 \begin{aligned}
@@ -341,8 +364,12 @@ As a general convention in this appendix, we will use "$\approx$" to denote that
 However, if we wish to be more formal we may examine the difference quotient
 -->
 
-*dịch đoạn phía trên*
-
+Việc này giống với những tính toán trước đây, và dễ thấy kết quả của ta ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$) là số hạng được nhân với $\epsilon$, nhưng vấn đề là ở số hạng nhân với giá trị $\epsilon^{2}$.
+Chúng ta sẽ gọi số hạng này là *số hạng bậc cao*, bởi số mũ của $\epsilon^2$ cao hơn số mũ của $\epsilon^1$.
+Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên bây giờ ta có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số rất nhỏ.
+Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao hơn.
+Ta sẽ quy ước sử dụng "$\approx$" để ký hiệu rằng hai số hạng bằng nhau với sai số là các thành phần bậc cao.
+Tuy nhiên, nếu ta muốn chứng minh một cách toán học hơn, ta có thể xét phương trình
 $$
 \frac{f(x+\epsilon) - f(x)}{\epsilon} = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x) + \epsilon \frac{dg}{dx}(x)\frac{dh}{dx}(x),
 $$
@@ -351,7 +378,7 @@ $$
 and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to zero as well.
 -->
 
-*dịch đoạn phía trên*
+và thấy rằng khi $\epsilon \rightarrow 0$, số hạng bên phải cũng tiến về không.
 
 <!--
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
@@ -439,13 +466,14 @@ Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một h�
 ### Linear Approximation
 -->
 
-### *dịch tiêu đề phía trên*
+### Xấp xỉ Tuyến tính
 
 <!--
 When working with derivatives, it is often useful to geometrically interpret the approximation used above.  In particular, note that the equation
 -->
 
-*dịch đoạn phía trên*
+Thông thường khi làm việc với đạo hàm, sẽ rất hữu ích nếu chúng ta có thể diễn tả sự xấp xỉ ở trên theo phương diện hình học.
+Nói một cách cụ thể, phương trình này
 
 $$
 f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x),
@@ -456,7 +484,8 @@ approximates the value of $f$ by a line which passes through the point $(x, f(x)
 In this way we say that the derivative gives a linear approximation to the function $f$, as illustrated below:
 -->
 
-*dịch đoạn phía trên*
+xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$.
+Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
 
 ```{.python .input}
 # Compute sin
@@ -474,7 +503,7 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ### Higher Order Derivatives
 -->
 
-### *dịch tiêu đề phía trên*
+### Đạo hàm Cấp cao
 
 <!--
 Let's now do something that may on the surface seem strange.  
@@ -482,7 +511,9 @@ Take a function $f$ and compute the derivative $\frac{df}{dx}$.
 This gives us the rate of change of $f$ at any point.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
+Bắt đầu bằng việc lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
+Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
 <!--
 However, the derivative, $\frac{df}{dx}$, can be viewed as a function itself, so nothing stops us from computing the derivative of $\frac{df}{dx}$ to get $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.  
@@ -492,7 +523,11 @@ We may apply the derivative any number of times to obtain what is called the $n$
 To keep the notation clean, we will denote the $n$-th derivative as
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
+Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
+Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
+Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
+Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
 
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
@@ -503,7 +538,8 @@ Let's try to understand *why* this is a useful notion.
 Below, we visualize $f^{(2)}(x)$, $f^{(1)}(x)$, and $f(x)$.
 -->
 
-*dịch đoạn phía trên*
+Hãy tìm hiểu xem *tại sao* đây lại là một khái niệm hữu ích.
+Các hàm số $f^{(2)}(x)$, $f^{(1)}(x)$, và $f(x)$ được biểu diễn trong các đồ thị dưới đây.
 
 <!-- ===================== Kết thúc dịch Phần 7 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 8 ==================== -->
@@ -516,13 +552,17 @@ This tells us the slope of our original function $f$ and therefore, the function
 In other words, the function $f$ curves up, and has a single minimum as is shown in :numref:`fig_positive-second`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, xét trường hợp đạo hàm bậc hai $f^{(2)}(x)$ là một hằng số dương.
+Điều này nghĩa là độ nghiêng của đạo hàm bậc nhất là dương.
+Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi tăng lên dương ở cuối cùng.
+Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm xuống, đi ngang, rồi tăng lên.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong :numref:`fig_positive-second`.
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/posSecDer.svg)
+![Nếu giả định rằng đạo hàm bậc hai là hằng số dương, thì đạo hàm bậc nhất đồng biến, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
 :label:`fig_positive-second`
 
 
@@ -533,13 +573,16 @@ Hence, the function $f$ itself increases, flattens out, then decreases.
 In other words, the function $f$ curves down, and has a single maximum as is shown in :numref:`fig_negative-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất là nghịch biến.
+Nghĩa là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
+Do vậy, hàm số $f$ tăng lên, đi ngang, rồi giảm.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại đơn như trong :numref:`fig_negative-second`.
 
 <!--
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/negSecDer.svg)
+![Nếu giả định đạo hàm bậc hai là một hằng số âm, thì đạo hàm bậc nhất nghịch biến, nghĩa là hàm số có một cực đại.](../img/negSecDer.svg)
 :label:`fig_negative-second`
 
 
@@ -548,13 +591,14 @@ Third, if the second derivative is a always zero, then the first derivative will
 This means that $f$ increases (or decreases) at a fixed rate, and $f$ is itself a straight line  as is shown in :numref:`fig_zero-second`.
 -->
 
-*dịch đoạn phía trên*
+Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất là hằng số!
+Nghĩa là hàm $f$ tăng (hoặc giảm) với tốc độ cố định, và đồ thị $f$ là một đường thẳng giống như trong :numref:`fig_zero-second`.
 
 <!--
 ![If we assume the second derivative is zero, then the fist derivative is constant, which implies the function itself is a straight line.](../img/zeroSecDer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/zeroSecDer.svg)
+![Nếu ta giả định đạo hàm bậc hai bằng không, thì đạo hàm bậc nhất là hằng số, nên đồ thị hàm này là một đường thẳng.](../img/zeroSecDer.svg)
 :label:`fig_zero-second`
 
 <!--
@@ -562,7 +606,8 @@ To summarize, the second derivative can be interpreted as describing the way tha
 A positive second derivative leads to a upwards curve, while a negative second derivative means that $f$ curves downwards, and a zero second derivative means that $f$ does not curve at all.
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
+Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
 <!-- ===================== Kết thúc dịch Phần 8 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 9 ==================== -->
@@ -571,7 +616,9 @@ A positive second derivative leads to a upwards curve, while a negative second d
 Let's take this one step further. Consider the function $g(x) = ax^{2}+ bx + c$.  We can then compute that
 -->
 
-*dịch đoạn phía trên*
+Hãy thử tiến xa hơn một bước.
+Xét hàm $g(x) = ax^{2}+ bx + c$.
+Ta có thể tính được
 
 $$
 \begin{aligned}
@@ -585,7 +632,9 @@ If we have some original function $f(x)$ in mind, we may compute the first two d
 Similarly to the previous section where we saw that the first derivative gave the best approximation with a straight line, this construction provides the best approximation by a quadratic.  Let's visualize this for $f(x) = \sin(x)$.
 -->
 
-*dịch đoạn phía trên*
+Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
+Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một là xấp xỉ tốt nhất của một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
+Cùng minh hoạ với trường hợp $f(x) = \sin(x)$.
 
 ```{.python .input}
 # Compute sin
@@ -604,26 +653,27 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 We will extend this idea to the idea of a *Taylor series* in the next section.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ mở rộng từ ý tưởng này tới ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
 
 <!--
 ### Taylor Series
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuỗi Taylor
 
 
 <!--
 The *Taylor series* provides a method to approximate the function $f(x)$ if we are given values for the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
 -->
 
-*dịch đoạn phía trên*
+*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
+Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
 We saw the case of $n=2$ in the previous section and a little algebra shows this is
 -->
 
-*dịch đoạn phía trên*
+Ta đã thấy với trường hợp $n=2$ ở chương trước và với một chút biến đổi đại số, ta có được
 
 $$
 f(x) \approx \frac{1}{2}\frac{d^2f}{dx^2}(x_0)(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
@@ -637,13 +687,14 @@ As we can see above, the denominator of $2$ is there to cancel out the $2$ we ge
 Same logic applies for the first derivative and the value itself.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn với số $2$ ta có khi lấy đạo hàm của $x^2$ hai lần, khi mà những thành phần khác đều bằng không.
+Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị.
 
 <!--
 If we push the logic further to $n=3$, we will conclude that
 -->
 
-*dịch đoạn phía trên*
+Nếu ta mở rộng cách lập luận này cho trường hợp $n=3$, ta sẽ kết luận được
 
 $$
 f(x) \approx \frac{\frac{d^3f}{dx^3}(x_0)}{6}(x-x_0)^3 + \frac{\frac{d^2f}{dx^2}(x_0)}{2}(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
@@ -653,14 +704,14 @@ $$
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
 -->
 
-*dịch đoạn phía trên*
+với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được nếu ta lấy đạo hàm của $x^3$ ba lần.
 
 
 <!--
 Furthermore, we can get a degree $n$ polynomial by
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách
 
 $$
 P_n(x) = \sum_{i = 0}^{n} \frac{f^{(i)}(x_0)}{i!}(x-x_0)^{i}.
@@ -670,7 +721,7 @@ $$
 where the notation
 -->
 
-*dịch đoạn phía trên*
+với quy ước
 
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
@@ -683,14 +734,15 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-*dịch đoạn phía trên*
+Quả thật, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$.
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
 In this case, for well behaved functions (known as real analytic functions) like $\cos(x)$ or $e^{x}$, we can write out the infinite number of terms and approximate the exactly same function
 -->
 
-*dịch đoạn phía trên*
+Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
+Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vô số các số hạng.
 
 $$
 f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}.
@@ -701,7 +753,9 @@ Take $f(x) = e^{x}$ as am example. Since $e^{x}$ is its own derivative, we know 
 Therefore, $e^{x}$ can be reconstructed by taking the Taylor series at $x_0 = 0$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Lấy hàm $f(x) = e^{x}$ làm ví dụ. 
+Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$.
+Do đó, hàm $e^{x}$ có thể được dựng lại bằng cách tính chuỗi Taylor tại $x_0 = 0$:
 
 $$
 e^{x} = \sum_{n = 0}^\infty \frac{x^{n}}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots.
@@ -711,7 +765,7 @@ $$
 Let's see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng tìm hiểu điều này bằng cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
 
 ```{.python .input}
 # Compute the exponential function
@@ -732,13 +786,14 @@ d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
 Taylor series have two primary applications:
 -->
 
-*dịch đoạn phía trên*
+Chuỗi Taylor có hai ứng dụng chính:
 
 <!--
 1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables we turn it into a polynomial that we can work with directly.
 -->
 
-*dịch đoạn phía trên*
+1. *Ứng dụng lý thuyết*:
+Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
 
 <!--
 2. *Numerical applications*: Some functions like $e^{x}$ or $\cos(x)$ are  difficult for machines to compute.  
@@ -746,7 +801,10 @@ They can store tables of values at a fixed precision (and this is often done), b
 Taylor series are often helpful to answer such questions.
 -->
 
-*dịch đoạn phía trên*
+2. *Ứng dụng số*:
+Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
+Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
+Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
 
 <!-- ===================== Kết thúc dịch Phần 11 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 12 ==================== -->
@@ -755,7 +813,7 @@ Taylor series are often helpful to answer such questions.
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Derivatives can be used to express how functions change when we change the input by a small amount.
@@ -763,15 +821,17 @@ Taylor series are often helpful to answer such questions.
 * Derivatives can be iterated to get second or higher order derivatives.  Each increase in order provides more fine grained information on the behavior of the function.
 * Using information in the derivatives of a single data point, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
-
-*dịch đoạn phía trên*
+* Đạo hàm có thể được sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
+* Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo quy tắc để tính đạo hàm phức tạp tùy ý.
+* Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta nhiều thông tin chi tiết hơn về hành vi của hàm số.
+* Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ khai triển Taylor.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What is the derivative of $x^3-4x+1$?
@@ -780,7 +840,10 @@ Taylor series are often helpful to answer such questions.
 4. Where is the minimum of $f(x) = x\log(x)$ for $x\ge0$ (where we assume that $f$ takes the limiting value of $0$ at $f(0)$)?
 -->
 
-*dịch đoạn phía trên*
+1. Đạo hàm của $x^3-4x+1$ là gì?
+2. Đạo hàm của $\log(\frac{1}{x})$ là gì?
+3. Đúng hay Sai: Nếu $f'(x) = 0$ thì $f$ có cực đại hoặc cực tiểu tại $x$?
+4. Cực tiểu của $f(x) = x\log(x)$ với $x\ge0$ ở đâu (ở đây ta giả sử rằng $f$ có giới hạn bằng $0$ tại $f(0)$)?
 
 
 <!--
@@ -815,11 +878,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Hồng Vinh
 * Vũ Hữu Tiệp
 
-<!-- Phần 2 -->
-*
-
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 4 -->
 * Nguyễn Lê Quang Nhật
@@ -827,26 +888,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 * Lê Khắc Hồng Phúc
 
-<!-- Phần 5 -->
-*
-
 <!-- Phần 6 -->
-* Duy-Nguyen Ta
-
-<!-- Phần 7 -->
-*
+* Tạ H. Duy Nguyên
 
 <!-- Phần 8 -->
-*
-
-<!-- Phần 9 -->
-*
-
-<!-- Phần 10 -->
-*
+* Mai Sơn Hải
 
 <!-- Phần 11 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 12 -->
-*
+* Nguyễn Văn Tâm

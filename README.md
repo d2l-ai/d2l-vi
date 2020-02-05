@@ -9,9 +9,15 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 
 ## Thứ tự dịch
 
+Với các mục con (2.1, 2.2, ...)
 * [x] Đã dịch xong
 * [-] Đang dịch 
 * [ ] Chưa bắt đầu
+
+Với các chương (2., 3., ...)
+* [ ] Chưa revise
+* [-] Đang revise
+* [x] Đã revise xong.
 
 ### Mục lục
 * [x] Lời nói đầu
@@ -19,12 +25,12 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 * [x] Ký hiệu
 * [x] Giới thiệu
 * [ ] 2. Preliminaries
-    * [-] 2.1. Data Manipulation
-    * [ ] 2.2. Data Preprocessing
-    * [-] 2.3. Đại số Tuyến tính
-    * [ ] 2.4. Calculus
-    * [ ] 2.5. Automatic Differentiation
-    * [ ] 2.6. Probability
+    * [-] 2.1. Thao tác với Dữ liệu
+    * [-] 2.2. Tiền Xử lý Dữ liệu
+    * [x] 2.3. Đại số Tuyến tính
+    * [-] 2.4. Giải tích
+    * [-] 2.5. Tính vi phân Tự động
+    * [-] 2.6. Probability
     * [ ] 2.7. Documentation
 * [ ] 3. Linear Neural Networks
     * [ ] 3.1. Linear Regression
@@ -101,14 +107,14 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
     * [ ] 11.10. Adam
     * [ ] 11.11. Learning Rate Scheduling
 * [ ] 12. Computational Performance
-    * [ ] 12.1. Compilers and Interpreters
+    * [-] 12.1. Compilers and Interpreters
     * [ ] 12.2. Asynchronous Computation
     * [ ] 12.3. Automatic Parallelism
     * [ ] 12.4. Hardware
     * [ ] 12.5. Training on Multiple GPUs
     * [ ] 12.6. Concise Implementation for Multiple GPUs
     * [ ] 12.6. Parameter Servers
-* [ ] 13. kComputer Vision
+* [ ] 13. Computer Vision
     * [ ] 13.1. Image Augmentation
     * [ ] 13.2. Fine Tuning
     * [ ] 13.3. Object Detection and Bounding Boxes
@@ -147,20 +153,20 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
     * [ ] 15.9. Factorization Machines
     * [ ] 15.10. Deep Factorization Machines
 * [ ] 16. Generative Adversarial Networks
-    * 16.1. Generative Adversarial Networks
-    * 16.2. Deep Convolutional Generative Adversarial Networks
+    * [ ] 16.1. Generative Adversarial Networks
+    * [ ] 16.2. Deep Convolutional Generative Adversarial Networks
 * [ ] 17. Appendix: Mathematics for Deep Learning
-    * [-] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính (xong giai đoạn 1)
+    * [x] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính
     * [ ] 17.2. Eigendecompositions
-    * [-] 17.3. Single Variable Calculus
+    * [x] 17.3. Giải tích một biến
     * [ ] 17.4. Multivariable Calculus
     * [ ] 17.5. Integral Calculus
     * [ ] 17.6. Random Variables
     * [ ] 17.7. Maximum Likelihood
     * [ ] 17.8. Naive Bayes
-    * [-] 17.9. Thống kê
+    * [x] 17.9. Thống kê
     * [ ] 17.10. Information Theory
-* [ ] 18. Appendix: Tools for Deep Learning¶
+* [ ] 18. Appendix: Tools for Deep Learning
     * [ ] 18.1. Using Jupyter
     * [ ] 18.2. Using Amazon SageMaker
     * [ ] 18.3. Using AWS EC2 Instances

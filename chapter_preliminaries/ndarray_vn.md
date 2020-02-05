@@ -5,7 +5,7 @@
 # Data Manipulation
 -->
 
-# Làm việc với Dữ liệu
+# Thao tác với Dữ liệu
 :label:`sec_ndarray`
 
 <!--
@@ -16,7 +16,7 @@ To start, we introduce the $n$-dimensional array (`ndarray`), MXNet's primary to
 In MXNet, `ndarray` is a class and we call any instance "an `ndarray`".
 -->
 
-Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và xử lý dữ liệu.
+Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và thao tác với dữ liệu.
 Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
 Thật vô lý khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy trước tiên hãy làm quen với dữ liệu tổng hợp.
 Để bắt đầu, chúng tôi giới thiệu mảng $n$ chiều (`ndarray`) -- công cụ chính trong MXNET để lưu trữ và biến đổi dữ liệu.
@@ -389,8 +389,8 @@ Ta cũng có thể thay `x.sum()` bởi `np.sum(x)`.
 ## Broadcasting Mechanism
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Cơ chế Lan truyền
+<!-- bàn thêm từ này -->
 <!--
 In the above section, we saw how to perform elementwise operations on two `ndarray`s of the same shape. Under certain conditions, even when shapes differ, we can still perform elementwise operations by invoking the *broadcasting mechanism*.
 These mechanisms work in the following way:
@@ -398,13 +398,17 @@ First, expand one or both arrays by copying elements appropriately so that after
 Second, carry out the elementwise operations on the resulting arrays.
 -->
 
-*dịch đoạn phía trên*
+Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử lên hai `ndarray` đồng kích thước.
+Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng phần tử bằng cách sử dụng *cơ chế lan truyền* (_broadcasting mechanism_).
+Cơ chế này làm việc theo cách sau:
+Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
+Thứ hai, áp dụng các phép toàn từng phần tử lên hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-*dịch đoạn phía trên*
+Trong hầu hết các trường hợp, chúng ta lan truyền một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
@@ -417,7 +421,8 @@ Since `a` and `b` are $3\times1$ and $1\times2$ matrices respectively, their sha
 We *broadcast* the entries of both matrices into a larger $3\times2$ matrix as follows: for matrix `a` it replicates the columns and for matrix `b` it replicates the rows before adding up both elementwise.
 -->
 
-*dịch đoạn phía trên*
+Vì `a` và `b` là các ma trận có kích thước lần lượt là $3\times1$ và $1\times2$, kích thước của chúng không khớp nếu ta muốn thực hiện phép cộng.
+Ta *lan truyền* các phần tử của cả hai ma trận thành các ma trận $3\times2$ như sau: lặp lại các cột trong ma trận `a` và các hàng trong ma trận `b` trước khi cộng chúng theo từng phần tử.
 
 ```{.python .input  n=18}
 a + b

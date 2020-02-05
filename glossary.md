@@ -27,6 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát                                      |                       |
 | attention mechanisms                  | cơ chế tập trung                                               |                       |
 | alternative hypothesis                | giả thuyết đối                                                 |                       |
+| automatic differentiation             | tính vi phân tự động                                           |                       |
 
 ## B
 | English                 | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -44,12 +45,14 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
 |-------------------------------------|----------------------------------------------------------------|------------------------|
+| chain rule | quy tắc dây chuyền |  |
 | classifier                          | bộ phân loại                                                   |                        |
 | clustering                          | phân cụm                                                       |                        |
 | code (danh từ)                      | mã nguồn                                                       |                        |
 | code (động từ)                      | viết mã                                                        |                        |
 | computer vision                     | thị giác máy tính                                              |                        |
 | computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
+| computational graph                 | đồ thị tính toán                                              |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
@@ -68,6 +71,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | datapoint (data point) | điểm dữ liệu                                                   |               |
 | data mismatch          | dữ liệu không tương đồng                                       |               |
 | dataset (data set)     | tập dữ liệu                                                    |               |
+| data manipulation      | thao tác với dữ liệu                                           |               |
 | deep learning          | học sâu                                                        |               |
 | development set        | tập phát triển                                                 |               |
 | dev set                | tập phát triển                                                 |               |
@@ -96,6 +100,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
+| expression (math) | biểu thức (toán học) | | 
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -240,6 +245,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sensitivity                  | độ nhạy                                                        |                       |
 | statistical power            | năng lực thống kê                                              |                       |
 | significance test            | kiểm định ý nghĩa                                              |                       |
+| symbolic graph               | đồ thị biểu tượng                                             |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -272,3 +278,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------|----------------------------------------------------------------|-----------------------|
 | variance (bias as variance) | phương sai                                                     | http://bit.ly/32HJI3S |
 | vector                      | vector                                                         |                       |
+
+## W
+| English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|-----------------------------|----------------------------------------------------------------|-----------------------|
+| well-behaved function (analytic function)     | hàm khả vi vô hạn                                              |                       |
