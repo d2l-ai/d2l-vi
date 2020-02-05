@@ -144,7 +144,7 @@ This allows the program to be run in a non-Python environment, thus avoiding any
 ## Hybrid Programming
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình lai
 
 <!--
 Historically most deep learning frameworks choose between an imperative or a symbolic approach. 
@@ -155,7 +155,12 @@ When designing Gluon, developers considered whether it would be possible to comb
 This led to a hybrid model that lets users develop and debug using pure imperative programming, while having the ability to convert most programs into symbolic programs to be run when product-level computing performance and deployment are required.
 -->
 
-*dịch đoạn phía trên*
+Trong quá khứ, hầu hết các framework đều chọn một trong hai phương án tiếp cận là lập trình mệnh lệnh và lập trình ký hiệu.
+Ví dụ, Theano, TensorFlow, Keras và CNTK đều xây dựng mô hình dạng ký hiệu.
+Ngược lại, Chainer và PyTorch tiếp cận theo hướng lập trình mệnh lệnh.
+Mô hình kiểu mệnh lệnh đã được tích hợp vào TensorFlow 2.0 (thông qua chế độ Eager) và Keras trong những bản cập nhật mới nhất.
+Khi thiết kế Gluon, các nhà phát triển đã cân nhắc liệu rằng có thể kết hợp ưu điểm của cả hai mô hình lập trình lại với nhau hay không.
+Nếu được một mô hình lai kiểu này sẽ giúp người dùng phát triển và gỡ lỗi bằng lập trình mệnh lệnh thuần, trong khi vẫn có khả năng chuyển đổi hầu như toàn bộ chương trình sang kiểu ký hiệu nếu yêu cầu hiệu năng tính toán cao và triển khai sản phẩm.
 
 <!--
 In practice this means that we build models using either the `HybridBlock` or the `HybridSequential` and `HybridConcurrent` classes. 
@@ -166,7 +171,11 @@ This allows one to optimize the compute-intensive components without sacrifices 
 We will illustrate the benefits below, focusing on sequential models and blocks only (the concurrent composition works analogously).
 -->
 
-*dịch đoạn phía trên*
+Trong thực hành, điều này có nghĩa là ta sẽ xây dựng mô hình sử dụng class `HybridBlock` hoặc `HybridSequential` và `HybridConcurrent`.
+Theo mặc định, chúng được thực thi giống hệt như cách class `Block` hoặc `Sequential` và `Cocurrent` được thực thi trong kiểu lập trình mệnh lệnh.
+`HybridSequential` là một class con của `HybridBlock` (cũng như `Sequential` là class con của `Block`).
+Khi hàm `hybridize` được gọi, Gluon biên dịch mô hình thành định dạng được dùng trong lập trình ký hiệu.
+Điều này cho phép ta có thể tối ưu các thành phần tính toán mà không phải thay đổi nhiều trong cách triển khai mô hình.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -487,7 +496,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 3 -->
 *
