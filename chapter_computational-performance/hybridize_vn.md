@@ -5,7 +5,7 @@
 # Compilers and Interpreters
 -->
 
-# *dịch tiêu đề phía trên*
+# Trình biên dịch và Trình thông dịch
 :label:`sec_hybridize`
 
 <!--
@@ -13,7 +13,8 @@ So far, this book has focused on imperative programming, which makes use of stat
 Consider the following example of a simple imperative program.
 -->
 
-*dịch đoạn phía trên*
+Tới giờ, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như là `print`, `+` hay `if` để thay đổi trạng thái chương trình.
+Xét ví dụ đơn giản sau về lập trình mệnh lệnh.
 
 ```{.python .input  n=1}
 def add(a, b):
@@ -36,7 +37,10 @@ The next two statements `f = add(c, d)` and `g = add(e, f)` will be excecuted si
 :numref:`fig_compute_graph` illustrates the flow of data.
 -->
 
-*dịch đoạn phía trên*
+Python là một ngôn ngữ thông dịch.
+Khi thực hiện hàm `fancy_func` nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
+Như vậy, nó sẽ chạy lệnh `e = add(a, b)` sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
+Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được thực thi tương tự, thực hiện phép cộng và lưu kết quả vào các biến.
 
 <!--
 ![Data flow in an imperative program.](../img/computegraph.svg)
@@ -53,7 +57,11 @@ Moreover, it will need to save the variable values of `e` and `f` until all the 
 This is because we do not know whether the variables `e` and `f` will be used by other parts of the program after the statements `e = add(a, b)` and `f = add(c, d)` have been executed.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù lập trình mệnh lệnh rất thuận tiện, nó không được hiệu quả cho lắm.
+Một mặt, thậm chí nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực hiện ba lần gọi hàm độc lập.
+Nếu điều này xảy ra, giả sử, trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
+Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
+Bởi ta không biết liệu biến `e` và `f` có được sử dụng sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -63,7 +71,7 @@ This is because we do not know whether the variables `e` and `f` will be used by
 ## Symbolic Programming
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình ký hiệu
 
 <!--
 Consider the alternative, symbolic programming where computation is usually performed only once the process has been fully defined. 
@@ -71,7 +79,9 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-*dịch đoạn phía trên*
+Lập trình ký hiệu là kiểu lập trình các tính toán thường chỉ được thực hiện một khi chương trình được định nghĩa đầy đủ.
+Cơ chế này được sử dụng trong nhiều framework, bao gồm Theano, Keras và TensorFlow (hai cái sau đã hỗ trợ lập trình mệnh lệnh).
+Luồng lập trình thường gồm những bước sau:
 
 <!--
 1. Define the operations to be executed.
@@ -79,7 +89,9 @@ It usually involves the following steps:
 3. Provide the required inputs and call the compiled program for execution.
 -->
 
-*dịch đoạn phía trên*
+1. Khai báo các hành động sẽ được thực thi.
+2. Biên dịch các hành động thành chương trình có thể chạy được.
+3. Thực thi bằng cách cung cấp đầu vào và gọi chương trình đã được biên dịch.
 
 <!--
 This allows for a significant amount of optimization. 
@@ -91,7 +103,13 @@ Or it can transform the code entirely into an equivalent piece.
 To get a better idea consider the following simulation of imperative programming (it's Python after all) below.
 -->
 
-*dịch đoạn phía trên*
+Quy trình trên cho phép ta có khá nhiều cách tối ưu.
+Thứ nhất, ta có thể bỏ qua bộ thông dịch Python trong nhiều trường hợp, kéo theo việc loại bỏ được nghẽn cổ chai (rất đáng kể khi sử dụng nhiều GPU tốc độ cao với một luồng Python trên một CPU).
+Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
+Điều này hoàn toàn có thể bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
+Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
+Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
+Để hiểu rõ hơn vấn đề ta xem xét mô phỏng về lập trình mệnh lệnh dưới đây (viết bằng Python).
 
 ```{.python .input  n=2}
 def add_():
@@ -122,7 +140,7 @@ exec(y)
 The differences between imperative (interpreted) programming and symbolic programming are as follows:
 -->
 
-*dịch đoạn phía trên*
+Sự khác biệt giữa lập trình mệnh lệnh (thông dịch) và lập trình ký hiệu như sau:
 
 <!--
 * Imperative programming is easier. 
@@ -134,7 +152,12 @@ It makes it easier to optimize the code during compilation, while also having th
 This allows the program to be run in a non-Python environment, thus avoiding any potential performance issues related to the Python interpreter.
 -->
 
-*dịch đoạn phía trên*
+* Lập trình mệnh lệnh dễ viết hơn.
+Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
+Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
+Bởi ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
+* Lập trình ký hiệu thì hiệu quả hơn và cũng dễ viết lại bằng ngôn ngữ khác.
+Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -484,7 +507,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 2 -->
 *
