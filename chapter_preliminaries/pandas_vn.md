@@ -22,7 +22,7 @@ Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực t
 Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` hay được sử dụng nhiều.
 Giống nhiều gói khác trong hệ sinh thái Python, `pandas` có thể làm việc cùng định dạng `ndarray`.
 Vì vậy, chúng ta sẽ đi nhanh qua các bước để tiền xử lý dữ liệu thô bằng `pandas` rồi đổi chúng sang dạng `ndarray`.
-Sau đó ta sẽ bao quát nhiều kỹ thuật xử lý dữ liệu hơn trong các chương sau.
+Sau đó ta sẽ bao quát nhiều kỹ thuật tiền xử lý dữ liệu hơn trong các chương sau.
 
 <!--
 ## Reading the Dataset
