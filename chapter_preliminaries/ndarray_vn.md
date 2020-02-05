@@ -5,7 +5,7 @@
 # Data Manipulation
 -->
 
-# Làm việc với Dữ liệu
+# Thao tác với Dữ liệu
 :label:`sec_ndarray`
 
 <!--
@@ -16,7 +16,7 @@ To start, we introduce the $n$-dimensional array (`ndarray`), MXNet's primary to
 In MXNet, `ndarray` is a class and we call any instance "an `ndarray`".
 -->
 
-Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và xử lý dữ liệu.
+Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và thao tác với dữ liệu.
 Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
 Thật vô lý khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy trước tiên hãy làm quen với dữ liệu tổng hợp.
 Để bắt đầu, chúng tôi giới thiệu mảng $n$ chiều (`ndarray`) -- công cụ chính trong MXNET để lưu trữ và biến đổi dữ liệu.
