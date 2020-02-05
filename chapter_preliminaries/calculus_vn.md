@@ -244,8 +244,6 @@ Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm $u'
 Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả chúng ta có được cũng tiến tới $2$.
 Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến của đường cong $u = f(x)$ khi $x = 1$.
 
-
-
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
