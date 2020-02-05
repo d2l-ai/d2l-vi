@@ -437,8 +437,8 @@ Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một h�
 When working with derivatives, it is often useful to geometrically interpret the approximation used above.  In particular, note that the equation
 -->
 
-Thông thường khi làm việc với đạo hàm, sẽ rất hữu ích nếu chúng ta có thể diễn tả sự xấp xỉ sử dụng ở trên theo phương diện hình học.
-Cụ thể là, lưu ý rằng phương trình
+Thông thường khi làm việc với đạo hàm, sẽ rất hữu ích nếu chúng ta có thể diễn tả sự xấp xỉ ở trên theo phương diện hình học.
+Nói một cách cụ thể, phương trình này
 
 $$
 f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x),
