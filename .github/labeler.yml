@@ -20,7 +20,7 @@ chapter:math:
 chapter:preliminaries_HIGH_priority:
     - chapter_preliminaries/*
 
-chapter:computational-performance:
+chapter:computational-performance_LOW_priority:
     - chapter_computational-performance/*
 
 utility:
