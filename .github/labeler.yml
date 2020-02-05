@@ -1,6 +1,7 @@
 deploy:
   - config.ini
   - deploy.sh
+  - environment.yml
 
 chapter:preface:
   - chapter_preface/*
@@ -14,7 +15,7 @@ chapter:install:
 chapter:introduction:
     - chapter_introduction/*
 
-chapter:math:
+chapter:appendix-math:
     - chapter_appendix_math/*
 
 chapter:preliminaries:
@@ -39,3 +40,20 @@ type:glosssary:
 
 type:figures:
   - img/*
+
+type:logistic:
+  - .github/*
+  - docs/*
+  - data/*
+  - d2l/*
+  - d2l-book/*
+  - contrib/*
+  - graffle/*
+  - post_latex/*
+  - static/*
+  - translation_team/*
+  - contributor_template.md
+  - contributors_template_vn.md
+  - index.md
+  - README.md
+  - CONTRIBUTING.md
