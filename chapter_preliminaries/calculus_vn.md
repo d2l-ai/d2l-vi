@@ -169,7 +169,8 @@ Let's familiarize ourselves with a few equivalent notations for derivatives.
 Given $y = f(x)$, where $x$ and $y$ are the independent variable and the dependent variable of the function $f$, respectively. The following expressions are equivalent:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ hãy cùng làm quen với một vài ký hiệu tương đương nhau của đạo hàm.
+Cho $y = f(x)$ với $x$ và $y$ là hai biến độc lập và đều phụ thuộc vào hàm $f$. Những biểu diễn sau đây là tương đương nhau:
 
 $$f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_x f(x),$$
 
@@ -178,7 +179,8 @@ where symbols $\frac{d}{dx}$ and $D$ are *differentiation operators* that indica
 We can use the following rules to differentiate common functions:
 -->
 
-*dịch đoạn phía trên*
+với các ký hiệu $\frac{d}{dx}$ và $D$ là các *toán tử vi phân* (_differentiation operator_) để chỉ các phép toán *vi phân*.
+Ta có thể sử dụng các quy tắc sau đây để lấy đạo hàm các hàm thông dụng:
 
 <!--
 * $DC = 0$ ($C$ is a constant),
@@ -187,7 +189,10 @@ We can use the following rules to differentiate common functions:
 * $D\ln(x) = 1/x.$
 -->
 
-*dịch đoạn phía trên*
+* $DC = 0$ ($C$ là một hằng số),
+* $Dx^n = nx^{n-1}$ (*quy tắc số mũ*, $n$ là số thực bất kỳ),
+* $De^x = e^x$,
+* $D\ln(x) = 1/x.$
 
 <!--
 To differentiate a function that is formed from a few simpler functions such as the above common functions,
@@ -196,7 +201,8 @@ Suppose that functions $f$ and $g$ are both differentiable and $C$ is a constant
 we have the *constant multiple rule*
 -->
 
-*dịch đoạn phía trên*
+Để lấy đạo hàm của một hàm được tạo từ vài hàm đơn giản hơn, ví dụ như từ những hàm thông dụng ở trên, các quy tắc dưới đây sẽ rất hữu dụng cho ta.
+Giả sử hàm $f$ và $g$ đều khả vi và $C$ là một hằng số, ta có *quy tắc nhân hằng số* 
 
 $$\frac{d}{dx} [Cf(x)] = C \frac{d}{dx} f(x),$$
 
@@ -204,7 +210,7 @@ $$\frac{d}{dx} [Cf(x)] = C \frac{d}{dx} f(x),$$
 the *sum rule*
 -->
 
-*dịch đoạn phía trên*
+*quy tắc tổng*
 
 $$\frac{d}{dx} [f(x) + g(x)] = \frac{d}{dx} f(x) + \frac{d}{dx} g(x),$$
 
@@ -212,7 +218,7 @@ $$\frac{d}{dx} [f(x) + g(x)] = \frac{d}{dx} f(x) + \frac{d}{dx} g(x),$$
 the *product rule*
 -->
 
-*dịch đoạn phía trên*
+*quy tắc nhân*
 
 $$\frac{d}{dx} [f(x)g(x)] = f(x) \frac{d}{dx} [g(x)] + g(x) \frac{d}{dx} [f(x)],$$
 
@@ -220,7 +226,7 @@ $$\frac{d}{dx} [f(x)g(x)] = f(x) \frac{d}{dx} [g(x)] + g(x) \frac{d}{dx} [f(x)],
 and the *quotient rule*
 -->
 
-*dịch đoạn phía trên*
+và *quy tắc đạo hàm phân thức*
 
 $$\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{g(x) \frac{d}{dx} [f(x)] - f(x) \frac{d}{dx} [g(x)]}{[g(x)]^2}.$$
 
@@ -234,7 +240,11 @@ This derivative is also the slope of the tangent line
 to the curve $u = f(x)$ when $x = 1$.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
+Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả chúng ta có được cũng tiến tới $2$.
+Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến của đường cong $u = f(x)$ khi $x = 1$.
+
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
