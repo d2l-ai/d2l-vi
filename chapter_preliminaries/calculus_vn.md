@@ -63,12 +63,12 @@ that guide as to how to produce models whose validity extends
 beyond the exact set of data points used to train them.
 -->
 
-Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi thấy nhiều dữ liệu hơn.
+Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi học với nhiều dữ liệu hơn.
 Thường thì trở nên tốt hơn tức là tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
-Câu này lắt léo hơn ta tưởng nhiều.
+Câu hỏi này lắt léo hơn ta tưởng nhiều.
 Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà ta chưa từng nhìn thấy.
-Nhưng chúng ta chỉ có thể đào tạo mô hình trên dữ liệu mà ta đang có thể thấy.
-Do đó ta có thể phân tích việc huấn luyện mô hình thành hai vấn đề chính:
+Nhưng chúng ta chỉ có thể khớp mô hình trên dữ liệu mà ta đang có thể thấy.
+Do đó ta có thể chia việc huấn luyện mô hình thành hai vấn đề chính:
 i) *tối ưu hoá*: quy trình huấn luyện mô hình trên dữ liệu đã thấy.
 ii) *tổng quát hoá*: dựa trên các nguyên tắc toán học và sự uyên thâm của người huấn luyện để tạo ra các mô hình mà tính hiệu quả của nó vượt ra khỏi tập dữ liệu huấn luyện.
 
@@ -79,7 +79,7 @@ here we give a very brief primer on differential calculus
 that is commonly used in deep learning.
 -->
 
-Để giúp bạn hiểu các bài toán tối ưu và những phương pháp trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương vỡ lòng ngắn về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
+Để giúp bạn hiểu các bài toán tối ưu và các phương pháp tối ưu trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương vỡ lòng ngắn về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
