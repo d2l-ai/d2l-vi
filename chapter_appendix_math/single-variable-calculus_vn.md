@@ -458,13 +458,14 @@ Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một h�
 ### Linear Approximation
 -->
 
-### *dịch tiêu đề phía trên*
+### Xấp xỉ Tuyến tính
 
 <!--
 When working with derivatives, it is often useful to geometrically interpret the approximation used above.  In particular, note that the equation
 -->
 
-*dịch đoạn phía trên*
+Thông thường khi làm việc với đạo hàm, sẽ rất hữu ích nếu chúng ta có thể diễn tả sự xấp xỉ ở trên theo phương diện hình học.
+Nói một cách cụ thể, phương trình này
 
 $$
 f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x),
@@ -475,7 +476,8 @@ approximates the value of $f$ by a line which passes through the point $(x, f(x)
 In this way we say that the derivative gives a linear approximation to the function $f$, as illustrated below:
 -->
 
-*dịch đoạn phía trên*
+xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$.
+Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
 
 ```{.python .input}
 # Compute sin
@@ -493,7 +495,7 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ### Higher Order Derivatives
 -->
 
-### *dịch tiêu đề phía trên*
+### Đạo hàm Cấp cao
 
 <!--
 Let's now do something that may on the surface seem strange.  
@@ -501,7 +503,9 @@ Take a function $f$ and compute the derivative $\frac{df}{dx}$.
 This gives us the rate of change of $f$ at any point.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
+Bắt đầu bằng việc lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
+Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
 <!--
 However, the derivative, $\frac{df}{dx}$, can be viewed as a function itself, so nothing stops us from computing the derivative of $\frac{df}{dx}$ to get $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.  
@@ -511,7 +515,11 @@ We may apply the derivative any number of times to obtain what is called the $n$
 To keep the notation clean, we will denote the $n$-th derivative as
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
+Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
+Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
+Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
+Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
 
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
@@ -522,7 +530,8 @@ Let's try to understand *why* this is a useful notion.
 Below, we visualize $f^{(2)}(x)$, $f^{(1)}(x)$, and $f(x)$.
 -->
 
-*dịch đoạn phía trên*
+Hãy tìm hiểu xem *tại sao* đây lại là một khái niệm hữu ích.
+Các hàm số $f^{(2)}(x)$, $f^{(1)}(x)$, và $f(x)$ được biểu diễn trong các đồ thị dưới đây.
 
 <!-- ===================== Kết thúc dịch Phần 7 ==================== -->
 <!-- ===================== Bắt đầu dịch Phần 8 ==================== -->
@@ -880,7 +889,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Duy-Nguyen Ta
 
 <!-- Phần 7 -->
-*
 
 <!-- Phần 8 -->
 * Mai Sơn Hải
