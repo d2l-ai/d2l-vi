@@ -40,7 +40,7 @@ The comment `# Saved in the d2l package for later use` is a special mark where t
 Lấy một ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
 Dữ liệu trong các định dạng khác cũng có thể được xử lý tương tự.
 Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` có tồn tại.
-Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là nhãn riêng cho các hàm, các lớp hoặc các lệnh import sau này được lưu trong gói `d2l` để ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()` sau này.
+Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh import được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
 
 ```{.python .input}
 import os
@@ -57,7 +57,7 @@ def mkdir_if_not_exist(path):
 Below we write the dataset row by row into a csv file.
 -->
 
-Sau đây ta ghi tệp dữ liệu vào file csv theo kiểu hàng nối hàng.
+Sau đây ta ghi tệp dữ liệu vào file csv theo từng hàng một.
 
 ```{.python .input}
 data_file = '../data/house_tiny.csv'
