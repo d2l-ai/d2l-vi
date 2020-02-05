@@ -17,7 +17,7 @@ chapter:introduction:
 chapter:math:
     - chapter_appendix_math/*
 
-chapter:preliminaries:
+chapter:preliminaries_HIGH_priority:
     - chapter_preliminaries/*
 
 chapter:computational-performance:
