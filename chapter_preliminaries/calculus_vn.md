@@ -179,8 +179,8 @@ where symbols $\frac{d}{dx}$ and $D$ are *differentiation operators* that indica
 We can use the following rules to differentiate common functions:
 -->
 
-với các ký hiệu $\frac{d}{dx}$ và $D$ là các *toán tử vi phân* (_differentiation operator_) để chỉ các phép toán *vi phân*.
-Ta có thể sử dụng các quy tắc sau đây để lấy đạo hàm các hàm thông dụng:
+với ký hiệu $\frac{d}{dx}$ và $D$ là các *toán tử vi phân* (_differentiation operator_) để chỉ các phép toán *vi phân*.
+Ta có thể sử dụng các quy tắc lấy đạo hàm của các hàm thông dụng sau đây:
 
 <!--
 * $DC = 0$ ($C$ is a constant),
@@ -201,7 +201,7 @@ Suppose that functions $f$ and $g$ are both differentiable and $C$ is a constant
 we have the *constant multiple rule*
 -->
 
-Để lấy đạo hàm của một hàm được tạo từ vài hàm đơn giản hơn, ví dụ như từ những hàm thông dụng ở trên, các quy tắc dưới đây sẽ rất hữu dụng cho ta.
+Để lấy đạo hàm của một hàm được tạo từ vài hàm đơn giản hơn, ví dụ như từ những hàm thông dụng ở trên, có thể dùng các quy tắc hữu dụng dưới đây.
 Giả sử hàm $f$ và $g$ đều khả vi và $C$ là một hằng số, ta có *quy tắc nhân hằng số* 
 
 $$\frac{d}{dx} [Cf(x)] = C \frac{d}{dx} f(x),$$
@@ -240,9 +240,9 @@ This derivative is also the slope of the tangent line
 to the curve $u = f(x)$ when $x = 1$.
 -->
 
-Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
+Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm đạo hàm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
 Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả chúng ta có được cũng tiến tới $2$.
-Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến của đường cong $u = f(x)$ khi $x = 1$.
+Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến với đường cong $u = f(x)$ tại $x = 1$.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
