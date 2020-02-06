@@ -409,7 +409,7 @@ Suppose that the input of function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is a
 
 Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm đa biến để thu được vector *gradient* của hàm số đó.
 Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$-chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
-Gradient của hàm $f(\mathbf{x})$ với $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
+Gradient của hàm $f(\mathbf{x})$ theo $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
 
 $$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top,$$
 
