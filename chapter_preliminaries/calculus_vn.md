@@ -169,7 +169,7 @@ Let's familiarize ourselves with a few equivalent notations for derivatives.
 Given $y = f(x)$, where $x$ and $y$ are the independent variable and the dependent variable of the function $f$, respectively. The following expressions are equivalent:
 -->
 
-Bây giờ hãy cùng làm quen với một vài ký hiệu tương đương nhau của đạo hàm.
+Giờ hãy cùng làm quen với một vài ký hiệu cùng biểu diễn đạo hàm.
 Cho $y = f(x)$ với $x$ và $y$ lần lượt là là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
 
 $$f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_x f(x),$$
