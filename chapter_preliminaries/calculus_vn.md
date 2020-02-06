@@ -459,7 +459,7 @@ so we may not apply any of the aforementioned rules to differentiate these funct
 Fortunately, the *chain rule* enables us to differentiate composite functions.
 -->
 
-Tuy nhiên, những gradient như thế có thể khó tìm.
+Tuy nhiên, những gradient như thế có thể khó để tính toán.
 Đó là bởi vì các hàm nhiều biến trong học sâu đa phần là những *hàm hợp*,
 nên ta không thể áp dụng các quy tắc đề cập ở trên để lấy vi phân cho những hàm này.
 May mắn thay, quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
@@ -470,7 +470,7 @@ Suppose that functions $y=f(u)$ and $u=g(x)$ are both differentiable, then the c
 -->
 
 Trước tiên, chúng ta hãy xem xét các hàm một biến.
-Giả sử hai hàm $y=f(u)$ và $u=g(x)$ đều khả vi, quy tắc dây chuyền phát biểu như sau
+Giả sử hai hàm $y=f(u)$ và $u=g(x)$ đều khả vi, quy tắc dây chuyền được mô tả như sau
 
 $$\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}.$$
 
@@ -484,11 +484,10 @@ Note that $y$ is a function of $x_1, x_2, \ldots, x_n$.
 Then the chain rule gives
 -->
 
-Bây giờ, ta hãy xét trường hợp tổng quát hơn về các hàm nhiều biến.
+Bây giờ, ta hãy xét trường hợp tổng quát hơn đối với các hàm nhiều biến.
 Giả sử một hàm khả vi $y$ có các biến số $u_1, u_2, \ldots, u_m$, trong đó mỗi biến $u_i$ là một hàm khả vi của các biến $x_1, x_2, \ldots, x_n$.
 Lưu ý rằng $y$ cũng là hàm của các biến $x_1, x_2, \ldots, x_n$.
 Quy tắc dây chuyền cho ta
-
 
 $$\frac{dy}{dx_i} = \frac{dy}{du_1} \frac{du_1}{dx_i} + \frac{dy}{du_2} \frac{du_2}{dx_i} + \cdots + \frac{dy}{du_m} \frac{du_m}{dx_i}$$
 
@@ -514,9 +513,9 @@ cho mỗi $i = 1, 2, \ldots, n$.
 * The chain rule enables us to differentiate composite functions.
 -->
 
-* Vi phân và tích phân là hai nhánh con của vi tích phân, trong đó vi phân có ứng dụng rất rộng rãi trong các bài toán về tối ưu hóa trong học sâu.
+* Vi phân và tích phân là hai nhánh con của giải tích, trong đó vi phân có ứng dụng rất rộng rãi trong các bài toán tối ưu hóa trong học sâu.
 * Đạo hàm có thể được hiểu như là tốc độ thay đổi tức thì của một hàm số đối với các biến số. Nó cũng là độ dốc của đường thẳng tiếp tuyến với đường cong của hàm.
-* Gradient là một vector mà các phần tử của nó là đạo hàm riêng của một hàm đa biến đối với tất cả các biến số của nó.
+* Gradient là một vector mà các phần tử của nó là đạo hàm riêng của một hàm đa biến theo tất cả các biến số của nó.
 * Quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
 
 
@@ -535,10 +534,10 @@ cho mỗi $i = 1, 2, \ldots, n$.
 -->
 
 *dịch đoạn phía trên*
-1. Vẽ đồ thị của hàm số $y = f(x) = x^3 - \frac{1}{x}$ và đường tiếp tuyến của nó tại $x = 1$.
+1. Vẽ đồ thị của hàm số $y = f(x) = x^3 - \frac{1}{x}$ và đường tiếp tuyến tại $x = 1$.
 1. Tìm gradient của hàm số $f(\mathbf{x}) = 3x_1^2 + 5e^{x_2}$.
 1. Gradient của hàm $f(\mathbf{x}) = \|\mathbf{x}\|_2$ là gì?
-1. Bạn có thể viết quy tắc dây chuyền cho trường hợp mà $u = f(x, y, z)$ ở đó $x = x(a, b)$, $y = y(a, b)$, và $z = z(a, b)$?
+1.  Có thể dùng quy tắc dây chuyền cho trường hợp sau đây không: $u = f(x, y, z)$ ở đó $x = x(a, b)$, $y = y(a, b)$, và $z = z(a, b)$?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
