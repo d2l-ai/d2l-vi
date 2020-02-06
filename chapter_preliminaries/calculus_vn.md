@@ -241,7 +241,7 @@ to the curve $u = f(x)$ when $x = 1$.
 -->
 
 Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm đạo hàm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
-Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả chúng ta có được cũng tiến tới $2$.
+Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả có được cũng tiến tới $2$.
 Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến với đường cong $u = f(x)$ tại $x = 1$.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
