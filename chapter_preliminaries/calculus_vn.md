@@ -80,7 +80,7 @@ that is commonly used in deep learning.
 ## Derivatives and Differentiation
 -->
 
-## *dịch tiêu đề phía trên*
+## Đạo hàm và Vi phân
 
 <!--
 We begin by addressing the calculation of derivatives,
@@ -93,7 +93,9 @@ were we to *increase* or *decrease* that parameter
 by an infinitesimally small amount.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ bắt đầu bằng việc nói tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
+Trong học sâu, ta thường chọn những hàm mất mát khả vi theo các tham số của mô hình.
+Nói đơn giản, với mỗi tham số, ta có thể xác định hàm mất mát tăng hoặc giảm nhanh như thế nào khi tham số đó *tăng* hoặc *giảm* chỉ một lượng cực nhỏ.
 
 <!--
 Suppose that we have a function $f: \mathbb{R} \rightarrow \mathbb{R}$,
@@ -101,7 +103,8 @@ whose input and output are both scalars.
 The *derivative* of $f$ is defined as
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một hàm $f: \mathbb{R} \rightarrow \mathbb{R}$ có đầu vào và đầu ra đều là số vô hướng.
+*Đạo hàm* của $f$ được định nghĩa là
 
 $$f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h},$$
 :eqlabel:`eq_derivative`
@@ -119,7 +122,11 @@ The so-called instantaneous rate of change is based on
 the variation $h$ in $x$, which approaches $0$.
 -->
 
-*dịch đoạn phía trên*
+nếu giới hạn này tồn tại.
+Nếu $f'(a)$ tồn tại, $f$ được gọi là *khả vi* (_differentiable_) tại $a$.
+Nếu $f$ khả vi tại mọi điểm trong một khoảng, thì hàm này được gọi là khả vi trong khoảng đó.
+Ta có thể giải nghĩa đạo hàm $f'(x)$ trong :eqref:`eq_derivative` như là tốc độ thay đổi *tức thời* của hàm $f$ theo biến $x$.
+Cái gọi là tốc độ thay đổi tức thời được dựa trên độ biến thiên $h$ trong $x$ khi $h$ tiến về $0$.
 
 <!--
 To illustrate derivatives,
@@ -127,7 +134,8 @@ let's experiment with an example.
 Define $u = f(x) = 3x^2-4x$.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cho khái niệm đạo hàm, hãy thử với một ví dụ.
+Định nghĩa $u = f(x) = 3x^2-4x$.
 
 ```{.python .input}
 %matplotlib inline
@@ -148,7 +156,8 @@ Though this experiment is not a mathematical proof,
 we will see later that the derivative $u'$ is $2$ when $x=1$.
 -->
 
-*dịch đoạn phía trên*
+Cho $x=1$ và để $h$ tiến về $0$, kết quả của phương trình $\frac{f(x+h) - f(x)}{h}$ trong :eqref:`eq_derivative` tiến về $2$.
+Dù thử nghiệm này không phải là một dạng chứng minh toán học, lát nữa ta sẽ thấy quả thật đạo hàm của $u'$ là $2$ khi $x=1$.
 
 ```{.python .input}
 def numerical_lim(f, x, h):
@@ -554,7 +563,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 *
