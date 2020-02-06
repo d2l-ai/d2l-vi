@@ -71,13 +71,13 @@ But there is a key difference between the two cases. In this first case, the ima
 ## Basic Probability Theory
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết xác suất cơ bản
 
 <!--
 Say that we cast a die and want to know what the chance is of seeing a $1$ rather than another digit. If the die is fair, all the $6$ outcomes $\{1, \ldots, 6\}$ are equally likely to occur, and thus we would see a $1$ in one out of six cases. Formally we state that $1$ occurs with probability $\frac{1}{6}$.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta tung xúc sắc và muốn biết ...
 
 <!--
 For a real die that we receive from a factory, we might not know those proportions and we would need to check whether it is tainted. The only way to investigate the die is by casting it many times and recording the outcomes. For each cast of the die, we will observe a value in $\{1, \ldots, 6\}$. Given these outcomes, we want to investigate the probability of observing each outcome.
