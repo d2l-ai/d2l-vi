@@ -460,8 +460,7 @@ Fortunately, the *chain rule* enables us to differentiate composite functions.
 -->
 
 Tuy nhiên, những gradient như thế có thể khó để tính toán.
-Đó là bởi vì các hàm nhiều biến trong học sâu đa phần là những *hàm hợp*,
-nên ta không thể áp dụng các quy tắc đề cập ở trên để lấy vi phân cho những hàm này.
+Đó là bởi vì các hàm nhiều biến trong học sâu đa phần là những *hàm hợp*, nên ta không thể áp dụng các quy tắc đề cập ở trên để lấy vi phân cho những hàm này.
 May mắn thay, quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
 
 <!--
