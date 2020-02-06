@@ -121,7 +121,10 @@ before a gradient has actually been calculated
 will not alter the parameters' value.
 -->
 
-*dịch đoạn phía trên*
+Sau khi đã tính toán gradient theo biến `x`, ta có thể truy cập nó thông qua thuộc tính `grad`.
+Để an toàn, `x.grad` ban đầu sẽ chỉ là một mảng chứa giá trị không.
+Điều này hợp lý vì trong học sâu, ta lấy gradient thường là để cập nhật các tham số bằng cách cộng (hoặc trừ) gradient của một hàm để tối đa (hoặc tối thiểu) hóa hàm đó.
+Bằng cách khởi tạo gradient bằng mảng chứa giá trị không, ta đảm bảo rằng bất kỳ cập nhật vô tình nào trước khi gradient được tính toán sẽ không làm thay đổi giá trị các tham số. 
 
 ```{.python .input  n=4}
 x.grad
@@ -135,7 +138,9 @@ We could imagine that MXNet would be turning on a recording device
 to capture the exact path by which each variable is generated.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy tính $y$.
+Bởi vì mục đích là tính toán gradient một cách tuần tự, ta muốn MXNet tạo đồ thị tính toán một cách nhanh chóng.
+Ta có thể tưởng tượng rằng MXNet sẽ bật một thiết bị ghi hình để thu lại chính xác đường đi mà mỗi biến được tạo.
 
 <!--
 Note that building the computational graph
@@ -145,7 +150,9 @@ We can invoke this behavior by placing our code
 inside an `autograd.record` scope.
 -->
 
-*dịch đoạn phía trên*
+Cần chú ý rằng để xây dựng đồ thị tính toán cần một số lượng tính toán không nhỏ.
+Vậy nên MXNet sẽ chỉ dựng đồ thị khi được đích thân bảo thế.
+Ta có thể thay đổi hành vi này bằng cách đặt đoạn mã của ta trong phạm vi của `autograd.record`.
 
 ```{.python .input  n=5}
 with autograd.record():
@@ -162,7 +169,8 @@ with respect to each component of `x`
 by calling `y`'s `backward` function.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì `x` là một `ndarray` có độ dài bằng 4, `np.dot` sẽ tính toán tích vô hướng của `x` và `x`, trả về một số vô hướng mà sẽ được gán cho `y`.
+Tiếp theo, ta có thể tính toán gradient của `y` theo mỗi thành phần của `x` một cách tự động bằng cách gọi hàm `backward` của `y`.
 
 ```{.python .input  n=6}
 y.backward()
@@ -172,7 +180,7 @@ y.backward()
 If we recheck the value of `x.grad`, we will find its contents overwritten by the newly calculated gradient.
 -->
 
-*dịch đoạn phía trên*
+Nếu kiểm tra lại giá trị của `x.grad`, ta sẽ thấy nội dung của nó đã được ghì đè bằng gradient mới được tính toán.
 
 ```{.python .input  n=7}
 x.grad
@@ -519,7 +527,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 *
