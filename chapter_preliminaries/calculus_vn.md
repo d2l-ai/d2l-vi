@@ -169,7 +169,7 @@ Let's familiarize ourselves with a few equivalent notations for derivatives.
 Given $y = f(x)$, where $x$ and $y$ are the independent variable and the dependent variable of the function $f$, respectively. The following expressions are equivalent:
 -->
 
-Giờ hãy cùng làm quen với một vài ký hiệu cùng biểu diễn đạo hàm.
+Hãy làm quen với một vài ký hiệu cùng được dùng để biểu diễn đạo hàm.
 Cho $y = f(x)$ với $x$ và $y$ lần lượt là là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
 
 $$f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_x f(x),$$
@@ -240,7 +240,7 @@ This derivative is also the slope of the tangent line
 to the curve $u = f(x)$ when $x = 1$.
 -->
 
-Bây giờ ta có thể áp dụng một vài quy tắc ở trên để tìm đạo hàm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
+Bây giờ ta có thể áp dụng các quy tắc ở trên để tìm đạo hàm $u' = f'(x) = 3 \frac{d}{dx} x^2-4\frac{d}{dx}x = 6x-4$.
 Vậy nên, với $x = 1$, ta có $u' = 2$: điều này đã được kiểm chứng với thử nghiệm lúc trước ở mục này khi kết quả có được cũng tiến tới $2$.
 Giá trị đạo hàm này cũng đồng thời là độ dốc của đường tiếp tuyến với đường cong $u = f(x)$ tại $x = 1$.
 
