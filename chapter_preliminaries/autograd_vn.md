@@ -82,7 +82,7 @@ and could quickly run out of memory.
 -->
 
 Lưu ý rằng trước khi có thể tính gradient của $y$ theo $\mathbf{x}$, chúng ta cần một nơi để lưu giữ nó.
-Đặc biệt quan trọng rằng ta không cấp thêm bộ nhớ mới mỗi khi muốn tính đạo hàm theo một biến xác định, bởi vì ta thường sẽ muốn cập nhật cùng một tham số hàng ngàn hàng vạn lần và như vậy bộ nhớ sẽ hết rất nhanh.
+Điều quan trọng là ta không được cấp phát thêm bộ nhớ mới mỗi khi tính đạo hàm theo một biến xác định, vì ta thường cập nhật cùng một tham số hàng ngàn hàng vạn lần và sẽ nhanh chóng dùng hết bộ nhớ.
 
 <!--
 Note also that a gradient of a scalar-valued function
