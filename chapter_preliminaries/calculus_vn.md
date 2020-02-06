@@ -603,4 +603,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Tạ H. Duy Nguyên
-* Nguyễn Cảnh Thương
+* Nguyễn Cảnh Thướng
