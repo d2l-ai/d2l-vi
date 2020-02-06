@@ -5,7 +5,7 @@
 # Calculus
 -->
 
-# *dịch tiêu đề phía trên*
+# Giải tích
 :label:`sec_calculus`
 
 <!--
@@ -18,13 +18,16 @@ an inscribed polygon with more sides of equal length better approximates
 the circle. This process is also known as the *method of exhaustion*.
 -->
 
-*dịch đoạn phía trên*
+Tìm diện tích của một đa giác vẫn là một bí ẩn cho tới tận $2.500$ năm trước, khi người Hy Lạp cổ chia đa giác thành các tam giác và cộng diện tích của chúng lại.
+Để tìm diện tích của các hình cong, như hình tròn, người Hy Lạp cổ đại đặt các đa giác nội tiếp bên trong các hình cong đó.
+Như trong :numref:`fig_circle_area`, một đa giác nội tiếp với càng nhiều cạnh bằng nhau thì càng xấp xỉ đúng hình tròn. 
+Quy trình này còn được biết đến như *phương pháp vét kiệt*.
 
 <!--
 ![Find the area of a circle with the method of exhaustion.](../img/polygon_circle.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/polygon_circle.svg)
+![Tìm diện tích hình tròn bằng phương pháp vét kiệt.](../img/polygon_circle.svg)
 :label:`fig_circle_area`
 
 <!--
@@ -38,7 +41,10 @@ As discussed in :numref:`subsec_norms_and_objectives`,
 such problems are ubiquitous in deep learning.
 -->
 
-*dịch đoạn phía trên*
+Phương pháp vét kiệt chính là khởi nguồn của *giải tích tích phân* (sẽ được miêu tả trong :numref:`sec_integral_calculus`).
+Hơn $2.000$ năm sau, nhánh còn lại của giải tích, *giải tích vi phân* ra đời.
+Trong những ứng dụng quan trọng nhất của giải tích vi phân, các bài toán tối ưu hoá sẽ tìm *cách tốt nhất* để thực hiện một công việc gì đấy.
+Như đã bàn đến trong :numref:`subsec_norms_and_objectives`, các bài toán như vậy vô cùng phổ biến trong học sâu.
 
 <!--
 In deep learning, we *train* models, updating them successively
@@ -57,7 +63,14 @@ that guide as to how to produce models whose validity extends
 beyond the exact set of data points used to train them.
 -->
 
-*dịch đoạn phía trên*
+Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi học với nhiều dữ liệu hơn.
+Thường thì trở nên tốt hơn tức là tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
+Câu hỏi này lắt léo hơn ta tưởng nhiều.
+Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà ta chưa từng nhìn thấy.
+Nhưng chúng ta chỉ có thể khớp mô hình trên dữ liệu mà ta đang có thể thấy.
+Do đó ta có thể chia việc huấn luyện mô hình thành hai vấn đề chính:
+i) *tối ưu hoá*: quy trình huấn luyện mô hình trên dữ liệu đã thấy.
+ii) *tổng quát hoá*: dựa trên các nguyên tắc toán học và sự uyên thâm của người huấn luyện để tạo ra các mô hình mà tính hiệu quả của nó vượt ra khỏi tập dữ liệu huấn luyện.
 
 <!--
 To help you understand
@@ -66,7 +79,7 @@ here we give a very brief primer on differential calculus
 that is commonly used in deep learning.
 -->
 
-*dịch đoạn phía trên*
+Để giúp bạn hiểu các bài toán tối ưu và các phương pháp tối ưu trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương ngắn vỡ lòng về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -560,7 +573,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 * Phạm Hồng Vinh
