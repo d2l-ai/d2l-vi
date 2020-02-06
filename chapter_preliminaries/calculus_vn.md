@@ -407,9 +407,9 @@ We can concatenate partial derivatives of a multivariate function with respect t
 Suppose that the input of function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is an $n$-dimensional vector $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ and the output is a scalar. The gradient of the function $f(\mathbf{x})$ with respect to $\mathbf{x}$ is a vector of $n$ partial derivatives:
 -->
 
-Chúng ta có thể ghép các đạo hàm từng phần của một hàm đa biến trên mọi biến để thu được vector *gradient* của hàm đó.
-Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$-chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là số vô hướng.
-Gradient của hàm $f(\mathbf{x})$ tương ứng với $\mathbf{x}$ là một vector của derivatives $n$ phần: 
+Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm đa biến để thu được vector *gradient* của hàm số đó.
+Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$-chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
+Gradient của hàm $f(\mathbf{x})$ với $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
 
 $$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top,$$
 
@@ -417,13 +417,13 @@ $$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\parti
 where $\nabla_{\mathbf{x}} f(\mathbf{x})$ is often replaced by $\nabla f(\mathbf{x})$ when there is no ambiguity.
 -->
 
-Ở $\nabla_{\mathbf{x}} f(\mathbf{x})$ thường được thay thế bởi  $\nabla f(\mathbf{x})$ khi không có ambiguity.
+Biểu thức $\nabla_{\mathbf{x}} f(\mathbf{x})$ thường được viết gọn thành $\nabla f(\mathbf{x})$ trong trường hợp không sợ nhầm lẫn.
 
 <!--
 Let $\mathbf{x}$ be an $n$-dimensional vector, the following rules are often used when differentiating multivariate functions:
 -->
 
-Cho $\mathbf{x}$ là một vector $n$ chiều, quy tắc sau thường được dùng khi hàm differentiating đa biến:
+Cho $\mathbf{x}$ là một vector $n$-chiều, các quy tắc sau thường được dùng khi tính vi phân hàm đa biến:
 
 <!--
 * For all $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\nabla_{\mathbf{x}} \mathbf{A} \mathbf{x} = \mathbf{A}^\top$,
@@ -432,17 +432,17 @@ Cho $\mathbf{x}$ là một vector $n$ chiều, quy tắc sau thường được 
 * $\nabla_{\mathbf{x}} \|\mathbf{x} \|^2 = \nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{x} = 2\mathbf{x}$.
 -->
 
-* Với tất cả $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\nabla_{\mathbf{x}} \mathbf{A} \mathbf{x} = \mathbf{A}^\top$,
-* Với tất cả  $\mathbf{A} \in \mathbb{R}^{n \times m}$, $\nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{A}  = \mathbf{A}$,
-* Với tất cả  $\mathbf{A} \in \mathbb{R}^{n \times n}$, $\nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{A} \mathbf{x}  = (\mathbf{A} + \mathbf{A}^\top)\mathbf{x}$,
+* Với mọi $\mathbf{A} \in \mathbb{R}^{m \times n}$, $\nabla_{\mathbf{x}} \mathbf{A} \mathbf{x} = \mathbf{A}^\top$,
+* Với mọi  $\mathbf{A} \in \mathbb{R}^{n \times m}$, $\nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{A}  = \mathbf{A}$,
+* Với mọi  $\mathbf{A} \in \mathbb{R}^{n \times n}$, $\nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{A} \mathbf{x}  = (\mathbf{A} + \mathbf{A}^\top)\mathbf{x}$,
 * $\nabla_{\mathbf{x}} \|\mathbf{x} \|^2 = \nabla_{\mathbf{x}} \mathbf{x}^\top \mathbf{x} = 2\mathbf{x}$.
 
 <!--
 Similarly, for any matrix $\mathbf{X}$, we have $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$. As we will see later, gradients are useful for designing optimization algorithms in deep learning.
 -->
 
-Tương tự vậy, với bất kỳ ma trận $\mathbf{X}$, ta có $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$.
-Sau này ta sẽ thấy, gradients rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
+Tương tự, với bất kỳ ma trận $\mathbf{X}$ nào, ta đều có $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$.
+Sau này ta sẽ thấy, các gradients rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
