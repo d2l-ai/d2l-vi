@@ -442,7 +442,7 @@ Similarly, for any matrix $\mathbf{X}$, we have $\nabla_{\mathbf{X}} \|\mathbf{X
 -->
 
 Tương tự, với bất kỳ ma trận $\mathbf{X}$ nào, ta đều có $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$.
-Sau này ta sẽ thấy, các gradients rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
+Sau này ta sẽ thấy, gradient sẽ rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
