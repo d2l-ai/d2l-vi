@@ -96,7 +96,7 @@ by invoking its `attach_grad` method.
 -->
 
 Cũng lưu ý rằng, bản thân giá trị gradient của hàm số đơn trị theo một vector $\mathbf{x}$ cũng là một vector với cùng kích thước.
-Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị độ dốc tính theo `x` như một đặc trưng của chính bản thân `ndarray` `x`.
+Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị gradient tính theo `x` dưới dạng một đặc trưng của chính `ndarray` `x`.
 Chúng ta cấp bộ nhớ cho gradient của một `ndarray` bằng cách gọi hàm `attach_grad`.
 
 ```{.python .input  n=3}
