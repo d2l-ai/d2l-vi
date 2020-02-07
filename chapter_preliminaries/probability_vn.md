@@ -225,7 +225,7 @@ the $6$ solid curves converge towards the true probability.
 ### Axioms of Probability Theory
 -->
 
-### *dịch tiêu đề phía trên*
+### Tiên đề về lý thuyết xác 
 
 <!--
 When dealing with the rolls of a die,
@@ -238,7 +238,12 @@ That is to say, if $3$ dots faced up after rolling a die, since $3 \in \{1, 3, 5
 we can say that the event "seeing an odd number" has occurred.
 -->
 
-*dịch đoạn phía trên*
+Khi thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết qủa*
+*Biến cố* là một tập hợp các kết quả của không gian mẫu. 
+Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
+Chú ý rằng nếu kết quá của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
+biến cố $\mathcal{A}$ đã xảy ra
+Như vậy, nếu mặt 3 chấm ngửa lên sau khi xúc sắc được gieo, chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
@@ -246,7 +251,8 @@ The probability of an event $\mathcal{A}$ in the given sample space $\mathcal{S}
 denoted as $P(\mathcal{A})$, satisfies the following properties:
 -->
 
-*dịch đoạn phía trên*
+Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số gán một tập hợp các biến cố tới một giá trị thật. 
+Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$ được kí hiệu là $P(\mathcal{A})$ và thoả mãn những tính chất sau:
 
 <!--
 * For any event $\mathcal{A}$, its probability is never negative, i.e., $P(\mathcal{A}) \geq 0$;
@@ -254,7 +260,9 @@ denoted as $P(\mathcal{A})$, satisfies the following properties:
 * For any countable sequence of events $\mathcal{A}_1, \mathcal{A}_2, \ldots$ that are *mutually exclusive* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ for all $i \neq j$), the probability that any happens is equal to the sum of their individual probabilities, i.e., $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 -->
 
-*dịch đoạn phía trên*
+* Đối với mọi biến cố $\mathcal{A}$, xác suất của biến cố sẽ không bao giờ âm, ví dụ: $P(\mathcal{A}) \geq 0$;  
+* Xác suất của toàn không gian mẫu luôn bằng $1$, ví dụ: $P(\mathcal{S}) = 1$;
+* Đối với mọi dãy biến cố có thể đếm được $\mathcal{A}_1, \mathcal{A}_2, \ldots$ nhưng *xung khắc nhau* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ với mọi $i \neq j$), xác suất (nếu có xảy ra) sẽ là tổng của những giá trị xác suất riêng lẻ, ví dụ: $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 
 <!--
 These are also the axioms of probability theory, proposed by Kolmogorov in 1933.
@@ -262,8 +270,10 @@ Thanks to this axiom system, we can avoid any philosophical dispute on randomnes
 instead, we can reason rigorously with a mathematical language.
 For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\mathcal{A}_i = \emptyset$ for all $i > 1$, we can prove that $P(\emptyset) = 0$, i.e., the probability of an impossible event is $0$.
 -->
+Kolmogorov là nhà toán học đã đề xuất những đóng góp cho sự hoàn thiện của tiên đề về lý thuyết xác suất vào năm 1993.
+Nhờ vào hệ thống tiên đề này, chúng ta có thể tránh được những tranh cãi chủ quan về sự ngẫu nhiên mà thay vào là ra những tranh luận nghiêm ngặt sử dụng ngôn ngữ toán học. 
+Lấy mẫu một trường hợp, cho biến cố $\mathcal{A}_1$ là toàn bộ không gian mẫu và $\mathcal{A}_i = \emptyset$ với mọi $i > 1$, chúng ta có thể chứng minh rằng $P(\emptyset) = 0$, ví dụ: xác suất của biến cố không thể xảy ra sẽ là $0$.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
