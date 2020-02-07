@@ -360,7 +360,7 @@ x.grad, u.grad, y.grad
 ## Computing the Gradient of Python Control Flow
 -->
 
-## *dịch tiêu đề phía trên*
+## Tính gradient của luồng điều khiển Python
 
 <!--
 One benefit of using automatic differentiation
@@ -374,7 +374,9 @@ and the evaluation of the `if` statement
 both depend on the value of the input `a`.
 -->
 
-*dịch đoạn phía trên*
+Một lợi thế của việc sử dụng vi phân tự động là khi việc xây dựng đồ thị tính toán đòi hỏi trải qua một loạt các câu lệnh điều khiển luồng Python,
+(ví dụ như câu lệnh điều kiện, vòng lặp và các lời gọi hàm tùy ý), ta vẫn có thể tính gradient của biến kết quả.
+Trong đoạn mã sau, hãy lưu ý rằng số lần lặp của vòng lặp `while` và kết quả của câu lệnh `if` đều phụ thuộc vào giá trị của đầu vào `a`.
 
 ```{.python .input  n=16}
 def f(a):
@@ -393,7 +395,7 @@ Again to compute gradients, we just need to `record` the calculation
 and then call the `backward` function.
 -->
 
-*dịch đoạn phía trên*
+Một lần nữa, để tính gradient ta chỉ cần "ghi lại" các phép tính (bằng cách gọi hàm `record`) và sau đó gọi hàm `backward`.
 
 ```{.python .input  n=17}
 a = np.random.normal()
@@ -411,7 +413,11 @@ such that `f(a) = k * a`, where the value of `k` depends on the input `a`.
 Consequently `d / a` allows us to verify that the gradient is correct.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể phân tích hàm `f` định nghĩa ở phía trên.
+Hãy để ý rằng hàm này tuyến tính từng khúc theo đầu vào `a`.
+Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`.
+Giá trị của `k` phụ thuộc vào đầu vào `a`.
+Do đó, ta có thể kiểm tra giá trị của gradient bằng cách tính `d / a`.
 
 ```{.python .input  n=18}
 a.grad == d / a
@@ -528,7 +534,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 *
