@@ -20,4 +20,4 @@
 | [SumoBBQ](https://github.com/SumoBBQ)                  | Phạm Chí Thành                 |
 | [thoangtrvn](https://github.com/thoangtrvn)            | Hoàng Trọng Tuấn               |
 | [tamnguyenvan](https://github.com/tamnguyenvan)        | Nguyễn Văn Tâm                 |
-| [antran511](https://github.com/antran511)              | Trần Kiên An                   |
+| [antran511](https://github.com/antran511)              | Trần Kiến An                   |
