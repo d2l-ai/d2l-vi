@@ -33,7 +33,7 @@ We have already invoked probabilities in previous sections without articulating 
 
 Chúng tôi đã nhắc tới xác suất trong các chương trước mà không nói rõ chính xác nó là gì hay là đưa ra một ví dụ cụ thể nào.
 Giờ hãy cùng bắt đầu nghiêm túc hơn bằng cách xem xét trường hợp đầu tiên: phân biệt mèo và chó dựa trên các bức ảnh.
-Điều này nghe có vẻ đơn giản nhưng thực sự là một thử thách ghê gớm.
+Điều này nghe có vẻ đơn giản nhưng thực sự rất thử thách.
 Để bắt đầu, độ khó của vấn đề có thể phụ thuộc nhiều vào độ phân giải của ảnh.
 
 <!--
