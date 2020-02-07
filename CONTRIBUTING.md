@@ -14,7 +14,7 @@ Giả sử bạn chọn issue ở hàng có mũi tên đỏ, tương ứng với
 Nhớ số issue (ở ví dụ này là 393 trong phần khoanh đỏ) để dùng ở bước 7.
 
 ### Bước 2: Đăng ký dịch
-Trước khi thực hiện việc dịch chương này, bạn cần tự "Assign" issue này cho mình để tránh trường hợp có nhiều người cùng làm một việc một lúc.
+Trước khi thực hiện việc dịch chương này, bạn cần tự **"Assign"** issue này cho mình để tránh trường hợp có nhiều người cùng làm một việc một lúc.
 ![](./translation_team/step02.png)
 
 Nếu bạn chưa là collaborator của repo này, bạn sẽ không thể tự "Assign". Bạn cần để lại comment vào trong issue đó và cc @duythanhvn hoặc @tiepvupsu. Chúng tôi sẽ assign issue đó cho bạn.
@@ -73,9 +73,16 @@ Sau khi click "Commit changes", trang tạo Pull Request sẽ tự động mở 
 
 Click "Create pull request".
 
+Trong trường hợp bạn chưa hoàn thành nội dung cần dịch, hoặc nội dung này bạn mong muốn tự chỉnh sửa để hoàn thiện hơn, bạn hãy lựa chọn tạo một "Draft Pull Request" theo hướng dẫn ở hình dưới.
+
+![](./translation_team/draft-pull-requests.png)
+
+Sau khi hoàn thiện nội dung, bạn có thể chọn **Ready for review** để Pull request này được nhóm tiến hành review.
+
+![](./translation_team/draft-pull-requests-ready.png)
+
 ### Bước 8: Kiểm tra checklist
-Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây. Nếu Pull Request đã sẵn sàng được review, bạn click vào dòng thứ hai từ dưới lên:
-"Pull Request này đã sẵn sàng cho việc Review chưa?"
+Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây.
 
 Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
 
@@ -87,4 +94,9 @@ Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số b
 ### Sau khi Pull Request được approve
 Cuối cùng, nếu bạn thấy phần phản hồi nào hữu ích, bạn có thể điền tên user tương ứng vào dưới tên bạn ở mục "Những người thực hiện". Cả người dịch và người review đều xứng đáng được ghi công.
 
+Nếu bạn chưa biết tên đầy đủ của những người đóng góp, bạn có thể xem danh sách Contributors **[tại đây](../docs/contributors_info.md)**. Nếu bạn chưa thấy tên mình tại đây, hãy tạo một Issue mới để được bổ sung.
+
 Cảm ơn đóng góp của bạn.
+
+Thân mến,<br/>
+Nhóm dịch thuật Machine Learning Cơ Bản
