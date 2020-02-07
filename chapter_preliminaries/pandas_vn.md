@@ -79,7 +79,8 @@ To load the raw dataset from the created csv file, we import the `pandas` packag
 This dataset has $4$ rows and $3$ columns, where each row describes the number of rooms ("NumRooms"), the alley type ("Alley"), and the price ("Price") of a house.
 -->
 
-*dịch đoạn phía trên*
+Để nạp tập dữ liệu thô từ tệp csv vừa được tạo ra, ta dùng gói thư viện `pandas` và gọi hàm `read_csv`.
+Bộ dữ liệu này có $4$ hàng và $3$ cột, trong đó mỗi hàng biểu thị số phòng ("NumRooms"), kiểu lối đi ("Alley"), và giá ("Price") của căn nhà.
 
 ```{.python .input}
 # If pandas is not installed, just uncomment the following line:
@@ -98,21 +99,24 @@ print(data)
 ## Handling Missing Data
 -->
 
-## *dịch tiêu đề phía trên*
+## Xử lý dữ liệu thiếu
 
 <!--
 Note that "NaN" entries are missing values.
 To handle missing data, typical methods include *imputation* and *deletion*, where imputation replaces missing values with substituted ones, while deletion ignores missing values. Here we will consider imputation.
 -->
 
-*dịch đoạn phía trên*
+Để ý rằng giá trị "NaN" là các giá trị bị thiếu.
+Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc sẽ thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
+Dưới đây chúng ta xem xét phương pháp quy buộc.
 
 <!--
 By integer-location based indexing (`iloc`), we split `data` into `inputs` and `outputs`, where the former takes the first 2 columns while the later only keeps the last column.
 For numerical values in `inputs` that are missing, we replace the "NaN" entries with the mean value of the same column.
 -->
 
-*dịch đoạn phía trên*
+Bằng phương pháp đánh vị trí theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
+Với các giá trị số trong `inputs` mà bị thiếu, chúng ta thay thế phần tử "NaN" bằng giá trị trung bình của cùng cột đó. 
 
 ```{.python .input}
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
@@ -127,7 +131,10 @@ A row whose alley type is "Pave" will set values of "Alley_Pave" and "Alley_nan"
 A row with a missing alley type will set their values to $0$ and $1$.
 -->
 
-*dịch đoạn phía trên*
+Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một lớp riêng.
+Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
+Những hàng mà có kiểu lối đi là "Pave" (được lát gạch) sẽ có giá trị của cột "Alley_Pave" và "Alley_nan" lần lượt là $1$ và $0$.
+Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị lần lượt là $0$ và $1$.
 
 ```{.python .input}
 inputs = pd.get_dummies(inputs, dummy_na=True)
@@ -223,7 +230,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
+* Nguyễn Cảnh Thướng
+* Phạm Hồng Vinh
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 2 -->
 *
