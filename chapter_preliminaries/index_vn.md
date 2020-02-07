@@ -15,7 +15,7 @@ So we will begin by learning the practical skills for storing, manipulating, and
 
 Để bắt đầu với học sâu, ta sẽ cần nắm bắt một vài kỹ năng cơ bản.
 Tất cả những vấn đề về học máy đều có liên quan đến việc trích xuất thông tin từ dữ liệu.
-Vì vậy, chúng ta sẽ bắt đầu bằng cách học các kỹ năng thực tế để lưu trữ, thao tác và xử lý dữ liệu.
+Vì vậy, chúng tôi sẽ bắt đầu bằng cách học các kỹ năng thực tế để lưu trữ, thao tác và xử lý dữ liệu.
 
 <!--
 Moreover, machine learning typically requires working with large datasets, which we can think of as tables, where the rows correspond to examples and the columns correspond to attributes.
@@ -37,7 +37,7 @@ Fortunately, the `autograd` package automatically computes differentiation for u
 Ngoài ra, học sâu cũng đề cập toàn bộ về tối ưu hoá.
 Chúng tôi có một mô hình với một số tham số và mong muốn tìm kiếm những mô hình phù hợp với những dữ liệu *tốt nhất* mà chúng tôi có.
 Việc xác định cách dịch chuyển của từng tham số ở mỗi bước trong thuật toán đòi hỏi một chút tính toán, sẽ được giới thiệu ngắn gọn.
-May mắn thay, gói `autograd` sẽ tự động tính toán những sự khác biệt này và chúng ta sẽ đề cập đến nó sau.
+May thay, gói `autograd` sẽ tự động tính toán những sự khác biệt này và chúng ta sẽ đề cập đến nó sau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ==================== -->
 
