@@ -71,8 +71,8 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-Lập trình ký hiệu là kiểu lập trình các tính toán thường chỉ được thực hiện một khi chương trình được định nghĩa đầy đủ.
-Cơ chế này được sử dụng trong nhiều framework, bao gồm Theano, Keras và TensorFlow (hai cái sau đã hỗ trợ lập trình mệnh lệnh).
+Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ thể thực hiện một khi chương trình được định nghĩa đầy đủ.
+Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh).
 Luồng lập trình thường gồm những bước sau:
 
 <!--
@@ -96,9 +96,9 @@ To get a better idea consider the following simulation of imperative programming
 -->
 
 Quy trình trên cho phép ta có khá nhiều cách tối ưu.
-Thứ nhất, ta có thể bỏ qua bộ thông dịch Python trong nhiều trường hợp, kéo theo việc loại bỏ được nghẽn cổ chai (rất đáng kể khi sử dụng nhiều GPU tốc độ cao với một luồng Python trên một CPU).
+Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, vì thế mà việc ta loại bỏ được sự nghẽn cổ chai trong chất lượng tính toán trở nên quan trọng khi sử dụng nhiều GPU tốc độ cao với một luồng Python trên CPU.
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
-Điều này hoàn toàn có thể bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
+Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
 Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
 Để hiểu rõ hơn vấn đề ta xem xét mô phỏng về lập trình mệnh lệnh dưới đây (viết bằng Python).
