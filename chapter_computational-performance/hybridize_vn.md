@@ -71,7 +71,7 @@ Bởi ta không biết liệu biến `e` và `f` có được sử dụng sau ha
 ## Symbolic Programming
 -->
 
-## Lập trình ký hiệu
+## *dịch tiêu đề phía trên*
 
 <!--
 Consider the alternative, symbolic programming where computation is usually performed only once the process has been fully defined. 
@@ -79,9 +79,7 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-Lập trình ký hiệu là kiểu lập trình các tính toán thường chỉ được thực hiện một khi chương trình được định nghĩa đầy đủ.
-Cơ chế này được sử dụng trong nhiều framework, bao gồm Theano, Keras và TensorFlow (hai cái sau đã hỗ trợ lập trình mệnh lệnh).
-Luồng lập trình thường gồm những bước sau:
+*dịch đoạn phía trên*
 
 <!--
 1. Define the operations to be executed.
@@ -89,9 +87,7 @@ Luồng lập trình thường gồm những bước sau:
 3. Provide the required inputs and call the compiled program for execution.
 -->
 
-1. Khai báo các hành động sẽ được thực thi.
-2. Biên dịch các hành động thành chương trình có thể chạy được.
-3. Thực thi bằng cách cung cấp đầu vào và gọi chương trình đã được biên dịch.
+*dịch đoạn phía trên*
 
 <!--
 This allows for a significant amount of optimization. 
@@ -103,13 +99,7 @@ Or it can transform the code entirely into an equivalent piece.
 To get a better idea consider the following simulation of imperative programming (it's Python after all) below.
 -->
 
-Quy trình trên cho phép ta có khá nhiều cách tối ưu.
-Thứ nhất, ta có thể bỏ qua bộ thông dịch Python trong nhiều trường hợp, kéo theo việc loại bỏ được nghẽn cổ chai (rất đáng kể khi sử dụng nhiều GPU tốc độ cao với một luồng Python trên một CPU).
-Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
-Điều này hoàn toàn có thể bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
-Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
-Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
-Để hiểu rõ hơn vấn đề ta xem xét mô phỏng về lập trình mệnh lệnh dưới đây (viết bằng Python).
+*dịch đoạn phía trên*
 
 ```{.python .input  n=2}
 def add_():
@@ -140,7 +130,7 @@ exec(y)
 The differences between imperative (interpreted) programming and symbolic programming are as follows:
 -->
 
-Sự khác biệt giữa lập trình mệnh lệnh (thông dịch) và lập trình ký hiệu như sau:
+*dịch đoạn phía trên*
 
 <!--
 * Imperative programming is easier. 
@@ -152,12 +142,7 @@ It makes it easier to optimize the code during compilation, while also having th
 This allows the program to be run in a non-Python environment, thus avoiding any potential performance issues related to the Python interpreter.
 -->
 
-* Lập trình mệnh lệnh dễ viết hơn.
-Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
-Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
-Bởi ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
-* Lập trình ký hiệu thì hiệu quả hơn và cũng dễ viết lại bằng ngôn ngữ khác.
-Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
+*dịch đoạn phía trên*
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
