@@ -243,7 +243,8 @@ Khi thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathc
 Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
 Chú ý rằng nếu kết quá của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
 biến cố $\mathcal{A}$ đã xảy ra
-Như vậy, nếu mặt 3 chấm ngửa lên sau khi xúc sắc được gieo, chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$
+Như vậy, nếu mặt 3 chấm ngửa lên sau khi xúc sắc được gieo, 
+chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
@@ -252,7 +253,8 @@ denoted as $P(\mathcal{A})$, satisfies the following properties:
 -->
 
 Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số gán một tập hợp các biến cố tới một giá trị thật. 
-Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$ được kí hiệu là $P(\mathcal{A})$ và thoả mãn những tính chất sau:
+Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$, 
+được kí hiệu là $P(\mathcal{A})$, phải thoả mãn những tính chất sau:
 
 <!--
 * For any event $\mathcal{A}$, its probability is never negative, i.e., $P(\mathcal{A}) \geq 0$;
