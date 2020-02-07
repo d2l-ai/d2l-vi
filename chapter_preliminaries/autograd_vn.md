@@ -180,7 +180,7 @@ y.backward()
 If we recheck the value of `x.grad`, we will find its contents overwritten by the newly calculated gradient.
 -->
 
-Nếu kiểm tra lại giá trị của `x.grad`, ta sẽ thấy nội dung của nó đã được ghì đè bằng gradient mới được tính toán.
+Nếu kiểm tra lại giá trị của `x.grad`, ta sẽ thấy nội dung của nó đã được ghi đè bằng gradient mới được tính toán.
 
 ```{.python .input  n=7}
 x.grad
