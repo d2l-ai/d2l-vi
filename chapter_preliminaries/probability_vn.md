@@ -16,7 +16,7 @@ Entire courses, majors, theses, careers, and even departments, are devoted to pr
 
 Theo cách này hay cách khác, học máy đơn thuần là đưa ra các dự đoán.
 Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết lịch sử lâm sàng của họ.
-Trong việc phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* hoạt động của hộp đen máy bay sẽ ra sao, có hoạt động bình thường không.
+Trong việc phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* xảy ra của các thông số động cơ máy bay sẽ ra sao, có hoạt động bình thường không.
 Trong học tăng cường, chúng ta muốn có một tác nhân hành động khôn khéo trong môi trường của nó.
 Nghĩa là chúng ta cần nghĩ tới xác suất để đạt phần thưởng cao nhất cho mỗi hành động trong các hành động có thể.
 Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần nghĩ tới xác suất.
