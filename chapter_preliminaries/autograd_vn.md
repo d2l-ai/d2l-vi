@@ -425,7 +425,7 @@ a.grad == d / a
 ## Training Mode and Prediction Mode
 -->
 
-## *dịch tiêu đề phía trên*
+## Chế độ huấn luyện và Chế độ dự đoán
 
 <!--
 As we have seen, after we call `autograd.record`,
@@ -436,7 +436,10 @@ the running mode from *prediction mode* to *training mode*.
 We can verify this behavior by calling the `is_training` function.
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy, sau khi gọi `autograd.record`, MXNet sẽ ghi lại những tính toán xảy ra trong khối mã nguồn theo sau.
+Có một chi tiết tinh tế nữa mà ta cần để ý.
+`autograd.record` sẽ thay đổi chế độ chạy từ *chế độ dự đoán* sang *chế độ huấn luyện*.
+Ta có thể kiểm chứng hành vi này bằng cách gọi hàm `is_training`.
 
 ```{.python .input  n=19}
 print(autograd.is_training())
@@ -452,14 +455,15 @@ when we subsequently use it to make predictions.
 We will cover these differences in detail in later chapters.
 -->
 
-*dịch đoạn phía trên*
+Khi ta đến với các mô hình học sâu phức tạp, ta sẽ gặp vài thuật toán mà hành vi của mô hình là khác nhau giữa khi luyện tập và khi được sử dụng sau đó để dự đoán.
+Ta sẽ biết tới những khác biệt này chi tiết trong các chương sau.
 
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * MXNet provides the `autograd` package to automate the calculation of derivatives. To use it, we first attach gradients to those variables with respect to which we desire partial derivatives. We then record the computation of our target value, execute its `backward` function, and access the resulting gradient via our variable's `grad` attribute.
@@ -467,14 +471,17 @@ We will cover these differences in detail in later chapters.
 * The running modes of MXNet include training mode and prediction mode. We can determine the running mode by calling the `is_training` function.
 -->
 
-*dịch đoạn phía trên*
+* MXNet chung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
+Sau đó ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
+* Ta có thể tách rời gradient để kiểm soát những phần tính toán sẽ được sử dụng trong hàm `backward`.
+* Các chế độ chạy của MXNet bao gồm chế độ huấn luyện và chế độ dự đoán. Ta có thể kiểm tra chế độ đang chạy bằng cách gọi hàm `is_training`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Why is the second derivative much more expensive to compute than the first derivative?
@@ -485,7 +492,12 @@ We will cover these differences in detail in later chapters.
 1. In a second-price auction (such as in eBay or in computational advertising), the winning bidder pays the second-highest price. Compute the gradient of the final price with respect to the winning bidder's bid using `autograd`. What does the result tell you about the mechanism? If you are curious to learn more about second-price auctions, check out the paper by Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 -->
 
-*dịch đoạn phía trên*
+1. Tại sao đạo hàm bậc hai lại mất nhiều tài nguyên để tính toán hơn đạo hàm bậc một?
+1. Sau khi chạy `y.backward()`, lập tức chạy lại lần nữa và xem chuyện gì sẽ xảy ra.
+1. Trong ví dụ về luồng điều khiển khi ta tính toán đạo hàm của `d` theo `a`, điều gì sẽ xảy ra nếu ta thay đổi biến `a` thành một vector hay ma trận ngẫu nhiên. Lúc này, kết quả của tính toán `f(a)` sẽ không còn là số vô hướng nữa. Điều gì sẽ xảy ra với kết quả? Ta có thể phân tích nó như thế nào?
+1. Hãy tái thiết kế một ví dụ về việc tìm gradient của luồng điều khiển. Chạy ví dụ và phân tích kết quả.
+1. Cho $f(x) = \sin(x)$. Phát họa giá trị $f(x)$ và $\frac{df(x)}{dx}$ với điều kiện việc tính đạo hàm không sử dụng $f'(x) = \cos(x)$.
+1. Trong một cuộc đấu giá kín theo giá thứ hai (ví dụ như trong eBay hay trong quảng cáo điện toán), người thắng cuộc đấu giá chỉ trả mức giá cao thứ hai. Hãy tính gradient của mức giá cuối cùng theo mức đặt của người thắng cuộc bằng cách sử dụng `autograd`. Kết quả cho bạn biết điều gì về cơ chế đấu giá này? Nếu bạn tò mò muốn tìm hiểu thêm về các cuộc đấu giá kín theo giá thứ hai, hãy đọc bài báo nghiên cứu của Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
