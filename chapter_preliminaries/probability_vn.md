@@ -144,9 +144,9 @@ multiple samples at once, returning an array of independent samples in any shape
 we might desire.
 -->
 
-Nếu bạn chạy bộ sinh mẫu một vài lần, bạn sẽ thấy rằng bạn nhận được các giá trị ngẫu nhiên mỗi lần.
-Khi ước lượng tính công bằng của một con xúc xắc, chúng ta thường muốn sinh ra nhiều mẫu từ cùng một phân phối xác suất.
-Sẽ chậm không thể chịu nổi khi làm việc này bằng vòng lặp `for` trong Python, vì vậy mà `random.multinomial` hỗ trợ sinh nhiều mẫu trong một lần, trả về một mảng của các mẫu độc lập với bất kỳ kích thước nào ta muốn.
+Nếu chạy bộ lấy mẫu một vài lần, bạn sẽ thấy rằng các giá trị ngẫu nhiên được tạo ra tại mỗi lần.
+Khi ước lượng tính công bằng của một con xúc xắc, chúng ta thường muốn tung nhiều lần con xúc xắc này.
+Sẽ rất chậm khi thực hiện việc này bằng vòng lặp `for` trong Python, vì vậy `random.multinomial` hỗ trợ sinh nhiều mẫu trong một lần, trả về một mảng của các mẫu độc lập với kích thước bất kỳ.
 
 ```{.python .input  n=3}
 np.random.multinomial(10, fair_probs)
@@ -156,7 +156,7 @@ np.random.multinomial(10, fair_probs)
 We can also conduct, say $3$, groups of experiments, where each group draws $10$ samples, all at once.
 -->
 
-Chúng ta cũng có thể làm, giả sử $3$, các thí nghiệm, trong đó mỗi thí nghiệm lấy ra $10$ mẫu, tất cả trong một lần.
+Chúng ta cũng có thể giả sử làm $3$ thí nghiệm, trong đó mỗi thí nghiệm lấy ra $10$ mẫu, tất cả trong một lần.
 
 ```{.python .input  n=4}
 counts = np.random.multinomial(10, fair_probs, size=3)
@@ -170,9 +170,9 @@ number was rolled.
 Specifically, we calculate the relative frequency as the estimate of the true probability.
 -->
 
-Giờ chúng ta đã biết cách lấy mẫu các lần lăn của một con xúc xắc, ta có thể giả lập 1000 lần lăn.
-Sau đó, chúng ta có thể đếm xem, sau mỗi một trong số 1000 lần lăn, có bao nhiêu lần mỗi mặt xuất hiện.
-Cụ thể, chúng ta tính toán tần suất như là một ước lượng cho xác suất thực.
+Giờ chúng ta đã biết cách lấy mẫu các lần tung của một con xúc xắc, ta có thể giả lập 1000 lần.
+Sau đó, chúng ta có thể đếm xem mỗi mặt xuất hiện bao nhiêu lần sau mỗi lần tung.
+Cụ thể, chúng ta tính toán tần suất như một ước lượng cho xác suất thực.
 
 ```{.python .input  n=5}
 # Store the results as 32-bit floats for division
@@ -216,9 +216,9 @@ As we get more data by conducting more experiments,
 the $6$ solid curves converge towards the true probability.
 -->
 
-Mỗi đường cong liền tương ứng với một trong sáu giá trị của xúc xắc và chỉ ra xác suất ước lượng của chúng ta cho sự kiện xúc xắc ra mặt ngửa khi kiểm tra sau mỗi thí nghiệm.
+Mỗi đường cong liền tương ứng với một trong sáu giá trị của xúc xắc và chỉ ra xác suất ước lượng của sự kiện xúc xắc ra mặt tương ứng sau mỗi thí nghiệm.
 Đường thẳng đen đứt đoạn chỉ ra xác suất thực.
-Khi chúng ta có thêm nhiều dữ liệu bằng cách làm thêm nhiều thí nghiệm, $6$ đường cong liền sẽ hội tụ tiến tới xác suất thực.
+Khi có thêm nhiều dữ liệu bằng cách làm thêm nhiều thí nghiệm, $6$ đường cong liền sẽ hội tụ tiến tới xác suất thực.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
