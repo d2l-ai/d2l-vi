@@ -41,8 +41,8 @@ Next, machine learning is concerned with making predictions: what is the likely 
 To reason rigorously under uncertainty we will need to invoke the language of probability.
 -->
 
-Tiếp theo, học máy liên quan đến việc đưa ra những dự đoán: giá trị có thể có của một số thuộc tính chưa biết, dựa trên thông tin mà chúng ta quan sát là gì?
-Để có được sự suy luận chặt chẽ dưới sự không chắc chắn, chúng ta sẽ cần phải tìm đến ngôn ngữ của xác suất.
+Kế tiếp, học máy liên quan đến việc đưa ra những dự đoán như: Xác định giá trị của một số thuộc tính chưa biết dựa trên thông tin quan sát được?
+Để có được sự suy luận chặt chẽ dưới sự không chắc chắn, chúng ta sẽ cần tìm đến ngôn ngữ của xác suất.
 
 <!--
 In the end, the official documentation provides plenty of descriptions and examples that are beyond this book.
@@ -50,7 +50,7 @@ To conclude the chapter, we will show you how to look up documentation for the n
 -->
 
 Cuối cùng, tài liệu tham khảo chính thức cung cấp rất nhiều mô tả và ví dụ nằm ngoài cuốn sách này.
-Để kết thúc chương này, chúng tôi sẽ chỉ cho bạn cách tra cứu tài liệu tham khảo cho các thông tin cần thiết.
+Để kết thúc chương này, chúng tôi sẽ chỉ bạn cách tra cứu tài liệu tham khảo cho các thông tin cần thiết.
 
 <!--
 This book has kept the mathematical content to the minimum necessary to get a proper understanding of deep learning.
@@ -60,9 +60,9 @@ If you wish to understand *all* of the mathematical content, further reviewing :
 -->
 
 Cuốn sách này đã cung cấp nội dung toán học ở mức tối thiểu cần có để có được sự hiểu biết đúng đắn về học sâu.
-Tuy nhiên, điều đó không đồng nghĩa rằng đây là một cuốn sách về toán học đơn thuần.
-Do vậy, chương này cung cấp một giới thiệu nhanh về toán học cơ bản và thường xuyên sử dụng để cho phép bất cứ ai có sự hiểu biết *hầu hết* về toán đều có thể tiếp cận được.
-Nếu bạn muốn hiểu *tất cả* nội dung về toán học, hãy xem qua :numref:`chap_appendix_math` này.
+Tuy nhiên, điều đó không đồng nghĩa rằng cuốn sách này không cần các kiến thức toán học.
+Do vậy, chương này cung cấp một giới thiệu nhanh về toán học cơ bản và thông dụng cho phép bất cứ ai có sự hiểu biết cơ bản *tối thiểu* về toán đều có thể tiếp cận được.
+Nếu bạn muốn hiểu *tất cả* nội dung về toán học, hãy tham khảo thêm :numref:`chap_appendix_math` này.
 
 ```toc
 :maxdepth: 2
