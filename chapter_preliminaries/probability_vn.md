@@ -15,17 +15,17 @@ Entire courses, majors, theses, careers, and even departments, are devoted to pr
 -->
 
 Theo cách này hay cách khác, học máy đơn thuần là đưa ra các dự đoán.
-Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết lịch sử lâm sàng của họ.
-Trong việc phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* xảy ra của các thông số động cơ máy bay sẽ ra sao, có hoạt động bình thường không.
-Trong học tăng cường, chúng ta muốn có một tác nhân hành động khôn khéo trong môi trường của nó.
-Nghĩa là chúng ta cần nghĩ tới xác suất để đạt phần thưởng cao nhất cho mỗi hành động trong các hành động có thể.
-Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần nghĩ tới xác suất.
-Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách lớn.
-Chúng ta có lẽ rất muốn ước lượng xác suất một người dùng cụ thể muốn mua một cuốn sách cụ thể nào đó.
-Để làm được điều này, chúng ta cần sử dụng ngôn ngữ của xác suất.
+Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết tiền sử lâm sàng của họ.
+Trong tác vụ phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* các thông số động cơ máy bay ở mức nào, liệu có ở mức hoạt động bình thường không.
+Trong học tăng cường, chúng ta muốn có một tác nhân hoạt động thông minh trong một môi trường.
+Nghĩa là chúng ta cần tính tới xác suất đạt điểm thưởng cao nhất cho từng hành động có thể thực hiện.
+Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần quan tâm tới xác suất.
+Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách trực tuyến lớn.
+Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ thể muốn mua một cuốn sách cụ thể nào đó.
+Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
 Toàn bộ các khóa học, các chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành cho xác suất.
-Một cách rất tự nhiên, mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
-Thay vào đó, chúng tôi hi vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, truyền cho bạn niềm yêu thích với xác suất để bạn có thể bắt đầu tự khám phá nếu muốn.
+Thông thường thì mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
+Thay vào đó, chúng tôi hi vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
 
 <!--
 We have already invoked probabilities in previous sections without articulating what precisely they are or giving a concrete example. Let's get more serious now by considering the first case: distinguishing cats and dogs based on photographs. This might sound simple but it is actually a formidable challenge. To start with, the difficulty of the problem may depend on the resolution of the image.
@@ -33,8 +33,8 @@ We have already invoked probabilities in previous sections without articulating 
 
 Chúng tôi đã nhắc tới xác suất trong các chương trước mà không nói rõ chính xác nó là gì hay là đưa ra một ví dụ cụ thể nào.
 Giờ hãy cùng bắt đầu nghiêm túc hơn bằng cách xem xét trường hợp đầu tiên: phân biệt mèo và chó dựa trên các bức ảnh.
-Điều này nghe có vẻ đơn giản nhưng thực sự rất thử thách.
-Để bắt đầu, độ khó của vấn đề có thể phụ thuộc nhiều vào độ phân giải của ảnh.
+Điều này tưởng chừng đơn giản nhưng thực ra rất nhiều thách thức.
+Để bắt đầu, độ phức tạp của vấn đề này có thể phụ thuộc vào độ phân giải của ảnh.
 
 <!--
 ![Images of varying resolutions ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ pixels).](../img/cat_dog_pixels.png)
@@ -59,7 +59,7 @@ probability $0.5  < P(y=$ "cat"$) < 1$.
 -->
 
 Như thể hiện trong :numref:`fig_cat_dog`, rất dễ dàng cho con người để có thể phân biệt mèo và chó ở độ phần giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh và là không thể ở $10 \times 10$ điểm ảnh.
-Nói cách khác, khả năng của chúng ta để phân biệt mèo và chó ở khoảng cách xa (đồng nghĩa với độ phân giải thấp) có thể chỉ là đoán mò.
+Nói cách khác, khả năng phân biệt mèo và chó ở khoảng cách xa (đồng nghĩa với độ phân giải thấp) của chúng ta có thể chỉ là đoán mò.
 Xác suất trang bị phép đo độ chắc chắn trong suy luận của chúng ta một cách chính thức.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
 Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
@@ -69,15 +69,15 @@ Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh 
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
 -->
 
-Giờ hãy xem xét trường hợp thứ hai: Cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất trời sẽ mưa ở Đài Bắc vào ngày mai.
-Nếu là mùa hè, trời có thể có mưa với xác suất $0.5$.
+Giờ hãy xem xét trường hợp thứ hai: Cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
+Nếu vào mùa hè, xác suất trời mưa có thể là $0.5$.
 
 <!--
 In both cases, we have some value of interest. And in both cases we are uncertain about the outcome.
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-Trong cả hai trường hợp, chúng ta có một vài giá trị thú vị. Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
+Trong cả hai trường hợp, chúng ta có một vài giá trị quan tâm. Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
 Nhưng có một khác biệt quan trọng giữa hai trường hợp.
 Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
 Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vậy lý cũng thế).
