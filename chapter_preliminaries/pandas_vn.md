@@ -107,7 +107,7 @@ By integer-location based indexing (`iloc`), we split `data` into `inputs` and `
 For numerical values in `inputs` that are missing, we replace the "NaN" entries with the mean value of the same column.
 -->
 
-Sử dụng chỉ số dựa trên số nguyên (`iloc`), chúng ta tách `data` thành `inputs` và `outputs`, trong đó phần trước sẽ lấy 2 cột đầu tiên và phần sau sẽ lấy cột cuối cùng.
+Bằng phương pháp đánh vị trí theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
 Với các giá trị số trong `inputs` mà bị thiếu, chúng ta thay thế phần tử "NaN" bằng giá trị trung bình của cùng cột đó. 
 
 ```{.python .input}
