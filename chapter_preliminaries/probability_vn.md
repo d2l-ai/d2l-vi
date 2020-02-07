@@ -62,7 +62,7 @@ Như thể hiện trong :numref:`fig_cat_dog`, rất dễ dàng cho con người
 Nói cách khác, khả năng của chúng ta để phân biệt mèo và chó ở khoảng cách xa (đồng nghĩa với độ phân giải thấp) có thể chỉ là đoán mò.
 Xác suất trang bị phép đo độ chắc chắn trong suy luận của chúng ta một cách chính thức.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
-Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "cat" hoặc là $y =$ "dog", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "cat"$) = P(y=$ "dog"$) = 0.5$.
+Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
 Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "cat"$) < 1$.
 
 <!--
