@@ -208,7 +208,7 @@ whose value was calculated as a function of `x`,
 the contents of `x.grad` will be overwritten.
 -->
 
-Nếu ta tiếp tục tính gradient của một biến khác mà giá trị của nó là kết quả của một hàm theo biến `x`, thì nội dụng trong `x.grad` sẽ bị ghì đè.
+Nếu ta tiếp tục tính gradient của một biến khác mà giá trị của nó là kết quả của một hàm theo biến `x`, thì nội dung trong `x.grad` sẽ bị ghi đè.
 
 ```{.python .input  n=9}
 with autograd.record():
