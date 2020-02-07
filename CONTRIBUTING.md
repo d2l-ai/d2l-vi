@@ -73,9 +73,14 @@ Sau khi click "Commit changes", trang tạo Pull Request sẽ tự động mở 
 
 Click "Create pull request".
 
+Trong trường hợp bạn chưa hoàn thành nội dung cần dịch, hoặc nội dung này bạn mong muốn tự chỉnh sửa để hoàn thiện hơn, bạn hãy lựa chọn tạo một "Draft Pull Request" theo hướng dẫn ở hình dưới.
+
+![](./translation_team/draft-pull-requests.png)
+
+Sau khi hoàn thiện nội dung, bạn có thể chọn Ready for review để Pull request này được nhóm review.
+
 ### Bước 8: Kiểm tra checklist
-Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây. Nếu Pull Request đã sẵn sàng được review, bạn click vào dòng thứ hai từ dưới lên:
-"Pull Request này đã sẵn sàng cho việc Review chưa?"
+Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây.
 
 Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
 
