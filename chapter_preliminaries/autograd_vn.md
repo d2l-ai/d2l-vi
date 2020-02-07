@@ -196,7 +196,7 @@ then the equality between them holds at every position.
 
 Gradient của hàm $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo $\mathbf{x}$ nên là $4\mathbf{x}$.
 Hãy xác minh một cách nhanh chóng rằng giá trị gradient mong muốn được tính toán đúng.
-Nếu hai `ndarray` là giống nhau, thì phần tử của chúng cũng bằng nhau tại mọi vị tí.
+Nếu hai `ndarray` là giống nhau, thì mọi cặp phần tử tương ứng cũng bằng nhau.
 
 ```{.python .input  n=8}
 x.grad == 4 * x
@@ -245,7 +245,7 @@ but rather the sum of the partial derivatives
 computed individually for each example in the batch.
 -->
 
-Dù sao, khi những đối tượng như trên xuất hiện nhiều hơn trong học máy nâng cao (cũng như trong học sâu) khi ta gọi lan truyền ngược lên một vector, thì đó là do ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi thành phần của một *batch* các mẫu huấn luyện.
+Tuy nhiên, trong khi những đối tượng như trên xuất hiện trong học máy nâng cao (bao gồm học sâu), thường xuyên hơn khi ta gọi lan truyền ngược lên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi thành phần của một *batch* các mẫu huấn luyện.
 Ở đây, ý định của ta không phải là tính toán ma trận vi phân mà là tổng của các đạo hàm riêng được tính toán một cách độc lập cho mỗi mẫu trong batch.
 
 <!--
@@ -257,7 +257,7 @@ by summing the elements in `y`,
 and compute the gradient of that scalar variable with respect to `x`.
 -->
 
-Vậy nên khi ta gọi `backward` lên một biến ma trận `y`, một hàm theo biến `x`, MXNet sẽ cho rằng ta muốn tính tổng của các gradient.
+Vậy nên khi ta gọi `backward` lên một biến vector `y` -- là một hàm của `x`, MXNet sẽ cho rằng ta muốn tính tổng của các gradient.
 Nói ngắn gọn, MXNet sẽ tạo một biến mới có giá trị là số vô hướng bằng cách cộng lại các phần tử trong `y` và tính gradient theo `x` của biến mới này.
 
 ```{.python .input  n=10}
