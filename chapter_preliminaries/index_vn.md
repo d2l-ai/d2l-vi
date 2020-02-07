@@ -4,7 +4,7 @@
 #  Preliminaries
 -->
 
-# *dịch tiêu đề phía trên*
+# Sơ Bộ
 :label:`chap_preliminaries`
 
 <!--
@@ -13,7 +13,9 @@ All machine learning is concerned with extracting information from data.
 So we will begin by learning the practical skills for storing, manipulating, and preprocessing data.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu với học sâu, ta sẽ cần nắm bắt một vài kỹ năng cơ bản.
+Tất cả những vấn đề về học máy đều có liên quan đến việc trích xuất thông tin từ dữ liệu.
+Vì vậy, chúng ta sẽ bắt đầu bằng cách học các kỹ năng thực tế để lưu trữ, thao tác và xử lý dữ liệu.
 
 <!--
 Moreover, machine learning typically requires working with large datasets, which we can think of as tables, where the rows correspond to examples and the columns correspond to attributes.
@@ -21,7 +23,9 @@ Linear algebra gives us a powerful set of techniques for working with tabular da
 We will not go too far into the weeds but rather focus on the basic of matrix operations and their implementation.
 -->
 
-*dịch đoạn phía trên*
+Học máy thường yêu cầu làm việc với các tập dữ liệu lớn, mà chúng ta có thể nghĩ là các bảng, trong đó các hàng tương ứng với các ví dụ và các cột tương ứng với các thuộc tính.
+Đại số Tuyến tính cung cấp cho ta một bộ kỹ thuật mạnh mẽ để làm việc với dữ liệu dạng bảng.
+Chúng tôi sẽ không đi quá sâu mà chỉ tập trung cơ bản vào các ma trận hoạt động và thực thi chúng.
 
 <!--
 Additionally, deep learning is all about optimization.
@@ -30,7 +34,10 @@ Determining which way to move each parameter at each step of an algorithm requir
 Fortunately, the `autograd` package automatically computes differentiation for us, and we will cover it next.
 -->
 
-*dịch đoạn phía trên*
+Ngoài ra, học sâu cũng đề cập toàn bộ về tối ưu hoá.
+Chúng tôi có một mô hình với một số tham số và mong muốn tìm kiếm những mô hình phù hợp với những dữ liệu *tốt nhất* mà chúng tôi có.
+Việc xác định cách dịch chuyển của từng tham số ở mỗi bước trong thuật toán đòi hỏi một chút tính toán, sẽ được giới thiệu ngắn gọn.
+May mắn thay, gói `autograd` sẽ tự động tính toán những sự khác biệt này và chúng ta sẽ đề cập đến nó sau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ==================== -->
 
@@ -86,7 +93,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 2 -->
 *
