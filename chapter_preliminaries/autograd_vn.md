@@ -151,8 +151,8 @@ inside an `autograd.record` scope.
 -->
 
 Cần chú ý rằng để xây dựng đồ thị tính toán cần một số lượng tính toán không nhỏ.
-Vậy nên MXNet sẽ chỉ dựng đồ thị khi được đích thân bảo thế.
-Ta có thể thay đổi hành vi này bằng cách đặt đoạn mã của ta trong phạm vi của `autograd.record`.
+Vậy nên MXNet sẽ chỉ dựng đồ thị khi được ra lệnh rõ ràng.
+Ta có thể thay đổi hành vi này bằng cách đặt đoạn mã trong phạm vi `autograd.record`.
 
 ```{.python .input  n=5}
 with autograd.record():
