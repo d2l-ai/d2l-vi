@@ -144,7 +144,9 @@ multiple samples at once, returning an array of independent samples in any shape
 we might desire.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn chạy bộ sinh mẫu một vài lần, bạn sẽ thấy rằng bạn nhận được các giá trị ngẫu nhiên mỗi lần.
+Khi ước lượng tính công bằng của một con xúc xắc, chúng ta thường muốn sinh ra nhiều mẫu từ cùng một phân phối xác suất.
+Sẽ chậm không thể chịu nổi khi làm việc này bằng vòng lặp `for` trong Python, vì vậy mà `random.multinomial` hỗ trợ sinh nhiều mẫu trong một lần, trả về một mảng của các mẫu độc lập với bất kỳ kích thước nào ta muốn.
 
 ```{.python .input  n=3}
 np.random.multinomial(10, fair_probs)
@@ -154,7 +156,7 @@ np.random.multinomial(10, fair_probs)
 We can also conduct, say $3$, groups of experiments, where each group draws $10$ samples, all at once.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng có thể làm, giả sử $3$, các thí nghiệm, trong đó mỗi thí nghiệm lấy ra $10$ mẫu, tất cả trong một lần.
 
 ```{.python .input  n=4}
 counts = np.random.multinomial(10, fair_probs, size=3)
@@ -168,7 +170,9 @@ number was rolled.
 Specifically, we calculate the relative frequency as the estimate of the true probability.
 -->
 
-*dịch đoạn phía trên*
+Giờ chúng ta đã biết cách lấy mẫu các lần lăn của một con xúc xắc, ta có thể giả lập 1000 lần lăn.
+Sau đó, chúng ta có thể đếm xem, sau mỗi một trong số 1000 lần lăn, có bao nhiêu lần mỗi mặt xuất hiện.
+Cụ thể, chúng ta tính toán tần suất như là một ước lượng cho xác suất thực.
 
 ```{.python .input  n=5}
 # Store the results as 32-bit floats for division
@@ -180,14 +184,15 @@ counts / 1000  # Reletive frequency as the estimate
 Because we generated the data from a fair die, we know that each outcome has true probability $\frac{1}{6}$, roughly $0.167$, so the above output estimates look good.
 -->
 
-*dịch đoạn phía trên*
+Do chúng ta sinh dữ liệu từ một con xúc xắc công bằng, ta biết mỗi đầu ra đều có xác suất thực bằng $\frac{1}{6}$, cỡ $0.167$, do đó kết quả ước lượng bên trên trông khá ổn.
 
 <!--
 We can also visualize how these probabilities converge over time towards the true probability.
 Let's conduct $500$ groups of experiments where each group draws $10$ samples.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng có thể trực quan hóa những xác suất này hội tụ tới xác suất thực như thế nào.
+Hãy cũng làm $500$ thí nghiệm trong đó mỗi thí nghiệm lấy ra $10$ mẫu.
 
 ```{.python .input  n=6}
 counts = np.random.multinomial(10, fair_probs, size=500)
@@ -211,7 +216,9 @@ As we get more data by conducting more experiments,
 the $6$ solid curves converge towards the true probability.
 -->
 
-*dịch đoạn phía trên*
+Mỗi đường cong liền tương ứng với một trong sáu giá trị của xúc xắc và chỉ ra xác suất ước lượng của chúng ta cho sự kiện xúc xắc ra mặt ngửa khi kiểm tra sau mỗi thí nghiệm.
+Đường thẳng đen đứt đoạn chỉ ra xác suất thực.
+Khi chúng ta có thêm nhiều dữ liệu bằng cách làm thêm nhiều thí nghiệm, $6$ đường cong liền sẽ hội tụ tiến tới xác suất thực.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -696,7 +703,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 4 -->
 *
