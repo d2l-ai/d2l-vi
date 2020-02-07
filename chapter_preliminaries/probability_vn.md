@@ -23,7 +23,7 @@ Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần nghĩ tớ
 Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách lớn.
 Chúng ta có lẽ rất muốn ước lượng xác suất một người dùng cụ thể muốn mua một cuốn sách cụ thể nào đó.
 Để làm được điều này, chúng ta cần sử dụng ngôn ngữ của xác suất.
-Toàn bộ các khóa học, các chuyên ngành, luận văn, sự nghiệp, và thậm chí các phòng ban, đều hiến dâng cho xác suất.
+Toàn bộ các khóa học, các chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành cho xác suất.
 Một cách rất tự nhiên, mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
 Thay vào đó, chúng tôi hi vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, truyền cho bạn niềm yêu thích với xác suất để bạn có thể bắt đầu tự khám phá nếu muốn.
 
