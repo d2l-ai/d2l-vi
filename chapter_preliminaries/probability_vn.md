@@ -63,7 +63,7 @@ Nói cách khác, khả năng của chúng ta để phân biệt mèo và chó �
 Xác suất trang bị phép đo độ chắc chắn trong suy luận của chúng ta một cách chính thức.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
 Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
-Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "cat"$) < 1$.
+Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
 
 <!--
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
