@@ -8,7 +8,7 @@ Lưu ý:
 * Mỗi tên chỉ xuất hiện một lần: Nếu bạn đã dịch hoặc review phần 1 của trang này
 thì không cần điền vào các phần sau nữa.
 
-* Tên đầy đủ của các reviewer có thể được tìm thấy [tại đây](https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md).
+* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md.
 
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
