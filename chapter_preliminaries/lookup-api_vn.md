@@ -11,7 +11,7 @@
 Due to constraints on the length of this book, we cannot possibly introduce every single MXNet function and class (and you probably would not want us to). The API documentation and additional tutorials and examples provide plenty of documentation beyond the book. In this section we provide you with some guidance to exploring the MXNet API.
 -->
 
-Do độ dài cuốn sách này có giới hạn, chúng tôi không thể giới thiệu hết tất cả các hàm và lớp của MXNet (và tốt nhất nên như vậy). Tài liệu API, các hướng dẫn và ví dụ sẽ cung cấp nhiều thông tin vượt ra khỏi nội dung cuốn sách. Trong chương này, chúng tôi sẽ cung cấp một vài chỉ dẫn để bạn có thể khám phá MXNet API.
+Vì độ dài cuốn sách này có giới hạn, chúng tôi không thể giới thiệu hết tất cả các hàm và lớp của MXNet (và tốt nhất nên như vậy). Tài liệu API, các hướng dẫn và ví dụ sẽ cung cấp nhiều thông tin vượt ra khỏi nội dung cuốn sách. Trong chương này, chúng tôi sẽ cung cấp một vài chỉ dẫn để bạn có thể khám phá MXNet API.
 
 <!--
 ## Finding All the Functions and Classes in a Module
@@ -56,7 +56,7 @@ help(np.ones_like)
 From the documentation, we can see that the `ones_like` function creates a new array with the same shape as the supplied `ndarray` and sets all the elements to `1`. Whenever possible, you should run a quick test to confirm your interpretation:
 -->
 
-Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng kích thước với `ndarray` có các phần tử được gán giá trị bằng 1. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
+Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng kích thước với `ndarray` có các phần tử được gán giá trị bằng `1`. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
 
 ```{.python .input}
 x = np.array([[0, 0, 0], [2, 2, 2]])
@@ -67,7 +67,7 @@ np.ones_like(x)
 In the Jupyter notebook, we can use `?` to display the document in another window. For example, `np.random.uniform?` will create content that is almost identical to `help(np.random.uniform)`, displaying it in a new browser window. In addition, if we use two question marks, such as `np.random.uniform??`, the code implementing the function will also be displayed.
 -->
 
-Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong một cửa sổ khác. Ví dụ, `np.random.uniform?` sẽ in ra nội dung y hệt `help(np.random.uniform)` trong một cửa sổ trình duyệt mới. Ngoài ra, nếu chúng ta dùng dấu `?` hai lần như `np.random.uniform??` thì đoạn code gọi hàm cũng sẽ được in ra.
+Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong một cửa sổ khác. Ví dụ, `np.random.uniform?` sẽ in ra nội dung y hệt `help(np.random.uniform)` trong một cửa sổ trình duyệt mới. Ngoài ra, nếu chúng ta dùng dấu `?` hai lần như `np.random.uniform??` thì đoạn mã gọi hàm cũng sẽ được in ra.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
