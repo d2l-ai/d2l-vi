@@ -126,13 +126,14 @@ We will often find it convenient to refer to our entire dataset via the *design 
 Here, $X$ contains one row for every example and one column for every feature.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
+Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $X$.
+Ma trận $X$ bao gồm một hàng cho mỗi mẫu và một cột cho mỗi đặc trưng.
 
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
 -->
-
-*dịch đoạn phía trên*
+Với một tập hợp điểm dữ liệu $\mathbf{X}$, keetse quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của matrix-vector:
 
 $${\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.$$
 
@@ -142,7 +143,9 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-*dịch đoạn phía trên*
+Cho một tập dữ liệu huấn luyện $X$ và các kết quả đích (đã biết trước) $\mathbf{y}$,
+mục tiêu của hồi quy tuyến tính là để tìm vector *weight* $w$ và bias $b$ dựa trên một điểm dữ liệu mới $\mathbf{x}_i$
+(có phân bổ tương tự như tập dữ liệu huấn luyện) để dự đoán kết quả $y_i$ với sai số nhỏ nhất.
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
@@ -151,14 +154,18 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-*dịch đoạn phía trên*
+Kể cả khi chúng ta biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$,
+thì chúng ta cũng không mong muốn việc dữ liệu thực tế $y_i$ hoàn toàn giống nhau $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
+Để tiện hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $X$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
+Chính vì vậy, mặc dù chúng ta tự tin rằng mối quan hệ trong dữ liệu là tuyến tính nhưng chúng ta sẽ kết hợp thêm với một số nhiễu để tạo ra kết quả tự nhiên hơn.
 
 <!--
 Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
 (i) a quality measure for some given model; and (ii) a procedure for updating the model to improve its quality.
 -->
 
-*dịch đoạn phía trên*
+Trước khi nghiên cứu cách tìm các giá trị $w$ và $b$ tối ưu, chúng ta sẽ cần quan tâm thêm hai vấn đề nữa:
+(i) Chất lượng từ các mô hình đã cho và (ii) quy trình cập nhật mô hình để cải thiện chất lượng
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -837,7 +844,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Phan Hùng Thuận
 
 <!-- Phần 5 -->
 *
