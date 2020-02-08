@@ -532,7 +532,7 @@ Unfortunately, the second test comes back positive, too. Let's work out the requ
 |$P(D_2 = 0 \mid H)$|            0.02 |         0.97 |
 :label:`conditional_prob_D2`
 
-Không may thay , bài kiểm tra thứ hai cũng dương tính . Chúng ta hãy chỉ ra những xác suất cần thiết để sử sụng định lý Bayes bằng cách giả sử điều kiện độc lập
+Không may thay, bài kiểm tra thứ hai cũng dương tính. Chúng ta hãy chỉ ra những xác suất cần thiết để sử sụng định lý Bayes bằng cách giả sử điều kiện độc lập:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1 \mid H = 0) \\
