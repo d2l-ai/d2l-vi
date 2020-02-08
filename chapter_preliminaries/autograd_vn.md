@@ -493,7 +493,7 @@ Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm 
 1. In a second-price auction (such as in eBay or in computational advertising), the winning bidder pays the second-highest price. Compute the gradient of the final price with respect to the winning bidder's bid using `autograd`. What does the result tell you about the mechanism? If you are curious to learn more about second-price auctions, check out the paper by Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 -->
 
-1. Tại sao đạo hàm bậc hai lại mất nhiều tài nguyên để tính toán hơn đạo hàm bậc một?
+1. Tại sao đạo hàm bậc hai lại mất thêm rất nhiều tài nguyên để tính toán hơn đạo hàm bậc một?
 1. Sau khi chạy `y.backward()`, lập tức chạy lại lần nữa và xem chuyện gì sẽ xảy ra.
 1. Trong ví dụ về luồng điều khiển khi ta tính toán đạo hàm của `d` theo `a`, điều gì sẽ xảy ra nếu ta thay đổi biến `a` thành một vector hay ma trận ngẫu nhiên. Lúc này, kết quả của tính toán `f(a)` sẽ không còn là số vô hướng nữa. Điều gì sẽ xảy ra với kết quả? Ta có thể phân tích nó như thế nào?
 1. Hãy tái thiết kế một ví dụ về việc tìm gradient của luồng điều khiển. Chạy ví dụ và phân tích kết quả.
