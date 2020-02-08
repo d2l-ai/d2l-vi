@@ -490,7 +490,6 @@ Thus, we get
 
 Do đó, ta có
 
-
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1)\\ =& \frac{P(D_1=1 \mid H=1) P(H=1)}{P(D_1=1)} \\ =& 0.1306 \end{aligned}.$$
 
