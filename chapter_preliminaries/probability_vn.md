@@ -488,7 +488,7 @@ $$
 Thus, we get
 -->
 
-Do đó , ta có
+Do đó, ta có
 
 
 -->
