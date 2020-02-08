@@ -413,7 +413,7 @@ such that `f(a) = k * a`, where the value of `k` depends on the input `a`.
 Consequently `d / a` allows us to verify that the gradient is correct.
 -->
 
-Giờ ta có thể phân tích hàm `f` định nghĩa ở phía trên.
+Giờ ta có thể phân tích hàm `f` được định nghĩa ở phía trên.
 Hãy để ý rằng hàm này tuyến tính từng khúc theo đầu vào `a`.
 Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`.
 Giá trị của `k` phụ thuộc vào đầu vào `a`.
