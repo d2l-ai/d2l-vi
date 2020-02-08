@@ -139,7 +139,7 @@ to capture the exact path by which each variable is generated.
 -->
 
 Giờ hãy tính $y$.
-Bởi vì mục đích là tính toán gradient một cách tuần tự, ta muốn MXNet tạo đồ thị tính toán một cách nhanh chóng.
+Bởi vì mục đích sau cùng là tính gradient, ta muốn MXNet tạo đồ thị tính toán một cách nhanh chóng.
 Ta có thể tưởng tượng rằng MXNet sẽ bật một thiết bị ghi hình để thu lại chính xác đường đi mà mỗi biến được tạo.
 
 <!--
