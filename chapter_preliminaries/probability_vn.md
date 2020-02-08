@@ -513,7 +513,7 @@ Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằ
 :Conditional probability of $P(D_2 \mid H)$.
 -->
 
-Xác suất có điều kiện của $P(D_2 \mid H)$
+:Xác suất có điều kiện của $P(D_2 \mid H)$
 
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
