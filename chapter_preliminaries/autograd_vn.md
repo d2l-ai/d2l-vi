@@ -150,7 +150,7 @@ We can invoke this behavior by placing our code
 inside an `autograd.record` scope.
 -->
 
-Cần chú ý rằng để xây dựng đồ thị tính toán cần một số lượng tính toán không nhỏ.
+Chú ý rằng ta cần một số lượng phép tính không hề nhỏ để xây dựng đồ thị tính toán.
 Vậy nên MXNet sẽ chỉ dựng đồ thị khi được ra lệnh rõ ràng.
 Ta có thể thay đổi hành vi này bằng cách đặt đoạn mã trong phạm vi `autograd.record`.
 
