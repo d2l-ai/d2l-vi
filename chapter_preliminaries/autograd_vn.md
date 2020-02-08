@@ -295,7 +295,7 @@ x.grad == u.grad
 ## Detaching Computation
 -->
 
-## *dịch tiêu đề phía trên*
+## Gỡ bỏ Tính toán
 
 <!--
 Sometimes, we wish to move some calculations
@@ -309,7 +309,9 @@ and only take into account the role
 that `x` played after `y` was calculated.
 -->
 
-*dịch đoạn phía trên*
+Đôi khi chúng ta muốn chuyển một số phép tính ra khỏi đồ thị tính toán.
+Ví dụ, giả sử `y` đã được tính như một hàm của `x`, rồi sau đó `z` được tính như một hàm của cả `y` và `x`.
+Bây giờ, giả sử ta muốn tính gradient của `z` theo `x`, nhưng vì lý do nào đó ta lại muốn xem `y` như là một hằng số và chỉ xét đến vai trò của `x` như là biến số của `z` sau khi giá trị của `y` đã được tính.
 
 <!--
 Here, we can call `u = y.detach()` to return a new variable `u`
@@ -324,7 +326,10 @@ the partial derivative of `z = u * x` with respect to `x` while treating `u` as 
 instead of the partial derivative of `z = x * x * x` with respect to `x`.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta có thể gọi `u = y.detach()` để trả về một biến `u` mới có cùng giá trị như `y` nhưng không còn chứa các thông tin về cách mà `y` đã được tính trong đồ thị tính toán.
+Nói cách khác, gradient sẽ không thể chảy ngược qua `u` về `x` được.
+Bằng cách này, ta đã tính `u` như một hàm của `x` ở ngoài phạm vi của `autograd.record`, dẫn đến việc biến `u` sẽ được xem như là một hằng số mỗi khi ta gọi `backward`.
+Chính vì vậy, hàm `backward` sau đây sẽ tính đạo hàm riêng của `z = u * x` theo `x` khi xem `u` như là một hằng số, thay vì đạo hàm riêng của `z = x * x * x` theo `x`.
 
 ```{.python .input  n=11}
 with autograd.record():
@@ -340,7 +345,7 @@ Since the computation of `y` was recorded,
 we can subsequently call `y.backward()` to get the derivative of `y = x * x` with respect to `x`, which is `2 * x`.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì sự tính toán của `y` đã được ghi lại, chúng ta có thể gọi `y.backward()` sau đó để lấy đạo hàm của `y = x * x` theo `x`, tức là `2 * x`.
 
 ```{.python .input  n=12}
 y.backward()
@@ -353,7 +358,8 @@ If `x` is computed based on other variables,
 this part of computation will not be used in the `backward` function.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng khi ta gắn gradient vào một biến `x`, `x = x.detach()` sẽ được gọi ngầm.
+Nếu `x` được tính dựa trên các biến khác, phần tính toán này sẽ không được sử dụng trong hàm `backward`.
 
 ```{.python .input  n=13}
 y = np.ones(4) * 2
@@ -544,7 +550,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 5 -->
-*
+* Tạ H. Duy Nguyên
+* Vũ Hữu Tiệp
+* Phạm Minh Đức
 
 <!-- Phần 6 -->
 *
