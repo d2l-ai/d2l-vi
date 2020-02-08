@@ -133,7 +133,7 @@ Ma trận $X$ bao gồm một hàng cho mỗi mẫu và một cột cho mỗi đ
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
 -->
-Với một tập hợp điểm dữ liệu $\mathbf{X}$, keetse quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của matrix-vector:
+Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của matrix-vector:
 
 $${\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.$$
 
