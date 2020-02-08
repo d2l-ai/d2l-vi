@@ -62,7 +62,7 @@ If you wish to understand *all* of the mathematical content, further reviewing :
 Cuốn sách này đã cung cấp nội dung toán học ở mức tối thiểu cần có để có được sự hiểu biết đúng đắn về học sâu.
 Tuy nhiên, điều đó không đồng nghĩa rằng cuốn sách này không cần các kiến thức toán học.
 Do vậy, chương này cung cấp một giới thiệu nhanh về toán học cơ bản và thông dụng cho phép bất cứ ai có sự hiểu biết cơ bản *tối thiểu* về toán đều có thể tiếp cận được.
-Nếu bạn muốn hiểu *tất cả* nội dung về toán học, hãy tham khảo thêm :numref:`chap_appendix_math` này.
+Nếu bạn muốn hiểu *tất cả* nội dung về toán học, hãy tham khảo thêm :numref:`chap_appendix_math`.
 
 ```toc
 :maxdepth: 2
