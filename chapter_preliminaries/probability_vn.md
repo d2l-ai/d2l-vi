@@ -498,7 +498,7 @@ $$\begin{aligned}
 In other words, there is only a 13.06% chance that the patient actually has AIDS, despite using a very accurate test. As we can see, probability can be quite counterintuitive.
 -->
 
-Nói cách khác ,chỉ có 13.06% khả năng rằng bệnh nhân mắc bệnh AIDS, mặc dù với một bài kiểm tra rất chính xác. Như chúng ta thấy, xác suất có thể khá là phản trực giác.
+Nói cách khác, chỉ có 13,06% khả năng rằng bệnh nhân mắc bệnh AIDS, mặc dù với một bài kiểm tra rất chính xác. Như chúng ta thấy, xác suất có thể khá là phản trực giác.
 <!--
 What should a patient do upon receiving such terrifying news? Likely, the patient
 would ask the physician to administer another test to get clarity. The second
