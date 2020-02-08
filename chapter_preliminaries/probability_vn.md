@@ -704,6 +704,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
 *
