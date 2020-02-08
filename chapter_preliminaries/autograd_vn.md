@@ -245,7 +245,7 @@ but rather the sum of the partial derivatives
 computed individually for each example in the batch.
 -->
 
-Tuy nhiên, trong khi những đối tượng như trên xuất hiện trong học máy nâng cao (bao gồm học sâu), thường xuyên hơn khi ta gọi lan truyền ngược lên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi thành phần của một *batch* các mẫu huấn luyện.
+Tuy nhiên, trong khi những đối tượng như trên có xuất hiện trong học máy nâng cao (bao gồm học sâu), thường thì khi ta gọi lan truyền ngược trên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi mẫu huấn luyện cấu thành một *batch*.
 Ở đây, ý định của ta không phải là tính toán ma trận vi phân mà là tổng của các đạo hàm riêng được tính toán một cách độc lập cho mỗi mẫu trong batch.
 
 <!--
