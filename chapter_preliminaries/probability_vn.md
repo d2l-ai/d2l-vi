@@ -5,7 +5,7 @@
 # Probability
 -->
 
-# *dịch tiêu đề phía trên*
+# Xác suất
 :label:`sec_prob`
 
 <!--
@@ -14,13 +14,27 @@ We might want to predict the *probability* of a patient suffering a heart attack
 Entire courses, majors, theses, careers, and even departments, are devoted to probability. So naturally, our goal in this section is not to teach the whole subject. Instead we hope to get you off the ground, to teach you just enough that you can start building your first deep learning models, and to give you enough of a flavor for the subject that you can begin to explore it on your own if you wish.
 -->
 
-*dịch đoạn phía trên*
+Theo cách này hay cách khác, học máy đơn thuần là đưa ra các dự đoán.
+Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết tiền sử lâm sàng của họ.
+Trong tác vụ phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* các thông số động cơ máy bay ở mức nào, liệu có ở mức hoạt động bình thường không.
+Trong học tăng cường, chúng ta muốn có một tác nhân hoạt động thông minh trong một môi trường.
+Nghĩa là chúng ta cần tính tới xác suất đạt điểm thưởng cao nhất cho từng hành động có thể thực hiện.
+Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần quan tâm tới xác suất.
+Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách trực tuyến lớn.
+Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ thể muốn mua một cuốn sách cụ thể nào đó.
+Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
+Có những khóa học, chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành toàn bộ cho xác suất.
+Vì thế đương nhiên mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
+Thay vào đó, chúng tôi hy vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
 
 <!--
 We have already invoked probabilities in previous sections without articulating what precisely they are or giving a concrete example. Let's get more serious now by considering the first case: distinguishing cats and dogs based on photographs. This might sound simple but it is actually a formidable challenge. To start with, the difficulty of the problem may depend on the resolution of the image.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã nhắc tới xác suất trong các chương trước mà không nói rõ chính xác nó là gì hay là đưa ra một ví dụ cụ thể nào.
+Giờ hãy cùng bắt đầu nghiêm túc hơn bằng cách xem xét trường hợp đầu tiên: phân biệt mèo và chó dựa trên các bức ảnh.
+Điều này tưởng chừng đơn giản nhưng thực ra rất nhiều thách thức.
+Để bắt đầu, độ phức tạp của vấn đề này có thể phụ thuộc vào độ phân giải của ảnh.
 
 <!--
 ![Images of varying resolutions ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ pixels).](../img/cat_dog_pixels.png)
@@ -44,20 +58,31 @@ confident, but not sure that the image depicted a cat, we might assign a
 probability $0.5  < P(y=$ "cat"$) < 1$.
 -->
 
-*dịch đoạn phía trên*
+Như thể hiện trong :numref:`fig_cat_dog`, con người phân biệt mèo và chó dễ dàng ở độ phân giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh, và gần như không thể ở $10 \times 10$ điểm ảnh.
+Nói cách khác, khả năng phân biệt mèo và chó của chúng ta ở khoảng cách càng xa (đồng nghĩa với độ phân giải thấp) càng giống đoán mò.
+Xác suất trang bị cho ta một cách suy luận hình thức về mức độ chắc chắn.
+Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
+Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau, biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
+Nếu ta khá tự tin, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
 
 <!--
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy xem xét trường hợp thứ hai: Cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
+Nếu vào mùa hè, xác suất trời mưa có thể là $0.5$.
 
 <!--
 In both cases, we have some value of interest. And in both cases we are uncertain about the outcome.
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-*dịch đoạn phía trên*
+Trong cả hai trường hợp, chúng ta quan tâm tới một vài giá trị nào đó.
+Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
+Nhưng có một khác biệt quan trọng giữa hai trường hợp.
+Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
+Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vật lý tin vậy).
+Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về mức độ chắc chắn của chúng ta, và nó có thể được áp dụng hiệu quả trong vô vàn ngữ cảnh khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -690,7 +715,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 2 -->
 *
