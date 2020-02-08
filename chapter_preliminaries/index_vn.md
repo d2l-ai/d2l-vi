@@ -42,7 +42,7 @@ To reason rigorously under uncertainty we will need to invoke the language of pr
 -->
 
 Kế tiếp, học máy liên quan đến việc đưa ra những dự đoán như: Xác định giá trị của một số thuộc tính chưa biết dựa trên thông tin quan sát được?
-Để có được sự suy luận chặt chẽ dưới sự không chắc chắn, chúng ta sẽ cần tìm đến ngôn ngữ của xác suất.
+Để suy luận chặt chẽ dưới sự không chắc chắn, chúng ta sẽ cần tìm đến ngôn ngữ của xác suất.
 
 <!--
 In the end, the official documentation provides plenty of descriptions and examples that are beyond this book.
