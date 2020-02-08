@@ -7,6 +7,8 @@ hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầ
 Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
+
+* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md.
 -->
 
 <!-- Phần 1 -->
