@@ -23,8 +23,8 @@ Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần quan tâm 
 Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách trực tuyến lớn.
 Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ thể muốn mua một cuốn sách cụ thể nào đó.
 Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
-Toàn bộ các khóa học, các chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành cho xác suất.
-Thông thường thì mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
+Có những khóa học, chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành toàn bộ cho xác suất.
+Vì thế đương nhiên mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
 Thay vào đó, chúng tôi hy vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
 
 <!--
@@ -59,11 +59,11 @@ probability $0.5  < P(y=$ "cat"$) < 1$.
 -->
 
 Như thể hiện trong :numref:`fig_cat_dog`, con người phân biệt mèo và chó dễ dàng ở độ phân giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh, và gần như không thể ở $10 \times 10$ điểm ảnh.
-Nói cách khác, khả năng phân biệt mèo và chó ở khoảng cách xa (đồng nghĩa với độ phân giải thấp) của chúng ta có thể chỉ là đoán mò.
-Xác suất giúp trang bị phép đo chính thức về mức độ chắc chắn trong suy luận của chúng ta.
+Nói cách khác, khả năng phân biệt mèo và chó của chúng ta ở khoảng cách càng xa (đồng nghĩa với độ phân giải thấp) càng giống đoán mò.
+Xác suất trang bị cho ta một cách suy luận hình thức về mức độ chắc chắn.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
-Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
-Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
+Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau, biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
+Nếu ta khá tự tin, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
 
 <!--
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
@@ -77,10 +77,11 @@ In both cases, we have some value of interest. And in both cases we are uncertai
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-Trong cả hai trường hợp, chúng ta có một vài giá trị quan tâm. Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
+Trong cả hai trường hợp, chúng ta quan tâm tới một vài giá trị nào đó.
+Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
 Nhưng có một khác biệt quan trọng giữa hai trường hợp.
 Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
-Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vậy lý cũng thế).
+Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vậy lý tin vậy).
 Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về mức độ chắc chắn của chúng ta, và nó có thể được áp dụng hiệu quả trong vô vàn ngữ cảnh khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
