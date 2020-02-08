@@ -81,7 +81,7 @@ Trong cả hai trường hợp, chúng ta quan tâm tới một vài giá trị 
 Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
 Nhưng có một khác biệt quan trọng giữa hai trường hợp.
 Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
-Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vậy lý tin vậy).
+Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vật lý tin vậy).
 Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về mức độ chắc chắn của chúng ta, và nó có thể được áp dụng hiệu quả trong vô vàn ngữ cảnh khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
