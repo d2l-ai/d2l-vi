@@ -375,7 +375,7 @@ both depend on the value of the input `a`.
 -->
 
 Một lợi thế của việc sử dụng vi phân tự động là khi việc xây dựng đồ thị tính toán đòi hỏi trải qua một loạt các câu lệnh điều khiển luồng Python,
-(ví dụ như câu lệnh điều kiện, vòng lặp và các lời gọi hàm tùy ý), ta vẫn có thể tính gradient của biến kết quả.
+(ví dụ như câu lệnh điều kiện, vòng lặp và các lệnh gọi hàm tùy ý), ta vẫn có thể tính gradient của biến kết quả.
 Trong đoạn mã sau, hãy lưu ý rằng số lần lặp của vòng lặp `while` và kết quả của câu lệnh `if` đều phụ thuộc vào giá trị của đầu vào `a`.
 
 ```{.python .input  n=16}
