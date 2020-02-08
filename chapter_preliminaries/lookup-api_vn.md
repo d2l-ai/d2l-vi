@@ -23,7 +23,7 @@ Do nội dung tài liệu này có giới hạn, chúng tôi không thể giới
 In order to know which functions and classes can be called in a module, we invoke the `dir` function. For instance, we can query all properties in the `np.random` module as follows:
 -->
 
-Để biết những hàm / lớp nào có thể được gọi trong một module, chúng ta dùng hàm `dir`. Ví dụ, ta có thể lấy tất cả thuộc tính của module `np.random` bằng cách:
+Để biết những hàm/lớp nào có thể được gọi trong một module, chúng ta dùng hàm `dir`. Ví dụ, ta có thể lấy tất cả thuộc tính của module `np.random` bằng cách:
 
 ```{.python .input  n=1}
 from mxnet import np
