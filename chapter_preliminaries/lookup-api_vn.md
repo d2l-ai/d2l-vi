@@ -67,7 +67,7 @@ np.ones_like(x)
 In the Jupyter notebook, we can use `?` to display the document in another window. For example, `np.random.uniform?` will create content that is almost identical to `help(np.random.uniform)`, displaying it in a new browser window. In addition, if we use two question marks, such as `np.random.uniform??`, the code implementing the function will also be displayed.
 -->
 
-Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong một cửa sổ khác. Ví dụ, `np.random.uniform?` sẽ in ra nội dung y hết `help(np.random.uniform)` trong một cửa sổ trình duyệt mới. Ngoài ra, nếu chúng ta dùng dấu `?` hai lần như `np.random.uniform??` thì đoạn code gọi hàm cũng sẽ được in ra.
+Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong một cửa sổ khác. Ví dụ, `np.random.uniform?` sẽ in ra nội dung y hệt `help(np.random.uniform)` trong một cửa sổ trình duyệt mới. Ngoài ra, nếu chúng ta dùng dấu `?` hai lần như `np.random.uniform??` thì đoạn code gọi hàm cũng sẽ được in ra.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
