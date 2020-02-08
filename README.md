@@ -24,16 +24,16 @@ Với các chương (2., 3., ...)
 * [x] Cài đặt
 * [x] Ký hiệu
 * [x] Giới thiệu
-* [ ] 2. Preliminaries
+* [-] 2. Preliminaries
     * [-] 2.1. Thao tác với Dữ liệu
-    * [-] 2.2. Tiền Xử lý Dữ liệu
+    * [x] 2.2. Tiền Xử lý Dữ liệu
     * [x] 2.3. Đại số Tuyến tính
-    * [-] 2.4. Giải tích
+    * [x] 2.4. Giải tích
     * [-] 2.5. Tính vi phân Tự động
     * [-] 2.6. Probability
-    * [ ] 2.7. Documentation
+    * [-] 2.7. Documentation
 * [ ] 3. Linear Neural Networks
-    * [ ] 3.1. Linear Regression
+    * [-] 3.1. Linear Regression
     * [ ] 3.2. Linear Regression Implementation from Scratch
     * [ ] 3.3. Concise Implementation of Linear Regression
     * [ ] 3.4. Softmax Regression
