@@ -56,7 +56,7 @@ help(np.ones_like)
 From the documentation, we can see that the `ones_like` function creates a new array with the same shape as the supplied `ndarray` and sets all the elements to `1`. Whenever possible, you should run a quick test to confirm your interpretation:
 -->
 
-Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng dạng với `ndarray` có các phần tử được gán giá trị bằng 1. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
+Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng kích thước với `ndarray` có các phần tử được gán giá trị bằng 1. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
 
 ```{.python .input}
 x = np.array([[0, 0, 0], [2, 2, 2]])
