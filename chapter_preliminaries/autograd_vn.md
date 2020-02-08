@@ -455,8 +455,8 @@ when we subsequently use it to make predictions.
 We will cover these differences in detail in later chapters.
 -->
 
-Khi ta đến với các mô hình học sâu phức tạp, ta sẽ gặp vài thuật toán mà hành vi của mô hình là khác nhau giữa khi luyện tập và khi được sử dụng sau đó để dự đoán.
-Ta sẽ biết tới những khác biệt này chi tiết trong các chương sau.
+Khi ta tìm hiểu tới các mô hình học sâu phức tạp, ta sẽ gặp một vài thuật toán mà mô hình hoạt động khác nhau khi huấn luyện và khi được sử dụng sau đó để dự đoán.
+Những khác biệt này sẽ được đề cập chi tiết trong các chương sau.
 
 
 <!--
@@ -471,8 +471,9 @@ Ta sẽ biết tới những khác biệt này chi tiết trong các chương sa
 * The running modes of MXNet include training mode and prediction mode. We can determine the running mode by calling the `is_training` function.
 -->
 
-* MXNet chung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
-Sau đó ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
+* MXNet cung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. 
+Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
+Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
 * Ta có thể tách rời gradient để kiểm soát những phần tính toán sẽ được sử dụng trong hàm `backward`.
 * Các chế độ chạy của MXNet bao gồm chế độ huấn luyện và chế độ dự đoán. Ta có thể kiểm tra chế độ đang chạy bằng cách gọi hàm `is_training`.
 
