@@ -25,7 +25,7 @@ Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ t
 Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
 Toàn bộ các khóa học, các chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành cho xác suất.
 Thông thường thì mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
-Thay vào đó, chúng tôi hi vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
+Thay vào đó, chúng tôi hy vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
 
 <!--
 We have already invoked probabilities in previous sections without articulating what precisely they are or giving a concrete example. Let's get more serious now by considering the first case: distinguishing cats and dogs based on photographs. This might sound simple but it is actually a formidable challenge. To start with, the difficulty of the problem may depend on the resolution of the image.
