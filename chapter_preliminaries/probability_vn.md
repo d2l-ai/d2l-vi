@@ -355,18 +355,22 @@ This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happe
 ### Conditional Probability
 -->
 
-### *dịch tiêu đề phía trên*
+### Xác suất có điều kiện
 
 <!--
 This brings us to an interesting ratio: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$. We call this ratio a *conditional probability*
 and denote it by $P(B=b \mid A=a)$: it is the probability of $B=b$, provided that
 $A=a$ has occurred.
+-->
+
+Điều này giúp ta thu được một tỉ lệ thú vị: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$.
+Chúng ta gọi tỉ lệ này là *xác suất có điều kiện* và ký hiệu là $P(B=b \mid A=a)$: xác suất để $B=b$, với điều kiện $A=a$ đã xảy ra.
 
 <!--
 ### Bayes' theorem
 -->
 
-### *dịch tiêu đề phía trên*
+### Định lý Bayes
 
 <!--
 Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: *Bayes' theorem*.
@@ -374,7 +378,12 @@ It goes as follows.
 By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) > 0$. Solving for one of the conditional variables we get
 -->
 
-*dịch đoạn phía trên*
+Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *Định lý Bayes*.
+Cụ thể như sau.
+Đầu tiên, chúng ta có *quy tắc nhân* như sau $P(A, B) = P(B \mid A) P(A)$.
+Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
+Giả sử $P(B) > 0$.
+Kết hợp các điều kiện trên ta có:
 
 $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 
@@ -382,20 +391,24 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 Note that here we use the more compact notation where $P(A, B)$ is a *joint distribution* and $P(A \mid B)$ is a *conditional distribution*. Such distributions can be evaluated for particular values $A = a, B=b$.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là một *xác suất kết hợp* và $P(A \mid B)$ là một *xác suất có điều kiện*.
+Các phân phối này có thể được tính tại các giá trị cụ thể $A = a, B=b$.
 
 <!--
 ### Marginalization
 -->
 
-### *dịch tiêu đề phía trên*
+### Biên hóa
 
 <!--
 Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is *marginalization*.
 It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:
 -->
 
-*dịch đoạn phía trên*
+Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, giống như những gì ta sẽ thấy trong phần sau của chương này.
+Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *biên hóa*.
+Có thể hiểu là việc xác định $P(B)$ từ $P(A, B)$.
+Chúng ta có thể tính được xác suất của B tính bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
 
 $$P(B) = \sum_{A} P(A, B),$$
 
@@ -403,7 +416,8 @@ $$P(B) = \sum_{A} P(A, B),$$
 which is also known as the *sum rule*. The probability or distribution as a result of marginalization is called a *marginal probability* or a *marginal distribution*.
 -->
 
-*dịch đoạn phía trên*
+Công thức này cũng được biết đến với tên gọi *quy tắc tổng*.
+Xác suất hay phân phối thu được từ thao tác biên hóa được gọi là *xác suất biên* hoặc *phân phối biên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -708,7 +722,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 8 -->
 *
