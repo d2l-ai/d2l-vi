@@ -21,6 +21,9 @@ chapter:appendix-math:
 chapter:preliminaries:
     - chapter_preliminaries/*
 
+chapter:linear-networks:
+    - chapter_linear-networks/*
+    
 chapter:computational-performance:
     - chapter_computational-performance/*
 
