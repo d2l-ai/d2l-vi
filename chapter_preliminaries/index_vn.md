@@ -4,7 +4,7 @@
 #  Preliminaries
 -->
 
-# Sơ Bộ
+# Sơ bộ
 :label:`chap_preliminaries`
 
 <!--
@@ -23,8 +23,8 @@ Linear algebra gives us a powerful set of techniques for working with tabular da
 We will not go too far into the weeds but rather focus on the basic of matrix operations and their implementation.
 -->
 
-Hơn nữa, học máy thường yêu cầu làm việc với các tập dữ liệu lớn, mà chúng ta có thể coi như ở dạng bảng, trong đó các hàng tương ứng với các ví dụ và các cột tương ứng với các thuộc tính.
-Đại số Tuyến tính cung cấp cho ta một tập kỹ thuật mạnh mẽ để làm việc với dữ liệu dạng bảng.
+Hơn nữa, học máy thường yêu cầu làm việc với các tập dữ liệu lớn, mà chúng ta có thể coi như ở dạng bảng, trong đó các hàng tương ứng với các mẫu và các cột tương ứng với các thuộc tính.
+Đại số tuyến tính cung cấp cho ta một tập kỹ thuật mạnh mẽ để làm việc với dữ liệu dạng bảng.
 Chúng ta sẽ không đi quá sâu mà chỉ tập trung cơ bản vào các toán tử ma trận cơ bản và cách thực thi chúng.
 
 <!--
@@ -35,7 +35,7 @@ Fortunately, the `autograd` package automatically computes differentiation for u
 -->
 
 Ngoài ra, học sâu cũng đề cập toàn bộ về tối ưu hoá.
-Chúng tôi có một mô hình với một số tham số và mong muốn tìm kiếm những mô hình phù hợp với những dữ liệu *tốt nhất* mà chúng tôi có.
+Chúng ta có một mô hình với bộ tham số và muốn tìm ra những mô hình khớp với dữ liệu *nhất*.
 Việc xác định cách điều chỉnh từng tham số ở mỗi bước trong thuật toán đòi hỏi một chút kiến thức về giải tích, mà sẽ được giới thiệu ngắn gọn dưới đây.
 May thay, gói `autograd` sẽ tự động tính đạo hàm cho chúng ta, và sẽ được đề cập ngay sau đó.
 
