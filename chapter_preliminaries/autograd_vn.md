@@ -497,7 +497,7 @@ Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm 
 1. Sau khi chạy `y.backward()`, lập tức chạy lại lần nữa và xem chuyện gì sẽ xảy ra.
 1. Trong ví dụ về luồng điều khiển khi ta tính toán đạo hàm của `d` theo `a`, điều gì sẽ xảy ra nếu ta thay đổi biến `a` thành một vector hay ma trận ngẫu nhiên. Lúc này, kết quả của tính toán `f(a)` sẽ không còn là số vô hướng nữa. Điều gì sẽ xảy ra với kết quả? Ta có thể phân tích nó như thế nào?
 1. Hãy tái thiết kế một ví dụ về việc tìm gradient của luồng điều khiển. Chạy ví dụ và phân tích kết quả.
-1. Cho $f(x) = \sin(x)$. Phát họa giá trị $f(x)$ và $\frac{df(x)}{dx}$ với điều kiện việc tính đạo hàm không sử dụng $f'(x) = \cos(x)$.
+1. Cho $f(x) = \sin(x)$. Vẽ đồ thị của $f(x)$ và $\frac{df(x)}{dx}$ với điều kiện không được tính trực tiếp đạo hàm $f'(x) = \cos(x)$.
 1. Trong một cuộc đấu giá kín theo giá thứ hai (ví dụ như trong eBay hay trong quảng cáo điện toán), người thắng cuộc đấu giá chỉ trả mức giá cao thứ hai. Hãy tính gradient của mức giá cuối cùng theo mức đặt của người thắng cuộc bằng cách sử dụng `autograd`. Kết quả cho bạn biết điều gì về cơ chế đấu giá này? Nếu bạn tò mò muốn tìm hiểu thêm về các cuộc đấu giá kín theo giá thứ hai, hãy đọc bài báo nghiên cứu của Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
