@@ -58,9 +58,9 @@ confident, but not sure that the image depicted a cat, we might assign a
 probability $0.5  < P(y=$ "cat"$) < 1$.
 -->
 
-Như thể hiện trong :numref:`fig_cat_dog`, rất dễ dàng cho con người để có thể phân biệt mèo và chó ở độ phần giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh và là không thể ở $10 \times 10$ điểm ảnh.
+Như thể hiện trong :numref:`fig_cat_dog`, con người phân biệt mèo và chó dễ dàng ở độ phân giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh, và gần như không thể ở $10 \times 10$ điểm ảnh.
 Nói cách khác, khả năng phân biệt mèo và chó ở khoảng cách xa (đồng nghĩa với độ phân giải thấp) của chúng ta có thể chỉ là đoán mò.
-Xác suất trang bị phép đo độ chắc chắn trong suy luận của chúng ta một cách chính thức.
+Xác suất giúp trang bị phép đo chính thức về mức độ chắc chắn trong suy luận của chúng ta.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
 Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
 Nếu ta khá tin tưởng, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
