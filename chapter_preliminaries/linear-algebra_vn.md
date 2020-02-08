@@ -122,8 +122,8 @@ In math, a vector $\mathbf{x}$ can be written as
 -->
 
 Một phần tử bất kỳ trong vector có thể được ký hiệu sử dụng chỉ số dưới.
-Ví dụ ta có thể ám chỉ phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
-Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không được in đậm.
+Ví dụ ta có thể viết $x_i$ để ám chỉ phần tử thứ $i$ của $\mathbf{x}$.
+Lưu ý rằng phần tử $x_i$ là một số vô hướng nên nó không được in đậm.
 Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, và quyển sách này cũng vậy.
 Trong toán học, một vector có thể được viết như sau
 
