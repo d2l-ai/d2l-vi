@@ -314,14 +314,17 @@ For probability over continuous random variables, you may refer to :numref:`sec_
 ## Dealing with Multiple Random Variables
 -->
 
-## *dịch tiêu đề phía trên*
+## Làm việc với nhiều biến ngẫu nhiên
 
 <!--
 Very often, we will want to consider more than one random variable at a time.
 For instance, we may want to model the relationship between diseases and symptoms. Given a disease and a symptom, say "flu" and "cough", either may or may not occur in a patient with some probability. While we hope that the probability of both would be close to zero, we may want to estimate these probabilities and their relationships to each other so that we may apply our inferences to effect better medical care.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên liên tục một lúc.
+Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
+Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
+Mặc dù chúng ta hi vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
 
 <!--
 As a more complicated example, images contain millions of pixels, thus millions of random variables. And in many cases images will come with a
@@ -331,21 +334,29 @@ such as location, time, aperture, focal length, ISO, focus distance, and camera 
 All of these are random variables that occur jointly. When we deal with multiple random variables, there are several quantities of interest.
 -->
 
-*dịch đoạn phía trên*
+Xét một ví dụ phức tạp hơn, các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
+Và trong nhiều trường hợp các bức ảnh sẽ được gán nhãn và định danh cho các đối tượng chứa bên trong.
+Chúng ta cũng có thể xem nhãn này như một biến ngẫu nhiên.
+Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ, ví dụ như vị trí, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
+Tất các những biến ngẫu nhiên này xảy ra đồng thời.
+Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều điểm đáng quan tâm.
 
 <!--
 ### Joint Probability
 -->
 
-### *dịch tiêu đề phía trên*
+### Xác suất kết hợp
 
 <!--
 The first is called the *joint probability* $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously?
 Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
 This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen *and* $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.
 -->
-
-*dịch đoạn phía trên*
+Đầu tiên được gọi là *xác suất kết hợp* $P(A = a, B=b)$.
+Cho hai biến $a$ và $b$ bất kỳ, xác suất kết hợp cho ta biết xác suất để cả $A=a$ và $B=b$ xảy ra đồng thời là bao nhiêu?
+Ta có thể thấy rằng với mọi giá trị $a$ và $b$, $P(A=a, B=b) \leq P(A=a)$.
+Bởi để $A=a$ và $B=b$ xảy ra thì $A=a$ phải xảy ra *và* $B=b$ cũng phải xảy ra (và ngược lại).
+Do đó, khả năng $A=a$ và $B=b$ xảy ra đồng thời không thể lớn hơn khả năng $A=a$ hoặc $B=b$ xảy ra một cách độc lập được.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
