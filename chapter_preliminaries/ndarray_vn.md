@@ -492,7 +492,7 @@ x
 ## Saving Memory
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiết kiệm Bộ nhớ
 
 <!--
 In the previous example, every time we ran an operation, we allocated new memory to host its results.
@@ -502,7 +502,11 @@ After running `y = y + x`, we will find that `id(y)` points to a different locat
 That is because Python first evaluates `y + x`, allocating new memory for the result and then makes `y` point to this new location in memory.
 -->
 
-*dịch đoạn phía trên*
+Ở ví dụ trước, mỗi khi chạy một phép tính, chúng ta sẽ phân bố bộ nhớ để lưu trữ kết quả của lượt chạy đó. 
+Ví dụ, nếu chúng ta viết `y = x + y`, ta sẽ bỏ qua `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được phân bố mới. 
+Trong ví dụ tiếp theo, chúng ta sẽ chứng minh điều này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
+Sau khi chạy `y = y + x`, chúng ta nhận ra rằng `id(y)` chỉ đến một địa chỉ khác. 
+Đó là bởi vì Python trước hết sẽ tính `y + x`, phân bố bộ nhớ mới cho kết quả tìm được và gán `y` vào địa chỉ mới này trên bộ nhớ.
 
 ```{.python .input  n=22}
 before = id(y)
@@ -519,7 +523,12 @@ Second, we might point at the same parameters from multiple variables.
 If we do not update in place, this could cause that discarded memory is not released, and make it possible for parts of our code to inadvertently reference stale parameters.
 -->
 
-*dịch đoạn phía trên*
+Điều này có thể là không hợp lý bởi hai lý do. 
+Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách không cần thiết mọi lúc.
+Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
+Thông thường, chúng ta không mong muốn thực thi các cập nhật này *tại chỗ*.
+Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến.
+Nếu chúng ta không cập nhật tại chỗ, các bộ nhớ bị loại bỏ sẽ không được phục hồi, dẫn đến một số phần trong mã lập trình của chúng ta vô tình tham chiếu các tham số cũ. 
 
 <!--
 Fortunately, performing in-place operations in MXNet is easy.
@@ -527,7 +536,9 @@ We can assign the result of an operation to a previously allocated array with sl
 To illustrate this concept, we first create a new matrix `z` with the same shape as another `y`, using `zeros_like` to allocate a block of $0$ entries.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ trong MXNet.
+Chúng ta có thể gán kết quả của một phép tính tới một mảng đã được phân bố trước đó với ký hiệu lát (*slice notation*), ví dụ,  `y[:] = <expression>`. 
+Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với `y`, sử dụng `zeros_like` để phân bố một khối các giá trị bằng $0$. 
 
 ```{.python .input  n=23}
 z = np.zeros_like(y)
@@ -540,7 +551,7 @@ print('id(z):', id(z))
 If the value of `x` is not reused in subsequent computations, we can also use `x[:] = x + y` or `x += y` to reduce the memory overhead of the operation.
 -->
 
-*dịch đoạn phía trên*
+Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu tiêu hao bộ nhớ trong quá trình tính toán.
 
 ```{.python .input  n=24}
 before = id(x)
@@ -679,7 +690,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 11 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 12 -->
 *
