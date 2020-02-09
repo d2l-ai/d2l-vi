@@ -127,7 +127,7 @@ Here, $X$ contains one row for every example and one column for every feature.
 -->
 
 Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
-Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $X$.
+Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $\mathbf{X}$.
 Mỗi hàng của ma trận $\mathbf{X}$ thể hiện một mẫu và mỗi cột thể hiện một đặc trưng.
 
 <!--
