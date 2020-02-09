@@ -34,8 +34,8 @@ Determining which way to move each parameter at each step of an algorithm requir
 Fortunately, the `autograd` package automatically computes differentiation for us, and we will cover it next.
 -->
 
-Ngoài ra, học sâu cũng đề cập toàn bộ về tối ưu hoá.
-Chúng ta có một mô hình với bộ tham số và muốn tìm ra những mô hình khớp với dữ liệu *nhất*.
+Bên cạnh đó, học sâu luôn liên quan đến tối ưu hoá.
+Chúng ta có một mô hình với bộ tham số và muốn tìm ra các tham số khớp với dữ liệu *nhất*.
 Việc xác định cách điều chỉnh từng tham số ở mỗi bước trong thuật toán đòi hỏi một chút kiến thức về giải tích, mà sẽ được giới thiệu ngắn gọn dưới đây.
 May thay, gói `autograd` sẽ tự động tính đạo hàm cho chúng ta, và sẽ được đề cập ngay sau đó.
 
