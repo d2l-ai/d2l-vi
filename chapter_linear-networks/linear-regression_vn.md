@@ -128,7 +128,7 @@ Here, $X$ contains one row for every example and one column for every feature.
 
 Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
 Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $X$.
-Ma trận $X$ bao gồm một hàng cho mỗi mẫu và một cột cho mỗi đặc trưng.
+Mỗi hàng của ma trận $\mathbf{X}$ thể hiện một mẫu và mỗi cột thể hiện một đặc trưng.
 
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
