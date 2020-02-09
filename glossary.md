@@ -159,6 +159,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |--------------------------|----------------------------------------------------------------|---------------|
 | machine learning         | học máy                                                        |               |
+| marginalization          | biên hóa                                                       |               |
 | mean squared error (MSE) | trung bình bình phương sai số                                  |               |
 | metric                   | phép đo                                                        |               |
 | minibatch                | minibatch                                                      |               |
