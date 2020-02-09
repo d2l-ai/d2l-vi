@@ -435,7 +435,7 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-
+Chỉ số và phân chia
 ## *dịch tiêu đề phía trên*
 
 <!--
@@ -443,13 +443,15 @@ Just as in any other Python array, elements in an `ndarray` can be accessed by i
 As in any Python array, the first element has index $0$ and ranges are specified to include the first but *before* the last element.
 As in standard Python lists, we can access elements according to their relative position to the end of the list by using negative indices.
 -->
-
+Cũng giống như trong bất kỳ mảng Python nào khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
+Như trong bất kỳ mảng Python nào, phần tử đầu tiên có chỉ số $ 0 $ và có phạm vi bao gồm phần tử đầu tiên nhưng * trước * phần tử cuối cùng.
+Như trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí tương đối của chúng đến cuối danh sách bằng cách sử dụng các chỉ số âm.
 *dịch đoạn phía trên*
 
 <!--
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
 -->
-
+Vì vậy, '[-1]' chọn phần tử cuối cùng và '[1:3]' chọn phần tử thứ hai và phần tử thứ ba như sau:
 *dịch đoạn phía trên*
 
 ```{.python .input  n=19}
@@ -459,7 +461,7 @@ x[-1], x[1:3]
 <!--
 Beyond reading, we can also write elements of a matrix by specifying indices.
 -->
-
+Ngoài việc đọc, chúng ta cũng có thể viết các phần tử của ma trận bằng cách chỉ định các chỉ số.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=20}
@@ -472,7 +474,9 @@ If we want to assign multiple elements the same value, we simply index all of th
 For instance, `[0:2, :]` accesses the first and second rows, where `:` takes all the elements along axis $1$ (column).
 While we discussed indexing for matrices, this obviously also works for vectors and for tensors of more than $2$ dimensions.
 -->
-
+Nếu chúng ta muốn gán nhiều phần tử cho cùng một giá trị, chúng ta chỉ cần lập chỉ số cho tất cả các phần tử và gán cho chúng một giá trị.
+Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $ 1 $ (cột).
+Mặc dù chúng ta đã thảo luận về việc lập chỉ số cho ma trận,  phương thức này rõ ràng cũng hiểu quả đối với các vectơ và cho các thang đo có kích thước hơn $ 2 $.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=21}
@@ -676,7 +680,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Lê Đàm Hồng Lộc
 
 <!-- Phần 11 -->
 *
