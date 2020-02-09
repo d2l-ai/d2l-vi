@@ -10,7 +10,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 **Mục lục:**
 
 [A](#a) [B](#b) [C](#c) [D](#d) [E](#e) [F](#f) [G](#g)
-[H](#h) [I](#i) [J](#k) [K](#k) [L](#l) [M](#m) [N](#n)
+[H](#h) [I](#i) [J](#j) [K](#k) [L](#l) [M](#m) [N](#n)
 [O](#0) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u)
 [V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
 
@@ -53,6 +53,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computer vision                     | thị giác máy tính                                              |                        |
 | computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
 | computational graph                 | đồ thị tính toán                                              |                        |
+| conditional distribution            | phân phối có điều kiện                                         |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
@@ -97,6 +98,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
+| expectation         | kỳ vọng                                                        |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
@@ -138,7 +140,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
 | implicit feedback | phản hồi gián tiếp                                     |               |
+| independence assumption | giả định độc lập                                 |               |
 | iteration | vòng lặp                                                       |               |
+
+## J
+| English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|-----------|----------------------------------------------------------------|---------------|
+| joint distribution | phân phối đồng thời                                     |               |
 
 ## L
 | English                            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -159,6 +167,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |--------------------------|----------------------------------------------------------------|---------------|
 | machine learning         | học máy                                                        |               |
+| marginalization          | phép biên hóa                                                     |               |
 | mean squared error (MSE) | trung bình bình phương sai số                                  |               |
 | metric                   | phép đo                                                        |               |
 | minibatch                | minibatch                                                      |               |
@@ -234,6 +243,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity |
 | shape (trong Đại số Tuyến tính) | kích thước                                                  |                       |
 | spam email                   | email rác                                                      |                       |
+| standard deviation           | độ lệch chuẩn                                                  |                       |
 | statistical significance     | ý nghĩa thống kê                                               |                       |
 | statistical significant      | có ý nghĩa thống kê                                            |                       |
 | stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
