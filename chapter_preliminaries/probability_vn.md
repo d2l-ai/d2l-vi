@@ -77,13 +77,18 @@ But there is a key difference between the two cases. In this first case, the ima
 Say that we cast a die and want to know what the chance is of seeing a $1$ rather than another digit. If the die is fair, all the $6$ outcomes $\{1, \ldots, 6\}$ are equally likely to occur, and thus we would see a $1$ in one out of six cases. Formally we state that $1$ occurs with probability $\frac{1}{6}$.
 -->
 
-Giả sử ta tung xúc sắc và muốn biết ...
+Giả sử ta tung xúc sắc và muốn biết cơ hội để thấy mặt số $1$ so với các mặt khác.
+Nếu con xúc xắc là đồng nhất, cả $6$ mặt $\{1, \ldots, 6\}$ sẽ có khả năng xuất hiện là như nhau, nên ta sẽ thấy mặt $1$ xuất hiện in one out of six cases.
+Chúng ta nói rằng xác suất xuất hiện mặt $1$ là \frac{1}{6}$.
 
 <!--
 For a real die that we receive from a factory, we might not know those proportions and we would need to check whether it is tainted. The only way to investigate the die is by casting it many times and recording the outcomes. For each cast of the die, we will observe a value in $\{1, \ldots, 6\}$. Given these outcomes, we want to investigate the probability of observing each outcome.
 -->
 
-*dịch đoạn phía trên*
+Với chiếc xúc xắc thực tế mua từ nhà sản xuất, ta không biết được those proportions nên sẽ cần kiểm tra xem xúc xắc hư hỏng gì hay không.
+Cách duy nhất để làm điều đó là tung nó thật nhiều lần và ghi lại kết quả.
+Mỗi lần tung, ta nhận được kết quả trong khoảng $\{1, \ldots, 6\}$.
+Với kết quả đó, ta muốn kiểm chứng xác suất của các quan sát trong từng kết quả.
 
 <!--
 One natural approach for each value is to take the
@@ -92,13 +97,16 @@ This gives us an *estimate* of the probability of a given *event*. The *law of
 large numbers* tell us that as the number of tosses grows this estimate will draw closer and closer to the true underlying probability. Before going into the details of what is going here, let's try it out.
 -->
 
-*dịch đoạn phía trên*
+Một cách tiếp cận tự nhiên với mỗi giá trị là tính tổng các lần nó xuất hiện rồi chia cho tổng số các lần tung.
+Cách này cho ta một *xấp xỉ* xác suất của *sự kiện* được cho.
+*Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì xấp xỉ này sẽ càng gần hơn với xác xuất thực chưa biết.
+Trước khi đi vào chi tiết điều gì đang diễn ra, hãy thử xem.
 
 <!--
 To start, let's import the necessary packages.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta import các gói lệnh cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -124,7 +132,14 @@ The output of the `np.random.multinomial` function is another vector of the same
 its value at index $i$ is the number of times the sampling outcome corresponds to $i$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ muốn có thể tung xúc xắc.
+Trong thống kê ta gọi quá trình thu được các mẫu từ phân phối thống kê là *lấy mẫu*.
+Phân phối mà assigns các xác suất thành các lựa chọn rời rạc được gọi là *phân phối multinomial* (*multinomial distribution*).
+Ta sẽ đưa ra định nghĩa chính thống hơn về *phân phối* sau này, nhưng ở cấp bậc cao, cứ coi nó như assignment của xác suất xảy ra của các sự kiện.
+Trong MXNet, ta có thể lấy mẫu từ phân phối multinomial với hàm `np.random.multinomial`.
+Hàm này có thể được gọi bằng nhiều cách, nhưng ta chỉ chú tâm vào cách đơn giản nhất.
+Để thu được một mẫu đơn, ta chỉ cần pass nó vào một vector xác suất.
+Đầu ra của hàm `np.random.multinomial` là một vector có chiều dài tương tự: giá trị của nó trong index $i$ là số lần mẫu xuất hiện tương ứng với $i$.
 
 ```{.python .input  n=2}
 fair_probs = [1.0 / 6] * 6
