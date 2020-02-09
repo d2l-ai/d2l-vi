@@ -41,14 +41,16 @@ Next, machine learning is concerned with making predictions: what is the likely 
 To reason rigorously under uncertainty we will need to invoke the language of probability.
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, học máy liên quan đến việc đưa ra những dự đoán như: Xác định giá trị của một số thuộc tính chưa biết dựa trên thông tin quan sát được?
+Để suy luận chặt chẽ dưới sự bất định, chúng ta sẽ cần tìm đến ngôn ngữ của xác suất.
 
 <!--
 In the end, the official documentation provides plenty of descriptions and examples that are beyond this book.
 To conclude the chapter, we will show you how to look up documentation for the needed information.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, tài liệu tham khảo chính thức cung cấp rất nhiều mô tả và ví dụ nằm ngoài cuốn sách này.
+Để kết thúc chương này, chúng tôi sẽ chỉ bạn cách tra cứu tài liệu tham khảo cho các thông tin cần thiết.
 
 <!--
 This book has kept the mathematical content to the minimum necessary to get a proper understanding of deep learning.
@@ -57,7 +59,10 @@ Thus, this chapter provides a rapid introduction to basic and frequently-used ma
 If you wish to understand *all* of the mathematical content, further reviewing :numref:`chap_appendix_math` should be sufficient.
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách này đã cung cấp nội dung toán học ở mức tối thiểu cần có để có được sự hiểu biết đúng đắn về học sâu.
+Tuy nhiên, điều đó không đồng nghĩa rằng cuốn sách này không cần các kiến thức toán học.
+Do vậy, chương này sẽ giới thiệu nhanh về các kiến thức toán học cơ bản và thông dụng, cho phép tất cả mọi người tối thiểu là sẽ hiểu được *hầu hết* nội dung toán trong quyển sách này.
+Nếu bạn muốn hiểu *tất cả* nội dung toán học, hãy tham khảo thêm :numref:`chap_appendix_math`.
 
 ```toc
 :maxdepth: 2
