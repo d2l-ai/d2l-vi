@@ -4,7 +4,7 @@
 #  Preliminaries
 -->
 
-# *dịch tiêu đề phía trên*
+# Sơ bộ
 :label:`chap_preliminaries`
 
 <!--
@@ -13,7 +13,9 @@ All machine learning is concerned with extracting information from data.
 So we will begin by learning the practical skills for storing, manipulating, and preprocessing data.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu với học sâu, ta sẽ cần nắm bắt một vài kỹ năng cơ bản.
+Tất cả những vấn đề về học máy đều có liên quan đến việc trích xuất thông tin từ dữ liệu.
+Vì vậy, chúng tôi sẽ bắt đầu bằng cách học các kỹ năng thực tế để lưu trữ, thao tác và xử lý dữ liệu.
 
 <!--
 Moreover, machine learning typically requires working with large datasets, which we can think of as tables, where the rows correspond to examples and the columns correspond to attributes.
@@ -21,7 +23,9 @@ Linear algebra gives us a powerful set of techniques for working with tabular da
 We will not go too far into the weeds but rather focus on the basic of matrix operations and their implementation.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, học máy thường yêu cầu làm việc với các tập dữ liệu lớn, mà chúng ta có thể coi như ở dạng bảng, trong đó các hàng tương ứng với các mẫu và các cột tương ứng với các thuộc tính.
+Đại số tuyến tính cung cấp cho ta một tập kỹ thuật mạnh mẽ để làm việc với dữ liệu dạng bảng.
+Chúng ta sẽ không đi quá sâu mà chỉ tập trung cơ bản vào các toán tử ma trận cơ bản và cách thực thi chúng.
 
 <!--
 Additionally, deep learning is all about optimization.
@@ -30,7 +34,10 @@ Determining which way to move each parameter at each step of an algorithm requir
 Fortunately, the `autograd` package automatically computes differentiation for us, and we will cover it next.
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh đó, học sâu luôn liên quan đến tối ưu hoá.
+Chúng ta có một mô hình với bộ tham số và muốn tìm ra các tham số khớp với dữ liệu *nhất*.
+Việc xác định cách điều chỉnh từng tham số ở mỗi bước trong thuật toán đòi hỏi một chút kiến thức về giải tích, mà sẽ được giới thiệu ngắn gọn dưới đây.
+May thay, gói `autograd` sẽ tự động tính đạo hàm cho chúng ta, và sẽ được đề cập ngay sau đó.
 
 <!-- ===================== Kết thúc dịch Phần 1 ==================== -->
 
@@ -91,7 +98,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 <!-- Phần 1 -->
-*
-
+* Đoàn Võ Duy Thanh
+* Nguyễn Cảnh Thướng
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 <!-- Phần 2 -->
 *
