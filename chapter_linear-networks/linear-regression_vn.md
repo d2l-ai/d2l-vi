@@ -155,7 +155,7 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-Kể cả khi chúng ta biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$,
+Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
 thì chúng ta cũng không mong muốn việc dữ liệu thực tế $y_i$ hoàn toàn giống nhau $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
 Để tiện hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $X$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
 Chính vì vậy, mặc dù chúng ta tự tin rằng mối quan hệ trong dữ liệu là tuyến tính nhưng chúng ta sẽ kết hợp thêm với một số nhiễu để tạo ra kết quả tự nhiên hơn.
