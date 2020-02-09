@@ -400,6 +400,7 @@ Estimating targets given features is commonly called *prediction* and *inference
 Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$,
 ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
 Ước lượng biến mục tiêu bằng những đặc trưng của nó thường được gọi là *dự đoán* hay *suy luận*.
+
 <!--
 We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
 In statistics, *inference* more often denotes estimating parameters based on a dataset.
