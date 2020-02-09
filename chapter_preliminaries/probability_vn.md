@@ -526,7 +526,7 @@ Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằ
 Unfortunately, the second test comes back positive, too. Let's work out the requisite probabilities to invoke Bayes' Theorem by assuming the conditional independence:
 -->
 
-| Conditional probability | $H=1$ | $H=0$ |
+| Xác xuất có điều kiện | $H=1$ | $H=0$ |
 |---|---|---|
 |$P(D_2 = 1 \mid H)$|            0.98 |         0.03 |
 |$P(D_2 = 0 \mid H)$|            0.02 |         0.97 |
