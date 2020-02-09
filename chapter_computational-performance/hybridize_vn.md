@@ -41,6 +41,7 @@ Python là một ngôn ngữ thông dịch.
 Khi thực hiện hàm `fancy_func` nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
 Như vậy, nó sẽ chạy lệnh `e = add(a, b)` sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
 Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được thực thi tương tự, thực hiện phép cộng và lưu kết quả vào các biến.
+:numref:`fig_compute_graph` minh họa luồng hoạt động.
 
 <!--
 ![Data flow in an imperative program.](../img/computegraph.svg)
@@ -493,6 +494,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Tâm
+* Đoàn Võ Duy Thanh
+* @rootonchair
 
 <!-- Phần 2 -->
 *
