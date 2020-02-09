@@ -71,7 +71,7 @@ We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{
 -->
 
 Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số mẫu trong dữ liệu.
-Chúng ta đánh dấu mẫu bằng $i$, kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và tương ứng nhãn là $y^{(i)}$.  
+Chúng ta truy cập các mẫu bằng chỉ số $i$, kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và tương ứng nhãn là $y^{(i)}$.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
