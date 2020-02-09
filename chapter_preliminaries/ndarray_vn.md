@@ -560,7 +560,7 @@ id(x) == before
 ## Conversion to Other Python Objects
 -->
 
-## *dịch tiêu đề phía trên*
+## Chuyển đổi sang các Đối Tượng Python Khác
 
 <!--
 Converting an MXNet `ndarray` to a NumPy `ndarray`, or vice versa, is easy.
@@ -569,7 +569,10 @@ This minor inconvenience is actually quite important: when you perform operation
 The `array` and `asnumpy` functions do the trick.
 -->
 
-*dịch đoạn phía trên*
+Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray`, hoặc ngược lại khá đơn giản.
+Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
+Sự bất tiện nhỏ này thực ra khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
+Hàm `array` và `asnumpy` sẽ giúp bản giải quyết vấn đề này. 
 
 ```{.python .input  n=25}
 a = x.asnumpy()
@@ -581,7 +584,7 @@ type(a), type(b)
 To convert a size-$1$ `ndarray` to a Python scalar, we can invoke the `item` function or Python's built-in functions.
 -->
 
-*dịch đoạn phía trên*
+Để chuyển đổi `ndarray` 1-chiều sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python. 
 
 ```{.python .input}
 a = np.array([3.5])
@@ -682,7 +685,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 12 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 13 -->
 *
