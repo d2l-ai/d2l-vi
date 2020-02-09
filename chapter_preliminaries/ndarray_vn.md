@@ -526,7 +526,7 @@ If we do not update in place, this could cause that discarded memory is not rele
 Điều này có thể là không hợp lý bởi hai lý do. 
 Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách không cần thiết mọi lúc.
 Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
-Thông thường, chúng ta không mong muốn thực thi các cập nhật này *tại chỗ*.
+Thông thường, chúng ta mong muốn thực thi các cập nhật này *tại chỗ*.
 Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến.
 Nếu chúng ta không cập nhật tại chỗ, các bộ nhớ bị loại bỏ sẽ không được phục hồi, dẫn đến một số phần trong mã lập trình của chúng ta vô tình tham chiếu các tham số cũ. 
 
@@ -536,8 +536,8 @@ We can assign the result of an operation to a previously allocated array with sl
 To illustrate this concept, we first create a new matrix `z` with the same shape as another `y`, using `zeros_like` to allocate a block of $0$ entries.
 -->
 
-May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ trong MXNet.
-Chúng ta có thể gán kết quả của một phép tính tới một mảng đã được phân bố trước đó với ký hiệu lát (*slice notation*), ví dụ,  `y[:] = <expression>`. 
+May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
+Chúng ta có thể gán kết quả của một phép tính tới một mảng đã được phân bố trước đó với ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
 Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với `y`, sử dụng `zeros_like` để phân bố một khối các giá trị bằng $0$. 
 
 ```{.python .input  n=23}
