@@ -145,7 +145,7 @@ sampled from the same distribution as the training data will (in expectation) pr
 -->
 
 Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các kết quả đích (đã biết trước) $\mathbf{y}$,
-mục tiêu của hồi quy tuyến tính là để tìm vector *weight* $w$ và bias $b$ dựa trên một điểm dữ liệu mới $\mathbf{x}_i$
+mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$,
 (có phân bổ tương tự như tập dữ liệu huấn luyện) để dự đoán kết quả $y_i$ với sai số nhỏ nhất.
 
 <!--
