@@ -321,9 +321,9 @@ Very often, we will want to consider more than one random variable at a time.
 For instance, we may want to model the relationship between diseases and symptoms. Given a disease and a symptom, say "flu" and "cough", either may or may not occur in a patient with some probability. While we hope that the probability of both would be close to zero, we may want to estimate these probabilities and their relationships to each other so that we may apply our inferences to effect better medical care.
 -->
 
-Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên liên tục một lúc.
+Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng một lúc.
 Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
-Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
+Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", chúng có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
 Mặc dù chúng ta hi vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
 
 <!--
