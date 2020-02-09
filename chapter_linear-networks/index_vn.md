@@ -4,7 +4,7 @@
 # Linear Neural Networks
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng nơ-ron tuyến tính
 :label:`chap_linear`
 
 <!--
@@ -16,7 +16,11 @@ Starting from these classic algorithms, we will introduce you to the basics,
 providing the basis for more complex techniques such as softmax regression (introduced at the end of this chapter) and multilayer perceptrons (introduced in the next chapter).
 -->
 
-*dịch đoạn phía trên*
+Trước khi tìm hiểu chi tiết về mạng nơ-ron sâu, chúng ta cần đề cập đến căn bản của việc huấn luyện mạng nơ-ron.
+Chương này sẽ đề cập đến toàn bộ quá trình huấn luyện, bao gồm xác định kiến trúc mạng nơ-ron đơn giản, xử lý dữ liệu, chỉ rõ hàm mất mát và huấn luyện mô hình.
+Để mọi thứ dễ nắm bắt hơn, ta sẽ bắt đầu với một số khái niệm cơ bản nhất.
+Rất may mắn, một số phương pháp học thống kê cổ điển như hồi quy tuyến tính, hồi quy logistic có thể được xem như những mạng nơ-ron *nông*.
+Bắt đầu bằng những thuật toán cổ điển này, chúng tôi sẽ giới thiệu những thứ cơ bản, tạo nền tảng cho cho những kỹ thuật phức tạp hơn như hồi quy Softmax (sẽ giới thiệu ở cuối chương này) và Mạng nơ-ron truyền thẳng nhiều lớp (sẽ giới thiệu ở chương sau).
 
 ```toc
 :maxdepth: 2
@@ -45,5 +49,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Trần Hoàng Quân
 
