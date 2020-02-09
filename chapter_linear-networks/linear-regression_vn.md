@@ -165,7 +165,7 @@ Before we can go about searching for the best parameters $w$ and $b$, we will ne
 -->
 
 Trước khi nghiên cứu cách tìm các giá trị tối ưu $\mathbf{w}$ và $b$, chúng ta sẽ cần quan tâm thêm hai vấn đề nữa:
-(i) Chất lượng từ các mô hình đã cho và (ii) quy trình cập nhật mô hình để cải thiện chất lượng
+(i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
