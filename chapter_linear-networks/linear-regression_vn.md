@@ -48,7 +48,7 @@ Suppose that we wish to estimate the prices of houses (in dollars) based on thei
 *Hồi quy tuyến tính* có thể là công cụ tiêu chuẩn đơn giản và phổ biến nhất cho hồi quy.
 Quay trở về đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
 Đầu tiên, ta giả sử quan hệ giữa *các đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng thêm nhiễu qua sự quan sát.
-Thứ hai, ta giả sử nhiễu là có quy tắc(theo phân phối Gaussian).
+Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
 Để tạo động lực, chúng ta hãy bắt đầu chạy một ví dụ.
 Giả sử rằng ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (năm).
 
