@@ -13,8 +13,8 @@ Now that you can store and manipulate data, let's briefly review the subset of b
 Below, we introduce the basic mathematical objects, arithmetic, and operations in linear algebra, expressing each both through mathematical notation and the corresponding implementation in code.
 -->
 
-Vì giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn lại qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
-Dưới đây, chúng tôi giới thiệu các đối tượng toán học, số học và phép tính cơ bản trong đại số tuyến tính, biểu diễn chúng bằng cả ký hiệu toán học và cách triển khai trong mã nguồn tương ứng. 
+Vì giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
+Dưới đây, chúng tôi giới thiệu các đối tượng toán học, số học và phép tính cơ bản trong đại số tuyến tính, biểu diễn chúng bằng cả ký hiệu toán học và cách triển khai lập trình tương ứng. 
 
 
 <!--
@@ -51,8 +51,8 @@ Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are nu
 
 Trong quyển sách này, chúng tôi sẽ tuân theo quy ước ký hiệu các biến vô hướng bằng các chữ cái viết thường (chẳng hạn $x$, $y$ và $z$).
 Chúng tôi ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
-Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian* .
-Bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách chính quy để nói rằng $x$ là một số thực vô hướng.
+Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian*.
+Bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách toán học để nói rằng $x$ là một số thực vô hướng.
 Ký hiệu $\in$ đọc là "thuộc" và đơn thuần biểu diễn việc phần tử thuộc một tập hợp.
 Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị là $0$ hoặc $1$.
 
