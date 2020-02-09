@@ -435,7 +435,6 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-Chỉ số và phân chia
 ## *dịch tiêu đề phía trên*
 
 <!--
