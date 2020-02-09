@@ -46,7 +46,7 @@ Thông thường, ta có thể bỏ qua những hàm bắt đầu và kết thú
 For more specific instructions on how to use a given function or class, we can invoke the  `help` function. As an example, let's explore the usage instructions for `ndarray`'s `ones_like` function.
 -->
 
-Để tra cứu chi tiết cách sử dụng một hàm hoặc lớp nhất định, ta dùng hàm `help`. Ví dụ, để tra cứu cách sử dụng hàm `ones_line` với `ndarray`:
+Để tra cứu chi tiết cách sử dụng một hàm hoặc lớp nhất định, ta dùng hàm `help`. Ví dụ, để tra cứu cách sử dụng hàm `ones_like` với `ndarray`:
 
 ```{.python .input}
 help(np.ones_like)
