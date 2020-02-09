@@ -96,12 +96,12 @@ To get a better idea consider the following simulation of imperative programming
 -->
 
 Quy trình trên cho phép ta có khá nhiều cách tối ưu.
-Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, vì thế mà việc ta loại bỏ được sự nghẽn cổ chai trong chất lượng tính toán trở nên quan trọng khi sử dụng nhiều GPU tốc độ cao với một luồng Python trên CPU.
+Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU.
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
 Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
 Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
-Để hiểu rõ hơn vấn đề ta xem xét mô phỏng về lập trình mệnh lệnh dưới đây (viết bằng Python).
+Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python).
 
 ```{.python .input  n=2}
 def add_():
@@ -147,8 +147,8 @@ This allows the program to be run in a non-Python environment, thus avoiding any
 * Lập trình mệnh lệnh dễ viết hơn.
 Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
 Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
-Bởi ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
-* Lập trình ký hiệu thì hiệu quả hơn và cũng dễ viết lại bằng ngôn ngữ khác.
+Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
+* Lập trình ký hiệu thì hiệu quả hơn và dễ sử dụng được trên nền tảng khác.
 Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -159,7 +159,7 @@ Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch t
 ## Hybrid Programming
 -->
 
-## Lập trình lai
+## Lập trình Hybrid
 
 <!--
 Historically most deep learning frameworks choose between an imperative or a symbolic approach. 
@@ -175,7 +175,7 @@ Ví dụ như Theano, TensorFlow, Keras và CNTK đều xây dựng mô hình d�
 Ngược lại, Chainer và PyTorch tiếp cận theo hướng lập trình mệnh lệnh.
 Mô hình kiểu mệnh lệnh đã được bổ sung vào TensorFlow 2.0 (thông qua chế độ Eager) và Keras trong những bản cập nhật mới nhất.
 Khi thiết kế Gluon, các nhà phát triển đã cân nhắc liệu rằng có thể kết hợp ưu điểm của cả hai mô hình lập trình lại với nhau hay không.
-Có được một mô hình tích hợp sẽ giúp người dùng phát triển và gỡ lỗi bằng lập trình mệnh lệnh thuần, đồng thời mang lại khả năng chuyển đổi hầu như toàn bộ chương trình sang dạng ký hiệu để chạy khi có yêu cầu triển khai với chất lượng tính toán cao cho sản phẩm. <!--hoặc `cấp độ sản phẩm`-->
+Có được một mô hình tích hợp sẽ giúp người dùng phát triển và gỡ lỗi bằng lập trình mệnh lệnh thuần, đồng thời mang lại khả năng chuyển đổi hầu như toàn bộ chương trình sang dạng ký hiệu để chạy khi có yêu cầu triển khai thành sản phẩm với chất lượng tính toán cao.
 
 <!--
 In practice this means that we build models using either the `HybridBlock` or the `HybridSequential` and `HybridConcurrent` classes. 
@@ -187,10 +187,11 @@ We will illustrate the benefits below, focusing on sequential models and blocks 
 -->
 
 Trong ứng dụng, điều này có nghĩa là ta sẽ xây dựng mô hình sử dụng lớp `HybridBlock` hoặc `HybridSequential` và `HybridConcurrent`.
-Mặc định, chúng được thực thi giống hệt như cách lớp `Block` hoặc `Sequential` và `Cocurrent` được thực thi trong kiểu lập trình mệnh lệnh.
+Mặc định, chúng được thực thi giống hệt như cách lớp `Block` hoặc `Sequential` và `Concurrent` được thực thi trong kiểu lập trình mệnh lệnh.
 `HybridSequential` là một lớp con của `HybridBlock` (cũng như `Sequential` là lớp con của `Block`).
 Khi hàm `hybridize` được gọi, Gluon biên dịch mô hình thành định dạng được dùng trong lập trình ký hiệu.
 Điều này cho phép ta có thể tối ưu các thành phần tính toán mà không phải thay đổi nhiều trong cách triển khai mô hình.
+Chúng tôi sẽ minh hoạ lợi ích của việc này ở ví dụ bên dưới, tập trung vào các mô hình `Sequential` và `Block` (mô hình `Concurrent` được kết hợp tương tự).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
