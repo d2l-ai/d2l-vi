@@ -58,7 +58,7 @@ Moreover, it will need to save the variable values of `e` and `f` until all the 
 This is because we do not know whether the variables `e` and `f` will be used by other parts of the program after the statements `e = add(a, b)` and `f = add(c, d)` have been executed.
 -->
 
-Mặc dù lập trình mệnh lệnh rất thuận tiện, nó không được hiệu quả cho lắm.
+Mặc dù lập trình mệnh lệnh rất thuận tiện, nhưng nó không được hiệu quả cho lắm.
 Thậm chí nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực thi ba lần gọi hàm độc lập.
 Nếu điều này xảy ra, giả sử, trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
 Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
@@ -494,8 +494,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Tâm
-* Đoàn Võ Duy Thanh
-* @rootonchair
 
 <!-- Phần 2 -->
 *
