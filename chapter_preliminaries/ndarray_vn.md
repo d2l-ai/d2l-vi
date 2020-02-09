@@ -444,7 +444,7 @@ As in standard Python lists, we can access elements according to their relative 
 -->
 
 Cũng giống như trong bất kỳ mảng Python nào khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
-Như trong bất kỳ mảng Python nào, phần tử đầu tiên có chỉ số $ 0 $ và có phạm vi bao gồm phần tử đầu tiên nhưng * trước * phần tử cuối cùng.
+Như trong bất kỳ mảng Python nào, phần tử đầu tiên có chỉ số $ 0 $ và có phạm vi bao gồm phần tử đầu tiên nhưng *trước* phần tử cuối cùng.
 Như trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí tương đối của chúng đến cuối danh sách bằng cách sử dụng các chỉ số âm.
 
 <!--
