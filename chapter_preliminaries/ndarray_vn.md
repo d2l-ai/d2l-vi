@@ -451,7 +451,6 @@ Như trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập 
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
 -->
 Vì vậy, '[-1]' chọn phần tử cuối cùng và '[1:3]' chọn phần tử thứ hai và phần tử thứ ba như sau:
-*dịch đoạn phía trên*
 
 ```{.python .input  n=19}
 x[-1], x[1:3]
@@ -461,7 +460,6 @@ x[-1], x[1:3]
 Beyond reading, we can also write elements of a matrix by specifying indices.
 -->
 Ngoài việc đọc, chúng ta cũng có thể viết các phần tử của ma trận bằng cách chỉ định các chỉ số.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=20}
 x[1, 2] = 9
@@ -476,7 +474,6 @@ While we discussed indexing for matrices, this obviously also works for vectors 
 Nếu chúng ta muốn gán nhiều phần tử cho cùng một giá trị, chúng ta chỉ cần lập chỉ số cho tất cả các phần tử và gán cho chúng một giá trị.
 Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $ 1 $ (cột).
 Mặc dù chúng ta đã thảo luận về việc lập chỉ số cho ma trận,  phương thức này rõ ràng cũng hiểu quả đối với các vectơ và cho các thang đo có kích thước hơn $ 2 $.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=21}
 x[0:2, :] = 12
