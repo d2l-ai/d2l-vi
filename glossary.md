@@ -98,7 +98,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
-| expectation         | Kỳ vọng                                                        |                       |
+| expectation         | kỳ vọng                                                        |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
