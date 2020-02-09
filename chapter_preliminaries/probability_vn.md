@@ -324,7 +324,7 @@ For instance, we may want to model the relationship between diseases and symptom
 Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng một lúc.
 Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
 Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", chúng có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
-Mặc dù chúng ta hi vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
+Mặc dù chúng ta hy vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
 
 <!--
 As a more complicated example, images contain millions of pixels, thus millions of random variables. And in many cases images will come with a
@@ -337,7 +337,7 @@ All of these are random variables that occur jointly. When we deal with multiple
 Xét một ví dụ phức tạp hơn, các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
 Và trong nhiều trường hợp các bức ảnh sẽ được gán nhãn và định danh cho các đối tượng chứa bên trong.
 Chúng ta cũng có thể xem nhãn này như một biến ngẫu nhiên.
-Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ, ví dụ như vị trí, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
+Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ; ví dụ như: vị trí, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
 Tất các những biến ngẫu nhiên này xảy ra đồng thời.
 Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều điểm đáng quan tâm.
 
