@@ -13,7 +13,7 @@ Now that you can store and manipulate data, let's briefly review the subset of b
 Below, we introduce the basic mathematical objects, arithmetic, and operations in linear algebra, expressing each both through mathematical notation and the corresponding implementation in code.
 -->
 
-Vì giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
+Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
 Dưới đây, chúng tôi giới thiệu các đối tượng toán học, số học và phép tính cơ bản trong đại số tuyến tính, biểu diễn chúng bằng cả ký hiệu toán học và cách triển khai lập trình tương ứng. 
 
 
