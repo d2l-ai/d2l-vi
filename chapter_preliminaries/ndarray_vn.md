@@ -450,7 +450,7 @@ Như trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập 
 <!--
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
 -->
-Vì vậy, '[-1]' chọn phần tử cuối cùng và '[1:3]' chọn phần tử thứ hai và phần tử thứ ba như sau:
+Vì vậy, `[-1]` chọn phần tử cuối cùng và `[1:3]` chọn phần tử thứ hai và phần tử thứ ba như sau:
 
 ```{.python .input  n=19}
 x[-1], x[1:3]
