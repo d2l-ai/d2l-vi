@@ -504,7 +504,7 @@ That is because Python first evaluates `y + x`, allocating new memory for the re
 
 Ở ví dụ trước, mỗi khi chạy một phép tính, chúng ta sẽ cấp phát bộ nhớ mới để lưu trữ kết quả của lượt chạy đó. 
 Ví dụ, nếu viết `y = x + y`, ta sẽ bỏ qua `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được phân bố mới.
-Trong ví dụ tiếp theo, chúng ta sẽ chứng minh điều này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
+Trong ví dụ tiếp theo, chúng ta sẽ minh họa việc này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
 Sau khi chạy `y = y + x`, chúng ta nhận ra rằng `id(y)` chỉ đến một địa chỉ khác. 
 Đó là bởi vì Python trước hết sẽ tính `y + x`, phân bố bộ nhớ mới cho kết quả tìm được và gán `y` vào địa chỉ mới này trên bộ nhớ.
 
