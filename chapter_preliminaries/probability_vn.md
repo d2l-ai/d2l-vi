@@ -686,7 +686,7 @@ In many cases we want to measure by how much the random variable $X$ deviates fr
 -->
 
 Trong trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ với kỳ vọng.
-Chúng ta có thể ước lượng bằng phương sai qua phương trình:
+Đại lượng này có thể được đo qua phương trình:
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
