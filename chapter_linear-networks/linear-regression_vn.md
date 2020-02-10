@@ -639,7 +639,11 @@ Fortunately, the solution does not depend on $\sigma$.
 It follows that minimizing squared error is equivalent to maximum likelihood estimation of a linear model under the assumption of additive Gaussian noise.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta chỉ cần thêm một giả định rằng: $\sigma$ là hằng số cố định.
+Do đó, ta có thể bỏ qua cụm đầu tiên bởi nó không phụ thuộc vào $\mathbf{w}$ hoặc $b$.
+Khi đó, cụm thứ hai giống hệt hàm bình phương sai số đã được giới thiệu trên đây, nhưng cho một hằng số nhân $\frac{1}{\sigma^2}$.
+May mắn là, lời giải trên không phụ thuộc vào $\sigma$.
+Điều này dẫn tới việc cực tiểu hóa bình phương sai số tương đương với việc ước lượng cực đại hợp lý cho mô hình dưới giả định có nhiễu cộng Gaussian.
 
 <!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
 
@@ -649,7 +653,7 @@ It follows that minimizing squared error is equivalent to maximum likelihood est
 ## From Linear Regression to Deep Networks
 -->
 
-## *dịch tiêu đề phía trên*
+## Từ Hồi quy tuyến tính tới Mạng học sâu
 
 <!--
 So far we only talked about linear functions.
@@ -657,7 +661,9 @@ While neural networks cover a much richer family of models, we can begin thinkin
 To begin, let's start by rewriting things in a 'layer' notation.
 -->
 
-*dịch đoạn phía trên*
+Tới giờ, chúng ta mới chỉ đề cập về các hàm tuyến tính.
+Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều các họ mô hình, ta có thể bắt đầu nghĩ mô hình tuyến tính như là một mạng nơ-ron bằng cách biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
+Để bắt đầu, hãy cùng viết lại những mọi thứ theo kiểu 'tầng'.
 
 <!-- ===================== Kết thúc dịch Phần 14 ===================== -->
 
@@ -867,7 +873,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 14 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 15 -->
 *
