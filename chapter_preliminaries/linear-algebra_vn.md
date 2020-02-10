@@ -33,8 +33,8 @@ In this equation, each of the terms---$5$, $9$, and $32$---are scalar values.
 The placeholders $c$ and $f$ are called *variables* and they represented unknown scalar values.
 -->
 
-Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ làm việc với từng con số riêng lẻ khi học toán.
-Và nếu bạn đã từng phải cân bằng sổ chi tiêu hoặc chỉ đơn giản là trả tiền cho bữa ăn, chắc hẳn bạn đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
+Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ có kinh nghiệm làm toán với từng con số riêng lẻ.
+Và nếu bạn đã từng phải cân bằng sổ thu chi hoặc đơn giản là trả tiền cho bữa ăn, thì hẳn bạn đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
 Ví dụ, nhiệt độ tại Palo Alto là $52$ độ Fahrenheit.
 Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *số vô hướng* (*scalar*).
 Nếu bạn muốn chuyển giá trị nhiệt độ trên sang độ Celsius (thang đo nhiệt độ hợp lý hơn theo hệ mét), bạn sẽ phải tính biểu thức $c = \frac{5}{9}(f - 32)$ với giá trị $f$ bằng $52$.
@@ -54,7 +54,7 @@ Chúng tôi ký hiệu không gian (liên tục) của tất cả các *số th�
 Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian*.
 Bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách toán học để nói rằng $x$ là một số thực vô hướng.
 Ký hiệu $\in$ đọc là "thuộc" và đơn thuần biểu diễn việc phần tử thuộc một tập hợp.
-Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị là $0$ hoặc $1$.
+Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
 In MXNet code, a scalar is represented by an `ndarray` with just one element.
@@ -95,7 +95,7 @@ In math notation, we will usually denote vectors as bold-faced, lower-cased lett
 
 Bạn có thể xem vector đơn thuần như một dãy các số vô hướng.
 Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của vector.
-Khi các vector được dùng để biễu diễn các mẫu trong tập dữ liệu, giá trị của chúng sẽ mang ý nghĩa liên quan tới đời thực.
+Khi dùng vector để biễu diễn các mẫu trong tập dữ liệu, giá trị của chúng thường mang ý nghĩa liên quan tới đời thực.
 Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector gồm các thành phần tương ứng với thu nhập, thời gian làm việc, số lần vỡ nợ trước đó của họ và các yếu tố khác.
 Nếu chúng ta đang tìm hiểu về rủi ro bị đau tim của bệnh nhân, ta có thể biểu diễn mỗi bệnh nhân bằng một vector gồm các phần tử mang thông tin về dấu hiệu sinh tồn gần nhất, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
 Trong ký hiệu toán học, chúng ta thường biểu diễn vector bằng chữ cái in đậm viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
