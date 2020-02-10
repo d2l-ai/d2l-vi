@@ -435,7 +435,6 @@ In the other method we will rely on a single call to `np`.
 Chúng ta sẽ sử dụng hai phương pháp cộng vector dưới đây để hiểu được tại sao vector hóa là cần thiết trong học máy.
 Đầu tiên, ta khởi tạo hai vector $10000$ chiều chứa toàn giá trị một.
 Chúng ta sẽ sử dụng vòng lặp `for` trong Python ở phương pháp thứ nhất và một hàm trong thư viện `np` ở phương pháp thứ hai.
-Ở phương pháp thứ hai, chúng ta sẽ sử dụng hàm trong thư viện`np`.
 
 ```{.python .input}
 %matplotlib inline
