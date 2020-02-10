@@ -273,6 +273,10 @@ Even in cases where we cannot solve the models analytically, and even when the l
 Moreover, for many tasks, these difficult-to-optimize models turn out to be so much better that figuring out how to train them ends up being well worth the trouble.
 -->
 
+Trong nhiều trường hợp mà chúng ta không thể xử lý mô hình một cách rõ ràng, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì thực tế chúng ta vẫn có thể huấn luyện mô hình một cách hiện quả trong quá trình luyện tập.
+Hơn thế nữa, đối với nhiều tác vụ, những mô hình khó để tối ưu hóa ra lại tốt hơn cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt với đối với các rắc rối.
+
+
 *dịch đoạn phía trên*
 
 <!--
@@ -283,6 +287,10 @@ On convex loss surfaces, it will eventually converge to a global minimum, and wh
 it will at least lead towards a (hopefully good) local minimum.
 -->
 
+Kĩ thuật mấu chốt cho việc tối ưu hóa gần như là cho hầu hết các mô hình học sâu, và với điều mà chúng ta làm trong suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
+Thuật toán này được gọi là *hạ gradient*.
+Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất mô hình sẽ dẫn tới (hy vọng là như vậy) đến điểm tối thiểu cục bộ.
+
 *dịch đoạn phía trên*
 
 <!--
@@ -291,6 +299,11 @@ In practice, this can be extremely slow.
 We must pass over the entire dataset before making a single update.
 Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
 -->
+
+Ứng dụng ngây thơ (đơn giản ?) của hạ gradient bao gồm việc tính đạo hàm mất mát thật, hay là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu.
+Trong luyện tập, việc này có thể cực kì chậm.
+Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
+Vì thế, đôi khi chúng ta sẽ giải quyết để lấy mẫu một minibatch ngẫu nhiên của các mẫu mỗi khi chúng ta cần tính toán việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
 
 *dịch đoạn phía trên*
 
