@@ -658,7 +658,7 @@ That is, the second test allowed us to gain much higher confidence that not all 
 ## Expectation and Variance
 -->
 
-## Kỳ vọng và phương sai
+## Kỳ vọng và Phương sai
 
 <!--
 To summarize key characteristics of probability distributions,
