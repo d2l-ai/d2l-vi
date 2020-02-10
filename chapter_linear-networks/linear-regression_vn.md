@@ -453,7 +453,7 @@ b = np.ones(n)
 Since we will benchmark the running time frequently in this book, let's define a timer (hereafter accessed via the `d2l` package to track the running time.
 -->
 
-Vì chúng tôi sẽ đánh giá xếp hạng thời gian xử lý trong quyển sách này, chúng tôi sẽ tạo một class Timer và lưu trong tập dữ liệu d2l (ở những phần sau, chúng tôi sẽ dùng tập d2l để kiểm tra thời gian).
+Vì ta sẽ cần đánh giá xếp hạng thời gian xử lý một cách thường xuyên trong cuốn sách này, ta sẽ định nghĩa một bộ tính giờ (sau đó có thể truy cập được thông qua gói `d2l` để theo dõi thời gian chạy).
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
