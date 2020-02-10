@@ -71,21 +71,21 @@ But there is a key difference between the two cases. In this first case, the ima
 ## Basic Probability Theory
 -->
 
-## Lý thuyết xác suất cơ bản
+## Lý thuyết Xác suất Cơ bản
 
 <!--
 Say that we cast a die and want to know what the chance is of seeing a $1$ rather than another digit. If the die is fair, all the $6$ outcomes $\{1, \ldots, 6\}$ are equally likely to occur, and thus we would see a $1$ in one out of six cases. Formally we state that $1$ occurs with probability $\frac{1}{6}$.
 -->
 
-Giả sử ta tung xúc xắc và muốn biết liệu cơ hội để thấy mặt số $1$ so với các mặt khác là bao nhiêu.
-Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy sáu mặt số xuất hiện, trong đó có mặt $1$.
+Giả sử, ta tung xúc xắc và muốn biết cơ hội để thấy mặt số $1$ so với các mặt khác là bao nhiêu?
+Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy mặt $1$ xuất hiện như một trong sáu trường hợp kể trên. 
 Ta có thể nói rằng mặt $1$ xuất hiện với xác suất là \frac{1}{6}$.
 
 <!--
 For a real die that we receive from a factory, we might not know those proportions and we would need to check whether it is tainted. The only way to investigate the die is by casting it many times and recording the outcomes. For each cast of the die, we will observe a value in $\{1, \ldots, 6\}$. Given these outcomes, we want to investigate the probability of observing each outcome.
 -->
 
-Với một chiếc xúc xắc thực sự, ta không biết được tỷ lệ này và cũng không chắc liệu xúc xắc hư hỏng gì hay không.
+Với một chiếc xúc xắc thật, ta có thể không biết được tỷ lệ này và cần kiểm tra liệu xúc xắc có bị hư hỏng gì không.
 Cách duy nhất để kiểm tra là tung thật nhiều lần rồi ghi lại kết quả.
 Mỗi lần tung, ta quan sát thấy một số trong $\{1, \ldots, 6\}$ xuất hiện.
 Với kết quả này, ta muốn kiểm chứng xác suất xuất hiện của từng mặt số.
@@ -97,8 +97,8 @@ This gives us an *estimate* of the probability of a given *event*. The *law of
 large numbers* tell us that as the number of tosses grows this estimate will draw closer and closer to the true underlying probability. Before going into the details of what is going here, let's try it out.
 -->
 
-Một cách tiếp cận tự nhiên là với mỗi mặt số ta lấy tổng số lần nó xuất hiện rồi chia cho tổng số lần tung.
-Cách này cho ta một *ước lượng* của xác suất ứng với *sự kiện* này.
+Cách tính trực quan nhất là lấy số lần suất hiện của mỗi mặt số chia cho tổng số lần tung.
+Cách này cho ta một *ước lượng* của xác suất ứng với *sự kiện* cho trước.
 *Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì ước lượng này càng gần hơn với xác xuất thực.
 Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này bằng lập trình.
 
@@ -133,12 +133,12 @@ its value at index $i$ is the number of times the sampling outcome corresponds t
 -->
 
 Tiếp theo, ta sẽ cần tung xúc xắc.
-Trong ngành thống kê, ta gọi quá trình thu các mẫu từ phân phối xác suất là quá trình *lấy mẫu*.
+Trong thống kê, ta gọi quá trình thu các mẫu từ phân phối xác suất là quá trình *lấy mẫu*.
 Phân phối mà gán các xác suất cho các lựa chọn rời rạc (*discrete choices*) được gọi là *phân phối đa thức* (*multinomial distribution*).
-Sau này ta sẽ đưa ra định nghĩa chính quy *phân phối* là gì, nhưng để mường tượng, cứ coi nó như phép gán xác suất xảy ra cho các sự kiện.
+Sau này, ta sẽ đưa ra định nghĩa chính quy *phân phối* là gì; nhưng để hình dung, hãy xem nó như phép gán xác suất xảy ra cho các sự kiện.
 Trong MXNet, ta có thể lấy mẫu từ phân phối đa thức với hàm `np.random.multinomial`.
-Hàm này có nhiều cách sử dụng, ở đây ta tập trung vào cách đơn giản nhất.
-Muốn thu một mẫu đơn, ta nhập vào hàm này một vector chứa các xác suất.
+Có nhiều cách sử dụng hàm này, nhưng ta tập trung vào cách dùng đơn giản nhất.
+Muốn lấy một mẫu đơn, ta chỉ cần đưa vào hàm này một vector chứa các xác suất.
 Hàm `np.random.multinomial` sẽ cho kết quả là một vector có chiều dài tương tự: trong vector này, giá trị tại index $i$ là số lần kết quả $i$ xuất hiện.
 
 ```{.python .input  n=2}
