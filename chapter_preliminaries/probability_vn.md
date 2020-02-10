@@ -313,7 +313,7 @@ For probability over continuous random variables, you may refer to :numref:`sec_
 
 Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
 Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chiều cao một cách chính xác hay không.
-Nếu ta lấy độ đo vừa đủ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chiều cao một cách chính xác cả.
+Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
 Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
 Cho nên không có lý do gì để hỏi rằng xác suất mà một người nào đó có chiều cao là $1.80139278291028719210196740527486202$ mét cả.
 Trong toàn bộ dân số trên thế giới, xác suất này hầu như là bằng $0$.
