@@ -528,7 +528,7 @@ Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách kh
 Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
 Thông thường, chúng ta mong muốn thực thi các cập nhật này *tại chỗ*.
 Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến khác nhau.
-Nếu chúng ta không cập nhật tại chỗ, các bộ nhớ bị loại bỏ sẽ không được phục hồi, dẫn đến một số phần trong mã lập trình của chúng ta vô tình tham chiếu các tham số cũ. 
+Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng mã lập trình sẽ vô tình tham chiếu lại các tham số cũ. 
 
 <!--
 Fortunately, performing in-place operations in MXNet is easy.
