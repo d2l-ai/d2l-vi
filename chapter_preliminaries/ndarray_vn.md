@@ -537,7 +537,7 @@ To illustrate this concept, we first create a new matrix `z` with the same shape
 -->
 
 May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
-Chúng ta có thể gán kết quả của một phép tính tới một mảng đã được phân bố trước đó với ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
+Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bố trước đó bằng ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
 Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với `y`, sử dụng `zeros_like` để phân bố một khối các giá trị bằng $0$. 
 
 ```{.python .input  n=23}
