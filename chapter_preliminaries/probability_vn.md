@@ -740,7 +740,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 1. Tiến hành $m=500$ nhóm thí nghiệm với mỗi nhóm lấy ra $n=10$ mẫu.
 Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghiệm.
 2. Cho hai biến cố với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
-(Gợi ý: sử dụng biểu đồ Venn (https://en.wikipedia.org/wiki/Venn_diagram)).
+(Gợi ý: sử dụng [biểu đồ Venn](https://en.wikipedia.org/wiki/Venn_diagram).)
 3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
 Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
 (Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
