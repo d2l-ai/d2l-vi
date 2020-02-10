@@ -744,7 +744,7 @@ Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghi�
 3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
 Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
 (Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
-4. Trong :numref:`subsec_probability_hiv_app`, lần thử đầu tiên cho ra độ chính xác cao.
+4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
 Vậy tại sao chúng ta không sử dụng lần thử đầu cho lần thử tiếp theo?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
