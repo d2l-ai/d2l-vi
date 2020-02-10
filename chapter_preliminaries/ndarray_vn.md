@@ -610,28 +610,29 @@ a, a.item(), float(a), int(a)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * MXNet's `ndarray` is an extension to NumPy's `ndarray` with a few killer advantages that make it suitable for deep learning.
 * MXNet's `ndarray` provides a variety of functionalities including basic mathematics operations, broadcasting, indexing, slicing, memory saving, and conversion to other Python objects.
 -->
 
-*dịch đoạn phía trên*
-
+* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội phù hợp với học sâu. 
+* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Run the code in this section. Change the conditional statement `x == y` in this section to `x < y` or `x > y`, and then see what kind of `ndarray` you can get.
 2. Replace the two `ndarray`s that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?
 -->
 
-*dịch đoạn phía trên*
+1. Chạy đoạn mã lập trình trong phần dưới. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
+1. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
 
@@ -699,4 +700,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 13 -->
-*
+* Nguyễn Lê Quang Nhật
