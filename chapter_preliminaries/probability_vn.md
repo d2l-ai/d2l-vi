@@ -379,7 +379,7 @@ By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P
 -->
 
 Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *Định lý Bayes*.
-Cụ thể như sau.
+Cụ thể như sau: 
 Đầu tiên, chúng ta có *quy tắc nhân* như sau $P(A, B) = P(B \mid A) P(A)$.
 Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
 Giả sử $P(B) > 0$.
@@ -391,7 +391,7 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 Note that here we use the more compact notation where $P(A, B)$ is a *joint distribution* and $P(A \mid B)$ is a *conditional distribution*. Such distributions can be evaluated for particular values $A = a, B=b$.
 -->
 
-Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là một *xác suất kết hợp* và $P(A \mid B)$ là một *xác suất có điều kiện*.
+Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là *xác suất kết hợp* và $P(A \mid B)$ là *xác suất có điều kiện*.
 Các phân phối này có thể được tính tại các giá trị cụ thể $A = a, B=b$.
 
 <!--
@@ -405,10 +405,10 @@ Bayes' theorem is very useful if we want to infer one thing from the other, say 
 It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:
 -->
 
-Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, giống như những gì ta sẽ thấy trong phần sau của chương này.
+Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, như ta sẽ thấy trong phần sau của chương này.
 Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *biên hóa*.
 Có thể hiểu là việc xác định $P(B)$ từ $P(A, B)$.
-Chúng ta có thể tính được xác suất của B tính bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
+Chúng ta có thể tính được xác suất của B bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
 
 $$P(B) = \sum_{A} P(A, B),$$
 
