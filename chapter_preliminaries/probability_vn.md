@@ -721,7 +721,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
 * Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối ngẫu nhiên.
 * Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (joint distribution), phân phối có điều kiện (conditional distribution), định lý Bayes (Bayes’ theorem), phép biến hóa (marginalization) và giả định độc lập (independence assumptions).
-* Kỳ vọng và phương sai được xem như một cách dễ dàng để có thể tóm tắt được các đặc điểm chính của phân phối xác suất.
+* Kỳ vọng và phương sai là các phép đo hữu ích để tóm tắt các đặc điểm chính của phân phối xác suất.
 
 
 <!--
