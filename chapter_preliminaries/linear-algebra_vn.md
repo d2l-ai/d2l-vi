@@ -52,7 +52,7 @@ Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are nu
 Trong quyển sách này, chúng tôi sẽ tuân theo quy ước ký hiệu các biến vô hướng bằng các chữ cái viết thường (chẳng hạn $x$, $y$ và $z$).
 Chúng tôi ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
 Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian*.
-Bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách toán học để nói rằng $x$ là một số thực vô hướng.
+Nhưng bạn cần nhớ $x \in \mathbb{R}$ là cách toán học để thể hiện $x$ là một số thực vô hướng.
 Ký hiệu $\in$ đọc là "thuộc" và đơn thuần biểu diễn việc phần tử thuộc một tập hợp.
 Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị $0$ hoặc $1$.
 
