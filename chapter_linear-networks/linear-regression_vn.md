@@ -415,7 +415,7 @@ This misuse of terminology is a common source of confusion when deep learning pr
 ### Vectorization for Speed
 -->
 
-### Vector Hóa Để Tăng Tốc Độ Tính Toán
+### Vector hóa để tăng Tốc độ Tính toán
 
 <!--
 When training our models, we typically want to process whole minibatches of examples simultaneously.
