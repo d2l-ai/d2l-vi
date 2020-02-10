@@ -490,7 +490,7 @@ Now we can benchmark the workloads.
 First, we add them, one coordinate at a time, using a `for` loop.
 -->
 
-Bây giờ, chúng tôi có thể đánh giá xếp hạng hai phương pháp cộng vector.
+Bây giờ, ta có thể đánh giá xếp hạng hai phương pháp cộng vector.
 Đầu tiên, ta sử dụng vòng lặp for để cộng các tọa độ tương ứng.
 
 ```{.python .input  n=2}
