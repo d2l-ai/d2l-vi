@@ -97,7 +97,7 @@ This gives us an *estimate* of the probability of a given *event*. The *law of
 large numbers* tell us that as the number of tosses grows this estimate will draw closer and closer to the true underlying probability. Before going into the details of what is going here, let's try it out.
 -->
 
-Cách tính trực quan nhất là lấy số lần suất hiện của mỗi mặt số chia cho tổng số lần tung.
+Cách tính trực quan nhất là lấy số lần xuất hiện của mỗi mặt số chia cho tổng số lần tung.
 Cách này cho ta một *ước lượng* của xác suất ứng với *sự kiện* cho trước.
 *Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì ước lượng này càng gần hơn với xác xuất thực.
 Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này bằng lập trình.
