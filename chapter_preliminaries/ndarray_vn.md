@@ -551,7 +551,7 @@ print('id(z):', id(z))
 If the value of `x` is not reused in subsequent computations, we can also use `x[:] = x + y` or `x += y` to reduce the memory overhead of the operation.
 -->
 
-Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu tiêu hao bộ nhớ trong quá trình tính toán.
+Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
 
 ```{.python .input  n=24}
 before = id(x)
