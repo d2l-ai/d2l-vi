@@ -4,8 +4,7 @@
 <!--
 # Linear Regression
 -->
-
-# *dịch tiêu đề phía trên*
+Hồi Quy Tuyến Tính
 :label:`sec_linear_regression`
 
 <!--
@@ -13,17 +12,19 @@ Regression refers to a set of methods for modeling the relationship between data
 In the natural sciences and social sciences, the purpose of regression is most often to *characterize* the relationship between the inputs and outputs.
 Machine learning, on the other hand, is most often concerned with *prediction*.
 -->
-
-*dịch đoạn phía trên*
-
+Hồi quy là tập hợp những phương pháp được dùng trong việc xây dựng mô hình quan hệ giữa các điếm dữ liệu $\mathbf{x}$ và với các giá trị thực tương ứng $y$. 
+Trong những ngành khoa học tự nhiên và khoa học xã hội, hồi quy thường được sử dụng để tìm ra mối quan hệ giữa dữ liệu đầu vào và dữ liệu đầu ra.
+Tuy nhiên, trong học máy thì hồi quy thường được sử dụng để dự đoán kết quả đầu ra.
 <!--
 Regression problems pop up whenever we want to predict a numerical value.
 Common examples include predicting prices (of homes, stocks, etc.), predicting length of stay (for patients in the hospital), demand forecasting (for retail sales), among countless others.
 Not every prediction problem is a classic *regression* problem.
 In subsequent sections, we will introduce classification problems, where the goal is to predict membership among a set of categories.
 -->
-
-*dịch đoạn phía trên*
+Những bài toán hồi quy xuất hiện khi mà chúng ta muốn dự đoán một giá trị số nào đó.
+Những ví dụ điển hình như là dự đoán giá của (nhà, cổ phiếu, ...), dự đoán thời gian ở lại ( của bệnh nhân trong bênh viện), dự đoán nhu cầu tiêu dùng (cho việc điều chỉnh giá bán lẻ), và hàng ngàn những vấn đề khác.
+Tuy nhiên, không phải tất cả các bài toán dự đoán đều được quy về thành bài toán hồi quy cổ điển như trên.
+Trong những phần tiếp theo, chúng tôi sẽ giới thiệu những bài toán phân loại với mục tiêu là dự đoán đúng loại trong một tâp hợp cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -828,7 +829,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Minh Trí Nguyễn
 
 <!-- Phần 2 -->
 *
