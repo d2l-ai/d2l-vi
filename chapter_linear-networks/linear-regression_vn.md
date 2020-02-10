@@ -414,23 +414,29 @@ This misuse of terminology is a common source of confusion when deep learning pr
 <!--
 ### Vectorization for Speed
 -->
-Vector Hóa Để Tăng Tốc Độ Tính Toán
+
+### Vector Hóa Để Tăng Tốc Độ Tính Toán
+
 <!--
 When training our models, we typically want to process whole minibatches of examples simultaneously.
 Doing this efficiently requires that we vectorize the calculations and leverage fast linear algebra libraries rather than writing costly for-loops in Python.
 -->
+
 Khi huấn luyện mô hình, chúng ta thường muốn các tập dữ liệu nhỏ được xử lý một cách đồng thời.
 Để làm được việc này một cách hiệu quả, chúng ta phải vector hóa các việc tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp for trong Python.
+
 <!--
 To illustrate why this matters so much, we can consider two methods for adding vectors.
 To start we instantiate two $10000$-dimensional vectors containing all ones.
 In one method we will loop over the vectors with a Python `for` loop.
 In the other method we will rely on a single call to `np`.
 -->
+
 Chúng tôi sẽ sử dụng hai phương pháp cộng vector dưới đây để hiểu được tại sao vector hóa là cần thiết trong học máy.
 Đầu tiên, chúng tôi khởi tạo hai vector $10000$- chiều và gán giá trị 1 cho cả hai vector.
 Ở phuơng pháp một, chúng ta sẽ sử dùng vòng lặp for của Python.
 Ở phương pháp hai, chúng ta sẽ sử dụng hàm trong thư viện numpy(np).
+
 ```{.python .input}
 %matplotlib inline
 import d2l
@@ -446,8 +452,8 @@ b = np.ones(n)
 <!--
 Since we will benchmark the running time frequently in this book, let's define a timer (hereafter accessed via the `d2l` package to track the running time.
 -->
+
 Vì chúng tôi sẽ đánh giá xếp hạng thời gian xử lý trong quyển sách này, chúng tôi sẽ tạo một class Timer và lưu trong tập dữ liệu d2l (ở những phần sau, chúng tôi sẽ dùng tập d2l để kiểm tra thời gian).
-*dịch đoạn phía trên*
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -483,8 +489,10 @@ class Timer(object):
 Now we can benchmark the workloads.
 First, we add them, one coordinate at a time, using a `for` loop.
 -->
+
 Bây giờ, chúng tôi có thể đánh giá xếp hạng hai phương pháp cộng vector.
 Đầu tiên, chúng tôi sử dụng vòng lặp for để cộng các tọa độ tương ứng.
+
 ```{.python .input  n=2}
 timer = Timer()
 c = np.zeros(n)
@@ -496,7 +504,9 @@ for i in range(n):
 <!--
 Alternatively, we rely on `np` to compute the elementwise sum:
 -->
-Trong phương pháp 2, chúng tôi dựa vào thư viện numpy(np) để tính tổng hai vector. 
+
+Trong phương pháp 2, chúng tôi dựa vào thư viện numpy(np) để tính tổng hai vector.
+
 ```{.python .input  n=3}
 timer.start()
 d = a + b
@@ -508,9 +518,11 @@ You probably noticed that the second method is dramatically faster than the firs
 Vectorizing code often yields order-of-magnitude speedups.
 Moreover, we push more of the math to the library and need not write as many calculations ourselves, reducing the potential for errors.
 -->
+
 Bạn có thể nhận thấy rằng phương pháp 2 nhanh hơn rất nhiều lần so với phương pháp 1.
 Việc vector hóa các dòng lệnh thường tăng tốc độ tính toán theo lũy thừa bậc 10.
-Thêm vào đó, nhiều phương trình toán học sẽ được viết sẵn trong các thư viện (như numpy). Điều này sẽ giúp giảm thiểu các lỗi tính toán không cần thiết. 
+Thêm vào đó, nhiều phương trình toán học sẽ được viết sẵn trong các thư viện (như numpy). Điều này sẽ giúp giảm thiểu các lỗi tính toán không cần thiết.
+
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 12 ===================== -->
