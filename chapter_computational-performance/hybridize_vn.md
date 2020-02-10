@@ -71,9 +71,9 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ thể thực hiện một khi chương trình được định nghĩa đầy đủ.
+Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ có thể thực hiện một khi chương trình được định nghĩa đầy đủ.
 Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh).
-Luồng lập trình thường gồm những bước sau:
+Lập trình ký hiệu thường gồm những bước sau:
 
 <!--
 1. Define the operations to be executed.
@@ -95,7 +95,7 @@ Or it can transform the code entirely into an equivalent piece.
 To get a better idea consider the following simulation of imperative programming (it's Python after all) below.
 -->
 
-Quy trình trên cho phép ta có khá nhiều cách tối ưu.
+Quy trình trên cho phép chúng ta tối ưu hóa chương trình một cách đáng kể.
 Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU.
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
 Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
@@ -175,7 +175,7 @@ Ví dụ như Theano, TensorFlow, Keras và CNTK đều xây dựng mô hình d�
 Ngược lại, Chainer và PyTorch tiếp cận theo hướng lập trình mệnh lệnh.
 Mô hình kiểu mệnh lệnh đã được bổ sung vào TensorFlow 2.0 (thông qua chế độ Eager) và Keras trong những bản cập nhật mới nhất.
 Khi thiết kế Gluon, các nhà phát triển đã cân nhắc liệu rằng có thể kết hợp ưu điểm của cả hai mô hình lập trình lại với nhau hay không.
-Có được một mô hình tích hợp sẽ giúp người dùng phát triển và gỡ lỗi bằng lập trình mệnh lệnh thuần, đồng thời mang lại khả năng chuyển đổi hầu như toàn bộ chương trình sang dạng ký hiệu để chạy khi có yêu cầu triển khai thành sản phẩm với chất lượng tính toán cao.
+Có được một mô hình hybrid sẽ giúp người dùng phát triển và gỡ lỗi bằng lập trình mệnh lệnh thuần, đồng thời mang lại khả năng chuyển đổi hầu như toàn bộ chương trình sang dạng ký hiệu để chạy khi có yêu cầu triển khai thành sản phẩm với chất lượng tính toán cao.
 
 <!--
 In practice this means that we build models using either the `HybridBlock` or the `HybridSequential` and `HybridConcurrent` classes. 
