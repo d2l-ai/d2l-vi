@@ -685,7 +685,7 @@ $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance
 -->
 
-Trong trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ với kỳ vọng.
+Trong nhiều trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ so với kỳ vọng.
 Đại lượng này có thể được đo qua phương trình:
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
