@@ -523,7 +523,7 @@ Second, we might point at the same parameters from multiple variables.
 If we do not update in place, this could cause that discarded memory is not released, and make it possible for parts of our code to inadvertently reference stale parameters.
 -->
 
-Điều này có thể là không hợp lý bởi hai lý do. 
+Đây có thể là điều không mong muốn vì hai lý do sau. 
 Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách không cần thiết mọi lúc.
 Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
 Thông thường, chúng ta mong muốn thực thi các cập nhật này *tại chỗ*.
