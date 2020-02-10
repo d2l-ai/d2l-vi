@@ -292,7 +292,7 @@ which means $\{X = 1, 2, \text{or}, 3\}$. Equivalently, $P(1 \leq X \leq 3)$ rep
 -->
 
 Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu về khái niệm của một *biến ngẫu nhiên*.
-Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ số lượng nào và giá trị của nó không được xác định.
+Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không được xác định.
 Nó có thể nhận một giá trị trong tập các giá trị khả dĩ từ một thí nghiệm ngẫu nhiên.
 Hãy xét một biến ngẫu nhiên $X$ có thể nhận một trong những giá trị từ tập không gian mẫu $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ của thí nghiêm tung xúc xắc.
 Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X = 5\}$ hoặc $X = 5$, và xác suất của nó là $P(\{X = 5\})$ hoặc $P(X = 5)$.
