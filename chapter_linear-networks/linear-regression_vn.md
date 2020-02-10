@@ -423,7 +423,7 @@ Doing this efficiently requires that we vectorize the calculations and leverage 
 -->
 
 Khi huấn luyện mô hình, chúng ta thường muốn các tập dữ liệu nhỏ được xử lý một cách đồng thời.
-Để làm được việc này một cách hiệu quả, chúng ta phải vector hóa các việc tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp for trong Python.
+Để làm được điều này một cách hiệu quả, chúng ta phải vector hóa các tác vụ tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp `for` trong Python.
 
 <!--
 To illustrate why this matters so much, we can consider two methods for adding vectors.
