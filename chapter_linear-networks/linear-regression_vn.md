@@ -505,7 +505,7 @@ for i in range(n):
 Alternatively, we rely on `np` to compute the elementwise sum:
 -->
 
-Trong phương pháp 2, ta dựa vào thư viện `np` để tính tổng hai vector theo từng phần tử.
+Trong phương pháp hai, ta dựa vào thư viện `np` để tính tổng hai vector theo từng phần tử.
 
 ```{.python .input  n=3}
 timer.start()
