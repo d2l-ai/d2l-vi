@@ -524,7 +524,7 @@ If we do not update in place, this could cause that discarded memory is not rele
 -->
 
 Đây có thể là điều không mong muốn vì hai lý do sau. 
-Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách không cần thiết mọi lúc.
+Thứ nhất, không phải lúc nào chúng ta cũng muốn cấp phát bộ nhớ không cần thiết.
 Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
 Thông thường, chúng ta mong muốn thực thi các cập nhật này *tại chỗ*.
 Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến khác nhau.
