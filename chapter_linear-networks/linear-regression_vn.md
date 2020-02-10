@@ -146,7 +146,7 @@ sampled from the same distribution as the training data will (in expectation) pr
 
 Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu (đã biết trước) $\mathbf{y}$,
 mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$,
-được lấy mẫu từ cùng phân phối của tập huấn luyện, sai số dự đoán mục tiêu $y_i$ là nhỏ nhất.
+được lấy mẫu từ cùng phân phối của tập huấn luyện sẽ (theo kỳ vọng) dự đoán giá trị mục tiêu $y_i$  với sai số nhỏ nhất.
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
