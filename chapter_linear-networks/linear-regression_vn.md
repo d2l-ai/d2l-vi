@@ -144,7 +144,7 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các kết quả đích (đã biết trước) $\mathbf{y}$,
+Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu (đã biết trước) $\mathbf{y}$,
 mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$,
 được lấy mẫu từ cùng phân phối của tập huấn luyện, sai số dự đoán mục tiêu $y_i$ là nhỏ nhất.
 
