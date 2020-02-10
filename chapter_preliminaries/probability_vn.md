@@ -317,7 +317,7 @@ Lấy ví dụ một trường hợp, cho biến cố $\mathcal{A}_1$ là toàn 
 ### Random Variables
 -->
 
-### *dịch tiêu đề phía trên*
+### Biến ngẫu nhiên
 
 <!--
 In our random experiment of casting a die, we introduced the notion of a *random variable*. A random variable can be pretty much any quantity and is not deterministic. It could take one value among a set of possibilities in a random experiment.
@@ -335,7 +335,18 @@ For example, $P(1 \leq X \leq 3)$ denotes the probability of the event $\{1 \leq
 which means $\{X = 1, 2, \text{or}, 3\}$. Equivalently, $P(1 \leq X \leq 3)$ represents the probability that the random variable $X$ can take a value from $\{1, 2, 3\}$.
 -->
 
-*dịch đoạn phía trên*
+Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu về khái niệm của một *biến ngẫu nhiên*.
+Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không được xác định.
+Nó có thể nhận một giá trị trong tập các giá trị khả dĩ từ một thí nghiệm ngẫu nhiên.
+Hãy xét một biến ngẫu nhiên $X$ có thể nhận một trong những giá trị từ tập không gian mẫu $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ của thí nghiêm tung xúc xắc.
+Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X = 5\}$ hoặc $X = 5$, và xác suất của nó là $P(\{X = 5\})$ hoặc $P(X = 5)$.
+Khi viết $P(X = a)$, chúng ta đã phân biệt giữa biến ngẫu nhiên $X$ và các giá trị (ví dụ như $a$) mà $X$ có thể nhận.
+Tuy nhiên, ký hiệu như vậy khá là rườm rà.
+Để đơn giản hóa ký hiệu, một mặt, chúng ta có thể chỉ cần dùng $P(X)$ để biểu diễn *phân phối* của biến ngẫu nhiên $X$: phân phối này cho chúng ta biết xác xuất mà $X$ có thể nhận cho bất kỳ giá trị nào.
+Mặt khác, chúng ta có thể viết đơn giản $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên có thể nhận giá trị $a$.
+Bởi vì một sự kiện trong lý thuyết xác suất là một tập các kết quả từ không gian mẫu, chúng ta có thể xác định rõ một khoảng các giá trị mà một biến ngẫu nhiên có thể nhận.
+Ví dụ, $P(1 \leq X \leq 3)$ diễn tả xác suất của sự kiện $\{1 \leq X \leq 3\}$, nghĩa là $\{X = 1, 2, \text{hoặc}, 3\}$.
+Tương tự, $P(1 \leq X \leq 3)$ biểu diễn xác suất mà biến ngẫu nhiên $X$ có thể nhận giá trị trong tập $\{1, 2, 3\}$.
 
 <!--
 Note that there is a subtle difference between *discrete* random variables, like the sides of a die, and *continuous* ones, like the weight and the height of a person. There is little point in asking whether two people have exactly the same height. If we take precise enough measurements you will find that no two people on the planet have the exact same height. In fact, if we take a fine enough measurement, you will not have the same height when you wake up and when you go to sleep. So there is no purpose in asking about the probability
@@ -344,7 +355,18 @@ In the rest of this section, we consider probability in discrete space.
 For probability over continuous random variables, you may refer to :numref:`sec_random_variables`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
+Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chính xác chiều cao hay không.
+Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
+Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
+Cho nên không có lý do gì để hỏi rằng xác suất mà một người nào đó có chiều cao là $1.80139278291028719210196740527486202$ mét cả.
+Trong toàn bộ dân số trên thế giới, xác suất này hầu như là bằng $0$.
+Sẽ có ý nghĩa hơn trong trường hợp này nếu ta hỏi chiều cao của một người nào đó có rơi vào một khoảng cho trước hay không, ví dụ như giữa $1.79$ và $1.81$ mét.
+Trong các trường hợp này, ta có thể định lượng khả năng mà ta thấy một giá trị nào đó theo một *mật độ xác suất*.
+Chiều cao chính xác $1.80$ mét thì không có xác suất nhưng có mật độ khác không.
+Trong bất kỳ khoảng nào giữa hai chiều cao khác nhau ta đều có xác suất khác không.
+Trong phần còn lại của mục này, ta sẽ xem xét xác suất trong không gian rời rạc.
+Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở :numref:`sec_random_variables`.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -775,7 +797,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Kiến An
 
 <!-- Phần 5 -->
-*
+* Tạ H. Duy Nguyên
 
 <!-- Phần 6 -->
 * Nguyễn Văn Tâm
