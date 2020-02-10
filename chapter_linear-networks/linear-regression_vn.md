@@ -521,7 +521,7 @@ Moreover, we push more of the math to the library and need not write as many cal
 
 Bạn có thể nhận thấy rằng phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp đầu tiên.
 Việc vector hóa thường tăng tốc độ tính toán lên nhiều lần.
-Thêm vào đó, nhiều phương trình toán học sẽ được viết sẵn trong các thư viện (như numpy). Điều này sẽ giúp giảm thiểu các lỗi tính toán không cần thiết.
+Ngoài ra, các hàm toán học sẽ được thêm vào thư viện để tránh phải tự viết các tính toán, giảm thiểu khả năng xảy ra lỗi.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
