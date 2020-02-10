@@ -277,7 +277,6 @@ Trong nhiều trường hợp mà chúng ta không thể xử lý mô hình mộ
 Hơn thế nữa, đối với nhiều tác vụ, những mô hình khó để tối ưu hóa ra lại tốt hơn cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt với đối với các rắc rối.
 
 
-*dịch đoạn phía trên*
 
 <!--
 The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book, 
