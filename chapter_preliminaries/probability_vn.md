@@ -398,7 +398,7 @@ Các phân phối này có thể được tính tại các giá trị cụ thể
 ### Marginalization
 -->
 
-### Biên hóa
+### Phép biên hóa
 
 <!--
 Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is *marginalization*.
@@ -406,7 +406,7 @@ It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the pr
 -->
 
 Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, như ta sẽ thấy trong phần sau của chương này.
-Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *biên hóa*.
+Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *phép biên hóa*.
 Có thể hiểu là việc xác định $P(B)$ từ $P(A, B)$.
 Chúng ta có thể tính được xác suất của B bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
 
