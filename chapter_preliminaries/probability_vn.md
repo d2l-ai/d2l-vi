@@ -745,7 +745,7 @@ Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghi�
 Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
 (Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
 4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
-Vậy tại sao chúng ta không sử dụng lần thử đầu cho lần thử tiếp theo?
+Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho lần thử tiếp theo?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
