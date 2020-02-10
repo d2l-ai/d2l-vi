@@ -604,7 +604,7 @@ a, a.item(), float(a), int(a)
 -->
 
 * MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội phù hợp với học sâu. 
-* MXNet `ndarray`cung cấp một số lượng lớn các chức năng bao gồm các công thức toán học cơ bản, lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), và khả năng chuyển đổi sang các đối tượng Python khác.
+* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
