@@ -435,7 +435,7 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-## Chỉ số và trích chọn
+## Chỉ số và Trích chọn
 
 <!--
 Just as in any other Python array, elements in an `ndarray` can be accessed by index.
