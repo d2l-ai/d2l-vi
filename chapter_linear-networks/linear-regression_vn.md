@@ -303,7 +303,6 @@ Trong luyện tập, việc này có thể cực kì chậm.
 Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
 Vì thế, đôi khi chúng ta sẽ giải quyết để lấy mẫu một minibatch ngẫu nhiên của các mẫu mỗi khi chúng ta cần tính toán việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
