@@ -584,7 +584,7 @@ type(a), type(b)
 To convert a size-$1$ `ndarray` to a Python scalar, we can invoke the `item` function or Python's built-in functions.
 -->
 
-Để chuyển đổi `ndarray` 1-chiều sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python. 
+Để chuyển đổi một mảng `ndarray` một phần tử sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python. 
 
 ```{.python .input}
 a = np.array([3.5])
