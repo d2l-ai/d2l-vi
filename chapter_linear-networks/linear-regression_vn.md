@@ -398,7 +398,7 @@ Estimating targets given features is commonly called *prediction* and *inference
 -->
 
 Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
-Ước lượng biến mục tiêu bằng những đặc trưng của nó thường được gọi là *dự đoán* hay *suy luận*.
+Ước lượng biến mục tiêu bằng những đặc trưng của nó thường được gọi là *dự đoán* (_prediction_) hay *suy luận* (_inference_).
 
 <!--
 We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
@@ -406,8 +406,8 @@ In statistics, *inference* more often denotes estimating parameters based on a d
 This misuse of terminology is a common source of confusion when deep learning practitioners talk to statisticians.
 -->
 
-Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận* (inference), dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp.
-Trong môn Thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu.
+Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận*, dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp.
+Trong thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu.
 Việc dùng sai thuật ngữ này dễ gây hiểu nhầm khi một chuyên viên học sâu thảo luận cùng một chuyên viên thống kê.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
