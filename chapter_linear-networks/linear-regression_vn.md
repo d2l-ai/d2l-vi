@@ -519,7 +519,7 @@ Vectorizing code often yields order-of-magnitude speedups.
 Moreover, we push more of the math to the library and need not write as many calculations ourselves, reducing the potential for errors.
 -->
 
-Bạn có thể nhận thấy rằng phương pháp 2 nhanh hơn rất nhiều lần so với phương pháp 1.
+Bạn có thể nhận thấy rằng phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp đầu tiên.
 Việc vector hóa các dòng lệnh thường tăng tốc độ tính toán theo lũy thừa bậc 10.
 Thêm vào đó, nhiều phương trình toán học sẽ được viết sẵn trong các thư viện (như numpy). Điều này sẽ giúp giảm thiểu các lỗi tính toán không cần thiết.
 
