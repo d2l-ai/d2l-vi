@@ -527,7 +527,7 @@ If we do not update in place, this could cause that discarded memory is not rele
 Thứ nhất, chúng ta không muốn phân bố bộ nhớ mới một cách không cần thiết mọi lúc.
 Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và tất cả chúng có thể được cập nhật nhiều lần trong một giây. 
 Thông thường, chúng ta mong muốn thực thi các cập nhật này *tại chỗ*.
-Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến.
+Thứ hai, chúng ta có thể chỉ đến các tham số giống nhau từ nhiều biến khác nhau.
 Nếu chúng ta không cập nhật tại chỗ, các bộ nhớ bị loại bỏ sẽ không được phục hồi, dẫn đến một số phần trong mã lập trình của chúng ta vô tình tham chiếu các tham số cũ. 
 
 <!--
