@@ -666,7 +666,8 @@ we need some measures.
 The *expectation* (or average) of the random variable $X$ is denoted as
 -->
 
-Để có một cái nhìn tóm tắt về các đặt điểm của xác suất, kỳ vọng (hay trung bình) ký hiệu là $X$ được đưa ra như một thước đo để chúng ta có thể nhìn vào.
+Chúng ta cần những phép đó để có được cái nhìn tóm tắt về đặc điểm của các phân phối xác suất.
+Kỳ vọng (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
 
 $$E[X] = \sum_{x} x P(X = x).$$
 
