@@ -75,7 +75,7 @@ We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{
 ### Linear Model
 -->
 
-### Mô hình tuyến tính
+### Mô hình Tuyến tính
 
 <!--
 The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
@@ -105,8 +105,8 @@ In disciplines where it is common to focus on datasets with just a few features,
 In ML, we usually work with high-dimensional datasets, so it is more convenient to employ linear algebra notation. When our inputs consist of $d$ features, we express our prediction $\hat{y}$ as
 -->
 
-Trong nghiên cứu, các tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên là điều bình thường.
-Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, do đó sẽ thuận tiện hơn khi sử dụng ký hiệu đại số tuyến tính để biểu diễn.
+Trong các ngành học thường tập trung vào các tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
+Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn khi ta sử dụng ký hiệu đại số tuyến tính để biểu diễn.
 Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ là
 
 $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
