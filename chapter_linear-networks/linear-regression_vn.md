@@ -81,7 +81,7 @@ We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{
 The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
 -->
 
-Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn như là tổng có trọng số của các đặc trưng (diện tích và năm sử dụng):
+Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn như là tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
 $$\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b.$$
 
@@ -837,7 +837,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 4 -->
 *
