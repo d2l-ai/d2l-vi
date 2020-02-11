@@ -716,13 +716,14 @@ consisting of *dendrites* (input terminals), the *nucleus* (CPU), the *axon* (ou
 and the *axon terminals* (output terminals), enabling connections to other neurons via *synapses*.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù hồi quy tuyến tính (được phát minh vào năm 1795) có trước khoa học thần kinh tính toán, nhưng có vẻ lỗi thời khi mô tả hồi quy tuyến tính như một mạng nơ-ron.
+Để xem tại sao các mô hình tuyến tính là nơi tự nhiên cho các nhà nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts nhìn thấy và bắt đầu phát triển các mô hình tế bào thần kinh nhân tạo, hãy xem xét bức tranh hoạ hình của một tế bào thần kinh sinh học tại :numref:`fig_Neuron`, bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*.
 
 <!--
 ![The real neuron](../img/Neuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/Neuron.svg)
+![Nơ-ron trong thực tế](../img/Neuron.svg)
 :label:`fig_Neuron`
 
 <!--
@@ -733,14 +734,17 @@ and this information is then sent for further processing in the axon $y$, typica
 From there it either reaches its destination (e.g., a muscle) or is fed into another neuron via its dendrites.
 -->
 
-*dịch đoạn phía trên*
+Thông tin $x_i$ đến từ nơ-ron khác (hoặc các cảm biến môi trường, giống như võng mạc) được nhận thông qua các sợi nhánh.
+Cụ thể, thông tin đó được tính trọng số bởi *trọng số của synapses* $w_i$, là trọng số xác định độ ảnh hướng của các đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua phép nhân của $x_i$ và $w_i$).
+Các đầu vào có trọng số đến từ nhiều nguồn được tổng hợp trong nhân tế bào dưới dạng tổng trọng số $y = \ sum_i x_i w_i + b$, và thông tin này sau đó được gửi đi để xử lý thêm trong sợi trục $y$, thường là sau khi xử lý phi tuyến qua $\sigma(y)$.
+Từ đó, nó được gửi đến đích (ví dụ, một cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các sợi nhánh của nó.
 
 <!--
 Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm, 
 to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
 -->
 
-*dịch đoạn phía trên*
+Chắc chắn rằng, ý tưởng cấp cao là nhiều đơn vị như vậy có thể được ghép nối lại với nhau bằng những kết nối và thuật toán học tập đúng, để tạo ra hành vi thú vị và phức tạp hơn nhiều so với bất kỳ tế bào thần kinh nào có thể làm được, nhờ vào nghiên cứu của chúng ta về các hệ thống thần kinh sinh học trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 16 ===================== -->
 
@@ -873,7 +877,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-*
+* 
 
 <!-- Phần 17 -->
 *
