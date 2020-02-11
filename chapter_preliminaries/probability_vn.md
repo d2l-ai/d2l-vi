@@ -680,7 +680,7 @@ That is, the second test allowed us to gain much higher confidence that not all 
 ## Expectation and Variance
 -->
 
-## *dịch tiêu đề phía trên*
+## Kỳ vọng và Phương sai
 
 <!--
 To summarize key characteristics of probability distributions,
@@ -688,7 +688,8 @@ we need some measures.
 The *expectation* (or average) of the random variable $X$ is denoted as
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cần những phép đó để có được cái nhìn tóm tắt về đặc điểm của các phân phối xác suất.
+Kỳ vọng (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
 
 $$E[X] = \sum_{x} x P(X = x).$$
 
@@ -697,7 +698,7 @@ When the input of a function $f(x)$ is a random variable drawn from the distribu
 the expectation of $f(x)$ is computed as
 -->
 
-*dịch đoạn phía trên*
+Khi giá trị đầu vào của phương trình $f(x)$ là một biến ngẫu nhiên nhiên cho trước theo phân phối $P$ với các giá trị $x$ khác nhau, kỳ vọng của $f(x)$ sẽ được tính theo phương trình:
 
 $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 
@@ -706,7 +707,8 @@ $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ so với kỳ vọng.
+Đại lượng này có thể được đo qua phương trình:
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
@@ -721,7 +723,8 @@ by how much the function deviates from the expectation of the function,
 as different values $x$ of the random variable are sampled from its distribution:
 -->
 
-*dịch đoạn phía trên*
+Nếu lấy căn bậc hai của kết quả ta sẽ được độ lệch chuẩn.
+Phương sai thể hiện ước tính độ lệch giữa các biến ngẫu nhiên và kỳ vọng của phương trình, vì các giá trị $x$ của biến ngẫu nhiên được lấy từ phân phối của nó
 
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
@@ -730,7 +733,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We can use MXNet to sample from probability distributions.
@@ -738,14 +741,16 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 * Expectation and variance offer useful measures to summarize key characteristics of probability distributions.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối ngẫu nhiên.
+* Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (joint distribution), phân phối có điều kiện (conditional distribution), định lý Bayes (Bayes’ theorem), phép biến hóa (marginalization) và giả định độc lập (independence assumptions).
+* Kỳ vọng và phương sai là các phép đo hữu ích để tóm tắt các đặc điểm chính của phân phối xác suất.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. We conducted $m=500$ groups of experiments where each group draws $n=10$ samples. Vary $m$ and $n$. Observe and analyze the experimental results.
@@ -754,7 +759,15 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 1. In :numref:`subsec_probability_hiv_app`, the first test is more accurate. Why not just run the first test a second time?
 -->
 
-*dịch đoạn phía trên*
+1. Tiến hành $m=500$ nhóm thí nghiệm với mỗi nhóm lấy ra $n=10$ mẫu.
+Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghiệm.
+2. Cho hai biến cố với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
+(Gợi ý: sử dụng [biểu đồ Venn](https://en.wikipedia.org/wiki/Venn_diagram).)
+3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
+Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
+(Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
+4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
+Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho lần thử tiếp theo?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -814,4 +827,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Nguyễn Minh Thư
