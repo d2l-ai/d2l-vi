@@ -10,7 +10,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 **Mục lục:**
 
 [A](#a) [B](#b) [C](#c) [D](#d) [E](#e) [F](#f) [G](#g)
-[H](#h) [I](#i) [J](#k) [K](#k) [L](#l) [M](#m) [N](#n)
+[H](#h) [I](#i) [J](#j) [K](#k) [L](#l) [M](#m) [N](#n)
 [O](#0) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u)
 [V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
 
@@ -38,21 +38,23 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | benchmark               | đánh giá xếp hạng                                              | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                                                       | http://bit.ly/32HJI3S |
 | big data                | big data                                                       |                       |
+| binomial distribution   | phân phối nhị thức                                             |                       |
 | Blackbox dev set        | tập phát triển Blackbox                                        | http://bit.ly/2MVHcl7 |
 | bounding box            | khung chứa                                                     | http://bit.ly/2sbhDVj |
-| broadcast            | lan truyền                                                     | 
+| broadcast               | lan truyền                                                     |                       |
 
 ## C
 | English                             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại          |
 |-------------------------------------|----------------------------------------------------------------|------------------------|
-| chain rule | quy tắc dây chuyền |  |
+| chain rule                          | quy tắc dây chuyền                                             |                        |
 | classifier                          | bộ phân loại                                                   |                        |
 | clustering                          | phân cụm                                                       |                        |
 | code (danh từ)                      | mã nguồn                                                       |                        |
 | code (động từ)                      | viết mã                                                        |                        |
 | computer vision                     | thị giác máy tính                                              |                        |
 | computing (trong Khoa Học Máy Tính) | điện toán                                                      |                        |
-| computational graph                 | đồ thị tính toán                                              |                        |
+| computational graph                 | đồ thị tính toán                                               |                        |
+| conditional distribution            | phân phối có điều kiện                                         |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
@@ -89,7 +91,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
-| elementwise         | (theo) từng phần tử                                              |                       |
+| elementwise         | (theo) từng phần tử                                            |                       |
 | embedding           | embedding                                                      |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
 | error analysis      | phân tích lỗi                                                  |                       |
@@ -97,10 +99,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | estimator           | bộ ước lượng                                                   |                       |
 | evaluation metric   | phép đánh giá                                                  |                       |
 | example             | mẫu                                                            |                       |
+| expectation         | kỳ vọng                                                        |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
 | Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 | effect size         | hệ số ảnh hưởng                                                |                       |
-| expression (math) | biểu thức (toán học) | | 
+| expression (math)   | biểu thức (toán học)                                           |                       |
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -138,12 +141,19 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
 | implicit feedback | phản hồi gián tiếp                                     |               |
+| independence assumption | giả định độc lập                                 |               |
 | iteration | vòng lặp                                                       |               |
+
+## J
+| English            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|--------------------|----------------------------------------------------------------|---------------|
+| joint distribution | phân phối đồng thời                                            |               |
 
 ## L
 | English                            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |------------------------------------|----------------------------------------------------------------|-----------------------|
 | layer                              | tầng                                                           |                       |
+| law of large numbers               | luật số lớn                                                    |                       |
 | learning curve                     | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
 | learning algorithm                 | thuật toán học                                                 |                       |
 | linear algebra                     | đại số tuyến tính                                              |                       |
@@ -156,22 +166,24 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | loss function                      | hàm mất mát                                                    |                       |
 
 ## M
-| English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
-|--------------------------|----------------------------------------------------------------|---------------|
-| machine learning         | học máy                                                        |               |
-| mean squared error (MSE) | trung bình bình phương sai số                                  |               |
-| metric                   | phép đo                                                        |               |
-| minibatch                | minibatch                                                      |               |
-| misclassified            | bị phân loại nhầm                                              |               |
-| mislabeled               | bị gán nhãn nhầm                                               |               |
-| model                    | mô hình                                                        |               |
+| English                    | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|----------------------------|----------------------------------------------------------------|---------------|
+| machine learning           | học máy                                                        |               |
+| marginalization            | phép biên hóa                                                  |               |
+| mean squared error (MSE)   | trung bình bình phương sai số                                  |               |
+| metric                     | phép đo                                                        |               |
+| minibatch                  | minibatch                                                      |               |
+| misclassified              | bị phân loại nhầm                                              |               |
+| mislabeled                 | bị gán nhãn nhầm                                               |               |
+| model                      | mô hình                                                        |               |
 | multi-class classification | phân loại đa lớp                                               |               |
-| multitask learning       | học đa nhiệm                                                   |               |
+| multinominal distribution  | phân phối đa thức                                              |               |
+| multitask learning         | học đa nhiệm                                                   |               |
 
 ## N
 | English                           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                               |
 |-----------------------------------|----------------------------------------------------------------|---------------------------------------------|
-| named entity | danh từ riêng | |
+| named entity                      | danh từ riêng                                                  |                                             |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên                                        |                                             |
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
@@ -179,16 +191,16 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | null hypothesis                   | giả thuyết gốc                                                 |                                             |
 
 ## O
-| English           | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
-|-------------------|----------------------------------------------------------------|-----------------------|
-| objective function | hàm mục tiêu                                                  |                       |
-| offline learning  | học ngoại tuyến                                                |                       |
-| optimizing metric | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
-| orthogonal        | trực giao                                                      |                       |
-| orthonormal       | trực chuẩn                                                     |                       |
-| overfit           | quá khớp                                                       | http://bit.ly/2BvfPYA |
-| one-sided test | kiểm định một phía | |
-| one-tailed test | kiểm định một đuôi | |
+| English            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|--------------------|----------------------------------------------------------------|-----------------------|
+| objective function | hàm mục tiêu                                                   |                       |
+| offline learning   | học ngoại tuyến                                                |                       |
+| optimizing metric  | phép đo để tối ưu                                              | http://bit.ly/2BvfPYA |
+| orthogonal         | trực giao                                                      |                       |
+| orthonormal        | trực chuẩn                                                     |                       |
+| overfit            | quá khớp                                                       | http://bit.ly/2BvfPYA |
+| one-sided test     | kiểm định một phía                                             |                       |
+| one-tailed test    | kiểm định một đuôi                                             |                       |
 
 ## P
 | English                            | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
@@ -217,35 +229,36 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regressor                      | bộ hồi quy                                                     |               |
 | regularization                 | điều chuẩn                                                     |               |
 | reinforcement learning         | học tăng cường                                                 |               |
-| representation learning | học biểu diễn | |
+| representation learning        | học biểu diễn                                                  |               |
 | reward function                | hàm điểm thưởng                                                |               |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số                      |               |
 | running time                   | thời gian chạy                                                 |               |
 | region of rejection            | miền bác bỏ                                                    |               |
 
 ## S
-| English                      | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
-|------------------------------|----------------------------------------------------------------|-----------------------|
-| sampling with replacement    | lấy mẫu có hoàn lại                                            | http://bit.ly/34wQuKr |
-| sampling without replacement | lấy mẫu không hoàn lại                                         | http://bit.ly/34wQuKr |
-| satisficing metric           | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
-| scroing function             | hàm tính điểm                                                  |                       |
-| sentiment classification     | phân loại cảm xúc                                              |                       |
-| sequence learning            | học chuỗi                                                      | http://bit.ly/2SsUity |
-| shape (trong Đại số Tuyến tính) | kích thước                                                  |                       |
-| spam email                   | email rác                                                      |                       |
-| statistical significance     | ý nghĩa thống kê                                               |                       |
-| statistical significant      | có ý nghĩa thống kê                                            |                       |
-| stochastic gradient descent  | hạ gradient ngẫu nhiên                                         |                       |
-| speech recognition           | nhận dạng giọng nói                                            |                       |
-| supervised learning          | học có giám sát                                                |                       |
-| surrogate objective          | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1 |
-| subspace estimation          | ước lượng không gian con                                       |                       |
-| scalar                       | số vô hướng                                                    |                       |
-| sensitivity                  | độ nhạy                                                        |                       |
-| statistical power            | năng lực thống kê                                              |                       |
-| significance test            | kiểm định ý nghĩa                                              |                       |
-| symbolic graph               | đồ thị biểu tượng                                             |                       |
+| English                         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
+|---------------------------------|----------------------------------------------------------------|-----------------------|
+| sampling with replacement       | lấy mẫu có hoàn lại                                            | http://bit.ly/34wQuKr |
+| sampling without replacement    | lấy mẫu không hoàn lại                                         | http://bit.ly/34wQuKr |
+| satisficing metric              | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
+| scroing function                | hàm tính điểm                                                  |                       |
+| sentiment classification        | phân loại cảm xúc                                              |                       |
+| sequence learning               | học chuỗi                                                      | http://bit.ly/2SsUity |
+| shape (trong Đại số Tuyến tính) | kích thước                                                     |                       |
+| spam email                      | email rác                                                      |                       |
+| standard deviation              | độ lệch chuẩn                                                  |                       |
+| statistical significance        | ý nghĩa thống kê                                               |                       |
+| statistical significant         | có ý nghĩa thống kê                                            |                       |
+| stochastic gradient descent     | hạ gradient ngẫu nhiên                                         |                       |
+| speech recognition              | nhận dạng giọng nói                                            |                       |
+| supervised learning             | học có giám sát                                                |                       |
+| surrogate objective             | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1 |
+| subspace estimation             | ước lượng không gian con                                       |                       |
+| scalar                          | số vô hướng                                                    |                       |
+| sensitivity                     | độ nhạy                                                        |                       |
+| statistical power               | năng lực thống kê                                              |                       |
+| significance test               | kiểm định ý nghĩa                                              |                       |
+| symbolic graph                  | đồ thị biểu tượng                                              |                       |
 
 ## T
 | English                  | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |

@@ -13,8 +13,8 @@ Now that you can store and manipulate data, let's briefly review the subset of b
 Below, we introduce the basic mathematical objects, arithmetic, and operations in linear algebra, expressing each both through mathematical notation and the corresponding implementation in code.
 -->
 
-Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng nhanh chóng ôn lại những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
-Dưới đây, chúng ta giới thiệu các đối tượng toán học, số học, phép tính trong đại số tuyến tính, biểu diễn chúng dưới ký hiệu toán học và mã nguồn. 
+Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
+Dưới đây, chúng tôi giới thiệu các đối tượng toán học, số học và phép tính cơ bản trong đại số tuyến tính, biểu diễn chúng bằng cả ký hiệu toán học và cách triển khai lập trình tương ứng. 
 
 
 <!--
@@ -33,13 +33,13 @@ In this equation, each of the terms---$5$, $9$, and $32$---are scalar values.
 The placeholders $c$ and $f$ are called *variables* and they represented unknown scalar values.
 -->
 
-Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ từng làm việc với từng con số riêng lẻ.
-Nếu bạn đã từng phải cân bằng sổ chi tiêu hoặc chỉ đơn giản là trả tiền cho bữa ăn, bạn chắc chắn là đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
+Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ có kinh nghiệm làm toán với từng con số riêng lẻ.
+Và nếu bạn đã từng phải cân bằng sổ thu chi hoặc đơn giản là trả tiền cho bữa ăn, thì hẳn bạn đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
 Ví dụ, nhiệt độ tại Palo Alto là $52$ độ Fahrenheit.
-Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *vô hướng* (*scalar*).
+Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *số vô hướng* (*scalar*).
 Nếu bạn muốn chuyển giá trị nhiệt độ trên sang độ Celsius (thang đo nhiệt độ hợp lý hơn theo hệ mét), bạn sẽ phải tính biểu thức $c = \frac{5}{9}(f - 32)$ với giá trị $f$ bằng $52$.
 Trong phương trình trên, mỗi số hạng --- $5$, $9$ và $32$ --- là các số vô hướng.
-Các ký hiệu số hạng $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
+Các ký hiệu $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
 
 <!--
 In this book, we adopt the mathematical notation where scalar variables are denoted by ordinary lower-cased letters (e.g., $x$, $y$, and $z$).
@@ -49,19 +49,20 @@ The symbol $\in$ can be pronounced "in" and simply denotes membership in a set.
 Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are numbers whose value can only be $0$ or $1$.
 -->
 
-Trong quyển sách này, chúng ta sẽ theo quy ước ký hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
-Chúng ta ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
-Vì tính thiết thực, chúng ta sẽ bỏ qua việc định nghĩa chặt chẽ *không gian* là gì, bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách nói chính quy rằng $x$ là một số thực vô hướng.
-Ký hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ của phần tử trong một tập hợp.
-Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
+Trong quyển sách này, chúng tôi sẽ tuân theo quy ước ký hiệu các biến vô hướng bằng các chữ cái viết thường (chẳng hạn $x$, $y$ và $z$).
+Chúng tôi ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
+Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian*.
+Nhưng bạn cần nhớ $x \in \mathbb{R}$ là cách toán học để thể hiện $x$ là một số thực vô hướng.
+Ký hiệu $\in$ đọc là "thuộc" và đơn thuần biểu diễn việc phần tử thuộc một tập hợp.
+Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
 In MXNet code, a scalar is represented by an `ndarray` with just one element.
 In the next snippet, we instantiate two scalars and perform some familiar arithmetic operations with them, namely addition, multiplication, division, and exponentiation.
 -->
 
-Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng `ndarray` với chỉ một phần tử.
-Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính cộng, trừ, nhân, chia, lũy thừa quen thuộc với chúng.
+Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng một `ndarray` với chỉ một phần tử.
+Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính quen thuộc như cộng, trừ, nhân, chia và lũy thừa với chúng.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -92,12 +93,12 @@ If we were studying the risk of heart attacks hospital patients potentially face
 In math notation, we will usually denote vectors as bold-faced, lower-cased letters (e.g., $\mathbf{x}$, $\mathbf{y}$, and $\mathbf{z})$.
 -->
 
-Bạn có thể nghĩ vector đơn giản là một dãy các số vô hướng.
+Bạn có thể xem vector đơn thuần như một dãy các số vô hướng.
 Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của vector.
-Khi các vector biễu diễn cho mẫu trong tập dữ liệu, các giá trị của nó mang theo những ý nghĩa từ thực tế.
-Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
-Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức khỏe, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
-Trong ký hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
+Khi dùng vector để biễu diễn các mẫu trong tập dữ liệu, giá trị của chúng thường mang ý nghĩa liên quan tới đời thực.
+Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector gồm các thành phần tương ứng với thu nhập, thời gian làm việc, số lần vỡ nợ trước đó của họ và các yếu tố khác.
+Nếu chúng ta đang tìm hiểu về rủi ro bị đau tim của bệnh nhân, ta có thể biểu diễn mỗi bệnh nhân bằng một vector gồm các phần tử mang thông tin về dấu hiệu sinh tồn gần nhất, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
+Trong ký hiệu toán học, chúng ta thường biểu diễn vector bằng chữ cái in đậm viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
 
 <!--
 In MXNet, we work with vectors via $1$-dimensional `ndarray`s.
@@ -105,7 +106,7 @@ In general `ndarray`s can have arbitrary lengths, subject to the memory limits o
 -->
 
 Trong MXNet, chúng ta làm việc với vector thông qua các `ndarray` $1$-chiều.
-Tổng quát lên, `ndarray` có thể có chiều dài bất kỳ, giới hạn bởi bộ nhớ máy tính.
+Thường thì `ndarray` có thể có chiều dài bất kỳ, tùy thuộc vào giới hạn bộ nhớ máy tính.
 
 ```{.python .input  n=2}
 x = np.arange(4)
@@ -121,9 +122,9 @@ In math, a vector $\mathbf{x}$ can be written as
 -->
 
 Một phần tử bất kỳ trong vector có thể được ký hiệu sử dụng chỉ số dưới.
-Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
-Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
-Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, quyển sách này cũng vậy.
+Ví dụ ta có thể viết $x_i$ để ám chỉ phần tử thứ $i$ của $\mathbf{x}$.
+Lưu ý rằng phần tử $x_i$ là một số vô hướng nên nó không được in đậm.
+Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, và quyển sách này cũng vậy.
 Trong toán học, một vector có thể được viết như sau
 
 $$\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix},$$
@@ -136,7 +137,7 @@ In code, we access any element by indexing into the `ndarray`.
 -->
 
 trong đó $x_1, \ldots, x_n$ là các phần tử của vector.
-Trong mã nguồn, chúng ta sử dụng chỉ số để truy cập tới các phần tử trong `ndarray`.
+Trong mã nguồn, chúng ta sử dụng chỉ số để truy cập các phần tử trong `ndarray`.
 
 ```{.python .input  n=3}
 x[3]
