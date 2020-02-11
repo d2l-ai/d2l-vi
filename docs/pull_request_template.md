@@ -23,7 +23,7 @@
 
 * [ ] Điền tên của bạn vào mục "Những người thực hiện" ở cuối file.
 
-* [ ] **Sau khi được approve**, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](./contributors_info.md)**.
+* [ ] **Sau khi được approve**, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](../docs/contributors_info.md/)**.
 
 ## Với reviewer
 

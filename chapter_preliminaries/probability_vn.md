@@ -5,7 +5,7 @@
 # Probability
 -->
 
-# *dịch tiêu đề phía trên*
+# Xác suất
 :label:`sec_prob`
 
 <!--
@@ -14,13 +14,27 @@ We might want to predict the *probability* of a patient suffering a heart attack
 Entire courses, majors, theses, careers, and even departments, are devoted to probability. So naturally, our goal in this section is not to teach the whole subject. Instead we hope to get you off the ground, to teach you just enough that you can start building your first deep learning models, and to give you enough of a flavor for the subject that you can begin to explore it on your own if you wish.
 -->
 
-*dịch đoạn phía trên*
+Theo cách này hay cách khác, học máy đơn thuần là đưa ra các dự đoán.
+Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết tiền sử lâm sàng của họ.
+Trong tác vụ phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* các thông số động cơ máy bay ở mức nào, liệu có ở mức hoạt động bình thường không.
+Trong học tăng cường, chúng ta muốn có một tác nhân hoạt động thông minh trong một môi trường.
+Nghĩa là chúng ta cần tính tới xác suất đạt điểm thưởng cao nhất cho từng hành động có thể thực hiện.
+Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần quan tâm tới xác suất.
+Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách trực tuyến lớn.
+Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ thể muốn mua một cuốn sách cụ thể nào đó.
+Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
+Có những khóa học, chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành toàn bộ cho xác suất.
+Vì thế đương nhiên mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
+Thay vào đó, chúng tôi hy vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
 
 <!--
 We have already invoked probabilities in previous sections without articulating what precisely they are or giving a concrete example. Let's get more serious now by considering the first case: distinguishing cats and dogs based on photographs. This might sound simple but it is actually a formidable challenge. To start with, the difficulty of the problem may depend on the resolution of the image.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã nhắc tới xác suất trong các chương trước mà không nói rõ chính xác nó là gì hay là đưa ra một ví dụ cụ thể nào.
+Giờ hãy cùng bắt đầu nghiêm túc hơn bằng cách xem xét trường hợp đầu tiên: phân biệt mèo và chó dựa trên các bức ảnh.
+Điều này tưởng chừng đơn giản nhưng thực ra rất nhiều thách thức.
+Để bắt đầu, độ phức tạp của vấn đề này có thể phụ thuộc vào độ phân giải của ảnh.
 
 <!--
 ![Images of varying resolutions ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ pixels).](../img/cat_dog_pixels.png)
@@ -44,20 +58,31 @@ confident, but not sure that the image depicted a cat, we might assign a
 probability $0.5  < P(y=$ "cat"$) < 1$.
 -->
 
-*dịch đoạn phía trên*
+Như thể hiện trong :numref:`fig_cat_dog`, con người phân biệt mèo và chó dễ dàng ở độ phân giải $160 \times 160$ điểm ảnh, có chút thử thách hơn ở $40 \times 40$ điểm ảnh, và gần như không thể ở $10 \times 10$ điểm ảnh.
+Nói cách khác, khả năng phân biệt mèo và chó của chúng ta ở khoảng cách càng xa (đồng nghĩa với độ phân giải thấp) càng giống đoán mò.
+Xác suất trang bị cho ta một cách suy luận hình thức về mức độ chắc chắn.
+Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
+Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau, biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
+Nếu ta khá tự tin, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
 
 <!--
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy xem xét trường hợp thứ hai: Cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
+Nếu vào mùa hè, xác suất trời mưa có thể là $0.5$.
 
 <!--
 In both cases, we have some value of interest. And in both cases we are uncertain about the outcome.
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-*dịch đoạn phía trên*
+Trong cả hai trường hợp, chúng ta quan tâm tới một vài giá trị nào đó.
+Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
+Nhưng có một khác biệt quan trọng giữa hai trường hợp.
+Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
+Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vật lý tin vậy).
+Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về mức độ chắc chắn của chúng ta, và nó có thể được áp dụng hiệu quả trong vô vàn ngữ cảnh khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -144,7 +169,9 @@ multiple samples at once, returning an array of independent samples in any shape
 we might desire.
 -->
 
-*dịch đoạn phía trên*
+Nếu chạy bộ lấy mẫu một vài lần, bạn sẽ thấy rằng mỗi lần đều được trả về các giá trị ngẫu nhiên.
+Khi ước lượng tính công bằng của một con xúc xắc, chúng ta thường muốn tung nhiều lần con xúc xắc này để tạo ra các mẫu từ cùng một phân phối.
+Tạo dữ liệu như trên với vòng lặp `for` trong Python là rất chậm, vì vậy hàm `random.multinomial` hỗ trợ sinh nhiều mẫu trong một lần gọi, trả về một mảng chứa các mẫu độc lập với kích thước bất kỳ.
 
 ```{.python .input  n=3}
 np.random.multinomial(10, fair_probs)
@@ -154,7 +181,7 @@ np.random.multinomial(10, fair_probs)
 We can also conduct, say $3$, groups of experiments, where each group draws $10$ samples, all at once.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng có thể giả sử làm $3$ thí nghiệm, trong đó mỗi thí nghiệm cùng lúc lấy ra $10$ mẫu.
 
 ```{.python .input  n=4}
 counts = np.random.multinomial(10, fair_probs, size=3)
@@ -168,7 +195,9 @@ number was rolled.
 Specifically, we calculate the relative frequency as the estimate of the true probability.
 -->
 
-*dịch đoạn phía trên*
+Giờ chúng ta đã biết cách lấy mẫu các lần tung của một con xúc xắc, ta có thể giả lập 1000 lần tung.
+Sau đó, chúng ta có thể đếm xem mỗi mặt xuất hiện bao nhiêu lần.
+Cụ thể, chúng ta tính toán tần suất tương đối như là một ước lượng của xác suất thực.
 
 ```{.python .input  n=5}
 # Store the results as 32-bit floats for division
@@ -180,14 +209,15 @@ counts / 1000  # Reletive frequency as the estimate
 Because we generated the data from a fair die, we know that each outcome has true probability $\frac{1}{6}$, roughly $0.167$, so the above output estimates look good.
 -->
 
-*dịch đoạn phía trên*
+Do dữ liệu được sinh bởi một con xúc xắc đều, ta biết mỗi đầu ra đều có xác suất thực bằng $\frac{1}{6}$, cỡ $0.167$, do đó kết quả ước lượng bên trên trông khá ổn.
 
 <!--
 We can also visualize how these probabilities converge over time towards the true probability.
 Let's conduct $500$ groups of experiments where each group draws $10$ samples.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng có thể minh họa những xác suất này hội tụ tới xác suất thực như thế nào.
+Hãy cũng làm $500$ thí nghiệm trong đó mỗi thí nghiệm lấy ra $10$ mẫu.
 
 ```{.python .input  n=6}
 counts = np.random.multinomial(10, fair_probs, size=500)
@@ -211,7 +241,9 @@ As we get more data by conducting more experiments,
 the $6$ solid curves converge towards the true probability.
 -->
 
-*dịch đoạn phía trên*
+Mỗi đường cong liền tương ứng với một trong sáu giá trị của xúc xắc và chỉ ra xác suất ước lượng của sự kiện xúc xắc ra mặt tương ứng sau mỗi thí nghiệm.
+Đường đứt đoạn màu đen tương ứng với xác suất thực.
+Khi ta lấy thêm dữ liệu bằng cách thực hiện thêm các thí nghiệm, thì $6$ đường cong liền sẽ hội tụ tiến tới xác suất thực.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -225,7 +257,7 @@ the $6$ solid curves converge towards the true probability.
 ### Axioms of Probability Theory
 -->
 
-### *dịch tiêu đề phía trên*
+### Các Tiên đề của Lý thuyết Xác suất
 
 <!--
 When dealing with the rolls of a die,
@@ -238,7 +270,13 @@ That is to say, if $3$ dots faced up after rolling a die, since $3 \in \{1, 3, 5
 we can say that the event "seeing an odd number" has occurred.
 -->
 
-*dịch đoạn phía trên*
+Khi ta thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết quả*.
+*Biến cố* là một tập hợp các kết quả của không gian mẫu. 
+Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
+Chú ý rằng nếu kết quả của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
+biến cố $\mathcal{A}$ đã xảy ra.
+Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc sắc được gieo, 
+chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$.
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
@@ -246,7 +284,9 @@ The probability of an event $\mathcal{A}$ in the given sample space $\mathcal{S}
 denoted as $P(\mathcal{A})$, satisfies the following properties:
 -->
 
-*dịch đoạn phía trên*
+Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số gán một tập hợp các biến cố tới một giá trị thật. 
+Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$, 
+được kí hiệu là $P(\mathcal{A})$, phải thoả mãn những tính chất sau:
 
 <!--
 * For any event $\mathcal{A}$, its probability is never negative, i.e., $P(\mathcal{A}) \geq 0$;
@@ -254,7 +294,9 @@ denoted as $P(\mathcal{A})$, satisfies the following properties:
 * For any countable sequence of events $\mathcal{A}_1, \mathcal{A}_2, \ldots$ that are *mutually exclusive* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ for all $i \neq j$), the probability that any happens is equal to the sum of their individual probabilities, i.e., $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 -->
 
-*dịch đoạn phía trên*
+* Đối với mọi biến cố $\mathcal{A}$, xác suất của biến cố sẽ không bao giờ âm, tức là: $P(\mathcal{A}) \geq 0$;  
+* Xác suất của toàn không gian mẫu luôn bằng $1$, tức: $P(\mathcal{S}) = 1$;
+* Đối với mọi dãy biến cố có thể đếm được $\mathcal{A}_1, \mathcal{A}_2, \ldots$ nhưng *xung khắc lẫn nhau* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ với mọi $i \neq j$), xác suất (nếu có xảy ra) sẽ là tổng của những giá trị xác suất riêng lẻ, hay: $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 
 <!--
 These are also the axioms of probability theory, proposed by Kolmogorov in 1933.
@@ -262,8 +304,10 @@ Thanks to this axiom system, we can avoid any philosophical dispute on randomnes
 instead, we can reason rigorously with a mathematical language.
 For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\mathcal{A}_i = \emptyset$ for all $i > 1$, we can prove that $P(\emptyset) = 0$, i.e., the probability of an impossible event is $0$.
 -->
+Kolmogorov là nhà toán học đã đề xuất những đóng góp cho sự hoàn thiện của tiên đề về lý thuyết xác suất vào năm 1993.
+Nhờ vào hệ thống tiên đề này, ta có thể tránh được những tranh luận chủ quan về sự ngẫu nhiên; và ta có thể có được những suy luận chặt chẽ sử dụng ngôn ngữ toán học.
+Lấy ví dụ một trường hợp, cho biến cố $\mathcal{A}_1$ là toàn bộ không gian mẫu và $\mathcal{A}_i = \emptyset$ với mọi $i > 1$, chúng ta có thể chứng minh rằng $P(\emptyset) = 0$, ví dụ: xác suất của biến cố không thể xảy ra sẽ là $0$.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -273,7 +317,7 @@ For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\
 ### Random Variables
 -->
 
-### *dịch tiêu đề phía trên*
+### Biến ngẫu nhiên
 
 <!--
 In our random experiment of casting a die, we introduced the notion of a *random variable*. A random variable can be pretty much any quantity and is not deterministic. It could take one value among a set of possibilities in a random experiment.
@@ -291,7 +335,18 @@ For example, $P(1 \leq X \leq 3)$ denotes the probability of the event $\{1 \leq
 which means $\{X = 1, 2, \text{or}, 3\}$. Equivalently, $P(1 \leq X \leq 3)$ represents the probability that the random variable $X$ can take a value from $\{1, 2, 3\}$.
 -->
 
-*dịch đoạn phía trên*
+Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu về khái niệm của một *biến ngẫu nhiên*.
+Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không được xác định.
+Nó có thể nhận một giá trị trong tập các giá trị khả dĩ từ một thí nghiệm ngẫu nhiên.
+Hãy xét một biến ngẫu nhiên $X$ có thể nhận một trong những giá trị từ tập không gian mẫu $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ của thí nghiêm tung xúc xắc.
+Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X = 5\}$ hoặc $X = 5$, và xác suất của nó là $P(\{X = 5\})$ hoặc $P(X = 5)$.
+Khi viết $P(X = a)$, chúng ta đã phân biệt giữa biến ngẫu nhiên $X$ và các giá trị (ví dụ như $a$) mà $X$ có thể nhận.
+Tuy nhiên, ký hiệu như vậy khá là rườm rà.
+Để đơn giản hóa ký hiệu, một mặt, chúng ta có thể chỉ cần dùng $P(X)$ để biểu diễn *phân phối* của biến ngẫu nhiên $X$: phân phối này cho chúng ta biết xác xuất mà $X$ có thể nhận cho bất kỳ giá trị nào.
+Mặt khác, chúng ta có thể viết đơn giản $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên có thể nhận giá trị $a$.
+Bởi vì một sự kiện trong lý thuyết xác suất là một tập các kết quả từ không gian mẫu, chúng ta có thể xác định rõ một khoảng các giá trị mà một biến ngẫu nhiên có thể nhận.
+Ví dụ, $P(1 \leq X \leq 3)$ diễn tả xác suất của sự kiện $\{1 \leq X \leq 3\}$, nghĩa là $\{X = 1, 2, \text{hoặc}, 3\}$.
+Tương tự, $P(1 \leq X \leq 3)$ biểu diễn xác suất mà biến ngẫu nhiên $X$ có thể nhận giá trị trong tập $\{1, 2, 3\}$.
 
 <!--
 Note that there is a subtle difference between *discrete* random variables, like the sides of a die, and *continuous* ones, like the weight and the height of a person. There is little point in asking whether two people have exactly the same height. If we take precise enough measurements you will find that no two people on the planet have the exact same height. In fact, if we take a fine enough measurement, you will not have the same height when you wake up and when you go to sleep. So there is no purpose in asking about the probability
@@ -300,7 +355,18 @@ In the rest of this section, we consider probability in discrete space.
 For probability over continuous random variables, you may refer to :numref:`sec_random_variables`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
+Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chính xác chiều cao hay không.
+Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
+Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
+Cho nên không có lý do gì để hỏi rằng xác suất mà một người nào đó có chiều cao là $1.80139278291028719210196740527486202$ mét cả.
+Trong toàn bộ dân số trên thế giới, xác suất này hầu như là bằng $0$.
+Sẽ có ý nghĩa hơn trong trường hợp này nếu ta hỏi chiều cao của một người nào đó có rơi vào một khoảng cho trước hay không, ví dụ như giữa $1.79$ và $1.81$ mét.
+Trong các trường hợp này, ta có thể định lượng khả năng mà ta thấy một giá trị nào đó theo một *mật độ xác suất*.
+Chiều cao chính xác $1.80$ mét thì không có xác suất nhưng có mật độ khác không.
+Trong bất kỳ khoảng nào giữa hai chiều cao khác nhau ta đều có xác suất khác không.
+Trong phần còn lại của mục này, ta sẽ xem xét xác suất trong không gian rời rạc.
+Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở :numref:`sec_random_variables`.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -314,14 +380,17 @@ For probability over continuous random variables, you may refer to :numref:`sec_
 ## Dealing with Multiple Random Variables
 -->
 
-## *dịch tiêu đề phía trên*
+## Làm việc với nhiều biến ngẫu nhiên
 
 <!--
 Very often, we will want to consider more than one random variable at a time.
 For instance, we may want to model the relationship between diseases and symptoms. Given a disease and a symptom, say "flu" and "cough", either may or may not occur in a patient with some probability. While we hope that the probability of both would be close to zero, we may want to estimate these probabilities and their relationships to each other so that we may apply our inferences to effect better medical care.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng một lúc.
+Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
+Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", chúng có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
+Mặc dù chúng ta hy vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
 
 <!--
 As a more complicated example, images contain millions of pixels, thus millions of random variables. And in many cases images will come with a
@@ -331,21 +400,29 @@ such as location, time, aperture, focal length, ISO, focus distance, and camera 
 All of these are random variables that occur jointly. When we deal with multiple random variables, there are several quantities of interest.
 -->
 
-*dịch đoạn phía trên*
+Xét một ví dụ phức tạp hơn, các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
+Và trong nhiều trường hợp các bức ảnh sẽ được gán nhãn và định danh cho các đối tượng chứa bên trong.
+Chúng ta cũng có thể xem nhãn này như một biến ngẫu nhiên.
+Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ; ví dụ như: vị trí, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
+Tất các những biến ngẫu nhiên này xảy ra đồng thời.
+Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều điểm đáng quan tâm.
 
 <!--
 ### Joint Probability
 -->
 
-### *dịch tiêu đề phía trên*
+### Xác suất kết hợp
 
 <!--
 The first is called the *joint probability* $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously?
 Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
 This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen *and* $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.
 -->
-
-*dịch đoạn phía trên*
+Đầu tiên được gọi là *xác suất kết hợp* $P(A = a, B=b)$.
+Cho hai biến $a$ và $b$ bất kỳ, xác suất kết hợp cho ta biết xác suất để cả $A=a$ và $B=b$ xảy ra đồng thời là bao nhiêu?
+Ta có thể thấy rằng với mọi giá trị $a$ và $b$, $P(A=a, B=b) \leq P(A=a)$.
+Bởi để $A=a$ và $B=b$ xảy ra thì $A=a$ phải xảy ra *và* $B=b$ cũng phải xảy ra (và ngược lại).
+Do đó, khả năng $A=a$ và $B=b$ xảy ra đồng thời không thể lớn hơn khả năng $A=a$ hoặc $B=b$ xảy ra một cách độc lập được.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -355,18 +432,22 @@ This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happe
 ### Conditional Probability
 -->
 
-### *dịch tiêu đề phía trên*
+### Xác suất có điều kiện
 
 <!--
 This brings us to an interesting ratio: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$. We call this ratio a *conditional probability*
 and denote it by $P(B=b \mid A=a)$: it is the probability of $B=b$, provided that
 $A=a$ has occurred.
+-->
+
+Điều này giúp ta thu được một tỉ lệ thú vị: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$.
+Chúng ta gọi tỉ lệ này là *xác suất có điều kiện* và ký hiệu là $P(B=b \mid A=a)$: xác suất để $B=b$, với điều kiện $A=a$ đã xảy ra.
 
 <!--
 ### Bayes' theorem
 -->
 
-### *dịch tiêu đề phía trên*
+### Định lý Bayes
 
 <!--
 Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: *Bayes' theorem*.
@@ -374,7 +455,12 @@ It goes as follows.
 By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) > 0$. Solving for one of the conditional variables we get
 -->
 
-*dịch đoạn phía trên*
+Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *Định lý Bayes*.
+Cụ thể như sau: 
+Đầu tiên, chúng ta có *quy tắc nhân* như sau $P(A, B) = P(B \mid A) P(A)$.
+Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
+Giả sử $P(B) > 0$.
+Kết hợp các điều kiện trên ta có:
 
 $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 
@@ -382,20 +468,24 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 Note that here we use the more compact notation where $P(A, B)$ is a *joint distribution* and $P(A \mid B)$ is a *conditional distribution*. Such distributions can be evaluated for particular values $A = a, B=b$.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là *xác suất kết hợp* và $P(A \mid B)$ là *xác suất có điều kiện*.
+Các phân phối này có thể được tính tại các giá trị cụ thể $A = a, B=b$.
 
 <!--
 ### Marginalization
 -->
 
-### *dịch tiêu đề phía trên*
+### Phép biên hóa
 
 <!--
 Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is *marginalization*.
 It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:
 -->
 
-*dịch đoạn phía trên*
+Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, như ta sẽ thấy trong phần sau của chương này.
+Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *phép biên hóa*.
+Có thể hiểu là việc xác định $P(B)$ từ $P(A, B)$.
+Chúng ta có thể tính được xác suất của B bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
 
 $$P(B) = \sum_{A} P(A, B),$$
 
@@ -403,7 +493,8 @@ $$P(B) = \sum_{A} P(A, B),$$
 which is also known as the *sum rule*. The probability or distribution as a result of marginalization is called a *marginal probability* or a *marginal distribution*.
 -->
 
-*dịch đoạn phía trên*
+Công thức này cũng được biết đến với tên gọi *quy tắc tổng*.
+Xác suất hay phân phối thu được từ thao tác biên hóa được gọi là *xác suất biên* hoặc *phân phối biên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -589,7 +680,7 @@ That is, the second test allowed us to gain much higher confidence that not all 
 ## Expectation and Variance
 -->
 
-## *dịch tiêu đề phía trên*
+## Kỳ vọng và Phương sai
 
 <!--
 To summarize key characteristics of probability distributions,
@@ -597,7 +688,8 @@ we need some measures.
 The *expectation* (or average) of the random variable $X$ is denoted as
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cần những phép đó để có được cái nhìn tóm tắt về đặc điểm của các phân phối xác suất.
+Kỳ vọng (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
 
 $$E[X] = \sum_{x} x P(X = x).$$
 
@@ -606,7 +698,7 @@ When the input of a function $f(x)$ is a random variable drawn from the distribu
 the expectation of $f(x)$ is computed as
 -->
 
-*dịch đoạn phía trên*
+Khi giá trị đầu vào của phương trình $f(x)$ là một biến ngẫu nhiên nhiên cho trước theo phân phối $P$ với các giá trị $x$ khác nhau, kỳ vọng của $f(x)$ sẽ được tính theo phương trình:
 
 $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 
@@ -615,7 +707,8 @@ $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ so với kỳ vọng.
+Đại lượng này có thể được đo qua phương trình:
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
@@ -630,7 +723,8 @@ by how much the function deviates from the expectation of the function,
 as different values $x$ of the random variable are sampled from its distribution:
 -->
 
-*dịch đoạn phía trên*
+Nếu lấy căn bậc hai của kết quả ta sẽ được độ lệch chuẩn.
+Phương sai thể hiện ước tính độ lệch giữa các biến ngẫu nhiên và kỳ vọng của phương trình, vì các giá trị $x$ của biến ngẫu nhiên được lấy từ phân phối của nó
 
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
@@ -639,7 +733,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We can use MXNet to sample from probability distributions.
@@ -647,14 +741,16 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 * Expectation and variance offer useful measures to summarize key characteristics of probability distributions.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối ngẫu nhiên.
+* Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (joint distribution), phân phối có điều kiện (conditional distribution), định lý Bayes (Bayes’ theorem), phép biến hóa (marginalization) và giả định độc lập (independence assumptions).
+* Kỳ vọng và phương sai là các phép đo hữu ích để tóm tắt các đặc điểm chính của phân phối xác suất.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. We conducted $m=500$ groups of experiments where each group draws $n=10$ samples. Vary $m$ and $n$. Observe and analyze the experimental results.
@@ -663,7 +759,15 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 1. In :numref:`subsec_probability_hiv_app`, the first test is more accurate. Why not just run the first test a second time?
 -->
 
-*dịch đoạn phía trên*
+1. Tiến hành $m=500$ nhóm thí nghiệm với mỗi nhóm lấy ra $n=10$ mẫu.
+Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghiệm.
+2. Cho hai biến cố với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
+(Gợi ý: sử dụng [biểu đồ Venn](https://en.wikipedia.org/wiki/Venn_diagram).)
+3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
+Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
+(Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
+4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
+Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho lần thử tiếp theo?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -690,25 +794,31 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 2 -->
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
+* Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
-*
+* Trần Kiến An
 
 <!-- Phần 5 -->
-*
+* Tạ H. Duy Nguyên
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Tâm
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 8 -->
 *
@@ -717,4 +827,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Nguyễn Minh Thư

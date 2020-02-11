@@ -126,13 +126,15 @@ We will often find it convenient to refer to our entire dataset via the *design 
 Here, $X$ contains one row for every example and one column for every feature.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
+Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $\mathbf{X}$.
+Mỗi hàng của ma trận $\mathbf{X}$ thể hiện một mẫu và mỗi cột thể hiện một đặc trưng.
 
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
 -->
 
-*dịch đoạn phía trên*
+Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của giữa ma trận và vector:
 
 $${\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.$$
 
@@ -142,7 +144,7 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-*dịch đoạn phía trên*
+Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu (đã biết trước) $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$, được lấy mẫu từ cùng phân phối của tập huấn luyện sẽ (theo kỳ vọng) dự đoán giá trị mục tiêu $y_i$ với sai số nhỏ nhất.
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
@@ -151,14 +153,16 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-*dịch đoạn phía trên*
+Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
+Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
+Chính vì vậy, mặc dù tự tin rằng mối quan hệ trong dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm với nhiễu để tạo ra kết quả tự nhiên hơn.
 
 <!--
 Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
 (i) a quality measure for some given model; and (ii) a procedure for updating the model to improve its quality.
 -->
 
-*dịch đoạn phía trên*
+Trước khi nghiên cứu cách tìm các giá trị tối ưu $\mathbf{w}$ và $b$, chúng ta sẽ cần quan tâm thêm hai vấn đề nữa: (i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -388,7 +392,7 @@ We return to these topics throughout the book.
 ### Making Predictions with the Learned Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Dự đoán bằng mô hình đã được huấn luyện
 
 
 <!--
@@ -397,7 +401,8 @@ we can now estimate the price of a new house (not contained in the training data
 Estimating targets given features is commonly called *prediction* and *inference*.
 -->
 
-*dịch đoạn phía trên*
+Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
+Ước lượng biến mục tiêu bằng những đặc trưng của nó thường được gọi là *dự đoán* (_prediction_) hay *suy luận* (_inference_).
 
 <!--
 We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
@@ -405,7 +410,9 @@ In statistics, *inference* more often denotes estimating parameters based on a d
 This misuse of terminology is a common source of confusion when deep learning practitioners talk to statisticians.
 -->
 
-*dịch đoạn phía trên*
+Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận*, dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp.
+Trong thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu.
+Việc dùng sai thuật ngữ này dễ gây hiểu nhầm khi một chuyên viên học sâu thảo luận cùng một chuyên viên thống kê.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -415,14 +422,15 @@ This misuse of terminology is a common source of confusion when deep learning pr
 ### Vectorization for Speed
 -->
 
-### *dịch tiêu đề phía trên*
+### Vector hóa để tăng Tốc độ Tính toán
 
 <!--
 When training our models, we typically want to process whole minibatches of examples simultaneously.
 Doing this efficiently requires that we vectorize the calculations and leverage fast linear algebra libraries rather than writing costly for-loops in Python.
 -->
 
-*dịch đoạn phía trên*
+Khi huấn luyện mô hình, chúng ta thường muốn các tập dữ liệu nhỏ được xử lý một cách đồng thời.
+Để làm được điều này một cách hiệu quả, chúng ta phải vector hóa các tác vụ tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp `for` trong Python.
 
 <!--
 To illustrate why this matters so much, we can consider two methods for adding vectors.
@@ -431,7 +439,9 @@ In one method we will loop over the vectors with a Python `for` loop.
 In the other method we will rely on a single call to `np`.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ sử dụng hai phương pháp cộng vector dưới đây để hiểu được tại sao vector hóa là cần thiết trong học máy.
+Đầu tiên, ta khởi tạo hai vector $10000$ chiều chứa toàn giá trị một.
+Chúng ta sẽ sử dụng vòng lặp `for` trong Python ở phương pháp thứ nhất và một hàm trong thư viện `np` ở phương pháp thứ hai.
 
 ```{.python .input}
 %matplotlib inline
@@ -449,7 +459,7 @@ b = np.ones(n)
 Since we will benchmark the running time frequently in this book, let's define a timer (hereafter accessed via the `d2l` package to track the running time.
 -->
 
-*dịch đoạn phía trên*
+Vì ta sẽ cần đánh giá xếp hạng thời gian xử lý một cách thường xuyên trong cuốn sách này, ta sẽ định nghĩa một bộ tính giờ (sau đó có thể truy cập được thông qua gói `d2l` để theo dõi thời gian chạy).
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -486,7 +496,8 @@ Now we can benchmark the workloads.
 First, we add them, one coordinate at a time, using a `for` loop.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta có thể đánh giá xếp hạng hai phương pháp cộng vector.
+Đầu tiên, ta sử dụng vòng lặp `for` để cộng các tọa độ tương ứng.
 
 ```{.python .input  n=2}
 timer = Timer()
@@ -500,7 +511,7 @@ for i in range(n):
 Alternatively, we rely on `np` to compute the elementwise sum:
 -->
 
-*dịch đoạn phía trên*
+Trong phương pháp hai, ta dựa vào thư viện `np` để tính tổng hai vector theo từng phần tử.
 
 ```{.python .input  n=3}
 timer.start()
@@ -514,7 +525,9 @@ Vectorizing code often yields order-of-magnitude speedups.
 Moreover, we push more of the math to the library and need not write as many calculations ourselves, reducing the potential for errors.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể nhận thấy rằng, phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp đầu tiên.
+Việc vector hóa thường tăng tốc độ tính toán lên nhiều lần.
+Ngoài ra, ta giao phó phần toán cho thư viện để tránh phải tự viết các tính toán, giảm thiểu khả năng xảy ra lỗi.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
@@ -841,7 +854,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Phan Hùng Thuận
 
 <!-- Phần 5 -->
 *
@@ -859,10 +872,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Tạ Đức Huy
+* Phạm Hồng Vinh
 
 <!-- Phần 11 -->
-*
+* Minh Trí Nguyễn
+* Đoàn Võ Duy Thanh
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 12 -->
 *

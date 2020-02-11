@@ -384,7 +384,7 @@ x.grad, u.grad, y.grad
 ## Computing the Gradient of Python Control Flow
 -->
 
-## *dịch tiêu đề phía trên*
+## Tính gradient của luồng điều khiển Python
 
 <!--
 One benefit of using automatic differentiation
@@ -398,7 +398,9 @@ and the evaluation of the `if` statement
 both depend on the value of the input `a`.
 -->
 
-*dịch đoạn phía trên*
+Một lợi thế của việc sử dụng vi phân tự động là khi việc xây dựng đồ thị tính toán đòi hỏi trải qua một loạt các câu lệnh điều khiển luồng Python,
+(ví dụ như câu lệnh điều kiện, vòng lặp và các lệnh gọi hàm tùy ý), ta vẫn có thể tính gradient của biến kết quả.
+Trong đoạn mã sau, hãy lưu ý rằng số lần lặp của vòng lặp `while` và kết quả của câu lệnh `if` đều phụ thuộc vào giá trị của đầu vào `a`.
 
 ```{.python .input  n=16}
 def f(a):
@@ -417,7 +419,7 @@ Again to compute gradients, we just need to `record` the calculation
 and then call the `backward` function.
 -->
 
-*dịch đoạn phía trên*
+Một lần nữa, để tính gradient ta chỉ cần "ghi lại" các phép tính (bằng cách gọi hàm `record`) và sau đó gọi hàm `backward`.
 
 ```{.python .input  n=17}
 a = np.random.normal()
@@ -435,7 +437,11 @@ such that `f(a) = k * a`, where the value of `k` depends on the input `a`.
 Consequently `d / a` allows us to verify that the gradient is correct.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể phân tích hàm `f` được định nghĩa ở phía trên.
+Hãy để ý rằng hàm này tuyến tính từng khúc theo đầu vào `a`.
+Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`.
+Giá trị của `k` phụ thuộc vào đầu vào `a`.
+Do đó, ta có thể kiểm tra giá trị của gradient bằng cách tính `d / a`.
 
 ```{.python .input  n=18}
 a.grad == d / a
@@ -449,7 +455,7 @@ a.grad == d / a
 ## Training Mode and Prediction Mode
 -->
 
-## *dịch tiêu đề phía trên*
+## Chế độ huấn luyện và Chế độ dự đoán
 
 <!--
 As we have seen, after we call `autograd.record`,
@@ -460,7 +466,10 @@ the running mode from *prediction mode* to *training mode*.
 We can verify this behavior by calling the `is_training` function.
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy, sau khi gọi `autograd.record`, MXNet sẽ ghi lại những tính toán xảy ra trong khối mã nguồn theo sau.
+Có một chi tiết tinh tế nữa mà ta cần để ý.
+`autograd.record` sẽ thay đổi chế độ chạy từ *chế độ dự đoán* sang *chế độ huấn luyện*.
+Ta có thể kiểm chứng hành vi này bằng cách gọi hàm `is_training`.
 
 ```{.python .input  n=19}
 print(autograd.is_training())
@@ -476,14 +485,15 @@ when we subsequently use it to make predictions.
 We will cover these differences in detail in later chapters.
 -->
 
-*dịch đoạn phía trên*
+Khi ta tìm hiểu tới các mô hình học sâu phức tạp, ta sẽ gặp một vài thuật toán mà mô hình hoạt động khác nhau khi huấn luyện và khi được sử dụng sau đó để dự đoán.
+Những khác biệt này sẽ được đề cập chi tiết trong các chương sau.
 
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * MXNet provides the `autograd` package to automate the calculation of derivatives. To use it, we first attach gradients to those variables with respect to which we desire partial derivatives. We then record the computation of our target value, execute its `backward` function, and access the resulting gradient via our variable's `grad` attribute.
@@ -491,14 +501,18 @@ We will cover these differences in detail in later chapters.
 * The running modes of MXNet include training mode and prediction mode. We can determine the running mode by calling the `is_training` function.
 -->
 
-*dịch đoạn phía trên*
+* MXNet cung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. 
+Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
+Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
+* Ta có thể tách rời gradient để kiểm soát những phần tính toán được sử dụng trong hàm `backward`.
+* Các chế độ chạy của MXNet bao gồm chế độ huấn luyện và chế độ dự đoán. Ta có thể kiểm tra chế độ đang chạy bằng cách gọi hàm `is_training`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Why is the second derivative much more expensive to compute than the first derivative?
@@ -509,7 +523,12 @@ We will cover these differences in detail in later chapters.
 1. In a second-price auction (such as in eBay or in computational advertising), the winning bidder pays the second-highest price. Compute the gradient of the final price with respect to the winning bidder's bid using `autograd`. What does the result tell you about the mechanism? If you are curious to learn more about second-price auctions, check out the paper by Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 -->
 
-*dịch đoạn phía trên*
+1. Tại sao đạo hàm bậc hai lại mất thêm rất nhiều tài nguyên để tính toán hơn đạo hàm bậc một?
+1. Sau khi chạy `y.backward()`, lập tức chạy lại lần nữa và xem chuyện gì sẽ xảy ra.
+1. Trong ví dụ về luồng điều khiển khi ta tính toán đạo hàm của `d` theo `a`, điều gì sẽ xảy ra nếu ta thay đổi biến `a` thành một vector hay ma trận ngẫu nhiên. Lúc này, kết quả của tính toán `f(a)` sẽ không còn là số vô hướng nữa. Điều gì sẽ xảy ra với kết quả? Ta có thể phân tích nó như thế nào?
+1. Hãy tái thiết kế một ví dụ về việc tìm gradient của luồng điều khiển. Chạy ví dụ và phân tích kết quả.
+1. Cho $f(x) = \sin(x)$. Vẽ đồ thị của $f(x)$ và $\frac{df(x)}{dx}$ với điều kiện không được tính trực tiếp đạo hàm $f'(x) = \cos(x)$.
+1. Trong một cuộc đấu giá kín theo giá thứ hai (ví dụ như trong eBay hay trong quảng cáo điện toán), người thắng cuộc đấu giá chỉ trả mức giá cao thứ hai. Hãy tính gradient của mức giá cuối cùng theo mức đặt của người thắng cuộc bằng cách sử dụng `autograd`. Kết quả cho bạn biết điều gì về cơ chế đấu giá này? Nếu bạn tò mò muốn tìm hiểu thêm về các cuộc đấu giá kín theo giá thứ hai, hãy đọc bài báo nghiên cứu của Edelman et al. :cite:`Edelman.Ostrovsky.Schwarz.2007`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -555,7 +574,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 6 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 *
