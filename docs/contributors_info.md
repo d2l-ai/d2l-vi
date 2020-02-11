@@ -13,7 +13,7 @@
 | 9.  | [thduynguyen](https://github.com/thduynguyen)                   | Tạ H. Duy Nguyên               |
 | 10. | [khoapip](https://github.com/khoapip)                           | Ngô Thế Anh Khoa               |
 | 11. | [maisonhai3](https://github.com/maisonhai3)                     | Mai Sơn Hải                    |
-| 12. | [samthehai](https://github.com/samthehai)                       | Sâm Thế Hải                    |
+| 12. | [samthehai](https://github.com/samthehai)                       | Sẩm Thế Hải                    |
 | 13. | [chrislevn](https://github.com/chrislevn)                       | Lê Đàm Hồng Lộc                |
 | 14. | [kimdoanh89](https://github.com/kimdoanh89)                     | Lương Kim Doanh                |
 | 15. | [william-vu](https://github.com/william-vu)                     | Vũ Đình Quyền                  |
@@ -26,7 +26,9 @@
 | 22. | [thunguyenuehk39](https://github.com/thunguyenuehk39)           | Nguyễn Minh Thư                |
 | 23. | [hungthuanmk](https://github.com/hungthuanmk)                   | Nguyễn Phan Hùng Thuận         |
 | 24. | [nhatquanbui](https://github.com/NhatQuanBui)                   | Bùi Nhật Quân                  |
-| 25. | [thienbuu](https://github.com/thienbuu)                         | Thiên Bửu                      |
+| 25. | [thienbuu](https://github.com/thienbuu)                         | Lê Gia Thiên Bửu               |
 | 26. | [tdh512194](https://github.com/tdh512194)                       | Tạ Đức Huy                     |
 | 27. | [thanhvinhle26](https://github.com/thanhvinhle26)               | Lê Thành Vinh                  |
 | 28. | [lyphilong](https://github.com/lyphilong)                       | Lý Phi Long                    |
+| 29. | [hainguyen15](https://github.com/hainguyen15)                   | Nguyễn Quang Hải               |
+| 30. | [tmnguyen1403](https://github.com/tmnguyen1403)                 | Minh Trí Nguyễn                |
