@@ -154,7 +154,7 @@ Thus, even when we are confident that the underlying relationship is linear, we 
 -->
 
 Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
-Để tiện hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
+Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
 Chính vì vậy, mặc dù tự tin rằng mối quan hệ trong dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm với nhiễu để tạo ra kết quả tự nhiên hơn.
 
 <!--
