@@ -407,7 +407,7 @@ Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The *partia
 -->
 
 Cho $y = f(x_1, x_2, \ldots, x_n)$ là một hàm với $n$ biến.
-*Đạo hàm riêng* của $y$ theo tham số thứ $i$ $x_i$ là
+*Đạo hàm riêng* của $y$ theo tham số thứ $i$, $x_i$, là
 
 $$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$
 
@@ -438,10 +438,10 @@ Suppose that the input of function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is a
 -->
 
 Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm đa biến để thu được vector *gradient* của hàm số đó.
-Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$-chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
+Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$ chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
 Gradient của hàm $f(\mathbf{x})$ theo $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
 
-$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top,$$
+$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top.$$
 
 <!--
 where $\nabla_{\mathbf{x}} f(\mathbf{x})$ is often replaced by $\nabla f(\mathbf{x})$ when there is no ambiguity.
@@ -473,7 +473,7 @@ Similarly, for any matrix $\mathbf{X}$, we have $\nabla_{\mathbf{X}} \|\mathbf{X
 
 Tương tự, với bất kỳ ma trận $\mathbf{X}$ nào, ta đều có $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$.
 Sau này ta sẽ thấy, gradient sẽ rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
-
+<!-- kết thúc revise phần 4 -->
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
