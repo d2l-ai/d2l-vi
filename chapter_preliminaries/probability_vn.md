@@ -106,7 +106,7 @@ Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này b�
 To start, let's import the necessary packages.
 -->
 
-Bắt đầu, ta import các gói lệnh cần thiết.
+Bắt đầu, ta nhập các gói lệnh cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -139,7 +139,7 @@ Sau này, ta sẽ đưa ra định nghĩa chính quy *phân phối* là gì; nh�
 Trong MXNet, ta có thể lấy mẫu từ phân phối đa thức với hàm `np.random.multinomial`.
 Có nhiều cách sử dụng hàm này, nhưng ta tập trung vào cách dùng đơn giản nhất.
 Muốn lấy một mẫu đơn, ta chỉ cần đưa vào hàm này một vector chứa các xác suất.
-Hàm `np.random.multinomial` sẽ cho kết quả là một vector có chiều dài tương tự: trong vector này, giá trị tại index $i$ là số lần kết quả $i$ xuất hiện.
+Hàm `np.random.multinomial` sẽ cho kết quả là một vector có chiều dài tương tự: trong vector này, giá trị tại chỉ số $i$ là số lần kết quả $i$ xuất hiện.
 
 ```{.python .input  n=2}
 fair_probs = [1.0 / 6] * 6
