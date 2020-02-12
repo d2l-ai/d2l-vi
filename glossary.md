@@ -245,6 +245,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification        | phân loại cảm xúc                                              |                       |
 | sequence learning               | học chuỗi                                                      | http://bit.ly/2SsUity |
 | shape (trong Đại số Tuyến tính) | kích thước                                                     |                       |
+| slicing (trong Array)          | trích chọn                                                     |                       |
 | spam email                      | email rác                                                      |                       |
 | standard deviation              | độ lệch chuẩn                                                  |                       |
 | statistical significance        | ý nghĩa thống kê                                               |                       |
