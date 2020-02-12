@@ -302,7 +302,7 @@ We must pass over the entire dataset before making a single update.
 Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
 -->
 
-Ứng dụng ngây thơ (đơn giản ?) của hạ gradient bao gồm việc tính đạo hàm mất mát thật, hay là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu.
+Ứng dụng đơn giản của hạ gradient bao gồm việc tính đạo hàm mất mát thật, hay là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu.
 Trong luyện tập, việc này có thể cực kì chậm.
 Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
 Vì thế, đôi khi chúng ta sẽ giải quyết để lấy mẫu một minibatch ngẫu nhiên của các mẫu mỗi khi chúng ta cần tính toán việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
