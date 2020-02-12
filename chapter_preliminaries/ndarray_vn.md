@@ -473,7 +473,7 @@ While we discussed indexing for matrices, this obviously also works for vectors 
 -->
 Nếu chúng ta muốn gán cùng một giá trị cho nhiều phần tử, chúng ta chỉ cần trỏ đến tất cả các phần tử đó và gán giá trị cho chúng.
 Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
-Mặc dù chúng ta đã thảo luận về việc lập chỉ số cho ma trận,  phương thức này rõ ràng cũng hiểu quả đối với các vector và cho các thang đo có kích thước hơn $2$.
+Ở đây chúng ta đã thảo luận về việc lập chỉ số cho ma trận, phương thức này đương nhiên là cũng áp dụng cho các vector và tensor với nhiều hơn $2$ chiều.
 
 ```{.python .input  n=21}
 x[0:2, :] = 12
