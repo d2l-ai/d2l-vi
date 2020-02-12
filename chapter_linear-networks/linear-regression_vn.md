@@ -280,7 +280,6 @@ Moreover, for many tasks, these difficult-to-optimize models turn out to be so m
 Trong nhiều trường hợp mà ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiện quả.
 Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
 
-
 <!--
 The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book, 
 consists of iteratively reducing the error by updating the parameters in the direction that incrementally lowers the loss function.
