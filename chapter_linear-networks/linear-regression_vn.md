@@ -281,7 +281,6 @@ Trong nhiều trường hợp mà ở đó ta không thể giải quyết các m
 Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
 
 
-
 <!--
 The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book, 
 consists of iteratively reducing the error by updating the parameters in the direction that incrementally lowers the loss function.
