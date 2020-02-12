@@ -277,7 +277,7 @@ Even in cases where we cannot solve the models analytically, and even when the l
 Moreover, for many tasks, these difficult-to-optimize models turn out to be so much better that figuring out how to train them ends up being well worth the trouble.
 -->
 
-Trong nhiều trường hợp mà chúng ta không thể xử lý mô hình một cách rõ ràng, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì thực tế chúng ta vẫn có thể huấn luyện mô hình một cách hiện quả trong quá trình luyện tập.
+Trong nhiều trường hợp mà ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiện quả.
 Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
 
 
