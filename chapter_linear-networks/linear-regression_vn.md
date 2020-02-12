@@ -855,6 +855,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
+* Vũ Hữu Tiệp
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
 *
@@ -894,7 +897,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-* 
+* Nguyễn Phan Hùng Thuận
 
 <!-- Phần 17 -->
 *
