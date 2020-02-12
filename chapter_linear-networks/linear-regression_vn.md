@@ -278,7 +278,7 @@ Moreover, for many tasks, these difficult-to-optimize models turn out to be so m
 -->
 
 Trong nhiều trường hợp mà chúng ta không thể xử lý mô hình một cách rõ ràng, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì thực tế chúng ta vẫn có thể huấn luyện mô hình một cách hiện quả trong quá trình luyện tập.
-Hơn thế nữa, đối với nhiều tác vụ, những mô hình khó để tối ưu hóa ra lại tốt hơn cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt với đối với các rắc rối.
+Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
 
 
 
