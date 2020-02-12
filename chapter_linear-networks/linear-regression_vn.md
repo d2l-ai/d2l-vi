@@ -683,7 +683,7 @@ Những giản đồ này chỉ ra cách kết nối (ở đây, mỗi đầu v�
 ![Linear regression is a single-layer neural network. ](../img/singleneuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singleneuron.svg)
+![Hồi quy tuyến tính là một mạng nơ-ron đơn tầng. ](../img/singleneuron.svg)
 :label:`fig_single_neuron`
 
 <!--
