@@ -471,7 +471,7 @@ If we want to assign multiple elements the same value, we simply index all of th
 For instance, `[0:2, :]` accesses the first and second rows, where `:` takes all the elements along axis $1$ (column).
 While we discussed indexing for matrices, this obviously also works for vectors and for tensors of more than $2$ dimensions.
 -->
-Nếu chúng ta muốn gán nhiều phần tử cho cùng một giá trị, chúng ta chỉ cần truy cập đến các chỉ số của tất cả các phần tử và gán cho chúng một giá trị.
+Nếu chúng ta muốn gán cùng một giá trị cho nhiều phần tử, chúng ta chỉ cần trỏ đến tất cả các phần tử đó và gán giá trị cho chúng.
 Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
 Mặc dù chúng ta đã thảo luận về việc lập chỉ số cho ma trận,  phương thức này rõ ràng cũng hiểu quả đối với các vector và cho các thang đo có kích thước hơn $2$.
 
