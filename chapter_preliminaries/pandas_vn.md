@@ -18,11 +18,10 @@ We will cover more data preprocessing techniques in later chapters.
 -->
 
 Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật thao tác dữ liệu được lưu trong dạng `ndarray`.
-Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không phải luôn có ngay dữ liệu ngăn nắp đã chuẩn bị sẵn trong định dạng `ndarray`
-Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` hay được sử dụng nhiều.
-Giống nhiều gói khác trong hệ sinh thái Python, `pandas` có thể làm việc cùng định dạng `ndarray`.
+Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không phải luôn có ngay dữ liệu ngăn nắp được chuẩn bị sẵn trong định dạng `ndarray`.
+Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` được sử dụng phổ biến và có thể kết hợp được với định dạng `ndarray`.
 Vì vậy, chúng ta sẽ đi nhanh qua các bước để tiền xử lý dữ liệu thô bằng `pandas` rồi đổi chúng sang dạng `ndarray`.
-Sau đó ta sẽ bao quát nhiều kỹ thuật tiền xử lý dữ liệu hơn trong các chương sau.
+Nhiều kỹ thuật tiền xử lý dữ liệu khác sẽ được giới thiệu trong các chương sau.
 
 <!--
 ## Reading the Dataset
@@ -40,7 +39,7 @@ The comment `# Saved in the d2l package for later use` is a special mark where t
 Lấy một ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
 Dữ liệu trong các định dạng khác cũng có thể được xử lý tương tự.
 Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` có tồn tại.
-Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh import được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
+Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh `import` được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
 
 ```{.python .input}
 import os
@@ -90,7 +89,7 @@ import pandas as pd
 data = pd.read_csv(data_file)
 print(data)
 ```
-
+<!-- Kết thúc revise phần 1 ở đây -->
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
 <!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
@@ -228,12 +227,12 @@ Lưu ý:
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 * Phạm Hồng Vinh
 * Đoàn Võ Duy Thanh
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
 *
