@@ -290,7 +290,7 @@ On convex loss surfaces, it will eventually converge to a global minimum, and wh
 it will at least lead towards a (hopefully good) local minimum.
 -->
 
-Kĩ thuật mấu chốt cho việc tối ưu hóa gần như là cho hầu hết các mô hình học sâu, và với điều mà chúng ta làm trong suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
+Kỹ thuật chính để tối ưu hóa bất kỳ mô hình học sâu nào, và ta sẽ sử dụng nó xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
 Thuật toán này được gọi là *hạ gradient*.
 Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất mô hình sẽ dẫn tới (hy vọng là như vậy) đến điểm tối thiểu cục bộ.
 
