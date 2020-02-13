@@ -87,7 +87,7 @@ features, labels = synthetic_data(true_w, true_b, 1000)
 Note that each row in `features` consists of a 2-dimensional data point and that each row in `labels` consists of a 1-dimensional target value (a scalar).
 -->
 
-Để ý rằng mỗi hàng trong `features` chứa một điểm dữ liệu hai chiều và mỗi hàng trong `labels` chứa một giá trị mục tiêu một chiều (một số vô hướng).
+Lưu ý rằng mỗi hàng trong `features` chứa một điểm dữ liệu hai chiều và mỗi hàng trong `labels` chứa một giá trị mục tiêu một chiều (một số vô hướng).
 
 ```{.python .input  n=3}
 print('features:', features[0],'\nlabel:', labels[0])
@@ -97,7 +97,7 @@ print('features:', features[0],'\nlabel:', labels[0])
 By generating a scatter plot using the second `features[:, 1]` and `labels`, we can clearly observe the linear correlation between the two.
 -->
 
-Bằng cách vẽ đồ thị phân tán giữa chiều thứ hai `features[:, 1]` và `labels`, ta có thể quan sát rõ mối tương quan giữa chúng.
+Bằng cách vẽ đồ thị phân tán với chiều thứ hai `features[:, 1]` và `labels`, ta có thể quan sát rõ mối tương quan giữa chúng.
 
 ```{.python .input  n=18}
 d2l.set_figsize((3.5, 2.5))
