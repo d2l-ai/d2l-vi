@@ -550,7 +550,7 @@ cho mỗi $i = 1, 2, \ldots, n$.
 
 * Vi phân và tích phân là hai nhánh con của giải tích, trong đó vi phân được ứng dụng trong các bài toán tối ưu hóa tồn tại ở mọi ngóc ngách của học sâu.
 * Đạo hàm có thể được hiểu như là tốc độ thay đổi tức thì của một hàm số đối với các biến số. Nó cũng là độ dốc của đường tiếp tuyến với đường cong của hàm.
-* Gradient là một vector có các phần tử là đạo hàm riêng của một hàm đa biến theo tất cả các biến số của nó.
+* Gradient là một vector có các phần tử là đạo hàm riêng của một hàm nhiều biến theo tất cả các biến số của nó.
 * Quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
 
 
