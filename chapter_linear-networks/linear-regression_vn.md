@@ -234,7 +234,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *dịch tiêu đề phía trên*
+### *Giải pháp phân tích*
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
@@ -244,14 +244,18 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-*dịch đoạn phía trên*
+*Hồi quy tuyến tính xảy ra là một vấn đề tối ưu hóa đơn giản khác thường.
+Không giống hầu hết các mô hình khác mà chúng ta đề cập trong cuốn sách này, hồi quy tuyến tính có thể được giải quyết theo phép phân tích bằng cách áp dụng công thức đơn giản, nhưng mang lại hiệu quả tối ưu toàn bộ.
+Để bắt đầu, chúng ta có thể gộp độ lệch $b$ vào hệ số $\mathbf{w}$ bằng cách mở rộng một cột để thiết kế ma trận bao gồm tất cả $1s$. Sau đó tất cả các vấn đề dự đoán là giảm thiểu $||\mathbf{y} - X\mathbf{w}||$.
+Bởi vì biểu thức này có dạng bậc hai, nó là dạng lồi, và miễn là vấn đề này không được suy biến (các đặc trưng của chúng ta là những độc lập tuyến tính, nó hoàn toàn lồi.   *
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-*dịch đoạn phía trên*
+*Vì vậy có một điểm quan trọng trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất.
+Lấy đạo hàm của sự mất mát $\mathbf{w}$ và đặt nó bằng $0$ để có được giải pháp phân tích: *
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
@@ -260,7 +264,8 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-*dịch đoạn phía trên*
+* Trong khicác vấn đề đơn giản như hồi quy tuyến tính có thể thừa nhận các giải pháp phân tích, bạn không nên lạm dụng nó như vậy.
+Mặc dù các giải pháp giải tích cho phép phân tích phép toán một cách tốt đẹp, nhưng các yêu cầu của giải pháp phân tích này rất hạn chế đến nỗi nó sẽ loại trừ tất cả các học sâu*
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -856,7 +861,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 *
