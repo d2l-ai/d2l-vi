@@ -435,8 +435,7 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-
-## *dịch tiêu đề phía trên*
+## Chỉ số và Trích chọn
 
 <!--
 Just as in any other Python array, elements in an `ndarray` can be accessed by index.
@@ -444,13 +443,14 @@ As in any Python array, the first element has index $0$ and ranges are specified
 As in standard Python lists, we can access elements according to their relative position to the end of the list by using negative indices.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như trong bất kỳ mảng Python khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
+Như trong bất kỳ mảng Python nào, phần tử đầu tiên có chỉ số $0$ và có phạm vi bao gồm phần tử đầu tiên nhưng *trước* phần tử cuối cùng.
+Và trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí tương đối của chúng đến cuối danh sách bằng cách sử dụng các chỉ số âm.
 
 <!--
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
 -->
-
-*dịch đoạn phía trên*
+Vì vậy, `[-1]` chọn phần tử cuối cùng và `[1:3]` chọn phần tử thứ hai và phần tử thứ ba như sau:
 
 ```{.python .input  n=19}
 x[-1], x[1:3]
@@ -459,8 +459,7 @@ x[-1], x[1:3]
 <!--
 Beyond reading, we can also write elements of a matrix by specifying indices.
 -->
-
-*dịch đoạn phía trên*
+Ngoài việc đọc, chúng ta cũng có thể viết các phần tử của ma trận bằng cách chỉ định các chỉ số.
 
 ```{.python .input  n=20}
 x[1, 2] = 9
@@ -472,8 +471,9 @@ If we want to assign multiple elements the same value, we simply index all of th
 For instance, `[0:2, :]` accesses the first and second rows, where `:` takes all the elements along axis $1$ (column).
 While we discussed indexing for matrices, this obviously also works for vectors and for tensors of more than $2$ dimensions.
 -->
-
-*dịch đoạn phía trên*
+Nếu chúng ta muốn gán cùng một giá trị cho nhiều phần tử, chúng ta chỉ cần trỏ đến tất cả các phần tử đó và gán giá trị cho chúng.
+Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
+Ở đây chúng ta đã thảo luận về việc lập chỉ số cho ma trận, phương thức này đương nhiên là cũng áp dụng cho các vector và tensor với nhiều hơn $2$ chiều.
 
 ```{.python .input  n=21}
 x[0:2, :] = 12
@@ -691,7 +691,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Lê Đàm Hồng Lộc
 
 <!-- Phần 11 -->
 * Nguyễn Lê Quang Nhật
