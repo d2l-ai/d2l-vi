@@ -572,7 +572,7 @@ cho mỗi $i = 1, 2, \ldots, n$.
 1. Vẽ đồ thị của hàm số $y = f(x) = x^3 - \frac{1}{x}$ và đường tiếp tuyến của nó tại $x = 1$.
 1. Tìm gradient của hàm số $f(\mathbf{x}) = 3x_1^2 + 5e^{x_2}$.
 1. Gradient của hàm $f(\mathbf{x}) = \|\mathbf{x}\|_2$ là gì?
-1.  Có thể dùng quy tắc dây chuyền cho trường hợp sau đây không: $u = f(x, y, z)$ ở đó $x = x(a, b)$, $y = y(a, b)$, và $z = z(a, b)$?
+1.  Có thể dùng quy tắc dây chuyền cho trường hợp sau đây không: $u = f(x, y, z)$, với $x = x(a, b)$, $y = y(a, b)$ và $z = z(a, b)$?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
