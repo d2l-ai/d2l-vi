@@ -497,7 +497,7 @@ Fortunately, the *chain rule* enables us to differentiate composite functions.
 
 Tuy nhiên, những gradient như thế có thể khó để tính toán.
 Đó là bởi vì các hàm nhiều biến trong học sâu đa phần là những *hàm hợp*, nên ta không thể áp dụng các quy tắc đề cập ở trên để lấy vi phân cho những hàm này.
-May mắn thay, quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
+May mắn thay, *quy tắc dây chuyền* cho phép chúng ta lấy vi phân của các hàm hợp.
 
 <!--
 Let's first consider functions of a single variable.
@@ -519,7 +519,7 @@ Note that $y$ is a function of $x_1, x_2, \ldots, x_n$.
 Then the chain rule gives
 -->
 
-Bây giờ, ta hãy xét trường hợp tổng quát hơn đối với các hàm nhiều biến.
+Giờ ta sẽ xét trường hợp tổng quát hơn đối với các hàm nhiều biến.
 Giả sử một hàm khả vi $y$ có các biến số $u_1, u_2, \ldots, u_m$, trong đó mỗi biến $u_i$ là một hàm khả vi của các biến $x_1, x_2, \ldots, x_n$.
 Lưu ý rằng $y$ cũng là hàm của các biến $x_1, x_2, \ldots, x_n$.
 Quy tắc dây chuyền cho ta
@@ -548,9 +548,9 @@ cho mỗi $i = 1, 2, \ldots, n$.
 * The chain rule enables us to differentiate composite functions.
 -->
 
-* Vi phân và tích phân là hai nhánh con của giải tích, trong đó vi phân có ứng dụng rất rộng rãi trong các bài toán tối ưu hóa trong học sâu.
-* Đạo hàm có thể được hiểu như là tốc độ thay đổi tức thì của một hàm số đối với các biến số. Nó cũng là độ dốc của đường thẳng tiếp tuyến với đường cong của hàm.
-* Gradient là một vector mà các phần tử của nó là đạo hàm riêng của một hàm đa biến theo tất cả các biến số của nó.
+* Vi phân và tích phân là hai nhánh con của giải tích, trong đó vi phân được ứng dụng rộng rãi trong các bài toán tối ưu hóa của học sâu.
+* Đạo hàm có thể được hiểu như là tốc độ thay đổi tức thì của một hàm số đối với các biến số. Nó cũng là độ dốc của đường tiếp tuyến với đường cong của hàm.
+* Gradient là một vector có các phần tử là đạo hàm riêng của một hàm nhiều biến theo tất cả các biến số của nó.
 * Quy tắc dây chuyền cho phép chúng ta lấy vi phân của các hàm hợp.
 
 
@@ -569,10 +569,10 @@ cho mỗi $i = 1, 2, \ldots, n$.
 -->
 
 *dịch đoạn phía trên*
-1. Vẽ đồ thị của hàm số $y = f(x) = x^3 - \frac{1}{x}$ và đường tiếp tuyến tại $x = 1$.
+1. Vẽ đồ thị của hàm số $y = f(x) = x^3 - \frac{1}{x}$ và đường tiếp tuyến của nó tại $x = 1$.
 1. Tìm gradient của hàm số $f(\mathbf{x}) = 3x_1^2 + 5e^{x_2}$.
 1. Gradient của hàm $f(\mathbf{x}) = \|\mathbf{x}\|_2$ là gì?
-1.  Có thể dùng quy tắc dây chuyền cho trường hợp sau đây không: $u = f(x, y, z)$ ở đó $x = x(a, b)$, $y = y(a, b)$, và $z = z(a, b)$?
+1.  Có thể dùng quy tắc dây chuyền cho trường hợp sau đây không: $u = f(x, y, z)$, với $x = x(a, b)$, $y = y(a, b)$ và $z = z(a, b)$?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
