@@ -311,13 +311,11 @@ Trong mỗi vòng lặp, đầu tiên chúng ta tạo ngẫu nhiên một miniba
 Sau đó, chúng ta tính đạo hàm (tính gradient) của hàm mất mát trên một tập minibatch theo các tham số của mô hình. 
 Cuối cùng, chúng ta nhân gradient với tốc độ nhảy $\eta > 0$ và ta lấy kết quả vừa rồi trừ cho giá trị tham số hiện tại.
 
-*dịch đoạn phía trên*
 
 <!--
 We can express the update mathematically as follows ($\partial$ denotes the partial derivative) :
 -->
 Chúng ta có thể biểu diễn việc cập nhật bằng công thức toán như sau ($\partial$ là ký hiệu đạo hàm riêng của hàm số) : 
-*dịch đoạn phía trên*
 
 $$(\mathbf{w},b) \leftarrow (\mathbf{w},b) - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \partial_{(\mathbf{w},b)} l^{(i)}(\mathbf{w},b).$$
 
@@ -329,9 +327,8 @@ To summarize, steps of the algorithm are the following:
 -->
 Tổng kết lại, các bước của thuật toán như sau: 
 (i) Chúng ta khởi tạo ngẫu nhiên các giá trị tham số của mô hình. 
-(ii) tại mỗi vòng lặp, chúng ta lấy ngẫu nhiên từng batch từ tập dữ liệu (nhiều lần), sau đó ta tiến hành cập nhật các tham số của mô hình theo hướng âm của gradient.
+(ii) Tại mỗi vòng lặp, ta lấy ngẫu nhiên từng batch từ tập dữ liệu (nhiều lần), rồi tiến hành cập nhật các tham số của mô hình theo hướng âm của gradient.
 
-*dịch đoạn phía trên*
 
 <!--
 For quadratic losses and linear functions, we can write this out explicitly as follows:
@@ -342,7 +339,6 @@ Here, the more elegant vector notation makes the math much more readable than ex
 Lưu ý rằng $\mathbf{w}$ và $\mathbf{x}$ là các vector. 
 Ở đây, việc ký hiệu bằng các vector làm cho công thức dễ đọc hơn nhiều so với diễn đạt công thức bằng các hệ số như $w_1, w_2, \ldots, w_d$.
 
-*dịch đoạn phía trên*
 
 $$
 \begin{aligned}
