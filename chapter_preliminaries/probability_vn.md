@@ -460,7 +460,7 @@ which is also known as the *sum rule*. The probability or distribution as a resu
 ### Independence
 -->
 
-### *dịch tiêu đề phía trên*
+### Tính độc lập
 
 <!--
 Another useful property to check for is *dependence* vs. *independence*.
@@ -470,8 +470,12 @@ does not reveal any information about the occurrence of an event of $B$.
 In this case $P(B \mid A) = P(B)$. Statisticians typically express this as $A \perp  B$. From Bayes' theorem, it follows immediately that also $P(A \mid B) = P(A)$.
 In all the other cases we call $A$ and $B$ dependent. For instance, two successive rolls of a die are independent. In contrast, the position of a light switch and the brightness in the room are not (they are not perfectly deterministic, though, since we could always have a broken light bulb, power failure, or a broken switch).
 -->
-
-*dịch đoạn phía trên*
+Một tính chất hữu ích khác để kiểm tra là *tính phụ thuộc* với *tính độc lập*.
+Hai biến ngẫu nhiên $A$ và $B$ độc lập
+nghĩa là sự xuất hiện của một sự kiện của $A$
+không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
+Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp  B$. Từ định lý của Bayes, ta có ngay sau đó $P(A \mid B) = P(A)$.
+Trong tất cả các trường hợp khác, chúng tôi gọi $A$ và $B$ là phụ thuộc. Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không phụ thuộc (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
 
 <!--
 Since $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ is equivalent to $P(A, B) = P(A)P(B)$, two random variables are independent if and only if their joint distribution is the product of their individual distributions.
@@ -479,13 +483,15 @@ Likewise, two random variables $A$ and $B$ are *conditionally independent* given
 if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $A \perp B \mid C$.
 -->
 
-*dịch đoạn phía trên*
+Vì $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ tương đương với $P(A, B) = P(A)P(B)$, hai biến ngẫu nhiên là độc lập khi và chỉ khi phân phối chung của chúng là tích của các phân phối riêng lẻ của chúng.
+Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* 
+khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. Điều này được biểu thị bằng $A \perp B \mid C$.
 
 <!--
 ### Application
 -->
 
-### *dịch tiêu đề phía trên*
+### Ứng dụng
 :label:`subsec_probability_hiv_app`
 
 <!--
@@ -494,16 +500,24 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 :numref:`conditional_prob_D1` lists such conditional probability.
 -->
 
-*dịch đoạn phía trên*
+Hãy thử nghiệm các kiến thưc chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo anh ta bị bệnh. Hơn thế nữa,
+nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự có nó. Chúng tôi sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng HIV ($1$ nếu dương tính và $0$ nếu âm tính).
+:numref:`conditional_prob_D1` liệt kê xác suất có điều kiện như vậy.
 
 <!--
 :Conditional probability of $P(D_1 \mid H)$.
 -->
 
-*dịch đoạn phía trên*
+:Xác suất có điều kiện của $P(D_1 \mid H)$.
 
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
+|---|---|---|
+|$P(D_1 = 1 \mid H)$|            1 |         0.01 |
+|$P(D_1 = 0 \mid H)$|            0 |         0.99 |
+:label:`conditional_prob_D1`
+
+| Xác suất có điều kiện | $H=1$ | $H=0$ |
 |---|---|---|
 |$P(D_1 = 1 \mid H)$|            1 |         0.01 |
 |$P(D_1 = 0 \mid H)$|            0 |         0.99 |
@@ -513,7 +527,7 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 Note that the column sums are all $1$ (but the row sums are not), since the conditional probability needs to sum up to $1$, just like the probability. Let's work out the probability of the patient having AIDS if the test comes back positive, i.e., $P(H = 1 \mid D_1 = 1)$. Obviously this is going to depend on how common the disease is, since it affects the number of false alarms. Assume that the population is quite healthy, e.g., $P(H=1) = 0.0015$. To apply Bayes' Theorem, we need to apply marginalization and the multiplication rule to determine
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng hàng thì không), vì xác suất có điều kiện cần cộng lên đến $1$, giống như xác suất. Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trở thành dương tính, tức là, $P(H = 1 \mid D_1 = 1)$. Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng báo động sai. Giả sử rằng dân số khá khỏe mạnh, ví dụ: $P(H=1) = 0.0015$. Để áp dụng Định lý Bayes, chúng ta cần áp dụng quy tắc cận biên và quy tắc nhân để xác định
 
 $$\begin{aligned}
 &P(D_1 = 1) \\
