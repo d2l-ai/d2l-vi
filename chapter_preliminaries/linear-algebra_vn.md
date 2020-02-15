@@ -227,7 +227,7 @@ Just as vectors generalize scalars from order $0$ to order $1$, matrices general
 Matrices, which we will typically denote with bold-faced, capital letters (e.g., $\mathbf{X}$, $\mathbf{Y}$, and $\mathbf{Z}$), are represented in code as `ndarray`s with $2$ axes.
 -->
 
-Cũng giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận sẽ khái quát những vector từ bậc $1$ sang bậc $2$.
+Giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận sẽ khái quát những vector từ bậc $1$ sang bậc $2$.
 Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$);
 và được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
 
