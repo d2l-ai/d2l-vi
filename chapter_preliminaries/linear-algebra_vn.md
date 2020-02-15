@@ -470,7 +470,7 @@ For example, the sum of the elements of an $m \times n$ matrix $\mathbf{A}$ coul
 -->
 
 Ta có thể biểu diễn phép tính tổng các phần tử của tensor có kích thước tùy ý.
-Ví dụ, tổng các phẩn tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
+Ví dụ, tổng các phần tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 
 ```{.python .input  n=12}
 A.shape, A.sum()
