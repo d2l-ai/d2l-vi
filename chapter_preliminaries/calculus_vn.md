@@ -106,7 +106,7 @@ were we to *increase* or *decrease* that parameter
 by an infinitesimally small amount.
 -->
 
-Chúng ta sẽ bắt đầu bằng việc nói tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
+Chúng ta bắt đầu bằng việc đề cập tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
 Trong học sâu, ta thường chọn những hàm mất mát khả vi theo các tham số của mô hình.
 Nói đơn giản, với mỗi tham số, ta có thể xác định hàm mất mát tăng hoặc giảm nhanh như thế nào khi tham số đó *tăng* hoặc *giảm* chỉ một lượng cực nhỏ.
 
@@ -169,8 +169,8 @@ Though this experiment is not a mathematical proof,
 we will see later that the derivative $u'$ is $2$ when $x=1$.
 -->
 
-Cho $x=1$ và để $h$ tiến về $0$, kết quả của phương trình $\frac{f(x+h) - f(x)}{h}$ trong :eqref:`eq_derivative` tiến về $2$.
-Dù thử nghiệm này không phải là một dạng chứng minh toán học, lát nữa ta sẽ thấy quả thật đạo hàm của $u'$ là $2$ khi $x=1$.
+Cho $x=1$ và $h$ tiến về $0$, kết quả của phương trình $\frac{f(x+h) - f(x)}{h}$ trong :eqref:`eq_derivative` tiến về $2$.
+Dù thử nghiệm này không phải là một dạng chứng minh toán học, lát nữa ta sẽ thấy rằng quả thật đạo hàm của $u'$ là $2$ khi $x=1$.
 
 ```{.python .input}
 def numerical_lim(f, x, h):
@@ -192,7 +192,7 @@ Given $y = f(x)$, where $x$ and $y$ are the independent variable and the depende
 -->
 
 Hãy làm quen với một vài ký hiệu cùng được dùng để biểu diễn đạo hàm.
-Cho $y = f(x)$ với $x$ và $y$ lần lượt là là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
+Cho $y = f(x)$ với $x$ và $y$ lần lượt là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
 
 $$f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_x f(x),$$
 
