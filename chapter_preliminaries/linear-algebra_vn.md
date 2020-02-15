@@ -298,7 +298,7 @@ $$
 In code, we access a matrix's transpose via the `T` attribute.
 -->
 
-Trong lập trình, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
+Trong mã nguồn, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
 
 ```{.python .input  n=7}
 A.T
