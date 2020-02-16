@@ -290,7 +290,7 @@ it will at least lead towards a (hopefully good) local minimum.
 
 Kỹ thuật chính để tối ưu hóa bất kỳ mô hình học sâu nào, và ta sẽ sử dụng nó xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
 Thuật toán này được gọi là *hạ gradient*.
-Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất mô hình sẽ dẫn tới (hy vọng là như vậy) đến điểm tối thiểu cục bộ.
+Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất thuật toán sẽ dẫn tới điểm tối thiểu cục bộ (hy vọng là tốt) .
 
 <!--
 The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
