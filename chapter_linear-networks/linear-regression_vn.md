@@ -33,7 +33,7 @@ In subsequent sections, we will introduce classification problems, where the goa
 ## Basic Elements of Linear Regression
 -->
 
-## Một số thành phần cơ bản của hồi quy tuyến tính
+## Một số Thành phần Cơ bản của Hồi quy Tuyến tính
 
 <!--
 *Linear regression* may be both the simplest and most popular among the standard tools to regression.
