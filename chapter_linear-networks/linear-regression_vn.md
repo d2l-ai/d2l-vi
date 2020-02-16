@@ -50,7 +50,7 @@ Quay trở về đầu thế kỉ 19, hồi quy tuyến tính tuân theo một v
 Đầu tiên, ta giả sử quan hệ giữa *các đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng thêm nhiễu qua sự quan sát.
 Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
 Để tạo động lực, chúng ta hãy bắt đầu chạy một ví dụ.
-Giả sử rằng ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời ( theo năm).
+Hãy cho là ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (theo năm).
 
 <!--
 To actually fit a model for predicting house prices, we would need to get our hands on a dataset consisting of sales for which we know the sale price, area and age for each home.
