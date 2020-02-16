@@ -986,10 +986,10 @@ Assign vector representations to items (like words, products, or news articles) 
 Oftentimes, the objectives, perhaps the most important components of deep learning algorithms (besides the data), are expressed as norms.
 -->
 
-Tuy không muốn đi quá nhanh, chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
+Tuy không muốn đi quá nhanh nhưng chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
 Trong học sâu, ta thường cố giải các bài toán tối ưu: *tối đa hóa* xác suất xảy ra của dữ liệu quan sát được; *tối thiểu hóa* khoảng cách giữa dự đoán và nhãn gốc.
 Gán các biểu diễn vector cho các đối tượng (như từ, sản phẩm hay các bài báo) để tối thiểu khoảng cách giữa các đối tượng tương tự nhau và tối đa khoảng cách giữa các đối tượng khác nhau.
- Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu, thường được biễu diễn diễn theo *chuẩn* (*norm*).
+Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu (bên cạnh dữ liệu), thường được biễu diễn diễn theo *chuẩn* (*norm*).
 
 <!--
 ## More on Linear Algebra
@@ -1009,10 +1009,10 @@ So while we reserve the right to introduce more mathematics much later on, we wi
 
 Chỉ trong mục này, chúng tôi đã trang bị cho bạn tất cả những kiến thức đại số tuyến tính cần thiết để hiểu một lượng lớn các mô hình học máy hiện đại.
 Vẫn còn rất nhiều kiến thức đại số tuyến tính, phần lớn đều hữu dụng cho học máy.
-Một ví dụ là phép phân tích ma trận ra các thành phần, và các phép khai triển này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
-Có cả một ngành nhỏ của học máy tập trung vào khai triển ma trận và tổng quát chúng lên cho tensor hạng lớn để khám phá cấu trúc trong các tập dữ liệu và giải các bài toán dự đoán.
+Một ví dụ là phép phân tích ma trận ra các thành phần, các phép phân tích này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
+Có cả một nhánh của học máy tập trung vào sử dụng các phép phân tích ma trận và tổng quát chúng lên cho các tensor bậc cao để khám phá cấu trúc trong các tập dữ liệu và giải quyết các bài toán dự đoán.
 Tuy nhiên, cuốn sách này chỉ tập trung vào học sâu.
-Và chúng tôi tin rằng bạn sẽ muốn học thêm nhiều về toán một khi bạn đã triển khai được các mô hình học máy hữu dụng cho các tập dữ liệu thực tế.
+Và chúng tôi tin rằng bạn sẽ muốn học thêm nhiều về toán một khi đã có thể triển khai được các mô hình học máy hữu dụng cho các tập dữ liệu thực tế.
 Bởi vậy, trong khi vẫn còn nhiều kiến thức toán cần bàn thêm ở phần sau, chúng tôi sẽ kết thúc mục này ở đây.
 
 <!--
@@ -1046,10 +1046,10 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 * Số vô hướng, vector, ma trận, và tensor là các đối tượng toán học cơ bản trong đại số tuyến tính.
 * Vector là dạng tổng quát của số vô hướng và ma trận là dạng tổng quát của vector.
 * Trong cách biểu diễn `ndarray`, các số vô hướng, vector, ma trận và tensor lần lượt có 0, 1, 2 và một số lượng tùy ý các trục.
-* Một tensor có thể thu gọn theo một số trục bằng `sum` và `mean`.
+* Một tensor có thể thu gọn theo một trục bằng `sum` và `mean`.
 * Phép nhân theo từng phần tử của hai ma trận được gọi là tích Hadamard của chúng. Phép toán này khác với phép nhân ma trận.
 * Trong học sâu, chúng ta thường làm việc với các chuẩn như chuẩn $\ell_1$, chuẩn $\ell_2$ và chuẩn Frobenius.
-* Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm số `ndarray`.
+* Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm của `ndarray`.
 
 
 <!--
@@ -1070,15 +1070,15 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 9. Feed a tensor with 3 or more axes to the `linalg.norm` function and observe its output. What does this function compute for `ndarray`s of arbitrary shape?
 -->
 
-1. Chứng minh rằng chuyển vị của chuyển vị của một ma trận là chính nó: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
+1. Chứng minh rằng chuyển vị của một ma trận chuyển vị là chính nó: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
 2. Cho hai ma trận $\mathbf{A}$ và $\mathbf{B}$, chứng minh rằng tổng của chuyển vị bằng chuyển vị của tổng: $\mathbf{A}^\top + \mathbf{B}^\top = (\mathbf{A} + \mathbf{B})^\top$.
 3. Cho một ma trận vuông $\mathbf{A}$, liệu rằng $\mathbf{A} + \mathbf{A}^\top$ có luôn đối xứng? Tại sao?
-4. Chúng ta định nghĩa `X` với kích thước ($2$, $3$, $4$) trong mục này. Kết quả của `len(X)` là gì?
-5. Cho một tensor `X` với kích thước bất kỳ, liệu `len(X)` có luôn tương ứng với độ dài của một trục nhất định của `X`? Đó là trục nào?
+4. Chúng ta đã định nghĩa tensor `X` với kích thước ($2$, $3$, $4$) trong mục này. Kết quả của `len(X)` là gì?
+5. Cho một tensor `X` với kích thước bất kỳ, liệu `len(X)` có luôn tương ứng với độ dài của một trục nhất định của `X` hay không? Đó là trục nào?
 6. Chạy `A / A.sum(axis=1)` và xem điều gì xảy ra. Bạn có phân tích được nguyên nhân không? 
 7. Khi di chuyển giữa hai điểm ở Manhattan (đường phố hình bàn cờ), khoảng cách tính bằng tọa độ (tức độ dài các đại lộ và phố) mà bạn cần di chuyển là bao nhiêu? Bạn có thể đi theo đường chéo không? (Xem thêm bản đồ Manhattan, New York để trả lời câu hỏi này)
-8. Xét một tensor với kích thước ($2$, $3$, $4$). Kích thước của kết quả nếu tính tổng theo trục $0$, $1$ và $2$ sẽ như thế nào?
-9. Đưa một tensor với 3 trục hoặc hơn vào hàm `linalg.norm`và quan sát kết quả. Hàm này thực hiện việc gì cho các `ndarray` với kích thước bất kỳ?
+8. Xét một tensor với kích thước ($2$, $3$, $4$). Kích thước của kết quả sau khi tính tổng theo trục $0$, $1$ và $2$ sẽ như thế nào?
+9. Đưa một tensor với 3 trục hoặc hơn vào hàm `linalg.norm` và quan sát kết quả. Hàm này thực hiện việc gì cho các `ndarray` với kích thước bất kỳ?
 
 <!-- ========================================= REVISE PHẦN 10 - KẾT THÚC ===================================-->
 
@@ -1125,3 +1125,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
+* Phạm Hồng Vinh
