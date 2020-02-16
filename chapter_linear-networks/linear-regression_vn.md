@@ -292,7 +292,6 @@ Kỹ thuật chính để tối ưu hóa bất kỳ mô hình học sâu nào, v
 Thuật toán này được gọi là *hạ gradient*.
 Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất mô hình sẽ dẫn tới (hy vọng là như vậy) đến điểm tối thiểu cục bộ.
 
-
 <!--
 The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
 In practice, this can be extremely slow.
