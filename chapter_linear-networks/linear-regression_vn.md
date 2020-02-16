@@ -16,7 +16,7 @@ Machine learning, on the other hand, is most often concerned with *prediction*.
 
 Hồi quy liên quan đến các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và giá trị mục tiêu $y$.
 Trong khoa học tự nhiên và khoa học xã hội, mục tiêu của hồi quy thường là *đặc trưng hóa* mối quan hệ của đầu vào và đầu ra.
-Học máy, mặt khác, thường quan tâm đến *dự đoán*.
+Mặt khác, học máy thường quan tâm đến *dự đoán*.
 
 <!--
 Regression problems pop up whenever we want to predict a numerical value.
