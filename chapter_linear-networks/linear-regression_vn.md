@@ -91,7 +91,7 @@ The weights determine the influence of each feature on our prediction and the bi
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 -->
 
-Ở đây, $w_{\mathrm{area}}$ và $w_{\mathrm{age}}$ được gọi là *trọng số*, và $b$ được gọi là *độ chệch* (còn được gọi là *độ dịch* hoặc *độ cản*).
+Ở đây, $w_{\mathrm{area}}$ và $w_{\mathrm{age}}$ được gọi là *trọng số*, và $b$ được gọi là *độ chệch* (còn được gọi là *độ dời* hoặc *độ cản*).
 Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn độ chệch chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
 Thậm chí ngay cả khi chúng ta không bao giờ thấy một ngôi nhà có diện tích bằng không, hoặc tuổi đời bằng không, ta vẫn cần sử dụng độ cản nếu không ta sẽ làm giảm khả năng biểu diễn của mô hình tuyến tính.
 
