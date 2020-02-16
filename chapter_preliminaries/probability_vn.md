@@ -505,7 +505,7 @@ would ask the physician to administer another test to get clarity. The second
 test has different characteristics and it is not as good as the first one, as shown in :numref:`conditional_prob_D2`.
 -->
 
-Một bệnh nhân phải làm gì nếu nhận một tin xấu? Nhiều khả năng bệnh nhân sẽ yêu cầu bác sỹ quản lý làm một bài tra khác để rõ ràng hơn.
+Một bệnh nhân phải làm gì nếu nhận một tin xấu? Nhiều khả năng bệnh nhân sẽ yêu cầu bác sĩ thực hiện một xét nghiệm khác để có được sự rõ ràng.
 Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằng bài thứ nhất được thể hiện trong :numref:`conditional_prob_D2`. 
 
 
