@@ -25,7 +25,7 @@ Not every prediction problem is a classic *regression* problem.
 In subsequent sections, we will introduce classification problems, where the goal is to predict membership among a set of categories.
 -->
 
-Hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
+Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
 Các ví dụ thông dụng bao gồm dự đoán giá cả (nhà, cổ phiếu, ..), dự đoán thời gian ở lại (cho bệnh nhân trong viện), dự đoán nhu cầu (cho bán lẻ), và nhiều thứ khác.
 Không phải mọi vấn đề dự đoán đều là vấn đề *hồi quy* cổ điển.
 Trong các phần tiếp theo, chúng tôi sẽ giới thiệu vấn đề phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các loại.
