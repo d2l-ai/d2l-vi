@@ -28,7 +28,7 @@ In subsequent sections, we will introduce classification problems, where the goa
 Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
 Các ví dụ thông dụng bao gồm dự đoán giá cả (nhà, cổ phiếu, ..), dự đoán thời gian ở lại (cho bệnh nhân trong viện), dự đoán nhu cầu (cho bán lẻ), và nhiều thứ khác.
 Không phải mọi bài toán về dự đoán đều là bài toán *hồi quy* cổ điển.
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu vấn đề phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các loại.
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
