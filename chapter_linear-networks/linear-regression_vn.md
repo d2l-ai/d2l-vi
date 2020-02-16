@@ -75,13 +75,13 @@ We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{
 ### Linear Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình Tuyến tính
 
 <!--
 The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
 -->
 
-*dịch đoạn phía trên*
+Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn như là tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
 $$\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b.$$
 
@@ -91,20 +91,24 @@ The weights determine the influence of each feature on our prediction and the bi
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, $w_{\mathrm{area}}$ và $w_{\mathrm{age}}$ được gọi là *trọng số*, và $b$ được gọi là *độ chệch* (còn được gọi là *độ dời* hoặc *độ cản*).
+Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn độ chệch chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
+Thậm chí ngay cả khi chúng ta không bao giờ thấy một ngôi nhà có diện tích bằng không, hoặc tuổi đời bằng không, ta vẫn cần sử dụng độ cản nếu không ta sẽ làm giảm khả năng biểu diễn của mô hình tuyến tính.
 
 <!--
 Given a dataset, our goal is to choose the weights $w$ and bias $b$ such that on average, the predictions made according our model best fit the true prices observed in the data.
 -->
 
-*dịch đoạn phía trên*
+Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số $w$ và độ chệch $b$, sao cho dự đoán dựa trên mô hình của ta phải khớp nhất với giá nhà thực tế quan sát được trong tập dữ liệu.
 
 <!--
 In disciplines where it is common to focus on datasets with just a few features, explicitly expressing models long-form like this is common.
 In ML, we usually work with high-dimensional datasets, so it is more convenient to employ linear algebra notation. When our inputs consist of $d$ features, we express our prediction $\hat{y}$ as
 -->
 
-*dịch đoạn phía trên*
+Trong các ngành học thường tập trung vào các tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
+Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn khi ta sử dụng ký hiệu đại số tuyến tính để biểu diễn.
+Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ là
 
 $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 
@@ -112,7 +116,7 @@ $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 Collecting all features into a vector $\mathbf{x}$ and all weights into a vector $\mathbf{w}$, we can express our model compactly using a dot product:
 -->
 
-*dịch đoạn phía trên*
+Thu thập toàn bộ các đặc trưng vào một vector $\mathbf{x}$ và toàn bộ các trọng số vào một vector $\mathbf{w}$, ta có thể biễu diễu mô hình bằng phép tích vô hướng:
 
 $$\hat{y} = \mathbf{w}^T \mathbf{x} + b.$$
 
@@ -847,7 +851,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Tâm
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
