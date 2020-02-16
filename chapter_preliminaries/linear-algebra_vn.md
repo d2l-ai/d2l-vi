@@ -559,7 +559,7 @@ A.mean(axis=0), A.sum(axis=0) / A.shape[0]
 However, sometimes it can be useful to keep the number of axes unchanged when invoking `sum` or `mean` by setting `keepdims=True`.
 -->
 
-Tuy nhiên, việc giữ lại số các trục đôi khi lại tỏ ra hữu dụng khi dùng hàm `sum` hoặc `mean`, bằng cách đặt `keepdims=True`.
+Tuy nhiên, việc giữ lại số các trục đôi khi là cần thiết khi gọi hàm `sum` hoặc `mean`, bằng cách đặt `keepdims=True`.
 
 ```{.python .input}
 sum_A = A.sum(axis=1, keepdims=True)
@@ -580,7 +580,7 @@ A / sum_A
 If we want to calculate the cumulative sum of elements of `A` along some axis, say `axis=0` (row by row), we can call the `cumsum` function. This function will not reduce the input tensor along any axis.
 -->
 
-Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Khi đó hàm này sẽ không giảm số chiều của tensor đầu vào theo bất cứ trục nào.
+Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Hàm này không rút gọn chiều của tensor đầu vào theo bất cứ trục nào.
 
 ```{.python .input}
 A.cumsum(axis=0)
@@ -600,8 +600,8 @@ Given two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their *dot product*
 -->
 
 Cho đến giờ, chúng ta mới chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
-Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng có một mục riêng.
-Ngoài các phép tính trên từng hạng tử, một phép tính cơ bản khác là tích vô hướng.
+Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng để có nguyên một mục.
+Tuy nhiên, một trong nhưng phép tính căn bản nhất của đại số tuyến tính là tích vô hướng.
 Với hai vector $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ cho trước, *tích vô hướng* (_dot product_) $\mathbf{x}^\top \mathbf{y}$ (hoặc $\langle \mathbf{x}, \mathbf{y}  \rangle$) là tổng các tích của những phần tử có cùng vị trí:
 $\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 
@@ -1116,6 +1116,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Phạm Minh Đức
+
+<!-- Phần 7 -->
+* Ngô Thế Anh Khoa
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 8 -->
 * Ngô Thế Anh Khoa
