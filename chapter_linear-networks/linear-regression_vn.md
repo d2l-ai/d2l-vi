@@ -840,7 +840,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*Lê Thành Vinh
 
 <!-- Phần 3 -->
 *
