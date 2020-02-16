@@ -851,8 +851,8 @@ In linear algebra, a vector norm is a function $f$ that maps a vector to a scala
 Given any vector $\mathbf{x}$, the first property says that if we scale all the elements of a vector by a constant factor $\alpha$, its norm also scales by the *absolute value* of the same constant factor:
 -->
 
-Trong đại số tuyến tính, chuẩn của một vector là hàm số $f$ mà ánh xạ vector thành số vô hướng, thỏa mãn các tính chất sau.
-Cho vector $\mathbf{x}$ bất kỳ, tính chất đầu tiên phát biểu rằng nếu chúng ta co giãn toàn bộ các phần tử của một vector bằng một hằng số $\alpha$, chuẩn của vector đó cũng co giãn theo *giá trị tuyệt đối* của hằng số đó :
+Trong đại số tuyến tính, chuẩn của một vector là hàm số $f$ mà ánh xạ một vector đến một số vô hướng, thỏa mãn các tính chất sau.
+Cho vector $\mathbf{x}$ bất kỳ, tính chất đầu tiên phát biểu rằng nếu chúng ta co giãn toàn bộ các phần tử của một vector bằng một hằng số $\alpha$, chuẩn của vector đó cũng co giãn theo *giá trị tuyệt đối* của hằng số đó:
 
 $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 
@@ -879,7 +879,7 @@ That makes sense, as in most contexts the smallest *size* for anything is 0.
 The final property requires that the smallest norm is achieved and only achieved by a vector consisting of all zeros.
 -->
 
-Điều này nghĩa là, trong hầu hết các trường hợp thì *kích thước* nhỏ nhất cho mọi vector sẽ bằng 0.
+Điều này là hợp lý vì trong hầu hết các trường hợp thì *kích thước* nhỏ nhất cho các vật đều bằng 0.
 Tính chất cuối cùng yêu cầu chuẩn nhỏ nhất thu được khi và chỉ khi toàn bộ thành phần của vector đó là 0.
 
 $$\forall i, [\mathbf{x}]_i = 0 \Leftrightarrow f(\mathbf{x})=0.$$
@@ -892,8 +892,8 @@ Suppose that the elements in the $n$-dimensional vector $\mathbf{x}$ are $x_1, \
 The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares of the vector elements:
 -->
 
-Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một thước đo khoảng cách.
-Và nếu còn nhớ khái niệm khoảng cách Euclid (nhớ định lý Pythagoras không) học hồi cấp 3, thì mong khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc được một chút.
+Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một phép đo khoảng cách.
+Và nếu còn nhớ khái niệm khoảng cách Euclid (định lý Pythagoras) học hồi cấp 3, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc lại một chút.
 Thực tế là, khoảng cách Euclid cũng là một chuẩn: cụ thể là $\ell_2$.
 Giả sử rằng các thành phần trong vector $n$ chiều $\mathbf{x}$ là $x_1, \ldots, x_n$.
 *Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần trong vector: 
@@ -905,7 +905,8 @@ where the subscript $2$ is often omitted in $\ell_2$ norms, i.e., $\|\mathbf{x}\
 In code, we can calculate the $\ell_2$ norm of a vector by calling `linalg.norm`.
 -->
 
-Số $2$ nhỏ ở dưới thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.   
+Số $2$ nhỏ ở dưới thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.
+Khi lập trình, ta có thể tính chuẩn $\ell_2$ của một vector bằng cách gọi hàm `linalg.norm`.
 
 ```{.python .input  n=18}
 u = np.array([3, -4])
@@ -917,8 +918,8 @@ In deep learning, we work more often with the squared $\ell_2$ norm.
 You will also frequently encounter the $\ell_1$ *norm*, which is expressed as the sum of the absolute values of the vector elements:
 -->
 
-Trong Học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
-Bạn cũng hay gặp *chuẩn* $\ell_1$, chuẩn được biểu diễn bằng tổng các giá trị tuyệt đối của các thành phần trong vector.
+Trong học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
+Bạn cũng sẽ thường xuyên gặp *chuẩn* $\ell_1$, chuẩn được biểu diễn bằng tổng các giá trị tuyệt đối của các thành phần trong vector:
 
 $$\|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.$$
 
@@ -958,7 +959,7 @@ It behaves as if it were an $\ell_2$ norm of a matrix-shaped vector. Invoking `l
 
 Chuẩn Frobenius thỏa mãn tất cả các tính chất của một chuẩn vector.
 Nó giống như là chuẩn $\ell_2$ của một vector nhưng trong hình dạng của ma trận.
-Dùng hàm `linalg.norm` để tính toán chuẩn Frobenius của ma trận.
+Ta dùng hàm `linalg.norm` để tính toán chuẩn Frobenius của ma trận.
 
 ```{.python .input}
 np.linalg.norm(np.ones((4, 9)))
