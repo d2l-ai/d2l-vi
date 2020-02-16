@@ -578,7 +578,7 @@ $$
 <!--
 That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.
 -->
-Do đó, lần kiểm ra thứ hai mang lại nhiều chắc chắn hơn rằng chuyện đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
+Do đó, thử nghiệm thứ hai mang lại nhiều lý do hơn để tin rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
