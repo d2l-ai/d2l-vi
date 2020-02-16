@@ -5,7 +5,7 @@
 # Linear Regression
 -->
 
-# Hồi quy tuyến tính
+# Hồi quy Tuyến tính
 :label:`sec_linear_regression`
 
 <!--
