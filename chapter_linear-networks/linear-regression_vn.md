@@ -59,7 +59,7 @@ The thing we are trying to predict (here, the price) is called a *target* or *la
 The variables (here *age* and *area*) upon which the predictions are based are called *features* or *covariates*.
 -->
 
-Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu bán hàng mà chúng ta đã biết giá bán, diện tích, tuổi đời cho từng căn nhà.
+Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà chúng ta đã biết giá bán, diện tích, tuổi đời cho từng căn nhà.
 Trong thuật ngữ của học máy, dữ liệu được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu cho một lần bán) được gọi là một *ví dụ* hoặc *mẫu*.
 Thứ mà chúng ta muốn dự đoán (giá nhà) được gọi là *mục tiêu* hoặc *nhãn*.
 Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là *những đặc trưng* hoặc *những hiệp biến*.
