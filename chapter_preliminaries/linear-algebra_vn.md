@@ -204,7 +204,7 @@ In this sense, the dimensionality of an `ndarray`'s some axis will be the length
 -->
 
 Ở đây cần lưu ý rằng, từ "chiều" là một từ đa nghĩa và khi đặt vào nhiều ngữ cảnh thường dễ làm ta bị nhầm lẫn.
-Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector hay một trục.
+Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc của một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector hay một trục.
 Tuy nhiên, chúng ta sử dụng số chiều của một `ndarray` để chỉ số trục của `ndarray` đó.
 Theo nghĩa này, chiều của một trục của một `ndarray` là độ dài của trục đó. 
 
@@ -270,7 +270,7 @@ To keep notation simple, commas are inserted to separate indices only when neces
 
 Ta có thể truy cập phần tử vô hướng $a_{ij}$ của ma trận $\mathbf{A}$ trong :eqref:`eq_matrix_def` bằng cách khai báo chỉ số dòng ($i$) và chỉ số cột ($j$), như là $[\mathbf{A}]_{ij}$.
 Khi những thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`chưa được đưa ra, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
-Nhằm giữ sự đơn giản cho các ký hiệu, dấu phẩy thường được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
+Nhằm giữ sự đơn giản cho các ký hiệu, dấu phẩy chỉ được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
 
 <!--
 Sometimes, we want to flip the axes.
@@ -332,7 +332,7 @@ Ma trận là một cấu trúc dữ liệu hữu ích: chúng cho phép ta tổ
 Ví dụ, các dòng trong ma trận của chúng ta có thể tượng trưng cho các căn nhà khác nhau (các điểm dữ liệu), còn các cột có thể tượng trưng cho những thuộc tính khác nhau của ngôi nhà.
 Bạn có thể thấy quen thuộc với điều này nếu đã từng sử dụng các phần mềm lập bảng tính hoặc đã đọc :numref:`sec_pandas`.
 Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tốt hơn nếu ta xem mỗi điểm dữ liệu như một vector dòng trong ma trận.
-Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ cho phép sự xuất hiện của những kỹ thuật học sâu thông dụng.
+Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ giúp dễ dàng áp dụng các kỹ thuật học sâu thông dụng.
 Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không có batch nhỏ nào cả. 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
