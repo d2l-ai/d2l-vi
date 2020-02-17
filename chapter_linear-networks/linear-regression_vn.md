@@ -408,7 +408,7 @@ We return to these topics throughout the book.
 -->
 
 Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó chỉ có một cực tiểu (toàn cục).
-Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt mất mát có nhiều cực tiểu.
+Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt của hàm mất mát sẽ có nhiều cực tiểu.
 May mắn là vì những lý do chưa được hiểu đầy đủ, những người sử dụng học sâu ít khi phải vật lộn để tìm ra các tham số giảm thiểu mất mát * trên dữ liệu huấn luyện *.
 Nhiệm vụ khó khăn hơn ở đây là tìm ra các tham số nhầm hạn chế mất mát trên dữ liệu nhất mà chúng ta chưa từng thấy trước đây, việc đầy thử thách này được gọi là * chuẩn hóa *.
 Chúng ta sẽ nhắc lại những chủ đề này trong xuyên suốt cuốn sách.
