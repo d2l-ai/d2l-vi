@@ -662,7 +662,7 @@ To begin, let's start by rewriting things in a 'layer' notation.
 -->
 
 Cho đến nay, chúng ta mới chỉ đề cập về các hàm tuyến tính.
-Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, ta có thể bắt đầu nghĩ mô hình tuyến tính như là một mạng nơ-ron bằng cách biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
+Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, nhưng ta có thể bắt đầu bằng cách nhìn mô hình tuyến tính như là một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
 Để bắt đầu, hãy cùng viết lại mọi thứ theo kiểu 'tầng'.
 
 <!-- ===================== Kết thúc dịch Phần 14 ===================== -->
