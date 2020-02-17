@@ -186,8 +186,8 @@ The most popular loss function in regression problems is the sum of squared erro
 When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the corresponding true label is $y^{(i)}$, the squared error is given by:
 -->
 
-Trước khi suy nghĩ làm thế nào để *khớp* mô hình vào với dữ liệu, ta cần phải xác định một cách đo cho *mức độ khớp*.
-Hàm mất mát định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
+Trước khi suy nghĩ làm thế nào để *khớp* mô hình vào với dữ liệu, ta cần phải xác định một cách để đo *mức độ khớp*.
+*Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
 Độ mất mát thường là một số không âm mà giá trị càng nhỏ thì càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
 Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
 
@@ -224,7 +224,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-Khi huấn luyện mô hình, chúng ta tìm các tham số ($\mathbf{w}^*, b^*$) để cực tiểu hóa tổng độ mất mát trên toàn bộ tất cả các mẫu huấn luyện:
+Khi huấn luyện mô hình, chúng ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ tất cả các mẫu huấn luyện:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
