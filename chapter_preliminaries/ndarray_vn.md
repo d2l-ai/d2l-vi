@@ -103,7 +103,7 @@ For instance, there are $12$ elements in the `ndarray` `x`.
 Unless otherwise specified, a new `ndarray` will be stored in main memory and designated for CPU-based computation.
 -->
 
-Để bắt đầu, chúng ta sử dụng `arange` để tạo một vector hàng `x` chứa $12$ số nguyên đầu tiên bắt đầu từ $0$, chúng sẽ được mặc định khởi tạo là các số thực.
+Để bắt đầu, chúng ta sử dụng `arange` để tạo một vector hàng `x` chứa $12$ số nguyên đầu tiên bắt đầu từ $0$, nhưng được khởi tạo mặc định dưới dạng số thực.
 Mỗi giá trị trong một `ndarray` được gọi là một *phần tử* của `ndarray` đó.
 Như vậy, có $12$ phần tử trong `ndarray` `x`.
 Nếu không nói gì thêm, một `ndarray` mới sẽ được lưu trong bộ nhớ chính và được tính toán trên CPU.
@@ -129,7 +129,7 @@ Because we are dealing with a vector here, the single element of its `shape` is 
 -->
 
 Nếu chỉ muốn biết tổng số phần tử của một `ndarray`, nghĩa là tích của tất cả các thành phần trong `shape`, ta có thể sử dụng thuộc tính `size`.
-Vì ta đang làm việc với một vector, phần tử duy nhất của `shape` và `size` của nó là như nhau.
+Vì ta đang làm việc với một vector, cả `shape` và `size` của nó đều chứa cùng một phần tử duy nhất.
 
 ```{.python .input  n=4}
 x.size
@@ -144,8 +144,8 @@ Note that the `size` is unaltered by reshaping.
 -->
 
 Để thay đổi kích thước của một `ndarray` mà không làm thay đổi số lượng phần tử cũng như giá trị của chúng, ta có thể gọi hàm `reshape`.
-Ví dụ, ta có thể biến đổi `ndarray` `x` trong ví dụ trên, từ một vector hàng với kích thước ($12$,) sang một ma trận kích thước ($3$, $4$).
-`ndarray` mới này chứa đúng $12$ phần tử, nhưng được xem như một ma trận với $3$ hàng và $4$ cột.
+Ví dụ, ta có thể biến đổi `ndarray` `x` trong ví dụ trên, từ một vector hàng với kích thước ($12$,) sang một ma trận với kích thước ($3$, $4$).
+`ndarray` mới này chứa $12$ phần tử y hệt, nhưng được xem như một ma trận với $3$ hàng và $4$ cột.
 Mặc dù kích thước thay đổi, các phần tử của `x` vẫn giữ nguyên.
 Chú ý rằng `size` giữ nguyên khi thay đổi kích thước.
 
@@ -167,21 +167,21 @@ We invoke this capability by placing `-1` for the dimension that we would like `
 In our case, instead of calling `x.reshape(3, 4)`, we could have equivalently called `x.reshape(-1, 4)` or `x.reshape(3, -1)`.
 -->
 
-Thay đổi kích thước bằng cách chỉ ra mọi chiều một cách thủ công là không cần thiết.
-Nếu kích thước mong muốn là một ma trận với kích thước (chiều_cao, chiều_rộng), thì sau khi biết chiều_rộng, chiều_cao sẽ được ngầm suy ra.
+Việc chỉ định cụ thể mọi chiều khi thay đổi kích thước là không cần thiết.
+Nếu kích thước mong muốn là một ma trận với kích thước (chiều_cao, chiều_rộng), thì sau khi biết chiều_rộng, chiều_cao có thể được ngầm suy ra.
 Tại sao ta lại cần phải tự làm phép tính chia?
-Trong ví dụ trên đây, để có được một ma trận với $3$ hàng, chúng ta chỉ rõ ra rằng nó nên có $3$ hàng và $4$ cột.
-May mắn thay, `ndarray` có thể tự động tính được một chiều nếu biết các chiều còn lại.
-Ta có thể đạt được điều này bằng cách đặt `-1` cho chiều đó.
-Trong trường hợp này, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
+Trong ví dụ trên, để có được một ma trận với $3$ hàng, chúng ta phải chỉ định rõ rằng nó có $3$ hàng và $4$ cột.
+May mắn thay, `ndarray` có thể tự động tính một chiều từ các chiều còn lại.
+Ta có dùng chức năng này bằng cách đặt `-1` cho chiều mà ta muốn `ndarray` tự suy ra.
+Trong trường hợp vừa rồi, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
 
 <!--
 The `empty` method grabs a chunk of memory and hands us back a matrix without bothering to change the value of any of its entries.
 This is remarkably efficient but we must be careful because the entries might take arbitrary values, including very big ones!
 -->
 
-Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không làm thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
-Việc này có hiệu quả tính toán đáng kể nhưng ta phải thật cẩn trọng bởi các phần tử đó có thể lấy những giá trị bất kỳ, bao gồm các số rất lớn!
+Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
+Việc này có hiệu quả tính toán đáng kể nhưng ta phải cẩn trọng bởi các phần tử đó có thể chứa bất kỳ giá trị nào, kể cả các số rất lớn!
 
 ```{.python .input  n=6}
 np.empty((3, 4))
@@ -192,7 +192,7 @@ Typically, we will want our matrices initialized either with zeros, ones, some o
 We can create an `ndarray` representing a tensor with all elements set to $0$ and a shape of ($2$, $3$, $4$) as follows:
 -->
 
-Thông thường, ta sẽ muốn các ma trận được khởi tạo bởi toàn giá trị không, giá trị một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
+Thông thường ta muốn khởi tạo các ma trận với các giá trị không, giá trị một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
 Ta có thể tạo một `ndarray` biểu diễn một tensor với tất cả các phần tử bằng $0$ và có kích thước ($2$, $3$, $4$) như sau:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -207,7 +207,7 @@ np.zeros((2, 3, 4))
 Similarly, we can create tensors with each element set to 1 as follows:
 -->
 
-Tương tự, ta có thể tạo các tensor với các thành phần bằng 1 như sau:
+Tương tự, ta có thể tạo các tensor với các phần tử bằng 1 như sau:
 
 ```{.python .input  n=8}
 np.ones((2, 3, 4))
@@ -221,7 +221,7 @@ Each of its elements is randomly sampled from a standard Gaussian (normal) distr
 -->
 
 Ta thường muốn lấy mẫu ngẫu nhiên cho mỗi phần tử trong một `ndarray` từ một phân phối xác suất.
-Ví dụ, khi xây dựng các mảng để chứa các tham số trong một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
+Ví dụ, khi xây dựng các mảng để chứa các tham số của một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
 Đoạn mã dưới đây tạo một `ndarray` có kích thước ($3$, $4$) với các phần tử được lấy mẫu ngẫu nhiên từ một phân phối Gauss (phân phối chuẩn) với trung bình bằng $0$ và độ lệch chuẩn $1$.
 
 ```{.python .input  n=10}
@@ -233,7 +233,7 @@ We can also specify the exact values for each element in the desired `ndarray` b
 Here, the outermost list corresponds to axis $0$, and the inner list to axis $1$.
 -->
 
-Ta cũng có thể khởi tạo giá trị chính xác cho mỗi phần tử trong `ndarray` mong muốn bằng cách đưa vào một mảng Python (hoặc mảng của mảng) chứa các giá trị số.
+Ta cũng có thể khởi tạo giá trị cụ thể cho mỗi phần tử trong `ndarray` mong muốn bằng cách đưa vào một mảng Python (hoặc mảng của mảng) chứa các giá trị số.
 Ở đây, mảng ngoài cùng tương ứng với trục $0$, và mảng bên trong tương ứng với trục $1$.
 
 ```{.python .input  n=9}
