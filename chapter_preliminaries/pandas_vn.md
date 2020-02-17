@@ -133,7 +133,7 @@ A row with a missing alley type will set their values to $0$ and $1$.
 
 Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một mục riêng.
 Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" (được lát gạch) và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
-Những hàng có kiểu lối đi là "Pave" sẽ có giá trị của cột "Alley_Pave" là $1$.
+Những hàng có kiểu lối đi là "Pave" sẽ có giá trị của cột "Alley_Pave" là $1$ và cột "Alley_nan" tương ứng là $0$.
  Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị cột "Alley_Pave" và cột "Alley_nan" lần lượt là $0$ và $1$.
 
 ```{.python .input}
