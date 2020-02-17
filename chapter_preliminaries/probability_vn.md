@@ -473,7 +473,7 @@ In all the other cases we call $A$ and $B$ dependent. For instance, two successi
 Một tính chất hữu ích khác để kiểm tra là *tính phụ thuộc* với *tính độc lập*.
 Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là sự xuất hiện của một sự kiện của $A$ không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
 Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp B$. 
-Từ định lý của Bayes, ta có $P(A \mid B) = P(A)$.
+Từ định lý Bayes, ta có $P(A \mid B) = P(A)$.
 Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. 
 Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. 
 Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
