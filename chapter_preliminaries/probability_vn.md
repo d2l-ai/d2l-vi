@@ -471,11 +471,12 @@ In this case $P(B \mid A) = P(B)$. Statisticians typically express this as $A \p
 In all the other cases we call $A$ and $B$ dependent. For instance, two successive rolls of a die are independent. In contrast, the position of a light switch and the brightness in the room are not (they are not perfectly deterministic, though, since we could always have a broken light bulb, power failure, or a broken switch).
 -->
 Một tính chất hữu ích khác để kiểm tra là *tính phụ thuộc* với *tính độc lập*.
-Hai biến ngẫu nhiên $A$ và $B$ độc lập
-nghĩa là sự xuất hiện của một sự kiện của $A$
-không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
-Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp  B$. Từ định lý của Bayes, ta có $P(A \mid B) = P(A)$.
-Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
+Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là sự xuất hiện của một sự kiện của $A$ không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
+Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp B$. 
+Từ định lý của Bayes, ta có $P(A \mid B) = P(A)$.
+Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. 
+Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. 
+Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
 
 <!--
 Since $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ is equivalent to $P(A, B) = P(A)P(B)$, two random variables are independent if and only if their joint distribution is the product of their individual distributions.
@@ -484,8 +485,7 @@ if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $
 -->
 
 Vì $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ tương đương với $P(A, B) = P(A)P(B)$, hai biến ngẫu nhiên là độc lập khi và chỉ khi phân phối đồng thời của chúng là tích các phân phối riêng lẻ của chúng.
-Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* 
-khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. Điều này được biểu thị bằng $A \perp B \mid C$.
+Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. Điều này được biểu thị bằng $A \perp B \mid C$.
 
 <!--
 ### Application
@@ -500,8 +500,10 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 :numref:`conditional_prob_D1` lists such conditional probability.
 -->
 
-Hãy thử nghiệm các kiến thức chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. Hơn thế nữa,
-nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. Chúng tôi sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng HIV ($1$ nếu dương tính và $0$ nếu âm tính).
+Hãy thử nghiệm các kiến thức chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
+Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. 
+Hơn thế nữa,nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
+Chúng tôi sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng HIV ($1$ nếu dương tính và $0$ nếu âm tính).
 :numref:`conditional_prob_D1` liệt kê xác suất có điều kiện đó.
 
 <!--
