@@ -631,7 +631,7 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-Như bạn có thể thấy, thay đổi giá trị trung bình dọc theo chiều trục x đồng thời mở rộng phương sai sẽ giảm giá trị cực đỉnh của phân phối.
+Như bạn có thể thấy, thay đổi giá trị trung bình dọc theo chiều *trục x* đồng thời mở rộng phương sai sẽ giảm giá trị cực đỉnh của phân phối.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
@@ -653,7 +653,7 @@ $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma
 Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
 -->
 
-Dựa vào *Nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp cực đại hóa *sự hợp lý* của bộ dữ liệu.
+Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp cực đại hóa *sự hợp lý* của bộ dữ liệu:
 
 $$P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).$$
 
@@ -665,7 +665,11 @@ So, without changing anything we can minimize the *Negative Log-Likelihood (NLL)
 Working out the math gives us:
 -->
 
-Bộ ước lượng được chọn theo *Nguyên lý hợp lý cực đại* được gọi là *Ước lượng hợp lý cực đại* (MLE). Khi đó việc cực đại hóa kết quả của nhiều hàm mũ có thể gặp khó khăn, thay vào đó chúng ta có thể đơn giản hóa chúng mà không ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa hàm log của chúng. Theo một vài nguyên nhân từ những nghiên cứu trước đó, các bài toán tối ưu hóa thường được hiểu như việc tìm ra giá trị nhỏ nhất thay vì bài toán tối đa hóa. Vì vậy chúng ta có thể cực tiểu hóa *Negative Log-Likelihood (NLL)* $-\log p(\mathbf y|\mathbf X)$. Ta có:
+Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *Ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE).
+Khi đó việc cực đại hóa kết quả của nhiều hàm mũ có thể gặp khó khăn, thay vào đó chúng ta có thể đơn giản hóa chúng mà không ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa hàm log của chúng.
+Theo một vài nguyên nhân từ những nghiên cứu trước đó, các bài toán tối ưu hóa thường được hiểu như việc tìm ra giá trị nhỏ nhất thay vì bài toán tối đa hóa.
+Vì vậy chúng ta có thể cực tiểu hóa *Negative Log-Likelihood (NLL)* $-\log p(\mathbf y|\mathbf X)$.
+Ta có:
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
 
