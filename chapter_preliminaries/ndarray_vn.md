@@ -83,7 +83,7 @@ With two axes, an `ndarray` corresponds to a *matrix*.
 Arrays with more than two axes do not have special mathematical names---we simply call them *tensors*.
 -->
 
-Một `ndarray` biểu diễn một mảng (có thể đa chiều) các giá trí số.
+Một `ndarray` biểu diễn một mảng (có thể đa chiều) các giá trị số.
 Với một trục, một `ndarray` tương ứng (trong toán) với một *vector*.
 Với hai trục, một `ndarray` tương ứng với một *ma trận*.
 Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*.
