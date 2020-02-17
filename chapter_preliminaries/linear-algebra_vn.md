@@ -229,7 +229,7 @@ Matrices, which we will typically denote with bold-faced, capital letters (e.g.,
 
 Giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận sẽ khái quát những vector từ bậc $1$ sang bậc $2$.
 Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$);
-và được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
+và được biểu diễn bằng các `ndarray` với $2$ trục khi lập trình.
 
 <!--
 In math notation, we use $\mathbf{A} \in \mathbb{R}^{m \times n}$ to express that the matrix $\mathbf{A}$ consists of $m$ rows and $n$ columns of real-valued scalars.
