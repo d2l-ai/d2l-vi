@@ -359,7 +359,7 @@ Tensors are denoted with capital letters of a special font face (e.g., $\mathsf{
 Giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
 Tensor cho chúng ta một phương pháp tổng quát để miêu tả các `ndarray` với số trục bất kỳ.
 Ví dụ, vector là các tensor bậc một còn ma trận là các tensor bậc hai.
-Tensor được ký hiệu với ký tự viết hoa sử dụng một mặt chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
+Tensor được ký hiệu với ký tự viết hoa sử dụng một font chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
 
 <!--
 Tensors will become more important when we start working with images, which arrive as `ndarray`s with 3 axes corresponding to the height, width, and a *channel* axis for stacking the color channels (red, green, and blue). 
@@ -394,7 +394,7 @@ Ví dụ, cộng hai ma trận có cùng kích thước sẽ thực hiện phép
 
 ```{.python .input}
 A = np.arange(20).reshape(5, 4)
-B = A.copy()  # Gán một bản sao của A cho B bằng cách phân bổ bộ nhớ mới
+B = A.copy()  # Assign a copy of A to B by allocating new memory
 A, A + B
 ```
 
