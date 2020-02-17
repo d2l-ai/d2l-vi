@@ -502,8 +502,8 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 
 Hãy thử nghiệm các kiến thức chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
 Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. 
-Hơn thế nữa,nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
-Chúng tôi sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng HIV ($1$ nếu dương tính và $0$ nếu âm tính).
+Hơn thế nữa, nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
+Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng nhiễm HIV ($1$ nếu dương tính và $0$ nếu âm tính).
 :numref:`conditional_prob_D1` liệt kê xác suất có điều kiện đó.
 
 <!--
@@ -533,7 +533,7 @@ Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng
 Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trở thành dương tính, tức là, $P(H = 1 \mid D_1 = 1)$.
 Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng báo động sai.
 Giả sử rằng dân số khá khỏe mạnh, ví dụ: $P(H=1) = 0.0015$.
-Để áp dụng Định lý Bayes, chúng ta cần áp dụng quy tắc cận biên và quy tắc nhân để xác định
+Để áp dụng Định lý Bayes, chúng ta cần áp dụng phép biên hóa và quy tắc nhân để xác định
 
 $$\begin{aligned}
 &P(D_1 = 1) \\
