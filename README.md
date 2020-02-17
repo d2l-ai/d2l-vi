@@ -25,7 +25,7 @@ Với các chương (2., 3., ...)
 * [x] [Ký hiệu](chapter_notation/index_vn.md)
 * [x] [Giới thiệu](chapter_introduction/index_vn.md)
 * [-] 2. [Sơ bộ](chapter_preliminaries/index_vn.md)
-    * [-] 2.1. [Thao tác với Dữ liệu](chapter_preliminaries/ndarray_vn.md)
+    * [x] 2.1. [Thao tác với Dữ liệu](chapter_preliminaries/ndarray_vn.md)
     * [x] 2.2. [Tiền Xử lý Dữ liệu](chapter_preliminaries/pandas_vn.md)
     * [x] 2.3. [Đại số Tuyến tính](chapter_preliminaries/linear-algebra_vn.md)
     * [x] 2.4. [Giải tích](chapter_preliminaries/calculus_vn.md)
@@ -65,7 +65,7 @@ Với các chương (2., 3., ...)
     * [ ] 6.4. Multiple Input and Output Channels
     * [ ] 6.5. Pooling
     * [ ] 6.6. Convolutional Neural Networks (LeNet)
-* [ ] 7. Modern Convolutional Networks
+* [ ] 7. Modern Convolutional Neural Networks
     * [ ] 7.1. Deep Convolutional Neural Networks (AlexNet)
     * [ ] 7.2. Networks Using Blocks (VGG)
     * [ ] 7.3. Network in Network (NiN)
@@ -81,7 +81,7 @@ Với các chương (2., 3., ...)
     * [ ] 8.5. Implementation of Recurrent Neural Networks from Scratch
     * [ ] 8.6. Concise Implementation of Recurrent Neural Networks
     * [ ] 8.7. Backpropagation Through Time
-* [ ] 9. Modern Recurrent Networks
+* [ ] 9. Modern Recurrent Neural Networks
     * [ ] 9.1. Gated Recurrent Units (GRU)
     * [ ] 9.2. Long Short Term Memory (LSTM)
     * [ ] 9.3. Deep Recurrent Neural Networks

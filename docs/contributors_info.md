@@ -22,13 +22,12 @@
 | 18. | [tamnguyenvan](https://github.com/tamnguyenvan)                 | Nguyễn Văn Tâm                 |
 | 19. | [antran511](https://github.com/antran511)                       | Trần Kiến An                   |
 | 20. | [trhgquan](https://github.com/trhgquan)                         | Trần Hoàng Quân                |
-| 21. | [hagiangnguyen-1996](https://github.com/hagiangnguyen-1996)     | Nguyễn Thị Hà Giang            |
-| 22. | [thunguyenuehk39](https://github.com/thunguyenuehk39)           | Nguyễn Minh Thư                |
-| 23. | [hungthuanmk](https://github.com/hungthuanmk)                   | Nguyễn Phan Hùng Thuận         |
-| 24. | [nhatquanbui](https://github.com/NhatQuanBui)                   | Bùi Nhật Quân                  |
-| 25. | [thienbuu](https://github.com/thienbuu)                         | Lê Gia Thiên Bửu               |
-| 26. | [tdh512194](https://github.com/tdh512194)                       | Tạ Đức Huy                     |
-| 27. | [thanhvinhle26](https://github.com/thanhvinhle26)               | Lê Thành Vinh                  |
-| 28. | [lyphilong](https://github.com/lyphilong)                       | Lý Phi Long                    |
-| 29. | [hainguyen15](https://github.com/hainguyen15)                   | Nguyễn Quang Hải               |
-| 30. | [tmnguyen1403](https://github.com/tmnguyen1403)                 | Minh Trí Nguyễn                |
+| 21. | [thunguyenuehk39](https://github.com/thunguyenuehk39)           | Nguyễn Minh Thư                |
+| 22. | [hungthuanmk](https://github.com/hungthuanmk)                   | Nguyễn Phan Hùng Thuận         |
+| 23. | [nhatquanbui](https://github.com/NhatQuanBui)                   | Bùi Nhật Quân                  |
+| 24. | [thienbuu](https://github.com/thienbuu)                         | Lê Gia Thiên Bửu               |
+| 25. | [tdh512194](https://github.com/tdh512194)                       | Tạ Đức Huy                     |
+| 26. | [thanhvinhle26](https://github.com/thanhvinhle26)               | Lê Thành Vinh                  |
+| 27. | [lyphilong](https://github.com/lyphilong)                       | Lý Phi Long                    |
+| 28. | [hainguyen15](https://github.com/hainguyen15)                   | Nguyễn Quang Hải               |
+| 29. | [tmnguyen1403](https://github.com/tmnguyen1403)                 | Minh Trí Nguyễn                |
