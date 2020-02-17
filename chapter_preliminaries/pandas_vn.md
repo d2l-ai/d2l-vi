@@ -18,7 +18,7 @@ We will cover more data preprocessing techniques in later chapters.
 -->
 
 Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật thao tác dữ liệu được lưu trong dạng `ndarray`.
-Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không phải luôn có ngay dữ liệu ngăn nắp được chuẩn bị sẵn trong định dạng `ndarray`.
+Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không có luôn dữ liệu ngăn nắp được chuẩn bị sẵn trong định dạng `ndarray`.
 Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` được sử dụng phổ biến và có thể kết hợp được với định dạng `ndarray`.
 Vì vậy, chúng ta sẽ đi nhanh qua các bước để tiền xử lý dữ liệu thô bằng `pandas` rồi đổi chúng sang dạng `ndarray`.
 Nhiều kỹ thuật tiền xử lý dữ liệu khác sẽ được giới thiệu trong các chương sau.
