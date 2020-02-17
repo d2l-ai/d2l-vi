@@ -107,7 +107,7 @@ To handle missing data, typical methods include *imputation* and *deletion*, whe
 -->
 
 Để ý rằng giá trị "NaN" là các giá trị bị thiếu.
-Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc  thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
+Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
 Dưới đây chúng ta xem xét phương pháp quy buộc.
 
 <!--
@@ -115,8 +115,8 @@ By integer-location based indexing (`iloc`), we split `data` into `inputs` and `
 For numerical values in `inputs` that are missing, we replace the "NaN" entries with the mean value of the same column.
 -->
 
-Bằng phương pháp đánh vị trí theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
-Với các giá trị số bị thiếu trong `inputs`, ta thay thế phần tử "NaN" bằng giá trị trung bình của cùng cột đó. 
+Bằng phương pháp đánh chỉ số theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
+Với các giá trị số bị thiếu trong `inputs`, ta thay thế phần tử "NaN" bằng giá trị trung bình cộng của cùng cột đó. 
 
 ```{.python .input}
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
