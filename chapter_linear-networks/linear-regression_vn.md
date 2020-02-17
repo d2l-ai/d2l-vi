@@ -394,7 +394,7 @@ Note that even if our function is truly linear and noiseless, these parameters w
 although the algorithm converges slowly towards a local minimum it cannot achieve it exactly in a finite number of steps.
 -->
 
-Sau khi huấn luyện bằng một số lần lặp được xác định trước (hoặc cho đến khi đạt được một số tiêu chí dừng nhất định),
+Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một tiêu chí dừng nhất định khác),
 ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (thường thì biểu tượng "mũ" thể hiện các giá trị ước lượng).
 Lưu ý rằng ngay cả khi chức năng của chúng ta thực sự tuyến tính và không có hiễu, các tham số này sẽ không giảm thiểu chính xác của mất mát vì,
 Mặc dù thuật toán dần dần hội tụ đến một cực tiểu địa phương, nó vẫn không thể tới được chính xác cực tiểu đó với số bước hữu hạn.
