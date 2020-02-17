@@ -141,6 +141,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
 | implicit feedback | phản hồi gián tiếp                                     |               |
+| imputation (Preprocessing) | quy buộc                                      |               |
 | independence assumption | giả định độc lập                                 |               |
 | iteration | vòng lặp                                                       |               |
 
