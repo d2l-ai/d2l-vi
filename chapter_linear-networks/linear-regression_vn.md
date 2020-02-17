@@ -270,7 +270,7 @@ Although analytic solutions allow for nice mathematical analysis, the requiremen
 ### Gradient descent
 -->
 
-### *dịch tiêu đề phía trên*
+### Hạ Gradient
 
 <!--
 Even in cases where we cannot solve the models analytically, and even when the loss surfaces are high-dimensional and nonconvex, it turns out that we can still train models effectively in practice.
