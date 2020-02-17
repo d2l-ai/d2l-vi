@@ -38,7 +38,7 @@ Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân 
 ## Basic Elements of Linear Regression
 -->
 
-## *dịch tiêu đề phía trên*
+## Một số Thành phần Cơ bản của Hồi quy Tuyến tính
 
 <!--
 *Linear regression* may be both the simplest and most popular among the standard tools to regression.
@@ -50,7 +50,12 @@ To motivate the approach, let's start with a running example.
 Suppose that we wish to estimate the prices of houses (in dollars) based on their area (in square feet) and age (in years).
 -->
 
-*dịch đoạn phía trên*
+*Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất cho hồi quy.
+Quay trở về đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
+Đầu tiên, ta giả sử quan hệ giữa *các đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng thêm nhiễu qua sự quan sát.
+Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
+Để tạo động lực, chúng ta hãy bắt đầu chạy một ví dụ.
+Hãy cho là ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (theo năm).
 
 <!--
 To actually fit a model for predicting house prices, we would need to get our hands on a dataset consisting of sales for which we know the sale price, area and age for each home.
@@ -59,14 +64,18 @@ The thing we are trying to predict (here, the price) is called a *target* or *la
 The variables (here *age* and *area*) upon which the predictions are based are called *features* or *covariates*.
 -->
 
-*dịch đoạn phía trên*
+Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà chúng ta đã biết giá bán, diện tích, tuổi đời cho từng căn nhà.
+Trong thuật ngữ của học máy, dữ liệu được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu cho một lần bán) được gọi là một *ví dụ* hoặc *mẫu*.
+Thứ mà chúng ta muốn dự đoán (giá nhà) được gọi là *mục tiêu* hoặc *nhãn*.
+Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là *những đặc trưng* hoặc *những hiệp biến*.
 
 <!--
 Typically, we will use $n$ to denote the number of examples in our dataset.
 We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ and the corresponding label as $y^{(i)}$.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số mẫu trong dữ liệu.
+Chúng ta truy cập các mẫu bằng chỉ số $i$, kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và tương ứng nhãn là $y^{(i)}$.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -862,7 +871,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
 
 <!-- Phần 3 -->
 * Nguyễn Văn Tâm
