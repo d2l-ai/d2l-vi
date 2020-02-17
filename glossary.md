@@ -257,7 +257,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê                                               |                       |
 | statistical significant         | có ý nghĩa thống kê                                            |                       |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên                                         |                       |
+| subscript                       | chỉ số dưới                                                    |                       |
 | subspace estimation             | ước lượng không gian con                                       |                       |
+| superscript                     | chỉ số trên                                                    |                       |
 | supervised learning             | học có giám sát                                                |                       |
 | surrogate objective             | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1 |
 | symbolic graph                  | đồ thị biểu tượng                                              |                       |
