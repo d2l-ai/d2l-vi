@@ -190,6 +190,7 @@ Trước khi suy nghĩ làm thế nào để *khớp* mô hình vào với dữ 
 *Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
 Độ mất mát thường là một số không âm mà giá trị càng nhỏ thì càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
 Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
+Khi giá trị dự đoán của một dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn trị thực tương ứng của nó là $y^{(i)}$, bình phương của lỗi được xác định như sau:
 
 $$l^{(i)}(\mathbf{w}, b) = \frac{1}{2} \left(\hat{y}^{(i)} - y^{(i)}\right)^2.$$
 
