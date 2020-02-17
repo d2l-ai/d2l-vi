@@ -799,7 +799,9 @@ pointed out that although airplanes might have been *inspired* by birds, ornitho
 Likewise, inspiration in deep learning these days comes in equal or greater measure from mathematics, statistics, and computer science.
 -->
 
-*dịch đoạn phía trên*
+Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay chỉ lấy một phần cảm hứng từ ngành thần kinh học.
+Như Stuart Russell và Peter Norvig, những người mà trong cuốn sách kinh điển về học sâu *Trí tuệ nhân tạo: Một phương pháp hiện đại* :cite:`Russell.Norvig.2016`, chỉ ra rằng: mặc dù máy bay có thể được lấy *cảm hứng* từ loài chim, ngành điểu học không phải động lực chính làm đổi mới ngành hàng không trong nhiều thế kỷ qua.
+Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ ngành toán học, thống kê và khoa học máy tính.
 
 <!-- ========================================= REVISE PHẦN 9 - KẾT THÚC ===================================-->
 
@@ -809,7 +811,7 @@ Likewise, inspiration in deep learning these days comes in equal or greater meas
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Key ingredients in a machine learning model are training data, a loss function, an optimization algorithm, and quite obviously, the model itself.
@@ -818,7 +820,10 @@ Likewise, inspiration in deep learning these days comes in equal or greater meas
 * Linear models are neural networks, too.
 -->
 
-*dịch đoạn phía trên*
+* Yếu tố quyết định đối với một mô hình học máy bao gồm dữ liệu huấn luyện, một hàm mất mát, một thuật toán tối ưu, và tất nhiên là cả chính mô hình đó.
+* Vector hóa giúp mọi thứ trở nên dễ hiểu hơn (về mặt toán học) và nhanh hơn (về mặt lập trình).
+* Cực tiểu hóa một hàm mục tiêu và thực hiện cực đại ước lượng hợp lý hoàn toàn giống nhau.
+* Các mô hình tuyến tính cũng là mạng nơ-ron.
 
 <!-- ===================== Kết thúc dịch Phần 17 ===================== -->
 
@@ -927,7 +932,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 17 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 18 -->
 *
