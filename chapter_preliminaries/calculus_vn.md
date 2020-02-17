@@ -437,7 +437,7 @@ We can concatenate partial derivatives of a multivariate function with respect t
 Suppose that the input of function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is an $n$-dimensional vector $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ and the output is a scalar. The gradient of the function $f(\mathbf{x})$ with respect to $\mathbf{x}$ is a vector of $n$ partial derivatives:
 -->
 
-Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm đa biến để thu được vector *gradient* của hàm số đó.
+Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm nhiều biến để thu được vector *gradient* của hàm số đó.
 Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$ chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
 Gradient của hàm $f(\mathbf{x})$ theo $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
 
