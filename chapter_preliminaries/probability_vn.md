@@ -552,7 +552,7 @@ $$
 Now we can apply marginalization and the multiplication rule:
 -->
 
-Bây giờ chúng ta có thể áp dụng biên hóa và quy tắc nhân xác suất:
+Bây giờ chúng ta có thể áp dụng phép biên hóa và quy tắc nhân xác suất:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1) \\
