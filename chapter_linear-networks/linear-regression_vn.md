@@ -397,7 +397,7 @@ although the algorithm converges slowly towards a local minimum it cannot achiev
 Sau khi huấn luyện bằng một số lần lặp được xác định trước (hoặc cho đến khi đạt được một số tiêu chí dừng nhất định),
 ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (thường thì biểu tượng "mũ" thể hiện các giá trị ước lượng).
 Lưu ý rằng ngay cả khi chức năng của chúng ta thực sự tuyến tính và không có hiễu, các tham số này sẽ không giảm thiểu chính xác của mất mát vì,
-mặc dù thuật toán hội tụ chậm theo hướng tối thiểu cục bộ nhưng nó vẫn không thể đạt được chính xác trong một số bước hữu hạn.
+Mặc dù thuật toán dần dần hội tụ đến một cực tiểu địa phương, nó vẫn không thể tới được chính xác cực tiểu đó với số bước hữu hạn.
 
 <!--
 Linear regression happens to be a convex learning problem, and thus there is only one (global) minimum.
