@@ -382,7 +382,10 @@ These parameters that are tunable but not updated in the training loop are calle
 *Hyperparameter tuning* is the process by which these are chosen, and typically requires that we adjust the hyperparameters based on the results of the inner (training) loop as assessed on a separate *validation* split of the data.
 -->
 
-*dịch đoạn phía trên*
+Trong phương trình trên, $|\mathcal{B}|$ đại diện cho số ví dụ trong mỗi tập ( kích thước của tập) và $\eta$ là *tỉ lệ học*.
+Cũng cần phải nhấn mạnh rằng các giá trị của kích thước tập và tỷ lệ học được quy định trước một cách thủ công và thường không được học thông qua mô hình huấn luyện.
+Các tham số có thể điều chỉnh nhưng không được cập nhật trong vòng huấn luyện được gọi là * siêu tham số *.
+* Siêu tham số điều chỉnh * là quá trình chúng được chọn và thường xuyên yêu cầu chúng ta điều chỉnh siêu tham số dựa trên kết quả của bên trong vòng lặp (huấn luyện) được đánh giá giống như *kiểm định* phân tách dữ liệu..
 
 <!--
 After training for some predetermined number of iterations (or until some other stopping criteria is met), 
@@ -391,7 +394,10 @@ Note that even if our function is truly linear and noiseless, these parameters w
 although the algorithm converges slowly towards a local minimum it cannot achieve it exactly in a finite number of steps.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện bằng một số lần lặp được xác định trước (hoặc cho đến khi đạt được một số tiêu chí dừng nhất định),
+chúng ta sẽ ghi nhận các tham số mà mô hình ước tính, được ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (một cách thống nhất thì biểu tượng "mũ phía trên" biểu thị ước tính).
+Lưu ý rằng ngay cả khi chức năng của chúng ta thực sự tuyến tính và không có hiễu, các tham số này sẽ không giảm thiểu chính xác của mất mát vì,
+mặc dù thuật toán hội tụ chậm theo hướng tối thiểu cục bộ nhưng nó vẫn không thể đạt được chính xác trong một số bước hữu hạn.
 
 <!--
 Linear regression happens to be a convex learning problem, and thus there is only one (global) minimum.
@@ -401,7 +407,11 @@ The more formidable task is to find parameters that will achieve low loss on dat
 We return to these topics throughout the book.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy tuyến tính sẽ xuất hiện vấn đề học lồi, và do đó chỉ có một mức cực tiểu (toàn bộ).
+Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt mất mát có nhiều cực tiểu.
+May mắn là vì những lý do chưa được hiểu đầy đủ, những người sử dụng học sâu ít khi phải vật lộn để tìm ra các tham số giảm thiểu mất mát * trên dữ liệu huấn luyện *.
+Nhiệm vụ khó khăn hơn ở đây là tìm ra các tham số nhầm hạn chế mất mát trên dữ liệu nhất mà chúng ta chưa từng thấy trước đây, việc đầy thử thách này được gọi là * chuẩn hóa *.
+Chúng ta sẽ nhắc lại những chủ đề này trong xuyên suốt cuốn sách.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -904,7 +914,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 9 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 10 -->
 * Tạ Đức Huy
