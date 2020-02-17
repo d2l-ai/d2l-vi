@@ -594,34 +594,32 @@ $$
 Thus, we get
 -->
 
-*dịch đoạn phía trên*
+Do đó, ta có
 
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1)\\ =& \frac{P(D_1=1 \mid H=1) P(H=1)}{P(D_1=1)} \\ =& 0.1306 \end{aligned}.$$
--->
 
-*dịch đoạn phía trên*
 
 <!--
 In other words, there is only a 13.06% chance that the patient actually has AIDS, despite using a very accurate test. As we can see, probability can be quite counterintuitive.
 -->
 
-*dịch đoạn phía trên*
-
+Nói cách khác, chỉ có 13,06% khả năng rằng bệnh nhân mắc bệnh AIDS, mặc dù với một bài kiểm tra rất chính xác. Như chúng ta thấy, xác suất có thể là phản trực giác.
 <!--
 What should a patient do upon receiving such terrifying news? Likely, the patient
 would ask the physician to administer another test to get clarity. The second
 test has different characteristics and it is not as good as the first one, as shown in :numref:`conditional_prob_D2`.
 -->
 
-*dịch đoạn phía trên*
+Một bệnh nhân phải làm gì nếu nhận một tin xấu? Nhiều khả năng bệnh nhân sẽ yêu cầu bác sĩ thực hiện một xét nghiệm khác để có được sự rõ ràng.
+Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằng bài thứ nhất được thể hiện trong :numref:`conditional_prob_D2`. 
 
 
 <!--
 :Conditional probability of $P(D_2 \mid H)$.
 -->
 
-*dịch đoạn phía trên*
+:Xác suất có điều kiện của $P(D_2 \mid H)$.
 
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
@@ -634,7 +632,13 @@ test has different characteristics and it is not as good as the first one, as sh
 Unfortunately, the second test comes back positive, too. Let's work out the requisite probabilities to invoke Bayes' Theorem by assuming the conditional independence:
 -->
 
-*dịch đoạn phía trên*
+| Xác xuất có điều kiện | $H=1$ | $H=0$ |
+|---|---|---|
+|$P(D_2 = 1 \mid H)$|            0.98 |         0.03 |
+|$P(D_2 = 0 \mid H)$|            0.02 |         0.97 |
+:label:`conditional_prob_D2`
+
+Không may thay, bài kiểm tra thứ hai cũng dương tính. Chúng ta hãy chỉ ra những xác suất cần thiết để sử dụng định lý Bayes bằng cách giả định các điều kiện độc lập:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1 \mid H = 0) \\
@@ -654,7 +658,7 @@ $$
 Now we can apply marginalization and the multiplication rule:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể áp dụng phép biên hóa và quy tắc nhân xác suất:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1) \\
@@ -668,7 +672,7 @@ $$
 In the end, the probability of the patient having AIDS given both positive tests is
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng xác suất bệnh nhân mắc bệnh AIDS qua hai lần dương tính là
 
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1, D_2 = 1)\\
@@ -680,8 +684,7 @@ $$
 <!--
 That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.
 -->
-
-*dịch đoạn phía trên*
+Do đó, thử nghiệm thứ hai mang lại nhiều lý do hơn để tin rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -844,7 +847,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 9 -->
-*
+* Lê Thành Vinh
 
 <!-- Phần 10 -->
 * Nguyễn Minh Thư

@@ -59,10 +59,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | constrain                           | ràng buộc                                                      |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
 | convolution neural networks         | mạng nơ-ron tích chập                                          |                        |
-| cross entropy                       | entropy chéo                                                   |                        |
-| cross validation                    | kiểm định chéo                                                 |                        |
 | cost function                       | hàm chi phí                                                    |                        |
 | covariate                           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
+| cross entropy                       | entropy chéo                                                   |                        |
+| cross validation                    | kiểm định chéo                                                 |                        |
 
 ## D
 | English                | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -75,9 +75,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dataset (data set)     | tập dữ liệu                                                    |               |
 | data manipulation      | thao tác với dữ liệu                                           |               |
 | deep learning          | học sâu                                                        |               |
-| development set        | tập phát triển                                                 |               |
 | dev set                | tập phát triển                                                 |               |
 | dev set performance    | chất lượng trên tập phát triển                                 |               |
+| development set        | tập phát triển                                                 |               |
 | differentiable         | khả vi                                                         |               |
 | distribution           | phân phối                                                      |               |
 | domain adaptation      | thích ứng miền                                                 |               |
@@ -88,6 +88,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English             | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
 |---------------------|----------------------------------------------------------------|-----------------------|
 | early stopping      | dừng sớm                                                       |                       |
+| effect size         | hệ số ảnh hưởng                                                |                       |
 | eigen-decomposition | phân tích trị riêng                                            |                       |
 | eigenvalue          | trị riêng                                                      |                       |
 | eigenvector         | vector riêng                                                   |                       |
@@ -101,9 +102,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example             | mẫu                                                            |                       |
 | expectation         | kỳ vọng                                                        |                       |
 | explicit feedback   | phản hồi trực tiếp                                             |                       |
-| Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
-| effect size         | hệ số ảnh hưởng                                                |                       |
 | expression (math)   | biểu thức (toán học)                                           |                       |
+| Eyeball dev set     | Tập phát triển Eyeball                                         | http://bit.ly/2MVHcl7 |
 
 ## F
 | English         | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -141,6 +141,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
 |-----------|----------------------------------------------------------------|---------------|
 | implicit feedback | phản hồi gián tiếp                                     |               |
+| imputation (Preprocessing) | quy buộc                                      |               |
 | independence assumption | giả định độc lập                                 |               |
 | iteration | vòng lặp                                                       |               |
 
@@ -241,24 +242,24 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling with replacement       | lấy mẫu có hoàn lại                                            | http://bit.ly/34wQuKr |
 | sampling without replacement    | lấy mẫu không hoàn lại                                         | http://bit.ly/34wQuKr |
 | satisficing metric              | phép đo thỏa mãn                                               | http://bit.ly/2BvfPYA |
+| scalar                          | số vô hướng                                                    |                       |
 | scroing function                | hàm tính điểm                                                  |                       |
 | sentiment classification        | phân loại cảm xúc                                              |                       |
 | sequence learning               | học chuỗi                                                      | http://bit.ly/2SsUity |
+| sensitivity                     | độ nhạy                                                        |                       |
 | shape (trong Đại số Tuyến tính) | kích thước                                                     |                       |
-| slicing (trong Array)          | trích chọn                                                     |                       |
+| significance test               | kiểm định ý nghĩa                                              |                       |
+| slicing (trong Array)           | trích chọn                                                     |                       |
 | spam email                      | email rác                                                      |                       |
+| speech recognition              | nhận dạng giọng nói                                            |                       |
 | standard deviation              | độ lệch chuẩn                                                  |                       |
+| statistical power               | năng lực thống kê                                              |                       |
 | statistical significance        | ý nghĩa thống kê                                               |                       |
 | statistical significant         | có ý nghĩa thống kê                                            |                       |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên                                         |                       |
-| speech recognition              | nhận dạng giọng nói                                            |                       |
+| subspace estimation             | ước lượng không gian con                                       |                       |
 | supervised learning             | học có giám sát                                                |                       |
 | surrogate objective             | mục tiêu thay thế                                              | http://bit.ly/2PIxkN1 |
-| subspace estimation             | ước lượng không gian con                                       |                       |
-| scalar                          | số vô hướng                                                    |                       |
-| sensitivity                     | độ nhạy                                                        |                       |
-| statistical power               | năng lực thống kê                                              |                       |
-| significance test               | kiểm định ý nghĩa                                              |                       |
 | symbolic graph                  | đồ thị biểu tượng                                              |                       |
 
 ## T
@@ -267,6 +268,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | tensor contraction       | phép co tensor                                                 |               |
 | test set                 | tập kiểm tra                                                   |               |
 | test set performance     | chất lượng trên tập kiểm tra                                   |               |
+| test statistic           | tiêu chuẩn kiểm định                                           |               |
 | timestep                 | bước thời gian                                                 |               |
 | training set             | tập huấn luyện                                                 |               |
 | training dev set         | tập phát triển huấn luyện                                      |               |
@@ -276,7 +278,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | true negative            | âm tính thật                                                   |               |
 | true positive            | dương tính thật                                                |               |
 | tune parameters          | điều chỉnh tham số                                             |               |
-| test statistic           | tiêu chuẩn kiểm định                                           |               |
 | two-sided test           | kiểm định hai phía                                             |               |
 | two-tailed test          | kiểm định hai đuôi                                             |               |
 

@@ -18,7 +18,7 @@ an inscribed polygon with more sides of equal length better approximates
 the circle. This process is also known as the *method of exhaustion*.
 -->
 
-Tìm diện tích của một đa giác vẫn là một bí ẩn cho tới tận $2.500$ năm trước, khi người Hy Lạp cổ chia đa giác thành các tam giác và cộng diện tích của chúng lại.
+Tìm diện tích của một đa giác vẫn là một bí ẩn cho tới ít nhất $2.500$ năm trước, khi người Hy Lạp cổ đại chia đa giác thành các tam giác và cộng diện tích của chúng lại.
 Để tìm diện tích của các hình cong, như hình tròn, người Hy Lạp cổ đại đặt các đa giác nội tiếp bên trong các hình cong đó.
 Như trong :numref:`fig_circle_area`, một đa giác nội tiếp với càng nhiều cạnh bằng nhau thì càng xấp xỉ đúng hình tròn. 
 Quy trình này còn được biết đến như *phương pháp vét kiệt*.
@@ -42,8 +42,8 @@ such problems are ubiquitous in deep learning.
 -->
 
 Phương pháp vét kiệt chính là khởi nguồn của *giải tích tích phân* (sẽ được miêu tả trong :numref:`sec_integral_calculus`).
-Hơn $2.000$ năm sau, nhánh còn lại của giải tích, *giải tích vi phân* ra đời.
-Trong những ứng dụng quan trọng nhất của giải tích vi phân, các bài toán tối ưu hoá sẽ tìm *cách tốt nhất* để thực hiện một công việc gì đấy.
+Hơn $2.000$ năm sau, nhánh còn lại của giải tích, *giải tích vi phân*, ra đời.
+Trong những ứng dụng quan trọng nhất của giải tích vi phân, các bài toán tối ưu hoá sẽ tìm *cách tốt nhất* để thực hiện một công việc nào đó.
 Như đã bàn đến trong :numref:`subsec_norms_and_objectives`, các bài toán như vậy vô cùng phổ biến trong học sâu.
 
 <!--
@@ -64,9 +64,9 @@ beyond the exact set of data points used to train them.
 -->
 
 Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi học với nhiều dữ liệu hơn.
-Thường thì trở nên tốt hơn tức là tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
+Thông thường, trở nên tốt hơn tương đương với tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
 Câu hỏi này lắt léo hơn ta tưởng nhiều.
-Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà ta chưa từng nhìn thấy.
+Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà nó chưa từng nhìn thấy. <!-- người dịch tự sửa -->
 Nhưng chúng ta chỉ có thể khớp mô hình trên dữ liệu mà ta đang có thể thấy.
 Do đó ta có thể chia việc huấn luyện mô hình thành hai vấn đề chính:
 i) *tối ưu hoá*: quy trình huấn luyện mô hình trên dữ liệu đã thấy.
@@ -79,7 +79,7 @@ here we give a very brief primer on differential calculus
 that is commonly used in deep learning.
 -->
 
-Để giúp bạn hiểu các bài toán tối ưu và các phương pháp tối ưu trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương ngắn vỡ lòng về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
+Để giúp bạn hiểu các bài toán tối ưu hóa và các phương pháp tối ưu hóa trong các chương sau, ở đây chúng tôi sẽ cung cấp một chương ngắn vỡ lòng về các kĩ thuật giải tích vi phân thông dụng trong học sâu. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -106,7 +106,7 @@ were we to *increase* or *decrease* that parameter
 by an infinitesimally small amount.
 -->
 
-Chúng ta sẽ bắt đầu bằng việc nói tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
+Chúng ta bắt đầu bằng việc đề cập tới khái niệm đạo hàm, một bước quan trọng của hầu hết các thuật toán tối ưu trong học sâu.
 Trong học sâu, ta thường chọn những hàm mất mát khả vi theo các tham số của mô hình.
 Nói đơn giản, với mỗi tham số, ta có thể xác định hàm mất mát tăng hoặc giảm nhanh như thế nào khi tham số đó *tăng* hoặc *giảm* chỉ một lượng cực nhỏ.
 
@@ -169,8 +169,8 @@ Though this experiment is not a mathematical proof,
 we will see later that the derivative $u'$ is $2$ when $x=1$.
 -->
 
-Cho $x=1$ và để $h$ tiến về $0$, kết quả của phương trình $\frac{f(x+h) - f(x)}{h}$ trong :eqref:`eq_derivative` tiến về $2$.
-Dù thử nghiệm này không phải là một dạng chứng minh toán học, lát nữa ta sẽ thấy quả thật đạo hàm của $u'$ là $2$ khi $x=1$.
+Cho $x=1$ và $h$ tiến về $0$, kết quả của phương trình $\frac{f(x+h) - f(x)}{h}$ trong :eqref:`eq_derivative` tiến về $2$.
+Dù thử nghiệm này không phải là một dạng chứng minh toán học, lát nữa ta sẽ thấy rằng quả thật đạo hàm của $u'$ là $2$ khi $x=1$.
 
 ```{.python .input}
 def numerical_lim(f, x, h):
@@ -192,7 +192,7 @@ Given $y = f(x)$, where $x$ and $y$ are the independent variable and the depende
 -->
 
 Hãy làm quen với một vài ký hiệu cùng được dùng để biểu diễn đạo hàm.
-Cho $y = f(x)$ với $x$ và $y$ lần lượt là là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
+Cho $y = f(x)$ với $x$ và $y$ lần lượt là biến độc lập và biến phụ thuộc của hàm $f$. Những biểu diễn sau đây là tương đương nhau:
 
 $$f'(x) = y' = \frac{dy}{dx} = \frac{df}{dx} = \frac{d}{dx} f(x) = Df(x) = D_x f(x),$$
 
@@ -407,7 +407,7 @@ Let $y = f(x_1, x_2, \ldots, x_n)$ be a function with $n$ variables. The *partia
 -->
 
 Cho $y = f(x_1, x_2, \ldots, x_n)$ là một hàm với $n$ biến.
-*Đạo hàm riêng* của $y$ theo tham số thứ $i$ $x_i$ là
+*Đạo hàm riêng* của $y$ theo tham số thứ $i$, $x_i$, là
 
 $$ \frac{\partial y}{\partial x_i} = \lim_{h \rightarrow 0} \frac{f(x_1, \ldots, x_{i-1}, x_i+h, x_{i+1}, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h}.$$
 
@@ -437,11 +437,11 @@ We can concatenate partial derivatives of a multivariate function with respect t
 Suppose that the input of function $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is an $n$-dimensional vector $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ and the output is a scalar. The gradient of the function $f(\mathbf{x})$ with respect to $\mathbf{x}$ is a vector of $n$ partial derivatives:
 -->
 
-Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm đa biến để thu được vector *gradient* của hàm số đó.
-Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$-chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
+Chúng ta có thể ghép các đạo hàm riêng của mọi biến trong một hàm nhiều biến để thu được vector *gradient* của hàm số đó.
+Giả sử rằng đầu vào của hàm $f: \mathbb{R}^n \rightarrow \mathbb{R}$ là một vector $n$ chiều $\mathbf{x} = [x_1, x_2, \ldots, x_n]^\top$ và đầu ra là một số vô hướng.
 Gradient của hàm $f(\mathbf{x})$ theo $\mathbf{x}$ là một vector gồm $n$ đạo hàm riêng đó: 
 
-$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top,$$
+$$\nabla_{\mathbf{x}} f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_n}\bigg]^\top.$$
 
 <!--
 where $\nabla_{\mathbf{x}} f(\mathbf{x})$ is often replaced by $\nabla f(\mathbf{x})$ when there is no ambiguity.
@@ -473,7 +473,7 @@ Similarly, for any matrix $\mathbf{X}$, we have $\nabla_{\mathbf{X}} \|\mathbf{X
 
 Tương tự, với bất kỳ ma trận $\mathbf{X}$ nào, ta đều có $\nabla_{\mathbf{X}} \|\mathbf{X} \|_F^2 = 2\mathbf{X}$.
 Sau này ta sẽ thấy, gradient sẽ rất hữu ích khi thiết kế thuật toán tối ưu trong học sâu.
-
+<!-- kết thúc revise phần 4 -->
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
