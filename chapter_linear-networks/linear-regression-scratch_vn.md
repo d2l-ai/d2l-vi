@@ -64,8 +64,8 @@ To make our problem easy, we will set its standard deviation to $0.01$.
 The following code generates our synthetic dataset:
 -->
 
-Bạn đọc có thể coi $\epsilon$ như là sai số tiềm ẩn của phép đo trên các đặc trưng và các nhãn.
-Chúng ta sẽ giả sử $\epsilon$ tuân theo phân phối chuẩn với trung bình bằng 0.
+Bạn đọc có thể xem $\epsilon$ như là sai số tiềm ẩn của phép đo trên các đặc trưng và các nhãn.
+Chúng ta sẽ giả sử $\epsilon$ tuân theo phân phối chuẩn với trung bình bằng $0$.
 Để đơn giản, ta sẽ thiết lập độ lệch chuẩn của nó bằng $0.1$.
 Đoạn mã nguồn sau sẽ sinh ra tập dữ liệu tổng hợp:
 
