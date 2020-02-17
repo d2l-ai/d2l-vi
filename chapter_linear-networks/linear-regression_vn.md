@@ -382,7 +382,7 @@ These parameters that are tunable but not updated in the training loop are calle
 *Hyperparameter tuning* is the process by which these are chosen, and typically requires that we adjust the hyperparameters based on the results of the inner (training) loop as assessed on a separate *validation* split of the data.
 -->
 
-Trong phương trình trên, $|\mathcal{B}|$ đại diện cho số ví dụ trong mỗi tập ( kích thước của tập) và $\eta$ là *tỉ lệ học*.
+Trong phương trình trên, $|\mathcal{B}|$ là số ví dụ trong mỗi batch con (*kích thước batch*) và $\eta$ là *tốc độ học*.
 Cũng cần phải nhấn mạnh rằng các giá trị của kích thước tập và tỷ lệ học được quy định trước một cách thủ công và thường không được học thông qua mô hình huấn luyện.
 Các tham số có thể điều chỉnh nhưng không được cập nhật trong vòng huấn luyện được gọi là * siêu tham số *.
 * Siêu tham số điều chỉnh * là quá trình chúng được chọn và thường xuyên yêu cầu chúng ta điều chỉnh siêu tham số dựa trên kết quả của bên trong vòng lặp (huấn luyện) được đánh giá giống như *kiểm định* phân tách dữ liệu..
