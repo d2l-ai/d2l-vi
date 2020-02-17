@@ -383,7 +383,7 @@ These parameters that are tunable but not updated in the training loop are calle
 -->
 
 Trong phương trình trên, $|\mathcal{B}|$ là số ví dụ trong mỗi batch con (*kích thước batch*) và $\eta$ là *tốc độ học*.
-Cũng cần phải nhấn mạnh rằng các giá trị của kích thước tập và tỷ lệ học được quy định trước một cách thủ công và thường không được học thông qua mô hình huấn luyện.
+Cũng cần phải nhấn mạnh rằng các giá trị của kích thước batch và tốc độ học được lựa chọn trước một cách thủ công và thường không được học thông qua quá trình huấn luyện mô hình.
 Các tham số điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện được gọi là *siêu tham số*.
 *Điều chỉnh siêu tham số* là quá trình lựa chọn chúng, thường dựa trên kết quả của vòng lặp huấn luyện đánh giá trên tập *kiểm định*.
 
