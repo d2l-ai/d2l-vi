@@ -763,7 +763,7 @@ pointed out that although airplanes might have been *inspired* by birds, ornitho
 Likewise, inspiration in deep learning these days comes in equal or greater measure from mathematics, statistics, and computer science.
 -->
 
-Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay lấy rất ít cảm hứng từ ngành thần kinh học.
+Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay chỉ lấy một phần cảm hứng từ ngành thần kinh học.
 Như Stuart Russell và Peter Norvig, những người mà trong cuốn sách kinh điển về học sâu *Trí tuệ nhân tạo: Một phương pháp hiện đại* :cite:`Russell.Norvig.2016`, chỉ ra rằng: mặc dù máy bay có thể được lấy *cảm hứng* từ loài chim, ngành điểu học không phải động lực chính làm đổi mới ngành hàng không trong nhiều thế kỷ qua.
 
 <!-- ========================================= REVISE PHẦN 9 - KẾT THÚC ===================================-->
