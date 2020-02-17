@@ -371,8 +371,8 @@ In the code below, `l` is a vector of the losses for each example in the minibat
 Because `l` is not a scalar variable, running `l.backward()` adds together the elements in `l` to obtain the new variable and then calculates the gradient.
 -->
 
-Trong đoạn code dưới đây, `l` là một vector của độ mất mát với từng các mẫu trong minibatch.
-Vì `l` biến vô hướng, thực thi `l.backward()`để cộng các phần tử trong `l` để tạo ra một biến mới và sau đó tính gradient.
+Trong đoạn code dưới đây, `l` là một vector độ mất mát với từng các mẫu trong minibatch.
+Vì `l` không phải là biến vô hướng, thực thi `l.backward()`để cộng các phần tử trong `l` để tạo ra một biến mới và sau đó tính gradient.
 
 <!--
 In each epoch (a pass through the data), we will iterate through the entire dataset (using the `data_iter` function) 
@@ -384,7 +384,7 @@ We elide these details for now but revise them later in :numref:`chap_optimizati
 
 Trong mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch). Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ and $0.03$.
 Không may thay, việc lựa chọn siêu tham số khó và đòi hỏi một vài sự thay đổi bằng việc thử và sai.
-Bây giờ húng ta sẽ bỏ qua những chi tiết này nhưng chúng ta sẽ xem lại chúng sau qua :numref:`chap_optimization`.
+Bây giờ chúng ta sẽ bỏ qua những chi tiết này nhưng chúng ta sẽ xem lại chúng sau qua :numref:`chap_optimization`.
 
 ```{.python .input  n=12}
 lr = 0.03  # Learning rate
