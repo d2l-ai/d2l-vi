@@ -5,7 +5,7 @@
 # Linear Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Hồi quy Tuyến tính
 :label:`sec_linear_regression`
 
 <!--
@@ -14,7 +14,9 @@ In the natural sciences and social sciences, the purpose of regression is most o
 Machine learning, on the other hand, is most often concerned with *prediction*.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy liên quan đến các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và giá trị mục tiêu $y$.
+Trong khoa học tự nhiên và khoa học xã hội, mục tiêu của hồi quy thường là *đặc trưng hóa* mối quan hệ của đầu vào và đầu ra.
+Mặt khác, học máy thường quan tâm đến *dự đoán*.
 
 <!--
 Regression problems pop up whenever we want to predict a numerical value.
@@ -23,7 +25,10 @@ Not every prediction problem is a classic *regression* problem.
 In subsequent sections, we will introduce classification problems, where the goal is to predict membership among a set of categories.
 -->
 
-*dịch đoạn phía trên*
+Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
+Các ví dụ thông dụng bao gồm dự đoán giá cả (nhà, cổ phiếu, ..), dự đoán thời gian ở lại (cho bệnh nhân trong viện), dự đoán nhu cầu (cho bán lẻ), và nhiều thứ khác.
+Không phải mọi bài toán về dự đoán đều là bài toán *hồi quy* cổ điển.
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
