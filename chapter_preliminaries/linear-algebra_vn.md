@@ -710,7 +710,7 @@ Note that the column dimension of `A` (its length along axis $1$) must be the sa
 
 Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. 
 Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện phép nhân vô hướng giữa ma trận và vector. 
-Lưu ý rằng số chiều của cột `A` (chiều dài theo trục $1$) phải bằng với số chiều của vector `x` (chiều dài của nó).
+Lưu ý rằng chiều của cột `A` (chiều dài theo trục $1$) phải bằng với chiều của vector `x` (chiều dài của nó).
 
 ```{.python .input  n=16}
 A.shape, x.shape, np.dot(A, x)
