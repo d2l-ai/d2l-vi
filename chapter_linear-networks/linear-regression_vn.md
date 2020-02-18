@@ -765,7 +765,7 @@ Chúng ta sẽ nói nhiều hơn về các mạng nơ-ron cấu tạo từ nhữ
 ### Biology
 -->
 
-### *dịch tiêu đề phía trên*
+### Sinh vật học
 
 <!--
 Although linear regression (invented in 1795) predates computational neuroscience, so it might seem anachronistic to describe linear regression as a neural network.
@@ -775,13 +775,14 @@ consisting of *dendrites* (input terminals), the *nucleus* (CPU), the *axon* (ou
 and the *axon terminals* (output terminals), enabling connections to other neurons via *synapses*.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù hồi quy tuyến tính (được phát minh vào năm 1795) có trước khoa học thần kinh tính toán, nhưng có vẻ lỗi thời khi mô tả hồi quy tuyến tính như một mạng nơ-ron.
+Để hiểu tại sao các mô hình tuyến tính là điểm khởi đầu tự nhiên cho các nhà nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts tìm hiểu và bắt đầu phát triển các mô hình nơ-ron nhân tạo, hãy xem xét bức tranh hoạ hình của một nơ-ron sinh học tại :numref:`fig_Neuron`, bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*.
 
 <!--
 ![The real neuron](../img/Neuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/Neuron.svg)
+![Nơ-ron trong thực tế](../img/Neuron.svg)
 :label:`fig_Neuron`
 
 <!--
@@ -792,14 +793,18 @@ and this information is then sent for further processing in the axon $y$, typica
 From there it either reaches its destination (e.g., a muscle) or is fed into another neuron via its dendrites.
 -->
 
-*dịch đoạn phía trên*
+Thông tin $x_i$ đến từ các nơ-ron khác (hoặc các cảm biến môi trường, giống như võng mạc) được nhận thông qua các sợi nhánh.
+Cụ thể, thông tin đó được tính trọng số bởi *trọng số của synapses* $w_i$, là trọng số xác định độ ảnh hướng của các đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua phép nhân của $x_i$ và $w_i$).
+Các đầu vào có trọng số đến từ nhiều nguồn được tổng hợp trong nhân tế bào dưới dạng tổng trọng số $y = \ sum_i x_i w_i + b$, và thông tin này sau đó được gửi đi để xử lý thêm trong sợi trục $y$, thường là sau một vài xử lý phi tuyến tính qua $\sigma(y)$.
+Từ đó, nó được gửi đến đích (ví dụ, cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các sợi nhánh của nó.
 
 <!--
 Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm, 
 to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
 -->
 
-*dịch đoạn phía trên*
+Chắc chắn rằng, ý tưởng lớn chính là nhiều đơn vị như vậy có thể được kết hợp lại với nhau bằng những cách kết nối và với thuật toán học tập đúng đắn để tạo ra hành vi thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron đơn lẻ nào có thể làm được.
+Tất cả là nhờ vào nghiên cứu của chúng ta về các hệ thống thần kinh sinh học trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 16 ===================== -->
 
@@ -903,6 +908,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
+* Vũ Hữu Tiệp
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
 * Tạ H. Duy Nguyên
@@ -942,7 +950,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-*
+* Nguyễn Phan Hùng Thuận
+* Phạm Hồng Vinh
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 17 -->
 * Nguyễn Văn Tâm
