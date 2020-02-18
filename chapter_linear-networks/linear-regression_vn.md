@@ -781,7 +781,7 @@ and the *axon terminals* (output terminals), enabling connections to other neuro
 ![The real neuron](../img/Neuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/Neuron.svg)
+![Nơ-ron thật](../img/Neuron.svg)
 :label:`fig_Neuron`
 
 <!--
@@ -792,14 +792,16 @@ and this information is then sent for further processing in the axon $y$, typica
 From there it either reaches its destination (e.g., a muscle) or is fed into another neuron via its dendrites.
 -->
 
-*dịch đoạn phía trên*
+Thông tin $x_i$ đến từ những nơ-ron khác (hoặc các cảm biến môi trường như võng mạc) được nhận ở đuôi gai. Đặc biệt, thông tin đó được tính trọng số bởi *trọng lượng của synap* $w_i$ xác định tính hiệu quả của các yếu tố đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua sản phẩm $x_i w_i$)/.
+Trọng số đầu vào đến từ nhiều nguồn được nhận vào trong nhân dưới dạng là tổng trọng số $y = \sum_i x_i w_i + b$ , và thông tin này sau đó sẽ được gửi để xử lý thêm trong sợi trục $y$, thông thường sau một số xử lý phi tuyến tính thông qua $\sigma(y)$. 
+Từ đó nó sẽ đến nơi đến của nó ( ví dụ: cơ bắp) hoặc được đưa vào nơ-ron khác thông qua các sợi nhánh của nó.
 
 <!--
 Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm, 
 to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
 -->
 
-*dịch đoạn phía trên*
+Tất nhiên, có ý tưởng cao cấp rằng nhiều đơn vị như vậy có thể được ghép lại với nhau bằng kết nối chính xác và thuật toán học tập chính xác, để tạo ra hành vi thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron nào có thể thể hiện nhờ vào nghiên cứu của chúng tôi về các hệ thống thần kinh sinh học thực. 
 
 <!-- ===================== Kết thúc dịch Phần 16 ===================== -->
 
@@ -948,4 +950,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Tâm
 
 <!-- Phần 18 -->
-*
+* Bùi Nhật Quân
