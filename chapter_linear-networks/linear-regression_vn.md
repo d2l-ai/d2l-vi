@@ -750,7 +750,7 @@ From there it either reaches its destination (e.g., a muscle) or is fed into ano
 Thông tin $x_i$ đến từ các nơ-ron khác (hoặc các cảm biến môi trường, giống như võng mạc) được nhận thông qua các sợi nhánh.
 Cụ thể, thông tin đó được tính trọng số bởi *trọng số của synapses* $w_i$, là trọng số xác định độ ảnh hướng của các đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua phép nhân của $x_i$ và $w_i$).
 Các đầu vào có trọng số đến từ nhiều nguồn được tổng hợp trong nhân tế bào dưới dạng tổng trọng số $y = \ sum_i x_i w_i + b$, và thông tin này sau đó được gửi đi để xử lý thêm trong sợi trục $y$, thường là sau một vài xử lý phi tuyến tính qua $\sigma(y)$.
-Từ đó, nó được gửi đến đích (ví dụ, một cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các sợi nhánh của nó.
+Từ đó, nó được gửi đến đích (ví dụ, cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các sợi nhánh của nó.
 
 <!--
 Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm, 
