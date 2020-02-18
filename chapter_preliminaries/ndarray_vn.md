@@ -402,13 +402,13 @@ Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từ
 Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng phần tử bằng cách sử dụng *cơ chế lan truyền* (_broadcasting mechanism_).
 Cơ chế này hoạt động như sau:
 Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các phần tử một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
-Thứ hai, áp dụng các phép toán theo từng phần tử cho hai mảng mới này.
+Thứ hai, thực hiện các phép toán theo từng phần tử với hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-Trong hầu hết các trường hợp, chúng ta lan truyền một mảng theo trục với độ dài ban đầu là $1$, như ví dụ dưới đây:
+Trong hầu hết các trường hợp, chúng ta lan truyền một mảng theo trục có độ dài ban đầu là $1$, như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
