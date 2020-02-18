@@ -20,6 +20,7 @@ chapter_notation/index_vn
 :numbered:
 
 chapter_introduction/index_vn
+chapter_preliminaries/index_vn
 ```
 
 ```toc
