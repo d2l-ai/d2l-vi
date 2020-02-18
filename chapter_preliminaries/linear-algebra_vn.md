@@ -759,7 +759,7 @@ To produce the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$, it is easiest
 -->
 
 Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $i$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
-Để tính tích ma trận $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ và các cột của ma trận $\mathbf{B}$:
+Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ và các cột của ma trận $\mathbf{B}$:
 
 $$\mathbf{A}=
 \begin{bmatrix}
