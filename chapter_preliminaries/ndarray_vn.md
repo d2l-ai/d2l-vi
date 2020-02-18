@@ -16,9 +16,9 @@ To start, we introduce the $n$-dimensional array (`ndarray`), MXNet's primary to
 In MXNet, `ndarray` is a class and we call any instance "an `ndarray`".
 -->
 
-Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và thao tác với dữ liệu.
-Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
-Thật vô lý khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy trước tiên hãy làm quen với dữ liệu tổng hợp.
+Muốn thực hiện bất cứ điều gì, chúng ta đều cần một cách nào đó để lưu trữ và thao tác với dữ liệu.
+Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập; và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
+Sẽ thật vô nghĩa khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy nên trước tiên hãy cùng làm quen với dữ liệu tổng hợp.
 Để bắt đầu, chúng tôi giới thiệu mảng $n$ chiều (`ndarray`) -- công cụ chính trong MXNET để lưu trữ và biến đổi dữ liệu.
 Trong MXNet, `ndarray` là một lớp và mỗi thực thể của lớp đó là "một `ndarray`".
 
@@ -32,10 +32,10 @@ Throughout the book, when we say `ndarray`, we are referring to MXNet's `ndarray
 -->
 
 Nếu bạn từng làm việc với NumPy, gói tính toán phổ biến nhất trong Python, bạn sẽ thấy mục này quen thuộc.
-Việc này có chủ đích.
-Chúng tôi thiết kế các `ndarray` trong MXNet là một dạng mở rộng của các `ndarray` trong NumPy với một vài tính năng đặc biệt.
+Việc này là có chủ đích.
+Chúng tôi thiết kế `ndarray` trong MXNet là một dạng mở rộng của `ndarray` trong NumPy với một vài tính năng đặc biệt.
 Thứ nhất, `ndarray` trong MXNet hỗ trợ tính toán phi đồng bộ <!-- TODO --> trên CPU, GPU, và các kiến trúc phân tán đám mây, trong khi NumPy chỉ hỗ trợ tính toán trên CPU.
-Thứ hai, `ndaray` trong MXNet hỗ trợ tính đạo hàm tự động.
+Thứ hai, `ndaray` trong MXNet hỗ trợ tính vi phân tự động.
 Những tính chất này khiến `ndarray` của MXNet phù hợp với học sâu.
 Thông qua cuốn sách, nếu không nói gì thêm, chúng ta ngầm hiểu `ndarray` là `ndarray` của MXNet.
 
@@ -58,8 +58,8 @@ On the other hand, if you already have some background and want to go deeper int
 
 Trong mục này, mục tiêu của chúng tôi là trang bị cho bạn các kiến thức toán cơ bản và cài đặt các công cụ tính toán mà bạn sẽ xây dựng dựa trên nó xuyên suốt cuốn sách này.
 Đừng lo nếu bạn gặp khó khăn với các khái niệm toán khó hiểu hoặc các hàm trong thư viện tính toán.
-Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm ví dụ thực tiễn.
-Nếu bạn đã có kiến thức nền tảng và muốn đi sâu vào các nội dung toán, bạn có thể bỏ qua mục này.
+Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm theo ví dụ thực tiễn.
+Mặt khác, nếu bạn đã có kiến thức nền tảng và muốn đi sâu hơn vào các nội dung toán, bạn có thể bỏ qua mục này.
 
 <!--
 To start, we import the `np` (`numpy`) and `npx` (`numpy_extension`) modules from MXNet.
@@ -68,8 +68,8 @@ When using `ndarray`, we almost always invoke the `set_np` function: this is for
 -->
 
 Để bắt đầu, ta cần khai báo mô-đun `np` (`numpy`) và `npx` (`numpy_extension`) từ MXNet.
-Ở đây, mô-đun `np` bao gồm các hàm số hỗ trợ bởi NumPy, trong khi mô-đun `npx` chứa một tập các hàm mở rộng được phát triển để hỗ trợ học sâu trong một môi trường giống với NumPy.
-Khi sử dụng `ndarray`, ta luôn cần gọi hàm `set_np`: để đảm bảo sự tương thích của việc xử lý `ndarray` bằng các thành phần khác của MXNet.
+Ở đây, mô-đun `np` bao gồm các hàm hỗ trợ bởi NumPy, trong khi mô-đun `npx` chứa một tập các hàm mở rộng được phát triển để hỗ trợ học sâu trong một môi trường giống với NumPy.
+Khi sử dụng `ndarray`, ta luôn cần gọi hàm `set_np`: điều này nhằm đảm bảo sự tương thích của việc xử lý `ndarray` bằng các thành phần khác của MXNet.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -83,8 +83,8 @@ With two axes, an `ndarray` corresponds to a *matrix*.
 Arrays with more than two axes do not have special mathematical names---we simply call them *tensors*.
 -->
 
-Một `ndarray` biểu diễn một mảng (có thể nhiều chiều).
-Với một trục, một `ndarray` tương ứng với một *vector* trong toán.
+Một `ndarray` biểu diễn một mảng (có thể đa chiều) các giá trị số.
+Với một trục, một `ndarray` tương ứng (trong toán) với một *vector*.
 Với hai trục, một `ndarray` tương ứng với một *ma trận*.
 Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*.
 
@@ -665,6 +665,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
 *
