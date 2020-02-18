@@ -1046,7 +1046,7 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 * Số vô hướng, vector, ma trận, và tensor là các đối tượng toán học cơ bản trong đại số tuyến tính.
 * Vector là dạng tổng quát của số vô hướng và ma trận là dạng tổng quát của vector.
 * Trong cách biểu diễn `ndarray`, các số vô hướng, vector, ma trận và tensor lần lượt có 0, 1, 2 và một số lượng tùy ý các trục.
-* Một tensor có thể thu gọn theo một trục bằng `sum` và `mean`.
+* Một tensor có thể thu gọn theo một số trục bằng `sum` và `mean`.
 * Phép nhân theo từng phần tử của hai ma trận được gọi là tích Hadamard của chúng. Phép toán này khác với phép nhân ma trận.
 * Trong học sâu, chúng ta thường làm việc với các chuẩn như chuẩn $\ell_1$, chuẩn $\ell_2$ và chuẩn Frobenius.
 * Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm của `ndarray`.
