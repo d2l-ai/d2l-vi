@@ -719,7 +719,7 @@ We will talk a lot more about networks composed of such layers in the next chapt
 ### Biology
 -->
 
-### *dịch tiêu đề phía trên*
+### Sinh vật học
 
 <!--
 Although linear regression (invented in 1795) predates computational neuroscience, so it might seem anachronistic to describe linear regression as a neural network.
@@ -899,6 +899,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 16 -->
 * Nguyễn Phan Hùng Thuận
+* Phạm Hồng Vinh
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 17 -->
 *
