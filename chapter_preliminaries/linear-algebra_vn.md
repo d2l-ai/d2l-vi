@@ -356,18 +356,18 @@ Vectors, for example, are first-order tensors, and matrices are second-order ten
 Tensors are denoted with capital letters of a special font face (e.g., $\mathsf{X}$, $\mathsf{Y}$, and $\mathsf{Z}$) and their indexing mechanism (e.g., $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) is similar to that of matrices.
 -->
 
-Cũng giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
+Giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
 Tensor cho chúng ta một phương pháp tổng quát để miêu tả các `ndarray` với số trục bất kỳ.
 Ví dụ, vector là các tensor bậc một còn ma trận là các tensor bậc hai.
-Tensor được ký hiệu với ký tự viết hoa sử dụng một mặt chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
+Tensor được ký hiệu với ký tự viết hoa sử dụng một font chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
 
 <!--
 Tensors will become more important when we start working with images, which arrive as `ndarray`s with 3 axes corresponding to the height, width, and a *channel* axis for stacking the color channels (red, green, and blue). 
 For now, we will skip over higher order tensors and focus on the basics.
 -->
 
-Tensor sẽ trở nên rất quan trọng khi ta bắt đầu làm việc với hình ảnh, thường được biểu diễn dưới dạng `ndarray` với 3 trục tương ứng với chiều cao, chiều rộng và một trục *kênh* (*channel*) để xếp chồng các kênh màu (đỏ, xanh lá và xanh dương).
-Tạm thời, ta sẽ bỏ qua các tensor bậc cao hơn và tập trung vào những thứ cơ bản trước. 
+Tensor sẽ trở nên quan trọng hơn khi ta bắt đầu làm việc với hình ảnh, thường được biểu diễn dưới dạng `ndarray` với 3 trục tương ứng với chiều cao, chiều rộng và một trục *kênh* (*channel*) để xếp chồng các kênh màu (đỏ, xanh lá và xanh dương).
+Tạm thời, ta sẽ bỏ qua các tensor bậc cao hơn và tập trung vào những điểm cơ bản trước. 
 
 ```{.python .input  n=9}
 X = np.arange(24).reshape(2, 3, 4)
@@ -470,7 +470,7 @@ For example, the sum of the elements of an $m \times n$ matrix $\mathbf{A}$ coul
 -->
 
 Ta có thể biểu diễn phép tính tổng các phần tử của tensor có kích thước tùy ý.
-Ví dụ, tổng các phẩn tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
+Ví dụ, tổng các phần tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 
 ```{.python .input  n=12}
 A.shape, A.sum()
