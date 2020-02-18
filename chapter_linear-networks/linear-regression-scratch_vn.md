@@ -372,7 +372,7 @@ Because `l` is not a scalar variable, running `l.backward()` adds together the e
 -->
 
 Trong đoạn code dưới đây, `l` là một vector độ mất mát với từng các mẫu trong minibatch.
-Vì `l` không phải là biến vô hướng, thực thi `l.backward()`để cộng các phần tử trong `l` để tạo ra một biến mới và sau đó tính gradient.
+Vì `l` không phải là biến vô hướng, chạy `l.backward()`để cộng các phần tử trong `l` để tạo ra một biến mới và sau đó mới tính gradient.
 
 <!--
 In each epoch (a pass through the data), we will iterate through the entire dataset (using the `data_iter` function) 
@@ -382,7 +382,7 @@ Unfortunately, setting hyper-parameters is tricky and requires some adjustment b
 We elide these details for now but revise them later in :numref:`chap_optimization`.
 --> 
 
-Trong mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch). Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ and $0.03$.
+Với mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch). Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ and $0.03$.
 Không may thay, việc lựa chọn siêu tham số khó và đòi hỏi một vài sự thay đổi bằng việc thử và sai.
 Bây giờ chúng ta sẽ bỏ qua những chi tiết này nhưng chúng ta sẽ xem lại chúng sau qua :numref:`chap_optimization`.
 
@@ -526,7 +526,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 8 -->
-*
+* Nguyễn Trường Phát
 
 <!-- Phần 9 -->
 *
