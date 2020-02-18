@@ -893,7 +893,7 @@ The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares
 -->
 
 Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một phép đo khoảng cách.
-Và nếu còn nhớ khái niệm khoảng cách Euclid (định lý Pythagoras) học hồi phổ thông, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc lại một chút.
+Và nếu còn nhớ khái niệm khoảng cách Euclid (định lý Pythagoras) được học ở phổ thông, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc lại một chút.
 Thực tế là, khoảng cách Euclid cũng là một chuẩn: cụ thể là $\ell_2$.
 Giả sử rằng các thành phần trong vector $n$ chiều $\mathbf{x}$ là $x_1, \ldots, x_n$.
 *Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần trong vector: 
@@ -905,7 +905,7 @@ where the subscript $2$ is often omitted in $\ell_2$ norms, i.e., $\|\mathbf{x}\
 In code, we can calculate the $\ell_2$ norm of a vector by calling `linalg.norm`.
 -->
 
-ở đó, chỉ số dưới $2$ thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.
+Ở đó, chỉ số dưới $2$ thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.
 Khi lập trình, ta có thể tính chuẩn $\ell_2$ của một vector bằng cách gọi hàm `linalg.norm`.
 
 ```{.python .input  n=18}
