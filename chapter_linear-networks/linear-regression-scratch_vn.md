@@ -64,7 +64,10 @@ To make our problem easy, we will set its standard deviation to $0.01$.
 The following code generates our synthetic dataset:
 -->
 
-*dịch đoạn phía trên*
+Bạn đọc có thể xem $\epsilon$ như là sai số tiềm ẩn của phép đo trên các đặc trưng và các nhãn.
+Chúng ta sẽ mặc định các giả định tiêu chuẩn đều thỏa mãn và vì thế $\epsilon$ tuân theo phân phối chuẩn với trung bình bằng $0$.
+Để đơn giản, ta sẽ thiết lập độ lệch chuẩn của nó bằng $0.1$.
+Đoạn mã nguồn sau sẽ sinh ra tập dữ liệu tổng hợp:
 
 ```{.python .input  n=2}
 # Saved in the d2l package for later use
@@ -84,7 +87,7 @@ features, labels = synthetic_data(true_w, true_b, 1000)
 Note that each row in `features` consists of a 2-dimensional data point and that each row in `labels` consists of a 1-dimensional target value (a scalar).
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng mỗi hàng trong `features` chứa một điểm dữ liệu hai chiều và mỗi hàng trong `labels` chứa một giá trị mục tiêu một chiều (một số vô hướng).
 
 ```{.python .input  n=3}
 print('features:', features[0],'\nlabel:', labels[0])
@@ -94,7 +97,7 @@ print('features:', features[0],'\nlabel:', labels[0])
 By generating a scatter plot using the second `features[:, 1]` and `labels`, we can clearly observe the linear correlation between the two.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách vẽ đồ thị phân tán với chiều thứ hai `features[:, 1]` và `labels`, ta có thể quan sát rõ mối tương quan giữa chúng.
 
 ```{.python .input  n=18}
 d2l.set_figsize((3.5, 2.5))
@@ -501,7 +504,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Tâm
+* Nguyễn Cảnh Thướng
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 *
