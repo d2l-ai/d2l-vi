@@ -107,7 +107,7 @@ To handle missing data, typical methods include *imputation* and *deletion*, whe
 -->
 
 Để ý rằng giá trị "NaN" là các giá trị bị thiếu.
-Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc sẽ thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
+Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
 Dưới đây chúng ta xem xét phương pháp quy buộc.
 
 <!--
@@ -115,8 +115,8 @@ By integer-location based indexing (`iloc`), we split `data` into `inputs` and `
 For numerical values in `inputs` that are missing, we replace the "NaN" entries with the mean value of the same column.
 -->
 
-Bằng phương pháp đánh vị trí theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
-Với các giá trị số trong `inputs` mà bị thiếu, chúng ta thay thế phần tử "NaN" bằng giá trị trung bình của cùng cột đó. 
+Bằng phương pháp đánh chỉ số theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
+Với các giá trị số bị thiếu trong `inputs`, ta thay thế phần tử "NaN" bằng giá trị trung bình cộng của cùng cột đó. 
 
 ```{.python .input}
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
@@ -131,10 +131,10 @@ A row whose alley type is "Pave" will set values of "Alley_Pave" and "Alley_nan"
 A row with a missing alley type will set their values to $0$ and $1$.
 -->
 
-Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một lớp riêng.
-Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
-Những hàng mà có kiểu lối đi là "Pave" (được lát gạch) sẽ có giá trị của cột "Alley_Pave" và "Alley_nan" lần lượt là $1$ và $0$.
-Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị lần lượt là $0$ và $1$.
+Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một mục riêng.
+Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" (được lát gạch) và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
+Những hàng có kiểu lối đi là "Pave" sẽ có giá trị của cột "Alley_Pave" và cột "Alley_nan" tương ứng là $1$ và $0$.
+Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị cột "Alley_Pave" và cột "Alley_nan" lần lượt là $0$ và $1$.
 
 ```{.python .input}
 inputs = pd.get_dummies(inputs, dummy_na=True)
@@ -178,7 +178,7 @@ X, y
 -->
 
 * Cũng như nhiều gói mở rộng trong hệ sinh thái khổng lồ của Python, `pandas` có thể làm việc được với `ndarray`.
-* Phương pháp quy cho hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
+* Phương pháp quy buộc hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
 
 <!--
 ## Exercises
