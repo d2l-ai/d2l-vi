@@ -51,7 +51,7 @@ Thus our synthetic dataset will be an object $\mathbf{X}\in \mathbb{R}^{1000 \ti
 Để giữ cho mọi thứ đơn giản, chúng ta sẽ xây dựng một tập dữ liệu nhân tạo theo một mô hình tuyến tính với các nhiễu được thêm vào.
 Nhiệm vụ của chúng ta là sẽ khôi phục các tham số của mô hình này bằng cách sử dụng một tập hợp hữu hạn các mẫu có trong tập dữ liệu đó.
 Chúng ta sẽ sử dụng dữ liệu ít chiều để thuận tiện cho việc minh họa.
-Trong đoạn mã sau, chúng ta đã tạo một tập dữ liệu chứa  $1000$ mẫu, mỗi mẫu bao gồm $2$ đặc trưng theo phân phối chuẩn hóa.
+Trong đoạn mã sau, chúng ta đã tạo một tập dữ liệu chứa $1000$ mẫu, mỗi mẫu bao gồm $2$ đặc trưng theo phân phối chuẩn chuẩn hóa.
 Do đó, tập dữ liệu tổng hợp của chúng ta sẽ là một đối tượng $\mathbf{X}\in \mathbb{R}^{1000 \times 2}$.
 
 <!--
