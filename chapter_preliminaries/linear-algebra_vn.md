@@ -168,7 +168,7 @@ The length of a vector is commonly called the *dimension* of the vector.
 
 Hãy quay lại với những khái niệm từ :numref:`sec_ndarray`.
 Một vector đơn thuần là một dãy các số.
-Và mỗi dãy số đều có độ dài, mỗi vector cũng tương tự như vậy.
+Mỗi vector, tương tự như dãy, đều có một độ dài.
 Trong ký hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
 Độ dài của một vector còn được gọi là số **chiều** của vector.
 
