@@ -168,7 +168,7 @@ The length of a vector is commonly called the *dimension* of the vector.
 
 Hãy quay lại với những khái niệm từ :numref:`sec_ndarray`.
 Một vector đơn thuần là một dãy các số.
-Và mỗi dãy số đều có độ dài, mỗi vector cũng tương tự như vậy.
+Mỗi vector, tương tự như dãy, đều có một độ dài.
 Trong ký hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
 Độ dài của một vector còn được gọi là số **chiều** của vector.
 
@@ -203,8 +203,8 @@ However, we use the dimensionality of an `ndarray` to refer to the number of axe
 In this sense, the dimensionality of an `ndarray`'s some axis will be the length of that axis.
 -->
 
-Lưu ý rằng ở đây, từ "chiều" thường có rất nhiều nghĩa trong các ngữ cảnh và điều này thường khiến mọi người bị nhầm lẫn.
-Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector, hay một trục.
+Ở đây cần lưu ý rằng, từ "chiều" là một từ đa nghĩa và khi đặt vào nhiều ngữ cảnh thường dễ làm ta bị nhầm lẫn.
+Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc của một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector hay một trục.
 Tuy nhiên, chúng ta sử dụng số chiều của một `ndarray` để chỉ số trục của `ndarray` đó.
 Theo nghĩa này, chiều của một trục của một `ndarray` là độ dài của trục đó. 
 
@@ -227,16 +227,16 @@ Just as vectors generalize scalars from order $0$ to order $1$, matrices general
 Matrices, which we will typically denote with bold-faced, capital letters (e.g., $\mathbf{X}$, $\mathbf{Y}$, and $\mathbf{Z}$), are represented in code as `ndarray`s with $2$ axes.
 -->
 
-Cũng giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận khái quát vector từ bậc $1$ sang bậc $2$.
-Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$).
-Ma trận được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
+Giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận sẽ khái quát những vector từ bậc $1$ sang bậc $2$.
+Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$);
+và được biểu diễn bằng các `ndarray` với $2$ trục khi lập trình.
 
 <!--
 In math notation, we use $\mathbf{A} \in \mathbb{R}^{m \times n}$ to express that the matrix $\mathbf{A}$ consists of $m$ rows and $n$ columns of real-valued scalars.
 Visually, we can illustrate any matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ as a table, where each element $a_{ij}$ belongs to the $i^{\mathrm{th}}$ row and $j^{\mathrm{th}}$ column:
 -->
 
-Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ $m$ hàng và $n$ cột các giá trị số thực.
+Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ gồm $m$ hàng và $n$ cột các giá trị số thực.
 Về mặt hình ảnh, ta có thể minh họa bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ như một bảng biểu mà mỗi phần tử $a_{ij}$ nằm ở dòng thứ $i$ và cột thứ $j$ của bảng:   
 
 $$\mathbf{A}=\begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \\ \end{bmatrix}.$$
@@ -248,8 +248,8 @@ For any $\mathbf{A} \in \mathbb{R}^{m \times n}$, the shape of $\mathbf{A}$ is (
 Specifically, when a matrix has the same number of rows and columns, its shape becomes a square; thus, it is called a *square matrix*.
 -->
 
-Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$, kích thước của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
-Trong trường hợp đặc biệt, nếu một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; vì vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
+Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ nào, kích thước của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
+Trong trường hợp đặc biệt, khi một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; như vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
 
 <!--
 We can create an $m \times n$ matrix in MXNet by specifying a shape with two components $m$ and $n$ when calling any of our favorite functions for instantiating an `ndarray`.
@@ -269,8 +269,8 @@ To keep notation simple, commas are inserted to separate indices only when neces
 -->
 
 Ta có thể truy cập phần tử vô hướng $a_{ij}$ của ma trận $\mathbf{A}$ trong :eqref:`eq_matrix_def` bằng cách khai báo chỉ số dòng ($i$) và chỉ số cột ($j$), như là $[\mathbf{A}]_{ij}$.
-Khi thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`, vẫn chưa biết, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
-Nhằm giữ cho các ký hiệu đơn giản, dấu phẩy thường được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
+Khi những thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`chưa được đưa ra, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
+Nhằm giữ sự đơn giản cho các ký hiệu, dấu phẩy chỉ được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
 
 <!--
 Sometimes, we want to flip the axes.
@@ -298,7 +298,7 @@ $$
 In code, we access a matrix's transpose via the `T` attribute.
 -->
 
-Khi lập trình, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
+Trong mã nguồn, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
 
 ```{.python .input  n=7}
 A.T
@@ -331,8 +331,8 @@ For example, along the outermost axis of an `ndarray`, we can access or enumerat
 Ma trận là một cấu trúc dữ liệu hữu ích: chúng cho phép ta tổ chức dữ liệu có nhiều phương thức biến thể khác nhau.
 Ví dụ, các dòng trong ma trận của chúng ta có thể tượng trưng cho các căn nhà khác nhau (các điểm dữ liệu), còn các cột có thể tượng trưng cho những thuộc tính khác nhau của ngôi nhà.
 Bạn có thể thấy quen thuộc với điều này nếu đã từng sử dụng các phần mềm lập bảng tính hoặc đã đọc :numref:`sec_pandas`.
-Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tiện lợi hơn nếu ta coi một điểm dữ liệu như một vector dòng trong ma trận.
-Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ cho phép sự xuất hiện của những kỹ thuật học sâu thông dụng.
+Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tốt hơn nếu ta xem mỗi điểm dữ liệu như một vector dòng trong ma trận.
+Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ giúp dễ dàng áp dụng các kỹ thuật học sâu thông dụng.
 Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không có batch nhỏ nào cả. 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
