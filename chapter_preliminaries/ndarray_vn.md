@@ -172,7 +172,7 @@ Nếu kích thước mong muốn là một ma trận với kích thước (chi�
 Tại sao ta lại cần phải tự làm phép tính chia?
 Trong ví dụ trên, để có được một ma trận với $3$ hàng, chúng ta phải chỉ định rõ rằng nó có $3$ hàng và $4$ cột.
 May mắn thay, `ndarray` có thể tự động tính một chiều từ các chiều còn lại.
-Ta có dùng chức năng này bằng cách đặt `-1` cho chiều mà ta muốn `ndarray` tự suy ra.
+Ta có thể dùng chức năng này bằng cách đặt `-1` cho chiều mà ta muốn `ndarray` tự suy ra.
 Trong trường hợp vừa rồi, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
 
 <!--
@@ -192,7 +192,7 @@ Typically, we will want our matrices initialized either with zeros, ones, some o
 We can create an `ndarray` representing a tensor with all elements set to $0$ and a shape of ($2$, $3$, $4$) as follows:
 -->
 
-Thông thường ta muốn khởi tạo các ma trận với các giá trị không, giá trị một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
+Thông thường ta muốn khởi tạo các ma trận với các giá trị bằng không, bằng một, bằng hằng số nào đó hoặc bằng các mẫu ngẫu nhiên lấy từ một phân phối cụ thể.
 Ta có thể tạo một `ndarray` biểu diễn một tensor với tất cả các phần tử bằng $0$ và có kích thước ($2$, $3$, $4$) như sau:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
