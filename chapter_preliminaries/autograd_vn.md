@@ -543,7 +543,7 @@ Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm 
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -559,9 +559,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 
-<!-- Phần 2 -->
-*
-
 <!-- Phần 3 -->
 * Phạm Hồng Vinh
 
@@ -570,11 +567,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Tạ H. Duy Nguyên
-* Vũ Hữu Tiệp
 * Phạm Minh Đức
-
-<!-- Phần 6 -->
-* Phạm Minh Đức
-
-<!-- Phần 7 -->
-*

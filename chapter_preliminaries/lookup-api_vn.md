@@ -129,7 +129,7 @@ Chi tiết từng phần được tìm thấy tại các đề mục tương ứ
 * [Tiếng Anh](https://discuss.mxnet.io/t/2322)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -145,4 +145,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Hoàng Quân
 
 <!-- Phần 2 -->
-*
+* Vũ Hữu Tiệp

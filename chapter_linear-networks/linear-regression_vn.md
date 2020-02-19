@@ -884,7 +884,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
 * [Tiếng Anh](https://discuss.mxnet.io/t/2331)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy

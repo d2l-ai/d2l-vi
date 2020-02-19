@@ -217,7 +217,7 @@ Tạo một tập dữ liệu với nhiều hàng và cột hơn.
 -->
 
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -234,9 +234,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Hồng Vinh
 * Đoàn Võ Duy Thanh
 * Vũ Hữu Tiệp
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
+* Mai Sơn Hải

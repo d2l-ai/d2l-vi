@@ -819,7 +819,7 @@ Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho
 * [Tiếng Anh](https://discuss.mxnet.io/t/2319)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -837,31 +837,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 2 -->
-* @ngcthuong
-* @lkhphuc
-* @rootonchair
-* @tiepvupsu
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 * Mai Sơn Hải
-
-
-<!-- Phần 3 -->
-* Nguyễn Văn Tâm
-* Vũ Hữu Tiệp
-* Nguyễn Cảnh Thướng
 
 <!-- Phần 4 -->
 * Trần Kiến An
 
 <!-- Phần 5 -->
 * Tạ H. Duy Nguyên
-
-<!-- Phần 6 -->
-* Nguyễn Văn Tâm
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 7 -->
-* Nguyễn Văn Tâm
 
 <!-- Phần 8 -->
 * Trần Thị Hồng Hạnh
