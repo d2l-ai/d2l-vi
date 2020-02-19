@@ -117,7 +117,6 @@ Chi tiết từng phần được tìm thấy tại các đề mục tương ứ
 2. Tất cả các kết quả khả dĩ sau khi chạy `np.random.choice(4, 2)` là gì?
 3. Bạn có thể viết lại `np.random.choice(4, 2)` bằng cách sử dụng hàm `np.random.randint` không?
 
-
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
