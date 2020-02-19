@@ -20,26 +20,26 @@ Với các chương (2., 3., ...)
 * [x] Đã revise xong.
 
 ### Mục lục
-* [x] Lời nói đầu
-* [x] Cài đặt
-* [x] Ký hiệu
-* [x] Giới thiệu
-* [-] 2. Preliminaries
-    * [-] 2.1. Thao tác với Dữ liệu
-    * [x] 2.2. Tiền Xử lý Dữ liệu
-    * [x] 2.3. Đại số Tuyến tính
-    * [x] 2.4. Giải tích
-    * [-] 2.5. Tính vi phân Tự động
-    * [-] 2.6. Probability
-    * [-] 2.7. Documentation
-* [ ] 3. Linear Neural Networks
-    * [-] 3.1. Linear Regression
-    * [ ] 3.2. Linear Regression Implementation from Scratch
-    * [ ] 3.3. Concise Implementation of Linear Regression
-    * [ ] 3.4. Softmax Regression
-    * [ ] 3.5. The Image Classification Dataset (Fashion-MNIST)
-    * [ ] 3.6. Implementation of Softmax Regression from Scratch
-    * [ ] 3.7. Concise Implementation of Softmax Regression
+* [x] [Lời nói đầu](chapter_preface/index_vn.md)
+* [x] [Cài đặt](chapter_install/index_vn.md)
+* [x] [Ký hiệu](chapter_notation/index_vn.md)
+* [x] [Giới thiệu](chapter_introduction/index_vn.md)
+* [-] 2. [Sơ bộ](chapter_preliminaries/index_vn.md)
+    * [x] 2.1. [Thao tác với Dữ liệu](chapter_preliminaries/ndarray_vn.md)
+    * [x] 2.2. [Tiền Xử lý Dữ liệu](chapter_preliminaries/pandas_vn.md)
+    * [x] 2.3. [Đại số Tuyến tính](chapter_preliminaries/linear-algebra_vn.md)
+    * [x] 2.4. [Giải tích](chapter_preliminaries/calculus_vn.md)
+    * [x] 2.5. [Tính vi phân Tự động](chapter_preliminaries/autograd_vn.md)
+    * [x] 2.6. [Xác suất](chapter_preliminaries/probability_vn.md)
+    * [x] 2.7. [Tài liệu](chapter_preliminaries/lookup-api_vn.md)
+* [ ] 3. [Linear Neural Networks](chapter_linear-networks/index_vn.md)
+    * [-] 3.1. [Linear Regression](chapter_linear-networks/linear-regression_vn.md)
+    * [-] 3.2. [Linear Regression Implementation from Scratch](chapter_linear-networks/linear-regression-scratch_vn.md)
+    * [-] 3.3. [Concise Implementation of Linear Regression](chapter_linear-networks/linear-regression-gluon_vn.md)
+    * [-] 3.4. [Softmax Regression](chapter_linear-networks/softmax-regression_vn.md)
+    * [ ] 3.5. [The Image Classification Dataset (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
+    * [ ] 3.6. [Implementation of Softmax Regression from Scratch](chapter_linear-networks/softmax-regression-scratch_vn.md)
+    * [ ] 3.7. [Concise Implementation of Softmax Regression](chapter_linear-networks/softmax-regression-gluon_vn.md)
 * [ ] 4. Multilayer Perceptrons
     * [ ] 4.1. Multilayer Perceptrons
     * [ ] 4.2. Implementation of Multilayer Perceptron from Scratch
@@ -65,7 +65,7 @@ Với các chương (2., 3., ...)
     * [ ] 6.4. Multiple Input and Output Channels
     * [ ] 6.5. Pooling
     * [ ] 6.6. Convolutional Neural Networks (LeNet)
-* [ ] 7. Modern Convolutional Networks
+* [ ] 7. Modern Convolutional Neural Networks
     * [ ] 7.1. Deep Convolutional Neural Networks (AlexNet)
     * [ ] 7.2. Networks Using Blocks (VGG)
     * [ ] 7.3. Network in Network (NiN)
@@ -81,7 +81,7 @@ Với các chương (2., 3., ...)
     * [ ] 8.5. Implementation of Recurrent Neural Networks from Scratch
     * [ ] 8.6. Concise Implementation of Recurrent Neural Networks
     * [ ] 8.7. Backpropagation Through Time
-* [ ] 9. Modern Recurrent Networks
+* [ ] 9. Modern Recurrent Neural Networks
     * [ ] 9.1. Gated Recurrent Units (GRU)
     * [ ] 9.2. Long Short Term Memory (LSTM)
     * [ ] 9.3. Deep Recurrent Neural Networks
@@ -106,14 +106,14 @@ Với các chương (2., 3., ...)
     * [ ] 11.9. Adadelta
     * [ ] 11.10. Adam
     * [ ] 11.11. Learning Rate Scheduling
-* [ ] 12. Computational Performance
-    * [-] 12.1. Compilers and Interpreters
-    * [ ] 12.2. Asynchronous Computation
-    * [ ] 12.3. Automatic Parallelism
-    * [ ] 12.4. Hardware
-    * [ ] 12.5. Training on Multiple GPUs
-    * [ ] 12.6. Concise Implementation for Multiple GPUs
-    * [ ] 12.6. Parameter Servers
+* [ ] 12. [Computational Performance](chapter_computational-performance/index_vn.md)
+    * [-] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
+    * [ ] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
+    * [ ] 12.3. [Automatic Parallelism](chapter_computational-performance/auto-parallelism_vn.md)
+    * [ ] 12.4. [Hardware](chapter_computational-performance/hardware_vn.md)
+    * [ ] 12.5. [Training on Multiple GPUs](chapter_computational-performance/multiple-gpus_vn.md)
+    * [ ] 12.6. [Concise Implementation for Multiple GPUs](chapter_computational-performance/multiple-gpus-gluon_vn.md)
+    * [ ] 12.6. [Parameter Servers](chapter_computational-performance/parameterserver_vn.md)
 * [ ] 13. Computer Vision
     * [ ] 13.1. Image Augmentation
     * [ ] 13.2. Fine Tuning
@@ -155,16 +155,16 @@ Với các chương (2., 3., ...)
 * [ ] 16. Generative Adversarial Networks
     * [ ] 16.1. Generative Adversarial Networks
     * [ ] 16.2. Deep Convolutional Generative Adversarial Networks
-* [ ] 17. Appendix: Mathematics for Deep Learning
-    * [x] 17.1. Các phép toán Hình Học và Đại Số Tuyến Tính
+* [ ] 17. [Phụ lục: Toán học cho Học Sâu](chapter_appendix_math/index_vn.md)
+    * [x] 17.1. [Các phép toán Hình Học và Đại Số Tuyến Tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
     * [ ] 17.2. Eigendecompositions
-    * [x] 17.3. Giải tích một biến
+    * [x] 17.3. [Giải tích một biến](chapter_appendix_math/single-variable-calculus_vn.md)
     * [ ] 17.4. Multivariable Calculus
     * [ ] 17.5. Integral Calculus
     * [ ] 17.6. Random Variables
     * [ ] 17.7. Maximum Likelihood
     * [ ] 17.8. Naive Bayes
-    * [x] 17.9. Thống kê
+    * [x] 17.9. [Thống kê](chapter_appendix_math/statistics_vn.md)
     * [ ] 17.10. Information Theory
 * [ ] 18. Appendix: Tools for Deep Learning
     * [ ] 18.1. Using Jupyter
