@@ -16,13 +16,13 @@ Entire courses, majors, theses, careers, and even departments, are devoted to pr
 
 Theo cách này hay cách khác, học máy đơn thuần là đưa ra các dự đoán.
 Chúng ta có thể muốn dự đoán *xác suất* của một bệnh nhân có thể bị đau tim vào năm sau, khi đã biết tiền sử lâm sàng của họ.
-Trong tác vụ phát hiện bất thường, chúng ta có thể muốn đánh giá *khả năng* các thông số động cơ máy bay ở mức nào, liệu có ở mức hoạt động bình thường không.
+Trong tác vụ phát hiện điều bất thường, chúng ta có thể muốn đánh giá *khả năng* các thông số động cơ máy bay ở mức nào, liệu có ở mức hoạt động bình thường không.
 Trong học tăng cường, chúng ta muốn có một tác nhân hoạt động thông minh trong một môi trường.
 Nghĩa là chúng ta cần tính tới xác suất đạt điểm thưởng cao nhất cho từng hành động có thể thực hiện.
 Và khi xây dựng một hệ thống gợi ý chúng ta cũng cần quan tâm tới xác suất.
 Ví dụ, *giả thiết* rằng chúng ta làm việc cho một hãng bán sách trực tuyến lớn.
 Chúng ta có thể muốn ước lượng xác suất một khách hàng cụ thể muốn mua một cuốn sách cụ thể nào đó.
-Để làm được điều này, chúng ta cần dùng tới các phương thức liên quan tới xác suất.
+Để làm được điều này, chúng ta cần dùng tới ngôn ngữ xác suất.
 Có những khóa học, chuyên ngành, luận văn, sự nghiệp, và cả các ban ngành đều dành toàn bộ cho xác suất.
 Vì thế đương nhiên mục tiêu của chúng tôi trong chương này không phải để dạy toàn bộ môn xác suất.
 Thay vào đó, chúng tôi hy vọng đưa tới cho bạn đọc các kiến thức nền tảng, đủ để bạn đọc có thể bắt đầu xây dựng mô hình học sâu đầu tiên của chính mình, và truyền cảm hứng cho bạn thêm yêu thích xác suất để có thể bắt đầu tự khám phá nếu muốn.
@@ -33,14 +33,14 @@ We have already invoked probabilities in previous sections without articulating 
 
 Chúng tôi đã nhắc tới xác suất trong các chương trước mà không nói rõ chính xác nó là gì hay là đưa ra một ví dụ cụ thể nào.
 Giờ hãy cùng bắt đầu nghiêm túc hơn bằng cách xem xét trường hợp đầu tiên: phân biệt mèo và chó dựa trên các bức ảnh.
-Điều này tưởng chừng đơn giản nhưng thực ra rất nhiều thách thức.
-Để bắt đầu, độ phức tạp của vấn đề này có thể phụ thuộc vào độ phân giải của ảnh.
+Điều này tưởng chừng đơn giản nhưng thực ra là một thách thức.
+Để bắt đầu, độ phức tạp của bài toán này có thể phụ thuộc vào độ phân giải của ảnh.
 
 <!--
 ![Images of varying resolutions ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ pixels).](../img/cat_dog_pixels.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/cat_dog_pixels.png)
+![Ảnh ở các độ phân giải khác nhau ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ điểm ảnh).](../img/cat_dog_pixels.png)
 :width:`300px`
 :label:`fig_cat_dog`
 
@@ -62,14 +62,14 @@ Như thể hiện trong :numref:`fig_cat_dog`, con người phân biệt mèo v�
 Nói cách khác, khả năng phân biệt mèo và chó của chúng ta ở khoảng cách càng xa (đồng nghĩa với độ phân giải thấp) càng giống đoán mò.
 Xác suất trang bị cho ta một cách suy luận hình thức về mức độ chắc chắn.
 Nếu chúng ta hoàn toàn chắc chắn rằng bức ảnh mô tả một con mèo, ta có thể nói rằng *xác suất* nhãn tương ứng $y$ là "mèo", ký hiệu là $P(y=$ "mèo"$)$ equals $1$.
-Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau, biễu diễn như là $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
+Nếu chúng ta không có manh mối nào để đoán rằng $y =$ "mèo" hoặc là $y =$ "chó", thì ta có thể nói rằng hai xác suất này có *khả năng* bằng nhau, biễu diễn bởi $P(y=$ "mèo"$) = P(y=$ "chó"$) = 0.5$.
 Nếu ta khá tự tin, nhưng không thực sự chắc chắn bức ảnh mô tả một con mèo, ta có thể gán cho nó một xác suất $0.5  < P(y=$ "mèo"$) < 1$.
 
 <!--
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
 -->
 
-Giờ hãy xem xét trường hợp thứ hai: Cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
+Giờ hãy xem xét trường hợp thứ hai: cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
 Nếu vào mùa hè, xác suất trời mưa có thể là $0.5$.
 
 <!--
@@ -77,7 +77,7 @@ In both cases, we have some value of interest. And in both cases we are uncertai
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-Trong cả hai trường hợp, chúng ta quan tâm tới một vài giá trị nào đó.
+Trong cả hai trường hợp, chúng ta quan tâm tới một giá trị nào đó.
 Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
 Nhưng có một khác biệt quan trọng giữa hai trường hợp.
 Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
@@ -96,7 +96,7 @@ Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về m
 ## Basic Probability Theory
 -->
 
-## Lý thuyết Xác suất Cơ bản
+## Lý thuyết Xác suất cơ bản
 
 <!--
 Say that we cast a die and want to know what the chance is of seeing a $1$ rather than another digit. If the die is fair, all the $6$ outcomes $\{1, \ldots, 6\}$ are equally likely to occur, and thus we would see a $1$ in one out of six cases. Formally we state that $1$ occurs with probability $\frac{1}{6}$.
@@ -123,7 +123,7 @@ large numbers* tell us that as the number of tosses grows this estimate will dra
 -->
 
 Cách tính trực quan nhất là lấy số lần xuất hiện của mỗi mặt số chia cho tổng số lần tung.
-Cách này cho ta một *ước lượng* của xác suất ứng với *sự kiện* cho trước.
+Cách này cho ta một *ước lượng* của xác suất ứng với một *sự kiện* cho trước.
 *Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì ước lượng này càng gần hơn với xác xuất thực.
 Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này bằng lập trình.
 
