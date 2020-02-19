@@ -650,7 +650,7 @@ a, a.item(), float(a), int(a)
 ![](../img/qr_ndarray.svg)
 -->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -668,37 +668,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
-*
-
-<!-- Phần 7 -->
-*
-
-<!-- Phần 8 -->
-*
-
-<!-- Phần 9 -->
-*
+* Phạm Minh Đức
 
 <!-- Phần 10 -->
 * Lê Đàm Hồng Lộc
 
 <!-- Phần 11 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 12 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 13 -->
 * Nguyễn Lê Quang Nhật
