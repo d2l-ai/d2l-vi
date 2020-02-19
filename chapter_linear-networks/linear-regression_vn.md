@@ -265,7 +265,7 @@ Although analytic solutions allow for nice mathematical analysis, the requiremen
 -->
 
 Trong khi các vấn đề đơn giản như hồi quy tuyến tính có thể thừa nhận các giải pháp phân tích, bạn không nên lạm dụng nó như vậy.
-Mặc dù các giải pháp giải tích cho phép phân tích phép toán một cách tốt đẹp, nhưng các yêu cầu của giải pháp phân tích này rất hạn chế đến nỗi nó sẽ loại trừ tất cả các học sâu*
+Mặc dù các giải pháp giải tích cho phép phân tích phép toán một cách tốt đẹp, nhưng các yêu cầu của giải pháp phân tích này rất hạn chế đến nỗi nó sẽ loại trừ tất cả các học sâu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
