@@ -31,3 +31,4 @@
 | 27. | [lyphilong](https://github.com/lyphilong)                       | Lý Phi Long                    |
 | 28. | [hainguyen15](https://github.com/hainguyen15)                   | Nguyễn Quang Hải               |
 | 29. | [tmnguyen1403](https://github.com/tmnguyen1403)                 | Minh Trí Nguyễn                |
+| 30. | [patrickphatnguyen](https://github.com/patrickphatnguyen)       | Nguyễn Trường Phát             |
