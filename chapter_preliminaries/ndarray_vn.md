@@ -398,17 +398,17 @@ First, expand one or both arrays by copying elements appropriately so that after
 Second, carry out the elementwise operations on the resulting arrays.
 -->
 
-Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử lên hai `ndarray` đồng kích thước.
+Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử với hai `ndarray` đồng kích thước.
 Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng phần tử bằng cách sử dụng *cơ chế lan truyền* (_broadcasting mechanism_).
-Cơ chế này làm việc theo cách sau:
-Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
-Thứ hai, áp dụng các phép toàn từng phần tử lên hai mảng mới này.
+Cơ chế này hoạt động như sau:
+Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các phần tử một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
+Thứ hai, thực hiện các phép toán theo từng phần tử với hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-Trong hầu hết các trường hợp, chúng ta lan truyền một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
+Trong hầu hết các trường hợp, chúng ta lan truyền một mảng theo trục có độ dài ban đầu là $1$, như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
@@ -444,8 +444,8 @@ As in standard Python lists, we can access elements according to their relative 
 -->
 
 Cũng giống như trong bất kỳ mảng Python khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
-Như trong bất kỳ mảng Python nào, phần tử đầu tiên có chỉ số $0$ và có phạm vi bao gồm phần tử đầu tiên nhưng *trước* phần tử cuối cùng.
-Và trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí tương đối của chúng đến cuối danh sách bằng cách sử dụng các chỉ số âm.
+Tương tự, phần tử đầu tiên có chỉ số $0$ và khoảng trích chọn bao gồm phần tử đầu tiên nhưng *không tính* phần tử cuối cùng. <!-- người dịch tự sửa để tránh lặp từ -->
+Và trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí đếm ngược từ cuối danh sách bằng cách sử dụng các chỉ số âm.
 
 <!--
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
@@ -472,8 +472,8 @@ For instance, `[0:2, :]` accesses the first and second rows, where `:` takes all
 While we discussed indexing for matrices, this obviously also works for vectors and for tensors of more than $2$ dimensions.
 -->
 Nếu chúng ta muốn gán cùng một giá trị cho nhiều phần tử, chúng ta chỉ cần trỏ đến tất cả các phần tử đó và gán giá trị cho chúng.
-Chẳng hạn, `[0: 2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
-Ở đây chúng ta đã thảo luận về việc lập chỉ số cho ma trận, phương thức này đương nhiên là cũng áp dụng cho các vector và tensor với nhiều hơn $2$ chiều.
+Chẳng hạn, `[0:2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
+Ở đây chúng ta đã thảo luận về cách truy cập vào ma trận, nhưng tất nhiên phương thức này cũng áp dụng cho các vector và tensor với nhiều hơn $2$ chiều.
 
 ```{.python .input  n=21}
 x[0:2, :] = 12
