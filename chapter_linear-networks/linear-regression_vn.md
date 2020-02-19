@@ -851,7 +851,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Các bài tập
 
 <!--
 1. Assume that we have some data $x_1, \ldots, x_n \in \mathbb{R}$. Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.
@@ -870,7 +870,22 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử chúng ta có một số dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được giảm tối thiểu.
+    Tìm một giải pháp dạng khép kín cho giá trị tối ưu của $b$.
+    Vấn đề này như thế nào và giải pháp của nó có liên quan đến phân phối bình thường không?
+2.Xuất phát từ giải pháp dạng khép kín đến vấn đề được tối ưu hóa cho hồi quy tuyến tính với bình phương sai số.
+Để giữ những thứ đơn giản, bạn có thể bỏ qua độ chệch $b$ khỏi vấn đề ( chúng ta có thể thực hiện việc này theo nguyên tắc bằng cách thêm vào một cột vào $X$ bao gồm tất cả các cột).
+    Viết ra vấn đề tối ưu hóa trong ký hiệu ma trận và vec-tơ (xem như tất cả dữ liệu như là một ma trận đơn, tất cả giá trị của mục tiêu như vec-tơ đơn)
+    Tính gradient của sự mất mát với $w$.
+    Tìm giải pháp khép kín bằng cách đặt gradient bằng 0 và giải phương trình ma trận
+    Khi nào điều này có thể tốt hơn sử dụng hạ gradient ngẫu nhiên không? Khi nào phương pháp này có thể bị phá vỡ?
+3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối theo cấp số nhân. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+    Viết ra hàm đối log hợp lý của dữ liệu dưới mô hình $-\log P(Y \mid X)$.
+    Bạn có thể tìm ra giải pháp dạng khép kín không?
+    Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
+    Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm đứng yên như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    
+    
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
 
@@ -958,4 +973,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Tâm
 
 <!-- Phần 18 -->
-*
+*Bùi Nhật Quân
