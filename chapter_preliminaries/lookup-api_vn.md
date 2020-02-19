@@ -83,7 +83,7 @@ Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong mộ
 For further details on the API details check the MXNet website at  [http://mxnet.apache.org/](http://mxnet.apache.org/). You can find the details under the appropriate headings (also for programming languages other than Python).
 -->
 
-Chi tiết cụ thể vể các API của MXNet có thể được tìm thấy tại trang [http://mxnet.apache.org/](http://mxnet.apache.org/).
+Chi tiết cụ thể về các API của MXNet có thể được tìm thấy tại trang [http://mxnet.apache.org/](http://mxnet.apache.org/).
 Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (và có các ngôn ngữ lập trình khác Python).
 
 <!--
