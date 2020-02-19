@@ -38,10 +38,6 @@ In practice, we are more often interested in classification: asking not *how muc
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
 (i) those where we are interested only in *hard* assignments of examples to categories; and (ii) those where we wish to make *soft assignments*,
@@ -51,9 +47,9 @@ The distinction tends to get blurred, in part, because often, even when we only 
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Classification Problems
@@ -81,10 +77,6 @@ then it might even make sense to cast this problem as regression and keep the la
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
 <!--
 But general classification problems do not come with natural orderings among the classes.
 Fortunately, statisticians long ago invented a simple way to represent categorical data: the *one hot encoding*.
@@ -102,9 +94,13 @@ In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ correspon
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Network Architecture
@@ -131,10 +127,6 @@ o_3 &= x_1 w_{31} + x_2 w_{32} + x_3 w_{33} + x_4 w_{34} + b_3.
 \end{aligned}
 $$
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
 <!--
 We can depict this calculation with the neural network diagram shown in :numref:`fig_softmaxreg`.
 Just as in linear regression, softmax regression is also a single-layer neural network.
@@ -160,9 +152,9 @@ our outputs are given by a matrix-vector product of our weights by our inputs pl
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Softmax Operation
@@ -177,10 +169,6 @@ Then, to generate predictions, we will set a threshold, for example, choosing th
 -->
 
 *dịch đoạn phía trên*
-
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 Put formally, we would like outputs $\hat{y}_k$ that we can interpret as the probability that a given item belongs to class $k$.
@@ -222,10 +210,6 @@ $$
 \hat{y}_i = \frac{\exp(o_i)}{\sum_j \exp(o_j)}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
-
 <!--
 It is easy to see $\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$ with $0 \leq \hat{y}_i \leq 1$ for all $i$.
 Thus, $\hat{y}$ is a proper probability distribution and the values of $\hat{\mathbf{y}}$ can be interpreted accordingly.
@@ -245,9 +229,14 @@ Summarizing it all in vector notation we get ${\mathbf{o}}^{(i)} = \mathbf{W} {\
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
+
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Vectorization for Minibatches
@@ -278,10 +267,6 @@ The softmax itself can be computed by exponentiating all entries in $\mathbf{O}$
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
-
 <!--
 ## Loss Function
 -->
@@ -297,9 +282,9 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 6 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ### Log-Likelihood
@@ -346,13 +331,13 @@ It may also not be possible when the input features are not sufficiently informa
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================-->
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
-<!-- ========================================= REVISE PHẦN 7 - BẮT ĐẦU ===================================-->
+<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Softmax and Derivatives
@@ -391,9 +376,9 @@ This fact makes computing gradients easy in practice.
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
 
 <!--
 ### Cross-Entropy Loss
@@ -422,10 +407,6 @@ We can demystify the name by introducing the basics of information theory.
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 8 - BẮT ĐẦU ===================================-->
-
 <!--
 ## Information Theory Basics
 -->
@@ -438,9 +419,9 @@ Information theory deals with the problem of encoding, decoding, transmitting an
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
 
 <!--
 ### Entropy
@@ -486,9 +467,9 @@ Easy to predict, easy to compress.
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 10 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 11 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
 
 <!--
 However if we cannot perfectly predict every event, then we might some times be surprised.
@@ -501,9 +482,9 @@ The entropy of the data is then the least surprised that one can ever be (in exp
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 8 - KẾT THÚC ===================================-->
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
-<!-- ========================================= REVISE PHẦN 9 - BẮT ĐẦU ===================================-->
+<!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Cross-Entropy Revisited
@@ -540,10 +521,6 @@ $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 11 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 12 ===================== -->
-
 <!--
 Note that in classification, we do not know the true $p$, so we cannot compute the entropy directly.
 However, because the entropy is out of our control, minimizing $D(p\|q)$ with respect to $q$ is equivalent to minimizing the cross-entropy loss.
@@ -558,9 +535,9 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 9 - KẾT THÚC ===================================-->
+<!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 10 - BẮT ĐẦU ===================================-->
+<!-- ===================== Bắt đầu dịch Phần 11 ===================== -->
 
 <!--
 ## Model Prediction and Evaluation
@@ -577,10 +554,6 @@ This is equal to the ratio between the number of correct predictions a nd the to
 -->
 
 *dịch đoạn phía trên*
-
-<!-- ===================== Kết thúc dịch Phần 12 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 13 ===================== -->
 
 <!--
 ## Summary
@@ -621,9 +594,9 @@ This is equal to the ratio between the number of correct predictions a nd the to
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 13 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 10 - KẾT THÚC ===================================-->
+<!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2334)
@@ -681,8 +654,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 11 -->
 *
 
-<!-- Phần 12 -->
-*
-
-<!-- Phần 13 -->
-*
