@@ -708,7 +708,9 @@ When we call `np.dot(A, x)` with a matrix `A` and a vector `x`, the matrix-vecto
 Note that the column dimension of `A` (its length along axis $1$) must be the same as the dimension of `x` (its length).
 -->
 
-Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện tính toán tích giữa ma trận và vector. Lưu ý rằng số chiều của cột `A` (chiều dài theo trục $1$) phải bằng với số chiều của vector `x` (chiều dài của nó).
+Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. 
+Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện phép nhân vô hướng giữa ma trận và vector. 
+Lưu ý rằng chiều của cột `A` (chiều dài theo trục $1$) phải bằng với chiều của vector `x` (chiều dài của nó).
 
 ```{.python .input  n=16}
 A.shape, x.shape, np.dot(A, x)
@@ -1118,8 +1120,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 6 -->
 * Phạm Minh Đức
 
+<!-- Phần 7 -->
+* Ngô Thế Anh Khoa
+* Nguyễn Lê Quang Nhật
+
 <!-- Phần 8 -->
 * Ngô Thế Anh Khoa
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 9 -->
 * Vũ Hữu Tiệp
