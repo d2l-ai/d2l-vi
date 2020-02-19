@@ -255,7 +255,7 @@ Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it eq
 -->
 
 Vì vậy có một điểm quan trọng trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất.
-Lấy đạo hàm của sự mất mát $\mathbf{w}$ và đặt nó bằng $0$ để có được giải pháp phân tích: *
+Lấy đạo hàm của sự mất mát $\mathbf{w}$ và đặt nó bằng $0$ để có được giải pháp phân tích:
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
