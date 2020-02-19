@@ -73,41 +73,39 @@ Trong Jupyter notebook, ta có thể dùng `?` để mở tài liệu trong mộ
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
-
 <!--
 ## API Documentation
 -->
 
-## *dịch tiêu đề phía trên*
+## Tài liệu API
 
 <!--
 For further details on the API details check the MXNet website at  [http://mxnet.apache.org/](http://mxnet.apache.org/). You can find the details under the appropriate headings (also for programming languages other than Python).
 -->
 
-*dịch đoạn phía trên*
+Chi tiết cụ thể vể các API của MXNet có thể được tìm thấy tại trang [http://mxnet.apache.org/](http://mxnet.apache.org/).
+Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (và có các ngôn ngữ lập trình khác Python).
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * The official documentation provides plenty of descriptions and examples that are beyond this book.
 * We can look up documentation for the usage of MXNet API by calling the `dir` and `help` functions, or checking the MXNet website.
 -->
 
-*dịch đoạn phía trên*
+* Tài liệu chính thức cung cấp rất nhiều các mô tả và ví dụ ngoài cuốn sách này.
+* Chúng ta có thể tra cứu tài liệu về cách sử dụng MXNet API bằng cách gọi hàm `dir` và `help`, hoặc kiểm tra tại trang web của MXNet.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Look up `ones_like` and `autograd` on the MXNet website.
@@ -115,11 +113,14 @@ For further details on the API details check the MXNet website at  [http://mxnet
 3. Can you rewrite `np.random.choice(4, 2)` by using the `np.random.randint` function?
 -->
 
-*dịch đoạn phía trên*
+1. Tra cứu `ones_like` và `autograd` trên trang MXNet.
+2. Tất cả các kết quả khả dĩ sau khi chạy `np.random.choice(4, 2)` là gì?
+3. Bạn có thể viết lại `np.random.choice(4, 2)` bằng cách sử dụng hàm `np.random.randint` không?
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2322)
