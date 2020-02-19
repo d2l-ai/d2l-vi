@@ -570,7 +570,7 @@ sum_A
 For instance, since `sum_A` still keeps its $2$ axes after summing each row, we can divide `A` by `sum_A` with broadcasting.
 -->
 
-Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua sự lan truyền.
+Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua cơ chế lan truyền.
 
 ```{.python .input}
 A / sum_A
@@ -628,7 +628,7 @@ After normalizing two vectors to have the unit length, the dot products express 
 We will formally introduce this notion of *length* later in this section.
 -->
 
-Tích vô hướng tỏ ra hữu dụng trong nhiều trường hợp.
+Tích vô hướng sẽ hữu dụng trong rất nhiều trường hợp.
 Ví dụ, với một tập các giá trị cho trước, biểu thị bởi vector $\mathbf{x}  \in \mathbb{R}^d$, và một tập các trọng số được biểu thị bởi $\mathbf{w} \in \mathbb{R}^d$, tổng trọng số của các giá trị trong $\mathbf{x}$ theo các trọng số trong $\mathbf{w}$ có thể được thể hiện bởi tích vô hướng $\mathbf{x}^\top \mathbf{w}$.
 Khi các trọng số không âm và có tổng bằng một($\left(\sum_{i=1}^{d} {w_i} = 1\right)$), tích vô hướng thể hiện phép tính *trung bình trọng số* (_weighted average_).
 Sau khi được chuẩn hoá thành hai vector đơn vị, tích vô hướng của hai vector đó là giá trị cos của góc giữa hai vector đó.
