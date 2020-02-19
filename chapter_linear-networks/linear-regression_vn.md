@@ -264,7 +264,7 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-* Trong khicác vấn đề đơn giản như hồi quy tuyến tính có thể thừa nhận các giải pháp phân tích, bạn không nên lạm dụng nó như vậy.
+Trong khi các vấn đề đơn giản như hồi quy tuyến tính có thể thừa nhận các giải pháp phân tích, bạn không nên lạm dụng nó như vậy.
 Mặc dù các giải pháp giải tích cho phép phân tích phép toán một cách tốt đẹp, nhưng các yêu cầu của giải pháp phân tích này rất hạn chế đến nỗi nó sẽ loại trừ tất cả các học sâu*
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
