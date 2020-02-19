@@ -734,7 +734,7 @@ A.shape, x.shape, np.dot(A, x)
 If you have gotten the hang of dot products and matrix-vector products, then *matrix-matrix multiplication* should be straightforward.
 -->
 
-Nếu bạn đã quen thuộc với tích vô hướng và tích ma trận-vector, tích của hai ma trận cũng tương tự như thế.
+Nếu bạn đã quen với tích vô hướng và tích ma trận-vector, tích *ma trận-ma trận* cũng tương tự như thế.
 
 <!--
 Say that we have two matrices $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$:
@@ -760,8 +760,8 @@ Denote by $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ the row vector representing the
 To produce the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$, it is easiest to think of $\mathbf{A}$ in terms of its row vectors and $\mathbf{B}$ in terms of its column vectors:
 -->
 
-Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
-Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ các cột của ma trận $\mathbf{B}$:
+Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $i$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
+Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ và các cột của ma trận $\mathbf{B}$:
 
 $$\mathbf{A}=
 \begin{bmatrix}
@@ -780,7 +780,7 @@ $$
 Then the matrix product $\mathbf{C} \in \mathbb{R}^{n \times m}$ is produced as we simply compute each element $c_{ij}$ as the dot product $\mathbf{a}^\top_i \mathbf{b}_j$:
 -->
 
-Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo bằng cách tính từng phần tử $c_{ij}$ của nó bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
+Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo với phần tử $c_{ij}$ bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
 
 $$\mathbf{C} = \mathbf{AB} = \begin{bmatrix}
 \mathbf{a}^\top_{1} \\
@@ -1130,6 +1130,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 9 -->
 * Vũ Hữu Tiệp
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
