@@ -372,7 +372,7 @@ Because `l` is not a scalar variable, running `l.backward()` adds together the e
 -->
 
 Trong đoạn code dưới đây, `l` là một vector độ mất mát của từng mẫu trong minibatch.
-Vì `l` không phải là biến vô hướng, chạy `l.backward()`để cộng các phần tử trong `l` để tạo ra một biến mới và sau đó mới tính gradient.
+Vì `l` không phải là biến vô hướng, chạy `l.backward()` sẽ cộng các phần tử trong `l` để tạo ra một biến mới và sau đó mới tính gradient.
 
 <!--
 In each epoch (a pass through the data), we will iterate through the entire dataset (using the `data_iter` function) 
