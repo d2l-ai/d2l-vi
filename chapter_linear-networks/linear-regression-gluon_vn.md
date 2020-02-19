@@ -212,7 +212,7 @@ Just be careful to remember that since the parameters have not been initialized 
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa hàm mất mát
 
 <!--
 In Gluon, the `loss` module defines various loss functions.
@@ -220,7 +220,9 @@ We will use the imported module `loss` with the pseudonym `gloss`, to avoid conf
 In this example, we will use the Gluon implementation of squared loss (`L2Loss`).
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, mô-đun 'loss' định nghĩa các hàm mất mát khác nhau.
+Chúng ta sẽ sử dụng mô-đun 'loss' được thêm vào với biệt hiệu là 'gloss', để tránh nhầm lẫn nó cho các biến giữ lại các hàm mất mát của chúng ta đã chọn.
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss
@@ -235,7 +237,7 @@ loss = gloss.L2Loss()  # The squared loss is also known as the L2 norm loss
 ## Defining the Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa thuật toán tối ưu hóa
 
 <!--
 Minibatch SGD and related variants are standard tools for optimizing neural networks and thus Gluon supports SGD alongside a number of variations on this algorithm through its `Trainer` class.
@@ -244,7 +246,9 @@ the optimization algorithm we wish to use (`sgd`), and a dictionary of hyper-par
 SGD just requires that we set the value `learning_rate`, (here we set it to 0.03).
 -->
 
-*dịch đoạn phía trên*
+Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng thần kinh và vì vậy Gluon hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp 'Trainers' của nó.
+Khi chúng ta khởi tạo lớp 'Trainer', chúng ta sẽ chỉ định các tham số để tối ưu hóa ( có thể lấy từ các mạng của chúng tôi thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng tôi muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng tôi.
+SGD chỉ yêu cầu rằng chúng ta sẽ đặt giá trị `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
 from mxnet import gluon
@@ -396,7 +400,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 6 -->
 *
