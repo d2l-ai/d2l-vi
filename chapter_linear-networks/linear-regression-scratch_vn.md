@@ -380,7 +380,7 @@ once passing through every examples in the training dataset (assuming the number
 The number of epochs `num_epochs` and the learning rate `lr` are both hyper-parameters, which we set here to $3$ and $0.03$, respectively.
 Unfortunately, setting hyper-parameters is tricky and requires some adjustment by trial and error.
 We elide these details for now but revise them later in :numref:`chap_optimization`.
---> 
+-->
 
 Với mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch).
 Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ and $0.03$.
