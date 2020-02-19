@@ -234,7 +234,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *Giải pháp phân tích*
+### *Giải pháp Phân tích*
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
