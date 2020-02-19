@@ -870,7 +870,7 @@ $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 The third property simply says that the norm must be non-negative:
 -->
 
-Tính chất thứ ba phát biểu rằng một chuẩn phải không âm:
+Tính chất thứ ba phát biểu rằng chuẩn phải không âm:
 
 $$f(\mathbf{x}) \geq 0.$$
 
