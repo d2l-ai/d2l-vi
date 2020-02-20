@@ -116,14 +116,15 @@ d2l.plt.scatter(features[:, 1].asnumpy(), labels.asnumpy(), 1);
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Thực hiện đọc tập dữ liễu
 
 <!--
 Recall that training models consists of making multiple passes over the dataset, grabbing one minibatch of examples at a time, and using them to update our model.
 Since this process is so fundamental to training machine learning algorithms, its worth defining a utility function to shuffle the data and access it in minibatches.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại là các mô hình huấn luyện bao gồm việc tách tập tập dữ liệu thành nhiều phần (các mininbatch), việc lần lượt đọc từng phần của tập dữ liệu mẫu, và việc sử dụng chúng để cập nhật mô hình của chúng ta. 
+Vì quá trình này là cơ sở để huấn luyện các giải thuật học máy, nó thật sự đáng giá để định ra một hàm tiện dụng để trộn dữ liệu và truy xuất nó trong các minibatch.
 
 <!--
 In the following code, we define a `data_iter` function to demonstrate one possible implementation of this functionality.
@@ -131,6 +132,9 @@ The function takes a batch size, a design matrix, and a vector of labels, yieldi
 Each minibatch consists of an tuple of features and labels.
 -->
 
+Trong đoạn chương trình sau, ta định nghĩa một hàm tên 'data_iter' để minh họa một nhiệm vụ khả dĩ của chức năng này.
+Hàm này lấy kích thước một gói, một ma trận đặc trưng và một vector các nhãn rồi sinh ra các minibatch có kích thước 'batch_size'.
+Mỗi minibatch gồm một nhóm các đặc trưng và các nhãn.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=5}
@@ -151,8 +155,8 @@ which excels at parallelizing operations.
 Because each example can be fed through our models in parallel and the gradient of the loss function for each example can also be taken in parallel,
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
-
-*dịch đoạn phía trên*
+Lưu ý là thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng xác định từ GPU có chứng năng thực hiện xử lý song song tốt nhất.
+Bởi mỗi một mẫu có thể được đưa vào mô hình của chúng ta song song và việc tính đạo hàm từng phần hàm mất mát cho mỗi mẫu có thể cũng được thực hiện cùng lúc, GPUs cho phép ta xử lý hàng trăm mẫu ít tốn thời gian hơn nhiều lần nếu thực hiện xử lý cho từng mẫu riêng lẻ.
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
@@ -160,6 +164,9 @@ The shape of the features in each minibatch tells us both the minibatch size and
 Likewise, our minibatch of labels will have a shape given by `batch_size`.
 -->
 
+Để hiểu hơn, chúng ta hãy chạy đoạn chương trình mô tả việc đọc và in phần đầu tập các dữ liệu mẫu. 
+Kích thước của các đặc trưng trong mỗi minibatch cho ta biết cả kích thước lẫn số đặc trưng đưa vào.
+Tương tự, tập minibatch các nhãn của chúng ta se có kích thước được xác định từ 'batch_size'
 *dịch đoạn phía trên*
 
 ```{.python .input  n=6}
@@ -180,7 +187,10 @@ While the iterator implemented above is good for didactic purposes, it is ineffi
 For example, it requires that we load all data in memory and that we perform lots of random memory access.
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
-
+Khi chúng ta thực hiện hàm lặp này, ta thu được các minibatch riêng biệt lần lượt đến khi tất cả dữ liệu đã được dùng hết (hãy thử xem).
+Trong khi hàm lặp mô tả ở trên là một ví dụ tốt cho việc hiểu, nó lại không hiệu quả ở chỗ nó có thể khiến chúng ta lâm vào rắc rối trong các bài toán thực tế.
+Chẳng hạn, nó cần chúng ta nạp tất cả dữ liệu vào bộ nhớ và dẫn đến chúng ta thực hiện nhiều truy xuất trên bộ nhớ RAM. 
+Các hàm lặp được dựng sẵn trong Apache MXNet được xem tương đối hiệu quả và chúng có thể làm việc với cả dữ liệu lưu trên tập tin và dữ liệu đưa vào từ một luồng dữ liệu.
 *dịch đoạn phía trên*
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -191,13 +201,14 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo các tham số cho mô hình
 
 <!--
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
-
+Trước khi chúng ta có thể bắt đầu thực hiện tối ưu hóa các tham số cho mô hình của mình bằng gradient descent, ta cần có một vài tham số đưa vào trước. 
+Như trong đoạn code dưới, việc khởi tạo các trọng số bởi các số lấy ngẫu nhiên từ một phân phối chuẩn có trung bình là 0 và độ lệch chuẩn là $0.01$, thiết lập phân cực $b$ là $0$.   
 *dịch đoạn phía trên*
 
 ```{.python .input  n=7}
@@ -211,6 +222,9 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
+Lúc này ta vừa khởi tạo xong các tham số cần thiết, nhiệm vụ kế tiếp là thực hiện cập nhật các tham số đó đến khi chúng khớp với dữ liệu của chúng ta cho tới khi chúng đủ tốt.
+Mỗi cập nhật đòi hỏi thực hiện lấy gradient (phép đạo hàm cho hàm nhiều biến/đạo hàm từng phần) cho hàm mất mát với các biến là các tham số.
+Sau khi lấy đạo hàm này xong, ta có thể cập nhật từng tham số theo hướng giảm sự sai số. 
 *dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
