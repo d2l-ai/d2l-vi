@@ -187,6 +187,7 @@ While the iterator implemented above is good for didactic purposes, it is ineffi
 For example, it requires that we load all data in memory and that we perform lots of random memory access.
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
+
 *dịch đoạn phía trên*
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -203,6 +204,7 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
+
 *dịch đoạn phía trên*
 
 ```{.python .input  n=7}
