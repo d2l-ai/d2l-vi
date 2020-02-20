@@ -395,14 +395,14 @@ Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở
 ## Dealing with Multiple Random Variables
 -->
 
-## Làm việc với nhiều biến ngẫu nhiên
+## Làm việc với Nhiều Biến Ngẫu nhiên
 
 <!--
 Very often, we will want to consider more than one random variable at a time.
 For instance, we may want to model the relationship between diseases and symptoms. Given a disease and a symptom, say "flu" and "cough", either may or may not occur in a patient with some probability. While we hope that the probability of both would be close to zero, we may want to estimate these probabilities and their relationships to each other so that we may apply our inferences to effect better medical care.
 -->
 
-Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng một lúc.
+Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng lúc.
 Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
 Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", chúng có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
 Mặc dù chúng ta hy vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
@@ -418,23 +418,23 @@ All of these are random variables that occur jointly. When we deal with multiple
 Xét một ví dụ phức tạp hơn, các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
 Và trong nhiều trường hợp các bức ảnh sẽ được gán nhãn và định danh cho các đối tượng chứa bên trong.
 Chúng ta cũng có thể xem nhãn này như một biến ngẫu nhiên.
-Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ; ví dụ như: vị trí, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
+Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ như địa điểm, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
 Tất các những biến ngẫu nhiên này xảy ra đồng thời.
-Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều điểm đáng quan tâm.
+Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều đại lượng đáng quan tâm.
 
 <!--
 ### Joint Probability
 -->
 
-### Xác suất kết hợp
+### Xác suất Đồng thời
 
 <!--
 The first is called the *joint probability* $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously?
 Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
 This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen *and* $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.
 -->
-Đầu tiên được gọi là *xác suất kết hợp* $P(A = a, B=b)$.
-Cho hai biến $a$ và $b$ bất kỳ, xác suất kết hợp cho ta biết xác suất để cả $A=a$ và $B=b$ xảy ra đồng thời là bao nhiêu?
+Đầu tiên là *xác suất đồng thời* $P(A = a, B=b)$.
+Cho hai biến $a$ và $b$ bất kỳ, xác suất đồng thời cho ta biết xác suất để cả $A=a$ và $B=b$ xảy ra đồng thời là bao nhiêu?
 Ta có thể thấy rằng với mọi giá trị $a$ và $b$, $P(A=a, B=b) \leq P(A=a)$.
 Bởi để $A=a$ và $B=b$ xảy ra thì $A=a$ phải xảy ra *và* $B=b$ cũng phải xảy ra (và ngược lại).
 Do đó, khả năng $A=a$ và $B=b$ xảy ra đồng thời không thể lớn hơn khả năng $A=a$ hoặc $B=b$ xảy ra một cách độc lập được.
@@ -470,9 +470,9 @@ It goes as follows.
 By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) > 0$. Solving for one of the conditional variables we get
 -->
 
-Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *Định lý Bayes*.
-Cụ thể như sau: 
-Đầu tiên, chúng ta có *quy tắc nhân* như sau $P(A, B) = P(B \mid A) P(A)$.
+Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *định lý Bayes*.
+Cụ thể như sau:
+Theo định nghĩa chúng ta có *quy tắc nhân* $P(A, B) = P(B \mid A) P(A)$.
 Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
 Giả sử $P(B) > 0$.
 Kết hợp các điều kiện trên ta có:
@@ -483,7 +483,7 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 Note that here we use the more compact notation where $P(A, B)$ is a *joint distribution* and $P(A \mid B)$ is a *conditional distribution*. Such distributions can be evaluated for particular values $A = a, B=b$.
 -->
 
-Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là *xác suất kết hợp* và $P(A \mid B)$ là *xác suất có điều kiện*.
+Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là *xác suất đồng thời* và $P(A \mid B)$ là *xác suất có điều kiện*.
 Các phân phối này có thể được tính tại các giá trị cụ thể $A = a, B=b$.
 
 <!--
@@ -515,7 +515,7 @@ Xác suất hay phân phối thu được từ thao tác biên hóa được g�
 
 <!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
 
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC =================================== -->
 
 <!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================-->
 
