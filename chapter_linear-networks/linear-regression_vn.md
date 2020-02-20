@@ -528,20 +528,21 @@ Moreover, we push more of the math to the library and need not write as many cal
 ## The Normal Distribution and Squared Loss
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân phối chuẩn và hàm mất mát bình phương
 
 <!--
 While you can already get your hands dirty using only the information above, in the following section we can more formally motivate the square loss objective via assumptions about the distribution of noise.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể gặp khó khăn khi chỉ sử dụng mỗi thông tin phía trên, ở phần tiếp theo ta có thể chính thức diễn giải hàm mục tiêu mất mát bình phương thông qua các giả định về phân phối nhiễu.
 
 <!--
 Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ has many convenient properties.
 These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
+Chúng gồm một đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -549,7 +550,9 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-*dịch đoạn phía trên*
+Như ta đã đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
+Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn là nguồn gốc thông thường.
+Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được đưa ra như sau:
 
 $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).$$
 
@@ -557,7 +560,7 @@ $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \m
 Below we define a Python function to compute the normal distribution.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây ta định nghĩa một hàm Python để tính toán phân phối chuẩn.
 
 ```{.python .input}
 x = np.arange(-7, 7, 0.01)
@@ -571,7 +574,7 @@ def normal(z, mu, sigma):
 We can now visualize the normal distributions.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể biểu diễn các phân phối chuẩn.
 
 ```{.python .input  n=2}
 # Mean and variance pairs
