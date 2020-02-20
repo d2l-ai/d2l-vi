@@ -37,9 +37,9 @@ Here, *backpropagate* simply means to trace through the *computational graph*,
 filling in the partial derivatives with respect to each parameter.
 -->
 
-Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic diferentiation*).
+Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic differentiation*).
 Trong khi nhiều thư viện yêu cầu ta phải biên dịch một *đồ thị biểu tượng* (*symbolic graph*) để có thể tự động tính đạo hàm, `autograd` cho phép ta tính đạo hàm ngay lập tức thông qua các dòng lệnh thông thường.
-Mỗi khi đưa dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết hợp với các phép tính nào sẽ tạo ra kết quả.
+Mỗi khi đưa dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết hợp với các phép tính nào để tạo ra kết quả.
 Với đồ thị này `autograd` sau đó có thể lan truyền ngược gradient lại theo ý muốn.
 *Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ thị tính toán* và điền vào đó các giá trị đạo hàm riêng theo từng tham số. 
 
@@ -66,8 +66,7 @@ with respect to the column vector $\mathbf{x}$.
 To start, let's create the variable `x` and assign it an initial value.
 -->
 
-Trong một ví dụ đơn giản,
-giả sử chúng ta muốn tính vi phân của hàm số $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo vector cột $\mathbf{x}$.
+Lấy ví dụ đơn giản, giả sử chúng ta muốn tính vi phân của hàm số $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo vector cột $\mathbf{x}$.
 Để bắt đầu, ta sẽ tạo biến `x` và gán cho nó một giá trị ban đầu.
 
 ```{.python .input  n=2}
@@ -87,7 +86,7 @@ and could quickly run out of memory.
 -->
 
 Lưu ý rằng trước khi có thể tính gradient của $y$ theo $\mathbf{x}$, chúng ta cần một nơi để lưu giữ nó.
-Điều quan trọng là ta không được cấp phát thêm bộ nhớ mới mỗi khi tính đạo hàm theo một biến xác định, vì ta thường cập nhật cùng một tham số hàng ngàn hàng vạn lần và sẽ nhanh chóng dùng hết bộ nhớ.
+Điều quan trọng là ta không được cấp phát thêm bộ nhớ mới mỗi khi tính đạo hàm theo một biến xác định, vì ta thường cập nhật cùng một tham số hàng ngàn vạn lần và sẽ nhanh chóng dùng hết bộ nhớ.
 
 <!--
 Note also that a gradient of a scalar-valued function
@@ -101,8 +100,8 @@ by invoking its `attach_grad` method.
 -->
 
 Cũng lưu ý rằng, bản thân giá trị gradient của hàm số đơn trị theo một vector $\mathbf{x}$ cũng là một vector với cùng kích thước.
-Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị gradient tính theo `x` dưới dạng một đặc trưng của chính `ndarray` `x`.
-Chúng ta cấp bộ nhớ cho gradient của một `ndarray` bằng cách gọi hàm `attach_grad`.
+Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị gradient tính theo `x` dưới dạng một thuộc tính của chính `ndarray` `x`.
+Chúng ta cấp bộ nhớ cho gradient của một `ndarray` bằng cách gọi phương thức `attach_grad`.
 
 ```{.python .input  n=3}
 x.attach_grad()
