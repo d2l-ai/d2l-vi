@@ -132,7 +132,7 @@ The function takes a batch size, a design matrix, and a vector of labels, yieldi
 Each minibatch consists of an tuple of features and labels.
 -->
 
-Trong đoạn chương trình sau, ta định nghĩa một hàm tên 'data_iter' để minh họa một nhiệm vụ khả dĩ của chức năng này.
+Trong mã nguồn dưới đây, ta định nghĩa một hàm tên `data_iter` để minh họa một nhiệm vụ khả dĩ của chức năng này.
 Hàm này lấy kích thước một batch, một ma trận đặc trưng và một vector các nhãn rồi sinh ra các minibatch có kích thước `batch_size`.
 Mỗi minibatch gồm một nhóm các đặc trưng và các nhãn.
 *dịch đoạn phía trên*
