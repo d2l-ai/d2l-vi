@@ -155,7 +155,7 @@ which excels at parallelizing operations.
 Because each example can be fed through our models in parallel and the gradient of the loss function for each example can also be taken in parallel,
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
-Lưu ý là thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng xác định từ GPU có chứng năng thực hiện xử lý song song tốt nhất.
+Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song tốt nhất.
 Bởi mỗi một mẫu có thể được đưa vào mô hình của chúng ta song song và việc tính đạo hàm từng phần hàm mất mát cho mỗi mẫu có thể cũng được thực hiện cùng lúc, GPUs cho phép ta xử lý hàng trăm mẫu ít tốn thời gian hơn nhiều lần nếu thực hiện xử lý cho từng mẫu riêng lẻ.
 
 <!--
