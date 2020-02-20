@@ -5,7 +5,7 @@
 # Linear Regression Implementation from Scratch
 -->
 
-# *dịch tiêu đề phía trên*
+# Lập trình Hồi quy Tuyến tính từ đầu
 :label:`sec_linear_scratch`
 
 <!--
@@ -18,7 +18,13 @@ Afterwards, we will introduce a more compact implementation, taking advantage of
 To start off, we import the few required packages.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ bạn đã hiểu được điểm mấu chốt đằng sau thuật toán hồi quy tuyến tính, chúng ta đã có thể bắt đầu thực hành viết mã.
+Trong phần này, ta sẽ thực hiện toàn bộ phương pháp từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
+Trong khi các framework học sâu hiện đại có thể tự động hóa gần như tất cả các công việc ở trên, thì việc lập trình mọi thứ lại từ đầu dường như chỉ để đảm bảo rằng bạn thực sự biết những gì bạn đang làm.
+Hơn nữa, việc hiểu rõ mọi thứ hoạt động như thế nào sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng riêng hay các hàm mất mát, v.v.
+Trong phần này, chúng ta chỉ dựa vào `ndarray` và `autograd`.
+Sau đó, chúng tôi sẽ giới thiệu một phương pháp triển khai chặt chẽ hơn, tận dụng các tính năng tuyệt vời của Gluon.
+Để bắt đầu, chúng ta cần nhập một vài gói thư viện cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -32,7 +38,7 @@ npx.set_np()
 ## Generating the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tạo tập dữ liệu
 
 <!--
 To keep things simple, we will construct an artificial dataset according to a linear model with additive noise.
@@ -42,14 +48,19 @@ In the following code snippet, we generated a dataset containing $1000$ examples
 Thus our synthetic dataset will be an object $\mathbf{X}\in \mathbb{R}^{1000 \times 2}$.
 -->
 
-*dịch đoạn phía trên*
+Để giữ cho mọi thứ đơn giản, chúng ta sẽ xây dựng một tập dữ liệu nhân tạo theo một mô hình tuyến tính với nhiễu cộng.
+Nhiệm vụ của chúng ta là khôi phục các tham số của mô hình này bằng cách sử dụng một tập hợp hữu hạn các mẫu có trong tập dữ liệu đó.
+Chúng ta sẽ sử dụng dữ liệu ít chiều để thuận tiện cho việc minh họa.
+Trong đoạn mã sau, chúng ta đã tạo một tập dữ liệu chứa $1000$ mẫu, mỗi mẫu bao gồm $2$ đặc trưng theo phân phối chuẩn hóa.
+Do đó, tập dữ liệu tổng hợp của chúng ta sẽ là một đối tượng $\mathbf{X}\in \mathbb{R}^{1000 \times 2}$.
 
 <!--
 The true parameters generating our data will be $\mathbf{w} = [2, -3.4]^\top$ and $b = 4.2$
 and our synthetic labels will be assigned according to the following linear model with noise term $\epsilon$:
 -->
 
-*dịch đoạn phía trên*
+Các tham số đúng để tạo tập dữ liệu sẽ là $\mathbf{w} = [2, -3.4]^\top$ và $b = 4.2$ 
+và các nhãn tổng hợp sẽ được tính dựa theo mô hình tuyến tính với nhiễu $\epsilon$:
 
 $$\mathbf{y}= \mathbf{X} \mathbf{w} + b + \mathbf\epsilon.$$
 
@@ -501,7 +512,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lý Phi Long
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * Nguyễn Văn Tâm
