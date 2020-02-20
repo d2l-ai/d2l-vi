@@ -167,7 +167,6 @@ Likewise, our minibatch of labels will have a shape given by `batch_size`.
 Để hiểu hơn, chúng ta hãy chạy đoạn chương trình mô tả việc đọc và in phần đầu tập các dữ liệu mẫu. 
 Kích thước của các đặc trưng trong mỗi minibatch cho ta biết cả kích thước lẫn số của những đặc trưng được đưa vào.
 Tương tự, tập minibatch các nhãn của chúng ta se có kích thước được xác định từ 'batch_size'
-*dịch đoạn phía trên*
 
 ```{.python .input  n=6}
 batch_size = 10
