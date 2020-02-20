@@ -851,7 +851,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Exercises
 -->
 
-## Các bài tập
+## Bài tập
 
 <!--
 1. Assume that we have some data $x_1, \ldots, x_n \in \mathbb{R}$. Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.
