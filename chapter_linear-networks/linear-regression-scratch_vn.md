@@ -5,7 +5,7 @@
 # Linear Regression Implementation from Scratch
 -->
 
-# Lập trình hồi quy tuyến tính từ đầu
+# Lập trình Hồi quy Tuyến tính từ đầu
 :label:`sec_linear_scratch`
 
 <!--
@@ -18,8 +18,8 @@ Afterwards, we will introduce a more compact implementation, taking advantage of
 To start off, we import the few required packages.
 -->
 
-Bây giờ bạn đã hiểu được điểm mấu chốt đằng sau thuật toán hồi quy tuyến tính, chúng ta có thể bắt đầu thực hành viết mã nguồn.
-Trong phần này, chúng ta sẽ thực hiện toàn bộ phương pháp từ đầu, bao gồm pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
+Bây giờ bạn đã hiểu được điểm mấu chốt đằng sau thuật toán hồi quy tuyến tính, chúng ta đã có thể bắt đầu thực hành viết mã.
+Trong phần này, ta sẽ thực hiện toàn bộ phương pháp từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
 Trong khi các framework học sâu hiện đại có thể tự động hóa gần như tất cả các công việc ở trên, thì việc lập trình mọi thứ lại từ đầu dường như chỉ để đảm bảo rằng bạn thực sự biết những gì bạn đang làm.
 Hơn nữa, việc hiểu rõ mọi thứ hoạt động như thế nào sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng riêng hay các hàm mất mát, v.v.
 Trong phần này, chúng ta chỉ dựa vào `ndarray` và `autograd`.
@@ -510,6 +510,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Lý Phi Long
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 *
