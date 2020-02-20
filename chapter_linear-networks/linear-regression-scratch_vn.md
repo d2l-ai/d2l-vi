@@ -116,7 +116,7 @@ d2l.plt.scatter(features[:, 1].asnumpy(), labels.asnumpy(), 1);
 ## Reading the Dataset
 -->
 
-## Thực hiện đọc tập dữ liễu
+## Thực hiện đọc tập dữ liệu
 
 <!--
 Recall that training models consists of making multiple passes over the dataset, grabbing one minibatch of examples at a time, and using them to update our model.
