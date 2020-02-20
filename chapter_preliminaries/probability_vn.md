@@ -380,7 +380,7 @@ Trong bất kỳ khoảng nào giữa hai chiều cao khác nhau ta đều có x
 Trong phần còn lại của mục này, ta sẽ xem xét xác suất trong không gian rời rạc.
 Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở :numref:`sec_random_variables`.
 
-<!-- Kết thúc revise phần 4 -->
+<!-- Kết thúc revise phần 3 -->
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
