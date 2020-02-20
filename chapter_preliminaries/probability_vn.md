@@ -287,7 +287,7 @@ we can say that the event "seeing an odd number" has occurred.
 
 Khi ta thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết quả*.
 *Biến cố* là một tập hợp các kết quả của không gian mẫu. 
-Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
+Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những sự kiện hợp lệ khi gieo một con xúc sắc. 
 Chú ý rằng nếu kết quả của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
 biến cố $\mathcal{A}$ đã xảy ra.
 Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc sắc được gieo, 
@@ -533,13 +533,14 @@ does not reveal any information about the occurrence of an event of $B$.
 In this case $P(B \mid A) = P(B)$. Statisticians typically express this as $A \perp  B$. From Bayes' theorem, it follows immediately that also $P(A \mid B) = P(A)$.
 In all the other cases we call $A$ and $B$ dependent. For instance, two successive rolls of a die are independent. In contrast, the position of a light switch and the brightness in the room are not (they are not perfectly deterministic, though, since we could always have a broken light bulb, power failure, or a broken switch).
 -->
-Một tính chất hữu ích khác để kiểm tra là *tính phụ thuộc* với *tính độc lập*.
-Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là sự xuất hiện của một sự kiện của $A$ không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
-Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp B$. 
+Một tính chất hữu ích khác cần kiểm tra là *tính phụ thuộc* với *tính độc lập*.
+Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là việc một sự kiện của $A$ xảy ra không tiết lộ bất kỳ thông tin nào về việc xảy ra một sự kiện của $B$.
+Trong trường hợp này $P(B \mid A) = P(B)$.
+Các nhà thống kê thường biểu diễn việc này bởi $A \perp B$. 
 Từ định lý Bayes, ta có $P(A \mid B) = P(A)$.
 Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. 
 Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. 
-Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
+Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì bóng đèn luôn có thể bị hỏng, mất điện hoặc công tắc bị hỏng).
 
 <!--
 Since $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ is equivalent to $P(A, B) = P(A)P(B)$, two random variables are independent if and only if their joint distribution is the product of their individual distributions.
@@ -548,7 +549,8 @@ if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $
 -->
 
 Vì $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ tương đương với $P(A, B) = P(A)P(B)$, hai biến ngẫu nhiên là độc lập khi và chỉ khi phân phối đồng thời của chúng là tích các phân phối riêng lẻ của chúng.
-Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. Điều này được biểu thị bằng $A \perp B \mid C$.
+Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$.
+Điều này được ký hiệu bởi $A \perp B \mid C$.
 
 <!--
 ### Application
@@ -563,7 +565,8 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 :numref:`conditional_prob_D1` lists such conditional probability.
 -->
 
-Hãy thử nghiệm các kiến thức chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
+Hãy thử nghiệm các kiến thức chúng ta vừa học.
+Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
 Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. 
 Hơn thế nữa, nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
 Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng nhiễm HIV ($1$ nếu dương tính và $0$ nếu âm tính).
@@ -571,16 +574,15 @@ Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính 
 
 <!--
 :Conditional probability of $P(D_1 \mid H)$.
--->
 
-:Xác suất có điều kiện của $P(D_1 \mid H)$.
-
-<!--
 | Conditional probability | $H=1$ | $H=0$ |
 |---|---|---|
 |$P(D_1 = 1 \mid H)$|            1 |         0.01 |
 |$P(D_1 = 0 \mid H)$|            0 |         0.99 |
 :label:`conditional_prob_D1`
+-->
+
+:Xác suất có điều kiện của $P(D_1 \mid H)$.
 
 | Xác suất có điều kiện | $H=1$ | $H=0$ |
 |---|---|---|
@@ -592,9 +594,9 @@ Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính 
 Note that the column sums are all $1$ (but the row sums are not), since the conditional probability needs to sum up to $1$, just like the probability. Let's work out the probability of the patient having AIDS if the test comes back positive, i.e., $P(H = 1 \mid D_1 = 1)$. Obviously this is going to depend on how common the disease is, since it affects the number of false alarms. Assume that the population is quite healthy, e.g., $P(H=1) = 0.0015$. To apply Bayes' Theorem, we need to apply marginalization and the multiplication rule to determine
 -->
 
-Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng hàng thì không), vì xác suất có điều kiện cần cộng lên đến $1$, giống như xác suất.
-Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trở thành dương tính, tức là, $P(H = 1 \mid D_1 = 1)$.
-Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng báo động sai.
+Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng hàng thì không), vì xác suất có điều kiện cần có tổng bằng $1$, giống như xác suất.
+Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trả về kết quả dương tính, tức là, $P(H = 1 \mid D_1 = 1)$.
+Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng dương tính giả.
 Giả sử rằng dân số khá khỏe mạnh, ví dụ: $P(H=1) = 0.0015$.
 Để áp dụng Định lý Bayes, chúng ta cần áp dụng phép biên hóa và quy tắc nhân để xác định
 
@@ -638,9 +640,6 @@ Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằ
 <!--
 :Conditional probability of $P(D_2 \mid H)$.
 -->
-
-:Xác suất có điều kiện của $P(D_2 \mid H)$.
-
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
 |---|---|---|
@@ -651,6 +650,8 @@ Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằ
 <!--
 Unfortunately, the second test comes back positive, too. Let's work out the requisite probabilities to invoke Bayes' Theorem by assuming the conditional independence:
 -->
+
+:Xác suất có điều kiện của $P(D_2 \mid H)$.
 
 | Xác xuất có điều kiện | $H=1$ | $H=0$ |
 |---|---|---|
@@ -704,7 +705,7 @@ $$
 <!--
 That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.
 -->
-Do đó, thử nghiệm thứ hai mang lại nhiều lý do hơn để tin rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
+Do đó, thử nghiệm thứ hai mang lại độ tin cậy cao hơn rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -725,9 +726,8 @@ To summarize key characteristics of probability distributions,
 we need some measures.
 The *expectation* (or average) of the random variable $X$ is denoted as
 -->
-
-Chúng ta cần những phép đó để có được cái nhìn tóm tắt về đặc điểm của các phân phối xác suất.
-Kỳ vọng (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
+Để tóm tắt những đặc tính then chốt của các phân phối xác suất, chúng ta cần một vài phép đo.
+*Kỳ vọng* (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
 
 $$E[X] = \sum_{x} x P(X = x).$$
 
@@ -745,8 +745,8 @@ $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance
 -->
 
-Trong nhiều trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ so với kỳ vọng.
-Đại lượng này có thể được đo qua phương trình:
+Trong nhiều trường hợp, chúng ta muốn đo độ lệch của biến ngẫu nhiên $X$ so với kỳ vọng của nó.
+Đại lượng này có thể được đo bằng phương sai
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
@@ -762,7 +762,7 @@ as different values $x$ of the random variable are sampled from its distribution
 -->
 
 Nếu lấy căn bậc hai của kết quả ta sẽ được độ lệch chuẩn.
-Phương sai thể hiện ước tính độ lệch giữa các biến ngẫu nhiên và kỳ vọng của phương trình, vì các giá trị $x$ của biến ngẫu nhiên được lấy từ phân phối của nó
+Phương sai của một hàm của một biến ngẫu nhiên đo độ lệch của hàm số đó từ kỳ vọng của nó khi các giá trị $x$ khác nhau được lấy mẫu từ phân phối của biến ngẫu nhiên đó:
 
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
@@ -779,8 +779,8 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 * Expectation and variance offer useful measures to summarize key characteristics of probability distributions.
 -->
 
-* Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối ngẫu nhiên.
-* Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (joint distribution), phân phối có điều kiện (conditional distribution), định lý Bayes (Bayes’ theorem), phép biến hóa (marginalization) và giả định độc lập (independence assumptions).
+* Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối xác suất.
+* Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (*joint distribution*), phân phối có điều kiện (*conditional distribution*), định lý Bayes, phép biên hóa (*marginalization*) và giả định độc lập (*independence assumptions*).
 * Kỳ vọng và phương sai là các phép đo hữu ích để tóm tắt các đặc điểm chính của phân phối xác suất.
 
 
@@ -799,11 +799,11 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
 1. Tiến hành $m=500$ nhóm thí nghiệm với mỗi nhóm lấy ra $n=10$ mẫu.
 Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghiệm.
-2. Cho hai biến cố với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
+2. Cho hai sự kiện với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
 (Gợi ý: sử dụng [biểu đồ Venn](https://en.wikipedia.org/wiki/Venn_diagram).)
 3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
-Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
-(Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
+Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A, B, C)$?
+(Gợi ý: đây là một [Chuỗi Markov](https://en.wikipedia.org/wiki/Markov_chain).)
 4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
 Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho lần thử tiếp theo?
 
@@ -831,27 +831,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Tâm
 * Vũ Hữu Tiệp
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 2 -->
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Mai Sơn Hải
-
-<!-- Phần 4 -->
 * Trần Kiến An
-
-<!-- Phần 5 -->
 * Tạ H. Duy Nguyên
-
-<!-- Phần 8 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 9 -->
 * Lê Thành Vinh
-
-<!-- Phần 10 -->
 * Nguyễn Minh Thư
