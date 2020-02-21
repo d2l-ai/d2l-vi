@@ -533,10 +533,10 @@ does not reveal any information about the occurrence of an event of $B$.
 In this case $P(B \mid A) = P(B)$. Statisticians typically express this as $A \perp  B$. From Bayes' theorem, it follows immediately that also $P(A \mid B) = P(A)$.
 In all the other cases we call $A$ and $B$ dependent. For instance, two successive rolls of a die are independent. In contrast, the position of a light switch and the brightness in the room are not (they are not perfectly deterministic, though, since we could always have a broken light bulb, power failure, or a broken switch).
 -->
-Một tính chất hữu ích khác cần kiểm tra là *tính phụ thuộc* với *tính độc lập*.
+Một tính chất hữu ích khác cần kiểm tra là *tính phụ thuộc* và *tính độc lập*.
 Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là việc một sự kiện của $A$ xảy ra không tiết lộ bất kỳ thông tin nào về việc xảy ra một sự kiện của $B$.
 Trong trường hợp này $P(B \mid A) = P(B)$.
-Các nhà thống kê thường biểu diễn việc này bởi $A \perp B$. 
+Các nhà thống kê thường biểu diễn điều này bằng ký hiệu $A \perp B$. 
 Từ định lý Bayes, ta có $P(A \mid B) = P(A)$.
 Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. 
 Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. 
@@ -550,7 +550,7 @@ if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $
 
 Vì $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ tương đương với $P(A, B) = P(A)P(B)$, hai biến ngẫu nhiên là độc lập khi và chỉ khi phân phối đồng thời của chúng là tích các phân phối riêng lẻ của chúng.
 Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$.
-Điều này được ký hiệu bởi $A \perp B \mid C$.
+Điều này được ký hiệu là $A \perp B \mid C$.
 
 <!--
 ### Application
@@ -567,9 +567,9 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 
 Hãy thử nghiệm các kiến thức chúng ta vừa học.
 Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
-Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. 
-Hơn thế nữa, nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
-Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng nhiễm HIV ($1$ nếu dương tính và $0$ nếu âm tính).
+Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$, khi nó cho kết quả dương tính dù bệnh nhân khỏe mạnh. 
+Hơn nữa, nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự bị nhiễm bệnh. 
+Ta sử dụng $D_1$ để biểu diễn kết quả chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng nhiễm HIV ($1$ nếu dương tính và $0$ nếu âm tính).
 :numref:`conditional_prob_D1` liệt kê xác suất có điều kiện đó.
 
 <!--
@@ -595,7 +595,7 @@ Note that the column sums are all $1$ (but the row sums are not), since the cond
 -->
 
 Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng hàng thì không), vì xác suất có điều kiện cần có tổng bằng $1$, giống như xác suất.
-Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trả về kết quả dương tính, tức là, $P(H = 1 \mid D_1 = 1)$.
+Hãy cùng tìm xác suất bệnh nhân bị AIDS nếu xét nghiệm trả về kết quả dương tính, tức $P(H = 1 \mid D_1 = 1)$.
 Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng dương tính giả.
 Giả sử rằng dân số khá khỏe mạnh, ví dụ: $P(H=1) = 0.0015$.
 Để áp dụng Định lý Bayes, chúng ta cần áp dụng phép biên hóa và quy tắc nhân để xác định
