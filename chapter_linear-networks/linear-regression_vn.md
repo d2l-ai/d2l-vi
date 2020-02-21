@@ -395,7 +395,10 @@ These parameters that are tunable but not updated in the training loop are calle
 *Hyperparameter tuning* is the process by which these are chosen, and typically requires that we adjust the hyperparameters based on the results of the inner (training) loop as assessed on a separate *validation* split of the data.
 -->
 
-*dịch đoạn phía trên*
+Trong phương trình trên, $|\mathcal{B}|$ là số ví dụ trong mỗi batch con (*kích thước batch*) và $\eta$ là *tốc độ học*.
+Cũng cần phải nhấn mạnh rằng các giá trị của kích thước batch và tốc độ học được lựa chọn trước một cách thủ công và thường không được học thông qua quá trình huấn luyện mô hình.
+Các tham số điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện được gọi là *siêu tham số*.
+*Điều chỉnh siêu tham số* là quá trình lựa chọn chúng, thường dựa trên kết quả của vòng lặp huấn luyện đánh giá trên tập *kiểm định*.
 
 <!--
 After training for some predetermined number of iterations (or until some other stopping criteria is met), 
@@ -404,7 +407,10 @@ Note that even if our function is truly linear and noiseless, these parameters w
 although the algorithm converges slowly towards a local minimum it cannot achieve it exactly in a finite number of steps.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một tiêu chí dừng nhất định khác),
+ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (thường thì biểu tượng "mũ" thể hiện các giá trị ước lượng).
+Lưu ý rằng ngay cả khi hàm số thực sự tuyến tính và không có nhiễu, các tham số này sẽ không tối thiểu hóa được hàm mất mát.
+Mặc dù thuật toán dần dần hội tụ đến một cực tiểu cục bộ, nó vẫn không thể tới được chính xác cực tiểu đó với số bước hữu hạn.
 
 <!--
 Linear regression happens to be a convex learning problem, and thus there is only one (global) minimum.
@@ -414,7 +420,11 @@ The more formidable task is to find parameters that will achieve low loss on dat
 We return to these topics throughout the book.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó chỉ có một cực tiểu (toàn cục).
+Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt của hàm mất mát sẽ có nhiều cực tiểu.
+May mắn thay, vì một lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm ra các tham số tối thiểu hóa hàm mất mát *trên dữ liệu huấn luyện*.
+Nhiệm vụ khó khăn hơn là tìm ra các tham số dẫn đến giá trị mất mát thấp trên dữ liệu mà mô hình chưa từng thấy trước đây, một thử thách được gọi là *khái quát hóa*.
+Chúng ta sẽ nhắc lại những chủ đề này xuyên suốt cuốn sách.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -925,7 +935,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 9 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 10 -->
 * Tạ Đức Huy
