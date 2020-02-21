@@ -355,7 +355,7 @@ Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X
 Khi viết $P(X = a)$, chúng ta đã phân biệt giữa biến ngẫu nhiên $X$ và các giá trị (ví dụ như $a$) mà $X$ có thể nhận.
 Tuy nhiên, ký hiệu như vậy khá là rườm rà.
 Để đơn giản hóa ký hiệu, một mặt, chúng ta có thể chỉ cần dùng $P(X)$ để biểu diễn *phân phối* của biến ngẫu nhiên $X$: phân phối này cho chúng ta biết xác xuất mà $X$ có thể nhận cho bất kỳ giá trị nào.
-Mặt khác, chúng ta có thể viết đơn giản $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên có thể nhận giá trị $a$.
+Mặt khác, chúng ta có thể đơn thuần viết $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên nhận giá trị $a$.
 Bởi vì một sự kiện trong lý thuyết xác suất là một tập các kết quả từ không gian mẫu, chúng ta có thể xác định rõ một khoảng các giá trị mà một biến ngẫu nhiên có thể nhận.
 Ví dụ, $P(1 \leq X \leq 3)$ diễn tả xác suất của sự kiện $\{1 \leq X \leq 3\}$, nghĩa là $\{X = 1, 2, \text{hoặc}, 3\}$.
 Tương tự, $P(1 \leq X \leq 3)$ biểu diễn xác suất mà biến ngẫu nhiên $X$ có thể nhận giá trị trong tập $\{1, 2, 3\}$.
@@ -367,8 +367,8 @@ In the rest of this section, we consider probability in discrete space.
 For probability over continuous random variables, you may refer to :numref:`sec_random_variables`.
 -->
 
-Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
-Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chính xác chiều cao hay không.
+Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một người.
+Việc hỏi rằng hai người có cùng chính xác chiều cao hay không khá là vô nghĩa.
 Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
 Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
 Cho nên không có lý do gì để tìm xác suất một người nào đó cao $1.80139278291028719210196740527486202$ mét cả.
