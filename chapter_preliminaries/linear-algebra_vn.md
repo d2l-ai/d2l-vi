@@ -13,8 +13,8 @@ Now that you can store and manipulate data, let's briefly review the subset of b
 Below, we introduce the basic mathematical objects, arithmetic, and operations in linear algebra, expressing each both through mathematical notation and the corresponding implementation in code.
 -->
 
-Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng nhanh chóng ôn lại những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
-Dưới đây, chúng ta giới thiệu các đối tượng toán học, số học, phép tính trong đại số tuyến tính, biểu diễn chúng dưới ký hiệu toán học và mã nguồn. 
+Bây giờ bạn đã có thể lưu trữ và xử lý dữ liệu, hãy cùng ôn qua những kiến thức đại số tuyến tính cần thiết để hiểu và lập trình hầu hết các mô hình được nhắc tới trong quyển sách này.
+Dưới đây, chúng tôi giới thiệu các đối tượng toán học, số học và phép tính cơ bản trong đại số tuyến tính, biểu diễn chúng bằng cả ký hiệu toán học và cách triển khai lập trình tương ứng. 
 
 
 <!--
@@ -33,13 +33,13 @@ In this equation, each of the terms---$5$, $9$, and $32$---are scalar values.
 The placeholders $c$ and $f$ are called *variables* and they represented unknown scalar values.
 -->
 
-Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ từng làm việc với từng con số riêng lẻ.
-Nếu bạn đã từng phải cân bằng sổ chi tiêu hoặc chỉ đơn giản là trả tiền cho bữa ăn, bạn chắc chắn là đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
+Nếu bạn chưa từng học đại số tuyến tính hay học máy, có lẽ bạn mới chỉ có kinh nghiệm làm toán với từng con số riêng lẻ.
+Và nếu bạn đã từng phải cân bằng sổ thu chi hoặc đơn giản là trả tiền cho bữa ăn, thì hẳn bạn đã biết cách thực hiện các phép tính cơ bản như cộng trừ nhân chia các cặp số.
 Ví dụ, nhiệt độ tại Palo Alto là $52$ độ Fahrenheit.
-Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *vô hướng* (*scalar*).
+Chúng ta gọi các giá trị mà chỉ bao gồm một số duy nhất là *số vô hướng* (*scalar*).
 Nếu bạn muốn chuyển giá trị nhiệt độ trên sang độ Celsius (thang đo nhiệt độ hợp lý hơn theo hệ mét), bạn sẽ phải tính biểu thức $c = \frac{5}{9}(f - 32)$ với giá trị $f$ bằng $52$.
 Trong phương trình trên, mỗi số hạng --- $5$, $9$ và $32$ --- là các số vô hướng.
-Các ký hiệu số hạng $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
+Các ký hiệu $c$ và $f$ được gọi là *biến* và chúng biễu diễn các giá trị số vô hướng chưa biết.
 
 <!--
 In this book, we adopt the mathematical notation where scalar variables are denoted by ordinary lower-cased letters (e.g., $x$, $y$, and $z$).
@@ -49,19 +49,20 @@ The symbol $\in$ can be pronounced "in" and simply denotes membership in a set.
 Analogously, we could write $x, y \in \{0, 1\}$ to state that $x$ and $y$ are numbers whose value can only be $0$ or $1$.
 -->
 
-Trong quyển sách này, chúng ta sẽ theo quy ước ký hiệu các biến vô hướng bằng các chữ cái được viết thường (chẳng hạn $x$, $y$ và $z$).
-Chúng ta ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
-Vì tính thiết thực, chúng ta sẽ bỏ qua việc định nghĩa chặt chẽ *không gian* là gì, bây giờ bạn chỉ cần nhớ biểu thức $x \in \mathbb{R}$ là một cách nói chính quy rằng $x$ là một số thực vô hướng.
-Ký hiệu $\in$ đọc là "thuộc" và chỉ đơn giản là biểu diễn mối quan hệ của phần tử trong một tập hợp.
-Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu rằng $x$ và $y$ là các số mà chỉ có thể nhận giá trị $0$ hoặc $1$.
+Trong quyển sách này, chúng tôi sẽ tuân theo quy ước ký hiệu các biến vô hướng bằng các chữ cái viết thường (chẳng hạn $x$, $y$ và $z$).
+Chúng tôi ký hiệu không gian (liên tục) của tất cả các *số thực* vô hướng là $\mathbb{R}$.
+Vì tính thiết thực, chúng tôi sẽ bỏ qua định nghĩa chính xác của *không gian*.
+Nhưng bạn cần nhớ $x \in \mathbb{R}$ là cách toán học để thể hiện $x$ là một số thực vô hướng.
+Ký hiệu $\in$ đọc là "thuộc" và đơn thuần biểu diễn việc phần tử thuộc một tập hợp.
+Tương tự, ta có thể viết $x, y \in \{0, 1\}$ để ký hiệu cho việc các số $x$ và $y$ chỉ có thể nhận giá trị $0$ hoặc $1$.
 
 <!--
 In MXNet code, a scalar is represented by an `ndarray` with just one element.
 In the next snippet, we instantiate two scalars and perform some familiar arithmetic operations with them, namely addition, multiplication, division, and exponentiation.
 -->
 
-Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng `ndarray` với chỉ một phần tử.
-Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính cộng, trừ, nhân, chia, lũy thừa quen thuộc với chúng.
+Trong mã nguồn MXNet, một số vô hướng được biễu diễn bằng một `ndarray` với chỉ một phần tử.
+Trong đoạn mã dưới đây, chúng ta khởi tạo hai số vô hướng và thực hiện các phép tính quen thuộc như cộng, trừ, nhân, chia và lũy thừa với chúng.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -92,12 +93,12 @@ If we were studying the risk of heart attacks hospital patients potentially face
 In math notation, we will usually denote vectors as bold-faced, lower-cased letters (e.g., $\mathbf{x}$, $\mathbf{y}$, and $\mathbf{z})$.
 -->
 
-Bạn có thể nghĩ vector đơn giản là một dãy các số vô hướng.
+Bạn có thể xem vector đơn thuần như một dãy các số vô hướng.
 Chúng ta gọi các giá trị đó là *phần tử* (*thành phần*) của vector.
-Khi các vector biễu diễn cho mẫu trong tập dữ liệu, các giá trị của nó mang theo những ý nghĩa từ thực tế.
-Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector với các thành phần tương ứng với thu nhập của họ, thời gian làm việc, số lần vỡ nợ trước đó và các yếu tố khác.
-Nếu chúng ta đang học về rủi ro bị đau tim của bệnh nhân trong bệnh viện, ta có thể biểu diễn mỗi bệnh nhân bằng một vector với phần tử mang các thông tin về chỉ số sức khỏe, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
-Trong ký hiệu toán học, chúng ta thường ký hiệu vector bằng chữ cái đậm nét viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
+Khi dùng vector để biễu diễn các mẫu trong tập dữ liệu, giá trị của chúng thường mang ý nghĩa liên quan tới đời thực.
+Ví dụ, nếu chúng ta huấn luyện một mô hình dự đoán rủi ro vỡ nợ, chúng ta có thể gán cho mỗi ứng viên một vector gồm các thành phần tương ứng với thu nhập, thời gian làm việc, số lần vỡ nợ trước đó của họ và các yếu tố khác.
+Nếu chúng ta đang tìm hiểu về rủi ro bị đau tim của bệnh nhân, ta có thể biểu diễn mỗi bệnh nhân bằng một vector gồm các phần tử mang thông tin về dấu hiệu sinh tồn gần nhất, nồng độ cholesterol, số phút tập thể dục mỗi ngày, v.v.
+Trong ký hiệu toán học, chúng ta thường biểu diễn vector bằng chữ cái in đậm viết thường (ví dụ $\mathbf{x}$, $\mathbf{y}$, và $\mathbf{z})$.
 
 <!--
 In MXNet, we work with vectors via $1$-dimensional `ndarray`s.
@@ -105,7 +106,7 @@ In general `ndarray`s can have arbitrary lengths, subject to the memory limits o
 -->
 
 Trong MXNet, chúng ta làm việc với vector thông qua các `ndarray` $1$-chiều.
-Tổng quát lên, `ndarray` có thể có chiều dài bất kỳ, giới hạn bởi bộ nhớ máy tính.
+Thường thì `ndarray` có thể có chiều dài bất kỳ, tùy thuộc vào giới hạn bộ nhớ máy tính.
 
 ```{.python .input  n=2}
 x = np.arange(4)
@@ -121,9 +122,9 @@ In math, a vector $\mathbf{x}$ can be written as
 -->
 
 Một phần tử bất kỳ trong vector có thể được ký hiệu sử dụng chỉ số dưới.
-Ví dụ ta đề cập tới phần tử thứ $i$ của $\mathbf{x}$ bằng $x_i$.
-Lưu ý rằng phần từ $x_i$ là một số vô hướng nên nó không cần được in đậm.
-Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, quyển sách này cũng vậy.
+Ví dụ ta có thể viết $x_i$ để ám chỉ phần tử thứ $i$ của $\mathbf{x}$.
+Lưu ý rằng phần tử $x_i$ là một số vô hướng nên nó không được in đậm.
+Có rất nhiều tài liệu tham khảo xem vector cột là chiều mặc định của vector, và quyển sách này cũng vậy.
 Trong toán học, một vector có thể được viết như sau
 
 $$\mathbf{x} =\begin{bmatrix}x_{1}  \\x_{2}  \\ \vdots  \\x_{n}\end{bmatrix},$$
@@ -136,7 +137,7 @@ In code, we access any element by indexing into the `ndarray`.
 -->
 
 trong đó $x_1, \ldots, x_n$ là các phần tử của vector.
-Trong mã nguồn, chúng ta sử dụng chỉ số để truy cập tới các phần tử trong `ndarray`.
+Trong mã nguồn, chúng ta sử dụng chỉ số để truy cập các phần tử trong `ndarray`.
 
 ```{.python .input  n=3}
 x[3]
@@ -167,7 +168,7 @@ The length of a vector is commonly called the *dimension* of the vector.
 
 Hãy quay lại với những khái niệm từ :numref:`sec_ndarray`.
 Một vector đơn thuần là một dãy các số.
-Và mỗi dãy số đều có độ dài, mỗi vector cũng tương tự như vậy.
+Mỗi vector, tương tự như dãy, đều có một độ dài.
 Trong ký hiệu toán học, nếu ta muốn nói rằng một vector $\mathbf{x}$ chứa $n$ các số thực vô hướng, ta có thể biểu diễn nó bằng $\mathbf{x} \in \mathbb{R}^n$.
 Độ dài của một vector còn được gọi là số **chiều** của vector.
 
@@ -202,8 +203,8 @@ However, we use the dimensionality of an `ndarray` to refer to the number of axe
 In this sense, the dimensionality of an `ndarray`'s some axis will be the length of that axis.
 -->
 
-Lưu ý rằng ở đây, từ "chiều" thường có rất nhiều nghĩa trong các ngữ cảnh và điều này thường khiến mọi người bị nhầm lẫn.
-Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector, hay một trục.
+Ở đây cần lưu ý rằng, từ "chiều" là một từ đa nghĩa và khi đặt vào nhiều ngữ cảnh thường dễ làm ta bị nhầm lẫn.
+Để làm rõ, chúng ta dùng số chiều của một *vector* hoặc của một *trục* để chỉ độ dài của nó, tức là số phần tử trong một vector hay một trục.
 Tuy nhiên, chúng ta sử dụng số chiều của một `ndarray` để chỉ số trục của `ndarray` đó.
 Theo nghĩa này, chiều của một trục của một `ndarray` là độ dài của trục đó. 
 
@@ -226,16 +227,16 @@ Just as vectors generalize scalars from order $0$ to order $1$, matrices general
 Matrices, which we will typically denote with bold-faced, capital letters (e.g., $\mathbf{X}$, $\mathbf{Y}$, and $\mathbf{Z}$), are represented in code as `ndarray`s with $2$ axes.
 -->
 
-Cũng giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận khái quát vector từ bậc $1$ sang bậc $2$.
-Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$).
-Ma trận được biểu diễn bằng các `ndarray` với $2$ trục khi viết mã.
+Giống như vector khái quát số vô hướng từ bậc $0$ sang bậc $1$, ma trận sẽ khái quát những vector từ bậc $1$ sang bậc $2$.
+Ma trận thường được ký hiệu với ký tự hoa và được in đậm (ví dụ: $\mathbf{X}$, $\mathbf{Y}$, và $\mathbf{Z}$);
+và được biểu diễn bằng các `ndarray` với $2$ trục khi lập trình.
 
 <!--
 In math notation, we use $\mathbf{A} \in \mathbb{R}^{m \times n}$ to express that the matrix $\mathbf{A}$ consists of $m$ rows and $n$ columns of real-valued scalars.
 Visually, we can illustrate any matrix $\mathbf{A} \in \mathbb{R}^{m \times n}$ as a table, where each element $a_{ij}$ belongs to the $i^{\mathrm{th}}$ row and $j^{\mathrm{th}}$ column:
 -->
 
-Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ $m$ hàng và $n$ cột các giá trị số thực.
+Trong ký hiệu toán học, ta dùng $\mathbf{A} \in \mathbb{R}^{m \times n}$ để biểu thị một ma trận $\mathbf{A}$ gồm $m$ hàng và $n$ cột các giá trị số thực.
 Về mặt hình ảnh, ta có thể minh họa bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ như một bảng biểu mà mỗi phần tử $a_{ij}$ nằm ở dòng thứ $i$ và cột thứ $j$ của bảng:   
 
 $$\mathbf{A}=\begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \\ \end{bmatrix}.$$
@@ -247,8 +248,8 @@ For any $\mathbf{A} \in \mathbb{R}^{m \times n}$, the shape of $\mathbf{A}$ is (
 Specifically, when a matrix has the same number of rows and columns, its shape becomes a square; thus, it is called a *square matrix*.
 -->
 
-Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$, kích thước của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
-Trong trường hợp đặc biệt, nếu một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; vì vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
+Với bất kỳ ma trận $\mathbf{A} \in \mathbb{R}^{m \times n}$ nào, kích thước của ma trận $\mathbf{A}$ là ($m$, $n$) hay $m \times n$.
+Trong trường hợp đặc biệt, khi một ma trận có số dòng bằng số cột, dạng của nó là một hình vuông; như vậy, nó được gọi là một *ma trận vuông* (*square matrix*).
 
 <!--
 We can create an $m \times n$ matrix in MXNet by specifying a shape with two components $m$ and $n$ when calling any of our favorite functions for instantiating an `ndarray`.
@@ -268,8 +269,8 @@ To keep notation simple, commas are inserted to separate indices only when neces
 -->
 
 Ta có thể truy cập phần tử vô hướng $a_{ij}$ của ma trận $\mathbf{A}$ trong :eqref:`eq_matrix_def` bằng cách khai báo chỉ số dòng ($i$) và chỉ số cột ($j$), như là $[\mathbf{A}]_{ij}$.
-Khi thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`, vẫn chưa biết, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
-Nhằm giữ cho các ký hiệu đơn giản, dấu phẩy thường được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
+Khi những thành phần vô hướng của ma trận $\mathbf{A}$, như trong :eqref:`eq_matrix_def`chưa được đưa ra, ta có thể sử dụng ký tự viết thường của ma trận $\mathbf{A}$ với các chỉ số ghi dưới, $a_{ij}$, để chỉ thành phần $[\mathbf{A}]_{ij}$.
+Nhằm giữ sự đơn giản cho các ký hiệu, dấu phẩy chỉ được thêm vào để phân tách các chỉ số khi cần thiết, như $a_{2, 3j}$ và $[\mathbf{A}]_{2i-1, 3}$.
 
 <!--
 Sometimes, we want to flip the axes.
@@ -297,7 +298,7 @@ $$
 In code, we access a matrix's transpose via the `T` attribute.
 -->
 
-Khi lập trình, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
+Trong mã nguồn, ta lấy chuyển vị của một ma trận thông qua thuộc tính `T`.
 
 ```{.python .input  n=7}
 A.T
@@ -330,8 +331,8 @@ For example, along the outermost axis of an `ndarray`, we can access or enumerat
 Ma trận là một cấu trúc dữ liệu hữu ích: chúng cho phép ta tổ chức dữ liệu có nhiều phương thức biến thể khác nhau.
 Ví dụ, các dòng trong ma trận của chúng ta có thể tượng trưng cho các căn nhà khác nhau (các điểm dữ liệu), còn các cột có thể tượng trưng cho những thuộc tính khác nhau của ngôi nhà.
 Bạn có thể thấy quen thuộc với điều này nếu đã từng sử dụng các phần mềm lập bảng tính hoặc đã đọc :numref:`sec_pandas`.
-Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tiện lợi hơn nếu ta coi một điểm dữ liệu như một vector dòng trong ma trận.
-Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ cho phép sự xuất hiện của những kỹ thuật học sâu thông dụng.
+Do đó, mặc dù một vector đơn lẻ có hướng mặc định là một vector cột, trong một ma trận biểu thị một tập dữ liệu bảng biểu, sẽ tốt hơn nếu ta xem mỗi điểm dữ liệu như một vector dòng trong ma trận.
+Chúng ta sẽ thấy ở những chương sau, quy ước này sẽ giúp dễ dàng áp dụng các kỹ thuật học sâu thông dụng.
 Ví dụ, với trục ngoài cùng của `ndarray`, ta có thể truy cập hay duyệt qua các batch nhỏ của những điểm dữ liệu hoặc chỉ đơn thuần là các điểm dữ liệu nếu không có batch nhỏ nào cả. 
 
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
@@ -355,18 +356,18 @@ Vectors, for example, are first-order tensors, and matrices are second-order ten
 Tensors are denoted with capital letters of a special font face (e.g., $\mathsf{X}$, $\mathsf{Y}$, and $\mathsf{Z}$) and their indexing mechanism (e.g., $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) is similar to that of matrices.
 -->
 
-Cũng giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
+Giống như vector khái quát hoá số vô hướng và ma trận khái quát hoá vector, ta có thể xây dựng những cấu trúc dữ liệu với thậm chí nhiều trục hơn.
 Tensor cho chúng ta một phương pháp tổng quát để miêu tả các `ndarray` với số trục bất kỳ.
 Ví dụ, vector là các tensor bậc một còn ma trận là các tensor bậc hai.
-Tensor được ký hiệu với ký tự viết hoa sử dụng một mặt chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
+Tensor được ký hiệu với ký tự viết hoa sử dụng một font chữ đặc biệt (ví dụ: $\mathsf{X}$, $\mathsf{Y}$, và $\mathsf{Z}$) và có cơ chế truy vấn (ví dụ: $x_{ijk}$ and $[\mathsf{X}]_{1, 2i-1, 3}$) giống như ma trận.
 
 <!--
 Tensors will become more important when we start working with images, which arrive as `ndarray`s with 3 axes corresponding to the height, width, and a *channel* axis for stacking the color channels (red, green, and blue). 
 For now, we will skip over higher order tensors and focus on the basics.
 -->
 
-Tensor sẽ trở nên rất quan trọng khi ta bắt đầu làm việc với hình ảnh, thường được biểu diễn dưới dạng `ndarray` với 3 trục tương ứng với chiều cao, chiều rộng và một trục *kênh* (*channel*) để xếp chồng các kênh màu (đỏ, xanh lá và xanh dương).
-Tạm thời, ta sẽ bỏ qua các tensor bậc cao hơn và tập trung vào những thứ cơ bản trước. 
+Tensor sẽ trở nên quan trọng hơn khi ta bắt đầu làm việc với hình ảnh, thường được biểu diễn dưới dạng `ndarray` với 3 trục tương ứng với chiều cao, chiều rộng và một trục *kênh* (*channel*) để xếp chồng các kênh màu (đỏ, xanh lá và xanh dương).
+Tạm thời, ta sẽ bỏ qua các tensor bậc cao hơn và tập trung vào những điểm cơ bản trước. 
 
 ```{.python .input  n=9}
 X = np.arange(24).reshape(2, 3, 4)
@@ -469,7 +470,7 @@ For example, the sum of the elements of an $m \times n$ matrix $\mathbf{A}$ coul
 -->
 
 Ta có thể biểu diễn phép tính tổng các phần tử của tensor có kích thước tùy ý.
-Ví dụ, tổng các phẩn tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
+Ví dụ, tổng các phần tử của một ma trận $m \times n$ có thể được viết là $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}$.
 
 ```{.python .input  n=12}
 A.shape, A.sum()
@@ -558,7 +559,7 @@ A.mean(axis=0), A.sum(axis=0) / A.shape[0]
 However, sometimes it can be useful to keep the number of axes unchanged when invoking `sum` or `mean` by setting `keepdims=True`.
 -->
 
-Tuy nhiên, việc giữ lại số các trục đôi khi lại tỏ ra hữu dụng khi dùng hàm `sum` hoặc `mean`, bằng cách đặt `keepdims=True`.
+Tuy nhiên, việc giữ lại số các trục đôi khi là cần thiết khi gọi hàm `sum` hoặc `mean`, bằng cách đặt `keepdims=True`.
 
 ```{.python .input}
 sum_A = A.sum(axis=1, keepdims=True)
@@ -569,7 +570,7 @@ sum_A
 For instance, since `sum_A` still keeps its $2$ axes after summing each row, we can divide `A` by `sum_A` with broadcasting.
 -->
 
-Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua sự lan truyền.
+Ví dụ, vì `sum_A` vẫn giữ lại $2$ trục sau khi tính tổng của mỗi hàng, chúng ta có thể chia `A` cho `sum_A` thông qua cơ chế lan truyền.
 
 ```{.python .input}
 A / sum_A
@@ -579,7 +580,7 @@ A / sum_A
 If we want to calculate the cumulative sum of elements of `A` along some axis, say `axis=0` (row by row), we can call the `cumsum` function. This function will not reduce the input tensor along any axis.
 -->
 
-Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Khi đó hàm này sẽ không giảm số chiều của tensor đầu vào theo bất cứ trục nào.
+Nếu chúng ta muốn tính tổng tích lũy các phần tử của `A` dọc theo các trục, giả sử `axis=0` (từng hàng một), ta có thể gọi hàm `cumsum`. Hàm này không rút gọn chiều của tensor đầu vào theo bất cứ trục nào.
 
 ```{.python .input}
 A.cumsum(axis=0)
@@ -599,8 +600,8 @@ Given two vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their *dot product*
 -->
 
 Cho đến giờ, chúng ta mới chỉ thực hiện những phép tính từng phần tử tương ứng, như tổng và trung bình. 
-Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng có một mục riêng.
-Ngoài các phép tính trên từng hạng tử, một phép tính cơ bản khác là tích vô hướng.
+Nếu đây là tất những gì chúng ta có thể làm, đại số tuyến tính có lẽ không xứng đáng để có nguyên một mục.
+Tuy nhiên, một trong nhưng phép tính căn bản nhất của đại số tuyến tính là tích vô hướng.
 Với hai vector $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ cho trước, *tích vô hướng* (_dot product_) $\mathbf{x}^\top \mathbf{y}$ (hoặc $\langle \mathbf{x}, \mathbf{y}  \rangle$) là tổng các tích của những phần tử có cùng vị trí:
 $\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^{d} x_i y_i$.
 
@@ -627,7 +628,7 @@ After normalizing two vectors to have the unit length, the dot products express 
 We will formally introduce this notion of *length* later in this section.
 -->
 
-Tích vô hướng tỏ ra hữu dụng trong nhiều trường hợp.
+Tích vô hướng sẽ hữu dụng trong rất nhiều trường hợp.
 Ví dụ, với một tập các giá trị cho trước, biểu thị bởi vector $\mathbf{x}  \in \mathbb{R}^d$, và một tập các trọng số được biểu thị bởi $\mathbf{w} \in \mathbb{R}^d$, tổng trọng số của các giá trị trong $\mathbf{x}$ theo các trọng số trong $\mathbf{w}$ có thể được thể hiện bởi tích vô hướng $\mathbf{x}^\top \mathbf{w}$.
 Khi các trọng số không âm và có tổng bằng một($\left(\sum_{i=1}^{d} {w_i} = 1\right)$), tích vô hướng thể hiện phép tính *trung bình trọng số* (_weighted average_).
 Sau khi được chuẩn hoá thành hai vector đơn vị, tích vô hướng của hai vector đó là giá trị cos của góc giữa hai vector đó.
@@ -707,7 +708,9 @@ When we call `np.dot(A, x)` with a matrix `A` and a vector `x`, the matrix-vecto
 Note that the column dimension of `A` (its length along axis $1$) must be the same as the dimension of `x` (its length).
 -->
 
-Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện tính toán tích giữa ma trận và vector. Lưu ý rằng số chiều của cột `A` (chiều dài theo trục $1$) phải bằng với số chiều của vector `x` (chiều dài của nó).
+Khi lập trình, để thực hiện nhân ma trận với vector `ndarray`, chúng ta cũng sử dụng hàm `dot` giống như tích vô hướng. 
+Việc gọi `np.dot(A, x)` với ma trận `A` và một vector `x` sẽ thực hiện phép nhân vô hướng giữa ma trận và vector. 
+Lưu ý rằng chiều của cột `A` (chiều dài theo trục $1$) phải bằng với chiều của vector `x` (chiều dài của nó).
 
 ```{.python .input  n=16}
 A.shape, x.shape, np.dot(A, x)
@@ -731,7 +734,7 @@ A.shape, x.shape, np.dot(A, x)
 If you have gotten the hang of dot products and matrix-vector products, then *matrix-matrix multiplication* should be straightforward.
 -->
 
-Nếu bạn đã quen thuộc với tích vô hướng và tích ma trận-vector, tích của hai ma trận cũng tương tự như thế.
+Nếu bạn đã quen với tích vô hướng và tích ma trận-vector, tích *ma trận-ma trận* cũng tương tự như thế.
 
 <!--
 Say that we have two matrices $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{B} \in \mathbb{R}^{k \times m}$:
@@ -757,8 +760,8 @@ Denote by $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ the row vector representing the
 To produce the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$, it is easiest to think of $\mathbf{A}$ in terms of its row vectors and $\mathbf{B}$ in terms of its column vectors:
 -->
 
-Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
-Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ các cột của ma trận $\mathbf{B}$:
+Đặt $\mathbf{a}^\top_{i} \in \mathbb{R}^k$ là vector hàng biểu diễn hàng thứ $i$ của ma trận $\mathbf{A}$ và $\mathbf{b}_{j} \in \mathbb{R}^k$ là vector cột thứ $j$ của ma trận $\mathbf{B}$.
+Để tính ma trận tích $\mathbf{C} = \mathbf{A}\mathbf{B}$, cách đơn giản nhất là viết các hàng của ma trận $\mathbf{A}$ và các cột của ma trận $\mathbf{B}$:
 
 $$\mathbf{A}=
 \begin{bmatrix}
@@ -777,7 +780,7 @@ $$
 Then the matrix product $\mathbf{C} \in \mathbb{R}^{n \times m}$ is produced as we simply compute each element $c_{ij}$ as the dot product $\mathbf{a}^\top_i \mathbf{b}_j$:
 -->
 
-Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo bằng cách tính từng phần tử $c_{ij}$ của nó bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
+Khi đó ma trận tích $\mathbf{C} \in \mathbb{R}^{n \times m}$ được tạo với phần tử $c_{ij}$ bằng tích vô hướng $\mathbf{a}^\top_i \mathbf{b}_j$:
 
 $$\mathbf{C} = \mathbf{AB} = \begin{bmatrix}
 \mathbf{a}^\top_{1} \\
@@ -850,8 +853,8 @@ In linear algebra, a vector norm is a function $f$ that maps a vector to a scala
 Given any vector $\mathbf{x}$, the first property says that if we scale all the elements of a vector by a constant factor $\alpha$, its norm also scales by the *absolute value* of the same constant factor:
 -->
 
-Trong đại số tuyến tính, chuẩn của một vector là hàm số $f$ mà ánh xạ vector thành số vô hướng, thỏa mãn các tính chất sau.
-Cho vector $\mathbf{x}$ bất kỳ, tính chất đầu tiên phát biểu rằng nếu chúng ta co giãn toàn bộ các phần tử của một vector bằng một hằng số $\alpha$, chuẩn của vector đó cũng co giãn theo *giá trị tuyệt đối* của hằng số đó :
+Trong đại số tuyến tính, chuẩn của một vector là hàm số $f$ ánh xạ một vector đến một số vô hướng, thỏa mãn các tính chất sau.
+Cho vector $\mathbf{x}$ bất kỳ, tính chất đầu tiên phát biểu rằng nếu chúng ta co giãn toàn bộ các phần tử của một vector bằng một hằng số $\alpha$, chuẩn của vector đó cũng co giãn theo *giá trị tuyệt đối* của hằng số đó:
 
 $$f(\alpha \mathbf{x}) = |\alpha| f(\mathbf{x}).$$
 
@@ -869,7 +872,7 @@ $$f(\mathbf{x} + \mathbf{y}) \leq f(\mathbf{x}) + f(\mathbf{y}).$$
 The third property simply says that the norm must be non-negative:
 -->
 
-Tính chất thứ ba phát biểu rằng một chuẩn phải không âm:
+Tính chất thứ ba phát biểu rằng chuẩn phải không âm:
 
 $$f(\mathbf{x}) \geq 0.$$
 
@@ -878,8 +881,8 @@ That makes sense, as in most contexts the smallest *size* for anything is 0.
 The final property requires that the smallest norm is achieved and only achieved by a vector consisting of all zeros.
 -->
 
-Điều này nghĩa là, trong hầu hết các trường hợp thì *kích thước* nhỏ nhất cho mọi vector sẽ bằng 0.
-Tính chất cuối cùng yêu cầu chuẩn nhỏ nhất thu được khi và chỉ khi toàn bộ thành phần của vector đó là 0.
+Điều này là hợp lý vì trong hầu hết các trường hợp thì *kích thước* nhỏ nhất cho các vật đều bằng 0.
+Tính chất cuối cùng yêu cầu chuẩn nhỏ nhất thu được khi và chỉ khi toàn bộ thành phần của vector đó bằng 0.
 
 $$\forall i, [\mathbf{x}]_i = 0 \Leftrightarrow f(\mathbf{x})=0.$$
 
@@ -891,8 +894,8 @@ Suppose that the elements in the $n$-dimensional vector $\mathbf{x}$ are $x_1, \
 The $\ell_2$ *norm* of $\mathbf{x}$ is the square root of the sum of the squares of the vector elements:
 -->
 
-Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một thước đo khoảng cách.
-Và nếu còn nhớ khái niệm khoảng cách Euclid (nhớ định lý Pythagoras không) học hồi cấp 3, thì mong khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc được một chút.
+Bạn chắc sẽ để ý là các chuẩn có vẻ giống như một phép đo khoảng cách.
+Và nếu còn nhớ khái niệm khoảng cách Euclid (định lý Pythagoras) được học ở phổ thông, thì khái niệm không âm và bất đẳng thức tam giác có thể gợi nhắc lại một chút.
 Thực tế là, khoảng cách Euclid cũng là một chuẩn: cụ thể là $\ell_2$.
 Giả sử rằng các thành phần trong vector $n$ chiều $\mathbf{x}$ là $x_1, \ldots, x_n$.
 *Chuẩn* $\ell_2$ của $\mathbf{x}$ là căn bậc hai của tổng các bình phương của các thành phần trong vector: 
@@ -904,7 +907,8 @@ where the subscript $2$ is often omitted in $\ell_2$ norms, i.e., $\|\mathbf{x}\
 In code, we can calculate the $\ell_2$ norm of a vector by calling `linalg.norm`.
 -->
 
-Số $2$ nhỏ ở dưới thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.   
+Ở đó, chỉ số dưới $2$ thường được lược đi khi viết chuẩn $\ell_2$, ví dụ, $\|\mathbf{x}\|$ cũng tương đương với $\|\mathbf{x}\|_2$.
+Khi lập trình, ta có thể tính chuẩn $\ell_2$ của một vector bằng cách gọi hàm `linalg.norm`.
 
 ```{.python .input  n=18}
 u = np.array([3, -4])
@@ -916,8 +920,8 @@ In deep learning, we work more often with the squared $\ell_2$ norm.
 You will also frequently encounter the $\ell_1$ *norm*, which is expressed as the sum of the absolute values of the vector elements:
 -->
 
-Trong Học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
-Bạn cũng hay gặp *chuẩn* $\ell_1$, chuẩn được biểu diễn bằng tổng các giá trị tuyệt đối của các thành phần trong vector.
+Trong học sâu, chúng ta thường gặp chuẩn $\ell_2$ bình phương hơn.
+Bạn cũng sẽ thường xuyên gặp *chuẩn* $\ell_1$, chuẩn được biểu diễn bằng tổng các giá trị tuyệt đối của các thành phần trong vector:
 
 $$\|\mathbf{x}\|_1 = \sum_{i=1}^n \left|x_i \right|.$$
 
@@ -956,8 +960,8 @@ It behaves as if it were an $\ell_2$ norm of a matrix-shaped vector. Invoking `l
 -->
 
 Chuẩn Frobenius thỏa mãn tất cả các tính chất của một chuẩn vector.
-Nó giống như là chuẩn $\ell_2$ của một vector nhưng trong hình dạng của ma trận.
-Dùng hàm `linalg.norm` để tính toán chuẩn Frobenius của ma trận.
+Nó giống chuẩn $\ell_2$ của một vector nhưng ở dạng của ma trận.
+Ta dùng hàm `linalg.norm` để tính toán chuẩn Frobenius của ma trận.
 
 ```{.python .input}
 np.linalg.norm(np.ones((4, 9)))
@@ -985,10 +989,10 @@ Assign vector representations to items (like words, products, or news articles) 
 Oftentimes, the objectives, perhaps the most important components of deep learning algorithms (besides the data), are expressed as norms.
 -->
 
-Tuy không muốn đi quá nhanh, chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
+Tuy không muốn đi quá nhanh nhưng chúng ta có thể xây dựng phần nào trực giác để hiểu tại sao những khái niệm này lại hữu dụng.
 Trong học sâu, ta thường cố giải các bài toán tối ưu: *tối đa hóa* xác suất xảy ra của dữ liệu quan sát được; *tối thiểu hóa* khoảng cách giữa dự đoán và nhãn gốc.
 Gán các biểu diễn vector cho các đối tượng (như từ, sản phẩm hay các bài báo) để tối thiểu khoảng cách giữa các đối tượng tương tự nhau và tối đa khoảng cách giữa các đối tượng khác nhau.
- Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu, thường được biễu diễn diễn theo *chuẩn* (*norm*).
+Mục tiêu, thành phần quan trọng nhất của một thuật toán học sâu (bên cạnh dữ liệu), thường được biễu diễn diễn theo *chuẩn* (*norm*).
 
 <!--
 ## More on Linear Algebra
@@ -1008,10 +1012,10 @@ So while we reserve the right to introduce more mathematics much later on, we wi
 
 Chỉ trong mục này, chúng tôi đã trang bị cho bạn tất cả những kiến thức đại số tuyến tính cần thiết để hiểu một lượng lớn các mô hình học máy hiện đại.
 Vẫn còn rất nhiều kiến thức đại số tuyến tính, phần lớn đều hữu dụng cho học máy.
-Một ví dụ là phép phân tích ma trận ra các thành phần, và các phép khai triển này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
-Có cả một ngành nhỏ của học máy tập trung vào khai triển ma trận và tổng quát chúng lên cho tensor hạng lớn để khám phá cấu trúc trong các tập dữ liệu và giải các bài toán dự đoán.
+Một ví dụ là phép phân tích ma trận ra các thành phần, các phép phân tích này có thể tạo ra các cấu trúc thấp chiều trong các tập dữ liệu thực tế.
+Có cả một nhánh của học máy tập trung vào sử dụng các phép phân tích ma trận và tổng quát chúng lên cho các tensor bậc cao để khám phá cấu trúc trong các tập dữ liệu và giải quyết các bài toán dự đoán.
 Tuy nhiên, cuốn sách này chỉ tập trung vào học sâu.
-Và chúng tôi tin rằng bạn sẽ muốn học thêm nhiều về toán một khi bạn đã triển khai được các mô hình học máy hữu dụng cho các tập dữ liệu thực tế.
+Và chúng tôi tin rằng bạn sẽ muốn học thêm nhiều về toán một khi đã có thể triển khai được các mô hình học máy hữu dụng cho các tập dữ liệu thực tế.
 Bởi vậy, trong khi vẫn còn nhiều kiến thức toán cần bàn thêm ở phần sau, chúng tôi sẽ kết thúc mục này ở đây.
 
 <!--
@@ -1048,7 +1052,7 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 * Một tensor có thể thu gọn theo một số trục bằng `sum` và `mean`.
 * Phép nhân theo từng phần tử của hai ma trận được gọi là tích Hadamard của chúng. Phép toán này khác với phép nhân ma trận.
 * Trong học sâu, chúng ta thường làm việc với các chuẩn như chuẩn $\ell_1$, chuẩn $\ell_2$ và chuẩn Frobenius.
-* Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm số `ndarray`.
+* Chúng ta có thể thực hiện một số lượng lớn các toán tử trên số vô hướng, vector, ma trận và tensor với các hàm của `ndarray`.
 
 
 <!--
@@ -1069,15 +1073,15 @@ Nếu bạn muốn học thêm về đại số tuyến tính, bạn có thể t
 9. Feed a tensor with 3 or more axes to the `linalg.norm` function and observe its output. What does this function compute for `ndarray`s of arbitrary shape?
 -->
 
-1. Chứng minh rằng chuyển vị của chuyển vị của một ma trận là chính nó: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
+1. Chứng minh rằng chuyển vị của một ma trận chuyển vị là chính nó: $(\mathbf{A}^\top)^\top = \mathbf{A}$.
 2. Cho hai ma trận $\mathbf{A}$ và $\mathbf{B}$, chứng minh rằng tổng của chuyển vị bằng chuyển vị của tổng: $\mathbf{A}^\top + \mathbf{B}^\top = (\mathbf{A} + \mathbf{B})^\top$.
 3. Cho một ma trận vuông $\mathbf{A}$, liệu rằng $\mathbf{A} + \mathbf{A}^\top$ có luôn đối xứng? Tại sao?
-4. Chúng ta định nghĩa `X` với kích thước ($2$, $3$, $4$) trong mục này. Kết quả của `len(X)` là gì?
-5. Cho một tensor `X` với kích thước bất kỳ, liệu `len(X)` có luôn tương ứng với độ dài của một trục nhất định của `X`? Đó là trục nào?
+4. Chúng ta đã định nghĩa tensor `X` với kích thước ($2$, $3$, $4$) trong mục này. Kết quả của `len(X)` là gì?
+5. Cho một tensor `X` với kích thước bất kỳ, liệu `len(X)` có luôn tương ứng với độ dài của một trục nhất định của `X` hay không? Đó là trục nào?
 6. Chạy `A / A.sum(axis=1)` và xem điều gì xảy ra. Bạn có phân tích được nguyên nhân không? 
 7. Khi di chuyển giữa hai điểm ở Manhattan (đường phố hình bàn cờ), khoảng cách tính bằng tọa độ (tức độ dài các đại lộ và phố) mà bạn cần di chuyển là bao nhiêu? Bạn có thể đi theo đường chéo không? (Xem thêm bản đồ Manhattan, New York để trả lời câu hỏi này)
-8. Xét một tensor với kích thước ($2$, $3$, $4$). Kích thước của kết quả nếu tính tổng theo trục $0$, $1$ và $2$ sẽ như thế nào?
-9. Đưa một tensor với 3 trục hoặc hơn vào hàm `linalg.norm`và quan sát kết quả. Hàm này thực hiện việc gì cho các `ndarray` với kích thước bất kỳ?
+8. Xét một tensor với kích thước ($2$, $3$, $4$). Kích thước của kết quả sau khi tính tổng theo trục $0$, $1$ và $2$ sẽ như thế nào?
+9. Đưa một tensor với 3 trục hoặc hơn vào hàm `linalg.norm` và quan sát kết quả. Hàm này thực hiện việc gì cho các `ndarray` với kích thước bất kỳ?
 
 <!-- ========================================= REVISE PHẦN 10 - KẾT THÚC ===================================-->
 
@@ -1116,11 +1120,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 6 -->
 * Phạm Minh Đức
 
-<!-- Phần 8 -->
+<!-- Phần 7 -->
 * Ngô Thế Anh Khoa
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 9 -->
 * Vũ Hữu Tiệp
 
 <!-- Phần 10 -->
 * Mai Sơn Hải
+* Phạm Hồng Vinh

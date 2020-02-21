@@ -16,9 +16,9 @@ To start, we introduce the $n$-dimensional array (`ndarray`), MXNet's primary to
 In MXNet, `ndarray` is a class and we call any instance "an `ndarray`".
 -->
 
-Để làm bất cứ điều gì, chúng ta cần một cách để lưu trữ và thao tác với dữ liệu.
-Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
-Thật vô lý khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy trước tiên hãy làm quen với dữ liệu tổng hợp.
+Muốn thực hiện bất cứ điều gì, chúng ta đều cần một cách nào đó để lưu trữ và thao tác với dữ liệu.
+Thường sẽ có hai điều quan trọng chúng ta cần làm với dữ liệu: (i) thu thập; và (ii) xử lý sau khi đã có dữ liệu trên máy tính.
+Sẽ thật vô nghĩa khi thu thập dữ liệu mà không có cách để lưu trữ nó, vậy nên trước tiên hãy cùng làm quen với dữ liệu tổng hợp.
 Để bắt đầu, chúng tôi giới thiệu mảng $n$ chiều (`ndarray`) -- công cụ chính trong MXNET để lưu trữ và biến đổi dữ liệu.
 Trong MXNet, `ndarray` là một lớp và mỗi thực thể của lớp đó là "một `ndarray`".
 
@@ -32,10 +32,10 @@ Throughout the book, when we say `ndarray`, we are referring to MXNet's `ndarray
 -->
 
 Nếu bạn từng làm việc với NumPy, gói tính toán phổ biến nhất trong Python, bạn sẽ thấy mục này quen thuộc.
-Việc này có chủ đích.
-Chúng tôi thiết kế các `ndarray` trong MXNet là một dạng mở rộng của các `ndarray` trong NumPy với một vài tính năng đặc biệt.
+Việc này là có chủ đích.
+Chúng tôi thiết kế `ndarray` trong MXNet là một dạng mở rộng của `ndarray` trong NumPy với một vài tính năng đặc biệt.
 Thứ nhất, `ndarray` trong MXNet hỗ trợ tính toán phi đồng bộ <!-- TODO --> trên CPU, GPU, và các kiến trúc phân tán đám mây, trong khi NumPy chỉ hỗ trợ tính toán trên CPU.
-Thứ hai, `ndaray` trong MXNet hỗ trợ tính đạo hàm tự động.
+Thứ hai, `ndaray` trong MXNet hỗ trợ tính vi phân tự động.
 Những tính chất này khiến `ndarray` của MXNet phù hợp với học sâu.
 Thông qua cuốn sách, nếu không nói gì thêm, chúng ta ngầm hiểu `ndarray` là `ndarray` của MXNet.
 
@@ -58,8 +58,8 @@ On the other hand, if you already have some background and want to go deeper int
 
 Trong mục này, mục tiêu của chúng tôi là trang bị cho bạn các kiến thức toán cơ bản và cài đặt các công cụ tính toán mà bạn sẽ xây dựng dựa trên nó xuyên suốt cuốn sách này.
 Đừng lo nếu bạn gặp khó khăn với các khái niệm toán khó hiểu hoặc các hàm trong thư viện tính toán.
-Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm ví dụ thực tiễn.
-Nếu bạn đã có kiến thức nền tảng và muốn đi sâu vào các nội dung toán, bạn có thể bỏ qua mục này.
+Các mục tiếp theo sẽ nhắc lại những khái niệm này trong từng ngữ cảnh kèm theo ví dụ thực tiễn.
+Mặt khác, nếu bạn đã có kiến thức nền tảng và muốn đi sâu hơn vào các nội dung toán, bạn có thể bỏ qua mục này.
 
 <!--
 To start, we import the `np` (`numpy`) and `npx` (`numpy_extension`) modules from MXNet.
@@ -68,8 +68,8 @@ When using `ndarray`, we almost always invoke the `set_np` function: this is for
 -->
 
 Để bắt đầu, ta cần khai báo mô-đun `np` (`numpy`) và `npx` (`numpy_extension`) từ MXNet.
-Ở đây, mô-đun `np` bao gồm các hàm số hỗ trợ bởi NumPy, trong khi mô-đun `npx` chứa một tập các hàm mở rộng được phát triển để hỗ trợ học sâu trong một môi trường giống với NumPy.
-Khi sử dụng `ndarray`, ta luôn cần gọi hàm `set_np`: để đảm bảo sự tương thích của việc xử lý `ndarray` bằng các thành phần khác của MXNet.
+Ở đây, mô-đun `np` bao gồm các hàm hỗ trợ bởi NumPy, trong khi mô-đun `npx` chứa một tập các hàm mở rộng được phát triển để hỗ trợ học sâu trong một môi trường giống với NumPy.
+Khi sử dụng `ndarray`, ta luôn cần gọi hàm `set_np`: điều này nhằm đảm bảo sự tương thích của việc xử lý `ndarray` bằng các thành phần khác của MXNet.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -83,8 +83,8 @@ With two axes, an `ndarray` corresponds to a *matrix*.
 Arrays with more than two axes do not have special mathematical names---we simply call them *tensors*.
 -->
 
-Một `ndarray` biểu diễn một mảng (có thể nhiều chiều).
-Với một trục, một `ndarray` tương ứng với một *vector* trong toán.
+Một `ndarray` biểu diễn một mảng (có thể đa chiều) các giá trị số.
+Với một trục, một `ndarray` tương ứng (trong toán) với một *vector*.
 Với hai trục, một `ndarray` tương ứng với một *ma trận*.
 Các mảng với nhiều hơn hai trục không có tên toán học cụ thể--chúng được gọi chung là *tensor*.
 
@@ -103,7 +103,7 @@ For instance, there are $12$ elements in the `ndarray` `x`.
 Unless otherwise specified, a new `ndarray` will be stored in main memory and designated for CPU-based computation.
 -->
 
-Để bắt đầu, chúng ta sử dụng `arange` để tạo một vector hàng `x` chứa $12$ số nguyên đầu tiên bắt đầu từ $0$, chúng sẽ được mặc định khởi tạo là các số thực.
+Để bắt đầu, chúng ta sử dụng `arange` để tạo một vector hàng `x` chứa $12$ số nguyên đầu tiên bắt đầu từ $0$, nhưng được khởi tạo mặc định dưới dạng số thực.
 Mỗi giá trị trong một `ndarray` được gọi là một *phần tử* của `ndarray` đó.
 Như vậy, có $12$ phần tử trong `ndarray` `x`.
 Nếu không nói gì thêm, một `ndarray` mới sẽ được lưu trong bộ nhớ chính và được tính toán trên CPU.
@@ -129,7 +129,7 @@ Because we are dealing with a vector here, the single element of its `shape` is 
 -->
 
 Nếu chỉ muốn biết tổng số phần tử của một `ndarray`, nghĩa là tích của tất cả các thành phần trong `shape`, ta có thể sử dụng thuộc tính `size`.
-Vì ta đang làm việc với một vector, phần tử duy nhất của `shape` và `size` của nó là như nhau.
+Vì ta đang làm việc với một vector, cả `shape` và `size` của nó đều chứa cùng một phần tử duy nhất.
 
 ```{.python .input  n=4}
 x.size
@@ -144,8 +144,8 @@ Note that the `size` is unaltered by reshaping.
 -->
 
 Để thay đổi kích thước của một `ndarray` mà không làm thay đổi số lượng phần tử cũng như giá trị của chúng, ta có thể gọi hàm `reshape`.
-Ví dụ, ta có thể biến đổi `ndarray` `x` trong ví dụ trên, từ một vector hàng với kích thước ($12$,) sang một ma trận kích thước ($3$, $4$).
-`ndarray` mới này chứa đúng $12$ phần tử, nhưng được xem như một ma trận với $3$ hàng và $4$ cột.
+Ví dụ, ta có thể biến đổi `ndarray` `x` trong ví dụ trên, từ một vector hàng với kích thước ($12$,) sang một ma trận với kích thước ($3$, $4$).
+`ndarray` mới này chứa $12$ phần tử y hệt, nhưng được xem như một ma trận với $3$ hàng và $4$ cột.
 Mặc dù kích thước thay đổi, các phần tử của `x` vẫn giữ nguyên.
 Chú ý rằng `size` giữ nguyên khi thay đổi kích thước.
 
@@ -167,21 +167,21 @@ We invoke this capability by placing `-1` for the dimension that we would like `
 In our case, instead of calling `x.reshape(3, 4)`, we could have equivalently called `x.reshape(-1, 4)` or `x.reshape(3, -1)`.
 -->
 
-Thay đổi kích thước bằng cách chỉ ra mọi chiều một cách thủ công là không cần thiết.
-Nếu kích thước mong muốn là một ma trận với kích thước (chiều_cao, chiều_rộng), thì sau khi biết chiều_rộng, chiều_cao sẽ được ngầm suy ra.
+Việc chỉ định cụ thể mọi chiều khi thay đổi kích thước là không cần thiết.
+Nếu kích thước mong muốn là một ma trận với kích thước (chiều_cao, chiều_rộng), thì sau khi biết chiều_rộng, chiều_cao có thể được ngầm suy ra.
 Tại sao ta lại cần phải tự làm phép tính chia?
-Trong ví dụ trên đây, để có được một ma trận với $3$ hàng, chúng ta chỉ rõ ra rằng nó nên có $3$ hàng và $4$ cột.
-May mắn thay, `ndarray` có thể tự động tính được một chiều nếu biết các chiều còn lại.
-Ta có thể đạt được điều này bằng cách đặt `-1` cho chiều đó.
-Trong trường hợp này, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
+Trong ví dụ trên, để có được một ma trận với $3$ hàng, chúng ta phải chỉ định rõ rằng nó có $3$ hàng và $4$ cột.
+May mắn thay, `ndarray` có thể tự động tính một chiều từ các chiều còn lại.
+Ta có thể dùng chức năng này bằng cách đặt `-1` cho chiều mà ta muốn `ndarray` tự suy ra.
+Trong trường hợp vừa rồi, thay vì gọi `x.reshape(3, 4)`, ta có thể gọi `x.reshape(-1, 4)` hoặc `x.reshape(3, -1)`.
 
 <!--
 The `empty` method grabs a chunk of memory and hands us back a matrix without bothering to change the value of any of its entries.
 This is remarkably efficient but we must be careful because the entries might take arbitrary values, including very big ones!
 -->
 
-Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không làm thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
-Việc này có hiệu quả tính toán đáng kể nhưng ta phải thật cẩn trọng bởi các phần tử đó có thể lấy những giá trị bất kỳ, bao gồm các số rất lớn!
+Phương thức `empty` lấy một đoạn bộ nhớ và trả về một ma trận mà không thay đổi các giá trị sẵn có tại đoạn bộ nhớ đó.
+Việc này có hiệu quả tính toán đáng kể nhưng ta phải cẩn trọng bởi các phần tử đó có thể chứa bất kỳ giá trị nào, kể cả các số rất lớn!
 
 ```{.python .input  n=6}
 np.empty((3, 4))
@@ -192,7 +192,7 @@ Typically, we will want our matrices initialized either with zeros, ones, some o
 We can create an `ndarray` representing a tensor with all elements set to $0$ and a shape of ($2$, $3$, $4$) as follows:
 -->
 
-Thông thường, ta sẽ muốn các ma trận được khởi tạo bởi toàn giá trị không, giá trị một, một hằng số khác, hoặc các số được lấy mẫu ngẫu nhiên từ một phân phối cụ thể.
+Thông thường ta muốn khởi tạo các ma trận với các giá trị bằng không, bằng một, bằng hằng số nào đó hoặc bằng các mẫu ngẫu nhiên lấy từ một phân phối cụ thể.
 Ta có thể tạo một `ndarray` biểu diễn một tensor với tất cả các phần tử bằng $0$ và có kích thước ($2$, $3$, $4$) như sau:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -207,7 +207,7 @@ np.zeros((2, 3, 4))
 Similarly, we can create tensors with each element set to 1 as follows:
 -->
 
-Tương tự, ta có thể tạo các tensor với các thành phần bằng 1 như sau:
+Tương tự, ta có thể tạo các tensor với các phần tử bằng 1 như sau:
 
 ```{.python .input  n=8}
 np.ones((2, 3, 4))
@@ -221,7 +221,7 @@ Each of its elements is randomly sampled from a standard Gaussian (normal) distr
 -->
 
 Ta thường muốn lấy mẫu ngẫu nhiên cho mỗi phần tử trong một `ndarray` từ một phân phối xác suất.
-Ví dụ, khi xây dựng các mảng để chứa các tham số trong một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
+Ví dụ, khi xây dựng các mảng để chứa các tham số của một mạng nơ-ron, ta thường khởi tạo chúng với các giá trị ngẫu nhiên.
 Đoạn mã dưới đây tạo một `ndarray` có kích thước ($3$, $4$) với các phần tử được lấy mẫu ngẫu nhiên từ một phân phối Gauss (phân phối chuẩn) với trung bình bằng $0$ và độ lệch chuẩn $1$.
 
 ```{.python .input  n=10}
@@ -233,7 +233,7 @@ We can also specify the exact values for each element in the desired `ndarray` b
 Here, the outermost list corresponds to axis $0$, and the inner list to axis $1$.
 -->
 
-Ta cũng có thể khởi tạo giá trị chính xác cho mỗi phần tử trong `ndarray` mong muốn bằng cách đưa vào một mảng Python (hoặc mảng của mảng) chứa các giá trị số.
+Ta cũng có thể khởi tạo giá trị cụ thể cho mỗi phần tử trong `ndarray` mong muốn bằng cách đưa vào một mảng Python (hoặc mảng của mảng) chứa các giá trị số.
 Ở đây, mảng ngoài cùng tương ứng với trục $0$, và mảng bên trong tương ứng với trục $1$.
 
 ```{.python .input  n=9}
@@ -398,17 +398,17 @@ First, expand one or both arrays by copying elements appropriately so that after
 Second, carry out the elementwise operations on the resulting arrays.
 -->
 
-Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử lên hai `ndarray` đồng kích thước.
+Trong mục trên, ta đã thấy cách thực hiện các phép toán theo từng phần tử với hai `ndarray` đồng kích thước.
 Trong những điều kiện nhất định, thậm chí khi kích thước khác nhau, ta vẫn có thể thực hiện các phép toán theo từng phần tử bằng cách sử dụng *cơ chế lan truyền* (_broadcasting mechanism_).
-Cơ chế này làm việc theo cách sau:
-Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các thành phần một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
-Thứ hai, áp dụng các phép toàn từng phần tử lên hai mảng mới này.
+Cơ chế này hoạt động như sau:
+Thứ nhất, mở rộng một hoặc cả hai mảng bằng cách lặp lại các phần tử một cách hợp lý sao cho sau phép biến đổi này, hai `ndarray` có cùng kích thước.
+Thứ hai, thực hiện các phép toán theo từng phần tử với hai mảng mới này.
 
 <!--
 In most cases, we broadcast along an axis where an array initially only has length $1$, such as in the following example:
 -->
 
-Trong hầu hết các trường hợp, chúng ta lan truyền một mảng mà ban đầu nó có một trục với độ dài $1$ như ví dụ dưới đây:
+Trong hầu hết các trường hợp, chúng ta lan truyền một mảng theo trục có độ dài ban đầu là $1$, như ví dụ dưới đây:
 
 ```{.python .input  n=17}
 a = np.arange(3).reshape(3, 1)
@@ -435,8 +435,7 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-
-## *dịch tiêu đề phía trên*
+## Chỉ số và Trích chọn
 
 <!--
 Just as in any other Python array, elements in an `ndarray` can be accessed by index.
@@ -444,13 +443,14 @@ As in any Python array, the first element has index $0$ and ranges are specified
 As in standard Python lists, we can access elements according to their relative position to the end of the list by using negative indices.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như trong bất kỳ mảng Python khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
+Tương tự, phần tử đầu tiên có chỉ số $0$ và khoảng trích chọn bao gồm phần tử đầu tiên nhưng *không tính* phần tử cuối cùng. <!-- người dịch tự sửa để tránh lặp từ -->
+Và trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí đếm ngược từ cuối danh sách bằng cách sử dụng các chỉ số âm.
 
 <!--
 Thus, `[-1]` selects the last element and `[1:3]` selects the second and the third elements as follows:
 -->
-
-*dịch đoạn phía trên*
+Vì vậy, `[-1]` chọn phần tử cuối cùng và `[1:3]` chọn phần tử thứ hai và phần tử thứ ba như sau:
 
 ```{.python .input  n=19}
 x[-1], x[1:3]
@@ -459,8 +459,7 @@ x[-1], x[1:3]
 <!--
 Beyond reading, we can also write elements of a matrix by specifying indices.
 -->
-
-*dịch đoạn phía trên*
+Ngoài việc đọc, chúng ta cũng có thể viết các phần tử của ma trận bằng cách chỉ định các chỉ số.
 
 ```{.python .input  n=20}
 x[1, 2] = 9
@@ -472,8 +471,9 @@ If we want to assign multiple elements the same value, we simply index all of th
 For instance, `[0:2, :]` accesses the first and second rows, where `:` takes all the elements along axis $1$ (column).
 While we discussed indexing for matrices, this obviously also works for vectors and for tensors of more than $2$ dimensions.
 -->
-
-*dịch đoạn phía trên*
+Nếu chúng ta muốn gán cùng một giá trị cho nhiều phần tử, chúng ta chỉ cần trỏ đến tất cả các phần tử đó và gán giá trị cho chúng.
+Chẳng hạn, `[0:2 ,:]` truy cập vào hàng thứ nhất và thứ hai, trong đó `:` lấy tất cả các phần tử dọc theo trục $1$ (cột).
+Ở đây chúng ta đã thảo luận về cách truy cập vào ma trận, nhưng tất nhiên phương thức này cũng áp dụng cho các vector và tensor với nhiều hơn $2$ chiều.
 
 ```{.python .input  n=21}
 x[0:2, :] = 12
@@ -492,7 +492,7 @@ x
 ## Saving Memory
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiết kiệm Bộ nhớ
 
 <!--
 In the previous example, every time we ran an operation, we allocated new memory to host its results.
@@ -502,7 +502,11 @@ After running `y = y + x`, we will find that `id(y)` points to a different locat
 That is because Python first evaluates `y + x`, allocating new memory for the result and then makes `y` point to this new location in memory.
 -->
 
-*dịch đoạn phía trên*
+Ở ví dụ trước, mỗi khi chạy một phép tính, chúng ta sẽ cấp phát bộ nhớ mới để lưu trữ kết quả của lượt chạy đó. 
+Ví dụ, nếu viết `y = x + y`, ta sẽ ngừng tham chiếu đến `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được cấp phát mới.
+Trong ví dụ tiếp theo, chúng ta sẽ minh họa việc này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
+Sau khi chạy `y = y + x`, chúng ta nhận ra rằng `id(y)` chỉ đến một địa chỉ khác. 
+Đó là bởi vì Python trước hết sẽ tính `y + x`, cấp phát bộ nhớ mới cho kết quả trả về và gán `y` vào địa chỉ mới này trong bộ nhớ.
 
 ```{.python .input  n=22}
 before = id(y)
@@ -519,7 +523,12 @@ Second, we might point at the same parameters from multiple variables.
 If we do not update in place, this could cause that discarded memory is not released, and make it possible for parts of our code to inadvertently reference stale parameters.
 -->
 
-*dịch đoạn phía trên*
+Đây có thể là điều không mong muốn vì hai lý do sau. 
+Thứ nhất, không phải lúc nào chúng ta cũng muốn cấp phát bộ nhớ không cần thiết.
+Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây. 
+Thường thì chúng ta muốn thực thi các cập nhật này *tại chỗ*.
+Thứ hai, chúng ta có thể chỉ đến cùng tham số từ nhiều biến khác nhau.
+Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng mã lập trình sẽ vô tình tham chiếu lại các tham số cũ. 
 
 <!--
 Fortunately, performing in-place operations in MXNet is easy.
@@ -527,7 +536,9 @@ We can assign the result of an operation to a previously allocated array with sl
 To illustrate this concept, we first create a new matrix `z` with the same shape as another `y`, using `zeros_like` to allocate a block of $0$ entries.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
+Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bố trước đó bằng ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
+Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
 
 ```{.python .input  n=23}
 z = np.zeros_like(y)
@@ -540,7 +551,7 @@ print('id(z):', id(z))
 If the value of `x` is not reused in subsequent computations, we can also use `x[:] = x + y` or `x += y` to reduce the memory overhead of the operation.
 -->
 
-*dịch đoạn phía trên*
+Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
 
 ```{.python .input  n=24}
 before = id(x)
@@ -560,7 +571,7 @@ id(x) == before
 ## Conversion to Other Python Objects
 -->
 
-## *dịch tiêu đề phía trên*
+## Chuyển đổi sang các Đối Tượng Python Khác
 
 <!--
 Converting an MXNet `ndarray` to a NumPy `ndarray`, or vice versa, is easy.
@@ -569,7 +580,10 @@ This minor inconvenience is actually quite important: when you perform operation
 The `array` and `asnumpy` functions do the trick.
 -->
 
-*dịch đoạn phía trên*
+Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray`, hoặc ngược lại khá đơn giản.
+Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
+Sự bất tiện nhỏ này thực ra khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
+Hàm `array` và `asnumpy` sẽ giúp bản giải quyết vấn đề này. 
 
 ```{.python .input  n=25}
 a = x.asnumpy()
@@ -581,7 +595,7 @@ type(a), type(b)
 To convert a size-$1$ `ndarray` to a Python scalar, we can invoke the `item` function or Python's built-in functions.
 -->
 
-*dịch đoạn phía trên*
+Để chuyển đổi một mảng `ndarray` một phần tử sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python. 
 
 ```{.python .input}
 a = np.array([3.5])
@@ -596,28 +610,29 @@ a, a.item(), float(a), int(a)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * MXNet's `ndarray` is an extension to NumPy's `ndarray` with a few killer advantages that make it suitable for deep learning.
 * MXNet's `ndarray` provides a variety of functionalities including basic mathematics operations, broadcasting, indexing, slicing, memory saving, and conversion to other Python objects.
 -->
 
-*dịch đoạn phía trên*
-
+* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội phù hợp với học sâu. 
+* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Run the code in this section. Change the conditional statement `x == y` in this section to `x < y` or `x > y`, and then see what kind of `ndarray` you can get.
 2. Replace the two `ndarray`s that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?
 -->
 
-*dịch đoạn phía trên*
+1. Chạy đoạn mã lập trình trong phần dưới. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
+1. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
 
@@ -635,7 +650,7 @@ a, a.item(), float(a), int(a)
 ![](../img/qr_ndarray.svg)
 -->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -650,39 +665,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 * Trần Thị Hồng Hạnh
+* Phạm Minh Đức
 
-<!-- Phần 7 -->
-*
-
-<!-- Phần 8 -->
-*
-
-<!-- Phần 9 -->
-*
 
 <!-- Phần 10 -->
-*
+* Lê Đàm Hồng Lộc
 
 <!-- Phần 11 -->
-*
-
-<!-- Phần 12 -->
-*
-
-<!-- Phần 13 -->
-*
+* Nguyễn Lê Quang Nhật

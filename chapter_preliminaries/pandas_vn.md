@@ -17,12 +17,12 @@ So, we will briefly walk through steps for preprocessing raw data with `pandas` 
 We will cover more data preprocessing techniques in later chapters.
 -->
 
-Trước tới nay chúng ta đã đề cập tới rất nhiều kỹ thuật thao tác dữ liệu được lưu trong dạng `ndarray`.
-Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không phải luôn có ngay dữ liệu ngăn nắp đã chuẩn bị sẵn trong định dạng `ndarray`
-Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` hay được sử dụng nhiều.
-Giống nhiều gói khác trong hệ sinh thái Python, `pandas` có thể làm việc cùng định dạng `ndarray`.
+Cho đến giờ chúng tôi đã đề cập tới rất nhiều kỹ thuật thao tác dữ liệu được lưu trong dạng `ndarray`.
+Nhưng để áp dụng học sâu vào giải quyết các vấn đề thực tế, ta thường phải bắt đầu bằng việc xử lý dữ liệu thô, chứ không có luôn dữ liệu ngăn nắp được chuẩn bị sẵn trong định dạng `ndarray`.
+Trong số các công cụ phân tích dữ liệu phổ biến của Python, gói `pandas` khá được ưa chuộng.
+Cũng như nhiều gói khác trong hệ sinh thái rộng lớn của Python, 'pandas' có thể được sử dụng kết hợp với định dạng `ndarray`.
 Vì vậy, chúng ta sẽ đi nhanh qua các bước để tiền xử lý dữ liệu thô bằng `pandas` rồi đổi chúng sang dạng `ndarray`.
-Sau đó ta sẽ bao quát nhiều kỹ thuật tiền xử lý dữ liệu hơn trong các chương sau.
+Nhiều kỹ thuật tiền xử lý dữ liệu khác sẽ được giới thiệu trong các chương sau.
 
 <!--
 ## Reading the Dataset
@@ -37,10 +37,10 @@ The following `mkdir_if_not_exist` function ensures that the directory `../data`
 The comment `# Saved in the d2l package for later use` is a special mark where the following function, class, or import statements are also saved in the `d2l` package so that we can directly invoke `d2l.mkdir_if_not_exist()` later.
 -->
 
-Lấy một ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
-Dữ liệu trong các định dạng khác cũng có thể được xử lý tương tự.
-Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` có tồn tại.
-Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh import được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
+Để lấy ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
+Dữ liệu lưu ở các định dạng khác cũng có thể được xử lý tương tự.
+Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` tồn tại.
+Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh `import` được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
 
 ```{.python .input}
 import os
@@ -90,7 +90,7 @@ import pandas as pd
 data = pd.read_csv(data_file)
 print(data)
 ```
-
+<!-- Kết thúc revise phần 1 ở đây -->
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
 <!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
@@ -107,7 +107,7 @@ To handle missing data, typical methods include *imputation* and *deletion*, whe
 -->
 
 Để ý rằng giá trị "NaN" là các giá trị bị thiếu.
-Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc sẽ thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
+Để xử lý dữ liệu thiếu, các cách thường được áp dụng là *quy buộc* (*imputation*) và *xoá bỏ* (*deletion*), trong đó quy buộc thay thế giá trị bị thiếu bằng giá trị khác, trong khi xoá bỏ sẽ bỏ qua các giá trị bị thiếu.
 Dưới đây chúng ta xem xét phương pháp quy buộc.
 
 <!--
@@ -115,8 +115,8 @@ By integer-location based indexing (`iloc`), we split `data` into `inputs` and `
 For numerical values in `inputs` that are missing, we replace the "NaN" entries with the mean value of the same column.
 -->
 
-Bằng phương pháp đánh vị trí theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
-Với các giá trị số trong `inputs` mà bị thiếu, chúng ta thay thế phần tử "NaN" bằng giá trị trung bình của cùng cột đó. 
+Bằng phương pháp đánh chỉ số theo số nguyên (`iloc`), chúng ta tách `data` thành `inputs` (tương ứng với hai cột đầu) và `outputs` (tương ứng với cột cuối cùng).
+Với các giá trị số bị thiếu trong `inputs`, ta thay thế phần tử "NaN" bằng giá trị trung bình cộng của cùng cột đó. 
 
 ```{.python .input}
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2]
@@ -131,10 +131,10 @@ A row whose alley type is "Pave" will set values of "Alley_Pave" and "Alley_nan"
 A row with a missing alley type will set their values to $0$ and $1$.
 -->
 
-Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một lớp riêng.
-Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
-Những hàng mà có kiểu lối đi là "Pave" (được lát gạch) sẽ có giá trị của cột "Alley_Pave" và "Alley_nan" lần lượt là $1$ và $0$.
-Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị lần lượt là $0$ và $1$.
+Với các giá trị dạng hạng mục hoặc số rời rạc trong `inputs`, ta coi "NaN" là một mục riêng.
+Vì cột "Alley" chỉ nhận 2 giá trị riêng lẻ là "Pave" (được lát gạch) và "NaN", `pandas` có thể tự động chuyển cột này thành 2 cột "Alley_Pave" và "Alley_nan". 
+Những hàng có kiểu lối đi là "Pave" sẽ có giá trị của cột "Alley_Pave" và cột "Alley_nan" tương ứng là $1$ và $0$.
+Hàng mà không có giá trị cho kiểu lối đi sẽ có giá trị cột "Alley_Pave" và cột "Alley_nan" lần lượt là $0$ và $1$.
 
 ```{.python .input}
 inputs = pd.get_dummies(inputs, dummy_na=True)
@@ -178,7 +178,7 @@ X, y
 -->
 
 * Cũng như nhiều gói mở rộng trong hệ sinh thái khổng lồ của Python, `pandas` có thể làm việc được với `ndarray`.
-* Phương pháp quy cho hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
+* Phương pháp quy buộc hoặc xoá bỏ có thể dùng để xử lý dữ liệu bị thiếu.
 
 <!--
 ## Exercises
@@ -217,7 +217,7 @@ Tạo một tập dữ liệu với nhiều hàng và cột hơn.
 -->
 
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -228,15 +228,10 @@ Lưu ý:
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 * Phạm Hồng Vinh
 * Đoàn Võ Duy Thanh
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
+* Vũ Hữu Tiệp
+* Mai Sơn Hải

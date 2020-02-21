@@ -96,19 +96,24 @@ Như vậy xác suất là một ngôn ngữ linh hoạt để suy đoán về m
 ## Basic Probability Theory
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết Xác suất Cơ bản
 
 <!--
 Say that we cast a die and want to know what the chance is of seeing a $1$ rather than another digit. If the die is fair, all the $6$ outcomes $\{1, \ldots, 6\}$ are equally likely to occur, and thus we would see a $1$ in one out of six cases. Formally we state that $1$ occurs with probability $\frac{1}{6}$.
 -->
 
-*dịch đoạn phía trên*
+Giả sử, ta tung xúc xắc và muốn biết cơ hội để thấy mặt số $1$ so với các mặt khác là bao nhiêu?
+Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy mặt $1$ xuất hiện như một trong sáu trường hợp kể trên. 
+Ta có thể nói rằng mặt $1$ xuất hiện với xác suất là \frac{1}{6}$.
 
 <!--
 For a real die that we receive from a factory, we might not know those proportions and we would need to check whether it is tainted. The only way to investigate the die is by casting it many times and recording the outcomes. For each cast of the die, we will observe a value in $\{1, \ldots, 6\}$. Given these outcomes, we want to investigate the probability of observing each outcome.
 -->
 
-*dịch đoạn phía trên*
+Với một chiếc xúc xắc thật, ta có thể không biết được tỷ lệ này và cần kiểm tra liệu xúc xắc có bị hư hỏng gì không.
+Cách duy nhất để kiểm tra là tung thật nhiều lần rồi ghi lại kết quả.
+Mỗi lần tung, ta quan sát thấy một số trong $\{1, \ldots, 6\}$ xuất hiện.
+Với kết quả này, ta muốn kiểm chứng xác suất xuất hiện của từng mặt số.
 
 <!--
 One natural approach for each value is to take the
@@ -117,13 +122,16 @@ This gives us an *estimate* of the probability of a given *event*. The *law of
 large numbers* tell us that as the number of tosses grows this estimate will draw closer and closer to the true underlying probability. Before going into the details of what is going here, let's try it out.
 -->
 
-*dịch đoạn phía trên*
+Cách tính trực quan nhất là lấy số lần xuất hiện của mỗi mặt số chia cho tổng số lần tung.
+Cách này cho ta một *ước lượng* của xác suất ứng với *sự kiện* cho trước.
+*Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì ước lượng này càng gần hơn với xác xuất thực.
+Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này bằng lập trình.
 
 <!--
 To start, let's import the necessary packages.
 -->
 
-*dịch đoạn phía trên*
+Bắt đầu, ta nhập các gói lệnh cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -149,7 +157,14 @@ The output of the `np.random.multinomial` function is another vector of the same
 its value at index $i$ is the number of times the sampling outcome corresponds to $i$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ cần tung xúc xắc.
+Trong thống kê, ta gọi quá trình thu các mẫu từ phân phối xác suất là quá trình *lấy mẫu*.
+Phân phối mà gán các xác suất cho các lựa chọn rời rạc (*discrete choices*) được gọi là *phân phối đa thức* (*multinomial distribution*).
+Sau này, ta sẽ đưa ra định nghĩa chính quy *phân phối* là gì; nhưng để hình dung, hãy xem nó như phép gán xác suất xảy ra cho các sự kiện.
+Trong MXNet, ta có thể lấy mẫu từ phân phối đa thức với hàm `np.random.multinomial`.
+Có nhiều cách sử dụng hàm này, nhưng ta tập trung vào cách dùng đơn giản nhất.
+Muốn lấy một mẫu đơn, ta chỉ cần đưa vào hàm này một vector chứa các xác suất.
+Hàm `np.random.multinomial` sẽ cho kết quả là một vector có chiều dài tương tự: trong vector này, giá trị tại chỉ số $i$ là số lần kết quả $i$ xuất hiện.
 
 ```{.python .input  n=2}
 fair_probs = [1.0 / 6] * 6
@@ -257,7 +272,7 @@ Khi ta lấy thêm dữ liệu bằng cách thực hiện thêm các thí nghi�
 ### Axioms of Probability Theory
 -->
 
-### *dịch tiêu đề phía trên*
+### Các Tiên đề của Lý thuyết Xác suất
 
 <!--
 When dealing with the rolls of a die,
@@ -270,7 +285,13 @@ That is to say, if $3$ dots faced up after rolling a die, since $3 \in \{1, 3, 5
 we can say that the event "seeing an odd number" has occurred.
 -->
 
-*dịch đoạn phía trên*
+Khi ta thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết quả*.
+*Biến cố* là một tập hợp các kết quả của không gian mẫu. 
+Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
+Chú ý rằng nếu kết quả của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
+biến cố $\mathcal{A}$ đã xảy ra.
+Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc sắc được gieo, 
+chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$.
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
@@ -278,7 +299,9 @@ The probability of an event $\mathcal{A}$ in the given sample space $\mathcal{S}
 denoted as $P(\mathcal{A})$, satisfies the following properties:
 -->
 
-*dịch đoạn phía trên*
+Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số gán một tập hợp các biến cố tới một giá trị thật. 
+Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$, 
+được kí hiệu là $P(\mathcal{A})$, phải thoả mãn những tính chất sau:
 
 <!--
 * For any event $\mathcal{A}$, its probability is never negative, i.e., $P(\mathcal{A}) \geq 0$;
@@ -286,7 +309,9 @@ denoted as $P(\mathcal{A})$, satisfies the following properties:
 * For any countable sequence of events $\mathcal{A}_1, \mathcal{A}_2, \ldots$ that are *mutually exclusive* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ for all $i \neq j$), the probability that any happens is equal to the sum of their individual probabilities, i.e., $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 -->
 
-*dịch đoạn phía trên*
+* Đối với mọi biến cố $\mathcal{A}$, xác suất của biến cố sẽ không bao giờ âm, tức là: $P(\mathcal{A}) \geq 0$;  
+* Xác suất của toàn không gian mẫu luôn bằng $1$, tức: $P(\mathcal{S}) = 1$;
+* Đối với mọi dãy biến cố có thể đếm được $\mathcal{A}_1, \mathcal{A}_2, \ldots$ nhưng *xung khắc lẫn nhau* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ với mọi $i \neq j$), xác suất (nếu có xảy ra) sẽ là tổng của những giá trị xác suất riêng lẻ, hay: $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 
 <!--
 These are also the axioms of probability theory, proposed by Kolmogorov in 1933.
@@ -294,8 +319,10 @@ Thanks to this axiom system, we can avoid any philosophical dispute on randomnes
 instead, we can reason rigorously with a mathematical language.
 For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\mathcal{A}_i = \emptyset$ for all $i > 1$, we can prove that $P(\emptyset) = 0$, i.e., the probability of an impossible event is $0$.
 -->
+Kolmogorov là nhà toán học đã đề xuất những đóng góp cho sự hoàn thiện của tiên đề về lý thuyết xác suất vào năm 1993.
+Nhờ vào hệ thống tiên đề này, ta có thể tránh được những tranh luận chủ quan về sự ngẫu nhiên; và ta có thể có được những suy luận chặt chẽ sử dụng ngôn ngữ toán học.
+Lấy ví dụ một trường hợp, cho biến cố $\mathcal{A}_1$ là toàn bộ không gian mẫu và $\mathcal{A}_i = \emptyset$ với mọi $i > 1$, chúng ta có thể chứng minh rằng $P(\emptyset) = 0$, ví dụ: xác suất của biến cố không thể xảy ra sẽ là $0$.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -305,7 +332,7 @@ For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\
 ### Random Variables
 -->
 
-### *dịch tiêu đề phía trên*
+### Biến ngẫu nhiên
 
 <!--
 In our random experiment of casting a die, we introduced the notion of a *random variable*. A random variable can be pretty much any quantity and is not deterministic. It could take one value among a set of possibilities in a random experiment.
@@ -323,7 +350,18 @@ For example, $P(1 \leq X \leq 3)$ denotes the probability of the event $\{1 \leq
 which means $\{X = 1, 2, \text{or}, 3\}$. Equivalently, $P(1 \leq X \leq 3)$ represents the probability that the random variable $X$ can take a value from $\{1, 2, 3\}$.
 -->
 
-*dịch đoạn phía trên*
+Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu về khái niệm của một *biến ngẫu nhiên*.
+Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không được xác định.
+Nó có thể nhận một giá trị trong tập các giá trị khả dĩ từ một thí nghiệm ngẫu nhiên.
+Hãy xét một biến ngẫu nhiên $X$ có thể nhận một trong những giá trị từ tập không gian mẫu $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ của thí nghiêm tung xúc xắc.
+Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X = 5\}$ hoặc $X = 5$, và xác suất của nó là $P(\{X = 5\})$ hoặc $P(X = 5)$.
+Khi viết $P(X = a)$, chúng ta đã phân biệt giữa biến ngẫu nhiên $X$ và các giá trị (ví dụ như $a$) mà $X$ có thể nhận.
+Tuy nhiên, ký hiệu như vậy khá là rườm rà.
+Để đơn giản hóa ký hiệu, một mặt, chúng ta có thể chỉ cần dùng $P(X)$ để biểu diễn *phân phối* của biến ngẫu nhiên $X$: phân phối này cho chúng ta biết xác xuất mà $X$ có thể nhận cho bất kỳ giá trị nào.
+Mặt khác, chúng ta có thể viết đơn giản $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên có thể nhận giá trị $a$.
+Bởi vì một sự kiện trong lý thuyết xác suất là một tập các kết quả từ không gian mẫu, chúng ta có thể xác định rõ một khoảng các giá trị mà một biến ngẫu nhiên có thể nhận.
+Ví dụ, $P(1 \leq X \leq 3)$ diễn tả xác suất của sự kiện $\{1 \leq X \leq 3\}$, nghĩa là $\{X = 1, 2, \text{hoặc}, 3\}$.
+Tương tự, $P(1 \leq X \leq 3)$ biểu diễn xác suất mà biến ngẫu nhiên $X$ có thể nhận giá trị trong tập $\{1, 2, 3\}$.
 
 <!--
 Note that there is a subtle difference between *discrete* random variables, like the sides of a die, and *continuous* ones, like the weight and the height of a person. There is little point in asking whether two people have exactly the same height. If we take precise enough measurements you will find that no two people on the planet have the exact same height. In fact, if we take a fine enough measurement, you will not have the same height when you wake up and when you go to sleep. So there is no purpose in asking about the probability
@@ -332,7 +370,18 @@ In the rest of this section, we consider probability in discrete space.
 For probability over continuous random variables, you may refer to :numref:`sec_random_variables`.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
+Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chính xác chiều cao hay không.
+Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
+Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
+Cho nên không có lý do gì để hỏi rằng xác suất mà một người nào đó có chiều cao là $1.80139278291028719210196740527486202$ mét cả.
+Trong toàn bộ dân số trên thế giới, xác suất này hầu như là bằng $0$.
+Sẽ có ý nghĩa hơn trong trường hợp này nếu ta hỏi chiều cao của một người nào đó có rơi vào một khoảng cho trước hay không, ví dụ như giữa $1.79$ và $1.81$ mét.
+Trong các trường hợp này, ta có thể định lượng khả năng mà ta thấy một giá trị nào đó theo một *mật độ xác suất*.
+Chiều cao chính xác $1.80$ mét thì không có xác suất nhưng có mật độ khác không.
+Trong bất kỳ khoảng nào giữa hai chiều cao khác nhau ta đều có xác suất khác không.
+Trong phần còn lại của mục này, ta sẽ xem xét xác suất trong không gian rời rạc.
+Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở :numref:`sec_random_variables`.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -398,18 +447,22 @@ Do đó, khả năng $A=a$ và $B=b$ xảy ra đồng thời không thể lớn 
 ### Conditional Probability
 -->
 
-### *dịch tiêu đề phía trên*
+### Xác suất có điều kiện
 
 <!--
 This brings us to an interesting ratio: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$. We call this ratio a *conditional probability*
 and denote it by $P(B=b \mid A=a)$: it is the probability of $B=b$, provided that
 $A=a$ has occurred.
+-->
+
+Điều này giúp ta thu được một tỉ lệ thú vị: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$.
+Chúng ta gọi tỉ lệ này là *xác suất có điều kiện* và ký hiệu là $P(B=b \mid A=a)$: xác suất để $B=b$, với điều kiện $A=a$ đã xảy ra.
 
 <!--
 ### Bayes' theorem
 -->
 
-### *dịch tiêu đề phía trên*
+### Định lý Bayes
 
 <!--
 Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: *Bayes' theorem*.
@@ -417,7 +470,12 @@ It goes as follows.
 By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) > 0$. Solving for one of the conditional variables we get
 -->
 
-*dịch đoạn phía trên*
+Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *Định lý Bayes*.
+Cụ thể như sau: 
+Đầu tiên, chúng ta có *quy tắc nhân* như sau $P(A, B) = P(B \mid A) P(A)$.
+Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
+Giả sử $P(B) > 0$.
+Kết hợp các điều kiện trên ta có:
 
 $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 
@@ -425,20 +483,24 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 Note that here we use the more compact notation where $P(A, B)$ is a *joint distribution* and $P(A \mid B)$ is a *conditional distribution*. Such distributions can be evaluated for particular values $A = a, B=b$.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng ở đây chúng ta sử dụng ký hiệu ngắn gọn hơn, với $P(A, B)$ là *xác suất kết hợp* và $P(A \mid B)$ là *xác suất có điều kiện*.
+Các phân phối này có thể được tính tại các giá trị cụ thể $A = a, B=b$.
 
 <!--
 ### Marginalization
 -->
 
-### *dịch tiêu đề phía trên*
+### Phép biên hóa
 
 <!--
 Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is *marginalization*.
 It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:
 -->
 
-*dịch đoạn phía trên*
+Định lý Bayes rất hữu ích nếu chúng ta muốn suy đoạn một điều gì đó từ một điều khác, như là nguyên nhân và kết quả, nhưng ta chỉ biết các đặc tính theo chiều ngược lại, như ta sẽ thấy trong phần sau của chương này.
+Chúng ta cần làm một thao tác quan trọng để đạt được điều này, đó là *phép biên hóa*.
+Có thể hiểu là việc xác định $P(B)$ từ $P(A, B)$.
+Chúng ta có thể tính được xác suất của B bằng tổng xác suất kết hợp của A và B tại mọi giá trị có thể của A:
 
 $$P(B) = \sum_{A} P(A, B),$$
 
@@ -446,7 +508,8 @@ $$P(B) = \sum_{A} P(A, B),$$
 which is also known as the *sum rule*. The probability or distribution as a result of marginalization is called a *marginal probability* or a *marginal distribution*.
 -->
 
-*dịch đoạn phía trên*
+Công thức này cũng được biết đến với tên gọi *quy tắc tổng*.
+Xác suất hay phân phối thu được từ thao tác biên hóa được gọi là *xác suất biên* hoặc *phân phối biên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -460,7 +523,7 @@ which is also known as the *sum rule*. The probability or distribution as a resu
 ### Independence
 -->
 
-### *dịch tiêu đề phía trên*
+### Tính độc lập
 
 <!--
 Another useful property to check for is *dependence* vs. *independence*.
@@ -470,8 +533,13 @@ does not reveal any information about the occurrence of an event of $B$.
 In this case $P(B \mid A) = P(B)$. Statisticians typically express this as $A \perp  B$. From Bayes' theorem, it follows immediately that also $P(A \mid B) = P(A)$.
 In all the other cases we call $A$ and $B$ dependent. For instance, two successive rolls of a die are independent. In contrast, the position of a light switch and the brightness in the room are not (they are not perfectly deterministic, though, since we could always have a broken light bulb, power failure, or a broken switch).
 -->
-
-*dịch đoạn phía trên*
+Một tính chất hữu ích khác để kiểm tra là *tính phụ thuộc* với *tính độc lập*.
+Hai biến ngẫu nhiên $A$ và $B$ độc lập nghĩa là sự xuất hiện của một sự kiện của $A$ không tiết lộ bất kỳ thông tin nào về sự xuất hiện của một sự kiện của $B$.
+Trong trường hợp này $P(B \mid A) = P(B)$. Các nhà thống kê thường biểu thị điều này là $A \perp B$. 
+Từ định lý Bayes, ta có $P(A \mid B) = P(A)$.
+Trong tất cả các trường hợp khác, chúng ta gọi $A$ và $B$ là hai biến phụ thuộc. 
+Ví dụ, hai lần đổ liên tiếp của một con xúc xắc là độc lập. 
+Ngược lại, vị trí của công tắc đèn và độ sáng trong phòng là không độc lập (tuy nhiên chúng không hoàn toàn xác định, vì chúng ta luôn có thể bị hỏng bóng đèn, mất điện hoặc công tắc bị hỏng).
 
 <!--
 Since $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ is equivalent to $P(A, B) = P(A)P(B)$, two random variables are independent if and only if their joint distribution is the product of their individual distributions.
@@ -479,13 +547,14 @@ Likewise, two random variables $A$ and $B$ are *conditionally independent* given
 if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $A \perp B \mid C$.
 -->
 
-*dịch đoạn phía trên*
+Vì $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ tương đương với $P(A, B) = P(A)P(B)$, hai biến ngẫu nhiên là độc lập khi và chỉ khi phân phối đồng thời của chúng là tích các phân phối riêng lẻ của chúng.
+Tương tự, cho một biến ngẫu nhiên $C$ khác, hai biến ngẫu nhiên $A$ và $B$ là *độc lập có điều kiện* khi và chỉ khi $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. Điều này được biểu thị bằng $A \perp B \mid C$.
 
 <!--
 ### Application
 -->
 
-### *dịch tiêu đề phía trên*
+### Ứng dụng
 :label:`subsec_probability_hiv_app`
 
 <!--
@@ -494,16 +563,26 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 :numref:`conditional_prob_D1` lists such conditional probability.
 -->
 
-*dịch đoạn phía trên*
+Hãy thử nghiệm các kiến thức chúng ta vừa học. Giả sử rằng một bác sĩ phụ trách xét nghiệm AIDS cho một bệnh nhân. 
+Việc xét nghiệm này khá chính xác và nó chỉ thất bại với xác suất $1\%$ nếu bệnh nhân khỏe mạnh nhưng lại báo cáo nhầm anh ta bị bệnh. 
+Hơn thế nữa, nó không bao giờ thất bại trong việc phát hiện HIV nếu bệnh nhân thực sự nhiễm. 
+Ta sử dụng $D_1$ để chỉ định chẩn đoán ($1$ nếu dương tính và $0$ nếu âm tính) và $H$ để biểu thị tình trạng nhiễm HIV ($1$ nếu dương tính và $0$ nếu âm tính).
+:numref:`conditional_prob_D1` liệt kê xác suất có điều kiện đó.
 
 <!--
 :Conditional probability of $P(D_1 \mid H)$.
 -->
 
-*dịch đoạn phía trên*
+:Xác suất có điều kiện của $P(D_1 \mid H)$.
 
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
+|---|---|---|
+|$P(D_1 = 1 \mid H)$|            1 |         0.01 |
+|$P(D_1 = 0 \mid H)$|            0 |         0.99 |
+:label:`conditional_prob_D1`
+
+| Xác suất có điều kiện | $H=1$ | $H=0$ |
 |---|---|---|
 |$P(D_1 = 1 \mid H)$|            1 |         0.01 |
 |$P(D_1 = 0 \mid H)$|            0 |         0.99 |
@@ -513,7 +592,11 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 Note that the column sums are all $1$ (but the row sums are not), since the conditional probability needs to sum up to $1$, just like the probability. Let's work out the probability of the patient having AIDS if the test comes back positive, i.e., $P(H = 1 \mid D_1 = 1)$. Obviously this is going to depend on how common the disease is, since it affects the number of false alarms. Assume that the population is quite healthy, e.g., $P(H=1) = 0.0015$. To apply Bayes' Theorem, we need to apply marginalization and the multiplication rule to determine
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng tổng của từng cột đều bằng $1$ (nhưng tổng từng hàng thì không), vì xác suất có điều kiện cần cộng lên đến $1$, giống như xác suất.
+Chúng ta hãy tìm ra xác suất bệnh nhân bị AIDS nếu xét nghiệm trở thành dương tính, tức là, $P(H = 1 \mid D_1 = 1)$.
+Rõ ràng điều này sẽ phụ thuộc vào mức độ phổ biến của bệnh, bởi vì nó ảnh hưởng đến số lượng báo động sai.
+Giả sử rằng dân số khá khỏe mạnh, ví dụ: $P(H=1) = 0.0015$.
+Để áp dụng Định lý Bayes, chúng ta cần áp dụng phép biên hóa và quy tắc nhân để xác định
 
 $$\begin{aligned}
 &P(D_1 = 1) \\
@@ -531,34 +614,32 @@ $$
 Thus, we get
 -->
 
-*dịch đoạn phía trên*
+Do đó, ta có
 
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1)\\ =& \frac{P(D_1=1 \mid H=1) P(H=1)}{P(D_1=1)} \\ =& 0.1306 \end{aligned}.$$
--->
 
-*dịch đoạn phía trên*
 
 <!--
 In other words, there is only a 13.06% chance that the patient actually has AIDS, despite using a very accurate test. As we can see, probability can be quite counterintuitive.
 -->
 
-*dịch đoạn phía trên*
-
+Nói cách khác, chỉ có 13,06% khả năng rằng bệnh nhân mắc bệnh AIDS, mặc dù với một bài kiểm tra rất chính xác. Như chúng ta thấy, xác suất có thể là phản trực giác.
 <!--
 What should a patient do upon receiving such terrifying news? Likely, the patient
 would ask the physician to administer another test to get clarity. The second
 test has different characteristics and it is not as good as the first one, as shown in :numref:`conditional_prob_D2`.
 -->
 
-*dịch đoạn phía trên*
+Một bệnh nhân phải làm gì nếu nhận một tin xấu? Nhiều khả năng bệnh nhân sẽ yêu cầu bác sĩ thực hiện một xét nghiệm khác để có được sự rõ ràng.
+Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằng bài thứ nhất được thể hiện trong :numref:`conditional_prob_D2`. 
 
 
 <!--
 :Conditional probability of $P(D_2 \mid H)$.
 -->
 
-*dịch đoạn phía trên*
+:Xác suất có điều kiện của $P(D_2 \mid H)$.
 
 <!--
 | Conditional probability | $H=1$ | $H=0$ |
@@ -571,7 +652,13 @@ test has different characteristics and it is not as good as the first one, as sh
 Unfortunately, the second test comes back positive, too. Let's work out the requisite probabilities to invoke Bayes' Theorem by assuming the conditional independence:
 -->
 
-*dịch đoạn phía trên*
+| Xác xuất có điều kiện | $H=1$ | $H=0$ |
+|---|---|---|
+|$P(D_2 = 1 \mid H)$|            0.98 |         0.03 |
+|$P(D_2 = 0 \mid H)$|            0.02 |         0.97 |
+:label:`conditional_prob_D2`
+
+Không may thay, bài kiểm tra thứ hai cũng dương tính. Chúng ta hãy chỉ ra những xác suất cần thiết để sử dụng định lý Bayes bằng cách giả định các điều kiện độc lập:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1 \mid H = 0) \\
@@ -591,7 +678,7 @@ $$
 Now we can apply marginalization and the multiplication rule:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể áp dụng phép biên hóa và quy tắc nhân xác suất:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1) \\
@@ -605,7 +692,7 @@ $$
 In the end, the probability of the patient having AIDS given both positive tests is
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng xác suất bệnh nhân mắc bệnh AIDS qua hai lần dương tính là
 
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1, D_2 = 1)\\
@@ -617,8 +704,7 @@ $$
 <!--
 That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.
 -->
-
-*dịch đoạn phía trên*
+Do đó, thử nghiệm thứ hai mang lại nhiều lý do hơn để tin rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -632,7 +718,7 @@ That is, the second test allowed us to gain much higher confidence that not all 
 ## Expectation and Variance
 -->
 
-## *dịch tiêu đề phía trên*
+## Kỳ vọng và Phương sai
 
 <!--
 To summarize key characteristics of probability distributions,
@@ -640,7 +726,8 @@ we need some measures.
 The *expectation* (or average) of the random variable $X$ is denoted as
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cần những phép đó để có được cái nhìn tóm tắt về đặc điểm của các phân phối xác suất.
+Kỳ vọng (hay trung bình) của một biến ngẫu nhiên $X$, được ký hiệu là
 
 $$E[X] = \sum_{x} x P(X = x).$$
 
@@ -649,7 +736,7 @@ When the input of a function $f(x)$ is a random variable drawn from the distribu
 the expectation of $f(x)$ is computed as
 -->
 
-*dịch đoạn phía trên*
+Khi giá trị đầu vào của phương trình $f(x)$ là một biến ngẫu nhiên nhiên cho trước theo phân phối $P$ với các giá trị $x$ khác nhau, kỳ vọng của $f(x)$ sẽ được tính theo phương trình:
 
 $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 
@@ -658,7 +745,8 @@ $$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
 In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp muốn biết được độ lệch của các biến ngẫu nhiên $X$ so với kỳ vọng.
+Đại lượng này có thể được đo qua phương trình:
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
@@ -673,7 +761,8 @@ by how much the function deviates from the expectation of the function,
 as different values $x$ of the random variable are sampled from its distribution:
 -->
 
-*dịch đoạn phía trên*
+Nếu lấy căn bậc hai của kết quả ta sẽ được độ lệch chuẩn.
+Phương sai thể hiện ước tính độ lệch giữa các biến ngẫu nhiên và kỳ vọng của phương trình, vì các giá trị $x$ của biến ngẫu nhiên được lấy từ phân phối của nó
 
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
@@ -682,7 +771,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We can use MXNet to sample from probability distributions.
@@ -690,14 +779,16 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 * Expectation and variance offer useful measures to summarize key characteristics of probability distributions.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể sử dụng MXNet để lấy mẫu từ phân phối ngẫu nhiên.
+* Các biến ngẫu nhiên có thể được phân tích bằng các phương pháp như phân phối đồng thời (joint distribution), phân phối có điều kiện (conditional distribution), định lý Bayes (Bayes’ theorem), phép biến hóa (marginalization) và giả định độc lập (independence assumptions).
+* Kỳ vọng và phương sai là các phép đo hữu ích để tóm tắt các đặc điểm chính của phân phối xác suất.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. We conducted $m=500$ groups of experiments where each group draws $n=10$ samples. Vary $m$ and $n$. Observe and analyze the experimental results.
@@ -706,7 +797,15 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 1. In :numref:`subsec_probability_hiv_app`, the first test is more accurate. Why not just run the first test a second time?
 -->
 
-*dịch đoạn phía trên*
+1. Tiến hành $m=500$ nhóm thí nghiệm với mỗi nhóm lấy ra $n=10$ mẫu.
+Thay đổi $m$ và $n$. Quan sát và phân tích kết quả của thí nghiệm.
+2. Cho hai biến cố với xác suất $P(\mathcal{A})$ và $P(\mathcal{B})$, tính giới hạn trên và dưới của $P(\mathcal{A} \cup \mathcal{B})$ và $P(\mathcal{A} \cap \mathcal{B})$.
+(Gợi ý: sử dụng [biểu đồ Venn](https://en.wikipedia.org/wiki/Venn_diagram).)
+3. Giả sử chúng ta có các biến ngẫu nhiên $A$, $B$ và $C$, với $B$ chỉ phụ thuộc $A$, và $C$ chỉ phụ thuộc vào $B$.
+Làm thế nào để đơn giản hóa xác suất đồng thời của $P(A,B,C)$?
+(Gợi ý: đây là [Markov Chain](https://en.wikipedia.org/wiki/Markov_chain).)
+4. Trong :numref:`subsec_probability_hiv_app`, bài xét nghiệm đầu tiên có độ chính xác cao hơn.
+Vậy tại sao chúng ta không sử dụng bài xét nghiệm đầu tiên cho lần thử tiếp theo?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -720,7 +819,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 * [Tiếng Anh](https://discuss.mxnet.io/t/2319)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -738,32 +837,21 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Cảnh Thướng
 
 <!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-* Nguyễn Văn Tâm
-* Vũ Hữu Tiệp
-* Nguyễn Cảnh Thướng
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Mai Sơn Hải
 
 <!-- Phần 4 -->
-*
+* Trần Kiến An
 
 <!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
-* Nguyễn Văn Tâm
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 7 -->
-*
+* Tạ H. Duy Nguyên
 
 <!-- Phần 8 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 9 -->
-*
+* Lê Thành Vinh
 
 <!-- Phần 10 -->
-*
+* Nguyễn Minh Thư
