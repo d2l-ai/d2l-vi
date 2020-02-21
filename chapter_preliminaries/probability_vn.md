@@ -69,7 +69,7 @@ Nếu ta khá tự tin, nhưng không thực sự chắc chắn bức ảnh mô 
 Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability $0.5$.
 -->
 
-Giờ hãy xem xét trường hợp thứ hai: cho một số dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
+Giờ hãy xem xét trường hợp thứ hai: cho dữ liệu theo dõi khí tượng, chúng ta muốn dự đoán xác suất ngày mai trời sẽ mưa ở Đài Bắc.
 Nếu vào mùa hè, xác suất trời mưa có thể là $0.5$.
 
 <!--
@@ -77,8 +77,7 @@ In both cases, we have some value of interest. And in both cases we are uncertai
 But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.
 -->
 
-Trong cả hai trường hợp, chúng ta quan tâm tới một giá trị nào đó.
-Và trong cả hai trường hợp ta đều không chắc chắn về đầu ra.
+Trong cả hai trường hợp, chúng ta đều quan tâm tới một đại lượng nào đó và cùng không chắc chắn về giá trị đầu ra.
 Nhưng có một khác biệt quan trọng giữa hai trường hợp.
 Trong trường hợp đầu tiên, bức ảnh chỉ có thể là chó hoặc mèo, và chúng ta chỉ không biết là loài nào.
 Trong trường hợp thứ hai, đầu ra thực sự có thể là một sự kiện ngẫu nhiên, nếu bạn tin vào những thứ như vậy (và hầu hết các nhà vật lý tin vậy).
@@ -125,7 +124,7 @@ large numbers* tell us that as the number of tosses grows this estimate will dra
 Cách tính trực quan nhất là lấy số lần xuất hiện của mỗi mặt số chia cho tổng số lần tung.
 Cách này cho ta một *ước lượng* của xác suất ứng với một *sự kiện* cho trước.
 *Luật số lớn* cho ta biết rằng số lần tung xúc xắc càng tăng thì ước lượng này càng gần hơn với xác xuất thực.
-Trước khi giải thích chi tiết, hãy thực hiện thí nghiệm này bằng lập trình.
+Trước khi giải thích chi tiết hơn, hãy cùng lập trình thí nghiệm này.
 
 <!--
 To start, let's import the necessary packages.
