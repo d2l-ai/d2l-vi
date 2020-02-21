@@ -839,6 +839,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Mai Sơn Hải
 * Trần Kiến An
 * Tạ H. Duy Nguyên
+* Phạm Minh Đức
 * Trần Thị Hồng Hạnh
 * Lê Thành Vinh
 * Nguyễn Minh Thư
