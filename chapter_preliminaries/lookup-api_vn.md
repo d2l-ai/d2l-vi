@@ -57,7 +57,8 @@ help(np.ones_like)
 From the documentation, we can see that the `ones_like` function creates a new array with the same shape as the supplied `ndarray` and sets all the elements to `1`. Whenever possible, you should run a quick test to confirm your interpretation:
 -->
 
-Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng kích thước với `ndarray` có các phần tử được gán giá trị bằng `1`. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
+Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng mới có cùng kích thước với `ndarray` nhưng tất cả các phần tử của nó đều chứa giá trị `1`.
+Nếu có thể, bạn nên chạy thử để xác nhận rằng mình hiểu đúng.
 
 ```{.python .input}
 x = np.array([[0, 0, 0], [2, 2, 2]])
@@ -85,7 +86,7 @@ For further details on the API details check the MXNet website at  [http://mxnet
 -->
 
 Chi tiết cụ thể về các API của MXNet có thể được tìm thấy tại trang [http://mxnet.apache.org/](http://mxnet.apache.org/).
-Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (và có các ngôn ngữ lập trình khác Python).
+Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (cho cả các ngôn ngữ lập trình khác ngoài Python).
 
 <!--
 ## Summary
