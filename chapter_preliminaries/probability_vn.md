@@ -626,15 +626,17 @@ $$\begin{aligned}
 In other words, there is only a 13.06% chance that the patient actually has AIDS, despite using a very accurate test. As we can see, probability can be quite counterintuitive.
 -->
 
-Nói cách khác, chỉ có 13,06% khả năng rằng bệnh nhân mắc bệnh AIDS, mặc dù với một bài kiểm tra rất chính xác. Như chúng ta thấy, xác suất có thể là phản trực giác.
+Nói cách khác, chỉ có 13,06% khả năng bệnh nhân thực sự mắc bệnh AIDS, dù ta dùng một bài kiểm tra rất chính xác. 
+Như ta có thể thấy, xác suất có thể trở nên khá phản trực giác.
 <!--
 What should a patient do upon receiving such terrifying news? Likely, the patient
 would ask the physician to administer another test to get clarity. The second
 test has different characteristics and it is not as good as the first one, as shown in :numref:`conditional_prob_D2`.
 -->
 
-Một bệnh nhân phải làm gì nếu nhận một tin xấu? Nhiều khả năng bệnh nhân sẽ yêu cầu bác sĩ thực hiện một xét nghiệm khác để có được sự rõ ràng.
-Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằng bài thứ nhất được thể hiện trong :numref:`conditional_prob_D2`. 
+Một bệnh nhân phải làm gì nếu nhận được tin dữ như vậy? 
+Nhiều khả năng họ sẽ yêu cầu bác sĩ thực hiện một xét nghiệm khác để làm rõ sự việc.
+Bài kiểm tra thứ hai có những đặc điểm khác và không tốt bằng bài thứ nhất, như ta có thể thấy trong :numref:`conditional_prob_D2`.
 
 
 <!--
@@ -659,7 +661,8 @@ Unfortunately, the second test comes back positive, too. Let's work out the requ
 |$P(D_2 = 0 \mid H)$|            0.02 |         0.97 |
 :label:`conditional_prob_D2`
 
-Không may thay, bài kiểm tra thứ hai cũng dương tính. Chúng ta hãy chỉ ra những xác suất cần thiết để sử dụng định lý Bayes bằng cách giả định các điều kiện độc lập:
+Không may thay, bài kiểm tra thứ hai cũng có kết quả dương tính. 
+Hãy cùng tính các xác suất cần thiết để sử dụng định lý Bayes bằng cách giả định tính độc lập có điều kiện:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1 \mid H = 0) \\
@@ -705,7 +708,8 @@ $$
 <!--
 That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.
 -->
-Do đó, thử nghiệm thứ hai mang lại độ tin cậy cao hơn rằng chuyện này đang không tốt. Mặc dù lần kiểm tra thứ hai kém chính xác hơn lần đầu, nhưng vẫn rất quan trọng trong việc cải thiện dự đoán.
+Cụ thể hơn, thử nghiệm thứ hai mang lại độ tin cậy cao hơn rằng không phải mọi chuyện đều ổn. 
+Mặc dù bài kiểm tra thứ hai kém chính xác hơn bài đầu, nó vẫn cải thiện đáng kể dự đoán.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
