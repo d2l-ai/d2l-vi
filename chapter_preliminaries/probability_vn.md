@@ -287,7 +287,7 @@ we can say that the event "seeing an odd number" has occurred.
 
 Khi ta thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết quả*.
 *Biến cố* là một tập hợp các kết quả của không gian mẫu. 
-Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những sự kiện hợp lệ khi gieo một con xúc sắc. 
+Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
 Chú ý rằng nếu kết quả của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
 biến cố $\mathcal{A}$ đã xảy ra.
 Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc sắc được gieo, 
