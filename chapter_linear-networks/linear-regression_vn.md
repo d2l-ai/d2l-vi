@@ -528,13 +528,13 @@ Moreover, we push more of the math to the library and need not write as many cal
 ## The Normal Distribution and Squared Loss
 -->
 
-## Phân phối chuẩn và hàm mất mát bình phương
+## Phân phối Chuẩn và Hàm mất mát Bình phương
 
 <!--
 While you can already get your hands dirty using only the information above, in the following section we can more formally motivate the square loss objective via assumptions about the distribution of noise.
 -->
 
-Bạn có thể gặp khó khăn khi chỉ sử dụng mỗi thông tin phía trên, ở phần tiếp theo ta có thể chính thức diễn giải hàm mục tiêu mất mát bình phương thông qua các giả định về phân phối nhiễu.
+Mặc dù bạn đã có thể thực hành mà chỉ sử dụng thông tin phía trên, trong phần tiếp theo chúng ta có thể hiểu rõ hơn nguồn gốc của hàm mất mát bình phương thông qua các giả định về phân phối của nhiễu.
 
 <!--
 Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ has many convenient properties.
@@ -550,7 +550,7 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-Như ta đã đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
+Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
 Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn là nguồn gốc thông thường.
 Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được đưa ra như sau:
 
