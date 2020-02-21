@@ -1,6 +1,6 @@
 ## Pull Request Checklist
 
-**Đánh dấu tick (sau khi "Create Pull Request") vào các mục dưới đây**
+**Đánh dấu tick (sau khi "Create Pull Request") vào các mục dưới đây:**
 
 * [ ] Pull Request này tương ứng với issue nào? Trả lời số issue sau dấu `#` (không có dấu cách): Close #
 
@@ -19,13 +19,13 @@
      
 * [ ] Trong một đoạn văn, mỗi câu văn đã được viết trong một dòng, giữa các dòng không có dòng trắng. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn.
 
-* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm [hướng dẫn hoặc yêu cầu dịch hình](../img/README.md).
+* [ ] Tất cả chữ trong các hình vẽ đã được dịch. Nếu chưa, vui lòng xem thêm **[hướng dẫn hoặc yêu cầu dịch hình](https://github.com/aivivn/d2l-vn/blob/master/img/README.md)**.
 
 * [ ] Điền tên của bạn vào mục "Những người thực hiện" ở cuối file.
 
-* [ ] **Sau khi được approve**, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](../docs/contributors_info.md/)**.
+* [ ] **Sau khi được approve**, điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md)**.
 
-## Với reviewer
+## Với Reviewer
 
 1. Chỉ review nếu Pull Request này đã sẵn sàng cho việc review.
 

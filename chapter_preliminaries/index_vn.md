@@ -7,7 +7,7 @@
 # Sơ bộ
 :label:`chap_preliminaries`
 
-**Chương này đang trong quá trình chỉnh sửa**
+**Chương này đang trong quá trình chỉnh sửa. Bản chính thức dự kiến hoàn thành trong tháng 02/2020.**
 <!--
 To get started with deep learning, we will need to develop a few basic skills.
 All machine learning is concerned with extracting information from data.
@@ -75,13 +75,13 @@ Nếu bạn muốn hiểu *tất cả* nội dung toán học, hãy tham khảo 
 ```toc
 :maxdepth: 2
 
-ndarray
-pandas
-linear-algebra
-calculus
-autograd
-probability
-lookup-api
+ndarray_vn
+pandas_vn
+linear-algebra_vn
+calculus_vn
+autograd_vn
+probability_vn
+lookup-api_vn
 ```
 
 
@@ -104,5 +104,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-<!-- Phần 2 -->
-*

@@ -194,7 +194,7 @@ Trước khi nghiên cứu cách tìm các giá trị tối ưu $\mathbf{w}$ và
 ### Loss Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát
 
 <!--
 Before we start thinking about how *to fit* our model, we need to determine a measure of *fitness*.
@@ -204,7 +204,11 @@ The most popular loss function in regression problems is the sum of squared erro
 When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the corresponding true label is $y^{(i)}$, the squared error is given by:
 -->
 
-*dịch đoạn phía trên*
+Trước khi suy nghĩ làm thế nào để *khớp* mô hình vào với dữ liệu, ta cần phải xác định một cách để đo *mức độ khớp*.
+*Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
+Độ mất mát thường là một số không âm mà giá trị càng nhỏ thì càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
+Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
+Khi giá trị dự đoán của một dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn trị thực tương ứng của nó là $y^{(i)}$, bình phương của lỗi được xác định như sau:
 
 $$l^{(i)}(\mathbf{w}, b) = \frac{1}{2} \left(\hat{y}^{(i)} - y^{(i)}\right)^2.$$
 
@@ -214,13 +218,15 @@ Since the training dataset is given to us, and thus out of our control, the empi
 To make things more concrete, consider the example below where we plot a regression problem for a one-dimensional case as shown in :numref:`fig_fit_linreg`.
 -->
 
-*dịch đoạn phía trên*
+Hằng số $1/2$ không có một vai trò gì quan trọng nhưng sẽ giúp ký hiệu thuận tiện hơn: nó sẽ bị giản ước đi khi ta lấy đạo hàm.
+Vì các dữ liệu trong tập huấn luyện đã được xác định trước, và không thể thay đổi, hàm lỗi thực nghiệm chỉ là một hàm trên các tham số của mô hình.
+Để cụ thể hơn, ta hãy xét ví dụ dưới đây về một bài toán hồi quy cho trường hợp một chiều trong hình :numref:`fig_fit_linreg`.
 
 <!--
 ![Fit data with a linear model.](../img/fit_linreg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/fit_linreg.svg)
+![Khớp dữ liệu với một mô hình tuyến tính.](../img/fit_linreg.svg)
 :label:`fig_fit_linreg`
 
 <!--
@@ -228,7 +234,8 @@ Note that large differences between estimates $\hat{y}^{(i)}$ and observations $
 To measure the quality of a model on the entire dataset, we simply average (or equivalently, sum) the losses on the training set.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng các khác biệt lớn giữa giá trị ước tính $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ có sự đóng góp còn lớn hơn nữa vào tổng độ mất mát do sự phụ thuộc bậc hai.
+Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta chỉ đơn giản lấy trung bình (hay tương đương là lấy tổng) của các độ mất mát trên tập huấn luyện.
 
 $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
 
@@ -236,7 +243,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-*dịch đoạn phía trên*
+Khi huấn luyện mô hình, chúng ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ tất cả các mẫu huấn luyện:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
@@ -762,7 +769,7 @@ Chúng ta sẽ nói nhiều hơn về các mạng nơ-ron cấu tạo từ nhữ
 ### Biology
 -->
 
-### *dịch tiêu đề phía trên*
+### Sinh vật học
 
 <!--
 Although linear regression (invented in 1795) predates computational neuroscience, so it might seem anachronistic to describe linear regression as a neural network.
@@ -772,13 +779,14 @@ consisting of *dendrites* (input terminals), the *nucleus* (CPU), the *axon* (ou
 and the *axon terminals* (output terminals), enabling connections to other neurons via *synapses*.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù hồi quy tuyến tính (được phát minh vào năm 1795) có trước khoa học thần kinh tính toán, nhưng có vẻ lỗi thời khi mô tả hồi quy tuyến tính như một mạng nơ-ron.
+Để hiểu tại sao các mô hình tuyến tính là điểm khởi đầu tự nhiên cho các nhà nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts tìm hiểu và bắt đầu phát triển các mô hình nơ-ron nhân tạo, hãy xem xét bức tranh hoạ hình của một nơ-ron sinh học tại :numref:`fig_Neuron`, bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*.
 
 <!--
 ![The real neuron](../img/Neuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/Neuron.svg)
+![Nơ-ron trong thực tế](../img/Neuron.svg)
 :label:`fig_Neuron`
 
 <!--
@@ -789,14 +797,18 @@ and this information is then sent for further processing in the axon $y$, typica
 From there it either reaches its destination (e.g., a muscle) or is fed into another neuron via its dendrites.
 -->
 
-*dịch đoạn phía trên*
+Thông tin $x_i$ đến từ các nơ-ron khác (hoặc các cảm biến môi trường, giống như võng mạc) được nhận thông qua các sợi nhánh.
+Cụ thể, thông tin đó được tính trọng số bởi *trọng số của synapses* $w_i$, là trọng số xác định độ ảnh hướng của các đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua phép nhân của $x_i$ và $w_i$).
+Các đầu vào có trọng số đến từ nhiều nguồn được tổng hợp trong nhân tế bào dưới dạng tổng trọng số $y = \ sum_i x_i w_i + b$, và thông tin này sau đó được gửi đi để xử lý thêm trong sợi trục $y$, thường là sau một vài xử lý phi tuyến tính qua $\sigma(y)$.
+Từ đó, nó được gửi đến đích (ví dụ, cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các sợi nhánh của nó.
 
 <!--
 Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm, 
 to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
 -->
 
-*dịch đoạn phía trên*
+Chắc chắn rằng, ý tưởng lớn chính là nhiều đơn vị như vậy có thể được kết hợp lại với nhau bằng những cách kết nối và với thuật toán học tập đúng đắn để tạo ra hành vi thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron đơn lẻ nào có thể làm được.
+Tất cả là nhờ vào nghiên cứu của chúng ta về các hệ thống thần kinh sinh học trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 16 ===================== -->
 
@@ -876,7 +888,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
 * [Tiếng Anh](https://discuss.mxnet.io/t/2331)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -900,9 +912,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
+* Vũ Hữu Tiệp
+* Đoàn Võ Duy Thanh
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
-*
+* Tạ H. Duy Nguyên
 
 <!-- Phần 6 -->
 *
@@ -939,7 +954,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 16 -->
-*
+* Nguyễn Phan Hùng Thuận
+* Phạm Hồng Vinh
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 17 -->
 * Nguyễn Văn Tâm

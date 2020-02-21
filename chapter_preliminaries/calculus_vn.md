@@ -119,7 +119,7 @@ The *derivative* of $f$ is defined as
 Giả sử ta có một hàm $f: \mathbb{R} \rightarrow \mathbb{R}$ có đầu vào và đầu ra đều là số vô hướng.
 *Đạo hàm* của $f$ được định nghĩa là
 
-$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h},$$
+$$f'(x) = \lim\_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h},$$
 :eqlabel:`eq_derivative`
 
 <!--
@@ -587,7 +587,7 @@ cho mỗi $i = 1, 2, \ldots, n$.
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -612,9 +612,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 4 -->
 * Phạm Minh Đức
 
-<!-- Phần 5 -->
-*
-
 <!-- Phần 6 -->
 * Tạ H. Duy Nguyên
-* Nguyễn Cảnh Thướng
