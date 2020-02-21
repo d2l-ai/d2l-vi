@@ -264,9 +264,9 @@ For functions that take two arrays as inputs, elementwise operations apply some 
 -->
 
 Cuốn sách này không nói về kỹ thuật phần mềm.
-Chúng tôi không chỉ hứng thú với việc đơn giản đọc và ghi dữ liệu vào/từ các mảng mà còn muốn thực hiện các phép toán toán học trên các mảng này.
+Chúng tôi không chỉ hứng thú với việc đơn giản đọc và ghi dữ liệu vào/từ các mảng mà còn muốn thực hiện các phép toán trên các mảng này.
 Một vài phép toán đơn giản và hữu ích nhất là các phép toán tác động lên *từng phần tử* (*elementwise*).
-Những phép toán này hoạt động như những phép toán chuẩn trên số vô hướng áp dụng lên từng phần tử của mảng.
+Các phép toán này hoạt động như những phép toán chuẩn trên số vô hướng áp dụng lên từng phần tử của mảng.
 Với những hàm nhận hai mảng đầu vào, phép toán theo từng thành phần được áp dụng trên từng cặp phần tử tương ứng của hai mảng.
 Ta có thể tạo một hàm theo từng phần tử từ một hàm bất kỳ ánh xạ từ một số vô hướng tới một số vô hướng.
 
@@ -281,7 +281,7 @@ Here, we produced the vector-valued $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \
 * Trong toán học, ta ký hiệu một toán tử *đơn ngôi* vô hướng (lấy một đầu vào) bởi $f: \mathbb{R} \rightarrow \mathbb{R}$.
 Điều này nghĩa là hàm số ánh xạ từ một số thực bất kỳ ($\mathbb{R}$) sang một số thực khác.
 Tương tự, ta ký hiệu một toán tử *hai ngôi* vô hướng (lấy hai đầu vào, trả về một đầu ra) bởi $f: \mathbb{R}, \mathbb{R} \rightarrow \mathbb{R}$.
-Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$, ở đó $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
+Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$ với $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
 Ở đây, chúng ta tạo một hàm trả về vector $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \mathbb{R}^d$ bằng cách áp dụng hàm $f$ lên từng phần tử.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -298,7 +298,7 @@ In the following example, we use commas to formulate a $5$-element tuple, where 
 
 Trong MXNet, các phép toán tiêu chuẩn (`+`, `-`, `*`, `/`, và `**`) là các phép toán theo từng phần tử trên các tensor đồng kích thước bất kỳ.
 Ta có thể gọi những phép toán theo từng phần tử lên hai tensor đồng kích thước.
-Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử, ở đó mỗi phần tử là kết quả của một phép toán theo từng phần tử.
+Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử với mỗi phần tử là kết quả của một phép toán theo từng phần tử.
 
 ```{.python .input  n=11}
 x = np.array([1, 2, 4, 8])
@@ -310,7 +310,7 @@ x + y, x - y, x * y, x / y, x ** y  # The ** operator is exponentiation
 Many more operations can be applied elementwise, including unary operators like exponentiation.
 -->
 
-Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán một ngôi như hàm mũ cơ số $e$.
+Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán đơn ngôi như hàm mũ cơ số $e$.
 
 ```{.python .input  n=12}
 np.exp(x)
@@ -322,7 +322,7 @@ We will explain the crucial bits of linear algebra (with no assumed prior knowle
 -->
 
 Ngoài các phép tính theo từng phần tử, ta cũng có thể thực hiện các phép toán đại số tuyến tính, bao gồm tích vô hướng của hai vector và phép nhân ma trận.
-Chúng tôi sẽ giải thích những điểm quan trọng của đại số tuyến tính (mà không cần kiến thức nền tảng) trong :numref:`sec_linear-algebra`.
+Chúng ta sẽ giải thích những điểm quan trọng của đại số tuyến tính (mà không cần kiến thức nền tảng) trong :numref:`sec_linear-algebra`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -664,7 +664,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 7 -->
 *
