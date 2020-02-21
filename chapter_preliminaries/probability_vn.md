@@ -405,7 +405,7 @@ For instance, we may want to model the relationship between diseases and symptom
 Chúng ta sẽ thường xuyên phải làm việc với nhiều hơn một biến ngẫu nhiên cùng lúc.
 Ví dụ, chúng ta có thể muốn mô hình hóa mối quan hệ giữa các loại bệnh và các triệu chứng bệnh.
 Cho một loại bệnh và một triệu chứng bệnh, giả sử "cảm cúm" và "ho", chúng có thể xuất hiện hoặc không trên một bệnh nhân với xác suất nào đó.
-Mặc dù chúng ta hy vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để ta có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
+Mặc dù chúng ta hy vọng xác suất cả hai xảy ra gần bằng không, ta có thể vẫn muốn ước lượng các xác suất này và mối quan hệ giữa chúng để có thể thực hiện các biện pháp chăm sóc y tế tốt hơn.
 
 <!--
 As a more complicated example, images contain millions of pixels, thus millions of random variables. And in many cases images will come with a
@@ -415,12 +415,12 @@ such as location, time, aperture, focal length, ISO, focus distance, and camera 
 All of these are random variables that occur jointly. When we deal with multiple random variables, there are several quantities of interest.
 -->
 
-Xét một ví dụ phức tạp hơn, các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
-Và trong nhiều trường hợp các bức ảnh sẽ được gán nhãn và định danh cho các đối tượng chứa bên trong.
+Xét một ví dụ phức tạp hơn: các bức ảnh chứa hàng triệu điểm ảnh, tương ứng với hàng triệu biến ngẫu nhiên.
+Và trong nhiều trường hợp các bức ảnh sẽ được gán một nhãn chứa tên các vật xuất hiện trong ảnh.
 Chúng ta cũng có thể xem nhãn này như một biến ngẫu nhiên.
-Ta thậm chí cũng có thể xem tất cả các dữ liệu bổ trợ như địa điểm, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
-Tất các những biến ngẫu nhiên này xảy ra đồng thời.
-Khi chúng ta làm việc với nhiều biến ngẫu nhiên, sẽ có nhiều đại lượng đáng quan tâm.
+Thậm chí, ta còn có thể xem tất cả các siêu dữ liệu như địa điểm, thời gian, khẩu độ, tiêu cự, ISO, khoảng lấy nét và loại máy ảnh, là các biến ngẫu nhiên.
+Tất cả các những biến ngẫu nhiên này xảy ra đồng thời.
+Khi làm việc với nhiều biến ngẫu nhiên, có một số đại lượng đáng được quan tâm.
 
 <!--
 ### Joint Probability
@@ -434,7 +434,7 @@ Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
 This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen *and* $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.
 -->
 Đầu tiên là *xác suất đồng thời* $P(A = a, B=b)$.
-Cho hai biến $a$ và $b$ bất kỳ, xác suất đồng thời cho ta biết xác suất để cả $A=a$ và $B=b$ xảy ra đồng thời là bao nhiêu?
+Cho hai biến $a$ và $b$ bất kỳ, xác suất đồng thời cho ta biết xác suất để cả $A=a$ và $B=b$ đều xảy ra.
 Ta có thể thấy rằng với mọi giá trị $a$ và $b$, $P(A=a, B=b) \leq P(A=a)$.
 Bởi để $A=a$ và $B=b$ xảy ra thì $A=a$ phải xảy ra *và* $B=b$ cũng phải xảy ra (và ngược lại).
 Do đó, khả năng $A=a$ và $B=b$ xảy ra đồng thời không thể lớn hơn khả năng $A=a$ hoặc $B=b$ xảy ra một cách độc lập được.
@@ -470,7 +470,7 @@ It goes as follows.
 By construction, we have the *multiplication rule* that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) > 0$. Solving for one of the conditional variables we get
 -->
 
-Sử dụng định nghĩa về xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *định lý Bayes*.
+Sử dụng định nghĩa của xác suất có điều kiện, chúng ta có thể thu được một trong những phương trình nổi tiếng và hữu dụng nhất trong thống kê: *định lý Bayes*.
 Cụ thể như sau:
 Theo định nghĩa chúng ta có *quy tắc nhân* $P(A, B) = P(B \mid A) P(A)$.
 Tương tự, ta cũng có $P(A, B) = P(A \mid B) P(B)$.
