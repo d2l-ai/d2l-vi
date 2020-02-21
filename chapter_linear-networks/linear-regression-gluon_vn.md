@@ -259,7 +259,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.03})
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn Luyện
 
 <!--
 You might have noticed that expressing our model through Gluon requires comparatively few lines of code.
@@ -268,14 +268,18 @@ Once we start working with much more complex models, Gluon's advantages will gro
 However, once we have all the basic pieces in place, the training loop itself is strikingly similar to what we did when implementing everything from scratch.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy rằng việc thể hiện mô hình của chúng ta thông qua Gluon đòi hỏi một vài dòng lệnh tương đối.
+Chúng ta cần phải phân bổ các tham số một cách riêng lẻ, xác định hàm số mất mát của chúng ta , hay hạ gradient ngẫu nhiên.
+Một khi chúng ta làm với nhiều mô hình rất phức tạp , những lợi ích của Gluon sẽ tăng lên nhiều.
+Tuy nhiên, một khi chúng ta có tất cả các mảnh cơ bản ở đúng chỗ, vòng huấn luyện của chính bản thân rất giống với những gì chúng ta đã thực hiện tự lúc đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
 For each minibatch, we go through the following ritual:
 -->
 
-*dịch đoạn phía trên*
+Để làm mới lại bộ nhớ của bạn: đối với một số epoch, chúng ta sẽ thực hiện qua tập dữ liệu (train_data), cứ lấy lặp đi lặp lại một minibatch của dữ liệu dầu vào và gán các nhãn gốc tương ứng.
+Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
 
 <!--
 * Generate predictions by calling `net(X)` and calculate the loss `l` (the forward pass).
@@ -283,14 +287,15 @@ For each minibatch, we go through the following ritual:
 * Update the model parameters by invoking our SGD optimizer (note that `trainer` already knows which parameters to optimize over, so we just need to pass in the minibatch size.
 -->
 
-*dịch đoạn phía trên*
+Tạo những dự đoán bằng cách gọi `net(X)` và tính sự mất mát `l` (đường chuyền về phía trước)
+Tính các gradient bằng cách gọi `l.backward()` (đường chuyền về sau(
+Cập nhật các tham số của mô hình bằng cách dẫn các tối ưu hóa của hạ gradient ngẫu nhiên (SGD) (chú ý rằng `trainer` đã biết được các tham số nào để tối ưu hóa hơn, nên chúng ta chỉ cần chuyền trong kích thước của minibatch.
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
 -->
 
-*dịch đoạn phía trên*
-
+Để có được độ đo lường chính xác, chúng ta tính sự mất mát sau mỗi epoch và in nó ra màn hình trong lúc thực thi. 
 ```{.python .input  n=10}
 num_epochs = 3
 for epoch in range(1, num_epochs + 1):
@@ -399,7 +404,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 *
