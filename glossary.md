@@ -97,6 +97,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | elementwise         | (theo) từng phần tử                                            |                       |
 | embedding           | embedding                                                      |                       |
 | end-to-end          | đầu-cuối                                                       | http://bit.ly/2OyYuEf |
+| epoch (in training) | epoch (khi huấn luyện)                                         |                       |
 | error analysis      | phân tích lỗi                                                  |                       |
 | error rate          | tỉ lệ lỗi                                                      |                       |
 | estimator           | bộ ước lượng                                                   |                       |
