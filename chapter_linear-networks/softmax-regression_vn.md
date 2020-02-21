@@ -5,7 +5,7 @@
 # Softmax Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Hồi quy Softmax
 :label:`sec_softmax`
 
 <!--
@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, thực hành qua việc triển khai từ đầu trong :numref:`sec_linear_scratch` và một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện các phần nặng.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -21,13 +21,14 @@ If you want to predict the number of dollars (the *price*) at which a house will
 or the number of days that a patient will remain hospitalized before being discharged, then you are probably looking for a regression model.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy là công cụ đắc lực có thể sử dụng khi ta muốn trả lời câu hỏi *bao nhiêu?*.
+Nếu bạn muốn dự đoán với bao nhiêu đô la (*giá tiền*) một ngôi nhà sẽ được bán, hay số trận thắng mà một đội bóng chày có thể đạt được, hoặc số ngày sẽ nhập viện của bệnh nhân trước khi được xuất viện, thì có lẽ bạn đang tìm kiếm một mô hình hồi quy.
 
 <!--
 In practice, we are more often interested in classification: asking not *how much?* but *which one?*
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn: không phải câu hỏi *bao nhiêu?* mà là *cái nào?*
 
 <!--
 * Does this email belong in the spam folder or the inbox*?
@@ -36,7 +37,10 @@ In practice, we are more often interested in classification: asking not *how muc
 * Which movie is Aston most likely to watch next?
 -->
 
-*dịch đoạn phía trên*
+* Email này thuộc thư mục thư rác hay hộp thư đến*?
+* Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?*
+* Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
+* Bộ phim nào có khả năng Aston xem tiếp theo nhất?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -45,7 +49,9 @@ i.e., to assess the *probability* that each category applies.
 The distinction tends to get blurred, in part, because often, even when we only care about hard assignments, we still use models that make soft assignments.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, các học máy quá tải với từ *phân loại* để mô tả hai vấn đề tinh tế khác nhau:
+(i) ta chỉ quan tâm đến các bài tập *cứng* của các ví dụ cho các danh mục; và (ii) ta muốn thực hiện *bài tập mềm*, tức là, để đánh giá *xác suất* mỗi danh mục áp dụng.
+Sự khác biệt có xu hướng bị mờ dần đi, một phần, bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến các bài tập cứng, chúng ta vẫn sử dụng các mô hình tạo ra các bài tập mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -622,7 +628,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
 *
