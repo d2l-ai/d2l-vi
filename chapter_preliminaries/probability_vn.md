@@ -102,7 +102,7 @@ Say that we cast a die and want to know what the chance is of seeing a $1$ rathe
 -->
 
 Giả sử, ta tung xúc xắc và muốn biết cơ hội để thấy mặt số $1$ so với các mặt khác là bao nhiêu?
-Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy mặt $1$ xuất hiện như một trong sáu trường hợp kể trên. 
+Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy mặt $1$ xuất hiện một lần trong mỗi sáu lần tung xúc xắc như trên.
 Ta có thể nói rằng mặt $1$ xuất hiện với xác suất là \frac{1}{6}$.
 
 <!--
@@ -183,8 +183,8 @@ multiple samples at once, returning an array of independent samples in any shape
 we might desire.
 -->
 
-Nếu chạy bộ lấy mẫu một vài lần, bạn sẽ thấy rằng mỗi lần đều được trả về các giá trị ngẫu nhiên.
-Khi ước lượng tính công bằng của một con xúc xắc, chúng ta thường muốn tung nhiều lần con xúc xắc này để tạo ra các mẫu từ cùng một phân phối.
+Nếu chạy hàm lấy mẫu vài lần, bạn sẽ thấy rằng mỗi lần các giá trị trả về đều là ngẫu nhiên.
+Giống với việc đánh giá một con xúc xắc có đều hay không, chúng ta thường muốn tạo nhiều mẫu từ cùng một phân phối.
 Tạo dữ liệu như trên với vòng lặp `for` trong Python là rất chậm, vì vậy hàm `random.multinomial` hỗ trợ sinh nhiều mẫu trong một lần gọi, trả về một mảng chứa các mẫu độc lập với kích thước bất kỳ.
 
 ```{.python .input  n=3}
