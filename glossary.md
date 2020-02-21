@@ -57,7 +57,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | conditional distribution            | phân phối có điều kiện                                         |                        |
 | confidence interval                 | khoảng tin cậy                                                 |                        |
 | constrain                           | ràng buộc                                                      |                        |
+| (strictly) convex function          | hàm lồi (chặt)                                                 |                        |
 | convex optimization                 | tối ưu lồi                                                     |                        |
+| convex set                          | tập lồi                                                        |                        |
 | convolution neural networks         | mạng nơ-ron tích chập                                          |                        |
 | cost function                       | hàm chi phí                                                    |                        |
 | covariate                           | hiệp biến                                                      | https://bit.ly/2r5QcfB |
@@ -119,6 +121,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English                        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại                                |
 |--------------------------------|----------------------------------------------------------------|----------------------------------------------|
+| Gaussian distribution          | phân phối Gauss (phân phối chuẩn)                              |                                              |
 | Gaussian noise                 | nhiễu Gauss                                                    |                                              |
 | generative model               | mô hình sinh                                                   |                                              |
 | generative adversarial network | mạng đối sinh                                                  |                                              |
@@ -157,9 +160,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | law of large numbers               | luật số lớn                                                    |                       |
 | learning curve                     | đồ thị quá trình học                                           | http://bit.ly/2BvfPYA |
 | learning algorithm                 | thuật toán học                                                 |                       |
+| linear                             | tuyến tính                                                     |                       |
 | linear algebra                     | đại số tuyến tính                                              |                       |
 | linear dependence                  | phụ thuộc tuyến tính                                           |                       |
+| linear form                        | dạng tuyến tính                                                |                       |
 | linear independence                | độc lâp tuyến tính                                             |                       |
+| linear programming                 | quy hoạch tuyến tính                                           |                       |
 | linear regression                  | hồi quy tuyến tính                                             |                       |
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính                                 |                       |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài                                            |                       |
@@ -189,6 +195,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                                                         |                                             |
 | neural network                    | mạng nơ-ron                                                    | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                                                          |                                             |
+| normal distribution               | phân phối chuẩn (phân phối Gauss)                              |                                             |
 | null hypothesis                   | giả thuyết gốc                                                 |                                             |
 
 ## O
@@ -219,6 +226,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | probability theory                 | lý thuyết xác suất                                             |                       |
 | population                         | tổng thể                                                       |                       |
 | p-value                            | trị số p                                                       |                       |
+
+## Q
+| English               | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|-----------------------|----------------------------------------------------------------|---------------|
+| quadratic             | toàn phương                                                    |               |
+| quadratic form        | dạng toàn phương                                               |               |
+| quadratic programming | quy hoạch toàn phương                                          |               |
 
 ## R
 | English                        | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
@@ -297,6 +311,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | vector                      | vector                                                         |                       |
 
 ## W
-| English                     | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại         |
-|-----------------------------|----------------------------------------------------------------|-----------------------|
-| well-behaved function (analytic function)     | hàm khả vi vô hạn                                              |                       |
+| English                                   | Tiếng Việt (Nếu bạn bổ sung thì KHÔNG căn chỉnh các dòng khác) | Thảo luận tại |
+|-------------------------------------------|----------------------------------------------------------------|---------------|
+| well-behaved function (analytic function) | hàm khả vi vô hạn                                              |               |
