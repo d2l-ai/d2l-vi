@@ -247,7 +247,7 @@ SGD just requires that we set the value `learning_rate`, (here we set it to 0.03
 -->
 
 Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron và vì vậy Gluon hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp 'Trainers' của nó.
-Khi chúng ta khởi tạo lớp 'Trainer', chúng ta sẽ chỉ định các tham số để tối ưu hóa ( có thể lấy từ các mạng của chúng tôi thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng tôi muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng tôi.
+Khi chúng ta khởi tạo lớp 'Trainer', chúng ta sẽ chỉ định các tham số để tối ưu hóa (có thể lấy từ các mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng ta muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng ta.
 SGD chỉ yêu cầu rằng chúng ta sẽ đặt giá trị `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
