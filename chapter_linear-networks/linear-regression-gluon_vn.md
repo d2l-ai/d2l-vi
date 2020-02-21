@@ -212,7 +212,7 @@ Just be careful to remember that since the parameters have not been initialized 
 ## Defining the Loss Function
 -->
 
-## Định nghĩa hàm mất mát
+## Định nghĩa Hàm mất mát
 
 <!--
 In Gluon, the `loss` module defines various loss functions.
