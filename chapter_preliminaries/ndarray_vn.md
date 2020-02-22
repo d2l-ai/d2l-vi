@@ -503,7 +503,7 @@ That is because Python first evaluates `y + x`, allocating new memory for the re
 -->
 
 Ở ví dụ trước, mỗi khi chạy một phép tính, chúng ta sẽ cấp phát bộ nhớ mới để lưu trữ kết quả của lượt chạy đó. 
-Ví dụ, nếu viết `y = x + y`, ta sẽ ngừng tham chiếu đến `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được cấp phát mới.
+Cụ thể hơn, nếu viết `y = x + y`, ta sẽ ngừng tham chiếu đến `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được cấp phát mới.
 Trong ví dụ tiếp theo, chúng ta sẽ minh họa việc này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
 Sau khi chạy `y = y + x`, chúng ta nhận ra rằng `id(y)` chỉ đến một địa chỉ khác. 
 Đó là bởi vì Python trước hết sẽ tính `y + x`, cấp phát bộ nhớ mới cho kết quả trả về và gán `y` vào địa chỉ mới này trong bộ nhớ.
@@ -523,10 +523,10 @@ Second, we might point at the same parameters from multiple variables.
 If we do not update in place, this could cause that discarded memory is not released, and make it possible for parts of our code to inadvertently reference stale parameters.
 -->
 
-Đây có thể là điều không mong muốn vì hai lý do sau. 
+Đây có thể là điều không mong muốn vì hai lý do.
 Thứ nhất, không phải lúc nào chúng ta cũng muốn cấp phát bộ nhớ không cần thiết.
-Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây. 
-Thường thì chúng ta muốn thực thi các cập nhật này *tại chỗ*.
+Trong học máy, ta có thể có đến hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây, 
+và thường thì chúng ta muốn thực thi các cập nhật này *tại chỗ*.
 Thứ hai, chúng ta có thể chỉ đến cùng tham số từ nhiều biến khác nhau.
 Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng mã lập trình sẽ vô tình tham chiếu lại các tham số cũ. 
 
@@ -537,7 +537,7 @@ To illustrate this concept, we first create a new matrix `z` with the same shape
 -->
 
 May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
-Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bố trước đó bằng ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
+Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bổ trước đó bằng ký hiệu cắt chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
 Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
 
 ```{.python .input  n=23}
@@ -551,7 +551,7 @@ print('id(z):', id(z))
 If the value of `x` is not reused in subsequent computations, we can also use `x[:] = x + y` or `x += y` to reduce the memory overhead of the operation.
 -->
 
-Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
+Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu việc sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
 
 ```{.python .input  n=24}
 before = id(x)
@@ -582,8 +582,8 @@ The `array` and `asnumpy` functions do the trick.
 
 Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray`, hoặc ngược lại khá đơn giản.
 Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
-Sự bất tiện nhỏ này thực ra khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
-Hàm `array` và `asnumpy` sẽ giúp bản giải quyết vấn đề này. 
+Điểm bất tiện này tuy nhỏ nhưng lại khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
+Hàm `array` và `asnumpy` sẽ giúp bạn giải quyết vấn đề này. 
 
 ```{.python .input  n=25}
 a = x.asnumpy()
@@ -617,8 +617,8 @@ a, a.item(), float(a), int(a)
 * MXNet's `ndarray` provides a variety of functionalities including basic mathematics operations, broadcasting, indexing, slicing, memory saving, and conversion to other Python objects.
 -->
 
-* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội phù hợp với học sâu. 
-* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
+* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội giúp cho nó phù hợp với học sâu. 
+* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), cắt chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
@@ -632,7 +632,7 @@ a, a.item(), float(a), int(a)
 -->
 
 1. Chạy đoạn mã lập trình trong phần dưới. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
-1. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
+2. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
 
