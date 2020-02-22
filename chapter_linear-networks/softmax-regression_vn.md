@@ -40,7 +40,7 @@ Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn
 * Email này thuộc thư mục thư rác hay hộp thư đến*?
 * Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?*
 * Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
-* Bộ phim nào có khả năng Aston xem tiếp theo nhất?
+* Bộ phim nào có nhiều khả năng được Aston xem tiếp theo nhất?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -659,4 +659,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
