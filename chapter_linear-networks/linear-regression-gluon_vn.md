@@ -237,7 +237,7 @@ loss = gloss.L2Loss()  # The squared loss is also known as the L2 norm loss
 ## Defining the Optimization Algorithm
 -->
 
-## Định nghĩa Thuật toán tối ưu hóa
+## Định nghĩa Thuật toán Tối ưu hóa
 
 <!--
 Minibatch SGD and related variants are standard tools for optimizing neural networks and thus Gluon supports SGD alongside a number of variations on this algorithm through its `Trainer` class.
