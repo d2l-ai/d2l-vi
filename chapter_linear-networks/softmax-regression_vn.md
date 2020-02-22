@@ -67,7 +67,7 @@ Further, let's assume that each image belongs to one among the categories "cat",
 Để khởi động, ta hãy bắt đầu với bài toán phân lớp hình ảnh đơn giản trước.
 Ở đây, mỗi input bao gồm một ảnh xám $2\times2$.
 Ta có thể biểu diễn mỗi giá trị điểm ảnh là một số vô hướng duy nhất, cung cấp cho ta bốn đặc trưng $x_1, x_2, x_3, x_4$.
-Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong số danh mục "cat", "chiken" và "chó".
+Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong số danh mục "cat", "chicken" và "dog".
 
 <!--
 Next, we have to choose how to represent the labels.
