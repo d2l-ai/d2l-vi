@@ -27,4 +27,5 @@ chapter_preliminaries/index_vn
 :maxdepth: 1
 
 chapter_references/zreferences
+glossary
 ```
