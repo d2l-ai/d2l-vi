@@ -550,7 +550,7 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
+Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
 Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn là nguồn gốc thông thường.
 Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được đưa ra như sau:
 
