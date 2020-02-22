@@ -65,10 +65,10 @@ and specify a Boolean value `shuffle` indicating whether or not we want the `Dat
 -->
 
 Thay vì sử dụng vòng lặp để đọc dữ liệu thì ta có thể gọi module `data` của Gluon. 
-Bước đầu tiên sẽ khởi một `ArrayDataset`.
+Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
 Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
 Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
-Kế tiếp, sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, điều này yêu cầu ta cần truyền vào đó một giá trị `batch_size`
+Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, điều này yêu cầu ta truyền vào đó một giá trị `batch_size`
 và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch hay không (truyền vào tập dữ liệu).
 
 ```{.python .input  n=3}
@@ -104,7 +104,7 @@ for X, y in data_iter:
 ## Defining the Model
 -->
 
-## Định nghĩa mô hình
+## Định nghĩa Mô hình
 
 <!--
 When we implemented linear regression from scratch (in :numref`sec_linear_scratch`), 
@@ -116,11 +116,11 @@ Doing it once or twice is rewarding and instructive, but you would be a lousy we
 -->
 
 Khi ta lập trình hồi quy tuyến tính từ đầu (in :numref`sec_linear_scratch`),
-ta đã phải định nghĩa rõ ràng các tham số của mô hình và lập trình các tính toán để tạo đầu ra bằng các phép toán đại số tuyến tính cơ bản.
-Bạn *nên* biết làm cách để làm được điều này.
-Nhưng một khi mô hình trở nên phức tạp hơn, và ta phải làm điều này liên tục thì ta sẽ rất vui khi được một thư viện hỗ trợ.
+ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình các tính toán để tạo đầu ra bằng các phép toán đại số tuyến tính cơ bản.
+Bạn *nên* biết cách để làm được điều này.
+Nhưng một khi mô hình trở nên phức tạp hơn, đồng thời bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
 Tình huống này tương tự như việc lập trình blog của riêng bạn lại từ đầu.
-Nếu làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tệ nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu, thì đó sẽ là một việc làm vô ích.
+Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tồi nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
