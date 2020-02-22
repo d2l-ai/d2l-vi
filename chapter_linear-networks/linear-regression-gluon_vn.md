@@ -53,7 +53,7 @@ features, labels = d2l.synthetic_data(true_w, true_b, 1000)
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc tập dữ liệu
 
 <!--
 Rather than rolling our own iterator, we can call upon Gluon's `data` module to read data.
@@ -64,7 +64,12 @@ Next, we will use the `ArrayDataset` to instantiate a `DataLoader`, which also r
 and specify a Boolean value `shuffle` indicating whether or not we want the `DataLoader` to shuffle the data on each epoch (pass through the dataset).
 -->
 
-*dịch đoạn phía trên*
+Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi module `data` của Gluon. 
+Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
+Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
+Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
+Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, điều này yêu cầu ta truyền vào đó một giá trị `batch_size`
+và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (mỗi lần duyệt qua toàn bộ tập dữ liệu) hay không.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
@@ -82,7 +87,8 @@ Now we can use `data_iter` in much the same way as we called the `data_iter` fun
 To verify that it is working, we can read and print the first minibatch of instances.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta có thể sử dụng `data_iter` theo cách tương tự như cách ta gọi hàm `data_iter` trong phần trước.
+Để biết rằng nó có hoạt động được hay không, ta có thể thử đọc và in ra minibatch đầu tiên.
 
 ```{.python .input  n=5}
 for X, y in data_iter:
@@ -98,7 +104,7 @@ for X, y in data_iter:
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Mô hình
 
 <!--
 When we implemented linear regression from scratch (in :numref`sec_linear_scratch`), 
@@ -109,7 +115,12 @@ The situation is similar to coding up your own blog from scratch.
 Doing it once or twice is rewarding and instructive, but you would be a lousy web developer if every time you needed a blog you spent a month reinventing the wheel.
 -->
 
-*dịch đoạn phía trên*
+Khi ta lập trình hồi quy tuyến tính từ đầu (in :numref`sec_linear_scratch`),
+ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình để tạo đầu ra từ các phép toán đại số tuyến tính cơ bản.
+Bạn *nên* biết cách để làm được điều này.
+Nhưng một khi mô hình trở nên phức tạp hơn, đồng thời bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
+Tình huống này tương tự như việc lập trình blog của riêng bạn lại từ đầu.
+Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tồi nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -387,7 +398,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
 
 <!-- Phần 3 -->
 *
