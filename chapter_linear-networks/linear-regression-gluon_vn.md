@@ -5,7 +5,7 @@
 # Concise Implementation of Linear Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai chi tiết Hồi quy tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
