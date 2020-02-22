@@ -141,8 +141,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Hoàng Quân
-
-<!-- Phần 2 -->
 * Vũ Hữu Tiệp

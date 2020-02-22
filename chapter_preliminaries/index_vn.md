@@ -98,7 +98,6 @@ Lưu ý:
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Phần 1 -->
 * Đoàn Võ Duy Thanh
 * Nguyễn Cảnh Thướng
 * Vũ Hữu Tiệp

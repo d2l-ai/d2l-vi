@@ -660,17 +660,12 @@ Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
+
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Trần Thị Hồng Hạnh
 * Phạm Minh Đức
-
-
-<!-- Phần 10 -->
 * Lê Đàm Hồng Lộc
-
-<!-- Phần 11 -->
 * Nguyễn Lê Quang Nhật
