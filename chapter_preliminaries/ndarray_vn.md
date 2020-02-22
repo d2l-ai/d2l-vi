@@ -536,8 +536,8 @@ To illustrate this concept, we first create a new matrix `z` with the same shape
 -->
 
 May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
-Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bổ trước đó bằng ký hiệu cắt chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
-Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
+Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được cấp phát trước đó bằng ký hiệu cắt chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
+Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` có cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
 
 ```{.python .input  n=23}
 z = np.zeros_like(y)
@@ -617,7 +617,7 @@ a, a.item(), float(a), int(a)
 -->
 
 * MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội giúp cho nó phù hợp với học sâu. 
-* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), cắt chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
+* MXNet `ndarray` cung cấp nhiều chức năng bao gồm các phép toán cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), cắt chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
@@ -630,8 +630,8 @@ a, a.item(), float(a), int(a)
 2. Replace the two `ndarray`s that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?
 -->
 
-1. Chạy đoạn mã nguồn trong mục này. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
-2. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
+1. Chạy đoạn mã nguồn trong mục này. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra dạng của `ndarray` nhận được.
+2. Thay hai `ndarray` trong phép tính theo từng phần tử ở phần cơ chế lan truyền (*broadcasting mechanism*) với các `ndarray` có kích thước khác, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
 
