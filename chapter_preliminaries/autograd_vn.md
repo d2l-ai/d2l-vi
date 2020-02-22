@@ -206,8 +206,8 @@ If the two `ndarray`s are indeed the same,
 then the equality between them holds at every position.
 -->
 
-Gradient của hàm $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo $\mathbf{x}$ nên là $4\mathbf{x}$.
-Hãy xác minh một cách nhanh chóng rằng giá trị gradient mong muốn được tính toán đúng.
+Gradient của hàm $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo $\mathbf{x}$ phải là $4\mathbf{x}$.
+Hãy kiểm tra một cách nhanh chóng rằng giá trị gradient mong muốn được tính toán đúng.
 Nếu hai `ndarray` là giống nhau, thì mọi cặp phần tử tương ứng cũng bằng nhau.
 
 ```{.python .input  n=8}
@@ -257,7 +257,7 @@ but rather the sum of the partial derivatives
 computed individually for each example in the batch.
 -->
 
-Tuy nhiên, trong khi những đối tượng như trên có xuất hiện trong học máy nâng cao (bao gồm học sâu), thường thì khi ta gọi lan truyền ngược trên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi mẫu huấn luyện cấu thành một *batch*.
+Tuy nhiên, trong khi những đối tượng như trên xuất hiện trong học máy nâng cao (bao gồm học sâu), thường thì khi ta gọi lan truyền ngược trên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi *batch* bao gồm một vài mẫu huấn luyện.
 Ở đây, ý định của ta không phải là tính toán ma trận vi phân mà là tổng của các đạo hàm riêng được tính toán một cách độc lập cho mỗi mẫu trong batch.
 
 <!--
@@ -294,7 +294,7 @@ x.grad == u.grad
 ## Detaching Computation
 -->
 
-## Gỡ bỏ Tính toán
+## Tách rời Tính toán
 
 <!--
 Sometimes, we wish to move some calculations
@@ -438,8 +438,7 @@ Consequently `d / a` allows us to verify that the gradient is correct.
 
 Giờ ta có thể phân tích hàm `f` được định nghĩa ở phía trên.
 Hãy để ý rằng hàm này tuyến tính từng khúc theo đầu vào `a`.
-Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`.
-Giá trị của `k` phụ thuộc vào đầu vào `a`.
+Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`, ở đó giá trị của `k` phụ thuộc vào đầu vào `a`.
 Do đó, ta có thể kiểm tra giá trị của gradient bằng cách tính `d / a`.
 
 ```{.python .input  n=18}
@@ -503,7 +502,9 @@ Những khác biệt này sẽ được đề cập chi tiết trong các chươ
 * MXNet cung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. 
 Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
 Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
+
 * Ta có thể tách rời gradient để kiểm soát những phần tính toán được sử dụng trong hàm `backward`.
+
 * Các chế độ chạy của MXNet bao gồm chế độ huấn luyện và chế độ dự đoán. Ta có thể kiểm tra chế độ đang chạy bằng cách gọi hàm `is_training`.
 
 
