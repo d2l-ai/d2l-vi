@@ -288,7 +288,7 @@ Khi thực hiện tung một con xúc xắc, chúng ta gọi tập hợp $\mathc
 Một *sự kiện* là một tập hợp các kết quả của không gian mẫu.
 Ví dụ, "tung được một số $5$" ($\{5\}$) và "tung được một số lẻ" ($\{1, 3, 5\}$) đều là những sự kiện hợp lệ khi tung một con xúc xắc. 
 Chú ý rằng nếu kết quả của một phép tung ngẫu nhiên nằm trong sự kiện $\mathcal{A}$, sự kiện $\mathcal{A}$ đã xảy ra.
-Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc xắc được tung, chúng ta nói sự kiện "tung được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$.
+Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc xắc được tung, chúng ta nói sự kiện "tung được một số lẻ" đã xảy ra bởi vì $3 \in \{1, 3, 5\}$.
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
