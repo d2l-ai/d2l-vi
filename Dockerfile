@@ -16,7 +16,8 @@ RUN python3.7 get-pip.py
 RUN mkdir d2l
 WORKDIR /d2l
 
-RUN apt-get install -y pandoc
+# libgomp1 to fix this error https://github.com/explosion/spaCy/issues/1110
+RUN apt-get install -y pandoc libgomp1
 
 # clone and build d2l-book, changing D2L_VER will break the cache here
 ARG D2L_VER=unknown
