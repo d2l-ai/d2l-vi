@@ -683,7 +683,7 @@ Working out the math gives us:
 -->
 
 Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE).
-Khi đó việc cực đại hóa kết quả của nhiều hàm mũ có thể gặp khó khăn, thay vào đó chúng ta có thể đơn giản hóa chúng mà không ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa hàm log của chúng.
+Trong khi việc cực đại hóa tích của nhiều hàm mũ có thể gặp khó khăn, thay vào đó chúng ta có thể đơn giản hóa chúng mà không ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa hàm log của chúng.
 Theo một vài nguyên nhân trước đó, các bài toán tối ưu hóa thường được hiểu như việc tìm ra giá trị nhỏ nhất thay vì bài toán tối đa hóa.
 Vì vậy chúng ta có thể cực tiểu hóa *hàm đối của log hợp lý (Negative Log-Likelihood - NLL)* $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì.
 Ta có:
