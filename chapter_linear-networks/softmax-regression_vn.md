@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, thực hành qua việc triển khai từ đầu trong :numref:`sec_linear_scratch` và một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện các phần nặng.
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, thực hành qua việc triển khai từ đầu trong :numref:`sec_linear_scratch` và một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -22,7 +22,7 @@ or the number of days that a patient will remain hospitalized before being disch
 -->
 
 Hồi quy là công cụ đắc lực có thể sử dụng khi ta muốn trả lời câu hỏi *bao nhiêu?*.
-Nếu bạn muốn dự đoán với bao nhiêu đô la (*giá tiền*) một ngôi nhà sẽ được bán, hay số trận thắng mà một đội bóng chày có thể đạt được, hoặc số ngày sẽ nhập viện của bệnh nhân trước khi được xuất viện, thì có lẽ bạn đang tìm kiếm một mô hình hồi quy.
+Nếu bạn muốn dự đoán với bao nhiêu đô la (*giá tiền*) một ngôi nhà sẽ được bán, hay số trận thắng mà một đội bóng chày có thể đạt được, hoặc số ngày nhập viện của bệnh nhân trước khi được xuất viện, thì có lẽ bạn đang tìm kiếm một mô hình hồi quy.
 
 <!--
 In practice, we are more often interested in classification: asking not *how much?* but *which one?*
@@ -50,8 +50,8 @@ The distinction tends to get blurred, in part, because often, even when we only 
 -->
 
 Thông thường, các học máy quá tải với từ *phân loại* để mô tả hai vấn đề tinh tế khác nhau:
-(i) ta chỉ quan tâm đến các bài tập *cứng* của các ví dụ cho các danh mục; và (ii) ta muốn thực hiện *bài tập mềm*, tức là, để đánh giá *xác suất* mỗi danh mục áp dụng.
-Sự khác biệt có xu hướng bị mờ dần đi, một phần, bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến các bài tập cứng, chúng ta vẫn sử dụng các mô hình tạo ra các bài tập mềm.
+(i) ta chỉ quan tâm đến việc gán *cứng* các danh mục cho các ví dụ; và (ii) ta muốn *gán mềm*, tức đánh giá *xác suất* ví dụ rơi vào mỗi danh mục.
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
