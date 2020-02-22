@@ -580,7 +580,7 @@ The `array` and `asnumpy` functions do the trick.
 -->
 
 Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray` hoặc ngược lại là khá đơn giản.
-Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
+Tuy nhiên, kết quả của phép chuyển đổi này không chia sẻ bộ nhớ với đối tượng cũ.
 Điểm bất tiện này tuy nhỏ nhưng lại khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
 Hàm `array` và `asnumpy` sẽ giúp bạn giải quyết vấn đề này. 
 
