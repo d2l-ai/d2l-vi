@@ -220,7 +220,7 @@ We will use the imported module `loss` with the pseudonym `gloss`, to avoid conf
 In this example, we will use the Gluon implementation of squared loss (`L2Loss`).
 -->
 
-Trong Gluon, mô-đun 'loss' định nghĩa các hàm mất mát khác nhau.
+Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
 Chúng ta sẽ sử dụng mô-đun 'loss' được thêm vào với biệt hiệu là 'gloss', để tránh nhầm lẫn nó cho các biến giữ lại các hàm mất mát của chúng ta đã chọn.
 Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
 
