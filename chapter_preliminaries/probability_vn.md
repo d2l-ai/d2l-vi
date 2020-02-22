@@ -751,9 +751,7 @@ Trong nhiều trường hợp, chúng ta muốn đo độ lệch của biến ng
 
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
 E[X^2] - E[X]^2.$$
--->
 
-*dịch đoạn phía trên*
 
 <!--
 Its square root is called the *standard deviation*.
