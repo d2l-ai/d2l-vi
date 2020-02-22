@@ -34,7 +34,8 @@ print(dir(np.random))
 Generally, we can ignore functions that start and end with `__` (special objects in Python) or functions that start with a single `_`(usually internal functions). Based on the remaining function or attribute names, we might hazard a guess that this module offers various methods for generating random numbers, including sampling from the uniform distribution (`uniform`), normal distribution (`normal`), and multinomial distribution  (`multinomial`).
 -->
 
-Thông thường, ta có thể bỏ qua những hàm bắt đầu và kết thúc với `__` (các đối tượng đặc biệt trong Python) hoặc những hàm bắt đầu bằng `_` (thường là các hàm địa phương). Dựa trên những hàm và thuộc tính còn lại, ta có thể dự đoán rằng module này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối chuẩn nhiều chiều (`multinomial`)
+Thông thường, ta có thể bỏ qua những hàm bắt đầu và kết thúc với `__` (các đối tượng đặc biệt trong Python) hoặc những hàm bắt đầu bằng `_` (thường là các hàm địa phương).
+Dựa trên tên của những hàm và thuộc tính còn lại, ta có thể dự đoán rằng module này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối đa thức (`multinomial`)
 
 <!--
 ## Finding the Usage of Specific Functions and Classes
@@ -56,7 +57,8 @@ help(np.ones_like)
 From the documentation, we can see that the `ones_like` function creates a new array with the same shape as the supplied `ndarray` and sets all the elements to `1`. Whenever possible, you should run a quick test to confirm your interpretation:
 -->
 
-Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng cùng kích thước với `ndarray` có các phần tử được gán giá trị bằng `1`. Nếu có thể, bạn nên chạy thử để hiểu rõ hơn
+Từ tài liệu, ta có thể thấy hàm `ones_like` tạo một mảng mới có cùng kích thước với `ndarray` nhưng tất cả các phần tử của nó đều chứa giá trị `1`.
+Nếu có thể, bạn nên chạy thử để xác nhận rằng mình hiểu đúng.
 
 ```{.python .input}
 x = np.array([[0, 0, 0], [2, 2, 2]])
@@ -84,7 +86,7 @@ For further details on the API details check the MXNet website at  [http://mxnet
 -->
 
 Chi tiết cụ thể về các API của MXNet có thể được tìm thấy tại trang [http://mxnet.apache.org/](http://mxnet.apache.org/).
-Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (và có các ngôn ngữ lập trình khác Python).
+Chi tiết từng phần được tìm thấy tại các đề mục tương ứng (cho cả các ngôn ngữ lập trình khác ngoài Python).
 
 <!--
 ## Summary
@@ -141,8 +143,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Hoàng Quân
-
-<!-- Phần 2 -->
 * Vũ Hữu Tiệp

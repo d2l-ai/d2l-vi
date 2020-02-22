@@ -1114,19 +1114,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
 * Phạm Minh Đức
-
-<!-- Phần 7 -->
 * Ngô Thế Anh Khoa
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 9 -->
 * Vũ Hữu Tiệp
-
-<!-- Phần 10 -->
 * Mai Sơn Hải
 * Phạm Hồng Vinh

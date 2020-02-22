@@ -228,7 +228,6 @@ Lưu ý:
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
 * Phạm Hồng Vinh

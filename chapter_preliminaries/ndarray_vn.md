@@ -264,9 +264,9 @@ For functions that take two arrays as inputs, elementwise operations apply some 
 -->
 
 Cuốn sách này không nói về kỹ thuật phần mềm.
-Chúng tôi không chỉ hứng thú với việc đơn giản đọc và ghi dữ liệu vào/từ các mảng mà còn muốn thực hiện các phép toán toán học trên các mảng này.
+Chúng tôi không chỉ hứng thú với việc đơn giản đọc và ghi dữ liệu vào/từ các mảng mà còn muốn thực hiện các phép toán trên các mảng này.
 Một vài phép toán đơn giản và hữu ích nhất là các phép toán tác động lên *từng phần tử* (*elementwise*).
-Những phép toán này hoạt động như những phép toán chuẩn trên số vô hướng áp dụng lên từng phần tử của mảng.
+Các phép toán này hoạt động như những phép toán chuẩn trên số vô hướng áp dụng lên từng phần tử của mảng.
 Với những hàm nhận hai mảng đầu vào, phép toán theo từng thành phần được áp dụng trên từng cặp phần tử tương ứng của hai mảng.
 Ta có thể tạo một hàm theo từng phần tử từ một hàm bất kỳ ánh xạ từ một số vô hướng tới một số vô hướng.
 
@@ -281,7 +281,7 @@ Here, we produced the vector-valued $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \
 * Trong toán học, ta ký hiệu một toán tử *đơn ngôi* vô hướng (lấy một đầu vào) bởi $f: \mathbb{R} \rightarrow \mathbb{R}$.
 Điều này nghĩa là hàm số ánh xạ từ một số thực bất kỳ ($\mathbb{R}$) sang một số thực khác.
 Tương tự, ta ký hiệu một toán tử *hai ngôi* vô hướng (lấy hai đầu vào, trả về một đầu ra) bởi $f: \mathbb{R}, \mathbb{R} \rightarrow \mathbb{R}$.
-Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$, ở đó $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
+Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$ với $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
 Ở đây, chúng ta tạo một hàm trả về vector $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \mathbb{R}^d$ bằng cách áp dụng hàm $f$ lên từng phần tử.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -298,7 +298,7 @@ In the following example, we use commas to formulate a $5$-element tuple, where 
 
 Trong MXNet, các phép toán tiêu chuẩn (`+`, `-`, `*`, `/`, và `**`) là các phép toán theo từng phần tử trên các tensor đồng kích thước bất kỳ.
 Ta có thể gọi những phép toán theo từng phần tử lên hai tensor đồng kích thước.
-Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử, ở đó mỗi phần tử là kết quả của một phép toán theo từng phần tử.
+Trong ví dụ dưới đây, các dấu phẩy được sử dụng để tạo một tuple $5$ phần tử với mỗi phần tử là kết quả của một phép toán theo từng phần tử.
 
 ```{.python .input  n=11}
 x = np.array([1, 2, 4, 8])
@@ -310,7 +310,7 @@ x + y, x - y, x * y, x / y, x ** y  # The ** operator is exponentiation
 Many more operations can be applied elementwise, including unary operators like exponentiation.
 -->
 
-Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán một ngôi như hàm mũ cơ số $e$.
+Rất nhiều các phép toán khác có thể được áp dụng theo từng phần tử, bao gồm các phép toán đơn ngôi như hàm mũ cơ số $e$.
 
 ```{.python .input  n=12}
 np.exp(x)
@@ -322,7 +322,7 @@ We will explain the crucial bits of linear algebra (with no assumed prior knowle
 -->
 
 Ngoài các phép tính theo từng phần tử, ta cũng có thể thực hiện các phép toán đại số tuyến tính, bao gồm tích vô hướng của hai vector và phép nhân ma trận.
-Chúng tôi sẽ giải thích những điểm quan trọng của đại số tuyến tính (mà không cần kiến thức nền tảng) trong :numref:`sec_linear-algebra`.
+Chúng ta sẽ giải thích những điểm quan trọng của đại số tuyến tính (mà không cần kiến thức nền tảng) trong :numref:`sec_linear-algebra`.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -435,7 +435,7 @@ a + b
 <!--
 ## Indexing and Slicing
 -->
-## Chỉ số và Trích chọn
+## Chỉ số và Cắt chọn mảng
 
 <!--
 Just as in any other Python array, elements in an `ndarray` can be accessed by index.
@@ -444,7 +444,7 @@ As in standard Python lists, we can access elements according to their relative 
 -->
 
 Cũng giống như trong bất kỳ mảng Python khác, các phần tử trong một `ndarray` có thể được truy cập theo chỉ số.
-Tương tự, phần tử đầu tiên có chỉ số $0$ và khoảng trích chọn bao gồm phần tử đầu tiên nhưng *không tính* phần tử cuối cùng. <!-- người dịch tự sửa để tránh lặp từ -->
+Tương tự, phần tử đầu tiên có chỉ số $0$ và khoảng được cắt chọn bao gồm phần tử đầu tiên nhưng *không tính* phần tử cuối cùng. <!-- người dịch tự sửa để tránh lặp từ -->
 Và trong các danh sách Python tiêu chuẩn, chúng ta có thể truy cập các phần tử theo vị trí đếm ngược từ cuối danh sách bằng cách sử dụng các chỉ số âm.
 
 <!--
@@ -503,7 +503,7 @@ That is because Python first evaluates `y + x`, allocating new memory for the re
 -->
 
 Ở ví dụ trước, mỗi khi chạy một phép tính, chúng ta sẽ cấp phát bộ nhớ mới để lưu trữ kết quả của lượt chạy đó. 
-Ví dụ, nếu viết `y = x + y`, ta sẽ ngừng tham chiếu đến `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được cấp phát mới.
+Cụ thể hơn, nếu viết `y = x + y`, ta sẽ ngừng tham chiếu đến `ndarray` mà `y` đã chỉ đến trước đó và thay vào đó gán `y` vào bộ nhớ được cấp phát mới.
 Trong ví dụ tiếp theo, chúng ta sẽ minh họa việc này với hàm `id()` của Python - hàm cung cấp địa chỉ chính xác của một đối tượng được tham chiếu trong bộ nhớ. 
 Sau khi chạy `y = y + x`, chúng ta nhận ra rằng `id(y)` chỉ đến một địa chỉ khác. 
 Đó là bởi vì Python trước hết sẽ tính `y + x`, cấp phát bộ nhớ mới cho kết quả trả về và gán `y` vào địa chỉ mới này trong bộ nhớ.
@@ -523,12 +523,11 @@ Second, we might point at the same parameters from multiple variables.
 If we do not update in place, this could cause that discarded memory is not released, and make it possible for parts of our code to inadvertently reference stale parameters.
 -->
 
-Đây có thể là điều không mong muốn vì hai lý do sau. 
+Đây có thể là điều không mong muốn vì hai lý do.
 Thứ nhất, không phải lúc nào chúng ta cũng muốn cấp phát bộ nhớ không cần thiết.
-Trong học máy, chúng ta có thể có đế hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây. 
-Thường thì chúng ta muốn thực thi các cập nhật này *tại chỗ*.
-Thứ hai, chúng ta có thể chỉ đến cùng tham số từ nhiều biến khác nhau.
-Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng mã lập trình sẽ vô tình tham chiếu lại các tham số cũ. 
+Trong học máy, ta có thể có đến hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây, và thường thì ta muốn thực thi các cập nhật này *tại chỗ*.
+Thứ hai, chúng ta có thể trỏ đến cùng tham số từ nhiều biến khác nhau.
+Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng một số chỗ trong mã nguồn sẽ vô tình tham chiếu lại các tham số cũ. 
 
 <!--
 Fortunately, performing in-place operations in MXNet is easy.
@@ -537,8 +536,8 @@ To illustrate this concept, we first create a new matrix `z` with the same shape
 -->
 
 May mắn thay, ta có thể dễ dàng thực hiện các phép tính tại chỗ với MXNet.
-Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được phân bố trước đó bằng ký hiệu trích chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
-Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` với cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
+Chúng ta có thể gán kết quả của một phép tính cho một mảng đã được cấp phát trước đó bằng ký hiệu cắt chọn (*slice notation*), ví dụ, `y[:] = <expression>`. 
+Để minh họa khái niệm này, đầu tiên chúng ta tạo một ma trận mới `z` có cùng kích thước với ma trận `y`, sử dụng `zeros_like` để gán giá trị khởi tạo bằng $0$. 
 
 ```{.python .input  n=23}
 z = np.zeros_like(y)
@@ -551,7 +550,7 @@ print('id(z):', id(z))
 If the value of `x` is not reused in subsequent computations, we can also use `x[:] = x + y` or `x += y` to reduce the memory overhead of the operation.
 -->
 
-Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y`để giảm thiểu sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
+Nếu các tính toán tiếp theo không tái sử dụng giá trị của `x`, chúng ta có thể viết `x[:] = x + y` hoặc `x += y` để giảm thiểu việc sử dụng bộ nhớ không cần thiết trong quá trình tính toán.
 
 ```{.python .input  n=24}
 before = id(x)
@@ -580,10 +579,10 @@ This minor inconvenience is actually quite important: when you perform operation
 The `array` and `asnumpy` functions do the trick.
 -->
 
-Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray`, hoặc ngược lại khá đơn giản.
-Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
-Sự bất tiện nhỏ này thực ra khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
-Hàm `array` và `asnumpy` sẽ giúp bản giải quyết vấn đề này. 
+Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray` hoặc ngược lại là khá đơn giản.
+Tuy nhiên, kết quả của phép chuyển đổi này không chia sẻ bộ nhớ với đối tượng cũ.
+Điểm bất tiện này tuy nhỏ nhưng lại khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
+Hàm `array` và `asnumpy` sẽ giúp bạn giải quyết vấn đề này. 
 
 ```{.python .input  n=25}
 a = x.asnumpy()
@@ -595,7 +594,7 @@ type(a), type(b)
 To convert a size-$1$ `ndarray` to a Python scalar, we can invoke the `item` function or Python's built-in functions.
 -->
 
-Để chuyển đổi một mảng `ndarray` một phần tử sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python. 
+Để chuyển đổi một mảng `ndarray` chứa một phần tử sang số vô hướng Python, ta có thể gọi hàm `item` hoặc các hàm có sẵn trong Python.
 
 ```{.python .input}
 a = np.array([3.5])
@@ -617,8 +616,8 @@ a, a.item(), float(a), int(a)
 * MXNet's `ndarray` provides a variety of functionalities including basic mathematics operations, broadcasting, indexing, slicing, memory saving, and conversion to other Python objects.
 -->
 
-* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội phù hợp với học sâu. 
-* MXNet `ndarray`cung cấp nhiều hàm chức năng bao gồm các công thức toán học cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), trích chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
+* MXNet `ndarray` là phần mở rộng của NumPy `ndarray` với một số ưu thế vượt trội giúp cho nó phù hợp với học sâu. 
+* MXNet `ndarray` cung cấp nhiều chức năng bao gồm các phép toán cơ bản, cơ chế lan truyền (*broadcasting*), chỉ số (*indexing*), cắt chọn (*slicing*), tiết kiệm bộ nhớ và khả năng chuyển đổi sang các đối tượng Python khác.
 
 <!--
 ## Exercises
@@ -631,8 +630,8 @@ a, a.item(), float(a), int(a)
 2. Replace the two `ndarray`s that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?
 -->
 
-1. Chạy đoạn mã lập trình trong phần dưới. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
-1. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
+1. Chạy đoạn mã nguồn trong mục này. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra dạng của `ndarray` nhận được.
+2. Thay hai `ndarray` trong phép tính theo từng phần tử ở phần cơ chế lan truyền (*broadcasting mechanism*) với các `ndarray` có kích thước khác, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
 
@@ -660,18 +659,12 @@ Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
+
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 2 -->
 * Phạm Minh Đức
-
-<!-- Phần 10 -->
 * Lê Đàm Hồng Lộc
-
-<!-- Phần 11 -->
 * Nguyễn Lê Quang Nhật

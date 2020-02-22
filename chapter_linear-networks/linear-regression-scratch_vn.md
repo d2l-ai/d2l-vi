@@ -456,7 +456,7 @@ owing partly to the fact that, for deep networks, there exist many configuration
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 We saw how a deep network can be implemented and optimized from scratch, using just `ndarray` and `autograd`, without any need for defining layers, fancy optimizers, etc.
@@ -464,13 +464,15 @@ This only scratches the surface of what is possible.
 In the following sections, we will describe additional models based on the concepts that we have just introduced and learn how to implement them more concisely.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã thấy cách một mạng sâu có thể được triển khai và tối ưu hóa từ đầu chỉ với `ndarray` và `autograd`, mà không cần phải định nghĩa các tầng, các thuật toán tối ưu đặc biệt, v.v.
+Điều này chỉ mới chạm đến bề mặt của những gì mà ta có thể làm.
+Trong các phần sau, chúng tôi sẽ mô tả các mô hình bổ sung dựa trên các khái niệm vừa được giới thiệu và học cách triển khai chúng một cách chính xác hơn.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What would happen if we were to initialize the weights $\mathbf{w} = 0$. Would the algorithm still work?
@@ -482,7 +484,13 @@ In the following sections, we will describe additional models based on the conce
 7. If the number of examples cannot be divided by the batch size, what happens to the `data_iter` function's behavior?
 -->
 
-*dịch đoạn phía trên*
+1. Điều gì sẽ xảy ra nếu chúng ta khởi tạo các trọng số $\mathbf{w} = 0$. Liệu thuật toán sẽ vẫn hoạt động chứ?
+2. Giả sử rằng bạn là [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) và bạn đang cố gắng nghĩ ra một mô hình giữa điện áp và dòng điện. Bạn có thể sử dụng `autograd` để học các tham số cho mô hình của bạn không?
+3. Bạn có thể sử dụng [Planck's Law](https://en.wikipedia.org/wiki/Planck%27s_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
+4. Bạn có thể gặp phải những vấn đề gì nếu bạn muốn mở rộng `autograd` đến các đạo hàm bậc hai? Bạn sẽ sửa chúng bằng cách nào?
+5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
+6. Thử nghiệm các tốc độ học khác nhau để xem giá trị hàm mất mát giảm nhanh đến mức nào.
+7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, điều gì sẽ xảy ra với hành vi của hàm `data_iter`?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -543,4 +551,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Trần Thị Hồng Hạnh

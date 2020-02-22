@@ -37,9 +37,9 @@ Here, *backpropagate* simply means to trace through the *computational graph*,
 filling in the partial derivatives with respect to each parameter.
 -->
 
-Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic diferentiation*).
+Gói thư viện `autograd` giải quyết vấn đề này một cách nhanh chóng và hiệu quả bằng cách tự động hoá các phép tính đạo hàm (*automatic differentiation*).
 Trong khi nhiều thư viện yêu cầu ta phải biên dịch một *đồ thị biểu tượng* (*symbolic graph*) để có thể tự động tính đạo hàm, `autograd` cho phép ta tính đạo hàm ngay lập tức thông qua các dòng lệnh thông thường.
-Mỗi khi đưa dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết hợp với các phép tính nào sẽ tạo ra kết quả.
+Mỗi khi đưa dữ liệu chạy qua mô hình, `autograd` xây dựng một đồ thị và theo dõi xem dữ liệu nào kết hợp với các phép tính nào để tạo ra kết quả.
 Với đồ thị này `autograd` sau đó có thể lan truyền ngược gradient lại theo ý muốn.
 *Lan truyền ngược* ở đây chỉ đơn thuần là truy ngược lại *đồ thị tính toán* và điền vào đó các giá trị đạo hàm riêng theo từng tham số. 
 
@@ -66,8 +66,7 @@ with respect to the column vector $\mathbf{x}$.
 To start, let's create the variable `x` and assign it an initial value.
 -->
 
-Trong một ví dụ đơn giản,
-giả sử chúng ta muốn tính vi phân của hàm số $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo vector cột $\mathbf{x}$.
+Lấy ví dụ đơn giản, giả sử chúng ta muốn tính vi phân của hàm số $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo vector cột $\mathbf{x}$.
 Để bắt đầu, ta sẽ tạo biến `x` và gán cho nó một giá trị ban đầu.
 
 ```{.python .input  n=2}
@@ -87,7 +86,7 @@ and could quickly run out of memory.
 -->
 
 Lưu ý rằng trước khi có thể tính gradient của $y$ theo $\mathbf{x}$, chúng ta cần một nơi để lưu giữ nó.
-Điều quan trọng là ta không được cấp phát thêm bộ nhớ mới mỗi khi tính đạo hàm theo một biến xác định, vì ta thường cập nhật cùng một tham số hàng ngàn hàng vạn lần và sẽ nhanh chóng dùng hết bộ nhớ.
+Điều quan trọng là ta không được cấp phát thêm bộ nhớ mới mỗi khi tính đạo hàm theo một biến xác định, vì ta thường cập nhật cùng một tham số hàng ngàn vạn lần và sẽ nhanh chóng dùng hết bộ nhớ.
 
 <!--
 Note also that a gradient of a scalar-valued function
@@ -101,8 +100,8 @@ by invoking its `attach_grad` method.
 -->
 
 Cũng lưu ý rằng, bản thân giá trị gradient của hàm số đơn trị theo một vector $\mathbf{x}$ cũng là một vector với cùng kích thước.
-Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị gradient tính theo `x` dưới dạng một đặc trưng của chính `ndarray` `x`.
-Chúng ta cấp bộ nhớ cho gradient của một `ndarray` bằng cách gọi hàm `attach_grad`.
+Do vậy trong mã nguồn sẽ trực quan hơn nếu chúng ta lưu giá trị gradient tính theo `x` dưới dạng một thuộc tính của chính `ndarray` `x`.
+Chúng ta cấp bộ nhớ cho gradient của một `ndarray` bằng cách gọi phương thức `attach_grad`.
 
 ```{.python .input  n=3}
 x.attach_grad()
@@ -157,7 +156,7 @@ inside an `autograd.record` scope.
 
 Chú ý rằng ta cần một số lượng phép tính không hề nhỏ để xây dựng đồ thị tính toán.
 Vậy nên MXNet sẽ chỉ dựng đồ thị khi được ra lệnh rõ ràng.
-Ta có thể thay đổi hành vi này bằng cách đặt đoạn mã trong phạm vi `autograd.record`.
+Ta có thể thực hiện việc này bằng cách đặt đoạn mã trong phạm vi `autograd.record`.
 
 ```{.python .input  n=5}
 with autograd.record():
@@ -207,8 +206,8 @@ If the two `ndarray`s are indeed the same,
 then the equality between them holds at every position.
 -->
 
-Gradient của hàm $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo $\mathbf{x}$ nên là $4\mathbf{x}$.
-Hãy xác minh một cách nhanh chóng rằng giá trị gradient mong muốn được tính toán đúng.
+Gradient của hàm $y = 2\mathbf{x}^{\top}\mathbf{x}$ theo $\mathbf{x}$ phải là $4\mathbf{x}$.
+Hãy kiểm tra một cách nhanh chóng rằng giá trị gradient mong muốn được tính toán đúng.
 Nếu hai `ndarray` là giống nhau, thì mọi cặp phần tử tương ứng cũng bằng nhau.
 
 ```{.python .input  n=8}
@@ -258,7 +257,7 @@ but rather the sum of the partial derivatives
 computed individually for each example in the batch.
 -->
 
-Tuy nhiên, trong khi những đối tượng như trên có xuất hiện trong học máy nâng cao (bao gồm học sâu), thường thì khi ta gọi lan truyền ngược trên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi mẫu huấn luyện cấu thành một *batch*.
+Tuy nhiên, trong khi những đối tượng như trên xuất hiện trong học máy nâng cao (bao gồm học sâu), thường thì khi ta gọi lan truyền ngược trên một vector, ta đang cố tính toán đạo hàm của hàm mất mát theo mỗi *batch* bao gồm một vài mẫu huấn luyện.
 Ở đây, ý định của ta không phải là tính toán ma trận vi phân mà là tổng của các đạo hàm riêng được tính toán một cách độc lập cho mỗi mẫu trong batch.
 
 <!--
@@ -295,7 +294,7 @@ x.grad == u.grad
 ## Detaching Computation
 -->
 
-## Gỡ bỏ Tính toán
+## Tách rời Tính toán
 
 <!--
 Sometimes, we wish to move some calculations
@@ -439,8 +438,7 @@ Consequently `d / a` allows us to verify that the gradient is correct.
 
 Giờ ta có thể phân tích hàm `f` được định nghĩa ở phía trên.
 Hãy để ý rằng hàm này tuyến tính từng khúc theo đầu vào `a`.
-Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`.
-Giá trị của `k` phụ thuộc vào đầu vào `a`.
+Nói cách khác, với mọi giá trị của `a` tồn tại một hằng số `k` sao cho `f(a) = k * a`, ở đó giá trị của `k` phụ thuộc vào đầu vào `a`.
 Do đó, ta có thể kiểm tra giá trị của gradient bằng cách tính `d / a`.
 
 ```{.python .input  n=18}
@@ -504,7 +502,9 @@ Những khác biệt này sẽ được đề cập chi tiết trong các chươ
 * MXNet cung cấp gói `autograd` để tự động hóa việc tính toán đạo hàm. 
 Để sử dụng nó, đầu tiên ta gắn gradient cho các biến mà ta muốn lấy đạo hàm riêng theo nó.
 Sau đó ta ghi lại tính toán của giá trị mục tiêu, thực thi hàm `backward` của nó và truy cập kết quả gradient thông qua thuộc tính `grad` của các biến.
+
 * Ta có thể tách rời gradient để kiểm soát những phần tính toán được sử dụng trong hàm `backward`.
+
 * Các chế độ chạy của MXNet bao gồm chế độ huấn luyện và chế độ dự đoán. Ta có thể kiểm tra chế độ đang chạy bằng cách gọi hàm `is_training`.
 
 
@@ -555,16 +555,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 3 -->
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Vũ Hữu Tiệp
-
-<!-- Phần 5 -->
 * Tạ H. Duy Nguyên
 * Phạm Minh Đức
