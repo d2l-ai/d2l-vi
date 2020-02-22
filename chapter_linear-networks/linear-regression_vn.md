@@ -542,7 +542,7 @@ These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} -
 -->
 
 Nhớ lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
-Chúng gồm một đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
+Một trong số đó là đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -551,7 +551,7 @@ To refresh your memory, the probability density of a normal distribution with me
 -->
 
 Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
-Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn là nguồn gốc thông thường.
+Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn chỉ đơn thuần là có chung cha đẻ.
 Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được đưa ra như sau:
 
 $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).$$
