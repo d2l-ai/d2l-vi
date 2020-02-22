@@ -7,7 +7,6 @@
 # Sơ bộ
 :label:`chap_preliminaries`
 
-**Chương này đang trong quá trình chỉnh sửa. Bản chính thức dự kiến hoàn thành trong tháng 02/2020.**
 <!--
 To get started with deep learning, we will need to develop a few basic skills.
 All machine learning is concerned with extracting information from data.
