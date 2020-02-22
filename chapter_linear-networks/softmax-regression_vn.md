@@ -104,9 +104,9 @@ In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ correspon
 
 <!--
 ### Network Architecture
--->
+--> 
 
-### *dịch tiêu đề phía trên*
+### Kiến trúc mạng
 
 <!--
 In order to estimate the conditional probabilities associated with each classes, we need a model with multiple outputs, one per class.
@@ -117,7 +117,12 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-*dịch đoạn phía trên*
+Để đo lường các xác suất có điều kiện liên quan với các lớp với nhau, chúng ta cần một mô hình với nhiều đầu ra, mỗi đầu ra cho mỗi lớp.
+Để phần loại với các mô hình tuyến tính, chúng ta cần nhiều hàm tuyến tính như chúng ta có nhiều đầu ra.
+Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
+Trong trường hợp này, vì chúng ta có 4 đặc trưng và 3 loại đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số,
+($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các độ chệch ($b$ với các chỉ số dưới).
+Chúng ta sẽ tính ba *logits*, $o_1, o_2$, and $o_3$ , cho mỗi đầu vào:
 
 $$
 \begin{aligned}
@@ -132,15 +137,18 @@ We can depict this calculation with the neural network diagram shown in :numref:
 Just as in linear regression, softmax regression is also a single-layer neural network.
 And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all inputs, $x_1$, $x_2$, $x_3$, and $x_4$,
 the output layer of softmax regression can also be described as fully-connected layer.
--->
+--> 
 
-*dịch đoạn phía trên*
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, and $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, and $x_4$,
+tầng đầu ra của hồi quy softmax có thể cũng được mô tả như là tầng fully-connected
 
 <!--
 ![Softmax regression is a single-layer neural network.  ](../img/softmaxreg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/softmaxreg.svg)
+![Hồi quy sofmax là một mạng nơ-ron đơn tầng](../img/softmaxreg.svg)
 :label:`fig_softmaxreg`
 
 <!--
@@ -150,8 +158,10 @@ Note that we have gathered all of our weights into a $3\times4$ matrix and that 
 our outputs are given by a matrix-vector product of our weights by our inputs plus our biases $\mathbf{b}$.
 -->
 
-*dịch đoạn phía trên*
-
+Để biểu diễn mô hình gọn hơn, chúng ta có thể sử dụng ký hiệu đại số tuyến tính.
+Trong dạng thức vector, chúng ta bắt đầu tại $\mathbf{o} = \mathbf{W} \mathbf{x} + \mathbf{b}$, một dạng thức tốt hơn phù hợp cho cả toán học và cả viết mã nguồn. 
+Chú ý rằng chúng ta đã tập hợp tất cả các trọng số của mình vào một ma trận $3\times4$ và với một ví dụ có trước $\mathbf{x}$, 
+các đầu ra của chúng ta được lấy bởi tích số một ma trận vector của các trọng số đầu vào cộng với các độ chệch $\mathbf{b}$.
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
@@ -628,7 +638,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+*Bùi Nhật Quân
 
 <!-- Phần 4 -->
 *
