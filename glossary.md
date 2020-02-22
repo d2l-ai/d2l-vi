@@ -42,27 +42,27 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | broadcast               | lan truyền              |                       |
 
 ## C
-| English                             | Tiếng Việt             | Thảo luận tại          |
-|-------------------------------------|------------------------|------------------------|
-| chain rule                          | quy tắc dây chuyền     |                        |
-| classifier                          | bộ phân loại           |                        |
-| clustering                          | phân cụm               |                        |
-| code (danh từ)                      | mã nguồn               |                        |
-| code (động từ)                      | viết mã                |                        |
-| computer vision                     | thị giác máy tính      |                        |
-| computing (trong Khoa Học Máy Tính) | điện toán              |                        |
-| computational graph                 | đồ thị tính toán       |                        |
-| conditional distribution            | phân phối có điều kiện |                        |
-| confidence interval                 | khoảng tin cậy         |                        |
-| constrain                           | ràng buộc              |                        |
-| (strictly) convex function          | hàm lồi (chặt)         |                        |
-| convex optimization                 | tối ưu lồi             |                        |
-| convex set                          | tập lồi                |                        |
-| convolution neural networks         | mạng nơ-ron tích chập  |                        |
-| cost function                       | hàm chi phí            |                        |
-| covariate                           | hiệp biến              | https://bit.ly/2r5QcfB |
-| cross entropy                       | entropy chéo           |                        |
-| cross validation                    | kiểm định chéo         |                        |
+| English                             | Tiếng Việt             | Thảo luận tại                       |
+|-------------------------------------|------------------------|-------------------------------------|
+| chain rule                          | quy tắc dây chuyền     |                                     |
+| classifier                          | bộ phân loại           |                                     |
+| clustering                          | phân cụm               |                                     |
+| code (danh từ)                      | mã nguồn               |                                     |
+| code (động từ)                      | viết mã                |                                     |
+| computer vision                     | thị giác máy tính      |                                     |
+| computing (trong Khoa Học Máy Tính) | điện toán              |                                     |
+| computational graph                 | đồ thị tính toán       |                                     |
+| conditional distribution            | phân phối có điều kiện |                                     |
+| confidence interval                 | khoảng tin cậy         |                                     |
+| constrain                           | ràng buộc              |                                     |
+| (strictly) convex function          | hàm lồi (chặt)         |                                     |
+| convex optimization                 | tối ưu lồi             |                                     |
+| convex set                          | tập lồi                |                                     |
+| convolution neural networks         | mạng nơ-ron tích chập  |                                     |
+| cost function                       | hàm chi phí            |                                     |
+| covariate                           | hiệp biến              | [Thảo luận](https://bit.ly/2r5QcfB) |
+| cross entropy                       | entropy chéo           |                                     |
+| cross validation                    | kiểm định chéo         |                                     |
 
 ## D
 | English                | Tiếng Việt                      | Thảo luận tại |
