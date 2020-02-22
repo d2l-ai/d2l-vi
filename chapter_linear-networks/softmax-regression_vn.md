@@ -49,7 +49,7 @@ i.e., to assess the *probability* that each category applies.
 The distinction tends to get blurred, in part, because often, even when we only care about hard assignments, we still use models that make soft assignments.
 -->
 
-Thông thường, các học máy quá tải với từ *phân loại* để mô tả hai vấn đề tinh tế khác nhau:
+Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán tinh tế khác nhau:
 (i) ta chỉ quan tâm đến việc gán *cứng* các danh mục cho các ví dụ; và (ii) ta muốn *gán mềm*, tức đánh giá *xác suất* ví dụ rơi vào mỗi danh mục.
 Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
 
