@@ -525,10 +525,9 @@ If we do not update in place, this could cause that discarded memory is not rele
 
 Đây có thể là điều không mong muốn vì hai lý do.
 Thứ nhất, không phải lúc nào chúng ta cũng muốn cấp phát bộ nhớ không cần thiết.
-Trong học máy, ta có thể có đến hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây, 
-và thường thì ta muốn thực thi các cập nhật này *tại chỗ*.
-Thứ hai, chúng ta có thể chỉ đến cùng tham số từ nhiều biến khác nhau.
-Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng mã lập trình sẽ vô tình tham chiếu lại các tham số cũ. 
+Trong học máy, ta có thể có đến hàng trăm megabytes tham số và cập nhật tất cả chúng nhiều lần mỗi giây, và thường thì ta muốn thực thi các cập nhật này *tại chỗ*.
+Thứ hai, chúng ta có thể trỏ đến cùng tham số từ nhiều biến khác nhau.
+Nếu không cập nhật tại chỗ, các bộ nhớ đã bị loại bỏ sẽ không được giải phóng, dẫn đến khả năng một số chỗ trong mã nguồn sẽ vô tình tham chiếu lại các tham số cũ. 
 
 <!--
 Fortunately, performing in-place operations in MXNet is easy.
@@ -580,7 +579,7 @@ This minor inconvenience is actually quite important: when you perform operation
 The `array` and `asnumpy` functions do the trick.
 -->
 
-Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray`, hoặc ngược lại khá đơn giản.
+Chuyển đổi một MXNet `ndarray` sang NumPy `ndarray` hoặc ngược lại là khá đơn giản.
 Tuy nhiên kết quả chuyển đổi này không chia sẻ bộ nhớ với nhau.
 Điểm bất tiện này tuy nhỏ nhưng lại khá quan trọng: khi bạn thực hiện các phép tính trên CPU hoặc GPUs, bạn không muốn MXNet dừng việc tính toán để chờ xem liệu gói Numpy của Python có sử dụng cùng bộ nhớ đó để làm việc khác không. 
 Hàm `array` và `asnumpy` sẽ giúp bạn giải quyết vấn đề này. 
@@ -631,7 +630,7 @@ a, a.item(), float(a), int(a)
 2. Replace the two `ndarray`s that operate by element in the broadcasting mechanism with other shapes, e.g., three dimensional tensors. Is the result the same as expected?
 -->
 
-1. Chạy đoạn mã lập trình trong phần dưới. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
+1. Chạy đoạn mã nguồn trong mục này. Thay đổi điều kiện mệnh đề `x == y` sang `x < y` hoặc `x > y`, sau đó kiểm tra kết quả dạng `ndarray` nhận được. 
 2. Thay đổi hai `ndarray` tính theo phần tử trong cơ chế lan truyền (*broadcasting mechanism*) với các kích thước khác nhau, ví dụ như tensor ba chiều. Kết quả có giống như bạn mong đợi hay không?
 
 <!-- ===================== Kết thúc dịch Phần 13 ===================== -->
