@@ -371,7 +371,7 @@ In the code below, `l` is a vector of the losses for each example in the minibat
 Because `l` is not a scalar variable, running `l.backward()` adds together the elements in `l` to obtain the new variable and then calculates the gradient.
 -->
 
-Trong đoạn code dưới đây, `l` là một vector độ mất mát của từng mẫu trong minibatch.
+Trong đoạn mã dưới đây, `l` là một vector của các mất mát của từng mẫu trong minibatch.
 Vì `l` không phải là biến vô hướng, chạy `l.backward()` sẽ cộng các phần tử trong `l` để tạo ra một biến mới và sau đó mới tính gradient.
 
 <!--
