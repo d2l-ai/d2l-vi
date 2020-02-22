@@ -284,13 +284,11 @@ That is to say, if $3$ dots faced up after rolling a die, since $3 \in \{1, 3, 5
 we can say that the event "seeing an odd number" has occurred.
 -->
 
-Khi ta thực hiện gieo một con xúc sắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử sẻ là một *kết quả*.
-*Biến cố* là một tập hợp các kết quả của không gian mẫu. 
-Ví dụ, "gieo được một số $5$" ($\{5\}$) và "gieo được một số lẻ" ($\{1, 3, 5\}$) đều là những biến cố hợp lệ khi gieo một con xúc sắc. 
-Chú ý rằng nếu kết quả của một phép gieo ngẫu nhiên nằm trong biến cố $\mathcal{A}$,
-biến cố $\mathcal{A}$ đã xảy ra.
-Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc sắc được gieo, 
-chúng ta nói biến cố "gieo được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$.
+Khi thực hiện tung một con xúc xắc, chúng ta gọi tập hợp $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ là *không gian mẫu* hoặc *không gian kết quả*, trong đó mỗi phần tử là một *kết quả*.
+Một *sự kiện* là một tập hợp các kết quả của không gian mẫu.
+Ví dụ, "tung được một số $5$" ($\{5\}$) và "tung được một số lẻ" ($\{1, 3, 5\}$) đều là những sự kiện hợp lệ khi tung một con xúc xắc. 
+Chú ý rằng nếu kết quả của một phép tung ngẫu nhiên nằm trong sự kiện $\mathcal{A}$, sự kiện $\mathcal{A}$ đã xảy ra.
+Như vậy, nếu mặt $3$ chấm ngửa lên sau khi xúc xắc được tung, chúng ta nói sự kiện "tung được một số lẻ" đã xảy ra bởi vì $3 \thuộc \{1, 3, 5\}$.
 
 <!--
 Formally, *probability* can be thought of a function that maps a set to a real value.
@@ -298,9 +296,8 @@ The probability of an event $\mathcal{A}$ in the given sample space $\mathcal{S}
 denoted as $P(\mathcal{A})$, satisfies the following properties:
 -->
 
-Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số gán một tập hợp các biến cố tới một giá trị thật. 
-Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$, 
-được kí hiệu là $P(\mathcal{A})$, phải thoả mãn những tính chất sau:
+Một cách chính thống hơn, *xác suất* có thể được xem là một hàm số ánh xạ một tập hợp các sự kiện tới một số thực. 
+Xác suất của sự kiện $\mathcal{A}$ trong không gian mẫu $\mathcal{S}$, được kí hiệu là $P(\mathcal{A})$, phải thoả mãn những tính chất sau:
 
 <!--
 * For any event $\mathcal{A}$, its probability is never negative, i.e., $P(\mathcal{A}) \geq 0$;
@@ -308,9 +305,9 @@ Xác suất của biến cố $\mathcal{A}$ trong không gian mẫu $\mathcal{S}
 * For any countable sequence of events $\mathcal{A}_1, \mathcal{A}_2, \ldots$ that are *mutually exclusive* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ for all $i \neq j$), the probability that any happens is equal to the sum of their individual probabilities, i.e., $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 -->
 
-* Đối với mọi biến cố $\mathcal{A}$, xác suất của biến cố sẽ không bao giờ âm, tức là: $P(\mathcal{A}) \geq 0$;  
+* Với mọi sự kiện $\mathcal{A}$, xác suất của nó là không âm, tức là: $P(\mathcal{A}) \geq 0$;
 * Xác suất của toàn không gian mẫu luôn bằng $1$, tức: $P(\mathcal{S}) = 1$;
-* Đối với mọi dãy biến cố có thể đếm được $\mathcal{A}_1, \mathcal{A}_2, \ldots$ nhưng *xung khắc lẫn nhau* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ với mọi $i \neq j$), xác suất (nếu có xảy ra) sẽ là tổng của những giá trị xác suất riêng lẻ, hay: $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
+* Đối với mọi dãy sự kiện có thể đếm được $\mathcal{A}_1, \mathcal{A}_2, \ldots$ *xung khắc lẫn nhau* ($\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ với mọi $i \neq j$), xác suất có ít nhất một sự kiện xảy ra sẽ là tổng của những giá trị xác suất riêng lẻ, hay: $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.
 
 <!--
 These are also the axioms of probability theory, proposed by Kolmogorov in 1933.
@@ -318,9 +315,9 @@ Thanks to this axiom system, we can avoid any philosophical dispute on randomnes
 instead, we can reason rigorously with a mathematical language.
 For instance, by letting event $\mathcal{A}_1$ be the entire sample space and $\mathcal{A}_i = \emptyset$ for all $i > 1$, we can prove that $P(\emptyset) = 0$, i.e., the probability of an impossible event is $0$.
 -->
-Kolmogorov là nhà toán học đã đề xuất những đóng góp cho sự hoàn thiện của tiên đề về lý thuyết xác suất vào năm 1993.
+Đây cũng là những tiên đề của lý thuyết xác suất, được đề xuất bởi Kolmogorov năm 1933.
 Nhờ vào hệ thống tiên đề này, ta có thể tránh được những tranh luận chủ quan về sự ngẫu nhiên; và ta có thể có được những suy luận chặt chẽ sử dụng ngôn ngữ toán học.
-Lấy ví dụ một trường hợp, cho biến cố $\mathcal{A}_1$ là toàn bộ không gian mẫu và $\mathcal{A}_i = \emptyset$ với mọi $i > 1$, chúng ta có thể chứng minh rằng $P(\emptyset) = 0$, ví dụ: xác suất của biến cố không thể xảy ra sẽ là $0$.
+Ví dụ, cho sự kiện $\mathcal{A}_1$ là toàn bộ không gian mẫu và $\mathcal{A}_i = \emptyset$ với mọi $i > 1$, chúng ta có thể chứng minh rằng $P(\emptyset) = 0$, nghĩa là xác suất của sự kiện không thể xảy ra bằng $0$.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -349,15 +346,15 @@ For example, $P(1 \leq X \leq 3)$ denotes the probability of the event $\{1 \leq
 which means $\{X = 1, 2, \text{or}, 3\}$. Equivalently, $P(1 \leq X \leq 3)$ represents the probability that the random variable $X$ can take a value from $\{1, 2, 3\}$.
 -->
 
-Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu về khái niệm của một *biến ngẫu nhiên*.
-Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không được xác định.
+Trong thí nghiệm tung xúc xắc ngẫu nhiên, chúng ta đã giới thiệu khái niệm của một *biến ngẫu nhiên*.
+Một biến ngẫu nhiên có thể dùng để biểu diễn cho hầu như bất kỳ đại lượng nào và giá trị của nó không cố định.
 Nó có thể nhận một giá trị trong tập các giá trị khả dĩ từ một thí nghiệm ngẫu nhiên.
 Hãy xét một biến ngẫu nhiên $X$ có thể nhận một trong những giá trị từ tập không gian mẫu $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ của thí nghiêm tung xúc xắc.
 Chúng ta có thể biểu diễn sự kiện "trông thấy mặt $5$" là $\{X = 5\}$ hoặc $X = 5$, và xác suất của nó là $P(\{X = 5\})$ hoặc $P(X = 5)$.
 Khi viết $P(X = a)$, chúng ta đã phân biệt giữa biến ngẫu nhiên $X$ và các giá trị (ví dụ như $a$) mà $X$ có thể nhận.
 Tuy nhiên, ký hiệu như vậy khá là rườm rà.
 Để đơn giản hóa ký hiệu, một mặt, chúng ta có thể chỉ cần dùng $P(X)$ để biểu diễn *phân phối* của biến ngẫu nhiên $X$: phân phối này cho chúng ta biết xác xuất mà $X$ có thể nhận cho bất kỳ giá trị nào.
-Mặt khác, chúng ta có thể viết đơn giản $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên có thể nhận giá trị $a$.
+Mặt khác, chúng ta có thể đơn thuần viết $P(a)$ để biểu diễn xác suất mà một biến ngẫu nhiên nhận giá trị $a$.
 Bởi vì một sự kiện trong lý thuyết xác suất là một tập các kết quả từ không gian mẫu, chúng ta có thể xác định rõ một khoảng các giá trị mà một biến ngẫu nhiên có thể nhận.
 Ví dụ, $P(1 \leq X \leq 3)$ diễn tả xác suất của sự kiện $\{1 \leq X \leq 3\}$, nghĩa là $\{X = 1, 2, \text{hoặc}, 3\}$.
 Tương tự, $P(1 \leq X \leq 3)$ biểu diễn xác suất mà biến ngẫu nhiên $X$ có thể nhận giá trị trong tập $\{1, 2, 3\}$.
@@ -369,19 +366,20 @@ In the rest of this section, we consider probability in discrete space.
 For probability over continuous random variables, you may refer to :numref:`sec_random_variables`.
 -->
 
-Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một con người.
-Sẽ không có ý nghĩa gì nhiều khi ta đặt câu hỏi là hai người có cùng chính xác chiều cao hay không.
+Lưu ý rằng có một sự khác biệt tinh tế giữa các biến ngẫu nhiên *rời rạc*, ví dụ như các mặt của xúc xắc, và các biến ngẫu nhiên *liên tục*, ví dụ như cân nặng và chiều cao của một người.
+Việc hỏi rằng hai người có cùng chính xác chiều cao hay không khá là vô nghĩa.
 Nếu ta đo với đủ độ chính xác, ta sẽ thấy rằng không có hai người nào trên hành tinh này mà có cùng chính xác chiều cao cả.
 Thật vậy, nếu đo đủ chính xác, chiều cao của bạn lúc mới thức dậy và khi đi ngủ sẽ khác nhau.
-Cho nên không có lý do gì để hỏi rằng xác suất mà một người nào đó có chiều cao là $1.80139278291028719210196740527486202$ mét cả.
-Trong toàn bộ dân số trên thế giới, xác suất này hầu như là bằng $0$.
-Sẽ có ý nghĩa hơn trong trường hợp này nếu ta hỏi chiều cao của một người nào đó có rơi vào một khoảng cho trước hay không, ví dụ như giữa $1.79$ và $1.81$ mét.
+Cho nên không có lý do gì để tìm xác suất một người nào đó cao $1.80139278291028719210196740527486202$ mét cả.
+Trong toàn bộ dân số trên thế giới, xác suất này gần như bằng $0$.
+Sẽ có lý hơn nếu ta hỏi chiều cao của một người nào đó có rơi vào một khoảng cho trước hay không, ví dụ như giữa $1.79$ và $1.81$ mét.
 Trong các trường hợp này, ta có thể định lượng khả năng mà ta thấy một giá trị nào đó theo một *mật độ xác suất*.
-Chiều cao chính xác $1.80$ mét thì không có xác suất nhưng có mật độ khác không.
+Xác suất để có chiều cao chính xác $1.80$ mét không tồn tại, nhưng mật độ của sự kiện này khác không.
 Trong bất kỳ khoảng nào giữa hai chiều cao khác nhau ta đều có xác suất khác không.
 Trong phần còn lại của mục này, ta sẽ xem xét xác suất trong không gian rời rạc.
 Về xác suất của biến ngẫu nhiên liên tục, bạn có thể xem ở :numref:`sec_random_variables`.
 
+<!-- Kết thúc revise phần 3 -->
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
