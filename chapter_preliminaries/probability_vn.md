@@ -103,7 +103,7 @@ Say that we cast a die and want to know what the chance is of seeing a $1$ rathe
 
 Giả sử, ta tung xúc xắc và muốn biết cơ hội để thấy mặt số $1$ so với các mặt khác là bao nhiêu?
 Nếu chiếc xúc xắc có chất liệu đồng nhất, thì cả $6$ mặt $\{1, \ldots, 6\}$ đều có khả năng xuất hiện như nhau, nên ta sẽ thấy mặt $1$ xuất hiện một lần trong mỗi sáu lần tung xúc xắc như trên.
-Ta có thể nói rằng mặt $1$ xuất hiện với xác suất là \frac{1}{6}$.
+Ta có thể nói rằng mặt $1$ xuất hiện với xác suất là $\frac{1}{6}$.
 
 <!--
 For a real die that we receive from a factory, we might not know those proportions and we would need to check whether it is tainted. The only way to investigate the die is by casting it many times and recording the outcomes. For each cast of the die, we will observe a value in $\{1, \ldots, 6\}$. Given these outcomes, we want to investigate the probability of observing each outcome.
