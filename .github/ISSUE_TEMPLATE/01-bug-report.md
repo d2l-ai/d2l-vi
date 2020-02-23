@@ -1,5 +1,5 @@
 ---
-name: Báo cáo lỗi
+name:  🏷 Báo cáo lỗi
 about: Tạo một báo cáo lỗi để giúp chúng tôi cải thiện chất lượng dự án
 title: ''
 labels: 'type: bug'
