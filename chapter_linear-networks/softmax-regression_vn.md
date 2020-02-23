@@ -178,9 +178,9 @@ Then we can choose the class with the largest output value as our prediction $\o
 For example, if $\hat{y}_1$, $\hat{y}_2$, and $\hat{y}_3$ are $0.1$, $.8$, and $0.1$, respectively, then we predict category $2$, which (in our example) represents "chicken".
 -->
 
-Nhưng một cách chính thống hơn, ta mong muốn kết quả $\hat{y}_k$ là xác suất để cho một điểm cho trước thuộc về một lớp k nào đó.
+Nói một cách chính quy hơn, ta mong muốn diễn dịch kết quả $\hat{y}_k$ là xác suất để một điểm dữ liệu cho trước thuộc về một lớp $k$ nào đó.
 Sau đó, ta có thể dự đoán lớp cho điểm đó là số thứ tự của lớp mà tại đó giá trị xác suất của mô hình cho ra là lớn nhất $\operatorname*{argmax}_k y_k$.
-Ví dụ, nếu $\hat{y}_1$, $\hat{y}_2$ và $\hat{y}_3$ lần lượt là $0.1$, $0.8$, and $0.1$, thì ta có thể dự đoán điểm đó thuộc về lớp số $2$ là "chicken" (ứng với trong ví dụ trước).
+Ví dụ, nếu $\hat{y}_1$, $\hat{y}_2$ và $\hat{y}_3$ lần lượt là $0.1$, $0.8$, and $0.1$, thì ta có thể dự đoán điểm đó thuộc về lớp số $2$ là "gà" (ứng với trong ví dụ trước).
 
 <!--
 You might be tempted to suggest that we interpret the logits $o$ directly as our outputs of interest.
@@ -203,8 +203,8 @@ Of all instances when a classifier outputs $.5$, we hope that half of those exam
 This is a property called *calibration*.
 -->
 
-Để cho ra kết quả đầu ra là một xác xuất, ta phải đảm bảo rằng các kết quả không âm và tổng của chúng phải bằng 1 (điều này phải đúng trên cả dữ liệu mới)
-Hơn nữa, ta cần một hàm mục tiêu trong quá trình huấn luyện để cho mô hình có thể ước lượng *xác suất* một cách chính xác
+Để có thể diễn dịch kết quả đầu ra là xác xuất, ta phải đảm bảo rằng các kết quả không âm và tổng của chúng phải bằng 1 (điều này phải đúng trên cả dữ liệu mới).
+Hơn nữa, ta cần một hàm mục tiêu trong quá trình huấn luyện để cho mô hình có thể ước lượng *xác suất* một cách chính xác.
 Trong tất cả các trường hợp, khi kết quả phân lớp cho ra là $0.5$ thì ta chỉ hy vọng khả năng mà những mẫu đó thuộc về lớp được dự đoán chỉ có một nửa.
 Đây được gọi là *hiệu chuẩn*.
 
@@ -214,9 +214,8 @@ To transform our logits such that they become nonnegative and sum to $1$, while 
 we first exponentiate each logit (ensuring non-negativity) and then divide by their sum (ensuring that they sum to $1$).
 -->
 
-*Hàm softmax* được phát biểu vào năm 1959 bởi một nhà khoa học xã hội R Duncan Luce trong nội dung của *mô hình lựa chọn* đã làm được điều này.
-Để biến đổi kết quả của hàm logit thành kết quả không âm và có tổng là $1$, mà mô hình vẫn phải khả vi.
-Đầu tiên ta cần lấy hàm mũ cho từng logit (để chắn chắn chúng không âm) và sau đó ta chia cho tổng của chúng để chắn rằng tổng của chúng luôn bằng 1)
+*Hàm softmax*, được phát biểu vào năm 1959 bởi một nhà khoa học xã hội R Duncan Luce trong nội dung của *mô hình lựa chọn*, làm chính xác điều những điều trên.
+Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
 \hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{where}\quad
@@ -229,9 +228,9 @@ Thus, $\hat{y}$ is a proper probability distribution and the values of $\hat{\ma
 Note that the softmax operation does not change the ordering among the logits, and thus we can still pick out the most likely class by:
 -->
 
-Thật dễ dàng để thấy $\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$ với $0 \leq \hat{y}_i \leq 1$ với mọi $i$
-Do đó,  $\hat{y}$ là phân phối xác suất phù hợp và các giá trị của $\hat{\mathbf{y}}$ có thể được hiểu theo đó.
-Lưu ý rằng hàm softmax không thay đổi thứ tự giữa các logit và do đó ta vẫn có chọn ra lớp phù hợp nhất bằng cách: 
+Dễ thấy rằng $\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$ với $0 \leq \hat{y}_i \leq 1$ với mọi $i$.
+Do đó, $\hat{y}$ là phân phối xác suất phù hợp và các giá trị của $\hat{\mathbf{y}}$ có thể được hiểu theo đó.
+Lưu ý rằng hàm softmax không thay đổi thứ tự giữa các logit và do đó ta vẫn có thể chọn ra lớp phù hợp nhất bằng cách: 
 
 $$
 \hat{\imath}(\mathbf{o}) = \operatorname*{argmax}_i o_i = \operatorname*{argmax}_i \hat y_i.
@@ -242,7 +241,7 @@ The logits $\mathbf{o}$ then are simply the pre-softmax values that determining 
 Summarizing it all in vector notation we get ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, where ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 -->
 
-Các lôgit $\mathbf{o}$ đơn giản chỉ là các giá trị trước khi cho qua hàm softmax và nó cho biết xác xuất thuộc về mỗi danh mục. 
+Các logit $\mathbf{o}$ đơn giản chỉ là các giá trị trước khi cho qua hàm softmax để xác định xác xuất thuộc về mỗi danh mục. 
 Tóm tắt lại, ta có ký hiệu dưới dạng vector như sau: ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, với ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
