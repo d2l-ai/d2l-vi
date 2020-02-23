@@ -169,8 +169,8 @@ Then, to generate predictions, we will set a threshold, for example, choosing th
 -->
 
 Chúng ta sẽ xem các giá trị đầu ra của mô hình là các giá trị xác suất.
-Ta sẽ tối ưu hóa bộ tham số để đạt được xác xuất mà xảy ra đồng thời các dữ liệu quan sát được là cao nhất
-Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt một ngưỡng, ví dụ chọn *argmax* của giá trị xác suất dự đoán.
+Ta sẽ tối ưu hóa các tham số của mô hình sao cho nếu mô hình của ta là đúng thì xác xuất dữ liệu sẽ quan sát được sẽ giống với dữ liệu ta đang có là cao nhất.
+Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt ngưỡng xác suất, ví dụ dự đoán nhãn đúng là nhãn có xác suất cao nhất (dùng hàm *argmax*).
 
 <!--
 Put formally, we would like outputs $\hat{y}_k$ that we can interpret as the probability that a given item belongs to class $k$.
