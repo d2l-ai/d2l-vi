@@ -116,6 +116,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
 | functional anaylsis | giải tích hàm  |               |
+| fully-connected     | fully-connected  |               |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                |
