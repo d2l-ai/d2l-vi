@@ -192,7 +192,11 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-*dịch đoạn phía trên*
+Khi chạy các vòng lặp, chúng ta thu được các minibatch khác nhau cho đến đến khi chạy hết toàn bộ dữ liệu.
+Mặc dù các vòng lặp triển khai ở trên thể hiện tốt cho việc giảng dạy, nó lại không phải là một phương án hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong các vấn đề thực tế.
+Ví dụ, nó yêu cầu chúng ta nạp toàn bộ dữ liệu vào bộ nhớ và đòi hỏi rất nhiều các truy cập bộ nhớ ngẫu nhiên. 
+Các vòng lặp tích hợp sẵn trong Apache MXNet trong trường hợp này lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ lẫn các luồng dữ liệu. 
+
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -202,14 +206,14 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khở tạo các tham số mô hình
 
 <!--
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
 
-*dịch đoạn phía trên*
+Trước khi chúng ta bắt đầu tối ưu các tham số của dữ liệu bằng hạ gradient (*gradient descent*), việc chúng ta cần làm  đầu tiên đó là khởi tạo các tham số.
 
 ```{.python .input  n=7}
 w = np.random.normal(0, 0.01, (2, 1))
@@ -222,7 +226,9 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
-*dịch đoạn phía trên*
+Sau khi khởi tạo các tham số, bước tiếp theo đó là cập nhật chúng cho đến khi các tham số thỏa mãn dữ liệu của chúng ta. 
+Mỗi lần cập nhật, gradient (một đạo hàm đa chiều) của hàm mất mát dựa trên các tham số sẽ được sử dụng. 
+Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm đi giá trị mất mát. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
