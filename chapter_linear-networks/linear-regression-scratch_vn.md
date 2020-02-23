@@ -235,7 +235,10 @@ Recall from the autograd chapter that in order for `autograd` to know that it sh
 we need to invoke the `attach_grad` function, allocating memory to store the gradients that we plan to take.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì không ai muốn tính các gradient theo phương pháp thủ công (việc này rất tẻ nhạt và dễ xảy ra lỗi), chúng ta sử dụng vi phân tự động để tính gradient. 
+Xem :numref:`sec_autograd` để có thêm chi tiết.
+Nhắc lại về chương autograd, chúng ta biết rằng để `autograd` có thể lưu trữ gradient từ các tham số,
+ta cần gọi hàm `attach_grad`, cấp phát bộ nhớ bộ nhớ cho nó để lưu trữ các gradients mà ta sẽ sử dụng. 
 
 ```{.python .input  n=8}
 w.attach_grad()
@@ -246,7 +249,7 @@ b.attach_grad()
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Xác định mô hình
 
 <!--
 Next, we must define our model, relating its inputs and parameters to its outputs.
@@ -255,7 +258,10 @@ Note that below `np.dot(X, w)` is a vector and `b` is a scalar.
 Recall that when we add a vector and a scalar, the scalar is added to each component of the vector.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta cần xác định mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
+Nhăc lại rằng để tính đầu ra của một mô hình tuyến tính, chúng ta có thể đơn giản là tính tích vô hướng ma trận-vector của ví dụ $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào phần bù (_offset_) $b$ với mỗi ví dụ.
+Chú ý rằng `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
+Cần nhớ rằng khi chúng ta tính tổng vector và số vô hướng, thì số vô hướng sẽ được thêm vào mỗi phẩn tử của vector. 
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
@@ -543,7 +549,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 6 -->
 *
