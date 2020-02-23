@@ -327,7 +327,6 @@ Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi ‘backwa
 Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
 Kích cỡ của bước cập nhật được xác định bởi tốc độ học `lr`.
 Bởi vì các mất mát được tính dựa trên tổng batch của các mẫu, chúng ta bình thường hóa kích cỡ bước theo kích cỡ của batch (`batch_size`),
-sao cho độ lớn của kích thước của bước thông thường không phụ thuộc nhiều vào việc lựa chọn kích cỡ batch.
 
 
 ```{.python .input  n=11}
