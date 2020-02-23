@@ -352,7 +352,7 @@ It is crucial that you understand this code because you will see nearly identica
 -->
 
 Bây giờ, sau khi đã đi qua được các phần, chúng ta đã sẵn sàng để thực hiện việc huấn luyện.
-Quan trọng nhất là bạn phải hiểu được những dòng code bởi vì việc huấn luyện này được lặp lại trong suốt qua trình chúng ta tìm hiểu và thực hiện việc học sâu.
+Quan trọng nhất là bạn phải hiểu được rõ đoạn mã này bởi vì việc huấn luyện gần như tương tự thế này sẽ được lặp lại nhiều lần trong suốt qua trình chúng ta tìm hiểu và lập trình các thuật toán học sâu.
 
 <!--
 In each iteration, we will grab minibatches of models, first passing them through our model to obtain a set of predictions.
