@@ -169,6 +169,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
 | logistic regression                | hồi quy logistic               |                       |
+| logit (in softmax)                 | logit                          |                       |
 | loss function                      | hàm mất mát                    |                       |
 
 ## M
