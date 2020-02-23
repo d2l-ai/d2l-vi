@@ -29,5 +29,7 @@
 
 1. Chỉ review nếu Pull Request này đã sẵn sàng cho việc review.
 
-2. **Bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:**
+2. Đã đọc kỹ hướng dẫn đóng góp và xem qua **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
+
+3. **Bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:**
 ![img](https://user-images.githubusercontent.com/19977/58752991-f39d0880-846c-11e9-8c03-c7aded86ee9b.png)
