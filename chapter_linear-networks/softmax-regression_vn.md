@@ -168,7 +168,7 @@ We will optimize our parameters to produce probabilities that maximize the likel
 Then, to generate predictions, we will set a threshold, for example, choosing the *argmax* of the predicted probabilities.
 -->
 
-Cách tiếp cận chính mà ta sẽ thực hiện ở đây là diễn tả các kết quả của mô hình như một xác suất.
+Chúng ta sẽ xem các giá trị đầu ra của mô hình là các giá trị xác suất.
 Ta sẽ tối ưu hóa bộ tham số để đạt được xác xuất mà xảy ra đồng thời các dữ liệu quan sát được là cao nhất
 Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt một ngưỡng, ví dụ chọn *argmax* của giá trị xác suất dự đoán.
 
@@ -669,4 +669,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
