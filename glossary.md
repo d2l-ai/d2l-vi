@@ -206,6 +206,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthogonal         | trực giao          |                       |
 | orthonormal        | trực chuẩn         |                       |
 | overfit            | quá khớp           | http://bit.ly/2BvfPYA |
+| one-hot encoding   | mã hoá one-hot     |                       |
 | one-sided test     | kiểm định một phía |                       |
 | one-tailed test    | kiểm định một đuôi |                       |
 
