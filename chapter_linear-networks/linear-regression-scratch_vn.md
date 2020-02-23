@@ -351,7 +351,7 @@ Now that we have all of the parts in place, we are ready to implement the main t
 It is crucial that you understand this code because you will see nearly identical training loops over and over again throughout your career in deep learning.
 -->
 
-Bây giờ, sau khi đã đi qua được các phần, chúng ta đã sẵn sàng để thực hiện việc huấn luyện.
+Bây giờ, sau khi đã có tất cả các thành phần, chúng ta đã sẵn sàng để viết vòng lặp huấn luyện.
 Quan trọng nhất là bạn phải hiểu được rõ đoạn mã này bởi vì việc huấn luyện gần như tương tự thế này sẽ được lặp lại nhiều lần trong suốt qua trình chúng ta tìm hiểu và lập trình các thuật toán học sâu.
 
 <!--
