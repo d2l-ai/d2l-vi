@@ -323,7 +323,7 @@ so that the magnitude of a typical step size does not depend heavily on our choi
 
 Tại mỗi bước, sử dụng một batch được rút ngẫu nhiên từ mẫu, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
 Tiếp theo đó, chúng ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
-Nhắc lại :numref:`sec_autograd` mà sau khi chúng ta gọi ‘backward’ ở mỗi tham số (‘param’) sẽ có gradient của chúng được chứa ở `param.grad`.
+Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi ‘backward’, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
 Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
 Kích cỡ của bước cập nhật được xác định bởi tốc độ học `lr`.
 Bởi vì các mất mát được tính dựa trên tổng batch của các mẫu, chúng ta bình thường hóa kích cỡ bước theo kích cỡ của batch (`batch_size`),
