@@ -516,7 +516,7 @@ Previously, getting these nets training required researchers to code up thousand
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * The multilayer perceptron adds one or multiple fully-connected hidden layers between the output and input layers and transforms the output of the hidden layer via an activation function.
