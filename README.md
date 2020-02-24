@@ -37,9 +37,9 @@ Với các chương (2., 3., ...)
     * [-] 3.2. [Linear Regression Implementation from Scratch](chapter_linear-networks/linear-regression-scratch_vn.md)
     * [-] 3.3. [Concise Implementation of Linear Regression](chapter_linear-networks/linear-regression-gluon_vn.md)
     * [-] 3.4. [Softmax Regression](chapter_linear-networks/softmax-regression_vn.md)
-    * [ ] 3.5. [The Image Classification Dataset (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
-    * [ ] 3.6. [Implementation of Softmax Regression from Scratch](chapter_linear-networks/softmax-regression-scratch_vn.md)
-    * [ ] 3.7. [Concise Implementation of Softmax Regression](chapter_linear-networks/softmax-regression-gluon_vn.md)
+    * [-] 3.5. [The Image Classification Dataset (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
+    * [-] 3.6. [Implementation of Softmax Regression from Scratch](chapter_linear-networks/softmax-regression-scratch_vn.md)
+    * [-] 3.7. [Concise Implementation of Softmax Regression](chapter_linear-networks/softmax-regression-gluon_vn.md)
 * [ ] 4. Multilayer Perceptrons
     * [ ] 4.1. Multilayer Perceptrons
     * [ ] 4.2. Implementation of Multilayer Perceptron from Scratch

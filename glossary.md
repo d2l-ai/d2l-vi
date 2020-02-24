@@ -116,6 +116,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
 | functional anaylsis | giải tích hàm  |               |
+| fully-connected     | kết nối đầy đủ        |               |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                |
@@ -169,6 +170,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
 | logistic regression                | hồi quy logistic               |                       |
+| logit (trong softmax)               | logit                          |                       |
 | loss function                      | hàm mất mát                    |                       |
 
 ## M
@@ -206,6 +208,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthogonal         | trực giao          |                       |
 | orthonormal        | trực chuẩn         |                       |
 | overfit            | quá khớp           | http://bit.ly/2BvfPYA |
+| one-hot encoding   | biễu diễn one-hot     |                       |
 | one-sided test     | kiểm định một phía |                       |
 | one-tailed test    | kiểm định một đuôi |                       |
 

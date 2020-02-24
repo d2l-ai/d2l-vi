@@ -5,7 +5,7 @@
 # Concise Implementation of Linear Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai xúc tích của Hồi quy Tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
@@ -15,22 +15,35 @@ In the previous section, we relied only on (i) `ndarray` for data storage and li
 In practice, because data iterators, loss functions, optimizers, and neural network layers (and some whole architectures) are so common, modern libraries implement these components for us as well.
 -->
 
+
 *dịch đoạn phía trên*
+
+Sự quan tâm nhiệt thành và rộng khắp tới học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê phát triển nhiều framework nguồn mở tới giai đoạn hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
+Trong chương trước, chúng ta chỉ dựa vào (i) `ndarray` để lưu dữ liệu và thực hiện tính toán đại số tuyến tính; và (ii) `autograd` để thực hiện tính đạo hàm.
+Trên thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các bộ tối ưu, và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã triển khai sẵn những thành phần này cho chúng ta.
+
+
 <!--
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
-*dịch đoạn phía trên*
+
+Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách xúc tích với Gluon.
+
+
 <!--
 ## Generating the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tạo Tập dữ liệu
+
 <!--
 To start, we will generate the same dataset as in the previous section.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như mục trước.
+
+
 ```{.python .input  n=2}
 import d2l
 from mxnet import autograd, gluon, np, npx
@@ -400,7 +413,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Phạm Hồng Vinh
+* Vũ Hữu Tiệp 
 
 <!-- Phần 2 -->
 * Lý Phi Long
