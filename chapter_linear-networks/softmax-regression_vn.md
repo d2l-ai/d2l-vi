@@ -570,7 +570,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
 * cross-entropy is a good measure of the difference between two probability distributions. It measures the number of bits needed to encode the data given our model.
 -->
 
-* Chúng ta đã giới thiệu về toán tử softmax giúp chuyển một vector đầu vào sang các giá trị tạo thành 1 phân phối xác suất. 
+* Chúng ta đã giới thiệu về toán tử softmax giúp ánh xạ một vector đầu vào sang các giá trị tạo thành 1 phân phối xác suất. 
 * Hồi quy softmax được áp dụng cho các bài toán phân loại. Nó sử dụng phân phối xác suất của các lớp đầu ra thông qua phép toán softmax. 
 * cross-entropy là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
 
@@ -597,6 +597,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
     * Extend this to more than two numbers.
 -->
 
+
 1. Chứng minh rằng độ phân kì Kullback-Leibler $D(p\|q)$ không âm với mọi phân phối $p$ và $q$. Gợi ý: sử dụng bất đẳng thức Jensen hay nghĩa là sử dụng bổ đề $-\log x$ là một hàm lồi.
 2. Chứng minh rằng $\log \sum_j \exp(o_j)$ là một hàm lồi với $o$.
 3. Chúng ta có thể tìm hiểu sâu hơn về sự liên kết giữa các họ hàm mũ và softmax.
@@ -611,7 +612,6 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
    * Chứng minh rằng khi $\lambda \to \infty$, chúng ta có $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) \to \mathrm{max}(a, b)$.
    * Soft-min sẽ trông như thế nào? 
    * Mở rộng nó cho nhiều hơn 2 số.
-   
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
