@@ -680,7 +680,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Since the generalization error rate cannot be estimated based on the training error rate, simply minimizing the training error rate will not necessarily mean a reduction in the generalization error rate. Machine learning models need to be careful to safeguard against overfitting such as to minimize the generalization error.
