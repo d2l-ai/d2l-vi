@@ -169,7 +169,7 @@ Then, to generate predictions, we will set a threshold, for example, choosing th
 -->
 
 Chúng ta sẽ xem các giá trị đầu ra của mô hình là các giá trị xác suất.
-Ta sẽ tối ưu hóa các tham số của mô hình sao cho nếu mô hình của ta là đúng thì xác xuất dữ liệu sẽ quan sát được sẽ giống với dữ liệu ta đang có là cao nhất.
+Ta sẽ tối ưu hóa các tham số của mô hình sao cho nếu mô hình của ta là đúng thì xác xuất dữ liệu quan sát được sẽ giống với dữ liệu ta đang có là cao nhất.
 Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt ngưỡng xác suất, ví dụ dự đoán nhãn đúng là nhãn có xác suất cao nhất (dùng hàm *argmax*).
 
 <!--
@@ -190,7 +190,7 @@ Moreover, depending on the inputs, they can take negative values.
 These violate basic axioms of probability presented in :numref:`sec_prob`
 -->
 
-Bạn có thể muốn đề xuất rằng ta có thể lấy kết quả trực tiếp từ hàm logit làm đầu ra để dự đoán.
+Bạn có thể muốn đề xuất rằng ta có thể lấy trực tiếp logit $o$ làm đầu ra để tiến hành dự đoán.
 Tuy nhiên, tại đây ta có một vài vấn đề khi lấy kết quả trực tiếp của tầng tuyến tính thành một kết quả cho xác suất.
 Bởi vì, không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
 Hơn nữa, tùy thuộc vào đầu vào mà ta có thể nhận được giá trị âm.
@@ -205,7 +205,7 @@ This is a property called *calibration*.
 
 Để có thể diễn dịch kết quả đầu ra là xác xuất, ta phải đảm bảo rằng các kết quả không âm và tổng của chúng phải bằng 1 (điều này phải đúng trên cả dữ liệu mới).
 Hơn nữa, ta cần một hàm mục tiêu trong quá trình huấn luyện để cho mô hình có thể ước lượng *xác suất* một cách chính xác.
-Trong tất cả các trường hợp, khi kết quả phân lớp cho ra là $0.5$ thì ta chỉ hy vọng khả năng mà những mẫu đó thuộc về lớp được dự đoán chỉ có một nửa.
+Trong tất cả các trường hợp, khi kết quả phân lớp cho ra xác suất là $0.5$ thì ta chỉ hy vọng phân nửa số mẫu đó *thực sự* thuộc về đúng lớp được dự đoán.
 Đây được gọi là *hiệu chuẩn*.
 
 <!--
