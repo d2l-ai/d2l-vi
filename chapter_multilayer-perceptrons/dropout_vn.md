@@ -412,7 +412,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Beyond controlling the number of dimensions and the size of the weight vector, dropout is yet another tool to avoid overfitting. Often all three are used jointly.
