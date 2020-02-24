@@ -64,9 +64,9 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-Để khởi động, ta hãy bắt đầu với bài toán phân lớp hình ảnh đơn giản trước.
+Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
 Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
-Ta có thể biểu diễn mỗi giá trị điểm ảnh là một số vô hướng duy nhất, cung cấp cho ta bốn đặc trưng $x_1, x_2, x_3, x_4$.
+Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
 Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
@@ -80,9 +80,9 @@ then it might even make sense to cast this problem as regression and keep the la
 
 Tiếp theo, ta cần phải chọn cách biểu diễn nhãn. 
 Ta có hai cách làm hiển nhiên.
-Có lẽ, tự nhiên ta sẽ chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
+Cách tự nhiên nhất có lẽ là chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
 Đây là một cách *lưu trữ* thông tin tuyệt vời trên máy tính.
-Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, việc đánh số như vậy thậm chí có thể làm cho bài toán này trở thành bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
+Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, sẽ là tự nhiên hơn nếu coi bài toán này là một bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
 
 <!--
 But general classification problems do not come with natural orderings among the classes.
@@ -91,7 +91,7 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-Các bài toán phân lớp tổng quát thường các lớp sẽ không tuân theo bất kỳ một trật tự tự nhiên nào.
+Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
 May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
 Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
 Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
