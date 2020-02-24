@@ -5,7 +5,7 @@
 # Implementation of Softmax Regression from Scratch
 -->
 
-# *dịch tiêu đề phía trên*
+# Xây dựng hồi quy Sofmax từ đầu
 :label:`sec_softmax_scratch`
 
 <!--
@@ -14,7 +14,9 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta đã xây dựng hồi quy tuyến tính từ đầu , chúng ta biết rằng hồi quy logistic (softmax) đa lớp như là nền tảng và bạn phải biết chi tiết nhất để làm cách nào xây dựng nó bằng chính bản thân bạn.
+Cũng giống hồi quy tuyến tính, sau khi thực hiện tính toán bằng tay chúng ta sẽ thông qua triển khai của Gluon để so sánh.
+Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
 import d2l
@@ -27,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ làm trên tập dữ liệu Fashion-MNIST, vừa được đưa vào: numref:`sec_fashion_mnist`,thiết lập vòng lập với kích cỡ batch là $256$
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -38,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo các tham số của mô hình
 
 <!--
 As in our linear regression example, each example here will be represented by a fixed-length vector.
@@ -47,7 +49,10 @@ In this section, we will flatten each image, treating them as $784$ 1D vectors.
 In the future, we will talk about more sophisticated strategies for exploiting the spatial structure in images, but for now we treat each pixel location as just another feature.
 -->
 
-*dịch đoạn phía trên*
+Cũng như ví dụ về hồi quy tuyến tính, mỗi ví dụ sẽ được đại diện cho mỗi chiều dài cố định của vector.
+Mỗi ví dụ trong dữ liệu thô là $28 \lần 28$ ảnh.
+Trong phần này, chúng ta sẽ làm phẵng mỗi ảnh, xem chúng như là vector một chiều có kích thước là $784$.
+Trong tương lai, chúng ta sẽ nói về các chiến lược tinh vi hơn để khai thác cấu trúc không gian của các ảnh, nhưng đến bây giờ chúng ta xe mỗi vị trí điểm ảnh như là các đặc trưng khác nhau. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
@@ -56,7 +61,10 @@ Consequently, our weights will constitute a $784 \times 10$ matrix and the biase
 As with linear regression, we will initialize our weights $W$ with Gaussian noise and our biases to take the initial value $0$.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại trong hồi quy softmax, chúng ta có nhiều đầu ra như nhiều loại.
+Bởi vì tập dữ liệu của chúng ta có  $10$ loại, và mạng lưới của chúng ta có chiều đầu ra là $10$.
+Nên, các trọng số của chúng ta sẽ tạo thành $784 \lần 10$ ma trận và các độ chệch sẽ tạo thành $1 \lần 10$ vector.
+Cũng như hồi quy tuyến tính, chúng ta khởi tạo các trọng số $W$ với nhiễu Gauss và các độ chệch để lấy được giá trị khởi tạo $0$.
 
 ```{.python .input  n=3}
 num_inputs = 784
@@ -71,7 +79,9 @@ Recall that we need to *attach gradients* to the model parameters.
 More literally, we are allocating memory for future gradients to be stored and notifiying MXNet that we will want to calculate gradients with respect to these parameters in the future.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại chúng ta cần *đính kèm gradients* vào các tham số của mô hình.
+Thật sự , chúng ta đang phân bổ bộ nhớ cho các gradient ở tương lai để lưu trữ và thông báo MXNet rằng chúng ta sẽ muốn tính toán các gradients với các tham số này trong tương lai.
+
 
 ```{.python .input  n=4}
 W.attach_grad()
@@ -543,7 +553,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 2 -->
 *
