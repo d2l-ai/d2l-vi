@@ -289,7 +289,7 @@ For each minibatch, we go through the following ritual:
 
 *  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
 * Tính gradient bằng cách gọi `l.backward()` (đường chuyền ngược).
-Cập nhật các tham số của mô hình bằng cách dẫn các tối ưu hóa của hạ gradient ngẫu nhiên (SGD) (chú ý rằng `trainer` đã biết được các tham số nào để tối ưu hóa hơn, nên chúng ta chỉ cần chuyền trong kích thước của minibatch.
+Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
