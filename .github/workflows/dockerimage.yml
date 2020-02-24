@@ -1,6 +1,6 @@
 name: build html and tex
 
-on: [pull_request]
+on: [pull_request, push]
 
 jobs:
   build_html_tex:
