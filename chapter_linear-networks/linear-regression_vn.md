@@ -884,7 +884,7 @@ Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (
     * Viết ra hàm đối log hợp lý của dữ liệu dưới mô hình $-\log P(Y \mid X)$.
     * Bạn có thể tìm ra giải pháp dạng khép kín không?
     * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
-    Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm đứng yên như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm đứng yên như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
     
     
 
