@@ -271,7 +271,7 @@ However, once we have all the basic pieces in place, the training loop itself is
 Bạn có thể thấy rằng việc thể hiện mô hình của chúng ta thông qua Gluon đòi hỏi một vài dòng lệnh tương đối.
 Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm số mất mát, hay triển khai hạ gradient ngẫu nhiên.
 Lợi ích Gluon mang lại càng nhiều khi chúng ta làm với những mô hình càng phức tạp.
-Tuy nhiên, một khi chúng ta có tất cả các mảnh cơ bản ở đúng chỗ, vòng huấn luyện của chính bản thân rất giống với những gì chúng ta đã thực hiện tự lúc đầu.
+Tuy nhiên, một khi ta nắm được rõ các điều cơ bản, vòng huấn luyện tự thân nó sẽ trông rất giống với những gì chúng ta tự thực hiện từ đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
