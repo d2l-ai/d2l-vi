@@ -458,7 +458,6 @@ Trên thực tế, các tham số của một mạng học sâu hiếm khi giố
 Tuy nhiên, trong học máy, chúng ta thường ít quan tâm đến việc khôi phục chính xác giá trị của các tham số, mà quan tâm nhiều hơn đến bộ tham số nào sẽ dẫn tới việc dự đoán chính xác hơn. 
 May mắn thay, thậm chí với những bài toán tối ưu khó, giải thuật hạ gradient ngẫu nhiên thường có thể tìm ra các lời giải đủ tốt, do một thực tế là, đối với các mạng học sâu, có thể tồn tại nhiều bộ tham số dẫn đến việc dự đoán chính xác. 
 
-
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
