@@ -133,14 +133,15 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán tối ưu
 
 <!--
 Here, we use minibatch stochastic gradient descent with a learning rate of $0.1$ as the optimization algorithm.
 Note that this is the same as we applied in the linear regression example and it illustrates the general applicability of the optimizers.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng ta sử dụng thuật toán tối ưu hạ gradient ngẫu nhiên theo minibatch với tốc độ học bằng $0.1$.
+Lưu ý rằng việc này giống với khi áp dụng cho bài toán hồi quy tuyến tính, nó chứng minh khả năng ứng dụng tổng quát của phương pháp tối ưu này.
 
 ```{.python .input  n=5}
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
@@ -150,13 +151,13 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Next we call the training function defined in the last section to train a model.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ gọi tới hàm huấn luyện đã được khai báo ở mục trước để huấn luyện mô hình.
 
 ```{.python .input  n=6}
 num_epochs = 10
@@ -169,20 +170,22 @@ Note that in many cases, Gluon takes additional precautions beyond these most we
 saving us from even more pitfalls that we would encounter if we tried to code all of our models from scratch in practice.
 -->
 
-*dịch đoạn phía trên*
+Giống như trước đây, thuật toán này cũng hội tụ tới một trạng thái có độ chính xác 83.7%, trừ một điều là với ít dòng mã hơn.
+Lưu ý rằng trong nhiều trường hợp, Gluon thực hiện thêm một số phòng tránh ngoài các thủ thuật đã biết để đảm bảo không xảy ra tràn số, giúp ta tránh gặp phải các lỗi khi cố gắng lập trình toàn bộ mô hình từ đầu.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Try adjusting the hyper-parameters, such as batch size, epoch, and learning rate, to see what the results are.
 2. Why might the test accuracy decrease again after a while? How could we fix this?
 -->
 
-*dịch đoạn phía trên*
+1. Thử thay đổi các siêu tham số, như là kích thước batch, epoch, và tốc độ học, để xem kết quả như thế nào.
+2. Tại sao độ chính xác khi kiểm tra lại bị giảm sau một khoảng thời gian? Chúng ta có thể sửa lại bằng cách nào.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
