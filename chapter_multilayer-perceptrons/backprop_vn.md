@@ -295,7 +295,7 @@ Another reason is that we typically train with minibatches containing more than 
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Forward propagation sequentially calculates and stores intermediate variables within the compute graph defined by the neural network. It proceeds from input to output layer.
