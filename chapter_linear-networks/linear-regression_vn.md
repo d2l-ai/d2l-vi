@@ -874,7 +874,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
 Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
-2. Tìm công thức nghiệm cho bài toán tối ưu hóa cho hồi quy tuyến tính với bình phương sai số.
+2. Tìm công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
 Để đơn giản hơn, bạn có thể bỏ qua hệ số điều chỉnh $b$ ra khỏi bài toán (chúng ta có thể thực hiện việc này bằng cách thêm vào một cột toàn giá trị một vào $X$).
 * Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
     * Tính gradient của sự mất mát với $w$.
