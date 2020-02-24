@@ -176,7 +176,7 @@ This looks a bit better than our previous result, using simple linear models and
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 We saw that implementing a simple MLP is easy, even when done manually.
