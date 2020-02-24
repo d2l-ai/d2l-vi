@@ -384,7 +384,7 @@ This fact makes computing gradients easy in practice.
 ### Cross-Entropy Loss
 -->
 
-### Hàm mất mát Cross-Entropy
+### Hàm mất mát Entropy Chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -394,11 +394,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-Bây giờ, thay vì ta xem xét chỉ trên một kết quả thì ta hãy xem xét trên toàn bộ phân phối của tập kết quả.
+Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất.
 Ta có thể dùng $y$ để ký hiệu như trước đây.
 Sự khác biệt duy nhất là thay vì một vector chỉ chứa các phần tử nhị phân, giả sử là $(0, 0, 1)$, thì giờ đây ta được một vectơ xác suất chung, giả sử là $(0.1, 0.2, 0.7)$.
-Trước đây, các công cụ toán học ta dùng để định nghĩa hàm loss $l$ vẫn còn khá tốt, nhưng cách giải thích chỉ dừng ở mức hơi chung chung.
-Vectơ xác suất chung chính là giá trị kỳ vọng của hàm mất mát trên toàn bộ phân phối của nhãn.
+Các công thức toán học ta dùng trước đó để định nghĩa hàm loss $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút.
+Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn.
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -409,8 +409,8 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-Hàm mất mát này đuợc gọi là hàm mát mát cross-entropy mà nó được sử dụng rất phổ biến trong các bài toán phân loại đa lớp.
-Ta có thể làm rõ tên gọi cross-entropy thông qua một vài điều cơ bản trong lý thuyết thông tin.
+Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp.
+Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin.
 
 <!--
 ## Information Theory Basics
@@ -422,7 +422,7 @@ Ta có thể làm rõ tên gọi cross-entropy thông qua một vài điều cơ
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-Lý thuyết thông tin quan tâm đến một lớp các bài toán về mã hóa, giải mã, truyền tải và xử lý thồng tin (hay còn được gọi là dữ liệu) thành một dạng ngắn gọn nhất có thể.
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng ngắn gọn nhất có thể.
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
@@ -657,4 +657,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
