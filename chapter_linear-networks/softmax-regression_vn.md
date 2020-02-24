@@ -79,10 +79,10 @@ then it might even make sense to cast this problem as regression and keep the la
 -->
 
 Tiếp theo, ta cần phải chọn cách biểu diễn nhãn. 
-Ta có hai cách làm hiển nhiên. 
+Ta có hai cách làm hiển nhiên.
 Có lẽ, tự nhiên ta sẽ chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
 Đây là một cách *lưu trữ* thông tin tuyệt vời trên máy tính.
-Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh,  trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, việc đánh số như vậy thậm chí có thể làm cho bài toán này trở thành bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
+Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, việc đánh số như vậy thậm chí có thể làm cho bài toán này trở thành bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
 
 <!--
 But general classification problems do not come with natural orderings among the classes.
@@ -92,8 +92,8 @@ The component corresponding to particular instance's category is set to 1 and al
 -->
 
 Các bài toán phân lớp tổng quát thường các lớp sẽ không tuân theo bất kỳ một trật tự tự nhiên nào.
-May mắn thay, khi đã từ lâu các nhà thông kê đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu phân loại: *one hot encoding*
-One-hot encoding là một vector với số lượng thành phần bằng số danh mục mà ta có.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
+Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
 Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
 
 $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
@@ -636,6 +636,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Lý Phi Long
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
