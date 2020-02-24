@@ -873,7 +873,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
 1. Giả sử chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
 Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
 * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
-    Vấn đề này như thế nào và giải pháp của nó có liên quan đến phân phối bình thường không?
+    * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn.
 2. Tìm công thức nghiệm cho bài toán tối ưu hóa cho hồi quy tuyến tính với bình phương sai số.
 Để giữ những thứ đơn giản, bạn có thể bỏ qua độ chệch $b$ khỏi vấn đề ( chúng ta có thể thực hiện việc này theo nguyên tắc bằng cách thêm vào một cột vào $X$ bao gồm tất cả các cột).
 * Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (coi tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
