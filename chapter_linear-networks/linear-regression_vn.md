@@ -886,7 +886,6 @@ Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (
     * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
     * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm đứng yên như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
     
-    
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
 
