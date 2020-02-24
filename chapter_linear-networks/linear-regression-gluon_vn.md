@@ -210,7 +210,7 @@ Just be careful to remember that since the parameters have not been initialized 
 
 Đoạn mã nguồn trên trông khá trực quan nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
 Chúng ta khởi tạo các tham số cho một mạng mà thậm chi Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
-Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000.
+Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000$.
 Gluon khiến chúng ta không cần bận tâm về điều này bởi ở phía sau bức màn, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
 Quá trình khởi tạo thực sự chỉ bắt đầu khi chúng ta truyền dữ liệu vào mạng lần đầu tiên.
 Hãy ghi nhớ rằng, do các tham số chưa thực sự được khởi tạo, chúng ta không thể truy cập hoặc thao tác với chúng.
