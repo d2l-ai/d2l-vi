@@ -553,8 +553,9 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng làm đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra  cho mỗi lớp. 
-Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
+Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng làm đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
+Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. 
+Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
 Ở phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
 Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác so với tổng số mẫu được dự đoán.
 
