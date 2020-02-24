@@ -870,7 +870,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
+1. Giả sử, chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
 Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
 * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn.
