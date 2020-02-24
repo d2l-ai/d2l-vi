@@ -415,7 +415,7 @@ In this book we will default to the simple heuristic of applying weight decay on
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Regularization is a common method for dealing with overfitting. It adds a penalty term to the loss function on the training set to reduce the complexity of the learned model.
