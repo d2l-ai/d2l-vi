@@ -278,7 +278,7 @@ To refresh your memory: for some number of epochs, we will make a complete pass 
 For each minibatch, we go through the following ritual:
 -->
 
-Để làm mới lại bộ nhớ của bạn: đối với một số epoch, chúng ta sẽ thực hiện qua tập dữ liệu (train_data), cứ lấy lặp đi lặp lại một minibatch của dữ liệu dầu vào và gán các nhãn gốc tương ứng.
+Để nhắc lại: cho một vài epoch, chúng ta sẽ duyêt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
 Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
 
 <!--
