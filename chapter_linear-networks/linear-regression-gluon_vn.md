@@ -278,7 +278,7 @@ To refresh your memory: for some number of epochs, we will make a complete pass 
 For each minibatch, we go through the following ritual:
 -->
 
-Để nhắc lại: cho một vài epoch, chúng ta sẽ duyêt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
+Để nhắc lại: cho một vài epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
 Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
 
 <!--
@@ -288,8 +288,8 @@ For each minibatch, we go through the following ritual:
 -->
 
 *  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
-* Tính gradient bằng cách gọi `l.backward()` (đường chuyền ngược).
-Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
+* Tính gradient bằng cách gọi `l.backward()` (theo chiều ngược).
+* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
