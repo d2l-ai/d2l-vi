@@ -40,7 +40,7 @@ Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn
 * Email này có phải thư rác/lừa đảo hay không?
 * Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?
 * Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
-* Bộ phim nào có nhiều khả năng được Aston xem tiếp theo nhất?
+* Aston có khả năng xem bộ phim nào tiếp theo nhất?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
