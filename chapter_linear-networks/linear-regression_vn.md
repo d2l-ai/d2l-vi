@@ -878,7 +878,7 @@ Mục tiêu của chúng ta là đi tìm một hằng số $b$ sao cho $\sum_i (
 Để giữ những thứ đơn giản, bạn có thể bỏ qua độ chệch $b$ khỏi vấn đề ( chúng ta có thể thực hiện việc này theo nguyên tắc bằng cách thêm vào một cột vào $X$ bao gồm tất cả các cột).
 * Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (coi tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
     Tính gradient của sự mất mát với $w$.
-    Tìm giải pháp khép kín bằng cách đặt gradient bằng 0 và giải phương trình ma trận
+    * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
 * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu  nhiên? Khi nào phương pháp này không hoạt động?
 3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối theo cấp số nhân. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
     Viết ra hàm đối log hợp lý của dữ liệu dưới mô hình $-\log P(Y \mid X)$.
