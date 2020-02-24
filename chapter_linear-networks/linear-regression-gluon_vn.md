@@ -15,7 +15,7 @@ In the previous section, we relied only on (i) `ndarray` for data storage and li
 In practice, because data iterators, loss functions, optimizers, and neural network layers (and some whole architectures) are so common, modern libraries implement these components for us as well.
 -->
 
-Sự quan tâm nhiệt thành và rộng khắp tới học sâu một vài năm gần đây đã tạo cảm hứng cho cả các công ty, học viện và những người đam mê phát triển nhiều framework mã nguồn mở hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
+Sự quan tâm nhiệt thành và rộng khắp tới học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê phát triển nhiều framework nguồn mở tới giai đoạn hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
 Trong chương trước, chúng ta chỉ dựa vào (i) `ndarray` để lưu dữ liệu và thực hiện tính toán đại số tuyến tính; và (ii) `autograd` để thực hiện tính đạo hàm.
 Trong thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các bộ tối ưu, và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã triển khai sẵn những thành phần này cho chúng ta.
 
@@ -35,7 +35,7 @@ Mục này sẽ hướng dẫn bạn làm cách nào để triển khai mô hìn
 To start, we will generate the same dataset as in the previous section.
 -->
 
-Để bắt đầu, chúng ta sẽ tạo một tập dữ liệu giống như mục trước.
+Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như mục trước.
 
 ```{.python .input  n=2}
 import d2l
