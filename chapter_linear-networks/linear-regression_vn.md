@@ -248,7 +248,7 @@ Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
 Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
 Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
 Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
-Bởi vì biểu thức này có dạng bậc hai, nó là dạng lồi, và miễn là vấn đề này không được suy biến (các đặc trưng của chúng ta là những độc lập tuyến tính), nó hoàn toàn lồi.
+Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt.
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
