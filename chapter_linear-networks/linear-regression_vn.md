@@ -246,7 +246,8 @@ Because this expression has a quadratic form, it is convex, and so long as the p
 
 Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
 Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
-Để bắt đầu, chúng ta có thể gộp độ lệch $b$ vào hệ số $\mathbf{w}$ bằng cách mở rộng một cột để thiết kế ma trận bao gồm tất cả $1s$. Sau đó tất cả các vấn đề dự đoán là giảm thiểu $||\mathbf{y} - X\mathbf{w}||$.
+Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
+Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
 Bởi vì biểu thức này có dạng bậc hai, nó là dạng lồi, và miễn là vấn đề này không được suy biến (các đặc trưng của chúng ta là những độc lập tuyến tính), nó hoàn toàn lồi.
 
 <!--
