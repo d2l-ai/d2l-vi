@@ -384,7 +384,7 @@ This fact makes computing gradients easy in practice.
 ### Cross-Entropy Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát Cross-Entropy
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -394,7 +394,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, thay vì ta xem xét chỉ trên một kết quả thì ta hãy xem xét trên toàn bộ phân phối của tập kết quả.
+Ta có thể dùng $y$ để ký hiệu như trước đây.
+Sự khác biệt duy nhất là thay vì một vector chỉ chứa các phần tử nhị phân, giả sử là $(0, 0, 1)$, thì giờ đây ta được một vectơ xác suất chung, giả sử là $(0.1, 0.2, 0.7)$.
+Trước đây, các công cụ toán học ta dùng để định nghĩa hàm loss $l$ vẫn còn khá tốt, nhưng cách giải thích chỉ dừng ở mức hơi chung chung.
+Vectơ xác suất chung chính là giá trị kỳ vọng của hàm mất mát trên toàn bộ phân phối của nhãn.
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -405,20 +409,20 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-*dịch đoạn phía trên*
+Hàm mất mát này đuợc gọi là hàm mát mát cross-entropy mà nó được sử dụng rất phổ biến trong các bài toán phân loại đa lớp.
+Ta có thể làm rõ tên gọi cross-entropy thông qua một vài điều cơ bản trong lý thuyết thông tin.
 
 <!--
 ## Information Theory Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết Thông tin Cơ bản
 
 <!--
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-*dịch đoạn phía trên*
-
+Lý thuyết thông tin quan tâm đến một lớp các bài toán về mã hóa, giải mã, truyền tải và xử lý thồng tin (hay còn được gọi là dữ liệu) thành một dạng ngắn gọn nhất có thể.
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
