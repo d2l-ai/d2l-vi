@@ -432,7 +432,6 @@ Indeed they turn out to be very close to each other.
 
 Trong trường hợp này, bởi vì chúng ta đã tự tổng hợp dữ liệu nên chúng ta biết chính xác giá trị đúng của các tham số.
 Vì vậy, chúng ta có thể đánh giá sự thành công của việc huấn luyện bằng cách so sánh giá trị đúng của các tham số với những giá trị học được thông qua quá trình huấn luyện. 
-
 Quả thật giá trị các tham số học được và giá trị chính xác của các tham số rất gần với nhau.  
 
 ```{.python .input  n=13}
