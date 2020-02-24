@@ -296,7 +296,7 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Vanishing and exploding gradients are common issues in very deep networks, unless great care is taking to ensure that gradients and parameters remain well controlled.
