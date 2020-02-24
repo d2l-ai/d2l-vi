@@ -543,7 +543,7 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 ## Model Prediction and Evaluation
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình dự đoán và đánh giá
 
 <!--
 After training the softmax regression model, given any example features,
@@ -553,13 +553,16 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện mô hình hồi qui softmax, với một số đặc trưng làm đầu vào, chúng ta có thể dự đoán xác suất đầu ra của mỗi nhãn. 
+Thông thường, chúng ta sử dụng nhãn với xác suất dự đoán cao nhất làm nhãn đầu ra. Một dự đoán là chính xác nếu nó nhất quán, trùng khớp với nhãn thật sự (nhãn).
+Trong phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
+Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác với tổng số mẫu được dự đoán.
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết 
 
 <!--
 * We introduced the softmax operation which takes a vector maps it into probabilities.
@@ -567,13 +570,15 @@ This is equal to the ratio between the number of correct predictions a nd the to
 * cross-entropy is a good measure of the difference between two probability distributions. It measures the number of bits needed to encode the data given our model.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta đã giới thiệu về toán tử softmax giúp chuyển một vector đầu vào sang các giá trị xác suất. 
+* Hồi qui softmax áp dụng cho bài toán phân loại. Nó sử dụng phân phối xác suất của loại đầu ra qua phép toán softmax. 
+* cross-entropy là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bits cần để biểu diễn dữ liệu của mô hình.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Show that the Kullback-Leibler divergence $D(p\|q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex function.
@@ -592,8 +597,21 @@ This is equal to the ratio between the number of correct predictions a nd the to
     * Extend this to more than two numbers.
 -->
 
-*dịch đoạn phía trên*
-
+1. Chứng minh rằng độ phân kì Kullback-Leibler $D(p\|q)$ không âm với mọi phân phối $p$ và $q$. Gợi ý: sử dụng bất đẳng thức Jensen, nghĩa là sử dụng bổ đề $-\log x$ là một hàm lồi.
+2. Chứng minh rằng $\log \sum_j \exp(o_j)$ là một hàm lồi với $o$.
+3. Chúng ta có thể tìm hiểu sự kết nối giữa họ hàm mũ và softmax sâu hơn.
+   * Tính đạo hàm cấp hai của cross-entropy loss $l(y,\hat{y})$ cho softmax. 
+   * Tính phương sai của phân phối được cho bởi $\mathrm{softmax}(o)$ và chứng minh rằng nó phù hợp với đạo hàm cấp 2 được tính ở trên.
+4. Giả sử rằng chúng ta có 3 lớp và xảy ra trường hợp xác suất của cho mỗi lớp là giống nhau, tức là vector xác suất là $(\frac{1}{3}, \frac{1}{3}, \frac{1}{3})$.
+   * Vấn đề là gì nếu chúng ta cố gắng thiết kế một mã nhị phân cho nó? Chúng ta có thể làm khớp cận dưới của entropy trên số lượng bits hay không? 
+   * Bạn có thể thiết kế một mã tốt hơn không? Gợi ý: Điều gì xảy ra nếu chúng ta cố gắng mã hoá 2 quan sát độc lập? Điều gì nếu chúng ta mã hoá $n$ phân phối đồng thời?
+5. Sofmax được hiểu bằng sự chuyển đổi được giới thiệu ở trên là một sự hiểu nhầm. Công thức thật sự của softmax là $\mathrm{RealSoftMax}(a, b) = \log (\exp(a) + \exp(b))$.
+   * Chứng minh rằng $\mathrm{RealSoftMax}(a, b) > \mathrm{max}(a, b)$.
+   * Chứng minh rằng điều này đảm bảo cho $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b)$ với $\lambda > 0$.
+   * Chứng minh rằng khi $\lambda \to \infty$ chúng ra có $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) \to \mathrm{max}(a, b)$.
+   * soft-min sẽ trông như thế nào? 
+   * Mở rộng điều này cho nhiều hơn 2 số.
+   
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
