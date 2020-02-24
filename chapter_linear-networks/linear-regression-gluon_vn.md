@@ -6,7 +6,6 @@
 -->
 
 # *dịch tiêu đề phía trên*
-Việc triển khai ngắn gọn Hồi quy tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
@@ -17,25 +16,21 @@ In practice, because data iterators, loss functions, optimizers, and neural netw
 -->
 
 *dịch đoạn phía trên*
-Sự quan tâm rộng rãi và mãnh liệt dành cho Deep Learning trong những năm gần đầy đã truyển cảm hứng cho nhiều công ty, viện nghiên cứu và cả những cá nhân có niềm yêu thích phát triển nhiều framework mã nguồn mở dành cho tự động hoá các công việc có tính chất lặp đi lặp lại trong việc triển khai các thuật toán hạ Gradient
 <!--
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
 *dịch đoạn phía trên*
-Trong phần này, mình sẽ chỉ ra cách làm thế nào để triển khai một mô hình hồi quy tuyến tính từ :numref:`sec_linear_scratch` một cách ngắn gọn bằng cách dùng Gluon
 <!--
 ## Generating the Dataset
 -->
 
 ## *dịch tiêu đề phía trên*
-Sinh tập dữ liệu
 <!--
 To start, we will generate the same dataset as in the previous section.
 -->
 
 *dịch đoạn phía trên*
-## Để bắt đầu, chúng ta sẽ sinh tập dữ liệu như ở phần trước
 ```{.python .input  n=2}
 import d2l
 from mxnet import autograd, gluon, np, npx
@@ -105,7 +100,7 @@ for X, y in data_iter:
 ## Defining the Model
 -->
 
-Định nghĩa Mô hình
+## Định nghĩa Mô hình
 
 <!--
 When we implemented linear regression from scratch (in :numref`sec_linear_scratch`), 
@@ -137,7 +132,6 @@ In the following example, our model consists of only one layer, so we do not rea
 But since nearly all of our future models will involve multiple layers, we will use it anyway just to familiarize you with the most standard workflow.
 -->
 
-*dịch đoạn phía trên*
 Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
 Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nạp vào module 'nn', giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là một chữ viết tắt của neural network)
 Đầu tiên ta sẽ định nghĩa một biến mẫu là 'net', tham chiếu đến thể hiện của class "Sequential'
@@ -159,7 +153,6 @@ In Gluon, the fully-connected layer is defined in the `Dense` class.
 Since we only want to generate a single scalar output, we set that number to $1$.
 -->
 
-*dịch đoạn phía trên*
 Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`
 Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào (inputs) được kết nối lần lượt với từng đầu ra (outputs) bằng một phép nhân ma trận với vector
 Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class 'Dense'
@@ -168,8 +161,7 @@ Bởi vì chúng ta chỉ mong muốn xuất gia một giá trị vô hướng, 
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singleneuron.svg)
-Hồi quy tuyến tính là một mạng nơ ron đơn tầng 
+![Hồi quy tuyến tính là một mạng nơ ron đơn tầng.](../img/singleneuron.svg)
 :label:`fig_singleneuron`
 
 ```{.python .input  n=6}
@@ -184,7 +176,6 @@ When we first try to pass data through our model, e.g., when we execute `net(X)`
 We will describe how this works in more detail in the chapter "Deep Learning Computation".
 -->
 
-*dịch đoạn phía trên*
 Để thuận tiện, điều đáng chú ý là
 Gluon không yêu cầu chúng ta định hình kích thước đầu vào (input) trong mỗi tầng
 Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào (inputs) cho mỗi tầng tuyến tính
@@ -361,7 +352,6 @@ print('Error in estimating b', true_b - b)
 -->
 
 ## *dịch tiêu đề phía trên*
- 
 <!--
 * Using Gluon, we can implement models much more succinctly.
 * In Gluon, the `data` module provides tools for data processing, the `nn` module defines a large number of neural network layers, and the `loss` module defines many common loss functions.
@@ -369,14 +359,12 @@ print('Error in estimating b', true_b - b)
 * Dimensionality and storage are automatically inferred (but be careful not to attempt to access parameters before they have been initialized).
 -->
 
-*dịch đoạn phía trên*
 
 <!--
 ## Exercises
 -->
 
 ## *dịch tiêu đề phía trên*
-## Bài tập
 <!--
 1. If we replace `l = loss(output, y)` with `l = loss(output, y).mean()`, we need to change `trainer.step(batch_size)` to `trainer.step(1)` for the code to behave identically. Why?
 2. Review the MXNet documentation to see what loss functions and initialization methods are provided in the modules `gluon.loss` and `init`. Replace the loss by Huber's loss.
@@ -421,13 +409,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Đăng Khoa
 
 <!-- Phần 4 -->
-* 
+*
 
 <!-- Phần 5 -->
-* 
+*
 
 <!-- Phần 6 -->
-* 
+*
 
 <!-- Phần 7 -->
-* 
+*
