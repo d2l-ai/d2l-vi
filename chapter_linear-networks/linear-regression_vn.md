@@ -256,7 +256,7 @@ Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it eq
 -->
 
 Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
-Lấy đạo hàm của sự mất mát $\mathbf{w}$ và đặt nó bằng $0$ để có được giải pháp phân tích:
+Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức:
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
