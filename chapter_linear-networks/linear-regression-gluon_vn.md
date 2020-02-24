@@ -287,7 +287,7 @@ For each minibatch, we go through the following ritual:
 * Update the model parameters by invoking our SGD optimizer (note that `trainer` already knows which parameters to optimize over, so we just need to pass in the minibatch size.
 -->
 
-Tạo những dự đoán bằng cách gọi `net(X)` và tính sự mất mát `l` (đường chuyền về phía trước)
+*  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
 * Tính gradient bằng cách gọi `l.backward()` (đường chuyền ngược).
 Cập nhật các tham số của mô hình bằng cách dẫn các tối ưu hóa của hạ gradient ngẫu nhiên (SGD) (chú ý rằng `trainer` đã biết được các tham số nào để tối ưu hóa hơn, nên chúng ta chỉ cần chuyền trong kích thước của minibatch.
 
