@@ -364,7 +364,6 @@ print('Error in estimating b', true_b - b)
 * MXNet's module `initializer` provides various methods for model parameter initialization.
 * Dimensionality and storage are automatically inferred (but be careful not to attempt to access parameters before they have been initialized).
 -->
-*dịch đoạn phía trên*	
 
 
 <!--
