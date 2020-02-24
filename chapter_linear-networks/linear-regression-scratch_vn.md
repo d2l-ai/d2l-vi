@@ -452,7 +452,7 @@ owing partly to the fact that, for deep networks, there exist many configuration
 -->
 
 Lưu ý rằng chúng ta không nên thừa nhận có thể khôi phục giá trị của các tham số một cách chính xác. 
-Điều này chỉ diễn ra với một số bài toán đặc biệt: các bài toán tối ưu lồi chặt với lượng dữ liệu "đủ" để đảm bảo rằng các mẫu nhiễu cho phép chúng ta khôi phục sự phụ thuộc bên dưới. 
+Điều này chỉ xảy ra với một số bài toán đặc biệt: các bài toán tối ưu lồi chặt với lượng dữ liệu "đủ" để đảm bảo rằng các mẫu nhiễu vẫn cho phép chúng ta khôi phục được các tham số.
 Trong hầu hết các trường hợp, đây *không* là vấn đề. 
 Trong thực tế, các tham số của một mạng học sâu hiếm khi giống nhau (hoặc thậm chí gần nhau) giữa hai lần chạy khác nhau, trừ khi tất cả các điều kiện đều giống hệt nhau, bao gồm cả thứ tự mà dữ liệu được duyệt qua.
 Tuy nhiên, trong học máy, chúng ta thường ít quan tâm đến việc khôi phục chính xác giá trị của các tham số, mà quan tâm nhiều hơn đến bộ tham số nào sẽ dẫn tới việc dự đoán chính xác hơn. 
