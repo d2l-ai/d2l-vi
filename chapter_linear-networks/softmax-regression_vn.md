@@ -61,7 +61,7 @@ Sự khác biệt này thường không rõ ràng, một phần bởi vì thông
 ## Classification Problems
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài toán Phân loại
 
 <!--
 To get our feet wet, let's start off with a simple image classification problem.
@@ -70,7 +70,10 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-*dịch đoạn phía trên*
+Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
+Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
+Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
+Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
 Next, we have to choose how to represent the labels.
@@ -81,7 +84,11 @@ If the categories had some natural ordering among them, say if we were trying to
 then it might even make sense to cast this problem as regression and keep the labels in this format.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần phải chọn cách biểu diễn nhãn. 
+Ta có hai cách làm hiển nhiên.
+Cách tự nhiên nhất có lẽ là chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
+Đây là một cách *lưu trữ* thông tin tuyệt vời trên máy tính.
+Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, sẽ là tự nhiên hơn nếu coi bài toán này là một bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
 
 <!--
 But general classification problems do not come with natural orderings among the classes.
@@ -90,7 +97,10 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-*dịch đoạn phía trên*
+Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
+Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
+Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
 
 $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 
@@ -98,7 +108,7 @@ $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ corresponding to "cat", $(0, 1, 0)$ to "chicken" and $(0, 0, 1)$ to "dog".
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, $y$ sẽ là một vector 3 chiều, với $(1, 0, 0)$ tương ứng với "mèo", $(0, 1, 0)$ ứng với "gà" và $(0, 0, 1)$ ứng với "chó".
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -631,7 +641,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
