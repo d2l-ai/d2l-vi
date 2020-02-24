@@ -255,7 +255,7 @@ Thus there is just one critical point on the loss surface and it corresponds to 
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-Vì vậy có một điểm quan trọng trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất.
+Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
 Lấy đạo hàm của sự mất mát $\mathbf{w}$ và đặt nó bằng $0$ để có được giải pháp phân tích:
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
