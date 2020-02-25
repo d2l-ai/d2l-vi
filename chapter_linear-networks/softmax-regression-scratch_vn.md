@@ -187,7 +187,7 @@ Next, we need to implement the cross-entropy loss function, introduced in :numre
 This may be the most common loss function in all of deep learning because, at the moment, classification problems far outnumber regression problems.
 -->
 
-Tiếp đến chúng ta cần thực thi hàm mất mát cross-function được giới thiệu ở :numref:`sec_softmax`.
+Tiếp đến chúng ta cần thực thi hàm mất mát cross-function đã được giới thiệu ở :numref:`sec_softmax`.
 Đây có lẽ là hàm mất mát thông dụng nhất trong tất cả nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội số lượng bài toán về hồi quy.
 
 <!--
@@ -198,7 +198,7 @@ Below, we illustrate the `pick` function on a toy example, with $3$ categories a
 -->
 
 Cần ghi nhớ rằng cross-entropy có chứa negative log likelihood của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
-Thay vì sử dụng lặp lại sự tiên doán với vòng lặp `for` trong Python (kém hiệu quả),
+Thay vì sử dụng lặp lại sự tiên đoán bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
 chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các thuật ngữ thích hợp từ ma trận của các biến đầu vào softmax.
 Sau đây hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
 
@@ -211,7 +211,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-Bây giờ chúng ta có thể thục thi hàm mất mát cross-entropy đơn giản với một dòng lệnh.
+Bây giờ chúng ta có thể thực thi hàm mất mát cross-entropy hiệu quả hơn với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
