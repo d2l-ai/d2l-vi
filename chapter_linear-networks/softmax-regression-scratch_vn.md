@@ -120,7 +120,7 @@ Bây giờ chúng ta có thể bắt đầu thực thi hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
 Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
 Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
-Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả tính tổng thành $1$.
+Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
 Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
 $$
@@ -152,7 +152,7 @@ because failed to take precautions against numerical overflow or underflow due t
 Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không có giá trị âm.
 Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
 Chú ý rằng trong khi tính toán này đúng về mặt toán học, chúng ta có thể đơn giản hóa chương trình 
-bởi vì không cần thực hiện việc chống tràn số của ma trận với nhiều phần tử (hoặc chống underflow cho ma trận với phần tử rất nhỏ) như chúng ta đã thực hiện trong phần :numref:`sec_naive_bayes`.
+bởi vì không cần thực hiện việc chống tràn số của ma trận với phần tử có giá trị lớn (hoặc tránh giá trị quá nhỏ cho ma trận với phần tử có giá trị rất nhỏ) như chúng ta đã thực hiện trong phần :numref:`sec_naive_bayes`.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
