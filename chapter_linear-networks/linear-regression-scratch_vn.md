@@ -192,7 +192,7 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-Khi chạy các vòng lặp, chúng ta thu được các minibatch khác nhau cho đến đến khi chạy hết toàn bộ dữ liệu.
+Khi lặp qua các iterator, ta lấy từng lô dữ liệu (minibatch) cho đến đến khi lấy hết bộ dữ liệu.
 Mặc dù sử dụng các iterator để hiện thực như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
 Ví dụ, nó yêu cầu chúng ta nạp toàn bộ dữ liệu vào bộ nhớ và đòi hỏi rất nhiều các truy cập bộ nhớ ngẫu nhiên. 
 Các vòng lặp tích hợp sẵn trong Apache MXNet trong trường hợp này lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ lẫn các luồng dữ liệu. 
