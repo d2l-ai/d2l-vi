@@ -235,7 +235,7 @@ Recall from the autograd chapter that in order for `autograd` to know that it sh
 we need to invoke the `attach_grad` function, allocating memory to store the gradients that we plan to take.
 -->
 
-Bởi vì không ai muốn tính các gradient theo phương pháp thủ công (việc này rất tẻ nhạt và dễ xảy ra lỗi), chúng ta sử dụng vi phân tự động để tính gradient. 
+Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
 Xem :numref:`sec_autograd` để có thêm chi tiết.
 Nhắc lại về chương autograd, chúng ta biết rằng để `autograd` có thể lưu trữ gradient từ các tham số,
 ta cần gọi hàm `attach_grad`, cấp phát bộ nhớ bộ nhớ cho nó để lưu trữ các gradients mà ta sẽ sử dụng. 
