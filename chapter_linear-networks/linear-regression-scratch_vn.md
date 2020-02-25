@@ -284,7 +284,7 @@ In the implementation, we need to transform the true value `y` into the predicte
 The result returned by the following function will also be the same as the `y_hat` shape.
 -->
 
-Bởi việc cập nhật mô hình đòi hỏi trích xuất gradient của hàm mất mát, ta cần xác định hàm mất mát trước tiên.
+Để cập nhật mô hình ta cần tính gradient của hàm mất mát, vậy nên ta phải định nghĩa hàm mất mát trước tiên.
 ở đây chúng ta sẽ sử dụng hàm mất mát bình phương đã được trình bày ở phần trước.
 Trong quá trình thực thi, chúng ta cần chuyển đổi giá trị thực `y` sang kích thước của giá trị dự đoán `y_hat`.
 Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước như kích thước của `y_hat`.
