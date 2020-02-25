@@ -259,7 +259,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *dịch tiêu đề phía trên*
+### *Nghiệm theo công thức*
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
@@ -269,14 +269,19 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
+Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
+Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
+Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
+Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt.
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-*dịch đoạn phía trên*
+Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
+Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức:
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
@@ -285,7 +290,8 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-*dịch đoạn phía trên*
+Trong khi những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này.
+Trong khi các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có một nghiệm theo công thức khá chặt đến nỗi nó không được sử dụng trong học sâu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -934,7 +940,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tạ H. Duy Nguyên
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 * Lê Gia Thiên Bửu

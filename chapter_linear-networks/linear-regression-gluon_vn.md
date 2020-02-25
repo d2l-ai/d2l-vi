@@ -187,7 +187,7 @@ We will describe how this works in more detail in the chapter "Deep Learning Com
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo tham số mô hình
 
 <!--
 Before using `net`, we need to initialize the model parameters, such as the weights and biases in the linear regression model.
@@ -199,7 +199,13 @@ The *bias* parameter will be initialized to zero by default.
 Both the weight vector and bias will have attached gradients.
 -->
 
-*dịch đoạn phía trên*
+Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và độ chệch trong mô hồi quy tuyến tính.
+Chúng ta sẽ nhập mô-đun `initializer` từ MXNet.
+Mô-đun này cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
+Gluon cho phép dùng `init` như một cách ngắn gọn (viết tắt) để truy cập đến gói `initializer`.
+Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các `trọng số` từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
+Mặc định, tham số *độ chệch* sẽ được khởi tạo bằng không.
+Cả hai vector trọng số và độ chệch sẽ có gradient kèm theo.
 
 ```{.python .input  n=7}
 from mxnet import init
@@ -215,7 +221,12 @@ The real initialization will take place only when we for the first time attempt 
 Just be careful to remember that since the parameters have not been initialized yet, we cannot access or manipulate them.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã nguồn trên trông khá trực quan nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
+Chúng ta khởi tạo các tham số cho một mạng mà thậm chi Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
+Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000$.
+Gluon khiến chúng ta không cần bận tâm về điều này bởi ở phía sau bức màn, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
+Quá trình khởi tạo thực sự chỉ bắt đầu khi chúng ta truyền dữ liệu vào mạng lần đầu tiên.
+Hãy ghi nhớ rằng, do các tham số chưa thực sự được khởi tạo, chúng ta không thể truy cập hoặc thao tác với chúng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -225,7 +236,7 @@ Just be careful to remember that since the parameters have not been initialized 
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm mất mát
 
 <!--
 In Gluon, the `loss` module defines various loss functions.
@@ -233,7 +244,9 @@ We will use the imported module `loss` with the pseudonym `gloss`, to avoid conf
 In this example, we will use the Gluon implementation of squared loss (`L2Loss`).
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
+Chúng ta sẽ sử dụng mô-đun `loss` được thêm vào dưới tên gọi là `gloss`, để tránh nhầm lẫn nó với biến đang giữ hàm mất mát mà ta đã chọn.
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss
@@ -248,7 +261,7 @@ loss = gloss.L2Loss()  # The squared loss is also known as the L2 norm loss
 ## Defining the Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Thuật toán Tối ưu hóa
 
 <!--
 Minibatch SGD and related variants are standard tools for optimizing neural networks and thus Gluon supports SGD alongside a number of variations on this algorithm through its `Trainer` class.
@@ -257,7 +270,9 @@ the optimization algorithm we wish to use (`sgd`), and a dictionary of hyper-par
 SGD just requires that we set the value `learning_rate`, (here we set it to 0.03).
 -->
 
-*dịch đoạn phía trên*
+Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron và vì vậy Gluon hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainers` của nó.
+Khi chúng ta khởi tạo lớp `Trainer`, ta sẽ chỉ định các tham số để tối ưu hóa (có thể lấy từ các mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng ta muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng ta.
+SGD chỉ yêu cầu rằng chúng ta sẽ đặt giá trị `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
 from mxnet import gluon
@@ -272,7 +287,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.03})
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn Luyện
 
 <!--
 You might have noticed that expressing our model through Gluon requires comparatively few lines of code.
@@ -281,14 +296,18 @@ Once we start working with much more complex models, Gluon's advantages will gro
 However, once we have all the basic pieces in place, the training loop itself is strikingly similar to what we did when implementing everything from scratch.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy rằng việc thể hiện mô hình của chúng ta thông qua Gluon đòi hỏi tương đối ít các dòng lệnh.
+Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm số mất mát, hay triển khai hạ gradient ngẫu nhiên.
+Lợi ích Gluon mang lại càng nhiều khi chúng ta làm với những mô hình càng phức tạp.
+Tuy nhiên, một khi ta nắm được rõ các điều cơ bản, vòng huấn luyện tự thân nó sẽ trông rất giống với những gì chúng ta tự thực hiện từ đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
 For each minibatch, we go through the following ritual:
 -->
 
-*dịch đoạn phía trên*
+Để nhắc lại: cho một vài epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
+Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
 
 <!--
 * Generate predictions by calling `net(X)` and calculate the loss `l` (the forward pass).
@@ -296,14 +315,15 @@ For each minibatch, we go through the following ritual:
 * Update the model parameters by invoking our SGD optimizer (note that `trainer` already knows which parameters to optimize over, so we just need to pass in the minibatch size.
 -->
 
-*dịch đoạn phía trên*
+*  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
+* Tính gradient bằng cách gọi `l.backward()` (theo chiều ngược).
+* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
 -->
 
-*dịch đoạn phía trên*
-
+Để có được độ đo lường chính xác, chúng ta tính sự mất mát sau mỗi epoch và in nó ra màn hình trong lúc thực thi. 
 ```{.python .input  n=10}
 num_epochs = 3
 for epoch in range(1, num_epochs + 1):
@@ -408,13 +428,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Văn Tâm
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 5 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 *

@@ -321,7 +321,13 @@ Because our loss is calculated as a sum over the batch of examples, we normalize
 so that the magnitude of a typical step size does not depend heavily on our choice of the batch size.
 -->
 
-*dịch đoạn phía trên*
+Tại mỗi bước, sử dụng một batch được rút ngẫu nhiên từ mẫu, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
+Tiếp theo đó, chúng ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
+Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi ‘backward’, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
+Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
+Kích cỡ của bước cập nhật được xác định bởi tốc độ học `lr`.
+Bởi vì các mất mát được tính dựa trên tổng các mẫu của batch, chúng ta chuẩn hóa kích cỡ bước cập nhật theo kích cỡ của batch (`batch_size`),  sao cho độ lớn của một bước cập nhật thông thường không phụ thuộc nhiều vào kích cỡ batch.
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -338,14 +344,15 @@ def sgd(params, lr, batch_size):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Now that we have all of the parts in place, we are ready to implement the main training loop.
 It is crucial that you understand this code because you will see nearly identical training loops over and over again throughout your career in deep learning.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, sau khi đã có tất cả các thành phần, chúng ta đã sẵn sàng để viết vòng lặp huấn luyện.
+Quan trọng nhất là bạn phải hiểu được rõ đoạn mã này bởi vì việc huấn luyện gần như tương tự thế này sẽ được lặp lại nhiều lần trong suốt qua trình chúng ta tìm hiểu và lập trình các thuật toán học sâu.
 
 <!--
 In each iteration, we will grab minibatches of models, first passing them through our model to obtain a set of predictions.
@@ -355,7 +362,10 @@ Finally, we will call the optimization algorithm `sgd` to update the model param
 Since we previously set the batch size `batch_size` to $10$, the loss shape `l` for each minibatch is ($10$, $1$).
 -->
 
-*dịch đoạn phía trên*
+Trong mỗi vòng lặp, đầu tiên chúng ta sẽ lấy ra các minibatch dữ liệu và chạy nó qua mô hình để lấy ra tập kết quả dự đoán.
+Sau khi tính toán sự mất mát, chúng ta dùng hàm `backward` để bắt đầu lan truyền ngược qua mạng lưới, lưu trữ các gradient tương ứng với mỗi tham số trong từng thuộc tính `.grad` của chúng.
+Cuối cùng, chúng ta sẽ dùng thuật toán tối ưu `sgd` để cập nhật các tham số của mô hình.
+Từ đầu chúng ta đã đặt kích thước batch `batch_size` là $10$, vậy nên mất mát `I` cho mỗi minibatch có kích thước là ($10$,$1$).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -549,7 +559,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 8 -->
 * Nguyễn Trường Phát

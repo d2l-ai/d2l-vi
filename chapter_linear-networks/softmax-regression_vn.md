@@ -5,7 +5,7 @@
 # Softmax Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Hồi quy Softmax
 :label:`sec_softmax`
 
 <!--
@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, tự xây dựng mô hình hồi quy tuyến tính từ đầu trong :numref:`sec_linear_scratch` và xây dựng mô hình hồi quy tuyến tính một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -21,13 +21,14 @@ If you want to predict the number of dollars (the *price*) at which a house will
 or the number of days that a patient will remain hospitalized before being discharged, then you are probably looking for a regression model.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy là công cụ đắc lực có thể sử dụng khi ta muốn trả lời câu hỏi *bao nhiêu?*.
+Nếu bạn muốn dự đoán một ngôi nhà sẽ được bán với giá bao nhiêu tiền (*Đô la*), hay số trận thắng mà một đội bóng có thể đạt được, hoặc số ngày một bệnh nhân phải điều trị nội trú trước khi được xuất viện, thì có lẽ bạn đang cần một mô hình hồi quy.
 
 <!--
 In practice, we are more often interested in classification: asking not *how much?* but *which one?*
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn: không phải câu hỏi *bao nhiêu?* mà là *loại nào?*
 
 <!--
 * Does this email belong in the spam folder or the inbox*?
@@ -36,7 +37,10 @@ In practice, we are more often interested in classification: asking not *how muc
 * Which movie is Aston most likely to watch next?
 -->
 
-*dịch đoạn phía trên*
+* Email này có phải thư rác/lừa đảo hay không?
+* Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?
+* Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
+* Aston có khả năng xem bộ phim nào tiếp theo nhất?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -45,7 +49,9 @@ i.e., to assess the *probability* that each category applies.
 The distinction tends to get blurred, in part, because often, even when we only care about hard assignments, we still use models that make soft assignments.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán khác nhau đôi chút:
+(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là cún, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là cún (92%), là gà (1%), là mèo (7%).
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -55,7 +61,7 @@ The distinction tends to get blurred, in part, because often, even when we only 
 ## Classification Problems
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài toán Phân loại
 
 <!--
 To get our feet wet, let's start off with a simple image classification problem.
@@ -64,7 +70,10 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-*dịch đoạn phía trên*
+Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
+Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
+Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
+Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
 Next, we have to choose how to represent the labels.
@@ -75,7 +84,11 @@ If the categories had some natural ordering among them, say if we were trying to
 then it might even make sense to cast this problem as regression and keep the labels in this format.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần phải chọn cách biểu diễn nhãn. 
+Ta có hai cách làm hiển nhiên.
+Cách tự nhiên nhất có lẽ là chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
+Đây là một cách *lưu trữ* thông tin tuyệt vời trên máy tính.
+Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, sẽ là tự nhiên hơn nếu coi bài toán này là một bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
 
 <!--
 But general classification problems do not come with natural orderings among the classes.
@@ -84,7 +97,10 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-*dịch đoạn phía trên*
+Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
+Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
+Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
 
 $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 
@@ -92,7 +108,7 @@ $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ corresponding to "cat", $(0, 1, 0)$ to "chicken" and $(0, 0, 1)$ to "dog".
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, $y$ sẽ là một vector 3 chiều, với $(1, 0, 0)$ tương ứng với "mèo", $(0, 1, 0)$ ứng với "gà" và $(0, 0, 1)$ ứng với "chó".
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -622,10 +638,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
@@ -653,4 +670,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
