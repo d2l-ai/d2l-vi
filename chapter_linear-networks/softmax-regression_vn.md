@@ -350,8 +350,8 @@ Since the softmax and the corresponding loss are so common, it is worth while un
 Plugging $o$ into the definition of the loss $l$ and using the definition of the softmax we obtain:
 -->
 
-Vì sotfmax và hàm mất mát ứng với nó ngày càng được phổ biến nên việc tìm hiểu rõ về cách tính nó thì sẽ càng tốt.
-Việc thêm $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax để biến đổi, từ đó ta được:
+Vì softmax và hàm mất mát tương ứng khá phổ biến, việc hiểu cách tính toán chúng rõ hơn sẽ rất đáng công sức bỏ ra.
+Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
 
 $$
 l = -\sum_j y_j \log \hat{y}_j = \sum_j y_j \log \sum_k \exp(o_k) - \sum_j y_j o_j
@@ -362,7 +362,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-Để hiểu rõ hơn một chút, ta hãy lấy đạo hàm riêng của $l$ theo $o$, ta được:
+Để hiểu rõ hơn một chút, ta xét đạo hàm riêng của $l$ theo $o$. Ta sẽ được:
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -376,9 +376,10 @@ This fact makes computing gradients easy in practice.
 -->
 
 Nói cách khác, gradient chính là hiệu giữa xác xuất dự đoán đúng của mô hình, được ký hiệu là $P(y \mid x)$, và lớp thật sự đúng của dữ liệu, được ký hiệu là $y$.
-Ta sẽ thấy tương tự như trong hồi quy, gradient cũng chính là hiệu giữa kết quả của dữ liệu thu thập được $y$ và kết quả được ước lượng $\hat{y}$. Đây hoàn toàn không phải là sự trùng hợp.
+Điều này khá giống như trong hồi quy, khi mà gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. 
+Đây hoàn toàn không phải là sự trùng hợp.
 Trong bất kỳ mô hình nào [Mô hình họ mũ](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log-likelihood đều được định nghĩa một cách chính xác.
-Điều này, giúp cho việc tính toán gradient trong thực tế sẽ trở nên dễ dàng hơn.
+Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -657,4 +658,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
