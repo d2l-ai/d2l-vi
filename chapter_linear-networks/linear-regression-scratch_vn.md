@@ -193,7 +193,7 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 -->
 
 Khi chạy các vòng lặp, chúng ta thu được các minibatch khác nhau cho đến đến khi chạy hết toàn bộ dữ liệu.
-Mặc dù các vòng lặp triển khai ở trên thể hiện tốt cho việc giảng dạy, nó lại không phải là một phương án hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong các vấn đề thực tế.
+Mặc dù sử dụng các iterator để hiện thực như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
 Ví dụ, nó yêu cầu chúng ta nạp toàn bộ dữ liệu vào bộ nhớ và đòi hỏi rất nhiều các truy cập bộ nhớ ngẫu nhiên. 
 Các vòng lặp tích hợp sẵn trong Apache MXNet trong trường hợp này lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ lẫn các luồng dữ liệu. 
 
