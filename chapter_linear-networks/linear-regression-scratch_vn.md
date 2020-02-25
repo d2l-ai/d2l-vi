@@ -308,7 +308,7 @@ Since none of the other models that this book introduces
 can be solved analytically, we will take this opportunity to introduce your first working example of stochastic gradient descent (SGD).
 -->
 
-Như đã thảo luận ở mục trước, hồi quy tuyến tính có một giải pháp dạng đóng. 
+Như đã thảo luận ở mục trước, hồi quy tuyến tính có một nghiệm (dạng đóng)[https://vi.wikipedia.org/wiki/Bi%E1%BB%83u_th%E1%BB%A9c_d%E1%BA%A1ng_%C4%91%C3%B3ng]. 
 Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là cuốn sách về học sâu. 
 Vì không một mô hình nào được trình bày trong cuốn sách này 
 có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân đó giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (_stochastic gradient descent-SGD_)
