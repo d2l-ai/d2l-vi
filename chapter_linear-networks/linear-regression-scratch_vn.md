@@ -226,7 +226,7 @@ Given this gradient, we can update each parameter in the direction that reduces 
 -->
 
 Sau khi khởi tạo các tham số, bước tiếp theo đó là cập nhật chúng cho đến khi các tham số thỏa mãn dữ liệu của chúng ta. 
-Mỗi lần cập nhật, gradient (một đạo hàm đa chiều) của hàm mất mát dựa trên các tham số sẽ được sử dụng. 
+Mỗi lần cập nhật, tính gradient (đạo hàm đa chiều) của hàm mất mát theo các tham số. 
 Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm đi giá trị mất mát. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
