@@ -79,7 +79,7 @@ Recall that we need to *attach gradients* to the model parameters.
 More literally, we are allocating memory for future gradients to be stored and notifiying MXNet that we will want to calculate gradients with respect to these parameters in the future.
 -->
 
-Nhớ lại chúng ta cần *đính kèm gradients* vào các tham số của mô hình.
+Hãy nhớ rắng ta cần *đính kèm gradient* vào các tham số của mô hình.
 Thật sự , chúng ta đang phân bổ bộ nhớ cho các gradient ở tương lai để lưu trữ và thông báo MXNet rằng chúng ta sẽ muốn tính toán các gradients với các tham số này trong tương lai.
 
 
