@@ -14,7 +14,7 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-Như chúng ta đã xây dựng hồi quy tuyến tính từ đầu , chúng ta biết rằng hồi quy logistic (softmax) đa lớp như là nền tảng và bạn phải biết chi tiết nhất để làm cách nào xây dựng nó bằng chính bản thân bạn.
+Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự và bạn phải tự biết cách làm thế để xây dựng nó một cách chi tiết nhất.
 Cũng giống hồi quy tuyến tính, sau khi thực hiện tính toán bằng tay chúng ta sẽ thông qua triển khai của Gluon để so sánh.
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
