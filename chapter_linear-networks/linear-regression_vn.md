@@ -663,7 +663,7 @@ Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng v�
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
 -->
 
-Để thúc đẩy hồi quy tuyến tính với hàm mất mát trung bình bình phương sai số (MSE), ta có thể tiếp cận bằng cách giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau:
+Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau:
 
 $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
@@ -671,7 +671,7 @@ $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \ma
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
 -->
 
-Do đó, chúng ta có thể cho rằng *khả năng* thu được giá trị cụ thể của $y$ với $\mathbf{x}$ được cho biết trước thông qua:
+Do đó, chúng ta có thể viết *khả năng* thu được giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua:
 
 $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).$$
 
@@ -692,9 +692,9 @@ Working out the math gives us:
 -->
 
 Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE).
-Trong khi việc cực đại hóa tích của nhiều hàm mũ có thể gặp khó khăn, thay vào đó chúng ta có thể đơn giản hóa phép tính mà không ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa hàm log của chúng.
-Theo một vài nguyên nhân trước đó, các bài toán tối ưu hóa thường được hiểu như việc tìm ra giá trị nhỏ nhất thay vì bài toán tối đa hóa.
-Vì vậy chúng ta có thể cực tiểu hóa *hàm đối của log hợp lý (Negative Log-Likelihood - NLL)* $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì.
+Trong khi việc tối đa hóa tích của nhiều hàm mũ có thể gặp khó khăn, chúng ta có thể đơn giản hóa phép tính mà không làm ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa log của hàm hợp lý.
+Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa.
+Vì vậy chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì.
 Ta có:
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
