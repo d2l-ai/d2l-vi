@@ -573,7 +573,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
 
 * Chúng ta đã giới thiệu về toán tử softmax giúp ánh xạ một vector đầu vào sang các giá trị tạo thành 1 phân phối xác suất. 
 * Hồi quy softmax được áp dụng cho các bài toán phân loại. Nó sử dụng phân phối xác suất của các lớp đầu ra thông qua phép toán softmax. 
-* cross-entropy là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
+* Entropy chéo là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
 
 <!--
 ## Exercises
@@ -672,4 +672,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 * Đinh Minh Tân
-
