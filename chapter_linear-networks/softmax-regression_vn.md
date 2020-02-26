@@ -375,10 +375,10 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-Nói cách khác, gradient chính là hiệu giữa xác xuất dự đoán đúng của mô hình, được ký hiệu là $P(y \mid x)$, và lớp thật sự đúng của dữ liệu, được ký hiệu là $y$.
-Điều này khá giống như trong hồi quy, khi mà gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. 
-Đây hoàn toàn không phải là sự trùng hợp.
-Trong bất kỳ mô hình nào [Mô hình họ mũ](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log-likelihood đều được định nghĩa một cách chính xác.
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đó, được ký hiệu là $P(y \mid x)$, và nhãn của dữ liệu, được ký hiệu là $y$.
+Điều này khá giống với trong hồi quy, khi mà gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. 
+Đây hoàn toàn không phải là một sự trùng hợp.
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log-likelihood đều có dạng như thế này.
 Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
