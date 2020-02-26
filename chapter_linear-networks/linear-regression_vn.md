@@ -877,9 +877,9 @@ Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b
 2. Tìm công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
 Để đơn giản hơn, bạn có thể bỏ qua hệ số điều chỉnh $b$ ra khỏi bài toán (chúng ta có thể thực hiện việc này bằng cách thêm vào một cột toàn giá trị một vào $X$).
 * Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
-    * Tính gradient của sự mất mát với $w$.
+    * Tính gradient của hàm mất mát theo $w$.
     * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
-    * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu  nhiên? Khi nào phương pháp này không hoạt động?
+    * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu nhiên? Khi nào phương pháp này không hoạt động?
 3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối mũ. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
     * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
     * Bạn có thể tìm ra nghiệm theo công thức không?
