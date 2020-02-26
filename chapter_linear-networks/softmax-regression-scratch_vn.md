@@ -458,14 +458,15 @@ train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 <!--
 Now that training is complete, our model is ready to classify some images.
 Given a series of images, we will compare their actual labels (first line of text output) and the model predictions (second line of text output).
 -->
 
-*dịch đoạn phía trên*
+Bây giờ khi việc huấn luyện hoàn thành, mô hình của chúng ta sẵn sàng để phân loại các ảnh.
+Cho trước một chuỗi các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
 # Saved in the d2l package for later use
@@ -484,7 +485,7 @@ predict_ch3(net, test_iter)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 With softmax regression, we can train models for multi-category classification.
@@ -492,13 +493,15 @@ The training loop is very similar to that in linear regression: retrieve and rea
 As you will soon find out, most common deep learning models have similar training procedures.
 -->
 
-*dịch đoạn phía trên*
+Với hồi quy softmax, chúng ta có thể huấn luyện các mô hình cho bài toán phân loại đa lớp.
+Vòng lặp huấn luyện rất giống với vòng lặp trong hồi quy tuyến tính: truy xuất và đọc dữ liệu, đinh nghĩa các mô hình và các hàm mất mát, sau đó huấn luyện các mô hình này sử dụng các giải thuật tối ưu.
+Như bạn sẽ sớm nhận thấy, hầu hết những mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự nhau.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. In this section, we directly implemented the softmax function based on the mathematical definition of the softmax operation. 
@@ -510,7 +513,11 @@ What could be the problem with this implementation (hint: consider the domain of
 5. Assume that we want to use softmax regression to predict the next word based on some features. What are some problems that might arise from a large vocabulary?
 -->
 
-*dịch đoạn phía trên*
+1. Trong mục này, chúng ta đã thực hiện hàm softmax dựa vào các định nghĩa toán học của phép toán softmax. Điều này có thể gây ra những vấn đề gì (gợi ý: thử tính $\exp(50)$)?
+2. Hàm `cross_entropy` trong mục này được thực hiện dựa vào định nghĩa của hàm mất mát entropy chéo. Điều gì có thể là vấn đề của cách thực hiện này (gợi ý: xem xét miền của hàm log)?
+3. Hãy tìm các giải pháp để giải quyết hai vấn đề trên?
+4. Trả về nhãn có khả năng nhất có phải luôn là một ý tưởng tốt. Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
+5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -558,4 +565,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Lê Cao Thăng
