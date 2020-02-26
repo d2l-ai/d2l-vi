@@ -179,7 +179,7 @@ For example, if $\hat{y}_1$, $\hat{y}_2$, and $\hat{y}_3$ are $0.1$, $.8$, and $
 -->
 
 Nói một cách chính quy hơn, ta mong muốn diễn dịch kết quả $\hat{y}_k$ là xác suất để một điểm dữ liệu cho trước thuộc về một lớp $k$ nào đó.
-Sau đó, ta có thể dự đoán lớp cho điểm đó là số thứ tự của lớp mà tại đó giá trị xác suất của mô hình cho ra là lớn nhất $\operatorname*{argmax}_k y_k$.
+Sau đó, ta có thể chọn lớp cho điểm đó tương ứng với giá trị lớn nhất mà mô hình dự đoán $\operatorname*{argmax}_k y_k$.
 Ví dụ, nếu $\hat{y}_1$, $\hat{y}_2$ và $\hat{y}_3$ lần lượt là $0.1$, $0.8$, and $0.1$, thì ta có thể dự đoán điểm đó thuộc về lớp số $2$ là "gà" (ứng với trong ví dụ trước).
 
 <!--
