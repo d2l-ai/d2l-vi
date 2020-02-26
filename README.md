@@ -7,7 +7,7 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 * [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop)
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại [glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại [glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md).
 
 ## Thứ tự dịch
 
