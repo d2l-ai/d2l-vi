@@ -354,7 +354,7 @@ print('Error in estimating b', true_b - b)
 * Dimensionality and storage are automatically inferred (but be careful not to attempt to access parameters before they have been initialized).
 -->
 
-* Sử dùng Gluon giúp chúng ta có thể mô tả các mô hình súc tích hơn nhiều.
+* Sử dụng Gluon giúp việc mô tả các mô hình ngắn gọn hơn nhiều.
 * Trong Gluon, khối 'data' cung cấp các công cụ để xử lý dữ liệu, khối 'nn' mô tả một lượng lớn các lớp mạng neural, và khối 'loss' cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
 * Khối 'initializer' của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
 * Kích thước và dung lượng lưu trữ sẽ được suy ra tự động (nhưng cần cẩn thận đừng thử truy xuất các tham số trước khi chúng được khởi tạo).
