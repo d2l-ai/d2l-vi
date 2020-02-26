@@ -64,7 +64,7 @@ As with linear regression, we will initialize our weights $W$ with Gaussian nois
 Nhớ lại trong hồi quy softmax, chúng ta có nhiều đầu ra như nhiều loại.
 Bởi vì tập dữ liệu của chúng ta có  $10$ loại, và mạng lưới của chúng ta có chiều đầu ra là $10$.
 Nên, các trọng số của chúng ta sẽ tạo thành $784 \lần 10$ ma trận và các độ chệch sẽ tạo thành $1 \lần 10$ vector.
-Cũng như hồi quy tuyến tính, chúng ta khởi tạo các trọng số $W$ với nhiễu Gauss và các độ chệch để lấy được giá trị khởi tạo $0$.
+Cũng như hồi quy tuyến tính, ta sẽ khởi tạo các trọng số $W$ bằng nhiễu Gauss và các độ chệch sẽ được khởi tạo bằng $0$.
 
 ```{.python .input  n=3}
 num_inputs = 784
