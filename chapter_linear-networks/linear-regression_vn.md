@@ -880,9 +880,9 @@ Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b
     * Tính gradient của sự mất mát với $w$.
     * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
     * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu  nhiên? Khi nào phương pháp này không hoạt động?
-3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối theo cấp số nhân. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
-    * Viết ra hàm đối log hợp lý của dữ liệu dưới mô hình $-\log P(Y \mid X)$.
-    * Bạn có thể tìm ra giải pháp dạng khép kín không?
+3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối mũ. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+    * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
+    * Bạn có thể tìm ra nghiệm theo công thức không?
     * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
     * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm dừng như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
     
