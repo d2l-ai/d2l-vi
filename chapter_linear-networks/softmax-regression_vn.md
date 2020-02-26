@@ -571,7 +571,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
 * cross-entropy is a good measure of the difference between two probability distributions. It measures the number of bits needed to encode the data given our model.
 -->
 
-* Chúng ta đã giới thiệu về toán tử softmax giúp ánh xạ một vector đầu vào sang các giá trị tạo thành 1 phân phối xác suất. 
+* Chúng tôi đã giới thiệu về hàm softmax giúp ánh xạ một vector đầu vào sang các giá trị xác suất. 
 * Hồi quy softmax được áp dụng cho các bài toán phân loại. Nó sử dụng phân phối xác suất của các lớp đầu ra thông qua hàm softmax. 
 * Entropy chéo là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
 
