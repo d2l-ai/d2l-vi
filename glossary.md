@@ -104,6 +104,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example             | mẫu                    |                       |
 | expectation         | kỳ vọng                |                       |
 | explicit feedback   | phản hồi trực tiếp     |                       |
+| exponential distribution   | phân phối mũ    |                       |
 | expression (math)   | biểu thức (toán học)   |                       |
 | Eyeball dev set     | Tập phát triển Eyeball | http://bit.ly/2MVHcl7 |
 
@@ -279,6 +280,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | spam email                      | email rác                |                       |
 | speech recognition              | nhận dạng giọng nói      |                       |
 | standard deviation              | độ lệch chuẩn            |                       |
+| stationary point                | điểm dừng                |                       |
 | statistical power               | năng lực thống kê        |                       |
 | statistical significance        | ý nghĩa thống kê         |                       |
 | statistical significant         | có ý nghĩa thống kê      |                       |
