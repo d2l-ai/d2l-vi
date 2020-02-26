@@ -49,7 +49,7 @@ In this section, we will flatten each image, treating them as $784$ 1D vectors.
 In the future, we will talk about more sophisticated strategies for exploiting the spatial structure in images, but for now we treat each pixel location as just another feature.
 -->
 
-Cũng như ví dụ về hồi quy tuyến tính, mỗi ví dụ sẽ được đại diện cho mỗi chiều dài cố định của vector.
+Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
 Mỗi ví dụ trong dữ liệu thô là $28 \lần 28$ ảnh.
 Trong phần này, chúng ta sẽ làm phẵng mỗi ảnh, xem chúng như là vector một chiều có kích thước là $784$.
 Trong tương lai, chúng ta sẽ nói về các chiến lược tinh vi hơn để khai thác cấu trúc không gian của các ảnh, nhưng đến bây giờ chúng ta xe mỗi vị trí điểm ảnh như là các đặc trưng khác nhau. 
