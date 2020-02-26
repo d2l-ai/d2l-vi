@@ -657,7 +657,7 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, đồng thời tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị cực đỉnh của nó.
+Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, đồng thời tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
