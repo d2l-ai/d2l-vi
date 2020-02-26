@@ -327,7 +327,7 @@ As in our from-scratch implementation, note that our estimated parameters are cl
 
 Dưới đây, chúng ta so sánh các tham số của mô hình đã học thông qua việc huấn luyện trên tập dữ liệu hữu hạn và các tham số thực sự tạo ra tập dữ liệu. 
 Để truy xuất các tham số với Gluon, trước hết chúng ta đọc từ lớp 'net', rồi truy cập đến trọng số ('weight') và độ lệch ('bias') của lớp đó.
-Để truy xuất giá trị mỗi tham số dưới dạng một mảng 'ndarray', ta sử dụng phương thức 'data'.
+Để truy cập giá trị mỗi tham số dưới dạng một mảng 'ndarray', ta sử dụng phương thức 'data'.
 Để ý như trong phần hiện thực khái lược này của chúng ta, các tham số được ước lượng gần với các nhãn gốc tương ứng của chúng.
 
 ```{.python .input  n=12}
