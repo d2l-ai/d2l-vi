@@ -29,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-Chúng ta sẽ làm trên tập dữ liệu Fashion-MNIST, vừa được đưa vào: numref:`sec_fashion_mnist`,thiết lập vòng lập với kích cỡ batch là $256$
+Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một vòng lập với kích cỡ batch là $256$.
 
 ```{.python .input  n=2}
 batch_size = 256
