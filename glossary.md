@@ -178,6 +178,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |----------------------------|-------------------------------|---------------|
 | machine learning           | học máy                       |               |
 | marginalization            | phép biên hóa                 |               |
+| maximum likelihood estimator | bộ ước lượng hợp lý cực đại |               |
 | mean squared error (MSE)   | trung bình bình phương sai số |               |
 | metric                     | phép đo                       |               |
 | minibatch                  | minibatch                     |               |
@@ -194,6 +195,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | named entity                      | danh từ riêng                     |                                             |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                             |
 | negative sample/example           | mẫu âm                            |                                             |
+| negative log-likelihood           | hàm đối của log hợp lý            |                                             |
 | neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                             |                                             |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) |                                             |
