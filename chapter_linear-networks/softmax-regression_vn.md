@@ -176,7 +176,7 @@ our outputs are given by a matrix-vector product of our weights by our inputs pl
 ### Softmax Operation
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Softmax
 
 <!--
 The main approach that we are going to take here is to interpret the outputs of our model as probabilities.
@@ -184,7 +184,9 @@ We will optimize our parameters to produce probabilities that maximize the likel
 Then, to generate predictions, we will set a threshold, for example, choosing the *argmax* of the predicted probabilities.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ xem các giá trị đầu ra của mô hình là các giá trị xác suất.
+Ta sẽ tối ưu hóa các tham số của mô hình sao cho khả năng xuất hiện dữ liệu quan sát được là cao nhất.
+Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt ngưỡng xác suất, ví dụ dự đoán nhãn đúng là nhãn có xác suất cao nhất (dùng hàm *argmax*).
 
 <!--
 Put formally, we would like outputs $\hat{y}_k$ that we can interpret as the probability that a given item belongs to class $k$.
@@ -192,7 +194,9 @@ Then we can choose the class with the largest output value as our prediction $\o
 For example, if $\hat{y}_1$, $\hat{y}_2$, and $\hat{y}_3$ are $0.1$, $.8$, and $0.1$, respectively, then we predict category $2$, which (in our example) represents "chicken".
 -->
 
-*dịch đoạn phía trên*
+Nói một cách chính quy hơn, ta mong muốn diễn dịch kết quả $\hat{y}_k$ là xác suất để một điểm dữ liệu cho trước thuộc về một lớp $k$ nào đó.
+Sau đó, ta có thể chọn lớp cho điểm đó tương ứng với giá trị lớn nhất mà mô hình dự đoán $\operatorname*{argmax}_k y_k$.
+Ví dụ, nếu $\hat{y}_1$, $\hat{y}_2$ và $\hat{y}_3$ lần lượt là $0.1$, $0.8$, and $0.1$, thì ta có thể dự đoán điểm đó thuộc về lớp số $2$ là "gà" (ứng với trong ví dụ trước).
 
 <!--
 You might be tempted to suggest that we interpret the logits $o$ directly as our outputs of interest.
@@ -202,7 +206,11 @@ Moreover, depending on the inputs, they can take negative values.
 These violate basic axioms of probability presented in :numref:`sec_prob`
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể muốn đề xuất rằng ta có thể lấy trực tiếp logit $o$ làm đầu ra để tiến hành dự đoán.
+Tuy nhiên, tại đây ta có một vài vấn đề khi lấy kết quả trực tiếp của tầng tuyến tính như một kết quả cho xác suất.
+Bởi vì, không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
+Hơn nữa, tùy thuộc vào đầu vào mà ta có thể nhận được giá trị âm.
+Các điều kể trên đã vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`
 
 <!--
 To interpret our outputs as probabilities, we must guarantee that (even on new data), they will be nonnegative and sum up to 1.
@@ -211,7 +219,10 @@ Of all instances when a classifier outputs $.5$, we hope that half of those exam
 This is a property called *calibration*.
 -->
 
-*dịch đoạn phía trên*
+Để có thể diễn dịch kết quả đầu ra là xác xuất, ta phải đảm bảo rằng các kết quả không âm và tổng của chúng phải bằng 1 (điều này phải đúng trên cả dữ liệu mới).
+Hơn nữa, ta cần một hàm mục tiêu trong quá trình huấn luyện để cho mô hình có thể ước lượng *xác suất* một cách chính xác.
+Trong tất cả các trường hợp, khi kết quả phân lớp cho ra xác suất là $0.5$ thì ta hy vọng phân nửa số mẫu đó *thực sự* thuộc về đúng lớp được dự đoán.
+Đây được gọi là *hiệu chuẩn*.
 
 <!--
 The *softmax function*, invented in 1959 by the social scientist R Duncan Luce in the context of *choice models* does precisely this.
@@ -219,7 +230,8 @@ To transform our logits such that they become nonnegative and sum to $1$, while 
 we first exponentiate each logit (ensuring non-negativity) and then divide by their sum (ensuring that they sum to $1$).
 -->
 
-*dịch đoạn phía trên*
+*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce trong nhánh *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
+Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
 \hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{where}\quad
@@ -232,7 +244,9 @@ Thus, $\hat{y}$ is a proper probability distribution and the values of $\hat{\ma
 Note that the softmax operation does not change the ordering among the logits, and thus we can still pick out the most likely class by:
 -->
 
-*dịch đoạn phía trên*
+Dễ thấy rằng $\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$ với $0 \leq \hat{y}_i \leq 1$ với mọi $i$.
+Do đó, $\hat{y}$ là phân phối xác suất phù hợp và các giá trị của $\hat{\mathbf{y}}$ có thể được hiểu theo đó.
+Lưu ý rằng hàm softmax không thay đổi thứ tự giữa các logit và do đó ta vẫn có thể chọn ra lớp phù hợp nhất bằng cách: 
 
 $$
 \hat{\imath}(\mathbf{o}) = \operatorname*{argmax}_i o_i = \operatorname*{argmax}_i \hat y_i.
@@ -243,7 +257,8 @@ The logits $\mathbf{o}$ then are simply the pre-softmax values that determining 
 Summarizing it all in vector notation we get ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, where ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 -->
 
-*dịch đoạn phía trên*
+Các logit $\mathbf{o}$ đơn giản chỉ là các giá trị trước khi cho qua hàm softmax để xác định xác xuất thuộc về mỗi danh mục. 
+Tóm tắt lại, ta có ký hiệu dưới dạng vector như sau: ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, với ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -648,7 +663,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Lý Phi Long
 
 <!-- Phần 5 -->
 *
