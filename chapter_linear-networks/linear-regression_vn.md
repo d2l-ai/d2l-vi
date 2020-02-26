@@ -874,7 +874,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Assume that we have some data $x_1, \ldots, x_n \in \mathbb{R}$. Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.
@@ -893,7 +893,22 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử, chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
+Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
+    * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
+    * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
+2. Tìm công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
+Để đơn giản hơn, bạn có thể bỏ qua hệ số điều chỉnh $b$ ra khỏi bài toán (chúng ta có thể thực hiện việc này bằng cách thêm vào một cột toàn giá trị một vào $X$).
+* Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
+    * Tính gradient của hàm mất mát theo $w$.
+    * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
+    * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu nhiên? Khi nào phương pháp này không hoạt động?
+3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối mũ. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+    * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
+    * Bạn có thể tìm ra nghiệm theo công thức không?
+    * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
+    * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm dừng như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
 
@@ -981,4 +996,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Tâm
 
 <!-- Phần 18 -->
-*
+* Bùi Nhật Quân
