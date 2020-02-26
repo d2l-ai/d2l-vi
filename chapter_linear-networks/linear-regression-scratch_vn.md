@@ -285,7 +285,7 @@ The result returned by the following function will also be the same as the `y_ha
 -->
 
 Để cập nhật mô hình ta cần tính gradient của hàm mất mát, vậy nên ta phải định nghĩa hàm mất mát trước tiên.
-chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như trình bày ở phần trước.
+Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước.
 Trong thực tế, chúng ta cần chuyển đổi giá trị nhãn đúng `y` sang kích thước của giá trị dự đoán `y_hat`.
 Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước như kích thước của `y_hat`.
 
@@ -310,8 +310,8 @@ can be solved analytically, we will take this opportunity to introduce your firs
 
 Như đã thảo luận ở mục trước, hồi quy tuyến tính có một nghiệm (dạng đóng)[https://vi.wikipedia.org/wiki/Bi%E1%BB%83u_th%E1%BB%A9c_d%E1%BA%A1ng_%C4%91%C3%B3ng]. 
 Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là cuốn sách về học sâu. 
-Vì không một mô hình nào được trình bày trong cuốn sách này 
-có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân đó giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (_stochastic gradient descent-SGD_)
+Vì không một mô hình nào khác được trình bày trong cuốn sách này 
+có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân đó giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (_stochastic gradient descent -- SGD_)
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
