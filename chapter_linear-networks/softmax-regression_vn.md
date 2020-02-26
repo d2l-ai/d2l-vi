@@ -602,7 +602,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
 1. Chứng minh rằng độ phân kì Kullback-Leibler $D(p\|q)$ không âm với mọi phân phối $p$ và $q$. Gợi ý: sử dụng bất đẳng thức Jensen hay nghĩa là sử dụng bổ đề $-\log x$ là một hàm lồi.
 2. Chứng minh rằng $\log \sum_j \exp(o_j)$ là một hàm lồi với $o$.
 3. Chúng ta có thể tìm hiểu sâu hơn về sự liên kết giữa các họ hàm mũ và softmax.
-   * Tính đạo hàm cấp hai của hàm mất mát cross-entropy $l(y,\hat{y})$ cho softmax. 
+   * Tính đạo hàm cấp hai của hàm mất mát entropy chéo $l(y,\hat{y})$ cho softmax. 
    * Tính phương sai của phân phối được cho bởi $\mathrm{softmax}(o)$ và chứng minh rằng nó khớp với đạo hàm cấp 2 được tính ở trên.
 4. Giả sử rằng chúng ta có 3 lớp, xác suất xảy ra cho mỗi lớp bằng nhau, nói cách khác vector xác suất là $(\frac{1}{3}, \frac{1}{3}, \frac{1}{3})$.
    * Vấn đề là gì nếu chúng ta cố gắng thiết kế một mã nhị phân cho nó? Chúng ta có thể làm khớp cận dưới của entropy trên số lượng bits hay không? 
