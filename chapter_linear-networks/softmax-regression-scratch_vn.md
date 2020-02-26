@@ -80,7 +80,7 @@ More literally, we are allocating memory for future gradients to be stored and n
 -->
 
 Hãy nhớ rắng ta cần *đính kèm gradient* vào các tham số của mô hình.
-Thật sự , chúng ta đang phân bổ bộ nhớ cho các gradient ở tương lai để lưu trữ và thông báo MXNet rằng chúng ta sẽ muốn tính toán các gradients với các tham số này trong tương lai.
+Theo nghĩa đen, ta đang phân bổ bộ nhớ để lưu trữ các gradient trong tương lai và cho MXNet biết rằng ta sẽ muốn tính các gradients với các tham số này trong tương lai.
 
 
 ```{.python .input  n=4}
