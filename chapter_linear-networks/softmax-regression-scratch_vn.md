@@ -15,7 +15,7 @@ To begin, let's import the familiar packages.
 -->
 
 Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự và bạn phải tự biết cách làm thế để xây dựng nó một cách chi tiết nhất.
-Cũng giống hồi quy tuyến tính, sau khi thực hiện tính toán bằng tay chúng ta sẽ thông qua triển khai của Gluon để so sánh.
+Tương tự hồi quy tuyến tính, sau khi thực hiện mọi thứ bằng tay ta sẽ dùng Gluon để lập trình và đưa ra sự so sánh.
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
