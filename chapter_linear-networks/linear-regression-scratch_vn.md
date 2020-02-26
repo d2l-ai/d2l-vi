@@ -163,7 +163,7 @@ The shape of the features in each minibatch tells us both the minibatch size and
 Likewise, our minibatch of labels will have a shape given by `batch_size`.
 -->
 
-Để hiểu hơn, chúng ta hãy chạy đoạn chương trình mô tả việc đọc và in phần đầu tập các dữ liệu mẫu. 
+Để hiểu hơn, chúng ta hãy chạy đoạn chương trình để đọc và in ra batch đầu tiên của mẫu dữ liệu.
 Kích thước của các đặc trưng trong mỗi minibatch cho ta biết cả kích thước lẫn số của những đặc trưng được đưa vào.
 Tương tự, tập minibatch các nhãn của chúng ta sẽ có kích thước được xác định từ `batch_size`.
 
