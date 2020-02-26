@@ -134,7 +134,7 @@ Each minibatch consists of an tuple of features and labels.
 
 Một hiện thực khả dĩ của chức năng này được minh họa qua hàm `data_iter` dưới đây.
 Hàm này lấy kích thước một batch, một ma trận đặc trưng và một vector các nhãn rồi sinh ra các minibatch có kích thước `batch_size`.
-Mỗi minibatch gồm một nhóm các đặc trưng và các nhãn.
+Mỗi minibatch gồm một tuple các đặc trưng và nhãn.
 
 ```{.python .input  n=5}
 def data_iter(batch_size, features, labels):
