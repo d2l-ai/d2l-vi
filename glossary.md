@@ -35,6 +35,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | batch                   | batch                   |                       |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
+| bias (tham số mô hình) | hệ số điều chỉnh | |
 | big data                | big data                |                       |
 | binomial distribution   | phân phối nhị thức      |                       |
 | Blackbox dev set        | tập phát triển Blackbox | http://bit.ly/2MVHcl7 |
@@ -125,6 +126,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
 | generative model               | mô hình sinh                      |                                              |
 | generative adversarial network | mạng đối sinh                     |                                              |
+| global maximum | giá trị lớn nhất | |
+| global minimum | giá trị nhỏ nhất | |
 | gradient descent               | hạ gradient                       | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | graphical model                | mô hình đồ thị                    |                                              |
 | ground truth                   | nhãn gốc                          | http://bit.ly/34TljJ0                        |
@@ -168,9 +171,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear programming                 | quy hoạch tuyến tính           |                       |
 | linear regression                  | hồi quy tuyến tính             |                       |
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
+| local maximum | cực đại | |
+| local minimum | cực tiểu | |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
 | logistic regression                | hồi quy logistic               |                       |
 | logit (trong softmax)               | logit                          |                       |
+| log-likelihood function | hàm log hợp lý | |
 | loss function                      | hàm mất mát                    |                       |
 
 ## M
