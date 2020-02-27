@@ -127,14 +127,15 @@ d2l.plt.scatter(features[:, 1].asnumpy(), labels.asnumpy(), 1);
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc từ tập dữ liệu
 
 <!--
 Recall that training models consists of making multiple passes over the dataset, grabbing one minibatch of examples at a time, and using them to update our model.
 Since this process is so fundamental to training machine learning algorithms, its worth defining a utility function to shuffle the data and access it in minibatches.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng việc huấn luyện mô hình bao gồm tách tập dữ liệu thành nhiều phần (các mininbatch), lần lượt đọc từng phần của tập dữ liệu mẫu, và sử dụng chúng để cập nhật mô hình của chúng ta. 
+Vì quá trình này là cơ sở để huấn luyện các giải thuật học máy, ta nên định nghĩa một hàm để trộn và truy xuất dữ liệu trong các minibatch một cách tiện lợi.
 
 <!--
 In the following code, we define a `data_iter` function to demonstrate one possible implementation of this functionality.
@@ -142,7 +143,9 @@ The function takes a batch size, a design matrix, and a vector of labels, yieldi
 Each minibatch consists of an tuple of features and labels.
 -->
 
-*dịch đoạn phía trên*
+Một hiện thực khả dĩ của chức năng này được minh họa qua hàm `data_iter` dưới đây.
+Hàm này lấy kích thước một batch, một ma trận đặc trưng và một vector các nhãn rồi sinh ra các minibatch có kích thước `batch_size`.
+Mỗi minibatch gồm một tuple các đặc trưng và nhãn.
 
 ```{.python .input  n=5}
 def data_iter(batch_size, features, labels):
@@ -162,8 +165,8 @@ which excels at parallelizing operations.
 Because each example can be fed through our models in parallel and the gradient of the loss function for each example can also be taken in parallel,
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
-
-*dịch đoạn phía trên*
+Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
+Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ nhỉnh hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
@@ -171,7 +174,9 @@ The shape of the features in each minibatch tells us both the minibatch size and
 Likewise, our minibatch of labels will have a shape given by `batch_size`.
 -->
 
-*dịch đoạn phía trên*
+Để hiểu hơn, chúng ta hãy chạy đoạn chương trình để đọc và in ra batch đầu tiên của mẫu dữ liệu.
+Kích thước của các đặc trưng trong mỗi minibatch cho ta biết kích thước của batch lẫn kích thước của các đặc trưng đầu vào.
+Tương tự, tập minibatch của các nhãn sẽ có kích thước theo `batch_size`.
 
 ```{.python .input  n=6}
 batch_size = 10
