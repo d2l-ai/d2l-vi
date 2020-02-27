@@ -117,7 +117,7 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-Để đo lường các xác suất có điều kiện liên quan với các lớp với nhau, chúng ta cần một mô hình với nhiều đầu ra, mỗi đầu ra cho mỗi lớp.
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
 Để phần loại với các mô hình tuyến tính, chúng ta cần nhiều hàm tuyến tính như chúng ta có nhiều đầu ra.
 Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
 Trong trường hợp này, vì chúng ta có 4 đặc trưng và 3 loại đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số,
@@ -663,4 +663,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
