@@ -118,7 +118,7 @@ We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
 Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
-Để phần loại với các mô hình tuyến tính, chúng ta cần nhiều hàm tuyến tính như chúng ta có nhiều đầu ra.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
 Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
 Trong trường hợp này, vì chúng ta có 4 đặc trưng và 3 loại đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số,
 ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các độ chệch ($b$ với các chỉ số dưới).
