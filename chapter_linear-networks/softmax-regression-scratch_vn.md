@@ -220,7 +220,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-## *dịch tiêu đề phía trên*
+Độ chính xác cho bài toán phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
@@ -229,7 +229,10 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-*dịch đoạn phía trên*
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi ta cần đầu ra là một dự đoán cụ thể.
+Tuy nhiên, nhiều ứng dụng thực tế cần ta đưa ra sự lựa chọn cụ thể.
+Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
+Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuôi cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
 When predictions are consistent with the actual category `y`, they are correct.
@@ -238,7 +241,10 @@ Although it can be difficult optimize accuracy directly (it is not differentiabl
 it is often the performance metric that we care most about, and we will nearly always report it when training classifiers.
 -->
 
-*dịch đoạn phía trên*
+Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
+Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
+Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không không khác biệt),
+nhưng đây thường là độ đo về hiệu năng được quan tâm tới nhiều nhất và sẽ luôn được đề cập khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -250,7 +256,13 @@ The result is an `ndarray` containing entries of 0 (false) and 1 (true).
 Taking the mean yields the desired result.
 -->
 
-*dịch đoạn phía trên*
+Độ chính xác được tính toán như sau:
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm 
+Kết quả trả về sẽ có cùng kích thước với biến `y`
+và bây giờ ta chỉ cần so sánh hai ma trận.
+Vì operator `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
+Kết quả sẽ là một biến `ndarray` chứa các giá trị 0 (false) và 1 (true).
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -268,7 +280,10 @@ The second example's prediction category is $2$ (the largest element of the row 
 Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick` lần lượt tương ứng với dự đoán từ phân phối xác suất và nhãn.
+Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Dự đoán ở ví dụ thứ hai là $2$ (phần tự lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
@@ -279,7 +294,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên bộ dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -294,7 +309,7 @@ def evaluate_accuracy(net, data_iter):
 Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 -->
 
-*dịch đoạn phía trên*
+`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng nhiều số.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -318,7 +333,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-*dịch đoạn phía trên*
+Vì ta đã khởi tạo trước đó cho mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này là một con số ngẫu nhiên, ví dụ: $0.1$ cho $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
@@ -552,7 +567,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Quang Hải
 
 <!-- Phần 5 -->
 *
