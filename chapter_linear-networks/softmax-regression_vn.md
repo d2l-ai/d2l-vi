@@ -160,7 +160,6 @@ our outputs are given by a matrix-vector product of our weights by our inputs pl
 Để biểu diễn mô hình gọn hơn, chúng ta có thể sử dụng ký hiệu đại số tuyến tính.
 Ở dạng vector, ta có $\mathbf{o} = \mathbf{W} \mathbf{x} + \mathbf{b}$, một dạng phù hợp hơn cho cả toán và lập trình.
 Chú ý rằng chúng ta đã tập hợp tất cả các trọng số vào một ma trận $3\times4$ và với một mẫu cho trước $\mathbf{x}$, các đầu ra được tính bởi tích ma trận-vector của các trọng số và đầu vào cộng với vector hệ số điều chỉnh $\mathbf{b}$.
-các đầu ra của chúng ta được lấy bởi tích số một ma trận vector của các trọng số đầu vào cộng với các độ chệch $\mathbf{b}$.
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
