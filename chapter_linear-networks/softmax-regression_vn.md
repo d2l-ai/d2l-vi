@@ -137,7 +137,7 @@ We can depict this calculation with the neural network diagram shown in :numref:
 Just as in linear regression, softmax regression is also a single-layer neural network.
 And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all inputs, $x_1$, $x_2$, $x_3$, and $x_4$,
 the output layer of softmax regression can also be described as fully-connected layer.
---> 
+-->
 
 Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
 Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
