@@ -350,7 +350,7 @@ Since the softmax and the corresponding loss are so common, it is worth while un
 Plugging $o$ into the definition of the loss $l$ and using the definition of the softmax we obtain:
 -->
 
-Vì softmax và hàm mất mát tương ứng khá phổ biến, việc hiểu cách tính toán chúng rõ hơn sẽ rất đáng công sức bỏ ra.
+Vì softmax và hàm mất mát softmax rất phổ biến, nên việc hiểu cách tính giá trị các hàm này sẽ có ích về sau.
 Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
 
 $$
@@ -362,7 +362,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-Để hiểu rõ hơn một chút, ta xét đạo hàm riêng của $l$ theo $o$. Ta sẽ được:
+Để thấy rõ hơn, xét đạo hàm riêng của $l$ theo $o$. Ta có:
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -375,9 +375,9 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đó, được ký hiệu là $P(y \mid x)$, và nhãn của dữ liệu, được ký hiệu là $y$.
-Điều này khá giống với trong hồi quy, khi mà gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. 
-Đây hoàn toàn không phải là một sự trùng hợp.
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đó $P(y \mid x)$, và nhãn của dữ liệu $y$.
+Tương tự như trong bài toán hồi quy, gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
+Điều này không phải ngẫu nhiên.
 Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log-likelihood đều có dạng như thế này.
 Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
