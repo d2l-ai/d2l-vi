@@ -275,7 +275,7 @@ def linreg(X, w, b):
 ## Defining the Loss Function
 -->
 
-## Xác định Hàm mất mát
+## Định nghĩa Hàm Mất mát
 
 <!--
 Since updating our model requires taking the gradient of our loss function, we ought to define the loss function first.
