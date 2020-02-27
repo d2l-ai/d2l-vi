@@ -141,7 +141,7 @@ the output layer of softmax regression can also be described as fully-connected 
 
 Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
 Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
-Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, and $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, and $x_4$,
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, and $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$,tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng fully-connected.
 tầng đầu ra của hồi quy softmax có thể cũng được mô tả như là tầng fully-connected
 
 <!--
