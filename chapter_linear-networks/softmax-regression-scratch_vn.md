@@ -61,7 +61,7 @@ Consequently, our weights will constitute a $784 \times 10$ matrix and the biase
 As with linear regression, we will initialize our weights $W$ with Gaussian noise and our biases to take the initial value $0$.
 -->
 
-Nhớ lại trong hồi quy softmax, chúng ta có nhiều đầu ra như nhiều loại.
+Nhắc lại trong hồi quy softmax, chúng ta một đầu ra cho mỗi lớp.
 Bởi vì tập dữ liệu của chúng ta có  $10$ loại, và mạng lưới của chúng ta có chiều đầu ra là $10$.
 Do đó, các trọng số sẽ tạo thành một ma trận $784 \times 10$ và các độ chệch sẽ tạo thành một vector $1 \times 10$.
 Cũng như hồi quy tuyến tính, ta sẽ khởi tạo các trọng số $W$ bằng nhiễu Gauss và các độ chệch sẽ được khởi tạo bằng $0$.
