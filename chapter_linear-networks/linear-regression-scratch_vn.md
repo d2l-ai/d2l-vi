@@ -116,14 +116,14 @@ d2l.plt.scatter(features[:, 1].asnumpy(), labels.asnumpy(), 1);
 ## Reading the Dataset
 -->
 
-## Thực hiện đọc tập dữ liệu
+## Đọc từ tập dữ liệu
 
 <!--
 Recall that training models consists of making multiple passes over the dataset, grabbing one minibatch of examples at a time, and using them to update our model.
 Since this process is so fundamental to training machine learning algorithms, its worth defining a utility function to shuffle the data and access it in minibatches.
 -->
 
-Nhắc lại là các mô hình huấn luyện bao gồm việc tách tập tập dữ liệu thành nhiều phần (các mininbatch), việc lần lượt đọc từng phần của tập dữ liệu mẫu, và việc sử dụng chúng để cập nhật mô hình của chúng ta. 
+Nhắc lại rằng việc huấn luyện mô hình bao gồm tách tập dữ liệu thành nhiều phần (các mininbatch), lần lượt đọc từng phần của tập dữ liệu mẫu, và sử dụng chúng để cập nhật mô hình của chúng ta. 
 Vì quá trình này là cơ sở để huấn luyện các giải thuật học máy, ta nên định nghĩa một hàm để trộn và truy xuất dữ liệu trong các minibatch một cách tiện lợi.
 
 <!--
@@ -155,7 +155,7 @@ Because each example can be fed through our models in parallel and the gradient 
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
 Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
-Bởi mỗi một mẫu có thể được đưa vào mô hình của chúng ta song song và việc tính đạo hàm từng phần hàm mất mát cho mỗi mẫu có thể cũng được thực hiện cùng lúc, GPUs cho phép ta xử lý hàng trăm mẫu ít tốn thời gian hơn nhiều lần nếu thực hiện xử lý cho từng mẫu riêng lẻ.
+Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ nhỉnh hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
@@ -165,7 +165,7 @@ Likewise, our minibatch of labels will have a shape given by `batch_size`.
 
 Để hiểu hơn, chúng ta hãy chạy đoạn chương trình để đọc và in ra batch đầu tiên của mẫu dữ liệu.
 Kích thước của các đặc trưng trong mỗi minibatch cho ta biết kích thước của batch lẫn kích thước của các đặc trưng đầu vào.
-Tương tự, tập minibatch các nhãn của chúng ta sẽ có kích thước được xác định từ `batch_size`.
+Tương tự, tập minibatch của các nhãn sẽ có kích thước theo `batch_size`.
 
 ```{.python .input  n=6}
 batch_size = 10
