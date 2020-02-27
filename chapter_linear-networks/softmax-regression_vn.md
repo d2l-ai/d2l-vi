@@ -104,7 +104,7 @@ In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ correspon
 
 <!--
 ### Network Architecture
---> 
+-->
 
 ### Kiến trúc mạng
 
