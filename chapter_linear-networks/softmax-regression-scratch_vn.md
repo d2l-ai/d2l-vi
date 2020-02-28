@@ -151,8 +151,7 @@ because failed to take precautions against numerical overflow or underflow due t
 
 Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
 Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
-Chú ý rằng trong khi tính toán này đúng về mặt toán học, chúng ta có thể đơn giản hóa chương trình 
-bởi vì không cần thực hiện việc chống tràn số của ma trận với phần tử có giá trị lớn (hoặc tránh giá trị quá nhỏ cho ma trận với phần tử có giá trị rất nhỏ) như chúng ta đã thực hiện trong phần :numref:`sec_naive_bayes`.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng nó được xây dựng hơi cẩu thả, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
