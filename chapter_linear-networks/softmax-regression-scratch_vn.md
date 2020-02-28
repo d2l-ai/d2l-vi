@@ -211,7 +211,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-Bây giờ chúng ta có thể thực thi hàm mất mát cross-entropy hiệu quả hơn với một dòng lệnh.
+Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
