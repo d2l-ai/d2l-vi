@@ -144,7 +144,7 @@ But since nearly all of our future models will involve multiple layers, we will 
 Trong Gluon, 'Sequential' (*nối tiếp*) định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
 Khi nhận được dữ liệu đầu vào, 'Sequential' sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp
 Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết sử dụng 'Sequential'
-Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều liên quan đến nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình công việc tiêu chuẩn nhất
+Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
 from mxnet.gluon import nn
