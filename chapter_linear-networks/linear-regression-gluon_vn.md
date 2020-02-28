@@ -143,7 +143,7 @@ But since nearly all of our future models will involve multiple layers, we will 
 Đầu tiên ta sẽ định nghĩa một biến mẫu là 'net', tham chiếu đến thể hiện của class "Sequential'
 Trong Gluon, 'Sequential' (*nối tiếp*) định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
 Khi nhận được dữ liệu đầu vào, 'Sequential' sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp
-Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết sử dụng 'Sequential'
+Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng 'Sequential'
 Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
@@ -184,7 +184,7 @@ We will describe how this works in more detail in the chapter "Deep Learning Com
 Để thuận tiện, điều đáng chú ý là
 Gluon không yêu cầu chúng ta định hình kích thước đầu vào (input) trong mỗi tầng
 Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào (inputs) cho mỗi tầng tuyến tính
-Khi chúng ta cố gắng truyền dữ liệu qua mô hình của mình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
+Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
 Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
