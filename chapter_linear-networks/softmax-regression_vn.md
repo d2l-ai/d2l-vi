@@ -122,7 +122,7 @@ Trong trường hợp này, $y$ sẽ là một vector 3 chiều, với $(1, 0, 0
 ### Network Architecture
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiến trúc mạng
 
 <!--
 In order to estimate the conditional probabilities associated with each classes, we need a model with multiple outputs, one per class.
@@ -133,7 +133,11 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-*dịch đoạn phía trên*
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
+Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
+Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
+Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
 
 $$
 \begin{aligned}
@@ -150,13 +154,15 @@ And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all 
 the output layer of softmax regression can also be described as fully-connected layer.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
 <!--
 ![Softmax regression is a single-layer neural network.  ](../img/softmaxreg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/softmaxreg.svg)
+![Hồi quy sofmax là một mạng nơ-ron đơn tầng](../img/softmaxreg.svg)
 :label:`fig_softmaxreg`
 
 <!--
@@ -166,8 +172,9 @@ Note that we have gathered all of our weights into a $3\times4$ matrix and that 
 our outputs are given by a matrix-vector product of our weights by our inputs plus our biases $\mathbf{b}$.
 -->
 
-*dịch đoạn phía trên*
-
+Để biểu diễn mô hình gọn hơn, chúng ta có thể sử dụng ký hiệu đại số tuyến tính.
+Ở dạng vector, ta có $\mathbf{o} = \mathbf{W} \mathbf{x} + \mathbf{b}$, một dạng phù hợp hơn cho cả toán và lập trình.
+Chú ý rằng chúng ta đã tập hợp tất cả các trọng số vào một ma trận $3\times4$ và với một mẫu cho trước $\mathbf{x}$, các đầu ra được tính bởi tích ma trận-vector của các trọng số và đầu vào cộng với vector hệ số điều chỉnh $\mathbf{b}$.
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
@@ -660,7 +667,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-*
+*Bùi Nhật Quân
 
 <!-- Phần 4 -->
 * Lý Phi Long
