@@ -299,7 +299,7 @@ def squared_loss(y_hat, y):
 ## Defining the Optimization Algorithm
 -->
 
-## Định nghĩa thuật toán tối ưu
+## Định nghĩa Thuật toán Tối ưu
 
 <!--
 As we discussed in the previous section, linear regression has a closed-form solution.
