@@ -185,7 +185,7 @@ We will describe how this works in more detail in the chapter "Deep Learning Com
 Gluon không yêu cầu chúng ta định hình kích thước đầu vào (input) trong mỗi tầng
 Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào (inputs) cho mỗi tầng tuyến tính
 Khi chúng ta cố gắng truyền dữ liệu qua mô hình của mình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
-Chúng ta sẽ mô tả làm thế nào điều này hoạt động chi tiết hơn trong chương "Tính toán học tập sâu" sau.
+Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
