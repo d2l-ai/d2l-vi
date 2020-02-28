@@ -192,6 +192,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified              | bị phân loại nhầm             |               |
 | mislabeled                 | bị gán nhãn nhầm              |               |
 | model                      | mô hình                       |               |
+| module | mô-đun | |
 | multi-class classification | phân loại đa lớp              |               |
 | multinominal distribution  | phân phối đa thức             |               |
 | multitask learning         | học đa nhiệm                  |               |
