@@ -466,7 +466,7 @@ Given a series of images, we will compare their actual labels (first line of tex
 -->
 
 Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại các ảnh.
-Cho trước một chuỗi các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
+Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
 # Saved in the d2l package for later use
@@ -495,7 +495,7 @@ As you will soon find out, most common deep learning models have similar trainin
 
 Với hồi quy softmax, chúng ta có thể huấn luyện các mô hình cho bài toán phân loại đa lớp.
 Vòng lặp huấn luyện rất giống với vòng lặp huấn luyện của hồi quy tuyến tính: truy xuất và đọc dữ liệu, định nghĩa mô hình và hàm mất mát, và rồi huấn luyện mô hình sử dụng các giải thuật tối ưu.
-Như bạn sẽ sớm nhận thấy, hầu hết những mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự nhau.
+Rồi bạn sẽ thấy rằng hầu hết các mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự như vậy.
 
 <!--
 ## Exercises
@@ -518,7 +518,8 @@ What could be the problem with this implementation (hint: consider the domain of
 2. Hàm `cross_entropy` trong mục này được lập trình dựa vào định nghĩa của hàm mất mát entropy chéo. 
 Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý: xem xét miền của hàm log)?
 3. Bạn có thể nghĩ ra các giải pháp để giải quyết hai vấn đề trên không?
-4. Trả về nhãn có khả năng nhất có phải luôn là một ý tưởng tốt. Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
+4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? 
+Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
 5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. 
 Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
