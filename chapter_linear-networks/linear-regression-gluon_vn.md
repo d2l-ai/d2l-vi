@@ -372,7 +372,8 @@ print('Error in estimating b', true_b - b)
 -->
 
 1. Nếu thay thế 'l = loss(output, y)' bằng 'l = loss(output, y).mean()', chúng ta cần đổi 'traniner.step(batch_size)' thành 'trainer.step(1)' để phần mã nguồn này hoạt động giống như trước. Giải thích tại sao?
-2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai khối 'gluon.loss' và 'init'. Thay thế cách tính mất mát đang sử dụng bằng cách tính mất mát của Huber.
+2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô đun `gluon.loss` và `init`. 
+Thay thế hàm mất mát đang sử dụng bằng hàm mất mát Huber.
 3. Làm thế nào để truy cập gradient của `dense.weight`?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
