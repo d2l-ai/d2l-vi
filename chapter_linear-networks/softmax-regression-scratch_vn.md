@@ -97,7 +97,7 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 -->
 
 Trước khi triển khai mô hình hồi quy softmax, hãy xem xét ngắn gọn cách các toán tử như `sum` hoạt động theo nhiều chiều cụ thể trong một `ndarray`.
-Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`trục = 0`) hoặc cùng một hàng (`trục = 1`).
+Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
 Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (trục = 0`), kết quả sẽ là một vectơ (một chiều) có kích thước là `(3 ,)`.
 Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
 thay vì thu gọn kích thước mà chúng ta đã tính toán, chúng ta có thể gán `keepdims = True` khi gọi hàm `sum`.
