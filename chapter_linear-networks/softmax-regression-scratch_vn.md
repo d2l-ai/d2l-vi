@@ -200,7 +200,7 @@ Below, we illustrate the `pick` function on a toy example, with $3$ categories a
 Cần ghi nhớ rằng cross-entropy có chứa negative log likelihood của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
 Thay vì sử dụng lặp lại sự tiên đoán bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
 chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các thuật ngữ thích hợp từ ma trận của các biến đầu vào softmax.
-Sau đây hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
+Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
