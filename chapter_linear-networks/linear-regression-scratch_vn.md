@@ -212,7 +212,7 @@ Before we can begin optimizing our model's parameters by gradient descent, we ne
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
 
-Để tối ưu các tham số của dữ liệu bằng hạ gradient (*gradient descent*), đầu tiên ta cần khởi tạo chúng.
+Để tối ưu các tham số của dữ liệu bằng hạ gradient, đầu tiên ta cần khởi tạo chúng.
 Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán hệ số điều chỉnh $b$ bằng $0$.
 
 ```{.python .input  n=7}
