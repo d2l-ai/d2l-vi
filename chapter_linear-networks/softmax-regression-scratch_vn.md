@@ -167,7 +167,7 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-Bây giờ chúng ta định nghĩa phép tính softmax, sau đó chúng ta có thể thực thi mô hình hồi quy softmax.
+Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
 Đoạn mã sau xác định sự chuyển tiếp thông qua mạng.
 Chú ý rằng chúng ta nén mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
