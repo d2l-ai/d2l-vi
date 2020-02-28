@@ -149,7 +149,7 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không có giá trị âm.
+Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
 Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
 Chú ý rằng trong khi tính toán này đúng về mặt toán học, chúng ta có thể đơn giản hóa chương trình 
 bởi vì không cần thực hiện việc chống tràn số của ma trận với phần tử có giá trị lớn (hoặc tránh giá trị quá nhỏ cho ma trận với phần tử có giá trị rất nhỏ) như chúng ta đã thực hiện trong phần :numref:`sec_naive_bayes`.
