@@ -197,7 +197,7 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-Cần ghi nhớ rằng cross-entropy có chứa negative log likelihood của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
+Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
 Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
 chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các phần tử thích hợp từ ma trận của các biến softmax đầu vào.
 Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
