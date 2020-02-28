@@ -187,7 +187,7 @@ Next, we need to implement the cross-entropy loss function, introduced in :numre
 This may be the most common loss function in all of deep learning because, at the moment, classification problems far outnumber regression problems.
 -->
 
-Tiếp đến chúng ta cần thực thi hàm mất mát cross-function đã được giới thiệu ở :numref:`sec_softmax`.
+Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
 Đây có lẽ là hàm mất mát thông dụng nhất trong tất cả nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội số lượng bài toán về hồi quy.
 
 <!--
