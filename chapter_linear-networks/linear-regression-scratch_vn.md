@@ -248,7 +248,7 @@ b.attach_grad()
 ## Defining the Model
 -->
 
-## Xác định mô hình
+## Định nghĩa mô hình
 
 <!--
 Next, we must define our model, relating its inputs and parameters to its outputs.
