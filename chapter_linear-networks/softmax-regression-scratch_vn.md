@@ -116,7 +116,7 @@ Finally, we divide each row by its normalization constant, ensuring that the res
 Before looking at the code, let's recall what this looks expressed as an equation:
 -->
 
-Bây giờ chúng ta có thể bắt đầu thực thi hàm softmax.
+Bây giờ chúng ta có thể bắt đầu xây dựng hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
 Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
 Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
