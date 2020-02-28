@@ -141,7 +141,7 @@ But since nearly all of our future models will involve multiple layers, we will 
 Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
 Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào module 'nn', giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network)
 Đầu tiên ta sẽ định nghĩa một biến mẫu là 'net', tham chiếu đến thể hiện của class "Sequential'
-Trong Gluon, 'Sequential' định nghĩa một container chứa nhiều tầng liên kết với nhau
+Trong Gluon, 'Sequential' (*nối tiếp*) định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
 Khi nhận được dữ liệu đầu vào, 'Sequential' sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp
 Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết sử dụng 'Sequential'
 Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều liên quan đến nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình công việc tiêu chuẩn nhất
