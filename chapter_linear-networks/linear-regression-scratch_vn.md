@@ -213,7 +213,7 @@ In the following code, we initialize weights by sampling random numbers from a n
 -->
 
 Để tối ưu các tham số của dữ liệu bằng hạ gradient (*gradient descent*), đầu tiên ta cần khởi tạo chúng.
-Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán độ chệch $b$ bằng $0$.
+Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán hệ số điều chỉnh $b$ bằng $0$.
 
 ```{.python .input  n=7}
 w = np.random.normal(0, 0.01, (2, 1))
