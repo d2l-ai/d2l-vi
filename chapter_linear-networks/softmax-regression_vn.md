@@ -120,9 +120,8 @@ We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
 Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
 Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
-Trong trường hợp này, vì chúng ta có 4 đặc trưng và 3 loại đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số,
-($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các độ chệch ($b$ với các chỉ số dưới).
-Chúng ta sẽ tính ba *logits*, $o_1, o_2$, and $o_3$ , cho mỗi đầu vào:
+Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
+Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
 
 $$
 \begin{aligned}
@@ -141,7 +140,7 @@ the output layer of softmax regression can also be described as fully-connected 
 
 Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
 Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
-Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, and $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$,tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
 <!--
 ![Softmax regression is a single-layer neural network.  ](../img/softmaxreg.svg)
