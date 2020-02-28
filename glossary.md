@@ -150,8 +150,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                    | Tiếng Việt         | Thảo luận tại |
 |----------------------------|--------------------|---------------|
-| implement | xây dựng / lập trình | |
-| implementation | cách xây dựng / lập trình | |
+| implement | lập trình | |
+| implementation | cách lập trình | |
 | implicit feedback          | phản hồi gián tiếp |               |
 | imputation (Preprocessing) | quy buộc           |               |
 | independence assumption    | giả định độc lập   |               |
