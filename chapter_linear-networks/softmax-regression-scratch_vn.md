@@ -132,7 +132,7 @@ The denominator, or normalization constant, is also sometimes called the partiti
 The origins of that name are in [statistical physics](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) where a related equation models the distribution over an ensemble of particles).
 -->
 
-Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm partition (hàm phân vùng) (và logarit của nó được gọi là hàm log-partition).
+Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) (và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
 Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
