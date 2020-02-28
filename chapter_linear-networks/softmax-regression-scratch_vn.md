@@ -188,7 +188,7 @@ This may be the most common loss function in all of deep learning because, at th
 -->
 
 Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
-Đây có lẽ là hàm mất mát thông dụng nhất trong tất cả nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội số lượng bài toán về hồi quy.
+Đây có lẽ là hàm mất mát thông dụng nhất trong tất cả nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội hơn số lượng bài toán về hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
