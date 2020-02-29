@@ -86,7 +86,7 @@ b.attach_grad()
 ## The Softmax
 -->
 
-## *dịch tiêu đề phía trên*
+## Softmax
 
 <!--
 Before implementing the softmax regression model, let's briefly review how operators such as `sum` work along specific dimensions in an `ndarray`.
@@ -96,7 +96,11 @@ If we want to keep the number of axes in the original array (resulting in a 2D a
 rather than collapsing out the dimension that we summed over we can specify `keepdims=True` when invoking `sum`.
 -->
 
-*dịch đoạn phía trên*
+Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
+Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3 ,)`.
+Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
+thay vì thu gọn kích thước mà chúng ta đã tính toán, chúng ta có thể gán `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -112,7 +116,12 @@ Finally, we divide each row by its normalization constant, ensuring that the res
 Before looking at the code, let's recall what this looks expressed as an equation:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể bắt đầu xây dựng hàm softmax.
+Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
+Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
+Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
+Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
+Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
 $$
 \mathrm{softmax}(\mathbf{X})_{ij} = \frac{\exp(X_{ij})}{\sum_k \exp(X_{ik})}.
@@ -123,7 +132,8 @@ The denominator, or normalization constant, is also sometimes called the partiti
 The origins of that name are in [statistical physics](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) where a related equation models the distribution over an ensemble of particles).
 -->
 
-*dịch đoạn phía trên*
+Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) (và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
+Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
 def softmax(X):
@@ -139,7 +149,9 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
+Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng nó được xây dựng hơi cẩu thả, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
@@ -546,7 +558,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Lâm Ngọc Tâm
+* Vũ Hữu Tiệp
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 *
