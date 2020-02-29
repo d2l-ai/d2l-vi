@@ -359,7 +359,7 @@ It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
 Việc lặp để huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã đọc qua sự hiện thực cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
-Ở đây, chúng ta tái cấu trúc lại sự hiện thực để giúp nó có thể được tái sử dụng. 
+Ở đây, chúng ta tái cấu trúc lại đoạn mã để giúp nó có thể được tái sử dụng. 
 Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
 Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận giá trị kích thước batch làm thông số. 
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
