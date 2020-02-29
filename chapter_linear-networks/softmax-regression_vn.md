@@ -435,9 +435,9 @@ This quantity places a hard limit on our ability to compress the data.
 In information theory, this quantity is called the [entropy](https://en.wikipedia.org/wiki/Entropy) of a distribution $p$, and it is captured by the following equation:
 -->
 
-Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng nội dung thông tin chứa trong dữ liệu.
-Giá trị định lượng này giúp đặt ra một giới hạn cứng cho khả năng nén dữ liệu.
-Trong lý thuyết thông tin, gíá trị định lượng này được gọi là [entropy](https://en.wikipedia.org/wiki/Entropy) của một phân phối $p$, và được biễu diễn bằng phương trình dưới đây:
+Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu.
+Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng cô đọng dữ liệu của chúng ta (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin).
+Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây:
 
 $$
 H[p] = \sum_j - p(j) \log p(j).
@@ -450,8 +450,8 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 -->
 
-Một trong những lý thuyết cơ bản của lý thuyết thông tin là để có thể mã hóa dữ liệu được sinh ngẫu nhiên từ phân phối chuẩn $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nats".
-Nếu bạn thắc mắc một "nat" là gì, thì nó tương đương với bit nhưng sử dụng cơ số là $e$ thay vì cơ số là 2.
+Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat".
+"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit vị biểu diễn dữ liệu sử dụng cơ số là 2.
 Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ thường được gọi là entropy nhị phân.
 
@@ -472,12 +472,12 @@ Because they are always the same, we do not have to transmit any information to 
 Easy to predict, easy to compress.
 -->
 
-Bạn có lẽ đang thắc mắc quá trình nén dữ liệu thì cần dự đoán để làm gì.
-Hãy tưởng tượng chúng ta có một dòng dữ liệu mà ta đang muốn nén lại.
-Nếu chúng ta luôn có thể dễ dàng đoán được các phần dữ liệu kế tiếp thì dữ liệu này cũng rất dễ nén!
-Lấy một ví dụ mà tất cả các phần trong dòng dữ liệu nào đó luôn có cùng một giá trị.
-Một dòng dữ liệu tẻ nhạt làm sao!
-Và không chỉ tẻ nhạt, nó còn dễ đoán nữa.
+Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán?
+Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại.
+Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này cũng rất dễ nén!
+Ví như tất cả các ơn vị dữ liệu (token) trong dòng dữ liệu nào đó luôn là một giá trị cố định.
+Thì đây là một dòng dữ liệu tẻ nhạt!
+Không những tẻ nhạt, mà nó còn dễ đoán nữa.
 Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này.
 Dễ đoán thì cũng dễ nén là vậy.
 
@@ -668,4 +668,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
