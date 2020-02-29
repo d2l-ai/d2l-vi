@@ -327,7 +327,7 @@ As in our from-scratch implementation, note that our estimated parameters are cl
 
 Dưới đây, chúng ta so sánh các tham số của mô hình đã học thông qua việc huấn luyện trên tập dữ liệu hữu hạn và các tham số thực sự tạo ra tập dữ liệu. 
 Để truy xuất các tham số với Gluon, trước hết chúng ta đọc từ lớp 'net', rồi truy cập đến trọng số ('weight') và độ lệch ('bias') của lớp đó.
-Để truy cập giá trị mỗi tham số dưới dạng một mảng 'ndarray', ta sử dụng phương thức 'data'.
+Để truy cập giá trị mỗi tham số dưới dạng một mảng `ndarray`, ta sử dụng phương thức `data`.
 Giống như cách xây dựng từ đầu, các tham số ước lượng tìm được gần với giá trị chính xác của chúng.
 
 ```{.python .input  n=12}
@@ -355,8 +355,8 @@ print('Error in estimating b', true_b - b)
 -->
 
 * Sử dụng Gluon giúp việc mô tả các mô hình ngắn gọn hơn nhiều.
-* Trong Gluon, mô đun `data` cung cấp các công cụ để xử lý dữ liệu, mô đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
-* Khối 'initializer' của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
+* Trong Gluon, mô-đun `data` cung cấp các công cụ để xử lý dữ liệu, mô-đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô-đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
+* Mô-đun `initializer` của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
 * Kích thước và dung lượng lưu trữ sẽ được suy ra tự động (nhưng cẩn thận đừng thử truy xuất các tham số trước khi chúng được khởi tạo).
 
 <!--
@@ -373,7 +373,7 @@ print('Error in estimating b', true_b - b)
 
 1. Nếu thay thế `l = loss(output, y)` bằng `l = loss(output, y).mean()`, chúng ta cần đổi `trainer.step(batch_size)` thành `trainer.step(1)` để phần mã nguồn này hoạt động giống như trước. 
 Tại sao lại thế?
-2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô đun `gluon.loss` và `init`. 
+2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô-đun `gluon.loss` và `init`. 
 Thay thế hàm mất mát đang sử dụng bằng hàm mất mát Huber.
 3. Làm thế nào để truy cập gradient của `dense.weight`?
 
