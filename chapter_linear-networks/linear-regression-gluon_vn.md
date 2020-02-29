@@ -416,6 +416,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Phạm Đăng Khoa
+* Lê Khắc Hồng Phúc
+* Dương Nhật Tân
 
 <!-- Phần 4 -->
 *
