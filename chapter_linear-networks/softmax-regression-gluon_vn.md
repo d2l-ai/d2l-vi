@@ -15,7 +15,7 @@ Again, we begin with our import ritual.
 -->
 
 Giống như cách Gluon giúp việc thực hiện hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, chúng ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
-Một lần nữa, chúng ta bắt đầu bằng việc import.
+Một lần nữa, chúng ta bắt đầu bằng việc nhập gói thư viện.
 
 ```{.python .input  n=1}
 import d2l
