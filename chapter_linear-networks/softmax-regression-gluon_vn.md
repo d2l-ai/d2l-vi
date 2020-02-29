@@ -51,7 +51,7 @@ Again, we initialize the weights at random with zero mean and standard deviation
 
 Như đã đề cập trong :numref:`sec_softmax`, tầng output của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
 Do đó, để triển khai mô hình, chúng ta chỉ cần thêm một tầng `Dense` với 10 output vào đối tượng `Sequential`.
-Ở đây, việc sử dụng `Sequential` là không thực sự cần thiết, nhưng chúng ta nên hình thành thói quen vì nó sẽ có mặt ở khắp nơi khi cài đặt các mô hình học sâu.
+Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen sử dụng vì nó sẽ luôn hiện diện khi ta cài đặt các mô hình học sâu.
 Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
 ```{.python .input  n=3}
