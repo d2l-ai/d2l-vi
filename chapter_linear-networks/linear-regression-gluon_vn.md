@@ -139,11 +139,11 @@ But since nearly all of our future models will involve multiple layers, we will 
 -->
 
 Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
-Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào module 'nn', giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
-Đầu tiên ta sẽ định nghĩa một biến mẫu là 'net', tham chiếu đến một hiện thân của class "Sequential'.
-Trong Gluon, 'Sequential' (*nối tiếp*) định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
-Khi nhận được dữ liệu đầu vào, 'Sequential' sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
-Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng 'Sequential'
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào module `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
+Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
+Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
+Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
+Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
 Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
@@ -159,8 +159,8 @@ Since we only want to generate a single scalar output, we set that number to $1$
 -->
 
 Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`.
-Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào (inputs) được kết nối lần lượt với từng đầu ra (outputs) bằng một phép nhân ma trận với vector.
-Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class 'Dense'.
+Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
+Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class `Dense`.
 Bởi vì chúng ta chỉ mong xuất ra một số vô hướng duy nhất, nên ta gán giá trị là $1$.
 <!--
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
@@ -182,8 +182,8 @@ We will describe how this works in more detail in the chapter "Deep Learning Com
 -->
 
 Để thuận tiện, điều đáng chú ý là
-Gluon không yêu cầu chúng ta định hình kích thước đầu vào (input) trong mỗi tầng.
-Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào (inputs) cho mỗi tầng tuyến tính.
+Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
+Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào cho mỗi tầng tuyến tính.
 Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
 Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
 
