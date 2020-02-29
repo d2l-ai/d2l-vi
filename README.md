@@ -4,10 +4,13 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 
 ## Hướng dẫn đóng góp vào dự án
 * [Hướng dẫn dịch trực tiếp trên trình duyệt](CONTRIBUTING.md).
-* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop)
+* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop).
+
+## Tham gia vào Slack của nhóm Dịch thuật
+Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại [glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md).
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
 ## Thứ tự dịch
 
