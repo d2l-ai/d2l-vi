@@ -435,7 +435,7 @@ class Animator(object):
 The training function then runs multiple epochs and visualize the training progress.
 -->
 
-Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan quá trình huấn luyện. 
+Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan hoá quá trình huấn luyện. 
 
 ```{.python .input  n=17}
 # Saved in the d2l package for later use
