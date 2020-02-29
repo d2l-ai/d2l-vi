@@ -348,7 +348,7 @@ evaluate_accuracy(net, test_iter)
 ## Model Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mô hình
 
 <!--
 The training loop for softmax regression should look strikingly familiar if you read through our implementation of linear regression in :numref:`sec_linear_scratch`.
@@ -358,7 +358,11 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-*dịch đoạn phía trên*
+Việc lặp để huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã đọc qua sự hiện thực cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Ở đây, chúng ta tái cấu trúc lại sự hiện thực để giúp nó có thể được tái sử dụng. 
+Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
+Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận giá trị kích thước batch làm thông số. 
+Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
 # Saved in the d2l package for later use
@@ -383,7 +387,8 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-*dịch đoạn phía trên*
+Trước khi trình bày sự hiện thực của hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để trực quan dữ liệu.
+Nhắc lại, mục đích của nó là giúp làm đơn giản hơn các đoạn mã sẽ xuất hiện trong các chương sau này. 
 
 ```{.python .input  n=16}
 # Saved in the d2l package for later use
@@ -430,7 +435,7 @@ class Animator(object):
 The training function then runs multiple epochs and visualize the training progress.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan quá trình huấn luyện. 
 
 ```{.python .input  n=17}
 # Saved in the d2l package for later use
@@ -451,7 +456,10 @@ By changing their values, we may be able to increase the classification accuracy
 In practice we will want to split our data three ways into training, validation, and test data, using the validation data to choose the best values of our hyperparameters.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại, chúng ta sử dụng giải thuật hạ gradient ngẫu nhiên theo minibatch để tối ưu hàm mất mát của mô hình.
+Lưu ý rằng số lượng epochs (`num_epochs`), và hệ số học (`lr`) là 2 siêu tham số được hiệu chỉnh. 
+Bằng cách thay đổi các giá trị này, chúng ta có thể tăng độ chính xác khi phân loại của mô hình. 
+Trong thực tế, chúng ta thường sẽ chia tập dữ liệu thành 3 phần, đó là: dữ liệu huấn luyện, dữ liệu kiểm thử và dữ liệu kiểm tra, sử dụng dữ liệu kiểm thử để chọn ra những giá trị tốt nhất cho các siêu tham số.  
 
 ```{.python .input  n=18}
 num_epochs, lr = 10, 0.1
