@@ -157,7 +157,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 Next we call the training function defined in the last section to train a model.
 -->
 
-Tiếp theo, chúng ta sẽ gọi tới hàm huấn luyện đã được khai báo ở mục trước để huấn luyện mô hình.
+Tiếp theo, chúng ta sẽ gọi hàm huấn luyện đã được khai báo ở mục trước để huấn luyện mô hình.
 
 ```{.python .input  n=6}
 num_epochs = 10
@@ -170,7 +170,7 @@ Note that in many cases, Gluon takes additional precautions beyond these most we
 saving us from even more pitfalls that we would encounter if we tried to code all of our models from scratch in practice.
 -->
 
-Giống như trước đây, thuật toán này cũng hội tụ tới một trạng thái có độ chính xác 83.7%, trừ một điều là với ít dòng mã hơn.
+Giống lần trước, thuật toán hội tụ và nghiệm có độ chính xác 83.7%, chỉ khác một điều là cần ít dòng mã hơn.
 Lưu ý rằng trong nhiều trường hợp, Gluon thực hiện thêm một số phòng tránh ngoài các thủ thuật đã biết để đảm bảo không xảy ra tràn số, giúp ta tránh gặp phải các lỗi khi cố gắng lập trình toàn bộ mô hình từ đầu.
 
 <!--
@@ -226,4 +226,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 *
-
