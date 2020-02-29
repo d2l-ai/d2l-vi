@@ -220,7 +220,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-Độ chính xác cho bài toán phân loại
+## Độ chính xác cho bài toán phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
@@ -229,8 +229,7 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi ta cần đầu ra là một dự đoán cụ thể.
-Tuy nhiên, nhiều ứng dụng thực tế cần ta đưa ra sự lựa chọn cụ thể.
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
 Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
 Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuôi cùng kết quả vẫn chỉ là một trong các danh mục.
 
@@ -243,7 +242,7 @@ it is often the performance metric that we care most about, and we will nearly a
 
 Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
 Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
-Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không không khác biệt),
+Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
 nhưng đây thường là độ đo về hiệu năng được quan tâm tới nhiều nhất và sẽ luôn được đề cập khi huấn luyện các bộ phân loại.
 
 <!--
@@ -282,8 +281,8 @@ Therefore, the classification accuracy rate for these two examples is $0.5$.
 
 Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick` lần lượt tương ứng với dự đoán từ phân phối xác suất và nhãn.
 Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
-Dự đoán ở ví dụ thứ hai là $2$ (phần tự lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
-Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$
+Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
