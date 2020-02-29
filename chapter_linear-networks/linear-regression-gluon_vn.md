@@ -5,7 +5,7 @@
 # Concise Implementation of Linear Regression
 -->
 
-# Triển khai xúc tích của Hồi quy Tuyến tính
+# Triển khai súc tích của Hồi quy Tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
@@ -23,7 +23,7 @@ Trên thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các 
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
-Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách xúc tích với Gluon.
+Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
 
 <!--
 ## Generating the Dataset
