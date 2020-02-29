@@ -359,7 +359,10 @@ To access each parameter's values as an `ndarray`, we invoke its `data` method.
 As in our from-scratch implementation, note that our estimated parameters are close to their ground truth counterparts.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta so sánh các tham số của mô hình đã học thông qua việc huấn luyện trên tập dữ liệu hữu hạn và các tham số thực sự tạo ra tập dữ liệu. 
+Để truy cập các tham số bằng Gluon, trước hết ta lấy tầng ta cần từ `net`, sau đó truy cập trọng số (`weight`) và hệ số điều chỉnh (`bias`) của tầng đó.
+Để truy cập giá trị mỗi tham số dưới dạng một mảng `ndarray`, ta sử dụng phương thức `data`.
+Giống như cách xây dựng từ đầu, các tham số ước lượng tìm được gần với giá trị chính xác của chúng.
 
 ```{.python .input  n=12}
 w = net[0].weight.data()
@@ -376,7 +379,7 @@ print('Error in estimating b', true_b - b)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Using Gluon, we can implement models much more succinctly.
@@ -386,11 +389,16 @@ print('Error in estimating b', true_b - b)
 -->
 
 
+* Sử dụng Gluon giúp việc mô tả các mô hình ngắn gọn hơn nhiều.
+* Trong Gluon, mô-đun `data` cung cấp các công cụ để xử lý dữ liệu, mô-đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô-đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
+* Mô-đun `initializer` của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
+* Kích thước và dung lượng lưu trữ sẽ được suy ra tự động (nhưng cẩn thận đừng thử truy xuất các tham số trước khi chúng được khởi tạo).
+
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. If we replace `l = loss(output, y)` with `l = loss(output, y).mean()`, we need to change `trainer.step(batch_size)` to `trainer.step(1)` for the code to behave identically. Why?
@@ -398,7 +406,9 @@ print('Error in estimating b', true_b - b)
 3. How do you access the gradient of `dense.weight`?
 -->
 
-*dịch đoạn phía trên*
+1. Nếu thay thế `l = loss(output, y)` bằng `l = loss(output, y).mean()`, chúng ta cần đổi `trainer.step(batch_size)` thành `trainer.step(1)` để phần mã nguồn này hoạt động giống như trước. Tại sao lại thế?
+2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô-đun `gluon.loss` và `init`. Thay thế hàm mất mát đang sử dụng bằng hàm mất mát Huber.
+3. Làm thế nào để truy cập gradient của `dense.weight`?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
