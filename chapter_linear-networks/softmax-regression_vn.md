@@ -306,7 +306,7 @@ This accelerates the dominant operation into a matrix-matrix product $\mathbf{W}
 The softmax itself can be computed by exponentiating all entries in $\mathbf{O}$ and then normalizing them by the sum.
 -->
 
-Việc tăng tốc này thực hiện chủ yếu ở một ma trận - ma trận sản phẩm $\mathbf{W} \mathbf{X}$ so với ma trận - vector sản phẩm mà chúng ta sẽ thực hiện nếu chúng ta xử lý một mẫu tại một thời điểm.
+Việc tăng tốc diễn ra chủ yếu tại tích ma trận - ma trận $\mathbf{W} \mathbf{X}$ so với tích ma trận - vector nếu chúng ta xử lý từng mẫu một.
 Bản thân softmax có thể được tính bằng lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
 
 <!--
