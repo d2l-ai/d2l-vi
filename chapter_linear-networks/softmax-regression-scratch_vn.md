@@ -256,7 +256,7 @@ Taking the mean yields the desired result.
 -->
 
 Độ chính xác được tính toán như sau:
-Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm 
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số tại hạng mục lớn nhất của mỗi hàng).
 Kết quả trả về sẽ có cùng kích thước với biến `y`
 và bây giờ ta chỉ cần so sánh hai ma trận.
 Vì operator `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
