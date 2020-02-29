@@ -590,7 +590,7 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 ## Model Prediction and Evaluation
 -->
 
-## Dự đoán và đánh giá mô hình 
+## Sử dụng mô hình để dự đoán và đánh giá
 
 <!--
 After training the softmax regression model, given any example features,
@@ -720,4 +720,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 * Đinh Minh Tân
-
