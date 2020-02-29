@@ -387,7 +387,7 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-Trước khi trình bày sự hiện thực của hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để trực quan dữ liệu.
+Trước khi xem đoạn mã thực hiện hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để biểu diễn trực quan dữ liệu.
 Nhắc lại, mục đích của nó là giúp làm đơn giản hơn các đoạn mã sẽ xuất hiện trong các chương sau này. 
 
 ```{.python .input  n=16}
