@@ -40,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo tham số mô hình
+## Khởi tạo Tham số Mô hình
 
 <!--
 As mentioned in :numref:`sec_softmax`, the output layer of softmax regression is a fully-connected (`Dense`) layer.
