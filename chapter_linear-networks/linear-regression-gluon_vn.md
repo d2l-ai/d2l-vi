@@ -5,7 +5,7 @@
 # Concise Implementation of Linear Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai súc tích của Hồi quy Tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
@@ -15,25 +15,27 @@ In the previous section, we relied only on (i) `ndarray` for data storage and li
 In practice, because data iterators, loss functions, optimizers, and neural network layers (and some whole architectures) are so common, modern libraries implement these components for us as well.
 -->
 
-*dịch đoạn phía trên*
+Sự quan tâm nhiệt thành và rộng khắp tới học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê phát triển nhiều framework nguồn mở tới giai đoạn hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
+Trong chương trước, chúng ta chỉ dựa vào (i) `ndarray` để lưu dữ liệu và thực hiện tính toán đại số tuyến tính; và (ii) `autograd` để thực hiện tính đạo hàm.
+Trên thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các bộ tối ưu, và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã triển khai sẵn những thành phần này cho chúng ta.
 
 <!--
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
-*dịch đoạn phía trên*
+Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
 
 <!--
 ## Generating the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tạo Tập dữ liệu
 
 <!--
 To start, we will generate the same dataset as in the previous section.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như mục trước.
 
 ```{.python .input  n=2}
 import d2l
@@ -64,7 +66,7 @@ Next, we will use the `ArrayDataset` to instantiate a `DataLoader`, which also r
 and specify a Boolean value `shuffle` indicating whether or not we want the `DataLoader` to shuffle the data on each epoch (pass through the dataset).
 -->
 
-Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi module `data` của Gluon. 
+Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon. 
 Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
 Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
 Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
@@ -136,7 +138,13 @@ In the following example, our model consists of only one layer, so we do not rea
 But since nearly all of our future models will involve multiple layers, we will use it anyway just to familiarize you with the most standard workflow.
 -->
 
-*dịch đoạn phía trên*
+Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
+Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
+Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
+Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
+Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
+Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
 from mxnet.gluon import nn
@@ -150,13 +158,15 @@ In Gluon, the fully-connected layer is defined in the `Dense` class.
 Since we only want to generate a single scalar output, we set that number to $1$.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`.
+Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
+Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class `Dense`.
+Bởi vì chúng ta chỉ mong xuất ra một số vô hướng duy nhất, nên ta gán giá trị là $1$.
 <!--
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singleneuron.svg)
+![Hồi quy tuyến tính là một mạng nơ ron đơn tầng.](../img/singleneuron.svg)
 :label:`fig_singleneuron`
 
 ```{.python .input  n=6}
@@ -171,7 +181,11 @@ When we first try to pass data through our model, e.g., when we execute `net(X)`
 We will describe how this works in more detail in the chapter "Deep Learning Computation".
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện, điều đáng chú ý là
+Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
+Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào cho mỗi tầng tuyến tính.
+Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
+Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -185,7 +199,7 @@ We will describe how this works in more detail in the chapter "Deep Learning Com
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo tham số mô hình
 
 <!--
 Before using `net`, we need to initialize the model parameters, such as the weights and biases in the linear regression model.
@@ -197,7 +211,13 @@ The *bias* parameter will be initialized to zero by default.
 Both the weight vector and bias will have attached gradients.
 -->
 
-*dịch đoạn phía trên*
+Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và độ chệch trong mô hồi quy tuyến tính.
+Chúng ta sẽ nhập mô-đun `initializer` từ MXNet.
+Mô-đun này cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
+Gluon cho phép dùng `init` như một cách ngắn gọn (viết tắt) để truy cập đến gói `initializer`.
+Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các `trọng số` từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
+Mặc định, tham số *độ chệch* sẽ được khởi tạo bằng không.
+Cả hai vector trọng số và độ chệch sẽ có gradient kèm theo.
 
 ```{.python .input  n=7}
 from mxnet import init
@@ -213,7 +233,12 @@ The real initialization will take place only when we for the first time attempt 
 Just be careful to remember that since the parameters have not been initialized yet, we cannot access or manipulate them.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã nguồn trên trông khá trực quan nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
+Chúng ta khởi tạo các tham số cho một mạng mà thậm chi Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
+Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000$.
+Gluon khiến chúng ta không cần bận tâm về điều này bởi ở phía sau bức màn, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
+Quá trình khởi tạo thực sự chỉ bắt đầu khi chúng ta truyền dữ liệu vào mạng lần đầu tiên.
+Hãy ghi nhớ rằng, do các tham số chưa thực sự được khởi tạo, chúng ta không thể truy cập hoặc thao tác với chúng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -223,7 +248,7 @@ Just be careful to remember that since the parameters have not been initialized 
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm mất mát
 
 <!--
 In Gluon, the `loss` module defines various loss functions.
@@ -231,7 +256,9 @@ We will use the imported module `loss` with the pseudonym `gloss`, to avoid conf
 In this example, we will use the Gluon implementation of squared loss (`L2Loss`).
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
+Chúng ta sẽ sử dụng mô-đun `loss` được thêm vào dưới tên gọi là `gloss`, để tránh nhầm lẫn nó với biến đang giữ hàm mất mát mà ta đã chọn.
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss
@@ -246,7 +273,7 @@ loss = gloss.L2Loss()  # The squared loss is also known as the L2 norm loss
 ## Defining the Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Thuật toán Tối ưu hóa
 
 <!--
 Minibatch SGD and related variants are standard tools for optimizing neural networks and thus Gluon supports SGD alongside a number of variations on this algorithm through its `Trainer` class.
@@ -255,7 +282,9 @@ the optimization algorithm we wish to use (`sgd`), and a dictionary of hyper-par
 SGD just requires that we set the value `learning_rate`, (here we set it to 0.03).
 -->
 
-*dịch đoạn phía trên*
+Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron và vì vậy Gluon hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainers` của nó.
+Khi chúng ta khởi tạo lớp `Trainer`, ta sẽ chỉ định các tham số để tối ưu hóa (có thể lấy từ các mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng ta muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng ta.
+SGD chỉ yêu cầu rằng chúng ta sẽ đặt giá trị `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
 from mxnet import gluon
@@ -270,7 +299,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.03})
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn Luyện
 
 <!--
 You might have noticed that expressing our model through Gluon requires comparatively few lines of code.
@@ -279,14 +308,18 @@ Once we start working with much more complex models, Gluon's advantages will gro
 However, once we have all the basic pieces in place, the training loop itself is strikingly similar to what we did when implementing everything from scratch.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy rằng việc thể hiện mô hình của chúng ta thông qua Gluon đòi hỏi tương đối ít các dòng lệnh.
+Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm số mất mát, hay triển khai hạ gradient ngẫu nhiên.
+Lợi ích Gluon mang lại càng nhiều khi chúng ta làm với những mô hình càng phức tạp.
+Tuy nhiên, một khi ta nắm được rõ các điều cơ bản, vòng huấn luyện tự thân nó sẽ trông rất giống với những gì chúng ta tự thực hiện từ đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
 For each minibatch, we go through the following ritual:
 -->
 
-*dịch đoạn phía trên*
+Để nhắc lại: cho một vài epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
+Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
 
 <!--
 * Generate predictions by calling `net(X)` and calculate the loss `l` (the forward pass).
@@ -294,14 +327,15 @@ For each minibatch, we go through the following ritual:
 * Update the model parameters by invoking our SGD optimizer (note that `trainer` already knows which parameters to optimize over, so we just need to pass in the minibatch size.
 -->
 
-*dịch đoạn phía trên*
+*  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
+* Tính gradient bằng cách gọi `l.backward()` (theo chiều ngược).
+* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
 -->
 
-*dịch đoạn phía trên*
-
+Để có được độ đo lường chính xác, chúng ta tính sự mất mát sau mỗi epoch và in nó ra màn hình trong lúc thực thi. 
 ```{.python .input  n=10}
 num_epochs = 3
 for epoch in range(1, num_epochs + 1):
@@ -354,6 +388,7 @@ print('Error in estimating b', true_b - b)
 * Dimensionality and storage are automatically inferred (but be careful not to attempt to access parameters before they have been initialized).
 -->
 
+
 * Sử dụng Gluon giúp việc mô tả các mô hình ngắn gọn hơn nhiều.
 * Trong Gluon, mô-đun `data` cung cấp các công cụ để xử lý dữ liệu, mô-đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô-đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
 * Mô-đun `initializer` của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
@@ -402,22 +437,28 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Phạm Hồng Vinh
+* Vũ Hữu Tiệp 
 
 <!-- Phần 2 -->
 * Lý Phi Long
 
 <!-- Phần 3 -->
-*
+* Phạm Đăng Khoa
+* Lê Khắc Hồng Phúc
+* Dương Nhật Tân
 
 <!-- Phần 4 -->
-*
+* Nguyễn Văn Tâm
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 5 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 *

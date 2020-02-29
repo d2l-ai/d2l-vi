@@ -5,7 +5,7 @@
 # Softmax Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Hồi quy Softmax
 :label:`sec_softmax`
 
 <!--
@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, tự xây dựng mô hình hồi quy tuyến tính từ đầu trong :numref:`sec_linear_scratch` và xây dựng mô hình hồi quy tuyến tính một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -21,13 +21,14 @@ If you want to predict the number of dollars (the *price*) at which a house will
 or the number of days that a patient will remain hospitalized before being discharged, then you are probably looking for a regression model.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy là công cụ đắc lực có thể sử dụng khi ta muốn trả lời câu hỏi *bao nhiêu?*.
+Nếu bạn muốn dự đoán một ngôi nhà sẽ được bán với giá bao nhiêu tiền (*Đô la*), hay số trận thắng mà một đội bóng có thể đạt được, hoặc số ngày một bệnh nhân phải điều trị nội trú trước khi được xuất viện, thì có lẽ bạn đang cần một mô hình hồi quy.
 
 <!--
 In practice, we are more often interested in classification: asking not *how much?* but *which one?*
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn: không phải câu hỏi *bao nhiêu?* mà là *loại nào?*
 
 <!--
 * Does this email belong in the spam folder or the inbox*?
@@ -36,7 +37,10 @@ In practice, we are more often interested in classification: asking not *how muc
 * Which movie is Aston most likely to watch next?
 -->
 
-*dịch đoạn phía trên*
+* Email này có phải thư rác/lừa đảo hay không?
+* Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?
+* Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
+* Aston có khả năng xem bộ phim nào tiếp theo nhất?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -45,7 +49,9 @@ i.e., to assess the *probability* that each category applies.
 The distinction tends to get blurred, in part, because often, even when we only care about hard assignments, we still use models that make soft assignments.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán khác nhau đôi chút:
+(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là cún, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là cún (92%), là gà (1%), là mèo (7%).
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -55,7 +61,7 @@ The distinction tends to get blurred, in part, because often, even when we only 
 ## Classification Problems
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài toán Phân loại
 
 <!--
 To get our feet wet, let's start off with a simple image classification problem.
@@ -64,7 +70,10 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-*dịch đoạn phía trên*
+Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
+Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
+Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
+Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
 Next, we have to choose how to represent the labels.
@@ -75,7 +84,11 @@ If the categories had some natural ordering among them, say if we were trying to
 then it might even make sense to cast this problem as regression and keep the labels in this format.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần phải chọn cách biểu diễn nhãn. 
+Ta có hai cách làm hiển nhiên.
+Cách tự nhiên nhất có lẽ là chọn $y \in \{1, 2, 3\}$ lần lượt ứng với {chó, mèo,  gà}.
+Đây là một cách *lưu trữ* thông tin tuyệt vời trên máy tính.
+Nếu các danh mục có một thứ tự tự nhiên giữa chúng, chẳng hạn như {trẻ sơ sinh, trẻ tập đi, thiếu niên, thanh niên, người trưởng thành, người cao tuổi}, sẽ là tự nhiên hơn nếu coi bài toán này là một bài toán hồi quy và nhãn sẽ được giữ nguyên dưới dạng số.
 
 <!--
 But general classification problems do not come with natural orderings among the classes.
@@ -84,7 +97,10 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-*dịch đoạn phía trên*
+Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
+Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
+Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
 
 $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 
@@ -92,7 +108,7 @@ $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ corresponding to "cat", $(0, 1, 0)$ to "chicken" and $(0, 0, 1)$ to "dog".
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, $y$ sẽ là một vector 3 chiều, với $(1, 0, 0)$ tương ứng với "mèo", $(0, 1, 0)$ ứng với "gà" và $(0, 0, 1)$ ứng với "chó".
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -106,7 +122,7 @@ In our case, $y$ would be a three-dimensional vector, with $(1, 0, 0)$ correspon
 ### Network Architecture
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiến trúc mạng
 
 <!--
 In order to estimate the conditional probabilities associated with each classes, we need a model with multiple outputs, one per class.
@@ -117,7 +133,11 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-*dịch đoạn phía trên*
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
+Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
+Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
+Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
 
 $$
 \begin{aligned}
@@ -134,13 +154,15 @@ And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all 
 the output layer of softmax regression can also be described as fully-connected layer.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
 <!--
 ![Softmax regression is a single-layer neural network.  ](../img/softmaxreg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/softmaxreg.svg)
+![Hồi quy sofmax là một mạng nơ-ron đơn tầng](../img/softmaxreg.svg)
 :label:`fig_softmaxreg`
 
 <!--
@@ -150,8 +172,9 @@ Note that we have gathered all of our weights into a $3\times4$ matrix and that 
 our outputs are given by a matrix-vector product of our weights by our inputs plus our biases $\mathbf{b}$.
 -->
 
-*dịch đoạn phía trên*
-
+Để biểu diễn mô hình gọn hơn, chúng ta có thể sử dụng ký hiệu đại số tuyến tính.
+Ở dạng vector, ta có $\mathbf{o} = \mathbf{W} \mathbf{x} + \mathbf{b}$, một dạng phù hợp hơn cho cả toán và lập trình.
+Chú ý rằng chúng ta đã tập hợp tất cả các trọng số vào một ma trận $3\times4$ và với một mẫu cho trước $\mathbf{x}$, các đầu ra được tính bởi tích ma trận-vector của các trọng số và đầu vào cộng với vector hệ số điều chỉnh $\mathbf{b}$.
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
@@ -160,7 +183,7 @@ our outputs are given by a matrix-vector product of our weights by our inputs pl
 ### Softmax Operation
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Softmax
 
 <!--
 The main approach that we are going to take here is to interpret the outputs of our model as probabilities.
@@ -168,7 +191,9 @@ We will optimize our parameters to produce probabilities that maximize the likel
 Then, to generate predictions, we will set a threshold, for example, choosing the *argmax* of the predicted probabilities.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ xem các giá trị đầu ra của mô hình là các giá trị xác suất.
+Ta sẽ tối ưu hóa các tham số của mô hình sao cho khả năng xuất hiện dữ liệu quan sát được là cao nhất.
+Sau đó, ta sẽ đưa ra dự đoán bằng cách đặt ngưỡng xác suất, ví dụ dự đoán nhãn đúng là nhãn có xác suất cao nhất (dùng hàm *argmax*).
 
 <!--
 Put formally, we would like outputs $\hat{y}_k$ that we can interpret as the probability that a given item belongs to class $k$.
@@ -176,7 +201,9 @@ Then we can choose the class with the largest output value as our prediction $\o
 For example, if $\hat{y}_1$, $\hat{y}_2$, and $\hat{y}_3$ are $0.1$, $.8$, and $0.1$, respectively, then we predict category $2$, which (in our example) represents "chicken".
 -->
 
-*dịch đoạn phía trên*
+Nói một cách chính quy hơn, ta mong muốn diễn dịch kết quả $\hat{y}_k$ là xác suất để một điểm dữ liệu cho trước thuộc về một lớp $k$ nào đó.
+Sau đó, ta có thể chọn lớp cho điểm đó tương ứng với giá trị lớn nhất mà mô hình dự đoán $\operatorname*{argmax}_k y_k$.
+Ví dụ, nếu $\hat{y}_1$, $\hat{y}_2$ và $\hat{y}_3$ lần lượt là $0.1$, $0.8$, and $0.1$, thì ta có thể dự đoán điểm đó thuộc về lớp số $2$ là "gà" (ứng với trong ví dụ trước).
 
 <!--
 You might be tempted to suggest that we interpret the logits $o$ directly as our outputs of interest.
@@ -186,7 +213,11 @@ Moreover, depending on the inputs, they can take negative values.
 These violate basic axioms of probability presented in :numref:`sec_prob`
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể muốn đề xuất rằng ta có thể lấy trực tiếp logit $o$ làm đầu ra để tiến hành dự đoán.
+Tuy nhiên, tại đây ta có một vài vấn đề khi lấy kết quả trực tiếp của tầng tuyến tính như một kết quả cho xác suất.
+Bởi vì, không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
+Hơn nữa, tùy thuộc vào đầu vào mà ta có thể nhận được giá trị âm.
+Các điều kể trên đã vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`
 
 <!--
 To interpret our outputs as probabilities, we must guarantee that (even on new data), they will be nonnegative and sum up to 1.
@@ -195,7 +226,10 @@ Of all instances when a classifier outputs $.5$, we hope that half of those exam
 This is a property called *calibration*.
 -->
 
-*dịch đoạn phía trên*
+Để có thể diễn dịch kết quả đầu ra là xác xuất, ta phải đảm bảo rằng các kết quả không âm và tổng của chúng phải bằng 1 (điều này phải đúng trên cả dữ liệu mới).
+Hơn nữa, ta cần một hàm mục tiêu trong quá trình huấn luyện để cho mô hình có thể ước lượng *xác suất* một cách chính xác.
+Trong tất cả các trường hợp, khi kết quả phân lớp cho ra xác suất là $0.5$ thì ta hy vọng phân nửa số mẫu đó *thực sự* thuộc về đúng lớp được dự đoán.
+Đây được gọi là *hiệu chuẩn*.
 
 <!--
 The *softmax function*, invented in 1959 by the social scientist R Duncan Luce in the context of *choice models* does precisely this.
@@ -203,7 +237,8 @@ To transform our logits such that they become nonnegative and sum to $1$, while 
 we first exponentiate each logit (ensuring non-negativity) and then divide by their sum (ensuring that they sum to $1$).
 -->
 
-*dịch đoạn phía trên*
+*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce trong nhánh *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
+Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
 \hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{where}\quad
@@ -216,7 +251,9 @@ Thus, $\hat{y}$ is a proper probability distribution and the values of $\hat{\ma
 Note that the softmax operation does not change the ordering among the logits, and thus we can still pick out the most likely class by:
 -->
 
-*dịch đoạn phía trên*
+Dễ thấy rằng $\hat{y}_1 + \hat{y}_2 + \hat{y}_3 = 1$ với $0 \leq \hat{y}_i \leq 1$ với mọi $i$.
+Do đó, $\hat{y}$ là phân phối xác suất phù hợp và các giá trị của $\hat{\mathbf{y}}$ có thể được hiểu theo đó.
+Lưu ý rằng hàm softmax không thay đổi thứ tự giữa các logit và do đó ta vẫn có thể chọn ra lớp phù hợp nhất bằng cách: 
 
 $$
 \hat{\imath}(\mathbf{o}) = \operatorname*{argmax}_i o_i = \operatorname*{argmax}_i \hat y_i.
@@ -227,7 +264,8 @@ The logits $\mathbf{o}$ then are simply the pre-softmax values that determining 
 Summarizing it all in vector notation we get ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, where ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 -->
 
-*dịch đoạn phía trên*
+Các logit $\mathbf{o}$ đơn giản chỉ là các giá trị trước khi cho qua hàm softmax để xác định xác xuất thuộc về mỗi danh mục. 
+Tóm tắt lại, ta có ký hiệu dưới dạng vector như sau: ${\mathbf{o}}^{(i)} = \mathbf{W} {\mathbf{x}}^{(i)} + {\mathbf{b}}$, với ${\hat{\mathbf{y}}}^{(i)} = \mathrm{softmax}({\mathbf{o}}^{(i)})$.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -343,14 +381,15 @@ It may also not be possible when the input features are not sufficiently informa
 ### Softmax and Derivatives
 -->
 
-### *dịch tiêu đề phía trên*
+### Softmax và Đạo hàm
 
 <!--
 Since the softmax and the corresponding loss are so common, it is worth while understanding a bit better how it is computed.
 Plugging $o$ into the definition of the loss $l$ and using the definition of the softmax we obtain:
 -->
 
-*dịch đoạn phía trên*
+Vì softmax và hàm mất mát softmax rất phổ biến, nên việc hiểu cách tính giá trị các hàm này sẽ có ích về sau.
+Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
 
 $$
 l = -\sum_j y_j \log \hat{y}_j = \sum_j y_j \log \sum_k \exp(o_k) - \sum_j y_j o_j
@@ -361,7 +400,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-*dịch đoạn phía trên*
+Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có:
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -374,7 +413,11 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
+Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
+Điều này không phải ngẫu nhiên.
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
+Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -384,7 +427,7 @@ This fact makes computing gradients easy in practice.
 ### Cross-Entropy Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát Entropy Chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -394,7 +437,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất.
+Ta có thể biểu diễn $y$ giống hệt như trước.
+Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$.
+Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút.
+Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn.
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -405,20 +452,20 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-*dịch đoạn phía trên*
+Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp.
+Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin.
 
 <!--
 ## Information Theory Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết Thông tin Cơ bản
 
 <!--
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-*dịch đoạn phía trên*
-
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể.
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
@@ -622,16 +669,17 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Trần Thị Hồng Hạnh
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-*
+*Bùi Nhật Quân
 
 <!-- Phần 4 -->
-*
+* Lý Phi Long
 
 <!-- Phần 5 -->
 *
@@ -640,10 +688,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Lý Phi Long
 
 <!-- Phần 8 -->
-*
+* Lý Phi Long
 
 <!-- Phần 9 -->
 *
@@ -653,4 +701,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 11 -->
 *
-
