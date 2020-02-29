@@ -5,7 +5,7 @@
 # Concise Implementation of Softmax Regression
 -->
 
-# Triển khai ngắn gọn của Softmax Regression
+# Triển khai súc tích của Hồi quy Softmax
 :label:`sec_softmax_gluon`
 
 <!--
@@ -228,4 +228,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 *
-
