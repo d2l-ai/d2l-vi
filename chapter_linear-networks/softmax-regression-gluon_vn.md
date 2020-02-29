@@ -14,8 +14,7 @@ we will find it similarly (or possibly more) convenient for implementing classif
 Again, we begin with our import ritual.
 -->
 
-Giống như cách Gluon giúp việc cài đặt hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn,
-chúng ta sẽ thấy nó cũng sẽ mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
+Giống như cách Gluon giúp việc thực hiện hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, chúng ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
 Một lần nữa, chúng ta bắt đầu bằng việc import.
 
 ```{.python .input  n=1}
