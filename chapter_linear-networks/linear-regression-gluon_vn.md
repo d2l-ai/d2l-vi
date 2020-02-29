@@ -66,7 +66,7 @@ Next, we will use the `ArrayDataset` to instantiate a `DataLoader`, which also r
 and specify a Boolean value `shuffle` indicating whether or not we want the `DataLoader` to shuffle the data on each epoch (pass through the dataset).
 -->
 
-Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi module `data` của Gluon. 
+Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon. 
 Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
 Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
 Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
@@ -139,7 +139,7 @@ But since nearly all of our future models will involve multiple layers, we will 
 -->
 
 Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
-Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào module `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
 Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
 Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
 Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
