@@ -138,7 +138,13 @@ In the following example, our model consists of only one layer, so we do not rea
 But since nearly all of our future models will involve multiple layers, we will use it anyway just to familiarize you with the most standard workflow.
 -->
 
-*dịch đoạn phía trên*
+Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào module `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
+Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
+Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
+Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
+Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
+Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
 from mxnet.gluon import nn
@@ -152,13 +158,15 @@ In Gluon, the fully-connected layer is defined in the `Dense` class.
 Since we only want to generate a single scalar output, we set that number to $1$.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`.
+Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
+Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class `Dense`.
+Bởi vì chúng ta chỉ mong xuất ra một số vô hướng duy nhất, nên ta gán giá trị là $1$.
 <!--
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singleneuron.svg)
+![Hồi quy tuyến tính là một mạng nơ ron đơn tầng.](../img/singleneuron.svg)
 :label:`fig_singleneuron`
 
 ```{.python .input  n=6}
@@ -173,7 +181,11 @@ When we first try to pass data through our model, e.g., when we execute `net(X)`
 We will describe how this works in more detail in the chapter "Deep Learning Computation".
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện, điều đáng chú ý là
+Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
+Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào cho mỗi tầng tuyến tính.
+Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
+Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -373,8 +385,6 @@ print('Error in estimating b', true_b - b)
 * Dimensionality and storage are automatically inferred (but be careful not to attempt to access parameters before they have been initialized).
 -->
 
-*dịch đoạn phía trên*
-
 
 <!--
 ## Exercises
@@ -425,7 +435,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 3 -->
-*
+* Phạm Đăng Khoa
+* Lê Khắc Hồng Phúc
+* Dương Nhật Tân
 
 <!-- Phần 4 -->
 * Nguyễn Văn Tâm
