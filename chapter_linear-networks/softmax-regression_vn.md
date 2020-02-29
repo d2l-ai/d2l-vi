@@ -590,7 +590,7 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 ## Model Prediction and Evaluation
 -->
 
-## Sử dụng mô hình để dự đoán và đánh giá
+## Sử dụng Mô hình để Dự đoán và Đánh giá
 
 <!--
 After training the softmax regression model, given any example features,
@@ -610,7 +610,7 @@ Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * We introduced the softmax operation which takes a vector maps it into probabilities.
