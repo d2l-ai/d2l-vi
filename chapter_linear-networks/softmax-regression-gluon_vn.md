@@ -185,7 +185,8 @@ Lưu ý rằng trong nhiều trường hợp, Gluon thực hiện thêm một s�
 -->
 
 1. Thử thay đổi các siêu tham số, như là kích thước batch, epoch, và tốc độ học, để xem kết quả như thế nào.
-2. Tại sao độ chính xác khi kiểm tra lại bị giảm sau một khoảng thời gian? Chúng ta có thể sửa lại bằng cách nào.
+2. Tại sao độ chính xác trên tập kiểm tra lại giảm sau một khoảng thời gian? 
+Chúng ta giải quyết việc này thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
