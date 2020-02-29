@@ -362,7 +362,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-Để thấy rõ hơn, xét đạo hàm riêng của $l$ theo $o$. Ta có:
+Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có:
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -375,10 +375,10 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đó $P(y \mid x)$, và nhãn của dữ liệu $y$.
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
 Tương tự như trong bài toán hồi quy, gradient cũng chính là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
 Điều này không phải ngẫu nhiên.
-Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log-likelihood đều có dạng như thế này.
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
 Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
