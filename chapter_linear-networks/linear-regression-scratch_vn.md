@@ -237,7 +237,7 @@ we need to invoke the `attach_grad` function, allocating memory to store the gra
 
 Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
 Xem :numref:`sec_autograd` để có thêm chi tiết.
-Nhắc lại mục tính vi phân tự động, chúng ta biết rằng để `autograd` có thể lưu trữ gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo biến và truyền biến đó cho nó để lưu trữ các gradients vào biến đó. 
+Nhắc lại mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
 
 ```{.python .input  n=8}
 w.attach_grad()
@@ -258,7 +258,7 @@ Recall that when we add a vector and a scalar, the scalar is added to each compo
 -->
 
 Tiếp theo, chúng ta cần xác định mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
-Nhăc lại rằng để tính đầu ra của một mô hình tuyến tính, chúng ta có thể đơn giản là tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
+Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, chúng ta có thể đơn giản là tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
 Chú ý rằng `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
 Cần nhớ rằng khi chúng ta tính tổng vector và số vô hướng, thì số vô hướng sẽ được thêm vào mỗi phẩn tử của vector. 
 
@@ -549,7 +549,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Nguyễn Lê Quang Nhật
-* @tanduong 
+* Dương Nhật Tân
 * Phạm Hồng Vinh
 * Vũ  Hữu Tiệp
 
