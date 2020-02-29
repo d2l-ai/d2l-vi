@@ -376,7 +376,7 @@ This fact makes computing gradients easy in practice.
 -->
 
 Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
-Tương tự như trong bài toán hồi quy, gradient cũng chính là sự khác nhau giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
+Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
 Điều này không phải ngẫu nhiên.
 Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
 Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
