@@ -33,3 +33,8 @@
 | 29. | [tmnguyen1403](https://github.com/tmnguyen1403)                 | Minh Trí Nguyễn                |
 | 30. | [patrickphatnguyen](https://github.com/patrickphatnguyen)       | Nguyễn Trường Phát             |
 | 31. | [longnguyen1984](https://github.com/longnguyen1984)             | Nguyễn Mai Hoàng Long          |
+| 32. | [lamngoctam](https://github.com/lamngoctam)                     | Lâm Ngọc Tâm                   |
+| 33. | [tanduong](https://github.com/tanduong)                         | Dương Nhật Tân                 |
+| 34. | [nguyenduydu](https://github.com/nguyenduydu)                   | Nguyễn Duy Du                  |
+| 35. | [di-mi-ta](https://github.com/di-mi-ta)                         | Đinh Minh Tân                  |
+| 36. | [azraelzhor](https://github.com/azraelzhor)                     | Lê Cao Thăng                   |
