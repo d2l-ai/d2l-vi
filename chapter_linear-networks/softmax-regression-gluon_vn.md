@@ -141,7 +141,7 @@ Note that this is the same as we applied in the linear regression example and it
 -->
 
 Ở đây, chúng ta sử dụng thuật toán tối ưu hạ gradient ngẫu nhiên theo minibatch với tốc độ học bằng $0.1$.
-Lưu ý rằng việc này giống với khi áp dụng cho bài toán hồi quy tuyến tính, nó chứng minh khả năng ứng dụng tổng quát của phương pháp tối ưu này.
+Lưu ý rằng cách làm này giống hệt cách làm ở ví dụ về hồi quy tuyến tính, minh chứng cho tính tổng quát của bộ tối ưu hạ gradient ngẫu nhiên.
 
 ```{.python .input  n=5}
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
@@ -171,7 +171,7 @@ saving us from even more pitfalls that we would encounter if we tried to code al
 -->
 
 Giống lần trước, thuật toán hội tụ và nghiệm có độ chính xác 83.7%, chỉ khác một điều là cần ít dòng mã hơn.
-Lưu ý rằng trong nhiều trường hợp, Gluon thực hiện thêm một số phòng tránh ngoài các thủ thuật đã biết để đảm bảo không xảy ra tràn số, giúp ta tránh gặp phải các lỗi khi cố gắng lập trình toàn bộ mô hình từ đầu.
+Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để tránh các lỗi kĩ thuật tính toán mà ta dễ gặp phải nếu tự xây dựng mô hình từ đầu.
 
 <!--
 ## Exercises
