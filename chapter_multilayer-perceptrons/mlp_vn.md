@@ -416,7 +416,7 @@ Khi sự chú ý chuyển sang gradient dựa trên sự học, hàm sigmoid là
 Sigmoids vẫn được sử dụng rộng rãi như các hàm kích hoạt trên các đơn vị đầu ra,
 khi chúng tôi muốn biểu diễn các kết quả đầu ra như các xác suất cho các bài toán phân loại nhị phân (bạn có xem sigmoid như một trường hợp đặc biệt của softmax).
 Tuy nhiên, hầu hết sigmoid đã được thay thế bằng ReLU bởi sự đơn giản và dễ huấn luyện hơn để sử dụng trong các tầng ẩn.
-Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các kiến trúc sử dụng các đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
+Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các mô hình sử dụng các đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
 
 <!--
 Below, we plot the sigmoid function.
