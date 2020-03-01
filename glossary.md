@@ -117,6 +117,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng      |               |
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
+| flatten | trải | |
 | functional anaylsis | giải tích hàm  |               |
 | fully-connected     | kết nối đầy đủ        |               |
 
