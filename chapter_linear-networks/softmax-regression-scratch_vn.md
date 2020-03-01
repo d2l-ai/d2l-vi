@@ -220,7 +220,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-## Độ chính xác cho bài toán phân loại
+## Độ chính xác cho bài toán Phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
