@@ -231,7 +231,7 @@ It might estimate probabilities internally, but at the end of the day it has to 
 
 Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
 Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
-Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuôi cùng kết quả vẫn chỉ là một trong các danh mục.
+Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
 When predictions are consistent with the actual category `y`, they are correct.
@@ -243,7 +243,7 @@ it is often the performance metric that we care most about, and we will nearly a
 Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
 Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
 Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
-nhưng đây thường là độ đo về hiệu năng được quan tâm tới nhiều nhất và sẽ luôn được đề cập khi huấn luyện các bộ phân loại.
+đây thường là phép đo chất lượng được quan tâm tới nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -256,11 +256,11 @@ Taking the mean yields the desired result.
 -->
 
 Độ chính xác được tính toán như sau:
-Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số tại hạng mục lớn nhất của mỗi hàng).
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
 Kết quả trả về sẽ có cùng kích thước với biến `y`
-và bây giờ ta chỉ cần so sánh hai ma trận.
+và bây giờ ta chỉ cần so sánh hai vector này.
 Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
-Kết quả sẽ là một biến `ndarray` chứa các giá trị 0 (false) và 1 (true).
+Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true).
 
 
 ```{.python .input  n=11}
@@ -279,7 +279,7 @@ The second example's prediction category is $2$ (the largest element of the row 
 Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
-Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick` lần lượt tương ứng với dự đoán từ phân phối xác suất và nhãn.
+Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
 Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
 Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
 Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
@@ -293,7 +293,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên bộ dữ liệu (được truy xuất thông qua `data_iter`).
+Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -308,7 +308,7 @@ def evaluate_accuracy(net, data_iter):
 Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 -->
 
-`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng nhiều số.
+`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng tích lũy của nhiều số.
 
 ```{.python .input}
 # Saved in the d2l package for later use
