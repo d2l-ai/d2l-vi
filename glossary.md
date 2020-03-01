@@ -156,7 +156,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | imputation (Preprocessing) | quy buộc           |               |
 | independence assumption    | giả định độc lập   |               |
 | iteration                  | vòng lặp           |               |
-| iterator | bộ duyệt | |
+| iterator | iterator | |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại |
