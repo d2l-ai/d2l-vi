@@ -171,7 +171,7 @@ X_prob, X_prob.sum(axis=1)
 ## The Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 Now that we have defined the softmax operation, we can implement the softmax regression model.
@@ -179,7 +179,9 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
+Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
+Chú ý rằng chúng ta làm phẳng mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
 def net(X):
@@ -190,14 +192,15 @@ def net(X):
 ## The Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm mất mát
 
 <!--
 Next, we need to implement the cross-entropy loss function, introduced in :numref:`sec_softmax`.
 This may be the most common loss function in all of deep learning because, at the moment, classification problems far outnumber regression problems.
 -->
 
-*dịch đoạn phía trên*
+Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
+Đây có lẽ là hàm mất mát thông dụng nhất trong nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội hơn số lượng bài toán hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
@@ -206,7 +209,10 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
+Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
+chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các phần tử thích hợp từ ma trận của các biến softmax đầu vào.
+Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
@@ -217,7 +223,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
@@ -574,7 +580,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 *
