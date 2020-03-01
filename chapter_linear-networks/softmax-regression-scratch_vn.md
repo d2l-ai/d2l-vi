@@ -62,7 +62,7 @@ As with linear regression, we will initialize our weights $W$ with Gaussian nois
 -->
 
 Nhắc lại trong hồi quy softmax, mỗi lớp sẽ có một đầu ra.
-Bởi vì tập dữ liệu của chúng ta có  $10$ lớp, và mạng lưới của chúng ta có số đầu ra là $10$.
+Vì tập dữ liệu của chúng ta có $10$ lớp, mạng của chúng ta sẽ có $10$ đầu ra.
 Do đó, các trọng số sẽ tạo thành một ma trận $784 \times 10$ và các hệ số điều chỉnh sẽ tạo thành một vector $1 \times 10$.
 Cũng như hồi quy tuyến tính, ta sẽ khởi tạo các trọng số $W$ bằng nhiễu Gauss và các hệ số điều chỉnh sẽ được khởi tạo bằng $0$.
 
