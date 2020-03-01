@@ -5,7 +5,7 @@
 # Implementation of Softmax Regression from Scratch
 -->
 
-# Lập trình hồi quy Sofmax từ đầu
+# Lập trình Hồi quy Sofmax từ đầu
 :label:`sec_softmax_scratch`
 
 <!--
