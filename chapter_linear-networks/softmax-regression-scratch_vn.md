@@ -332,7 +332,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-Vì ta đã khởi tạo trước đó cho mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này là một con số ngẫu nhiên, ví dụ: $0.1$ cho $10$ lớp.
+Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ ngang với việc đoán mò, tức độ chính xác bằng $0.1$ với $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
