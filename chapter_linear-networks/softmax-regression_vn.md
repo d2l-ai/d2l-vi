@@ -474,7 +474,7 @@ Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, tru
 ### Entropy
 -->
 
-### Entropy
+### *dịch tiêu đề phía trên*
 
 <!--
 The central idea in information theory is to quantify the information content in data.
@@ -482,9 +482,7 @@ This quantity places a hard limit on our ability to compress the data.
 In information theory, this quantity is called the [entropy](https://en.wikipedia.org/wiki/Entropy) of a distribution $p$, and it is captured by the following equation:
 -->
 
-Ý tưởng trung tâm trong lý thuyết thông tin đó là tính toán nội dung thông tin trong dữ liệu. 
-Lượng số này đặt một giới hạn cứng cho khả năng nén dữ liệu của chúng ta.
-Trong lý thuyết thông tin, lượng số này được gọi là [sự hỗn loạn](https://en.wikipedia.org/wiki/Entropy) của một phân phối $p$, và nó được mô tả bởi phương trình sau:
+*dịch đoạn phía trên*
 
 $$
 H[p] = \sum_j - p(j) \log p(j).
@@ -497,16 +495,11 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 
 
-Một trong các định lý cơ bản của lý thuyết thông tin phát biểu rằng để mã hóa thông tin được trích ra ngẫu nhiên từ phân phối $p$, chúng ta cần ít nhất $H[p]$ các “nats” để làm điều đó.
-Nếu bạn thắc mắc “nat” là gì, nó tương đương với bit nhưng khi sử dụng một mã với cơ số $e$ thay vì cơ số 2. 
-Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
-$H[p] / 2$ cũng thường được gọi là entropy nhị phân.
-
 <!--
 ### Surprisal
 -->
 
-### Surprisal
+### *dịch tiêu đề phía trên*
 
 <!--
 You might be wondering what compression has to do with prediction.
@@ -519,14 +512,7 @@ Because they are always the same, we do not have to transmit any information to 
 Easy to predict, easy to compress.
 -->
 
-Bạn có thể băn khoăn rằng nén có liên quan gì tới việc dự đoán.
-Tưởng tượng bạn có một dòng chảy dữ liệu mà chúng ta muốn nén.
-Nếu nó luôn dễ dàng cho chúng ta để tự đoán token tiếp theo, thì dữ liệu này quá dễ để nén!
-Lấy một ví dụ cực đoan ở nơi mà mỗi token trong dòng chảy đều lấy cùng một giá trị.
-Đó là một dòng dữ liệu rất nhàm chán!
-Và nó không chỉ nhàm chán, mà còn dễ dự đoán.
-Bởi vì chúng luôn luôn giống nhau, và chúng ta không phải chuyển giao bất cứ thông tin nào để giao tiếp các nội dung của dòng. 
-Càng dễ đoán thì càng dễ nén.
+*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -738,7 +724,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 9 -->
-* Trần Yến Thy
+*
 
 <!-- Phần 10 -->
 * Trần Yến Thy
