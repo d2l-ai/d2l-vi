@@ -474,7 +474,7 @@ Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, tru
 ### Entropy
 -->
 
-### *dịch tiêu đề phía trên*
+### Entropy
 
 <!--
 The central idea in information theory is to quantify the information content in data.
@@ -482,7 +482,9 @@ This quantity places a hard limit on our ability to compress the data.
 In information theory, this quantity is called the [entropy](https://en.wikipedia.org/wiki/Entropy) of a distribution $p$, and it is captured by the following equation:
 -->
 
-*dịch đoạn phía trên*
+Ý tưởng trung tâm trong lý thuyết thông tin đó là tính toán nội dung thông tin trong dữ liệu. 
+Lượng số này đặt một giới hạn cứng cho khả năng nén dữ liệu của chúng ta.
+Trong lý thuyết thông tin, lượng số này được gọi là [sự hỗn loạn](https://en.wikipedia.org/wiki/Entropy) của một phân phối $p$, và nó được mô tả bởi phương trình sau:
 
 $$
 H[p] = \sum_j - p(j) \log p(j).
@@ -495,11 +497,16 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 
 
+Một trong các định lý cơ bản của lý thuyết thông tin phát biểu rằng để mã hóa thông tin được trích ra ngẫu nhiên từ phân phối $p$, chúng ta cần ít nhất $H[p]$ các “nats” để làm điều đó.
+Nếu bạn thắc mắc “nat” là gì, nó tương đương với bit nhưng khi sử dụng một mã với cơ số $e$ thay vì cơ số 2. 
+Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
+$H[p] / 2$ cũng thường được gọi là entropy nhị phân.
+
 <!--
 ### Surprisal
 -->
 
-### *dịch tiêu đề phía trên*
+### Surprisal
 
 <!--
 You might be wondering what compression has to do with prediction.
@@ -512,7 +519,14 @@ Because they are always the same, we do not have to transmit any information to 
 Easy to predict, easy to compress.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể băn khoăn rằng nén có liên quan gì tới việc dự đoán.
+Tưởng tượng bạn có một dòng chảy dữ liệu mà chúng ta muốn nén.
+Nếu nó luôn dễ dàng cho chúng ta để tự đoán token tiếp theo, thì dữ liệu này quá dễ để nén!
+Lấy một ví dụ cực đoan ở nơi mà mỗi token trong dòng chảy đều lấy cùng một giá trị.
+Đó là một dòng dữ liệu rất nhàm chán!
+Và nó không chỉ nhàm chán, mà còn dễ dự đoán.
+Bởi vì chúng luôn luôn giống nhau, và chúng ta không phải chuyển giao bất cứ thông tin nào để giao tiếp các nội dung của dòng. 
+Càng dễ đoán thì càng dễ nén.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -527,7 +541,12 @@ The entropy is then the *expected surprisal* when one assigned the correct proba
 The entropy of the data is then the least surprised that one can ever be (in expectation).
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên nếu chúng ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thế nên chúng ta thi thoảng sẽ bị ngạc nhiên. 
+Sự bất ngờ của chúng ta là lớn hơn khi ta chỉ định xác suất thấp hơn cho một sự kiện.
+Vì nhiều lý do chúng sẽ nghiên cứu trong phần phụ lục,
+Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng sự ngạc nhiên của một người lúc quan sát sự kiện $j$ mà nó được gán cho một xác suất (chủ quan). 
+Entropy sau đó là *ngạc nhiên mong đợi* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình tạo dữ liệu).
+Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng).
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -537,7 +556,7 @@ The entropy of the data is then the least surprised that one can ever be (in exp
 ### Cross-Entropy Revisited
 -->
 
-### *dịch tiêu đề phía trên*
+### Xem Xét Lại Cross-Entropy 
 
 <!--
 So if entropy is level of surprise experienced by someone who knows the true probability, then you might be wondering, *what is cross-entropy?*
@@ -548,21 +567,26 @@ Relating this back to our classification objective, even if we get the best poss
 Our loss is lower-bounded by the entropy given by the actual conditional distributions $P(\mathbf{y} \mid \mathbf{x})$.
 -->
 
-*dịch đoạn phía trên*
-
+Vì thế nếu entropy là mức độ của sự ngạc nhiên trải nghiệm bởi một người biết xác suất đúng, vậy bạn có thể băn khoăn, *cross-entropy là gì?*
+Cross-entropy *từ $p$ đến $q$*, ký hiệu H(p, q), là sự bất ngờ được kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự tạo ra dựa trên các xác suất $p$.
+Khả năng cross-entropy thấp nhất có thể đạt được khi $p = q$.
+Trong trường hợp này, cross-entropy từ $p$ đến $q$ là $H(p, p) = H(p)$.
+Điều này liên quan trở lại mục tiêu phân loại của chúng ta, thậm chí khi chúng ta có khả năng dự đoán tốt nhất có thể, tốt nhất có thể có thể, thì chúng ta sẽ không bao giờ hoàn hảo.
+Mất mát của chúng ta bị giới hạn thấp hơn bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
 -->
 
-### *dịch tiêu đề phía trên*
+### Phân Tán Kullback Leibler
 
 <!--
 Perhaps the most common way to measure the distance between two distributions is to calculate the *Kullback Leibler divergence* $D(p\|q)$.
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-*dịch đoạn phía trên*
+Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân chia là tính toán *phân tán Kullback Leibler* $D(p\|q)$.
+Điều này đơn giản là sự khác nhau giữa cross-entropy và entropy, điều đó nói rằng, giá trị cross-entropy bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
@@ -573,14 +597,15 @@ Note that in classification, we do not know the true $p$, so we cannot compute t
 However, because the entropy is out of our control, minimizing $D(p\|q)$ with respect to $q$ is equivalent to minimizing the cross-entropy loss.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng trong bài toán phân loại, chúng ta không biết giá trị thực $p$, vì thế chúng ta không thể tính toán entropy trực tiếp được. Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát cross-entropy.
 
 <!--
 In short, we can think of the cross-entropy classification objective in two ways: (i) as maximizing the likelihood of the observed data; 
 and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.
 -->
 
-*dịch đoạn phía trên*
+Tóm gọn lại, chúng ta có thể nghĩ đến mục tiêu phân loại cross-entropy theo hai hướng: (i) như tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
+và (ii) như giảm thiểu sự ngạc nhiên của chúng ta (và vì thế dẫn đến số lượng các bit) cần thiết để truyền đạt các nhãn.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -713,10 +738,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 9 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 10 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 11 -->
 * Đinh Minh Tân
