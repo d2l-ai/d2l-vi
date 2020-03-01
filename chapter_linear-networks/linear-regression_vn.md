@@ -259,7 +259,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *dịch tiêu đề phía trên*
+### *Nghiệm theo công thức*
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
@@ -269,14 +269,19 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-*dịch đoạn phía trên*
+Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
+Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
+Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
+Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
+Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt.
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-*dịch đoạn phía trên*
+Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
+Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức:
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
@@ -285,7 +290,8 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-*dịch đoạn phía trên*
+Trong khi những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này.
+Trong khi các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có một nghiệm theo công thức khá chặt đến nỗi nó không được sử dụng trong học sâu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -651,13 +657,13 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, đồng thời tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
 -->
 
-*dịch đoạn phía trên*
+Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau:
 
 $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
@@ -665,7 +671,7 @@ $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \ma
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
 -->
 
-*dịch đoạn phía trên*
+Do đó, chúng ta có thể viết *khả năng* thu được giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua:
 
 $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).$$
 
@@ -673,7 +679,7 @@ $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma
 Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
 -->
 
-*dịch đoạn phía trên*
+Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp cực đại hóa *sự hợp lý* của bộ dữ liệu:
 
 $$P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).$$
 
@@ -685,7 +691,11 @@ So, without changing anything we can minimize the *Negative Log-Likelihood (NLL)
 Working out the math gives us:
 -->
 
-*dịch đoạn phía trên*
+Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE).
+Trong khi việc tối đa hóa tích của nhiều hàm mũ có thể gặp khó khăn, chúng ta có thể đơn giản hóa phép tính mà không làm ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa log của hàm hợp lý.
+Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa.
+Vì vậy chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì.
+Ta có:
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
 
@@ -864,7 +874,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Assume that we have some data $x_1, \ldots, x_n \in \mathbb{R}$. Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.
@@ -883,7 +893,22 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử, chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
+Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
+    * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
+    * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
+2. Tìm công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
+Để đơn giản hơn, bạn có thể bỏ qua hệ số điều chỉnh $b$ ra khỏi bài toán (chúng ta có thể thực hiện việc này bằng cách thêm vào một cột toàn giá trị một vào $X$).
+* Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
+    * Tính gradient của hàm mất mát theo $w$.
+    * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
+    * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu nhiên? Khi nào phương pháp này không hoạt động?
+3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối mũ. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+    * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
+    * Bạn có thể tìm ra nghiệm theo công thức không?
+    * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
+    * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm dừng như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
 
@@ -929,7 +954,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tạ H. Duy Nguyên
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 * Lê Gia Thiên Bửu
@@ -954,7 +979,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Thị Hồng Hạnh
 
 <!-- Phần 13 -->
-*
+* Nguyễn Quang Hải
 
 <!-- Phần 14 -->
 * Nguyễn Văn Tâm
@@ -971,4 +996,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Tâm
 
 <!-- Phần 18 -->
-*
+* Bùi Nhật Quân
