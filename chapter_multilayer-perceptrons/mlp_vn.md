@@ -390,7 +390,7 @@ For that reason, the sigmoid is often called a *squashing* function: it *squashe
 -->
 
 Hàm sigmoid biến đổi các biến đầu vào của nó có giá trị nằm trong miền $\mathbb{R}$, để có được các giá trị đầu ra nằm trong khoảng $(0, 1)$.
-Với sự biến đổi như trên, hàm sigmoid thường được gọi là hàm *nén*: có nghĩa là *nén* bất kỳ biến đầu vào nào nằm trong khoảng (vô cùng bé, vô cùng lớn) để có được giá trị đầu ra nằm trong khoảng (0, 1).
+Với sự biến đổi như trên, hàm sigmoid thường được gọi là hàm *nén*: có nghĩa là *nén* bất kỳ biến đầu vào nằm trong khoảng (vô cùng bé, vô cùng lớn) để có được giá trị đầu ra nằm trong khoảng (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
