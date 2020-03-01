@@ -40,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo các tham số của mô hình
+## Khởi tạo các tham số của Mô hình
 
 <!--
 As in our linear regression example, each example here will be represented by a fixed-length vector.
