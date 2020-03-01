@@ -382,14 +382,15 @@ This makes optimization better behaved and it mitigated well-documented problem 
 ### Sigmoid Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Sigmoid
 
 <!--
 The sigmoid function transforms its inputs, which values in the domain $\mathbb{R}$, to outputs that lie the interval $(0, 1)$.
 For that reason, the sigmoid is often called a *squashing* function: it *squashes* any input in the range (-inf, inf) to some value in the range (0, 1).
 -->
 
-*dịch đoạn phía trên*
+Hàm sigmoid biến đổi các biến đầu vào của nó có giá trị nằm trong miền $\mathbb{R}$, để có được các giá trị đầu ra nằm trong khoảng $(0, 1)$.
+Với sự biến đổi như trên, hàm sigmoid thường được gọi là hàm *nén*: có nghĩa là *nén* bất kỳ biến đầu vào nào nằm trong khoảng (vô cùng bé, vô cùng lớn) để có được giá trị đầu ra nằm trong khoảng (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
@@ -399,8 +400,9 @@ Thus the pioneers of this field, going all the way back to McCulloch and Pitts, 
 A thresholding activation takes value $0$ when its input is below some threshold and value $1$ when the input exceeds the threshold.
 -->
 
-*dịch đoạn phía trên*
-
+Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học ở hướng *kích hoạt* hoặc *không kích hoạt*.
+Vì vậy mà những người tiên phong trong lĩnh vực này gồm McCulloch và Pitts, những nhà phát minh ra nơ-ron nhân tạo, sẽ tập trung nghiên cứu vào các đơn vị ngưỡng.
+Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở mức dưới ngưỡng và giá trị là $1$ khi đầu vào ở mức vượt ngưỡng.
 
 <!--
 When attention shifted to gradient based learning, the sigmoid function was a natural choice because it is a smooth, differentiable approximation to a thresholding unit.
@@ -410,14 +412,19 @@ However, the sigmoid has mostly been replaced by the simpler and more easily tra
 In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will describe architectures that leverage sigmoid units to control the flow of information across time.
 -->
 
-*dịch đoạn phía trên*
+Khi sự chú ý chuyển sang gradient dựa trên sự học, hàm sigmoid là một lựa chọn tất yếu bởi vì nó có tính xấp xỉ liên tục và khả vi đối với một đơn vị ngưỡng.
+Sigmoids vẫn được sử dụng rộng rãi như các hàm kích hoạt trên các đơn vị đầu ra,
+khi chúng tôi muốn biểu diễn các kết quả đầu ra như các xác suất cho các bài toán phân loại nhị phân (bạn có xem sigmoid như một trường hợp đặc biệt của softmax).
+Tuy nhiên, hầu hết sigmoid đã được thay thế bằng ReLU bởi sự đơn giản và dễ huấn luyện hơn để sử dụng trong các tầng ẩn.
+Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các kiến trúc sử dụng các đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
 
 <!--
 Below, we plot the sigmoid function.
 Note that when the input is close to 0, the sigmoid function approaches a linear transformation.
 -->
 
-*dịch đoạn phía trên*
+Sau đây, chúng ta sẽ vẽ đồ thị hàm sigmoid.
+Cần chú ý rằng, khi đầu vào có giá trị gần bằng 0, hàm sigmoid tiến tới một phép biến đổi tuyến tính.
 
 ```{.python .input  n=4}
 with autograd.record():
@@ -429,7 +436,7 @@ d2l.plot(x, y, 'x', 'sigmoid(x)')
 The derivative of sigmoid function is given by the following equation:
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của hàm sigmoid được tính bởi phương trình sau:
 
 $$\frac{d}{dx} \mathrm{sigmoid}(x) = \frac{\exp(-x)}{(1 + \exp(-x))^2} = \mathrm{sigmoid}(x)\left(1-\mathrm{sigmoid}(x)\right).$$
 
@@ -440,7 +447,9 @@ Note that when the input is 0, the derivative of the sigmoid function reaches a 
 As the input diverges from 0 in either direction, the derivative approaches 0.
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của hàm sigmoid được vẽ sau đây.
+Chú ý rằng khi biến đầu vào là 0, đạo hàm của hàm sigmoid đạt giá trị đối đa là 0.25.
+Vì biến đầu vào phân kỳ từ 0 theo một trong hai hướng, đạo hàm sẽ đạt giá trị là 0.
 
 ```{.python .input  n=5}
 y.backward()
@@ -584,7 +593,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Lâm Ngọc Tâm
 
 <!-- Phần 6 -->
 *
