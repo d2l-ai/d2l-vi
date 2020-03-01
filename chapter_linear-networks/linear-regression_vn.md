@@ -52,10 +52,10 @@ Suppose that we wish to estimate the prices of houses (in dollars) based on thei
 
 *Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất được sử dụng cho bài toán hồi quy.
 Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
-Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
+Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn bằng tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
 Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
-Để dẫn tới phương pháp này, hãy bắt đầu với một ví dụ.
-Giả sử ta muốn ước lượng giá nhà (bằng đô la) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (theo năm).
+Để tạo động lực, hãy bắt đầu với một ví dụ.
+Giả sử ta muốn ước lượng giá nhà (bằng đô la) dựa vào diện tích (đơn vị feet vuông) và tuổi đời (theo năm).
 
 <!--
 To actually fit a model for predicting house prices, we would need to get our hands on a dataset consisting of sales for which we know the sale price, area and age for each home.
@@ -64,7 +64,7 @@ The thing we are trying to predict (here, the price) is called a *target* or *la
 The variables (here *age* and *area*) upon which the predictions are based are called *features* or *covariates*.
 -->
 
-Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà trong đó chúng ta biết giá bán, diện tích, tuổi đời cho từng căn nhà.
+Để khớp một mô hình dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà trong đó ta biết giá bán, diện tích, tuổi đời cho từng căn nhà.
 Trong thuật ngữ của học máy, tập dữ liệu này được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu của một giao dịch) được gọi là một *ví dụ* hoặc *mẫu*.
 Thứ mà chúng ta muốn dự đoán (giá nhà) được gọi là *mục tiêu* hoặc *nhãn*.
 Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là các *đặc trưng* hoặc *hiệp biến*.
