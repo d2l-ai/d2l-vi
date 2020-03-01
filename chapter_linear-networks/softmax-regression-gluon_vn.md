@@ -226,4 +226,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Phạm Minh Đức
+* Dương Nhật Tân
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Tâm
