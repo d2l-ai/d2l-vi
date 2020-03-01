@@ -168,7 +168,7 @@ Note that we flatten each original image in the batch into a vector with length 
 -->
 
 Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
-Đoạn mã sau xác định sự chuyển tiếp thông qua mạng.
+Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
 Chú ý rằng chúng ta làm phẳng mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
