@@ -5,7 +5,7 @@
 # Multilayer Perceptrons
 -->
 
-# *dịch tiêu đề phía trên*
+# Perceptron đa tầng
 :label:`sec_mlp`
 
 <!--
@@ -18,20 +18,26 @@ Now that we have mastered these mechanics in the context of simple linear models
 we can launch our exploration of deep neural networks, the comparatively rich class of models with which this book is primarily concerned.
 -->
 
-*dịch đoạn phía trên*
+Ở chương trước, chúng ta đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), 
+xây dựng thuật toán từ đầu (:numref:`sec_softmax_scratch`) và sử dụng gluon (:numref:`sec_softmax_gluon`) và huấn luyện các mô hình phân loại để nhận dạng 10 loại quần áo từ ảnh có độ phân giải thấp.
+Xuyên suốt quá trình, chúng ta đã học được cách xử lý dữ liệu, ép các đầu ra vào một phân phối xác xuất hợp lệ (thông qua `softmax`),
+áp dụng một hàm mất mát phù hợp, và tối thiểu hóa nó với các tham số của mô hình.
+Bây giờ khi mà chúng ta đã làm chủ được các cơ chế này trong bối cảnh những mô hình tuyến tính đơn giản,
+chúng ta có thể bắt đầu khám phá các mạng nơ-ron sâu, một lớp đa dạng các mô hình mà cuốn sách này chủ yếu quan tâm.
 
 <!--
 ## Hidden Layers
 -->
 
-## *dịch tiêu đề phía trên*
+## Các tầng ẩn
 
 <!--
 To begin, recall the model architecture corresponding to our softmax regression example, illustrated in  :numref:`fig_singlelayer` below.
 This model mapped our inputs directly to our outputs via a single linear transformation:
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, hãy nhớ lại kiến trúc mô hình tương ứng với ví dụ hồi quy softmax, minh họa ở :numref:`fig_singlelayer` bên dưới.
+Mô hình này kết nối đầu vào trực tiếp tới đầu ra thông qua một biến đổi tuyến tính.
 
 $$
 \hat{\mathbf{o}} = \mathrm{softmax}(\mathbf{W} \mathbf{x} + \mathbf{b}).
@@ -41,7 +47,7 @@ $$
 ![Single layer perceptron with 5 output units.](../img/singlelayer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singlelayer.svg)
+![Perceptron đơn tầng với 5 nút đầu ra](../img/singlelayer.svg)
 :label:`fig_singlelayer`
 
 <!--
@@ -49,7 +55,8 @@ If our labels truly were related to our input data by a linear function, then th
 But linearity is a *strong assumption*.
 -->
 
-*dịch đoạn phía trên*
+Nếu các nhãn thực sự liên kết tới dữ liệu đầu vào bởi một hàm tuyến tính thì phương pháp này là đầy đủ.
+Nhưng tính chất tuyến tính là một *giả định mạnh*
 
 <!--
 For example, linearity implies the *weaker* assumption of *monotonicity*: 
@@ -63,7 +70,14 @@ A increase in income from $0 to $50k likely corresponds to a bigger increase in 
 One way to handle this might be to pre-process our data such that linearity becomes more plausible, say, by using the logarithm of income as our feature.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, tính chất tuyến tính ngụ ý giả định *yếu hơn* của *tính đơn điệu*:
+bất kỳ sự tăng thêm nào của đặc trưng phải luôn dẫn đến hoặc sự tăng thêm của đầu ra của mô hình (nếu trọng số tương ứng là dương), hoặc luôn gây ra sự giảm của đầu ra của mô hình (nếu trọng số tương ứng là âm).
+Đôi khi điều này là hợp lý.
+Ví dụ, khi chúng ta cố gắng dự đoán liệu một người sẽ trả lại một khoản vay,
+chúng ta có thể tưởng tượng một cách có lý rằng giữ tất cả những thứ khác như nhau, một ứng viên với thu nhập cao hơn sẽ luôn có khả năng cao hơn để trả lại hơn là một người với thu nhập thấp hơn.
+Trong khi mối quan hệ này có thể là đơn điệu
+Một sự tăng thu nhập từ $0 lên $50k có khả năng sẽ tương ứng với một sự tăng trong khả năng hoàn lại hơn một sự tăng từ $1M lên $1.05M.
+Một cách để giải quyết vấn đề này là tiền xử lý dữ liệu để tính chất tuyến tính trở nên hợp lý hơn, ví dụ, bằng cách sử dụng logarit của thu nhập như một đặc trưng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
