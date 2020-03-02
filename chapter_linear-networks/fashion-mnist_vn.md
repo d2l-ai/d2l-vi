@@ -58,7 +58,7 @@ FashionMNIST consists of images from 10 categories, each represented by 6k image
 Consequently the training set and the test set contain 60k and 10k images, respectively.
 -->
 
-FashionMNIST chứa các hình ảnh từ 10 mục, mỗi mục được thể hiện bằng 6 nghìn ảnh trong tập huấn luyện và 1 ngìn ảnh trong tập kiểm tra. 
+FashionMNIST chứa các hình ảnh từ 10 danh mục, mỗi danh mục được thể hiện bằng 6 nghìn ảnh trong tập huấn luyện và 1 ngìn ảnh trong tập kiểm tra. 
 Do đó tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn ảnh.
 
 ```{.python .input}
@@ -70,7 +70,7 @@ The images in Fashion-MNIST are associated with the following categories: t-shir
 The following function converts between numeric label indices and their names in text.
 -->
 
-Hình ảnh trong Fashion-MNIST tương ứng với các mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao (_sneaker_), túi và giày cao gót. 
+Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao (_sneaker_), túi và giày cao gót. 
 Hàm dưới đây chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
 
 ```{.python .input  n=25}
