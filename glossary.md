@@ -9,7 +9,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 
 [A](#a) [B](#b) [C](#c) [D](#d) [E](#e) [F](#f) [G](#g)
 [H](#h) [I](#i) [J](#j) [K](#k) [L](#l) [M](#m) [N](#n)
-[O](#0) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u)
+[O](#o) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u)
 [V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
 
 ## A
@@ -32,9 +32,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|-------------------------|-----------------------|
 | background noise        | nhiễu nền               | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược        |                       |
+| backward pass | lượt truyền ngược | |
 | batch                   | batch                   |                       |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
+| bias (tham số mô hình) | hệ số điều chỉnh | |
 | big data                | big data                |                       |
 | binomial distribution   | phân phối nhị thức      |                       |
 | Blackbox dev set        | tập phát triển Blackbox | http://bit.ly/2MVHcl7 |
@@ -44,6 +46,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                       |
 |-------------------------------------|------------------------|-------------------------------------|
+| category (trong bài toán phân loại) | lớp | |
 | chain rule                          | quy tắc dây chuyền     |                                     |
 | classifier                          | bộ phân loại           |                                     |
 | clustering                          | phân cụm               |                                     |
@@ -103,6 +106,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example             | mẫu                    |                       |
 | expectation         | kỳ vọng                |                       |
 | explicit feedback   | phản hồi trực tiếp     |                       |
+| exponential distribution   | phân phối mũ    |                       |
 | expression (math)   | biểu thức (toán học)   |                       |
 | Eyeball dev set     | Tập phát triển Eyeball | http://bit.ly/2MVHcl7 |
 
@@ -115,7 +119,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng      |               |
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
+| flatten | trải | |
+| forward pass | lượt truyền xuôi | |
 | functional anaylsis | giải tích hàm  |               |
+| fully-connected     | kết nối đầy đủ        |               |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                |
@@ -124,6 +131,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
 | generative model               | mô hình sinh                      |                                              |
 | generative adversarial network | mạng đối sinh                     |                                              |
+| global maximum | giá trị lớn nhất | |
+| global minimum | giá trị nhỏ nhất | |
 | gradient descent               | hạ gradient                       | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | graphical model                | mô hình đồ thị                    |                                              |
 | ground truth                   | nhãn gốc                          | http://bit.ly/34TljJ0                        |
@@ -142,10 +151,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                    | Tiếng Việt         | Thảo luận tại |
 |----------------------------|--------------------|---------------|
+| implement | lập trình | |
+| implementation | cách lập trình | |
 | implicit feedback          | phản hồi gián tiếp |               |
 | imputation (Preprocessing) | quy buộc           |               |
 | independence assumption    | giả định độc lập   |               |
 | iteration                  | vòng lặp           |               |
+| iterator | iterator | |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại |
@@ -167,8 +179,12 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear programming                 | quy hoạch tuyến tính           |                       |
 | linear regression                  | hồi quy tuyến tính             |                       |
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
+| local maximum | cực đại | |
+| local minimum | cực tiểu | |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
 | logistic regression                | hồi quy logistic               |                       |
+| logit (trong softmax)               | logit                          |                       |
+| log-likelihood function | hàm log hợp lý | |
 | loss function                      | hàm mất mát                    |                       |
 
 ## M
@@ -176,12 +192,14 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |----------------------------|-------------------------------|---------------|
 | machine learning           | học máy                       |               |
 | marginalization            | phép biên hóa                 |               |
+| maximum likelihood estimator | bộ ước lượng hợp lý cực đại |               |
 | mean squared error (MSE)   | trung bình bình phương sai số |               |
 | metric                     | phép đo                       |               |
 | minibatch                  | minibatch                     |               |
 | misclassified              | bị phân loại nhầm             |               |
 | mislabeled                 | bị gán nhãn nhầm              |               |
 | model                      | mô hình                       |               |
+| module | mô-đun | |
 | multi-class classification | phân loại đa lớp              |               |
 | multinominal distribution  | phân phối đa thức             |               |
 | multitask learning         | học đa nhiệm                  |               |
@@ -191,6 +209,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------------|-----------------------------------|---------------------------------------------|
 | named entity                      | danh từ riêng                     |                                             |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                             |
+| negative log-likelihood function  | hàm đối log hợp lý                |                                             |
 | negative sample/example           | mẫu âm                            |                                             |
 | neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
 | norm                              | chuẩn                             |                                             |
@@ -206,14 +225,17 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthogonal         | trực giao          |                       |
 | orthonormal        | trực chuẩn         |                       |
 | overfit            | quá khớp           | http://bit.ly/2BvfPYA |
+| overflow (numerical) | tràn (số) trên   |                       |
+| one-hot encoding   | biễu diễn one-hot     |                       |
 | one-sided test     | kiểm định một phía |                       |
 | one-tailed test    | kiểm định một đuôi |                       |
 
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại         |
 |------------------------------------|----------------------------|-----------------------|
-| perceptron                         | perceptron                 |                       |
+| partition function                 | hàm phân hoạch             | http://bit.ly/2T0dY7F |
 | pattern recognition                | nhận dạng mẫu              |                       |
+| perceptron                         | perceptron                 |                       |
 | performance                        | chất lượng                 | http://bit.ly/36IzQcB |
 | plateau (danh từ)                  | vùng nằm ngang             |                       |
 | plateau (động từ)                  | nằm ngang                  |                       |
@@ -266,6 +288,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | spam email                      | email rác                |                       |
 | speech recognition              | nhận dạng giọng nói      |                       |
 | standard deviation              | độ lệch chuẩn            |                       |
+| stationary point                | điểm dừng                |                       |
 | statistical power               | năng lực thống kê        |                       |
 | statistical significance        | ý nghĩa thống kê         |                       |
 | statistical significant         | có ý nghĩa thống kê      |                       |
@@ -301,6 +324,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------|---------------------------|-----------------------|
 | unavoidable bias      | độ chệch không tránh được |                       |
 | underfit              | dưới khớp                 | http://bit.ly/2BvfPYA |
+| underflow (numerical) | tràn (số) dưới            |                       |
 | unsupervised learning | học không giám sát        |                       |
 
 ## V
