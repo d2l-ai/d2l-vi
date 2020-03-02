@@ -237,7 +237,7 @@ We are now ready to work with the FashionMNIST dataset in the sections that foll
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tổng kết
 
 <!--
 * Fashion-MNIST is an apparel classification dataset consisting of images representing 10 categories.
@@ -246,13 +246,16 @@ We are now ready to work with the FashionMNIST dataset in the sections that foll
 * Data iterators are a key component for efficient performance. Rely on well-implemented iterators that exploit multi-threading to avoid slowing down your training loop.
 -->
 
-*dịch đoạn phía trên*
+* Fashion-MNIST là một bộ dữ liệu phân loại trang phục bao gồm các hình ảnh đại diện cho 10 danh mục. 
+* Chúng ta sẽ sử dụng bộ dữ liệu này trong các mục và chương tiếp theo để đánh giá các thuật toán phân loại khác nhau. 
+* Chúng ta lưu trữ kích thước của mỗi hình ảnh với chiều cao $h$ (_height_) chiều rộng $w$ (_width_) pixels dưới dạng $h \times w$ hoặc `(h, w)`.
+* Iterator dữ liệu là nhân tố chính để đạt được hiệu suất cao. Các iterator được triển khai tốt bằng kỹ thuật khai thác đa luồng sẽ tránh làm chậm các vòng lặp huấn luyện của bạn. 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Does reducing the `batch_size` (for instance, to 1) affect read performance?
@@ -261,7 +264,10 @@ We are now ready to work with the FashionMNIST dataset in the sections that foll
 4. Use the MXNet documentation to see which other transformations are available in `mxnet.gluon.data.vision.transforms`.
 -->
 
-*dịch đoạn phía trên*
+1. Việc giảm `batch_size` (ví dụ xuống 1) có ảnh hưởng việc đọc dữ liệu hay không?
+2. Với các người dùng không sử dụng Windows, hãy thử thay đổi `num_workers` để xem nó ảnh hưởng đến hiệu năng đọc dữ liệu như thế nào. Vẽ đồ thị hiệu năng tương ứng với số luồng được sử dụng.
+3. Sử dụng tài liệu MXNet để xem các bộ dữ liệu có sẵn khác trong `mxnet.gluon.data.vision`.
+4. Sử dụng tài liệu MXNet để xem những bộ chuyển đổi nào có sẵn trong `mxnet.gluon.data.vision.transforms`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -299,5 +305,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
-
+* Nguyễn Lê Quang Nhật
