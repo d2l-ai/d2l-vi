@@ -5,14 +5,14 @@
 # Implementation of Multilayer Perceptron from Scratch
 -->
 
-# *dịch tiêu đề phía trên*
+# Cách lập trình Perceptron Đa tầng từ đầu
 :label:`sec_mlp_scratch`
 
 <!--
 Now that we have characterized multilayer perceptrons (MLPs) mathematically, let's try to implement one ourselves.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng lập trình một mạng như vậy xem sao.
 
 ```{.python .input  n=9}
 import d2l
@@ -25,7 +25,7 @@ To compare against our previous results achieved with (linear) softmax regressio
 we will continue work with the Fashion-MNIST image classification dataset (:numref:`sec_fashion_mnist`).
 -->
 
-*dịch đoạn phía trên*
+Để so sánh với kết quả đã đạt được trước đó bằng hồi quy softmax (tuyến tính) (:numref:`sec_softmax_scratch`), chúng ta sẽ tiếp tục sử dụng tập dữ liệu phân loại ảnh Fashion-MNIST.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -36,7 +36,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo tham số mô hình
 
 <!--
 Recall that Fashion-MNIST contains $10$ classes, and that each image consists of a $28 \times 28 = 784$ grid of (black and white) pixel values.
@@ -46,7 +46,10 @@ Note that we can regard both of these quantities as *hyperparameters* and ought 
 Typically, we choose layer widths in powers of $2$ which tends to be computationally efficient because of how memory is alotted and addressed in hardware.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại rằng Fashion-MNIST gồm có $10$ nhãn, mỗi ảnh gồm có một lưới $28 \times 28 = 784$ điểm ảnh (đen và trắng).
+Chúng ta sẽ tiếp tục bỏ qua liên hệ về mặt không gian giữa các điểm ảnh (hiện tại), khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ nhãn.
+Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉ có một tầng ẩn với $256$ nút ẩn.
+Lưu ý rằng ta có thể coi cả hai đại lượng này là *siêu tham số* và nói chung ta nên thiết lập giá trị cho chúng dựa trên chất lượng trên tập kiểm định. 
 
 <!--
 Again, we will represent our parameters with several `ndarray`s.
@@ -54,7 +57,9 @@ Note that *for every layer*, we must keep track of one weight matrix and one bia
 As always, we call `attach_grad` to allocate memory for the gradients (of the loss) with respect to these parameters.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ lại biễu diện các tham số bằng một số `ndarray`.
+Lưu ý rằng *với mỗi tầng*, ta luôn có một ma trận trọng số và một vector hiệu chỉnh.
+Và như mọi khi, ta gọi tới `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) tương ứng với các tham số này.
 
 ```{.python .input  n=3}
 num_inputs, num_outputs, num_hiddens = 784, 10, 256
@@ -229,7 +234,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
 
 <!-- Phần 2 -->
 *
