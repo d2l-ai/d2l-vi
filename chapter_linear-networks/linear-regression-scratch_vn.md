@@ -197,7 +197,10 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-*dịch đoạn phía trên*
+Khi chạy bộ duyệt, ta lấy từng minibatch cho đến đến khi đã lấy hết bộ dữ liệu.
+Mặc dù sử dụng bộ duyệt như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
+Ví dụ, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ, do đó phải thực thi rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
+Các bộ duyệt trong Apache MXNet lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ trên tập tin lẫn các luồng dữ liệu. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -207,14 +210,15 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo các tham số mô hình
 
 <!--
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
 
-*dịch đoạn phía trên*
+Để tối ưu các tham số của dữ liệu bằng hạ gradient, đầu tiên ta cần khởi tạo chúng.
+Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán hệ số điều chỉnh $b$ bằng $0$.
 
 ```{.python .input  n=7}
 w = np.random.normal(0, 0.01, (2, 1))
@@ -227,7 +231,9 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
-*dịch đoạn phía trên*
+Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp với dữ liệu của ta đủ tốt. 
+Mỗi lần cập nhật, ta tính gradient (đạo hàm nhiều biến) của hàm mất mát theo các tham số. 
+Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm dần giá trị mất mát. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -240,7 +246,9 @@ Recall from the autograd chapter that in order for `autograd` to know that it sh
 we need to invoke the `attach_grad` function, allocating memory to store the gradients that we plan to take.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
+Xem :numref:`sec_autograd` để có thêm chi tiết.
+Nhắc lại mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
 
 ```{.python .input  n=8}
 w.attach_grad()
@@ -251,7 +259,7 @@ b.attach_grad()
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa mô hình
 
 <!--
 Next, we must define our model, relating its inputs and parameters to its outputs.
@@ -260,7 +268,10 @@ Note that below `np.dot(X, w)` is a vector and `b` is a scalar.
 Recall that when we add a vector and a scalar, the scalar is added to each component of the vector.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta cần xác định mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
+Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, chúng ta có thể đơn giản là tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
+Chú ý rằng `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
+Cần nhớ rằng khi chúng ta tính tổng vector và số vô hướng, thì số vô hướng sẽ được thêm vào mỗi phẩn tử của vector. 
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
@@ -280,7 +291,7 @@ def linreg(X, w, b):
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Mất mát
 
 <!--
 Since updating our model requires taking the gradient of our loss function, we ought to define the loss function first.
@@ -289,7 +300,10 @@ In the implementation, we need to transform the true value `y` into the predicte
 The result returned by the following function will also be the same as the `y_hat` shape.
 -->
 
-*dịch đoạn phía trên*
+Để cập nhật mô hình ta cần tính gradient của hàm mất mát, vậy nên ta phải định nghĩa hàm mất mát trước tiên.
+Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước.
+Trong thực tế, chúng ta cần chuyển đổi giá trị nhãn đúng `y` sang kích thước của giá trị dự đoán `y_hat`.
+Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước như kích thước của `y_hat`.
 
 ```{.python .input  n=10}
 # Saved in the d2l package for later use
@@ -301,7 +315,7 @@ def squared_loss(y_hat, y):
 ## Defining the Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Thuật toán Tối ưu
 
 <!--
 As we discussed in the previous section, linear regression has a closed-form solution.
@@ -310,7 +324,10 @@ Since none of the other models that this book introduces
 can be solved analytically, we will take this opportunity to introduce your first working example of stochastic gradient descent (SGD).
 -->
 
-*dịch đoạn phía trên*
+Như đã thảo luận ở mục trước, hồi quy tuyến tính có một nghiệm (dạng đóng)[https://vi.wikipedia.org/wiki/Bi%E1%BB%83u_th%E1%BB%A9c_d%E1%BA%A1ng_%C4%91%C3%B3ng]. 
+Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là cuốn sách về học sâu. 
+Vì không một mô hình nào khác được trình bày trong cuốn sách này 
+có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân đó giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (_stochastic gradient descent -- SGD_)
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -562,13 +579,19 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Lê Quang Nhật
+* Dương Nhật Tân
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
-*
+* Nguyễn Lê Quang Nhật
+* Dương Nhật Tân
+* Phạm Hồng Vinh
+* Vũ  Hữu Tiệp
 
 <!-- Phần 6 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 7 -->
 * Nguyễn Minh Thư

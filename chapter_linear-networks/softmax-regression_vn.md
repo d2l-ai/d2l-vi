@@ -122,7 +122,7 @@ Trong trường hợp này, $y$ sẽ là một vector 3 chiều, với $(1, 0, 0
 ### Network Architecture
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiến trúc mạng
 
 <!--
 In order to estimate the conditional probabilities associated with each classes, we need a model with multiple outputs, one per class.
@@ -133,7 +133,11 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-*dịch đoạn phía trên*
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
+Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
+Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
+Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
 
 $$
 \begin{aligned}
@@ -150,13 +154,15 @@ And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all 
 the output layer of softmax regression can also be described as fully-connected layer.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
+Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
 <!--
 ![Softmax regression is a single-layer neural network.  ](../img/softmaxreg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/softmaxreg.svg)
+![Hồi quy sofmax là một mạng nơ-ron đơn tầng](../img/softmaxreg.svg)
 :label:`fig_softmaxreg`
 
 <!--
@@ -166,8 +172,9 @@ Note that we have gathered all of our weights into a $3\times4$ matrix and that 
 our outputs are given by a matrix-vector product of our weights by our inputs plus our biases $\mathbf{b}$.
 -->
 
-*dịch đoạn phía trên*
-
+Để biểu diễn mô hình gọn hơn, chúng ta có thể sử dụng ký hiệu đại số tuyến tính.
+Ở dạng vector, ta có $\mathbf{o} = \mathbf{W} \mathbf{x} + \mathbf{b}$, một dạng phù hợp hơn cho cả toán và lập trình.
+Chú ý rằng chúng ta đã tập hợp tất cả các trọng số vào một ma trận $3\times4$ và với một mẫu cho trước $\mathbf{x}$, các đầu ra được tính bởi tích ma trận-vector của các trọng số và đầu vào cộng với vector hệ số điều chỉnh $\mathbf{b}$.
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
@@ -374,14 +381,15 @@ It may also not be possible when the input features are not sufficiently informa
 ### Softmax and Derivatives
 -->
 
-### *dịch tiêu đề phía trên*
+### Softmax và Đạo hàm
 
 <!--
 Since the softmax and the corresponding loss are so common, it is worth while understanding a bit better how it is computed.
 Plugging $o$ into the definition of the loss $l$ and using the definition of the softmax we obtain:
 -->
 
-*dịch đoạn phía trên*
+Vì softmax và hàm mất mát softmax rất phổ biến, nên việc hiểu cách tính giá trị các hàm này sẽ có ích về sau.
+Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
 
 $$
 l = -\sum_j y_j \log \hat{y}_j = \sum_j y_j \log \sum_k \exp(o_k) - \sum_j y_j o_j
@@ -392,7 +400,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-*dịch đoạn phía trên*
+Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có:
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -405,7 +413,11 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
+Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
+Điều này không phải ngẫu nhiên.
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
+Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -415,7 +427,7 @@ This fact makes computing gradients easy in practice.
 ### Cross-Entropy Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát Entropy Chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -425,7 +437,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất.
+Ta có thể biểu diễn $y$ giống hệt như trước.
+Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$.
+Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút.
+Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn.
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -436,20 +452,20 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-*dịch đoạn phía trên*
+Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp.
+Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin.
 
 <!--
 ## Information Theory Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Lý thuyết Thông tin Cơ bản
 
 <!--
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-*dịch đoạn phía trên*
-
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể.
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
@@ -574,7 +590,7 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 ## Model Prediction and Evaluation
 -->
 
-## *dịch tiêu đề phía trên*
+## Sử dụng Mô hình để Dự đoán và Đánh giá
 
 <!--
 After training the softmax regression model, given any example features,
@@ -584,13 +600,17 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
+Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. 
+Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
+Ở phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
+Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác so với tổng số mẫu được dự đoán.
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We introduced the softmax operation which takes a vector maps it into probabilities.
@@ -598,13 +618,15 @@ This is equal to the ratio between the number of correct predictions a nd the to
 * cross-entropy is a good measure of the difference between two probability distributions. It measures the number of bits needed to encode the data given our model.
 -->
 
-*dịch đoạn phía trên*
+* Chúng tôi đã giới thiệu về hàm softmax giúp ánh xạ một vector đầu vào sang các giá trị xác suất. 
+* Hồi quy softmax được áp dụng cho các bài toán phân loại. Nó sử dụng phân phối xác suất của các lớp đầu ra thông qua hàm softmax. 
+* Entropy chéo là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Show that the Kullback-Leibler divergence $D(p\|q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex function.
@@ -623,8 +645,21 @@ This is equal to the ratio between the number of correct predictions a nd the to
     * Extend this to more than two numbers.
 -->
 
-*dịch đoạn phía trên*
 
+1. Chứng minh rằng độ phân kì Kullback-Leibler $D(p\|q)$ không âm với mọi phân phối $p$ và $q$. Gợi ý: sử dụng bất đẳng thức Jensen hay nghĩa là sử dụng bổ đề $-\log x$ là một hàm lồi.
+2. Chứng minh rằng $\log \sum_j \exp(o_j)$ là một hàm lồi với $o$.
+3. Chúng ta có thể tìm hiểu sâu hơn về sự liên kết giữa các họ hàm mũ và softmax.
+   * Tính đạo hàm cấp hai của hàm mất mát entropy chéo $l(y,\hat{y})$ cho softmax. 
+   * Tính phương sai của phân phối được cho bởi $\mathrm{softmax}(o)$ và chứng minh rằng nó khớp với đạo hàm cấp hai được tính ở trên.
+4. Giả sử rằng chúng ta có 3 lớp, xác suất xảy ra cho mỗi lớp bằng nhau, nói cách khác vector xác suất là $(\frac{1}{3}, \frac{1}{3}, \frac{1}{3})$.
+   * Vấn đề là gì nếu chúng ta cố gắng thiết kế một mã nhị phân cho nó? Chúng ta có thể làm khớp cận dưới của entropy trên số lượng bits hay không? 
+   * Bạn có thể thiết kế một mã tốt hơn không? Gợi ý: Điều gì xảy ra nếu chúng ta cố gắng biểu diễn 2 quan sát độc lập và nếu chúng ta biểu diễn $n$ quan sát đồng thời?
+5. Softmax là một cách gọi sai cho phép ánh xạ đã được giới thiệu ở trên (nhưng cộng đồng học sâu vẫn sử dụng nó). Công thức thật sự của softmax là $\mathrm{RealSoftMax}(a, b) = \log (\exp(a) + \exp(b))$.
+   * Chứng minh rằng $\mathrm{RealSoftMax}(a, b) > \mathrm{max}(a, b)$.
+   * Chứng minh rằng $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) > \mathrm{max}(a, b)$ với $\lambda > 0$.
+   * Chứng minh rằng khi $\lambda \to \infty$, chúng ta có $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) \to \mathrm{max}(a, b)$.
+   * Soft-min sẽ trông như thế nào? 
+   * Mở rộng nó cho nhiều hơn 2 số.
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
@@ -660,7 +695,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-*
+*Bùi Nhật Quân
 
 <!-- Phần 4 -->
 * Lý Phi Long
@@ -672,10 +707,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Lý Phi Long
 
 <!-- Phần 8 -->
-*
+* Lý Phi Long
 
 <!-- Phần 9 -->
 *
@@ -684,4 +719,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 11 -->
-*
+* Đinh Minh Tân
+* Phạm Hồng Vinh

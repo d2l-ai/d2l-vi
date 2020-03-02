@@ -17,13 +17,13 @@ Vì độ dài cuốn sách này có giới hạn, chúng tôi không thể gi�
 ## Finding All the Functions and Classes in a Module
 -->
 
-## Tra cứu tất cả các hàm và lớp trong một Module
+## Tra cứu tất cả các hàm và lớp trong một Mô-đun
 
 <!--
 In order to know which functions and classes can be called in a module, we invoke the `dir` function. For instance, we can query all properties in the `np.random` module as follows:
 -->
 
-Để biết những hàm/lớp nào có thể được gọi trong một module, chúng ta dùng hàm `dir`. Ví dụ, ta có thể lấy tất cả thuộc tính của module `np.random` bằng cách:
+Để biết những hàm/lớp nào có thể được gọi trong một mô-đun, chúng ta dùng hàm `dir`. Ví dụ, ta có thể lấy tất cả thuộc tính của mô-đun `np.random` bằng cách:
 
 ```{.python .input  n=1}
 from mxnet import np
@@ -35,7 +35,7 @@ Generally, we can ignore functions that start and end with `__` (special objects
 -->
 
 Thông thường, ta có thể bỏ qua những hàm bắt đầu và kết thúc với `__` (các đối tượng đặc biệt trong Python) hoặc những hàm bắt đầu bằng `_` (thường là các hàm địa phương).
-Dựa trên tên của những hàm và thuộc tính còn lại, ta có thể dự đoán rằng module này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối đa thức (`multinomial`)
+Dựa trên tên của những hàm và thuộc tính còn lại, ta có thể dự đoán rằng mô-đun này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối đa thức (`multinomial`)
 
 <!--
 ## Finding the Usage of Specific Functions and Classes

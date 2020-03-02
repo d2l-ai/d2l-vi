@@ -4,10 +4,13 @@ Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
 
 ## Hướng dẫn đóng góp vào dự án
 * [Hướng dẫn dịch trực tiếp trên trình duyệt](CONTRIBUTING.md).
-* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop)
+* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop).
+
+## Tham gia vào Slack của nhóm Dịch thuật
+Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại [glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md).
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
 ## Thứ tự dịch
 
@@ -34,25 +37,25 @@ Với các chương (2., 3., ...)
     * [x] 2.5. [Tính vi phân Tự động](chapter_preliminaries/autograd_vn.md)
     * [x] 2.6. [Xác suất](chapter_preliminaries/probability_vn.md)
     * [x] 2.7. [Tài liệu](chapter_preliminaries/lookup-api_vn.md)
-* [ ] 3. [Linear Neural Networks](chapter_linear-networks/index_vn.md)
-    * [-] 3.1. [Linear Regression](chapter_linear-networks/linear-regression_vn.md)
-    * [-] 3.2. [Linear Regression Implementation from Scratch](chapter_linear-networks/linear-regression-scratch_vn.md)
-    * [-] 3.3. [Concise Implementation of Linear Regression](chapter_linear-networks/linear-regression-gluon_vn.md)
-    * [-] 3.4. [Softmax Regression](chapter_linear-networks/softmax-regression_vn.md)
+* [-] 3. [Mạng nơ-ron Tuyến tính](chapter_linear-networks/index_vn.md)
+    * [x] 3.1. [Hồi quy Tuyến tính](chapter_linear-networks/linear-regression_vn.md)
+    * [-] 3.2. [Lập trình Hồi quy Tuyến tính từ đầu](chapter_linear-networks/linear-regression-scratch_vn.md)
+    * [-] 3.3. [Triển khai súc tích của Hồi quy Tuyến tính](chapter_linear-networks/linear-regression-gluon_vn.md)
+    * [-] 3.4. [Hồi quy Softmax](chapter_linear-networks/softmax-regression_vn.md)
     * [-] 3.5. [The Image Classification Dataset (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
     * [-] 3.6. [Implementation of Softmax Regression from Scratch](chapter_linear-networks/softmax-regression-scratch_vn.md)
     * [-] 3.7. [Concise Implementation of Softmax Regression](chapter_linear-networks/softmax-regression-gluon_vn.md)
-* [ ] 4. Multilayer Perceptrons
-    * [ ] 4.1. Multilayer Perceptrons
-    * [ ] 4.2. Implementation of Multilayer Perceptron from Scratch
-    * [ ] 4.4. Concise Implementation of Multilayer Perceptron
-    * [ ] 4.5. Model Selection, Underfitting and Overfitting
-    * [ ] 4.5. Weight Decay
-    * [ ] 4.6. Dropout
-    * [ ] 4.7. Forward Propagation, Backward Propagation, and Computational Graphs
-    * [ ] 4.8. Numerical Stability and Initialization
-    * [ ] 4.9. Considering the Environment
-    * [ ] 4.10. Predicting House Prices on Kaggle
+* [ ] 4. [Multilayer Perceptrons](chapter_multilayer-perceptrons/index_vn.md)
+    * [-] 4.1. [Multilayer Perceptrons](chapter_multilayer-perceptrons/mlp_vn.md)
+    * [ ] 4.2. [Implementation of Multilayer Perceptron from Scratch](chapter_multilayer-perceptrons/mlp-scratch_vn.md)
+    * [ ] 4.3. [Concise Implementation of Multilayer Perceptron](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
+    * [ ] 4.4. [Model Selection, Underfitting and Overfitting](chapter_multilayer-perceptrons/underfit-overfit_vn.md)
+    * [ ] 4.5. [Weight Decay](chapter_multilayer-perceptrons/weight-decay_vn.md)
+    * [ ] 4.6. [Dropout](chapter_multilayer-perceptrons/dropout_vn.md)
+    * [ ] 4.7. [Forward Propagation, Backward Propagation, and Computational Graphs](chapter_multilayer-perceptrons/backprop_vn.md)
+    * [ ] 4.8. [Numerical Stability and Initialization](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
+    * [ ] 4.9. [Considering the Environment](chapter_multilayer-perceptrons/environment_vn.md)
+    * [ ] 4.10. [Predicting House Prices on Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
 * [ ] 5. Deep Learning Computation
     * [ ] 5.1. Layers and Blocks
     * [ ] 5.2. Parameter Management

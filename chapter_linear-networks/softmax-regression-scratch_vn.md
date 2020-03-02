@@ -86,7 +86,7 @@ b.attach_grad()
 ## The Softmax
 -->
 
-## *dịch tiêu đề phía trên*
+## Softmax
 
 <!--
 Before implementing the softmax regression model, let's briefly review how operators such as `sum` work along specific dimensions in an `ndarray`.
@@ -96,7 +96,11 @@ If we want to keep the number of axes in the original array (resulting in a 2D a
 rather than collapsing out the dimension that we summed over we can specify `keepdims=True` when invoking `sum`.
 -->
 
-*dịch đoạn phía trên*
+Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
+Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3 ,)`.
+Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
+thay vì thu gọn kích thước mà chúng ta đã tính toán, chúng ta có thể gán `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -112,7 +116,12 @@ Finally, we divide each row by its normalization constant, ensuring that the res
 Before looking at the code, let's recall what this looks expressed as an equation:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể bắt đầu xây dựng hàm softmax.
+Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
+Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
+Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
+Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
+Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
 $$
 \mathrm{softmax}(\mathbf{X})_{ij} = \frac{\exp(X_{ij})}{\sum_k \exp(X_{ik})}.
@@ -123,7 +132,8 @@ The denominator, or normalization constant, is also sometimes called the partiti
 The origins of that name are in [statistical physics](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) where a related equation models the distribution over an ensemble of particles).
 -->
 
-*dịch đoạn phía trên*
+Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) (và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
+Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
 def softmax(X):
@@ -139,7 +149,9 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
+Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng nó được xây dựng hơi cẩu thả, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
@@ -159,7 +171,7 @@ X_prob, X_prob.sum(axis=1)
 ## The Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 Now that we have defined the softmax operation, we can implement the softmax regression model.
@@ -167,7 +179,9 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
+Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
+Chú ý rằng chúng ta làm phẳng mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
 def net(X):
@@ -178,14 +192,15 @@ def net(X):
 ## The Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm mất mát
 
 <!--
 Next, we need to implement the cross-entropy loss function, introduced in :numref:`sec_softmax`.
 This may be the most common loss function in all of deep learning because, at the moment, classification problems far outnumber regression problems.
 -->
 
-*dịch đoạn phía trên*
+Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
+Đây có lẽ là hàm mất mát thông dụng nhất trong nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội hơn số lượng bài toán hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
@@ -194,7 +209,10 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
+Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
+chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các phần tử thích hợp từ ma trận của các biến softmax đầu vào.
+Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
@@ -205,7 +223,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
@@ -220,7 +238,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ chính xác cho bài toán Phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
@@ -229,7 +247,9 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-*dịch đoạn phía trên*
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
+Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
+Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
 When predictions are consistent with the actual category `y`, they are correct.
@@ -238,7 +258,10 @@ Although it can be difficult optimize accuracy directly (it is not differentiabl
 it is often the performance metric that we care most about, and we will nearly always report it when training classifiers.
 -->
 
-*dịch đoạn phía trên*
+Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
+Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
+Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
+đây thường là phép đo chất lượng được quan tâm tới nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -250,7 +273,13 @@ The result is an `ndarray` containing entries of 0 (false) and 1 (true).
 Taking the mean yields the desired result.
 -->
 
-*dịch đoạn phía trên*
+Độ chính xác được tính toán như sau:
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
+Kết quả trả về sẽ có cùng kích thước với biến `y`
+và bây giờ ta chỉ cần so sánh hai vector này.
+Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
+Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true).
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -268,7 +297,10 @@ The second example's prediction category is $2$ (the largest element of the row 
 Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
+Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
@@ -279,7 +311,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -294,7 +326,7 @@ def evaluate_accuracy(net, data_iter):
 Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 -->
 
-*dịch đoạn phía trên*
+`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng tích lũy của nhiều số.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -318,7 +350,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-*dịch đoạn phía trên*
+Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ ngang với việc đoán mò, tức độ chính xác bằng $0.1$ với $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
@@ -458,14 +490,15 @@ train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 <!--
 Now that training is complete, our model is ready to classify some images.
 Given a series of images, we will compare their actual labels (first line of text output) and the model predictions (second line of text output).
 -->
 
-*dịch đoạn phía trên*
+Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại các ảnh.
+Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
 # Saved in the d2l package for later use
@@ -484,7 +517,7 @@ predict_ch3(net, test_iter)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 With softmax regression, we can train models for multi-category classification.
@@ -492,13 +525,15 @@ The training loop is very similar to that in linear regression: retrieve and rea
 As you will soon find out, most common deep learning models have similar training procedures.
 -->
 
-*dịch đoạn phía trên*
+Với hồi quy softmax, chúng ta có thể huấn luyện các mô hình cho bài toán phân loại đa lớp.
+Vòng lặp huấn luyện rất giống với vòng lặp huấn luyện của hồi quy tuyến tính: truy xuất và đọc dữ liệu, định nghĩa mô hình và hàm mất mát, và rồi huấn luyện mô hình sử dụng các giải thuật tối ưu.
+Rồi bạn sẽ thấy rằng hầu hết các mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự như vậy.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. In this section, we directly implemented the softmax function based on the mathematical definition of the softmax operation. 
@@ -510,7 +545,15 @@ What could be the problem with this implementation (hint: consider the domain of
 5. Assume that we want to use softmax regression to predict the next word based on some features. What are some problems that might arise from a large vocabulary?
 -->
 
-*dịch đoạn phía trên*
+1. Trong mục này, chúng ta đã lập trình hàm softmax dựa vào định nghĩa toán học của phép toán softmax. 
+Điều này có thể gây ra những vấn đề gì (gợi ý: thử tính $\exp(50)$)?
+2. Hàm `cross_entropy` trong mục này được lập trình dựa vào định nghĩa của hàm mất mát entropy chéo. 
+Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý: xem xét miền của hàm log)?
+3. Bạn có thể nghĩ ra các giải pháp để giải quyết hai vấn đề trên không?
+4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? 
+Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
+5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. 
+Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -546,16 +589,19 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Lâm Ngọc Tâm
+* Vũ Hữu Tiệp
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
-*
+* Nguyễn Quang Hải
 
 <!-- Phần 5 -->
 *
 
 <!-- Phần 6 -->
-*
+* Lê Cao Thăng

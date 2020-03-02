@@ -119,6 +119,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng      |               |
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
+| flatten | trải | |
 | forward pass | lượt truyền xuôi | |
 | functional anaylsis | giải tích hàm  |               |
 | fully-connected     | kết nối đầy đủ        |               |
@@ -198,6 +199,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified              | bị phân loại nhầm             |               |
 | mislabeled                 | bị gán nhãn nhầm              |               |
 | model                      | mô hình                       |               |
+| module | mô-đun | |
 | multi-class classification | phân loại đa lớp              |               |
 | multinominal distribution  | phân phối đa thức             |               |
 | multitask learning         | học đa nhiệm                  |               |
