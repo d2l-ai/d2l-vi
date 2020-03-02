@@ -32,7 +32,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|-------------------------|-----------------------|
 | background noise        | nhiễu nền               | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược        |                       |
-| backward pass | lượt tính ngược | |
+| backward pass | lượt truyền ngược | |
 | batch                   | batch                   |                       |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
@@ -119,7 +119,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng      |               |
 | fit                 | khớp           |               |
 | first principle     | định đề cơ bản |               |
-| forward pass | lượt tính xuôi | |
+| forward pass | lượt truyền xuôi | |
 | functional anaylsis | giải tích hàm  |               |
 | fully-connected     | kết nối đầy đủ        |               |
 
