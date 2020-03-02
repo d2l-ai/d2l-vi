@@ -114,14 +114,15 @@ show_images(X.squeeze(axis=-1), 2, 9, titles=get_fashion_mnist_labels(y));
 ## Reading a Minibatch
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc một Minibatch
 
 <!--
 To make our life easier when reading from the training and test sets, we use a `DataLoader` rather than creating one from scratch, as we did in :numref:`sec_linear_scratch`.
 Recall that at each iteration, a `DataLoader` reads a minibatch of data with size `batch_size` each time.
 -->
 
-*dịch đoạn phía trên*
+Để dễ dàng hơn trong việc đọc dữ liệu từ tập huấn luyện và tập kiểm tra, chúng ta sử dụng một `DataLoader` có sẵn thay vì tạo từ đầu như đã làm ở :numref:`sec_linear_scratch`.
+Nhắc lại là ở mỗi vòng lặp, một `DataLoader`sẽ đọc một minibatch của bộ dữ liệu với kích thước `batch_size`.
 
 <!--
 During training, reading data can be a significant performance bottleneck, especially when our model is simple or when our computer is fast.
@@ -130,7 +131,10 @@ For instance, we can set aside 4 processes to read the data (via `num_workers`).
 Because this feature is not currently supported on Windows the following code checks the platform to make sure that we do not saddle our Windows-using friends with error messages later on.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình huấn luyện, việc đọc dữ liệu có thể trở thành một nút cổ chai về hiệu năng đáng kể, trừ khi chúng ta sử dụng một mô hình đơn giản hoặc là máy tính của chúng ta rất nhanh. 
+Một tính năng tiện dụng của `DataLoader` là khả năng sử dụng đa luồng (_multiple processes_) để tăng tốc việc đọc dữ liệu.
+Ví dụ, chúng ta có thể dùng 4 luồng để đọc dữ liệu (thông qua `num_workers`).
+Vì tính năng này hiện tại không được hỗ trợ trên Windows, đoạn mã lập trình dưới đây sẽ kiểm tra nền tảng hệ điều hành để đảm bảo rằng chúng ta không làm phiền những người dùng Windows với các thông báo lỗi sau này.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -149,7 +153,10 @@ The `ToTensor` class also moves the image channel from the last dimension to the
 Through the `transform_first` function of the dataset, we apply the transformation of `ToTensor` to the first element of each instance (image and label).
 -->
 
-*dịch đoạn phía trên*
+Đưới đây, chúng ta chuyển đổi dữ liệu hình ảnh từ uint8 sang số thực động (_floating point number_) 32-bit với class `ToTensor`.
+Ngoài ra, bộ chuyển đổi sẽ chia tất cả các số với 255 để tất cả các pixels sẽ có giá trị từ 0 đến 1. 
+Class `ToTensor` cũng chuyển kênh hình ảnh từ chiều cuối cùng sang chiều thứ nhất để tạo điều kiện cho các tính toán mạng nơ-ron sẽ được giới thiệu sau này.
+Thông qua hàm `transform_first` của bộ dữ liệu, chúng ta có thể áp dụng phép biến đổi `ToTensor` cho phần tử đầu tiên  của mỗi ví dụ (ảnh và nhãn). 
 
 ```{.python .input  n=28}
 batch_size = 256
@@ -163,7 +170,7 @@ train_iter = gluon.data.DataLoader(mnist_train.transform_first(transformer),
 Let's look at the time it takes to read the training data.
 -->
 
-*dịch đoạn phía trên*
+Cùng xem thời gian cần thiết để hoàn tất việc đọc và huấn luyện dữ liệu.
 
 ```{.python .input}
 timer = d2l.Timer()
@@ -293,11 +300,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 *
 
 <!-- Phần 4 -->
 *
-
