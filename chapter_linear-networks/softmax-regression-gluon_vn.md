@@ -48,7 +48,7 @@ Again, here, the `Sequential` is not really necessary, but we might as well form
 Again, we initialize the weights at random with zero mean and standard deviation $0.01$.
 -->
 
-Như đã đề cập trong :numref:`sec_softmax`, tầng output của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
+Như đã đề cập trong :numref:`sec_softmax`, tầng  ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
 Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra vào đối tượng `Sequential`.
 Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen sử dụng vì nó sẽ luôn hiện diện khi ta cài đặt các mô hình học sâu.
 Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
