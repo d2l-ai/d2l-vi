@@ -76,7 +76,7 @@ where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^
 Trong ví dụ trước, ta đã tính kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
 Về mặt toán học, thì đó là điều hoàn toàn có thể làm được.
 Tuy nhiên, từ góc độ tính toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số (được bàn trong :numref:`sec_naive_bayes`).
-Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``, được tính như hàm softmax.
+Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``, được tính như hàm softmax.
 
 <!--
 If some of the $z_i$ are very large (i.e., very positive), then $e^{z_i}$ might be larger than the largest number we can have for certain types of ``float`` (i.e., overflow).
@@ -86,9 +86,9 @@ One trick to get around this is to first subtract $\text{max}(z_i)$ from all $z_
 You can verify that this shifting of each $z_i$ by constant factor does not change the return value of ``softmax``.
 -->
 
-Nếu một trong $z_i$ quá lớn, thì có thể $e^{z_i}$ có thể lớn hơn số lớn nhất mà ta có thể chứa của kiểu ``float`` (nghĩa là tràn bộ nhớ đệm).
+Nếu một trong $z_i$ quá lớn, thì có thể $e^{z_i}$ lớn hơn số lớn nhất mà kiểu ``float`` có thể biểu diễn được (nghĩa là hiện tượng tràn số trên xảy ra).
 Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan`` .
-Trong những tình huống này, ta không thể nhận được một định nghĩa tốt của giá trị trả về cho ``cross_entropy``.
+Trong những tình huống này, giá trị trả về cho ``cross_entropy`` có thể không xác định một cách rõ ràng.
 Một mẹo để có khắc phục điều này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$ sau đó sẽ đưa qua hàm ``softmax``.
 Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
@@ -99,7 +99,7 @@ A few steps down the road in backpropagation, we might find ourselves faced with
 -->
 
 Sau khi thực hiện phép trừ và chuẩn hóa, có thể một số $z_j$ có giá trị âm lớn và do đó $e^{z_j}$ sẽ gần bằng 0.
-Điều này có thể dẫn đến việc làm tròn thành 0 do độ chính xác hữu hạn (tức là tràn (số) dưới), tức là $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``
+Điều này có thể dẫn đến việc làm tròn thành 0 do độ chính xác hữu hạn (tức là tràn số dưới), tức là $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``
 Sau này khi thực hiện lan truyền ngược, ta có thể đối mặt với một loạt các kết quả đáng sợ là không phải số (``nan``).
 
 <!--
@@ -110,7 +110,7 @@ As shown in the equation below, we avoided calculating $e^{z_j}$ and can instead
 
 May mắn thay, điều này lại được giải quyết trong thực tế mặc dù ta tính toán với các hàm mũ, nhưng cuối cùng ta sẽ lấy log (trong khi tính toán hàm mất mát entropy chéo).
 Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn để về ổn định số mà chúng có thể gây khó khăn trong quá trình lan truyền ngược.
-Như đã thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc khử trực tiếp trong $\log(\exp(\cdot))$.
+Như sẽ thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc khử trực tiếp trong $\log(\exp(\cdot))$.
 
 $$
 \begin{aligned}
@@ -235,4 +235,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 *
-
