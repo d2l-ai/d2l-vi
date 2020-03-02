@@ -197,7 +197,10 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-*dịch đoạn phía trên*
+Khi chạy bộ duyệt, ta lấy từng minibatch cho đến đến khi đã lấy hết bộ dữ liệu.
+Mặc dù sử dụng bộ duyệt như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
+Ví dụ, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ, do đó phải thực thi rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
+Các bộ duyệt trong Apache MXNet lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ trên tập tin lẫn các luồng dữ liệu. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -207,14 +210,15 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo các tham số mô hình
 
 <!--
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
 In the following code, we initialize weights by sampling random numbers from a normal distribution with mean 0 and a standard deviation of $0.01$, setting the bias $b$ to $0$.
 -->
 
-*dịch đoạn phía trên*
+Để tối ưu các tham số của dữ liệu bằng hạ gradient, đầu tiên ta cần khởi tạo chúng.
+Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán hệ số điều chỉnh $b$ bằng $0$.
 
 ```{.python .input  n=7}
 w = np.random.normal(0, 0.01, (2, 1))
@@ -227,7 +231,9 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
-*dịch đoạn phía trên*
+Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp với dữ liệu của ta đủ tốt. 
+Mỗi lần cập nhật, ta tính gradient (đạo hàm nhiều biến) của hàm mất mát theo các tham số. 
+Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm dần giá trị mất mát. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -573,7 +579,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Lê Quang Nhật
+* Dương Nhật Tân
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
 * Nguyễn Lê Quang Nhật

@@ -590,7 +590,7 @@ and (ii) as minimizing our surprise (and thus the number of bits) required to co
 ## Model Prediction and Evaluation
 -->
 
-## *dịch tiêu đề phía trên*
+## Sử dụng Mô hình để Dự đoán và Đánh giá
 
 <!--
 After training the softmax regression model, given any example features,
@@ -600,13 +600,17 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
+Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. 
+Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
+Ở phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
+Giá trị này là tỉ lệ giữa số mẫu được dự đoán chính xác so với tổng số mẫu được dự đoán.
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We introduced the softmax operation which takes a vector maps it into probabilities.
@@ -614,13 +618,15 @@ This is equal to the ratio between the number of correct predictions a nd the to
 * cross-entropy is a good measure of the difference between two probability distributions. It measures the number of bits needed to encode the data given our model.
 -->
 
-*dịch đoạn phía trên*
+* Chúng tôi đã giới thiệu về hàm softmax giúp ánh xạ một vector đầu vào sang các giá trị xác suất. 
+* Hồi quy softmax được áp dụng cho các bài toán phân loại. Nó sử dụng phân phối xác suất của các lớp đầu ra thông qua hàm softmax. 
+* Entropy chéo là một phép đánh giá tốt cho sự khác nhau giữa 2 phân phối xác suất. Nó đo lường số lượng bit cần để biểu diễn dữ liệu cho mô hình.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Show that the Kullback-Leibler divergence $D(p\|q)$ is nonnegative for all distributions $p$ and $q$. Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex function.
@@ -639,8 +645,21 @@ This is equal to the ratio between the number of correct predictions a nd the to
     * Extend this to more than two numbers.
 -->
 
-*dịch đoạn phía trên*
 
+1. Chứng minh rằng độ phân kì Kullback-Leibler $D(p\|q)$ không âm với mọi phân phối $p$ và $q$. Gợi ý: sử dụng bất đẳng thức Jensen hay nghĩa là sử dụng bổ đề $-\log x$ là một hàm lồi.
+2. Chứng minh rằng $\log \sum_j \exp(o_j)$ là một hàm lồi với $o$.
+3. Chúng ta có thể tìm hiểu sâu hơn về sự liên kết giữa các họ hàm mũ và softmax.
+   * Tính đạo hàm cấp hai của hàm mất mát entropy chéo $l(y,\hat{y})$ cho softmax. 
+   * Tính phương sai của phân phối được cho bởi $\mathrm{softmax}(o)$ và chứng minh rằng nó khớp với đạo hàm cấp hai được tính ở trên.
+4. Giả sử rằng chúng ta có 3 lớp, xác suất xảy ra cho mỗi lớp bằng nhau, nói cách khác vector xác suất là $(\frac{1}{3}, \frac{1}{3}, \frac{1}{3})$.
+   * Vấn đề là gì nếu chúng ta cố gắng thiết kế một mã nhị phân cho nó? Chúng ta có thể làm khớp cận dưới của entropy trên số lượng bits hay không? 
+   * Bạn có thể thiết kế một mã tốt hơn không? Gợi ý: Điều gì xảy ra nếu chúng ta cố gắng biểu diễn 2 quan sát độc lập và nếu chúng ta biểu diễn $n$ quan sát đồng thời?
+5. Softmax là một cách gọi sai cho phép ánh xạ đã được giới thiệu ở trên (nhưng cộng đồng học sâu vẫn sử dụng nó). Công thức thật sự của softmax là $\mathrm{RealSoftMax}(a, b) = \log (\exp(a) + \exp(b))$.
+   * Chứng minh rằng $\mathrm{RealSoftMax}(a, b) > \mathrm{max}(a, b)$.
+   * Chứng minh rằng $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) > \mathrm{max}(a, b)$ với $\lambda > 0$.
+   * Chứng minh rằng khi $\lambda \to \infty$, chúng ta có $\lambda^{-1} \mathrm{RealSoftMax}(\lambda a, \lambda b) \to \mathrm{max}(a, b)$.
+   * Soft-min sẽ trông như thế nào? 
+   * Mở rộng nó cho nhiều hơn 2 số.
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
@@ -700,4 +719,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 11 -->
-*
+* Đinh Minh Tân
+* Phạm Hồng Vinh

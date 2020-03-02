@@ -171,7 +171,7 @@ X_prob, X_prob.sum(axis=1)
 ## The Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 Now that we have defined the softmax operation, we can implement the softmax regression model.
@@ -179,7 +179,9 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
+Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
+Chú ý rằng chúng ta làm phẳng mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
 def net(X):
@@ -190,14 +192,15 @@ def net(X):
 ## The Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm mất mát
 
 <!--
 Next, we need to implement the cross-entropy loss function, introduced in :numref:`sec_softmax`.
 This may be the most common loss function in all of deep learning because, at the moment, classification problems far outnumber regression problems.
 -->
 
-*dịch đoạn phía trên*
+Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
+Đây có lẽ là hàm mất mát thông dụng nhất trong nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội hơn số lượng bài toán hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
@@ -206,7 +209,10 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
+Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
+chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các phần tử thích hợp từ ma trận của các biến softmax đầu vào.
+Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
@@ -217,7 +223,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
@@ -232,7 +238,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ chính xác cho bài toán Phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
@@ -241,7 +247,9 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-*dịch đoạn phía trên*
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
+Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
+Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
 When predictions are consistent with the actual category `y`, they are correct.
@@ -250,7 +258,10 @@ Although it can be difficult optimize accuracy directly (it is not differentiabl
 it is often the performance metric that we care most about, and we will nearly always report it when training classifiers.
 -->
 
-*dịch đoạn phía trên*
+Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
+Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
+Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
+đây thường là phép đo chất lượng được quan tâm tới nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -262,7 +273,13 @@ The result is an `ndarray` containing entries of 0 (false) and 1 (true).
 Taking the mean yields the desired result.
 -->
 
-*dịch đoạn phía trên*
+Độ chính xác được tính toán như sau:
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
+Kết quả trả về sẽ có cùng kích thước với biến `y`
+và bây giờ ta chỉ cần so sánh hai vector này.
+Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
+Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true).
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -280,7 +297,10 @@ The second example's prediction category is $2$ (the largest element of the row 
 Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
+Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
@@ -291,7 +311,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -306,7 +326,7 @@ def evaluate_accuracy(net, data_iter):
 Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 -->
 
-*dịch đoạn phía trên*
+`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng tích lũy của nhiều số.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -330,7 +350,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-*dịch đoạn phía trên*
+Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ ngang với việc đoán mò, tức độ chính xác bằng $0.1$ với $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
@@ -574,10 +594,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
-*
+* Nguyễn Quang Hải
 
 <!-- Phần 5 -->
 *
