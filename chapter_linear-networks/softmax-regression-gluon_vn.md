@@ -67,7 +67,7 @@ net.initialize(init.Normal(sigma=0.01))
 ## The Softmax
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm Softmax
 
 <!--
 In the previous example, we calculated our model's output and then ran this output through the cross-entropy loss.
@@ -77,7 +77,10 @@ Recall that the softmax function calculates $\hat y_j = \frac{e^{z_j}}{\sum_{i=1
 where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^\mathrm{th}$ element of the input ``y_linear`` variable, as computed by the softmax.
 -->
 
-*dịch đoạn phía trên*
+Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
+Về mặt toán học, cách làm này hoàn toàn có lý.
+Tuy nhiên, từ góc độ tính toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số (được bàn trong :numref:`sec_naive_bayes`).
+Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``.
 
 <!--
 If some of the $z_i$ are very large (i.e., very positive), then $e^{z_i}$ might be larger than the largest number we can have for certain types of ``float`` (i.e., overflow).
@@ -87,7 +90,11 @@ One trick to get around this is to first subtract $\text{max}(z_i)$ from all $z_
 You can verify that this shifting of each $z_i$ by constant factor does not change the return value of ``softmax``.
 -->
 
-*dịch đoạn phía trên*
+Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
+Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan`` .
+Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không xác định một cách rõ ràng.
+Có một mẹo để khắc phục điều này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
 After the subtraction and normalization step, it might be that possible that some $z_j$ have large negative values and thus that the corresponding $e^{z_j}$ will take values close to zero.
@@ -95,7 +102,9 @@ These might be rounded to zero due to finite precision (i.e underflow), making $
 A few steps down the road in backpropagation, we might find ourselves faced with a screenful of the dreaded not-a-number (``nan``) results.
 -->
 
-*dịch đoạn phía trên*
+Sau khi thực hiện phép trừ và chuẩn hóa, một vài $z_j$ có thể có giá trị âm lớn và do đó $e^{z_j}$ sẽ xấp xỉ 0.
+Điều này có thể dẫn đến việc làm tròn thành 0 (tức tràn số dưới) do khả năng biễu diễn chính xác là hữu hạn, tức $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
+Thực hiện vài bước lan truyền ngược với lỗi trên, ta sẽ đối mặt với một loạt giá trị `nan` (*not-a-number*: *Không phải số*) đáng sợ.
 
 <!--
 Fortunately, we are saved by the fact that even though we are computing exponential functions, we ultimately intend to take their log (when calculating the cross-entropy loss).
@@ -103,7 +112,9 @@ By combining these two operators (``softmax`` and ``cross_entropy``) together, w
 As shown in the equation below, we avoided calculating $e^{z_j}$ and can instead $z_j$ directly due to the canceling in $\log(\exp(\cdot))$.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, mặc dù ta tính toán với các hàm mũ nhưng trong thực tế kết quả cuối cùng ta muốn là giá trị log của nó (ví dụ khi tính hàm mất mát entropy chéo).
+Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề bất ổn trong tính toán mà có thể gây khó khăn trong quá trình lan truyền ngược.
+Như sẽ thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc khử trực tiếp trong $\log(\exp(\cdot))$.
 
 $$
 \begin{aligned}
@@ -119,7 +130,9 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ muốn giữ nguyên chức năng của softmax thông thường trong trường hợp ta muốn đánh giá xác xuất của đầu ra theo mô hình.
+Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit và tính softmax cùng giá trị log của nó trong hàm mất mát `softmax_cross_entropy`.
+Hàm này sẽ tự động thực hiện các mẹo thông minh log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
 ```{.python .input  n=4}
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
@@ -228,7 +241,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
 
 <!-- Phần 3 -->
 * Phạm Minh Đức
