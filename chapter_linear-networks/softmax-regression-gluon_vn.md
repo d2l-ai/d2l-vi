@@ -73,7 +73,7 @@ Recall that the softmax function calculates $\hat y_j = \frac{e^{z_j}}{\sum_{i=1
 where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^\mathrm{th}$ element of the input ``y_linear`` variable, as computed by the softmax.
 -->
 
-Trong ví dụ trước, ta đã tính kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
+Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
 Về mặt toán học, cách làm này hoàn toàn có lý.
 Tuy nhiên, từ góc độ tính toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số (được bàn trong :numref:`sec_naive_bayes`).
 Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``.
@@ -89,7 +89,7 @@ You can verify that this shifting of each $z_i$ by constant factor does not chan
 Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
 Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan`` .
 Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không xác định một cách rõ ràng.
-Một mẹo để có khắc phục điều này là đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Có một mẹo để khắc phục điều này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
 Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
@@ -99,7 +99,7 @@ A few steps down the road in backpropagation, we might find ourselves faced with
 -->
 
 Sau khi thực hiện phép trừ và chuẩn hóa, một vài $z_j$ có thể có giá trị âm lớn và do đó $e^{z_j}$ sẽ xấp xỉ 0.
-Điều này có thể dẫn đến việc làm tròn thành 0 (tức là tràn số dưới) do khả năng biễu diễn chính xác là hữu hạn, tức $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
+Điều này có thể dẫn đến việc làm tròn thành 0 (tức tràn số dưới) do khả năng biễu diễn chính xác là hữu hạn, tức $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
 Thực hiện vài bước lan truyền ngược với lỗi trên, ta sẽ đối mặt với một loạt giá trị `nan` (*not-a-number*: *Không phải số*) đáng sợ.
 
 <!--
@@ -126,7 +126,7 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-Ta sẽ muốn giữ chức năng của softmax thông thường trong trường hợp ta muốn đánh giá xác xuất của đầu ra theo mô hình.
+Ta sẽ muốn giữ nguyên chức năng của softmax thông thường trong trường hợp ta muốn đánh giá xác xuất của đầu ra theo mô hình.
 Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit và tính softmax cùng giá trị log của nó trong hàm mất mát `softmax_cross_entropy`.
 Hàm này sẽ tự động thực hiện các mẹo thông minh log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
