@@ -5,7 +5,7 @@
 # Model Selection, Underfitting and Overfitting
 -->
 
-# *dịch tiêu đề phía trên*
+# Lựa Chọn Mô Hình, Dưới Khớp và Quá Khớp
 :label:`sec_model_selection`
 
 <!--
@@ -16,7 +16,11 @@ For example, imagine that we wanted to hunt for patterns among genetic markers l
 Because each person's genes identify them uniquely (ignoring identical siblings), it's possible to memorize the entire dataset.
 -->
 
-*dịch đoạn phía trên*
+Như những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *mẫu*.
+Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một mẫu mà nó *phổ quát* và không chỉ đơn giản là ghi nhớ các dữ liệu của chúng ta.
+Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các mẫu trong số các dấu hiệu di truyền liên kết các bệnh nhân và tình trạng mất trí của họ,
+(hãy để các nhãn được trích ra từ bộ {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
+Bởi vì các gene của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên hoàn toàn có thể để ghi nhớ toàn bộ tập dữ liệu.
 
 <!--
 We don't want our model to say *"That's Bob! I remember him! He has dementia!*
@@ -25,7 +29,10 @@ When we deploy the model in the future, we will encounter patients that the mode
 Our predictions will only be useful if our model has truly discovered a *general* pattern.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta không muốn mô hình của chúng ta nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
+Lý do đơn giản.
+Khi chúng ta triển khai mô hình trong tương lai, chúng ta sẽ chạm trán các bệnh nhân mà mô hình của chúng ta chưa bao giờ gặp trước đấy.
+Sự dự toán của chúng ta sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một mẫu *phổ quát*.
 
 <!--
 To recapitulate more formally, our goal is to discover patterns that capture regularities in the underlying population from which our training set was drawn.
@@ -33,7 +40,9 @@ If we are successfull in this endeavor, then we could successfully assess risk e
 This problem---how to discover patterns that *generalize*---is the fundamental problem of machine learning.
 -->
 
-*dịch đoạn phía trên*
+Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các mẫu mà chúng nắm bắt được các quy tắc trong tập tổng thể nền tảng mà từ đó tập huấn luyện của chúng ta đã được trích ra. 
+Nếu chúng ta thành công trong nỗ lực này, thì chúng ta có thể đánh giá thành công rủi ro ngay cả đối với các cá nhân mà chúng ta chưa bao giờ gặp phải trước đây.
+Vấn đề này---làm cách nào để khám phá ra các mẫu mà *phổ quát hóa*---là vấn đề nền tảng của học máy.
 
 <!--
 The danger is that when we train models, we access just a small sample of data.
@@ -43,7 +52,11 @@ In a large hospital system, we might access hundreds of thousands of medical rec
 When working with finite samples, we run the risk that we might discover *apparent* associations that turn out not to hold up when we collect more data.
 -->
 
-*dịch đoạn phía trên*
+Sự nguy hiểm là khi chúng ta huấn luyện các mô hình, chúng ta truy cập chỉ một mẫu dữ liệu nhỏ.
+Các tệp dữ liệu hình ảnh công cộng lớn nhất chứa khoảng một triệu hình ảnh.
+Thông thường hơn, chúng ta phải học chỉ từ hàng ngàn hoặc hàng chục ngàn điểm dữ liệu.
+Trong một hệ thống bệnh viện lớn, chúng ta có thể truy cập hàng trăm ngàn hồ sơ y tế.
+Khi làm việc với các mẫu hữu hạn, chúng ta gặp phải rủi ro mà chúng ta có thể khám phá các sự kết hợp *rõ ràng* mà hóa ra không giữ được khi chúng ta thu thập thêm dữ liệu.
 
 <!--
 The phenomena of fitting our training data more closely than we fit the underlying distribution is called overfitting, and the techniques used to combat overfitting are called regularization.
@@ -52,7 +65,9 @@ If you altered the model structure or the hyper-parameters during the experiment
 you might have noticed that with enough nodes, layers, and training epochs, the model can eventually reach perfect accuracy on the training set, even as the accuracy on test data deteriorates.
 -->
 
-*dịch đoạn phía trên*
+Hiện tượng việc khớp của dữ liệu huấn luyện càng chặt chẽ nhiều hơn là khi chúng ta khớp các phân phối nền tảng được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn.
+Trong các phần trước, bạn có thể đã quan sát hiệu ứng này khi thử nghiệm với tập dữ liệu Fashion-MNIST.
+Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong suốt quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu thử nghiệm giảm đi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
