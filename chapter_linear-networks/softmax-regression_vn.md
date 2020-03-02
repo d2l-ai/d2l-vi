@@ -328,7 +328,7 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 ### Log-Likelihood
 -->
 
-### *dịch tiêu đề phía trên*
+### Log hợp lý (Log-likelihood)
 
 <!--
 The softmax function gives us a vector $\hat{\mathbf{y}}$, which we can interpret as estimated conditional probabilities of each class given the input $x$, 
@@ -336,7 +336,9 @@ e.g., $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 We can compare the estimates with reality by checking how probable the *actual* classes are according to our model, given the features.
 -->
 
-*dịch đoạn phía trên*
+Hàm softmax cho chúng ta một vector $\hat{\mathbf{y}}$, có thể được hiểu như các xác suất có điểu kiện của từng lớp biết đầu vào là $x$.
+Ví dụ: $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
+Để biết các ước lượng có sát với thực tế hay không, ta kiểm tra xác suất mà mô hình gán cho lớp *thật sự* khi biết các đặc trưng.
 
 $$
 P(Y \mid X) = \prod_{i=1}^n P(y^{(i)} \mid x^{(i)})
@@ -350,7 +352,8 @@ Maximizing $P(Y \mid X)$ (and thus equivalently minimizing $-\log P(Y \mid X)$) 
 This yields the loss function (we dropped the superscript $(i)$ to avoid notation clutter):
 -->
 
-*dịch đoạn phía trên*
+Cực đại hoá $P(Y \mid X)$ (và vì vậy tương đương với cực tiểu hóa $-\log P(Y \mid X)$) giúp việc dự đoán nhãn tốt hơn.
+Điều này dẫn đến hàm mất mát (chúng tôi lược bỏ chỉ số trên $(i)$ để tránh sự rối rắm về kí hiệu):
 
 $$
 l = -\log P(y \mid x) = - \sum_j y_j \log \hat{y}_j.
@@ -366,8 +369,14 @@ Note that this is often not possible.
 For example, there might be label noise in the dataset (some examples may be mislabeled).
 It may also not be possible when the input features are not sufficiently informative to classify every example perfectly.
 -->
-
-*dịch đoạn phía trên*
+Bởi vì những lí do sẽ được giải thích trong chốc lát, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
+Ở đây, chúng ta đã sử dụng nó bằng cách xây dựng $\hat{y}$ giống như một phân phối xác suất rời rạc và vector $\mathbf{y}$ là một vector one-hot.
+Vì thế, tổng các số hạng với chỉ số $j$ sẽ biến mất ngoại trừ duy nhất một số hạng.
+Bởi mọi $\hat{y}_j$ đều là xác suất, log của chúng không bao giờ lớn hơn $0$.
+Vì vậy, hàm mất mát sẽ không thể giảm thêm được nữa nếu chúng ta dự đoán chính xác $y$ với *độ chắc chắn tuyệt đối*, tức $P(y \mid x) = 1$ cho nhãn đúng.
+Chú ý rằng điều này thường không khả thi.
+Ví dụ, nhãn bị nhiễu sẽ xuất hiện trong tập dữ liệu (một vài mẫu bị dán nhầm nhãn).
+Điều này cũng khó xảy ra khi những đặc trưng đầu vào không chứa đủ thông tin để phân loại các mẫu một cách hoàn hảo.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -718,7 +727,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Trần Kiến An
 
 <!-- Phần 7 -->
 * Lý Phi Long
@@ -737,3 +746,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
+
