@@ -5,7 +5,7 @@
 # Concise Implementation of Softmax Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai súc tích của Hồi quy Softmax
 :label:`sec_softmax_gluon`
 
 <!--
@@ -14,7 +14,8 @@ we will find it similarly (or possibly more) convenient for implementing classif
 Again, we begin with our import ritual.
 -->
 
-*dịch đoạn phía trên*
+Giống như cách Gluon giúp việc thực hiện hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, chúng ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
+Một lần nữa, chúng ta bắt đầu bằng việc nhập gói thư viện.
 
 ```{.python .input  n=1}
 import d2l
@@ -27,7 +28,7 @@ npx.set_np()
 Let's stick with the Fashion-MNIST dataset and keep the batch size at $256$ as in the last section.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích cỡ batch bằng $256$ như ở phần trước.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -38,7 +39,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tham số Mô hình
 
 <!--
 As mentioned in :numref:`sec_softmax`, the output layer of softmax regression is a fully-connected (`Dense`) layer.
@@ -47,7 +48,10 @@ Again, here, the `Sequential` is not really necessary, but we might as well form
 Again, we initialize the weights at random with zero mean and standard deviation $0.01$.
 -->
 
-*dịch đoạn phía trên*
+Như đã đề cập trong :numref:`sec_softmax`, tầng ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
+Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra vào đối tượng `Sequential`.
+Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen sử dụng vì nó sẽ luôn hiện diện khi ta lập trình các mô hình học sâu.
+Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
 ```{.python .input  n=3}
 net = nn.Sequential()
@@ -219,7 +223,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 *
