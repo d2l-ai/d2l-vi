@@ -50,9 +50,9 @@ In the future, we will talk about more sophisticated strategies for exploiting t
 -->
 
 Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
-Mỗi ví dụ trong dữ liệu thô là $28 \lần 28$ ảnh.
-Trong phần này, chúng ta sẽ dát mỏng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
-Trong tương lai, chúng ta sẽ nói về các chiến lược tinh vi hơn để khai thác cấu trúc không gian của các ảnh, nhưng đến bây giờ chúng ta xe mỗi vị trí điểm ảnh như là các đặc trưng khác nhau. 
+Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
+Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
+Sau này ta sẽ bàn về các chiến lược tinh vi hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
