@@ -498,7 +498,7 @@ $H[p] / 2$ is often also called the binary entropy.
 -->
 
 Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat".
-"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit vị biểu diễn dữ liệu sử dụng cơ số là 2.
+"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2.
 Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ thường được gọi là entropy nhị phân.
 
@@ -521,9 +521,8 @@ Easy to predict, easy to compress.
 
 Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán?
 Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại.
-Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này cũng rất dễ nén!
-Ví như tất cả các ơn vị dữ liệu (token) trong dòng dữ liệu nào đó luôn là một giá trị cố định.
-Thì đây là một dòng dữ liệu tẻ nhạt!
+Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén!
+Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt!
 Không những tẻ nhạt, mà nó còn dễ đoán nữa.
 Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này.
 Dễ đoán thì cũng dễ nén là vậy.
@@ -741,4 +740,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
