@@ -146,13 +146,13 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 ### From Linear to Nonlinear
 -->
 
-### *dịch tiêu đề phía trên*
+### Từ tuyến tính tới phi tuyến tính
 
 <!--
 Formally, we calculate the each layer in this one-hidden-layer MLP as follows:
 -->
 
-*dịch đoạn phía trên*
+Một cách hình thức, chúng ta tính toán mỗi tầng của một-tầng-ẩn MLP như sau:
 
 
 $$
@@ -173,16 +173,18 @@ A linear function of a linear function is itself a linear function.
 Moreover, our linear model was already capable of representing any linear function.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta theo dõi và cập nhật thêm hai tập tham số.
+Vậy thì đổi lại chúng ta thu được gì?
+Bạn có thể bị bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng nhận lại được gì hết!*
 
 
 <!--
 We can view the equivalence formally by proving that for any values of the weights, we can just collapse out the hidden layer, yielding an equivalent single-layer model with paramters
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể thấy sự tương tương một cách hình thức bằng cách chứng minh rằng với bất kỳ giá trị nào của các trọng số, chúng ta có thể thu gọn tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
 
-$\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ and $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
+$\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ và $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
 $$\mathbf{o} = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 = \mathbf{W}_2 (\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 = (\mathbf{W}_2 \mathbf{W}_1) \mathbf{x} + (\mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2) = \mathbf{W} \mathbf{x} + \mathbf{b}.$$
 
@@ -200,7 +202,13 @@ In general, with these activation functions in place,
 it is no longer possible to collapse our MLP into a linear model.
 -->
 
-*dịch đoạn phía trên*
+Để nhận thấy rõ tiềm năng của một kiến trúc đa tầng,
+chúng ta cần một thành phần chính nữa---một *hàm kích hoạt phi tuyến tính* theo phần tử $\sigma$
+để áp dụng vào mỗi nút ẩn
+(theo sau biến đổi tuyến tính).
+Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là rectified linear unit (ReLU)
+$\mathrm{max}(x, 0)$.
+Thông thường, với việc sử dụng các hàm kích hoạt này, chúng ta không còn có thể thu gọn MLP thành một mô hình tuyến tính.
 
 $$
 \begin{aligned}
@@ -216,19 +224,27 @@ e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ and $\math
 one atop another, yielding ever more expressive models (assuming fixed width).
 -->
 
-*dịch đoạn phía trên*
+Để xây dựng một MLPs tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn,
+ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$,
+tầng này chồng lên tầng kia, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
 
 <!--
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
 We can easily design hidden nodes to perform arbitrary computation, for instance, basic logic operations on a pair of inputs.
 Moreover, for certain choices of the activation function, it is widely known that MLPs are universal approximators.
-Even a single-hidden-layer network, given enough nodes (possibly absurdly manby), and the right set of weights, we can model any function at all.
+Even a single-hidden-layer network, given enough nodes (possibly absurdly many), and the right set of weights, we can model any function at all.
 *Actually learning that function is the hard part.* You might think of your neural network as being a bit like the C programming language.
 The language, like any other modern language, is capable of expressing any computable program.
 But actually coming up with a program that meets your specifications is the hard part.
 -->
 
-*dịch đoạn phía trên*
+MLPs có thể nắm bắt được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, các nơ-ron này phụ thuộc vào giá trị của mỗi đầu vào.
+Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện tính toán bất kỳ, ví dụ, các phép tính logic cơ bản với hai đầu vào.
+Hơn nữa, với một số hàm kích hoạt cụ thể, MLPs được biết đến rộng rãi như là universal approximators.
+Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách phi lý), và một tập các tham số phù hợp, chúng ta có thể mô phỏng bất kỳ một hàm nào.
+*Thực ra thì việc học hàm đó là việc khó khăn.* Bạn có thể nghĩ về mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
+Ngôn ngữ này, giống như bất kỳ ngôn ngữ hiện đại nào khác, có khả năng biểu diễn bất kỳ chương trình tính toán nào.
+Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật mới thực sự là việc khó khăn.
 
 <!--
 Moreover, just because a single-layer network *can* learn any function does not mean that you should try to solve all of your problems with single-layer networks.
@@ -237,7 +253,10 @@ We'll touch upon more rigorous arguments in subsequent chapters, but first let's
 In this example, we’ll implement an MLP with two hidden layers and one output layer.
 -->
 
-*dịch đoạn phía trên*
+Ngoài ra, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
+Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn nhiều bằng cách sử dụng các mạng sâu hơn (hoặc rộng hơn).
+Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy thực sự xây dựng MLP bằng mã nguồn.
+Trong ví dụ này, chúng tôi sẽ triển khai MLP với hai tầng ẩn và một tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
