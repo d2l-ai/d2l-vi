@@ -52,7 +52,7 @@ In a large hospital system, we might access hundreds of thousands of medical rec
 When working with finite samples, we run the risk that we might discover *apparent* associations that turn out not to hold up when we collect more data.
 -->
 
-Sự nguy hiểm là khi chúng ta huấn luyện các mô hình, chúng ta truy cập chỉ một mẫu dữ liệu nhỏ.
+Nguy hiểm là khi huấn luyện các mô hình, chúng ta chỉ truy cập một tập dữ liệu nhỏ.
 Các tệp dữ liệu hình ảnh công cộng lớn nhất chứa khoảng một triệu hình ảnh.
 Thông thường hơn, chúng ta phải học chỉ từ hàng ngàn hoặc hàng chục ngàn điểm dữ liệu.
 Trong một hệ thống bệnh viện lớn, chúng ta có thể truy cập hàng trăm ngàn hồ sơ y tế.
