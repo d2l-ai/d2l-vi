@@ -38,7 +38,7 @@ Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân 
 ## Basic Elements of Linear Regression
 -->
 
-## Một số Thành phần Cơ bản của Hồi quy Tuyến tính
+## Các Thành phần Cơ bản của Hồi quy Tuyến tính
 
 <!--
 *Linear regression* may be both the simplest and most popular among the standard tools to regression.
