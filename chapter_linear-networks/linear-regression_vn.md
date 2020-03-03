@@ -725,7 +725,7 @@ May mắn là, lời giải trên không phụ thuộc vào $\sigma$.
 ## From Linear Regression to Deep Networks
 -->
 
-## Từ Hồi quy tuyến tính tới Mạng học sâu
+## Từ Hồi quy Tuyến tính tới Mạng Học sâu
 
 <!--
 So far we only talked about linear functions.
@@ -734,8 +734,8 @@ To begin, let's start by rewriting things in a 'layer' notation.
 -->
 
 Cho đến nay, chúng ta mới chỉ đề cập về các hàm tuyến tính.
-Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, nhưng ta có thể bắt đầu bằng cách nhìn mô hình tuyến tính như là một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
-Để bắt đầu, hãy cùng viết lại mọi thứ theo kiểu 'tầng'.
+Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, ta có thể bắt đầu coi mô hình tuyến tính như một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
+Để bắt đầu, hãy cùng viết lại mọi thứ theo ký hiệu 'tầng' (*layer*).
 
 <!-- ===================== Kết thúc dịch Phần 14 ===================== -->
 
@@ -745,7 +745,7 @@ Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, như
 ### Neural Network Diagram
 -->
 
-### Giản đồ mạng nơ-ron
+### Giản đồ Mạng Nơ-ron
 
 <!--
 Deep learning practitioners like to draw diagrams to visualize what is happening in their models.
@@ -754,8 +754,8 @@ Note that these diagrams indicate the connectivity pattern (here, each input is 
 -->
 
 Những người làm học sâu thích vẽ giản đồ để trực quan hóa những gì đang xảy ra trong mô hình của họ.
-Hình :numref:`fig_single_neuron`, chúng tôi minh họa mô hình tuyến tính như là một mạng nơ-ron.
-Những giản đồ này chỉ ra cách kết nối (ở đây, mỗi đầu vào được kết nối tới đầu ra) nhưng không có giá trị của các trọng số và độ chệch.
+Trong :numref:`fig_single_neuron`, mô hình tuyến tính được minh họa như một mạng nơ-ron.
+Những giản đồ này chỉ ra cách kết nối (ở đây, mỗi đầu vào được kết nối tới đầu ra) nhưng không có giá trị của các trọng số và các hệ số điều chỉnh.
 
 <!--
 ![Linear regression is a single-layer neural network. ](../img/singleneuron.svg)
@@ -773,7 +773,7 @@ We will talk a lot more about networks composed of such layers in the next chapt
 -->
 
 Vì chỉ có một nơ-ron tính toán (một nút) trong đồ thị (các giá trị đầu vào không được tính mà được cho trước), chúng ta có thể coi mô hình tuyến tính như mạng nơ-ron chỉ có một nơ-ron nhân tạo duy nhất.
-Với mô hình này, mọi đầu vào đều được kết nối tới mọi đầu ra (trong trường hợp này chỉ có một đầu ra!), ta có thể coi phép biến đổi này là một *tầng kết nối đầy đủ*, hay còn gọi là *tầng kết nối dày đặc*.
+Với mô hình này, mọi đầu vào đều được kết nối tới mọi đầu ra (trong trường hợp này chỉ có một đầu ra!), ta có thể coi phép biến đổi này là một *tầng kết nối đầy đủ*, hay còn gọi là *tầng kết nối dày đặc*. 
 Chúng ta sẽ nói nhiều hơn về các mạng nơ-ron cấu tạo từ những tầng như vậy trong chương kế tiếp về mạng perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 15 ===================== -->
