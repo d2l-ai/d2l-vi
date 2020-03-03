@@ -289,7 +289,7 @@ Moreover, assume that we have $q$ categories (outputs).
 Then the minibatch features $\mathbf{X}$ are in $\mathbb{R}^{n \times d}$, weights $\mathbf{W} \in \mathbb{R}^{d \times q}$, and the bias satisfies $\mathbf{b} \in \mathbb{R}^q$.
 -->
 
-Để cải thiện hiệu suất tính toán và tận dụng GPU, chúng ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
+Để cải thiện hiệu suất tính toán và tận dụng GPU, ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
 Giả sử chúng có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích cỡ batch là $n$.
 Thêm vào đó, chúng ta có $q$ lớp đầu ra.
 Do vậy, minibatch đặc trưng $\mathbf{X}$ sẽ thuộc $\mathbb{R}^{n \times d}$, trọng số $\mathbf{W} \in \mathbb{R}^{d \times q}$, và độ chệch sẽ thỏa mãn $\mathbf{b} \in \mathbb{R}^q$.
