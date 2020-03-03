@@ -16,7 +16,7 @@ For example, imagine that we wanted to hunt for patterns among genetic markers l
 Because each person's genes identify them uniquely (ignoring identical siblings), it's possible to memorize the entire dataset.
 -->
 
-Như những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *mẫu*.
+Là những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *khuôn mẫu*.
 Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một mẫu mà nó *phổ quát* và không chỉ đơn giản là ghi nhớ các dữ liệu của chúng ta.
 Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các mẫu trong số các dấu hiệu di truyền liên kết các bệnh nhân và tình trạng mất trí của họ,
 (hãy để các nhãn được trích ra từ bộ {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
