@@ -77,13 +77,13 @@ for param in params:
 ## Activation Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm kích hoạt
 
 <!--
 To make sure we know how everything works, we will implement the ReLU activation ourselves using the `maximum` function rather than invoking `npx.relu` directly.
 -->
 
-*dịch đoạn phía trên*
+Để đảm bảo rằng mọi thứ đều hoạt động, chúng ta sẽ tự lập trình hàm kích hoạt ReLU sử dụng hàm `maximum` thay vì gọi tới hàm `npx.relu`.
 
 ```{.python .input  n=4}
 def relu(X):
@@ -94,14 +94,15 @@ def relu(X):
 ## The model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 Because we are disregarding spatial structure, we `reshape` each 2D image into a flat vector of length  `num_inputs`.
 Finally, we implement our model with just a few lines of code.
 -->
 
-*dịch đoạn phía trên*
+Bởi chúng ta bỏ qua sự liên hệ về mặt không gian giữa các điểm ảnh, ta `reshape` mỗi bức ảnh 2D thành một vector phẳng có độ dài `num_inputs`.
+Cuối cùng, ta có được mô hình chỉ với một vài dòng mã nguồn.
 
 ```{.python .input  n=5}
 def net(X):
@@ -118,7 +119,7 @@ def net(X):
 ## The Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm mất mát
 
 <!--
 To ensure numerical stability (and because we already implemented the softmax function from scratch (:numref:`sec_softmax_scratch`), 
@@ -127,7 +128,8 @@ Recall our easlier discussion of these intricacies (:numref:`sec_mlp`).
 We encourage the interested reader to examine the source code for `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` to deepen their knowledge of implementation details.
 -->
 
-*dịch đoạn phía trên*
+Để đảm bảo tính ổn định số học (và cũng bởi ta đã lập trình hàm softmax từ đầu trước đó rồi (:numref:`sec_softmax_scratch`), ta sẽ tận dụng luôn các hàm số đã tích hợp sẵn của Gluon để tính softmax và lỗi entropy chéo. Nhớ lại phần thảo luận của chúng ta trước đó về vấn đề rắc rối này (:numref:`sec_mlp`).
+Chúng tôi khuyến khích bạn đọc có hứng thú thử kiểm tra mã nguồn trong `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` để hiểu thêm về cách lập trình chi tiết.
 
 ```{.python .input  n=6}
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
