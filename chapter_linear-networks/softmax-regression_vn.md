@@ -322,7 +322,7 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 (:numref:`sec_linear_regression`).
 -->
 
-Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng dự đoán xác suất của chúng ta.
+Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng dự đoán xác suất của mình.
 Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp phải khi đưa ra biện minh xác suất cho mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
