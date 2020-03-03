@@ -17,10 +17,9 @@ Because each person's genes identify them uniquely (ignoring identical siblings)
 -->
 
 Là những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *khuôn mẫu*.
-Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một mẫu mà nó *phổ quát* và không chỉ đơn giản là ghi nhớ các dữ liệu của chúng ta.
-Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các mẫu trong số các dấu hiệu di truyền liên kết các bệnh nhân và tình trạng mất trí của họ,
-(hãy để các nhãn được trích ra từ bộ {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
-Bởi vì các gene của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên hoàn toàn có thể để ghi nhớ toàn bộ tập dữ liệu.
+Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *phổ quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
+Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các khuôn mẫu liên kết các dấu hiệu di truyền của bệnh nhân và tình trạng mất trí của họ, với nhãn được trích ra từ tập {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
+Bởi vì các gene của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên việc ghi nhớ toàn bộ tập dữ liệu là hoàn toàn khả thi.
 
 <!--
 We don't want our model to say *"That's Bob! I remember him! He has dementia!*
@@ -29,10 +28,10 @@ When we deploy the model in the future, we will encounter patients that the mode
 Our predictions will only be useful if our model has truly discovered a *general* pattern.
 -->
 
-Chúng ta không muốn mô hình của chúng ta nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
-Lý do đơn giản.
-Khi chúng ta triển khai mô hình trong tương lai, chúng ta sẽ chạm trán các bệnh nhân mà mô hình của chúng ta chưa bao giờ gặp trước đấy.
-Sự dự toán của chúng ta sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một mẫu *phổ quát*.
+Chúng ta không muốn mô hình của nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
+Lý do tại sao rất đơn giản.
+Khi chúng ta triển khai mô hình trong tương lai, chúng ta sẽ gặp các bệnh nhân mà mô hình chưa bao giờ gặp trước đấy.
+Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một khuôn mẫu *phổ quát*.
 
 <!--
 To recapitulate more formally, our goal is to discover patterns that capture regularities in the underlying population from which our training set was drawn.
@@ -56,7 +55,7 @@ Nguy hiểm là khi huấn luyện các mô hình, chúng ta chỉ truy cập m�
 Các tệp dữ liệu hình ảnh công cộng lớn nhất chứa khoảng một triệu hình ảnh.
 Thông thường hơn, chúng ta phải học chỉ từ hàng ngàn hoặc hàng chục ngàn điểm dữ liệu.
 Trong một hệ thống bệnh viện lớn, chúng ta có thể truy cập hàng trăm ngàn hồ sơ y tế.
-Khi làm việc với các mẫu hữu hạn, chúng ta gặp phải rủi ro mà chúng ta có thể khám phá các sự kết hợp *rõ ràng* mà hóa ra không giữ được khi chúng ta thu thập thêm dữ liệu.
+Khi làm việc với các tập mẫu hữu hạn, chúng ta gặp phải rủi ro sẽ khám phá ra các sự kết hợp *rõ ràng* mà hóa ra lại không áp dụng khi chúng ta thu thập thêm dữ liệu.
 
 <!--
 The phenomena of fitting our training data more closely than we fit the underlying distribution is called overfitting, and the techniques used to combat overfitting are called regularization.
