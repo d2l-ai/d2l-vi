@@ -523,7 +523,8 @@ Previously, getting these nets training required researchers to code up thousand
 * Commonly-used activation functions include the ReLU function, the sigmoid function, and the tanh function.
 -->
 
-*dịch đoạn phía trên*
+Các perceptron đa lớp sẽ thêm một hoặc nhiều lớp ẩn kết nối đầy đủ giữa các lớp đầu ra và các lớp đầu vào và biến đổi đầu ra của lớp ẩn thông qua hàm kích hoạt.
+Thường dùng các hàm kích hoạt bao gồm hàm ReLU, hàm sigmoid, và hàm tanh
 
 
 <!--
@@ -542,7 +543,14 @@ Show that this network is less expressive (powerful) than a single layer percept
 5. Assume that we have a nonlinearity that applies to one minibatch at a time. What kinds of problems do you expect this to cause?
 -->
 
-*dịch đoạn phía trên*
+Tính đạo hàm của hàm kích hoạt tanh và pReLU
+Chứng minh rằng perceptron đa lớp chỉ sử dụng ReLU( hoặc pReLU ) để xây dựng một hàm tuyến tính từng đoạn liên tục.
+Chứng minh rằng $\mathrm{tanh}(x) + 1 = 2 \mathrm{sigmoid}(2x)$.
+Giả sử ta có một phi tuyến tính perceptron đa lớp *không có* giữa các lớp.
+Ngoài ra, giả sử ta có các chiều của đầu vào $d$, các chiều đầu ra $d$ và đó là một trong các lớp chỉ có các chiều $d/2$.
+Chứng minh rằng mạng này ít có nghĩa (hiệu quả) hơn là perceptron đơn lớp.
+Giả sử ta có một phi tuyến tính áp dụng cho một minibatch cùng một lúc. Bạn mong đợi vấn đề nào sẽ xảy ra ?
+
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -593,4 +601,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 8 -->
-*
+* Bùi Nhật Quân
