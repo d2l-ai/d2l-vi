@@ -65,7 +65,7 @@ If you altered the model structure or the hyper-parameters during the experiment
 you might have noticed that with enough nodes, layers, and training epochs, the model can eventually reach perfect accuracy on the training set, even as the accuracy on test data deteriorates.
 -->
 
-Hiện tượng việc khớp của dữ liệu huấn luyện càng chặt chẽ nhiều hơn là khi chúng ta khớp các phân phối nền tảng được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn.
+Hiện tượng việc mô hình khớp dữ liệu huấn luyện chặt chẽ hơn nhiều so với khớp phân phối nền tảng được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn.
 Trong các phần trước, bạn có thể đã quan sát hiệu ứng này khi thử nghiệm với tập dữ liệu Fashion-MNIST.
 Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong suốt quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu thử nghiệm giảm đi.
 
