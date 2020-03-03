@@ -14,7 +14,7 @@ In the natural sciences and social sciences, the purpose of regression is most o
 Machine learning, on the other hand, is most often concerned with *prediction*.
 -->
 
-Hồi quy ám chỉ các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và giá trị mục tiêu $y$.
+Hồi quy ám chỉ các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và mục tiêu với giá trị số thực $y$.
 Trong khoa học tự nhiên và khoa học xã hội, mục tiêu của hồi quy thường là *đặc trưng hóa* mối quan hệ của đầu vào và đầu ra.
 Mặt khác, học máy lại thường quan tâm đến việc *dự đoán*.
 
@@ -51,7 +51,7 @@ Suppose that we wish to estimate the prices of houses (in dollars) based on thei
 -->
 
 *Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất được sử dụng cho bài toán hồi quy.
-Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
+Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính được phát triển từ một vài giả thuyết đơn giản.
 Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn bằng tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
 Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
 Để tạo động lực, hãy bắt đầu với một ví dụ.
