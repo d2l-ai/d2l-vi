@@ -17,7 +17,7 @@ Because each person's genes identify them uniquely (ignoring identical siblings)
 -->
 
 Là những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *khuôn mẫu*.
-Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *phổ quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
+Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *khái quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
 Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các khuôn mẫu liên kết các dấu hiệu di truyền của bệnh nhân và tình trạng mất trí của họ, với nhãn được trích ra từ tập {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
 Bởi vì các gene của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên việc ghi nhớ toàn bộ tập dữ liệu là hoàn toàn khả thi.
 
@@ -31,7 +31,7 @@ Our predictions will only be useful if our model has truly discovered a *general
 Chúng ta không muốn mô hình của nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
 Lý do tại sao rất đơn giản.
 Khi chúng ta triển khai mô hình trong tương lai, chúng ta sẽ gặp các bệnh nhân mà mô hình chưa bao giờ gặp trước đấy.
-Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một khuôn mẫu *phổ quát*.
+Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một khuôn mẫu *khái quát*.
 
 <!--
 To recapitulate more formally, our goal is to discover patterns that capture regularities in the underlying population from which our training set was drawn.
@@ -41,7 +41,7 @@ This problem---how to discover patterns that *generalize*---is the fundamental p
 
 Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các mẫu mà chúng nắm bắt được các quy tắc trong tập tổng thể nền tảng mà từ đó tập huấn luyện của chúng ta đã được trích ra. 
 Nếu chúng ta thành công trong nỗ lực này, thì chúng ta có thể đánh giá thành công rủi ro ngay cả đối với các cá nhân mà chúng ta chưa bao giờ gặp phải trước đây.
-Vấn đề này---làm cách nào để khám phá ra các mẫu mà *phổ quát hóa*---là vấn đề nền tảng của học máy.
+Vấn đề này---làm cách nào để khám phá ra các mẫu mà *khái quát hóa*---là vấn đề nền tảng của học máy.
 
 <!--
 The danger is that when we train models, we access just a small sample of data.
