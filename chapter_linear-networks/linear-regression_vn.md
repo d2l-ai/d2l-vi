@@ -599,7 +599,7 @@ Ngoài ra, ta giao phó phần toán cho thư viện để tránh phải tự vi
 While you can already get your hands dirty using only the information above, in the following section we can more formally motivate the square loss objective via assumptions about the distribution of noise.
 -->
 
-Mặc dù bạn đã có thể thực hành mà chỉ sử dụng thông tin phía trên, trong phần tiếp theo chúng ta có thể hiểu rõ hơn nguồn gốc của hàm mất mát bình phương thông qua các giả định về phân phối của nhiễu.
+Mặc dù bạn đã có thể thực hành mà chỉ sử dụng thông tin phía trên, trong phần tiếp theo chúng ta có thể hiểu rõ hơn nguồn gốc của hàm mất mát bình phương thông qua các giả định về phân phối của nhiễu. 
 
 <!--
 Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ has many convenient properties.
@@ -607,7 +607,7 @@ These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} -
 -->
 
 Nhớ lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
-Một trong số đó là đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
+Một trong số đó là đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$. 
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -615,9 +615,9 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*).
+Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*). 
 Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn chỉ đơn thuần là có chung cha đẻ.
-Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được đưa ra như sau:
+Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được cho bởi:
 
 $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).$$
 
@@ -625,7 +625,7 @@ $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \m
 Below we define a Python function to compute the normal distribution.
 -->
 
-Dưới đây ta định nghĩa một hàm Python để tính toán phân phối chuẩn.
+Dưới đây ta định nghĩa một hàm Python để tính toán phân phối chuẩn. 
 
 ```{.python .input}
 x = np.arange(-7, 7, 0.01)
@@ -639,7 +639,7 @@ def normal(z, mu, sigma):
 We can now visualize the normal distributions.
 -->
 
-Giờ ta có thể biểu diễn các phân phối chuẩn.
+Giờ ta có thể biểu diễn các phân phối chuẩn. 
 
 ```{.python .input  n=2}
 # Mean and variance pairs
@@ -657,13 +657,13 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, đồng thời tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
+Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
 -->
 
-Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau:
+Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau: 
 
 $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
@@ -671,7 +671,7 @@ $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \ma
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
 -->
 
-Do đó, chúng ta có thể viết *khả năng* thu được giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua:
+Do đó, chúng ta có thể viết *khả năng* thu được giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua
 
 $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).$$
 
@@ -679,7 +679,7 @@ $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma
 Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
 -->
 
-Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp cực đại hóa *sự hợp lý* của bộ dữ liệu:
+Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp tối đa hóa *sự hợp lý* của bộ dữ liệu:
 
 $$P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).$$
 
@@ -691,11 +691,11 @@ So, without changing anything we can minimize the *Negative Log-Likelihood (NLL)
 Working out the math gives us:
 -->
 
-Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE).
+Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE). 
 Trong khi việc tối đa hóa tích của nhiều hàm mũ có thể gặp khó khăn, chúng ta có thể đơn giản hóa phép tính mà không làm ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa log của hàm hợp lý.
-Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa.
-Vì vậy chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì.
-Ta có:
+Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa. 
+Vì vậy chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì. 
+Ta có: 
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
 
@@ -712,10 +712,10 @@ It follows that minimizing squared error is equivalent to maximum likelihood est
 -->
 
 Bây giờ, ta chỉ cần thêm một giả định rằng: $\sigma$ là một hằng số cố định.
-Do đó, ta có thể bỏ qua cụm đầu tiên bởi nó không phụ thuộc vào $\mathbf{w}$ hoặc $b$.
-Khi đó, cụm thứ hai giống hệt hàm bình phương sai số đã được giới thiệu trên đây, nhưng với nhân tử hằng $\frac{1}{\sigma^2}$.
-May mắn là, lời giải trên không phụ thuộc vào $\sigma$.
-Điều này dẫn tới việc cực tiểu hóa bình phương sai số tương đương với việc ước lượng cực đại hợp lý cho mô hình dưới giả định có nhiễu cộng Gaussian.
+Do đó, ta có thể bỏ qua số hạng đầu tiên bởi nó không phụ thuộc vào $\mathbf{w}$ hoặc $b$.
+Khi đó, số hạng thứ hai giống hệt hàm bình phương sai số đã được giới thiệu trên đây, nhưng với nhân tử hằng $\frac{1}{\sigma^2}$.
+May mắn là nghiệm không phụ thuộc vào $\sigma$.
+Điều này dẫn tới việc tối thiểu hóa bình phương sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình dưới giả định có nhiễu cộng Gauss.
 
 <!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
 
