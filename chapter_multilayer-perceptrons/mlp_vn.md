@@ -389,8 +389,8 @@ The sigmoid function transforms its inputs, which values in the domain $\mathbb{
 For that reason, the sigmoid is often called a *squashing* function: it *squashes* any input in the range (-inf, inf) to some value in the range (0, 1).
 -->
 
-Hàm sigmoid biến đổi các biến đầu vào của nó có giá trị nằm trong miền $\mathbb{R}$, để có được các giá trị đầu ra nằm trong khoảng $(0, 1)$.
-Với sự biến đổi như trên, hàm sigmoid thường được gọi là hàm *nén*: có nghĩa là *nén* bất kỳ biến đầu vào nằm trong khoảng (vô cùng bé, vô cùng lớn) để có được giá trị đầu ra nằm trong khoảng (0, 1).
+Hàm sigmoid biến đổi các giá trị đầu vào thuộc $\mathbb{R}$ thành các giá trị đầu ra nằm trong khoảng $(0, 1)$.
+Vì vậy, hàm sigmoid thường được gọi là hàm *nén*: nó *nén* một giá trị đầu vào bất kỳ nằm trong khoảng (âm vô cùng, dương vô cùng) thành một giá trị đầu ra nằm trong khoảng (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
@@ -400,8 +400,8 @@ Thus the pioneers of this field, going all the way back to McCulloch and Pitts, 
 A thresholding activation takes value $0$ when its input is below some threshold and value $1$ when the input exceeds the threshold.
 -->
 
-Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học ở hướng *kích hoạt* hoặc *không kích hoạt*.
-Vì vậy mà những người tiên phong trong lĩnh vực này gồm McCulloch và Pitts, những nhà phát minh ra nơ-ron nhân tạo, sẽ tập trung nghiên cứu vào các đơn vị ngưỡng.
+Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học, thứ có thể ở trong trạng thái *kích hoạt* hoặc *không kích hoạt*.
+Vì vậy mà những người tiên phong trong lĩnh vực này, bao gồm McCulloch và Pitts, những người phát minh ra nơ-ron nhân tạo, tập trung nghiên cứu các đơn vị ngưỡng.
 Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở mức dưới ngưỡng và giá trị là $1$ khi đầu vào ở mức vượt ngưỡng.
 
 <!--
@@ -413,17 +413,17 @@ In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will des
 -->
 
 Khi sự chú ý chuyển sang gradient dựa trên sự học, hàm sigmoid là một lựa chọn tất yếu bởi vì nó có tính xấp xỉ liên tục và khả vi đối với một đơn vị ngưỡng.
-Sigmoids vẫn được sử dụng rộng rãi như các hàm kích hoạt trên các đơn vị đầu ra,
-khi chúng tôi muốn biểu diễn các kết quả đầu ra như các xác suất cho các bài toán phân loại nhị phân (bạn có xem sigmoid như một trường hợp đặc biệt của softmax).
-Tuy nhiên, hầu hết sigmoid đã được thay thế bằng ReLU bởi sự đơn giản và dễ huấn luyện hơn để sử dụng trong các tầng ẩn.
-Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các mô hình sử dụng các đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
+Hàm sigmoid vẫn là hàm kích hoạt được sử dụng rộng rãi ở các đơn vị đầu ra,
+khi ta muốn biểu diễn kết quả đầu ra như các xác suất cho bài toán phân loại nhị phân (bạn có thể xem sigmoid như một trường hợp đặc biệt của softmax).
+Tuy nhiên, trong các tầng ẩn, hàm sigmoid đã gần như bị thay thế bằng hàm ReLU vì nó đơn giản hơn và khiến cho việc huấn luyện trở nên dễ dàng hơn.
+Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các mô hình sử dụng đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
 
 <!--
 Below, we plot the sigmoid function.
 Note that when the input is close to 0, the sigmoid function approaches a linear transformation.
 -->
 
-Sau đây, chúng ta sẽ vẽ đồ thị hàm sigmoid.
+Dưới đây, ta vẽ đồ thị hàm sigmoid.
 Cần chú ý rằng, khi đầu vào có giá trị gần bằng 0, hàm sigmoid tiến tới một phép biến đổi tuyến tính.
 
 ```{.python .input  n=4}
@@ -447,9 +447,9 @@ Note that when the input is 0, the derivative of the sigmoid function reaches a 
 As the input diverges from 0 in either direction, the derivative approaches 0.
 -->
 
-Đạo hàm của hàm sigmoid được vẽ sau đây.
-Chú ý rằng khi biến đầu vào là 0, đạo hàm của hàm sigmoid đạt giá trị đối đa là 0.25.
-Vì biến đầu vào phân kỳ từ 0 theo một trong hai hướng, đạo hàm sẽ đạt giá trị là 0.
+Đồ thị đạo hàm của hàm sigmoid được vẽ ở dưới.
+Chú ý rằng khi đầu vào là 0, đạo hàm của hàm sigmoid đạt giá trị lớn nhất là 0.25.
+Khi đầu vào phân kỳ từ 0 theo một trong hai hướng, đạo hàm sẽ tiến tới 0.
 
 ```{.python .input  n=5}
 y.backward()
