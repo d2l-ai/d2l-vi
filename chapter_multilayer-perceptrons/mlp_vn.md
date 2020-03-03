@@ -596,7 +596,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lâm Ngọc Tâm
 
 <!-- Phần 6 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 *
