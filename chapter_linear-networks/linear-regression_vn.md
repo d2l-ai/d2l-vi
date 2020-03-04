@@ -291,7 +291,7 @@ Although analytic solutions allow for nice mathematical analysis, the requiremen
 -->
 
 Trong khi những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này. 
-Mặc duf các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có sự may mắn này khá chặt đến nỗi nó không được sử dụng trong học sâu.
+Mặc dù các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có sự may mắn này chặt chẽ đến nỗi không có phương pháp học sâu nào thoả mãn được.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -321,7 +321,8 @@ it will at least lead towards a (hopefully good) local minimum.
 
 Kỹ thuật chính để tối ưu hóa gần như bất kỳ mô hình học sâu nào, sẽ được sử dụng xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo hướng làm giảm dần hàm mất mát.
 Thuật toán này được gọi là *hạ gradient*.
-Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, ít nhất thuật toán sẽ dẫn tới điểm một điểm cực tiểu (hy vọng là tốt) .
+Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục.
+Tuy điều tương tự không thể áp dụng cho bề mặt không lồi, ít nhất thuật toán sẽ dẫn tới điểm một điểm cực tiểu (hy vọng là tốt).
 
 <!--
 The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
@@ -330,10 +331,11 @@ We must pass over the entire dataset before making a single update.
 Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
 -->
 
-Ứng dụng đơn giản của hạ gradient bao gồm việc tính đạo hàm mất mát là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu. 
+Ứng dụng đơn giản của hạ gradient bao gồm việc tính đạo hàm của hàm mất mát, nó là trung bình của các mất mát được tính trên mỗi mẫu của tập dữ liệu. 
 Trong thực tế, việc này có thể cực kì chậm. 
-Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật. 
-Vì thế, đôi khi chúng ta chỉ muốn lấy một minibatch ngẫu nhiên của các mẫu mỗi khi cần tính toán cho việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
+Chúng ta phải duyệt qua toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật. 
+Vì thế, đôi khi chúng ta chỉ muốn lấy một minibatch ngẫu nhiên các mẫu mỗi khi cần tính bước cập nhật.
+Phương pháp biến thể này được gọi là *hạ gradient ngẫu nhiên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
