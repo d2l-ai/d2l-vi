@@ -893,8 +893,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
-Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
+1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
 2. Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
