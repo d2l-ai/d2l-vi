@@ -26,7 +26,7 @@ In subsequent sections, we will introduce classification problems, where the goa
 -->
 
 Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
-Các ví dụ phổ biến bao gồm dự đoán giá cả (nhà, cổ phiếu...), thời gian bệnh nhân nằm viện, nhu cầu trong ngành bán lẻ và vô vàn thứ khác.
+Các ví dụ phổ biến bao gồm dự đoán giá cả (nhà, cổ phiếu, ...), thời gian bệnh nhân nằm viện, nhu cầu trong ngành bán lẻ và vô vàn thứ khác.
 Không phải mọi bài toán dự đoán đều là bài toán *hồi quy* cổ điển.
 Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, khi mục tiêu là dự đoán lớp đúng trong một tập các lớp cho trước.
 
@@ -53,7 +53,7 @@ Suppose that we wish to estimate the prices of houses (in dollars) based on thei
 *Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất được sử dụng cho bài toán hồi quy.
 Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính được phát triển từ một vài giả thuyết đơn giản.
 Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn bằng tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
-Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
+Thứ hai, ta giả sử nhiễu có quy tắc (tuân theo phân phối Gauss).
 Để tạo động lực, hãy bắt đầu với một ví dụ.
 Giả sử ta muốn ước lượng giá nhà (bằng đô la) dựa vào diện tích (đơn vị feet vuông) và tuổi đời (theo năm).
 
@@ -76,7 +76,7 @@ We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{
 
 Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số lượng mẫu trong tập dữ liệu.
 Chỉ số $i$ được dùng để xác định một mẫu cụ thể. 
-Ta kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và nhãn tương ứng là $y^{(i)}$.  
+Ta ký hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và nhãn tương ứng là $y^{(i)}$.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
