@@ -63,7 +63,7 @@ you might have noticed that with enough nodes, layers, and training epochs, the 
 ## Training Error and Generalization Error
 -->
 
-## *dịch tiêu đề phía trên*
+## Lỗi Huấn Luyện và Lỗi Khái Quát
 
 <!--
 In order to discuss this phenomenon more formally, we need to differentiate between *training error* and *generalization error*.
@@ -72,7 +72,11 @@ while generalization error is the expectation of our model's error
 were we to apply it to an infinite stream of additional data points drawn from the same underlying data distribution as our original sample.
 -->
 
-*dịch đoạn phía trên*
+Để thảo luận hiện tượng này một cách chính thức hơn, ta cần phân biệt giữa *lỗi huấn luyện* và *lỗi khái quát*.
+Lỗi huấn luyện là loại lỗi của mô hình như được tính toán trên tập huấn luyện,
+trong khi đó lỗi khái quát là kỳ vọng của lỗi trong mô hình
+chúng ta đã áp dụng nó cho một luồng vô hạn các điểm dữ liệu bổ sung được trích ra từ cùng phân phối dữ liệu cơ bản như mẫu ban đầu.
+
 
 <!--
 Problematically, *we can never calculate the generalization error exactly*.
@@ -81,7 +85,10 @@ In practice, we must *estimate* the generalization error by applying our model t
 constituted of a random selection of data points that were withheld from our training set.
 -->
 
-*dịch đoạn phía trên*
+Vấn đề là, *chúng ta không bao giờ có thể tính toán chính xác lỗi khái quát*.
+Đó là bởi vì luồng tưởng tượng dữ liệu vô hạn là một đối tượng tưởng tượng.
+Trong thực tế, chúng ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tệp kiểm tra độc tập.
+cấu thành một lựa chọn ngẫu nhiên các điểm dữ liệu được giữ lại từ tập huấn luyện. 
 
 <!--
 The following three thought experiments will help illustrate this situation better.
@@ -95,7 +102,15 @@ Another student might prepare by trying to understand the reasons for giving cer
 In most cases, the latter student will do much better.
 -->
 
-*dịch đoạn phía trên*
+Ba thí nghiệm sau sẽ giúp minh họa tình huống này tốt hơn.
+Hãy xem xét một sinh viên đại học đang cố gắng chuẩn bị cho kỳ thi cuối cùng của mình.
+Một sinh viên chăm chỉ sẽ cố gắng luyện tập tốt và kiểm tra khả năng của cô ấy bằng việc luyện tập những bài kiểm tra của các năm trước.
+Tuy nhiên, làm tốt các bài kiểm tra trước đây không đảm bảo rằng cô ấy sẽ làm tốt bài kiểm tra thực.
+Ví dụ, sinh viên có thể cố gắng chuẩn bị bằng cách học vẹt các câu trả lời cho các câu hỏi.
+Điều này đòi hỏi sinh viên phải ghi nhớ rất nhiều thứ.
+Cô ấy có thể ghi nhớ đáp án cho các bài kiểm tra cũ rất hoàn hảo. 
+Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do cho việc đưa ra các câu đáp án nhất định. 
+Trong hầu hết các trường hợp, sinh viên sau sẽ làm tốt hơn nhiều. 
 
 <!--
 Likewise, consider a model that simply uses a lookup table to answer questions. 
@@ -108,7 +123,14 @@ That means that there are far more low-res grayscale thumbnail-sized images than
 Even if we could encounter this data, we could never afford to store the lookup table.
 -->
 
-*dịch đoạn phía trên*
+Tương tự vậy, hãy xem xét một mô hình đơn giản chỉ sử dụng một bảng tra cứu để trả lời các câu hỏi. 
+Nếu tập hợp các đầu vào cho phép là rời rạc và nhỏ hợp lý, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
+Tuy nhiên mô hình này không có khả năng làm tốt hơn việc đoán ngẫu nhiên khi phải đối mặt với các ví dụ chưa từng gặp trước đây.
+Trong thực tế không gian đầu vào quá lớn để ghi nhớ các đáp án tương ứng với từng đầu vào có thể hiểu được. 
+Ví dụ, hãy xem xét các hình ảnh $28\times28$ đen trắng.
+Nếu mỗi pixel có thể lấy một trong số các giá trị grayscale $256$, thì có thể có  $256^{784}$ hình ảnh.
+Điều đó có nghĩa là có nhiều ảnh kích thước thumbnail chất lượng thấp hơn là số lượng nguyên tử trong vũ trụ.
+Thậm chí nếu có thể bắt gặp dữ liệu này, ta cũng không bao giờ có thể lưu trữ bảng tra cứu.
 
 <!--
 Last, consider the problem of trying to classify the outcomes of coin tosses (class 0: heads, class 1: tails) based on some contextual features that might be available.
@@ -120,7 +142,13 @@ In this case, the model that always predicts class 1 will incur an error of $\fr
 As we increase the amount of data, the probability that the fraction of heads will deviate significantly from $\frac{1}{2}$ diminishes, and our training error would come to match the generalization error.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, hãy xem xét vấn đề cố gắng phân loại kết quả của việc tung đồng xu (lớp 0: người đứng đầu, lớp 1: đuôi) dựa trên một số tính năng theo ngữ cảnh có thể có sẵn.
+Cho dù chúng tôi đưa ra thuật toán nào, vì lỗi khái quát hóa sẽ luôn là $\frac{1}{2}$.
+Tuy nhiên, đối với hầu hết các thuật toán, ta nên hi vọng lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của bốc thăm, ngay cả khi ta không có bất kỳ tính năng nào!
+Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
+Việc không có tính năng của chúng ta có thể phải quay lại khi luôn dự đoán *lớp đa số*, xuất hiện từ các mẫu giới hạn của chúng ta là *1*.
+Trong trường hợp này, mô hình luôn dự đoán lớp 1 sẽ phát sinh lỗi $\frac{1}{3}$, tốt hơn đáng kể so với lỗi tổng quát hóa.
+Khi ta tăng lượng dữ liệu, xác suất tỷ lệ phần đầu sẽ chệch đi đáng kể từ $\frac{1}{2}$ giảm xuống, và lỗi huấn luyện sẽ tiến đến khớp với lỗi khái quát hóa.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -739,10 +767,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 2 -->
-*
+* Trần Yến Thy 
 
 <!-- Phần 3 -->
 *
