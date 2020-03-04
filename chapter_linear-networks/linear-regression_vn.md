@@ -97,7 +97,7 @@ The linearity assumption just says that the target (price) can be expressed as a
 
 Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{\textrm{iện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
+$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -105,8 +105,8 @@ The weights determine the influence of each feature on our prediction and the bi
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 -->
 
-Ở đây, $w_{\mathrm{\textrm{iện_tích}}}$ và $w_{\mathrm{\textrm{tuổi_đời}}}$ được gọi là các *trọng số*, và $b$ được gọi là *hệ số điều chỉnh* (còn được gọi là *độ dời*).
-Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn hệ số điều chỉh chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
+Ở đây, $w_{\mathrm{\textrm{diện_tích}}}$ và $w_{\mathrm{\textrm{tuổi_đời}}}$ được gọi là các *trọng số*, và $b$ được gọi là *hệ số điều chỉnh* (còn được gọi là *độ dời*).
+Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn hệ số điều chỉnh chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
 Ngay cả khi không bao giờ có một ngôi nhà có diện tích hoặc tuổi đời bằng không, ta vẫn cần sử dụng hệ số điều chỉnh; nếu không khả năng biểu diễn của mô hình tuyến tính sẽ bị suy giảm.
 
 <!--
@@ -162,7 +162,7 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu đã biết trước $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$ được lấy mẫu từ cùng phân phối của tập huấn luyện, (theo kỳ vọng) giá trị mục tiêu $y_i$ sẽ được dự đoán với sai số nhỏ nhất.  <!-- mình sửa lại cho đúng ngữ pháp -->
+Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu đã biết trước $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$ được lấy mẫu từ cùng phân phối của tập huấn luyện, giá trị mục tiêu $y_i$ sẽ được dự đoán (theo kỳ vọng)  với sai số nhỏ nhất.  <!-- mình sửa lại cho đúng ngữ pháp -->
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
@@ -171,9 +171,9 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
+Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không kỳ vọng tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
 Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định. 
-Chính vì vậy, mặc dù tự tin rằng mối quan hệ cốt lõi của dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm một thành phần nhiễu để tạo ra kết quả tự nhiên hơn. 
+Chính vì vậy, mặc dù tự tin rằng mối quan hệ cốt lõi của dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm một thành phần nhiễu để giải thích các sai số đó. 
 
 <!--
 Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
