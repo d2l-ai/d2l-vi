@@ -907,7 +907,7 @@ Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa
     * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
     * Bạn có thể tìm ra nghiệm theo công thức không?
     * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
-    * Điều gì có thể sai ở đây (gợi ý - những gì xảy ra gần điểm dừng khi chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    * Điều gì có thể sai ở đây (gợi ý - điều gì xảy ra gần điểm dừng khi chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
     
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
