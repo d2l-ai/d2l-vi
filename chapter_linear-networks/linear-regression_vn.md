@@ -14,9 +14,9 @@ In the natural sciences and social sciences, the purpose of regression is most o
 Machine learning, on the other hand, is most often concerned with *prediction*.
 -->
 
-Hồi quy liên quan đến các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và giá trị mục tiêu $y$.
+Hồi quy ám chỉ các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và mục tiêu với giá trị số thực $y$.
 Trong khoa học tự nhiên và khoa học xã hội, mục tiêu của hồi quy thường là *đặc trưng hóa* mối quan hệ của đầu vào và đầu ra.
-Mặt khác, học máy thường quan tâm đến *dự đoán*.
+Mặt khác, học máy lại thường quan tâm đến việc *dự đoán*.
 
 <!--
 Regression problems pop up whenever we want to predict a numerical value.
@@ -26,9 +26,9 @@ In subsequent sections, we will introduce classification problems, where the goa
 -->
 
 Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
-Các ví dụ thông dụng bao gồm dự đoán giá cả (nhà, cổ phiếu, ..), dự đoán thời gian ở lại (cho bệnh nhân trong viện), dự đoán nhu cầu (cho bán lẻ), và nhiều thứ khác.
-Không phải mọi bài toán về dự đoán đều là bài toán *hồi quy* cổ điển.
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các hạng mục.
+Các ví dụ phổ biến bao gồm dự đoán giá cả (nhà, cổ phiếu, ...), thời gian bệnh nhân nằm viện, nhu cầu trong ngành bán lẻ và vô vàn thứ khác.
+Không phải mọi bài toán dự đoán đều là bài toán *hồi quy* cổ điển.
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, khi mục tiêu là dự đoán lớp đúng trong một tập các lớp cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -38,7 +38,7 @@ Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân 
 ## Basic Elements of Linear Regression
 -->
 
-## Một số Thành phần Cơ bản của Hồi quy Tuyến tính
+## Các Thành phần Cơ bản của Hồi quy Tuyến tính
 
 <!--
 *Linear regression* may be both the simplest and most popular among the standard tools to regression.
@@ -50,12 +50,12 @@ To motivate the approach, let's start with a running example.
 Suppose that we wish to estimate the prices of houses (in dollars) based on their area (in square feet) and age (in years).
 -->
 
-*Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất cho hồi quy.
-Quay trở về đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
-Đầu tiên, ta giả sử quan hệ giữa *các đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng thêm nhiễu qua sự quan sát.
-Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
-Để tạo động lực, chúng ta hãy bắt đầu chạy một ví dụ.
-Hãy cho là ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (theo năm).
+*Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất được sử dụng cho bài toán hồi quy.
+Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính được phát triển từ một vài giả thuyết đơn giản.
+Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn bằng tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
+Thứ hai, ta giả sử nhiễu có quy tắc (tuân theo phân phối Gauss).
+Để tạo động lực, hãy bắt đầu với một ví dụ.
+Giả sử ta muốn ước lượng giá nhà (bằng đô la) dựa vào diện tích (đơn vị feet vuông) và tuổi đời (theo năm).
 
 <!--
 To actually fit a model for predicting house prices, we would need to get our hands on a dataset consisting of sales for which we know the sale price, area and age for each home.
@@ -64,18 +64,19 @@ The thing we are trying to predict (here, the price) is called a *target* or *la
 The variables (here *age* and *area*) upon which the predictions are based are called *features* or *covariates*.
 -->
 
-Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà chúng ta đã biết giá bán, diện tích, tuổi đời cho từng căn nhà.
-Trong thuật ngữ của học máy, dữ liệu được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu cho một lần bán) được gọi là một *ví dụ* hoặc *mẫu*.
+Để khớp một mô hình dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà trong đó ta biết giá bán, diện tích, tuổi đời cho từng căn nhà.
+Trong thuật ngữ của học máy, tập dữ liệu này được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu của một giao dịch) được gọi là một *ví dụ* hoặc *mẫu*.
 Thứ mà chúng ta muốn dự đoán (giá nhà) được gọi là *mục tiêu* hoặc *nhãn*.
-Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là *những đặc trưng* hoặc *những hiệp biến*.
+Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là các *đặc trưng* hoặc *hiệp biến*.
 
 <!--
 Typically, we will use $n$ to denote the number of examples in our dataset.
 We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ and the corresponding label as $y^{(i)}$.
 -->
 
-Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số mẫu trong dữ liệu.
-Chúng ta truy cập các mẫu bằng chỉ số $i$, kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và tương ứng nhãn là $y^{(i)}$.  
+Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số lượng mẫu trong tập dữ liệu.
+Chỉ số $i$ được dùng để xác định một mẫu cụ thể. 
+Ta ký hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và nhãn tương ứng là $y^{(i)}$.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
