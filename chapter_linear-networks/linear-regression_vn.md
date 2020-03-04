@@ -827,8 +827,7 @@ Certainly, the high-level idea that many such units could be cobbled together wi
 to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
 -->
 
-Chắc chắn rằng, ý tưởng lớn chính là nhiều đơn vị như vậy có thể được kết hợp lại với nhau bằng những cách kết nối và với thuật toán học tập đúng đắn để tạo ra hành vi thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron đơn lẻ nào có thể làm được. 
-Tất cả là nhờ vào nghiên cứu của chúng ta về các hệ thống thần kinh sinh học trong thực tế. 
+Dựa trên các nghiên cứu thực tế về các hệ thống thần kinh sinh học, ta chắc chắn một điều rằng nhiều đơn vị như vậy khi được kết hợp với nhau theo đúng cách, cùng với thuật toán học tập phù hợp, sẽ tạo ra các hành vi thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron đơn lẻ nào có thể làm được. 
 
 <!-- ===================== Kết thúc dịch Phần 16 ===================== -->
 
