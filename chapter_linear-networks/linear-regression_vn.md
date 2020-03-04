@@ -798,8 +798,9 @@ consisting of *dendrites* (input terminals), the *nucleus* (CPU), the *axon* (ou
 and the *axon terminals* (output terminals), enabling connections to other neurons via *synapses*.
 -->
 
-Mặc dù hồi quy tuyến tính (được phát minh vào năm 1795) có trước khoa học thần kinh tính toán, nhưng có vẻ lỗi thời khi mô tả hồi quy tuyến tính như một mạng nơ-ron.
-Để hiểu tại sao các mô hình tuyến tính là điểm khởi đầu tự nhiên cho các nhà nghiên cứu <sinh vật học>/thần kinh học Warren McCulloch và Walter Pitts tìm hiểu và bắt đầu phát triển các mô hình nơ-ron nhân tạo, hãy xem xét bức tranh hoạ hình của một nơ-ron sinh học tại :numref:`fig_Neuron`, bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*. <!-- cho mình phàn nàn một phát nữa về thói thích tỏ ra nguy hiểm của mấy bác tác giả Tàu. Không phải native speakers thì cứ viết đơn giản cho dễ hiểu, cứ đao to búa lớn lên rồi ngữ pháp loạn lên cả, người đọc toàn phải cố hiểu -->
+Vì hồi quy tuyến tính (được phát minh vào năm 1795) được phát triển trước ngành khoa học thần kinh tính toán, nên việc mô tả hồi quy tuyến tính như một mạng nơ-ron có vẻ hơi ngược thời.
+Để hiểu tại sao nhà nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts tìm đến các mô hình tuyến tính để làm điểm khởi đầu nghiên cứu và phát triển các mô hình nơ-ron nhân tạo, hãy xem xét bức tranh hoạ hình của một nơ-ron sinh học tại :numref:`fig_Neuron`.
+Mô hình này bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*. <!-- cho mình phàn nàn một phát nữa về thói thích tỏ ra nguy hiểm của mấy bác tác giả Tàu. Không phải native speakers thì cứ viết đơn giản cho dễ hiểu, cứ đao to búa lớn lên rồi ngữ pháp loạn lên cả, người đọc toàn phải cố hiểu -->
 
 <!--
 ![The real neuron](../img/Neuron.svg)
@@ -840,7 +841,7 @@ pointed out that although airplanes might have been *inspired* by birds, ornitho
 Likewise, inspiration in deep learning these days comes in equal or greater measure from mathematics, statistics, and computer science.
 -->
 
-Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay chỉ lấy một phần cảm hứng từ ngành thần kinh học. 
+Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay chỉ lấy một phần cảm hứng nhỏ từ ngành thần kinh học. 
 Như Stuart Russell và Peter Norvig, những người mà trong cuốn sách kinh điển về học sâu *Trí tuệ Nhân tạo: Một hướng Tiếp cận Hiện đại* :cite:`Russell.Norvig.2016`, chỉ ra rằng: mặc dù máy bay có thể được lấy *cảm hứng* từ loài chim, ngành điểu học không phải động lực chính làm đổi mới ngành hàng không trong nhiều thế kỷ qua.
 Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ ngành toán học, thống kê và khoa học máy tính. 
 
