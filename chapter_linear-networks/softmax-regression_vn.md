@@ -280,7 +280,7 @@ Tóm tắt lại, ta có ký hiệu dưới dạng vector như sau: ${\mathbf{o}
 ### Vectorization for Minibatches
 -->
 
-### *dịch tiêu đề phía trên*
+### Vector hóa Minibatch
 
 <!--
 To improve computational efficiency and take advantage of GPUs, we typically carry out vector calculations for minibatches of data.
@@ -289,7 +289,10 @@ Moreover, assume that we have $q$ categories (outputs).
 Then the minibatch features $\mathbf{X}$ are in $\mathbb{R}^{n \times d}$, weights $\mathbf{W} \in \mathbb{R}^{d \times q}$, and the bias satisfies $\mathbf{b} \in \mathbb{R}^q$.
 -->
 
-*dịch đoạn phía trên*
+Để cải thiện hiệu suất tính toán và tận dụng GPU, ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
+Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích cỡ batch là $n$.
+Thêm vào đó, chúng ta có $q$ lớp đầu ra.
+Như vậy, minibatch đặc trưng $\mathbf{X}$ sẽ thuộc $\mathbb{R}^{n \times d}$, trọng số $\mathbf{W} \in \mathbb{R}^{d \times q}$, và độ chệch sẽ thỏa mãn $\mathbf{b} \in \mathbb{R}^q$.
 
 $$
 \begin{aligned}
@@ -303,13 +306,14 @@ This accelerates the dominant operation into a matrix-matrix product $\mathbf{W}
 The softmax itself can be computed by exponentiating all entries in $\mathbf{O}$ and then normalizing them by the sum.
 -->
 
-*dịch đoạn phía trên*
+Việc tăng tốc diễn ra chủ yếu tại tích ma trận - ma trận $\mathbf{W} \mathbf{X}$ so với tích ma trận - vector nếu chúng ta xử lý từng mẫu một.
+Bản thân softmax có thể được tính bằng lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
 
 <!--
 ## Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm mất mát
 :label:`section_cross_entropy`
 
 <!--
@@ -318,7 +322,8 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 (:numref:`sec_linear_regression`).
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng dự đoán xác suất của mình.
+Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp phải khi đưa ra biện minh xác suất cho mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -724,7 +729,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 5 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 6 -->
 * Trần Kiến An
