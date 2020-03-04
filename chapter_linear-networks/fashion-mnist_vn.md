@@ -21,7 +21,7 @@ but comparatively complex Fashion-MNIST dataset :cite:`Xiao.Rasul.Vollgraf.2017`
 Mặc dù MNIST hoạt động tốt như bộ dữ liệu đánh giá xếp hạng (_benchmark_), các mô hình đơn giản dựa trên tiêu chuẩn ngày nay cũng có thể đạt được độ chính xác phân loại lên tới 95%.
 Điều này khiến cho việc phân biệt độ mạnh yếu của các mô hình mạnh trở nên không chắc chắn. 
 Ngày nay, MNIST đóng vai trò như là một bài kiểm tra tính năng hơn là bài kiểm tra đánh giá xếp hạng.   
-Để cải thiện vấn đề này, chúng ta sẽ cùng tập trung bàn luận ở các mục tiếp theo về một bộ dữ liệu tương tự nhưng phức tạp hơn, đó là bộ dữ liệu Fashion-MNIST  :cite:`Xiao.Rasul.Vollgraf.2017` được giới thiệu vào năm 2017.
+Để cải thiện vấn đề này, chúng ta sẽ cùng tập trung thảo luận ở các mục tiếp theo về một bộ dữ liệu tương tự nhưng phức tạp hơn, đó là bộ dữ liệu Fashion-MNIST  :cite:`Xiao.Rasul.Vollgraf.2017` được giới thiệu vào năm 2017.
 
 ```{.python .input  n=7}
 %matplotlib inline
