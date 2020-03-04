@@ -129,6 +129,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |--------------------------------|-----------------------------------|----------------------------------------------|
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) |                                              |
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
+| generalization error | lỗi khái quát | |
 | generative model               | mô hình sinh                      |                                              |
 | generative adversarial network | mạng đối sinh                     |                                              |
 | global maximum | giá trị lớn nhất | |
@@ -212,6 +213,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative log-likelihood function  | hàm đối log hợp lý                |                                             |
 | negative sample/example           | mẫu âm                            |                                             |
 | neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
+| node (trong mạng nơ-ron) | nút | |
 | norm                              | chuẩn                             |                                             |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) |                                             |
 | null hypothesis                   | giả thuyết gốc                    |                                             |
@@ -325,11 +327,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | unavoidable bias      | độ chệch không tránh được |                       |
 | underfit              | dưới khớp                 | http://bit.ly/2BvfPYA |
 | underflow (numerical) | tràn (số) dưới            |                       |
+| unit (trong mạng nơ-ron) | nút | |
 | unsupervised learning | học không giám sát        |                       |
 
 ## V
 | English                     | Tiếng Việt | Thảo luận tại         |
 |-----------------------------|------------|-----------------------|
+| validation set | tập kiểm định | |
 | variance (bias as variance) | phương sai | http://bit.ly/32HJI3S |
 | vector                      | vector     |                       |
 
@@ -337,3 +341,4 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                                   | Tiếng Việt        | Thảo luận tại |
 |-------------------------------------------|-------------------|---------------|
 | well-behaved function (analytic function) | hàm khả vi vô hạn |               |
+| wrapper function (trong lập trình) | hàm wrapper | |
