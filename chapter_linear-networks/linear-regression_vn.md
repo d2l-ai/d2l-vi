@@ -234,8 +234,8 @@ Note that large differences between estimates $\hat{y}^{(i)}$ and observations $
 To measure the quality of a model on the entire dataset, we simply average (or equivalently, sum) the losses on the training set.
 -->
 
-Lưu ý rằng các khác biệt lớn giữa giá trị ước tính $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ có sự đóng góp còn lớn hơn nữa vào tổng độ mất mát do sự phụ thuộc bậc hai. 
-Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta chỉ đơn giản lấy trung bình (hay tương đương là lấy tổng) của các độ mất mát trên tập huấn luyện. 
+Lưu ý rằng các khác biệt lớn giữa giá trị ước tính $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ có sự đóng góp còn lớn hơn nữa vào tổng độ mất mát do sự phụ thuộc bậc hai.
+Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta chỉ đơn giản lấy trung bình (hay tương đương là lấy tổng) của các độ mất mát trên tập huấn luyện.
 
 $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
 
@@ -243,7 +243,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-Khi huấn luyện mô hình, ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ các mẫu huấn luyện: 
+Khi huấn luyện mô hình, ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ các mẫu huấn luyện:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
