@@ -59,7 +59,7 @@ Consequently the training set and the test set contain 60k and 10k images, respe
 -->
 
 FashionMNIST chứa các hình ảnh từ 10 danh mục, mỗi danh mục được thể hiện bằng 6 nghìn ảnh trong tập huấn luyện và 1 ngìn ảnh trong tập kiểm tra. 
-Do đó tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn ảnh.
+Do đó, tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn tấm ảnh.
 
 ```{.python .input}
 len(mnist_train), len(mnist_test)
