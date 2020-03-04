@@ -44,7 +44,7 @@ We briefly work through the mechanics of loading and exploring the dataset below
 Please refer to :numref:`sec_naive_bayes` for more details on loading data.
 -->
 
-Cũng chúng như MNIST, Gluons giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với class `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng. 
+Cũng giống như với MNIST, Gluons giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với lớp `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng. 
 Cơ chế của việc nạp và trích xuất bộ dữ liệu được mô tả như dưới đây.
 Vui lòng tham khảo :numref:`sec_naive_bayes` để biết thêm chi tiết về việc nạp dữ liệu. 
 
