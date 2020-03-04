@@ -71,7 +71,7 @@ The following function converts between numeric label indices and their names in
 -->
 
 Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao (_sneaker_), túi và giày cao gót. 
-Hàm dưới đây chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
+Hàm dưới đây giúp chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
 
 ```{.python .input  n=25}
 # Saved in the d2l package for later use
