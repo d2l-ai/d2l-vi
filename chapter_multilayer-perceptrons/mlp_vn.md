@@ -152,7 +152,7 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 Formally, we calculate the each layer in this one-hidden-layer MLP as follows:
 -->
 
-Một cách hình thức, chúng ta tính toán mỗi tầng của một-tầng-ẩn MLP như sau:
+Về mặt hình thức, chúng ta tính toán mỗi tầng trong MLP một-tầng-ẩn này như sau:
 
 
 $$
@@ -173,16 +173,20 @@ A linear function of a linear function is itself a linear function.
 Moreover, our linear model was already capable of representing any linear function.
 -->
 
-Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta theo dõi và cập nhật thêm hai tập tham số.
-Vậy thì đổi lại chúng ta thu được gì?
+Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
+Vậy thì đổi lại chúng ta nhận được gì?
 Bạn có thể bị bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng nhận lại được gì hết!*
+Lý do rất đơn giản.
+Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền-softmax) chỉ là một hàm tuyến tính của các nút ẩn.
+Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
+Hơn nữa, mô hình tuyến tính của chúng ta đã có khả năng biểu diễn bất kỳ hàm tuyến tính nào.
 
 
 <!--
 We can view the equivalence formally by proving that for any values of the weights, we can just collapse out the hidden layer, yielding an equivalent single-layer model with paramters
 -->
 
-Chúng ta có thể thấy sự tương tương một cách hình thức bằng cách chứng minh rằng với bất kỳ giá trị nào của các trọng số, chúng ta có thể thu gọn tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
+Chúng ta có thể thấy sự tương tương về mặt hình thức bằng cách chứng minh rằng với bất kỳ giá trị nào của các trọng số, chúng ta có thể rút gọn tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
 
 $\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ và $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
@@ -202,11 +206,11 @@ In general, with these activation functions in place,
 it is no longer possible to collapse our MLP into a linear model.
 -->
 
-Để nhận thấy rõ tiềm năng của một kiến trúc đa tầng,
+Để nhận thấy rõ tiềm năng của các kiến trúc đa tầng,
 chúng ta cần một thành phần chính nữa---một *hàm kích hoạt phi tuyến tính* theo phần tử $\sigma$
 để áp dụng vào mỗi nút ẩn
 (theo sau biến đổi tuyến tính).
-Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là rectified linear unit (ReLU)
+Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là đơn vị chỉnh lưu tuyến tính (ReLU)
 $\mathrm{max}(x, 0)$.
 Thông thường, với việc sử dụng các hàm kích hoạt này, chúng ta không còn có thể thu gọn MLP thành một mô hình tuyến tính.
 
@@ -224,9 +228,9 @@ e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ and $\math
 one atop another, yielding ever more expressive models (assuming fixed width).
 -->
 
-Để xây dựng một MLPs tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn,
+Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn,
 ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$,
-tầng này chồng lên tầng kia, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
+kế tiếp nhau, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
 
 <!--
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
@@ -238,13 +242,13 @@ The language, like any other modern language, is capable of expressing any compu
 But actually coming up with a program that meets your specifications is the hard part.
 -->
 
-MLPs có thể nắm bắt được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, các nơ-ron này phụ thuộc vào giá trị của mỗi đầu vào.
+Các MLP có thể chụp được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, phụ thuộc vào giá trị của mỗi đầu vào.
 Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện tính toán bất kỳ, ví dụ, các phép tính logic cơ bản với hai đầu vào.
-Hơn nữa, với một số hàm kích hoạt cụ thể, MLPs được biết đến rộng rãi như là universal approximators.
-Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách phi lý), và một tập các tham số phù hợp, chúng ta có thể mô phỏng bất kỳ một hàm nào.
-*Thực ra thì việc học hàm đó là việc khó khăn.* Bạn có thể nghĩ về mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
+Hơn thế, với một số hàm kích hoạt cụ thể, các MLP được biết đến rộng rãi như là các bộ xấp xỉ vạn năng.
+Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách phi lý), và một tập các trọng số phù hợp, chúng ta có thể mô phỏng bất kỳ hàm nào.
+*Thực ra thì học hàm đó là một việc khó khăn.* Bạn có thể tưởng tượng mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
 Ngôn ngữ này, giống như bất kỳ ngôn ngữ hiện đại nào khác, có khả năng biểu diễn bất kỳ chương trình tính toán nào.
-Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật mới thực sự là việc khó khăn.
+Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật thực sự là một việc khó khăn.
 
 <!--
 Moreover, just because a single-layer network *can* learn any function does not mean that you should try to solve all of your problems with single-layer networks.
