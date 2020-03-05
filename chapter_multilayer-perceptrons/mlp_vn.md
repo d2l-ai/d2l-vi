@@ -307,7 +307,7 @@ Because activation functions are fundamental to deep learning, let's briefly sur
 ### ReLU Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm ReLU
 
 <!--
 As stated above, the most popular choice, due to both simplicity of implementation its performance on a variety of predictive tasks is the rectified linear unit (ReLU).
@@ -315,7 +315,9 @@ ReLUs provide a very simple nonlinear transformation.
 Given the element $z$, the function is defined as the maximum of that element and 0.
 -->
 
-*dịch đoạn phía trên*
+Như đã đề cập trước đó, đơn vị tuyến tính chỉnh lưu (ReLU) dường như là sự lựa chọn phổ biến nhất, do lập trình đơn giản và nó hiệu quả trong một loạt các nhiệm vụ dự đoán.
+Các hàm ReLU cung cấp một phép biến đổi phi tuyến đơn giản.
+Cho trước một phần tử $z$, ta định nghĩa ReLU là giá trị lớn nhất của chính phần tử đó và 0.
 
 $$\mathrm{ReLU}(z) = \max(z, 0).$$
 
@@ -326,7 +328,10 @@ Because it is used so commonly, NDarray supports the `relu` function as a native
 As you can see, the activation function is piecewise linear.
 -->
 
-*dịch đoạn phía trên*
+Nói một cách dễ hiểu hơn, hàm ReLU chỉ giữ lại các phần tử có giá trị dương và loại bỏ tất cả các phần tử có giá trị âm (đặt kích hoạt tương ứng là 0).
+Để có một cái nhìn khái quát, ta có thể vẽ đồ thị hàm số.
+Bởi vì ReLU được sử dụng ngày càng phố biến, NDarray đã hỗ trợ hàm `relu` như là một toán tử có sẵn.
+Như bạn thấy trong hình, hàm kích hoạt là một hàm tuyến tính từng đoạn.
 
 ```{.python .input  n=2}
 x = np.arange(-8.0, 8.0, 0.1)
@@ -347,7 +352,13 @@ That conventional wisdom may apply here.
 We plot the derivative of the ReLU function plotted below.
 -->
 
-*dịch đoạn phía trên*
+Khi đầu vào mang giá trị âm thì đạo hàm của hàm ReLu bằng 0 và khi đầu vào mang giá trị dương thì đạo hàm của hàm ReLu bằng 1.
+Lưu ý rằng, hàm ReLU không khả vi tại 0.
+Trong thường hợp này, ta mặc định sẽ được tính như đạo hàm trái (LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
+Ta có thể làm được điều này bởi vì đầu vào của hàm số thường sẽ xấp xỉ 0.
+Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến điều kiện biên thì có lẽ ta chỉ đang *thực sự* làm toán, chứ không phải đang làm kỹ thuật.
+Và trong trường hợp này, ngạn ngữ đó đang được áp dụng.
+Đồ thị đạo hàm của hàm ReLU được vẽ như hình dưới.
 
 ```{.python .input  n=3}
 y.backward()
@@ -359,7 +370,8 @@ Note that there are many variants to the ReLU function, including the parameteri
 This variation adds a linear term to the ReLU, so some information still gets through, even when the argument is negative.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, có nhiều biến thể của hàm ReLU, bao gồm ReLU được tham số hóa (pReLU) của [He et al., 2015](https://arxiv.org/abs/1502.01852).
+Phiên bản này được thêm một thành phần tuyến tính vào ReLU, do đó một số thông tin vẫn được giữ lại ngay cả khi đối số âm.
 
 $$\mathrm{pReLU}(x) = \max(0, x) + \alpha \min(0, x).$$
 
@@ -368,7 +380,8 @@ The reason for using the ReLU is that its derivatives are particularly well beha
 This makes optimization better behaved and it mitigated well-documented problem of *vanishing gradients* that plagued previous versions of neural networks (more on this later).
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng hàm ReLU bởi vì đạo hàm của nó xử lý thực sự tốt: hoặc chúng biến mất hoặc chúng giữ nguyên đối số.
+Điều này làm cho việc tối ưu tốt hơn và giảm thiểu được nhược điểm *mất dần gradients* đã từng gây khó khăn trong các phiên bản trước của mạng nơ-ron (sẽ được đề cập lại sau này).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -584,7 +597,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Lý Phi Long
 
 <!-- Phần 6 -->
 *
