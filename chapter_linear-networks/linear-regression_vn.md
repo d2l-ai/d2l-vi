@@ -204,11 +204,11 @@ The most popular loss function in regression problems is the sum of squared erro
 When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the corresponding true label is $y^{(i)}$, the squared error is given by:
 -->
 
-Trước khi suy nghĩ làm thế nào để *khớp* mô hình với dữ liệu, ta cần phải xác định một cách để đo *mức độ khớp*.
+Trước khi suy nghĩ về việc làm thế nào để *khớp* mô hình với dữ liệu, ta cần phải xác định một phương pháp để đo *mức độ khớp*.
 *Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
 Độ mất mát thường là một số không âm mà giá trị càng nhỏ càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
 Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
-Khi giá trị dự đoán của một dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn tương ứng là $y^{(i)}$, bình phương của lỗi được xác định như sau:
+Khi giá trị dự đoán của một điểm dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn tương ứng là $y^{(i)}$, bình phương của lỗi được xác định như sau:
 
 $$l^{(i)}(\mathbf{w}, b) = \frac{1}{2} \left(\hat{y}^{(i)} - y^{(i)}\right)^2.$$
 
@@ -219,8 +219,8 @@ To make things more concrete, consider the example below where we plot a regress
 -->
 
 Hằng số $1/2$ không tạo ra sự khác biệt thực sự nào nhưng sẽ giúp ký hiệu thuận tiện hơn: nó sẽ được triệt tiêu khi lấy đạo hàm của hàm mất mát.
-Vì các dữ liệu trong tập huấn luyện đã được xác định trước, và không thể thay đổi, sai số thực nghiệm chỉ là một hàm của các tham số mô hình.
-Để cụ thể hơn, hãy xét ví dụ dưới đây về một bài toán hồi quy cho trường hợp một chiều trong :numref:`fig_fit_linreg`.
+Vì các dữ liệu trong tập huấn luyện đã được xác định trước và không thể thay đổi, sai số thực nghiệm chỉ là một hàm của các tham số mô hình.
+Để tìm hiểu cụ thể hơn, hãy xét ví dụ dưới đây về một bài toán hồi quy cho trường hợp một chiều trong :numref:`fig_fit_linreg`.
 
 <!--
 ![Fit data with a linear model.](../img/fit_linreg.svg)
@@ -243,7 +243,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-Khi huấn luyện mô hình, ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ các mẫu huấn luyện:
+Khi huấn luyện mô hình, ta muốn tìm các tham số ($\mathbf{w}^*, b^*$) sao cho tổng độ mất mát trên toàn bộ các mẫu huấn luyện được tối thiểu hóa:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
