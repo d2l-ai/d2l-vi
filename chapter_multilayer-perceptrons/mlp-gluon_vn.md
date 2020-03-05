@@ -5,14 +5,14 @@
 # Concise Implementation of Multilayer Perceptron
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai súc tích của Mạng nơron Perceptron Nhiều tầng
 :label:`sec_mlp_gluon`
 
 <!--
 As you might expect, by relying on the Gluon library, we can implement MLPs even more concisely.
 -->
 
-*dịch đoạn phía trên*
+Như bạn mong đợi, ta có thể dựa vào thư viện Gluon để lập trình MLPs một cách súc tích hơn.
 
 ```{.python .input}
 import d2l
@@ -25,7 +25,7 @@ npx.set_np()
 ## The Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 As compared to our gluon implementation of softmax regression implementation (:numref:`sec_softmax_gluon`), 
@@ -34,7 +34,9 @@ The first is our hidden layer, which contains *256* hidden units and applies the
 The second, is our output layer.
 -->
 
-*dịch đoạn phía trên*
+So với việc dùng gluon để lập trình hồi quy softmax (:numref:`sec_softmax_gluon`), khác biệt duy nhất ở đây là ta thêm *hai* tầng `Dense` (kết nối đầy đủ) (trong khi trước đây, ta chỉ cần thêm *một*). 
+Đầu tiên là tầng ẩn, chứa *256* nút ẩn và được áp dụng hàm kích hoạt ReLU.
+Thứ hai, là tầng đầu ra của ta.
 
 ```{.python .input  n=5}
 net = nn.Sequential()
@@ -47,14 +49,15 @@ net.initialize(init.Normal(sigma=0.01))
 Note that Gluon, as usual, automatically infers the missing input dimensions to each layer.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, như thường lệ, Gluon sẽ tự động đưa vào số chiều đầu vào bị thiếu cho mỗi tầng.
 
 <!--
 The training loop is *exactly* the same as when we implemented softmax regression.
 This modularity enables us to separate matterns concerning the model architecture from orthogonal considerations.
 -->
 
-*dịch đoạn phía trên*
+Quá trình lặp để huấn luyện giống *chính xác* với những gì khi ta lập trình hồi quy softmax.
+Lập trình mô-đun này cho phép ta tách các mô hình riêng biệt liên quan đến kiến trúc của mô hình ra để xem xét trực tiếp.
 
 ```{.python .input  n=6}
 batch_size, num_epochs = 256, 10
@@ -76,7 +79,9 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 3. Try different schemes for initializing the weights. What method works best?
 -->
 
-*dịch đoạn phía trên*
+1. Bằng việc thử thêm số lượng khác nhau của tầng ẩn, bạn hãy xem cài đặt nào cho kết quả tốt nhất (giữ nguyên giá trị các tham số khác và siêu tham số)?
+2. Bằng việc thử thay đổi các hàm kích hoạt khác nhau, bạn hãy chỉ ra hàm nào sẽ mang lại kết quả tốt nhất?
+3. Bạn hãy thử các cách khác nhau để khởi tạo trọng số. Theo bạn, phương pháp nào là tốt nhất?
 
 <!-- ===================== Kết thúc phần dịch ===================== -->
 
@@ -105,4 +110,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-* 
+* Lý Phi Long
