@@ -234,6 +234,7 @@ Vì các dữ liệu trong tập huấn luyện đã được xác định trư�
 Note that large differences between estimates $\hat{y}^{(i)}$ and observations $y^{(i)}$ lead to even larger contributions to the loss, due to the quadratic dependence.
 To measure the quality of a model on the entire dataset, we simply average (or equivalently, sum) the losses on the training set.
 -->
+
 Lưu ý rằng khi hiệu giữa giá trị ước lượng $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ lớn, giá trị hàm mất mát sẽ tăng một lượng còn lớn hơn thế do sự phụ thuộc bậc hai.
 Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta đơn thuần lấy trung bình (hay tương đương là lấy tổng) các giá trị mất mát của từng mẫu trong tập huấn luyện.
 
