@@ -401,7 +401,7 @@ A thresholding activation takes value $0$ when its input is below some threshold
 -->
 
 Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học, thứ có thể ở trong trạng thái *kích hoạt* hoặc *không kích hoạt*.
-Vì vậy mà những người tiên phong trong lĩnh vực này, bao gồm McCulloch và Pitts, những người phát minh ra nơ-ron nhân tạo, tập trung nghiên cứu các đơn vị ngưỡng.
+Vì vậy mà những người tiên phong trong lĩnh vực này, bao gồm [McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) và [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts), những người phát minh ra nơ-ron nhân tạo, tập trung nghiên cứu các đơn vị ngưỡng.
 Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở mức dưới ngưỡng và giá trị là $1$ khi đầu vào ở mức vượt ngưỡng.
 
 <!--
