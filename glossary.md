@@ -121,6 +121,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | first principle     | định đề cơ bản |               |
 | flatten | trải | |
 | forward pass | lượt truyền xuôi | |
+| framework | framework | |
 | functional anaylsis | giải tích hàm  |               |
 | fully-connected     | kết nối đầy đủ        |               |
 
