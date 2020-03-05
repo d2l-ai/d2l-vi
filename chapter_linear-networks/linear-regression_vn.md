@@ -206,7 +206,8 @@ When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the correspondin
 
 Trước khi suy nghĩ về việc làm thế nào để *khớp* mô hình với dữ liệu, ta cần phải xác định một phương pháp để đo *mức độ khớp*.
 *Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
-Độ mất mát thường là một số không âm mà giá trị càng nhỏ càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
+Độ mất mát thường là một số không âm và có giá trị càng nhỏ càng tốt.
+Khi các dự đoán hoàn hảo, chúng sẽ có độ mất mát sẽ bằng $0$.
 Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
 Khi giá trị dự đoán của một điểm dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn tương ứng là $y^{(i)}$, bình phương của lỗi được xác định như sau:
 
