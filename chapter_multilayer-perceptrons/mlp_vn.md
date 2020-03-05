@@ -412,7 +412,7 @@ However, the sigmoid has mostly been replaced by the simpler and more easily tra
 In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will describe architectures that leverage sigmoid units to control the flow of information across time.
 -->
 
-Khi sự chú ý chuyển sang gradient dựa trên sự học, hàm sigmoid là một lựa chọn tất yếu bởi vì nó có tính xấp xỉ liên tục và khả vi đối với một đơn vị ngưỡng.
+Khi phương pháp học dựa trên gradient trở nên thu hút, hàm sigmoid là một lựa chọn phù hợp cho việc xấp xỉ đơn vị ngưỡng bởi vì nó liên tục và khả vi.
 Hàm sigmoid vẫn là hàm kích hoạt được sử dụng rộng rãi ở các đơn vị đầu ra,
 khi ta muốn biểu diễn kết quả đầu ra như các xác suất cho bài toán phân loại nhị phân (bạn có thể xem sigmoid như một trường hợp đặc biệt của softmax).
 Tuy nhiên, trong các tầng ẩn, hàm sigmoid đã gần như bị thay thế bằng hàm ReLU vì nó đơn giản hơn và khiến cho việc huấn luyện trở nên dễ dàng hơn.
