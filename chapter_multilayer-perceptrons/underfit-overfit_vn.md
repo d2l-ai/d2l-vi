@@ -148,7 +148,7 @@ As we increase the amount of data, the probability that the fraction of heads wi
 ### Statistical Learning Theory
 -->
 
-### *dịch tiêu đề phía trên*
+### Lý thuyết Thống kê
 
 <!--
 Since generalization is the fundamental problem in machine learning, you might not be surprised to learn 
@@ -158,7 +158,10 @@ In a series of seminal papers, [Vapnik and Chervonenkis](https://en.wikipedia.or
 This work laid the foundations of [Statistical Learning Theory](https://en.wikipedia.org/wiki/Statistical_learning_theory).
 -->
 
-*dịch đoạn phía trên*
+Bởi khái quát hóa là một vấn đề nền tảng trong học máy, bạn có thể sẽ không quá ngạc nhiên khi biết rằng, nhiều nhà toán học và nhà lý thuyết học dành cả cuộc đời để phát triển các lý thuyết chính thức để mô tả vấn đề này.
+Trong [định lý cùng tên](https://en.wikipedia.org/wiki/Glivenko–Cantelli_theorem) của họ, Glivenko và Cantelli đã tìm ra tốc độ học mà tại đó lỗi huấn luyện sẽ hội tụ tiến tới lỗi khái quát.
+Trong chuỗi các bài báo đầu ngành, [Vapnik và Chervonenkis](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) đã mở rộng lý thuyết này cho nhiều lớp hàm tổng quát hơn.
+Công trình này là nền tảng của ngành [Lý thuyết học thống kê](https://en.wikipedia.org/wiki/Statistical_learning_theory).
 
 
 <!--
@@ -168,7 +171,9 @@ This means that the process that samples our data has no *memory*.
 The $2^{\mathrm{nd}}$ example drawn and the $3^{\mathrm{rd}}$ drawn are no more correlated than the $2^{\mathrm{nd}}$ and the $2$-millionth sample drawn.
 -->
 
-*dịch đoạn phía trên*
+Trong một *thiết lập chuẩn cho học có giám sát*, thứ mà ta vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d).
+Điều này có nghĩa là quá trình lấy mẫu dữ liệu không hề có sự *ghi nhớ*.
+Mẫu lấy ra thứ hai và thứ ba cũng không liên quan gì với nhau hơn là mẫu lấy ra thứ hai và thứ hai triệu.
 
 <!--
 Being a good machine learning scientist requires thinking critically, and already you should be poking holes in this assumption, coming up with common cases where the assumption fails.
@@ -179,14 +184,20 @@ What if we are classifying the topics of Tweets.
 The news cycle would create temporal dependencies in the topics being discussed violating any assumptions of independence.
 -->
 
-*dịch đoạn phía trên*
+Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản biện, ...?
+Điều gì sẽ xảy ra nếu chúng ta huấn luyện một mô hình dự đoán tỉ lệ tử vong trên bộ dữ thu thập từ các bệnh nhân tại UCSF, và áp dụng nó trên các bệnh nhân tại Bệnh viện Đa khoa Massachusetts.
+Các phân phối này đơn giản là không giống nhau.
+Hơn nữa, việc lấy mẫu có thể có tương quan về mặt thời gian.
+Sẽ ra sao nếu chúng ta thực hiện phân loại chủ đề cho các bài Tweet.
+Vòng đời của các tin tức sẽ tạo nên sự phụ thuộc nhất thời tới các chủ đề được đề cập, vi phạm mọi giả định độc lập thống kê.
 
 <!--
 Sometimes we can get away with minor violations of the i.i.d. assumption and our models will continue to work remarkably well.
 After all, nearly every real-world application involves at least some minor violation of the i.i.d. assumption, and yet we have useful tools for face recognition, speech recognition, language translation, etc.
 -->
 
-*dịch đoạn phía trên*
+Đôi khi, chúng ta có thể bỏ qua một vài vi phạm nhỏ trong giả định i.i.d mà mô hình vẫn có thể làm việc rất tốt.
+Nói chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ,...
 
 <!--
 Other violations are sure to cause trouble.
@@ -194,7 +205,9 @@ Imagine, for example, if we tried to train a face recognition system by training
 This is unlikely to work well since college students tend to look considerably different from the elderly.
 -->
 
-*dịch đoạn phía trên*
+Các vi phạm khác thì chắc chắn dẫn tới vấn đề.
+Hãy tưởng tượng, ví dụ, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem triển khai như là một công cụ để theo dõi trong viện dưỡng lão.
+Nhiều khả năng cách này sẽ không ổn bởi những sinh viên đại học trông rất khác những người già.
 
 <!--
 In subsequent chapters and volumes, we will discuss problems arising from violations of the i.i.d. assumption.
@@ -202,7 +215,9 @@ For now, even taking the i.i.d. assumption for granted, understanding generaliza
 Moreover, elucidating the precise theoretical foundations that might explain why deep neural networks generalize as well as they do continues to vexes the greatest minds in learning theory.
 -->
 
-*dịch đoạn phía trên*
+Trong mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
+Hiện tại, thậm chí giả thiết i.i.d có được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
+Hơn nữa, làm sáng tỏ nền tảng lý thuyết chính xác có thể giải thích tại sao các mạng nơ-ron cũng như chúng tiếp tục làm mất đi những bộ óc vĩ đại nhất trong lý thuyết học.
 
 <!--
 When we train our models, we attempt searching for a function that fits the training data as well as possible.
@@ -212,7 +227,10 @@ This is precisely what we want to avoid (or at least control).
 Many of the techniques in deep learning are heuristics and tricks aimed at guarding against overfitting.
 -->
 
-*dịch đoạn phía trên*
+Khi chúng ta huấn luyện các mô hình, ta đang cố gắng tìm kiếm một hàm số khớp nhất với dữ liệu huấn luyện có thể.
+Nếu hàm số này quá mềm dẻo, có thể biểu diễn được các mẫu giả cũng dễ như với các liên kết thật, thì nó có thể bị *quá khớp* để tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
+Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là điều khiển nó).
+Rất nhiều kỹ thuật trong học sâu là các giả thuật và thủ thuật với mục đích chống lại vấn đề quá khớp.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
