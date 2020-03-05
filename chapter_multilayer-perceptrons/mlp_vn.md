@@ -415,7 +415,7 @@ In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will des
 Khi phương pháp học dựa trên gradient trở nên thu hút, hàm sigmoid là một lựa chọn phù hợp cho việc xấp xỉ đơn vị ngưỡng bởi vì nó liên tục và khả vi.
 Hàm sigmoid vẫn là hàm kích hoạt được sử dụng rộng rãi ở các đơn vị đầu ra,
 khi ta muốn biểu diễn kết quả đầu ra như các xác suất cho bài toán phân loại nhị phân (bạn có thể xem sigmoid như một trường hợp đặc biệt của softmax).
-Tuy nhiên, trong các tầng ẩn, hàm sigmoid đã gần như bị thay thế bằng hàm ReLU vì nó đơn giản hơn và khiến cho việc huấn luyện trở nên dễ dàng hơn.
+Tuy nhiên, trong các tầng ẩn, hàm sigmoid đã gần như bị thay thế bằng hàm ReLU vì nó đơn giản hơn và giúp cho việc huấn luyện trở nên dễ dàng hơn.
 Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các mô hình sử dụng đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
 
 <!--
