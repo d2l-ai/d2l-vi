@@ -367,7 +367,7 @@ To summarize, steps of the algorithm are the following:
 (ii) we iteratively sample random batches from the the data (many times), updating the parameters in the direction of the negative gradient.
 -->
 Tổng kết lại, các bước của thuật toán như sau: 
-(i) khởi tạo ngẫu nhiên các giá trị tham số của mô hình. 
+(i) khởi tạo các giá trị tham số của mô hình, thường thì sẽ được chọn ngẫu nhiên. 
 (ii) tại mỗi vòng lặp, ta lấy ngẫu nhiên từng batch từ tập dữ liệu (nhiều lần), rồi tiến hành cập nhật các tham số của mô hình theo hướng ngược với gradient.
 
 
@@ -376,7 +376,7 @@ For quadratic losses and linear functions, we can write this out explicitly as f
 Note that $\mathbf{w}$ and $\mathbf{x}$ are vectors.
 Here, the more elegant vector notation makes the math much more readable than expressing things in terms of coefficients, say $w_1, w_2, \ldots, w_d$.
 -->
-Đối với hàm mất mát bậc hai và tuyến tính, chúng ta có thể viết lại một cách rõ ràng như sau: 
+Trong trường hợp hàm mất mát bậc hai và mô hình tuyến tính, chúng ta có thể viết một cách tường minh như sau: 
 Lưu ý rằng $\mathbf{w}$ và $\mathbf{x}$ là các vector.
 Ở đây, việc ký hiệu bằng các vector giúp công thức dễ đọc hơn nhiều so với các biểu diễn bằng các hệ số như $w_1, w_2, \ldots, w_d$.
 
@@ -403,7 +403,7 @@ These parameters that are tunable but not updated in the training loop are calle
 
 Trong phương trình trên, $|\mathcal{B}|$ là số ví dụ trong mỗi minibatch (*kích thước batch*) và $\eta$ là *tốc độ học*.
 Cũng cần phải nhấn mạnh rằng các giá trị của kích thước batch và tốc độ học được lựa chọn trước một cách thủ công và thường không được học thông qua quá trình huấn luyện mô hình.
-Các tham số điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện được gọi là *siêu tham số*.
+Các tham số này tuy điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện được gọi là *siêu tham số*.
 *Điều chỉnh siêu tham số* là quá trình lựa chọn chúng, thường dựa trên kết quả của vòng lặp huấn luyện được đánh giá trên một tập *kiểm định* riêng biệt.
 
 <!--
@@ -413,9 +413,9 @@ Note that even if our function is truly linear and noiseless, these parameters w
 although the algorithm converges slowly towards a local minimum it cannot achieve it exactly in a finite number of steps.
 -->
 
-Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một tiêu chí dừng nhất định khác), ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (thường thì ký hiệu "mũ" thể hiện các giá trị ước lượng).
+Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một tiêu chí dừng khác), ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (ký hiệu "mũ" thường thể hiện các giá trị ước lượng).
 Lưu ý rằng ngay cả khi hàm số thực sự tuyến tính và không có nhiễu, các tham số này sẽ không tối thiểu hóa được hàm mất mát.
-Mặc dù thuật toán dần dần hội tụ đến một điểm cực tiểu, nó vẫn không thể tới được chính xác cực tiểu đó với số bước hữu hạn.
+Mặc dù thuật toán dần dần hội tụ đến một điểm cực tiểu, nó vẫn không thể tới chính xác được cực tiểu đó với số bước hữu hạn.
 
 <!--
 Linear regression happens to be a convex learning problem, and thus there is only one (global) minimum.
@@ -429,7 +429,7 @@ Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó 
 Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt của hàm mất mát sẽ có nhiều cực tiểu.
 May mắn thay, vì một lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm ra các tham số tối thiểu hóa hàm mất mát *trên dữ liệu huấn luyện*.
 Nhiệm vụ khó khăn hơn là tìm ra các tham số dẫn đến giá trị mất mát thấp trên dữ liệu mà mô hình chưa từng thấy trước đây, một thử thách được gọi là *sự khái quát hóa*.
-Chúng ta sẽ nhắc lại những chủ đề này xuyên suốt cuốn sách.
+Chúng ta sẽ gặp lại chủ đề này xuyên suốt cuốn sách.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
