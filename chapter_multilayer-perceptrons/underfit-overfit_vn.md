@@ -222,7 +222,7 @@ Many of the techniques in deep learning are heuristics and tricks aimed at guard
 ### Model Complexity
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ Phức Tạp của Mô Hình
 
 <!--
 When we have simple models and abundant data, we expect the generalization error to resemble the training error.
@@ -234,7 +234,13 @@ A model whose parameters can take a wider range of values might be more complex.
 Often with neural networks, we think of a model that takes more training steps as more complex, and one subject to *early stopping* as less complex.
 -->
 
-*dịch đoạn phía trên*
+Khi có các mô hình đơn giản và dữ liệu dồi dào, ta kì vọng về lỗi khái quát sẽ giống với lỗi huấn luyện.
+Khi làm việc với nhiều các mô hình phức tạp hơn và ít các ví dụ, ta kì vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
+Điều gì chính xác cấu tạo nên độ phức tạp của mô hình là một vấn đề nan giải. 
+Rất nhiều yếu tố ảnh hưởng tới liệu một mô hình có khái quát hóa tốt hay không.
+Cho ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
+Một mô hình mà các tham số có phạm vi giá trị rộng hơn thì được xem là phức tạp hơn.
+Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có càng nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
 
 <!--
 It can be difficult to compare the complexity among members of substantially different model classes (say a decision tree versus a neural network).
@@ -247,13 +253,22 @@ This is important since all statistical estimation is [post hoc](https://en.wiki
 For now, we will put the philosophy aside and stick to more tangible issues.
 -->
 
-*dịch đoạn phía trên*
+Điều đó rất khó để so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác biệt cơ bản (ví như cây quyết định so với mạng nơ-ron).
+Hiện tại, có một quy tắc đơn giản khá hữu ích sau:
+Một mô hình có thể giải thích các sự kiện tùy ý được các nhà thống kê xem là phức tạp,
+trong khi cái mà có năng lực biểu hiện giới hạn nhưng vẫn có thể giải thích tốt được các dữ liệu thì có lẽ đạt gần đến sự thật hơn.
+Trong triết học, điều này gần với tiêu chí của Popper về
+[tính giả mạo](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: 
+một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
+Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là,
+ta đánh giá sau khi quan sát các sự thật, do đó dễ bị sai lầm liên quan.
+Từ bây giờ, ta sẽ đặt triết lý qua một bên và tập trung hơn vào các vấn đề hữu hình.
 
 <!--
 In this section, to give you some intuition, we’ll focus on a few factors that tend to influence the generalizability of a model class:
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, để cho bạn một cái nhìn sâu sắc hơn, chúng ta sẽ tập trung vào một vài yếu tố có xu hướng ảnh hưởng đến tính khái quát của một lớp mô hình:
 
 <!--
 1. The number of tunable parameters. When the number of tunable parameters, sometimes called the *degrees of freedom*, is large, models tend to be more susceptible to overfitting.
@@ -262,7 +277,10 @@ In this section, to give you some intuition, we’ll focus on a few factors that
 But overfitting a dataset with millions of examples requires an extremely flexible model.
 -->
 
-*dịch đoạn phía trên*
+1.Số lượng các thông số có thể điều chỉnh. Khi số lượng các thông số có thể điều chỉnh, đôi khi được gọi là *độ tự do*, mà lớn thì các mô hình có xu hướng bị quá khớp.
+2.Các giá trị được nhận bởi các thông số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
+3.Số lượng các ví dụ huấn luyện. Quá dễ để quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu kể cả khi mô hình đơn giản.
+Nhưng quá khớp một tập dữ liệu với vài triệu mẫu đòi hỏi mô hình phải cực kỳ linh hoạt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -766,7 +784,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 5 -->
 *
