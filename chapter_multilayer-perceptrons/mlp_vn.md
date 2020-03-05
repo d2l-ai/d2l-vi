@@ -470,8 +470,8 @@ We plot the tanh function blow. Note that as the input nears 0, the tanh functio
 Although the shape of the function is similar to the sigmoid function, the tanh function exhibits point symmetry about the origin of the coordinate system.
 -->
 
-Chúng ta sẽ vẽ hàm tanh như sau. Chú ý rằng nếu biến đầu vào có giá trị gần bằng 0, hàm tanh sẽ tiến đến một phép biến đổi tuyến tính.
-Mặc dù hình dạng của hàm tanh tương tự hàm sigmoid, hàm tanh thể hiện tính đối xứng điểm qua gốc hệ trục tọa độ.
+Chúng ta sẽ vẽ hàm tanh như sau. Chú ý rằng nếu đầu vào có giá trị gần bằng 0, hàm tanh sẽ tiến đến một phép biến đổi tuyến tính.
+Mặc dù hình dạng của hàm tanh trông khá giống hàm sigmoid, hàm tanh lại thể hiện tính đối xứng tâm qua gốc của hệ trục tọa độ.
 
 ```{.python .input  n=6}
 with autograd.record():
@@ -494,8 +494,8 @@ And as we saw with the sigmoid function, as the input moves away from 0 in eithe
 -->
 
 Đạo hàm của hàm tanh được vẽ như sau.
-Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh đạt giá trị tối đa là 1.
-Tương tự như hàm sigmoid, khi biến đầu vào thay đổi từ 0 từ một trong hai hướng, đạo hàm của hàm tanh sẽ tiến đến 0.
+Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị tối đa là 1.
+Tương tự như hàm sigmoid, khi đầu vào tiến xa khỏi 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
 
 ```{.python .input  n=7}
 y.backward()
@@ -510,9 +510,9 @@ Previously, getting these nets training required researchers to code up thousand
 -->
 
 Tóm lại, bây giờ chúng ta biết cách kết hợp các hàm phi tuyến để xây dựng các mô hình mạng nơ-ron đa tầng.
-Ngoài ra, kiến thức của bạn đã giúp bạn thành thạo một bộ công cụ tương tự với một học viên vào khoảng năm 1990.
+Ngoài ra, kiến thức bây giờ của bạn đã cung cấp một bộ công cụ tương đương như của một người làm học sâu vào khoảng năm 1990.
 Trong vài trường hợp khác, bạn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để nguồn mở về nền tảng học sâu để xây dựng các mô hình một cách nhanh chóng, chỉ với sử dụng một vài dòng mã.
-Trước đây, việc huấn luyện các mạng lưới này yêu cầu các nhà nghiên cứu phải viết hàng ngàn dòng mã bằng C và Fortran.
+Trước đây, việc huấn luyện các mạng nơ-ron đòi hỏi các nhà nghiên cứu phải viết hàng ngàn dòng mã C và Fortran.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
