@@ -175,18 +175,18 @@ Moreover, our linear model was already capable of representing any linear functi
 
 Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
 Vậy thì đổi lại chúng ta nhận được gì?
-Bạn có thể bị bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng nhận lại được gì hết!*
+Bạn có thể bị bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng nhận lại được gì cho những rắc rối của mình!*
 Lý do rất đơn giản.
 Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền-softmax) chỉ là một hàm tuyến tính của các nút ẩn.
 Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
-Hơn nữa, mô hình tuyến tính của chúng ta đã có khả năng biểu diễn bất kỳ hàm tuyến tính nào.
+Hơn nữa, mô hình tuyến tính của chúng ta vốn dĩ đã có khả năng biểu diễn bất kỳ hàm tuyến tính nào.
 
 
 <!--
 We can view the equivalence formally by proving that for any values of the weights, we can just collapse out the hidden layer, yielding an equivalent single-layer model with paramters
 -->
 
-Chúng ta có thể thấy sự tương tương về mặt hình thức bằng cách chứng minh rằng với bất kỳ giá trị nào của các trọng số, chúng ta có thể rút gọn tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
+Chúng ta có thể thấy sự tương tương về mặt hình thức bằng cách chứng minh rằng với mọi giá trị của các trọng số, chúng ta đều có thể loại bỏ tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
 
 $\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ và $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
@@ -207,12 +207,12 @@ it is no longer possible to collapse our MLP into a linear model.
 -->
 
 Để nhận thấy rõ tiềm năng của các kiến trúc đa tầng,
-chúng ta cần một thành phần chính nữa---một *hàm kích hoạt phi tuyến tính* theo phần tử $\sigma$
-để áp dụng vào mỗi nút ẩn
+chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến tính* theo phần tử $\sigma$
+để áp dụng lên từng nút ẩn
 (theo sau biến đổi tuyến tính).
 Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là đơn vị chỉnh lưu tuyến tính (ReLU)
 $\mathrm{max}(x, 0)$.
-Thông thường, với việc sử dụng các hàm kích hoạt này, chúng ta không còn có thể thu gọn MLP thành một mô hình tuyến tính.
+Nói chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể thu gọn MLP thành một mô hình tuyến tính nữa.
 
 $$
 \begin{aligned}
@@ -242,13 +242,13 @@ The language, like any other modern language, is capable of expressing any compu
 But actually coming up with a program that meets your specifications is the hard part.
 -->
 
-Các MLP có thể chụp được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, phụ thuộc vào giá trị của mỗi đầu vào.
-Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện tính toán bất kỳ, ví dụ, các phép tính logic cơ bản với hai đầu vào.
-Hơn thế, với một số hàm kích hoạt cụ thể, các MLP được biết đến rộng rãi như là các bộ xấp xỉ vạn năng.
-Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách phi lý), và một tập các trọng số phù hợp, chúng ta có thể mô phỏng bất kỳ hàm nào.
-*Thực ra thì học hàm đó là một việc khó khăn.* Bạn có thể tưởng tượng mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
+Các MLP có thể chụp được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, cái mà phụ thuộc vào giá trị của mỗi đầu vào.
+Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện tính toán bất kỳ, ví dụ, các phép tính logic cơ bản lên một cặp đầu vào.
+Ngoài ra, với một số hàm kích hoạt cụ thể, các MLP được biết đến rộng rãi như là các bộ xấp xỉ vạn năng.
+Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách vô lý), và một tập các trọng số thích hợp, chúng ta có thể mô phỏng bất kỳ một hàm nào.
+*Thật ra thì việc học hàm đó mới là phần khó khăn.* Bạn có thể tưởng tượng mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
 Ngôn ngữ này, giống như bất kỳ ngôn ngữ hiện đại nào khác, có khả năng biểu diễn bất kỳ chương trình tính toán nào.
-Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật thực sự là một việc khó khăn.
+Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật mới là phần việc khó khăn.
 
 <!--
 Moreover, just because a single-layer network *can* learn any function does not mean that you should try to solve all of your problems with single-layer networks.
@@ -257,10 +257,10 @@ We'll touch upon more rigorous arguments in subsequent chapters, but first let's
 In this example, we’ll implement an MLP with two hidden layers and one output layer.
 -->
 
-Ngoài ra, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
-Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn nhiều bằng cách sử dụng các mạng sâu hơn (hoặc rộng hơn).
-Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy thực sự xây dựng MLP bằng mã nguồn.
-Trong ví dụ này, chúng tôi sẽ triển khai MLP với hai tầng ẩn và một tầng đầu ra.
+Hơn nữa, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
+Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng các mạng sâu hơn (hoặc rộng hơn).
+Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy xây dựng một MLP bằng mã nguồn.
+Trong ví dụ này, chúng ta sẽ triển khai một MLP với hai tầng ẩn và một tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
