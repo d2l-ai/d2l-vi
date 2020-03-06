@@ -38,3 +38,5 @@
 | 34. | [nguyenduydu](https://github.com/nguyenduydu)                   | Nguyễn Duy Du                  |
 | 35. | [di-mi-ta](https://github.com/di-mi-ta)                         | Đinh Minh Tân                  |
 | 36. | [azraelzhor](https://github.com/azraelzhor)                     | Lê Cao Thăng                   |
+| 37. | [baoanh1310](https://github.com/baoanh1310)                     | Phạm Ngọc Bảo Anh              |
+| 38. | [tranyenthy](https://github.com/tranyenthy)                     | Trần Yến Thy                   |

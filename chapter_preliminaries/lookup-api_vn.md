@@ -35,7 +35,7 @@ Generally, we can ignore functions that start and end with `__` (special objects
 -->
 
 Thông thường, ta có thể bỏ qua những hàm bắt đầu và kết thúc với `__` (các đối tượng đặc biệt trong Python) hoặc những hàm bắt đầu bằng `_` (thường là các hàm địa phương).
-Dựa trên tên của những hàm và thuộc tính còn lại, ta có thể dự đoán rằng mô-đun này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối đa thức (`multinomial`)
+Dựa trên tên của những hàm và thuộc tính còn lại, ta có thể dự đoán rằng mô-đun này cung cấp những phương thức sinh số ngẫu nhiên, bao gồm lấy mẫu từ phân phối đều liên tục (`uniform`), phân phối chuẩn (`normal`) và phân phối đa thức (`multinomial`).
 
 <!--
 ## Finding the Usage of Specific Functions and Classes
