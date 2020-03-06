@@ -128,7 +128,7 @@ Recall our easlier discussion of these intricacies (:numref:`sec_mlp`).
 We encourage the interested reader to examine the source code for `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` to deepen their knowledge of implementation details.
 -->
 
-Để đảm bảo tính ổn định số học (và cũng bởi ta đã lập trình hàm softmax từ đầu trước đó rồi (:numref:`sec_softmax_scratch`), ta sẽ tận dụng luôn các hàm số đã tích hợp sẵn của Gluon để tính softmax và lỗi entropy chéo. Nhớ lại phần thảo luận của chúng ta trước đó về vấn đề rắc rối này (:numref:`sec_mlp`).
+Để đảm bảo tính ổn định số học (và cũng bởi ta đã lập trình hàm softmax từ đầu trước đó rồi (:numref:`sec_softmax_scratch`), ta sẽ tận dụng luôn các hàm số đã tích hợp sẵn của Gluon để tính softmax và lỗi entropy chéo. Nhắc lại phần thảo luận của chúng ta trước đó về vấn đề rắc rối này (:numref:`sec_mlp`).
 Chúng tôi khuyến khích bạn đọc có hứng thú thử kiểm tra mã nguồn trong `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` để hiểu thêm về cách lập trình chi tiết.
 
 ```{.python .input  n=6}
