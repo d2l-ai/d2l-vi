@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 Phần này được dịch bởi:
-* 
-* 
+* **assignee**
+* **assignee**
 
 Nếu bạn đã dịch phần này, vui lòng bỏ qua việc revise.
