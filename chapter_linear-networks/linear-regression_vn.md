@@ -96,9 +96,9 @@ Ta ký hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x
 The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
 -->
 
-Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn như là tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
+Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b.$$
+$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -106,24 +106,24 @@ The weights determine the influence of each feature on our prediction and the bi
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 -->
 
-Ở đây, $w_{\mathrm{area}}$ và $w_{\mathrm{age}}$ được gọi là *trọng số*, và $b$ được gọi là *độ chệch* (còn được gọi là *độ dời* hoặc *độ cản*).
-Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn độ chệch chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
-Thậm chí ngay cả khi chúng ta không bao giờ thấy một ngôi nhà có diện tích bằng không, hoặc tuổi đời bằng không, ta vẫn cần sử dụng độ cản nếu không ta sẽ làm giảm khả năng biểu diễn của mô hình tuyến tính.
+Ở đây, $w_{\mathrm{\textrm{diện_tích}}}$ và $w_{\mathrm{\textrm{tuổi_đời}}}$ được gọi là các *trọng số*, và $b$ được gọi là *hệ số điều chỉnh* (còn được gọi là *độ dời*).
+Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra, còn hệ số điều chỉnh là dự đoán của giá nhà khi tất cả các đặc trưng đều bằng $0$.
+Ngay cả khi không bao giờ có một ngôi nhà có diện tích hoặc tuổi đời bằng không, ta vẫn cần sử dụng hệ số điều chỉnh; nếu không khả năng biểu diễn của mô hình tuyến tính sẽ bị suy giảm.
 
 <!--
 Given a dataset, our goal is to choose the weights $w$ and bias $b$ such that on average, the predictions made according our model best fit the true prices observed in the data.
 -->
 
-Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số $w$ và độ chệch $b$, sao cho dự đoán dựa trên mô hình của ta phải khớp nhất với giá nhà thực tế quan sát được trong tập dữ liệu.
+Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số $w$ và hệ số điều chỉnh $b$ sao cho dự đoán của mô hình khớp nhất với giá nhà thực tế quan sát được trong dữ liệu.
 
 <!--
 In disciplines where it is common to focus on datasets with just a few features, explicitly expressing models long-form like this is common.
 In ML, we usually work with high-dimensional datasets, so it is more convenient to employ linear algebra notation. When our inputs consist of $d$ features, we express our prediction $\hat{y}$ as
 -->
 
-Trong các ngành học thường tập trung vào các tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
-Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn khi ta sử dụng ký hiệu đại số tuyến tính để biểu diễn.
-Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ là
+Trong các bài toán mà tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
+Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn nếu ta tận dụng các ký hiệu trong đại số tuyến tính.
+Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ bởi
 
 $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 
@@ -131,7 +131,7 @@ $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 Collecting all features into a vector $\mathbf{x}$ and all weights into a vector $\mathbf{w}$, we can express our model compactly using a dot product:
 -->
 
-Thu thập toàn bộ các đặc trưng vào một vector $\mathbf{x}$ và toàn bộ các trọng số vào một vector $\mathbf{w}$, ta có thể biễu diễu mô hình bằng phép tích vô hướng:
+Thu thập toàn bộ các đặc trưng vào một vector $\mathbf{x}$ và toàn bộ các trọng số vào một vector $\mathbf{w}$, ta có thể biễu diễn mô hình một cách gọn gàng bằng tích vô hướng:
 
 $$\hat{y} = \mathbf{w}^T \mathbf{x} + b.$$
 
@@ -146,14 +146,14 @@ Here, $X$ contains one row for every example and one column for every feature.
 -->
 
 Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
-Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $\mathbf{X}$.
+Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu sẽ tiện hơn nếu ta biểu diễn tập dữ liệu bằng *ma trận* $\mathbf{X}$. <!-- ma trận thiết kế ?? -->
 Mỗi hàng của ma trận $\mathbf{X}$ thể hiện một mẫu và mỗi cột thể hiện một đặc trưng.
 
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
 -->
 
-Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của giữa ma trận và vector:
+Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân giữa ma trận và vector:
 
 $${\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.$$
 
@@ -163,7 +163,7 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu (đã biết trước) $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$, được lấy mẫu từ cùng phân phối của tập huấn luyện sẽ (theo kỳ vọng) dự đoán giá trị mục tiêu $y_i$ với sai số nhỏ nhất.
+Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu đã biết trước $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$ được lấy mẫu từ cùng phân phối của tập huấn luyện, giá trị mục tiêu $y_i$ sẽ được dự đoán với sai số nhỏ nhất (theo kỳ vọng).  <!-- mình sửa lại cho đúng ngữ pháp -->
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
@@ -172,16 +172,16 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
-Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
-Chính vì vậy, mặc dù tự tin rằng mối quan hệ trong dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm với nhiễu để tạo ra kết quả tự nhiên hơn.
+Kể cả khi biết rằng mô hình tuyến tính là lựa chọn tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không kỳ vọng tìm được dữ liệu thực tế mà ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
+Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có sai số nhất định. 
+Chính vì vậy, kể cả khi ta chắc chắn rằng mối quan hệ ẩn sau tập dữ liệu là tuyến tính, chúng ta sẽ thêm một thành phần nhiễu để giải thích các sai số đó. 
 
 <!--
 Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
 (i) a quality measure for some given model; and (ii) a procedure for updating the model to improve its quality.
 -->
 
-Trước khi nghiên cứu cách tìm các giá trị tối ưu $\mathbf{w}$ và $b$, chúng ta sẽ cần quan tâm thêm hai vấn đề nữa: (i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
+Trước khi tiến hành tìm các giá trị tốt nhất cho $\mathbf{w}$ và $b$, chúng ta sẽ cần thêm hai thứ nữa: (i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -937,10 +937,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
-
+* Phạm Ngọc Bảo Anh
 <!-- Phần 3 -->
 * Nguyễn Văn Tâm
 * Đoàn Võ Duy Thanh
