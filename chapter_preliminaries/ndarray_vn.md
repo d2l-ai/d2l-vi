@@ -278,7 +278,7 @@ Given any two vectors $\mathbf{u}$ and $\mathbf{v}$ *of the same shape*, and a b
 Here, we produced the vector-valued $F: \mathbb{R}^d, \mathbb{R}^d \rightarrow \mathbb{R}^d$ by *lifting* the scalar function to an elementwise vector operation.
 -->
 
-* Trong toán học, ta ký hiệu một toán tử *đơn ngôi* vô hướng (lấy một đầu vào) bởi $f: \mathbb{R} \rightarrow \mathbb{R}$.
+Trong toán học, ta ký hiệu một toán tử *đơn ngôi* vô hướng (lấy một đầu vào) bởi $f: \mathbb{R} \rightarrow \mathbb{R}$.
 Điều này nghĩa là hàm số ánh xạ từ một số thực bất kỳ ($\mathbb{R}$) sang một số thực khác.
 Tương tự, ta ký hiệu một toán tử *hai ngôi* vô hướng (lấy hai đầu vào, trả về một đầu ra) bởi $f: \mathbb{R}, \mathbb{R} \rightarrow \mathbb{R}$.
 Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng kích thước*, và một toán tử hai ngôi $f$, ta có thể tính được một vector $\mathbf{c} = F(\mathbf{u},\mathbf{v})$ bằng cách tính $c_i \gets f(u_i, v_i)$ cho mọi $i$ với $c_i, u_i$, và $v_i$ là các phần tử thứ $i$ của vector $\mathbf{c}, \mathbf{u}$, và $\mathbf{v}$.
@@ -287,8 +287,6 @@ Cho trước hai vector bất kỳ $\mathbf{u}$ và $\mathbf{v}$ *với cùng k�
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
-
-*dịch đoạn phía trên*
 
 <!--
 In MXNet, the common standard arithmetic operators (`+`, `-`, `*`, `/`, and `**`) have all been *lifted* to elementwise operations for any identically-shaped tensors of arbitrary shape.

@@ -233,7 +233,7 @@ x.grad
 ## Backward for Non-Scalar Variables
 -->
 
-## Truyền ngược cho các biến không phải số vô hướng
+## Truyền ngược cho các biến không phải Số vô hướng
 
 <!--
 Technically, when `y` is not a scalar,
@@ -383,7 +383,7 @@ x.grad, u.grad, y.grad
 ## Computing the Gradient of Python Control Flow
 -->
 
-## Tính gradient của luồng điều khiển Python
+## Tính gradient của Luồng điều khiển Python
 
 <!--
 One benefit of using automatic differentiation
