@@ -12,7 +12,7 @@
 Now that we have characterized multilayer perceptrons (MLPs) mathematically, let's try to implement one ourselves.
 -->
 
-Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng lập trình một mạng như vậy xem sao.
+Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng thử lập trình một mạng như vậy xem sao.
 
 ```{.python .input  n=9}
 import d2l
@@ -46,10 +46,10 @@ Note that we can regard both of these quantities as *hyperparameters* and ought 
 Typically, we choose layer widths in powers of $2$ which tends to be computationally efficient because of how memory is alotted and addressed in hardware.
 -->
 
-Nhớ lại rằng Fashion-MNIST gồm có $10$ nhãn, mỗi ảnh gồm có một lưới $28 \times 28 = 784$ điểm ảnh (đen và trắng).
-Chúng ta sẽ tiếp tục bỏ qua liên hệ về mặt không gian giữa các điểm ảnh (hiện tại), khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ nhãn.
+Nhắc lại rằng Fashion-MNIST gồm có $10$ nhãn, mỗi ảnh gồm có một lưới $28 \times 28 = 784$ điểm ảnh (đen và trắng).
+Chúng ta sẽ tiếp tục bỏ qua liên hệ về mặt không gian giữa các điểm ảnh (ở thời điểm hiện tại), khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ lớp.
 Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉ có một tầng ẩn với $256$ nút ẩn.
-Lưu ý rằng ta có thể coi cả hai đại lượng này là *siêu tham số* và nói chung ta nên thiết lập giá trị cho chúng dựa trên chất lượng trên tập kiểm định. 
+Lưu ý rằng ta có thể coi cả hai đại lượng này là các *siêu tham số* và nên thiết lập giá trị cho chúng dựa trên chất lượng trên tập kiểm định. 
 
 <!--
 Again, we will represent our parameters with several `ndarray`s.
@@ -57,7 +57,7 @@ Note that *for every layer*, we must keep track of one weight matrix and one bia
 As always, we call `attach_grad` to allocate memory for the gradients (of the loss) with respect to these parameters.
 -->
 
-Chúng ta sẽ lại biễu diện các tham số bằng một số `ndarray`.
+Chúng ta sẽ lại biễu diện các tham số bằng một vài `ndarray`.
 Lưu ý rằng *với mỗi tầng*, ta luôn có một ma trận trọng số và một vector hiệu chỉnh.
 Và như mọi khi, ta gọi tới `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) tương ứng với các tham số này.
 
