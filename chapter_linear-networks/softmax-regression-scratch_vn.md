@@ -5,7 +5,7 @@
 # Implementation of Softmax Regression from Scratch
 -->
 
-# *dịch tiêu đề phía trên*
+# Lập trình Hồi quy Sofmax từ đầu
 :label:`sec_softmax_scratch`
 
 <!--
@@ -14,7 +14,9 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự và bạn nên tự biết cách làm thế nào để xây dựng nó một cách chi tiết nhất.
+Tương tự hồi quy tuyến tính, sau khi thực hiện mọi thứ bằng tay thì ta sẽ dùng Gluon để lập trình và đưa ra sự so sánh.
+Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
 import d2l
@@ -27,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một vòng lập với kích cỡ batch là $256$.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -38,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo các tham số của Mô hình
 
 <!--
 As in our linear regression example, each example here will be represented by a fixed-length vector.
@@ -47,7 +49,10 @@ In this section, we will flatten each image, treating them as $784$ 1D vectors.
 In the future, we will talk about more sophisticated strategies for exploiting the spatial structure in images, but for now we treat each pixel location as just another feature.
 -->
 
-*dịch đoạn phía trên*
+Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
+Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
+Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
+Sau này ta sẽ bàn về các chiến lược tinh vi hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
@@ -56,7 +61,10 @@ Consequently, our weights will constitute a $784 \times 10$ matrix and the biase
 As with linear regression, we will initialize our weights $W$ with Gaussian noise and our biases to take the initial value $0$.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại trong hồi quy softmax, mỗi lớp sẽ có một đầu ra.
+Vì tập dữ liệu của chúng ta có $10$ lớp, mạng của chúng ta sẽ có $10$ đầu ra.
+Do đó, các trọng số sẽ tạo thành một ma trận $784 \times 10$ và các hệ số điều chỉnh sẽ tạo thành một vector $1 \times 10$.
+Cũng như hồi quy tuyến tính, ta sẽ khởi tạo các trọng số $W$ bằng nhiễu Gauss và các hệ số điều chỉnh sẽ được khởi tạo bằng $0$.
 
 ```{.python .input  n=3}
 num_inputs = 784
@@ -71,7 +79,8 @@ Recall that we need to *attach gradients* to the model parameters.
 More literally, we are allocating memory for future gradients to be stored and notifiying MXNet that we will want to calculate gradients with respect to these parameters in the future.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ rằng ta cần *đính kèm gradient* vào các tham số của mô hình.
+Cụ thể hơn, ta đang phân bổ bộ nhớ để lưu trữ các gradient trong tương lai và cho MXNet biết rằng ta sẽ muốn tính các gradient theo các tham số này trong tương lai.
 
 ```{.python .input  n=4}
 W.attach_grad()
@@ -238,7 +247,7 @@ def cross_entropy(y_hat, y):
 ## Classification Accuracy
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ chính xác cho bài toán Phân loại
 
 <!--
 Given the predicted probability distribution `y_hat`, we typically choose the class with highest predicted probability whenever we must output a *hard* prediction.
@@ -247,7 +256,9 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-*dịch đoạn phía trên*
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
+Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
+Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
 When predictions are consistent with the actual category `y`, they are correct.
@@ -256,7 +267,10 @@ Although it can be difficult optimize accuracy directly (it is not differentiabl
 it is often the performance metric that we care most about, and we will nearly always report it when training classifiers.
 -->
 
-*dịch đoạn phía trên*
+Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
+Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
+Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
+đây thường là phép đo chất lượng được quan tâm tới nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -268,7 +282,13 @@ The result is an `ndarray` containing entries of 0 (false) and 1 (true).
 Taking the mean yields the desired result.
 -->
 
-*dịch đoạn phía trên*
+Độ chính xác được tính toán như sau:
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
+Kết quả trả về sẽ có cùng kích thước với biến `y`
+và bây giờ ta chỉ cần so sánh hai vector này.
+Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
+Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true).
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -286,7 +306,10 @@ The second example's prediction category is $2$ (the largest element of the row 
 Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
+Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
@@ -297,7 +320,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -312,7 +335,7 @@ def evaluate_accuracy(net, data_iter):
 Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 -->
 
-*dịch đoạn phía trên*
+`Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng tích lũy của nhiều số.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -336,7 +359,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-*dịch đoạn phía trên*
+Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ ngang với việc đoán mò, tức độ chính xác bằng $0.1$ với $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
@@ -354,7 +377,7 @@ evaluate_accuracy(net, test_iter)
 ## Model Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mô hình
 
 <!--
 The training loop for softmax regression should look strikingly familiar if you read through our implementation of linear regression in :numref:`sec_linear_scratch`.
@@ -364,7 +387,11 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-*dịch đoạn phía trên*
+Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã đọc qua cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Ở đây, chúng ta tái cấu trúc lại đoạn mã để giúp nó có thể được tái sử dụng. 
+Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
+Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận giá trị kích thước batch làm thông số. 
+Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
 # Saved in the d2l package for later use
@@ -389,7 +416,8 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-*dịch đoạn phía trên*
+Trước khi xem đoạn mã thực hiện hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để biểu diễn trực quan dữ liệu.
+Nhắc lại, mục đích của nó là giúp làm đơn giản hơn các đoạn mã sẽ xuất hiện trong các chương sau này. 
 
 ```{.python .input  n=16}
 # Saved in the d2l package for later use
@@ -436,7 +464,7 @@ class Animator(object):
 The training function then runs multiple epochs and visualize the training progress.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan hoá quá trình huấn luyện. 
 
 ```{.python .input  n=17}
 # Saved in the d2l package for later use
@@ -457,7 +485,10 @@ By changing their values, we may be able to increase the classification accuracy
 In practice we will want to split our data three ways into training, validation, and test data, using the validation data to choose the best values of our hyperparameters.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại, chúng ta sử dụng giải thuật hạ gradient ngẫu nhiên theo minibatch để tối ưu hàm mất mát của mô hình.
+Lưu ý rằng số lượng epochs (`num_epochs`), và hệ số học (`lr`) là 2 siêu tham số được hiệu chỉnh. 
+Bằng cách thay đổi các giá trị này, chúng ta có thể tăng độ chính xác khi phân loại của mô hình. 
+Trong thực tế, chúng ta thường sẽ chia tập dữ liệu thành 3 phần, đó là: dữ liệu huấn luyện, dữ liệu kiểm thử và dữ liệu kiểm tra, sử dụng dữ liệu kiểm thử để chọn ra những giá trị tốt nhất cho các siêu tham số.  
 
 ```{.python .input  n=18}
 num_epochs, lr = 10, 0.1
@@ -572,7 +603,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Bùi Nhật Quân
+* Lý Phi Long
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * Lâm Ngọc Tâm
@@ -584,10 +617,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Hồng Vinh
 
 <!-- Phần 4 -->
-*
+* Nguyễn Quang Hải
 
 <!-- Phần 5 -->
-*
+* Đinh Minh Tân
 
 <!-- Phần 6 -->
 * Lê Cao Thăng

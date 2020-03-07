@@ -382,14 +382,15 @@ This makes optimization better behaved and it mitigated well-documented problem 
 ### Sigmoid Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Sigmoid
 
 <!--
 The sigmoid function transforms its inputs, which values in the domain $\mathbb{R}$, to outputs that lie the interval $(0, 1)$.
 For that reason, the sigmoid is often called a *squashing* function: it *squashes* any input in the range (-inf, inf) to some value in the range (0, 1).
 -->
 
-*dịch đoạn phía trên*
+Hàm sigmoid biến đổi các giá trị đầu vào có miền giá trị thuộc $\mathbb{R}$ thành các giá trị đầu ra nằm trong khoảng $(0, 1)$.
+Vì vậy, hàm sigmoid thường được gọi là hàm *nén*: nó *nén* một giá trị đầu vào bất kỳ nằm trong khoảng (âm vô cùng, dương vô cùng) thành một giá trị đầu ra nằm trong khoảng (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
@@ -399,8 +400,9 @@ Thus the pioneers of this field, going all the way back to McCulloch and Pitts, 
 A thresholding activation takes value $0$ when its input is below some threshold and value $1$ when the input exceeds the threshold.
 -->
 
-*dịch đoạn phía trên*
-
+Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học, thứ có thể ở một trong hai trạng thái *kích hoạt* hoặc *không kích hoạt*.
+Vì vậy mà những người tiên phong trong lĩnh vực này, bao gồm [McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) và [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts), những người phát minh ra nơ-ron nhân tạo, tập trung nghiên cứu các đơn vị ngưỡng.
+Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở mức dưới ngưỡng và giá trị là $1$ khi đầu vào ở mức vượt ngưỡng.
 
 <!--
 When attention shifted to gradient based learning, the sigmoid function was a natural choice because it is a smooth, differentiable approximation to a thresholding unit.
@@ -410,14 +412,19 @@ However, the sigmoid has mostly been replaced by the simpler and more easily tra
 In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will describe architectures that leverage sigmoid units to control the flow of information across time.
 -->
 
-*dịch đoạn phía trên*
+Khi phương pháp học dựa trên gradient trở nên thu hút, hàm sigmoid là một lựa chọn phù hợp cho việc xấp xỉ đơn vị ngưỡng bởi vì nó liên tục và khả vi.
+Hàm sigmoid vẫn là hàm kích hoạt được sử dụng rộng rãi ở các đơn vị đầu ra,
+khi ta muốn biểu diễn kết quả đầu ra như các xác suất cho bài toán phân loại nhị phân (bạn có thể xem sigmoid như một trường hợp đặc biệt của softmax).
+Tuy nhiên, trong các tầng ẩn, hàm sigmoid đã gần như bị thay thế bằng hàm ReLU vì nó đơn giản hơn và giúp cho việc huấn luyện trở nên dễ dàng hơn.
+Trong chương "Mạng nơ-ron truy hồi" (:numref:`sec_plain_rnn`), chúng tôi sẽ mô tả các mô hình sử dụng đơn vị sigmoid để kiểm soát luồng thông tin theo thời gian.
 
 <!--
 Below, we plot the sigmoid function.
 Note that when the input is close to 0, the sigmoid function approaches a linear transformation.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta vẽ đồ thị hàm sigmoid.
+Cần chú ý rằng, khi đầu vào có giá trị gần bằng 0, hàm sigmoid tiến tới một phép biến đổi tuyến tính.
 
 ```{.python .input  n=4}
 with autograd.record():
@@ -429,7 +436,7 @@ d2l.plot(x, y, 'x', 'sigmoid(x)')
 The derivative of sigmoid function is given by the following equation:
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của hàm sigmoid được tính bởi phương trình sau:
 
 $$\frac{d}{dx} \mathrm{sigmoid}(x) = \frac{\exp(-x)}{(1 + \exp(-x))^2} = \mathrm{sigmoid}(x)\left(1-\mathrm{sigmoid}(x)\right).$$
 
@@ -440,7 +447,9 @@ Note that when the input is 0, the derivative of the sigmoid function reaches a 
 As the input diverges from 0 in either direction, the derivative approaches 0.
 -->
 
-*dịch đoạn phía trên*
+Đồ thị đạo hàm của hàm sigmoid được vẽ ở dưới.
+Chú ý rằng khi đầu vào là 0, đạo hàm của hàm sigmoid đạt giá trị lớn nhất là 0.25.
+Khi đầu vào phân kỳ từ 0 theo một trong hai hướng, đạo hàm sẽ tiến tới 0.
 
 ```{.python .input  n=5}
 y.backward()
@@ -455,13 +464,13 @@ d2l.plot(x, x.grad, 'x', 'grad of sigmoid')
 ### Tanh Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm "Tanh"
 
 <!--
 Like the sigmoid function, the tanh (Hyperbolic Tangent) function also squashes its inputs, transforms them into elements on the interval between -1 and 1:
 -->
 
-*dịch đoạn phía trên*
+Tương tự như hàm sigmoid, hàm tanh (Hyperbolic Tangent) cũng nén các biến đầu vào và biến đổi chúng thành các phần tử nằm trong khoảng -1 và 1:
 
 $$\text{tanh}(x) = \frac{1 - \exp(-2x)}{1 + \exp(-2x)}.$$
 
@@ -470,7 +479,8 @@ We plot the tanh function blow. Note that as the input nears 0, the tanh functio
 Although the shape of the function is similar to the sigmoid function, the tanh function exhibits point symmetry about the origin of the coordinate system.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ vẽ hàm tanh như sau. Chú ý rằng nếu đầu vào có giá trị gần bằng 0, hàm tanh sẽ tiến đến một phép biến đổi tuyến tính.
+Mặc dù hình dạng của hàm tanh trông khá giống hàm sigmoid, hàm tanh lại thể hiện tính đối xứng tâm qua gốc của hệ trục tọa độ.
 
 ```{.python .input  n=6}
 with autograd.record():
@@ -482,7 +492,7 @@ d2l.plot(x, y, 'x', 'tanh(x)')
 The derivative of the Tanh function is:
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của hàm Tanh là:
 
 $$\frac{d}{dx} \mathrm{tanh}(x) = 1 - \mathrm{tanh}^2(x).$$
 
@@ -492,7 +502,9 @@ As the input nears 0, the derivative of the tanh function approaches a maximum o
 And as we saw with the sigmoid function, as the input moves away from 0 in either direction, the derivative of the tanh function approaches 0.
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của hàm tanh được vẽ như sau.
+Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị tối đa là 1.
+Tương tự như hàm sigmoid, khi đầu vào tiến xa khỏi 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
 
 ```{.python .input  n=7}
 y.backward()
@@ -506,7 +518,10 @@ In some ways, you have an advantage over anyone working the 1990s, because you c
 Previously, getting these nets training required researchers to code up thousands of lines of C and Fortran.
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, bây giờ chúng ta biết cách kết hợp các hàm phi tuyến để xây dựng các mô hình mạng nơ-ron đa tầng.
+Ngoài ra, kiến thức bây giờ của bạn đã cung cấp một bộ công cụ tương đương như của một người làm học sâu vào khoảng năm 1990.
+Xét theo một khía cạnh nào đó, bạn còn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để các framework học sâu nguồn mở để xây dựng các mô hình một cách nhanh chóng, chỉ với một vài dòng mã.
+Trước đây, việc huấn luyện các mạng nơ-ron đòi hỏi các nhà nghiên cứu phải viết đến hàng ngàn dòng mã C và Fortran.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -587,10 +602,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 7 -->
-*
+* Lâm Ngọc Tâm
+* Phạm Minh Đức
 
 <!-- Phần 8 -->
 *

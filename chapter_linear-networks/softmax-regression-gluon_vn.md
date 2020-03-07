@@ -5,7 +5,7 @@
 # Concise Implementation of Softmax Regression
 -->
 
-# *dịch tiêu đề phía trên*
+# Triển khai súc tích của Hồi quy Softmax
 :label:`sec_softmax_gluon`
 
 <!--
@@ -14,7 +14,8 @@ we will find it similarly (or possibly more) convenient for implementing classif
 Again, we begin with our import ritual.
 -->
 
-*dịch đoạn phía trên*
+Giống như cách Gluon giúp việc thực hiện hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, chúng ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
+Một lần nữa, chúng ta bắt đầu bằng việc nhập gói thư viện.
 
 ```{.python .input  n=1}
 import d2l
@@ -27,7 +28,7 @@ npx.set_np()
 Let's stick with the Fashion-MNIST dataset and keep the batch size at $256$ as in the last section.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích cỡ batch bằng $256$ như ở phần trước.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -38,7 +39,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tham số Mô hình
 
 <!--
 As mentioned in :numref:`sec_softmax`, the output layer of softmax regression is a fully-connected (`Dense`) layer.
@@ -47,7 +48,10 @@ Again, here, the `Sequential` is not really necessary, but we might as well form
 Again, we initialize the weights at random with zero mean and standard deviation $0.01$.
 -->
 
-*dịch đoạn phía trên*
+Như đã đề cập trong :numref:`sec_softmax`, tầng ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
+Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra vào đối tượng `Sequential`.
+Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen sử dụng vì nó sẽ luôn hiện diện khi ta lập trình các mô hình học sâu.
+Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
 ```{.python .input  n=3}
 net = nn.Sequential()
@@ -63,7 +67,7 @@ net.initialize(init.Normal(sigma=0.01))
 ## The Softmax
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm Softmax
 
 <!--
 In the previous example, we calculated our model's output and then ran this output through the cross-entropy loss.
@@ -73,7 +77,10 @@ Recall that the softmax function calculates $\hat y_j = \frac{e^{z_j}}{\sum_{i=1
 where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^\mathrm{th}$ element of the input ``y_linear`` variable, as computed by the softmax.
 -->
 
-*dịch đoạn phía trên*
+Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
+Về mặt toán học, cách làm này hoàn toàn có lý.
+Tuy nhiên, từ góc độ tính toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số (được bàn trong :numref:`sec_naive_bayes`).
+Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``.
 
 <!--
 If some of the $z_i$ are very large (i.e., very positive), then $e^{z_i}$ might be larger than the largest number we can have for certain types of ``float`` (i.e., overflow).
@@ -83,7 +90,11 @@ One trick to get around this is to first subtract $\text{max}(z_i)$ from all $z_
 You can verify that this shifting of each $z_i$ by constant factor does not change the return value of ``softmax``.
 -->
 
-*dịch đoạn phía trên*
+Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
+Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan`` .
+Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không xác định một cách rõ ràng.
+Có một mẹo để khắc phục điều này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
 After the subtraction and normalization step, it might be that possible that some $z_j$ have large negative values and thus that the corresponding $e^{z_j}$ will take values close to zero.
@@ -91,7 +102,9 @@ These might be rounded to zero due to finite precision (i.e underflow), making $
 A few steps down the road in backpropagation, we might find ourselves faced with a screenful of the dreaded not-a-number (``nan``) results.
 -->
 
-*dịch đoạn phía trên*
+Sau khi thực hiện phép trừ và chuẩn hóa, một vài $z_j$ có thể có giá trị âm lớn và do đó $e^{z_j}$ sẽ xấp xỉ 0.
+Điều này có thể dẫn đến việc làm tròn thành 0 (tức tràn số dưới) do khả năng biễu diễn chính xác là hữu hạn, tức $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
+Thực hiện vài bước lan truyền ngược với lỗi trên, ta sẽ đối mặt với một loạt giá trị `nan` (*not-a-number*: *Không phải số*) đáng sợ.
 
 <!--
 Fortunately, we are saved by the fact that even though we are computing exponential functions, we ultimately intend to take their log (when calculating the cross-entropy loss).
@@ -99,7 +112,9 @@ By combining these two operators (``softmax`` and ``cross_entropy``) together, w
 As shown in the equation below, we avoided calculating $e^{z_j}$ and can instead $z_j$ directly due to the canceling in $\log(\exp(\cdot))$.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, mặc dù ta tính toán với các hàm mũ nhưng trong thực tế kết quả cuối cùng ta muốn là giá trị log của nó (ví dụ khi tính hàm mất mát entropy chéo).
+Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề bất ổn trong tính toán mà có thể gây khó khăn trong quá trình lan truyền ngược.
+Như sẽ thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc khử trực tiếp trong $\log(\exp(\cdot))$.
 
 $$
 \begin{aligned}
@@ -115,7 +130,9 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ muốn giữ nguyên chức năng của softmax thông thường trong trường hợp ta muốn đánh giá xác xuất của đầu ra theo mô hình.
+Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit và tính softmax cùng giá trị log của nó trong hàm mất mát `softmax_cross_entropy`.
+Hàm này sẽ tự động thực hiện các mẹo thông minh log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
 ```{.python .input  n=4}
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
@@ -133,14 +150,15 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Optimization Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán tối ưu
 
 <!--
 Here, we use minibatch stochastic gradient descent with a learning rate of $0.1$ as the optimization algorithm.
 Note that this is the same as we applied in the linear regression example and it illustrates the general applicability of the optimizers.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng ta sử dụng thuật toán tối ưu hạ gradient ngẫu nhiên theo minibatch với tốc độ học bằng $0.1$.
+Lưu ý rằng cách làm này giống hệt cách làm ở ví dụ về hồi quy tuyến tính, minh chứng cho tính tổng quát của bộ tối ưu hạ gradient ngẫu nhiên.
 
 ```{.python .input  n=5}
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
@@ -150,13 +168,13 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Next we call the training function defined in the last section to train a model.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ gọi hàm huấn luyện đã được khai báo ở mục trước để huấn luyện mô hình.
 
 ```{.python .input  n=6}
 num_epochs = 10
@@ -169,20 +187,22 @@ Note that in many cases, Gluon takes additional precautions beyond these most we
 saving us from even more pitfalls that we would encounter if we tried to code all of our models from scratch in practice.
 -->
 
-*dịch đoạn phía trên*
+Giống lần trước, thuật toán hội tụ và nghiệm có độ chính xác 83.7%, chỉ khác một điều là cần ít dòng mã hơn.
+Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để tránh các lỗi kĩ thuật tính toán mà ta dễ gặp phải nếu tự xây dựng mô hình từ đầu.
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Try adjusting the hyper-parameters, such as batch size, epoch, and learning rate, to see what the results are.
 2. Why might the test accuracy decrease again after a while? How could we fix this?
 -->
 
-*dịch đoạn phía trên*
+1. Thử thay đổi các siêu tham số, như là kích thước batch, epoch, và tốc độ học, để xem kết quả như thế nào.
+2. Tại sao độ chính xác trên tập kiểm tra lại giảm sau một khoảng thời gian? Chúng ta giải quyết việc này thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -216,11 +236,16 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
 
 <!-- Phần 3 -->
-*
-
+* Phạm Minh Đức
+* Dương Nhật Tân
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Tâm

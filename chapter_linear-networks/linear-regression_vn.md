@@ -14,9 +14,9 @@ In the natural sciences and social sciences, the purpose of regression is most o
 Machine learning, on the other hand, is most often concerned with *prediction*.
 -->
 
-Hồi quy liên quan đến các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và giá trị mục tiêu $y$.
+Hồi quy ám chỉ các phương pháp để xây dựng mối quan hệ giữa điểm dữ liệu $\mathbf{x}$ và mục tiêu với giá trị số thực $y$.
 Trong khoa học tự nhiên và khoa học xã hội, mục tiêu của hồi quy thường là *đặc trưng hóa* mối quan hệ của đầu vào và đầu ra.
-Mặt khác, học máy thường quan tâm đến *dự đoán*.
+Mặt khác, học máy lại thường quan tâm đến việc *dự đoán*.
 
 <!--
 Regression problems pop up whenever we want to predict a numerical value.
@@ -26,9 +26,9 @@ In subsequent sections, we will introduce classification problems, where the goa
 -->
 
 Bài toán hồi quy xuất hiện mỗi khi chúng ta muốn dự đoán một giá trị số.
-Các ví dụ thông dụng bao gồm dự đoán giá cả (nhà, cổ phiếu, ..), dự đoán thời gian ở lại (cho bệnh nhân trong viện), dự đoán nhu cầu (cho bán lẻ), và nhiều thứ khác.
-Không phải mọi bài toán về dự đoán đều là bài toán *hồi quy* cổ điển.
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, trong đó mục tiêu là dự đoán thành viên giữa một nhóm các hạng mục.
+Các ví dụ phổ biến bao gồm dự đoán giá cả (nhà, cổ phiếu, ...), thời gian bệnh nhân nằm viện, nhu cầu trong ngành bán lẻ và vô vàn thứ khác.
+Không phải mọi bài toán dự đoán đều là bài toán *hồi quy* cổ điển.
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân loại, khi mục tiêu là dự đoán lớp đúng trong một tập các lớp cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -38,7 +38,7 @@ Trong các phần tiếp theo, chúng tôi sẽ giới thiệu bài toán phân 
 ## Basic Elements of Linear Regression
 -->
 
-## Một số Thành phần Cơ bản của Hồi quy Tuyến tính
+## Các Thành phần Cơ bản của Hồi quy Tuyến tính
 
 <!--
 *Linear regression* may be both the simplest and most popular among the standard tools to regression.
@@ -50,12 +50,12 @@ To motivate the approach, let's start with a running example.
 Suppose that we wish to estimate the prices of houses (in dollars) based on their area (in square feet) and age (in years).
 -->
 
-*Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất cho hồi quy.
-Quay trở về đầu thế kỉ 19, hồi quy tuyến tính tuân theo một vài giả thuyết đơn giản.
-Đầu tiên, ta giả sử quan hệ giữa *các đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể biểu diễn qua tổng trọng số của đầu vào $\textbf{x}$, cộng thêm nhiễu qua sự quan sát.
-Thứ hai, ta giả sử nhiễu là có quy tắc (theo phân phối Gauss).
-Để tạo động lực, chúng ta hãy bắt đầu chạy một ví dụ.
-Hãy cho là ta muốn ước lượng giá nhà (bằng dollars) dựa vào diện tích nhà (đơn vị feet vuông) và tuổi đời (theo năm).
+*Hồi quy tuyến tính* có lẽ là công cụ tiêu chuẩn đơn giản và phổ biến nhất được sử dụng cho bài toán hồi quy.
+Xuất hiện từ đầu thế kỉ 19, hồi quy tuyến tính được phát triển từ một vài giả thuyết đơn giản.
+Đầu tiên, ta giả sử quan hệ giữa các *đặc trưng* $\mathbf{x}$ và mục tiêu $y$ là tuyến tính, do đó $y$ có thể được biểu diễn bằng tổng trọng số của đầu vào $\textbf{x}$, cộng hoặc trừ thêm nhiễu của các quan sát.
+Thứ hai, ta giả sử nhiễu có quy tắc (tuân theo phân phối Gauss).
+Để tạo động lực, hãy bắt đầu với một ví dụ.
+Giả sử ta muốn ước lượng giá nhà (bằng đô la) dựa vào diện tích (đơn vị feet vuông) và tuổi đời (theo năm).
 
 <!--
 To actually fit a model for predicting house prices, we would need to get our hands on a dataset consisting of sales for which we know the sale price, area and age for each home.
@@ -64,18 +64,19 @@ The thing we are trying to predict (here, the price) is called a *target* or *la
 The variables (here *age* and *area*) upon which the predictions are based are called *features* or *covariates*.
 -->
 
-Để thực sự khớp một mô hình để dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà chúng ta đã biết giá bán, diện tích, tuổi đời cho từng căn nhà.
-Trong thuật ngữ của học máy, dữ liệu được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu cho một lần bán) được gọi là một *ví dụ* hoặc *mẫu*.
+Để khớp một mô hình dự đoán giá nhà, chúng ta cần một tập dữ liệu các giao dịch mà trong đó ta biết giá bán, diện tích, tuổi đời cho từng căn nhà.
+Trong thuật ngữ của học máy, tập dữ liệu này được gọi là *dữ liệu huấn luyện* hoặc *tập huấn luyện*, và mỗi hàng (tương ứng với dữ liệu của một giao dịch) được gọi là một *ví dụ* hoặc *mẫu*.
 Thứ mà chúng ta muốn dự đoán (giá nhà) được gọi là *mục tiêu* hoặc *nhãn*.
-Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là *những đặc trưng* hoặc *những hiệp biến*.
+Các biến (*tuổi đời* và *diện tích*) mà những dự đoán dựa vào được gọi là các *đặc trưng* hoặc *hiệp biến*.
 
 <!--
 Typically, we will use $n$ to denote the number of examples in our dataset.
 We index the samples by $i$, denoting each input data point as $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ and the corresponding label as $y^{(i)}$.
 -->
 
-Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số mẫu trong dữ liệu.
-Chúng ta truy cập các mẫu bằng chỉ số $i$, kí hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và tương ứng nhãn là $y^{(i)}$.  
+Thông thường, chúng ta sẽ dùng $n$ để kí hiệu số lượng mẫu trong tập dữ liệu.
+Chỉ số $i$ được dùng để xác định một mẫu cụ thể. 
+Ta ký hiệu mỗi điểm dữ liệu đầu vào là $x^{(i)} = [x_1^{(i)}, x_2^{(i)}]$ và nhãn tương ứng là $y^{(i)}$.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -95,9 +96,9 @@ Chúng ta truy cập các mẫu bằng chỉ số $i$, kí hiệu mỗi điểm 
 The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
 -->
 
-Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn như là tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
+Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{area}} \cdot \mathrm{area} + w_{\mathrm{age}} \cdot \mathrm{age} + b.$$
+$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -105,24 +106,24 @@ The weights determine the influence of each feature on our prediction and the bi
 Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
 -->
 
-Ở đây, $w_{\mathrm{area}}$ và $w_{\mathrm{age}}$ được gọi là *trọng số*, và $b$ được gọi là *độ chệch* (còn được gọi là *độ dời* hoặc *độ cản*).
-Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra còn độ chệch chỉ ra giá trị của giá nhà trong trường hợp tất cả các đặc trưng đều bằng $0$.
-Thậm chí ngay cả khi chúng ta không bao giờ thấy một ngôi nhà có diện tích bằng không, hoặc tuổi đời bằng không, ta vẫn cần sử dụng độ cản nếu không ta sẽ làm giảm khả năng biểu diễn của mô hình tuyến tính.
+Ở đây, $w_{\mathrm{\textrm{diện_tích}}}$ và $w_{\mathrm{\textrm{tuổi_đời}}}$ được gọi là các *trọng số*, và $b$ được gọi là *hệ số điều chỉnh* (còn được gọi là *độ dời*).
+Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra, còn hệ số điều chỉnh là dự đoán của giá nhà khi tất cả các đặc trưng đều bằng $0$.
+Ngay cả khi không bao giờ có một ngôi nhà có diện tích hoặc tuổi đời bằng không, ta vẫn cần sử dụng hệ số điều chỉnh; nếu không khả năng biểu diễn của mô hình tuyến tính sẽ bị suy giảm.
 
 <!--
 Given a dataset, our goal is to choose the weights $w$ and bias $b$ such that on average, the predictions made according our model best fit the true prices observed in the data.
 -->
 
-Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số $w$ và độ chệch $b$, sao cho dự đoán dựa trên mô hình của ta phải khớp nhất với giá nhà thực tế quan sát được trong tập dữ liệu.
+Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số $w$ và hệ số điều chỉnh $b$ sao cho dự đoán của mô hình khớp nhất với giá nhà thực tế quan sát được trong dữ liệu.
 
 <!--
 In disciplines where it is common to focus on datasets with just a few features, explicitly expressing models long-form like this is common.
 In ML, we usually work with high-dimensional datasets, so it is more convenient to employ linear algebra notation. When our inputs consist of $d$ features, we express our prediction $\hat{y}$ as
 -->
 
-Trong các ngành học thường tập trung vào các tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
-Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn khi ta sử dụng ký hiệu đại số tuyến tính để biểu diễn.
-Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ là
+Trong các bài toán mà tập dữ liệu thường chỉ có một vài đặc trưng, biễu diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
+Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều, vì vậy sẽ tốt hơn nếu ta tận dụng các ký hiệu trong đại số tuyến tính.
+Khi đầu vào của mô hình có $d$ đặc trưng, ta biễu diễn dự đoán $\hat{y}$ bởi
 
 $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 
@@ -130,7 +131,7 @@ $$\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.$$
 Collecting all features into a vector $\mathbf{x}$ and all weights into a vector $\mathbf{w}$, we can express our model compactly using a dot product:
 -->
 
-Thu thập toàn bộ các đặc trưng vào một vector $\mathbf{x}$ và toàn bộ các trọng số vào một vector $\mathbf{w}$, ta có thể biễu diễu mô hình bằng phép tích vô hướng:
+Thu thập toàn bộ các đặc trưng vào một vector $\mathbf{x}$ và toàn bộ các trọng số vào một vector $\mathbf{w}$, ta có thể biễu diễn mô hình một cách gọn gàng bằng tích vô hướng:
 
 $$\hat{y} = \mathbf{w}^T \mathbf{x} + b.$$
 
@@ -145,14 +146,14 @@ Here, $X$ contains one row for every example and one column for every feature.
 -->
 
 Ở đây, vector $\mathbf{x}$ tương ứng với một điểm dữ liệu.
-Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu thường sẽ tiện hơn thông qua việc sử dụng *ma trận* $\mathbf{X}$.
+Chúng ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu sẽ tiện hơn nếu ta biểu diễn tập dữ liệu bằng *ma trận* $\mathbf{X}$. <!-- ma trận thiết kế ?? -->
 Mỗi hàng của ma trận $\mathbf{X}$ thể hiện một mẫu và mỗi cột thể hiện một đặc trưng.
 
 <!--
 For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
 -->
 
-Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân của giữa ma trận và vector:
+Với một tập hợp điểm dữ liệu $\mathbf{X}$, kết quả dự đoán $\hat{\mathbf{y}}$ có thể được biểu diễn bằng phép nhân giữa ma trận và vector:
 
 $${\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.$$
 
@@ -162,7 +163,7 @@ the goal of linear regression is to find the *weight* vector $w$ and bias term $
 sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
 -->
 
-Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu (đã biết trước) $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$, được lấy mẫu từ cùng phân phối của tập huấn luyện sẽ (theo kỳ vọng) dự đoán giá trị mục tiêu $y_i$ với sai số nhỏ nhất.
+Cho một tập dữ liệu huấn luyện $\mathbf{X}$ và các giá trị mục tiêu đã biết trước $\mathbf{y}$, mục tiêu của hồi quy tuyến tính là tìm vector *trọng số* $\mathbf{w}$ và hệ số điều chỉnh $b$ sao cho với một điểm dữ liệu mới $\mathbf{x}_i$ được lấy mẫu từ cùng phân phối của tập huấn luyện, giá trị mục tiêu $y_i$ sẽ được dự đoán với sai số nhỏ nhất (theo kỳ vọng).  <!-- mình sửa lại cho đúng ngữ pháp -->
 
 <!--
 Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear, 
@@ -171,16 +172,16 @@ For example, whatever instruments we use to observe the features $X$ and labels 
 Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
 -->
 
-Kể cả khi biết rằng mô hình tuyến tính là tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không mong muốn tìm được dữ liệu thực tế ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
-Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có một khoảng sai số nhất định.
-Chính vì vậy, mặc dù tự tin rằng mối quan hệ trong dữ liệu là tuyến tính, chúng ta sẽ kết hợp thêm với nhiễu để tạo ra kết quả tự nhiên hơn.
+Kể cả khi biết rằng mô hình tuyến tính là lựa chọn tốt nhất để dự đoán $y$ từ $\mathbf{x}$, chúng ta cũng không kỳ vọng tìm được dữ liệu thực tế mà ở đó $y$ đúng bằng $\mathbf{w}^T \mathbf{x}+b$ với mọi điểm ($\mathbf{x}, y)$.
+Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$ đều có sai số nhất định. 
+Chính vì vậy, kể cả khi ta chắc chắn rằng mối quan hệ ẩn sau tập dữ liệu là tuyến tính, chúng ta sẽ thêm một thành phần nhiễu để giải thích các sai số đó. 
 
 <!--
 Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
 (i) a quality measure for some given model; and (ii) a procedure for updating the model to improve its quality.
 -->
 
-Trước khi nghiên cứu cách tìm các giá trị tối ưu $\mathbf{w}$ và $b$, chúng ta sẽ cần quan tâm thêm hai vấn đề nữa: (i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
+Trước khi tiến hành tìm các giá trị tốt nhất cho $\mathbf{w}$ và $b$, chúng ta sẽ cần thêm hai thứ nữa: (i) một phép đo đánh giá chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất lượng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -204,11 +205,12 @@ The most popular loss function in regression problems is the sum of squared erro
 When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the corresponding true label is $y^{(i)}$, the squared error is given by:
 -->
 
-Trước khi suy nghĩ làm thế nào để *khớp* mô hình vào với dữ liệu, ta cần phải xác định một cách để đo *mức độ khớp*.
+Trước khi suy nghĩ về việc làm thế nào để *khớp* mô hình với dữ liệu, ta cần phải xác định một phương pháp để đo *mức độ khớp*.
 *Hàm mất mát* định lượng khoảng cách giữa giá trị *thực* và giá trị *dự đoán* của mục tiêu.
-Độ mất mát thường là một số không âm mà giá trị càng nhỏ thì càng tốt và các dự đoán hoàn hảo sẽ có độ mất mát $0$.
+Độ mất mát thường là một số không âm và có giá trị càng nhỏ càng tốt.
+Khi các dự đoán hoàn hảo, chúng sẽ có độ mất mát sẽ bằng $0$.
 Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình phương các lỗi.
-Khi giá trị dự đoán của một dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn trị thực tương ứng của nó là $y^{(i)}$, bình phương của lỗi được xác định như sau:
+Khi giá trị dự đoán của một điểm dữ liệu huấn luyện $i$ là $\hat{y}^{(i)}$ và nhãn tương ứng là $y^{(i)}$, bình phương của lỗi được xác định như sau:
 
 $$l^{(i)}(\mathbf{w}, b) = \frac{1}{2} \left(\hat{y}^{(i)} - y^{(i)}\right)^2.$$
 
@@ -218,9 +220,9 @@ Since the training dataset is given to us, and thus out of our control, the empi
 To make things more concrete, consider the example below where we plot a regression problem for a one-dimensional case as shown in :numref:`fig_fit_linreg`.
 -->
 
-Hằng số $1/2$ không có một vai trò gì quan trọng nhưng sẽ giúp ký hiệu thuận tiện hơn: nó sẽ bị giản ước đi khi ta lấy đạo hàm.
-Vì các dữ liệu trong tập huấn luyện đã được xác định trước, và không thể thay đổi, hàm lỗi thực nghiệm chỉ là một hàm trên các tham số của mô hình.
-Để cụ thể hơn, ta hãy xét ví dụ dưới đây về một bài toán hồi quy cho trường hợp một chiều trong hình :numref:`fig_fit_linreg`.
+Hằng số $1/2$ không tạo ra sự khác biệt thực sự nào nhưng sẽ giúp ký hiệu thuận tiện hơn: nó sẽ được triệt tiêu khi lấy đạo hàm của hàm mất mát.
+Vì các dữ liệu trong tập huấn luyện đã được xác định trước và không thể thay đổi, sai số thực nghiệm chỉ là một hàm của các tham số mô hình.
+Để tìm hiểu cụ thể hơn, hãy xét ví dụ dưới đây về một bài toán hồi quy cho trường hợp một chiều trong :numref:`fig_fit_linreg`.
 
 <!--
 ![Fit data with a linear model.](../img/fit_linreg.svg)
@@ -234,8 +236,8 @@ Note that large differences between estimates $\hat{y}^{(i)}$ and observations $
 To measure the quality of a model on the entire dataset, we simply average (or equivalently, sum) the losses on the training set.
 -->
 
-Lưu ý rằng các khác biệt lớn giữa giá trị ước tính $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ có sự đóng góp còn lớn hơn nữa vào tổng độ mất mát do sự phụ thuộc bậc hai.
-Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta chỉ đơn giản lấy trung bình (hay tương đương là lấy tổng) của các độ mất mát trên tập huấn luyện.
+Lưu ý rằng khi hiệu giữa giá trị ước lượng $\hat{y}^{(i)}$ và giá trị quan sát $y^{(i)}$ lớn, giá trị hàm mất mát sẽ tăng một lượng còn lớn hơn thế do sự phụ thuộc bậc hai.
+Để đo chất lượng của mô hình trên toàn bộ tập dữ liệu, ta đơn thuần lấy trung bình (hay tương đương là lấy tổng) các giá trị mất mát của từng mẫu trong tập huấn luyện.
 
 $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
 
@@ -243,7 +245,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-Khi huấn luyện mô hình, chúng ta tìm các tham số ($\mathbf{w}^*, b^*$) để tối thiểu hóa tổng độ mất mát trên toàn bộ tất cả các mẫu huấn luyện:
+Khi huấn luyện mô hình, ta muốn tìm các tham số ($\mathbf{w}^*, b^*$) sao cho tổng độ mất mát trên toàn bộ các mẫu huấn luyện được tối thiểu hóa:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
@@ -269,19 +271,19 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
-Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
-Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
-Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
-Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt.
+Hóa ra hồi quy tuyến tính chỉ là một bài toán tối ưu hóa đơn giản.
+Khác với hầu hết các mô hình được giới thiệu trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, cho một nghiệm tối ưu toàn cục.
+Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu. 
+Khi đó bài toán dự đoán trở thành bài toán tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$. 
+Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt. 
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
-Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức:
+Bởi vậy chỉ có một điểm cực trị trên mặt mất mát và nó tương ứng với giá trị mất mát nhỏ nhất.
+Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức: 
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
@@ -290,8 +292,8 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-Trong khi những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này.
-Trong khi các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có một nghiệm theo công thức khá chặt đến nỗi nó không được sử dụng trong học sâu.
+Tuy những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này. 
+Mặc dù các nghiệm theo công thức giúp ta phân tích toán học một cách thuận tiện, các điều kiện để có được nghiệm này chặt chẽ đến nỗi không có phương pháp học sâu nào thoả mãn được.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -308,8 +310,8 @@ Even in cases where we cannot solve the models analytically, and even when the l
 Moreover, for many tasks, these difficult-to-optimize models turn out to be so much better that figuring out how to train them ends up being well worth the trouble.
 -->
 
-Trong nhiều trường hợp mà ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiện quả.
-Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
+Trong nhiều trường hợp ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mặt mất mát là các mặt bậc cao và không lồi, trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiệu quả.
+Hơn nữa, trong nhiều tác vụ, những mô hình khó để tối ưu hóa này hoá ra lại tốt hơn các phương pháp khác nhiều, vậy nên việc bỏ công sức để tìm cách tối ưu chúng là hoàn toàn xứng đáng.
 
 <!--
 The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book, 
@@ -319,9 +321,10 @@ On convex loss surfaces, it will eventually converge to a global minimum, and wh
 it will at least lead towards a (hopefully good) local minimum.
 -->
 
-Kỹ thuật chính để tối ưu hóa bất kỳ mô hình học sâu nào, và ta sẽ sử dụng nó xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
+Kỹ thuật chính để tối ưu hóa gần như bất kỳ mô hình học sâu nào, sẽ được sử dụng xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo hướng làm giảm dần hàm mất mát.
 Thuật toán này được gọi là *hạ gradient*.
-Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất thuật toán sẽ dẫn tới điểm tối thiểu cục bộ (hy vọng là tốt) .
+Trên các mặt mất mát lồi, giá trị mất mát cuối cùng sẽ hội tụ về giá trị nhỏ nhất.
+Tuy điều tương tự không thể áp dụng cho các mặt không lồi, ít nhất thuật toán sẽ dẫn tới một cực tiểu (hy vọng là tốt).
 
 <!--
 The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
@@ -330,10 +333,11 @@ We must pass over the entire dataset before making a single update.
 Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
 -->
 
-Ứng dụng đơn giản của hạ gradient bao gồm việc tính đạo hàm mất mát là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu.
-Trong thực tế, việc này có thể cực kì chậm.
-Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
-Vì thế, đôi khi chúng ta chỉ muốn lấy một minibatch ngẫu nhiên của các mẫu mỗi khi chúng ta cần tính toán cho việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
+Ứng dụng đơn giản nhất của hạ gradient bao gồm việc tính đạo hàm của hàm mất mát, tức trung bình của các giá trị mất mát được tính trên mỗi mẫu của tập dữ liệu. 
+Trong thực tế, việc này có thể cực kì chậm. 
+Chúng ta phải duyệt qua toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật. 
+Vì thế, thường ta chỉ muốn lấy một minibatch ngẫu nhiên các mẫu mỗi khi ta cần tính bước cập nhật.
+Phương pháp biến thể này được gọi là *hạ gradient ngẫu nhiên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -725,7 +729,7 @@ May mắn là, lời giải trên không phụ thuộc vào $\sigma$.
 ## From Linear Regression to Deep Networks
 -->
 
-## Từ Hồi quy tuyến tính tới Mạng học sâu
+## Từ Hồi quy Tuyến tính tới Mạng Học sâu
 
 <!--
 So far we only talked about linear functions.
@@ -734,8 +738,8 @@ To begin, let's start by rewriting things in a 'layer' notation.
 -->
 
 Cho đến nay, chúng ta mới chỉ đề cập về các hàm tuyến tính.
-Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, nhưng ta có thể bắt đầu bằng cách nhìn mô hình tuyến tính như là một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
-Để bắt đầu, hãy cùng viết lại mọi thứ theo kiểu 'tầng'.
+Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, ta có thể bắt đầu coi mô hình tuyến tính như một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của mạng nơ-ron.
+Để bắt đầu, hãy cùng viết lại mọi thứ theo ký hiệu 'tầng' (*layer*).
 
 <!-- ===================== Kết thúc dịch Phần 14 ===================== -->
 
@@ -745,7 +749,7 @@ Trong khi mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, như
 ### Neural Network Diagram
 -->
 
-### Giản đồ mạng nơ-ron
+### Giản đồ Mạng Nơ-ron
 
 <!--
 Deep learning practitioners like to draw diagrams to visualize what is happening in their models.
@@ -754,8 +758,8 @@ Note that these diagrams indicate the connectivity pattern (here, each input is 
 -->
 
 Những người làm học sâu thích vẽ giản đồ để trực quan hóa những gì đang xảy ra trong mô hình của họ.
-Hình :numref:`fig_single_neuron`, chúng tôi minh họa mô hình tuyến tính như là một mạng nơ-ron.
-Những giản đồ này chỉ ra cách kết nối (ở đây, mỗi đầu vào được kết nối tới đầu ra) nhưng không có giá trị của các trọng số và độ chệch.
+Trong :numref:`fig_single_neuron`, mô hình tuyến tính được minh họa như một mạng nơ-ron.
+Những giản đồ này chỉ ra cách kết nối (ở đây, mỗi đầu vào được kết nối tới đầu ra) nhưng không có giá trị của các trọng số và các hệ số điều chỉnh.
 
 <!--
 ![Linear regression is a single-layer neural network. ](../img/singleneuron.svg)
@@ -772,8 +776,8 @@ we can regard this transformation as a *fully-connected layer*, also commonly ca
 We will talk a lot more about networks composed of such layers in the next chapter on multilayer perceptrons.
 -->
 
-Vì chỉ có một nơ-ron tính toán (một nút) trong đồ thị (các giá trị đầu vào không được tính mà được cho trước), chúng ta có thể coi mô hình tuyến tính như mạng nơ-ron chỉ có một nơ-ron nhân tạo duy nhất.
-Với mô hình này, mọi đầu vào đều được kết nối tới mọi đầu ra (trong trường hợp này chỉ có một đầu ra!), ta có thể coi phép biến đổi này là một *tầng kết nối đầy đủ*, hay còn gọi là *tầng kết nối dày đặc*.
+Vì chỉ có một nơ-ron tính toán (một nút) trong đồ thị (các giá trị đầu vào không cần tính mà được cho trước), chúng ta có thể coi mô hình tuyến tính như mạng nơ-ron với chỉ một nơ-ron nhân tạo duy nhất.
+Với mô hình này, mọi đầu vào đều được kết nối tới mọi đầu ra (trong trường hợp này chỉ có một đầu ra!), ta có thể coi phép biến đổi này là một *tầng kết nối đầy đủ*, hay còn gọi là *tầng kết nối dày đặc*. 
 Chúng ta sẽ nói nhiều hơn về các mạng nơ-ron cấu tạo từ những tầng như vậy trong chương kế tiếp về mạng perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 15 ===================== -->
@@ -861,10 +865,10 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 * Linear models are neural networks, too.
 -->
 
-* Yếu tố quyết định đối với một mô hình học máy bao gồm dữ liệu huấn luyện, một hàm mất mát, một thuật toán tối ưu, và tất nhiên là cả chính mô hình đó.
+* Nguyên liệu của một mô hình học máy bao gồm dữ liệu huấn luyện, một hàm mất mát, một thuật toán tối ưu, và tất nhiên là cả chính mô hình đó.
 * Vector hóa giúp mọi thứ trở nên dễ hiểu hơn (về mặt toán học) và nhanh hơn (về mặt lập trình).
-* Cực tiểu hóa một hàm mục tiêu và thực hiện cực đại ước lượng hợp lý hoàn toàn giống nhau.
-* Các mô hình tuyến tính cũng là mạng nơ-ron.
+* Tối thiểu hóa hàm mục tiêu và thực hiện tối đa hóa hàm hợp lý có ý nghĩa giống nhau.
+* Các mô hình tuyến tính cũng là các mạng nơ-ron.
 
 <!-- ===================== Kết thúc dịch Phần 17 ===================== -->
 
@@ -893,21 +897,21 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử, chúng ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
-Mục tiêu của ta là đi tìm một hằng số $b$ sao cho $\sum_i (x_i - b)^2$ được tối thiểu hóa.
+1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
+Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
-2. Tìm công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
+2. Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
 Để đơn giản hơn, bạn có thể bỏ qua hệ số điều chỉnh $b$ ra khỏi bài toán (chúng ta có thể thực hiện việc này bằng cách thêm vào một cột toàn giá trị một vào $X$).
-* Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
+    * Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu như một vector).
     * Tính gradient của hàm mất mát theo $w$.
-    * Tìm công thức nghiệm bằng cách giải bài toán gradient bằng không và giải phương trình ma trận.
+    * Tìm công thức nghiệm bằng cách giải phương trình gradient bằng không.
     * Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient ngẫu nhiên? Khi nào phương pháp này không hoạt động?
-3. Giả sử rằng mô hình nhiễu điều chỉnh sự cộng gộp nhiễu $\epsilon$ là phân phối mũ. Điều đó là  $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+3. Giả sử rằng mô hình nhiễu điều khiển nhiễu cộng $\epsilon$ là phân phối mũ, nghĩa là $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
     * Viết hàm đối log hợp lý của dữ liệu theo mô hình $-\log P(Y \mid X)$.
     * Bạn có thể tìm ra nghiệm theo công thức không?
     * Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn đề này.
-    * Điều gì có thể dẫn đến sai (gợi ý - những gì xảy ra gần điểm dừng như chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
+    * Điều gì có thể sai ở đây (gợi ý - điều gì xảy ra gần điểm dừng khi chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?
     
 
 <!-- ===================== Kết thúc dịch Phần 18 ===================== -->
@@ -935,10 +939,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
-
+* Phạm Ngọc Bảo Anh
 <!-- Phần 3 -->
 * Nguyễn Văn Tâm
 * Đoàn Võ Duy Thanh
