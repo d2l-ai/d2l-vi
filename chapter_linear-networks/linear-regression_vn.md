@@ -453,7 +453,7 @@ we can now estimate the price of a new house (not contained in the training data
 Estimating targets given features is commonly called *prediction* and *inference*.
 -->
 
-Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
+Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và tuổi đời $x_2$ của nó.
 Việc ước lượng mục tiêu khi biết trước những đặc trưng thường được gọi là *dự đoán* hay *suy luận* (_inference_).
 
 <!--
@@ -462,9 +462,9 @@ In statistics, *inference* more often denotes estimating parameters based on a d
 This misuse of terminology is a common source of confusion when deep learning practitioners talk to statisticians.
 -->
 
-Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận*, dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp. 
-Trong thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu. 
-Việc dùng sai thuật ngữ này dễ gây hiểu nhầm khi một chuyên viên học sâu thảo luận cùng một chuyên viên thống kê. 
+Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận*, dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp.
+Trong thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu.
+Việc dùng sai thuật ngữ này là nguyên nhân gây ra sự hiểu nhầm giữa những người làm học sâu và các nhà thống kê. 
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -548,8 +548,8 @@ Now we can benchmark the workloads.
 First, we add them, one coordinate at a time, using a `for` loop.
 -->
 
-Bây giờ, ta có thể đánh giá xếp hạng hai phương pháp cộng vector. 
-Đầu tiên, ta sử dụng vòng lặp `for` để cộng các tọa độ tương ứng. 
+Bây giờ, ta có thể đánh giá xếp hạng hai phương pháp cộng vector.
+Đầu tiên, ta sử dụng vòng lặp `for` để cộng các tọa độ tương ứng.
 
 ```{.python .input  n=2}
 timer = Timer()
@@ -563,7 +563,7 @@ for i in range(n):
 Alternatively, we rely on `np` to compute the elementwise sum:
 -->
 
-Trong phương pháp hai, ta dựa vào thư viện `np` để tính tổng hai vector theo từng phần tử. 
+Trong phương pháp hai, ta dựa vào thư viện `np` để tính tổng hai vector theo từng phần tử.
 
 ```{.python .input  n=3}
 timer.start()
