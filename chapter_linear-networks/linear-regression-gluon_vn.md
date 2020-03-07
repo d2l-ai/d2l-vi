@@ -258,7 +258,7 @@ In this example, we will use the Gluon implementation of squared loss (`L2Loss`)
 
 Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
 Chúng ta sẽ sử dụng mô-đun `loss` được thêm vào dưới tên gọi là `gloss`, để tránh nhầm lẫn nó với biến đang giữ hàm mất mát mà ta đã chọn.
-Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai trong Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss
