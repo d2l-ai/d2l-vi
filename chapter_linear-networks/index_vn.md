@@ -25,13 +25,13 @@ Bắt đầu bằng những thuật toán cổ điển này, chúng tôi sẽ gi
 ```toc
 :maxdepth: 2
 
-linear-regression
-linear-regression-scratch
-linear-regression-gluon
-softmax-regression
-fashion-mnist
-softmax-regression-scratch
-softmax-regression-gluon
+linear-regression_vn
+linear-regression-scratch_vn
+linear-regression-gluon_vn
+softmax-regression_vn
+fashion-mnist_vn
+softmax-regression-scratch_vn
+softmax-regression-gluon_vn
 ```
 
 <!-- ===================== Kết thúc dịch Phần 1 ==================== -->

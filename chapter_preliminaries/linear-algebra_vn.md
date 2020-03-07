@@ -378,7 +378,7 @@ X
 ## Basic Properties of Tensor Arithmetic
 -->
 
-## Các thuộc tính cơ bản của phép toán tensor
+## Các thuộc tính Cơ bản của Phép toán Tensor
 
 <!--
 Scalars, vectors, matrices, and tensors of an arbitrary number of axes have some nice properties that often come in handy.
@@ -646,7 +646,7 @@ Chúng tôi sẽ giới thiệu khái niệm về *độ dài* ở các phần s
 ## Matrix-Vector Products
 -->
 
-## Tích giữa ma trận và vector
+## Tích giữa Ma trận và Vector
 
 <!--
 Now that we know how to calculate dot products, we can begin to understand *matrix-vector products*.
@@ -728,7 +728,7 @@ A.shape, x.shape, np.dot(A, x)
 ## Matrix-Matrix Multiplication
 -->
 
-## Phép nhân ma trận
+## Phép nhân Ma trận
 
 <!--
 If you have gotten the hang of dot products and matrix-vector products, then *matrix-matrix multiplication* should be straightforward.
@@ -998,7 +998,7 @@ Mục tiêu, thành phần quan trọng nhất của một thuật toán học s
 ## More on Linear Algebra
 -->
 
-## Bàn thêm về Đại số Tuyến Tính
+## Bàn thêm về Đại số Tuyến tính
 
 <!--
 In just this section, we have taught you all the linear algebra that you will need to understand a remarkable chunk of modern deep learning.

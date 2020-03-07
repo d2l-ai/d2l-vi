@@ -170,7 +170,7 @@ X, y
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Like many other extension packages in the vast ecosystem of Python, `pandas` can work together with `ndarray`.
