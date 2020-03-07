@@ -269,7 +269,7 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
+Hóa ra hồi quy tuyến tính chỉ là một bài toán tối ưu hóa đơn giản.
 Khác với hầu hết các mô hình được giới thiệu trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, cho một nghiệm tối ưu toàn cục.
 Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu. 
 Khi đó bài toán dự đoán trở thành bài toán tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$. 
