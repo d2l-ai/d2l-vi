@@ -45,7 +45,7 @@ Please refer to :numref:`sec_naive_bayes` for more details on loading data.
 -->
 
 Cũng giống như với MNIST, Gluons giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với lớp `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng. 
-Cơ chế của việc nạp và trích xuất bộ dữ liệu được mô tả như dưới đây.
+Các cơ chế của việc nạp và khám phá bộ dữ liệu sẽ được hướng dẫn ngắn gọn bên dưới.
 Vui lòng tham khảo :numref:`sec_naive_bayes` để biết thêm chi tiết về việc nạp dữ liệu. 
 
 ```{.python .input  n=23}
@@ -58,7 +58,7 @@ FashionMNIST consists of images from 10 categories, each represented by 6k image
 Consequently the training set and the test set contain 60k and 10k images, respectively.
 -->
 
-FashionMNIST chứa các hình ảnh từ 10 danh mục, mỗi danh mục được thể hiện bằng sáu nghìn tấm ảnh trong tập huấn luyện và một nghìn tấm ảnh trong tập kiểm tra. 
+FashionMNIST chứa các hình ảnh từ 10 lớp, mỗi danh mục được thể hiện bằng sáu nghìn tấm ảnh trong tập huấn luyện và một nghìn tấm ảnh trong tập kiểm tra. 
 Do đó, tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn tấm ảnh.
 
 ```{.python .input}
@@ -70,7 +70,7 @@ The images in Fashion-MNIST are associated with the following categories: t-shir
 The following function converts between numeric label indices and their names in text.
 -->
 
-Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao (_sneaker_), túi và giày cao gót. 
+Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao, túi và giày cao gót. 
 Hàm dưới đây giúp chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
 
 ```{.python .input  n=25}
@@ -85,7 +85,7 @@ def get_fashion_mnist_labels(labels):
 We can now create a function to visualize these examples.
 -->
 
-Chúng ta có thể tạo một hàm để có thể hình dung được các ví dụ này. 
+Chúng ta có thể tạo một hàm để minh hoạ các ví dụ này. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -107,7 +107,7 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 Here are the images and their corresponding labels (in text) for the first few examples in the training dataset.
 -->
 
-Dưới đây là các hình ảnh và nhãn tương ứng của chúng (ở dạng văn bản) từ một vài ví dụ đầu tiên trong tập huấn luyện. 
+Dưới đây là các hình ảnh và nhãn tương ứng của chúng (ở dạng văn bản) từ một vài mẫu đầu tiên trong tập huấn luyện. 
 
 ```{.python .input}
 X, y = mnist_train[:18]
