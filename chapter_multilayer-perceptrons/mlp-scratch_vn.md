@@ -5,7 +5,7 @@
 # Implementation of Multilayer Perceptron from Scratch
 -->
 
-# Cách lập trình Perceptron Đa tầng từ đầu
+# Lập trình Perceptron Đa tầng từ đầu
 :label:`sec_mlp_scratch`
 
 <!--
@@ -25,7 +25,7 @@ To compare against our previous results achieved with (linear) softmax regressio
 we will continue work with the Fashion-MNIST image classification dataset (:numref:`sec_fashion_mnist`).
 -->
 
-Để so sánh với kết quả đã đạt được trước đó bằng hồi quy softmax (tuyến tính) (:numref:`sec_softmax_scratch`), chúng ta sẽ tiếp tục sử dụng tập dữ liệu phân loại ảnh Fashion-MNIST.
+Để so sánh với kết quả đã đạt được trước đó bằng hồi quy softmax -- tuyến tính (:numref:`sec_softmax_scratch`), chúng ta sẽ tiếp tục sử dụng tập dữ liệu phân loại ảnh Fashion-MNIST.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -36,7 +36,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo tham số mô hình
+## Khởi tạo Tham số Mô hình
 
 <!--
 Recall that Fashion-MNIST contains $10$ classes, and that each image consists of a $28 \times 28 = 784$ grid of (black and white) pixel values.
