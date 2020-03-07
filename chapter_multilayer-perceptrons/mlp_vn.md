@@ -549,7 +549,7 @@ Show that this network is less expressive (powerful) than a single layer percept
 4. Giả sử ta có một phi tuyến tính perceptron đa lớp *không có* giữa các lớp.
 Ngoài ra, giả sử ta có các chiều của đầu vào $d$, các chiều đầu ra $d$ và đó là một trong các lớp chỉ có các chiều $d/2$.
 Chứng minh rằng mạng này ít có nghĩa (hiệu quả) hơn là perceptron đơn lớp.
-5. Giả sử ta có một phi tuyến tính áp dụng cho một minibatch cùng một lúc. Bạn mong đợi vấn đề nào sẽ xảy ra ?
+5. Giả sử ta có một phi tuyến tính áp dụng cho một minibatch cùng một lúc. Bạn mong đợi vấn đề nào sẽ xảy ra?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
