@@ -511,7 +511,7 @@ Previously, getting these nets training required researchers to code up thousand
 
 Tóm lại, bây giờ chúng ta biết cách kết hợp các hàm phi tuyến để xây dựng các mô hình mạng nơ-ron đa tầng.
 Ngoài ra, kiến thức bây giờ của bạn đã cung cấp một bộ công cụ tương đương như của một người làm học sâu vào khoảng năm 1990.
-Trong vài trường hợp khác, bạn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để nguồn mở về nền tảng học sâu để xây dựng các mô hình một cách nhanh chóng, chỉ với sử dụng một vài dòng mã.
+Xét theo một khía cạnh nào đó, bạn còn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để các framework học sâu nguồn mở để xây dựng các mô hình một cách nhanh chóng, chỉ với một vài dòng mã.
 Trước đây, việc huấn luyện các mạng nơ-ron đòi hỏi các nhà nghiên cứu phải viết hàng ngàn dòng mã C và Fortran.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
