@@ -542,7 +542,7 @@ Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó 
 ### Cross-Entropy Revisited
 -->
 
-### Xem Xét Lại Cross-Entropy 
+### Xem Xét Lại Entropy Chéo 
 
 <!--
 So if entropy is level of surprise experienced by someone who knows the true probability, then you might be wondering, *what is cross-entropy?*
@@ -554,7 +554,7 @@ Our loss is lower-bounded by the entropy given by the actual conditional distrib
 -->
 
 Vì thế nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người biết xác suất đúng, vậy bạn có thể băn khoăn, *entropy chéo là gì?*
-Cross-entropy *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự sinh ra dựa trên các xác suất $p$.
+Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự sinh ra dựa trên các xác suất $p$.
 Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
 Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
 Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi chúng ta có khả năng dự đoán tốt nhất có thể, cho rằng việc này là khả thi, thì chúng ta sẽ không bao giờ đạt đến mức hoàn hảo.
@@ -584,7 +584,7 @@ However, because the entropy is out of our control, minimizing $D(p\|q)$ with re
 -->
 
 Lưu ý rằng trong bài toán phân loại, chúng ta không biết giá trị thực $p$, vì thế chúng ta không thể tính toán entropy trực tiếp được. 
-Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát cross-entropy.
+Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát entropy chéo.
 
 <!--
 In short, we can think of the cross-entropy classification objective in two ways: (i) as maximizing the likelihood of the observed data; 
