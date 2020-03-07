@@ -599,7 +599,7 @@ Ngoài ra, ta giao phó phần toán cho thư viện để tránh phải tự vi
 While you can already get your hands dirty using only the information above, in the following section we can more formally motivate the square loss objective via assumptions about the distribution of noise.
 -->
 
-Mặc dù bạn đã có thể thực hành mà chỉ sử dụng thông tin phía trên, trong phần tiếp theo chúng ta có thể hiểu rõ hơn nguồn gốc của hàm mất mát bình phương thông qua các giả định về phân phối của nhiễu. 
+Mặc dù bạn đã có thể thực hành với kiến thức được trình bày phía trên, trong phần tiếp theo chúng ta sẽ làm rõ hơn nguồn gốc của hàm mất mát bình phương thông qua các giả định về phân phối của nhiễu. 
 
 <!--
 Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ has many convenient properties.
@@ -607,7 +607,7 @@ These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} -
 -->
 
 Nhớ lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
-Một trong số đó là đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$. 
+Một trong số đó là nó có đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$. 
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -657,7 +657,7 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-Ta có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
+Có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
@@ -671,7 +671,7 @@ $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \ma
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
 -->
 
-Do đó, chúng ta có thể viết *khả năng* thu được giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua
+Do đó, chúng ta có thể viết *khả năng* thu được một giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua
 
 $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).$$
 
