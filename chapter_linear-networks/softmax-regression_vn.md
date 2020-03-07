@@ -527,11 +527,11 @@ The entropy is then the *expected surprisal* when one assigned the correct proba
 The entropy of the data is then the least surprised that one can ever be (in expectation).
 -->
 
-Tuy nhiên nếu chúng ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thế nên chúng ta thi thoảng sẽ bị ngạc nhiên. 
-Sự bất ngờ của chúng ta là lớn hơn khi ta chỉ định xác suất thấp hơn cho một sự kiện.
+Tuy nhiên nếu chúng ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì chúng ta thi thoảng sẽ bị ngạc nhiên. 
+Sự bất ngờ của chúng ta lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện.
 Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục,
-Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng sự ngạc nhiên của một người lúc quan sát sự kiện $j$ mà nó được gán cho một xác suất (chủ quan). 
-Entropy sau đó là *ngạc nhiên mong đợi* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình tạo dữ liệu).
+Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$. 
+Entropy sau đó là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu).
 Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng).
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -553,12 +553,12 @@ Relating this back to our classification objective, even if we get the best poss
 Our loss is lower-bounded by the entropy given by the actual conditional distributions $P(\mathbf{y} \mid \mathbf{x})$.
 -->
 
-Vì thế nếu entropy là mức độ của sự ngạc nhiên trải nghiệm bởi một người biết xác suất đúng, vậy bạn có thể băn khoăn, *cross-entropy là gì?*
-Cross-entropy *từ $p$ đến $q$*, ký hiệu H(p, q), là sự bất ngờ được kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự tạo ra dựa trên các xác suất $p$.
-Khả năng cross-entropy thấp nhất có thể đạt được khi $p = q$.
-Trong trường hợp này, cross-entropy từ $p$ đến $q$ là $H(p, p) = H(p)$.
-Điều này liên quan trở lại mục tiêu phân loại của chúng ta, thậm chí khi chúng ta có khả năng dự đoán tốt nhất có thể, tốt nhất có thể có thể, thì chúng ta sẽ không bao giờ hoàn hảo.
-Mất mát của chúng ta bị giới hạn thấp hơn bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
+Vì thế nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người biết xác suất đúng, vậy bạn có thể băn khoăn, *entropy chéo là gì?*
+Cross-entropy *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự sinh ra dựa trên các xác suất $p$.
+Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
+Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
+Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi chúng ta có khả năng dự đoán tốt nhất có thể, cho rằng việc này là khả thi, thì chúng ta sẽ không bao giờ đạt đến mức hoàn hảo.
+Mất mát của chúng ta bị giới hạn dưới hơn bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
@@ -571,8 +571,8 @@ Perhaps the most common way to measure the distance between two distributions is
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân chia là tính toán *phân tán Kullback Leibler* $D(p\|q)$.
-Điều này đơn giản là sự khác nhau giữa cross-entropy và entropy, điều đó nói rằng, giá trị cross-entropy bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
+Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân tán Kullback Leibler* $D(p\|q)$.
+Phân tán Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
@@ -583,15 +583,16 @@ Note that in classification, we do not know the true $p$, so we cannot compute t
 However, because the entropy is out of our control, minimizing $D(p\|q)$ with respect to $q$ is equivalent to minimizing the cross-entropy loss.
 -->
 
-Lưu ý rằng trong bài toán phân loại, chúng ta không biết giá trị thực $p$, vì thế chúng ta không thể tính toán entropy trực tiếp được. Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát cross-entropy.
+Lưu ý rằng trong bài toán phân loại, chúng ta không biết giá trị thực $p$, vì thế chúng ta không thể tính toán entropy trực tiếp được. 
+Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát cross-entropy.
 
 <!--
 In short, we can think of the cross-entropy classification objective in two ways: (i) as maximizing the likelihood of the observed data; 
 and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.
 -->
 
-Tóm gọn lại, chúng ta có thể nghĩ đến mục tiêu phân loại cross-entropy theo hai hướng: (i) như tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
-và (ii) như giảm thiểu sự ngạc nhiên của chúng ta (và vì thế dẫn đến số lượng các bit) cần thiết để truyền đạt các nhãn.
+Tóm gọn lại, chúng ta có thể nghĩ đến mục tiêu của phân loại entropy chéo theo hai hướng: (i) tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
+và (ii) giảm thiểu sự ngạc nhiên của chúng ta (cũng như số lượng các bit) cần thiết để truyền đạt các nhãn.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
