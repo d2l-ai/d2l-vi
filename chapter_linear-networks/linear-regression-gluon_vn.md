@@ -117,12 +117,12 @@ The situation is similar to coding up your own blog from scratch.
 Doing it once or twice is rewarding and instructive, but you would be a lousy web developer if every time you needed a blog you spent a month reinventing the wheel.
 -->
 
-Khi ta lập trình hồi quy tuyến tính từ đầu (in :numref`sec_linear_scratch`),
-ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình để tạo đầu ra từ các phép toán đại số tuyến tính cơ bản.
+Khi ta lập trình hồi quy tuyến tính từ đầu (trong :numref`sec_linear_scratch`),
+ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình các tính toán để tạo đầu ra từ các phép toán đại số tuyến tính cơ bản.
 Bạn *nên* biết cách để làm được điều này.
-Nhưng một khi mô hình trở nên phức tạp hơn, đồng thời bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
+Nhưng một khi mô hình trở nên phức tạp hơn và đồng thời khi bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
 Tình huống này tương tự như việc lập trình blog của riêng bạn lại từ đầu.
-Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tồi nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu.
+Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web "khó ở" nếu mỗi khi cần một trang blog bạn lại phải dành ra cả một tháng chỉ để phát triển lại từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
