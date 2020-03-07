@@ -455,7 +455,7 @@ d2l.plot(x, x.grad, 'x', 'grad of sigmoid')
 ### Tanh Function
 -->
 
-### Hàm Tanh
+### Hàm "Tanh"
 
 <!--
 Like the sigmoid function, the tanh (Hyperbolic Tangent) function also squashes its inputs, transforms them into elements on the interval between -1 and 1:
