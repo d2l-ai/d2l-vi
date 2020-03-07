@@ -184,7 +184,7 @@ for X, y in train_iter:
 ## Putting All Things Together
 -->
 
-## Kết hợp tất cả lại với nhau
+## Kết hợp Tất cả lại với nhau
 
 <!--
 Now we define the `load_data_fashion_mnist` function that obtains and reads the Fashion-MNIST dataset.
@@ -193,7 +193,7 @@ In addition, it accepts an optional argument to resize images to another shape.
 -->
 
 Bây giờ, chúng ta sẽ định nghĩa hàm `load_data_fashion_mnist` để thu thập và đọc bộ dữ liệu Fashion-MNIST.
-Hàm này sẽ trả về các iterator dữ liệu của cả tập huấn luyện và tập kiểm tra. 
+Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn luyện và tập kiểm định. 
 Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào. 
 
 ```{.python .input  n=4}
