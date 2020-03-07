@@ -348,8 +348,8 @@ In each iteration, we first randomly sample a minibatch $\mathcal{B}$ consisting
 We then compute the derivative (gradient) of the average loss on the mini batch with regard to the model parameters.
 Finally, we multiply the gradient by a predetermined step size $\eta > 0$ and subtract the resulting term from the current parameter values.
 -->
-Trong mỗi vòng lặp, đầu tiên chúng ta tạo ngẫu nhiên một minibatch $\mathcal{B}$ chứa một số lượng cố định dữ liệu huấn luyện. 
-Sau đó, chúng ta tính đạo hàm (gradient) của hàm mất mát trên tập minibatch đó theo các tham số của mô hình. 
+Trong mỗi vòng lặp, đầu tiên chúng ta lấy ngẫu nhiên một minibatch $\mathcal{B}$ dữ liệu huấn luyện với kích thước cố định. 
+Sau đó, chúng ta tính đạo hàm (gradient) của hàm mất mát trên minibatch đó theo các tham số của mô hình. 
 Cuối cùng, gradient này được nhân với tốc độ học $\eta > 0$ và kết quả này được trừ đi từ các giá trị tham số hiện tại.
 
 
@@ -376,9 +376,9 @@ For quadratic losses and linear functions, we can write this out explicitly as f
 Note that $\mathbf{w}$ and $\mathbf{x}$ are vectors.
 Here, the more elegant vector notation makes the math much more readable than expressing things in terms of coefficients, say $w_1, w_2, \ldots, w_d$.
 -->
-Trong trường hợp hàm mất mát bậc hai và mô hình tuyến tính, chúng ta có thể viết một cách tường minh như sau: 
+Khi sử dụng hàm mất mát bậc hai và mô hình tuyến tính, chúng ta có thể biểu diễn bước này một cách tường minh như sau: 
 Lưu ý rằng $\mathbf{w}$ và $\mathbf{x}$ là các vector.
-Ở đây, việc ký hiệu bằng các vector giúp công thức dễ đọc hơn nhiều so với các biểu diễn bằng các hệ số như $w_1, w_2, \ldots, w_d$.
+Ở đây, việc ký hiệu bằng các vector giúp công thức dễ đọc hơn nhiều so với việc biểu diễn bằng các hệ số như $w_1, w_2, \ldots, w_d$.
 
 
 $$
@@ -403,7 +403,7 @@ These parameters that are tunable but not updated in the training loop are calle
 
 Trong phương trình trên, $|\mathcal{B}|$ là số ví dụ trong mỗi minibatch (*kích thước batch*) và $\eta$ là *tốc độ học*.
 Cũng cần phải nhấn mạnh rằng các giá trị của kích thước batch và tốc độ học được lựa chọn trước một cách thủ công và thường không được học thông qua quá trình huấn luyện mô hình.
-Các tham số này tuy điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện được gọi là *siêu tham số*.
+Các tham số này tuy điều chỉnh được nhưng không được cập nhật trong vòng huấn luyện, và được gọi là *siêu tham số*.
 *Điều chỉnh siêu tham số* là quá trình lựa chọn chúng, thường dựa trên kết quả của vòng lặp huấn luyện được đánh giá trên một tập *kiểm định* riêng biệt.
 
 <!--
@@ -426,7 +426,7 @@ We return to these topics throughout the book.
 -->
 
 Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó chỉ có một cực tiểu (toàn cục).
-Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, bề mặt của hàm mất mát sẽ có nhiều cực tiểu.
+Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, mặt của hàm mất mát sẽ có nhiều cực tiểu.
 May mắn thay, vì một lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm ra các tham số tối thiểu hóa hàm mất mát *trên dữ liệu huấn luyện*.
 Nhiệm vụ khó khăn hơn là tìm ra các tham số dẫn đến giá trị mất mát thấp trên dữ liệu mà mô hình chưa từng thấy trước đây, một thử thách được gọi là *sự khái quát hóa*.
 Chúng ta sẽ gặp lại chủ đề này xuyên suốt cuốn sách.
