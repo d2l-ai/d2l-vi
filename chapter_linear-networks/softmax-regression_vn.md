@@ -564,15 +564,15 @@ Mất mát của chúng ta bị giới hạn dưới hơn bởi entropy được
 ### Kullback Leibler Divergence
 -->
 
-### Phân Tán Kullback Leibler
+### Phân Kì Kullback Leibler
 
 <!--
 Perhaps the most common way to measure the distance between two distributions is to calculate the *Kullback Leibler divergence* $D(p\|q)$.
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân tán Kullback Leibler* $D(p\|q)$.
-Phân tán Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
+Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kì Kullback Leibler* $D(p\|q)$.
+Phân kì Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
