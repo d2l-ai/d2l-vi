@@ -454,7 +454,7 @@ Estimating targets given features is commonly called *prediction* and *inference
 -->
 
 Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
-Ước lượng mục tiêu khi biết trước những đặc trưng của nó thường được gọi là *dự đoán* hay *suy luận* (_inference_).
+Việc ước lượng mục tiêu khi biết trước những đặc trưng thường được gọi là *dự đoán* hay *suy luận* (_inference_).
 
 <!--
 We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
@@ -481,7 +481,7 @@ When training our models, we typically want to process whole minibatches of exam
 Doing this efficiently requires that we vectorize the calculations and leverage fast linear algebra libraries rather than writing costly for-loops in Python.
 -->
 
-Khi huấn luyện mô hình, chúng ta thường muốn các dữ liệu trong minibatch được xử lý một cách đồng thời.
+Khi huấn luyện mô hình, chúng ta thường muốn xử lý đồng thời các mẫu dữ liệu trong minibatch.
 Để làm được điều này một cách hiệu quả, chúng ta phải vector hóa việc tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp `for` trong Python.
 
 <!--
@@ -578,8 +578,8 @@ Moreover, we push more of the math to the library and need not write as many cal
 -->
 
 Bạn có thể nhận thấy rằng, phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp thứ nhất.
-Việc vector hóa thường tăng tốc độ tính toán lên nhiều lần.
-Ngoài ra, ta giao phó phần toán cho thư viện để tránh phải tự viết các tính toán, giảm thiểu khả năng xảy ra lỗi.
+Việc vector hóa thường tăng tốc độ tính toán lên nhiều bậc.
+Ngoài ra, giao phó công việc tính toán cho thư viện để tránh phải tự viết lại sẽ giảm thiểu khả năng phát sinh lỗi.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
