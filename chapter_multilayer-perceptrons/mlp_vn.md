@@ -524,7 +524,7 @@ Previously, getting these nets training required researchers to code up thousand
 -->
 
 * Perceptron đa tầng sẽ thêm một hoặc nhiều tầng ẩn được kết nối đầy đủ giữa các tầng đầu ra và các tầng đầu vào nhằm biến đổi đầu ra của tầng ẩn thông qua hàm kích hoạt.
-* Thường dùng các hàm kích hoạt bao gồm hàm ReLU, hàm sigmoid, và hàm tanh.
+* Các hàm kích hoạt thường được sử dụng bao gồm hàm ReLU, hàm sigmoid, và hàm tanh.
 
 
 <!--
