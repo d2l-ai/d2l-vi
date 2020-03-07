@@ -15,15 +15,15 @@ In the previous section, we relied only on (i) `ndarray` for data storage and li
 In practice, because data iterators, loss functions, optimizers, and neural network layers (and some whole architectures) are so common, modern libraries implement these components for us as well.
 -->
 
-Sự quan tâm nhiệt thành và rộng khắp tới học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê phát triển nhiều framework nguồn mở tới giai đoạn hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
+Sự quan tâm nhiệt thành và rộng khắp với học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê tới học sâu phát triển nhiều framework mã nguồn mở hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
 Trong chương trước, chúng ta chỉ dựa vào (i) `ndarray` để lưu dữ liệu và thực hiện tính toán đại số tuyến tính; và (ii) `autograd` để thực hiện tính đạo hàm.
-Trên thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các bộ tối ưu, và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã triển khai sẵn những thành phần này cho chúng ta.
+Trên thực tế, do các iterator dữ liệu, các hàm mất mát, các bộ tối ưu và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã cài đặt sẵn những thành phần này cho chúng ta.
 
 <!--
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
-Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
+Mục này sẽ hướng dẫn bạn cách để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
 
 <!--
 ## Generating the Dataset
@@ -35,7 +35,7 @@ Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình
 To start, we will generate the same dataset as in the previous section.
 -->
 
-Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như mục trước.
+Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như ở mục trước.
 
 ```{.python .input  n=2}
 import d2l
@@ -66,12 +66,11 @@ Next, we will use the `ArrayDataset` to instantiate a `DataLoader`, which also r
 and specify a Boolean value `shuffle` indicating whether or not we want the `DataLoader` to shuffle the data on each epoch (pass through the dataset).
 -->
 
-Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon. 
+Thay vì tự viết iterator riêng để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon để xử lý việc này. 
 Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
 Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
 Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
-Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, điều này yêu cầu ta truyền vào đó một giá trị `batch_size`
-và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (mỗi lần duyệt qua toàn bộ tập dữ liệu) hay không.
+Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, lớp này yêu cầu ta truyền vào một giá trị `batch_size` và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (một lần duyệt qua toàn bộ tập dữ liệu) hay không.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
