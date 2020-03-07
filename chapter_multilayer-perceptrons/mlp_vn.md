@@ -523,7 +523,7 @@ Previously, getting these nets training required researchers to code up thousand
 * Commonly-used activation functions include the ReLU function, the sigmoid function, and the tanh function.
 -->
 
-* Các perceptron đa lớp sẽ thêm một hoặc nhiều lớp ẩn kết nối đầy đủ giữa các lớp đầu ra và các lớp đầu vào và biến đổi đầu ra của lớp ẩn thông qua hàm kích hoạt.
+* Perceptron đa tầng sẽ thêm một hoặc nhiều tầng ẩn được kết nối đầy đủ giữa các tầng đầu ra và các tầng đầu vào nhằm biến đổi đầu ra của tầng ẩn thông qua hàm kích hoạt.
 * Thường dùng các hàm kích hoạt bao gồm hàm ReLU, hàm sigmoid, và hàm tanh.
 
 
