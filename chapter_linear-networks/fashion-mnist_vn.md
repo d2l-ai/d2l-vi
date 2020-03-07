@@ -184,7 +184,7 @@ for X, y in train_iter:
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại với nhau
 
 <!--
 Now we define the `load_data_fashion_mnist` function that obtains and reads the Fashion-MNIST dataset.
@@ -192,7 +192,9 @@ It returns the data iterators for both the training set and validation set.
 In addition, it accepts an optional argument to resize images to another shape.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, chúng ta sẽ định nghĩa hàm `load_data_fashion_mnist` để thu thập và đọc bộ dữ liệu Fashion-MNIST.
+Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn luyện và tập kiểm định. 
+Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào. 
 
 ```{.python .input  n=4}
 # Saved in the d2l package for later use
@@ -214,7 +216,7 @@ def load_data_fashion_mnist(batch_size, resize=None):
 Below, we verify that image resizing works.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta xác nhận lại kích thước hình ảnh sau khi thay đổi. 
 
 ```{.python .input  n=5}
 train_iter, test_iter = load_data_fashion_mnist(32, (64, 64))
@@ -227,7 +229,7 @@ for X, y in train_iter:
 We are now ready to work with the FashionMNIST dataset in the sections that follow.
 -->
 
-*dịch đoạn phía trên*
+Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu FashionMNIST trong các mục tiếp theo. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -296,8 +298,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
-
