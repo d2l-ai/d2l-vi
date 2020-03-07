@@ -527,8 +527,8 @@ The entropy is then the *expected surprisal* when one assigned the correct proba
 The entropy of the data is then the least surprised that one can ever be (in expectation).
 -->
 
-Tuy nhiên nếu chúng ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì chúng ta thi thoảng sẽ bị ngạc nhiên. 
-Sự bất ngờ của chúng ta lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện.
+Tuy nhiên, nếu ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì thi thoảng ta sẽ thấy ngạc nhiên. 
+Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện.
 Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục,
 Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$. 
 Entropy sau đó là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu).
@@ -542,7 +542,7 @@ Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó 
 ### Cross-Entropy Revisited
 -->
 
-### Xem Xét Lại Entropy Chéo 
+### Xem xét lại Entropy chéo
 
 <!--
 So if entropy is level of surprise experienced by someone who knows the true probability, then you might be wondering, *what is cross-entropy?*
@@ -553,18 +553,18 @@ Relating this back to our classification objective, even if we get the best poss
 Our loss is lower-bounded by the entropy given by the actual conditional distributions $P(\mathbf{y} \mid \mathbf{x})$.
 -->
 
-Vì thế nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người biết xác suất đúng, vậy bạn có thể băn khoăn, *entropy chéo là gì?*
-Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thực sự sinh ra dựa trên các xác suất $p$.
+Vậy, nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thế thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
+Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thật sự sinh ra dựa trên các xác suất $p$.
 Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
 Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
-Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi chúng ta có khả năng dự đoán tốt nhất có thể, cho rằng việc này là khả thi, thì chúng ta sẽ không bao giờ đạt đến mức hoàn hảo.
-Mất mát của chúng ta bị giới hạn dưới hơn bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
+Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi ta có khả năng dự đoán tốt nhất có thể và cho rằng việc này là khả thi, thì ta sẽ không bao giờ đạt đến mức hoàn hảo.
+Mất mát của ta bị cận dưới bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
 -->
 
-### Phân Kì Kullback Leibler
+### Phân kì Kullback Leibler
 
 <!--
 Perhaps the most common way to measure the distance between two distributions is to calculate the *Kullback Leibler divergence* $D(p\|q)$.
@@ -583,7 +583,7 @@ Note that in classification, we do not know the true $p$, so we cannot compute t
 However, because the entropy is out of our control, minimizing $D(p\|q)$ with respect to $q$ is equivalent to minimizing the cross-entropy loss.
 -->
 
-Lưu ý rằng trong bài toán phân loại, chúng ta không biết giá trị thực $p$, vì thế chúng ta không thể tính toán entropy trực tiếp được. 
+Lưu ý rằng trong bài toán phân loại, ta không biết giá trị thật của $p$, vì thế mà ta không thể tính toán entropy trực tiếp được. 
 Tuy nhiên, bởi vì entropy nằm ngoài tầm kiểm soát của chúng ta, việc giảm thiểu $D(p\|q)$ so với $q$ là tương đương với việc giảm thiểu mất mát entropy chéo.
 
 <!--
@@ -591,8 +591,8 @@ In short, we can think of the cross-entropy classification objective in two ways
 and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.
 -->
 
-Tóm gọn lại, chúng ta có thể nghĩ đến mục tiêu của phân loại entropy chéo theo hai hướng: (i) tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
-và (ii) giảm thiểu sự ngạc nhiên của chúng ta (cũng như số lượng các bit) cần thiết để truyền đạt các nhãn.
+Tóm lại, chúng ta có thể nghĩ đến mục tiêu của phân loại entropy chéo theo hai hướng: (i) tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
+và (ii) giảm thiểu sự ngạc nhiên của ta (cũng như số lượng các bit) cần thiết để truyền đạt các nhãn.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
