@@ -50,6 +50,7 @@ Nhắc lại rằng Fashion-MNIST gồm có $10$ nhãn, mỗi ảnh gồm có m�
 Chúng ta sẽ tiếp tục bỏ qua liên hệ về mặt không gian giữa các điểm ảnh (ở thời điểm hiện tại), khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ lớp.
 Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉ có một tầng ẩn với $256$ nút ẩn.
 Lưu ý rằng ta có thể coi cả hai đại lượng này là các *siêu tham số* và nên thiết lập giá trị cho chúng dựa trên chất lượng trên tập kiểm định. 
+Về cơ bản, chúng ta sẽ chọn độ rộng của một tầng là một số là mũ của $2$ để giúp việc tính toán hiệu quả hơn do cách bộ nhớ được tổ chức và xử lý dưới phần cứng.
 
 <!--
 Again, we will represent our parameters with several `ndarray`s.
