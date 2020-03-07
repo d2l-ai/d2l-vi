@@ -122,7 +122,7 @@ Recall that at each iteration, a `DataLoader` reads a minibatch of data with siz
 -->
 
 Để dễ dàng hơn trong việc đọc dữ liệu từ tập huấn luyện và tập kiểm tra, chúng ta sử dụng một `DataLoader` có sẵn thay vì tạo từ đầu như đã làm ở :numref:`sec_linear_scratch`.
-Nhắc lại là ở mỗi vòng lặp, một `DataLoader`sẽ đọc một minibatch của bộ dữ liệu với kích thước `batch_size`.
+Nhắc lại là ở mỗi vòng lặp, một `DataLoader` sẽ đọc một minibatch của bộ dữ liệu với kích thước `batch_size`.
 
 <!--
 During training, reading data can be a significant performance bottleneck, especially when our model is simple or when our computer is fast.
@@ -153,10 +153,10 @@ The `ToTensor` class also moves the image channel from the last dimension to the
 Through the `transform_first` function of the dataset, we apply the transformation of `ToTensor` to the first element of each instance (image and label).
 -->
 
-Đưới đây, chúng ta chuyển đổi dữ liệu hình ảnh từ uint8 sang số thực động (_floating point number_) 32-bit với class `ToTensor`.
-Ngoài ra, bộ chuyển đổi sẽ chia tất cả các số với 255 để tất cả các pixels sẽ có giá trị từ 0 đến 1. 
-Class `ToTensor` cũng chuyển kênh hình ảnh từ chiều cuối cùng sang chiều thứ nhất để tạo điều kiện cho các tính toán mạng nơ-ron sẽ được giới thiệu sau này.
-Thông qua hàm `transform_first` của bộ dữ liệu, chúng ta có thể áp dụng phép biến đổi `ToTensor` cho phần tử đầu tiên  của mỗi ví dụ (ảnh và nhãn). 
+Dưới đây, chúng ta chuyển đổi dữ liệu hình ảnh từ uint8 sang số thực dấu phẩy động (_floating point number_) có 32-bit với lớp `ToTensor`.
+Ngoài ra, bộ chuyển đổi sẽ chia tất cả các số với 255 để tất cả các điểm ảnh sẽ có giá trị từ 0 đến 1. 
+Lớp `ToTensor` cũng chuyển kênh hình ảnh từ chiều cuối cùng sang chiều thứ nhất để tạo điều kiện cho các tính toán mạng nơ-ron sẽ được giới thiệu sau này.
+Thông qua hàm `transform_first` của bộ dữ liệu, chúng ta có thể áp dụng phép biến đổi `ToTensor` cho phần tử đầu tiên của mỗi ví dụ (ảnh và nhãn). 
 
 ```{.python .input  n=28}
 batch_size = 256
@@ -170,7 +170,7 @@ train_iter = gluon.data.DataLoader(mnist_train.transform_first(transformer),
 Let's look at the time it takes to read the training data.
 -->
 
-Cùng xem thời gian cần thiết để hoàn tất việc đọc và huấn luyện dữ liệu.
+Hãy cùng xem thời gian cần thiết để hoàn tất việc đọc dữ liệu huấn luyện.
 
 ```{.python .input}
 timer = d2l.Timer()
