@@ -271,19 +271,19 @@ Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
 Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
 -->
 
-Hồi quy tuyến tính là một bài toán tối ưu hóa đơn giản.
-Không giống hầu hết các mô hình khác sẽ gặp trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, tạo ra một nghiệm tối ưu toàn cục.
-Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu.
-Sau đó bài toán tối ưu hóa trở thành tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$.
-Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt.
+Hóa ra hồi quy tuyến tính chỉ là một bài toán tối ưu hóa đơn giản.
+Khác với hầu hết các mô hình được giới thiệu trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, cho một nghiệm tối ưu toàn cục.
+Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu. 
+Khi đó bài toán dự đoán trở thành bài toán tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$. 
+Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt. 
 
 <!--
 Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
 Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
 -->
 
-Bởi vậy chỉ có một điểm cực trị trên bề mặt mất mát và nó tương ứng với giá trị nhỏ nhất toàn cục.
-Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức:
+Bởi vậy chỉ có một điểm cực trị trên mặt mất mát và nó tương ứng với giá trị mất mát nhỏ nhất.
+Lấy đạo hàm của hàm mất mát theo $\mathbf{w}$ và giải phương trình đạo hàm này bằng $0$, ta sẽ được nghiệm theo công thức: 
 
 $$\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.$$
 
@@ -292,8 +292,8 @@ While simple problems like linear regression may admit analytic solutions, you s
 Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
 -->
 
-Trong khi những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này.
-Trong khi các nghiệm theo công thức cho ta một phân tích toán học đẹp, các điều kiện để có một nghiệm theo công thức khá chặt đến nỗi nó không được sử dụng trong học sâu.
+Tuy những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo công thức, bạn không nên làm quen với sự may mắn này. 
+Mặc dù các nghiệm theo công thức giúp ta phân tích toán học một cách thuận tiện, các điều kiện để có được nghiệm này chặt chẽ đến nỗi không có phương pháp học sâu nào thoả mãn được.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -310,8 +310,8 @@ Even in cases where we cannot solve the models analytically, and even when the l
 Moreover, for many tasks, these difficult-to-optimize models turn out to be so much better that figuring out how to train them ends up being well worth the trouble.
 -->
 
-Trong nhiều trường hợp mà ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mất mát ở các bề mặt là lớn ở các mặt và không lồi, thì trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiện quả.
-Hơn nữa, đối với nhiều tác vụ thì những mô hình khó để tối ưu hóa là một lựa chọn tốt cho chúng ta để nhận ra cách huấn luyện các mô hình đó trở nên tốt hơn và xứng đáng với những rắc rối đã qua.
+Trong nhiều trường hợp ở đó ta không thể giải quyết các mô hình theo phép phân tích, và thậm chí khi mặt mất mát là các mặt bậc cao và không lồi, trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiệu quả.
+Hơn nữa, trong nhiều tác vụ, những mô hình khó để tối ưu hóa này hoá ra lại tốt hơn các phương pháp khác nhiều, vậy nên việc bỏ công sức để tìm cách tối ưu chúng là hoàn toàn xứng đáng.
 
 <!--
 The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book, 
@@ -321,9 +321,10 @@ On convex loss surfaces, it will eventually converge to a global minimum, and wh
 it will at least lead towards a (hopefully good) local minimum.
 -->
 
-Kỹ thuật chính để tối ưu hóa bất kỳ mô hình học sâu nào, và ta sẽ sử dụng nó xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo một hướng để làm giảm dần hàm mất mát.
+Kỹ thuật chính để tối ưu hóa gần như bất kỳ mô hình học sâu nào, sẽ được sử dụng xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các vòng lặp bằng cách cập nhật tham số theo hướng làm giảm dần hàm mất mát.
 Thuật toán này được gọi là *hạ gradient*.
-Trên bề mặt mất mát lồi, mô hình cuối cùng sẽ hội tụ tại điểm tối thiểu toàn cục, và tuy điều tương tự không thể áp dụng cho bề mặt không lồi, nhưng ít nhất thuật toán sẽ dẫn tới điểm tối thiểu cục bộ (hy vọng là tốt) .
+Trên các mặt mất mát lồi, giá trị mất mát cuối cùng sẽ hội tụ về giá trị nhỏ nhất.
+Tuy điều tương tự không thể áp dụng cho các mặt không lồi, ít nhất thuật toán sẽ dẫn tới một cực tiểu (hy vọng là tốt).
 
 <!--
 The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
@@ -332,10 +333,11 @@ We must pass over the entire dataset before making a single update.
 Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
 -->
 
-Ứng dụng đơn giản của hạ gradient bao gồm việc tính đạo hàm mất mát là trung bình của các mất mát được tính toán trên mỗi mẫu của tập dữ liệu.
-Trong thực tế, việc này có thể cực kì chậm.
-Chúng ta phải truyền toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
-Vì thế, đôi khi chúng ta chỉ muốn lấy một minibatch ngẫu nhiên của các mẫu mỗi khi chúng ta cần tính toán cho việc cập nhật, biến thể này được gọi là *hạ gradient ngẫu nhiên*.
+Ứng dụng đơn giản nhất của hạ gradient bao gồm việc tính đạo hàm của hàm mất mát, tức trung bình của các giá trị mất mát được tính trên mỗi mẫu của tập dữ liệu. 
+Trong thực tế, việc này có thể cực kì chậm. 
+Chúng ta phải duyệt qua toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật. 
+Vì thế, thường ta chỉ muốn lấy một minibatch ngẫu nhiên các mẫu mỗi khi ta cần tính bước cập nhật.
+Phương pháp biến thể này được gọi là *hạ gradient ngẫu nhiên*.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
