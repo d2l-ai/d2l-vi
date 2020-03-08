@@ -269,7 +269,7 @@ Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu 
 1. Việc giảm `batch_size` (ví dụ xuống 1) có ảnh hưởng việc đọc dữ liệu hay không?
 2. Với các người dùng không sử dụng Windows, hãy thử thay đổi `num_workers` để xem nó ảnh hưởng đến hiệu năng đọc dữ liệu như thế nào. Vẽ đồ thị hiệu năng tương ứng với số luồng được sử dụng.
 3. Sử dụng tài liệu MXNet để xem các bộ dữ liệu có sẵn khác trong `mxnet.gluon.data.vision`.
-4. Sử dụng tài liệu MXNet để xem những bộ chuyển đổi nào có sẵn trong `mxnet.gluon.data.vision.transforms`.
+4. Sử dụng tài liệu MXNet để xem những phép biến đổi nào có sẵn trong `mxnet.gluon.data.vision.transforms`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
