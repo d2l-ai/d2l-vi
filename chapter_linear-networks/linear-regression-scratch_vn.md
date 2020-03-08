@@ -127,7 +127,7 @@ d2l.plt.scatter(features[:, 1].asnumpy(), labels.asnumpy(), 1);
 ## Reading the Dataset
 -->
 
-## Đọc từ tập dữ liệu
+## Đọc từ Tập dữ liệu
 
 <!--
 Recall that training models consists of making multiple passes over the dataset, grabbing one minibatch of examples at a time, and using them to update our model.
@@ -143,7 +143,7 @@ The function takes a batch size, a design matrix, and a vector of labels, yieldi
 Each minibatch consists of an tuple of features and labels.
 -->
 
-Một hiện thực khả dĩ của chức năng này được minh họa qua hàm `data_iter` dưới đây.
+Ở đoạn mã dưới đây, chúng tôi định nghĩa hàm `data_iter` để minh hoạ cho một cách lập trình khả thi với chức năng này.
 Hàm này lấy kích thước một batch, một ma trận đặc trưng và một vector các nhãn rồi sinh ra các minibatch có kích thước `batch_size`.
 Mỗi minibatch gồm một tuple các đặc trưng và nhãn.
 
@@ -166,7 +166,7 @@ Because each example can be fed through our models in parallel and the gradient 
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
 Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
-Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ nhỉnh hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
+Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ chênh lệch hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
@@ -197,10 +197,10 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-Khi chạy bộ duyệt, ta lấy từng minibatch cho đến đến khi đã lấy hết bộ dữ liệu.
-Mặc dù sử dụng bộ duyệt như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
-Ví dụ, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ, do đó phải thực thi rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
-Các bộ duyệt trong Apache MXNet lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu lưu trữ trên tập tin lẫn các luồng dữ liệu. 
+Khi chạy iterator, ta lấy từng minibatch cho đến khi đã lấy hết bộ dữ liệu.
+Mặc dù sử dụng iterator như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
+Ví dụ, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ, do đó ta phải thực thi rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
+Các iterator trong Apache MXNet lại tỏ ra khá hiệu quả khi chúng có thể xử lý cả dữ liệu được lưu trữ trên tập tin lẫn trong các luồng dữ liệu. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -210,7 +210,7 @@ Các bộ duyệt trong Apache MXNet lại khá hiệu quả khi chúng có th�
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo các tham số mô hình
+## Khởi tạo các Tham số Mô hình
 
 <!--
 Before we can begin optimizing our model's parameters by gradient descent, we need to have some parameters in the first place.
@@ -218,7 +218,7 @@ In the following code, we initialize weights by sampling random numbers from a n
 -->
 
 Để tối ưu các tham số của dữ liệu bằng hạ gradient, đầu tiên ta cần khởi tạo chúng.
-Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, tiếp đó gán hệ số điều chỉnh $b$ bằng $0$.
+Trong đoạn mã dưới đây, ta khởi tạo các trọng số bằng cách lấy ngẫu nhiên các mẫu từ một phân phối chuẩn với giá trị trung bình bằng 0 và độ lệch chuẩn là $0.01$, sau đó gán hệ số điều chỉnh $b$ bằng $0$.
 
 ```{.python .input  n=7}
 w = np.random.normal(0, 0.01, (2, 1))
@@ -231,7 +231,7 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
-Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp với dữ liệu của ta đủ tốt. 
+Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp hoàn toàn với dữ liệu của ta. 
 Mỗi lần cập nhật, ta tính gradient (đạo hàm nhiều biến) của hàm mất mát theo các tham số. 
 Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm dần giá trị mất mát. 
 
@@ -248,7 +248,7 @@ we need to invoke the `attach_grad` function, allocating memory to store the gra
 
 Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
 Xem :numref:`sec_autograd` để có thêm chi tiết.
-Nhắc lại mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
+Nhắc lại từ mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
 
 ```{.python .input  n=8}
 w.attach_grad()
@@ -259,7 +259,7 @@ b.attach_grad()
 ## Defining the Model
 -->
 
-## Định nghĩa mô hình
+## Định nghĩa Mô hình
 
 <!--
 Next, we must define our model, relating its inputs and parameters to its outputs.
@@ -269,9 +269,9 @@ Recall that when we add a vector and a scalar, the scalar is added to each compo
 -->
 
 Tiếp theo, chúng ta cần xác định mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
-Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, chúng ta có thể đơn giản là tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
-Chú ý rằng `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
-Cần nhớ rằng khi chúng ta tính tổng vector và số vô hướng, thì số vô hướng sẽ được thêm vào mỗi phẩn tử của vector. 
+Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, ta có thể đơn giản là tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
+Với `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
+Cần lưu tâm là khi chúng ta tính tổng vector và số vô hướng, thì số vô hướng sẽ được thêm vào mỗi phẩn tử của vector. 
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
@@ -300,10 +300,10 @@ In the implementation, we need to transform the true value `y` into the predicte
 The result returned by the following function will also be the same as the `y_hat` shape.
 -->
 
-Để cập nhật mô hình ta cần tính gradient của hàm mất mát, vậy nên ta phải định nghĩa hàm mất mát trước tiên.
-Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước.
-Trong thực tế, chúng ta cần chuyển đổi giá trị nhãn đúng `y` sang kích thước của giá trị dự đoán `y_hat`.
-Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước như kích thước của `y_hat`.
+Để cập nhật mô hình ta phải tính gradient của hàm mất mát, vậy nên ta cần định nghĩa hàm mất mát trước tiên.
+Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước đó.
+Trong thực tế, chúng ta cần chuyển đổi giá trị nhãn thật `y` sang kích thước của giá trị dự đoán `y_hat`.
+Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước tương đương của `y_hat`.
 
 ```{.python .input  n=10}
 # Saved in the d2l package for later use
@@ -324,10 +324,10 @@ Since none of the other models that this book introduces
 can be solved analytically, we will take this opportunity to introduce your first working example of stochastic gradient descent (SGD).
 -->
 
-Như đã thảo luận ở mục trước, hồi quy tuyến tính có một nghiệm (dạng đóng)[https://vi.wikipedia.org/wiki/Bi%E1%BB%83u_th%E1%BB%A9c_d%E1%BA%A1ng_%C4%91%C3%B3ng]. 
-Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là cuốn sách về học sâu. 
+Như đã thảo luận ở mục trước, hồi quy tuyến tính có một nghiệm (dạng đóng)[https://vi.wikipedia.org/wiki/Biểu_thức_dạng_đóng]. 
+Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là về Học sâu. 
 Vì không một mô hình nào khác được trình bày trong cuốn sách này 
-có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân đó giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (_stochastic gradient descent -- SGD_)
+có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân cơ hội đó để giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (*stochastic gradient descent -- SGD*).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -343,12 +343,12 @@ Because our loss is calculated as a sum over the batch of examples, we normalize
 so that the magnitude of a typical step size does not depend heavily on our choice of the batch size.
 -->
 
-Tại mỗi bước, sử dụng một batch được rút ngẫu nhiên từ mẫu, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
-Tiếp theo đó, chúng ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
-Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi ‘backward’, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
+Ở mỗi bước, sử dụng một batch được rút ngẫu nhiên từ mẫu, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
+Tiếp đó, ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
+Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi `backward`, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
 Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
 Kích cỡ của bước cập nhật được xác định bởi tốc độ học `lr`.
-Bởi vì các mất mát được tính dựa trên tổng các mẫu của batch, chúng ta chuẩn hóa kích cỡ bước cập nhật theo kích cỡ của batch (`batch_size`),  sao cho độ lớn của một bước cập nhật thông thường không phụ thuộc nhiều vào kích cỡ batch.
+Bởi vì các mất mát được tính dựa trên tổng các mẫu của batch, ta chuẩn hóa kích cỡ bước cập nhật theo kích cỡ của batch (`batch_size`), sao cho độ lớn của một bước cập nhật thông thường không phụ thuộc nhiều vào kích cỡ batch.
 
 
 ```{.python .input  n=11}
