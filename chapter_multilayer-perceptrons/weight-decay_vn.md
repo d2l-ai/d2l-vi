@@ -446,7 +446,7 @@ In addition to weight decay, increased training, and the use of a model of suita
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
