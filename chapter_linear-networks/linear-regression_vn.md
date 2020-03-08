@@ -448,7 +448,7 @@ Chúng ta sẽ nhắc lại những chủ đề này xuyên suốt cuốn sách.
 ### Making Predictions with the Learned Model
 -->
 
-### Dự đoán bằng mô hình đã được huấn luyện
+### Dự đoán bằng Mô hình đã được Huấn luyện
 
 
 <!--
@@ -457,8 +457,8 @@ we can now estimate the price of a new house (not contained in the training data
 Estimating targets given features is commonly called *prediction* and *inference*.
 -->
 
-Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và niên đại $x_2$ của nó.
-Ước lượng biến mục tiêu bằng những đặc trưng của nó thường được gọi là *dự đoán* (_prediction_) hay *suy luận* (_inference_).
+Với mô hình hồi quy tuyến tính đã được huấn luyện $\hat{\mathbf{w}}^\top x + \hat{b}$, ta có thể ước lượng giá của một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích $x_1$ và tuổi đời $x_2$ của nó.
+Việc ước lượng mục tiêu khi biết trước những đặc trưng thường được gọi là *dự đoán* hay *suy luận* (_inference_).
 
 <!--
 We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
@@ -468,7 +468,7 @@ This misuse of terminology is a common source of confusion when deep learning pr
 
 Ở đây ta sẽ dùng từ *dự đoán* thay vì *suy luận*, dù *suy luận* là một thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại không phù hợp.
 Trong thống kê, *suy luận* thường được dùng cho việc ước lượng thông số dựa trên tập dữ liệu.
-Việc dùng sai thuật ngữ này dễ gây hiểu nhầm khi một chuyên viên học sâu thảo luận cùng một chuyên viên thống kê.
+Việc dùng sai thuật ngữ này là nguyên nhân gây ra sự hiểu nhầm giữa những người làm học sâu và các nhà thống kê. 
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -485,8 +485,8 @@ When training our models, we typically want to process whole minibatches of exam
 Doing this efficiently requires that we vectorize the calculations and leverage fast linear algebra libraries rather than writing costly for-loops in Python.
 -->
 
-Khi huấn luyện mô hình, chúng ta thường muốn các tập dữ liệu nhỏ được xử lý một cách đồng thời.
-Để làm được điều này một cách hiệu quả, chúng ta phải vector hóa các tác vụ tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp `for` trong Python.
+Khi huấn luyện mô hình, chúng ta thường muốn xử lý đồng thời các mẫu dữ liệu trong minibatch.
+Để làm được điều này một cách hiệu quả, chúng ta phải vector hóa việc tính toán bằng cách sử dụng các thư viện đại số tuyến tính thay vì sử dụng các vòng lặp `for` trong Python.
 
 <!--
 To illustrate why this matters so much, we can consider two methods for adding vectors.
@@ -581,9 +581,9 @@ Vectorizing code often yields order-of-magnitude speedups.
 Moreover, we push more of the math to the library and need not write as many calculations ourselves, reducing the potential for errors.
 -->
 
-Bạn có thể nhận thấy rằng, phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp đầu tiên.
-Việc vector hóa thường tăng tốc độ tính toán lên nhiều lần.
-Ngoài ra, ta giao phó phần toán cho thư viện để tránh phải tự viết các tính toán, giảm thiểu khả năng xảy ra lỗi.
+Bạn có thể nhận thấy rằng, phương pháp thứ hai nhanh hơn rất nhiều lần so với phương pháp thứ nhất.
+Việc vector hóa thường tăng tốc độ tính toán lên nhiều bậc.
+Ngoài ra, giao phó công việc tính toán cho thư viện để tránh phải tự viết lại sẽ giảm thiểu khả năng phát sinh lỗi.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
