@@ -15,15 +15,15 @@ In the previous section, we relied only on (i) `ndarray` for data storage and li
 In practice, because data iterators, loss functions, optimizers, and neural network layers (and some whole architectures) are so common, modern libraries implement these components for us as well.
 -->
 
-Sự quan tâm nhiệt thành và rộng khắp tới học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê phát triển nhiều framework nguồn mở tới giai đoạn hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
+Sự quan tâm nhiệt thành và rộng khắp với học sâu trong những năm gần đây đã tạo cảm hứng cho các công ty, học viện và những người đam mê tới học sâu phát triển nhiều framework mã nguồn mở hoàn thiện, giúp tự động hóa các công việc lặp đi lặp lại trong quá trình triển khai các thuật toán học dựa trên gradient.
 Trong chương trước, chúng ta chỉ dựa vào (i) `ndarray` để lưu dữ liệu và thực hiện tính toán đại số tuyến tính; và (ii) `autograd` để thực hiện tính đạo hàm.
-Trên thực tế, do các bộ duyệt dữ liệu, các hàm mất mát, các bộ tối ưu, và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã triển khai sẵn những thành phần này cho chúng ta.
+Trên thực tế, do các iterator dữ liệu, các hàm mất mát, các bộ tối ưu và các tầng của mạng nơ-ron (thậm chí là toàn bộ kiến trúc) rất phổ biển, các thư viện hiện đại đã cài đặt sẵn những thành phần này cho chúng ta.
 
 <!--
 In this section, we will show you how to implement the linear regression model from :numref:`sec_linear_scratch` concisely by using Gluon.
 -->
 
-Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
+Mục này sẽ hướng dẫn bạn cách để xây dựng mô hình hồi quy tuyến tính trong phần :numref:`sec_linear_scratch` một cách súc tích với Gluon.
 
 <!--
 ## Generating the Dataset
@@ -35,7 +35,7 @@ Mục này sẽ hướng dẫn bạn làm cách nào để xây dựng mô hình
 To start, we will generate the same dataset as in the previous section.
 -->
 
-Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như mục trước.
+Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như ở mục trước.
 
 ```{.python .input  n=2}
 import d2l
@@ -66,12 +66,11 @@ Next, we will use the `ArrayDataset` to instantiate a `DataLoader`, which also r
 and specify a Boolean value `shuffle` indicating whether or not we want the `DataLoader` to shuffle the data on each epoch (pass through the dataset).
 -->
 
-Thay vì tự viết vòng lặp để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon. 
+Thay vì tự viết iterator riêng để đọc dữ liệu thì ta có thể gọi mô-đun `data` của Gluon để xử lý việc này. 
 Bước đầu tiên sẽ là khởi tạo một `ArrayDataset`.
 Hàm tạo của đối tượng này sẽ lấy một hoặc nhiều `ndarray` làm đối số.
 Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
-Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, điều này yêu cầu ta truyền vào đó một giá trị `batch_size`
-và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (mỗi lần duyệt qua toàn bộ tập dữ liệu) hay không.
+Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, lớp này yêu cầu ta truyền vào một giá trị `batch_size` và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (một lần duyệt qua toàn bộ tập dữ liệu) hay không.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
@@ -117,12 +116,11 @@ The situation is similar to coding up your own blog from scratch.
 Doing it once or twice is rewarding and instructive, but you would be a lousy web developer if every time you needed a blog you spent a month reinventing the wheel.
 -->
 
-Khi ta lập trình hồi quy tuyến tính từ đầu (in :numref`sec_linear_scratch`),
-ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình để tạo đầu ra từ các phép toán đại số tuyến tính cơ bản.
+Khi ta lập trình hồi quy tuyến tính từ đầu (trong :numref`sec_linear_scratch`), ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình các tính toán cho giá trị đầu ra sử dụng các phép toán đại số tuyến tính cơ bản.
 Bạn *nên* biết cách để làm được điều này.
-Nhưng một khi mô hình trở nên phức tạp hơn, đồng thời bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
+Nhưng một khi mô hình trở nên phức tạp hơn và đồng thời khi bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
 Tình huống này tương tự như việc lập trình blog của riêng bạn lại từ đầu.
-Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tồi nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu.
+Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web "khó ở" nếu mỗi khi cần một trang blog bạn lại phải dành ra cả một tháng chỉ để phát triển lại từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -138,13 +136,13 @@ In the following example, our model consists of only one layer, so we do not rea
 But since nearly all of our future models will involve multiple layers, we will use it anyway just to familiarize you with the most standard workflow.
 -->
 
-Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
-Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
-Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
-Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
-Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
-Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
-Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
+Đối với những tác vụ tiêu chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc phải tập trung vào cách lập trình các tầng đó.
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của "neural network").
+Đầu tiên ta sẽ định nghĩa một biến mô hình là `net`, tham chiếu đến một thực thể của lớp `Sequential`.
+Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng được liên kết với nhau.
+Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu tiên, kết quả đầu ra từ đó trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
+Trong ví dụ tiếp theo, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
+Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình làm việc tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
 from mxnet.gluon import nn
@@ -159,14 +157,14 @@ Since we only want to generate a single scalar output, we set that number to $1$
 -->
 
 Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`.
-Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
-Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class `Dense`.
+Tầng đó được gọi là *kết nối đầy đủ* bởi vì mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
+Trong Gluon, tầng kết nối đầy đủ được định nghĩa trong lớp `Dense`.
 Bởi vì chúng ta chỉ mong xuất ra một số vô hướng duy nhất, nên ta gán giá trị là $1$.
 <!--
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
 -->
 
-![Hồi quy tuyến tính là một mạng nơ ron đơn tầng.](../img/singleneuron.svg)
+![Hồi quy tuyến tính là một mạng nơ-ron đơn tầng.](../img/singleneuron.svg)
 :label:`fig_singleneuron`
 
 ```{.python .input  n=6}
@@ -181,11 +179,10 @@ When we first try to pass data through our model, e.g., when we execute `net(X)`
 We will describe how this works in more detail in the chapter "Deep Learning Computation".
 -->
 
-Để thuận tiện, điều đáng chú ý là
-Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
+Để thuận tiện, điều đáng chú ý là Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
 Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào cho mỗi tầng tuyến tính.
-Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
-Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
+Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net(X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi tầng.
+Chúng ta sẽ mô tả cách hoạt động của cơ chế này một cách chi tiết hơn trong chương "Tính toán trong Học sâu".
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -211,13 +208,13 @@ The *bias* parameter will be initialized to zero by default.
 Both the weight vector and bias will have attached gradients.
 -->
 
-Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và độ chệch trong mô hồi quy tuyến tính.
+Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và hệ số điều chỉnh trong mô hình hồi quy tuyến tính.
 Chúng ta sẽ nhập mô-đun `initializer` từ MXNet.
 Mô-đun này cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
 Gluon cho phép dùng `init` như một cách ngắn gọn (viết tắt) để truy cập đến gói `initializer`.
-Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các `trọng số` từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
-Mặc định, tham số *độ chệch* sẽ được khởi tạo bằng không.
-Cả hai vector trọng số và độ chệch sẽ có gradient kèm theo.
+Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các *trọng số* từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
+Mặc định, tham số *hệ số điều chỉnh* sẽ được khởi tạo bằng không.
+Cả hai vector trọng số và hệ số điều chỉnh sẽ có gradient kèm theo.
 
 ```{.python .input  n=7}
 from mxnet import init
@@ -233,10 +230,10 @@ The real initialization will take place only when we for the first time attempt 
 Just be careful to remember that since the parameters have not been initialized yet, we cannot access or manipulate them.
 -->
 
-Đoạn mã nguồn trên trông khá trực quan nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
-Chúng ta khởi tạo các tham số cho một mạng mà thậm chi Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
+Đoạn mã nguồn trên trông khá đơn giản nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
+Chúng ta khởi tạo các tham số cho một mạng mà thậm chí Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
 Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000$.
-Gluon khiến chúng ta không cần bận tâm về điều này bởi ở phía sau bức màn, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
+Gluon khiến chúng ta không cần bận tâm về điều này bởi ở hậu trường, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
 Quá trình khởi tạo thực sự chỉ bắt đầu khi chúng ta truyền dữ liệu vào mạng lần đầu tiên.
 Hãy ghi nhớ rằng, do các tham số chưa thực sự được khởi tạo, chúng ta không thể truy cập hoặc thao tác với chúng.
 
@@ -258,7 +255,7 @@ In this example, we will use the Gluon implementation of squared loss (`L2Loss`)
 
 Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
 Chúng ta sẽ sử dụng mô-đun `loss` được thêm vào dưới tên gọi là `gloss`, để tránh nhầm lẫn nó với biến đang giữ hàm mất mát mà ta đã chọn.
-Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai trong Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss

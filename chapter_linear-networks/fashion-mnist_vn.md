@@ -5,7 +5,7 @@
 # The Image Classification Dataset (Fashion-MNIST)
 -->
 
-# *dịch tiêu đề phía trên*
+# Bộ dữ liệu Phân loại Ảnh (Fashion-MNIST)
 :label:`sec_fashion_mnist`
 
 <!--
@@ -17,7 +17,11 @@ To up the ante just a bit, we will focus our discussion in the coming sections o
 but comparatively complex Fashion-MNIST dataset :cite:`Xiao.Rasul.Vollgraf.2017`, which was released in 2017.
 -->
 
-*dịch đoạn phía trên*
+Ở :numref:`sec_naive_bayes`, chúng ta đã huấn luyện bộ phân loại Naive Bayes, sử dụng bộ dữ liệu MNIST được giới thiệu vào năm 1998 :cite:`LeCun.Bottou.Bengio.ea.1998`.
+Mặc dù MNIST hoạt động tốt như bộ dữ liệu đánh giá xếp hạng (_benchmark_), các mô hình đơn giản dựa trên tiêu chuẩn ngày nay cũng có thể đạt được độ chính xác phân loại lên tới 95%.
+Điều này khiến cho việc phân biệt độ mạnh yếu của các mô hình trở nên không chắc chắn. 
+Ngày nay, MNIST đóng vai trò như là một bài kiểm tra sơ bộ hơn là bài kiểm tra đánh giá xếp hạng.   
+Để cải thiện vấn đề này, chúng ta sẽ cùng tập trung thảo luận ở các mục tiếp theo về một bộ dữ liệu tương tự nhưng phức tạp hơn, đó là bộ dữ liệu Fashion-MNIST  :cite:`Xiao.Rasul.Vollgraf.2017` được giới thiệu vào năm 2017.
 
 ```{.python .input  n=7}
 %matplotlib inline
@@ -32,7 +36,7 @@ d2l.use_svg_display()
 ## Getting the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tải về Bộ dữ liệu
 
 <!--
 Just as with MNIST, Gluon makes it easy to download and load the FashionMNIST dataset into memory via the `FashionMNIST` class contained in `gluon.data.vision`.
@@ -40,7 +44,9 @@ We briefly work through the mechanics of loading and exploring the dataset below
 Please refer to :numref:`sec_naive_bayes` for more details on loading data.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như với MNIST, Gluons giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với lớp `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng. 
+Các cơ chế của việc nạp và khám phá bộ dữ liệu sẽ được hướng dẫn ngắn gọn bên dưới.
+Vui lòng tham khảo :numref:`sec_naive_bayes` để biết thêm chi tiết về việc nạp dữ liệu. 
 
 ```{.python .input  n=23}
 mnist_train = gluon.data.vision.FashionMNIST(train=True)
@@ -52,7 +58,8 @@ FashionMNIST consists of images from 10 categories, each represented by 6k image
 Consequently the training set and the test set contain 60k and 10k images, respectively.
 -->
 
-*dịch đoạn phía trên*
+FashionMNIST chứa các hình ảnh từ 10 lớp, mỗi danh mục được thể hiện bằng sáu nghìn tấm ảnh trong tập huấn luyện và một nghìn tấm ảnh trong tập kiểm tra. 
+Do đó, tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn tấm ảnh.
 
 ```{.python .input}
 len(mnist_train), len(mnist_test)
@@ -63,7 +70,8 @@ The images in Fashion-MNIST are associated with the following categories: t-shir
 The following function converts between numeric label indices and their names in text.
 -->
 
-*dịch đoạn phía trên*
+Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao, túi và giày cao gót. 
+Hàm dưới đây giúp chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
 
 ```{.python .input  n=25}
 # Saved in the d2l package for later use
@@ -77,7 +85,7 @@ def get_fashion_mnist_labels(labels):
 We can now create a function to visualize these examples.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể tạo một hàm để minh hoạ các mẫu này. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -99,7 +107,7 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 Here are the images and their corresponding labels (in text) for the first few examples in the training dataset.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là các hình ảnh và nhãn tương ứng của chúng (ở dạng văn bản) từ một vài mẫu đầu tiên trong tập huấn luyện. 
 
 ```{.python .input}
 X, y = mnist_train[:18]
@@ -184,7 +192,7 @@ for X, y in train_iter:
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại với nhau
 
 <!--
 Now we define the `load_data_fashion_mnist` function that obtains and reads the Fashion-MNIST dataset.
@@ -192,7 +200,9 @@ It returns the data iterators for both the training set and validation set.
 In addition, it accepts an optional argument to resize images to another shape.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, chúng ta sẽ định nghĩa hàm `load_data_fashion_mnist` để thu thập và đọc bộ dữ liệu Fashion-MNIST.
+Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn luyện và tập kiểm định. 
+Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào. 
 
 ```{.python .input  n=4}
 # Saved in the d2l package for later use
@@ -214,7 +224,7 @@ def load_data_fashion_mnist(batch_size, resize=None):
 Below, we verify that image resizing works.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta xác nhận lại kích thước hình ảnh sau khi thay đổi. 
 
 ```{.python .input  n=5}
 train_iter, test_iter = load_data_fashion_mnist(32, (64, 64))
@@ -227,7 +237,7 @@ for X, y in train_iter:
 We are now ready to work with the FashionMNIST dataset in the sections that follow.
 -->
 
-*dịch đoạn phía trên*
+Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu FashionMNIST trong các mục tiếp theo. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -290,14 +300,17 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Lê Quang Nhật
+* @tiepvupsu 
+* @lkhphuc 
+* @rootonchair 
+* @duythanhvn 
 
 <!-- Phần 2 -->
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
-
