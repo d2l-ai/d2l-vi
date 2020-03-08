@@ -205,7 +205,7 @@ Imagine, for example, if we tried to train a face recognition system by training
 This is unlikely to work well since college students tend to look considerably different from the elderly.
 -->
 
-Các vi phạm khác thì chắc chắn dẫn tới vấn đề.
+Các vi phạm khác thì chắc chắn dẫn tới rắc rối.
 Hãy tưởng tượng, ví dụ, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem triển khai như là một công cụ để theo dõi trong viện dưỡng lão.
 Nhiều khả năng cách này sẽ không ổn bởi những sinh viên đại học trông rất khác những người già.
 
