@@ -5,7 +5,7 @@
 # Concise Implementation of Multilayer Perceptron
 -->
 
-# Triển khai súc tích của Mạng nơron Perceptron Nhiều tầng
+# Triển khai súc tích của Mạng nơron Perceptron Đa tầng
 :label:`sec_mlp_gluon`
 
 <!--
