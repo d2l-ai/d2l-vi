@@ -265,6 +265,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                         | recall                                    |               |
 | recognition                    | nhận dạng                                 |               |
 | recurrent neural network       | mạng nơ-ron truy hồi                      |               |
+| rectified linear unit (ReLU) | đơn vị tuyến tính được chỉnh lưu|  |
 | regressor                      | bộ hồi quy                                |               |
 | regularization                 | điều chuẩn                                |               |
 | reinforcement learning         | học tăng cường                            |               |
@@ -335,6 +336,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                     | Tiếng Việt | Thảo luận tại         |
 |-----------------------------|------------|-----------------------|
 | validation set | tập kiểm định | |
+| vanishing gradient | tiêu biến gradient | |
 | variance (bias as variance) | phương sai | http://bit.ly/32HJI3S |
 | vector                      | vector     |                       |
 
