@@ -315,7 +315,7 @@ ReLUs provide a very simple nonlinear transformation.
 Given the element $z$, the function is defined as the maximum of that element and 0.
 -->
 
-Như đã đề cập trước đó, đơn vị tuyến tính chỉnh lưu (ReLU) dường như là sự lựa chọn phổ biến nhất, do lập trình đơn giản và nó hiệu quả trong một loạt các nhiệm vụ dự đoán.
+Như đã đề cập trước đó, đơn vị tuyến tính được chỉnh lưu (ReLU) dường như là sự lựa chọn phổ biến nhất, do lập trình đơn giản và nó hiệu quả trong một loạt các tác vụ dự đoán.
 Các hàm ReLU cung cấp một phép biến đổi phi tuyến đơn giản.
 Cho trước một phần tử $z$, ta định nghĩa ReLU là giá trị lớn nhất của chính phần tử đó và 0.
 
@@ -358,7 +358,7 @@ Trong thường hợp này, ta mặc định sẽ được tính như đạo hà
 Ta có thể làm được điều này bởi vì đầu vào của hàm số thường sẽ xấp xỉ 0.
 Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến điều kiện biên thì có lẽ ta chỉ đang *thực sự* làm toán, chứ không phải đang làm kỹ thuật.
 Và trong trường hợp này, ngạn ngữ đó đang được áp dụng.
-Đồ thị đạo hàm của hàm ReLU được vẽ như hình dưới.
+Đồ thị đạo hàm của hàm ReLU như hình dưới.
 
 ```{.python .input  n=3}
 y.backward()
@@ -380,8 +380,8 @@ The reason for using the ReLU is that its derivatives are particularly well beha
 This makes optimization better behaved and it mitigated well-documented problem of *vanishing gradients* that plagued previous versions of neural networks (more on this later).
 -->
 
-Ta sử dụng hàm ReLU bởi vì đạo hàm của nó xử lý thực sự tốt: hoặc chúng biến mất hoặc chúng giữ nguyên đối số.
-Điều này làm cho việc tối ưu tốt hơn và giảm thiểu được nhược điểm *mất dần gradients* đã từng gây khó khăn trong các phiên bản trước của mạng nơ-ron (sẽ được đề cập lại sau này).
+Ta sử dụng hàm ReLU bởi vì đạo hàm đơn giản: hoặc chúng biến mất hoặc chúng  đối số đi qua.
+Điều này làm cho việc tối ưu tốt hơn và giảm thiểu được nhược điểm *tiêu biến gradient* đã từng gây khó khăn trong các phiên bản trước của mạng nơ-ron (sẽ được đề cập lại sau này).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
