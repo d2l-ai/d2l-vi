@@ -77,13 +77,13 @@ for param in params:
 ## Activation Function
 -->
 
-## Hàm kích hoạt
+## Hàm Kích hoạt
 
 <!--
 To make sure we know how everything works, we will implement the ReLU activation ourselves using the `maximum` function rather than invoking `npx.relu` directly.
 -->
 
-Để đảm bảo rằng mọi thứ đều hoạt động, chúng ta sẽ tự lập trình hàm kích hoạt ReLU sử dụng hàm `maximum` thay vì gọi tới hàm `npx.relu`.
+Để đảm bảo hiểu mọi thứ hoạt động như thế nào, chúng ta sẽ tự lập trình hàm kích hoạt ReLU sử dụng hàm `maximum` thay vì gọi tới hàm `npx.relu`.
 
 ```{.python .input  n=4}
 def relu(X):
