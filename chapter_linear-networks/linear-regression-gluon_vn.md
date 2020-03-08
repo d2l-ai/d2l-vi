@@ -389,10 +389,10 @@ print('Error in estimating b', true_b - b)
 -->
 
 
-* Sử dụng Gluon giúp việc mô tả các mô hình ngắn gọn hơn nhiều.
+* Sử dụng Gluon giúp việc triển khai các mô hình ngắn gọn hơn rất nhiều.
 * Trong Gluon, mô-đun `data` cung cấp các công cụ để xử lý dữ liệu, mô-đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô-đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
 * Mô-đun `initializer` của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
-* Kích thước và dung lượng lưu trữ sẽ được suy ra tự động (nhưng cẩn thận đừng thử truy xuất các tham số trước khi chúng được khởi tạo).
+* Kích thước và dung lượng lưu trữ của các tham số sẽ được suy ra một cách tự động (nhưng nên cẩn thận tránh truy cập các tham số trước khi chúng được khởi tạo).
 
 <!--
 ## Exercises
@@ -407,7 +407,7 @@ print('Error in estimating b', true_b - b)
 -->
 
 1. Nếu thay thế `l = loss(output, y)` bằng `l = loss(output, y).mean()`, chúng ta cần đổi `trainer.step(batch_size)` thành `trainer.step(1)` để phần mã nguồn này hoạt động giống như trước. Tại sao lại thế?
-2. Bạn hãy xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô-đun `gluon.loss` và `init`. Thay thế hàm mất mát đang sử dụng bằng hàm mất mát Huber.
+2. Xem lại tài liệu về MXNet để biết các hàm mất mát và các phương thức khởi tạo được cung cấp trong hai mô-đun `gluon.loss` và `init`. Hãy thay thế hàm mất mát đang sử dụng bằng hàm mất mát Huber (*Huber's loss*).
 3. Làm thế nào để truy cập gradient của `dense.weight`?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
