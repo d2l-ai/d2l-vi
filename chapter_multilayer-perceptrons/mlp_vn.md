@@ -78,7 +78,12 @@ In this case too, we might resolve the problem with some clever preprocessing.
 Namely, we might use the *distance* from 37°C as our feature.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta có thể dễ dàng đưa ra các ví dụ vi phạm *tính đơn điệu*.
+Đề cập đến ví dụ chúng ta muốn dự đoán xác suất tử vong của một người dựa trên thân nhiệt.
+Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ cao hơn chỉ ra rủi ro cao hơn.
+Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, thì việc nhiệt độ càng cao thì rủi ro càng *thấp*!
+Trong trường hợp này cũng vậy, chúng ta cần phải giải quyết các vấn đề với một số tiền xử lý.
+Cụ thể, có thể sử dụng *khoảng cách* từ 37°C làm đặc tính.
 
 
 <!--
@@ -88,7 +93,10 @@ Reliance on a linear model corrsponds to the (implicit) assumption that the only
 This approach is doomed to fail in a world where inverting an image preserves the category.
 -->
 
-*dịch đoạn phía trên*
+Nhưng còn phân loại hình ảnh chó mèo thì sao?
+Có nên tăng cường độ điểm ảnh tại vị trí (13,17) luôn tăng (hoặc luôn giảm) hợp lí để hình ảnh mô tả một con chó?
+Sự phụ thuộc vào mô hình tuyến tính tương ứng với giả định (bao hàm) rằng yêu cầu duy nhất cho sự khác nhau giữa chó và mèo là đánh giá độ sáng của từng điểm ảnh cụ thể. 
+Cách tiếp cận này chắc chắn sẽ bị sai khi các hình ảnh bị đảo ngược màu sắc.
 
 
 <!--
@@ -99,7 +107,12 @@ we simply do not know how to calculate it by hand.
 With deep neural networks, we used observational data to jointly learn both a representation (via hidden layers) and a linear predictor that acts upon that representation.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, bất chấp những phi lý tuyến tính, so với các ví dụ trước, rõ ràng là chúng ta có thể giải quyết vấn đề bằng việc chỉnh sửa tiền xử lý đơn giản.
+Bởi vì ý nghĩa của các điểm ảnh phụ thuộc vào bối cảnh xung quanh nó một cách phức tạp (các giá trị xung quanh của điểm ảnh).
+Mặc dù có thể tồn tại một mô tả cho dữ liệu của chúng ta sẽ tính đến các tương tác có liên quan giữa các tính năng của (và trên hết là các mô hình tuyến tính sẽ phù hợp),
+chúng ta đơn giản là không biết làm thế nào để tính toán thủ công.
+Với các mạng nơ-ron sâu, chúng ta đã sử dụng dữ liệu quan sát để cùng tìm hiểu cả một mô tả (thông qua các tầng ẩn) và một công cụ dự đoán tuyến tính hoạt động theo mô tả đó.
+
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -109,7 +122,7 @@ With deep neural networks, we used observational data to jointly learn both a re
 ### Incorporating Hidden Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Kết hợp các tầng ẩn
 
 <!--
 We can over come these limitations of linear models and handle a more general class of functions by incorporating one or more hidden layers.
@@ -120,13 +133,18 @@ This architecture is commonly called a *multilayer perceptron*, often abbreviate
 Below, we depict an MLP diagramtically (:numref:`fig_nlp`).
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể vượt qua những hạn chế của các mô hình tuyến tính và xử lý một lớp hàm tổng quát hơn bằng cách kết hợp một hoặc nhiều tầng ẩn.
+Cách dễ nhất để làm điều này là xếp chồng nhiều tầng được kết nối đầy đủ lên nhau.
+Mỗi tầng nạp vào tầng bên trên nó, cho đến khi chúng ta tạo ra một đầu ra.
+Chúng ta có thể nghĩ về các $L-1$ tầng đầu tiên như đại diện và tầng cuối cùng là công cụ dự đoán tuyến tính của chúng ta.
+Kiến trúc này thường được gọi là *perceptron nhiều lớp*, thường được viết tắt là *MLP*.
+Dưới đây, chúng tôi mô tả sơ đồ MLP (:numref:`fig_nlp`).
 
 <!--
 ![Multilayer perceptron with hidden layers. This example contains a hidden layer with 5 hidden units in it. ](../img/mlp.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/mlp.svg)
+![Perceptron đa tầng với các tầng ẩn. Ví dụ này chứa một tầng ẩn với 5 đơn vị ẩn trong đó.](../img/mlp.svg)
 :label:`fig_nlp`
 
 <!--
@@ -136,7 +154,10 @@ Note that these layers are both fully connected.
 Every input influences every neuron in the hidden layer, and each of these in turn influences every neuron in the output layer.
 -->
 
-*dịch đoạn phía trên*
+Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và lớp ẩn của nó chứa 5 đơn vị ẩn.
+Vì tầng đầu vào không liên quan đến bất kỳ tính toán nào, nên việc tạo đầu ra với mạng này đòi hỏi phải thực hiện các tính toán cho mỗi trong hai tầng (ẩn và đầu ra).
+Lưu ý rằng các tầng này đều được kết nối đầy đủ.
+Mọi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi đầu vào này ảnh hưởng đến mọi nơ-ron trong tần đầu ra
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -590,7 +611,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 3 -->
 *
