@@ -273,7 +273,7 @@ loss = gloss.L2Loss()  # The squared loss is also known as the L2 norm loss
 ## Defining the Optimization Algorithm
 -->
 
-## Định nghĩa Thuật toán Tối ưu hóa
+## Định nghĩa Thuật toán Tối ưu
 
 <!--
 Minibatch SGD and related variants are standard tools for optimizing neural networks and thus Gluon supports SGD alongside a number of variations on this algorithm through its `Trainer` class.
@@ -282,9 +282,9 @@ the optimization algorithm we wish to use (`sgd`), and a dictionary of hyper-par
 SGD just requires that we set the value `learning_rate`, (here we set it to 0.03).
 -->
 
-Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron và vì vậy Gluon hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainers` của nó.
-Khi chúng ta khởi tạo lớp `Trainer`, ta sẽ chỉ định các tham số để tối ưu hóa (có thể lấy từ các mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu hóa mà chúng ta muốn sử dụng (`sgd`), và một từ điển siêu tham số theo yêu cầu bởi thuật toán tối ưu hóa của chúng ta.
-SGD chỉ yêu cầu rằng chúng ta sẽ đặt giá trị `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
+Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron, vì vậy Gluon có hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainers` của nó.
+Khi khởi tạo lớp `Trainer`, ta cần chỉ định các tham số để tối ưu hóa (có thể lấy từ mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu muốn sử dụng (`sgd`) và một từ điển gồm các siêu tham số cần thiết cho thuật toán tối ưu.
+SGD chỉ yêu cầu giá trị của `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
 from mxnet import gluon
@@ -308,18 +308,18 @@ Once we start working with much more complex models, Gluon's advantages will gro
 However, once we have all the basic pieces in place, the training loop itself is strikingly similar to what we did when implementing everything from scratch.
 -->
 
-Bạn có thể thấy rằng việc thể hiện mô hình của chúng ta thông qua Gluon đòi hỏi tương đối ít các dòng lệnh.
-Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm số mất mát, hay triển khai hạ gradient ngẫu nhiên.
-Lợi ích Gluon mang lại càng nhiều khi chúng ta làm với những mô hình càng phức tạp.
-Tuy nhiên, một khi ta nắm được rõ các điều cơ bản, vòng huấn luyện tự thân nó sẽ trông rất giống với những gì chúng ta tự thực hiện từ đầu.
+Bạn có thể thấy rằng việc thể hiện mô hình thông qua Gluon đòi hỏi tương đối ít các dòng lệnh.
+Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm mất mát hay lập trình thuật toán hạ gradient ngẫu nhiên.
+Lợi ích Gluon mang lại càng nhiều khi chúng ta bắt đầu làm việc với những mô hình phức tạp hơn.
+Tuy nhiên, một khi ta nắm được các mảnh ghép cơ bản, vòng lặp huấn luyện tự thân nó sẽ giống một cách ngạc nhiên với những gì chúng ta tự lập trình từ đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
 For each minibatch, we go through the following ritual:
 -->
 
-Để nhắc lại: cho một vài epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (train_data) bằng cách lấy theo từng minibatch của dữ liệu đầu vào cộng với các nhãn gốc tương ứng.
-Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự:
+Một số điều bạn cần nhớ: với mỗi epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (`train_data`) bằng cách lần lượt lấy từng minibatch của dữ liệu đầu vào và các nhãn gốc tương ứng.
+Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự sau:
 
 <!--
 * Generate predictions by calling `net(X)` and calculate the loss `l` (the forward pass).
@@ -327,15 +327,15 @@ For each minibatch, we go through the following ritual:
 * Update the model parameters by invoking our SGD optimizer (note that `trainer` already knows which parameters to optimize over, so we just need to pass in the minibatch size.
 -->
 
-*  Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (theo chiều thuận).
-* Tính gradient bằng cách gọi `l.backward()` (theo chiều ngược).
-* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu hoá SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên chúng ta chỉ cần truyền vô thêm kích thước của minibatch).
+* Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (lượt truyền xuôi).
+* Tính gradient bằng cách gọi `l.backward()` (lượt truyền ngược).
+* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên ta chỉ cần truyền thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
 -->
 
-Để có được độ đo lường chính xác, chúng ta tính sự mất mát sau mỗi epoch và in nó ra màn hình trong lúc thực thi. 
+Để có đánh giá chính xác, chúng ta tính mất mát sau mỗi epoch và in nó ra màn hình để giám sát tiến trình. 
 ```{.python .input  n=10}
 num_epochs = 3
 for epoch in range(1, num_epochs + 1):
@@ -359,10 +359,10 @@ To access each parameter's values as an `ndarray`, we invoke its `data` method.
 As in our from-scratch implementation, note that our estimated parameters are close to their ground truth counterparts.
 -->
 
-Dưới đây, chúng ta so sánh các tham số của mô hình đã học thông qua việc huấn luyện trên tập dữ liệu hữu hạn và các tham số thực sự tạo ra tập dữ liệu. 
-Để truy cập các tham số bằng Gluon, trước hết ta lấy tầng ta cần từ `net`, sau đó truy cập trọng số (`weight`) và hệ số điều chỉnh (`bias`) của tầng đó.
-Để truy cập giá trị mỗi tham số dưới dạng một mảng `ndarray`, ta sử dụng phương thức `data`.
-Giống như cách xây dựng từ đầu, các tham số ước lượng tìm được gần với giá trị chính xác của chúng.
+Dưới đây, ta so sánh các tham số của mô hình đã được học thông qua việc huấn luyện trên tập dữ liệu hữu hạn với các tham số được dùng để tạo ra tập dữ liệu. 
+Để truy cập các tham số trong Gluon, trước hết ta truy cập tầng ta quan tâm thông qua biến `net`, sau đó truy cập trọng số (`weight`) và hệ số điều chỉnh (`bias`) của tầng đó.
+Để truy cập giá trị tham số dưới dạng một mảng `ndarray`, ta sử dụng phương thức `data`.
+Giống với phiên bản lập trình từ đầu của chúng ta, các tham số ước lượng có giá trị gần với giá trị chính xác của chúng.
 
 ```{.python .input  n=12}
 w = net[0].weight.data()
