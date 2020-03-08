@@ -8,7 +8,8 @@
 #
 # Requres awscli is installed
 
-d2lbook build html
+# d2lbook build html
+docker run -i -v `pwd`:/d2l d2l
 
 set -ex
 
