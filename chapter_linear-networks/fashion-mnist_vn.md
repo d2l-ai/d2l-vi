@@ -239,7 +239,7 @@ Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu 
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Fashion-MNIST is an apparel classification dataset consisting of images representing 10 categories.
@@ -308,4 +308,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 *
-
