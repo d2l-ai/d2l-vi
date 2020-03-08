@@ -148,7 +148,7 @@ As we increase the amount of data, the probability that the fraction of heads wi
 ### Statistical Learning Theory
 -->
 
-### Lý thuyết Thống kê
+### Lý thuyết Học Thống kê
 
 <!--
 Since generalization is the fundamental problem in machine learning, you might not be surprised to learn 
@@ -171,7 +171,7 @@ This means that the process that samples our data has no *memory*.
 The $2^{\mathrm{nd}}$ example drawn and the $3^{\mathrm{rd}}$ drawn are no more correlated than the $2^{\mathrm{nd}}$ and the $2$-millionth sample drawn.
 -->
 
-Trong một *thiết lập chuẩn cho học có giám sát*, thứ mà ta vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d).
+Trong một *thiết lập chuẩn cho học có giám sát* -- ta vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d).
 Điều này có nghĩa là quá trình lấy mẫu dữ liệu không hề có sự *ghi nhớ*.
 Mẫu lấy ra thứ hai và thứ ba cũng không liên quan gì với nhau hơn là mẫu lấy ra thứ hai và thứ hai triệu.
 
@@ -184,7 +184,7 @@ What if we are classifying the topics of Tweets.
 The news cycle would create temporal dependencies in the topics being discussed violating any assumptions of independence.
 -->
 
-Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản biện, ...?
+Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản biện, và có lẽ bạn đã có thể "bóc mẽ" được giả sử này, có thể đưa ra các tình huống thường gặp mà giả sử này không thỏa mãn.
 Điều gì sẽ xảy ra nếu chúng ta huấn luyện một mô hình dự đoán tỉ lệ tử vong trên bộ dữ thu thập từ các bệnh nhân tại UCSF, và áp dụng nó trên các bệnh nhân tại Bệnh viện Đa khoa Massachusetts.
 Các phân phối này đơn giản là không giống nhau.
 Hơn nữa, việc lấy mẫu có thể có tương quan về mặt thời gian.
@@ -197,7 +197,7 @@ After all, nearly every real-world application involves at least some minor viol
 -->
 
 Đôi khi, chúng ta có thể bỏ qua một vài vi phạm nhỏ trong giả định i.i.d mà mô hình vẫn có thể làm việc rất tốt.
-Nói chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ,...
+Nói chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ, v.v.
 
 <!--
 Other violations are sure to cause trouble.
