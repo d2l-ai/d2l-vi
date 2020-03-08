@@ -606,8 +606,8 @@ Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \h
 These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
 -->
 
-Nhớ lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
-Một trong số đó là nó có đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$. 
+Nhắc lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
+Một trong số đó là nó có đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -615,8 +615,8 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *Gaussian*). 
-Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn chỉ đơn thuần là có chung cha đẻ.
+Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *phân phối Gauss*). 
+Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn việc chỉ đơn thuần là có chung cha đẻ.
 Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được cho bởi:
 
 $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).$$
@@ -657,7 +657,7 @@ d2l.plot(x, [normal(x, mu, sigma) for mu, sigma in parameters], xlabel='z',
 As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
 -->
 
-Có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, tăng giá trị phương sai sẽ trải rộng phân phối và làm giảm giá trị đỉnh của nó.
+Có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch chuyển phân phối dọc theo *trục x*, tăng giá trị phương sai sẽ trải rộng phân phối và hạ thấp đỉnh của nó.
 
 <!--
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
