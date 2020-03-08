@@ -282,8 +282,8 @@ the optimization algorithm we wish to use (`sgd`), and a dictionary of hyper-par
 SGD just requires that we set the value `learning_rate`, (here we set it to 0.03).
 -->
 
-Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa những mạng nơ-ron, vì vậy Gluon có hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainers` của nó.
-Khi khởi tạo lớp `Trainer`, ta cần chỉ định các tham số để tối ưu hóa (có thể lấy từ mạng của chúng ta thông qua `net.collect_params()`), thuật toán tối ưu muốn sử dụng (`sgd`) và một từ điển gồm các siêu tham số cần thiết cho thuật toán tối ưu.
+Minibatch SGD và các biến thể liên quan đều là các công cụ chuẩn cho việc tối ưu hóa mạng nơ-ron, vì vậy Gluon có hỗ trợ SGD cùng với một số biến thể của thuật toán này thông qua lớp `Trainer`.
+Khi khởi tạo lớp `Trainer`, ta cần chỉ định các tham số để tối ưu hóa (có thể lấy từ mạng thông qua `net.collect_params()`), thuật toán tối ưu muốn sử dụng (`sgd`) và một từ điển gồm các siêu tham số cần thiết cho thuật toán tối ưu.
 SGD chỉ yêu cầu giá trị của `learning_rate`, (ở đây chúng ta đặt nó bằng 0.03).
 
 ```{.python .input  n=9}
@@ -308,17 +308,17 @@ Once we start working with much more complex models, Gluon's advantages will gro
 However, once we have all the basic pieces in place, the training loop itself is strikingly similar to what we did when implementing everything from scratch.
 -->
 
-Bạn có thể thấy rằng việc thể hiện mô hình thông qua Gluon đòi hỏi tương đối ít các dòng lệnh.
-Chúng ta không cần phải phân bổ các tham số một cách riêng lẻ, định nghĩa hàm mất mát hay lập trình thuật toán hạ gradient ngẫu nhiên.
-Lợi ích Gluon mang lại càng nhiều khi chúng ta bắt đầu làm việc với những mô hình phức tạp hơn.
-Tuy nhiên, một khi ta nắm được các mảnh ghép cơ bản, vòng lặp huấn luyện tự thân nó sẽ giống một cách ngạc nhiên với những gì chúng ta tự lập trình từ đầu.
+Bạn có thể thấy rằng việc biểu diễn mô hình thông qua Gluon đòi hỏi tương đối ít dòng lệnh.
+Chúng ta không cần phải khởi tạo từng tham số riêng lẻ, định nghĩa hàm mất mát hay lập trình thuật toán hạ gradient ngẫu nhiên.
+Lợi ích mà Gluon mang lại sẽ rất lớn khi chúng ta bắt đầu làm việc với những mô hình phức tạp hơn.
+Tuy nhiên, một khi ta có các mảnh ghép cơ bản, vòng lặp huấn luyện lại rất giống với những gì ta đã làm khi lập trình mọi thứ từ đầu.
 
 <!--
 To refresh your memory: for some number of epochs, we will make a complete pass over the dataset (train_data), iteratively grabbing one minibatch of inputs and the corresponding ground-truth labels.
 For each minibatch, we go through the following ritual:
 -->
 
-Một số điều bạn cần nhớ: với mỗi epoch, chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (`train_data`) bằng cách lần lượt lấy từng minibatch của dữ liệu đầu vào và các nhãn gốc tương ứng.
+Nhắc lại rằng: với số lượng epoch nhất định, trong mỗi epoch chúng ta sẽ duyệt qua toàn bộ tập dữ liệu (`train_data`), lần lượt lấy từng minibatch chứa dữ liệu đầu vào và các nhãn gốc tương ứng.
 Đối với mỗi minibatch, chúng ta cần tuân thủ theo trình tự sau:
 
 <!--
@@ -329,13 +329,13 @@ Một số điều bạn cần nhớ: với mỗi epoch, chúng ta sẽ duyệt 
 
 * Đưa ra dự đoán bằng cách gọi `net(X)` và tính giá trị mất mát `l` (lượt truyền xuôi).
 * Tính gradient bằng cách gọi `l.backward()` (lượt truyền ngược).
-* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu SGD (chú ý rằng `trainer` đã biết được các tham số nào cần tối ưu, nên ta chỉ cần truyền thêm kích thước của minibatch).
+* Cập nhật các tham số của mô hình bằng cách gọi bộ tối ưu SGD (chú ý rằng `trainer` đã biết các tham số cần tối ưu, nên ta chỉ cần truyền thêm kích thước của minibatch).
 
 <!--
 For good measure, we compute the loss after each epoch and print it to monitor progress.
 -->
 
-Để có đánh giá chính xác, chúng ta tính mất mát sau mỗi epoch và in nó ra màn hình để giám sát tiến trình. 
+Ngoài ra, ta tính giá trị mất mát sau mỗi epoch và in nó ra màn hình để giám sát tiến trình. 
 ```{.python .input  n=10}
 num_epochs = 3
 for epoch in range(1, num_epochs + 1):
