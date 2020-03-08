@@ -512,7 +512,7 @@ In the following sections, we will describe additional models based on the conce
 
 Chúng ta đã thấy cách một mạng sâu có thể được triển khai và tối ưu hóa từ đầu chỉ với `ndarray` và `autograd`, mà không cần phải định nghĩa các tầng, các thuật toán tối ưu đặc biệt, v.v.
 Điều này chỉ mới chạm đến bề mặt của những gì mà ta có thể làm.
-Trong các phần sau, chúng tôi sẽ mô tả các mô hình bổ sung dựa trên các khái niệm vừa được giới thiệu và học cách triển khai chúng một cách chính xác hơn.
+Trong các phần sau, chúng tôi sẽ mô tả các mô hình bổ sung dựa trên những khái niệm vừa được giới thiệu cũng như cách triển khai chúng một cách chính xác hơn.
 
 <!--
 ## Exercises
@@ -535,7 +535,7 @@ Trong các phần sau, chúng tôi sẽ mô tả các mô hình bổ sung dựa 
 3. Bạn có thể sử dụng [Planck's Law](https://en.wikipedia.org/wiki/Planck%27s_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
 4. Bạn có thể gặp phải những vấn đề gì nếu bạn muốn mở rộng `autograd` đến các đạo hàm bậc hai? Bạn sẽ sửa chúng bằng cách nào?
 5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
-6. Thử nghiệm các tốc độ học khác nhau để xem giá trị hàm mất mát giảm nhanh đến mức nào.
+6. Thử nghiệm các tốc độ học (_learning rates_) khác nhau để xem giá trị hàm mất mát giảm nhanh đến mức nào.
 7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, điều gì sẽ xảy ra với hành vi của hàm `data_iter`?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
