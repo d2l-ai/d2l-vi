@@ -59,7 +59,7 @@ As always, we call `attach_grad` to allocate memory for the gradients (of the lo
 -->
 
 Chúng ta sẽ lại biễu diện các tham số bằng một vài `ndarray`.
-Lưu ý rằng *với mỗi tầng*, ta luôn có một ma trận trọng số và một vector hiệu chỉnh.
+Lưu ý rằng *với mỗi tầng*, ta luôn phải giữ một ma trận trọng số và một vector hiệu chỉnh.
 Và như mọi khi, ta gọi tới `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) tương ứng với các tham số này.
 
 ```{.python .input  n=3}
