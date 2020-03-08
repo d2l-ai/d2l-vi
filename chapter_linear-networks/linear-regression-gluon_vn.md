@@ -389,7 +389,7 @@ print('Error in estimating b', true_b - b)
 -->
 
 
-* Sử dụng Gluon giúp việc triển khai các mô hình ngắn gọn hơn rất nhiều.
+* Sử dụng Gluon giúp việc lập trình các mô hình trở nên ngắn gọn hơn rất nhiều.
 * Trong Gluon, mô-đun `data` cung cấp các công cụ để xử lý dữ liệu, mô-đun `nn` định nghĩa một lượng lớn các tầng cho mạng nơ-ron, và mô-đun `loss` cho phép ta thiết lập nhiều hàm mất mát phổ biến. 
 * Mô-đun `initializer` của MXNet cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
 * Kích thước và dung lượng lưu trữ của các tham số sẽ được suy ra một cách tự động (nhưng nên cẩn thận tránh truy cập các tham số trước khi chúng được khởi tạo).
