@@ -185,7 +185,7 @@ That said, with a large number of layers, this can still get messy (e.g., naming
 -->
 
 Chúng ta đã thấy việc triển khai một MLP đơn giản là dễ dàng, ngay cả khi phải làm thủ công.
-Tuy vậy, với một số lượng tầng lớn, cách này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, vân vân).
+Tuy vậy, với một số lượng tầng lớn, cách này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
 
 <!--
 ## Exercises
