@@ -265,7 +265,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                         | recall                                    |               |
 | recognition                    | nhận dạng                                 |               |
 | recurrent neural network       | mạng nơ-ron truy hồi                      |               |
-| rectified linear unit (ReLU) | đơn vị tuyến tính được chỉnh lưu|  |
+| rectified linear unit (ReLU) | đơn vị tuyến tính chỉnh lưu |  |
 | regressor                      | bộ hồi quy                                |               |
 | regularization                 | điều chuẩn                                |               |
 | reinforcement learning         | học tăng cường                            |               |
