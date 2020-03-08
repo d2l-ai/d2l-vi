@@ -275,7 +275,7 @@ But overfitting a dataset with millions of examples requires an extremely flexib
 -->
 
 1. Số lượng các thông số có thể điều chỉnh. Khi số lượng các thông số có thể điều chỉnh, đôi khi được gọi là *bậc tự do*, mà lớn thì các mô hình có xu hướng bị quá khớp.
-2.Các giá trị được nhận bởi các thông số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
+2. Các giá trị được nhận bởi các thông số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
 3. Số lượng các mẫu huấn luyện. Quá dễ để quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu kể cả khi mô hình đơn giản.
 Nhưng quá khớp một tập dữ liệu với vài triệu mẫu đòi hỏi mô hình phải cực kỳ linh hoạt.
 
