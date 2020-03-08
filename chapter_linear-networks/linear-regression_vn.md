@@ -607,7 +607,7 @@ These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} -
 -->
 
 Nhắc lại ở trên rằng hàm mất mát bình phương $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ có nhiều thuộc tính tiện lợi.
-Một trong số đó là nó có đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
+Việc nó có đạo hàm đơn giản $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$ là một trong số đó.
 
 <!--
 As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
@@ -615,8 +615,9 @@ It turns out that the connection between the normal distribution and linear regr
 To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
 -->
 
-Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795, ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *phân phối Gauss*). 
-Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính sâu hơn việc chỉ đơn thuần là có chung cha đẻ.
+Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss vào năm 1795. 
+Ông cũng là người khám phá ra phân phối chuẩn (còn được gọi là *phân phối Gauss*). 
+Hóa ra là mối liên hệ giữa phân phối chuẩn và hồi quy tuyến tính không chỉ dừng lại ở việc chúng có chung cha đẻ.
 Để gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$ được cho bởi:
 
 $$p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).$$
@@ -639,7 +640,7 @@ def normal(z, mu, sigma):
 We can now visualize the normal distributions.
 -->
 
-Giờ ta có thể biểu diễn các phân phối chuẩn. 
+Giờ ta có thể trực quan hóa các phân phối chuẩn. 
 
 ```{.python .input  n=2}
 # Mean and variance pairs
@@ -663,7 +664,7 @@ Có thể thấy rằng, thay đổi giá trị trung bình tương ứng với 
 One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
 -->
 
-Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, giá trị nhiễu này tuân theo phân phối chuẩn như sau: 
+Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, và giá trị nhiễu này tuân theo phân phối chuẩn như sau: 
 
 $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
@@ -671,7 +672,7 @@ $$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \ma
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
 -->
 
-Do đó, chúng ta có thể viết *khả năng* thu được một giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ thông qua
+Do đó, chúng ta có thể viết *khả năng* thu được một giá trị cụ thể của $y$ khi biết trước $\mathbf{x}$ là
 
 $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).$$
 
@@ -679,7 +680,7 @@ $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma
 Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
 -->
 
-Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những điểm giúp tối đa hóa *sự hợp lý* của bộ dữ liệu:
+Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những giá trị giúp tối đa hóa *sự hợp lý* của toàn bộ tập dữ liệu:
 
 $$P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).$$
 
@@ -692,10 +693,10 @@ Working out the math gives us:
 -->
 
 Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE). 
-Trong khi việc tối đa hóa tích của nhiều hàm mũ có thể gặp khó khăn, chúng ta có thể đơn giản hóa phép tính mà không làm ảnh hưởng tới mục đích đề ra bằng cách tối đa hóa log của hàm hợp lý.
+Dù việc tối đa hóa tích của nhiều hàm mũ trông có vẻ khó khăn, chúng ta có thể khiến mọi thứ đơn giản hơn nhiều mà không làm thay đổi mục tiêu ban đầu bằng cách tối đa hóa log của hàm hợp lý.
 Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa. 
-Vì vậy chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì. 
-Ta có: 
+Do đó chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì thêm. 
+Kết nối các công thức trên, ta có: 
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
 
@@ -711,11 +712,11 @@ Fortunately, the solution does not depend on $\sigma$.
 It follows that minimizing squared error is equivalent to maximum likelihood estimation of a linear model under the assumption of additive Gaussian noise.
 -->
 
-Bây giờ, ta chỉ cần thêm một giả định rằng: $\sigma$ là một hằng số cố định.
+Giờ ta chỉ cần thêm một giả định nữa: $\sigma$ là một hằng số cố định.
 Do đó, ta có thể bỏ qua số hạng đầu tiên bởi nó không phụ thuộc vào $\mathbf{w}$ hoặc $b$.
-Khi đó, số hạng thứ hai giống hệt hàm bình phương sai số đã được giới thiệu trên đây, nhưng với nhân tử hằng $\frac{1}{\sigma^2}$.
-May mắn là nghiệm không phụ thuộc vào $\sigma$.
-Điều này dẫn tới việc tối thiểu hóa bình phương sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình dưới giả định có nhiễu cộng Gauss.
+Còn số hạng thứ hai thì giống hệt hàm bình phương sai số đã được giới thiệu ở trên, nhưng được nhân thêm với hằng số $\frac{1}{\sigma^2}$.
+May mắn thay, nghiệm không phụ thuộc vào $\sigma$.
+Điều này dẫn tới việc tối thiểu hóa bình phương sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình tuyến tính dưới giả định có nhiễu cộng Gauss.
 
 <!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
 
