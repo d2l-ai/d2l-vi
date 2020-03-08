@@ -210,8 +210,7 @@ it is no longer possible to collapse our MLP into a linear model.
 chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến tính* theo phần tử $\sigma$
 để áp dụng lên từng nút ẩn
 (theo sau biến đổi tuyến tính).
-Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là đơn vị chỉnh lưu tuyến tính (ReLU)
-$\mathrm{max}(x, 0)$.
+Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là đơn vị chỉnh lưu tuyến tính (ReLU) $\mathrm{max}(x, 0)$.
 Nói chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể thu gọn MLP thành một mô hình tuyến tính nữa.
 
 $$
