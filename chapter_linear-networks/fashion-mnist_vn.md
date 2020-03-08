@@ -85,7 +85,7 @@ def get_fashion_mnist_labels(labels):
 We can now create a function to visualize these examples.
 -->
 
-Chúng ta có thể tạo một hàm để minh hoạ các ví dụ này. 
+Chúng ta có thể tạo một hàm để minh hoạ các mẫu này. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
