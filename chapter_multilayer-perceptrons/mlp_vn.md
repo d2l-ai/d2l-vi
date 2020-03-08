@@ -207,7 +207,7 @@ it is no longer possible to collapse our MLP into a linear model.
 -->
 
 Để nhận thấy rõ tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ áp dụng lên từng nút ẩn (theo sau biến đổi tuyến tính).
-Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến tính là đơn vị chỉnh lưu tuyến tính (ReLU) $\mathrm{max}(x, 0)$.
+Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến là đơn vị chỉnh lưu tuyến tính (ReLU) $\mathrm{max}(x, 0)$.
 Nói chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể thu gọn MLP thành một mô hình tuyến tính nữa.
 
 $$
@@ -237,7 +237,7 @@ The language, like any other modern language, is capable of expressing any compu
 But actually coming up with a program that meets your specifications is the hard part.
 -->
 
-Các MLP có thể biểu diễn được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn,  các nơ-ron ẩn này phụ thuộc vào giá trị của mỗi đầu vào.
+Các MLP có thể biểu diễn được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, các nơ-ron ẩn này phụ thuộc vào giá trị của mỗi đầu vào.
 Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện tính toán bất kỳ, ví dụ, các phép tính logic cơ bản lên một cặp đầu vào.
 Ngoài ra, với một số hàm kích hoạt cụ thể, các MLP được biết đến rộng rãi như là các bộ xấp xỉ vạn năng.
 Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách vô lý), và một tập các trọng số thích hợp, chúng ta có thể mô phỏng bất kỳ một hàm nào.
@@ -597,6 +597,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Duy Du
+* Vũ Hữu Tiệp
 
 <!-- Phần 4 -->
 *
