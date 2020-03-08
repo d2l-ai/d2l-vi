@@ -387,7 +387,7 @@ Since we previously set the batch size `batch_size` to $10$, the loss shape `l` 
 Trong mỗi vòng lặp, đầu tiên chúng ta sẽ lấy ra các minibatch dữ liệu và chạy nó qua mô hình để lấy ra tập kết quả dự đoán.
 Sau khi tính toán sự mất mát, chúng ta dùng hàm `backward` để bắt đầu lan truyền ngược qua mạng lưới, lưu trữ các gradient tương ứng với mỗi tham số trong từng thuộc tính `.grad` của chúng.
 Cuối cùng, chúng ta sẽ dùng thuật toán tối ưu `sgd` để cập nhật các tham số của mô hình.
-Từ đầu chúng ta đã đặt kích thước batch `batch_size` là $10$, vậy nên mất mát `I` cho mỗi minibatch có kích thước là ($10$,$1$).
+Từ đầu chúng ta đã đặt kích thước batch `batch_size` là $10$, vậy nên mất mát `l` cho mỗi minibatch có kích thước là ($10$,$1$).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -429,8 +429,8 @@ We elide these details for now but revise them later in :numref:`chap_optimizati
 
 Với mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch).
 Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ và $0.03$.
-Không may thay, việc lựa chọn siêu tham số thường không đơn giản và đòi hỏi một vài sự điều chỉnh bằng cách thử và sai.
-Bây giờ chúng ta sẽ bỏ qua những chi tiết này nhưng chúng ta sẽ xem lại chúng sau qua :numref:`chap_optimization`.
+Không may thay, việc lựa chọn siêu tham số thường không đơn giản và đòi hỏi sự điều chỉnh qua nhiều lần thử và sai.
+Hiện tại chúng ta sẽ bỏ qua những chi tiết này nhưng sẽ bàn lại về chúng tại chương :numref:`chap_optimization`.
 
 ```{.python .input  n=12}
 lr = 0.03  # Learning rate
@@ -462,7 +462,7 @@ Thus, we can evaluate our success in training by comparing the true parameters w
 Indeed they turn out to be very close to each other.
 -->
 
-Trong trường hợp này, bởi vì chúng ta đã tự tổng hợp dữ liệu nên chúng ta biết chính xác giá trị đúng của các tham số.
+Trong trường hợp này, bởi vì chúng ta tự tổng hợp dữ liệu nên đã biết chính xác giá trị đúng của các tham số.
 Vì vậy, chúng ta có thể đánh giá sự thành công của việc huấn luyện bằng cách so sánh giá trị đúng của các tham số với những giá trị học được thông qua quá trình huấn luyện. 
 Quả thật giá trị các tham số học được và giá trị chính xác của các tham số rất gần với nhau.  
 
@@ -483,12 +483,12 @@ Fortunately, even on difficult optimization problems, stochastic gradient descen
 owing partly to the fact that, for deep networks, there exist many configurations of the parameters that lead to accurate prediction.
 -->
 
-Lưu ý rằng chúng ta không nên thừa nhận có thể khôi phục giá trị của các tham số một cách chính xác. 
+Lưu ý là chúng ta không nên ngộ nhận khi cho rằng giá trị của các tham số có thể được khôi phục một cách chính xác. 
 Điều này chỉ xảy ra với một số bài toán đặc biệt: các bài toán tối ưu lồi chặt với lượng dữ liệu "đủ" để đảm bảo rằng các mẫu nhiễu vẫn cho phép chúng ta khôi phục được các tham số.
 Trong hầu hết các trường hợp, điều này *không* xảy ra.
 Trên thực tế, các tham số của một mạng học sâu hiếm khi giống nhau (hoặc thậm chí gần nhau) giữa hai lần chạy khác nhau, trừ khi tất cả các điều kiện đều giống hệt nhau, bao gồm cả thứ tự mà dữ liệu được duyệt qua.
 Tuy nhiên, trong học máy, chúng ta thường ít quan tâm đến việc khôi phục chính xác giá trị của các tham số, mà quan tâm nhiều hơn đến bộ tham số nào sẽ dẫn tới việc dự đoán chính xác hơn. 
-May mắn thay, thậm chí với những bài toán tối ưu khó, giải thuật hạ gradient ngẫu nhiên thường có thể tìm ra các lời giải đủ tốt, do một thực tế là, đối với các mạng học sâu, có thể tồn tại nhiều bộ tham số dẫn đến việc dự đoán chính xác. 
+May mắn thay, thậm chí với những bài toán tối ưu khó, giải thuật hạ gradient ngẫu nhiên thường có thể tìm ra các lời giải đủ tốt, do một thực tế là đối với các mạng học sâu, có thể tồn tại nhiều bộ tham số dẫn đến việc dự đoán chính xác. 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
