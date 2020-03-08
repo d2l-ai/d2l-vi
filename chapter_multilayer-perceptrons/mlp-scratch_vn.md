@@ -141,14 +141,15 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Fortunately, the training loop for MLPs is exactly the same as for softmax regression.
 Leveraging the `d2l` package again, we call the `train_ch3` function (see :numref:`sec_softmax_scratch`), setting the number of epochs to $10$ and the learning rate to $0.5$.
 -->
 
-*dịch đoạn phía trên*
+Thật may, quá trình huấn luyện lặp của MLPs giống hệt với hồi quy softmax.
+Tận dụng gói `d2l`, ta gọi hàm `train_ch3` (xem :numref:`sec_softmax_scratch`), đặt số epoch bằng $10$ và tốc độ học bằng $0.5$
 
 ```{.python .input  n=7}
 num_epochs, lr = 10, 0.5
@@ -160,7 +161,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
 To evaluate the learned model, we apply it on some test data.
 -->
 
-*dịch đoạn phía trên*
+Để đánh giá mô hình học được, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
 
 ```{.python .input}
 d2l.predict_ch3(net, test_iter)
@@ -170,7 +171,7 @@ d2l.predict_ch3(net, test_iter)
 This looks a bit better than our previous result, using simple linear models and gives us some signal that we are on the right path.
 -->
 
-*dịch đoạn phía trên*
+Kết quả này tốt hơn một chút so với những kết quả trước đây khi các mô hình tuyến tính được sử dụng, và điều này cho thấy chúng ta đang đi đúng hướng.
 
 <!--
 ## Summary
@@ -183,7 +184,8 @@ We saw that implementing a simple MLP is easy, even when done manually.
 That said, with a large number of layers, this can still get messy (e.g., naming and keeping track of our model's parameters, etc).
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã thấy việc triển khai một MLP đơn giản là dễ dàng, ngay cả khi phải làm thủ công.
+Tuy vậy, với một số lượng tầng lớn, cách này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
 
 <!--
 ## Exercises
@@ -200,7 +202,12 @@ That said, with a large number of layers, this can still get messy (e.g., naming
 6. What is the smartest strategy you can think of for structuring a search over multiple hyperparameters?
 -->
 
-*dịch đoạn phía trên*
+1. Thay đổi giá trị của siêu tham số `num_hiddens` và xem siêu tham số này ảnh hưởng như thế nào tới kết quả của bạn. Giữ các siêu tham số khác không đổi, xác định giá trị tốt nhất của siêu tham số này.
+2. Thử nghiệm thêm vào một tầng ẩn để xem nó ảnh hưởng như thế nào tới kết quả.
+3. Thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả của bạn? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho bạn kết quả tốt nhất?
+4. Kết quả tốt nhất mà bạn có thể nhận được bằng cách tối ưu hóa tất cả các tham số (tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng) cùng nhau?
+5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại khó khăn hơn nhiều.
+6. Chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm trên nhiều siêu tham số?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -229,10 +236,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* 
 
 <!-- Phần 2 -->
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
