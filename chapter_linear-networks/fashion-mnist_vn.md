@@ -250,7 +250,7 @@ Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu 
 
 * Fashion-MNIST là một bộ dữ liệu phân loại trang phục bao gồm các hình ảnh đại diện cho 10 danh mục. 
 * Chúng ta sẽ sử dụng bộ dữ liệu này trong các mục và chương tiếp theo để đánh giá các thuật toán phân loại khác nhau. 
-* Chúng ta lưu trữ kích thước của mỗi hình ảnh với chiều cao $h$ (_height_) chiều rộng $w$ (_width_) pixels dưới dạng $h \times w$ hoặc `(h, w)`.
+* Chúng ta lưu trữ kích thước của mỗi hình ảnh với chiều cao $h$ (_height_) và chiều rộng $w$ (_width_) điểm ảnh (_pixel_) dưới dạng $h \times w$ hoặc `(h, w)`.
 * Iterator dữ liệu là nhân tố chính để đạt được hiệu suất cao. Các iterator được triển khai tốt bằng kỹ thuật khai thác đa luồng sẽ tránh làm chậm các vòng lặp huấn luyện của bạn. 
 
 <!--
