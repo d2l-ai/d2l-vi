@@ -117,12 +117,11 @@ The situation is similar to coding up your own blog from scratch.
 Doing it once or twice is rewarding and instructive, but you would be a lousy web developer if every time you needed a blog you spent a month reinventing the wheel.
 -->
 
-Khi ta lập trình hồi quy tuyến tính từ đầu (in :numref`sec_linear_scratch`),
-ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình để tạo đầu ra từ các phép toán đại số tuyến tính cơ bản.
+Khi ta lập trình hồi quy tuyến tính từ đầu (trong :numref`sec_linear_scratch`), ta đã định nghĩa rõ ràng các tham số của mô hình và lập trình các tính toán cho giá trị đầu ra sử dụng các phép toán đại số tuyến tính cơ bản.
 Bạn *nên* biết cách để làm được điều này.
-Nhưng một khi mô hình trở nên phức tạp hơn, đồng thời bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
+Nhưng một khi mô hình trở nên phức tạp hơn và đồng thời khi bạn phải làm điều này gần như hàng ngày, bạn sẽ thấy vui mừng khi có sự hỗ trợ từ các thư viện.
 Tình huống này tương tự như việc lập trình blog của riêng bạn lại từ đầu.
-Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web tồi nếu mỗi lần viết blog bạn lại dành ra cả một tháng chỉ để phát triển lại từ đầu.
+Làm điều này một hoặc hai lần thì sẽ bổ ích và mang tính hướng dẫn, nhưng bạn sẽ trở thành một nhà phát triển web "khó ở" nếu mỗi khi cần một trang blog bạn lại phải dành ra cả một tháng chỉ để phát triển lại từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -138,13 +137,13 @@ In the following example, our model consists of only one layer, so we do not rea
 But since nearly all of our future models will involve multiple layers, we will use it anyway just to familiarize you with the most standard workflow.
 -->
 
-Đối với những phép toán chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc ta phải tập trung vào việc triển khai.
-Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa được một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của neural network).
-Đầu tiên ta sẽ định nghĩa một biến mẫu là `net`, tham chiếu đến một hiện thân của class `Sequential`.
-Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng liên kết với nhau.
-Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu, từ đó lần lượt xuất ra và trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
-Trong ví dụ mẫu trên, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
-Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình tiêu chuẩn nhất.
+Đối với những tác vụ tiêu chuẩn, chúng ta có thể sử dụng các tầng đã được định nghĩa trước trong Gluon, điều này cho phép chúng ta tập trung vào những tầng được dùng để xây dựng mô hình hơn là việc phải tập trung vào cách lập trình các tầng đó.
+Để định nghĩa một mô hình tuyến tính, đầu tiên chúng ta cần nhập vào mô-đun `nn`, giúp ta định nghĩa một lượng lớn các tầng trong mạng nơ-ron (lưu ý rằng "nn" là chữ viết tắt của "neural network").
+Đầu tiên ta sẽ định nghĩa một biến mô hình là `net`, tham chiếu đến một thực thể của lớp `Sequential`.
+Trong Gluon, `Sequential` định nghĩa một lớp chứa nhiều tầng được liên kết với nhau.
+Khi nhận được dữ liệu đầu vào, `Sequential` sẽ truyền dữ liệu vào tầng đầu tiên, kết quả đầu ra từ đó trở thành đầu vào của tầng thứ hai và cứ tiếp tục như thế ở các tầng kế tiếp.
+Trong ví dụ tiếp theo, mô hình chúng ta chỉ có duy nhất một tầng, vì vậy không nhất thiết phải sử dụng `Sequential`.
+Tuy nhiên vì hầu hết các mô hình chúng ta gặp phải trong tương lai đều có nhiều tầng, do đó dù sao cũng nên dùng để làm quen với quy trình làm việc tiêu chuẩn nhất.
 
 ```{.python .input  n=5}
 from mxnet.gluon import nn
@@ -159,14 +158,14 @@ Since we only want to generate a single scalar output, we set that number to $1$
 -->
 
 Hãy cùng nhớ lại kiến trúc của mạng đơn tầng như đã trình bày tại :numref:`fig_singleneuron`.
-Tầng được gọi là *kết nối đầy đủ* do mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
-Trong Gluon, tầng có kết nối đầy đủ được định nghĩa trong class `Dense`.
+Tầng đó được gọi là *kết nối đầy đủ* bởi vì mỗi đầu vào được kết nối lần lượt với từng đầu ra bằng một phép nhân ma trận với vector.
+Trong Gluon, tầng kết nối đầy đủ được định nghĩa trong lớp `Dense`.
 Bởi vì chúng ta chỉ mong xuất ra một số vô hướng duy nhất, nên ta gán giá trị là $1$.
 <!--
 ![Linear regression is a single-layer neural network.](../img/singleneuron.svg)
 -->
 
-![Hồi quy tuyến tính là một mạng nơ ron đơn tầng.](../img/singleneuron.svg)
+![Hồi quy tuyến tính là một mạng nơ-ron đơn tầng.](../img/singleneuron.svg)
 :label:`fig_singleneuron`
 
 ```{.python .input  n=6}
@@ -181,11 +180,10 @@ When we first try to pass data through our model, e.g., when we execute `net(X)`
 We will describe how this works in more detail in the chapter "Deep Learning Computation".
 -->
 
-Để thuận tiện, điều đáng chú ý là
-Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
+Để thuận tiện, điều đáng chú ý là Gluon không yêu cầu chúng ta chỉ định kích thước đầu vào mỗi tầng.
 Nên tại đây, chúng ta không cần thiết cho Gluon biết có bao nhiêu đầu vào cho mỗi tầng tuyến tính.
-Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net (X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi lớp.
-Chúng ta sẽ mô tả điều này hoạt động như thế nào một cách chi tiết hơn trong chương "Tính toán trong Học sâu" sau.
+Khi chúng ta cố gắng truyền dữ liệu qua mô hình lần đầu tiên, ví dụ: khi chúng ta thực hiện `net(X)` sau đó, Gluon sẽ tự động suy ra số lượng đầu vào cho mỗi tầng.
+Chúng ta sẽ mô tả cách hoạt động của cơ chế này một cách chi tiết hơn trong chương "Tính toán trong Học sâu".
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
