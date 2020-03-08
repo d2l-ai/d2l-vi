@@ -425,7 +425,7 @@ Since this is just a linear regression problem, we can use the squared error as 
 
 để ước tính nhãn $y$.
 Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, khi $x^0=1$ với mọi $x$ thì $w_0$ là hệ số điều chỉnh.
-Vì đây là bài toán hồi quy tuyến tính, ta có thể sử dụng phương pháp bình phương sai số làm hàm mất mát.
+Vì đây là bài toán hồi quy tuyến tính, ta có thể sử dụng bình phương sai số làm hàm mất mát.
 
 <!--
 A higher-order polynomial function is more complex than a lower order polynomial function, since the higher-order polynomial has more parameters and the model function’s selection range is wider.
@@ -435,15 +435,15 @@ We visualize the relationship between polynomial degree and under- vs over-fitti
 -->
 
 Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số rộng hơn.
-Trong quá trình tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
-Trong thực tế, với mỗi điểm dữ liệu $x$ có giá trị phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện.
-Ta nhắc lại mối quan hệ giữa bậc của đa thức và dưới khớp với quá khới trong :numref:`fig_capacity_vs_error`.
+Cố định tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
+Trong thực tế, với mỗi tập dữ liệu có các giá trị $x$ phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện.
+Mối quan hệ giữa bậc của đa thức và dưới khớp với quá khớp trong :numref:`fig_capacity_vs_error`.
 
 <!--
 ![Influence of Model Complexity on Underfitting and Overfitting](../img/capacity_vs_error.svg)
 -->
 
-![Ảnh hưởng của Độ phức tạp Mô hình lên việc huấn luyện Dưới khớp và Quá khớp](../img/capacity_vs_error.svg)
+![Ảnh hưởng của Độ phức tạp Mô hình tới Dưới khớp và Quá khớp](../img/capacity_vs_error.svg)
 :label:`fig_capacity_vs_error`
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -471,12 +471,12 @@ In part, the current success of deep learning owes to the current abundance of m
 Một lưu ý quan trọng khác cần ghi nhớ là kích thước tập dữ liệu.
 Trong quá trình chỉnh sửa mô hình, tập dữ liệu có càng ít mẫu, càng có nhiều khả năng (và nghiêm trọng hơn) gặp phải tình trạng quá khớp.
 Khi số lượng dữ liệu tăng lên, lỗi khái quát sẽ có xu hướng giảm.
-Hơn nữa, trong hầu hết các trường hợp, càng nhiều dữ liệu thì không bao giờ gọi là thừa.
+Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu thì không bao giờ là thừa.
 Đối với nhiệm vụ cố định và *phân phối* dữ liệu, thường có mối quan hệ giữa độ phức tạp và kích thước tập dữ liệu.
 Khi có nhiều dữ liệu, ta sẽ có lợi khi cố gắng đưa nó vào một mô hình phức tạp hơn.
 Khi dữ liệu không quá nhiều, mô hình đơn giản hơn sẽ là lựa chọn tốt hơn.
-Đối với nhiều nhiệm vụ, học sâu chỉ tốt hơn các mô hình tuyến tính khi có sẵn hàng ngàn mẫu huấn luyện.
-Sự thành công hiện nay của học sâu phần nào dựa vào sự phong phú của các tập dữ liệu khổng lồ do các công ty internet, lưu trữ giá rẻ, các thiết bị kết nối và việc số hóa rộng rãi của nền kinh tế cung cấp.
+Đối với nhiều tác vụ, học sâu chỉ tốt hơn các mô hình tuyến tính khi có sẵn hàng ngàn mẫu huấn luyện.
+Sự thành công hiện nay của học sâu phần nào dựa vào sự phong phú của các tập dữ liệu khổng lồ từ các công ty internet, thiết bị lưu trữ giá rẻ, các thiết bị kết nối và việc số hóa rộng rãi của nền kinh tế.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
