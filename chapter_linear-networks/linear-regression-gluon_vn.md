@@ -208,13 +208,13 @@ The *bias* parameter will be initialized to zero by default.
 Both the weight vector and bias will have attached gradients.
 -->
 
-Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và độ chệch trong mô hồi quy tuyến tính.
+Trước khi sử dụng `net`, chúng ta cần phải khởi tạo tham số cho mô hình, chẳng hạn như trọng số và hệ số điều chỉnh trong mô hình hồi quy tuyến tính.
 Chúng ta sẽ nhập mô-đun `initializer` từ MXNet.
 Mô-đun này cung cấp nhiều phương thức khác nhau để khởi tạo tham số cho mô hình.
 Gluon cho phép dùng `init` như một cách ngắn gọn (viết tắt) để truy cập đến gói `initializer`.
-Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các `trọng số` từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
-Mặc định, tham số *độ chệch* sẽ được khởi tạo bằng không.
-Cả hai vector trọng số và độ chệch sẽ có gradient kèm theo.
+Bằng cách gọi `init.Normal(sigma=0.01)`, chúng ta sẽ khởi tạo ngẫu nhiên các *trọng số* từ một phân phối chuẩn với trung bình bằng $0$ và độ lệch chuẩn bằng $0.01$.
+Mặc định, tham số *hệ số điều chỉnh* sẽ được khởi tạo bằng không.
+Cả hai vector trọng số và hệ số điều chỉnh sẽ có gradient kèm theo.
 
 ```{.python .input  n=7}
 from mxnet import init
@@ -230,10 +230,10 @@ The real initialization will take place only when we for the first time attempt 
 Just be careful to remember that since the parameters have not been initialized yet, we cannot access or manipulate them.
 -->
 
-Đoạn mã nguồn trên trông khá trực quan nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
-Chúng ta khởi tạo các tham số cho một mạng mà thậm chi Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
+Đoạn mã nguồn trên trông khá đơn giản nhưng bạn đọc hãy chú ý một vài điểm khác thường ở đây.
+Chúng ta khởi tạo các tham số cho một mạng mà thậm chí Gluon chưa hề biết số chiều của đầu vào là bao nhiêu!
 Nó có thể là $2$ trong trường hợp của chúng ta nhưng cũng có thể là $2000$.
-Gluon khiến chúng ta không cần bận tâm về điều này bởi ở phía sau bức màn, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
+Gluon khiến chúng ta không cần bận tâm về điều này bởi ở hậu trường, quá trình khởi tạo thực sự vẫn đang bị *trì hoãn*.
 Quá trình khởi tạo thực sự chỉ bắt đầu khi chúng ta truyền dữ liệu vào mạng lần đầu tiên.
 Hãy ghi nhớ rằng, do các tham số chưa thực sự được khởi tạo, chúng ta không thể truy cập hoặc thao tác với chúng.
 
@@ -255,7 +255,7 @@ In this example, we will use the Gluon implementation of squared loss (`L2Loss`)
 
 Trong Gluon, mô-đun `loss` định nghĩa các hàm mất mát khác nhau.
 Chúng ta sẽ sử dụng mô-đun `loss` được thêm vào dưới tên gọi là `gloss`, để tránh nhầm lẫn nó với biến đang giữ hàm mất mát mà ta đã chọn.
-Trong ví dụ này, chúng ta sẽ sử dụng triển khai Gluon của mất mát bình phương (`L2Loss`).
+Trong ví dụ này, chúng ta sẽ sử dụng triển khai trong Gluon của mất mát bình phương (`L2Loss`).
 
 ```{.python .input  n=8}
 from mxnet.gluon import loss as gloss
