@@ -5,7 +5,7 @@
 # Concise Implementation of Multilayer Perceptron
 -->
 
-# Triển khai súc tích của Mạng nơron Perceptron Đa tầng
+# Triển khai súc tích của Mạng Perceptron Đa tầng
 :label:`sec_mlp_gluon`
 
 <!--
@@ -34,9 +34,9 @@ The first is our hidden layer, which contains *256* hidden units and applies the
 The second, is our output layer.
 -->
 
-So với việc dùng gluon để lập trình hồi quy softmax (:numref:`sec_softmax_gluon`), khác biệt duy nhất ở đây là ta thêm *hai* tầng `Dense` (kết nối đầy đủ) (trong khi trước đây, ta chỉ cần thêm *một*). 
+So với việc dùng gluon để lập trình hồi quy softmax (:numref:`sec_softmax_gluon`), khác biệt duy nhất ở đây là ta thêm *hai* tầng `Dense` (kết nối đầy đủ). (trong khi trước đây, ta chỉ cần thêm *một*). 
 Đầu tiên là tầng ẩn, chứa *256* nút ẩn và được áp dụng hàm kích hoạt ReLU.
-Thứ hai, là tầng đầu ra của ta.
+Thứ hai là tầng đầu ra của ta.
 
 ```{.python .input  n=5}
 net = nn.Sequential()
@@ -49,7 +49,7 @@ net.initialize(init.Normal(sigma=0.01))
 Note that Gluon, as usual, automatically infers the missing input dimensions to each layer.
 -->
 
-Lưu ý rằng, như thường lệ, Gluon sẽ tự động đưa vào số chiều đầu vào bị thiếu cho mỗi tầng.
+Lưu ý rằng, như thường lệ, Gluon sẽ tự động suy ra số chiều đầu vào bị thiếu cho mỗi tầng.
 
 <!--
 The training loop is *exactly* the same as when we implemented softmax regression.
@@ -57,7 +57,7 @@ This modularity enables us to separate matterns concerning the model architectur
 -->
 
 Quá trình lặp để huấn luyện giống *chính xác* với những gì khi ta lập trình hồi quy softmax.
-Lập trình mô-đun này cho phép ta tách các mô hình riêng biệt liên quan đến kiến trúc của mô hình ra để xem xét trực tiếp.
+Lập trình hướng mô-đun như vầy cho phép ta tách các chi tiết liên quan đến kiến trúc của mô hình ra khỏi các mối bận tâm chính.
 
 ```{.python .input  n=6}
 batch_size, num_epochs = 256, 10
