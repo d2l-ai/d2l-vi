@@ -94,7 +94,7 @@ This approach is doomed to fail in a world where inverting an image preserves th
 -->
 
 Nhưng còn với bài toán phân loại hình ảnh chó mèo thì sao?
-Có nên tăng cường độ điểm ảnh tại vị trí (13,17) luôn tăng (hoặc luôn giảm) hợp lí để hình ảnh mô tả một con chó?
+Có nên tăng cường độ sáng của điểm ảnh tại vị trí (13, 17) luôn tăng (hoặc luôn giảm) để khả năng hình ảnh mô tả là một con chó?
 Sự phụ thuộc vào mô hình tuyến tính tương ứng với giả định (bao hàm) rằng yêu cầu duy nhất cho sự khác nhau giữa chó và mèo là đánh giá độ sáng của từng điểm ảnh cụ thể. 
 Cách tiếp cận này chắc chắn sẽ bị sai khi các hình ảnh bị đảo ngược màu sắc.
 
