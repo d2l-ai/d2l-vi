@@ -131,6 +131,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) |                                              |
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
 | generalization error | lỗi khái quát | |
+| generalization gap | khoảng cách khái quát | |
+| generalization loss | mất mát khái quát | |
 | generative model               | mô hình sinh                      |                                              |
 | generative adversarial network | mạng đối sinh                     |                                              |
 | global maximum | giá trị lớn nhất | |
