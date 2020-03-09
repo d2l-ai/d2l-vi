@@ -252,7 +252,7 @@ In this example, we’ll implement an MLP with two hidden layers and one output 
 -->
 
 Hơn nữa, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
-Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng các mạng sâu hơn (hoặc rộng hơn).
+Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng các mạng sâu hơn (thay vì rộng hơn).
 Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy lập trình một MLP.
 Trong ví dụ này, chúng ta sẽ triển khai một MLP với hai tầng ẩn và một tầng đầu ra.
 
