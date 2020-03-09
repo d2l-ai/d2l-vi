@@ -144,7 +144,7 @@ Dưới đây, chúng tôi mô tả sơ đồ MLP (:numref:`fig_nlp`).
 ![Multilayer perceptron with hidden layers. This example contains a hidden layer with 5 hidden units in it. ](../img/mlp.svg)
 -->
 
-![Perceptron đa tầng với các tầng ẩn. Ví dụ này chứa một tầng ẩn với 5 đơn vị ẩn trong đó.](../img/mlp.svg)
+![Perceptron đa tầng với các tầng ẩn. Ví dụ này chứa một tầng ẩn với 5 nút ẩn trong đó.](../img/mlp.svg)
 :label:`fig_nlp`
 
 <!--
