@@ -82,7 +82,7 @@ Lưu ý rằng chúng ta có thể dễ dàng đưa ra các ví dụ vi phạm *
 Ví dụ như, ta muốn dự đoán xác suất tử vong của một người dựa trên thân nhiệt.
 Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ càng cao cho thấy nguy cơ tử vong cao hơn.
 Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, thì nhiệt độ cao hơn thì nguy cơ tử vong *thấp hơn*!
-Trong trường hợp này cũng vậy, chúng ta cần phải giải quyết các vấn đề với một số tiền xử lý.
+Tương tự như trong bài toán này, ta có thể giải quyết nó bằng một vài bước tiền xử lý thật khéo léo.
 Cụ thể, có thể sử dụng *khoảng cách* từ 37°C làm đặc tính.
 
 
