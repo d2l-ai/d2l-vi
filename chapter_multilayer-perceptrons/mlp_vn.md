@@ -107,7 +107,7 @@ we simply do not know how to calculate it by hand.
 With deep neural networks, we used observational data to jointly learn both a representation (via hidden layers) and a linear predictor that acts upon that representation.
 -->
 
-Tuy nhiên, bất chấp những phi lý tuyến tính, so với các ví dụ trước, rõ ràng là chúng ta có thể giải quyết vấn đề bằng việc chỉnh sửa tiền xử lý đơn giản.
+Tuy nhiên, ta bỏ qua sự phi lý của tuyến tính ở đây, so với các ví dụ trước, rõ ràng là ta không thể giải quyết bài toán này với vài bước tiền xử lý chỉnh sửa đơn giản.
 Bởi vì ý nghĩa của các điểm ảnh phụ thuộc vào bối cảnh xung quanh nó một cách phức tạp (các giá trị xung quanh của điểm ảnh).
 Mặc dù có thể tồn tại một mô tả cho dữ liệu của chúng ta sẽ tính đến các tương tác có liên quan giữa các tính năng của (và trên hết là các mô hình tuyến tính sẽ phù hợp),
 chúng ta đơn giản là không biết làm thế nào để tính toán thủ công.
