@@ -284,8 +284,8 @@ At other times, we are comparing members of the same class of models that have b
 
 Trong học máy, ta thường lựa chọn mô hình cuối cùng sau khi cân nhắc nhiều mô hình ứng viên.
 Quá trình này được gọi là lựa chọn mô hình.
-Đôi khi các mô hình chủ thể được đem ra so sánh khác nhau cơ bản về mặt bản chất (ví như, cây quyết định với các mô hình tuyến tính).
-Khi khác, ta thường so sánh các thành viên của cùng một lớp mô hình mà được huấn luyện với các cài đặt siêu tham số khác nhau.
+Đôi khi các mô hình được đem ra so sánh khác nhau cơ bản về mặt bản chất (ví như, cây quyết định với các mô hình tuyến tính).
+Khi khác, ta lại so sánh các thành viên của cùng một lớp mô hình được huấn luyện với các cài đặt siêu tham số khác nhau.
 
 <!--
 With multilayer perceptrons for example, we may wish to compare models with different numbers of hidden layers, 
@@ -293,8 +293,8 @@ different numbers of hidden units, and various choices of the activation functio
 In order to determine the best among our candidate models, we will typically employ a validation set.
 -->
 
-Cho perceptron đa tầng làm ví dụ, ta mong muốn so sánh mô hình với số lượng tầng ẩn khác nhau,
-số lượng nút ẩn khác nhau, và lựa chọn đa dạng về kích hoạt chức năng áp dụng vào từng tầng ẩn.
+Lấy perceptron đa tầng làm ví dụ, ta mong muốn so sánh các mô hình với số lượng tầng ẩn khác nhau,
+số lượng nút ẩn khác nhau, và các lựa chọn hàm kích hoạt khác nhau áp dụng vào từng tầng ẩn.
 Để xác định được mô hình tốt nhất trong các mô hình ứng viên, ta thường sử dụng một tập kiểm định.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -305,7 +305,7 @@ số lượng nút ẩn khác nhau, và lựa chọn đa dạng về kích hoạ
 ### Validation Dataset
 -->
 
-### Tập Dữ Liệu Kiểm Định
+### Tập Dữ liệu Kiểm định
 
 <!--
 In principle we should not touch our test set until after we have chosen all our hyper-parameters.
@@ -315,10 +315,10 @@ If we overfit our training data, there is always the evaluation on test data to 
 But if we overfit the test data, how would we ever know?
 -->
 
-Về nguyên tắc là không nên chạm vào tập kiểm tra cho đến khi chọn được tất cả các siêu tham số.
-Ta đã sử dụng dữ liệu kiểm tra trong quy trình lựa chọn mô hình, rủi ro là ta có thể quá khớp dữ liệu kiểm tra.
+Về nguyên tắc, ta không nên sử dụng vào tập kiểm tra cho đến khi chọn được tất cả các siêu tham số.
+Nếu sử dụng dữ liệu kiểm tra trong quá trình lựa chọn mô hình, có một rủi ro là ta có thể quá khớp dữ liệu kiểm tra.
 Và rồi rắc rối nghiêm trọng sẽ xảy ra.
-Nếu quá khớp dữ liệu huấn luyện, luôn có đánh giá về dữ liệu kiểm tra để luôn giữ trung thực.
+Nếu quá khớp dữ liệu huấn luyện, ta luôn có thể đánh giá mô hình trên tập kiểm tra để đảm bảo mình "trung thực".
 Nhưng nếu quá khớp trên dữ liệu kiểm tra, làm sao chúng ta có thể biết được?
 
 
@@ -343,7 +343,7 @@ While ideally we would only touch the test data once, to assess the very best mo
 We can seldom afford a new test set for each round of experiments.
 -->
 
-Trong các ứng dụng thực tế, hình ảnh trở nên mập mờ hơn.
+Trong các ứng dụng thực tế, bức tranh trở nên mập mờ hơn.
 Mặc dù lý tưởng là khi ta chỉ chạm đến dữ liệu kiểm tra một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi loại bỏ chỉ sau một lần sử dụng. 
 Ta hiếm khi đủ khả năng cho một tập kiểm tra mới sau mỗi vòng thử nghiệm. 
 
