@@ -112,7 +112,6 @@ Bởi vì ý nghĩa của các điểm ảnh phụ thuộc vào bối cảnh xun
 Mặc dù có thể tồn tại một biểu diễn nào đó cho dữ liệu giải thích về sự tương tác giữa các đặc trưng có liên quan (và trên hết sẽ phù hợp với mô hình tuyến tính), đơn giản là ta không biết làm thế nào để tính toán thủ công.
 Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát được để cùng học một biểu diễn (thông qua các tầng ẩn) và một công cụ dự đoán tuyến tính hoạt động dựa trên biểu diễn đó.
 
-
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
 <!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU =================================== -->
