@@ -186,7 +186,7 @@ Hơn nữa, mô hình tuyến tính của chúng ta vốn dĩ đã có khả nă
 We can view the equivalence formally by proving that for any values of the weights, we can just collapse out the hidden layer, yielding an equivalent single-layer model with paramters
 -->
 
-Ta có thể thấy sự tương đương về mặt hình thức bằng cách chứng minh rằng với mọi giá trị của các trọng số, ta đều có thể loại bỏ tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
+Ta có thể thấy sự tương đồng về mặt hình thức bằng cách chứng minh rằng với mọi giá trị của các trọng số, ta đều có thể loại bỏ tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
 
 $\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ và $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
