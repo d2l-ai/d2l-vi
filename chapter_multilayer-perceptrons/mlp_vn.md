@@ -133,7 +133,7 @@ Below, we depict an MLP diagramtically (:numref:`fig_nlp`).
 
 Ta có thể vượt qua những hạn chế của các mô hình tuyến tính và xử lý một lớp hàm tổng quát hơn bằng cách kết hợp một hoặc nhiều tầng ẩn.
 Cách dễ nhất để làm điều này là xếp chồng nhiều tầng kết nối đầy đủ lên nhau.
-Mỗi tầng nạp vào tầng bên trên nó, cho đến khi chúng ta tạo ra một đầu ra.
+Mỗi tầng đưa vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
 Chúng ta có thể nghĩ về các $L-1$ tầng đầu tiên như đại diện và tầng cuối cùng là công cụ dự đoán tuyến tính của chúng ta.
 Kiến trúc này thường được gọi là *perceptron nhiều lớp*, thường được viết tắt là *MLP*.
 Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
