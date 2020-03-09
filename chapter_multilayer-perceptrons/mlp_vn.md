@@ -177,7 +177,7 @@ Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta ph
 Vậy thì đổi lại ta sẽ nhận được gì?
 Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì cho rắc rối của mình!*
 Lý do rất đơn giản.
-Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền-softmax) chỉ là một hàm tuyến tính của các nút ẩn.
+Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền Softmax) chỉ là một hàm tuyến tính của các nút ẩn.
 Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
 Hơn nữa, mô hình tuyến tính của chúng ta vốn dĩ đã có khả năng biểu diễn bất kỳ hàm tuyến tính nào rồi.
 
