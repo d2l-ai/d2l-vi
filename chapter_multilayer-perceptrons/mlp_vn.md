@@ -79,7 +79,7 @@ Namely, we might use the *distance* from 37°C as our feature.
 -->
 
 Lưu ý rằng chúng ta có thể dễ dàng đưa ra các ví dụ vi phạm *tính đơn điệu*.
-Đề cập đến ví dụ chúng ta muốn dự đoán xác suất tử vong của một người dựa trên thân nhiệt.
+Ví dụ như, ta muốn dự đoán xác suất tử vong của một người dựa trên thân nhiệt.
 Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ cao hơn chỉ ra rủi ro cao hơn.
 Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, thì việc nhiệt độ càng cao thì rủi ro càng *thấp*!
 Trong trường hợp này cũng vậy, chúng ta cần phải giải quyết các vấn đề với một số tiền xử lý.
