@@ -334,7 +334,7 @@ Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa
 The common practice to address this problem is to split our data three ways, incorporating a *validation set* in addition to the training and test sets.
 -->
 
-Thực tiễn phổ biến để giải quyết vấn đề này là phân chia dữ liệu theo ba cách, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra. 
+Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra. 
 
 
 <!--
