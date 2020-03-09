@@ -146,7 +146,7 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 ### From Linear to Nonlinear
 -->
 
-### Từ tuyến tính tới Phi tuyến
+### Từ Tuyến tính đến Phi tuyến
 
 <!--
 Formally, we calculate the each layer in this one-hidden-layer MLP as follows:
