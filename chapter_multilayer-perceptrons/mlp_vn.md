@@ -138,7 +138,7 @@ Cách dễ nhất để làm điều này là xếp chồng nhiều tầng đư�
 Mỗi tầng nạp vào tầng bên trên nó, cho đến khi chúng ta tạo ra một đầu ra.
 Chúng ta có thể nghĩ về các $L-1$ tầng đầu tiên như đại diện và tầng cuối cùng là công cụ dự đoán tuyến tính của chúng ta.
 Kiến trúc này thường được gọi là *perceptron nhiều lớp*, thường được viết tắt là *MLP*.
-Dưới đây, chúng tôi mô tả sơ đồ MLP (:numref:`fig_nlp`).
+Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
 
 <!--
 ![Multilayer perceptron with hidden layers. This example contains a hidden layer with 5 hidden units in it. ](../img/mlp.svg)
