@@ -83,7 +83,7 @@ Ví dụ như, ta muốn dự đoán xác suất tử vong của một người 
 Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ càng cao cho thấy nguy cơ tử vong cao hơn.
 Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, thì nhiệt độ cao hơn thì nguy cơ tử vong *thấp hơn*!
 Tương tự như trong bài toán này, ta có thể giải quyết nó bằng một vài bước tiền xử lý thật khéo léo.
-Cụ thể, có thể sử dụng *khoảng cách* từ 37°C làm đặc tính.
+Cụ thể, có thể sử dụng *khoảng cách* từ 37°C làm đặc trưng.
 
 
 <!--
