@@ -165,6 +165,7 @@ which excels at parallelizing operations.
 Because each example can be fed through our models in parallel and the gradient of the loss function for each example can also be taken in parallel,
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
+
 Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
 Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ chênh lệch hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
 
@@ -231,7 +232,7 @@ Each update requires taking the gradient (a multi-dimensional derivative) of our
 Given this gradient, we can update each parameter in the direction that reduces the loss.
 -->
 
-Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp hoàn toàn với dữ liệu của ta. 
+Sau khi khởi tạo các tham số, bước tiếp theo là cập nhật chúng cho đến khi chúng ăn khớp với dữ liệu của ta đủ tốt. 
 Mỗi lần cập nhật, ta tính gradient (đạo hàm nhiều biến) của hàm mất mát theo các tham số. 
 Với gradient này, chúng ta có thể cập nhật mỗi tham số theo hướng giảm dần giá trị mất mát. 
 
