@@ -387,7 +387,7 @@ Since we previously set the batch size `batch_size` to $10$, the loss shape `l` 
 Trong mỗi vòng lặp, đầu tiên chúng ta sẽ lấy ra các minibatch dữ liệu và chạy nó qua mô hình để lấy ra tập kết quả dự đoán.
 Sau khi tính toán sự mất mát, chúng ta dùng hàm `backward` để bắt đầu lan truyền ngược qua mạng lưới, lưu trữ các gradient tương ứng với mỗi tham số trong từng thuộc tính `.grad` của chúng.
 Cuối cùng, chúng ta sẽ dùng thuật toán tối ưu `sgd` để cập nhật các tham số của mô hình.
-Từ đầu chúng ta đã đặt kích thước batch `batch_size` là $10$, vậy nên mất mát `l` cho mỗi minibatch có kích thước là ($10$,$1$).
+Từ đầu chúng ta đã đặt kích thước batch `batch_size` là $10$, vậy nên mất mát `l` cho mỗi minibatch có kích thước là ($10$, $1$).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
