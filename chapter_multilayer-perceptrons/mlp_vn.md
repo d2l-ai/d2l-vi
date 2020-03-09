@@ -154,7 +154,7 @@ Note that these layers are both fully connected.
 Every input influences every neuron in the hidden layer, and each of these in turn influences every neuron in the output layer.
 -->
 
-Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và lớp ẩn của nó chứa 5 đơn vị ẩn.
+Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và tầng ẩn của nó chứa 5 nút ẩn.
 Vì tầng đầu vào không liên quan đến bất kỳ tính toán nào, nên việc tạo đầu ra với mạng này đòi hỏi phải thực hiện các tính toán cho mỗi trong hai tầng (ẩn và đầu ra).
 Lưu ý rằng các tầng này đều được kết nối đầy đủ.
 Mọi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi đầu vào này ảnh hưởng đến mọi nơ-ron trong tần đầu ra
