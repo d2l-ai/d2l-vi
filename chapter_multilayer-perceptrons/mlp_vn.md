@@ -173,7 +173,7 @@ A linear function of a linear function is itself a linear function.
 Moreover, our linear model was already capable of representing any linear function.
 -->
 
-Chú ý rằng sau khi thêm vào tầng này, mô hình yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
+Chú ý rằng sau khi thêm tầng này vào, mô hình lập tức yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
 Vậy thì đổi lại ta sẽ nhận được gì?
 Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì cho rắc rối của mình!*
 Lý do rất đơn giản.
