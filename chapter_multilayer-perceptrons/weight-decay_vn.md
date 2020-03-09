@@ -127,13 +127,16 @@ In practice, this might make them more robust to measurement error in a single v
 By contrast, L1 penalties lead to models that concentrate weight on a small set of features, which may be desirable for other reasons.
 -->
 
-*dịch đoạn phía trên*
+Một lý do để làm việc với chuẩn L2 là nó đặt một hình phạt lớn lên những thành phần lớn của véc-tơ trọng số.
+Điều này khiến thuật toán học của ta thiên vị các mô hình phân bổ trọng số đều khắp một số lượng lớn các đặc trưng.
+Trong thực tế, điều này có thể khiến chúng chống lại được các lỗi đo lường của một biến đơn.
+Ngược lại, các hình phạt của L1 dẫn đến các mô hình tập trung trọng số vào một số lượng nhỏ các đặc trưng, điều này có thể được mong muốn vì một vài lý do. 
 
 <!--
 The stochastic gradient descent updates for L2-regularized regression follow:
 -->
 
-*dịch đoạn phía trên*
+Cập nhật hạ gradient ngẫu nhiên cho hồi quy chuẩn L2 được tiến hành như sau:
 
 $$
 \begin{aligned}
@@ -151,7 +154,14 @@ Whether we include a corresponding bias penalty $b^2$ can vary across implementa
 Often, we do not regularize the bias term of a network's output layer.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên một lượng bằng sự khác biệt của ước lượng của ta và đối tượng quan sát.
+Tuy nhiên, chúng ta cũng dồn độ lớn của $\mathbf{w}$ về phía $0$.
+Đó là lý do tại sao phương pháp này còn thi thoảng được gọi là "phân rã trọng số": giữ nguyên hệ số phạt, thuật toán tối ưu của ta *phân rã* trọng số ở từng bước của quá trình huấn luyện.
+Ngược lại so với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
+Các giá trị nhỏ của $\lambda$ tương ứng với $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ hạn chế đáng kể $\mathbf{w}$.
+Việc ta có thêm một hệ số điều chỉnh phạt $b^2$ có thể khác nhau giữa các cách triển khai, và có thể khác nhau giữa các tầng của mạng nơ-ron.
+Thông thường, ta không thường xuyên điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
+
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -161,20 +171,23 @@ Often, we do not regularize the bias term of a network's output layer.
 ## High-Dimensional Linear Regression
 -->
 
-## *dịch tiêu đề phía trên*
+## Hồi quy tuyến tính chiều cao
 
 <!--
 We can illustrate the benefits of weight decay over feature selection through a simple synthetic example.
 First, we generate some data as before
 -->
 
-*dịch đoạn phía trên*
+Ta có thể minh họa các lợi ích của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ nhân tạo đơn giản.
+Đầu tiên, ta tạo dữ liệu như trước kia
 
+<!--
 $$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ where }
 \epsilon \sim \mathcal{N}(0, 0.01).$$
 -->
 
-*dịch đoạn phía trên*
+$$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ với }
+\epsilon \sim \mathcal{N}(0, 0.01).$$
 
 <!--
 choosing our label to be a linear function of our inputs, corrupted by Gaussian noise with zero mean and variance 0.01.
@@ -182,7 +195,8 @@ To make the effects of overfitting pronounced, we can increase the dimensinoalit
 and work with a small training set containing only 20 example.
 -->
 
-*dịch đoạn phía trên*
+lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01.
+Để làm cho hiệu ứng quá khớp rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.
 
 ```{.python .input  n=2}
 %matplotlib inline
