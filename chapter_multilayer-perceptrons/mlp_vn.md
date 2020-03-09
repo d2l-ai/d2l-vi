@@ -224,8 +224,7 @@ e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ and $\math
 one atop another, yielding ever more expressive models (assuming fixed width).
 -->
 
-Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn, ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$,
-kế tiếp nhau, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
+Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn, ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$, kế tiếp nhau, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
 
 <!--
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
