@@ -427,7 +427,7 @@ Unfortunately, setting hyper-parameters is tricky and requires some adjustment b
 We elide these details for now but revise them later in :numref:`chap_optimization`.
 -->
 
-Với mỗi epoch (một lần chạy qua tập dữ liệu), chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch).
+Với mỗi epoch, chúng ta sẽ lặp qua toàn bộ tập dữ liệu (sử dụng hàm `data_iter`) cho đến khi đi qua toàn bộ mọi mẫu trong tập huấn luyện (giả định rằng số mẫu chia hết cho kích thước batch).
 Số epoch `num_epochs` và tốc độ học `lr` đều là siêu tham số, mà chúng ta đặt ở đây là tương ứng $3$ và $0.03$.
 Không may thay, việc lựa chọn siêu tham số thường không đơn giản và đòi hỏi sự điều chỉnh qua nhiều lần thử và sai.
 Hiện tại chúng ta sẽ bỏ qua những chi tiết này nhưng sẽ bàn lại về chúng tại chương :numref:`chap_optimization`.
