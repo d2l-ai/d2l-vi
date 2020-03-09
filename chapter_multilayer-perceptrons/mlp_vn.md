@@ -206,7 +206,7 @@ In general, with these activation functions in place,
 it is no longer possible to collapse our MLP into a linear model.
 -->
 
-Để nhận thấy rõ tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ áp dụng lên từng nút ẩn (theo sau biến đổi tuyến tính).
+Để nhận thấy được tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ áp dụng lên từng nút ẩn (theo sau phép biến đổi tuyến tính).
 Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến là đơn vị tuyến tính chỉnh lưu (ReLU) $\mathrm{max}(x, 0)$.
 Nói chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể thu gọn MLP thành một mô hình tuyến tính nữa.
 
