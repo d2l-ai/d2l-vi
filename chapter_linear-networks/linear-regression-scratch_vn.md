@@ -24,7 +24,7 @@ Vì các framework học sâu hiện đại có thể tự động hóa gần nh
 Hơn nữa, việc hiểu rõ cách mọi thứ hoạt động sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng tính toán hay các hàm mất mát, v.v.
 Trong phần này, chúng ta chỉ dựa vào `ndarray` và `autograd`.
 Sau đó, chúng tôi sẽ giới thiệu một phương pháp triển khai chặt chẽ hơn, tận dụng các tính năng tuyệt vời của Gluon.
-Để bắt đầu, chúng ta cần nạp một vài gói thư viện cần thiết.
+Để bắt đầu, chúng ta cần khai báo một vài gói thư viện cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
