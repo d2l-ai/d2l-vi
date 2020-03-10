@@ -167,7 +167,7 @@ GPUs allow us to process hundreds of examples in scarcely more time than it migh
 -->
 
 Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
-Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ chênh lệch hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
+Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ nhỉnh hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
