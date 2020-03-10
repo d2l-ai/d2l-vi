@@ -19,7 +19,7 @@ To start off, we import the few required packages.
 -->
 
 Bây giờ bạn đã hiểu được điểm mấu chốt đằng sau thuật toán hồi quy tuyến tính, chúng ta đã có thể bắt đầu thực hành viết mã.
-Trong phần này, ta sẽ thực hiện toàn bộ phương pháp từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
+Trong phần này, ta sẽ xây dựng lại toàn bộ kĩ thuật này từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
 Vì các framework học sâu hiện đại có thể tự động hóa gần như tất cả các công đoạn ở trên, việc lập trình mọi thứ từ đầu chỉ để đảm bảo bạn biết rõ mình đang làm gì.
 Hơn nữa, việc hiểu rõ cách mọi thứ hoạt động sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng tính toán hay các hàm mất mát, v.v.
 Trong phần này, chúng ta chỉ dựa vào `ndarray` và `autograd`.
