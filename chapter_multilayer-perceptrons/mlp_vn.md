@@ -73,8 +73,6 @@ Ví dụ, nếu chúng ta dự đoán liệu một cá nhân nào đó có khả
 Trong khi đó tính đơn điệu trong mối quan hệ này giống như việc tăng thu nhập từ $0 lên $50k tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
 Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta sao cho tính tuyến tính trở nên hợp lý hơn, bằng việc sử dụng logarit của thu nhập như là một đặc trưng. 
 
-
-
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -597,7 +595,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Minh Tân
 
 <!-- Phần 2 -->
 *
