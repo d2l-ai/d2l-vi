@@ -178,8 +178,8 @@ We can illustrate the benefits of weight decay over feature selection through a 
 First, we generate some data as before
 -->
 
-Ta có thể minh họa các lợi ích của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ nhân tạo đơn giản.
-Đầu tiên, ta tạo dữ liệu như trước kia
+Ta có thể minh họa các lợi ích của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ tổng hợp đơn giản.
+Đầu tiên, ta tạo ra dữ liệu như trước kia
 
 <!--
 $$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ where }
