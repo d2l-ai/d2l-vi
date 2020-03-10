@@ -71,7 +71,7 @@ The following function converts between numeric label indices and their names in
 -->
 
 Các ảnh trong Fashion-MNIST tương ứng với các lớp: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao, túi và giày cao gót.
-Hàm dưới đây giúp chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
+Hàm dưới đây giúp chuyển đổi các nhãn giá trị số thành tên của từng lớp.
 
 ```{.python .input  n=25}
 # Saved in the d2l package for later use
@@ -139,8 +139,8 @@ For instance, we can set aside 4 processes to read the data (via `num_workers`).
 Because this feature is not currently supported on Windows the following code checks the platform to make sure that we do not saddle our Windows-using friends with error messages later on.
 -->
 
-Trong quá trình huấn luyện, việc đọc dữ liệu có thể trở thành một nút thắt cổ chai đáng kể về hiệu năng, trừ khi mô hình đơn giản hoặc máy tính rất nhanh.
-Một tính năng tiện dụng của `DataLoader` là khả năng sử dụng đa luồng (_multiple processes_) để tăng tốc việc đọc dữ liệu.
+Trong quá trình huấn luyện, việc đọc dữ liệu có thể gây ra hiện tượng nghẽn cổ chai hiệu năng đáng kể, trừ khi mô hình đơn giản hoặc máy tính rất nhanh.
+Một tính năng tiện dụng của `DataLoader` là khả năng sử dụng đa tiến trình (_multiple processes_) để tăng tốc việc đọc dữ liệu.
 Ví dụ, chúng ta có thể dùng 4 tiến trình để đọc dữ liệu (thông qua `num_workers`).
 Vì tính năng này hiện tại không được hỗ trợ trên Windows, đoạn mã lập trình dưới đây sẽ kiểm tra nền tảng hệ điều hành để đảm bảo rằng chúng ta không làm phiền những người dùng Windows với các thông báo lỗi sau này.
 
