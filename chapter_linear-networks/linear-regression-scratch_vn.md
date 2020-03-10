@@ -200,7 +200,7 @@ The built-in iterators implemented in Apache MXNet are considerably efficient an
 
 Khi chạy iterator, ta lấy từng minibatch cho đến khi lấy hết bộ dữ liệu.
 Mặc dù sử dụng iterator như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
-Ví dụ, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ, do đó ta phải thực thi rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
+Chẳng hạn, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ và tốn rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
 Các iterator trong Apache MXNet lại tỏ ra khá hiệu quả khi chúng có thể xử lý cả dữ liệu được lưu trữ trên tập tin lẫn trong các luồng dữ liệu. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -271,7 +271,7 @@ Recall that when we add a vector and a scalar, the scalar is added to each compo
 
 Tiếp theo, chúng ta cần định nghĩa mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
 Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, ta có thể đơn giản tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
-Với `np.dot(X, w)` dưới đây là một vector trong khi `b` là một số vô hướng.
+Ở đây, `np.dot(X, w)` là một vector trong khi `b` là một số vô hướng.
 Nhắc lại rằng khi tính tổng vector và số vô hướng, số vô hướng sẽ được cộng vào từng phần tử của vector. 
 
 ```{.python .input  n=9}
@@ -304,7 +304,7 @@ The result returned by the following function will also be the same as the `y_ha
 Để cập nhật mô hình ta phải tính gradient của hàm mất mát, vậy nên ta cần định nghĩa hàm mất mát trước tiên.
 Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước đó.
 Trên thực tế, chúng ta cần chuyển đổi kích thước nhãn thật `y` sang kích thước của giá trị dự đoán `y_hat`.
-Kết quả trả về bởi hàm dưới đây cũng sẽ có kích thước tương đương với `y_hat`.
+Hàm dưới đây sẽ trả về kết quả có kích thước tương đương với kích thước của `y_hat`.
 
 ```{.python .input  n=10}
 # Saved in the d2l package for later use
@@ -328,7 +328,7 @@ can be solved analytically, we will take this opportunity to introduce your firs
 Như đã thảo luận ở mục trước, hồi quy tuyến tính có một [nghiệm dạng đóng](https://vi.wikipedia.org/wiki/Biểu_thức_dạng_đóng). 
 Tuy nhiên, đây không phải là một cuốn sách về hồi quy tuyến tính, mà là về Học sâu. 
 Vì không một mô hình nào khác được trình bày trong cuốn sách này 
-có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân cơ hội đó để giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (*stochastic gradient descent -- SGD*).
+có thể giải được bằng phương pháp phân tích, chúng tôi sẽ nhân cơ hội này để giới thiệu với các bạn ví dụ đầu tiên về hạ gradient ngẫu nhiên (*stochastic gradient descent -- SGD*).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -344,7 +344,7 @@ Because our loss is calculated as a sum over the batch of examples, we normalize
 so that the magnitude of a typical step size does not depend heavily on our choice of the batch size.
 -->
 
-Ở mỗi bước, sử dụng một batch ngẫu nhiên từ tập dữ liệu, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
+Sử dụng một batch được lấy ngẫu nhiên từ tập dữ liệu tại mỗi bước, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
 Tiếp đó, ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
 Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi `backward`, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
 Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
