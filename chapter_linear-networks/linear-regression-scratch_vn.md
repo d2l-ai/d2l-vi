@@ -536,7 +536,7 @@ Trong các phần sau, chúng tôi sẽ mô tả các mô hình bổ sung dựa 
 4. Bạn có thể gặp phải những vấn đề gì nếu bạn muốn mở rộng `autograd` đến các đạo hàm bậc hai? Bạn sẽ sửa chúng bằng cách nào?
 5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
 6. Thử nghiệm các tốc độ học khác nhau để xem giá trị hàm mất mát giảm nhanh đến mức nào.
-7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, điều gì sẽ xảy ra với hành vi của hàm `data_iter`?
+7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, hàm data_iter sẽ xử lý như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
