@@ -22,122 +22,122 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance               | chất lượng thuật toán     |                       |
 | avoidable bias                        | độ chệch tránh được       |                       |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                       |
-| artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát |                       |
+| artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | https://git.io/Jvoj9  |
 | attention mechanisms                  | cơ chế tập trung          |                       |
-| alternative hypothesis                | giả thuyết đối            |                       |
-| automatic differentiation             | tính vi phân tự động      |                       |
+| alternative hypothesis                | giả thuyết đối            | https://git.io/Jvoja  |
+| automatic differentiation             | tính vi phân tự động      | https://git.io/JvojU  |
 
 ## B
 | English                 | Tiếng Việt              | Thảo luận tại         |
 |-------------------------|-------------------------|-----------------------|
 | background noise        | nhiễu nền               | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược        |                       |
-| backward pass           | lượt truyền ngược       |                       |
-| batch                   | batch                   |                       |
+| backward pass           | lượt truyền ngược       | https://git.io/JvohG  |
+| batch                   | batch                   | https://git.io/JvojE  |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
-| bias (tham số mô hình)  | hệ số điều chỉnh        |                       |
+| bias (tham số mô hình)  | hệ số điều chỉnh        | https://git.io/Jvopx  |
 | big data                | big data                |                       |
-| binomial distribution   | phân phối nhị thức      |                       |
+| binomial distribution   | phân phối nhị thức      | https://git.io/JvohQ  |
 | Blackbox dev set        | tập phát triển Blackbox | http://bit.ly/2MVHcl7 |
 | bounding box            | khung chứa              | http://bit.ly/2sbhDVj |
-| broadcast               | lan truyền              |                       |
+| broadcast               | lan truyền              | https://git.io/Jvoj3  |
 
 ## C
-| English                             | Tiếng Việt             | Thảo luận tại                       |
-|-------------------------------------|------------------------|-------------------------------------|
-| category (trong bài toán phân loại) | lớp                    |                                     |
-| chain rule                          | quy tắc dây chuyền     |                                     |
-| classifier                          | bộ phân loại           |                                     |
-| closed-form solution                | nghiệm theo công thức  |                                     |
-| clustering                          | phân cụm               |                                     |
-| code (danh từ)                      | mã nguồn               |                                     |
-| code (động từ)                      | viết mã                |                                     |
-| computer vision                     | thị giác máy tính      |                                     |
-| computing (trong Khoa Học Máy Tính) | điện toán              |                                     |
-| computational graph                 | đồ thị tính toán       |                                     |
-| conditional distribution            | phân phối có điều kiện |                                     |
-| confidence interval                 | khoảng tin cậy         |                                     |
-| constrain                           | ràng buộc              |                                     |
-| (strictly) convex function          | hàm lồi (chặt)         |                                     |
-| convex optimization                 | tối ưu lồi             |                                     |
-| convex set                          | tập lồi                |                                     |
-| convolution neural networks         | mạng nơ-ron tích chập  |                                     |
-| cost function                       | hàm chi phí            |                                     |
-| covariate                           | hiệp biến              | [Thảo luận](https://bit.ly/2r5QcfB) |
-| cross entropy                       | entropy chéo           |                                     |
-| cross validation                    | kiểm định chéo         |                                     |
+| English                             | Tiếng Việt             | Thảo luận tại        |
+|-------------------------------------|------------------------|----------------------|
+| category (trong bài toán phân loại) | lớp                    | https://git.io/JvohG |
+| chain rule                          | quy tắc dây chuyền     | https://git.io/Jvojk |
+| classifier                          | bộ phân loại           |                      |
+| closed-form solution                | biểu thức dạng đóng    | https://git.io/Jvopd |
+| clustering                          | phân cụm               | https://git.io/JvojD |
+| code (danh từ)                      | mã nguồn               |                      |
+| code (động từ)                      | viết mã                |                      |
+| computer vision                     | thị giác máy tính      |                      |
+| computing (trong Khoa Học Máy Tính) | điện toán              | https://git.io/JvojH |
+| computational graph                 | đồ thị tính toán       | https://git.io/JvohQ |
+| conditional distribution            | phân phối có điều kiện | https://git.io/Jvohb |
+| confidence interval                 | khoảng tin cậy         |                      |
+| constrain                           | ràng buộc              |                      |
+| (strictly) convex function          | hàm lồi (chặt)         | https://git.io/JvohV |
+| convex optimization                 | tối ưu lồi             |                      |
+| convex set                          | tập lồi                | https://git.io/JvohV |
+| convolution neural networks         | mạng nơ-ron tích chập  |                      |
+| cost function                       | hàm chi phí            | https://git.io/Jvojp |
+| covariate                           | hiệp biến              | https://git.io/JvohK |
+| cross entropy                       | entropy chéo           |                      |
+| cross validation                    | kiểm định chéo         |                      |
 
 ## D
-| English                | Tiếng Việt                      | Thảo luận tại |
-|------------------------|---------------------------------|---------------|
-| data                   | dữ liệu                         |               |
-| data science           | khoa học dữ liệu                |               |
-| data scientist         | nhà khoa học dữ liệu            |               |
-| datapoint (data point) | điểm dữ liệu                    |               |
-| data mismatch          | dữ liệu không tương đồng        |               |
-| dataset (data set)     | tập dữ liệu                     |               |
-| data manipulation      | thao tác với dữ liệu            |               |
-| deep learning          | học sâu                         |               |
-| dev set                | tập phát triển                  |               |
-| dev set performance    | chất lượng trên tập phát triển  |               |
-| development set        | tập phát triển                  |               |
-| differentiable         | khả vi                          |               |
-| distribution           | phân phối                       |               |
-| domain adaptation      | thích ứng miền                  |               |
-| dot product            | tích vô hướng (hoặc tích trong) |               |
-| dropout                | dropout                         |               |
+| English                | Tiếng Việt                      | Thảo luận tại        |
+|------------------------|---------------------------------|----------------------|
+| data                   | dữ liệu                         |                      |
+| data science           | khoa học dữ liệu                | https://git.io/JvojD |
+| data scientist         | nhà khoa học dữ liệu            | https://git.io/JvojD |
+| datapoint (data point) | điểm dữ liệu                    |                      |
+| data mismatch          | dữ liệu không tương đồng        |                      |
+| dataset (data set)     | tập dữ liệu                     |                      |
+| data manipulation      | thao tác với dữ liệu            | https://git.io/Jvohh |
+| deep learning          | học sâu                         |                      |
+| dev set                | tập phát triển                  |                      |
+| dev set performance    | chất lượng trên tập phát triển  |                      |
+| development set        | tập phát triển                  |                      |
+| differentiable         | khả vi                          | https://git.io/JvKee |
+| distribution           | phân phối                       |                      |
+| domain adaptation      | thích ứng miền                  |                      |
+| dot product            | tích vô hướng (hoặc tích trong) | https://git.io/JvKem |
+| dropout                | dropout                         |                      |
 
 ## E
-| English             | Tiếng Việt             | Thảo luận tại         |
-|---------------------|------------------------|-----------------------|
-| early stopping      | dừng sớm               |                       |
-| effect size         | hệ số ảnh hưởng        |                       |
-| eigen-decomposition | phân tích trị riêng    |                       |
-| eigenvalue          | trị riêng              |                       |
-| eigenvector         | vector riêng           |                       |
-| elementwise         | (theo) từng phần tử    |                       |
-| embedding           | embedding              |                       |
-| end-to-end          | đầu-cuối               | http://bit.ly/2OyYuEf |
-| epoch (in training) | epoch (khi huấn luyện) |                       |
-| error analysis      | phân tích lỗi          |                       |
-| error rate          | tỉ lệ lỗi              |                       |
-| estimator           | bộ ước lượng           |                       |
-| evaluation metric   | phép đánh giá          |                       |
-| example             | mẫu                    |                       |
-| expectation         | kỳ vọng                |                       |
-| explicit feedback   | phản hồi trực tiếp     |                       |
-| exponential distribution   | phân phối mũ    |                       |
-| expression (math)   | biểu thức (toán học)   |                       |
-| Eyeball dev set     | Tập phát triển Eyeball | http://bit.ly/2MVHcl7 |
+| English                  | Tiếng Việt             | Thảo luận tại         |
+|--------------------------|------------------------|-----------------------|
+| early stopping           | dừng sớm               |                       |
+| effect size              | hệ số ảnh hưởng        | https://git.io/Jvoja  |
+| eigen-decomposition      | phân tích trị riêng    |                       |
+| eigenvalue               | trị riêng              |                       |
+| eigenvector              | vector riêng           |                       |
+| elementwise              | (theo) từng phần tử    | https://git.io/Jvojn  |
+| embedding                | embedding              | https://git.io/JvKeY  |
+| end-to-end               | đầu-cuối               | http://bit.ly/2OyYuEf |
+| epoch (in training)      | epoch (khi huấn luyện) | https://git.io/Jvoha  |
+| error analysis           | phân tích lỗi          |                       |
+| error rate               | tỉ lệ lỗi              |                       |
+| estimator                | bộ ước lượng           |                       |
+| evaluation metric        | phép đánh giá          |                       |
+| example                  | mẫu                    |                       |
+| expectation              | kỳ vọng                | https://git.io/Jvohb  |
+| explicit feedback        | phản hồi trực tiếp     | https://git.io/JvKee  |
+| exponential distribution | phân phối mũ           | https://git.io/JvohC  |
+| expression (math)        | biểu thức (toán học)   | https://git.io/Jvojk  |
+| Eyeball dev set          | Tập phát triển Eyeball | http://bit.ly/2MVHcl7 |
 
 ## F
-| English             | Tiếng Việt       | Thảo luận tại |
-|---------------------|------------------|---------------|
-| F1 score            | chỉ số F1        |               |
-| false negative      | âm tính giả      |               |
-| false positive      | dương tính giả   |               |
-| feature             | đặc trưng        |               |
-| fit                 | khớp             |               |
-| first principle     | định đề cơ bản   |               |
-| flatten             | trải             |               |
-| forward pass        | lượt truyền xuôi |               |
-| framework           | framework        |               |
-| functional anaylsis | giải tích hàm    |               |
-| fully-connected     | kết nối đầy đủ   |               |
+| English             | Tiếng Việt       | Thảo luận tại        |
+|---------------------|------------------|----------------------|
+| F1 score            | chỉ số F1        |                      |
+| false negative      | âm tính giả      |                      |
+| false positive      | dương tính giả   |                      |
+| feature             | đặc trưng        |                      |
+| fit                 | khớp             | https://git.io/JvKet |
+| first principle     | định đề cơ bản   | https://git.io/JvKet |
+| flatten             | trải             | https://git.io/JvohO |
+| forward pass        | lượt truyền xuôi | https://git.io/JvohG |
+| framework           | framework        |                      |
+| functional anaylsis | giải tích hàm    |                      |
+| fully-connected     | kết nối đầy đủ   | https://git.io/JvohR |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                |
 |--------------------------------|-----------------------------------|----------------------------------------------|
-| Gaussian distribution          | phân phối Gauss (phân phối chuẩn) |                                              |
+| Gaussian distribution          | phân phối Gauss (phân phối chuẩn) | https://git.io/JvohV                         |
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
-| generalization error           | lỗi khái quát                     |                                              |
-| generalization gap             | khoảng cách khái quát             |                                              |
-| generalization loss            | mất mát khái quát                 |                                              |
-| generative model               | mô hình sinh                      |                                              |
-| generative adversarial network | mạng đối sinh                     |                                              |
-| global maximum                 | giá trị lớn nhất                  |                                              |
-| global minimum                 | giá trị nhỏ nhất                  |                                              |
+| generalization error           | lỗi khái quát                     | https://git.io/Jvohm                         |
+| generalization gap             | khoảng cách khái quát             | https://git.io/Jvoht                         |
+| generalization loss            | mất mát khái quát                 | https://git.io/Jvoht                         |
+| generative model               | mô hình sinh                      | https://git.io/Jvojd                         |
+| generative adversarial network | mạng đối sinh                     | https://git.io/JvojD                         |
+| global maximum                 | giá trị lớn nhất                  | https://git.io/Jvopx                         |
+| global minimum                 | giá trị nhỏ nhất                  | https://git.io/Jvopx                         |
 | gradient descent               | hạ gradient                       | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | graphical model                | mô hình đồ thị                    |                                              |
 | ground truth                   | nhãn gốc                          | http://bit.ly/34TljJ0                        |
@@ -150,133 +150,133 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hidden unit             | nút ẩn                   |                                              |
 | human-level performance | chất lượng mức con người | http://bit.ly/36IzQcB, http://bit.ly/33CJfjX |
 | hyperparameter          | siêu tham số             |                                              |
-| hyperplane              | siêu phẳng               |                                              |
-| hypothesis test         | kiểm định giả thuyết     |                                              |
+| hyperplane              | siêu phẳng               | https://git.io/JvojD                         |
+| hypothesis test         | kiểm định giả thuyết     | https://git.io/Jvoja                         |
 
 ## I
-| English                    | Tiếng Việt         | Thảo luận tại |
-|----------------------------|--------------------|---------------|
-| implement                  | lập trình          |               |
-| implementation             | cách lập trình     |               |
-| implicit feedback          | phản hồi gián tiếp |               |
-| imputation (Preprocessing) | quy buộc           |               |
-| independence assumption    | giả định độc lập   |               |
-| iteration                  | vòng lặp           |               |
-| iterator                   | iterator           |               |
+| English                    | Tiếng Việt         | Thảo luận tại        |
+|----------------------------|--------------------|----------------------|
+| implement                  | lập trình          | https://git.io/JvohG |
+| implementation             | cách lập trình     | https://git.io/JvohG |
+| implicit feedback          | phản hồi gián tiếp |                      |
+| imputation (Preprocessing) | quy buộc           | https://git.io/Jvoh9 |
+| independence assumption    | giả định độc lập   | https://git.io/Jvohb |
+| iteration                  | vòng lặp           |                      |
+| iterator                   | iterator           | https://git.io/JvohG |
 
 ## J
-| English            | Tiếng Việt          | Thảo luận tại |
-|--------------------|---------------------|---------------|
-| joint distribution | phân phối đồng thời |               |
+| English            | Tiếng Việt          | Thảo luận tại        |
+|--------------------|---------------------|----------------------|
+| joint distribution | phân phối đồng thời | https://git.io/Jvohb |
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại         |
 |------------------------------------|--------------------------------|-----------------------|
 | layer                              | tầng                           |                       |
-| law of large numbers               | luật số lớn                    |                       |
+| law of large numbers               | luật số lớn                    | https://git.io/JvohQ  |
 | learning curve                     | đồ thị quá trình học           | http://bit.ly/2BvfPYA |
 | learning algorithm                 | thuật toán học                 |                       |
-| linear                             | tuyến tính                     |                       |
+| linear                             | tuyến tính                     | https://git.io/JvohV  |
 | linear algebra                     | đại số tuyến tính              |                       |
-| linear dependence                  | phụ thuộc tuyến tính           |                       |
-| linear form                        | dạng tuyến tính                |                       |
-| linear independence                | độc lâp tuyến tính             |                       |
-| linear programming                 | quy hoạch tuyến tính           |                       |
+| linear dependence                  | phụ thuộc tuyến tính           | https://git.io/JvKet  |
+| linear form                        | dạng tuyến tính                | https://git.io/JvohV  |
+| linear independence                | độc lâp tuyến tính             | https://git.io/JvKet  |
+| linear programming                 | quy hoạch tuyến tính           | https://git.io/JvohV  |
 | linear regression                  | hồi quy tuyến tính             |                       |
-| linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
+| linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính | https://git.io/Jvojw  |
 | local maximum                      | cực đại                        |                       |
 | local minimum                      | cực tiểu                       |                       |
-| Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
+| Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            | https://git.io/JvKeI  |
 | logistic regression                | hồi quy logistic               |                       |
-| logit (trong softmax)              | logit                          |                       |
-| log-likelihood function            | hàm log hợp lý                 |                       |
-| loss function                      | hàm mất mát                    |                       |
+| logit (trong softmax)              | logit                          | https://git.io/JvohR  |
+| log-likelihood function            | hàm log hợp lý                 | https://git.io/Jvopx  |
+| loss function                      | hàm mất mát                    | https://git.io/Jvojp  |
 
 ## M
-| English                      | Tiếng Việt                    | Thảo luận tại |
-|------------------------------|-------------------------------|---------------|
-| machine learning             | học máy                       |               |
-| marginalization              | phép biên hóa                 |               |
-| maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |               |
-| mean squared error (MSE)     | trung bình bình phương sai số |               |
-| metric                       | phép đo                       |               |
-| minibatch                    | minibatch                     |               |
-| misclassified                | bị phân loại nhầm             |               |
-| mislabeled                   | bị gán nhãn nhầm              |               |
-| model                        | mô hình                       |               |
-| module                       | mô-đun                        |               |
-| multi-class classification   | phân loại đa lớp              |               |
-| multinominal distribution    | phân phối đa thức             |               |
-| multitask learning           | học đa nhiệm                  |               |
+| English                      | Tiếng Việt                    | Thảo luận tại        |
+|------------------------------|-------------------------------|----------------------|
+| machine learning             | học máy                       |                      |
+| marginalization              | phép biên hóa                 | https://git.io/Jvohb |
+| maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                      |
+| mean squared error (MSE)     | trung bình bình phương sai số | https://git.io/Jvojr |
+| metric                       | phép đo                       |                      |
+| minibatch                    | minibatch                     | https://git.io/JvojE |
+| misclassified                | bị phân loại nhầm             |                      |
+| mislabeled                   | bị gán nhãn nhầm              |                      |
+| model                        | mô hình                       |                      |
+| module                       | mô-đun                        |                      |
+| multi-class classification   | phân loại đa lớp              | https://git.io/Jvoj0 |
+| multinominal distribution    | phân phối đa thức             | https://git.io/JvohQ |
+| multitask learning           | học đa nhiệm                  | https://git.io/JvohQ |
 
 ## N
-| English                           | Tiếng Việt                        | Thảo luận tại                               |
-|-----------------------------------|-----------------------------------|---------------------------------------------|
-| named entity                      | danh từ riêng                     |                                             |
-| natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                             |
-| negative log-likelihood function  | hàm đối log hợp lý                |                                             |
-| negative sample/example           | mẫu âm                            |                                             |
-| neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
-| node (trong mạng nơ-ron)          | nút                               |                                             |
-| norm                              | chuẩn                             |                                             |
-| normal distribution               | phân phối chuẩn (phân phối Gauss) |                                             |
-| null hypothesis                   | giả thuyết gốc                    |                                             |
+| English                           | Tiếng Việt                        | Thảo luận tại                                |
+|-----------------------------------|-----------------------------------|----------------------------------------------|
+| named entity                      | danh từ riêng                     | https://git.io/JvojG                         |
+| natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                              |
+| negative log-likelihood function  | hàm đối log hợp lý                |                                              |
+| negative sample/example           | mẫu âm                            |                                              |
+| neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA, http://bit.ly/2MAkizG |
+| node (trong mạng nơ-ron)          | nút                               | https://git.io/Jvohm                         |
+| norm                              | chuẩn                             | https://git.io/JvKem                         |
+| normal distribution               | phân phối chuẩn (phân phối Gauss) | https://git.io/JvohV                         |
+| null hypothesis                   | giả thuyết gốc                    | https://git.io/Jvoj1                         |
 
 ## O
 | English              | Tiếng Việt         | Thảo luận tại         |
 |----------------------|--------------------|-----------------------|
-| objective function   | hàm mục tiêu       |                       |
-| offline learning     | học ngoại tuyến    |                       |
+| objective function   | hàm mục tiêu       | https://git.io/Jvojp  |
+| offline learning     | học ngoại tuyến    | https://git.io/Jvojd  |
+| one-hot encoding     | biễu diễn one-hot  | https://git.io/JvohR  |
+| one-sided test       | kiểm định một phía | https://git.io/Jvoja  |
+| one-tailed test      | kiểm định một đuôi | https://git.io/Jvoja  |
 | optimizing metric    | phép đo để tối ưu  | http://bit.ly/2BvfPYA |
-| orthogonal           | trực giao          |                       |
-| orthonormal          | trực chuẩn         |                       |
+| orthogonal           | trực giao          | https://git.io/JvKem  |
+| orthonormal          | trực chuẩn         | https://git.io/JvKem  |
 | overfit              | quá khớp           | http://bit.ly/2BvfPYA |
-| overflow (numerical) | tràn (số) trên     |                       |
-| one-hot encoding     | biễu diễn one-hot  |                       |
-| one-sided test       | kiểm định một phía |                       |
-| one-tailed test      | kiểm định một đuôi |                       |
+| overflow (numerical) | tràn (số) trên     | https://git.io/JvohC  |
 
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại         |
 |------------------------------------|----------------------------|-----------------------|
 | partition function                 | hàm phân hoạch             | http://bit.ly/2T0dY7F |
-| pattern recognition                | nhận dạng mẫu              |                       |
-| perceptron                         | perceptron                 |                       |
+| pattern recognition                | nhận dạng mẫu              | https://git.io/JvKeL  |
+| perceptron                         | perceptron                 | https://git.io/JvohC  |
 | performance                        | chất lượng                 | http://bit.ly/36IzQcB |
 | plateau (danh từ)                  | vùng nằm ngang             |                       |
 | plateau (động từ)                  | nằm ngang                  |                       |
 | pipeline                           | pipeline                   | http://bit.ly/2OyYuEf |
-| policy (trong Học Tăng cường)      | chính sách                 |                       |
+| policy (trong Học Tăng cường)      | chính sách                 | https://git.io/Jvoj9  |
 | positive sample/example            | mẫu dương                  |                       |
 | precision                          | precision                  |                       |
-| principal component analysis (PCA) | phân tích thành phần chính |                       |
+| principal component analysis (PCA) | phân tích thành phần chính | https://git.io/JvojD  |
 | probability theory                 | lý thuyết xác suất         |                       |
-| population                         | tổng thể                   |                       |
-| p-value                            | trị số p                   |                       |
+| population                         | tổng thể                   | https://git.io/Jvoja  |
+| p-value                            | trị số p                   | https://git.io/Jvoja  |
 
 ## Q
-| English               | Tiếng Việt            | Thảo luận tại |
-|-----------------------|-----------------------|---------------|
-| quadratic             | toàn phương           |               |
-| quadratic form        | dạng toàn phương      |               |
-| quadratic programming | quy hoạch toàn phương |               |
+| English               | Tiếng Việt            | Thảo luận tại        |
+|-----------------------|-----------------------|----------------------|
+| quadratic             | toàn phương           | https://git.io/JvohV |
+| quadratic form        | dạng toàn phương      | https://git.io/JvohV |
+| quadratic programming | quy hoạch toàn phương |                      |
 
 ## R
-| English                        | Tiếng Việt                                | Thảo luận tại |
-|--------------------------------|-------------------------------------------|---------------|
-| random variable                | biến ngẫu nhiên                           |               |
-| recall                         | recall                                    |               |
-| recognition                    | nhận dạng                                 |               |
-| recurrent neural network       | mạng nơ-ron truy hồi                      |               |
-| rectified linear unit (ReLU)   | đơn vị tuyến tính chỉnh lưu               |               |
-| regressor                      | bộ hồi quy                                |               |
-| regularization                 | điều chuẩn                                |               |
-| reinforcement learning         | học tăng cường                            |               |
-| representation learning        | học biểu diễn                             |               |
-| reward function                | hàm điểm thưởng                           |               |
-| root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số |               |
-| running time                   | thời gian chạy                            |               |
-| region of rejection            | miền bác bỏ                               |               |
+| English                        | Tiếng Việt                                | Thảo luận tại        |
+|--------------------------------|-------------------------------------------|----------------------|
+| random variable                | biến ngẫu nhiên                           |                      |
+| recall                         | recall                                    |                      |
+| recognition                    | nhận dạng                                 |                      |
+| recurrent neural network       | mạng nơ-ron truy hồi                      |                      |
+| rectified linear unit (ReLU)   | đơn vị tuyến tính chỉnh lưu               | https://git.io/JvohI |
+| regressor                      | bộ hồi quy                                | https://git.io/JvKee |
+| regularization                 | điều chuẩn                                |                      |
+| reinforcement learning         | học tăng cường                            |                      |
+| representation learning        | học biểu diễn                             | https://git.io/JvojG |
+| reward function                | hàm điểm thưởng                           |                      |
+| root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | https://git.io/Jvojr |
+| running time                   | thời gian chạy                            |                      |
+| region of rejection            | miền bác bỏ                               | https://git.io/Jvoja |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại         |
@@ -284,68 +284,68 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling with replacement       | lấy mẫu có hoàn lại      | http://bit.ly/34wQuKr |
 | sampling without replacement    | lấy mẫu không hoàn lại   | http://bit.ly/34wQuKr |
 | satisficing metric              | phép đo thỏa mãn         | http://bit.ly/2BvfPYA |
-| scalar                          | số vô hướng              |                       |
+| scalar                          | số vô hướng              | https://git.io/Jvoja  |
 | scroing function                | hàm tính điểm            |                       |
 | sentiment classification        | phân loại cảm xúc        |                       |
 | sequence learning               | học chuỗi                | http://bit.ly/2SsUity |
-| sensitivity                     | độ nhạy                  |                       |
-| shape (trong Đại số Tuyến tính) | kích thước               |                       |
-| significance test               | kiểm định ý nghĩa        |                       |
-| slicing (array)                 | cắt chọn (mảng)          |                       |
+| sensitivity                     | độ nhạy                  | https://git.io/Jvoja  |
+| shape (trong Đại số Tuyến tính) | kích thước               | https://git.io/Jvojn  |
+| significance test               | kiểm định ý nghĩa        | https://git.io/Jvoja  |
+| slicing (array)                 | cắt chọn (mảng)          | https://git.io/JvohH  |
 | spam email                      | email rác                |                       |
 | speech recognition              | nhận dạng giọng nói      |                       |
-| standard deviation              | độ lệch chuẩn            |                       |
-| stationary point                | điểm dừng                |                       |
-| statistical power               | năng lực thống kê        |                       |
-| statistical significance        | ý nghĩa thống kê         |                       |
-| statistical significant         | có ý nghĩa thống kê      |                       |
+| standard deviation              | độ lệch chuẩn            | https://git.io/Jvohb  |
+| stationary point                | điểm dừng                | https://git.io/JvohC  |
+| statistical power               | năng lực thống kê        | https://git.io/Jvoja  |
+| statistical significance        | ý nghĩa thống kê         | https://git.io/Jvoj1  |
+| statistical significant         | có ý nghĩa thống kê      | https://git.io/Jvoj1  |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                       |
-| subscript                       | chỉ số dưới              |                       |
-| subspace estimation             | ước lượng không gian con |                       |
-| superscript                     | chỉ số trên              |                       |
+| subscript                       | chỉ số dưới              | https://git.io/Jvoh1  |
+| subspace estimation             | ước lượng không gian con | https://git.io/JvojD  |
+| superscript                     | chỉ số trên              | https://git.io/Jvoh1  |
 | supervised learning             | học có giám sát          |                       |
-| surprisal (information theory)  | lượng tin                |                       |
+| surprisal (information theory)  | lượng tin                | https://git.io/Jvoh3  |
 | surrogate objective             | mục tiêu thay thế        | http://bit.ly/2PIxkN1 |
-| symbolic graph                  | đồ thị biểu tượng        |                       |
+| symbolic graph                  | đồ thị biểu tượng        | https://git.io/JvojU  |
 
 ## T
-| English                  | Tiếng Việt                     | Thảo luận tại |
-|--------------------------|--------------------------------|---------------|
-| tensor contraction       | phép co tensor                 |               |
-| test set                 | tập kiểm tra                   |               |
-| test set performance     | chất lượng trên tập kiểm tra   |               |
-| test statistic           | tiêu chuẩn kiểm định           |               |
-| timestep                 | bước thời gian                 |               |
-| training set             | tập huấn luyện                 |               |
-| training dev set         | tập phát triển huấn luyện      |               |
-| training set performance | chất lượng trên tập huấn luyện |               |
-| transcribe               | phiên thoại                    |               |
-| transcription            | bản ghi thoại                  |               |
-| true negative            | âm tính thật                   |               |
-| true positive            | dương tính thật                |               |
-| tune parameters          | điều chỉnh tham số             |               |
-| two-sided test           | kiểm định hai phía             |               |
-| two-tailed test          | kiểm định hai đuôi             |               |
+| English                  | Tiếng Việt                     | Thảo luận tại        |
+|--------------------------|--------------------------------|----------------------|
+| tensor contraction       | phép co tensor                 | https://git.io/JvojX |
+| test set                 | tập kiểm tra                   |                      |
+| test set performance     | chất lượng trên tập kiểm tra   |                      |
+| test statistic           | tiêu chuẩn kiểm định           | https://git.io/Jvoja |
+| timestep                 | bước thời gian                 | https://git.io/JvojQ |
+| training set             | tập huấn luyện                 |                      |
+| training dev set         | tập phát triển huấn luyện      |                      |
+| training set performance | chất lượng trên tập huấn luyện |                      |
+| transcribe               | phiên thoại                    | https://git.io/JvojN |
+| transcription            | bản ghi thoại                  |                      |
+| true negative            | âm tính thật                   |                      |
+| true positive            | dương tính thật                |                      |
+| tune parameters          | điều chỉnh tham số             |                      |
+| two-sided test           | kiểm định hai phía             | https://git.io/Jvoja |
+| two-tailed test          | kiểm định hai đuôi             | https://git.io/Jvoja |
 
 ## U
 | English                  | Tiếng Việt                | Thảo luận tại         |
 |--------------------------|---------------------------|-----------------------|
 | unavoidable bias         | độ chệch không tránh được |                       |
 | underfit                 | dưới khớp                 | http://bit.ly/2BvfPYA |
-| underflow (numerical)    | tràn (số) dưới            |                       |
-| unit (trong mạng nơ-ron) | nút                       |                       |
+| underflow (numerical)    | tràn (số) dưới            | https://git.io/JvohC  |
+| unit (trong mạng nơ-ron) | nút                       | https://git.io/Jvohm  |
 | unsupervised learning    | học không giám sát        |                       |
 
 ## V
 | English                     | Tiếng Việt         | Thảo luận tại         |
 |-----------------------------|--------------------|-----------------------|
-| validation set              | tập kiểm định      |                       |
-| vanishing gradient          | tiêu biến gradient |                       |
+| validation set              | tập kiểm định      | https://git.io/Jvohm  |
+| vanishing gradient          | tiêu biến gradient | https://git.io/JvohI  |
 | variance (bias as variance) | phương sai         | http://bit.ly/32HJI3S |
 | vector                      | vector             |                       |
 
 ## W
-| English                                   | Tiếng Việt        | Thảo luận tại |
-|-------------------------------------------|-------------------|---------------|
-| well-behaved function (analytic function) | hàm khả vi vô hạn |               |
-| wrapper function (trong lập trình)        | hàm wrapper       |               |
+| English                                   | Tiếng Việt        | Thảo luận tại        |
+|-------------------------------------------|-------------------|----------------------|
+| well-behaved function (analytic function) | hàm khả vi vô hạn | https://git.io/JvojL |
+| wrapper function (trong lập trình)        | hàm wrapper       | https://git.io/Jvohm |
