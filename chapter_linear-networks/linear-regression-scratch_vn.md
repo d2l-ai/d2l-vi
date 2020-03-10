@@ -483,10 +483,10 @@ Fortunately, even on difficult optimization problems, stochastic gradient descen
 owing partly to the fact that, for deep networks, there exist many configurations of the parameters that lead to accurate prediction.
 -->
 
-Lưu ý là chúng ta không nên ngộ nhận khi cho rằng giá trị của các tham số có thể được khôi phục một cách chính xác. 
+Lưu ý là chúng ta không nên ngộ nhận rằng giá trị của các tham số có thể được khôi phục một cách chính xác. 
 Điều này chỉ xảy ra với một số bài toán đặc biệt: các bài toán tối ưu lồi chặt với lượng dữ liệu "đủ" để đảm bảo rằng các mẫu nhiễu vẫn cho phép chúng ta khôi phục được các tham số.
 Trong hầu hết các trường hợp, điều này *không* xảy ra.
-Trên thực tế, các tham số của một mạng học sâu hiếm khi giống nhau (hoặc thậm chí gần nhau) giữa hai lần chạy khác nhau, trừ khi tất cả các điều kiện đều giống hệt nhau, bao gồm cả thứ tự mà dữ liệu được duyệt qua.
+Trên thực tế, các tham số của một mạng học sâu hiếm khi nào giống nhau (hoặc thậm chí là gần nhau) giữa hai lần chạy riêng biệt, trừ khi tất cả các điều kiện đều giống hệt nhau, bao gồm cả thứ tự mà dữ liệu được duyệt qua.
 Tuy nhiên, trong học máy, chúng ta thường ít quan tâm đến việc khôi phục chính xác giá trị của các tham số, mà quan tâm nhiều hơn đến bộ tham số nào sẽ dẫn tới việc dự đoán chính xác hơn. 
 May mắn thay, thậm chí với những bài toán tối ưu khó, giải thuật hạ gradient ngẫu nhiên thường có thể tìm ra các lời giải đủ tốt, do một thực tế là đối với các mạng học sâu, có thể tồn tại nhiều bộ tham số dẫn đến việc dự đoán chính xác. 
 
