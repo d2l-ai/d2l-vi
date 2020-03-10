@@ -18,10 +18,10 @@ but comparatively complex Fashion-MNIST dataset :cite:`Xiao.Rasul.Vollgraf.2017`
 -->
 
 Ở :numref:`sec_naive_bayes`, chúng ta đã huấn luyện bộ phân loại Naive Bayes, sử dụng bộ dữ liệu MNIST được giới thiệu vào năm 1998 :cite:`LeCun.Bottou.Bengio.ea.1998`.
-Mặc dù MNIST hoạt động tốt như bộ dữ liệu đánh giá xếp hạng (_benchmark_), các mô hình đơn giản dựa trên tiêu chuẩn ngày nay cũng có thể đạt được độ chính xác phân loại lên tới 95%.
-Điều này khiến cho việc phân biệt độ mạnh yếu của các mô hình trở nên không chắc chắn. 
-Ngày nay, MNIST đóng vai trò như là một bài kiểm tra sơ bộ hơn là bài kiểm tra đánh giá xếp hạng.   
-Để cải thiện vấn đề này, chúng ta sẽ cùng tập trung thảo luận ở các mục tiếp theo về một bộ dữ liệu tương tự nhưng phức tạp hơn, đó là bộ dữ liệu Fashion-MNIST  :cite:`Xiao.Rasul.Vollgraf.2017` được giới thiệu vào năm 2017.
+Mặc dù MNIST từng có vai trò tốt như một bộ dữ liệu để đánh giá xếp hạng (_benchmark_), các mô hình đơn giản dựa trên tiêu chuẩn ngày nay cũng có thể đạt được độ chính xác phân loại lên tới 95%.
+Điều này khiến nó không phù hợp cho việc phân biệt độ mạnh yếu của các mô hình.
+Ngày nay, MNIST đóng được dùng trong các phép kiểm tra sơ bộ hơn là dùng để đánh giá xếp hạng.
+Để cải thiện vấn đề này, chúng ta sẽ tập trung thảo luận trong các mục tiếp theo về một bộ dữ liệu tương tự nhưng phức tạp hơn, đó là bộ dữ liệu Fashion-MNIST :cite:`Xiao.Rasul.Vollgraf.2017` được giới thiệu vào năm 2017.
 
 ```{.python .input  n=7}
 %matplotlib inline
@@ -44,9 +44,9 @@ We briefly work through the mechanics of loading and exploring the dataset below
 Please refer to :numref:`sec_naive_bayes` for more details on loading data.
 -->
 
-Cũng giống như với MNIST, Gluons giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với lớp `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng. 
+Cũng giống như với MNIST, Gluon giúp việc tải và nạp bộ dữ liệu FashionMNIST vào bộ nhớ với lớp `FashionMNIST` tại `gluon.data.vision` trở nên dễ dàng.
 Các cơ chế của việc nạp và khám phá bộ dữ liệu sẽ được hướng dẫn ngắn gọn bên dưới.
-Vui lòng tham khảo :numref:`sec_naive_bayes` để biết thêm chi tiết về việc nạp dữ liệu. 
+Vui lòng tham khảo :numref:`sec_naive_bayes` để biết thêm chi tiết về việc nạp dữ liệu.
 
 ```{.python .input  n=23}
 mnist_train = gluon.data.vision.FashionMNIST(train=True)
@@ -58,7 +58,7 @@ FashionMNIST consists of images from 10 categories, each represented by 6k image
 Consequently the training set and the test set contain 60k and 10k images, respectively.
 -->
 
-FashionMNIST chứa các hình ảnh từ 10 lớp, mỗi danh mục được thể hiện bằng sáu nghìn tấm ảnh trong tập huấn luyện và một nghìn tấm ảnh trong tập kiểm tra. 
+FashionMNIST chứa các hình ảnh từ 10 lớp, mỗi lớp có sáu nghìn tấm ảnh trong tập huấn luyện và một nghìn tấm ảnh trong tập kiểm tra.
 Do đó, tập huấn luyện và tập kiểm tra sẽ chứa tổng lần lượt 60 nghìn và 10 nghìn tấm ảnh.
 
 ```{.python .input}
@@ -70,7 +70,7 @@ The images in Fashion-MNIST are associated with the following categories: t-shir
 The following function converts between numeric label indices and their names in text.
 -->
 
-Hình ảnh trong Fashion-MNIST tương ứng với các danh mục sau: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao, túi và giày cao gót. 
+Hình ảnh trong Fashion-MNIST tương ứng với các lớp: áo phông, quần dài, áo thun, váy, áo khoác, dép, áo sơ-mi, giày thể thao, túi và giày cao gót.
 Hàm dưới đây giúp chuyển đổi các nhãn giá trị số sang tên của chúng dưới dạng văn bản.
 
 ```{.python .input  n=25}
@@ -85,7 +85,7 @@ def get_fashion_mnist_labels(labels):
 We can now create a function to visualize these examples.
 -->
 
-Chúng ta có thể tạo một hàm để minh hoạ các mẫu này. 
+Chúng ta có thể tạo một hàm để minh hoạ các mẫu này.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -107,7 +107,7 @@ def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
 Here are the images and their corresponding labels (in text) for the first few examples in the training dataset.
 -->
 
-Dưới đây là các hình ảnh và nhãn tương ứng của chúng (ở dạng văn bản) từ một vài mẫu đầu tiên trong tập huấn luyện. 
+Dưới đây là các hình ảnh và nhãn tương ứng của chúng (ở dạng chữ) từ một vài mẫu đầu tiên trong tập huấn luyện.
 
 ```{.python .input}
 X, y = mnist_train[:18]
@@ -139,7 +139,7 @@ For instance, we can set aside 4 processes to read the data (via `num_workers`).
 Because this feature is not currently supported on Windows the following code checks the platform to make sure that we do not saddle our Windows-using friends with error messages later on.
 -->
 
-Trong quá trình huấn luyện, việc đọc dữ liệu có thể trở thành một nút thắt cổ chai đáng kể về hiệu năng, trừ khi chúng ta sử dụng một mô hình đơn giản hoặc là máy tính của chúng ta rất nhanh. 
+Trong quá trình huấn luyện, việc đọc dữ liệu có thể trở thành một nút thắt cổ chai đáng kể về hiệu năng, trừ khi mô hình đơn giản hoặc máy tính rất nhanh.
 Một tính năng tiện dụng của `DataLoader` là khả năng sử dụng đa luồng (_multiple processes_) để tăng tốc việc đọc dữ liệu.
 Ví dụ, chúng ta có thể dùng 4 luồng để đọc dữ liệu (thông qua `num_workers`).
 Vì tính năng này hiện tại không được hỗ trợ trên Windows, đoạn mã lập trình dưới đây sẽ kiểm tra nền tảng hệ điều hành để đảm bảo rằng chúng ta không làm phiền những người dùng Windows với các thông báo lỗi sau này.
@@ -162,9 +162,9 @@ Through the `transform_first` function of the dataset, we apply the transformati
 -->
 
 Dưới đây, chúng ta chuyển đổi dữ liệu hình ảnh từ uint8 sang số thực dấu phẩy động (_floating point number_) có 32-bit với lớp `ToTensor`.
-Ngoài ra, bộ chuyển đổi sẽ chia tất cả các số với 255 để tất cả các điểm ảnh sẽ có giá trị từ 0 đến 1. 
+Ngoài ra, bộ chuyển đổi sẽ chia tất cả các số cho 255 để các điểm ảnh có giá trị từ 0 đến 1.
 Lớp `ToTensor` cũng chuyển kênh hình ảnh từ chiều cuối cùng sang chiều thứ nhất để tạo điều kiện cho các tính toán mạng nơ-ron sẽ được giới thiệu sau này.
-Thông qua hàm `transform_first` của bộ dữ liệu, chúng ta có thể áp dụng phép biến đổi `ToTensor` cho phần tử đầu tiên của mỗi ví dụ (ảnh và nhãn). 
+Thông qua hàm `transform_first` của bộ dữ liệu, chúng ta có thể áp dụng phép biến đổi `ToTensor` cho phần tử đầu tiên của mỗi ví dụ (ảnh và nhãn).
 
 ```{.python .input  n=28}
 batch_size = 256
@@ -207,9 +207,9 @@ It returns the data iterators for both the training set and validation set.
 In addition, it accepts an optional argument to resize images to another shape.
 -->
 
-Bây giờ, chúng ta sẽ định nghĩa hàm `load_data_fashion_mnist` để thu thập và đọc bộ dữ liệu Fashion-MNIST.
-Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn luyện và tập kiểm định. 
-Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào. 
+Bây giờ, chúng ta sẽ định nghĩa hàm `load_data_fashion_mnist` để nạp và đọc bộ dữ liệu Fashion-MNIST.
+Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn luyện và tập kiểm định.
+Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào.
 
 ```{.python .input  n=4}
 # Saved in the d2l package for later use
@@ -231,7 +231,7 @@ def load_data_fashion_mnist(batch_size, resize=None):
 Below, we verify that image resizing works.
 -->
 
-Dưới đây, chúng ta xác nhận lại kích thước hình ảnh sau khi thay đổi. 
+Dưới đây, chúng ta xác nhận lại kích thước hình ảnh sau khi thay đổi.
 
 ```{.python .input  n=5}
 train_iter, test_iter = load_data_fashion_mnist(32, (64, 64))
@@ -244,7 +244,7 @@ for X, y in train_iter:
 We are now ready to work with the FashionMNIST dataset in the sections that follow.
 -->
 
-Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu FashionMNIST trong các mục tiếp theo. 
+Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu FashionMNIST trong các mục tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -263,10 +263,10 @@ Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu 
 * Data iterators are a key component for efficient performance. Rely on well-implemented iterators that exploit multi-threading to avoid slowing down your training loop.
 -->
 
-* Fashion-MNIST là một bộ dữ liệu phân loại trang phục bao gồm các hình ảnh đại diện cho 10 danh mục. 
-* Chúng ta sẽ sử dụng bộ dữ liệu này trong các mục và chương tiếp theo để đánh giá các thuật toán phân loại khác nhau. 
-* Chúng ta lưu trữ kích thước của mỗi hình ảnh với chiều cao $h$ (_height_) và chiều rộng $w$ (_width_) điểm ảnh (_pixel_) dưới dạng $h \times w$ hoặc `(h, w)`.
-* Iterator dữ liệu là nhân tố chính để đạt được hiệu suất cao. Dựa vào các iterator được lập trình tốt bằng kỹ thuật khai thác đa luồng sẽ tránh làm chậm các vòng lặp huấn luyện của bạn. 
+* Fashion-MNIST là một bộ dữ liệu phân loại trang phục bao gồm các hình ảnh đại diện cho 10 lớp.
+* Chúng ta sẽ sử dụng bộ dữ liệu này trong các mục và chương tiếp theo để đánh giá các thuật toán phân loại khác nhau.
+* Chúng ta lưu trữ kích thước của mỗi hình ảnh với chiều cao $h$ chiều rộng $w$ điểm ảnh dưới dạng $h \times w$ hoặc `(h, w)`.
+* Iterator dữ liệu là nhân tố chính để đạt được hiệu suất cao. Dựa vào các iterator được lập trình tốt bằng kỹ thuật khai thác đa luồng sẽ tránh làm chậm các vòng lặp huấn luyện của bạn.
 
 <!--
 ## Exercises
@@ -282,7 +282,7 @@ Giờ đây chúng ta đã sẵn sàng để làm việc với bộ dữ liệu 
 -->
 
 1. Việc giảm `batch_size` (ví dụ xuống 1) có ảnh hưởng việc đọc dữ liệu hay không?
-2. Với các người dùng không sử dụng Windows, hãy thử thay đổi `num_workers` để xem nó ảnh hưởng đến hiệu năng đọc dữ liệu như thế nào. Vẽ đồ thị hiệu năng tương ứng với số luồng được sử dụng.
+2. Với người dùng không sử dụng Windows, hãy thử thay đổi `num_workers` để xem nó ảnh hưởng đến hiệu năng đọc dữ liệu như thế nào. Vẽ đồ thị hiệu năng tương ứng với số luồng được sử dụng.
 3. Sử dụng tài liệu MXNet để xem các bộ dữ liệu có sẵn khác trong `mxnet.gluon.data.vision`.
 4. Sử dụng tài liệu MXNet để xem những phép biến đổi nào có sẵn trong `mxnet.gluon.data.vision.transforms`.
 
@@ -312,19 +312,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Lê Quang Nhật
-* @tiepvupsu 
-* @lkhphuc 
-* @rootonchair 
-* @duythanhvn 
-
-<!-- Phần 2 -->
-* Nguyễn Lê Quang Nhật
+* Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 4 -->
-* Nguyễn Lê Quang Nhật
