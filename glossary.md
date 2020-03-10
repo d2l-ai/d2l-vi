@@ -303,6 +303,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | subspace estimation             | ước lượng không gian con |                       |
 | superscript                     | chỉ số trên              |                       |
 | supervised learning             | học có giám sát          |                       |
+| surprisal (information theory)  | lượng tin         |                       |
 | surrogate objective             | mục tiêu thay thế        | http://bit.ly/2PIxkN1 |
 | symbolic graph                  | đồ thị biểu tượng        |                       |
 
