@@ -34,7 +34,7 @@ The first is our hidden layer, which contains *256* hidden units and applies the
 The second, is our output layer.
 -->
 
-So với việc dùng gluon để lập trình hồi quy softmax (:numref:`sec_softmax_gluon`), khác biệt duy nhất ở đây là ta thêm *hai* tầng `Dense` (kết nối đầy đủ). (trong khi trước đây, ta chỉ cần thêm *một*). 
+So với việc dùng gluon để lập trình hồi quy softmax (:numref:`sec_softmax_gluon`), khác biệt duy nhất ở đây là ta thêm *hai* tầng `Dense` (kết nối đầy đủ) trong khi trước đây, ta chỉ cần thêm *một*. 
 Đầu tiên là tầng ẩn, chứa *256* nút ẩn và được áp dụng hàm kích hoạt ReLU.
 Thứ hai là tầng đầu ra của ta.
 
