@@ -32,11 +32,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|-------------------------|-----------------------|
 | background noise        | nhiễu nền               | http://bit.ly/31ObyKI |
 | back-propagation        | lan truyền ngược        |                       |
-| backward pass | lượt truyền ngược | |
+| backward pass           | lượt truyền ngược       |                       |
 | batch                   | batch                   |                       |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
-| bias (tham số mô hình) | hệ số điều chỉnh | |
+| bias (tham số mô hình)  | hệ số điều chỉnh        |                       |
 | big data                | big data                |                       |
 | binomial distribution   | phân phối nhị thức      |                       |
 | Blackbox dev set        | tập phát triển Blackbox | http://bit.ly/2MVHcl7 |
@@ -46,9 +46,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                       |
 |-------------------------------------|------------------------|-------------------------------------|
-| category (trong bài toán phân loại) | lớp | |
+| category (trong bài toán phân loại) | lớp                    |                                     |
 | chain rule                          | quy tắc dây chuyền     |                                     |
 | classifier                          | bộ phân loại           |                                     |
+| closed-form solution                | nghiệm theo công thức  |                                     |
 | clustering                          | phân cụm               |                                     |
 | code (danh từ)                      | mã nguồn               |                                     |
 | code (động từ)                      | viết mã                |                                     |
@@ -111,32 +112,32 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Eyeball dev set     | Tập phát triển Eyeball | http://bit.ly/2MVHcl7 |
 
 ## F
-| English             | Tiếng Việt     | Thảo luận tại |
-|---------------------|----------------|---------------|
-| F1 score            | chỉ số F1      |               |
-| false negative      | âm tính giả    |               |
-| false positive      | dương tính giả |               |
-| feature             | đặc trưng      |               |
-| fit                 | khớp           |               |
-| first principle     | định đề cơ bản |               |
-| flatten | trải | |
-| forward pass | lượt truyền xuôi | |
-| framework | framework | |
-| functional anaylsis | giải tích hàm  |               |
-| fully-connected     | kết nối đầy đủ        |               |
+| English             | Tiếng Việt       | Thảo luận tại |
+|---------------------|------------------|---------------|
+| F1 score            | chỉ số F1        |               |
+| false negative      | âm tính giả      |               |
+| false positive      | dương tính giả   |               |
+| feature             | đặc trưng        |               |
+| fit                 | khớp             |               |
+| first principle     | định đề cơ bản   |               |
+| flatten             | trải             |               |
+| forward pass        | lượt truyền xuôi |               |
+| framework           | framework        |               |
+| functional anaylsis | giải tích hàm    |               |
+| fully-connected     | kết nối đầy đủ   |               |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                |
 |--------------------------------|-----------------------------------|----------------------------------------------|
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) |                                              |
 | Gaussian noise                 | nhiễu Gauss                       |                                              |
-| generalization error | lỗi khái quát | |
-| generalization gap | khoảng cách khái quát | |
-| generalization loss | mất mát khái quát | |
+| generalization error           | lỗi khái quát                     |                                              |
+| generalization gap             | khoảng cách khái quát             |                                              |
+| generalization loss            | mất mát khái quát                 |                                              |
 | generative model               | mô hình sinh                      |                                              |
 | generative adversarial network | mạng đối sinh                     |                                              |
-| global maximum | giá trị lớn nhất | |
-| global minimum | giá trị nhỏ nhất | |
+| global maximum                 | giá trị lớn nhất                  |                                              |
+| global minimum                 | giá trị nhỏ nhất                  |                                              |
 | gradient descent               | hạ gradient                       | http://bit.ly/2BvfPYA, http://bit.ly/2rCiYEz |
 | graphical model                | mô hình đồ thị                    |                                              |
 | ground truth                   | nhãn gốc                          | http://bit.ly/34TljJ0                        |
@@ -155,13 +156,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                    | Tiếng Việt         | Thảo luận tại |
 |----------------------------|--------------------|---------------|
-| implement | lập trình | |
-| implementation | cách lập trình | |
+| implement                  | lập trình          |               |
+| implementation             | cách lập trình     |               |
 | implicit feedback          | phản hồi gián tiếp |               |
 | imputation (Preprocessing) | quy buộc           |               |
 | independence assumption    | giả định độc lập   |               |
 | iteration                  | vòng lặp           |               |
-| iterator | iterator | |
+| iterator                   | iterator           |               |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại |
@@ -183,30 +184,30 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear programming                 | quy hoạch tuyến tính           |                       |
 | linear regression                  | hồi quy tuyến tính             |                       |
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính |                       |
-| local maximum | cực đại | |
-| local minimum | cực tiểu | |
+| local maximum                      | cực đại                        |                       |
+| local minimum                      | cực tiểu                       |                       |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            |                       |
 | logistic regression                | hồi quy logistic               |                       |
-| logit (trong softmax)               | logit                          |                       |
-| log-likelihood function | hàm log hợp lý | |
+| logit (trong softmax)              | logit                          |                       |
+| log-likelihood function            | hàm log hợp lý                 |                       |
 | loss function                      | hàm mất mát                    |                       |
 
 ## M
-| English                    | Tiếng Việt                    | Thảo luận tại |
-|----------------------------|-------------------------------|---------------|
-| machine learning           | học máy                       |               |
-| marginalization            | phép biên hóa                 |               |
-| maximum likelihood estimator | bộ ước lượng hợp lý cực đại |               |
-| mean squared error (MSE)   | trung bình bình phương sai số |               |
-| metric                     | phép đo                       |               |
-| minibatch                  | minibatch                     |               |
-| misclassified              | bị phân loại nhầm             |               |
-| mislabeled                 | bị gán nhãn nhầm              |               |
-| model                      | mô hình                       |               |
-| module | mô-đun | |
-| multi-class classification | phân loại đa lớp              |               |
-| multinominal distribution  | phân phối đa thức             |               |
-| multitask learning         | học đa nhiệm                  |               |
+| English                      | Tiếng Việt                    | Thảo luận tại |
+|------------------------------|-------------------------------|---------------|
+| machine learning             | học máy                       |               |
+| marginalization              | phép biên hóa                 |               |
+| maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |               |
+| mean squared error (MSE)     | trung bình bình phương sai số |               |
+| metric                       | phép đo                       |               |
+| minibatch                    | minibatch                     |               |
+| misclassified                | bị phân loại nhầm             |               |
+| mislabeled                   | bị gán nhãn nhầm              |               |
+| model                        | mô hình                       |               |
+| module                       | mô-đun                        |               |
+| multi-class classification   | phân loại đa lớp              |               |
+| multinominal distribution    | phân phối đa thức             |               |
+| multitask learning           | học đa nhiệm                  |               |
 
 ## N
 | English                           | Tiếng Việt                        | Thảo luận tại                               |
@@ -216,24 +217,24 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative log-likelihood function  | hàm đối log hợp lý                |                                             |
 | negative sample/example           | mẫu âm                            |                                             |
 | neural network                    | mạng nơ-ron                       | http://bit.ly/2BvfPYA http://bit.ly/2MAkizG |
-| node (trong mạng nơ-ron) | nút | |
+| node (trong mạng nơ-ron)          | nút                               |                                             |
 | norm                              | chuẩn                             |                                             |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) |                                             |
 | null hypothesis                   | giả thuyết gốc                    |                                             |
 
 ## O
-| English            | Tiếng Việt         | Thảo luận tại         |
-|--------------------|--------------------|-----------------------|
-| objective function | hàm mục tiêu       |                       |
-| offline learning   | học ngoại tuyến    |                       |
-| optimizing metric  | phép đo để tối ưu  | http://bit.ly/2BvfPYA |
-| orthogonal         | trực giao          |                       |
-| orthonormal        | trực chuẩn         |                       |
-| overfit            | quá khớp           | http://bit.ly/2BvfPYA |
-| overflow (numerical) | tràn (số) trên   |                       |
-| one-hot encoding   | biễu diễn one-hot     |                       |
-| one-sided test     | kiểm định một phía |                       |
-| one-tailed test    | kiểm định một đuôi |                       |
+| English              | Tiếng Việt         | Thảo luận tại         |
+|----------------------|--------------------|-----------------------|
+| objective function   | hàm mục tiêu       |                       |
+| offline learning     | học ngoại tuyến    |                       |
+| optimizing metric    | phép đo để tối ưu  | http://bit.ly/2BvfPYA |
+| orthogonal           | trực giao          |                       |
+| orthonormal          | trực chuẩn         |                       |
+| overfit              | quá khớp           | http://bit.ly/2BvfPYA |
+| overflow (numerical) | tràn (số) trên     |                       |
+| one-hot encoding     | biễu diễn one-hot  |                       |
+| one-sided test       | kiểm định một phía |                       |
+| one-tailed test      | kiểm định một đuôi |                       |
 
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại         |
@@ -267,7 +268,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                         | recall                                    |               |
 | recognition                    | nhận dạng                                 |               |
 | recurrent neural network       | mạng nơ-ron truy hồi                      |               |
-| rectified linear unit (ReLU) | đơn vị tuyến tính chỉnh lưu |  |
+| rectified linear unit (ReLU)   | đơn vị tuyến tính chỉnh lưu               |               |
 | regressor                      | bộ hồi quy                                |               |
 | regularization                 | điều chuẩn                                |               |
 | reinforcement learning         | học tăng cường                            |               |
@@ -303,7 +304,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | subspace estimation             | ước lượng không gian con |                       |
 | superscript                     | chỉ số trên              |                       |
 | supervised learning             | học có giám sát          |                       |
-| surprisal (information theory)  | lượng tin         |                       |
+| surprisal (information theory)  | lượng tin                |                       |
 | surrogate objective             | mục tiêu thay thế        | http://bit.ly/2PIxkN1 |
 | symbolic graph                  | đồ thị biểu tượng        |                       |
 
@@ -327,24 +328,24 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | two-tailed test          | kiểm định hai đuôi             |               |
 
 ## U
-| English               | Tiếng Việt                | Thảo luận tại         |
-|-----------------------|---------------------------|-----------------------|
-| unavoidable bias      | độ chệch không tránh được |                       |
-| underfit              | dưới khớp                 | http://bit.ly/2BvfPYA |
-| underflow (numerical) | tràn (số) dưới            |                       |
-| unit (trong mạng nơ-ron) | nút | |
-| unsupervised learning | học không giám sát        |                       |
+| English                  | Tiếng Việt                | Thảo luận tại         |
+|--------------------------|---------------------------|-----------------------|
+| unavoidable bias         | độ chệch không tránh được |                       |
+| underfit                 | dưới khớp                 | http://bit.ly/2BvfPYA |
+| underflow (numerical)    | tràn (số) dưới            |                       |
+| unit (trong mạng nơ-ron) | nút                       |                       |
+| unsupervised learning    | học không giám sát        |                       |
 
 ## V
-| English                     | Tiếng Việt | Thảo luận tại         |
-|-----------------------------|------------|-----------------------|
-| validation set | tập kiểm định | |
-| vanishing gradient | tiêu biến gradient | |
-| variance (bias as variance) | phương sai | http://bit.ly/32HJI3S |
-| vector                      | vector     |                       |
+| English                     | Tiếng Việt         | Thảo luận tại         |
+|-----------------------------|--------------------|-----------------------|
+| validation set              | tập kiểm định      |                       |
+| vanishing gradient          | tiêu biến gradient |                       |
+| variance (bias as variance) | phương sai         | http://bit.ly/32HJI3S |
+| vector                      | vector             |                       |
 
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại |
 |-------------------------------------------|-------------------|---------------|
 | well-behaved function (analytic function) | hàm khả vi vô hạn |               |
-| wrapper function (trong lập trình) | hàm wrapper | |
+| wrapper function (trong lập trình)        | hàm wrapper       |               |
