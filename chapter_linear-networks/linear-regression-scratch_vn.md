@@ -19,12 +19,12 @@ To start off, we import the few required packages.
 -->
 
 Bây giờ bạn đã hiểu được điểm mấu chốt đằng sau thuật toán hồi quy tuyến tính, chúng ta đã có thể bắt đầu thực hành viết mã.
-Trong phần này, ta sẽ thực hiện toàn bộ phương pháp từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
-Trong khi các framework học sâu hiện đại có thể tự động hóa gần như tất cả các công việc ở trên, thì việc lập trình mọi thứ lại từ đầu dường như chỉ để đảm bảo rằng bạn thực sự biết những gì bạn đang làm.
-Hơn nữa, việc hiểu rõ mọi thứ hoạt động như thế nào sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng riêng hay các hàm mất mát, v.v.
+Trong phần này, ta sẽ xây dựng lại toàn bộ kĩ thuật này từ đầu, bao gồm: pipeline dữ liệu, mô hình, hàm mất mát và phương pháp tối ưu hạ gradient.
+Vì các framework học sâu hiện đại có thể tự động hóa gần như tất cả các công đoạn ở trên, việc lập trình mọi thứ từ đầu chỉ để đảm bảo bạn biết rõ mình đang làm gì.
+Hơn nữa, việc hiểu rõ cách mọi thứ hoạt động sẽ giúp ta rất nhiều trong những lúc cần tùy chỉnh các mô hình, tự định nghĩa lại các tầng tính toán hay các hàm mất mát, v.v.
 Trong phần này, chúng ta chỉ dựa vào `ndarray` và `autograd`.
 Sau đó, chúng tôi sẽ giới thiệu một phương pháp triển khai chặt chẽ hơn, tận dụng các tính năng tuyệt vời của Gluon.
-Để bắt đầu, chúng ta cần nhập một vài gói thư viện cần thiết.
+Để bắt đầu, chúng ta cần khai báo một vài gói thư viện cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -51,7 +51,7 @@ Thus our synthetic dataset will be an object $\mathbf{X}\in \mathbb{R}^{1000 \ti
 Để giữ cho mọi thứ đơn giản, chúng ta sẽ xây dựng một tập dữ liệu nhân tạo theo một mô hình tuyến tính với nhiễu cộng.
 Nhiệm vụ của chúng ta là khôi phục các tham số của mô hình này bằng cách sử dụng một tập hợp hữu hạn các mẫu có trong tập dữ liệu đó.
 Chúng ta sẽ sử dụng dữ liệu ít chiều để thuận tiện cho việc minh họa.
-Trong đoạn mã sau, chúng ta đã tạo một tập dữ liệu chứa $1000$ mẫu, mỗi mẫu bao gồm $2$ đặc trưng theo phân phối chuẩn hóa.
+Trong đoạn mã sau, chúng ta đã tạo một tập dữ liệu chứa $1000$ mẫu, mỗi mẫu bao gồm $2$ đặc trưng được lấy ngẫu nhiên theo phân phối chuẩn.
 Do đó, tập dữ liệu tổng hợp của chúng ta sẽ là một đối tượng $\mathbf{X}\in \mathbb{R}^{1000 \times 2}$.
 
 <!--
@@ -60,7 +60,7 @@ and our synthetic labels will be assigned according to the following linear mode
 -->
 
 Các tham số đúng để tạo tập dữ liệu sẽ là $\mathbf{w} = [2, -3.4]^\top$ và $b = 4.2$ 
-và các nhãn tổng hợp sẽ được tính dựa theo mô hình tuyến tính với nhiễu $\epsilon$:
+và nhãn sẽ được tạo ra dựa theo mô hình tuyến tính với nhiễu $\epsilon$:
 
 $$\mathbf{y}= \mathbf{X} \mathbf{w} + b + \mathbf\epsilon.$$
 
@@ -77,8 +77,8 @@ The following code generates our synthetic dataset:
 
 Bạn đọc có thể xem $\epsilon$ như là sai số tiềm ẩn của phép đo trên các đặc trưng và các nhãn.
 Chúng ta sẽ mặc định các giả định tiêu chuẩn đều thỏa mãn và vì thế $\epsilon$ tuân theo phân phối chuẩn với trung bình bằng $0$.
-Để đơn giản, ta sẽ thiết lập độ lệch chuẩn của nó bằng $0.1$.
-Đoạn mã nguồn sau sẽ sinh ra tập dữ liệu tổng hợp:
+Để đơn giản, ta sẽ thiết lập độ lệch chuẩn của nó bằng $0.01$.
+Đoạn mã nguồn sau sẽ tạo ra tập dữ liệu tổng hợp:
 
 ```{.python .input  n=2}
 # Saved in the d2l package for later use
@@ -108,7 +108,7 @@ print('features:', features[0],'\nlabel:', labels[0])
 By generating a scatter plot using the second `features[:, 1]` and `labels`, we can clearly observe the linear correlation between the two.
 -->
 
-Bằng cách vẽ đồ thị phân tán với chiều thứ hai `features[:, 1]` và `labels`, ta có thể quan sát rõ mối tương quan giữa chúng.
+Bằng cách vẽ đồ thị phân tán với chiều thứ hai `features[:, 1]` và `labels`, ta có thể quan sát rõ mối tương quan tuyến tính giữa chúng.
 
 ```{.python .input  n=18}
 d2l.set_figsize((3.5, 2.5))
