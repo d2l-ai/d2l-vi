@@ -5,7 +5,7 @@
 # Concise Implementation of Multilayer Perceptron
 -->
 
-# Triển khai súc tích của Mạng Perceptron Đa tầng
+# Triển khai súc tích của Perceptron Đa tầng
 :label:`sec_mlp_gluon`
 
 <!--
@@ -57,7 +57,7 @@ This modularity enables us to separate matterns concerning the model architectur
 -->
 
 Quá trình lặp để huấn luyện giống *chính xác* với những gì khi ta lập trình hồi quy softmax.
-Lập trình hướng mô-đun như vầy cho phép ta tách các chi tiết liên quan đến kiến trúc của mô hình ra khỏi các mối bận tâm chính.
+Lập trình hướng mô-đun như vậy cho phép ta tách các chi tiết liên quan đến kiến trúc của mô hình ra khỏi các mối bận tâm chính.
 
 ```{.python .input  n=6}
 batch_size, num_epochs = 256, 10
