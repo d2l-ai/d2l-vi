@@ -87,7 +87,7 @@ were we to apply it to an infinite stream of additional data points drawn from t
 -->
 
 Để thảo luận hiện tượng này một cách chính thức hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
-Lỗi huấn luyện là loại lỗi của mô hình như được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là kỳ vọng của lỗi mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới từ cùng phân phối dữ liệu như mẫu ban đầu.
+Lỗi huấn luyện là loại lỗi của mô hình như được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu như các mẫu ban đầu.
 
 <!--
 Problematically, *we can never calculate the generalization error exactly*.
