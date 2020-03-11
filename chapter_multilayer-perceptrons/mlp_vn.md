@@ -355,7 +355,7 @@ We plot the derivative of the ReLU function plotted below.
 Khi đầu vào mang giá trị âm thì đạo hàm của hàm ReLu bằng 0 và khi đầu vào mang giá trị dương thì đạo hàm của hàm ReLu bằng 1.
 Lưu ý rằng, hàm ReLU không khả vi tại 0.
 Trong thường hợp này, ta mặc định sẽ lấy đạo hàm trái (LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
-Ta có thể làm được điều này bởi vì đầu vào của hàm số thường sẽ xấp xỉ 0.
+Chỗ này có thể du di được vì đầu vào thường không bao giờ có giá trị chính xác bằng không.
 Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến điều kiện biên thì có lẽ ta chỉ đang làm toán (*thuần thúy*), chứ không phải đang làm kỹ thuật.
 Và trong trường hợp này, ngạn ngữ đó đúng.
 Đồ thị đạo hàm của hàm ReLU như hình dưới.
