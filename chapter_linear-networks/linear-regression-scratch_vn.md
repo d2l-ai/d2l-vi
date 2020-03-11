@@ -533,10 +533,10 @@ Trong các phần sau, chúng tôi sẽ mô tả các mô hình khác dựa trê
 1. Điều gì sẽ xảy ra nếu chúng ta khởi tạo các trọng số $\mathbf{w} = 0$. Liệu thuật toán sẽ vẫn hoạt động chứ?
 2. Giả sử rằng bạn là [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) và bạn đang cố gắng nghĩ ra một mô hình giữa điện áp và dòng điện. Bạn có thể sử dụng `autograd` để học các tham số cho mô hình của bạn không?
 3. Bạn có thể sử dụng [Planck's Law](https://en.wikipedia.org/wiki/Planck%27s_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
-4. Bạn có thể gặp phải những vấn đề gì nếu bạn muốn mở rộng `autograd` đến các đạo hàm bậc hai? Bạn sẽ sửa chúng bằng cách nào?
+4. Những vấn đề gặp phải nếu muốn mở rộng `autograd` đến các đạo hàm bậc hai? Cần sửa lại như thế nào?
 5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
-6. Thử nghiệm các tốc độ học khác nhau để xem giá trị hàm mất mát giảm nhanh đến mức nào.
-7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, hàm data_iter sẽ xử lý như thế nào?
+6. Thử nghiệm các tốc độ học khác nhau để kiểm tra mức độ giảm nhanh của giá trị hàm mất mát giảm.
+7. Nếu số lượng mẫu không thể chia hết cho kích thước batch, thì hàm `data_iter` sẽ xử lý như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
