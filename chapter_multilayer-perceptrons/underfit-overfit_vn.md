@@ -480,8 +480,8 @@ We can now explore these concepts interactively by fitting polynomials to data.
 To get started we will import our usual packages.
 -->
 
-Bây giờ ta có thể khám phá những khái niệm này theo cách tương tác bằng việc tìm các đa thức khớp với dữ liệu.
-Để bắt đầu chúng ta sẽ nhập các gói thông thường.
+Bây giờ ta có thể khám phá một cách tương tác những khái niệm này bằng cách tìm các đa thức khớp với dữ liệu.
+Để bắt đầu ta sẽ nhập các gói thông thường.
 
 ```{.python .input  n=1}
 import d2l
@@ -500,7 +500,7 @@ npx.set_np()
 First we need data. Given $x$, we will use the following cubic polynomial to generate the labels on training and test data:
 -->
 
-Đầu tiên ta cần dữ liệu. Cho trước $x$, ta sẽ sử dụng đa thức bậc ba ở dưới đây để tạo ra các nhãn cho tập dữ liệu huấn luyện và tập kiểm tra:
+Đầu tiên ta cần dữ liệu. Cho $x$, ta sẽ sử dụng đa thức bậc ba ở dưới đây để tạo nhãn cho tập dữ liệu huấn luyện và tập kiểm tra:
 
 $$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where }
 \epsilon \sim \mathcal{N}(0, 0.1).$$
@@ -540,17 +540,17 @@ Factorials are implemented in Gluon using the Gamma function,
 where $n! = \Gamma(n+1)$.
 -->
 
-Để tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của các gradient, mất mát, v.v.
+Để tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của gradient, mất mát, v.v.
 Đây là lý do tại sao các đơn thức lưu trong `poly_features` được thay đổi kích thước từ $x^i$ thành $\frac{1}{i!} x^i$.
 Nó cho phép ta tránh các giá trị quá lớn với số mũ bậc cao $i$.
-Phép tính giai thừa được khai triển trong Gluon sử dụng hàm Gamma, khi mà $n! = \Gamma(n+1)$.
+Phép tính giai thừa được khai triển trong Gluon sử dụng hàm Gamma, khi $n! = \Gamma(n+1)$.
 
 <!--
 Take a look at the first 2 samples from the generated dataset.
 The value 1 is technically a feature, namely the constant feature corresponding to the bias.
 -->
 
-Hãy xem xét hai mẫu đầu tiên trong tập dữ liệu được sinh ra.
+Hãy xem xét hai mẫu đầu tiên trong tập dữ liệu được tạo ra.
 Về mặt kỹ thuật giá trị 1 là một đặc trưng, cụ thể là đặc trưng không đổi tương ứng với độ chệch.
 
 ```{.python .input  n=3}
@@ -628,7 +628,7 @@ The trained model parameters are also close to the true values $w = [5, 1.2, -3.
 -->
 
 Ta sẽ bắt đầu bằng cách sử dụng hàm đa thức bậc ba cùng bậc với hàm tạo dữ liệu.
-Kết quả cho thấy tỷ lệ lỗi huấn luyện là thấp khi sử dụng tập kiểm tra trên mô hình này.
+Kết quả cho thấy tỉ lệ lỗi huấn luyện là thấp khi sử dụng tập kiểm tra trên mô hình này.
 Các tham số trên mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
 
 ```{.python .input  n=6}
