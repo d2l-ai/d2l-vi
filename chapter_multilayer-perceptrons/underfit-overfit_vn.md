@@ -158,7 +158,7 @@ Tuy nhiên, đối với hầu hết các thuật toán, ta nên hi vọng lỗi
 Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
 Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp chiếm đa số*, đối với các mẫu giới hạn của chúng ta thì đó là *1*.
 Trong trường hợp này, mô hình luôn dự đoán lớp 1 sẽ phát sinh lỗi $\frac{1}{3}$, tốt hơn đáng kể so với lỗi tổng quát hóa.
-Khi ta tăng lượng dữ liệu, xác suất tỷ lệ nhận được mặt ngửa chệch đi đáng kể từ $\frac{1}{2}$ giảm xuống, và lỗi huấn luyện sẽ tiến đến lỗi khái quát hóa.
+Khi ta tăng lượng dữ liệu, tỷ lệ nhận được mặt ngửa sẽ chệch đi đáng kể về xác suất $\frac{1}{2}$ và lỗi huấn luyện sẽ tiến đến lỗi khái quát.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
