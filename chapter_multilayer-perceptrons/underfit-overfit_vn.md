@@ -473,14 +473,15 @@ In part, the current success of deep learning owes to the current abundance of m
 ## Polynomial Regression
 -->
 
-## *dịch tiêu đề phía trên*
+## Hồi quy Đa thức 
 
 <!--
 We can now explore these concepts interactively by fitting polynomials to data.
 To get started we will import our usual packages.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể khám phá những khái niệm này theo cách tương tác bằng việc tìm các đa thức khớp với dữ liệu.
+Để bắt đầu chúng ta sẽ nhập các gói thông thường.
 
 ```{.python .input  n=1}
 import d2l
@@ -493,26 +494,28 @@ npx.set_np()
 ### Generating the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Tạo ra Tập dữ liệu
 
 <!--
 First we need data. Given $x$, we will use the following cubic polynomial to generate the labels on training and test data:
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên ta cần dữ liệu. Cho trước $x$, ta sẽ sử dụng đa thức bậc ba ở dưới đây để tạo ra các nhãn cho tập dữ liệu huấn luyện và tập kiểm tra:
 
 $$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where }
 \epsilon \sim \mathcal{N}(0, 0.1).$$
 -->
 
-*dịch đoạn phía trên*
+$$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where }
+\epsilon \sim \mathcal{N}(0, 0.1).$$
 
 <!--
 The noise term $\epsilon$ obeys a normal distribution with a mean of 0 and a standard deviation of 0.1.
 We will synthesize 100 samples each for the training set and test set.
 -->
 
-*dịch đoạn phía trên*
+Thuật ngữ nhiễu $\epsilon$ tuân theo phân phối chuẩn (phân phối Gauss) với giá trị trung bình bằng 0 và độ lệch chuẩn bằng 0.1.
+Ta sẽ tổng hợp 100 mẫu cho mỗi tập huấn luyện và tập kiểm tra.
 
 ```{.python .input  n=2}
 maxdegree = 20  # Maximum degree of the polynomial
@@ -537,14 +540,18 @@ Factorials are implemented in Gluon using the Gamma function,
 where $n! = \Gamma(n+1)$.
 -->
 
-*dịch đoạn phía trên*
+Để tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của các gradient, mất mát, v.v.
+Đây là lý do tại sao các đơn thức lưu trong `poly_features` được thay đổi kích thước từ $x^i$ thành $\frac{1}{i!} x^i$.
+Nó cho phép ta tránh các giá trị quá lớn với số mũ bậc cao $i$.
+Phép tính giai thừa được khai triển trong Gluon sử dụng hàm Gamma, khi mà $n! = \Gamma(n+1)$.
 
 <!--
 Take a look at the first 2 samples from the generated dataset.
 The value 1 is technically a feature, namely the constant feature corresponding to the bias.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét hai mẫu đầu tiên trong tập dữ liệu được sinh ra.
+Về mặt kỹ thuật giá trị 1 là một đặc trưng, cụ thể là đặc trưng không đổi tương ứng với độ chệch.
 
 ```{.python .input  n=3}
 features[:2], poly_features[:2], labels[:2]
@@ -554,13 +561,13 @@ features[:2], poly_features[:2], labels[:2]
 ### Training and Testing Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Kiểm tra Mô hình
 
 <!--
 Let's first implement a function to evaluate the loss on a given data.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên ta lập trình hàm để đánh giá mất mát của dữ liệu cho trước.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -576,7 +583,7 @@ def evaluate_loss(net, data_iter, loss):
 Now define the training function.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta định nghĩa hàm huấn luyện.
 
 ```{.python .input  n=5}
 def train(train_features, test_features, train_labels, test_labels,
@@ -612,7 +619,7 @@ def train(train_features, test_features, train_labels, test_labels,
 ### Third-Order Polynomial Function Fitting (Normal)
 -->
 
-### *dịch tiêu đề phía trên*
+### Khớp Hàm Đa thức Bậc Ba (dạng chuẩn)
 
 <!--
 We will begin by first using a third-order polynomial function with the same order as the data generation function.
@@ -620,7 +627,9 @@ The results show that this model’s training error rate when using the testing 
 The trained model parameters are also close to the true values $w = [5, 1.2, -3.4, 5.6]$.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ bắt đầu bằng cách sử dụng hàm đa thức bậc ba cùng bậc với hàm tạo dữ liệu.
+Kết quả cho thấy tỷ lệ lỗi huấn luyện là thấp khi sử dụng tập kiểm tra trên mô hình này.
+Các tham số trên mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
 
 ```{.python .input  n=6}
 # Pick the first four dimensions, i.e., 1, x, x^2, x^3 from the polynomial
@@ -778,7 +787,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 8 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 9 -->
 *
