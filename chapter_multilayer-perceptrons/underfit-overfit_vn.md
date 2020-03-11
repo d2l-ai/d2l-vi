@@ -98,7 +98,7 @@ constituted of a random selection of data points that were withheld from our tra
 
 Vấn đề là, *chúng ta không bao giờ có thể tính toán chính xác lỗi khái quát*.
 Đó là bởi vì luồng vô hạn dữ liệu chỉ có trong tưởng tượng.
-Trên thực tế, chúng ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm một tập con ngẫu nhiên các điểm từng được giữ trong tập huấn luyện.
+Trên thực tế, chúng ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm các điểm dữ liệu ngẫu nhiên được giữ lại từ tập huấn luyện.
 
 <!--
 The following three thought experiments will help illustrate this situation better.
