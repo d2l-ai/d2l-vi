@@ -156,7 +156,7 @@ Cuối cùng, hãy xem xét vấn đề cố gắng phân loại kết quả c�
 Bất kể thuật toán nào được đưa ra, lỗi khái quát hóa sẽ luôn là $\frac{1}{2}$.
 Tuy nhiên, đối với hầu hết các thuật toán, ta nên hi vọng lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của bốc thăm, ngay cả khi ta không có bất kỳ tính năng nào!
 Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
-Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp đa số*, xuất hiện từ các mẫu giới hạn của chúng ta là *1*.
+Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp chiếm đa số*, đối với các mẫu giới hạn của chúng ta thì đó là *1*.
 Trong trường hợp này, mô hình luôn dự đoán lớp 1 sẽ phát sinh lỗi $\frac{1}{3}$, tốt hơn đáng kể so với lỗi tổng quát hóa.
 Khi ta tăng lượng dữ liệu, xác suất tỷ lệ nhận được mặt ngửa chệch đi đáng kể từ $\frac{1}{2}$ giảm xuống, và lỗi huấn luyện sẽ tiến đến lỗi khái quát hóa.
 
