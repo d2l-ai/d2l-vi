@@ -248,7 +248,7 @@ we need to invoke the `attach_grad` function, allocating memory to store the gra
 -->
 
 Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
-Xem :numref:`sec_autograd` để có thêm chi tiết.
+Xem :numref:`sec_autograd` để biết thêm chi tiết.
 Nhắc lại từ mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
 
 ```{.python .input  n=8}
