@@ -118,7 +118,7 @@ Một sinh viên chăm chỉ sẽ cố gắng luyện tập tốt và kiểm tra
 Tuy nhiên, làm tốt các bài kiểm tra trước đây không đảm bảo rằng cô ấy sẽ làm tốt bài kiểm tra thật.
 Ví dụ, sinh viên có thể cố gắng chuẩn bị bằng cách học vẹt các câu trả lời cho các câu hỏi.
 Điều này đòi hỏi sinh viên phải ghi nhớ rất nhiều thứ.
-Cô ấy có thể ghi nhớ đáp án cho các bài kiểm tra cũ rất hoàn hảo. 
+Cô ấy có lẽ còn ghi nhớ đáp án cho các bài kiểm tra cũ một cách hoàn hảo. 
 Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do cho việc đưa ra các câu đáp án nhất định. 
 Trong hầu hết các trường hợp, sinh viên sau sẽ làm tốt hơn nhiều. 
 
