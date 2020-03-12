@@ -150,7 +150,7 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Optimization Algorithm
 -->
 
-## Thuật toán tối ưu
+## Thuật toán Tối ưu
 
 <!--
 Here, we use minibatch stochastic gradient descent with a learning rate of $0.1$ as the optimization algorithm.
