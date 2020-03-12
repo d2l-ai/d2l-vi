@@ -510,7 +510,7 @@ This only scratches the surface of what is possible.
 In the following sections, we will describe additional models based on the concepts that we have just introduced and learn how to implement them more concisely.
 -->
 
-Chúng ta đã thấy cách một mạng sâu được triển khai và tối ưu hóa từ đầu chỉ với `ndarray` và `autograd` mà không cần định nghĩa các tầng, các thuật toán tối ưu đặc biệt, v.v.
+Chúng ta đã thấy cách một mạng sâu được thực thi và tối ưu hóa từ đầu chỉ với `ndarray` và `autograd` mà không cần định nghĩa các tầng, các thuật toán tối ưu đặc biệt, v.v.
 Điều này chỉ mới chạm đến bề mặt của những gì mà ta có thể làm.
 Trong các phần sau, chúng tôi sẽ mô tả các mô hình khác dựa trên những khái niệm vừa được giới thiệu cũng như cách triển khai chúng một cách chính xác hơn.
 
