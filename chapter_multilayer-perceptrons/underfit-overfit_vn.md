@@ -661,7 +661,7 @@ train(poly_features[:n_train, 0:3], poly_features[n_train:, 0:3],
 ### Insufficient Training (Overfitting)
 -->
 
-### Huấn luyện không đủ (Quá khớp)
+### Thiếu dữ liệu huấn luyện (Quá khớp)
 
 <!--
 Now let's try to train the model using a polynomial of too high degree.
@@ -679,7 +679,7 @@ Dĩ nhiên, lỗi huấn luyện trong trường hợp này sẽ thấp (thậm 
 Try out different model complexities (`n_degree`) and training set sizes (`n_subset`) to gain some intuition of what is happening.
 -->
 
-Thử nghiệm với các độ phức tạp của mô hình (`n_degree`) và kích thước của tập huấn luyện (`n_subset`) khác nhau để thấy được một cách trực quan điều gì đang diễn ra.
+Thử nghiệm với các độ phức tạp của mô hình (`n_degree`) và các kích thước của tập huấn luyện (`n_subset`) khác nhau để thấy được một cách trực quan điều gì đang diễn ra.
 
 ```{.python .input  n=8}
 n_subset = 100  # Subset of data to train on
@@ -734,12 +734,12 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 
 1. Bạn có thể giải một bài toán hồi quy đa thức một cách chính xác? Gợi ý: sử dụng đại số tuyến tính.
 2. Lựa chọn mô hình cho các đa thức
-    * Vẽ đồ thị so sánh lỗi huấn luyện và độ phức tạp của mô hình (bậc của đa thức). Bạn quan sát được gì?
-    * Vẽ lỗi kiểm tra trong trường hợp này.
-    * Tạo biểu đồ tương tự như một hàm của lượng dữ liệu?
-3. Điều gì sẽ xảy ra nếu bạn không chuẩn hóa các đặc trưng đa thức $x^i$ với $1/i!$. Bạn có thể sửa chữa vấn đề này bằng cách nào khác không?
-4. Bậc nào của đa thức mà bạn cần giảm tỉ lệ lỗi huấn luyện về 0?
-5. Bạn có thể nào kỳ vọng nhìn thấy lỗi khái quát bằng 0?
+    * Vẽ đồ thị biểu diễn lỗi huấn luyện và độ phức tạp của mô hình (bậc của đa thức). Bạn quan sát được gì?
+    * Vẽ đồ thị biểu diễn lỗi kiểm tra trong trường hợp này.
+    * Tạo một biểu đồ tương tự như một hàm của lượng dữ liệu?
+3. Điều gì sẽ xảy ra nếu bạn bỏ qua việc chuẩn hóa các đặc trưng đa thức $x^i$ với $1/i!$. Bạn có thể sửa chữa vấn đề này bằng cách nào khác không?
+4. Bậc nào của đa thức mà bạn cần để giảm tỉ lệ lỗi huấn luyện về 0?
+5. Bạn có thể nào từng kỳ vọng nhìn thấy lỗi khái quát bằng 0?
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
