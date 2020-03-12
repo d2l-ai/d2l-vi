@@ -187,8 +187,8 @@ Note that in many cases, Gluon takes additional precautions beyond these most we
 saving us from even more pitfalls that we would encounter if we tried to code all of our models from scratch in practice.
 -->
 
-Giống lần trước, thuật toán hội tụ và nghiệm có độ chính xác 83.7%, chỉ khác một điều là cần ít dòng lệnh hơn.
-Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để đảm bảo tính ổn định số học mà ta dễ gặp phải nếu tự lập trình mô hình từ đầu.
+Giống lần trước, thuật toán hội tụ tới một mô hình có độ chính xác 83.7% nhưng chỉ khác là cần ít dòng lệnh hơn.
+Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để tránh các lỗi kĩ thuật tính toán mà ta dễ gặp phải nếu tự lập trình mô hình từ đầu.
 
 <!--
 ## Exercises
