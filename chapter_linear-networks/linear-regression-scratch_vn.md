@@ -531,7 +531,7 @@ Trong các phần sau, chúng tôi sẽ mô tả các mô hình khác dựa trê
 -->
 
 1. Điều gì sẽ xảy ra nếu chúng ta khởi tạo các trọng số $\mathbf{w} = 0$. Liệu thuật toán sẽ vẫn hoạt động chứ?
-2. Giả sử rằng bạn là [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) và bạn đang cố gắng nghĩ ra một mô hình giữa điện áp và dòng điện. Bạn có thể sử dụng `autograd` để học các tham số cho mô hình của bạn không?
+2. Giả sử rằng bạn là [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) và bạn đang cố gắng tìm ra một mô hình giữa điện áp và dòng điện. Bạn có thể sử dụng `autograd` để học các tham số cho mô hình của bạn không?
 3. Bạn có thể sử dụng [Planck's Law](https://en.wikipedia.org/wiki/Planck%27s_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
 4. Những vấn đề gặp phải nếu muốn mở rộng `autograd` đến các đạo hàm bậc hai? Cần sửa lại như thế nào?
 5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
