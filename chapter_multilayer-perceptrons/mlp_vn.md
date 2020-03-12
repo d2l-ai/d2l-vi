@@ -546,10 +546,10 @@ Show that this network is less expressive (powerful) than a single layer percept
 1. Tính đạo hàm của hàm kích hoạt tanh và pReLU.
 2. Chứng minh rằng perceptron đa tầng chỉ sử dụng ReLU (hoặc pReLU) để xây dựng một hàm tuyến tính từng đoạn liên tục.
 3. Chứng minh rằng $\mathrm{tanh}(x) + 1 = 2 \mathrm{sigmoid}(2x)$.
-4. Giả sử ta có một phi tuyến tính perceptron đa tầng *không có* giữa các tầng.
+4. Giả sử ta có một perceptron đa tầng mà *không có* tính phi tuyến giữa các tầng.
 Ngoài ra, giả sử ta có các chiều của đầu vào $d$, các chiều đầu ra $d$ và đó là một trong các tầng chỉ có các chiều $d/2$.
-Chứng minh rằng mạng này ít có nghĩa (hiệu quả) hơn là perceptron đơn tầng.
-5. Giả sử ta có một phi tuyến tính áp dụng cho một minibatch cùng một lúc. Bạn mong đợi vấn đề nào sẽ xảy ra?
+Chứng minh rằng mạng này có ít khả năng biểu diễn hơn một perceptron đơn tầng.
+5. Giả sử ta có một hàm phi tuyến tính áp dụng cho một minibatch cùng một lúc. Việc này sẽ dẫn đến vấn đề gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
