@@ -50,7 +50,7 @@ Again, we initialize the weights at random with zero mean and standard deviation
 
 Như đã đề cập trong :numref:`sec_softmax`, tầng đầu ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
 Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra cho đối tượng `Sequential`.
-Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen này vì nó sẽ luôn hiện diện khi ta xây dựng các mô hình sâu.
+Việc sử dụng `Sequential` ở đây không thực sự cần thiết, nhưng ta nên hình thành thói quen này vì nó sẽ luôn hiện diện khi ta xây dựng các mô hình sâu.
 Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
 ```{.python .input  n=3}
@@ -91,9 +91,9 @@ You can verify that this shifting of each $z_i$ by constant factor does not chan
 -->
 
 Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
-Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan``.
+Lúc này mẫu số hoặc tử số (hoặc cả hai) sẽ tiến tới ``inf`` và ta gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan``.
 Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không được xác định một cách rõ ràng.
-Có một mẹo để khắc phục việc này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Có một mẹo để khắc phục việc này là đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
 Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
@@ -130,7 +130,7 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-Ta sẽ muốn giữ nguyên chức năng của softmax thông thường trong trường hợp ta muốn đánh giá các đầu ra của mô hình dưới dạng xác suất.
+Ta sẽ muốn giữ nguyên hàm softmax thông thường để sử dụng trong trường hợp muốn đánh giá đầu ra của mô hình dưới dạng xác suất.
 Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit (các giá trị khi chưa qua softmax) và tính softmax cùng log của nó trong hàm mất mát `softmax_cross_entropy`.
 Hàm này cũng sẽ tự động thực hiện các mẹo thông minh như log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
