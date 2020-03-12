@@ -236,8 +236,8 @@ Often with neural networks, we think of a model that takes more training steps a
 
 Khi có các mô hình đơn giản và dữ liệu dồi dào, ta kỳ vọng lỗi khái quát sẽ giống với lỗi huấn luyện.
 Khi làm việc với nhiều mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
-Chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
-Rất nhiều yếu tố ảnh hưởng tới liệu một mô hình có khái quát hóa tốt hay không.
+Để chỉ ra chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
+Rất nhiều yếu tố ảnh hưởng đến việc một mô hình có khái quát hóa tốt hay không.
 Ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
 Một mô hình mà các tham số có phạm vi giá trị rộng hơn thì được xem là phức tạp hơn.
 Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có càng nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
