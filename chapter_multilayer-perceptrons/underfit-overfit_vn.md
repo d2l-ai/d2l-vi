@@ -154,7 +154,7 @@ As we increase the amount of data, the probability that the fraction of heads wi
 
 Cuối cùng, hãy xem xét vấn đề cố gắng phân loại kết quả của việc tung đồng xu (lớp 0: người đứng đầu, lớp 1: đuôi) dựa trên một số tính năng theo ngữ cảnh có thể có sẵn.
 Bất kể thuật toán nào được đưa ra, lỗi khái quát sẽ luôn là $\frac{1}{2}$.
-Tuy nhiên, đối với hầu hết các thuật toán, ta nên hi vọng lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của bốc thăm, ngay cả khi ta không có bất kỳ tính năng nào!
+Tuy nhiên, đối với hầu hết các thuật toán, lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của ta khi lấy dữ liệu, ngay cả khi ta không có bất kỳ đặc trưng nào!
 Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
 Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp chiếm đa số*, đối với các mẫu giới hạn của chúng ta thì đó là *1*.
 Trong trường hợp này, mô hình luôn dự đoán lớp 1 sẽ có lỗi huấn luyện là $\frac{1}{3}$, tốt hơn đáng kể so với lỗi khái quát.
