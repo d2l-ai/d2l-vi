@@ -146,13 +146,13 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 ### From Linear to Nonlinear
 -->
 
-### *dịch tiêu đề phía trên*
+### Từ Tuyến tính đến Phi tuyến
 
 <!--
 Formally, we calculate the each layer in this one-hidden-layer MLP as follows:
 -->
 
-*dịch đoạn phía trên*
+Về mặt hình thức, chúng ta tính toán mỗi tầng trong MLP một-tầng-ẩn này như sau:
 
 
 $$
@@ -173,16 +173,22 @@ A linear function of a linear function is itself a linear function.
 Moreover, our linear model was already capable of representing any linear function.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng sau khi thêm tầng này vào, mô hình lập tức yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
+Vậy thì đổi lại ta sẽ nhận được gì?
+Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì với những rắc rối của mình!*
+Lý do rất đơn giản.
+Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền Softmax) chỉ là một hàm tuyến tính của các nút ẩn.
+Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
+Hơn nữa, mô hình tuyến tính của chúng ta vốn dĩ đã có khả năng biểu diễn bất kỳ hàm tuyến tính nào rồi.
 
 
 <!--
 We can view the equivalence formally by proving that for any values of the weights, we can just collapse out the hidden layer, yielding an equivalent single-layer model with paramters
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thấy sự tương đồng về mặt hình thức bằng cách chứng minh rằng với mọi giá trị của các trọng số, ta đều có thể loại bỏ tầng ẩn và tạo ra một mô hình đơn-tầng với các tham số
 
-$\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ and $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
+$\mathbf{W} = \mathbf{W}_2 \mathbf{W}_1$ và $\mathbf{b} = \mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2$.
 
 $$\mathbf{o} = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2 = \mathbf{W}_2 (\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2 = (\mathbf{W}_2 \mathbf{W}_1) \mathbf{x} + (\mathbf{W}_2 \mathbf{b}_1 + \mathbf{b}_2) = \mathbf{W} \mathbf{x} + \mathbf{b}.$$
 
@@ -200,7 +206,9 @@ In general, with these activation functions in place,
 it is no longer possible to collapse our MLP into a linear model.
 -->
 
-*dịch đoạn phía trên*
+Để nhận thấy được tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ áp dụng lên từng nút ẩn (theo sau phép biến đổi tuyến tính).
+Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến là đơn vị tuyến tính chỉnh lưu (ReLU) $\mathrm{max}(x, 0)$.
+Nhìn chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể thu gọn MLP thành một mô hình tuyến tính nữa.
 
 $$
 \begin{aligned}
@@ -216,19 +224,25 @@ e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ and $\math
 one atop another, yielding ever more expressive models (assuming fixed width).
 -->
 
-*dịch đoạn phía trên*
+Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn, ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$, kế tiếp nhau, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
 
 <!--
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
 We can easily design hidden nodes to perform arbitrary computation, for instance, basic logic operations on a pair of inputs.
 Moreover, for certain choices of the activation function, it is widely known that MLPs are universal approximators.
-Even a single-hidden-layer network, given enough nodes (possibly absurdly manby), and the right set of weights, we can model any function at all.
+Even a single-hidden-layer network, given enough nodes (possibly absurdly many), and the right set of weights, we can model any function at all.
 *Actually learning that function is the hard part.* You might think of your neural network as being a bit like the C programming language.
 The language, like any other modern language, is capable of expressing any computable program.
 But actually coming up with a program that meets your specifications is the hard part.
 -->
 
-*dịch đoạn phía trên*
+Các MLP có thể biểu diễn được những tương tác phức tạp giữa các đầu vào thông qua các nơ-ron ẩn, các nơ-ron ẩn này phụ thuộc vào giá trị của mỗi đầu vào.
+Chúng ta có thể dễ dàng thiết kế các nút ẩn để thực hiện bất kỳ tính toán nào, ví dụ, các phép tính logic cơ bản trên một cặp đầu vào.
+Ngoài ra, với một số hàm kích hoạt cụ thể, các MLP được biết đến rộng rãi như là các bộ xấp xỉ vạn năng.
+Thậm chí với một mạng chỉ có một tầng ẩn, nếu có đủ số nút (có thể nhiều một cách vô lý) và một tập các trọng số thích hợp, chúng ta có thể mô phỏng bất kỳ một hàm nào.
+*Thật ra thì việc học hàm đó mới là phần khó khăn.* Bạn có thể tưởng tượng mạng nơ-ron của mình có nét giống với ngôn ngữ lập trình C.
+Ngôn ngữ này giống như bất kỳ ngôn ngữ hiện đại nào khác, có khả năng biểu diễn bất kỳ chương trình tính toán nào.
+Nhưng việc tạo ra một chương trình đạt được các chỉ tiêu kỹ thuật mới là phần việc khó khăn.
 
 <!--
 Moreover, just because a single-layer network *can* learn any function does not mean that you should try to solve all of your problems with single-layer networks.
@@ -237,7 +251,10 @@ We'll touch upon more rigorous arguments in subsequent chapters, but first let's
 In this example, we’ll implement an MLP with two hidden layers and one output layer.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
+Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng các mạng sâu hơn (thay vì rộng hơn).
+Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy lập trình một MLP.
+Trong ví dụ này, chúng ta sẽ triển khai một MLP với hai tầng ẩn và một tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -601,7 +618,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
+* Vũ Hữu Tiệp
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 *
