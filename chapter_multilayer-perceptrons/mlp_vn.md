@@ -175,7 +175,7 @@ Moreover, our linear model was already capable of representing any linear functi
 
 Chú ý rằng sau khi thêm tầng này vào, mô hình lập tức yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
 Vậy thì đổi lại ta sẽ nhận được gì?
-Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì cho rắc rối của mình!*
+Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì với những rắc rối của mình!*
 Lý do rất đơn giản.
 Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền Softmax) chỉ là một hàm tuyến tính của các nút ẩn.
 Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
