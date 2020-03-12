@@ -412,7 +412,7 @@ To illustrate some classical intuition about overfitting and model complexity, w
 Given training data consisting of a single feature $x$ and a corresponding real-valued label $y$, we try to find the polynomial of degree $d$
 -->
 
-Để minh họa một vài trường hợp cổ điển về quá khớp và độ phức tạp mô hình, ta sẽ đưa ra một ví dụ sử dụng đa thức.
+Để có thể hình dung một cách trực quan hơn về mối quan hệ giữa quá khớp và độ phức tạp mô hình, ta sẽ đưa ra một ví dụ sử dụng đa thức.
 Cho một tập dữ liệu huấn luyện có một đặc trưng duy nhất $x$ và nhãn $y$ tương ứng có giá trị thực, ta thử tìm bậc $d$ của đa thức
 
 $$\hat{y}= \sum_{i=0}^d x^i w_i$$
@@ -434,7 +434,7 @@ In fact, whenever the data points each have a distinct value of $x$, a polynomia
 We visualize the relationship between polynomial degree and under- vs over-fitting in :numref:`fig_capacity_vs_error`.
 -->
 
-Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số rộng hơn.
+Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số cũng rộng hơn.
 Cố định tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
 Trong thực tế, với mỗi tập dữ liệu có các giá trị $x$ phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện.
 Mối quan hệ giữa bậc của đa thức với hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
@@ -474,7 +474,7 @@ Khi số lượng dữ liệu tăng lên, lỗi khái quát sẽ có xu hướng
 Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu thì không bao giờ là thừa.
 Trong một tác vụ với một *phân phối* dữ liệu cố định, ta có thể quan sát được mối quan hệ giữa độ phức tạp và kích thước tập dữ liệu.
 Khi có nhiều dữ liệu, thử khớp một mô hình phức tạp hơn thường sẽ mang lợi nhiều lợi ích.
-Khi dữ liệu không quá nhiều, mô hình đơn giản hơn sẽ là lựa chọn tốt hơn.
+Khi dữ liệu không quá nhiều, mô hình đơn giản sẽ là lựa chọn tốt hơn.
 Đối với nhiều tác vụ, học sâu chỉ tốt hơn các mô hình tuyến tính khi có sẵn hàng ngàn mẫu huấn luyện.
 Sự thành công hiện nay của học sâu phần nào dựa vào sự phong phú của các tập dữ liệu khổng lồ từ các công ty hoạt động trên internet, từ các thiết bị lưu trữ giá rẻ, các thiết bị được nối mạng và rộng hơn là việc số hóa nền kinh tế.
 
