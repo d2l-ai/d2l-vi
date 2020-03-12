@@ -236,9 +236,9 @@ Often with neural networks, we think of a model that takes more training steps a
 
 Khi có các mô hình đơn giản và dữ liệu dồi dào, ta kỳ vọng lỗi khái quát sẽ giống với lỗi huấn luyện.
 Khi làm việc với nhiều mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
-Điều gì chính xác cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
+Chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
 Rất nhiều yếu tố ảnh hưởng tới liệu một mô hình có khái quát hóa tốt hay không.
-Cho ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
+Ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
 Một mô hình mà các tham số có phạm vi giá trị rộng hơn thì được xem là phức tạp hơn.
 Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có càng nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
 
@@ -255,17 +255,17 @@ For now, we will put the philosophy aside and stick to more tangible issues.
 
 Điều đó rất khó để so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác biệt cơ bản (ví như cây quyết định so với mạng nơ-ron).
 Hiện tại, có một quy tắc đơn giản khá hữu ích sau:
-Một mô hình có thể giải thích các sự kiện tùy ý được các nhà thống kê xem là phức tạp,
+Một mô hình có thể giải thích các sự kiện bất kỳ được các nhà thống kê xem là phức tạp,
 trong khi một mô hình có năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì có lẽ đạt gần đến sự thật hơn.
 Trong triết học, điều này gần với tiêu chí của Popper về [tính giả mạo](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
-Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là ta đánh giá sau khi quan sát các sự thật, do đó dễ bị sai lầm liên quan.
+Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là ta đánh giá sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện liên quan.
 Từ bây giờ, ta sẽ đặt triết lý qua một bên và tập trung hơn vào các vấn đề hữu hình.
 
 <!--
 In this section, to give you some intuition, we’ll focus on a few factors that tend to influence the generalizability of a model class:
 -->
 
-Trong phần này, để cho bạn một cái nhìn sâu sắc hơn, chúng ta sẽ tập trung vào một vài yếu tố có xu hướng ảnh hưởng đến tính khái quát của một lớp mô hình:
+Trong phần này, để cho bạn một cái nhìn trực quan, chúng ta sẽ tập trung vào một vài yếu tố có xu hướng ảnh hưởng đến tính khái quát của một lớp mô hình:
 
 <!--
 1. The number of tunable parameters. When the number of tunable parameters, sometimes called the *degrees of freedom*, is large, models tend to be more susceptible to overfitting.
@@ -274,7 +274,7 @@ Trong phần này, để cho bạn một cái nhìn sâu sắc hơn, chúng ta s
 But overfitting a dataset with millions of examples requires an extremely flexible model.
 -->
 
-1. Số lượng các thông số có thể điều chỉnh. Khi số lượng các thông số có thể điều chỉnh, đôi khi được gọi là *bậc tự do*, mà lớn thì các mô hình có xu hướng bị quá khớp.
+1. Số lượng các thông số có thể điều chỉnh. Khi số lượng các thông số có thể điều chỉnh, đôi khi được gọi là *bậc tự do*, là lớn thì mô hình có xu hướng bị quá khớp.
 2. Các giá trị được nhận bởi các thông số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
 3. Số lượng các mẫu huấn luyện. Quá dễ để quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu kể cả khi mô hình đơn giản.
 Nhưng quá khớp một tập dữ liệu với vài triệu mẫu đòi hỏi mô hình phải cực kỳ linh hoạt.
