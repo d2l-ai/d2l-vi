@@ -77,7 +77,7 @@ Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong
 ## Training Error and Generalization Error
 -->
 
-## Lỗi Huấn Luyện và Lỗi Khái Quát
+## Lỗi huấn luyện và Lỗi khái quát
 
 <!--
 In order to discuss this phenomenon more formally, we need to differentiate between *training error* and *generalization error*.
@@ -86,7 +86,7 @@ while generalization error is the expectation of our model's error
 were we to apply it to an infinite stream of additional data points drawn from the same underlying data distribution as our original sample.
 -->
 
-Để thảo luận hiện tượng này một cách chính thức hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
+Để thảo luận hiện tượng này một cách chuyên sâu hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
 Lỗi huấn luyện là loại lỗi của mô hình như được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu như các mẫu ban đầu.
 
 <!--
@@ -96,9 +96,8 @@ In practice, we must *estimate* the generalization error by applying our model t
 constituted of a random selection of data points that were withheld from our training set.
 -->
 
-Vấn đề là, *chúng ta không bao giờ có thể tính toán chính xác lỗi khái quát*.
-Đó là bởi vì luồng vô hạn dữ liệu chỉ có trong tưởng tượng.
-Trên thực tế, chúng ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm các điểm dữ liệu ngẫu nhiên được giữ lại từ tập huấn luyện.
+Vấn đề là *chúng ta không bao giờ có thể tính toán chính xác lỗi khái quát* vì luồng vô hạn dữ liệu chỉ có trong tưởng tượng.
+Trên thực tế, ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm các điểm dữ liệu ngẫu nhiên được giữ lại từ tập huấn luyện.
 
 <!--
 The following three thought experiments will help illustrate this situation better.
@@ -119,7 +118,7 @@ Tuy nhiên, làm tốt các bài kiểm tra trước đây không đảm bảo r
 Ví dụ, sinh viên có thể cố gắng chuẩn bị bằng cách học vẹt các câu trả lời cho các câu hỏi.
 Điều này đòi hỏi sinh viên phải ghi nhớ rất nhiều thứ.
 Cô ấy có lẽ còn ghi nhớ đáp án cho các bài kiểm tra cũ một cách hoàn hảo. 
-Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do cho việc đưa ra các câu đáp án nhất định. 
+Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do mà một số đáp án nhất định được đưa ra. 
 Trong hầu hết các trường hợp, sinh viên sau sẽ làm tốt hơn nhiều. 
 
 <!--
@@ -133,14 +132,14 @@ That means that there are far more low-res grayscale thumbnail-sized images than
 Even if we could encounter this data, we could never afford to store the lookup table.
 -->
 
-Tương tự vậy, hãy xem xét một mô hình đơn giản chỉ sử dụng một bảng tra cứu để trả lời các câu hỏi. 
-Nếu tập hợp các đầu vào cho phép là rời rạc và nhỏ hợp lý, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
-Tuy nhiên mô hình này không có khả năng làm tốt hơn việc đoán ngẫu nhiên khi phải đối mặt với các ví dụ chưa từng gặp trước đây.
-Trong thực tế không gian đầu vào quá lớn để ghi nhớ các đáp án tương ứng với từng đầu vào có thể hiểu được. 
+Tương tự như vậy, hãy xem xét một mô hình đơn giản chỉ sử dụng một bảng tra cứu để trả lời các câu hỏi. 
+Nếu tập hợp các đầu vào cho phép là rời rạc và nhỏ một cách hợp lý, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
+Tuy nhiên mô hình này không có khả năng thể hiện tốt hơn so với việc đoán ngẫu nhiên khi phải đối mặt với các ví dụ chưa từng gặp trước đây.
+Trong thực tế, không gian đầu vào quá lớn để có thể ghi nhớ các đáp án tương ứng của từng đầu vào khả dĩ. 
 Ví dụ, hãy xem xét các hình ảnh $28\times28$ đen trắng.
 Nếu mỗi điểm ảnh có thể lấy một trong số các giá trị xám trong thang $256$, thì có thể có  $256^{784}$ hình ảnh khác nhau.
-Điều đó nghĩa là số ảnh có kích thước thumbnail độ phân giải thấp lớn hơn nhiều so với số lượng nguyên tử trong vũ trụ.
-Thậm chí nếu có thể bắt gặp dữ liệu này, ta cũng không thể lưu trữ bảng tra cứu.
+Điều đó nghĩa là số ảnh có kích thước nhỏ với độ phân giải thấp còn lớn hơn nhiều so với số lượng nguyên tử trong vũ trụ.
+Thậm chí nếu có thể bắt gặp toàn bộ dữ liệu, ta cũng không thể lưu trữ bằng bảng tra cứu.
 
 <!--
 Last, consider the problem of trying to classify the outcomes of coin tosses (class 0: heads, class 1: tails) based on some contextual features that might be available.
