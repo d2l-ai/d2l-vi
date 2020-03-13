@@ -357,7 +357,7 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 Kết quả là một thực tiễn âm u trong đó ranh giới giữa dữ liệu kiểm định và kiểm tra mơ hồ theo cách đáng lo ngại.
 Trừ khi có quy định rõ ràng khác, trong các thí nghiệm trong cuốn sách này, ta thực sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thực sự.
 Do đó, độ chính xác được báo cáo trong mỗi thử nghiệm thật ra là độ chính xác kiểm định và không phải là độ chính xác của tập kiểm tra thực.
-Tin tốt là không cần quá nhiều dữ liệu trong tập kiểm định.
+Tin tốt là ta không cần quá nhiều dữ liệu trong tập kiểm định.
 Sự bất định trong các ước tính của ta có thể chứng minh là thuộc  bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
