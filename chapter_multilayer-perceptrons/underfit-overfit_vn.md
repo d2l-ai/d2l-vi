@@ -151,7 +151,7 @@ In this case, the model that always predicts class 1 will incur an error of $\fr
 As we increase the amount of data, the probability that the fraction of heads will deviate significantly from $\frac{1}{2}$ diminishes, and our training error would come to match the generalization error.
 -->
 
-Cuối cùng, hãy xem xét vấn đề cố gắng phân loại kết quả của việc tung đồng xu (lớp 0: người đứng đầu, lớp 1: đuôi) dựa trên một số tính năng theo ngữ cảnh có thể có sẵn.
+Cuối cùng, hãy xem xét bài toán phân loại kết quả của việc tung đồng xu (lớp 0: ngửa, lớp 1: xấp) dựa trên một số đặc trưng theo ngữ cảnh có thể có sẵn.
 Bất kể thuật toán nào được đưa ra, lỗi khái quát sẽ luôn là $\frac{1}{2}$.
 Tuy nhiên, đối với hầu hết các thuật toán, lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của ta khi lấy dữ liệu, ngay cả khi ta không có bất kỳ đặc trưng nào!
 Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
