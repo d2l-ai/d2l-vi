@@ -353,7 +353,7 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 ### $K$-Fold Cross-Validation
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiểm định chéo $K$-phần
 
 <!--
 When training data is scarce, we might not even be able to afford to hold out enough data to constitute a proper validation set.
@@ -363,14 +363,19 @@ Then model training and validation are executed $K$ times, each time training on
 Finally, the training and validation error rates are estimated by averaging over the results from the $K$ experiments.
 -->
 
-*dịch đoạn phía trên*
+Khi khan hiếm dữ liệu huấn luyện, ta thậm chí không thể cho phép giữ đủ dữ liệu để tạo thành một tập kiểm định hợp lý.
+Có một giải pháp phổ biến để giải quyết vấn đề này là nên sử dụng kiểm định chéo $K$-phần.
+Ở đây, tập dữ liệu huấn luyện ban đầu được chia thành $K$ các tập con không chồng lên nhau.
+Sau đó mô hình huấn luyện và kiểm định được thực thi $K$ lần, mỗi lần huấn luyện trên các tập con $K-1$ và kiểm định trên các tập con khác nhau (tập con này sẽ không sử dụng cho lần huấn luyện trong kì đó).
+Cuối cùng, các tỷ lệ lỗi kiểm định và huấn luyện sẽ cùng được ước lượng bằng cách tính trung bình của các kết quả thí nghiệm $K$.
+
 
 
 <!--
 ## Underfitting or Overfitting?
 -->
 
-## *dịch tiêu đề phía trên*
+## Dưới khớp hoặc Quá khớp?
 
 <!--
 When we compare the training and validation errors, we want to be mindful of two common situations:
@@ -380,7 +385,11 @@ Moreover, since the *generalization gap* between our training and validation err
 This phenomenon is known as underfitting.
 -->
 
-*dịch đoạn phía trên*
+Khi ta so sánh các lỗi kiểm định và huấn luyện, ta muốn được chú ý đến hai trường hợp thường gặp này:
+Đầu tiên, ta muốn xem xét các trường hợp khi lỗi huấn luyện và lỗi kiểm định đều đáng kể nhưng có một khoảng cách nhỏ giữa chúng.
+Nếu mô hình không thể giảm thiểu lỗi huấn luyện, điều đó có nghĩa là mô hình đó quá đơn giản (tức là không đạt) để lấy mẫu, ta cố gắng để tạo mô hình từ các mẫu đó.
+Hơn thế nữa, do khoảng cách khái quát giữa các lỗi kiểm định và huấn luyện nhỏ, ta có lý do tin rằng ta có thể thoát khỏi một mô hình phức tạp.
+Hiện tượng này là dưới khớp.
 
 <!--
 On the other hand, as we discussed above, we want to watch out for the cases when our training error is significantly lower than our validation error, indicating severe overfitting.
@@ -389,13 +398,16 @@ With deep learning especially, it is well known that the best predictive models 
 Ultimately, we usually care more about the validation error than about the gap between the training and validation errors.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, như ở trên ta đã thảo luận, ta muốn xem xét các trường hợp khi lỗi huấn luyện thấp đáng kể hơn lỗi kiểm định, biểu lộ sự quá khớp nghiêm trọng.
+Lưu ý rằng quá khớp thì không phải luôn là điều xấu.
+Đặc biệt là với học sâu, nó được biết đến là mô hình dự đoán tốt nhất thường biểu diễn tốt trên dữ liệu huấn luyện hơn là dữ liệu ban đầu.
+Cuối cùng, ta thường quan tâm hơn về lỗi kiểm định hơn là về khoảng cách giữa các lỗi kiểm định và lỗi huấn luyện.
 
 <!--
 Whether we overfit or underfit can depend both on the complexity of our model and the size of the available training datasets, two topics that we discuss below.
 -->
 
-*dịch đoạn phía trên*
+Việc ta quá khớp khớp hoặc dưới khớp có thể phụ thuộc cả sự phức tạp của mô hình và kích thước của bộ dữ liệu huấn luyện có sẵn, hai vấn đề này ta sẽ thảo luận ở phần sau.  
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -772,7 +784,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Bùi Nhật Quân
 
 <!-- Phần 7 -->
 *
