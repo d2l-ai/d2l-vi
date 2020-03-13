@@ -171,7 +171,7 @@ This means that the process that samples our data has no *memory*.
 The $2^{\mathrm{nd}}$ example drawn and the $3^{\mathrm{rd}}$ drawn are no more correlated than the $2^{\mathrm{nd}}$ and the $2$-millionth sample drawn.
 -->
 
-Trong một *thiết lập chuẩn cho học có giám sát* -- ta vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d).
+Trong một *thiết lập chuẩn cho học có giám sát* -- vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d.).
 Điều này có nghĩa là quá trình lấy mẫu dữ liệu không hề có sự *ghi nhớ*.
 Mẫu lấy ra thứ hai và thứ ba cũng không liên quan gì với nhau hơn là mẫu lấy ra thứ hai và thứ hai triệu.
 
@@ -184,7 +184,7 @@ What if we are classifying the topics of Tweets.
 The news cycle would create temporal dependencies in the topics being discussed violating any assumptions of independence.
 -->
 
-Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản biện, và có lẽ bạn đã có thể "bóc mẽ" được giả sử này, có thể đưa ra các tình huống thường gặp mà giả sử này không thỏa mãn.
+Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản biện, và có lẽ bạn đã có thể "bóc mẽ" được giả thiết này, có thể đưa ra các tình huống thường gặp mà giả thiết này không thỏa mãn.
 Điều gì sẽ xảy ra nếu chúng ta huấn luyện một mô hình dự đoán tỉ lệ tử vong trên bộ dữ thu thập từ các bệnh nhân tại UCSF, và áp dụng nó trên các bệnh nhân tại Bệnh viện Đa khoa Massachusetts.
 Các phân phối này đơn giản là không giống nhau.
 Hơn nữa, việc lấy mẫu có thể có tương quan về mặt thời gian.
@@ -196,7 +196,7 @@ Sometimes we can get away with minor violations of the i.i.d. assumption and our
 After all, nearly every real-world application involves at least some minor violation of the i.i.d. assumption, and yet we have useful tools for face recognition, speech recognition, language translation, etc.
 -->
 
-Đôi khi, chúng ta có thể bỏ qua một vài vi phạm nhỏ trong giả định i.i.d mà mô hình vẫn có thể làm việc rất tốt.
+Đôi khi, chúng ta có thể bỏ qua một vài vi phạm nhỏ trong giả thiết i.i.d. mà mô hình vẫn có thể làm việc rất tốt.
 Nói chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ, v.v.
 
 <!--
@@ -206,7 +206,7 @@ This is unlikely to work well since college students tend to look considerably d
 -->
 
 Các vi phạm khác thì chắc chắn dẫn tới rắc rối.
-Cùng hình dung ở ví dụ này, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem nó đi triển khai như là một công cụ để theo dõi trong viện dưỡng lão.
+Cùng hình dung ở ví dụ này, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem nó đi triển khai như là một công cụ để giám sát trong viện dưỡng lão.
 Cách này gần như không khả thi vì ngoại hình giữa hai độ tuổi quá khác biệt.
 
 <!--
@@ -216,7 +216,7 @@ Moreover, elucidating the precise theoretical foundations that might explain why
 -->
 
 Trong mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
-Hiện tại, thậm chí giả thiết i.i.d có được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
+Hiện tại, thậm chí khi giả thiết i.i.d. được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
 Hơn nữa, làm sáng tỏ nền tảng lý thuyết chính xác có thể giải thích tại sao các mạng nơ-ron cũng như chúng tiếp tục làm mất đi những bộ óc vĩ đại nhất trong lý thuyết học.
 
 <!--
@@ -227,10 +227,10 @@ This is precisely what we want to avoid (or at least control).
 Many of the techniques in deep learning are heuristics and tricks aimed at guarding against overfitting.
 -->
 
-Khi chúng ta huấn luyện các mô hình, ta đang cố gắng tìm kiếm một hàm số khớp nhất với dữ liệu huấn luyện có thể.
-Nếu hàm số này quá linh hoạt để có thể biểu diễn được các mẫu giả cũng dễ như với các liên kết thật, thì nó có thể bị *quá khớp* để tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
-Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là điều khiển nó).
-Rất nhiều kỹ thuật trong học sâu là các giả thuật và thủ thuật với mục đích chống lại vấn đề quá khớp.
+Khi chúng ta huấn luyện mô hình, ta đang cố gắng tìm kiếm một hàm số khớp với dữ liệu huấn luyện nhất có thể.
+Nếu hàm số này quá linh hoạt để có thể khớp với các hành vi giả cũng dễ như với các xu hướng thật trong dữ liệu, thì nó có thể *quá khớp* để có thể tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
+Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là kiểm soát nó).
+Rất nhiều kỹ thuật trong học sâu là các thực nghiệm và thủ thuật với mục đích chống lại vấn đề quá khớp.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
