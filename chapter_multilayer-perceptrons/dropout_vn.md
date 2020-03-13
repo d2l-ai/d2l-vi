@@ -315,7 +315,7 @@ for param in params:
 ### Defining the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa mô hình
 
 <!--
 The model below applies dropout to the output of each hidden layer (following the activation function).
@@ -324,7 +324,10 @@ Below we set it to 0.2 and 0.5 for the first and second hidden layer respectivel
 By using the `is_training` function described in :numref:`sec_autograd`, we can ensure that dropout is only active during training.
 -->
 
-*dịch đoạn phía trên*
+Mô hình bên dưới áp dụng dropout lên đầu ra của mỗi tầng ẩn (theo sau hàm kích hoạt).
+Ta có thể đặt các giá trị xác suất dropout cho mỗi tầng một cách riêng biệt. Một xu hướng chung là đặt một xác suất dropout thấp hơn cho tầng ở gần với tầng đầu vào hơn.
+Bên dưới ta đặt xác suất dropout bằng 0.2 và 0.5 tương ứng cho tầng ẩn thứ nhất và thứ hai.
+Bằng cách sử dụng hàm `is_training` mô tả ở :numref:`sec_autograd`, ta có thể chắc chắn rằng dropout chỉ được kích hoạt trong quá trình huấn luyện.
 
 ```{.python .input  n=4}
 dropout1, dropout2 = 0.2, 0.5
@@ -347,13 +350,13 @@ def net(X):
 ### Training and Testing
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và kiểm tra
 
 <!--
 This is similar to the training and testing of multilayer perceptrons described previously.
 -->
 
-*dịch đoạn phía trên*
+Việc này tương tự với quá trình huấn luyện và kiểm tra của các perceptron đa tầng trước đây.
 
 ```{.python .input  n=5}
 num_epochs, lr, batch_size = 10, 0.5, 256
@@ -371,7 +374,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Triển khai súc tích
 
 <!--
 Using Gluon, all we need to do is add a `Dropout` layer (also in the `nn` package) after each fully-connected layer, passing in the dropout probability as the only argument to its constructor.
@@ -379,7 +382,8 @@ During training, the `Dropout` layer will randomly drop out outputs of the previ
 When MXNet is not in training mode, the `Dropout` layer simply passes the data through during testing.
 -->
 
-*dịch đoạn phía trên*
+Bằng việc sử dụng Gluon, tất cả những gì ta cần là thêm một tầng `Dropout` (cũng nằm trong gói `nn`) vào sau mỗi tầng kết nối đầy đủ và truyền vào xác suất dropout như là đối số duy nhất của hàm khởi tạo.
+Trong quá trình huấn luyện, hàm `Dropout` sẽ bỏ đi một cách ngẫu nhiên một số đầu ra của tầng trước (hay tương đương với đầu vào của tầng tiếp theo) dựa trên xác suất dropout được định nghĩa trước đó.
 
 ```{.python .input  n=6}
 net = nn.Sequential()
@@ -397,7 +401,7 @@ net.initialize(init.Normal(sigma=0.01))
 Next, we train and test the model.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta huấn luyện và kiểm tra mô hình.
 
 ```{.python .input  n=7}
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': lr})
