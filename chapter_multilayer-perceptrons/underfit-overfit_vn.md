@@ -206,8 +206,8 @@ This is unlikely to work well since college students tend to look considerably d
 -->
 
 Các vi phạm khác thì chắc chắn dẫn tới rắc rối.
-Hãy tưởng tượng, ví dụ, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem triển khai như là một công cụ để theo dõi trong viện dưỡng lão.
-Nhiều khả năng cách này sẽ không ổn bởi những sinh viên đại học trông rất khác những người già.
+Cùng hình dung ở ví dụ này, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem nó đi triển khai như là một công cụ để theo dõi trong viện dưỡng lão.
+Cách này gần như không khả thi vì ngoại hình giữa hai độ tuổi quá khác biệt.
 
 <!--
 In subsequent chapters and volumes, we will discuss problems arising from violations of the i.i.d. assumption.
@@ -228,7 +228,7 @@ Many of the techniques in deep learning are heuristics and tricks aimed at guard
 -->
 
 Khi chúng ta huấn luyện các mô hình, ta đang cố gắng tìm kiếm một hàm số khớp nhất với dữ liệu huấn luyện có thể.
-Nếu hàm số này quá mềm dẻo, có thể biểu diễn được các mẫu giả cũng dễ như với các liên kết thật, thì nó có thể bị *quá khớp* để tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
+Nếu hàm số này quá linh hoạt để có thể biểu diễn được các mẫu giả cũng dễ như với các liên kết thật, thì nó có thể bị *quá khớp* để tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
 Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là điều khiển nó).
 Rất nhiều kỹ thuật trong học sâu là các giả thuật và thủ thuật với mục đích chống lại vấn đề quá khớp.
 
