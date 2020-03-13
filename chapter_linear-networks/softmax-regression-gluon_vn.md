@@ -49,7 +49,7 @@ Again, we initialize the weights at random with zero mean and standard deviation
 -->
 
 Như đã đề cập trong :numref:`sec_softmax`, tầng đầu ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
-Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra cho đối tượng `Sequential`.
+Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra vào đối tượng `Sequential`.
 Việc sử dụng `Sequential` ở đây không thực sự cần thiết, nhưng ta nên hình thành thói quen này vì nó sẽ luôn hiện diện khi ta xây dựng các mô hình sâu.
 Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
@@ -77,7 +77,7 @@ Recall that the softmax function calculates $\hat y_j = \frac{e^{z_j}}{\sum_{i=1
 where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^\mathrm{th}$ element of the input ``y_linear`` variable, as computed by the softmax.
 -->
 
-Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đưa các kết quả này qua hàm mất mát entropy chéo.
+Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đưa các kết quả này vào hàm mất mát entropy chéo.
 Về mặt toán học, cách làm này hoàn toàn có lý.
 Tuy nhiên, từ góc độ điện toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số học (được bàn trong :numref:`sec_naive_bayes`).
 Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``.
@@ -112,9 +112,9 @@ By combining these two operators (``softmax`` and ``cross_entropy``) together, w
 As shown in the equation below, we avoided calculating $e^{z_j}$ and can instead $z_j$ directly due to the canceling in $\log(\exp(\cdot))$.
 -->
 
-May mắn thay, mặc dù ta tính toán với các hàm mũ nhưng trong thực tế kết quả cuối cùng ta muốn là giá trị log của nó (ví dụ khi tính hàm mất mát entropy chéo).
-Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề bất ổn trong tính toán mà có thể gây khó khăn trong quá trình lan truyền ngược.
-Như sẽ thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc rút gọn $\log(\exp(\cdot))$.
+May mắn thay, mặc dù ta đang thực hiện tính toán với các hàm mũ, kết quả cuối cùng ta muốn là giá trị log của nó (khi tính hàm mất mát entropy chéo).
+Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề về ổn định số học và tránh gặp khó khăn trong quá trình lan truyền ngược.
+Trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó, ta tính trực tiếp $z_j$ do việc rút gọn $\log(\exp(\cdot))$.
 
 $$
 \begin{aligned}
@@ -130,7 +130,7 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-Ta sẽ muốn giữ nguyên hàm softmax thông thường để sử dụng trong trường hợp muốn đánh giá đầu ra của mô hình dưới dạng xác suất.
+Ta vẫn muốn giữ lại hàm softmax gốc để sử dụng khi muốn tính đầu ra của mô hình dưới dạng xác suất.
 Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit (các giá trị khi chưa qua softmax) và tính softmax cùng log của nó trong hàm mất mát `softmax_cross_entropy`.
 Hàm này cũng sẽ tự động thực hiện các mẹo thông minh như log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
