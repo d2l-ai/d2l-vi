@@ -166,8 +166,8 @@ Because each example can be fed through our models in parallel and the gradient 
 GPUs allow us to process hundreds of examples in scarcely more time than it might take to process just a single example.
 -->
 
-Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng từ GPU cho việc thực hiện xử lý song song hiệu quả nhất.
-Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPUs cho phép ta xử lý hàng trăm mẫu cùng lúc với thời gian chỉ nhỉnh hơn một chút so với thời gian xử lý cho một mẫu duy nhất. 
+Lưu ý rằng thông thường chúng ta muốn dùng các minibatch có kích thước phù hợp để tận dụng tài nguyên phần cứng GPU để xử lý song song hiệu quả nhất.
+Vì mỗi mẫu có thể được mô hình xử lý và tính đạo hàm riêng của hàm mất mát song song với nhau, GPU cho phép xử lý hàng trăm mẫu cùng lúc mà chỉ tốn thời gian hơn một chút so với xử lý một mẫu duy nhất. 
 
 <!--
 To build some intuition, let's read and print the first small batch of data examples.
@@ -247,9 +247,9 @@ Recall from the autograd chapter that in order for `autograd` to know that it sh
 we need to invoke the `attach_grad` function, allocating memory to store the gradients that we plan to take.
 -->
 
-Bởi vì không ai muốn tính gradient bằng tay (việc này rất chán và dễ sai), ta sử dụng chương trình để tính gradient (autograd). 
+Vì chẳng ai muốn tính gradient bằng tay (một việc rất nhàm chán và dễ sai sót), ta dùng chương trình để tính tự động gradient (autograd). 
 Xem :numref:`sec_autograd` để biết thêm chi tiết.
-Nhắc lại từ mục tính vi phân tự động, để `autograd` có thể lưu gradient vào một biến, ta cần gọi hàm `attach_grad`, khai báo và truyền biến để lưu trữ các gradients đó vào.
+Nhắc lại từ mục tính vi phân tự động, để chỉ định hàm `autograd` lưu gradient của các biến số, ta cần gọi hàm `attach_grad`, cấp phát bộ nhớ để lưu giá trị gradient mong muốn.
 
 ```{.python .input  n=8}
 w.attach_grad()
@@ -269,10 +269,10 @@ Note that below `np.dot(X, w)` is a vector and `b` is a scalar.
 Recall that when we add a vector and a scalar, the scalar is added to each component of the vector.
 -->
 
-Tiếp theo, chúng ta cần định nghĩa mô hình của mình dựa trên đầu vào và đầu ra của các tham số. 
-Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, ta có thể đơn giản tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ với mỗi mẫu.
+Tiếp theo, chúng ta cần định nghĩa mô hình dựa trên đầu vào và tham số liên quan tới đầu ra. 
+Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, ta có thể đơn giản tính tích vô hướng ma trận-vector của các mẫu $\mathbf{X}$ và trọng số mô hình $w$, sau đó thêm vào hệ số điều chỉnh $b$ cho từng mẫu.
 Ở đây, `np.dot(X, w)` là một vector trong khi `b` là một số vô hướng.
-Nhắc lại rằng khi tính tổng vector và số vô hướng, số vô hướng sẽ được cộng vào từng phần tử của vector. 
+Nhắc lại rằng khi tính tổng vector và số vô hướng, thì số vô hướng sẽ được cộng vào từng phần tử của vector. 
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
