@@ -443,14 +443,15 @@ Whether we overfit or underfit can depend both on the complexity of our model an
 ### Model Complexity
 -->
 
-### *dịch tiêu đề phía trên*
+### Độ phức tạp Mô hình
 
 <!--
 To illustrate some classical intuition about overfitting and model complexity, we given an example using polynomials.
 Given training data consisting of a single feature $x$ and a corresponding real-valued label $y$, we try to find the polynomial of degree $d$
 -->
 
-*dịch đoạn phía trên*
+Để có thể hình dung một cách trực quan hơn về mối quan hệ giữa quá khớp và độ phức tạp mô hình, ta sẽ đưa ra một ví dụ sử dụng đa thức.
+Cho một tập dữ liệu huấn luyện có một đặc trưng duy nhất $x$ và nhãn $y$ tương ứng có giá trị thực, ta thử tìm bậc $d$ của đa thức
 
 $$\hat{y}= \sum_{i=0}^d x^i w_i$$
 
@@ -460,8 +461,9 @@ This is just a linear regression problem where our features are given by the pow
 Since this is just a linear regression problem, we can use the squared error as our loss function.
 -->
 
-*dịch đoạn phía trên*
-
+để ước tính nhãn $y$.
+Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, khi $x^0=1$ với mọi $x$ thì $w_0$ là hệ số điều chỉnh.
+Vì đây là bài toán hồi quy tuyến tính, ta có thể sử dụng bình phương sai số làm hàm mất mát.
 
 <!--
 A higher-order polynomial function is more complex than a lower order polynomial function, since the higher-order polynomial has more parameters and the model function’s selection range is wider.
@@ -470,13 +472,16 @@ In fact, whenever the data points each have a distinct value of $x$, a polynomia
 We visualize the relationship between polynomial degree and under- vs over-fitting in :numref:`fig_capacity_vs_error`.
 -->
 
-*dịch đoạn phía trên*
+Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số cũng rộng hơn.
+Cố định tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
+Trong thực tế, với mỗi tập dữ liệu có các giá trị $x$ phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện.
+Mối quan hệ giữa bậc của đa thức với hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
 
 <!--
 ![Influence of Model Complexity on Underfitting and Overfitting](../img/capacity_vs_error.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/capacity_vs_error.svg)
+![Ảnh hưởng của Độ phức tạp Mô hình tới Dưới khớp và Quá khớp](../img/capacity_vs_error.svg)
 :label:`fig_capacity_vs_error`
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -487,7 +492,7 @@ We visualize the relationship between polynomial degree and under- vs over-fitti
 ### Dataset Size
 -->
 
-### *dịch tiêu đề phía trên*
+### Kích thước Tập dữ liệu
 
 <!--
 The other big consideration to bear in mind is the dataset size.
@@ -501,7 +506,15 @@ For many tasks, deep learning only outperforms linear models when many thousands
 In part, the current success of deep learning owes to the current abundance of massive datasets due to internet companies, cheap storage, connected devices, and the broad digitization of the economy.
 -->
 
-*dịch đoạn phía trên*
+Một lưu ý quan trọng khác cần ghi nhớ là kích thước tập dữ liệu.
+Với một mô hình cố định, tập dữ liệu càng ít mẫu thì càng có nhiều khả năng gặp phải tình trạng quá khớp với mức độ nghiêm trọng hơn.
+Khi số lượng dữ liệu tăng lên, lỗi khái quát sẽ có xu hướng giảm.
+Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu thì không bao giờ là thừa.
+Trong một tác vụ với một *phân phối* dữ liệu cố định, ta có thể quan sát được mối quan hệ giữa độ phức tạp và kích thước tập dữ liệu.
+Khi có nhiều dữ liệu, thử khớp một mô hình phức tạp hơn thường sẽ mang lợi nhiều lợi ích.
+Khi dữ liệu không quá nhiều, mô hình đơn giản sẽ là lựa chọn tốt hơn.
+Đối với nhiều tác vụ, học sâu chỉ tốt hơn các mô hình tuyến tính khi có sẵn hàng ngàn mẫu huấn luyện.
+Sự thành công hiện nay của học sâu phần nào dựa vào sự phong phú của các tập dữ liệu khổng lồ từ các công ty hoạt động trên internet, từ các thiết bị lưu trữ giá rẻ, các thiết bị được nối mạng và rộng hơn là việc số hóa nền kinh tế.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -814,7 +827,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Lý Phi Long
 
 <!-- Phần 8 -->
 *
