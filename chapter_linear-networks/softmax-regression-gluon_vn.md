@@ -5,7 +5,7 @@
 # Concise Implementation of Softmax Regression
 -->
 
-# Triển khai súc tích của Hồi quy Softmax
+# Cách lập trình súc tích Hồi quy Softmax
 :label:`sec_softmax_gluon`
 
 <!--
