@@ -293,8 +293,7 @@ different numbers of hidden units, and various choices of the activation functio
 In order to determine the best among our candidate models, we will typically employ a validation set.
 -->
 
-Lấy perceptron đa tầng làm ví dụ, ta mong muốn so sánh các mô hình với số lượng tầng ẩn khác nhau,
-số lượng nút ẩn khác nhau, và các lựa chọn hàm kích hoạt khác nhau áp dụng vào từng tầng ẩn.
+Lấy perceptron đa tầng làm ví dụ, ta mong muốn so sánh các mô hình với số lượng tầng ẩn khác nhau, số lượng nút ẩn khác nhau, và các lựa chọn hàm kích hoạt khác nhau áp dụng vào từng tầng ẩn.
 Để xác định được mô hình tốt nhất trong các mô hình ứng viên, ta thường sử dụng một tập kiểm định.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -344,7 +343,7 @@ We can seldom afford a new test set for each round of experiments.
 -->
 
 Trong các ứng dụng thực tế, bức tranh trở nên mập mờ hơn.
-Mặc dù lý tưởng là khi ta chỉ chạm đến dữ liệu kiểm tra một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi loại bỏ chỉ sau một lần sử dụng. 
+Mặc dù lý tưởng là khi ta chỉ chạm đến dữ liệu kiểm tra một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi bị loại bỏ chỉ sau một lần sử dụng. 
 Ta hiếm khi đủ khả năng cho một tập kiểm tra mới sau mỗi vòng thử nghiệm. 
 
 <!--
@@ -356,10 +355,10 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 -->
 
 Kết quả là một thực tiễn âm u trong đó ranh giới giữa dữ liệu kiểm định và kiểm tra mơ hồ theo cách đáng lo ngại.
-Trừ khi có quy định rõ ràng khác, trong các thí nghiệm trong cuốn sách này, ta thực sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định, không có tập kiểm tra thực sự.
+Trừ khi có quy định rõ ràng khác, trong các thí nghiệm trong cuốn sách này, ta thực sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thực sự.
 Do đó, độ chính xác được báo cáo trong mỗi thử nghiệm thật ra là độ chính xác kiểm định và không phải là độ chính xác của tập kiểm tra thực.
 Tin tốt là không cần quá nhiều dữ liệu trong tập kiểm định.
-Sự không chắc chắn trong các ước tính có thể được hiển thị theo thứ tự $\mathcal{O}(n^{-\frac{1}{2}})$.
+Sự bất định trong các ước tính của ta có thể chứng minh là thuộc  bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
