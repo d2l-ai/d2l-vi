@@ -291,7 +291,7 @@ Again, we work with the Fashion-MNIST dataset introduced in :numref:`sec_softmax
 We define a multilayer perceptron with two hidden layers containing 256 outputs each.
 -->
 
-Một lần nữa, ta làm việc với bộ dữ liệu Fashion-MNIST đã được giới thiệu ở :numref:`sec_softmax_scratch`.
+Một lần nữa, ta làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`.
 Ta định nghĩa một perception đa tầng với hai tầng ẩn, mỗi tầng gồm 256 đầu ra.
 
 ```{.python .input  n=3}
@@ -482,7 +482,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 *
