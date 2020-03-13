@@ -129,8 +129,8 @@ To make our life easier when reading from the training and test sets, we use a `
 Recall that at each iteration, a `DataLoader` reads a minibatch of data with size `batch_size` each time.
 -->
 
-Để dễ dàng hơn trong việc đọc dữ liệu từ tập huấn luyện và tập kiểm tra, chúng ta sử dụng một `DataLoader` có sẵn thay vì tạo từ đầu như đã làm ở :numref:`sec_linear_scratch`.
-Nhắc lại là ở mỗi vòng lặp, một `DataLoader` sẽ đọc một minibatch của bộ dữ liệu với kích thước `batch_size`.
+Để đọc dữ liệu từ tập huấn luyện và tập kiểm tra một cách dễ dàng hơn, chúng ta sử dụng một `DataLoader` có sẵn thay vì tạo từ đầu như đã làm ở :numref:`sec_linear_scratch`.
+Nhắc lại là ở mỗi vòng lặp, một `DataLoader` sẽ đọc một minibatch của tập dữ liệu với kích thước `batch_size`.
 
 <!--
 During training, reading data can be a significant performance bottleneck, especially when our model is simple or when our computer is fast.
