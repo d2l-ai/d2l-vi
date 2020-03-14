@@ -736,7 +736,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 2. Lựa chọn mô hình cho các đa thức
     * Vẽ đồ thị biểu diễn lỗi huấn luyện và độ phức tạp của mô hình (bậc của đa thức). Bạn quan sát được gì?
     * Vẽ đồ thị biểu diễn lỗi kiểm tra trong trường hợp này.
-    * Tạo một biểu đồ tương tự như một hàm của lượng dữ liệu?
+    * Tạo một đồ thị tương tự nhưng với hàm của lượng dữ liệu.
 3. Điều gì sẽ xảy ra nếu bạn bỏ qua việc chuẩn hóa các đặc trưng đa thức $x^i$ với $1/i!$. Bạn có thể sửa chữa vấn đề này bằng cách nào khác không?
 4. Bậc nào của đa thức mà bạn cần để giảm tỉ lệ lỗi huấn luyện về 0?
 5. Bạn có thể nào từng kỳ vọng nhìn thấy lỗi khái quát bằng 0?
