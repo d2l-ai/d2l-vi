@@ -15,7 +15,7 @@ For now, we can assume that we already have as much high-quality data as our res
 -->
 
 Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật chuẩn trong việc điều chuẩn mô hình.
-Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, khiến nó là bất khả thi trong một khoảng thời gian ngắn.
+Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, nên trong ngắn hạn, nó là bất khả thi.
 Hiện tại, chúng ta có thể giả sử rằng ta đã có được nguồn dữ liệu chất lượng cao cho phép ta tập trung vào các kỹ thuật điều chuẩn.
 
 <!--
