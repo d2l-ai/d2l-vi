@@ -14,7 +14,7 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự và bạn nên tự biết cách làm thế nào để xây dựng nó một cách chi tiết nhất.
+Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự như thế, bạn nên tự tìm hiểu làm thế nào để xây dựng nó một cách chi tiết nhất.
 Tương tự hồi quy tuyến tính, sau khi thực hiện mọi thứ bằng tay thì ta sẽ dùng Gluon để lập trình và đưa ra sự so sánh.
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
@@ -29,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một vòng lập với kích cỡ batch là $256$.
+Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một iterator với kích cỡ batch là $256$.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -40,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo các tham số của Mô hình
+## Khởi tạo các Tham số của Mô hình
 
 <!--
 As in our linear regression example, each example here will be represented by a fixed-length vector.
@@ -52,7 +52,7 @@ In the future, we will talk about more sophisticated strategies for exploiting t
 Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
 Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
 Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
-Sau này ta sẽ bàn về các chiến lược tinh vi hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
+Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
@@ -79,7 +79,7 @@ Recall that we need to *attach gradients* to the model parameters.
 More literally, we are allocating memory for future gradients to be stored and notifiying MXNet that we will want to calculate gradients with respect to these parameters in the future.
 -->
 
-Hãy nhớ rằng ta cần *đính kèm gradient* vào các tham số của mô hình.
+Hãy nhớ là ta cần *đính kèm gradient* vào các tham số của mô hình.
 Cụ thể hơn, ta đang phân bổ bộ nhớ để lưu trữ các gradient trong tương lai và cho MXNet biết rằng ta sẽ muốn tính các gradient theo các tham số này trong tương lai.
 
 ```{.python .input  n=4}
@@ -107,9 +107,9 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 
 Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
 Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
-Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3 ,)`.
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3,)`.
 Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
-thay vì thu gọn kích thước mà chúng ta đã tính toán, chúng ta có thể gán `keepdims=True` khi gọi hàm `sum`.
+thay vì thu gọn kích thước mà chúng ta đã tính toán, ta có thể gán `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -125,10 +125,10 @@ Finally, we divide each row by its normalization constant, ensuring that the res
 Before looking at the code, let's recall what this looks expressed as an equation:
 -->
 
-Bây giờ chúng ta có thể bắt đầu xây dựng hàm softmax.
+Bây giờ chúng ta đã có thể bắt đầu xây dựng hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
 Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
-Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
+Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi mẫu.
 Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
 Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
@@ -141,8 +141,8 @@ The denominator, or normalization constant, is also sometimes called the partiti
 The origins of that name are in [statistical physics](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) where a related equation models the distribution over an ensemble of particles).
 -->
 
-Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) (và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
-Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan mô hình hóa phân phối trên một tập hợp các phần tử.
+Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
+Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan đến mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
 def softmax(X):
@@ -158,9 +158,9 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
+Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử đều được biến đổi thành một số không âm.
 Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
-Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng nó được xây dựng hơi cẩu thả, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng chúng tôi đã hơi cẩu thả khi lập trình nó, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
