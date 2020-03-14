@@ -176,7 +176,7 @@ Likewise, our minibatch of labels will have a shape given by `batch_size`.
 -->
 
 Để hiểu hơn, chúng ta hãy chạy đoạn chương trình để đọc và in ra batch đầu tiên của mẫu dữ liệu.
-Kích thước của các đặc trưng trong mỗi minibatch cho ta biết kích thước của batch lẫn kích thước của các đặc trưng đầu vào.
+Kích thước của các đặc trưng trong mỗi minibatch cho ta biết kích thước của batch lẫn số lượng của các đặc trưng đầu vào.
 Tương tự, tập minibatch của các nhãn sẽ có kích thước theo `batch_size`.
 
 ```{.python .input  n=6}
@@ -198,7 +198,7 @@ For example, it requires that we load all data in memory and that we perform lot
 The built-in iterators implemented in Apache MXNet are considerably efficient and they can deal both with data stored on file and data fed via a data stream.
 -->
 
-Khi chạy iterator, ta lấy từng minibatch cho đến khi lấy hết bộ dữ liệu.
+Khi chạy iterator, ta lấy từng minibatch riêng biệt cho đến khi lấy hết bộ dữ liệu (bạn hãy xử xem).
 Mặc dù sử dụng iterator như trên phục vụ tốt cho công tác giảng dạy, nó lại không phải là cách hiệu quả và có thể khiến chúng ta gặp nhiều rắc rối trong thực tế.
 Chẳng hạn, nó buộc ta phải nạp toàn bộ dữ liệu vào bộ nhớ và tốn rất nhiều thao tác truy cập bộ nhớ ngẫu nhiên. 
 Các iterator trong Apache MXNet lại khá hiệu quả khi chúng có thể xử lý cả dữ liệu được lưu trữ trên tập tin lẫn trong các luồng dữ liệu. 
@@ -247,7 +247,7 @@ Recall from the autograd chapter that in order for `autograd` to know that it sh
 we need to invoke the `attach_grad` function, allocating memory to store the gradients that we plan to take.
 -->
 
-Vì chẳng ai muốn tính gradient bằng tay (một việc rất nhàm chán và dễ sai sót), ta dùng chương trình để tính tự động gradient (autograd). 
+Vì không ai muốn tính gradient bằng tay (một việc rất nhàm chán và dễ sai sót), ta dùng chương trình để tính tự động gradient (autograd). 
 Xem :numref:`sec_autograd` để biết thêm chi tiết.
 Nhắc lại từ mục tính vi phân tự động, để chỉ định hàm `autograd` lưu gradient của các biến số, ta cần gọi hàm `attach_grad`, cấp phát bộ nhớ để lưu giá trị gradient mong muốn.
 
