@@ -732,7 +732,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 5. Can you ever expect to see 0 generalization error?
 -->
 
-1. Bạn có thể giải một bài toán hồi quy đa thức một cách chính xác? Gợi ý: sử dụng đại số tuyến tính.
+1. Bạn có thể giải bài toán hồi quy đa thức một cách chính xác không? Gợi ý: sử dụng đại số tuyến tính.
 2. Lựa chọn mô hình cho các đa thức
     * Vẽ đồ thị biểu diễn lỗi huấn luyện và độ phức tạp của mô hình (bậc của đa thức). Bạn quan sát được gì?
     * Vẽ đồ thị biểu diễn lỗi kiểm tra trong trường hợp này.
