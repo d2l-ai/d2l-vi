@@ -739,7 +739,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
     * Tạo một đồ thị tương tự nhưng với hàm của lượng dữ liệu.
 3. Điều gì sẽ xảy ra nếu bạn bỏ qua việc chuẩn hóa các đặc trưng đa thức $x^i$ với $1/i!$. Bạn có thể sửa chữa vấn đề này bằng cách nào khác không?
 4. Bậc mấy của đa thức giảm được tỉ lệ lỗi huấn luyện về 0?
-5. Bạn có thể nào từng kỳ vọng nhìn thấy lỗi khái quát bằng 0?
+5. Bạn có bao giờ kỳ vọng thấy được lỗi khái quát bằng 0?
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
