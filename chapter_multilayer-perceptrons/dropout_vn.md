@@ -237,15 +237,15 @@ where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ 
 One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$, then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
-Để triển khai hàm dropout cho một tầng đơn, ta phải lấy số mẫu từ một biến Bernoulli (nhị phân) ngẫu nhiên bằng với số chiều của tầng, với biến ngẫu nhiên có giá trị $1$ (giữ) với xác suất bằng $1-p$ và $0$ (bỏ) với xác suất bằng $p$.
-Một cách đơn giản để triển khai là đầu tiên lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
+Để triển khai hàm dropout cho một tầng đơn, ta phải lấy số mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) bằng với số chiều của tầng, với biến ngẫu nhiên có giá trị $1$ (giữ) với xác suất bằng $1-p$ và $0$ (bỏ) với xác suất bằng $p$.
+Một cách đơn giản để thực hiện việc này là đầu tiên lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
 In the following code, we implement a `dropout_layer` function that drops out the elements in the `ndarray` input `X` with probability `dropout`, 
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-Trong mã nguồn bên dưới, ta lập trình một hàm `dropout_layer` có chức năng bỏ đi các phần tử trong `ndarray` đầu vào `X` với xác suất `dropout`, chia tỉ lệ các phần tử còn lại như đã mô tả bên trên (chia các phần tử còn sót lại với `1.0-dropout`). 
+Trong mã nguồn bên dưới, ta lập trình một hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, chia tỉ lệ các phần tử còn lại như đã mô tả bên trên (chia các phần tử còn sót lại với `1.0-dropout`). 
 
 ```{.python .input  n=1}
 import d2l
