@@ -33,6 +33,8 @@ Thực sự thì giới hạn số đặc trưng đầu vào là một kỹ thu�
 Tuy nhiên, việc đơn giản là loại bỏ các đặc trưng cũng không hề dễ dàng.
 Quay lại với ví dụ về đường cong khớp đa thức, xem xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
 Mở rộng của đa thức cho dữ liệu đa biến được gọi là *đơn thức*, đơn giản là tích của lũy thừa các biến.
+Bậc của một đơn thức là tổng của các số mũ.
+Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
 
 <!--
 Note that the number of terms with degree $d$ blows up rapidly as $d$ grows larger.
