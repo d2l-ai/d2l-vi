@@ -217,7 +217,7 @@ Moreover, elucidating the precise theoretical foundations that might explain why
 
 Trong mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
 Hiện tại, thậm chí khi giả thiết i.i.d. được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
-Hơn nữa, làm sáng tỏ nền tảng lý thuyết chính xác có thể giải thích tại sao các mạng nơ-ron cũng như chúng tiếp tục làm mất đi những bộ óc vĩ đại nhất trong lý thuyết học.
+Hơn nữa, làm sáng tỏ nền tảng lý thuyết chính xác có thể giải thích tại sao các mạng nơ-ron sâu có thể khái quát cũng như chúng tiếp tục làm đau đầu những bộ óc vĩ đại nhất trong lý thuyết học.
 
 <!--
 When we train our models, we attempt searching for a function that fits the training data as well as possible.
