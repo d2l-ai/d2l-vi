@@ -120,7 +120,7 @@ Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát đư�
 ### Incorporating Hidden Layers
 -->
 
-### Kết Hợp Các Tầng Ẩn
+### Kết hợp các Tầng ẩn
 
 <!--
 We can over come these limitations of linear models and handle a more general class of functions by incorporating one or more hidden layers.
