@@ -671,7 +671,7 @@ Of course, our training error will now be low (even lower than if we had the rig
 -->
 
 Bây giờ, hãy thử huấn luyện mô hình sử dụng một đa thức với bậc rất cao.
-Trong trường hợp này, ta không có đủ dữ liệu để học được rằng các hệ số bậc cao nên có giá trị gần với không.
+Trong trường hợp này, mô hình không có đủ dữ liệu để học được rằng các hệ số bậc cao nên có giá trị gần với không.
 Như một hệ quả, mô hình quá phức tạp của ta sẽ dễ bị ảnh hưởng bởi các nhiễu ở trong dữ liệu huấn luyện.
 Dĩ nhiên, lỗi huấn luyện trong trường hợp này sẽ thấp (thậm chí còn thấp hơn cả khi chúng ta có được mô hình thích hợp!) nhưng lỗi kiểm tra sẽ cao.
 
