@@ -95,7 +95,7 @@ This approach is doomed to fail in a world where inverting an image preserves th
 
 Nhưng còn với bài toán phân loại hình ảnh về chó mèo thì sao?
 Có nên tăng cường độ sáng của điểm ảnh tại vị trí (13, 17) luôn tăng (hoặc luôn giảm) để khả năng hình ảnh mô tả là một con chó?
-Mô hình tuyến tính tương ứng phụ thuộc vào giả thiết (ngầm) rằng điều kiện duy nhất để phân biệt mèo và chó là chỉ cần đánh giá cường độ sáng của từng pixel.
+Mô hình tuyến tính tương ứng phụ thuộc vào giả thiết (ngầm) rằng điều kiện duy nhất để phân biệt mèo và chó là chỉ cần đánh giá độ sáng của từng pixel.
 Cách tiếp cận này chắc chắn sẽ bị sai khi các hình ảnh bị đảo ngược màu sắc.
 
 
