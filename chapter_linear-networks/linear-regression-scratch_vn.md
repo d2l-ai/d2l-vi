@@ -135,7 +135,7 @@ Since this process is so fundamental to training machine learning algorithms, it
 -->
 
 Nhắc lại rằng việc huấn luyện mô hình bao gồm tách tập dữ liệu thành nhiều phần (các mininbatch), lần lượt đọc từng phần của tập dữ liệu mẫu, và sử dụng chúng để cập nhật mô hình của chúng ta. 
-Vì quá trình này là cơ sở để huấn luyện các giải thuật học máy, ta nên định nghĩa một hàm để trộn và truy xuất dữ liệu trong các minibatch một cách tiện lợi.
+Vì quá trình này rất căn bản để huấn luyện các giải thuật học máy, ta nên định nghĩa một hàm để trộn và truy xuất dữ liệu trong các minibatch một cách tiện lợi.
 
 <!--
 In the following code, we define a `data_iter` function to demonstrate one possible implementation of this functionality.
