@@ -158,7 +158,7 @@ Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên một lượng b�
 Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
 Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": giữ nguyên hệ số phạt, thuật toán tối ưu của ta *phân rã* trọng số ở từng bước của quá trình huấn luyện.
 Ngược lại so với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
-Các giá trị nhỏ của $\lambda$ tương ứng với $\mathbf{w}$ không bị nén, trong khi các giá trị lớn của $\lambda$ nén $\mathbf{w}$ một cách đáng kể.
+Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể.
 Việc ta có thêm một hệ số điều chỉnh phạt tương ứng $b^2$ hay không có thể khác nhau giữa các cách triển khai, và có thể khác nhau giữa các tầng của mạng nơ-ron.
 Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
 
