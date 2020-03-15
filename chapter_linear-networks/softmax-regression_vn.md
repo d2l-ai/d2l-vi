@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, tự xây dựng mô hình hồi quy tuyến tính từ đầu trong :numref:`sec_linear_scratch` và xây dựng mô hình hồi quy tuyến tính một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, từ tự xây dựng mô hình hồi quy tuyến tính từ đầu tại :numref:`sec_linear_scratch` cho đến xây dựng mô hình hồi quy tuyến tính với Gluon tại :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -37,10 +37,10 @@ Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn
 * Which movie is Aston most likely to watch next?
 -->
 
-* Email này có phải thư rác/lừa đảo hay không?
+* Email này có phải thư rác hay không?
 * Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?
-* Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
-* Aston có khả năng xem bộ phim nào tiếp theo nhất?
+* Hình ảnh này mô tả một con lừa, một con chó, một con mèo hay một con gà trống?
+* Bộ phim nào có khả năng cao nhất được Aston xem tiếp theo?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -50,8 +50,8 @@ The distinction tends to get blurred, in part, because often, even when we only 
 -->
 
 Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán khác nhau đôi chút:
-(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là cún, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là cún (92%), là gà (1%), là mèo (7%).
-Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
+(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là chó, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là chó (92%), là gà (1%), là mèo (7%).
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -70,10 +70,10 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
+Để khởi động, hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
 Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
 Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
-Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
+Hơn nữa, giả sử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
 Next, we have to choose how to represent the labels.
@@ -97,7 +97,7 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
+Nhưng nhìn chung các lớp của bài toán phân loại không tuân theo một trật tự tự nhiên nào.
 May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
 Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
 Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
@@ -729,6 +729,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Trần Thị Hồng Hạnh
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Lý Phi Long
@@ -763,4 +764,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
