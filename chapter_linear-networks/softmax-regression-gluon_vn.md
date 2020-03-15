@@ -150,7 +150,7 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Optimization Algorithm
 -->
 
-## Thuật toán tối ưu
+## Thuật toán Tối ưu
 
 <!--
 Here, we use minibatch stochastic gradient descent with a learning rate of $0.1$ as the optimization algorithm.
@@ -158,7 +158,7 @@ Note that this is the same as we applied in the linear regression example and it
 -->
 
 Ở đây, chúng ta sử dụng thuật toán tối ưu hạ gradient ngẫu nhiên theo minibatch với tốc độ học bằng $0.1$.
-Lưu ý rằng cách làm này giống hệt cách làm ở ví dụ về hồi quy tuyến tính, minh chứng cho tính tổng quát của bộ tối ưu hạ gradient ngẫu nhiên.
+Lưu ý rằng cách làm này giống hệt cách làm ở ví dụ về hồi quy tuyến tính, minh chứng cho tính khái quát của bộ tối ưu hạ gradient ngẫu nhiên.
 
 ```{.python .input  n=5}
 trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.1})
@@ -187,8 +187,8 @@ Note that in many cases, Gluon takes additional precautions beyond these most we
 saving us from even more pitfalls that we would encounter if we tried to code all of our models from scratch in practice.
 -->
 
-Giống lần trước, thuật toán hội tụ và nghiệm có độ chính xác 83.7%, chỉ khác một điều là cần ít dòng mã hơn.
-Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để tránh các lỗi kĩ thuật tính toán mà ta dễ gặp phải nếu tự xây dựng mô hình từ đầu.
+Giống lần trước, thuật toán hội tụ tới một mô hình có độ chính xác 83.7% nhưng chỉ khác là cần ít dòng lệnh hơn.
+Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mánh phổ biến mà còn sử dụng các kỹ thuật khác để tránh các lỗi kĩ thuật tính toán mà ta dễ gặp phải nếu tự lập trình mô hình từ đầu.
 
 <!--
 ## Exercises
@@ -201,7 +201,7 @@ Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mán
 2. Why might the test accuracy decrease again after a while? How could we fix this?
 -->
 
-1. Thử thay đổi các siêu tham số, như là kích thước batch, epoch, và tốc độ học, để xem kết quả như thế nào.
+1. Thử thay đổi các siêu tham số như kích thước batch, số epoch và tốc độ học. Theo dõi kết quả sau khi thay đổi.
 2. Tại sao độ chính xác trên tập kiểm tra lại giảm sau một khoảng thời gian? Chúng ta giải quyết việc này thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -249,3 +249,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Tâm
+
+* Phạm Hồng Vinh
