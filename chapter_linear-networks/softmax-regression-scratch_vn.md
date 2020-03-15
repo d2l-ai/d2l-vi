@@ -306,7 +306,7 @@ Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
 Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
-Có thể thấy rằng kết quả dự đoán lớp từ ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Có thể thấy rằng kết quả dự đoán lớp từ ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là $0.6$ với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
 Dự đoán lớp ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
 Do đó, ta có độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
