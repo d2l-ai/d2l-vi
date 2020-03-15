@@ -188,9 +188,9 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
-Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
-Chú ý rằng chúng ta sẽ làm phẳng mỗi ảnh gốc trên batch bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
+Sau khi đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
+Đoạn mã sau định nghĩa lượt truyền xuôi qua mạng.
+Chú ý rằng chúng ta sẽ làm phẳng mỗi ảnh gốc trên batch thành một vector có độ dài `num_inputs` bằng hàm `reshape`, trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
 def net(X):
@@ -283,7 +283,7 @@ Taking the mean yields the desired result.
 -->
 
 Độ chính xác được tính toán như sau:
-Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (được cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
+Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (được cho bởi chỉ số của phần tử lớn nhất trên mỗi hàng).
 Kết quả trả về sẽ có cùng kích thước với biến `y` và bây giờ ta chỉ cần so sánh hai vector này.
 Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần đưa chúng về cùng một kiểu dữ liệu (ở đây ta chọn kiểu `float32`).
 Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true), giá trị trung bình này mang lại kết quả mà ta mong muốn.
