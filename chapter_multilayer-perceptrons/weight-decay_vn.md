@@ -136,7 +136,7 @@ Ngược lại, các hình phạt của L1 hướng đến các mô hình mà tr
 The stochastic gradient descent updates for L2-regularized regression follow:
 -->
 
-Cập nhật hạ gradient ngẫu nhiên cho hồi quy được chuẩn hóa L2 được tiến hành như sau:
+Việc cập nhật hạ gradient ngẫu nhiên cho hồi quy được chuẩn hóa L2 được tiến hành như sau:
 
 $$
 \begin{aligned}
