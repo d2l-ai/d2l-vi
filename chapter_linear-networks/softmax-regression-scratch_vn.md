@@ -377,7 +377,7 @@ evaluate_accuracy(net, test_iter)
 ## Model Training
 -->
 
-## Huấn luyện mô hình
+## Huấn luyện Mô hình
 
 <!--
 The training loop for softmax regression should look strikingly familiar if you read through our implementation of linear regression in :numref:`sec_linear_scratch`.
