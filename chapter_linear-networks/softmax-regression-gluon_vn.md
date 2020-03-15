@@ -5,7 +5,7 @@
 # Concise Implementation of Softmax Regression
 -->
 
-# Triển khai súc tích của Hồi quy Softmax
+# Cách lập trình súc tích Hồi quy Softmax
 :label:`sec_softmax_gluon`
 
 <!--
@@ -14,8 +14,8 @@ we will find it similarly (or possibly more) convenient for implementing classif
 Again, we begin with our import ritual.
 -->
 
-Giống như cách Gluon giúp việc thực hiện hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, chúng ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) cho việc triển khai các mô hình phân loại.
-Một lần nữa, chúng ta bắt đầu bằng việc nhập gói thư viện.
+Giống như cách Gluon giúp việc lập trình hồi quy tuyến tính ở :numref:`sec_linear_gluon` trở nên dễ dàng hơn, ta sẽ thấy nó cũng mang đến sự tiện lợi tương tự (hoặc có thể hơn) khi lập trình các mô hình phân loại.
+Một lần nữa, chúng ta bắt đầu bằng việc nhập các gói thư viện.
 
 ```{.python .input  n=1}
 import d2l
@@ -28,7 +28,7 @@ npx.set_np()
 Let's stick with the Fashion-MNIST dataset and keep the batch size at $256$ as in the last section.
 -->
 
-Chúng ta tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích cỡ batch bằng $256$ như ở phần trước.
+Chúng ta sẽ tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích cỡ batch bằng $256$ như ở mục trước.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -48,9 +48,9 @@ Again, here, the `Sequential` is not really necessary, but we might as well form
 Again, we initialize the weights at random with zero mean and standard deviation $0.01$.
 -->
 
-Như đã đề cập trong :numref:`sec_softmax`, tầng ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
+Như đã đề cập trong :numref:`sec_softmax`, tầng đầu ra của hồi quy softmax là một tầng kết nối đầy đủ (`Dense`).
 Do đó, để xây dựng mô hình, ta chỉ cần thêm một tầng `Dense` với 10 đầu ra vào đối tượng `Sequential`.
-Ở đây, việc sử dụng `Sequential` không thực sự cần thiết, nhưng ta nên hình thành thói quen sử dụng vì nó sẽ luôn hiện diện khi ta lập trình các mô hình học sâu.
+Việc sử dụng `Sequential` ở đây không thực sự cần thiết, nhưng ta nên hình thành thói quen này vì nó sẽ luôn hiện diện khi ta xây dựng các mô hình sâu.
 Một lần nữa, chúng ta khởi tạo các trọng số một cách ngẫu nhiên với trung bình bằng không và độ lệch chuẩn bằng $0.01$.
 
 ```{.python .input  n=3}
@@ -77,9 +77,9 @@ Recall that the softmax function calculates $\hat y_j = \frac{e^{z_j}}{\sum_{i=1
 where $\hat y_j$ is the $j^\mathrm{th}$ element of ``yhat`` and $z_j$ is the $j^\mathrm{th}$ element of the input ``y_linear`` variable, as computed by the softmax.
 -->
 
-Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đã đưa các kết quả này qua hàm mất mát entropy chéo.
+Ở ví dụ trước, ta đã tính toán kết quả đầu ra của mô hình và sau đó đưa các kết quả này vào hàm mất mát entropy chéo.
 Về mặt toán học, cách làm này hoàn toàn có lý.
-Tuy nhiên, từ góc độ tính toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số (được bàn trong :numref:`sec_naive_bayes`).
+Tuy nhiên, từ góc độ điện toán, sử dụng hàm mũ có thể là nguồn gốc của các vấn đề về ổn định số học (được bàn trong :numref:`sec_naive_bayes`).
 Hãy nhớ rằng, hàm softmax tính $\hat y_j = \frac{e^{z_j}}{\sum_{i=1}^{n} e^{z_i}}$, trong đó $\hat y_j$ là phần tử thứ $j^\mathrm{th}$ của ``yhat`` và $z_j$ là phần tử thứ $j^\mathrm{th}$ của biến đầu vào ``y_linear``.
 
 <!--
@@ -91,9 +91,9 @@ You can verify that this shifting of each $z_i$ by constant factor does not chan
 -->
 
 Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
-Điều này dẫn đến mẫu số (và/hoặc tử số) sẽ tiến tới ``inf`` và ta sẽ gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan`` .
-Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không xác định một cách rõ ràng.
-Có một mẹo để khắc phục điều này, đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Lúc này mẫu số hoặc tử số (hoặc cả hai) sẽ tiến tới ``inf`` và ta gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan``.
+Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không được xác định một cách rõ ràng.
+Một mẹo để khắc phục việc này là: đầu tiên ta trừ tất cả các $z_i$ đi $\text{max}(z_i)$, sau đó mới đưa chúng vào hàm ``softmax``.
 Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
@@ -102,9 +102,9 @@ These might be rounded to zero due to finite precision (i.e underflow), making $
 A few steps down the road in backpropagation, we might find ourselves faced with a screenful of the dreaded not-a-number (``nan``) results.
 -->
 
-Sau khi thực hiện phép trừ và chuẩn hóa, một vài $z_j$ có thể có giá trị âm lớn và do đó $e^{z_j}$ sẽ xấp xỉ 0.
-Điều này có thể dẫn đến việc làm tròn thành 0 (tức tràn số dưới) do khả năng biễu diễn chính xác là hữu hạn, tức $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
-Thực hiện vài bước lan truyền ngược với lỗi trên, ta sẽ đối mặt với một loạt giá trị `nan` (*not-a-number*: *Không phải số*) đáng sợ.
+Sau khi thực hiện bước trừ và chuẩn hóa, một vài $z_j$ có thể có giá trị âm lớn và do đó $e^{z_j}$ sẽ xấp xỉ 0.
+Điều này có thể dẫn đến việc chúng bị làm tròn thành 0 do khả năng biễu diễn chính xác là hữu hạn (tức tràn số dưới), khiến $\hat y_j$ tiến về không và giá trị $\text{log}(\hat y_j)$ tiến về ``-inf``.
+Thực hiện vài bước lan truyền ngược với lỗi trên, ta có thể sẽ đối mặt với một loạt giá trị `nan` (*not-a-number*: *không phải số*) đáng sợ.
 
 <!--
 Fortunately, we are saved by the fact that even though we are computing exponential functions, we ultimately intend to take their log (when calculating the cross-entropy loss).
@@ -112,9 +112,9 @@ By combining these two operators (``softmax`` and ``cross_entropy``) together, w
 As shown in the equation below, we avoided calculating $e^{z_j}$ and can instead $z_j$ directly due to the canceling in $\log(\exp(\cdot))$.
 -->
 
-May mắn thay, mặc dù ta tính toán với các hàm mũ nhưng trong thực tế kết quả cuối cùng ta muốn là giá trị log của nó (ví dụ khi tính hàm mất mát entropy chéo).
-Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề bất ổn trong tính toán mà có thể gây khó khăn trong quá trình lan truyền ngược.
-Như sẽ thấy trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó ta tính trực tiếp $z_j$ do việc khử trực tiếp trong $\log(\exp(\cdot))$.
+May mắn thay, mặc dù ta đang thực hiện tính toán với các hàm mũ, kết quả cuối cùng ta muốn là giá trị log của nó (khi tính hàm mất mát entropy chéo).
+Bằng cách kết hợp cả hai hàm (``softmax`` và ``cross-entropy``) lại với nhau, ta có thể khắc phục vấn đề về ổn định số học và tránh gặp khó khăn trong quá trình lan truyền ngược.
+Trong phương trình bên dưới, ta đã không tính $e^{z_j}$ mà thay vào đó, ta tính trực tiếp $z_j$ do việc rút gọn $\log(\exp(\cdot))$.
 
 $$
 \begin{aligned}
@@ -130,9 +130,9 @@ But instead of passing softmax probabilities into our new loss function, we will
 which does smart things like the log-sum-exp trick ([see on Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 -->
 
-Ta sẽ muốn giữ nguyên chức năng của softmax thông thường trong trường hợp ta muốn đánh giá xác xuất của đầu ra theo mô hình.
-Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit và tính softmax cùng giá trị log của nó trong hàm mất mát `softmax_cross_entropy`.
-Hàm này sẽ tự động thực hiện các mẹo thông minh log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
+Ta vẫn muốn giữ lại hàm softmax gốc để sử dụng khi muốn tính đầu ra của mô hình dưới dạng xác suất.
+Nhưng thay vì truyền xác suất softmax vào hàm mất mát mới, ta sẽ chỉ truyền các giá trị logit (các giá trị khi chưa qua softmax) và tính softmax cùng log của nó trong hàm mất mát `softmax_cross_entropy`.
+Hàm này cũng sẽ tự động thực hiện các mẹo thông minh như log-sum-exp ([xem thêm Wikipedia](https://en.wikipedia.org/wiki/LogSumExp)).
 
 ```{.python .input  n=4}
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
