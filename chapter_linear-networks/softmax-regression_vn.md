@@ -98,7 +98,7 @@ The component corresponding to particular instance's category is set to 1 and al
 -->
 
 Nhưng nhìn chung các lớp của bài toán phân loại không tuân theo một trật tự tự nhiên nào.
-May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn one-hot*.
 Biểu diễn one-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
 Thành phần tương ứng với từng danh mục cụ thể sẽ được gán giá trị 1 và tất cả các thành phần khác sẽ được gán giá trị 0.
 
