@@ -420,7 +420,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 * Dropout is only used during training.
 -->
 
-* Ngoài phương pháp kiểm soát số chiều và kích thước của véc-tơ trọng số thì dropout cũng là một công cụ nữa để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
+* Ngoài phương pháp kiểm soát số chiều và kích thước của vector trọng số thì dropout cũng là một công cụ nữa để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
 * Dropout thay thế giá trị kích hoạt $h$ bằng một biến ngẫu nhiên $h'$ với giá trị kỳ vọng $h$ và với phương sai được tính toán bởi xác suất dropout $p$.
 * Dropout chỉ được sử dụng trong quá trình huấn luyện.
 
