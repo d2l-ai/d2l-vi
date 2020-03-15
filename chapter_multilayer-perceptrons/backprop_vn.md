@@ -5,7 +5,7 @@
 # Forward Propagation, Backward Propagation, and Computational Graphs
 -->
 
-# Lan truyền xuôi, Lan truyền ngược và Các đồ thị tính toán
+# Lan truyền xuôi, Lan truyền ngược và Đồ thị tính toán
 :label:`sec_backprop`
 
 <!--
@@ -14,9 +14,9 @@ However, when we implemented the algorithm, we only worried about the calculatio
 When it came time to calculate the gradients, we just invoked the `backward` function, relying on the `autograd` module to know what to do.
 -->
 
-Cho đến giờ, ta đã huấn luyện các mô hình với hạ gradient ngẫu nhiên minibatch.
-Tuy nhiên, khi ta triển khai thuật toán, ta mới chỉ bận tâm đến các tính toán liên quan đến *lan truyền xuôi* qua mô hình.
-Đến khi cần tính gradient, ta chỉ cần gọi hàm `backward`, việc tính toán dựa vào mô-đun `autograd`.
+Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
+Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các tính toán liên quan đến *lan truyền xuôi* qua mô hình.
+Khi cần tính gradient, ta gọi hàm `backward`, còn lại việc tính toán chi tiết đã được giải quyết bởi mô-đun `autograd`.
 
 <!--
 The automatic calculation of gradients profoundly simplifies the implementation of deep learning algorithms.
@@ -26,10 +26,10 @@ While we must continue to rely on `autograd` so we can focus on the interesting 
 you ought to *know* how these gradients are calculated under the hood if you want to go beyond a shallow understanding of deep learning.
 -->
 
-Việc tính gradient tự động đã đơn giản hóa đi rất nhiều việc triển khai các thuật toán học sâu.
-Trước đây, khi chưa có tính vi phân tự động, ngay cả những thay đổi nhỏ đối với các mô hình phức tạp cũng yêu cầu tính toán lại các đạo hàm phức tạp bằng tay.
-Đáng ngạc nhiên là các bài báo học thuật thường xuyên phải dùng nhiều trang để rút ra các nguyên tắc cập nhật.
-Trong khi ta phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *biết* các gradient này được tính toán như thế nào nếu bạn muốn vượt qua sự hiểu biết hời hợt về học sâu.
+Việc tính gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
+Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả những thay đổi nhỏ đối với các mô hình phức tạp cũng yêu cầu tính toán lại các đạo hàm phức tạp bằng tay.
+Điều đáng ngạc nhiên là các bài báo học thuật thường xuyên phải sử dụng rất nhiều trang để rút ra các nguyên tắc cập nhật.
+Trong khi ta phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *biết* các cách tính gradient nếu bạn muốn vượt qua sự hiểu biết hời hợt về học sâu.
 
 <!--
 In this section, we take a deep dive into the details of backward propagation (more commonly called *backpropagation* or *backprop*).
@@ -38,8 +38,8 @@ To start, we focus our exposition on a three layer (one hidden) multilayer perce
 -->
 
 Trong phần này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*).
-Để truyền đạt ý tưởng cho cả các kỹ thuật và các cách triển khai, ta sẽ dựa vào toán học cơ bản và các biểu đồ tính toán.
-Để bắt đầu, ta tập trung việc giải trình vào một perceptron đa tầng gồm có ba tầng (một tầng ẩn) với phân rã trọng số (điều chuẩn $\ell_2$).
+Để truyền đạt ý tưởng của các kỹ thuật và các cách lập trình, ta sẽ dựa vào toán học cơ bản và đồ thị tính toán.
+Để bắt đầu, ta tập trung việc giải thích vào một perceptron đa tầng gồm có ba tầng (một tầng ẩn) với phân rã trọng số (điều chuẩn $\ell_2$).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
