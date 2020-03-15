@@ -14,8 +14,8 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự như thế, bạn nên tự tìm hiểu làm thế nào để xây dựng nó một cách chi tiết nhất.
-Tương tự hồi quy tuyến tính, sau khi thực hiện mọi thứ bằng tay thì ta sẽ dùng Gluon để lập trình và đưa ra sự so sánh.
+Giống như khi ta lập trình hồi quy tuyến tính từ đầu, hồi quy (softmax) logistic đa lớp cũng là một kĩ thuật nền tảng mà bạn nên hiểu biết tường tận các chi tiết để có thể tự xây dựng lại nó.
+Sau khi thực hiện mọi thứ bằng tay thì ta cũng sẽ dùng Gluon để lập trình và đưa ra sự so sánh như ở phần hồi quy tuyến tính.
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
@@ -49,8 +49,7 @@ In this section, we will flatten each image, treating them as $784$ 1D vectors.
 In the future, we will talk about more sophisticated strategies for exploiting the spatial structure in images, but for now we treat each pixel location as just another feature.
 -->
 
-Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
-Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
+Giống như trong ví dụ hồi quy tuyến tính, mỗi mẫu ảnh sẽ được biểu diễn bằng một vector có chiều dài cố định là $28 \times 28$.
 Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
 Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
@@ -108,8 +107,7 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
 Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
 Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0)`), kết quả sẽ là một vector (một chiều) có kích thước là `(3,)`.
-Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
-thay vì thu gọn kích thước đã tính toán, ta có thể gán `keepdims=True` khi gọi hàm `sum`.
+Nếu chúng ta muốn giữ số lượng trục giống với mảng ban đầu thay vì thu gọn kích thước trên các trục đã tính toán (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`), ta có thể chỉ định `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -128,7 +126,7 @@ Before looking at the code, let's recall what this looks expressed as an equatio
 Bây giờ chúng ta đã có thể bắt đầu xây dựng hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
 Đầu tiên, chúng ta lũy thừa từng giá trị (sử dụng `exp`).
-Sau đó tính tổng trên mỗi hàng (có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi mẫu.
+Sau đó tính tổng trên mỗi hàng để lấy các hằng số chuẩn hóa cho mỗi mẫu (vì mỗi mẫu là một hàng).
 Cuối cùng, chia mỗi hàng theo hằng số chuẩn hóa của nó để đảm bảo rằng kết quả có tổng bằng $1$.
 Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
@@ -159,8 +157,8 @@ because failed to take precautions against numerical overflow or underflow due t
 -->
 
 Có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử đều được biến đổi thành một số không âm.
-Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
-Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng chúng tôi đã hơi cẩu thả khi lập trình nó, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
+Hơn nữa, mỗi hàng đều có tổng là 1 nên thoả mãn yêu cầu làm một giá trị xác suất.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng chúng tôi đã hơi cẩu thả về mặt lập trình vì đã không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận, không giống với cách đã thực hiện tại :numref:`sec_naive_bayes`.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
