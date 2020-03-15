@@ -710,7 +710,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 -->
 
 * Bởi vì tỉ lệ lỗi khái quát không thể được ước lượng dựa trên tỉ lệ lỗi huấn luyện, nên việc chỉ đơn thuần tối thiểu hóa tỉ lệ lỗi huấn luyện sẽ không nhất thiết đồng nghĩa với việc tối thiểu hóa lỗi khái quát.
-* Một tập kiểm định có thể được sử dụng cho việc lựa chọn mô hình (với điều kiện là tập này không được sử dụng một cách quá tự do).
+* Một tập kiểm định có thể được sử dụng cho việc lựa chọn mô hình (với điều kiện là tập này không được sử dụng quá nhiều).
 * Khớp dưới có nghĩa là mô hình không có khả năng giảm tỉ lệ lỗi huấn luyện trong khi quá khớp là kết quả của việc tỉ lệ lỗi huấn luyện của mô hình thấp hơn nhiều so với tỉ lệ lỗi kiểm tra.
 * Chúng ta nên chọn một mô hình phức tạp vừa phải và tránh việc sử dụng tập huấn luyện không có đủ số số mẫu.
 
