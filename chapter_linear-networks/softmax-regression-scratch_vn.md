@@ -261,7 +261,7 @@ Ví dụ, Gmail cần phải phân loại một email vào trong các danh mục
 Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
-When predictions are consistent with the actual category `y`, they are correct.ss
+When predictions are consistent with the actual category `y`, they are correct.
 The classification accuracy is the fraction of all predictions that are correct.
 Although it can be difficult optimize accuracy directly (it is not differentiable), 
 it is often the performance metric that we care most about, and we will nearly always report it when training classifiers.
