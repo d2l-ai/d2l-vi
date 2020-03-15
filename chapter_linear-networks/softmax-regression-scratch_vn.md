@@ -79,7 +79,7 @@ Recall that we need to *attach gradients* to the model parameters.
 More literally, we are allocating memory for future gradients to be stored and notifiying MXNet that we will want to calculate gradients with respect to these parameters in the future.
 -->
 
-Hãy nhớ là ta cần *đính kèm gradient* vào các tham số của mô hình.
+Hãy nhớ rằng ta cần *đính kèm gradient* vào các tham số của mô hình.
 Cụ thể hơn, ta đang phân bổ bộ nhớ để lưu trữ các gradient trong tương lai và cho MXNet biết rằng ta sẽ muốn tính các gradient theo các tham số này trong tương lai.
 
 ```{.python .input  n=4}
@@ -107,9 +107,9 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 
 Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
 Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
-Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3,)`.
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0)`), kết quả sẽ là một vector (một chiều) có kích thước là `(3,)`.
 Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
-thay vì thu gọn kích thước mà chúng ta đã tính toán, ta có thể gán `keepdims=True` khi gọi hàm `sum`.
+thay vì thu gọn kích thước đã tính toán, ta có thể gán `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -127,9 +127,9 @@ Before looking at the code, let's recall what this looks expressed as an equatio
 
 Bây giờ chúng ta đã có thể bắt đầu xây dựng hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
-Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
-Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi mẫu.
-Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
+Đầu tiên, chúng ta lũy thừa từng giá trị (sử dụng `exp`).
+Sau đó tính tổng trên mỗi hàng (có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi mẫu.
+Cuối cùng, chia mỗi hàng theo hằng số chuẩn hóa của nó để đảm bảo rằng kết quả có tổng bằng $1$.
 Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
 $$
@@ -158,7 +158,7 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử đều được biến đổi thành một số không âm.
+Có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử đều được biến đổi thành một số không âm.
 Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
 Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng chúng tôi đã hơi cẩu thả khi lập trình nó, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
 
