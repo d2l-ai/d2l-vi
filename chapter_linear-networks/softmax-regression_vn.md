@@ -314,7 +314,6 @@ Bản thân softmax có thể được tính bằng cách lũy thừa tất cả
 -->
 
 ## Hàm mất mát
-:label:`section_cross_entropy`
 
 <!--
 Next, we need a *loss function* to measure the quality of our predicted probabilities.
