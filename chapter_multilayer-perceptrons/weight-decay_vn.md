@@ -171,7 +171,7 @@ Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của
 ## High-Dimensional Linear Regression
 -->
 
-## Hồi quy tuyến tính nhiều chiều
+## Hồi quy Tuyến tính nhiều chiều
 
 <!--
 We can illustrate the benefits of weight decay over feature selection through a simple synthetic example.
