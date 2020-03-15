@@ -130,7 +130,7 @@ By contrast, L1 penalties lead to models that concentrate weight on a small set 
 Một lý do để sử dụng chuẩn L2 là vì nó phạt rất nặng những thành phần lớn của véc-tơ trọng số.
 Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng.
 Trong thực tế, điều này có thể giúp làm giảm ảnh hưởng do lỗi đo lường của từng biến đơn lẻ.
-Ngược lại, các hình phạt của L1 hướng đến các mô hình tập trung trọng số vào một số lượng nhỏ các đặc trưng, điều này có thể được mong muốn vì một vài lý do. 
+Ngược lại, các hình phạt của L1 hướng đến các mô hình mà trọng số chỉ tập trung vào một số lượng nhỏ các đặc trưng, và ta có thể muốn điều này vì một vài lý do khác. 
 
 <!--
 The stochastic gradient descent updates for L2-regularized regression follow:
