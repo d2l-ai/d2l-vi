@@ -403,7 +403,7 @@ Plugging $o$ into the definition of the loss $l$ and using the definition of the
 -->
 
 Vì softmax và hàm mất mát softmax rất phổ biến, nên việc hiểu cách tính giá trị các hàm này sẽ có ích về sau.
-Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
+Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được: 
 
 $$
 l = -\sum_j y_j \log \hat{y}_j = \sum_j y_j \log \sum_k \exp(o_k) - \sum_j y_j o_j
@@ -414,7 +414,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có:
+Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có: 
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -427,11 +427,11 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
-Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
-Điều này không phải ngẫu nhiên.
-Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
-Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$. 
+Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. 
+Điều này không phải ngẫu nhiên. 
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này. 
+Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn. 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -451,11 +451,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất.
-Ta có thể biểu diễn $y$ giống hệt như trước.
-Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$.
-Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút.
-Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn.
+Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất. 
+Ta có thể biểu diễn $y$ giống hệt như trước. 
+Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$. 
+Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút. 
+Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn. 
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -466,8 +466,8 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp.
-Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin.
+Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp. 
+Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin. 
 
 <!--
 ## Information Theory Basics
@@ -479,7 +479,7 @@ Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệ
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể.
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể. 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
@@ -496,9 +496,9 @@ This quantity places a hard limit on our ability to compress the data.
 In information theory, this quantity is called the [entropy](https://en.wikipedia.org/wiki/Entropy) of a distribution $p$, and it is captured by the following equation:
 -->
 
-Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu.
-Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng cô đọng dữ liệu của chúng ta (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin).
-Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây:
+Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu. 
+Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng cô đọng dữ liệu của chúng ta (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin). 
+Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây: 
 
 $$
 H[p] = \sum_j - p(j) \log p(j).
@@ -511,10 +511,10 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 -->
 
-Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat".
-"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2.
-Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
-$H[p] / 2$ thường được gọi là entropy nhị phân.
+Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat". 
+"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2. 
+Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit. 
+$H[p] / 2$ thường được gọi là entropy nhị phân. 
 
 <!--
 ### Surprisal
@@ -533,13 +533,13 @@ Because they are always the same, we do not have to transmit any information to 
 Easy to predict, easy to compress.
 -->
 
-Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán?
-Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại.
-Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén!
-Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt!
-Không những tẻ nhạt, mà nó còn dễ đoán nữa.
-Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này.
-Dễ đoán thì cũng dễ nén là vậy.
+Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán? 
+Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại. 
+Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén! 
+Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt! 
+Không những tẻ nhạt, mà nó còn dễ đoán nữa. 
+Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này. 
+Dễ đoán thì cũng dễ nén là vậy. 
 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
@@ -556,11 +556,11 @@ The entropy of the data is then the least surprised that one can ever be (in exp
 -->
 
 Tuy nhiên, nếu ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì thi thoảng ta sẽ thấy ngạc nhiên. 
-Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện.
-Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục,
-Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$. 
-Entropy sau đó là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu).
-Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng).
+Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện. 
+Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục, 
+Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$.
+Entropy sau đó là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu). 
+Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng). 
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -763,4 +763,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
