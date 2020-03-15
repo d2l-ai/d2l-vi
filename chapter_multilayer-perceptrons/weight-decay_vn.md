@@ -127,7 +127,7 @@ In practice, this might make them more robust to measurement error in a single v
 By contrast, L1 penalties lead to models that concentrate weight on a small set of features, which may be desirable for other reasons.
 -->
 
-Một lý do để sử dụng chuẩn L2 là nó đặt một hình phạt lớn lên những thành phần lớn của véc-tơ trọng số.
+Một lý do để sử dụng chuẩn L2 là vì nó phạt rất nặng những thành phần lớn của véc-tơ trọng số.
 Việc này khiến thuật toán học của ta thiên vị các mô hình phân bổ trọng số đều khắp một số lượng lớn các đặc trưng.
 Trong thực tế, điều này có thể giúp làm giảm ảnh hưởng do lỗi đo lường của từng biến đơn lẻ.
 Ngược lại, các hình phạt của L1 hướng đến các mô hình tập trung trọng số vào một số lượng nhỏ các đặc trưng, điều này có thể được mong muốn vì một vài lý do. 
