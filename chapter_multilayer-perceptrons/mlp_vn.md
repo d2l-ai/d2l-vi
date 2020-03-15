@@ -135,7 +135,7 @@ Ta có thể vượt qua những hạn chế của các mô hình tuyến tính 
 Cách dễ nhất để làm điều này là xếp chồng nhiều tầng kết nối đầy đủ lên nhau.
 Mỗi tầng đưa vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
 Ta có thể tạo ra $L-1$ tầng đầu tiên như một biểu diễn và tầng cuối cùng là công cụ dự đoán tuyến tính.
-Kiến trúc này thường được gọi là *perceptron đa tầng*, thường được viết tắt là *MLP*.
+Kiến trúc này thường được gọi là *perceptron đa tầng* (*multilayer percention*), thường được viết tắt là *MLP*.
 Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
 
 <!--
