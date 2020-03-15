@@ -178,7 +178,7 @@ We can illustrate the benefits of weight decay over feature selection through a 
 First, we generate some data as before
 -->
 
-Ta có thể minh họa các lợi ích của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ tổng hợp đơn giản.
+Ta có thể minh họa các ưu điểm của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu giả.
 Đầu tiên, ta tạo ra dữ liệu giống như trước đây
 
 <!--
