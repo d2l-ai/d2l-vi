@@ -157,7 +157,7 @@ Often, we do not regularize the bias term of a network's output layer.
 Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên một lượng bằng sự khác biệt của ước lượng và mẫu.
 Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
 Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": giữ nguyên hệ số phạt, thuật toán tối ưu của ta *phân rã* trọng số ở từng bước của quá trình huấn luyện.
-Ngược lại so với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
+Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
 Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể.
 Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
 Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
@@ -495,6 +495,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 *
