@@ -592,7 +592,7 @@ Mất mát của ta bị giới hạn dưới (_lower-bounded_) bởi entropy t�
 ### Kullback Leibler Divergence
 -->
 
-### Phân kì Kullback Leibler
+### Phân kỳ Kullback Leibler
 
 <!--
 Perhaps the most common way to measure the distance between two distributions is to calculate the *Kullback Leibler divergence* $D(p\|q)$.
