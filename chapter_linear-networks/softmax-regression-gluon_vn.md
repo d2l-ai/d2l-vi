@@ -93,7 +93,7 @@ You can verify that this shifting of each $z_i$ by constant factor does not chan
 Nếu một phần tử $z_i$ quá lớn, $e^{z_i}$ có thể sẽ lớn hơn giá trị cực đại mà kiểu ``float`` có thể biểu diễn được (đây là hiện tượng tràn số trên).
 Lúc này mẫu số hoặc tử số (hoặc cả hai) sẽ tiến tới ``inf`` và ta gặp phải trường hợp $\hat y_i$ bằng $0$, ``inf`` hoặc ``nan``.
 Trong những tình huống này, giá trị trả về của ``cross_entropy`` có thể không được xác định một cách rõ ràng.
-Có một mẹo để khắc phục việc này là đầu tiên ta lấy tất cả $z_i$ trừ cho $\text{max}(z_i)$, sau đó mới đưa qua hàm ``softmax``.
+Một mẹo để khắc phục việc này là: đầu tiên ta trừ tất cả các $z_i$ đi $\text{max}(z_i)$, sau đó mới đưa chúng vào hàm ``softmax``.
 Bạn có thể nhận thấy rằng việc tịnh tiến mỗi $z_i$ theo một hệ số không đổi sẽ không làm ảnh hưởng đến giá trị trả về của hàm ``softmax``.
 
 <!--
