@@ -201,7 +201,7 @@ Lưu ý rằng trong nhiều trường hợp, Gluon không chỉ dùng các mán
 2. Why might the test accuracy decrease again after a while? How could we fix this?
 -->
 
-1. Thử thay đổi các siêu tham số, như là kích thước batch, số epoch và tốc độ học. Theo dõi kết quả sau khi thay đổi.
+1. Thử thay đổi các siêu tham số như kích thước batch, số epoch và tốc độ học. Theo dõi kết quả sau khi thay đổi.
 2. Tại sao độ chính xác trên tập kiểm tra lại giảm sau một khoảng thời gian? Chúng ta giải quyết việc này thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
