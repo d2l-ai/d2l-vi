@@ -581,12 +581,12 @@ Relating this back to our classification objective, even if we get the best poss
 Our loss is lower-bounded by the entropy given by the actual conditional distributions $P(\mathbf{y} \mid \mathbf{x})$.
 -->
 
-Vậy, nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thế thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
-Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thật sự sinh ra dựa trên các xác suất $p$.
+Nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
+Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với dữ liệu sinh ra dựa trên các xác suất $p$.
 Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
 Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
 Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi ta có khả năng dự đoán tốt nhất có thể và cho rằng việc này là khả thi, thì ta sẽ không bao giờ đạt đến mức hoàn hảo.
-Mất mát của ta bị cận dưới bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
+Mất mát của ta bị giới hạn dưới (_lower-bounded_) bởi entropy tạo bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
@@ -599,7 +599,7 @@ Perhaps the most common way to measure the distance between two distributions is
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kì Kullback Leibler* $D(p\|q)$.
+Có lẽ cách thông dụng nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kì Kullback Leibler* $D(p\|q)$.
 Phân kì Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
@@ -640,7 +640,7 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
+Sau khi huấn luyện mô hình hồi quy softmax với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
 Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. 
 Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
 Ở phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
@@ -759,8 +759,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 10 -->
 * Trần Yến Thy
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
