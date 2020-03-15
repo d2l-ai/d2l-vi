@@ -387,9 +387,9 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem qua cách ta sẽ lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
-Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để giúp nó có thể được tái sử dụng. 
-Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
+Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem qua cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để sau này có thể tái sử dụng. 
+Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện với một epoch dữ liệu. 
 Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích cỡ batch làm đối số. 
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
