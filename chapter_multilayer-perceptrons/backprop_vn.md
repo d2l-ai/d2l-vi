@@ -42,7 +42,7 @@ To start, we focus our exposition on a three layer (one hidden) multilayer perce
 ## Forward Propagation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lan truyền Ngược
 
 <!--
 Forward propagation refers to the calculation and storage of intermediate variables (including outputs) for the neural network in order from the input layer to the output layer.
@@ -50,15 +50,17 @@ We now work step-by-step through the mechanics of a deep network with one hidden
 This may seem tedious but in the eternal words of funk virtuoso James Brown, you must "pay the cost to be the boss".
 -->
 
-*dịch đoạn phía trên*
-
+Lan truyền ngược đề cập đến việc tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
+Bây giờ ta hãy làm từng bước thông qua cơ chế của mạng nơ-ron sâu với một tầng ẩn.
+Điều này có vẻ tẻ nhạt nhưng theo những ca từ bất hủ của nghệ sĩ dòng nhạc funk tài danh James Brown, bạn phải "trả giá để được làm sếp".
 
 <!--
 For the sake of simplicity, let’s assume that the input example is $\mathbf{x}\in \mathbb{R}^d$ and that our hidden layer does not include a bias term.
 Here the intermediate variable is:
 -->
 
-*dịch đoạn phía trên*
+Để đơn giản, ta giả sử mẫu đầu vào là $\mathbf{x}\in \mathbb{R}^d$ và tầng ẩn của ta sẽ không có hệ số điều chỉnh.
+Ở đây biến trung gian là:
 
 $$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x},$$
 
@@ -67,7 +69,8 @@ where $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ is the weight parameter of 
 After running the intermediate variable $\mathbf{z}\in \mathbb{R}^h$ through the activation function $\phi$ we obtain our hidden activations vector of length $h$,
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ là tham số trọng số của tầng ẩn.
+Sau khi chạy biến trung gian $\mathbf{z}\in \mathbb{R}^h$ và cho qua hàm kích hoạt $\phi$, ta nhận được vector kích hoạt ẩn với số chiều $h$,
 
 $$\mathbf{h}= \phi (\mathbf{z}).$$
 
@@ -76,7 +79,8 @@ The hidden variable $\mathbf{h}$ is also an intermediate variable.
 Assuming the parameters of the output layer only possess a weight of $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, we can obtain an output layer variable with a vector length of $q$:
 -->
 
-*dịch đoạn phía trên*
+Biến ẩn $\mathbf{h}$ cũng là một biến trung gian.
+Giả sử các tham số của tầng đầu ra chỉ có trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ nhận được một biến tại tầng đầu ra với số chiều vector $q$:
 
 $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 
@@ -84,7 +88,7 @@ $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 Assuming the loss function is $l$ and the example label is $y$, we can then calculate the loss term for a single data example,
 -->
 
-*dịch đoạn phía trên*
+Giả sử hàm mất mát là $l$ và nhãn của mẫu là $y$, ta có thể tính được lượng mất mát cho mẫu dữ liệu duy nhất,
 
 $$L = l(\mathbf{o}, y).$$
 
@@ -92,7 +96,7 @@ $$L = l(\mathbf{o}, y).$$
 According to the definition of $\ell_2$ regularization, given the hyperparameter $\lambda$, the regularization term is
 -->
 
-*dịch đoạn phía trên*
+Theo định nghĩa của điều chuẩn $\ell_2$, cho trước siêu tham số $\lambda$, thì lượng điều chuẩn là:
 
 $$s = \frac{\lambda}{2} \left(\|\mathbf{W}^{(1)}\|_F^2 + \|\mathbf{W}^{(2)}\|_F^2\right),$$
 
@@ -101,7 +105,8 @@ where the Frobenius norm of the matrix is simply the $L_2$ norm applied after fl
 Finally, the model's regularized loss on a given data example is:
 -->
 
-*dịch đoạn phía trên*
+trong đó chuẩn Frobenius của ma trận chỉ đơn giản là lấy chuẩn $L_2$ sau khi trải ma trận thành vector.
+Cuối cùng, hàm mất mát điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
 
 $$J = L + s.$$
 
@@ -109,7 +114,7 @@ $$J = L + s.$$
 We refer to $J$ the *objective function* in the following discussion.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ bàn thêm về *hàm mục tiêu* $J$ trong các phần sau này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -357,7 +362,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
 
 <!-- Phần 3 -->
 *
