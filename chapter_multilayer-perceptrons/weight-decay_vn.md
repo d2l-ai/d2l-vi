@@ -28,11 +28,11 @@ The degree of a monomial is the sum of the powers.
 For example, $x_1^2 x_2$, and $x_3 x_5^2$ are both monomials of degree $3$.
 -->
 
-Nhắc lại rằng trong ví dụ về đường cong khớp đa thức (:numref:`sec_model_selection`) chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
-Thực sự thì giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
-Tuy nhiên, việc đơn giản là loại bỏ các đặc trưng cũng không hề dễ dàng.
-Quay lại với ví dụ về đường cong khớp đa thức, xem xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
-Mở rộng của đa thức cho dữ liệu đa biến được gọi là *đơn thức*, đơn giản là tích của lũy thừa các biến.
+Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
+Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
+Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mạnh tay.
+Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
+Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến.
 Bậc của một đơn thức là tổng của các số mũ.
 Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
 
@@ -44,7 +44,7 @@ Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
 Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng.
-Cho $k$ biến, số các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
+Cho $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
 Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt.
 Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số.
 
