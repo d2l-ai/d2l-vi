@@ -387,10 +387,10 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã đọc qua cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
-Ở đây, chúng ta tái cấu trúc lại đoạn mã để giúp nó có thể được tái sử dụng. 
+Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem qua cách ta sẽ lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để giúp nó có thể được tái sử dụng. 
 Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
-Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận giá trị kích thước batch làm thông số. 
+Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích cỡ batch làm đối số. 
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
@@ -416,8 +416,8 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-Trước khi xem đoạn mã thực hiện hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để biểu diễn trực quan dữ liệu.
-Nhắc lại, mục đích của nó là giúp làm đơn giản hơn các đoạn mã sẽ xuất hiện trong các chương sau này. 
+Trước khi xem đoạn mã thực hiện hàm huấn luyện, ta định nghĩa một lớp phụ trợ để biểu diễn trực quan dữ liệu.
+Mục đích của nó là đơn giản hoá các đoạn mã sẽ xuất hiện trong những chương sau. 
 
 ```{.python .input  n=16}
 # Saved in the d2l package for later use
@@ -488,7 +488,7 @@ In practice we will want to split our data three ways into training, validation,
 Nhắc lại, chúng ta sử dụng giải thuật hạ gradient ngẫu nhiên theo minibatch để tối ưu hàm mất mát của mô hình.
 Lưu ý rằng số lượng epochs (`num_epochs`), và hệ số học (`lr`) là 2 siêu tham số được hiệu chỉnh. 
 Bằng cách thay đổi các giá trị này, chúng ta có thể tăng độ chính xác khi phân loại của mô hình. 
-Trong thực tế, chúng ta thường sẽ chia tập dữ liệu thành 3 phần, đó là: dữ liệu huấn luyện, dữ liệu kiểm thử và dữ liệu kiểm tra, sử dụng dữ liệu kiểm thử để chọn ra những giá trị tốt nhất cho các siêu tham số.  
+Trong thực tế, chúng ta sẽ chia dữ liệu của mình theo ba hướng tiếp cận khác nhau gồm: dữ liệu huấn luyện, dữ liệu kiểm định và dữ liệu kiểm tra; sử dụng dữ liệu kiểm định để chọn ra những giá trị tốt nhất cho các siêu tham số.
 
 ```{.python .input  n=18}
 num_epochs, lr = 10, 0.1
@@ -515,7 +515,7 @@ Given a series of images, we will compare their actual labels (first line of tex
 -->
 
 Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại các ảnh.
-Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
+Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thật của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
 # Saved in the d2l package for later use
@@ -544,7 +544,7 @@ As you will soon find out, most common deep learning models have similar trainin
 
 Với hồi quy softmax, chúng ta có thể huấn luyện các mô hình cho bài toán phân loại đa lớp.
 Vòng lặp huấn luyện rất giống với vòng lặp huấn luyện của hồi quy tuyến tính: truy xuất và đọc dữ liệu, định nghĩa mô hình và hàm mất mát, và rồi huấn luyện mô hình sử dụng các giải thuật tối ưu.
-Rồi bạn sẽ thấy rằng hầu hết các mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự như vậy.
+Rồi bạn sẽ sớm thấy rằng hầu hết các mô hình học sâu phổ biến đều có quy trình huấn luyện tương tự như vậy.
 
 <!--
 ## Exercises
@@ -567,10 +567,8 @@ What could be the problem with this implementation (hint: consider the domain of
 2. Hàm `cross_entropy` trong mục này được lập trình dựa vào định nghĩa của hàm mất mát entropy chéo. 
 Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý: xem xét miền của hàm log)?
 3. Bạn có thể nghĩ ra các giải pháp để giải quyết hai vấn đề trên không?
-4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? 
-Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
-5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. 
-Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
+4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
+5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -588,7 +586,7 @@ Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng l
 ![](../img/qr_softmax-regression-scratch.svg)
 -->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -602,25 +600,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Bùi Nhật Quân
 * Lý Phi Long
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
 * Lâm Ngọc Tâm
 * Vũ Hữu Tiệp
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
-* Lâm Ngọc Tâm
-* Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Nguyễn Quang Hải
-
-<!-- Phần 5 -->
 * Đinh Minh Tân
-
-<!-- Phần 6 -->
 * Lê Cao Thăng
