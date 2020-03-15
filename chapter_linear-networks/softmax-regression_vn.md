@@ -599,7 +599,7 @@ Perhaps the most common way to measure the distance between two distributions is
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-Có lẽ cách thông dụng nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kì Kullback Leibler* $D(p\|q)$.
+Có lẽ cách thông dụng nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kỳ Kullback Leibler* $D(p\|q)$.
 Phân kỳ Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
