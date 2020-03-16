@@ -19,7 +19,7 @@ we can launch our exploration of deep neural networks, the comparatively rich cl
 -->
 
 Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách hiện thực giải thuật này từ đầu (:numref:`sec_softmax_scratch`) và trong gluon (:numref:`sec_softmax_gluon`), huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
-Cùng với đó, chúng ta đã học về cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu nó đối với các tham số của mô hình. 
+Cùng với đó, chúng ta đã học về cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu nó theo các tham số mô hình. 
 Bây giờ, chúng ta đã thành thạo các cơ chế này trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá các mạng nơ-ron sâu, lớp mô hình tương đối phong phú mà cuốn sách này chủ yếu quan tâm. 
 
 <!--
