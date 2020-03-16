@@ -649,7 +649,7 @@ When used to fit non-linear patterns (like the third-order polynomial function h
 Hãy xem lại việc khớp hàm tuyến tính.
 Sau sự sụt giảm ở những epoch đầu, việc giảm thêm lỗi huấn luyện của mô hình đã trở nên khó khăn.
 Sau khi epoch cuối cùng kết thúc, lỗi huấn luyện vẫn còn cao.
-Khi được sử dụng để khớp các khuôn mẫu phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
+Khi được sử dụng để khớp các đối tượng phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
 
 ```{.python .input  n=7}
 # Pick the first four dimensions, i.e., 1, x from the polynomial features
