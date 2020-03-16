@@ -387,7 +387,7 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem qua cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
 Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để sau này có thể tái sử dụng. 
 Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện với một epoch dữ liệu. 
 Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích cỡ batch làm đối số. 
@@ -416,7 +416,7 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-Trước khi xem đoạn mã thực hiện hàm huấn luyện, ta định nghĩa một lớp phụ trợ để biểu diễn trực quan dữ liệu.
+Trước khi xem đoạn mã thực hiện hàm huấn luyện, ta định nghĩa một lớp phụ trợ để minh họa dữ liệu.
 Mục đích của nó là đơn giản hoá các đoạn mã sẽ xuất hiện trong những chương sau. 
 
 ```{.python .input  n=16}
@@ -486,7 +486,7 @@ In practice we will want to split our data three ways into training, validation,
 -->
 
 Nhắc lại, chúng ta sử dụng giải thuật hạ gradient ngẫu nhiên theo minibatch để tối ưu hàm mất mát của mô hình.
-Lưu ý rằng số lượng epochs (`num_epochs`), và hệ số học (`lr`) là 2 siêu tham số được hiệu chỉnh. 
+Lưu ý rằng số lượng epoch (`num_epochs`), và hệ số học (`lr`) là hai siêu tham số được hiệu chỉnh. 
 Bằng cách thay đổi các giá trị này, chúng ta có thể tăng độ chính xác khi phân loại của mô hình. 
 Trong thực tế, chúng ta sẽ chia dữ liệu của mình theo ba hướng tiếp cận khác nhau gồm: dữ liệu huấn luyện, dữ liệu kiểm định và dữ liệu kiểm tra; sử dụng dữ liệu kiểm định để chọn ra những giá trị tốt nhất cho các siêu tham số.
 
