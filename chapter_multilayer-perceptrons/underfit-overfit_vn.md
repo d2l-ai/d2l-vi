@@ -647,7 +647,7 @@ When used to fit non-linear patterns (like the third-order polynomial function h
 -->
 
 Hãy xem lại việc khớp hàm tuyến tính.
-Sau sự sụt giảm ở những epoch đầu, việc giảm thêm tỉ lệ lỗi huấn luyện của mô hình đã trở nên khó khăn.
+Sau sự sụt giảm ở những epoch đầu, việc giảm thêm lỗi huấn luyện của mô hình đã trở nên khó khăn.
 Sau khi vòng lặp epoch cuối cùng kết thúc, tỉ lệ lỗi huấn luyện vẫn còn cao.
 Khi được sử dụng để khớp các khuôn mẫu phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
 
