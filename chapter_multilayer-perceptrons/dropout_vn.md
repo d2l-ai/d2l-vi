@@ -237,7 +237,7 @@ where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ 
 One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$, then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
-Để triển khai hàm dropout cho một tầng đơn, ta phải lấy số mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) bằng với số chiều của tầng, với biến ngẫu nhiên có giá trị $1$ (giữ) với xác suất bằng $1-p$ và $0$ (bỏ) với xác suất bằng $p$.
+Để lập trình hàm dropout cho một tầng đơn, ta phải lấy số mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) bằng với số chiều của tầng, với biến ngẫu nhiên có giá trị $1$ (giữ) với xác suất bằng $1-p$ và $0$ (bỏ) với xác suất bằng $p$.
 Một cách đơn giản để thực hiện việc này là đầu tiên lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
@@ -245,7 +245,7 @@ In the following code, we implement a `dropout_layer` function that drops out th
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-Trong mã nguồn bên dưới, ta lập trình một hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, chia tỉ lệ các phần tử còn lại như đã mô tả bên trên (chia các phần tử còn sót lại với `1.0-dropout`). 
+Trong mã nguồn bên dưới, ta lập trình một hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn sót lại với `1.0-dropout` như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
 import d2l
@@ -268,6 +268,7 @@ In the following lines of code, we pass our input `X` through the dropout operat
 -->
 
 Ta có thể thử nghiệm hàm `dropout_layer` lên một vài mẫu.
+Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua hàm dropout, với xác suất lần lượt là 0, 0,5 và 1.
 
 ```{.python .input  n=2}
 X = np.arange(16).reshape(2, 8)
