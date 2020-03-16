@@ -324,7 +324,7 @@ Below we set it to 0.2 and 0.5 for the first and second hidden layer respectivel
 By using the `is_training` function described in :numref:`sec_autograd`, we can ensure that dropout is only active during training.
 -->
 
-Mô hình bên dưới áp dụng dropout lên đầu ra của mỗi tầng ẩn (theo sau hàm kích hoạt).
+Mô hình bên dưới áp dụng dropout cho đầu ra của mỗi tầng ẩn (theo sau hàm kích hoạt).
 Ta có thể đặt các giá trị xác suất dropout cho mỗi tầng một cách riêng biệt. Một xu hướng chung là đặt một xác suất dropout thấp hơn cho tầng ở gần với tầng đầu vào hơn.
 Bên dưới ta đặt xác suất dropout bằng 0.2 và 0.5 tương ứng cho tầng ẩn thứ nhất và thứ hai.
 Bằng cách sử dụng hàm `is_training` mô tả ở :numref:`sec_autograd`, ta có thể chắc chắn rằng dropout chỉ được kích hoạt trong quá trình huấn luyện.
