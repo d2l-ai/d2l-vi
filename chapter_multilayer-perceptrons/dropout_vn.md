@@ -383,7 +383,7 @@ When MXNet is not in training mode, the `Dropout` layer simply passes the data t
 -->
 
 Bằng việc sử dụng Gluon, tất cả những gì ta cần là thêm một tầng `Dropout` (cũng nằm trong gói `nn`) vào sau mỗi tầng kết nối đầy đủ và truyền vào xác suất dropout như là đối số duy nhất của hàm khởi tạo.
-Trong quá trình huấn luyện, hàm `Dropout` sẽ bỏ đi một cách ngẫu nhiên một số đầu ra của tầng trước (hay tương đương với đầu vào của tầng tiếp theo) dựa trên xác suất dropout được định nghĩa trước đó.
+Trong quá trình huấn luyện, hàm `Dropout` sẽ bỏ ngẫu nhiên một số đầu ra của tầng trước (hay tương đương với đầu vào của tầng tiếp theo) dựa trên xác suất dropout được định nghĩa trước đó.
 
 ```{.python .input  n=6}
 net = nn.Sequential()
