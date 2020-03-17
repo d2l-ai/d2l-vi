@@ -50,8 +50,8 @@ In the future, we will talk about more sophisticated strategies for exploiting t
 -->
 
 Giống như trong ví dụ hồi quy tuyến tính, mỗi mẫu ảnh sẽ được biểu diễn bằng một vector có chiều dài cố định là $28 \times 28$.
-Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
-Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
+Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector có kích thước là $784$.
+Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian của ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
@@ -106,7 +106,7 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 
 Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
 Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
-Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0)`), kết quả sẽ là một vector (một chiều) có kích thước là `(3,)`.
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, tính tổng các cột (`X.sum (axis=0)`) sẽ trả về một vector (một chiều) có kích thước là `(3,)`.
 Nếu chúng ta muốn giữ số lượng trục giống với mảng ban đầu thay vì thu gọn kích thước trên các trục đã tính toán (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`), ta có thể chỉ định `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
