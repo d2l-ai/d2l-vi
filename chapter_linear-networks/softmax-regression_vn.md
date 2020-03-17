@@ -307,14 +307,13 @@ The softmax itself can be computed by exponentiating all entries in $\mathbf{O}$
 -->
 
 Việc tăng tốc diễn ra chủ yếu tại tích ma trận - ma trận $\mathbf{W} \mathbf{X}$ so với tích ma trận - vector nếu chúng ta xử lý từng mẫu một.
-Bản thân softmax có thể được tính bằng lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
+Bản thân softmax có thể được tính bằng cách lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
 
 <!--
 ## Loss Function
 -->
 
 ## Hàm mất mát
-:label:`section_cross_entropy`
 
 <!--
 Next, we need a *loss function* to measure the quality of our predicted probabilities.
@@ -322,8 +321,8 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 (:numref:`sec_linear_regression`).
 -->
 
-Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng dự đoán xác suất của mình.
-Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp phải khi đưa ra biện minh xác suất cho mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
+Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng các dự đoán xác suất.
+Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp khi đưa ra lý giải xác suất cho hàm mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -341,7 +340,7 @@ e.g., $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 We can compare the estimates with reality by checking how probable the *actual* classes are according to our model, given the features.
 -->
 
-Hàm softmax cho chúng ta một vector $\hat{\mathbf{y}}$, có thể được hiểu như các xác suất có điểu kiện của từng lớp biết đầu vào là $x$.
+Hàm softmax cho chúng ta một vector $\hat{\mathbf{y}}$, có thể được hiểu như các xác suất có điểu kiện của từng lớp với đầu vào $x$.
 Ví dụ: $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 Để biết các ước lượng có sát với thực tế hay không, ta kiểm tra xác suất mà mô hình gán cho lớp *thật sự* khi biết các đặc trưng.
 
@@ -374,9 +373,9 @@ Note that this is often not possible.
 For example, there might be label noise in the dataset (some examples may be mislabeled).
 It may also not be possible when the input features are not sufficiently informative to classify every example perfectly.
 -->
-Bởi vì những lí do sẽ được giải thích trong chốc lát, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
+Bởi vì những lý do sẽ được giải thích sau đây, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
 Ở đây, chúng ta đã sử dụng nó bằng cách xây dựng $\hat{y}$ giống như một phân phối xác suất rời rạc và vector $\mathbf{y}$ là một vector one-hot.
-Vì thế, tổng các số hạng với chỉ số $j$ sẽ biến mất ngoại trừ duy nhất một số hạng.
+Do đó, tổng các số hạng với chỉ số $j$ sẽ tiêu biến tạo thành một giá trị duy nhất.
 Bởi mọi $\hat{y}_j$ đều là xác suất, log của chúng không bao giờ lớn hơn $0$.
 Vì vậy, hàm mất mát sẽ không thể giảm thêm được nữa nếu chúng ta dự đoán chính xác $y$ với *độ chắc chắn tuyệt đối*, tức $P(y \mid x) = 1$ cho nhãn đúng.
 Chú ý rằng điều này thường không khả thi.
@@ -742,9 +741,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Nguyễn Minh Thư
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 6 -->
 * Trần Kiến An
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 7 -->
 * Lý Phi Long
@@ -763,4 +764,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
