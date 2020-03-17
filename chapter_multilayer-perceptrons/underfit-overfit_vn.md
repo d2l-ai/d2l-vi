@@ -502,6 +502,7 @@ First we need data. Given $x$, we will use the following cubic polynomial to gen
 
 Đầu tiên ta cần dữ liệu. Cho $x$, ta sẽ sử dụng đa thức bậc ba ở dưới đây để tạo nhãn cho tập dữ liệu huấn luyện và tập kiểm tra:
 
+<!--
 $$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where }
 \epsilon \sim \mathcal{N}(0, 0.1).$$
 -->
