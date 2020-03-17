@@ -68,7 +68,7 @@ One way to handle this might be to pre-process our data such that linearity beco
 -->
 
 Ví dụ, tính tuyến tính ngụ ý trong đó một giả định *yếu hơn* của *tính đơn điệu*: nghĩa là việc giá trị đặc trưng tăng luôn dẫn đến việc đầu ra mô hình tăng (nếu trọng số tương ứng dương), hoặc đầu ra mô hình giảm (nếu trọng số tương ứng âm).
-Điều này đôi khi có ý nghĩa.
+Điều này đôi khi cũng hợp lý.
 Ví dụ, nếu chúng ta đang dự đoán liệu một người có trả được khoản vay hay không, chúng ta có thể suy diễn một cách hợp lý như sau: bỏ qua mọi yếu tố khác, ứng viên nào có thu nhập cao hơn sẽ luôn có khả năng trả được nợ cao hơn so với những ứng viên khác có thu nhập thấp hơn. 
 Dù có tính đơn điệu, mối quan hệ với xác suất trả nợ có lẽ không tuyến tính. Có thể mức tăng thu nhập từ $0 lên $50k sẽ tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
 Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta để giả định tuyến tính trở nên hợp lý hơn, ví dụ như sử dụng logarit của thu nhập làm đặc trưng. 
