@@ -51,7 +51,7 @@ The distinction tends to get blurred, in part, because often, even when we only 
 
 Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán khác nhau đôi chút:
 (i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là chó, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là chó (92%), là gà (1%), là mèo (7%).
-Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
