@@ -154,7 +154,7 @@ Whether we include a corresponding bias penalty $b^2$ can vary across implementa
 Often, we do not regularize the bias term of a network's output layer.
 -->
 
-Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên một lượng bằng sự khác biệt của ước lượng và mẫu.
+Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được.
 Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
 Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": giữ nguyên hệ số phạt, thuật toán tối ưu của ta *phân rã* trọng số ở từng bước của quá trình huấn luyện.
 Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
