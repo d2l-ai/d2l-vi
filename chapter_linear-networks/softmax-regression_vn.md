@@ -557,9 +557,9 @@ The entropy of the data is then the least surprised that one can ever be (in exp
 Tuy nhiên, nếu ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì thi thoảng ta sẽ thấy ngạc nhiên. 
 Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện. 
 Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục, 
-Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$.
-Entropy sau đó sẽ là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu). 
-Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng). 
+Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ sau khi đã gán cho sự kiện đó một xác suất (chủ quan) $p(j)$.
+Entropy lúc này sẽ là *lượng tin (độ ngạc nhiên) kỳ vọng* khi mà xác suất của các sự kiện đó được gán chính xác, khớp với phân phối sinh dữ liệu. 
+Nói cách khác, Entropy là lượng thông tin hay mức độ ngạc nhiên tối thiểu mà dữ liệu sẽ đem lại theo kỳ vọng. 
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
