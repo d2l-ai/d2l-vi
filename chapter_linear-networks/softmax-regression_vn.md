@@ -133,8 +133,8 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
-Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra với một đầu ra cho mỗi lớp.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính tương đương số đầu ra.
 Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
 Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
 Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
@@ -213,11 +213,11 @@ Moreover, depending on the inputs, they can take negative values.
 These violate basic axioms of probability presented in :numref:`sec_prob`
 -->
 
-Bạn có thể muốn đề xuất rằng ta có thể lấy trực tiếp logit $o$ làm đầu ra để tiến hành dự đoán.
-Tuy nhiên, tại đây ta có một vài vấn đề khi lấy kết quả trực tiếp của tầng tuyến tính như một kết quả cho xác suất.
-Bởi vì, không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
+Bạn có thể muốn đề xuất rằng ta lấy trực tiếp logit $o$ làm đầu ra mong muốn.
+Tuy nhiên, sẽ có vấn đề khi coi kết qủa trả về trực tiếp từ tầng tuyến tính như là các giá trị xác suất.
+Lý do là không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
 Hơn nữa, tùy thuộc vào đầu vào mà ta có thể nhận được giá trị âm.
-Các điều kể trên đã vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`
+Các lý do trên khiến kết quả của tầng tuyến tính vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`.
 
 <!--
 To interpret our outputs as probabilities, we must guarantee that (even on new data), they will be nonnegative and sum up to 1.
@@ -237,7 +237,7 @@ To transform our logits such that they become nonnegative and sum to $1$, while 
 we first exponentiate each logit (ensuring non-negativity) and then divide by their sum (ensuring that they sum to $1$).
 -->
 
-*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce trong nhánh *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
+*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce với chủ đề *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
 Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
@@ -732,12 +732,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 2 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 *Bùi Nhật Quân
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 * Lý Phi Long
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 5 -->
 * Nguyễn Minh Thư
