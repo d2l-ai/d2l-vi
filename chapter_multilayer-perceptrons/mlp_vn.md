@@ -18,8 +18,8 @@ Now that we have mastered these mechanics in the context of simple linear models
 we can launch our exploration of deep neural networks, the comparatively rich class of models with which this book is primarily concerned.
 -->
 
-Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách hiện thực giải thuật này từ đầu (:numref:`sec_softmax_scratch`) và trong gluon (:numref:`sec_softmax_gluon`), huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
-Cùng với đó, chúng ta đã học về cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu nó theo các tham số mô hình. 
+Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách lập trình giải thuật này từ đầu (:numref:`sec_softmax_scratch`) và trong gluon (:numref:`sec_softmax_gluon`), huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
+Cùng với đó, chúng ta đã học về cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu hoá nó theo các tham số mô hình. 
 Bây giờ, chúng ta đã thành thạo các cơ chế này trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá các mạng nơ-ron sâu, lớp mô hình tương đối phong phú mà cuốn sách này chủ yếu quan tâm. 
 
 <!--
@@ -34,7 +34,7 @@ This model mapped our inputs directly to our outputs via a single linear transfo
 -->
 
 Để bắt đầu, hãy nhớ lại kiến trúc mô hình trong ví dụ của hồi quy softmax, được minh hoạ trong :numref:`fig_singlelayer` bên dưới.
-Mô hình này ánh xạ trực tiếp các đầu vào của chúng ta sang các giá trị đầu ra thông qua một phép biến đổi tuyến tính đơn. 
+Mô hình này ánh xạ trực tiếp các đầu vào của chúng ta sang các giá trị đầu ra thông qua một phép biến đổi tuyến tính duy nhất:
 
 $$
 \hat{\mathbf{o}} = \mathrm{softmax}(\mathbf{W} \mathbf{x} + \mathbf{b}).
@@ -67,11 +67,11 @@ A increase in income from $0 to $50k likely corresponds to a bigger increase in 
 One way to handle this might be to pre-process our data such that linearity becomes more plausible, say, by using the logarithm of income as our feature.
 -->
 
-Ví dụ, tính tuyến tính ngụ ý trong đó một giả định *yếu hơn* của *tính đơn điệu*: nghĩa là bất kì một sự tăng lên nào của các đặc trưng luôn gây ra hoặc là sự tăng lên của đầu ra mô hình (nếu trọng số tương ứng dương), hoặc là sự giảm xuống của đầu ra mô hình (nếu trọng số tương ứng âm).
+Ví dụ, tính tuyến tính ngụ ý trong đó một giả định *yếu hơn* của *tính đơn điệu*: nghĩa là việc giá trị đặc trưng tăng luôn dẫn đến việc đầu ra mô hình tăng (nếu trọng số tương ứng dương), hoặc đầu ra mô hình giảm (nếu trọng số tương ứng âm).
 Điều này đôi khi có ý nghĩa.
-Ví dụ, nếu chúng ta dự đoán liệu một cá nhân nào đó có khả năng trả được khoản vay hay không, chúng ta có thể suy diễn một cách hợp lý như sau, giữa các ứng viên có những điều kiện khác như nhau thì ứng viên nào có thu nhập cao hơn sẽ luôn có khả năng trả được nợ cao hơn so với những ứng viên khác có thu nhập thấp hơn. 
-Trong khi đó tính đơn điệu trong mối quan hệ này giống như việc tăng thu nhập từ $0 lên $50k tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
-Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta sao cho tính tuyến tính trở nên hợp lý hơn, bằng việc sử dụng logarit của thu nhập như là một đặc trưng. 
+Ví dụ, nếu chúng ta đang dự đoán liệu một người có trả được khoản vay hay không, chúng ta có thể suy diễn một cách hợp lý như sau: bỏ qua mọi yếu tố khác, ứng viên nào có thu nhập cao hơn sẽ luôn có khả năng trả được nợ cao hơn so với những ứng viên khác có thu nhập thấp hơn. 
+Dù có tính đơn điệu, mối quan hệ với xác suất trả nợ có lẽ không tuyến tính. Có thể mức tăng thu nhập từ $0 lên $50k sẽ tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
+Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta để giả định tuyến tính trở nên hợp lý hơn, ví dụ như sử dụng logarit của thu nhập làm đặc trưng. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
