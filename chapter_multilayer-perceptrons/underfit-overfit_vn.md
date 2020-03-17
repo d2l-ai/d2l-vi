@@ -480,8 +480,8 @@ We can now explore these concepts interactively by fitting polynomials to data.
 To get started we will import our usual packages.
 -->
 
-Bây giờ ta có thể khám phá một cách tương tác những khái niệm này bằng cách tìm các đa thức khớp với dữ liệu.
-Để bắt đầu ta sẽ nhập các gói thông thường.
+Bây giờ ta có thể khám phá một cách tương tác những khái niệm này bằng cách khớp đa thức với dữ liệu.
+Để bắt đầu ta sẽ nhập các gói thường dùng.
 
 ```{.python .input  n=1}
 import d2l
@@ -507,7 +507,7 @@ $$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where 
 \epsilon \sim \mathcal{N}(0, 0.1).$$
 -->
 
-$$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ where }
+$$y = 5 + 1.2x - 3.4\frac{x^2}{2!} + 5.6 \frac{x^3}{3!} + \epsilon \text{ với }
 \epsilon \sim \mathcal{N}(0, 0.1).$$
 
 <!--
@@ -515,8 +515,8 @@ The noise term $\epsilon$ obeys a normal distribution with a mean of 0 and a sta
 We will synthesize 100 samples each for the training set and test set.
 -->
 
-Thuật ngữ nhiễu $\epsilon$ tuân theo phân phối chuẩn (phân phối Gauss) với giá trị trung bình bằng 0 và độ lệch chuẩn bằng 0.1.
-Ta sẽ tổng hợp 100 mẫu cho mỗi tập huấn luyện và tập kiểm tra.
+Số hạng nhiễu $\epsilon$ tuân theo phân phối chuẩn (phân phối Gauss) với giá trị trung bình bằng 0 và độ lệch chuẩn bằng 0.1.
+Ta sẽ tạo 100 mẫu cho mỗi tập huấn luyện và tập kiểm tra.
 
 ```{.python .input  n=2}
 maxdegree = 20  # Maximum degree of the polynomial
@@ -541,17 +541,17 @@ Factorials are implemented in Gluon using the Gamma function,
 where $n! = \Gamma(n+1)$.
 -->
 
-Để tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của gradient, mất mát, v.v.
+Khi tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của gradient, mất mát, v.v.
 Đây là lý do tại sao các đơn thức lưu trong `poly_features` được thay đổi kích thước từ $x^i$ thành $\frac{1}{i!} x^i$.
 Nó cho phép ta tránh các giá trị quá lớn với số mũ bậc cao $i$.
-Phép tính giai thừa được khai triển trong Gluon sử dụng hàm Gamma, khi $n! = \Gamma(n+1)$.
+Phép tính giai thừa được lập trình trong Gluon bằng hàm Gamma, với $n! = \Gamma(n+1)$.
 
 <!--
 Take a look at the first 2 samples from the generated dataset.
 The value 1 is technically a feature, namely the constant feature corresponding to the bias.
 -->
 
-Hãy xem xét hai mẫu đầu tiên trong tập dữ liệu được tạo ra.
+Hãy xét hai mẫu đầu tiên trong tập dữ liệu được tạo.
 Về mặt kỹ thuật giá trị 1 là một đặc trưng, cụ thể là đặc trưng không đổi tương ứng với độ chệch.
 
 ```{.python .input  n=3}
@@ -568,7 +568,7 @@ features[:2], poly_features[:2], labels[:2]
 Let's first implement a function to evaluate the loss on a given data.
 -->
 
-Trước tiên ta lập trình hàm để đánh giá mất mát của dữ liệu cho trước.
+Trước tiên ta lập trình hàm để tính giá trị mất mát của dữ liệu cho trước.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -628,9 +628,9 @@ The results show that this model’s training error rate when using the testing 
 The trained model parameters are also close to the true values $w = [5, 1.2, -3.4, 5.6]$.
 -->
 
-Ta sẽ bắt đầu bằng cách sử dụng hàm đa thức bậc ba cùng bậc với hàm tạo dữ liệu.
+Ta sẽ bắt đầu với việc sử dụng hàm đa thức bậc ba, cùng bậc với hàm tạo dữ liệu.
 Kết quả cho thấy tỉ lệ lỗi huấn luyện thấp khi sử dụng tập kiểm tra trên mô hình này.
-Các tham số trên mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
+Các tham số của mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
 
 ```{.python .input  n=6}
 # Pick the first four dimensions, i.e., 1, x, x^2, x^3 from the polynomial
