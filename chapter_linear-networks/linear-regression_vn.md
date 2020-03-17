@@ -98,7 +98,7 @@ The linearity assumption just says that the target (price) can be expressed as a
 
 Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
+$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời}} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -669,7 +669,7 @@ One way to motivate linear regression with the mean squared error loss function 
 
 Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, và giá trị nhiễu này tuân theo phân phối chuẩn như sau: 
 
-$$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
+$$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ tại } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
 <!--
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
