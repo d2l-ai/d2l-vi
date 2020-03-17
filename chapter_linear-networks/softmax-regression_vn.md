@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, từ việc tự xây dựng mô hình hồi quy tuyến tính từ đầu tại :numref:`sec_linear_scratch` cho đến xây dựng mô hình hồi quy tuyến tính với Gluon tại :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, từ việc tự xây dựng mô hình hồi quy tuyến tính từ đầu tại :numref:`sec_linear_scratch` cho đến xây dựng mô hình hồi quy tuyến tính với Gluon thực hiện phần việc nặng nhọc tại :numref:`sec_linear_gluon`.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
