@@ -303,7 +303,7 @@ The result returned by the following function will also be the same as the `y_ha
 
 Để cập nhật mô hình ta phải tính gradient của hàm mất mát, vậy nên ta cần định nghĩa hàm mất mát trước tiên.
 Chúng ta sẽ sử dụng hàm mất mát bình phương (SE) như đã trình bày ở phần trước đó.
-Trên thực tế, chúng ta cần chuyển đổi kích thước nhãn thật `y` sang kích thước của giá trị dự đoán `y_hat`.
+Trên thực tế, chúng ta cần chuyển đổi giá trị nhãn thật `y` sang kích thước của giá trị dự đoán `y_hat`.
 Hàm dưới đây sẽ trả về kết quả có kích thước tương đương với kích thước của `y_hat`.
 
 ```{.python .input  n=10}
