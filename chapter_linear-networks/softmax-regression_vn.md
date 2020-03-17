@@ -71,7 +71,7 @@ Further, let's assume that each image belongs to one among the categories "cat",
 -->
 
 Hãy khởi động với một bài toán phân loại hình ảnh đơn giản.
-Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
+Ở đây, mỗi đầu vào là một ảnh xám có kích thước $2\times2$.
 Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
 Hơn nữa, giả sử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
