@@ -373,7 +373,7 @@ Note that this is often not possible.
 For example, there might be label noise in the dataset (some examples may be mislabeled).
 It may also not be possible when the input features are not sufficiently informative to classify every example perfectly.
 -->
-Bởi vì những lí do sẽ được giải thích sau đây, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
+Bởi vì những lý do sẽ được giải thích sau đây, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
 Ở đây, chúng ta đã sử dụng nó bằng cách xây dựng $\hat{y}$ giống như một phân phối xác suất rời rạc và vector $\mathbf{y}$ là một vector one-hot.
 Do đó, tổng các số hạng với chỉ số $j$ sẽ tiêu biến tạo thành một giá trị duy nhất.
 Bởi mọi $\hat{y}_j$ đều là xác suất, log của chúng không bao giờ lớn hơn $0$.
