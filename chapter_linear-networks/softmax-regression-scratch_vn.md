@@ -49,7 +49,8 @@ In this section, we will flatten each image, treating them as $784$ 1D vectors.
 In the future, we will talk about more sophisticated strategies for exploiting the spatial structure in images, but for now we treat each pixel location as just another feature.
 -->
 
-Giống như trong ví dụ hồi quy tuyến tính, mỗi mẫu ảnh sẽ được biểu diễn bằng một vector có chiều dài cố định là $28 \times 28$.
+Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
+Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
 Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector có kích thước là $784$.
 Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian của ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
@@ -140,7 +141,7 @@ The origins of that name are in [statistical physics](https://en.wikipedia.org/w
 -->
 
 Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
-Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan đến mô hình hóa phân phối trên một tập hợp các phần tử.
+Tên gốc của hàm được định nghĩa trong [cơ học thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan đến mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
 def softmax(X):
