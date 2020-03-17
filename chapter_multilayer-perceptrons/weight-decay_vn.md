@@ -5,7 +5,7 @@
 # Weight Decay
 -->
 
-# *dịch tiêu đề phía trên*
+# Phân rã trọng số
 :label:`sec_weight_decay`
 
 <!--
@@ -14,7 +14,9 @@ Recall that we can always mitigate overfitting by going out and collecting more 
 For now, we can assume that we already have as much high-quality data as our resources permit and focus on regularization techniques.
 -->
 
-*dịch đoạn phía trên*
+Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật chuẩn trong việc điều chuẩn mô hình.
+Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, nên trong ngắn hạn, nó là bất khả thi.
+Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhiều nhất có thể và tập trung vào các kỹ thuật điều chuẩn.
 
 <!--
 Recall that in our example polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
@@ -26,7 +28,13 @@ The degree of a monomial is the sum of the powers.
 For example, $x_1^2 x_2$, and $x_3 x_5^2$ are both monomials of degree $3$.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
+Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
+Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mạnh tay.
+Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
+Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến.
+Bậc của một đơn thức là tổng của các số mũ.
+Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
 
 <!--
 Note that the number of terms with degree $d$ blows up rapidly as $d$ grows larger.
@@ -35,7 +43,10 @@ Even small changes in degree, say, from $2$ to $3$ dramatically increase the com
 Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng.
+Cho $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
+Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt.
+Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -474,7 +485,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
 *
