@@ -514,7 +514,7 @@ Now that training is complete, our model is ready to classify some images.
 Given a series of images, we will compare their actual labels (first line of text output) and the model predictions (second line of text output).
 -->
 
-Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại các ảnh.
+Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại ảnh.
 Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thật của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
@@ -566,7 +566,7 @@ What could be the problem with this implementation (hint: consider the domain of
 Điều này có thể gây ra những vấn đề gì (gợi ý: thử tính $\exp(50)$)?
 2. Hàm `cross_entropy` trong mục này được lập trình dựa vào định nghĩa của hàm mất mát entropy chéo. 
 Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý: xem xét miền của hàm log)?
-3. Bạn có thể nghĩ ra các giải pháp để giải quyết hai vấn đề trên không?
+3. Bạn có thể tìm ra giải pháp cho hai vấn đề trên không?
 4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
 5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
