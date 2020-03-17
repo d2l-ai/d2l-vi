@@ -209,7 +209,7 @@ This may be the most common loss function in all of deep learning because, at th
 -->
 
 Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
-Đây có lẽ là hàm mất mát thông dụng nhất trong tất cả nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại đã vượt xa hơn số lượng bài toán hồi quy.
+Đây có lẽ là hàm mất mát thông dụng nhất trong phần lớn nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại đã vượt xa hơn số lượng bài toán hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
@@ -218,10 +218,10 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thật $-\log P(y \mid x)$.
+Nhắc lại rằng hàm entropy chéo lấy đầu vào là đối log hợp lý của xác suất dự đoán được gán cho nhãn thật $-\log P(y \mid x)$.
 Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
-chúng ta có thể sử dụng hàm `pick` mà cho phép ta dễ dàng chọn các phần tử thích hợp từ ma trận của các biến softmax ban đầu.
-Dưới đây, hàm `pick` sẽ được sử dụng như một ví dụ đơn giản với ma trận có $3$ lớp và $2$ mẫu.
+chúng ta có thể sử dụng hàm `pick` để dễ dàng chọn các phần tử thích hợp từ ma trận của các giá trị softmax.
+Dưới đây, ta minh hoạ cách sử dụng hàm `pick` trong một ví dụ đơn giản với ma trận có $3$ lớp và $2$ mẫu.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
@@ -283,7 +283,7 @@ Taking the mean yields the desired result.
 -->
 
 Độ chính xác được tính toán như sau:
-Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (được cho bởi chỉ số của phần tử lớn nhất trên mỗi hàng).
+Đầu tiên, dùng lệnh `y_hat.argmax(axis=1)` nhằm lấy ra các lớp được dự đoán (được cho bởi chỉ số của phần tử lớn nhất trên mỗi hàng).
 Kết quả trả về sẽ có cùng kích thước với biến `y` và bây giờ ta chỉ cần so sánh hai vector này.
 Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần đưa chúng về cùng một kiểu dữ liệu (ở đây ta chọn kiểu `float32`).
 Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true), giá trị trung bình này mang lại kết quả mà ta mong muốn.
