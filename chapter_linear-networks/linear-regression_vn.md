@@ -261,7 +261,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *Nghiệm theo công thức*
+### *Nghiệm theo Công thức*
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
@@ -856,7 +856,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Key ingredients in a machine learning model are training data, a loss function, an optimization algorithm, and quite obviously, the model itself.
@@ -897,8 +897,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
-Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
+1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
 2. Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
@@ -938,67 +937,19 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Phạm Ngọc Bảo Anh
-<!-- Phần 3 -->
 * Nguyễn Văn Tâm
-* Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
 * Vũ Hữu Tiệp
-* Đoàn Võ Duy Thanh
-* Phạm Hồng Vinh
-
-<!-- Phần 5 -->
 * Tạ H. Duy Nguyên
-
-<!-- Phần 6 -->
 * Bùi Nhật Quân
-
-<!-- Phần 7 -->
 * Lê Gia Thiên Bửu
-
-<!-- Phần 8 -->
 * Lý Phi Long
-
-<!-- Phần 9 -->
 * Nguyễn Minh Thư
-
-<!-- Phần 10 -->
 * Tạ Đức Huy
-* Phạm Hồng Vinh
-
-<!-- Phần 11 -->
 * Minh Trí Nguyễn
-* Đoàn Võ Duy Thanh
-* Vũ Hữu Tiệp
-* Phạm Hồng Vinh
-
-<!-- Phần 12 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 13 -->
 * Nguyễn Quang Hải
-
-<!-- Phần 14 -->
-* Nguyễn Văn Tâm
-
-<!-- Phần 15 -->
-*
-
-<!-- Phần 16 -->
-* Nguyễn Phan Hùng Thuận
-* Phạm Hồng Vinh
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 17 -->
-* Nguyễn Văn Tâm
-
-<!-- Phần 18 -->
-* Bùi Nhật Quân

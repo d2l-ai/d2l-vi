@@ -5,7 +5,7 @@
 # Concise Implementation of Linear Regression
 -->
 
-# Triển khai súc tích của Hồi quy Tuyến tính
+# Cách lập trình súc tích Hồi quy Tuyến tính
 :label:`sec_linear_gluon`
 
 <!--
@@ -296,7 +296,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': 0.03})
 ## Training
 -->
 
-## Huấn Luyện
+## Huấn luyện
 
 <!--
 You might have noticed that expressing our model through Gluon requires comparatively few lines of code.
@@ -433,29 +433,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Văn Tâm
 * Phạm Hồng Vinh
 * Vũ Hữu Tiệp 
-
-<!-- Phần 2 -->
 * Lý Phi Long
-
-<!-- Phần 3 -->
 * Phạm Đăng Khoa
 * Lê Khắc Hồng Phúc
 * Dương Nhật Tân
-
-<!-- Phần 4 -->
 * Nguyễn Văn Tâm
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 5 -->
 * Bùi Nhật Quân
-
-<!-- Phần 6 -->
-* Bùi Nhật Quân
-
-<!-- Phần 7 -->
-*
