@@ -519,7 +519,7 @@ $H[p] / 2$ thường được gọi là entropy nhị phân.
 ### Surprisal
 -->
 
-### Lượng thông tin
+### Lượng tin
 
 <!--
 You might be wondering what compression has to do with prediction.
