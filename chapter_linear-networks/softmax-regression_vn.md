@@ -510,7 +510,7 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 -->
 
-Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat". 
+Một định lý căn bản của lý thuyết thông tin là để có thể mã hóa dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat". 
 "nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2. 
 Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit. 
 $H[p] / 2$ thường được gọi là entropy nhị phân. 
