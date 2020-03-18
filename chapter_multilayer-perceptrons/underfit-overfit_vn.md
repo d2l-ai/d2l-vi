@@ -721,7 +721,7 @@ train(poly_features[:n_train, 0:4], poly_features[n_train:, 0:4],
 ### Linear Function Fitting (Underfitting)
 -->
 
-### *dịch tiêu đề phía trên*
+### Khớp hàm tuyến tính (Dưới khớp)
 
 <!--
 Let’s take another look at linear function fitting.
@@ -730,7 +730,10 @@ After the last epoch iteration has been completed, the training error rate is st
 When used to fit non-linear patterns (like the third-order polynomial function here) linear models are liable to underfit.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem lại việc khớp hàm tuyến tính.
+Sau sự sụt giảm ở những epoch đầu, việc giảm thêm lỗi huấn luyện của mô hình đã trở nên khó khăn.
+Sau khi epoch cuối cùng kết thúc, lỗi huấn luyện vẫn còn cao.
+Khi được sử dụng để khớp các đối tượng phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
 
 ```{.python .input  n=7}
 # Pick the first four dimensions, i.e., 1, x from the polynomial features
@@ -742,7 +745,7 @@ train(poly_features[:n_train, 0:3], poly_features[n_train:, 0:3],
 ### Insufficient Training (Overfitting)
 -->
 
-### *dịch tiêu đề phía trên*
+### Thiếu dữ liệu huấn luyện (Quá khớp)
 
 <!--
 Now let's try to train the model using a polynomial of too high degree.
@@ -751,13 +754,16 @@ As a result, our overly-complex model is far too susceptible to being influenced
 Of course, our training error will now be low (even lower than if we had the right model!) but our test error will be high.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy thử huấn luyện mô hình sử dụng một đa thức với bậc rất cao.
+Trong trường hợp này, mô hình không có đủ dữ liệu để học được rằng các hệ số bậc cao nên có giá trị gần với không.
+Vì vậy, mô hình quá phức tạp của ta sẽ dễ bị ảnh hưởng bởi nhiễu ở trong dữ liệu huấn luyện.
+Dĩ nhiên, lỗi huấn luyện trong trường hợp này sẽ thấp (thậm chí còn thấp hơn cả khi chúng ta có được mô hình thích hợp!) nhưng lỗi kiểm tra sẽ cao.
 
 <!--
 Try out different model complexities (`n_degree`) and training set sizes (`n_subset`) to gain some intuition of what is happening.
 -->
 
-*dịch đoạn phía trên*
+Thử nghiệm với các độ phức tạp của mô hình (`n_degree`) và các kích thước của tập huấn luyện (`n_subset`) khác nhau để thấy được một cách trực quan điều gì đang diễn ra.
 
 ```{.python .input  n=8}
 n_subset = 100  # Subset of data to train on
@@ -771,7 +777,7 @@ train(poly_features[1:n_subset, 0:n_degree],
 In later chapters, we will continue to discuss overfitting problems and methods for dealing with them, such as weight decay and dropout.
 -->
 
-*dịch đoạn phía trên*
+Ở các chương sau, chúng ta sẽ tiếp tục thảo luận về các vấn đề quá khớp và các phương pháp đối phó, ví dụ như phân rã trọng số hay dropout.
 
 
 <!--
@@ -787,7 +793,11 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 * We should choose an appropriately complex model and avoid using insufficient training samples.
 -->
 
-*dịch đoạn phía trên*
+* Bởi vì lỗi khái quát không thể được ước lượng dựa trên lỗi huấn luyện, nên việc chỉ đơn thuần tối thiểu hóa lỗi huấn luyện sẽ không nhất thiết đồng nghĩa với việc tối thiểu hóa lỗi khái quát.
+Các mô hình học máy cần phải được bảo vệ khỏi việc quá khớp để giảm thiểu lỗi khái quát.
+* Một tập kiểm định có thể được sử dụng cho việc lựa chọn mô hình (với điều kiện là tập này không được sử dụng quá nhiều).
+* Dưới khớp có nghĩa là mô hình không có khả năng giảm lỗi huấn luyện, còn quá khớp là kết quả của việc lỗi huấn luyện của mô hình thấp hơn nhiều so với lỗi kiểm tra.
+* Chúng ta nên chọn một mô hình phức tạp vừa phải và tránh việc sử dụng tập huấn luyện không có đủ số số mẫu.
 
 
 <!--
@@ -807,7 +817,14 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 5. Can you ever expect to see 0 generalization error?
 -->
 
-*dịch đoạn phía trên*
+1. Bạn có thể giải bài toán hồi quy đa thức một cách chính xác không? Gợi ý: sử dụng đại số tuyến tính.
+2. Lựa chọn mô hình cho các đa thức
+    * Vẽ đồ thị biểu diễn lỗi huấn luyện và độ phức tạp của mô hình (bậc của đa thức). Bạn quan sát được gì?
+    * Vẽ đồ thị biểu diễn lỗi kiểm tra trong trường hợp này.
+    * Tạo một đồ thị tương tự nhưng với hàm của lượng dữ liệu.
+3. Điều gì sẽ xảy ra nếu bạn bỏ qua việc chuẩn hóa các đặc trưng đa thức $x^i$ với $1/i!$. Bạn có thể sửa chữa vấn đề này bằng cách nào khác không?
+4. Bậc mấy của đa thức giảm được tỉ lệ lỗi huấn luyện về 0?
+5. Bạn có bao giờ kỳ vọng thấy được lỗi khái quát bằng 0?
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -869,4 +886,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 9 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
