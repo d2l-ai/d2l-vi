@@ -34,6 +34,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | back-propagation        | lan truyền ngược        |                       |
 | backward pass           | lượt truyền ngược       | https://git.io/JvohG  |
 | batch                   | batch                   | https://git.io/JvojE  |
+| batch size              | kích thước batch        | https://git.io/JvXdK  |
 | benchmark               | đánh giá xếp hạng       | http://bit.ly/2BvfPYA |
 | bias (bias as variance) | độ chệch                | http://bit.ly/32HJI3S |
 | bias (tham số mô hình)  | hệ số điều chỉnh        | https://git.io/Jvopx  |
