@@ -453,7 +453,7 @@ It is the expected value of the loss for a distribution over labels.
 Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất. 
 Ta có thể biểu diễn $y$ giống hệt như trước. 
 Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$. 
-Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút. 
+Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây nhưng khái quát hơn một chút. 
 Giá trị của các phần tử trong vector tương ứng giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn. 
 
 $$
