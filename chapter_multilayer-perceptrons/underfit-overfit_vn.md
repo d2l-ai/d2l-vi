@@ -401,7 +401,7 @@ Ultimately, we usually care more about the validation error than about the gap b
 Mặt khác, như ta đã thảo luận ở phía trên , ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
 Lưu ý rằng quá khớp thì không phải luôn là điều xấu.
 Đặc biệt là với học sâu, ai cũng biết rằng mô hình dự đoán tốt nhất thường đạt chất lượng tốt hơn hẳn trên dữ liệu huấn luyện so với dữ liệu kiểm định.
-Cuối cùng, ta thường quan tâm hơn về lỗi kiểm định hơn là về khoảng cách giữa các lỗi kiểm định và lỗi huấn luyện.
+Cuối cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
 
 <!--
 Whether we overfit or underfit can depend both on the complexity of our model and the size of the available training datasets, two topics that we discuss below.
