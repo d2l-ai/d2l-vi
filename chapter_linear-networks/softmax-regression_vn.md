@@ -533,7 +533,7 @@ Easy to predict, easy to compress.
 -->
 
 Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán? 
-Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại. 
+Hãy tưởng tượng chúng ta có một luồng (stream) dữ liệu cần nén. 
 Nếu ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén! 
 Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt! 
 Không những tẻ nhạt, mà nó còn dễ đoán nữa. 
