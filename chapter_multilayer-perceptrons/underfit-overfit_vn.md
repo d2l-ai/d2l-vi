@@ -398,7 +398,7 @@ With deep learning especially, it is well known that the best predictive models 
 Ultimately, we usually care more about the validation error than about the gap between the training and validation errors.
 -->
 
-Nói cách khác, như ở trên ta đã thảo luận, ta muốn xem xét các trường hợp khi lỗi huấn luyện thấp đáng kể hơn lỗi kiểm định, biểu lộ sự quá khớp nghiêm trọng.
+Mặt khác, như ta đã thảo luận ở phía trên , ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
 Lưu ý rằng quá khớp thì không phải luôn là điều xấu.
 Đặc biệt là với học sâu, nó được biết đến là mô hình dự đoán tốt nhất thường biểu diễn tốt trên dữ liệu huấn luyện hơn là dữ liệu ban đầu.
 Cuối cùng, ta thường quan tâm hơn về lỗi kiểm định hơn là về khoảng cách giữa các lỗi kiểm định và lỗi huấn luyện.
