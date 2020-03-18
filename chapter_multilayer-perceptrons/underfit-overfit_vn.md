@@ -363,7 +363,7 @@ Then model training and validation are executed $K$ times, each time training on
 Finally, the training and validation error rates are estimated by averaging over the results from the $K$ experiments.
 -->
 
-Khi khan hiếm dữ liệu huấn luyện, ta thậm chí không thể cho phép giữ đủ dữ liệu để tạo thành một tập kiểm định hợp lý.
+Khi khan hiếm dữ liệu huấn luyện, có lẽ ta sẽ không thể dành ra đủ dữ liệu để tạo một tập kiểm định phù hợp.
 Có một giải pháp phổ biến để giải quyết vấn đề này là nên sử dụng kiểm định chéo $K$-phần.
 Ở đây, tập dữ liệu huấn luyện ban đầu được chia thành $K$ các tập con không chồng lên nhau.
 Sau đó mô hình huấn luyện và kiểm định được thực thi $K$ lần, mỗi lần huấn luyện trên các tập con $K-1$ và kiểm định trên các tập con khác nhau (tập con này sẽ không sử dụng cho lần huấn luyện trong kì đó).
