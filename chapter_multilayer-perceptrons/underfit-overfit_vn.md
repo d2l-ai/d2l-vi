@@ -367,7 +367,7 @@ Khi khan hiếm dữ liệu huấn luyện, có lẽ ta sẽ không thể dành 
 Một giải pháp phổ biến để giải quyết vấn đề này là kiểm định chéo $K$-phần.
 Ở phương pháp này, tập dữ liệu huấn luyện ban đầu được chia thành $K$ tập con không chồng lên nhau.
 Sau đó việc huấn luyện và kiểm định mô hình được thực thi $K$ lần, mỗi lần huấn luyện trên $K-1$ tập con và kiểm định trên tập con còn lại (tập không được sử dụng để huấn luyện trong lần đó).
-Cuối cùng, các tỷ lệ lỗi kiểm định và huấn luyện sẽ cùng được ước lượng bằng cách tính trung bình của các kết quả thí nghiệm $K$.
+Cuối cùng, lỗi huấn luyện và lỗi kiểm định được ước lượng bằng cách tính trung bình các kết quả thu được từ $K$ thí nghiệm.
 
 
 
