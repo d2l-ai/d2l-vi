@@ -478,7 +478,7 @@ Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệ
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể. 
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng ngắn gọn nhất có thể. 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
