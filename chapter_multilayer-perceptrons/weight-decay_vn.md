@@ -207,25 +207,25 @@ test_iter = d2l.load_array(test_data, batch_size, is_train=False)
 ## Implementation from Scratch
 -->
 
-## Triển khai từ đầu
+## Lập trình từ đầu
 
 <!--
 Next, we will implement weight decay from scratch, simply by adding the squared $\ell_2$ penalty to the original target function.
 -->
 
-Tiếp theo, chúng ta sẽ triển khai phân rã trọng số từ đầu, chỉ đơn giản bằng cách cộng thêm bình phương lượng xử phạt $\ell_2$ vào hàm mục tiêu ban đầu.
+Tiếp theo, chúng ta sẽ lập trình phân rã trọng số từ đầu, chỉ đơn giản bằng cách cộng thêm bình phương lượng xử phạt $\ell_2$ vào hàm mục tiêu ban đầu.
 
 <!--
 ### Initializing Model Parameters
 -->
 
-### Khởi tạo tham số mô hình
+### Khởi tạo Tham số Mô hình
 
 <!--
 First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 -->
 
-Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi phần bộ nhớ cấp phát cho gradient mà ta sẽ tính toán.
+Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán.
 
 ```{.python .input  n=5}
 def init_params():
@@ -247,8 +247,8 @@ Perhaps the most convenient way to implement this penalty is to square all terms
 We divide by $2$ by convention, (when we take the derivative of a quadratic function, the $2$ and $1/2$ cancel out, ensuring that the expression for the update looks nice and simple).
 -->
 
-Có lẽ cách thuận tiện nhất để triển khai xử phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng dồn chúng lại.
-Ta đem chia $2$ cho tiện, (khi ta tính đạo hàm của hàm bậc hai, sô hạng $2$ và $1/2$ loại trừ nhau, đảm bảo biểu thức cập nhật trông dễ nhìn và gọn).
+Có lẽ cách thuận tiện nhất để lập trình xử phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
+Ta đem chia $2$ cho tiện (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông dễ nhìn và gọn).
 
 ```{.python .input  n=6}
 def l2_penalty(w):
@@ -268,8 +268,8 @@ The only change here is that our loss now includes the penalty term.
 -->
 
 Đoạn mã nguồn sau thực hiện khớp mô hình trên tập huấn luyện và thẩm định trên tập kiểm tra.
-Mạng tuyến tính và lỗi bình phương không thay đổi gì so với mục trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
-Thay đổi duy nhất ở đây là hàm lỗi của ta giờ cả thành phần xử phạt.
+Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
+Thay đổi duy nhất ở đây là hàm mất mát có thêm thành phần xử phạt.
 
 ```{.python .input  n=7}
 def train(lambd):
@@ -303,7 +303,7 @@ Note that we overfit badly, decreasing the training error but not the test error
 -->
 
 Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa phân rã trọng số.
-Lưu ý rằng ta sẽ gặp hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra không giảm---một trường hợp điển hình của hiện tượng quá khớp.
+Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
 
 ```{.python .input  n=8}
 train(lambd=0)
