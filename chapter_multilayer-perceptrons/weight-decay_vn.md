@@ -57,10 +57,10 @@ In fact, entire branches of mathematics, including parts of functional analysis 
 -->
 
 *Cắt giảm trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các tham số của mô hình học máy.
-Kỹ thuật này được thúc đẩy bởi ta thấy cơ bản trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) theo nghĩa nào đó là *đơn giản nhất* và ta có thể đo độ phức tạp hàm số bằng cách tính khoảng cách từ không.
-Nhưng chính xác là làm thế nào để ta đo khoảng cách giữa một hàm số và số không?
-Không có duy nhất câu trả lời nào đúng.
-Trong thực tế, toàn bộ các nhánh của toán học, bao gồm các phần của giải tích hàm và lý thuyết không gian Banach được nghiên cứu để giải quyết vấn đề này.
+Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không.
+Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
+Không chỉ có duy nhất một câu trả lời đúng.
+Trong thực tế, toàn bộ các nhánh của toán học, bao gồm các phần của giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
 
 <!--
 One simple interpretation might be to measure the complexity of a linear function $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ by some norm of its weight vector, e.g., $|| \mathbf{w} ||^2$.
@@ -72,13 +72,13 @@ To illustrate things in code, let's revive our previous example from :numref:`se
 There, our loss was given by
 -->
 
-Có một cách diễn giải đơn giản có thể đo độ phức tạp hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ đó là dựa vào chuẩn của vector trọng số, ví dụ, $|| \mathbf{w} ||^2$.
-Phương pháp phổ biến nhất để đảm bảo một vector trọng số nhỏ là cộng thêm chuẩn của nó như là một thành phần phạt cho bài toán tối thiểu hóa hàm mất mát.
+Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$.
+Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát.
 Do đó, ta thay thế mục tiêu ban đầu *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*.
-Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* vào giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ hơn là giảm thiểu lỗi huấn luyện.
+Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ hơn là giảm thiểu lỗi huấn luyện.
 Đó chính xác là những gì ta muốn.
-Để minh họa mọi thứ trong viết mã, hãy làm lại ví dụ hồi quy tuyến tính trong : numref: `sec_linear_regression`.
-Ở đây, ta định nghĩa hàm mất mát bởi
+Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`.
+Ở đó, hàm mất mát được định nghĩa như sau:
 
 $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
 
@@ -88,9 +88,9 @@ To penalizes the size of the weight vector, we must somehow add $||mathbf{w}||^2
 In practice, we characterize this tradeoff via the *regularization constant* $\lambda > 0$, a non-negative hyperparameter that we fit using validation data:
 -->
 
-Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là các trọng số và hệ số điều chỉnh tương ứng.
+Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh.
 Để phạt kích thước của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên cân bằng hàm mát mát thông thường với thành phần phạt mới này như thế nào?
-Trong thực tế, ta mô tả điểm cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định:
+Trong thực tế, ta mô tả sự cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định:
 
 $$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$
 
@@ -103,12 +103,12 @@ By squaring the L2 norm, we remove the square root, leaving the sum of squares o
 This makes the derivative of the penalty easy to compute (the sum of derivatives equals the derivative of the sum).
 -->
 
-Với $\lambda = 0$, thì ta được hàm mất mát gốc.
-Với $\lambda > 0$, thì ta hạn chế được kích thước của $|| \mathbf{w} ||$.
+Với $\lambda = 0$, ta thu được hàm mất mát gốc.
+Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$.
 Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide).
 Ta làm điều này để thuận tiện cho việc tính toán.
-Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, còn lại tổng bình phương từng thành phần của vectơ trọng số.
-Điều này làm cho đạo hàm của thành phần phạt dễ tính hơn (tổng các đạo hàm bằng đạo hàm của tổng).
+Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số.
+Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng).
 
 <!--
 Moreover, you might ask why we work with the L2 norm in the first place and not, say, the L1 norm.
@@ -123,15 +123,15 @@ a similarly fundamental model in statistics (popularly known as *lasso regressio
 -->
 
 Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê.
-Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính điều chuẩn-L1 là một mô hình cơ bản tương tự trong thống kê (thường được gọi là *hồi quy lasso*).
+Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 là một mô hình cơ bản tương tự trong thống kê (thường được gọi là *hồi quy lasso*).
 
 <!--
 More generally, the $\ell_2$ is just one among an infinite class of norms call p-norms, many of which you might encounter in the future.
 In general, for some number $p$, the $\ell_p$ norm is defined as
 -->
 
-Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong số các loại chuẩn vô cùng được gọi là chuẩn-p, một vài chuẩn trong số đó có thể bạn sẽ gặp sau này.
-Nói chung, với một số $p$, chuẩn$\ell_p$ được định nghĩa là
+Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy.
+Thông thường, với một số $p$, chuẩn$\ell_p$ được định nghĩa là
 
 $$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p.$$
 
