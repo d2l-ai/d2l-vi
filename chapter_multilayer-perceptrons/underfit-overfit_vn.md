@@ -407,7 +407,7 @@ Cuối cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng c
 Whether we overfit or underfit can depend both on the complexity of our model and the size of the available training datasets, two topics that we discuss below.
 -->
 
-Việc ta quá khớp khớp hoặc dưới khớp có thể phụ thuộc cả sự phức tạp của mô hình và kích thước của bộ dữ liệu huấn luyện có sẵn, hai vấn đề này ta sẽ thảo luận ở phần sau.  
+Việc ta đang quá khớp hay dưới khớp có thể phụ thuộc vào cả độ phức tạp của mô hình lẫn kích thước của tập dữ liệu huấn luyện có sẵn, và hai vấn đề này sẽ được thảo luận ngay sau đây.  
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
