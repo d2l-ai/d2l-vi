@@ -400,7 +400,7 @@ Ultimately, we usually care more about the validation error than about the gap b
 
 Mặt khác, như ta đã thảo luận ở phía trên , ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
 Lưu ý rằng quá khớp thì không phải luôn là điều xấu.
-Đặc biệt là với học sâu, nó được biết đến là mô hình dự đoán tốt nhất thường biểu diễn tốt trên dữ liệu huấn luyện hơn là dữ liệu ban đầu.
+Đặc biệt là với học sâu, ai cũng biết rằng mô hình dự đoán tốt nhất thường đạt chất lượng tốt hơn hẳn trên dữ liệu huấn luyện so với dữ liệu kiểm định.
 Cuối cùng, ta thường quan tâm hơn về lỗi kiểm định hơn là về khoảng cách giữa các lỗi kiểm định và lỗi huấn luyện.
 
 <!--
