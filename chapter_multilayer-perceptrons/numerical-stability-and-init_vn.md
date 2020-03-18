@@ -70,7 +70,7 @@ or (ii) excessively small, (the *vanishing gradient problem*), in which case the
 ### Vanishing Gradients
 -->
 
-### *dịch tiêu đề phía trên*
+### Tiêu biến Gradient
 
 <!--
 One major culprit in the vanishing gradient problem is the choices of the activation functions $\sigma$ that are interleaved with the linear operations in each layer.
@@ -79,7 +79,10 @@ Since early artificial neural networks were inspired by biological neural networ
 Let's take a closer look at the function to see why picking it might be problematic vis-a-vis vanishing gradients.
 -->
 
-*dịch đoạn phía trên*
+Một thủ phạm chính gây ra vấn đề tiêu biến gradient là việc lựa chọn hàm kích hoạt $\sigma$, là hàm được đặt xen giữa các toán hạng tuyến tính tại mỗi tầng.
+Trước đây, hàm kích hoạt sigmoid $(1 + \exp(-x))$ (đã giới thiệu trong :numref:`sec_mlp`) là lựa chọn phổ biến bởi nó hoạt động giống với một hàm lấy ngưỡng.
+Cũng bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng các nơ-ron được kích hoạt hoặc không bị kích hoạt (nơ-ron sinh học không bị kích hoạt một phần) có vẻ như rất hấp dẫn.
+Hãy xem xét chi tiết hơn để thấy tại sao sử dụng hàm sigmoid có thể sinh ra vấn đề liên quan tới hiện tượng tiêu biến gradient.
 
 ```{.python .input}
 %matplotlib inline
@@ -105,7 +108,11 @@ Before ReLUs ($\max(0, x)$) were proposed as an alternative to squashing functio
 As a consequence, ReLUs have become the default choice when designing activation functions in deep networks.
 -->
 
-*dịch đoạn phía trên*
+Như ta có thể thấy, gradient của hàm sigmoid tiêu biến khi đầu vào của nó quá lớn hoặc quá nhỏ.
+Hơn nữa, khi chúng ta thực hiện lan truyền ngược, dùng quy tắc dây chuyền, trừ khi giá trị nằm trong vùng Goldilocks, tại đó đầu vào của hầu hết các hàm sigmoid nằm trong khoảng, ví dụ $[-4, 4]$, gradient của tất cả các phép nhân đều có thể bị tiêu biến.
+Khi chúng ta có nhiều tầng, trừ khi ta cực kỳ cẩn trọng, nhiều khả năng ta sẽ thấy gradient bị mất tại *một vài* tầng nào đó.
+Trước khi hàm ReLU ($\max(0, x)$) được đề xuất để thay thế các hàm kiểu sigmoid, vấn đề này đã từng gây nhiều khó khăn cho quá trình huấn luyện mạng học sâu.
+Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết kế các hàm kích hoạt trong mạng học sâu.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -115,7 +122,7 @@ As a consequence, ReLUs have become the default choice when designing activation
 ### Exploding Gradients
 -->
 
-### *dịch tiêu đề phía trên*
+### Bùng nổ Gradient
 
 <!--
 The opposite problem, when gradients explode, can be similarly vexing.
@@ -124,7 +131,10 @@ For the scale that we picked (the choice of the variance $\sigma^2=1$), the matr
 If this were to happen to us with a deep network, we would have no realistic chance of getting a gradient descent optimizer to converge.
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toán không kém.
+Để chứng minh rõ hơn điều này, chúng ta lấy mẫu $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một vài ma trận khởi tạo.
+Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
+Nếu điều này xảy ra trong các mạng học sâu, chúng ta sẽ không thể làm các bộ tối ưu dựa trên giảm gradient hội tụ được.
 
 ```{.python .input  n=5}
 M = np.random.normal(size=(4, 4))
