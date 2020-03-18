@@ -375,7 +375,7 @@ Cuối cùng, lỗi huấn luyện và lỗi kiểm định được ước lư�
 ## Underfitting or Overfitting?
 -->
 
-## Dưới khớp hoặc Quá khớp?
+## Dưới khớp hay Quá khớp?
 
 <!--
 When we compare the training and validation errors, we want to be mindful of two common situations:
@@ -385,10 +385,10 @@ Moreover, since the *generalization gap* between our training and validation err
 This phenomenon is known as underfitting.
 -->
 
-Khi ta so sánh các lỗi kiểm định và huấn luyện, ta muốn được chú ý đến hai trường hợp thường gặp này:
-Đầu tiên, ta muốn xem xét các trường hợp khi lỗi huấn luyện và lỗi kiểm định đều đáng kể nhưng có một khoảng cách nhỏ giữa chúng.
-Nếu mô hình không thể giảm thiểu lỗi huấn luyện, điều đó có nghĩa là mô hình đó quá đơn giản (tức là không đạt) để lấy mẫu, ta cố gắng để tạo mô hình từ các mẫu đó.
-Hơn thế nữa, do khoảng cách khái quát giữa các lỗi kiểm định và huấn luyện nhỏ, ta có lý do tin rằng ta có thể thoát khỏi một mô hình phức tạp.
+Khi so sánh lỗi huấn luyện và lỗi kiểm định, ta cần lưu ý hai trường hợp thường gặp sau:
+Đầu tiên, ta sẽ muốn chú ý trường hợp lỗi huấn luyện và lỗi kiểm định đều lớn nhưng khoảng cách giữa chúng lại nhỏ.
+Nếu mô hình không thể giảm thiểu lỗi huấn luyện, điều này có nghĩa là mô hình quá đơn giản (tức không đủ khả năng biểu diễn) để có thể xác định được khuôn mẫu mà ta đang cố mô hình hóa.
+Hơn nữa, do khoảng cách khái quát giữa lỗi huấn luyện và lỗi kiểm định nhỏ, ta có lý do để tin rằng phương án giải quyết là một mô hình phức tạp hơn.
 Hiện tượng này là dưới khớp.
 
 <!--
@@ -399,7 +399,7 @@ Ultimately, we usually care more about the validation error than about the gap b
 -->
 
 Mặt khác, như ta đã thảo luận ở phía trên , ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
-Lưu ý rằng quá khớp thì không phải luôn là điều xấu.
+Lưu ý rằng quá khớp không phải luôn là điều xấu.
 Đặc biệt là với học sâu, ai cũng biết rằng mô hình dự đoán tốt nhất thường đạt chất lượng tốt hơn hẳn trên dữ liệu huấn luyện so với dữ liệu kiểm định.
 Cuối cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
 
