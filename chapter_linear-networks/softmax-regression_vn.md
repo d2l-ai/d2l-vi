@@ -496,7 +496,7 @@ In information theory, this quantity is called the [entropy](https://en.wikipedi
 -->
 
 Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu. 
-Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng cô đọng dữ liệu của chúng ta (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin). 
+Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng nén dữ liệu (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin). 
 Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây: 
 
 $$
