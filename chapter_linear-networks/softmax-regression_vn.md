@@ -465,7 +465,7 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp. 
+Hàm trên được gọi là hàm mát mát entropy chéo và là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp. 
 Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin. 
 
 <!--
