@@ -290,7 +290,7 @@ Then the minibatch features $\mathbf{X}$ are in $\mathbb{R}^{n \times d}$, weigh
 -->
 
 Để cải thiện hiệu suất tính toán và tận dụng GPU, ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
-Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích cỡ batch là $n$.
+Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích thước batch là $n$.
 Thêm vào đó, chúng ta có $q$ lớp đầu ra.
 Như vậy, minibatch đặc trưng $\mathbf{X}$ sẽ thuộc $\mathbb{R}^{n \times d}$, trọng số $\mathbf{W} \in \mathbb{R}^{d \times q}$, và độ chệch sẽ thỏa mãn $\mathbf{b} \in \mathbb{R}^q$.
 
@@ -439,7 +439,7 @@ Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponenti
 ### Cross-Entropy Loss
 -->
 
-### Hàm mất mát Entropy Chéo
+### Hàm mất mát Entropy chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -725,46 +725,18 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Thị Hồng Hạnh
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 3 -->
-*Bùi Nhật Quân
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 4 -->
-* Lý Phi Long
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 5 -->
+* Bùi Nhật Quân
 * Nguyễn Minh Thư
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 6 -->
 * Trần Kiến An
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 7 -->
-* Lý Phi Long
-
-<!-- Phần 8 -->
-* Lý Phi Long
-
-<!-- Phần 9 -->
 * Vũ Hữu Tiệp
 * Dương Nhật Tân
 * Nguyễn Văn Tâm
-
-<!-- Phần 10 -->
 * Trần Yến Thy
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng
+* Phạm Minh Đức

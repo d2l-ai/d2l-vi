@@ -196,7 +196,7 @@ Chúng ta sẽ mô tả cách hoạt động của cơ chế này một cách ch
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo tham số mô hình
+## Khởi tạo Tham số Mô hình
 
 <!--
 Before using `net`, we need to initialize the model parameters, such as the weights and biases in the linear regression model.
@@ -433,6 +433,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
+* Trần Thị Hồng Hạnh
 * Phạm Hồng Vinh
 * Vũ Hữu Tiệp 
 * Lý Phi Long
@@ -441,3 +442,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Dương Nhật Tân
 * Nguyễn Văn Tâm
 * Bùi Nhật Quân
+* Nguyễn Mai Hoàng Long

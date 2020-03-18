@@ -7,8 +7,6 @@
 # Mạng nơ-ron Tuyến tính
 :label:`chap_linear`
 
-## Chương này đang trong quá trình hiệu đính, dự tính hoàn thiện 20/03/2020
-
 <!--
 Before we get into the details of deep neural networks, we need to cover the basics of neural network training. 
 In this chapter, we will cover the entire training process, including defining simple neural network architectures, handling data, specifying a loss function, and training the model. 
