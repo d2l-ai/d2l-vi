@@ -342,7 +342,7 @@ train(lambd=0)
 ### Using Weight Decay
 -->
 
-### *dịch tiêu đề phía trên*
+### Sử dụng Phân rã Trọng số
 
 <!--
 Below, we run with substantial weight decay.
@@ -351,7 +351,10 @@ This is precisely the effect we expect from regularization.
 As an exercise, you might want to check that the $\ell_2$ norm of the weights $\mathbf{w}$ has actually decreased.
 -->
 
-*dịch đoạn phía trên*
+Bên dưới, chúng ta chạy với phân rã trọng số lớn.
+Cần chú ý rằng lỗi huấn luyện tăng nhưng lỗi kiểm định giảm.
+Đây chính xác là hiệu ứng mà chúng ta mong đợi từ điều chuẩn.
+Xem như một bài tập, bạn có thể kiểm tra rằng chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ thực sự giảm.
 
 ```{.python .input  n=9}
 train(lambd=3)
@@ -361,7 +364,7 @@ train(lambd=3)
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Cách lập trình chính xác
 
 <!--
 Because weight decay is ubiquitous in neural network optimization,
@@ -370,7 +373,10 @@ Moreover, this integration serves a computational benefit, allowing implementati
 Since the weight decay portion of the update depends only on the current value of each parameter, and the optimizer must to touch each parameter once anyway.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì phân rã trọng số có ở khắp mọi nơi trong tối ưu mạng nơ-ron,
+Gluon làm nó trở nên thuận tiện, bằng cách tích hợp phân rã trọng số vào chính giải thuật tối ưu để dễ sử dụng khi kết hợp với bất kì hàm mất mát nào.
+Hơn nữa, sự tích hợp này cũng đem lại lợi ích tính toán, cho phép các thủ thuật lập trình thêm phân rã trọng số vào giải thuật, mà không làm tăng tổng chi phí tính toán.
+Nguyên nhân là do phần phân rã trọng số của một cập nhật chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số, và dù sao thì bộ tối ưu hoá cũng phải tiếp xúc với mỗi tham số một lần.
 
 <!--
 In the following code, we specify the weight decay hyperparameter directly through `wd` when instantiating our `Trainer`.
@@ -379,7 +385,10 @@ Note that the hyperparameter `wd` will be multiplied by `wd_mult` when updating 
 Thus, if we set `wd_mult` to $0$, the bias parameter $b$ will not decay.
 -->
 
-*dịch đoạn phía trên*
+Trong đoạn mã nguồn sau đây, chúng ta sẽ xác định trực tiếp các siêu tham số phân rã trọng số thông qua `wd` khi khởi tạo `Trainer` của chúng ta.
+Theo mặc định, Gluon phân rã đồng thời cả trọng số và hệ số điều chỉnh.
+Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình.
+Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không phân rã.
 
 ```{.python .input}
 def train_gluon(wd):
@@ -412,7 +421,8 @@ The plots look identical to those when we implemented weight decay from scratch.
 However, they run appreciably faster and are easier to implement, a benefit that will become more pronounced for large problems.
 -->
 
-*dịch đoạn phía trên*
+Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình phân rã trọng số từ đầu.
+Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích mà sẽ dễ nhận thấy hơn với các bài toán lớn.
 
 ```{.python .input}
 train_gluon(0)
@@ -513,7 +523,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 6 -->
 *
