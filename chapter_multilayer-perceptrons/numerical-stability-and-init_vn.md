@@ -277,7 +277,7 @@ Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initiali
 ### Beyond
 -->
 
-### *dịch tiêu đề phía trên*
+### *Ngoài ra*
 
 <!--
 The reasoning above barely scratches the surface of modern approaches to parameter initialization.
@@ -290,6 +290,13 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 -->
 
 *dịch đoạn phía trên*
+Lí do được đưa ra ở phần trên hiếm khi ảnh hưởng nhiều đến những kĩ thuật hiện đại trong việc khởi tạo tham số.
+Thực tế thì MXNet có hẳn cả một module [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) thực thi hàng chục các phương pháp thực nghiệm.
+Hơn thế nữa thì khởi tạo tiếp tục là một lĩnh vực nghiên cứu nóng hổi về tìm tòi trong nghiên cứu về học thuyết cơ bản trong việc tối ưu mạng neuron.
+Một số phương pháp thực nghiệm này thực sự phù hợp khi tham số bị ràng buộc.
+(ví dụ : Khi mà tham số của các phần khác nhau trong mạng được chia sẻ với nhau),trong việc tăng chất lượng hình ảnh,mô hình chuỗi và những vấn đề liên quan. 
+Chúng tôi gợi ý rằng những người đọc cảm thấy hứng thú có thể quan sát kỹ hơn những gì được đưa ra như một phần của module và tìm hiểu những nghiên cứu gần đây về vấn đề khởi tạo tham số.
+Có thể bạn sẽ bắt gặp những ý tưởng thông minh gần đây và đóng góp thực thi của chúng vào MXNET, hoặc thậm chí là tự phát minh ra cách thức cho riêng mình.
 
 
 <!--
@@ -306,7 +313,10 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 -->
 
 *dịch đoạn phía trên*
-
+* Tiêu biến hay bùng nổ gradients đều là những vấn đề chung trong những mạng rất sâu (nhiều layers), trừ khi có sự cẩn thận đảm bảo rằng gradients và các tham số vẫn được kiểm soát tốt.
+* Các thực nghiệm trong khởi tạo là cần thiết để đảm bảo ít nhất rằng gradients ban đầu không bị quá lớn hay quá nhỏ.
+* ReLU giải quyết một trong những vấn đề về tiêu biến gradients, cụ thể là việc tiêu biến gradients cho các đầu vào rất lớn. Điều này có thể tăng tốc độ hội tụ đáng kể.
+* Khởi tạo ngẫu nhiên là chìa khóa để đảm bảo tính đối xứng bị phá vỡ trước khi tối ưu hóa.
 <!--
 ## Exercises
 -->
@@ -321,7 +331,10 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 -->
 
 *dịch đoạn phía trên*
-
+1. Bạn có thể thiết kế các trường hợp phá vỡ đối xứng khác bên cạnh đối xứng hoán vị?
+2. Chúng ta có thể khởi tạo tất cả trọng số ở trong mạng hồi quy tuyến tính hoặc trong hồi quy softmax cùng một giá trị hay không?
+3. Tra cứu phân tích về giới hạn trong trị riêng của phép nhân hai ma trận. Điều này cho bạn biết gì về việc đảm bảo gradients được điều hòa tốt?
+4. Nếu như chúng ta biết rằng một số số hạng phân kỳ (quá trình training) thì chúng ta có thể sửa được không? Nhìn vào bài báo về LARS để tìm cảm hứng :cite:`You.Gitman.Ginsburg.2017`.
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
