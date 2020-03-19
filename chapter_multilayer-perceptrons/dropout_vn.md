@@ -315,7 +315,7 @@ for param in params:
 ### Defining the Model
 -->
 
-### Định nghĩa mô hình
+### Định nghĩa Mô hình
 
 <!--
 The model below applies dropout to the output of each hidden layer (following the activation function).
@@ -350,7 +350,7 @@ def net(X):
 ### Training and Testing
 -->
 
-### Huấn luyện và kiểm tra
+### Huấn luyện và Kiểm tra
 
 <!--
 This is similar to the training and testing of multilayer perceptrons described previously.
@@ -488,6 +488,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 6 -->
 *
