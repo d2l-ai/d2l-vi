@@ -242,6 +242,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------------------------|----------------------------|------------------------------------------------|
 | partition function                 | hàm phân hoạch             | [http://bit.ly/2T0dY7F](http://bit.ly/2T0dY7F) |
 | pattern recognition                | nhận dạng mẫu              | [https://git.io/JvKeL](https://git.io/JvKeL)   |
+| penalty | lượng phạt | |
 | perceptron                         | perceptron                 | [https://git.io/JvohC](https://git.io/JvohC)   |
 | performance                        | chất lượng                 | [http://bit.ly/36IzQcB](http://bit.ly/36IzQcB) |
 | plateau (danh từ)                  | vùng nằm ngang             |                                                |
