@@ -629,7 +629,7 @@ The trained model parameters are also close to the true values $w = [5, 1.2, -3.
 -->
 
 Ta sẽ bắt đầu với việc sử dụng hàm đa thức bậc ba, cùng bậc với hàm tạo dữ liệu.
-Kết quả cho thấy tỉ lệ lỗi huấn luyện thấp khi sử dụng tập kiểm tra trên mô hình này.
+Kết quả cho thấy cả lỗi huấn luyện và lỗi kiểm tra của mô hình đều thấp.
 Các tham số của mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
 
 ```{.python .input  n=6}
