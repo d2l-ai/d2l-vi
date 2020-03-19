@@ -446,7 +446,7 @@ Can you develop a method that outperforms dropout on the FashionMNIST dataset (f
 
 1. Điều gì xảy ra nếu bạn thay đổi xác suất dropout của tầng 1 và 2? Cụ thể, điều gì xảy ra nếu bạn tráo đổi xác suất của hai tầng này? Thiết kế một thí nghiệm để trả lời những câu hỏi này, mô tả các kết quả một cách định lượng và tóm tắt các bài học định tính.
 2. Tăng số lượng epoch và so sánh các kết quả thu được khi sử dụng và khi không sử dụng dropout.
-3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ một biểu đồ để cho thấy giá trị phương sai này cả hai mô hình phát triển như thế nào theo thời gian.
+3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ biểu đồ thể hiện cách giá trị phương sai này thay đổi theo thời gian cho cả hai mô hình.
 4. Tại sao dropout thường không được sử dụng tại bước kiểm tra?
 5. Sử dụng mô hình trong phần này làm ví dụ, so sánh hiệu quả của việc sử dụng dropout và phân rã trọng số.
 Điều gì xảy ra khi dropout và phân rã trọng số được sử dụng cùng một lúc? Hai phương pháp này bổ trợ cho nhau, làm giảm hiệu quả của nhau hay (tệ hơn) loại trừ lẫn nhau?
