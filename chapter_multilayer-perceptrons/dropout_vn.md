@@ -452,7 +452,7 @@ Can you develop a method that outperforms dropout on the FashionMNIST dataset (f
 Điều gì xảy ra khi dropout và phân rã trọng số được sử dụng cùng một lúc? Hai phương pháp này bổ trợ cho nhau, làm giảm hiệu quả của nhau hay (tệ hơn) loại trừ lẫn nhau?
 6. Điều gì xảy ra nếu chúng ta áp dụng dropout cho các trọng số riêng lẻ của ma trận trọng số thay vì các giá trị kích hoạt?
 7. Hãy phát minh một kỹ thuật khác với kỹ thuật dropout tiêu chuẩn để thêm nhiễu ngẫu nhiên ở mỗi tầng.
-Bạn có thể phát triển một phương pháp cho kết quả vượt trội hơn dropout trên bộ dữ liệu FashionMNIST không (với một kiến trúc cố định)?
+Bạn có thể phát triển một phương pháp cho kết quả tốt hơn dropout trên bộ dữ liệu FashionMNIST không (với cùng một kiến trúc)?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
