@@ -237,15 +237,15 @@ where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ 
 One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$, then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
-Để lập trình hàm dropout cho một tầng đơn, ta phải lấy số mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) bằng với số chiều của tầng, với biến ngẫu nhiên có giá trị $1$ (giữ) với xác suất bằng $1-p$ và $0$ (bỏ) với xác suất bằng $p$.
-Một cách đơn giản để thực hiện việc này là đầu tiên lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
+Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy các mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
+Một cách đơn giản để thực hiện việc này là lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
 In the following code, we implement a `dropout_layer` function that drops out the elements in the `ndarray` input `X` with probability `dropout`, 
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-Trong mã nguồn bên dưới, ta lập trình một hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn sót lại với `1.0-dropout` như đã mô tả bên trên. 
+Trong mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
 import d2l
@@ -268,7 +268,7 @@ In the following lines of code, we pass our input `X` through the dropout operat
 -->
 
 Ta có thể thử nghiệm hàm `dropout_layer` lên một vài mẫu.
-Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua hàm dropout, với xác suất lần lượt là 0, 0,5 và 1.
+Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua hàm `dropout_layer`, với xác suất lần lượt là 0, 0.5 và 1.
 
 ```{.python .input  n=2}
 X = np.arange(16).reshape(2, 8)
@@ -292,8 +292,8 @@ Again, we work with the Fashion-MNIST dataset introduced in :numref:`sec_softmax
 We define a multilayer perceptron with two hidden layers containing 256 outputs each.
 -->
 
-Một lần nữa, ta làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`.
-Ta định nghĩa một perception đa tầng với hai tầng ẩn, mỗi tầng gồm 256 đầu ra.
+Một lần nữa, ta sẽ làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`.
+Ta sẽ tạo một perception đa tầng với hai tầng ẩn, mỗi tầng gồm 256 đầu ra.
 
 ```{.python .input  n=3}
 num_inputs, num_outputs, num_hiddens1, num_hiddens2 = 784, 10, 256, 256
