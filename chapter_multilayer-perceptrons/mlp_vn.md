@@ -5,7 +5,7 @@
 # Multilayer Perceptrons
 -->
 
-# *dịch tiêu đề phía trên*
+# Perceptrons đa tầng
 :label:`sec_mlp`
 
 <!--
@@ -18,20 +18,23 @@ Now that we have mastered these mechanics in the context of simple linear models
 we can launch our exploration of deep neural networks, the comparatively rich class of models with which this book is primarily concerned.
 -->
 
-*dịch đoạn phía trên*
+Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách lập trình giải thuật này từ đầu (:numref:`sec_softmax_scratch`) và trong gluon (:numref:`sec_softmax_gluon`), huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
+Cùng với đó, chúng ta đã học về cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu hoá nó theo các tham số mô hình. 
+Bây giờ, chúng ta đã thành thạo các cơ chế này trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá các mạng nơ-ron sâu, lớp mô hình tương đối phong phú mà cuốn sách này chủ yếu quan tâm. 
 
 <!--
 ## Hidden Layers
 -->
 
-## *dịch tiêu đề phía trên*
+## Các tầng ẩn
 
 <!--
 To begin, recall the model architecture corresponding to our softmax regression example, illustrated in  :numref:`fig_singlelayer` below.
 This model mapped our inputs directly to our outputs via a single linear transformation:
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, hãy nhớ lại kiến trúc mô hình trong ví dụ của hồi quy softmax, được minh hoạ trong :numref:`fig_singlelayer` bên dưới.
+Mô hình này ánh xạ trực tiếp các đầu vào của chúng ta sang các giá trị đầu ra thông qua một phép biến đổi tuyến tính duy nhất:
 
 $$
 \hat{\mathbf{o}} = \mathrm{softmax}(\mathbf{W} \mathbf{x} + \mathbf{b}).
@@ -41,7 +44,7 @@ $$
 ![Single layer perceptron with 5 output units.](../img/singlelayer.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/singlelayer.svg)
+![Tầng perceptron đơn với 5 nút đầu ra.](../img/singlelayer.svg)
 :label:`fig_singlelayer`
 
 <!--
@@ -49,7 +52,8 @@ If our labels truly were related to our input data by a linear function, then th
 But linearity is a *strong assumption*.
 -->
 
-*dịch đoạn phía trên*
+Nếu các nhãn của chúng ta thật sự có mối quan hệ tuyến tính với dữ liệu đầu vào thì cách tiếp cận này sẽ là đủ. 
+Nhưng tính tuyến tính là một *giả định chặt*. 
 
 <!--
 For example, linearity implies the *weaker* assumption of *monotonicity*: 
@@ -63,7 +67,11 @@ A increase in income from $0 to $50k likely corresponds to a bigger increase in 
 One way to handle this might be to pre-process our data such that linearity becomes more plausible, say, by using the logarithm of income as our feature.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, tính tuyến tính ngụ ý trong đó một giả định *yếu hơn* của *tính đơn điệu*: nghĩa là việc giá trị đặc trưng tăng luôn dẫn đến việc đầu ra mô hình tăng (nếu trọng số tương ứng dương), hoặc đầu ra mô hình giảm (nếu trọng số tương ứng âm).
+Điều này đôi khi cũng hợp lý.
+Ví dụ, nếu chúng ta đang dự đoán liệu một người có trả được khoản vay hay không, chúng ta có thể suy diễn một cách hợp lý như sau: bỏ qua mọi yếu tố khác, ứng viên nào có thu nhập cao hơn sẽ luôn có khả năng trả được nợ cao hơn so với những ứng viên khác có thu nhập thấp hơn. 
+Dù có tính đơn điệu, mối quan hệ với xác suất trả nợ có lẽ không tuyến tính. Có thể mức tăng thu nhập từ $0 lên $50k sẽ tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
+Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta để giả định tuyến tính trở nên hợp lý hơn, ví dụ như sử dụng logarit của thu nhập làm đặc trưng. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -78,7 +86,12 @@ In this case too, we might resolve the problem with some clever preprocessing.
 Namely, we might use the *distance* from 37°C as our feature.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta có thể dễ dàng đưa ra các ví dụ vi phạm *tính đơn điệu*.
+Ví dụ như, ta muốn dự đoán xác suất tử vong của một người dựa trên thân nhiệt.
+Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ càng cao gây ra nguy cơ tử vong càng cao.
+Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, khi gặp nhiệt độ cao hơn thì nguy cơ tử vong lại *thấp hơn*!
+Tương tự như trong bài toán này, ta có thể giải quyết nó bằng một vài bước tiền xử lý thật khéo léo.
+Cụ thể, có thể sử dụng *khoảng cách* từ 37°C làm đặc trưng.
 
 
 <!--
@@ -88,7 +101,10 @@ Reliance on a linear model corrsponds to the (implicit) assumption that the only
 This approach is doomed to fail in a world where inverting an image preserves the category.
 -->
 
-*dịch đoạn phía trên*
+Nhưng còn với bài toán phân loại hình ảnh về chó mèo thì sao?
+Có nên tăng cường độ sáng của điểm ảnh tại vị trí (13, 17) luôn tăng (hoặc luôn giảm) để khả năng hình ảnh mô tả là một con chó?
+Mô hình tuyến tính tương ứng phụ thuộc vào giả thiết (ngầm) rằng điều kiện duy nhất để phân biệt mèo và chó là chỉ cần đánh giá độ sáng của từng pixel.
+Cách tiếp cận này chắc chắn sẽ bị sai khi các hình ảnh bị đảo ngược màu sắc.
 
 
 <!--
@@ -99,7 +115,10 @@ we simply do not know how to calculate it by hand.
 With deep neural networks, we used observational data to jointly learn both a representation (via hidden layers) and a linear predictor that acts upon that representation.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, ta bỏ qua sự phi lý của tuyến tính ở đây, so với các ví dụ trước, rõ ràng là ta không thể giải quyết bài toán này với vài bước tiền xử lý chỉnh sửa đơn giản.
+Bởi vì ý nghĩa của các điểm ảnh phụ thuộc vào bối cảnh xung quanh nó một cách phức tạp (các giá trị xung quanh của điểm ảnh).
+Mặc dù có thể tồn tại một cách biểu diễn nào đó cho dữ liệu nhằm giải thích về sự tương tác giữa các đặc trưng có liên quan (và trên hết sẽ phù hợp với mô hình tuyến tính), chỉ đơn giản là ta không biết làm thế nào để tính toán thủ công.
+Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát được để cùng học một biểu diễn (thông qua các tầng ẩn) và một công cụ dự đoán tuyến tính hoạt động dựa trên biểu diễn đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -109,7 +128,7 @@ With deep neural networks, we used observational data to jointly learn both a re
 ### Incorporating Hidden Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Kết hợp các Tầng ẩn
 
 <!--
 We can over come these limitations of linear models and handle a more general class of functions by incorporating one or more hidden layers.
@@ -120,13 +139,18 @@ This architecture is commonly called a *multilayer perceptron*, often abbreviate
 Below, we depict an MLP diagramtically (:numref:`fig_nlp`).
 -->
 
-*dịch đoạn phía trên*
+Ta có thể vượt qua những hạn chế của các mô hình tuyến tính và xử lý một lớp hàm tổng quát hơn bằng cách kết hợp một hoặc nhiều tầng ẩn.
+Cách dễ nhất để làm điều này là xếp chồng nhiều tầng kết nối đầy đủ lên nhau.
+Mỗi tầng đưa vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
+Ta có thể tạo ra $L-1$ tầng đầu tiên như một biểu diễn và tầng cuối cùng là công cụ dự đoán tuyến tính.
+Kiến trúc này thường được gọi là *perceptron đa tầng* (*multilayer percention*), thường được viết tắt là *MLP*.
+Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
 
 <!--
 ![Multilayer perceptron with hidden layers. This example contains a hidden layer with 5 hidden units in it. ](../img/mlp.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/mlp.svg)
+![Perceptron đa tầng với các tầng ẩn. Ví dụ này chứa một tầng ẩn với 5 nút ẩn trong đó.](../img/mlp.svg)
 :label:`fig_nlp`
 
 <!--
@@ -136,7 +160,10 @@ Note that these layers are both fully connected.
 Every input influences every neuron in the hidden layer, and each of these in turn influences every neuron in the output layer.
 -->
 
-*dịch đoạn phía trên*
+Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và tầng ẩn của nó chứa 5 nút ẩn.
+Vì tầng đầu vào không cần bất kỳ phép tính nào, nên đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các tính toán với mỗi tầng trong hai tầng này (tầng ẩn và tầng đầu ra).
+Lưu ý, tất cả tầng này là tầng kết nối đầy đủ.
+Mọi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi đầu vào này ảnh hưởng đến mỗi nơ-ron trong tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -625,10 +652,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Minh Tân
+* Phạm Minh Đức
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 3 -->
 * Nguyễn Duy Du

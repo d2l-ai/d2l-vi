@@ -14,8 +14,8 @@ As with linear regression, after doing things by hand we will breeze through an 
 To begin, let's import the familiar packages.
 -->
 
-Như ta đã lập trình hồi quy tuyến tính từ đầu, hồi quy logistic (softmax) đa lớp cũng sẽ tương tự và bạn nên tự biết cách làm thế nào để xây dựng nó một cách chi tiết nhất.
-Tương tự hồi quy tuyến tính, sau khi thực hiện mọi thứ bằng tay thì ta sẽ dùng Gluon để lập trình và đưa ra sự so sánh.
+Giống như khi ta lập trình hồi quy tuyến tính từ đầu, hồi quy (softmax) logistic đa lớp cũng là một kĩ thuật căn bản mà bạn nên hiểu biết tường tận các chi tiết để có thể tự xây dựng lại.
+Sau khi tự lập trình lại mọi thứ thì ta cũng sẽ dùng Gluon để so sánh như ở phần hồi quy tuyến tính.
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
@@ -29,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một vòng lập với kích cỡ batch là $256$.
+Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong :numref:`sec_fashion_mnist`, thiết lập một iterator với kích thước batch là $256$.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -40,7 +40,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 ## Initializing Model Parameters
 -->
 
-## Khởi tạo các tham số của Mô hình
+## Khởi tạo các Tham số của Mô hình
 
 <!--
 As in our linear regression example, each example here will be represented by a fixed-length vector.
@@ -51,8 +51,8 @@ In the future, we will talk about more sophisticated strategies for exploiting t
 
 Giống như ví dụ về hồi quy tuyến tính, mỗi mẫu sẽ được biểu diễn bằng một vector có chiều dài cố định.
 Mỗi mẫu trong tập dữ liệu thô là một ảnh $28 \times 28$.
-Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector một chiều có kích thước là $784$.
-Sau này ta sẽ bàn về các chiến lược tinh vi hơn có khả năng khai thác cấu trúc không gian giữa các điểm ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
+Trong phần này, chúng ta sẽ trải phẳng mỗi tấm ảnh thành một vector có kích thước là $784$.
+Sau này ta sẽ bàn về các chiến lược công phu hơn có khả năng khai thác cấu trúc không gian của ảnh, còn bây giờ ta hãy xem mỗi điểm ảnh là một đặc trưng. 
 
 <!--
 Recall that in softmax regression, we have as many outputs as there are categories.
@@ -80,7 +80,7 @@ More literally, we are allocating memory for future gradients to be stored and n
 -->
 
 Hãy nhớ rằng ta cần *đính kèm gradient* vào các tham số của mô hình.
-Cụ thể hơn, ta đang phân bổ bộ nhớ để lưu trữ các gradient trong tương lai và cho MXNet biết rằng ta sẽ muốn tính các gradient theo các tham số này trong tương lai.
+Cụ thể hơn, ta cho MXNet biết rằng ta sẽ muốn tính các gradient theo các tham số này và cần phân bổ bộ nhớ để lưu trữ chúng trong tương lai.
 
 ```{.python .input  n=4}
 W.attach_grad()
@@ -107,9 +107,8 @@ rather than collapsing out the dimension that we summed over we can specify `kee
 
 Trước khi xây dựng mô hình hồi quy softmax, hãy ôn nhanh tác dụng của các toán tử như `sum` trên những chiều cụ thể của một `ndarray`.
 Cho một ma trận `X`, chúng ta có thể tính tổng tất cả các phần tử (mặc định) hoặc chỉ trên các phần tử trong cùng một trục, *ví dụ*, cột (`axis=0`) hoặc cùng một hàng (`axis=1`).
-Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, chúng ta tính tổng các cột (`X.sum (axis=0`), kết quả sẽ là một vector (một chiều) có kích thước là `(3 ,)`.
-Nếu chúng ta muốn giữ số lượng trục trong mảng ban đầu (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`),
-thay vì thu gọn kích thước mà chúng ta đã tính toán, chúng ta có thể gán `keepdims=True` khi gọi hàm `sum`.
+Lưu ý rằng nếu `X` là một mảng có kích thước `(2, 3)`, tính tổng các cột (`X.sum (axis=0)`) sẽ trả về một vector (một chiều) có kích thước là `(3,)`.
+Nếu chúng ta muốn giữ số lượng trục giống với mảng ban đầu thay vì thu gọn kích thước trên các trục đã tính toán (dẫn đến một mảng 2 chiều có kích thước `(1, 3)`), ta có thể chỉ định `keepdims=True` khi gọi hàm `sum`.
 
 ```{.python .input  n=5}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -125,11 +124,11 @@ Finally, we divide each row by its normalization constant, ensuring that the res
 Before looking at the code, let's recall what this looks expressed as an equation:
 -->
 
-Bây giờ chúng ta có thể bắt đầu xây dựng hàm softmax.
+Bây giờ chúng ta đã có thể bắt đầu xây dựng hàm softmax.
 Lưu ý rằng việc thực thi hàm softmax bao gồm hai bước:
-Đầu tiên, chúng ta lũy thừa từng giá trị ma trận (sử dụng `exp`).
-Sau đó, chúng ta tính tổng trên mỗi hàng (chúng ta có một hàng cho mỗi ví dụ trong batch) để lấy các hằng số chuẩn hóa cho mỗi ví dụ.
-Cuối cùng, chúng ta chia mỗi hàng theo hằng số chuẩn hóa của nó, đảm bảo rằng kết quả có tổng bằng $1$.
+Đầu tiên, chúng ta lũy thừa từng giá trị (sử dụng `exp`).
+Sau đó tính tổng trên mỗi hàng để lấy các hằng số chuẩn hóa cho mỗi mẫu (vì mỗi mẫu là một hàng).
+Cuối cùng, chia mỗi hàng theo hằng số chuẩn hóa của nó để đảm bảo rằng kết quả có tổng bằng $1$.
 Trước khi xem đoạn mã, chúng ta hãy nhớ lại các bước này được thể hiện trong phương trình sau:
 
 $$
@@ -141,8 +140,8 @@ The denominator, or normalization constant, is also sometimes called the partiti
 The origins of that name are in [statistical physics](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) where a related equation models the distribution over an ensemble of particles).
 -->
 
-Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) (và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
-Tên gốc của hàm được định nghĩa trong [vật lý thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan mô hình hóa phân phối trên một tập hợp các phần tử.
+Mẫu số hoặc hằng số chuẩn hóa đôi khi cũng được gọi là hàm phân hoạch (*partition function*) và logarit của nó được gọi là hàm log phân hoạch (*log-partition function*).
+Tên gốc của hàm được định nghĩa trong [cơ học thống kê](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)) với phương trình liên quan đến mô hình hóa phân phối trên một tập hợp các phần tử.
 
 ```{.python .input  n=6}
 def softmax(X):
@@ -158,9 +157,9 @@ Note that while this looks correct mathematically, we were a bit sloppy in our i
 because failed to take precautions against numerical overflow or underflow due to large (or very small) elements of the matrix, as we did in :numref:`sec_naive_bayes`.
 -->
 
-Chúng ta có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử được biến đổi thành một số không âm.
-Hơn nữa, theo định nghĩa xác suất thì mỗi hàng có tổng là 1.
-Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng nó được xây dựng hơi cẩu thả, không giống với cách ta thực hiện tại :numref:`sec_naive_bayes`, vì ta không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận.
+Có thể thấy rằng với bất kỳ đầu vào ngẫu nhiên nào thì mỗi phần tử đều được biến đổi thành một số không âm.
+Hơn nữa, mỗi hàng đều có tổng là 1 nên thoả mãn yêu cầu làm một giá trị xác suất.
+Chú ý rằng đoạn mã trên tuy đúng về mặt toán học nhưng chúng tôi đã hơi cẩu thả về mặt lập trình vì đã không kiểm tra vấn đề tràn số trên và dưới gây ra bởi các giá trị vô cùng lớn hoặc vô cùng nhỏ trong ma trận, không giống với cách đã thực hiện tại :numref:`sec_naive_bayes`.
 
 ```{.python .input  n=7}
 X = np.random.normal(size=(2, 5))
@@ -188,9 +187,9 @@ The below code defines the forward pass through the network.
 Note that we flatten each original image in the batch into a vector with length `num_inputs` with the `reshape` function before passing the data through our model.
 -->
 
-Bây giờ chúng ta đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
-Đoạn mã sau định nghĩa lượt truyền xuôi thông qua mạng.
-Chú ý rằng chúng ta làm phẳng mỗi ảnh gốc trên tập lưu trữ bằng một vector có độ dài `num_inputs` bằng hàm `reshape` trước khi truyền dữ liệu sang mô hình đã khởi tạo.
+Sau khi đã định nghĩa hàm softmax, chúng ta có thể bắt đầu lập trình mô hình hồi quy softmax.
+Đoạn mã sau định nghĩa lượt truyền xuôi qua mạng.
+Chú ý rằng chúng ta sẽ làm phẳng mỗi ảnh gốc trên batch thành một vector có độ dài `num_inputs` bằng hàm `reshape`, trước khi truyền dữ liệu sang mô hình đã khởi tạo.
 
 ```{.python .input  n=8}
 def net(X):
@@ -209,7 +208,7 @@ This may be the most common loss function in all of deep learning because, at th
 -->
 
 Tiếp đến chúng ta cần lập trình hàm mất mát entropy chéo đã được giới thiệu ở :numref:`sec_softmax`.
-Đây có lẽ là hàm mất mát thông dụng nhất trong nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại vượt trội hơn số lượng bài toán hồi quy.
+Đây có lẽ là hàm mất mát thông dụng nhất trong phần lớn nghiên cứu về học sâu vì hiện nay số lượng bài toán phân loại đã vượt xa hơn số lượng bài toán hồi quy.
 
 <!--
 Recall that cross-entropy takes the negative log likelihood of the predicted probability assigned to the true label $-\log P(y \mid x)$.
@@ -218,10 +217,10 @@ we can use the `pick` function which allows us to easily select the appropriate 
 Below, we illustrate the `pick` function on a toy example, with $3$ categories and $2$ examples.
 -->
 
-Nhắc lại rằng entropy chéo lấy kết quả là hàm đối log hợp lý của xác suất dự đoán được gán cho nhãn thực $-\log P(y \mid x)$.
+Nhắc lại rằng hàm entropy chéo lấy đầu vào là đối log hợp lý của xác suất dự đoán được gán cho nhãn thật $-\log P(y \mid x)$.
 Thay vì lặp qua các dự đoán của mô hình bằng vòng lặp `for` trong Python (có xu hướng kém hiệu quả),
-chúng ta có thể sử dụng hàm `pick` mà cho phép ta chọn lựa dễ dàng các phần tử thích hợp từ ma trận của các biến softmax đầu vào.
-Dưới đây, hàm `pick` được sử dụng như một ví dụ đơn giản với ma trận $2$ hàng $3$ cột.
+chúng ta có thể sử dụng hàm `pick` để dễ dàng chọn các phần tử thích hợp từ ma trận của các giá trị softmax.
+Dưới đây, ta minh hoạ cách sử dụng hàm `pick` trong một ví dụ đơn giản với ma trận có $3$ lớp và $2$ mẫu.
 
 ```{.python .input  n=9}
 y_hat = np.array([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
@@ -232,7 +231,7 @@ y_hat[[0, 1], [0, 2]]
 Now we can implement the cross-entropy loss function efficiently with just one line of code.
 -->
 
-Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn với một dòng lệnh.
+Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu quả hơn chỉ với một dòng lệnh.
 
 ```{.python .input  n=10}
 def cross_entropy(y_hat, y):
@@ -256,8 +255,8 @@ Gmail must categorize an email into Primary, Social, Updates, or Forums.
 It might estimate probabilities internally, but at the end of the day it has to choose one among the categories.
 -->
 
-Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi cần đưa ra một dự đoán cụ thể vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
-Ví dụ Gmail phải phân loại một email vào một trong các mục: Chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
+Với phân phối xác suất dự đoán `y_hat`, ta thường chọn lớp có xác suất dự đoán cao nhất khi phải đưa ra một dự đoán *cụ thể* vì nhiều ứng dụng trong thực tế có yêu cầu như vậy.
+Ví dụ, Gmail cần phải phân loại một email vào trong các danh mục sau: Email chính (Primary), Mạng xã hội (Social), Nội dung cập nhật (Updates) hoặc Diễn đàn (Forums).
 Có thể các xác suất được tính toán bên trong nội bộ hệ thống, nhưng cuối cùng kết quả vẫn chỉ là một trong các danh mục.
 
 <!--
@@ -270,7 +269,7 @@ it is often the performance metric that we care most about, and we will nearly a
 Các dự đoán được coi là chính xác khi chúng khớp với lớp thực tế `y`.
 Độ chính xác phân loại được tính bởi tỉ lệ các dự đoán chính xác trên tất cả các dự đoán đã đưa ra.
 Dù ta có thể gặp khó khăn khi tối ưu hóa trực tiếp độ chính xác (chúng không khả vi),
-đây thường là phép đo chất lượng được quan tâm tới nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
+đây thường là phép đo chất lượng được quan tâm nhiều nhất và sẽ luôn được tính khi huấn luyện các bộ phân loại.
 
 <!--
 To compute accuracy we do the following:
@@ -283,11 +282,10 @@ Taking the mean yields the desired result.
 -->
 
 Độ chính xác được tính toán như sau:
-Đầu tiên, lệnh `y_hat.argmax(axis=1)` được thực thi nhằm lấy ra các lớp được dự đoán (cho bởi chỉ số của các phần tử lớn nhất của mỗi hàng).
-Kết quả trả về sẽ có cùng kích thước với biến `y`
-và bây giờ ta chỉ cần so sánh hai vector này.
-Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần phải ép kiểu chúng một cách thống nhất (ở đây ta chọn kiểu `float32`).
-Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true).
+Đầu tiên, dùng lệnh `y_hat.argmax(axis=1)` nhằm lấy ra các lớp được dự đoán (được cho bởi chỉ số của phần tử lớn nhất trên mỗi hàng).
+Kết quả trả về sẽ có cùng kích thước với biến `y` và bây giờ ta chỉ cần so sánh hai vector này.
+Vì toán tử `==` so khớp cả kiểu dữ liệu của biến (ví dụ một biến `int` và một biến `float32` không thể bằng nhau), ta cần đưa chúng về cùng một kiểu dữ liệu (ở đây ta chọn kiểu `float32`).
+Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (true), giá trị trung bình này mang lại kết quả mà ta mong muốn.
 
 
 ```{.python .input  n=11}
@@ -307,9 +305,9 @@ Therefore, the classification accuracy rate for these two examples is $0.5$.
 -->
 
 Ta sẽ tiếp tục sử dụng biến `y_hat` và `y` đã được định nghĩa trong hàm `pick`, lần lượt tương ứng với phân phối xác suất được dự đoán và nhãn.
-Có thể thấy rằng kết quả dự đoán của ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là 0.6 với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
-Dự đoán ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
-Do đó độ chính xác phân loại cho hai ví dụ này là $0.5$.
+Có thể thấy rằng kết quả dự đoán lớp từ ví dụ đầu tiên là $2$ (phần từ lớn nhất trong hàng là $0.6$ với chỉ số tương ứng là $2$) không khớp với nhãn thực tế là $0$. 
+Dự đoán lớp ở ví dụ thứ hai là $2$ (phần tử lớn nhất hàng là $0.5$ với chỉ số tương ứng là $2$) khớp với nhãn thực tế là $2$.
+Do đó, ta có độ chính xác phân loại cho hai ví dụ này là $0.5$.
 
 ```{.python .input  n=12}
 y = np.array([0, 2])
@@ -320,7 +318,7 @@ accuracy(y_hat, y) / len(y)
 Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed via `data_iter`).
 -->
 
-Tương tự, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
+Tương tự như trên, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
 # Saved in the d2l package for later use
@@ -359,7 +357,7 @@ class Accumulator(object):
 Because we initialized the `net` model with random weights, the accuracy of this model should be close to random guessing, i.e., $0.1$ for $10$ classes.
 -->
 
-Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ ngang với việc đoán mò, tức độ chính xác bằng $0.1$ với $10$ lớp.
+Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên độ chính xác của mô hình lúc này sẽ gần với việc phỏng đoán ngẫu nhiên, tức độ chính xác bằng $0.1$ với $10$ lớp.
 
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
@@ -377,7 +375,7 @@ evaluate_accuracy(net, test_iter)
 ## Model Training
 -->
 
-## Huấn luyện mô hình
+## Huấn luyện Mô hình
 
 <!--
 The training loop for softmax regression should look strikingly familiar if you read through our implementation of linear regression in :numref:`sec_linear_scratch`.
@@ -387,10 +385,10 @@ Note that `updater` is general function to update the model parameters, which ac
 It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 -->
 
-Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã đọc qua cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
-Ở đây, chúng ta tái cấu trúc lại đoạn mã để giúp nó có thể được tái sử dụng. 
-Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện cho 1 epoch dữ liệu. 
-Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận giá trị kích thước batch làm thông số. 
+Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
+Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để sau này có thể tái sử dụng. 
+Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện với một epoch dữ liệu. 
+Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích thước batch làm đối số. 
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
@@ -416,8 +414,8 @@ Before showing the implementation of the training function, we define a utility 
 Again, it aims to simplify the codes in later chapters.
 -->
 
-Trước khi xem đoạn mã thực hiện hàm huấn luyện, chúng ta định nghĩa 1 lớp phụ trợ để biểu diễn trực quan dữ liệu.
-Nhắc lại, mục đích của nó là giúp làm đơn giản hơn các đoạn mã sẽ xuất hiện trong các chương sau này. 
+Trước khi xem đoạn mã thực hiện hàm huấn luyện, ta định nghĩa một lớp phụ trợ để minh họa dữ liệu.
+Mục đích của nó là đơn giản hoá các đoạn mã sẽ xuất hiện trong những chương sau. 
 
 ```{.python .input  n=16}
 # Saved in the d2l package for later use
@@ -464,7 +462,7 @@ class Animator(object):
 The training function then runs multiple epochs and visualize the training progress.
 -->
 
-Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan hoá quá trình huấn luyện. 
+Hàm huấn luyện sau đó sẽ chạy qua nhiều epoch và trực quan hoá quá trình huấn luyện. 
 
 ```{.python .input  n=17}
 # Saved in the d2l package for later use
@@ -486,9 +484,9 @@ In practice we will want to split our data three ways into training, validation,
 -->
 
 Nhắc lại, chúng ta sử dụng giải thuật hạ gradient ngẫu nhiên theo minibatch để tối ưu hàm mất mát của mô hình.
-Lưu ý rằng số lượng epochs (`num_epochs`), và hệ số học (`lr`) là 2 siêu tham số được hiệu chỉnh. 
+Lưu ý rằng số lượng epoch (`num_epochs`), và hệ số học (`lr`) là hai siêu tham số được hiệu chỉnh. 
 Bằng cách thay đổi các giá trị này, chúng ta có thể tăng độ chính xác khi phân loại của mô hình. 
-Trong thực tế, chúng ta thường sẽ chia tập dữ liệu thành 3 phần, đó là: dữ liệu huấn luyện, dữ liệu kiểm thử và dữ liệu kiểm tra, sử dụng dữ liệu kiểm thử để chọn ra những giá trị tốt nhất cho các siêu tham số.  
+Trong thực tế, chúng ta sẽ chia dữ liệu của mình theo ba hướng tiếp cận khác nhau gồm: dữ liệu huấn luyện, dữ liệu kiểm định và dữ liệu kiểm tra; sử dụng dữ liệu kiểm định để chọn ra những giá trị tốt nhất cho các siêu tham số.
 
 ```{.python .input  n=18}
 num_epochs, lr = 10, 0.1
@@ -514,8 +512,8 @@ Now that training is complete, our model is ready to classify some images.
 Given a series of images, we will compare their actual labels (first line of text output) and the model predictions (second line of text output).
 -->
 
-Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại các ảnh.
-Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thực của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
+Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đã sẵn sàng để phân loại ảnh.
+Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thật của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
 # Saved in the d2l package for later use
@@ -544,7 +542,7 @@ As you will soon find out, most common deep learning models have similar trainin
 
 Với hồi quy softmax, chúng ta có thể huấn luyện các mô hình cho bài toán phân loại đa lớp.
 Vòng lặp huấn luyện rất giống với vòng lặp huấn luyện của hồi quy tuyến tính: truy xuất và đọc dữ liệu, định nghĩa mô hình và hàm mất mát, và rồi huấn luyện mô hình sử dụng các giải thuật tối ưu.
-Rồi bạn sẽ thấy rằng hầu hết các mô hình học sâu phổ biến đều có thủ tục huấn luyện tương tự như vậy.
+Rồi bạn sẽ sớm thấy rằng hầu hết các mô hình học sâu phổ biến đều có quy trình huấn luyện tương tự như vậy.
 
 <!--
 ## Exercises
@@ -566,11 +564,9 @@ What could be the problem with this implementation (hint: consider the domain of
 Điều này có thể gây ra những vấn đề gì (gợi ý: thử tính $\exp(50)$)?
 2. Hàm `cross_entropy` trong mục này được lập trình dựa vào định nghĩa của hàm mất mát entropy chéo. 
 Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý: xem xét miền của hàm log)?
-3. Bạn có thể nghĩ ra các giải pháp để giải quyết hai vấn đề trên không?
-4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? 
-Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
-5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. 
-Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
+3. Bạn có thể tìm ra giải pháp cho hai vấn đề trên không?
+4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
+5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -588,7 +584,7 @@ Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng l
 ![](../img/qr_softmax-regression-scratch.svg)
 -->
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
@@ -602,25 +598,14 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Bùi Nhật Quân
 * Lý Phi Long
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
 * Lâm Ngọc Tâm
 * Vũ Hữu Tiệp
+* Lê Khắc Hồng Phúc
+* Nguyễn Cảnh Thướng
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
-* Lâm Ngọc Tâm
-* Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Nguyễn Quang Hải
-
-<!-- Phần 5 -->
 * Đinh Minh Tân
-
-<!-- Phần 6 -->
 * Lê Cao Thăng

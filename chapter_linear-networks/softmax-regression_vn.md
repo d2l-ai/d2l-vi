@@ -13,7 +13,7 @@ In :numref:`sec_linear_regression`, we introduced linear regression, working thr
 and again using Gluon in :numref:`sec_linear_gluon` to do the heavy lifting.
 -->
 
-Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, tự xây dựng mô hình hồi quy tuyến tính từ đầu trong :numref:`sec_linear_scratch` và xây dựng mô hình hồi quy tuyến tính một lần nữa sử dụng Gluon trong :numref:`sec_linear_gluon` để thực hiện phần việc nặng nhọc.
+Trong :numref:`sec_linear_regression`, chúng ta đã giới thiệu về hồi quy tuyến tính, từ việc tự xây dựng mô hình hồi quy tuyến tính từ đầu tại :numref:`sec_linear_scratch` cho đến xây dựng mô hình hồi quy tuyến tính với Gluon thực hiện phần việc nặng nhọc tại :numref:`sec_linear_gluon`.
 
 <!--
 Regression is the hammer we reach for when we want to answer *how much?* or *how many?* questions.
@@ -37,10 +37,10 @@ Trong thực tế, chúng ta thường quan tâm đến việc phân loại hơn
 * Which movie is Aston most likely to watch next?
 -->
 
-* Email này có phải thư rác/lừa đảo hay không?
+* Email này có phải thư rác hay không?
 * Khách hàng này nhiều khả năng *đăng ký* hay *không đăng ký* một dịch vụ thuê bao?
-* Hình ảnh này mô tả một con lừa, một con cún, một con mèo hay một con gà trống?
-* Aston có khả năng xem bộ phim nào tiếp theo nhất?
+* Hình ảnh này mô tả một con lừa, một con chó, một con mèo hay một con gà trống?
+* Bộ phim nào có khả năng cao nhất được Aston xem tiếp theo?
 
 <!--
 Colloquially, machine learning practitioners overload the word *classification* to describe two subtly different problems:
@@ -49,9 +49,9 @@ i.e., to assess the *probability* that each category applies.
 The distinction tends to get blurred, in part, because often, even when we only care about hard assignments, we still use models that make soft assignments.
 -->
 
-Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả hai bài toán khác nhau đôi chút:
-(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là cún, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là cún (92%), là gà (1%), là mèo (7%).
-Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường, ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình có khả năng thực hiện các phép gán mềm.
+Thông thường, những người làm về học máy dùng từ *phân loại* để mô tả đôi chút sự khác nhau giữa hai bài toán:
+(i) ta chỉ quan tâm đến việc gán *cứng* một danh mục cho mỗi ví dụ: là chó, là gà, hay là mèo?; và (ii) ta muốn *gán mềm* tất cả các danh mục cho mỗi ví dụ, tức đánh giá *xác suất* một ví dụ rơi vào từng danh mục khả dĩ: là chó (92%), là gà (1%), là mèo (7%).
+Sự khác biệt này thường không rõ ràng, một phần bởi vì thông thường ngay cả khi chúng ta chỉ quan tâm đến việc gán cứng, chúng ta vẫn sử dụng các mô hình thực hiện các phép gán mềm.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -70,10 +70,10 @@ We can represent each pixel value with a single scalar, giving us four features 
 Further, let's assume that each image belongs to one among the categories "cat", "chicken" and "dog".
 -->
 
-Để khởi động, ta hãy bắt đầu với bài toán phân loại hình ảnh đơn giản.
-Ở đây, mỗi đầu vào bao gồm một ảnh xám $2\times2$.
+Hãy khởi động với một bài toán phân loại hình ảnh đơn giản.
+Ở đây, mỗi đầu vào là một ảnh xám có kích thước $2\times2$.
 Bằng cách biểu diễn mỗi giá trị điểm ảnh bởi một số vô hướng, ta thu được bốn đặc trưng $x_1, x_2, x_3, x_4$.
-Hơn nữa, hãy giả rử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
+Hơn nữa, giả sử rằng mỗi hình ảnh đều thuộc về một trong các danh mục "mèo", "gà" và "chó".
 
 <!--
 Next, we have to choose how to represent the labels.
@@ -97,10 +97,10 @@ A one-hot encoding is a vector with as many components as we have categories.
 The component corresponding to particular instance's category is set to 1 and all other components are set to 0.
 -->
 
-Nhưng nhìn chung các bài toán phân loại không có các lớp tuân theo một trật tự tự nhiên nào.
-May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn One-hot*.
-Biểu diễn One-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
-Thành phần tương ứng với từng danh mục cụ thể sẽ được gán là 1 và tất cả các thành phần khác sẽ được gán là 0.
+Nhưng nhìn chung các lớp của bài toán phân loại không tuân theo một trật tự tự nhiên nào.
+May mắn thay, các nhà thông kê từ lâu đã tìm ra một cách đơn giản để có thể biểu diễn dữ liệu danh mục: *biểu diễn one-hot*.
+Biểu diễn one-hot là một vector với số lượng thành phần bằng số danh mục mà ta có.
+Thành phần tương ứng với từng danh mục cụ thể sẽ được gán giá trị 1 và tất cả các thành phần khác sẽ được gán giá trị 0.
 
 $$y \in \{(1, 0, 0), (0, 1, 0), (0, 0, 1)\}.$$
 
@@ -133,8 +133,8 @@ In our case, since we have 4 features and 3 possible output categories, we will 
 We compute these three *logits*, $o_1, o_2$, and $o_3$, for each input:
 -->
 
-Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra, với một đầu ra cho mỗi lớp.
-Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính nhiều như số đầu ra.
+Để tính xác suất có điều kiện ứng với mỗi lớp, chúng ta cần một mô hình có nhiều đầu ra với một đầu ra cho mỗi lớp.
+Để phân loại với các mô hình tuyến tính, chúng ta cần số hàm tuyến tính tương đương số đầu ra.
 Mỗi đầu ra sẽ tương ứng với hàm tuyến tính của chính nó.
 Trong trường hợp này, vì có 4 đặc trưng và 3 đầu ra, chúng ta sẽ cần 12 số vô hướng để thể hiện các trọng số, ($w$ với các chỉ số dưới) và 3 số vô hướng để thể hiện các hệ số điều chỉnh ($b$ với các chỉ số dưới).
 Chúng ta sẽ tính ba *logits*, $o_1, o_2$, và $o_3$, cho mỗi đầu vào:
@@ -154,7 +154,7 @@ And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all 
 the output layer of softmax regression can also be described as fully-connected layer.
 -->
 
-Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong :numref:`fig_softmaxreg`.
 Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
 Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
@@ -213,11 +213,11 @@ Moreover, depending on the inputs, they can take negative values.
 These violate basic axioms of probability presented in :numref:`sec_prob`
 -->
 
-Bạn có thể muốn đề xuất rằng ta có thể lấy trực tiếp logit $o$ làm đầu ra để tiến hành dự đoán.
-Tuy nhiên, tại đây ta có một vài vấn đề khi lấy kết quả trực tiếp của tầng tuyến tính như một kết quả cho xác suất.
-Bởi vì, không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
+Bạn có thể muốn đề xuất rằng ta lấy trực tiếp logit $o$ làm đầu ra mong muốn.
+Tuy nhiên, sẽ có vấn đề khi coi kết qủa trả về trực tiếp từ tầng tuyến tính như là các giá trị xác suất.
+Lý do là không có bất cứ điều kiện nào để ràng buộc tổng của những con số này bằng $1$.
 Hơn nữa, tùy thuộc vào đầu vào mà ta có thể nhận được giá trị âm.
-Các điều kể trên đã vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`
+Các lý do trên khiến kết quả của tầng tuyến tính vi phạm vào các tiên đề cơ bản của xác xuất đã được nhắc đến trong :numref:`sec_prob`.
 
 <!--
 To interpret our outputs as probabilities, we must guarantee that (even on new data), they will be nonnegative and sum up to 1.
@@ -237,11 +237,11 @@ To transform our logits such that they become nonnegative and sum to $1$, while 
 we first exponentiate each logit (ensuring non-negativity) and then divide by their sum (ensuring that they sum to $1$).
 -->
 
-*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce trong nhánh *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
+*Hàm softmax*, được phát minh vào năm 1959 bởi nhà khoa học xã hội R Duncan Luce với chủ đề *mô hình lựa chọn*, thỏa mãn chính xác những điều trên.
 Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
-\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{where}\quad
+\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{tại}\quad
 \hat{y}_i = \frac{\exp(o_i)}{\sum_j \exp(o_j)}.
 $$
 
@@ -290,7 +290,7 @@ Then the minibatch features $\mathbf{X}$ are in $\mathbb{R}^{n \times d}$, weigh
 -->
 
 Để cải thiện hiệu suất tính toán và tận dụng GPU, ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
-Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích cỡ batch là $n$.
+Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích thước batch là $n$.
 Thêm vào đó, chúng ta có $q$ lớp đầu ra.
 Như vậy, minibatch đặc trưng $\mathbf{X}$ sẽ thuộc $\mathbb{R}^{n \times d}$, trọng số $\mathbf{W} \in \mathbb{R}^{d \times q}$, và độ chệch sẽ thỏa mãn $\mathbf{b} \in \mathbb{R}^q$.
 
@@ -307,14 +307,13 @@ The softmax itself can be computed by exponentiating all entries in $\mathbf{O}$
 -->
 
 Việc tăng tốc diễn ra chủ yếu tại tích ma trận - ma trận $\mathbf{W} \mathbf{X}$ so với tích ma trận - vector nếu chúng ta xử lý từng mẫu một.
-Bản thân softmax có thể được tính bằng lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
+Bản thân softmax có thể được tính bằng cách lũy thừa tất cả các mục trong $\mathbf{O}$ và sau đó chuẩn hóa chúng theo tổng.
 
 <!--
 ## Loss Function
 -->
 
 ## Hàm mất mát
-:label:`section_cross_entropy`
 
 <!--
 Next, we need a *loss function* to measure the quality of our predicted probabilities.
@@ -322,8 +321,8 @@ We will rely on *likelihood maximization*, the very same concept that we encount
 (:numref:`sec_linear_regression`).
 -->
 
-Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng dự đoán xác suất của mình.
-Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp phải khi đưa ra biện minh xác suất cho mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
+Tiếp theo, chúng ta cần một *hàm mất mát* để đánh giá chất lượng các dự đoán xác suất.
+Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự đã gặp khi đưa ra lý giải xác suất cho hàm mục tiêu bình phương nhỏ nhất trong hồi quy tuyến tính (:numref:`sec_linear_regression`).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -333,7 +332,7 @@ Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự �
 ### Log-Likelihood
 -->
 
-### Log hợp lý (Log-likelihood)
+### Log hợp lý
 
 <!--
 The softmax function gives us a vector $\hat{\mathbf{y}}$, which we can interpret as estimated conditional probabilities of each class given the input $x$, 
@@ -341,13 +340,13 @@ e.g., $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 We can compare the estimates with reality by checking how probable the *actual* classes are according to our model, given the features.
 -->
 
-Hàm softmax cho chúng ta một vector $\hat{\mathbf{y}}$, có thể được hiểu như các xác suất có điểu kiện của từng lớp biết đầu vào là $x$.
+Hàm softmax cho chúng ta một vector $\hat{\mathbf{y}}$, có thể được hiểu như các xác suất có điểu kiện của từng lớp với đầu vào $x$.
 Ví dụ: $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 Để biết các ước lượng có sát với thực tế hay không, ta kiểm tra xác suất mà mô hình gán cho lớp *thật sự* khi biết các đặc trưng.
 
 $$
 P(Y \mid X) = \prod_{i=1}^n P(y^{(i)} \mid x^{(i)})
-\text{ and thus }
+\text{ và vì vậy }
 -\log P(Y \mid X) = \sum_{i=1}^n -\log P(y^{(i)} \mid x^{(i)}).
 $$
 
@@ -358,7 +357,7 @@ This yields the loss function (we dropped the superscript $(i)$ to avoid notatio
 -->
 
 Cực đại hoá $P(Y \mid X)$ (và vì vậy tương đương với cực tiểu hóa $-\log P(Y \mid X)$) giúp việc dự đoán nhãn tốt hơn.
-Điều này dẫn đến hàm mất mát (chúng tôi lược bỏ chỉ số trên $(i)$ để tránh sự rối rắm về kí hiệu):
+Điều này dẫn đến hàm mất mát (chúng tôi lược bỏ chỉ số trên $(i)$ để tránh sự nhập nhằng về kí hiệu):
 
 $$
 l = -\log P(y \mid x) = - \sum_j y_j \log \hat{y}_j.
@@ -374,9 +373,9 @@ Note that this is often not possible.
 For example, there might be label noise in the dataset (some examples may be mislabeled).
 It may also not be possible when the input features are not sufficiently informative to classify every example perfectly.
 -->
-Bởi vì những lí do sẽ được giải thích trong chốc lát, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
+Bởi vì những lý do sẽ được giải thích sau đây, hàm mất mát này thường được gọi là mất mát *entropy chéo*.
 Ở đây, chúng ta đã sử dụng nó bằng cách xây dựng $\hat{y}$ giống như một phân phối xác suất rời rạc và vector $\mathbf{y}$ là một vector one-hot.
-Vì thế, tổng các số hạng với chỉ số $j$ sẽ biến mất ngoại trừ duy nhất một số hạng.
+Do đó, tổng các số hạng với chỉ số $j$ sẽ tiêu biến tạo thành một giá trị duy nhất.
 Bởi mọi $\hat{y}_j$ đều là xác suất, log của chúng không bao giờ lớn hơn $0$.
 Vì vậy, hàm mất mát sẽ không thể giảm thêm được nữa nếu chúng ta dự đoán chính xác $y$ với *độ chắc chắn tuyệt đối*, tức $P(y \mid x) = 1$ cho nhãn đúng.
 Chú ý rằng điều này thường không khả thi.
@@ -403,7 +402,7 @@ Plugging $o$ into the definition of the loss $l$ and using the definition of the
 -->
 
 Vì softmax và hàm mất mát softmax rất phổ biến, nên việc hiểu cách tính giá trị các hàm này sẽ có ích về sau.
-Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được:
+Thay $o$ vào định nghĩa của hàm mất mát $l$ và dùng định nghĩa của softmax, ta được: 
 
 $$
 l = -\sum_j y_j \log \hat{y}_j = \sum_j y_j \log \sum_k \exp(o_k) - \sum_j y_j o_j
@@ -414,7 +413,7 @@ $$
 To understand a bit better what is going on, consider the derivative with respect to $o$. We get
 -->
 
-Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có:
+Để hiểu rõ hơn, hãy cùng xét đạo hàm riêng của $l$ theo $o$. Ta có: 
 
 $$
 \partial_{o_j} l = \frac{\exp(o_j)}{\sum_k \exp(o_k)} - y_j = \mathrm{softmax}(\mathbf{o})_j - y_j = P(y = j \mid x) - y_j.
@@ -427,11 +426,10 @@ In any [exponential family](https://en.wikipedia.org/wiki/Exponential_family) mo
 This fact makes computing gradients easy in practice.
 -->
 
-Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$.
-Điều này cũng khá giống như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$.
-Điều này không phải ngẫu nhiên.
-Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này.
-Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn.
+Nói cách khác, gradient chính là hiệu giữa xác xuất mô hình gán cho lớp đúng $P(y \mid x)$, và nhãn của dữ liệu $y$. 
+Điều này cũng tương tự như trong bài toán hồi quy, khi gradient là hiệu giữa dữ liệu quan sát được $y$ và kết quả ước lượng $\hat{y}$. Đây không phải là ngẫu nhiên. 
+Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponential_family), gradient của hàm log hợp lý đều có dạng như thế này. 
+Điều này giúp cho việc tính toán gradient trong thực tế trở nên dễ dàng hơn. 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -441,7 +439,7 @@ Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponenti
 ### Cross-Entropy Loss
 -->
 
-### Hàm mất mát Entropy Chéo
+### Hàm mất mát Entropy chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -451,11 +449,11 @@ The math that we used previously to define the loss $l$ still works out fine, ju
 It is the expected value of the loss for a distribution over labels.
 -->
 
-Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất.
-Ta có thể biểu diễn $y$ giống hệt như trước.
-Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$.
-Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây, chẳng qua ý tưởng của nó bây giờ khái quát hơn một chút.
-Nó là giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn.
+Giờ hãy xem xét trường hợp mà ta quan sát được toàn bộ phân phối của đầu ra thay vì chỉ một giá trị đầu ra duy nhất. 
+Ta có thể biểu diễn $y$ giống hệt như trước. 
+Sự khác biệt duy nhất là thay vì có một vector chỉ chứa các phần tử nhị phân, giả sử như $(0, 0, 1)$, giờ ta có một vector xác suất tổng quát, ví dụ như $(0.1, 0.2, 0.7)$. 
+Các công thức toán học ta dùng trước đó để định nghĩa hàm mất mát $l$ vẫn áp dụng tốt ở đây nhưng khái quát hơn một chút. 
+Giá trị của các phần tử trong vector tương ứng giá trị kỳ vọng của hàm mất mát trên phân phối của nhãn. 
 
 $$
 l(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_j y_j \log \hat{y}_j.
@@ -466,8 +464,8 @@ This loss is called the cross-entropy loss and it is one of the most commonly us
 We can demystify the name by introducing the basics of information theory.
 -->
 
-Hàm mất mát này đuợc gọi là hàm mát mát entropy chéo và nó là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp.
-Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin.
+Hàm trên được gọi là hàm mát mát entropy chéo và là một trong những hàm mất mát phổ biến nhất dùng cho bài toán phân loại đa lớp. 
+Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệu các kiến thức cơ bản trong lý thuyết thông tin. 
 
 <!--
 ## Information Theory Basics
@@ -479,7 +477,7 @@ Ta có thể làm sáng tỏ cái tên entropy chéo bằng việc giới thiệ
 Information theory deals with the problem of encoding, decoding, transmitting and manipulating information (also known as data) in as concise form as possible.
 -->
 
-Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng súc tích nhất có thể.
+Lý thuyết thông tin giải quyết các bài toán mã hóa, giải mã, truyền tải và xử lý thông tin (hay còn được gọi là dữ liệu) dưới dạng ngắn gọn nhất có thể. 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
@@ -496,9 +494,9 @@ This quantity places a hard limit on our ability to compress the data.
 In information theory, this quantity is called the [entropy](https://en.wikipedia.org/wiki/Entropy) of a distribution $p$, and it is captured by the following equation:
 -->
 
-Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu.
-Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng cô đọng dữ liệu của chúng ta (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin).
-Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây:
+Ý tưởng cốt lõi trong lý thuyết thông tin chính là việc định lượng lượng thông tin chứa trong dữ liệu. 
+Giá trị định lượng này chỉ ra giới hạn tối đa cho khả năng nén dữ liệu (khi tìm biểu diễn ngắn gọn nhất mà không mất thông tin). 
+Giá trị định lượng này gọi là [entropy](https://en.wikipedia.org/wiki/Entropy), xác định trên phân phối $p$ của bộ dữ liệu, được định nghĩa bằng phương trình dưới đây: 
 
 $$
 H[p] = \sum_j - p(j) \log p(j).
@@ -511,16 +509,16 @@ One nat is $\frac{1}{\log(2)} \approx 1.44$ bit.
 $H[p] / 2$ is often also called the binary entropy.
 -->
 
-Một định lý căn bản của lý thuyết thông tin là để có thể biểu diễn dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat".
-"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2.
-Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit.
-$H[p] / 2$ thường được gọi là entropy nhị phân.
+Một định lý căn bản của lý thuyết thông tin là để có thể mã hóa dữ liệu thu thập ngẫu nhiên từ phân phối $p$, chúng ta cần sử dụng ít nhất $H[p]$ "nat". 
+"nat" là đơn vị biểu diễn dữ liệu sử dụng cơ số $e$, tương tự với bit biểu diễn dữ liệu sử dụng cơ số 2. 
+Một nat bằng $\frac{1}{\log(2)} \approx 1.44$ bit. 
+$H[p] / 2$ thường được gọi là entropy nhị phân. 
 
 <!--
 ### Surprisal
 -->
 
-### Tự lượng thông tin
+### Lượng tin
 
 <!--
 You might be wondering what compression has to do with prediction.
@@ -533,13 +531,13 @@ Because they are always the same, we do not have to transmit any information to 
 Easy to predict, easy to compress.
 -->
 
-Có lẽ bạn sẽ tự hỏi việc cô đọng dữ liệu thì liên quan gì với việc đưa ra dự đoán?
-Hãy tưởng tượng chúng ta có một dòng chảy (stream) dữ liệu mà ta muốn nén lại.
-Nếu chúng ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén!
-Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt!
-Không những tẻ nhạt, mà nó còn dễ đoán nữa.
-Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này.
-Dễ đoán thì cũng dễ nén là vậy.
+Có lẽ bạn sẽ tự hỏi việc nén dữ liệu thì liên quan gì với việc đưa ra dự đoán? 
+Hãy tưởng tượng chúng ta có một luồng (stream) dữ liệu cần nén. 
+Nếu ta luôn có thể dễ dàng đoán được đơn vị dữ liệu (token) kế tiếp thì dữ liệu này rất dễ nén! 
+Ví như tất cả các đơn vị dữ liệu trong dòng dữ liệu luôn có một giá trị cố định thì đây là một dòng dữ liệu tẻ nhạt! 
+Không những tẻ nhạt, mà nó còn dễ đoán nữa. 
+Bởi vì chúng luôn có cùng giá trị, ta sẽ không phải truyền bất cứ thông tin nào để trao đổi nội dung của dòng dữ liệu này. 
+Dễ đoán thì cũng dễ nén là vậy. 
 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
@@ -556,11 +554,11 @@ The entropy of the data is then the least surprised that one can ever be (in exp
 -->
 
 Tuy nhiên, nếu ta không thể dự đoán một cách hoàn hảo cho mỗi sự kiện, thì thi thoảng ta sẽ thấy ngạc nhiên. 
-Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện.
-Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục,
-Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ được gán cho một xác suất (chủ quan) $p(j)$. 
-Entropy sau đó là *ngạc nhiên kỳ vọng* khi ai đó gán xác suất chính xác (mà thực sự khớp với quá trình sinh dữ liệu).
-Entropy của dữ liệu sau đó là điều ít ngạc nhiên nhất mà nó có thể trở thành (trong kỳ vọng).
+Sự ngạc nhiên trong chúng ta sẽ lớn hơn khi ta gán một xác suất thấp hơn cho sự kiện. 
+Vì nhiều lý do mà chúng ta sẽ nghiên cứu trong phần phụ lục, 
+Claude Shannon đã đưa ra giải pháp $\log(1/p(j)) = -\log p(j)$ để định lượng *sự ngạc nhiên* của một người lúc quan sát sự kiện $j$ sau khi đã gán cho sự kiện đó một xác suất (chủ quan) $p(j)$.
+Entropy lúc này sẽ là *lượng tin (độ ngạc nhiên) kỳ vọng* khi mà xác suất của các sự kiện đó được gán chính xác, khớp với phân phối sinh dữ liệu. 
+Nói cách khác, entropy là lượng thông tin hay mức độ ngạc nhiên tối thiểu mà dữ liệu sẽ đem lại theo kỳ vọng. 
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -581,26 +579,26 @@ Relating this back to our classification objective, even if we get the best poss
 Our loss is lower-bounded by the entropy given by the actual conditional distributions $P(\mathbf{y} \mid \mathbf{x})$.
 -->
 
-Vậy, nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thế thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
-Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với việc nhìn thấy dữ liệu mà đã được thật sự sinh ra dựa trên các xác suất $p$.
+Nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
+Entropy chéo *từ* $p$ *đến* $q$, ký hiệu $H(p, q)$, là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với dữ liệu sinh ra dựa trên các xác suất $p$.
 Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
 Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
 Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi ta có khả năng dự đoán tốt nhất có thể và cho rằng việc này là khả thi, thì ta sẽ không bao giờ đạt đến mức hoàn hảo.
-Mất mát của ta bị cận dưới bởi entropy được cho bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
+Mất mát của ta bị giới hạn dưới (*lower-bounded*) bởi entropy tạo bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
 -->
 
-### Phân kì Kullback Leibler
+### Phân kỳ Kullback Leibler
 
 <!--
 Perhaps the most common way to measure the distance between two distributions is to calculate the *Kullback Leibler divergence* $D(p\|q)$.
 This is simply the difference between the cross-entropy and the entropy, i.e., the additional cross-entropy incurred over the irreducible minimum value it could take:
 -->
 
-Có lẽ cách thông thường nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kì Kullback Leibler* $D(p\|q)$.
-Phân kì Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
+Có lẽ cách thông dụng nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kỳ Kullback Leibler* $D(p\|q)$.
+Phân kỳ Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
 
 $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
@@ -640,7 +638,7 @@ In the next part of the experiment, we will use accuracy to evaluate the model�
 This is equal to the ratio between the number of correct predictions a nd the total number of predictions.
 -->
 
-Sau khi huấn luyện mô hình hồi quy softmax, với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
+Sau khi huấn luyện mô hình hồi quy softmax với các đặc trưng đầu vào bất kì, chúng ta có thể dự đoán xác suất đầu ra ứng với mỗi lớp. 
 Thông thường, chúng ta sử dụng lớp với xác suất dự đoán cao nhất làm lớp đầu ra. 
 Một dự đoán được xem là chính xác nếu nó trùng khớp hay tương thích với lớp thật sự (nhãn).
 Ở phần tiếp theo của thí nghiệm, chúng ta sẽ sử dụng độ chính xác để đánh giá chất lượng của mô hình. 
@@ -727,40 +725,18 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 2 -->
+* Nguyễn Lê Quang Nhật
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
-*Bùi Nhật Quân
-
-<!-- Phần 4 -->
-* Lý Phi Long
-
-<!-- Phần 5 -->
+* Bùi Nhật Quân
 * Nguyễn Minh Thư
-
-<!-- Phần 6 -->
 * Trần Kiến An
-
-<!-- Phần 7 -->
-* Lý Phi Long
-
-<!-- Phần 8 -->
-* Lý Phi Long
-
-<!-- Phần 9 -->
 * Vũ Hữu Tiệp
 * Dương Nhật Tân
 * Nguyễn Văn Tâm
-
-<!-- Phần 10 -->
 * Trần Yến Thy
-
-<!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
-
+* Nguyễn Cảnh Thướng
+* Phạm Minh Đức

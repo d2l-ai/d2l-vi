@@ -5,7 +5,7 @@
 # Weight Decay
 -->
 
-# *dịch tiêu đề phía trên*
+# Phân rã trọng số
 :label:`sec_weight_decay`
 
 <!--
@@ -14,7 +14,9 @@ Recall that we can always mitigate overfitting by going out and collecting more 
 For now, we can assume that we already have as much high-quality data as our resources permit and focus on regularization techniques.
 -->
 
-*dịch đoạn phía trên*
+Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật chuẩn trong việc điều chuẩn mô hình.
+Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, nên trong ngắn hạn, nó là bất khả thi.
+Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhiều nhất có thể và tập trung vào các kỹ thuật điều chuẩn.
 
 <!--
 Recall that in our example polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
@@ -26,7 +28,13 @@ The degree of a monomial is the sum of the powers.
 For example, $x_1^2 x_2$, and $x_3 x_5^2$ are both monomials of degree $3$.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
+Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
+Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mạnh tay.
+Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
+Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến.
+Bậc của một đơn thức là tổng của các số mũ.
+Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
 
 <!--
 Note that the number of terms with degree $d$ blows up rapidly as $d$ grows larger.
@@ -35,7 +43,10 @@ Even small changes in degree, say, from $2$ to $3$ dramatically increase the com
 Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng.
+Cho $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
+Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt.
+Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -127,13 +138,16 @@ In practice, this might make them more robust to measurement error in a single v
 By contrast, L1 penalties lead to models that concentrate weight on a small set of features, which may be desirable for other reasons.
 -->
 
-*dịch đoạn phía trên*
+Một lý do để sử dụng chuẩn L2 là vì nó phạt rất nặng những thành phần lớn của vector trọng số.
+Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng.
+Trong thực tế, điều này có thể giúp làm giảm ảnh hưởng do lỗi đo lường của từng biến đơn lẻ.
+Ngược lại, các hình phạt của L1 hướng đến các mô hình mà trọng số chỉ tập trung vào một số lượng nhỏ các đặc trưng, và ta có thể muốn điều này vì một vài lý do khác. 
 
 <!--
 The stochastic gradient descent updates for L2-regularized regression follow:
 -->
 
-*dịch đoạn phía trên*
+Việc cập nhật hạ gradient ngẫu nhiên cho hồi quy được chuẩn hóa L2 được tiến hành như sau:
 
 $$
 \begin{aligned}
@@ -151,7 +165,14 @@ Whether we include a corresponding bias penalty $b^2$ can vary across implementa
 Often, we do not regularize the bias term of a network's output layer.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được.
+Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
+Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *phân rã* trọng số ở từng bước huấn luyện.
+Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
+Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể.
+Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
+Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
+
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -161,20 +182,23 @@ Often, we do not regularize the bias term of a network's output layer.
 ## High-Dimensional Linear Regression
 -->
 
-## *dịch tiêu đề phía trên*
+## Hồi quy Tuyến tính nhiều chiều
 
 <!--
 We can illustrate the benefits of weight decay over feature selection through a simple synthetic example.
 First, we generate some data as before
 -->
 
-*dịch đoạn phía trên*
+Ta có thể minh họa các ưu điểm của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu giả.
+Đầu tiên, ta tạo ra dữ liệu giống như trước đây
 
+<!--
 $$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ where }
 \epsilon \sim \mathcal{N}(0, 0.01).$$
 -->
 
-*dịch đoạn phía trên*
+$$y = 0.05 + \sum_{i = 1}^d 0.01 x_i + \epsilon \text{ với }
+\epsilon \sim \mathcal{N}(0, 0.01).$$
 
 <!--
 choosing our label to be a linear function of our inputs, corrupted by Gaussian noise with zero mean and variance 0.01.
@@ -182,7 +206,8 @@ To make the effects of overfitting pronounced, we can increase the dimensinoalit
 and work with a small training set containing only 20 example.
 -->
 
-*dịch đoạn phía trên*
+lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01.
+Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.
 
 ```{.python .input  n=2}
 %matplotlib inline
@@ -474,13 +499,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 *

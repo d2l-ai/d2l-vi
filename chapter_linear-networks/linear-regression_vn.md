@@ -98,7 +98,7 @@ The linearity assumption just says that the target (price) can be expressed as a
 
 Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời} + b.$$
+$$\mathrm{giá nhà} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời}} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -261,7 +261,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *Nghiệm theo công thức*
+### Nghiệm theo Công thức
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
@@ -669,7 +669,7 @@ One way to motivate linear regression with the mean squared error loss function 
 
 Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt nguồn từ những quan sát nhiễu, và giá trị nhiễu này tuân theo phân phối chuẩn như sau: 
 
-$$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ where } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
+$$y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ tại } \epsilon \sim \mathcal{N}(0, \sigma^2).$$
 
 <!--
 Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
@@ -804,7 +804,7 @@ and the *axon terminals* (output terminals), enabling connections to other neuro
 
 Vì hồi quy tuyến tính (được phát minh vào năm 1795) được phát triển trước ngành khoa học thần kinh tính toán, nên việc mô tả hồi quy tuyến tính như một mạng nơ-ron có vẻ hơi ngược thời.
 Để hiểu tại sao nhà nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts tìm đến các mô hình tuyến tính để làm điểm khởi đầu nghiên cứu và phát triển các mô hình nơ-ron nhân tạo, hãy xem ảnh của một nơ-ron sinh học tại :numref:`fig_Neuron`.
-Mô hình này bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*. <!-- cho mình phàn nàn một phát nữa về thói thích tỏ ra nguy hiểm của mấy bác tác giả Tàu. Không phải native speakers thì cứ viết đơn giản cho dễ hiểu, cứ đao to búa lớn lên rồi ngữ pháp loạn lên cả, người đọc toàn phải cố hiểu -->
+Mô hình này bao gồm *sợi nhánh* (cổng đầu vào), *nhân tế bào* (bộ xử lý trung tâm), *sợi trục* (dây đầu ra), và *đầu cuối sợi trục* (cổng đầu ra), cho phép kết nối với các tế bào thần kinh khác thông qua *synapses*.
 
 <!--
 ![The real neuron](../img/Neuron.svg)
@@ -856,7 +856,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 ## Summary
 -->
 
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Key ingredients in a machine learning model are training data, a loss function, an optimization algorithm, and quite obviously, the model itself.
@@ -897,8 +897,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$.
-Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
+1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
 2. Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.
@@ -938,67 +937,20 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Phạm Ngọc Bảo Anh
-<!-- Phần 3 -->
 * Nguyễn Văn Tâm
-* Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Nguyễn Phan Hùng Thuận
 * Vũ Hữu Tiệp
-* Đoàn Võ Duy Thanh
-* Phạm Hồng Vinh
-
-<!-- Phần 5 -->
 * Tạ H. Duy Nguyên
-
-<!-- Phần 6 -->
 * Bùi Nhật Quân
-
-<!-- Phần 7 -->
 * Lê Gia Thiên Bửu
-
-<!-- Phần 8 -->
 * Lý Phi Long
-
-<!-- Phần 9 -->
 * Nguyễn Minh Thư
-
-<!-- Phần 10 -->
 * Tạ Đức Huy
-* Phạm Hồng Vinh
-
-<!-- Phần 11 -->
 * Minh Trí Nguyễn
-* Đoàn Võ Duy Thanh
-* Vũ Hữu Tiệp
-* Phạm Hồng Vinh
-
-<!-- Phần 12 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 13 -->
 * Nguyễn Quang Hải
-
-<!-- Phần 14 -->
-* Nguyễn Văn Tâm
-
-<!-- Phần 15 -->
-*
-
-<!-- Phần 16 -->
-* Nguyễn Phan Hùng Thuận
-* Phạm Hồng Vinh
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 17 -->
-* Nguyễn Văn Tâm
-
-<!-- Phần 18 -->
-* Bùi Nhật Quân
+* Lê Thành Vinh
