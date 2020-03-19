@@ -251,14 +251,14 @@ In this example, we’ll implement an MLP with two hidden layers and one output 
 ### Vectorization and Minibatch
 -->
 
-### Vector hoá và Batch nhỏ
+### Vector hoá và Minibatch
 
 <!--
 As before, by the matrix $\mathbf{X}$, we denote a minibatch of inputs.
 The calculations to produce outputs from an MLP with two hidden layers can thus be expressed:
 -->
 
-Giống như trước, chúng tôi dùng ma trận $\mathbf{X}$ để ký hiệu một batch nhỏ các giá trị đầu vào.
+Giống như trước, chúng ta dùng ma trận $\mathbf{X}$ để ký hiệu một minibatch các giá trị đầu vào.
 Các phép tính toán dẫn đến các giá trị đầu ra từ một MLP với hai tầng ẩn khi đó có thể được biểu diễn như sau:
 
 $$
@@ -277,8 +277,8 @@ That means that after computing the linear portion of the layer, we can calculat
 This is true for most activation functions (the batch normalization operation will be introduced in :numref:`sec_batch_norm` is a notable exception to that rule).
 -->
 
-Khác với các quy ước thông thường, chúng tôi định nghĩa phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng dòng, tức là mỗi một điểm dữ liệu quan sát được tại một thời điểm.
-Cần chú ý rằng chúng tôi cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng dòng.
+Khác với các quy ước thông thường, chúng ta định nghĩa hàm phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng hàng, tức lần lượt từng điểm dữ liệu một.
+Cần chú ý rằng ta cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng dòng.
 Thông thường, như trong mục này, các hàm kích hoạt mà chúng ta áp dụng vào tầng ẩn không chỉ đơn thuần theo từng dòng mà còn theo từng phần.
 Điều đó có nghĩa là sau khi tính toán các phần tuyến tính của tầng, chúng ta có thể tính kích hoạt cho từng nút mà không cần quan tâm đến giá trị của các nút còn lại.
 Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá batch sẽ được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
@@ -294,7 +294,7 @@ npx.set_np()
 ## Activation Functions
 -->
 
-## Các hàm kích hoạt
+## Các hàm Kích hoạt
 
 <!--
 Activation functions decide whether a neuron should be activated or not by calculating the weighted sum and further adding bias with it.
