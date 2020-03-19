@@ -98,7 +98,7 @@ The linearity assumption just says that the target (price) can be expressed as a
 
 Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
 
-$$\mathrm{price} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời}} + b.$$
+$$\mathrm{giá nhà} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời}} + b.$$
 
 <!--
 Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
@@ -261,7 +261,7 @@ $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).
 ### Analytic Solution
 -->
 
-### *Nghiệm theo Công thức*
+### Nghiệm theo Công thức
 
 <!--
 Linear regression happens to be an unusually simple optimization problem.
