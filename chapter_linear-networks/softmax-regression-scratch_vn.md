@@ -29,7 +29,7 @@ npx.set_np()
 We will work with the Fashion-MNIST dataset, just introduced in :numref:`sec_fashion_mnist`, setting up an iterator with batch size $256$.
 -->
 
-Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong : numref:`sec_fashion_mnist`, thiết lập một iterator với kích thước batch là $256$.
+Ta sẽ làm việc trên tập dữ liệu Fashion-MNIST, vừa được giới thiệu trong :numref:`sec_fashion_mnist`, thiết lập một iterator với kích thước batch là $256$.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -388,7 +388,7 @@ It can be either a wrapper of `d2l.sgd` or a Gluon trainer.
 Vòng lặp huấn luyện cho hồi quy softmax trông khá quen thuộc nếu bạn đã xem cách lập trình cho hồi quy tuyến tính tại :numref:`sec_linear_scratch`. 
 Ở đây, chúng ta tái cấu trúc (*refactor*) lại đoạn mã để sau này có thể tái sử dụng. 
 Đầu tiên, chúng ta định nghĩa một hàm để huấn luyện với một epoch dữ liệu. 
-Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích cỡ batch làm đối số. 
+Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tham số của mô hình và sẽ nhận kích thước batch làm đối số. 
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
@@ -462,7 +462,7 @@ class Animator(object):
 The training function then runs multiple epochs and visualize the training progress.
 -->
 
-Hàm huấn luyện sau đó sẽ chạy qua nhiều epochs và trực quan hoá quá trình huấn luyện. 
+Hàm huấn luyện sau đó sẽ chạy qua nhiều epoch và trực quan hoá quá trình huấn luyện. 
 
 ```{.python .input  n=17}
 # Saved in the d2l package for later use

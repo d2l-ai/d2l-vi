@@ -347,9 +347,9 @@ so that the magnitude of a typical step size does not depend heavily on our choi
 Sử dụng một batch được lấy ngẫu nhiên từ tập dữ liệu tại mỗi bước, chúng ta sẽ ước tính được gradient của mất mát theo các tham số.
 Tiếp đó, ta sẽ cập nhật các tham số (với một lượng nhỏ) theo chiều hướng làm giảm sự mất mát.
 Nhớ lại từ :numref:`sec_autograd` rằng sau khi chúng ta gọi `backward`, mỗi tham số (`param`) sẽ có gradient của nó lưu ở `param.grad`.
-Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích cỡ batch.
-Kích cỡ của bước cập nhật được xác định bởi tốc độ học `lr`.
-Bởi vì các mất mát được tính dựa trên tổng các mẫu của batch, ta chuẩn hóa kích cỡ bước cập nhật theo kích cỡ của batch (`batch_size`), sao cho độ lớn của một bước cập nhật thông thường không phụ thuộc nhiều vào kích cỡ batch.
+Đoạn mã sau áp dụng cho việc cập nhật SGD, đưa ra một bộ các tham số, tốc độ học và kích thước batch.
+Kích thước của bước cập nhật được xác định bởi tốc độ học `lr`.
+Bởi vì các mất mát được tính dựa trên tổng các mẫu của batch, ta chuẩn hóa kích thước bước cập nhật theo kích thước batch (`batch_size`), sao cho độ lớn của một bước cập nhật thông thường không phụ thuộc nhiều vào kích thước batch.
 
 
 ```{.python .input  n=11}
@@ -533,7 +533,7 @@ Trong các phần sau, chúng tôi sẽ mô tả các mô hình khác dựa trê
 
 1. Điều gì sẽ xảy ra nếu chúng ta khởi tạo các trọng số $\mathbf{w} = 0$. Liệu thuật toán sẽ vẫn hoạt động chứ?
 2. Giả sử rằng bạn là [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) và bạn đang cố gắng tìm ra một mô hình giữa điện áp và dòng điện. Bạn có thể sử dụng `autograd` để học các tham số cho mô hình của bạn không?
-3. Bạn có thể sử dụng [Luật Planck](https://en.wikipedia.org/wiki/Planck%27s_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
+3. Bạn có thể sử dụng [Luật Planck](https://en.wikipedia.org/wiki/Planck's_law) để xác định nhiệt độ của một vật thể sử dụng mật độ năng lượng quang phổ không?
 4. Những vấn đề gặp phải nếu muốn mở rộng `autograd` đến các đạo hàm bậc hai? Cần sửa lại như thế nào?
 5. Tại sao hàm `reshape` lại cần thiết trong hàm `squared_loss`?
 6. Thử nghiệm các tốc độ học khác nhau để kiểm tra mức độ giảm nhanh của giá trị hàm mất mát giảm.
@@ -566,42 +566,17 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lý Phi Long
 * Vũ Hữu Tiệp
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
 * Nguyễn Văn Tâm
 * Nguyễn Cảnh Thướng
-* Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
 * Nguyễn Lê Quang Nhật
 * Dương Nhật Tân
-* Vũ Hữu Tiệp
-* Phạm Hồng Vinh
-
-<!-- Phần 5 -->
-* Nguyễn Lê Quang Nhật
-* Dương Nhật Tân
-* Phạm Hồng Vinh
-* Vũ  Hữu Tiệp
-
-<!-- Phần 6 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 7 -->
 * Nguyễn Minh Thư
-
-<!-- Phần 8 -->
 * Nguyễn Trường Phát
-
-<!-- Phần 9 -->
 * Đinh Minh Tân
-
-<!-- Phần 10 -->
 * Trần Thị Hồng Hạnh
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Nguyễn Mai Hoàng Long

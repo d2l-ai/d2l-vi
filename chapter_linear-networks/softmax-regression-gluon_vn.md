@@ -28,7 +28,7 @@ npx.set_np()
 Let's stick with the Fashion-MNIST dataset and keep the batch size at $256$ as in the last section.
 -->
 
-Chúng ta sẽ tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích cỡ batch bằng $256$ như ở mục trước.
+Chúng ta sẽ tiếp tục làm việc với bộ dữ liệu Fashion-MNIST và giữ kích thước batch bằng $256$ như ở mục trước.
 
 ```{.python .input  n=2}
 batch_size = 256

@@ -154,7 +154,7 @@ And since the calculation of each output, $o_1, o_2$, and $o_3$, depends on all 
 the output layer of softmax regression can also be described as fully-connected layer.
 -->
 
-Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong : numref:`fig_softmaxreg`.
+Chúng ta có thể mô tả phép tính này với biểu đồ mạng nơ-ron được thể hiện trong :numref:`fig_softmaxreg`.
 Như hồi quy tuyến tính, hồi quy softmax cũng là một mạng nơ-ron đơn tầng.
 Và vì sự tính toán của mỗi đầu ra, $o_1, o_2$, và $o_3$, phụ thuộc vào tất cả đầu vào, $x_1$, $x_2$, $x_3$, và $x_4$, tầng đầu ra của hồi quy softmax cũng có thể được xem như một tầng kết nối đầy đủ.
 
@@ -241,7 +241,7 @@ we first exponentiate each logit (ensuring non-negativity) and then divide by th
 Để biến đổi kết quả logit thành kết quả không âm và có tổng là $1$, trong khi vẫn giữ tính chất khả vi, đầu tiên ta cần lấy hàm mũ cho từng logit (để chắc chắn chúng không âm) và sau đó ta chia cho tổng của chúng (để chắc rằng tổng của chúng luôn bằng 1).
 
 $$
-\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{where}\quad
+\hat{\mathbf{y}} = \mathrm{softmax}(\mathbf{o})\quad \text{tại}\quad
 \hat{y}_i = \frac{\exp(o_i)}{\sum_j \exp(o_j)}.
 $$
 
@@ -290,7 +290,7 @@ Then the minibatch features $\mathbf{X}$ are in $\mathbb{R}^{n \times d}$, weigh
 -->
 
 Để cải thiện hiệu suất tính toán và tận dụng GPU, ta thường phải thực hiện các phép tính vector cho các minibatch dữ liệu.
-Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích cỡ batch là $n$.
+Giả sử, ta có một minibatch $\mathbf{X}$ của mẫu với số chiều $d$ và kích thước batch là $n$.
 Thêm vào đó, chúng ta có $q$ lớp đầu ra.
 Như vậy, minibatch đặc trưng $\mathbf{X}$ sẽ thuộc $\mathbb{R}^{n \times d}$, trọng số $\mathbf{W} \in \mathbb{R}^{d \times q}$, và độ chệch sẽ thỏa mãn $\mathbf{b} \in \mathbb{R}^q$.
 
@@ -332,7 +332,7 @@ Chúng ta sẽ dựa trên *hợp lý cực đại*, khái niệm tương tự �
 ### Log-Likelihood
 -->
 
-### Log hợp lý (Log-likelihood)
+### Log hợp lý
 
 <!--
 The softmax function gives us a vector $\hat{\mathbf{y}}$, which we can interpret as estimated conditional probabilities of each class given the input $x$, 
@@ -346,7 +346,7 @@ Ví dụ: $\hat{y}_1$ = $\hat{P}(y=\mathrm{cat} \mid \mathbf{x})$.
 
 $$
 P(Y \mid X) = \prod_{i=1}^n P(y^{(i)} \mid x^{(i)})
-\text{ and thus }
+\text{ và vì vậy }
 -\log P(Y \mid X) = \sum_{i=1}^n -\log P(y^{(i)} \mid x^{(i)}).
 $$
 
@@ -357,7 +357,7 @@ This yields the loss function (we dropped the superscript $(i)$ to avoid notatio
 -->
 
 Cực đại hoá $P(Y \mid X)$ (và vì vậy tương đương với cực tiểu hóa $-\log P(Y \mid X)$) giúp việc dự đoán nhãn tốt hơn.
-Điều này dẫn đến hàm mất mát (chúng tôi lược bỏ chỉ số trên $(i)$ để tránh sự rối rắm về kí hiệu):
+Điều này dẫn đến hàm mất mát (chúng tôi lược bỏ chỉ số trên $(i)$ để tránh sự nhập nhằng về kí hiệu):
 
 $$
 l = -\log P(y \mid x) = - \sum_j y_j \log \hat{y}_j.
@@ -439,7 +439,7 @@ Trong mọi mô hình [họ lũy thừa](https://en.wikipedia.org/wiki/Exponenti
 ### Cross-Entropy Loss
 -->
 
-### Hàm mất mát Entropy Chéo
+### Hàm mất mát Entropy chéo
 
 <!--
 Now consider the case where we observe not just a single outcome but an entire distribution over outcomes.
@@ -580,11 +580,11 @@ Our loss is lower-bounded by the entropy given by the actual conditional distrib
 -->
 
 Nếu entropy là mức độ ngạc nhiên trải nghiệm bởi một người nắm rõ xác suất thật, thì bạn có thể băn khoăn rằng *entropy chéo là gì?*
-Entropy chéo *từ $p$ đến $q$*, ký hiệu H(p, q), là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với dữ liệu sinh ra dựa trên các xác suất $p$.
+Entropy chéo *từ* $p$ *đến* $q$, ký hiệu $H(p, q)$, là sự ngạc nhiên kỳ vọng của một người quan sát với các xác suất chủ quan $q$ đối với dữ liệu sinh ra dựa trên các xác suất $p$.
 Giá trị entropy chéo thấp nhất có thể đạt được khi $p = q$.
 Trong trường hợp này, entropy chéo từ $p$ đến $q$ là $H(p, p) = H(p)$.
 Liên hệ điều này lại với mục tiêu phân loại của chúng ta, thậm chí khi ta có khả năng dự đoán tốt nhất có thể và cho rằng việc này là khả thi, thì ta sẽ không bao giờ đạt đến mức hoàn hảo.
-Mất mát của ta bị giới hạn dưới (_lower-bounded_) bởi entropy tạo bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
+Mất mát của ta bị giới hạn dưới (*lower-bounded*) bởi entropy tạo bởi các phân phối thực tế có điều kiện $P(\mathbf{y} \mid \mathbf{x})$.
 
 <!--
 ### Kullback Leibler Divergence
@@ -725,46 +725,18 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Thị Hồng Hạnh
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 3 -->
-*Bùi Nhật Quân
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 4 -->
-* Lý Phi Long
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 5 -->
+* Bùi Nhật Quân
 * Nguyễn Minh Thư
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 6 -->
 * Trần Kiến An
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 7 -->
-* Lý Phi Long
-
-<!-- Phần 8 -->
-* Lý Phi Long
-
-<!-- Phần 9 -->
 * Vũ Hữu Tiệp
 * Dương Nhật Tân
 * Nguyễn Văn Tâm
-
-<!-- Phần 10 -->
 * Trần Yến Thy
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 11 -->
 * Đinh Minh Tân
 * Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng
+* Phạm Minh Đức
