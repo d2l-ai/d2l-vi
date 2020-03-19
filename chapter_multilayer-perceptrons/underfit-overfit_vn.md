@@ -389,7 +389,7 @@ Khi so sánh lỗi huấn luyện và lỗi kiểm định, ta cần lưu ý hai
 Đầu tiên, ta sẽ muốn chú ý trường hợp lỗi huấn luyện và lỗi kiểm định đều lớn nhưng khoảng cách giữa chúng lại nhỏ.
 Nếu mô hình không thể giảm thiểu lỗi huấn luyện, điều này có nghĩa là mô hình quá đơn giản (tức không đủ khả năng biểu diễn) để có thể xác định được khuôn mẫu mà ta đang cố mô hình hóa.
 Hơn nữa, do khoảng cách khái quát giữa lỗi huấn luyện và lỗi kiểm định nhỏ, ta có lý do để tin rằng phương án giải quyết là một mô hình phức tạp hơn.
-Hiện tượng này là dưới khớp.
+Hiện tượng này được gọi là dưới khớp.
 
 <!--
 On the other hand, as we discussed above, we want to watch out for the cases when our training error is significantly lower than our validation error, indicating severe overfitting.
@@ -785,6 +785,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Bùi Nhật Quân
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 *
