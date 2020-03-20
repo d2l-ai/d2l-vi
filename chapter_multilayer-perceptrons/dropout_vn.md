@@ -245,7 +245,7 @@ In the following code, we implement a `dropout_layer` function that drops out th
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-Trong mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` như đã mô tả bên trên. 
+Trong mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` để thay đổi lại tỉ lệ như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
 import d2l
