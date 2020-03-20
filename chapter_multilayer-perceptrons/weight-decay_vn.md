@@ -374,7 +374,7 @@ Since the weight decay portion of the update depends only on the current value o
 -->
 
 Bởi vì phân rã trọng số có ở khắp mọi nơi trong tối ưu mạng nơ-ron,
-Gluon làm nó trở nên thuận tiện, bằng cách tích hợp phân rã trọng số vào chính giải thuật tối ưu để dễ sử dụng khi kết hợp với bất kì hàm mất mát nào.
+Gluon làm cho việc áp dụng kĩ thuật này trở nên thuận tiện, bằng cách tích hợp phân rã trọng số vào chính giải thuật tối ưu để có thể kết hợp với bất kì hàm mất mát nào.
 Hơn nữa, việc tích hợp này cũng đem lại lợi ích tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm phân rã trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán.
 Nguyên nhân là do tại mỗi bước cập nhật, phần phân rã trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào thì cũng phải đụng tới mỗi tham số một lần.
 
