@@ -160,6 +160,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | implement                  | lập trình          | [https://git.io/JvohG](https://git.io/JvohG) |
 | implementation             | cách lập trình     | [https://git.io/JvohG](https://git.io/JvohG) |
 | implicit feedback          | phản hồi gián tiếp |                                              |
+| import (module, package)   | nhập (mô-đun, gói thư viện) | |
 | imputation (Preprocessing) | quy buộc           | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | iteration                  | vòng lặp           |                                              |
@@ -169,6 +170,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English            | Tiếng Việt          | Thảo luận tại                                |
 |--------------------|---------------------|----------------------------------------------|
 | joint distribution | phân phối đồng thời | [https://git.io/Jvohb](https://git.io/Jvohb) |
+
+## K
+| English | Tiếng Việt | Thảo luận tại |
+|---------|------------|---------------|
+| k-fold cross validation | kiểm định chéo k-phần | |
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                  |
@@ -349,5 +355,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |
 |-------------------------------------------|-------------------|----------------------------------------------|
+| weight decay | suy giảm trọng số | |
 | well-behaved function (analytic function) | hàm khả vi vô hạn | [https://git.io/JvojL](https://git.io/JvojL) |
 | wrapper function (trong lập trình)        | hàm wrapper       | [https://git.io/Jvohm](https://git.io/Jvohm) |
