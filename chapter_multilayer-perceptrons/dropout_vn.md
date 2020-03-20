@@ -229,7 +229,7 @@ For now we will put off uncertainty estimation for subsequent chapters and volum
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
 
 <!--
 To implement the dropout function for a single layer, we must draw as many samples from a Bernoulli (binary) random variable as our layer has dimensions, 
@@ -237,14 +237,15 @@ where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ 
 One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$, then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
-*dịch đoạn phía trên*
+Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy các mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
+Một cách đơn giản để thực hiện việc này là lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
 In the following code, we implement a `dropout_layer` function that drops out the elements in the `ndarray` input `X` with probability `dropout`, 
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-*dịch đoạn phía trên*
+Trong mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` để thay đổi lại tỉ lệ như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
 import d2l
@@ -266,7 +267,8 @@ We can test out the `dropout_layer` function on a few examples.
 In the following lines of code, we pass our input `X` through the dropout operation, with probabilities 0, 0.5, and 1, respectively.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thử nghiệm hàm `dropout_layer` lên một vài mẫu.
+Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua hàm `dropout_layer`, với xác suất lần lượt là 0, 0.5 và 1.
 
 ```{.python .input  n=2}
 X = np.arange(16).reshape(2, 8)
@@ -283,14 +285,15 @@ print(dropout_layer(X, 1))
 ### Defining Model Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa các tham số mô hình
 
 <!--
 Again, we work with the Fashion-MNIST dataset introduced in :numref:`sec_softmax_scratch`.
 We define a multilayer perceptron with two hidden layers containing 256 outputs each.
 -->
 
-*dịch đoạn phía trên*
+Một lần nữa, ta sẽ làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`.
+Ta sẽ tạo một perception đa tầng với hai tầng ẩn, mỗi tầng gồm 256 đầu ra.
 
 ```{.python .input  n=3}
 num_inputs, num_outputs, num_hiddens1, num_hiddens2 = 784, 10, 256, 256
@@ -494,7 +497,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 * Nguyễn Duy Du
