@@ -240,15 +240,15 @@ def init_params():
 ### Defining $\ell_2$ Norm Penalty
 -->
 
-### Khai báo Xử phạt Chuẩn $\ell_2$
+### Xác định Lượng phạt Chuẩn $\ell_2$
 
 <!--
 Perhaps the most convenient way to implement this penalty is to square all terms in place and sum them up.
 We divide by $2$ by convention, (when we take the derivative of a quadratic function, the $2$ and $1/2$ cancel out, ensuring that the expression for the update looks nice and simple).
 -->
 
-Có lẽ cách thuận tiện nhất để lập trình xử phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
-Ta đem chia $2$ cho tiện (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông dễ nhìn và gọn).
+Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
+Ta đem chia $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn).
 
 ```{.python .input  n=6}
 def l2_penalty(w):
@@ -269,7 +269,7 @@ The only change here is that our loss now includes the penalty term.
 
 Đoạn mã nguồn sau thực hiện khớp mô hình trên tập huấn luyện và thẩm định trên tập kiểm tra.
 Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
-Thay đổi duy nhất ở đây là hàm mất mát có thêm thành phần xử phạt.
+Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt.
 
 ```{.python .input  n=7}
 def train(lambd):
@@ -295,7 +295,7 @@ def train(lambd):
 ### Training without Regularization
 -->
 
-### Huấn luyện không có Điều chuẩn
+### Huấn luyện không Điều chuẩn
 
 <!--
 We now run this code with `lambd = 0`, disabling weight decay.
