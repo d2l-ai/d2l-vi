@@ -56,7 +56,7 @@ Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh 
 ## Squared Norm Regularization
 -->
 
-## *dịch tiêu đề phía trên*
+## Điều chuẩn Chuẩn Bình phương
 
 <!--
 *Weight decay* (commonly called *L2* regularization), might be the most widely-used technique for regularizing parametric machine learning models.
@@ -67,7 +67,11 @@ There is no single right answer.
 In fact, entire branches of mathematics, including parts of functional analysis and the theory of Banach spaces are devoted to answering this issue.
 -->
 
-*dịch đoạn phía trên*
+*Phân rã trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số.
+Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không.
+Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
+Không chỉ có duy nhất một câu trả lời đúng.
+Trong thực tế, có nguyên cả các nhánh toán học gồm một phần giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
 
 <!--
 One simple interpretation might be to measure the complexity of a linear function $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ by some norm of its weight vector, e.g., $|| \mathbf{w} ||^2$.
@@ -79,7 +83,13 @@ To illustrate things in code, let's revive our previous example from :numref:`se
 There, our loss was given by
 -->
 
-*dịch đoạn phía trên*
+Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$.
+Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát.
+Do đó, ta thay thế mục tiêu ban đầu *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*.
+Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ hơn là giảm thiểu lỗi huấn luyện.
+Đó chính xác là những gì ta muốn.
+Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`.
+Ở đó, hàm mất mát được định nghĩa như sau:
 
 $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
 
@@ -89,7 +99,9 @@ To penalizes the size of the weight vector, we must somehow add $||mathbf{w}||^2
 In practice, we characterize this tradeoff via the *regularization constant* $\lambda > 0$, a non-negative hyperparameter that we fit using validation data:
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh.
+Để phạt kích thước của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên cân bằng hàm mát mát thông thường với thành phần phạt mới này như thế nào?
+Trong thực tế, ta mô tả sự cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định:
 
 $$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$
 
@@ -102,13 +114,18 @@ By squaring the L2 norm, we remove the square root, leaving the sum of squares o
 This makes the derivative of the penalty easy to compute (the sum of derivatives equals the derivative of the sum).
 -->
 
-*dịch đoạn phía trên*
+Với $\lambda = 0$, ta thu lại được hàm mất mát gốc.
+Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$.
+Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide).
+Ta làm điều này để thuận tiện cho việc tính toán.
+Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số.
+Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng).
 
 <!--
 Moreover, you might ask why we work with the L2 norm in the first place and not, say, the L1 norm.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, có thể bạn sẽ hỏi tại sao ta lại dùng chuẩn L2 ngay từ đầu chứ không phải là chuẩn L1.
 
 <!--
 In fact, other choices are valid and popular throughout statistics.
@@ -116,14 +133,16 @@ While L2-regularized linear models constitute the classic *ridge regression* alg
 a similarly fundamental model in statistics (popularly known as *lasso regression*).
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê.
+Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*).
 
 <!--
 More generally, the $\ell_2$ is just one among an infinite class of norms call p-norms, many of which you might encounter in the future.
 In general, for some number $p$, the $\ell_p$ norm is defined as
 -->
 
-*dịch đoạn phía trên*
+Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy.
+Thông thường, với một số $p$, chuẩn$\ell_p$ được định nghĩa là
 
 $$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p.$$
 
@@ -503,7 +522,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Vũ Hữu Tiệp
 
 <!-- Phần 2 -->
-*
+* Lý Phi Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 * Nguyễn Duy Du
