@@ -240,7 +240,7 @@ def init_params():
 ### Defining $\ell_2$ Norm Penalty
 -->
 
-### Xác định Lượng phạt Chuẩn $\ell_2$
+### Định nghĩa Lượng phạt Chuẩn $\ell_2$
 
 <!--
 Perhaps the most convenient way to implement this penalty is to square all terms in place and sum them up.
@@ -259,7 +259,7 @@ def l2_penalty(w):
 ### Defining the Train and Test Functions
 -->
 
-### Khai báo hàm Huấn luyện và Kiểm tra
+### Định nghĩa hàm Huấn luyện và Kiểm tra
 
 <!--
 The following code fits a model on the test set and evaluates it on the test set.
