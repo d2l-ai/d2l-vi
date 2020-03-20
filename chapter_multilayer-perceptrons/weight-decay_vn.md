@@ -213,7 +213,7 @@ test_iter = d2l.load_array(test_data, batch_size, is_train=False)
 Next, we will implement weight decay from scratch, simply by adding the squared $\ell_2$ penalty to the original target function.
 -->
 
-Tiếp theo, chúng ta sẽ lập trình phân rã trọng số từ đầu, chỉ đơn giản bằng cách cộng thêm bình phương lượng xử phạt $\ell_2$ vào hàm mục tiêu ban đầu.
+Tiếp theo, chúng ta sẽ lập trình suy giảm trọng số từ đầu, chỉ đơn giản bằng cách cộng thêm bình phương lượng phạt $\ell_2$ vào hàm mục tiêu ban đầu.
 
 <!--
 ### Initializing Model Parameters
@@ -302,7 +302,7 @@ We now run this code with `lambd = 0`, disabling weight decay.
 Note that we overfit badly, decreasing the training error but not the test error---a textook case of overfitting.
 -->
 
-Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa phân rã trọng số.
+Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số.
 Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
 
 ```{.python .input  n=8}
