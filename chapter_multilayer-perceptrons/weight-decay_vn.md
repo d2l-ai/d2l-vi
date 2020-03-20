@@ -364,7 +364,7 @@ train(lambd=3)
 ## Concise Implementation
 -->
 
-## Cách lập trình chính xác
+## Cách lập trình súc tích
 
 <!--
 Because weight decay is ubiquitous in neural network optimization,
@@ -375,8 +375,8 @@ Since the weight decay portion of the update depends only on the current value o
 
 Bởi vì phân rã trọng số có ở khắp mọi nơi trong tối ưu mạng nơ-ron,
 Gluon làm nó trở nên thuận tiện, bằng cách tích hợp phân rã trọng số vào chính giải thuật tối ưu để dễ sử dụng khi kết hợp với bất kì hàm mất mát nào.
-Hơn nữa, sự tích hợp này cũng đem lại lợi ích tính toán, cho phép các thủ thuật lập trình thêm phân rã trọng số vào giải thuật, mà không làm tăng tổng chi phí tính toán.
-Nguyên nhân là do phần phân rã trọng số của một cập nhật chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số, và dù sao thì bộ tối ưu hoá cũng phải tiếp xúc với mỗi tham số một lần.
+Hơn nữa, việc tích hợp này cũng đem lại lợi ích tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm phân rã trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán.
+Nguyên nhân là do tại mỗi bước cập nhật, phần phân rã trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào thì cũng phải đụng tới mỗi tham số một lần.
 
 <!--
 In the following code, we specify the weight decay hyperparameter directly through `wd` when instantiating our `Trainer`.
@@ -385,7 +385,7 @@ Note that the hyperparameter `wd` will be multiplied by `wd_mult` when updating 
 Thus, if we set `wd_mult` to $0$, the bias parameter $b$ will not decay.
 -->
 
-Trong đoạn mã nguồn sau đây, chúng ta sẽ xác định trực tiếp các siêu tham số phân rã trọng số thông qua `wd` khi khởi tạo `Trainer` của chúng ta.
+Trong đoạn mã nguồn sau đây, chúng ta chỉ định trực tiếp siêu tham số phân rã trọng số thông qua giá trị `wd` khi khởi tạo `Trainer`.
 Theo mặc định, Gluon phân rã đồng thời cả trọng số và hệ số điều chỉnh.
 Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình.
 Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không phân rã.
