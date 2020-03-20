@@ -354,6 +354,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |
 |-------------------------------------------|-------------------|----------------------------------------------|
-| weight decay | phân rã trọng số | |
+| weight decay | suy giảm trọng số | |
 | well-behaved function (analytic function) | hàm khả vi vô hạn | [https://git.io/JvojL](https://git.io/JvojL) |
 | wrapper function (trong lập trình)        | hàm wrapper       | [https://git.io/Jvohm](https://git.io/Jvohm) |
