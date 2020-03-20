@@ -251,25 +251,25 @@ test_iter = d2l.load_array(test_data, batch_size, is_train=False)
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
 
 <!--
 Next, we will implement weight decay from scratch, simply by adding the squared $\ell_2$ penalty to the original target function.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ lập trình suy giảm trọng số từ đầu, chỉ đơn giản bằng cách cộng thêm bình phương lượng phạt $\ell_2$ vào hàm mục tiêu ban đầu.
 
 <!--
 ### Initializing Model Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi tạo Tham số Mô hình
 
 <!--
 First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán.
 
 ```{.python .input  n=5}
 def init_params():
@@ -284,14 +284,15 @@ def init_params():
 ### Defining $\ell_2$ Norm Penalty
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Lượng phạt Chuẩn $\ell_2$
 
 <!--
 Perhaps the most convenient way to implement this penalty is to square all terms in place and sum them up.
 We divide by $2$ by convention, (when we take the derivative of a quadratic function, the $2$ and $1/2$ cancel out, ensuring that the expression for the update looks nice and simple).
 -->
 
-*dịch đoạn phía trên*
+Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
+Ta đem chia $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn).
 
 ```{.python .input  n=6}
 def l2_penalty(w):
@@ -302,7 +303,7 @@ def l2_penalty(w):
 ### Defining the Train and Test Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa hàm Huấn luyện và Kiểm tra
 
 <!--
 The following code fits a model on the test set and evaluates it on the test set.
@@ -310,7 +311,9 @@ The linear network and the squared loss have not changed since the previous chap
 The only change here is that our loss now includes the penalty term.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã nguồn sau thực hiện khớp mô hình trên tập huấn luyện và thẩm định trên tập kiểm tra.
+Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
+Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt.
 
 ```{.python .input  n=7}
 def train(lambd):
@@ -336,14 +339,15 @@ def train(lambd):
 ### Training without Regularization
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện không Điều chuẩn
 
 <!--
 We now run this code with `lambd = 0`, disabling weight decay.
 Note that we overfit badly, decreasing the training error but not the test error---a textook case of overfitting.
 -->
 
-*dịch đoạn phía trên*
+Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số.
+Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
 
 ```{.python .input  n=8}
 train(lambd=0)
@@ -531,7 +535,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 4 -->
-*
+* Nguyễn Văn Tâm
+* Vũ Hữu Tiệp
+* Phạm Minh Đức
 
 <!-- Phần 5 -->
 *
