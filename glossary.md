@@ -36,9 +36,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | batch                   | batch                   | [https://git.io/JvojE](https://git.io/JvojE)   |
 | batch size              | kích thước batch        | [https://git.io/JvXdK](https://git.io/JvXdK)   |
 | benchmark               | đánh giá xếp hạng       | [http://bit.ly/2BvfPYA](http://bit.ly/2BvfPYA) |
-| bias (tham số mô hình)  | hệ số điều chỉnh        | [https://git.io/Jvopx](https://git.io/Jvopx)   |
 | bias (bias as variance) | độ chệch                | [http://bit.ly/32HJI3S](http://bit.ly/32HJI3S) |
 | bias-variance tradeoff  | đánh đổi độ chệch - phương sai |    |
+| bias (tham số mô hình)  | hệ số điều chỉnh        | [https://git.io/Jvopx](https://git.io/Jvopx)   |
 | big data                | big data                |                                                |
 | binomial distribution   | phân phối nhị thức      | [https://git.io/JvohQ](https://git.io/JvohQ)   |
 | Blackbox dev set        | tập phát triển Blackbox | [http://bit.ly/2MVHcl7](http://bit.ly/2MVHcl7) |
