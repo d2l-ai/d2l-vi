@@ -116,7 +116,7 @@ They realized that when training a deep network with many layers, enforcing smoo
 
 Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
 Cụ thể, họ đề xuất việc thêm nhiễu vào mỗi tầng của mạng trước khi tính toán các tầng kế tiếp trong quá trình huấn luyện.
-Họ nhận ra điều đó khi huấn luyến mạng có nhiều tầng và chỉ ép buộc sự mượt trên phép ánh xạ đầu vào-đầu ra. <!-- WHAT!?? -->
+Họ nhận ra rằng khi huấn luyến mạng đa tầng với dữ liệu nhiễu, ta chỉ đang ép buộc điều kiện mượt trên phép ánh xạ giữa đầu vào và đầu ra chứ không có ràng buộc mượt giữa các tầng nội bộ.
 
 <!--
 Their idea, called *dropout*, involves injecting noise while computing each internal layer during forward propagation, and it has become a standard technique for training neural networks.
@@ -147,7 +147,7 @@ One idea is too inject the noise in an *unbiased* manner so that the expected va
 -->
 
 Thách thức chính bây giờ là làm thế nào để thêm nhiễu.
-Một ý tưởng là: thêm nhiễu một cách *không thiên lệch* để giá trị kỳ vọng của mỗi tầng <!-- hic câu này chả hiểu gì mọi người giúp với ạ -->
+Ta có thể thêm nhiễu một cách *không thiên lệch* sao cho giá trị kỳ vọng của mỗi tầng bằng giá trị kỳ vọng của chính tầng đó trước khi được thêm nhiễu, giả sử rằng các tầng khác được giữ nguyên.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
