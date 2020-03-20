@@ -277,11 +277,11 @@ That means that after computing the linear portion of the layer, we can calculat
 This is true for most activation functions (the batch normalization operation will be introduced in :numref:`sec_batch_norm` is a notable exception to that rule).
 -->
 
-Khác với các quy ước thông thường, chúng ta định nghĩa hàm phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng hàng, tức lần lượt từng điểm dữ liệu một.
-Cần chú ý rằng ta cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng dòng.
-Thông thường, như trong mục này, các hàm kích hoạt mà chúng ta áp dụng vào tầng ẩn không chỉ đơn thuần theo từng dòng mà còn theo từng phần.
-Điều đó có nghĩa là sau khi tính toán các phần tuyến tính của tầng, chúng ta có thể tính kích hoạt cho từng nút mà không cần quan tâm đến giá trị của các nút còn lại.
-Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá batch sẽ được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
+Bằng việc lạm dụng ký hiệu một chút, chúng ta định nghĩa hàm phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng hàng, tức lần lượt từng điểm dữ liệu một.
+Cần chú ý rằng ta cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng hàng.
+Thông thường, như trong mục này, các hàm kích hoạt không chỉ đơn thuần được áp dụng vào tầng ẩn theo từng hàng mà còn theo từng phần tử.
+Điều đó có nghĩa là sau khi tính toán các phần tuyến tính của tầng, chúng ta có thể tính giá trị kích hoạt của từng nút mà không cần quan tâm đến giá trị của các nút còn lại.
+Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá batch được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -303,8 +303,8 @@ Because activation functions are fundamental to deep learning, let's briefly sur
 -->
 
 Các hàm kích hoạt quyết định một nơ-ron có được kích hoạt hay không bằng cách tính tổng có trọng số và cộng thêm hệ số điều chỉnh vào nó.
-Chúng là các toán tử khả vi biến đổi các tín hiệu đầu vào thành các tín hiệu đầu ra, mặc dù hầu hết các hàm kích hoạt này đều thêm vào phần phi tuyến tính.
-Bởi vì các hàm kích hoạt rất quan trọng trong học sâu, chúng ta hãy cùng tìm hiểu sơ lược một số hàm kích hoạt thông dụng.
+Chúng là các toán tử khả vi có vai trò biến đổi các tín hiệu đầu vào thành các tín hiệu đầu ra, và hầu hết các hàm kích hoạt này đều thêm sự phi tuyến tính.
+Bởi vì các hàm kích hoạt rất quan trọng trong học sâu, hãy cùng tìm hiểu sơ lược một số hàm kích hoạt thông dụng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
