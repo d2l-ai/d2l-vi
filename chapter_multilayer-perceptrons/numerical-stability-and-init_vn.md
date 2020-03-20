@@ -277,7 +277,7 @@ Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initiali
 ### Beyond
 -->
 
-### *Ngoài ra*
+### Ngoài ra
 
 <!--
 The reasoning above barely scratches the surface of modern approaches to parameter initialization.
@@ -289,7 +289,6 @@ We recommend that the interested reader take a closer look at what is offered as
 Perhaps you may come across a recent clever idea and contribute its implementation to MXNet, or you may even invent your own scheme!
 -->
 
-*dịch đoạn phía trên*
 Lí do được đưa ra ở phần trên hiếm khi ảnh hưởng nhiều đến những kĩ thuật hiện đại trong việc khởi tạo tham số.
 Thực tế thì MXNet có hẳn cả một module [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) thực thi hàng chục các phương pháp thực nghiệm.
 Hơn thế nữa thì khởi tạo tiếp tục là một lĩnh vực nghiên cứu nóng hổi về tìm tòi trong nghiên cứu về học thuyết cơ bản trong việc tối ưu mạng neuron.
@@ -312,11 +311,11 @@ Có thể bạn sẽ bắt gặp những ý tưởng thông minh gần đây và
 * Random initialization is key to ensure that symmetry is broken before optimization.
 -->
 
-*dịch đoạn phía trên*
 * Tiêu biến hay bùng nổ gradients đều là những vấn đề chung trong những mạng rất sâu (nhiều layers), trừ khi có sự cẩn thận đảm bảo rằng gradients và các tham số vẫn được kiểm soát tốt.
 * Các thực nghiệm trong khởi tạo là cần thiết để đảm bảo ít nhất rằng gradients ban đầu không bị quá lớn hay quá nhỏ.
 * ReLU giải quyết một trong những vấn đề về tiêu biến gradients, cụ thể là việc tiêu biến gradients cho các đầu vào rất lớn. Điều này có thể tăng tốc độ hội tụ đáng kể.
 * Khởi tạo ngẫu nhiên là chìa khóa để đảm bảo tính đối xứng bị phá vỡ trước khi tối ưu hóa.
+
 <!--
 ## Exercises
 -->
@@ -330,11 +329,11 @@ Có thể bạn sẽ bắt gặp những ý tưởng thông minh gần đây và
 4. If we know that some terms diverge, can we fix this after the fact? Look at the paper on LARS for inspiration :cite:`You.Gitman.Ginsburg.2017`.
 -->
 
-*dịch đoạn phía trên*
 1. Bạn có thể thiết kế các trường hợp phá vỡ đối xứng khác bên cạnh đối xứng hoán vị?
 2. Chúng ta có thể khởi tạo tất cả trọng số ở trong mạng hồi quy tuyến tính hoặc trong hồi quy softmax cùng một giá trị hay không?
 3. Dựa trên những phân tích ràng buộc về trị riêng của phép nhân 2 ma trận (quá lớn sẽ khiến exploding gradient và quá nhỏ sẽ khiến vanishing gradient). Những phân tích này cho ta biết điều gì để đảm bảo gradient có độ lớn vừa phải ?
 4. Nếu biết rằng trong vài trường hợp, mô hình không thể hội tụ, liệu ta có thể sửa chữa vấn đề này (mô hình bị phân kỳ do vanishing/exploding gradient). Có thể xem gợi ý ở paper LARS :cite:You.Gitman.Ginsburg.2017.
+
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
