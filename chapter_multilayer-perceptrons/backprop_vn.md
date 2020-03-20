@@ -42,7 +42,7 @@ To start, we focus our exposition on a three layer (one hidden) multilayer perce
 ## Forward Propagation
 -->
 
-## Lan truyền Ngược
+## Lan truyền Xuôi
 
 <!--
 Forward propagation refers to the calculation and storage of intermediate variables (including outputs) for the neural network in order from the input layer to the output layer.
@@ -50,8 +50,8 @@ We now work step-by-step through the mechanics of a deep network with one hidden
 This may seem tedious but in the eternal words of funk virtuoso James Brown, you must "pay the cost to be the boss".
 -->
 
-Lan truyền ngược đề cập đến việc tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
-Bây giờ ta hãy làm từng bước thông qua cơ chế của mạng nơ-ron sâu với một tầng ẩn.
+Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
+Bây giờ ta sẽ thực hiện từng bước trong cơ chế làm việc của mạng nơ-ron sâu có một tầng ẩn.
 Điều này có vẻ tẻ nhạt nhưng theo những ca từ bất hủ của nghệ sĩ dòng nhạc funk tài danh James Brown, bạn phải "trả giá để được làm sếp".
 
 <!--
@@ -59,7 +59,7 @@ For the sake of simplicity, let’s assume that the input example is $\mathbf{x}
 Here the intermediate variable is:
 -->
 
-Để đơn giản, ta giả sử mẫu đầu vào là $\mathbf{x}\in \mathbb{R}^d$ và tầng ẩn của ta sẽ không có hệ số điều chỉnh.
+Để đơn giản hóa vấn đề, ta giả sử mẫu đầu vào là $\mathbf{x}\in \mathbb{R}^d$ và tầng ẩn của ta không có hệ số điều chỉnh.
 Ở đây biến trung gian là:
 
 $$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x},$$
@@ -70,7 +70,7 @@ After running the intermediate variable $\mathbf{z}\in \mathbb{R}^h$ through the
 -->
 
 trong đó $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ là tham số trọng số của tầng ẩn.
-Sau khi chạy biến trung gian $\mathbf{z}\in \mathbb{R}^h$ và cho qua hàm kích hoạt $\phi$, ta nhận được vector kích hoạt ẩn với số chiều $h$,
+Sau khi đưa biến trung gian $\mathbf{z}\in \mathbb{R}^h$ qua hàm kích hoạt $\phi$, ta thu được vector kích hoạt ẩn với $h$ phần tử,
 
 $$\mathbf{h}= \phi (\mathbf{z}).$$
 
@@ -80,7 +80,7 @@ Assuming the parameters of the output layer only possess a weight of $\mathbf{W}
 -->
 
 Biến ẩn $\mathbf{h}$ cũng là một biến trung gian.
-Giả sử các tham số của tầng đầu ra chỉ có trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ nhận được một biến tại tầng đầu ra với số chiều vector $q$:
+Giả sử các tham số của tầng đầu ra chỉ có trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ thu được một vector với $q$ phần tử ở tầng đầu ra:
 
 $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 
@@ -88,7 +88,7 @@ $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 Assuming the loss function is $l$ and the example label is $y$, we can then calculate the loss term for a single data example,
 -->
 
-Giả sử hàm mất mát là $l$ và nhãn của mẫu là $y$, ta có thể tính được lượng mất mát cho mẫu dữ liệu duy nhất,
+Giả sử hàm mất mát là $l$ và nhãn của mẫu là $y$, ta có thể tính được lượng mất mát cho một mẫu dữ liệu duy nhất,
 
 $$L = l(\mathbf{o}, y).$$
 
@@ -105,7 +105,7 @@ where the Frobenius norm of the matrix is simply the $L_2$ norm applied after fl
 Finally, the model's regularized loss on a given data example is:
 -->
 
-trong đó chuẩn Frobenius của ma trận chỉ đơn giản là lấy chuẩn $L_2$ sau khi trải ma trận thành vector.
+trong đó chuẩn Frobenius của ma trận chỉ đơn giản là chuẩn $L_2$ của vector thu được sau khi trải phẳng ma trận.
 Cuối cùng, hàm mất mát điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
 
 $$J = L + s.$$
@@ -114,7 +114,7 @@ $$J = L + s.$$
 We refer to $J$ the *objective function* in the following discussion.
 -->
 
-Ta sẽ bàn thêm về *hàm mục tiêu* $J$ trong các phần sau này.
+Ta sẽ bàn thêm về *hàm mục tiêu* $J$ ở phía dưới.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -372,4 +372,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 *
-
