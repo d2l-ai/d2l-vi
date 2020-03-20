@@ -353,7 +353,7 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 ### $K$-Fold Cross-Validation
 -->
 
-### Kiểm định chéo $K$-phần
+### Kiểm định chéo gập $K$-lần
 
 <!--
 When training data is scarce, we might not even be able to afford to hold out enough data to constitute a proper validation set.
