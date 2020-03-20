@@ -60,7 +60,7 @@ In fact, entire branches of mathematics, including parts of functional analysis 
 Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không.
 Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
 Không chỉ có duy nhất một câu trả lời đúng.
-Trong thực tế, toàn bộ các nhánh của toán học, bao gồm các phần của giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
+Trong thực tế, có nguyên cả các nhánh toán học gồm một phần giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
 
 <!--
 One simple interpretation might be to measure the complexity of a linear function $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ by some norm of its weight vector, e.g., $|| \mathbf{w} ||^2$.
@@ -103,7 +103,7 @@ By squaring the L2 norm, we remove the square root, leaving the sum of squares o
 This makes the derivative of the penalty easy to compute (the sum of derivatives equals the derivative of the sum).
 -->
 
-Với $\lambda = 0$, ta thu được hàm mất mát gốc.
+Với $\lambda = 0$, ta thu lại được hàm mất mát gốc.
 Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$.
 Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide).
 Ta làm điều này để thuận tiện cho việc tính toán.
@@ -123,7 +123,7 @@ a similarly fundamental model in statistics (popularly known as *lasso regressio
 -->
 
 Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê.
-Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 là một mô hình cơ bản tương tự trong thống kê (thường được gọi là *hồi quy lasso*).
+Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*).
 
 <!--
 More generally, the $\ell_2$ is just one among an infinite class of norms call p-norms, many of which you might encounter in the future.
