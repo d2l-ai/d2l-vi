@@ -531,7 +531,7 @@
    id="tspan286"
    x="30.171978"
    y="16.684422"
-   style="font-size:9px;stroke-width:0.75">Tầng đầu vào</tspan>
+   style="font-size:9px;stroke-width:0.75">Tầng đầu ra</tspan>
 </text>
     <text
        xml:space="preserve"
@@ -543,6 +543,6 @@
          id="tspan286-1"
          x="29.687115"
          y="76.529976"
-         style="font-size:9px;stroke-width:0.75">Tầng đầu ra</tspan></text>
+         style="font-size:9px;stroke-width:0.75">Tầng đầu vào</tspan></text>
   </g>
 </svg>
