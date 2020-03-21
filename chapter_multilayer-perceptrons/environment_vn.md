@@ -395,7 +395,10 @@ and then a reweighted minimization problem where we weigh terms by $\beta$, e.g.
 Here's a prototypical algorithm for that purpose which uses an unlabeled training set $X$ and test set $Z$:
 -->
 
-*dịch đoạn phía trên*
+Ở đây, có hai vấn đề cần được giải quyết: thứ nhất là phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
+và thứ hai là thay đổi bài toán tối thiểu hóa mất mát trong đó ta chia các hệ số cho $\beta$, ví dụ: thông qua các gradient đầu.
+Đây là một thuật toán nguyên mẫu cho that purpose which uses tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
+<!-- minimization problem theo mình hiểu là bài toán tối thiểu hóa mất mát -->
 
 <!--
 1. Generate training set with $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
@@ -404,15 +407,21 @@ Here's a prototypical algorithm for that purpose which uses an unlabeled trainin
 4. Use weights $\beta_i$ for training on $X$ with labels $Y$.
 -->
 
-*dịch đoạn phía trên*
+
+1. Tạo tập huấn luyện $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
+2. Huấn luyện một bộ phân loại nhị phân bằng cách sử dụng hồi quy logistic để có được hàm $f$.
+3. Tính trọng số cho từng mẫu trong dữ liệu huấn luyện bằng cách sử dụng $\beta_i = \exp(f(\mathbf{x}_i))$ hoặc tốt hơn $$\beta_i = \min(\exp(f(\mathbf{x}_i)), c)$.
+4. Sử dụng trọng số $\beta_i$ để huấn luyện trên $X$ với nhãn $Y$.
 
 <!--
 Note that this method relies on a crucial assumption.
-For this scheme to work, we need that each data point in the target (test time)distribution had nonzero probability of occurring at training time.
+For this scheme to work, we need that each data point in the target (test time) distribution had nonzero probability of occurring at training time.
 If we find a point where $q(\mathbf{x}) > 0$ but $p(\mathbf{x}) = 0$, then the corresponding importance weight should be infinity.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng phương pháp này được dựa trên một giả định quan trọng.
+Để nó hoạt động, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
+Nếu ta thấy một điểm với $q(\mathbf{x}) > 0$ nhưng $p(\mathbf{x}) = 0$, thì trọng số quan trọng tương ứng sẽ bằng vô hạn.
 
 <!--
 *Generative Adversarial Networks* use a very similar idea to that described above to engineer a *data generator* that outputs data that cannot be distinguished from examples sampled from a reference dataset.
@@ -420,7 +429,9 @@ In these approaches, we use one network, $f$ to distinguish real versus fake dat
 We will discuss this in much more detail later.
 -->
 
-*dịch đoạn phía trên*
+*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế *bộ tạo dữ liệu* tạo ra dữ liệu không thể phân biệt được với các mẫu được lấy mẫu từ một bộ dữ liệu tham chiếu.
+Trong các phương pháp này, ta sử dụng một mạng $f$ để phân biệt dữ liệu thật và giả và mạng thứ hai $g$ cố gắng đánh lừa bộ phân biệt $f$ để chấp nhận dữ liệu giả là thật.
+Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các phần sau.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -430,7 +441,7 @@ We will discuss this in much more detail later.
 ### Label Shift Correction
 -->
 
-### *dịch tiêu đề phía trên*
+### Hiệu chỉnh Dịch chuyển nhãn
 
 <!--
 For the discussion of label shift, we will assume for now that we are dealing with a $k$-way multiclass classification task.
@@ -442,7 +453,9 @@ then we can get consistent estimates of these weights without ever having to dea
 while the labels are often easier to work, say vectors whose length corresponds to the number of classes).
 -->
 
-*dịch đoạn phía trên*
+Để thảo luận về sự dịch chuyển nhãn, ta sẽ giả định rằng ta đang xử lý một bài toán phân loại $k$ lớp.
+Trong đó phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(y) \neq q(y)$, trọng số quan trọng của ta sẽ tương ứng với tỷ lệ khả năng nhãn $q(y)/p(y)$.
+Một điều tuyệt vời về sự dịch chuyển nhãn là nếu ta có một mô hình tốt (về phân phối nguồn) thì ta có thể có được ước tính phù hợp của các trọng số này mà không bao giờ phải đối phó với kích thước xung quanh (trong học sâu, đầu vào thường là các đối tượng nhận thức nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn, giả sử các vector có chiều dài tương ứng với số lượng lớp).
 
 <!--
 To estimate calculate the target label distribution, we first take our reasonably good off the shelf classifier 
@@ -451,7 +464,9 @@ The confusion matrix C, is simply a $k \times k$ matrix where each column corres
 Each cell's value $c_{ij}$ is the fraction of predictions where the true label was $j$ *and* our model predicted $y$.
 -->
 
-*dịch đoạn phía trên*
+Để ướng lượng phân phối của nhãn mục tiêu, đầu tiên ta dùng our reasonably good off the shelf classifier (typically được học trên tập huấn luyện) và tính confusion matrix sử dụng một tập kiểm định (cũng phân phối với tập huấn luyện).
+Ma trận confusion matrix C, đơn giản là một ma trận $k \times k$ với mỗi cột tương ứng với một nhãn *thật* và mỗi dòng tươn ứng với nhãn dự đoán của mô hình.
+Mỗi phần tử có giác trị $c_{ij}$ là tỉ lệ dự đoán với nhãn thật là $j$ *và* nhãn dự đoán là $y$.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
