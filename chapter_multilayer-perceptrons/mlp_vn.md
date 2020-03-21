@@ -295,14 +295,15 @@ Trong ví dụ này, chúng ta sẽ triển khai một MLP với hai tầng ẩn
 ### Vectorization and Minibatch
 -->
 
-### *dịch tiêu đề phía trên*
+### Vector hoá và Minibatch
 
 <!--
 As before, by the matrix $\mathbf{X}$, we denote a minibatch of inputs.
 The calculations to produce outputs from an MLP with two hidden layers can thus be expressed:
 -->
 
-*dịch đoạn phía trên*
+Giống như trước, chúng ta dùng ma trận $\mathbf{X}$ để ký hiệu một minibatch các giá trị đầu vào.
+Các phép tính toán dẫn đến các giá trị đầu ra từ một MLP với hai tầng ẩn khi đó có thể được biểu diễn như sau:
 
 $$
 \begin{aligned}
@@ -320,7 +321,11 @@ That means that after computing the linear portion of the layer, we can calculat
 This is true for most activation functions (the batch normalization operation will be introduced in :numref:`sec_batch_norm` is a notable exception to that rule).
 -->
 
-*dịch đoạn phía trên*
+Bằng việc lạm dụng ký hiệu một chút, chúng ta định nghĩa hàm phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng hàng, tức lần lượt từng điểm dữ liệu một.
+Cần chú ý rằng ta cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng hàng.
+Thông thường, như trong mục này, các hàm kích hoạt không chỉ đơn thuần được áp dụng vào tầng ẩn theo từng hàng mà còn theo từng phần tử.
+Điều đó có nghĩa là sau khi tính toán các phần tuyến tính của tầng, chúng ta có thể tính giá trị kích hoạt của từng nút mà không cần quan tâm đến giá trị của các nút còn lại.
+Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá batch được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -333,7 +338,7 @@ npx.set_np()
 ## Activation Functions
 -->
 
-## *dịch tiêu đề phía trên*
+## Các hàm Kích hoạt
 
 <!--
 Activation functions decide whether a neuron should be activated or not by calculating the weighted sum and further adding bias with it.
@@ -341,7 +346,9 @@ They are differentiable operators to transform input signals to outputs, while m
 Because activation functions are fundamental to deep learning, let's briefly survey some common activation functions.
 -->
 
-*dịch đoạn phía trên*
+Các hàm kích hoạt quyết định một nơ-ron có được kích hoạt hay không bằng cách tính tổng có trọng số và cộng thêm hệ số điều chỉnh vào nó.
+Chúng là các toán tử khả vi có vai trò biến đổi các tín hiệu đầu vào thành các tín hiệu đầu ra, và hầu hết các hàm kích hoạt này đều thêm sự phi tuyến tính.
+Bởi vì các hàm kích hoạt rất quan trọng trong học sâu, hãy cùng tìm hiểu sơ lược một số hàm kích hoạt thông dụng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -665,7 +672,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Hồng Vinh
 
 <!-- Phần 4 -->
-*
+* Lê Cao Thăng
+* Phạm Minh Đức
 
 <!-- Phần 5 -->
 * Lý Phi Long
