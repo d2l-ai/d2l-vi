@@ -96,7 +96,7 @@ Hãy cùng nghĩ một chút về thứ mà ta mong đợi từ một mô hình 
 Ta muốn mô hình hoạt động tốt khi gặp dữ liệu mà nó chưa từng thấy.
 Lý thuyết khái quát cổ điển cho rằng: để thu hẹp khoảng cách giữa chất lượng khi huấn luyện và chất lượng khi kiểm tra, ta nên hướng tới một mô hình *đơn giản*.
 Sự đơn giản này có thể nằm ở việc số chiều thấp, điều mà chúng ta đã khám phá khi thảo luận về hàm cơ sở đơn thức trong mô hình tuyến tính ở :numref:`sec_model_selection`. 
-Như ta đã thấy khi bàn về phân rã trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, chuẩn (nghịch) của các tham số là một phép đo khác cho sự đơn giản.
+Như ta đã thấy khi bàn về suy giảm trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, (nghịch đảo) chuẩn của các tham số là một phép đo khác cho sự đơn giản.
 Một khái niệm hữu ích khác để biểu diễn sự đơn giản là độ mượt, tức hàm số không nên quá nhạy với những thay đổi nhỏ ở đầu vào.
 Ví dụ, khi phân loại ảnh, ta mong muốn rằng việc thêm một chút nhiễu ngẫu nhiên vào các điểm ảnh sẽ không ảnh hưởng nhiều tới kết quả dự đoán.
 
