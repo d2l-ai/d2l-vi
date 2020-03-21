@@ -17,7 +17,7 @@
 | 13. | [chrislevn](https://github.com/chrislevn)                       | Lê Đàm Hồng Lộc                |
 | 14. | [kimdoanh89](https://github.com/kimdoanh89)                     | Lương Kim Doanh                |
 | 15. | [william-vu](https://github.com/william-vu)                     | Vũ Đình Quyền                  |
-| 16. | [SumoBBQ](https://github.com/SumoBBQ)                           | Phạm Chí Thành                 |
+| 16. | [sumobbq](https://github.com/sumobbq)                           | Phạm Chí Thành                 |
 | 17. | [thoangtrvn](https://github.com/thoangtrvn)                     | Hoàng Trọng Tuấn               |
 | 18. | [tamnguyenvan](https://github.com/tamnguyenvan)                 | Nguyễn Văn Tâm                 |
 | 19. | [antran511](https://github.com/antran511)                       | Trần Kiến An                   |
@@ -40,3 +40,5 @@
 | 36. | [azraelzhor](https://github.com/azraelzhor)                     | Lê Cao Thăng                   |
 | 37. | [baoanh1310](https://github.com/baoanh1310)                     | Phạm Ngọc Bảo Anh              |
 | 38. | [tranyenthy](https://github.com/tranyenthy)                     | Trần Yến Thy                   |
+| 39. | [buiminhptit](https://github.com/buiminhptit)                   | Bùi Chí Minh                   |
+| 40. | [ninjaking](https://github.com/ninjaking)                       | Hà Trọng Sỹ                    |
