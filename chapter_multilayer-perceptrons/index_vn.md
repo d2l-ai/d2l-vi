@@ -4,7 +4,7 @@
 # Multilayer Perceptrons
 -->
 
-Perceptron đa tầng
+# Perceptron đa tầng
 :label:`chap_perceptrons`
 
 <!--
@@ -23,7 +23,7 @@ Trong chương này, chúng tôi sẽ giới thiệu mạng nơ-ron *sâu* thự
 Mạng nơ-ron sâu đơn giản nhất được gọi là perceptron đa tầng.
 Nó gồm nhiều tầng chứa nơ-ron, mỗi nơ-ron được kết nối đầy đủ với các nơ-ron khác ở tầng phía dưới (các nơ-ron cung cấp đầu vào) và tầng phía trên (các nơ-ron mà nó gây ảnh hưởng).
 Khi huấn luyện các mô hình có độ phức tạp cao, ta sẽ có nguy cơ gặp vấn đề quá khớp.
-Vì vậy, chúng tôi sẽ phải giới thiệu các khái niệm chặt chẽ của quá khớp, dưới khớp và kiểm soát độ phức tạp.
+Vì vậy, chúng tôi sẽ phải giới thiệu chặt chẽ các khái niệm quá khớp, dưới khớp và kiểm soát độ phức tạp.
 Để giúp bạn giải quyết những vấn đề này, chúng tôi sẽ giới thiệu các kỹ thuật điều chuẩn như dropout và suy giảm trọng số.
 Chúng tôi cũng sẽ bàn về các vấn đề liên quan tới sự ổn định số học và việc khởi tạo tham số, hai yếu tố chính của việc huấn luyện mạng nơ-ron sâu thành công.
 Xuyên suốt chương này, chúng tôi sẽ tập trung vào việc áp dụng các mô hình cho dữ liệu thực tế, nhằm giúp người đọc không chỉ nắm vững các khái niệm mà còn thực hành sử dụng mạng nơ-ron sâu.
