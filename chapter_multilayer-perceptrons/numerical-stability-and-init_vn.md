@@ -79,7 +79,7 @@ Since early artificial neural networks were inspired by biological neural networ
 Let's take a closer look at the function to see why picking it might be problematic vis-a-vis vanishing gradients.
 -->
 
-Một thủ phạm chính gây ra vấn đề tiêu biến gradient là việc lựa chọn hàm kích hoạt $\sigma$, là hàm được đặt xen giữa các toán hạng tuyến tính tại mỗi tầng.
+Một thủ phạm chính gây ra vấn đề tiêu biến gradient là hàm kích hoạt $\sigma$ được chọn để đặt xen giữa các toán hạng tuyến tính tại mỗi tầng.
 Trước đây, hàm kích hoạt sigmoid $(1 + \exp(-x))$ (đã giới thiệu trong :numref:`sec_mlp`) là lựa chọn phổ biến bởi nó hoạt động giống với một hàm lấy ngưỡng.
 Cũng bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng các nơ-ron được kích hoạt hoặc không bị kích hoạt (nơ-ron sinh học không bị kích hoạt một phần) có vẻ như rất hấp dẫn.
 Hãy xem xét chi tiết hơn để thấy tại sao sử dụng hàm sigmoid có thể sinh ra vấn đề liên quan tới hiện tượng tiêu biến gradient.
@@ -131,7 +131,7 @@ For the scale that we picked (the choice of the variance $\sigma^2=1$), the matr
 If this were to happen to us with a deep network, we would have no realistic chance of getting a gradient descent optimizer to converge.
 -->
 
-Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toán không kém.
+Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
 Để chứng minh rõ hơn điều này, chúng ta lấy mẫu $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một vài ma trận khởi tạo.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
 Nếu điều này xảy ra trong các mạng học sâu, chúng ta sẽ không thể làm các bộ tối ưu dựa trên giảm gradient hội tụ được.
