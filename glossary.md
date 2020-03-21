@@ -47,6 +47,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
+| capacity (of a model) | độ phức tạp | |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | classifier                          | bộ phân loại           |                                              |
@@ -302,6 +303,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | slicing (array)                 | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH)   |
 | spam email                      | email rác                |                                                |
 | speech recognition              | nhận dạng giọng nói      |                                                |
+| squashing function | hàm nén | |
 | standard deviation              | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb)   |
 | stationary point                | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC)   |
 | statistical power               | năng lực thống kê        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
