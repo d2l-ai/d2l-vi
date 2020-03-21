@@ -38,7 +38,7 @@ To start, we focus our exposition on a three layer (one hidden) multilayer perce
 -->
 
 Trong mục này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*). Ta sẽ sử dụng một vài công thức toán học cơ bản và đồ thị tính toán để giải thích một cách chi tiết cách thức hoạt động cũng như cách lập trình các kỹ thuật này.
-Và để bắt đầu, ta sẽ tập trung việc giải trình vào một perceptron đa tầng gồm ba tầng (một tầng ẩn) sử dụng phân rã trọng số (điều chuẩn $\ell_2$).
+Và để bắt đầu, ta sẽ tập trung việc giải trình vào một perceptron đa tầng gồm ba tầng (một tầng ẩn) sử dụng suy giảm trọng số (điều chuẩn $\ell_2$).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
