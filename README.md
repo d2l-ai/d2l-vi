@@ -46,23 +46,23 @@ Với các chương (2., 3., ...)
     * [x] 3.6. [Lập trình Hồi quy Sofmax từ đầu](chapter_linear-networks/softmax-regression-scratch_vn.md)
     * [x] 3.7. [Cách lập trình súc tích Hồi quy Softmax](chapter_linear-networks/softmax-regression-gluon_vn.md)
 * [ ] 4. [Perceptron Đa tầng](chapter_multilayer-perceptrons/index_vn.md)
-    * [-] 4.1. [Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp_vn.md)
-    * [-] 4.2. [Lập trình Perceptron Đa tầng từ đầu](chapter_multilayer-perceptrons/mlp-scratch_vn.md)
-    * [-] 4.3. [Cách lập trình súc tích Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
-    * [-] 4.4. [Lựa chọn Mô hình, Dưới khớp và Quá khớp](chapter_multilayer-perceptrons/underfit-overfit_vn.md)
-    * [-] 4.5. [Phân rã Trọng số](chapter_multilayer-perceptrons/weight-decay_vn.md)
+    * [x] 4.1. [Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp_vn.md)
+    * [x] 4.2. [Lập trình Perceptron Đa tầng từ đầu](chapter_multilayer-perceptrons/mlp-scratch_vn.md)
+    * [x] 4.3. [Cách lập trình súc tích Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
+    * [x] 4.4. [Lựa chọn Mô hình, Dưới khớp và Quá khớp](chapter_multilayer-perceptrons/underfit-overfit_vn.md)
+    * [-] 4.5. [Suy giảm Trọng số](chapter_multilayer-perceptrons/weight-decay_vn.md)
     * [-] 4.6. [Dropout](chapter_multilayer-perceptrons/dropout_vn.md)
-    * [-] 4.7. [Forward Propagation, Backward Propagation, and Computational Graphs](chapter_multilayer-perceptrons/backprop_vn.md)
-    * [-] 4.8. [Numerical Stability and Initialization](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
+    * [-] 4.7. [Lan truyền Xuôi, Lan truyền Ngược và Đồ thị Tính toán](chapter_multilayer-perceptrons/backprop_vn.md)
+    * [-] 4.8. [Sự ổn định Số học và Sự khởi tạo](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
     * [-] 4.9. [Considering the Environment](chapter_multilayer-perceptrons/environment_vn.md)
     * [-] 4.10. [Predicting House Prices on Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
-* [ ] 5. Deep Learning Computation
-    * [ ] 5.1. Layers and Blocks
-    * [ ] 5.2. Parameter Management
-    * [ ] 5.3. Deferred Initialization
-    * [ ] 5.4. Custom Layers
-    * [ ] 5.5. File I/O
-    * [ ] 5.6. GPUs
+* [ ] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
+    * [ ] 5.1. [Layers and Blocks](chapter_deep-learning-computation/model-construction_vn.md)
+    * [ ] 5.2. [Parameter Management](chapter_deep-learning-computation/parameters_vn.md)
+    * [ ] 5.3. [Deferred Initialization](chapter_deep-learning-computation/deferred-init_vn.md)
+    * [ ] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
+    * [ ] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
+    * [ ] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
 * [ ] 6. Convolutional Neural Networks
     * [ ] 6.1. From Dense Layers to Convolutions
     * [ ] 6.2. Convolutions for Images
