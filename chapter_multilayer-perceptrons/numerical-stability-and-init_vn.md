@@ -5,7 +5,7 @@
 # Numerical Stability and Initialization
 -->
 
-# *dịch tiêu đề phía trên*
+# Sự ổn định Số và Sự khởi tạo
 :label:`sec_numerical_stability`
 
 <!--
@@ -19,21 +19,28 @@ Failure to be mindful of these issues can lead to either exploding or vanishing 
 In this section, we delve into these topics with greater detail and discuss some useful heuristics that you may use frequently throughout your career in deep learning.
 -->
 
-*dịch đoạn phía trên*
-
+Cho đến nay, đối với mọi mô hình mà ta đã lập trình, ta cần khởi tạo các tham số theo một vài phân phối đặc biệt.
+Và cho đến tận bây giờ, ta dường như lướt qua các công việc đó, việc khởi tạo các siêu tham số được xem là hiển nhiên.
+Bạn thậm chí có ấn tượng rằng các lựa chọn này không đặc biệt quá quan trọng.
+Tuy nhiên, lựa chọn cơ chế khởi tạo nào dường như đóng vai trò rất lớn trong quá trình học mạng nơ-ron và có thể là yếu tố quyết định sự ổn định của số.
+Hơn nữa, các lựa chọn có thể bị ràng buộc một cách thú vị với sự lựa chọn các hàm kích hoạt phi tuyến.
+Việc lựa chọn hàm nào và cách mà ta khởi tạo tham số có thể quyết định việc tối ưu hóa tốc độ hội tụ của thuật toán.
+Nếu ta không quan tâm đến những điều trên thì có thể dẫn đến việc bùng bổ hoặc tiêu biến gradient.
+Trong phần này, ta sẽ đi sâu vào các chủ đề một cách chi tiết hơn và thảo luận về một số phương pháp phỏng đoán hữu dụng mà bạn có thể sử dụng thường xuyên trong công việc của mình trong việc học sâu.
 
 <!--
 ## Vanishing and Exploding Gradients
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiêu biến và Bùng nổ Gradient
 
 <!--
 Consider a deep network with $d$ layers, input $\mathbf{x}$ and output $\mathbf{o}$.
 Each layer satisfies:
 -->
 
-*dịch đoạn phía trên*
+Xem xét một mạng nơ-ron sâu với $d$ tầng, đầu vào $\mathbf{x}$ và đầu ra $\mathbf{o}$.
+Mỗi tầng thõa mản:
 
 $$\mathbf{h}^{t+1} = f_t (\mathbf{h}^t) \text{ and thus } \mathbf{o} = f_d \circ \ldots, \circ f_1(\mathbf{x}).$$
 
@@ -42,7 +49,7 @@ If all activations and inputs are vectors, we can write the gradient of $\mathbf
 associated with the function $f_t$ at layer $t$ simply as
 -->
 
-*dịch đoạn phía trên*
+Nếu tất cả kích hoạt và đầu vào là vector, ta có thể viết lại gradient của $\mathbf{o}$ theo bất kỳ một tập tham số $\mathbf{W}_t$ được liên kết với hàm $f_t$ tại mỗi tầng $t$ dưới dạng đơn giản sau:
 
 $$\partial_{\mathbf{W}_t} \mathbf{o} = \underbrace{\partial_{\mathbf{h}^{d-1}} \mathbf{h}^d}_{:= \mathbf{M}_d} \cdot \ldots, \cdot \underbrace{\partial_{\mathbf{h}^{t}} \mathbf{h}^{t+1}}_{:= \mathbf{M}_t} \underbrace{\partial_{\mathbf{W}_t} \mathbf{h}^t}_{:= \mathbf{v}_t}.$$
 
@@ -60,7 +67,14 @@ As a result the steps taken are either (i) excessively large (the *exploding* gr
 or (ii) excessively small, (the *vanishing gradient problem*), in which case the parameters hardly move at all, and thus the learning process makes no progress.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, nó là tích của $d-t$ ma trận $\mathbf{M}_d \cdot \ldots, \cdot \mathbf{M}_t$ với vector gradient $\mathbf{v}_t$.
+Điều này sẽ xảy ra tương tự như với những gì diễn ra trong tràn (số) dưới khi ta nhân quá nhiều xác xuất.
+Tại thời điểm này, ta có thể giảm thiểu vấn đề đó bằng cách chuyển về log-space, có nghĩa là, trong quá trình biểu diễn số ta dịch chuyển từ phần định trị sang phần mũ.
+Thật không may, bài toán được đưa ra trong phương trình trên nghiêm trọng hơn nhiều: ban đầu các ma trận$M_t$ có thể có nhiều trị riêng.
+Các trị riêng có thể nhỏ, có thể lớn và đặc biệt, phép nhân của chúng có thể *rất lớn* hoặc *rất nhỏ*.
+Đây không (đơn thuần) là một bài toán biễu diễn số mà còn có nghĩa thuật toán tối ưu có ràng buộc bị thất bại.
+Nó nhận được giá trị gradient quá lớn hoặc quá nhỏ.
+Kết quả các bước được tính trong (i) quá lớn (hiện tượng *bùng nổ* gradient), trong trường hợp này, các tham số sẽ tăng rất nhanh khiến mô hình trở nên vô dụng, hoặc kết quả (ii) quá nhỏ, (vấn đề *tiêu biến* gradient), trong trường hợp này, các tham số hầu như không di chuyển, và dẫn đến quá trình học không có tiến triển.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -349,7 +363,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lý Phi Long
 
 <!-- Phần 2 -->
 *
