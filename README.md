@@ -56,13 +56,13 @@ Với các chương (2., 3., ...)
     * [-] 4.8. [Numerical Stability and Initialization](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
     * [-] 4.9. [Considering the Environment](chapter_multilayer-perceptrons/environment_vn.md)
     * [-] 4.10. [Predicting House Prices on Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
-* [ ] 5. Deep Learning Computation
-    * [ ] 5.1. Layers and Blocks
-    * [ ] 5.2. Parameter Management
-    * [ ] 5.3. Deferred Initialization
-    * [ ] 5.4. Custom Layers
-    * [ ] 5.5. File I/O
-    * [ ] 5.6. GPUs
+* [ ] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
+    * [ ] 5.1. [Layers and Blocks](chapter_deep-learning-computation/model-construction_vn.md)
+    * [ ] 5.2. [Parameter Management](chapter_deep-learning-computation/parameters_vn.md)
+    * [ ] 5.3. [Deferred Initialization](chapter_deep-learning-computation/deferred-init_vn.md)
+    * [ ] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
+    * [ ] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
+    * [ ] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
 * [ ] 6. Convolutional Neural Networks
     * [ ] 6.1. From Dense Layers to Convolutions
     * [ ] 6.2. Convolutions for Images

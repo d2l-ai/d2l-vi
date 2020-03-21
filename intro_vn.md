@@ -114,7 +114,7 @@ Nếu bạn có những phản hồi hữu ích, tên của bạn sẽ được 
 
 * Tự động thêm comment vào các bản gốc (`<!--` và `-->`) để các phần này không hiển thị trên [trang web chính](https://d2l.aivivn.com/). Phần thêm này có thể được thực hiện tự động bằng cách chạy:
 ```
-python3 utils --convert <path_to_file>.md
+python3 utils.py --convert <path_to_file>.md
 ```
 và tạo ra file `<path_to_file>_vn.md`.
 
