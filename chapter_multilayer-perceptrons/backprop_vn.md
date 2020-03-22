@@ -223,7 +223,7 @@ Now we are able calculate the gradient $\partial J/\partial \mathbf{W}^{(2)} \in
 Using the chain rule yields:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ của các tham số mô hình gần nhất với lớp đầu ra. Áp dụng quy tắc dây chuyền:
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(2)}}
@@ -236,7 +236,7 @@ To obtain the gradient with respect to $\mathbf{W}^{(1)}$ we need to continue ba
 The gradient with respect to the hidden layer's outputs $\partial J/\partial \mathbf{h} \in \mathbb{R}^h$ is given by
 -->
 
-*dịch đoạn phía trên*
+Để tính được gradient của $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ lớp đầu ra đến các lớp ẩn. Gradient của các đầu ra từ lớp ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
 
 
 $$
@@ -250,7 +250,7 @@ Since the activation function $\phi$ applies elementwise, calculating the gradie
 of the intermediate variable $\mathbf{z}$ requires that we use the elementwise multiplication operator, which we denote by $\odot$.
 -->
 
-*dịch đoạn phía trên*
+Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ đòi hỏi chúng ta sử dụng phép nhân theo từng phần tử, biểu diễn bởi $\odot$.
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
@@ -263,7 +263,7 @@ Finally, we can obtain the gradient $\partial J/\partial \mathbf{W}^{(1)} \in \m
 According to the chain rule, we get
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta có có được gradient $\partial J/\partial \mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ của các tham số mô hình gần nhất với lớp đầu vào. Theo quy tắc dây chuyền, ta có
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(1)}}
@@ -369,7 +369,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 5 -->
 *
