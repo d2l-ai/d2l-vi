@@ -212,6 +212,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | misclassified                | bị phân loại nhầm             |                                              |
 | mislabeled                   | bị gán nhãn nhầm              |                                              |
 | model                        | mô hình                       |                                              |
+| model capacity | năng lực mô hình | |
 | module                       | mô-đun                        |                                              |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
@@ -305,6 +306,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | slicing (array)                 | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH)   |
 | spam email                      | email rác                |                                                |
 | speech recognition              | nhận dạng giọng nói      |                                                |
+| squashing function | hàm ép | |
 | standard deviation              | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb)   |
 | stationary point                | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC)   |
 | statistical power               | năng lực thống kê        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
