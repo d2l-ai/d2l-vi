@@ -21,7 +21,7 @@ In this section, we delve into these topics with greater detail and discuss some
 
 Cho đến nay, đối với mọi mô hình mà ta đã lập trình, ta cần khởi tạo các tham số theo một vài phân phối cụ thể.
 Tới bây giờ ta vẫn lướt qua các chi tiết thực hiện và việc khởi tạo các siêu tham số được xem là hiển nhiên.
-Bạn thậm chí có ấn tượng rằng các lựa chọn này không đặc biệt quá quan trọng.
+Bạn thậm chí có thể ấn tượng rằng các lựa chọn này không đặc biệt quá quan trọng.
 Tuy nhiên, lựa chọn cơ chế khởi tạo nào đóng vai trò rất lớn trong quá trình học của mạng nơ-ron và có thể là yếu tố quyết định đến sự ổn định số học.
 Hơn nữa, các lựa chọn cách khởi tạo có thể bị ràng buộc một cách thú vị với sự lựa chọn các hàm kích hoạt phi tuyến.
 Việc lựa chọn hàm kích hoạt và cách khởi tạo tham số nào có thể ảnh hưởng tới tốc độ hội tụ của thuật toán tối ưu.
