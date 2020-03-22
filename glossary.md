@@ -37,6 +37,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | batch size              | kích thước batch        | [https://git.io/JvXdK](https://git.io/JvXdK)   |
 | benchmark               | đánh giá xếp hạng       | [http://bit.ly/2BvfPYA](http://bit.ly/2BvfPYA) |
 | bias (bias as variance) | độ chệch                | [http://bit.ly/32HJI3S](http://bit.ly/32HJI3S) |
+| bias-variance tradeoff  | đánh đổi độ chệch - phương sai |    |
 | bias (tham số mô hình)  | hệ số điều chỉnh        | [https://git.io/Jvopx](https://git.io/Jvopx)   |
 | big data                | big data                |                                                |
 | binomial distribution   | phân phối nhị thức      | [https://git.io/JvohQ](https://git.io/JvohQ)   |
@@ -256,8 +257,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | pipeline                           | pipeline                   | [http://bit.ly/2OyYuEf](http://bit.ly/2OyYuEf) |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9)   |
 | positive sample/example            | mẫu dương                  |                                                |
+| posterior                          | hậu nghiệm                 |                                                |
 | precision                          | precision                  |                                                |
 | principal component analysis (PCA) | phân tích thành phần chính | [https://git.io/JvojD](https://git.io/JvojD)   |
+| prior                              | tiên nghiệm                |    |
 | probability theory                 | lý thuyết xác suất         |                                                |
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja)   |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja)   |
