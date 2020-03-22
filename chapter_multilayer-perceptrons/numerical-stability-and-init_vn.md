@@ -292,7 +292,7 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 Lí do được đưa ra ở phần trên hiếm khi ảnh hưởng nhiều đến những kĩ thuật hiện đại trong việc khởi tạo tham số.
 Thực tế thì MXNet có hẳn cả một module [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) thực thi hàng chục các phương pháp thực nghiệm.
 Hơn thế nữa thì khởi tạo tiếp tục là một lĩnh vực nghiên cứu nóng hổi về tìm tòi trong nghiên cứu về học thuyết cơ bản trong việc tối ưu mạng neuron.
-Một số phương pháp thực nghiệm này thực sự phù hợp khi tham số bị ràng buộc.
+Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc.
 (ví dụ : Khi mà tham số của các phần khác nhau trong mạng được chia sẻ với nhau),trong việc tăng chất lượng hình ảnh,mô hình chuỗi và những vấn đề liên quan. 
 Chúng tôi gợi ý rằng những người đọc cảm thấy hứng thú có thể quan sát kỹ hơn những gì được đưa ra như một phần của module và tìm hiểu những nghiên cứu gần đây về vấn đề khởi tạo tham số.
 Có thể bạn sẽ bắt gặp những ý tưởng thông minh gần đây và đóng góp thực thi của chúng vào MXNET, hoặc thậm chí là tự phát minh ra cách thức cho riêng mình.
