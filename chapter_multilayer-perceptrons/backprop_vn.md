@@ -15,7 +15,7 @@ When it came time to calculate the gradients, we just invoked the `backward` fun
 -->
 
 Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
-Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các tính toán liên quan đến *lan truyền xuôi* qua mô hình.
+Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các phép tính trong quá trình *lan truyền xuôi* qua mô hình.
 Khi cần tính gradient ta chỉ đơn giản gọi hàm `backward`, còn việc tính toán chi tiết được trông cậy vào mô-đun `autograd`.
 
 <!--
@@ -373,4 +373,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 *
-
