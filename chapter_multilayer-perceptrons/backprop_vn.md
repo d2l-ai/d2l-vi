@@ -29,7 +29,7 @@ you ought to *know* how these gradients are calculated under the hood if you wan
 Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
 Trước đây, khi chưa có công cụ tính vi phân tự động, đối với các mô hình phức tạp thì ngay cả những thay đổi nhỏ cũng yêu cầu tính lại các đạo hàm rắc rối một cách thủ công.
 Điều đáng ngạc nhiên là các bài báo học thuật thường dành rất nhiều trang để rút ra các nguyên tắc cập nhật.
-Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *nắm bắt* rõ cách tính gradient nếu bạn muốn vượt qua sự hiểu biết hời hợt về học sâu.
+Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *nắm bắt* rõ cách tính gradient nếu bạn muốn tiến xa hơn là chỉ hiểu biết hời hợt về học sâu.
 
 <!--
 In this section, we take a deep dive into the details of backward propagation (more commonly called *backpropagation* or *backprop*).
