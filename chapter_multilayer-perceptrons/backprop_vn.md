@@ -129,7 +129,7 @@ We refer to $J$ the *objective function* in the following discussion.
 ## Computational Graph of Forward Propagation
 -->
 
-## *dịch tiêu đề phía trên*
+## Đồ thị Tính toán của Lan Truyền Ngược
 
 <!--
 Plotting computational graphs helps us visualize the dependencies of operators and variables within the calculation. 
@@ -138,7 +138,10 @@ The lower-left corner signifies the input and the upper right corner the output.
 Notice that the direction of the arrows (which illustrate data flow) are primarily rightward and upward.
 -->
 
-*dịch đoạn phía trên*
+Vẽ đồ thị tính toán giúp chúng ta hình dung được sự phụ thuộc giữa các toán tử và các biến trong quá trình tính toán. 
+:numref:`fig_forward` thể hiện đồ thị tương ứng với mạng nơ-ron đã miêu tả ở trên.
+Góc bên trái dưới biểu diễn đầu vào trong khi góc bên phải trên biểu diễn đầu ra.
+Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) chủ yếu là qua phải và hướng lên trên. 
 
 <!--
 ![Computational Graph](../img/forward.svg)
@@ -152,7 +155,7 @@ Notice that the direction of the arrows (which illustrate data flow) are primari
 ## Backpropagation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lan truyền ngược
 
 <!--
 Backpropagation refers to the method of calculating the gradient of neural network parameters.
@@ -163,7 +166,12 @@ in which the input and the output $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ are tenso
 By using the chain rule, we can compute the derivative of $\mathsf{Z}$ wrt. $\mathsf{X}$ via
 -->
 
-*dịch đoạn phía trên*
+Lan truyền ngược đề cập đến phương pháp tính gradient của các tham số mạng nơ-ron. 
+Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào theo quy tắc dây chuyền.  
+Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm từng phần) cần thiết trong quá trình tính toán gradient theo các tham số.
+Giả sử chúng ta có hàm $\mathsf{Y}=f(\mathsf{X})$ và $\mathsf{Z}=g(\mathsf{Y}) = g \circ f(\mathsf{X})$, 
+trong đó đầu vào và đầu ra $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ là các tensor có kích thước bất kỳ. 
+Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm $\mathsf{Z}$ wrt. $\mathsf{X}$ như sau:
 
 $$\frac{\partial \mathsf{Z}}{\partial \mathsf{X}} = \text{prod}\left(\frac{\partial \mathsf{Z}}{\partial \mathsf{Y}}, \frac{\partial \mathsf{Y}}{\partial \mathsf{X}}\right).$$
 
@@ -174,7 +182,10 @@ For higher dimensional tensors, we use the appropriate counterpart.
 The operator $\text{prod}$ hides all the notation overhead.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các phần tử của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
+Với vector, điều này khá đơn giản: nó chỉ đơn thuần là phép nhân ma trận. 
+Với các tensor nhiều chiều thì sẽ có các phương án khác thích hợp hơn. 
+Phép tính $\text{prod}$ sẽ ẩn các ký hiệu trên đầu. 
 
 <!--
 The parameters of the simple network with one hidden layer are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$.
@@ -184,7 +195,11 @@ The order of calculations are reversed relative to those performed in forward pr
 The first step is to calculate the gradients of the objective function $J=L+s$ with respect to the loss term $L$ and the regularization term $s$.
 -->
 
-*dịch đoạn phía trên*
+Các tham số của mạng nơ-ron đơn giản với một tầng ẩn $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
+Mục địch của lan truyền ngược là tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
+Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính toán gradient của từng biến và tham số trung gian. 
+Thứ tự của các phép tính trong lan truyền ngược là đảo ngược các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán để tìm ra tham số. 
+Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ dựa trên mất mát $L$ và điều chuẩn $s$. 
 
 $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
 
@@ -192,7 +207,7 @@ $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial 
 Next, we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta tính gradient của hàm mục tiêu dựa trên các biến của lớp đầu ra $\mathbf{o}$ theo quy tắc dây chuyền.
 
 $$
 \frac{\partial J}{\partial \mathbf{o}}
@@ -205,14 +220,11 @@ $$
 Next, we calculate the gradients of the regularization term with respect to both parameters.
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, ta tính gradient của điều chuẩn dựa trên cả hai tham số. 
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
 \; \text{and} \;
 \frac{\partial s}{\partial \mathbf{W}^{(2)}} = \lambda \mathbf{W}^{(2)}.$$
--->
-
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -366,7 +378,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
