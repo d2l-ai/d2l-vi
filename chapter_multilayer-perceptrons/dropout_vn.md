@@ -79,7 +79,7 @@ For now, we turn to the more terrestrial investigation of practical tools that t
 ## Robustness through Perturbations
 -->
 
-## Sự mạnh mẽ thông qua Nhiễu loạn
+## Khả năng Kháng Nhiễu
 
 <!--
 Let's think briefly about what we expect from a good predictive model.
