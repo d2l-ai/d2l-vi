@@ -485,7 +485,7 @@ Nó có thật sự là giá trị tối ưu hay không?
 4. Chúng ta đã biết rằng $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$.
 Bạn có thể tìm một phương trình tương tự cho các ma trận (các nhà toán học gọi nó là [chuẩn Frobenius](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)) hay không?
 5. Ôn lại mối quan hệ giữa lỗi huấn luyện và lỗi khái quát.
-Bên cạnh phân rã trọng số, tăng cường việc huấn luyện và sử dụng một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết quá khớp không?
+Bên cạnh suy giảm trọng số, tăng cường việc huấn luyện và sử dụng một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết quá khớp không?
 6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy luận ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn hay không?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
