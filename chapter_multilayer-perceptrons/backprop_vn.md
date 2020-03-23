@@ -52,7 +52,7 @@ This may seem tedious but in the eternal words of funk virtuoso James Brown, you
 
 Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
 Bây giờ ta sẽ thực hiện từng bước trong cơ chế làm việc của mạng nơ-ron sâu có một tầng ẩn.
-Điều này có vẻ tẻ nhạt nhưng theo những ca từ bất hủ của nghệ sĩ dòng nhạc funk tài danh James Brown, bạn phải "trả giá để được làm sếp".
+Điều này có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
 
 <!--
 For the sake of simplicity, let’s assume that the input example is $\mathbf{x}\in \mathbb{R}^d$ and that our hidden layer does not include a bias term.
@@ -80,7 +80,7 @@ Assuming the parameters of the output layer only possess a weight of $\mathbf{W}
 -->
 
 Biến ẩn $\mathbf{h}$ cũng là một biến trung gian.
-Giả sử các tham số của tầng đầu ra chỉ có trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ thu được một vector với $q$ phần tử ở tầng đầu ra:
+Giả sử tham số của tầng đầu ra chỉ gồm trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ thu được một vector với $q$ phần tử ở tầng đầu ra:
 
 $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 
