@@ -292,7 +292,7 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 Các lập luận đưa ra ở trên mới chỉ chạm tới bề mặt của những kỹ thuật khởi tạo tham số hiện đại.
 Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) với hàng chục các phương pháp khởi tạo dựa theo thực nghiệm khác nhau đã được lập trình sẵn.
 Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong các nghiên cứu lý thuyết căn bản về tối ưu hóa mạng nơ-ron.
-Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc (tức là, tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong nhiệm vụ siêu phân giải, mô hình chuỗi và những vấn đề liên quan. 
+Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc (tức tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong nhiệm vụ siêu phân giải, mô hình chuỗi và những vấn đề liên quan. 
 Chúng tôi gợi ý với những độc giả quan tâm có thể tìm xem kĩ hơn về các kỹ thuật có trong mô-đun này và tìm hiểu thêm những nghiên cứu gần đây về vấn đề khởi tạo tham số.
 Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách lập trình chúng vào MXNet, hoặc thậm chí là tự phát minh ra phương pháp của riêng mình.
 
@@ -331,7 +331,7 @@ Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách 
 1. Bạn có thể thiết kế các trường hợp phá vỡ đối xứng khác bên cạnh đối xứng hoán vị?
 2. Ta có thể khởi tạo tất cả trọng số ở trong mạng hồi quy tuyến tính hoặc trong hồi quy softmax cùng một giá trị hay không?
 3. Hãy tìm hiểu thêm về phân cách tích ràng buộc trị riêng của phép nhân 2 ma trận. Nó cho ta biết được gì về điều kiện đảm bảo gradient có độ lớn vừa phải?
-4. Nếu biết rằng mô hình có một vài số hạng phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:You.Gitman.Ginsburg.2017.
+4. Nếu biết rằng mô hình có một vài số hạng phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:`You.Gitman.Ginsburg.2017`.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
