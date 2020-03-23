@@ -295,7 +295,7 @@ Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được 
 Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc.
 (chẳng hạn như khi các tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong việc tăng chất lượng hình ảnh, mô hình chuỗi và những vấn đề liên quan. 
 Chúng tôi gợi ý với những độc giả quan tâm có thể quan sát kỹ hơn những gì được đưa ra như một phần của mô-đun và tìm hiểu những nghiên cứu gần đây về vấn đề khởi tạo tham số.
-Có thể bạn sẽ bắt gặp một ý tưởng hay và đóng góp cách lập trình của chúng vào MXNet, hoặc thậm chí là tự phát minh ra cách thức cho riêng mình.
+Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách lập trình chúng vào MXNet, hoặc thậm chí là tự phát minh ra phương pháp của riêng mình.
 
 
 <!--
