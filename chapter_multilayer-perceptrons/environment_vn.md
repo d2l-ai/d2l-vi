@@ -46,7 +46,7 @@ and others require that we enter the realm of philosophy and grapple with diffic
 ## Distribution Shift
 -->
 
-## Dịch chuyển phân phối
+## Dịch chuyển Phân phối
 
 <!--
 To begin, we return to the observational setting, putting aside for now the impacts of our actions on the environment.
@@ -59,11 +59,11 @@ Fortunately, under some restricted assumptions on the ways our data might change
 principled algorithms can detect shift and possibly even adapt, achieving higher accuracy than if we naively continued to rely on our original classifier.
 -->
 
-Để bắt đầu, ta trở lại bối cảnh quan sát và tạm gác lại các ảnh hưởng của hành động của ta đến môi trường.
-Trong các mục tiếp theo, ta sẽ xem xét sâu hơn về các cách khác nhau mà phân phối dữ liệu có thể thay đổi và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
-Ngay từ đầu, ta nên cảnh báo rằng nếu phân phối tạo dữ liệu $p(\mathbf{x},y)$ có thể thay đổi theo các cách khác nhau tại bất kỳ thời điểm nào, thì việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
-Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên cái mà chúng ta gọi là "mèo" bây giờ là chó và trước đây chúng ta gọi là "chó" thì thực tế giờ lại là mèo, trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì ta không thể làm gì để phát hiện thay đổi hoặc sửa lỗi phân loại tại thời điểm kiểm tra.
-May mắn thay, dưới một giả định hạn chế về cách dữ liệu có thể thay đổi trong tương lai, các thuật toán nguyên tắc có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc ta tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ.
+Để bắt đầu, ta trở lại vị trí quan sát và tạm gác lại các ảnh hưởng của ta đến môi trường.
+Trong các mục tiếp theo, ta sẽ xem xét sâu hơn các cách khác nhau mà phân phối dữ liệu có thể dịch chuyển và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
+Ngay từ đầu, ta nên cảnh báo rằng nếu phân phối tạo dữ liệu $p(\mathbf{x},y)$ có thể dịch chuyển theo các cách khác nhau tại bất kỳ thời điểm nào, thì việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
+Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên con vật mà chúng ta gọi là "mèo" bây giờ là chó và trước đây chúng ta gọi là "chó" thì thực tế giờ lại là mèo, trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì ta không thể làm gì để phát hiện thay đổi hoặc sửa lỗi phân loại tại thời điểm kiểm tra.
+May mắn thay, dưới một vài giả định chặt chẽ về cách dữ liệu có thể thay đổi trong tương lai, các thuật toán nguyên tắc có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc ta tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -73,7 +73,7 @@ May mắn thay, dưới một giả định hạn chế về cách dữ liệu c
 ### Covariate Shift
 -->
 
-### Dịch chuyển biến
+### Dịch chuyển Hiệp biến
 
 <!--
 One of the best-studied forms of distribution shift is *covariate shift*.
@@ -83,11 +83,10 @@ Consider the challenge of distinguishing cats and dogs.
 Our training data consists of images of the following kind:
 -->
 
-Một trong những hình thức dịch chuyển phân phối được nghiên cứu tốt nhất là *dịch chuyển biến*.
-Ở đây, ta giả định rằng mặc dù phân phối đầu vào có thể thay đổi theo thời gian, nhưng hàm gán nhãn cụ thể là phân phối có điều kiện $P(y \mid \mathbf{x})$ không thay đổi.
-Mặc dù vấn đề này là dễ hiểu, nhưng trong thực tế nó cũng dễ dàng bị bỏ.
-Hãy xem xét các thách thức để phân biệt mèo và chó.
-Dữ liệu huấn luyện của ta bao gồm các hình ảnh của các loại sau:
+Một trong những dạng dịch chuyển phân phối được nghiên cứu rộng rãi nhất là *dịch chuyển hiệp biến*.
+Ở đây, ta giả định rằng mặc dù phân phối đầu vào có thể biến đổi theo thời gian, nhưng hàm gán nhãn, tức phân phối có điều kiện $P(y \mid \mathbf{x})$ thì không thay đổi.
+Mặc dù điều này này là dễ hiểu, nhưng trong thực tế thường dễ bị bỏ qua.
+Hãy xem xét bài toán phân biệt mèo và chó với tập dữ liệu huấn luyện bao gồm các ảnh sau:
 
 <!--
 |cat|cat|dog|dog|
@@ -103,7 +102,7 @@ Dữ liệu huấn luyện của ta bao gồm các hình ảnh của các loại
 At test time we are asked to classify the following images:
 -->
 
-Tại thời điểm kiểm tra ta được yêu cầu phân loại các ảnh sau:
+Tại thời điểm kiểm tra ta phải phân loại các ảnh sau:
 
 <!--
 |cat|cat|dog|dog|
@@ -126,13 +125,13 @@ Mathematically, we could say that $P(\mathbf{x})$ changes but that $P(y \mid \ma
 Although its usefulness is not restricted to this setting, when we believe $\mathbf{x}$ causes $y$, covariate shift is usually the right assumption to be working with.
 -->
 
-Rõ ràng việc phân loại trong trường hợp này là rất khó.
-Tập huấn luyện bao gồm các bức ảnh thực, trong khi tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
-Huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có kế hoạch thích ứng với lĩnh vực mới là một ý tưởng tồi.
-Thật không may, đây là một cạm bẫy rất phổ biến.
-Các nhà thống kê gọi đây là *dịch chuyển biến* bởi vì gốc rễ của vấn đề là do sự thay đổi trong phân phối của các đặc trưng (tức là, của *các biến*).
-Về mặt toán học, chúng ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
-Mặc dù tính hữu dụng của nó không bị hạn chế trong trường hợp này, nhưng khi ta tin rằng $\mathbf{x}$ gây ra $y$, thì dịch chuyển biến thường là giả định hợp lý.
+Rõ ràng để phân loại tốt trong trường hợp này là rất khó khăn.
+Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
+Huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với những thay đổi là một ý tưởng tồi.
+Thật không may, đây lại là một cạm bẫy rất phổ biến.
+Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*).
+Về mặt toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
+Mặc dù tính hữu dụng của nó không bị giới hạn trong bối cảnh này, nhưng khi ta tin rằng $\mathbf{x}$ gây ra $y$, thì dịch chuyển hiệp biến thường là một giả định hợp lý.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -702,7 +701,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 *
