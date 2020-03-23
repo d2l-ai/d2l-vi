@@ -172,6 +172,8 @@ As an aside, note that while SGD would not break this symmetry, dropout regulari
 Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với các hằng số $c$.
 Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên không chỉ mỗi nút sẽ nhận cùng giá trị, mà cũng nhận cập nhật giống nhau.
 Hạ gradient ngẫu nhiên không bao giờ phá vỡ tính cân đối tự thân của nó và ta có thể sẽ không nhận ra được sức mạnh thể hiện của mạng.
+Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất.
+Bên cạnh đó, lưu ý rằng hạ gradient ngẫu nhiên sẽ không phá vỡ cân đối này thì nó sẽ bị phá vỡ bởi điều chuẩn hóa dropout!
 
 <!--
 ## Parameter Initialization
@@ -203,8 +205,8 @@ Both choices tend to work well in practice for moderate problem sizes.
 -->
 
 Trong các phần trước, ví dụ, trong :chữ số:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
-Nếu phương pháp khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
-Cả hai cách đều thực hiện tốt trong thực hành cho các vấn đề cỡ trung. 
+Nếu phương thức khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
+Cả hai lựa chọn đều thực hiện tốt trong thực hành cho các vấn đề cỡ trung. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
