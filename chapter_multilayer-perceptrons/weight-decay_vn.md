@@ -467,7 +467,11 @@ In this book we will default to the simple heuristic of applying weight decay on
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
-*dịch đoạn phía trên*
+Tới giờ, chúng ta mới chỉ đề cập đến một ý niệm về những gì cấu thành nên một hàm *tuyến tính* đơn giản.
+Hơn nữa, những gì cấu thành nên một hàm *phi tuyến* đơn giản lại là một câu hỏi thậm chí còn phức tạp hơn.
+Ví dụ, [Tái tạo các không gian kernel Hilbert (RKHS)](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space) cho phép chúng ta áp dụng các công cụ được giới thiệu cho các hàm tuyến tính trong một ngữ cảnh phi tuyến.
+Không may mắn thay, các giải thuật dựa vào RKHS thường không thể nhân rộng và hoạt động hiệu quả trên dữ liệu lớn, đa chiều.
+Dựa trên một thực nghiệm đơn giản, trong quyển sách này chúng ta mặc định sẽ áp dụng phương pháp suy giảm trọng số cho tất cả các tầng của mạng học sâu.
 
 <!--
 ## Summary
@@ -482,9 +486,11 @@ In this book we will default to the simple heuristic of applying weight decay on
 * You can have different optimizers within the same training loop, e.g., for different sets of parameters.
 -->
 
-*dịch đoạn phía trên*
-
-
+* Điều chuẩn là một phương pháp phổ biến để giải quyết quá khớp.
+Nó thêm một lượng phạt vào hàm mất mát trong tập huấn luyện để giảm thiểu độ phức tạp của mô hình học.
+* Một cách cụ thể để giữ mô hình đơn giản là suy giảm trọng số sử dụng lượng phạt $\ell_2$. Điều này dẫn đến giá trị trọng số sẽ suy giảm trong các bước cập nhật của giải thuật học.
+* Gluon cung cấp tính năng phân rã trọng số tự động trong bộ tối ưu hoá bằng cách thiết lập siêu tham số `wd`.
+* Bạn có thể dùng những bộ tối ưu hoá khác nhau trong cùng một vòng lặp huấn luyện, chẳng hạn, cho các tập tham số khác nhau. 
 <!--
 ## Exercises
 -->
@@ -502,7 +508,18 @@ In addition to weight decay, increased training, and the use of a model of suita
 6. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via $P(w \mid x) \propto P(x \mid w) P(w)$. How can you identify $P(w)$ with regularization?
 -->
 
-*dịch đoạn phía trên*
+1. Thí nghiệm với giá trị của $\lambda$ trong bài toán ước lượng ở trang này.
+Vẽ đồ thị độ chính xác của tập huấn luyện và tập kiểm tra như một hàm số của $\lambda$.
+Bạn quan sát được những gì?
+2. Sử dụng tập kiểm định để tìm giá trị tối ưu của $\lambda$.
+Nó có thật sự là giá trị tối ưu hay không?
+Điều này có quan trọng không?
+3. Các phương trình cập nhật sẽ có dạng như thế nào nếu thay vì $\|\mathbf{w}\|^2$ chúng ta sử dụng lượng phạt $\sum_i |w_i|$ (được gọi là điều chuẩn $\ell_1$).
+4. Chúng ta đã biết rằng $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$.
+Bạn có thể tìm một phương trình tương tự cho các ma trận (các nhà toán học gọi nó là [chuẩn Frobenius](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)) hay không?
+5. Ôn lại mối quan hệ giữa lỗi huấn luyện và lỗi khái quát.
+Bên cạnh suy giảm trọng số, tăng cường việc huấn luyện và sử dụng một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết quá khớp không?
+6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy luận ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn hay không?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -554,4 +571,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 6 -->
-*
+* Lê Cao Thăng
+* Lê Khắc Hồng Phúc
