@@ -290,7 +290,7 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 -->
 
 Các lập luận đưa ra ở trên mới chỉ chạm tới bề mặt của những kỹ thuật khởi tạo tham số hiện đại.
-Trên thực tế, MXNet đã có [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) là mô-đun giúp lập trình với hàng chục các phương pháp thực nghiệm khác nhau.
+Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) với hàng chục các phương pháp khởi tạo dựa theo thực nghiệm khác nhau đã được lập trình sẵn.
 Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong các nghiên cứu lý thuyết căn bản về tối ưu hóa mạng nơ-ron.
 Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc (tức là, tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong nhiệm vụ siêu phân giải, mô hình chuỗi và những vấn đề liên quan. 
 Chúng tôi gợi ý với những độc giả quan tâm có thể tìm xem hơn về các kỹ thuật có trong mô-đun này và tìm hiểu thêm những nghiên cứu gần đây về vấn đề khởi tạo tham số.
