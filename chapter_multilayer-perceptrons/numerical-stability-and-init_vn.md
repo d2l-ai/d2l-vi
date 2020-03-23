@@ -292,7 +292,7 @@ Perhaps you may come across a recent clever idea and contribute its implementati
 Lí do được đưa ra ở phần trên hiếm khi ảnh hưởng đến những kỹ thuật hiện đại trong việc khởi tạo tham số.
 Trên thực tế, MXNet đã có [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) là mô-đun giúp lập trình với hàng chục các phương pháp thực nghiệm khác nhau.
 Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong các nghiên cứu lý thuyết căn bản về tối ưu hóa mạng nơ-ron.
-Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc.
+Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc (tức là, tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong nhiệm vụ siêu phân giải, mô hình chuỗi và những vấn đề liên quan. 
 (chẳng hạn như khi các tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong việc tăng chất lượng hình ảnh, mô hình chuỗi và những vấn đề liên quan. 
 Chúng tôi gợi ý với những độc giả quan tâm có thể quan sát kỹ hơn những gì được đưa ra như một phần của mô-đun và tìm hiểu những nghiên cứu gần đây về vấn đề khởi tạo tham số.
 Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách lập trình chúng vào MXNet, hoặc thậm chí là tự phát minh ra phương pháp của riêng mình.
