@@ -96,8 +96,8 @@ Hãy cùng nghĩ một chút về thứ mà ta mong đợi từ một mô hình 
 Ta muốn mô hình hoạt động tốt khi gặp dữ liệu mà nó chưa từng thấy.
 Lý thuyết khái quát cổ điển cho rằng: để thu hẹp khoảng cách giữa chất lượng khi huấn luyện và chất lượng khi kiểm tra, ta nên hướng tới một mô hình *đơn giản*.
 Sự đơn giản này có thể nằm ở việc số chiều thấp, điều mà chúng ta đã khám phá khi thảo luận về hàm cơ sở đơn thức trong mô hình tuyến tính ở :numref:`sec_model_selection`. 
-Như ta đã thấy khi bàn về phân rã trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, chuẩn (nghịch) của các tham số là một phép đo khác cho sự đơn giản.
-Một khái niệm biểu diễn sự đơn giản hữu ích khác là độ mượt, tức hàm sô không nên quá nhạy với những thay đổi nhỏ ở đầu vào.
+Như ta đã thấy khi bàn về suy giảm trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, (nghịch đảo) chuẩn của các tham số là một phép đo khác cho sự đơn giản.
+Một khái niệm hữu ích khác để biểu diễn sự đơn giản là độ mượt, tức hàm số không nên quá nhạy với những thay đổi nhỏ ở đầu vào.
 Ví dụ, khi phân loại ảnh, ta mong muốn rằng việc thêm một chút nhiễu ngẫu nhiên vào các điểm ảnh sẽ không ảnh hưởng nhiều tới kết quả dự đoán.
 
 <!--
@@ -106,7 +106,7 @@ This work drew a clear mathematical connection between the requirement that a fu
 -->
 
 Vào năm 1995, Christopher Bishop đã chính quy hóa ý tưởng này khi ông chứng minh rằng việc huấn luyện với nhiễu ngẫu nhiên tương đương với điều chuẩn Tikhonov :cite:`Bishop.1995`.
-Công trình này đã tạo nên một liên kết toán học rõ ràng giữa điều kiện hàm mượt (nên nó cũng đơn giản), và điều kiện hàm phải linh hoạt với những nhiễu loạn nhỏ ở đầu vào.
+Công trình này đã chỉ rõ ra mối liên kết toán học giữa điều kiện hàm mượt (nên nó cũng đơn giản) và điều kiện hàm phải kiên định với những nhiễu loạn nhỏ ở đầu vào.
 
 <!--
 Then, in 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` developed a clever idea for how to apply Bishop's idea to the *internal* layers of the network, too.
@@ -114,9 +114,9 @@ Namely, they proposed to inject noise into each layer of the network before calc
 They realized that when training a deep network with many layers, enforcing smoothness just on the input-output mapping.
 -->
 
-Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh về cách áp dụng ý tưởng của Bishop cho các tầng *nội bộ* của mạng.
+Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
 Cụ thể, họ đề xuất việc thêm nhiễu vào mỗi tầng của mạng trước khi tính toán các tầng kế tiếp trong quá trình huấn luyện.
-Họ nhận ra điều đó khi huấn luyến mạng có nhiều tầng và chỉ ép buộc sự mượt trên phép ánh xạ đầu vào-đầu ra. <!-- WHAT!?? -->
+Họ nhận ra rằng khi huấn luyến mạng đa tầng với dữ liệu nhiễu, ta chỉ đang ép buộc điều kiện mượt trên phép ánh xạ giữa đầu vào và đầu ra chứ không có ràng buộc mượt giữa các tầng nội bộ.
 
 <!--
 Their idea, called *dropout*, involves injecting noise while computing each internal layer during forward propagation, and it has become a standard technique for training neural networks.
@@ -137,7 +137,7 @@ Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argu
 -->
 
 Để nói cho rõ, mối liên kết đến Bishop là của chúng tôi tự đặt ra.
-Đáng ngạc nhiên, bài báo gốc về dropout xây dựng trực giác bằng việc so sánh nó với sinh sản hữu tính.
+Đáng ngạc nhiên, bài báo gốc về dropout xây dựng cách hiểu trực giác bằng việc so sánh nó với quá trình sinh sản hữu tính.
 Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó, và họ gọi trạng thái này là `đồng thích nghi`.
 Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như việc lập luận rằng sinh sản hữu tính phá bỏ các gen đã đồng thích nghi.
 
@@ -147,7 +147,7 @@ One idea is too inject the noise in an *unbiased* manner so that the expected va
 -->
 
 Thách thức chính bây giờ là làm thế nào để thêm nhiễu.
-Một ý tưởng là: thêm nhiễu một cách *không thiên lệch* để giá trị kỳ vọng của mỗi tầng <!-- hic câu này chả hiểu gì mọi người giúp với ạ -->
+Ta có thể thêm nhiễu một cách *không thiên lệch* sao cho giá trị kỳ vọng của mỗi tầng bằng giá trị kỳ vọng của chính tầng đó trước khi được thêm nhiễu, giả sử rằng các tầng khác được giữ nguyên.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -491,6 +491,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
