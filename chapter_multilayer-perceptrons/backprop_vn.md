@@ -363,6 +363,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Lý Phi Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 *
