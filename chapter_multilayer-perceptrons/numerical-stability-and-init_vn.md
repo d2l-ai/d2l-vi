@@ -277,7 +277,7 @@ Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initiali
 ### Beyond
 -->
 
-### Ngoài ra
+### Xa hơn nữa
 
 <!--
 The reasoning above barely scratches the surface of modern approaches to parameter initialization.
