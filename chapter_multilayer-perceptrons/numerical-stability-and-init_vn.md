@@ -311,7 +311,7 @@ Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách 
 -->
 
 * Tiêu biến hay bùng nổ gradient đều là những vấn đề phổ biến trong những mạng rất sâu, trừ khi ta có nhiều sự quan tâm nhằm đảm bảo gradient và các tham số vẫn được kiểm soát tốt.
-* Các thực nghiệm trong khởi tạo là cần thiết để đảm bảo ít nhất rằng gradient ban đầu không bị quá lớn hay quá nhỏ.
+* Các kĩ thuật khởi tạo tham số dựa trên kinh nghiệm là cần thiết để đảm bảo ít nhất rằng gradient ban đầu không bị quá lớn hay quá nhỏ.
 * ReLU giải quyết một trong những vấn đề về tiêu biến gradient, cụ thể là việc tiêu biến gradient cho các đầu vào rất lớn. Điều này có thể tăng tốc độ hội tụ đáng kể.
 * Khởi tạo ngẫu nhiên là chìa khóa để đảm bảo tính đối xứng bị phá vỡ trước khi tối ưu hóa.
 
