@@ -332,7 +332,7 @@ Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách 
 1. Bạn có thể thiết kế các trường hợp phá vỡ đối xứng khác bên cạnh đối xứng hoán vị?
 2. Chúng ta có thể khởi tạo tất cả trọng số ở trong mạng hồi quy tuyến tính hoặc trong hồi quy softmax cùng một giá trị hay không?
 3. Dựa trên những phân tích ràng buộc về trị riêng của phép nhân 2 ma trận (quá lớn sẽ khiến exploding gradient và quá nhỏ sẽ khiến vanishing gradient). Những phân tích này cho ta biết điều gì để đảm bảo gradient có độ lớn vừa phải ?
-4. Nếu biết rằng trong vài trường hợp, mô hình không thể hội tụ, liệu ta có thể sửa chữa vấn đề này (mô hình bị phân kỳ do vanishing/exploding gradient). Có thể xem gợi ý ở paper LARS :cite:You.Gitman.Ginsburg.2017.
+4. Nếu biết rằng mô hình có một vài số hạng phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:You.Gitman.Ginsburg.2017.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
