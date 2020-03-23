@@ -143,7 +143,7 @@ print('After multiplying 100 matrices', M)
 ### Symmetry
 -->
 
-### *dịch tiêu đề phía trên*
+### Tính Cân đối
 
 <!--
 Another problem in deep network design is the symmetry inherent in their parametrization.
@@ -153,7 +153,11 @@ There is nothing special differentiating the first hidden unit vs the second hid
 In other words, we have permutation symmetry among the hidden units of each layer.
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề khác trong thiết kế mạng học sâu là tính cân đối vốn có trong vấn đề tham số hóa.
+Giả sử ta có một mạng học sâu với một tầng ẩn gồm hai nút, $h_1$ và $h_2$. 
+Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của lớp output để đạt đến hàm tương tự.
+Việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai không có gì đáng kể.
+Nói cách khác, ta có tính cân đối hoán vị giữa các nút ẩn của từng tầng.
 
 <!--
 This is more than just a theoretical nuisance.
@@ -164,15 +168,16 @@ The hidden layer would behave as if it had only a single unit.
 As an aside, note that while SGD would not break this symmetry, dropout regularization would!
 -->
 
-*dịch đoạn phía trên*
-
-
+Đây không chỉ là phiền toái về mặt lý thuyết.
+Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với các hằng số $c$.
+Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên không chỉ mỗi nút sẽ nhận cùng giá trị, mà cũng nhận cập nhật giống nhau.
+Hạ gradient ngẫu nhiên không bao giờ phá vỡ tính cân đối tự thân của nó và ta có thể sẽ không nhận ra được sức mạnh thể hiện của mạng.
 
 <!--
 ## Parameter Initialization
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tham số
 
 <!--
 One way of addressing, or at least mitigating the issues raised above is through careful initialization of the weight vectors.
@@ -180,14 +185,15 @@ This way we can ensure that (at least initially) the gradients do not vanish and
 Additional care during optimization and suitable regularization ensures that things never get too bad.
 -->
 
-*dịch đoạn phía trên*
-
+Một cách giải quyết, hay ít nhất là giảm nhẹ các vấn đề được nêu ra ở phía trên được thực hiện thông qua việc khởi tạo cẩn thận các trọng số vectors. 
+Bằng cách này ta có thể chắc chắn rằng (ít nhất là ban đầu) các gradient không biến mất và chúng duy trì ở một tỉ lệ hợp lí trong đó trọng số mạng không phân kỳ.
+Chăm sóc bổ sung trong quá trình tối ưu hóa và điều chuẩn hóa phù hợp đảm bảo rằng mọi thứ không bao giờ trở nên quá tệ.
 
 <!--
 ### Default Initialization
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi tạo Mặc định
 
 <!--
 In the previous sections, e.g., in :numref:`sec_linear_gluon`, we used `net.initialize(init.Normal(sigma=0.01))` to initialize the values of our weights.
@@ -196,7 +202,9 @@ MXNet will use the default random initialization method: each element of the wei
 Both choices tend to work well in practice for moderate problem sizes.
 -->
 
-*dịch đoạn phía trên*
+Trong các phần trước, ví dụ, trong :chữ số:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
+Nếu phương pháp khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
+Cả hai cách đều thực hiện tốt trong thực hành cho các vấn đề cỡ trung. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
