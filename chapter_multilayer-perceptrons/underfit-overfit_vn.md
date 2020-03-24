@@ -16,10 +16,10 @@ For example, imagine that we wanted to hunt for patterns among genetic markers l
 Because each person's genes identify them uniquely (ignoring identical siblings), it's possible to memorize the entire dataset.
 -->
 
-Là những nhà khoa học học máy, mục tiêu của chúng ta đó là khám phá ra các *khuôn mẫu*.
-Nhưng làm sao chúng ta có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *khái quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
+Là những nhà khoa học học máy, mục tiêu của chúng ta là khám phá ra các *khuôn mẫu*.
+Nhưng làm sao có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *khái quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
 Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các khuôn mẫu liên kết các dấu hiệu di truyền của bệnh nhân và tình trạng mất trí của họ, với nhãn được trích ra từ tập {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
-Bởi vì các gene của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên việc ghi nhớ toàn bộ tập dữ liệu là hoàn toàn khả thi.
+Bởi vì các gen của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên việc ghi nhớ toàn bộ tập dữ liệu là hoàn toàn khả thi.
 
 <!--
 We don't want our model to say *"That's Bob! I remember him! He has dementia!*
@@ -30,7 +30,7 @@ Our predictions will only be useful if our model has truly discovered a *general
 
 Chúng ta không muốn mô hình của nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
 Lý do tại sao rất đơn giản.
-Khi chúng ta triển khai mô hình trong tương lai, chúng ta sẽ gặp các bệnh nhân mà mô hình chưa bao giờ gặp trước đấy.
+Khi triển khai mô hình trong tương lai, chúng ta sẽ gặp các bệnh nhân mà mô hình chưa bao giờ gặp trước đấy.
 Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một khuôn mẫu *khái quát*.
 
 <!--
@@ -39,8 +39,8 @@ If we are successfull in this endeavor, then we could successfully assess risk e
 This problem---how to discover patterns that *generalize*---is the fundamental problem of machine learning.
 -->
 
-Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các mẫu mà chúng nắm bắt được các quy tắc trong tập tổng thể nền tảng mà từ đó tập huấn luyện của chúng ta đã được trích ra. 
-Nếu chúng ta thành công trong nỗ lực này, thì chúng ta có thể đánh giá thành công rủi ro ngay cả đối với các cá nhân mà chúng ta chưa bao giờ gặp phải trước đây.
+Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các mẫu mà chúng mô tả được các quy tắc trong tập dữ liệu mà từ đó tập huấn luyện đã được trích ra
+Nếu thành công trong nỗ lực này, thì chúng ta có thể đánh giá thành công rủi ro ngay cả đối với các cá nhân mà chúng ta chưa bao giờ gặp phải trước đây.
 Vấn đề này---làm cách nào để khám phá ra các mẫu mà *khái quát hóa*---là vấn đề nền tảng của học máy.
 
 <!--
@@ -52,10 +52,10 @@ When working with finite samples, we run the risk that we might discover *appare
 -->
 
 Nguy hiểm là khi huấn luyện các mô hình, chúng ta chỉ truy cập một tập dữ liệu nhỏ.
-Các tệp dữ liệu hình ảnh công khai lớn nhất chứa khoảng một triệu hình ảnh.
+Các tập dữ liệu hình ảnh công khai lớn nhất chứa khoảng một triệu ảnh.
 Thông thường hơn, chúng ta phải học chỉ từ hàng ngàn hoặc hàng chục ngàn điểm dữ liệu.
 Trong một hệ thống bệnh viện lớn, chúng ta có thể truy cập hàng trăm ngàn hồ sơ y tế.
-Khi làm việc với các tập mẫu hữu hạn, chúng ta gặp phải rủi ro sẽ khám phá ra các sự kết hợp *rõ ràng* mà hóa ra lại không áp dụng khi chúng ta thu thập thêm dữ liệu.
+Khi làm việc với các tập mẫu hữu hạn, chúng ta gặp phải rủi ro sẽ khám phá ra các mối liên kết *rõ ràng* mà hóa ra lại không đúng khi thu thập thêm dữ liệu.
 
 <!--
 The phenomena of fitting our training data more closely than we fit the underlying distribution is called overfitting, and the techniques used to combat overfitting are called regularization.
@@ -64,9 +64,9 @@ If you altered the model structure or the hyper-parameters during the experiment
 you might have noticed that with enough nodes, layers, and training epochs, the model can eventually reach perfect accuracy on the training set, even as the accuracy on test data deteriorates.
 -->
 
-Hiện tượng việc mô hình khớp dữ liệu huấn luyện chặt chẽ hơn nhiều so với khớp phân phối nền tảng được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn.
+Hiện tượng mô hình khớp dữ liệu huấn luyện chính xác hơn nhiều so với khớp phân phối thực sự được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn (*regularization*).
 Trong các phần trước, bạn có thể đã quan sát hiệu ứng này khi thử nghiệm với tập dữ liệu Fashion-MNIST.
-Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong suốt quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu thử nghiệm giảm đi.
+Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu kiểm tra giảm đi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -87,7 +87,7 @@ were we to apply it to an infinite stream of additional data points drawn from t
 -->
 
 Để thảo luận hiện tượng này một cách chuyên sâu hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
-Lỗi huấn luyện là loại lỗi của mô hình như được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu như các mẫu ban đầu.
+Lỗi huấn luyện là loại lỗi của mô hình được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu như các mẫu ban đầu.
 
 <!--
 Problematically, *we can never calculate the generalization error exactly*.
@@ -97,7 +97,7 @@ constituted of a random selection of data points that were withheld from our tra
 -->
 
 Vấn đề là *chúng ta không bao giờ có thể tính toán chính xác lỗi khái quát* vì luồng vô hạn dữ liệu chỉ có trong tưởng tượng.
-Trên thực tế, ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm các điểm dữ liệu ngẫu nhiên được giữ lại từ tập huấn luyện.
+Trên thực tế, ta phải *ước tính* lỗi khái quát bằng cách áp dụng mô hình vào một tập kiểm tra độc lập bao gồm các điểm dữ liệu ngẫu nhiên ngoài tập huấn luyện.
 
 <!--
 The following three thought experiments will help illustrate this situation better.
@@ -115,10 +115,10 @@ Ba thí nghiệm sau sẽ giúp minh họa tình huống này tốt hơn.
 Hãy xem xét một sinh viên đại học đang cố gắng chuẩn bị cho kỳ thi cuối cùng của mình.
 Một sinh viên chăm chỉ sẽ cố gắng luyện tập tốt và kiểm tra khả năng của cô ấy bằng việc luyện tập những bài kiểm tra của các năm trước.
 Tuy nhiên, làm tốt các bài kiểm tra trước đây không đảm bảo rằng cô ấy sẽ làm tốt bài kiểm tra thật.
-Ví dụ, sinh viên có thể cố gắng chuẩn bị bằng cách học vẹt các câu trả lời cho các câu hỏi.
+Ví dụ, sinh viên có thể cố gắng chuẩn bị bằng cách học tủ các câu trả lời cho các câu hỏi.
 Điều này đòi hỏi sinh viên phải ghi nhớ rất nhiều thứ.
 Cô ấy có lẽ còn ghi nhớ đáp án cho các bài kiểm tra cũ một cách hoàn hảo. 
-Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do mà một số đáp án nhất định được đưa ra. 
+Một học sinh khác có thể chuẩn bị bằng việc cố gắng hiểu lý do mà một số đáp án nhất định được đưa ra.
 Trong hầu hết các trường hợp, sinh viên sau sẽ làm tốt hơn nhiều. 
 
 <!--
@@ -133,11 +133,11 @@ Even if we could encounter this data, we could never afford to store the lookup 
 -->
 
 Tương tự như vậy, hãy xem xét một mô hình đơn giản chỉ sử dụng một bảng tra cứu để trả lời các câu hỏi. 
-Nếu tập hợp các đầu vào cho phép là rời rạc và nhỏ một cách hợp lý, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
+Nếu tập hợp các đầu vào cho phép là rời rạc và đủ nhỏ, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
 Tuy nhiên mô hình này không có khả năng thể hiện tốt hơn so với việc đoán ngẫu nhiên khi phải đối mặt với các ví dụ chưa từng gặp trước đây.
-Trong thực tế, không gian đầu vào quá lớn để có thể ghi nhớ các đáp án tương ứng của từng đầu vào khả dĩ. 
-Ví dụ, hãy xem xét các hình ảnh $28\times28$ đen trắng.
-Nếu mỗi điểm ảnh có thể lấy một trong số các giá trị xám trong thang $256$, thì có thể có  $256^{784}$ hình ảnh khác nhau.
+Trong thực tế, không gian đầu vào quá lớn để có thể ghi nhớ các đáp án tương ứng của từng đầu vào khả dĩ.
+Ví dụ, hãy xem xét các ảnh $28\times28$ đen trắng.
+Nếu mỗi điểm ảnh có thể lấy một trong số các giá trị xám trong thang $256$, thì có thể có $256^{784}$ ảnh khác nhau.
 Điều đó nghĩa là số ảnh có kích thước nhỏ với độ phân giải thấp còn lớn hơn nhiều so với số lượng nguyên tử trong vũ trụ.
 Thậm chí nếu có thể bắt gặp toàn bộ dữ liệu, ta cũng không thể lưu trữ bằng bảng tra cứu.
 
@@ -389,7 +389,7 @@ Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa
 The common practice to address this problem is to split our data three ways, incorporating a *validation set* in addition to the training and test sets.
 -->
 
-Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra. 
+Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra.
 
 
 <!--
