@@ -253,6 +253,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | penalty | lượng phạt | |
 | perceptron                         | perceptron                 | [https://git.io/JvohC](https://git.io/JvohC)   |
 | performance                        | chất lượng                 | [http://bit.ly/36IzQcB](http://bit.ly/36IzQcB) |
+| perturbation | nhiễu | |
 | plateau (danh từ)                  | vùng nằm ngang             |                                                |
 | plateau (động từ)                  | nằm ngang                  |                                                |
 | pipeline                           | pipeline                   | [http://bit.ly/2OyYuEf](http://bit.ly/2OyYuEf) |
@@ -286,6 +287,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning         | học tăng cường                            |                                              |
 | representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | reward function                | hàm điểm thưởng                           |                                              |
+| robustness | khả năng / tính kháng nhiễu | |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | running time                   | thời gian chạy                            |                                              |
 | region of rejection            | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
