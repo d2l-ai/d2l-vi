@@ -287,7 +287,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning         | học tăng cường                            |                                              |
 | representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | reward function                | hàm điểm thưởng                           |                                              |
-| robustness | khả năng kháng nhiễu | |
+| robustness | khả năng / tính kháng nhiễu | |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | running time                   | thời gian chạy                            |                                              |
 | region of rejection            | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
