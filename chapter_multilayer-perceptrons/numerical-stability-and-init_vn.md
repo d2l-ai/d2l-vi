@@ -216,7 +216,7 @@ Both choices tend to work well in practice for moderate problem sizes.
 Let's look at the scale distribution of the activations of the hidden units $h_{i}$ for some layer. They are given by
 -->
 
-Ta hãy xem phân phối tỉ lệ của kích hoạt các nút ẩn $h_{i}$ cho một vài tầng được đưa ra bởi
+Ta hãy xem phân phối tỉ lệ của giá trị kích hoạt các nút ẩn $h_{i}$ cho một vài tầng được đưa ra bởi
 
 $$h_{i} = \sum_{j=1}^{n_\mathrm{in}} W_{ij} x_j.$$
 
@@ -228,8 +228,9 @@ that they also have zero mean and variance $\gamma^2$ and that they are independ
 In this case, we can compute mean and variance of $h_i$ as follows:
 -->
 
-Trọng số $W_{ij}$ đều được lấy ra theo cách độc lập từ cùng một phân phối. Hơn nữa, ta giả sử rằng phân phối này có số trung bình bằng 0 và phương sai $\sigma^2$ (điều này không có nghĩa là phân phối đấy phải là dạng Gaussian, chỉ có nghĩa số trung bình và phương sai cần phải tồn tại).
-Ta không thực sự có nhiều kiểm soát trên các đầu vào trên tầng $x_j$ nhưng hãy tiếp tục với giả định hơi phi thực tế rằng vì chúng có trung bình bằng 0 và phương sai $\gamma^2$ và chúng độc lập với $\mathbf{W}$.
+Các trọng số $W_{ij}$ đều được lấy mẫu độc lập từ cùng một phân phối.
+Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng 0 và phương sai $\sigma^2$ (điều này không có nghĩa là phân phối đấy phải là dạng Gaussian, chỉ có nghĩa số trung bình và phương sai cần phải tồn tại).
+Ta không thực sự có nhiều kiểm soát trên các đầu vào trên tầng $x_j$ nhưng hãy tiếp tục với giả định hơi phi thực tế là chúng có trung bình bằng 0, phương sai là $\gamma^2$ và độc lập với $\mathbf{W}$.
 Trong trường hợp này, ta có thể tính toán số trung bình và phương sai của $h_i$ theo cách sau:
 
 $$
@@ -274,11 +275,11 @@ For uniformly distributed random variables $U[-a, a]$, note that their variance 
 Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initialize uniformly with $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$.
 -->
 
-Đây là lý do làm cơ sở cho việc khởi tạo Xavier :trích dẫn:`Glorot.Bengio.2010`.
+Đây là lý do làm cơ sở cho cách khởi tạo Xavier :trích dẫn:`Glorot.Bengio.2010`.
 Nó hoạt động đủ tốt trong thực tế.
 Đối với các biến ngẫu nhiên Gaussian, khởi tạo Xavier chọn phân phối chuẩn với trung bình bằng 0 và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.  
 Dành cho các biến ngẫu nhiên được phân bố đồng đều $U[-a, a]$, chú ý rằng phương sai của chúng được cho bởi $a^2/3$.
-Cắm $a^2/3$ vào điều kiện trên $\sigma^2$ mang lại việc ta nên khởi tạo đồng đều với $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$. 
+Thay $a^2/3$ vào điều kiện trên $\sigma^2$, ta có lý do nên khởi tạo đồng đều với $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
