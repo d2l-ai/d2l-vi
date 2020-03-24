@@ -79,7 +79,7 @@ For now, we turn to the more terrestrial investigation of practical tools that t
 ## Robustness through Perturbations
 -->
 
-## *dịch tiêu đề phía trên*
+## Khả năng Kháng Nhiễu
 
 <!--
 Let's think briefly about what we expect from a good predictive model.
@@ -92,14 +92,21 @@ to small changed to its inputs.
 For instance, when we classify images, we would expect that adding some random noise to the pixels should be mostly harmless.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng nghĩ một chút về thứ mà ta mong đợi từ một mô hình dự đoán tốt.
+Ta muốn mô hình hoạt động tốt khi gặp dữ liệu mà nó chưa từng thấy.
+Lý thuyết khái quát cổ điển cho rằng: để thu hẹp khoảng cách giữa chất lượng khi huấn luyện và chất lượng khi kiểm tra, ta nên hướng tới một mô hình *đơn giản*.
+Sự đơn giản này có thể nằm ở việc số chiều thấp, điều mà chúng ta đã khám phá khi thảo luận về hàm cơ sở đơn thức trong mô hình tuyến tính ở :numref:`sec_model_selection`. 
+Như ta đã thấy khi bàn về suy giảm trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, (nghịch đảo) chuẩn của các tham số là một phép đo khác cho sự đơn giản.
+Một khái niệm hữu ích khác để biểu diễn sự đơn giản là độ mượt, tức hàm số không nên quá nhạy với những thay đổi nhỏ ở đầu vào.
+Ví dụ, khi phân loại ảnh, ta mong muốn rằng việc thêm một chút nhiễu ngẫu nhiên vào các điểm ảnh sẽ không ảnh hưởng nhiều tới kết quả dự đoán.
 
 <!--
 In 1995, Christopher Bishop formalized this idea when he proved that training with input noise is equivalent to Tikhonov regularization :cite:`Bishop.1995`.
 This work drew a clear mathematical connection between the requirement that a function be smooth (and thus simple), and the requirement that it be resilient to perturbations in the input.
 -->
 
-*dịch đoạn phía trên*
+Vào năm 1995, Christopher Bishop đã chính quy hóa ý tưởng này khi ông chứng minh rằng việc huấn luyện với nhiễu ngẫu nhiên tương đương với điều chuẩn Tikhonov :cite:`Bishop.1995`.
+Công trình này đã chỉ rõ ra mối liên kết toán học giữa điều kiện hàm mượt (nên nó cũng đơn giản) và điều kiện hàm phải kiên định với những nhiễu loạn nhỏ ở đầu vào.
 
 <!--
 Then, in 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` developed a clever idea for how to apply Bishop's idea to the *internal* layers of the network, too.
@@ -107,7 +114,9 @@ Namely, they proposed to inject noise into each layer of the network before calc
 They realized that when training a deep network with many layers, enforcing smoothness just on the input-output mapping.
 -->
 
-*dịch đoạn phía trên*
+Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
+Cụ thể, họ đề xuất việc thêm nhiễu vào mỗi tầng của mạng trước khi tính toán các tầng kế tiếp trong quá trình huấn luyện.
+Họ nhận ra rằng khi huấn luyến mạng đa tầng với dữ liệu nhiễu, ta chỉ đang ép buộc điều kiện mượt trên phép ánh xạ giữa đầu vào và đầu ra chứ không có ràng buộc mượt giữa các tầng nội bộ.
 
 <!--
 Their idea, called *dropout*, involves injecting noise while computing each internal layer during forward propagation, and it has become a standard technique for training neural networks.
@@ -115,7 +124,10 @@ The method is called *dropout* because we literally *drop out* some neurons duri
 Throughout training, on each iteration, standard dropout consists of zeroing out some fraction (typically 50%) of the nodes in each layer before calculating the subsequent layer.
 -->
 
-*dịch đoạn phía trên*
+Ý tưởng này, có tên gọi là *dropout*, hoạt động bằng cách thêm nhiễu khi tính toán các tầng nội bộ trong lượt truyền xuôi.
+Nó đã trở thành một kĩ thuật tiêu chuẩn để huấn luyện mạng nơ-ron.
+Phương pháp này có tên gọi như vậy là bởi ta *bỏ ra ngoài* một số nơ-ron trong quá trình huấn luyện.
+Tại mỗi vòng lặp huấn luyện, phương pháp dropout tiêu chuẩn sẽ đặt giá trị của một lượng nhất định (thường là 50%) các nút trong mỗi tầng về không, trước khi tính toán các tầng kế tiếp.
 
 <!--
 To be clear, we are imposing our own narrative with the link to Bishop.
@@ -124,14 +136,18 @@ The authors argue that neural network overfitting is characterized by a state in
 Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argued to break up co-adapted genes.
 -->
 
-*dịch đoạn phía trên*
+Để nói cho rõ, mối liên kết đến Bishop là của chúng tôi tự đặt ra.
+Đáng ngạc nhiên, bài báo gốc về dropout xây dựng cách hiểu trực giác bằng việc so sánh nó với quá trình sinh sản hữu tính.
+Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó, và họ gọi trạng thái này là *đồng thích nghi*.
+Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như việc lập luận rằng sinh sản hữu tính phá bỏ các gen đã đồng thích nghi.
 
 <!--
 The key challenge then is *how* to inject this noise.
 One idea is too inject the noise in an *unbiased* manner so that the expected value of each layer---fixing the others equal to the value it would have taken absent noise.
 -->
 
-*dịch đoạn phía trên*
+Thách thức chính bây giờ là làm thế nào để thêm nhiễu.
+Ta có thể thêm nhiễu một cách *không thiên lệch* sao cho giá trị kỳ vọng của mỗi tầng bằng giá trị kỳ vọng của chính tầng đó trước khi được thêm nhiễu, giả sử rằng các tầng khác được giữ nguyên.  
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -491,7 +507,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
