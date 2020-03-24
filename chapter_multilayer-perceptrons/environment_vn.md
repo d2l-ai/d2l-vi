@@ -395,8 +395,8 @@ and then a reweighted minimization problem where we weigh terms by $\beta$, e.g.
 Here's a prototypical algorithm for that purpose which uses an unlabeled training set $X$ and test set $Z$:
 -->
 
-Ở đây, có hai vấn đề cần được giải quyết: thứ nhất là phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
-và thứ hai là thay đổi bài toán tối thiểu hóa mất mát trong đó ta chia các hệ số cho $\beta$, ví dụ: thông qua các gradient đầu.
+Hệ quả là có hai vấn đề cần được giải quyết: thứ nhất là phân biệt được dữ liệu được lấy ra từ hai phân phối,
+và thứ hai là thay đổi trọng số bài toán tối thiểu hóa mất mát trong đó ta chia các hệ số cho $\beta$, ví dụ: thông qua các gradient đầu.
 Đây là một thuật toán nguyên mẫu cho that purpose which uses tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 <!-- minimization problem theo mình hiểu là bài toán tối thiểu hóa mất mát -->
 
@@ -420,7 +420,7 @@ If we find a point where $q(\mathbf{x}) > 0$ but $p(\mathbf{x}) = 0$, then the c
 -->
 
 Lưu ý rằng phương pháp này được dựa trên một giả định quan trọng.
-Để nó hoạt động, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
+Để nó hoạt động được, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
 Nếu ta thấy một điểm với $q(\mathbf{x}) > 0$ nhưng $p(\mathbf{x}) = 0$, thì trọng số quan trọng tương ứng sẽ bằng vô hạn.
 
 <!--
@@ -429,7 +429,7 @@ In these approaches, we use one network, $f$ to distinguish real versus fake dat
 We will discuss this in much more detail later.
 -->
 
-*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế *bộ tạo dữ liệu* tạo ra dữ liệu không thể phân biệt được với các mẫu được lấy mẫu từ một bộ dữ liệu tham chiếu.
+*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ tạo dữ liệu* tạo ra dữ liệu không thể phân biệt được với các mẫu được lấy từ một bộ dữ liệu tham chiếu.
 Trong các phương pháp này, ta sử dụng một mạng $f$ để phân biệt dữ liệu thật và giả và mạng thứ hai $g$ cố gắng đánh lừa bộ phân biệt $f$ để chấp nhận dữ liệu giả là thật.
 Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các phần sau.
 
@@ -441,7 +441,7 @@ Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các ph�
 ### Label Shift Correction
 -->
 
-### Hiệu chỉnh Dịch chuyển nhãn
+### Điều chỉnh Dịch chuyển nhãn
 
 <!--
 For the discussion of label shift, we will assume for now that we are dealing with a $k$-way multiclass classification task.
@@ -454,8 +454,8 @@ while the labels are often easier to work, say vectors whose length corresponds 
 -->
 
 Để thảo luận về sự dịch chuyển nhãn, ta sẽ giả định rằng ta đang xử lý một bài toán phân loại $k$ lớp.
-Trong đó phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(y) \neq q(y)$, trọng số quan trọng của ta sẽ tương ứng với tỷ lệ khả năng nhãn $q(y)/p(y)$.
-Một điều tuyệt vời về sự dịch chuyển nhãn là nếu ta có một mô hình tốt (về phân phối nguồn) thì ta có thể có được ước tính phù hợp của các trọng số này mà không bao giờ phải đối phó với kích thước xung quanh (trong học sâu, đầu vào thường là các đối tượng nhận thức nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn, giả sử các vector có chiều dài tương ứng với số lượng lớp).
+Trong đó, phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(y) \neq q(y)$, trọng số quan trọng sẽ tương ứng với tỷ lệ $q(y)/p(y)$. <!-- the label likelihood ratios ? -->
+Một điều tuyệt vời về dịch chuyển nhãn là nếu ta có một mô hình tốt (trên phân phối nguồn) thì ta có thể có được ước tính phù hợp cho các trọng số này mà không bao giờ phải đối phó với số chiều cao (trong học sâu, đầu vào thường là các đối tượng nhận thức nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn, giả sử các vector có chiều dài tương ứng với số lượng lớp).
 
 <!--
 To estimate calculate the target label distribution, we first take our reasonably good off the shelf classifier 
@@ -464,8 +464,8 @@ The confusion matrix C, is simply a $k \times k$ matrix where each column corres
 Each cell's value $c_{ij}$ is the fraction of predictions where the true label was $j$ *and* our model predicted $y$.
 -->
 
-Để ướng lượng phân phối của nhãn mục tiêu, đầu tiên ta dùng our reasonably good off the shelf classifier (typically được học trên tập huấn luyện) và tính confusion matrix sử dụng một tập kiểm định (cũng phân phối với tập huấn luyện).
-Ma trận confusion matrix C, đơn giản là một ma trận $k \times k$ với mỗi cột tương ứng với một nhãn *thật* và mỗi dòng tươn ứng với nhãn dự đoán của mô hình.
+Để ướng lượng phân phối của nhãn mục tiêu, đầu tiên ta dùng một bộ phân loại tương đối tốt (thường được học trên tập huấn luyện) và sử dụng một tập kiểm định (cũng phân phối với tập huấn luyện) để tính ma trận confusion.
+Ma trận confusion C là một ma trận $k \times k$ với mỗi cột tương ứng với một nhãn *thật* và mỗi dòng tươn ứng với nhãn dự đoán của mô hình.
 Mỗi phần tử có giác trị $c_{ij}$ là tỉ lệ dự đoán với nhãn thật là $j$ *và* nhãn dự đoán là $y$.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
