@@ -143,7 +143,7 @@ print('After multiplying 100 matrices', M)
 ### Symmetry
 -->
 
-### Tính Cân đối
+### Tính Đối xứng
 
 <!--
 Another problem in deep network design is the symmetry inherent in their parametrization.
@@ -153,11 +153,11 @@ There is nothing special differentiating the first hidden unit vs the second hid
 In other words, we have permutation symmetry among the hidden units of each layer.
 -->
 
-Một vấn đề khác trong thiết kế mạng học sâu là tính cân đối vốn có trong vấn đề tham số hóa.
+Một vấn đề khác trong thiết kế mạng học sâu là tính đối xứng vốn có trong quá trình tham số hóa.
 Giả sử ta có một mạng học sâu với một tầng ẩn gồm hai nút, $h_1$ và $h_2$. 
-Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của lớp output để đạt đến hàm tương tự.
-Việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai không có gì đáng kể.
-Nói cách khác, ta có tính cân đối hoán vị giữa các nút ẩn của từng tầng.
+Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của lớp output để đạt được một hàm tương tự.
+Không có gì đặc biệt khác nhau giữa việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai.
+Nói cách khác, ta có tính đối xứng hoán vị giữa các nút ẩn của từng tầng.
 
 <!--
 This is more than just a theoretical nuisance.
@@ -169,9 +169,9 @@ As an aside, note that while SGD would not break this symmetry, dropout regulari
 -->
 
 Đây không chỉ là phiền toái về mặt lý thuyết.
-Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với các hằng số $c$.
-Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên không chỉ mỗi nút sẽ nhận cùng giá trị, mà cũng nhận cập nhật giống nhau.
-Hạ gradient ngẫu nhiên không bao giờ phá vỡ tính cân đối tự thân của nó và ta có thể sẽ không nhận ra được sức mạnh thể hiện của mạng.
+Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
+Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà cũng sẽ có bước cập nhật giống nhau.
+Hạ gradient ngẫu nhiên sẽ không bao giờ phá vỡ tính đối xứng sẵn có và ta có thể sẽ không hiện thực được sức mạnh biểu diễn của mạng.
 Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất.
 Bên cạnh đó, lưu ý rằng hạ gradient ngẫu nhiên sẽ không phá vỡ cân đối này thì nó sẽ bị phá vỡ bởi điều chuẩn hóa dropout!
 
@@ -187,9 +187,9 @@ This way we can ensure that (at least initially) the gradients do not vanish and
 Additional care during optimization and suitable regularization ensures that things never get too bad.
 -->
 
-Một cách giải quyết, hay ít nhất là giảm nhẹ các vấn đề được nêu ra ở phía trên được thực hiện thông qua việc khởi tạo cẩn thận các trọng số vectors. 
+Một cách giải quyết, hay ít nhất là giảm nhẹ các vấn đề được nêu ra ở phía trên được thực hiện thông qua việc khởi tạo cẩn thận các vector trọng số. 
 Bằng cách này ta có thể chắc chắn rằng (ít nhất là ban đầu) các gradient không biến mất và chúng duy trì ở một tỉ lệ hợp lí trong đó trọng số mạng không phân kỳ.
-Chăm sóc bổ sung trong quá trình tối ưu hóa và điều chuẩn hóa phù hợp đảm bảo rằng mọi thứ không bao giờ trở nên quá tệ.
+Cộng thêm sự chăm sóc đặc biệt trong quá trình tối ưu hóa và điều chuẩn phù hợp sẽ đảm bảo mọi thứ không bao giờ trở nên quá tệ.
 
 <!--
 ### Default Initialization
@@ -206,7 +206,7 @@ Both choices tend to work well in practice for moderate problem sizes.
 
 Trong các phần trước, ví dụ, trong :chữ số:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
 Nếu phương thức khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
-Cả hai lựa chọn đều thực hiện tốt trong thực hành cho các vấn đề cỡ trung. 
+Cả hai lựa chọn đều hoạt động tốt trong thực tế cho các vấn đề cỡ trung. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
