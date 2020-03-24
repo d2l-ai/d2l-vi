@@ -138,7 +138,7 @@ Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argu
 
 Để nói cho rõ, mối liên kết đến Bishop là của chúng tôi tự đặt ra.
 Đáng ngạc nhiên, bài báo gốc về dropout xây dựng cách hiểu trực giác bằng việc so sánh nó với quá trình sinh sản hữu tính.
-Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó, và họ gọi trạng thái này là `đồng thích nghi`.
+Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó, và họ gọi trạng thái này là *đồng thích nghi*.
 Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như việc lập luận rằng sinh sản hữu tính phá bỏ các gen đã đồng thích nghi.
 
 <!--
