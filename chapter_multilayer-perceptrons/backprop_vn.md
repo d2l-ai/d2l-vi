@@ -185,7 +185,7 @@ The operator $\text{prod}$ hides all the notation overhead.
 Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các số hạng của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
 Với vector, điều này khá đơn giản: nó chỉ đơn thuần là phép nhân ma trận. 
 Với các tensor nhiều chiều thì sẽ có các phương án khác thích hợp hơn. 
-Phép tính $\text{prod}$ sẽ ẩn các ký hiệu trên đầu. 
+Phép tính $\text{prod}$ sẽ làm việc ký hiệu đơn giản hơn.
 
 <!--
 The parameters of the simple network with one hidden layer are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$.
