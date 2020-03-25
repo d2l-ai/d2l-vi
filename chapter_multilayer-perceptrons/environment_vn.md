@@ -125,7 +125,7 @@ Mathematically, we could say that $P(\mathbf{x})$ changes but that $P(y \mid \ma
 Although its usefulness is not restricted to this setting, when we believe $\mathbf{x}$ causes $y$, covariate shift is usually the right assumption to be working with.
 -->
 
-Rõ ràng để phân loại tốt trong trường hợp này là rất khó khăn.
+Rõ ràng việc phân loại tốt trong trường hợp này là rất khó khăn.
 Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
 Huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với những thay đổi là một ý tưởng tồi.
 Thật không may, đây lại là một cạm bẫy rất phổ biến.
