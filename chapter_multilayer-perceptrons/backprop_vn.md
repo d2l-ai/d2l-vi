@@ -250,7 +250,7 @@ Since the activation function $\phi$ applies elementwise, calculating the gradie
 of the intermediate variable $\mathbf{z}$ requires that we use the elementwise multiplication operator, which we denote by $\odot$.
 -->
 
-Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ đòi hỏi chúng ta sử dụng phép nhân theo từng phần tử, biểu diễn bởi $\odot$.
+Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ đòi hỏi chúng ta sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
