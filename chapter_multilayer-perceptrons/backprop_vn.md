@@ -220,7 +220,7 @@ $$
 Next, we calculate the gradients of the regularization term with respect to both parameters.
 -->
 
-Kế tiếp, ta tính gradient của điều chuẩn dựa trên cả hai tham số. 
+Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số. 
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
 \; \text{and} \;
