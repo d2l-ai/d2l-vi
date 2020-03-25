@@ -341,7 +341,7 @@ Một lý do nữa đó là chúng ta thường huấn luyện các minibatch ch
 -->
 
 1. Giả sử đầu vào $\mathbf{x}$ với hàm số vô hướng $f$ là ma trận $n \times m$. Chiều của gradient $f$ ứng với $\mathbf{x} là gì?
-2. Thêm vào một thiên kiến (bias) trong tầng ẩn của mô hình mô tả ở trên.
+2. Thêm một hệ số điều chỉnh vào tầng ẩn của mô hình được mô tả ở trên.
   * Vẽ đồ thị tính toán tương ứng.
   * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
 3. Tính lượng bộ nhớ mà mô hình được mô tả ở chương này sử dụng lúc huấn luyện và lúc dự đoán.
