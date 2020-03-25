@@ -182,7 +182,7 @@ For higher dimensional tensors, we use the appropriate counterpart.
 The operator $\text{prod}$ hides all the notation overhead.
 -->
 
-Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các phần tử của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
+Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các số hạng của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
 Với vector, điều này khá đơn giản: nó chỉ đơn thuần là phép nhân ma trận. 
 Với các tensor nhiều chiều thì sẽ có các phương án khác thích hợp hơn. 
 Phép tính $\text{prod}$ sẽ ẩn các ký hiệu trên đầu. 
