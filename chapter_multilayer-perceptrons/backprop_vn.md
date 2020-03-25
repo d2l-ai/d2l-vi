@@ -147,7 +147,7 @@ Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) 
 ![Computational Graph](../img/forward.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/forward.svg)
+![Đồ thị tính toán](../img/forward.svg)
 :label:`fig_forward`
 
 
