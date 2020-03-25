@@ -63,7 +63,7 @@ principled algorithms can detect shift and possibly even adapt, achieving higher
 Trong các mục tiếp theo, ta sẽ xem xét kỹ các cách khác nhau mà phân phối dữ liệu có thể dịch chuyển và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
 Ngay từ đầu, ta nên cảnh báo rằng nếu phân phối tạo dữ liệu $p(\mathbf{x},y)$ có thể dịch chuyển theo các cách khác nhau tại bất kỳ thời điểm nào, thì việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
 Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên con vật mà chúng ta gọi là "mèo" bây giờ là chó và trước đây chúng ta gọi là "chó" thì thực tế giờ lại là mèo, trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì ta không thể nào phát hiện được sự thay đổi hay điều chỉnh bộ phân loại tại thời điểm kiểm tra.
-May mắn thay, dưới một vài giả định chặt về cách dữ liệu có thể thay đổi trong tương lai, một vài thuật toán có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc ta tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ. <!-- cụm từ "principled algorithms" mình tạm dịch là "thuật toán" vì chưa tìm được cách dịch hợp lý -->
+May mắn thay, dưới một vài giả định chặt về cách dữ liệu có thể thay đổi trong tương lai, một vài thuật toán có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ. <!-- cụm từ "principled algorithms" mình tạm dịch là "thuật toán" vì chưa tìm được cách dịch hợp lý -->
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
