@@ -39,7 +39,7 @@ If we are successfull in this endeavor, then we could successfully assess risk e
 This problem---how to discover patterns that *generalize*---is the fundamental problem of machine learning.
 -->
 
-Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các mẫu mà chúng mô tả được các quy tắc trong tập dữ liệu mà từ đó tập huấn luyện đã được trích ra
+Để tóm tắt một cách chính thức hơn, mục tiêu của chúng ta là khám phá các khuôn mẫu mà chúng mô tả được các quy tắc trong tập dữ liệu mà từ đó tập huấn luyện đã được trích ra.
 Nếu thành công trong nỗ lực này, thì chúng ta có thể đánh giá thành công rủi ro ngay cả đối với các cá nhân mà chúng ta chưa bao giờ gặp phải trước đây.
 Vấn đề này---làm cách nào để khám phá ra các mẫu mà *khái quát hóa*---là vấn đề nền tảng của học máy.
 
@@ -53,7 +53,7 @@ When working with finite samples, we run the risk that we might discover *appare
 
 Nguy hiểm là khi huấn luyện các mô hình, chúng ta chỉ truy cập một tập dữ liệu nhỏ.
 Các tập dữ liệu hình ảnh công khai lớn nhất chứa khoảng một triệu ảnh.
-Thông thường hơn, chúng ta phải học chỉ từ hàng ngàn hoặc hàng chục ngàn điểm dữ liệu.
+Thường thì chúng ta phải học chỉ từ vài ngàn hoặc vài chục ngàn điểm dữ liệu.
 Trong một hệ thống bệnh viện lớn, chúng ta có thể truy cập hàng trăm ngàn hồ sơ y tế.
 Khi làm việc với các tập mẫu hữu hạn, chúng ta gặp phải rủi ro sẽ khám phá ra các mối liên kết *rõ ràng* mà hóa ra lại không đúng khi thu thập thêm dữ liệu.
 
@@ -64,7 +64,7 @@ If you altered the model structure or the hyper-parameters during the experiment
 you might have noticed that with enough nodes, layers, and training epochs, the model can eventually reach perfect accuracy on the training set, even as the accuracy on test data deteriorates.
 -->
 
-Hiện tượng mô hình khớp dữ liệu huấn luyện chính xác hơn nhiều so với khớp phân phối thực sự được gọi là quá khớp, và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn (*regularization*).
+Hiện tượng mô hình khớp dữ liệu huấn luyện chính xác hơn nhiều so với khớp phân phối thực sự được gọi là quá khớp (*overfitting*), và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn (*regularization*).
 Trong các phần trước, bạn có thể đã quan sát hiệu ứng này khi thử nghiệm với tập dữ liệu Fashion-MNIST.
 Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu kiểm tra giảm đi.
 
@@ -87,7 +87,7 @@ were we to apply it to an infinite stream of additional data points drawn from t
 -->
 
 Để thảo luận hiện tượng này một cách chuyên sâu hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
-Lỗi huấn luyện là loại lỗi của mô hình được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu như các mẫu ban đầu.
+Lỗi huấn luyện là loại lỗi của mô hình được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu với các mẫu ban đầu.
 
 <!--
 Problematically, *we can never calculate the generalization error exactly*.
@@ -135,11 +135,11 @@ Even if we could encounter this data, we could never afford to store the lookup 
 Tương tự như vậy, hãy xem xét một mô hình đơn giản chỉ sử dụng một bảng tra cứu để trả lời các câu hỏi. 
 Nếu tập hợp các đầu vào cho phép là rời rạc và đủ nhỏ, thì có lẽ sau khi xem *nhiều* ví dụ huấn luyện, phương pháp này sẽ hoạt động tốt. 
 Tuy nhiên mô hình này không có khả năng thể hiện tốt hơn so với việc đoán ngẫu nhiên khi phải đối mặt với các ví dụ chưa từng gặp trước đây.
-Trong thực tế, không gian đầu vào quá lớn để có thể ghi nhớ các đáp án tương ứng của từng đầu vào khả dĩ.
+Trong thực tế, không gian đầu vào là quá lớn để có thể ghi nhớ mọi đáp án tương ứng của từng đầu vào khả dĩ.
 Ví dụ, hãy xem xét các ảnh $28\times28$ đen trắng.
 Nếu mỗi điểm ảnh có thể lấy một trong số các giá trị xám trong thang $256$, thì có thể có $256^{784}$ ảnh khác nhau.
-Điều đó nghĩa là số ảnh có kích thước nhỏ với độ phân giải thấp còn lớn hơn nhiều so với số lượng nguyên tử trong vũ trụ.
-Thậm chí nếu có thể bắt gặp toàn bộ dữ liệu, ta cũng không thể lưu trữ bằng bảng tra cứu.
+Điều đó nghĩa là số lượng ảnh độ phân giải thấp còn lớn hơn nhiều so với số lượng nguyên tử trong vũ trụ.
+Thậm chí nếu có thể xem qua toàn bộ điểm dữ liệu, ta cũng không thể lưu trữ chúng trong bảng tra cứu.
 
 <!--
 Last, consider the problem of trying to classify the outcomes of coin tosses (class 0: heads, class 1: tails) based on some contextual features that might be available.
