@@ -199,7 +199,7 @@ Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\m
 Mục địch của lan truyền ngược là tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
 Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính toán gradient của các biến trung gian và tham số. 
 Thứ tự của các phép tính trong lan truyền ngược là đảo ngược các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán để tìm ra tham số. 
-Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ dựa trên mất mát $L$ và điều chuẩn $s$. 
+Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ theo mất mát $L$ và điều chuẩn $s$. 
 
 $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
 
