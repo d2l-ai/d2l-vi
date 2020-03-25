@@ -263,7 +263,7 @@ Finally, we can obtain the gradient $\partial J/\partial \mathbf{W}^{(1)} \in \m
 According to the chain rule, we get
 -->
 
-Cuối cùng, ta có có được gradient $\partial J/\partial \mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ của các tham số mô hình gần nhất với lớp đầu vào. Theo quy tắc dây chuyền, ta có
+Cuối cùng, ta có được gradient $\partial J/\partial \mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ của các tham số mô hình gần nhất với lớp đầu vào. Theo quy tắc dây chuyền, ta có
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(1)}}
