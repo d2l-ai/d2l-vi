@@ -85,7 +85,7 @@ Our training data consists of images of the following kind:
 
 Một trong những dạng dịch chuyển phân phối được nghiên cứu rộng rãi nhất là *dịch chuyển hiệp biến*.
 Ở đây, ta giả định rằng mặc dù phân phối đầu vào có thể biến đổi theo thời gian, nhưng hàm gán nhãn, tức phân phối có điều kiện $P(y \mid \mathbf{x})$ thì không thay đổi.
-Mặc dù điều này này là dễ hiểu, nhưng trong thực tế thường dễ bị bỏ qua.
+Mặc dù vấn đề này khá dễ hiểu, trong thực tế nó thường dễ bị bỏ qua.
 Hãy xem xét bài toán phân biệt mèo và chó với tập dữ liệu huấn luyện bao gồm các ảnh sau:
 
 <!--
