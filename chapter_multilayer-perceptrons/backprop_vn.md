@@ -236,7 +236,8 @@ To obtain the gradient with respect to $\mathbf{W}^{(1)}$ we need to continue ba
 The gradient with respect to the hidden layer's outputs $\partial J/\partial \mathbf{h} \in \mathbb{R}^h$ is given by
 -->
 
-Để tính được gradient của $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn. Gradient của các đầu ra từ tầng ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
+Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn. 
+Gradient theo các đầu ra của tầng ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
 
 
 $$
