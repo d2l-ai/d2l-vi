@@ -359,7 +359,7 @@ train_labels = np.array(train_data.SalePrice.values,
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 To get started we train a linear model with squared loss.
@@ -369,8 +369,10 @@ And if things work, the linear model will serve as a baseline giving us some int
 giving us a sense of how much gain we should expect from fancier models.
 -->
 
-*dịch đoạn phía trên*
-
+Để bắt đầu, ta sẽ huấn luyện một mô hình tuyến tính với hàm mất mát bình phường.
+Tất nhiên mô hình tuyến tính sẽ không thể thắng cuộc thi được, nhưng nó vẫn là một bước kiểm tra sơ bộ để xem liệu dữ liệu có chứa thông tin ý nghĩa hay không.
+Nếu mô hình này không thể đạt chất lượng tốt hơn việc đoán mò, rất có khả năng ta đang có bug xử lý dữ liệu.
+Còn nếu nó hoạt động, mô hình tuyến tính sẽ đóng vai trò như một mốc khởi điểm, giúp ta hình dung khoảng cách giữa một mô hình đơn giản và các mô hình tốt nhất hiện có, cũng như mức độ cải thiện mà ta mong muốn từ các mô hình "xịn" hơn.
 ```{.python .input  n=13}
 loss = gluon.loss.L2Loss()
 
@@ -388,7 +390,10 @@ For instance, if our prediction is off by USD 100,000 when estimating the price 
 On the other hand, if we err by this amount in Los Altos Hills, California, this might represent a stunningly accurate prediction (their, the median house price exceeds 4 million USD).
 -->
 
-*dịch đoạn phía trên*
+Với giá nhà (hay giá cổ phiếu), ta quan tâm đến các đại lượng tương đối hơn các đại lượng tuyệt đối.
+Cụ thể hơn, ta thường quan tâm đến lỗi tương đối $\frac{y - \hat{y}}{y}$ hơn lỗi tuyệt đối $y - \hat{y}$.
+Ví dụ, nếu dự đoán giá một ngôi nhà ở Rural Ohio bị lệch đi 100,000 USD, mà giá thông thường một ngôi nhà ở đó là 125,000 USD, có lẽ mô hình đang làm việc rất kém.
+Mặt khác, nếu ta có cùng độ lệch như vậy khi dự đoán giá nhà ở Los Altos Hills, California, có thể dự đoán lại rất chính xác (ở đây, giá nhà trung vị tầm hơn 4 triệu đô).
 
 <!--
 One way to address this problem is to measure the discrepancy in the logarithm of the price estimates.
@@ -397,7 +402,10 @@ After all, a small value $\delta$ of $\log y - \log \hat{y}$ translates into $e^
 This leads to the following loss function:
 -->
 
-*dịch đoạn phía trên*
+Một cách để giải quyết vấn đề này là tính hiệu của log giá trị dự đoán và log giá trị thật sự.
+Thực ra đó là phép đo lỗi chính thức được sử dụng trong cuộc thi để đánh giá chất lượng của các lần nộp bài.
+Sau cùng, một giá trị $\delta$ bằng $\log y - \log \hat{y}$ nhỏ đồng nghĩa với việc $e^{-\delta} \leq \frac{\hat{y}}{y} \leq e^\delta$.
+Điều này dẫn đến hàm mất mát sau:
 
 $$L = \sqrt{\frac{1}{n}\sum_{i=1}^n\left(\log y_i -\log \hat{y}_i\right)^2}.$$
 
@@ -417,8 +425,10 @@ people tend to find that it is significantly less sensitive to the initial learn
 This will be covered in further detail later on when we discuss the details in :numref:`chap_optimization`.
 -->
 
-*dịch đoạn phía trên*
-
+Khác với các mục trước, hàm huấn luyện ở đây sử dụng bộ tối ưu Adam
+(một biến thể của SGD mà chúng tôi sẽ mô tả cụ thể hơn sau này).
+Lợi thế chính của Adam so với SGD nguyên bản là: mọi người thường thấy rằng nó bớt nhạy với tốc độ học ban đầu hơn, mặc dù nó không cho kết quả tốt hơn (đôi khi còn tệ hơn) SGD nếu tài nguyên để tối ưu siêu tham số là vô hạn.
+Nó sẽ được mô tả cụ thể hơn trong :numref:`chap_optimization`.
 ```{.python .input  n=14}
 def train(net, train_features, train_labels, test_features, test_labels,
           num_epochs, learning_rate, weight_decay, batch_size):
