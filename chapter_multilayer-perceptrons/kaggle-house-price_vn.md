@@ -451,7 +451,7 @@ def train(net, train_features, train_labels, test_features, test_labels,
 ## k-Fold Cross-Validation
 -->
 
-## *dịch tiêu đề phía trên*
+## Kiểm định chéo k-phần
 
 <!--
 If you are reading in a linear fashion, you might recall that we introduced k-fold cross-validation in the section where we discussed how to deal with model section (:numref:`sec_model_selection`). 
@@ -462,7 +462,12 @@ Note that this is not the most efficient way of handling data and we would defin
 But this added complexity might obfuscate our code unnecessarily so we can safely omit here owing to the simplicity of our problem.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn đang đọc theo kiểu tuyến tính, bạn có thể nhớ rằng kiểm định chéo k-phần đã được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
+Ta sẽ ứng dụng kỹ thuật này để chọn thiết kế mô hình và điều chỉnh các siêu tham số.
+Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo k-phần.
+Việc này được tiến hành bằng cách cắt ra đoạn thứ $i^\mathrm{th}$ dùng làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
+Lưu ý rằng đây không phải là cách xử lý dữ liệu hiệu quả nhất và chắc chắn rằng ta sẽ làm điều gì đó thông minh hơn nhiều nếu tập dữ liệu có kích thước lớn hơn đáng kể.
+Nhưng sự phức tạp được thêm vào này có thể làm xáo trộn mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ta có thể bỏ qua một cách an toàn ở đây.
 
 ```{.python .input}
 def get_k_fold_data(k, i, X, y):
@@ -486,7 +491,7 @@ def get_k_fold_data(k, i, X, y):
 The training and verification error averages are returned when we train $k$ times in the k-fold cross-validation.
 -->
 
-*dịch đoạn phía trên*
+Trung bình lỗi huấn luyện và lỗi kiểm định được trả lại khi ta huấn luyện $k$ lần trong kiểm định chéo k-phần.
 
 ```{.python .input  n=15}
 def k_fold(k, X_train, y_train, num_epochs,
@@ -512,7 +517,7 @@ def k_fold(k, X_train, y_train, num_epochs,
 ## Model Selection
 -->
 
-## *dịch tiêu đề phía trên*
+## Lựa chọn Mô hình
 
 <!--
 In this example, we pick an un-tuned set of hyperparameters and leave it up to the reader to improve the model.
@@ -521,7 +526,11 @@ Within reason, the k-fold cross-validation approach is resilient against multipl
 However, if we were to try out an unreasonably large number of options it might fail since we might just get lucky on the validation split with a particular set of hyperparameters.
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ này, chúng tôi chọn một tập siêu tham số chưa được điều chỉnh và dành cơ hội để cải thiện mô hình cho bạn đọc.
+Tìm ra một bộ siêu tham số tốt có thể tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số ta muốn tối ưu.
+Theo suy luận, phương pháp kiểm định chéo k-phần là khả năng chống lại nhiều thử nghiệm.
+Tuy nhiên, nếu ta định thử một số lượng rất lớn các lựa chọn, phương pháp này có thể thất bại vì ta có thể chỉ may mắn trên tập kiểm định với một tập siêu tham số nhất định.
+
 
 ```{.python .input  n=16}
 k, num_epochs, lr, weight_decay, batch_size = 5, 100, 5, 0, 64
@@ -537,7 +546,9 @@ This is an indicator that we are overfitting.
 Therefore, when we reduce the amount of training errors, we need to check whether the amount of errors in the k-fold cross-validation have also been reduced accordingly.
 -->
 
-*dịch đoạn phía trên*
+Bạn sẽ thấy rằng đôi khi số lỗi huấn luyện cho một tập siêu tham số có thể rất thấp, trong khi số lỗi của kiểm định k-phần có thể cao hơn.
+Đây là dấu hiệu là ta đang quá khớp.
+Vì vậy, khi ta giảm số lỗi huấn luyện, ta nên kiểm tra liệu rằng số lỗi của kiểm định k-phần có giảm tương ứng hay không.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
