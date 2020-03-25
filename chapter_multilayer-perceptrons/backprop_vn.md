@@ -129,7 +129,7 @@ We refer to $J$ the *objective function* in the following discussion.
 ## Computational Graph of Forward Propagation
 -->
 
-## Đồ thị Tính toán của Lan Truyền Ngược
+## Đồ thị Tính toán của Lan Truyền Xuôi
 
 <!--
 Plotting computational graphs helps us visualize the dependencies of operators and variables within the calculation. 
