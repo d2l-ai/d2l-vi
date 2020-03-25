@@ -297,11 +297,11 @@ Another reason is that we typically train with minibatches containing more than 
 
 Khi huấn luyện các mạng nơ-ron, lan truyền xuôi và lan truyền ngược phụ thuộc lẫn nhau. 
 Cụ thể, với lan truyền xuôi, đồ thị tính toán đi theo hướng các phụ thuộc và tính tất cả các biến trên đường đi của nó. 
-Những biến đó sau đó được sử dụng trong lan truyền ngược khi chiều của đồ thị tính toán đi ngược lại. 
+Những biến này sau đó được sử dụng trong lan truyền ngược khi thứ tự tính toán trên đồ thị bị đảo ngược lại. 
 Hệ quả đó là ta cần lưu trữ các giá trị trung gian cho đến khi lan truyền ngược hoàn tất. 
-Đây cũng chính là một trong những lý do khiến lan truyền ngược đòi hỏi nhiều bộ nhớ hơn đáng kể so với thuật toán dự đoán đơn giản.  
+Đây cũng chính là một trong những lý do khiến lan truyền ngược đòi hỏi nhiều bộ nhớ hơn đáng kể so với khi chỉ cần đưa ra dự đoán.  
 Các tensor được tính dưới dạng gradient và các biến trung gian cần được lưu trữ để sử dụng trong quy tắc dây chuyền. 
-Một lý do nữa đó là chúng ta thường huấn luyện các minibatch chứa nhiều hơn một biến, do đó nhiều kích hoạt trung gian cần được lưu trữ hơn. 
+Một lý do nữa đó là chúng ta thường huấn luyện các minibatch chứa nhiều hơn một biến, do đó nhiều giá trị kích hoạt trung gian cần được lưu trữ hơn. 
 
 <!--
 ## Summary
@@ -316,10 +316,10 @@ Một lý do nữa đó là chúng ta thường huấn luyện các minibatch ch
 * Training requires significantly more memory and storage.
 -->
 
-* Lan truyền xuôi tính và lưu trữ lần lượt các biến trung gian trong đồ thị tính toán định nghĩa bởi mạng nơ-ron. 
-* Lan truyền ngược tính và lưu trữ lần lượt các gradient của biến trung gian và tham số trong mạng nơ-ron theo chiều ngược lại. 
+* Lan truyền xuôi lần lượt tính và lưu trữ các biến trung gian trong đồ thị tính toán định nghĩa bởi mạng nơ-ron. 
+* Lan truyền ngược lần lượt tính và lưu trữ các gradient của biến trung gian và tham số trong mạng nơ-ron theo chiều ngược lại. 
 * Khi huấn luyện các mô hình học sâu, lan truyền xuôi và lan truyền ngược phụ thuộc lẫn nhau. 
-* Việc huấn luyện cần nhiều hơn đáng kể bộ nhớ và lưu trữ. 
+* Việc huấn luyện cần nhiều bộ nhớ lưu trữ hơn đáng kể. 
 
 
 <!--
@@ -343,8 +343,8 @@ Một lý do nữa đó là chúng ta thường huấn luyện các minibatch ch
 1. Giả sử đầu vào $\mathbf{x}$ với hàm số vô hướng $f$ là ma trận $n \times m$. Chiều của gradient $f$ ứng với $\mathbf{x} là gì?
 2. Thêm vào một thiên kiến (bias) trong tầng ẩn của mô hình mô tả ở trên.
   * Vẽ đồ thị tính toán tương ứng.
-  * Đạo hàm các phương trình lan truyền xuôi và lan truyền ngược.
-3. Tính footprint bộ nhớ dùng để huấn luyện và tương tác với mô hình được mô tả ở chương này.
+  * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
+3. Tính lượng bộ nhớ mà mô hình được mô tả ở chương này sử dụng lúc huấn luyện và lúc dự đoán.
 4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Ước tính thời gian hoàn thành quá trình tính toán?
 5. Giả sử rằng đồ thị tính toán trên là quá sức với GPU của bạn.
   * Bạn có thể phân vùng nó qua nhiều GPU không?
