@@ -168,7 +168,7 @@ By using the chain rule, we can compute the derivative of $\mathsf{Z}$ wrt. $\ma
 
 Lan truyền ngược đề cập đến phương pháp tính gradient của các tham số mạng nơ-ron. 
 Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào tuân theo quy tắc dây chuyền trong giải tích.  
-Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm từng phần) cần thiết trong quá trình tính toán gradient theo các tham số.
+Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
 Giả sử chúng ta có hàm $\mathsf{Y}=f(\mathsf{X})$ và $\mathsf{Z}=g(\mathsf{Y}) = g \circ f(\mathsf{X})$, 
 trong đó đầu vào và đầu ra $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ là các tensor có kích thước bất kỳ. 
 Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm $\mathsf{Z}$ wrt. $\mathsf{X}$ như sau:
