@@ -199,7 +199,7 @@ Before we go into further detail and discuss remedies, we can discuss a number o
 #### Medical Diagnostics
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Chẩn đoán Y khoa
 
 <!--
 Imagine that you want to design an algorithm to detect cancer.
@@ -208,8 +208,10 @@ It works fine, giving you high accuracy and you conclude that you’re ready for
 Not so fast...
 -->
 
-*dịch đoạn phía trên*
-
+Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật nhận diện bệnh ung thư.
+Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh và bạn huấn luyện giải thuật.
+Nó hoạt động hiệu quả, đem lại độ chính xác cao và bạn có thể kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong chẩn đoán y khoa.
+Đừng vội mừng...
 <!--
 Many things could go wrong.
 In particular, the distributions that you work with for training and those that you encounter in the wild might differ considerably.
@@ -226,13 +228,24 @@ and at that, one that could not be corrected by conventional means.
 In other words, training and test data were so different that nothing useful could be done and they had wasted significant amounts of money.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể đã mắc nhiều sai lầm.
+Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể có nhiều khác biệt đáng kể.
+Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã có cơ hội tư vấn nhiều năm về trước.
+Họ đã phát triển một chương trình xét nghiệm máu cho một căn bệnh gây ra chủ yếu cho đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
+Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh gặp nhiều khó khăn hơn (chủ ý là vì những lý do đạo đức).
+Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện và thực hiện xét nghiệm máu của họ.
+Khi đó họ đã hỏi rằng liệu tôi có thể giúp họ xây dựng một bộ phân loại để nhận diện căn bệnh.
+Tôi đã nói với họ rằng rất dễ dàng phân biệt hai tập dữ liệu trên với độ chính xác gần như hoàn hảo.
+Sau cùng, các đối tượng kiểm tra có nhiều khác biệt về tuổi, nồng độ hóc môn, hoạt động thể chất, chế độ ăn kiêng, mức tiêu thụ rượu bia, và nhiều nhân tố khác không liên quan đến căn bệnh.
+Điều này không giống với trường hợp của những bệnh nhân thật sự:
+Thủ tục lấy mẫu của họ giống như trường hợp đặc biệt của dịch chuyển hiệp biến xảy ra giữa các phân phối *nguồn* và *mục tiêu*, và thêm vào đó, không thể sửa chữa được bằng các phương pháp truyền thống.
+Nói cách khác, dữ liệu huấn luyện và kiểm tra quá khác biệt đến nỗi không thể xây dựng được một mô hình hữu dụng và họ đã lãng phí rất nhiều tiền của.
 
 <!--
 #### Self Driving Cars
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Các Ô tô Tự lái
 
 <!--
 Say a company wanted to build a machine learning system for self-driving cars.
@@ -244,7 +257,13 @@ As it turned out, the roadside had been rendered with a very simplistic texture.
 More importantly, *all* the roadside had been rendered with the *same* texture and the roadside detector learned about this "feature" very quickly.
 -->
 
-*dịch đoạn phía trên*
+Có một công ty muốn xây dựng một hệ thống học máy cho ô tô tự lái.
+Một trong những bộ phận quan trọng là máy dò đường.
+Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) sử dụng dữ liệu giả từ một máy kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
+Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ máy kết xuất đồ hoạ.
+Nhưng khi áp dụng cho ô tô thật, nó là một thảm hoạ.
+Hoá ra, đường đi đã được kết xuất với một texture rất đơn giản.
+Quan trọng hơn, *tất cả* các đường đi đều được kết xuất với cùng một texture và máy dò đường đã học "đặc trưng" này rất nhanh.
 
 <!--
 A similar thing happened to the US Army when they first tried to detect tanks in the forest.
@@ -253,7 +272,10 @@ The so-trained classifier worked "perfectly".
 Unfortunately, all it had learned was to distinguish trees with shadows from trees without shadows---the first set of pictures was taken in the early morning, the second one at noon.
 -->
 
-*dịch đoạn phía trên*
+Một điều tương tự cũng đã xảy ra với quân đội Mỹ trong lần đầu tiên họ thử nghiệm nhận diện xe tăng trong rừng.
+Họ đã chụp các bức ảnh của khu rừng khi không có những chiếc xe tăng từ trên không, sau đó lái xe tăng vào khu rừng và chụp một bộ ảnh khác.
+Bộ phân loại đã được huấn luyện khi đó hoạt động "hoàn hảo".
+Không may mắn thay, tất cả những gì nó đã học được là phân loại cây có bóng với cây không có bóng---bộ ảnh đầu tiên được chụp vào buổi sáng sớm, trong khi bộ thứ hai được chụp vào buổi trưa.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -690,7 +712,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 5 -->
 *
