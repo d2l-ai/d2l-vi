@@ -130,7 +130,7 @@ Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra
 Việc huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với sự thay đổi này là một ý tưởng tồi.
 Thật không may, đây lại là một cạm bẫy rất phổ biến.
 Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*).
-Về mặt toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
+Theo ngôn ngữ toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
 Khi ta tin rằng $\mathbf{x}$ gây ra $y$ thì dịch chuyển hiệp biến thường là một giả định hợp lý, mặc dù tính hữu dụng của nó không chỉ giới hạn trong trường hợp này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
