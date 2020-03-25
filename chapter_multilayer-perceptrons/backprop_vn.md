@@ -171,7 +171,7 @@ Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ
 Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
 Giả sử chúng ta có hàm $\mathsf{Y}=f(\mathsf{X})$ và $\mathsf{Z}=g(\mathsf{Y}) = g \circ f(\mathsf{X})$, 
 trong đó đầu vào và đầu ra $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ là các tensor có kích thước bất kỳ. 
-Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm $\mathsf{Z}$ wrt. $\mathsf{X}$ như sau:
+Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm của $\mathsf{Z}$ theo $\mathsf{X}$ như sau:
 
 $$\frac{\partial \mathsf{Z}}{\partial \mathsf{X}} = \text{prod}\left(\frac{\partial \mathsf{Z}}{\partial \mathsf{Y}}, \frac{\partial \mathsf{Y}}{\partial \mathsf{X}}\right).$$
 
