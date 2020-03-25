@@ -127,7 +127,7 @@ Although its usefulness is not restricted to this setting, when we believe $\mat
 
 Rõ ràng việc phân loại tốt trong trường hợp này là rất khó khăn.
 Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
-Huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với những thay đổi là một ý tưởng tồi.
+Việc huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với sự thay đổi này là một ý tưởng tồi.
 Thật không may, đây lại là một cạm bẫy rất phổ biến.
 Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*).
 Về mặt toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
