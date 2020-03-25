@@ -195,7 +195,7 @@ The order of calculations are reversed relative to those performed in forward pr
 The first step is to calculate the gradients of the objective function $J=L+s$ with respect to the loss term $L$ and the regularization term $s$.
 -->
 
-Các tham số của mạng nơ-ron đơn giản với một tầng ẩn $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
+Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
 Mục địch của lan truyền ngược là tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
 Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính toán gradient của từng biến và tham số trung gian. 
 Thứ tự của các phép tính trong lan truyền ngược là đảo ngược các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán để tìm ra tham số. 
