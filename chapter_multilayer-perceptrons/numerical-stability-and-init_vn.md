@@ -79,10 +79,10 @@ Since early artificial neural networks were inspired by biological neural networ
 Let's take a closer look at the function to see why picking it might be problematic vis-a-vis vanishing gradients.
 -->
 
-Một thủ phạm chính gây ra vấn đề tiêu biến gradient là hàm kích hoạt $\sigma$ được chọn để đặt xen giữa các toán hạng tuyến tính tại mỗi tầng.
+Một thủ phạm chính gây ra vấn đề tiêu biến gradient là hàm kích hoạt $\sigma$ được chọn để đặt xen giữa các phép toán tuyến tính tại mỗi tầng.
 Trước đây, hàm kích hoạt sigmoid $(1 + \exp(-x))$ (đã giới thiệu trong :numref:`sec_mlp`) là lựa chọn phổ biến bởi nó hoạt động giống với một hàm lấy ngưỡng.
-Cũng bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng các nơ-ron được kích hoạt hoặc không bị kích hoạt (nơ-ron sinh học không bị kích hoạt một phần) có vẻ như rất hấp dẫn.
-Hãy xem xét chi tiết hơn để thấy tại sao sử dụng hàm sigmoid có thể sinh ra vấn đề liên quan tới hiện tượng tiêu biến gradient.
+Cũng bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng các nơ-ron được kích hoạt hoặc không bị kích hoạt (nơ-ron sinh học không bị kích hoạt một phần) có vẻ rất hấp dẫn.
+Hãy xem xét chi tiết hơn để thấy tại sao việc sử dụng hàm sigmoid có thể gây ra vấn đề liên quan tới hiện tượng tiêu biến gradient.
 
 ```{.python .input}
 %matplotlib inline
@@ -109,10 +109,10 @@ As a consequence, ReLUs have become the default choice when designing activation
 -->
 
 Như ta có thể thấy, gradient của hàm sigmoid tiêu biến khi đầu vào của nó quá lớn hoặc quá nhỏ.
-Hơn nữa, khi chúng ta thực hiện lan truyền ngược, dùng quy tắc dây chuyền, trừ khi giá trị nằm trong vùng Goldilocks, tại đó đầu vào của hầu hết các hàm sigmoid nằm trong khoảng, ví dụ $[-4, 4]$, gradient của tất cả các phép nhân đều có thể bị tiêu biến.
-Khi chúng ta có nhiều tầng, trừ khi ta cực kỳ cẩn trọng, nhiều khả năng ta sẽ thấy gradient bị mất tại *một vài* tầng nào đó.
-Trước khi hàm ReLU ($\max(0, x)$) được đề xuất để thay thế các hàm kiểu sigmoid, vấn đề này đã từng gây nhiều khó khăn cho quá trình huấn luyện mạng học sâu.
-Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết kế các hàm kích hoạt trong mạng học sâu.
+Hơn nữa, khi chúng ta thực hiện lan truyền ngược, dùng quy tắc dây chuyền, trừ khi giá trị nằm trong vùng Goldilocks, tại đó đầu vào của hầu hết các hàm sigmoid nằm trong khoảng, ví dụ $[-4, 4]$, gradient của cả phép nhân có thể bị tiêu biến.
+Khi chúng ta có nhiều tầng, trừ khi ta cực kỳ cẩn trọng, nhiều khả năng ta sẽ thấy luồng gradient bị ngắt tại *một* tầng nào đó.
+Trước khi hàm ReLU ($\max(0, x)$) được đề xuất để thay thế các hàm nén, vấn đề này đã từng gây nhiều khó khăn cho quá trình huấn luyện mạng nơ-ron sâu.
+Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết kế các hàm kích hoạt trong mạng nơ-ron sâu.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -132,9 +132,9 @@ If this were to happen to us with a deep network, we would have no realistic cha
 -->
 
 Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
-Để chứng minh rõ hơn điều này, chúng ta lấy mẫu $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một vài ma trận khởi tạo.
+Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một ma trận khởi tạo.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
-Nếu điều này xảy ra trong các mạng học sâu, chúng ta sẽ không thể làm các bộ tối ưu dựa trên giảm gradient hội tụ được.
+Nếu điều này xảy ra trong các mạng học sâu, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
 
 ```{.python .input  n=5}
 M = np.random.normal(size=(4, 4))
