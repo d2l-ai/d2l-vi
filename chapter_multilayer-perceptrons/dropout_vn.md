@@ -5,7 +5,7 @@
 # Dropout
 -->
 
-# *dịch tiêu đề phía trên*
+# Dropout
 :label:`sec_dropout`
 
 <!--
@@ -14,13 +14,15 @@ In probabilistic terms, we could justify this technique by arguing that we have 
 More intuitively, we might argue that we encouraged the model to spread out its weights among many features and rather than depending too much on a small number of potentially spurious associations.
 -->
 
-*dịch đoạn phía trên*
+Vừa xong ở :numref:`sec_weight_decay`, chúng tôi đã giới thiệu cách tiếp cận điển hình tới việc điều chuẩn các mô hình thống kê bằng cách phạt giá trị chuẩn $\ell_2$ của các trọng số. 
+Chúng ta có thể giải thích kĩ thuật này bằng các thuật ngữ xác suất: ta có một niềm tin từ trước rằng các trọng số được lấy ngẫu nhiên từ một phân phối Gaussian với trung bình bằng $0$.
+Hiểu một cách trực quan, ta có thể nói rằng mô hình được khuyến khích trải rộng giá trị các trọng số ra trên nhiều đặc trưng thay vì quá phụ thuộc vào một vài những liên kết có khả năng là không chính xác. 
 
 <!--
 ## Overfitting Revisited
 -->
 
-## *dịch tiêu đề phía trên*
+## Bàn lại về Quá khớp
 
 <!--
 Faced with more features than examples, linear models tend to overfit.
@@ -30,14 +32,19 @@ Naively applied, linear models do not take into account interactions among featu
 For every feature, a linear model must assign either a positive or a negative weight, ignoring context.
 -->
 
-*dịch đoạn phía trên*
+Khi có nhiều đặc trưng hơn số mẫu, các mô hình tuyến tính sẽ có xu hướng quá khớp.
+Tuy nhiên nếu có nhiều mẫu hơn số đặc trưng, nhìn chung ta có thể tin cậy mô hình tuyến tính sẽ không quá khớp.
+Thật không may, mô hình tuyến tính dựa trên tính ổn định này để khái quát hoá lại kèm theo một cái giá phải trả là:
+Mô hình tuyến tính không màng tới sự tương tác giữa các đặc trưng, nếu chỉ được áp dụng một cách đơn giản.
+Mỗi đặc trưng sẽ được gán một trọng số hoặc là âm, hoặc là dương, không màng tới ngữ cảnh.
 
 <!--
 In traditional texts, this fundamental tension between generalizability and flexibility is described as the *bias-variance tradeoff*.
 Linear models have high bias (they can only represent a small class of functions), but low variance (they give similar results across different random samples of the data).
 -->
 
-*dịch đoạn phía trên*
+Trong các tài liệu truyền thống, vấn đề cốt lõi giữa khả năng khái quát và tính linh hoạt này được gọi là *đánh đổi độ chệch - phương sai* (*bias-variance tradeoff*).
+Mô hình tuyến tính có độ chệch cao vì nó chỉ có thể biễu diễn một nhóm nhỏ các hàm số, nhưng lại có phương sai thấp vì nó cho kết quả khá tương đồng trên nhiều tập dữ liệu được lấy mẫu ngẫu nhiên.
 
 <!--
 Deep neural networks inhabit the opposite end of the bias-variance spectrum.
@@ -46,7 +53,10 @@ They can learn interactions among groups of features.
 For example, they might infer that “Nigeria” and “Western Union” appearing together in an email indicates spam but that separately they do not.
 -->
 
-*dịch đoạn phía trên*
+Mạng nơ-ron sâu lại nằm ở thái cực trái ngược trên phổ độ chệch - phương sai.
+Không giống mô hình tuyến tính, các mạng nơ-ron không bị giới hạn ở việc chỉ được xét từng đặc trưng riêng biệt.
+Chúng có thể học được sự tương tác giữa các nhóm đặc trưng.
+Chẳng hạn, chúng có thể suy ra được rằng nếu từ "Nigeria" và "Western Union" xuất hiện cùng nhau trong một email thì đó là thư rác, nhưng nếu hai từ đó xuất hiện riêng biệt thì không phải.
 
 <!--
 Even when we have far more examples than features, deep neural networks are capable of overfitting.
@@ -54,7 +64,9 @@ In 2017, a group of researchers demonstrated the extreme flexibility of neural n
 Despite the absence of any true pattern linking the inputs to the outputs, they found that the neural network optimized by SGD, could label every image in the training set perfectly.
 -->
 
-*dịch đoạn phía trên*
+Ngay cả khi số mẫu nhiều hơn hẳn so với số đặc trưng, mạng nơ-ron sâu vẫn có thể quá khớp.
+Năm 2017, một nhóm các nhà nghiên cứu đã minh chứng khả năng linh hoạt tột cùng của mạng nơ-ron bằng cách huấn luyện mạng nơ-ron sâu trên tập ảnh được gán nhãn ngẫu nhiên.
+Dù không hề có bất cứ một khuôn mẫu nào liên kết đầu vào và đầu ra, họ phát hiện rằng mạng nơ-ron được tối ưu bằng SGD vẫn có thể khớp tất cả nhãn trên tập huấn luyện một cách hoàn hảo.
 
 <!--
 Consider what this means.
@@ -65,7 +77,12 @@ The mathemtatical foundations for the puzzling generalization properties of deep
 For now, we turn to the more terrestrial investigation of practical tools that tend (empirically) to improve the generalization of deep nets.
 -->
 
-*dịch đoạn phía trên*
+Thử nghĩ xem điều này hàm chứa ý nghĩa gì.
+Nếu nhãn được gán ngẫu nhiên từ một phân phối đều với 10 lớp, sẽ không có bộ phân loại nào có thể có độ chính xác cao hơn 10% trên tập dữ liệu kiểm tra.
+Khoảng cách khái quát là tận 90%.
+Nếu mô hình của chúng ta có đủ năng lực để quá khớp tới như vậy, phải như thế nào chúng ta mới có thể trông đợi rằng mô hình sẽ không quá khớp?
+Nền tảng toán học đằng sau tính chất khái quát hoá hóc búa của mạng nơ-ron sâu vẫn còn là một câu hỏi mở, và chúng tôi khuyến khích bạn đọc có khuynh hướng lý thuyết đào sâu hơn vào chủ đề này.
+Còn bây giờ hãy quay về bề mặt của vấn đề và chuyển sang tìm hiểu các công cụ để cải thiện khả năng khái quát của các mạng nơ-ron sâu dựa trên thực nghiệm. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -504,7 +521,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * Phạm Minh Đức
