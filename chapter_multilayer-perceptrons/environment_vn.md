@@ -331,9 +331,9 @@ This means that we largely minimize the loss on the training.
 
 Giả sử ta muốn ước lượng mối liên hệ phụ thuộc $P(y \mid \mathbf{x})$ khi đã có dữ liệu được gán nhãn $(\mathbf{x}_i, y_i)$.
 Thật không may, các điểm quan sát $x_i$ được thu thập từ một phân phối *mục tiêu* $q(\mathbf{x})$ thay vì từ phân phối *gốc* $p(\mathbf{x})$.
-Để đạt được tiến bộ, chúng ta cần suy nghĩ lại về việc gì chính xác đang diễn ra trong quá trình huấn luyện:
+Để có được tiến triển, chúng ta cần suy nghĩ lại xem chính xác việc gì đang diễn ra trong quá trình huấn luyện:
 ta duyệt qua tập dữ liệu huấn luyện với nhãn kèm theo $\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\} và cập nhật vector trọng số của mô hình sau mỗi minibatch.
-Chúng ta thi thoảng cũng áp dụng thêm một vài lượng phạt lên các thêm số, bằng cách suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
+Chúng ta thi thoảng cũng áp dụng thêm một lượng phạt nào đó lên các tham số, bằng cách dùng suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
 Điều này nghĩa là ta hầu như chỉ đang giảm thiểu giá trị mất mát trên tập huấn luyện.
 
 $$
@@ -364,9 +364,9 @@ e.g., by access to training data, and the one used for generating the training s
 Note however, that we only need samples $\mathbf{x} \sim q(\mathbf{x})$; we do not to access labels $y \sim q(y)$.
 -->
 
-Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối  $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
+Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
 Đáng buồn là chúng ta không biết tỉ lệ đó nên trước khi làm được bất cứ thứ gì hữu ích ta phải ước lượng được nó.
-Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kì vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
+Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kỳ vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
 Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ và phân phối được dùng để tạo ra tập huấn luyện $q$ (việc này hiển nhiên là có thể được). <!-- Chỗ này câu gốc khó hiểu quá, không biết lược bỏ một ý trong câu gốc đi mới thấy có nghĩa. -->
 Tuy nhiên cũng lưu ý rằng ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không hề cần sử dụng đến nhãn $y \sim q(y)$.
 
@@ -381,10 +381,10 @@ Now denote by $z_i$ labels which are 1 for data drawn from $p$ and -1 for data d
 Then the probability in a mixed dataset is given by
 -->
 
-Trong trường hợp này có một cách rất hiệu quả nhưng lại cho kết quả tốt gần ngang ngửa: hồi quy logistic.
-Đấy là tất cả những gì cần thiết để tính xấp xỉ tỉ lệ xác suất.
+Trong trường hợp này có một cách rất hiệu quả, cho kết quả tốt gần ngang ngửa: hồi quy logistic.
+Đấy là tất cả những gì ta cần để tính xấp xỉ tỉ lệ xác suất.
 Chúng ta cho học một bộ phân loại để phân biệt giữa dữ liệu được lấy từ phân phối $p(\mathbf{x})$ và phân phối $q(x)$.
-Nếu không thể phân biệt được giữa hai phân phối thì tức là các mẫu liên quan có khả năng đến từ một trong hai phân phối là ngang nhau.
+Nếu không thể phân biệt được giữa hai phân phối thì tức là khả năng các mẫu liên quan đến từ một trong hai phân phối là ngang nhau.
 Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng thì cần được đánh trọng số cao lên hoặc giảm đi tương ứng.
 Để cho đơn giản, giả sử ta có số lượng mẫu đến từ hai phân phối là bằng nhau, được kí hiệu lần lượt là $\mathbf{x}_i \sim p(\mathbf{x})$ và $\mathbf{x}_i' \sim q(\mathbf{x})$.
 Ta kí hiệu nhãn $z_i$ bằng 1 cho dữ liệu từ phân phối $p$ và -1 cho dữ liệu từ $q$.
