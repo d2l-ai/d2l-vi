@@ -8,32 +8,40 @@
 # *dịch tiêu đề phía trên*
 
 <!--
-So far, we have worked through a number of hands-on implementations fitting machine learning models to a variety of datasets.
-And yet, until now we skated over the matter of where are data comes from in the first place, and what we plan to ultimately *do* with the outputs from our models.
-Too often in the practice of machine learning, developers rush ahead with the development of models tossing these fundamental considerations aside.
+In the previous chapters, we worked through a number of hands-on applications of machine learning, fitting models to a variety of datasets. 
+And yet, we never stopped to contemplate either where data comes from in the first place, or what we plan to ultimately do with the outputs from our models. 
+Too often, machine learning developers in possession of data rush to develop models without pausing to consider these fundamental issues.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Many failed machine learning deployments can be traced back to this situation.
-Sometimes the model does well as evaluated by test accuracy only to fail catastrophically in the real world when the distribution of data suddenly shifts.
-More insidiously, sometimes the very deployment of a model can be the catalyst which perturbs the data distribution.
-Say for example that we trained a model to predict loan defaults, finding that the choice of footware was associated with risk of default (Oxfords indicate repayment, sneakers indicate default).
+Many failed machine learning deployments can be traced back to this pattern. 
+Sometimes models appear to perform marvelously as measured by test set accuracy but fail catastrophically in deployment when the distribution of data suddenly shifts. 
+More insidiously, sometimes the very deployment of a model can be the catalyst that perturbs the data distribution. 
+Say, for example, that we trained a model to predict who will repay vs default on a loan, 
+finding that an applicant's choice of footware was associated with the risk of default (Oxfords indicate repayment, sneakers indicate default). 
 We might be inclined to thereafter grant loans to all applicants wearing Oxfords and to deny all applicants wearing sneakers.
-But our ill-conceived leap from pattern recognition to decision-making and our failure to think critically about the environment might have disastrous consequences.
-For starters, as soon as we began making decisions based on footware, customers would catch on and change their behavior.
-Before long, all applicants would be wearing Oxfords, and yet there would be no coinciding improvement in credit-worthiness.
-Think about this deeply because similar issues abound in the application of machine learning: by introducing our model-based decisions to the environment, we might break the model.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In this section, we describe some common concerns and aim to get you started acquiring the critical thinking that 
-you will need in order to detect these situations early, mitigate the damage, and use machine learning responsibly.
+In this case, our ill-considered leap from pattern recognition to decision-making and our failure to critically consider the environment might have disastrous consequences.
+For starters, as soon as we began making decisions based on footware, customers would catch on and change their behavior. 
+Before long, all applicants would be wearing Oxfords, without any coinciding improvement in credit-worthiness. 
+Take a minute to digest this because similar issues abound in many applications of machine learning: 
+by introducing our model-based decisions to the environment, we might break the model.
+-->
+
+*dịch đoạn phía trên*
+
+<!--
+While we cannot possible give these topics a complete treatment in one section, we aim here to expose some common concerns, 
+and to stimulate the critical thinking required to detect these situations early, mitigate damage, and use machine learning responsibly. 
 Some of the solutions are simple (ask for the "right" data) some are technically difficult (implement a reinforcement learning system), 
-and others require that we enter the realm of philosophy and grapple with difficult questions concerning ethics and informed consent.
+and others require that step outside the realm of statistical prediction altogether and 
+grapple with difficult philosophical questions concerning the ethical application of algorithms.
 -->
 
 *dịch đoạn phía trên*
