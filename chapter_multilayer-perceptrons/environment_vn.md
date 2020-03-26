@@ -54,7 +54,7 @@ grapple with difficult philosophical questions concerning the ethical applicatio
 ## Distribution Shift
 -->
 
-## *dịch tiêu đề phía trên*
+## Dịch chuyển Phân phối
 
 <!--
 To begin, we return to the observational setting, putting aside for now the impacts of our actions on the environment.
@@ -67,7 +67,11 @@ Fortunately, under some restricted assumptions on the ways our data might change
 principled algorithms can detect shift and possibly even adapt, achieving higher accuracy than if we naively continued to rely on our original classifier.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta trở lại vị trí quan sát và tạm gác lại các tác động lên môi trường.
+Trong các mục tiếp theo, ta sẽ xem xét kỹ các cách khác nhau mà phân phối dữ liệu có thể dịch chuyển và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
+Ngay từ đầu, ta nên cảnh báo rằng nếu phân phối tạo dữ liệu $p(\mathbf{x},y)$ có thể dịch chuyển theo các cách khác nhau tại bất kỳ thời điểm nào, thì việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
+Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên con vật mà chúng ta gọi là "mèo" bây giờ là chó và trước đây chúng ta gọi là "chó" thì thực tế giờ lại là mèo, trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì ta không thể nào phát hiện được sự thay đổi hay điều chỉnh bộ phân loại tại thời điểm kiểm tra.
+May mắn thay, dưới một vài giả định chặt về cách dữ liệu có thể thay đổi trong tương lai, một vài thuật toán có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ. <!-- cụm từ "principled algorithms" mình tạm dịch là "thuật toán" vì chưa tìm được cách dịch hợp lý -->
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -77,7 +81,7 @@ principled algorithms can detect shift and possibly even adapt, achieving higher
 ### Covariate Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển Hiệp biến
 
 <!--
 One of the best-studied forms of distribution shift is *covariate shift*.
@@ -87,7 +91,10 @@ Consider the challenge of distinguishing cats and dogs.
 Our training data consists of images of the following kind:
 -->
 
-*dịch đoạn phía trên*
+Một trong những dạng dịch chuyển phân phối được nghiên cứu rộng rãi nhất là *dịch chuyển hiệp biến*.
+Ở đây, ta giả định rằng mặc dù phân phối đầu vào có thể biến đổi theo thời gian, nhưng hàm gán nhãn, tức phân phối có điều kiện $P(y \mid \mathbf{x})$ thì không thay đổi.
+Mặc dù vấn đề này khá dễ hiểu, trong thực tế nó thường dễ bị bỏ qua.
+Hãy xem xét bài toán phân biệt mèo và chó với tập dữ liệu huấn luyện bao gồm các ảnh sau:
 
 <!--
 |cat|cat|dog|dog|
@@ -95,13 +102,15 @@ Our training data consists of images of the following kind:
 |![](../img/cat3.jpg)|![](../img/cat2.jpg)|![](../img/dog1.jpg)|![](../img/dog2.jpg)|
 -->
 
-*dịch đoạn phía trên*
+|mèo|mèo|chó|chó|
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|![](../img/cat3.jpg)|![](../img/cat2.jpg)|![](../img/dog1.jpg)|![](../img/dog2.jpg)|
 
 <!--
 At test time we are asked to classify the following images:
 -->
 
-*dịch đoạn phía trên*
+Tại thời điểm kiểm tra ta phải phân loại các ảnh dưới đây:
 
 <!--
 |cat|cat|dog|dog|
@@ -109,7 +118,9 @@ At test time we are asked to classify the following images:
 |![](../img/cat-cartoon1.png)|![](../img/cat-cartoon2.png)|![](../img/dog-cartoon1.png)|![](../img/dog-cartoon2.png)|
 -->
 
-*dịch đoạn phía trên*
+|mèo|mèo|chó|chó|
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|![](../img/cat-cartoon1.png)|![](../img/cat-cartoon2.png)|![](../img/dog-cartoon1.png)|![](../img/dog-cartoon2.png)|
 
 <!--
 Obviously this is unlikely to work well.
@@ -122,7 +133,13 @@ Mathematically, we could say that $P(\mathbf{x})$ changes but that $P(y \mid \ma
 Although its usefulness is not restricted to this setting, when we believe $\mathbf{x}$ causes $y$, covariate shift is usually the right assumption to be working with.
 -->
 
-*dịch đoạn phía trên*
+Rõ ràng việc phân loại tốt trong trường hợp này là rất khó khăn.
+Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
+Việc huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với sự thay đổi này là một ý tưởng tồi.
+Thật không may, đây lại là một cạm bẫy rất phổ biến.
+Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*).
+Theo ngôn ngữ toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
+Khi ta tin rằng $\mathbf{x}$ gây ra $y$ thì dịch chuyển hiệp biến thường là một giả định hợp lý, mặc dù tính hữu dụng của nó không chỉ giới hạn trong trường hợp này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -692,7 +709,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 *
