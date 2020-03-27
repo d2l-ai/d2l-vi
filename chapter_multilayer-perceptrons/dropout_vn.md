@@ -177,14 +177,17 @@ yielding a perturbed point $\mathbf{x}' = \mathbf{x} + \epsilon$.
 In expectation, $E[\mathbf{x}'] = \mathbf{x}$.
 -->
 
-*dịch đoạn phía trên*
+Trong nghiên cứu của Bishop, ông thêm nhiễu Gaussian cho đầu vào của một mô hình tuyến tính.
+Tại mỗi bước huấn luyện, ông đã thêm nhiễu lấy từ một phân phối có trung bình bằng không $\epsilon \sim \mathcal{N}(0,\sigma^2)$ cho đầu vào $\mathbf{x}$, kết quả ta có một điểm nhiễu $\mathbf{x}' = \mathbf{x} + \epsilon$.
+Ta kỳ vọng rằng $E[\mathbf{x}'] = \mathbf{x}$.
 
 <!--
 In standard dropout regularization, one debiases each layer by normalizing by the fraction of nodes that were retained (not dropped out).
 In other words, dropout with *dropout probability* $p$ is applied as follows:
 -->
 
-*dịch đoạn phía trên*
+Với điều chuẩn dropout tiêu chuẩn, ta khử độ chệch tại mỗi tầng bằng cách chuẩn hóa theo tỉ lệ các nút được giữ lại (chứ không phải các nút bị loại bỏ).
+Nói cách khác, dropout với *xác suất dropout* $p$ được áp dụng như sau:
 
 $$
 \begin{aligned}
@@ -201,7 +204,8 @@ By design, the expectation remains unchanged, i.e., $E[h'] = h$.
 Intermediate activations $h$ are replaced by a random variable $h'$ with matching expectation.
 -->
 
-*dịch đoạn phía trên*
+Như ta mong muốn, kỳ vọng không bị thay đổi, hay nói cách khác $E[h'] = h$.
+Đầu ra của các hàm kích hoạt trung gian $h$ được thay thế bởi một biến ngẫu nhiên $h'$ với kỳ vọng tương ứng. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -211,14 +215,15 @@ Intermediate activations $h$ are replaced by a random variable $h'$ with matchin
 ## Dropout in Practice
 -->
 
-## *dịch tiêu đề phía trên*
+## Dropout trong thực tế
 
 <!--
 Recall the multilayer perceptron (:numref:`sec_mlp`) with a hidden layer and 5 hidden units.
 Its architecture is given by
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại về mạng perceptron đa tầng (:numref:`sec_mlp`) với duy nhất một tầng ẩn có 5 nút ẩn.
+Kiến trúc mạng được biễu diễn như sau
 
 $$
 \begin{aligned}
@@ -235,13 +240,16 @@ Consequently, the calculation of $y$ no longer depends on $h_2$ and $h_5$ and th
 In this way, the calculation of the output layer cannot be overly dependent on any one element of $h_1, \ldots, h_5$.
 -->
 
-*dịch đoạn phía trên*
+Khi chúng ta áp dụng dropout cho một tầng ẩn, tức gán mỗi nút ẩn bằng không với xác suất là $p$, kết quả có thể được xem như là một mạng chỉ chứa một tập con của các nơ-ron ban đầu.
+Trong :numref:`fig_dropout2`, $h_2$ và $h_5$ bị loại bỏ.
+Hệ quả là, việc tính toán $y$ không còn phụ thuộc vào $h_2$ và $h_5$ nữa và gradient tương ứng của chúng cũng biến mất khi thực hiện lan truyền ngược.
+Theo cách này, việc tính toán tầng đầu ra không bị phụ thuộc quá nhiều vào một thành phần $h_1, \ldots, h_5$.
 
 <!--
 ![MLP before and after dropout](../img/dropout2.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/dropout2.svg)
+![MLP trước và sau khi dropout](../img/dropout2.svg)
 :label:`fig_dropout2`
 
 <!--
@@ -252,7 +260,10 @@ if the predictions agree across many different dropout masks, then we might say 
 For now we will put off uncertainty estimation for subsequent chapters and volumes.
 -->
 
-*dịch đoạn phía trên*
+Về cơ bản, ***chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra***.
+Với một mô hình đã huấn luyện và một mẫu kiểm tra, ta không thực hiện dropout tại bất kỳ nút nào (do đó cũng không cần chuẩn hóa).
+Tuy nhiên, cũng có một vài ngoại lệ, một vài nhà nghiên cứu sử dụng dropout tại thời điểm kiểm tra như một thủ thuật đề ước lượng *độ bất định* trong dự đoán của mạng nơ-ron: nếu các dự đoán giống nhau với nhiều mặt nạ dropout khác nhau, thì ta có thể nói rằng mạng đó đáng tin cậy hơn.
+Hiện tại, ta sẽ để dành phần ước lượng độ bất định này cho các chương sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -529,7 +540,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-*
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Tâm
 
 <!-- Phần 4 -->
 * Nguyễn Duy Du
