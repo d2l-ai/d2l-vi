@@ -463,7 +463,7 @@ The confusion matrix C, is simply a $k \times k$ matrix where each column corres
 Each cell's value $c_{ij}$ is the fraction of predictions where the true label was $j$ *and* our model predicted $y$.
 -->
 
-Để ước lượng phân phối của nhãn mục tiêu, đầu tiên ta dùng một bộ phân loại tương đối tốt (thường được học trên tập huấn luyện) và sử dụng một tập kiểm định (cùng phân phối với tập huấn luyện) để tính ma trận confusion.
+Để ước lượng phân phối nhãn mục tiêu, đầu tiên ta dùng một bộ phân loại sẵn có tương đối tốt (thường được học trên tập huấn luyện) và sử dụng một tập kiểm định (cùng phân phối với tập huấn luyện) để tính ma trận confusion.
 Ma trận confusion C là một ma trận $k \times k$, trong đó mỗi cột tương ứng với một nhãn *thật* và mỗi hàng tương ứng với nhãn dự đoán của mô hình.
 Giá trị của mỗi phần tử $c_{ij}$ là tỉ lệ mẫu có nhãn thật là $j$ *và* nhãn dự đoán là $i$.
 
