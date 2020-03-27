@@ -462,11 +462,11 @@ Note that this is not the most efficient way of handling data and we would defin
 But this added complexity might obfuscate our code unnecessarily so we can safely omit here owing to the simplicity of our problem.
 -->
 
-Nếu bạn đang đọc theo kiểu tuyến tính, bạn có thể nhớ rằng kiểm định chéo k-phần đã được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
-Ta sẽ ứng dụng kỹ thuật này để chọn thiết kế mô hình và điều chỉnh các siêu tham số.
+Nếu bạn đang đọc theo kiểu tuyến tính thì có thể bạn sẽ nhớ ra rằng kiểm định chéo k-phần đã từng được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
+Ta sẽ ứng dụng kỹ thuật này để lựa chọn thiết kế mô hình và điều chỉnh các siêu tham số.
 Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo k-phần.
-Việc này được tiến hành bằng cách cắt ra đoạn thứ $i^\mathrm{th}$ dùng làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
-Lưu ý rằng đây không phải là cách xử lý dữ liệu hiệu quả nhất và chắc chắn rằng ta sẽ làm điều gì đó thông minh hơn nhiều nếu tập dữ liệu có kích thước lớn hơn đáng kể.
+Việc này được tiến hành bằng cách cắt ra đoạn thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
+Cần lưu ý rằng đây không phải là cách sử dụng dữ liệu hiệu quả nhất và chắc chắn rằng ta có thể làm điều gì đó thông minh hơn nhiều nếu tập dữ liệu có kích thước lớn hơn đáng kể.
 Nhưng sự phức tạp được thêm vào này có thể làm xáo trộn mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ta có thể bỏ qua một cách an toàn ở đây.
 
 ```{.python .input}
@@ -491,7 +491,8 @@ def get_k_fold_data(k, i, X, y):
 The training and verification error averages are returned when we train $k$ times in the k-fold cross-validation.
 -->
 
-Trung bình lỗi huấn luyện và lỗi kiểm định được trả lại khi ta huấn luyện $k$ lần trong kiểm định chéo k-phần.
+Trong kiểm định chéo k-phần, ta sẽ huấn luyện mô hình $k$ lần và trả về trung bình lỗi huấn luyện và trung bình lỗi kiểm định.
+<!--Trung bình lỗi huấn luyện và lỗi kiểm định được trả lại khi ta huấn luyện $k$ lần trong kiểm định chéo k-phần.-->
 
 ```{.python .input  n=15}
 def k_fold(k, X_train, y_train, num_epochs,
@@ -527,7 +528,7 @@ However, if we were to try out an unreasonably large number of options it might 
 -->
 
 Trong ví dụ này, chúng tôi chọn một tập siêu tham số chưa được điều chỉnh và dành cơ hội để cải thiện mô hình cho bạn đọc.
-Tìm ra một bộ siêu tham số tốt có thể tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số ta muốn tối ưu.
+Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu.
 Theo suy luận, phương pháp kiểm định chéo k-phần là khả năng chống lại nhiều thử nghiệm.
 Tuy nhiên, nếu ta định thử một số lượng rất lớn các lựa chọn, phương pháp này có thể thất bại vì ta có thể chỉ may mắn trên tập kiểm định với một tập siêu tham số nhất định.
 
