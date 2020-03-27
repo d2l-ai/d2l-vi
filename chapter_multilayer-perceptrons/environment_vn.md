@@ -626,7 +626,7 @@ These types of knowledge are crucial for the aspiring data scientist to deal wit
 <!--
 ## Fairness, Accountability, and Transparency in Machine Learning
 -->
-
+## Công bằng, trách nhiệm và minh bạch trong học máy
 ## *dịch tiêu đề phía trên*
 
 <!--
