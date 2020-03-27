@@ -645,6 +645,7 @@ Additionally, we want to be careful about whether we are addressing the right pr
 Should what news someone is exposed to be determined by which Facebook pages they have *Liked*? 
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
+
 Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi bạn triển khai một hệ thống học máy, không đơn giản chỉ là tối thiểu negative log likelihood hay tối đa hóa độ chính xác---bạn đang tự động hóa một số loại quy trình quyết định.
 Thông thường, những hệ thống tự động ra quyết định mà chúng tôi triển khai có thể gây ra những kết quả không mong muốn về những quyết định của nó.
 Nếu chúng tôi đang triển khai một hệ thống phân tích ý tế, chúng tôi cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
@@ -660,7 +661,6 @@ Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc 
 Những tin tức mà ai đó được đưa ra sẽ được xác định bởi những trang Facebook nào họ đã * Thích *?
 Đây chỉ là một ít trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
 
-*dịch đoạn phía trên*
 
 
 
@@ -675,10 +675,10 @@ Những tin tức mà ai đó được đưa ra sẽ được xác định bởi
 * Covariate shift can be detected and corrected if the shift is not too severe. Failure to do so leads to nasty surprises at test time.
 * In some cases the environment *remembers* what we did and will respond in unexpected ways. We need to account for that when building models.
 -->
+
 * Trong nhiều trường hợp, tập huấn luyện và kiểm thử không cùng một phân phối. Đây chính là covariate shift.
 * Covariate shift có thể nhận diện và sửa chửa nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc sửa chữa có thể dẫn đến những kết quả không lường được lúc kiểm thử.
 * Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét đến khi xây dựng những mô hình.
-*dịch đoạn phía trên*
 
 <!--
 ## Exercises
@@ -692,11 +692,11 @@ Những tin tức mà ai đó được đưa ra sẽ được xác định bởi
 3. Implement a covariate shift corrector.
 4. What could go wrong if training and test set are very different? What would happen to the sample weights?
 -->
+
 1. Điều gì có thể xảy ra khi chúng ta thay đổi hành vi của công cụ tìm kiếm ? Người dùng có thể làm gì ? Còn các nhà quảng cáo thì sao ?
 2. Triển khai một chương trình nhận diện covariate shift. Gợi ý: xây dựng một hệ thống phân lớp.
 3. Triển khai một hệ thống sửa chữa covariate shift.
 4. Chuyện gì sẽ xảy ra nếu tập huấn luyện và kiểm thử rất khác nhau ? Chuyện gì sẽ xảy ra đối với trọng số mẫu?
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -726,7 +726,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 *
@@ -750,4 +751,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*Nguyễn Thành Nhân
+* Nguyễn Thành Nhân
