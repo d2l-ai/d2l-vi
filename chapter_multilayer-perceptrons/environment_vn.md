@@ -453,7 +453,7 @@ while the labels are often easier to work, say vectors whose length corresponds 
 -->
 
 Để thảo luận về dịch chuyển nhãn, ta sẽ giả định rằng ta đang giải quyết một bài toán phân loại $k$ lớp.
-Nếu phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(y) \neq q(y)$, thì trọng số quan trọng sẽ tương ứng với tỉ lệ xác suất của nhãn $q(y)/p(y)$.
+Nếu phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(\mathbf{x})=q(\mathbf{x})$, thì trọng số quan trọng sẽ tương ứng với tỉ lệ hợp lý của nhãn $q(y)/p(y)$.
 Một điều khá hay về dịch chuyển nhãn là nếu sở hữu một mô hình tốt (trên phân phối nguồn) thì ta có thể có được ước lượng phù hợp cho các trọng số này mà không phải đối phó với vấn đề nhiều chiều (trong học sâu, đầu vào thường là dữ liệu nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn vì chỉ là các vector có chiều dài tương ứng với số lượng lớp).
 
 <!--
