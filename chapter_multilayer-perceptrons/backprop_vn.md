@@ -129,7 +129,7 @@ We refer to $J$ the *objective function* in the following discussion.
 ## Computational Graph of Forward Propagation
 -->
 
-## Đồ thị Tính toán của Lan Truyền Xuôi
+## Đồ thị Tính toán của Lan truyền Xuôi
 
 <!--
 Plotting computational graphs helps us visualize the dependencies of operators and variables within the calculation. 
@@ -155,7 +155,7 @@ Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) 
 ## Backpropagation
 -->
 
-## Lan truyền ngược
+## Lan truyền Ngược
 
 <!--
 Backpropagation refers to the method of calculating the gradient of neural network parameters.
@@ -379,6 +379,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 *
