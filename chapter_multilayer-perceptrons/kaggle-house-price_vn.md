@@ -5,7 +5,7 @@
 # Predicting House Prices on Kaggle
 -->
 
-# *dịch tiêu đề phía trên*
+# Dự đoán Giá Nhà trên Kaggle
 :label:`sec_kaggle_house`
 
 <!--
@@ -17,7 +17,11 @@ This dataset, collected by Bart de Cock in 2011 :cite:`De-Cock.2011`, is conside
 It boasts both more examples and more features, covering house prices in Ames, IA from the period of 2006-2010.
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, chúng ta đã giới thiệu những công cụ cở bản để xây dựng mạng học sâu và kiểm soát khả năng của nó thông qua việc giảm kích thước, suy giảm trọng số và dropout.
+Giờ đây bạn đã sẵn sàng để ứng dụng tất cả những kiến thức này vào thực tiễn bằng cách tham gia một cuộc thi trên Kaggle.
+[Predicting house prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) là một bài toán tuyệt vời để bắt đầu: dữ liệu khái quát tương đối, không chứa các cấu trúc cứng nhắc đòi hỏi những mô hình đặc biệt như là các bài toán dữ liệu ảnh và âm thanh. 
+Bộ dữ liệu này được thu thập bởi Bart de Cock vào năm 2011 :cite:`De-Cock.2011`, lớn hơn rất nhiều bộ dữ liệu nổi tiếng [Boston housing dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names) của Harrison và Rubinfeld (1978).
+Nó có nhiều hơn các ví dụ, đặc trưng và bao gồm giá nhà ở cả Ames, IA trong khoảng thời gian từ 2006-2010.
 
 <!--
 In this section, we will walk you through details of data preprocessing, model design, hyperparameter selection and tuning.
@@ -25,14 +29,14 @@ We hope that through a hands-on approach, you will be able to observe the effect
 This experience is vital to gaining intuition as a data scientist.
 -->
 
-*dịch đoạn phía trên*
-
-
+Trong phần này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước về tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn siêu tham số và điểu chỉnh. 
+Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được những tác động của kiểm soát năng lực, trích xuất tính năng, v.v. trong thực tiễn. 
+Kinh nghiệm này rất quan trọng để bạn có được trực giác của một nhà khoa học dữ liệu. 
 <!--
 ## Downloading and Caching Datasets
 -->
 
-## *dịch tiêu đề phía trên*
+## Tải và Lưu trữ Bộ dữ liệu
 
 <!--
 Throughout the book we will train and test models on various downloaded datasets. 
@@ -41,7 +45,10 @@ First, we maintain a dictionary `DATA_HUB` that maps a string name to a URL with
 where SHA-1 verifies the integrity of the file. Such datasets are hosted on the `DATA_URL` site.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các bộ dữ liệu khác nhau. 
+Do đó ta có thể sử dụng một số hàm tiện ích hỗ trợ cho việc tải dữ liệu.
+Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` ánh xạ với một đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
+trong đó SHA-1 xác minh tính hoàn thiện của tệp. Các bộ dữ liệu này được chia sẻ trên trang `DATA_URL`.
 
 ```{.python .input  n=2}
 import os
@@ -682,7 +689,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 *
