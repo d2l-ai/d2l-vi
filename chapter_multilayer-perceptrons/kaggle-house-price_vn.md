@@ -634,11 +634,11 @@ The steps are quite simple:
 * Logarithms are useful for relative loss.
 -->
 
-* Dữ liệu thật thường chứa một hỗn hợp các loại dữ liệu khác nhau và cần phải được tiền xử lý.
-* Thu nhỏ lại dữ liệu thực tế đến zero mean và phương sai đơn vị là một mặc định tốt. Vì thế thay thế các giá trị trung bình vào những chỗ bị thiếu.
-* Biến đổi các biến theo danh mục thành các biến indicators cho phép chúng ta làm việc với chúng như những vectors.
-* Ta có thể sử dụng k-fold cross validation để chọn ra mô hình và điều chỉnh siêu tham số.
-* Các thuật toán hữu ích cho relative loss.
+* Dữ liệu thật thường chứa hỗn hợp các loại dữ liệu khác nhau và cần phải được xử lý trước.
+* Thay đổi kích thước dữ liệu thực về trung bình bằng 0 và phương sai đơn vị là một mặc định tốt. Vì vậy, thay thế các giá trị bị thiếu với giá trị trung bình của chúng.
+* Chuyển đổi các biến phân loại thành các biến chỉ báo cho phép chúng ta coi chúng như các vectơ.
+* Ta có thể sử dụng kiểm định chéo k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
+* Các Logarits hữu ích cho mất mát tương đối.
 
 
 <!--
@@ -657,13 +657,13 @@ The steps are quite simple:
 7. What happens if we do not standardize the continuous numerical features like we have done in this section?
 -->
 
-1. Nộp phần dự đoán của bạn cho hướng dẫn Kaggle này. Các dự đoán của bạn đúng bao nhiêu?
-2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu log-price trực tiếp không? Điều gì sẽ xảy ra nếu bạn dự đoán log price chứ không dự đoán price?
-3. Liệu điều đó có luôn tốt để thay thế các giá trị bị thiếu bằng trung bình của chúng không? Gợi ý: bạn có thể dựng lên một tình huống nơi mà các giá trị không bị thiếu một cách ngẫu nhiên không?
-4. Tìm một biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến indicator?
-5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo k-fold.
-6. Cải thiện điểm bằng cách làm mô hình trở nên tốt hơn (các tầng, điều chuẩn hóa, dropout).
-7. Điều gì sẽ xảy ra nếu ta không chuẩn hóa tính năng số như ta đã vừa làm trong phần này? 
+1. Nộp phần dự đoán của bạn cho bài hướng dẫn này đến Kaggle. Các dự đoán của bạn tốt như thế nào?
+2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu log-price trực tiếp không? Điều gì sẽ xảy ra nếu bạn dự đoán giá log chứ thay vì  giá?
+3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống nơi mà các giá trị không bị thiếu một cách ngẫu nhiên không?
+4. Tìm một đại diện tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ dẫn?
+5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo k-phần.
+6. Cải thiện điểm bằng cách cải thiện mô hình (các tầng, điều chuẩn hóa, dropout).
+7. Điều gì sẽ xảy ra nếu ta không chuẩn hóa đặc trưng số liên tục như ta đã làm vừa rồi trong phần này? 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
