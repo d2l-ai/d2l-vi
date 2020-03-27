@@ -291,6 +291,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | running time                   | thời gian chạy                            |                                              |
 | region of rejection            | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| relative loss                  | mất mát tương đối                         |                                              |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại                                  |
