@@ -172,7 +172,7 @@ The URL is right here:
 ## Accessing and Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Truy cập và Đọc Bộ dữ liệu
 
 <!--
 Note that the competition data is separated into training and test sets.
@@ -185,8 +185,14 @@ You can partition the training set to create a validation set, but you will only
 The "Data" tab on the competition tab has links to download the data.
 -->
 
-*dịch đoạn phía trên*
-
+Lưu ý rằng dữ liệu của cuộc thi được tách thành tập huấn luyện và tập kiểm tra.
+Mỗi tập dữ liệu bao gồm giá trị tài sản của ngôi nhà và các thuộc tính liên quan bao gồm loại đường phố, năm xây dựng, loại ngói, tình trạng tầng hầm, v.v.
+Các đặc trưng được biểu diễn bởi nhiều kiểu dữ liệu.
+Ví dụ, năm xây dựng được biểu diễn bởi số nguyên, loại ngói là các lớp đặc trưng riêng biệt, các đặc trưng khác thì được biểu diễn bởi số thực dấu phẩy động (_floating point number_).
+Và đây là khi ta đối mặt với vấn đề thực tiễn: ở một vài mẫu, nhiều dữ liệu bị thiếu và được chú thích đơn giản là 'na'.
+Giá của mỗi căn nhà chỉ được đưa vào tập huấn luyện (sau cùng thì đây vẫn là một cuộc thi).
+Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết được mô hình của bạn thể hiện như thế nào trên tập kiểm tra chính thức khi bạn tải lên kết quả dự đoán của mình và nhận điểm sau đó.
+Thanh "Data" trên cuộc thi có đường link để tải về bộ dữ liệu.  
 
 <!--
 We will read and process the data using `pandas`, an [efficient data analysis toolkit](http://pandas.pydata.org/pandas-docs/stable/), 
@@ -194,7 +200,8 @@ so you will want to make sure that you have `pandas` installed before proceeding
 Fortunately, if you are reading in Jupyter, we can install pandas without even leaving the notebook.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ đọc và xử lý dữ liệu với `pandas`, một [công cụ phân tích dữ liệu hiệu quả](http://pandas.pydata.org/pandas-docs/stable/), vì vậy hãy đảm bảo rằng bạn đã cài đặt `pandas` trước khi tiếp tục.
+Một điều may mắn là, nếu bạn đang sử dụng Jupyter, bạn có thể cài đặt pandas mà không cần thoát khỏi notebook. 
 
 ```{.python .input  n=3}
 # If pandas is not installed, please uncomment the following line:
@@ -212,7 +219,7 @@ npx.set_np()
 For convenience, we download and cache the Kaggle housing dataset from the `DATA_URL` website. For the other Kaggle competitions, you may need to download them manually.
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện, chúng ta sẽ tải và lưu bộ dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, bạn có thể cần tải dữ liệu về theo cách thủ công.  
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -230,7 +237,7 @@ DATA_HUB['kaggle_house_test'] = (
 To load the two csv files containing training and test data respectively we use Pandas.
 -->
 
-*dịch đoạn phía trên*
+Để nạp lần lượt hai file csv tập huấn luyện và tập kiểm tra, ta sử dụng Pandas.
 
 ```{.python .input  n=14}
 train_data = pd.read_csv(download('kaggle_house_train'))
@@ -241,7 +248,8 @@ test_data = pd.read_csv(download('kaggle_house_test'))
 The training dataset includes $1,460$ examples, $80$ features, and $1$ label, while the test data contains $1,459$ examples and $80$ features.
 -->
 
-*dịch đoạn phía trên*
+Tập huấn luyện chứa $1,460$ mẫu, $80$ đặc trưng, và $1$ nhãn.
+Tập kiểm tra chứa $1,459$ mẫu và $80$ đặc trưng.
 
 ```{.python .input  n=11}
 print(train_data.shape)
@@ -252,7 +260,7 @@ print(test_data.shape)
 Let’s take a look at the first 4 and last 2 features as well as the label (SalePrice) from the first 4 examples:
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xem xét 4 đặc trưng đầu tiên, 2 đặc trưng cuối cùng và nhãn (giá nhà) của 4 mẫu đầu tiên:
 
 ```{.python .input  n=28}
 print(train_data.iloc[0:4, [0, 1, 2, 3, -3, -2, -1]])
@@ -265,7 +273,10 @@ While this is convenient, it does not carry any information for prediction purpo
 Hence we remove it from the dataset before feeding the data into the network.
 -->
 
-*dịch đoạn phía trên*
+Có thể thấy với mỗi mẫu, đặc trưng đầu tiên là ID.
+Điều này giúp mô hình xác định được từng mẫu. 
+Mặc dù việc này khá thuận tiện, nó không mang bất kỳ thông tin nào cho mục đích dự đoán. 
+Do đó chúng ta sẽ lược bỏ nó ra khỏi bộ dữ liệu trước khi đưa vào mạng nơ-ron. 
 
 ```{.python .input  n=30}
 all_features = pd.concat((train_data.iloc[:, 1:-1], test_data.iloc[:, 1:]))
@@ -688,7 +699,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
