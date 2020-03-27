@@ -326,7 +326,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## T
 | English                  | Tiếng Việt                     | Thảo luận tại                                |
 |--------------------------|--------------------------------|----------------------------------------------|
-| target data/distribution | dữ liệu/phân phối đích       |   |
+| target data/distribution | dữ liệu/phân phối mục tiêu     |   |
 | tensor contraction       | phép co tensor                 | [https://git.io/JvojX](https://git.io/JvojX) |
 | test set                 | tập kiểm tra                   |                                              |
 | test set performance     | chất lượng trên tập kiểm tra   |                                              |
