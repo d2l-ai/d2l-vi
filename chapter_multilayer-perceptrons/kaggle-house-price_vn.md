@@ -559,9 +559,8 @@ The model that we obtain in this way can then be applied to the test set.
 Saving the estimates in a CSV file will simplify uploading the results to Kaggle.
 -->
 
-Bây giờ, khi đã tìm được các siêu tham số tốt, ta có thể huấn luyện trên tất cả dữ liệu (thay vì chỉ dùng $1-1/k$ của dữ liệu như trong quá trình kiểm định chéo).
-Mô hình ta nhận được bằng cách này có thể được áp dụng lên tập kiểm tra.
-Lưu các ước lượng vào một tệp CSV sẽ đơn giản hóa quá trình tải kết quả lên Kaggle.
+Bây giờ, khi đã tìm được các siêu tham số tốt, ta có thể huấn luyện lại mô hình trên toàn bộ dữ liệu (thay vì chỉ dùng $1-1/k$ của dữ liệu như trong quá trình kiểm định chéo).
+Sau đó ta có thể áp dụng mô hình thu được lên tập kiểm tra và lưu các dự đoán vào một tệp CSV để đơn giản hóa quá trình tải kết quả lên Kaggle.
 
 ```{.python .input  n=18}
 def train_and_pred(train_features, test_feature, train_labels, test_data,
@@ -602,8 +601,8 @@ Next, as demonstrated in :numref:`fig_kaggle_submit2`, we can submit our predict
 The steps are quite simple:
 -->
 
-Tiếp theo, như đã trình bày trong :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh với với giá nhà (nhãn) trên tập kiểm tra.
-Các bước rất đơn giản:
+Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle để so sánh với với giá nhà thực tế (nhãn) trên tập kiểm tra.
+Các bước tiến hành khá là đơn giản:
 
 <!--
 * Log in to the Kaggle website and visit the House Price Prediction Competition page.
@@ -614,7 +613,7 @@ Các bước rất đơn giản:
 
 * Đăng nhập vào trang web Kaggle và truy cập trang House Price Prediction Competition.
 * Nhấp vào nút “Submit Predictions” hoặc “Late Submission” (nút này nằm ở phía bên phải tại thời điểm viết bài).
-* Nhấp vào nút “Upload Submission File” trong khung nét đứt ở cuối trang và chọn tệp dự đoán bạn muốn tải lên.
+* Nhấp vào nút “Upload Submission File” trong khung có viền nét đứt và chọn tệp dự đoán bạn muốn tải lên. <!-- Cái khung này đâu có nằm ở cuối trang nhỉ? -->
 * Nhấp vào nút “Make Submission” ở cuối trang để xem kết quả.
 
 <!--
