@@ -397,7 +397,7 @@ Here's a prototypical algorithm for that purpose which uses an unlabeled trainin
 
 Hệ quả là có hai vấn đề cần được giải quyết: đầu tiên là phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
 và sau đó là bài toán tối thiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
-Dưới đây là một thuật toán nguyên mẫu để giải quyết hai vấn đề trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
+Dưới đây là một thuật toán nguyên mẫu để giải quyết hai bài toán trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 
 <!--
 1. Generate training set with $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
