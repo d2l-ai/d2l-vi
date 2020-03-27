@@ -300,7 +300,7 @@ Trước khi đưa nó vào mạng học sâu, ta cần thực hiện một số
 Hãy bắt đầu với các đặc trưng số học. 
 Trước hết ta thay thế các giá trị còn thiếu bằng giá trị trung bình.
 Đây là chiến lược hợp lý nếu các đặc trưng bị thiếu một cách ngẫu nhiên. 
-Để điểu chỉnh theo một thang đo chung, ta chuyển đổi chúng theo trung bình bằng không (_zero mean_) và phương sai bằng một (_unit variance_). 
+Để điểu chỉnh theo một thang đo chung, ta chuyển đổi chúng theo trung bình bằng không (_zero mean_) và phương sai đơn vị (_unit variance_). 
 Điều này có thể đạt được bằng cách:
 
 $$x \leftarrow \frac{x - \mu}{\sigma}.$$
@@ -314,7 +314,7 @@ After all, we do not know *a priori* which features are likely to be relevant.
 -->
 
 Để kiểm tra xem công thức trên có chuyển đổi $x$ thành dữ liệu với trung bình bằng không hay không, ta có thể tính $E[(x-\mu)/\sigma] = (\mu - \mu)/\sigma = 0$. 
-Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2, như vậy biến chuyển đổi có phương sai bằng một. 
+Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2, như vậy biến chuyển đổi có phương sai đơn vị. 
 Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các tính năng về cùng độ lớn. 
 Sau cùng, chúng ta không biết được "thiên hướng" mà các tính năng này có thể liên quan đến. 
 
