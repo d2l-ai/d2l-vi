@@ -419,7 +419,7 @@ If we find a point where $q(\mathbf{x}) > 0$ but $p(\mathbf{x}) = 0$, then the c
 -->
 
 Lưu ý rằng phương pháp này được dựa trên một giả định quan trọng.
-Để có được một kết quả tốt, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
+Để có được một kết quả tốt, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (tại thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
 Nếu một điểm có $q(\mathbf{x}) > 0$ nhưng $p(\mathbf{x}) = 0$, thì trọng số quan trọng tương ứng bằng vô hạn.
 
 <!--
