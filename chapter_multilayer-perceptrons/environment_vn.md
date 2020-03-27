@@ -395,7 +395,7 @@ and then a reweighted minimization problem where we weigh terms by $\beta$, e.g.
 Here's a prototypical algorithm for that purpose which uses an unlabeled training set $X$ and test set $Z$:
 -->
 
-Hệ quả là có hai vấn đề cần được giải quyết: đầu tiên là phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
+Vì vậy, có hai bài toán cần được giải quyết: đầu tiên là bài toán phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
 và sau đó là bài toán tối thiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
 Dưới đây là một thuật toán nguyên mẫu để giải quyết hai bài toán trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 
