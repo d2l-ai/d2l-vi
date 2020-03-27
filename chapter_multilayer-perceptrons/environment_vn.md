@@ -464,7 +464,7 @@ What we can do, however, is average all of our models predictions at test time t
 -->
 
 Giờ thì ta không thể tính trực tiếp ma trận confusion trên dữ liệu đích được bởi vì ta không thể quan sát nhãn của các mẫu trong thực tế, trừ khi ta đầu tư vào một pipeline đánh nhãn phức tạp theo thời gian thực.
-Tuy nhiên điều mà ta có thể làm là lấy trung bình tất cả dự đoán của mô hình lúc kiểm tra lại, từ đó có được giá trị trả về trung bình của mô hình $\mu_y$. 
+Tuy nhiên điều mà ta có thể làm là lấy trung bình tất cả dự đoán của mô hình tại lúc kiểm tra, từ đó có được giá trị đầu ra trung bình của mô hình $\mu_y$. 
 
 <!--
 It turns out that under some mild conditions--- if our classifier was reasonably accurate in the first place, 
@@ -515,7 +515,7 @@ This means that the distribution over ads and their popularity changes gradually
 * Trong ngành quảng cáo điện toán, sản phẩm mới ra mắt và sản phẩm cũ trở nên ít phổ biến hơn.
 Điều này nghĩa là phân phối của các mẩu quảng cáo và mức phổ biến của chúng sẽ thay đổi dần dần và bất kì bộ dự đoán tỉ lệ click-through nào cũng cần thay đổi theo.
 * Ống kính của các camera giao thông bị mờ đi theo thời gian do tác động của môi trường, có ảnh hưởng tăng dần tới chất lượng ảnh.
-* Nội dung các mẩu tin thay đổi qua thời gian, tức là tin tức thì không đổi nhưng các sự kiện mới luôn diễn ra.
+* Nội dung các mẩu tin thay đổi theo thời gian, tức là tin tức thì không đổi nhưng các sự kiện mới luôn diễn ra.
 
 <!--
 In such cases, we can use the same approach that we used for training networks to make them adapt to the change in the data. 
