@@ -60,7 +60,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computational graph                 | đồ thị tính toán       | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | conditional distribution            | phân phối có điều kiện | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | confidence interval                 | khoảng tin cậy         |                                              |
-| confusion matrix                    | ma trận confusion      |                                              |
+| confusion matrix                    | ma trận nhầm lẫn      |                                              |
 | constrain                           | ràng buộc              |                                              |
 | (strictly) convex function          | hàm lồi (chặt)         | [https://git.io/JvohV](https://git.io/JvohV) |
 | convex optimization                 | tối ưu lồi             |                                              |
