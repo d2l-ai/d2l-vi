@@ -245,7 +245,7 @@ Nói cách khác, dữ liệu huấn luyện và kiểm tra quá khác biệt đ
 #### Self Driving Cars
 -->
 
-#### Các Ô tô Tự lái
+#### Xe tự hành
 
 <!--
 Say a company wanted to build a machine learning system for self-driving cars.
@@ -257,13 +257,13 @@ As it turned out, the roadside had been rendered with a very simplistic texture.
 More importantly, *all* the roadside had been rendered with the *same* texture and the roadside detector learned about this "feature" very quickly.
 -->
 
-Có một công ty muốn xây dựng một hệ thống học máy cho ô tô tự lái.
-Một trong những bộ phận quan trọng là máy dò đường.
-Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) sử dụng dữ liệu giả từ một máy kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
-Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ máy kết xuất đồ hoạ.
-Nhưng khi áp dụng cho ô tô thật, nó là một thảm hoạ.
-Hoá ra, đường đi đã được kết xuất với một texture rất đơn giản.
-Quan trọng hơn, *tất cả* các đường đi đều được kết xuất với cùng một texture và máy dò đường đã học "đặc trưng" này rất nhanh.
+Có một công ty muốn xây dựng một hệ thống học máy cho xe tự hành.
+Một trong những bộ phận quan trọng là bộ phát hiện lề đường.
+Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu tổng hợp từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
+Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ bộ kết xuất đồ hoạ.
+Nhưng khi áp dụng trên xe thực tế, nó là một thảm hoạ.
+Hoá ra, lề đường đã được kết xuất chỉ với một kết cấu rất đơn giản.
+Quan trọng hơn, *tất cả* các lề đường đều được kết xuất với cùng một bề mặt và bộ dò lề đường đã học "đặc trưng" này rất nhanh.
 
 <!--
 A similar thing happened to the US Army when they first tried to detect tanks in the forest.
