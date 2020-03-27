@@ -428,7 +428,7 @@ In these approaches, we use one network, $f$ to distinguish real versus fake dat
 We will discuss this in much more detail later.
 -->
 
-*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ tạo dữ liệu* để sinh dữ liệu không thể phân biệt được với các mẫu được lấy từ một bộ dữ liệu tham chiếu.
+*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ tạo dữ liệu* có khả năng sinh dữ liệu không thể phân biệt được với các mẫu được lấy từ một tập dữ liệu tham chiếu.
 Trong các phương pháp này, ta sử dụng một mạng $f$ để phân biệt dữ liệu thật với dữ liệu giả, và một mạng thứ hai $g$ cố gắng đánh lừa bộ phân biệt $f$ rằng dữ liệu giả là thật.
 Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các phần sau.
 
