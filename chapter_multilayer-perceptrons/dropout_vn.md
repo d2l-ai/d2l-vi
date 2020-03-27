@@ -153,7 +153,7 @@ In standard dropout regularization, one debiases each layer by normalizing by th
 In other words, dropout with *dropout probability* $p$ is applied as follows:
 -->
 
-Với điều chuẩn dropout chính tắc, ta khử độ chệch tại mỗi tầng bằng cách chuẩn hóa theo tỉ lệ các nút được giữ lại (chứ không phải các nút bị loại bỏ).
+Với điều chuẩn dropout tiêu chuẩn, ta khử độ chệch tại mỗi tầng bằng cách chuẩn hóa theo tỉ lệ các nút được giữ lại (chứ không phải các nút bị loại bỏ).
 Nói cách khác, dropout với *xác suất dropout* $p$ được áp dụng như sau:
 
 $$
