@@ -396,7 +396,7 @@ Here's a prototypical algorithm for that purpose which uses an unlabeled trainin
 -->
 
 Hệ quả là có hai vấn đề cần được giải quyết: đầu tiên là phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
-và sau đó là bài toán tối thiểu hóa với trọng số được đánh lại, trong đó ta đánh trọng số cho các mẫu với $\beta$, ví dụ như thông qua các gradient đầu.
+và sau đó là bài toán tối thiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
 Dưới đây là một thuật toán nguyên mẫu để giải quyết hai vấn đề trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 
 <!--
