@@ -440,7 +440,7 @@ Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các ph�
 ### Label Shift Correction
 -->
 
-### Điều chỉnh Dịch chuyển nhãn
+### Hiệu chỉnh Dịch chuyển nhãn
 
 <!--
 For the discussion of label shift, we will assume for now that we are dealing with a $k$-way multiclass classification task.
