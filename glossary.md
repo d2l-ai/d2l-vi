@@ -48,6 +48,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
+| categorical variable | biến rời rạc | |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | classifier                          | bộ phân loại           |                                              |
@@ -165,6 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | import (module, package)   | nhập (mô-đun, gói thư viện) | |
 | imputation (Preprocessing) | quy buộc           | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập   | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| indicator variable | biến giả | |
 | iteration                  | vòng lặp           |                                              |
 | iterator                   | iterator           | [https://git.io/JvohG](https://git.io/JvohG) |
 
@@ -287,6 +289,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regularization                 | điều chuẩn                                |                                              |
 | reinforcement learning         | học tăng cường                            |                                              |
 | representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
+| rescale | rescale | |
 | reward function                | hàm điểm thưởng                           |                                              |
 | robustness | khả năng / tính kháng nhiễu | |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
