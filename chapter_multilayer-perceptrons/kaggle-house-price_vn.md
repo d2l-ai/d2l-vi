@@ -635,7 +635,7 @@ The steps are quite simple:
 -->
 
 * Dữ liệu trong thực tế thường chứa nhiều loại dữ liệu khác nhau và cần phải được tiền xử lý.
-* Thay đổi kích thước dữ liệu thực về trung bình bằng không  và phương sai bằng một là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu với giá trị trung bình của chúng.
+* Thay đổi kích thước dữ liệu có giá trị thực về trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu với giá trị trung bình của chúng.
 * Chuyển đổi các biến phân loại thành các biến chỉ dẫn cho phép chúng ta xử lý chúng như các vector.
 * Ta có thể sử dụng kiểm định chéo k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
 * Hàm Logarit có hữu ích đối với mất mát tương đối.
