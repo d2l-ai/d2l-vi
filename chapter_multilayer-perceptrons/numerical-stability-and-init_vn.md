@@ -155,7 +155,7 @@ In other words, we have permutation symmetry among the hidden units of each laye
 
 Một vấn đề khác trong thiết kế mạng học sâu là tính đối xứng vốn có trong quá trình tham số hóa.
 Giả sử ta có một mạng học sâu với một tầng ẩn gồm hai nút, $h_1$ và $h_2$. 
-Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của lớp output để đạt được một hàm tương tự.
+Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của tầng đầu ra để đạt được một hàm tương tự.
 Không có gì đặc biệt khác nhau giữa việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai.
 Nói cách khác, ta có tính đối xứng hoán vị giữa các nút ẩn của từng tầng.
 
@@ -204,7 +204,7 @@ MXNet will use the default random initialization method: each element of the wei
 Both choices tend to work well in practice for moderate problem sizes.
 -->
 
-Trong các phần trước, ví dụ, trong :chữ số:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
+Trong các phần trước, ví dụ, trong :numref:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
 Nếu phương thức khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
 Cả hai lựa chọn đều hoạt động tốt trong thực tế cho các vấn đề cỡ trung. 
 
