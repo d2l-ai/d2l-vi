@@ -392,7 +392,7 @@ On the other hand, if we err by this amount in Los Altos Hills, California, this
 
 Với giá nhà (hay giá cổ phiếu), ta quan tâm đến các đại lượng tương đối hơn các đại lượng tuyệt đối.
 Cụ thể hơn, ta thường quan tâm đến lỗi tương đối $\frac{y - \hat{y}}{y}$ hơn lỗi tuyệt đối $y - \hat{y}$.
-Ví dụ, nếu dự đoán giá một ngôi nhà ở Rural Ohio bị lệch đi 100,000 USD, mà giá thông thường một ngôi nhà ở đó là 125,000 USD, có lẽ mô hình đang làm việc rất kém.
+Ví dụ, nếu dự đoán giá một ngôi nhà ở Rural Ohio bị lệch đi 100,000 đô-la, mà giá thông thường một ngôi nhà ở đó là 125,000 đô-la, có lẽ mô hình đang làm việc rất kém.
 Mặt khác, nếu ta có cùng độ lệch như vậy khi dự đoán giá nhà ở Los Altos Hills, California (giá nhà trung vị ở đây tầm hơn 4 triệu đô), có thể dự đoán này lại rất chính xác.
 
 <!--
@@ -427,8 +427,8 @@ This will be covered in further detail later on when we discuss the details in :
 
 Khác với các mục trước, hàm huấn luyện ở đây sử dụng bộ tối ưu Adam
 (một biến thể của SGD mà chúng tôi sẽ mô tả cụ thể hơn sau này).
-Lợi thế chính của Adam so với SGD nguyên bản là: mọi người thường thấy rằng nó bớt nhạy với tốc độ học ban đầu hơn, 
-mặc dù nó không cho kết quả tốt hơn (đôi khi còn tệ hơn) SGD nếu giả sử tài nguyên để tối ưu siêu tham số là vô hạn.
+Lợi thế chính của Adam so với SGD nguyên bản là: nó không quá nhạy cảm với tốc độ học ban đầu, 
+mặc dù kết quả cũng không tốt hơn (đôi khi còn tệ hơn) SGD nếu tài nguyên để tối ưu siêu tham số là vô hạn.
 Bộ tối ưu này sẽ được mô tả cụ thể hơn trong :numref:`chap_optimization`.
 
 ```{.python .input  n=14}
