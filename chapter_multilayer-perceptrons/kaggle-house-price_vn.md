@@ -586,6 +586,7 @@ If they do, it is time to upload them to Kaggle.
 The following code will generate a file called `submission.csv` (CSV is one of the file formats accepted by Kaggle):
 -->
 
+Hãy gọi mô hình để đưa ra dự đoán. <!-- Bạn nào review sửa câu này giúp mình nhé, mình chưa biết dịch sao cho hợp lý hơn. Many thanks!-->
 Ta nên kiểm tra xem liệu các dự đoán trên tập kiểm tra có tương đồng với các dự đoán trong quá trình kiểm định chéo k-phần hay không.
 Nếu đúng là như vậy thì đã đến lúc tải các dự đoán này lên Kaggle.
 Đoạn mã nguồn sau sẽ tạo một tệp có tên `submission.csv` (CSV là một trong những định dạng tệp được chấp nhận bởi Kaggle):
@@ -600,7 +601,7 @@ Next, as demonstrated in :numref:`fig_kaggle_submit2`, we can submit our predict
 The steps are quite simple:
 -->
 
-Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh với với giá nhà thực tế (nhãn) trên tập kiểm tra.
+Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh với với giá nhà thực tế (các nhãn) trên tập kiểm tra.
 Các bước tiến hành khá là đơn giản:
 
 <!--
