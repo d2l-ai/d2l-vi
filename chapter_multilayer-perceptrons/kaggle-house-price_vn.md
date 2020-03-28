@@ -466,7 +466,7 @@ Nếu bạn đang đọc theo kiểu tuyến tính thì có thể bạn sẽ nh�
 Ta sẽ ứng dụng kỹ thuật này để lựa chọn thiết kế mô hình và điều chỉnh các siêu tham số.
 Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo k-phần.
 Việc này được tiến hành bằng cách cắt chọn (_slicing_) phần thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
-Cần lưu ý rằng đây không phải là cách sử dụng dữ liệu hiệu quả nhất và chắc chắn rằng ta có thể làm điều gì đó thông minh hơn nhiều nếu tập dữ liệu có kích thước lớn hơn đáng kể.
+Cần lưu ý rằng đây không phải là cách xử lý dữ liệu hiệu quả nhất và chắc chắn cũng không phải là cách khôn ngoan để xử lý một tập dữ liệu có kích thước lớn hơn nhiều. 
 Nhưng sự phức tạp được thêm vào này có thể làm xáo trộn mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ta có thể bỏ qua một cách an toàn ở đây.
 
 ```{.python .input}
