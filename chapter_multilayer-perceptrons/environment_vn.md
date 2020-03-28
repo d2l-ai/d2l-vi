@@ -161,7 +161,7 @@ It turns out that if we navigate around the United States, shifting the source o
 we will find considerable concept shift regarding the definition of even this simple term as shown in :numref:`fig_popvssoda`.
 -->
 
-Một vấn đề liên quan nữa, gọi là *dịch chuyển khái niệm*, nổi lên là tình huống khi các định nghĩa của nhãn thay đổi.
+Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm*, là tình huống khi các định nghĩa của nhãn thay đổi.
 Điều này nghe có vẻ lạ vì sau cùng, con mèo là con mèo.
 Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng ta có thể nói như vậy với thuật ngữ "đồ uống có ga" hay không?
 Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển nguồn dữ liệu theo vùng địa lý, ta sẽ thấy sự dịch chuyển khái niệm đáng kể liên quan đến thuật ngữ đơn giản này như thể hiện trong :numref:`fig_popvssoda`.
@@ -192,7 +192,7 @@ Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
 ### Examples
 -->
 
-### Các ví dụ
+### Ví dụ
 
 <!--
 Before we go into further detail and discuss remedies, we can discuss a number of situations where covariate and concept shift may not be so obvious.
