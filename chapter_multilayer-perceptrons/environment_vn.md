@@ -626,8 +626,7 @@ These types of knowledge are crucial for the aspiring data scientist to deal wit
 <!--
 ## Fairness, Accountability, and Transparency in Machine Learning
 -->
-## Công bằng, trách nhiệm và minh bạch trong học máy
-## *dịch tiêu đề phía trên*
+## Công bằng, Trách nhiệm và Minh bạch trong học máy
 
 <!--
 Finally, it is important to remember that when you deploy machine learning systems you are not simply minimizing negative log likelihood or maximizing accuracy---you are automating some kind of decision process.
@@ -645,20 +644,19 @@ Additionally, we want to be careful about whether we are addressing the right pr
 Should what news someone is exposed to be determined by which Facebook pages they have *Liked*? 
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
-
-Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi bạn triển khai một hệ thống học máy, không đơn giản chỉ là tối thiểu negative log likelihood hay tối đa hóa độ chính xác---bạn đang tự động hóa một số loại quy trình quyết định.
-Thông thường, những hệ thống tự động ra quyết định mà chúng tôi triển khai có thể gây ra những kết quả không mong muốn về những quyết định của nó.
-Nếu chúng tôi đang triển khai một hệ thống phân tích ý tế, chúng tôi cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
-Bỏ qua những rủi ro có thể thấy trước để chạy theo phúc lợi của một bộ phận dân số sẽ chạy theo những nguyên tắc đạo đức cơ bản.
-Ngoài ra, "độ chính xác" hiếm khi là một độ đo đúng.
-Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến giá trị tiềm năng của độ lỗi theo nhiều cách khác nhau.
-Nếu theo một cách nào đó bạn phân loại một bức ảnh có thể được xem như là một chủng tộc riêng biệt, trong khi phân loại sai sang một loại khác sẽ vô hại, thì bạn có thể muốn điều chỉnh ngưỡng của mình cho phù hợp, tạo ra các giá trị xã hội thông qua các giao thức ra quyết định.
-Chúng tôi cũng muốn cẩn thận về việc làm thế nào mà những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
+Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không đơn giản chỉ là tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
+Thường thì những hệ thống tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả không mong muốn cho những ai chịu ảnh hưởng bởi quyết định của nó.
+Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
+Bỏ qua những rủi ro có thể thấy trước để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
+Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
+Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
+Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, trong khi phân loại sai sang một loại khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị cộng đồng khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
+Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
 Ví dụ, nếu hệ thống dự đoán được áp dụng để dự đoán chính sách, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
-Hàng xóm có nhiều tội phạm, cần nhiều tuần tra, phát hiện ra nhiều tội phạm, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều tuần tra hơn, nhiều tội ác được phát hiện,... 
-Thêm vào đó, chúng tôi muốn cẩn thận về việc liệu chúng tôi có giải quyết đúng vấn đề ngày từ đầu. 
+Một khu xóm có nhiều tội phạm, cần nhiều tuần tra, phát hiện ra nhiều tội phạm, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều tuần tra hơn, nhiều tội ác được phát hiện,...
+Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu liệu chúng ta có đang giải quyết đúng vấn đề hay không.  
 Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
-Những tin tức mà ai đó được đưa ra sẽ được xác định bởi những trang Facebook nào họ đã * Thích *?
+Những tin tức nào được đưa ra trước người dùng có nên được quyết định dựa trên những trang Facebook nào họ đã *Thích*?
 Đây chỉ là một ít trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
 
 
@@ -667,7 +665,6 @@ Những tin tức mà ai đó được đưa ra sẽ được xác định bởi
 <!--
 ## Summary
 -->
-
 ## Tóm tắt
 
 <!--
@@ -675,9 +672,8 @@ Những tin tức mà ai đó được đưa ra sẽ được xác định bởi
 * Covariate shift can be detected and corrected if the shift is not too severe. Failure to do so leads to nasty surprises at test time.
 * In some cases the environment *remembers* what we did and will respond in unexpected ways. We need to account for that when building models.
 -->
-
-* Trong nhiều trường hợp, tập huấn luyện và kiểm thử không cùng một phân phối. Đây chính là covariate shift.
-* Covariate shift có thể nhận diện và sửa chửa nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc sửa chữa có thể dẫn đến những kết quả không lường được lúc kiểm thử.
+* Trong nhiều trường hợp, tập huấn luyện và kiểm thử không cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
+* Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
 * Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét đến khi xây dựng những mô hình.
 
 <!--
@@ -694,8 +690,8 @@ Những tin tức mà ai đó được đưa ra sẽ được xác định bởi
 -->
 
 1. Điều gì có thể xảy ra khi chúng ta thay đổi hành vi của công cụ tìm kiếm ? Người dùng có thể làm gì ? Còn các nhà quảng cáo thì sao ?
-2. Triển khai một chương trình nhận diện covariate shift. Gợi ý: xây dựng một hệ thống phân lớp.
-3. Triển khai một hệ thống sửa chữa covariate shift.
+2. Xây dựng một chương trình nhận diện dịch chuyển hiệp biến. Gợi ý: xây dựng một hệ thống phân lớp.
+3. Xây dựng một chương trình khắc phục vấn đề dịch chuyển hiệp biến.
 4. Chuyện gì sẽ xảy ra nếu tập huấn luyện và kiểm thử rất khác nhau ? Chuyện gì sẽ xảy ra đối với trọng số mẫu?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
