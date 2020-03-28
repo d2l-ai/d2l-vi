@@ -275,7 +275,7 @@ For uniformly distributed random variables $U[-a, a]$, note that their variance 
 Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initialize uniformly with $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$.
 -->
 
-Đây là lý do làm cơ sở cho cách khởi tạo Xavier :trích dẫn:`Glorot.Bengio.2010`.
+Đây là lý do làm cơ sở cho cách khởi tạo Xavier :cite:`Glorot.Bengio.2010`.
 Nó hoạt động đủ tốt trong thực tế.
 Đối với các biến ngẫu nhiên Gaussian, khởi tạo Xavier chọn phân phối chuẩn với trung bình bằng 0 và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.  
 Dành cho các biến ngẫu nhiên được phân bố đồng đều $U[-a, a]$, chú ý rằng phương sai của chúng được cho bởi $a^2/3$.
