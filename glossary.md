@@ -60,6 +60,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computational graph                 | đồ thị tính toán       | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | conditional distribution            | phân phối có điều kiện | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | confidence interval                 | khoảng tin cậy         |                                              |
+| confusion matrix                    | ma trận nhầm lẫn      |                                              |
 | constrain                           | ràng buộc              |                                              |
 | (strictly) convex function          | hàm lồi (chặt)         | [https://git.io/JvohV](https://git.io/JvohV) |
 | convex optimization                 | tối ưu lồi             |                                              |
@@ -307,6 +308,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | shape (trong Đại số Tuyến tính) | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn)   |
 | significance test               | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
 | slicing (array)                 | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH)   |
+| source data/distribution        | dữ liệu / phân phối gốc  |   |
 | spam email                      | email rác                |                                                |
 | speech recognition              | nhận dạng giọng nói      |                                                |
 | squashing function | hàm ép | |
@@ -327,6 +329,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## T
 | English                  | Tiếng Việt                     | Thảo luận tại                                |
 |--------------------------|--------------------------------|----------------------------------------------|
+| target data/distribution | dữ liệu/phân phối mục tiêu     |   |
 | tensor contraction       | phép co tensor                 | [https://git.io/JvojX](https://git.io/JvojX) |
 | test set                 | tập kiểm tra                   |                                              |
 | test set performance     | chất lượng trên tập kiểm tra   |                                              |
