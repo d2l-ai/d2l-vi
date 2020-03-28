@@ -527,7 +527,7 @@ Within reason, the k-fold cross-validation approach is resilient against multipl
 However, if we were to try out an unreasonably large number of options it might fail since we might just get lucky on the validation split with a particular set of hyperparameters.
 -->
 
-Trong ví dụ này, chúng tôi chọn một tập siêu tham số chưa được điều chỉnh và dành cơ hội để cải thiện mô hình cho bạn đọc.
+Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được điều chỉnh và dành cơ hội để cải thiện mô hình cho bạn đọc.
 Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu.
 Theo suy luận, phương pháp kiểm định chéo k-phần là khả năng chống lại nhiều thử nghiệm.
 Tuy nhiên, nếu ta định thử một số lượng rất lớn các lựa chọn, phương pháp này có thể thất bại vì ta có thể chỉ may mắn trên tập kiểm định với một tập siêu tham số nhất định.
