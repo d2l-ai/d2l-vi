@@ -548,7 +548,7 @@ Therefore, when we reduce the amount of training errors, we need to check whethe
 -->
 
 Bạn sẽ thấy rằng đôi khi lỗi huấn luyện cho một bộ siêu tham số có thể rất thấp, trong khi lỗi của kiểm định k-phần có thể cao hơn.
-Đây là dấu hiệu là ta đang quá khớp.
+Đây là dấu hiệu của sự quá khớp.
 Vì vậy, khi ta giảm số lỗi huấn luyện, ta nên kiểm tra liệu rằng số lỗi của kiểm định k-phần có giảm tương ứng hay không.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
