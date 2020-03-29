@@ -367,7 +367,7 @@ Note however, that we only need samples $\mathbf{x} \sim q(\mathbf{x})$; we do n
 Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
 Đáng buồn là chúng ta không biết tỉ lệ đó nên trước khi làm được bất cứ thứ gì hữu ích ta phải ước lượng được nó.
 Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kỳ vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
-Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ và phân phối được dùng để tạo ra tập huấn luyện $q$ (việc này hiển nhiên là có thể được). <!-- Chỗ này câu gốc khó hiểu quá, không biết lược bỏ một ý trong câu gốc đi mới thấy có nghĩa. -->
+Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ (bằng cách sử dụng tập huấn luyện) và phân phối được dùng để tạo ra tập kiểm tra $q$ (việc này hiển nhiên là có thể được).
 Tuy nhiên cũng lưu ý rằng ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không hề cần sử dụng đến nhãn $y \sim q(y)$.
 
 <!--
