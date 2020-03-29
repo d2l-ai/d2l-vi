@@ -674,7 +674,7 @@ Những tin tức nào được đưa ra trước người dùng có nên đư�
 -->
 * Trong nhiều trường hợp, tập huấn luyện và tập kiểm tra không được lấy mẫu từ cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
 * Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
-* Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét đến khi xây dựng những mô hình.
+* Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét điều này khi xây dựng mô hình.
 
 <!--
 ## Exercises
