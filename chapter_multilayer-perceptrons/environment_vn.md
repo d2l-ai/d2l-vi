@@ -149,7 +149,7 @@ Khi ta tin rằng $\mathbf{x}$ gây ra $y$ thì dịch chuyển hiệp biến th
 ### Label Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển Nhãn
 
 <!--
 The converse problem emerges when we believe that what drives the shift is a change in the marginal distribution over 
@@ -164,15 +164,19 @@ That is because these methods tend to involve manipulating objects that look lik
 to be comparatively easy compared to working with the objects that look like the input, which tends (in deep learning) to be a high-dimensional object.
 -->
 
-*dịch đoạn phía trên*
-
-
-
+Vấn đề ngược lại xuất hiện khi chúng ta tin rằng điều gây ra sự dịch chuyển là một thay đổi trong phân phối biên của nhãn $P(y)$ trong khi phân phối có điều kiện theo lớp vẫn không đổi $P(\mathbf{x} \mid y)$.
+Dịch chuyển nhãn là một giả định hợp lý khi chúng ta tin rằng $y$ gây ra $\mathbf{x}$.
+Chẳng hạn, thông thường chúng ta muốn dự đoán một chẩn đoán nếu biết các biểu hiện của nó.
+Trong trường hợp này chúng ta tin rằng chẩn đoán gây ra các biểu hiện, ví dụ, dịch bệnh gây ra các triệu chứng.
+Thỉnh thoảng các giả định dịch chuyển nhãn và dịch chuyển hiệp biến có thể xảy ra đồng thời.
+Ví dụ, khi hàm gán nhãn là tất định và không đổi, dịch chuyển hiệp biến sẽ luôn xảy ra, kể cả khi dịch chuyển nhãn cũng đang xảy ra.
+Một điều thú vị là khi chúng ta tin rằng cả dịch chuyển nhãn và dịch chuyển hiệp biến đều đang xảy ra, làm việc với các phương pháp được suy ra từ giả định dịch chuyển nhãn thường chiếm lợi thế.
+Đó là vì các phương pháp này có xu hướng làm việc trên các đối tượng giống với nhãn, và thường sẽ dễ thao tác hơn nếu so với các đối tượng giống với đầu vào đa chiều trong học sâu.
 <!--
 ### Concept Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển Khái niệm
 
 <!--
 One more related problem arises in *concept shift*, the situation in which the very label definitions change.
@@ -182,13 +186,16 @@ It turns out that if we navigate around the United States, shifting the source o
 we will find considerable concept shift regarding the definition of even this simple term as shown in :numref:`fig_popvssoda`.
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm*, là tình huống khi các định nghĩa của nhãn thay đổi.
+Điều này nghe có vẻ lạ vì sau cùng, con mèo là con mèo.
+Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng ta có thể nói như vậy với thuật ngữ "đồ uống có ga" hay không?
+Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển nguồn dữ liệu theo vùng địa lý, ta sẽ thấy sự dịch chuyển khái niệm đáng kể liên quan đến thuật ngữ đơn giản này như thể hiện trong :numref:`fig_popvssoda`.
 
 <!--
 ![Concept shift on soft drink names in the United States.](../img/popvssoda.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/popvssoda.png)
+![Dịch chuyển khái niệm của tên các loại đồ uống có ga ở nước Mỹ.](../img/popvssoda.png)
 :width:`400px`
 :label:`fig_popvssoda`
 
@@ -198,7 +205,9 @@ This problem can be tricky to spot.
 A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta xây dựng một hệ thống dịch máy, phân phối $P(y \mid x)$ có thể khác nhau tuỳ thuộc vào vị trí của chúng ta.
+Vấn đề này có thể khó nhận ra.
+Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -208,13 +217,13 @@ A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 ### Examples
 -->
 
-### *dịch tiêu đề phía trên*
+### Ví dụ
 
 <!--
 Before we go into further detail and discuss remedies, we can discuss a number of situations where covariate and concept shift may not be so obvious.
 -->
 
-*dịch đoạn phía trên*
+Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể thảo luận một số tình huống khi dịch chuyển hiệp biến và khái niệm biểu hiện không quá rõ ràng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -740,7 +749,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 4 -->
 *
