@@ -654,7 +654,7 @@ Nếu kết quả phân loại một bức ảnh có thể được xem như m�
 Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
 Ví dụ, nếu hệ thống dự đoán được áp dụng một cách ngây để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
 Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
-Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu liệu chúng ta có đang giải quyết đúng vấn đề hay không.  
+Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
 Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
 Những tin tức nào được đưa ra trước người dùng có nên được quyết định dựa trên những trang Facebook nào họ đã *Thích*?
 Đây chỉ là một ít trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
