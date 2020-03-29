@@ -652,7 +652,7 @@ Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
 Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
 Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, nhưng việc phân loại sai sang một lớp khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị xã hội khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
 Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
-Ví dụ, nếu hệ thống dự đoán được áp dụng để dự đoán chính sách, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
+Ví dụ, nếu hệ thống dự đoán được áp dụng một cách ngây để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
 Một khu xóm có nhiều tội phạm, cần nhiều tuần tra, phát hiện ra nhiều tội phạm, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều tuần tra hơn, nhiều tội ác được phát hiện,...
 Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu liệu chúng ta có đang giải quyết đúng vấn đề hay không.  
 Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
