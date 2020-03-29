@@ -559,8 +559,8 @@ The model that we obtain in this way can then be applied to the test set.
 Saving the estimates in a CSV file will simplify uploading the results to Kaggle.
 -->
 
-Bây giờ, khi đã tìm được các siêu tham số tốt, ta cũng có thể sử dụng toàn bộ dữ liệu cho việc huấn luyện (thay vì chỉ dùng $1-1/k$ của dữ liệu như trong quá trình kiểm định chéo).
-Sau đó ta có thể áp dụng mô hình thu được lên tập kiểm tra và lưu các dự đoán vào một tệp CSV để đơn giản hóa quá trình tải kết quả lên Kaggle.
+Bây giờ, khi đã biết được các lựa chọn tốt cho siêu tham số, ta có thể sử dụng toàn bộ dữ liệu cho việc huấn luyện (thay vì chỉ dùng $1-1/k$ của dữ liệu như trong quá trình kiểm định chéo).
+Sau đó, ta áp dụng mô hình thu được lên tập kiểm tra và lưu các dự đoán vào một tệp CSV nhằm đơn giản hóa quá trình tải kết quả lên Kaggle.
 
 ```{.python .input  n=18}
 def train_and_pred(train_features, test_feature, train_labels, test_data,
@@ -611,7 +611,7 @@ Các bước tiến hành khá là đơn giản:
 * Click the “Make Submission” button at the bottom of the page to view your results.
 -->
 
-* Đăng nhập vào trang web Kaggle và truy cập trang House Price Prediction Competition.
+* Đăng nhập vào trang web Kaggle và truy cập vào cuộc thi Dự đoán giá nhà.
 * Nhấn vào nút “Submit Predictions” hoặc “Late Submission” (nút này nằm ở phía bên phải tại thời điểm viết bài).
 * Nhấn vào nút “Upload Submission File” trong khung có viền nét đứt và chọn tệp dự đoán bạn muốn tải lên. <!-- Cái khung này đâu có nằm ở cuối trang nhỉ? -->
 * Nhấn vào nút “Make Submission” ở cuối trang để xem kết quả.
