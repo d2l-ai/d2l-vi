@@ -393,7 +393,7 @@ On the other hand, if we err by this amount in Los Altos Hills, California, this
 Với giá nhà (hay giá cổ phiếu), ta quan tâm đến các đại lượng tương đối hơn các đại lượng tuyệt đối.
 Cụ thể hơn, ta thường quan tâm đến lỗi tương đối $\frac{y - \hat{y}}{y}$ hơn lỗi tuyệt đối $y - \hat{y}$.
 Ví dụ, nếu dự đoán giá một ngôi nhà ở Rural Ohio bị lệch đi 100,000 đô-la, mà giá thông thường một ngôi nhà ở đó là 125,000 đô-la, có lẽ mô hình đang làm việc rất kém.
-Mặt khác, nếu ta có cùng độ lệch như vậy khi dự đoán giá nhà ở Los Altos Hills, California (giá nhà trung vị ở đây tầm hơn 4 triệu đô), có thể dự đoán này lại rất chính xác.
+Mặt khác, nếu ta có cùng độ lệch như vậy khi dự đoán giá nhà ở Los Altos Hills, California (giá nhà trung bình ở đây tầm hơn 4 triệu đô), có thể dự đoán này lại rất chính xác.
 
 <!--
 One way to address this problem is to measure the discrepancy in the logarithm of the price estimates.
