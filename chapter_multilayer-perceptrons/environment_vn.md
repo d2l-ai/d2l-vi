@@ -656,8 +656,8 @@ Ví dụ, nếu hệ thống dự đoán được áp dụng một cách ngây �
 Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
 Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
 Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
-Những tin tức nào được đưa ra trước người dùng có nên được quyết định dựa trên những trang Facebook nào họ đã *Thích*?
-Đây chỉ là một ít trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
+Những tin tức nào nên được hiển thị cho người dùng, được quyết định bởi những trang Facebook nào mà họ đã *Thích*?
+Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
 
 
 
