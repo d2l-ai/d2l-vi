@@ -672,7 +672,7 @@ Những tin tức nào được đưa ra trước người dùng có nên đư�
 * Covariate shift can be detected and corrected if the shift is not too severe. Failure to do so leads to nasty surprises at test time.
 * In some cases the environment *remembers* what we did and will respond in unexpected ways. We need to account for that when building models.
 -->
-* Trong nhiều trường hợp, tập huấn luyện và kiểm thử không cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
+* Trong nhiều trường hợp, tập huấn luyện và tập kiểm tra không được lấy mẫu từ cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
 * Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
 * Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét đến khi xây dựng những mô hình.
 
