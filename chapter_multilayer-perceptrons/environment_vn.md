@@ -149,7 +149,7 @@ Khi ta tin rằng $\mathbf{x}$ gây ra $y$ thì dịch chuyển hiệp biến th
 ### Label Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển Nhãn
 
 <!--
 The converse problem emerges when we believe that what drives the shift is a change in the marginal distribution over 
@@ -164,15 +164,19 @@ That is because these methods tend to involve manipulating objects that look lik
 to be comparatively easy compared to working with the objects that look like the input, which tends (in deep learning) to be a high-dimensional object.
 -->
 
-*dịch đoạn phía trên*
-
-
-
+Vấn đề ngược lại xuất hiện khi chúng ta tin rằng điều gây ra sự dịch chuyển là một thay đổi trong phân phối biên của nhãn $P(y)$ trong khi phân phối có điều kiện theo lớp vẫn không đổi $P(\mathbf{x} \mid y)$.
+Dịch chuyển nhãn là một giả định hợp lý khi chúng ta tin rằng $y$ gây ra $\mathbf{x}$.
+Chẳng hạn, thông thường chúng ta muốn dự đoán một chẩn đoán nếu biết các biểu hiện của nó.
+Trong trường hợp này chúng ta tin rằng chẩn đoán gây ra các biểu hiện, ví dụ, dịch bệnh gây ra các triệu chứng.
+Thỉnh thoảng các giả định dịch chuyển nhãn và dịch chuyển hiệp biến có thể xảy ra đồng thời.
+Ví dụ, khi hàm gán nhãn là tất định và không đổi, dịch chuyển hiệp biến sẽ luôn xảy ra, kể cả khi dịch chuyển nhãn cũng đang xảy ra.
+Một điều thú vị là khi chúng ta tin rằng cả dịch chuyển nhãn và dịch chuyển hiệp biến đều đang xảy ra, làm việc với các phương pháp được suy ra từ giả định dịch chuyển nhãn thường chiếm lợi thế.
+Đó là vì các phương pháp này có xu hướng làm việc trên các đối tượng giống với nhãn, và thường sẽ dễ thao tác hơn nếu so với các đối tượng giống với đầu vào đa chiều trong học sâu.
 <!--
 ### Concept Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển Khái niệm
 
 <!--
 One more related problem arises in *concept shift*, the situation in which the very label definitions change.
@@ -182,13 +186,16 @@ It turns out that if we navigate around the United States, shifting the source o
 we will find considerable concept shift regarding the definition of even this simple term as shown in :numref:`fig_popvssoda`.
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm*, là tình huống khi các định nghĩa của nhãn thay đổi.
+Điều này nghe có vẻ lạ vì sau cùng, con mèo là con mèo.
+Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng ta có thể nói như vậy với thuật ngữ "đồ uống có ga" hay không?
+Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển nguồn dữ liệu theo vùng địa lý, ta sẽ thấy sự dịch chuyển khái niệm đáng kể liên quan đến thuật ngữ đơn giản này như thể hiện trong :numref:`fig_popvssoda`.
 
 <!--
 ![Concept shift on soft drink names in the United States.](../img/popvssoda.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/popvssoda.png)
+![Dịch chuyển khái niệm của tên các loại đồ uống có ga ở nước Mỹ.](../img/popvssoda.png)
 :width:`400px`
 :label:`fig_popvssoda`
 
@@ -198,7 +205,9 @@ This problem can be tricky to spot.
 A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta xây dựng một hệ thống dịch máy, phân phối $P(y \mid x)$ có thể khác nhau tuỳ thuộc vào vị trí của chúng ta.
+Vấn đề này có thể khó nhận ra.
+Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -208,13 +217,13 @@ A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 ### Examples
 -->
 
-### *dịch tiêu đề phía trên*
+### Ví dụ
 
 <!--
 Before we go into further detail and discuss remedies, we can discuss a number of situations where covariate and concept shift may not be so obvious.
 -->
 
-*dịch đoạn phía trên*
+Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể thảo luận một số tình huống khi dịch chuyển hiệp biến và khái niệm biểu hiện không quá rõ ràng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -343,7 +352,7 @@ The impatient reader could continue on to the next section as this material is n
 ### Covariate Shift Correction
 -->
 
-### *dịch tiêu đề phía trên*
+### Hiệu chỉnh Dịch chuyển Hiệp biến
 
 <!--
 Assume that we want to estimate some dependency $P(y \mid \mathbf{x})$ for which we have labeled data $(\mathbf{x}_i, y_i)$.
@@ -354,7 +363,12 @@ We sometimes additionally apply some penalty to the parameters, using weight dec
 This means that we largely minimize the loss on the training.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn ước lượng mối liên hệ phụ thuộc $P(y \mid \mathbf{x})$ khi đã có dữ liệu được gán nhãn $(\mathbf{x}_i, y_i)$.
+Thật không may, các điểm quan sát $x_i$ được thu thập từ một phân phối *mục tiêu* $q(\mathbf{x})$ thay vì từ phân phối *gốc* $p(\mathbf{x})$.
+Để có được tiến triển, chúng ta cần suy nghĩ lại xem chính xác việc gì đang diễn ra trong quá trình huấn luyện:
+ta duyệt qua tập dữ liệu huấn luyện với nhãn kèm theo $\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\} và cập nhật vector trọng số của mô hình sau mỗi minibatch.
+Chúng ta thi thoảng cũng áp dụng thêm một lượng phạt nào đó lên các tham số, bằng cách dùng suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
+Điều này nghĩa là ta hầu như chỉ đang giảm thiểu giá trị mất mát trên tập huấn luyện.
 
 $$
 \mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{some~penalty}(w).
@@ -365,7 +379,8 @@ Statisticians call the first term an *empirical average*, i.e., an average compu
 If the data is drawn from the "wrong" distribution $q$, we can correct for that by using the following simple identity:
 -->
 
-*dịch đoạn phía trên*
+Các nhà thống kê gọi số hạng đầu tiên là *trung bình thực nghiệm*, tức là trung bình được tính qua dữ liệu lấy từ phân phối $P(x) P(y \mid x)$.
+Nếu dữ liệu được lấy "nhầm" từ phân phối $q$, ta có thể hiệu chỉnh lại bằng cách sử dụng đồng nhất thức:
 
 $$
 \begin{aligned}
@@ -383,7 +398,11 @@ e.g., by access to training data, and the one used for generating the training s
 Note however, that we only need samples $\mathbf{x} \sim q(\mathbf{x})$; we do not to access labels $y \sim q(y)$.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
+Đáng buồn là chúng ta không biết tỉ lệ đó nên trước khi làm được bất cứ thứ gì hữu ích ta phải ước lượng được nó.
+Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kỳ vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
+Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ (bằng cách sử dụng tập huấn luyện) và phân phối được dùng để tạo ra tập kiểm tra $q$ (việc này hiển nhiên là có thể được).
+Tuy nhiên cũng lưu ý rằng ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không hề cần sử dụng đến nhãn $y \sim q(y)$.
 
 <!--
 In this case, there exists a very effective approach that will give almost as good results: logistic regression.
@@ -396,7 +415,14 @@ Now denote by $z_i$ labels which are 1 for data drawn from $p$ and -1 for data d
 Then the probability in a mixed dataset is given by
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này có một cách rất hiệu quả, cho kết quả tốt gần ngang ngửa: hồi quy logistic.
+Đấy là tất cả những gì ta cần để tính xấp xỉ tỉ lệ xác suất.
+Chúng ta cho học một bộ phân loại để phân biệt giữa dữ liệu được lấy từ phân phối $p(\mathbf{x})$ và phân phối $q(x)$.
+Nếu không thể phân biệt được giữa hai phân phối thì tức là khả năng các mẫu liên quan đến từ một trong hai phân phối là ngang nhau.
+Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng thì cần được đánh trọng số cao lên hoặc giảm đi tương ứng.
+Để cho đơn giản, giả sử ta có số lượng mẫu đến từ hai phân phối là bằng nhau, được kí hiệu lần lượt là $\mathbf{x}_i \sim p(\mathbf{x})$ và $\mathbf{x}_i' \sim q(\mathbf{x})$.
+Ta kí hiệu nhãn $z_i$ bằng 1 cho dữ liệu từ phân phối $p$ và -1 cho dữ liệu từ $q$.
+Lúc này xác suất trong một bộ dữ liệu được trộn lẫn sẽ là
 
 $$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ and hence } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.$$
 
@@ -404,7 +430,7 @@ $$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \te
 Hence, if we use a logistic regression approach where $P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-f(\mathbf{x}))}$ it follows that
 -->
 
-*dịch đoạn phía trên*
+Do đó, nếu sử dụng cách tiếp cận hồi quy logistic mà trong đó $P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-f(\mathbf{x}))}$, ta có 
 
 $$
 \beta(\mathbf{x}) = \frac{1/(1 + \exp(-f(\mathbf{x})))}{\exp(-f(\mathbf{x}))/(1 + \exp(-f(\mathbf{x})))} = \exp(f(\mathbf{x})).
@@ -420,7 +446,9 @@ and then a reweighted minimization problem where we weigh terms by $\beta$, e.g.
 Here's a prototypical algorithm for that purpose which uses an unlabeled training set $X$ and test set $Z$:
 -->
 
-*dịch đoạn phía trên*
+Vì vậy, có hai bài toán cần được giải quyết: đầu tiên là bài toán phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
+và sau đó là bài toán tối thiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
+Dưới đây là một thuật toán nguyên mẫu để giải quyết hai bài toán trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 
 <!--
 1. Generate training set with $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
@@ -429,15 +457,21 @@ Here's a prototypical algorithm for that purpose which uses an unlabeled trainin
 4. Use weights $\beta_i$ for training on $X$ with labels $Y$.
 -->
 
-*dịch đoạn phía trên*
+
+1. Tạo một tập huấn luyện với $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
+2. Huấn luyện một bộ phân loại nhị phân sử dụng hồi quy logistic để tìm hàm f.
+3. Đánh trọng số cho dữ liệu huấn luyện bằng cách sử dụng $\beta_i = \exp(f(\mathbf{x}_i))$, hoặc tốt hơn là $$\beta_i = \min(\exp(f(\mathbf{x}_i)), c)$.
+4. Sử dụng trọng số $\beta_i$ để huấn luyện trên $X$ với nhãn $Y$.
 
 <!--
 Note that this method relies on a crucial assumption.
-For this scheme to work, we need that each data point in the target (test time)distribution had nonzero probability of occurring at training time.
+For this scheme to work, we need that each data point in the target (test time) distribution had nonzero probability of occurring at training time.
 If we find a point where $q(\mathbf{x}) > 0$ but $p(\mathbf{x}) = 0$, then the corresponding importance weight should be infinity.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng phương pháp này được dựa trên một giả định quan trọng.
+Để có được một kết quả tốt, ta cần đảm bảo rằng mỗi điểm dữ liệu trong phân phối mục tiêu (tại thời điểm kiểm tra) có xác suất xảy ra tại thời điểm huấn luyện khác không.
+Nếu một điểm có $q(\mathbf{x}) > 0$ nhưng $p(\mathbf{x}) = 0$, thì trọng số quan trọng tương ứng bằng vô hạn.
 
 <!--
 *Generative Adversarial Networks* use a very similar idea to that described above to engineer a *data generator* that outputs data that cannot be distinguished from examples sampled from a reference dataset.
@@ -445,7 +479,9 @@ In these approaches, we use one network, $f$ to distinguish real versus fake dat
 We will discuss this in much more detail later.
 -->
 
-*dịch đoạn phía trên*
+*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ tạo dữ liệu* có khả năng sinh dữ liệu không thể phân biệt được với các mẫu được lấy từ một tập dữ liệu tham chiếu.
+Trong các phương pháp này, ta sử dụng một mạng $f$ để phân biệt dữ liệu thật với dữ liệu giả, và một mạng thứ hai $g$ cố gắng đánh lừa bộ phân biệt $f$ rằng dữ liệu giả là thật.
+Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các phần sau.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -455,7 +491,7 @@ We will discuss this in much more detail later.
 ### Label Shift Correction
 -->
 
-### *dịch tiêu đề phía trên*
+### Hiệu chỉnh Dịch chuyển nhãn
 
 <!--
 For the discussion of label shift, we will assume for now that we are dealing with a $k$-way multiclass classification task.
@@ -467,7 +503,9 @@ then we can get consistent estimates of these weights without ever having to dea
 while the labels are often easier to work, say vectors whose length corresponds to the number of classes).
 -->
 
-*dịch đoạn phía trên*
+Để thảo luận về dịch chuyển nhãn, ta sẽ giả định rằng ta đang giải quyết một bài toán phân loại $k$ lớp.
+Nếu phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(\mathbf{x})=q(\mathbf{x})$, thì trọng số quan trọng sẽ tương ứng với tỉ lệ hợp lý (*likelihood ratio*) của nhãn $q(y)/p(y)$.
+Một điều tốt về dịch chuyển nhãn là nếu ta có một mô hình tương đối tốt (trên phân phối gốc), ta có thể có các ước lượng nhất quán cho các trọng số này mà không phải đối phó với không gian đầu vào (trong học sâu, đầu vào thường là dữ liệu nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn vì chúng chỉ là các vector có chiều dài tương ứng với số lượng lớp).
 
 <!--
 To estimate calculate the target label distribution, we first take our reasonably good off the shelf classifier 
@@ -476,7 +514,9 @@ The confusion matrix C, is simply a $k \times k$ matrix where each column corres
 Each cell's value $c_{ij}$ is the fraction of predictions where the true label was $j$ *and* our model predicted $y$.
 -->
 
-*dịch đoạn phía trên*
+Để ước lượng phân phối nhãn mục tiêu, đầu tiên ta dùng một bộ phân loại sẵn có tương đối tốt (thường được học trên tập huấn luyện) và sử dụng một tập kiểm định (cùng phân phối với tập huấn luyện) để tính ma trận nhầm lẫn.
+Ma trận nhầm lẫn C là một ma trận $k \times k$, trong đó mỗi cột tương ứng với một nhãn *thật* và mỗi hàng tương ứng với nhãn dự đoán của mô hình.
+Giá trị của mỗi phần tử $c_{ij}$ là tỉ lệ mẫu có nhãn thật là $j$ *và* nhãn dự đoán là $i$.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -726,7 +766,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 4 -->
 *
@@ -735,10 +775,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
-*
+* Nguyễn Duy Du 
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 8 -->
 * Lê Khắc Hồng Phúc

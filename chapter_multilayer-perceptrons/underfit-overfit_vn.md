@@ -12,7 +12,7 @@
 As machine learning scientists, our goal is to discover *patterns*.
 But how can we be sure that we have truly discovered a *general* pattern and not simply memorized our data.
 For example, imagine that we wanted to hunt for patterns among genetic markers linking patients to their dementia status, 
-(let's the labels are drawn from the set {*dementia*, *mild cognitive impairment*, *healthy*}).
+(let's the labels be drawn from the set {*dementia*, *mild cognitive impairment*, *healthy*}).
 Because each person's genes identify them uniquely (ignoring identical siblings), it's possible to memorize the entire dataset.
 -->
 
@@ -35,7 +35,7 @@ Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự k
 
 <!--
 To recapitulate more formally, our goal is to discover patterns that capture regularities in the underlying population from which our training set was drawn.
-If we are successfull in this endeavor, then we could successfully assess risk even for individuals that we have never encountered before.
+If we are successful in this endeavor, then we could successfully assess risk even for individuals that we have never encountered before.
 This problem---how to discover patterns that *generalize*---is the fundamental problem of machine learning.
 -->
 
@@ -548,7 +548,7 @@ For a fixed task and data *distribution*, there is typically a relationship betw
 Given more data, we might profitably attempt to fit a more complex model.
 Absent sufficient data, simpler models may be difficult to beat.
 For many tasks, deep learning only outperforms linear models when many thousands of training examples are available.
-In part, the current success of deep learning owes to the current abundance of massive datasets due to internet companies, cheap storage, connected devices, and the broad digitization of the economy.
+In part, the current success of deep learning owes to the current abundance of massive datasets due to Internet companies, cheap storage, connected devices, and the broad digitization of the economy.
 -->
 
 Một lưu ý quan trọng khác cần ghi nhớ là kích thước tập dữ liệu.
@@ -666,7 +666,7 @@ Let's first implement a function to evaluate the loss on a given data.
 
 Trước tiên ta lập trình hàm để tính giá trị mất mát của dữ liệu cho trước.
 
-```{.python .input}
+```{.python .input  n=4}
 # Saved in the d2l package for later use
 def evaluate_loss(net, data_iter, loss):
     """Evaluate the loss of a model on the given dataset."""

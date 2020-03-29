@@ -14,7 +14,7 @@ Now that we have characterized multilayer perceptrons (MLPs) mathematically, let
 
 Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng thử lập trình một mạng như vậy xem sao.
 
-```{.python .input  n=9}
+```{.python .input  n=1}
 import d2l
 from mxnet import gluon, np, npx
 npx.set_np()
@@ -171,7 +171,7 @@ To evaluate the learned model, we apply it on some test data.
 
 Để đánh giá mô hình học được, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
 
-```{.python .input}
+```{.python .input  n=8}
 d2l.predict_ch3(net, test_iter)
 ```
 
