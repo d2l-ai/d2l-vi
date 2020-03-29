@@ -48,7 +48,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
-| categorical variable | biến rời rạc | |
+| categorical variable | biến hạng mục | |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | classifier                          | bộ phân loại           |                                              |
