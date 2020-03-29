@@ -41,4 +41,3 @@
 | 37. | [baoanh1310](https://github.com/baoanh1310)                     | Phạm Ngọc Bảo Anh              |
 | 38. | [tranyenthy](https://github.com/tranyenthy)                     | Trần Yến Thy                   |
 | 39. | [buiminhptit](https://github.com/buiminhptit)                   | Bùi Chí Minh                   |
-| 40. | [ninjaking](https://github.com/ninjaking)                       | Hà Trọng Sỹ                    |
