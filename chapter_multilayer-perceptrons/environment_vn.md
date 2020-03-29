@@ -352,7 +352,7 @@ The impatient reader could continue on to the next section as this material is n
 ### Covariate Shift Correction
 -->
 
-### *dịch tiêu đề phía trên*
+### Hiệu chỉnh Dịch chuyển Hiệp biến
 
 <!--
 Assume that we want to estimate some dependency $P(y \mid \mathbf{x})$ for which we have labeled data $(\mathbf{x}_i, y_i)$.
@@ -363,7 +363,12 @@ We sometimes additionally apply some penalty to the parameters, using weight dec
 This means that we largely minimize the loss on the training.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn ước lượng mối liên hệ phụ thuộc $P(y \mid \mathbf{x})$ khi đã có dữ liệu được gán nhãn $(\mathbf{x}_i, y_i)$.
+Thật không may, các điểm quan sát $x_i$ được thu thập từ một phân phối *mục tiêu* $q(\mathbf{x})$ thay vì từ phân phối *gốc* $p(\mathbf{x})$.
+Để có được tiến triển, chúng ta cần suy nghĩ lại xem chính xác việc gì đang diễn ra trong quá trình huấn luyện:
+ta duyệt qua tập dữ liệu huấn luyện với nhãn kèm theo $\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\} và cập nhật vector trọng số của mô hình sau mỗi minibatch.
+Chúng ta thi thoảng cũng áp dụng thêm một lượng phạt nào đó lên các tham số, bằng cách dùng suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
+Điều này nghĩa là ta hầu như chỉ đang giảm thiểu giá trị mất mát trên tập huấn luyện.
 
 $$
 \mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{some~penalty}(w).
@@ -374,7 +379,8 @@ Statisticians call the first term an *empirical average*, i.e., an average compu
 If the data is drawn from the "wrong" distribution $q$, we can correct for that by using the following simple identity:
 -->
 
-*dịch đoạn phía trên*
+Các nhà thống kê gọi số hạng đầu tiên là *trung bình thực nghiệm*, tức là trung bình được tính qua dữ liệu lấy từ phân phối $P(x) P(y \mid x)$.
+Nếu dữ liệu được lấy "nhầm" từ phân phối $q$, ta có thể hiệu chỉnh lại bằng cách sử dụng đồng nhất thức:
 
 $$
 \begin{aligned}
@@ -392,7 +398,11 @@ e.g., by access to training data, and the one used for generating the training s
 Note however, that we only need samples $\mathbf{x} \sim q(\mathbf{x})$; we do not to access labels $y \sim q(y)$.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
+Đáng buồn là chúng ta không biết tỉ lệ đó nên trước khi làm được bất cứ thứ gì hữu ích ta phải ước lượng được nó.
+Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kỳ vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
+Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ (bằng cách sử dụng tập huấn luyện) và phân phối được dùng để tạo ra tập kiểm tra $q$ (việc này hiển nhiên là có thể được).
+Tuy nhiên cũng lưu ý rằng ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không hề cần sử dụng đến nhãn $y \sim q(y)$.
 
 <!--
 In this case, there exists a very effective approach that will give almost as good results: logistic regression.
@@ -405,7 +415,14 @@ Now denote by $z_i$ labels which are 1 for data drawn from $p$ and -1 for data d
 Then the probability in a mixed dataset is given by
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này có một cách rất hiệu quả, cho kết quả tốt gần ngang ngửa: hồi quy logistic.
+Đấy là tất cả những gì ta cần để tính xấp xỉ tỉ lệ xác suất.
+Chúng ta cho học một bộ phân loại để phân biệt giữa dữ liệu được lấy từ phân phối $p(\mathbf{x})$ và phân phối $q(x)$.
+Nếu không thể phân biệt được giữa hai phân phối thì tức là khả năng các mẫu liên quan đến từ một trong hai phân phối là ngang nhau.
+Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng thì cần được đánh trọng số cao lên hoặc giảm đi tương ứng.
+Để cho đơn giản, giả sử ta có số lượng mẫu đến từ hai phân phối là bằng nhau, được kí hiệu lần lượt là $\mathbf{x}_i \sim p(\mathbf{x})$ và $\mathbf{x}_i' \sim q(\mathbf{x})$.
+Ta kí hiệu nhãn $z_i$ bằng 1 cho dữ liệu từ phân phối $p$ và -1 cho dữ liệu từ $q$.
+Lúc này xác suất trong một bộ dữ liệu được trộn lẫn sẽ là
 
 $$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ and hence } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.$$
 
@@ -413,7 +430,7 @@ $$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \te
 Hence, if we use a logistic regression approach where $P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-f(\mathbf{x}))}$ it follows that
 -->
 
-*dịch đoạn phía trên*
+Do đó, nếu sử dụng cách tiếp cận hồi quy logistic mà trong đó $P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-f(\mathbf{x}))}$, ta có 
 
 $$
 \beta(\mathbf{x}) = \frac{1/(1 + \exp(-f(\mathbf{x})))}{\exp(-f(\mathbf{x}))/(1 + \exp(-f(\mathbf{x})))} = \exp(f(\mathbf{x})).
@@ -758,7 +775,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 * Nguyễn Duy Du 
