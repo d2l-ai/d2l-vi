@@ -647,7 +647,7 @@ These are just a few among the many profound ethical dilemmas that you might enc
 Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
 Thường thì những hệ thống tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả không mong muốn cho những ai chịu ảnh hưởng bởi quyết định của nó.
 Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
-Bỏ qua những rủi ro có thể thấy trước để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
+Bỏ qua những rủi ro có thể lường trước được để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
 Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
 Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
 Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, trong khi phân loại sai sang một loại khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị cộng đồng khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
