@@ -692,7 +692,7 @@ Những tin tức nào được đưa ra trước người dùng có nên đư�
 1. Điều gì có thể xảy ra khi chúng ta thay đổi hành vi của công cụ tìm kiếm? Người dùng có thể sẽ làm gì? Còn các nhà quảng cáo thì sao?
 2. Xây dựng một chương trình phát hiện dịch chuyển hiệp biến. Gợi ý: hãy xây dựng một hệ thống phân lớp.
 3. Xây dựng một chương trình khắc phục vấn đề dịch chuyển hiệp biến.
-4. Chuyện gì sẽ xảy ra nếu tập huấn luyện và kiểm thử rất khác nhau ? Chuyện gì sẽ xảy ra đối với trọng số mẫu?
+4. Chuyện tồi tệ gì có thể xảy ra nếu tập huấn luyện và tập kiểm tra rất khác nhau? Chuyện gì sẽ xảy ra đối với trọng số mẫu?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
