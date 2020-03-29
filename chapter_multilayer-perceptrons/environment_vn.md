@@ -644,7 +644,7 @@ Additionally, we want to be careful about whether we are addressing the right pr
 Should what news someone is exposed to be determined by which Facebook pages they have *Liked*? 
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
-Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không đơn giản chỉ là tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
+Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
 Thường thì những hệ thống tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả không mong muốn cho những ai chịu ảnh hưởng bởi quyết định của nó.
 Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
 Bỏ qua những rủi ro có thể thấy trước để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
