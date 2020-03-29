@@ -19,7 +19,7 @@ Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng qu
 Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhiều nhất có thể và tập trung vào các kỹ thuật điều chuẩn.
 
 <!--
-Recall that in our example polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
+Recall that in our polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
 Indeed, limiting the number of features is a popular technique to avoid overfitting.
 However, simply tossing aside features can be too blunt a hammer for the job.
 Sticking with the polynomial curve-fitting example, consider what might happen with high-dimensional inputs.
@@ -95,7 +95,7 @@ $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \m
 
 <!--
 Recall that $\mathbf{x}^{(i)}$ are the observations, $y^{(i)}$ are labels, and $(\mathbf{w}, b)$ are the weight and bias parameters respectively.
-To penalizes the size of the weight vector, we must somehow add $||mathbf{w}||^2$ to the loss function, but how should the model trade off the standard loss for this new additive penalty?
+To penalize the size of the weight vector, we must somehow add $|| \mathbf{w} ||^2$ to the loss function, but how should the model trade off the standard loss for this new additive penalty?
 In practice, we characterize this tradeoff via the *regularization constant* $\lambda > 0$, a non-negative hyperparameter that we fit using validation data:
 -->
 
@@ -129,7 +129,7 @@ Hơn nữa, có thể bạn sẽ hỏi tại sao ta lại dùng chuẩn L2 ngay 
 
 <!--
 In fact, other choices are valid and popular throughout statistics.
-While L2-regularized linear models constitute the classic *ridge regression* algorithm L1-regularized linear regression is 
+While L2-regularized linear models constitute the classic *ridge regression* algorithm, L1-regularized linear regression is 
 a similarly fundamental model in statistics (popularly known as *lasso regression*).
 -->
 
@@ -170,7 +170,7 @@ Việc cập nhật hạ gradient ngẫu nhiên cho hồi quy được chuẩn h
 
 $$
 \begin{aligned}
-w & \leftarrow \left(1- \frac{\eta\lambda}{|\mathcal{B}|} \right) \mathbf{w} - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \mathbf{x}^{(i)} \left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right),
+\mathbf{w} & \leftarrow \left(1- \eta\lambda \right) \mathbf{w} - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \mathbf{x}^{(i)} \left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right),
 \end{aligned}
 $$
 
@@ -228,14 +228,14 @@ and work with a small training set containing only 20 example.
 lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01.
 Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.
 
-```{.python .input  n=2}
+```{.python .input  n=1}
 %matplotlib inline
 import d2l
 from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
 npx.set_np()
 
-n_train, n_test, num_inputs, batch_size = 20, 100, 200, 1
+n_train, n_test, num_inputs, batch_size = 20, 100, 200, 5
 true_w, true_b = np.ones((num_inputs, 1)) * 0.01, 0.05
 train_data = d2l.synthetic_data(true_w, true_b, n_train)
 train_iter = d2l.load_array(train_data, batch_size)
@@ -271,7 +271,7 @@ First, we will define a function to randomly initialize our model parameters and
 
 Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán.
 
-```{.python .input  n=5}
+```{.python .input  n=2}
 def init_params():
     w = np.random.normal(scale=1, size=(num_inputs, 1))
     b = np.zeros(1)
@@ -294,7 +294,7 @@ We divide by $2$ by convention, (when we take the derivative of a quadratic func
 Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
 Ta đem chia $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn).
 
-```{.python .input  n=6}
+```{.python .input  n=3}
 def l2_penalty(w):
     return (w**2).sum() / 2
 ```
@@ -306,7 +306,7 @@ def l2_penalty(w):
 ### Định nghĩa hàm Huấn luyện và Kiểm tra
 
 <!--
-The following code fits a model on the test set and evaluates it on the test set.
+The following code fits a model on the training set and evaluates it on the test set.
 The linear network and the squared loss have not changed since the previous chapter, so we will just import them via `d2l.linreg` and `d2l.squared_loss`.
 The only change here is that our loss now includes the penalty term.
 -->
@@ -315,7 +315,7 @@ The only change here is that our loss now includes the penalty term.
 Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
 Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt.
 
-```{.python .input  n=7}
+```{.python .input  n=4}
 def train(lambd):
     w, b = init_params()
     net, loss = lambda X: d2l.linreg(X, w, b), d2l.squared_loss
@@ -325,13 +325,14 @@ def train(lambd):
     for epoch in range(1, num_epochs + 1):
         for X, y in train_iter:
             with autograd.record():
-                # The L2 norm penalty term has been added
+                # The L2 norm penalty term has been added, and broadcasting
+                # makes l2_penalty(w) a vector whose length is batch_size
                 l = loss(net(X), y) + lambd * l2_penalty(w)
             l.backward()
             d2l.sgd([w, b], lr, batch_size)
         if epoch % 5 == 0:
-            animator.add(epoch+1, (d2l.evaluate_loss(net, train_iter, loss),
-                                   d2l.evaluate_loss(net, test_iter, loss)))
+            animator.add(epoch, (d2l.evaluate_loss(net, train_iter, loss),
+                                 d2l.evaluate_loss(net, test_iter, loss)))
     print('l1 norm of w:', np.abs(w).sum())
 ```
 
@@ -349,7 +350,7 @@ Note that we overfit badly, decreasing the training error but not the test error
 Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số.
 Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
 
-```{.python .input  n=8}
+```{.python .input  n=5}
 train(lambd=0)
 ```
 
@@ -379,7 +380,7 @@ Cần chú ý rằng lỗi huấn luyện tăng nhưng lỗi kiểm định gi�
 Đây chính xác là hiệu ứng mà chúng ta mong đợi từ điều chuẩn.
 Xem như một bài tập, bạn có thể kiểm tra rằng chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ thực sự giảm.
 
-```{.python .input  n=9}
+```{.python .input  n=6}
 train(lambd=3)
 ```
 
@@ -413,7 +414,7 @@ Theo mặc định, Gluon suy giảm đồng thời cả trọng số và hệ s
 Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình.
 Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không suy giảm.
 
-```{.python .input}
+```{.python .input  n=7}
 def train_gluon(wd):
     net = nn.Sequential()
     net.add(nn.Dense(1))
@@ -434,8 +435,8 @@ def train_gluon(wd):
             l.backward()
             trainer.step(batch_size)
         if epoch % 5 == 0:
-            animator.add(epoch+1, (d2l.evaluate_loss(net, train_iter, loss),
-                                   d2l.evaluate_loss(net, test_iter, loss)))
+            animator.add(epoch, (d2l.evaluate_loss(net, train_iter, loss),
+                                 d2l.evaluate_loss(net, test_iter, loss)))
     print('L1 norm of w:', np.abs(net[0].weight.data()).sum())
 ```
 
@@ -447,11 +448,11 @@ However, they run appreciably faster and are easier to implement, a benefit that
 Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình suy giảm trọng số từ đầu.
 Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích mà sẽ dễ nhận thấy hơn với các bài toán lớn.
 
-```{.python .input}
+```{.python .input  n=8}
 train_gluon(0)
 ```
 
-```{.python .input}
+```{.python .input  n=9}
 train_gluon(3)
 ```
 
