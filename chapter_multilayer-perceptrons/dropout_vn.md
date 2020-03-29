@@ -61,7 +61,7 @@ Chẳng hạn, chúng có thể suy ra được rằng nếu từ "Nigeria" và 
 <!--
 Even when we have far more examples than features, deep neural networks are capable of overfitting.
 In 2017, a group of researchers demonstrated the extreme flexibility of neural networks by training deep nets on randomly-labeled images.
-Despite the absence of any true pattern linking the inputs to the outputs, they found that the neural network optimized by SGD, could label every image in the training set perfectly.
+Despite the absence of any true pattern linking the inputs to the outputs, they found that the neural network optimized by SGD could label every image in the training set perfectly.
 -->
 
 Ngay cả khi số mẫu nhiều hơn hẳn so với số đặc trưng, mạng nơ-ron sâu vẫn có thể quá khớp.
@@ -72,8 +72,8 @@ Dù không hề có bất cứ một khuôn mẫu nào liên kết đầu vào v
 Consider what this means.
 If the labels are assigned uniformly at random and there are 10 classes, then no classifier can do better than 10% accuracy on holdout data.
 The generalization gap here is a whopping 90%.
-If our models so expressive that they can overfit this badly, then when should we expect them not to overfit?
-The mathemtatical foundations for the puzzling generalization properties of deep networks remain open research questions, and we encourage the theoretically-oriented reader to dig deeperinto the topic.
+If our models are so expressive that they can overfit this badly, then when should we expect them not to overfit?
+The mathematical foundations for the puzzling generalization properties of deep networks remain open research questions, and we encourage the theoretically-oriented reader to dig deeper into the topic.
 For now, we turn to the more terrestrial investigation of practical tools that tend (empirically) to improve the generalization of deep nets.
 -->
 
@@ -128,7 +128,7 @@ Công trình này đã chỉ rõ ra mối liên kết toán học giữa điều
 <!--
 Then, in 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` developed a clever idea for how to apply Bishop's idea to the *internal* layers of the network, too.
 Namely, they proposed to inject noise into each layer of the network before calculating the subsequent layer during training.
-They realized that when training a deep network with many layers, enforcing smoothness just on the input-output mapping.
+They realized that when training a deep network with many layers, injecting noise enforces smoothness just on the input-output mapping.
 -->
 
 Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
@@ -149,7 +149,7 @@ Tại mỗi vòng lặp huấn luyện, phương pháp dropout tiêu chuẩn s�
 <!--
 To be clear, we are imposing our own narrative with the link to Bishop.
 The original paper on dropout offers intuition through a surprising analogy to sexual reproduction.
-The authors argue that neural network overfitting is characterized by a state in which each layer an relies on a specifc pattern of activations in the previous layer, calling this condition *co-adaptation*.
+The authors argue that neural network overfitting is characterized by a state in which each layer relies on a specifc pattern of activations in the previous layer, calling this condition *co-adaptation*.
 Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argued to break up co-adapted genes.
 -->
 
@@ -160,7 +160,7 @@ Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tư
 
 <!--
 The key challenge then is *how* to inject this noise.
-One idea is too inject the noise in an *unbiased* manner so that the expected value of each layer---fixing the others equal to the value it would have taken absent noise.
+One idea is to inject the noise in an *unbiased* manner so that the expected value of each layer---while fixing the others---equals to the value it would have taken absent noise.
 -->
 
 Thách thức chính bây giờ là làm thế nào để thêm nhiễu.
@@ -227,9 +227,9 @@ Kiến trúc mạng được biễu diễn như sau
 
 $$
 \begin{aligned}
-    h & = \sigma(W_1 x + b_1), \\
-    o & = W_2 h + b_2, \\
-    \hat{y} & = \mathrm{softmax}(o).
+    \mathbf{h} & = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1), \\
+    \mathbf{o} & = \mathbf{W}_2 \mathbf{h} + \mathbf{b}_2, \\
+    \hat{\mathbf{y}} & = \mathrm{softmax}(\mathbf{o}).
 \end{aligned}
 $$
 
@@ -278,7 +278,8 @@ Hiện tại, ta sẽ để dành phần ước lượng độ bất định nà
 <!--
 To implement the dropout function for a single layer, we must draw as many samples from a Bernoulli (binary) random variable as our layer has dimensions, 
 where the random variable takes value $1$ (keep) with probability $1-p$ and $0$ (drop) with probability $p$.
-One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$, then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
+One easy way to implement this is to first draw samples from the uniform distribution $U[0, 1]$. 
+Then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
 Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy các mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
@@ -302,6 +303,9 @@ def dropout_layer(X, dropout):
     # In this case, all elements are dropped out
     if dropout == 1:
         return np.zeros_like(X)
+    # In this case, all elements are kept
+    if dropout == 0:
+        return X
     mask = np.random.uniform(0, 1, X.shape) > dropout
     return mask.astype(np.float32) * X / (1.0-dropout)
 ```

@@ -62,7 +62,7 @@ or always always cause a decrease in our model's output (if the corresponding we
 Sometimes that makes sense.
 For example, if we were trying to predict whether an individual will repay a loan, 
 we might reasonably imagine that holding all else equal, an applicant with a higher income would always be more likely to repay than one with a lower income.
-While monotonic this relationship likely
+While monotonic, this relationship likely isn't linearly associated with the probability of repayment.
 A increase in income from $0 to $50k likely corresponds to a bigger increase in likelihood of repayment than an increase from $1M to $1.05M.
 One way to handle this might be to pre-process our data such that linearity becomes more plausible, say, by using the logarithm of income as our feature.
 -->
@@ -108,7 +108,7 @@ Cách tiếp cận này chắc chắn sẽ bị sai khi các hình ảnh bị đ
 
 
 <!--
-And yet despite the apparent aburdity of linearity here, as compared to our previous examples, it's less obvious that we could address the problem with a simple preprocessing fix.
+And yet despite the apparent absurdity of linearity here, as compared to our previous examples, it's less obvious that we could address the problem with a simple preprocessing fix.
 That is because the significance of any pixel depends in complex ways on its context (the values of the surrounding pixels).
 While there might exist a representation of our data that would take into account the relevant interactions among our features (and on top of which a linear model would be suitable), 
 we simply do not know how to calculate it by hand.
@@ -131,7 +131,7 @@ Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát đư�
 ### Kết hợp các Tầng ẩn
 
 <!--
-We can over come these limitations of linear models and handle a more general class of functions by incorporating one or more hidden layers.
+We can overcome these limitations of linear models and handle a more general class of functions by incorporating one or more hidden layers.
 The easiest way to do this is to stack many fully-connected layers on top of each other.
 Each layer feeds into the layer above it, until we generate an output.
 We can think of the first $L-1$ layers as our representation and the final layer as our linear predictor.
@@ -176,7 +176,7 @@ Mọi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn v
 ### Từ Tuyến tính đến Phi tuyến
 
 <!--
-Formally, we calculate the each layer in this one-hidden-layer MLP as follows:
+Formally, we calculate each layer in this one-hidden-layer MLP as follows:
 -->
 
 Về mặt hình thức, chúng ta tính toán mỗi tầng trong MLP một-tầng-ẩn này như sau:
@@ -257,7 +257,7 @@ one atop another, yielding ever more expressive models (assuming fixed width).
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
 We can easily design hidden nodes to perform arbitrary computation, for instance, basic logic operations on a pair of inputs.
 Moreover, for certain choices of the activation function, it is widely known that MLPs are universal approximators.
-Even a single-hidden-layer network, given enough nodes (possibly absurdly many), and the right set of weights, we can model any function at all.
+Even with a single-hidden-layer network, given enough nodes (possibly absurdly many), and the right set of weights, we can model any function.
 *Actually learning that function is the hard part.* You might think of your neural network as being a bit like the C programming language.
 The language, like any other modern language, is capable of expressing any computable program.
 But actually coming up with a program that meets your specifications is the hard part.
@@ -362,7 +362,7 @@ Bởi vì các hàm kích hoạt rất quan trọng trong học sâu, hãy cùng
 
 <!--
 As stated above, the most popular choice, due to both simplicity of implementation its performance on a variety of predictive tasks is the rectified linear unit (ReLU).
-ReLUs provide a very simple nonlinear transformation.
+ReLU provide a very simple nonlinear transformation.
 Given the element $z$, the function is defined as the maximum of that element and 0.
 -->
 
@@ -375,13 +375,13 @@ $$\mathrm{ReLU}(z) = \max(z, 0).$$
 <!--
 Informally, the ReLU function retains only positive elements and discards all negative elements (setting the corresponding activations to 0).
 To gain some intuition, we can plot the function.
-Because it is used so commonly, NDarray supports the `relu` function as a native operator.
+Because it is used so commonly, `ndarray` supports the `relu` function as a native operator.
 As you can see, the activation function is piecewise linear.
 -->
 
 Nói một cách dễ hiểu hơn, hàm ReLU chỉ giữ lại các phần tử có giá trị dương và loại bỏ tất cả các phần tử có giá trị âm (đặt kích hoạt tương ứng là 0).
 Để có một cái nhìn khái quát, ta có thể vẽ đồ thị hàm số.
-Bởi vì ReLU được sử dụng rất phổ biến, NDarray đã hỗ trợ sẵn một toán tử `relu`.
+Bởi vì ReLU được sử dụng rất phổ biến, `ndarray` đã hỗ trợ sẵn một toán tử `relu`.
 Như bạn thấy trong hình, hàm kích hoạt là một hàm tuyến tính từng đoạn.
 
 ```{.python .input  n=2}
@@ -411,7 +411,7 @@ Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến đi�
 Và trong trường hợp này, ngạn ngữ đó đúng.
 Đồ thị đạo hàm của hàm ReLU như hình dưới.
 
-```{.python .input  n=3}
+```{.python .input  n=9}
 y.backward()
 d2l.plot(x, x.grad, 'x', 'grad of relu')
 ```
@@ -428,7 +428,7 @@ $$\mathrm{pReLU}(x) = \max(0, x) + \alpha \min(0, x).$$
 
 <!--
 The reason for using the ReLU is that its derivatives are particularly well behaved: either they vanish or they just let the argument through.
-This makes optimization better behaved and it mitigated well-documented problem of *vanishing gradients* that plagued previous versions of neural networks (more on this later).
+This makes optimization better behaved and it mitigated the well-documented problem of *vanishing gradients* that plagued previous versions of neural networks (more on this later).
 -->
 
 Ta sử dụng hàm ReLU bởi vì đạo hàm đơn giản: hoặc chúng biến mất hoặc chúng cho đối số đi qua.
@@ -449,7 +449,7 @@ Ta sử dụng hàm ReLU bởi vì đạo hàm đơn giản: hoặc chúng biế
 ### Hàm Sigmoid
 
 <!--
-The sigmoid function transforms its inputs, which values in the domain $\mathbb{R}$, to outputs that lie the interval $(0, 1)$.
+The sigmoid function transforms its inputs, which values lie in the domain $\mathbb{R}$, to outputs that lie the interval $(0, 1)$.
 For that reason, the sigmoid is often called a *squashing* function: it *squashes* any input in the range (-inf, inf) to some value in the range (0, 1).
 -->
 
@@ -515,7 +515,7 @@ As the input diverges from 0 in either direction, the derivative approaches 0.
 Chú ý rằng khi đầu vào là 0, đạo hàm của hàm sigmoid đạt giá trị lớn nhất là 0.25.
 Khi đầu vào phân kỳ từ 0 theo một trong hai hướng, đạo hàm sẽ tiến tới 0.
 
-```{.python .input  n=5}
+```{.python .input  n=11}
 y.backward()
 d2l.plot(x, x.grad, 'x', 'grad of sigmoid')
 ```
@@ -546,7 +546,7 @@ Although the shape of the function is similar to the sigmoid function, the tanh 
 Chúng ta sẽ vẽ hàm tanh như sau. Chú ý rằng nếu đầu vào có giá trị gần bằng 0, hàm tanh sẽ tiến đến một phép biến đổi tuyến tính.
 Mặc dù hình dạng của hàm tanh trông khá giống hàm sigmoid, hàm tanh lại thể hiện tính đối xứng tâm qua gốc của hệ trục tọa độ.
 
-```{.python .input  n=6}
+```{.python .input  n=12}
 with autograd.record():
     y = np.tanh(x)
 d2l.plot(x, y, 'x', 'tanh(x)')
@@ -570,7 +570,7 @@ And as we saw with the sigmoid function, as the input moves away from 0 in eithe
 Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị tối đa là 1.
 Tương tự như hàm sigmoid, khi đầu vào tiến xa khỏi 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
 
-```{.python .input  n=7}
+```{.python .input  n=13}
 y.backward()
 d2l.plot(x, x.grad, 'x', 'grad of tanh')
 ```
