@@ -17,11 +17,11 @@ This dataset, collected by Bart de Cock in 2011 :cite:`De-Cock.2011`, is conside
 It boasts both more examples and more features, covering house prices in Ames, IA from the period of 2006-2010.
 -->
 
-Trong phần trước, chúng ta đã giới thiệu những công cụ cở bản để xây dựng mạng học sâu và kiểm soát khả năng của nó thông qua việc giảm kích thước, suy giảm trọng số và dropout.
-Giờ đây bạn đã sẵn sàng để ứng dụng tất cả những kiến thức này vào thực tiễn bằng cách tham gia một cuộc thi trên Kaggle.
-[Predicting house prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) là một bài toán tuyệt vời để bắt đầu: dữ liệu khái quát tương đối, không chứa các cấu trúc cứng nhắc đòi hỏi những mô hình đặc biệt như là các bài toán dữ liệu ảnh và âm thanh. 
+Trong phần trước, chúng tôi đã giới thiệu những công cụ cơ bản để xây dựng mạng học sâu và kiểm soát năng lực của nó thông qua việc giảm chiều dữ liệu, suy giảm trọng số và dropout.
+Giờ bạn đã sẵn sàng để ứng dụng tất cả những kiến thức này vào thực tiễn bằng cách tham gia một cuộc thi trên Kaggle.
+[Predicting house prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) là một bài toán tuyệt vời để bắt đầu: dữ liệu tương đối khái quát, không có cấu trúc cứng nhắc nên không đòi hỏi những mô hình đặc biệt như các bài toán có dữ liệu ảnh và âm thanh. 
 Bộ dữ liệu này được thu thập bởi Bart de Cock vào năm 2011 :cite:`De-Cock.2011`, lớn hơn rất nhiều bộ dữ liệu nổi tiếng [Boston housing dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names) của Harrison và Rubinfeld (1978).
-Nó có nhiều hơn các ví dụ, đặc trưng và bao gồm giá nhà ở cả Ames, IA trong khoảng thời gian từ 2006-2010.
+Nó có nhiều ví dụ và đặc trưng hơn, chứa thông tin về giá nhà ở Ames, IA trong khoảng thời gian từ 2006-2010.
 
 <!--
 In this section, we will walk you through details of data preprocessing, model design, hyperparameter selection and tuning.
@@ -30,7 +30,7 @@ This experience is vital to gaining intuition as a data scientist.
 -->
 
 Trong phần này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước về tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn siêu tham số và điểu chỉnh. 
-Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được những tác động của kiểm soát năng lực, trích xuất tính năng, v.v. trong thực tiễn. 
+Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được những tác động của kiểm soát năng lực, trích xuất đặc trưng, v.v. trong thực tiễn. 
 Kinh nghiệm này rất quan trọng để bạn có được trực giác của một nhà khoa học dữ liệu. 
 <!--
 ## Downloading and Caching Datasets
@@ -46,9 +46,9 @@ where SHA-1 verifies the integrity of the file. Such datasets are hosted on the 
 -->
 
 Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các bộ dữ liệu khác nhau. 
-Do đó ta có thể sử dụng một số hàm tiện ích hỗ trợ cho việc tải dữ liệu.
-Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` ánh xạ với một đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
-trong đó SHA-1 xác minh tính hoàn thiện của tệp. Các bộ dữ liệu này được chia sẻ trên trang `DATA_URL`.
+Ta sẽ lập trình một số hàm tiện ích để hỗ trợ cho việc tải dữ liệu.
+Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB`, ánh xạ một xâu tới đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
+trong đó SHA-1 xác minh tính toàn vẹn của tệp. Các bộ dữ liệu này được lưu trữ trên trang `DATA_URL`.
 
 ```{.python .input  n=2}
 import os
