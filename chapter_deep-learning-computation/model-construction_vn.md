@@ -60,33 +60,40 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 (introduced in :numref:`chap_preliminaries`) when defining our own `Block`, we only need to worry about parameters and the `forward` function.
 -->
 
-*dịch đoạn phía trên*
+Để lập trình các mạng phức tạp này, chúng tôi sẽ giới thiệu khái niệm về một *khối* tron mạng nơ-ron.
+Một khối có thể mô tả một tầng duy nhất, một thành phần bao gồm nhiều tầng hoặc toàn bộ mô hình!
+Từ quan điểm phần mềm, một `Khối` là một *lớp*.
+Bất kỳ lớp con nào của `Khối` phải định nghĩa phương thức `truyền xuôi` để chuyển đổi đầu vào của nó thành đầu ra và phải lưu trữ bất kỳ tham số cần thiết nào.
+Lưu ý rằng một vài Khối không yêu cầu bất kỳ tham số nào cả!
+Cuối cùng, một `Khối` phải sở hữu một phương thức `truyền ngược`, cho mục đích tính toán gradient.
+May mắn thay, do một số phép thuật được cung cấp bởi gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) khi định nghĩa `Khối`, ta chỉ cần quan tâm đến các các tham số và hàm `truyền xuôi`.
 
 <!--
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
 -->
 
-*dịch đoạn phía trên*
+Một lợi ích của việc làm việc với `Khối` trừu tượng là chúng có thể được kết hợp thành các tạo tác lớn hơn, thường được đệ quy, (xem hình minh họa trong :numref:`fig_blocks`).
 
 <!--
 ![Multiple layers are combined into blocks](../img/blocks.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/blocks.svg)
+![Nhiều tầng được kết hợp tạo thành các khối](../img/blocks.svg)
 :label:`fig_blocks`
 
 <!--
 By defining code to generate Blocks of arbitrary complexity on demand, we can write surprisingly compact code and still implement complex neural networks.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách định nghĩa mã nguồn để tạo ra các Khối phức tạp tùy ý theo yêu cầu, ta có thể viết mã nguồn nhỏ gọn đáng ngạc nhiên và vẫn lập trình được các mạng nơ-ron phức tạp.
 
 <!--
 To begin, we revisit the Blocks that we used to implement multilayer perceptrons (:numref:`sec_mlp_gluon`).
 The following code generates a network with one fully-connected hidden layer with 256 units and ReLU activation, followed by a fully-connected *output layer* with 10 units (no activation function).
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta xem lại các Khối mà ta đã sử dụng để lập trình các perceptron đa tầng (:numref:`sec_mlp_gluon`).
+Đoạn mã sau tạo ra một mạng với một tầng ẩn được kết nối đầy đủ với 256 nút và kích hoạt ReLU, theo sau là là *tầng đầu ra* được kết nối đầy đủ với 10 nút (không có hàm kích hoạt).
 
 ```{.python .input  n=33}
 from mxnet import np, npx
@@ -113,7 +120,14 @@ Note that until now, we have been invoking our models via the construction `net(
 This is actually just shorthand for `net.forward(X)`, a slick Python trick achieved via the Block class's `__call__` function.
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ này, ta đã xây dựng mô hình bằng cách khởi tạo một `nn.Sequential`, gán đối tượng được trả về cho biến `net`.
+Tiếp theo, ta liên tục gọi phương thức `add`, nối thêm các lớp theo thứ tự mà chúng sẽ được thực thi.
+Nói tóm lại, `nn.Sequential` định nghĩa một loại `Khối` đặc biệt bao gồm một danh sách các thành phần được sắp xếp theo thứ tự `Các khối`.
+Phương thức `add` chỉ đơn giản tạo điều kiện cho việc thêm từng `Khối` liên tiếp vào danh sách.
+Lưu ý rằng mỗi lớp của chúng ta là một thể hiện của lớp `Dense`, chính nó là một lớp con của` Block`.
+Hàm `truyền xuôi` cũng rất đơn giản: nó xâu chuỗi từng Khối trong danh sách lại với nhau, chuyển đầu ra của từng khối làm đầu vào tiếp theo.
+Lưu ý rằng cho đến nay, ta đã gọi các mô hình của mình thông qua cấu trúc `net (X)` để có được kết quả đầu ra.
+Đây thực sự chỉ là viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp Khối.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
