@@ -679,8 +679,7 @@ These types of knowledge are crucial for the aspiring data scientist to deal wit
 <!--
 ## Fairness, Accountability, and Transparency in Machine Learning
 -->
-
-## *dịch tiêu đề phía trên*
+## Công bằng, Trách nhiệm và Minh bạch trong học máy
 
 <!--
 Finally, it is important to remember that when you deploy machine learning systems you are not simply minimizing negative log likelihood or maximizing accuracy---you are automating some kind of decision process.
@@ -698,15 +697,27 @@ Additionally, we want to be careful about whether we are addressing the right pr
 Should what news someone is exposed to be determined by which Facebook pages they have *Liked*? 
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
+Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
+Thường thì những hệ thống tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả không mong muốn cho những ai chịu ảnh hưởng bởi quyết định của nó.
+Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
+Bỏ qua những rủi ro có thể lường trước được để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
+Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
+Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
+Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, nhưng việc phân loại sai sang một lớp khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị xã hội khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
+Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
+Ví dụ, nếu hệ thống dự đoán được áp dụng một cách ngây để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
+Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
+Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
+Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
+Những tin tức nào được hiển thị đến người dùng có nên được quyết định bởi những trang Facebook nào mà họ đã *Thích*?
+Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
 
-*dịch đoạn phía trên*
 
 
 
 <!--
 ## Summary
 -->
-
 ## Tóm tắt
 
 <!--
@@ -714,8 +725,9 @@ These are just a few among the many profound ethical dilemmas that you might enc
 * Covariate shift can be detected and corrected if the shift is not too severe. Failure to do so leads to nasty surprises at test time.
 * In some cases the environment *remembers* what we did and will respond in unexpected ways. We need to account for that when building models.
 -->
-
-*dịch đoạn phía trên*
+* Trong nhiều trường hợp, tập huấn luyện và tập kiểm tra không được lấy mẫu từ cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
+* Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
+* Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét điều này khi xây dựng mô hình.
 
 <!--
 ## Exercises
@@ -730,7 +742,10 @@ These are just a few among the many profound ethical dilemmas that you might enc
 4. What could go wrong if training and test set are very different? What would happen to the sample weights?
 -->
 
-*dịch đoạn phía trên*
+1. Điều gì có thể xảy ra khi chúng ta thay đổi hành vi của công cụ tìm kiếm? Người dùng có thể sẽ làm gì? Còn các nhà quảng cáo thì sao?
+2. Xây dựng một chương trình phát hiện dịch chuyển hiệp biến. Gợi ý: hãy xây dựng một hệ thống phân lớp.
+3. Xây dựng một chương trình khắc phục vấn đề dịch chuyển hiệp biến.
+4. Chuyện tồi tệ gì có thể xảy ra nếu tập huấn luyện và tập kiểm tra rất khác nhau? Chuyện gì sẽ xảy ra đối với trọng số mẫu?
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -749,11 +764,9 @@ Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
 hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
 Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
-
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md.
 -->
 
@@ -791,4 +804,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 10 -->
-*
+* Nguyễn Thành Nhân
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
