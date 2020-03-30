@@ -585,14 +585,13 @@ Nói cách khác, chúng ta sử dụng trọng số đang có và chỉ thực 
 ## A Taxonomy of Learning Problems
 -->
 
-## Phân loại các bài toán phương pháp học
+## Sự phân loại của Quá trình học Các bài toán
 
 <!--
 Armed with knowledge about how to deal with changes in $p(x)$ and in $P(y \mid x)$, we can now consider some other aspects of machine learning problems formulation.
 -->
 
-Được trang bị kiến thức về cách xử lý các thay đổi trong $p(x)$ và $P(y \mid x)$, giờ đây ta có thể xem xét một số khía cạnh khác của việc xây dựng các bài toán học trong học máy
-
+Ta đã được trang bị kiến thức về cách xử lý các thay đổi trong $p(x)$ và $P(y \mid x)$, giờ đây ta có thể xem xét một số khía cạnh khác của sự hình thành các bài toán trong học máy.
 
 <!--
 * **Batch Learning.** Here we have access to training data and labels $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, which we use to train a network $f(x, w)$. 
@@ -609,18 +608,17 @@ E.g. we need to predict tomorrow's stock price, this allows us to trade based on
 In other words, we have the following cycle where we are continuously improving our model given new observations.
 -->
 
-* **Học theo batch.** Ở đây ta có quyền truy cập vào dữ liệu huấn luyến và nhãn $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
-Sau đó, ta rút một điểm dữ liệu mới $(x, y)$ từ tập dữ liệu có cùng phân phối, và dùng mạng này để đánh giá.
-Đây là giả thuyết  mặc định cho bất kỳ bài toàn nào mà ta thảo luận ở đây.
-Ví dụ, ta có thể huấn luyện một máy phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
-Khi ta huấn luyện xong, ta đưa vào hệ thống thị giác máy tính của cửa sập thông minh chỉ cho phép mèo đi vào.
-Sau đó, hệ thống sẽ được cài đặt tại nhà của khách hàng và không bao giờ được cập nhật lại (ngăn chặn mọi trường hợp không lường trước được).
+* **Học theo batch.** Ở đây ta có dữ liệu huấn luyến và nhãn $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
+Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy cùng một phân phối.
+Đây là giả thuyết mặc định cho bất kỳ bài toàn nào mà ta bàn ở đây.
+Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
+Sau khi hoàn tất quá trình huấn luyện, ta đưa vào hệ thống thị giác máy tính của cửa sập thông minh chỉ cho phép mèo đi vào.
+Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi).
 * **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$
-Cụ thể hơn, giả sử đầu tiên ta quan sát $x_i$, sau đó ta cần đưa ra ước tính $f(x_i, w)$ và chỉ khi ta thực hiện xong điều này, ta mới được quan sát $y_i$ với giá trị ước tính ban nãy, ta nhận được phần thưởng (hoặc chịu lỗi), ta đưa ra quyết định tiếp theo.
+Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, ta quan sát $y_i$ với giá trị ban nãy, ta nhận lại phần thưởng (hoặc gánh chịu mất mát), dựa vào quyết định của ta.
 Nhiều bài toán thực sự rơi vào thể loại này.
-Ví dụ. ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên các ước tính và vào cuối ngày ta tìm hiểu rằng liệu các ước tính của ta có mang lại lại nhuận hay không.
-Nói cách khác, ta có quy trình sau đây và mô hình đang tiếp tục cải thiện của mình với những quan sát mới.
-
+Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên các tính toán này và vào cuối ngày ta tìm hiểu liệu các tính toán này của ta có mang lại lại nhuận hay không.
+Nói cách khác, ta có quy trình sau đây và theo đó mô hình đang dần được cải thiện với những quan sát mới.
 
 $$
 \mathrm{model} ~ f_t \longrightarrow
@@ -652,20 +650,19 @@ The other cars are likely to respond to the autonomous car's driving style in no
 e.g., trying to avoid it, trying to cause an accident, trying to cooperate with it, etc.
 -->
 
-* **Bandits.** Đây là một trường hợp đặc biệt của bài toán trên.
-Trong khi ở hầu hết các bài toán học, ta luôn có một hàm liên tục được tham số hóa $f$ với mong muốn học các thông số của nó (ví dụ, một mạng lưới sâu), trong một bài toán *đạo tặc* ta chỉ có một số hữu hạn các vũ khí mà chúng ta có thể kéo (ví dụ, một hữu số lượng hành động hữu hạn mà ta có thể thực hiện).
-Không có gì đáng ngạc nhiên khi đối với bài toán đơn giản này, ta có thể thu được những cơ sở lý thuyết đủ mạnh về mặt tối ưu.
-Chúng tôi liệt kê nó chủ yếu vì vấn đề này thường được xử lý (một cách khó hiểu) như thể đó là một môi trường học tập khác biệt.
-* **Kiểm soát (và Học tăng cường không đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
-Không nhất thiết phải theo cách đối nghịch nhưng nó sẽ chỉ cần nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
-Ví dụ. một bộ điều khiển của nồi hơi cà phê sẽ quan sát nhiệt độ khác nhau phụ thuộc vào nhiệt độ trước đó của nồi hơi.
+* **Đạo tặc** Đây là một trường hợp đặc biệt của bài toán trên.
+Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán *đạo tặc* ta chỉ có một số hữu hạn các vũ khí mà ta có thể kéo (tức là, một số lượng hữu hạn hành động mà ta có thể thực hiện).
+Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có thể tìm được lời giải đủ mạnh dựa vào các cơ sở lý thuyết tối ưu.
+Ta liệt kê nó chủ yếu vì vấn đề này thường (nhầm lẫn) xem như là một môi trường học tập khác biệt.
+* **Kiểm soát (và Học Tăng cường không đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
+Không nhất thiết phải theo cách đối kháng nhưng nó chỉ cần nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
+Ví dụ bộ điều khiển của nồi hơi cà phê sẽ quan sát nhiệt độ khác nhau phụ thuộc vào nhiệt độ trước đó của nồi hơi.
 Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
-Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho người dùng thấy trước đây (ví dụ, anh ta hầu như chỉ đọc tin tức một lần).
-Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà chúng hành động như để làm cho các quyết định của chúng xuất hiện ít ngẫu nhiên hơn (tức là, để giảm phương sai).
-* **Học tăng cường.** Trong trường hợp tổng quát về môi trường có bộ nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay  StarCraft.
-Tương tự như vậy, ta có thể muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự lái.
-Những chiếc xe khác có khả năng đáp ứng phong cách lái tự lái theo cách không cần thiết, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
-
+Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc tin tức một lần).
+Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà chúng hành động để làm cho các quyết định xuất hiện ít ngẫu nhiên hơn (tức là, để giảm phương sai).
+* **Học Tăng cường.** Trong trường hợp tổng quát về môi trường có bộ nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
+Tương tự như vậy, ta có thể muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
+Những chiếc xe khác có khả năng phản ứng với cách lái của những chiếc xe tự hành theo những cách không cần thiết, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
 One key distinction between the different situations above is that the same strategy that might have worked throughout in the case of a stationary environment, 
@@ -677,12 +674,12 @@ If we know that the environment might change instantaneously, but only very infr
 These types of knowledge are crucial for the aspiring data scientist to deal with concept shift, i.e., when the problem that he is trying to solve changes over time.
 -->
 
-Một điểm khác biệt chính giữa các tình huống khác nhau ở trên là cùng một chiến lược có thể đã hoạt động xuyên suốt trong trường hợp môi trường cố định, có thể không hoạt động xuyên suốt khi môi trường có thể thích nghi.
-Chẳng hạn, một cơ hội chênh lệch giá được phát hiện bởi một nhà giao dịch có khả năng biến mất một khi anh ta bắt đầu khai thác nó.
-Tốc độ và cách thức mà môi trường thay đổi xác định ở mức độ lớn loại thuật toán mà chúng ta có thể mang theo.
-Chẳng hạn, nếu chúng ta * biết * rằng mọi thứ chỉ có thể thay đổi từ từ, chúng ta cũng có thể buộc mọi ước tính chỉ thay đổi từ từ.
-Nếu chúng ta biết rằng môi trường có thể thay đổi ngay lập tức, nhưng chỉ rất ít khi, chúng ta có thể thực hiện trợ cấp cho điều đó.
-Những loại kiến thức này rất quan trọng đối với nhà khoa học dữ liệu khao khát đối phó với sự thay đổi khái niệm, tức là khi vấn đề mà anh ta đang cố gắng giải quyết thay đổi theo thời gian.
+Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là cùng một chiến lược nhưng có thể đã hoạt động xuyên suốt trong trường hợp môi trường cố định, có thể không hoạt động xuyên suốt khi môi trường có thể thích nghi.
+Chẳng hạn, một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường nhưng có thể biến mất khi anh ta bắt tay vào thực hiện nó.
+Dựa vào sự thay đổi của môi trường mà tốc độ và phương thức được xác định để mở rộng các kiểu thuật toán mà ta sử dụng.
+Ví dụ, nếu ta *biết trước* những sự việc chỉ có thể thay đổi một cách từ từ, ta có thể ép cho những ước lượng thay đổi chậm.
+Nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
+Những kiến thức này quan trọng trong việc trở thành các nhà khoa học dữ liệu giỏi để giải quyết các bài toán dịch chuyển khái niệm, tức là, ta đang cố gắng tìm ra các giải pháp thay đổi theo thời gian.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -799,7 +796,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 9 -->
-*
+* Lý Phi Long
 
 <!-- Phần 10 -->
 *
