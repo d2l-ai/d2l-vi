@@ -29,7 +29,7 @@ We hope that through a hands-on approach, you will be able to observe the effect
 This experience is vital to gaining intuition as a data scientist.
 -->
 
-Trong phần này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước về tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn siêu tham số và điểu chỉnh. 
+Trong phần này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn và điều chỉnh siêu tham số. 
 Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được những tác động của kiểm soát năng lực, trích xuất đặc trưng, v.v. trong thực tiễn. 
 Kinh nghiệm này rất quan trọng để bạn có được trực giác của một nhà khoa học dữ liệu. 
 <!--
