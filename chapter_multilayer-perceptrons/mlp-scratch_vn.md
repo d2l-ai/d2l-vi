@@ -12,7 +12,7 @@
 Now that we have characterized multilayer perceptrons (MLPs) mathematically, let's try to implement one ourselves.
 -->
 
-Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng thử lập trình một mạng như vậy xem sao.
+Chúng ta đã mô tả perceptron đa tầng (MLPs) ở dạng toán học, giờ hãy cùng thử tự lập trình một mạng như vậy xem sao.
 
 ```{.python .input  n=1}
 import d2l
@@ -25,7 +25,7 @@ To compare against our previous results achieved with (linear) softmax regressio
 we will continue work with the Fashion-MNIST image classification dataset (:numref:`sec_fashion_mnist`).
 -->
 
-Để so sánh với kết quả đã đạt được trước đó bằng hồi quy softmax -- tuyến tính (:numref:`sec_softmax_scratch`), chúng ta sẽ tiếp tục sử dụng tập dữ liệu phân loại ảnh Fashion-MNIST.
+Để so sánh với kết quả đã đạt được trước đó bằng hồi quy (tuyến tính) softmax (:numref:`sec_softmax_scratch`), chúng ta sẽ tiếp tục sử dụng tập dữ liệu phân loại ảnh Fashion-MNIST.
 
 ```{.python .input  n=2}
 batch_size = 256
@@ -46,11 +46,11 @@ Note that we can regard both of these quantities as *hyperparameters* and ought 
 Typically, we choose layer widths in powers of $2$ which tends to be computationally efficient because of how memory is alotted and addressed in hardware.
 -->
 
-Nhắc lại rằng Fashion-MNIST gồm có $10$ nhãn, mỗi ảnh gồm có một lưới $28 \times 28 = 784$ điểm ảnh (đen và trắng).
-Chúng ta sẽ tiếp tục bỏ qua liên hệ về mặt không gian giữa các điểm ảnh (ở thời điểm hiện tại), khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ lớp.
-Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉ có một tầng ẩn với $256$ nút ẩn.
-Lưu ý rằng ta có thể coi cả hai đại lượng này là các *siêu tham số* và nên thiết lập giá trị cho chúng dựa trên chất lượng trên tập kiểm định. 
-Về cơ bản, chúng ta sẽ chọn độ rộng của một tầng là một số là mũ của $2$ để giúp việc tính toán hiệu quả hơn do cách bộ nhớ được tổ chức và xử lý dưới phần cứng.
+Nhắc lại rằng Fashion-MNIST gồm có $10$ lớp, mỗi ảnh là một lưới có $28 \times 28 = 784$ điểm ảnh (đen và trắng).
+Chúng ta sẽ lại (tạm thời) bỏ qua mối liên hệ về mặt không gian giữa các điểm ảnh, khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ lớp.
+Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉcó một tầng ẩn với $256$ nút ẩn.
+Lưu ý rằng ta có thể coi cả hai đại lượng này là các *siêu tham số* và ta nên thiết lập giá trị cho chúng dựa vào chất lượng trên tập kiểm định. 
+Thông thường, chúng ta sẽ chọn độ rộng của các tầng là các lũy thừa bậc $2$ để giúp việc tính toán hiệu quả hơn do cách mà bộ nhớ được cấp phát và địa chỉ hóa ở phần cứng.
 
 <!--
 Again, we will represent our parameters with several `ndarray`s.
@@ -58,9 +58,9 @@ Note that *for every layer*, we must keep track of one weight matrix and one bia
 As always, we call `attach_grad` to allocate memory for the gradients (of the loss) with respect to these parameters.
 -->
 
-Chúng ta sẽ lại biễu diện các tham số bằng một vài `ndarray`.
-Lưu ý rằng *với mỗi tầng*, ta luôn phải giữ một ma trận trọng số và một vector hiệu chỉnh.
-Và như mọi khi, ta gọi tới `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) tương ứng với các tham số này.
+Chúng ta sẽ lại biễu diễn các tham số bằng một vài `ndarray`.
+Lưu ý rằng *với mỗi tầng*, ta luôn phải giữ một ma trận trọng số và một vector chứa hệ số điều chỉnh.
+Và như mọi khi, ta gọi hàm `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) theo các tham số này.
 
 ```{.python .input  n=3}
 num_inputs, num_outputs, num_hiddens = 784, 10, 256
@@ -89,7 +89,7 @@ for param in params:
 To make sure we know how everything works, we will implement the ReLU activation ourselves using the `maximum` function rather than invoking `npx.relu` directly.
 -->
 
-Để đảm bảo hiểu mọi thứ hoạt động như thế nào, chúng ta sẽ tự lập trình hàm kích hoạt ReLU sử dụng hàm `maximum` thay vì gọi tới hàm `npx.relu`.
+Để đảm bảo rằng ta biết mọi thứ hoạt động như thế nào, chúng ta sẽ tự lập trình hàm kích hoạt ReLU bằng cách sử dụng hàm `maximum` thay vì gọi trực tiếp hàm `npx.relu`.
 
 ```{.python .input  n=4}
 def relu(X):
@@ -107,7 +107,7 @@ Because we are disregarding spatial structure, we `reshape` each 2D image into a
 Finally, we implement our model with just a few lines of code.
 -->
 
-Vì ta đã bỏ qua sự liên hệ về mặt không gian giữa các điểm ảnh, ta `reshape` mỗi bức ảnh 2D thành một vector phẳng có độ dài `num_inputs`.
+Vì ta đang bỏ qua mối liên hệ về mặt không gian giữa các điểm ảnh, ta `reshape` mỗi bức ảnh 2D thành một vector phẳng có độ dài `num_inputs`.
 Cuối cùng, ta có được mô hình chỉ với một vài dòng mã nguồn.
 
 ```{.python .input  n=5}
