@@ -151,13 +151,13 @@ In this case, the model that always predicts class 1 will incur an error of $\fr
 As we increase the amount of data, the probability that the fraction of heads will deviate significantly from $\frac{1}{2}$ diminishes, and our training error would come to match the generalization error.
 -->
 
-Cuối cùng, hãy xem xét bài toán phân loại kết quả của việc tung đồng xu (lớp 0: ngửa, lớp 1: xấp) dựa trên một số đặc trưng theo ngữ cảnh có thể có sẵn.
+Cuối cùng, hãy xem xét bài toán phân loại kết quả của việc tung đồng xu (lớp 0: ngửa, lớp 1: xấp) dựa trên một số đặc trưng theo ngữ cảnh sẵn có.
 Bất kể thuật toán nào được đưa ra, lỗi khái quát sẽ luôn là $\frac{1}{2}$.
 Tuy nhiên, đối với hầu hết các thuật toán, lỗi huấn luyện sẽ thấp hơn đáng kể, tùy thuộc vào sự may mắn của ta khi lấy dữ liệu, ngay cả khi ta không có bất kỳ đặc trưng nào!
 Hãy xem xét tập dữ liệu {0, 1, 1, 1, 0, 1}.
-Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp chiếm đa số*, đối với các mẫu giới hạn của chúng ta thì đó là *1*.
+Việc không có đặc trưng có thể khiến ta luôn dự đoán *lớp chiếm đa số*, đối với ví dụ này thì đó là *1*.
 Trong trường hợp này, mô hình luôn dự đoán lớp 1 sẽ có lỗi huấn luyện là $\frac{1}{3}$, tốt hơn đáng kể so với lỗi khái quát.
-Khi ta tăng lượng dữ liệu, tỷ lệ nhận được mặt ngửa sẽ chệch đi đáng kể về xác suất $\frac{1}{2}$ và lỗi huấn luyện sẽ tiến đến lỗi khái quát.
+Khi ta tăng lượng dữ liệu, xác suất nhận được mặt ngửa sẽ dần tiến về $\frac{1}{2}$ và lỗi huấn luyện sẽ tiến đến lỗi khái quát.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
