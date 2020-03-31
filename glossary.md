@@ -289,7 +289,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regularization                 | điều chuẩn                                |                                              |
 | reinforcement learning         | học tăng cường                            |                                              |
 | representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
-| rescale | rescale | |
+| rescale | chuyển đổi giá trị | |
 | reward function                | hàm điểm thưởng                           |                                              |
 | robustness                     | khả năng / tính kháng nhiễu               | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
