@@ -13,7 +13,7 @@ And yet, we never stopped to contemplate either where data comes from in the fir
 Too often, machine learning developers in possession of data rush to develop models without pausing to consider these fundamental issues.
 -->
 
-Trong các chương trước, ta đã thực hành một số ứng dụng của học máy, làm khớp mô hình với nhiều loại tập dữ liệu.
+Trong các chương trước ta đã thực hành một số ứng dụng của học máy, khớp mô hình với nhiều loại tập dữ liệu.
 Tuy nhiên, ta chưa bao giờ chững lại để nhìn nhận về dữ liệu này đến từ đâu, hoặc kế hoạch cuối cùng ta sẽ làm gì với đầu ra từ các mô hình.
 Thông thường, khi các nhà phát triển học máy có được dữ liệu họ lại đâm đầu vào triển khai các mô hình mà không dừng lại để xem xét các vấn đề cơ bản này.
 
@@ -29,7 +29,7 @@ We might be inclined to thereafter grant loans to all applicants wearing Oxfords
 Nhiều triển khai học máy bị thất bại có thể bắt nguồn từ dạng này.
 Đôi khi các mô hình có độ chính xác rất tốt khi thực hiện trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế khi phân phối dữ liệu thay đổi đột ngột.
 Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho việc phân phối dữ liệu.
-Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng chi trả hay phá sản khi cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
+Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng thanh toán hoặc sẽ phá sản khi được cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
 Từ đó, ta có thể sẽ có xu hướng chỉ cấp các khoản vay cho các ứng viên mang giày tây và sẽ từ chối cho vay đối với những trường hợp mang giày thể thao. 
 
 <!--
@@ -41,9 +41,9 @@ by introducing our model-based decisions to the environment, we might break the 
 -->
 
 Trong trường hợp này, ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng mẫu đến việc ra quyết định và ta không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả cho kết quả.
-Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên giày dép, khách hàng sẽ nắm bắt và thay đổi hành vi của họ.
-Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây, và không có bất kỳ sự cải thiện nào trùng khớp trong chỉ số tín dụng.
-Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc giới thiệu mô hình quyết định dựa vào môi trường, ta có thể làm hỏng mô hình.
+Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên giày dép, khách hàng sẽ để ý và thay đổi hành vi của họ.
+Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây nhưng lại không có khớp bất kỳ sự cải thiện nào về chỉ số tín dụng.
+Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc đưa mô hình ra quyết định vào một môi trường, ta có thể làm hỏng chính môi trường đó.
 
 <!--
 While we cannot possible give these topics a complete treatment in one section, we aim here to expose some common concerns, 
@@ -54,7 +54,7 @@ grapple with difficult philosophical questions concerning the ethical applicatio
 -->
 
 Mặc dù ta không thể đưa ra một giải pháp có thể giải quyết triệt để cho các vấn đề này trong một chương, nhưng ta ở đây nhằm đưa ra các mối bận tâm chung và kích thích tư duy phản biện để sớm phát hiện ra các tình huống này từ đó giảm thiểu thiệt hại và có trách nhiệm hơn trong việc sử dụng học máy.
-Một số giải pháp khá đơn giản (đòi hỏi dữ liệu "chuẩn") một vài giải pháp khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và các giải pháp khác hoàn toàn bên ngoài lĩnh vực dự đoán thống kê và vật lộn với các câu hỏi triết học khó khăn liên quan đến đạo đức trong việc ứng dụng thuật toán.
+Một số giải pháp khá đơn giản (đòi hỏi dữ liệu "chuẩn") một vài giải pháp khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và các giải pháp khác hoàn toàn nằm ngoài lĩnh vực dự đoán thống kê và cần ta vật lộn với các câu hỏi triết học đạo đức khó khăn trong việc ứng dụng thuật toán.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
