@@ -321,7 +321,7 @@ Dưới đây là một vài trường hợp điển hình:
 #### More Anecdotes
 -->
 
-#### Thêm giai đoạn
+#### Các giai thoại khác
 
 <!--
 * We build a face detector. It works well on all benchmarks. 
