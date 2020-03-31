@@ -634,7 +634,7 @@ The steps are quite simple:
 * Logarithms are useful for relative loss.
 -->
 
-* Dữ liệu trong thực tế thường chứa nhiều loại dữ liệu khác nhau và cần phải được tiền xử lý.
+* Dữ liệu trong thực tế thường chứa nhiều kiểu dữ liệu khác nhau và cần phải được tiền xử lý.
 * Thay đổi kích thước dữ liệu có giá trị thực về trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu với giá trị trung bình của chúng.
 * Chuyển đổi các biến phân loại thành các biến chỉ dẫn cho phép chúng ta xử lý chúng như các vector.
 * Ta có thể sử dụng kiểm định chéo k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
@@ -658,7 +658,7 @@ The steps are quite simple:
 -->
 
 1. Nộp kết quả dự đoán của bạn từ bài hướng dẫn này cho Kaggle. Các dự đoán của bạn tốt đến đâu?
-2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu log-price trực tiếp không? Điều gì sẽ xảy ra nếu bạn dự đoán giá log chứ thay vì giá thực?
+2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu trực tiếp log giá nhá không? Điều gì sẽ xảy ra nếu bạn dự đoán log giá nhà thay vì giá thực?
 3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống khi mà các giá trị không bị thiếu một cách ngẫu nhiên không?
 4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ dẫn?
 5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo k-phần.
