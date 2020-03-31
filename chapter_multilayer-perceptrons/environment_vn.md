@@ -585,13 +585,13 @@ Nói cách khác, chúng ta sử dụng trọng số đang có và chỉ thực 
 ## A Taxonomy of Learning Problems
 -->
 
-## Sự phân loại của Quá trình học Các bài toán
+## Phân loại các Bài toán Học máy
 
 <!--
 Armed with knowledge about how to deal with changes in $p(x)$ and in $P(y \mid x)$, we can now consider some other aspects of machine learning problems formulation.
 -->
 
-Ta đã được trang bị kiến thức về cách xử lý các thay đổi trong $p(x)$ và $P(y \mid x)$, giờ đây ta có thể xem xét một số khía cạnh khác của sự hình thành các bài toán trong học máy.
+Ta đã được trang bị kiến thức về cách xử lý các thay đổi trong $p(x)$ và $P(y \mid x)$, giờ đây ta có thể xem xét một số khía cạnh khác của việc xây dựng các bài toán học máy.
 
 <!--
 * **Batch Learning.** Here we have access to training data and labels $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, which we use to train a network $f(x, w)$. 
@@ -608,17 +608,17 @@ E.g. we need to predict tomorrow's stock price, this allows us to trade based on
 In other words, we have the following cycle where we are continuously improving our model given new observations.
 -->
 
-* **Học theo batch.** Ở đây ta có dữ liệu huấn luyến và nhãn $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
-Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy cùng một phân phối.
+* **Học theo batch.** Ở đây ta có dữ liệu và nhãn huấn luyện $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
+Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy từ cùng một phân phối.
 Đây là giả thuyết mặc định cho bất kỳ bài toàn nào mà ta bàn ở đây.
 Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
-Sau khi hoàn tất quá trình huấn luyện, ta đưa vào hệ thống thị giác máy tính của cửa sập thông minh chỉ cho phép mèo đi vào.
+Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào.
 Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi).
 * **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$
-Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, ta quan sát $y_i$ với giá trị ban nãy, ta nhận lại phần thưởng (hoặc gánh chịu mất mát), dựa vào quyết định của ta.
-Nhiều bài toán thực sự rơi vào thể loại này.
-Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên các tính toán này và vào cuối ngày ta tìm hiểu liệu các tính toán này của ta có mang lại lại nhuận hay không.
-Nói cách khác, ta có quy trình sau đây và theo đó mô hình đang dần được cải thiện với những quan sát mới.
+Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, ta quan sát giá trị $y_i$ ban nãy, rồi nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
+Nhiều bài toán thực tế rơi vào loại này.
+Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên các tính toán này và vào cuối ngày ta sẽ biết được liệu các tính toán này có mang lại lợi nhuận hay không.
+Nói cách khác, ta có chu trình sau, trong đó mô hình dần được cải thiện với những quan sát mới.
 
 $$
 \mathrm{model} ~ f_t \longrightarrow
@@ -651,18 +651,18 @@ e.g., trying to avoid it, trying to cause an accident, trying to cooperate with 
 -->
 
 * **Đạo tặc** Đây là một trường hợp đặc biệt của bài toán trên.
-Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán *đạo tặc* ta chỉ có một số hữu hạn các vũ khí mà ta có thể kéo (tức là, một số lượng hữu hạn hành động mà ta có thể thực hiện).
-Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có thể tìm được lời giải đủ mạnh dựa vào các cơ sở lý thuyết tối ưu.
-Ta liệt kê nó chủ yếu vì vấn đề này thường (nhầm lẫn) xem như là một môi trường học tập khác biệt.
+Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán *đạo tặc* ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
+Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
+Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thường được xem (một cách nhầm lẫn) như là một môi trường học tập khác biệt.
 * **Kiểm soát (và Học Tăng cường không đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
-Không nhất thiết phải theo cách đối kháng nhưng nó chỉ cần nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
-Ví dụ bộ điều khiển của nồi hơi cà phê sẽ quan sát nhiệt độ khác nhau phụ thuộc vào nhiệt độ trước đó của nồi hơi.
+Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
+Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
 Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
-Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc tin tức một lần).
-Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà chúng hành động để làm cho các quyết định xuất hiện ít ngẫu nhiên hơn (tức là, để giảm phương sai).
-* **Học Tăng cường.** Trong trường hợp tổng quát về môi trường có bộ nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
-Tương tự như vậy, ta có thể muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
-Những chiếc xe khác có khả năng phản ứng với cách lái của những chiếc xe tự hành theo những cách không cần thiết, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
+Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất).
+Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai).
+* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có bộ nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
+Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
+Những chiếc xe khác sẽ phản ứng với cách lái của những chiếc xe tự hành theo những cách đáng kể, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
 One key distinction between the different situations above is that the same strategy that might have worked throughout in the case of a stationary environment, 
@@ -674,12 +674,12 @@ If we know that the environment might change instantaneously, but only very infr
 These types of knowledge are crucial for the aspiring data scientist to deal with concept shift, i.e., when the problem that he is trying to solve changes over time.
 -->
 
-Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là cùng một chiến lược nhưng có thể đã hoạt động xuyên suốt trong trường hợp môi trường cố định, có thể không hoạt động xuyên suốt khi môi trường có thể thích nghi.
-Chẳng hạn, một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường nhưng có thể biến mất khi anh ta bắt tay vào thực hiện nó.
-Dựa vào sự thay đổi của môi trường mà tốc độ và phương thức được xác định để mở rộng các kiểu thuật toán mà ta sử dụng.
+Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là một chiến lược hoạt động được xuyên suốt trong trường hợp môi trường cố định, có thể lại không hoạt động xuyên suốt được khi môi trường có thể thích nghi.
+Chẳng hạn, nếu một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường, khả năng cao cơ hội đó sẽ biến mất ngay khi anh ta bắt đầu lợi dụng nó.
+Tốc độ và cách môi trường thay đổi có ảnh hưởng lớn đến loại thuật toán mà ta có thể sử dụng.
 Ví dụ, nếu ta *biết trước* những sự việc chỉ có thể thay đổi một cách từ từ, ta có thể ép cho những ước lượng thay đổi chậm.
-Nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
-Những kiến thức này quan trọng trong việc trở thành các nhà khoa học dữ liệu giỏi để giải quyết các bài toán dịch chuyển khái niệm, tức là, ta đang cố gắng tìm ra các giải pháp thay đổi theo thời gian.
+Còn nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
+Đối với các nhà khoa học dữ liệu giỏi, những kiến thức này rất quan trọng trong việc giải quyết các bài toán dịch chuyển khái niệm, tức bài toán cần giải quyết sẽ thay đổi theo thời gian.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
