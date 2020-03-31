@@ -28,7 +28,7 @@ When we deploy the model in the future, we will encounter patients that the mode
 Our predictions will only be useful if our model has truly discovered a *general* pattern.
 -->
 
-Chúng ta không muốn mô hình của nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
+Chúng ta không muốn mô hình của mình nói rằng *"Bob kìa! Tôi nhớ anh ta! Anh ta bị mất trí nhớ!*
 Lý do tại sao rất đơn giản.
 Khi triển khai mô hình trong tương lai, chúng ta sẽ gặp các bệnh nhân mà mô hình chưa bao giờ gặp trước đấy.
 Các dự đoán sẽ chỉ có ích khi mô hình của chúng ta thực sự khám phá ra một khuôn mẫu *khái quát*.
