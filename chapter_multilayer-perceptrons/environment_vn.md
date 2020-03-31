@@ -331,7 +331,7 @@ Unfortunately it fails on test data---the offending examples are close-ups where
 say 1000 categories, represented by 1000 images each. Then we deploy the system in the real world, where the actual label distribution of photographs is decidedly non-uniform.
 -->
 
-* Chúng ta xây dựng mô hình phát hiện gương mặt. Nó làm viết rất tốt với các điểm đánh giá.
+* Chúng ta xây dựng mô hình phát hiện gương mặt. Nó hoạt động rất tốt trên các bài kiểm tra đánh giá.
 * Không may mắn là mô hình lại lỗi ở phần dữ liệu thử nghiệm -- một số các ví dụ vi phạm là một vài ảnh bị lắp đầy hoàn toàn bởi khuôn mặt và không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
 * Chúng ta huấn luyện một trình phân loại hình ảnh bằng cách biên dịch một tập dữ liệu lớn, trong đó mỗi tập dữ liệu lớn của các lớp được biểu diễn bằng nhau trong tập dữ liệu,
 có 1000 lớp, mỗi lớp được biểu diễn bởi 1000 ảnh. Sau đó chúng ta triển khai hệ thống trên thực tế, trong đó việc phân phối nhãn của các hình ảnh là không đồng nhất. 
