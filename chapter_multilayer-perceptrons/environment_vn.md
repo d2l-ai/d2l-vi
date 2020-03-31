@@ -348,7 +348,7 @@ Chung quy lại, có nhiều trường hợp mà huấn luyện và thử nghi�
 Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù thay đổi hiệp biến, nhãn hay khái niệm.
 Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng các chiến lược nguyên tắc để giải quyết sự thay đổi.
 Phần còn lại của phần này tập trung nhiều về kỹ thuật hơn một cách đáng kể.
-Tuy nhiên đối với những bạn đọc không thích thì có thể bỏ qua vì trong phần tiếp theo sẽ không đề cập đến các kiến thức cho các khái niệm tiếp theo.
+Tuy nhiên đối với những bạn đọc không thích thì có thể bỏ qua vì trong phần tiếp theo sẽ không đề cập đến các kiến thức cho các khái niệm dưới đây.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
