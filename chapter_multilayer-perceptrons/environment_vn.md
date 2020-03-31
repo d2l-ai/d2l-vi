@@ -313,7 +313,7 @@ Dưới đây là một vài trường hợp điển hình:
 * We build a product recommendation system. It works throughout the winter... but then it keeps on recommending Santa hats long after Christmas.
 -->
 
-* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo and sau đó không cập nhật thường xuyên (giả sử như chúng ta quên phối hợp với thiết bị iPad mới vừa được ra mắt).
+* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo và sau đó không cập nhật thường xuyên (giả sử như chúng ta quên bổ sung thêm thiết bị iPad mới vừa được ra mắt).
 * Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt khi phát hiện tất cả các thư rác mà chúng ta biết cho đên nay. Tuy nhiên hiện tại những người gửi thư rác đã tạo ra các mẫu thư mới trông không hề giống như những gì mà chúng ta biết trước đây.
 * Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc trong suốt mùa đông… nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả sau khi kết thúc Giáng Sinh.
 
