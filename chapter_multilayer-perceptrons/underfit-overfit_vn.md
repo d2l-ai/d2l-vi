@@ -18,7 +18,7 @@ Because each person's genes identify them uniquely (ignoring identical siblings)
 
 Là những nhà khoa học học máy, mục tiêu của chúng ta là khám phá ra các *khuôn mẫu*.
 Nhưng làm sao có thể chắc chắn rằng chúng ta đã thực sự khám phá ra một khuôn mẫu *khái quát* chứ không chỉ đơn giản là ghi nhớ dữ liệu.
-Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các khuôn mẫu liên kết các dấu hiệu di truyền của bệnh nhân và tình trạng mất trí của họ, với nhãn được trích ra từ tập {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}).
+Ví dụ, thử tưởng tượng rằng chúng ta muốn săn lùng các khuôn mẫu liên kết các dấu hiệu di truyền của bệnh nhân và tình trạng mất trí của họ, với nhãn được trích ra từ tập {*mất trí nhớ*, *suy giảm nhận thức mức độ nhẹ*, *khỏe mạnh*}.
 Bởi vì các gen của mỗi người định dạng họ theo cách độc nhất vô nhị (bỏ qua các cặp song sinh giống hệt nhau), nên việc ghi nhớ toàn bộ tập dữ liệu là hoàn toàn khả thi.
 
 <!--
