@@ -346,7 +346,7 @@ The impatient reader could continue on to the next section as this material is n
 
 Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và thử nghiệm $p(\mathbf{x}, y)$ là khác nhau.
 Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù phân phối của hiệp biến, nhãn hay khái niệm đều dịch chuyển.
-Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng các chiến lược nguyên tắc để giải quyết sự thay đổi.
+Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng nhiều chiến lược một cách có nguyên tắc để đối phó với sự dịch chuyển này.
 Phần còn lại của mục này tập trung nhiều hơn đáng kể về vấn đề kỹ thuật.
 Tuy nhiên đối với những bạn đọc không thích thì có thể bỏ qua vì trong phần tiếp theo sẽ không đề cập đến các kiến thức cho các khái niệm dưới đây.
 
