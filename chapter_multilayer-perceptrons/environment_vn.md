@@ -610,7 +610,7 @@ In other words, we have the following cycle where we are continuously improving 
 
 * **Học theo batch.** Ở đây ta có dữ liệu và nhãn huấn luyện $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
 Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy từ cùng một phân phối.
-Đây là giả thuyết mặc định cho bất kỳ bài toàn nào mà ta bàn ở đây.
+Đây là giả thuyết mặc định cho bất kỳ bài toán nào mà ta bàn ở đây.
 Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
 Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào.
 Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi).
@@ -654,7 +654,7 @@ e.g., trying to avoid it, trying to cause an accident, trying to cooperate with 
 Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán *đạo tặc* ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
 Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
 Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thường được xem (một cách nhầm lẫn) như là một môi trường học tập khác biệt.
-* **Kiểm soát (và Học Tăng cường không đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
+* **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
 Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
 Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
 Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
@@ -662,7 +662,7 @@ Tương tự như vậy, hành vi của người dùng trên một trang web tin
 Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai).
 * **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có bộ nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
 Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
-Những chiếc xe khác sẽ phản ứng với cách lái của những chiếc xe tự hành theo những cách đáng kể, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
+Những chiếc xe khác sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
 One key distinction between the different situations above is that the same strategy that might have worked throughout in the case of a stationary environment, 
