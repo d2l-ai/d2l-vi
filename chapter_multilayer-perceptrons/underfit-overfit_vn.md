@@ -64,7 +64,7 @@ If you altered the model structure or the hyper-parameters during the experiment
 you might have noticed that with enough nodes, layers, and training epochs, the model can eventually reach perfect accuracy on the training set, even as the accuracy on test data deteriorates.
 -->
 
-Hiện tượng mô hình khớp dữ liệu huấn luyện chính xác hơn nhiều so với khớp phân phối thực sự được gọi là quá khớp (*overfitting*), và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn (*regularization*).
+Hiện tượng mô hình khớp với dữ liệu huấn luyện chính xác hơn nhiều so với phân phối thực được gọi là quá khớp (*overfitting*), và kỹ thuật sử dụng để chống lại quá khớp được gọi là điều chuẩn (*regularization*).
 Trong các phần trước, bạn có thể đã quan sát hiệu ứng này khi thử nghiệm với tập dữ liệu Fashion-MNIST.
 Nếu bạn đã sửa đổi cấu trúc mô hình hoặc siêu tham số trong quá trình thử nghiệm, bạn có thể đã nhận ra rằng với đủ các nút, các tầng, và các epoch huấn luyện, mô hình ấy có thể cuối cùng cũng đạt đến sự chính xác hoàn hảo trên tập huấn luyện, ngay cả khi độ chính xác trên dữ liệu kiểm tra giảm đi.
 
@@ -87,7 +87,7 @@ were we to apply it to an infinite stream of additional data points drawn from t
 -->
 
 Để thảo luận hiện tượng này một cách chuyên sâu hơn, ta cần phân biệt giữa *lỗi huấn luyện* (*training error*) và *lỗi khái quát* (*generalization error*).
-Lỗi huấn luyện là loại lỗi của mô hình được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu với các mẫu ban đầu.
+Lỗi huấn luyện là lỗi của mô hình được tính toán trên tập huấn luyện, trong khi đó lỗi khái quát là lỗi kỳ vọng của mô hình khi áp dụng nó cho một luồng vô hạn các điểm dữ liệu mới được lấy từ cùng một phân phối dữ liệu với các mẫu ban đầu.
 
 <!--
 Problematically, *we can never calculate the generalization error exactly*.
