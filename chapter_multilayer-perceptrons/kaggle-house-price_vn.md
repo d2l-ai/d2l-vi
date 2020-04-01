@@ -283,7 +283,7 @@ all_features = pd.concat((train_data.iloc[:, 1:-1], test_data.iloc[:, 1:]))
 ## Data Preprocessing
 -->
 
-## Xử lý Dữ liệu
+## Tiền xử lý Dữ liệu
 
 <!--
 As stated above, we have a wide variety of data types.
@@ -300,7 +300,7 @@ Trước khi đưa nó vào mạng học sâu, ta cần thực hiện một số
 Hãy bắt đầu với các đặc trưng số học. 
 Trước hết ta thay thế các giá trị còn thiếu bằng giá trị trung bình.
 Đây là chiến lược hợp lý nếu các đặc trưng bị thiếu một cách ngẫu nhiên. 
-Để điểu chỉnh theo một thang đo chung, ta chuyển đổi chúng theo trung bình bằng không (_zero mean_) và phương sai đơn vị (_unit variance_). 
+Để điểu chỉnh theo một thang đo chung, ta chuyển đổi tỷ lệ để chúng có trung bình bằng không (_zero mean_) và phương sai đơn vị (_unit variance_). 
 Điều này có thể đạt được bằng cách:
 
 $$x \leftarrow \frac{x - \mu}{\sigma}.$$
@@ -314,9 +314,9 @@ After all, we do not know *a priori* which features are likely to be relevant.
 -->
 
 Để kiểm tra xem công thức trên có chuyển đổi $x$ thành dữ liệu với trung bình bằng không hay không, ta có thể tính $E[(x-\mu)/\sigma] = (\mu - \mu)/\sigma = 0$. 
-Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2, như vậy biến chuyển đổi có phương sai đơn vị. 
-Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các tính năng về cùng độ lớn. 
-Sau cùng, chúng ta không biết được "thiên hướng" mà các tính năng này có thể liên quan đến. 
+Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2$, như vậy biến chuyển đổi sẽ có phương sai đơn vị. 
+Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các đặc trưng về có cùng độ lớn. 
+Vì sau cùng, chúng ta không thể *biết trước* được các đặc trưng nào là quan trọng. 
 
 
 ```{.python .input  n=6}
@@ -338,7 +338,7 @@ Pandas does this automatically for us.
 -->
 
 Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc.
-Nó bao gồm những biến như là 'MSZoning'.
+Nó bao gồm những biến như 'MSZoning'.
 Ta sẽ thay thế chúng bằng biểu diễn one-hot theo đúng cách mà ta đã chuyển đổi dữ liệu phân loại đa lớp thành vector chứa $0$ và $1$.
 Ví dụ, 'MSZoning' bao gồm các giá trị 'RL' và 'RM', tương ứng lần lượt với vector $(1, 0)$ and $(0, 1)$. 
 Pandas tự động làm việc này cho chúng ta.
@@ -355,7 +355,8 @@ You can see that this conversion increases the number of features from 79 to 331
 Finally, via the `values` attribute, we can extract the NumPy format from the Pandas dataframe and convert it into MXNet's native `ndarray` representation for training.
 -->
 
-Bạn có thể thấy sự chuyển đổi này làm tăng số lượng các đặc trưng từ 79 lên 331. Cuối cùng, thông qua thuộc tính `values`, ta có thể trích xuất định dạng Numpy từ khung dữ liệu Pandas và chuyển đổi nó thành biểu diễn `ndarray` gốc từ MXNet dành cho mục đích huấn luyện.
+Bạn có thể thấy sự chuyển đổi này làm tăng số lượng các đặc trưng từ 79 lên 331. 
+Cuối cùng, thông qua thuộc tính `values`, ta có thể trích xuất định dạng NumPy từ khung dữ liệu Pandas và chuyển đổi nó thành biểu diễn `ndarray` gốc từ MXNet dành cho mục đích huấn luyện.
 
 ```{.python .input  n=9}
 n_train = train_data.shape[0]
@@ -706,6 +707,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 5 -->
 *
