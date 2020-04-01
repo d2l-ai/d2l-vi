@@ -714,5 +714,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 8 -->
 * Trần Yến Thy
+* Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
