@@ -611,7 +611,7 @@ Các bước tiến hành khá là đơn giản:
 * Click the “Make Submission” button at the bottom of the page to view your results.
 -->
 
-* Đăng nhập vào trang web Kaggle và truy cập vào cuộc thi Dự đoán giá nhà.
+* Đăng nhập vào trang web Kaggle và tìm đến trang của cuộc thi Dự đoán giá nhà.
 * Nhấn vào nút “Submit Predictions” hoặc “Late Submission” (nút này nằm ở phía bên phải tại thời điểm viết bài).
 * Nhấn vào nút “Upload Submission File” trong khung có viền nét đứt và chọn tệp dự đoán bạn muốn tải lên. <!-- Cái khung này đâu có nằm ở cuối trang nhỉ? -->
 * Nhấn vào nút “Make Submission” ở cuối trang để xem kết quả.
