@@ -20,7 +20,7 @@ When we worked through softmax regression, a single *layer* was itself *the mode
 However, even when we subsequently introduced multilayer perceptrons, we could still think of the model as retaining this same basic structure.
 -->
 
-Khi giới thiệu các mạng nơ-ron lần đầu, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
+Khi lần đầu giới thiệu các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
 Lưu ý rằng một nơ-ron đơn lẻ (i) có một số đầu vào; (ii) tạo ra một đầu ra tương ứng (*vô hướng*); và (iii) có một tập hợp các tham số liên quan có thể được cập nhật để tối ưu một số hàm mục tiêu mà ta quan tâm.
 Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng vector hóa để mô tả toàn bộ một *tầng* các nơ-ron.
 Giống như các nơ-ron riêng lẻ, các tầng (i) nhận một số đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập hợp các tham số có thể điều chỉnh.
@@ -35,8 +35,8 @@ and possesses a set of tunable parameters that are updated according to the sign
 -->
 
 Thú vị thay, đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
-(Toàn bộ) mô hình nhận vào các đầu vào thô (các đặc trưng), tạo đầu ra (dự đoán) và có các tham số (các tham số được tập hợp từ tất cả các tầng cấu thành).
-Tương tự, mỗi tầng riêng lẻ nhận vào các đầu vào (được cung cấp bởi tầng trước đó) tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập hợp các tham số có thể điều chỉnh được cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
+(Toàn bộ) mô hình nhận vào các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và có các tham số (các tham số được tập hợp từ tất cả các tầng cấu thành).
+Tương tự, mỗi tầng riêng lẻ nhận vào các đầu vào (được cung cấp bởi tầng trước đó) tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập hợp các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
 
 
 <!--
@@ -50,12 +50,12 @@ both recognition and detection :cite:`He.Zhang.Ren.ea.2016` and remains a go-to 
 Similar patterns are in which layers are arranged in various repeating patterns are now ubiquitous in other domains, including natural language processing and speech.
 -->
 
-Trong khi bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để tiến hành công việc, thì hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng nhỏ hơn toàn bộ mô hình.
+Trong khi bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào việc, thì hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình.
 Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tính, sở hữu hàng trăm tầng.
-Các tầng này bao gồm các khuôn mẫu lặp lại của các *nhóm các tầng*. Việc lập trình từng tầng của một mạng như vậy có thể mang đến sự tẻ nhạt.
-Mối quan tâm này không chỉ là giả thuyết---các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế.
+Nó bao gồm các khuôn mẫu lặp lại của *nhóm các tầng*. Việc lập trình từng tầng cho một mạng như vậy sẽ là rất tẻ nhạt.
+Mối quan tâm này không chỉ là giả thuyết---các mẫu thiết kế như vậy rất phổ biến trong thực tế.
 Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015 cho cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin tưởng cho nhiều bài toán về thị giác.
-Các mô hình tương tự, trong đó các tầng được sắp xếp theo nhiều khuôn mẫu lặp lại khác nhau, hiện đã có mặt ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
+Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo các khuôn mẫu lặp lại khác nhau, hiện đã có mặt ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
