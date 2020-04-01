@@ -68,10 +68,10 @@ That is to say, you only need to download datasets once with a network connectio
 This `download` function returns the name of the downloaded file.
 -->
 
-Hàm `download` dưới đây tải bộ dữ liệu từ đường dẫn ứng với tên `name` cụ thể và lưu trữ nó tại bộ nhớ cục bộ (`../data` by default).
-Nếu file trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với file trong `DATA_HUB`, file lưu trữ sẽ được sử dụng và việc tải về là không cần thiết. 
-Điều này nghĩa là, bạn chỉ cần tải bộ dữ liệu về một lần với kết nối mạng.
-Hàm `download` trả về tên của file được tải xuống.
+Hàm `download` dưới đây tải bộ dữ liệu từ đường dẫn ứng với tên `name` cụ thể và lưu trữ nó tại bộ nhớ cục bộ (mặc định tại `../data`).
+Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với tập trong `DATA_HUB`, tệp trong lưu trữ sẽ được sử dụng và việc tải về là không cần thiết. 
+Điều này nghĩa là, bạn chỉ cần tải bộ dữ liệu về với một lần kết nối mạng.
+Hàm `download` trả về tên của tệp được tải xuống.
 
 ```{.python .input  n=6}
 # Saved in the d2l package for later use
@@ -89,7 +89,7 @@ We also implement two additional functions: one is to download and extract a zip
 You may invoke the latter to download all these datasets once and for all if your network connection is slow.
 -->
 
-Chúng ta cũng thực hiện hai hàm bổ sung khác: một hàm là để tải và giải nén file zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB`(chứa phần lớn các bộ dữ liệu được sử dụng trong cuốn sách này) vào bộ nhớ đệm. 
+Chúng ta cũng xây dựng hai hàm bổ sung khác: một hàm là để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB`(chứa phần lớn các bộ dữ liệu được sử dụng trong cuốn sách này) vào bộ nhớ đệm. 
 Bạn có thể sử dụng hàm thứ hai để tải tất cả bộ dữ liệu trong một lần nếu kết nối mạng của bạn chậm.
 
 ```{.python .input  n=11}
@@ -139,8 +139,8 @@ If you want to participate in one of the competitions, you need to register for 
 
 [Kaggle](https://www.kaggle.com) là một nền tảng phổ biến cho các cuộc thi học máy.
 Nó kết hợp dữ liệu, mã lập trình và người dùng cho cả mục đích hợp tác và thi thố.
-Mặc dù việc cạnh tranh trên bảng xếp hạng nhiều khi vượt khỏi tầm kiểm soát, nền tảng này cung cấp khách quan sự so sánh công bằng và định lượng trực tiếp phương pháp của bạn với các phương pháp đến từ đối thủ. 
-Nếu bạn muốn tham gia vào một trong những cuộc thi, bạn cần đăng ký một tài khoản như trong :numref:`fig_kaggle` (làm ngay đi!)
+Mặc dù việc cạnh tranh trên bảng xếp hạng nhiều khi vượt khỏi tầm kiểm soát, ta không thể không nhắc đến tính khách quan của nền tảng này có được từ sự so sánh công bằng định lượng trực tiếp giữa phương pháp của bạn với các phương pháp đến từ đối thủ. 
+Nếu bạn muốn tham gia vào một trong những cuộc thi, bạn cần đăng ký một tài khoản như trong :numref:`fig_kaggle` (làm ngay đi!).
 
 <!--
 ![Kaggle website](../img/kaggle.png)
@@ -166,7 +166,7 @@ Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả 
 ![House Price Prediction](../img/house_pricing.png)
 -->
 
-![*Dự đoán Giá Nhà*](../img/house_pricing.png)
+![Dự đoán Giá Nhà](../img/house_pricing.png)
 :width:`400px`
 :label:`fig_house_pricing`
 
@@ -692,6 +692,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 *
