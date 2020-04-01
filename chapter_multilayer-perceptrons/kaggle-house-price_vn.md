@@ -47,7 +47,7 @@ where SHA-1 verifies the integrity of the file. Such datasets are hosted on the 
 
 Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các bộ dữ liệu khác nhau. 
 Ta sẽ lập trình một số hàm tiện ích để hỗ trợ cho việc tải dữ liệu.
-Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB`, ánh xạ một xâu tới đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
+Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` nhằm ánh xạ một xâu ký tự đến đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
 trong đó SHA-1 dùng để xác minh tính toàn vẹn của tệp. Các bộ dữ liệu này được lưu trữ trên trang `DATA_URL`.
 
 ```{.python .input  n=2}
