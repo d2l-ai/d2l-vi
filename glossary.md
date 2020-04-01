@@ -49,6 +49,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
+| categorical variable | biến hạng mục | |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | classifier                          | bộ phân loại           |                                              |
@@ -166,6 +167,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | import (module, package)   | nhập (mô-đun, gói thư viện) | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | imputation (Preprocessing) | quy buộc                    | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập            | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| indicator variable         | biến chỉ định                    | [https://git.io/JvQha](https://git.io/JvQha) |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
 
@@ -289,6 +291,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regularization                 | điều chuẩn                                |                                              |
 | reinforcement learning         | học tăng cường                            |                                              |
 | representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
+| rescale | chuyển đổi giá trị | |
 | reward function                | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ | |
 | robust to noise                | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
