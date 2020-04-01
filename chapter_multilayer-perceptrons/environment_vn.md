@@ -208,7 +208,7 @@ It works fine, giving you high accuracy and you conclude that you’re ready for
 Not so fast...
 -->
 
-Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật nhận diện bệnh ung thư.
+Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật có khả năng phát hiện bệnh ung thư.
 Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh và bạn huấn luyện giải thuật.
 Nó hoạt động hiệu quả, đem lại độ chính xác cao và bạn có thể kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong chẩn đoán y khoa.
 Đừng vội mừng...
@@ -229,17 +229,17 @@ In other words, training and test data were so different that nothing useful cou
 -->
 
 Bạn có thể đã mắc nhiều sai lầm.
-Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể có nhiều khác biệt đáng kể.
+Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể rất khác nhau.
 Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã có cơ hội tư vấn nhiều năm về trước.
-Họ đã phát triển một chương trình xét nghiệm máu cho một căn bệnh gây ra chủ yếu cho đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
-Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh gặp nhiều khó khăn hơn (chủ ý là vì những lý do đạo đức).
+Họ đã phát triển một bộ xét nghiệm máu cho một căn bệnh xảy ra chủ yếu ở đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
+Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh lại khó khăn hơn (chủ yếu là vì những lý do đạo đức).
 Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện và thực hiện xét nghiệm máu của họ.
-Khi đó họ đã hỏi rằng liệu tôi có thể giúp họ xây dựng một bộ phân loại để nhận diện căn bệnh.
-Tôi đã nói với họ rằng rất dễ dàng phân biệt hai tập dữ liệu trên với độ chính xác gần như hoàn hảo.
-Sau cùng, các đối tượng kiểm tra có nhiều khác biệt về tuổi, nồng độ hóc môn, hoạt động thể chất, chế độ ăn kiêng, mức tiêu thụ rượu bia, và nhiều nhân tố khác không liên quan đến căn bệnh.
+Sau đó họ đã nhờ tôi xây dựng một bộ phân loại để phát hiện căn bệnh.
+Tôi đã nói với họ rằng việc phân biệt hai tập dữ liệu trên với độ chính xác gần như hoàn hảo là rất dễ dàng.
+Sau cùng, các đối tượng kiểm tra có nhiều khác biệt về tuổi, nồng độ hóc môn, hoạt động thể chất, chế độ ăn uống, mức tiêu thụ rượu bia, và nhiều nhân tố khác không liên quan đến căn bệnh.
 Điều này không giống với trường hợp của những bệnh nhân thật sự:
-Thủ tục lấy mẫu của họ giống như trường hợp đặc biệt của dịch chuyển hiệp biến xảy ra giữa các phân phối *nguồn* và *mục tiêu*, và thêm vào đó, không thể sửa chữa được bằng các phương pháp truyền thống.
-Nói cách khác, dữ liệu huấn luyện và kiểm tra quá khác biệt đến nỗi không thể xây dựng được một mô hình hữu dụng và họ đã lãng phí rất nhiều tiền của.
+Có vẻ thủ tục lấy mẫu của họ đã gây ra hiện tượng dịch chuyển hiệp biến rất nặng giữa phân phối *gốc* và phân phối *mục tiêu*, và thêm vào đó, nó không thể sửa chữa được bằng các phương pháp truyền thống.
+Nói cách khác, dữ liệu huấn luyện và kiểm tra khác biệt đến nỗi không thể xây dựng được một mô hình hữu dụng và họ đã lãng phí rất nhiều tiền của.
 
 <!--
 #### Self Driving Cars
@@ -257,13 +257,13 @@ As it turned out, the roadside had been rendered with a very simplistic texture.
 More importantly, *all* the roadside had been rendered with the *same* texture and the roadside detector learned about this "feature" very quickly.
 -->
 
-Có một công ty muốn xây dựng một hệ thống học máy cho xe tự hành.
+Giả sử có một công ty muốn xây dựng một hệ thống học máy cho xe tự hành.
 Một trong những bộ phận quan trọng là bộ phát hiện lề đường.
-Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu tổng hợp từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
+Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu giả từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
 Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ bộ kết xuất đồ hoạ.
 Nhưng khi áp dụng trên xe thực tế, nó là một thảm hoạ.
 Hoá ra, lề đường đã được kết xuất chỉ với một kết cấu rất đơn giản.
-Quan trọng hơn, *tất cả* các lề đường đều được kết xuất với cùng một bề mặt và bộ dò lề đường đã học "đặc trưng" này rất nhanh.
+Quan trọng hơn, *tất cả* các lề đường đều được kết xuất với cùng một kết cấu và bộ phát hiện lề đường đã nhanh chóng học được "đặc trưng" này.
 
 <!--
 A similar thing happened to the US Army when they first tried to detect tanks in the forest.
@@ -275,7 +275,7 @@ Unfortunately, all it had learned was to distinguish trees with shadows from tre
 Một điều tương tự cũng đã xảy ra với quân đội Mỹ trong lần đầu tiên họ thử nghiệm nhận diện xe tăng trong rừng.
 Họ đã chụp các bức ảnh của khu rừng khi không có những chiếc xe tăng từ trên không, sau đó lái xe tăng vào khu rừng và chụp một bộ ảnh khác.
 Bộ phân loại đã được huấn luyện khi đó hoạt động "hoàn hảo".
-Không may mắn thay, tất cả những gì nó đã học được là phân loại cây có bóng với cây không có bóng---bộ ảnh đầu tiên được chụp vào buổi sáng sớm, trong khi bộ thứ hai được chụp vào buổi trưa.
+Không may thay, tất cả những gì nó đã học được là phân loại cây có bóng với cây không có bóng---bộ ảnh đầu tiên được chụp vào buổi sáng sớm, trong khi bộ thứ hai được chụp vào buổi trưa.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
