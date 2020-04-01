@@ -491,7 +491,7 @@ def get_k_fold_data(k, i, X, y):
 The training and verification error averages are returned when we train $k$ times in the k-fold cross-validation.
 -->
 
-Trong kiểm định chéo k-phần, ta sẽ huấn luyện mô hình $k$ lần và trả về trung bình lỗi huấn luyện và trung bình lỗi kiểm định.
+Trong kiểm định chéo gập k-lần, ta sẽ huấn luyện mô hình $k$ lần và trả về trung bình lỗi huấn luyện và trung bình lỗi kiểm định.
 
 ```{.python .input  n=15}
 def k_fold(k, X_train, y_train, num_epochs,
