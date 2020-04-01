@@ -462,7 +462,7 @@ Note that this is not the most efficient way of handling data and we would defin
 But this added complexity might obfuscate our code unnecessarily so we can safely omit here owing to the simplicity of our problem.
 -->
 
-Nếu bạn đang đọc theo kiểu từ trên xuống dưới thì có thể bạn sẽ nhớ ra rằng kiểm định chéo k-phần đã từng được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
+Nếu bạn đang đọc theo kiểu từ đầu đến cuối thì có thể bạn sẽ nhớ ra rằng kiểm định chéo gập k-lần đã từng được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
 Ta sẽ ứng dụng kỹ thuật này để lựa chọn thiết kế mô hình và điều chỉnh các siêu tham số.
 Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo gập k-lần.
 Việc này được tiến hành bằng cách cắt chọn (_slicing_) phần thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
