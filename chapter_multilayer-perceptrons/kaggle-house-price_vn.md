@@ -601,7 +601,7 @@ Next, as demonstrated in :numref:`fig_kaggle_submit2`, we can submit our predict
 The steps are quite simple:
 -->
 
-Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh với với giá nhà thực tế (các nhãn) trên tập kiểm tra.
+Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh chúng với giá nhà thực tế (các nhãn) trên tập kiểm tra.
 Các bước tiến hành khá là đơn giản:
 
 <!--
