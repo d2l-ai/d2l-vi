@@ -166,7 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | import (module, package)   | nhập (mô-đun, gói thư viện) | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | imputation (Preprocessing) | quy buộc                    | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| indicator variable         | biến giả                    | [https://git.io/JvQha](https://git.io/JvQha) |
+| indicator variable         | biến chỉ định                    | [https://git.io/JvQha](https://git.io/JvQha) |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
 
