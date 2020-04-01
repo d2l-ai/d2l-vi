@@ -451,7 +451,7 @@ def train(net, train_features, train_labels, test_features, test_labels,
 ## k-Fold Cross-Validation
 -->
 
-## Kiểm định chéo k-phần
+## Kiểm định chéo gập k-lần
 
 <!--
 If you are reading in a linear fashion, you might recall that we introduced k-fold cross-validation in the section where we discussed how to deal with model section (:numref:`sec_model_selection`). 
