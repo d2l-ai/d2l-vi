@@ -529,7 +529,7 @@ However, if we were to try out an unreasonably large number of options it might 
 Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được tinh chỉnh và để dành cơ hội cải thiện mô hình cho bạn đọc.
 Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu.
 Phương pháp kiểm định chéo gập k-lần có tính ổn định cao khi thực hiện với nhiều thử nghiệm, tới một ngưỡng nhất định.
-Tuy nhiên, nếu ta thử nghiệm một số lượng rất lớn các lựa chọn, phương pháp này có thể thất bại vì có thể ta chỉ may mắn trên tập kiểm định với một bộ siêu tham số nhất định.
+Tuy nhiên, nếu ta thử nghiệm một số lượng rất lớn các lựa chọn thì phương pháp này có khả năng thất bại vì có thể ta chỉ may mắn trong việc chia tập kiểm định phù hợp với một bộ siêu tham số nhất định.
 
 ```{.python .input  n=16}
 k, num_epochs, lr, weight_decay, batch_size = 5, 100, 5, 0, 64
