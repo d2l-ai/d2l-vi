@@ -171,7 +171,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
 To evaluate the learned model, we apply it on some test data.
 -->
 
-Để đánh giá mô hình đã học xong, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
+Để đánh giá mô hình sau khi học xong, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
 
 ```{.python .input  n=8}
 d2l.predict_ch3(net, test_iter)
@@ -181,7 +181,7 @@ d2l.predict_ch3(net, test_iter)
 This looks a bit better than our previous result, using simple linear models and gives us some signal that we are on the right path.
 -->
 
-Kết quả này tốt hơn một chút so với những kết quả trước đây khi các mô hình tuyến tính được sử dụng, và điều này cho thấy chúng ta đang đi đúng hướng.
+Kết quả này tốt hơn một chút so với kết quả trước đây của các mô hình tuyến tính, và điều này cho thấy chúng ta đang đi đúng hướng.
 
 
 <!--
@@ -195,7 +195,7 @@ We saw that implementing a simple MLP is easy, even when done manually.
 That said, with a large number of layers, this can still get messy (e.g., naming and keeping track of our model's parameters, etc).
 -->
 
-Chúng ta đã thấy việc lập trình một MLP đơn giản khá dễ dàng, ngay cả khi phải làm thủ công.
+Chúng ta đã thấy việc lập trình một MLP đơn giản khá là dễ dàng, ngay cả khi phải làm thủ công.
 Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
 
 <!--
