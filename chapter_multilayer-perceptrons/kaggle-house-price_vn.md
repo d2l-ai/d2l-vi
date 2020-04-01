@@ -467,7 +467,7 @@ Ta sẽ ứng dụng kỹ thuật này để lựa chọn thiết kế mô hình
 Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo gập k-lần.
 Việc này được tiến hành bằng cách cắt chọn (_slicing_) phần thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
 Cần lưu ý rằng đây không phải là cách xử lý dữ liệu hiệu quả nhất và ta chắc chắn sẽ dùng một cách khôn ngoan hơn để xử lý một tập dữ liệu có kích thước lớn hơn nhiều. 
-Nhưng sự phức tạp được thêm vào này có thể làm xáo trộn mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ta có thể bỏ qua một cách an toàn ở đây.
+Nhưng sự phức tạp được thêm vào này có thể làm rối mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ở đây ta có thể an toàn bỏ qua.
 
 ```{.python .input}
 def get_k_fold_data(k, i, X, y):
