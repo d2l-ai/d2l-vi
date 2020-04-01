@@ -574,7 +574,7 @@ Therefore, when we reduce the amount of training errors, we need to check whethe
 ##  Predict and Submit
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán và Nộp bài
 
 <!--
 Now that we know what a good choice of hyperparameters should be, we might as well use all the data to train on it (rather than just $1-1/k$ of the data that is used in the cross-validation slices).
@@ -582,7 +582,8 @@ The model that we obtain in this way can then be applied to the test set.
 Saving the estimates in a CSV file will simplify uploading the results to Kaggle.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, khi đã biết được các lựa chọn tốt cho siêu tham số, ta có thể sử dụng toàn bộ dữ liệu cho việc huấn luyện (thay vì chỉ dùng $1-1/k$ của dữ liệu như trong quá trình kiểm định chéo).
+Sau đó, ta áp dụng mô hình thu được lên tập kiểm tra và lưu các dự đoán vào một tệp CSV nhằm đơn giản hóa quá trình tải kết quả lên Kaggle.
 
 ```{.python .input  n=18}
 def train_and_pred(train_features, test_feature, train_labels, test_data,
@@ -608,7 +609,10 @@ If they do, it is time to upload them to Kaggle.
 The following code will generate a file called `submission.csv` (CSV is one of the file formats accepted by Kaggle):
 -->
 
-*dịch đoạn phía trên*
+Hãy gọi mô hình để đưa ra dự đoán. <!-- Bạn nào review sửa câu này giúp mình nhé, mình chưa biết dịch sao cho hợp lý hơn. Many thanks!-->
+Ta nên kiểm tra xem liệu các dự đoán trên tập kiểm tra có tương đồng với các dự đoán trong quá trình kiểm định chéo k-phần hay không.
+Nếu đúng là như vậy thì đã đến lúc tải các dự đoán này lên Kaggle.
+Đoạn mã nguồn sau sẽ tạo một tệp có tên `submission.csv` (CSV là một trong những định dạng tệp được chấp nhận bởi Kaggle):
 
 ```{.python .input  n=19}
 train_and_pred(train_features, test_features, train_labels, test_data,
@@ -620,7 +624,8 @@ Next, as demonstrated in :numref:`fig_kaggle_submit2`, we can submit our predict
 The steps are quite simple:
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh chúng với giá nhà thực tế (các nhãn) trên tập kiểm tra.
+Các bước tiến hành khá là đơn giản:
 
 <!--
 * Log in to the Kaggle website and visit the House Price Prediction Competition page.
@@ -629,13 +634,16 @@ The steps are quite simple:
 * Click the “Make Submission” button at the bottom of the page to view your results.
 -->
 
-*dịch đoạn phía trên*
+* Đăng nhập vào trang web Kaggle và tìm đến trang của cuộc thi Dự đoán giá nhà.
+* Nhấn vào nút “Submit Predictions” hoặc “Late Submission” (nút này nằm ở phía bên phải tại thời điểm viết sách).
+* Nhấn vào nút “Upload Submission File” trong khung có viền nét đứt và chọn tệp dự đoán bạn muốn tải lên. <!-- Cái khung này đâu có nằm ở cuối trang nhỉ? -->
+* Nhấn vào nút “Make Submission” ở cuối trang để xem kết quả.
 
 <!--
 ![Submitting data to Kaggle](../img/kaggle_submit2.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/kaggle_submit2.png)
+![Tải dữ liệu lên Kaggle](../img/kaggle_submit2.png)
 :width:`400px`
 :label:`fig_kaggle_submit2`
 
@@ -734,7 +742,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 8 -->
 * Trần Yến Thy
