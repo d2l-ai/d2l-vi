@@ -190,7 +190,7 @@ Mỗi tập dữ liệu bao gồm giá trị tài sản của ngôi nhà và cá
 Các đặc trưng được biểu diễn bởi nhiều kiểu dữ liệu.
 Ví dụ, năm xây dựng được biểu diễn bởi số nguyên, loại ngói là các lớp đặc trưng riêng biệt, các đặc trưng khác thì được biểu diễn bởi số thực dấu phẩy động (_floating point number_).
 Và đây là khi ta đối mặt với vấn đề thực tiễn: ở một vài mẫu, nhiều dữ liệu bị thiếu và được chú thích đơn giản là 'na'.
-Giá của mỗi căn nhà chỉ được đưa vào tập huấn luyện (sau cùng thì đây vẫn là một cuộc thi).
+Giá của mỗi căn nhà chỉ được cung cấp trong tập huấn luyện (sau cùng thì đây vẫn là một cuộc thi).
 Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết được mô hình của bạn thể hiện như thế nào trên tập kiểm tra chính thức khi bạn tải lên kết quả dự đoán của mình và nhận điểm sau đó.
 Thanh "Data" trên cuộc thi có đường link để tải về bộ dữ liệu.  
 
@@ -237,7 +237,7 @@ DATA_HUB['kaggle_house_test'] = (
 To load the two csv files containing training and test data respectively we use Pandas.
 -->
 
-Để nạp lần lượt hai file csv tập huấn luyện và tập kiểm tra, ta sử dụng Pandas.
+Ta sử dụng Pandas để nạp lần lượt hai tệp csv chứa dữ liệu huấn luyện và kiểm tra.
 
 ```{.python .input  n=14}
 train_data = pd.read_csv(download('kaggle_house_train'))
@@ -700,6 +700,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 *
