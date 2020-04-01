@@ -33,6 +33,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | background noise        | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
 | back-propagation        | lan truyền ngược               |                                              |
 | backward pass           | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
+| bandit                  | máy đánh bạc                   |  |
 | batch                   | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
 | batch size              | kích thước batch               | [https://git.io/JvXdK](https://git.io/JvXdK) |
 | benchmark               | đánh giá xếp hạng              | [https://git.io/JvQxY](https://git.io/JvQxY) |
@@ -215,6 +216,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | model                        | mô hình                       |                                              |
 | model capacity               | năng lực mô hình              | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | module                       | mô-đun                        |                                              |
+| multi-armed bandit           | máy đánh bạc đa cần           |  |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | multitask learning           | học đa nhiệm                  | [https://git.io/JvohQ](https://git.io/JvohQ) |

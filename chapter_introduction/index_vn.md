@@ -2160,7 +2160,7 @@ Các thuật toán học tăng cường phải luôn lựa chọn giữa việc 
 #### MDPs, bandits, and friends
 -->
 
-#### MDPs, những kẻ trộm, và những người bạn
+#### MDPs, máy đánh bạc, và những người bạn
 
 <!--
 The general reinforcement learning problem
@@ -2193,8 +2193,8 @@ is the classic *multi-armed bandit problem*.
 -->
 
 Khi ở môi trường được quan sát đầy đủ, ta gọi bài toán học tăng cường này là *Quá trình Quyết định Markov* (*Markov Decision Process* -- MDP).
-Khi trạng thái không phụ thuộc vào các hành động trước đó, ta gọi bài toán này là *bài toán trộm ngữ cảnh* (*contextual bandit problem*).
-Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, bài toán kinh điển này là *bài toán trộm đa nhánh* (*multi-armed bandit problem*).
+Khi trạng thái không phụ thuộc vào các hành động trước đó, ta gọi bài toán này là *bài toán máy đánh bạc theo ngữ cảnh* (*contextual bandit problem*).
+Khi không có trạng thái, chỉ có một tập hợp các hành động có sẵn với điểm thưởng chưa biết ban đầu, bài toán kinh điển này là *bài toán máy đánh bạc đa cần* (*multi-armed bandit problem*).
 
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
 
