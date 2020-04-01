@@ -216,6 +216,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | model                        | mô hình                       |                                              |
 | model capacity               | năng lực mô hình              | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | module                       | mô-đun                        |                                              |
+| multi-armed bandit           | máy đánh bạc đa cần           |  |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | multitask learning           | học đa nhiệm                  | [https://git.io/JvohQ](https://git.io/JvohQ) |
