@@ -661,7 +661,7 @@ The steps are quite simple:
 2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu trực tiếp log giá nhà không? Điều gì sẽ xảy ra nếu bạn dự đoán log giá nhà thay vì giá thực?
 3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống khi mà các giá trị không bị thiếu một cách ngẫu nhiên không?
 4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ dẫn?
-5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo k-phần.
+5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo gập k-lần.
 6. Cải thiện điểm bằng cách cải thiện mô hình (các tầng, điều chuẩn hóa, dropout).
 7. Điều gì sẽ xảy ra nếu ta không chuẩn hóa đặc trưng số liên tục như ta đã làm trong phần này? 
 
@@ -714,3 +714,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 8 -->
 * Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
