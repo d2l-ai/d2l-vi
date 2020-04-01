@@ -127,6 +127,7 @@ def net(X):
 
 ## Hàm mất mát
 
+
 <!--
 To ensure numerical stability (and because we already implemented the softmax function from scratch (:numref:`sec_softmax_scratch`), 
 we leverage Gluon's integrated function for calculating the softmax and cross-entropy loss.
@@ -134,7 +135,8 @@ Recall our easlier discussion of these intricacies (:numref:`sec_mlp`).
 We encourage the interested reader to examine the source code for `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` to deepen their knowledge of implementation details.
 -->
 
-Để đảm bảo tính ổn định số học (và cũng bởi ta đã lập trình hàm softmax từ đầu rồi :numref:`sec_softmax_scratch`), ta sẽ tận dụng luôn các hàm số đã tích hợp sẵn của Gluon để tính softmax và lỗi entropy chéo. Nhắc lại phần thảo luận của chúng ta trước đó về vấn đề rắc rối này (:numref:`sec_mlp`).
+Để đảm bảo tính ổn định số học (và cũng bởi ta đã lập trình hàm softmax từ đầu ở :numref:`sec_softmax_scratch`), ta sẽ tận dụng luôn các hàm số đã tích hợp sẵn của Gluon để tính softmax và mất mát entropy chéo. 
+Nhắc lại phần thảo luận của chúng ta trước đó về vấn đề rắc rối này (:numref:`sec_mlp`).
 Chúng tôi khuyến khích bạn đọc quan tâm hãy thử kiểm tra mã nguồn trong `mxnet.gluon.loss.SoftmaxCrossEntropyLoss` để hiểu thêm về cách lập trình chi tiết.
 
 ```{.python .input  n=6}
@@ -156,7 +158,7 @@ Fortunately, the training loop for MLPs is exactly the same as for softmax regre
 Leveraging the `d2l` package again, we call the `train_ch3` function (see :numref:`sec_softmax_scratch`), setting the number of epochs to $10$ and the learning rate to $0.5$.
 -->
 
-Thật may, quá trình huấn luyện lặp của MLPs giống hệt với hồi quy softmax.
+Thật may, vòng lặp huấn luyện của MLP giống hệt với vòng lặp của hồi quy softmax.
 Tận dụng gói `d2l`, ta gọi hàm `train_ch3` (xem :numref:`sec_softmax_scratch`), đặt số epoch bằng $10$ và tốc độ học bằng $0.5$
 
 ```{.python .input  n=7}
@@ -169,7 +171,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
 To evaluate the learned model, we apply it on some test data.
 -->
 
-Để đánh giá mô hình học được, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
+Để đánh giá mô hình đã học xong, chúng ta sẽ áp dụng nó vào dữ liệu kiểm tra.
 
 ```{.python .input  n=8}
 d2l.predict_ch3(net, test_iter)
@@ -180,6 +182,7 @@ This looks a bit better than our previous result, using simple linear models and
 -->
 
 Kết quả này tốt hơn một chút so với những kết quả trước đây khi các mô hình tuyến tính được sử dụng, và điều này cho thấy chúng ta đang đi đúng hướng.
+
 
 <!--
 ## Summary
@@ -192,8 +195,8 @@ We saw that implementing a simple MLP is easy, even when done manually.
 That said, with a large number of layers, this can still get messy (e.g., naming and keeping track of our model's parameters, etc).
 -->
 
-Chúng ta đã thấy việc triển khai một MLP đơn giản là dễ dàng, ngay cả khi phải làm thủ công.
-Tuy vậy, với một số lượng tầng lớn, cách này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
+Chúng ta đã thấy việc lập trình một MLP đơn giản khá dễ dàng, ngay cả khi phải làm thủ công.
+Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
 
 <!--
 ## Exercises
@@ -210,12 +213,12 @@ Tuy vậy, với một số lượng tầng lớn, cách này có thể sẽ tr�
 6. What is the smartest strategy you can think of for structuring a search over multiple hyperparameters?
 -->
 
-1. Thay đổi giá trị của siêu tham số `num_hiddens` và xem siêu tham số này ảnh hưởng như thế nào tới kết quả của bạn. Giữ các siêu tham số khác không đổi, xác định giá trị tốt nhất của siêu tham số này.
-2. Thử nghiệm thêm vào một tầng ẩn để xem nó ảnh hưởng như thế nào tới kết quả.
-3. Thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả của bạn? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho bạn kết quả tốt nhất?
-4. Kết quả tốt nhất mà bạn có thể nhận được bằng cách tối ưu hóa tất cả các tham số (tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng) cùng nhau?
+1. Thay đổi giá trị của siêu tham số `num_hiddens` và xem siêu tham số này ảnh hưởng như thế nào tới kết quả của bạn. Giữ nguyên các siêu tham số khác, xác định giá trị tốt nhất của siêu tham số này.
+2. Thử thêm vào một tầng ẩn để xem nó ảnh hưởng như thế nào tới kết quả.
+3. Việc thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả của bạn? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho bạn kết quả tốt nhất?
+4. Kết quả tốt nhất mà bạn có được bằng cách tối ưu hóa tất cả các tham số (tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng) cùng nhau là bao nhiêu?
 5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại khó khăn hơn nhiều.
-6. Chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm trên nhiều siêu tham số?
+6. Chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm giá trị cho nhiều siêu tham số là gì?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
