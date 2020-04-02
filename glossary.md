@@ -170,6 +170,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | indicator variable         | biến chỉ định                    | [https://git.io/JvQha](https://git.io/JvQha) |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
+| initializer                | bộ khởi tạo                 |                                              |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại                                |
