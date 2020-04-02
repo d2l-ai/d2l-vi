@@ -555,7 +555,7 @@ Một lưu ý quan trọng khác cần ghi nhớ là kích thước tập dữ l
 Với một mô hình cố định, tập dữ liệu càng ít mẫu thì càng có nhiều khả năng gặp phải tình trạng quá khớp với mức độ nghiêm trọng hơn.
 Khi số lượng dữ liệu tăng lên, lỗi khái quát sẽ có xu hướng giảm.
 Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu không bao giờ là thừa.
-Trong một tác vụ với một *phân phối* dữ liệu cố định, ta có thể quan sát được mối quan hệ giữa độ phức tạp và kích thước tập dữ liệu.
+Trong một tác vụ với một *phân phối* dữ liệu cố định, ta có thể quan sát được mối quan hệ giữa độ phức tạp của mô hình và kích thước tập dữ liệu.
 Khi có nhiều dữ liệu, thử khớp một mô hình phức tạp hơn thường sẽ mang lợi nhiều lợi ích.
 Khi dữ liệu không quá nhiều, mô hình đơn giản sẽ là lựa chọn tốt hơn.
 Đối với nhiều tác vụ, học sâu chỉ tốt hơn các mô hình tuyến tính khi có sẵn hàng ngàn mẫu huấn luyện.
@@ -755,7 +755,7 @@ When used to fit non-linear patterns (like the third-order polynomial function h
 Hãy xem lại việc khớp hàm tuyến tính.
 Sau sự sụt giảm ở những epoch đầu, việc giảm thêm lỗi huấn luyện của mô hình đã trở nên khó khăn.
 Sau khi epoch cuối cùng kết thúc, lỗi huấn luyện vẫn còn cao. 
-Khi được sử dụng để khớp các đối tượng phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
+Khi được sử dụng để khớp các khuôn mẫu phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
 
 ```{.python .input  n=7}
 # Pick the first four dimensions, i.e., 1, x from the polynomial features
