@@ -314,9 +314,9 @@ Trong phần này, để có cái nhìn trực quan, chúng ta sẽ tập trung 
 But overfitting a dataset with millions of examples requires an extremely flexible model.
 -->
 
-1. Số lượng các tham số có thể điều chỉnh. Khi số lượng các tham số có thể điều chỉnh, đôi khi được gọi là *bậc tự do*, là lớn thì mô hình có xu hướng bị quá khớp.
-2. Các giá trị được nhận bởi các tham số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
-3. Số lượng các mẫu huấn luyện. Quá dễ để quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu kể cả khi mô hình đơn giản.
+1. Số lượng các tham số có thể điều chỉnh. Khi số lượng các tham số có thể điều chỉnh (đôi khi được gọi là *bậc tự do*) lớn thì mô hình sẽ dễ bị quá khớp hơn.
+2. Các giá trị được nhận bởi các tham số. Khi các trọng số có miền giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
+3. Số lượng các mẫu huấn luyện. Việc quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu rất dễ dàng, kể cả khi mô hình đơn giản.
 Nhưng quá khớp một tập dữ liệu với vài triệu mẫu đòi hỏi mô hình phải cực kỳ linh hoạt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -369,9 +369,8 @@ If we overfit our training data, there is always the evaluation on test data to 
 But if we overfit the test data, how would we ever know?
 -->
 
-Về nguyên tắc, ta không nên sử dụng tập kiểm tra cho đến khi chọn được tất cả các siêu tham số.
-Nếu sử dụng dữ liệu kiểm tra trong quá trình lựa chọn mô hình, có một rủi ro là ta có thể quá khớp dữ liệu kiểm tra.
-Và rồi rắc rối nghiêm trọng sẽ xảy ra.
+Về nguyên tắc, ta không nên sử dụng tập kiểm tra cho đến khi chọn xong tất cả các siêu tham số.
+Nếu sử dụng dữ liệu kiểm tra trong quá trình lựa chọn mô hình, có một rủi ro là ta có thể quá khớp dữ liệu kiểm tra, và khi đó ta sẽ gặp rắc rối lớn.
 Nếu quá khớp dữ liệu huấn luyện, ta luôn có thể đánh giá mô hình trên tập kiểm tra để đảm bảo mình "trung thực".
 Nhưng nếu quá khớp trên dữ liệu kiểm tra, làm sao chúng ta có thể biết được?
 
@@ -382,7 +381,7 @@ And yet we cannot rely solely on the training data for model selection either be
 -->
 
 Vì vậy, ta không bao giờ nên dựa vào dữ liệu kiểm tra để lựa chọn mô hình.
-Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa chọn mô hình vì ta không thể ước tính lỗi khái quát trên chính dữ liệu mà được sử dụng để huấn luyện mô hình.
+Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa chọn mô hình vì ta không thể ước tính lỗi khái quát trên chính dữ liệu được sử dụng để huấn luyện mô hình.
 
 <!--
 The common practice to address this problem is to split our data three ways, incorporating a *validation set* in addition to the training and test sets.
@@ -398,7 +397,7 @@ We can seldom afford a new test set for each round of experiments.
 -->
 
 Trong các ứng dụng thực tế, bức tranh trở nên mập mờ hơn.
-Mặc dù lý tưởng là khi ta chỉ chạm đến dữ liệu kiểm tra một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi bị loại bỏ chỉ sau một lần sử dụng.
+Mặc dù tốt nhất ta chỉ nên động đến dữ liệu kiểm tra đúng một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi bị vứt bỏ chỉ sau một lần sử dụng.
 Ta hiếm khi có được một tập kiểm tra mới sau mỗi vòng thử nghiệm.
 
 <!--
@@ -410,10 +409,10 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 -->
 
 Kết quả là một thực tiễn âm u trong đó ranh giới giữa dữ liệu kiểm định và kiểm tra mơ hồ theo cách đáng lo ngại.
-Trừ khi có quy định rõ ràng khác, trong các thí nghiệm trong cuốn sách này, ta thật sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thật.
+Trừ khi có quy định rõ ràng thì, trong các thí nghiệm trong cuốn sách này, ta thật sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thật.
 Do đó, độ chính xác được báo cáo trong mỗi thử nghiệm thật ra là độ chính xác kiểm định và không phải là độ chính xác của tập kiểm tra thật.
 Tin tốt là ta không cần quá nhiều dữ liệu trong tập kiểm định.
-Sự bất định trong các ước tính của ta có thể chứng minh là thuộc bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
+Ta có thể chứng minh rằng sự bất định trong các ước tính thuộc bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -506,7 +505,7 @@ Since this is just a linear regression problem, we can use the squared error as 
 -->
 
 để ước tính nhãn $y$.
-Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, khi $x^0=1$ với mọi $x$ thì $w_0$ là hệ số điều chỉnh. 
+Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, vì $x^0=1$ với mọi $x$ nên $w_0$ là hệ số điều chỉnh. 
 Vì đây là bài toán hồi quy tuyến tính, ta có thể sử dụng bình phương sai số làm hàm mất mát.
 
 <!--
@@ -516,10 +515,10 @@ In fact, whenever the data points each have a distinct value of $x$, a polynomia
 We visualize the relationship between polynomial degree and under- vs over-fitting in :numref:`fig_capacity_vs_error`.
 -->
 
-Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số cũng rộng hơn.
-Cố định tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
-Trong thực tế, với mỗi tập dữ liệu có các giá trị $x$ phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện. 
-Mối quan hệ giữa bậc của đa thức với hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
+Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền lựa chọn hàm số cũng rộng hơn.
+Nếu giữ nguyên tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
+Trong thực tế, nếu mọi điểm dữ liệu có các giá trị $x$ riêng biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện. 
+Mối quan hệ giữa bậc của đa thức với hai hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
 
 <!--
 ![Influence of Model Complexity on Underfitting and Overfitting](../img/capacity_vs_error.svg)
