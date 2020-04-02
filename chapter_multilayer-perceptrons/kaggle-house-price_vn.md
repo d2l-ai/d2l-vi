@@ -356,7 +356,7 @@ Finally, via the `values` attribute, we can extract the NumPy format from the Pa
 -->
 
 Bạn có thể thấy sự chuyển đổi này làm tăng số lượng các đặc trưng từ 79 lên 331. 
-Cuối cùng, thông qua thuộc tính `values`, ta có thể trích xuất định dạng NumPy từ khung dữ liệu Pandas và chuyển đổi nó thành biểu diễn `ndarray` gốc từ MXNet dành cho mục đích huấn luyện.
+Cuối cùng, thông qua thuộc tính `values`, ta có thể trích xuất định dạng NumPy từ khung dữ liệu Pandas và chuyển đổi nó thành biểu diễn `ndarray` gốc của MXNet dành cho mục đích huấn luyện.
 
 ```{.python .input  n=9}
 n_train = train_data.shape[0]
