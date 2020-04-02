@@ -332,7 +332,8 @@ say 1000 categories, represented by 1000 images each. Then we deploy the system 
 -->
 
 * Chúng ta xây dựng mô hình phát hiện gương mặt. Nó hoạt động rất tốt trên các bài kiểm tra đánh giá.
-* Không may mắn là mô hình lại sai ở phần dữ liệu kiểm tra -- các ví dụ vi phạm là khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh và không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
+Không may mắn là mô hình lại sai ở phần dữ liệu kiểm tra -- các ví dụ vi phạm là khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh và không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
+* Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn sử dụng nó cho thị trường Anh.
 * Chúng ta huấn luyện một trình phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu có số lượng mẫu biểu diễn bằng nhau, chẳng hạn như có 1000 lớp, mỗi lớp được biểu diễn bởi 1000 ảnh.
 Sau đó chúng ta triển khai hệ thống trên thực tế trong khi phân phối nhãn của các ảnh lại không đồng đều. 
 
