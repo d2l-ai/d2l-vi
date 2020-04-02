@@ -69,7 +69,7 @@ This `download` function returns the name of the downloaded file.
 -->
 
 Hàm `download` dưới đây tải bộ dữ liệu từ đường dẫn ứng với tên `name` cụ thể và lưu trữ nó tại bộ nhớ cục bộ (mặc định tại `../data`).
-Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với tập trong `DATA_HUB`, tệp trong lưu trữ sẽ được sử dụng và việc tải về là không cần thiết. 
+Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với tệp trong `DATA_HUB`, tệp trong lưu trữ sẽ được sử dụng và việc tải về là không cần thiết. 
 Điều này nghĩa là, bạn chỉ cần tải bộ dữ liệu về với một lần kết nối mạng.
 Hàm `download` trả về tên của tệp được tải xuống.
 
@@ -158,9 +158,7 @@ The URL is right here:
 Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả ở :numref:`fig_house_pricing`, bạn có thể tìm thấy bộ dữ liệu (dưới thanh "Data"), nộp kết quả dự đoán và xem thứ hạng của bạn, v.v. 
 Đường dẫn:
 
-<!--
 > https://www.kaggle.com/c/house-prices-advanced-regression-technique 
--->
 
 <!--
 ![House Price Prediction](../img/house_pricing.png)
