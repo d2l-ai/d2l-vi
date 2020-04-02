@@ -20,12 +20,12 @@ When we worked through softmax regression, a single *layer* was itself *the mode
 However, even when we subsequently introduced multilayer perceptrons, we could still think of the model as retaining this same basic structure.
 -->
 
-Khi lần đầu giới thiệu các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
-Lưu ý rằng một nơ-ron đơn lẻ (i) có một số đầu vào; (ii) tạo ra một đầu ra tương ứng (*vô hướng*); và (iii) có một tập hợp các tham số liên quan có thể được cập nhật để tối ưu một số hàm mục tiêu mà ta quan tâm.
+Khi lần đầu giới thiệu về các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
+Nhớ rằng một nơ-ron đơn lẻ (i) nhận một số đầu vào; (ii) tạo ra một đầu ra tương ứng (*vô hướng*); và (iii) có một tập hợp các tham số liên quan có thể được cập nhật để tối ưu một số hàm mục tiêu mà ta quan tâm.
 Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng vector hóa để mô tả toàn bộ một *tầng* các nơ-ron.
-Giống như các nơ-ron riêng lẻ, các tầng (i) nhận một số đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập hợp các tham số có thể điều chỉnh.
+Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một số đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập hợp các tham số có thể điều chỉnh.
 Trong hồi quy softmax, một *tầng* duy nhất chính là *mô hình*.
-Thậm chí sau đó, ngay cả khi ta đã giới thiệu các perceptron đa tầng, ta vẫn có thể nghĩ về mô hình với cấu trúc cơ bản này.
+Thậm chí sau đó, khi đã giới thiệu perceptron đa tầng, ta vẫn có thể nghĩ về mô hình với cấu trúc cơ bản này.
 
 <!--
 Interestingly, for multilayer perceptrons, both the *entire model* and its *constituent layers* share this structure.
@@ -34,7 +34,7 @@ Likewise, each individual layer ingests inputs (supplied by the previous layer) 
 and possesses a set of tunable parameters that are updated according to the signal that flows backwards from the subsequent layer.
 -->
 
-Thú vị thay, đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
+Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
 (Toàn bộ) mô hình nhận vào các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và có các tham số (các tham số được tập hợp từ tất cả các tầng cấu thành).
 Tương tự, mỗi tầng riêng lẻ nhận vào các đầu vào (được cung cấp bởi tầng trước đó) tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập hợp các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
 
