@@ -650,8 +650,8 @@ The other cars are likely to respond to the autonomous car's driving style in no
 e.g., trying to avoid it, trying to cause an accident, trying to cooperate with it, etc.
 -->
 
-* **Đạo tặc** Đây là một trường hợp đặc biệt của bài toán trên.
-Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán *đạo tặc* ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
+* **Máy đánh bạc** Đây là một *trường hợp đặc biệt* của bài toán trên.
+Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán máy đánh bạc ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
 Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
 Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thường được xem (một cách nhầm lẫn) như là một môi trường học tập khác biệt.
 * **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
