@@ -253,7 +253,7 @@ Many of the techniques in deep learning are heuristics and tricks aimed at guard
 Khi huấn luyện mô hình, ta đang cố gắng tìm kiếm một hàm số khớp với dữ liệu huấn luyện nhất có thể.
 Nếu hàm số này quá linh hoạt để có thể khớp với các khuôn mẫu giả cũng dễ như với các xu hướng thật trong dữ liệu, thì nó có thể *quá khớp* để có thể tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
 Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là kiểm soát được).
-Rất nhiều kỹ thuật trong học sâu là các thực nghiệm và thủ thuật để chống lại vấn đề quá khớp.
+Rất nhiều kỹ thuật trong học sâu là các phương pháp dựa trên thực nghiệm và thủ thuật để chống lại vấn đề quá khớp.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -276,12 +276,12 @@ Often with neural networks, we think of a model that takes more training steps a
 -->
 
 Khi có các mô hình đơn giản và dữ liệu dồi dào, ta kỳ vọng lỗi khái quát sẽ giống với lỗi huấn luyện.
-Khi làm việc với nhiều mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
-Để chỉ ra chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
-Rất nhiều yếu tố ảnh hưởng đến việc một mô hình có khái quát hóa tốt hay không. 
+Khi làm việc với mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
+Việc chỉ ra chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
+Có rất nhiều yếu tố ảnh hưởng đến việc một mô hình có khái quát hóa tốt hay không. 
 Ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
-Một mô hình mà các tham số có phạm vi giá trị rộng hơn thì được xem là phức tạp hơn.
-Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có càng nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
+Một mô hình mà các tham số có miền giá trị rộng hơn thì được xem là phức tạp hơn.
+Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
 
 <!--
 It can be difficult to compare the complexity among members of substantially different model classes (say a decision tree versus a neural network).
@@ -294,10 +294,9 @@ This is important since all statistical estimation is [post hoc](https://en.wiki
 For now, we will put the philosophy aside and stick to more tangible issues.
 -->
 
-Rất khó để so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác biệt rõ rệt (ví như cây quyết định so với mạng nơ-ron).
+Rất khó để có thể so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác hẳn nhau (ví như cây quyết định so với mạng nơ-ron).
 Hiện tại, có một quy tắc đơn giản khá hữu ích sau:
-Một mô hình có thể giải thích các sự kiện bất kỳ được các nhà thống kê xem là phức tạp,
-trong khi một mô hình có năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì có lẽ đạt gần đến sự thật hơn.
+Một mô hình có thể giải thích các sự kiện bất kỳ được các nhà thống kê xem là phức tạp, trong khi một mô hình có năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì có lẽ đạt gần đến sự thật hơn.
 Trong triết học, điều này gần với tiêu chí của Popper về [tính giả mạo](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
 Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là ta đánh giá sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện liên quan.
 Từ bây giờ, ta sẽ đặt triết lý qua một bên và tập trung hơn vào các vấn đề hữu hình.
