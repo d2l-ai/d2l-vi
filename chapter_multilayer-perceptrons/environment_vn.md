@@ -5,7 +5,7 @@
 # Considering the Environment
 -->
 
-# Bàn kỹ về Môi trường
+# Cân nhắc tới Môi trường
 
 <!--
 In the previous chapters, we worked through a number of hands-on applications of machine learning, fitting models to a variety of datasets. 
