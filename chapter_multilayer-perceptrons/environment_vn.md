@@ -297,7 +297,7 @@ Unfortunately, all it had learned was to distinguish trees with shadows from tre
 #### Nonstationary distributions
 -->
 
-#### Phân phối không dừng
+#### Phân phối không ổn định
 
 <!--
 A much more subtle situation arises when the distribution changes slowly and the model is not updated adequately.
