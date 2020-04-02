@@ -57,7 +57,7 @@ This modularity enables us to separate matterns concerning the model architectur
 -->
 
 Vòng lặp huấn luyện ở đây giống *hệt* như lúc ta lập trình hồi quy softmax.
-Lập trình hướng mô-đun như vậy cho phép ta tách các chi tiết liên quan đến kiến trúc của mô hình ra khỏi các mối bận tâm chính.
+Lập trình hướng mô-đun như vậy cho phép ta tách các chi tiết liên quan đến kiến trúc của mô hình ra khỏi các mối bận tâm khác.
 
 ```{.python .input  n=6}
 batch_size, num_epochs = 256, 10
