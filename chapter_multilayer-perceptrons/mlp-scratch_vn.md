@@ -127,7 +127,6 @@ def net(X):
 
 ## Hàm mất mát
 
-
 <!--
 To ensure numerical stability (and because we already implemented the softmax function from scratch (:numref:`sec_softmax_scratch`), 
 we leverage Gluon's integrated function for calculating the softmax and cross-entropy loss.
@@ -181,8 +180,7 @@ d2l.predict_ch3(net, test_iter)
 This looks a bit better than our previous result, using simple linear models and gives us some signal that we are on the right path.
 -->
 
-Kết quả này tốt hơn một chút so với kết quả trước đây của các mô hình tuyến tính, và điều này cho thấy chúng ta đang đi đúng hướng.
-
+Kết quả này tốt hơn một chút so với kết quả trước đây của các mô hình tuyến tính và điều này cho thấy chúng ta đang đi đúng hướng.
 
 <!--
 ## Summary
@@ -196,7 +194,7 @@ That said, with a large number of layers, this can still get messy (e.g., naming
 -->
 
 Chúng ta đã thấy việc lập trình một MLP đơn giản khá là dễ dàng, ngay cả khi phải làm thủ công.
-Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ trở nên rắc rối (ví dụ, đặt tên và theo dõi các tham số của mô hình, v.v.).
+Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ trở nên rắc rối (ví dụ như đặt tên và theo dõi các tham số của mô hình, v.v.).
 
 <!--
 ## Exercises
@@ -217,7 +215,7 @@ Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ tr
 2. Thử thêm vào một tầng ẩn để xem nó ảnh hưởng như thế nào tới kết quả.
 3. Việc thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả của bạn? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho bạn kết quả tốt nhất?
 4. Kết quả tốt nhất mà bạn có được bằng cách tối ưu hóa tất cả các tham số (tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng) cùng nhau là bao nhiêu?
-5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại khó khăn hơn nhiều.
+5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại gây khó khăn hơn nhiều.
 6. Chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm giá trị cho nhiều siêu tham số là gì?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
