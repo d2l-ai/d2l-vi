@@ -554,7 +554,7 @@ In part, the current success of deep learning owes to the current abundance of m
 Một lưu ý quan trọng khác cần ghi nhớ là kích thước tập dữ liệu.
 Với một mô hình cố định, tập dữ liệu càng ít mẫu thì càng có nhiều khả năng gặp phải tình trạng quá khớp với mức độ nghiêm trọng hơn.
 Khi số lượng dữ liệu tăng lên, lỗi khái quát sẽ có xu hướng giảm.
-Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu thì không bao giờ là thừa.
+Hơn nữa, trong hầu hết các trường hợp, nhiều dữ liệu không bao giờ là thừa.
 Trong một tác vụ với một *phân phối* dữ liệu cố định, ta có thể quan sát được mối quan hệ giữa độ phức tạp và kích thước tập dữ liệu.
 Khi có nhiều dữ liệu, thử khớp một mô hình phức tạp hơn thường sẽ mang lợi nhiều lợi ích.
 Khi dữ liệu không quá nhiều, mô hình đơn giản sẽ là lựa chọn tốt hơn.
@@ -648,7 +648,7 @@ The value 1 is technically a feature, namely the constant feature corresponding 
 -->
 
 Hãy xét hai mẫu đầu tiên trong tập dữ liệu được tạo.
-Về mặt kỹ thuật giá trị 1 là một đặc trưng, cụ thể là đặc trưng không đổi tương ứng với độ chệch.
+Về mặt kỹ thuật giá trị 1 là một đặc trưng, cụ thể là đặc trưng không đổi tương ứng với hệ số điều chỉnh.
 
 ```{.python .input  n=3}
 features[:2], poly_features[:2], labels[:2]
@@ -725,7 +725,7 @@ The trained model parameters are also close to the true values $w = [5, 1.2, -3.
 -->
 
 Ta sẽ bắt đầu với việc sử dụng hàm đa thức bậc ba, cùng bậc với hàm tạo dữ liệu.
-Kết quả cho thấy cả lỗi huấn luyện và lỗi kiểm tra của mô hình đều thấp.
+Kết quả cho thấy cả lỗi huấn luyện và lỗi kiểm tra của mô hình đều thấp. 
 Các tham số của mô hình được huấn luyện cũng gần với giá trị thật $w = [5, 1.2, -3.4, 5.6]$.
 
 ```{.python .input  n=6}
@@ -754,7 +754,7 @@ When used to fit non-linear patterns (like the third-order polynomial function h
 
 Hãy xem lại việc khớp hàm tuyến tính.
 Sau sự sụt giảm ở những epoch đầu, việc giảm thêm lỗi huấn luyện của mô hình đã trở nên khó khăn.
-Sau khi epoch cuối cùng kết thúc, lỗi huấn luyện vẫn còn cao.
+Sau khi epoch cuối cùng kết thúc, lỗi huấn luyện vẫn còn cao. 
 Khi được sử dụng để khớp các đối tượng phi tuyến (như hàm đa thức bậc ba trong trường hợp này), các mô hình tuyến tính dễ bị dưới khớp.
 
 ```{.python .input  n=7}
@@ -799,7 +799,7 @@ train(poly_features[1:n_subset, 0:n_degree],
 In later chapters, we will continue to discuss overfitting problems and methods for dealing with them, such as weight decay and dropout.
 -->
 
-Ở các chương sau, chúng ta sẽ tiếp tục thảo luận về các vấn đề quá khớp và các phương pháp đối phó, ví dụ như phân rã trọng số hay dropout.
+Ở các chương sau, chúng ta sẽ tiếp tục thảo luận về các vấn đề quá khớp và các phương pháp đối phó, ví dụ như suy giảm trọng số hay dropout. 
 
 
 <!--
@@ -818,7 +818,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 * Bởi vì lỗi khái quát không thể được ước lượng dựa trên lỗi huấn luyện, nên việc chỉ đơn thuần tối thiểu hóa lỗi huấn luyện sẽ không nhất thiết đồng nghĩa với việc tối thiểu hóa lỗi khái quát.
 Các mô hình học máy cần phải được bảo vệ khỏi việc quá khớp để giảm thiểu lỗi khái quát.
 * Một tập kiểm định có thể được sử dụng cho việc lựa chọn mô hình (với điều kiện là tập này không được sử dụng quá nhiều).
-* Dưới khớp có nghĩa là mô hình không có khả năng giảm lỗi huấn luyện, còn quá khớp là kết quả của việc lỗi huấn luyện của mô hình thấp hơn nhiều so với lỗi kiểm tra.
+* Dưới khớp có nghĩa là mô hình không có khả năng giảm lỗi huấn luyện, còn quá khớp là kết quả của việc lỗi huấn luyện của mô hình thấp hơn nhiều so với lỗi kiểm tra. 
 * Chúng ta nên chọn một mô hình phức tạp vừa phải và tránh việc sử dụng tập huấn luyện không có đủ số số mẫu.
 
 
@@ -875,41 +875,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-
-<!-- Phần 1 -->
 * Trần Yến Thy
-* Đoàn Võ Duy Thanh
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-
-<!-- Phần 2 -->
-* Trần Yến Thy 
-
-<!-- Phần 3 -->
 * Nguyễn Văn Tâm
 * Vũ Hữu Tiệp
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Vũ Hữu Tiệp
 * Phạm Hồng Vinh
-
-<!-- Phần 6 -->
 * Bùi Nhật Quân
-* Phạm Minh Đức
-
-<!-- Phần 7 -->
 * Lý Phi Long
-
-<!-- Phần 8 -->
-* Trần Yến Thy
-* Phạm Minh Đức
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 9 -->
 * Nguyễn Duy Du
-* Phạm Minh Đức
