@@ -15,7 +15,7 @@ Too often, machine learning developers in possession of data rush to develop mod
 
 Trong các chương trước ta đã thực hành một số ứng dụng của học máy, khớp mô hình với nhiều loại tập dữ liệu.
 Tuy nhiên, ta chưa bao giờ chững lại để nhìn nhận về dữ liệu này đến từ đâu, hoặc kế hoạch cuối cùng ta sẽ làm gì với đầu ra từ các mô hình.
-Thông thường, khi các nhà phát triển học máy có được dữ liệu họ lại đâm đầu vào triển khai các mô hình mà không dừng lại để xem xét các vấn đề cơ bản này.
+Đa phần là khi có được dữ liệu, các lập trình viên học máy thường đâm đầu vào triển khai các mô hình mà không dừng lại để xem xét các vấn đề cơ bản này.
 
 <!--
 Many failed machine learning deployments can be traced back to this pattern. 
@@ -26,7 +26,7 @@ finding that an applicant's choice of footware was associated with the risk of d
 We might be inclined to thereafter grant loans to all applicants wearing Oxfords and to deny all applicants wearing sneakers.
 -->
 
-Nhiều triển khai học máy bị thất bại có thể bắt nguồn từ dạng này.
+Nhiều triển khai học máy thất bại có thể bắt nguồn từ dạng này.
 Đôi khi các mô hình có độ chính xác rất tốt khi thực hiện trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế khi phân phối dữ liệu thay đổi đột ngột.
 Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho việc phân phối dữ liệu.
 Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng thanh toán hoặc sẽ phá sản khi được cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
@@ -40,7 +40,7 @@ Take a minute to digest this because similar issues abound in many applications 
 by introducing our model-based decisions to the environment, we might break the model.
 -->
 
-Trong trường hợp này, ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng mẫu đến việc ra quyết định và ta không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả cho kết quả.
+Trong trường hợp này, ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng khuôn mẫu đến ra quyết định và việc không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả nghiêm trọng.
 Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên giày dép, khách hàng sẽ để ý và thay đổi hành vi của họ.
 Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây nhưng lại không có khớp bất kỳ sự cải thiện nào về chỉ số tín dụng.
 Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc đưa mô hình ra quyết định vào một môi trường, ta có thể làm hỏng chính môi trường đó.
