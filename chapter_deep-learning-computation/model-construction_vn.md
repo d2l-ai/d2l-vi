@@ -127,14 +127,15 @@ This is actually just shorthand for `net.forward(X)`, a slick Python trick achie
 ## A Custom Block
 -->
 
-## *dịch tiêu đề phía trên*
+## Một Block Tùy chỉnh
 
 <!--
 Perhaps the easiest way to develop intuition about how `nn.Block` works is to implement one ourselves.
 Before we implement our own custom `Block`, we briefly summarize the basic functionality that each `Block` must provide:
 -->
 
-*dịch đoạn phía trên*
+Có lẽ điều dễ nhất để xây dựng trực giác về cách `nn.Block` hoạt động như thế nào đó là ta hãy tự lập trình. 
+Trước khi ta xây dựng `Block` tùy chỉnh của chính mình, ta hãy briefly tổng kết các chức năng cơ bản mà một `Block` phải có:
 
 <!--
 1. Ingest input data as arguments to its `forward` method.
@@ -147,7 +148,14 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-*dịch đoạn phía trên*
+1. Tiêu hóa dữ liệu nhập vào như các biến đối với phương thức `forward`.
+2. Tạo ra một output bằng cách cho `forward` trả giá trị về.
+Lưu ý rằng output có thể có một shape khác so với input.
+Ví dụ, tầng Dense đầu tiên trong mô hình phía trên của ta tiêu hóa một input các chiều arbitrary nhưng trả về đầu ra của chiều 256.
+3. Tính toán gradient của đầu ra của chúng đối với đầu vào của chúng, điều mà có thể đạt tới được thông qua phương thức `backward`.
+Thông thường điều này tự động xảy ra.
+4. Lưu trữ và cung cấp access đến các parameters kia đủ cần thiết để tiến hành tính toán `forward`.
+5. Khởi tạo các thông số này khi cần.
 
 <!--
 In the following snippet, we code up a Block from scratch corresponding to a multilayer perceptron with one hidden layer with 256 hidden nodes, and a 10-dimensional output layer.
@@ -155,7 +163,9 @@ Note that the `MLP` class below inherits the `Block` class.
 We will rely heavily on the parent class's methods, supplying only our own `__init__` and `forward` methods.
 -->
 
-*dịch đoạn phía trên*
+Trong snippet dưới đây, chúng ta lập trình một Block từ đầu dựa vào một perceptron đa tầng với một tầng ẩn với 256 nút ẩn, và một tầng đầu ra 10 chiều.
+Lưu ý rằng lớp `MLP` dưới đây thừa hưởng từ lớp `Block`.
+Ta sẽ dựa nhiều trên phương thức của lớp cha, cung cấp duy nhất phương thức `__init__` và `forward`.
 
 ```{.python .input  n=34}
 from mxnet.gluon import nn
@@ -186,7 +196,11 @@ To see why this is reasonable, imagine instantiating two MLPs, `net1` and `net2`
 Naturally, we would expect them them to represent two different learned models.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta sẽ tập trung vào phương thức `forward`.
+Lưu ý rằng nó lấy `x` làm giá trị đầu vào, tính toán biểu diễn ẩn (`self.hidden(x)`), và cho giá trị đầu ra các logits của nó (`self.output( ... )`).
+Trong việc lập trình MLP này, cả hai tầng đều là biến thực thể.
+Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo ra hai MLP, `net1` và `net2`, và huấn luyện chúng với các dữ liệu khác nhau.
+Theo cách tự nhiên, ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
 
 <!--
 We instantiate the MLP's layers in the `__init__` method (the constructor) and subsequently invoke these layers on each call to the `forward` method.
@@ -198,7 +212,7 @@ Gluon will generate these methods automatically.
 Let's try this out:
 -->
 
-*dịch đoạn phía trên*
+Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng trong mỗi lần call đến phương thức `forward`.
 
 ```{.python .input  n=35}
 net = MLP()
@@ -503,7 +517,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 4 -->
 *
