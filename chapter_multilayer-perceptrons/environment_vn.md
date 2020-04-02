@@ -344,7 +344,7 @@ The remainder of this section grows considerably more technical.
 The impatient reader could continue on to the next section as this material is not prerequisite to subsequent concepts.
 -->
 
-Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và thử nghiệm $p(\mathbf{x}, y)$ là khác nhau.
+Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và kiểm tra $p(\mathbf{x}, y)$ là khác nhau.
 Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù phân phối của hiệp biến, nhãn hay khái niệm đều dịch chuyển.
 Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng nhiều chiến lược một cách có nguyên tắc để đối phó với sự dịch chuyển này.
 Phần còn lại của mục này sẽ tập trung nhiều hơn đáng kể về mặt kỹ thuật.
