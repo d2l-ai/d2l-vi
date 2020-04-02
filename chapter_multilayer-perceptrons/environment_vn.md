@@ -26,7 +26,7 @@ finding that an applicant's choice of footware was associated with the risk of d
 We might be inclined to thereafter grant loans to all applicants wearing Oxfords and to deny all applicants wearing sneakers.
 -->
 
-Nhiều triển khai học máy thất bại có thể bắt nguồn từ dạng này.
+Nhiều triển khai học máy thất bại có thể bắt nguồn từ khuôn mẫu này.
 Đôi khi các mô hình có độ chính xác rất tốt khi thực hiện trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế khi phân phối dữ liệu thay đổi đột ngột.
 Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho việc phân phối dữ liệu.
 Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng thanh toán hoặc sẽ phá sản khi được cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
@@ -43,7 +43,7 @@ by introducing our model-based decisions to the environment, we might break the 
 Trong trường hợp này, ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng khuôn mẫu đến ra quyết định và việc không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả nghiêm trọng.
 Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên giày dép, khách hàng sẽ để ý và thay đổi hành vi của họ.
 Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây nhưng lại không có khớp bất kỳ sự cải thiện nào về chỉ số tín dụng.
-Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc đưa mô hình ra quyết định vào một môi trường, ta có thể làm hỏng chính môi trường đó.
+Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc đưa mô hình ra quyết định vào một môi trường, ta có thể làm hỏng chính mô hình đó.
 
 <!--
 While we cannot possible give these topics a complete treatment in one section, we aim here to expose some common concerns, 
@@ -53,8 +53,8 @@ and others require that step outside the realm of statistical prediction altoget
 grapple with difficult philosophical questions concerning the ethical application of algorithms.
 -->
 
-Mặc dù ta không thể đưa ra một giải pháp có thể giải quyết triệt để cho các vấn đề này trong một chương, nhưng ta ở đây nhằm đưa ra các mối bận tâm chung và kích thích tư duy phản biện để sớm phát hiện ra các tình huống này từ đó giảm thiểu thiệt hại và có trách nhiệm hơn trong việc sử dụng học máy.
-Một số giải pháp khá đơn giản (đòi hỏi dữ liệu "chuẩn") một vài giải pháp khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và các giải pháp khác hoàn toàn nằm ngoài lĩnh vực dự đoán thống kê và cần ta vật lộn với các câu hỏi triết học đạo đức khó khăn trong việc ứng dụng thuật toán.
+Mặc dù ta không thể đưa ra một giải pháp có thể giải quyết triệt để cho các vấn đề này trong một mục, nhưng mục đích của chúng tôi là nhằm đưa ra các mối bận tâm chung và kích thích tư duy phản biện để sớm phát hiện ra các tình huống này, từ đó giảm thiểu thiệt hại và có trách nhiệm hơn trong việc sử dụng học máy.
+Một số giải pháp khá đơn giản (thu thập dữ liệu "phù hợp"), một vài giải pháp khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và các giải pháp khác hoàn toàn nằm ngoài lĩnh vực dự đoán thống kê và cần ta vật lộn với các câu hỏi triết học đạo đức khó khăn trong việc ứng dụng thuật toán.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
