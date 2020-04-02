@@ -5,7 +5,7 @@
 # Parameter Management
 -->
 
-# *dịch tiêu đề phía trên*
+# Quản lý tham số
 
 <!--
 The ultimate goal of training deep networks is to find good parameter values for a given architecture.
@@ -14,7 +14,10 @@ However, very few models are entirely standard and most scientists want to build
 This section shows how to manipulate parameters. In particular we will cover the following aspects:
 -->
 
-*dịch đoạn phía trên*
+Mục tiêu cuối cùng của việc huấn luyện mạng học sâu là tìm các giá trị tham số tốt cho một kiến trúc có sẵn.
+Thông thường, lớp `nn.Sequential` là một công cụ tối ưu cho việc huấn luyện.
+Tuy nhiên, rất ít mô hình có cấu trúc thông thường hoàn toàn, các nhà khoa học luôn muốn xây dựng các kiến trúc mạng mới.
+Phần này trình bày cách thức điều chỉnh tham số. Cụ thể, các khía cạnh sau sẽ được đề cập:
 
 <!--
 * Accessing parameters for debugging, diagnostics, to visualize them or to save them is the first step to understanding how to work with custom models.
@@ -22,13 +25,15 @@ This section shows how to manipulate parameters. In particular we will cover the
 * Last, we show how this knowledge can be put to good use by building networks that share some parameters.
 -->
 
-*dịch đoạn phía trên*
+* Truy cập các tham số cho việc tìm lỗi, gỡ lỗi, để lưu lại hoặc biểu diễn trực quan là bước đầu tiên để hiểu cách làm việc với các mô hình được tuỳ chỉnh.
+* Thứ hai, chúng ta muốn gán giá trị cụ thể cho chúng, ví dụ cho việc khởi tạo. Cấu trúc của các bộ khởi tạo tham số cũng sẽ được thảo luận.
+* Cuối cùng, chúng ta sẽ trình bày cách áp dụng những kiến thức này để xây dựng các mạng có chung một vài tham số.
 
 <!--
 As always, we start from our trusty Multilayer Perceptron with a hidden layer. This will serve as our choice for demonstrating the various features.
 -->
 
-*dịch đoạn phía trên*
+Như thường lệ, chúng ta bắt đầu từ Multilayer Perceptron với một tầng ẩn, để minh hoạ số lượng lớn các đặc trưng.
 
 ```{.python .input  n=1}
 from mxnet import init, np, npx
@@ -48,14 +53,15 @@ net(x)  # Forward computation
 ## Parameter Access
 -->
 
-## *dịch tiêu đề phía trên*
+## Truy nhập tham số
 
 <!--
 In the case of a Sequential class we can access the parameters with ease, simply by indexing each of the layers in the network.
 The `params` variable then contains the required data. Let's try this out in practice by inspecting the parameters of the first layer.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp mạng Sequential chúng ta có thể dễ dàng truy cập các tham số bằng chỉ số của các tầng trong mạng.
+Biến `params` khi đó chứa dữ liệu các tham số. Ví dụ sau biểu diễn cách truy nhập các tham số của tầng thứ nhất.
 
 
 ```{.python .input  n=2}
@@ -71,7 +77,10 @@ In particular the names of the parameters are very useful since they allow us to
 The second layer is structured accordingly.
 -->
 
-*dịch đoạn phía trên*
+Kết quả đoạn mã cho biết nhiều điều.
+Thứ nhất, tầng này có 2 tập tham số: `dense0_weight` và `dense0_bias`, như chúng ta kỳ vọng.
+Chúng đều ở dạng số thực dấu phẩy động độ chính xác đơn và có kích thước cần thiết như kỳ vọng ở tầng đầu tiên, với số chiều của đầu vào là 20 và số chiều của đầu ra là 256.
+Tên của các tham số rất hữu ích vì chúng cho phép xác định các tham số *một cách duy nhất* ngay cả trong mạng với hàng trăm tầng với cấu trúc phức tạp.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -475,7 +484,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
