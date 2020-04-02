@@ -48,7 +48,7 @@ Typically, we choose layer widths in powers of $2$ which tends to be computation
 
 Nhắc lại rằng Fashion-MNIST gồm có $10$ lớp, mỗi ảnh là một lưới có $28 \times 28 = 784$ điểm ảnh (đen và trắng).
 Chúng ta sẽ lại (tạm thời) bỏ qua mối liên hệ về mặt không gian giữa các điểm ảnh, khi đó ta có thể coi nó đơn giản như một tập dữ liệu phân loại với $784$ đặc trưng đầu vào và $10$ lớp.
-Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉcó một tầng ẩn với $256$ nút ẩn.
+Để bắt đầu, chúng ta sẽ lập trình một mạng MLP chỉ có một tầng ẩn với $256$ nút ẩn.
 Lưu ý rằng ta có thể coi cả hai đại lượng này là các *siêu tham số* và ta nên thiết lập giá trị cho chúng dựa vào chất lượng trên tập kiểm định. 
 Thông thường, chúng ta sẽ chọn độ rộng của các tầng là các lũy thừa bậc $2$ để giúp việc tính toán hiệu quả hơn do cách mà bộ nhớ được cấp phát và địa chỉ hóa ở phần cứng.
 
