@@ -211,12 +211,12 @@ Tuy vậy, với một số lượng tầng lớn, việc này có thể sẽ tr
 6. What is the smartest strategy you can think of for structuring a search over multiple hyperparameters?
 -->
 
-1. Thay đổi giá trị của siêu tham số `num_hiddens` và xem siêu tham số này ảnh hưởng như thế nào tới kết quả của bạn. Giữ nguyên các siêu tham số khác, xác định giá trị tốt nhất của siêu tham số này.
-2. Thử thêm vào một tầng ẩn để xem nó ảnh hưởng như thế nào tới kết quả.
-3. Việc thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả của bạn? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho bạn kết quả tốt nhất?
-4. Kết quả tốt nhất mà bạn có được bằng cách tối ưu hóa tất cả các tham số (tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng) cùng nhau là bao nhiêu?
-5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại gây khó khăn hơn nhiều.
-6. Chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm giá trị cho nhiều siêu tham số là gì?
+1. Thay đổi giá trị của siêu tham số `num_hiddens` và quan sát xem nó ảnh hưởng như thế nào tới kết quả. Giữ nguyên các siêu tham số khác, xác định giá trị tốt nhất của siêu tham số này.
+2. Thử thêm vào một tầng ẩn và quan sát xem nó ảnh hưởng như thế nào tới kết quả.
+3. Việc thay đổi tốc độ học ảnh hưởng như thế nào tới kết quả? Giữ nguyên kiến trúc mô hình và các siêu tham số khác (bao gồm cả số lượng epoch), tốc độ học nào cho kết quả tốt nhất?
+4. Kết quả tốt nhất mà bạn đạt được khi tối ưu hóa tất cả các tham số, gồm tốc độ học, số lượng vòng lặp, số lượng tầng ẩn, số lượng các nút ẩn của mỗi tầng là bao nhiêu?
+5. Giải thích tại sao việc phải xử lý nhiều siêu tham số lại gây ra nhiều khó khăn hơn.
+6. Đâu là chiến lược thông minh nhất bạn có thể nghĩ ra để tìm kiếm giá trị cho nhiều siêu tham số?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
