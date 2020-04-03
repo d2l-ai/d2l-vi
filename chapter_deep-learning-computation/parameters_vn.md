@@ -5,7 +5,7 @@
 # Parameter Management
 -->
 
-# Quản lý tham số
+# Quản lý Tham số
 
 <!--
 The ultimate goal of training deep networks is to find good parameter values for a given architecture.
