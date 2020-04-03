@@ -79,9 +79,9 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 3. Try different schemes for initializing the weights. What method works best?
 -->
 
-1. Bằng việc thử thêm số lượng khác nhau của tầng ẩn, bạn hãy xem thiết lập nào cho kết quả tốt nhất (giữ nguyên giá trị các tham số khác và siêu tham số)?
+1. Bằng việc thử thêm số lượng các tầng ẩn khác nhau, bạn hãy xem thiết lập nào cho kết quả tốt nhất (giữ nguyên giá trị các tham số và siêu tham số khác)?
 2. Bằng việc thử thay đổi các hàm kích hoạt khác nhau, bạn hãy chỉ ra hàm nào mang lại kết quả tốt nhất?
-3. Bạn hãy thử các cách khác nhau để khởi tạo trọng số. Theo bạn, phương pháp nào là tốt nhất?
+3. Bạn hãy thử các cách khác nhau để khởi tạo trọng số. Phương pháp nào là tốt nhất?
 
 <!-- ===================== Kết thúc phần dịch ===================== -->
 
