@@ -28,7 +28,7 @@ We might be inclined to thereafter grant loans to all applicants wearing Oxfords
 
 Nhiều triển khai học máy thất bại có thể bắt nguồn từ khuôn mẫu này.
 Đôi khi các mô hình có độ chính xác rất tốt khi thực hiện trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế khi phân phối dữ liệu thay đổi đột ngột.
-Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho việc phân phối dữ liệu.
+Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho phân phối dữ liệu.
 Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng thanh toán hoặc sẽ phá sản khi được cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
 Từ đó, ta có thể sẽ có xu hướng chỉ cấp các khoản vay cho các ứng viên mang giày tây và sẽ từ chối cho vay đối với những trường hợp mang giày thể thao. 
 
