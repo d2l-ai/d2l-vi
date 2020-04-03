@@ -60,7 +60,7 @@ In the case of a Sequential class we can access the parameters with ease, simply
 The `params` variable then contains the required data. Let's try this out in practice by inspecting the parameters of the first layer.
 -->
 
-Trong trường hợp mạng Sequential chúng ta có thể dễ dàng truy cập các tham số bằng chỉ số của các tầng trong mạng.
+Trong trường hợp lớp Tuần tự (*Sequential*) chúng ta có thể dễ dàng truy cập các tham số bằng chỉ số của các tầng trong mạng.
 Biến `params` khi đó chứa dữ liệu các tham số. Ví dụ sau biểu diễn cách truy nhập các tham số của tầng thứ nhất.
 
 
