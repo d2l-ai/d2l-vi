@@ -624,14 +624,13 @@ Nói cách khác, chúng ta sử dụng trọng số đang có và chỉ thực 
 ## A Taxonomy of Learning Problems
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân loại các Bài toán Học máy
 
 <!--
 Armed with knowledge about how to deal with changes in $p(x)$ and in $P(y \mid x)$, we can now consider some other aspects of machine learning problems formulation.
 -->
 
-*dịch đoạn phía trên*
-
+Ta đã được trang bị kiến thức về cách xử lý các thay đổi trong $p(x)$ và $P(y \mid x)$, giờ đây ta có thể xem xét một số khía cạnh khác của việc xây dựng các bài toán học máy.
 
 <!--
 * **Batch Learning.** Here we have access to training data and labels $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, which we use to train a network $f(x, w)$. 
@@ -648,7 +647,17 @@ E.g. we need to predict tomorrow's stock price, this allows us to trade based on
 In other words, we have the following cycle where we are continuously improving our model given new observations.
 -->
 
-*dịch đoạn phía trên*
+* **Học theo batch.** Ở đây ta có dữ liệu và nhãn huấn luyện $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
+Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy từ cùng một phân phối.
+Đây là giả thuyết mặc định cho bất kỳ bài toán nào mà ta bàn ở đây.
+Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
+Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào.
+Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi).
+* **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$
+Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
+Nhiều bài toán thực tế rơi vào loại này.
+Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên dự đoán đó và vào cuối ngày ta sẽ biết được liệu nó có mang lại lợi nhuận hay không.
+Nói cách khác, ta có chu trình sau, trong đó mô hình dần được cải thiện với những quan sát mới.
 
 $$
 \mathrm{model} ~ f_t \longrightarrow
@@ -680,7 +689,19 @@ The other cars are likely to respond to the autonomous car's driving style in no
 e.g., trying to avoid it, trying to cause an accident, trying to cooperate with it, etc.
 -->
 
-*dịch đoạn phía trên*
+* **Máy đánh bạc** Đây là một *trường hợp đặc biệt* của bài toán trên.
+Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán máy đánh bạc ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
+Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
+Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thường được xem (một cách nhầm lẫn) như là một môi trường học tập khác biệt.
+* **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
+Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
+Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
+Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
+Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất).
+Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai).
+* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
+Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
+Những chiếc xe khác sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
 One key distinction between the different situations above is that the same strategy that might have worked throughout in the case of a stationary environment, 
@@ -692,7 +713,12 @@ If we know that the environment might change instantaneously, but only very infr
 These types of knowledge are crucial for the aspiring data scientist to deal with concept shift, i.e., when the problem that he is trying to solve changes over time.
 -->
 
-*dịch đoạn phía trên*
+Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là một chiến lược hoạt động được xuyên suốt trong trường hợp môi trường cố định, có thể lại không hoạt động xuyên suốt được khi môi trường có khả năng thích nghi.
+Chẳng hạn, nếu một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường, khả năng cao cơ hội đó sẽ biến mất ngay khi anh ta bắt đầu lợi dụng nó.
+Tốc độ và cách môi trường thay đổi có ảnh hưởng lớn đến loại thuật toán mà ta có thể sử dụng.
+Ví dụ, nếu ta *biết trước* những sự việc chỉ có thể thay đổi một cách từ từ, ta có thể ép cho những ước lượng thay đổi chậm.
+Còn nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
+Đối với các nhà khoa học dữ liệu giỏi, những kiến thức này rất quan trọng trong việc giải quyết các bài toán dịch chuyển khái niệm, tức bài toán cần giải quyết thay đổi theo thời gian.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -825,7 +851,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 9 -->
-*
+* Lý Phi Long
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 10 -->
 * Nguyễn Thành Nhân
