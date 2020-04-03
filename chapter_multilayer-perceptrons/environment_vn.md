@@ -329,14 +329,15 @@ Không may thay, tất cả những gì nó đã học được là phân loại
 #### Nonstationary distributions
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Phân phối không ổn định
 
 <!--
 A much more subtle situation arises when the distribution changes slowly and the model is not updated adequately.
 Here are some typical cases:
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề đặc biệt phát sinh khi phân phối thay đổi chậm và mô hình không được cập nhật thoả đáng.
+Dưới đây là một vài trường hợp điển hình:
 
 <!--
 * We train a computational advertising model and then fail to update it frequently (e.g., we forget to incorporate that an obscure new device called an iPad was just launched).
@@ -344,13 +345,15 @@ Here are some typical cases:
 * We build a product recommendation system. It works throughout the winter... but then it keeps on recommending Santa hats long after Christmas.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo và sau đó không cập nhật thường xuyên (giả sử như chúng ta quên bổ sung thêm thiết bị iPad mới vừa được ra mắt).
+* Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt khi phát hiện tất cả các thư rác mà chúng ta biết cho đến nay. Tuy nhiên hiện tại những người gửi thư rác đã tạo ra các mẫu thư mới trông không hề giống như những gì mà chúng ta biết trước đây.
+* Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc trong suốt mùa đông… nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả khi Giáng Sinh đã qua.
 
 <!--
 #### More Anecdotes
 -->
 
-#### *dịch tiêu đề phía trên*
+#### Các giai thoại khác
 
 <!--
 * We build a face detector. It works well on all benchmarks. 
@@ -360,7 +363,11 @@ Unfortunately it fails on test data---the offending examples are close-ups where
 say 1000 categories, represented by 1000 images each. Then we deploy the system in the real world, where the actual label distribution of photographs is decidedly non-uniform.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta xây dựng mô hình phát hiện gương mặt. Nó hoạt động rất tốt trên các bài kiểm tra đánh giá.
+Không may mắn là mô hình lại sai ở phần dữ liệu kiểm tra -- các ví dụ vi phạm là khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh và không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
+* Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn sử dụng nó cho thị trường Anh.
+* Chúng ta huấn luyện một trình phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu có số lượng mẫu biểu diễn bằng nhau, chẳng hạn như có 1000 lớp, mỗi lớp được biểu diễn bởi 1000 ảnh.
+Sau đó chúng ta triển khai hệ thống trên thực tế trong khi phân phối nhãn của các ảnh lại không đồng đều. 
 
 <!--
 In short, there are many cases where training and test distributions $p(\mathbf{x}, y)$ are different.
@@ -370,7 +377,11 @@ The remainder of this section grows considerably more technical.
 The impatient reader could continue on to the next section as this material is not prerequisite to subsequent concepts.
 -->
 
-*dịch đoạn phía trên*
+Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và kiểm tra $p(\mathbf{x}, y)$ là khác nhau.
+Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù phân phối của hiệp biến, nhãn hay khái niệm đều dịch chuyển.
+Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng nhiều chiến lược một cách có nguyên tắc để đối phó với sự dịch chuyển này.
+Phần còn lại của mục này sẽ tập trung nhiều hơn đáng kể về mặt kỹ thuật.
+Tuy nhiên đối với những bạn đọc không thích thì có thể bỏ qua vì các khái niệm được trình bày dưới đây không phải là tiền đề cho các phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -846,7 +857,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
-*
+* Nguyễn Minh Thư
 
 <!-- Phần 6 -->
 * Lê Khắc Hồng Phúc
