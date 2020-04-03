@@ -33,7 +33,7 @@ Phần này trình bày cách thức thao tác với tham số. Cụ thể, các
 As always, we start from our trusty Multilayer Perceptron with a hidden layer. This will serve as our choice for demonstrating the various features.
 -->
 
-Như thường lệ, chúng ta bắt đầu từ Multilayer Perceptron với một tầng ẩn, để minh hoạ số lượng lớn các đặc trưng.
+Như thường lệ, chúng ta bắt đầu từ mạng Perceptron đa tầng với một tầng ẩn, để minh hoạ số lượng lớn các đặc trưng.
 
 ```{.python .input  n=1}
 from mxnet import init, np, npx
