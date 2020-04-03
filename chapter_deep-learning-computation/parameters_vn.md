@@ -17,7 +17,7 @@ This section shows how to manipulate parameters. In particular we will cover the
 Mục tiêu cuối cùng của việc huấn luyện mạng học sâu là tìm các giá trị tham số tốt cho một kiến trúc có sẵn.
 Thông thường, lớp `nn.Sequential` là một công cụ tối ưu cho việc huấn luyện.
 Tuy nhiên, rất ít mô hình có cấu trúc thông thường hoàn toàn, các nhà khoa học luôn muốn xây dựng các kiến trúc mạng mới.
-Phần này trình bày cách thức điều chỉnh tham số. Cụ thể, các khía cạnh sau sẽ được đề cập:
+Phần này trình bày cách thức thao tác với tham số. Cụ thể, các khía cạnh sau sẽ được đề cập:
 
 <!--
 * Accessing parameters for debugging, diagnostics, to visualize them or to save them is the first step to understanding how to work with custom models.
