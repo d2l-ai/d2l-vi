@@ -60,39 +60,39 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 (introduced in :numref:`chap_preliminaries`) when defining our own `Block`, we only need to worry about parameters and the `forward` function.
 -->
 
-Để lập trình các mạng phức tạp này, chúng tôi sẽ giới thiệu khái niệm về một *khối* trong mạng nơ-ron.
-Một khối có thể mô tả một tầng duy nhất, một thành phần bao gồm nhiều tầng hoặc toàn bộ mô hình!
-Từ quan điểm phần mềm, một `Block` (`Khối`) là một *lớp*.
+Để lập trình các mạng phức tạp này, ta sẽ giới thiệu khái niệm *khối* trong mạng nơ-ron.
+Một khối có thể mô tả một tầng duy nhất, một thành phần bao gồm nhiều tầng hoặc toàn bộ một mô hình!
+Dưới góc nhìn phần mềm, một `Block` (Khối) là một *lớp*.
 Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết.
-Lưu ý rằng một vài Khối sẽ không yêu cầu bất kỳ tham số nào cả!
-Cuối cùng, một `Block` phải sở hữu một phương thức `backward`, cho mục đích tính toán gradient.
-May mắn thay, nhờ vào sự trợ giúp đắc lực của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) khi định nghĩa `Block`, ta chỉ cần quan tâm đến các các tham số và hàm `forward`.
+Lưu ý rằng một vài `Block` sẽ không yêu cầu bất kỳ tham số nào cả!
+Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient.
+May mắn thay, nhờ có sự trợ giúp của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) nên khi định nghĩa `Block`, ta chỉ cần quan tâm đến các các tham số và hàm `forward`.
 
 <!--
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
 -->
 
-Nhờ vào tính trừu tượng của `Block`, chúng có thể được kết hợp thành các thành phần lớn hơn, thông thường bằng cách đệ quy (xem hình minh họa trong :numref:`fig_blocks`).
+Một lợi ích của tính trừu tượng của `Block` là nhờ vào đó mà các `Block` có thể được kết hợp thành các thành phần lớn hơn, thông thường bằng cách đệ quy (xem hình minh họa trong :numref:`fig_blocks`).
 
 <!--
 ![Multiple layers are combined into blocks](../img/blocks.svg)
 -->
 
-![Nhiều tầng được kết hợp tạo thành các khối](../img/blocks.svg)
+![Nhiều tầng được kết hợp để tạo thành các khối](../img/blocks.svg)
 :label:`fig_blocks`
 
 <!--
 By defining code to generate Blocks of arbitrary complexity on demand, we can write surprisingly compact code and still implement complex neural networks.
 -->
 
-Bằng cách định nghĩa mã nguồn để tạo ra các Khối với độ phức tạp tùy ý theo yêu cầu, ta có thể lập trình được các mạng nơ-ron phức tạp một cách ngắn gọn đáng ngạc nhiên.
+Bằng cách viết mã nguồn để tạo ra các `Block` với độ phức tạp tùy ý, ta có thể lập trình được các mạng nơ-ron phức tạp một cách ngắn gọn đáng ngạc nhiên.
 
 <!--
 To begin, we revisit the Blocks that we used to implement multilayer perceptrons (:numref:`sec_mlp_gluon`).
 The following code generates a network with one fully-connected hidden layer with 256 units and ReLU activation, followed by a fully-connected *output layer* with 10 units (no activation function).
 -->
 
-Để bắt đầu, ta xem lại các Khối mà ta đã sử dụng để lập trình các perceptron đa tầng (:numref:`sec_mlp_gluon`).
+Để bắt đầu, ta sẽ xem lại các `Block` mà ta đã sử dụng để lập trình các perceptron đa tầng (:numref:`sec_mlp_gluon`).
 Đoạn mã nguồn sau tạo ra một mạng với một tầng ẩn kết nối đầy đủ gồm 256 nút và sử dụng hàm kích hoạt ReLU, theo sau là một *tầng đầu ra* kết nối đầy đủ với 10 nút (không có hàm kích hoạt).
 
 ```{.python .input  n=33}
@@ -121,13 +121,13 @@ This is actually just shorthand for `net.forward(X)`, a slick Python trick achie
 -->
 
 Trong ví dụ này, ta đã xây dựng mô hình bằng cách khởi tạo một đối tượng `nn.Sequential` và gán cho biến `net`.
-Tiếp theo, ta liên tục gọi phương thức `add`, nối thêm các tầng theo thứ tự mà chúng sẽ được thực thi.
-Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Block` đặc biệt bao gồm một danh sách được sắp xếp gồm các `Block` cấu thành.
-Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào danh sách.
-Lưu ý rằng mỗi tầng là một thể hiện của lớp `Dense`, và chính lớp `Dense` lại là một lớp con của `Block`.
-Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng Khối trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo.
-Lưu ý rằng cho đến giờ, ta đã gọi các mô hình của mình thông qua việc gọi `net(X)` để có được kết quả đầu ra.
-Thực ra đó chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp Block.
+Sau đó, ta gọi phương thức `add` nhiều lần để nối thêm các tầng theo thứ tự mà chúng sẽ được thực thi.
+Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Block` đặc biệt có chức năng duy trì một danh sách được sắp xếp gồm các `Block` cấu thành.
+Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào trong danh sách.
+Lưu ý rằng mỗi tầng là một thể hiện của lớp `Dense`, và bản thân lớp `Dense` lại là một lớp con của `Block`.
+Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng `Block` trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo.
+Chú ý rằng cho đến giờ, ta đã gọi các mô hình của mình thông qua việc khởi tạo `net(X)`.
+Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
