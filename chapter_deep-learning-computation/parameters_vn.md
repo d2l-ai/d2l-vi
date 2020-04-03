@@ -80,7 +80,7 @@ The second layer is structured accordingly.
 Kết quả đoạn mã cho biết nhiều điều.
 Thứ nhất, tầng này có 2 tập tham số: `dense0_weight` và `dense0_bias`, như chúng ta kỳ vọng.
 Chúng đều ở dạng số thực dấu phẩy động độ chính xác đơn và có kích thước cần thiết như kỳ vọng ở tầng đầu tiên, với số chiều của đầu vào là 20 và số chiều của đầu ra là 256.
-Tên của các tham số rất hữu ích vì chúng cho phép xác định các tham số *một cách duy nhất* ngay cả trong mạng với hàng trăm tầng với cấu trúc phức tạp.
+Tên của các tham số rất hữu ích vì chúng cho phép xác định các tham số *một cách độc nhất* ngay cả trong mạng với hàng trăm tầng với cấu trúc phức tạp.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
