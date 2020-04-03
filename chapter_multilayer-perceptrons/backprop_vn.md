@@ -145,8 +145,8 @@ Notice that the direction of the arrows (which illustrate data flow) are primari
 
 Vẽ đồ thị tính toán giúp chúng ta hình dung được sự phụ thuộc giữa các toán tử và các biến trong quá trình tính toán. 
 :numref:`fig_forward` thể hiện đồ thị tương ứng với mạng nơ-ron đã miêu tả ở trên.
-Góc bên trái dưới biểu diễn đầu vào trong khi góc bên phải trên biểu diễn đầu ra.
-Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) chủ yếu là qua phải và hướng lên trên. 
+Góc trái dưới biểu diễn đầu vào trong khi góc phải trên biểu diễn đầu ra.
+Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) chủ yếu là đi qua phải và hướng lên trên. 
 
 <!--
 ![Computational Graph](../img/forward.svg)
@@ -172,8 +172,8 @@ By using the chain rule, we can compute the derivative of $\mathsf{Z}$ wrt. $\ma
 -->
 
 Lan truyền ngược đề cập đến phương pháp tính gradient của các tham số mạng nơ-ron. 
-Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào tuân theo quy tắc dây chuyền trong giải tích.  
-Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
+Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào, tuân theo quy tắc dây chuyền trong giải tích.  
+Thuật toán lan truyền ngược lưu trữ các biến trung gian (là các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
 Giả sử chúng ta có hàm $\mathsf{Y}=f(\mathsf{X})$ và $\mathsf{Z}=g(\mathsf{Y}) = g \circ f(\mathsf{X})$, 
 trong đó đầu vào và đầu ra $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ là các tensor có kích thước bất kỳ. 
 Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm của $\mathsf{Z}$ theo $\mathsf{X}$ như sau:
@@ -187,10 +187,10 @@ For higher dimensional tensors, we use the appropriate counterpart.
 The operator $\text{prod}$ hides all the notation overhead.
 -->
 
-Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các số hạng của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
+Ở đây, chúng ta sử dụng toán tử $\text{prod}$ để nhân các số hạng của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
 Với vector, điều này khá đơn giản: nó chỉ đơn thuần là phép nhân ma trận. 
-Với các tensor nhiều chiều thì sẽ có các phương án khác thích hợp hơn. 
-Phép tính $\text{prod}$ sẽ làm việc ký hiệu đơn giản hơn.
+Với các tensor nhiều chiều thì sẽ có các phương án tương ứng phù hợp. 
+Toán tử $\text{prod}$ sẽ đơn giản hoá việc ký hiệu.
 
 <!--
 The parameters of the simple network with one hidden layer are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$.
@@ -201,9 +201,9 @@ The first step is to calculate the gradients of the objective function $J=L+s$ w
 -->
 
 Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
-Mục địch của lan truyền ngược là tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
-Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính toán gradient của các biến trung gian và tham số. 
-Thứ tự của các phép tính trong lan truyền ngược là đảo ngược của các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán rồi đi tới tham số. 
+Mục đích của lan truyền ngược là để tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
+Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính gradient của các biến trung gian và tham số. 
+Các phép tính trong lan truyền ngược có thứ tự đảo ngược lại so với các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán rồi đi tới tham số. 
 Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ theo mất mát $L$ và điều chuẩn $s$. 
 
 $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
@@ -212,7 +212,7 @@ $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial 
 Next, we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
 -->
 
-Tiếp theo, ta tính gradient của hàm mục tiêu với các biến của lớp đầu ra $\mathbf{o}$ theo quy tắc dây chuyền.
+Tiếp theo, ta tính gradient của hàm mục tiêu theo các biến của lớp đầu ra $\mathbf{o}$ tuân thủ quy tắc dây chuyền.
 
 $$
 \frac{\partial J}{\partial \mathbf{o}}
@@ -225,7 +225,7 @@ $$
 Next, we calculate the gradients of the regularization term with respect to both parameters.
 -->
 
-Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số. 
+Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số.
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
 \; \text{and} \;
@@ -240,7 +240,7 @@ Now we are able calculate the gradient $\partial J/\partial \mathbf{W}^{(2)} \in
 Using the chain rule yields:
 -->
 
-Bây giờ chúng ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ của các tham số mô hình gần nhất với lớp đầu ra. Áp dụng quy tắc dây chuyền:
+Bây giờ chúng ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ của các tham số mô hình gần nhất với lớp đầu ra. Áp dụng quy tắc dây chuyền: 
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(2)}}
@@ -253,7 +253,7 @@ To obtain the gradient with respect to $\mathbf{W}^{(1)}$ we need to continue ba
 The gradient with respect to the hidden layer's outputs $\partial J/\partial \mathbf{h} \in \mathbb{R}^h$ is given by
 -->
 
-Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn. 
+Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn.
 Gradient theo các đầu ra của tầng ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
 
 
@@ -268,7 +268,7 @@ Since the activation function $\phi$ applies elementwise, calculating the gradie
 of the intermediate variable $\mathbf{z}$ requires that we use the elementwise multiplication operator, which we denote by $\odot$.
 -->
 
-Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ đòi hỏi chúng ta sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
+Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ cũng yêu cầu sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
