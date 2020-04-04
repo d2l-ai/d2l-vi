@@ -26,7 +26,7 @@ Phần này trình bày cách thức thao tác với tham số. Cụ thể, các
 -->
 
 * Truy cập các tham số cho việc tìm lỗi, gỡ lỗi, để lưu lại hoặc biểu diễn trực quan là bước đầu tiên để hiểu cách làm việc với các mô hình được tuỳ chỉnh.
-* Thứ hai, chúng ta muốn gán giá trị cụ thể cho chúng, ví dụ cho việc khởi tạo. Cấu trúc của các bộ khởi tạo tham số cũng sẽ được thảo luận.
+* Thứ hai là cách gán giá trị cụ thể cho chúng, ví dụ như lúc khởi tạo. Cấu trúc của các bộ khởi tạo tham số cũng sẽ được thảo luận thêm.
 * Cuối cùng, chúng ta sẽ trình bày cách áp dụng những kiến thức này để xây dựng các mạng có chung một vài tham số.
 
 <!--
