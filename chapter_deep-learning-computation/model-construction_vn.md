@@ -25,7 +25,7 @@ Lưu ý rằng một nơ-ron đơn lẻ (i) nhận một vài đầu vào; (ii) 
 Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng các phép tính vector để mô tả nguyên cả một *tầng* nơ-ron.
 Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một vài đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập các tham số có thể điều chỉnh được.
 Trong hồi quy softmax, bản thân *tầng* duy nhất ấy chính là một *mô hình*.
-Thậm chí sau khi đã giới thiệu các perceptron đa tầng, ta vẫn có thể nghĩ về mô hình với cấu trúc cơ bản này.
+Thậm chí đối với các perceptron đa tầng, ta vẫn có thể nghĩ về chúng theo cấu trúc cơ bản này.
 
 <!--
 Interestingly, for multilayer perceptrons, both the *entire model* and its *constituent layers* share this structure.
