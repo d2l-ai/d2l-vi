@@ -181,7 +181,7 @@ In a series of seminal papers, [Vapnik and Chervonenkis](https://en.wikipedia.or
 This work laid the foundations of [Statistical Learning Theory](https://en.wikipedia.org/wiki/Statistical_learning_theory).
 -->
 
-Bởi khái quát hóa là một vấn đề nền tảng trong học máy, không quá ngạc nhiên khi nhiều nhà toán học và nhà lý thuyết học dành cả cuộc đời để phát triển các lý thuyết chính thức mô tả vấn đề này.
+Bởi khái quát hóa là một vấn đề nền tảng trong học máy, không quá ngạc nhiên khi nhiều nhà toán học và nhà lý thuyết học dành cả cuộc đời để phát triển các lý thuyết hình thức mô tả vấn đề này.
 Trong [định lý cùng tên](https://en.wikipedia.org/wiki/Glivenko–Cantelli_theorem), Glivenko và Cantelli đã tìm ra tốc độ học mà tại đó lỗi huấn luyện sẽ hội tụ về lỗi khái quát.
 Trong chuỗi các bài báo đầu ngành, [Vapnik và Chervonenkis](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) đã mở rộng lý thuyết này cho nhiều lớp hàm tổng quát hơn.
 Công trình này là nền tảng của ngành [Lý thuyết học thống kê](https://en.wikipedia.org/wiki/Statistical_learning_theory).
@@ -229,7 +229,7 @@ This is unlikely to work well since college students tend to look considerably d
 -->
 
 Các vi phạm khác thì chắc chắn dẫn tới rắc rối.
-Cùng hình dung ở ví dụ này, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và đem đi triển khai như một công cụ giám sát trong viện dưỡng lão.
+Cùng hình dung ở ví dụ này, ta thử huấn luyện một hệ thống nhận dạng khuôn mặt sử dụng hoàn toàn dữ liệu của các sinh viên đại học và đem đi triển khai như một công cụ giám sát trong viện dưỡng lão.
 Cách này gần như không khả thi vì ngoại hình giữa hai độ tuổi quá khác biệt.
 
 <!--
@@ -239,7 +239,7 @@ Moreover, elucidating the precise theoretical foundations that might explain why
 -->
 
 Trong các mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
-Hiện tại, thậm chí khi giả thiết i.i.d. được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
+Hiện tại khi giả thiết i.i.d. thậm chí được đảm bảo, hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
 Hơn nữa, việc làm sáng tỏ nền tảng lý thuyết để giải thích tại sao các mạng nơ-ron sâu có thể khái quát hóa tốt như vậy vẫn tiếp tục làm đau đầu những bộ óc vĩ đại nhất trong lý thuyết học.
 
 <!--
@@ -296,9 +296,9 @@ For now, we will put the philosophy aside and stick to more tangible issues.
 
 Rất khó để có thể so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác hẳn nhau (ví như cây quyết định so với mạng nơ-ron).
 Hiện tại, có một quy tắc đơn giản khá hữu ích sau:
-Một mô hình có thể giải thích các sự kiện bất kỳ được các nhà thống kê xem là phức tạp, trong khi một mô hình có năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì có lẽ đạt gần đến sự thật hơn.
-Trong triết học, điều này gần với tiêu chí của Popper về [tính giả mạo](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
-Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là ta đánh giá sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện liên quan.
+Một mô hình có thể giải thích các sự kiện bất kỳ thì được các nhà thống kê xem là phức tạp, trong khi một mô hình với năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì hầu như chắc chắn là đúng đắn hơn.
+Trong triết học, điều này gần với tiêu chí của Popper về [khả năng phủ định](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
+Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), tức là ta đánh giá giả thuyết sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện cùng tên.
 Từ bây giờ, ta sẽ đặt triết lý qua một bên và tập trung hơn vào các vấn đề hữu hình.
 
 <!--
