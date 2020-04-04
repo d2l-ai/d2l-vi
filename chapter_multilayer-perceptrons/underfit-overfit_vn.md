@@ -212,7 +212,7 @@ Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản b
 Các phân phối này đơn giản là không giống nhau.
 Hơn nữa, việc lấy mẫu có thể có tương quan về mặt thời gian.
 Sẽ ra sao nếu chúng ta thực hiện phân loại chủ đề cho các bài Tweet.
-Vòng đời của các tin tức sẽ tạo nên sự phụ thuộc nhất thời tới các chủ đề được đề cập, vi phạm mọi giả định độc lập thống kê.
+Vòng đời của các tin tức sẽ tạo nên sự phụ thuộc về mặt thời gian giữa các chủ đề được đề cập, vi phạm mọi giả định độc lập thống kê.
 
 <!--
 Sometimes we can get away with minor violations of the i.i.d. assumption and our models will continue to work remarkably well.
@@ -387,7 +387,7 @@ Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa
 The common practice to address this problem is to split our data three ways, incorporating a *validation set* in addition to the training and test sets.
 -->
 
-Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra. 
+Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, thêm một *tập kiểm định* ngoài các tập huấn luyện và kiểm tra.
 
 
 <!--
@@ -470,7 +470,7 @@ Ultimately, we usually care more about the validation error than about the gap b
 Mặt khác, như ta đã thảo luận ở phía trên, ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
 Lưu ý rằng quá khớp không phải luôn là điều xấu.
 Đặc biệt là với học sâu, ta đều biết rằng mô hình dự đoán tốt nhất thường đạt chất lượng tốt hơn hẳn trên dữ liệu huấn luyện so với dữ liệu kiểm định.
-Cuối cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
+Sau cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
 
 <!--
 Whether we overfit or underfit can depend both on the complexity of our model and the size of the available training datasets, two topics that we discuss below.
