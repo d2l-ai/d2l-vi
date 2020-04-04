@@ -215,7 +215,7 @@ Như ta mong muốn, kỳ vọng không bị thay đổi, hay nói cách khác $
 ## Dropout in Practice
 -->
 
-## Dropout trong thực tế
+## Dropout trong Thực tế
 
 <!--
 Recall the multilayer perceptron (:numref:`sec_mlp`) with a hidden layer and 5 hidden units.
@@ -243,7 +243,7 @@ In this way, the calculation of the output layer cannot be overly dependent on a
 Khi chúng ta áp dụng dropout cho một tầng ẩn, tức gán mỗi nút ẩn bằng không với xác suất là $p$, kết quả có thể được xem như là một mạng chỉ chứa một tập con của các nơ-ron ban đầu.
 Trong :numref:`fig_dropout2`, $h_2$ và $h_5$ bị loại bỏ.
 Hệ quả là, việc tính toán $y$ không còn phụ thuộc vào $h_2$ và $h_5$ nữa và gradient tương ứng của chúng cũng biến mất khi thực hiện lan truyền ngược.
-Theo cách này, việc tính toán tầng đầu ra không bị phụ thuộc quá nhiều vào một thành phần $h_1, \ldots, h_5$.
+Theo cách này, việc tính toán tầng đầu ra không còn bị phụ thuộc quá nhiều vào bất kỳ một thành phần nào trong $h_1, \ldots, h_5$.
 
 <!--
 ![MLP before and after dropout](../img/dropout2.svg)
@@ -260,8 +260,8 @@ if the predictions agree across many different dropout masks, then we might say 
 For now we will put off uncertainty estimation for subsequent chapters and volumes.
 -->
 
-Về cơ bản, ***chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra***.
-Với một mô hình đã huấn luyện và một mẫu kiểm tra, ta không thực hiện dropout tại bất kỳ nút nào (do đó cũng không cần chuẩn hóa).
+Thông thường, ***chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra***.
+Với một mô hình đã huấn luyện và một mẫu kiểm tra, ta sẽ không thực hiện loại bỏ bất kỳ nút nào (do đó cũng không cần chuẩn hóa).
 Tuy nhiên, cũng có một vài ngoại lệ, một vài nhà nghiên cứu sử dụng dropout tại thời điểm kiểm tra như một thủ thuật đề ước lượng *độ bất định* trong dự đoán của mạng nơ-ron: nếu các dự đoán giống nhau với nhiều mặt nạ dropout khác nhau, thì ta có thể nói rằng mạng đó đáng tin cậy hơn.
 Hiện tại, ta sẽ để dành phần ước lượng độ bất định này cho các chương sau.
 
@@ -282,7 +282,7 @@ One easy way to implement this is to first draw samples from the uniform distrib
 Then we can keep those nodes for which the corresponding sample is greater than $p$, dropping the rest.
 -->
 
-Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy các mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
+Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
 Một cách đơn giản để thực hiện việc này là lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
@@ -290,7 +290,7 @@ In the following code, we implement a `dropout_layer` function that drops out th
 rescaling the remainder as described above (dividing the survivors by `1.0-dropout`).
 -->
 
-Trong mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` để thay đổi lại tỉ lệ như đã mô tả bên trên. 
+Trong đoạn mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng `ndarray` đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
 import d2l
@@ -316,7 +316,7 @@ In the following lines of code, we pass our input `X` through the dropout operat
 -->
 
 Ta có thể thử nghiệm hàm `dropout_layer` lên một vài mẫu.
-Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua hàm `dropout_layer`, với xác suất lần lượt là 0, 0.5 và 1.
+Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua bước dropout với xác suất lần lượt là 0, 0.5 và 1.
 
 ```{.python .input  n=2}
 X = np.arange(16).reshape(2, 8)
