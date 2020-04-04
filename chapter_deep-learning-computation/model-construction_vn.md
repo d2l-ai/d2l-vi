@@ -419,7 +419,7 @@ chimera(x)
 ## Compilation
 -->
 
-## *dịch tiêu đề phía trên*
+## Biên dịch mã nguồn
 
 <!--
 The avid reader might start to worry about the efficiency of some of these operations.
@@ -435,7 +435,13 @@ This can accelerate things considerably in some cases but care needs to be taken
 We recommend that the interested reader check out the hybridization section (:numref:`sec_hybridize`) to learn about compilation after finishing the current chapter.
 -->
 
-*dịch đoạn phía trên*
+Những người đọc có tâm có thể sẽ bắt đầu lo lắng về tính hiệu quả của một vài đoạn mã trên.
+Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ Pythonic khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu suất cao.
+Vấn đề của [Khóa Trình thông dịch Toàn cục]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến.
+Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU yếu đuối chạy những dòng lệnh Python trước khi nó có tác vụ chay tiếp theo.
+Cách tốt nhất để tăng tốc Python là tránh tất cả bọn chúng.
+Gluon làm việc này bằng cách cho phép Hybrid hóa (:numref:`sec_hybridize`).
+Ở đây, trình thông dịch của Python 
 
 
 <!--
