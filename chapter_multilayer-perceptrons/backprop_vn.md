@@ -8,6 +8,7 @@
 # Lan truyền xuôi, Lan truyền ngược và Đồ thị tính toán
 :label:`sec_backprop`
 
+
 <!--
 So far, we have trained our models with minibatch stochastic gradient descent.
 However, when we implemented the algorithm, we only worried about the calculations involved in *forward propagation* through the model.
@@ -16,7 +17,7 @@ When it came time to calculate the gradients, we just invoked the `backward` fun
 
 Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
 Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các phép tính trong quá trình *lan truyền xuôi* qua mô hình.
-Khi cần tính gradient ta chỉ đơn giản gọi hàm `backward`, còn việc tính toán chi tiết được trông cậy vào mô-đun `autograd`.
+Khi cần tính gradient, ta mới chỉ gọi hàm `backward` và mô-đun `autograd` sẽ lo việc tính toán chi tiết.
 
 <!--
 The automatic calculation of gradients profoundly simplifies the implementation of deep learning algorithms.
@@ -27,9 +28,9 @@ you ought to *know* how these gradients are calculated under the hood if you wan
 -->
 
 Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
-Trước đây, khi chưa có công cụ tính vi phân tự động, đối với các mô hình phức tạp thì ngay cả những thay đổi nhỏ cũng yêu cầu tính lại các đạo hàm rắc rối một cách thủ công.
+Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi các mô hình phức tạp một chút, ta sẽ phải tính lại các đạo hàm rắc rối một cách thủ công.
 Điều đáng ngạc nhiên là các bài báo học thuật thường dành rất nhiều trang để rút ra các nguyên tắc cập nhật.
-Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *nắm bắt* rõ cách tính gradient nếu bạn muốn tiến xa hơn là chỉ hiểu biết hời hợt về học sâu.
+Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn vẫn nên *nắm* rõ cách tính gradient nếu bạn muốn tiến xa hơn việc chỉ hiểu hời hợt về học sâu.
 
 <!--
 In this section, we take a deep dive into the details of backward propagation (more commonly called *backpropagation* or *backprop*).
@@ -37,8 +38,9 @@ To convey some insight for both the techniques and their implementations, we rel
 To start, we focus our exposition on a three layer (one hidden) multilayer perceptron with weight decay ($\ell_2$ regularization).
 -->
 
-Trong mục này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*). Ta sẽ sử dụng một vài công thức toán học cơ bản và đồ thị tính toán để giải thích một cách chi tiết cách thức hoạt động cũng như cách lập trình các kỹ thuật này.
-Và để bắt đầu, ta sẽ tập trung việc giải trình vào một perceptron đa tầng gồm ba tầng (một tầng ẩn) sử dụng suy giảm trọng số (điều chuẩn $\ell_2$).
+Trong mục này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*). 
+Ta sẽ sử dụng một vài công thức toán học cơ bản và đồ thị tính toán để giải thích một cách chi tiết cách thức hoạt động cũng như cách lập trình các kỹ thuật này.
+Và để bắt đầu, ta sẽ tập trung giải trình một perceptron đa tầng gồm ba tầng (một tầng ẩn) đi kèm với suy giảm trọng số (điều chuẩn $\ell_2$).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -56,9 +58,9 @@ We now work step-by-step through the mechanics of a deep network with one hidden
 This may seem tedious but in the eternal words of funk virtuoso James Brown, you must "pay the cost to be the boss".
 -->
 
-Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
+Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) của mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
 Bây giờ ta sẽ thực hiện từng bước trong cơ chế làm việc của mạng nơ-ron sâu có một tầng ẩn.
-Điều này có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
+Điều này nghe có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
 
 <!--
 For the sake of simplicity, let’s assume that the input example is $\mathbf{x}\in \mathbb{R}^d$ and that our hidden layer does not include a bias term.
@@ -67,6 +69,7 @@ Here the intermediate variable is:
 
 Để đơn giản hóa vấn đề, ta giả sử mẫu đầu vào là $\mathbf{x}\in \mathbb{R}^d$ và tầng ẩn của ta không có hệ số điều chỉnh.
 Ở đây biến trung gian là:
+
 
 $$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x},$$
 
@@ -78,6 +81,7 @@ After running the intermediate variable $\mathbf{z}\in \mathbb{R}^h$ through the
 trong đó $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ là tham số trọng số của tầng ẩn.
 Sau khi đưa biến trung gian $\mathbf{z}\in \mathbb{R}^h$ qua hàm kích hoạt $\phi$, ta thu được vector kích hoạt ẩn với $h$ phần tử,
 
+
 $$\mathbf{h}= \phi (\mathbf{z}).$$
 
 <!--
@@ -88,6 +92,7 @@ Assuming the parameters of the output layer only possess a weight of $\mathbf{W}
 Biến ẩn $\mathbf{h}$ cũng là một biến trung gian.
 Giả sử tham số của tầng đầu ra chỉ gồm trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ thu được một vector với $q$ phần tử ở tầng đầu ra:
 
+
 $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 
 <!--
@@ -96,13 +101,14 @@ Assuming the loss function is $l$ and the example label is $y$, we can then calc
 
 Giả sử hàm mất mát là $l$ và nhãn của mẫu là $y$, ta có thể tính được lượng mất mát cho một mẫu dữ liệu duy nhất,
 
+
 $$L = l(\mathbf{o}, y).$$
 
 <!--
 According to the definition of $\ell_2$ regularization, given the hyperparameter $\lambda$, the regularization term is
 -->
 
-Theo định nghĩa của điều chuẩn $\ell_2$, cho trước siêu tham số $\lambda$, thì lượng điều chuẩn là:
+Theo định nghĩa của điều chuẩn $\ell_2$, với siêu tham số $\lambda$ thì lượng điều chuẩn là:
 
 $$s = \frac{\lambda}{2} \left(\|\mathbf{W}^{(1)}\|_F^2 + \|\mathbf{W}^{(2)}\|_F^2\right),$$
 
@@ -112,7 +118,7 @@ Finally, the model's regularized loss on a given data example is:
 -->
 
 trong đó chuẩn Frobenius của ma trận chỉ đơn giản là chuẩn $L_2$ của vector thu được sau khi trải phẳng ma trận.
-Cuối cùng, hàm mất mát điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
+Cuối cùng, hàm mất mát được điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
 
 $$J = L + s.$$
 
@@ -121,6 +127,7 @@ We refer to $J$ the *objective function* in the following discussion.
 -->
 
 Ta sẽ bàn thêm về *hàm mục tiêu* $J$ ở phía dưới.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
