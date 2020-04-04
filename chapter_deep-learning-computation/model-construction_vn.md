@@ -50,7 +50,7 @@ both recognition and detection :cite:`He.Zhang.Ren.ea.2016` and remains a go-to 
 Similar patterns are in which layers are arranged in various repeating patterns are now ubiquitous in other domains, including natural language processing and speech.
 -->
 
-Trong khi bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào việc, thì hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình.
+Dù bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào làm việc, hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình.
 Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tính, sở hữu hàng trăm tầng.
 Nó bao gồm các khuôn mẫu lặp lại của các *nhóm tầng*. Việc lập trình từng tầng cho một mạng như vậy sẽ là rất tẻ nhạt.
 Mối quan tâm này không chỉ là  trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế.
