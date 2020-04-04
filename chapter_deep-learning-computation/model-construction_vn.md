@@ -55,7 +55,7 @@ Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tí
 Nó bao gồm các khuôn mẫu lặp lại của các *nhóm tầng*. Việc lập trình từng tầng cho một mạng như vậy sẽ là rất tẻ nhạt.
 Mối quan tâm này không chỉ là  trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế.
 Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015, trong cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin dùng cho nhiều bài toán thị giác.
-Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo các khuôn mẫu lặp lại khác nhau, hiện đã có mặt ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
+Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo nhiều dạng khuôn mẫu được lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
