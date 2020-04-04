@@ -24,7 +24,7 @@ Khi lần đầu giới thiệu về các mạng nơ-ron, ta tập trung vào c�
 Lưu ý rằng một nơ-ron đơn lẻ (i) nhận một vài đầu vào; (ii) tạo một đầu ra (*vô hướng*) tương ứng; và (iii) có một tập các tham số liên quan có thể được cập nhật để tối ưu một hàm mục tiêu nào đó mà ta quan tâm.
 Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng các phép tính vector để mô tả nguyên cả một *tầng* nơ-ron.
 Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một vài đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập các tham số có thể điều chỉnh được.
-Trong hồi quy softmax, *tầng* duy nhất ấy chính bản thân là một *mô hình*.
+Trong hồi quy softmax, bản thân *tầng* duy nhất ấy chính là một *mô hình*.
 Thậm chí sau khi đã giới thiệu các perceptron đa tầng, ta vẫn có thể nghĩ về mô hình với cấu trúc cơ bản này.
 
 <!--
