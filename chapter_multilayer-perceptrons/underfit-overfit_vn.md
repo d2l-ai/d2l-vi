@@ -638,7 +638,7 @@ where $n! = \Gamma(n+1)$.
 -->
 
 Khi tối ưu hóa, ta thường muốn tránh các giá trị rất lớn của gradient, mất mát, v.v.
-Đây là lý do tại sao các đơn thức lưu trong poly_features được chuyển đổi giá trị từ $x^i$ thành $\frac{1}{i!} x^i$.
+Đây là lý do tại sao các đơn thức lưu trong `poly_features` được chuyển đổi giá trị từ $x^i$ thành $\frac{1}{i!} x^i$.
 Nó cho phép ta tránh các giá trị quá lớn với số mũ bậc cao $i$.
 Phép tính giai thừa được lập trình trong Gluon bằng hàm Gamma, với $n! = \Gamma(n+1)$.
 
