@@ -16,7 +16,7 @@ This section shows how to manipulate parameters. In particular we will cover the
 
 Mục tiêu cuối cùng của việc huấn luyện mạng học sâu là tìm các giá trị tham số tốt cho một kiến trúc có sẵn.
 Thông thường, lớp `nn.Sequential` là một công cụ tối ưu cho việc huấn luyện.
-Tuy nhiên, rất ít mô hình có cấu trúc thông thường hoàn toàn, các nhà khoa học luôn muốn xây dựng các kiến trúc mạng mới.
+Tuy nhiên, rất ít mô hình có cấu trúc hoàn toàn theo tiêu chuẩn, các nhà khoa học luôn muốn xây dựng các kiến trúc mạng mới lạ.
 Phần này trình bày cách thức thao tác với tham số. Cụ thể, các khía cạnh sau sẽ được đề cập:
 
 <!--
@@ -53,7 +53,7 @@ net(x)  # Forward computation
 ## Parameter Access
 -->
 
-## Truy nhập tham số
+## Truy cập Tham số
 
 <!--
 In the case of a Sequential class we can access the parameters with ease, simply by indexing each of the layers in the network.
@@ -81,7 +81,7 @@ Kết quả từ đoạn mã này cho ta một vài thông tin.
 Đầu tiên, tầng này có hai tập tham số: `dense0_weight` và `dense0_bias`, như chúng ta kỳ vọng.
 Chúng đều ở dạng số thực dấu phẩy động độ chính xác đơn và có kích thước cần thiết như kỳ vọng ở tầng đầu tiên, với số chiều của đầu vào là 20 và số chiều của đầu ra là 256.
 Tên của các tham số rất hữu ích vì chúng cho phép xác định các tham số *một cách độc nhất* ngay cả trong mạng với hàng trăm tầng với cấu trúc phức tạp.
-
+Tầng thứ hai được cấu trúc theo cách như vậy.
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
