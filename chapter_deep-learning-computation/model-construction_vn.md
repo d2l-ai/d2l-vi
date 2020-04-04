@@ -36,7 +36,7 @@ and possesses a set of tunable parameters that are updated according to the sign
 
 Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
 (Toàn bộ) mô hình nhận các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và có các tham số (được tập hợp từ tất cả các tầng cấu thành).
-Tương tự, mỗi tầng riêng lẻ nhận vào các đầu vào (được cung cấp bởi tầng trước đó) tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
+Tương tự, mỗi tầng riêng lẻ cũng nhận vào các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
 
 
 <!--
