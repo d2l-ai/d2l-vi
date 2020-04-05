@@ -405,7 +405,7 @@ Với Gluon, ta có thể trộn và kết hợp nhiều cách khác nhau để 
 Trong ví dụ sau, ta lồng `Blocks` bằng một vài cách sáng tạo.
 
 ```{.python .input  n=40}
-class NestMLP(nn.Block):Block
+class NestMLP(nn.Block):
     def __init__(self, **kwargs):
         super(NestMLP, self).__init__(**kwargs)
         self.net = nn.Sequential()
