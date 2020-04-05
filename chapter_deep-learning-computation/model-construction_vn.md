@@ -128,7 +128,7 @@ Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Bloc
 Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào trong danh sách.
 Lưu ý rằng mỗi tầng là một thực thể của lớp `Dense`, và bản thân lớp `Dense` lại là một lớp con của `Block`.
 Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng `Block` trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo.
-Lưu ý rằng cho đến giờ, ta đã gọi các mô hình thông qua việc khởi tạo `net(X)` để nhận được các đầu ra.
+Lưu ý rằng cho đến giờ, ta đã gọi các mô hình thông qua `net(X)` để thu được các đầu ra.
 Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
