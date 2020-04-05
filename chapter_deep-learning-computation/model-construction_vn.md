@@ -300,7 +300,7 @@ Note that this use of `MySequential` is identical to the code we previously wrot
 ## Executing Code in the `forward` Method
 -->
 
-## *dịch tiêu đề phía trên*
+## Triển khai mã trong phương pháp `forward`
 
 <!--
 The `nn.Sequential` class makes model construction easy, allowing us to assemble new architectures without having to defined our own class.
@@ -311,7 +311,11 @@ Python's control flow within the forward method.
 Moreover we might want to perform arbitrary mathematical operations, not simply relying on predefined neural network layers.
 -->
 
-*dịch đoạn phía trên*
+Lớp `nn.Sequential` hỗ trợ xây mô hình dễ dàng hơn, nó cho phép ta lắp ráp các mô hình mới mà không cần phải tự định nghĩa lớp của mình.
+Tuy nhiên, không phải tất cả các mô hình đều là các kết nối ngang hàng đơn giản.
+Trong trường hợp cần linh hoạt hơn, ta vẫn sẽ muốn định nghĩa từng `Block` của riêng mình.
+Ví dụ, ta muốn tự triển khai luồng điều khiển của Python với phương pháp truyền xuôi.
+Hơn nữa, ta cũng có thể muốn biễu diên các phép toán tùy ý, không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa trước.
 
 <!--
 You might have noticed that until now, all of the operations in our networks have acted upon our network's activations and its parameters.
@@ -322,14 +326,18 @@ $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, where $\mathbf{
 and $c$ is some specified constant that is not updated during optimization.
 -->
 
-*dịch đoạn phía trên*
+Cho đến tận bây giờ, bạn có thể nhận thấy rằng tất cả các phép toán trong mạng của ta đã làm dựa vào kích hoạt và các tham số của mạng.
+Tuy nhiên, trong một vài trường hợp, ta có thê muốn kết hợp các hằng số không đổi, nó không phải là kết quả của tầng trước cũng không phải các tham số có thể cập nhật.
+Trong Gluon, ta gọi những tham số *hằng số* này.
+Ví dụ ta muốn một lớp tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $x$ là đầu vào, $w$ là tham số của ta, và $c$ là một hằng số đặc biệt nào đó và nó không được cập nhật trong suốt quá trình tối ưu hóa.
 
 <!--
 Declaring constants explicitly (via `get_constant`) makes this clear helps Gluon to speed up execution.
 In the following code, we'll implement a model that could not easily be assembled using only predefined layers and `Sequential`.
 -->
 
-*dịch đoạn phía trên*
+Khi khai báo các hằng số rõ ràng (bằng `get_constant`) làm cho Gluon tăng tốc độ chạy.
+Trong đoạn mã sau, ta lập trình một mô hình mà không hề dễ khi lắp ráp bằng các tầng định nghĩa trước và `Sequential`.
 
 ```{.python .input  n=38}
 class FixedHiddenMLP(nn.Block):
@@ -362,7 +370,9 @@ This weight is not a model parameter and thus it is never updated by backpropaga
 The network then passes the output of this *fixed* layer through a `Dense` layer.
 -->
 
-*dịch đoạn phía trên*
+Trong mô hình `FixedHiddenMLP` này, chúng tôi triển khai một lớp ẩn có trọng số (`self.rand_ weight`) được khởi tạo ngẫu nhiên và theo sau là hằng số.
+Trọng số này không phải là một tham số mô hình và do đó nó không bao giờ được cập nhật bằng cách lan truyền ngược.
+Sau đó, mạng đưa đầu ra của tầng *cố định* này vào tầng `Dense`.
 
 <!--
 Note that before returning output, our model did something unusual.
@@ -373,7 +383,12 @@ Note that this particular operation may not be useful in any real world task.
 Our point is only to show you how to integrate arbitrary code into the flow of your neural network computations.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng trước khi trả đầu ra, mô hình của ta đã làm điều gì đó bất thường.
+Ta đã chạy một vòng lặp `while`, kiểm tra điều kiện` np.abs (x) .sum ()> 1` và chia vectơ đầu ra của chúng tôi cho $2$ cho đến khi nó thỏa mãn điều kiện.
+Cuối cùng, chúng tôi đã xuất tổng của các mục trong `x`.
+Theo hiểu biết của chúng tôi, không có mạng thần kinh tiêu chuẩn nào thực hiện thao tác này.
+Lưu ý rằng hoạt động cụ thể này có thể không hữu ích trong bất kỳ nhiệm vụ trong thế giới thực.
+Quan điểm của chúng tôi là chỉ cho bạn đọc cách tích hợp mã tùy ý vào luồng tính toán mạng thần kinh của bạn.
 
 ```{.python .input  n=39}
 net = FixedHiddenMLP()
@@ -386,10 +401,11 @@ With Gluon, we can mix and match various ways of assembling `Block`s together.
 In the following example, we nest `Block`s in some creative ways.
 -->
 
-*dịch đoạn phía trên*
+Với Gluon, ta có thể trộn và kết hợp nhiều cách khác nhau để lắp ráp các `Block` lại với nhau.
+Trong ví dụ sau, chúng ta lồng `Blocks` bằng một số cách sáng tạo.
 
 ```{.python .input  n=40}
-class NestMLP(nn.Block):
+class NestMLP(nn.Block):Block
     def __init__(self, **kwargs):
         super(NestMLP, self).__init__(**kwargs)
         self.net = nn.Sequential()
