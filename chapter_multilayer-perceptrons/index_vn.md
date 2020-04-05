@@ -27,7 +27,7 @@ Vì vậy, chúng tôi sẽ phải giới thiệu chặt chẽ các khái niệm
 Để giúp bạn giải quyết những vấn đề này, chúng tôi sẽ giới thiệu các kỹ thuật điều chuẩn như dropout và suy giảm trọng số.
 Chúng tôi cũng sẽ bàn về các vấn đề liên quan tới sự ổn định số học và việc khởi tạo tham số, hai yếu tố chính của việc huấn luyện mạng nơ-ron sâu thành công.
 Xuyên suốt chương này, chúng tôi sẽ tập trung vào việc áp dụng các mô hình cho dữ liệu thực tế, nhằm giúp người đọc không chỉ nắm vững các khái niệm mà còn thực hành sử dụng mạng nơ-ron sâu.
-Những vấn đề liên quan tới hiệu năng tính toán, khả năng mở rộng và mức hiệu quả của mô hình sẽ được để dành cho các chương sau.
+Những vấn đề liên quan tới hiệu năng tính toán, khả năng mở rộng và mức hiệu quả của mô hình sẽ được giới thiệu ở các chương sau.
 
 ```toc
 :maxdepth: 2
