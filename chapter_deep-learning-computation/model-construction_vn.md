@@ -5,7 +5,7 @@
 # Layers and Blocks
 -->
 
-# *dịch tiêu đề phía trên*
+# Tầng và Khối
 :label:`sec_model_construction`
 
 <!--
@@ -20,7 +20,12 @@ When we worked through softmax regression, a single *layer* was itself *the mode
 However, even when we subsequently introduced multilayer perceptrons, we could still think of the model as retaining this same basic structure.
 -->
 
-*dịch đoạn phía trên*
+Khi lần đầu giới thiệu về các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
+Lưu ý rằng một nơ-ron đơn lẻ (i) nhận một vài đầu vào; (ii) tạo một đầu ra (*vô hướng*) tương ứng; và (iii) có một tập các tham số liên quan có thể được cập nhật để tối ưu một hàm mục tiêu nào đó mà ta quan tâm.
+Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng các phép tính vector để mô tả nguyên cả một *tầng* nơ-ron.
+Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một vài đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập các tham số có thể điều chỉnh được.
+Trong hồi quy softmax, bản thân *tầng* duy nhất ấy chính là một *mô hình*.
+Thậm chí đối với các perceptron đa tầng, ta vẫn có thể nghĩ về chúng theo cấu trúc cơ bản này.
 
 <!--
 Interestingly, for multilayer perceptrons, both the *entire model* and its *constituent layers* share this structure.
@@ -29,7 +34,9 @@ Likewise, each individual layer ingests inputs (supplied by the previous layer) 
 and possesses a set of tunable parameters that are updated according to the signal that flows backwards from the subsequent layer.
 -->
 
-*dịch đoạn phía trên*
+Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
+(Toàn bộ) mô hình nhận các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và có các tham số (được tập hợp từ tất cả các tầng cấu thành).
+Tương tự, mỗi tầng riêng lẻ cũng nhận vào các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
 
 
 <!--
@@ -43,7 +50,12 @@ both recognition and detection :cite:`He.Zhang.Ren.ea.2016` and remains a go-to 
 Similar patterns are in which layers are arranged in various repeating patterns are now ubiquitous in other domains, including natural language processing and speech.
 -->
 
-*dịch đoạn phía trên*
+Dù bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào làm việc, hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình.
+Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tính, sở hữu hàng trăm tầng.
+Nó bao gồm các khuôn mẫu các *nhóm tầng* được lặp lại nhiều lần. Việc lập trình từng tầng của một mạng như vậy có thể trở nên tẻ nhạt.
+Mối quan tâm này không chỉ là  trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế.
+Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015, trong cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin dùng cho nhiều bài toán thị giác.
+Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo nhiều dạng khuôn mẫu được lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -497,7 +509,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 *
