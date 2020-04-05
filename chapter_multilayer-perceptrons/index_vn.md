@@ -4,7 +4,7 @@
 # Multilayer Perceptrons
 -->
 
-# Perceptron đa tầng
+# Perceptron Đa tầng
 :label:`chap_perceptrons`
 
 <!--
