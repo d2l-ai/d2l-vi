@@ -181,8 +181,8 @@ In a series of seminal papers, [Vapnik and Chervonenkis](https://en.wikipedia.or
 This work laid the foundations of [Statistical Learning Theory](https://en.wikipedia.org/wiki/Statistical_learning_theory).
 -->
 
-Bởi khái quát hóa là một vấn đề nền tảng trong học máy, bạn có thể sẽ không quá ngạc nhiên khi biết rằng, nhiều nhà toán học và nhà lý thuyết học dành cả cuộc đời để phát triển các lý thuyết chính thức để mô tả vấn đề này.
-Trong [định lý cùng tên](https://en.wikipedia.org/wiki/Glivenko–Cantelli_theorem) của họ, Glivenko và Cantelli đã tìm ra tốc độ học mà tại đó lỗi huấn luyện sẽ hội tụ tiến tới lỗi khái quát.
+Bởi khái quát hóa là một vấn đề nền tảng trong học máy, không quá ngạc nhiên khi nhiều nhà toán học và nhà lý thuyết học dành cả cuộc đời để phát triển các lý thuyết hình thức mô tả vấn đề này.
+Trong [định lý cùng tên](https://en.wikipedia.org/wiki/Glivenko–Cantelli_theorem), Glivenko và Cantelli đã tìm ra tốc độ học mà tại đó lỗi huấn luyện sẽ hội tụ về lỗi khái quát.
 Trong chuỗi các bài báo đầu ngành, [Vapnik và Chervonenkis](https://en.wikipedia.org/wiki/Vapnik–Chervonenkis_theory) đã mở rộng lý thuyết này cho nhiều lớp hàm tổng quát hơn.
 Công trình này là nền tảng của ngành [Lý thuyết học thống kê](https://en.wikipedia.org/wiki/Statistical_learning_theory).
 
@@ -194,9 +194,9 @@ This means that the process that samples our data has no *memory*.
 The $2^{\mathrm{nd}}$ example drawn and the $3^{\mathrm{rd}}$ drawn are no more correlated than the $2^{\mathrm{nd}}$ and the $2$-millionth sample drawn.
 -->
 
-Trong một *thiết lập chuẩn cho học có giám sát* -- vẫn đang làm và sẽ dính lấy ta xuyên suốt hầu hết cuốn sách này, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (thường gọi là giả thiết i.i.d.).
+Trong một *thiết lập chuẩn cho học có giám sát* -- chủ đề lớn nhất xuyên suốt cuốn sách, chúng ta giả sử rằng cả dữ liệu huấn luyện và dữ liệu kiểm tra đều được lấy mẫu *độc lập* từ các phân phối *giống hệt* nhau (*independent & identically distributed*, thường gọi là giả thiết i.i.d.).
 Điều này có nghĩa là quá trình lấy mẫu dữ liệu không hề có sự *ghi nhớ*.
-Mẫu lấy ra thứ hai và thứ ba cũng không liên quan gì với nhau hơn là mẫu lấy ra thứ hai và thứ hai triệu.
+Mẫu lấy ra thứ hai cũng không tương quan với mẫu thứ ba hơn so với mẫu thứ hai triệu.
 
 <!--
 Being a good machine learning scientist requires thinking critically, and already you should be poking holes in this assumption, coming up with common cases where the assumption fails.
@@ -212,7 +212,7 @@ Trở thành một nhà khoa học học máy giỏi yêu cầu tư duy phản b
 Các phân phối này đơn giản là không giống nhau.
 Hơn nữa, việc lấy mẫu có thể có tương quan về mặt thời gian.
 Sẽ ra sao nếu chúng ta thực hiện phân loại chủ đề cho các bài Tweet.
-Vòng đời của các tin tức sẽ tạo nên sự phụ thuộc nhất thời tới các chủ đề được đề cập, vi phạm mọi giả định độc lập thống kê.
+Vòng đời của các tin tức sẽ tạo nên sự phụ thuộc về mặt thời gian giữa các chủ đề được đề cập, vi phạm mọi giả định độc lập thống kê.
 
 <!--
 Sometimes we can get away with minor violations of the i.i.d. assumption and our models will continue to work remarkably well.
@@ -220,7 +220,7 @@ After all, nearly every real-world application involves at least some minor viol
 -->
 
 Đôi khi, chúng ta có thể bỏ qua một vài vi phạm nhỏ trong giả thiết i.i.d. mà mô hình vẫn có thể làm việc rất tốt.
-Nói chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ, v.v.
+Nhìn chung, gần như tất cả các ứng dụng thực tế đều vi phạm một vài giả thiết i.i.d. nhỏ, nhưng đổi lại ta có được các công cụ rất hữu dụng như nhận dạng khuôn mặt, nhận dạng tiếng nói, dịch ngôn ngữ, v.v.
 
 <!--
 Other violations are sure to cause trouble.
@@ -229,7 +229,7 @@ This is unlikely to work well since college students tend to look considerably d
 -->
 
 Các vi phạm khác thì chắc chắn dẫn tới rắc rối.
-Cùng hình dung ở ví dụ này, nếu chúng ta cố gắng huấn luyện một hệ thống nhận dạng khuôn mặt bằng cách huấn luyện nó hoàn toàn trên dữ liệu của các sinh viên đại học và lại đem nó đi triển khai như là một công cụ để giám sát trong viện dưỡng lão.
+Cùng hình dung ở ví dụ này, ta thử huấn luyện một hệ thống nhận dạng khuôn mặt sử dụng hoàn toàn dữ liệu của các sinh viên đại học và đem đi triển khai như một công cụ giám sát trong viện dưỡng lão.
 Cách này gần như không khả thi vì ngoại hình giữa hai độ tuổi quá khác biệt.
 
 <!--
@@ -238,9 +238,9 @@ For now, even taking the i.i.d. assumption for granted, understanding generaliza
 Moreover, elucidating the precise theoretical foundations that might explain why deep neural networks generalize as well as they do continues to vexes the greatest minds in learning theory.
 -->
 
-Trong mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
-Hiện tại, thậm chí khi giả thiết i.i.d. được đảm bảo, thì hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
-Hơn nữa, làm sáng tỏ nền tảng lý thuyết chính xác có thể giải thích tại sao các mạng nơ-ron sâu có thể khái quát cũng như chúng tiếp tục làm đau đầu những bộ óc vĩ đại nhất trong lý thuyết học.
+Trong các mục và chương kế tiếp, chúng ta sẽ đề cập tới các vấn đề gặp phải khi vi phạm giả thiết i.i.d.
+Hiện tại khi giả thiết i.i.d. thậm chí được đảm bảo, hiểu được sự khái quát hóa cũng là một vấn đề nan giải.
+Hơn nữa, việc làm sáng tỏ nền tảng lý thuyết để giải thích tại sao các mạng nơ-ron sâu có thể khái quát hóa tốt như vậy vẫn tiếp tục làm đau đầu những bộ óc vĩ đại nhất trong lý thuyết học.
 
 <!--
 When we train our models, we attempt searching for a function that fits the training data as well as possible.
@@ -250,10 +250,10 @@ This is precisely what we want to avoid (or at least control).
 Many of the techniques in deep learning are heuristics and tricks aimed at guarding against overfitting.
 -->
 
-Khi chúng ta huấn luyện mô hình, ta đang cố gắng tìm kiếm một hàm số khớp với dữ liệu huấn luyện nhất có thể.
-Nếu hàm số này quá linh hoạt để có thể khớp với các hành vi giả cũng dễ như với các xu hướng thật trong dữ liệu, thì nó có thể *quá khớp* để có thể tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
-Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là kiểm soát nó).
-Rất nhiều kỹ thuật trong học sâu là các thực nghiệm và thủ thuật với mục đích chống lại vấn đề quá khớp.
+Khi huấn luyện mô hình, ta đang cố gắng tìm kiếm một hàm số khớp với dữ liệu huấn luyện nhất có thể.
+Nếu hàm số này quá linh hoạt để có thể khớp với các khuôn mẫu giả cũng dễ như với các xu hướng thật trong dữ liệu, thì nó có thể *quá khớp* để có thể tạo ra một mô hình có tính khái quát hóa cao trên dữ liệu chưa nhìn thấy.
+Đây chính xác là những gì chúng ta muốn tránh (hay ít nhất là kiểm soát được).
+Rất nhiều kỹ thuật trong học sâu là các phương pháp dựa trên thực nghiệm và thủ thuật để chống lại vấn đề quá khớp.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -276,12 +276,12 @@ Often with neural networks, we think of a model that takes more training steps a
 -->
 
 Khi có các mô hình đơn giản và dữ liệu dồi dào, ta kỳ vọng lỗi khái quát sẽ giống với lỗi huấn luyện.
-Khi làm việc với nhiều mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
-Để chỉ ra chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
-Rất nhiều yếu tố ảnh hưởng đến việc một mô hình có khái quát hóa tốt hay không.
+Khi làm việc với mô hình phức tạp hơn và ít mẫu huấn luyện hơn, ta kỳ vọng các lỗi huấn luyện giảm xuống nhưng khoảng cách khái quát tăng.
+Việc chỉ ra chính xác điều gì cấu thành nên độ phức tạp của mô hình là một vấn đề nan giải. 
+Có rất nhiều yếu tố ảnh hưởng đến việc một mô hình có khái quát hóa tốt hay không. 
 Ví dụ một mô hình với nhiều tham số hơn sẽ được xem là phức tạp hơn.
-Một mô hình mà các tham số có phạm vi giá trị rộng hơn thì được xem là phức tạp hơn.
-Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có càng nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
+Một mô hình mà các tham số có miền giá trị rộng hơn thì được xem là phức tạp hơn.
+Thông thường với các mạng nơ-ron, ta nghĩ đến một mô hình có nhiều bước huấn luyện là mô hình phức tạp hơn, và mô hình *dừng sớm* là ít phức tạp hơn.
 
 <!--
 It can be difficult to compare the complexity among members of substantially different model classes (say a decision tree versus a neural network).
@@ -294,19 +294,18 @@ This is important since all statistical estimation is [post hoc](https://en.wiki
 For now, we will put the philosophy aside and stick to more tangible issues.
 -->
 
-Điều đó rất khó để so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác biệt cơ bản (ví như cây quyết định so với mạng nơ-ron).
+Rất khó để có thể so sánh sự phức tạp giữa các thành viên trong các lớp mô hình khác hẳn nhau (ví như cây quyết định so với mạng nơ-ron).
 Hiện tại, có một quy tắc đơn giản khá hữu ích sau:
-Một mô hình có thể giải thích các sự kiện bất kỳ được các nhà thống kê xem là phức tạp,
-trong khi một mô hình có năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì có lẽ đạt gần đến sự thật hơn.
-Trong triết học, điều này gần với tiêu chí của Popper về [tính giả mạo](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
-Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), điều đó có nghĩa là ta đánh giá sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện liên quan.
+Một mô hình có thể giải thích các sự kiện bất kỳ thì được các nhà thống kê xem là phức tạp, trong khi một mô hình với năng lực biểu diễn giới hạn nhưng vẫn có thể giải thích tốt được dữ liệu thì hầu như chắc chắn là đúng đắn hơn.
+Trong triết học, điều này gần với tiêu chí của Popper về [khả năng phủ định](https://en.wikipedia.org/wiki/Falsifiability) của một lý thuyết khoa học: một lý thuyết tốt nếu nó khớp dữ liệu và nếu có các kiểm định cụ thể có thể dùng để phản chứng nó.
+Điều này quan trọng bởi vì tất cả các ước lượng thống kê là [post hoc](https://en.wikipedia.org/wiki/Post_hoc), tức là ta đánh giá giả thuyết sau khi quan sát các sự thật, do đó dễ bị tác động bởi lỗi ngụy biện cùng tên.
 Từ bây giờ, ta sẽ đặt triết lý qua một bên và tập trung hơn vào các vấn đề hữu hình.
 
 <!--
 In this section, to give you some intuition, we’ll focus on a few factors that tend to influence the generalizability of a model class:
 -->
 
-Trong phần này, để cho bạn một cái nhìn trực quan, chúng ta sẽ tập trung vào một vài yếu tố có xu hướng ảnh hưởng đến tính khái quát của một lớp mô hình:
+Trong phần này, để có cái nhìn trực quan, chúng ta sẽ tập trung vào một vài yếu tố có xu hướng ảnh hưởng đến tính khái quát của một lớp mô hình:
 
 <!--
 1. The number of tunable parameters. When the number of tunable parameters, sometimes called the *degrees of freedom*, is large, models tend to be more susceptible to overfitting.
@@ -315,9 +314,9 @@ Trong phần này, để cho bạn một cái nhìn trực quan, chúng ta sẽ 
 But overfitting a dataset with millions of examples requires an extremely flexible model.
 -->
 
-1. Số lượng các thông số có thể điều chỉnh. Khi số lượng các thông số có thể điều chỉnh, đôi khi được gọi là *bậc tự do*, là lớn thì mô hình có xu hướng bị quá khớp.
-2. Các giá trị được nhận bởi các thông số. Khi các trọng số có phạm vi giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
-3. Số lượng các mẫu huấn luyện. Quá dễ để quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu kể cả khi mô hình đơn giản.
+1. Số lượng các tham số có thể điều chỉnh. Khi số lượng các tham số có thể điều chỉnh (đôi khi được gọi là *bậc tự do*) lớn thì mô hình sẽ dễ bị quá khớp hơn.
+2. Các giá trị được nhận bởi các tham số. Khi các trọng số có miền giá trị rộng hơn, các mô hình dễ bị quá khớp hơn.
+3. Số lượng các mẫu huấn luyện. Việc quá khớp một tập dữ liệu chứa chỉ một hoặc hai mẫu rất dễ dàng, kể cả khi mô hình đơn giản.
 Nhưng quá khớp một tập dữ liệu với vài triệu mẫu đòi hỏi mô hình phải cực kỳ linh hoạt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -340,7 +339,7 @@ At other times, we are comparing members of the same class of models that have b
 
 Trong học máy, ta thường lựa chọn mô hình cuối cùng sau khi cân nhắc nhiều mô hình ứng viên.
 Quá trình này được gọi là lựa chọn mô hình.
-Đôi khi các mô hình được đem ra so sánh khác nhau cơ bản về mặt bản chất (ví như, cây quyết định với các mô hình tuyến tính).
+Đôi khi các mô hình được đem ra so sánh khác nhau cơ bản về mặt bản chất (ví như, cây quyết định với các mô hình tuyến tính). 
 Khi khác, ta lại so sánh các thành viên của cùng một lớp mô hình được huấn luyện với các cài đặt siêu tham số khác nhau.
 
 <!--
@@ -370,9 +369,8 @@ If we overfit our training data, there is always the evaluation on test data to 
 But if we overfit the test data, how would we ever know?
 -->
 
-Về nguyên tắc, ta không nên sử dụng vào tập kiểm tra cho đến khi chọn được tất cả các siêu tham số.
-Nếu sử dụng dữ liệu kiểm tra trong quá trình lựa chọn mô hình, có một rủi ro là ta có thể quá khớp dữ liệu kiểm tra.
-Và rồi rắc rối nghiêm trọng sẽ xảy ra.
+Về nguyên tắc, ta không nên sử dụng tập kiểm tra cho đến khi chọn xong tất cả các siêu tham số.
+Nếu sử dụng dữ liệu kiểm tra trong quá trình lựa chọn mô hình, có một rủi ro là ta có thể quá khớp dữ liệu kiểm tra, và khi đó ta sẽ gặp rắc rối lớn.
 Nếu quá khớp dữ liệu huấn luyện, ta luôn có thể đánh giá mô hình trên tập kiểm tra để đảm bảo mình "trung thực".
 Nhưng nếu quá khớp trên dữ liệu kiểm tra, làm sao chúng ta có thể biết được?
 
@@ -383,13 +381,13 @@ And yet we cannot rely solely on the training data for model selection either be
 -->
 
 Vì vậy, ta không bao giờ nên dựa vào dữ liệu kiểm tra để lựa chọn mô hình.
-Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa chọn mô hình vì ta không thể ước tính lỗi khái quát trên chính dữ liệu mà chúng ta sử dụng để huấn luyện mô hình.
+Tuy nhiên, không thể chỉ dựa vào dữ liệu huấn luyện để lựa chọn mô hình vì ta không thể ước tính lỗi khái quát trên chính dữ liệu được sử dụng để huấn luyện mô hình.
 
 <!--
 The common practice to address this problem is to split our data three ways, incorporating a *validation set* in addition to the training and test sets.
 -->
 
-Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, kết hợp một *tập kiểm định* bên cạnh các tập huấn luyện và kiểm tra. 
+Phương pháp phổ biến để giải quyết vấn đề này là phân chia dữ liệu thành ba phần, thêm một *tập kiểm định* ngoài các tập huấn luyện và kiểm tra.
 
 
 <!--
@@ -399,8 +397,8 @@ We can seldom afford a new test set for each round of experiments.
 -->
 
 Trong các ứng dụng thực tế, bức tranh trở nên mập mờ hơn.
-Mặc dù lý tưởng là khi ta chỉ chạm đến dữ liệu kiểm tra một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi bị loại bỏ chỉ sau một lần sử dụng. 
-Ta hiếm khi đủ khả năng cho một tập kiểm tra mới sau mỗi vòng thử nghiệm. 
+Mặc dù tốt nhất ta chỉ nên động đến dữ liệu kiểm tra đúng một lần, để đánh giá mô hình tốt nhất hoặc so sánh một số lượng nhỏ các mô hình với nhau, dữ liệu kiểm tra trong thế giới thực hiếm khi bị vứt bỏ chỉ sau một lần sử dụng.
+Ta hiếm khi có được một tập kiểm tra mới sau mỗi vòng thử nghiệm.
 
 <!--
 The result is a murky practice where the boundaries between validation and test data are worryingly ambiguous.
@@ -411,10 +409,10 @@ The uncertainty in our estimates can be shown to be of the order of $\mathcal{O}
 -->
 
 Kết quả là một thực tiễn âm u trong đó ranh giới giữa dữ liệu kiểm định và kiểm tra mơ hồ theo cách đáng lo ngại.
-Trừ khi có quy định rõ ràng khác, trong các thí nghiệm trong cuốn sách này, ta thật sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thật.
+Trừ khi có quy định rõ ràng thì, trong các thí nghiệm trong cuốn sách này, ta thật sự đang làm việc với cái được gọi là dữ liệu huấn luyện và dữ liệu kiểm định chứ không có tập kiểm tra thật.
 Do đó, độ chính xác được báo cáo trong mỗi thử nghiệm thật ra là độ chính xác kiểm định và không phải là độ chính xác của tập kiểm tra thật.
 Tin tốt là ta không cần quá nhiều dữ liệu trong tập kiểm định.
-Sự bất định trong các ước tính của ta có thể chứng minh là thuộc  bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
+Ta có thể chứng minh rằng sự bất định trong các ước tính thuộc bậc $\mathcal{O}(n^{-\frac{1}{2}})$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -460,7 +458,7 @@ Khi so sánh lỗi huấn luyện và lỗi kiểm định, ta cần lưu ý hai
 Đầu tiên, ta sẽ muốn chú ý trường hợp lỗi huấn luyện và lỗi kiểm định đều lớn nhưng khoảng cách giữa chúng lại nhỏ.
 Nếu mô hình không thể giảm thiểu lỗi huấn luyện, điều này có nghĩa là mô hình quá đơn giản (tức không đủ khả năng biểu diễn) để có thể xác định được khuôn mẫu mà ta đang cố mô hình hóa.
 Hơn nữa, do khoảng cách khái quát giữa lỗi huấn luyện và lỗi kiểm định nhỏ, ta có lý do để tin rằng phương án giải quyết là một mô hình phức tạp hơn.
-Hiện tượng này được gọi là dưới khớp.
+Hiện tượng này được gọi là dưới khớp (*underfitting*).
 
 <!--
 On the other hand, as we discussed above, we want to watch out for the cases when our training error is significantly lower than our validation error, indicating severe overfitting.
@@ -472,7 +470,7 @@ Ultimately, we usually care more about the validation error than about the gap b
 Mặt khác, như ta đã thảo luận ở phía trên, ta cũng muốn chú ý tới trường hợp lỗi huấn luyện thấp hơn lỗi kiểm định một cách đáng kể, một biểu hiện của sự quá khớp nặng.
 Lưu ý rằng quá khớp không phải luôn là điều xấu.
 Đặc biệt là với học sâu, ta đều biết rằng mô hình dự đoán tốt nhất thường đạt chất lượng tốt hơn hẳn trên dữ liệu huấn luyện so với dữ liệu kiểm định.
-Cuối cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
+Sau cùng, ta thường quan tâm đến lỗi kiểm định hơn khoảng cách giữa lỗi huấn luyện và lỗi kiểm định.
 
 <!--
 Whether we overfit or underfit can depend both on the complexity of our model and the size of the available training datasets, two topics that we discuss below.
@@ -507,7 +505,7 @@ Since this is just a linear regression problem, we can use the squared error as 
 -->
 
 để ước tính nhãn $y$.
-Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, khi $x^0=1$ với mọi $x$ thì $w_0$ là hệ số điều chỉnh.
+Đây đơn giản là một bài toán hồi quy tuyến tính trong đó các đặc trưng được tính bằng cách lấy mũ của $x$, $w_i$ là trọng số của mô hình, vì $x^0=1$ với mọi $x$ nên $w_0$ là hệ số điều chỉnh. 
 Vì đây là bài toán hồi quy tuyến tính, ta có thể sử dụng bình phương sai số làm hàm mất mát.
 
 <!--
@@ -517,10 +515,10 @@ In fact, whenever the data points each have a distinct value of $x$, a polynomia
 We visualize the relationship between polynomial degree and under- vs over-fitting in :numref:`fig_capacity_vs_error`.
 -->
 
-Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền giá trị của hàm số cũng rộng hơn.
-Cố định tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
-Trong thực tế, với mỗi tập dữ liệu có các giá trị $x$ phân biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện.
-Mối quan hệ giữa bậc của đa thức với hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
+Hàm đa thức bậc cao phức tạp hơn hàm đa thức bậc thấp, vì đa thức bậc cao có nhiều tham số hơn và miền lựa chọn hàm số cũng rộng hơn.
+Nếu giữ nguyên tập dữ liệu huấn luyện, các hàm đa thức bậc cao hơn sẽ luôn đạt được lỗi huấn luyện thấp hơn (ít nhất là bằng) so với đa thức bậc thấp hơn.
+Trong thực tế, nếu mọi điểm dữ liệu có các giá trị $x$ riêng biệt, một hàm đa thức có bậc bằng với số điểm dữ liệu đều có thể khớp một cách hoàn hảo với tập huấn luyện. 
+Mối quan hệ giữa bậc của đa thức với hai hiện tượng dưới khớp và quá khớp được biểu diễn trong :numref:`fig_capacity_vs_error`.
 
 <!--
 ![Influence of Model Complexity on Underfitting and Overfitting](../img/capacity_vs_error.svg)
