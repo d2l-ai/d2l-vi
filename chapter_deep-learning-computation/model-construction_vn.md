@@ -311,11 +311,11 @@ Python's control flow within the forward method.
 Moreover we might want to perform arbitrary mathematical operations, not simply relying on predefined neural network layers.
 -->
 
-Lớp `nn.Sequential` hỗ trợ xây mô hình dễ dàng hơn, nó cho phép ta lắp ráp các mô hình mới mà không cần phải tự định nghĩa lớp của mình.
-Tuy nhiên, không phải tất cả các mô hình đều là các kết nối ngang hàng đơn giản.
-Trong trường hợp cần linh hoạt hơn, ta vẫn sẽ muốn định nghĩa từng `Block` của riêng mình.
-Ví dụ, ta muốn tự triển khai luồng điều khiển của Python với phương pháp truyền xuôi.
-Hơn nữa, ta cũng có thể muốn biễu diên các phép toán tùy ý, không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa trước.
+Lớp `nn.Sequential` giúp việc xây mô hình trở nên dễ hơn, nó cho phép lắp ráp các mô hình mới mà không cần tự định nghĩa lớp của mình.
+Tuy nhiên, không phải tất cả mô hình đều có cấu trúc kết nối ngang hàng đơn giản.
+Trong trường hợp cần sự linh hoạt, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình.
+Ví dụ, ta muốn tự phân luồng điều khiển của Python với phương pháp truyền xuôi.
+Hơn nữa, ta cũng có thể muốn biễu diễn các phép toán tùy ý, không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa trước.
 
 <!--
 You might have noticed that until now, all of the operations in our networks have acted upon our network's activations and its parameters.
@@ -326,18 +326,18 @@ $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, where $\mathbf{
 and $c$ is some specified constant that is not updated during optimization.
 -->
 
-Cho đến tận bây giờ, bạn có thể nhận thấy rằng tất cả các phép toán trong mạng của ta đã làm dựa vào kích hoạt và các tham số của mạng.
-Tuy nhiên, trong một vài trường hợp, ta có thê muốn kết hợp các hằng số không đổi, nó không phải là kết quả của tầng trước cũng không phải các tham số có thể cập nhật.
-Trong Gluon, ta gọi những tham số *hằng số* này.
-Ví dụ ta muốn một lớp tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $x$ là đầu vào, $w$ là tham số của ta, và $c$ là một hằng số đặc biệt nào đó và nó không được cập nhật trong suốt quá trình tối ưu hóa.
+Cho đến tận bây giờ, bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng của ta đều dựa vào các kích hoạt và tham số của mạng.
+Tuy nhiên, trong một vài trường hợp, ta có thể muốn kết hợp các hằng số không đổi, nó không phải là kết quả của tầng trước cũng không phải các tham số có thể cập nhật.
+Trong Gluon, ta gọi điều trên là tham số *hằng số*.
+Ví dụ ta muốn một tầng tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $x$ là đầu vào, $w$ là tham số, và $c$ là một hằng số đặc biệt nào đó và nó không được cập nhật trong suốt quá trình tối ưu hóa.
 
 <!--
 Declaring constants explicitly (via `get_constant`) makes this clear helps Gluon to speed up execution.
 In the following code, we'll implement a model that could not easily be assembled using only predefined layers and `Sequential`.
 -->
 
-Khi khai báo các hằng số rõ ràng (bằng `get_constant`) làm cho Gluon tăng tốc độ chạy.
-Trong đoạn mã sau, ta lập trình một mô hình mà không hề dễ khi lắp ráp bằng các tầng định nghĩa trước và `Sequential`.
+Khi khai báo các hằng số một cách rõ ràng (bằng `get_constant`), điều này giúp Gluon tăng tốc độ chạy.
+Trong đoạn mã sau, ta đưa một mô hình mà không hề dễ lập trình khi lắp ráp bằng các tầng định nghĩa trước và `Sequential`.
 
 ```{.python .input  n=38}
 class FixedHiddenMLP(nn.Block):
@@ -402,7 +402,7 @@ In the following example, we nest `Block`s in some creative ways.
 -->
 
 Với Gluon, ta có thể trộn và kết hợp nhiều cách khác nhau để lắp ráp các `Block` lại với nhau.
-Trong ví dụ sau, chúng ta lồng `Blocks` bằng một số cách sáng tạo.
+Trong ví dụ sau, chúng ta lồng `Blocks` bằng một vài cách sáng tạo.
 
 ```{.python .input  n=40}
 class NestMLP(nn.Block):Block
