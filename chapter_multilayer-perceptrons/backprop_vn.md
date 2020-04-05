@@ -17,7 +17,7 @@ When it came time to calculate the gradients, we just invoked the `backward` fun
 
 Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
 Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các phép tính trong quá trình *lan truyền xuôi* qua mô hình.
-Khi cần tính gradient, ta mới chỉ gọi hàm `backward` và mô-đun `autograd` sẽ lo việc tính toán chi tiết.
+Khi cần tính gradient, ta mới chỉ gọi hàm `backward` và mô-đun `autograd` sẽ lo các chi tiết tính toán.
 
 <!--
 The automatic calculation of gradients profoundly simplifies the implementation of deep learning algorithms.
@@ -28,9 +28,9 @@ you ought to *know* how these gradients are calculated under the hood if you wan
 -->
 
 Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
-Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi các mô hình phức tạp một chút, ta sẽ phải tính lại các đạo hàm rắc rối một cách thủ công.
-Điều đáng ngạc nhiên là các bài báo học thuật thường dành rất nhiều trang để rút ra các nguyên tắc cập nhật.
-Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn vẫn nên *nắm* rõ cách tính gradient nếu bạn muốn tiến xa hơn việc chỉ hiểu hời hợt về học sâu.
+Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi các mô hình phức tạp một chút, các đạo hàm rắc rối cần phải được tính lại một cách thủ công.
+Điều đáng ngạc nhiên là các bài báo học thuật thường có các công thức cập nhật mô hình dài hàng trang giấy.
+Vậy nên dù vẫn phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị của học sâu, bạn vẫn nên *nắm* rõ thay vì chỉ hiểu một cách hời hợt cách tính gradient nếu bạn muốn tiến xa hơn.
 
 <!--
 In this section, we take a deep dive into the details of backward propagation (more commonly called *backpropagation* or *backprop*).
@@ -59,7 +59,7 @@ This may seem tedious but in the eternal words of funk virtuoso James Brown, you
 -->
 
 Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) của mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
-Bây giờ ta sẽ thực hiện từng bước trong cơ chế làm việc của mạng nơ-ron sâu có một tầng ẩn.
+Bây giờ ta sẽ thực hiện qua từng bước trong cơ chế vận hành của mạng nơ-ron sâu có một tầng ẩn.
 Điều này nghe có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
 
 <!--
@@ -108,7 +108,7 @@ $$L = l(\mathbf{o}, y).$$
 According to the definition of $\ell_2$ regularization, given the hyperparameter $\lambda$, the regularization term is
 -->
 
-Theo định nghĩa của điều chuẩn $\ell_2$, với siêu tham số $\lambda$ thì lượng điều chuẩn là:
+Theo định nghĩa của điều chuẩn $\ell_2$ với siêu tham số $\lambda$, lượng điều chuẩn là:
 
 $$s = \frac{\lambda}{2} \left(\|\mathbf{W}^{(1)}\|_F^2 + \|\mathbf{W}^{(2)}\|_F^2\right),$$
 
