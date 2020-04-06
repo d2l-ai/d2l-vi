@@ -122,8 +122,8 @@ In 1995, Christopher Bishop formalized this idea when he proved that training wi
 This work drew a clear mathematical connection between the requirement that a function be smooth (and thus simple), and the requirement that it be resilient to perturbations in the input.
 -->
 
-Vào năm 1995, Christopher Bishop đã chính quy hóa ý tưởng này khi ông chứng minh rằng việc huấn luyện với nhiễu ngẫu nhiên tương đương với điều chuẩn Tikhonov :cite:`Bishop.1995`.
-Công trình này đã chỉ rõ mối liên kết toán học giữa điều kiện hàm là mượt (nên nó cũng đơn giản) và điều kiện hàm không bị ảnh hưởng bởi những nhiễu loạn nhỏ ở đầu vào.
+Vào năm 1995, Christopher Bishop đã chính quy hóa ý tưởng này khi ông chứng minh rằng việc huấn luyện với đầu vào nhiễu tương đương với điều chuẩn Tikhonov :cite:`Bishop.1995`.
+Công trình này đã chỉ rõ mối liên kết toán học giữa điều kiện hàm là mượt (nên nó cũng đơn giản) với khả năng kháng nhiễu đầu vào của hàm số.
 
 <!--
 Then, in 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` developed a clever idea for how to apply Bishop's idea to the *internal* layers of the network, too.
@@ -142,7 +142,7 @@ Throughout training, on each iteration, standard dropout consists of zeroing out
 -->
 
 Ý tưởng này, có tên gọi là *dropout*, hoạt động bằng cách thêm nhiễu khi tính toán các tầng nội bộ trong lượt truyền xuôi và nó đã trở thành một kĩ thuật tiêu chuẩn để huấn luyện các mạng nơ-ron.
-Phương pháp này có tên gọi như vậy là bởi ta *bỏ ra ngoài* một số nơ-ron trong quá trình huấn luyện.
+Phương pháp này có tên gọi như vậy là bởi ta *loại bỏ* (*drop out*) một số nơ-ron trong quá trình huấn luyện.
 Tại mỗi vòng lặp huấn luyện, phương pháp dropout tiêu chuẩn sẽ đặt giá trị của một lượng nhất định (thường là 50%) các nút trong mỗi tầng về không, trước khi tính toán các tầng kế tiếp.
 
 <!--
@@ -155,7 +155,7 @@ Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argu
 Để nói cho rõ, mối liên kết đến Bishop là của chúng tôi tự đặt ra.
 Đáng ngạc nhiên, bài báo gốc về dropout xây dựng cách hiểu trực giác bằng việc so sánh nó với quá trình sinh sản hữu tính.
 Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó và họ gọi trạng thái này là *đồng thích nghi*.
-Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như sinh sản hữu tính lập luận rằng chúng phá bỏ các gen đã đồng thích nghi.
+Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như luận điểm sinh sản hữu tính phá bỏ các gen đã đồng thích nghi.
 
 <!--
 The key challenge then is *how* to inject this noise.
