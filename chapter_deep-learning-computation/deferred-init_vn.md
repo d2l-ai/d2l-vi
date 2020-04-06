@@ -5,14 +5,15 @@
 # Deferred Initialization
 -->
 
-# *dịch tiêu đề phía trên*
+# Khởi tạo trễ
 :label:`sec_deferred_init`
 
 <!--
 In the previous examples we played fast and loose with setting up our networks. In particular we did the following things that *shouldn't* work:
 -->
 
-*dịch đoạn phía trên*
+Ở các ví dụ trên chúng ta đi nhanh và không quá chặt chẽ trong việc xây dựng các mạng nơron.
+Cụ thể, dưới đây là những việc chúng ta đã thực hiện mà *có khả năng sẽ không* hoạt động:
 
 <!--
 * We defined the network architecture with no regard to the input dimensionality.
@@ -20,7 +21,9 @@ In the previous examples we played fast and loose with setting up our networks. 
 * We even "initialized" these parameters without knowing how many parameters were to initialize.
 -->
 
-*dịch đoạn phía trên*
+* Ta định nghĩa kiến trúc mạng mà không xét đến chiều đầu vào.
+* Ta thêm các tầng mà không xét đến chiều đầu ra của tầng trước đó.
+* Ta thậm chí đã "khởi tạo" các tham số mà không biết có bao nhiêu tham số cần khởi tạo.
 
 <!--
 All of those things sound impossible and indeed, they are. 
@@ -32,7 +35,12 @@ In what follows, we will discuss how this works using initialization as an examp
 After all, we cannot initialize variables that we do not know exist.
 -->
 
-*dịch đoạn phía trên*
+Tất cả những điều đó nghe bất khả thi và thực sự, đúng là vậy.
+Suy cho cùng, MXNet (hay bất cứ framework nào khác) không thể dự đoán được chiều của đầu vào sẽ như thế nào.
+Ở các chương sau, khi làm việc với các mạng nơron tích chập và ảnh, vấn đề này còn trở nên rõ ràng hơn, khi chiều của đầu vào (trong trường hợp này là độ phân giải của một bức ảnh) về lâu dài sẽ tác động đến chiều các tầng phía sau của mạng.
+Do đó, khả năng gán giá trị các tham số mà không cần biết chiều tại thời điểm viết mã có thể làm việc mô hình hoá thống kê trở nên đơn giản hơn nhiều.
+Dưới đây, chúng ta sẽ thảo luận cơ chế hoạt động của việc này qua một ví dụ về khởi tạo.
+Vì dù gì, chúng ta cũng không thể khởi tạo các biến mà ta biết chúng không tồn tại.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -294,7 +302,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
