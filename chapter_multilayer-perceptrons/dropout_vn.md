@@ -283,7 +283,7 @@ Then we can keep those nodes for which the corresponding sample is greater than 
 -->
 
 Để lập trình hàm dropout cho một tầng đơn, ta sẽ lấy mẫu từ một biến ngẫu nhiên Bernoulli (nhị phân) với số lượng bằng với số chiều của tầng, trong đó biến ngẫu nhiên đạt giá trị $1$ (giữ) với xác suất bằng $1-p$ và giá trị $0$ (bỏ) với xác suất bằng $p$.
-Một cách đơn giản để thực hiện việc này là lấy các mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
+Một cách đơn giản để thực hiện việc này là lấy mẫu từ một phân phối đều $U[0, 1]$, sau đó ta có thể giữ các nút có mẫu tương ứng lớn hơn $p$ và bỏ đi những nút còn lại.
 
 <!--
 In the following code, we implement a `dropout_layer` function that drops out the elements in the `ndarray` input `X` with probability `dropout`, 
@@ -315,7 +315,7 @@ We can test out the `dropout_layer` function on a few examples.
 In the following lines of code, we pass our input `X` through the dropout operation, with probabilities 0, 0.5, and 1, respectively.
 -->
 
-Ta có thể thử nghiệm hàm `dropout_layer` lên một vài mẫu.
+Ta có thể thử nghiệm hàm `dropout_layer` với một vài mẫu.
 Trong đoạn mã nguồn dưới đây, đầu vào `X` được truyền qua bước dropout với xác suất lần lượt là 0, 0.5 và 1.
 
 ```{.python .input  n=2}
