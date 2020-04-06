@@ -215,7 +215,7 @@ Như ta mong muốn, kỳ vọng không bị thay đổi, hay nói cách khác $
 ## Dropout in Practice
 -->
 
-## Dropout trong Thực tế
+## Dropout trong Thực hành
 
 <!--
 Recall the multilayer perceptron (:numref:`sec_mlp`) with a hidden layer and 5 hidden units.
@@ -243,7 +243,7 @@ In this way, the calculation of the output layer cannot be overly dependent on a
 Khi chúng ta áp dụng dropout cho một tầng ẩn, tức gán mỗi nút ẩn bằng không với xác suất là $p$, kết quả có thể được xem như là một mạng chỉ chứa một tập con của các nơ-ron ban đầu.
 Trong :numref:`fig_dropout2`, $h_2$ và $h_5$ bị loại bỏ.
 Hệ quả là, việc tính toán $y$ không còn phụ thuộc vào $h_2$ và $h_5$ nữa và gradient tương ứng của chúng cũng biến mất khi thực hiện lan truyền ngược.
-Theo cách này, việc tính toán tầng đầu ra không còn bị phụ thuộc quá nhiều vào bất kỳ một thành phần nào trong $h_1, \ldots, h_5$.
+Theo cách này, việc tính toán tầng đầu ra không thể quá phụ thuộc vào bất kỳ một thành phần nào trong $h_1, \ldots, h_5$.
 
 <!--
 ![MLP before and after dropout](../img/dropout2.svg)
@@ -262,7 +262,7 @@ For now we will put off uncertainty estimation for subsequent chapters and volum
 
 Thông thường, ***chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra***.
 Với một mô hình đã huấn luyện và một mẫu kiểm tra, ta sẽ không thực hiện loại bỏ bất kỳ nút nào (do đó cũng không cần chuẩn hóa).
-Tuy nhiên, cũng có một vài ngoại lệ, một vài nhà nghiên cứu sử dụng dropout tại thời điểm kiểm tra như một thủ thuật đề ước lượng *độ bất định* trong dự đoán của mạng nơ-ron: nếu các dự đoán giống nhau với nhiều mặt nạ dropout khác nhau, thì ta có thể nói rằng mạng đó đáng tin cậy hơn.
+Tuy nhiên cũng có một vài ngoại lệ. Một vài nhà nghiên cứu sử dụng dropout tại thời điểm kiểm tra như một thủ thuật đề ước lượng *độ bất định* trong dự đoán của mạng nơ-ron: nếu các dự đoán giống nhau với nhiều mặt nạ dropout khác nhau, ta có thể nói rằng mạng đó đáng tin cậy hơn.
 Hiện tại, ta sẽ để dành phần ước lượng độ bất định này cho các chương sau.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
