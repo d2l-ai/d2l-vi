@@ -64,7 +64,7 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 Một khối có thể mô tả một tầng duy nhất, một thành phần đa tầng hoặc toàn bộ một mô hình! <!-- Reviewer thấy từ này hợp lý hơn 'thành phần'('component') thì thay giúp mình nhé, thanks-->
 Dưới góc nhìn phần mềm, một `Block` (Khối) là một *lớp*.
 Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết.
-Lưu ý rằng một vài `Block` sẽ không yêu cầu bất kỳ tham số nào cả!
+Lưu ý rằng có những `Block` sẽ không yêu cầu chứa bất kỳ tham số nào cả!
 Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient.
 May mắn thay, nhờ có sự trợ giúp của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) nên khi định nghĩa `Block`, ta chỉ cần quan tâm đến các các tham số và hàm `forward`. 
 <!-- Cụm 'some behind-the-scenes magic' mình thấy khá hay nhưng dịch sang tiếng Việt hơi thô nên để đơn giản là 'trợ giúp', reviewer có cách dịch nào sát với sách hơn thì thay giúp mình.
