@@ -17,7 +17,7 @@ When it came time to calculate the gradients, we just invoked the `backward` fun
 
 Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
 Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các phép tính trong quá trình *lan truyền xuôi* qua mô hình.
-Khi cần tính gradient, ta mới chỉ gọi hàm `backward` và mô-đun `autograd` sẽ lo các chi tiết tính toán.
+Khi cần tính gradient, ta mới chỉ đơn giản gọi hàm `backward` và mô-đun `autograd` sẽ lo các chi tiết tính toán.
 
 <!--
 The automatic calculation of gradients profoundly simplifies the implementation of deep learning algorithms.
@@ -28,7 +28,7 @@ you ought to *know* how these gradients are calculated under the hood if you wan
 -->
 
 Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
-Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi các mô hình phức tạp một chút, các đạo hàm rắc rối cần phải được tính lại một cách thủ công.
+Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi một chút các mô hình phức tạp, các đạo hàm rắc rối cũng cần phải được tính lại một cách thủ công.
 Điều đáng ngạc nhiên là các bài báo học thuật thường có các công thức cập nhật mô hình dài hàng trang giấy.
 Vậy nên dù vẫn phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị của học sâu, bạn vẫn nên *nắm* rõ thay vì chỉ hiểu một cách hời hợt cách tính gradient nếu bạn muốn tiến xa hơn.
 
