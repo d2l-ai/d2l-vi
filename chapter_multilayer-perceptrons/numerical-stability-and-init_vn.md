@@ -82,13 +82,13 @@ or (ii) excessively small, (the *vanishing gradient problem*), rendering learnin
 -->
 
 Nói cách khác, gradient này là tích của $L-l$ ma trận $\mathbf{M}_L \cdot \ldots, \cdot \mathbf{M}_l$ với vector gradient $\mathbf{v}_l$.
-Do đó, có thể ta sẽ gặp phải vấn đề tràn số dưới, một vấn đề thường xảy ra khi nhân quá nhiều xác suất lại với nhau.
-Khi làm việc với các xác suất, một mánh phổ biến là chuyển sang không gian log, đồng nghĩa với việc đưa các bit từ phần định trị sang phần mũ nếu nhìn từ góc độ biểu diễn số học.
+Vì vậy ta sẽ dễ gặp phải vấn đề tràn số dưới, một hiện tượng thường xảy ra khi nhân quá nhiều xác suất lại với nhau.
+Khi làm việc với các xác suất, một mánh phổ biến là chuyển về giá trị log, đồng nghĩa với việc đưa các bit từ phần định trị sang phần mũ nếu nhìn từ góc độ biểu diễn số học.
 Thật không may, bài toán trên lại nghiêm trọng hơn nhiều: các ma trận $M_l$ ban đầu có thể có nhiều trị riêng khác nhau.
 Các trị riêng có thể nhỏ hoặc lớn, và do đó tích của chúng có thể *rất lớn* hoặc *rất nhỏ*.
 Rủi ro của việc gradient bất ổn không chỉ dừng lại ở vấn đề biểu diễn số học.
-Nếu ta không kiểm soát được độ lớn của gradient, sự ổn định của các thuật toán tối ưu cũng không được đảm bảo.do
-Có lẽ lúc đó ta sẽ quan sát được các bước cập nhật hoặc (i) quá lớn và phá hỏng mô hình (vấn đề *bùng nổ* gradient); hoặc (ii) quá nhỏ (vấn đề *tiêu biến* gradient), khiến việc học trở nên bất khả thi, khi mà các tham số hầu như không thay đổi ở mỗi bước cập nhật.
+Nếu ta không kiểm soát được độ lớn của gradient, sự ổn định của các thuật toán tối ưu cũng không được đảm bảo.
+Lúc đó ta sẽ quan sát được các bước cập nhật hoặc (i) quá lớn và phá hỏng mô hình (vấn đề *bùng nổ* gradient); hoặc (ii) quá nhỏ (vấn đề *tiêu biến* gradient), khiến việc học trở nên bất khả thi, khi mà các tham số hầu như không thay đổi ở mỗi bước cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
