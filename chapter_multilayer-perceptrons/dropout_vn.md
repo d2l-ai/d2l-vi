@@ -133,7 +133,7 @@ They realized that when training a deep network with many layers, injecting nois
 
 Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
 Cụ thể, họ đề xuất việc thêm nhiễu vào mỗi tầng của mạng trước khi tính toán các tầng kế tiếp trong quá trình huấn luyện.
-Họ nhận ra rằng khi huấn luyến mạng đa tầng, thêm nhiễu chỉ ép buộc điều kiện mượt lên phép ánh xạ giữa đầu vào và đầu ra.
+Họ nhận ra rằng khi huấn luyến mạng đa tầng, thêm nhiễu vào dữ liệu chỉ ép buộc điều kiện mượt lên phép ánh xạ giữa đầu vào và đầu ra.
 
 <!--
 Their idea, called *dropout*, involves injecting noise while computing each internal layer during forward propagation, and it has become a standard technique for training neural networks.
