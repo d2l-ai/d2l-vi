@@ -14,8 +14,8 @@ In probabilistic terms, we could justify this technique by arguing that we have 
 More intuitively, we might argue that we encouraged the model to spread out its weights among many features and rather than depending too much on a small number of potentially spurious associations.
 -->
 
-Vừa xong ở :numref:`sec_weight_decay`, chúng tôi đã giới thiệu cách tiếp cận điển hình của việc điều chuẩn các mô hình thống kê bằng cách phạt giá trị chuẩn $\ell_2$ của các trọng số. 
-Dưới ngôn ngữ xác suất, ta có thể giải thích kĩ thuật này bằng cách nói ta đã có một niềm tin từ trước rằng các trọng số được lấy ngẫu nhiên từ một phân phối Gauss với trung bình bằng $0$.
+Vừa xong ở :numref:`sec_weight_decay`, chúng tôi đã giới thiệu cách tiếp cận điển hình để điều chuẩn các mô hình thống kê bằng cách phạt giá trị chuẩn $\ell_2$ của các trọng số. 
+Theo ngôn ngữ xác suất, ta có thể giải thích kĩ thuật này bằng cách nói ta đã có một niềm tin từ trước rằng các trọng số được lấy ngẫu nhiên từ một phân phối Gauss với trung bình bằng $0$.
 Hiểu một cách trực quan, ta có thể nói rằng mô hình được khuyến khích trải rộng giá trị các trọng số ra trên nhiều đặc trưng thay vì quá phụ thuộc vào một vài những liên kết có khả năng không chính xác. 
 
 <!--
@@ -54,7 +54,7 @@ For example, they might infer that “Nigeria” and “Western Union” appeari
 -->
 
 Mạng nơ-ron sâu lại nằm ở thái cực trái ngược trên phổ độ chệch - phương sai.
-Không giống mô hình tuyến tính, các mạng nơ-ron không bị giới hạn ở việc chỉ được xét từng đặc trưng một cách riêng biệt.
+Khác với mô hình tuyến tính, các mạng nơ-ron không bị giới hạn ở việc chỉ được xét từng đặc trưng một cách riêng biệt.
 Chúng có thể học được sự tương tác giữa các nhóm đặc trưng.
 Chẳng hạn, chúng có thể suy ra được rằng nếu từ "Nigeria" và "Western Union" xuất hiện cùng nhau trong một email thì đó là thư rác, nhưng nếu hai từ đó xuất hiện riêng biệt thì lại không phải.
 
@@ -77,12 +77,12 @@ The mathematical foundations for the puzzling generalization properties of deep 
 For now, we turn to the more terrestrial investigation of practical tools that tend (empirically) to improve the generalization of deep nets.
 -->
 
-Xét về ý nghĩa của điều này.
+Hãy cũng xem xét ý nghĩa của điều này.
 Nếu nhãn được gán ngẫu nhiên từ một phân phối đều với 10 lớp, sẽ không có bộ phân loại nào có thể có độ chính xác cao hơn 10% trên tập dữ liệu kiểm tra.
 Khoảng cách khái quát là tận 90%.
 Nếu mô hình của chúng ta có đủ năng lực để quá khớp tới như vậy, phải như thế nào chúng ta mới có thể trông đợi rằng mô hình sẽ không quá khớp?
 Nền tảng toán học đằng sau tính chất khái quát hoá hóc búa của mạng nơ-ron sâu vẫn còn là một câu hỏi mở và chúng tôi khuyến khích bạn đọc chú trọng lý thuyết đào sâu hơn vào chủ đề này.
-Còn bây giờ, hãy quay về bề mặt của vấn đề và chuyển sang tìm hiểu các công cụ để cải thiện khả năng khái quát của các mạng nơ-ron sâu dựa trên thực nghiệm. 
+Còn bây giờ, hãy quay về bề mặt của vấn đề và chuyển sang tìm hiểu các công cụ dựa trên thực nghiệm để cải thiện khả năng khái quát của các mạng nơ-ron sâu. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
