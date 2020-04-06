@@ -21,7 +21,7 @@ We punt matters relating to the computational performance, scalability and effic
 
 Trong chương này, chúng tôi sẽ giới thiệu mạng nơ-ron *sâu* thực sự đầu tiên của bạn.
 Mạng nơ-ron sâu đơn giản nhất được gọi là perceptron đa tầng.
-Nó gồm nhiều tầng chứa nơ-ron, mỗi nơ-ron được kết nối đầy đủ với các nơ-ron khác ở tầng phía dưới (các nơ-ron cung cấp đầu vào) và tầng phía trên (các nơ-ron mà nó gây ảnh hưởng).
+Nó gồm nhiều tầng nơ-ron, mỗi nơ-ron được kết nối đầy đủ với các nơ-ron khác ở tầng phía dưới (các nơ-ron cung cấp đầu vào) và tầng phía trên (các nơ-ron mà nó gây ảnh hưởng).
 Khi huấn luyện các mô hình có độ phức tạp cao, ta sẽ có nguy cơ gặp vấn đề quá khớp.
 Vì vậy, chúng tôi cần cung cấp cho bạn những hiểu biết ban đầu thật chặt chẽ với các khái niệm quá khớp, dưới khớp và kiểm soát độ phức tạp.
 Nhằm giúp bạn giải quyết những vấn đề này, chúng tôi sẽ giới thiệu những kỹ thuật điều chuẩn như dropout và suy giảm trọng số.
