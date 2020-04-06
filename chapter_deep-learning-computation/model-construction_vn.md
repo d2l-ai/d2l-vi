@@ -74,7 +74,7 @@ Mình không dịch các từ 'Block' (khi được viết hoa), 'forward', 'bac
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
 -->
 
-Một lợi ích của việc sở hữu tính trừu tượng là nhờ đó mà các `Block` có thể được kết hợp thành các thành phần lớn hơn, thông thường bằng cách đệ quy (xem hình minh họa trong :numref:`fig_blocks`).
+Một lợi ích khi làm việc ở mức độ trừu tượng `Block` là chúng có thể được kết hợp thành các thành phần lớn hơn, thường sử dụng phương pháp đệ quy (xem hình minh họa trong :numref:`fig_blocks`).
 
 <!--
 ![Multiple layers are combined into blocks](../img/blocks.svg)
