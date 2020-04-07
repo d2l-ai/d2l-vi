@@ -112,7 +112,7 @@ For instance, when we classify images, we would expect that adding some random n
 Hãy cùng nghĩ một chút về thứ mà ta mong đợi từ một mô hình dự đoán tốt.
 Ta muốn mô hình hoạt động tốt khi gặp dữ liệu mà nó chưa từng thấy.
 Lý thuyết khái quát cổ điển cho rằng: để thu hẹp khoảng cách giữa chất lượng khi huấn luyện và chất lượng khi kiểm tra, ta nên hướng tới một mô hình *đơn giản*.
-Sự đơn giản này có thể nằm ở việc đặc trưng có số chiều thấp, điều mà chúng ta đã khám phá ra khi thảo luận về hàm cơ sở đơn thức trong mô hình tuyến tính ở :numref:`sec_model_selection`. 
+Sự đơn giản này có thể nằm ở việc đặc trưng có số chiều thấp, điều mà chúng ta đã nghiên cứu khi thảo luận về hàm cơ sở đơn thức trong mô hình tuyến tính ở :numref:`sec_model_selection`. 
 Như ta đã thấy khi bàn về suy giảm trọng số (điều chuẩn $\ell_2$) ở :numref:`sec_weight_decay`, chuẩn (nghịch đảo) của các tham số là một phép đo khác cho sự đơn giản.
 Một khái niệm hữu ích khác để biểu diễn sự đơn giản là độ mượt, tức hàm số không nên quá nhạy với những thay đổi nhỏ ở đầu vào.
 Ví dụ, khi phân loại ảnh, ta mong muốn rằng việc thêm một chút nhiễu ngẫu nhiên vào các điểm ảnh sẽ không ảnh hưởng nhiều tới kết quả dự đoán.
@@ -154,7 +154,7 @@ Dropout, they claim, breaks up co-adaptation just as sexual reproduction is argu
 
 Để nói cho rõ, mối liên kết đến Bishop là của chúng tôi tự đặt ra.
 Đáng ngạc nhiên, bài báo gốc về dropout xây dựng cách hiểu trực giác bằng việc so sánh nó với quá trình sinh sản hữu tính.
-Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó và họ gọi trạng thái này là *đồng thích nghi*.
+Các tác giả cho rằng hiện tượng quá khớp mạng nơ-ron là biểu hiện của việc mỗi tầng đều dựa vào một khuôn mẫu nhất định của các giá trị kích hoạt ở tầng trước đó, họ gọi trạng thái này là *đồng thích nghi*.
 Họ khẳng định rằng dropout phá bỏ sự đồng thích nghi này, tương tự như luận điểm sinh sản hữu tính phá bỏ các gen đã đồng thích nghi.
 
 <!--
@@ -177,8 +177,7 @@ In expectation, $E[\mathbf{x}'] = \mathbf{x}$.
 -->
 
 Trong nghiên cứu của Bishop, ông thêm nhiễu Gauss cho đầu vào của một mô hình tuyến tính như sau:
-Tại mỗi bước huấn luyện, ông đã thêm nhiễu lấy từ một phân phối có trung bình bằng không $\epsilon \sim \mathcal{N}(0,\sigma^2)$ cho đầu vào $\mathbf{x}$, thu được một điểm bị nhiễu $\mathbf{x}' = \mathbf{x} + \epsilon$.
-Với kỳ vọng $E[\mathbf{x}'] = \mathbf{x}$.
+Tại mỗi bước huấn luyện, ông đã thêm nhiễu lấy từ một phân phối có trung bình bằng không $\epsilon \sim \mathcal{N}(0,\sigma^2)$ cho đầu vào $\mathbf{x}$, thu được một điểm bị nhiễu $\mathbf{x}' = \mathbf{x} + \epsilon$ với kỳ vọng $E[\mathbf{x}'] = \mathbf{x}$.
 
 <!--
 In standard dropout regularization, one debiases each layer by normalizing by the fraction of nodes that were retained (not dropped out).
