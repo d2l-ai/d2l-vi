@@ -19,8 +19,8 @@ we can launch our exploration of deep neural networks, the comparatively rich cl
 -->
 
 Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách lập trình giải thuật này từ đầu (:numref:`sec_softmax_scratch`), sử dụng nó trong gluon (:numref:`sec_softmax_gluon`), và huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
-Cùng với đó, chúng ta đã học cách sắp xếp dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu hoá nó theo các tham số mô hình. 
-Bây giờ, sau khi đã thành thạo các cơ chế nêu trên trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá trọng tâm của cuốn sách này: các mạng nơ-ron sâu và lớp mô hình phong phú.
+Cùng với đó, chúng ta đã học cách xử lý dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu hoá nó theo các tham số mô hình. 
+Bây giờ, sau khi đã thành thạo các cơ chế nêu trên trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá trọng tâm của cuốn sách này: lớp mô hình phong phú của các mạng nơ-ron sâu.
 
 <!--
 ## Hidden Layers
@@ -67,12 +67,12 @@ A increase in income from $0 to $50k likely corresponds to a bigger increase in 
 One way to handle this might be to pre-process our data such that linearity becomes more plausible, say, by using the logarithm of income as our feature.
 -->
 
-Ví dụ, tính tuyến tính ngụ ý về giả định *yếu hơn* của *tính đơn điệu*: nghĩa là việc giá trị đặc trưng tăng luôn dẫn đến việc đầu ra mô hình tăng (nếu trọng số tương ứng dương), hoặc đầu ra mô hình giảm (nếu trọng số tương ứng âm).
+Ví dụ, tính tuyến tính ngụ ý về giả định *yếu hơn* của *tính đơn điệu*: tức giá trị đặc trưng tăng luôn dẫn đến việc đầu ra mô hình tăng (nếu trọng số tương ứng dương), hoặc đầu ra mô hình giảm (nếu trọng số tương ứng âm).
 Điều này đôi khi cũng hợp lý.
 Ví dụ, nếu chúng ta đang dự đoán liệu một người có trả được khoản vay hay không, chúng ta có thể suy diễn một cách hợp lý như sau: bỏ qua mọi yếu tố khác, ứng viên nào có thu nhập cao hơn sẽ có khả năng trả được nợ cao hơn so với những ứng viên khác có thu nhập thấp hơn. 
 Dù có tính đơn điệu, mối quan hệ này khả năng cao là không liên quan tuyến tính tới xác suất trả nợ. 
-Có thể mức tăng thu nhập từ $0 lên $50k sẽ tương ứng với khả năng trả được nợ lớn hơn so với mức tăng từ $1M lên $1.05M.
-Một cách để giải quyết điều này là tiền xử lý dữ liệu của chúng ta để tính tuyến tính trở nên hợp lý hơn, ví dụ như sử dụng logarit của thu nhập để làm đặc trưng. 
+Khả năng trả được nợ thường sẽ có mức tăng lớn hơn khi thu nhập tăng từ $0 lên $50k so với khi tăng từ $1M lên $1.05M.
+Một cách để giải quyết điều này là tiền xử lý dữ liệu để tính tuyến tính trở nên hợp lý hơn, ví dụ như sử dụng logarit của thu nhập để làm đặc trưng. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -92,7 +92,7 @@ Ví dụ như, ta muốn dự đoán xác suất tử vong của một người 
 Đối với người có thân nhiệt trên 37°C (98.6°F), nhiệt độ càng cao gây ra nguy cơ tử vong càng cao.
 Tuy nhiên, với những người có thân nhiệt thấp hơn 37°C, khi gặp nhiệt độ cao hơn thì nguy cơ tử vong lại *thấp hơn*!
 Trong bài toán này, ta có thể giải quyết nó bằng một vài bước tiền xử lý thật khéo léo.
-Cụ thể, ta có thể sử dụng *khoảng cách* từ 37°C làm đặc trưng.
+Cụ thể, ta có thể sử dụng *khoảng cách* từ 37°C tới thân nhiệt làm đặc trưng.
 
 
 <!--
@@ -102,9 +102,9 @@ Reliance on a linear model corrsponds to the (implicit) assumption that the only
 This approach is doomed to fail in a world where inverting an image preserves the category.
 -->
 
-Nhưng còn với bài toán phân loại hình ảnh về chó mèo thì sao?
-Liệu việc tăng cường độ sáng của điểm ảnh tại vị trí (13, 17) sẽ tăng (hoặc giảm) khả năng mà hình ảnh là một con chó?
-Mô hình tuyến tính tương ứng phụ thuộc vào giả thiết (ngầm) rằng điều kiện duy nhất để phân biệt mèo và chó là chỉ cần đánh giá độ sáng của từng pixel.
+Nhưng còn với bài toán phân loại hình ảnh chó mèo thì sao?
+Liệu việc tăng cường độ sáng của điểm ảnh tại vị trí (13, 17) sẽ luôn tăng (hoặc giảm) khả năng đó là hình một con chó?
+Sử dụng mô hình tuyến tính trong trường hợp này tương ứng với việc ngầm giả định rằng chỉ cần đánh giá độ sáng của từng pixel để phân biệt giữa mèo và chó .
 Cách tiếp cận này chắc chắn sẽ không chính xác khi các hình ảnh bị đảo ngược màu sắc.
 
 
@@ -117,9 +117,9 @@ With deep neural networks, we used observational data to jointly learn both a re
 -->
 
 Tuy nhiên, ta bỏ qua sự phi lý của tuyến tính ở đây, so với các ví dụ trước, rõ ràng là ta không thể giải quyết bài toán này với vài bước tiền xử lý chỉnh sửa đơn giản.
-Bởi vì ý nghĩa của các điểm ảnh phụ thuộc vào bối cảnh xung quanh nó (các giá trị xung quanh của điểm ảnh) một cách phức tạp.
+Bởi vì ý nghĩa của các điểm ảnh phụ thuộc một cách phức tạp vào bối cảnh xung quanh nó (các giá trị xung quanh của điểm ảnh).
 Mặc dù có thể tồn tại một cách biểu diễn nào đó cho dữ liệu nhằm giải thích về sự tương tác giữa các đặc trưng có liên quan (và trên hết sẽ phù hợp với mô hình tuyến tính), chỉ đơn giản là ta không biết làm thế nào để tính toán nó bằng cách thủ công.
-Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát được để cùng học một biểu diễn (thông qua các tầng ẩn) và một công cụ dự đoán tuyến tính hoạt động dựa trên biểu diễn đó.
+Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát được để đồng thời học cách biểu diễn (thông qua các tầng ẩn) và học một bộ dự đoán tuyến tính hoạt động dựa trên biểu diễn đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -142,7 +142,7 @@ Below, we depict an MLP diagramtically (:numref:`fig_nlp`).
 
 Ta có thể vượt qua những hạn chế của các mô hình tuyến tính và xử lý một lớp hàm tổng quát hơn bằng cách kết hợp một hoặc nhiều tầng ẩn.
 Cách dễ nhất để làm điều này là xếp chồng nhiều tầng kết nối đầy đủ lên nhau.
-Mỗi tầng đưa vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
+Mỗi tầng đưa giá trị vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
 Ta có thể xem tầng đầu tiên $L-1$ như một biểu diễn và tầng cuối cùng là công cụ dự đoán tuyến tính.
 Kiến trúc này thường được gọi là *perceptron đa tầng* (*multilayer percention*), thường được viết tắt là *MLP*.
 Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
@@ -162,7 +162,7 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 -->
 
 Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và tầng ẩn của nó chứa 5 nút ẩn.
-Vì tầng đầu vào không cần bất kỳ tính toán nào, do đó đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các tính toán với mỗi tầng trong hai tầng này (tầng ẩn và tầng đầu ra).
+Vì tầng đầu vào không cần bất kỳ tính toán nào, do đó đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các tính toán cho mỗi tầng của hai tầng còn lại (tầng ẩn và tầng đầu ra).
 Lưu ý, tất cả tầng này là tầng kết nối đầy đủ.
 Mỗi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi nơ-ron này lại ảnh hưởng đến mọi nơ-ron trong tầng đầu ra.
 
@@ -322,11 +322,11 @@ That means that after computing the linear portion of the layer, we can calculat
 This is true for most activation functions (the batch normalization operation will be introduced in :numref:`sec_batch_norm` is a notable exception to that rule).
 -->
 
-Bằng việc lạm dụng ký hiệu một chút, chúng ta định nghĩa hàm phi tuyến $\sigma$ áp dụng cho các giá trị đầu vào theo từng hàng, tức lần lượt từng điểm dữ liệu một.
-Cần chú ý rằng ta cũng sử dụng quy ước này cho *softmax* để ký hiệu toán tử tính theo từng hàng.
+Bằng việc lạm dụng ký hiệu một chút, chúng ta định nghĩa hàm phi tuyến $\sigma$ là một phép toán áp dụng theo từng hàng, tức lần lượt từng điểm dữ liệu một.
+Cần chú ý rằng ta cũng sử dụng quy ước này cho hàm *softmax* để ký hiệu toán tử tính theo từng hàng.
 Thông thường, như trong mục này, các hàm kích hoạt không chỉ đơn thuần được áp dụng vào tầng ẩn theo từng hàng mà còn theo từng phần tử.
-Điều đó có nghĩa là sau khi tính toán các phần tuyến tính của tầng, chúng ta có thể tính giá trị kích hoạt của từng nút mà không cần  đến giá trị của các nút còn lại.
-Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá batch được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
+Điều đó có nghĩa là sau khi tính toán xong phần tuyến tính của tầng, chúng ta có thể tính giá trị kích hoạt của từng nút mà không cần đến giá trị của các nút còn lại.
+Điều này cũng đúng đối với hầu hết các hàm kích hoạt (toán tử chuẩn hoá theo batch được giới thiệu trong :numref:`sec_batch_norm` là một trường hợp ngoại lệ của quy tắc này).
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -406,7 +406,7 @@ We plot the derivative of the ReLU function plotted below.
 
 Khi đầu vào mang giá trị âm thì đạo hàm của hàm ReLu bằng 0 và khi đầu vào mang giá trị dương thì đạo hàm của hàm ReLu bằng 1.
 Lưu ý rằng, hàm ReLU không khả vi tại 0.
-Trong thường hợp này, ta mặc định sẽ lấy đạo hàm trái (LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
+Trong thường hợp này, ta mặc định lấy đạo hàm trái (LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
 Chỗ này có thể du di được vì đầu vào thông thường không có giá trị chính xác bằng không.
 Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến điều kiện biên thì có lẽ ta chỉ đang làm toán (*thuần túy*), chứ không phải đang làm kỹ thuật.
 Và trong trường hợp này, ngạn ngữ đó đúng.
@@ -477,7 +477,7 @@ However, the sigmoid has mostly been replaced by the simpler and more easily tra
 In the "Recurrent Neural Network" chapter (:numref:`sec_plain_rnn`), we will describe architectures that leverage sigmoid units to control the flow of information across time.
 -->
 
-Khi phương pháp học dựa trên gradient trở nên thu hút, hàm sigmoid là một lựa chọn tất yếu của đơn vị ngưỡng bởi tính liên tục và khả vi của nó.
+Khi phương pháp học dựa trên gradient trở nên phổ biến, hàm sigmoid là một lựa chọn tất yếu của đơn vị ngưỡng bởi tính liên tục và khả vi của nó.
 Hàm sigmoid vẫn là hàm kích hoạt được sử dụng rộng rãi ở các đơn vị đầu ra,
 khi ta muốn biểu diễn kết quả đầu ra như là các xác suất của bài toán phân loại nhị phân (bạn có thể xem sigmoid như một trường hợp đặc biệt của softmax).
 Tuy nhiên, trong các tầng ẩn, hàm sigmoid hầu hết bị thay thế bằng hàm ReLU vì nó đơn giản hơn và giúp cho việc huấn luyện trở nên dễ dàng hơn.
@@ -583,7 +583,7 @@ In some ways, you have an advantage over anyone working the 1990s, because you c
 Previously, getting these nets training required researchers to code up thousands of lines of C and Fortran.
 -->
 
-Tóm lại, bây giờ chúng ta biết cách kết hợp các hàm phi tuyến để xây dựng các kiến trúc mạng nơ-ron đa tầng.
+Tóm lại, bây giờ chúng ta đã biết cách kết hợp các hàm phi tuyến để xây dựng các kiến trúc mạng nơ-ron đa tầng.
 Một lưu ý bên lề đó là, kiến thức bây giờ của bạn cung cấp một bộ công cụ tương đương với một người có chuyên môn về học sâu vào những năm 1990.
 Xét theo một khía cạnh nào đó, bạn còn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để các framework học sâu nguồn mở để xây dựng các mô hình một cách nhanh chóng, chỉ với một vài dòng mã.
 Trước đây, việc huấn luyện các mạng nơ-ron đòi hỏi các nhà nghiên cứu phải viết đến hàng ngàn dòng mã C và Fortran.
@@ -624,7 +624,7 @@ Show that this network is less expressive (powerful) than a single layer percept
 -->
 
 1. Tính đạo hàm của hàm kích hoạt tanh và pReLU.
-2. Chứng minh rằng perceptron đa tầng chỉ sử dụng ReLU (hoặc pReLU) để xây dựng một hàm tuyến tính từng đoạn liên tục.
+2. Chứng minh rằng một perceptron đa tầng chỉ sử dụng ReLU (hoặc pReLU) sẽ tạo thành một hàm tuyến tính từng đoạn liên tục.
 3. Chứng minh rằng $\mathrm{tanh}(x) + 1 = 2 \mathrm{sigmoid}(2x)$.
 4. Giả sử ta có một perceptron đa tầng mà *không có* tính phi tuyến giữa các tầng.
 Cụ thể là, giả sử ta có chiều của đầu vào $d$, chiều đầu ra $d$ và tầng ẩn có chiều $d/2$.
