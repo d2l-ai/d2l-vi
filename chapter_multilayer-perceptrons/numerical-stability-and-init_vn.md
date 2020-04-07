@@ -166,6 +166,7 @@ Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết 
 
 ### Bùng nổ Gradient
 
+
 <!--
 The opposite problem, when gradients explode, can be similarly vexing.
 To illustrate this a bit better, we draw $100$ Gaussian random matrices and multiply them with some initial matrix.
@@ -174,9 +175,9 @@ When this happens due to the initialization of a deep network, we have no chance
 -->
 
 Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
-Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một ma trận khởi tạo.
+Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gauss và nhân chúng với một ma trận ban đầu nào đó.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
-Nếu điều này xảy ra trong các mạng học sâu, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
+Nếu điều này xảy ra khi khởi tạo các mạng nơ-ron sâu một cách không hợp lý, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
 
 ```{.python .input  n=5}
 M = np.random.normal(size=(4, 4))
@@ -197,6 +198,7 @@ print('After multiplying 100 matrices', M)
 
 ### Tính Đối xứng
 
+
 <!--
 Another problem in deep network design is the symmetry inherent in their parametrization.
 Assume that we have a deep network with one hidden layer with two units, say $h_1$ and $h_2$.
@@ -205,10 +207,10 @@ There is nothing special differentiating the first hidden unit vs the second hid
 In other words, we have permutation symmetry among the hidden units of each layer.
 -->
 
-Một vấn đề khác trong thiết kế mạng học sâu là tính đối xứng vốn có trong quá trình tham số hóa.
-Giả sử ta có một mạng học sâu với một tầng ẩn gồm hai nút, $h_1$ và $h_2$. 
-Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của tầng đầu ra để đạt được một hàm tương tự.
-Không có gì đặc biệt khác nhau giữa việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai.
+Một vấn đề khác trong việc thiết kế mạng nơ-ron sâu là tính đối xứng hiện hữu trong quá trình tham số hóa.
+Giả sử ta có một mạng nơ-ron sâu với một tầng ẩn gồm hai nút $h_1$ và $h_2$. 
+Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của tầng đầu tiên, rồi làm điều tương tự với các trọng số của tầng đầu ra để thu được một hàm giống hệt ban đầu.
+Ta có thể thấy rằng không có sự khác biệt rõ ràng giữa nút ẩn đầu tiên với nút ẩn thứ hai. <!-- tác giả dùng từ differentiate dễ nhầm quá -->
 Nói cách khác, ta có tính đối xứng hoán vị giữa các nút ẩn của từng tầng.
 
 <!--
@@ -221,17 +223,18 @@ Note that while SGD would not break this symmetry, dropout regularization would!
 -->
 
 Đây không chỉ là phiền toái về mặt lý thuyết.
-Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
-Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà cũng sẽ có bước cập nhật giống nhau.
-Hạ gradient ngẫu nhiên sẽ không bao giờ phá vỡ tính đối xứng sẵn có và ta có thể sẽ không hiện thực được sức mạnh biểu diễn của mạng.
-Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất.
-Bên cạnh đó, lưu ý rằng hạ gradient ngẫu nhiên sẽ không phá vỡ cân đối này thì nó sẽ bị phá vỡ bởi điều chuẩn hóa dropout!
+Thử tưởng tượng điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số của các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
+Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà chúng còn có bước cập nhật giống nhau.
+Bản thân phương pháp hạ gradient ngẫu nhiên không thể phá vỡ tính đối xứng này và ta sẽ không hiện thực hóa được sức mạnh biểu diễn của mạng.
+Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất
+Nhưng hãy lưu ý rằng dù hạ gradient ngẫu nhiên không thể phá vỡ được tính đối xứng, kỹ thuật điều chuẩn dropout lại hoàn toàn có thể!
 
 <!--
 ## Parameter Initialization
 -->
 
 ## Khởi tạo Tham số
+
 
 <!--
 One way of addressing, or at least mitigating the issues raised above is through careful initialization of the weight vectors.
@@ -244,15 +247,16 @@ One way of addressing---or at least mitigating---the issues raised above is thro
 Additional care during optimization and suitable regularization can further enhance stability.
 -->
 
-Một cách giải quyết, hay ít nhất là giảm nhẹ các vấn đề được nêu ra ở phía trên được thực hiện thông qua việc khởi tạo cẩn thận các vector trọng số. 
-Bằng cách này ta có thể chắc chắn rằng (ít nhất là ban đầu) các gradient không biến mất và chúng duy trì ở một tỉ lệ hợp lí trong đó trọng số mạng không phân kỳ.
-Cộng thêm sự chăm sóc đặc biệt trong quá trình tối ưu hóa và điều chuẩn phù hợp sẽ đảm bảo mọi thứ không bao giờ trở nên quá tệ.
+Một cách giải quyết, hay ít nhất giảm nhẹ các vấn đề được nêu ở trên là khởi tạo các vector trọng số một cách cẩn thận.
+Bằng cách này ta có thể chắc chắn rằng các gradient không tiêu biến và chúng duy trì được một khoảng giá trị hợp lý, giúp cho trọng số mạng không phân kỳ, ít nhất là trong lúc mới bắt đầu huấn luyện.
+Chỉ cần cẩn thận thêm một chút trong quá trình tối ưu hóa và điều chuẩn phù hợp, ta có thể đảm bảo rằng mọi thứ sẽ không bao giờ trở nên quá tệ.
 
 <!--
 ### Default Initialization
 -->
 
 ### Khởi tạo Mặc định
+
 
 <!--
 In the previous sections, e.g., in :numref:`sec_linear_gluon`, we used `net.initialize(init.Normal(sigma=0.01))` to initialize the values of our weights.
@@ -261,9 +265,9 @@ MXNet will use the default random initialization method, sampling each weight pa
 Both choices tend to work well in practice for moderate problem sizes.
 -->
 
-Trong các phần trước, ví dụ, trong :numref:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
-Nếu phương thức khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
-Cả hai lựa chọn đều hoạt động tốt trong thực tế cho các vấn đề cỡ trung. 
+Trong các phần trước, ví dụ như trong :numref:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
+Nếu ta không chỉ định sẵn một phương thức khởi tạo như `net.initialize()`, MXNet sẽ sử dụng phương thức khởi tạo ngẫu nhiên mặc định: các trọng số được lấy mẫu ngẫu nhiên từ phân phối đều $U[-0.07, 0.07]$, còn các hệ số điều chỉnh đều được đưa về giá trị $0$.
+Cả hai lựa chọn đều hoạt động tốt với các bài toán cỡ trung trong thực tiễn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
