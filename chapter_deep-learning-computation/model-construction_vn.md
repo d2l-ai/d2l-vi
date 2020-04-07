@@ -87,7 +87,7 @@ Một lợi ích khi làm việc ở mức độ trừu tượng `Block` là ch�
 By defining code to generate Blocks of arbitrary complexity on demand, we can write surprisingly compact code and still implement complex neural networks.
 -->
 
-Bằng cách định nghĩa các khối với độ phức tạp tùy ý, các mạng nơ-ron phức tạp có thể  được lập trình với mã nguồn ngắn gọn một cách đáng ngạc nhiên.
+Bằng cách định nghĩa các khối với độ phức tạp tùy ý, các mạng nơ-ron phức tạp có thể được lập trình với mã nguồn ngắn gọn một cách đáng ngạc nhiên.
 
 <!--
 To begin, we revisit the Blocks that we used to implement multilayer perceptrons (:numref:`sec_mlp_gluon`).
