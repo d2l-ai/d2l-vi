@@ -215,7 +215,7 @@ Như ta mong muốn, kỳ vọng không bị thay đổi, hay nói cách khác $
 ## Dropout in Practice
 -->
 
-## Dropout trong Thực hành
+## Dropout trong Thực tiễn
 
 <!--
 Recall the multilayer perceptron (:numref:`sec_mlp`) with a hidden layer and 5 hidden units.
