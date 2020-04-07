@@ -8,7 +8,6 @@
 # Lan truyền xuôi, Lan truyền ngược và Đồ thị tính toán
 :label:`sec_backprop`
 
-
 <!--
 So far, we have trained our models with minibatch stochastic gradient descent.
 However, when we implemented the algorithm, we only worried about the calculations involved in *forward propagation* through the model.
@@ -70,7 +69,6 @@ Here the intermediate variable is:
 Để đơn giản hóa vấn đề, ta giả sử mẫu đầu vào là $\mathbf{x}\in \mathbb{R}^d$ và tầng ẩn của ta không có hệ số điều chỉnh.
 Ở đây biến trung gian là:
 
-
 $$\mathbf{z}= \mathbf{W}^{(1)} \mathbf{x},$$
 
 <!--
@@ -80,7 +78,6 @@ After running the intermediate variable $\mathbf{z}\in \mathbb{R}^h$ through the
 
 trong đó $\mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ là tham số trọng số của tầng ẩn.
 Sau khi đưa biến trung gian $\mathbf{z}\in \mathbb{R}^h$ qua hàm kích hoạt $\phi$, ta thu được vector kích hoạt ẩn với $h$ phần tử,
-
 
 $$\mathbf{h}= \phi (\mathbf{z}).$$
 
@@ -92,7 +89,6 @@ Assuming the parameters of the output layer only possess a weight of $\mathbf{W}
 Biến ẩn $\mathbf{h}$ cũng là một biến trung gian.
 Giả sử tham số của tầng đầu ra chỉ gồm trọng số $\mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$, ta sẽ thu được một vector với $q$ phần tử ở tầng đầu ra:
 
-
 $$\mathbf{o}= \mathbf{W}^{(2)} \mathbf{h}.$$
 
 <!--
@@ -100,7 +96,6 @@ Assuming the loss function is $l$ and the example label is $y$, we can then calc
 -->
 
 Giả sử hàm mất mát là $l$ và nhãn của mẫu là $y$, ta có thể tính được lượng mất mát cho một mẫu dữ liệu duy nhất,
-
 
 $$L = l(\mathbf{o}, y).$$
 
@@ -127,7 +122,6 @@ We refer to $J$ the *objective function* in the following discussion.
 -->
 
 Ta sẽ bàn thêm về *hàm mục tiêu* $J$ ở phía dưới.
-
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
