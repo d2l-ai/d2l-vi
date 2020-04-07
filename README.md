@@ -57,12 +57,12 @@ Với các chương (2., 3., ...)
     * [-] 4.9. [Considering the Environment](chapter_multilayer-perceptrons/environment_vn.md)
     * [-] 4.10. [Predicting House Prices on Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
 * [ ] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
-    * [-] 5.1. [Layers and Blocks](chapter_deep-learning-computation/model-construction_vn.md)
-    * [-] 5.2. [Parameter Management](chapter_deep-learning-computation/parameters_vn.md)
-    * [ ] 5.3. [Deferred Initialization](chapter_deep-learning-computation/deferred-init_vn.md)
-    * [ ] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
-    * [ ] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
-    * [ ] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
+    * [-] 5.1. [Tầng và Khối](chapter_deep-learning-computation/model-construction_vn.md)
+    * [-] 5.2. [Quản lý Tham số](chapter_deep-learning-computation/parameters_vn.md)
+    * [-] 5.3. [Deferred Initialization](chapter_deep-learning-computation/deferred-init_vn.md)
+    * [-] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
+    * [-] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
+    * [-] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
 * [ ] 6. Convolutional Neural Networks
     * [ ] 6.1. From Dense Layers to Convolutions
     * [ ] 6.2. Convolutions for Images
