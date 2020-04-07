@@ -16,7 +16,7 @@ When it came time to calculate the gradients, we just invoked the `backward` fun
 
 Cho đến lúc này, ta đã huấn luyện các mô hình với giải thuật hạ gradient ngẫu nhiên theo minibatch.
 Tuy nhiên, khi lập trình thuật toán, ta mới chỉ bận tâm đến các phép tính trong quá trình *lan truyền xuôi* qua mô hình.
-Khi cần tính gradient ta chỉ đơn giản gọi hàm `backward`, còn việc tính toán chi tiết được trông cậy vào mô-đun `autograd`.
+Khi cần tính gradient, ta mới chỉ đơn giản gọi hàm `backward` và mô-đun `autograd` sẽ lo các chi tiết tính toán.
 
 <!--
 The automatic calculation of gradients profoundly simplifies the implementation of deep learning algorithms.
@@ -26,10 +26,10 @@ While we must continue to rely on `autograd` so we can focus on the interesting 
 you ought to *know* how these gradients are calculated under the hood if you want to go beyond a shallow understanding of deep learning.
 -->
 
-Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
-Trước đây, khi chưa có công cụ tính vi phân tự động, đối với các mô hình phức tạp thì ngay cả những thay đổi nhỏ cũng yêu cầu tính lại các đạo hàm rắc rối một cách thủ công.
-Điều đáng ngạc nhiên là các bài báo học thuật thường dành rất nhiều trang để rút ra các nguyên tắc cập nhật.
-Vậy nên, mặc dù ta tiếp tục phải dựa vào `autograd` để có thể tập trung vào những phần thú vị, bạn nên *nắm bắt* rõ cách tính gradient nếu bạn muốn tiến xa hơn là chỉ hiểu biết hời hợt về học sâu.
+Việc tính toán gradient tự động sẽ giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
+Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi một chút các mô hình phức tạp, các đạo hàm rắc rối cũng cần phải được tính lại một cách thủ công.
+Điều đáng ngạc nhiên là các bài báo học thuật thường có các công thức cập nhật mô hình dài hàng trang giấy.
+Vậy nên dù vẫn phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị của học sâu, bạn vẫn nên *nắm* rõ thay vì chỉ hiểu một cách hời hợt cách tính gradient nếu bạn muốn tiến xa hơn.
 
 <!--
 In this section, we take a deep dive into the details of backward propagation (more commonly called *backpropagation* or *backprop*).
@@ -37,8 +37,9 @@ To convey some insight for both the techniques and their implementations, we rel
 To start, we focus our exposition on a three layer (one hidden) multilayer perceptron with weight decay ($\ell_2$ regularization).
 -->
 
-Trong mục này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*). Ta sẽ sử dụng một vài công thức toán học cơ bản và đồ thị tính toán để giải thích một cách chi tiết cách thức hoạt động cũng như cách lập trình các kỹ thuật này.
-Và để bắt đầu, ta sẽ tập trung việc giải trình vào một perceptron đa tầng gồm ba tầng (một tầng ẩn) sử dụng suy giảm trọng số (điều chuẩn $\ell_2$).
+Trong mục này, ta sẽ đi sâu vào chi tiết của lan truyền ngược (thường được gọi là *backpropagation* hoặc *backprop*). 
+Ta sẽ sử dụng một vài công thức toán học cơ bản và đồ thị tính toán để giải thích một cách chi tiết cách thức hoạt động cũng như cách lập trình các kỹ thuật này.
+Và để bắt đầu, ta sẽ tập trung giải trình một perceptron đa tầng gồm ba tầng (một tầng ẩn) đi kèm với suy giảm trọng số (điều chuẩn $\ell_2$).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -56,9 +57,9 @@ We now work step-by-step through the mechanics of a deep network with one hidden
 This may seem tedious but in the eternal words of funk virtuoso James Brown, you must "pay the cost to be the boss".
 -->
 
-Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) cho mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
-Bây giờ ta sẽ thực hiện từng bước trong cơ chế làm việc của mạng nơ-ron sâu có một tầng ẩn.
-Điều này có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
+Lan truyền xuôi là quá trình tính toán cũng như lưu trữ các biến trung gian (bao gồm cả đầu ra) của mạng nơ-ron theo thứ tự từ tầng đầu vào đến tầng đầu ra.
+Bây giờ ta sẽ thực hiện qua từng bước trong cơ chế vận hành của mạng nơ-ron sâu có một tầng ẩn.
+Điều này nghe có vẻ tẻ nhạt nhưng theo như cách nói dân giã, bạn phải "tập đi trước khi tập chạy".
 
 <!--
 For the sake of simplicity, let’s assume that the input example is $\mathbf{x}\in \mathbb{R}^d$ and that our hidden layer does not include a bias term.
@@ -102,7 +103,7 @@ $$L = l(\mathbf{o}, y).$$
 According to the definition of $\ell_2$ regularization, given the hyperparameter $\lambda$, the regularization term is
 -->
 
-Theo định nghĩa của điều chuẩn $\ell_2$, cho trước siêu tham số $\lambda$, thì lượng điều chuẩn là:
+Theo định nghĩa của điều chuẩn $\ell_2$ với siêu tham số $\lambda$, lượng điều chuẩn là:
 
 $$s = \frac{\lambda}{2} \left(\|\mathbf{W}^{(1)}\|_F^2 + \|\mathbf{W}^{(2)}\|_F^2\right),$$
 
@@ -112,7 +113,7 @@ Finally, the model's regularized loss on a given data example is:
 -->
 
 trong đó chuẩn Frobenius của ma trận chỉ đơn giản là chuẩn $L_2$ của vector thu được sau khi trải phẳng ma trận.
-Cuối cùng, hàm mất mát điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
+Cuối cùng, hàm mất mát được điều chuẩn của mô hình trên một mẫu dữ liệu cho trước là:
 
 $$J = L + s.$$
 
