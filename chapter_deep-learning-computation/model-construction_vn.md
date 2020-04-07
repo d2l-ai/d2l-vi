@@ -62,7 +62,7 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 
 Để lập trình các mạng phức tạp này, ta sẽ giới thiệu khái niệm *khối* trong mạng nơ-ron.
 Một khối có thể mô tả một tầng duy nhất, một thành phần đa tầng hoặc toàn bộ một mô hình! <!-- Reviewer thấy từ này hợp lý hơn 'thành phần'('component') thì thay giúp mình nhé, thanks-->
-Dưới góc nhìn phần mềm, một `Block` (Khối) là một *lớp*.
+Dưới góc nhìn xây dựng phần mềm, một `Block` (Khối) là một *lớp*.
 Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết.
 Lưu ý rằng có những `Block` sẽ không yêu cầu chứa bất kỳ tham số nào cả!
 Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient.
