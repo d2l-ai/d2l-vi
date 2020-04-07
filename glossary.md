@@ -35,6 +35,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | backward pass           | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
 | bandit                  | máy đánh bạc                   |  |
 | batch                   | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
+| batch normalization | chuẩn hóa theo batch | |
 | batch size              | kích thước batch               | [https://git.io/JvXdK](https://git.io/JvXdK) |
 | benchmark               | đánh giá xếp hạng              | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | bias (bias as variance) | độ chệch                       | [https://git.io/JvQxO](https://git.io/JvQxO) |
