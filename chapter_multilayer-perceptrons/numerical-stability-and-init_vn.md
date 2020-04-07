@@ -223,7 +223,7 @@ Note that while SGD would not break this symmetry, dropout regularization would!
 -->
 
 Đây không chỉ là phiền toái về mặt lý thuyết.
-Thử tưởng tượng điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số của các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
+Thử tưởng tượng điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số ở các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
 Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà chúng còn có bước cập nhật giống nhau.
 Bản thân phương pháp hạ gradient ngẫu nhiên không thể phá vỡ tính đối xứng này và ta sẽ không hiện thực hóa được sức mạnh biểu diễn của mạng.
 Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất
