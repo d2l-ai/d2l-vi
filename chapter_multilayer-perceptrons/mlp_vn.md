@@ -44,7 +44,7 @@ $$
 ![Single layer perceptron with 5 output units.](../img/singlelayer.svg)
 -->
 
-![Tầng perceptron đơn với 5 nút đầu ra.](../img/singlelayer.svg)
+![Perceptron đơn tầng với 5 nút đầu ra.](../img/singlelayer.svg)
 :label:`fig_singlelayer`
 
 <!--
@@ -279,10 +279,10 @@ We'll touch upon more rigorous arguments in subsequent chapters, but first let's
 In this example, we’ll implement an MLP with two hidden layers and one output layer.
 -->
 
-Hơn nữa, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình với các mạng đơn-tầng.
-Thực tế, chúng ta có thể ước lượng nhiều hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng các mạng sâu hơn (thay vì rộng hơn).
+Hơn nữa, chỉ vì một mạng đơn-tầng *có thể* học bất kỳ hàm nào không có nghĩa rằng bạn nên cố gắng giải quyết tất cả các vấn đề của mình bằng các mạng đơn-tầng.
+Thực tế, chúng ta có thể ước lượng các hàm một cách gọn gàng hơn rất nhiều bằng cách sử dụng mạng sâu hơn (thay vì rộng hơn).
 Chúng ta sẽ đề cập đến những lập luận chặt chẽ hơn trong các chương tiếp theo, nhưng trước tiên hãy lập trình một MLP.
-Trong ví dụ này, chúng ta sẽ triển khai một MLP với hai tầng ẩn và một tầng đầu ra.
+Trong ví dụ này, chúng ta lập trình một MLP với hai tầng ẩn và một tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -369,7 +369,7 @@ Given the element $z$, the function is defined as the maximum of that element an
 
 Như đã đề cập trước đó, đơn vị tuyến tính chỉnh lưu (ReLU) là sự lựa chọn phổ biến nhất do tính đơn giản khi lập trình và hiệu quả trong nhiều tác vụ dự đoán.
 ReLU là một phép biến đổi phi tuyến đơn giản.
-Cho trước một phần tử $z$, ta định nghĩa hàm ReLU là giá trị lớn nhất của chính phần tử đó và 0.
+Cho trước một phần tử $z$, ta định nghĩa hàm ReLU là giá trị lớn nhất giữa chính phần tử đó và 0.
 
 $$\mathrm{ReLU}(z) = \max(z, 0).$$
 
