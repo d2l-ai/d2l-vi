@@ -27,7 +27,7 @@ While we must continue to rely on `autograd` so we can focus on the interesting 
 you ought to *know* how these gradients are calculated under the hood if you want to go beyond a shallow understanding of deep learning.
 -->
 
-Việc tính toán gradient tự động đã giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
+Việc tính toán gradient tự động sẽ giúp công việc lập trình các thuật toán học sâu được đơn giản hóa đi rất nhiều.
 Trước đây, khi chưa có công cụ tính vi phân tự động, ngay cả khi ta chỉ thay đổi một chút các mô hình phức tạp, các đạo hàm rắc rối cũng cần phải được tính lại một cách thủ công.
 Điều đáng ngạc nhiên là các bài báo học thuật thường có các công thức cập nhật mô hình dài hàng trang giấy.
 Vậy nên dù vẫn phải tiếp tục dựa vào `autograd` để có thể tập trung vào những phần thú vị của học sâu, bạn vẫn nên *nắm* rõ thay vì chỉ hiểu một cách hời hợt cách tính gradient nếu bạn muốn tiến xa hơn.
