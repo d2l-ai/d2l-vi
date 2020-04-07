@@ -371,8 +371,8 @@ The network then passes the output of this *fixed* layer through a `Dense` layer
 -->
 
 Trong mô hình `FixedHiddenMLP`, ta lập trình một tầng ẩn có trọng số (`self.rand_ weight`) được khởi tạo ngẫu nhiên và lấy nó làm hằng số.
-Trọng số này không phải là một tham số mô hình và do đó nó không bao giờ được cập nhật bằng qua lan truyền ngược.
-Sau đó, mạng đưa đầu ra của tầng *cố định* này vào tầng `Dense`.
+Trọng số này không phải là một tham số mô hình và do đó nó không bao giờ được cập nhật bằng lan truyền ngược.
+Sau đó, đầu ra của tầng *cố định* này được đưa vào tầng `Dense`.
 
 <!--
 Note that before returning output, our model did something unusual.
@@ -387,7 +387,7 @@ Lưu ý rằng trước khi trả giá trị đầu ra, mô hình của ta đã 
 Ta đã chạy một vòng lặp `while`, lấy vector đầu ra chia cho $2$ cho đến khi nó thỏa mãn điều kiện `np.abs(x).sum() > 1`.
 Cuối cùng, ta đã gán giá trị đầu ra bằng tổng các phần tử trong `x`.
 Theo sự hiểu biết của chúng tôi, không có mạng nơ-ron chuẩn nào thực hiện phép toán này.
-Lưu ý rằng phép toán chi tiết này có thể không hữu ích trong các công việc ngoài thực tế.
+Lưu ý rằng phép toán đặc biệt này có thể không hữu ích gì trong các công việc ngoài thực tế.
 Ở đây, ý tưởng của chúng tôi là chỉ cho bạn đọc thấy được cách tích hợp một đoạn mã tùy ý vào luồng tình toán của mạng nơ-ron.
 
 ```{.python .input  n=39}
