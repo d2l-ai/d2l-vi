@@ -208,7 +208,7 @@ We can illustrate the benefits of weight decay over feature selection through a 
 First, we generate some data as before
 -->
 
-Ta có thể minh họa các ưu điểm của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu giả.
+Ta có thể minh họa các ưu điểm của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu tự tạo. 
 Đầu tiên, ta tạo ra dữ liệu giống như trước đây
 
 <!--
@@ -225,8 +225,8 @@ To make the effects of overfitting pronounced, we can increase the dimensinoalit
 and work with a small training set containing only 20 example.
 -->
 
-lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01.
-Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.
+lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01. 
+Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.  
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -269,7 +269,7 @@ Tiếp theo, chúng ta sẽ lập trình suy giảm trọng số từ đầu, ch
 First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 -->
 
-Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán.
+Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán. 
 
 ```{.python .input  n=2}
 def init_params():
@@ -291,8 +291,8 @@ Perhaps the most convenient way to implement this penalty is to square all terms
 We divide by $2$ by convention, (when we take the derivative of a quadratic function, the $2$ and $1/2$ cancel out, ensuring that the expression for the update looks nice and simple).
 -->
 
-Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
-Ta đem chia $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn).
+Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau. 
+Ta đem chia với $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn). 
 
 ```{.python .input  n=3}
 def l2_penalty(w):
@@ -311,9 +311,9 @@ The linear network and the squared loss have not changed since the previous chap
 The only change here is that our loss now includes the penalty term.
 -->
 
-Đoạn mã nguồn sau thực hiện khớp mô hình trên tập huấn luyện và thẩm định trên tập kiểm tra.
-Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
-Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt.
+Đoạn mã nguồn sau thực hiện việc khớp mô hình trên tập huấn luyện và thẩm định nó trên tập kiểm tra. 
+Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần khai báo chúng từ `d2l.linreg` và `d2l.squared_loss`. 
+Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt. 
 
 ```{.python .input  n=4}
 def train(lambd):
@@ -347,8 +347,8 @@ We now run this code with `lambd = 0`, disabling weight decay.
 Note that we overfit badly, decreasing the training error but not the test error---a textook case of overfitting.
 -->
 
-Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số.
-Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
+Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số. 
+Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp. 
 
 ```{.python .input  n=5}
 train(lambd=0)
