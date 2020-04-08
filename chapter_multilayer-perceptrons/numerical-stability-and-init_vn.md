@@ -5,7 +5,7 @@
 # Numerical Stability and Initialization
 -->
 
-# Ổn định Số và Khởi tạo
+# Ổn định Số học và Khởi tạo
 :label:`sec_numerical_stability`
 
 
@@ -21,13 +21,13 @@ In this section, we delve into these topics with greater detail and discuss some
 -->
 
 Cho đến nay, đối với mọi mô hình mà ta đã lập trình, ta đều phải khởi tạo các tham số theo một phân phối cụ thể nào đó.
-Tuy nhiên, ta mới chỉ lướt qua các chi tiết thực hiện và không để tâm tới việc khởi tạo các siêu tham số.
+Tuy nhiên, ta mới chỉ lướt qua các chi tiết thực hiện mà không để tâm lắm tới việc tại sao lại khởi tạo tham số như vậy.
 Bạn thậm chí có thể nghĩ rằng các lựa chọn này không đặc biệt quan trọng.
 Tuy nhiên, việc lựa chọn cơ chế khởi tạo đóng vai trò rất lớn trong quá trình học của mạng nơ-ron và có thể là yếu tố quyết định để duy trì sự ổn định số học.
-Hơn nữa, các lựa chọn cách khởi tạo cũng có thể có một vài liên kết thú vị tới sự lựa chọn các hàm kích hoạt phi tuyến.
+Hơn nữa, các phương pháp khởi tạo cũng có thể bị ràng buộc bởi các hàm kích hoạt phi tuyến theo những cách thú vị.
 Việc lựa chọn hàm kích hoạt và cách khởi tạo tham số có thể ảnh hưởng tới tốc độ hội tụ của thuật toán tối ưu.
 Nếu ta lựa chọn không hợp lý, việc bùng nổ hoặc tiêu biến gradient có thể sẽ xảy ra.
-Trong phần này, ta sẽ đi sâu vào các chủ đề trên một cách chi tiết hơn và thảo luận một số phương pháp hữu dụng dựa trên thực nghiêm mà bạn có thể sử dụng thường xuyên trong suốt sự nghiệp học sâu.
+Trong phần này, ta sẽ đi sâu hơn vào các chi tiết của chủ đề trên và thảo luận một số phương pháp thực nghiệm hữu ích mà bạn có thể sẽ sử dụng thường xuyên trong suốt sự nghiệp học sâu.
 
 <!--
 ## Vanishing and Exploding Gradients
@@ -83,8 +83,9 @@ or (ii) excessively small, (the *vanishing gradient problem*), rendering learnin
 
 Nói cách khác, gradient này là tích của $L-l$ ma trận $\mathbf{M}_L \cdot \ldots, \cdot \mathbf{M}_l$ với vector gradient $\mathbf{v}_l$.
 Vì vậy ta sẽ dễ gặp phải vấn đề tràn số dưới, một hiện tượng thường xảy ra khi nhân quá nhiều giá trị xác suất lại với nhau.
-Khi làm việc với các xác suất, một mánh phổ biến là chuyển về giá trị log, đồng nghĩa với việc đưa các bit từ phần định trị sang phần mũ nếu nhìn từ góc độ biểu diễn số học.
-Thật không may, bài toán trên lại nghiêm trọng hơn nhiều: các ma trận $M_l$ ban đầu có thể có nhiều trị riêng khác nhau.
+Khi làm việc với các xác suất, một mánh phổ biến là chuyển về làm việc với giá trị log của nó.
+Nếu nhìn từ góc độ biểu diễn số học, điều này đồng nghĩa với việc chuyển trọng tâm biểu diễn của các bit từ phần định trị (*mantissa*) sang phần mũ (*exponent*). 
+Thật không may, bài toán trên lại nghiêm trọng hơn nhiều: các ma trận $M_l$ ban đầu có thể có nhiều trị riêng với độ lớn rất khác nhau.
 Các trị riêng có thể nhỏ hoặc lớn và do đó tích của chúng có thể *rất lớn* hoặc *rất nhỏ*.
 Rủi ro của việc gradient bất ổn không chỉ dừng lại ở vấn đề biểu diễn số học.
 Nếu ta không kiểm soát được độ lớn của gradient, sự ổn định của các thuật toán tối ưu cũng không được đảm bảo.
