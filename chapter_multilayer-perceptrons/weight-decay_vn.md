@@ -5,7 +5,7 @@
 # Weight Decay
 -->
 
-# Phân rã trọng số
+# Suy giảm trọng số
 :label:`sec_weight_decay`
 
 <!--
@@ -67,7 +67,7 @@ There is no single right answer.
 In fact, entire branches of mathematics, including parts of functional analysis and the theory of Banach spaces are devoted to answering this issue.
 -->
 
-*Phân rã trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số. 
+*Suy giảm trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số. 
 Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không. 
 Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
 Không chỉ có duy nhất một câu trả lời đúng. 
@@ -186,8 +186,8 @@ Often, we do not regularize the bias term of a network's output layer.
 
 Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được. 
 Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$. 
-Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *phân rã* trọng số ở từng bước huấn luyện. 
-Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục để thay đổi độ phức tạp của $f$. 
+Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "suy giảm trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *suy giảm* trọng số ở từng bước huấn luyện. 
+Trái ngược với lựa chọn đặc trưng, suy giảm trọng số cho ta một cơ chế liên tục để thay đổi độ phức tạp của $f$. 
 Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể. 
 Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
 Thông thường, ta không điều chuẩn hệ số điều chỉnh của tầng đầu ra của mạng. 
