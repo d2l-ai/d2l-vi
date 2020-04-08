@@ -135,7 +135,7 @@ Before we implement our own custom `Block`, we briefly summarize the basic funct
 -->
 
 Có lẽ điều dễ nhất để xây dựng trực giác về cách `nn.Block` hoạt động như thế nào đó là ta hãy tự lập trình. 
-Trước khi ta xây dựng `Block` tùy chỉnh của chính mình, ta hãy briefly tổng kết các chức năng cơ bản mà một `Block` phải có:
+Trước khi ta xây dựng `Block` tùy chỉnh của chính mình, ta hãy tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` (Khối) phải cung cấp:
 
 <!--
 1. Ingest input data as arguments to its `forward` method.
@@ -148,14 +148,14 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-1. Tiêu hóa dữ liệu nhập vào như các biến đối với phương thức `forward`.
-2. Tạo ra một output bằng cách cho `forward` trả giá trị về.
-Lưu ý rằng output có thể có một shape khác so với input.
-Ví dụ, tầng Dense đầu tiên trong mô hình phía trên của ta tiêu hóa một input các chiều arbitrary nhưng trả về đầu ra của chiều 256.
-3. Tính toán gradient của đầu ra của chúng đối với đầu vào của chúng, điều mà có thể đạt tới được thông qua phương thức `backward`.
+1. Nhập dữ liệu đầu vào như các thông số dành cho phương thức `forward`.
+2. Tạo ra một output bằng cách cho phương thức `forward` trả về một giá trị.
+Lưu ý rằng đầu ra có thể có một hình dạng khác với đầu vào.
+Ví dụ, tầng Dense đầu tiên trong mô hình phía trên của ta nhập đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
+3. Tính toán gradient của đầu ra đối với đầu vào, điều có thể đạt tới thông qua phương thức `backward`.
 Thông thường điều này tự động xảy ra.
-4. Lưu trữ và cung cấp access đến các parameters kia đủ cần thiết để tiến hành tính toán `forward`.
-5. Khởi tạo các thông số này khi cần.
+4. Lưu trữ và cung cấp quyền truy cập vào các thông số cần thiết để tiến hành tính toán phương thức `forward`.
+5. Khởi tạo các thông số này khi cần thiết.
 
 <!--
 In the following snippet, we code up a Block from scratch corresponding to a multilayer perceptron with one hidden layer with 256 hidden nodes, and a 10-dimensional output layer.
@@ -163,9 +163,9 @@ Note that the `MLP` class below inherits the `Block` class.
 We will rely heavily on the parent class's methods, supplying only our own `__init__` and `forward` methods.
 -->
 
-Trong snippet dưới đây, chúng ta lập trình một Block từ đầu dựa vào một perceptron đa tầng với một tầng ẩn với 256 nút ẩn, và một tầng đầu ra 10 chiều.
-Lưu ý rằng lớp `MLP` dưới đây thừa hưởng từ lớp `Block`.
-Ta sẽ dựa nhiều trên phương thức của lớp cha, cung cấp duy nhất phương thức `__init__` và `forward`.
+Trong đoạn mã dưới đây, chúng ta lập trình một Block (Khối) từ đầu dựa vào một perceptron đa tầng với một tầng ẩn với 256 nút ẩn, và một tầng đầu ra 10 chiều.
+Lưu ý rằng lớp `MLP` bên dưới đây kế thừa từ lớp `Block`.
+Ta sẽ phụ thuộc nhiều vào các phương thức của lớp cha, chỉ cung cấp phương thức `__init__` và `forward` của chính ta.
 
 ```{.python .input  n=34}
 from mxnet.gluon import nn
@@ -212,7 +212,9 @@ Gluon will generate these methods automatically.
 Let's try this out:
 -->
 
-Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng trong mỗi lần call đến phương thức `forward`.
+Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng trong mỗi lệnh gọi phương thức `forward`.
+Chú ý một vài chi tiết quan trọng.
+Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` giảm bớt cho ta nỗi đau của việc khởi động lại mã lặp đi lặp lại cho hầu hết các Blocks. 
 
 ```{.python .input  n=35}
 net = MLP()
@@ -226,7 +228,10 @@ We can subclass `Block` to create layers (such as the `Dense` class provided by 
 We exploit this versatility throughout the following chapters, especially when addressing convolutional neural networks.
 -->
 
-*dịch đoạn phía trên*
+Một ưu điểm quan trọng của trừu tượng hóa `Block` là tính linh hoạt của nó.
+Ta có thể phân lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ các mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng có độ phức tạp trung gian.
+Ta khai thác tính linh hoạt này xuyên suốt các chương sau, đặc biệt khi giải quyết các mạng nơ-ron tích chập. 
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
