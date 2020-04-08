@@ -101,7 +101,7 @@ Consider the challenge of distinguishing cats and dogs.
 Our training data consists of images of the following kind:
 -->
 
-Một trong những dạng dịch chuyển phân phối được nghiên cứu rộng rãi nhất là *dịch chuyển hiệp biến*.
+Một trong những dạng dịch chuyển phân phối được nghiên cứu rộng rãi nhất là *dịch chuyển hiệp biến* (_covariate shift_).
 Ở đây, ta giả định rằng mặc dù phân phối đầu vào có thể biến đổi theo thời gian, nhưng hàm gán nhãn, tức phân phối có điều kiện $P(y \mid \mathbf{x})$ thì không thay đổi.
 Mặc dù vấn đề này khá dễ hiểu, trong thực tế nó thường dễ bị bỏ qua.
 Hãy xem xét bài toán phân biệt mèo và chó với tập dữ liệu huấn luyện bao gồm các ảnh sau:
@@ -147,7 +147,7 @@ Rõ ràng việc phân loại tốt trong trường hợp này là rất khó kh
 Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
 Việc huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với sự thay đổi này là một ý tưởng tồi.
 Thật không may, đây lại là một cạm bẫy rất phổ biến.
-Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*).
+Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*). 
 Theo ngôn ngữ toán học, ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ thì không.
 Khi ta tin rằng $\mathbf{x}$ gây ra $y$ thì dịch chuyển hiệp biến thường là một giả định hợp lý, mặc dù tính hữu dụng của nó không chỉ giới hạn trong trường hợp này.
 
@@ -174,7 +174,7 @@ That is because these methods tend to involve manipulating objects that look lik
 to be comparatively easy compared to working with the objects that look like the input, which tends (in deep learning) to be a high-dimensional object.
 -->
 
-Vấn đề ngược lại xuất hiện khi chúng ta tin rằng điều gây ra sự dịch chuyển là một thay đổi trong phân phối biên của nhãn $P(y)$ trong khi phân phối có điều kiện theo lớp vẫn không đổi $P(\mathbf{x} \mid y)$.
+Vấn đề ngược lại xuất hiện khi chúng ta tin rằng điều gây ra sự dịch chuyển là một thay đổi trong phân phối biên của nhãn $P(y)$ trong khi phân phối có điều kiện theo lớp $P(\mathbf{x} \mid y)$ vẫn không đổi.
 Dịch chuyển nhãn là một giả định hợp lý khi chúng ta tin rằng $y$ gây ra $\mathbf{x}$.
 Chẳng hạn, thông thường chúng ta muốn dự đoán một chẩn đoán nếu biết các biểu hiện của nó.
 Trong trường hợp này chúng ta tin rằng chẩn đoán gây ra các biểu hiện, ví dụ, dịch bệnh gây ra các triệu chứng.
@@ -182,6 +182,7 @@ Thỉnh thoảng các giả định dịch chuyển nhãn và dịch chuyển hi
 Ví dụ, khi hàm gán nhãn là tất định và không đổi, dịch chuyển hiệp biến sẽ luôn xảy ra, kể cả khi dịch chuyển nhãn cũng đang xảy ra.
 Một điều thú vị là khi chúng ta tin rằng cả dịch chuyển nhãn và dịch chuyển hiệp biến đều đang xảy ra, làm việc với các phương pháp được suy ra từ giả định dịch chuyển nhãn thường chiếm lợi thế.
 Đó là vì các phương pháp này có xu hướng làm việc trên các đối tượng giống với nhãn, và thường sẽ dễ thao tác hơn nếu so với các đối tượng giống với đầu vào đa chiều trong học sâu.
+
 <!--
 ### Concept Shift
 -->
@@ -196,7 +197,7 @@ It turns out that if we navigate around the United States, shifting the source o
 we will find considerable concept shift regarding the definition of even this simple term as shown in :numref:`fig_popvssoda`.
 -->
 
-Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm*, là tình huống khi các định nghĩa của nhãn thay đổi.
+Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm* (_concept shift_), là tình huống khi các định nghĩa của nhãn thay đổi.
 Điều này nghe có vẻ lạ vì sau cùng, con mèo là con mèo.
 Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng ta có thể nói như vậy với thuật ngữ "đồ uống có ga" hay không?
 Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển nguồn dữ liệu theo vùng địa lý, ta sẽ thấy sự dịch chuyển khái niệm đáng kể liên quan đến thuật ngữ đơn giản này như thể hiện trong :numref:`fig_popvssoda`.
@@ -205,7 +206,7 @@ Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển ng
 ![Concept shift on soft drink names in the United States.](../img/popvssoda.png)
 -->
 
-![Dịch chuyển khái niệm của tên các loại đồ uống có ga ở nước Mỹ.](../img/popvssoda.png)
+![Dịch chuyển khái niệm của tên các loại đồ uống có ga ở Mỹ.](../img/popvssoda.png)
 :width:`400px`
 :label:`fig_popvssoda`
 
@@ -216,8 +217,7 @@ A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 -->
 
 Nếu chúng ta xây dựng một hệ thống dịch máy, phân phối $P(y \mid x)$ có thể khác nhau tuỳ thuộc vào vị trí của chúng ta.
-Vấn đề này có thể khó nhận ra.
-Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
+Vấn đề này có thể khó nhận ra, nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển một cách chậm rãi.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
