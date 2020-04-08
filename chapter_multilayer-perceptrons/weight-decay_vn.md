@@ -190,7 +190,7 @@ Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
 Trái ngược với lựa chọn đặc trưng, suy giảm trọng số cho ta một cơ chế liên tục để thay đổi độ phức tạp của $f$. 
 Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể. 
 Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
-Thông thường, ta không điều chuẩn hệ số điều chỉnh của tầng đầu ra của mạng. 
+Thông thường, ta không điều chuẩn hệ số điều chỉnh tại tầng đầu ra của mạng. 
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
