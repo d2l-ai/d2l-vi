@@ -134,8 +134,8 @@ Perhaps the easiest way to develop intuition about how `nn.Block` works is to im
 Before we implement our own custom `Block`, we briefly summarize the basic functionality that each `Block` must provide:
 -->
 
-Có lẽ điều dễ nhất để xây dựng trực giác về cách `nn.Block` hoạt động như thế nào đó là ta hãy tự lập trình. 
-Trước khi ta xây dựng `Block` tùy chỉnh của chính mình, ta hãy tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` (Khối) phải cung cấp:
+Có lẽ điều dễ nhất để hiểu sâu hơn về cách thức `nn.Block` hoạt động đó là tự mình lập trình. 
+Trước khi ta lập trình `Block` tùy chỉnh của chính mình, ta hãy tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` phải cung cấp:
 
 <!--
 1. Ingest input data as arguments to its `forward` method.
@@ -148,8 +148,8 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-1. Nhập dữ liệu đầu vào như các thông số dành cho phương thức `forward`.
-2. Tạo ra một output bằng cách cho phương thức `forward` trả về một giá trị.
+1. Chấp nhận dữ liệu đầu vào như các thông số dành cho phương thức `forward`.
+2. Tạo ra một đầu ra bằng cách cho phương thức `forward` trả về một giá trị.
 Lưu ý rằng đầu ra có thể có một hình dạng khác với đầu vào.
 Ví dụ, tầng Dense đầu tiên trong mô hình phía trên của ta nhập đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
 3. Tính toán gradient của đầu ra đối với đầu vào, điều có thể đạt tới thông qua phương thức `backward`.
