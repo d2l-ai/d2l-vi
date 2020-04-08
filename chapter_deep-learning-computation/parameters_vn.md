@@ -275,9 +275,9 @@ MXNet's `init` module provides a variety of preset initialization methods, but i
 
 Bây giờ khi ta đã biết cách truy cập các tham số, hãy xem làm thế nào để khởi tạo chúng đúng cách.
 Ta đã thảo luận về nhu cầu của việc khởi tạo tham số trong :numref:`sec_numerical_stability`.
-Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh đều bằng $0$.
+Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
 Tuy nhiên, ta thường cần sử dụng các phương pháp khác để khởi tạo trọng số.
-Mô-đun `init` của MXNet cung cấp nhiều phương thức khởi tạo được cài sẵn, nhưng nếu ta muốn một cái gì đó khác thường, ta sẽ cần làm thêm một chút việc.
+Mô-đun `init` của MXNet đã cung cấp sẵn nhiều phương thức khởi tạo, nhưng nếu muốn một cái gì đó khác thường, ta sẽ cần làm thêm một chút việc.
 
 
 <!--
@@ -291,7 +291,7 @@ Let's begin with the built-in initializers.
 The code below initializes all parameters with Gaussian random variables.
 -->
 
-Hãy bắt đầu bằng các bộ khởi tạo có sẵn.
+Ta sẽ bắt đầu với các bộ khởi tạo có sẵn.
 Mã nguồn dưới đây khởi tạo tất cả các tham số với các biến ngẫu nhiên Gaussian.
 
 ```{.python .input  n=9}
@@ -317,8 +317,8 @@ If we want to initialize only a specific parameter in a different manner, we can
 For instance, below we initialize the second layer to a constant value of 42 and we use the `Xavier` initializer for the weights of the first layer.
 -->
 
-Nếu muốn khởi tạo một tham số theo một cách riêng biệt, ta có thể đơn giản sử dụng một bộ khởi tạo riêng chỉ cho khối con (hay tham số) thích hợp.
-Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên với bộ khởi tạo `Xavier` và tầng thứ hai với một giá trị không đổi là 42.
+Nếu muốn khởi tạo một tham số cụ thể theo một cách riêng biệt, ta có thể đơn giản sử dụng một bộ khởi tạo riêng chỉ cho khối con (hay tham số) tương ứng.
+Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên với bộ khởi tạo `Xavier` và tầng thứ hai với một hằng số là 42.
 
 ```{.python .input  n=11}
 net[1].initialize(init=init.Constant(42), force_reinit=True)
@@ -378,8 +378,8 @@ Since `data()` returns an `ndarray` we can access it just like any other matrix.
 A note for advanced users: if you want to adjust parameters within an `autograd` scope you need to use `set_data` to avoid confusing the automatic differentiation mechanics.
 -->
 
-Nếu thậm chí tính năng này vẫn là chưa đủ thì ta có thể đặt tham số trực tiếp.
-Do hàm `data()` trả về một `ndarray`, ta có thể truy cập nó giống như bất kỳ ma trận nào khác.
+Nếu thậm chí tính năng này vẫn là chưa đủ thì ta có thể đặt các tham số trực tiếp.
+Do hàm `data()` trả về một mảng `ndarray` nên ta có thể truy cập nó giống như bất kỳ ma trận nào khác.
 Một lưu ý cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi gói `autograd`, bạn cần sử dụng `set_data` để tránh làm các cơ chế tính vi phân tự động bị nhầm lẫn.
 
 ```{.python .input  n=13}
