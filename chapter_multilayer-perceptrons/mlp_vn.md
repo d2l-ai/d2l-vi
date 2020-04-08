@@ -118,7 +118,7 @@ With deep neural networks, we used observational data to jointly learn both a re
 
 Tuy nhiên, ta bỏ qua sự phi lý của tuyến tính ở đây, so với các ví dụ trước, rõ ràng là ta không thể giải quyết bài toán này với vài bước tiền xử lý chỉnh sửa đơn giản.
 Bởi vì ý nghĩa của các điểm ảnh phụ thuộc một cách phức tạp vào bối cảnh xung quanh nó (các giá trị xung quanh của điểm ảnh).
-Mặc dù có thể tồn tại một cách biểu diễn nào đó cho dữ liệu nhằm giải thích về sự tương tác giữa các đặc trưng có liên quan (và trên hết sẽ phù hợp với mô hình tuyến tính), chỉ đơn giản là ta không biết làm thế nào để tính toán nó bằng cách thủ công.
+Có thể vẫn tồn tại một cách biểu diễn dữ liệu nào đó nắm bắt được sự tương tác giữa các đặc trưng liên quan (và quan trọng nhất là phù hợp với mô hình tuyến tính), ta đơn giản là không biết làm thế nào để tính toán nó một cách thủ công.
 Với các mạng nơ-ron sâu, ta sử dụng dữ liệu đã quan sát được để đồng thời học cách biểu diễn (thông qua các tầng ẩn) và học một bộ dự đoán tuyến tính hoạt động dựa trên biểu diễn đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
