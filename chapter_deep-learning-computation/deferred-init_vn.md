@@ -198,27 +198,29 @@ Therefore, we often force initialization by sending a sample observation through
 ## Forced Initialization
 -->
 
-## *dịch tiêu đề phía trên*
+## Cưỡng chế khởi tạo
 
 <!--
 Deferred initialization does not occur if the system knows the shape of all parameters when calling the `initialize` function. 
 This can occur in two cases:
 -->
 
-*dịch đoạn phía trên*
+Khởi tạo trễ không xảy ra nếu hệ thống biết kích thước của tất cả các tham số khi gọi hàm `initialize`.
+Việc này có thể xảy ra trong hai trường hợp:
 
 <!--
 * We have already seen some data and we just want to reset the parameters.
 * We specified all input and output dimensions of the network when defining it.
 -->
 
-*dịch đoạn phía trên*
+* Ta đã truyền dữ liệu vào mạng từ trước và chỉ muốn khởi tạo lại các tham số.
+* Ta chỉ rõ tất cả chiều đầu vào và đầu ra của mạng khi định nghĩa mạng.
 
 <!--
 The first case works just fine, as illustrated below.
 -->
 
-*dịch đoạn phía trên*
+Trường hợp thứ nhất hoạt động tốt, như minh hoạ dưới đây.
 
 ```{.python .input}
 net.initialize(init=MyInit(), force_reinit=True)
@@ -229,7 +231,8 @@ The second case requires us to specify the remaining set of parameters when crea
 For instance, for dense layers we also need to specify the `in_units` so that initialization can occur immediately once `initialize` is called.
 -->
 
-*dịch đoạn phía trên*
+Trường hợp thứ hai yêu cầu chỉ rõ phần còn lại của các tham số khi tạo tầng.
+Ví dụ, với các tầng kết nối đầy đủ chúng ta cần chỉ rõ `in_units` để việc khởi tạo có thể được thực hiện ngay khi `initialize` được gọi.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -251,8 +254,9 @@ net.initialize(init=MyInit())
 * Initialization can be repeated (or forced) by setting the `force_reinit=True` flag.
 -->
 
-*dịch đoạn phía trên*
-
+* Khởi tạo trễ là một điều tốt. Nó cho phép Gluon gán giá trị tự động và loại bỏ nhiều nguyên nhân gây lỗi trong việc định nghĩa các kiến trúc mạng mới lạ.
+* Chúng ta có thể ghi đè việc khởi tạo này bằng cách chỉ rõ giá trị của tất cả các biến ngầm định.
+* Việc khởi tạo có thể được lặp lại (hoặc bị cưỡng chế) bằng việc gán cờ `force_reinit=True`.
 
 <!--
 ## Exercises
@@ -266,7 +270,9 @@ net.initialize(init=MyInit())
 3. What would you need to do if you have input of varying dimensionality? Hint - look at parameter tying.
 -->
 
-*dịch đoạn phía trên*
+1. Chuyện gì xảy ra nếu chỉ chỉ rõ một vài phần của chiều đầu vào, có thể vẫn khởi tạo ngay lập tức được không?
+2. Chuyện gì xảy ra nếu truyền vào giá trị chiều không phù hợp?
+3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (parameter tying).
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
