@@ -375,10 +375,10 @@ This is precisely the effect we expect from regularization.
 As an exercise, you might want to check that the $\ell_2$ norm of the weights $\mathbf{w}$ has actually decreased.
 -->
 
-Bên dưới, chúng ta chạy với suy giảm trọng số lớn.
+Dưới đây, chúng ta chạy với suy giảm trọng số lớn. 
 Cần chú ý rằng lỗi huấn luyện tăng nhưng lỗi kiểm định giảm.
 Đây chính xác là hiệu ứng mà chúng ta mong đợi từ điều chuẩn.
-Xem như một bài tập, bạn có thể kiểm tra rằng chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ thực sự giảm.
+Bạn có thể kiểm tra chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ có thực sự giảm hay không như là một bài tập.
 
 ```{.python .input  n=6}
 train(lambd=3)
@@ -397,10 +397,10 @@ Moreover, this integration serves a computational benefit, allowing implementati
 Since the weight decay portion of the update depends only on the current value of each parameter, and the optimizer must to touch each parameter once anyway.
 -->
 
-Bởi vì suy giảm trọng số có ở khắp mọi nơi trong tối ưu mạng nơ-ron,
-Gluon làm cho việc áp dụng kĩ thuật này trở nên thuận tiện, bằng cách tích hợp suy giảm trọng số vào chính giải thuật tối ưu để có thể kết hợp với bất kì hàm mất mát nào.
-Hơn nữa, việc tích hợp này cũng đem lại lợi ích tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm suy giảm trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán.
-Nguyên nhân là do tại mỗi bước cập nhật, phần suy giảm trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào thì cũng phải đụng tới mỗi tham số một lần.
+Bởi vì suy giảm trọng số có ở khắp mọi nơi trong việc tối ưu mạng nơ-ron,
+Gluon làm cho việc áp dụng kĩ thuật này trở nên thuận tiện, bằng cách tích hợp suy giảm trọng số vào chính giải thuật tối ưu để có thể kết hợp với bất kì hàm mất mát nào. 
+Hơn nữa, việc tích hợp này cũng đem lại lợi ích tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm suy giảm trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán. 
+Nguyên nhân là do tại mỗi bước cập nhật, phần suy giảm trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào cũng phải đụng tới chúng. 
 
 <!--
 In the following code, we specify the weight decay hyperparameter directly through `wd` when instantiating our `Trainer`.
@@ -409,10 +409,10 @@ Note that the hyperparameter `wd` will be multiplied by `wd_mult` when updating 
 Thus, if we set `wd_mult` to $0$, the bias parameter $b$ will not decay.
 -->
 
-Trong đoạn mã nguồn sau đây, chúng ta chỉ định trực tiếp siêu tham số suy giảm trọng số thông qua giá trị `wd` khi khởi tạo `Trainer`.
-Theo mặc định, Gluon suy giảm đồng thời cả trọng số và hệ số điều chỉnh.
-Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình.
-Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không suy giảm.
+Trong đoạn mã nguồn sau đây, chúng ta chỉ định trực tiếp siêu tham số suy giảm trọng số thông qua giá trị `wd` khi khởi tạo `Trainer`. 
+Theo mặc định, Gluon suy giảm đồng thời cả trọng số và hệ số điều chỉnh. 
+Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình. 
+Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không suy giảm. 
 
 ```{.python .input  n=7}
 def train_gluon(wd):
@@ -445,8 +445,8 @@ The plots look identical to those when we implemented weight decay from scratch.
 However, they run appreciably faster and are easier to implement, a benefit that will become more pronounced for large problems.
 -->
 
-Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình suy giảm trọng số từ đầu.
-Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích mà sẽ dễ nhận thấy hơn với các bài toán lớn.
+Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình suy giảm trọng số từ đầu. 
+Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích mà sẽ dễ nhận thấy hơn với các bài toán lớn. 
 
 ```{.python .input  n=8}
 train_gluon(0)
@@ -468,11 +468,11 @@ In this book we will default to the simple heuristic of applying weight decay on
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
-Tới giờ, chúng ta mới chỉ đề cập đến một ý niệm về những gì cấu thành nên một hàm *tuyến tính* đơn giản.
-Hơn nữa, những gì cấu thành nên một hàm *phi tuyến* đơn giản lại là một câu hỏi thậm chí còn phức tạp hơn.
-Ví dụ, [Tái tạo các không gian kernel Hilbert (RKHS)](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space) cho phép chúng ta áp dụng các công cụ được giới thiệu cho các hàm tuyến tính trong một ngữ cảnh phi tuyến.
-Không may mắn thay, các giải thuật dựa vào RKHS thường không thể nhân rộng và hoạt động hiệu quả trên dữ liệu lớn, đa chiều.
-Dựa trên một thực nghiệm đơn giản, trong quyển sách này chúng ta mặc định sẽ áp dụng phương pháp suy giảm trọng số cho tất cả các tầng của mạng học sâu.
+Tới giờ, chúng ta mới chỉ đề cập đến một ý niệm về những gì cấu thành nên một hàm *tuyến tính* đơn giản. 
+Hơn nữa, những gì cấu thành nên một hàm *phi tuyến* đơn giản, thậm chí còn phức tạp hơn.
+Ví dụ, [Tái tạo các không gian kernel Hilbert (RKHS)](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space) cho phép chúng ta áp dụng các công cụ được giới thiệu cho các hàm tuyến tính trong một ngữ cảnh phi tuyến. 
+Không may là, các giải thuật dựa vào RKHS thường không thể nhân rộng và hoạt động hiệu quả trên bộ dữ liệu lớn, đa chiều.
+Dựa trên một thực nghiệm đơn giản, chúng ta mặc định sẽ áp dụng phương pháp suy giảm trọng số cho tất cả các tầng của mạng học sâu trong quyển sách này.
 
 <!--
 ## Summary
@@ -490,8 +490,8 @@ Dựa trên một thực nghiệm đơn giản, trong quyển sách này chúng 
 * Điều chuẩn là một phương pháp phổ biến để giải quyết quá khớp.
 Nó thêm một lượng phạt vào hàm mất mát trong tập huấn luyện để giảm thiểu độ phức tạp của mô hình học.
 * Một cách cụ thể để giữ mô hình đơn giản là suy giảm trọng số sử dụng lượng phạt $\ell_2$. Điều này dẫn đến giá trị trọng số sẽ suy giảm trong các bước cập nhật của giải thuật học.
-* Gluon cung cấp tính năng phân rã trọng số tự động trong bộ tối ưu hoá bằng cách thiết lập siêu tham số `wd`.
-* Bạn có thể dùng những bộ tối ưu hoá khác nhau trong cùng một vòng lặp huấn luyện, chẳng hạn, cho các tập tham số khác nhau. 
+* Gluon cung cấp tính năng suy giảm trọng số tự động trong bộ tối ưu hoá bằng cách thiết lập siêu tham số `wd`. 
+* Bạn có thể dùng những bộ tối ưu hoá khác nhau trong cùng một vòng lặp huấn luyện, chẳng hạn, cho các tập tham số khác nhau.  
 <!--
 ## Exercises
 -->
@@ -509,18 +509,16 @@ In addition to weight decay, increased training, and the use of a model of suita
 6. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via $P(w \mid x) \propto P(x \mid w) P(w)$. How can you identify $P(w)$ with regularization?
 -->
 
-1. Thí nghiệm với giá trị của $\lambda$ trong bài toán ước lượng ở trang này.
-Vẽ đồ thị độ chính xác của tập huấn luyện và tập kiểm tra như một hàm số của $\lambda$.
-Bạn quan sát được những gì?
-2. Sử dụng tập kiểm định để tìm giá trị tối ưu của $\lambda$.
-Nó có thật sự là giá trị tối ưu hay không?
-Điều này có quan trọng không?
+1. Thử nghiệm với giá trị của $\lambda$ trong bài toán ước lượng ở trang này. 
+Vẽ đồ thị độ chính xác của tập huấn luyện và tập kiểm tra theo hàm số của $\lambda$. 
+Bạn quan sát được những gì? 
+2. Sử dụng tập kiểm tra để tìm giá trị tối ưu của $\lambda$. Nó có thật sự là giá trị tối ưu hay không? Điều này có quan trọng không? 
 3. Các phương trình cập nhật sẽ có dạng như thế nào nếu thay vì $\|\mathbf{w}\|^2$ chúng ta sử dụng lượng phạt $\sum_i |w_i|$ (được gọi là điều chuẩn $\ell_1$).
 4. Chúng ta đã biết rằng $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$.
 Bạn có thể tìm một phương trình tương tự cho các ma trận (các nhà toán học gọi nó là [chuẩn Frobenius](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)) hay không?
 5. Ôn lại mối quan hệ giữa lỗi huấn luyện và lỗi khái quát.
 Bên cạnh suy giảm trọng số, tăng cường việc huấn luyện và sử dụng một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết quá khớp không?
-6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy luận ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn hay không?
+6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy luận ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Làm thế nào để bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
