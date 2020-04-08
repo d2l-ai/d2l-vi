@@ -14,9 +14,9 @@ Recall that we can always mitigate overfitting by going out and collecting more 
 For now, we can assume that we already have as much high-quality data as our resources permit and focus on regularization techniques.
 -->
 
-Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật chuẩn trong việc điều chuẩn mô hình.
-Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, nên trong ngắn hạn, nó là bất khả thi.
-Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhiều nhất có thể và tập trung vào các kỹ thuật điều chuẩn.
+Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật tiêu chuẩn trong việc điều chuẩn mô hình. 
+Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể tốn kém, lãng phí thời gian, hoặc có thể nằm ngoài khả năng của ta, làm cho nó bất khả thi trong trường hợp ngắn hạn. 
+Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhất có thể và sẽ tập trung vào các kỹ thuật điều chuẩn. 
 
 <!--
 Recall that in our polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
@@ -28,13 +28,13 @@ The degree of a monomial is the sum of the powers.
 For example, $x_1^2 x_2$, and $x_3 x_5^2$ are both monomials of degree $3$.
 -->
 
-Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
-Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
-Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mạnh tay.
-Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
-Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến.
-Bậc của một đơn thức là tổng của các số mũ.
-Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
+Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách điều chỉnh số bậc của đa thức. 
+Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp. 
+Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể quá mức cần thiết.
+Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều. 
+Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến. 
+Bậc của một đơn thức là tổng của các số mũ. 
+Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$. 
 
 <!--
 Note that the number of terms with degree $d$ blows up rapidly as $d$ grows larger.
@@ -43,10 +43,10 @@ Even small changes in degree, say, from $2$ to $3$ dramatically increase the com
 Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
-Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng.
+Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng. 
 Cho $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
-Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt.
-Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số.
+Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt. 
+Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -67,11 +67,11 @@ There is no single right answer.
 In fact, entire branches of mathematics, including parts of functional analysis and the theory of Banach spaces are devoted to answering this issue.
 -->
 
-*Phân rã trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số.
-Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không.
+*Phân rã trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số. 
+Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không. 
 Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
-Không chỉ có duy nhất một câu trả lời đúng.
-Trong thực tế, có nguyên cả các nhánh toán học gồm một phần giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
+Không chỉ có duy nhất một câu trả lời đúng. 
+Trong thực tế, có nguyên những nhánh toán học kết hợp các phần giải tích hàm và lý thuyết không gian Banach để tập trung trả lời cho câu hỏi này. 
 
 <!--
 One simple interpretation might be to measure the complexity of a linear function $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ by some norm of its weight vector, e.g., $|| \mathbf{w} ||^2$.
@@ -83,12 +83,12 @@ To illustrate things in code, let's revive our previous example from :numref:`se
 There, our loss was given by
 -->
 
-Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$.
-Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát.
-Do đó, ta thay thế mục tiêu ban đầu *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*.
+Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$. 
+Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát. 
+Do đó, ta thay thế mục tiêu ban đầu *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*. 
 Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ hơn là giảm thiểu lỗi huấn luyện.
-Đó chính xác là những gì ta muốn.
-Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`.
+Đó chính xác là những gì ta muốn. 
+Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`. 
 Ở đó, hàm mất mát được định nghĩa như sau:
 
 $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
@@ -99,9 +99,9 @@ To penalize the size of the weight vector, we must somehow add $|| \mathbf{w} ||
 In practice, we characterize this tradeoff via the *regularization constant* $\lambda > 0$, a non-negative hyperparameter that we fit using validation data:
 -->
 
-Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh.
-Để phạt kích thước của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên cân bằng hàm mát mát thông thường với thành phần phạt mới này như thế nào?
-Trong thực tế, ta mô tả sự cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định:
+Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh. 
+Để phạt kích thước của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên cân bằng hàm mát mát thông thường với thành phần phạt mới này như thế nào? 
+Trong thực tế, ta mô tả sự cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định: 
 
 $$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$
 
@@ -114,12 +114,12 @@ By squaring the L2 norm, we remove the square root, leaving the sum of squares o
 This makes the derivative of the penalty easy to compute (the sum of derivatives equals the derivative of the sum).
 -->
 
-Với $\lambda = 0$, ta thu lại được hàm mất mát gốc.
-Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$.
-Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide).
-Ta làm điều này để thuận tiện cho việc tính toán.
-Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số.
-Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng).
+Với $\lambda = 0$, ta thu lại được hàm mất mát gốc. 
+Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$. 
+Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide). 
+Ta làm điều này để thuận tiện cho việc tính toán. 
+Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số. 
+Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng). 
 
 <!--
 Moreover, you might ask why we work with the L2 norm in the first place and not, say, the L1 norm.
@@ -133,16 +133,16 @@ While L2-regularized linear models constitute the classic *ridge regression* alg
 a similarly fundamental model in statistics (popularly known as *lasso regression*).
 -->
 
-Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê.
-Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*).
+Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê. 
+Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*). 
 
 <!--
 More generally, the $\ell_2$ is just one among an infinite class of norms call p-norms, many of which you might encounter in the future.
 In general, for some number $p$, the $\ell_p$ norm is defined as
 -->
 
-Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy.
-Thông thường, với một số $p$, chuẩn$\ell_p$ được định nghĩa là
+Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy. 
+Thông thường, với một số $p$, chuẩn$\ell_p$ được định nghĩa là:
 
 $$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p.$$
 
@@ -157,9 +157,9 @@ In practice, this might make them more robust to measurement error in a single v
 By contrast, L1 penalties lead to models that concentrate weight on a small set of features, which may be desirable for other reasons.
 -->
 
-Một lý do để sử dụng chuẩn L2 là vì nó phạt rất nặng những thành phần lớn của vector trọng số.
-Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng.
-Trong thực tế, điều này có thể giúp làm giảm ảnh hưởng do lỗi đo lường của từng biến đơn lẻ.
+Một lý do để sử dụng chuẩn L2 là vì nó phạt nặng những thành phần lớn của vector trọng số.
+Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng. 
+Trong thực tế, điều này có thể giúp giảm ảnh hưởng từ lỗi đo lường của từng biến đơn lẻ. 
 Ngược lại, các hình phạt của L1 hướng đến các mô hình mà trọng số chỉ tập trung vào một số lượng nhỏ các đặc trưng, và ta có thể muốn điều này vì một vài lý do khác. 
 
 <!--
@@ -184,13 +184,13 @@ Whether we include a corresponding bias penalty $b^2$ can vary across implementa
 Often, we do not regularize the bias term of a network's output layer.
 -->
 
-Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được.
-Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
-Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *phân rã* trọng số ở từng bước huấn luyện.
-Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
-Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể.
+Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được. 
+Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$. 
+Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *phân rã* trọng số ở từng bước huấn luyện. 
+Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục để thay đổi độ phức tạp của $f$. 
+Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể. 
 Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
-Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
+Thông thường, ta không điều chuẩn hệ số điều chỉnh của tầng đầu ra của mạng. 
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
