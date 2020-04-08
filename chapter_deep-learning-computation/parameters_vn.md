@@ -394,8 +394,8 @@ Let's see how to do this a bit more elegantly. In the following we allocate a de
 -->
 
 Trong một số trường hợp, ta sẽ muốn chia sẻ các tham số mô hình trên nhiều tầng.
-Ví dụ, trong quá trình học word embedding, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ. <!-- Theo mình biết thì từ word embedding sẽ được giữ nguyên, không biết có đúng không ?-->
-Ta đã thảo luận về một trường hợp như vậy trong :numref:`sec_model_construction`. <!-- Đoạn nào trong chương `sec_model_construction` nói về vấn đề này nhỉ? -->
+Ví dụ, trong quá trình huấn luyện word embedding, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ. <!-- Theo mình biết thì từ word embedding sẽ được giữ nguyên, không biết có đúng không ?-->
+Ta đã thảo luận về một trường hợp như vậy trong :numref:`sec_model_construction`.
 Hãy xem làm thế nào để thực hiện việc này một cách tinh tế hơn. Sau đây ta sẽ tạo một tầng dày đặc và sử dụng các tham số của nó để đặt  cho một tầng khác.
 
 
@@ -431,7 +431,7 @@ Since the model parameters contain gradients, the gradients of the second hidden
 
 Ví dụ trên cho thấy các tham số của tầng thứ hai và thứ ba đã được liên kết với nhau.
 Chúng giống hệt nhau thay vì chỉ bằng nhau.
-Tức là nếu thay đổi bộ tham số này thì bộ tham số kia cũng sẽ thay đổi theo.
+Tức là nếu thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
 Những gì xảy ra với gradient là khá tài tình.
 Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
 
@@ -459,15 +459,15 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 ## Bài tập
 
 <!--
-1. Use the FancyMLP defined in :numref:`sec_model_construction` and access the parameters of the various layers.
+1. Use the FixedHiddenMLP defined in :numref:`sec_model_construction` and access the parameters of the various layers.
 2. Look at the [MXNet documentation](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) and explore different initializers.
 3. Try accessing the model parameters after `net.initialize()` and before `net(x)` to observe the shape of the model parameters. What changes? Why?
 4. Construct a multilayer perceptron containing a shared parameter layer and train it. During the training process, observe the model parameters and gradients of each layer.
 5. Why is sharing parameters a good idea?
 -->
 
-1. Sử dụng FancyMLP định nghĩa trong :numref:`sec_model_construction` và truy cập các tham số của các tầng khác nhau. <!-- Trong phần sec_model_construction làm gì mô hình FancyMLP nhỉ ? -->
-2. Xem [Tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
+1. Sử dụng FixedHiddenMLP định nghĩa trong :numref:`sec_model_construction` và truy cập các tham số của các tầng khác nhau.
+2. Xem [tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
 3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
 4. Xây dựng và huấn luyện một perceptron đa tầng có một tầng tham số chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
 5. Tại sao việc chia sẻ tham số lại là là một ý tưởng hay?
