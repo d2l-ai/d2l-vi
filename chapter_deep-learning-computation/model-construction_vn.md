@@ -419,7 +419,7 @@ chimera(x)
 ## Compilation
 -->
 
-## Biên dịch mã nguồn
+## Vấn đề Biên dịch
 
 <!--
 The avid reader might start to worry about the efficiency of some of these operations.
@@ -438,11 +438,13 @@ We recommend that the interested reader check out the hybridization section (:nu
 Những người đọc có tâm có thể sẽ bắt đầu lo lắng về tính hiệu quả của một vài đoạn mã trên.
 Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ Pythonic khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu suất cao.
 Vấn đề của [Khóa Trình thông dịch Toàn cục]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến.
-Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU yếu đuối chạy những dòng lệnh Python trước khi nó có tác vụ chay tiếp theo.
+Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU "rùa bò" chạy xong những dòng lệnh Python trước khi nó có thể nhận tác vụ chạy tiếp theo.
 Cách tốt nhất để tăng tốc Python là tránh tất cả bọn chúng.
 Gluon làm việc này bằng cách cho phép Hybrid hóa (:numref:`sec_hybridize`).
-Ở đây, trình thông dịch của Python 
-
+Ở đây, trình thông dịch của Python sẽ thực thi một Khối trong lần chạy đầu tiên.  
+Môi trường chạy của Gluon sẽ ghi lại những gì đang diễn ra và trong lần chạy tiếp theo nó thực hiện các tác vụ gọi trong Python theo một cách vắn tắt hơn.
+Điều này có thể giúp tăng tốc độ chạy đáng kể trong một vài trường hợp, tuy nhiên, ta cần quan tâm tới việc luồng điều khiển (như ở trên) sẽ dẫn đến những nhánh khác nhau với mỗi lần truyền qua mạng.
+Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất chương này hãy đọc thêm mục hybrid hóa (:numref:`sec_hybridize`) để tìm hiểu về quá trình biên dịch.
 
 <!--
 ## Summary
@@ -459,7 +461,12 @@ Gluon làm việc này bằng cách cho phép Hybrid hóa (:numref:`sec_hybridiz
 * Sequential concatenations of layers and blocks are handled by the `Sequential` Block.
 -->
 
-*dịch đoạn phía trên*
+* Các tầng trong mạng nơ-ron được xem là các Khối.
+* Nhiều tằng có thể cấu thành một Khối.
+* Nhiều Khối có thể cấu thành một Khối.
+* Một Khối có thể chứa mã nguồn.
+* Các Khối đảm nhiệm nhiều tác vụ bao gồm khởi tạo tham số và lan truyền ngược.
+* Việc gắn kết các tầng và khối được đảm nhiệm bởi Khối `Sequential`.
 
 
 <!--
@@ -475,7 +482,10 @@ Gluon làm việc này bằng cách cho phép Hybrid hóa (:numref:`sec_hybridiz
 4. Assume that you want to concatenate multiple instances of the same network. Implement a factory function that generates multiple instances of the same block and build a larger network from it.
 -->
 
-*dịch đoạn phía trên*
+1. Điều gì sẽ xảy ra nếu ta bỏ hàm `asscalar` trong lớp `FixedHiddenMLP`?
+2. Điều gì sẽ xảy ra nếu ta thay đổi `self.net` được định nghĩa trong thực thể `Sequential` trong lớp `NestMLP` thành `self.net = [nn.Dense(64, activation='relu'), nn. Dense(32, activation='relu')]`?
+3. Hãy lập trình một khối lấy đối số là hai khối khác, ví dụ như `net1` và `net2`, và ghép các giá trị đầu ra của cả hai mạng khi thực hiện lượt truyền xuôi để trả về.
+4. Giả sử bạn muốn nối nhiều thực thể của cùng một mạng với nhau. Hãy lập trình một hàm để tạo ra nhiều thực thể của cùng một mạng và dùng nó để tạo thành một mạng lớn hơn. (Các hàm này trong mẫu thiết kế phần mềm được gọi là Factory Function) 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -518,4 +528,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Phạm Hồng Vinh
