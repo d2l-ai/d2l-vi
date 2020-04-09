@@ -419,7 +419,7 @@ chimera(x)
 ## Compilation
 -->
 
-## Vấn đề Biên dịch
+## Biên dịch Mã nguồn
 
 <!--
 The avid reader might start to worry about the efficiency of some of these operations.
