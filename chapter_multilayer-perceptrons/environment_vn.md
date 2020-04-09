@@ -233,7 +233,7 @@ Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
 Before we go into further detail and discuss remedies, we can discuss a number of situations where covariate and concept shift may not be so obvious.
 -->
 
-Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể thảo luận một số tình huống khi dịch chuyển hiệp biến và khái niệm biểu hiện không quá rõ ràng.
+Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể thảo luận một số tình huống khi dịch chuyển hiệp biến và khái niệm có thể có biểu hiện không quá rõ ràng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -254,8 +254,9 @@ Not so fast...
 
 Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật có khả năng phát hiện bệnh ung thư.
 Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh và bạn huấn luyện giải thuật.
-Nó hoạt động hiệu quả, đem lại độ chính xác cao và bạn có thể kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong chẩn đoán y khoa.
+Nó hoạt động hiệu quả, đem lại độ chính xác cao và bạn có thể kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong việc chẩn đoán y khoa.
 Đừng vội mừng...
+
 <!--
 Many things could go wrong.
 In particular, the distributions that you work with for training and those that you encounter in the wild might differ considerably.
@@ -276,8 +277,8 @@ Bạn có thể đã mắc nhiều sai lầm.
 Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể rất khác nhau.
 Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã có cơ hội tư vấn nhiều năm về trước.
 Họ đã phát triển một bộ xét nghiệm máu cho một căn bệnh xảy ra chủ yếu ở đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
-Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh lại khó khăn hơn (chủ yếu là vì những lý do đạo đức).
-Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện và thực hiện xét nghiệm máu của họ.
+Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh lại khó khăn hơn (chủ yếu là vì lý do đạo đức).
+Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện để thực hiện xét nghiệm máu của họ.
 Sau đó họ đã nhờ tôi xây dựng một bộ phân loại để phát hiện căn bệnh.
 Tôi đã nói với họ rằng việc phân biệt hai tập dữ liệu trên với độ chính xác gần như hoàn hảo là rất dễ dàng.
 Sau cùng, các đối tượng kiểm tra có nhiều khác biệt về tuổi, nồng độ hóc môn, hoạt động thể chất, chế độ ăn uống, mức tiêu thụ rượu bia, và nhiều nhân tố khác không liên quan đến căn bệnh.
@@ -303,11 +304,11 @@ More importantly, *all* the roadside had been rendered with the *same* texture a
 
 Giả sử có một công ty muốn xây dựng một hệ thống học máy cho xe tự hành.
 Một trong những bộ phận quan trọng là bộ phát hiện lề đường.
-Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu giả từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện.
+Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu giả từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện. 
 Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ bộ kết xuất đồ hoạ.
 Nhưng khi áp dụng trên xe thực tế, nó là một thảm hoạ.
 Hoá ra, lề đường đã được kết xuất chỉ với một kết cấu rất đơn giản.
-Quan trọng hơn, *tất cả* các lề đường đều được kết xuất với cùng một kết cấu và bộ phát hiện lề đường đã nhanh chóng học được "đặc trưng" này.
+Quan trọng hơn, *tất cả* các lề đường đều được kết xuất với *cùng một* kết cấu và bộ phát hiện lề đường đã nhanh chóng học được "đặc trưng" này.
 
 <!--
 A similar thing happened to the US Army when they first tried to detect tanks in the forest.
@@ -318,7 +319,7 @@ Unfortunately, all it had learned was to distinguish trees with shadows from tre
 
 Một điều tương tự cũng đã xảy ra với quân đội Mỹ trong lần đầu tiên họ thử nghiệm nhận diện xe tăng trong rừng.
 Họ đã chụp các bức ảnh của khu rừng khi không có những chiếc xe tăng từ trên không, sau đó lái xe tăng vào khu rừng và chụp một bộ ảnh khác.
-Bộ phân loại đã được huấn luyện khi đó hoạt động "hoàn hảo".
+Bộ phân loại đã được huấn luyện khi đó hoạt động một cách "hoàn hảo".
 Không may thay, tất cả những gì nó đã học được là phân loại cây có bóng với cây không có bóng---bộ ảnh đầu tiên được chụp vào buổi sáng sớm, trong khi bộ thứ hai được chụp vào buổi trưa.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -336,7 +337,7 @@ A much more subtle situation arises when the distribution changes slowly and the
 Here are some typical cases:
 -->
 
-Một vấn đề đặc biệt phát sinh khi phân phối thay đổi chậm và mô hình không được cập nhật thoả đáng.
+Một vấn đề đặc biệt phát sinh khi phân phối thay đổi chậm và mô hình không được cập nhật một cách thoả đáng.
 Dưới đây là một vài trường hợp điển hình:
 
 <!--
@@ -345,9 +346,9 @@ Dưới đây là một vài trường hợp điển hình:
 * We build a product recommendation system. It works throughout the winter... but then it keeps on recommending Santa hats long after Christmas.
 -->
 
-* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo và sau đó không cập nhật thường xuyên (giả sử như chúng ta quên bổ sung thêm thiết bị iPad mới vừa được ra mắt).
-* Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt khi phát hiện tất cả các thư rác mà chúng ta biết cho đến nay. Tuy nhiên hiện tại những người gửi thư rác đã tạo ra các mẫu thư mới trông không hề giống như những gì mà chúng ta biết trước đây.
-* Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc trong suốt mùa đông… nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả khi Giáng Sinh đã qua.
+* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo và sau đó không cập nhật nó thường xuyên (giả sử như chúng ta quên bổ sung thêm cho thiết bị iPad mới vừa được ra mắt).
+* Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt cho việc phát hiện tất cả các thư rác mà chúng ta biết cho đến nay. Tuy nhiên hiện tại những người gửi thư rác đã tạo ra các mẫu thư mới trông không hề giống như những gì mà chúng ta biết trước đây.
+* Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc trong suốt mùa đông... nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả khi Giáng Sinh đã qua.
 
 <!--
 #### More Anecdotes
@@ -364,10 +365,10 @@ say 1000 categories, represented by 1000 images each. Then we deploy the system 
 -->
 
 * Chúng ta xây dựng mô hình phát hiện gương mặt. Nó hoạt động rất tốt trên các bài kiểm tra đánh giá.
-Không may mắn là mô hình lại sai ở phần dữ liệu kiểm tra -- các ví dụ vi phạm là khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh và không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
-* Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn sử dụng nó cho thị trường Anh.
+Không may mắn là mô hình lại thất bại trên tập dữ liệu kiểm tra---các ví dụ đánh bại được mô hình khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh, trong khi không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
+* Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn triển khai nó cho thị trường Anh.
 * Chúng ta huấn luyện một trình phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu có số lượng mẫu biểu diễn bằng nhau, chẳng hạn như có 1000 lớp, mỗi lớp được biểu diễn bởi 1000 ảnh.
-Sau đó chúng ta triển khai hệ thống trên thực tế trong khi phân phối nhãn của các ảnh lại không đồng đều. 
+Sau đó chúng ta triển khai hệ thống trong khi trên thực tế phân phối nhãn của các ảnh lại không đồng đều. 
 
 <!--
 In short, there are many cases where training and test distributions $p(\mathbf{x}, y)$ are different.
@@ -381,7 +382,7 @@ Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và
 Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù phân phối của hiệp biến, nhãn hay khái niệm đều dịch chuyển.
 Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng nhiều chiến lược một cách có nguyên tắc để đối phó với sự dịch chuyển này.
 Phần còn lại của mục này sẽ tập trung nhiều hơn đáng kể về mặt kỹ thuật.
-Tuy nhiên đối với những bạn đọc không thích thì có thể bỏ qua vì các khái niệm được trình bày dưới đây không phải là tiền đề cho các phần tiếp theo.
+Tuy nhiên, những đọc giả vội vàng có thể bỏ qua mục này vì các khái niệm được trình bày dưới đây không phải là tiền đề cho các phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -881,3 +882,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Thành Nhân
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
+
+* Phạm Hồng Vinh
