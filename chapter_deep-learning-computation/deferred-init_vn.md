@@ -129,13 +129,15 @@ This is the solution to the three problems outlined above.
 ## Deferred Initialization in Practice
 -->
 
-## *dịch tiêu đề phía trên*
+## Trì hoãn khởi tạo khi thực hành
 
 <!--
 Now that we know how it works in theory, let's see when the initialization is actually triggered. 
 In order to do so, we mock up an initializer which does nothing but report a debug message stating when it was invoked and with which parameters.
 -->
 
+Về lý thuyết, hiện giờ chúng ta biết nó hoạt động như thế nào, hãy xem xét việc khởi tạo này khi thực tế được kích hoạt.
+Để làm như vậy, chúng ta cần lên khung một bộ khởi tạo mà nó không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=22}
@@ -155,6 +157,9 @@ Therefore there is no real initialization parameter when calling the `initialize
 Next, we define the input and perform a forward calculation.
 -->
 
+Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi nó đã thực thi. 
+Do đó không có bất cứ tham số khởi tạo thật sự nào khi thực hiện gọi hàm `initialize` này. 
+Kế tiếp, ta định nghĩa đầu vào và thực hiện tính toán tiếp theo.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=25}
@@ -168,6 +173,9 @@ When performing a forward calculation based on the input `x`, the system can aut
 Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
 -->
 
+Ở thời điểm này, thông tin về các tham số mô hình được in ra.
+Khi thực hiện tính toán tiếp theo dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các lớp dựa trên kích thước của biến đầu vào này. 
+Ngay khi hệ thống đã tạo ra các tham số trên, nó gọi mẫu `MyInit` để khởi tạo chúng trước khi xử lý tính toán kế tiếp.
 *dịch đoạn phía trên*
 
 <!--
@@ -175,6 +183,8 @@ Of course, this initialization will only be called when completing the initial f
 After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
 -->
 
+Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi việc tính toán khởi tạo đã hoàn thành.
+Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi chúng ta chạy lệnh tính toán kế tiếp `net(x)`, do đó đầu ra của mẫu `MyInit` sẽ không được sinh ra nữa. 
 *dịch đoạn phía trên*
 
 ```{.python .input}
@@ -188,6 +198,9 @@ for example, we could not use the `data` and `set_data` functions to get and mod
 Therefore, we often force initialization by sending a sample observation through the network.
 -->
 
+Như đã đề cập ở phần mở đầu của mục này, việc trì hoãn khởi tạo cũng có thể gây ra sự khó hiểu.
+Trước khi lệnh tính toán kế tiếp đầu tiên được thực thi, chúng ta không thể nào thao tác trực tiếp lên các thông số của mô hình, chẳng hạn như chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
+Do đó, chúng ta thường ép việc khởi tạo bằng cách gửi một mẫu quan sát qua mạng này. 
 *dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -300,7 +313,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 *
