@@ -146,8 +146,8 @@ Notice that the direction of the arrows (which illustrate data flow) are primari
 
 Vẽ đồ thị tính toán giúp chúng ta hình dung được sự phụ thuộc giữa các toán tử và các biến trong quá trình tính toán. 
 :numref:`fig_forward` thể hiện đồ thị tương ứng với mạng nơ-ron đã miêu tả ở trên.
-Góc bên trái dưới biểu diễn đầu vào trong khi góc bên phải trên biểu diễn đầu ra.
-Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) chủ yếu là qua phải và hướng lên trên. 
+Góc trái dưới biểu diễn đầu vào trong khi góc phải trên biểu diễn đầu ra.
+Lưu ý rằng hướng của các mũi tên (thể hiện luồng dữ liệu) chủ yếu là đi qua phải và hướng lên trên. 
 
 <!--
 ![Computational Graph](../img/forward.svg)
@@ -172,9 +172,9 @@ in which the input and the output $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ are tenso
 By using the chain rule, we can compute the derivative of $\mathsf{Z}$ wrt. $\mathsf{X}$ via
 -->
 
-Lan truyền ngược đề cập đến phương pháp tính gradient của các tham số mạng nơ-ron. 
-Nói một cách đơn giản, phương thức này di chuyển trong mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào tuân theo quy tắc dây chuyền trong giải tích.  
-Thuật toán lan truyền ngược lưu trữ các biến trung gian (các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
+Lan truyền ngược là phương pháp tính gradient của các tham số mạng nơ-ron. 
+Nói một cách đơn giản, phương thức này duyệt qua mạng nơ-ron theo chiều ngược lại, từ đầu ra đến đầu vào, tuân theo quy tắc dây chuyền trong giải tích.  
+Thuật toán lan truyền ngược lưu trữ các biến trung gian (là các đạo hàm riêng) cần thiết trong quá trình tính toán gradient theo các tham số.
 Giả sử chúng ta có hàm $\mathsf{Y}=f(\mathsf{X})$ và $\mathsf{Z}=g(\mathsf{Y}) = g \circ f(\mathsf{X})$, 
 trong đó đầu vào và đầu ra $\mathsf{X}, \mathsf{Y}, \mathsf{Z}$ là các tensor có kích thước bất kỳ. 
 Bằng cách sử dụng quy tắc dây chuyền, chúng ta có thể tính đạo hàm của $\mathsf{Z}$ theo $\mathsf{X}$ như sau:
@@ -188,10 +188,10 @@ For higher dimensional tensors, we use the appropriate counterpart.
 The operator $\text{prod}$ hides all the notation overhead.
 -->
 
-Ở đây, chúng ta sử dụng phép tính $\text{prod}$ để nhân các số hạng của nó sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
+Ở đây, chúng ta sử dụng toán tử $\text{prod}$ để nhân các đối số sau khi các phép tính cần thiết như là chuyển vị và hoán đổi đã được thực hiện. 
 Với vector, điều này khá đơn giản: nó chỉ đơn thuần là phép nhân ma trận. 
-Với các tensor nhiều chiều thì sẽ có các phương án khác thích hợp hơn. 
-Phép tính $\text{prod}$ sẽ làm việc ký hiệu đơn giản hơn.
+Với các tensor nhiều chiều thì sẽ có các phương án tương ứng phù hợp. 
+Toán tử $\text{prod}$ sẽ đơn giản hoá việc ký hiệu.
 
 <!--
 The parameters of the simple network with one hidden layer are $\mathbf{W}^{(1)}$ and $\mathbf{W}^{(2)}$.
@@ -202,9 +202,9 @@ The first step is to calculate the gradients of the objective function $J=L+s$ w
 -->
 
 Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
-Mục địch của lan truyền ngược là tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
-Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính toán gradient của các biến trung gian và tham số. 
-Thứ tự của các phép tính trong lan truyền ngược là đảo ngược của các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán rồi đi tới tham số. 
+Mục đích của lan truyền ngược là để tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
+Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính gradient của các biến trung gian và tham số. 
+Các phép tính trong lan truyền ngược có thứ tự ngược lại so với các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán rồi dần đi tới các tham số. 
 Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ theo mất mát $L$ và điều chuẩn $s$. 
 
 $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
@@ -213,7 +213,7 @@ $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial 
 Next, we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
 -->
 
-Tiếp theo, ta tính gradient của hàm mục tiêu với các biến của lớp đầu ra $\mathbf{o}$ theo quy tắc dây chuyền.
+Tiếp theo, ta tính gradient của hàm mục tiêu theo các biến của lớp đầu ra $\mathbf{o}$, sử dụng quy tắc dây chuyền.
 
 $$
 \frac{\partial J}{\partial \mathbf{o}}
@@ -226,7 +226,7 @@ $$
 Next, we calculate the gradients of the regularization term with respect to both parameters.
 -->
 
-Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số. 
+Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số.
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
 \; \text{and} \;
@@ -241,7 +241,7 @@ Now we are able calculate the gradient $\partial J/\partial \mathbf{W}^{(2)} \in
 Using the chain rule yields:
 -->
 
-Bây giờ chúng ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ của các tham số mô hình gần nhất với lớp đầu ra. Áp dụng quy tắc dây chuyền:
+Bây giờ chúng ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(2)} \in \mathbb{R}^{q \times h}$ của các tham số mô hình gần nhất với tầng đầu ra. Áp dụng quy tắc dây chuyền, ta có: 
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(2)}}
@@ -254,7 +254,7 @@ To obtain the gradient with respect to $\mathbf{W}^{(1)}$ we need to continue ba
 The gradient with respect to the hidden layer's outputs $\partial J/\partial \mathbf{h} \in \mathbb{R}^h$ is given by
 -->
 
-Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn. 
+Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn.
 Gradient theo các đầu ra của tầng ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
 
 
@@ -269,7 +269,7 @@ Since the activation function $\phi$ applies elementwise, calculating the gradie
 of the intermediate variable $\mathbf{z}$ requires that we use the elementwise multiplication operator, which we denote by $\odot$.
 -->
 
-Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ đòi hỏi chúng ta sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
+Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ cũng yêu cầu sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
@@ -282,7 +282,7 @@ Finally, we can obtain the gradient $\partial J/\partial \mathbf{W}^{(1)} \in \m
 According to the chain rule, we get
 -->
 
-Cuối cùng, ta có được gradient $\partial J/\partial \mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ của các tham số mô hình gần nhất với lớp đầu vào. Theo quy tắc dây chuyền, ta có
+Cuối cùng, ta có thể tính gradient $\partial J/\partial \mathbf{W}^{(1)} \in \mathbb{R}^{h \times d}$ của các tham số mô hình gần nhất với tầng đầu vào. Theo quy tắc dây chuyền, ta có
 
 $$
 \frac{\partial J}{\partial \mathbf{W}^{(1)}}
@@ -315,12 +315,12 @@ Another reason is that we typically train with minibatches containing more than 
 -->
 
 Khi huấn luyện các mạng nơ-ron, lan truyền xuôi và lan truyền ngược phụ thuộc lẫn nhau. 
-Cụ thể, với lan truyền xuôi, đồ thị tính toán đi theo hướng các phụ thuộc và tính tất cả các biến trên đường đi của nó. 
+Cụ thể với lan truyền xuôi, ta duyệt đồ thị tính toán theo hướng của các quan hệ phụ thuộc và tính tất cả các biến trên đường đi. 
 Những biến này sau đó được sử dụng trong lan truyền ngược khi thứ tự tính toán trên đồ thị bị đảo ngược lại. 
-Hệ quả đó là ta cần lưu trữ các giá trị trung gian cho đến khi lan truyền ngược hoàn tất. 
-Đây cũng chính là một trong những lý do khiến lan truyền ngược đòi hỏi nhiều bộ nhớ hơn đáng kể so với khi chỉ cần đưa ra dự đoán.  
-Các tensor được tính dưới dạng gradient và các biến trung gian cần được lưu trữ để sử dụng trong quy tắc dây chuyền. 
-Một lý do nữa đó là chúng ta thường huấn luyện các minibatch chứa nhiều hơn một biến, do đó nhiều giá trị kích hoạt trung gian cần được lưu trữ hơn. 
+Hệ quả là ta cần lưu trữ các giá trị trung gian cho đến khi lan truyền ngược hoàn tất. 
+Đây cũng chính là một trong những lý do khiến lan truyền ngược yêu cầu nhiều bộ nhớ hơn đáng kể so với khi chỉ cần đưa ra dự đoán.  
+Ta tính các tensor gradient và giữ các biến trung gian lại để sử dụng trong quy tắc dây chuyền. 
+Việc huấn luyện trên các minibatch chứa nhiều mẫu, do đó cần lưu trữ nhiều giá trị kích hoạt trung gian hơn cũng là một lý do khác. <!-- Chỗ này bản gốc viết sai nhỉ, minibatch chứa nhiều samples chứ sao lại variables-->
 
 <!--
 ## Summary
@@ -335,10 +335,10 @@ Một lý do nữa đó là chúng ta thường huấn luyện các minibatch ch
 * Training requires significantly more memory and storage.
 -->
 
-* Lan truyền xuôi lần lượt tính và lưu trữ các biến trung gian trong đồ thị tính toán định nghĩa bởi mạng nơ-ron. 
-* Lan truyền ngược lần lượt tính và lưu trữ các gradient của biến trung gian và tham số trong mạng nơ-ron theo chiều ngược lại. 
+* Lan truyền xuôi lần lượt tính và lưu trữ các biến trung gian từ tầng đầu vào đến tầng đầu ra trong đồ thị tính toán được định nghĩa bởi mạng nơ-ron.
+* Lan truyền ngược lần lượt tính và lưu trữ các gradient của biến trung gian và tham số mạng nơ-ron theo chiều ngược lại. 
 * Khi huấn luyện các mô hình học sâu, lan truyền xuôi và lan truyền ngược phụ thuộc lẫn nhau. 
-* Việc huấn luyện cần nhiều bộ nhớ lưu trữ hơn đáng kể. 
+* Việc huấn luyện cần nhiều bộ nhớ lưu trữ hơn đáng kể so với việc dự đoán. 
 
 
 <!--
@@ -359,15 +359,15 @@ Một lý do nữa đó là chúng ta thường huấn luyện các minibatch ch
     * What are the advantages and disadvantages over training on a smaller minibatch?
 -->
 
-1. Giả sử đầu vào $\mathbf{x}$ với hàm số vô hướng $f$ là ma trận $n \times m$. Chiều của gradient $f$ ứng với $\mathbf{x} là gì?
+1. Giả sử đầu vào $\mathbf{x}$ của hàm số vô hướng $f$ là ma trận $n \times m$. Gradient của $f$ theo $\mathbf{x} có chiều là bao nhiêu?
 2. Thêm một hệ số điều chỉnh vào tầng ẩn của mô hình được mô tả ở trên.
   * Vẽ đồ thị tính toán tương ứng.
   * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
 3. Tính lượng bộ nhớ mà mô hình được mô tả ở chương này sử dụng lúc huấn luyện và lúc dự đoán.
-4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Ước tính thời gian hoàn thành quá trình tính toán?
+4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Hãy uớc tính thời gian hoàn thành quá trình này?
 5. Giả sử rằng đồ thị tính toán trên là quá sức với GPU của bạn.
-  * Bạn có thể phân vùng nó qua nhiều GPU không?
-  * Đâu là ưu điểm và nhược điểm của việc huấn luyện với một minibath nhỏ hơn?
+  * Bạn có thể phân vùng nó trên nhiều GPU không?
+  * Ưu điểm và nhược điểm của việc huấn luyện với một minibatch nhỏ hơn là gì?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -395,22 +395,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
-
-<!-- Phần 2 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
 * Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
