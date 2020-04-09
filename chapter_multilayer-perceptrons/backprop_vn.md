@@ -212,7 +212,7 @@ $$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial 
 Next, we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
 -->
 
-Tiếp theo, ta tính gradient của hàm mục tiêu theo các biến của lớp đầu ra $\mathbf{o}$, tuân thủ quy tắc dây chuyền.
+Tiếp theo, ta tính gradient của hàm mục tiêu theo các biến của lớp đầu ra $\mathbf{o}$, sử dụng quy tắc dây chuyền.
 
 $$
 \frac{\partial J}{\partial \mathbf{o}}
