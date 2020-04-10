@@ -134,8 +134,8 @@ Perhaps the easiest way to develop intuition about how `nn.Block` works is to im
 Before we implement our own custom `Block`, we briefly summarize the basic functionality that each `Block` must provide:
 -->
 
-Có lẽ điều dễ nhất để hiểu sâu hơn về cách thức `nn.Block` hoạt động đó là tự mình lập trình. 
-Trước khi ta lập trình `Block` tùy chỉnh của chính mình, ta hãy tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` phải cung cấp:
+Có lẽ cách dễ nhất để hiểu rõ hơn `nn.Block` hoạt động như thế nào là tự lập trình nó. 
+Trước khi tự lập trình một `Block` tùy chỉnh, hãy cùng tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` phải cung cấp:
 
 <!--
 1. Ingest input data as arguments to its `forward` method.
@@ -148,14 +148,14 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-1. Chấp nhận dữ liệu đầu vào như các thông số dành cho phương thức `forward`.
+1. Phương thức `forward` của nó chấp nhận đối số là dữ liệu đầu vào.
 2. Tạo ra một đầu ra bằng cách cho phương thức `forward` trả về một giá trị.
-Lưu ý rằng đầu ra có thể có một hình dạng khác với đầu vào.
-Ví dụ, tầng Dense đầu tiên trong mô hình phía trên của ta nhập đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
-3. Tính toán gradient của đầu ra đối với đầu vào, điều có thể đạt tới thông qua phương thức `backward`.
+Lưu ý rằng đầu ra có thể có kích thước khác với đầu vào.
+Ví dụ, tầng Dense đầu tiên trong mô hình phía trên nhận đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
+3. Tính toán gradient của đầu ra theo đầu vào bằng phương thức `backward`.
 Thông thường điều này tự động xảy ra.
-4. Lưu trữ và cung cấp quyền truy cập vào các thông số cần thiết để tiến hành tính toán phương thức `forward`.
-5. Khởi tạo các thông số này khi cần thiết.
+4. Lưu trữ và cung cấp quyền truy cập tới các tham số cần thiết để tiến hành các phép tính trong phương thức `forward`.
+5. Khởi tạo các tham số này khi cần thiết.
 
 <!--
 In the following snippet, we code up a Block from scratch corresponding to a multilayer perceptron with one hidden layer with 256 hidden nodes, and a 10-dimensional output layer.
@@ -163,9 +163,9 @@ Note that the `MLP` class below inherits the `Block` class.
 We will rely heavily on the parent class's methods, supplying only our own `__init__` and `forward` methods.
 -->
 
-Trong đoạn mã dưới đây, chúng ta lập trình một Block (Khối) từ đầu dựa vào một perceptron đa tầng với một tầng ẩn với 256 nút ẩn, và một tầng đầu ra 10 chiều.
+Trong đoạn mã dưới đây, chúng ta lập trình từ đầu một Block (Khối) tương đương với một perceptron đa tầng chỉ có một tầng ẩn và 256 nút ẩn, cùng một tầng đầu ra 10 chiều.
 Lưu ý rằng lớp `MLP` bên dưới đây kế thừa từ lớp `Block`.
-Ta sẽ phụ thuộc nhiều vào các phương thức của lớp cha, chỉ cung cấp phương thức `__init__` và `forward` của chính ta.
+Ta sẽ phụ thuộc nhiều vào các phương thức của lớp cha, chỉ tự viết phương thức `__init__` và `forward`.
 
 ```{.python .input  n=34}
 from mxnet.gluon import nn
@@ -197,9 +197,9 @@ Naturally, we would expect them them to represent two different learned models.
 -->
 
 Để bắt đầu, ta sẽ tập trung vào phương thức `forward`.
-Lưu ý rằng nó lấy `x` làm giá trị đầu vào, tính toán biểu diễn ẩn (`self.hidden(x)`), và cho giá trị đầu ra các logits của nó (`self.output( ... )`).
-Trong việc lập trình MLP này, cả hai tầng đều là biến thực thể.
-Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo ra hai MLP, `net1` và `net2`, và huấn luyện chúng với các dữ liệu khác nhau.
+Lưu ý rằng nó nhận giá trị đầu vào `x`, tính toán biểu diễn ẩn (`self.hidden(x)`), và trả về giá trị đầu ra là các logit (`self.output( ... )`).
+Ở cách lập trình MLP này, cả hai tầng trên đều là biến thực thể.
+Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo hai MLP, `net1` và `net2`, và huấn luyện chúng với dữ liệu khác nhau.
 Theo cách tự nhiên, ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
 
 <!--
@@ -212,9 +212,9 @@ Gluon will generate these methods automatically.
 Let's try this out:
 -->
 
-Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng trong mỗi lệnh gọi phương thức `forward`.
-Chú ý một vài chi tiết quan trọng.
-Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` giảm bớt cho ta nỗi đau của việc khởi động lại mã lặp đi lặp lại cho hầu hết các Blocks. 
+Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng này mỗi khi ta gọi phương thức `forward`.
+Hãy chú ý một vài chi tiết quan trọng.
+Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` để giảm bớt phiền phức nếu phải viết lại phần mã áp dụng được cho hầu hết các Block.
 
 ```{.python .input  n=35}
 net = MLP()
@@ -228,9 +228,9 @@ We can subclass `Block` to create layers (such as the `Dense` class provided by 
 We exploit this versatility throughout the following chapters, especially when addressing convolutional neural networks.
 -->
 
-Một ưu điểm quan trọng của trừu tượng hóa `Block` là tính linh hoạt của nó.
-Ta có thể phân lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ các mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng có độ phức tạp trung gian.
-Ta khai thác tính linh hoạt này xuyên suốt các chương sau, đặc biệt khi giải quyết các mạng nơ-ron tích chập. 
+Một ưu điểm chính của phép trừu tượng hóa `Block` là tính linh hoạt của nó.
+Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng khác với độ phức tạp trung bình.
+Ta sẽ tận dụng tính linh hoạt này xuyên suốt ở các chương sau, đặc biệt khi làm việc với các mạng nơ-ron tích chập. 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
