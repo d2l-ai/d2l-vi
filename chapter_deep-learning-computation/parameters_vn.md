@@ -90,7 +90,7 @@ Tầng thứ hai cũng được cấu trúc theo cách như vậy.
 ### Targeted Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Các tham số Mục tiêu
 
 <!--
 In order to do something useful with the parameters we need to access them, though. 
@@ -98,8 +98,9 @@ There are several ways to do this, ranging from simple to general.
 Let's look at some of them.
 -->
 
-*dịch đoạn phía trên*
-
+Tuy nhiên, để làm việc với các tham số, ta cần truy cập chúng.
+Có một vài cách để làm việc này, từ đơn giản đến tổng quát.
+Hãy xem qua một số ví dụ.
 
 ```{.python .input  n=3}
 print(net[1].bias)
@@ -115,8 +116,12 @@ This is possible since each layer comes with its own parameter dictionary that c
 Both methods are entirely equivalent but the first method leads to much more readable code.
 -->
 
-*dịch đoạn phía trên*
-
+Ví dụ đầu tiên trả về hệ số điều chỉnh của tầng thứ hai.
+Vì đây là một đối tượng chứa dữ liệu, các gradient, và các thông tin bổ sung khác, ta cần phải truy vấn dữ liệu một cách rõ ràng.
+Chú ý rằng các hệ số điều chỉnh đều bằng 0 vì ta đã khởi tạo chúng bằng 0.
+Ta cũng có thể truy xuất các tham số theo tên của chúng, chẳng hạn như `dense0_weight`.
+Điều này có thể thực hiện được vì mỗi tầng đều có một bộ từ điển tham số kèm theo cho phép ta truy xuất trực tiếp.
+Cả hai phương pháp hoàn toàn tương đương với nhau nhưng phương pháp đầu tiên giúp mã nguồn dễ đọc hơn.
 
 ```{.python .input  n=4}
 print(net[0].params['dense0_weight'])
@@ -131,8 +136,11 @@ For instance, we can compute the gradient with respect to the parameters.
 It has the same shape as the weight. However, since we did not invoke backpropagation yet, the values are all 0.
 -->
 
-*dịch đoạn phía trên*
-
+Chú ý rằng các trọng số là khác không.
+Điều này là theo thiết kế vì chúng được khởi tạo ngẫu nhiên khi ta xây dựng mạng.
+`data` không phải là hàm duy nhất ta có thể gọi.
+Chẳng hạn, ta có thể gọi hàm tính toán gradient theo các tham số.
+Nó có cùng kích thước với trọng số. Tuy nhiên, bởi vì ta chưa gọi hàm lan truyền ngược, tất cả các giá trị đều bằng 0.
 
 ```{.python .input  n=5}
 net[0].weight.grad()
@@ -488,7 +496,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 3 -->
 *
