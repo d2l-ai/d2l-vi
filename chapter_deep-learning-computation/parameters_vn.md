@@ -347,8 +347,7 @@ We draw the coefficients from the following distribution:
 
 Đôi khi, các phương thức khởi tạo mà ta cần không có sẵn trong mô-đun `init`.
 Trong trường hợp đó, ta có thể lập trình một lớp con của lớp `Initializer` và sử dụng nó như bất kỳ phương thức khởi tạo nào khác.
-Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi tham số `ndarray` đầu vào bằng giá trị khởi tạo mong muốn.
-<!-- Câu này mình dịch theo cách mình hiểu về chức năng của hàm _init_weight, reviewer thấy chưa phù hợp thì sửa giúp mình -->
+Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi tham số `ndarray` đầu vào (`data`) bằng giá trị khởi tạo mong muốn.
 Trong ví dụ dưới đây, ta sẽ chọn một phân phối kỳ lạ và không tầm thường để chứng minh luận điểm bên trên.
 Ta sẽ lấy các hệ số từ phân phối sau:
 
