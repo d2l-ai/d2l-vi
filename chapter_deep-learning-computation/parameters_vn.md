@@ -384,7 +384,7 @@ net[0].weight.data()[0]
 ## Tied Parameters
 -->
 
-## Các tham số liên kết
+## Các tham số được chia sẻ
 
 <!--
 In some cases, we want to share model parameters across multiple layers. 
@@ -429,10 +429,10 @@ What happens to the gradients is quite ingenious.
 Since the model parameters contain gradients, the gradients of the second hidden layer and the third hidden layer are accumulated in the `shared.params.grad( )` during backpropagation.
 -->
 
-Ví dụ trên cho thấy các tham số của tầng thứ hai và thứ ba đã được liên kết với nhau.
+Ví dụ trên cho thấy các tham số của tầng thứ hai và thứ ba đã được chia sẻ với nhau.
 Chúng giống hệt nhau thay vì chỉ bằng nhau.
 Tức là nếu thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
-Những gì xảy ra với gradient là khá tài tình.
+Cách xử lý gradient ở đây là khá tài tình.
 Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
 
 <!--
@@ -447,8 +447,8 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 * Gluon has a sophisticated mechanism for accessing parameters in a unique and hierarchical manner.
 -->
 
-* Ta có một số cách để truy cập, khởi tạo và liên kết các tham số mô hình.
-* Ta có thể sử dụng khởi tạo tùy chỉnh.
+* Ta có một số cách để truy cập, khởi tạo và chia sẻ các tham số mô hình.
+* Ta có thể sử dụng các bộ khởi tạo tùy chỉnh.
 * Gluon có một cơ chế tinh vi để truy cập các tham số theo một cách đặc biệt và phân cấp.
 
 
@@ -459,14 +459,14 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 ## Bài tập
 
 <!--
-1. Use the FixedHiddenMLP defined in :numref:`sec_model_construction` and access the parameters of the various layers.
+1. Use the FancyMLP defined in :numref:`sec_model_construction` and access the parameters of the various layers.
 2. Look at the [MXNet documentation](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) and explore different initializers.
 3. Try accessing the model parameters after `net.initialize()` and before `net(x)` to observe the shape of the model parameters. What changes? Why?
 4. Construct a multilayer perceptron containing a shared parameter layer and train it. During the training process, observe the model parameters and gradients of each layer.
 5. Why is sharing parameters a good idea?
 -->
 
-1. Sử dụng FixedHiddenMLP định nghĩa trong :numref:`sec_model_construction` và truy cập các tham số của các tầng khác nhau.
+1. Sử dụng FixedHiddenMLP định nghĩa trong :numref:`sec_model_construction` và truy cập các tham số của các tầng khác nhau. <!-- Trong `sec_model_construction` mình chỉ thấy có hàm FixedHiddenMLP chứ không có hàm FancyMLP, hình như FancyMLP là trong bản cũ của sách thì phải -->
 2. Xem [tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
 3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
 4. Xây dựng và huấn luyện một perceptron đa tầng có một tầng tham số chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
