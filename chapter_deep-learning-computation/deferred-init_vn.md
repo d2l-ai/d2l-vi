@@ -12,7 +12,7 @@
 In the previous examples we played fast and loose with setting up our networks. In particular we did the following things that *shouldn't* work:
 -->
 
-Ở các ví dụ trên chúng ta đi nhanh và không quá chặt chẽ trong việc xây dựng các mạng nơron.
+Ở các ví dụ trên chúng ta chưa chặt chẽ trong việc xây dựng các mạng nơron.
 Cụ thể, dưới đây là những công đoạn ta đã thực hiện mà đáng ra sẽ *không* hoạt động:
 
 <!--
