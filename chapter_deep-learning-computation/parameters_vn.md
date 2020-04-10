@@ -273,8 +273,8 @@ However, we often need to use other methods to initialize the weights.
 MXNet's `init` module provides a variety of preset initialization methods, but if we want something out of the ordinary, we need a bit of extra work.
 -->
 
-Bây giờ khi ta đã biết cách truy cập các tham số, hãy xem làm thế nào để khởi tạo chúng đúng cách.
-Ta đã thảo luận về nhu cầu của việc khởi tạo tham số trong :numref:`sec_numerical_stability`.
+Bây giờ khi đã biết cách truy cập tham số, ta sẽ xem làm thế nào để khởi tạo chúng đúng cách.
+Ta đã thảo luận về sự cần thiết của việc khởi tạo tham số trong :numref:`sec_numerical_stability`.
 Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
 Tuy nhiên, ta thường cần sử dụng các phương pháp khác để khởi tạo trọng số.
 Mô-đun `init` của MXNet đã cung cấp sẵn nhiều phương thức khởi tạo, nhưng nếu muốn một cái gì đó khác thường, ta sẽ cần làm thêm một chút việc.
@@ -318,7 +318,7 @@ For instance, below we initialize the second layer to a constant value of 42 and
 -->
 
 Nếu muốn khởi tạo một tham số cụ thể theo một cách riêng biệt, ta có thể đơn giản sử dụng một bộ khởi tạo riêng chỉ cho khối con (hay tham số) tương ứng.
-Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên với bộ khởi tạo `Xavier` và tầng thứ hai với một hằng số là 42.
+Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên bằng cách sử dụng bộ khởi tạo `Xavier` và tầng thứ hai với một hằng số là 42.
 
 ```{.python .input  n=11}
 net[1].initialize(init=init.Constant(42), force_reinit=True)
@@ -347,7 +347,8 @@ We draw the coefficients from the following distribution:
 
 Đôi khi, các phương thức khởi tạo mà ta cần không có sẵn trong mô-đun `init`.
 Trong trường hợp đó, ta có thể lập trình một lớp con của lớp `Initializer` và sử dụng nó như bất kỳ phương thức khởi tạo nào khác.
-Thông thường, ta chỉ cần lập trình hàm `_init_ weight` và thay đổi `ndarray` đến dựa trên giá trị khởi tạo ban đầu.
+Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi tham số `ndarray` đầu vào bằng giá trị khởi tạo mong muốn.
+<!-- Câu này mình dịch theo cách mình hiểu về chức năng của hàm _init_weight, reviewer thấy chưa phù hợp thì sửa giúp mình -->
 Trong ví dụ dưới đây, ta sẽ chọn một phân phối kỳ lạ và không tầm thường để chứng minh luận điểm bên trên.
 Ta sẽ lấy các hệ số từ phân phối sau:
 
