@@ -297,7 +297,7 @@ In this case, we can compute mean and variance of $h_i$ as follows:
 -->
 
 Các trọng số $W_{ij}$ đều được lấy mẫu độc lập từ cùng một phân phối.
-Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng không và phương sai $\sigma^2$ (đây không bắt buộc phải là phân phối Gauss mà chỉ là ta cần phải cho trước trung bình và phương sai).
+Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng không và phương sai $\sigma^2$ (đây không bắt buộc phải là phân phối Gauss, chỉ là ta cần phải cho trước trung bình và phương sai).
 Tạm thời hãy giả sử rằng đầu vào của tầng $x_j$ cũng có trung bình bằng không và phương sai $\gamma^2$, độc lập với $\mathbf{W}$
 Trong trường hợp này, ta có thể tính được trung bình và phương sai của $h_i$ như sau:
 
