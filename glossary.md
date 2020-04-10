@@ -257,7 +257,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại                                |
 |------------------------------------|----------------------------|----------------------------------------------|
-| padding | đệm viền | |
+| padding | đệm  | |
 | partition function                 | hàm phân hoạch             | [https://git.io/JvQxE](https://git.io/JvQxE) |
 | pattern recognition                | nhận dạng mẫu              | [https://git.io/JvKeL](https://git.io/JvKeL) |
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
@@ -268,7 +268,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (động từ)                  | nằm ngang                  |                                              |
 | pipeline                           | pipeline                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
-| pooling | tổng hợp | |
+| pooling | gộp | |
 | positive sample/example            | mẫu dương                  |                                              |
 | posterior                          | hậu nghiệm                 | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision                          | precision                  |                                              |
