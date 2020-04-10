@@ -5,7 +5,7 @@
 # Custom Layers
 -->
 
-# *dịch tiêu đề phía trên*
+# Tuỳ chỉnh các tầng
 
 <!--
 One of the reasons for the success of deep learning can be found in the wide range of layers that can be used in a deep network. 
@@ -15,13 +15,17 @@ Sooner or later you will encounter a layer that does not exist yet in Gluon, or 
 This is when it is time to build a custom layer. This section shows you how.
 -->
 
-*dịch đoạn phía trên*
+Một trong những lý do dẫn đến thành công của học sâu là sự đa dạng của các tầng có thể sử dụng trong một mạng.
+Điều này cho phép một mức độ tuỳ chỉnh và thích ứng rất lớn.
+Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (pooling), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
+Sớm muộn bạn cũng sẽ gặp một tầng không có trong Gluon, hay thậm chí tuyệt vời hơn, bạn sẽ phát minh ra một tầng mới hoạt động tốt mà có thể sử dụng ngay cho bài toán của mình.
+
 
 <!--
 ## Layers without Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng không có Tham số
 
 <!--
 Since this is slightly intricate, we start with a custom layer (also known as Block) that does not have any inherent parameters. 
@@ -30,7 +34,10 @@ The following `CenteredLayer` class constructs a layer that subtracts the mean f
 We build it by inheriting from the Block class and implementing the `forward` method.
 -->
 
-*dịch đoạn phía trên*
+Do đây là một vấn đề có chút phức tạp, chúng ta bắt đầu với một tầng tuỳ chỉnh (hay còn gọi là Khối) không có tham số sẵn có nào.
+Bước đầu tiên rất giống với khi chúng ta giới thiệu các khối ở :numref:`sec_model_construction`.
+Lớp `CenteredLayer` dưới đây xây dựng một tầng có chức năng trừ đi giá trị trung bình của đầu vào.
+Chúng ta xây dựng lớp này bằng việc kế thừa từ lớp Block và lập trình phương thức `forward`.
 
 ```{.python .input  n=1}
 from mxnet import gluon, np, npx
@@ -49,7 +56,7 @@ class CenteredLayer(nn.Block):
 To see how it works let's feed some data into the layer.
 -->
 
-*dịch đoạn phía trên*
+Để thấy cách thức hoạt động, hãy truyền vài dữ liệu vào tầng này.
 
 ```{.python .input  n=2}
 layer = CenteredLayer()
@@ -60,7 +67,7 @@ layer(np.array([1, 2, 3, 4, 5]))
 We can also use it to construct more complex models.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng có thể sử dụng tầng này để xây dựng các mô hình phức tạp hơn.
 
 ```{.python .input  n=3}
 net = nn.Sequential()
@@ -74,7 +81,9 @@ For that we send random data through the network and check whether the mean vani
 Note that since we are dealing with floating point numbers, we are going to see a very small albeit typically nonzero number.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem tầng này có hoạt động không.
+Để làm việc đó, chúng ta truyền dữ liệu ngẫu nhiên vào mạng và kiểm tra xem giá trị trung bình đã bị trừ đi chưa.
+Chú ý rằng vì đang làm việc với các số thực dấu phẩy động, chúng ta sẽ thấy một giá trị rất nhỏ dù thông thường giá trị này khác không.
 
 ```{.python .input  n=4}
 y = net(np.random.uniform(size=(4, 8)))
@@ -243,7 +252,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
