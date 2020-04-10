@@ -183,6 +183,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt               | Thảo luận tại                                |
 |-------------------------|--------------------------|----------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK) |
+| kernel (CNN) | bộ lọc | |
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
