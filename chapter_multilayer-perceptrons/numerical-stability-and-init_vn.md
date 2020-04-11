@@ -115,7 +115,7 @@ Since early artificial neural networks were inspired by biological neural networ
 Let's take a closer look at the sigmoid to see why it can cause vanishing gradients.
 -->
 
-Thông thường, thủ phạm gây ra vấn đề tiêu biến gradient là hàm kích hoạt $\sigma$ được chọn để đặt nối tiếp phép toán tuyến tính tại mỗi tầng.
+Thông thường, thủ phạm gây ra vấn đề tiêu biến gradient này là hàm kích hoạt $\sigma$ được chọn để đặt nối tiếp phép toán tuyến tính tại mỗi tầng.
 Trước đây, hàm kích hoạt sigmoid $(1 + \exp(-x))$ (đã giới thiệu trong :numref:`sec_mlp`) là lựa chọn phổ biến bởi nó hoạt động giống với một hàm lấy ngưỡng.
 Bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng rằng các nơ-ron được kích hoạt *hoàn toàn* hoặc *không hề* kích hoạt (giống như nơ-ron sinh học) có vẻ rất hấp dẫn.
 Hãy cùng xem xét hàm sigmoid kỹ lưỡng hơn để thấy tại sao nó có thể gây ra vấn đề tiêu biến gradient.
