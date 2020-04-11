@@ -177,7 +177,7 @@ When this happens due to the initialization of a deep network, we have no chance
 Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
 Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gauss và nhân chúng với một ma trận ban đầu nào đó.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
-Nếu điều này xảy ra khi khởi tạo các mạng nơ-ron sâu một cách không hợp lý, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
+Khi khởi tạo các mạng nơ-ron sâu một cách không hợp lý, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
 
 ```{.python .input  n=5}
 M = np.random.normal(size=(4, 4))
@@ -210,7 +210,7 @@ In other words, we have permutation symmetry among the hidden units of each laye
 Một vấn đề khác trong việc thiết kế mạng nơ-ron sâu là tính đối xứng hiện hữu trong quá trình tham số hóa.
 Giả sử ta có một mạng nơ-ron sâu với một tầng ẩn gồm hai nút $h_1$ và $h_2$. 
 Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của tầng đầu tiên, rồi làm điều tương tự với các trọng số của tầng đầu ra để thu được một hàm giống hệt ban đầu.
-Ta có thể thấy rằng không có sự khác biệt rõ ràng giữa nút ẩn đầu tiên với nút ẩn thứ hai. <!-- tác giả dùng từ differentiate dễ nhầm quá -->
+Ta có thể thấy rằng không có sự khác biệt nào giữa nút ẩn đầu tiên với nút ẩn thứ hai. <!-- tác giả dùng từ differentiate dễ nhầm quá -->
 Nói cách khác, ta có tính đối xứng hoán vị giữa các nút ẩn của từng tầng.
 
 <!--
@@ -223,10 +223,10 @@ Note that while SGD would not break this symmetry, dropout regularization would!
 -->
 
 Đây không chỉ là phiền toái về mặt lý thuyết.
-Thử tưởng tượng điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số ở các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
-Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà chúng còn có bước cập nhật giống nhau.
+Thử hình dung xem điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số ở các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
+Trong trường hợp này thì các gradient cho tất cả các chiều là giống hệt nhau, nên mỗi nút không chỉ có cùng giá trị mà chúng còn có bước cập nhật giống nhau.
 Bản thân phương pháp hạ gradient ngẫu nhiên không thể phá vỡ tính đối xứng này và ta sẽ không hiện thực hóa được sức mạnh biểu diễn của mạng.
-Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất
+Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất.
 Nhưng hãy lưu ý rằng dù hạ gradient ngẫu nhiên không thể phá vỡ được tính đối xứng, kỹ thuật điều chuẩn dropout lại hoàn toàn có thể!
 
 <!--
