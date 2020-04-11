@@ -330,7 +330,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                                              |
-| stride | độ dịch | |
+| stride | sải (bước) | |
 | subscript                       | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
 | superscript                     | chỉ số trên              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
