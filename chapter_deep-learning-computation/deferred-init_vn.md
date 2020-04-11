@@ -271,7 +271,7 @@ net.initialize(init=MyInit())
 -->
 
 1. Chuyện gì xảy ra nếu chỉ chỉ rõ một vài phần của chiều đầu vào, có thể vẫn khởi tạo ngay lập tức được không?
-2. Chuyện gì xảy ra nếu truyền vào giá trị chiều không phù hợp?
+2. Chuyện gì xảy ra nếu ta truyền vào giá trị chiều không phù hợp?
 3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (parameter tying).
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
