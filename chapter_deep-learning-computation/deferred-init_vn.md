@@ -231,7 +231,7 @@ The second case requires us to specify the remaining set of parameters when crea
 For instance, for dense layers we also need to specify the `in_units` so that initialization can occur immediately once `initialize` is called.
 -->
 
-Trường hợp thứ hai yêu cầu chỉ rõ phần còn lại của các tham số khi tạo tầng.
+Trường hợp thứ hai yêu cầu chỉ rõ phần còn lại của các tham số khi tạo tầng trong mạng.
 Ví dụ, với các tầng kết nối đầy đủ chúng ta cần chỉ rõ `in_units` để việc khởi tạo có thể được thực hiện ngay khi `initialize` được gọi.
 
 ```{.python .input}
