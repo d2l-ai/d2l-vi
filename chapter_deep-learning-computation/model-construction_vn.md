@@ -155,14 +155,15 @@ Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một t
 ## A Custom Block
 -->
 
-## *dịch tiêu đề phía trên*
+## Một Khối Tùy chỉnh
 
 <!--
 Perhaps the easiest way to develop intuition about how `nn.Block` works is to implement one ourselves.
 Before we implement our own custom `Block`, we briefly summarize the basic functionality that each `Block` must provide:
 -->
 
-*dịch đoạn phía trên*
+Có lẽ cách dễ nhất để hiểu rõ hơn `nn.Block` hoạt động như thế nào là tự lập trình nó. 
+Trước khi tự lập trình một `Block` tùy chỉnh, hãy cùng tóm tắt ngắn gọn các chức năng cơ bản mà một `Block` phải cung cấp:
 
 <!--
 1. Ingest input data as arguments to its `forward` method.
@@ -175,7 +176,13 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-*dịch đoạn phía trên*
+1. Phương thức `forward` của nó chấp nhận đối số là dữ liệu đầu vào.
+2. Phương thức `forward` trả về một giá trị đầu ra.
+Lưu ý rằng đầu ra có thể có kích thước khác với đầu vào.
+Ví dụ, tầng Dense đầu tiên trong mô hình phía trên nhận đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
+3. Tính gradient của đầu ra theo đầu vào bằng phương thức `backward`, thường sẽ tự động xảy ra.
+4. Lưu trữ và cung cấp quyền truy cập tới các tham số cần thiết để tiến hành các phép tính trong phương thức `forward`.
+5. Khởi tạo các tham số này khi cần thiết.
 
 <!--
 In the following snippet, we code up a Block from scratch corresponding to a multilayer perceptron with one hidden layer with 256 hidden nodes, and a 10-dimensional output layer.
@@ -183,7 +190,9 @@ Note that the `MLP` class below inherits the `Block` class.
 We will rely heavily on the parent class's methods, supplying only our own `__init__` and `forward` methods.
 -->
 
-*dịch đoạn phía trên*
+Trong đoạn mã dưới đây, chúng ta lập trình từ đầu một Block (Khối) tương đương với một perceptron đa tầng chỉ có một tầng ẩn và 256 nút ẩn, cùng một tầng đầu ra 10 chiều.
+Lưu ý rằng lớp `MLP` bên dưới đây kế thừa từ lớp `Block`.
+Ta sẽ phụ thuộc nhiều vào các phương thức của lớp cha, chỉ tự viết phương thức `__init__` và `forward`.
 
 ```{.python .input  n=34}
 from mxnet.gluon import nn
@@ -214,7 +223,11 @@ To see why this is reasonable, imagine instantiating two MLPs, `net1` and `net2`
 Naturally, we would expect them them to represent two different learned models.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, ta sẽ tập trung vào phương thức `forward`.
+Lưu ý rằng nó nhận giá trị đầu vào `x`, tính toán tầng biểu diễn ẩn (`self.hidden(x)`) và trả về các giá trị logit (`self.output( ... )`).
+Ở cách lập trình MLP này, cả hai tầng trên đều là biến thực thể.
+Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo hai MLP, `net1` và `net2`, và huấn luyện chúng với dữ liệu khác nhau.
+Theo cách tự nhiên, ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
 
 <!--
 We instantiate the MLP's layers in the `__init__` method (the constructor) and subsequently invoke these layers on each call to the `forward` method.
@@ -226,7 +239,9 @@ Gluon will generate these methods automatically.
 Let's try this out:
 -->
 
-*dịch đoạn phía trên*
+Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng này mỗi khi ta gọi phương thức `forward`.
+Hãy chú ý một vài chi tiết quan trọng.
+Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` để giảm bớt phiền phức nếu phải viết lại phần mã áp dụng được cho hầu hết các Block.
 
 ```{.python .input  n=35}
 net = MLP()
@@ -240,7 +255,10 @@ We can subclass `Block` to create layers (such as the `Dense` class provided by 
 We exploit this versatility throughout the following chapters, especially when addressing convolutional neural networks.
 -->
 
-*dịch đoạn phía trên*
+Một ưu điểm chính của phép trừu tượng hóa `Block` là tính linh hoạt của nó.
+Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng khác với độ phức tạp trung bình.
+Ta sẽ tận dụng tính linh hoạt này xuyên suốt ở các chương sau, đặc biệt khi làm việc với các mạng nơ-ron tích chập. 
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -550,7 +568,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-*
+* Trần Yến Thy
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 *
