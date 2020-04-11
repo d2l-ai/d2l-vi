@@ -466,7 +466,7 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 5. Why is sharing parameters a good idea?
 -->
 
-1. Sử dụng FixedHiddenMLP được định nghĩa trong :numref:`sec_model_construction` và truy cập các tham số của các tầng khác nhau. <!-- Trong `sec_model_construction` mình chỉ thấy có hàm FixedHiddenMLP chứ không có hàm FancyMLP, hình như FancyMLP là trong bản cũ của sách thì phải -->
+1. Sử dụng FixedHiddenMLP được định nghĩa trong :numref:`sec_model_construction` và truy cập tham số của các tầng khác nhau. <!-- Trong `sec_model_construction` mình chỉ thấy có hàm FixedHiddenMLP chứ không có hàm FancyMLP, hình như FancyMLP là trong bản cũ của sách thì phải -->
 2. Xem [tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
 3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
 4. Xây dựng và huấn luyện một perceptron đa tầng có một tầng tham số chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
