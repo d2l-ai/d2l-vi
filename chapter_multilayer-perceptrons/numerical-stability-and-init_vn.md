@@ -174,7 +174,7 @@ For the scale that we picked (the choice of the variance $\sigma^2=1$), the matr
 When this happens due to the initialization of a deep network, we have no chance of getting a gradient descent optimizer to converge.
 -->
 
-Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
+Một vấn đề đối lập là bùng nổ gradient cũng có thể gây phiền toái không kém.
 Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gauss và nhân chúng với một ma trận ban đầu nào đó.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
 Khi khởi tạo các mạng nơ-ron sâu một cách không hợp lý, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
