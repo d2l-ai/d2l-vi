@@ -254,7 +254,7 @@ net.initialize(init=MyInit())
 * Initialization can be repeated (or forced) by setting the `force_reinit=True` flag.
 -->
 
-* Khởi tạo trễ là một điều tốt. Nó cho phép Gluon gán giá trị tự động và loại bỏ nhiều nguyên nhân gây lỗi trong việc định nghĩa các kiến trúc mạng mới lạ.
+* Khởi tạo trễ là một điều tốt. Nó cho phép Gluon gán giá trị một cách tự động và loại bỏ nhiều nguồn gây lỗi trong việc định nghĩa các kiến trúc mạng mới lạ.
 * Chúng ta có thể ghi đè việc khởi tạo này bằng cách chỉ rõ giá trị của tất cả các biến ngầm định.
 * Việc khởi tạo có thể được lặp lại (hoặc bị cưỡng chế) bằng việc gán cờ `force_reinit=True`.
 
