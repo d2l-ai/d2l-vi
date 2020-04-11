@@ -127,7 +127,7 @@ This is actually just shorthand for `net.forward(X)`, a slick Python trick achie
 ## A Custom Block
 -->
 
-## Một Block Tùy chỉnh
+## Một Khối Tùy chỉnh
 
 <!--
 Perhaps the easiest way to develop intuition about how `nn.Block` works is to implement one ourselves.
@@ -149,11 +149,10 @@ Typically this happens automatically.
 -->
 
 1. Phương thức `forward` của nó chấp nhận đối số là dữ liệu đầu vào.
-2. Tạo ra một đầu ra bằng cách cho phương thức `forward` trả về một giá trị.
+2. Phương thức `forward` trả về một giá trị đầu ra.
 Lưu ý rằng đầu ra có thể có kích thước khác với đầu vào.
 Ví dụ, tầng Dense đầu tiên trong mô hình phía trên nhận đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256.
-3. Tính toán gradient của đầu ra theo đầu vào bằng phương thức `backward`.
-Thông thường điều này tự động xảy ra.
+3. Tính gradient của đầu ra theo đầu vào bằng phương thức `backward`, thường sẽ tự động xảy ra.
 4. Lưu trữ và cung cấp quyền truy cập tới các tham số cần thiết để tiến hành các phép tính trong phương thức `forward`.
 5. Khởi tạo các tham số này khi cần thiết.
 
@@ -197,7 +196,7 @@ Naturally, we would expect them them to represent two different learned models.
 -->
 
 Để bắt đầu, ta sẽ tập trung vào phương thức `forward`.
-Lưu ý rằng nó nhận giá trị đầu vào `x`, tính toán biểu diễn ẩn (`self.hidden(x)`), và trả về giá trị đầu ra là các logit (`self.output( ... )`).
+Lưu ý rằng nó nhận giá trị đầu vào `x`, tính toán tầng biểu diễn ẩn (`self.hidden(x)`) và trả về các giá trị logit (`self.output( ... )`).
 Ở cách lập trình MLP này, cả hai tầng trên đều là biến thực thể.
 Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo hai MLP, `net1` và `net2`, và huấn luyện chúng với dữ liệu khác nhau.
 Theo cách tự nhiên, ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
