@@ -247,9 +247,8 @@ One way of addressing---or at least mitigating---the issues raised above is thro
 Additional care during optimization and suitable regularization can further enhance stability.
 -->
 
-Một cách giải quyết, hay ít nhất giảm nhẹ các vấn đề được nêu ở trên là khởi tạo các vector trọng số một cách cẩn thận.
-Bằng cách này ta có thể chắc chắn rằng các gradient không tiêu biến và chúng duy trì được một khoảng giá trị hợp lý, giúp cho trọng số mạng không phân kỳ, ít nhất là trong lúc mới bắt đầu huấn luyện.
-Chỉ cần cẩn thận thêm một chút trong quá trình tối ưu hóa và điều chuẩn phù hợp, ta có thể đảm bảo rằng mọi thứ sẽ không bao giờ trở nên quá tệ.
+Một cách giải quyết, hay ít nhất giảm thiểu các vấn đề được nêu ở trên là khởi tạo tham số một cách cẩn thận.
+Chỉ cần cẩn trọng một chút trong quá trình tối ưu hóa và điều chuẩn mô hình phù hợp, ta có thể cải thiện tính ổn định của quá trình học.
 
 <!--
 ### Default Initialization
