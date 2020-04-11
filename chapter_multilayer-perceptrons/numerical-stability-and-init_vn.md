@@ -5,8 +5,9 @@
 # Numerical Stability and Initialization
 -->
 
-# Sự ổn định Số và Sự khởi tạo
+# Ổn định Số học và Khởi tạo
 :label:`sec_numerical_stability`
+
 
 <!--
 Thus far, every model that we have implemented required that initialize its parameters according to some pre-specified distribution.
@@ -19,14 +20,14 @@ Poor choices here can cause us to encounter exploding or vanishing gradients whi
 In this section, we delve into these topics with greater detail and discuss some useful heuristics that you will frequently useful throughout your career in deep learning.
 -->
 
-Cho đến nay, đối với mọi mô hình mà ta đã lập trình, ta cần khởi tạo các tham số theo một phân phối cụ thể nào đó.
-Cho tới giờ, ta mới chỉ lướt qua các chi tiết thực hiện và không để tâm tới việc khởi tạo các siêu tham số.
-Bạn thậm chí có thể có ấn tượng rằng các lựa chọn này không đặc biệt quan trọng.
-Tuy nhiên, việc lựa chọn cơ chế khởi tạo đóng vai trò rất lớn trong quá trình học của mạng nơ-ron và có thể là yếu tố quyết định để giữ sự ổn định số học.
-Hơn nữa, các lựa chọn cách khởi tạo cũng có thể có một vài liên kết thú vị tới sự lựa chọn các hàm kích hoạt phi tuyến.
+Cho đến nay, đối với mọi mô hình mà ta đã lập trình, ta đều phải khởi tạo các tham số theo một phân phối cụ thể nào đó.
+Tuy nhiên, ta mới chỉ lướt qua các chi tiết thực hiện mà không để tâm lắm tới việc tại sao lại khởi tạo tham số như vậy.
+Bạn thậm chí có thể nghĩ rằng các lựa chọn này không đặc biệt quan trọng.
+Tuy nhiên, việc lựa chọn cơ chế khởi tạo đóng vai trò rất lớn trong quá trình học của mạng nơ-ron và có thể là yếu tố quyết định để duy trì sự ổn định số học.
+Hơn nữa, các phương pháp khởi tạo cũng có thể bị ràng buộc bởi các hàm kích hoạt phi tuyến theo những cách thú vị.
 Việc lựa chọn hàm kích hoạt và cách khởi tạo tham số có thể ảnh hưởng tới tốc độ hội tụ của thuật toán tối ưu.
-Nếu ta không quan tâm đến những điều trên, việc bùng nổ hoặc tiêu biến gradient có thể sẽ xảy ra.
-Trong phần này, ta sẽ đi sâu vào các chủ đề trên một cách chi tiết hơn và thảo luận một số phương pháp hữu dụng dựa trên thực nghiêm mà bạn có thể sử dụng thường xuyên trong suốt sự nghiệp học sâu.
+Nếu ta lựa chọn không hợp lý, việc bùng nổ hoặc tiêu biến gradient có thể sẽ xảy ra.
+Trong phần này, ta sẽ đi sâu hơn vào các chi tiết của chủ đề trên và thảo luận một số phương pháp thực nghiệm hữu ích mà bạn có thể sẽ sử dụng thường xuyên trong suốt sự nghiệp học sâu.
 
 <!--
 ## Vanishing and Exploding Gradients
@@ -40,8 +41,9 @@ Each layer satisfies:
 With each layer $l$ defined by a transformation $f_l$ parameterized by weights $\mathbf{W}_l$ our network can be expressed as:
 -->
 
-Xem xét một mạng nơ-ron sâu với $d$ tầng, đầu vào $\mathbf{x}$ và đầu ra $\mathbf{o}$.
-Mỗi tầng thõa mản:
+Xét một mạng nơ-ron sâu với $L$ tầng, đầu vào $\mathbf{x}$ và đầu ra $\mathbf{o}$.
+Mỗi tầng $l$ được định nghĩa bởi một phép biến đổi $f_l$ với tham số là trọng số $\mathbf{W}_l$.
+Mạng nơ-ron này có thể được biểu diễn như sau:
 
 $$\mathbf{h}^{l+1} = f_l (\mathbf{h}^l) \text{ và vì vậy } \mathbf{o} = f_L \circ \ldots, \circ f_1(\mathbf{x}).$$
 
@@ -49,7 +51,7 @@ $$\mathbf{h}^{l+1} = f_l (\mathbf{h}^l) \text{ và vì vậy } \mathbf{o} = f_L 
 If all activations and inputs are vectors, wwe can write the gradient of $\mathbf{o}$ with respect to any set of parameters $\mathbf{W}_l$ as follows:
 -->
 
-Nếu tất cả giá trị kích hoạt và đầu vào là vector, ta có thể viết lại gradient của $\mathbf{o}$ theo bất kỳ tập tham số $\mathbf{W}_t$ được liên kết với hàm $f_t$ tại tầng $t$ đơn giản như sau:
+Nếu tất cả giá trị kích hoạt và đầu vào là vector, ta có thể viết lại gradient của $\mathbf{o}$ theo một tập tham số $\mathbf{W}_l$ bất kỳ như sau:
 
 $$\partial_{\mathbf{W}_l} \mathbf{o} = \underbrace{\partial_{\mathbf{h}^{L-1}} \mathbf{h}^L}_{:= \mathbf{M}_L} \cdot \ldots \cdot \underbrace{\partial_{\mathbf{h}^{l}} \mathbf{h}^{l+1}}_{:= \mathbf{M}_l} \underbrace{\partial_{\mathbf{W}_l} \mathbf{h}^l}_{:= \mathbf{v}_l}.$$
 
@@ -79,14 +81,15 @@ We may facing parameter updates that are either (i) excessively large, destroyin
 or (ii) excessively small, (the *vanishing gradient problem*), rendering learning impossible as parameters hardly move on each update.
 -->
 
-Nói cách khác, nó là tích của $d-t$ ma trận $\mathbf{M}_d \cdot \ldots, \cdot \mathbf{M}_t$ với vector gradient $\mathbf{v}_t$.
-Điều này tương tự như những gì diễn ra ở hiện tượng tràn số dưới khi ta nhân quá nhiều xác suất lại với nhau.
-Lúc trước, ta có thể giải quyết vấn đề đó bằng cách chuyển về giá trị log, có nghĩa là nếu nhìn từ góc độ biểu diễn số học, ta đưa vấn đề từ phần định trị sang phần mũ.
-Thật không may, bài toán được đưa ra trong phương trình trên nghiêm trọng hơn nhiều: các ma trận $M_t$ ban đầu có thể có nhiều trị riêng khác nhau.
-Các trị riêng có thể nhỏ hoặc lớn, và đặc biệt, tích của chúng có thể *rất lớn* hoặc *rất nhỏ*.
-Đây không chỉ đơn thuần là một vấn đề trong việc biễu diễn số học, nó còn có nghĩa là thuật toán tối ưu sẽ chắc chắn thất bại.
-Nó nhận được giá trị gradient quá lớn hoặc quá nhỏ.
-Hậu quả là các bước cập nhật sẽ (i) quá lớn (hiện tượng *bùng nổ* gradient), trong trường hợp này, các tham số sẽ tăng rất nhanh khiến mô hình trở nên vô dụng, hoặc (ii) quá nhỏ, (vấn đề *tiêu biến* gradient), khi mà các tham số hầu như không thay đổi, do đó quá trình học không thể có tiến triển.
+Nói cách khác, gradient này là tích của $L-l$ ma trận $\mathbf{M}_L \cdot \ldots, \cdot \mathbf{M}_l$ với vector gradient $\mathbf{v}_l$.
+Vì vậy ta sẽ dễ gặp phải vấn đề tràn số dưới, một hiện tượng thường xảy ra khi nhân quá nhiều giá trị xác suất lại với nhau.
+Khi làm việc với các xác suất, một mánh phổ biến là chuyển về làm việc với giá trị log của nó.
+Nếu nhìn từ góc độ biểu diễn số học, điều này đồng nghĩa với việc chuyển trọng tâm biểu diễn của các bit từ phần định trị (*mantissa*) sang phần mũ (*exponent*). 
+Thật không may, bài toán trên lại nghiêm trọng hơn nhiều: các ma trận $M_l$ ban đầu có thể có nhiều trị riêng với độ lớn rất khác nhau.
+Các trị riêng có thể nhỏ hoặc lớn và do đó tích của chúng có thể *rất lớn* hoặc *rất nhỏ*.
+Rủi ro của việc gradient bất ổn không chỉ dừng lại ở vấn đề biểu diễn số học.
+Nếu ta không kiểm soát được độ lớn của gradient, sự ổn định của các thuật toán tối ưu cũng không được đảm bảo.
+Lúc đó ta sẽ quan sát được các bước cập nhật hoặc (i) quá lớn và phá hỏng mô hình (vấn đề *bùng nổ* gradient); hoặc (ii) quá nhỏ (vấn đề *tiêu biến* gradient), khiến việc học trở nên bất khả thi, khi mà các tham số hầu như không thay đổi ở mỗi bước cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -112,10 +115,10 @@ Since early artificial neural networks were inspired by biological neural networ
 Let's take a closer look at the sigmoid to see why it can cause vanishing gradients.
 -->
 
-Một thủ phạm chính gây ra vấn đề tiêu biến gradient là hàm kích hoạt $\sigma$ được chọn để đặt xen giữa các phép toán tuyến tính tại mỗi tầng.
+Thông thường, thủ phạm gây ra vấn đề tiêu biến gradient này là hàm kích hoạt $\sigma$ được chọn để đặt nối tiếp phép toán tuyến tính tại mỗi tầng.
 Trước đây, hàm kích hoạt sigmoid $(1 + \exp(-x))$ (đã giới thiệu trong :numref:`sec_mlp`) là lựa chọn phổ biến bởi nó hoạt động giống với một hàm lấy ngưỡng.
-Cũng bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng các nơ-ron được kích hoạt hoặc không bị kích hoạt (nơ-ron sinh học không bị kích hoạt một phần) có vẻ rất hấp dẫn.
-Hãy xem xét chi tiết hơn để thấy tại sao việc sử dụng hàm sigmoid có thể gây ra vấn đề liên quan tới hiện tượng tiêu biến gradient.
+Bởi các mạng nơ-ron nhân tạo thời kỳ đầu lấy cảm hứng từ mạng nơ-ron sinh học, ý tưởng rằng các nơ-ron được kích hoạt *hoàn toàn* hoặc *không hề* kích hoạt (giống như nơ-ron sinh học) có vẻ rất hấp dẫn.
+Hãy cùng xem xét hàm sigmoid kỹ lưỡng hơn để thấy tại sao nó có thể gây ra vấn đề tiêu biến gradient.
 
 ```{.python .input}
 %matplotlib inline
@@ -151,10 +154,10 @@ Consequently, ReLUs which are more stable (but less neurally plausible) have eme
 -->
 
 Như ta có thể thấy, gradient của hàm sigmoid tiêu biến khi đầu vào của nó quá lớn hoặc quá nhỏ.
-Hơn nữa, khi chúng ta thực hiện lan truyền ngược, dùng quy tắc dây chuyền, trừ khi giá trị nằm trong vùng Goldilocks, tại đó đầu vào của hầu hết các hàm sigmoid nằm trong khoảng, ví dụ $[-4, 4]$, gradient của cả phép nhân có thể bị tiêu biến.
-Khi chúng ta có nhiều tầng, trừ khi ta cực kỳ cẩn trọng, nhiều khả năng ta sẽ thấy luồng gradient bị ngắt tại *một* tầng nào đó.
-Trước khi hàm ReLU ($\max(0, x)$) được đề xuất để thay thế các hàm nén, vấn đề này đã từng gây nhiều khó khăn cho quá trình huấn luyện mạng nơ-ron sâu.
-Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết kế các hàm kích hoạt trong mạng nơ-ron sâu.
+Hơn nữa, khi thực hiện lan truyền ngược qua nhiều tầng, trừ khi giá trị nằm trong vùng Goldilocks, tại đó đầu vào của hầu hết các hàm sigmoid có giá trị xấp xỉ không, gradient của cả phép nhân có thể bị tiêu biến.
+Khi mạng nơ-ron có nhiều tầng, trừ khi ta cẩn trọng, nhiều khả năng luồng gradient sẽ bị ngắt tại *một* tầng nào đó.
+Vấn đề này đã từng gây nhiều khó khăn cho quá trình huấn luyện mạng nơ-ron sâu.
+Do đó, ReLU, một hàm số ổn định hơn (nhưng lại không hợp lý lắm từ khía cạnh khoa học thần kinh) đã và đang dần trở thành lựa chọn mặc định của những người làm học sâu. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
