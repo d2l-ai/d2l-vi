@@ -198,7 +198,7 @@ Therefore, we often force initialization by sending a sample observation through
 ## Forced Initialization
 -->
 
-## Cưỡng chế khởi tạo
+## Khởi tạo Cưỡng chế
 
 <!--
 Deferred initialization does not occur if the system knows the shape of all parameters when calling the `initialize` function. 
