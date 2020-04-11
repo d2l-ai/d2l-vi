@@ -37,7 +37,7 @@ After all, we cannot initialize variables that we do not know exist.
 
 Tất cả những điều đó nghe bất khả thi và thực sự, đúng là vậy.
 Suy cho cùng, MXNet (hay bất cứ framework nào khác) không thể dự đoán được chiều của đầu vào sẽ như thế nào.
-Ở các chương sau, khi làm việc với các mạng nơron tích chập và ảnh, vấn đề này còn trở nên rõ ràng hơn, khi chiều của đầu vào (trong trường hợp này là độ phân giải của một bức ảnh) về lâu dài sẽ tác động đến chiều các tầng phía sau của mạng.
+Ở các chương sau, khi làm việc với các mạng nơ-ron tích chập và ảnh, vấn đề này còn trở nên rõ ràng hơn, khi chiều của đầu vào (trong trường hợp này là độ phân giải của một bức ảnh) về lâu dài sẽ tác động đến chiều các tầng phía sau của mạng.
 Do đó, khả năng gán giá trị các tham số mà không cần biết chiều tại thời điểm viết mã có thể làm việc mô hình hoá thống kê trở nên đơn giản hơn nhiều.
 Dưới đây, chúng ta sẽ thảo luận cơ chế hoạt động của việc này qua một ví dụ về khởi tạo.
 Vì dù gì chúng ta cũng không thể khởi tạo các biến mà ta không biết chúng tồn tại.
