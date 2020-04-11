@@ -264,11 +264,11 @@ To build our own simplified `MySequential`, we just need to define two key metho
 2. A `forward` method to pass an input through the chain of Blocks (in the same order as they were appended).
 -->
 
-Bây giờ ta có thể có cái nhìn gần hơn về cách mà lớp `Sequential` (Xâu chuỗi) hoạt động.
-Nhớ lại rằng `Sequential` được thiết kế để xâu chuỗi các Khối khác lại với nhau.
-Để xây dựng một `MySequential` đơn giản, ta cần định nghĩa hai phương thức chính sau:
-1. Một phương thức `add` nhằm mở rộng Block từng chiếc một vào trong danh sách.
-2. Một phương thức `forward` nhằm truyền một đàu vào thông qua chuỗi các Blocks (cùng thứ tự như cách chúng được mở rộng).
+Bây giờ ta có thể có cái nhìn rõ hơn về cách mà lớp `Sequential` (Xâu chuỗi) hoạt động.
+Nhắc lại rằng `Sequential` được thiết kế để xâu chuỗi các Khối khác lại với nhau.
+Để xây dựng một lớp `MySequential` đơn giản, ta chỉ cần định nghĩa hai phương thức chính sau:
+1. Một phương thức `add` nhằm đẩy từng Block một vào trong danh sách.
+2. Một phương thức `forward` nhằm truyền một đầu vào qua chuỗi các Blocks (cùng thứ tự như cách chúng được mở rộng).
 
 <!--
 The following `MySequential` class delivers the same functionality as Gluon's default `Sequential` class:
