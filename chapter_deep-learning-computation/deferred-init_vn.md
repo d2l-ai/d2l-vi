@@ -270,7 +270,8 @@ net.initialize(init=MyInit())
 3. What would you need to do if you have input of varying dimensionality? Hint - look at parameter tying.
 -->
 
-1. Chuyện gì xảy ra nếu chỉ chỉ rõ một vài phần của chiều đầu vào, có thể vẫn khởi tạo ngay lập tức được không?
+1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ một vài phần của chiều đầu vào? 
+Có thể vẫn khởi tạo ngay lập tức được không?
 2. Chuyện gì xảy ra nếu ta truyền vào giá trị chiều không phù hợp?
 3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (parameter tying).
 
