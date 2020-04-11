@@ -163,7 +163,7 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 
 Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và tầng ẩn của nó chứa 5 nút ẩn.
 Vì tầng đầu vào không cần bất kỳ tính toán nào, do đó đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các tính toán cho mỗi tầng của hai tầng còn lại (tầng ẩn và tầng đầu ra).
-Lưu ý, tất cả tầng này là tầng kết nối đầy đủ.
+Lưu ý, tất cả tầng này đều kết nối đầy đủ.
 Mỗi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi nơ-ron này lại ảnh hưởng đến mọi nơ-ron trong tầng đầu ra.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
