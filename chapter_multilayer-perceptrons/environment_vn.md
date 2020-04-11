@@ -671,14 +671,15 @@ In other words, we have the following cycle where we are continuously improving 
 * **Học theo batch.** Ở đây ta có dữ liệu và nhãn huấn luyện $\{(x_1, y_1), \ldots, (x_n, y_n)\}$, được sử dụng để huấn luyện mạng $f(x, w)$.
 Sau đó, ta dùng mô hình này để đánh giá điểm dữ liệu mới $(x, y)$ được lấy từ cùng một phân phối.
 Đây là giả thuyết mặc định cho bất kỳ bài toán nào mà ta bàn ở đây.
-Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó.
-Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào.
-Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi).
-* **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$
-Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
+Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa trên nhiều hình ảnh của mèo và chó. 
+Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào. 
+Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi). 
+* **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$.
+Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, 
+ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
 Nhiều bài toán thực tế rơi vào loại này.
 Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên dự đoán đó và vào cuối ngày ta sẽ biết được liệu nó có mang lại lợi nhuận hay không.
-Nói cách khác, ta có chu trình sau, trong đó mô hình dần được cải thiện với những quan sát mới.
+Nói cách khác, ta có chu trình sau, nơi mà mô hình dần được cải thiện cùng với những quan sát mới.
 
 $$
 \mathrm{model} ~ f_t \longrightarrow
@@ -710,18 +711,18 @@ The other cars are likely to respond to the autonomous car's driving style in no
 e.g., trying to avoid it, trying to cause an accident, trying to cooperate with it, etc.
 -->
 
-* **Máy đánh bạc** Đây là một *trường hợp đặc biệt* của bài toán trên.
-Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ, một mạng học sâu), trong bài toán máy đánh bạc ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng hữu hạn hành động mà ta có thể thực hiện).
-Không có gì đáng ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
+* **Máy đánh bạc.** Đây là một *trường hợp đặc biệt* của bài toán trên.
+Trong khi ở hầu hết các bài toán ta luôn có một hàm liên tục được tham số hóa $f$ và công việc của ta là học các tham số của nó (ví dụ như một mạng học sâu), trong bài toán máy đánh bạc ta chỉ có một số hữu hạn các cần mà ta có thể gạt (tức một số lượng giới hạn những hành động mà ta có thể thực hiện).
+Không có gì quá ngạc nhiên khi với bài toán đơn giản này, ta có được các cơ sở lý thuyết tối ưu mạnh mẽ hơn.
 Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thường được xem (một cách nhầm lẫn) như là một môi trường học tập khác biệt.
 * **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
 Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
 Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
 Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
-Tương tự như vậy, hành vi của người dùng trên một trang web tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất).
-Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai).
-* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft.
-Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành.
+Tương tự như vậy, hành vi của người dùng trên một trang tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất). 
+Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai). 
+* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
+Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành. 
 Những chiếc xe khác sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
@@ -748,7 +749,7 @@ Còn nếu ta biết môi trường có thể thay đổi ngay lập tức, như
 <!--
 ## Fairness, Accountability, and Transparency in Machine Learning
 -->
-## Công bằng, Trách nhiệm và Minh bạch trong học máy
+## Công bằng, Trách nhiệm và Minh bạch trong Học máy
 
 <!--
 Finally, it is important to remember that when you deploy machine learning systems you are not simply minimizing negative log likelihood or maximizing accuracy---you are automating some kind of decision process.
@@ -766,23 +767,21 @@ Additionally, we want to be careful about whether we are addressing the right pr
 Should what news someone is exposed to be determined by which Facebook pages they have *Liked*? 
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
+
 Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
-Thường thì những hệ thống tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả không mong muốn cho những ai chịu ảnh hưởng bởi quyết định của nó.
-Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống sẽ hoạt động và không hoạt động với những ai.
+Thường thì những hệ thống được tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả cho những ai chịu ảnh hưởng bởi quyết định của nó.
+Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống này sẽ hoạt động và không hoạt động với những ai.
 Bỏ qua những rủi ro có thể lường trước được để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
 Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
 Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
-Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, nhưng việc phân loại sai sang một lớp khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị xã hội khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
+Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, trong khi việc phân loại sai sang một lớp khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị xã hội khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
 Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
-Ví dụ, nếu hệ thống dự đoán được áp dụng một cách ngây để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
+Ví dụ, nếu hệ thống dự đoán được áp dụng theo cách ngây ngô để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
 Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
 Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
 Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
-Những tin tức nào được hiển thị đến người dùng có nên được quyết định bởi những trang Facebook nào mà họ đã *Thích*?
-Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong sự nghiệp theo đuổi học máy của mình.
-
-
-
+Những tin tức nào được hiển thị đến người dùng có nên được quyết định bởi những trang Facebook nào mà họ *đã thích* hay không?
+Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong việc theo đuổi sự nghiệp học máy của mình.
 
 <!--
 ## Summary
@@ -794,6 +793,7 @@ Những tin tức nào được hiển thị đến người dùng có nên đư
 * Covariate shift can be detected and corrected if the shift is not too severe. Failure to do so leads to nasty surprises at test time.
 * In some cases the environment *remembers* what we did and will respond in unexpected ways. We need to account for that when building models.
 -->
+
 * Trong nhiều trường hợp, tập huấn luyện và tập kiểm tra không được lấy mẫu từ cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
 * Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
 * Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét điều này khi xây dựng mô hình.
@@ -840,44 +840,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
 * Nguyễn Duy Du
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
 * Lê Cao Thăng
-
-<!-- Phần 4 -->
-* Lê Cao Thăng
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
 * Nguyễn Minh Thư
-
-<!-- Phần 6 -->
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-<!-- Phần 7 -->
-* Nguyễn Duy Du 
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 8 -->
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-<!-- Phần 9 -->
-* Lý Phi Long
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 10 -->
 * Nguyễn Thành Nhân
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
