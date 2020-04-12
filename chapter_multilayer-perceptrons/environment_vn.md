@@ -181,7 +181,7 @@ Trong trường hợp này chúng ta tin rằng kết quả chẩn đoán gây r
 Thỉnh thoảng các giả định dịch chuyển nhãn và dịch chuyển hiệp biến có thể xảy ra đồng thời.
 Ví dụ, khi hàm gán nhãn là tất định và không đổi, dịch chuyển hiệp biến sẽ luôn xảy ra, kể cả khi dịch chuyển nhãn cũng đang xảy ra.
 Một điều thú vị là khi chúng ta tin rằng cả dịch chuyển nhãn và dịch chuyển hiệp biến đều đang xảy ra, làm việc với các phương pháp được suy ra từ giả định dịch chuyển nhãn thường chiếm lợi thế.
-Đó là vì các phương pháp này có xu hướng làm việc trên các đối tượng giống với nhãn, và thường sẽ dễ thao tác hơn nếu so với các đối tượng giống với đầu vào đa chiều trong học sâu.
+Các phương pháp này thường sẽ dễ làm việc hơn vì chúng thao tác trên nhãn thay vì trên các đầu vào đa chiều trong học sâu.
 
 <!--
 ### Concept Shift
