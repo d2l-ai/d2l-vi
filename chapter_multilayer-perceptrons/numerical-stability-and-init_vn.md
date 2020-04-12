@@ -166,7 +166,6 @@ Kết quả là, ReLU dần trở thành lựa chọn mặc định khi thiết 
 
 ### Bùng nổ Gradient
 
-
 <!--
 The opposite problem, when gradients explode, can be similarly vexing.
 To illustrate this a bit better, we draw $100$ Gaussian random matrices and multiply them with some initial matrix.
@@ -197,7 +196,6 @@ print('After multiplying 100 matrices', M)
 -->
 
 ### Tính Đối xứng
-
 
 <!--
 Another problem in deep network design is the symmetry inherent in their parametrization.
@@ -235,7 +233,6 @@ Nhưng hãy lưu ý rằng dù hạ gradient ngẫu nhiên không thể phá v�
 
 ## Khởi tạo Tham số
 
-
 <!--
 One way of addressing, or at least mitigating the issues raised above is through careful initialization of the weight vectors.
 This way we can ensure that (at least initially) the gradients do not vanish and that they maintain a reasonable scale where the network weights do not diverge.
@@ -255,7 +252,6 @@ Chỉ cần cẩn trọng một chút trong quá trình tối ưu hóa và đi�
 -->
 
 ### Khởi tạo Mặc định
-
 
 <!--
 In the previous sections, e.g., in :numref:`sec_linear_gluon`, we used `net.initialize(init.Normal(sigma=0.01))` to initialize the values of our weights.
