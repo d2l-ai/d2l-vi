@@ -140,11 +140,11 @@ This architecture is commonly called a *multilayer perceptron*, often abbreviate
 Below, we depict an MLP diagramtically (:numref:`fig_nlp`).
 -->
 
-Ta có thể vượt qua những hạn chế của các mô hình tuyến tính và xử lý một lớp hàm tổng quát hơn bằng cách kết hợp một hoặc nhiều tầng ẩn.
+Ta có thể vượt qua những hạn chế của mô hình tuyến tính và làm việc với một lớp hàm tổng quát hơn bằng cách thêm vào một hoặc nhiều tầng ẩn.
 Cách dễ nhất để làm điều này là xếp chồng nhiều tầng kết nối đầy đủ lên nhau.
-Mỗi tầng đưa giá trị vào tầng bên trên nó, cho đến khi ta tạo được một đầu ra.
+Giá trị đầu ra của mỗi tầng được đưa làm giá trị đầu vào cho tầng bên trên, cho đến khi ta tạo được một đầu ra.
 Ta có thể xem $L-1$ tầng đầu tiên như các tầng học biểu diễn dữ liệu và tầng cuối cùng là bộ dự đoán tuyến tính.
-Kiến trúc này thường được gọi là *perceptron đa tầng* (*multilayer percention*), thường được viết tắt là *MLP*.
+Kiến trúc này thường được gọi là *perceptron đa tầng* (*multilayer percention*), hay được viết tắt là *MLP*.
 Dưới đây, ta mô tả sơ đồ MLP (:numref:`fig_nlp`).
 
 <!--
@@ -162,7 +162,7 @@ Every input influences every neuron in the hidden layer, and each of these in tu
 -->
 
 Perceptron đa tầng này có 4 đầu vào, 3 đầu ra và tầng ẩn của nó chứa 5 nút ẩn.
-Vì tầng đầu vào không cần bất kỳ tính toán nào, do đó đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các tính toán cho mỗi tầng của hai tầng còn lại (tầng ẩn và tầng đầu ra).
+Vì tầng đầu vào không cần bất kỳ tính toán nào, do đó đối với mạng này để tạo đầu ra đòi hỏi phải lập trình các phép tính cho hai tầng còn lại (tầng ẩn và tầng đầu ra).
 Lưu ý, tất cả tầng này đều kết nối đầy đủ.
 Mỗi đầu vào đều ảnh hưởng đến mọi nơ-ron trong tầng ẩn và mỗi nơ-ron này lại ảnh hưởng đến mọi nơ-ron trong tầng đầu ra.
 
@@ -234,9 +234,9 @@ In general, with these activation functions in place,
 it is no longer possible to collapse our MLP into a linear model.
 -->
 
-Để nhận thấy được tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ áp dụng lên từng nút ẩn (theo sau phép biến đổi tuyến tính).
+Để hiện thực được tiềm năng của các kiến trúc đa tầng, chúng ta cần một thành phần quan trọng nữa---một *hàm kích hoạt phi tuyến* theo từng phần tử $\sigma$ để áp dụng lên từng nút ẩn (theo sau phép biến đổi tuyến tính).
 Hiện nay, lựa chọn phổ biến nhất cho tính phi tuyến là đơn vị tuyến tính chỉnh lưu (ReLU) $\mathrm{max}(x, 0)$.
-Nhìn chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể biến MLP thành một mô hình tuyến tính nữa.
+Nhìn chung, với việc sử dụng các hàm kích hoạt này, chúng ta sẽ không thể biến MLP thành một mô hình tuyến tính được nữa.
 
 $$
 \begin{aligned}
@@ -406,7 +406,7 @@ We plot the derivative of the ReLU function plotted below.
 
 Khi đầu vào mang giá trị âm thì đạo hàm của hàm ReLu bằng 0 và khi đầu vào mang giá trị dương thì đạo hàm của hàm ReLu bằng 1.
 Lưu ý rằng, hàm ReLU không khả vi tại 0.
-Trong thường hợp này, ta mặc định lấy đạo hàm trái (LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
+Trong thường hợp này, ta mặc định lấy đạo hàm trái (*left-hand-side* -- LHS) và nói rằng đạo hàm của hàm ReLU tại 0 thì bằng 0.
 Chỗ này có thể du di được vì đầu vào thông thường không có giá trị chính xác bằng không.
 Có một ngạn ngữ xưa nói rằng, nếu ta quan tâm nhiều đến điều kiện biên thì có lẽ ta chỉ đang làm toán (*thuần túy*), chứ không phải đang làm kỹ thuật.
 Và trong trường hợp này, ngạn ngữ đó đúng.
@@ -455,7 +455,7 @@ For that reason, the sigmoid is often called a *squashing* function: it *squashe
 -->
 
 Hàm sigmoid biến đổi các giá trị đầu vào có miền giá trị thuộc $\mathbb{R}$ thành các giá trị đầu ra nằm trong khoảng $(0, 1)$.
-Vì vậy, hàm sigmoid thường được gọi là hàm *nén*: nó *nén* một giá trị đầu vào bất kỳ nằm trong khoảng ($-\infty$, $\infty$) thành một giá trị đầu ra nằm trong khoảng (0, 1).
+Vì vậy, hàm sigmoid thường được gọi là hàm *ép*: nó *ép* một giá trị đầu vào bất kỳ nằm trong khoảng ($-\infty$, $\infty$) thành một giá trị đầu ra nằm trong khoảng (0, 1).
 
 $$\mathrm{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
@@ -465,9 +465,9 @@ Thus the pioneers of this field, going all the way back to McCulloch and Pitts, 
 A thresholding activation takes value $0$ when its input is below some threshold and value $1$ when the input exceeds the threshold.
 -->
 
-Từ những nghiên cứu đầu tiên về mạng nơ-ron, các nhà khoa học đã quan tâm đến việc mô hình hóa các nơ-ron sinh học, thứ có thể ở một trong hai trạng thái *kích hoạt* hoặc *không kích hoạt*.
+ Các nơ-ron sinh học mà có thể ở một trong hai trạng thái *kích hoạt* hoặc *không kích hoạt*, là một chủ đề mô hình hoá rất được quan tâm từ những nghiên cứu đầu tiên về mạng nơ-ron.
 Vì vậy mà những người tiên phong trong lĩnh vực này, bao gồm [McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) và [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts), những người phát minh ra nơ-ron nhân tạo, đã tập trung nghiên cứu về các đơn vị ngưỡng.
-Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở mức dưới ngưỡng và giá trị là $1$ khi đầu vào ở mức vượt ngưỡng.
+Một kích hoạt ngưỡng có giá trị là $0$ khi đầu vào của nó ở dưới mức ngưỡng và giá trị là $1$ khi đầu vào vượt mức ngưỡng đó.
 
 <!--
 When attention shifted to gradient based learning, the sigmoid function was a natural choice because it is a smooth, differentiable approximation to a thresholding unit.
@@ -568,7 +568,7 @@ And as we saw with the sigmoid function, as the input moves away from 0 in eithe
 
 Đạo hàm của hàm tanh được vẽ như sau.
 Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị tối đa là 1.
-Tương tự như hàm sigmoid, khi đầu vào phân kỳ khỏi 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
+Tương tự như hàm sigmoid, khi đầu vào phân kỳ từ 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
 
 ```{.python .input  n=13}
 y.backward()
@@ -582,8 +582,8 @@ In some ways, you have an advantage over anyone working the 1990s, because you c
 Previously, getting these nets training required researchers to code up thousands of lines of C and Fortran.
 -->
 
-Tóm lại, bây giờ chúng ta đã biết cách kết hợp các hàm phi tuyến để xây dựng các kiến trúc mạng nơ-ron đa tầng.
-Một lưu ý bên lề đó là, kiến thức bây giờ của bạn cung cấp một bộ công cụ tương đương với một người có chuyên môn về học sâu vào những năm 1990.
+Tóm lại, bây giờ chúng ta đã biết cách kết hợp các hàm phi tuyến để xây dựng các kiến trúc mạng nơ-ron đa tầng mạnh mẽ.
+Một lưu ý bên lề đó là, kiến thức của bạn bây giờ cung cấp cho bạn cách sử dụng một bộ công cụ tương đương với của một người có chuyên môn về học sâu vào những năm 1990.
 Xét theo một khía cạnh nào đó, bạn còn có lợi thế hơn bất kỳ ai làm việc trong những năm 1990, bởi vì bạn có thể tận dụng triệt để các framework học sâu nguồn mở để xây dựng các mô hình một cách nhanh chóng, chỉ với một vài dòng mã.
 Trước đây, việc huấn luyện các mạng nơ-ron đòi hỏi các nhà nghiên cứu phải viết đến hàng ngàn dòng mã C và Fortran.
 
