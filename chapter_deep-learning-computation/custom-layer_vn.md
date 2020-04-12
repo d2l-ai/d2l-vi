@@ -5,7 +5,7 @@
 # Custom Layers
 -->
 
-# Tuỳ chỉnh các tầng
+# Các tầng tuỳ chỉnh
 
 <!--
 One of the reasons for the success of deep learning can be found in the wide range of layers that can be used in a deep network. 
