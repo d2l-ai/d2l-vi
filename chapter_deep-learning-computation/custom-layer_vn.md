@@ -17,7 +17,7 @@ This is when it is time to build a custom layer. This section shows you how.
 
 Một trong những lý do dẫn đến thành công của học sâu là sự đa dạng của các tầng có thể sử dụng trong một mạng.
 Điều này cho phép một mức độ tuỳ chỉnh và thích ứng rất lớn.
-Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (pooling), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
+Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (*pooling*), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
 Sớm muộn bạn cũng sẽ gặp một tầng không có trong Gluon, hay thậm chí tuyệt vời hơn, bạn sẽ phát minh ra một tầng mới hoạt động tốt mà có thể sử dụng ngay cho bài toán của mình.
 
 
