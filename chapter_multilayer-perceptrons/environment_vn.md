@@ -13,9 +13,9 @@ And yet, we never stopped to contemplate either where data comes from in the fir
 Too often, machine learning developers in possession of data rush to develop models without pausing to consider these fundamental issues.
 -->
 
-Trong các chương trước ta đã thực hành một số ứng dụng của học máy, khớp mô hình với nhiều loại tập dữ liệu.
-Tuy nhiên, ta chưa bao giờ chững lại để nhìn nhận về dữ liệu này đến từ đâu, hoặc kế hoạch cuối cùng ta sẽ làm gì với đầu ra từ các mô hình.
-Đa phần là khi có được dữ liệu, các lập trình viên học máy thường đâm đầu vào triển khai các mô hình mà không dừng lại để xem xét các vấn đề cơ bản này.
+Trong các chương trước ta đã thực hành một số ứng dụng của học máy và khớp mô hình với nhiều tập dữ liệu khác nhau.
+Tuy nhiên, ta chưa bao giờ dừng lại để nhìn nhận về nguồn gốc của dữ liệu, hoặc dự định sẽ làm gì với đầu ra của mô hình.
+Đa phần là khi có được dữ liệu, các nhà phát triển học máy thường đâm đầu vào triển khai các mô hình mà không tạm dừng để xem xét các vấn đề cơ bản này.
 
 <!--
 Many failed machine learning deployments can be traced back to this pattern. 
@@ -27,9 +27,9 @@ We might be inclined to thereafter grant loans to all applicants wearing Oxfords
 -->
 
 Nhiều triển khai học máy thất bại có thể bắt nguồn từ khuôn mẫu này.
-Đôi khi các mô hình có độ chính xác rất tốt khi thực hiện trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế khi phân phối dữ liệu thay đổi đột ngột.
+Đôi khi các mô hình có độ chính xác rất tốt trên tập kiểm tra nhưng lại thất bại thảm hại trong triển khai thực tế, khi mà phân phối của dữ liệu thay đổi đột ngột.
 Đáng sợ hơn, đôi khi chính việc triển khai một mô hình có thể là chất xúc tác gây nhiễu cho phân phối dữ liệu.
-Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán ai sẽ có khả năng thanh toán hoặc sẽ phá sản khi được cho vay, có một phát hiện chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì phá sản)
+Ví dụ, giả sử rằng ta huấn luyện một mô hình để dự đoán xem một người có trả được nợ hay không, rồi mô hình chỉ ra rằng việc chọn giày dép của ứng viên có liên quan đến rủi ro vỡ nợ (giày tây thì trả được nợ, giày thể thao thì không).
 Từ đó, ta có thể sẽ có xu hướng chỉ cấp các khoản vay cho các ứng viên mang giày tây và sẽ từ chối cho vay đối với những trường hợp mang giày thể thao. 
 
 <!--
@@ -40,10 +40,10 @@ Take a minute to digest this because similar issues abound in many applications 
 by introducing our model-based decisions to the environment, we might break the model.
 -->
 
-Trong trường hợp này, ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng khuôn mẫu đến ra quyết định và việc không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả nghiêm trọng.
-Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên giày dép, khách hàng sẽ để ý và thay đổi hành vi của họ.
-Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây nhưng lại không có khớp bất kỳ sự cải thiện nào về chỉ số tín dụng.
-Hãy dành một phút để "thấm" điều này vào vì có rất nhiếu vấn đề tương tự trong ứng dụng của học máy: bằng việc đưa mô hình ra quyết định vào một môi trường, ta có thể làm hỏng chính mô hình đó.
+Trong trường hợp này, việc ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng khuôn mẫu đến ra quyết định và việc không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả nghiêm trọng.
+Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên kiểu giày, khách hàng sẽ để ý và thay đổi hành vi của họ.
+Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây, nhưng chỉ số tín dụng của họ thì không hề cải thiện.
+Hãy dành một phút để "thấm" điều này vì có rất nhiếu vấn đề tương tự trong các ứng dụng của học máy: bằng việc ra quyết định dựa trên mô hình trong một môi trường, ta có thể làm hỏng chính mô hình đó.
 
 <!--
 While we cannot possible give these topics a complete treatment in one section, we aim here to expose some common concerns, 
@@ -53,8 +53,8 @@ and others require that step outside the realm of statistical prediction altoget
 grapple with difficult philosophical questions concerning the ethical application of algorithms.
 -->
 
-Mặc dù ta không thể đưa ra một giải pháp có thể giải quyết triệt để cho các vấn đề này trong một mục, nhưng mục đích của chúng tôi là nhằm đưa ra các mối bận tâm chung và kích thích tư duy phản biện để sớm phát hiện ra các tình huống này, từ đó giảm thiểu thiệt hại và có trách nhiệm hơn trong việc sử dụng học máy.
-Một số giải pháp khá đơn giản (thu thập dữ liệu "phù hợp"), một vài giải pháp khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và các giải pháp khác hoàn toàn nằm ngoài lĩnh vực dự đoán thống kê và cần ta vật lộn với các câu hỏi triết học đạo đức khó khăn trong việc ứng dụng thuật toán.
+Dù không thể thảo luận kỹ lưỡng về các vấn đề này chỉ trong một mục, chúng tôi vẫn muốn đề cập một vài mối bận tâm phổ biến và kích thích tư duy phản biện để có thể sớm phát hiện ra các tình huống này, từ đó giảm thiểu thiệt hại và có trách nhiệm hơn trong việc sử dụng học máy.
+Một vài giải pháp khá đơn giản (thu thập dữ liệu "phù hợp"), còn một vài giải pháp lại khó hơn về mặt kỹ thuật (lập trình một hệ thống học tăng cường), và một số khác thì hoàn toàn nằm ngoài lĩnh vực dự đoán thống kê và cần ta phải vật lộn với các câu hỏi triết học khó khăn về khía cạnh đạo đức trong việc ứng dụng thuật toán.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -77,11 +77,11 @@ Fortunately, under some restricted assumptions on the ways our data might change
 principled algorithms can detect shift and possibly even adapt, achieving higher accuracy than if we naively continued to rely on our original classifier.
 -->
 
-Để bắt đầu, ta trở lại vị trí quan sát và tạm gác lại các tác động lên môi trường.
-Trong các mục tiếp theo, ta sẽ xem xét kỹ các cách khác nhau mà phân phối dữ liệu có thể dịch chuyển và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
-Ngay từ đầu, ta nên cảnh báo rằng nếu phân phối tạo dữ liệu $p(\mathbf{x},y)$ có thể dịch chuyển theo các cách khác nhau tại bất kỳ thời điểm nào, thì việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
-Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên con vật mà chúng ta gọi là "mèo" bây giờ là chó và trước đây chúng ta gọi là "chó" thì thực tế giờ lại là mèo, trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì ta không thể nào phát hiện được sự thay đổi hay điều chỉnh bộ phân loại tại thời điểm kiểm tra.
-May mắn thay, dưới một vài giả định chặt về cách dữ liệu có thể thay đổi trong tương lai, một vài thuật toán có thể phát hiện sự thay đổi và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ. <!-- cụm từ "principled algorithms" mình tạm dịch là "thuật toán" vì chưa tìm được cách dịch hợp lý -->
+Để bắt đầu, ta sẽ trở lại vị trí quan sát và tạm gác lại các tác động của ta lên môi trường.
+Trong các mục tiếp theo, ta sẽ xem xét kỹ vài cách khác nhau mà phân phối dữ liệu có thể dịch chuyển và những gì ta có thể làm để cứu vãn hiệu suất mô hình.
+Chúng tôi sẽ cảnh báo ngay từ đầu rằng nếu phân phối sinh dữ liệu $p(\mathbf{x},y)$ có thể dịch chuyển theo các cách khác nhau tại bất kỳ thời điểm nào, việc học một bộ phân loại mạnh mẽ là điều bất khả thi.
+Trong trường hợp xấu nhất, nếu bản thân định nghĩa của nhãn có thể thay đổi bất cứ khi nào: nếu đột nhiên con vật mà chúng ta gọi là "mèo" bây giờ là "chó" và con vật trước đây chúng ta gọi là "chó" thì giờ lại là "mèo", trong khi không có bất kỳ thay đổi rõ ràng nào trong phân phối của đầu vào $p(\mathbf{x})$, thì không có cách nào để phát hiện được sự thay đổi này hay điều chỉnh lại bộ phân loại tại thời điểm kiểm tra.
+May mắn thay, dưới một vài giả định chặt về cách dữ liệu có thể thay đổi trong tương lai, một vài thuật toán có thể phát hiện được sự dịch chuyển và thậm chí có thể thích nghi để đạt được độ chính xác cao hơn so với việc tiếp tục dựa vào bộ phân loại ban đầu một cách ngây thơ. <!-- cụm từ "principled algorithms" mình tạm dịch là "thuật toán" vì chưa tìm được cách dịch hợp lý -->
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
