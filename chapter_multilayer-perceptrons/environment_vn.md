@@ -283,7 +283,7 @@ Sau đó họ đã nhờ tôi xây dựng một bộ phân loại để phát hi
 Tôi đã nói với họ rằng việc phân biệt hai tập dữ liệu trên với độ chính xác gần như hoàn hảo là rất dễ dàng.
 Sau cùng, các đối tượng kiểm tra có nhiều khác biệt về tuổi, nồng độ hóc môn, hoạt động thể chất, chế độ ăn uống, mức tiêu thụ rượu bia, và nhiều nhân tố khác không liên quan đến căn bệnh.
 Điều này không giống với trường hợp của những bệnh nhân thật sự:
-Có vẻ thủ tục lấy mẫu của họ đã gây ra hiện tượng dịch chuyển hiệp biến rất nặng giữa phân phối *gốc* và phân phối *mục tiêu*, và thêm vào đó, nó không thể sửa chữa được bằng các phương pháp truyền thống.
+Quy trình lấy mẫu của họ khả năng cao đã gây ra hiện tượng dịch chuyển hiệp biến rất nặng giữa phân phối *gốc* và phân phối *mục tiêu*, và thêm vào đó, nó không thể được khắc phục bằng các biện pháp thông thường.
 Nói cách khác, dữ liệu huấn luyện và kiểm tra khác biệt đến nỗi không thể xây dựng được một mô hình hữu dụng và họ đã lãng phí rất nhiều tiền của.
 
 <!--
