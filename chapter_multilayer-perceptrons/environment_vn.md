@@ -382,7 +382,7 @@ Chung quy lại, có nhiều trường hợp mà phân phối huấn luyện và
 Trong một số trường hợp may mắn thì các mô hình vẫn chạy tốt dù phân phối của hiệp biến, nhãn hay khái niệm đều dịch chuyển.
 Trong một số trường hợp khác, chúng ta có thể làm tốt hơn bằng cách sử dụng nhiều chiến lược một cách có nguyên tắc để đối phó với sự dịch chuyển này.
 Phần còn lại của mục này sẽ tập trung nhiều hơn hẳn vào mặt kỹ thuật.
-Tuy nhiên, những đọc giả vội vàng có thể bỏ qua mục này vì các khái niệm được trình bày dưới đây không phải là tiền đề cho các phần tiếp theo.
+Tuy nhiên, những độc giả vội vàng có thể bỏ qua mục này vì các khái niệm được trình bày dưới đây không phải là tiền đề cho các phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
