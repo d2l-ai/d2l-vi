@@ -414,7 +414,7 @@ ta duyệt qua tập dữ liệu huấn luyện cùng với nhãn kèm theo $\{(
 Điều này nghĩa là ta hầu như chỉ đang giảm thiểu giá trị mất mát trên tập huấn luyện.
 
 $$
-\mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{some~penalty}(w).
+\mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{một~lượng~phạt}(w).
 $$
 
 <!--
