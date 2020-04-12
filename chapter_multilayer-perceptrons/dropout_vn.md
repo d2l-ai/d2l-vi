@@ -473,7 +473,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 * Dropout is only used during training.
 -->
 
-* Ngoài phương pháp kiểm soát số chiều và kích thước của vector trọng số, dropout cũng là một công cụ khác để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
+* Ngoài phương pháp kiểm soát số chiều và độ lớn của vector trọng số, dropout cũng là một công cụ khác để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
 * Dropout thay thế giá trị kích hoạt $h$ bằng một biến ngẫu nhiên $h'$ với giá trị kỳ vọng $h$ và phương sai bằng xác suất dropout $p$. 
 * Dropout chỉ được sử dụng trong quá trình huấn luyện.
 
@@ -497,9 +497,10 @@ What happens when dropout and weight decay are used at the same time? Are the re
 Can you develop a method that outperforms dropout on the FashionMNIST dataset (for a fixed architecture)?
 -->
 
-1. Điều gì xảy ra nếu bạn thay đổi xác suất dropout của tầng 1 và 2? Cụ thể, điều gì xảy ra nếu bạn tráo đổi xác suất của hai tầng này? Thiết kế một thí nghiệm để trả lời những câu hỏi này, mô tả các kết quả một cách định lượng và tóm tắt các bài học rút ra một cách định tính.
+1. Điều gì xảy ra nếu bạn thay đổi xác suất dropout của tầng 1 và 2? Cụ thể, điều gì xảy ra nếu bạn tráo đổi xác suất của hai tầng này? 
+Thiết kế một thí nghiệm để trả lời những câu hỏi này, mô tả các kết quả một cách định lượng và tóm tắt các bài học rút ra một cách định tính.
 2. Tăng số lượng epoch và so sánh các kết quả thu được khi sử dụng và khi không sử dụng dropout.
-3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ biểu đồ thể hiện cách giá trị phương sai này thay đổi theo thời gian cho cả hai mô hình.
+3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ biểu đồ thể hiện sự thay đổi của giá trị phương sai này theo thời gian cho cả hai mô hình.
 4. Tại sao dropout thường không được sử dụng tại bước kiểm tra?
 5. Sử dụng mô hình trong phần này làm ví dụ, so sánh hiệu quả của việc sử dụng dropout và suy giảm trọng số.
 Điều gì xảy ra khi dropout và suy giảm trọng số được sử dụng cùng một lúc? Hai phương pháp này bổ trợ cho nhau, làm giảm hiệu quả của nhau hay (tệ hơn) loại trừ lẫn nhau?
