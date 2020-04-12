@@ -356,7 +356,7 @@ Plugging $a^2/3$ into our condition on $\sigma^2$, yields the suggestion to init
 Bây giờ nó đã trở thành phương thức tiêu chuẩn và rất hữu dụng trong thực tiễn.
 Thông thường, phương thức này lấy mẫu cho trọng số từ phân phối Gauss với trung bình bằng không và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.
 Ta cũng có thể tận dụng cách hiểu trực quan của Xavier để chọn phương sai khi lấy mẫu từ một phân phối đều.
-Chú ý rằng phân phôi $U[-a, a]$ có phương sai là $a^2/3$.
+Chú ý rằng phân phối $U[-a, a]$ có phương sai là $a^2/3$.
 Thay $\sigma^2$ bằng $a^2/3$ vào điều kiện trên, ta biết được rằng ta nên khởi tạo theo phân phối đều $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -416,7 +416,7 @@ Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thô
 * Random initialization is key to ensure that symmetry is broken before optimization.
 -->
 
-* Tiêu biến hay bùng nổ gradient đều là những vấn đề phổ biến trong những mạng nơ-ron sâu. Việc khởi tạo thạm số cẩn thận là rất cần thiết để đảm bảo gradient và các tham số được kiểm soát tốt.
+* Tiêu biến hay bùng nổ gradient đều là những vấn đề phổ biến trong những mạng nơ-ron sâu. Việc khởi tạo tham số cẩn thận là rất cần thiết để đảm bảo gradient và các tham số được kiểm soát tốt.
 * Các kĩ thuật khởi tạo tham số dựa trên thực nghiệm là cần thiết để đảm bảo rằng gradient ban đầu không quá lớn hay quá nhỏ.
 * Hàm kích hoạt ReLU giải quyết được vấn đề tiêu biến gradient. Điều này có thể làm tăng tốc độ hội tụ.
 * Khởi tạo ngẫu nhiên là chìa khóa để đảm bảo tính đối xứng bị phá vỡ trước khi tối ưu hóa.
