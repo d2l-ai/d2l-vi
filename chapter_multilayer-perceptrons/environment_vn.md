@@ -144,7 +144,7 @@ Although its usefulness is not restricted to this setting, when we believe $\mat
 -->
 
 Rõ ràng việc phân loại tốt trong trường hợp này là rất khó khăn.
-Trong khi tập huấn luyện bao gồm các ảnh thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
+Trong khi tập huấn luyện bao gồm các ảnh đời thực thì tập kiểm tra chỉ chứa các ảnh hoạt hình với màu sắc thậm chí còn không thực tế.
 Việc huấn luyện trên một tập dữ liệu khác biệt đáng kể so với tập kiểm tra mà không có một kế hoạch để thích ứng với sự thay đổi này là một ý tưởng tồi.
 Thật không may, đây lại là một cạm bẫy rất phổ biến.
 Các nhà thống kê gọi vấn đề này là *dịch chuyển hiệp biến* bởi vì gốc rễ của nó là do sự thay đổi trong phân phối của các đặc trưng (tức các *hiệp biến*). 
@@ -176,8 +176,8 @@ to be comparatively easy compared to working with the objects that look like the
 
 Vấn đề ngược lại xuất hiện khi chúng ta tin rằng điều gây ra sự dịch chuyển là một thay đổi trong phân phối biên của nhãn $P(y)$ trong khi phân phối có điều kiện theo lớp $P(\mathbf{x} \mid y)$ vẫn không đổi.
 Dịch chuyển nhãn là một giả định hợp lý khi chúng ta tin rằng $y$ gây ra $\mathbf{x}$.
-Chẳng hạn, thông thường chúng ta muốn dự đoán một chẩn đoán nếu biết các biểu hiện của nó.
-Trong trường hợp này chúng ta tin rằng chẩn đoán gây ra các biểu hiện, ví dụ, dịch bệnh gây ra các triệu chứng.
+Chẳng hạn, thông thường chúng ta muốn dự đoán kết quả chẩn đoán nếu biết các biểu hiện của bệnh.
+Trong trường hợp này chúng ta tin rằng kết quả chẩn đoán gây ra các biểu hiện, tức bệnh gây ra các triệu chứng.
 Thỉnh thoảng các giả định dịch chuyển nhãn và dịch chuyển hiệp biến có thể xảy ra đồng thời.
 Ví dụ, khi hàm gán nhãn là tất định và không đổi, dịch chuyển hiệp biến sẽ luôn xảy ra, kể cả khi dịch chuyển nhãn cũng đang xảy ra.
 Một điều thú vị là khi chúng ta tin rằng cả dịch chuyển nhãn và dịch chuyển hiệp biến đều đang xảy ra, làm việc với các phương pháp được suy ra từ giả định dịch chuyển nhãn thường chiếm lợi thế.
@@ -197,9 +197,9 @@ It turns out that if we navigate around the United States, shifting the source o
 we will find considerable concept shift regarding the definition of even this simple term as shown in :numref:`fig_popvssoda`.
 -->
 
-Một vấn đề liên quan nữa nổi lên, gọi là *dịch chuyển khái niệm* (_concept shift_), là tình huống khi các định nghĩa của nhãn thay đổi.
+Một vấn đề liên quan nữa nằm ở việc *dịch chuyển khái niệm* (_concept shift_), khi chính định nghĩa của các nhãn thay đổi.
 Điều này nghe có vẻ lạ vì sau cùng, con mèo là con mèo.
-Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng ta có thể nói như vậy với thuật ngữ "đồ uống có ga" hay không?
+Quả thực định nghĩa của một con mèo có thể không thay đổi, nhưng điều này có đúng với thuật ngữ "đồ uống có ga" hay không?
 Hoá ra nếu chúng ta di chuyển vòng quanh nước Mỹ, dịch chuyển nguồn dữ liệu theo vùng địa lý, ta sẽ thấy sự dịch chuyển khái niệm đáng kể liên quan đến thuật ngữ đơn giản này như thể hiện trong :numref:`fig_popvssoda`.
 
 <!--
