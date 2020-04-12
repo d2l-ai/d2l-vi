@@ -43,7 +43,7 @@ Even small changes in degree, say, from $2$ to $3$ dramatically increase the com
 Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
-Lưu ý rằng số lượng đơn thức bậc $d$ tăng cực kỳ nhanh khi $d$ tăng. 
+Lưu ý rằng số lượng đơn thức bậc $d$ tăng cực kỳ nhanh theo $d$. 
 Với $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
 Chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt. 
 Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số. 
@@ -133,7 +133,7 @@ While L2-regularized linear models constitute the classic *ridge regression* alg
 a similarly fundamental model in statistics (popularly known as *lasso regression*).
 -->
 
-Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê. 
+Trong thực tế ngành thống kê, các lựa chọn khác đều hợp lệ và phổ biến. 
 Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge* (_ridge regression_), hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*---*lasso regression*). 
 
 <!--
