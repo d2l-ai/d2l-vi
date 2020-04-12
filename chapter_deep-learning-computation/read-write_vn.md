@@ -91,7 +91,7 @@ mydict2
 ## Gluon Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Tham số mô hình Gluon
 
 <!--
 Saving individual weight vectors (or other `ndarray` tensors) is useful but it gets very tedious if we want to save (and later load) an entire model. 
@@ -107,7 +107,17 @@ The deferred initialization (:numref:`sec_deferred_init`) is quite advantageous 
 Let's start with our favorite MLP.
 -->
 
-*dịch đoạn phía trên*
+Việc lưu các vector trọng số đơn lẻ (hoặc các `ndarray` tensor khác) là hữu ích nhưng sẽ mất nhiều thời gian nếu chúng ta muốn lưu (và sau đó tải lại) toàn bộ mô hình.
+Dù sao, có thể sẽ có hàng trăm nhóm tham số rải rác xuyên suốt mô hình.
+Việc viết một đoạn mã thu thập tất cả các nhóm này và khớp chúng với một kiến trúc là tương đối vất vả.
+Do đó, Gluon cung cấp sẵn chức năng lưu và tải toàn bộ các mạng thay vì chỉ là các vector trọng số đơn lẻ.
+Một chi tiết quan trọng cần lưu ý là chức năng này lưu các *tham số* của mô hình, không phải là toàn bộ mô hình.
+Điều đó có nghĩa, nếu ta có Perceptron 3 tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng rẽ.
+Lý do là bởi bản thân các mô hình có thể chứa các đoạn mã tuỳ ý, chúng không thể được phân tách để đọc ghi một cách dễ dàng
+(có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [MXNet documentation](http://www.mxnet.io)).
+Kết quả, để khôi phục lại một mô hình chúng ta cần có kiến trúc của nó trong mã nguồn rồi tải các tham số vào từ ổ cứng.
+Việc khởi tạo trễ (:numref:`sec_deferred_init`) mang lại lợi ích lúc này vì ta chỉ cần định nghĩa một mô hình mà không cần giá trị tham số cụ thể.
+Như thường lệ, hãy bắt đầu với Perceptron Đa tầng.
 
 ```{.python .input  n=6}
 class MLP(nn.Block):
@@ -129,7 +139,7 @@ y = net(x)
 Next, we store the parameters of the model as a file with the name `mlp.params`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta lưu các tham số của mô hình vào file `mlp.params`.
 
 ```{.python .input}
 net.save_parameters('mlp.params')
@@ -140,7 +150,8 @@ To check whether we are able to recover the model we instantiate a clone of the 
 Unlike the random initialization of model parameters, here we read the parameters stored in the file directly.
 -->
 
-*dịch đoạn phía trên*
+Để kiểm tra xem có thể khôi phục lại mô hình này không, chúng ta tạo một đối tượng khác của mô hình MLP trên.
+Khác với quá trình khởi tạo tham số ngẫu nhiên của mô hình, ở đây chúng ta trực tiếp tải các tham số được ghi ở file.
 
 ```{.python .input  n=8}
 clone = MLP()
@@ -152,7 +163,8 @@ Since both instances have the same model parameters, the computation result of t
 Let's verify this.
 -->
 
-*dịch đoạn phía trên*
+Vì cả hai đối tượng của mô hình có cùng bộ tham số, kết quả tính toán với cùng đầu vào `x` sẽ như nhau.
+Hãy kiểm chứng điều này.
 
 ```{.python .input}
 yclone = clone(x)
@@ -221,7 +233,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
