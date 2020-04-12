@@ -682,12 +682,12 @@ Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này ch
 Nói cách khác, ta có chu trình sau, nơi mà mô hình dần được cải thiện cùng với những quan sát mới.
 
 $$
-\mathrm{model} ~ f_t \longrightarrow
-\mathrm{data} ~ x_t \longrightarrow
-\mathrm{estimate} ~ f_t(x_t) \longrightarrow
-\mathrm{observation} ~ y_t \longrightarrow
-\mathrm{loss} ~ l(y_t, f_t(x_t)) \longrightarrow
-\mathrm{model} ~ f_{t+1}
+\mathrm{mô~hình} ~ f_t \longrightarrow
+\mathrm{dữ~liệu} ~ x_t \longrightarrow
+\mathrm{ước~lượng} ~ f_t(x_t) \longrightarrow
+\mathrm{quan~sát} ~ y_t \longrightarrow
+\mathrm{mất~mát} ~ l(y_t, f_t(x_t)) \longrightarrow
+\mathrm{mô~hình} ~ f_{t+1}
 $$
 
 <!--
