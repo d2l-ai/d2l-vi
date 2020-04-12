@@ -331,14 +331,14 @@ print(dropout_layer(X, 1))
 ### Defining Model Parameters
 -->
 
-### Định nghĩa các tham số mô hình
+### Định nghĩa các Tham số Mô hình
 
 <!--
 Again, we work with the Fashion-MNIST dataset introduced in :numref:`sec_softmax_scratch`.
 We define a multilayer perceptron with two hidden layers containing 256 outputs each.
 -->
 
-Một lần nữa, ta sẽ làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`.
+Một lần nữa, ta sẽ làm việc với bộ dữ liệu Fashion-MNIST được giới thiệu ở :numref:`sec_softmax_scratch`. 
 Ta sẽ tạo một perception đa tầng với hai tầng ẩn, mỗi tầng gồm 256 đầu ra.
 
 ```{.python .input  n=3}
@@ -373,7 +373,7 @@ Below we set it to 0.2 and 0.5 for the first and second hidden layer respectivel
 By using the `is_training` function described in :numref:`sec_autograd`, we can ensure that dropout is only active during training.
 -->
 
-Mô hình bên dưới áp dụng dropout cho đầu ra của mỗi tầng ẩn (theo sau hàm kích hoạt).
+Mô hình dưới đây áp dụng dropout cho đầu ra của mỗi tầng ẩn (theo sau hàm kích hoạt).
 Ta có thể đặt các giá trị xác suất dropout riêng biệt cho mỗi tầng. Một xu hướng chung là đặt xác suất dropout thấp hơn cho tầng ở gần với tầng đầu vào hơn.
 Bên dưới ta đặt xác suất dropout bằng 0.2 và 0.5 tương ứng cho tầng ẩn thứ nhất và thứ hai.
 Bằng cách sử dụng hàm `is_training` mô tả ở :numref:`sec_autograd`, ta có thể chắc chắn rằng dropout chỉ được kích hoạt trong quá trình huấn luyện.
@@ -423,7 +423,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs,
 ## Concise Implementation
 -->
 
-## Triển khai súc tích
+## Cách lập trình súc tích
 
 <!--
 Using Gluon, all we need to do is add a `Dropout` layer (also in the `nn` package) after each fully-connected layer, passing in the dropout probability as the only argument to its constructor.
@@ -473,8 +473,8 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
 * Dropout is only used during training.
 -->
 
-* Ngoài phương pháp kiểm soát số chiều và kích thước của vector trọng số, dropout cũng là một công cụ khác để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
-* Dropout thay thế giá trị kích hoạt $h$ bằng một biến ngẫu nhiên $h'$ với giá trị kỳ vọng $h$ và phương sai bằng xác suất dropout $p$.
+* Ngoài phương pháp kiểm soát số chiều và độ lớn của vector trọng số, dropout cũng là một công cụ khác để tránh tình trạng quá khớp. Thông thường thì cả ba cách được sử dụng cùng nhau.
+* Dropout thay thế giá trị kích hoạt $h$ bằng một biến ngẫu nhiên $h'$ với giá trị kỳ vọng $h$ và phương sai bằng xác suất dropout $p$. 
 * Dropout chỉ được sử dụng trong quá trình huấn luyện.
 
 
@@ -497,12 +497,13 @@ What happens when dropout and weight decay are used at the same time? Are the re
 Can you develop a method that outperforms dropout on the FashionMNIST dataset (for a fixed architecture)?
 -->
 
-1. Điều gì xảy ra nếu bạn thay đổi xác suất dropout của tầng 1 và 2? Cụ thể, điều gì xảy ra nếu bạn tráo đổi xác suất của hai tầng này? Thiết kế một thí nghiệm để trả lời những câu hỏi này, mô tả các kết quả một cách định lượng và tóm tắt các bài học định tính.
+1. Điều gì xảy ra nếu bạn thay đổi xác suất dropout của tầng 1 và 2? Cụ thể, điều gì xảy ra nếu bạn tráo đổi xác suất của hai tầng này? 
+Thiết kế một thí nghiệm để trả lời những câu hỏi này, mô tả các kết quả một cách định lượng và tóm tắt các bài học rút ra một cách định tính.
 2. Tăng số lượng epoch và so sánh các kết quả thu được khi sử dụng và khi không sử dụng dropout.
-3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ biểu đồ thể hiện cách giá trị phương sai này thay đổi theo thời gian cho cả hai mô hình.
+3. Tính toán phương sai của các giá trị kích hoạt ở mỗi tầng ẩn khi sử dụng và khi không sử dụng dropout. Vẽ biểu đồ thể hiện sự thay đổi của giá trị phương sai này theo thời gian cho cả hai mô hình.
 4. Tại sao dropout thường không được sử dụng tại bước kiểm tra?
-5. Sử dụng mô hình trong phần này làm ví dụ, so sánh hiệu quả của việc sử dụng dropout và phân rã trọng số.
-Điều gì xảy ra khi dropout và phân rã trọng số được sử dụng cùng một lúc? Hai phương pháp này bổ trợ cho nhau, làm giảm hiệu quả của nhau hay (tệ hơn) loại trừ lẫn nhau?
+5. Sử dụng mô hình trong phần này làm ví dụ, so sánh hiệu quả của việc sử dụng dropout và suy giảm trọng số.
+Điều gì xảy ra khi dropout và suy giảm trọng số được sử dụng cùng một lúc? Hai phương pháp này bổ trợ cho nhau, làm giảm hiệu quả của nhau hay (tệ hơn) loại trừ lẫn nhau?
 6. Điều gì xảy ra nếu chúng ta áp dụng dropout cho các trọng số riêng lẻ của ma trận trọng số thay vì các giá trị kích hoạt?
 7. Hãy phát minh một kỹ thuật khác với kỹ thuật dropout tiêu chuẩn để thêm nhiễu ngẫu nhiên ở mỗi tầng.
 Bạn có thể phát triển một phương pháp cho kết quả tốt hơn dropout trên bộ dữ liệu FashionMNIST không (với cùng một kiến trúc)?
@@ -533,27 +534,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
 * Nguyễn Văn Tâm
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Nguyễn Duy Du
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
+* Vũ Hữu Tiệp
