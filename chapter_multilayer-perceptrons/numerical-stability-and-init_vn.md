@@ -298,7 +298,7 @@ In this case, we can compute mean and variance of $h_i$ as follows:
 
 Các trọng số $W_{ij}$ đều được lấy mẫu độc lập từ cùng một phân phối.
 Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng không và phương sai $\sigma^2$ (đây không bắt buộc phải là phân phối Gauss, chỉ là ta cần phải cho trước trung bình và phương sai).
-Tạm thời hãy giả sử rằng đầu vào của tầng $x_j$ cũng có trung bình bằng không và phương sai $\gamma^2$, độc lập với $\mathbf{W}$
+Tạm thời hãy giả sử rằng đầu vào của tầng $x_j$ cũng có trung bình bằng không và phương sai $\gamma^2$, độc lập với $\mathbf{W}$.
 Trong trường hợp này, ta có thể tính được trung bình và phương sai của $h_i$ như sau:
 
 $$
@@ -393,7 +393,7 @@ Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https:
 Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong nghiên cứu căn bản về học sâu.
 Trong số đó là những phương pháp thực nghiệm dành riêng cho tham số bị ràng buộc (được chia sẻ), bài toán siêu phân giải, mô hình chuỗi và nhiều trường hợp khác. 
 Nếu bạn quan tâm tới chủ đề này, chúng tôi khuyên bạn nên đào sâu hơn vào mô-đun này, đọc các bài báo trong đó đề xuất và phân tích mỗi phương pháp thực nghiệm, và rồi khám phá các bài báo mới nhất về chủ đề này.
-Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thông minh và đóng góp cho MXNet bằng cách lập trình chúng.
+Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thông minh và lập trình nó để đóng góp cho MXNet.
 
 
 <!--
