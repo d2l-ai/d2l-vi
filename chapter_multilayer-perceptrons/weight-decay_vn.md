@@ -225,7 +225,7 @@ To make the effects of overfitting pronounced, we can increase the dimensinoalit
 and work with a small training set containing only 20 example.
 -->
 
-lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01. 
+lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và phương sai bằng 0.01. 
 Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.  
 
 ```{.python .input  n=1}
@@ -269,7 +269,7 @@ Tiếp theo, chúng ta sẽ lập trình suy giảm trọng số từ đầu, ch
 First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 -->
 
-Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán. 
+Đầu tiên, chúng ta khai báo một hàm để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán. 
 
 ```{.python .input  n=2}
 def init_params():
@@ -311,8 +311,8 @@ The linear network and the squared loss have not changed since the previous chap
 The only change here is that our loss now includes the penalty term.
 -->
 
-Đoạn mã nguồn sau thực hiện việc khớp mô hình trên tập huấn luyện và thẩm định nó trên tập kiểm tra. 
-Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần khai báo chúng từ `d2l.linreg` và `d2l.squared_loss`. 
+Đoạn mã nguồn sau thực hiện việc khớp mô hình trên tập huấn luyện và đánh giá nó trên tập kiểm tra. 
+Mạng tuyến tính và hàm mất mát bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng qua `d2l.linreg` và `d2l.squared_loss`. 
 Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt. 
 
 ```{.python .input  n=4}
@@ -347,8 +347,8 @@ We now run this code with `lambd = 0`, disabling weight decay.
 Note that we overfit badly, decreasing the training error but not the test error---a textook case of overfitting.
 -->
 
-Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số. 
-Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp. 
+Giờ chúng ta sẽ chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số. 
+Hãy để ý tới việc quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp. 
 
 ```{.python .input  n=5}
 train(lambd=0)
