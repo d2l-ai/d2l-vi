@@ -233,7 +233,7 @@ Nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển từ từ.
 Before we go into further detail and discuss remedies, we can discuss a number of situations where covariate and concept shift may not be so obvious.
 -->
 
-Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể thảo luận một số tình huống khi dịch chuyển hiệp biến và khái niệm có thể có biểu hiện không quá rõ ràng.
+Trước khi đi vào chi tiết và thảo luận các giải pháp, ta có thể bàn thêm về một số tình huống khi dịch chuyển hiệp biến và khái niệm có thể có biểu hiện không quá rõ ràng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -253,8 +253,8 @@ Not so fast...
 -->
 
 Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật có khả năng phát hiện bệnh ung thư.
-Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh và bạn huấn luyện giải thuật.
-Nó hoạt động hiệu quả, đem lại độ chính xác cao và bạn có thể kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong việc chẩn đoán y khoa.
+Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh rồi sau đó huấn luyện giải thuật.
+Nó hoạt động hiệu quả, có độ chính xác cao và bạn kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong việc chẩn đoán y khoa.
 Đừng vội mừng...
 
 <!--
@@ -275,7 +275,7 @@ In other words, training and test data were so different that nothing useful cou
 
 Bạn có thể đã mắc nhiều sai lầm.
 Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể rất khác nhau.
-Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã có cơ hội tư vấn nhiều năm về trước.
+Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã tư vấn nhiều năm về trước.
 Họ đã phát triển một bộ xét nghiệm máu cho một căn bệnh xảy ra chủ yếu ở đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
 Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh lại khó khăn hơn (chủ yếu là vì lý do đạo đức).
 Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện để thực hiện xét nghiệm máu của họ.
@@ -318,8 +318,8 @@ Unfortunately, all it had learned was to distinguish trees with shadows from tre
 -->
 
 Một điều tương tự cũng đã xảy ra với quân đội Mỹ trong lần đầu tiên họ thử nghiệm nhận diện xe tăng trong rừng.
-Họ đã chụp các bức ảnh của khu rừng khi không có những chiếc xe tăng từ trên không, sau đó lái xe tăng vào khu rừng và chụp một bộ ảnh khác.
-Bộ phân loại đã được huấn luyện khi đó hoạt động một cách "hoàn hảo".
+Họ chụp các bức ảnh khu rừng từ trên cao khi không có xe tăng, sau đó lái xe tăng vào khu rừng và chụp một bộ ảnh khác.
+Bộ phân loại này được huấn luyện tới mức "hoàn hảo".
 Không may thay, tất cả những gì nó đã học được là phân loại cây có bóng với cây không có bóng---bộ ảnh đầu tiên được chụp vào buổi sáng sớm, trong khi bộ thứ hai được chụp vào buổi trưa.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -346,9 +346,9 @@ Dưới đây là một vài trường hợp điển hình:
 * We build a product recommendation system. It works throughout the winter... but then it keeps on recommending Santa hats long after Christmas.
 -->
 
-* Chúng ta huấn luyện mô hình tính toán cho việc quảng cáo và sau đó không cập nhật nó thường xuyên (giả sử như chúng ta quên bổ sung thêm cho thiết bị iPad mới vừa được ra mắt).
-* Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt cho việc phát hiện tất cả các thư rác mà chúng ta biết cho đến nay. Tuy nhiên hiện tại những người gửi thư rác đã tạo ra các mẫu thư mới trông không hề giống như những gì mà chúng ta biết trước đây.
-* Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc trong suốt mùa đông... nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả khi Giáng Sinh đã qua.
+* Chúng ta huấn luyện mô hình quảng cáo điện toán và sau đó không cập nhật nó thường xuyên (chẳng hạn như quên bổ sung thêm thiết bị iPad mới vừa được ra mắt vào mô hình).
+* Xây dựng một mô hình lọc thư rác. Mô hình làm việc rất tốt cho việc phát hiện tất cả các thư rác mà chúng ta biết cho đến nay. Nhưng rồi những người gửi thư rác cũng khôn khéo hơn và tạo ra các mẫu thư mới khác hẳn với những thư trước đây.
+* Ta xây dựng hệ thống đề xuất sản phẩm. Hệ thống làm việc tốt trong suốt mùa đông... nhưng sau đó nó vẫn tiếp tục đề xuất các mẫu nón ông già Noel ngay cả khi Giáng Sinh đã qua từ lâu.
 
 <!--
 #### More Anecdotes
@@ -367,8 +367,8 @@ say 1000 categories, represented by 1000 images each. Then we deploy the system 
 * Chúng ta xây dựng mô hình phát hiện gương mặt. Nó hoạt động rất tốt trên các bài kiểm tra đánh giá.
 Không may mắn là mô hình lại thất bại trên tập dữ liệu kiểm tra---các ví dụ đánh bại được mô hình khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh, trong khi không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
 * Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn triển khai nó cho thị trường Anh.
-* Chúng ta huấn luyện một trình phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu có số lượng mẫu biểu diễn bằng nhau, chẳng hạn như có 1000 lớp, mỗi lớp được biểu diễn bởi 1000 ảnh.
-Sau đó chúng ta triển khai hệ thống trong khi trên thực tế phân phối nhãn của các ảnh lại không đồng đều. 
+* Chúng ta huấn luyện một bộ phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu đều có số lượng mẫu bằng nhau, ví dụ 1000 lớp và mỗi lớp được biểu diễn bởi 1000 ảnh.
+Sau đó chúng ta triển khai hệ thống trong khi trên thực tế, rõ ràng phân phối nhãn của các ảnh không đồng đều. 
 
 <!--
 In short, there are many cases where training and test distributions $p(\mathbf{x}, y)$ are different.
