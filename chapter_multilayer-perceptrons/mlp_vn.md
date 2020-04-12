@@ -203,7 +203,7 @@ Moreover, our linear model was already capable of representing any linear functi
 
 Chú ý rằng sau khi thêm tầng này vào, mô hình lập tức yêu cầu chúng ta phải theo dõi và cập nhật thêm hai tập tham số.
 Vậy thì đổi lại ta sẽ nhận được gì?
-Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng giải quyết được gì với những rắc rối của mình!*
+Bạn có thể bất ngờ khi phát hiện ra rằng---trong mô hình định nghĩa bên trên---*chúng ta chẳng thu được lợi ích gì từ những rắc rối thêm vào!*
 Lý do rất đơn giản.
 Các nút ẩn bên trên được định nghĩa bởi một hàm tuyến tính của các đầu vào, và các đầu ra (tiền Softmax) chỉ là một hàm tuyến tính của các nút ẩn.
 Một hàm tuyến tính của một hàm tuyến tính bản thân nó cũng chính là một hàm tuyến tính.
@@ -252,7 +252,7 @@ e.g., $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ and $\math
 one atop another, yielding ever more expressive models (assuming fixed width).
 -->
 
-Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn, ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$, kế tiếp nhau, tạo ra các mô hình có tính biểu diễn cao hơn bao giờ hết (giả sử chiều rộng cố định).
+Để xây dựng các MLP tổng quan hơn, chúng ta có thể tiếp tục chồng thêm các tầng ẩn, ví dụ, $\mathbf{h}_1 = \sigma(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1)$ và $\mathbf{h}_2 = \sigma(\mathbf{W}_2 \mathbf{h}_1 + \mathbf{b}_2)$, kế tiếp nhau, tạo ra các mô hình có khả năng biểu diễn càng cao (giả sử chiều rộng cố định).
 
 <!--
 MLPs can capture complex interactions among our inputs via their hidden neurons, which depend on the values of each of the inputs.
@@ -348,7 +348,7 @@ Because activation functions are fundamental to deep learning, let's briefly sur
 -->
 
 Các hàm kích hoạt quyết định một nơ-ron có được kích hoạt hay không bằng cách tính tổng có trọng số và cộng thêm hệ số điều chỉnh vào nó.
-Chúng là các toán tử khả vi có vai trò biến đổi các tín hiệu đầu vào thành các tín hiệu đầu ra, và hầu hết các hàm kích hoạt này đều thêm sự phi tuyến tính.
+Chúng là các toán tử khả vi và hầu hết đều biến đổi các tín hiệu đầu vào thành các tín hiệu đầu ra theo một cách phi tuyến tính.
 Bởi vì các hàm kích hoạt rất quan trọng trong học sâu, hãy cùng tìm hiểu sơ lược một số hàm kích hoạt thông dụng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -534,7 +534,7 @@ d2l.plot(x, x.grad, 'x', 'grad of sigmoid')
 Like the sigmoid function, the tanh (Hyperbolic Tangent) function also squashes its inputs, transforms them into elements on the interval between -1 and 1:
 -->
 
-Tương tự như hàm sigmoid, hàm tanh (Hyperbolic Tangent) cũng nén các biến đầu vào và biến đổi chúng thành các phần tử nằm trong khoảng -1 và 1:
+Tương tự như hàm sigmoid, hàm tanh (Hyperbolic Tangent) cũng ép các biến đầu vào và biến đổi chúng thành các phần tử nằm trong khoảng -1 và 1:
 
 $$\text{tanh}(x) = \frac{1 - \exp(-2x)}{1 + \exp(-2x)}.$$
 
