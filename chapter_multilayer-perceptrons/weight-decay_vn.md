@@ -518,7 +518,7 @@ Bạn quan sát được điều gì?
 Bạn có thể tìm một phương trình tương tự cho các ma trận (các nhà toán học gọi nó là [chuẩn Frobenius](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)) hay không?
 5. Ôn lại mối quan hệ giữa lỗi huấn luyện và lỗi khái quát.
 Bên cạnh việc sử dụng suy giảm trọng số, huấn luyện thêm và lựa chọn một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết vấn đề quá khớp không?
-6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Làm thế nào để bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn?
+6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Làm thế nào để suy ra được hậu nghiệm $P(w)$ khi sử dụng điều chuẩn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
