@@ -337,7 +337,7 @@ A much more subtle situation arises when the distribution changes slowly and the
 Here are some typical cases:
 -->
 
-Một vấn đề đặc biệt phát sinh khi phân phối thay đổi chậm và mô hình không được cập nhật một cách thoả đáng.
+Một vấn đề khó phát hiện hơn phát sinh khi phân phối thay đổi chậm rãi và mô hình không được cập nhật một cách thoả đáng.
 Dưới đây là một vài trường hợp điển hình:
 
 <!--
