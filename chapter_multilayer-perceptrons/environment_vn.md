@@ -548,7 +548,7 @@ while the labels are often easier to work, say vectors whose length corresponds 
 
 Để thảo luận về dịch chuyển nhãn, ta sẽ giả định rằng ta đang giải quyết một bài toán phân loại $k$ lớp.
 Nếu phân phối của nhãn thay đổi theo thời gian $p(y) \neq q(y)$ nhưng các phân phối có điều kiện của lớp vẫn giữ nguyên $p(\mathbf{x})=q(\mathbf{x})$, thì trọng số quan trọng sẽ tương ứng với tỉ lệ hợp lý (*likelihood ratio*) của nhãn $q(y)/p(y)$. 
-Một điều tốt về dịch chuyển nhãn là nếu ta có một mô hình tương đối tốt (trên phân phối gốc), ta có thể có các ước lượng nhất quán cho các trọng số này mà không phải đối phó với không gian đầu vào (trong học sâu, đầu vào thường là dữ liệu nhiều chiều như hình ảnh, trong khi các nhãn thường dễ làm việc hơn vì chúng chỉ là các vector có chiều dài tương ứng với số lượng lớp). 
+Một điều tốt về dịch chuyển nhãn là nếu ta có một mô hình tương đối tốt (trên phân phối gốc), ta có thể có các ước lượng nhất quán cho các trọng số này mà không phải đối phó với không gian đầu vào (trong học sâu, đầu vào thường là dữ liệu nhiều chiều như hình ảnh, trong khi làm việc với các nhãn thường dễ hơn vì chúng chỉ là các vector có chiều dài tương ứng với số lượng lớp). 
 
 <!--
 To estimate calculate the target label distribution, we first take our reasonably good off the shelf classifier 
@@ -559,7 +559,7 @@ Each cell's value $c_{ij}$ is the fraction of predictions where the true label w
 
 Để ước lượng phân phối nhãn mục tiêu, đầu tiên ta dùng một bộ phân loại sẵn có tương đối tốt (thường được học trên tập huấn luyện) và sử dụng một tập kiểm định (cùng phân phối với tập huấn luyện) để tính ma trận nhầm lẫn. 
 Ma trận nhầm lẫn C là một ma trận $k \times k$, trong đó mỗi cột tương ứng với một nhãn *thật* và mỗi hàng tương ứng với nhãn dự đoán của mô hình.
-Giá trị của mỗi phần tử $c_{ij}$ là tỉ lệ mẫu có nhãn thật là $j$ *và* nhãn dự đoán là $i$. 
+Giá trị của mỗi phần tử $c_{ij}$ là số lượng mẫu có nhãn thật là $j$ *và* nhãn dự đoán là $i$. 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -571,7 +571,7 @@ unless we invest in a complex real-time annotation pipeline.
 What we can do, however, is average all of our models predictions at test time together, yielding the mean model output $\mu_y$.
 -->
 
-Giờ thì ta không thể tính trực tiếp ma trận nhầm lẫn trên dữ liệu đích được bởi vì ta không thể quan sát nhãn của các mẫu trong thực tế, trừ khi ta đầu tư vào một pipeline đánh nhãn phức tạp theo thời gian thực.
+Giờ thì ta không thể tính trực tiếp ma trận nhầm lẫn trên dữ liệu đích được bởi vì ta không thể quan sát nhãn của các mẫu trong thực tế, trừ khi ta đầu tư vào một pipeline phức tạp để đánh nhãn theo thời gian thực.
 Tuy nhiên điều mà ta có thể làm là lấy trung bình tất cả dự đoán của mô hình tại lúc kiểm tra, từ đó có được giá trị đầu ra trung bình của mô hình $\mu_y$. 
 
 <!--
