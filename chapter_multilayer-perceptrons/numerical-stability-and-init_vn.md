@@ -391,7 +391,7 @@ Perhaps you will stumble across (or even invent!) a clever idea and contribute a
 Các lập luận đưa ra ở trên mới chỉ chạm tới bề mặt của những kỹ thuật khởi tạo tham số hiện đại.
 Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) với hàng chục các phương pháp khởi tạo dựa theo thực nghiệm khác nhau đã được lập trình sẵn.
 Hơn nữa, các phương pháp khởi tạo vẫn đang là một chủ đề nghiên cứu căn bản rất được quan tâm trong học sâu.
-Trong số đó là những phương pháp thực nghiệm dành riêng cho tham số bị ràng buộc (được chia sẻ), bài toán siêu phân giải, mô hình chuỗi và nhiều trường hợp khác. 
+Trong số đó là những phương pháp dựa trên thực nghiệm dành riêng cho trường hợp tham số bị trói buộc (được chia sẻ), cho bài toán siêu phân giải, mô hình chuỗi và nhiều trường hợp khác. 
 Nếu có hứng thú, chúng tôi khuyên bạn nên đào sâu hơn vào mô-đun này, đọc các bài báo mà có đề xuất và phân tích các phương pháp thực nghiệm, và rồi tự khám phá các bài báo mới nhất về chủ đề này.
 Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thông minh và lập trình nó để đóng góp cho MXNet.
 
