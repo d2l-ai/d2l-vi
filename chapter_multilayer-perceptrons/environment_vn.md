@@ -721,7 +721,7 @@ Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được n
 Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
 Tương tự như vậy, hành vi của người dùng trên một trang tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất). 
 Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai). 
-* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng-không-bằng-không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
+* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng khác không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
 Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành. 
 Những chiếc xe khác sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
@@ -779,7 +779,7 @@ Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có th�
 Ví dụ, nếu hệ thống dự đoán được áp dụng theo cách ngây ngô để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
 Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
 Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
-Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian cho việc phổ biến thông tin.
+Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian để phổ biến thông tin.
 Những tin tức nào được hiển thị đến người dùng có nên được quyết định bởi những trang Facebook nào mà họ *đã thích* hay không?
 Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong việc theo đuổi sự nghiệp học máy của mình.
 
@@ -796,7 +796,7 @@ Những tin tức nào được hiển thị đến người dùng có nên đư
 
 * Trong nhiều trường hợp, tập huấn luyện và tập kiểm tra không được lấy mẫu từ cùng một phân phối. Đây là hiện tượng dịch chuyển hiệp biến.
 * Dịch chuyển hiệp biến có thể được phát hiện và khắc phục nếu sự dịch chuyển không quá nghiêm trọng. Thất bại trong việc khắc phục có thể dẫn đến những kết quả không lường được lúc kiểm thử.
-* Trong nhiều trường hợp, môi trường ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo một cách không lường trước được. Chúng ta cần xem xét điều này khi xây dựng mô hình.
+* Trong nhiều trường hợp, môi trường sẽ ghi nhớ những gì chúng ta đã làm và sẽ phản hồi theo những cách không lường trước được. Chúng ta cần xem xét điều này khi xây dựng mô hình.
 
 <!--
 ## Exercises
