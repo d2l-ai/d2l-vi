@@ -608,7 +608,7 @@ To make things more concrete, here are some examples:
 -->
 
 Khắc phục vấn đề dịch chuyển khái niệm theo một cách có nguyên tắc khó hơn rất nhiều.
-Chẳng hạn như đột nhiên vấn đề chuyển từ phân biệt chó và mèo sang phân biệt động vật có màu trắng và động vật có màu đen, hoàn toàn có lý khi tin rằng ta không thể làm tốt hơn việc thu thập tập nhãn mới và huấn luyện lại từ đầu.
+Chẳng hạn như khi bài toán đột nhiên chuyển từ phân biệt chó và mèo sang phân biệt động vật có màu trắng và động vật có màu đen, hoàn toàn có lý khi tin rằng ta không thể làm tốt hơn việc thu thập tập nhãn mới và huấn luyện lại từ đầu.
 May mắn thay vấn đề dịch chuyển tới mức cực đoan như vậy trong thực tế khá hiếm.
 Thay vào đó, điều thường diễn ra là tác vụ cứ dần dần thay đổi.
 Để làm rõ hơn, ta xét các ví dụ dưới đây:
