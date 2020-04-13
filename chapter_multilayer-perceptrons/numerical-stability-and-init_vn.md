@@ -352,7 +352,7 @@ Plugging $a^2/3$ into our condition on $\sigma^2$, yields the suggestion to init
 
 -->
 
-Đây là lý luận đằng sau phương thức khởi tạo Xavier, được đặt tên theo người đã tạo ra nó :cite:`Glorot.Bengio.2010`.
+Đây là lý luận đằng sau phương thức khởi tạo *Xavier*, được đặt tên theo người đã tạo ra nó :cite:`Glorot.Bengio.2010`.
 Bây giờ nó đã trở thành phương thức tiêu chuẩn và rất hữu dụng trong thực tiễn.
 Thông thường, phương thức này lấy mẫu cho trọng số từ phân phối Gauss với trung bình bằng không và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.
 Ta cũng có thể tận dụng cách hiểu trực quan của Xavier để chọn phương sai khi lấy mẫu từ một phân phối đều.
@@ -390,9 +390,9 @@ Perhaps you will stumble across (or even invent!) a clever idea and contribute a
 
 Các lập luận đưa ra ở trên mới chỉ chạm tới bề mặt của những kỹ thuật khởi tạo tham số hiện đại.
 Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) với hàng chục các phương pháp khởi tạo dựa theo thực nghiệm khác nhau đã được lập trình sẵn.
-Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong nghiên cứu căn bản về học sâu.
+Hơn nữa, các phương pháp khởi tạo vẫn đang là một chủ đề nghiên cứu căn bản rất được quan tâm trong học sâu.
 Trong số đó là những phương pháp thực nghiệm dành riêng cho tham số bị ràng buộc (được chia sẻ), bài toán siêu phân giải, mô hình chuỗi và nhiều trường hợp khác. 
-Nếu bạn quan tâm tới chủ đề này, chúng tôi khuyên bạn nên đào sâu hơn vào mô-đun này, đọc các bài báo trong đó đề xuất và phân tích mỗi phương pháp thực nghiệm, và rồi khám phá các bài báo mới nhất về chủ đề này.
+Nếu có hứng thú, chúng tôi khuyên bạn nên đào sâu hơn vào mô-đun này, đọc các bài báo mà có đề xuất và phân tích các phương pháp thực nghiệm, và rồi tự khám phá các bài báo mới nhất về chủ đề này.
 Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thông minh và lập trình nó để đóng góp cho MXNet.
 
 
@@ -434,7 +434,7 @@ Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thô
 4. If we know that some terms diverge, can we fix this after the fact? Look at the paper on LARS for inspiration :cite:`You.Gitman.Ginsburg.2017`.
 -->
 
-1. Bạn có thể nghĩ ra các trường hợp mà mạng nơ-ron thể hiện tính đối xứng cần được phá vỡ, ngoài tính đối xứng hoán vị giữa các tầng không?
+1. Ngoài tính đối xứng hoán vị giữa các tầng, bạn có thể nghĩ ra các trường hợp mà mạng nơ-ron thể hiện tính đối xứng khác cần được phá vỡ không?
 2. Ta có thể khởi tạo tất cả trọng số trong hồi quy tuyến tính hoặc trong hồi quy softmax với cùng một giá trị hay không?
 3. Hãy tra cứu cận chính xác của trị riêng cho tích hai ma trận. Nó cho ta biết gì về việc đảm bảo rằng gradient hợp lý?
 4. Nếu biết rằng một vài số hạng sẽ phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:`You.Gitman.Ginsburg.2017`.
