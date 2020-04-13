@@ -571,7 +571,7 @@ unless we invest in a complex real-time annotation pipeline.
 What we can do, however, is average all of our models predictions at test time together, yielding the mean model output $\mu_y$.
 -->
 
-Giờ thì ta không thể tính trực tiếp ma trận nhầm lẫn trên dữ liệu đích được bởi vì ta không thể quan sát nhãn của các mẫu trong thực tế, trừ khi ta đầu tư vào một pipeline phức tạp để đánh nhãn theo thời gian thực.
+Giờ thì ta không thể tính trực tiếp ma trận nhầm lẫn trên dữ liệu mục tiêu được bởi vì ta không thể quan sát được nhãn của các mẫu trong thực tế, trừ khi ta đầu tư vào một pipeline phức tạp để đánh nhãn theo thời gian thực.
 Tuy nhiên điều mà ta có thể làm là lấy trung bình tất cả dự đoán của mô hình tại lúc kiểm tra, từ đó có được giá trị đầu ra trung bình của mô hình $\mu_y$. 
 
 <!--
@@ -585,10 +585,10 @@ Then for any training example $i$ with label $y$, we can take the ratio of our e
 and plug this into the weighted risk minimization algorithm above.
 -->
 
-Hoá ra là dưới các giả định đơn giản --- chẳng hạn như bộ phân loại vốn đã khá chính xác, dữ liệu đích chỉ chứa ảnh thuộc các lớp đã quan sát được từ trước, và giả định dịch chuyển nhãn là đúng (đây là giả định lớn nhất tới bây giờ), thì ta có thể khôi phục phân phối nhãn trên tập kiểm tra bằng cách giải một hệ phương trình tuyến tính đơn giản $C \cdot q(y) = \mu_y$.
-Nếu bộ phân loại đã khá chính xác ngay từ đầu thì ma trận confusion C là khả nghịch và ta có nghiệm $q(y) = C^{-1} \mu_y$.
+Hoá ra là dưới các giả định đơn giản --- chẳng hạn như bộ phân loại vốn đã khá chính xác, dữ liệu mục tiêu chỉ chứa ảnh thuộc các lớp đã quan sát được từ trước, và giả định dịch chuyển nhãn là đúng (đây là giả định lớn nhất tới bây giờ), thì ta có thể khôi phục phân phối nhãn trên tập kiểm tra bằng cách giải một hệ phương trình tuyến tính đơn giản $C \cdot q(y) = \mu_y$.
+Nếu bộ phân loại đã khá chính xác ngay từ đầu thì ma trận nhầm lẫn C là khả nghịch và ta có nghiệm $q(y) = C^{-1} \mu_y$.
 Ở đây ta đang lạm dụng kí hiệu một chút khi sử dụng $q(y)$ để kí hiệu vector tần suất nhãn. 
-Vì ta quan sát được nhãn trên dữ liệu gốc, có thể dễ dàng ước lượng phân phối $p(y)$. 
+Vì ta quan sát được nhãn trên dữ liệu gốc, nên có thể dễ dàng ước lượng phân phối $p(y)$. 
 Sau đó với bất kì mẫu huấn luyện $i$ với nhãn $y$, ta có thể lấy tỉ lệ ước lượng $\hat{q}(y)/\hat{p}(y)$ để tính trọng số $w_i$ và đưa vào thuật toán tối thiểu rủi ro có trọng số được mô tả ở trên. 
 
 
@@ -608,7 +608,7 @@ To make things more concrete, here are some examples:
 -->
 
 Khắc phục vấn đề dịch chuyển khái niệm theo một cách có nguyên tắc khó hơn rất nhiều.
-Chẳng hạn như khi bài toán đột nhiên chuyển từ phân biệt chó và mèo sang phân biệt động vật có màu trắng và động vật có màu đen, hoàn toàn có lý khi tin rằng ta không thể làm tốt hơn việc thu thập tập nhãn mới và huấn luyện lại từ đầu.
+Chẳng hạn như khi bài toán đột nhiên chuyển từ phân biệt chó và mèo sang phân biệt động vật có màu trắng và động vật có màu đen, hoàn toàn có lý khi tin rằng ta không thể làm gì tốt hơn ngoài việc thu thập tập nhãn mới và huấn luyện lại từ đầu.
 May mắn thay vấn đề dịch chuyển tới mức cực đoan như vậy trong thực tế khá hiếm.
 Thay vào đó, điều thường diễn ra là tác vụ cứ dần dần thay đổi.
 Để làm rõ hơn, ta xét các ví dụ dưới đây:
@@ -620,9 +620,9 @@ This means that the distribution over ads and their popularity changes gradually
 * News content changes gradually (i.e., most of the news remains unchanged but new stories appear).
 -->
 
-* Trong ngành quảng cáo điện toán, sản phẩm mới ra mắt và sản phẩm cũ trở nên ít phổ biến hơn.
-Điều này nghĩa là phân phối của các mẩu quảng cáo và mức phổ biến của chúng sẽ thay đổi dần dần và bất kì bộ dự đoán tỉ lệ click-through nào cũng cần thay đổi theo. 
-* Ống kính của các camera giao thông bị mờ đi theo thời gian do tác động của môi trường, có ảnh hưởng tăng dần tới chất lượng ảnh. 
+* Trong ngành quảng cáo điện toán, khi một sản phẩm mới ra mắt, các sản phẩm cũ trở nên ít phổ biến hơn.
+Điều này nghĩa là phân phối của các mẩu quảng cáo và mức phổ biến của chúng sẽ thay đổi dần dần và bất kì bộ dự đoán tỉ lệ click chuột nào cũng cần thay đổi theo. 
+* Ống kính của các camera giao thông bị mờ đi theo thời gian do tác động của môi trường, có ảnh hưởng lớn dần tới chất lượng ảnh. 
 * Nội dung các mẩu tin thay đổi theo thời gian, tức là tin tức thì không đổi nhưng các sự kiện mới luôn diễn ra. 
 
 <!--
@@ -631,7 +631,7 @@ In other words, we use the existing network weights and simply perform a few upd
 -->
 
 Trong các trường hợp trên, ta có thể sử dụng cùng cách tiếp cận cho việc huấn luyện mô hình để thích ứng với các biến đổi trong dữ liệu. 
-Nói cách khác, chúng ta sử dụng trọng số đang có và chỉ thực hiện thêm vài bước cập nhật trên dữ liệu mới thay vì huấn luyện lại từ đầu. 
+Nói cách khác, chúng ta sử dụng trọng số đang có của mạng và chỉ thực hiện thêm vài bước cập nhật trên dữ liệu mới thay vì huấn luyện lại từ đầu. 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
