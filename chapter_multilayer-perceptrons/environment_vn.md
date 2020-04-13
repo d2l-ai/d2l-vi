@@ -679,7 +679,7 @@ Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó 
 ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
 Nhiều bài toán thực tế rơi vào loại này.
 Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên dự đoán đó và vào cuối ngày ta sẽ biết được liệu nó có mang lại lợi nhuận hay không.
-Nói cách khác, ta có chu trình sau, nơi mà mô hình dần được cải thiện cùng với những quan sát mới.
+Nói cách khác, ta có chu trình sau, trong đó mô hình dần được cải thiện cùng với những quan sát mới.
 
 $$
 \mathrm{mô~hình} ~ f_t \longrightarrow
