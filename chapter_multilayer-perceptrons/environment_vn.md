@@ -718,12 +718,12 @@ Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thườ
 * **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
 Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
 Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
-Giải thuật điều khiển PID (vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
+Giải thuật điều khiển PID (proportional integral derivative hay vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
 Tương tự như vậy, hành vi của người dùng trên một trang tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất). 
-Nhiều thuật toán như vậy tạo thành một mô hình của môi trường mà trong đó chúng hành động để làm cho các quyết định trông có vẻ ít ngẫu nhiên hơn (tức là, để giảm phương sai). 
-* **Học Tăng cường.** Trong trường hợp khái quát hơn với môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng khác không), hoặc môi trường sẽ cố gắng *chiến thắng* như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
+Nhiều thuật toán như vậy cấu thành một mô hình của môi trường mà trong đó chúng muốn làm cho các quyết định của mình trông có vẻ ít ngẫu nhiên hơn (tức để giảm phương sai). 
+* **Học Tăng cường.** Trong trường hợp khái quát hơn của môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng khác không), hoặc môi trường sẽ cố gắng *chiến thắng* ta như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
 Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành. 
-Những chiếc xe khác sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ: cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
+Những chiếc xe khác khả năng cao sẽ có những phản ứng đáng kể với cách lái của những chiếc xe tự hành, ví dụ như cố gắng tránh nó, cố gắng gây ra tai nạn, cố gắng hợp tác với nó, v.v.
 
 <!--
 One key distinction between the different situations above is that the same strategy that might have worked throughout in the case of a stationary environment, 
