@@ -330,7 +330,7 @@ Thay vào đó, ta cố thỏa mãn điều kiện sau:
 
 $$
 \begin{aligned}
-\frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ or equivalently }
+\frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ hoặc tương đương }
 \sigma = \sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}.
 \end{aligned}
 $$
