@@ -738,7 +738,7 @@ These types of knowledge are crucial for the aspiring data scientist to deal wit
 Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là một chiến lược hoạt động được xuyên suốt trong trường hợp môi trường cố định, có thể lại không hoạt động xuyên suốt được khi môi trường có khả năng thích nghi.
 Chẳng hạn, nếu một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường, khả năng cao cơ hội đó sẽ biến mất ngay khi anh ta bắt đầu lợi dụng nó.
 Tốc độ và cách môi trường thay đổi có ảnh hưởng lớn đến loại thuật toán mà ta có thể sử dụng.
-Ví dụ, nếu ta *biết trước* những sự việc chỉ có thể thay đổi một cách từ từ, ta có thể ép cho những ước lượng thay đổi chậm.
+Ví dụ, nếu ta *biết trước* mọi việc chỉ có thể thay đổi một cách từ từ, ta có thể ép những ước lượng phải thay đổi chậm theo.
 Còn nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
 Đối với các nhà khoa học dữ liệu giỏi, những kiến thức này rất quan trọng trong việc giải quyết các bài toán dịch chuyển khái niệm, tức bài toán cần giải quyết thay đổi theo thời gian.
 
