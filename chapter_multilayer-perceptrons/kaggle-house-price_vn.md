@@ -45,10 +45,9 @@ First, we maintain a dictionary `DATA_HUB` that maps a string name to a URL with
 where SHA-1 verifies the integrity of the file. Such datasets are hosted on the `DATA_URL` site.
 -->
 
-Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các bộ dữ liệu khác nhau. 
+Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các tập dữ liệu khác nhau.
 Ta sẽ lập trình một số hàm tiện ích để hỗ trợ cho việc tải dữ liệu.
-Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` nhằm ánh xạ một xâu ký tự đến đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
-trong đó SHA-1 dùng để xác minh tính toàn vẹn của tệp. Các bộ dữ liệu này được lưu trữ trên trang `DATA_URL`.
+Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` nhằm ánh xạ một xâu ký tự đến đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, trong đó SHA-1 dùng để xác minh tính toàn vẹn của tệp. Các tập dữ liệu này được lưu trữ trên trang `DATA_URL`.
 
 ```{.python .input  n=2}
 import os
@@ -96,9 +95,8 @@ We also implement two additional functions: one is to download and extract a zip
 You may invoke the latter to download all these datasets once and for all if your network connection is slow.
 -->
 
-Chúng ta cũng xây dựng hai hàm bổ sung khác: một hàm là để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB`(chứa phần lớn các bộ dữ liệu được sử dụng trong cuốn sách này) vào bộ nhớ đệm. 
-Bạn có thể sử dụng hàm thứ hai để tải tất cả bộ dữ liệu trong một lần nếu kết nối mạng của bạn chậm.
-
+Chúng ta cũng lập trình thêm hai hàm khác: một hàm để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB` (chứa phần lớn các tập dữ liệu được sử dụng trong cuốn sách này) về bộ nhớ đệm. 
+Bạn có thể sử dụng hàm thứ hai để tải tất cả các tập dữ liệu này trong cùng một lần tải nếu kết nối mạng của bạn chậm.
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
 def download_extract(name, folder=None):
@@ -162,8 +160,7 @@ Nếu bạn muốn tham gia một cuộc thi, bạn cần đăng ký một tài 
 On the House Prices Prediction page as illustrated in :numref:`fig_house_pricing`, you can find the dataset (under the "Data" tab), submit predictions, see your ranking, etc.,
 The URL is right here:
 -->
-
-Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả ở :numref:`fig_house_pricing`, bạn có thể tìm thấy bộ dữ liệu (dưới thanh "Data"), nộp kết quả dự đoán và xem thứ hạng của bạn, v.v. 
+Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả ở :numref:`fig_house_pricing`, bạn có thể tìm được tập dữ liệu (dưới thanh "Data"), nộp kết quả dự đoán và xem thứ hạng của bạn, v.v. 
 Đường dẫn:
 
 > https://www.kaggle.com/c/house-prices-advanced-regression-technique 
@@ -231,7 +228,7 @@ npx.set_np()
 For convenience, we download and cache the Kaggle housing dataset from the `DATA_URL` website. For the other Kaggle competitions, you may need to download them manually.
 -->
 
-Để thuận tiện, chúng ta sẽ tải và lưu bộ dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, bạn có thể cần tải dữ liệu về theo cách thủ công.  
+Để thuận tiện, chúng ta sẽ tải và lưu tập dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, có thể bạn sẽ phải tải dữ liệu về theo cách thủ công.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -288,7 +285,7 @@ Hence we remove it from the dataset before feeding the data into the network.
 Có thể thấy với mỗi mẫu, đặc trưng đầu tiên là ID.
 Điều này giúp mô hình xác định được từng mẫu. 
 Mặc dù việc này khá thuận tiện, nó không mang bất kỳ thông tin nào cho mục đích dự đoán. 
-Do đó chúng ta sẽ lược bỏ nó ra khỏi bộ dữ liệu trước khi đưa vào mạng nơ-ron. 
+Do đó chúng ta sẽ lược bỏ nó ra khỏi tập dữ liệu trước khi đưa vào mạng nơ-ron.
 
 ```{.python .input  n=30}
 all_features = pd.concat((train_data.iloc[:, 1:-1], test_data.iloc[:, 1:]))
