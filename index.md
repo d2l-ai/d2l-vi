@@ -22,6 +22,7 @@ chapter_notation/index_vn
 chapter_introduction/index_vn
 chapter_preliminaries/index_vn
 chapter_linear-networks/index_vn
+chapter_multilayer-perceptrons/index_vn
 ```
 
 ```toc
