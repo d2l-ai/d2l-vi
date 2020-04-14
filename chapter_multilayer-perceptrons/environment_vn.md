@@ -254,7 +254,7 @@ Not so fast...
 
 Hãy tưởng tượng rằng bạn muốn thiết kế một giải thuật có khả năng phát hiện bệnh ung thư.
 Bạn thu thập dữ liệu từ cả người khoẻ mạnh lẫn người bệnh rồi sau đó huấn luyện giải thuật.
-Nó hoạt động hiệu quả, có độ chính xác cao và bạn kết luận rằng bạn đã sẵn sàng cho một sự nghiệp thành công trong việc chẩn đoán y khoa.
+Nó hoạt động hiệu quả, có độ chính xác cao và bạn kết luận rằng bạn đã sẵn sàng cho một sự nghiệp chẩn đoán y khoa thành công.
 Đừng vội mừng...
 
 <!--
@@ -304,7 +304,7 @@ More importantly, *all* the roadside had been rendered with the *same* texture a
 
 Giả sử có một công ty muốn xây dựng một hệ thống học máy cho xe tự hành.
 Một trong những bộ phận quan trọng là bộ phát hiện lề đường.
-Bởi vì dữ liệu gán nhãn thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu giả từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện. 
+Vì việc gán nhãn dữ liệu thực tế rất tốn kém, họ đã có một ý tưởng (thông minh và đầy nghi vấn) là sử dụng dữ liệu giả từ một bộ kết xuất đồ hoạ để thêm vào dữ liệu huấn luyện. 
 Nó đã hoạt động rất tốt trên "dữ liệu kiểm tra" được lấy mẫu từ bộ kết xuất đồ hoạ.
 Nhưng khi áp dụng trên xe thực tế, nó là một thảm hoạ.
 Hoá ra, lề đường đã được kết xuất chỉ với một kết cấu rất đơn giản.
@@ -368,7 +368,7 @@ say 1000 categories, represented by 1000 images each. Then we deploy the system 
 Không may mắn là mô hình lại thất bại trên tập dữ liệu kiểm tra---các ví dụ đánh bại được mô hình khi khuôn mặt lấp đầy hoàn toàn cả bức ảnh, trong khi không có dữ liệu nào tương tự như vậy xuất hiện trong tập huấn luyện.
 * Ta xây dựng hệ thống tìm kiếm web cho thị trường Hoa Kỳ và hiện tại muốn triển khai nó cho thị trường Anh.
 * Chúng ta huấn luyện một bộ phân loại hình ảnh bằng cách biên soạn một tập dữ liệu lớn, trong đó mỗi lớp trong tập dữ liệu đều có số lượng mẫu bằng nhau, ví dụ 1000 lớp và mỗi lớp được biểu diễn bởi 1000 ảnh.
-Sau đó chúng ta triển khai hệ thống trong khi trên thực tế, rõ ràng phân phối nhãn của các ảnh không đồng đều. 
+Sau đó chúng ta triển khai hệ thống trong khi trên thực tế phân phối của nhãn chắc chắn là không đồng đều. 
 
 <!--
 In short, there are many cases where training and test distributions $p(\mathbf{x}, y)$ are different.
