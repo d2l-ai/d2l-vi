@@ -191,7 +191,7 @@ x.ctx
 ### Storage on the GPU
 -->
 
-### *dịch tiêu đề phía trên*
+### Lưu trữ trên GPU
 
 <!--
 There are several ways to store an `ndarray` on the GPU. 
@@ -203,7 +203,13 @@ We can use the `nvidia-smi` command to view GPU memory usage.
 In general, we need to make sure we do not create data that exceeds the GPU memory limit.
 -->
 
-*dịch đoạn phía trên*
+Có một số cách để lưu trữ một `ndarray` trên GPU.
+Ví dụ: ta có thể chỉ định một thiết bị lưu trữ với tham số `ctx` khi tạo một` ndarray`.
+Tiếp theo, ta tạo biến cho `ndarray` là `a` trên `gpu(0)`.
+Lưu ý rằng khi in `a`, thông tin thiết bị sẽ trở thành `@gpu(0)`.
+Chiếc `ndarray` được tạo trên GPU chỉ tiêu tốn bộ nhớ của GPU này.
+Ta có thể sử dụng lệnh `nvidia-smi` để xem việc sử dụng bộ nhớ GPU.
+Nói chung, ta cần đảm bảo rằng ta không tạo dữ liệu vượt quá giới hạn bộ nhớ GPU.
 
 ```{.python .input  n=5}
 x = np.ones((2, 3), ctx=try_gpu())
@@ -214,7 +220,7 @@ x
 Assuming you have at least two GPUs, the following code will create a random array on `gpu(1)`.
 -->
 
-*dịch đoạn phía trên*
+Giả sử bạn có ít nhất hai GPU, đoạn mã sau sẽ tạo ra một mảng ngẫu nhiên trên `gpu(1)`.
 
 ```{.python .input}
 y = np.random.uniform(size=(2, 3), ctx=try_gpu(1))
@@ -229,7 +235,7 @@ y
 ### Copying
 -->
 
-### *dịch tiêu đề phía trên*
+### Sao lưu
 
 <!--
 If we want to compute $\mathbf{x} + \mathbf{y}$ we need to decide where to perform this operation. 
@@ -238,20 +244,23 @@ For instance, as shown in :numref:`fig_copyto`, we can transfer $\mathbf{x}$ to 
 The runtime engine would not know what to do, it cannot find data on the same device and it fails.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta muốn tính $\mathbf{x} + \mathbf{y}$ thì ta cần quyết định nơi thực hiện phép tính này.
+Chẳng hạn, như trong :numref:`fig_copyto`, ta có thể chuyển $\mathbf{x}$ sang `gpu(1)` và thực hiện phép tính ở đó.
+*Đừng* đơn giản thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
+Công cụ thời gian chạy sẽ không biết phải làm gì, nó không thể tìm thấy dữ liệu trên cùng một thiết bị và nó bị lỗi.
 
 <!--
 ![Copyto copies arrays to the target device](../img/copyto.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/copyto.svg)
+![Lệnh copyto sao chép các mảng đến thiết bị đích](../img/copyto.svg)
 :label:`fig_copyto`
 
 <!--
 `copyto` copies the data to another device such that we can add them. Since $\mathbf{y}$ lives on the second GPU we need to move $\mathbf{x}$ there before we can add the two.
 -->
 
-*dịch đoạn phía trên*
+Lệnh `copyto` sao chép dữ liệu sang một thiết bị khác để ta có thể thêm chúng. Vì $\mathbf{y}$ tồn tại trên GPU thứ hai, ta cần di chuyển $\mathbf{x}$ trước khi ta có thể thêm hai.
 
 
 ```{.python .input  n=7}
