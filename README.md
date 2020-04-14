@@ -45,7 +45,7 @@ Với các chương (2., 3., ...)
     * [x] 3.5. [Bộ dữ liệu Phân loại Ảnh (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
     * [x] 3.6. [Lập trình Hồi quy Sofmax từ đầu](chapter_linear-networks/softmax-regression-scratch_vn.md)
     * [x] 3.7. [Cách lập trình súc tích Hồi quy Softmax](chapter_linear-networks/softmax-regression-gluon_vn.md)
-* [-] 4. [Perceptron Đa tầng](chapter_multilayer-perceptrons/index_vn.md)
+* [x] 4. [Perceptron Đa tầng](chapter_multilayer-perceptrons/index_vn.md)
     * [x] 4.1. [Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp_vn.md)
     * [x] 4.2. [Lập trình Perceptron Đa tầng từ đầu](chapter_multilayer-perceptrons/mlp-scratch_vn.md)
     * [x] 4.3. [Cách lập trình súc tích Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
@@ -54,22 +54,22 @@ Với các chương (2., 3., ...)
     * [x] 4.6. [Dropout](chapter_multilayer-perceptrons/dropout_vn.md)
     * [x] 4.7. [Lan truyền Xuôi, Lan truyền Ngược và Đồ thị Tính toán](chapter_multilayer-perceptrons/backprop_vn.md)
     * [x] 4.8. [Sự ổn định Số học và Sự khởi tạo](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
-    * [-] 4.9. [Considering the Environment](chapter_multilayer-perceptrons/environment_vn.md)
-    * [-] 4.10. [Predicting House Prices on Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
+    * [x] 4.9. [Cân nhắc tới Môi trường](chapter_multilayer-perceptrons/environment_vn.md)
+    * [x] 4.10. [Dự đoán Giá Nhà trên Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
 * [ ] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
     * [-] 5.1. [Tầng và Khối](chapter_deep-learning-computation/model-construction_vn.md)
     * [-] 5.2. [Quản lý Tham số](chapter_deep-learning-computation/parameters_vn.md)
-    * [-] 5.3. [Deferred Initialization](chapter_deep-learning-computation/deferred-init_vn.md)
+    * [-] 5.3. [Khởi tạo trễ](chapter_deep-learning-computation/deferred-init_vn.md)
     * [-] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
     * [-] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
     * [-] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
-* [ ] 6. Convolutional Neural Networks
-    * [ ] 6.1. From Dense Layers to Convolutions
-    * [ ] 6.2. Convolutions for Images
-    * [ ] 6.3. Padding and Stride
-    * [ ] 6.4. Multiple Input and Output Channels
-    * [ ] 6.5. Pooling
-    * [ ] 6.6. Convolutional Neural Networks (LeNet)
+* [ ] 6. [Mạng nơ-ron Tích chập](chapter_convolutional-neural-networks/index_vn.md)
+    * [-] 6.1. [From Dense Layers to Convolutions](chapter_convolutional-neural-networks/why-conv_vn.md)
+    * [-] 6.2. [Convolutions for Images](chapter_convolutional-neural-networks/conv-layer_vn.md)
+    * [-] 6.3. [Padding and Stride](chapter_convolutional-neural-networks/padding-and-strides_vn.md)
+    * [-] 6.4. [Multiple Input and Output Channels](chapter_convolutional-neural-networks/channels_vn.md)
+    * [ ] 6.5. [Pooling](chapter_convolutional-neural-networks/pooling_vn.md)
+    * [ ] 6.6. [Convolutional Neural Networks (LeNet)](chapter_convolutional-neural-networks/lenet_vn.md)
 * [ ] 7. Modern Convolutional Neural Networks
     * [ ] 7.1. Deep Convolutional Neural Networks (AlexNet)
     * [ ] 7.2. Networks Using Blocks (VGG)
@@ -161,7 +161,7 @@ Với các chương (2., 3., ...)
     * [ ] 16.1. Generative Adversarial Networks
     * [ ] 16.2. Deep Convolutional Generative Adversarial Networks
 * [ ] 17. [Phụ lục: Toán học cho Học Sâu](chapter_appendix_math/index_vn.md)
-    * [x] 17.1. [Các phép toán Hình Học và Đại Số Tuyến Tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
+    * [x] 17.1. [Các phép toán Hình học và Đại số Tuyến tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
     * [ ] 17.2. Eigendecompositions
     * [x] 17.3. [Giải tích một biến](chapter_appendix_math/single-variable-calculus_vn.md)
     * [ ] 17.4. Multivariable Calculus
