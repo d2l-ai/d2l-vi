@@ -468,7 +468,7 @@ Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng
 Ta kí hiệu nhãn $z_i$ bằng 1 cho dữ liệu từ phân phối $p$ và -1 cho dữ liệu từ $q$.
 Lúc này xác suất trong một bộ dữ liệu được trộn lẫn sẽ là
 
-$$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ and hence } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.$$
+$$P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ và~từ~đó } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.$$
 
 <!--
 Hence, if we use a logistic regression approach where $P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-f(\mathbf{x}))}$ it follows that
@@ -849,3 +849,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Minh Thư
 * Nguyễn Thành Nhân
 * Phạm Hồng Vinh
+* Vũ Hữu Tiệp

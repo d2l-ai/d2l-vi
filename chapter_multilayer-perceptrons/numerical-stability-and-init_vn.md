@@ -467,26 +467,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lý Phi Long
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Nguyễn Văn Tâm
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-<!-- Phần 3 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
 * Bùi Chí Minh
-* Đoàn Võ Duy Thanh
-* Lê Khắc Hồng Phúc
-* Lý Phi Long
+* Phạm Hồng Vinh

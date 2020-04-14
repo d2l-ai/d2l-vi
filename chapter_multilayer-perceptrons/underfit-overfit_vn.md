@@ -857,7 +857,6 @@ Các mô hình học máy cần phải được bảo vệ khỏi việc quá kh
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2341)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-* 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:

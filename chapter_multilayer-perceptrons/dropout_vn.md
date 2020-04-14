@@ -191,8 +191,8 @@ $$
 \begin{aligned}
 h' =
 \begin{cases}
-    0 & \text{ with probability } p \\
-    \frac{h}{1-p} & \text{ otherwise}
+    0 & \text{ với~xác~suất } p \\
+    \frac{h}{1-p} & \text{ khác }
 \end{cases}
 \end{aligned}
 $$
@@ -258,7 +258,7 @@ if the predictions agree across many different dropout masks, then we might say 
 For now we will put off uncertainty estimation for subsequent chapters and volumes.
 -->
 
-Thông thường, ***chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra***.
+Thông thường, **chúng ta sẽ vô hiệu hóa dropout tại thời điểm kiểm tra**.
 Với một mô hình đã huấn luyện và một mẫu kiểm tra, ta sẽ không thực hiện loại bỏ bất kỳ nút nào (do đó cũng không cần chuẩn hóa).
 Tuy nhiên cũng có một vài ngoại lệ. Một vài nhà nghiên cứu sử dụng dropout tại thời điểm kiểm tra như một thủ thuật đề ước lượng *độ bất định* trong dự đoán của mạng nơ-ron: nếu các dự đoán giống nhau với nhiều mặt nạ dropout khác nhau, ta có thể nói rằng mạng đó đáng tin cậy hơn.
 Hiện tại, ta sẽ để dành phần ước lượng độ bất định này cho các chương sau.
