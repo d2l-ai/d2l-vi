@@ -150,7 +150,7 @@ net[0].weight.grad()
 ### All Parameters at Once
 -->
 
-### *dịch tiêu đề phía trên*
+### Tất cả Các tham số Cùng lúc
 
 <!--
 Accessing parameters as described above can be a bit tedious, 
@@ -161,8 +161,12 @@ It does so by iterating over all constituents of a block and calls `collect_para
 To see the difference consider the following:
 -->
 
-*dịch đoạn phía trên*
-
+Truy cập các tham số như mô tả phía trên có thể hơi dài dòng,
+cụ thể nếu ta có nhiều khối phức tạp hơn, hoặc nhiều khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối),
+vì ta cần phải duyệt qua toàn bộ cây theo thứ tự ngược với cách các khối được xây dựng.
+Để tránh điều này, các khối được thêm vào một phương pháp `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển sao cho ta có thể dễ dàng duyệt trong nó.
+Nó thực hiện bằng cách lặp qua các thành phần của một khối và gọi `collect_params` trên các khối con khi cần thiết.
+Để thấy được sự khác nhau ta hãy xem ví dụ sau:
 
 ```{.python .input  n=6}
 # parameters only for the first layer
@@ -176,8 +180,8 @@ This provides us with a third way of accessing the parameters of the network.
 If we wanted to get the value of the bias term of the second layer we could simply use this:
 -->
 
-*dịch đoạn phía trên*
-
+Nó cung cấp chúng ta cách thứ ba để truy cập các tham số của mạng.
+Nếu muốn lấy giá trị của hệ số điều chỉnh của tầng thứ hai, đơn giản ta có thể dùng: 
 
 ```{.python .input  n=7}
 net.collect_params()['dense1_bias'].data()
@@ -188,8 +192,8 @@ Throughout the book we will see how various blocks name their subblocks (Sequent
 This makes it very convenient to use regular expressions to filter out the required parameters.
 -->
 
-*dịch đoạn phía trên*
-
+Xuyên suốt cuốn sách này ta sẽ thấy cách các loại khối khác nhau định danh khối con của chúng (khối Sequential đơn giản là đánh số các khối con).
+Điều này làm nó thuận tiện rất nhiều cho việc sử dụng các biểu thức chính quy để lọc ra các tham số cần thiết.
 
 ```{.python .input  n=8}
 print(net.collect_params('.*weight'))
@@ -200,15 +204,15 @@ print(net.collect_params('dense0.*'))
 ### Rube Goldberg Striking Again
 -->
 
-### *dịch tiêu đề phía trên*
+### Rube Goldberg Lại Nổi lên
 
 <!--
 Let's see how the parameter naming conventions work if we nest multiple blocks inside each other. 
 For that we first define a function that produces blocks (a block factory, so to speak) and then we combine these inside yet larger blocks.
 -->
 
-*dịch đoạn phía trên*
-
+Ta hãy xem cách các quy ước định danh tham số hoạt động nếu ta chồng nhiều khối lẫn nhau.
+Trước hết ta định nghĩa một hàm sản xuất các khối (một nhà máy khối, có thể tạm gọi như vậy) và sau đó ta kết hợp chúng vào bên trong các khối lớn hơn.
 
 ```{.python .input  n=20}
 def block1():
@@ -235,8 +239,8 @@ Now that we are done designing the network, let's see how it is organized.
 `collect_params` provides us with this information, both in terms of naming and in terms of logical structure.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta đã xong phần thiết kế mạng, hãy xem cách nó được tổ chức.
+`collect_params` cung cấp chúng ta thông tin này, cả về cách định danh lẫn cấu trúc logic.
 
 ```{.python .input}
 print(rgnet.collect_params)
@@ -248,8 +252,8 @@ Since the layers are hierarchically generated, we can also access them according
 For instance, to access the first major block, within it the second subblock and then within it, in turn the bias of the first layer, we perform the following.
 -->
 
-*dịch đoạn phía trên*
-
+Bởi vì các tầng được sinh ra theo cơ chế phân cấp, ta có thể truy cập chúng theo cách này.
+Chẳng hạn, để truy cập khối chính đầu tiên, bên trong nó là khối con thứ hai và tiếp theo bên trong nó, trong trường hợp này là hệ số điều chỉnh của tầng đầu tiên, ta thực hiện như sau.
 
 ```{.python .input}
 rgnet[0][1][0].bias.data()
@@ -491,7 +495,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Lê Cao Thăng
 
 <!-- Phần 4 -->
 *
