@@ -85,6 +85,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dataset (data set)     | tập dữ liệu                     |                                              |
 | data manipulation      | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning          | học sâu                         |                                              |
+| deferred initialization | khởi tạo trễ | |
 | dev set                | tập phát triển                  |                                              |
 | dev set performance    | chất lượng trên tập phát triển  |                                              |
 | development set        | tập phát triển                  |                                              |
@@ -124,6 +125,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false negative      | âm tính giả      |                                              |
 | false positive      | dương tính giả   |                                              |
 | feature             | đặc trưng        |                                              |
+| filter (CNN) | bộ lọc | |
 | fit                 | khớp             | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản   | [https://git.io/JvKet](https://git.io/JvKet) |
 | flatten             | trải phẳng       | [https://git.io/JvohO](https://git.io/JvohO) |
@@ -182,6 +184,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt               | Thảo luận tại                                |
 |-------------------------|--------------------------|----------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK) |
+| kernel (CNN) | bộ lọc | |
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
@@ -234,6 +237,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                            |                                                                                            |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
+| nonstationary distribution        | phân phối không dừng           |                                         |
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
@@ -255,6 +259,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại                                |
 |------------------------------------|----------------------------|----------------------------------------------|
+| padding | đệm  | |
 | partition function                 | hàm phân hoạch             | [https://git.io/JvQxE](https://git.io/JvQxE) |
 | pattern recognition                | nhận dạng mẫu              | [https://git.io/JvKeL](https://git.io/JvKeL) |
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
@@ -265,6 +270,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (động từ)                  | nằm ngang                  |                                              |
 | pipeline                           | pipeline                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
+| pooling | gộp | |
 | positive sample/example            | mẫu dương                  |                                              |
 | posterior                          | hậu nghiệm                 | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision                          | precision                  |                                              |
@@ -326,6 +332,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                                              |
+| stride | sải bước | |
 | subscript                       | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
 | superscript                     | chỉ số trên              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |

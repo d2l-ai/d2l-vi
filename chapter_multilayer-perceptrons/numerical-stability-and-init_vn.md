@@ -176,10 +176,10 @@ For the scale that we picked (the choice of the variance $\sigma^2=1$), the matr
 When this happens due to the initialization of a deep network, we have no chance of getting a gradient descent optimizer to converge.
 -->
 
-Một vấn đề đối lập, bùng nổ gradient, cũng có thể gây phiền toái không kém.
-Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gaussian và nhân chúng với một ma trận khởi tạo.
+Một vấn đề đối lập là bùng nổ gradient cũng có thể gây phiền toái không kém.
+Để giải thích việc này rõ hơn, chúng ta lấy $100$ ma trận ngẫu nhiên Gauss và nhân chúng với một ma trận ban đầu nào đó.
 Với khoảng giá trị mà ta đã chọn (phương sai $\sigma^2=1$), tích các ma trận bị bùng nổ số học.
-Nếu điều này xảy ra trong các mạng học sâu, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
+Khi khởi tạo các mạng nơ-ron sâu một cách không hợp lý, các bộ tối ưu dựa trên hạ gradient sẽ không thể hội tụ được.
 
 ```{.python .input  n=5}
 M = np.random.normal(size=(4, 4))
@@ -208,10 +208,10 @@ There is nothing special differentiating the first hidden unit vs the second hid
 In other words, we have permutation symmetry among the hidden units of each layer.
 -->
 
-Một vấn đề khác trong thiết kế mạng học sâu là tính đối xứng vốn có trong quá trình tham số hóa.
-Giả sử ta có một mạng học sâu với một tầng ẩn gồm hai nút, $h_1$ và $h_2$. 
-Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của lớp đầu tiên cũng như các trọng số của tầng đầu ra để đạt được một hàm tương tự.
-Không có gì đặc biệt khác nhau giữa việc vi phân nút ẩn đầu tiên với nút ẩn thứ hai.
+Một vấn đề khác trong việc thiết kế mạng nơ-ron sâu là tính đối xứng hiện hữu trong quá trình tham số hóa.
+Giả sử ta có một mạng nơ-ron sâu với một tầng ẩn gồm hai nút $h_1$ và $h_2$. 
+Trong trường hợp này, ta có thể hoán vị trọng số $\mathbf{W}_1$ của tầng đầu tiên, rồi làm điều tương tự với các trọng số của tầng đầu ra để thu được một hàm giống hệt ban đầu.
+Ta có thể thấy rằng không có sự khác biệt nào giữa nút ẩn đầu tiên với nút ẩn thứ hai. <!-- tác giả dùng từ differentiate dễ nhầm quá -->
 Nói cách khác, ta có tính đối xứng hoán vị giữa các nút ẩn của từng tầng.
 
 <!--
@@ -224,11 +224,11 @@ Note that while SGD would not break this symmetry, dropout regularization would!
 -->
 
 Đây không chỉ là phiền toái về mặt lý thuyết.
-Tưởng tượng điều gì sẽ xảy ra nếu ta đặt giá trị ban đầu cho tất cả các thông số của các tầng theo cách $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
-Trong trường hợp này, các gradient cho tất cả các chiều là giống hệt nhau: nên mỗi nút không chỉ có cùng giá trị mà cũng sẽ có bước cập nhật giống nhau.
-Hạ gradient ngẫu nhiên sẽ không bao giờ phá vỡ tính đối xứng sẵn có và ta có thể sẽ không hiện thực được sức mạnh biểu diễn của mạng.
+Thử hình dung xem điều gì sẽ xảy ra nếu ta khởi tạo giá trị của mọi tham số ở các tầng như sau: $\mathbf{W}_l = c$ với hằng số $c$ nào đó.
+Trong trường hợp này thì các gradient cho tất cả các chiều là giống hệt nhau, nên mỗi nút không chỉ có cùng giá trị mà chúng còn có bước cập nhật giống nhau.
+Bản thân phương pháp hạ gradient ngẫu nhiên không thể phá vỡ tính đối xứng này và ta sẽ không hiện thực hóa được sức mạnh biểu diễn của mạng.
 Tầng ẩn sẽ hoạt động như thể nó chỉ có một nút duy nhất.
-Bên cạnh đó, lưu ý rằng hạ gradient ngẫu nhiên sẽ không phá vỡ cân đối này thì nó sẽ bị phá vỡ bởi điều chuẩn hóa dropout!
+Nhưng hãy lưu ý rằng dù hạ gradient ngẫu nhiên không thể phá vỡ được tính đối xứng, kỹ thuật điều chuẩn dropout lại hoàn toàn có thể!
 
 <!--
 ## Parameter Initialization
@@ -247,9 +247,8 @@ One way of addressing---or at least mitigating---the issues raised above is thro
 Additional care during optimization and suitable regularization can further enhance stability.
 -->
 
-Một cách giải quyết, hay ít nhất là giảm nhẹ các vấn đề được nêu ra ở phía trên được thực hiện thông qua việc khởi tạo cẩn thận các vector trọng số. 
-Bằng cách này ta có thể chắc chắn rằng (ít nhất là ban đầu) các gradient không biến mất và chúng duy trì ở một tỉ lệ hợp lí trong đó trọng số mạng không phân kỳ.
-Cộng thêm sự chăm sóc đặc biệt trong quá trình tối ưu hóa và điều chuẩn phù hợp sẽ đảm bảo mọi thứ không bao giờ trở nên quá tệ.
+Một cách giải quyết, hay ít nhất giảm thiểu các vấn đề được nêu ở trên là khởi tạo tham số một cách cẩn thận.
+Chỉ cần cẩn trọng một chút trong quá trình tối ưu hóa và điều chuẩn mô hình phù hợp, ta có thể cải thiện tính ổn định của quá trình học.
 
 <!--
 ### Default Initialization
@@ -264,9 +263,9 @@ MXNet will use the default random initialization method, sampling each weight pa
 Both choices tend to work well in practice for moderate problem sizes.
 -->
 
-Trong các phần trước, ví dụ, trong :numref:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
-Nếu phương thức khởi tạo không được xác định rõ, như là `net.initialize()`, MNXet sẽ sử dụng phương thức khởi tạo mặc định ngẫu nhiên: mỗi thành tố của trọng tham số được lấy mẫu ngẫu nhiên với phân phối đồng đều $U[-0.07, 0.07]$ và các tham số điều chỉnh đều được đưa về giá trị $0$.
-Cả hai lựa chọn đều hoạt động tốt trong thực tế cho các vấn đề cỡ trung. 
+Trong các phần trước, ví dụ như trong :numref:`sec_linear_gluon`, ta đã sử dụng `net.initialize(init.Normal(sigma=0.01))` để khởi tạo các giá trị cho trọng số.
+Nếu ta không chỉ định sẵn một phương thức khởi tạo như `net.initialize()`, MXNet sẽ sử dụng phương thức khởi tạo ngẫu nhiên mặc định: các trọng số được lấy mẫu ngẫu nhiên từ phân phối đều $U[-0.07, 0.07]$, còn các hệ số điều chỉnh đều được đưa về giá trị $0$.
+Cả hai lựa chọn đều hoạt động tốt với các bài toán cỡ trung trong thực tiễn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -282,12 +281,13 @@ Cả hai lựa chọn đều hoạt động tốt trong thực tế cho các v�
 
 ### Khởi tạo Xavier
 
+
 <!--
 Let's look at the scale distribution of the activations of the hidden units $h_{i}$ for some layer. 
 They are given by
 -->
 
-Ta hãy xem phân phối tỉ lệ của giá trị kích hoạt các nút ẩn $h_{i}$ cho một vài tầng được đưa ra bởi
+Hãy cùng nhìn vào phân phối khoảng giá trị kích hoạt của các nút ẩn $h_{i}$ ở một tầng nào đó:
 
 $$h_{i} = \sum_{j=1}^{n_\mathrm{in}} W_{ij} x_j.$$
 
@@ -299,9 +299,9 @@ In this case, we can compute mean and variance of $h_i$ as follows:
 -->
 
 Các trọng số $W_{ij}$ đều được lấy mẫu độc lập từ cùng một phân phối.
-Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng 0 và phương sai $\sigma^2$ (điều này không có nghĩa là phân phối đấy phải là dạng Gaussian, chỉ có nghĩa số trung bình và phương sai cần phải tồn tại).
-Ta không thực sự có nhiều kiểm soát trên các đầu vào trên tầng $x_j$ nhưng hãy tiếp tục với giả định hơi phi thực tế là chúng có trung bình bằng 0, phương sai là $\gamma^2$ và độc lập với $\mathbf{W}$.
-Trong trường hợp này, ta có thể tính toán số trung bình và phương sai của $h_i$ theo cách sau:
+Hơn nữa, ta giả sử rằng phân phối này có trung bình bằng không và phương sai $\sigma^2$ (đây không bắt buộc phải là phân phối Gauss, chỉ là ta cần phải cho trước trung bình và phương sai).
+Tạm thời hãy giả sử rằng đầu vào của tầng $x_j$ cũng có trung bình bằng không và phương sai $\gamma^2$, độc lập với $\mathbf{W}$.
+Trong trường hợp này, ta có thể tính được trung bình và phương sai của $h_i$ như sau:
 
 $$
 \begin{aligned}
@@ -324,15 +324,15 @@ Instead, we simply try to satisfy:
 
 Một cách để giữ phương sai cố định là đặt $n_\mathrm{in} \sigma^2 = 1$.
 Bây giờ hãy xem xét lan truyền ngược.
-Ở đó ta phải đối mặt với vấn đề tương tự, mặc dù gradients được truyền từ các lớp trên cùng.
-Đó là, thay vì $\mathbf{W} \mathbf{w}$, ta cần đối phó với $\mathbf{W}^\top \mathbf{g}$, trong đó $\mathbf{g}$ là gradient đến từ lớp phía trên.
-Sử dụng lý do tương tự như thế để lan truyền xuôi, ta thấy phương sai của các gradient có thể tăng lên trừ khi $n_\mathrm{out} \sigma^2 = 1$.
-Điều này làm ta rơi vào tình trạng khó xử: ta không thể thỏa mãn hai điều kiện cùng một lúc.
-Thay vào đó, ta chỉ đơn giản cố gắng thỏa mãn:
+Ở đó ta phải đối mặt với vấn đề tương tự, mặc dù gradient được truyền từ các tầng trên cùng.
+Tức thay vì $\mathbf{W} \mathbf{w}$, ta cần đối phó với $\mathbf{W}^\top \mathbf{g}$, trong đó $\mathbf{g}$ là gradient đến từ lớp phía trên.
+Sử dụng lý luận tương tự với lan truyền xuôi, ta có thể thấy phương sai của các gradient sẽ bùng nổ trừ khi $n_\mathrm{out} \sigma^2 = 1$.
+Điều này khiến ta rơi vào một tình huống khó xử: ta không thể thỏa mãn cả hai điều kiện cùng một lúc.
+Thay vào đó, ta cố thỏa mãn điều kiện sau:
 
 $$
 \begin{aligned}
-\frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ or equivalently }
+\frac{1}{2} (n_\mathrm{in} + n_\mathrm{out}) \sigma^2 = 1 \text{ hoặc tương đương }
 \sigma = \sqrt{\frac{2}{n_\mathrm{in} + n_\mathrm{out}}}.
 \end{aligned}
 $$
@@ -354,11 +354,12 @@ Plugging $a^2/3$ into our condition on $\sigma^2$, yields the suggestion to init
 
 -->
 
-Đây là lý do làm cơ sở cho cách khởi tạo Xavier :cite:`Glorot.Bengio.2010`.
-Nó hoạt động đủ tốt trong thực tế.
-Đối với các biến ngẫu nhiên Gaussian, khởi tạo Xavier chọn phân phối chuẩn với trung bình bằng 0 và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.  
-Dành cho các biến ngẫu nhiên được phân bố đồng đều $U[-a, a]$, chú ý rằng phương sai của chúng được cho bởi $a^2/3$.
-Thay $a^2/3$ vào điều kiện trên $\sigma^2$, ta có lý do nên khởi tạo đồng đều với $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$. 
+Đây là lý luận đằng sau phương thức khởi tạo *Xavier*, được đặt tên theo người đã tạo ra nó :cite:`Glorot.Bengio.2010`.
+Bây giờ nó đã trở thành phương thức tiêu chuẩn và rất hữu dụng trong thực tiễn.
+Thông thường, phương thức này lấy mẫu cho trọng số từ phân phối Gauss với trung bình bằng không và phương sai $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.
+Ta cũng có thể tận dụng cách hiểu trực quan của Xavier để chọn phương sai khi lấy mẫu từ một phân phối đều.
+Chú ý rằng phân phối $U[-a, a]$ có phương sai là $a^2/3$.
+Thay $\sigma^2$ bằng $a^2/3$ vào điều kiện trên, ta biết được rằng ta nên khởi tạo theo phân phối đều $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -368,7 +369,7 @@ Thay $a^2/3$ vào điều kiện trên $\sigma^2$, ta có lý do nên khởi t�
 ### Beyond
 -->
 
-### Xa hơn nữa
+### Sâu xa hơn nữa
 
 <!--
 The reasoning above barely scratches the surface of modern approaches to parameter initialization.
@@ -391,10 +392,10 @@ Perhaps you will stumble across (or even invent!) a clever idea and contribute a
 
 Các lập luận đưa ra ở trên mới chỉ chạm tới bề mặt của những kỹ thuật khởi tạo tham số hiện đại.
 Trên thực tế, MXNet có nguyên một mô-đun [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) với hàng chục các phương pháp khởi tạo dựa theo thực nghiệm khác nhau đã được lập trình sẵn.
-Hơn nữa, cách khởi tạo vẫn đang là một chủ đề rất được quan tâm trong các nghiên cứu lý thuyết căn bản về tối ưu hóa mạng nơ-ron.
-Một số phương pháp thực nghiệm này đặc biệt phù hợp khi tham số bị ràng buộc (tức tham số của các phần khác nhau trong mạng được chia sẻ với nhau), trong nhiệm vụ siêu phân giải, mô hình chuỗi và những vấn đề liên quan. 
-Chúng tôi gợi ý với những độc giả quan tâm có thể tìm xem kĩ hơn về các kỹ thuật có trong mô-đun này và tìm hiểu thêm những nghiên cứu gần đây về vấn đề khởi tạo tham số.
-Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách lập trình chúng vào MXNet, hoặc thậm chí là tự phát minh ra phương pháp của riêng mình.
+Hơn nữa, các phương pháp khởi tạo vẫn đang là một chủ đề nghiên cứu căn bản rất được quan tâm trong học sâu.
+Trong số đó là những phương pháp dựa trên thực nghiệm dành riêng cho trường hợp tham số bị trói buộc (được chia sẻ), cho bài toán siêu phân giải, mô hình chuỗi và nhiều trường hợp khác. 
+Nếu có hứng thú, chúng tôi khuyên bạn nên đào sâu hơn vào mô-đun này, đọc các bài báo mà có đề xuất và phân tích các phương pháp thực nghiệm, và rồi tự khám phá các bài báo mới nhất về chủ đề này.
+Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thông minh và lập trình nó để đóng góp cho MXNet.
 
 
 <!--
@@ -417,9 +418,9 @@ Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách 
 * Random initialization is key to ensure that symmetry is broken before optimization.
 -->
 
-* Tiêu biến hay bùng nổ gradient đều là những vấn đề phổ biến trong những mạng rất sâu, trừ khi ta có nhiều sự quan tâm nhằm đảm bảo gradient và các tham số vẫn được kiểm soát tốt.
-* Các kĩ thuật khởi tạo tham số dựa trên kinh nghiệm là cần thiết để đảm bảo ít nhất rằng gradient ban đầu không bị quá lớn hay quá nhỏ.
-* ReLU giải quyết một trong những vấn đề về tiêu biến gradient, cụ thể là việc tiêu biến gradient cho các đầu vào rất lớn. Điều này có thể tăng tốc độ hội tụ đáng kể.
+* Tiêu biến hay bùng nổ gradient đều là những vấn đề phổ biến trong những mạng nơ-ron sâu. Việc khởi tạo tham số cẩn thận là rất cần thiết để đảm bảo gradient và các tham số được kiểm soát tốt.
+* Các kĩ thuật khởi tạo tham số dựa trên thực nghiệm là cần thiết để đảm bảo rằng gradient ban đầu không quá lớn hay quá nhỏ.
+* Hàm kích hoạt ReLU giải quyết được vấn đề tiêu biến gradient. Điều này có thể làm tăng tốc độ hội tụ.
 * Khởi tạo ngẫu nhiên là chìa khóa để đảm bảo tính đối xứng bị phá vỡ trước khi tối ưu hóa.
 
 <!--
@@ -435,10 +436,10 @@ Có thể bạn sẽ gặp được một ý tưởng hay và đóng góp cách 
 4. If we know that some terms diverge, can we fix this after the fact? Look at the paper on LARS for inspiration :cite:`You.Gitman.Ginsburg.2017`.
 -->
 
-1. Bạn có thể thiết kế các trường hợp phá vỡ đối xứng khác bên cạnh đối xứng hoán vị?
-2. Ta có thể khởi tạo tất cả trọng số ở trong mạng hồi quy tuyến tính hoặc trong hồi quy softmax cùng một giá trị hay không?
-3. Hãy tìm hiểu thêm về phân cách tích ràng buộc trị riêng của phép nhân 2 ma trận. Nó cho ta biết được gì về điều kiện đảm bảo gradient có độ lớn vừa phải?
-4. Nếu biết rằng mô hình có một vài số hạng phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:`You.Gitman.Ginsburg.2017`.
+1. Ngoài tính đối xứng hoán vị giữa các tầng, bạn có thể nghĩ ra các trường hợp mà mạng nơ-ron thể hiện tính đối xứng khác cần được phá vỡ không?
+2. Ta có thể khởi tạo tất cả trọng số trong hồi quy tuyến tính hoặc trong hồi quy softmax với cùng một giá trị hay không?
+3. Hãy tra cứu cận chính xác của trị riêng cho tích hai ma trận. Nó cho ta biết gì về việc đảm bảo rằng gradient hợp lý?
+4. Nếu biết rằng một vài số hạng sẽ phân kỳ, bạn có thể khắc phục vấn đề này không? Bạn có thể tìm cảm hứng từ bài báo LARS :cite:`You.Gitman.Ginsburg.2017`.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 

@@ -5,7 +5,7 @@
 # Weight Decay
 -->
 
-# Phân rã trọng số
+# Suy giảm trọng số
 :label:`sec_weight_decay`
 
 <!--
@@ -14,9 +14,9 @@ Recall that we can always mitigate overfitting by going out and collecting more 
 For now, we can assume that we already have as much high-quality data as our resources permit and focus on regularization techniques.
 -->
 
-Đến giờ chúng ta đã mô tả vấn đề quá khớp, ta sẽ tìm hiểu thêm một vài kỹ thuật chuẩn trong việc điều chuẩn mô hình.
-Nhắc lại rằng chúng ta luôn có thể tránh được hiện tượng quá khớp bằng cách thu thập thêm nhiều dữ liệu huấn luyện, nhưng việc này có thể rất tốn kém, tốn thời gian, hoặc có thể nằm ngoài khả năng của ta, nên trong ngắn hạn, nó là bất khả thi.
-Hiện tại, chúng ta có thể giả sử rằng ta đã có được lượng dữ liệu chất lượng cao nhiều nhất có thể và tập trung vào các kỹ thuật điều chuẩn.
+Bởi chúng ta đã mô tả xong vấn đề quá khớp, giờ ta có thể tìm hiểu một vài kỹ thuật tiêu chuẩn trong việc điều chuẩn mô hình. 
+Nhắc lại rằng chúng ta luôn có thể giảm thiểu hiện tượng quá khớp bằng cách thu thập thêm dữ liệu huấn luyện, nhưng trong trường hợp ngắn hạn thì giải pháp này có thể không khả thi do quá tốn kém, lãng phí thời gian, hoặc nằm ngoài khả năng của ta.
+Hiện tại, chúng ta có thể giả sử rằng ta đã thu thập được một lượng tối đa dữ liệu chất lượng và sẽ tập trung vào các kỹ thuật điều chuẩn. 
 
 <!--
 Recall that in our polynomial curve-fitting example (:numref:`sec_model_selection`) we could limit our model's capacity simply by tweaking the degree of the fitted polynomial.
@@ -28,13 +28,13 @@ The degree of a monomial is the sum of the powers.
 For example, $x_1^2 x_2$, and $x_3 x_5^2$ are both monomials of degree $3$.
 -->
 
-Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn độ phức tạp của mô hình đơn giản bằng cách chỉnh số bậc của đa thức.
-Đúng như vậy, giới hạn số đặc trưng đầu vào là một kỹ thuật phổ biến để tránh hiện tượng quá khớp.
-Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mạnh tay.
-Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều.
-Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, thứ đơn thuần chỉ là tích của lũy thừa các biến.
-Bậc của một đơn thức là tổng của các số mũ.
-Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$.
+Nhắc lại rằng trong ví dụ về việc khớp đường cong đa thức (:numref:`sec_model_selection`), chúng ta có thể giới hạn năng lực của mô hình bằng việc đơn thuần điều chỉnh số bậc của đa thức. 
+Đúng như vậy, giới hạn số đặc trưng là một kỹ thuật phổ biến để tránh hiện tượng quá khớp. 
+Tuy nhiên, việc đơn thuần loại bỏ các đặc trưng có thể hơi quá mức cần thiết.
+Quay lại với ví dụ về việc khớp đường cong đa thức, hãy xét chuyện gì sẽ xảy ra với đầu vào nhiều chiều. 
+Ta mở rộng đa thức cho dữ liệu đa biến bằng việc thêm các *đơn thức*, hay nói đơn giản là thêm tích của lũy thừa các biến. 
+Bậc của một đơn thức là tổng của các số mũ. 
+Ví dụ, $x_1^2 x_2$, và $x_3 x_5^2$ đều là các đơn thức bậc $3$. 
 
 <!--
 Note that the number of terms with degree $d$ blows up rapidly as $d$ grows larger.
@@ -43,10 +43,10 @@ Even small changes in degree, say, from $2$ to $3$ dramatically increase the com
 Thus we often need a more fine-grained tool for adjusting function complexity.
 -->
 
-Lưu ý rằng số lượng phần tử bậc $d$ tăng cực kỳ nhanh khi $d$ tăng.
-Cho $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
-Thậm chí chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt.
-Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số.
+Lưu ý rằng số lượng đơn thức bậc $d$ tăng cực kỳ nhanh theo $d$. 
+Với $k$ biến, số lượng các đơn thức bậc $d$ là ${k - 1 + d} \choose {k - 1}$.
+Chỉ một thay đổi nhỏ về số bậc, ví dụ từ $2$ lên $3$ cũng sẽ tăng độ phức tạp của mô hình một cách chóng mặt. 
+Do vậy, chúng ta cần có một công cụ tốt hơn để điều chỉnh độ phức tạp của hàm số. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -67,11 +67,11 @@ There is no single right answer.
 In fact, entire branches of mathematics, including parts of functional analysis and the theory of Banach spaces are devoted to answering this issue.
 -->
 
-*Phân rã trọng số* (thông thường gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số.
-Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không.
+*Suy giảm trọng số* (thường được gọi là điều chuẩn *L2*), có thể là kỹ thuật được sử dụng rộng rãi nhất để điều chuẩn các mô hình học máy có tham số. 
+Kỹ thuật này dựa trên một quan sát cơ bản: trong tất cả các hàm $f$, hàm $f = 0$ (gán giá trị $0$ cho tất cả các đầu vào) có lẽ là hàm *đơn giản nhất* và ta có thể đo độ phức tạp của hàm số bằng khoảng cách giữa nó và giá trị không. 
 Nhưng cụ thể thì ta đo khoảng cách giữa một hàm số và số không như thế nào?
-Không chỉ có duy nhất một câu trả lời đúng.
-Trong thực tế, có nguyên cả các nhánh toán học gồm một phần giải tích hàm và lý thuyết không gian Banach đều tập trung trả lời câu hỏi này.
+Không chỉ có duy nhất một câu trả lời đúng. 
+Trong thực tế, có những nhánh toán học được dành riêng để trả lời câu hỏi này, bao gồm một vài nhánh con của giải tích hàm và lý thuyết không gian Banach. 
 
 <!--
 One simple interpretation might be to measure the complexity of a linear function $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ by some norm of its weight vector, e.g., $|| \mathbf{w} ||^2$.
@@ -83,12 +83,12 @@ To illustrate things in code, let's revive our previous example from :numref:`se
 There, our loss was given by
 -->
 
-Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$.
-Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát.
-Do đó, ta thay thế mục tiêu ban đầu *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*.
-Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ hơn là giảm thiểu lỗi huấn luyện.
-Đó chính xác là những gì ta muốn.
-Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`.
+Một cách đơn giản để đo độ phức tạp của hàm tuyến tính $f(\mathbf{x}) = \mathbf{w}^\top \mathbf{x}$ là dựa vào chuẩn của vector trọng số, ví dụ như $|| \mathbf{w} ||^2$. 
+Phương pháp phổ biến nhất để đảm bảo rằng ta sẽ có một vector trọng số nhỏ là thêm chuẩn của nó (đóng vai trò như một thành phần phạt) vào bài toán tối thiểu hóa hàm mất mát. 
+Do đó, ta thay thế mục tiêu ban đầu: *tối thiểu hóa hàm mất mát dự đoán trên nhãn huấn luyện*, bằng mục tiêu mới, *tối thiểu hóa tổng của hàm mất mát dự đoán và thành phần phạt*. 
+Bây giờ, nếu vector trọng số tăng quá lớn, thuật toán học sẽ *tập trung* giảm thiểu chuẩn trọng số $|| \mathbf{w} ||^2$ thay vì giảm thiểu lỗi huấn luyện.
+Đó chính xác là những gì ta muốn. 
+Để minh họa mọi thứ bằng mã, hãy xét lại ví dụ hồi quy tuyến tính trong :numref:`sec_linear_regression`. 
 Ở đó, hàm mất mát được định nghĩa như sau:
 
 $$l(\mathbf{w}, b) = \frac{1}{n}\sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.$$
@@ -99,9 +99,9 @@ To penalize the size of the weight vector, we must somehow add $|| \mathbf{w} ||
 In practice, we characterize this tradeoff via the *regularization constant* $\lambda > 0$, a non-negative hyperparameter that we fit using validation data:
 -->
 
-Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh.
-Để phạt kích thước của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên cân bằng hàm mát mát thông thường với thành phần phạt mới này như thế nào?
-Trong thực tế, ta mô tả sự cân bằng này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định:
+Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh. 
+Để phạt độ lớn của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên đánh đổi hàm mát mát thông thường với thành phần phạt mới này như thế nào? 
+Trong thực tế, ta mô tả sự đánh đổi này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định: 
 
 $$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$
 
@@ -114,12 +114,12 @@ By squaring the L2 norm, we remove the square root, leaving the sum of squares o
 This makes the derivative of the penalty easy to compute (the sum of derivatives equals the derivative of the sum).
 -->
 
-Với $\lambda = 0$, ta thu lại được hàm mất mát gốc.
-Với $\lambda > 0$, ta hạn chế kích thước của $|| \mathbf{w} ||$.
-Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide).
-Ta làm điều này để thuận tiện cho việc tính toán.
-Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số.
-Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng).
+Với $\lambda = 0$, ta thu lại được hàm mất mát gốc. 
+Với $\lambda > 0$, ta giới hạn độ lớn của $|| \mathbf{w} ||$. 
+Bạn đọc nào tinh ý có thể tự hỏi tại sao ta dùng chuẩn bình phương chứ không phải chuẩn thông thường (nghĩa là khoảng cách Euclide). 
+Ta làm điều này để thuận tiện cho việc tính toán. 
+Bằng cách bình phương chuẩn L2, ta khử được căn bậc hai, chỉ còn lại tổng bình phương từng thành phần của vector trọng số. 
+Điều này giúp việc tính đạo hàm của thành phần phạt dễ dàng hơn (tổng các đạo hàm bằng đạo hàm của tổng). 
 
 <!--
 Moreover, you might ask why we work with the L2 norm in the first place and not, say, the L1 norm.
@@ -133,16 +133,16 @@ While L2-regularized linear models constitute the classic *ridge regression* alg
 a similarly fundamental model in statistics (popularly known as *lasso regression*).
 -->
 
-Trong thực tế, các lựa chọn khác đều hợp lệ và phổ biến trong thống kê.
-Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge*, hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*).
+Trong thực tế ngành thống kê, các lựa chọn khác đều hợp lệ và phổ biến. 
+Trong khi các mô hình tuyến tính được điều chuẩn-L2 tạo thành thuật toán *hồi quy ridge* (_ridge regression_), hồi quy tuyến tính được điều chuẩn-L1 cũng là một mô hình cơ bản trong thống kê (thường được gọi là *hồi quy lasso*---*lasso regression*). 
 
 <!--
 More generally, the $\ell_2$ is just one among an infinite class of norms call p-norms, many of which you might encounter in the future.
 In general, for some number $p$, the $\ell_p$ norm is defined as
 -->
 
-Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy.
-Thông thường, với một số $p$, chuẩn$\ell_p$ được định nghĩa là
+Một cách tổng quát, chuẩn $\ell_2$ chỉ là một trong vô số các chuẩn được gọi chung là chuẩn-p, và sau này bạn sẽ có thể gặp một vài chuẩn như vậy. 
+Thông thường, với một số $p$, chuẩn $\ell_p$ được định nghĩa là:
 
 $$\|\mathbf{w}\|_p^p := \sum_{i=1}^d |w_i|^p.$$
 
@@ -157,10 +157,10 @@ In practice, this might make them more robust to measurement error in a single v
 By contrast, L1 penalties lead to models that concentrate weight on a small set of features, which may be desirable for other reasons.
 -->
 
-Một lý do để sử dụng chuẩn L2 là vì nó phạt rất nặng những thành phần lớn của vector trọng số.
-Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng.
-Trong thực tế, điều này có thể giúp làm giảm ảnh hưởng do lỗi đo lường của từng biến đơn lẻ.
-Ngược lại, các hình phạt của L1 hướng đến các mô hình mà trọng số chỉ tập trung vào một số lượng nhỏ các đặc trưng, và ta có thể muốn điều này vì một vài lý do khác. 
+Một lý do để sử dụng chuẩn L2 là vì nó phạt nặng những thành phần lớn của vector trọng số.
+Việc này khiến thuật toán học thiên vị các mô hình có trọng số được phân bổ đồng đều cho một số lượng lớn các đặc trưng. 
+Trong thực tế, điều này có thể giúp giảm ảnh hưởng từ lỗi đo lường của từng biến đơn lẻ. 
+Ngược lại, lượng phạt L1 hướng đến các mô hình mà trọng số chỉ tập trung vào một số lượng nhỏ các đặc trưng, và ta có thể muốn điều này vì một vài lý do khác. 
 
 <!--
 The stochastic gradient descent updates for L2-regularized regression follow:
@@ -184,13 +184,13 @@ Whether we include a corresponding bias penalty $b^2$ can vary across implementa
 Often, we do not regularize the bias term of a network's output layer.
 -->
 
-Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được.
-Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$.
-Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "phân rã trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *phân rã* trọng số ở từng bước huấn luyện.
-Trái ngược với lựa chọn đặc trưng, phân rã trọng số cho ta một cơ chế liên tục cho việc thay đổi độ phức tạp của $f$.
-Các giá trị nhỏ của $\lambda$ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, trong khi các giá trị lớn của $\lambda$ ràng buộc $\mathbf{w}$ một cách đáng kể.
+Như trước đây, ta cập nhật $\mathbf{w}$ dựa trên hiệu của giá trị ước lượng và giá trị quan sát được. 
+Tuy nhiên, ta cũng sẽ thu nhỏ độ lớn của $\mathbf{w}$ về $0$. 
+Đó là lý do tại sao phương pháp này còn đôi khi được gọi là "suy giảm trọng số": nếu chỉ có số hạng phạt, thuật toán tối ưu sẽ *suy giảm* các trọng số ở từng bước huấn luyện. 
+Trái ngược với việc lựa chọn đặc trưng, suy giảm trọng số cho ta một cơ chế liên tục để thay đổi độ phức tạp của $f$. 
+Giá trị $\lambda$ nhỏ tương ứng với việc $\mathbf{w}$ không bị ràng buộc, còn giá trị $\lambda$ lớn sẽ ràng buộc $\mathbf{w}$ một cách đáng kể. 
 Còn việc có nên thêm lượng phạt cho hệ số điều chỉnh tương ứng $b^2$ hay không thì tùy thuộc ở mỗi cách lập trình, và có thể khác nhau giữa các tầng của mạng nơ-ron.
-Thông thường, ta không điều chuẩn hóa hệ số điều chỉnh của tầng đầu ra của mạng.
+Thông thường, ta không điều chuẩn hệ số điều chỉnh tại tầng đầu ra của mạng. 
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -208,7 +208,7 @@ We can illustrate the benefits of weight decay over feature selection through a 
 First, we generate some data as before
 -->
 
-Ta có thể minh họa các ưu điểm của phân rã trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu giả.
+Ta có thể minh họa các ưu điểm của suy giảm trọng số so với lựa chọn đặc trưng thông qua một ví dụ đơn giản với dữ liệu tự tạo. 
 Đầu tiên, ta tạo ra dữ liệu giống như trước đây
 
 <!--
@@ -225,8 +225,8 @@ To make the effects of overfitting pronounced, we can increase the dimensinoalit
 and work with a small training set containing only 20 example.
 -->
 
-lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và độ lệch chuẩn bằng 0.01.
-Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.
+lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị biến dạng bởi nhiễu Gauss với trung bình bằng không và phương sai bằng 0.01. 
+Để làm cho hiệu ứng của việc quá khớp trở nên rõ ràng, ta có thể tăng số chiều của bài toán lên $d = 200$ và làm việc với một tập huấn luyện nhỏ bao gồm chỉ 20 mẫu.  
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -269,7 +269,7 @@ Tiếp theo, chúng ta sẽ lập trình suy giảm trọng số từ đầu, ch
 First, we will define a function to randomly initialize our model parameters and run `attach_grad` on each to allocate memory for the gradients we will calculate.
 -->
 
-Đầu tiên, chúng ta khai báo một hàm số để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán.
+Đầu tiên, chúng ta khai báo một hàm để khởi tạo tham số cho mô hình một cách ngẫu nhiên và chạy `attach_grad` với mỗi tham số để cấp phát bộ nhớ cho gradient mà ta sẽ tính toán. 
 
 ```{.python .input  n=2}
 def init_params():
@@ -291,8 +291,8 @@ Perhaps the most convenient way to implement this penalty is to square all terms
 We divide by $2$ by convention, (when we take the derivative of a quadratic function, the $2$ and $1/2$ cancel out, ensuring that the expression for the update looks nice and simple).
 -->
 
-Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau.
-Ta đem chia $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn).
+Có lẽ cách thuận tiện nhất để lập trình lượng phạt này là bình phương tất cả các phần tử ngay tại chỗ và cộng chúng lại với nhau. 
+Ta đem chia với $2$ theo quy ước (khi ta tính đạo hàm của hàm bậc hai, $2$ và $1/2$ sẽ loại trừ nhau, đảm bảo biểu thức cập nhật trông đơn giản, dễ nhìn). 
 
 ```{.python .input  n=3}
 def l2_penalty(w):
@@ -311,9 +311,9 @@ The linear network and the squared loss have not changed since the previous chap
 The only change here is that our loss now includes the penalty term.
 -->
 
-Đoạn mã nguồn sau thực hiện khớp mô hình trên tập huấn luyện và thẩm định trên tập kiểm tra.
-Mạng tuyến tính và lỗi bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng từ `d2l.linreg` và `d2l.squared_loss`.
-Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt.
+Đoạn mã nguồn sau thực hiện việc khớp mô hình trên tập huấn luyện và đánh giá nó trên tập kiểm tra. 
+Mạng tuyến tính và hàm mất mát bình phương không thay đổi gì so với chương trước, vì vậy ta chỉ cần nhập chúng qua `d2l.linreg` và `d2l.squared_loss`. 
+Thay đổi duy nhất ở đây là hàm mất mát có thêm lượng phạt. 
 
 ```{.python .input  n=4}
 def train(lambd):
@@ -347,8 +347,8 @@ We now run this code with `lambd = 0`, disabling weight decay.
 Note that we overfit badly, decreasing the training error but not the test error---a textook case of overfitting.
 -->
 
-Giờ chúng ta chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số.
-Hãy chú ý hiện tượng quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp.
+Giờ chúng ta sẽ chạy đoạn mã này với `lambd = 0`, vô hiệu hóa suy giảm trọng số. 
+Hãy để ý tới việc quá khớp nặng, lỗi huấn luyện giảm nhưng lỗi kiểm tra thì không---một trường hợp điển hình của hiện tượng quá khớp. 
 
 ```{.python .input  n=5}
 train(lambd=0)
@@ -375,10 +375,10 @@ This is precisely the effect we expect from regularization.
 As an exercise, you might want to check that the $\ell_2$ norm of the weights $\mathbf{w}$ has actually decreased.
 -->
 
-Bên dưới, chúng ta chạy với suy giảm trọng số lớn.
-Cần chú ý rằng lỗi huấn luyện tăng nhưng lỗi kiểm định giảm.
-Đây chính xác là hiệu ứng mà chúng ta mong đợi từ điều chuẩn.
-Xem như một bài tập, bạn có thể kiểm tra rằng chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ thực sự giảm.
+Dưới đây, chúng ta huấn luyện mô hình với trọng số bị suy giảm mạnh. 
+Cần chú ý rằng lỗi huấn luyện tăng nhưng lỗi kiểm định lại giảm.
+Đây chính xác là hiệu ứng mà chúng ta mong đợi từ việc điều chuẩn.
+Bạn có thể tự kiểm tra xem chuẩn $\ell_2$ của các trọng số $\mathbf{w}$ có thực sự giảm hay không, như là một bài tập.
 
 ```{.python .input  n=6}
 train(lambd=3)
@@ -397,10 +397,10 @@ Moreover, this integration serves a computational benefit, allowing implementati
 Since the weight decay portion of the update depends only on the current value of each parameter, and the optimizer must to touch each parameter once anyway.
 -->
 
-Bởi vì suy giảm trọng số có ở khắp mọi nơi trong tối ưu mạng nơ-ron,
-Gluon làm cho việc áp dụng kĩ thuật này trở nên thuận tiện, bằng cách tích hợp suy giảm trọng số vào chính giải thuật tối ưu để có thể kết hợp với bất kì hàm mất mát nào.
-Hơn nữa, việc tích hợp này cũng đem lại lợi ích tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm suy giảm trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán.
-Nguyên nhân là do tại mỗi bước cập nhật, phần suy giảm trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào thì cũng phải đụng tới mỗi tham số một lần.
+Bởi vì suy giảm trọng số có ở khắp mọi nơi trong việc tối ưu mạng nơ-ron,
+Gluon giúp cho việc áp dụng kĩ thuật này trở nên rất thuận tiện, bằng cách tích hợp suy giảm trọng số vào chính giải thuật tối ưu để có thể kết hợp với bất kì hàm mất mát nào. 
+Hơn nữa, việc tích hợp này cũng đem lại lợi ích về mặt tính toán, cho phép ta sử dụng các thủ thuật lập trình để thêm suy giảm trọng số vào thuật toán mà không làm tăng tổng chi phí tính toán. 
+Điều này khả thi bởi vì tại mỗi bước cập nhật, phần suy giảm trọng số chỉ phụ thuộc vào giá trị hiện tại của mỗi tham số và bộ tối ưu hoá đằng nào cũng phải đụng tới chúng. 
 
 <!--
 In the following code, we specify the weight decay hyperparameter directly through `wd` when instantiating our `Trainer`.
@@ -409,10 +409,10 @@ Note that the hyperparameter `wd` will be multiplied by `wd_mult` when updating 
 Thus, if we set `wd_mult` to $0$, the bias parameter $b$ will not decay.
 -->
 
-Trong đoạn mã nguồn sau đây, chúng ta chỉ định trực tiếp siêu tham số suy giảm trọng số thông qua giá trị `wd` khi khởi tạo `Trainer`.
-Theo mặc định, Gluon suy giảm đồng thời cả trọng số và hệ số điều chỉnh.
-Cần chú ý rằng siêu tham số `wd` sẽ được nhân lên với `wd_mult` khi cập nhật các tham số mô hình.
-Như vậy, nếu chúng ta thiết lập `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không suy giảm.
+Trong đoạn mã nguồn sau đây, chúng ta chỉ định trực tiếp siêu tham số trong suy giảm trọng số thông qua giá trị `wd` khi khởi tạo `Trainer`. 
+Theo mặc định, Gluon suy giảm đồng thời cả trọng số và hệ số điều chỉnh. 
+Cần chú ý rằng siêu tham số `wd` sẽ được nhân với `wd_mult` khi cập nhật các tham số mô hình. 
+Như vậy, nếu chúng ta đặt `wd_mult` bằng $0$, tham số hệ số điều chỉnh $b$ sẽ không suy giảm. 
 
 ```{.python .input  n=7}
 def train_gluon(wd):
@@ -445,8 +445,8 @@ The plots look identical to those when we implemented weight decay from scratch.
 However, they run appreciably faster and are easier to implement, a benefit that will become more pronounced for large problems.
 -->
 
-Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình suy giảm trọng số từ đầu.
-Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích mà sẽ dễ nhận thấy hơn với các bài toán lớn.
+Các đồ thị này nhìn giống hệt với những đồ thị khi chúng ta lập trình suy giảm trọng số từ đầu. 
+Tuy nhiên, chúng chạy nhanh hơn rõ rệt và dễ lập trình hơn, một lợi ích đáng kể khi làm việc với các bài toán lớn. 
 
 ```{.python .input  n=8}
 train_gluon(0)
@@ -468,11 +468,11 @@ In this book we will default to the simple heuristic of applying weight decay on
 
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
-Tới giờ, chúng ta mới chỉ đề cập đến một ý niệm về những gì cấu thành nên một hàm *tuyến tính* đơn giản.
-Hơn nữa, những gì cấu thành nên một hàm *phi tuyến* đơn giản lại là một câu hỏi thậm chí còn phức tạp hơn.
-Ví dụ, [Tái tạo các không gian kernel Hilbert (RKHS)](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space) cho phép chúng ta áp dụng các công cụ được giới thiệu cho các hàm tuyến tính trong một ngữ cảnh phi tuyến.
-Không may mắn thay, các giải thuật dựa vào RKHS thường không thể nhân rộng và hoạt động hiệu quả trên dữ liệu lớn, đa chiều.
-Dựa trên một thực nghiệm đơn giản, trong quyển sách này chúng ta mặc định sẽ áp dụng phương pháp suy giảm trọng số cho tất cả các tầng của mạng học sâu.
+Tới giờ, chúng ta mới chỉ đề cập đến một ý niệm về những gì cấu thành nên một hàm *tuyến tính* đơn giản. 
+Hơn nữa, những gì cấu thành nên một hàm *phi tuyến* đơn giản, thậm chí còn phức tạp hơn.
+Ví dụ, [Tái tạo các không gian kernel Hilbert (RKHS)](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space) cho phép chúng ta áp dụng các công cụ được giới thiệu cho các hàm tuyến tính trong một ngữ cảnh phi tuyến. 
+Không may là, các giải thuật dựa vào RKHS thường không thể nhân rộng và hoạt động hiệu quả trên bộ dữ liệu lớn, đa chiều.
+Dựa trên một thực nghiệm đơn giản, chúng ta mặc định sẽ áp dụng phương pháp suy giảm trọng số cho tất cả các tầng của mạng học sâu trong quyển sách này.
 
 <!--
 ## Summary
@@ -487,11 +487,11 @@ Dựa trên một thực nghiệm đơn giản, trong quyển sách này chúng 
 * You can have different optimizers within the same training loop, e.g., for different sets of parameters.
 -->
 
-* Điều chuẩn là một phương pháp phổ biến để giải quyết quá khớp.
-Nó thêm một lượng phạt vào hàm mất mát trong tập huấn luyện để giảm thiểu độ phức tạp của mô hình học.
-* Một cách cụ thể để giữ mô hình đơn giản là suy giảm trọng số sử dụng lượng phạt $\ell_2$. Điều này dẫn đến giá trị trọng số sẽ suy giảm trong các bước cập nhật của giải thuật học.
-* Gluon cung cấp tính năng phân rã trọng số tự động trong bộ tối ưu hoá bằng cách thiết lập siêu tham số `wd`.
-* Bạn có thể dùng những bộ tối ưu hoá khác nhau trong cùng một vòng lặp huấn luyện, chẳng hạn, cho các tập tham số khác nhau. 
+* Điều chuẩn là một phương pháp phổ biến để giải quyết vấn đề quá khớp.
+Nó thêm một lượng phạt vào hàm mất mát trong tập huấn luyện để giảm thiểu độ phức tạp của mô hình.
+* Một cách cụ thể để giữ mô hình đơn giản là sử dụng suy giảm trọng số với lượng phạt $\ell_2$. Điều này dẫn đến việc giá trị trọng số sẽ suy giảm trong các bước cập nhật của giải thuật học.
+* Gluon cung cấp tính năng suy giảm trọng số tự động trong bộ tối ưu hoá bằng cách thiết lập siêu tham số `wd`. 
+* Bạn có thể dùng nhiều bộ tối ưu hoá khác nhau trong cùng một vòng lặp huấn luyện, chẳng hạn như để dùng chúng cho các tập tham số khác nhau.  
 <!--
 ## Exercises
 -->
@@ -509,18 +509,16 @@ In addition to weight decay, increased training, and the use of a model of suita
 6. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via $P(w \mid x) \propto P(x \mid w) P(w)$. How can you identify $P(w)$ with regularization?
 -->
 
-1. Thí nghiệm với giá trị của $\lambda$ trong bài toán ước lượng ở trang này.
-Vẽ đồ thị độ chính xác của tập huấn luyện và tập kiểm tra như một hàm số của $\lambda$.
-Bạn quan sát được những gì?
-2. Sử dụng tập kiểm định để tìm giá trị tối ưu của $\lambda$.
-Nó có thật sự là giá trị tối ưu hay không?
-Điều này có quan trọng không?
-3. Các phương trình cập nhật sẽ có dạng như thế nào nếu thay vì $\|\mathbf{w}\|^2$ chúng ta sử dụng lượng phạt $\sum_i |w_i|$ (được gọi là điều chuẩn $\ell_1$).
+1. Thử nghiệm với giá trị của $\lambda$ trong bài toán ước lượng ở trang này. 
+Vẽ đồ thị biểu diễn độ chính xác của tập huấn luyện và tập kiểm tra như một hàm số của $\lambda$. 
+Bạn quan sát được điều gì? 
+2. Sử dụng tập kiểm định để tìm giá trị tối ưu của $\lambda$. Nó có thật sự là giá trị tối ưu hay không? Điều này có quan trọng lắm không? 
+3. Các phương trình cập nhật sẽ có dạng như thế nào nếu thay vì $\|\mathbf{w}\|^2$, chúng ta sử dụng lượng phạt $\sum_i |w_i|$ (còn được gọi là điều chuẩn $\ell_1$).
 4. Chúng ta đã biết rằng $\|\mathbf{w}\|^2 = \mathbf{w}^\top \mathbf{w}$.
 Bạn có thể tìm một phương trình tương tự cho các ma trận (các nhà toán học gọi nó là [chuẩn Frobenius](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)) hay không?
 5. Ôn lại mối quan hệ giữa lỗi huấn luyện và lỗi khái quát.
-Bên cạnh suy giảm trọng số, tăng cường việc huấn luyện và sử dụng một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết quá khớp không?
-6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy luận ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Bạn có thể nhận ra mối liên hệ giữa $P(w)$ với điều chuẩn hay không?
+Bên cạnh việc sử dụng suy giảm trọng số, huấn luyện thêm và lựa chọn một mô hình có độ phức tạp phù hợp, bạn có thể nghĩ ra cách nào khác để giải quyết vấn đề quá khớp không?
+6. Trong thống kê Bayesian chúng ta sử dụng tích của tiên nghiệm và hàm hợp lý để suy ra hậu nghiệm thông qua $P(w \mid x) \propto P(x \mid w) P(w)$. Làm thế nào để suy ra được hậu nghiệm $P(w)$ khi sử dụng điều chuẩn?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 

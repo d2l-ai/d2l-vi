@@ -4,6 +4,8 @@
 # Multilayer Perceptrons
 -->
 
+## Chuơng này đang trong giai đoạn hiệu đính, dự định hoàn thiện ngày 15/04/2020
+
 # Perceptron Đa tầng
 :label:`chap_perceptrons`
 

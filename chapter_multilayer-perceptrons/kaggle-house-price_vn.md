@@ -19,9 +19,9 @@ It boasts both more examples and more features, covering house prices in Ames, I
 
 Trong phần trước, chúng tôi đã giới thiệu những công cụ cơ bản để xây dựng mạng học sâu và kiểm soát năng lực của nó thông qua việc giảm chiều dữ liệu, suy giảm trọng số và dropout.
 Giờ bạn đã sẵn sàng để ứng dụng tất cả những kiến thức này vào thực tiễn bằng cách tham gia một cuộc thi trên Kaggle.
-[Predicting house prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) là một bài toán tuyệt vời để bắt đầu: dữ liệu tương đối khái quát, không có cấu trúc cứng nhắc nên không đòi hỏi những mô hình đặc biệt như các bài toán có dữ liệu ảnh và âm thanh. 
-Bộ dữ liệu này được thu thập bởi Bart de Cock vào năm 2011 :cite:`De-Cock.2011`, lớn hơn rất nhiều bộ dữ liệu nổi tiếng [Boston housing dataset](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names) của Harrison và Rubinfeld (1978).
-Nó có nhiều ví dụ và đặc trưng hơn, chứa thông tin về giá nhà ở Ames, IA trong khoảng thời gian từ 2006-2010.
+[Dự đoán giá nhà](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) là một bài toán tuyệt vời để bắt đầu: dữ liệu tương đối khái quát, không có cấu trúc cứng nhắc nên không đòi hỏi những mô hình đặc biệt như các bài toán có dữ liệu ảnh và âm thanh. 
+Tập dữ liệu này được thu thập bởi Bart de Cock vào năm 2011 :cite:`De-Cock.2011`, lớn hơn rất nhiều so với [tập dữ liệu giá nhà Boston](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.names) nổi tiếng của Harrison và Rubinfeld (1978).
+Nó có nhiều mẫu và đặc trưng hơn, chứa thông tin về giá nhà ở Ames, Indiana trong khoảng thời gian từ 2006-2010.
 
 <!--
 In this section, we will walk you through details of data preprocessing, model design, hyperparameter selection and tuning.
@@ -29,8 +29,8 @@ We hope that through a hands-on approach, you will be able to observe the effect
 This experience is vital to gaining intuition as a data scientist.
 -->
 
-Trong phần này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn và điều chỉnh siêu tham số. 
-Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được những tác động của kiểm soát năng lực, trích xuất đặc trưng, v.v. trong thực tiễn. 
+Trong mục này, chúng tôi sẽ hướng dẫn bạn một cách chi tiết các bước tiền xử lý dữ liệu, thiết kế mô hình, lựa chọn và điều chỉnh siêu tham số. 
+Chúng tôi mong rằng thông qua việc thực hành, bạn sẽ có thể quan sát được tác động của việc kiểm soát năng lực mô hình, trích xuất đặc trưng, v.v. trong thực tiễn. 
 Kinh nghiệm này rất quan trọng để bạn có được trực giác của một nhà khoa học dữ liệu. 
 <!--
 ## Downloading and Caching Datasets
@@ -45,10 +45,9 @@ First, we maintain a dictionary `DATA_HUB` that maps a string name to a URL with
 where SHA-1 verifies the integrity of the file. Such datasets are hosted on the `DATA_URL` site.
 -->
 
-Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các bộ dữ liệu khác nhau. 
+Trong suốt cuốn sách chúng ta sẽ cần tải và thử nghiệm nhiều mô hình trên các tập dữ liệu khác nhau.
 Ta sẽ lập trình một số hàm tiện ích để hỗ trợ cho việc tải dữ liệu.
-Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` nhằm ánh xạ một xâu ký tự đến đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, 
-trong đó SHA-1 dùng để xác minh tính toàn vẹn của tệp. Các bộ dữ liệu này được lưu trữ trên trang `DATA_URL`.
+Đầu tiên, ta cần khởi tạo một từ điển `DATA_HUB` nhằm ánh xạ một xâu ký tự đến đường dẫn (URL) với SHA-1 của tệp tại đường dẫn đó, trong đó SHA-1 dùng để xác minh tính toàn vẹn của tệp. Các tập dữ liệu này được lưu trữ trên trang `DATA_URL`.
 
 ```{.python .input  n=2}
 import os
@@ -75,9 +74,9 @@ That is to say, you only need to download datasets once with a network connectio
 This `download` function returns the name of the downloaded file.
 -->
 
-Hàm `download` dưới đây tải bộ dữ liệu từ đường dẫn ứng với tên `name` cụ thể và lưu trữ nó tại bộ nhớ cục bộ (mặc định tại `../data`).
-Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với tệp trong `DATA_HUB`, tệp trong lưu trữ sẽ được sử dụng và việc tải về là không cần thiết. 
-Điều này nghĩa là, bạn chỉ cần tải bộ dữ liệu về với một lần kết nối mạng.
+Hàm `download` dưới đây tải tập dữ liệu có tên `name` từ đường dẫn tương ứng và lưu trữ nó tại bộ nhớ cục bộ (mặc định tại `../data`).
+Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó khớp với tệp trong `DATA_HUB`, tệp trong bộ nhớ đệm sẽ được sử dụng luôn mà không cần phải tải lại.
+Điều này nghĩa là bạn chỉ cần tải tập dữ liệu đúng một lần khi có kết nối mạng.
 Hàm `download` trả về tên của tệp được tải xuống.
 
 ```{.python .input  n=6}
@@ -96,9 +95,8 @@ We also implement two additional functions: one is to download and extract a zip
 You may invoke the latter to download all these datasets once and for all if your network connection is slow.
 -->
 
-Chúng ta cũng xây dựng hai hàm bổ sung khác: một hàm là để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB`(chứa phần lớn các bộ dữ liệu được sử dụng trong cuốn sách này) vào bộ nhớ đệm. 
-Bạn có thể sử dụng hàm thứ hai để tải tất cả bộ dữ liệu trong một lần nếu kết nối mạng của bạn chậm.
-
+Chúng ta cũng lập trình thêm hai hàm khác: một hàm để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB` (chứa phần lớn các tập dữ liệu được sử dụng trong cuốn sách này) về bộ nhớ đệm. 
+Bạn có thể sử dụng hàm thứ hai để tải tất cả các tập dữ liệu này trong cùng một lần tải nếu kết nối mạng của bạn chậm.
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
 def download_extract(name, folder=None):
@@ -145,9 +143,10 @@ If you want to participate in one of the competitions, you need to register for 
 -->
 
 [Kaggle](https://www.kaggle.com) là một nền tảng phổ biến cho các cuộc thi học máy.
-Nó kết hợp dữ liệu, mã lập trình và người dùng cho cả mục đích hợp tác và thi thố.
-Mặc dù việc cạnh tranh trên bảng xếp hạng nhiều khi vượt khỏi tầm kiểm soát, ta không thể không nhắc đến tính khách quan của nền tảng này có được từ sự so sánh công bằng định lượng trực tiếp giữa phương pháp của bạn với các phương pháp đến từ đối thủ. 
-Nếu bạn muốn tham gia vào một trong những cuộc thi, bạn cần đăng ký một tài khoản như trong :numref:`fig_kaggle` (làm ngay đi!).
+Nó kết hợp dữ liệu, mã lập trình và người dùng cho cả mục đích hợp tác và thi thố. 
+Mặc dù việc cạnh tranh trên bảng xếp hạng nhiều khi vượt khỏi tầm kiểm soát, ta không thể không nhắc đến sự khách quan mà nền tảng mang lại từ việc so sánh định lượng một cách công bằng và trực tiếp giữa phương pháp của bạn với các phương pháp của đối thủ. 
+Thêm vào đó, bạn còn có thể xem mã nguồn ở các lần nộp bài của (một vài) đối thủ, nghiên cứu phương pháp của họ để biết thêm các kỹ thuật mới.
+Nếu bạn muốn tham gia một cuộc thi, bạn cần đăng ký một tài khoản như trong :numref:`fig_kaggle` (hãy làm ngay đi!).
 
 <!--
 ![Kaggle website](../img/kaggle.png)
@@ -161,8 +160,7 @@ Nếu bạn muốn tham gia vào một trong những cuộc thi, bạn cần đ�
 On the House Prices Prediction page as illustrated in :numref:`fig_house_pricing`, you can find the dataset (under the "Data" tab), submit predictions, see your ranking, etc.,
 The URL is right here:
 -->
-
-Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả ở :numref:`fig_house_pricing`, bạn có thể tìm thấy bộ dữ liệu (dưới thanh "Data"), nộp kết quả dự đoán và xem thứ hạng của bạn, v.v. 
+Trên trang Dự Đoán Giá Nhà (_House Prices Prediction_) được mô tả ở :numref:`fig_house_pricing`, bạn có thể tìm được tập dữ liệu (dưới thanh "Data"), nộp kết quả dự đoán và xem thứ hạng của bạn, v.v. 
 Đường dẫn:
 
 > https://www.kaggle.com/c/house-prices-advanced-regression-technique 
@@ -197,12 +195,12 @@ The "Data" tab on the competition tab has links to download the data.
 -->
 
 Lưu ý rằng dữ liệu của cuộc thi được tách thành tập huấn luyện và tập kiểm tra.
-Mỗi tập dữ liệu bao gồm giá trị tài sản của ngôi nhà và các thuộc tính liên quan bao gồm loại đường phố, năm xây dựng, loại ngói, tình trạng tầng hầm, v.v.
+Mỗi tập dữ liệu bao gồm giá tiền của ngôi nhà và các thuộc tính liên quan bao gồm loại đường phố, năm xây dựng, kiểu mái nhà, tình trạng tầng hầm, v.v.
 Các đặc trưng được biểu diễn bởi nhiều kiểu dữ liệu.
-Ví dụ, năm xây dựng được biểu diễn bởi số nguyên, loại ngói là các lớp đặc trưng riêng biệt, các đặc trưng khác thì được biểu diễn bởi số thực dấu phẩy động (_floating point number_).
-Và đây là khi ta đối mặt với vấn đề thực tiễn: ở một vài mẫu, nhiều dữ liệu bị thiếu và được chú thích đơn giản là 'na'.
+Ví dụ, năm xây dựng được biểu diễn bởi số nguyên, kiểu mái nhà là đặc trưng hạng mục rời rạc, còn các đặc trưng khác thì được biểu diễn bởi số thực dấu phẩy động (_floating point number_). 
+Và đây là khi ta đối mặt với vấn đề thực tiễn: ở một vài mẫu, dữ liệu bị thiếu và được đơn thuần chú thích là 'na'.
 Giá của mỗi căn nhà chỉ được cung cấp trong tập huấn luyện (sau cùng thì đây vẫn là một cuộc thi).
-Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết được mô hình của bạn thể hiện như thế nào trên tập kiểm tra chính thức khi bạn tải lên kết quả dự đoán của mình và nhận điểm sau đó.
+Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết đưọc chất lượng mô hình trên tập kiểm tra chính thức khi bạn tải lên kết quả dự đoán của mình và nhận điểm sau đó.
 Thanh "Data" trên cuộc thi có đường link để tải về bộ dữ liệu.  
 
 <!--
@@ -230,7 +228,7 @@ npx.set_np()
 For convenience, we download and cache the Kaggle housing dataset from the `DATA_URL` website. For the other Kaggle competitions, you may need to download them manually.
 -->
 
-Để thuận tiện, chúng ta sẽ tải và lưu bộ dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, bạn có thể cần tải dữ liệu về theo cách thủ công.  
+Để thuận tiện, chúng ta sẽ tải và lưu tập dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, có thể bạn sẽ phải tải dữ liệu về theo cách thủ công.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -287,7 +285,7 @@ Hence we remove it from the dataset before feeding the data into the network.
 Có thể thấy với mỗi mẫu, đặc trưng đầu tiên là ID.
 Điều này giúp mô hình xác định được từng mẫu. 
 Mặc dù việc này khá thuận tiện, nó không mang bất kỳ thông tin nào cho mục đích dự đoán. 
-Do đó chúng ta sẽ lược bỏ nó ra khỏi bộ dữ liệu trước khi đưa vào mạng nơ-ron. 
+Do đó chúng ta sẽ lược bỏ nó ra khỏi tập dữ liệu trước khi đưa vào mạng nơ-ron.
 
 ```{.python .input  n=30}
 all_features = pd.concat((train_data.iloc[:, 1:-1], test_data.iloc[:, 1:]))
@@ -318,12 +316,11 @@ This is accomplished as follows:
 -->
 
 Như đã nói ở trên, chúng ta có rất nhiều kiểu dữ liệu.
-Trước khi đưa nó vào mạng học sâu, ta cần thực hiện một số phép xử lý. 
-Hãy bắt đầu với các đặc trưng số học. 
+Trước khi đưa dữ liệu vào mạng học sâu, ta cần thực hiện một số phép xử lý.
+Hãy bắt đầu với các đặc trưng số học.
 Trước hết ta thay thế các giá trị còn thiếu bằng giá trị trung bình.
-Đây là chiến lược hợp lý nếu các đặc trưng bị thiếu một cách ngẫu nhiên. 
-Để điểu chỉnh theo một thang đo chung, ta chuyển đổi tỷ lệ để chúng có trung bình bằng không (_zero mean_) và phương sai đơn vị (_unit variance_). 
-Điều này có thể đạt được bằng cách:
+Đây là chiến lược hợp lý nếu các đặc trưng bị thiếu một cách ngẫu nhiên.
+Để đưa tất cả đặc trưng số học về cùng một khoảng giá trị, ta thực hiện chuyển đổi để chúng có trung bình bằng không và phương sai đơn vị bằng cách:
 
 $$x \leftarrow \frac{x - \mu}{\sigma}.$$
 
@@ -335,10 +332,10 @@ The reason for "normalizing" the data is that it brings all features to the same
 After all, we do not know *a priori* which features are likely to be relevant.
 -->
 
-Để kiểm tra xem công thức trên có chuyển đổi $x$ thành dữ liệu với trung bình bằng không hay không, ta có thể tính $E[(x-\mu)/\sigma] = (\mu - \mu)/\sigma = 0$. 
-Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2$, như vậy biến chuyển đổi sẽ có phương sai đơn vị. 
-Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các đặc trưng về có cùng độ lớn. 
-Vì sau cùng, chúng ta không thể *biết trước* được các đặc trưng nào là quan trọng. 
+Để kiểm tra xem công thức trên có chuyển đổi $x$ thành dữ liệu với trung bình bằng không hay không, ta có thể tính $E[(x-\mu)/\sigma] = (\mu - \mu)/\sigma = 0$.
+Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2$, như vậy biến chuyển đổi sẽ có phương sai đơn vị.
+Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các đặc trưng về cùng một độ lớn.
+Vì sau cùng, chúng ta không thể *biết trước* được đặc trưng nào là đặc trưng quan trọng.
 
 
 ```{.python .input  n=6}
@@ -359,11 +356,10 @@ They map into vectors $(1, 0)$ and $(0, 1)$ respectively.
 Pandas does this automatically for us.
 -->
 
-Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc.
-Nó bao gồm những biến như 'MSZoning'.
+Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc như biến 'MSZoning'.
 Ta sẽ thay thế chúng bằng biểu diễn one-hot theo đúng cách mà ta đã chuyển đổi dữ liệu phân loại đa lớp thành vector chứa $0$ và $1$.
 Ví dụ, 'MSZoning' bao gồm các giá trị 'RL' và 'RM', tương ứng lần lượt với vector $(1, 0)$ and $(0, 1)$. 
-Pandas tự động làm việc này cho chúng ta.
+Việc này được thực hiện một cách tự động trong pandas.
 
 ```{.python .input  n=7}
 # Dummy_na=True refers to a missing value being a legal eigenvalue, and
@@ -407,9 +403,9 @@ giving us a sense of how much gain we should expect from fancier models.
 -->
 
 Để bắt đầu, ta sẽ huấn luyện một mô hình tuyến tính với hàm mất mát bình phương.
-Tất nhiên là mô hình tuyến tính sẽ không thể thắng cuộc thi được, nhưng nó vẫn cho ta một phép kiểm tra sơ bộ để xem dữ liệu có chứa thông tin ý nghĩa hay không.
+Tất nhiên là mô hình tuyến tính sẽ không thể thắng cuộc thi được, nhưng nó vẫn cho ta một phép kiểm tra sơ bộ để xem dữ liệu có chứa thông tin ý nghĩa hay không. 
 Nếu mô hình này không thể đạt chất lượng tốt hơn việc đoán mò, khả năng cao là ta đang có lỗi trong quá trình xử lý dữ liệu.
-Còn nếu nó hoạt động, mô hình tuyến tính sẽ đóng vai trò như một mốc khởi điểm, giúp ta hình dung khoảng cách giữa một mô hình đơn giản và các mô hình tốt nhất hiện có, cũng như mức độ cải thiện mà ta mong muốn từ các mô hình "xịn" hơn.
+Còn nếu nó hoạt động, mô hình tuyến tính sẽ đóng vai trò như một giải pháp nền, giúp ta hình dung khoảng cách giữa một mô hình đơn giản và các mô hình tốt nhất hiện có, cũng như mức độ cải thiện mà ta mong muốn từ các mô hình "xịn" hơn.
 ```{.python .input  n=13}
 loss = gluon.loss.L2Loss()
 
@@ -462,10 +458,8 @@ people tend to find that it is significantly less sensitive to the initial learn
 This will be covered in further detail later on when we discuss the details in :numref:`chap_optimization`.
 -->
 
-Khác với các mục trước, hàm huấn luyện ở đây sử dụng bộ tối ưu Adam
-(một biến thể của SGD mà chúng tôi sẽ mô tả cụ thể hơn sau này).
-Lợi thế chính của Adam so với SGD nguyên bản là: nó không quá nhạy cảm với tốc độ học ban đầu, 
-mặc dù kết quả cũng không tốt hơn (đôi khi còn tệ hơn) SGD nếu tài nguyên để tối ưu siêu tham số là vô hạn.
+Khác với các mục trước, hàm huấn luyện ở đây sử dụng bộ tối ưu Adam (một biến thể của SGD mà chúng tôi sẽ mô tả cụ thể hơn sau này).
+Lợi thế chính của Adam so với SGD nguyên bản là: nó không quá nhạy cảm với tốc độ học ban đầu, mặc dù kết quả cũng không tốt hơn (đôi khi còn tệ hơn) SGD nếu tài nguyên để tối ưu siêu tham số là vô hạn.
 Bộ tối ưu này sẽ được mô tả cụ thể hơn trong :numref:`chap_optimization`.
 
 ```{.python .input  n=14}
@@ -511,10 +505,10 @@ Note that this is not the most efficient way of handling data and we would defin
 But this added complexity might obfuscate our code unnecessarily so we can safely omit here owing to the simplicity of our problem.
 -->
 
-Nếu bạn đang đọc theo kiểu từ đầu đến cuối thì có thể bạn sẽ nhớ ra rằng kiểm định chéo gập k-lần đã từng được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
+Nếu bạn đang đọc cuốn sách này theo đúng thứ tự thì có thể bạn sẽ nhớ ra rằng kiểm định chéo gập k-lần đã từng được giới thiệu khi ta thảo luận về cách lựa chọn mô hình (: numref: `sec_model_selection`).
 Ta sẽ ứng dụng kỹ thuật này để lựa chọn thiết kế mô hình và điều chỉnh các siêu tham số.
 Trước tiên ta cần một hàm trả về phần thứ $i^\mathrm{th}$ của dữ liệu trong kiểm định chéo gập k-lần.
-Việc này được tiến hành bằng cách cắt chọn (_slicing_) phần thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện.
+Việc này được tiến hành bằng cách cắt chọn (_slicing_) phần thứ $i^\mathrm{th}$ để làm dữ liệu kiểm định và dùng phần còn lại làm dữ liệu huấn luyện. 
 Cần lưu ý rằng đây không phải là cách xử lý dữ liệu hiệu quả nhất và ta chắc chắn sẽ dùng một cách khôn ngoan hơn để xử lý một tập dữ liệu có kích thước lớn hơn nhiều. 
 Nhưng sự phức tạp được thêm vào này có thể làm rối mã nguồn một cách không cần thiết, vì vậy để đơn giản hóa vấn đề ở đây ta có thể an toàn bỏ qua.
 
@@ -540,7 +534,7 @@ def get_k_fold_data(k, i, X, y):
 The training and verification error averages are returned when we train $k$ times in the k-fold cross-validation.
 -->
 
-Trong kiểm định chéo gập k-lần, ta sẽ huấn luyện mô hình $k$ lần và trả về trung bình lỗi huấn luyện và trung bình lỗi kiểm định.
+Trong kiểm định chéo gập k-lần, ta sẽ huấn luyện mô hình $k$ lần và trả về trung bình lỗi huấn luyện và trung bình lỗi kiểm định. 
 
 ```{.python .input  n=15}
 def k_fold(k, X_train, y_train, num_epochs,
@@ -575,10 +569,10 @@ Within reason, the k-fold cross-validation approach is resilient against multipl
 However, if we were to try out an unreasonably large number of options it might fail since we might just get lucky on the validation split with a particular set of hyperparameters.
 -->
 
-Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được tinh chỉnh và để dành cơ hội cải thiện mô hình cho bạn đọc.
-Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu.
-Phương pháp kiểm định chéo gập k-lần có tính ổn định cao khi thực hiện với nhiều thử nghiệm, tới một ngưỡng nhất định.
-Tuy nhiên, nếu ta thử nghiệm một số lượng rất lớn các lựa chọn thì phương pháp này có khả năng thất bại vì có thể ta chỉ may mắn trong việc chia tập kiểm định phù hợp với một bộ siêu tham số nhất định.
+Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được tinh chỉnh và để dành việc cải thiện mô hình cho bạn đọc.
+Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu. 
+Nếu được sử dụng đúng cách, phương pháp kiểm định chéo gập k-lần sẽ có tính ổn định cao khi thực hiện với nhiều thử nghiệm.
+Tuy nhiên, nếu thử quá nhiều các lựa chọn siêu tham số thì phương pháp này có thể thất bại vì ta có thể chỉ đơn thuần gặp may ở một cách chia tập kiểm định phù hợp với bộ siêu tham số đó.
 
 ```{.python .input  n=16}
 k, num_epochs, lr, weight_decay, batch_size = 5, 100, 5, 0, 64
@@ -595,7 +589,7 @@ Therefore, when we reduce the amount of training errors, we need to check whethe
 -->
 
 Bạn sẽ thấy rằng đôi khi lỗi huấn luyện cho một bộ siêu tham số có thể rất thấp, trong khi lỗi của kiểm định k-phần có thể cao hơn.
-Đây là dấu hiệu của sự quá khớp.
+Đây là dấu hiệu của sự quá khớp. 
 Vì vậy khi ta giảm lỗi huấn luyện, ta cũng nên kiểm tra xem liệu lỗi kiểm định chéo gập k-lần có giảm tương ứng hay không.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -644,8 +638,8 @@ One nice sanity check is to see whether the predictions on the test set resemble
 If they do, it is time to upload them to Kaggle.
 The following code will generate a file called `submission.csv` (CSV is one of the file formats accepted by Kaggle):
 -->
-
-Hãy gọi mô hình để đưa ra dự đoán. <!-- Bạn nào review sửa câu này giúp mình nhé, mình chưa biết dịch sao cho hợp lý hơn. Many thanks!-->
+<!--
+Hãy gọi mô hình để đưa ra dự đoán.  Bạn nào review sửa câu này giúp mình nhé, mình chưa biết dịch sao cho hợp lý hơn. Many thanks-->
 Ta nên kiểm tra xem liệu các dự đoán trên tập kiểm tra có tương đồng với các dự đoán trong quá trình kiểm định chéo k-phần hay không.
 Nếu đúng là như vậy thì đã đến lúc tải các dự đoán này lên Kaggle.
 Đoạn mã nguồn sau sẽ tạo một tệp có tên `submission.csv` (CSV là một trong những định dạng tệp được chấp nhận bởi Kaggle):
@@ -660,7 +654,7 @@ Next, as demonstrated in :numref:`fig_kaggle_submit2`, we can submit our predict
 The steps are quite simple:
 -->
 
-Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh chúng với giá nhà thực tế (các nhãn) trên tập kiểm tra.
+Tiếp theo, như được mô tả trong hình :numref:`fig_kaggle_submit2`, ta có thể nộp các dự đoán lên Kaggle và so sánh chúng với giá nhà thực tế (các nhãn) trên tập kiểm tra. 
 Các bước tiến hành khá là đơn giản:
 
 <!--
@@ -670,7 +664,7 @@ Các bước tiến hành khá là đơn giản:
 * Click the “Make Submission” button at the bottom of the page to view your results.
 -->
 
-* Đăng nhập vào trang web Kaggle và tìm đến trang của cuộc thi Dự đoán giá nhà.
+* Đăng nhập vào trang web Kaggle và tìm đến trang của cuộc thi "House Price Prediction".
 * Nhấn vào nút “Submit Predictions” hoặc “Late Submission” (nút này nằm ở phía bên phải tại thời điểm viết sách).
 * Nhấn vào nút “Upload Submission File” trong khung có viền nét đứt và chọn tệp dự đoán bạn muốn tải lên. <!-- Cái khung này đâu có nằm ở cuối trang nhỉ? -->
 * Nhấn vào nút “Make Submission” ở cuối trang để xem kết quả.
@@ -702,9 +696,9 @@ Các bước tiến hành khá là đơn giản:
 -->
 
 * Dữ liệu trong thực tế thường chứa nhiều kiểu dữ liệu khác nhau và cần phải được tiền xử lý.
-* Thay đổi kích thước dữ liệu có giá trị thực về trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu với giá trị trung bình của chúng.
-* Chuyển đổi các biến phân loại thành các biến chỉ dẫn cho phép chúng ta xử lý chúng như các vector.
-* Ta có thể sử dụng kiểm định chéo k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
+* Chuyển đổi dữ liệu có giá trị thực để có trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu bằng giá trị trung bình. 
+* Chuyển đổi các biến hạng mục thành các biến chỉ định cho phép chúng ta xử lý chúng như các vector.
+* Ta có thể sử dụng kiểm định chéo gập k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
 * Hàm Logarit có hữu ích đối với mất mát tương đối.
 
 
@@ -726,10 +720,10 @@ Các bước tiến hành khá là đơn giản:
 
 1. Nộp kết quả dự đoán của bạn từ bài hướng dẫn này cho Kaggle. Các dự đoán của bạn tốt đến đâu?
 2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu trực tiếp log giá nhà không? Điều gì sẽ xảy ra nếu bạn dự đoán log giá nhà thay vì giá thực?
-3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống khi mà các giá trị không bị thiếu một cách ngẫu nhiên không?
-4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ dẫn?
+3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống khi mà các giá trị không bị thiếu một cách ngẫu nhiên không? 
+4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ định?
 5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo gập k-lần.
-6. Cải thiện điểm bằng cách cải thiện mô hình (các tầng, điều chuẩn hóa, dropout).
+6. Cải thiện điểm bằng cách cải thiện mô hình (các tầng, điều chuẩn, dropout).
 7. Điều gì sẽ xảy ra nếu ta không chuẩn hóa đặc trưng số liên tục như ta đã làm trong phần này? 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
@@ -758,37 +752,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
-* Đoàn Võ Duy Thanh
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
-* Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 5 -->
-* Phạm Minh Đức
-
-<!-- Phần 6 -->
-*
-
-<!-- Phần 7 -->
 * Nguyễn Duy Du
-
-<!-- Phần 8 -->
 * Trần Yến Thy
-* Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
+* Vũ Hữu Tiệp
