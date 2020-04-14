@@ -630,7 +630,7 @@ In such cases, we can use the same approach that we used for training networks t
 In other words, we use the existing network weights and simply perform a few update steps with the new data rather than training from scratch.
 -->
 
-Trong các trường hợp trên, ta có thể sử dụng cùng cách tiếp cận cho việc huấn luyện mô hình để thích ứng với các biến đổi trong dữ liệu. 
+Với các trường hợp trên, ta có thể sử dụng cùng cách tiếp cận trong việc huấn luyện mô hình để chúng thích ứng với các biến đổi trong dữ liệu. 
 Nói cách khác, chúng ta sử dụng trọng số đang có của mạng và chỉ thực hiện thêm vài bước cập nhật trên dữ liệu mới thay vì huấn luyện lại từ đầu. 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
