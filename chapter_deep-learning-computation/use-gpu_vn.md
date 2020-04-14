@@ -98,7 +98,7 @@ Instead, this is simply to illustrate how data flows between different devices.
 ## Computing Devices
 -->
 
-## *dịch tiêu đề phía trên*
+## Thiết bị Tính toán
 
 <!--
 MXNet can specify devices, such as CPUs and GPUs, for storage and calculation. 
@@ -110,7 +110,13 @@ If there are multiple GPUs, we use `gpu(i)` to represent the $i^\mathrm{th}$ GPU
 Also, `gpu(0)` and `gpu()` are equivalent.
 -->
 
-*dịch đoạn phía trên*
+MXNet có thể chỉ định các thiết bị, chẳng hạn như CPU và GPU, cho việc lưu trữ và tính toán.
+Mặc định, MXNet tạo dữ liệu trong bộ nhớ chính và sau đó sử dụng CPU để tính toán.
+Trong MXNet, CPU và GPU có thể được chỉ định bởi `cpu ()` và `gpu ()`.
+Cần lưu ý rằng `cpu ()` (hoặc bất kỳ số nguyên nào trong ngoặc đơn) có nghĩa là tất cả các CPU và bộ nhớ vật lý.
+Điều này có nghĩa các tính toán của MXNet sẽ cố gắng tận dụng tất cả các lõi CPU. Tuy nhiên, `gpu ()` chỉ đại diện cho một card đồ họa và bộ nhớ đồ họa tương ứng.
+Nếu có nhiều GPU, chúng tôi sử dụng `gpu (i)` để thể hiện $i^\mathrm{th}$ GPU ($i$ bắt đầu từ 0).
+Ngoài ra, `gpu (0)` và `gpu ()` tương đương nhau.
 
 ```{.python .input}
 from mxnet import np, npx
@@ -124,7 +130,7 @@ npx.cpu(), npx.gpu(), npx.gpu(1)
 We can query the number of available GPUs through `num_gpus()`.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể truy vấn số lượng GPU có sẵn thông qua `num_gpus()`.
 
 ```{.python .input}
 npx.num_gpus()
@@ -134,8 +140,7 @@ npx.num_gpus()
 Now we define two convenient functions that allows us to run codes even if the requested GPUs do not exist.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta xác định hai chức năng thuận tiện cho phép chạy mã kể cả khi GPU được yêu cầu không tồn tại.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -156,14 +161,15 @@ try_gpu(), try_gpu(3), try_all_gpus()
 ## `ndarray` and GPUs
 -->
 
-## *dịch tiêu đề phía trên*
+## `ndarray` và GPU
 
 <!--
 By default, `ndarray` objects are created on the CPU. 
 Therefore, we will see the `@cpu(0)` identifier each time we print an `ndarray`.
 -->
 
-*dịch đoạn phía trên*
+Theo mặc định, các đối tượng `ndarray` được tạo trên CPU.
+Do đó, ta sẽ thấy định danh `@cpu (0)` mỗi khi ta in một `ndarray`.
 
 ```{.python .input  n=4}
 x = np.array([1, 2, 3])
@@ -177,7 +183,9 @@ For instance, if we sum two variables, we need to make sure that both arguments 
 would not know where to store the result or even how to decide where to perform the computation.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng thuộc tính `ctx` của` ndarray` để xem thiết bị nơi `ndarray` được đặt.
+Điều quan trọng cần lưu ý là bất cứ khi nào ta muốn làm các phép toán trên nhiều số hạng, chúng cần phải ở trong cùng một bối cảnh.
+Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng cả hai đối số đều nằm trên cùng một thiết bị --- nếu không thì MXNet sẽ không biết nơi lưu trữ kết quả hoặc thậm chí cách để quyết định nơi thực hiện tính toán.
 
 ```{.python .input}
 x.ctx
