@@ -718,8 +718,8 @@ Chúng tôi liệt kê nó ở đây chủ yếu là vì bài toán này thườ
 * **Kiểm soát (và Học Tăng cường phi đối kháng).** Trong nhiều trường hợp, môi trường ghi nhớ những gì ta đã làm.
 Việc này không nhất thiết phải có tính chất đối kháng, môi trường chỉ nhớ và phản hồi phụ thuộc vào những gì đã xảy ra trước đó.
 Ví dụ, bộ điều khiển của ấm pha cà phê sẽ quan sát được nhiệt độ khác nhau tùy thuộc vào việc nó có đun ấm trước đó không.
-Giải thuật điều khiển PID (proportional integral derivative hay vi tích phân tỉ lệ) là một lựa chọn phổ biến để làm điều đó.
-Tương tự như vậy, hành vi của người dùng trên một trang tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (ví dụ, họ hầu như chỉ đọc mỗi tin một lần duy nhất). 
+Giải thuật điều khiển PID (*proportional integral derivative* hay *vi tích phân tỉ lệ*) là một lựa chọn phổ biến để làm điều đó.
+Tương tự như vậy, hành vi của người dùng trên một trang tin tức sẽ phụ thuộc vào những gì ta đã cho họ xem trước đây (chẳng hạn như là mỗi người chỉ đọc mỗi mẫu tin một lần duy nhất). 
 Nhiều thuật toán như vậy cấu thành một mô hình của môi trường mà trong đó chúng muốn làm cho các quyết định của mình trông có vẻ ít ngẫu nhiên hơn (tức để giảm phương sai). 
 * **Học Tăng cường.** Trong trường hợp khái quát hơn của môi trường có khả năng ghi nhớ, ta có thể gặp phải tình huống môi trường đang cố gắng *hợp tác* với ta (trò chơi hợp tác, đặc biệt là các trò chơi có tổng khác không), hoặc môi trường sẽ cố gắng *chiến thắng* ta như Cờ vua, Cờ vây, Backgammon hay StarCraft. 
 Tương tự như vậy, có thể ta muốn xây dựng một bộ điều khiển tốt cho những chiếc xe tự hành. 
@@ -735,10 +735,10 @@ If we know that the environment might change instantaneously, but only very infr
 These types of knowledge are crucial for the aspiring data scientist to deal with concept shift, i.e., when the problem that he is trying to solve changes over time.
 -->
 
-Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là một chiến lược hoạt động được xuyên suốt trong trường hợp môi trường cố định, có thể lại không hoạt động xuyên suốt được khi môi trường có khả năng thích nghi.
+Điểm khác biệt mấu chốt giữa các tình huống khác nhau ở trên là: một chiến lược hoạt động xuyên suốt các môi trường cố định, có thể lại không hoạt động xuyên suốt được khi môi trường có khả năng thích nghi.
 Chẳng hạn, nếu một thương nhân phát hiện ra cơ hội kiếm lời từ chênh lệch giá cả thị trường, khả năng cao cơ hội đó sẽ biến mất ngay khi anh ta bắt đầu lợi dụng nó.
 Tốc độ và cách môi trường thay đổi có ảnh hưởng lớn đến loại thuật toán mà ta có thể sử dụng.
-Ví dụ, nếu ta *biết trước* mọi việc chỉ có thể thay đổi một cách từ từ, ta có thể ép những ước lượng phải thay đổi chậm theo.
+Ví dụ, nếu ta *biết trước* mọi việc chỉ có thể thay đổi một cách từ từ, ta có thể ép những ước lượng phải thay đổi dần theo.
 Còn nếu ta biết môi trường có thể thay đổi ngay lập tức, nhưng không thường xuyên, ta có thể cho phép điều này xảy ra.
 Đối với các nhà khoa học dữ liệu giỏi, những kiến thức này rất quan trọng trong việc giải quyết các bài toán dịch chuyển khái niệm, tức bài toán cần giải quyết thay đổi theo thời gian.
 
@@ -776,10 +776,10 @@ Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
 Khi chuyển những dự đoán thành hành động, chúng ta thường để ý đến chi phí tiềm tàng của các loại lỗi khác nhau.
 Nếu kết quả phân loại một bức ảnh có thể được xem như một sự phân biệt chủng tộc, trong khi việc phân loại sai sang một lớp khác thì lại vô hại, bạn có thể sẽ muốn cân nhắc cả các giá trị xã hội khi điều chỉnh ngưỡng của hệ thống ra quyết định đó.
 Ta cũng muốn cẩn thận về cách những hệ thống dự đoán có thể dẫn đến vòng lặp phản hồi.
-Ví dụ, nếu hệ thống dự đoán được áp dụng theo cách ngây ngô để dự đoán các hành động phi pháp, phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
+Ví dụ, nếu hệ thống dự đoán được áp dụng theo cách ngây ngô để dự đoán các hành động phi pháp và theo đó phân bổ sĩ quan tuần tra, một vòng luẩn quẩn có thể xuất hiện.
 Một khu xóm có nhiều tội phạm hơn sẽ có nhiều sĩ quan tuần tra hơn, phát hiện ra nhiều tội phạm hơn, thêm nhiều dữ liệu huấn luyện, nhận được dự đoán tốt hơn, dẫn đến nhiều sĩ quan tuần tra hơn, và càng nhiều tội ác được phát hiện,...
 Thêm vào đó, chúng ta cũng muốn cẩn thận ngay từ đầu về việc chúng ta có đang giải quyết đúng vấn đề hay không.  
-Hiện tại, các thuật toán dự đoán đóng vai trò lớn trong việc làm trung gian để phổ biến thông tin.
+Hiện tại, các thuật toán dự đoán đóng một vai trò lớn khi làm bên trung gian trong việc phân tán thông tin.
 Những tin tức nào được hiển thị đến người dùng có nên được quyết định bởi những trang Facebook nào mà họ *đã thích* hay không?
 Đây chỉ là một số trong rất nhiều vấn đề về đạo đức mà bạn có thể bắt gặp trong việc theo đuổi sự nghiệp học máy của mình.
 
