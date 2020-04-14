@@ -322,7 +322,7 @@ Trước khi đưa dữ liệu vào mạng học sâu, ta cần thực hiện m�
 Hãy bắt đầu với các đặc trưng số học.
 Trước hết ta thay thế các giá trị còn thiếu bằng giá trị trung bình.
 Đây là chiến lược hợp lý nếu các đặc trưng bị thiếu một cách ngẫu nhiên.
-Để điểu chỉnh theo một thang đo chung, ta chuyển đổi tỷ lệ để chúng có trung bình bằng không (_zero mean_) và phương sai đơn vị (_unit variance_) bằng cách:
+Để đưa tất cả đặc trưng số học về cùng một khoảng giá trị, ta thực hiện chuyển đổi để chúng có trung bình bằng không và phương sai đơn vị bằng cách:
 
 $$x \leftarrow \frac{x - \mu}{\sigma}.$$
 
@@ -336,8 +336,8 @@ After all, we do not know *a priori* which features are likely to be relevant.
 
 Để kiểm tra xem công thức trên có chuyển đổi $x$ thành dữ liệu với trung bình bằng không hay không, ta có thể tính $E[(x-\mu)/\sigma] = (\mu - \mu)/\sigma = 0$.
 Để kiểm tra phương sai ta tính $E[(x-\mu)^2] = \sigma^2$, như vậy biến chuyển đổi sẽ có phương sai đơn vị.
-Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các đặc trưng về có cùng độ lớn.
-Vì sau cùng, chúng ta không thể *biết trước* được các đặc trưng nào là quan trọng.
+Lý do của việc "chuẩn hóa" dữ liệu là để đưa tất cả các đặc trưng về cùng một độ lớn.
+Vì sau cùng, chúng ta không thể *biết trước* được đặc trưng nào là đặc trưng quan trọng.
 
 
 ```{.python .input  n=6}
@@ -359,7 +359,7 @@ Pandas does this automatically for us.
 -->
 
 Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc.
-Nó bao gồm những biến như 'MSZoning'.
+Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc như biến 'MSZoning'.
 Ta sẽ thay thế chúng bằng biểu diễn one-hot theo đúng cách mà ta đã chuyển đổi dữ liệu phân loại đa lớp thành vector chứa $0$ và $1$.
 Ví dụ, 'MSZoning' bao gồm các giá trị 'RL' và 'RM', tương ứng lần lượt với vector $(1, 0)$ and $(0, 1)$. 
 Việc này được thực hiện một cách tự động trong pandas.
@@ -572,10 +572,10 @@ Within reason, the k-fold cross-validation approach is resilient against multipl
 However, if we were to try out an unreasonably large number of options it might fail since we might just get lucky on the validation split with a particular set of hyperparameters.
 -->
 
-Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được tinh chỉnh và để dành cơ hội cải thiện mô hình cho bạn đọc.
+Trong ví dụ này, chúng tôi chọn một bộ siêu tham số chưa được tinh chỉnh và để dành việc cải thiện mô hình cho bạn đọc.
 Để tìm ra được một bộ siêu tham số tốt có thể sẽ tốn khá nhiều thời gian tùy thuộc vào số lượng siêu tham số mà ta muốn tối ưu. 
-Phương pháp kiểm định chéo gập k-lần có tính ổn định cao khi thực hiện với nhiều thử nghiệm.
-Tuy nhiên, nếu ta thử nghiệm một số lượng rất lớn các lựa chọn thì phương pháp này có khả năng thất bại vì có thể ta chỉ may mắn trong việc chia tập kiểm định phù hợp với một bộ siêu tham số nhất định.
+Nếu được sử dụng đúng cách, phương pháp kiểm định chéo gập k-lần sẽ có tính ổn định cao khi thực hiện với nhiều thử nghiệm.
+Tuy nhiên, nếu thử quá nhiều các lựa chọn siêu tham số thì phương pháp này có thể thất bại vì ta có thể chỉ đơn thuần gặp may ở một cách chia tập kiểm định phù hợp với bộ siêu tham số đó.
 
 ```{.python .input  n=16}
 k, num_epochs, lr, weight_decay, batch_size = 5, 100, 5, 0, 64
@@ -699,9 +699,9 @@ Các bước tiến hành khá là đơn giản:
 -->
 
 * Dữ liệu trong thực tế thường chứa nhiều kiểu dữ liệu khác nhau và cần phải được tiền xử lý.
-* Thay đổi kích thước dữ liệu có giá trị thực về trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu với giá trị trung bình của chúng. 
-* Chuyển đổi các biến hạng mục thành các biến chỉ dẫn cho phép chúng ta xử lý chúng như các vector.
-* Ta có thể sử dụng kiểm định chéo k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
+* Chuyển đổi dữ liệu có giá trị thực để có trung bình bằng không và phương sai đơn vị là một phương án mặc định tốt. Tương tự với việc thay thế các giá trị bị thiếu bằng giá trị trung bình. 
+* Chuyển đổi các biến hạng mục thành các biến chỉ định cho phép chúng ta xử lý chúng như các vector.
+* Ta có thể sử dụng kiểm định chéo gập k-phần để chọn ra mô hình và điều chỉnh siêu tham số.
 * Hàm Logarit có hữu ích đối với mất mát tương đối.
 
 
@@ -724,7 +724,7 @@ Các bước tiến hành khá là đơn giản:
 1. Nộp kết quả dự đoán của bạn từ bài hướng dẫn này cho Kaggle. Các dự đoán của bạn tốt đến đâu?
 2. Bạn có thể cải thiện mô hình bằng cách giảm thiểu trực tiếp log giá nhà không? Điều gì sẽ xảy ra nếu bạn dự đoán log giá nhà thay vì giá thực?
 3. Liệu việc thay thế các giá trị bị thiếu bằng trung bình của chúng luôn luôn tốt? Gợi ý: bạn có thể dựng lên một tình huống khi mà các giá trị không bị thiếu một cách ngẫu nhiên không? 
-4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ dẫn?
+4. Tìm cách biểu diễn tốt hơn để đối phó với các giá trị bị thiếu. Gợi ý: điều gì sẽ xảy ra nếu bạn thêm vào một biến chỉ định?
 5. Cải thiện điểm trên Kaggle bằng cách điều chỉnh các siêu tham số thông qua kiểm định chéo gập k-lần.
 6. Cải thiện điểm bằng cách cải thiện mô hình (các tầng, điều chuẩn, dropout).
 7. Điều gì sẽ xảy ra nếu ta không chuẩn hóa đặc trưng số liên tục như ta đã làm trong phần này? 
