@@ -358,7 +358,6 @@ They map into vectors $(1, 0)$ and $(0, 1)$ respectively.
 Pandas does this automatically for us.
 -->
 
-Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc.
 Tiếp theo chúng ta sẽ xử lý các giá trị rời rạc như biến 'MSZoning'.
 Ta sẽ thay thế chúng bằng biểu diễn one-hot theo đúng cách mà ta đã chuyển đổi dữ liệu phân loại đa lớp thành vector chứa $0$ và $1$.
 Ví dụ, 'MSZoning' bao gồm các giá trị 'RL' và 'RM', tương ứng lần lượt với vector $(1, 0)$ and $(0, 1)$. 
