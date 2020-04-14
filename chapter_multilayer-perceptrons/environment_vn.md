@@ -275,7 +275,7 @@ In other words, training and test data were so different that nothing useful cou
 
 Bạn có thể đã mắc nhiều sai lầm.
 Cụ thể, các phân phối mà bạn dùng để huấn luyện và các phân phối bạn gặp phải trong thực tế có thể rất khác nhau.
-Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà Alex đã tư vấn nhiều năm về trước.
+Điều này đã từng xảy ra với một công ty khởi nghiệp không may mắn mà tôi đã tư vấn nhiều năm về trước.
 Họ đã phát triển một bộ xét nghiệm máu cho một căn bệnh xảy ra chủ yếu ở đàn ông lớn tuổi và họ đã thu thập được một lượng kha khá mẫu máu từ các bệnh nhân.
 Mặc dù vậy, việc thu thập mẫu máu từ những người đàn ông khoẻ mạnh lại khó khăn hơn (chủ yếu là vì lý do đạo đức).
 Để giải quyết sự thiếu hụt này, họ đã kêu gọi một lượng lớn các sinh viên trong trường học tham gia hiến máu tình nguyện để thực hiện xét nghiệm máu của họ.
