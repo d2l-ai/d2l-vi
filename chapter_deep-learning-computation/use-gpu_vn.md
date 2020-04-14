@@ -269,7 +269,8 @@ Now that the data is on the same GPU (both $\mathbf{z}$ and $\mathbf{y}$ are), w
 In such cases MXNet places the result on the same device as its constituents. In our case that is `@gpu(1)`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ dữ liệu đã ở trên cùng một GPU (cả $\mathbf{z}$ và $\mathbf{y}$), ta có thể cộng lại.
+Trong những trường hợp như vậy MXNet lưu kết quả tại cùng thiết bị với các toán hạng. Trong trường hợp này  là `@gpu(1)`.
 
 ```{.python .input}
 y + z
@@ -284,7 +285,13 @@ In these cases, we can call `as_in_ctx()`. If the variable is already the specif
 In fact, unless you specifically want to make a copy, `as_in_ctx()` is the method of choice.
 -->
 
-*dịch đoạn phía trên*
+Giả sử biến z hiện đang được lưu trong gpu(1).
+Điều gì sẽ xảy ra nếu ta gọi z.copyto(gpu(1))?
+Hàm này sẽ tạo một bản sao của biến và vùng nhớ mới cho bản sao, ngay cả khi biến đang có trong thiết bị.
+Do đó chúng ta muốn chỉ tạo bản sao khi các biến tồn tại ở các ngữ cảnh khác nhau.
+Trong các trường hợp đó, ta có thể gọi `as_in_ctx()`. 
+Nếu biến đó đã tồn tại trong ngữ cảnh thì hàm này không thực hiện lệnh nào.
+Trên thực tế, trừ trường hợp đặc biệt bạn muốn tạo bản sao, hãy sử dụng `as_in_ctx()`.
 
 ```{.python .input}
 z = x.as_in_ctx(try_gpu(1))
@@ -296,7 +303,7 @@ It is important to note that, if the `ctx` of the source variable and the target
 then the `as_in_ctx` function causes the target variable and the source variable to share the memory of the source variable.
 -->
 
-*dịch đoạn phía trên*
+Cần lưu ý rằng, nếu `ctx` của biến nguồn và biến đích là giống nhau, hàm `as_in_ctx` sẽ khiến biến đích có cùng vùng nhớ với biến nguồn.
 
 ```{.python .input  n=8}
 y.as_in_ctx(try_gpu(1)) is y
@@ -306,7 +313,7 @@ y.as_in_ctx(try_gpu(1)) is y
 The `copyto` function always creates new memory for the target variable.
 -->
 
-*dịch đoạn phía trên*
+Hàm `copyto` luôn luôn tạo vùng nhớ mới cho biến đích.
 
 ```{.python .input}
 y.copyto(try_gpu(1)) is y
