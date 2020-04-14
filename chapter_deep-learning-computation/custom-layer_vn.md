@@ -25,7 +25,7 @@ Dù sớm hay muộn, bạn cũng sẽ gặp một tầng không có trong Gluon
 ## Layers without Parameters
 -->
 
-## Tầng không có Tham số
+## Các tầng không có Tham số
 
 <!--
 Since this is slightly intricate, we start with a custom layer (also known as Block) that does not have any inherent parameters. 
