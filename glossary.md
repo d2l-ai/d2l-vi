@@ -33,9 +33,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | background noise        | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
 | back-propagation        | lan truyền ngược               |                                              |
 | backward pass           | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
-| bandit                  | máy đánh bạc                   |  |
+| bandit                  | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                   | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
-| batch normalization | chuẩn hóa theo batch | |
+| batch normalization     | chuẩn hóa theo batch           | [https://git.io/Jfe1T](https://git.io/Jfe1T) |
 | batch size              | kích thước batch               | [https://git.io/JvXdK](https://git.io/JvXdK) |
 | benchmark               | đánh giá xếp hạng              | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | bias (bias as variance) | độ chệch                       | [https://git.io/JvQxO](https://git.io/JvQxO) |
@@ -50,7 +50,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
-| categorical variable | biến hạng mục | |
+| categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | classifier                          | bộ phân loại           |                                              |
@@ -75,25 +75,25 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | cross validation                    | kiểm định chéo         |                                              |
 
 ## D
-| English                | Tiếng Việt                      | Thảo luận tại                                |
-|------------------------|---------------------------------|----------------------------------------------|
-| data                   | dữ liệu                         |                                              |
-| data science           | khoa học dữ liệu                | [https://git.io/JvojD](https://git.io/JvojD) |
-| data scientist         | nhà khoa học dữ liệu            | [https://git.io/JvojD](https://git.io/JvojD) |
-| datapoint (data point) | điểm dữ liệu                    |                                              |
-| data mismatch          | dữ liệu không tương đồng        |                                              |
-| dataset (data set)     | tập dữ liệu                     |                                              |
-| data manipulation      | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
-| deep learning          | học sâu                         |                                              |
-| deferred initialization | khởi tạo trễ | |
-| dev set                | tập phát triển                  |                                              |
-| dev set performance    | chất lượng trên tập phát triển  |                                              |
-| development set        | tập phát triển                  |                                              |
-| differentiable         | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
-| distribution           | phân phối                       |                                              |
-| domain adaptation      | thích ứng miền                  |                                              |
-| dot product            | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
-| dropout                | dropout                         |                                              |
+| English                 | Tiếng Việt                      | Thảo luận tại                                |
+|-------------------------|---------------------------------|----------------------------------------------|
+| data                    | dữ liệu                         |                                              |
+| data science            | khoa học dữ liệu                | [https://git.io/JvojD](https://git.io/JvojD) |
+| data scientist          | nhà khoa học dữ liệu            | [https://git.io/JvojD](https://git.io/JvojD) |
+| datapoint (data point)  | điểm dữ liệu                    |                                              |
+| data mismatch           | dữ liệu không tương đồng        |                                              |
+| dataset (data set)      | tập dữ liệu                     |                                              |
+| data manipulation       | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
+| deep learning           | học sâu                         |                                              |
+| deferred initialization | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
+| dev set                 | tập phát triển                  |                                              |
+| dev set performance     | chất lượng trên tập phát triển  |                                              |
+| development set         | tập phát triển                  |                                              |
+| differentiable          | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
+| distribution            | phân phối                       |                                              |
+| domain adaptation       | thích ứng miền                  |                                              |
+| dot product             | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
+| dropout                 | dropout                         |                                              |
 
 ## E
 | English                  | Tiếng Việt             | Thảo luận tại                                  |
@@ -125,7 +125,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false negative      | âm tính giả      |                                              |
 | false positive      | dương tính giả   |                                              |
 | feature             | đặc trưng        |                                              |
-| filter (CNN) | bộ lọc | |
+| filter (CNN)        | bộ lọc           | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                 | khớp             | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản   | [https://git.io/JvKet](https://git.io/JvKet) |
 | flatten             | trải phẳng       | [https://git.io/JvohO](https://git.io/JvohO) |
@@ -170,8 +170,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | import (module, package)   | nhập (mô-đun, gói thư viện) | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | imputation (Preprocessing) | quy buộc                    | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| indicator variable         | biến chỉ định                    | [https://git.io/JvQha](https://git.io/JvQha) |
-| initializer                | bộ khởi tạo                 |                                              |
+| indicator variable         | biến chỉ định               | [https://git.io/JvQha](https://git.io/JvQha) |
+| initializer                | bộ khởi tạo                 | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
 
@@ -184,7 +184,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt               | Thảo luận tại                                |
 |-------------------------|--------------------------|----------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK) |
-| kernel (CNN) | bộ lọc | |
+| kernel (CNN)            | bộ lọc                   | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
@@ -223,7 +223,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | model                        | mô hình                       |                                              |
 | model capacity               | năng lực mô hình              | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | module                       | mô-đun                        |                                              |
-| multi-armed bandit           | máy đánh bạc đa cần           |  |
+| multi-armed bandit           | máy đánh bạc đa cần           | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | multitask learning           | học đa nhiệm                  | [https://git.io/JvohQ](https://git.io/JvohQ) |
@@ -237,7 +237,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                            |                                                                                            |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
-| nonstationary distribution        | phân phối không dừng           |                                         |
+| nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
@@ -259,7 +259,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại                                |
 |------------------------------------|----------------------------|----------------------------------------------|
-| padding | đệm  | |
+| padding                            | đệm                        | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | partition function                 | hàm phân hoạch             | [https://git.io/JvQxE](https://git.io/JvQxE) |
 | pattern recognition                | nhận dạng mẫu              | [https://git.io/JvKeL](https://git.io/JvKeL) |
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
@@ -270,7 +270,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (động từ)                  | nằm ngang                  |                                              |
 | pipeline                           | pipeline                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
-| pooling | gộp | |
+| pooling                            | gộp                        | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | positive sample/example            | mẫu dương                  |                                              |
 | posterior                          | hậu nghiệm                 | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision                          | precision                  |                                              |
@@ -288,25 +288,25 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | quadratic programming | quy hoạch toàn phương |                                              |
 
 ## R
-| English                        | Tiếng Việt                                | Thảo luận tại                                |
-|--------------------------------|-------------------------------------------|----------------------------------------------|
-| random variable                | biến ngẫu nhiên                           |                                              |
-| recall                         | recall                                    |                                              |
-| recognition                    | nhận dạng                                 |                                              |
-| recurrent neural network       | mạng nơ-ron truy hồi                      |                                              |
-| rectified linear unit (ReLU)   | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
-| regressor                      | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
-| regularization                 | điều chuẩn                                |                                              |
-| reinforcement learning         | học tăng cường                            |                                              |
-| representation learning        | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
-| rescale | chuyển đổi giá trị | |
-| reward function                | hàm điểm thưởng                           |                                              |
-| robust (model, algorithm, system) | mạnh mẽ | |
-| robust to noise                | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
-| root mean squared error (RMSE) | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
-| running time                   | thời gian chạy                            |                                              |
-| region of rejection            | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| relative loss                  | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
+| English                           | Tiếng Việt                                | Thảo luận tại                                |
+|-----------------------------------|-------------------------------------------|----------------------------------------------|
+| random variable                   | biến ngẫu nhiên                           |                                              |
+| recall                            | recall                                    |                                              |
+| recognition                       | nhận dạng                                 |                                              |
+| recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
+| rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
+| regressor                         | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
+| regularization                    | điều chuẩn                                |                                              |
+| reinforcement learning            | học tăng cường                            |                                              |
+| representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
+| rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| reward function                   | hàm điểm thưởng                           |                                              |
+| robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
+| robust to noise                   | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
+| root mean squared error (RMSE)    | căn bậc hai trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
+| running time                      | thời gian chạy                            |                                              |
+| region of rejection               | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| relative loss                     | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại                                |
@@ -332,7 +332,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                                              |
-| stride | sải bước | |
+| stride                          | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                       | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
 | superscript                     | chỉ số trên              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
