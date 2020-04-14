@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Convolutional Neural Networks (LeNet)
@@ -9,46 +9,35 @@
 :label:`sec_lenet`
 
 <!--
-We are now ready to put all of the tools together
-to deploy your first fully-functional convolutional neural network.
-In our first encounter with image data we applied a multilayer perceptron (:numref:`sec_mlp_scratch`)
-to pictures of clothing in the Fashion-MNIST dataset.
-Each image in Fashion-MNIST consisted of
-a two-dimensional $28 \times 28$ matrix.
-To make this data amenable to multilayer perceptrons
-which anticipate receiving inputs as one-dimensional fixed-length vectors,
-we first flattened each image, yielding vectors of length 784,
-before processing them with a series of fully-connected layers.
+We are now ready to put all of the tools together to deploy your first fully-functional convolutional neural network.
+In our first encounter with image data we applied a multilayer perceptron (:numref:`sec_mlp_scratch`) to pictures of clothing in the Fashion-MNIST dataset.
+Each image in Fashion-MNIST consisted of a two-dimensional $28 \times 28$ matrix.
+To make this data amenable to multilayer perceptrons which anticipate receiving inputs as one-dimensional fixed-length vectors, 
+we first flattened each image, yielding vectors of length 784, before processing them with a series of fully-connected layers.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Now that we have introduced convolutional layers,
-we can keep the image in its original spatially-organized grid,
-processing it with a series of successive convolutional layers.
-Moreover, because we are using convolutional layers,
-we can enjoy a considerable savings in the number of parameters required.
+Now that we have introduced convolutional layers, we can keep the image in its original spatially-organized grid, processing it with a series of successive convolutional layers.
+Moreover, because we are using convolutional layers, we can enjoy a considerable savings in the number of parameters required.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In this section, we will introduce one of the first
-published convolutional neural networks
-whose benefit was first demonstrated by Yann Lecun,
-then a researcher at AT&T Bell Labs,
-for the purpose of recognizing handwritten digits in images—[LeNet5](http://yann.lecun.com/exdb/lenet/).
-In the 90s, their experiments with LeNet gave the first compelling evidence
-that it was possible to train convolutional neural networks
-by backpropagation.
-Their model achieved outstanding results (only matched by Support Vector Machines at the time)
-and was adopted to recognize digits for processing deposits in ATM machines.
-Some ATMs still run the code
-that Yann and his colleague Leon Bottou wrote in the 1990s!
+In this section, we will introduce one of the first published convolutional neural networks whose benefit was first demonstrated by Yann Lecun, 
+then a researcher at AT&T Bell Labs, for the purpose of recognizing handwritten digits in images—[LeNet5](http://yann.lecun.com/exdb/lenet/).
+In the 90s, their experiments with LeNet gave the first compelling evidence that it was possible to train convolutional neural networks by backpropagation.
+Their model achieved outstanding results (only matched by Support Vector Machines at the time) and was adopted to recognize digits for processing deposits in ATM machines.
+Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in the 1990s!
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## LeNet
@@ -73,67 +62,45 @@ Before getting into the weeds, let us briefly review the model in :numref:`img_l
 :label:`img_lenet`
 
 <!--
-The basic units in the convolutional block are a convolutional layer
-and a subsequent average pooling layer
-(note that max-pooling works better,
-but it had not been invented in the 90s yet).
-The convolutional layer is used to recognize
-the spatial patterns in the image,
-such as lines and the parts of objects,
-and the subsequent average pooling layer
-is used to reduce the dimensionality.
-The convolutional layer block is composed of
-repeated stacks of these two basic units.
-Each convolutional layer uses a $5\times 5$ kernel
-and processes each output with a sigmoid activation function
-(again, note that ReLUs are now known to work more reliably,
-but had not been invented yet).
-The first convolutional layer has 6 output channels,
-and second convolutional layer increases channel depth further to 16.
+The basic units in the convolutional block are a convolutional layer and a subsequent average pooling layer 
+(note that max-pooling works better, but it had not been invented in the 90s yet).
+The convolutional layer is used to recognize the spatial patterns in the image, 
+such as lines and the parts of objects, and the subsequent average pooling layer is used to reduce the dimensionality.
+The convolutional layer block is composed of repeated stacks of these two basic units.
+Each convolutional layer uses a $5\times 5$ kernel and processes each output with a sigmoid activation function 
+(again, note that ReLUs are now known to work more reliably, but had not been invented yet).
+The first convolutional layer has 6 output channels, and second convolutional layer increases channel depth further to 16.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-However, coinciding with this increase in the number of channels,
-the height and width are shrunk considerably.
-Therefore, increasing the number of output channels
-makes the parameter sizes of the two convolutional layers similar.
-The two average pooling layers are of size $2\times 2$ and take stride 2
-(note that this means they are non-overlapping).
-In other words, the pooling layer downsamples the representation
-to be precisely *one quarter* the pre-pooling size.
+However, coinciding with this increase in the number of channels, the height and width are shrunk considerably.
+Therefore, increasing the number of output channels makes the parameter sizes of the two convolutional layers similar.
+The two average pooling layers are of size $2\times 2$ and take stride 2 (note that this means they are non-overlapping).
+In other words, the pooling layer downsamples the representation to be precisely *one quarter* the pre-pooling size.
+-->
+
+*dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+<!--
+The convolutional block emits an output with size given by (batch size, channel, height, width).
+Before we can pass the convolutional block's output to the fully-connected block, we must flatten each example in the minibatch.
+In other words, we take this 4D input and transform it into the 2D input expected by fully-connected layers: 
+as a reminder, the first dimension indexes the examples in the minibatch and the second gives the flat vector representation of each example.
+LeNet's fully-connected layer block has three fully-connected layers, with 120, 84, and 10 outputs, respectively.
+Because we are still performing classification, the 10 dimensional output layer corresponds to the number of possible output classes.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-The convolutional block emits an output with size given by
-(batch size, channel, height, width).
-Before we can pass the convolutional block's output
-to the fully-connected block, we must flatten
-each example in the minibatch.
-In other words, we take this 4D input and transform it into the 2D
-input expected by fully-connected layers:
-as a reminder, the first dimension indexes the examples in the minibatch
-and the second gives the flat vector representation of each example.
-LeNet's fully-connected layer block has three fully-connected layers,
-with 120, 84, and 10 outputs, respectively.
-Because we are still performing classification,
-the 10 dimensional output layer corresponds
-to the number of possible output classes.
--->
-
-*dịch đoạn phía trên*
-
-<!--
-While getting to the point
-where you truly understand
-what is going on inside LeNet
-may have taken a bit of work,
-you can see below that implementing it
-in a modern deep learning library
-is remarkably simple.
+While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
+you can see below that implementing it in a modern deep learning library is remarkably simple.
 Again, we will rely on the Sequential class.
 -->
 
@@ -159,25 +126,17 @@ net.add(nn.Conv2D(channels=6, kernel_size=5, padding=2, activation='sigmoid'),
 ```
 
 <!--
-As compared to the original network,
-we took the liberty of replacing
-the Gaussian activation in the last layer
-by a regular dense layer, which tends to be
-significantly more convenient to train.
-Other than that, this network matches
-the historical definition of LeNet5.
+As compared to the original network, we took the liberty of replacing the Gaussian activation in the last layer by a regular dense layer, 
+which tends to be significantly more convenient to train.
+Other than that, this network matches the historical definition of LeNet5.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
 Next, let us take a look of an example.
-As shown in :numref:`img_lenet_vert`, we feed
-a single-channel example
-of size $28 \times 28$ into the network
-and perform a forward computation layer by layer
-printing the output shape at each layer
-to make sure we understand what is happening here.
+As shown in :numref:`img_lenet_vert`, we feed a single-channel example of size $28 \times 28$ into the network and perform 
+a forward computation layer by layer printing the output shape at each layer to make sure we understand what is happening here.
 -->
 
 *dịch đoạn phía trên*
@@ -190,23 +149,17 @@ for layer in net:
     print(layer.name, 'output shape:\t', X.shape)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
-Note that the height and width of the representation
-at each layer throughout the convolutional block is reduced
-(compared to the previous layer).
-The first convolutional layer uses a kernel
-with a height and width of $5$, and then a $2$ pixels of padding
-which compensates the reduction in its original shape.
-While the second convolutional layer applies the same shape of
-$5 x 5$ kernel without padding, resulting in reductions
-in both height and width by $4$ pixels.
+Note that the height and width of the representation at each layer throughout the convolutional block is reduced (compared to the previous layer).
+The first convolutional layer uses a kernel with a height and width of $5$, and then a $2$ pixels of padding which compensates the reduction in its original shape.
+While the second convolutional layer applies the same shape of $5 x 5$ kernel without padding, resulting in reductions in both height and width by $4$ pixels.
 Moreover each pooling layer halves the height and width.
-However, as we go up the stack of layers,
-the number of channels increases layer-over-layer
-from 1 in the input to 6 after the first convolutional layer
-and 16 after the second layer.
-Then, the fully-connected layer reduces dimensionality layer by layer,
-until emitting an output that matches the number of image classes.
+However, as we go up the stack of layers, the number of channels increases layer-over-layer from 1 in the input to 6 after the first convolutional layer and 16 after the second layer.
+Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
 *dịch đoạn phía trên*
@@ -218,6 +171,10 @@ until emitting an output that matches the number of image classes.
 ![*dịch chú thích ảnh phía trên*](../img/lenet-vert.svg)
 :label:`img_lenet_vert`
 
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Data Acquisition and Training
 -->
@@ -225,12 +182,9 @@ until emitting an output that matches the number of image classes.
 ## *dịch tiêu đề phía trên*
 
 <!--
-Now that we have implemented the model,
-we might as well run some experiments
-to see what we can accomplish with the LeNet model.
+Now that we have implemented the model, we might as well run some experiments to see what we can accomplish with the LeNet model.
 We will use Fashion-MNIST as our dataset.
-It is more challenging than the original MNIST dataset
-while it has the same shape ($28\times28$ images).
+It is more challenging than the original MNIST dataset while it has the same shape ($28\times28$ images).
 -->
 
 *dịch đoạn phía trên*
@@ -241,26 +195,23 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 ```
 
 <!--
-While convolutional networks may have few parameters,
-they can still be significantly more expensive
-to compute than a similarly deep multilayer perceptron
-so if you have access to a GPU, this might be a good time
-to put it into action to speed up training.
+While convolutional networks may have few parameters, they can still be significantly more expensive to compute than 
+a similarly deep multilayer perceptron so if you have access to a GPU, this might be a good time to put it into action to speed up training.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-For evaluation, we need to make a slight modification
-to the `evaluate_accuracy` function that we described
-in :numref:`sec_softmax_scratch`.
-Since the full dataset lives on the CPU,
-we need to copy it to the GPU before we can compute our models.
-This is accomplished via the `as_in_ctx` function
-described in :numref:`sec_use_gpu`.
+For evaluation, we need to make a slight modification to the `evaluate_accuracy` function that we described in :numref:`sec_softmax_scratch`.
+Since the full dataset lives on the CPU, we need to copy it to the GPU before we can compute our models.
+This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_gpu`.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -283,12 +234,11 @@ prior to making the forward and backward passes.
 *dịch đoạn phía trên*
 
 <!--
-The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`. Since we will deal with networks with tens of layers now, the function will only support Gluon models. We initialize the model parameters on the device indicated by `ctx`,
-this time using the Xavier initializer.
-The loss function and the training algorithm
-still use the cross-entropy loss function
-and minibatch stochastic gradient descent. Since each epoch takes tens of
-seconds to run, we visualize the training loss in a finer granularity.
+The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`.
+Since we will deal with networks with tens of layers now, the function will only support Gluon models.
+We initialize the model parameters on the device indicated by `ctx`, this time using the Xavier initializer.
+The loss function and the training algorithm still use the cross-entropy loss function and minibatch stochastic gradient descent.
+Since each epoch takes tens of seconds to run, we visualize the training loss in a finer granularity.
 -->
 
 *dịch đoạn phía trên*
@@ -338,11 +288,15 @@ lr, num_epochs = 0.9, 10
 train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
+
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * A convolutional neural network (in short, ConvNet) is a network using convolutional layers.
@@ -357,38 +311,33 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Replace the average pooling with max pooling. What happens?
-1. Try to construct a more complex network based on LeNet to improve its accuracy.
+2. Try to construct a more complex network based on LeNet to improve its accuracy.
     * Adjust the convolution window size.
     * Adjust the number of output channels.
     * Adjust the activation function (ReLU?).
     * Adjust the number of convolution layers.
     * Adjust the number of fully connected layers.
     * Adjust the learning rates and other training details (initialization, epochs, etc.)
-1. Try out the improved network on the original MNIST dataset.
-1. Display the activations of the first and second layer of LeNet for different inputs (e.g., sweaters, coats).
+3. Try out the improved network on the original MNIST dataset.
+4. Display the activations of the first and second layer of LeNet for different inputs (e.g., sweaters, coats).
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2353)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_lenet.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_lenet.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2353)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -403,6 +352,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

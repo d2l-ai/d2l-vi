@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Multiple Input and Output Channels
@@ -38,6 +38,10 @@ If our convolution kernel's window shape is $k_h\times k_w$, then when $c_i=1$, 
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 However, when $c_i>1$, we need a kernel that contains an array of shape $k_h\times k_w$ *for each input channel*. 
@@ -98,6 +102,14 @@ K = np.array([[[0, 1], [2, 3]], [[1, 2], [3, 4]]])
 
 corr2d_multi_in(X, K)
 ```
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Multiple Output Channels
@@ -164,6 +176,10 @@ The result of the first channel is consistent with the result of the previous in
 corr2d_multi_in_out(X, K)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
 ## $1\times 1$ Convolutional Layer
 -->
@@ -208,12 +224,13 @@ Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights (plus 
 ![*dịch chú thích ảnh phía trên*](../img/conv-1x1.svg)
 :label:`fig_conv_1x1`
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
 <!--
-Let us check whether this works in practice:
-we implement the $1 \times 1$ convolution
-using a fully-connected layer.
-The only thing is that we need to make some adjustments
-to the data shape before and after the matrix multiplication.
+Let us check whether this works in practice: we implement the $1 \times 1$ convolution using a fully-connected layer.
+The only thing is that we need to make some adjustments to the data shape before and after the matrix multiplication.
 -->
 
 *dịch đoạn phía trên*
@@ -284,6 +301,9 @@ np.abs(Y1 - Y2).sum() < 1e-6
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2351)
 -->
@@ -292,8 +312,6 @@ np.abs(Y1 - Y2).sum() < 1e-6
 * [Tiếng Anh](https://discuss.mxnet.io/t/2351)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -322,7 +340,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *

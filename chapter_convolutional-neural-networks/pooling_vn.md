@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Pooling
@@ -10,23 +10,16 @@
 
 
 <!--
-Often, as we process images, we want to gradually
-reduce the spatial resolution of our hidden representations,
-aggregating information so that
-the higher up we go in the network,
-the larger the receptive field (in the input)
-to which each hidden node is sensitive.
+Often, as we process images, we want to gradually reduce the spatial resolution of our hidden representations, 
+aggregating information so that the higher up we go in the network, the larger the receptive field (in the input) to which each hidden node is sensitive.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Often our ultimate task asks some global question about the image,
-e.g., *does it contain a cat?*
-So typically the nodes of our final layer should be sensitive
-to the entire input.
-By gradually aggregating information, yielding coarser and coarser maps,
-we accomplish this goal of ultimately learning a global representation,
+Often our ultimate task asks some global question about the image, e.g., *does it contain a cat?*
+So typically the nodes of our final layer should be sensitive to the entire input.
+By gradually aggregating information, yielding coarser and coarser maps, we accomplish this goal of ultimately learning a global representation,
 while keeping all of the advantages of convolutional layers at the intermediate layers of processing.
 -->
 
@@ -34,32 +27,28 @@ while keeping all of the advantages of convolutional layers at the intermediate 
 
 
 <!--
-Moreover, when detecting lower-level features, such as edges
-(as discussed in :numref:`sec_conv_layer`),
+Moreover, when detecting lower-level features, such as edges (as discussed in :numref:`sec_conv_layer`),
 we often want our representations to be somewhat invariant to translation.
-For instance, if we take the image `X`
-with a sharp delineation between black and white
-and shift the whole image by one pixel to the right,
-i.e., `Z[i, j] = X[i, j+1]`,
-then the output for the new image `Z` might be vastly different.
+For instance, if we take the image `X` with a sharp delineation between black and white
+and shift the whole image by one pixel to the right, i.e., `Z[i, j] = X[i, j+1]`, then the output for the new image `Z` might be vastly different.
 The edge will have shifted by one pixel and with it all the activations.
 In reality, objects hardly ever occur exactly at the same place.
-In fact, even with a tripod and a stationary object,
-vibration of the camera due to the movement of the shutter
-might shift everything by a pixel or so
+In fact, even with a tripod and a stationary object, vibration of the camera due to the movement of the shutter might shift everything by a pixel or so
 (high-end cameras are loaded with special features to address this problem).
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-This section introduces pooling layers,
-which serve the dual purposes of
-mitigating the sensitivity of convolutional layers to location
-and of spatially downsampling representations.
+This section introduces pooling layers, which serve the dual purposes of
+mitigating the sensitivity of convolutional layers to location and of spatially downsampling representations.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Maximum Pooling and Average Pooling
@@ -68,32 +57,20 @@ and of spatially downsampling representations.
 ## *dịch tiêu đề phía trên*
 
 <!--
-Like convolutional layers, pooling operators
-consist of a fixed-shape window that is slid over
-all regions in the input according to its stride,
-computing a single output for each location traversed
-by the fixed-shape window (sometimes known as the *pooling window*).
-However, unlike the cross-correlation computation
-of the inputs and kernels in the convolutional layer,
-the pooling layer contains no parameters (there is no *filter*).
-Instead, pooling operators are deterministic,
-typically calculating either the maximum or the average value
-of the elements in the pooling window.
-These operations are called *maximum pooling* (*max pooling* for short)
-and *average pooling*, respectively.
+Like convolutional layers, pooling operators consist of a fixed-shape window that is slid over all regions in the input according to its stride, 
+computing a single output for each location traversed by the fixed-shape window (sometimes known as the *pooling window*).
+However, unlike the cross-correlation computation of the inputs and kernels in the convolutional layer, the pooling layer contains no parameters (there is no *filter*).
+Instead, pooling operators are deterministic, typically calculating either the maximum or the average value of the elements in the pooling window.
+These operations are called *maximum pooling* (*max pooling* for short) and *average pooling*, respectively.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In both cases, as with the cross-correlation operator,
-we can think of the pooling window
-as starting from the top left of the input array
+In both cases, as with the cross-correlation operator, we can think of the pooling window as starting from the top left of the input array
 and sliding across the input array from left to right and top to bottom.
-At each location that the pooling window hits,
-it computes the maximum or average
-value of the input subarray in the window
-(depending on whether *max* or *average* pooling is employed).
+At each location that the pooling window hits, it computes the maximum or average
+value of the input subarray in the window (depending on whether *max* or *average* pooling is employed).
 -->
 
 *dịch đoạn phía trên*
@@ -120,36 +97,32 @@ $$
 \max(4, 5, 7, 8)=8.\\
 $$
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
-A pooling layer with a pooling window shape of $p \times q$
-is called a $p \times q$ pooling layer.
+A pooling layer with a pooling window shape of $p \times q$ is called a $p \times q$ pooling layer.
 The pooling operation is called $p \times q$ pooling.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Let us return to the object edge detection example
-mentioned at the beginning of this section.
-Now we will use the output of the convolutional layer
-as the input for $2\times 2$ maximum pooling.
+Let us return to the object edge detection example mentioned at the beginning of this section.
+Now we will use the output of the convolutional layer as the input for $2\times 2$ maximum pooling.
 Set the convolutional layer input as `X` and the pooling layer output as `Y`. Whether or not the values of `X[i, j]` and `X[i, j+1]` are different,
-or `X[i, j+1]` and `X[i, j+2]` are different,
-the pooling layer outputs all include `Y[i, j]=1`.
-That is to say, using the $2\times 2$ maximum pooling layer,
-we can still detect if the pattern recognized by the convolutional layer
+or `X[i, j+1]` and `X[i, j+2]` are different, the pooling layer outputs all include `Y[i, j]=1`.
+That is to say, using the $2\times 2$ maximum pooling layer, we can still detect if the pattern recognized by the convolutional layer
 moves no more than one element in height and width.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In the code below, we implement the forward computation
-of the pooling layer in the `pool2d` function.
-This function is similar to the `corr2d` function
-in :numref:`sec_conv_layer`.
-However, here we have no kernel, computing the output
-as either the max or the average of each region in the input..
+In the code below, we implement the forward computation of the pooling layer in the `pool2d` function.
+This function is similar to the `corr2d` function in :numref:`sec_conv_layer`.
+However, here we have no kernel, computing the output as either the max or the average of each region in the input..
 -->
 
 *dịch đoạn phía trên*
@@ -192,6 +165,14 @@ At the same time, we experiment with the average pooling layer.
 pool2d(X, (2, 2), 'avg')
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Padding and Stride
 -->
@@ -199,15 +180,10 @@ pool2d(X, (2, 2), 'avg')
 ## *dịch tiêu đề phía trên*
 
 <!--
-As with convolutional layers, pooling layers
-can also change the output shape.
-And as before, we can alter the operation to achieve a desired output shape
-by padding the input and adjusting the stride.
-We can demonstrate the use of padding and strides
-in pooling layers via the two-dimensional maximum pooling layer MaxPool2D
-shipped in MXNet Gluon's `nn` module.
-We first construct an input data of shape `(1, 1, 4, 4)`,
-where the first two dimensions are batch and channel.
+As with convolutional layers, pooling layers can also change the output shape.
+And as before, we can alter the operation to achieve a desired output shape by padding the input and adjusting the stride.
+We can demonstrate the use of padding and strides in pooling layers via the two-dimensional maximum pooling layer MaxPool2D shipped in MXNet Gluon's `nn` module.
+We first construct an input data of shape `(1, 1, 4, 4)`, where the first two dimensions are batch and channel.
 -->
 
 *dịch đoạn phía trên*
@@ -218,10 +194,8 @@ X
 ```
 
 <!--
-By default, the stride in the `MaxPool2D` class
-has the same shape as the pooling window.
-Below, we use a pooling window of shape `(3, 3)`,
-so we get a stride shape of `(3, 3)` by default.
+By default, the stride in the `MaxPool2D` class has the same shape as the pooling window.
+Below, we use a pooling window of shape `(3, 3)`, so we get a stride shape of `(3, 3)` by default.
 -->
 
 *dịch đoạn phía trên*
@@ -256,6 +230,10 @@ pool2d = nn.MaxPool2D((2, 3), padding=(1, 2), strides=(2, 3))
 pool2d(X)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
 <!--
 ## Multiple Channels
 -->
@@ -263,14 +241,9 @@ pool2d(X)
 ## *dịch tiêu đề phía trên*
 
 <!--
-When processing multi-channel input data,
-the pooling layer pools each input channel separately,
-rather than adding the inputs of each channel by channel
-as in a convolutional layer.
-This means that the number of output channels for the pooling layer
-is the same as the number of input channels.
-Below, we will concatenate arrays `X` and `X+1`
-on the channel dimension to construct an input with 2 channels.
+When processing multi-channel input data, the pooling layer pools each input channel separately, rather than adding the inputs of each channel by channel as in a convolutional layer.
+This means that the number of output channels for the pooling layer is the same as the number of input channels.
+Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 -->
 
 *dịch đoạn phía trên*
@@ -295,7 +268,7 @@ pool2d(X)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Taking the input elements in the pooling window, the maximum pooling operation assigns the maximum value as the output and the average pooling operation assigns the average value as the output.
@@ -312,7 +285,7 @@ pool2d(X)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Can you implement average pooling as a special case of a convolution layer? If so, do it.
@@ -325,20 +298,17 @@ pool2d(X)
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2352)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_pooling.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_pooling.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2352)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -353,6 +323,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
@@ -366,7 +337,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *

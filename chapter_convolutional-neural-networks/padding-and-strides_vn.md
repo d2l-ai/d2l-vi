@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Padding and Stride
@@ -9,12 +9,8 @@
 :label:`sec_padding`
 
 <!--
-In the previous example, our input had a height and width of $3$
-and a convolution kernel with a height and width of $2$,
-yielding an output with a height and a width of $2$.
-In general, assuming the input shape is $n_h\times n_w$
-and the convolution kernel window shape is $k_h\times k_w$,
-then the output shape will be
+In the previous example, our input had a height and width of $3$ and a convolution kernel with a height and width of $2$, yielding an output with a height and a width of $2$.
+In general, assuming the input shape is $n_h\times n_w$ and the convolution kernel window shape is $k_h\times k_w$, then the output shape will be
 -->
 
 *dịch đoạn phía trên*
@@ -22,9 +18,7 @@ then the output shape will be
 $$(n_h-k_h+1) \times (n_w-k_w+1).$$
 
 <!--
-Therefore, the output shape of the convolutional layer
-is determined by the shape of the input
-and the shape of the convolution kernel window.
+Therefore, the output shape of the convolutional layer is determined by the shape of the input and the shape of the convolution kernel window.
 -->
 
 *dịch đoạn phía trên*
@@ -36,16 +30,19 @@ In several cases we might want to incorporate particular techniques---padding an
 *dịch đoạn phía trên*
 
 <!--
-* In general, since kernels generally have width and height greater than $1$,
-that means that after applying many successive convolutions,
+* In general, since kernels generally have width and height greater than $1$, that means that after applying many successive convolutions, 
 we will wind up with an output that is much smaller than our input.
 If we start with a $240 \times 240$ pixel image, $10$ layers of $5 \times 5$ convolutions
-reduce the image to $200 \times 200$ pixels, slicing off $30 \%$ of the image and with it obliterating any interesting information on the boundaries of the original image. *Padding* handles this issue.
-* In some cases, we want to reduce the resolution drastically if say we find our
-original input resolution to be unwieldy. *Strides* can help in these instances.
+reduce the image to $200 \times 200$ pixels, slicing off $30 \%$ of the image and with it obliterating 
+any interesting information on the boundaries of the original image. *Padding* handles this issue.
+* In some cases, we want to reduce the resolution drastically if say we find our original input resolution to be unwieldy. *Strides* can help in these instances.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Padding
@@ -54,19 +51,11 @@ original input resolution to be unwieldy. *Strides* can help in these instances.
 ## *dịch tiêu đề phía trên*
 
 <!--
-As described above, one tricky issue when applying convolutional layers
-is that of losing pixels on the perimeter of our image.
-Since we typically use small kernels,
-for any given convolution,
-we might only lose a few pixels,
-but this can add up as we apply
-many successive convolutional layers.
-One straightforward solution to this problem
-is to add extra pixels of filler around the boundary of our input image,
-thus increasing the effective size of the image.
+As described above, one tricky issue when applying convolutional layers is that of losing pixels on the perimeter of our image.
+Since we typically use small kernels, for any given convolution, we might only lose a few pixels, but this can add up as we apply many successive convolutional layers.
+One straightforward solution to this problem is to add extra pixels of filler around the boundary of our input image, thus increasing the effective size of the image.
 Typically, we set the values of the extra pixels to $0$.
-In :numref:`img_conv_pad`, we pad a $3 \times 5$ input,
-increasing its size to $5 \times 7$.
+In :numref:`img_conv_pad`, we pad a $3 \times 5$ input, increasing its size to $5 \times 7$.
 The corresponding output then increases to a $4 \times 6$ matrix.
 -->
 
@@ -80,11 +69,8 @@ The corresponding output then increases to a $4 \times 6$ matrix.
 :label:`img_conv_pad`
 
 <!--
-In general, if we add a total of $p_h$ rows of padding
-(roughly half on top and half on bottom)
-and a total of $p_w$ columns of padding
-(roughly half on the left and half on the right),
-the output shape will be
+In general, if we add a total of $p_h$ rows of padding (roughly half on top and half on bottom) and 
+a total of $p_w$ columns of padding (roughly half on the left and half on the right), the output shape will be
 -->
 
 *dịch đoạn phía trên*
@@ -92,60 +78,44 @@ the output shape will be
 $$(n_h-k_h+p_h+1)\times(n_w-k_w+p_w+1).$$
 
 <!--
-This means that the height and width of the output
- will increase by $p_h$ and $p_w$ respectively.
+This means that the height and width of the output will increase by $p_h$ and $p_w$ respectively.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In many cases, we will want to set $p_h=k_h-1$ and $p_w=k_w-1$
-to give the input and output the same height and width.
-This will make it easier to predict the output shape of each layer
-when constructing the network.
-Assuming that $k_h$ is even here,
-we will pad $p_h/2$ rows on both sides of the height.
-If $k_h$ is odd, one possibility is to
-pad $\lceil p_h/2\rceil$ rows on the top of the input
-and $\lfloor p_h/2\rfloor$ rows on the bottom.
+In many cases, we will want to set $p_h=k_h-1$ and $p_w=k_w-1$ to give the input and output the same height and width.
+This will make it easier to predict the output shape of each layer when constructing the network.
+Assuming that $k_h$ is even here, we will pad $p_h/2$ rows on both sides of the height.
+If $k_h$ is odd, one possibility is to pad $\lceil p_h/2\rceil$ rows on the top of the input and $\lfloor p_h/2\rfloor$ rows on the bottom.
 We will pad both sides of the width in the same way.
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
-Convolutional neural networks commonly use convolutional kernels
-with odd height and width values, such as $1$, $3$, $5$, or $7$.
-Choosing odd kernel sizes has the benefit
-that we can preserve the spatial dimensionality
-while padding with the same number of rows on top and bottom,
-and the same number of columns on left and right.
+Convolutional neural networks commonly use convolutional kernels with odd height and width values, such as $1$, $3$, $5$, or $7$.
+Choosing odd kernel sizes has the benefit that we can preserve the spatial dimensionality while padding with the same number of rows on top and bottom, and the same number of columns on left and right.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Moreover, this practice of using odd kernels
-and padding to precisely preserve dimensionality
-offers a clerical benefit.
-For any two-dimensional array `X`,
-when the kernels size is odd
-and the number of padding rows and columns
-on all sides are the same,
-producing an output with the same height and width as the input,
-we know that the output `Y[i, j]` is calculated
-by cross-correlation of the input and convolution kernel
-with the window centered on `X[i, j]`.
+Moreover, this practice of using odd kernels and padding to precisely preserve dimensionality offers a clerical benefit.
+For any two-dimensional array `X`, when the kernels size is odd and the number of padding rows and columns on all sides are the same, 
+producing an output with the same height and width as the input, 
+we know that the output `Y[i, j]` is calculated by cross-correlation of the input and convolution kernel with the window centered on `X[i, j]`.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In the following example, we create a two-dimensional convolutional layer
-with a height and width of $3$
-and apply $1$ pixel of padding on all sides.
-Given an input with a height and width of $8$,
- we find that the height and width of the output is also $8$.
+In the following example, we create a two-dimensional convolutional layer with a height and width of $3$ and apply $1$ pixel of padding on all sides.
+Given an input with a height and width of $8$, we find that the height and width of the output is also $8$.
 -->
 
 *dịch đoạn phía trên*
@@ -191,6 +161,14 @@ conv2d = nn.Conv2D(1, kernel_size=(5, 3), padding=(2, 1))
 comp_conv2d(conv2d, X).shape
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Stride
 -->
@@ -198,15 +176,9 @@ comp_conv2d(conv2d, X).shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-When computing the cross-correlation,
-we start with the convolution window
-at the top-left corner of the input array,
-and then slide it over all locations both down and to the right.
+When computing the cross-correlation, we start with the convolution window at the top-left corner of the input array, and then slide it over all locations both down and to the right.
 In previous examples, we default to sliding one pixel at a time.
-However, sometimes, either for computational efficiency
-or because we wish to downsample,
-we move our window more than one pixel at a time,
-skipping the intermediate locations.
+However, sometimes, either for computational efficiency or because we wish to downsample, we move our window more than one pixel at a time, skipping the intermediate locations.
 -->
 
 *dịch đoạn phía trên*
@@ -216,12 +188,9 @@ skipping the intermediate locations.
 We refer to the number of rows and columns traversed per slide as the *stride*.
 So far, we have used strides of $1$, both for height and width.
 Sometimes, we may want to use a larger stride.
-:numref:`img_conv_stride` shows a two-dimensional cross-correlation operation
-with a stride of $3$ vertically and $2$ horizontally.
-We can see that when the second element of the first column is output,
-the convolution window slides down three rows.
-The convolution window slides two columns to the right
-when the second element of the first row is output.
+:numref:`img_conv_stride` shows a two-dimensional cross-correlation operation with a stride of $3$ vertically and $2$ horizontally.
+We can see that when the second element of the first column is output, the convolution window slides down three rows.
+The convolution window slides two columns to the right when the second element of the first row is output.
 When the convolution window slides three columns to the right on the input, there is no output because the input element cannot fill the window (unless we add another column of padding).
 -->
 
@@ -234,10 +203,12 @@ When the convolution window slides three columns to the right on the input, ther
 ![*dịch chú thích ảnh phía trên*](../img/conv-stride.svg)
 :label:`img_conv_stride`
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
 <!--
-In general, when the stride for the height is $s_h$
-and the stride for the width is $s_w$,
-the output shape is
+In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
 *dịch đoạn phía trên*
@@ -245,19 +216,14 @@ the output shape is
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
 <!--
-If we set $p_h=k_h-1$ and $p_w=k_w-1$,
-then the output shape will be simplified to
-$\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$.
-Going a step further, if the input height and width
-are divisible by the strides on the height and width,
-then the output shape will be $(n_h/s_h) \times (n_w/s_w)$.
+If we set $p_h=k_h-1$ and $p_w=k_w-1$, then the output shape will be simplified to $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$.
+Going a step further, if the input height and width are divisible by the strides on the height and width, then the output shape will be $(n_h/s_h) \times (n_w/s_w)$.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Below, we set the strides on both the height and width to $2$,
-thus halving the input height and width.
+Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
 -->
 
 *dịch đoạn phía trên*
@@ -279,24 +245,25 @@ comp_conv2d(conv2d, X).shape
 ```
 
 <!--
-For the sake of brevity, when the padding number
-on both sides of the input height and width are $p_h$ and $p_w$ respectively, we call the padding $(p_h, p_w)$.
+For the sake of brevity, when the padding number on both sides of the input height and width are $p_h$ and $p_w$ respectively, we call the padding $(p_h, p_w)$.
 Specifically, when $p_h = p_w = p$, the padding is $p$.
-When the strides on the height and width are $s_h$ and $s_w$, respectively,
-we call the stride $(s_h, s_w)$.
+When the strides on the height and width are $s_h$ and $s_w$, respectively, we call the stride $(s_h, s_w)$.
 Specifically, when $s_h = s_w = s$, the stride is $s$.
 By default, the padding is $0$ and the stride is $1$.
-In practice we rarely use inhomogeneous strides or padding,
-i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
+In practice we rarely use inhomogeneous strides or padding, i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Padding can increase the height and width of the output. This is often used to give the output the same height and width as the input.
@@ -310,31 +277,29 @@ i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. For the last example in this section, use the shape calculation formula to calculate the output shape to see if it is consistent with the experimental results.
-1. Try other padding and stride combinations on the experiments in this section.
-1. For audio signals, what does a stride of $2$ correspond to?
-1. What are the computational benefits of a stride larger than $1$.
+2. Try other padding and stride combinations on the experiments in this section.
+3. For audio signals, what does a stride of $2$ correspond to?
+4. What are the computational benefits of a stride larger than $1$.
 -->
 
 *dịch đoạn phía trên*
+
+
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2350)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_padding-and-strides.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_padding-and-strides.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2350)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -349,6 +314,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
