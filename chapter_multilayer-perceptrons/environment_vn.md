@@ -406,15 +406,15 @@ We sometimes additionally apply some penalty to the parameters, using weight dec
 This means that we largely minimize the loss on the training.
 -->
 
-Giả sử ta muốn ước lượng mối liên hệ phụ thuộc $P(y \mid \mathbf{x})$ khi đã có dữ liệu được gán nhãn $(\mathbf{x}_i, y_i)$.
-Thật không may, các điểm quan sát $x_i$ được thu thập từ một phân phối *mục tiêu* $q(\mathbf{x})$ thay vì từ phân phối *gốc* $p(\mathbf{x})$.
-Để có được tiến triển, chúng ta cần suy nghĩ lại xem chính xác việc gì đang diễn ra trong quá trình huấn luyện:
-ta duyệt qua tập dữ liệu huấn luyện với nhãn kèm theo $\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\} và cập nhật vector trọng số của mô hình sau mỗi minibatch.
-Chúng ta thi thoảng cũng áp dụng thêm một lượng phạt nào đó lên các tham số, bằng cách dùng suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
+Giả sử rằng ta muốn ước lượng mối liên hệ phụ thuộc $P(y \mid \mathbf{x})$ khi đã có dữ liệu được gán nhãn $(\mathbf{x}_i, y_i)$.
+Thật không may, các mẫu quan sát $x_i$ được thu thập từ một phân phối *mục tiêu* $q(\mathbf{x})$ thay vì từ phân phối *gốc* $p(\mathbf{x})$.
+Để có được tiến triển, chúng ta cần nhìn lại xem chính xác thì việc gì đang diễn ra trong quá trình huấn luyện:
+ta duyệt qua tập dữ liệu huấn luyện cùng với nhãn kèm theo $\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\}$ và cập nhật vector trọng số của mô hình sau mỗi minibatch.
+Đôi khi chúng ta cũng áp dụng thêm một lượng phạt nào đó lên các tham số, bằng cách dùng suy giảm trọng số, dropout hoặc các kĩ thuật liên quan khác.
 Điều này nghĩa là ta hầu như chỉ đang giảm thiểu giá trị mất mát trên tập huấn luyện.
 
 $$
-\mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{some~penalty}(w).
+\mathop{\mathrm{minimize}}_w \frac{1}{n} \sum_{i=1}^n l(x_i, y_i, f(x_i)) + \mathrm{một~lượng~phạt}(w).
 $$
 
 <!--
@@ -422,7 +422,7 @@ Statisticians call the first term an *empirical average*, i.e., an average compu
 If the data is drawn from the "wrong" distribution $q$, we can correct for that by using the following simple identity:
 -->
 
-Các nhà thống kê gọi số hạng đầu tiên là *trung bình thực nghiệm*, tức là trung bình được tính qua dữ liệu lấy từ phân phối $P(x) P(y \mid x)$.
+Các nhà thống kê gọi số hạng đầu tiên là *trung bình thực nghiệm*, tức trung bình được tính qua dữ liệu lấy từ phân phối $P(x) P(y \mid x)$.
 Nếu dữ liệu được lấy "nhầm" từ phân phối $q$, ta có thể hiệu chỉnh lại bằng cách sử dụng đồng nhất thức:
 
 $$
@@ -442,10 +442,10 @@ Note however, that we only need samples $\mathbf{x} \sim q(\mathbf{x})$; we do n
 -->
 
 Nói cách khác, chúng ta cần đánh lại trọng số cho mỗi mẫu bằng tỉ lệ của các xác suất mà mẫu được lấy từ đúng phân phối $\beta(\mathbf{x}) := p(\mathbf{x})/q(\mathbf{x})$.
-Đáng buồn là chúng ta không biết tỉ lệ đó nên trước khi làm được bất cứ thứ gì hữu ích ta phải ước lượng được nó.
-Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè cố tái cân bằng trực tiếp toán tử kỳ vọng, sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
-Lưu ý là với các phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ (bằng cách sử dụng tập huấn luyện) và phân phối được dùng để tạo ra tập kiểm tra $q$ (việc này hiển nhiên là có thể được).
-Tuy nhiên cũng lưu ý rằng ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không hề cần sử dụng đến nhãn $y \sim q(y)$.
+Đáng buồn là ta không biết tỉ lệ đó, nên trước khi ta có thể làm được bất cứ thứ gì hữu ích thì ta cần phải ước lượng được nó.
+Nhiều phương pháp có sẵn sử dụng cách tiếp cận lý thuyết toán tử màu mè nhằm cố tái cân bằng trực tiếp toán tử kỳ vọng bằng cách sử dụng nguyên lý chuẩn cực tiểu hay entropy cực đại.
+Lưu ý rằng những phương thức này yêu cầu ta lấy mẫu từ cả phân phối "đúng" $p$ (bằng cách sử dụng tập huấn luyện) và phân phối được dùng để tạo ra tập kiểm tra $q$ (việc này hiển nhiên là có thể được).
+Tuy nhiên cũng cần để ý là ta chỉ cần mẫu $\mathbf{x} \sim q(\mathbf{x})$; ta không cần sử dụng đến nhãn $y \sim q(y)$.
 
 <!--
 In this case, there exists a very effective approach that will give almost as good results: logistic regression.
@@ -458,11 +458,11 @@ Now denote by $z_i$ labels which are 1 for data drawn from $p$ and -1 for data d
 Then the probability in a mixed dataset is given by
 -->
 
-Trong trường hợp này có một cách rất hiệu quả, cho kết quả tốt gần ngang ngửa: hồi quy logistic.
+Trong trường hợp này có một cách tiếp cận rất hiệu quả và sẽ cho kết quả tốt gần ngang ngửa, đó là: hồi quy logistic.
 Đấy là tất cả những gì ta cần để tính xấp xỉ tỉ lệ xác suất.
 Chúng ta cho học một bộ phân loại để phân biệt giữa dữ liệu được lấy từ phân phối $p(\mathbf{x})$ và phân phối $q(x)$.
-Nếu không thể phân biệt được giữa hai phân phối thì tức là khả năng các mẫu liên quan đến từ một trong hai phân phối là ngang nhau.
-Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng thì cần được đánh trọng số cao lên hoặc giảm đi tương ứng.
+Nếu không thể phân biệt được giữa hai phân phối thì điều đó có nghĩa là khả năng các mẫu liên quan đến từ một trong hai phân phối là ngang nhau.
+Mặt khác, bất kì mẫu nào mà có thể được phân biệt dễ dàng thì cần được đánh trọng số tăng lên hoặc giảm đi tương ứng.
 Để cho đơn giản, giả sử ta có số lượng mẫu đến từ hai phân phối là bằng nhau, được kí hiệu lần lượt là $\mathbf{x}_i \sim p(\mathbf{x})$ và $\mathbf{x}_i' \sim q(\mathbf{x})$.
 Ta kí hiệu nhãn $z_i$ bằng 1 cho dữ liệu từ phân phối $p$ và -1 cho dữ liệu từ $q$.
 Lúc này xác suất trong một bộ dữ liệu được trộn lẫn sẽ là
@@ -502,8 +502,8 @@ Dưới đây là một thuật toán nguyên mẫu để giải quyết hai bà
 
 
 1. Tạo một tập huấn luyện với $\{(\mathbf{x}_i, -1) ... (\mathbf{z}_j, 1)\}$.
-2. Huấn luyện một bộ phân loại nhị phân sử dụng hồi quy logistic để tìm hàm f.
-3. Đánh trọng số cho dữ liệu huấn luyện bằng cách sử dụng $\beta_i = \exp(f(\mathbf{x}_i))$, hoặc tốt hơn là $$\beta_i = \min(\exp(f(\mathbf{x}_i)), c)$.
+2. Huấn luyện một bộ phân loại nhị phân sử dụng hồi quy logistic để tìm hàm $f$.
+3. Đánh trọng số cho dữ liệu huấn luyện bằng cách sử dụng $\beta_i = \exp(f(\mathbf{x}_i))$, hoặc tốt hơn là $\beta_i = \min(\exp(f(\mathbf{x}_i)), c)$.
 4. Sử dụng trọng số $\beta_i$ để huấn luyện trên $X$ với nhãn $Y$.
 
 <!--
@@ -522,9 +522,9 @@ In these approaches, we use one network, $f$ to distinguish real versus fake dat
 We will discuss this in much more detail later.
 -->
 
-*Mạng Đối Sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ tạo dữ liệu* có khả năng sinh dữ liệu không thể phân biệt được với các mẫu được lấy từ một tập dữ liệu tham chiếu.
+*Mạng Đối sinh* sử dụng một ý tưởng rất giống với mô tả ở trên để thiết kế một *bộ sinh dữ liệu* có khả năng tạo dữ liệu không thể phân biệt được với các mẫu được lấy từ một tập dữ liệu tham chiếu.
 Trong các phương pháp này, ta sử dụng một mạng $f$ để phân biệt dữ liệu thật với dữ liệu giả, và một mạng thứ hai $g$ cố gắng đánh lừa bộ phân biệt $f$ rằng dữ liệu giả là thật.
-Ta sẽ thảo luận vấn đề này một cách chi tiết hơn ở các phần sau.
+Ta sẽ thảo luận vấn đề này một cách chi tiết hơn sau.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
