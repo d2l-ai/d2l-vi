@@ -330,7 +330,7 @@ Không may thay, tất cả những gì nó đã học được là phân loại
 #### Nonstationary distributions
 -->
 
-#### Phân phối không ổn định 
+#### Phân phối không dừng
 
 <!--
 A much more subtle situation arises when the distribution changes slowly and the model is not updated adequately.
