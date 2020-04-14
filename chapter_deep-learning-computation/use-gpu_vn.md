@@ -235,7 +235,7 @@ y
 ### Copying
 -->
 
-### Sao lưu
+### Sao chép
 
 <!--
 If we want to compute $\mathbf{x} + \mathbf{y}$ we need to decide where to perform this operation. 
