@@ -675,8 +675,8 @@ Ví dụ, ta có thể huấn luyện một mô hình phát hiện mèo dựa tr
 Sau khi hoàn tất quá trình huấn luyện, ta đưa mô hình vào một hệ thống thị giác máy tính cho cửa sập thông minh mà chỉ cho phép mèo đi vào. 
 Hệ thống này sẽ được lắp đặt tại nhà của khách hàng và nó không bao giờ được cập nhật lại (ngoại trừ một vài trường hợp hiếm hoi). 
 * **Học trực tuyến.** Bây giờ hãy tưởng tượng rằng tại một thời điểm ta chỉ nhận được một mẫu dữ liệu $(x_i, y_i)$.
-Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành điều này, 
-ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát), dựa vào quyết định của ta.
+Cụ thể hơn, giả sử đầu tiên ta có một quan sát $x_i$, sau đó ta cần tính $f(x_i, w)$ và chỉ khi ta hoàn thành việc đưa ra quyết định, 
+ta mới có thể quan sát giá trị $y_i$, rồi dựa vào nó mà nhận lại phần thưởng (hoặc chịu mất mát).
 Nhiều bài toán thực tế rơi vào loại này.
 Ví dụ, ta cần dự đoán giá cổ phiếu vào ngày mai, điều này cho phép ta giao dịch dựa trên dự đoán đó và vào cuối ngày ta sẽ biết được liệu nó có mang lại lợi nhuận hay không.
 Nói cách khác, ta có chu trình sau, trong đó mô hình dần được cải thiện cùng với những quan sát mới.
