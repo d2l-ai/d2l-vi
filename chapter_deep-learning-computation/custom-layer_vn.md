@@ -82,7 +82,7 @@ Note that since we are dealing with floating point numbers, we are going to see 
 -->
 
 Hãy xem tầng này có hoạt động không.
-Để làm việc đó, chúng ta truyền dữ liệu ngẫu nhiên vào mạng và kiểm tra xem giá trị trung bình đã bị trừ đi chưa.
+Để làm việc đó, chúng ta truyền dữ liệu ngẫu nhiên vào mạng và kiểm tra xem giá trị trung bình đã về 0 chưa.
 Chú ý rằng vì đang làm việc với các số thực dấu phẩy động, chúng ta sẽ thấy một giá trị rất nhỏ dù thông thường giá trị này khác không.
 
 ```{.python .input  n=4}
