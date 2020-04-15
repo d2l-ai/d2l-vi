@@ -34,7 +34,7 @@ The following `CenteredLayer` class constructs a layer that subtracts the mean f
 We build it by inheriting from the Block class and implementing the `forward` method.
 -->
 
-Do đây là một vấn đề có chút phức tạp, chúng ta bắt đầu với một tầng tuỳ chỉnh (hay còn gọi là Khối) không có tham số sẵn có nào.
+Do đây là một vấn đề có chút phức tạp, chúng ta bắt đầu với một tầng tuỳ chỉnh (hay còn gọi là Khối) mà tự thân không có bất kì tham số nào.
 Bước đầu tiên rất giống với khi chúng ta giới thiệu các khối ở :numref:`sec_model_construction`.
 Lớp `CenteredLayer` dưới đây xây dựng một tầng có chức năng trừ đi giá trị trung bình khỏi đầu vào.
 Chúng ta xây dựng lớp này bằng việc kế thừa từ lớp `Block` và lập trình phương thức `forward`.
