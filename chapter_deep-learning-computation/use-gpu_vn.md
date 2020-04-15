@@ -362,7 +362,7 @@ Even worse, it is now subject to the dreaded Global Interpreter Lock which makes
 ## Gluon and GPUs
 -->
 
-## *dịch tiêu đề phía trên*
+## Gluon và GPU
 
 <!--
 Similarly, Gluon's model can specify devices through the `ctx` parameter during initialization. 
@@ -370,7 +370,8 @@ The following code initializes the model parameters on the GPU (we will see many
 how to run models on GPUs in the following, simply since they will become somewhat more compute intensive).
 -->
 
-*dịch đoạn phía trên*
+Tương tự, mô hình của Gluon có thể xác định các thiết bị dựa vào tham số `ctx` trong quá trình khởi tạo.
+Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau đây chúng ta sẽ thấy nhiều ví dụ về cách triển khai các mô hình trên GPU, đơn giản bởi chúng sẽ cần khả năng tính toán mạnh hơn một chút.
 
 ```{.python .input  n=12}
 net = nn.Sequential()
@@ -382,7 +383,7 @@ net.initialize(ctx=try_gpu())
 When the input is an `ndarray` on the GPU, Gluon will calculate the result on the same GPU.
 -->
 
-*dịch đoạn phía trên*
+Khi đầu vào là một `ndarray` trên GPU, Gluon sẽ tính toán kết quả trên cùng GPU đó.
 
 ```{.python .input  n=13}
 net(x)
@@ -392,7 +393,7 @@ net(x)
 Let's confirm that the model parameters are stored on the same GPU.
 -->
 
-*dịch đoạn phía trên*
+Hãy kiểm chứng lại rằng các tham số của mô hình được lưu trên cùng GPU.
 
 ```{.python .input  n=14}
 net[0].weight.data()
@@ -403,7 +404,7 @@ In short, as long as all data and parameters are on the same device, we can lear
 In the following we will see several such examples.
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, khi dữ liệu và các tham số ở trên cùng thiết bị, ta có thể huấn luyện mô hình một cách hiệu quả.
 
 <!--
 ## Summary
@@ -421,7 +422,12 @@ on the command line (or logging it in a NumPy array) will trigger a global inter
 It is much better to allocate memory for logging inside the GPU and only move larger logs.
 -->
 
-*dịch đoạn phía trên*
+* MXNet có thể thực hiện lưu trữ và tính toán trên các thiết bị xác định, như CPU hay GPU.
+Mặc định, MXNet tạo dữ liệu trên bộ nhớ chính và sử dụng CPU để tính toán.
+* MXNet yêu cầu tất cả dữ liệu đầu vào để tính toán *nằm trên cùng thiết bị*, tức cùng một CPU hoặc cùng một GPU. 
+* Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách thiếu cân nhắc.     
+Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi trả kết quả lại trên cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt trình quản lý luồng (*Global Interpreter Lock*) làm tất cả GPU dừng hoạt động.
+Sẽ tốt hơn nếu cấp phát bộ nhớ cho việc ghi lại quá trình hoạt động (*logging*) ở GPU và chỉ di chuyển các bản ghi lớn.  
 
 <!--
 ## Exercises
@@ -438,7 +444,11 @@ and log the matrix norm $\mathrm{tr} M M^\top$ one result at a time vs. keeping 
 4. Measure how much time it takes to perform two matrix-matrix multiplications on two GPUs at the same time vs. in sequence on one GPU (hint: you should see almost linear scaling).
 -->
 
-*dịch đoạn phía trên*
+1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn, để thấy sự khác nhau về tốc độ giữa CPU và GPU.
+Và với trường hợp tác vụ với khối lượng tính toán nhỏ thì sao?
+2. Nên làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
+3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và trả về giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
+4. Đo thời gian thực hiện hai phép nhân ma trận tại hai GPU cùng lúc với việc thực hiện lần lượt trên cùng một GPU (gợi ý: bạn sẽ thấy tỉ lệ gần tuyến tính).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
