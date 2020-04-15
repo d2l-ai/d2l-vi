@@ -272,7 +272,7 @@ Ta sẽ tận dụng tính linh hoạt này xuyên suốt ở các chương sau,
 ## The Sequential Block
 -->
 
-## *dịch tiêu đề phía trên*
+## Khối Tuần tự
 
 <!--
 We can now take a closer look at how the `Sequential` class works.
@@ -282,13 +282,17 @@ To build our own simplified `MySequential`, we just need to define two key metho
 2. A `forward` method to pass an input through the chain of Blocks (in the same order as they were appended).
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể có cái nhìn rõ hơn về cách mà lớp `Sequential` (Tuần tự) hoạt động.
+Nhắc lại rằng `Sequential` được thiết kế để xâu chuỗi các Khối khác lại với nhau.
+Để xây dựng một lớp `MySequential` đơn giản, ta chỉ cần định nghĩa hai phương thức chính sau:
+1. Một phương thức `add` nhằm đẩy từng Block một vào trong danh sách.
+2. Một phương thức `forward` nhằm truyền một đầu vào qua chuỗi các Blocks (theo thứ tự mà chúng được nối).
 
 <!--
 The following `MySequential` class delivers the same functionality as Gluon's default `Sequential` class:
 -->
 
-*dịch đoạn phía trên*
+Lớp `MySequential` dưới đây cung cấp tính năng giống như lớp `Sequential` mặc định của Gluon:
 
 ```{.python .input  n=36}
 class MySequential(nn.Block):
@@ -315,14 +319,17 @@ In short the chief advantage of `_children` is that during our Block's parameter
 Gluon knows to look in the `_children` dictionary to find sub-Blocks whose parameters also need to be initialized.
 -->
 
-*dịch đoạn phía trên*
+Phương thức `add` thêm một Block đơn vào từ điển có thứ tự `_children`.
+Bạn có thể thắc mắc tại sao mỗi `Block` của Gluon sở hữu một thuộc tính `_children` và tại sao ta sử dụng nó thay vì tự tạo một danh sách Python.
+Nói ngắn gọn ưu điểm chính của `_children` là Gluon sẽ tự động tìm cả các khối con có trọng số cần khởi tạo trong từ điển này khi khởi tạo trọng số cho khối ban đầu.
 
 <!--
 When our `MySequential` Block's `forward` method is invoked, each added `Block` is executed in the order in which they were added.
 We can now reimplement an MLP using our `MySequential` class.
 -->
 
-*dịch đoạn phía trên*
+Khi phương thức `forward` của khối `MySequential` được gọi, các `Block` sẽ được thực thi theo thứ tự mà chúng được thêm vào. 
+Bây giờ ta có thể lập trình lại một MLP sử dụng lớp `MySequential`.
 
 ```{.python .input  n=37}
 net = MySequential()
@@ -336,7 +343,7 @@ net(x)
 Note that this use of `MySequential` is identical to the code we previously wrote for the Gluon `Sequential` class (as described in :numref:`sec_mlp_gluon`).
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng việc sử dụng `MySequential` giống hệt với đoạn mã mà ta đã viết trước đó cho lớp `Sequential` của Gluon (như đã được mô tả trong :numref:`sec_mlp_gluon`).
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -572,7 +579,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 4 -->
-*
+* Trần Yến Thy
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 5 -->
 * Lý Phi Long
