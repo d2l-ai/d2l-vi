@@ -113,10 +113,10 @@ Also, `gpu(0)` and `gpu()` are equivalent.
 MXNet có thể chỉ định các thiết bị, chẳng hạn như CPU và GPU, cho việc lưu trữ và tính toán.
 Mặc định, MXNet tạo dữ liệu trong bộ nhớ chính và sau đó sử dụng CPU để tính toán.
 Trong MXNet, CPU và GPU có thể được chỉ định bởi `cpu ()` và `gpu ()`.
-Cần lưu ý rằng `cpu ()` (hoặc bất kỳ số nguyên nào trong ngoặc đơn) có nghĩa là tất cả các CPU và bộ nhớ vật lý.
-Điều này có nghĩa các tính toán của MXNet sẽ cố gắng tận dụng tất cả các lõi CPU. Tuy nhiên, `gpu ()` chỉ đại diện cho một card đồ họa và bộ nhớ đồ họa tương ứng.
-Nếu có nhiều GPU, chúng tôi sử dụng `gpu (i)` để thể hiện $i^\mathrm{th}$ GPU ($i$ bắt đầu từ 0).
-Ngoài ra, `gpu (0)` và `gpu ()` tương đương nhau.
+Cần lưu ý rằng `cpu()` (đơn thuần hoặc thêm bất kỳ số nguyên nào trong ngoặc đơn) có nghĩa là sử dụng tất cả các CPU và bộ nhớ vật lý.
+Điều này có nghĩa các tính toán của MXNet sẽ cố gắng tận dụng tất cả các lõi CPU. Tuy nhiên, `gpu()` đơn thuần chỉ đại diện cho một card đồ họa và bộ nhớ đồ họa tương ứng.
+Nếu có nhiều GPU, chúng tôi sử dụng `gpu(i)` để thể hiện GPU thứ $i$ (với $i$ bắt đầu từ 0).
+Ngoài ra, `gpu(0)` và `gpu()` tương đương nhau.
 
 ```{.python .input}
 from mxnet import np, npx
@@ -140,7 +140,7 @@ npx.num_gpus()
 Now we define two convenient functions that allows us to run codes even if the requested GPUs do not exist.
 -->
 
-Bây giờ ta xác định hai chức năng thuận tiện cho phép chạy mã kể cả khi GPU được yêu cầu không tồn tại.
+Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho phép chạy mã kể cả khi GPU được yêu cầu không tồn tại.
 
 ```{.python .input}
 # Saved in the d2l package for later use
