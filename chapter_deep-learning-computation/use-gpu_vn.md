@@ -313,7 +313,7 @@ y.as_in_ctx(try_gpu(1)) is y
 The `copyto` function always creates new memory for the target variable.
 -->
 
-Hàm `copyto` luôn luôn tạo vùng nhớ mới cho biến đích.
+Hàm `copyto` luôn luôn cấp phát vùng nhớ mới cho biến đích.
 
 ```{.python .input}
 y.copyto(try_gpu(1)) is y
