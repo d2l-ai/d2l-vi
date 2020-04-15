@@ -63,8 +63,8 @@ Once these preparations are complete, the `nvidia-smi` command can be used to vi
 -->
 
 Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU cho tính toán có thể thiếu hiệu quả.
-Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA đơn lẻ cho bài toán.
-Đầu tiên, hãy chắc chắn rằng bạn có ít nhất một GPU NVIDIA được cài đặt.
+Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA duy nhất cho việc tính toán.
+Đầu tiên, hãy chắc chắn rằng bạn đã lắp đặt ít nhất một GPU NVIDIA.
 Sau đó, [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
 Một khi các bước chuẩn bị đã được hoàn thành, lệnh `nvidia-smi` có thể được sử dụng để xem thông tin card đồ họa.
 
@@ -93,8 +93,8 @@ e.g., by using the AWS EC2 multi-GPU instances. Almost all other sections do *no
 Instead, this is simply to illustrate how data flows between different devices.
 -->
 
-Lưu ý rằng điều này có thể lãng phí với hầu hết các máy tính để bàn nhưng nó lại dễ dàng sẵn có trong đám mây, 
-ví dụ như, bằng việc sử dụng AWS EC2 đa GPU instance. Hầu hết các phần khác trong sách *không* yêu cầu đa GPU.
+Yêu cầu này có thể là khá phung phí với hầu hết các bộ máy tính để bàn nhưng nó lại dễ dàng có được từ các dịch vụ đám mây, ví dụ như khi thuê một máy chủ AWS EC2 đa GPU.
+Hầu hết các phần khác trong cuốn sách này *không* yêu cầu đa GPU.
 Thay vào đó, điều này đơn giản chỉ để minh họa cách dữ liệu truyền đi giữa các thiết bị khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
