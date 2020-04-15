@@ -5,7 +5,7 @@
 # Multilayer Perceptrons
 -->
 
-# Perceptrons đa tầng
+# Perceptron đa tầng
 :label:`sec_mlp`
 
 <!--
@@ -658,39 +658,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đinh Minh Tân
 * Phạm Minh Đức
 * Vũ Hữu Tiệp
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
 * Nguyễn Minh Thư
-
-<!-- Phần 3 -->
 * Nguyễn Duy Du
-* Vũ Hữu Tiệp
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
 * Lê Cao Thăng
-* Phạm Minh Đức
-
-<!-- Phần 5 -->
 * Lý Phi Long
-* Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
-* Phạm Hồng Vinh
-
-<!-- Phần 6 -->
 * Lâm Ngọc Tâm
-* Phạm Minh Đức
-* Phạm Hồng Vinh
-
-<!-- Phần 7 -->
-* Lâm Ngọc Tâm
-* Phạm Minh Đức
-
-<!-- Phần 8 -->
 * Bùi Nhật Quân
-* Vũ Hữu Tiệp

@@ -58,7 +58,7 @@ Note that *for every layer*, we must keep track of one weight matrix and one bia
 As always, we call `attach_grad` to allocate memory for the gradients (of the loss) with respect to these parameters.
 -->
 
-Chúng ta sẽ lại biễu diễn các tham số bằng một vài `ndarray`.
+Chúng ta sẽ lại biểu diễn các tham số bằng một vài `ndarray`.
 Lưu ý rằng *với mỗi tầng*, ta luôn phải giữ một ma trận trọng số và một vector chứa hệ số điều chỉnh.
 Và như mọi khi, ta gọi hàm `attach_grad` để cấp phát bộ nhớ cho gradient (của hàm mất mát) theo các tham số này.
 
@@ -244,15 +244,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Tâm
 * Phạm Hồng Vinh
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 2 -->
-* Nguyễn Văn Tâm
 * Vũ Hữu Tiệp
-* Phạm Hồng Vinh
-
-<!-- Phần 3 -->
 * Nguyễn Duy Du
+* Phạm Minh Đức

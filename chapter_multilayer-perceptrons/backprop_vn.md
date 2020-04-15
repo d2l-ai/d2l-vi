@@ -201,13 +201,13 @@ The order of calculations are reversed relative to those performed in forward pr
 The first step is to calculate the gradients of the objective function $J=L+s$ with respect to the loss term $L$ and the regularization term $s$.
 -->
 
-Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}.
-Mục đích của lan truyền ngược là để tính gradient $\partial J/\partial \mathbf{W}^{(1)} và $\partial J/\partial \mathbf{W}^{(2)}$.
+Các tham số của mạng nơ-ron đơn giản với một tầng ẩn là $\mathbf{W}^{(1)}$ và $\mathbf{W}^{(2)}$.
+Mục đích của lan truyền ngược là để tính gradient $\partial J/\partial \mathbf{W}^{(1)}$ và $\partial J/\partial \mathbf{W}^{(2)}$.
 Để làm được điều này, ta áp dụng quy tắc dây chuyền và lần lượt tính gradient của các biến trung gian và tham số. 
 Các phép tính trong lan truyền ngược có thứ tự ngược lại so với các phép tính trong lan truyền xuôi, bởi ta muốn bắt đầu từ kết quả của đồ thị tính toán rồi dần đi tới các tham số. 
 Bước đầu tiên đó là tính gradient của hàm mục tiêu $J=L+s$ theo mất mát $L$ và điều chuẩn $s$. 
 
-$$\frac{\partial J}{\partial L} = 1 \; \text{and} \; \frac{\partial J}{\partial s} = 1.$$
+$$\frac{\partial J}{\partial L} = 1 \; \text{và} \; \frac{\partial J}{\partial s} = 1.$$
 
 <!--
 Next, we compute the gradient of the objective function with respect to variable of the output layer $\mathbf{o}$ according to the chain rule.
@@ -229,7 +229,7 @@ Next, we calculate the gradients of the regularization term with respect to both
 Kế tiếp, ta tính gradient của điều chuẩn theo cả hai tham số.
 
 $$\frac{\partial s}{\partial \mathbf{W}^{(1)}} = \lambda \mathbf{W}^{(1)}
-\; \text{and} \;
+\; \text{và} \;
 \frac{\partial s}{\partial \mathbf{W}^{(2)}} = \lambda \mathbf{W}^{(2)}.$$
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -255,7 +255,7 @@ The gradient with respect to the hidden layer's outputs $\partial J/\partial \ma
 -->
 
 Để tính được gradient theo $\mathbf{W}^{(1)}$ ta cần tiếp tục lan truyền ngược từ tầng đầu ra đến các tầng ẩn.
-Gradient theo các đầu ra của tầng ẩn \partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
+Gradient theo các đầu ra của tầng ẩn $\partial J/\partial \mathbf{h} \in \mathbb{R}^h$ được tính như sau:
 
 
 $$
@@ -269,7 +269,7 @@ Since the activation function $\phi$ applies elementwise, calculating the gradie
 of the intermediate variable $\mathbf{z}$ requires that we use the elementwise multiplication operator, which we denote by $\odot$.
 -->
 
-Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian \mathbf{z}$ cũng yêu cầu sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
+Vì hàm kích hoạt $\phi$ áp dụng cho từng phần tử, việc tính gradient $\partial J/\partial \mathbf{z} \in \mathbb{R}^h$ của biến trung gian $\mathbf{z}$ cũng yêu cầu sử dụng phép nhân theo từng phần tử, kí hiệu bởi $\odot$.
 
 $$
 \frac{\partial J}{\partial \mathbf{z}}
@@ -359,15 +359,15 @@ Việc huấn luyện trên các minibatch chứa nhiều mẫu, do đó cần l
     * What are the advantages and disadvantages over training on a smaller minibatch?
 -->
 
-1. Giả sử đầu vào $\mathbf{x}$ của hàm số vô hướng $f$ là ma trận $n \times m$. Gradient của $f$ theo $\mathbf{x} có chiều là bao nhiêu?
+1. Giả sử đầu vào $\mathbf{x}$ của hàm số vô hướng $f$ là ma trận $n \times m$. Gradient của $f$ theo $\mathbf{x}$ có chiều là bao nhiêu?
 2. Thêm một hệ số điều chỉnh vào tầng ẩn của mô hình được mô tả ở trên.
-  * Vẽ đồ thị tính toán tương ứng.
-  * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
+    * Vẽ đồ thị tính toán tương ứng.
+    * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
 3. Tính lượng bộ nhớ mà mô hình được mô tả ở chương này sử dụng lúc huấn luyện và lúc dự đoán.
-4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Hãy uớc tính thời gian hoàn thành quá trình này?
+4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Hãy ước tính thời gian hoàn thành quá trình này?
 5. Giả sử rằng đồ thị tính toán trên là quá sức với GPU của bạn.
-  * Bạn có thể phân vùng nó trên nhiều GPU không?
-  * Ưu điểm và nhược điểm của việc huấn luyện với một minibatch nhỏ hơn là gì?
+    * Bạn có thể phân vùng nó trên nhiều GPU không?
+    * Ưu điểm và nhược điểm của việc huấn luyện với một minibatch nhỏ hơn là gì?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -400,3 +400,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
+* Phạm Ngọc Bảo Anh

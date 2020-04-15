@@ -200,8 +200,8 @@ Các đặc trưng được biểu diễn bởi nhiều kiểu dữ liệu.
 Ví dụ, năm xây dựng được biểu diễn bởi số nguyên, kiểu mái nhà là đặc trưng hạng mục rời rạc, còn các đặc trưng khác thì được biểu diễn bởi số thực dấu phẩy động (_floating point number_). 
 Và đây là khi ta đối mặt với vấn đề thực tiễn: ở một vài mẫu, dữ liệu bị thiếu và được đơn thuần chú thích là 'na'.
 Giá của mỗi căn nhà chỉ được cung cấp trong tập huấn luyện (sau cùng thì đây vẫn là một cuộc thi).
-Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết đưọc chất lượng mô hình trên tập kiểm tra chính thức khi bạn tải lên kết quả dự đoán của mình và nhận điểm sau đó.
-Thanh "Data" trên cuộc thi có đường link để tải về bộ dữ liệu.  
+Bạn có thể chia nhỏ tập huấn luyện để tạo tập kiểm định, tuy nhiên bạn sẽ chỉ biết được chất lượng mô hình trên tập kiểm tra chính thức khi tải kết quả dự đoán của mình lên và nhận điểm sau đó.
+Thanh "Data" trên cuộc thi có đường dẫn để tải bộ dữ liệu về. 
 
 <!--
 We will read and process the data using `pandas`, an [efficient data analysis toolkit](http://pandas.pydata.org/pandas-docs/stable/), 
