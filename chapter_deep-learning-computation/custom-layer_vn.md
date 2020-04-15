@@ -19,7 +19,7 @@ Một trong những lý do dẫn đến thành công của học sâu là sự �
 Điều này cho phép một mức độ tuỳ chỉnh và thích ứng rất lớn.
 Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (*pooling*), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
 Dù sớm hay muộn, bạn cũng sẽ gặp một tầng không có trong Gluon, hay thậm chí tuyệt vời hơn, bạn sẽ phát minh ra một tầng mới hoạt động tốt mà có thể sử dụng ngay cho bài toán của mình.
-
+Đó là khi bạn cần xây dựng một tầng tuỳ chỉnh. Phần này sẽ hướng dẫn bạn cách thực hiện việc này.
 
 <!--
 ## Layers without Parameters
