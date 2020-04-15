@@ -58,6 +58,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | clustering                          | phân cụm               | [https://git.io/JvojD](https://git.io/JvojD) |
 | code (danh từ)                      | mã nguồn               |                                              |
 | code (động từ)                      | viết mã                |                                              |
+| command line (interface)                | cửa sổ dòng lệnh       |                                              |
 | computer vision                     | thị giác máy tính      |                                              |
 | computing (trong Khoa Học Máy Tính) | điện toán              | [https://git.io/JvojH](https://git.io/JvojH) |
 | computational graph                 | đồ thị tính toán       | [https://git.io/JvohQ](https://git.io/JvohQ) |
