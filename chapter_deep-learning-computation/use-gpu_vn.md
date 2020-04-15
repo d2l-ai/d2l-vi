@@ -66,8 +66,7 @@ Như chúng ta sẽ khám phá, điều này chỉ ra rằng việc tính toán 
 Các bối cảnh khác có thể là các GPU khác nhau.
 Mọi thứ thậm chí có thể trở thành bờm xờm hơn khi ta triển khai công việc trên nhiều máy chủ.
 Bằng cách chỉ định mảng cho bối cảnh một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
-Ví dụ: khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường thích các tham số mô hình sống trên GPU hơn.
-
+Ví dụ: khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường thích các tham số mô hình ở trên GPU hơn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
