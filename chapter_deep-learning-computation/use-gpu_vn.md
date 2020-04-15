@@ -207,7 +207,7 @@ Có một số cách để lưu trữ một `ndarray` trên GPU.
 Ví dụ: ta có thể chỉ định một thiết bị lưu trữ với tham số `ctx` khi tạo một` ndarray`.
 Tiếp theo, ta tạo biến cho `ndarray` là `a` trên `gpu(0)`.
 Lưu ý rằng khi in `a`, thông tin thiết bị sẽ trở thành `@gpu(0)`.
-Chiếc `ndarray` được tạo trên GPU chỉ tiêu tốn bộ nhớ của GPU này.
+`ndarray` được tạo trên GPU nào chỉ chiếm bộ nhớ của GPU đó.
 Ta có thể sử dụng lệnh `nvidia-smi` để xem việc sử dụng bộ nhớ GPU.
 Nói chung, ta cần đảm bảo rằng ta không tạo dữ liệu vượt quá giới hạn bộ nhớ GPU.
 
@@ -246,7 +246,7 @@ The runtime engine would not know what to do, it cannot find data on the same de
 
 Nếu ta muốn tính $\mathbf{x} + \mathbf{y}$ thì ta cần quyết định nơi thực hiện phép tính này.
 Chẳng hạn, như trong :numref:`fig_copyto`, ta có thể chuyển $\mathbf{x}$ sang `gpu(1)` và thực hiện phép tính ở đó.
-*Đừng* đơn giản thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
+*Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
 Công cụ thời gian chạy sẽ không biết phải làm gì, nó không thể tìm thấy dữ liệu trên cùng một thiết bị và nó bị lỗi.
 
 <!--
@@ -260,7 +260,7 @@ Công cụ thời gian chạy sẽ không biết phải làm gì, nó không th�
 `copyto` copies the data to another device such that we can add them. Since $\mathbf{y}$ lives on the second GPU we need to move $\mathbf{x}$ there before we can add the two.
 -->
 
-Lệnh `copyto` sao chép dữ liệu sang một thiết bị khác để ta có thể thêm chúng. Vì $\mathbf{y}$ tồn tại trên GPU thứ hai, ta cần di chuyển $\mathbf{x}$ trước khi ta có thể thêm hai.
+Lệnh `copyto` sao chép dữ liệu sang một thiết bị khác để ta có thể cộng chúng. Vì $\mathbf{y}$ tồn tại trên GPU thứ hai, ta cần di chuyển $\mathbf{x}$ trước khi ta có thể cộng chúng lại.
 
 
 ```{.python .input  n=7}
