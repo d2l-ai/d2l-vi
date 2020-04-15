@@ -364,7 +364,7 @@ Việc huấn luyện trên các minibatch chứa nhiều mẫu, do đó cần l
     * Vẽ đồ thị tính toán tương ứng.
     * Tìm các phương trình cho quá trình lan truyền xuôi và lan truyền ngược.
 3. Tính lượng bộ nhớ mà mô hình được mô tả ở chương này sử dụng lúc huấn luyện và lúc dự đoán.
-4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Hãy uớc tính thời gian hoàn thành quá trình này?
+4. Giả sử bạn muốn tính đạo hàm *bậc hai*. Điều gì sẽ xảy ra với đồ thị tính toán? Hãy ước tính thời gian hoàn thành quá trình này?
 5. Giả sử rằng đồ thị tính toán trên là quá sức với GPU của bạn.
     * Bạn có thể phân vùng nó trên nhiều GPU không?
     * Ưu điểm và nhược điểm của việc huấn luyện với một minibatch nhỏ hơn là gì?

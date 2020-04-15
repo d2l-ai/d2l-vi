@@ -44,7 +44,7 @@ Linear models have high bias (they can only represent a small class of functions
 -->
 
 Trong các tài liệu truyền thống, vấn đề cốt lõi giữa khả năng khái quát và tính linh hoạt này được gọi là *đánh đổi độ chệch - phương sai* (*bias-variance tradeoff*).
-Mô hình tuyến tính có độ chệch cao (vì nó chỉ có thể biễu diễn một nhóm nhỏ các hàm số) nhưng lại có phương sai thấp (vì nó cho kết quả khá tương đồng trên nhiều tập dữ liệu được lấy mẫu ngẫu nhiên).
+Mô hình tuyến tính có độ chệch cao (vì nó chỉ có thể biểu diễn một nhóm nhỏ các hàm số) nhưng lại có phương sai thấp (vì nó cho kết quả khá tương đồng trên nhiều tập dữ liệu được lấy mẫu ngẫu nhiên).
 
 <!--
 Deep neural networks inhabit the opposite end of the bias-variance spectrum.
@@ -77,7 +77,7 @@ The mathematical foundations for the puzzling generalization properties of deep 
 For now, we turn to the more terrestrial investigation of practical tools that tend (empirically) to improve the generalization of deep nets.
 -->
 
-Hãy cũng xem xét ý nghĩa của điều này.
+Hãy cùng xem xét ý nghĩa của điều này.
 Nếu nhãn được gán ngẫu nhiên từ một phân phối đều với 10 lớp, sẽ không có bộ phân loại nào có thể có độ chính xác cao hơn 10% trên tập dữ liệu kiểm tra.
 Khoảng cách khái quát là tận 90%.
 Nếu mô hình của chúng ta có đủ năng lực để quá khớp tới như vậy, phải như thế nào chúng ta mới có thể trông đợi rằng mô hình sẽ không quá khớp?
@@ -133,7 +133,7 @@ They realized that when training a deep network with many layers, injecting nois
 
 Và rồi vào năm 2014, Srivastava et al. :cite:`Srivastava.Hinton.Krizhevsky.ea.2014` đã phát triển một ý tưởng thông minh để áp dụng ý tưởng trên của Bishop cho các tầng *nội bộ* của mạng nơ-ron.
 Cụ thể, họ đề xuất việc thêm nhiễu vào mỗi tầng của mạng trước khi tính toán các tầng kế tiếp trong quá trình huấn luyện.
-Họ nhận ra rằng khi huấn luyến mạng đa tầng, thêm nhiễu vào dữ liệu chỉ ép buộc điều kiện mượt lên phép ánh xạ giữa đầu vào và đầu ra.
+Họ nhận ra rằng khi huấn luyện mạng đa tầng, thêm nhiễu vào dữ liệu chỉ ép buộc điều kiện mượt lên phép ánh xạ giữa đầu vào và đầu ra.
 
 <!--
 Their idea, called *dropout*, involves injecting noise while computing each internal layer during forward propagation, and it has become a standard technique for training neural networks.
@@ -141,7 +141,7 @@ The method is called *dropout* because we literally *drop out* some neurons duri
 Throughout training, on each iteration, standard dropout consists of zeroing out some fraction (typically 50%) of the nodes in each layer before calculating the subsequent layer.
 -->
 
-Ý tưởng này, có tên gọi là *dropout*, hoạt động bằng cách thêm nhiễu khi tính toán các tầng nội bộ trong lượt truyền xuôi và nó đã trở thành một kĩ thuật tiêu chuẩn để huấn luyện các mạng nơ-ron.
+Ý tưởng này, có tên gọi là *dropout*, hoạt động bằng cách thêm nhiễu khi tính toán các tầng nội bộ trong lượt truyền xuôi và nó đã trở thành một kỹ thuật tiêu chuẩn để huấn luyện các mạng nơ-ron.
 Phương pháp này có tên gọi như vậy là bởi ta *loại bỏ* (*drop out*) một số nơ-ron trong quá trình huấn luyện.
 Tại mỗi vòng lặp huấn luyện, phương pháp dropout tiêu chuẩn sẽ đặt giá trị của một lượng nhất định (thường là 50%) các nút trong mỗi tầng về không, trước khi tính toán các tầng kế tiếp.
 
@@ -221,7 +221,7 @@ Its architecture is given by
 -->
 
 Nhắc lại về mạng perceptron đa tầng (:numref:`sec_mlp`) với duy nhất một tầng ẩn có 5 nút ẩn.
-Kiến trúc mạng được biễu diễn như sau
+Kiến trúc mạng được biểu diễn như sau
 
 $$
 \begin{aligned}

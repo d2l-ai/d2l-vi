@@ -5,7 +5,7 @@
 # Multilayer Perceptrons
 -->
 
-# Perceptrons đa tầng
+# Perceptron đa tầng
 :label:`sec_mlp`
 
 <!--

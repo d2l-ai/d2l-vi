@@ -100,7 +100,7 @@ In practice, we characterize this tradeoff via the *regularization constant* $\l
 -->
 
 Nhắc lại $\mathbf{x}^{(i)}$ là các quan sát, $y^{(i)}$ là các nhãn và $(\mathbf{w}, b)$ lần lượt là trọng số và hệ số điều chỉnh. 
-Để phạt độ lớn của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên đánh đổi hàm mát mát thông thường với thành phần phạt mới này như thế nào? 
+Để phạt độ lớn của vector trọng số, bằng cách nào đó ta phải cộng thêm $||mathbf{w}||^2$ vào hàm mất mát, nhưng mô hình nên đánh đổi hàm mất mát thông thường với thành phần phạt mới này như thế nào? 
 Trong thực tế, ta mô tả sự đánh đổi này thông qua *hằng số điều chuẩn* $\lambda > 0$, một siêu tham số không âm mà ta khớp được bằng cách sử dụng dữ liệu kiểm định: 
 
 $$l(\mathbf{w}, b) + \frac{\lambda}{2} \|\mathbf{w}\|^2.$$

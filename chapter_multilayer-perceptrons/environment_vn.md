@@ -43,7 +43,7 @@ by introducing our model-based decisions to the environment, we might break the 
 Trong trường hợp này, việc ta không cân nhắc kỹ khi nhảy vọt từ nhận dạng khuôn mẫu đến ra quyết định và việc không nghiêm túc xem xét các yếu tố môi trường có thể gây ra hậu quả nghiêm trọng.
 Như ví dụ trên, không sớm thì muộn khi ta bắt đầu đưa ra quyết định dựa trên kiểu giày, khách hàng sẽ để ý và thay đổi hành vi của họ.
 Chẳng bao lâu sau, tất cả các người vay tiền sẽ mang giày tây, nhưng chỉ số tín dụng của họ thì không hề cải thiện.
-Hãy dành một phút để "thấm" điều này vì có rất nhiếu vấn đề tương tự trong các ứng dụng của học máy: bằng việc ra quyết định dựa trên mô hình trong một môi trường, ta có thể làm hỏng chính mô hình đó.
+Hãy dành một phút để "thấm" điều này vì có rất nhiều vấn đề tương tự trong các ứng dụng của học máy: bằng việc ra quyết định dựa trên mô hình trong một môi trường, ta có thể làm hỏng chính mô hình đó.
 
 <!--
 While we cannot possible give these topics a complete treatment in one section, we aim here to expose some common concerns, 
@@ -216,7 +216,7 @@ This problem can be tricky to spot.
 A saving grace is that often the $P(y \mid x)$ only shifts gradually.
 -->
 
-Nếu chúng ta xây dựng một hệ thống dịch máy, phân phối $P(y \mid x)$ có thể khác nhau tuỳ thuộc vào vị trí của chúng ta.
+Nếu chúng ta xây dựng một hệ thống dịch máy, phân phối $P(y \mid x)$ có thể khác nhau tùy thuộc vào vị trí của chúng ta.
 Vấn đề này có thể khó nhận ra, nhưng bù lại $P(y \mid x)$ thường chỉ dịch chuyển một cách chậm rãi.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -770,7 +770,7 @@ These are just a few among the many profound ethical dilemmas that you might enc
 -->
 
 Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
-Thường thì những hệ thống được tự động hoá việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả cho những ai chịu ảnh hưởng bởi quyết định của nó.
+Thường thì những hệ thống được tự động hóa việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả cho những ai chịu ảnh hưởng bởi quyết định của nó.
 Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống này sẽ hoạt động và không hoạt động với những ai.
 Bỏ qua những rủi ro có thể lường trước được để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.
 Ngoài ra, "độ chính xác" hiếm khi là một thước đo đúng.
