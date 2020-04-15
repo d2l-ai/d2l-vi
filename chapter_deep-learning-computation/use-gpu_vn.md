@@ -405,6 +405,7 @@ In the following we will see several such examples.
 -->
 
 Tóm lại, khi dữ liệu và các tham số ở trên cùng thiết bị, ta có thể huấn luyện mô hình một cách hiệu quả.
+Ta sẽ xem xét một vài ví dụ như thế trong phần tiếp theo.
 
 <!--
 ## Summary
