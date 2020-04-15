@@ -56,7 +56,7 @@ class CenteredLayer(nn.Block):
 To see how it works let's feed some data into the layer.
 -->
 
-Để thấy cách thức hoạt động, hãy truyền vài dữ liệu vào tầng này.
+Để thấy cách thức hoạt động, hãy truyền ít dữ liệu vào tầng này.
 
 ```{.python .input  n=2}
 layer = CenteredLayer()
