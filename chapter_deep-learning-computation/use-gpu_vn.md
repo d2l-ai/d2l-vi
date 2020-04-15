@@ -287,7 +287,7 @@ In fact, unless you specifically want to make a copy, `as_in_ctx()` is the metho
 
 Giả sử biến z hiện đang được lưu trong gpu(1).
 Điều gì sẽ xảy ra nếu ta gọi z.copyto(gpu(1))?
-Hàm này sẽ tạo một bản sao của biến và vùng nhớ mới cho bản sao, ngay cả khi biến đang có trong thiết bị.
+Hàm này sẽ tạo một bản sao của biến và cấp phát vùng nhớ mới cho bản sao, ngay cả khi biến đang có trong thiết bị.
 Do đó chúng ta muốn chỉ tạo bản sao khi các biến tồn tại ở các ngữ cảnh khác nhau.
 Trong các trường hợp đó, ta có thể gọi `as_in_ctx()`. 
 Nếu biến đó đã tồn tại trong ngữ cảnh thì hàm này không thực hiện lệnh nào.
