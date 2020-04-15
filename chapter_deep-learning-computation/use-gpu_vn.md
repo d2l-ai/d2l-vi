@@ -14,9 +14,9 @@ In a nutshell, GPU performance has increased by a factor of 1000 every decade si
 This offers great opportunity but it also suggests a significant need to provide such performance.
 -->
 
-Trong phần giới thiệu về cuốn sách này chúng ta thảo luận về sự tăng trưởng đột phá của nền tính toán trong hơn hai thập niên vừa qua.
-Một cách ngắn gọn, hiệu năng GPU đã tăng lên theo hệ số 1000 trong mỗi thập niên qua kể từ năm 2000.
-Điều này mang lợi cơ hội to lớn nhưng cũng đi kèm theo một nhu cầu quan trọng cung cấp hiệu suất ấy. 
+Trong phần giới thiệu của cuốn sách này chúng ta đã thảo luận về sự tăng trưởng đột phá của năng lực tính toán trong hơn hai thập niên vừa qua.
+Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần trong mỗi thập niên qua kể từ năm 2000.
+Điều này mang lợi cơ hội to lớn nhưng cũng đi kèm theo một nhu cầu không nhỏ để cung cấp hiệu năng tính toán ấy. 
 
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
@@ -29,7 +29,7 @@ Một cách ngắn gọn, hiệu năng GPU đã tăng lên theo hệ số 1000 t
 |2020|1 T (social network)|100 GB|1 PF (NVIDIA DGX-2)|
 -->
 
-|Thập niên|Tập dữ liệu|Bộ nhớ|Tính toán Điểm nổi trên mỗi Giây|
+|Thập niên|Tập dữ liệu|Bộ nhớ|Phép tính Dấu phẩy Động trên Giây|
 |:--|:-|:-|:-|
 |1970|100 (Iris)|1 KB|100 KF (Intel 8080)|
 |1980|1 K (Giá nhà tại Boston)|100 KB|1 MF (Intel 80186)|
@@ -46,8 +46,8 @@ One of the key features that differentiates MXNet from NumPy is its support for 
 -->
 
 Trong phần này ta bắt đầu thảo luận cách để khai thác hiệu suất tính toán này cho nghiên cứu của mình.
-Đầu tiên bằng cách sử dụng GPU đơn và về sau, cách để sử dụng nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
-Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt Numpy. Nhưng có một vài điểm khác biệt chủ yếu.
+Đầu tiên ta tìm hiểu cách sử dụng GPU đơn và về sau là cách để sử dụng nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
+Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt Numpy. Nhưng có một vài điểm khác biệt quan trọng.
 Một trong những tính năng chính mà làm MXNet khác với Numpy đó là nó hỗ trợ đa dạng các loại phần cứng.
 
 <!--
@@ -66,7 +66,7 @@ Như chúng ta sẽ khám phá, điều này chỉ ra rằng việc tính toán 
 Các bối cảnh khác có thể là các GPU khác nhau.
 Mọi thứ thậm chí có thể trở thành bờm xờm hơn khi ta triển khai công việc trên nhiều máy chủ.
 Bằng cách chỉ định mảng cho bối cảnh một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
-Ví dụ: khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường thích các tham số mô hình LỚN để sống trên GPU.
+Ví dụ: khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường thích các tham số mô hình sống trên GPU hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
