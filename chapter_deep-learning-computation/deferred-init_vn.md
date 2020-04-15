@@ -57,8 +57,8 @@ Let's see what happens when we instantiate a network.
 We start with our trusty MLP as before.
 -->
 
-Hãy xem điều gì xảy ra khi ta khởi tạo một mạng nơ-ron.
-Ta bắt đầu với mạng đáng tin như MLP giống với cách ta làm trước đây.
+Hãy xem điều gì sẽ xảy ra khi ta khởi tạo một mạng nơ-ron nhé!
+Ta bắt đầu với mạng MLP đáng tin cậy như trước đây.
 
 ```{.python .input}
 from mxnet import init, np, npx
@@ -81,8 +81,8 @@ If we try accessing the parameters, that is exactly what happens.
 -->
 
 Lúc này, mạng nơ-ron chưa biết được số chiều thực sự của các tham số là bao nhiêu.
-Điều ta duy nhất biết được tại thời điểm này là mỗi lớp cần có trọng số và hệ số điều chỉnh, mặc dù số chiều vẫn còn mơ hồ.
-Nếu ta thử truy cập vào các tham số, đó chính xác là những gì xảy ra.
+Điều ta duy nhất biết được tại thời điểm này là mỗi lớp cần có trọng số và hệ số điều chỉnh, mặc dù số chiều vẫn còn chưa xác định.
+Nếu ta thử truy cập vào các tham số, đó chính xác là những gì sẽ xảy ra.
 
 ```{.python .input}
 print(net.collect_params)
@@ -93,7 +93,7 @@ print(net.collect_params())
 In particular, trying to access `net[0].weight.data()` at this point would trigger a runtime error stating that the network needs initializing before it can do anything. 
 Let's see whether anything changes after we initialize the parameters:
 -->
-Cụ thể, việc cố gắng truy cập `net[0].weight.data()` vào lúc này sẽ gây ra lỗi thực thi báo rằng mạng cần khởi tạo trước khi làm bất cứ điều gì.
+Cụ thể, thử truy cập `net[0].weight.data()` vào lúc này sẽ gây ra lỗi thực thi báo rằng mạng cần khởi tạo trước khi làm bất cứ điều gì.
 Ta hãy xem liệu có điều gì thay đổi sau khi ta khởi tạo các tham số:
 
 ```{.python .input}
@@ -108,7 +108,7 @@ Let's try it out.
 -->
 
 Như ta đã thấy, không có gì thay đổi ở đây cả.
-Chỉ khi nào ta cung cấp cho mạng một vài dữ liệu thì ta mới thấy được sự khác biệt.
+Chỉ khi nào ta cung cấp cho mạng một ít dữ liệu thì ta mới thấy được sự khác biệt.
 Hãy thử xem!
 
 ```{.python .input}
@@ -128,8 +128,8 @@ Once this is known, we can proceed by initializing parameters.
 This is the solution to the three problems outlined above.
 -->
 
-Điểm khác biệt chính so với lúc trước là ngay khi ta biết được số chiều của đầu vào $\mathbf{x} \in \mathbb{R}^{20}$, ta có thể định nghĩa ma trận trọng số cho lớp đầu tiên, tức là, $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
-Với cách đó, ta có thể chuyển sang lớp thứ hai, định nghĩa số chiều là $10 \times 256$ và cứ thế ta truyền qua đồ thị tính toán và liên kết tất cả số chiều lại với nhau.
+Điểm khác biệt chính so với lúc trước là ngay khi ta biết được số chiều của đầu vào $\mathbf{x} \in \mathbb{R}^{20}$, ta có thể định nghĩa ma trận trọng số cho tầng đầu tiên, tức $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
+Với cách đó, ta có thể chuyển sang tầng thứ hai, định nghĩa số chiều là $10 \times 256$ và cứ thế ta truyền qua đồ thị tính toán rồi liên kết tất cả số chiều lại với nhau.
 Một khi ta biết được số chiều, ta có thể tiến hành khởi tạo các tham số.
 Đây là lời giải cho ba bài toán được đặt ra ở trên.
 
