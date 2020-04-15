@@ -423,7 +423,7 @@ on the command line (or logging it in a NumPy array) will trigger a global inter
 It is much better to allocate memory for logging inside the GPU and only move larger logs.
 -->
 
-* MXNet có thể thực hiện lưu trữ và tính toán trên các thiết bị xác định, như CPU hay GPU.
+* MXNet có thể chỉ định các thiết bị thực hiện việc lưu trữ và tính toán như CPU hay GPU.
 Mặc định, MXNet tạo dữ liệu trên bộ nhớ chính và sử dụng CPU để tính toán.
 * MXNet yêu cầu tất cả dữ liệu đầu vào để tính toán *nằm trên cùng thiết bị*, tức cùng một CPU hoặc cùng một GPU. 
 * Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách thiếu cân nhắc.     
