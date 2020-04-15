@@ -370,7 +370,7 @@ The following code initializes the model parameters on the GPU (we will see many
 how to run models on GPUs in the following, simply since they will become somewhat more compute intensive).
 -->
 
-Tương tự, mô hình của Gluon có thể xác định các thiết bị dựa vào tham số `ctx` trong quá trình khởi tạo.
+Tương tự, mô hình của Gluon có thể chỉ định thiết bị dựa vào tham số `ctx` trong quá trình khởi tạo.
 Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau đây chúng ta sẽ thấy nhiều ví dụ về cách triển khai các mô hình trên GPU, đơn giản bởi chúng sẽ cần khả năng tính toán mạnh hơn một chút.
 
 ```{.python .input  n=12}
