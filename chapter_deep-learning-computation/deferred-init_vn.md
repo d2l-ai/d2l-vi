@@ -129,7 +129,7 @@ This is the solution to the three problems outlined above.
 ## Deferred Initialization in Practice
 -->
 
-## Trì hoãn khởi tạo khi thực hành
+## Khởi tạo Trễ trong Thực tiễn
 
 <!--
 Now that we know how it works in theory, let's see when the initialization is actually triggered. 
