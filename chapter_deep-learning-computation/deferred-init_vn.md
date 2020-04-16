@@ -196,7 +196,7 @@ for example, we could not use the `data` and `set_data` functions to get and mod
 Therefore, we often force initialization by sending a sample observation through the network.
 -->
 
-Như đã đề cập ở phần mở đầu của mục này, việc trì hoãn khởi tạo cũng có thể gây ra sự khó hiểu.
+Như đã đề cập ở phần mở đầu của mục này, việc khởi tạo trễ cũng có thể gây ra sự khó hiểu.
 Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
 Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách chạy một quan sát mẫu qua mạng này. 
 
