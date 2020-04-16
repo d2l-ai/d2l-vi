@@ -117,11 +117,11 @@ Both methods are entirely equivalent but the first method leads to much more rea
 -->
 
 Ví dụ đầu tiên trả về hệ số điều chỉnh của tầng thứ hai.
-Vì đây là một đối tượng chứa dữ liệu, các gradient, và các thông tin bổ sung khác, ta cần phải truy vấn dữ liệu một cách rõ ràng.
-Chú ý rằng các hệ số điều chỉnh đều bằng 0 vì ta đã khởi tạo chúng bằng 0.
+Vì đây là một đối tượng chứa dữ liệu, các gradient, và các thông tin bổ sung khác, ta cần phải truy vấn dữ liệu một cách tường minh.
+Chú ý rằng các hệ số điều chỉnh đều bằng 0 vì ta đã khởi tạo chúng bằng như thế.
 Ta cũng có thể truy xuất các tham số theo tên của chúng, chẳng hạn như `dense0_weight`.
-Điều này có thể thực hiện được vì mỗi tầng đều có một bộ từ điển tham số kèm theo cho phép ta truy xuất trực tiếp.
-Cả hai phương pháp hoàn toàn tương đương với nhau nhưng phương pháp đầu tiên giúp mã nguồn dễ đọc hơn.
+Điều này có thể thực hiện được vì mỗi tầng đều có một bộ từ điển tham số kèm theo cho phép ta truy xuất một cách trực tiếp.
+Cả hai phương pháp hoàn toàn tương đương với nhau nhưng phương pháp đầu tiên sẽ giúp mã nguồn dễ đọc hơn.
 
 ```{.python .input  n=4}
 print(net[0].params['dense0_weight'])
@@ -137,10 +137,10 @@ It has the same shape as the weight. However, since we did not invoke backpropag
 -->
 
 Chú ý rằng các trọng số là khác không.
-Điều này là theo thiết kế vì chúng được khởi tạo ngẫu nhiên khi ta xây dựng mạng.
-`data` không phải là hàm duy nhất ta có thể gọi.
+Điều này là có chủ ý vì chúng được khởi tạo ngẫu nhiên khi ta xây dựng mạng.
+`data` không phải là hàm duy nhất mà ta có thể gọi.
 Chẳng hạn, ta có thể gọi hàm tính toán gradient theo các tham số.
-Nó có cùng kích thước với trọng số. Tuy nhiên, bởi vì ta chưa gọi hàm lan truyền ngược, tất cả các giá trị đều bằng 0.
+Các gradient này có cùng kích thước với trọng số, tuy nhiên tất cả các giá trị hiện tại đều bằng 0 bởi vì ta chưa gọi hàm lan truyền ngược.
 
 ```{.python .input  n=5}
 net[0].weight.grad()
