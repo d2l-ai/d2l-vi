@@ -169,7 +169,7 @@ Therefore, we will see the `@cpu(0)` identifier each time we print an `ndarray`.
 -->
 
 Theo mặc định, các đối tượng `ndarray` được tạo trên CPU.
-Do đó, ta sẽ thấy định danh `@cpu (0)` mỗi khi ta in một `ndarray`.
+Do đó, ta sẽ thấy định danh `@cpu(0)` mỗi khi ta in một `ndarray`.
 
 ```{.python .input  n=4}
 x = np.array([1, 2, 3])
