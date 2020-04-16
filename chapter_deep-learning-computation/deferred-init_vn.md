@@ -171,10 +171,9 @@ When performing a forward calculation based on the input `x`, the system can aut
 Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
 -->
 
-Ở thời điểm này, thông tin về các tham số mô hình được in ra.
-Khi thực hiện tính toán tiếp theo dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các lớp dựa trên kích thước của biến đầu vào này. 
+Lúc này, thông tin về các tham số mô hình mới được in ra.
+Khi thực hiện lượt truyền xuôi dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các tầng dựa trên kích thước của biến đầu vào này. 
 Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi.
-*dịch đoạn phía trên*
 
 <!--
 Of course, this initialization will only be called when completing the initial forward calculation. 
@@ -183,7 +182,6 @@ After that, we will not re-initialize when we run the forward calculation `net(x
 
 Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi ta hoàn thành lượt truyền xuôi lần đầu tiên.
 Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi chúng ta chạy lệnh thực hiện lượt truyền xuôi `net(x)`, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa. 
-*dịch đoạn phía trên*
 
 ```{.python .input}
 y = net(x)
@@ -311,6 +309,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 *
