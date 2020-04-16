@@ -174,7 +174,7 @@ Once the system has created these parameters, it calls the `MyInit` instance to 
 
 Ở thời điểm này, thông tin về các tham số mô hình được in ra.
 Khi thực hiện tính toán tiếp theo dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các lớp dựa trên kích thước của biến đầu vào này. 
-Ngay khi hệ thống đã tạo ra các tham số trên, nó gọi mẫu `MyInit` để khởi tạo chúng trước khi xử lý tính toán kế tiếp.
+Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi.
 *dịch đoạn phía trên*
 
 <!--
