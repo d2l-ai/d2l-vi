@@ -138,7 +138,6 @@ In order to do so, we mock up an initializer which does nothing but report a deb
 
 Giờ ta đã biết nó hoạt động như thế nào về mặt lý thuyết, hãy xem thử khi nào thì việc khởi tạo này thực sự diễn ra.
 Để làm như vậy, chúng ta cần lên khung một bộ khởi tạo mà nó không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=22}
 class MyInit(init.Initializer):
