@@ -139,7 +139,7 @@ y = net(x)
 Next, we store the parameters of the model as a file with the name `mlp.params`.
 -->
 
-Tiếp theo, chúng ta lưu các tham số của mô hình vào file `mlp.params`.
+Tiếp theo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
 
 ```{.python .input}
 net.save_parameters('mlp.params')
