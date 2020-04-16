@@ -161,10 +161,10 @@ It does so by iterating over all constituents of a block and calls `collect_para
 To see the difference consider the following:
 -->
 
-Truy cập các tham số như mô tả phía trên có thể hơi dài dòng,
-cụ thể nếu ta có nhiều khối phức tạp hơn, hoặc nhiều khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối),
+Truy cập các tham số như mô tả phía trên có thể hơi dài dòng với các khối phức tạp,
+chẳng hạn như khi ta có khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối),
 vì ta cần phải duyệt qua toàn bộ cây theo thứ tự ngược với cách các khối được xây dựng.
-Để tránh điều này, các khối được thêm vào một phương pháp `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển sao cho ta có thể dễ dàng duyệt trong nó.
+Để tránh rắc rối này, các khối có thêm một phương pháp `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển để ta có thể dễ dàng duyệt qua.
 Nó thực hiện bằng cách lặp qua các thành phần của một khối và gọi `collect_params` trên các khối con khi cần thiết.
 Để thấy được sự khác nhau ta hãy xem ví dụ sau:
 
@@ -180,7 +180,7 @@ This provides us with a third way of accessing the parameters of the network.
 If we wanted to get the value of the bias term of the second layer we could simply use this:
 -->
 
-Nó cung cấp chúng ta cách thứ ba để truy cập các tham số của mạng.
+Đây là cách thứ ba để truy cập các tham số của mạng.
 Nếu muốn lấy giá trị của hệ số điều chỉnh của tầng thứ hai, đơn giản ta có thể dùng: 
 
 ```{.python .input  n=7}
@@ -211,8 +211,8 @@ Let's see how the parameter naming conventions work if we nest multiple blocks i
 For that we first define a function that produces blocks (a block factory, so to speak) and then we combine these inside yet larger blocks.
 -->
 
-Ta hãy xem cách các quy ước định danh tham số hoạt động nếu ta chồng nhiều khối lẫn nhau.
-Trước hết ta định nghĩa một hàm sản xuất các khối (một nhà máy khối, có thể tạm gọi như vậy) và sau đó ta kết hợp chúng vào bên trong các khối lớn hơn.
+Cùng xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
+Trước hết ta định nghĩa một hàm tạo khối (có thể tạm gọi là một nhà máy khối) và sau đó ta kết hợp chúng vào bên trong các khối còn lớn hơn.
 
 ```{.python .input  n=20}
 def block1():
