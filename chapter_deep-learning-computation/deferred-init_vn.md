@@ -183,7 +183,7 @@ Of course, this initialization will only be called when completing the initial f
 After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
 -->
 
-Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi việc tính toán khởi tạo đã hoàn thành.
+Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi ta hoàn thành lượt truyền xuôi lần đầu tiên.
 Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi chúng ta chạy lệnh tính toán kế tiếp `net(x)`, do đó đầu ra của mẫu `MyInit` sẽ không được sinh ra nữa. 
 *dịch đoạn phía trên*
 
