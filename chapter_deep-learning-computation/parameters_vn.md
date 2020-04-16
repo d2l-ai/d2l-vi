@@ -263,7 +263,7 @@ rgnet[0][1][0].bias.data()
 ## Parameter Initialization
 -->
 
-## Khởi tạo tham số
+## Khởi tạo Tham số
 
 <!--
 Now that we know how to access the parameters, let's look at how to initialize them properly. 
@@ -277,14 +277,14 @@ Bây giờ khi đã biết cách truy cập tham số, ta sẽ xem làm thế n�
 Ta đã thảo luận về sự cần thiết của việc khởi tạo tham số trong :numref:`sec_numerical_stability`.
 Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
 Tuy nhiên, ta thường cần sử dụng các phương pháp khác để khởi tạo trọng số.
-Mô-đun `init` của MXNet đã cung cấp sẵn nhiều phương thức khởi tạo, nhưng nếu muốn một cái gì đó khác thường, ta sẽ cần làm thêm một chút việc.
+Mô-đun `init` của MXNet đã cung cấp sẵn nhiều phương thức khởi tạo, nhưng nếu muốn một cái gì đó khác thường, ta sẽ cần làm việc thêm một chút.
 
 
 <!--
 ### Built-in Initialization
 -->
 
-### Khởi tạo có sẵn
+### Phương thức Khởi tạo có sẵn
 
 <!--
 Let's begin with the built-in initializers. 
@@ -292,7 +292,7 @@ The code below initializes all parameters with Gaussian random variables.
 -->
 
 Ta sẽ bắt đầu với các bộ khởi tạo có sẵn.
-Mã nguồn dưới đây khởi tạo tất cả các tham số với các biến ngẫu nhiên Gaussian.
+Mã nguồn dưới đây khởi tạo tất cả các tham số với các biến ngẫu nhiên từ phân phối Gauss.
 
 ```{.python .input  n=9}
 # force_reinit ensures that the variables are initialized again, regardless of
@@ -305,7 +305,7 @@ net[0].weight.data()[0]
 If we wanted to initialize all parameters to 1, we could do this simply by changing the initializer to `Constant(1)`.
 -->
 
-Nếu muốn khởi tạo tất cả các tham số bằng 1, ta có thể đơn giản thay bộ khởi tạo bằng `Constant(1)`.
+Nếu muốn khởi tạo tất cả các tham số bằng 1, ta có thể đơn thuần thay bộ khởi tạo thành `Constant(1)`.
 
 ```{.python .input  n=10}
 net.initialize(init=init.Constant(1), force_reinit=True)
@@ -317,8 +317,8 @@ If we want to initialize only a specific parameter in a different manner, we can
 For instance, below we initialize the second layer to a constant value of 42 and we use the `Xavier` initializer for the weights of the first layer.
 -->
 
-Nếu muốn khởi tạo một tham số cụ thể theo một cách riêng biệt, ta có thể đơn giản sử dụng một bộ khởi tạo riêng chỉ cho khối con (hay tham số) tương ứng.
-Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên bằng cách sử dụng bộ khởi tạo `Xavier` và tầng thứ hai với một hằng số là 42.
+Nếu muốn khởi tạo một tham số cụ thể theo một cách riêng biệt, ta có thể đơn thuần sử dụng một bộ khởi tạo riêng cho khối con (hay tham số) tương ứng.
+Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên bằng cách sử dụng bộ khởi tạo `Xavier` và khởi tạo tầng thứ hai với một hằng số là 42.
 
 ```{.python .input  n=11}
 net[1].initialize(init=init.Constant(42), force_reinit=True)
@@ -335,7 +335,7 @@ print(net[0].weight.data()[0])
 ### Custom Initialization
 -->
 
-### Khởi tạo tùy chỉnh
+### Phương thức Khởi tạo tùy chỉnh
 
 <!--
 Sometimes, the initialization methods we need are not provided in the `init` module. 
@@ -347,7 +347,7 @@ We draw the coefficients from the following distribution:
 
 Đôi khi, các phương thức khởi tạo mà ta cần không có sẵn trong mô-đun `init`.
 Trong trường hợp đó, ta có thể lập trình một lớp con của lớp `Initializer` và sử dụng nó như bất kỳ phương thức khởi tạo nào khác.
-Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi tham số `ndarray` đầu vào (`data`) bằng giá trị khởi tạo mong muốn.
+Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi đối số `ndarray` đầu vào bằng giá trị khởi tạo mong muốn.
 Trong ví dụ bên dưới, ta sẽ chọn một phân phối kỳ lạ và không tầm thường để chứng minh luận điểm trên.
 Ta sẽ lấy các hệ số từ phân phối sau:
 
@@ -378,9 +378,9 @@ Since `data()` returns an `ndarray` we can access it just like any other matrix.
 A note for advanced users: if you want to adjust parameters within an `autograd` scope you need to use `set_data` to avoid confusing the automatic differentiation mechanics.
 -->
 
-Nếu thậm chí tính năng này vẫn là chưa đủ thì ta có thể đặt các tham số trực tiếp.
+Nếu thậm chí tính năng này vẫn là chưa đủ thì ta có thể đặt các tham số một cách trực tiếp.
 Do hàm `data()` trả về một mảng `ndarray` nên ta có thể truy cập nó giống như bất kỳ ma trận nào khác.
-Một lưu ý cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi gói `autograd`, bạn cần sử dụng `set_data` để tránh làm các cơ chế tính vi phân tự động bị nhầm lẫn.
+Một lưu ý cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi `autograd`, bạn cần sử dụng `set_data` để tránh làm rối loạn các cơ chế tính vi phân tự động.
 
 ```{.python .input  n=13}
 net[0].weight.data()[:] += 1
