@@ -115,7 +115,7 @@ Một chi tiết quan trọng cần lưu ý là chức năng này lưu các *tha
 Điều đó có nghĩa, nếu ta có Perceptron 3 tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng rẽ.
 Lý do là bởi bản thân các mô hình có thể chứa các đoạn mã tuỳ ý, chúng không thể được phân tách để đọc ghi một cách dễ dàng
 (có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [MXNet documentation](http://www.mxnet.io)).
-Kết quả, để khôi phục lại một mô hình chúng ta cần có kiến trúc của nó trong mã nguồn rồi tải các tham số vào từ ổ cứng.
+Kết quả là, để khôi phục lại một mô hình chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi tải các tham số từ ổ cứng vào kiến trúc này.
 Việc khởi tạo trễ (:numref:`sec_deferred_init`) mang lại lợi ích lúc này vì ta chỉ cần định nghĩa một mô hình mà không cần giá trị tham số cụ thể.
 Như thường lệ, hãy bắt đầu với Perceptron Đa tầng.
 
