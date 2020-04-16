@@ -159,7 +159,6 @@ Next, we define the input and perform a forward calculation.
 Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi nó đã thực thi. 
 Do đó, việc khởi tạo tham số không thực sự được thực hiện khi gọi hàm `initialize`.
 Kế tiếp, ta định nghĩa đầu vào và thực hiện một lượt phép tính truyền xuôi.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=25}
 x = np.random.uniform(size=(2, 20))
