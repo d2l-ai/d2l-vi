@@ -200,8 +200,7 @@ Therefore, we often force initialization by sending a sample observation through
 
 Như đã đề cập ở phần mở đầu của mục này, việc trì hoãn khởi tạo cũng có thể gây ra sự khó hiểu.
 Trước khi lệnh tính toán kế tiếp đầu tiên được thực thi, chúng ta không thể nào thao tác trực tiếp lên các thông số của mô hình, chẳng hạn như chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
-Do đó, chúng ta thường ép việc khởi tạo bằng cách gửi một mẫu quan sát qua mạng này. 
-*dịch đoạn phía trên*
+Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách chạy một quan sát mẫu qua mạng này. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
