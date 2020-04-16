@@ -136,7 +136,7 @@ Now that we know how it works in theory, let's see when the initialization is ac
 In order to do so, we mock up an initializer which does nothing but report a debug message stating when it was invoked and with which parameters.
 -->
 
-Về lý thuyết, hiện giờ chúng ta biết nó hoạt động như thế nào, hãy xem xét việc khởi tạo này khi thực tế được kích hoạt.
+Giờ ta đã biết nó hoạt động như thế nào về mặt lý thuyết, hãy xem thử khi nào thì việc khởi tạo này thực sự diễn ra.
 Để làm như vậy, chúng ta cần lên khung một bộ khởi tạo mà nó không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
 *dịch đoạn phía trên*
 
