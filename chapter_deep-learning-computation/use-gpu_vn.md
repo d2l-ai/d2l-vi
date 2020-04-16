@@ -80,7 +80,12 @@ Then, [download CUDA](https://developer.nvidia.com/cuda-downloads) and follow th
 Once these preparations are complete, the `nvidia-smi` command can be used to view the graphics card information.
 -->
 
-*dịch đoạn phía trên*
+Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU cho tính toán có thể thiếu hiệu quả.
+Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA duy nhất cho việc tính toán.
+Đầu tiên, hãy chắc chắn rằng bạn đã lắp đặt ít nhất một GPU NVIDIA.
+Sau đó, [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
+Một khi các bước chuẩn bị đã được hoàn thành, lệnh `nvidia-smi` có thể được sử dụng để xem thông tin card đồ họa.
+
 
 ```{.python .input  n=1}
 !nvidia-smi
@@ -94,7 +99,11 @@ Assuming you have CUDA 9.0 installed, you can install the MXNet version that sup
 To run the programs in this section, you need at least two GPUs.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần chắc chắn rằng phiên bản GPU của MXNet được cài đặt.
+Nếu phiên bản CPU của MXNet đã cài sẵn rồi, ta cần phải gỡ bỏ cài đặt nó trước.
+Ví dụ, sử dụng lệnh `pip uninstall mxnet`, sau đó cài đặt phiên bản MXNet tương ứng tùy vào phiên bản của CUDA.
+Giả sử như bạn cài CUDA 9.0 rồi, bạn có thể cài phiên bản MXNet có hỗ trợ CUDA 9.0 bằng lệnh `pip install mxnet-cu90`.
+Để chạy chương trình trong phần này, bạn cần ít nhất hai GPU.
 
 <!--
 Note that this might be extravagant for most desktop computers but it is easily available in the cloud, 
@@ -102,7 +111,9 @@ e.g., by using the AWS EC2 multi-GPU instances. Almost all other sections do *no
 Instead, this is simply to illustrate how data flows between different devices.
 -->
 
-*dịch đoạn phía trên*
+Yêu cầu này có thể là khá phung phí với hầu hết các bộ máy tính để bàn nhưng nó lại dễ dàng có được từ các dịch vụ đám mây, ví dụ như khi thuê một máy chủ AWS EC2 đa GPU.
+Hầu hết các phần khác trong cuốn sách này *không* yêu cầu đa GPU.
+Thay vào đó, điều này đơn giản chỉ để minh họa cách dữ liệu truyền đi giữa các thiết bị khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -489,7 +500,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 *
