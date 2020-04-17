@@ -77,7 +77,7 @@ This is convenient, for instance when we want to read or write all the weights i
 -->
 
 Ta còn có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
-Cách này khá là thuận tiện, ví dụ khi ta muốn đọc hoặc ghi tất cả các trọng số trong một mô hình.
+Điều này khá là thuận tiện, ví dụ như khi ta muốn đọc hoặc ghi tất cả các trọng số của một mô hình.
 
 ```{.python .input  n=4}
 mydict = {'x': x, 'y': y}
