@@ -206,7 +206,7 @@ In general, we need to make sure we do not create data that exceeds the GPU memo
 Có một số cách để lưu trữ một `ndarray` trên GPU.
 Ví dụ: ta có thể chỉ định một thiết bị lưu trữ với tham số `ctx` khi tạo một` ndarray`.
 Tiếp theo, ta tạo biến cho `ndarray` là `a` trên `gpu(0)`.
-Lưu ý rằng khi in `a`, thông tin thiết bị sẽ trở thành `@gpu(0)`.
+Lưu ý rằng khi in `a` ra màn hình, thông tin thiết bị sẽ trở thành `@gpu(0)`.
 `ndarray` được tạo trên GPU nào chỉ chiếm bộ nhớ của GPU đó.
 Ta có thể sử dụng lệnh `nvidia-smi` để xem việc sử dụng bộ nhớ GPU.
 Nói chung, ta cần đảm bảo rằng ta không tạo dữ liệu vượt quá giới hạn bộ nhớ GPU.
