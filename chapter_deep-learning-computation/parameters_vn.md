@@ -209,7 +209,7 @@ Let's see how the parameter naming conventions work if we nest multiple blocks i
 For that we first define a function that produces blocks (a block factory, so to speak) and then we combine these inside yet larger blocks.
 -->
 
-<span class="x x-first x-last">Hãy cùng</span> xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
+Hãy cùng xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
 Trước hết ta định nghĩa một hàm tạo khối (có thể tạm gọi là một nhà máy khối) và sau đó ta kết hợp chúng vào bên trong các khối còn lớn hơn.
 
 ```{.python .input  n=20}
