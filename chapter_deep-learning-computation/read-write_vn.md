@@ -76,7 +76,7 @@ We can even write and read a dictionary that maps from a string to an `ndarray`.
 This is convenient, for instance when we want to read or write all the weights in a model.
 -->
 
-Ta thậm chí có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
+Ta còn có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
 Cách này khá là thuận tiện, ví dụ khi ta muốn đọc hoặc ghi tất cả các trọng số trong một mô hình.
 
 ```{.python .input  n=4}
