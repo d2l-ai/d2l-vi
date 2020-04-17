@@ -50,13 +50,17 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-*dịch đoạn phía trên*
+Một người đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 megapixel có thể là không cần thiết.
+Tuy nhiên, trong khi bạn có thể loại bỏ 100.000 pixel, ta đã đánh giá thấp số lượng các nút ẩn thường sử dụng để tìm các biểu diễn ẩn tốt của hình ảnh.
+Học một trình phân loại nhị phân với rất nhiều tham số dường như yêu cầu ta thu thập một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
+Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với những kết luận này.
+Đó là bởi vì hình ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo cách giống nhau.
 
 <!--
 ## Invariances
 -->
 
-## *dịch tiêu đề phía trên*
+## Tính Bất Biến
 
 <!--
 Imagine that you want to detect an object in an image.
@@ -71,13 +75,21 @@ The reader's goal is to locate him.
 Despite his characteristic outfit, this can be surprisingly difficult, due to the large number of confounders.
 -->
 
-*dịch đoạn phía trên*
+Hãy tưởng tượng rằng bạn muốn phát hiện một đối tượng trong một hình ảnh.
+Có vẻ hợp lý rằng bất cứ phương pháp nào ta sử dụng để nhận dạng đối tượng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
+Lý tưởng nhất là chúng ta có thể học một hệ thống bằng cách nào đó khai thác kiến thức này.
+Lợn thường không bay và máy bay thường không bơi.
+Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn.
+Ý tưởng này được đưa đến một thái cực trong trò chơi trẻ em 'Where's Waldo', một ví dụ được hiển thị trong: numref: `img_waldo`.
+Trò chơi bao gồm một số cảnh hỗn loạn bùng nổ với hoạt động và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
+Nhiệm vụ của người chơi là xác định vị trí anh ta.
+Mặc dù anh ta có một bộ trang phục đặc trưng, điều này có thể khó khăn đáng ngạc nhiên, do số lượng lớn các yếu tố gây nhiễu.
 
 <!--
 ![Image via Walker Books](../img/where-wally-walker-books.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/where-wally-walker-books.jpg)
+![Ảnh trong Walker Books](../img/where-wally-walker-books.jpg)
 :width:`400px`
 :label:`img_waldo`
 
@@ -86,20 +98,21 @@ Despite his characteristic outfit, this can be surprisingly difficult, due to th
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-*dịch đoạn phía trên*
+Quay lại với hình ảnh, những trực giác mà ta đang thảo luận có thể được đưa ra cụ thể hơn để đạt được một vài nguyên tắc chính để xây dựng mạng nơ-ron cho thị giác máy tính:
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-*dịch đoạn phía trên*
+1. Trong một số trường hợp, hệ thống thị giác của ta sẽ phản ứng tương tự với cùng một đối tượng bất kể nó xuất hiện ở đâu trong hình ảnh (dịch chuyển bất biến).
+2. Trong một số trường hợp, hệ thống thị giác của ta nên tập trung vào các khu vực cục bộ, mà không quan tâm đến những gì khác đang xảy ra trong hình ảnh ở khoảng cách xa hơn (cục bộ).
 
 <!--
 Let us see how this translates into mathematics.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem cách biểu diễn vấn đề này sang ngôn ngữ toán học.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
