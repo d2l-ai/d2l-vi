@@ -20,7 +20,7 @@ This section addresses both issues.
 Cho đến giờ ta đã thảo luận về cách xử lý dữ liệu, cách xây dựng, huấn luyện và kiểm tra các mô hình học sâu.
 Tuy nhiên, tại một số thời điểm, ta có thể hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
 Tương tự như vậy, khi thực hiện một quá trình huấn luyện dài, cách tốt nhất là lưu lại các kết quả trung gian (điểm kiểm tra) để đảm bảo rằng ta sẽ không mất nhiều ngày để tính toán lại khi không may vấp phải dây nguồn của máy chủ.
-Đồng thời, ta có thể muốn đọc một mô hình được huấn luyện sẵn (ví dụ: ta có thể có word embedding cho tiếng Anh và muốn sử dụng nó cho trình phân loại spam ưa thích).
+Đồng thời, ta có thể muốn nạp một mô hình đã được huấn luyện sẵn (ví dụ: sử dụng các embedding từ tiếng Anh có sẵn để xây dựng một bộ phân loại thư rác màu mè).
 Đối với tất cả các trường hợp này, ta cần đọc và lưu cả các vector trọng số đơn lẻ và toàn bộ mô hình.
 Mục này sẽ giải quyết cả hai vấn đề trên.
 
