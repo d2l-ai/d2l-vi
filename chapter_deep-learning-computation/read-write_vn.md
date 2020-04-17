@@ -175,9 +175,9 @@ yclone == y
 * Saving the architecture has to be done in code rather than in parameters.
 -->
 
-Hàm `save` và `load` có thể được sử dụng để thực hiện xuất nhập file cho các đối tượng `ndarray`.
-Hàm `load_parameters` và `save_parameters` cho phép ta lưu toàn bộ tập tham số của một mạng trong Gluon.
-Việc lưu kiến trúc này phải được thực hiện trong chương trình thay vì trong các tham số.
+* Hàm `save` và `load` có thể được sử dụng để thực hiện xuất nhập tập tin cho các đối tượng `ndarray`.
+* Hàm `load_parameters` và `save_parameters` cho phép ta lưu toàn bộ tập tham số của một mạng trong Gluon.
+* Việc lưu kiến trúc này phải được hoàn thiện trong chương trình thay vì trong các tham số.
 
 <!--
 ## Exercises
@@ -194,8 +194,8 @@ How would you go about using, say the first two layers from a previous network i
 
 1. Thậm chí nếu không cần phải triển khai các mô hình huấn luyện sang một thiết bị khác, lợi ích thực tế của việc lưu các tham số mô hình là gì?
 2. Giả sử chúng ta muốn sử dụng lại chỉ một phần của một mạng nào đó để phối hợp với một mạng của một kiến trúc *khác*.
-Bạn sẽ làm thế nào để thực hiện việc này, giả dụ là ta sử dụng hai lớp đầu tiên của mạng trước đó vào trong một mạng mới.
-3. Làm thế nào bạn có thể thực hiện lưu kiến trúc mạng và các tham số? Những hạn chế là gì khi bạn tận dụng kiến trúc này.
+Bạn sẽ làm thế nào để thực hiện việc này, giả dụ ta muốn sử dụng hai lớp đầu tiên của mạng trước đó vào trong một mạng mới.
+3. Làm thế nào bạn có thể thực hiện lưu kiến trúc mạng và các tham số? Những hạn chế là gì khi bạn tận dụng kiến trúc này?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
