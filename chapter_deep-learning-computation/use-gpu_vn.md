@@ -445,7 +445,7 @@ and log the matrix norm $\mathrm{tr} M M^\top$ one result at a time vs. keeping 
 4. Measure how much time it takes to perform two matrix-matrix multiplications on two GPUs at the same time vs. in sequence on one GPU (hint: you should see almost linear scaling).
 -->
 
-1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn, để thấy sự khác nhau về tốc độ giữa CPU và GPU.
+1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn để thấy sự khác nhau về tốc độ giữa CPU và GPU.
 Và với trường hợp tác vụ với khối lượng tính toán nhỏ thì sao?
 2. Nên làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
 3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và trả về giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
