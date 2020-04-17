@@ -151,7 +151,7 @@ Unlike the random initialization of model parameters, here we read the parameter
 -->
 
 Để kiểm tra xem có thể khôi phục lại mô hình này không, chúng ta tạo một đối tượng khác của mô hình MLP trên.
-Khác với quá trình khởi tạo tham số ngẫu nhiên của mô hình, ở đây chúng ta trực tiếp tải các tham số từ tệp được ghi trước đó.
+Khác với quá trình khởi tạo tham số ngẫu nhiên của mô hình, ở đây chúng ta trực tiếp đọc các tham số từ tệp được ghi trước đó.
 
 ```{.python .input  n=8}
 clone = MLP()
