@@ -426,7 +426,7 @@ It is much better to allocate memory for logging inside the GPU and only move la
 * MXNet có thể chỉ định các thiết bị thực hiện việc lưu trữ và tính toán như CPU hay GPU.
 Mặc định, MXNet tạo dữ liệu trên bộ nhớ chính và sử dụng CPU để tính toán.
 * MXNet yêu cầu tất cả dữ liệu đầu vào *nằm trên cùng thiết bị* trước khi thực hiện tính toán, tức cùng một CPU hoặc cùng một GPU.
-* Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách thiếu cân nhắc.     
+* Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách không cẩn thận.
 Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi trả kết quả lại trên cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt trình quản lý luồng (*Global Interpreter Lock*) làm tất cả GPU dừng hoạt động.
 Sẽ tốt hơn nếu cấp phát bộ nhớ cho việc ghi lại quá trình hoạt động (*logging*) ở GPU và chỉ di chuyển các bản ghi lớn.  
 
