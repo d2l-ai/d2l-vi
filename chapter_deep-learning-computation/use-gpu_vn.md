@@ -247,7 +247,7 @@ The runtime engine would not know what to do, it cannot find data on the same de
 Nếu ta muốn tính $\mathbf{x} + \mathbf{y}$ thì ta cần quyết định nơi thực hiện phép tính này.
 Chẳng hạn, như trong :numref:`fig_copyto`, ta có thể chuyển $\mathbf{x}$ sang `gpu(1)` và thực hiện phép tính ở đó.
 *Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
-Công cụ thời gian chạy sẽ không biết phải làm gì, nó không thể tìm thấy dữ liệu trên cùng một thiết bị và nó bị lỗi.
+Hệ thống thời gian chạy sẽ không biết phải làm gì và gặp lỗi bởi nó không thể tìm thấy dữ liệu trên cùng một thiết bị.
 
 <!--
 ![Copyto copies arrays to the target device](../img/copyto.svg)
