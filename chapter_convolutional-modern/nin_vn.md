@@ -174,7 +174,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * NiN uses blocks consisting of a convolutional layer and multiple $1\times 1$ convolutional layer. This can be used within the convolutional stack to allow for more per-pixel nonlinearity.
@@ -189,17 +189,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Tune the hyper-parameters to improve the classification accuracy.
-1. Why are there two $1\times 1$ convolutional layers in the NiN block? Remove one of them, and then observe and analyze the experimental phenomena.
-1. Calculate the resource usage for NiN
+2. Why are there two $1\times 1$ convolutional layers in the NiN block? Remove one of them, and then observe and analyze the experimental phenomena.
+3. Calculate the resource usage for NiN
     * What is the number of parameters?
     * What is the amount of computation?
     * What is the amount of memory needed during training?
     * What is the amount of memory needed during inference?
-1. What are possible problems with reducing the $384 \times 5 \times 5$ representation to a $10 \times 5 \times 5$ representation in one step?
+4. What are possible problems with reducing the $384 \times 5 \times 5$ representation to a $10 \times 5 \times 5$ representation in one step?
 -->
 
 *dịch đoạn phía trên*
@@ -208,16 +208,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## [Discussions](https://discuss.mxnet.io/t/2356)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_nin.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_nin.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2356)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -232,6 +225,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

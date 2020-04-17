@@ -217,7 +217,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * VGG-11 constructs a network using reusable convolutional blocks. Different VGG models can be defined by the differences in the number of convolutional layers and output channels in each block.
@@ -231,13 +231,13 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. When printing out the dimensions of the layers we only saw 8 results rather than 11. Where did the remaining 3 layer informations go?
-1. Compared with AlexNet, VGG is much slower in terms of computation, and it also needs more GPU memory. Try to analyze the reasons for this.
-1. Try to change the height and width of the images in Fashion-MNIST from 224 to 96. What influence does this have on the experiments?
-1. Refer to Table 1 in :cite:`Simonyan.Zisserman.2014` to construct other common models, such as VGG-16 or VGG-19.
+2. Compared with AlexNet, VGG is much slower in terms of computation, and it also needs more GPU memory. Try to analyze the reasons for this.
+3. Try to change the height and width of the images in Fashion-MNIST from 224 to 96. What influence does this have on the experiments?
+4. Refer to Table 1 in :cite:`Simonyan.Zisserman.2014` to construct other common models, such as VGG-16 or VGG-19.
 -->
 
 *dịch đoạn phía trên*
@@ -246,16 +246,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## [Discussions](https://discuss.mxnet.io/t/2355)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_vgg.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_vgg.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2355)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -270,6 +263,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

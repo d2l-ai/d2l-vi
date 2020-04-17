@@ -625,7 +625,7 @@ tens of thousands of citations.
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * During model training, batch normalization continuously adjusts the intermediate output of the neural network by utilizing the mean and standard deviation of the minibatch, so that the values of the intermediate output in each layer throughout the neural network are more stable.
@@ -640,20 +640,20 @@ tens of thousands of citations.
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Can we remove the fully connected affine transformation before the batch normalization or the bias parameter in convolution computation?
     * Find an equivalent transformation that applies prior to the fully connected layer.
     * Is this reformulation effective. Why (not)?
-1. Compare the learning rates for LeNet with and without batch normalization.
+2. Compare the learning rates for LeNet with and without batch normalization.
     * Plot the decrease in training and test error.
     * What about the region of convergence? How large can you make the learning rate?
-1. Do we need Batch Normalization in every layer? Experiment with it?
-1. Can you replace Dropout by Batch Normalization? How does the behavior change?
-1. Fix the coefficients `beta` and `gamma` (add the parameter `grad_req='null'` at the time of construction to avoid calculating the gradient), and observe and analyze the results.
-1. Review the Gluon documentation for `BatchNorm` to see the other applications for Batch Normalization.
-1. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
+3. Do we need Batch Normalization in every layer? Experiment with it?
+4. Can you replace Dropout by Batch Normalization? How does the behavior change?
+5. Fix the coefficients `beta` and `gamma` (add the parameter `grad_req='null'` at the time of construction to avoid calculating the gradient), and observe and analyze the results.
+6. Review the Gluon documentation for `BatchNorm` to see the other applications for Batch Normalization.
+7. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
 -->
 
 *dịch đoạn phía trên*
@@ -662,16 +662,9 @@ tens of thousands of citations.
 ## [Discussions](https://discuss.mxnet.io/t/2358)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_batch-norm.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_batch-norm.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2358)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -686,6 +679,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

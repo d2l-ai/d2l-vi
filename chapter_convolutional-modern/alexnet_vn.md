@@ -515,7 +515,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * AlexNet has a similar structure to that of LeNet, but uses more convolutional layers and a larger parameter space to fit the large-scale dataset ImageNet.
@@ -530,19 +530,19 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Try increasing the number of epochs. Compared with LeNet, how are the results different? Why?
-1. AlexNet may be too complex for the Fashion-MNIST dataset.
+2. AlexNet may be too complex for the Fashion-MNIST dataset.
     * Try to simplify the model to make the training faster, while ensuring that the accuracy does not drop significantly.
     * Can you design a better model that works directly on $28 \times 28$ images.
-1. Modify the batch size, and observe the changes in accuracy and GPU memory.
-1. Rooflines:
+3. Modify the batch size, and observe the changes in accuracy and GPU memory.
+4. Rooflines:
     * What is the dominant part for the memory footprint of AlexNet?
     * What is the dominant part for computation in AlexNet?
     * How about memory bandwidth when computing the results?
-1. Apply dropout and ReLU to LeNet5. Does it improve? How about preprocessing?
+5. Apply dropout and ReLU to LeNet5. Does it improve? How about preprocessing?
 -->
 
 *dịch đoạn phía trên*
@@ -551,16 +551,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## [Discussions](https://discuss.mxnet.io/t/2354)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_alexnet.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_alexnet.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2354)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -575,6 +568,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

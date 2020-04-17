@@ -292,11 +292,14 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
-* The Inception block is equivalent to a subnetwork with four paths. It extracts information in parallel through convolutional layers of different window shapes and maximum pooling layers. $1 \times 1$ convolutions reduce channel dimensionality on a per-pixel level. Max-pooling reduces the resolution.
-* GoogLeNet connects multiple well-designed Inception blocks with other layers in series. The ratio of the number of channels assigned in the Inception block is obtained through a large number of experiments on the ImageNet dataset.
+* The Inception block is equivalent to a subnetwork with four paths. 
+It extracts information in parallel through convolutional layers of different window shapes and maximum pooling layers. 
+$1 \times 1$ convolutions reduce channel dimensionality on a per-pixel level. Max-pooling reduces the resolution.
+* GoogLeNet connects multiple well-designed Inception blocks with other layers in series. 
+The ratio of the number of channels assigned in the Inception block is obtained through a large number of experiments on the ImageNet dataset.
 * GoogLeNet, as well as its succeeding versions, was one of the most efficient models on ImageNet, providing similar test accuracy with lower computational complexity.
 -->
 
@@ -306,22 +309,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. There are several iterations of GoogLeNet. Try to implement and run them. Some of them include the following:
-    * Add a batch normalization layer :cite:`Ioffe.Szegedy.2015`, as described
-      later in :numref:`sec_batch_norm`.
-    * Make adjustments to the Inception block
-      :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
-    * Use "label smoothing" for model regularization
-      :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
-    * Include it in the residual connection
-      :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, as described later in
-      :numref:`sec_resnet`.
+    * Add a batch normalization layer :cite:`Ioffe.Szegedy.2015`, as described later in :numref:`sec_batch_norm`.
+    * Make adjustments to the Inception block :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
+    * Use "label smoothing" for model regularization :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
+    * Include it in the residual connection :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, as described later in :numref:`sec_resnet`.
 1. What is the minimum image size for GoogLeNet to work?
-1. Compare the model parameter sizes of AlexNet, VGG, and NiN with GoogLeNet. How do the latter two network architectures significantly reduce the model parameter size?
-1. Why do we need a large range convolution initially?
+2. Compare the model parameter sizes of AlexNet, VGG, and NiN with GoogLeNet. How do the latter two network architectures significantly reduce the model parameter size?
+3. Why do we need a large range convolution initially?
 -->
 
 *dịch đoạn phía trên*
@@ -331,16 +329,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## [Discussions](https://discuss.mxnet.io/t/2357)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_googlenet.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_googlenet.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2357)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -355,6 +346,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 

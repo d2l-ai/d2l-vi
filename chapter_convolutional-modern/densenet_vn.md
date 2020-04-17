@@ -249,7 +249,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * In terms of cross-layer connections, unlike ResNet, where inputs and outputs are added together, DenseNet concatenates inputs and outputs on the channel dimension.
@@ -263,17 +263,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Why do we use average pooling rather than max-pooling in the transition layer?
-1. One of the advantages mentioned in the DenseNet paper is that its model parameters are smaller than those of ResNet. Why is this the case?
-1. One problem for which DenseNet has been criticized is its high memory consumption.
+2. One of the advantages mentioned in the DenseNet paper is that its model parameters are smaller than those of ResNet. Why is this the case?
+3. One problem for which DenseNet has been criticized is its high memory consumption.
     * Is this really the case? Try to change the input shape to $224\times 224$ to see the actual (GPU) memory consumption.
     * Can you think of an alternative means of reducing the memory consumption? How would you need to change the framework?
-1. Implement the various DenseNet versions presented in Table 1 of :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
-1. Why do we not need to concatenate terms if we are just interested in $\mathbf{x}$ and $f(\mathbf{x})$ for ResNet? Why do we need this for more than two layers in DenseNet?
-1. Design a DenseNet for fully connected networks and apply it to the Housing Price prediction task.
+4. Implement the various DenseNet versions presented in Table 1 of :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
+5. Why do we not need to concatenate terms if we are just interested in $\mathbf{x}$ and $f(\mathbf{x})$ for ResNet? Why do we need this for more than two layers in DenseNet?
+6. Design a DenseNet for fully connected networks and apply it to the Housing Price prediction task.
 -->
 
 *dịch đoạn phía trên*
@@ -283,16 +283,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## [Discussions](https://discuss.mxnet.io/t/2360)
 -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_densenet.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_densenet.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2360)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -307,6 +300,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
