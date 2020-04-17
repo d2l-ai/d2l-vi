@@ -394,7 +394,7 @@ Let's see how to do this a bit more elegantly. In the following we allocate a de
 -->
 
 Trong một số trường hợp, ta sẽ muốn chia sẻ các tham số mô hình trên nhiều tầng.
-Ví dụ, trong quá trình huấn luyện word embedding, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ. <!-- Theo mình biết thì từ word embedding sẽ được giữ nguyên, không biết có đúng không ?-->
+Ví dụ, trong quá trình huấn luyện embedding từ, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ.
 Ta đã thảo luận về một trường hợp như vậy trong :numref:`sec_model_construction`.
 Hãy xem làm thế nào để thực hiện việc này một cách tinh tế hơn. Sau đây ta sẽ tạo một tầng kết nối đầy đủ và sử dụng chính tham số của nó làm tham số cho một tầng khác.
 
