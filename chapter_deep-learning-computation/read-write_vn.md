@@ -116,7 +116,7 @@ Một chi tiết quan trọng cần lưu ý là chức năng này lưu các *tha
 Lý do là bởi bản thân các mô hình có thể chứa các đoạn mã tuỳ ý, các đoạn mã này khó có thể được đọc ghi vào tệp một cách dễ dàng như các tham số.
 (có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [MXNet documentation](http://www.mxnet.io)).
 Kết quả là, để khôi phục lại một mô hình chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi tải các tham số từ ổ cứng vào kiến trúc này.
-Việc khởi tạo trễ (:numref:`sec_deferred_init`) mang lại lợi ích lúc này vì ta chỉ cần định nghĩa một mô hình mà không cần giá trị tham số cụ thể.
+Việc khởi tạo trễ (:numref:`sec_deferred_init`) lúc này rất có lợi vì ta chỉ cần định nghĩa một mô hình mà không cần gán giá trị cụ thể cho tham số.
 Như thường lệ, hãy bắt đầu với Perceptron Đa tầng.
 
 ```{.python .input  n=6}
