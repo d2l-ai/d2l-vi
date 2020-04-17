@@ -5,7 +5,7 @@
 # Convolutions for Images
 -->
 
-# *dịch tiêu đề phía trên*
+# Phép tích chập cho ảnh
 :label:`sec_conv_layer`
 
 <!--
@@ -15,14 +15,15 @@ we will stick with image data in our examples, and begin by revisiting the convo
 We note that strictly speaking, *convolutional* layers are a slight misnomer, since the operations are typically expressed as cross correlations.
 -->
 
-*dịch đoạn phía trên*
-
+Giờ chúng ta đã hiểu cách các tầng tích chập hoạt động theo lý thuyết, hãy xem chúng hoạt động trên thực tế như thế nào.
+Với cảm hứng từ khả năng ứng dụng các mạng nơ-ron tích chập với dữ liệu hình ảnh, chúng ta vẫn sẽ sử dụng loại dữ liệu này trong các ví dụ, và bắt đầu với tầng tích chập được giới thiệu ở phần trước.
+Chú ý rằng, một cách chặt chẽ, việc đặt tên các tầng là *tích chập* là không chính xác, vì các phép toán thường được biểu diễn dưới dạng tương quan chéo.
 
 <!--
 ## The Cross-Correlation Operator
 -->
 
-## *dịch tiêu đề phía trên*
+## Toán tử tương quan chéo
 
 <!--
 In a convolutional layer, an input array and a correlation kernel array are combined to produce an output array through a cross-correlation operation.
@@ -34,13 +35,20 @@ Common names for this array in the deep learning research community include *ker
 The shape of the kernel window (also known as the convolution window) is given precisely by the height and width of the kernel (here it is $2 \times 2$).
 -->
 
-*dịch đoạn phía trên*
+Trong một tầng tích chập, một mảng đầu vào và một mảng bộ lọc tương quan được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo.
+Hãy xem phép toán này hoạt động như thế nào với mảng hai chiều.
+Trong :numref:`fig_correlation`, đầu vào là một mảng hai chiều với chiều dài 3 và chiều rộng 3.
+Ta kí hiệu kích thước của mảng là $3 \times 3$ hoặc (3, 3).
+Chiều dài và chiều rộng của mảng bộ lọc đều là 2.
+Trong cộng đồng nghiên cứu học sâu, các tên thường gặp của mảng này gồm có *kernel* và *filter*.
+Kích thước của cửa sổ bộ lọc (còn gọi là cửa sổ tích chập) được định nghĩa từ chiều dài và chiều rộng của bộ lọc (ở đây là $2 \times 2$).
+
 
 <!--
 ![Two-dimensional cross-correlation operation. The shaded portions are the first output element and the input and kernel array elements used in its computation: $0\times0+1\times1+3\times2+4\times3=19$. ](../img/correlation.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/correlation.svg)
+![Phép tương quan chéo hai chiều. Các phần in đậm là phần tử đầu tiên của đầu ra, các phần tử của đầu vào và bộ lọc được sử dụng trong phép toán: $0\times0+1\times1+3\times2+4\times3=19$. ](../img/correlation.svg)
 :label:`fig_correlation`
 
 <!--
@@ -52,7 +60,12 @@ This result if precisely the value of the output array at the corresponding loca
 Here, the output array has a height of 2 and width of 2 and the four elements are derived from the two-dimensional cross-correlation operation:
 -->
 
-*dịch đoạn phía trên*
+Trong phép tương quan chéo hai chiều, ta bắt đầu từ cửa sổ tích chập tại vị trí góc trên bên trái của mảng đầu vào 
+và di chuyển cửa sổ này trên mảng đầu vào, từ trái sang phải và từ trên xuống dưới.
+Khi cửa sổ tích chập ở một vị trí nào đó, mảng con của đầu vào chứa trong cửa sổ đó và mảng bộ lọc được nhân theo từng phần tử
+và cộng các kết quả với nhau tạo thành một giá trị số vô hướng duy nhất.
+Giá trị này được ghi vào mảng đầu ra tại vị trí tương ứng.
+Ở đây, mảng đầu ra có chiều dài 2 và chiều rộng 2, với bốn phần tử được tính từ phép tương quan chéo hai chiều.
 
 $$
 0\times0+1\times1+3\times2+4\times3=19,\\
