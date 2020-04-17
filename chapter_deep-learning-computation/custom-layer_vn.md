@@ -103,11 +103,11 @@ In particular, they govern access, initialization, sharing, saving and loading m
 For instance, this way we do not need to write custom serialization routines for each new custom layer.
 -->
 
-Bây giờ khi đã biết cách định nghĩa các tầng theo nguyên tắc, ta sẽ định nghĩa các tầng với tham số.
+Bây giờ về nguyên tắc ta đã biết cách định nghĩa các tầng, hãy chuyển sang việc định nghĩa các tầng với tham số.
 Các tham số có thể được điều chỉnh thông qua quá trình huấn luyện.
-Lớp `Parameter` và từ điển `ParameterDict` sẽ cung cấp một số tính năng cơ bản nhằm đơn giản hóa một số bước cho các nhà nghiên cứu học sâu.
-Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và đọc các tham số mô hình.
-Chẳng hạn, theo cách này, ta không cần phải viết lại các thủ tục tuần tự hóa cho mỗi tầng tùy chỉnh mới.
+Lớp `Parameter` và từ điển `ParameterDict` sẽ cung cấp một số tính năng quản trị cơ bản nhằm đơn giản hóa công việc cho các nhà nghiên cứu học sâu.
+Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và nạp các tham số mô hình.
+Bằng cách này, ta không cần phải viết lại các thủ tục tuần tự hóa cho mỗi tầng tùy chỉnh mới.
 
 <!--
 For instance, we can use the member variable `params` of the `ParameterDict` type that comes with the Block class. 
@@ -116,7 +116,7 @@ We can create a `Parameter` instance from `ParameterDict` via the `get` function
 -->
 
 Ví dụ, ta có thể sử dụng biến thành viên `params` với kiểu `ParameterDict` đi kèm với lớp `Block`.
-Nó là một từ điển ánh xạ các tên tham số kiểu chuỗi sang các tham số mô hình theo kiểu `Parameter`.
+Nó là một từ điển ánh xạ các tên tham số kiểu chuỗi sang các tham số mô hình có kiểu `Parameter`.
 Ta có thể tạo một biểu hiện `Parameter` từ `ParameterDict` thông qua hàm `get`.
 
 ```{.python .input  n=7}
@@ -133,7 +133,7 @@ It uses ReLU as an activation function, where `in_units` and `units` are the num
 -->
 
 Ta sẽ sử dụng biến `params` này để lập trình một phiên bản riêng của tầng `Dense`.
-Tầng này gồm có hai tham số: hệ số điều chỉnh và trọng số. Để làm cho nó có một chút khác chuẩn, ta sử dụng hàm kích hoạt ReLU như mặc định.
+Tầng này gồm có hai tham số: hệ số điều chỉnh và trọng số. Để làm cho nó có một chút khác chuẩn, ta sẽ sử dụng hàm kích hoạt ReLU như mặc định.
 Tiếp theo, ta lập trình một tầng kết nối đầy đủ với cả trọng số và hệ số điều chỉnh.
 Tầng này sử dụng hàm kích hoạt ReLU, trong đó `in_units` và `units` lần lượt là số lượng đầu vào và số lượng đầu ra.
 
@@ -158,9 +158,9 @@ It is a good idea to give them instructive names.
 Next, we instantiate the `MyDense` class and access its model parameters.
 -->
 
-Việc đặt tên cho các tham số sẽ cho phép ta truy cập chúng theo tên thông qua việc tra cứu từ điển.
-Ta nên sử dụng các tên có tính chất gợi nhớ.
-Tiếp theo, ta khởi tạo lớp `MyDense` và truy cập các tham số mô hình.
+Việc đặt tên cho các tham số sẽ cho phép ta sau này truy cập chúng theo tên thông qua việc tra cứu từ điển.
+Vì vậy, việc sử dụng các tên có tính chất gợi nhớ sẽ là một ý tưởng hay.
+Tiếp theo, ta sẽ khởi tạo lớp `MyDense` và truy cập các tham số mô hình.
 
 ```{.python .input}
 dense = MyDense(units=3, in_units=5)
@@ -171,7 +171,7 @@ dense.params
 We can directly carry out forward calculations using custom layers.
 -->
 
-Ta có thể trực tiếp thực hiện các tính toán chuyển tiếp bằng cách sử dụng các tầng tùy chỉnh.
+Ta có thể thực hiện trực tiếp các tính toán chuyển tiếp bằng cách sử dụng các tầng tùy chỉnh.
 
 
 ```{.python .input  n=20}
@@ -187,9 +187,9 @@ Please consult the [MXNet documentation](http://www.mxnet.io) for details on how
 -->
 
 Ta cũng có thể xây dựng các mô hình bằng cách sử dụng các tầng tùy chỉnh.
-Khi làm như vậy, ta có thể sử dụng các tầng tùy chỉnh này giống như các tầng dày đặc được lập trình sẵn.
-Ngoại lệ duy nhất là suy luận kích thước sẽ không được thực hiện tự động.
-Vui lòng tham khảo [tài liệu MXNet] (http://www.mxnet.io) để biết chi tiết về cách thực hiện việc này.
+Các tầng này có thể được sử dụng giống như các tầng dày đặc được lập trình sẵn.
+Ngoại lệ duy nhất là việc suy luận kích thước sẽ không được thực hiện tự động.
+Để biết thêm chi tiết về cách thực hiện việc này, vui lòng tham khảo [tài liệu MXNet] (http://www.mxnet.io).
 
 ```{.python .input  n=19}
 net = nn.Sequential()
@@ -214,7 +214,7 @@ net(np.random.uniform(size=(2, 64)))
 * Blocks can have local parameters.
 -->
 
-* Ta có thể thiết kế các tầng tùy chỉnh thông qua lớp Block. Cách này linh hoạt hơn việc định nghĩa một khối vì nó có thể được gọi trong nhiều ngữ cảnh khác nhau.
+* Ta có thể thiết kế các tầng tùy chỉnh thông qua lớp Block. Cách này linh hoạt hơn việc định nghĩa một khối vì các tầng tùy chỉnh có thể được gọi trong nhiều ngữ cảnh khác nhau.
 * Các khối có thể có các tham số cục bộ.
 
 
@@ -230,7 +230,7 @@ net(np.random.uniform(size=(2, 64)))
 3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
 -->
 
-1. Thiết kế một tầng học một phép biến đổi tuyến tính của dữ liệu, tức là, loại bỏ giá trị trung bình và thay vào đó học một tham số phụ gia.
+1. Thiết kế một tầng học một phép biến đổi affine của dữ liệu, tức là, loại bỏ giá trị trung bình và thay vào đó học một tham số phụ gia. <!--  -->
 2. Thiết kế một tầng nhận đầu vào và tính toán phép giảm tensor, tức là, trả về $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
 3. Thiết kế một tầng trả về nửa đầu của các hệ số Fourier của dữ liệu. Gợi ý: tra cứu hàm `fft` trong MXNet.
 
@@ -263,7 +263,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
