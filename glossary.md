@@ -72,6 +72,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | convolution neural networks         | mạng nơ-ron tích chập  |                                              |
 | cost function                       | hàm chi phí            | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                           | hiệp biến              | [https://git.io/JvohK](https://git.io/JvohK) |
+| cross correlation                   | tương quan chéo        |                                              |
 | cross entropy                       | entropy chéo           |                                              |
 | cross validation                    | kiểm định chéo         |                                              |
 
