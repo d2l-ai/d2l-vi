@@ -205,7 +205,7 @@ But of course, if those biases do not agree with reality, e.g., if images turned
 ## Convolutions
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Tích chập
 
 <!--
 Let us briefly review why the above operation is called a *convolution*.
@@ -213,7 +213,9 @@ In mathematics, the convolution between two functions,
 say $f, g: \mathbb{R}^d \to R$ is defined as
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem xét ngắn gọn lý do tại sao hoạt động trên được gọi là *tích chập*.
+Trong toán học, tích chập giữa hai hàm,
+cho $f, g: \mathbb{R}^d \to R$ được định nghĩa như sau
 
 $$[f \circledast g](x) = \int_{\mathbb{R}^d} f(z) g(x-z) dz.$$
 
@@ -223,7 +225,9 @@ Whenever we have discrete objects, the integral turns into a sum.
 For instance, for vectors defined on $\ell_2$, i.e., the set of square summable infinite dimensional vectors with index running over $\mathbb{Z}$ we obtain the following definition.
 -->
 
-*dịch đoạn phía trên*
+Đó là, ta đo lường sự chồng chéo giữa $f$ và $g$ khi cả hai chức năng được thay đổi bởi $x$ và "bị lật lại".
+Bất cứ khi nào ta có các đối tượng rời rạc, phép tích phân trở thành một tổng.
+Chẳng hạn như, đối với các vectơ được xác định trên $\ell_2$, tức là, tập hợp các vector vô số chiều có thể so sánh vuông có chỉ mục chạy trên $\mathbb{Z}$ ta có được định nghĩa sau.
 
 $$[f \circledast g](i) = \sum_a f(a) g(i-a).$$
 
@@ -236,7 +240,12 @@ Also note that the original definition is actually a *cross correlation*.
 We will come back to this in the following section.
 -->
 
-*dịch đoạn phía trên*
+Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$ theo tuần tự.
+Điều này trông tương tự như định nghĩa ở trên, với một sự khác biệt lớn.
+Thay vì sử dụng $(i+a, j+b)$, ta đang sử dụng sự khác biệt.
+Tuy nhiên, lưu ý rằng sự cách biệt này chủ yếu là ảo vì ta luôn có thể khớp với ký hiệu bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có được $h = x \circledast \tilde{V}$.
+Cũng lưu ý rằng định nghĩa ban đầu thực sự là một *tương quan chéo*.
+Ta sẽ quay trở lại vấn đề này trong phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
