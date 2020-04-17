@@ -112,7 +112,7 @@ Dù sao, có thể chúng ta sẽ có hàng trăm nhóm tham số rải rác xuy
 Việc viết một đoạn mã thu thập tất cả các nhóm này và khớp chúng với một kiến trúc là tương đối vất vả.
 Do đó, Gluon cung cấp sẵn chức năng lưu và nạp toàn bộ các mạng thay vì chỉ là các vector trọng số đơn lẻ.
 Một chi tiết quan trọng cần lưu ý là chức năng này chỉ lưu các *tham số* của mô hình, không phải là toàn bộ mô hình.
-Điều đó có nghĩa, nếu ta có Perceptron 3 tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng rẽ.
+Điều đó có nghĩa, nếu ta có một Perceptron 3 tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng rẽ.
 Lý do là bởi bản thân các mô hình có thể chứa các đoạn mã tuỳ ý, các đoạn mã này khó có thể được đọc ghi vào tệp một cách dễ dàng như các tham số.
 (có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [MXNet documentation](http://www.mxnet.io)).
 Kết quả là, để khôi phục lại một mô hình chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi tải các tham số từ ổ cứng vào kiến trúc này.
