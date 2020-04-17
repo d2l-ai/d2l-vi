@@ -253,7 +253,7 @@ Hệ thống thời gian chạy sẽ không biết phải làm gì và gặp l�
 ![Copyto copies arrays to the target device](../img/copyto.svg)
 -->
 
-![Lệnh copyto sao chép các mảng đến thiết bị đích](../img/copyto.svg)
+![Lệnh copyto sao chép các mảng đến thiết bị mục tiêu](../img/copyto.svg)
 :label:`fig_copyto`
 
 <!--
