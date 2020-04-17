@@ -107,7 +107,7 @@ The deferred initialization (:numref:`sec_deferred_init`) is quite advantageous 
 Let's start with our favorite MLP.
 -->
 
-Khả năng lưu từng vector trọng số đơn lẻ (hoặc các `ndarray` tensor khác) là hữu ích nhưng sẽ mất nhiều thời gian nếu chúng ta muốn lưu (và sau đó tải lại) toàn bộ mô hình.
+Khả năng lưu từng vector trọng số đơn lẻ (hoặc các `ndarray` tensor khác) là hữu ích nhưng sẽ mất nhiều thời gian nếu chúng ta muốn lưu (và sau đó nạp lại) toàn bộ mô hình.
 Dù sao, có thể chúng ta sẽ có hàng trăm nhóm tham số rải rác xuyên suốt mô hình.
 Việc viết một đoạn mã thu thập tất cả các nhóm này và khớp chúng với một kiến trúc là tương đối vất vả.
 Do đó, Gluon cung cấp sẵn chức năng lưu và tải toàn bộ các mạng thay vì chỉ là các vector trọng số đơn lẻ.
