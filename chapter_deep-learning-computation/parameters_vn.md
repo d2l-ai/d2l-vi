@@ -354,9 +354,9 @@ Ta sẽ lấy các hệ số từ phân phối sau:
 $$
 \begin{aligned}
     w \sim \begin{cases}
-        U[5, 10] & \text{ with probability } \frac{1}{4} \\
-            0    & \text{ with probability } \frac{1}{2} \\
-        U[-10, -5] & \text{ with probability } \frac{1}{4}
+        U[5, 10] & \text{ với xác suất } \frac{1}{4} \\
+            0    & \text{ với xác suất } \frac{1}{2} \\
+        U[-10, -5] & \text{ với xác suất } \frac{1}{4}
     \end{cases}
 \end{aligned}
 $$
