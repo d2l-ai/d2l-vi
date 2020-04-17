@@ -51,7 +51,7 @@ npx.save('x-file', x)
 Then, we read the data from the stored file back into memory.
 -->
 
-Sau đó, ta đọc dữ liệu từ các tệp được lưu trở lại vào trong bộ nhớ.
+Sau đó, ta đọc lại dữ liệu từ các tệp được lưu vào trong bộ nhớ.
 
 ```{.python .input}
 x2 = npx.load('x-file')
