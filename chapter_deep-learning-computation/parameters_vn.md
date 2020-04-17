@@ -392,7 +392,7 @@ net[0].weight.data()[0]
 ## Tied Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Tham số bị Trói buộc
 
 <!--
 In some cases, we want to share model parameters across multiple layers. 
@@ -401,7 +401,11 @@ We discussed one such case when we introduced :numref:`sec_model_construction`.
 Let's see how to do this a bit more elegantly. In the following we allocate a dense layer and then use its parameters specifically to set those of another layer.
 -->
 
-*dịch đoạn phía trên*
+Trong một số trường hợp, ta sẽ muốn chia sẻ các tham số mô hình trên nhiều tầng.
+Ví dụ, trong quá trình huấn luyện embedding từ, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ.
+Ta đã thảo luận về một trường hợp như vậy trong :numref:`sec_model_construction`.
+Hãy xem làm thế nào để thực hiện việc này một cách tinh tế hơn. Sau đây ta sẽ tạo một tầng kết nối đầy đủ và sử dụng chính tham số của nó làm tham số cho một tầng khác.
+
 
 ```{.python .input  n=14}
 net = nn.Sequential()
@@ -433,7 +437,11 @@ What happens to the gradients is quite ingenious.
 Since the model parameters contain gradients, the gradients of the second hidden layer and the third hidden layer are accumulated in the `shared.params.grad( )` during backpropagation.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ trên cho thấy các tham số của tầng thứ hai và thứ ba đã bị trói buộc với nhau.
+Thay vì chỉ có giá trị bằng nhau, chúng là cùng một đối tượng.
+Tức là nếu thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
+Cách xử lý gradient ở đây là khá tài tình.
+Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
 
 <!--
 ## Summary
@@ -447,7 +455,9 @@ Since the model parameters contain gradients, the gradients of the second hidden
 * Gluon has a sophisticated mechanism for accessing parameters in a unique and hierarchical manner.
 -->
 
-*dịch đoạn phía trên*
+* Ta có một số cách để truy cập, khởi tạo và trói buộc các tham số mô hình.
+* Ta có thể sử dụng các bộ khởi tạo tùy chỉnh.
+* Gluon có một cơ chế tinh vi để truy cập các tham số theo phân cấp một cách độc nhất.
 
 
 <!--
@@ -464,7 +474,11 @@ Since the model parameters contain gradients, the gradients of the second hidden
 5. Why is sharing parameters a good idea?
 -->
 
-*dịch đoạn phía trên*
+1. Sử dụng FixedHiddenMLP được định nghĩa trong :numref:`sec_model_construction` và truy cập tham số của các tầng khác nhau. <!-- Trong `sec_model_construction` mình chỉ thấy có hàm FixedHiddenMLP chứ không có hàm FancyMLP, hình như FancyMLP là trong bản cũ của sách thì phải -->
+2. Xem [tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
+3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
+4. Xây dựng và huấn luyện một perceptron đa tầng trong đó có một tầng sử dụng tham số được chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
+5. Tại sao việc chia sẻ tham số lại là là một ý tưởng hay?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -505,4 +519,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
