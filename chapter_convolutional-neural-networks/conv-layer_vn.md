@@ -15,7 +15,7 @@ we will stick with image data in our examples, and begin by revisiting the convo
 We note that strictly speaking, *convolutional* layers are a slight misnomer, since the operations are typically expressed as cross correlations.
 -->
 
-Giờ chúng ta đã hiểu cách các tầng tích chập hoạt động theo lý thuyết, hãy xem chúng hoạt động trên thực tế như thế nào.
+Giờ chúng ta đã hiểu cách các tầng tích chập hoạt động trên lý thuyết, hãy xem chúng hoạt động trong thực tế như thế nào.
 Với cảm hứng từ khả năng ứng dụng các mạng nơ-ron tích chập với dữ liệu hình ảnh, chúng ta vẫn sẽ sử dụng loại dữ liệu này trong các ví dụ, và bắt đầu với tầng tích chập được giới thiệu ở phần trước.
 Chú ý rằng, một cách chặt chẽ, việc đặt tên các tầng là *tích chập* là không chính xác, vì các phép toán thường được biểu diễn dưới dạng tương quan chéo.
 
@@ -381,7 +381,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
