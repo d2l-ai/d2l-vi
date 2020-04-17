@@ -62,7 +62,7 @@ x2
 We can also store a list of `ndarray`s and read them back into memory.
 -->
 
-Ta cũng có thể lưu một danh sách các `ndarray` và đọc chúng trở lại vào trong bộ nhớ.
+Ta cũng có thể lưu một danh sách các `ndarray` và đọc lại chúng vào trong bộ nhớ.
 
 ```{.python .input  n=2}
 y = np.zeros(4)
