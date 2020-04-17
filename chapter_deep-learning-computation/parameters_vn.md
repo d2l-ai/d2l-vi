@@ -139,7 +139,7 @@ It has the same shape as the weight. However, since we did not invoke backpropag
 Chú ý rằng các trọng số là khác không.
 Điều này là có chủ ý vì chúng được khởi tạo ngẫu nhiên khi ta xây dựng mạng.
 `data` không phải là hàm duy nhất mà ta có thể gọi.
-Chẳng hạn, ta có thể gọi hàm tính toán gradient theo các tham số.
+Chẳng hạn, ta có thể gọi hàm truy cập gradient theo các tham số.
 Các gradient này có cùng kích thước với trọng số, tuy nhiên tất cả các giá trị hiện tại đều bằng 0 bởi vì ta chưa gọi hàm lan truyền ngược.
 
 ```{.python .input  n=5}
