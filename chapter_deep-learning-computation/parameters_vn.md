@@ -161,11 +161,9 @@ It does so by iterating over all constituents of a block and calls `collect_para
 To see the difference consider the following:
 -->
 
-Truy cập các tham số như mô tả phía trên có thể hơi dài dòng với các khối phức tạp,
-chẳng hạn như khi ta có khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối),
-vì ta cần phải duyệt qua toàn bộ cây theo thứ tự ngược với cách các khối được xây dựng.
-Để tránh rắc rối này, các khối có thêm một phương pháp `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển để ta có thể dễ dàng duyệt qua.
-Nó thực hiện bằng cách lặp qua các thành phần của một khối và gọi `collect_params` trên các khối con khi cần thiết.
+Truy cập các tham số như mô tả phía trên có thể hơi dài dòng với các khối phức tạp, chẳng hạn như khi ta có khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối), vì ta cần phải duyệt qua toàn bộ cây theo thứ tự ngược với cách các khối được xây dựng.
+Để tránh rắc rối này, các khối có thêm một phương thức `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển để ta có thể dễ dàng duyệt qua.
+Nó thực hiện điều này bằng cách lặp qua các thành phần của một khối và gọi `collect_params` trên các khối con khi cần thiết.
 Để thấy được sự khác nhau ta hãy xem ví dụ sau:
 
 ```{.python .input  n=6}
@@ -193,7 +191,7 @@ This makes it very convenient to use regular expressions to filter out the requi
 -->
 
 Xuyên suốt cuốn sách này ta sẽ thấy cách các loại khối khác nhau định danh khối con của chúng (khối Sequential đơn giản là đánh số các khối con).
-Điều này làm nó thuận tiện rất nhiều cho việc sử dụng các biểu thức chính quy để lọc ra các tham số cần thiết.
+Điều này làm cho việc sử dụng các biểu thức chính quy (_regular expression_) để lọc ra các tham số cần thiết thuận tiện rất nhiều.
 
 ```{.python .input  n=8}
 print(net.collect_params('.*weight'))
@@ -211,7 +209,7 @@ Let's see how the parameter naming conventions work if we nest multiple blocks i
 For that we first define a function that produces blocks (a block factory, so to speak) and then we combine these inside yet larger blocks.
 -->
 
-Cùng xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
+<span class="x x-first x-last">Hãy cùng</span> xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
 Trước hết ta định nghĩa một hàm tạo khối (có thể tạm gọi là một nhà máy khối) và sau đó ta kết hợp chúng vào bên trong các khối còn lớn hơn.
 
 ```{.python .input  n=20}
