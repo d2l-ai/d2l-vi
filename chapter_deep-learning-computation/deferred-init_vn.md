@@ -145,14 +145,15 @@ Một khi ta biết được số chiều, ta có thể tiến hành khởi tạ
 ## Deferred Initialization in Practice
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Trễ trong Thực tiễn
 
 <!--
 Now that we know how it works in theory, let's see when the initialization is actually triggered. 
 In order to do so, we mock up an initializer which does nothing but report a debug message stating when it was invoked and with which parameters.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta đã biết nó hoạt động như thế nào về mặt lý thuyết, hãy xem thử khi nào thì việc khởi tạo này thực sự diễn ra.
+Để làm như vậy, chúng ta cần lập trình thử một bộ khởi tạo. Nó sẽ không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
 
 ```{.python .input  n=22}
 class MyInit(init.Initializer):
@@ -171,7 +172,9 @@ Therefore there is no real initialization parameter when calling the `initialize
 Next, we define the input and perform a forward calculation.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi nó đã thực thi. 
+Do đó, việc khởi tạo tham số không thực sự được thực hiện khi gọi hàm `initialize`.
+Kế tiếp, ta định nghĩa đầu vào và thực hiện một lượt phép tính truyền xuôi.
 
 ```{.python .input  n=25}
 x = np.random.uniform(size=(2, 20))
@@ -184,14 +187,17 @@ When performing a forward calculation based on the input `x`, the system can aut
 Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
 -->
 
-*dịch đoạn phía trên*
+Lúc này, thông tin về các tham số mô hình mới được in ra.
+Khi thực hiện lượt truyền xuôi dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các tầng dựa trên kích thước của biến đầu vào này. 
+Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi.
 
 <!--
 Of course, this initialization will only be called when completing the initial forward calculation. 
 After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
 -->
 
-*dịch đoạn phía trên*
+Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi ta hoàn thành lượt truyền xuôi lần đầu tiên.
+Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi chúng ta chạy lệnh thực hiện lượt truyền xuôi `net(x)`, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa. 
 
 ```{.python .input}
 y = net(x)
@@ -204,7 +210,9 @@ for example, we could not use the `data` and `set_data` functions to get and mod
 Therefore, we often force initialization by sending a sample observation through the network.
 -->
 
-*dịch đoạn phía trên*
+Như đã đề cập ở phần mở đầu của mục này, việc khởi tạo trễ cũng có thể gây ra sự khó hiểu.
+Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
+Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách chạy một quan sát mẫu qua mạng này. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -324,7 +332,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lý Phi Long
 
 <!-- Phần 3 -->
-*
+* Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 *
