@@ -186,7 +186,7 @@ The only exception is that in our case size inference is not automatic.
 Please consult the [MXNet documentation](http://www.mxnet.io) for details on how to do this.
 -->
 
-Ta cũng có thể xây dựng các mô hình bằng cách sử dụng các tầng tùy chỉnh.
+Các tầng tùy chỉnh cũng có thể được dùng để xây dựng mô hình.
 Các tầng này có thể được sử dụng giống như các tầng dày đặc được lập trình sẵn.
 Ngoại lệ duy nhất là việc suy luận kích thước sẽ không được thực hiện tự động.
 Để biết thêm chi tiết về cách thực hiện việc này, vui lòng tham khảo [tài liệu MXNet] (http://www.mxnet.io).
