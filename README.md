@@ -28,7 +28,7 @@ Với các chương (2., 3., ...)
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
 * [x] [Cài đặt](chapter_install/index_vn.md)
 * [x] [Ký hiệu](chapter_notation/index_vn.md)
-* [x] [Giới thiệu](chapter_introduction/index_vn.md)
+* [x] 1. [Giới thiệu](chapter_introduction/index_vn.md)
 * [x] 2. [Sơ bộ](chapter_preliminaries/index_vn.md)
     * [x] 2.1. [Thao tác với Dữ liệu](chapter_preliminaries/ndarray_vn.md)
     * [x] 2.2. [Tiền Xử lý Dữ liệu](chapter_preliminaries/pandas_vn.md)
@@ -56,126 +56,134 @@ Với các chương (2., 3., ...)
     * [x] 4.8. [Sự ổn định Số học và Sự khởi tạo](chapter_multilayer-perceptrons/numerical-stability-and-init_vn.md)
     * [x] 4.9. [Cân nhắc tới Môi trường](chapter_multilayer-perceptrons/environment_vn.md)
     * [x] 4.10. [Dự đoán Giá Nhà trên Kaggle](chapter_multilayer-perceptrons/kaggle-house-price_vn.md)
-* [ ] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
-    * [-] 5.1. [Tầng và Khối](chapter_deep-learning-computation/model-construction_vn.md)
-    * [-] 5.2. [Quản lý Tham số](chapter_deep-learning-computation/parameters_vn.md)
-    * [-] 5.3. [Khởi tạo trễ](chapter_deep-learning-computation/deferred-init_vn.md)
-    * [-] 5.4. [Custom Layers](chapter_deep-learning-computation/custom-layer_vn.md)
-    * [-] 5.5. [File I/O](chapter_deep-learning-computation/read-write_vn.md)
-    * [-] 5.6. [GPUs](chapter_deep-learning-computation/use-gpu_vn.md)
+* [-] 5. [Tính toán Học sâu](chapter_deep-learning-computation/index_vn.md)
+    * [x] 5.1. [Tầng và Khối](chapter_deep-learning-computation/model-construction_vn.md)
+    * [x] 5.2. [Quản lý Tham số](chapter_deep-learning-computation/parameters_vn.md)
+    * [x] 5.3. [Khởi tạo trễ](chapter_deep-learning-computation/deferred-init_vn.md)
+    * [x] 5.4. [Các tầng Tuỳ chỉnh](chapter_deep-learning-computation/custom-layer_vn.md)
+    * [x] 5.5. [Đọc/Ghi tệp](chapter_deep-learning-computation/read-write_vn.md)
+    * [x] 5.6. [GPU](chapter_deep-learning-computation/use-gpu_vn.md)
 * [ ] 6. [Mạng nơ-ron Tích chập](chapter_convolutional-neural-networks/index_vn.md)
     * [-] 6.1. [From Dense Layers to Convolutions](chapter_convolutional-neural-networks/why-conv_vn.md)
     * [-] 6.2. [Convolutions for Images](chapter_convolutional-neural-networks/conv-layer_vn.md)
     * [-] 6.3. [Padding and Stride](chapter_convolutional-neural-networks/padding-and-strides_vn.md)
     * [-] 6.4. [Multiple Input and Output Channels](chapter_convolutional-neural-networks/channels_vn.md)
-    * [ ] 6.5. [Pooling](chapter_convolutional-neural-networks/pooling_vn.md)
-    * [ ] 6.6. [Convolutional Neural Networks (LeNet)](chapter_convolutional-neural-networks/lenet_vn.md)
-* [ ] 7. Modern Convolutional Neural Networks
-    * [ ] 7.1. Deep Convolutional Neural Networks (AlexNet)
-    * [ ] 7.2. Networks Using Blocks (VGG)
-    * [ ] 7.3. Network in Network (NiN)
-    * [ ] 7.4. Networks with Parallel Concatenations (GoogLeNet)
-    * [ ] 7.5. Batch Normalization
-    * [ ] 7.6. Residual Networks (ResNet)
-    * [ ] 7.7. Densely Connected Networks (DenseNet)
-* [ ] 8. Recurrent Neural Networks
-    * [ ] 8.1. Sequence Models
-    * [ ] 8.2. Text Preprocessing
-    * [ ] 8.3. Language Models and the Dataset
-    * [ ] 8.4. Recurrent Neural Networks
-    * [ ] 8.5. Implementation of Recurrent Neural Networks from Scratch
-    * [ ] 8.6. Concise Implementation of Recurrent Neural Networks
-    * [ ] 8.7. Backpropagation Through Time
-* [ ] 9. Modern Recurrent Neural Networks
-    * [ ] 9.1. Gated Recurrent Units (GRU)
-    * [ ] 9.2. Long Short Term Memory (LSTM)
-    * [ ] 9.3. Deep Recurrent Neural Networks
-    * [ ] 9.4. Bidirectional Recurrent Neural Networks
-    * [ ] 9.5. Machine Translation and the Dataset
-    * [ ] 9.6. Encoder-Decoder Architecture
-    * [ ] 9.7. Sequence to Sequence
-    * [ ] 9.8. Beam Search
-* [ ] 10. Attention Mechanisms
-    * [ ] 10.1. Attention Mechanisms
-    * [ ] 10.2. Sequence to Sequence with Attention Mechanisms
-    * [ ] 10.3. Transformer
-* [ ] 11. Optimization Algorithms
-    * [ ] 11.1. Optimization and Deep Learning
-    * [ ] 11.2. Convexity
-    * [ ] 11.3. Gradient Descent
-    * [ ] 11.4. Stochastic Gradient Descent
-    * [ ] 11.5. Minibatch Stochastic Gradient Descent
-    * [ ] 11.6. Momentum
-    * [ ] 11.6. Adagrad
-    * [ ] 11.8. RMSProp
-    * [ ] 11.9. Adadelta
-    * [ ] 11.10. Adam
-    * [ ] 11.11. Learning Rate Scheduling
-* [ ] 12. [Computational Performance](chapter_computational-performance/index_vn.md)
-    * [-] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
+    * [-] 6.5. [Pooling](chapter_convolutional-neural-networks/pooling_vn.md)
+    * [-] 6.6. [Convolutional Neural Networks (LeNet)](chapter_convolutional-neural-networks/lenet_vn.md)
+* [ ] 7. [Mạng nơ-ron Tích chập Hiện đại](chapter_convolutional-modern/index_vn.md)
+    * [ ] 7.1. [Deep Convolutional Neural Networks (AlexNet)](chapter_convolutional-modern/alexnet_vn.md)
+    * [ ] 7.2. [Networks Using Blocks (VGG)](chapter_convolutional-modern/vgg_vn.md)
+    * [ ] 7.3. [Network in Network (NiN)](chapter_convolutional-modern/nin_vn.md)
+    * [ ] 7.4. [Networks with Parallel Concatenations (GoogLeNet)](chapter_convolutional-modern/googlenet_vn.md)
+    * [ ] 7.5. [Batch Normalization](chapter_convolutional-modern/batch-norm_vn.md)
+    * [ ] 7.6. [Residual Networks (ResNet)](chapter_convolutional-modern/resnet_vn.md)
+    * [ ] 7.7. [Densely Connected Networks (DenseNet)](chapter_convolutional-modern/densenet_vn.md)
+* [ ] 8. [Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/index_vn.md)
+    * [ ] 8.1. [Sequence Models](chapter_recurrent-neural-networks/sequence_vn.md)
+    * [ ] 8.2. [Text Preprocessing](chapter_recurrent-neural-networks/text-preprocessing_vn.md)
+    * [ ] 8.3. [Language Models and the Dataset](chapter_recurrent-neural-networks/language-models-and-dataset_vn.md)
+    * [ ] 8.4. [Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/rnn_vn.md)
+    * [ ] 8.5. [Lập trình Mạng nơ-ron Truy hồi từ đầu](chapter_recurrent-neural-networks/rnn-scratch_vn.md)
+    * [ ] 8.6. [Cách lập trình súc tích Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/rnn-gluon_vn.md)
+    * [ ] 8.7. [Backpropagation Through Time](chapter_recurrent-neural-networks/bptt_vn.md)
+* [ ] 9. [Mạng Truy hồi Hiện đại](chapter_recurrent-modern/index_vn.md)
+    * [ ] 9.1. [Gated Recurrent Units (GRU)](chapter_recurrent-modern/gru_vn.md)
+    * [ ] 9.2. [Long Short Term Memory (LSTM)](chapter_recurrent-modern/lstm_vn.md)
+    * [ ] 9.3. [Deep Recurrent Neural Networks](chapter_recurrent-modern/deep-rnn_vn.md)
+    * [ ] 9.4. [Bidirectional Recurrent Neural Networks](chapter_recurrent-modern/bi-rnn_vn.md)
+    * [ ] 9.5. [Machine Translation and the Dataset](chapter_recurrent-modern/machine-translation-and-dataset_vn.md)
+    * [ ] 9.6. [Encoder-Decoder Architecture](chapter_recurrent-modern/encoder-decoder_vn.md)
+    * [ ] 9.7. [Sequence to Sequence](chapter_recurrent-modern/seq2seq_vn.md)
+    * [ ] 9.8. [Beam Search](chapter_recurrent-modern/beam-search_vn.md)
+* [ ] 10. [Cơ chế Tập trung](chapter_attention-mechanisms/index_vn.md)
+    * [ ] 10.1. [Attention Mechanisms](chapter_attention-mechanisms/attention_vn.md)
+    * [ ] 10.2. [Sequence to Sequence with Attention Mechanisms](chapter_attention-mechanisms/seq2seq-attention_vn.md)
+    * [ ] 10.3. [Transformer](chapter_attention-mechanisms/transformer_vn.md)
+* [ ] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
+    * [ ] 11.1. [Optimization and Deep Learning](chapter_optimization/optimization-intro_vn.md)
+    * [ ] 11.2. [Convexity](chapter_optimization/convexity_vn.md)
+    * [ ] 11.3. [Gradient Descent](chapter_optimization/gd_vn.md)
+    * [ ] 11.4. [Stochastic Gradient Descent](chapter_optimization/sgd_vn.md)
+    * [ ] 11.5. [Minibatch Stochastic Gradient Descent](chapter_optimization/minibatch-sgd_vn.md)
+    * [ ] 11.6. [Momentum](chapter_optimization/momentum_vn.md)
+    * [ ] 11.6. [Adagrad](chapter_optimization/adagrad_vn.md)
+    * [ ] 11.8. [RMSProp](chapter_optimization/rmsprop_vn.md)
+    * [ ] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
+    * [ ] 11.10. [Adam](chapter_optimization/adam_vn.md)
+    * [ ] 11.11. [Learning Rate Scheduling](chapter_optimization/lr-scheduler_vn.md)
+* [ ] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
+    * [ ] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
     * [ ] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
     * [ ] 12.3. [Automatic Parallelism](chapter_computational-performance/auto-parallelism_vn.md)
     * [ ] 12.4. [Hardware](chapter_computational-performance/hardware_vn.md)
     * [ ] 12.5. [Training on Multiple GPUs](chapter_computational-performance/multiple-gpus_vn.md)
     * [ ] 12.6. [Concise Implementation for Multiple GPUs](chapter_computational-performance/multiple-gpus-gluon_vn.md)
     * [ ] 12.6. [Parameter Servers](chapter_computational-performance/parameterserver_vn.md)
-* [ ] 13. Computer Vision
-    * [ ] 13.1. Image Augmentation
-    * [ ] 13.2. Fine Tuning
-    * [ ] 13.3. Object Detection and Bounding Boxes
-    * [ ] 13.4. Anchor Boxes
-    * [ ] 13.5. Multiscale Object Detection
-    * [ ] 13.6. The Object Detection Dataset (Pikachu)
-    * [ ] 13.7. Single Shot Multibox Detection (SSD)
-    * [ ] 13.8. Region-based CNNs (R-CNNs)
-    * [ ] 13.9. Semantic Segmentation and the Dataset
-    * [ ] 13.10. Transposed Convolution
-    * [ ] 13.11. Fully Convolutional Networks (FCN)
-    * [ ] 13.12. Neural Style Transfer
-    * [ ] 13.13. Image Classification (CIFAR-10) on Kaggle
-    * [ ] 13.14. Dog Breed Identification (ImageNet Dogs) on Kaggle
-* [ ] 14. Natural Language Processing
-    * [ ] 14.1. Word Embedding (word2vec)
-    * [ ] 14.2. Approximate Training for Word2vec
-    * [ ] 14.3. The Dataset for Word2vec
-    * [ ] 14.4. Implementation of Word2vec
-    * [ ] 14.5. Subword Embedding
-    * [ ] 14.6. Word Embedding with Global Vectors (GloVe)
-    * [ ] 14.7. Finding Synonyms and Analogies
-    * [ ] 14.8. Sentiment Analysis and the Dataset
-    * [ ] 14.9. Sentiment Analysis: Using Recurrent Neural Networks
-    * [ ] 14.10. Sentiment Analysis: Using Convolutional Neural Networks
-    * [ ] 14.11. Natural Language Inference and the Dataset
-* [ ] 15. Recommender Systems
-    * [ ] 15.1. Overview of Recommender Systems
-    * [ ] 15.2. The MovieLens Dataset
-    * [ ] 15.3. Matrix Factorization
-    * [ ] 15.4. AutoRec: Rating Prediction with Autoencoders
-    * [ ] 15.5. Personalized Ranking for Recommender Systems
-    * [ ] 15.6. Neural Collaborative Filtering for Personalized Ranking
-    * [ ] 15.7. Sequence-Aware Recommender Systems
-    * [ ] 15.8. Feature-Rich Recommender Systems
-    * [ ] 15.9. Factorization Machines
-    * [ ] 15.10. Deep Factorization Machines
-* [ ] 16. Generative Adversarial Networks
-    * [ ] 16.1. Generative Adversarial Networks
-    * [ ] 16.2. Deep Convolutional Generative Adversarial Networks
-* [ ] 17. [Phụ lục: Toán học cho Học Sâu](chapter_appendix_math/index_vn.md)
-    * [x] 17.1. [Các phép toán Hình học và Đại số Tuyến tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
-    * [ ] 17.2. Eigendecompositions
-    * [x] 17.3. [Giải tích một biến](chapter_appendix_math/single-variable-calculus_vn.md)
-    * [ ] 17.4. Multivariable Calculus
-    * [ ] 17.5. Integral Calculus
-    * [ ] 17.6. Random Variables
-    * [ ] 17.7. Maximum Likelihood
-    * [ ] 17.8. Naive Bayes
-    * [x] 17.9. [Thống kê](chapter_appendix_math/statistics_vn.md)
-    * [ ] 17.10. Information Theory
-* [ ] 18. Appendix: Tools for Deep Learning
-    * [ ] 18.1. Using Jupyter
-    * [ ] 18.2. Using Amazon SageMaker
-    * [ ] 18.3. Using AWS EC2 Instances
-    * [ ] 18.4. Using Google Colab
-    * [ ] 18.5. Selecting Servers and GPUs
-    * [ ] 18.6. Contributing to This Book
-    * [ ] 18.7. d2l API Document
+* [ ] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
+    * [ ] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
+    * [ ] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)
+    * [ ] 13.3. [Object Detection and Bounding Boxes](chapter_computer-vision/bounding-box_vn.md)
+    * [ ] 13.4. [Anchor Boxes](chapter_computer-vision/anchor_vn.md)
+    * [ ] 13.5. [Multiscale Object Detection](chapter_computer-vision/multiscale-object-detection_vn.md)
+    * [ ] 13.6. [The Object Detection Dataset](chapter_computer-vision/object-detection-dataset_vn.md)
+    * [ ] 13.7. [Single Shot Multibox Detection (SSD)](chapter_computer-vision/ssd_vn.md)
+    * [ ] 13.8. [Region-based CNNs (R-CNNs)](chapter_computer-vision/rcnn_vn.md)
+    * [ ] 13.9. [Semantic Segmentation and the Dataset](chapter_computer-vision/semantic-segmentation-and-dataset_vn.md)
+    * [ ] 13.10. [Transposed Convolution](chapter_computer-vision/transposed-conv_vn.md)
+    * [ ] 13.11. [Fully Convolutional Networks (FCN)](chapter_computer-vision/fcn_vn.md)
+    * [ ] 13.12. [Neural Style Transfer](chapter_computer-vision/neural-style_vn.md)
+    * [ ] 13.13. [Image Classification (CIFAR-10) on Kaggle](chapter_computer-vision/kaggle-gluon-cifar10_vn.md)
+    * [ ] 13.14. [Dog Breed Identification (ImageNet Dogs) on Kaggle](chapter_computer-vision/kaggle-gluon-dog_vn.md)
+* [ ] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
+    * [ ] 14.1. [Word Embedding (word2vec)](chapter_natural-language-processing-pretraining/word2vec_vn.md)
+    * [ ] 14.2. [Approximate Training](chapter_natural-language-processing-pretraining/approx-training_vn.md)
+    * [ ] 14.3. [The Dataset for Pretraining Word Embedding](chapter_natural-language-processing-pretraining/word-embedding-dataset_vn.md)
+    * [ ] 14.4. [Pretraining word2vec](chapter_natural-language-processing-pretraining/word2vec-pretraining_vn.md)
+    * [ ] 14.5. [Word Embedding with Global Vectors (GloVe)](chapter_natural-language-processing-pretraining/glove_vn.md)
+    * [ ] 14.6. [Subword Embedding](chapter_natural-language-processing-pretraining/subword-embedding_vn.md)
+    * [ ] 14.7. [Finding Synonyms and Analogies](chapter_natural-language-processing-pretraining/similarity-analogy_vn.md)
+    * [ ] 14.8. [Bidirectional Encoder Representations from Transformers (BERT)](chapter_natural-language-processing-pretraining/bert_vn.md)
+    * [ ] 14.9. [The Dataset for Pretraining BERT](chapter_natural-language-processing-pretraining/bert-dataset_vn.md)
+    * [ ] 14.10. [Pretraining BERT](chapter_natural-language-processing-pretraining/bert-pretraining_vn.md)
+* [ ] 15. [Xử lý Ngôn ngữ Tự nhiên: Ứng dụng](chapter_natural-language-processing-applications/index_vn.md)
+    * [ ] 15.1. [Sentiment Analysis and the Dataset](chapter_natural-language-processing-applications/sentiment-analysis-and-dataset_vn.md)
+    * [ ] 15.2. [Sentiment Analysis: Using Recurrent Neural Networks](chapter_natural-language-processing-applications/_vn.md)
+    * [ ] 15.3. [Sentiment Analysis: Using Convolutional Neural Networks](chapter_natural-language-processing-applications/sentiment-analysis-cnn_vn.md)
+    * [ ] 15.4. [Natural Language Inference and the Dataset](chapter_natural-language-processing-applications/natural-language-inference-and-dataset_vn.md)
+    * [ ] 15.5. [Natural Language Inference: Using Attention](chapter_natural-language-processing-applications/natural-language-inference-attention_vn.md)
+    * [ ] 15.6. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](chapter_natural-language-processing-applications/finetuning-bert_vn.md)
+    * [ ] 15.7. [Natural Language Inference: Fine-Tuning BERT](chapter_natural-language-processing-applications/natural-language-inference-bert_vn.md)
+* [ ] 16. [Hệ thống Gợi ý](chapter_recommender-systems/index_vn.md)
+    * [ ] 16.1. [Overview of Recommender Systems](chapter_recommender-systems/recsys-intro_vn.md)
+    * [ ] 16.2. [The MovieLens Dataset](chapter_recommender-systems/movielens_vn.md)
+    * [ ] 16.3. [Matrix Factorization](chapter_recommender-systems/mf_vn.md)
+    * [ ] 16.4. [AutoRec: Rating Prediction with Autoencoders](chapter_recommender-systems/autorec_vn.md)
+    * [ ] 16.5. [Personalized Ranking for Recommender Systems](chapter_recommender-systems/ranking_vn.md)
+    * [ ] 16.6. [Neural Collaborative Filtering for Personalized Ranking](chapter_recommender-systems/neumf_vn.md)
+    * [ ] 16.7. [Sequence-Aware Recommender Systems](chapter_recommender-systems/seqrec_vn.md)
+    * [ ] 16.8. [Feature-Rich Recommender Systems](chapter_recommender-systems/ctr_vn.md)
+    * [ ] 16.9. [Factorization Machines](chapter_recommender-systems/fm_vn.md)
+    * [ ] 16.10. [Deep Factorization Machines](chapter_recommender-systems/deepfm_vn.md)
+* [ ] 17. [Generative Adversarial Networks](chapter_generative-adversarial-networks/index_vn.md)
+    * [ ] 17.1. [Generative Adversarial Networks](chapter_generative-adversarial-networks/gan_vn.md)
+    * [ ] 17.2. [Deep Convolutional Generative Adversarial Networks](chapter_generative-adversarial-networks/dcgan_vn.md)
+* [ ] 18. [Phụ lục: Toán học cho Học Sâu](chapter_appendix_math/index_vn.md)
+    * [x] 18.1. [Các phép toán Hình học và Đại số Tuyến tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
+    * [ ] 18.2. [Eigendecompositions](chapter_appendix_math/eigendecomposition_vn.md)
+    * [x] 18.3. [Giải tích một biến](chapter_appendix_math/single-variable-calculus_vn.md)
+    * [ ] 18.4. [Multivariable Calculus](chapter_appendix_math/multivariable-calculus_vn.md)
+    * [ ] 18.5. [Integral Calculus](chapter_appendix_math/integral-calculus_vn.md)
+    * [ ] 18.6. [Random Variables](chapter_appendix_math/random-variables_vn.md)
+    * [ ] 18.7. [Maximum Likelihood](chapter_appendix_math/maximum-likelihood_vn.md)
+    * [ ] 18.8. [Distributions](chapter_appendix_math/distributions_vn.md)
+    * [ ] 18.9. [Naive Bayes](chapter_appendix_math/naive-bayes_vn.md)
+    * [x] 18.10. [Thống kê](chapter_appendix_math/statistics_vn.md)
+    * [ ] 18.11. [Information Theory](chapter_appendix_math/information-theory_vn.md)
+* [ ] 19. [Phụ lục: Công cụ cho Học Sâu](chapter_appendix-tools-for-deep-learning/index_vn.md)
+    * [ ] 19.1. [Sử dụng Jupyter](chapter_appendix-tools-for-deep-learning/jupyter_vn.md)
+    * [ ] 19.2. [Sử dụng Amazon SageMaker](chapter_appendix-tools-for-deep-learning/sagemaker_vn.md)
+    * [ ] 19.3. [Sử dụng AWS EC2 Instances](chapter_appendix-tools-for-deep-learning/aws_vn.md)
+    * [ ] 19.4. [Sử dụng Google Colab](chapter_appendix-tools-for-deep-learning/colab_vn.md)
+    * [ ] 19.5. [Lựa chọn Máy chủ & GPU](chapter_appendix-tools-for-deep-learning/selecting-servers-gpus_vn.md)
+    * [ ] 19.6. [Đóng góp cho Quyển sách](chapter_appendix-tools-for-deep-learning/contributing_vn.md)
+    * [ ] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
