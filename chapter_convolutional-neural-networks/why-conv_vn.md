@@ -260,7 +260,7 @@ We expect that wherever the "waldoness" is highest, we will also find a peak in 
 
 Ta hãy xem điều này trông ra sao nếu ta muốn xây dựng một máy dò Waldo cải tiến.
 Tầng chập chọn các cửa sổ có kích thước cho sẵn và cân nhắc cường độ theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
-Ta hy vọng rằng bất cứ nơi nào "waldoness" cao nhất, chúng tôi cũng sẽ tìm thấy một đỉnh trong các tầng kích hoạt ẩn.
+Ta hy vọng rằng bất cứ nơi nào có sự "Waldo" cao nhất, ta cũng sẽ tìm thấy một đỉnh trong các tầng kích hoạt ẩn.
 
 <!--
 ![Find Waldo.](../img/waldo-mask.jpg)
@@ -277,8 +277,8 @@ Only two of these axes concern spatial relationships, while the $3^{\mathrm{rd}}
 -->
 
 Chỉ có một vấn đề với cách tiếp cận này: cho đến nay ta đã bỏ qua một cách vui vẻ rằng hình ảnh bao gồm 3 kênh: đỏ, xanh lá cây và xanh dương.
-Trong thực tế, hình ảnh là các đối tượng khá hai chiều nhưng thay vào đó là một tensor bậc $3^{\mathrm{rd}}$, ví dụ, với kích thước $1024 \times 1024 \times 3$ pixel.
-Chỉ có hai trong số các trục này liên quan đến các mối quan hệ không gian, trong khi $3^{\mathrm{rd}}$ có thể được coi là gán biểu diễn đa chiều *cho từng vị trí pixel*.
+Trong thực tế, hình ảnh là các đối tượng tương đối hai chiều nhưng thay vào đó là một tensor bậc $3^{\mathrm{rd}}$, ví dụ, với kích thước $1024 \times 1024 \times 3$ pixel.
+Chỉ có hai trong số các trục này liên quan về mặt không gian, trong khi $3^{\mathrm{rd}}$ có thể được coi là gán biểu diễn đa chiều *cho từng vị trí pixel*.
 
 <!--
 We thus index $\mathbf{x}$ as $x[i, j, k]$.
@@ -299,12 +299,12 @@ Intuitively you might imagine that at lower layers, some channels specialize to 
 We can take care of this by adding a fourth coordinate to $V$ via $V[a, b, c, d]$. Putting all together we have:
 -->
 
-Hơn nữa, giống như đầu vào của ta bao gồm một tensor thứ tự $ 3 ^ {\ mathrm {rd}} $, hóa ra đó là một ý tưởng tốt để xây dựng tương tự các biểu diễn ẩn của chúng tôi là các thang đo thứ tự $ 3 ^ {\ mathrm {rd}} $.
-Nói cách khác, thay vì chỉ có một đại diện 1D tương ứng với từng vị trí không gian, chúng tôi muốn có một đại diện ẩn đa chiều tương ứng với từng vị trí không gian.
-Chúng ta có thể nghĩ về đại diện ẩn bao gồm một số lưới 2D xếp chồng lên nhau.
-Đôi khi chúng được gọi là * kênh * hoặc * bản đồ tính năng *.
-Theo trực giác bạn có thể tưởng tượng rằng ở các lớp thấp hơn, một số kênh chuyên nhận biết các cạnh,
-Chúng ta có thể xử lý vấn đề này bằng cách thêm tọa độ thứ tư vào $ V $ thông qua $ V [a, b, c, d] $. Đặt tất cả chúng ta lại với nhau:
+Hơn nữa, giống như đầu vào của ta bao gồm một tensor bậc $3^{\mathrm{rd}}$, hóa ra đó là một ý tưởng tốt để xây dựng tương tự các biểu diễn ẩn của ta là như các tensor bậc $3^{\mathrm{rd}}$.
+Nói cách khác, thay vì chỉ có một biểu diễn 1D tương ứng với từng vị trí không gian, ta muốn có một biểu diễn ẩn đa chiều tương ứng với từng vị trí không gian.
+Ta có thể nghĩ về biểu diễn ẩn bao như là việc bao gồm một số lưới 2D xếp chồng lên nhau.
+Đôi khi chúng được gọi là *kênh* hoặc *bản đồ đặc trưng*.
+Theo trực giác bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh chuyên nhận biết các cạnh,
+Ta có thể xử lý vấn đề này bằng cách thêm tọa độ thứ tư vào $V$ thông qua $V[a, b, c, d]$. Đặt tất cả lại với nhau ta có:
 
 $$h[i, j, k] = \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} \sum_c V[a, b, c, k] \cdot x[i+a, j+b, c].$$
 
