@@ -171,7 +171,7 @@ dense.params
 We can directly carry out forward calculations using custom layers.
 -->
 
-Ta có thể thực hiện trực tiếp các tính toán chuyển tiếp bằng cách sử dụng các tầng tùy chỉnh.
+Ta có thể trực tiếp sử dụng các tầng tùy chỉnh để thực thi các phép tính trong lượt truyền xuôi.
 
 
 ```{.python .input  n=20}
