@@ -93,7 +93,7 @@ y.mean()
 ## Layers with Parameters
 -->
 
-## Các tầng với Tham số
+## Tầng có Tham số
 
 <!--
 Now that we know how to define layers in principle, let's define layers with parameters. 
