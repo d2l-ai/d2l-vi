@@ -184,8 +184,8 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-Bây giờ chúng ta hãy gọi nguyên tắc thứ hai---*địa phương*.
-Như đã thúc đẩy ở trên, chúng tôi tin rằng chúng ta không cần phải tìm kiếm quá xa từ $(i, j)$ để thu thập thông tin liên quan để đánh giá những gì đang diễn ra tại $h[i, j]$.
+Bây giờ chúng ta hãy gọi nguyên tắc thứ hai---*tính cục bộ*.
+Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa từ $(i, j)$ để thu thập thông tin liên quan để đánh giá những gì đang diễn ra tại $h[i, j]$.
 Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
 Tương tự, ta có thể viết lại $h[i, j]$ dưới dạng
 
@@ -201,7 +201,7 @@ When that bias agrees with reality, we get sample-efficient models that generali
 But of course, if those biases do not agree with reality, e.g., if images turned out not to be translation invariant, our models may not generalize well.
 -->
 
-Điều này, một cách ngắn gọn chính là tầng chập.
+Điều này, một cách ngắn gọn chính là tầng tích chập.
 Khi miền địa phương (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt so với mạng được kết nối đầy đủ có thể cực lớn.
 Mặc dù trước đây, ta có thể đã yêu cầu hàng tỷ thông số để chỉ một tầng duy nhất trong mạng xử lý hình ảnh, nhưng hiện tại ta thường chỉ cần vài trăm.
 Cái giá mà ta phải trả cho việc điều chỉnh quyết liệt này là các tính năng của ta sẽ là bất dịch và tầng của ta chỉ có thể suy xét thông tin địa phương.
