@@ -317,6 +317,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling without replacement    | lấy mẫu không hoàn lại   | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | satisficing metric              | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | scalar                          | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| scale invariant | bất biến quy mô | |
 | scroing function                | hàm tính điểm            |                                              |
 | sentiment classification        | phân loại cảm xúc        |                                              |
 | sequence learning               | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
@@ -355,6 +356,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set               | tập huấn luyện                 |                                              |
 | training dev set           | tập phát triển huấn luyện      |                                              |
 | training set performance   | chất lượng trên tập huấn luyện |                                              |
+| translation invariant | bất biến tịnh tiến | |
 | transcribe                 | phiên thoại                    | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription              | bản ghi thoại                  |                                              |
 | true negative              | âm tính thật                   |                                              |
