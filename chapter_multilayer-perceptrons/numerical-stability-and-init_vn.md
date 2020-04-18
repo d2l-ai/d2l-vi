@@ -56,20 +56,6 @@ Nếu tất cả giá trị kích hoạt và đầu vào là vector, ta có th�
 $$\partial_{\mathbf{W}_l} \mathbf{o} = \underbrace{\partial_{\mathbf{h}^{L-1}} \mathbf{h}^L}_{:= \mathbf{M}_L} \cdot \ldots \cdot \underbrace{\partial_{\mathbf{h}^{l}} \mathbf{h}^{l+1}}_{:= \mathbf{M}_l} \underbrace{\partial_{\mathbf{W}_l} \mathbf{h}^l}_{:= \mathbf{v}_l}.$$
 
 <!--
-In other words, it is the product of $d-t$ matrices $\mathbf{M}_d \cdot \ldots, \cdot \mathbf{M}_t$ and the gradient vector $\mathbf{v}_t$.
-What happens is similar to the situation when we experienced numerical underflow
-when multiplying too many probabilities.
-At the time, we were able to mitigate the problem by switching from into log-space, 
-i.e., by shifting the problem from the mantissa to the exponent of the numerical representation. 
-Unfortunately the problem outlined in the equation above is much more serious: initially the matrices $M_t$ may well have a wide variety of eigenvalues.
-They might be small, they might be large, and in particular, their product might well be *very large* or *very small*.
-This is not (only) a problem of numerical representation but it means that the optimization algorithm is bound to fail.
-It receives gradients that are either excessively large or excessively small.
-As a result the steps taken are either (i) excessively large (the *exploding* gradient problem), in which case the parameters blow up in magnitude rendering the model useless,
-or (ii) excessively small, (the *vanishing gradient problem*), in which case the parameters hardly move at all, and thus the learning process makes no progress.
--->
-
-<!-- UPDATE
 In other words, this gradient is the product of $L-l$ matrices $\mathbf{M}_L \cdot \ldots, \cdot \mathbf{M}_l$ and the gradient vector $\mathbf{v}_l$.
 Thus we are susceptible to the same  problems of numerical underflow that often crop up  when multiplying together too many probabilities.
 When dealing with probabilities, a common trick is to switch into log-space, i.e., shifting  pressure from the mantissa to the exponent  of the numerical representation. 
@@ -102,13 +88,6 @@ Lúc đó ta sẽ quan sát được các bước cập nhật hoặc (i) quá l
 ### Tiêu biến Gradient
 
 <!--
-One major culprit in the vanishing gradient problem is the choices of the activation functions $\sigma$ that are interleaved with the linear operations in each layer.
-Historically, the sigmoid function $(1 + \exp(-x))$ (introduced in :numref:`sec_mlp`) was a popular choice owing to its similarity to a thresholding function.
-Since early artificial neural networks were inspired by biological neural networks, the idea of neurons that either fire or do not fire (biological neurons do not partially fire) seemed appealing.
-Let's take a closer look at the function to see why picking it might be problematic vis-a-vis vanishing gradients.
--->
-
-<!-- UPDATE
 One frequent culprit causing the vanishing gradient problem is the choice of the activation function $\sigma$ that is appended following each layer's linear operations.
 Historically, the sigmoid function  $1/(1 + \exp(-x))$ (introduced in :numref:`sec_mlp`) was popular because it resembles a thresholding function.
 Since early artificial neural networks were inspired by biological neural networks, the idea of neurons that either fire either *fully* or *not at all* (like biological neurons) seemed appealing.
@@ -136,15 +115,6 @@ d2l.plot(x, [y, x.grad], legend=['sigmoid', 'gradient'], figsize=(4.5, 2.5))
 ```
 
 <!--
-As we can see, the gradient of the sigmoid vanishes both when its inputs are large and when they are small.
-Moreover, when we execute backward propagation, due to the chain rule, this means that unless we are in the Goldilocks zone, 
-where the inputs to most of the sigmoids are in the range of, say $[-4, 4]$, the gradients of the overall product may vanish.
-When we have many layers, unless we are especially careful, we are likely to find that our gradient is cut off at *some* layer.
-Before ReLUs ($\max(0, x)$) were proposed as an alternative to squashing functions, this problem used to plague deep network training.
-As a consequence, ReLUs have become the default choice when designing activation functions in deep networks.
--->
-
-<!-- UPDATE
 As you can see, the sigmoid's gradient vanishes both when its inputs are large and when they are small.
 Moreover, when backpropagating through many layers, unless we are in the Goldilocks zone---where 
 the inputs to many of the sigmoids are close to zero, the gradients of the overall product may vanish.
@@ -237,12 +207,6 @@ Nhưng hãy lưu ý rằng dù hạ gradient ngẫu nhiên không thể phá v�
 ## Khởi tạo Tham số
 
 <!--
-One way of addressing, or at least mitigating the issues raised above is through careful initialization of the weight vectors.
-This way we can ensure that (at least initially) the gradients do not vanish and that they maintain a reasonable scale where the network weights do not diverge.
-Additional care during optimization and suitable regularization ensures that things never get too bad.
--->
-
-<!-- UPDATE
 One way of addressing---or at least mitigating---the issues raised above is through careful initialization.
 Additional care during optimization and suitable regularization can further enhance stability.
 -->
@@ -338,14 +302,6 @@ $$
 $$
 
 <!--
-This is the reasoning underlying the eponymous Xavier initialization :cite:`Glorot.Bengio.2010`.
-It works well enough in practice.
-For Gaussian random variables, the Xavier initialization picks a normal distribution with zero mean and variance $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.
-For uniformly distributed random variables $U[-a, a]$, note that their variance is given by $a^2/3$.
-Plugging $a^2/3$ into the condition on $\sigma^2$ yields that we should initialize uniformly with $U\left[-\sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}, \sqrt{6/(n_\mathrm{in} + n_\mathrm{out})}\right]$.
--->
-
-<!-- UPDATE
 This is the reasoning underlying the now-standard and practically beneficial *Xavier* initialization, named for its creator :cite:`Glorot.Bengio.2010`.
 Typically, the Xavier initialization samples weights from a Gaussian distribution with zero mean and variance $\sigma^2 = 2/(n_\mathrm{in} + n_\mathrm{out})$.
 We can also adapt Xavier's intuition to choose the variance when sampling weightsfrom a uniform distribution.
@@ -372,16 +328,6 @@ Thay $\sigma^2$ bằng $a^2/3$ vào điều kiện trên, ta biết được r�
 ### Sâu xa hơn nữa
 
 <!--
-The reasoning above barely scratches the surface of modern approaches to parameter initialization.
-In fact, MXNet has an entire [`mxnet.initializer`](https://mxnet.apache.org/api/python/docs/api/initializer/index.html) module implementing over a dozen different heuristics.
-Moreover, initialization continues to be a hot area of inquiry within research into the fundamental theory of neural network optimization.
-Some of these heuristics are especially suited for when parameters are tied 
-(i.e., when parameters of in different parts the network are shared), for super-resolution, sequence models, and related problems.
-We recommend that the interested reader take a closer look at what is offered as part of this module, and investigate the recent research on parameter initialization.
-Perhaps you may come across a recent clever idea and contribute its implementation to MXNet, or you may even invent your own scheme!
--->
-
-<!-- UPDATE
 The reasoning above barely scratches the surfaceof modern approaches to parameter initialization.
 In fact, MXNet has an entire `mxnet.initializer` moduleimplementing over a dozen different heuristics.
 Moreover, parameter initialization continues to bea hot area of fundamental research in deep learning.
@@ -405,13 +351,6 @@ Có lẽ bạn sẽ gặp (hay thậm chí phát minh ra) một ý tưởng thô
 ## Tóm tắt
 
 <!--
-* Vanishing and exploding gradients are common issues in very deep networks, unless great care is taking to ensure that gradients and parameters remain well controlled.
-* Initialization heuristics are needed to ensure that at least the initial gradients are neither too large nor too small.
-* The ReLU addresses one of the vanishing gradient problems, namely that gradients vanish for very large inputs. This can accelerate convergence significantly.
-* Random initialization is key to ensure that symmetry is broken before optimization.
--->
-
-<!-- UPDATE
 * Vanishing and exploding gradients are common issues in deep networks. Great care in parameter initialization is required to ensure that gradients and parameters remain well controlled.
 * Initialization heuristics are needed to ensure that the initial gradients are neither too large nor too small.
 * ReLU activation functions mitigate the vanishing gradient problem. This can accelerate convergence.
