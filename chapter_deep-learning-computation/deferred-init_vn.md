@@ -12,6 +12,11 @@
 In the previous examples we played fast and loose with setting up our networks. In particular we did the following things that *shouldn't* work:
 -->
 
+<!-- UPDATE
+So far, it might seem that we got away with being sloppy in setting up our networks.
+Specifically, we did the following unintuitive things, which not might seem like they should work:
+-->
+
 Ở các ví dụ trên chúng ta chưa chặt chẽ trong việc xây dựng các mạng nơ-ron.
 Cụ thể, dưới đây là những công đoạn ta đã thực hiện mà đáng ra sẽ *không* hoạt động:
 
@@ -19,6 +24,12 @@ Cụ thể, dưới đây là những công đoạn ta đã thực hiện mà đ
 * We defined the network architecture with no regard to the input dimensionality.
 * We added layers without regard to the output dimension of the previous layer.
 * We even "initialized" these parameters without knowing how many parameters were to initialize.
+-->
+
+<!-- UPDATE
+* We defined the network architectures without specifying the input dimensionality.
+* We added layers without specifying the output dimension of the previous layer.
+* We even "initialized" these parameters before providing enough information to determine how many parameters our models should contain.
 -->
 
 * Ta định nghĩa kiến trúc mạng mà không xét đến chiều đầu vào.
@@ -33,6 +44,17 @@ Later on, when working with convolutional networks and images this problem will 
 Hence, the ability to set parameters without the need to know at the time of writing the code what the dimensionality is can greatly simplify statistical modeling. 
 In what follows, we will discuss how this works using initialization as an example. 
 After all, we cannot initialize variables that we do not know exist.
+-->
+
+<!-- UPDATE
+You might be surprised that our code runs at all.
+After all, there is no way MXNet  could tell what the input dimensionality of a network would be.
+The trick here is that MXNet *defers initialization*, waiting until the first time we pass data through the model, to infer the sizes of each layer *on the fly*.
+Later on, when working with convolutional neural networks this technique will become even more convenient, since the input dimensionality 
+(i.e., the resolution of an image) will affect the dimensionality of each subsequent layer. 
+Hence, the ability to set parameters without the need to know, at the time of writing the code, what the dimensionality is 
+can greatly simplify the task of specifying and subsequently modifying our models. 
+Next, we go deeper into the mechanics of initialization.
 -->
 
 Tất cả những điều đó nghe bất khả thi và thực sự, đúng là vậy.
@@ -55,6 +77,10 @@ Vì dù gì chúng ta cũng không thể khởi tạo các biến mà ta không 
 <!--
 Let's see what happens when we instantiate a network. 
 We start with our trusty MLP as before.
+-->
+
+<!-- UPDATE
+To begin, let us instantiate an MLP. 
 -->
 
 Hãy xem điều gì sẽ xảy ra khi ta khởi tạo một mạng nơ-ron nhé!
@@ -80,6 +106,12 @@ All one could tell at this point is that each layer needs weights and bias, albe
 If we try accessing the parameters, that is exactly what happens.
 -->
 
+<!-- UPDATE
+At this point, the network cannot possibly know the dimensions of the input layer's weights because the input dimension remains unknown.
+Consequently MXNet has not yet initialized any parameters.
+We confirm by attempting to access the parameters below.
+-->
+
 Lúc này, mạng nơ-ron chưa biết được số chiều thực sự của các tham số là bao nhiêu.
 Điều ta duy nhất biết được tại thời điểm này là mỗi lớp cần có trọng số và hệ số điều chỉnh, mặc dù số chiều vẫn còn chưa xác định.
 Nếu ta thử truy cập vào các tham số, đó chính xác là những gì sẽ xảy ra.
@@ -93,6 +125,14 @@ print(net.collect_params())
 In particular, trying to access `net[0].weight.data()` at this point would trigger a runtime error stating that the network needs initializing before it can do anything. 
 Let's see whether anything changes after we initialize the parameters:
 -->
+
+<!--UPDATE
+Note that while the Parameter objects exist, the input dimension to each layer to listed as `-1`.
+MXNet uses the special value `-1` to indicate that the parameters dimension remains unknown.
+At this point attempts to access `net[0].weight.data()` would trigger a runtime error stating that the network must be initialized before the parameters can be accessed.
+Now let us see what happens when we attempt to initialze parameters via the `initialize` method.
+-->
+
 Cụ thể, thử truy cập `net[0].weight.data()` vào lúc này sẽ gây ra lỗi thực thi báo rằng mạng cần khởi tạo trước khi làm bất cứ điều gì.
 Ta hãy xem liệu có điều gì thay đổi sau khi ta khởi tạo các tham số:
 
@@ -105,6 +145,13 @@ net.collect_params()
 As we can see, nothing really changed. 
 Only once we provide the network with some data do we see a difference. 
 Let's try it out.
+-->
+
+<!-- UPDATE
+As we can see, nothing has changed. 
+When input dimensions are known, calls to initialize do not truly initalize the parameters.
+Instead, this call registers to MXNet that we wish (and optionally, according to which distribution) to initialize the parameters. 
+Only once we pass data through the network will MXNet finally initialize parameters and we will see a difference.
 -->
 
 Như ta đã thấy, không có gì thay đổi ở đây cả.
@@ -126,6 +173,13 @@ With that out of the way, we can progress to the second layer,
 define its dimensionality to be $10 \times 256$ and so on through the computational graph and bind all the dimensions as they become available. 
 Once this is known, we can proceed by initializing parameters. 
 This is the solution to the three problems outlined above.
+-->
+
+<!-- UPDATE
+As soon as we knew the input dimensionality, $\mathbf{x} \in \mathbb{R}^{20}$ MXNet can identify the shape of the first layer's weight matrix, i.e., $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
+Having recognized the first layer shape, MXNet proceeds to the second layer, whose dimensionality is $10 \times 256$ and so on through the computational graph until all shapes are known.
+Note that in this case, only the first layer required deferred initialization, but MXNet initializes sequentially. 
+Once all parameter shapes are known, MXNet can finally initialize the parameters. 
 -->
 
 Điểm khác biệt chính so với lúc trước là ngay khi ta biết được số chiều của đầu vào $\mathbf{x} \in \mathbb{R}^{20}$, ta có thể định nghĩa ma trận trọng số cho tầng đầu tiên, tức $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
@@ -152,6 +206,11 @@ Now that we know how it works in theory, let's see when the initialization is ac
 In order to do so, we mock up an initializer which does nothing but report a debug message stating when it was invoked and with which parameters.
 -->
 
+<!-- UPDATE
+Now that we know how it works in theory, let us see when the initialization is actually triggered.
+In order to do so, we mock up an initializer which does nothing but report a debug message stating when it was invoked and with which parameters.
+-->
+
 Giờ ta đã biết nó hoạt động như thế nào về mặt lý thuyết, hãy xem thử khi nào thì việc khởi tạo này thực sự diễn ra.
 Để làm như vậy, chúng ta cần lập trình thử một bộ khởi tạo. Nó sẽ không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
 
@@ -172,6 +231,12 @@ Therefore there is no real initialization parameter when calling the `initialize
 Next, we define the input and perform a forward calculation.
 -->
 
+<!-- UPDATE
+Note that, although `MyInit` will print information about the model parameters when it is called, the above `initialize` function does not print any information after it has been executed.  
+Therefore there is no real initialization parameter when calling the `initialize` function. 
+Next, we define the input and perform a forward calculation.
+-->
+
 Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi nó đã thực thi. 
 Do đó, việc khởi tạo tham số không thực sự được thực hiện khi gọi hàm `initialize`.
 Kế tiếp, ta định nghĩa đầu vào và thực hiện một lượt phép tính truyền xuôi.
@@ -187,12 +252,23 @@ When performing a forward calculation based on the input `x`, the system can aut
 Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
 -->
 
+<!-- UPDATE
+At this time, information on the model parameters is printed. 
+When performing a forward calculation based on the input `x`, the system can automatically infer the shape of the weight parameters of all layers based on the shape of the input. 
+Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
+-->
+
 Lúc này, thông tin về các tham số mô hình mới được in ra.
 Khi thực hiện lượt truyền xuôi dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các tầng dựa trên kích thước của biến đầu vào này. 
 Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi.
 
 <!--
 Of course, this initialization will only be called when completing the initial forward calculation. 
+After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
+-->
+
+<!-- UPDATE
+This initialization will only be called when completing the initial forward calculation. 
 After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
 -->
 
@@ -207,6 +283,13 @@ y = net(x)
 As mentioned at the beginning of this section, deferred initialization can also cause confusion. 
 Before the first forward calculation, we were unable to directly manipulate the model parameters, 
 for example, we could not use the `data` and `set_data` functions to get and modify the parameters. 
+Therefore, we often force initialization by sending a sample observation through the network.
+-->
+
+<!-- UPDATE
+As mentioned at the beginning of this section, deferred initialization can be source of confusion.
+Before the first forward calculation, we were unable to directly manipulate the model parameters,
+for example, we could not use the `data` and `set_data` functions to get and modify the parameters.
 Therefore, we often force initialization by sending a sample observation through the network.
 -->
 
@@ -229,6 +312,11 @@ Deferred initialization does not occur if the system knows the shape of all para
 This can occur in two cases:
 -->
 
+<!-- UPDATE
+Deferred initialization does not occur if the system knows the shape of all parameters when we call the `initialize` function. 
+This can occur in two cases:
+-->
+
 Khởi tạo trễ không xảy ra nếu hệ thống biết kích thước của tất cả các tham số khi gọi hàm `initialize`.
 Việc này có thể xảy ra trong hai trường hợp:
 
@@ -241,7 +329,7 @@ Việc này có thể xảy ra trong hai trường hợp:
 * Ta chỉ rõ tất cả chiều đầu vào và đầu ra của mạng khi định nghĩa mạng.
 
 <!--
-The first case works just fine, as illustrated below.
+Forced reinitialization works as illustrated below.
 -->
 
 Trường hợp thứ nhất hoạt động tốt, như minh hoạ dưới đây.
@@ -253,6 +341,11 @@ net.initialize(init=MyInit(), force_reinit=True)
 <!--
 The second case requires us to specify the remaining set of parameters when creating the layer. 
 For instance, for dense layers we also need to specify the `in_units` so that initialization can occur immediately once `initialize` is called.
+-->
+
+<!-- UPDATE
+The second case requires that we specify all parameters when creating each layer.
+For instance, for dense layers we must specify `in_units` at the time that the layer is instantiated.
 -->
 
 Trường hợp thứ hai yêu cầu chỉ rõ phần còn lại của các tham số khi tạo tầng trong mạng.
@@ -278,6 +371,12 @@ net.initialize(init=MyInit())
 * Initialization can be repeated (or forced) by setting the `force_reinit=True` flag.
 -->
 
+<!-- UPDATE
+* Deferred initialization can be convenient, allowing Gluon to infer parameter shapes automatically, making it easy to modify architectures and eliminating one common source of errors.
+* We do not need deferred initialization when we specify all variables explicitly.
+* We can forcibly re-initialize a network's parameters by invoking initalize with the `force_reinit=True` flag.
+-->
+
 * Khởi tạo trễ là một điều tốt. Nó cho phép Gluon gán giá trị một cách tự động và loại bỏ nhiều nguồn gây lỗi trong việc định nghĩa các kiến trúc mạng mới lạ.
 * Chúng ta có thể ghi đè việc khởi tạo này bằng cách chỉ rõ giá trị của tất cả các biến ngầm định.
 * Việc khởi tạo có thể được lặp lại (hoặc bị cưỡng chế) bằng việc gán cờ `force_reinit=True`.
@@ -289,13 +388,12 @@ net.initialize(init=MyInit())
 ## Bài tập
 
 <!--
-1. What happens if you specify only parts of the input dimensions. Do you still get immediate initialization?
+1. What happens if you specify the input dimensions to the first laye but not to subsequent layers? Do you get immediate initialization?
 2. What happens if you specify mismatching dimensions?
 3. What would you need to do if you have input of varying dimensionality? Hint - look at parameter tying.
 -->
 
-1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ vài phần của các chiều đầu vào? 
-Có thể vẫn khởi tạo ngay lập tức được không?
+1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ vài phần của các chiều đầu vào? Có thể vẫn khởi tạo ngay lập tức được không?
 2. Chuyện gì xảy ra nếu ta truyền vào giá trị chiều không phù hợp?
 3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (*parameter tying*).
 
@@ -324,17 +422,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-<!-- Phần 2 -->
 * Lý Phi Long
-
-<!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
-* Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 4 -->
-*
