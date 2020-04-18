@@ -448,7 +448,7 @@ and log the matrix norm $\mathrm{tr} M M^\top$ one result at a time vs. keeping 
 1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn để thấy sự khác nhau về tốc độ giữa CPU và GPU.
 Và với tác vụ có khối lượng tính toán nhỏ thì sao?
 2. Nên làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
-3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và trả về giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
+3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và ghi lại giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, rồi so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
 4. Đo thời gian thực hiện hai phép nhân ma trận tại hai GPU cùng lúc so với việc thực hiện chúng lần lượt trên cùng một GPU (gợi ý: bạn sẽ thấy tỉ lệ gần như tuyến tính).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
