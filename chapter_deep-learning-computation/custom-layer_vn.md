@@ -116,7 +116,7 @@ We can create a `Parameter` instance from `ParameterDict` via the `get` function
 -->
 
 Ví dụ, ta có thể sử dụng biến thành viên `params` với kiểu `ParameterDict` đi kèm với lớp `Block`.
-Nó là một từ điển ánh xạ các tên tham số kiểu chuỗi sang các tham số mô hình có kiểu `Parameter`.
+Nó là một từ điển ánh xạ các xâu kí tự là tên tham số sang các tham số mô hình có kiểu `Parameter`.
 Ta có thể tạo một biểu hiện `Parameter` từ `ParameterDict` thông qua hàm `get`.
 
 ```{.python .input  n=7}
