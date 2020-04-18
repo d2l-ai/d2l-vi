@@ -51,10 +51,10 @@ That is because images exhibit rich structure that is typically exploited by hum
 -->
 
 Một người đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 megapixel có thể là không cần thiết.
-Tuy nhiên, trong khi bạn có thể loại bỏ 100.000 pixel, ta đã đánh giá thấp số lượng các nút ẩn thường sử dụng để tìm các biểu diễn ẩn tốt của hình ảnh.
-Học một trình phân loại nhị phân với rất nhiều tham số dường như yêu cầu ta thu thập một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
-Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với những kết luận này.
-Đó là bởi vì hình ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo cách giống nhau.
+Tuy nhiên, ngay cả khi bạn chỉ sử dụng 100,000 pixel, ta đã đánh giá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
+Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ đòi hỏi một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
+Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
+Đó là bởi vì các ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
 
 <!--
 ## Invariances
@@ -77,7 +77,7 @@ Despite his characteristic outfit, this can be surprisingly difficult, due to th
 
 Hãy tưởng tượng rằng bạn muốn phát hiện một đối tượng trong một hình ảnh.
 Có vẻ hợp lý rằng bất cứ phương pháp nào ta sử dụng để nhận dạng đối tượng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
-Lý tưởng nhất là chúng ta có thể học một hệ thống bằng cách nào đó khai thác kiến thức này.
+Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác kiến thức này.
 Lợn thường không bay và máy bay thường không bơi.
 Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn.
 Ý tưởng này được đưa đến một thái cực trong trò chơi trẻ em 'Where's Waldo', một ví dụ được hiển thị trong: numref: `img_waldo`.
@@ -105,7 +105,7 @@ Quay lại với hình ảnh, những trực giác mà ta đang thảo luận c�
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-1. Trong một số trường hợp, hệ thống thị giác của ta sẽ phản ứng tương tự với cùng một đối tượng bất kể nó xuất hiện ở đâu trong hình ảnh (dịch chuyển bất biến).
+1. Trong một số trường hợp, hệ thống thị giác của ta sẽ phản ứng tương tự với cùng một đối tượng bất kể nó xuất hiện ở đâu trong ảnh (dịch chuyển bất biến).
 2. Trong một số trường hợp, hệ thống thị giác của ta nên tập trung vào các khu vực cục bộ, mà không quan tâm đến những gì khác đang xảy ra trong hình ảnh ở khoảng cách xa hơn (cục bộ).
 
 <!--
