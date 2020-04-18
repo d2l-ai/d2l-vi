@@ -103,7 +103,7 @@ In particular, they govern access, initialization, sharing, saving and loading m
 For instance, this way we do not need to write custom serialization routines for each new custom layer.
 -->
 
-Bây giờ về nguyên tắc ta đã biết cách định nghĩa các tầng, hãy chuyển sang việc định nghĩa các tầng với tham số.
+Bây giờ về nguyên tắc ta đã biết cách định nghĩa các tầng, hãy chuyển sang việc định nghĩa các tầng có tham số.
 Các tham số có thể được điều chỉnh thông qua quá trình huấn luyện.
 Lớp `Parameter` và từ điển `ParameterDict` sẽ cung cấp một số tính năng quản trị cơ bản nhằm đơn giản hóa công việc cho các nhà nghiên cứu học sâu.
 Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và nạp các tham số mô hình.
