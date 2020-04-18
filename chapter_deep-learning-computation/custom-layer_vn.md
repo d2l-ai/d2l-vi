@@ -133,7 +133,7 @@ It uses ReLU as an activation function, where `in_units` and `units` are the num
 -->
 
 Ta sẽ sử dụng biến `params` này để tự lập trình một phiên bản khác của tầng `Dense`.
-Tầng này gồm có hai tham số: hệ số điều chỉnh và trọng số. Để làm cho nó có một chút khác chuẩn, ta sẽ sử dụng hàm kích hoạt ReLU như mặc định.
+Tầng này gồm có hai tham số: hệ số điều chỉnh và trọng số. Để biến tấu một chút, ta sẽ mặc định sử dụng hàm kích hoạt ReLU.
 Tiếp theo, ta lập trình một tầng kết nối đầy đủ với cả trọng số và hệ số điều chỉnh.
 Tầng này sử dụng hàm kích hoạt ReLU, trong đó `in_units` và `units` lần lượt là số lượng đầu vào và số lượng đầu ra.
 
