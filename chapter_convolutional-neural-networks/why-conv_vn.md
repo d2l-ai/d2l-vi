@@ -5,7 +5,7 @@
 # From Dense Layers to Convolutions
 -->
 
-# Từ các Tầng Dày Đặc tới Tích Chập
+# Từ Tầng Dày Đặc tới Tích Chập
 
 <!--
 The models that we have discussed so far are fine options if you are dealing with *tabular* data.
@@ -14,10 +14,10 @@ With tabular data, we might anticipate that pattern we seek could require modeli
 but do not assume anything a priori about which features are related to each other or in what way.
 -->
 
-Các mô hình mà ta đã thảo luận cho đến nay là các lựa chọn tốt nếu bạn đang xử lý dữ liệu *dạng bảng*.
-*Dạng bảng* có nghĩa là dữ liệu bao gồm các hàng tương ứng với các mẫu và cột tương ứng với các đặc trưng.
-Với dữ liệu dạng bảng, ta có thể dự đoán rằng khuôn mẫu mà ta tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các tính năng,
-nhưng không giả sử bất cứ điều gì tiên nghiệm về các đặc trưng có liên quan gì hoặc theo cách nào với nhau.
+Cho đến giờ, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu bạn đang xử lý dữ liệu *dạng bảng*.
+*Dạng bảng* có nghĩa là dữ liệu bao gồm các hàng tương ứng với các mẫu và các cột tương ứng với các đặc trưng.
+Với dữ liệu dạng bảng, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các đặc trưng,
+nhưng ta không giả sử bất cứ điều gì tiên nghiệm về việc các đặc trưng liên quan tới nhau như thế nào.
 
 
 <!--
@@ -26,10 +26,9 @@ In these cases, a multilayer perceptron is often the best that we can do.
 However, once we start dealing with high-dimensional perceptual data, these *structure-less* networks can grow unwieldy.
 -->
 
-Đôi khi ta thực sự có thể không có bất kỳ kiến thức nào để hướng dẫn việc xây dựng các kiến trúc được tổ chức khéo léo hơn.
-Trong những trường hợp này, một perceptron đa tầng thường là thứ tốt nhất ta có thể làm.
-Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu nhận thức nhiều chiều, các mạng *không có cấu trúc* này có thể trở nên khó sử dụng.
-
+Đôi khi ta thực sự không có bất kỳ kiến thức nào để hướng dẫn việc xây dựng các kiến trúc được sắp xếp khéo léo hơn.
+Trong những trường hợp này, sử dụng một perceptron đa tầng thường là thứ tốt nhất ta có thể làm.
+Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu nhận thức nhiều chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
 
 <!--
 For instance, let us return to our running example of distinguishing cats from dogs.
@@ -40,9 +39,9 @@ Unless we have an extremely large dataset (perhaps billions?), lots of GPUs, a t
 learning the parameters of this network may turn out to be impossible.
 -->
 
-Ví dụ, ta hãy quay trở lại ví dụ quen thuộc về việc phân biệt mèo và chó.
-Giả sử ta thực hiện việc thu thập dữ liệu một cách kỹ lưỡng, thu thập một bộ ảnh được gán nhãn có độ phân giải 1 megapixel.
-Điều này có nghĩa là đầu vào vào mạng có *1 triệu chiều*.
+Ta sẽ quay trở lại với ví dụ quen thuộc về việc phân biệt mèo và chó.
+Giả sử ta thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn có độ phân giải 1 megapixel.
+Điều này có nghĩa là đầu vào của mạng có *1 triệu chiều*.
 Ngay cả việc giảm mạnh xuống *1000 chiều ẩn* sẽ cần một tầng *dày đặc* (kết nối đầy đủ) để hỗ trợ $10^9$ tham số.
 Trừ khi ta có một bộ dữ liệu cực lớn (có thể là hàng tỷ ảnh?), rất nhiều GPU, một tài năng để tối ưu hóa phân tán cực độ và sức kiên nhẫn phi thường, thì việc học các thông số của mạng này có thể là bất khả thi.
 
