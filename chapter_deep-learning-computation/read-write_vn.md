@@ -18,7 +18,7 @@ This section addresses both issues.
 -->
 
 Cho đến giờ ta đã thảo luận về cách xử lý dữ liệu, cách xây dựng, huấn luyện và kiểm tra các mô hình học sâu.
-Tuy nhiên, đến một lúc nào đó, ta có thể cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
+Tuy nhiên, có thể đến một lúc nào đó ta sẽ cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
 Tương tự như vậy, khi thực hiện một quá trình huấn luyện dài, việc lưu lại các kết quả trung gian (điểm kiểm tra) là một nguyên tắc thực hành tốt để đảm bảo rằng ta sẽ không mất kết quả tính toán sau nhiều ngày nếu chẳng may vấp phải dây nguồn của máy chủ.
 Đồng thời, ta có thể muốn nạp một mô hình đã được huấn luyện sẵn (ví dụ: sử dụng các embedding từ tiếng Anh có sẵn để xây dựng một bộ phân loại thư rác màu mè).
 Đối với tất cả các trường hợp này, ta cần đọc và lưu cả các vector trọng số đơn lẻ cũng như toàn bộ mô hình.
