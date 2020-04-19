@@ -17,8 +17,11 @@ neural networks researchers have moved from thinking about the behavior of indiv
 and now often design architectures with far coarser *blocks* in mind.
 -->
 
-*dịch đoạn phía trên*
-
+Ngoài các tập dữ liệu khổng lồ và phần cứng mạnh mẽ, không thể không nhắc tới vai trò quan trọng của các công cụ phần mềm tốt trong sự phát triển chóng mặt của học sâu.
+Mở đầu với thư viện tiên phong Theano được phát hành vào năm 2007, các công cụ mã nguồn mở linh hoạt đã giúp các nhà nghiên cứu nhanh chóng thử nghiệm các mô hình bằng cách tránh việc bắt người dùng phải xây dựng lại các thành phần tiêu chuẩn nhưng vẫn cho phép việc thay đổi ở bậc thấp. 
+Theo thời gian, các thư viện học sâu ngày càng phát triến để cung cấp tính trừu tượng cao hơn.
+Tương tự với việc các nhà thiết kế chất bán dẫn đi từ transitor đến mạch logic và rồi mã nguồn, các nhà nghiên cứu mạng nơ-ron sâu đã thay đổi từ việc nghĩ về hành vi của từng nơ-ron nhân tạo đơn lẻ sang việc xem xét cả một tầng trong mạng nơ-ron.
+Giờ đây họ thường thiết kế các kiến trúc mạng bằng các *khối* trừu tượng hơn.
 
 <!--
 So far, we have introduced some basic machine learning concepts, ramping up to fully-functional deep learning models.
@@ -31,7 +34,12 @@ while retaining the flexibility to implement more complex models, including thos
 While this chapter does not introduce any new models or datasets, the advanced modeling chapters that follow rely heavily on these techniques.
 -->
 
-*dịch đoạn phía trên*
+Cho đến giờ, chúng tôi đã giới thiệu một vài khái niệm học máy cơ bản, rồi sau đó tiến tới các mô hình học sâu.
+Ở chương trước, ta đã lập trình từng thành phần của một perceptron đa tầng từ đầu và còn biết được cách tận dụng thư viện Gluon của MXNet để xây dựng lại mô hình một cách dễ dàng hơn.
+Để giúp bạn tiến triển nhanh đến vậy, chúng tôi đã *sử dụng* các thư viện, nhưng lại bỏ qua những chi tiết nâng cao hơn về *cách hoạt động của chúng*.
+Trong chương này, chúng tôi vén tấm màn bí ẩn lên và đào sâu vào những yếu tố chính của tính toán học sâu, cụ thể là việc xây dựng mô hình, truy cập và khởi tạo tham số, thiết kế các tầng và khối tùy chỉnh, đọc và ghi mô hình lên ổ cứng và cuối cùng là tận dụng GPU để tăng tốc độ lên đáng kể.
+Những kiến thức này sẽ biến bạn từ một *người dùng cuối* (*end user*) thành *người dùng thành thạo* (*power user*), cung cấp cho bạn các công cụ cần thiết để gặt hái lợi ích của một thư viện học sâu trưởng thành, đồng thời giữ được sự linh hoạt để lập trình những mô hình phức tạp hơn, bao gồm cả những mô hình mà bạn tự phát minh!
+Dù chương này không giới thiệu bất cứ mô hình hay tập dữ liệu mới nào, các chương sau về mô hình nâng cao sẽ phụ thuộc rất nhiều vào những kỹ thuật sắp được nhắc đến. 
 
 ```toc
 :maxdepth: 2
@@ -60,4 +68,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-* 
+* Phạm Minh Đức
