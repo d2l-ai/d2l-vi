@@ -402,7 +402,7 @@ Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chún
 Đây là lý do tại sao các hoạt động sao chép nên được giành sự lưu tâm lớn. 
 Quy tắc nằm lòng là nhiều xử lý tính toán nhỏ thì tệ hơn nhiều so với một xử lý tính toán lớn.
 Hơn nữa, một số xử lý tính toán cùng một thời điểm thì tốt hơn nhiều so với nhiều xử lý tính toán đơn lẻ nằm rải rác trong chương trình (trừ khi là bạn biết mình đang làm gì).
-Lý do là ở tình huống này những hoạt động như vậy có thể gây ách tắc nếu một thiết bị phải chờ một thiết bị khác trước khi nó có thể làm điều gì đó khác.
+Lý do là ở tình huống này những hoạt động như vậy có thể gây tắc nghẽn nếu một thiết bị phải chờ một thiết bị khác trước khi nó có thể làm điều gì đó khác.
 Việc này giống một chút với việc bạn phải xếp hàng đặt cà phê thay vì đặt trước qua điện thoại và biết được khi nào nó đã sẵn sàng để đến lấy. 
 
 <!--
