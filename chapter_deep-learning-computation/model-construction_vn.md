@@ -176,7 +176,7 @@ Typically this happens automatically.
 5. Initialize these parameters as needed.
 -->
 
-1. Phương thức `forward` nhận dữ liệu đầu vào.
+1. Phương thức `forward` nhận đối số là dữ liệu đầu vào.
 2. Phương thức `forward` trả về một giá trị đầu ra.
 Lưu ý rằng đầu ra có thể có kích thước khác với đầu vào.
 Ví dụ, tầng Dense đầu tiên trong mô hình phía trên nhận đầu vào có kích thước tùy ý nhưng trả về đầu ra có kích thước 256. 
