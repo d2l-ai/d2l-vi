@@ -203,6 +203,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | linear programming                 | quy hoạch tuyến tính           | [https://git.io/JvohV](https://git.io/JvohV) |
 | linear regression                  | hồi quy tuyến tính             |                                              |
 | linear discriminant analysis (LDA) | phân tích biệt thức tuyến tính | [https://git.io/Jvojw](https://git.io/Jvojw) |
+| locality                           | tính cục bộ                    |                                              |
 | local maximum                      | cực đại                        |                                              |
 | local minimum                      | cực tiểu                       |                                              |
 | Long Short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            | [https://git.io/JvKeI](https://git.io/JvKeI) |
