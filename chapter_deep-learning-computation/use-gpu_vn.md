@@ -383,7 +383,7 @@ So we want you to be 100% certain that you want to do something slow before we l
 If MXNet just did the copy automatically without crashing then you might not realize that you had written some slow code.
 -->
 
-Người ta sử dụng các bo GPU để thực hiện việc cho máy học bởi vì họ kỳ vọng chúng sẽ thực hiện nhanh chóng.
+Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng là chúng sẽ nhanh hơn.
 Nhưng việc truyền các biến giữa các ngữ cảnh lại diễn ra chậm. 
 Do đó chúng tôi mong bạn chắc chắn 100% một việc nào đó chậm mà bạn muốn làm trước khi chúng tôi để bạn thực hiện nó.
 Nếu thật sự MXNet chỉ thực hiện việc sao chép tự động mà không bị hỏng thì bạn có thể sẽ không nhận ra việc bạn đã viết một đoạn mã nào đó thực hiện chậm. 
