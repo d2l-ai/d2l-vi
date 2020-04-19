@@ -5,7 +5,7 @@
 # File I/O
 -->
 
-# *dịch tiêu đề phía trên*
+# Đọc/Ghi tệp
 
 <!--
 So far we discussed how to process data, how to build, train and test deep learning models. 
@@ -17,20 +17,26 @@ For all of these cases we need to load and store both individual weight vectors 
 This section addresses both issues.
 -->
 
-*dịch đoạn phía trên*
+Cho đến giờ ta đã thảo luận về cách xử lý dữ liệu, cách xây dựng, huấn luyện và kiểm tra các mô hình học sâu.
+Tuy nhiên, có thể đến một lúc nào đó ta sẽ cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
+Tương tự như vậy, khi thực hiện một quá trình huấn luyện dài, việc lưu lại các kết quả trung gian (điểm kiểm tra) là một nguyên tắc thực hành tốt để đảm bảo rằng ta sẽ không mất kết quả tính toán sau nhiều ngày nếu chẳng may vấp phải dây nguồn của máy chủ.
+Đồng thời, ta có thể muốn nạp một mô hình đã được huấn luyện sẵn (ví dụ: sử dụng các embedding từ tiếng Anh có sẵn để xây dựng một bộ phân loại thư rác màu mè).
+Đối với tất cả các trường hợp này, ta cần đọc và lưu cả các vector trọng số đơn lẻ cũng như toàn bộ mô hình.
+Mục này sẽ giải quyết cả hai vấn đề trên.
 
 <!--
 ## Loading and Saving `ndarray`s
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc và Lưu các `ndarray`
 
 <!--
 In its simplest form, we can directly use the `load` and `save` functions to store and read `ndarray`s separately. 
 This works just as expected.
 -->
 
-*dịch đoạn phía trên*
+Ở dạng đơn giản nhất, ta có thể sử dụng trực tiếp các hàm `load` và `save` để đọc và lưu các `ndarray` riêng rẽ.
+Cách này hoạt động đúng như mong đợi.
 
 ```{.python .input}
 from mxnet import np, npx
@@ -45,7 +51,7 @@ npx.save('x-file', x)
 Then, we read the data from the stored file back into memory.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta đọc lại dữ liệu từ các tệp được lưu vào trong bộ nhớ.
 
 ```{.python .input}
 x2 = npx.load('x-file')
@@ -56,7 +62,7 @@ x2
 We can also store a list of `ndarray`s and read them back into memory.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể lưu một danh sách các `ndarray` và đọc lại chúng vào trong bộ nhớ.
 
 ```{.python .input  n=2}
 y = np.zeros(4)
@@ -70,7 +76,8 @@ We can even write and read a dictionary that maps from a string to an `ndarray`.
 This is convenient, for instance when we want to read or write all the weights in a model.
 -->
 
-*dịch đoạn phía trên*
+Ta còn có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
+Điều này khá là thuận tiện, ví dụ như khi ta muốn đọc hoặc ghi tất cả các trọng số của một mô hình.
 
 ```{.python .input  n=4}
 mydict = {'x': x, 'y': y}
@@ -235,7 +242,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 * Nguyễn Văn Cường
