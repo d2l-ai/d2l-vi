@@ -398,7 +398,7 @@ It is a bit like ordering your coffee in a queue rather than pre-ordering it by 
 -->
 
 Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) là việc mà nó xử lý *chậm hơn nhiều* so với thực hiện tính toán.
-Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chúng ta phải chờ cho dữ liệu được gửi đi (hoặc được nhận về) trước khi chúng ta có thể tiến hành nhiều xử lý tính toán hơn.
+Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chúng ta phải chờ cho dữ liệu được gửi đi (hoặc được nhận về) trước khi chúng ta có thể tiến hành nhiều tác vụ xử lý tính toán hơn.
 Đây là lý do tại sao các hoạt động sao chép nên được giành sự lưu tâm lớn. 
 Quy tắc nằm lòng là nhiều xử lý tính toán nhỏ thì tệ hơn nhiều so với một xử lý tính toán lớn.
 Hơn nữa, một số xử lý tính toán cùng một thời điểm thì tốt hơn nhiều so với nhiều xử lý tính toán đơn lẻ rải rác trong chương trình (trừ phi là bạn biết mình đang làm gì).
