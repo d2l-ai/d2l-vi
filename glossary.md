@@ -360,7 +360,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | translation invariant | bất biến tịnh tiến | |
 | transcribe                 | phiên thoại                    | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription              | bản ghi thoại                  |                                              |
-| translation invarience     | tính bất biến tịnh tiến        |                                              |
 | true negative              | âm tính thật                   |                                              |
 | true positive              | dương tính thật                |                                              |
 | tune parameters            | điều chỉnh tham số             |                                              |
