@@ -20,12 +20,14 @@ When we worked through softmax regression, a single *layer* was itself *the mode
 However, even when we subsequently introduced multilayer perceptrons, we could still think of the model as retaining this same basic structure.
 -->
 
-Khi lần đầu giới thiệu về các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất, trong đó toàn bộ mô hình chỉ bao gồm một nơ-ron.
-Lưu ý rằng một nơ-ron đơn lẻ (i) nhận một vài đầu vào; (ii) tạo một đầu ra (*vô hướng*) tương ứng; và (iii) có một tập các tham số liên quan có thể được cập nhật để tối ưu một hàm mục tiêu nào đó mà ta quan tâm.
-Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng các phép tính vector để mô tả nguyên cả một *tầng* nơ-ron.
-Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một vài đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập các tham số có thể điều chỉnh được.
-Trong hồi quy softmax, bản thân *tầng* duy nhất ấy chính là một *mô hình*.
-Thậm chí đối với các perceptron đa tầng, ta vẫn có thể nghĩ về chúng theo cấu trúc cơ bản này.
+Khi lần đầu giới thiệu về các mạng nơ-ron, ta tập trung vào các mô hình tuyến tính với một đầu ra duy nhất.
+Như vậy toàn bộ mô hình chỉ chứa một nơ-ron. 
+Lưu ý rằng một nơ-ron đơn lẻ (i) nhận một vài đầu vào; (ii) tạo một đầu ra (*vô hướng*) tương ứng; 
+và (iii) có một tập các tham số liên quan có thể được cập nhật để tối ưu một hàm mục tiêu nào đó mà ta quan tâm. 
+Sau đó, khi bắt đầu nghĩ về các mạng có nhiều đầu ra, ta tận dụng các phép tính vector để mô tả nguyên một *tầng* nơ-ron. 
+Cũng giống như các nơ-ron riêng lẻ, các tầng (i) nhận một số đầu vào, (ii) tạo các đầu ra tương ứng, và (iii) được mô tả bằng một tập các tham số có thể điều chỉnh được. 
+Trong hồi quy softmax, bản thân *tầng* duy nhất ấy chính là một *mô hình*. 
+Thậm chí đối với các perceptron đa tầng, ta vẫn có thể nghĩ về chúng theo cấu trúc cơ bản này. 
 
 <!--
 Interestingly, for multilayer perceptrons, both the *entire model* and its *constituent layers* share this structure.
@@ -34,9 +36,9 @@ Likewise, each individual layer ingests inputs (supplied by the previous layer) 
 and possesses a set of tunable parameters that are updated according to the signal that flows backwards from the subsequent layer.
 -->
 
-Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này.
-(Toàn bộ) mô hình nhận các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và có các tham số (được tập hợp từ tất cả các tầng cấu thành).
-Tương tự, mỗi tầng riêng lẻ cũng nhận vào các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh được thông qua việc cập nhật dựa trên tín hiệu được gửi ngược từ tầng phía sau.
+Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này. 
+(Toàn bộ) mô hình nhận các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và sở hữu các tham số (được tập hợp từ tất cả các tầng cấu thành). 
+Tương tự, mỗi tầng riêng lẻ cũng nhận vào các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh thông qua việc cập nhật dựa trên tín hiệu được truyền ngược từ tầng tiếp theo. 
 
 
 <!--
@@ -50,12 +52,12 @@ both recognition and detection :cite:`He.Zhang.Ren.ea.2016` and remains a go-to 
 Similar patterns are in which layers are arranged in various repeating patterns are now ubiquitous in other domains, including natural language processing and speech.
 -->
 
-Dù bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào làm việc, hóa ra ta thường thấy thuận tiện hơn khi nói về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình.
+Dù bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào làm việc, hóa ra sẽ là thuận tiện hơn khi ta bàn về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình. 
 Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tính, sở hữu hàng trăm tầng.
-Nó bao gồm các khuôn mẫu các *nhóm tầng* được lặp lại nhiều lần. Việc lập trình từng tầng của một mạng như vậy có thể trở nên tẻ nhạt.
-Mối quan tâm này không chỉ là  trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế.
-Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015, trong cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin dùng cho nhiều bài toán thị giác.
-Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo nhiều dạng khuôn mẫu được lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói.
+Nó bao gồm các khuôn mẫu các *nhóm tầng* được lặp lại nhiều lần. Việc lập trình từng tầng của một mạng như vậy có thể trở nên tẻ nhạt. 
+Mối quan tâm này không chỉ là trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế. 
+Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015, trong cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin dùng cho nhiều bài toán thị giác. 
+Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo nhiều dạng khuôn mẫu được lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -72,13 +74,13 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 (introduced in :numref:`chap_preliminaries`) when defining our own `Block`, we only need to worry about parameters and the `forward` function.
 -->
 
-Để lập trình các mạng phức tạp này, ta sẽ giới thiệu khái niệm *khối* trong mạng nơ-ron.
-Một khối có thể mô tả một tầng duy nhất, một thành phần đa tầng hoặc toàn bộ một mô hình! <!-- Reviewer thấy từ này hợp lý hơn 'thành phần'('component') thì thay giúp mình nhé, thanks-->
-Dưới góc nhìn xây dựng phần mềm, một `Block` (Khối) là một *lớp*.
-Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết.
-Lưu ý rằng có một vài `Block` sẽ không yêu cầu chứa bất kỳ tham số nào cả!
-Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient.
-May mắn thay, nhờ có sự trợ giúp của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) nên khi định nghĩa `Block`, ta chỉ cần quan tâm đến các các tham số và hàm `forward`. 
+Để lập trình các mạng phức tạp này, ta sẽ giới thiệu khái niệm *khối* trong mạng nơ-ron. 
+Một khối có thể mô tả một tầng duy nhất, một mảng đa tầng hoặc toàn bộ một mô hình! <!-- Reviewer thấy từ này hợp lý hơn 'thành phần'('component') thì thay giúp mình nhé, thanks-->
+Dưới góc nhìn xây dựng phần mềm, một `Block` (Khối) là một *lớp*. 
+Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết. 
+Lưu ý rằng có một vài `Block` sẽ không yêu cầu chứa bất kỳ tham số nào cả! 
+Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient. 
+May mắn thay, nhờ sự trợ giúp đắc lực của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) nên khi định nghĩa `Block`, ta chỉ cần quan tâm đến các tham số và hàm `forward`. 
 <!-- Cụm 'some behind-the-scenes magic' mình thấy khá hay nhưng dịch sang tiếng Việt hơi thô nên để đơn giản là 'trợ giúp', reviewer có cách dịch nào sát với sách hơn thì thay giúp mình.
 Mình không dịch các từ 'Block' (khi được viết hoa), 'forward', 'backward' vì thấy ở phần sau các từ này đ xuất hiện trong code, nên nếu dịch có thể gây nhầm lẫn, không biết mình hiểu vậy đúng không-->
 
@@ -86,7 +88,7 @@ Mình không dịch các từ 'Block' (khi được viết hoa), 'forward', 'bac
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
 -->
 
-Một lợi ích khi làm việc ở mức độ trừu tượng `Block` là chúng có thể được kết hợp thành các thành phần lớn hơn, thường sử dụng phương pháp đệ quy (xem hình minh họa trong :numref:`fig_blocks`).
+Một lợi ích khi làm việc với `Block` ở mức độ trừu tượng đó là ta có thể kết hợp chúng thành các thành phần lớn hơn, thường là với phương pháp đệ quy (xem hình minh họa trong :numref:`fig_blocks`). 
 
 <!--
 ![Multiple layers are combined into blocks](../img/blocks.svg)
@@ -99,15 +101,15 @@ Một lợi ích khi làm việc ở mức độ trừu tượng `Block` là ch�
 By defining code to generate Blocks of arbitrary complexity on demand, we can write surprisingly compact code and still implement complex neural networks.
 -->
 
-Bằng cách định nghĩa các khối với độ phức tạp tùy ý, các mạng nơ-ron phức tạp có thể được lập trình với mã nguồn ngắn gọn một cách đáng ngạc nhiên.
+Bằng cách định nghĩa các khối với độ phức tạp tùy ý, các mạng nơ-ron phức tạp có thể được lập trình với mã nguồn ngắn gọn một cách đáng ngạc nhiên. 
 
 <!--
 To begin, we revisit the Blocks that we used to implement multilayer perceptrons (:numref:`sec_mlp_gluon`).
 The following code generates a network with one fully-connected hidden layer with 256 units and ReLU activation, followed by a fully-connected *output layer* with 10 units (no activation function).
 -->
 
-Để bắt đầu, ta sẽ xem lại các `Block` mà ta đã sử dụng để lập trình các perceptron đa tầng (:numref:`sec_mlp_gluon`).
-Đoạn mã nguồn sau tạo ra một mạng gồm một tầng ẩn kết nối đầy đủ với 256 nút và sử dụng hàm kích hoạt ReLU, theo sau là một *tầng đầu ra* kết nối đầy đủ với 10 nút (không có hàm kích hoạt).
+Để bắt đầu, ta sẽ xem lại các `Block` mà ta đã sử dụng để lập trình perceptron đa tầng (:numref:`sec_mlp_gluon`).
+Đoạn mã nguồn sau tạo ra một mạng gồm một tầng ẩn kết nối đầy đủ với 256 nút sử dụng hàm kích hoạt ReLU, theo sau là một *tầng đầu ra* kết nối đầy đủ với 10 nút (không có hàm kích hoạt).
 
 ```{.python .input  n=33}
 from mxnet import np, npx
@@ -134,14 +136,14 @@ Note that until now, we have been invoking our models via the construction `net(
 This is actually just shorthand for `net.forward(X)`, a slick Python trick achieved via the Block class's `__call__` function.
 -->
 
-Trong ví dụ này, ta đã xây dựng mô hình bằng cách khởi tạo một đối tượng `nn.Sequential` và gán vào biến `net`.
+Trong ví dụ này, ta đã xây dựng mô hình bằng cách khởi tạo một đối tượng `nn.Sequential` và gán vào biến `net`. 
 Sau đó, ta gọi phương thức `add` nhiều lần để nối thêm các tầng theo thứ tự mà chúng sẽ được thực thi.
-Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Block` đặc biệt có nhiệm vụ duy trì một danh sách gồm các `Block` cấu thành được sắp xếp theo thứ tự nhất định.
-Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào trong danh sách.
-Lưu ý rằng mỗi tầng là một thực thể của lớp `Dense`, và bản thân lớp `Dense` lại là một lớp con của `Block`.
-Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng `Block` trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo.
-Lưu ý rằng cho đến giờ, ta đã gọi mô hình thông qua `net(X)` để thu được đầu ra.
-Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`.
+Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Block` đặc biệt có nhiệm vụ duy trì một danh sách chứa các `Block` cấu thành được sắp xếp theo thứ tự nhất định.
+Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào trong danh sách đó. 
+Lưu ý rằng mỗi tầng là một thực thể của lớp `Dense`, và bản thân lớp `Dense` lại là một lớp con của `Block`. 
+Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng `Block` trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo. 
+Lưu ý rằng cho đến giờ, ta đã gọi mô hình thông qua `net(X)` để thu được đầu ra. 
+Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
