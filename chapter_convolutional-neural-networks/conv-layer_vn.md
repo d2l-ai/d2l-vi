@@ -152,7 +152,7 @@ class Conv2D(nn.Block):
 ## Object Edge Detection in Images
 -->
 
-## *dịch tiêu đề phía trên*
+## Phát hiện biên của đối tượng trong ảnh
 
 <!--
 Let us look at a simple application of a convolutional layer: detecting the edge of an object in an image by finding the location of the pixel change.
@@ -160,7 +160,9 @@ First, we construct an 'image' of $6\times 8$ pixels.
 The middle four columns are black (0) and the rest are white (1).
 -->
 
-*dịch đoạn phía trên*
+Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một đối tượng trong một bức ảnh bằng cách xác định vị trí các điểm ảnh (*pixel*) thay đổi.
+Đầu tiên, ta dựng một 'bức ảnh' có kích thước $6\times 8$ điểm ảnh.
+Giá trị của bốn cột ở giữa là đen (0) và còn lại là trắng (1).
 
 ```{.python .input  n=66}
 X = np.ones((6, 8))
@@ -173,7 +175,9 @@ Next, we construct a kernel `K` with a height of 1 and width of 2.
 When we perform the cross-correlation operation with the input, if the horizontally adjacent elements are the same, the output is 0. Otherwise, the output is non-zero.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta tạo một bộ lọc `K` có chiều dài 1 và chiều rộng 2.
+Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0. 
+Còn lại, đầu ra sẽ khác không.
 
 ```{.python .input  n=67}
 K = np.array([[1, -1]])
@@ -185,7 +189,9 @@ As you can see, we will detect 1 for the edge from white to black and -1 for the
 The rest of the outputs are 0.
 -->
 
-*dịch đoạn phía trên*
+Truyền giá trị của `X` và bộ lọc `K` để thực hiện phép tương quan chéo.
+Bạn có thể thấy, các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
+Các vị trí còn lại của đầu ra có giá trị 0.
 
 ```{.python .input  n=69}
 Y = corr2d(X, K)
@@ -197,7 +203,8 @@ Let us apply the kernel to the transposed image.
 As expected, it vanishes. The kernel `K` only detects vertical edges.
 -->
 
-*dịch đoạn phía trên*
+Hãy áp dụng bộ lọc này cho chuyển vị của ma trận điểm ảnh.
+Như kì vọng, giá trị tương quan chéo bằng không. Bộ lọc `K` chỉ có thể phát hiện biên dọc.
 
 ```{.python .input}
 corr2d(X.T, K)
@@ -374,7 +381,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 *
