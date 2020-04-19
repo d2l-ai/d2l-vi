@@ -35,11 +35,11 @@ While this chapter does not introduce any new models or datasets, the advanced m
 -->
 
 Cho đến giờ, chúng tôi đã giới thiệu một vài khái niệm học máy cơ bản, rồi sau đó tiến tới các mô hình học sâu.
-Ở chương trước, ta đã lập trình từng thành phần của một perceptron đa tầng từ đâu và còn biết được cách tận dụng thư viện Gluon của MXNet để tạo mô hình y hệt một cách dễ dàng hơn.
+Ở chương trước, ta đã lập trình từng thành phần của một perceptron đa tầng từ đầu và còn biết được cách tận dụng thư viện Gluon của MXNet để xây dựng lại mô hình một cách dễ dàng hơn.
 Để giúp bạn tiến triển nhanh đến vậy, chúng tôi đã *sử dụng* các thư viện, nhưng lại bỏ qua những chi tiết nâng cao hơn về *cách hoạt động của chúng*.
-Trong chương này, chúng tôi sẽ hạ tấm màn và đào sâu vào những yếu tố chính của việc tính toán học sâu, cụ thể là việc xây dựng mô hình, truy cập và khởi tạo tham số, thiết kế các tầng và khối tùy chỉnh, đọc và ghi mô hình lên ổ cứng, cuối cùng là tận dụng GPU để tăng tốc độ đáng kể.
+Trong chương này, chúng tôi vén tấm màn bí ẩn lên và đào sâu vào những yếu tố chính của tính toán học sâu, cụ thể là việc xây dựng mô hình, truy cập và khởi tạo tham số, thiết kế các tầng và khối tùy chỉnh, đọc và ghi mô hình lên ổ cứng và cuối cùng là tận dụng GPU để tăng tốc độ lên đáng kể.
 Những kiến thức này sẽ biến bạn từ một *người dùng cuối* (*end user*) thành *người dùng thành thạo* (*power user*), cung cấp cho bạn các công cụ cần thiết để gặt hái lợi ích của một thư viện học sâu trưởng thành, đồng thời giữ được sự linh hoạt để lập trình những mô hình phức tạp hơn, bao gồm cả những mô hình mà bạn tự phát minh!
-Dù chương này không giới thiệu bất cứ mô hình hay tập dữ liệu mới nào, các chương sau về mô hình nâng cao sẽ phụ thuộc rất nhiều vào những kỹ thuật vừa rồi. 
+Dù chương này không giới thiệu bất cứ mô hình hay tập dữ liệu mới nào, các chương sau về mô hình nâng cao sẽ phụ thuộc rất nhiều vào những kỹ thuật sắp được nhắc đến. 
 
 ```toc
 :maxdepth: 2
