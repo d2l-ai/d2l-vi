@@ -386,7 +386,7 @@ If MXNet just did the copy automatically without crashing then you might not rea
 Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng là chúng sẽ nhanh hơn.
 Nhưng việc truyền các biến giữa các ngữ cảnh lại diễn ra chậm. 
 Do đó, chúng tôi mong bạn chắc chắn 100% rằng bạn muốn thực hiện một việc nào đó thật chậm trước khi chúng tôi để bạn thực hiện nó.
-Nếu thật sự MXNet chỉ thực hiện việc sao chép tự động mà không bị hỏng thì bạn có thể sẽ không nhận ra việc bạn đã viết một đoạn mã nào đó thực hiện chậm. 
+Nếu MXNet chỉ thực hiện việc sao chép tự động mà không gặp sự cố thì có thể bạn sẽ không nhận ra được mình đã có những đoạn mã chưa tối ưu đến nhường nào.
 
 <!--
 Also, transferring data between devices (CPU, GPUs, other machines) is something that is *much slower* than computation. 
