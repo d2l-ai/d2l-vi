@@ -35,7 +35,7 @@ Common names for this array in the deep learning research community include *ker
 The shape of the kernel window (also known as the convolution window) is given precisely by the height and width of the kernel (here it is $2 \times 2$).
 -->
 
-Trong một tầng tích chập, một mảng đầu vào và một mảng bộ lọc tương quan được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo.
+Trong một tầng tích chập, một mảng đầu vào và một mảng bộ lọc tương quan được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo (*cross correlation*).
 Hãy xem phép toán này hoạt động như thế nào với mảng hai chiều.
 Trong :numref:`fig_correlation`, đầu vào là một mảng hai chiều với chiều dài 3 và chiều rộng 3.
 Ta kí hiệu kích thước của mảng là $3 \times 3$ hoặc (3, 3).
