@@ -60,8 +60,7 @@ This result if precisely the value of the output array at the corresponding loca
 Here, the output array has a height of 2 and width of 2 and the four elements are derived from the two-dimensional cross-correlation operation:
 -->
 
-Trong phép tương quan chéo hai chiều, ta bắt đầu từ cửa sổ tích chập tại vị trí góc trên bên trái của mảng đầu vào 
-và di chuyển cửa sổ này trên mảng đầu vào, từ trái sang phải và từ trên xuống dưới.
+Trong phép tương quan chéo hai chiều, ta bắt đầu với cửa sổ tích chập đặt tại vị trí góc trên bên trái của mảng đầu vào và di chuyển cửa sổ này từ trái sang phải và từ trên xuống dưới.
 Khi cửa sổ tích chập ở một vị trí nào đó, mảng con của đầu vào chứa trong cửa sổ đó và mảng bộ lọc được nhân theo từng phần tử
 và cộng các kết quả với nhau tạo thành một giá trị số vô hướng duy nhất.
 Giá trị này được ghi vào mảng đầu ra tại vị trí tương ứng.
