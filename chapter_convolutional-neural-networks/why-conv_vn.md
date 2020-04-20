@@ -50,9 +50,9 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-Một người đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 megapixel có thể là không cần thiết.
-Tuy nhiên, ngay cả khi bạn chỉ sử dụng 100,000 pixel, ta đã đánh giá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
-Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ đòi hỏi một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
+Một bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
+Tuy nhiên, ngay cả khi chỉ sử dụng 100,000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
+Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
 Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
 Đó là bởi vì các ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
 
@@ -75,21 +75,21 @@ The reader's goal is to locate him.
 Despite his characteristic outfit, this can be surprisingly difficult, due to the large number of confounders.
 -->
 
-Hãy tưởng tượng rằng bạn muốn phát hiện một đối tượng trong một hình ảnh.
-Có vẻ hợp lý rằng bất cứ phương pháp nào ta sử dụng để nhận dạng đối tượng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
+Hãy tưởng tượng rằng bạn muốn nhận dạng một đối tượng trong ảnh.
+Có vẻ hợp lý khi cho rằng bất cứ phương pháp nào ta sử dụng để nhận dạng đối tượng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
 Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác kiến thức này.
 Lợn thường không bay và máy bay thường không bơi.
-Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn.
-Ý tưởng này được đưa đến một thái cực trong trò chơi trẻ em 'Where's Waldo', một ví dụ được hiển thị trong: numref: `img_waldo`.
-Trò chơi bao gồm một số cảnh hỗn loạn bùng nổ với hoạt động và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
-Nhiệm vụ của người chơi là xác định vị trí anh ta.
-Mặc dù anh ta có một bộ trang phục đặc trưng, điều này có thể khó khăn đáng ngạc nhiên, do số lượng lớn các yếu tố gây nhiễu.
+Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn nếu nó xuất hiện.
+Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Where's Waldo', một ví dụ được hiển thị trong :numref:`img_waldo`.
+Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
+Nhiệm vụ của người chơi là xác định vị trí anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
+Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng lớn các yếu tố gây nhiễu nên việc nhận dạng anh ta vẫn có thể khó khăn một cách đáng ngạc nhiên.
 
 <!--
 ![Image via Walker Books](../img/where-wally-walker-books.jpg)
 -->
 
-![Ảnh trong Walker Books](../img/where-wally-walker-books.jpg)
+![Một ảnh trong Walker Books](../img/where-wally-walker-books.jpg)
 :width:`400px`
 :label:`img_waldo`
 
@@ -98,21 +98,21 @@ Mặc dù anh ta có một bộ trang phục đặc trưng, điều này có th�
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với hình ảnh, những trực giác mà ta đang thảo luận có thể được đưa ra cụ thể hơn để đạt được một vài nguyên tắc chính để xây dựng mạng nơ-ron cho thị giác máy tính:
+Quay lại với các ảnh, những trực giác mà ta đã thảo luận có thể được làm rõ hơn hơn để đạt được một vài nguyên tắc chủ chốt cho việc xây dựng mạng nơ-ron cho thị giác máy tính:
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-1. Trong một số trường hợp, hệ thống thị giác của ta sẽ phản ứng tương tự với cùng một đối tượng bất kể nó xuất hiện ở đâu trong ảnh (dịch chuyển bất biến).
-2. Trong một số trường hợp, hệ thống thị giác của ta nên tập trung vào các khu vực cục bộ, mà không quan tâm đến những gì khác đang xảy ra trong hình ảnh ở khoảng cách xa hơn (cục bộ).
+1. Ở một khía cạnh nào đó, hệ thống thị giác của ta nên phản ứng tương tự với cùng một đối tượng bất kể đối tượng đó xuất hiện ở đâu trong ảnh (dịch chuyển bất biến).
+2. Ở khía cạnh khác, hệ thống thị giác của ta nên tập trung vào các khu vực cục bộ, mà không quan tâm đến bất kỳ điều gì khác ở khoảng cách xa hơn trong ảnh (tính cục bộ).
 
 <!--
 Let us see how this translates into mathematics.
 -->
 
-Hãy xem cách biểu diễn vấn đề này sang ngôn ngữ toán học.
+Ta hãy biểu diễn các vấn đề này bằng ngôn ngữ toán học.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
