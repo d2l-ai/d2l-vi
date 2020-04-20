@@ -15,6 +15,14 @@ Sooner or later you will encounter a layer that does not exist yet in Gluon, or 
 This is when it is time to build a custom layer. This section shows you how.
 -->
 
+<!-- UPDATE
+One of factors behind deep learnings success is the availability of a wide range of layers that can be composed in creative ways to design architectures suitable for a wide variety of tasks.
+For instance, researchers have invented layers specifically for handling images, text, looping over sequential data, performing dynamic programming, etc.
+Sooner or later you will encounter (or invent) a layer that does not exist yet in Gluon,
+In these cases, you must build a custom layer.
+In this section, we show you how.
+-->
+
 Một trong những lý do dẫn đến thành công của học sâu là sự đa dạng của các tầng có thể sử dụng trong một mạng.
 Điều này cho phép một mức độ tuỳ chỉnh và thích ứng rất lớn.
 Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (*pooling*), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
@@ -32,6 +40,13 @@ Since this is slightly intricate, we start with a custom layer (also known as Bl
 Our first step is very similar to when we introduced blocks in :numref:`sec_model_construction`. 
 The following `CenteredLayer` class constructs a layer that subtracts the mean from the input.
 We build it by inheriting from the Block class and implementing the `forward` method.
+-->
+
+<!-- UPDATE
+To start, we construct a custom layer (a Block) that does not have any parameters of its own. 
+This should look familiar if you recall our introduction to Gluon's `Block` in :numref:`sec_model_construction`. 
+The following `CenteredLayer` class simply subtracts the mean from its input. 
+To build it, we simply need to inherit from the Block class and implement the `forward` method.
 -->
 
 Do việc này hơi phức tạp một chút, chúng ta sẽ bắt đầu với một tầng tuỳ chỉnh (hay còn gọi là Khối) mà tự thân không có bất kì tham số nào.
@@ -53,7 +68,7 @@ class CenteredLayer(nn.Block):
 ```
 
 <!--
-To see how it works let's feed some data into the layer.
+Let us verify that our layer works as intended by feeding some data through it.
 -->
 
 Để xem tầng này hoạt động thế nào, hãy truyền vào một chút dữ liệu.
@@ -64,7 +79,7 @@ layer(np.array([1, 2, 3, 4, 5]))
 ```
 
 <!--
-We can also use it to construct more complex models.
+We can now incorporate our layer as a component in constructing more complex models.
 -->
 
 Chúng ta cũng có thể sử dụng tầng này để xây dựng các mô hình phức tạp hơn.
@@ -79,6 +94,11 @@ net.initialize()
 Let's see whether the centering layer did its job. 
 For that we send random data through the network and check whether the mean vanishes. 
 Note that since we are dealing with floating point numbers, we are going to see a very small albeit typically nonzero number.
+-->
+
+<!-- UPDATE
+As an extra sanity check, we can send random data through the network and check that the mean is in fact 0.
+Because we are dealing with floating point numbers, we may still see a *very* small nonzero number due to quantization.
 -->
 
 Hãy xem tầng này có hoạt động không.
@@ -112,6 +132,13 @@ In particular, they govern access, initialization, sharing, saving and loading m
 For instance, this way we do not need to write custom serialization routines for each new custom layer.
 -->
 
+<!-- UPDATE
+Now that we know how to define simple layers let us move on to defining layers with parameters that can be adjusted through training. 
+To automate some of the routine work the `Parameter` class and the `ParameterDict` dictionary provide some basic housekeeping functionality.
+In particular, they govern access, initialization, sharing, saving and loading model parameters. 
+This way, among other benefits, we will not need to write custom serialization routines for every custom layer.
+-->
+
 Bây giờ về nguyên tắc ta đã biết cách định nghĩa các tầng, hãy chuyển sang việc định nghĩa các tầng có tham số.
 Các tham số có thể được điều chỉnh thông qua quá trình huấn luyện.
 Lớp `Parameter` và từ điển `ParameterDict` sẽ cung cấp một số tính năng quản trị cơ bản nhằm đơn giản hóa công việc cho các nhà nghiên cứu học sâu.
@@ -122,6 +149,12 @@ Bằng cách này, ta không cần phải viết lại các thủ tục tuần t
 For instance, we can use the member variable `params` of the `ParameterDict` type that comes with the Block class. 
 It is a dictionary that maps string type parameter names to model parameters in the `Parameter` type.
 We can create a `Parameter` instance from `ParameterDict` via the `get` function.
+-->
+
+<!-- UPDATE
+The `Block` class contains a `params` variable of the `ParameterDict` type. 
+This dictionary maps strings representing parameter names to model parameters (of the `Parameter` type). 
+The `ParameterDict` also supplied a `get` function that makes it easy to generate a new parameter with a specified name and shape.
 -->
 
 Ví dụ, ta có thể sử dụng biến thành viên `params` với kiểu `ParameterDict` đi kèm với lớp `Block`.
@@ -139,6 +172,13 @@ Let's use this to implement our own version of the dense layer.
 It has two parameters: bias and weight. To make it a bit nonstandard, we bake in the ReLU activation as default. 
 Next, we implement a fully connected layer with both weight and bias parameters.
 It uses ReLU as an activation function, where `in_units` and `units` are the number of inputs and the number of outputs, respectively.
+-->
+
+<!-- UPDATE
+We now have all the basic ingredients that we need to implement our own version of Gluon's `Dense` layer. 
+Recall that this layer requires two parameters, one to represent the weight and another for the bias. 
+In this implementation, we bake in the ReLU activation as a default.
+In the `__init__` function, `in_units` and `units` denote the number of inputs and outputs, respectively.
 -->
 
 Ta sẽ sử dụng biến `params` này để tự lập trình một phiên bản khác của tầng `Dense`.
@@ -165,6 +205,13 @@ class MyDense(nn.Block):
 Naming the parameters allows us to access them by name through dictionary lookup later. 
 It is a good idea to give them instructive names. 
 Next, we instantiate the `MyDense` class and access its model parameters.
+-->
+
+<!-- UPDATE
+Naming our parameters allows us to access them by name through dictionary lookup later.
+Generally, you will want to give your variables simple names that make their purpose clear.
+Next, we instantiate the `MyDense` class and access its model parameters.
+Note that the Block's name is automatically prepended to each Parameter's name.
 -->
 
 Việc đặt tên cho các tham số sẽ cho phép ta sau này truy cập chúng theo tên thông qua việc tra cứu từ điển.
@@ -195,6 +242,13 @@ The only exception is that in our case size inference is not automatic.
 Please consult the [MXNet documentation](http://www.mxnet.io) for details on how to do this.
 -->
 
+<!-- UPDATE
+We can also construct models using custom layers.
+Once we have that we can use it just like the built-in dense layer.
+The only exception is that in our case, shape inference is not automatic. 
+If you are interested in these bells and whisteles, please consult the [MXNet documentation](http://www.mxnet.io) for details on how to implement shape inference in custom layers.
+-->
+
 Các tầng tùy chỉnh cũng có thể được dùng để xây dựng mô hình.
 Các tầng này có thể được sử dụng giống như các tầng dày đặc được lập trình sẵn.
 Ngoại lệ duy nhất là việc suy luận kích thước sẽ không được thực hiện tự động.
@@ -223,6 +277,12 @@ net(np.random.uniform(size=(2, 64)))
 * Blocks can have local parameters.
 -->
 
+<!-- UPDATE
+* We can design custom layers via the Block class. This allows us to define flexible new layers that behave differently from any existing layers in the library.
+* Once defined, custom layers can be invoked in arbitrary contexts and architectures.
+* Blocks can have local parameters, which are stored as a `ParameterDict` object in each Blovk's `params` attribute.
+-->
+
 * Ta có thể thiết kế các tầng tùy chỉnh thông qua lớp Block. Cách này linh hoạt hơn việc định nghĩa một khối vì các tầng tùy chỉnh có thể được gọi trong nhiều ngữ cảnh khác nhau.
 * Các khối có thể có các tham số cục bộ.
 
@@ -235,6 +295,12 @@ net(np.random.uniform(size=(2, 64)))
 
 <!--
 1. Design a layer that learns an affine transform of the data, i.e., it removes the mean and learns an additive parameter instead.
+2. Design a layer that takes an input and computes a tensor reduction, i.e., it returns $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
+3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
+-->
+
+<!-- UPDATE
+1. Design a layer that learns an affine transform of the data.
 2. Design a layer that takes an input and computes a tensor reduction, i.e., it returns $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
 3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
 -->

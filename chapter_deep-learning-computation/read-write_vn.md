@@ -17,6 +17,16 @@ For all of these cases we need to load and store both individual weight vectors 
 This section addresses both issues.
 -->
 
+<!-- UPDATE
+So far we discussed how to process data and how to build, train, and test deep learning models. 
+However, at some point, we will hopefully be happy enough with the learned models that 
+we will want to save the results for later use in various contexts (perhaps even to make predictions in deployment). 
+Additionally, when running a long training process,the best practice is to periodically save intermediate results (checkpointing) 
+to ensure that we do not lose several days worth of computation if we trip over the power cord of our server.
+Thus it is time we learned how to load and store both individual weight vectors and entire models. 
+This section addresses both issues.
+-->
+
 Cho đến giờ ta đã thảo luận về cách xử lý dữ liệu, cách xây dựng, huấn luyện và kiểm tra các mô hình học sâu.
 Tuy nhiên, có thể đến một lúc nào đó ta sẽ cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
 Tương tự như vậy, khi thực hiện một quá trình huấn luyện dài, việc lưu lại các kết quả trung gian (điểm kiểm tra) là một nguyên tắc thực hành tốt để đảm bảo rằng ta sẽ không mất kết quả tính toán sau nhiều ngày nếu chẳng may vấp phải dây nguồn của máy chủ.
@@ -35,6 +45,11 @@ In its simplest form, we can directly use the `load` and `save` functions to sto
 This works just as expected.
 -->
 
+<!-- UPDATE
+For individual `ndarray`s, we can directly invoke their `load` and `save` functions to read and write them respectively. 
+Both functions require that we supply a name, and `save` requires as input the variable to be saved.
+-->
+
 Ở dạng đơn giản nhất, ta có thể sử dụng trực tiếp các hàm `load` và `save` để đọc và lưu các `ndarray` riêng rẽ.
 Cách này hoạt động đúng như mong đợi.
 
@@ -48,7 +63,7 @@ npx.save('x-file', x)
 ```
 
 <!--
-Then, we read the data from the stored file back into memory.
+We can now read this data from the stored file back into memory.
 -->
 
 Sau đó, ta đọc lại dữ liệu từ các tệp được lưu vào trong bộ nhớ.
@@ -59,7 +74,7 @@ x2
 ```
 
 <!--
-We can also store a list of `ndarray`s and read them back into memory.
+MXNet also allows us to store a list of `ndarray`s and read them back into memory.
 -->
 
 Ta cũng có thể lưu một danh sách các `ndarray` và đọc lại chúng vào trong bộ nhớ.
@@ -74,6 +89,11 @@ x2, y2 = npx.load('x-files')
 <!--
 We can even write and read a dictionary that maps from a string to an `ndarray`. 
 This is convenient, for instance when we want to read or write all the weights in a model.
+-->
+
+<!-- UPDATE
+We can even write and read a dictionary that maps from strings to `ndarray`s. 
+This is convenient when we want to read or write all the weights in a model.
 -->
 
 Ta còn có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
@@ -114,6 +134,19 @@ The deferred initialization (:numref:`sec_deferred_init`) is quite advantageous 
 Let's start with our favorite MLP.
 -->
 
+<!-- UPDATE
+Saving individual weight vectors (or other `ndarray` tensors) is useful but it gets very tedious if we want to save (and later load) an entire model.
+After all, we might have hundreds of parameter groups sprinkled throughout. 
+For this reason Gluon provides built-in functionality to load and save entire networks.
+An important detail to note is that this saves model *parameters* and not the entire model. 
+For example, if we have a 3 layer MLP, we need to specify the *architecture* separately. 
+The reason for this is that the models themselves can contain arbitrary code, hence they cannot be serialized as naturally (and there is a way to do this for compiled models: 
+please refer to the [MXNet documentation](http://www.mxnet.io) for technical details). 
+Thus, in order to reinstate a model, we need to generate the architecture in code and then load the parameters from disk. 
+The deferred initialization (:numref:`sec_deferred_init`) is advantageous here since we can simply define a modelwithout the need to put actual values in place. 
+Let us start with our familiar MLP.
+-->
+
 Khả năng lưu từng vector trọng số đơn lẻ (hoặc các `ndarray` tensor khác) là hữu ích nhưng sẽ mất nhiều thời gian nếu chúng ta muốn lưu (và sau đó nạp lại) toàn bộ mô hình.
 Dù sao, có thể chúng ta sẽ có hàng trăm nhóm tham số rải rác xuyên suốt mô hình.
 Việc viết một đoạn mã thu thập tất cả các nhóm này và khớp chúng với một kiến trúc là tương đối vất vả.
@@ -144,6 +177,7 @@ y = net(x)
 
 <!--
 Next, we store the parameters of the model as a file with the name `mlp.params`.
+Gluon Blocks support a `save_parameters` method that writes all parameters to disk given a string for the file name. 
 -->
 
 Tiếp theo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
@@ -155,6 +189,12 @@ net.save_parameters('mlp.params')
 <!--
 To check whether we are able to recover the model we instantiate a clone of the original MLP model. 
 Unlike the random initialization of model parameters, here we read the parameters stored in the file directly.
+-->
+
+<!-- UPDATE
+To recover the model, we instantiate a clone of the original MLP model.
+Instead of randomly initializing the model parameters, we read the parameters stored in the file directly.
+Conveniently we can load parameters into Blocks via their `load_parameters` method. 
 -->
 
 Để kiểm tra xem có thể khôi phục lại mô hình này không, chúng ta tạo một đối tượng khác của mô hình MLP trên.
