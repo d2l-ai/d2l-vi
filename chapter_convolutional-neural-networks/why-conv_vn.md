@@ -173,9 +173,9 @@ This is 1 million fewer parameters since it no longer depends on the location wi
 -->
 
 Đây là tích chập!
-Ta đang cân nhắc hiệu quả các pixel $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ với các hệ số $V[a, b]$ để đạt được giá trị $h[i, j]$.
-Lưu ý rằng $V[a, b]$ cần hệ số ít hơn nhiều so với $V[i, j, a, b]$. Đối với hình ảnh 1 megapixel, nó có tối đa 1 triệu hệ số.
-Đây là ít hơn 1 triệu thông số vì nó không còn phụ thuộc vào vị trí trong ảnh. Ta đã đạt được tiến bộ đáng kể!
+Ta thực tế là đang cân đo các pixel $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ với các hệ số $V[a, b]$ để đạt được giá trị $h[i, j]$.
+Lưu ý rằng $V[a, b]$ cần ít hệ số hơn nhiều lần so với $V[i, j, a, b]$. Đối với hình ảnh 1 megapixel, nó có tối đa 1 triệu hệ số.
+Đây là 1 triệu thông số ít hơn vì nó không còn phụ thuộc vào vị trí trong ảnh. Ta đã đạt được tiến bộ đáng kể!
 
 <!--
 Now let us invoke the second principle---*locality*.
@@ -184,8 +184,8 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-Bây giờ chúng ta hãy gọi nguyên tắc thứ hai---*tính cục bộ*.
-Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa từ $(i, j)$ để thu thập thông tin liên quan để đánh giá những gì đang diễn ra tại $h[i, j]$.
+Bây giờ chúng ta hãy viện dẫn nguyên tắc thứ hai---*tính cục bộ*.
+Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa khỏi $(i, j)$ để thu thập thông tin liên quan để đánh giá những gì đang diễn ra tại $h[i, j]$.
 Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
 Tương tự, ta có thể viết lại $h[i, j]$ dưới dạng
 
@@ -202,12 +202,12 @@ But of course, if those biases do not agree with reality, e.g., if images turned
 -->
 
 Điều này, một cách ngắn gọn chính là tầng tích chập.
-Khi miền địa phương (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt so với mạng được kết nối đầy đủ có thể cực lớn.
-Mặc dù trước đây, ta có thể đã yêu cầu hàng tỷ thông số để chỉ một tầng duy nhất trong mạng xử lý hình ảnh, nhưng hiện tại ta thường chỉ cần vài trăm.
-Cái giá mà ta phải trả cho việc điều chỉnh quyết liệt này là các tính năng của ta sẽ là bất dịch và tầng của ta chỉ có thể suy xét thông tin địa phương.
-Tất cả học tập phụ thuộc vào áp đặt thiên vị quy nạp.
-Khi sự thiên vị đó phù hợp với thực tế, ta sẽ có được các mô hình mẫu hiệu quả, khái quát tốt cho dữ liệu không nhìn thấy.
-Nhưng tất nhiên, nếu những thành kiến đó không phù hợp với thực tế, ví dụ, nếu hình ảnh hóa ra không phải là bất dịch, các mô hình của ta có thể không khái quát tốt.
+Khi miền cục bộ (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt so với mạng kết nối đầy đủ có thể cực lớn.
+Mặc dù trước đây ta có thể cần tới hàng tỷ thông số để biểu diễn một tầng duy nhất trong mạng xử lý hình ảnh, hiện tại ta thường chỉ cần vài trăm.
+Cái giá mà ta phải trả cho việc điều chỉnh quyết liệt này là các đặc trưng sẽ là bất biến tịnh tiến và các tầng chỉ có thể suy xét tới các thông tin cục bộ.
+Toàn bộ việc học là dựa trên các thiên kiến quy nạp được áp đặt.
+Khi các thiên kiến đó phù hợp với thực tế, ta sẽ có được các mô hình mẫu hiệu quả, khái quát tốt cho dữ liệu không nhìn thấy.
+Nhưng tất nhiên, nếu những thiên kiến đó không phù hợp với thực tế, ví dụ, nếu hình ảnh hóa ra không phải là bất biến tịnh tiến, các mô hình của ta có thể không khái quát tốt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
