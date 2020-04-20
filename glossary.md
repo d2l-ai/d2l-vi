@@ -217,6 +217,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------------------|-------------------------------|----------------------------------------------|
 | machine learning             | học máy                       |                                              |
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| mask (computer vision) | mặt nạ | |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | metric                       | phép đo                       |                                              |
@@ -272,6 +273,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (danh từ)                  | vùng nằm ngang             |                                              |
 | plateau (động từ)                  | nằm ngang                  |                                              |
 | pipeline                           | pipeline                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
+| pixel | điểm ảnh | |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
 | pooling                            | gộp                        | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | positive sample/example            | mẫu dương                  |                                              |
@@ -295,6 +297,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------------|-------------------------------------------|----------------------------------------------|
 | random variable                   | biến ngẫu nhiên                           |                                              |
 | recall                            | recall                                    |                                              |
+| receptive field (CNN) | vùng thụ cảm | |
 | recognition                       | nhận dạng                                 |                                              |
 | recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
 | rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
