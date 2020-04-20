@@ -297,7 +297,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------------|-------------------------------------------|----------------------------------------------|
 | random variable                   | biến ngẫu nhiên                           |                                              |
 | recall                            | recall                                    |                                              |
-| receptive field (CNN) | vùng thụ cảm | |
+| receptive field (CNN) | vùng tiếp nhận | |
 | recognition                       | nhận dạng                                 |                                              |
 | recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
 | rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
