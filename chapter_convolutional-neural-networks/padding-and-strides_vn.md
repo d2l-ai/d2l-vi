@@ -103,7 +103,8 @@ Convolutional neural networks commonly use convolutional kernels with odd height
 Choosing odd kernel sizes has the benefit that we can preserve the spatial dimensionality while padding with the same number of rows on top and bottom, and the same number of columns on left and right.
 -->
 
-*dịch đoạn phía trên*
+Các mạng nơ-ron tích chập thường sử dụng các bộ lọc tích chập với chiều dài và chiều rộng là số lẻ, như $1$, $3$, $5$ hay $7$.
+Việc chọn bộ lọc có kích thước lẻ giúp chúng ta giữ chiều đầu ra bằng chiều đầu vào khi thêm cùng số hàng đệm cho cạnh trên và dưới, thêm cùng số cột đệm cho cạnh trái và phải. 
 
 <!--
 Moreover, this practice of using odd kernels and padding to precisely preserve dimensionality offers a clerical benefit.
@@ -112,14 +113,18 @@ producing an output with the same height and width as the input,
 we know that the output `Y[i, j]` is calculated by cross-correlation of the input and convolution kernel with the window centered on `X[i, j]`.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, việc sử dụng bộ lọc kích thước lẻ cùng đệm để giữ nguyên số chiều mang lại một lợi ích khác.
+Với mảng hai chiều `X` bất kì, khi kích thước bộ lọc là lẻ và số hàng và cột đệm các cạnh bằng nhau, 
+tạo ra đầu ra có cùng chiều dài và chiều rộng với đầu vào,
+mỗi phần tử đầu ra `Y[i, j]` được tính bằng phép tương quan chéo giữa đầu vào và bộ lọc tích chập có tâm nằm tại `X[i, j]`.
 
 <!--
 In the following example, we create a two-dimensional convolutional layer with a height and width of $3$ and apply $1$ pixel of padding on all sides.
 Given an input with a height and width of $8$, we find that the height and width of the output is also $8$.
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ trên, chúng ta tạo một tầng tích chập hai chiều với chiều dài và chiều rộng $3$ và đệm $1$ điểm ảnh vào viền các cạnh.
+Biết chiều dài và chiều rộng đầu vào là $8$, ta tìm được chiều dài và chiều rộng đầu ra cũng là $8$.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -152,7 +157,8 @@ When the height and width of the convolution kernel are different,
 we can make the output and input have the same height and width by setting different padding numbers for height and width.
 -->
 
-*dịch đoạn phía trên*
+Khi chiều dài và chiều rộng bộ lọc tích chập khác nhau,
+chúng ta có thể chỉnh kích thước đệm của chiều dài và chiều rộng khác nhau để đầu vào và đầu ra có cùng kích thước.
 
 ```{.python .input  n=2}
 # Here, we use a convolution kernel with a height of 5 and a width of 3. The
@@ -323,7 +329,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 *
