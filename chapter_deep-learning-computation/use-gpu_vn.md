@@ -411,7 +411,7 @@ MXNet will copy it to the main memory first, resulting in additional transmissio
 Even worse, it is now subject to the dreaded Global Interpreter Lock which makes everything wait for Python to complete.
 -->
 
-Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới kết quả là thêm số bit cho việc truyền dữ liệu. 
+Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới việc tốn thêm thời gian chờ cho việc truyền dữ liệu. 
 Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào bộ khóa phiên dịch toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
