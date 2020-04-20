@@ -113,7 +113,7 @@ Let us see how this translates into mathematics.
 ## Constraining the MLP
 -->
 
-## Giới hạn lại MLP
+## Giới hạn MLP lại
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
@@ -126,19 +126,18 @@ to representing our parameters as four-dimensional weight tensors.
 -->
 
 Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
-Để bắt đầu, ta hãy xem xét một MLP sẽ trông như thế nào với $h \times w$ số lượng hình ảnh làm đầu vào
-(được biểu diễn dưới dạng ma trận trong toán học và dưới dạng mảng 2D trong lập trình),
-và các biểu diễn ẩn được tổ chức tương tự như $h \times w$ ma trận / mảng 2D.
+Để bắt đầu, ta hãy xem xét một MLP sẽ trông như thế nào với ảnh có kích thước $h \times w$ làm đầu vào
+(được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
+và các biểu diễn ẩn cũng được tổ chức tương tự như các ma trận / mảng 2 chiều $h \times w$.
 Đặt $x[i, j]$ và $h[i, j]$ lần lượt đại diện cho vị trí pixel $(i, j)$ trong một hình ảnh và biểu diễn ẩn.
 Do vậy, để mỗi nút ẩn $hw$ nhận đầu vào từ mỗi đầu vào $hw$,
-ta sẽ chuyển từ sử dụng ma trận trọng số (như chúng tôi đã làm trước đây trong MLP)
-thành biểu diễn các tham số của ta như tensor trọng số bốn chiều.
+ta sẽ chuyển từ sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang sử dụng tensor trọng số bốn chiều.
 
 <!--
 We could formally express this dense layer as follows:
 -->
 
-Ta có thể chính thức biểu diễn lớp dày đặc này như sau:
+Ta có thể biểu diễn lớp dày đặc này một cách hình thức như sau:
 
 <!--
 $$h[i, j] = u[i, j] + \sum_{k, l} W[i, j, k, l] \cdot x[k, l] =  u[i, j] +
@@ -156,8 +155,8 @@ The indices $a, b$ run over both positive and negative offsets, covering the ent
 For any given location $(i, j)$ in the hidden layer $h[i, j]$, we compute its value by summing over pixels in $x$, centered around $(i, j)$ and weighted by $V[i, j, a, b]$.
 -->
 
-Phép chuyển từ  $W$ sang $V$ là hoàn toàn nội bộ (ngay lúc này) bởi vì có một sự tương ứng một-một giữa các hệ số trong cả hai tensor.
-Ta đơn giản lập lại chỉ mục các mục con $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
+Việc chuyển từ  $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
+Ta đơn giản lập lại chỉ mục các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
 Nói cách khác, ta đặt $V[i, j, a, b] = W[i, j, i+a, j+b]$.
 Các chỉ số $a, b$ chạy trên cả độ lệch dương và âm, bao trùm toàn bộ hình ảnh.
 Đối với bất kỳ vị trí đã cho $(i, j)$ trong lớp ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các pixel theo $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
@@ -169,8 +168,8 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-Bây giờ ta hãy gọi nguyên tắc đầu tiên mà ta thiết lập ở trên: *dịch bất biến*.
-Điều này ngụ ý rằng một sự thay đổi trong các đầu vào $x$ chỉ đơn giản sẽ dẫn đến một sự thay đổi trong các kích hoạt $h$.
+Bây giờ ta viện chứng nguyên tắc đầu tiên mà ta thiết lập ở trên: *tính bất biến tịnh tiến*.
+Điều này ngụ ý rằng dịch chuyển các đầu vào $x$ chỉ đơn thuần dịch chuyển các kích hoạt $h$ theo tương ứng.
 Điều này chỉ có thể nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
 Kết quả là ta có thể đơn giản hóa định nghĩa cho $h$.
 
