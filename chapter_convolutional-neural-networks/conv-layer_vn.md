@@ -215,14 +215,15 @@ corr2d(X.T, K)
 ## Learning a Kernel
 -->
 
-## *dịch tiêu đề phía trên*
+## Học một Kernel
 
 <!--
 Designing an edge detector by finite differences `[1, -1]` is neat if we know this is precisely what we are looking for.
 However, as we look at larger kernels, and consider successive layers of convolutions, it might be impossible to specify precisely what each filter should be doing manually.
 -->
 
-*dịch đoạn phía trên*
+Thiết kế một máy dò cạnh bằng các khác biệt hữu hạn `[1, -1]` là gọn gàng nếu chúng ta biết đây chính xác là những gì chúng ta đang tìm kiếm.
+Tuy nhiên, khi chúng ta xem xét các hạt nhân lớn hơn và xem xét các lớp kết hợp liên tiếp, có thể không thể chỉ định chính xác những gì mỗi bộ lọc nên làm thủ công.
 
 <!--
 Now let us see whether we can learn the kernel that generated `Y` from `X` by looking at the (input, output) pairs only.
@@ -231,7 +232,10 @@ Next, in each iteration, we will use the squared error to compare `Y` and the ou
 For the sake of simplicity, in this convolutional layer, we will ignore the bias.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy xem liệu chúng ta có thể tìm hiểu kernel đã tạo ra `Y` từ` X` hay không bằng cách chỉ nhìn vào các cặp (đầu vào, đầu ra).
+Đầu tiên chúng ta xây dựng một lớp chập và khởi tạo kernel của nó như là một mảng ngẫu nhiên.
+Tiếp theo, trong mỗi lần lặp, chúng ta sẽ sử dụng lỗi bình phương để so sánh `Y` và đầu ra của lớp chập, sau đó tính toán độ dốc để cập nhật trọng số.
+Để đơn giản, trong lớp chập này, chúng ta sẽ bỏ qua sự thiên vị.
 
 <!--
 We previously constructed the `Conv2D` class.
@@ -240,7 +244,10 @@ Gluon has some trouble finding the gradient.
 Instead, we use the built-in `Conv2D` class provided by Gluon below.
 -->
 
-*dịch đoạn phía trên*
+Trước đây chúng ta đã xây dựng lớp `Conv2D`.
+Tuy nhiên, vì chúng tôi đã sử dụng các bài tập đơn yếu tố,
+Glamon có một số khó khăn khi tìm gradient.
+Thay vào đó, chúng tôi sử dụng lớp `Conv2D` tích hợp được cung cấp bởi Gluon bên dưới.
 
 ```{.python .input  n=83}
 # Construct a convolutional layer with 1 output channel
@@ -271,7 +278,8 @@ As you can see, the error has dropped to a small value after 10 iterations.
 Now we will take a look at the kernel array we learned.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, lỗi đã giảm xuống một giá trị nhỏ sau 10 lần lặp.
+Bây giờ chúng ta sẽ xem xét mảng kernel mà chúng ta đã học.
 
 ```{.python .input}
 conv2d.weight.data().reshape(1, 2)
@@ -281,7 +289,7 @@ conv2d.weight.data().reshape(1, 2)
 Indeed, the learned kernel array is remarkably close to the kernel array `K` we defined earlier.
 -->
 
-*dịch đoạn phía trên*
+Thật vậy, mảng kernel đã học gần với mảng kernel `K` mà chúng ta đã định nghĩa trước đó.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
