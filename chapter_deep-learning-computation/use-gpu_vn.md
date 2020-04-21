@@ -374,7 +374,7 @@ y.copyto(try_gpu(1)) is y
 ### Side Notes
 -->
 
-### *dịch tiêu đề phía trên*
+### Những lưu ý bên lề
 
 <!--
 People use GPUs to do machine learning because they expect them to be fast. 
@@ -383,7 +383,10 @@ So we want you to be 100% certain that you want to do something slow before we l
 If MXNet just did the copy automatically without crashing then you might not realize that you had written some slow code.
 -->
 
-*dịch đoạn phía trên*
+Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng là chúng sẽ nhanh hơn.
+Nhưng việc truyền các biến giữa các ngữ cảnh lại diễn ra chậm. 
+Do đó, chúng tôi mong bạn chắc chắn 100% rằng bạn muốn thực hiện một việc nào đó thật chậm trước khi chúng tôi để bạn thực hiện nó.
+Nếu MXNet chỉ thực hiện việc sao chép tự động mà không gặp sự cố thì có thể bạn sẽ không nhận ra được mình đã có những đoạn mã chưa tối ưu đến nhường nào.
 
 <!--
 Also, transferring data between devices (CPU, GPUs, other machines) is something that is *much slower* than computation. 
@@ -394,7 +397,13 @@ This is the case since such operations can block if one device has to wait for t
 It is a bit like ordering your coffee in a queue rather than pre-ordering it by phone and finding out that it is ready when you are.
 -->
 
-*dịch đoạn phía trên*
+Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) là việc mà nó xử lý *chậm hơn nhiều* so với thực hiện tính toán.
+Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chúng ta phải chờ cho dữ liệu được gửi đi (hoặc được nhận về) trước khi chúng ta có thể tiến hành nhiều tác vụ xử lý tính toán hơn.
+Đây là lý do tại sao các hoạt động sao chép nên được dành sự lưu tâm lớn. 
+Quy tắc nằm lòng là nhiều xử lý tính toán nhỏ thì tệ hơn nhiều so với một xử lý tính toán lớn.
+Hơn nữa, xử lý nhiều phép tính toán cùng một thời điểm thì tốt hơn nhiều so với nhiều xử lý tính toán đơn lẻ nằm rải rác trong chương trình (trừ khi là bạn hiểu rõ mình đang làm gì).
+Lý do là ở tình huống này những hoạt động như vậy có thể gây tắc nghẽn nếu một thiết bị phải chờ một thiết bị khác trước khi nó có thể làm điều gì đó khác.
+Việc này hơi giống việc bạn phải xếp hàng mua cà phê thay vì đặt trước qua điện thoại và biết được khi nào nó đã sẵn sàng để đến lấy. 
 
 <!--
 Last, when we print `ndarray`s or convert `ndarray`s to the NumPy format, if the data is not in main memory, 
@@ -402,7 +411,8 @@ MXNet will copy it to the main memory first, resulting in additional transmissio
 Even worse, it is now subject to the dreaded Global Interpreter Lock which makes everything wait for Python to complete.
 -->
 
-*dịch đoạn phía trên*
+Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới việc tốn thêm thời gian chờ cho việc truyền dữ liệu. 
+Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào bộ khóa phiên dịch toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -551,10 +561,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 6 -->
-*
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 7 -->
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-* Phạm Minh Đức 
+* Phạm Minh Đức
