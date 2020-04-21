@@ -259,7 +259,7 @@ We expect that wherever the "waldoness" is highest, we will also find a peak in 
 -->
 
 Ta hãy xem điều này trông ra sao nếu ta muốn xây dựng một máy dò Waldo cải tiến.
-Tầng chập chọn các cửa sổ có kích thước cho sẵn và cân nhắc cường độ theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
+Tầng tích chập chọn các cửa sổ có kích thước cho sẵn và đánh trọng số cường độ dựa theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
 Ta hy vọng rằng ở đâu có "sự Waldo" cao nhất, ta cũng sẽ tìm thấy một cao điểm tại đó trong các tầng kích hoạt ẩn.
 
 <!--
