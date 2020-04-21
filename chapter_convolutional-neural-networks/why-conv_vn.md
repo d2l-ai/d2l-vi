@@ -128,10 +128,10 @@ to representing our parameters as four-dimensional weight tensors.
 Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
 Để bắt đầu, ta hãy xem xét một MLP sẽ trông như thế nào với ảnh có kích thước $h \times w$ làm đầu vào
 (được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
-và các biểu diễn ẩn cũng được tổ chức tương tự như các ma trận / mảng 2 chiều $h \times w$.
-Đặt $x[i, j]$ và $h[i, j]$ lần lượt đại diện cho vị trí pixel $(i, j)$ trong một hình ảnh và biểu diễn ẩn.
+và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
+Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
 Do vậy, để mỗi nút ẩn $hw$ nhận đầu vào từ mỗi đầu vào $hw$,
-ta sẽ chuyển từ sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang sử dụng tensor trọng số bốn chiều.
+ta sẽ chuyển từ việc sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang việc sử dụng tensor trọng số bốn chiều.
 
 <!--
 We could formally express this dense layer as follows:
@@ -155,11 +155,11 @@ The indices $a, b$ run over both positive and negative offsets, covering the ent
 For any given location $(i, j)$ in the hidden layer $h[i, j]$, we compute its value by summing over pixels in $x$, centered around $(i, j)$ and weighted by $V[i, j, a, b]$.
 -->
 
-Việc chuyển từ  $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
-Ta đơn giản lập lại chỉ mục các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
+Việc chuyển từ $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
+Ta chỉ đơn thuần đánh lại các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
 Nói cách khác, ta đặt $V[i, j, a, b] = W[i, j, i+a, j+b]$.
 Các chỉ số $a, b$ chạy trên cả độ lệch dương và âm, bao trùm toàn bộ hình ảnh.
-Đối với bất kỳ vị trí đã cho $(i, j)$ trong lớp ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các pixel theo $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
+Đối với một vị trí $(i, j)$ bất kỳ trong tầng ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các điểm ảnh của $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
 
 <!--
 Now let us invoke the first principle we established above: *translation invariance*.
@@ -168,10 +168,10 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-Bây giờ ta viện chứng nguyên tắc đầu tiên mà ta thiết lập ở trên: *tính bất biến tịnh tiến*.
-Điều này ngụ ý rằng dịch chuyển các đầu vào $x$ chỉ đơn thuần dịch chuyển các kích hoạt $h$ theo tương ứng.
-Điều này chỉ có thể nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
-Kết quả là ta có thể đơn giản hóa định nghĩa cho $h$.
+Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta thiết lập ở trên: *tính bất biến tịnh tiến*.
+Điều này ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
+Điều này chỉ khả thi nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
+Kết quả là ta có thể đơn giản hóa định nghĩa của $h$.
 
 $$h[i, j] = u + \sum_{a, b} V[a, b] \cdot x[i+a, j+b].$$
 
