@@ -309,10 +309,10 @@ We also need to decide how to compute things efficiently, how to combine multipl
 All of this will be addressed in the remainder of the chapter.
 -->
 
-Đây là định nghĩa về một tầng mạng nơ-ron tích chập.
-Vẫn còn nhiều hoạt động mà ta cần phải giải quyết.
+Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
+Vẫn còn nhiều phép tính mà ta cần phải giải quyết.
 Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các kích hoạt hướng tới một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
-Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp nhiều tầng và liệu có nhiều tầng hẹp hay một vài tầng rộng hay không.
+Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên có nhiều tầng hẹp hay chỉ một vài tầng rộng.
 Tất cả điều này sẽ được giải quyết trong phần còn lại của chương.
 
 
@@ -328,9 +328,9 @@ Tất cả điều này sẽ được giải quyết trong phần còn lại c�
 * Channels on input and output allows for meaningful feature analysis.
 -->
 
-* Tính bất biến dịch trong hình ảnh ngụ ý rằng tất cả các bản vá của hình ảnh sẽ được xử lý theo cùng một cách.
+* Tính bất biến tịnh tiến của hình ảnh ngụ ý rằng tất cả các mảng nhỏ trong một tấm ảnh đều được xử lý theo cùng một cách.
 * Tính cục bộ có nghĩa là chỉ một vùng lân cận nhỏ các pixel sẽ được sử dụng cho việc tính toán.
-* Các kênh trên đầu vào và đầu ra xem xét cho việc phân tích đặc trưng có ý nghĩa.
+* Các kênh trên đầu vào và đầu ra cho phép phân tích các đặc trưng một cách có ý nghĩa.
 
 <!--
 ## Exercises
@@ -348,10 +348,10 @@ Tất cả điều này sẽ được giải quyết trong phần còn lại c�
 -->
 
 1. Giả sử rằng kích thước của mặt nạ tích chập là $\Delta = 0$. Chứng tỏ rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một bộ kênh.
-2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Liệu việc lợn có thể bay hợp lý hay không?
+2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
 3. Điều gì xảy ra ở ranh giới của một hình ảnh?
 4. Tự suy ra một tầng tích chập tương tự cho âm thanh.
-5. Điều gì sai khi bạn áp dụng các suy luận trên vào văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
+5. Có gì là không đúng khi bạn áp dụng các suy luận trên vào văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
 6. Chứng minh rằng $f \circledast g = g \circledast f$.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
