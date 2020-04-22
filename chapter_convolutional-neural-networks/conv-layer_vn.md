@@ -176,8 +176,7 @@ When we perform the cross-correlation operation with the input, if the horizonta
 -->
 
 Sau đó, ta tạo một bộ lọc `K` có chiều dài 1 và chiều rộng 2.
-Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0. 
-Còn lại, đầu ra sẽ khác không.
+Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0, nếu không đầu ra sẽ khác không.
 
 ```{.python .input  n=67}
 K = np.array([[1, -1]])
