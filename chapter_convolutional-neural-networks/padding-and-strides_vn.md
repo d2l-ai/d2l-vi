@@ -65,7 +65,7 @@ Vì chúng ta thường sử dụng các bộ lọc nhỏ với bất kỳ một
 Một giải pháp trước mắt đối với vấn đề này là phải chèn thêm các điểm ảnh của bộ lọc xung quanh đường biên trên bức ảnh đầu vào của chúng ta, nhờ đó làm tăng kích thước sử dụng của bức ảnh này. 
 Thông thường, chúng ta thiết lập các giá trị của các điểm ảnh thêm vào là $0$. 
 Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tăng kích thước của nó tới $5 \times 7$.
-Đầu ra tương ứng sẽ tăng lên một ma trận $4 \times 6$.
+Đầu ra tương ứng sẽ tăng lên thành một ma trận $4 \times 6$.
 
 <!--
 ![Two-dimensional cross-correlation with padding. The shaded portions are the input and kernel array elements used by the first output element: $0\times0+0\times1+0\times2+0\times3=0$. ](../img/conv-pad.svg)
