@@ -208,7 +208,7 @@ Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có
 ![Cross-correlation with strides of 3 and 2 for height and width respectively. The shaded portions are the output element and the input and core array elements used in its computation: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 -->
 
-![Phép tương quan chéo với sải bước 3 và 2 tương ứng theo chiều dọc và chiều ngang. Phần tô đậm là các phần tử đầu ra cùng các phần tử đầu vào được sử dụng để tính các đầu ra này: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
+![Phép tương quan chéo với sải bước 3 và 2 tương ứng theo chiều dài và chiều rộng. Phần tô đậm là các phần tử đầu ra cùng các phần tử đầu vào được sử dụng để tính các đầu ra này: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 :label:`img_conv_stride`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
