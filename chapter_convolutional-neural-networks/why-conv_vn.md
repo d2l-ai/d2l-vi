@@ -262,7 +262,7 @@ We will come back to this in the following section.
 ## Waldo Revisited
 -->
 
-## *dịch tiêu đề phía trên*
+## Xem lại Waldo
 
 <!--
 Let us see what this looks like if we want to build an improved Waldo detector.
@@ -270,13 +270,15 @@ The convolutional layer picks windows of a given size and weighs intensities acc
 We expect that wherever the "waldoness" is highest, we will also find a peak in the hidden layer activations.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem điều này trông ra sao nếu ta muốn xây dựng một máy dò Waldo cải tiến.
+Tầng tích chập chọn các cửa sổ có kích thước cho sẵn và đánh trọng số cường độ dựa theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
+Ta hy vọng rằng ở đâu có "tính Waldo" cao nhất, các tầng kích hoạt ẩn cũng sẽ có cao điểm ở đó.
 
 <!--
 ![Find Waldo.](../img/waldo-mask.jpg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/waldo-mask.jpg)
+![Tìm Waldo.](../img/waldo-mask.jpg)
 :width:`400px`
 :label:`fig_waldo_mask`
 
@@ -286,7 +288,9 @@ In reality, images are quite two-dimensional objects but rather as a $3^{\mathrm
 Only two of these axes concern spatial relationships, while the $3^{\mathrm{rd}}$ can be regarded as assigning a multidimensional representation *to each pixel location*.
 -->
 
-*dịch đoạn phía trên*
+Chỉ có một vấn đề với cách tiếp cận này là cho đến nay ta đã vô tư bỏ qua việc hình ảnh bao gồm 3 kênh màu: đỏ, xanh lá cây và xanh dương.
+Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều nhưng thay vào đó là một tensor bậc ba, ví dụ, với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
+Chỉ có hai trong số các trục này liên quan về mặt không gian, trong khi trục thứ ba có thể được coi là để gán biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
 
 <!--
 We thus index $\mathbf{x}$ as $x[i, j, k]$.
@@ -294,7 +298,9 @@ The convolutional mask has to adapt accordingly.
 Instead of $V[a, b]$ we now have $V[a, b, c]$.
 -->
 
-*dịch đoạn phía trên*
+Do đó, ta phải truy cập $\mathbf{x}$ dưới dạng $x[i, j, k]$.
+Mặt nạ tích chập phải thích ứng cho phù hợp.
+Thay vì $V[a, b]$ bây giờ ta có $V[a, b, c]$.
 
 <!--
 Moreover, just as our input consists of a $3^{\mathrm{rd}}$ order tensor it turns out to be a good idea to similarly formulate our hidden representations as $3^{\mathrm{rd}}$ order tensors.
@@ -305,7 +311,12 @@ Intuitively you might imagine that at lower layers, some channels specialize to 
 We can take care of this by adding a fourth coordinate to $V$ via $V[a, b, c, d]$. Putting all together we have:
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, cũng giống như đầu vào là các tensor bậc ba, xây dựng các biểu diễn ẩn như là các tensor bậc ba tương ứng hoá ra lại là một ý tưởng hay.
+Nói cách khác, thay vì chỉ có một biểu diễn 1D tương ứng với từng vị trí không gian, ta muốn có một biểu diễn ẩn đa chiều tương ứng với từng vị trí không gian.
+Ta có thể coi các biểu diễn ẩn như được cấu thành từ các lưới 2D xếp chồng lên nhau.
+Đôi khi chúng được gọi là các *kênh* (*channel*) hoặc các *ánh xạ đặc trưng* (*feature maps*).
+Theo trực giác bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh chuyên nhận biết các cạnh.
+Ta có thể xử lý vấn đề này bằng cách thêm tọa độ thứ tư vào $V$ thông qua $V[a, b, c, d]$. Đặt tất cả lại với nhau ta có:
 
 $$h[i, j, k] = \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} \sum_c V[a, b, c, k] \cdot x[i+a, j+b, c].$$
 
@@ -397,7 +408,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Trần Yến Thy
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
 *
