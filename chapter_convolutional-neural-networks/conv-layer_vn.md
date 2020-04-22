@@ -175,7 +175,7 @@ Next, we construct a kernel `K` with a height of 1 and width of 2.
 When we perform the cross-correlation operation with the input, if the horizontally adjacent elements are the same, the output is 0. Otherwise, the output is non-zero.
 -->
 
-Sau đó, ta tạo một bộ lọc `K` có chiều dài 1 và chiều rộng 2.
+Sau đó, ta tạo một bộ lọc `K` có chiều cao bằng 1 và chiều rộng bằng 2.
 Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0, nếu không đầu ra sẽ khác không.
 
 ```{.python .input  n=67}
