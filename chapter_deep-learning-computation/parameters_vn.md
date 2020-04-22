@@ -22,8 +22,8 @@ to save our model to disk so that it may be exectuted in other software,or for e
 -->
 
 Một khi ta đã chọn được kiến trúc mạng và các giá trị siêu tham số, ta sẽ bắt đầu với vòng lặp huấn luyện với mục tiêu là tìm các giá trị tham số để tối thiểu hóa hàm mục tiêu.
-Sau khi huấn luyện xong, ta sẽ cần các tham số đó để đưa ra dự đoán trong tương lại.
-Hơn nữa, thi thoảng ta sẽ muốn trích xuất tham số để sử dụng lại chúng trong một hoàn cảnh khác, có thể lưu trữ mô hình để thực thi trong một phần mềm khác hoặc để có được hiểu biết khoa học bằng việc phân tích mô hình.
+Sau khi huấn luyện xong, ta sẽ cần các tham số đó để đưa ra dự đoán trong tương lai.
+Hơn nữa, thi thoảng ta sẽ muốn trích xuất tham số để sử dụng lại trong một hoàn cảnh khác, có thể lưu trữ mô hình để thực thi trong một phần mềm khác hoặc để rút ra hiểu biết khoa học bằng việc phân tích mô hình.
 
 <!--
 Most of the time, we will be able to ignore the nitty-gritty details of how parameters are declared and manipulated, relying on Gluon to do the heavy lifting.
@@ -94,7 +94,7 @@ We can inspect the parameters of the `net` defined above.
 -->
 
 Hãy bắt đầu với việc truy cập tham số của những mô hình mà bạn đã biết.
-Khi một mô hình được định nghĩa bằng lớp Tuần tự (*Sequential*), ta có thể truy cập bất kỳ tầng nào bằng việc sử dụng chỉ số, như thể nó là một danh sách.
+Khi một mô hình được định nghĩa bằng lớp Tuần tự (*Sequential*), ta có thể truy cập bất kỳ tầng nào bằng chỉ số, như thể nó là một danh sách.
 Thuộc tính `params` của mỗi tầng chứa tham số của chúng.
 Ta có thể quan sát các tham số của mạng `net` định nghĩa ở trên.
 
@@ -176,7 +176,7 @@ We can also access each parameter by name, e.g., `dense0_weight` as follows.
 Under the hood this is possible because each layer contains a parameter dictionary. 
 -->
 
-Tham số là các đối tượng khá phức tạp, bởi chúng chứa dữ liệu, gradient và một vài thông tin khác.
+Tham số là các đối tượng khá phức tạp bởi chúng chứa dữ liệu, gradient và một vài thông tin khác.
 Đó là lí do tại sao ta phải yêu cầu dữ liệu một cách rõ ràng.
 Lưu ý rằng vector hệ số điều chỉnh chứa các giá trị không vì ta chưa hề cập nhật mô hình kể từ khi nó được khởi tạo.
 Ta cũng có thể truy cập các tham số theo tên của chúng, chẳng hạn như `dense0_weight` ở dưới.
