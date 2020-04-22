@@ -172,7 +172,10 @@ Note that $V[a, b]$ needs many fewer coefficients than $V[i, j, a, b]$. For a 1 
 This is 1 million fewer parameters since it no longer depends on the location within the image. We have made significant progress!
 -->
 
-*dịch đoạn phía trên*
+Đây là tích chập!
+Thực chất, ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ với các hệ số $V[a, b]$ để thu được giá trị $h[i, j]$.
+Lưu ý rằng $V[a, b]$ cần ít hệ số hơn hẳn so với $V[i, j, a, b]$. Đối với hình ảnh 1 megapixel, nó có tối đa 1 triệu hệ số.
+Con số này đã giảm đi 1 triệu vì nó không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
 
 <!--
 Now let us invoke the second principle---*locality*.
@@ -181,7 +184,10 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-*dịch đoạn phía trên*
+Bây giờ hãy viện dẫn nguyên tắc thứ hai---*tính cục bộ*.
+Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa khỏi $(i, j)$ để thu thập thông tin liên quan cho việc đánh giá những gì đang diễn ra tại $h[i, j]$.
+Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
+Tương tự, ta có thể viết lại $h[i, j]$ như sau
 
 $$h[i, j] = u + \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -195,7 +201,13 @@ When that bias agrees with reality, we get sample-efficient models that generali
 But of course, if those biases do not agree with reality, e.g., if images turned out not to be translation invariant, our models may not generalize well.
 -->
 
-*dịch đoạn phía trên*
+Nói một cách ngắn gọn, đây chính là tầng tích chập.
+Khi miền cục bộ (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt mà nó mang lại có thể rất lớn so với mạng kết nối đầy đủ.
+Mặc dù trước đây ta có thể cần tới hàng tỷ tham số để biểu diễn một tầng duy nhất trong mạng xử lý ảnh, hiện giờ ta thường chỉ cần vài trăm.
+Cái giá mà ta phải trả cho sự thay đổi lớn này là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể suy xét các thông tin cục bộ.
+Toàn bộ quá trình học sẽ dựa trên việc áp đặt các thiên kiến quy nạp.
+Khi các thiên kiến đó phù hợp với thực tế, ta sẽ có được các mô hình hoạt động hiệu quả với ít mẫu và khái quát tốt cho dữ liệu chưa gặp.
+Nhưng tất nhiên, nếu những thiên kiến đó không phù hợp với thực tế, ví dụ như hóa ra các ảnh không có tính bất biến tịnh tiến, các mô hình của ta có thể sẽ không khái quát tốt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -378,7 +390,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
 *
