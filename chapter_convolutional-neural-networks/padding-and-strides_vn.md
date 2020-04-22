@@ -60,7 +60,7 @@ In :numref:`img_conv_pad`, we pad a $3 \times 5$ input, increasing its size to $
 The corresponding output then increases to a $4 \times 6$ matrix.
 -->
 
-Như mô tả ở trên, một vấn đề khó chịu khi áp dụng các lớp chập là nó đưa chúng ta tới việc mất một số điểm trên biên của ảnh. 
+Như mô tả ở trên, một vấn đề rắc rối khi áp dụng các tầng tích chập là việc chúng ta có thể mất một số điểm trên biên của ảnh. 
 Vì chúng ta thường sử dụng các bộ lọc nhỏ, với bất kỳ phép tích chập nào, ta có thể chỉ mất một ít điểm ảnh, tuy nhiên sự mất mát này có thể tích lũy dần khi ta thực hiện qua nhiều tầng tích chập liên tiếp.
 Một giải pháp đơn giản cho vấn đề này là chèn thêm các điểm ảnh xung quanh đường biên trên bức ảnh đầu vào, nhờ đó làm tăng kích thước sử dụng của bức ảnh. 
 Thông thường, chúng ta thiết lập các giá trị của các điểm ảnh thêm vào là $0$. 
