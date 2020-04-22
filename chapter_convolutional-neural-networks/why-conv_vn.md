@@ -130,7 +130,7 @@ Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau t�
 (được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
 và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
 Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
-Do vậy, để mỗi nút ẩn $hw$ nhận đầu vào từ mỗi đầu vào $hw$,
+Do vậy, để mỗi nút trong $hw$ nút ẩn nhận đầu vào từ $hw$ đầu vào,
 ta sẽ chuyển từ việc sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang việc sử dụng tensor trọng số bốn chiều.
 
 <!--
@@ -168,8 +168,8 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta thiết lập ở trên: *tính bất biến tịnh tiến*.
-Điều này ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
+Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
+Ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
 Điều này chỉ khả thi nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
 Kết quả là ta có thể đơn giản hóa định nghĩa của $h$.
 
