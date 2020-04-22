@@ -160,7 +160,7 @@ First, we construct an 'image' of $6\times 8$ pixels.
 The middle four columns are black (0) and the rest are white (1).
 -->
 
-Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một đối tượng trong một bức ảnh bằng cách xác định vị trí các điểm ảnh (*pixel*) thay đổi.
+Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một đối tượng trong một bức ảnh bằng cách xác định vị trí các điểm ảnh thay đổi.
 Đầu tiên, ta dựng một 'bức ảnh' có kích thước $6\times 8$ điểm ảnh.
 Giá trị của bốn cột ở giữa là đen (0) và còn lại là trắng (1).
 
