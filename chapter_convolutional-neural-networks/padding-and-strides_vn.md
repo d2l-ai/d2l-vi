@@ -72,7 +72,7 @@ Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tă
 -->
 
 ![Tương quan chéo hai chiều khi thực hiện đệm.
-Phần tô đậm là đầu vào và các phần tử mảng bộ lọc đã được sử dụng cho phần từ đầu ra thứ nhất: $0\times0+0\times1+0\times2+0\times3=0$.](../img/conv-pad.svg)
+Phần tô đậm là các phần tử của mảng đầu vào và bộ lọc được sử dụng để tính phần tử đầu ra thứ nhất: $0\times0+0\times1+0\times2+0\times3=0$.](../img/conv-pad.svg)
 :label:`img_conv_pad`
 
 <!--
