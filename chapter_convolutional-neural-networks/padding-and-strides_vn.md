@@ -99,7 +99,7 @@ We will pad both sides of the width in the same way.
 -->
 
 Trong nhiều trường hợp, ta sẽ mong muốn thiết lập $p_h=k_h-1$ và $p_w=w_k-1$ để đưa kích thước đầu ra và đầu vào bằng nhau.
-Điều này sẽ làm việc dự đoán kích thước đầu ra của mỗi lớp dễ dãng hơn khi ta xây dựng mạng.
+Điều này sẽ làm việc dự đoán kích thước đầu ra của mỗi tầng dễ dàng hơn khi ta xây dựng mạng.
 Giả sử $k_h$ ở đây là chẵn, ta sẽ chèn $p_h/2$ hàng ở cả hai phía ở chiều dọc.
 Nếu $k_h$ là lẻ, một khả năng là phải chèn $\lceil p_h/2\rceil$ hàng phía trên của đầu vào và $\lfloor p_h/2\rfloor$ hàng cho phía dưới.
 Chúng ta cũng thực hiện chèn cả hai bên của chiều ngang theo cùng cách như vậy.
