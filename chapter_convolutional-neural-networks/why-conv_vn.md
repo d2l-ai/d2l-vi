@@ -312,7 +312,7 @@ All of this will be addressed in the remainder of the chapter.
 Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
 Vẫn còn nhiều phép toán mà ta cần phải giải quyết.
 Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
-Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên sử dụng nhiều tầng hẹp hay chỉ một vài tầng rộng.
+Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
 Tất cả những điều này sẽ được giải quyết trong phần còn lại của chương.
 
 
