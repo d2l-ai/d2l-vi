@@ -162,7 +162,7 @@ The middle four columns are black (0) and the rest are white (1).
 
 Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một đối tượng trong một bức ảnh bằng cách xác định vị trí các điểm ảnh thay đổi.
 Đầu tiên, ta dựng một 'bức ảnh' có kích thước là $6\times 8$ điểm ảnh.
-Giá trị của bốn cột ở giữa là đen (0) và còn lại là trắng (1).
+Bốn cột ở giữa có màu đen (giá trị 0) và các cột còn lại có màu trắng (giá trị 1).
 
 ```{.python .input  n=66}
 X = np.ones((6, 8))
