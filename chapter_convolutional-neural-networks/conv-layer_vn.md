@@ -152,7 +152,7 @@ class Conv2D(nn.Block):
 ## Object Edge Detection in Images
 -->
 
-## Phát hiện biên của đối tượng trong ảnh
+## Phát hiện biên của vật thể trong ảnh
 
 <!--
 Let us look at a simple application of a convolutional layer: detecting the edge of an object in an image by finding the location of the pixel change.
