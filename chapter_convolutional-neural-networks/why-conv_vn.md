@@ -126,7 +126,7 @@ to representing our parameters as four-dimensional weight tensors.
 -->
 
 Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
-Để bắt đầu, ta hãy xem xét một MLP sẽ trông như thế nào với ảnh có kích thước $h \times w$ làm đầu vào
+Để bắt đầu, hãy nghĩ xem một MLP sẽ trông như thế nào với đầu vào là ảnh có kích thước $h \times w$ 
 (được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
 và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
 Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
