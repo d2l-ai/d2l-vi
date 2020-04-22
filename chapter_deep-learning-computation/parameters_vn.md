@@ -21,10 +21,9 @@ Additionally, we will sometimes wish to extract the parameters either to reuse t
 to save our model to disk so that it may be exectuted in other software,or for examination in the hopes of gaining scientific understanding.
 -->
 
-Mục tiêu cuối cùng của việc huấn luyện mạng học sâu là tìm các giá trị tham số tốt cho một kiến trúc có sẵn.
-Thông thường, lớp `nn.Sequential` là một công cụ tối ưu cho việc huấn luyện.
-Tuy nhiên, rất ít mô hình có cấu trúc hoàn toàn theo tiêu chuẩn, các nhà khoa học luôn muốn xây dựng các kiến trúc mạng mới lạ.
-Phần này trình bày cách thức thao tác với tham số. Cụ thể, các khía cạnh sau sẽ được đề cập:
+Một khi ta đã chọn được kiến trúc mạng và các giá trị siêu tham số, ta sẽ bắt đầu với vòng lặp huấn luyện với mục tiêu là tìm các giá trị tham số để tối thiểu hóa hàm mục tiêu.
+Sau khi huấn luyện xong, ta sẽ cần các tham số đó để đưa ra dự đoán trong tương lại.
+Hơn nữa, thi thoảng ta sẽ muốn trích xuất tham số để sử dụng lại chúng trong một hoàn cảnh khác, có thể lưu trữ mô hình để thực thi trong một phần mềm khác hoặc để có được hiểu biết khoa học bằng việc phân tích mô hình.
 
 <!--
 Most of the time, we will be able to ignore the nitty-gritty details of how parameters are declared and manipulated, relying on Gluon to do the heavy lifting.
@@ -32,7 +31,9 @@ However, when we move away from stacked architectures with standard layers, we w
 In this section, we cover the following:
 -->
 
-*dịch nội dung trên*
+Thông thường, ta có thể bỏ qua những chi tiết chuyên sâu về việc khai báo và xử lý tham số bởi Gluon sẽ đảm nhiệm công việc nặng nhọc này.
+Tuy nhiên, khi ta bắt đầu tiến xa hơn những kiến trúc chỉ gồm các tầng cơ bản được xếp chồng lên nhau, đôi khi ta sẽ phải tự đi sâu vào việc khai báo và xử lý tham số.
+Trong mục này, chúng tôi sẽ đề cập những việc sau:
 
 <!--
 * Accessing parameters for debugging, diagnostics, to visualize them or to save them is the first step to understanding how to work with custom models.
@@ -46,9 +47,9 @@ In this section, we cover the following:
 * Sharing parameters across different model components.
 -->
 
-* Truy cập các tham số cho việc tìm lỗi, gỡ lỗi, để lưu lại hoặc biểu diễn trực quan là bước đầu tiên để hiểu cách làm việc với các mô hình được tuỳ chỉnh.
-* Thứ hai là cách gán giá trị cụ thể cho chúng, ví dụ như lúc khởi tạo. Cấu trúc của các bộ khởi tạo tham số cũng sẽ được thảo luận thêm.
-* Cuối cùng, chúng ta sẽ trình bày cách áp dụng những kiến thức này để xây dựng các mạng có chung một vài tham số.
+* Truy cập các tham số để gỡ lỗi, chẩn đoán mô hình và biểu diễn trực quan.
+* Khởi tạo tham số.
+* Chia sẻ tham số giữa các thành phần khác nhau của mô hình.
 
 <!--
 As always, we start from our trusty Multilayer Perceptron with a hidden layer. This will serve as our choice for demonstrating the various features.
@@ -58,7 +59,7 @@ As always, we start from our trusty Multilayer Perceptron with a hidden layer. T
 We start by focusing on an MLP with one hidden layer.
 -->
 
-Như thường lệ, chúng ta bắt đầu từ mạng Perceptron đa tầng với một tầng ẩn, để minh hoạ số lượng lớn các đặc trưng.
+Chúng ta sẽ bắt đầu từ mạng Perceptron đa tầng với một tầng ẩn.
 
 ```{.python .input  n=1}
 from mxnet import init, np, npx
@@ -92,8 +93,10 @@ Each layer's parameters are conveniently located in its `params` attribute.
 We can inspect the parameters of the `net` defined above.
 -->
 
-Trong trường hợp lớp Tuần tự (*Sequential*) chúng ta có thể dễ dàng truy cập các tham số bằng chỉ số của các tầng trong mạng.
-Biến `params` khi đó chứa dữ liệu các tham số. Ví dụ sau biểu diễn cách truy cập các tham số của tầng thứ nhất.
+Hãy bắt đầu với việc truy cập tham số của những mô hình mà bạn đã biết.
+Khi một mô hình được định nghĩa bằng lớp Tuần tự (*Sequential*), ta có thể truy cập bất kỳ tầng nào bằng việc sử dụng chỉ số, như thể nó là một danh sách.
+Thuộc tính `params` của mỗi tầng chứa tham số của chúng.
+Ta có thể quan sát các tham số của mạng `net` định nghĩa ở trên.
 
 
 ```{.python .input  n=2}
@@ -116,11 +119,10 @@ Both are stored as single precision floats.
 Note that the names of the parameters are allow us to *uniquely* identifyeach layer's parameters, even in a network contains hundreds of layers.
 -->
 
-Kết quả từ đoạn mã này cho ta một vài thông tin.
-Đầu tiên, tầng này có hai tập tham số: `dense0_weight` và `dense0_bias` như kỳ vọng.
-Chúng đều ở dạng số thực dấu phẩy động độ chính xác đơn và có kích thước cần thiết ở tầng đầu tiên như kỳ vọng, với số chiều của đầu vào là 20 và số chiều của đầu ra là 256.
-Tên của các tham số rất hữu ích vì chúng cho phép xác định các tham số *một cách độc nhất* ngay cả trong mạng với hàng trăm tầng với cấu trúc phức tạp.
-Tầng thứ hai cũng được cấu trúc theo cách như vậy.
+Kết quả của đoạn mã này cho ta một vài thông tin quan trọng.
+Đầu tiên, mỗi tầng kết nối đầy đủ đều có hai tập tham số, ví dụ như `dense0_weight` và `dense0_bias` tương ứng với trọng số và hệ số điều chỉnh của tầng đó.
+Chúng đều được lưu trữ ở dạng số thực dấu phẩy động độ chính xác đơn.
+Lưu ý rằng tên của các tham số cho phép ta xác định tham số của từng tầng *một cách độc nhất*, kể cả khi mạng nơ-ron chứa hàng trăm tầng.
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -146,9 +148,11 @@ To begin, given a layer, we can access one of its parameters via the `bias` or `
 The following code extracts the bias from the second neural network layer.
 -->
 
-Tuy nhiên, để làm việc với các tham số, ta cần truy cập chúng.
-Có một vài cách để làm việc này, từ đơn giản đến tổng quát.
-Hãy xem qua một số ví dụ.
+Lưu ý rằng mỗi tham số được biểu diễn bằng một thực thể của lớp `Parameter`.
+Để làm việc với các tham số, trước hết ta phải truy cập được các giá trị số của chúng.
+Có một vài cách để làm việc này, một số cách đơn giản hơn trong khi các cách khác lại tổng quát hơn.
+Để bắt đầu, ta có thể truy cập tham số của một tầng thông qua thuộc tính `bias` hoặc `weight` rồi sau đó truy cập giá trị số của chúng thông qua phương thức `data()`.
+Đoạn mã sau trích xuất hệ số điều chỉnh của tầng thứ hai trong mạng nơ-ron.
 
 ```{.python .input  n=3}
 print(net[1].bias)
@@ -172,12 +176,11 @@ We can also access each parameter by name, e.g., `dense0_weight` as follows.
 Under the hood this is possible because each layer contains a parameter dictionary. 
 -->
 
-Ví dụ đầu tiên trả về hệ số điều chỉnh của tầng thứ hai.
-Vì đây là một đối tượng chứa dữ liệu, các gradient, và các thông tin bổ sung khác, ta cần phải truy vấn dữ liệu một cách tường minh.
-Chú ý rằng các hệ số điều chỉnh đều bằng 0 vì ta đã khởi tạo chúng bằng như thế.
-Ta cũng có thể truy xuất các tham số theo tên của chúng, chẳng hạn như `dense0_weight`.
-Điều này có thể thực hiện được vì mỗi tầng đều có một bộ từ điển tham số kèm theo cho phép ta truy xuất một cách trực tiếp.
-Cả hai phương pháp hoàn toàn tương đương với nhau nhưng phương pháp đầu tiên sẽ giúp mã nguồn dễ đọc hơn.
+Tham số là các đối tượng khá phức tạp, bởi chúng chứa dữ liệu, gradient và một vài thông tin khác.
+Đó là lí do tại sao ta phải yêu cầu dữ liệu một cách rõ ràng.
+Lưu ý rằng vector hệ số điều chỉnh chứa các giá trị không vì ta chưa hề cập nhật mô hình kể từ khi nó được khởi tạo.
+Ta cũng có thể truy cập các tham số theo tên của chúng, chẳng hạn như `dense0_weight` ở dưới.
+Điều này khả thi vì thực ra mỗi tầng đều chứa một từ điển tham số.
 
 ```{.python .input  n=4}
 print(net[0].params['dense0_weight'])
@@ -200,11 +203,10 @@ It has the same shape as the weight.
 Because we have not invoked backpropagation for this network yet, its values are all 0.
 -->
 
-Chú ý rằng các trọng số là khác không.
-Điều này là có chủ ý vì chúng được khởi tạo ngẫu nhiên khi ta xây dựng mạng.
-`data` không phải là hàm duy nhất mà ta có thể gọi.
-Chẳng hạn, ta có thể gọi hàm truy cập gradient theo các tham số.
-Các gradient này có cùng kích thước với trọng số, tuy nhiên tất cả các giá trị hiện tại đều bằng 0 bởi vì ta chưa gọi hàm lan truyền ngược.
+Chú ý rằng khác với hệ số điều chỉnh, trọng số chứa các giá trị khác không bởi chúng được khởi tạo ngẫu nhiên.
+Ngoài `data`, mỗi `Parameter` còn cung cấp phương thức `grad()` để truy cập gradient.
+Gradient sẽ có cùng kích thước với trọng số. <!-- thế còn bias thì sao ._. -->
+Vì ta chưa thực hiện lan truyền ngược với mạng nơ-ron này, các giá trị của gradient đều là 0.
 
 ```{.python .input  n=5}
 net[0].weight.grad()
