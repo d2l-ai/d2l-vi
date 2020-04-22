@@ -184,7 +184,7 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-Bây giờ hãy sử dụng nguyên tắc thứ hai---*tính cục bộ*.
+Bây giờ hãy viện dẫn nguyên tắc thứ hai---*tính cục bộ*.
 Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa khỏi $(i, j)$ để thu thập thông tin liên quan cho việc đánh giá những gì đang diễn ra tại $h[i, j]$.
 Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
 Tương tự, ta có thể viết lại $h[i, j]$ như sau
