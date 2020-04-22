@@ -197,7 +197,7 @@ When the convolution window slides three columns to the right on the input, ther
 -->
 
 Ta gọi số hàng và cột di chuyển qua mỗi lần là *sải bước*. 
-Cho đến giờ, chúng ta sử dụng sải bước $1$ cho cả chiều dọc và chiều ngang.
+Cho đến giờ, chúng ta sử dụng sải bước $1$ cho cả chiều dài và chiều rộng.
 Đôi lúc, chúng ta có thể muốn sử dụng sải bước lớn hơn.
 :numref:`img_conv_stride` biểu diễn phép tương quan chéo hai chiều với sải bước $3$ theo chiều dọc và $2$ theo chiều ngang.
 Có thể thấy khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng.
