@@ -62,7 +62,7 @@ The corresponding output then increases to a $4 \times 6$ matrix.
 
 Như mô tả ở trên, một vấn đề khó chịu khi áp dụng các lớp chập là nó đưa chúng ta tới việc mất một số điểm trên biên của ảnh. 
 Vì chúng ta thường sử dụng các bộ lọc nhỏ, với bất kỳ phép tích chập nào, ta có thể chỉ mất một ít điểm ảnh, tuy nhiên sự mất mát này có thể tích lũy dần khi ta thực hiện qua nhiều tầng tích chập liên tiếp.
-Một giải pháp trước mắt đối với vấn đề này là phải chèn thêm các điểm ảnh của bộ lọc xung quanh đường biên trên bức ảnh đầu vào của chúng ta, nhờ đó làm tăng kích thước sử dụng của bức ảnh này. 
+Một giải pháp đơn giản cho vấn đề này là chèn thêm các điểm ảnh xung quanh đường biên trên bức ảnh đầu vào, nhờ đó làm tăng kích thước sử dụng của bức ảnh. 
 Thông thường, chúng ta thiết lập các giá trị của các điểm ảnh thêm vào là $0$. 
 Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tăng kích thước của nó tới $5 \times 7$.
 Đầu ra tương ứng sẽ tăng lên thành một ma trận $4 \times 6$.
