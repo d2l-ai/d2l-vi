@@ -26,7 +26,7 @@ However, once we start dealing with high-dimensional perceptual data, these *str
 
 Đôi khi ta thực sự không có bất kỳ kiến thức nào để hướng dẫn việc xây dựng các kiến trúc được sắp xếp khéo léo hơn. <!-- reviewer xem có cách dịch nào hay hơn cho cụm "more cleverly-organized architectures" không -->
 Trong những trường hợp này, sử dụng một perceptron đa tầng thường là giải pháp tốt nhất ta có thể làm.
-Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu nhận thức nhiều chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
+Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu tri giác đa chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
 
 <!--
 For instance, let us return to our running example of distinguishing cats from dogs.
