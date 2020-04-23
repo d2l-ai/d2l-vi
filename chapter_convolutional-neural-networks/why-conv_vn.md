@@ -113,7 +113,7 @@ Let us see how this translates into mathematics.
 ## Constraining the MLP
 -->
 
-## Giới hạn MLP lại
+## Ràng buộc MLP
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
