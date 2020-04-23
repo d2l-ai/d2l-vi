@@ -75,12 +75,12 @@ The reader's goal is to locate him.
 Despite his characteristic outfit, this can be surprisingly difficult, due to the large number of confounders.
 -->
 
-Hãy tưởng tượng rằng bạn muốn nhận dạng một đối tượng trong ảnh.
-Có vẻ hợp lý khi cho rằng bất cứ phương pháp nào ta sử dụng để nhận dạng đối tượng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
-Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác kiến thức này.
+Hãy tưởng tượng rằng ta muốn nhận dạng một đối tượng trong ảnh.
+Có vẻ là hợp lý khi cho rằng bất cứ phương pháp nào ta sử dụng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
+Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác được kiến thức này.
 Lợn thường không bay và máy bay thường không bơi.
 Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn nếu nó xuất hiện.
-Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Where's Waldo', một ví dụ được hiển thị trong :numref:`img_waldo`.
+Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Where's Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
 Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
 Nhiệm vụ của người chơi là xác định vị trí anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
 Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng lớn các yếu tố gây nhiễu nên việc nhận dạng anh ta vẫn có thể khó khăn một cách đáng ngạc nhiên.
@@ -98,21 +98,21 @@ Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng l�
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với các ảnh, những trực giác mà ta đã thảo luận có thể được làm rõ hơn hơn để đạt được một vài nguyên tắc chủ chốt cho việc xây dựng mạng nơ-ron cho thị giác máy tính:
+Quay lại với các ảnh, những trực giác mà ta đã thảo luận có thể được làm cụ thể hơn để đạt được một vài nguyên tắc chủ chốt cho việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-1. Ở một khía cạnh nào đó, hệ thống thị giác của ta nên phản ứng tương tự với cùng một đối tượng bất kể đối tượng đó xuất hiện ở đâu trong ảnh (dịch chuyển bất biến).
-2. Ở khía cạnh khác, hệ thống thị giác của ta nên tập trung vào các khu vực cục bộ, mà không quan tâm đến bất kỳ điều gì khác ở khoảng cách xa hơn trong ảnh (tính cục bộ).
+1. Ở một khía cạnh nào đó, các hệ thống thị giác nên phản ứng tương tự với cùng một đối tượng bất kể đối tượng đó xuất hiện ở đâu trong ảnh (tính bất biến tịnh tiến).
+2. Ở khía cạnh khác, các hệ thống thị giác nên tập trung vào các khu vực cục bộ, mà không quan tâm đến bất kỳ điều gì khác ở khoảng cách xa hơn trong ảnh (tính cục bộ).
 
 <!--
 Let us see how this translates into mathematics.
 -->
 
-Ta hãy biểu diễn các vấn đề này bằng ngôn ngữ toán học.
+Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán học.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
