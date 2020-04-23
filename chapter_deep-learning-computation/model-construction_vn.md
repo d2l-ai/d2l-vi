@@ -533,7 +533,7 @@ Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất
 * Các tầng trong mạng nơ-ron là các Khối. 
 * Nhiều tầng có thể cấu thành một Khối. 
 * Nhiều Khối có thể cấu thành một Khối. 
-* Một Khối có thể chứa mã nguồn. 
+* Một Khối có thể chứa các đoạn mã nguồn. 
 * Các Khối đảm nhiệm nhiều tác vụ bao gồm khởi tạo tham số và lan truyền ngược. 
 * Việc gắn kết các tầng và khối một cách tuần tự được đảm nhiệm bởi Khối `Sequential`. 
 
@@ -552,8 +552,8 @@ Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất
 -->
 
 1. Vấn đề gì sẽ xảy ra nếu ta bỏ hàm `asscalar` trong lớp `FixedHiddenMLP`?
-2. Vấn đề gì sẽ xảy ra nếu ta thay đổi `self.net` được định nghĩa trong thực thể `Sequential` ở lớp `NestMLP` thành `self.net = [nn.Dense(64, activation='relu'), nn. Dense(32, activation='relu')]`?
-3. Hãy lập trình một khối nhận đối số là hai khối khác, ví dụ như `net1` và `net2`, và trả về kết quả là phép nối các giá trị đầu ra của cả hai mạng đó khi thực hiện lan truyền xuôi.
+2. Vấn đề gì sẽ xảy ra nếu`self.net` được định nghĩa trong thực thể `Sequential` ở lớp `NestMLP` được đổi thành `self.net = [nn.Dense(64, activation='relu'), nn. Dense(32, activation='relu')]`?
+3. Hãy lập trình một khối nhận đối số là hai khối khác, ví dụ như `net1` và `net2`, và trả về kết quả là phép nối các giá trị đầu ra của cả hai mạng đó khi thực hiện lượt truyền xuôi.
 4. Giả sử bạn muốn nối nhiều thực thể của cùng một mạng với nhau. Hãy lập trình một hàm để tạo ra nhiều thực thể của cùng một mạng và dùng chúng để tạo thành một mạng lớn hơn (các hàm này trong thiết kế phần mềm được gọi là Factory Function).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
