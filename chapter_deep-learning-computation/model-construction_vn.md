@@ -38,7 +38,7 @@ and possesses a set of tunable parameters that are updated according to the sign
 
 Điều thú vị là đối với các perceptron đa tầng, cả *mô hình* và các *tầng cấu thành* đều chia sẻ cấu trúc này. 
 (Toàn bộ) mô hình nhận các đầu vào thô (các đặc trưng), tạo các đầu ra (các dự đoán) và sở hữu các tham số (được tập hợp từ tất cả các tầng cấu thành). 
-Tương tự, mỗi tầng riêng lẻ cũng nhận vào các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh thông qua việc cập nhật dựa trên tín hiệu được truyền ngược từ tầng tiếp theo. 
+Tương tự, mỗi tầng riêng lẻ cũng nhận các đầu vào (được cung cấp bởi tầng trước đó), tính toán các đầu ra (cũng chính là các đầu vào cho tầng tiếp theo), và có một tập các tham số có thể điều chỉnh thông qua việc cập nhật dựa trên tín hiệu được truyền ngược từ tầng kế tiếp. 
 
 
 <!--
@@ -54,10 +54,10 @@ Similar patterns are in which layers are arranged in various repeating patterns 
 
 Dù bạn có thể nghĩ rằng các nơ-ron, các tầng và các mô hình đã cung cấp đủ sự trừu tượng để bắt tay vào làm việc, hóa ra sẽ là thuận tiện hơn khi ta bàn về các thành phần lớn hơn một tầng riêng lẻ nhưng lại nhỏ hơn toàn bộ mô hình. 
 Ví dụ, kiến trúc ResNet-152, rất phổ biến trong thị giác máy tính, sở hữu hàng trăm tầng.
-Nó bao gồm các khuôn mẫu các *nhóm tầng* được lặp lại nhiều lần. Việc lập trình từng tầng của một mạng như vậy có thể trở nên tẻ nhạt. 
+Nó bao gồm các khuôn mẫu *nhóm tầng* được lặp lại nhiều lần. Việc lập trình từng tầng của một mạng như vậy có thể trở nên tẻ nhạt. 
 Mối quan tâm này không chỉ là trên lý thuyết --- các khuôn mẫu thiết kế như vậy rất phổ biến trong thực tế. 
 Kiến trúc ResNet được đề cập ở trên đã giành chiến thắng trong hai cuộc thi thị giác máy tính ImageNet và COCO năm 2015, trong cả bài toán nhận dạng và bài toán phát hiện :cite:`He.Zhang.Ren.ea.2016` và vẫn là một kiến trúc được tin dùng cho nhiều bài toán thị giác. 
-Các kiến trúc tương tự, trong đó các tầng được sắp xếp theo nhiều dạng khuôn mẫu được lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói. 
+Các kiến trúc tương tự, trong đó các tầng được sắp xếp thành những khuôn mẫu lặp lại, hiện đã trở nên thông dụng ở nhiều lĩnh vực khác, bao gồm cả xử lý ngôn ngữ tự nhiên và xử lý tiếng nói. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -88,7 +88,7 @@ Mình không dịch các từ 'Block' (khi được viết hoa), 'forward', 'bac
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
 -->
 
-Một lợi ích khi làm việc với `Block` ở mức độ trừu tượng đó là ta có thể kết hợp chúng thành các thành phần lớn hơn, thường là với phương pháp đệ quy (xem hình minh họa trong :numref:`fig_blocks`). 
+Một lợi ích khi làm việc ở mức độ trừu tượng `Block` đó là ta có thể kết hợp chúng, thường là theo phương pháp đệ quy, để tạo ra các thành phần lớn hơn (xem hình minh họa trong :numref:`fig_blocks`). 
 
 <!--
 ![Multiple layers are combined into blocks](../img/blocks.svg)
@@ -137,13 +137,13 @@ This is actually just shorthand for `net.forward(X)`, a slick Python trick achie
 -->
 
 Trong ví dụ này, ta đã xây dựng mô hình bằng cách khởi tạo một đối tượng `nn.Sequential` và gán vào biến `net`. 
-Sau đó, ta gọi phương thức `add` nhiều lần để nối thêm các tầng theo thứ tự mà chúng sẽ được thực thi.
+Sau đó, ta gọi phương thức `add` nhiều lần để nối các tầng theo thứ tự mà chúng sẽ được thực thi.
 Nói một cách ngắn gọn, `nn.Sequential` định nghĩa một loại `Block` đặc biệt có nhiệm vụ duy trì một danh sách chứa các `Block` cấu thành được sắp xếp theo thứ tự nhất định.
 Phương thức `add` chỉ đơn giản hỗ trợ việc thêm liên tiếp từng `Block` vào trong danh sách đó. 
 Lưu ý rằng mỗi tầng là một thực thể của lớp `Dense`, và bản thân lớp `Dense` lại là một lớp con của `Block`. 
 Hàm `forward` cũng rất đơn giản: nó xâu chuỗi từng `Block` trong danh sách lại với nhau, chuyển đầu ra của từng khối thành đầu vào cho khối tiếp theo. 
 Lưu ý rằng cho đến giờ, ta đã gọi mô hình thông qua `net(X)` để thu được đầu ra. 
-Thực ra đây chỉ là một cách viết tắt cho `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`. 
+Thực ra đây chỉ là một cách viết tắt của `net.forward(X)`, một thủ thuật Python khéo léo đạt được thông qua hàm `__call__` của lớp `Block`. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
