@@ -366,8 +366,7 @@ Moreover we might want to perform arbitrary mathematical operations, not simply 
 
 Lớp `nn.Sequential` giúp việc xây mô hình trở nên dễ hơn, cho phép ta lắp ráp các kiến trúc mới mà không cần tự định nghĩa một lớp riêng. 
 Tuy nhiên, không phải tất cả mô hình đều có cấu trúc chuỗi xích đơn giản. 
-Trong trường hợp cần sự linh hoạt, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình. 
-Ví dụ, ta muốn tự phân luồng điều khiển của Python với phương pháp truyền xuôi. 
+Trong trường hợp cần sự linh hoạt, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình, ví dụ như khi muốn tự phân luồng điều khiển Python trong lượt truyền xuôi. 
 Hơn nữa, ta cũng có thể muốn thêm vào các phép toán tùy ý, chứ không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa từ trước.
 
 <!--
@@ -379,7 +378,7 @@ $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, where $\mathbf{
 and $c$ is some specified constant that is not updated during optimization.
 -->
 
-Cho đến tận bây giờ, bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng của ta đều dựa vào các hàm kích hoạt và tham số của mạng. 
+Cho đến tận bây giờ, bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng của ta đều thao tác trên các giá trị kích hoạt và tham số của mạng. 
 Tuy nhiên, trong một vài trường hợp, ta có thể muốn kết hợp thêm với các hằng số không đổi, nó không phải là kết quả của tầng trước cũng không phải tham số có thể cập nhật. 
 Trong Gluon, ta gọi chúng là tham số *hằng số* (_constant parameter_).
 Ví dụ ta muốn một tầng tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $\mathbf{x}$, $\mathbf{w}$ là tham số, và $c$ là một hằng số đặc biệt giữ nguyên giá trị trong suốt quá trình tối ưu hóa. 
@@ -454,7 +453,7 @@ With Gluon, we can mix and match various ways of assembling `Block`s together.
 In the following example, we nest `Block`s in some creative ways.
 -->
 
-Với Gluon, ta có thể sử dụng lẫn và kết hợp nhiều cách khác nhau để lắp ráp các `Block` lại.
+Với Gluon, ta có thể kết hợp nhiều cách khác nhau để lắp ráp các `Block` lại.
 Trong ví dụ dưới đây, ta lồng các `Block` với nhau bằng nhiều cách sáng tạo.
 
 ```{.python .input  n=40}
