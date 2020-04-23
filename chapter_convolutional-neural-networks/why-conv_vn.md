@@ -113,7 +113,7 @@ Let us see how this translates into mathematics.
 ## Constraining the MLP
 -->
 
-## *dịch tiêu đề phía trên*
+## Ràng buộc MLP
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
@@ -125,20 +125,27 @@ we would switch from using weight matrices (as we did previously in MLPs)
 to representing our parameters as four-dimensional weight tensors.
 -->
 
-*dịch đoạn phía trên*
-
+Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
+Để bắt đầu, hãy nghĩ xem một MLP sẽ trông như thế nào với đầu vào là ảnh có kích thước $h \times w$ 
+(được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
+và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
+Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
+Do vậy, để mỗi nút trong $hw$ nút ẩn nhận đầu vào từ $hw$ đầu vào,
+ta sẽ chuyển từ việc sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang việc sử dụng tensor trọng số bốn chiều.
 
 <!--
 We could formally express this dense layer as follows:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể biểu diễn lớp dày đặc này một cách hình thức như sau:
 
+<!--
 $$h[i, j] = u[i, j] + \sum_{k, l} W[i, j, k, l] \cdot x[k, l] =  u[i, j] +
 \sum_{a, b} V[i, j, a, b] \cdot x[i+a, j+b].$$
 -->
 
-*dịch đoạn phía trên*
+$$h[i, j] = u[i, j] + \sum_{k, l} W[i, j, k, l] \cdot x[k, l] =  u[i, j] +
+\sum_{a, b} V[i, j, a, b] \cdot x[i+a, j+b].$$
 
 <!--
 The switch from $W$ to $V$ is entirely cosmetic (for now) since there is a one-to-one correspondence between coefficients in both tensors.
@@ -148,7 +155,11 @@ The indices $a, b$ run over both positive and negative offsets, covering the ent
 For any given location $(i, j)$ in the hidden layer $h[i, j]$, we compute its value by summing over pixels in $x$, centered around $(i, j)$ and weighted by $V[i, j, a, b]$.
 -->
 
-*dịch đoạn phía trên*
+Việc chuyển từ $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
+Ta chỉ đơn thuần đánh lại các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
+Nói cách khác, ta đặt $V[i, j, a, b] = W[i, j, i+a, j+b]$.
+Các chỉ số $a, b$ chạy trên cả độ lệch dương và âm, bao trùm toàn bộ hình ảnh.
+Đối với một vị trí $(i, j)$ bất kỳ trong tầng ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các điểm ảnh của $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
 
 <!--
 Now let us invoke the first principle we established above: *translation invariance*.
@@ -157,7 +168,10 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
+Ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
+Điều này chỉ khả thi nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
+Kết quả là ta có thể đơn giản hóa định nghĩa của $h$.
 
 $$h[i, j] = u + \sum_{a, b} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -398,7 +412,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 * Trần Yến Thy
