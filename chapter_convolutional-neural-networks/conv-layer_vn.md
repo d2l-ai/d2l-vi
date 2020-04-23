@@ -189,7 +189,7 @@ The rest of the outputs are 0.
 -->
 
 Truyền giá trị của `X` và bộ lọc `K` để thực hiện phép tương quan chéo.
-Bạn có thể thấy, các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
+Bạn có thể thấy, tại các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
 Các vị trí còn lại của đầu ra có giá trị 0.
 
 ```{.python .input  n=69}
