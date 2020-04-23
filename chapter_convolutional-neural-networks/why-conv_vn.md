@@ -347,7 +347,7 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 6. Prove that $f \circledast g = g \circledast f$.
 -->
 
-1. Giả sử rằng kích thước của mặt nạ tích chập là $\Delta = 0$. Chứng tỏ rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một bộ kênh.
+1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một tập kênh.
 2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
 3. Điều gì xảy ra ở viền của một hình ảnh?
 4. Tự suy ra một tầng tích chập tương tự cho âm thanh.
