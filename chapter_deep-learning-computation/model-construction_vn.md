@@ -243,7 +243,7 @@ Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm kh�
 Hãy chú ý một vài chi tiết quan trọng. 
 Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` để tránh việc viết lại cùng một phần mã nguồn áp dụng cho hầu hết các Block. 
 Chúng ta sau đó khởi tạo hai tầng `Dense`, gán chúng lần lượt là `self.hidden` và `self.output`. 
-Chú ý rằng trừ khi triển khai một tính toán mới, chúng ta không cần lo lắng về lan truyền ngược (phương thức `backward`) hoặc khởi tạo tham số (phương thức `initialize`).
+Chú ý rằng trừ khi đang phát triển một toán tử mới, chúng ta không cần lo lắng về lan truyền ngược (phương thức `backward`) hoặc khởi tạo tham số (phương thức `initialize`).
 Gluon sẽ tự động khởi tạo các phương thức đó. 
 Hãy cùng thử nghiệm điều này:
 
@@ -260,7 +260,7 @@ We exploit this versatility throughout the following chapters, especially when a
 -->
 
 Một ưu điểm chính của phép trừu tượng hóa `Block` là tính linh hoạt của nó. 
-Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng khác với độ phức tạp trung bình. 
+Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng với độ phức tạp vừa phải khác. 
 Ta sẽ tận dụng tính linh hoạt này xuyên suốt ở các chương sau, đặc biệt khi làm việc với các mạng nơ-ron tích chập. 
 
 
