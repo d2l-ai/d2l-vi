@@ -292,7 +292,7 @@ In practice, we rarely use inhomogeneous strides or padding, i.e., we usually ha
 1. Trong ví dụ cuối của phần này, tính kích thước đầu ra bằng công thức để xác nhận đúng với kết quả chạy mã nguồn.
 2. Thử các cách kết hợp đệm và sải bước khác trong các ví dụ ở phần này.
 3. Với các tín hiệu âm thanh, sải bước bằng $2$ tương ứng với điều gì?
-4. Có những lợi ích nào về mặt tính toán khi sử dụng sải bước lớn hơn $1$.
+4. Có những lợi ích nào về mặt tính toán khi sử dụng sải bước lớn hơn $1$?
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
