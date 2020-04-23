@@ -24,7 +24,7 @@ In these cases, a multilayer perceptron is often the best that we can do.
 However, once we start dealing with high-dimensional perceptual data, these *structure-less* networks can grow unwieldy.
 -->
 
-Đôi khi ta thực sự không có bất kỳ kiến thức nào để hướng dẫn việc xây dựng các kiến trúc được sắp xếp khéo léo hơn. <!-- reviewer xem có cách dịch nào hay hơn cho cụm "more cleverly-organized architectures" không -->
+Đôi khi ta thực sự không có bất kỳ kiến thức nào để định hướng việc thiết kế các kiến trúc được khéo léo hơn.
 Trong những trường hợp này, sử dụng một perceptron đa tầng thường là giải pháp tốt nhất ta có thể làm.
 Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu tri giác đa chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
 
