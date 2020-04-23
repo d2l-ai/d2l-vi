@@ -15,7 +15,7 @@ but do not assume anything a priori about which features are related to each oth
 -->
 
 Cho đến giờ các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các đặc trưng, nhưng ta không giả sử bất cứ điều gì tiên nghiệm về việc các đặc trưng có liên quan tới nhau như thế nào.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các đặc trưng, nhưng ta không giả định từ kinh nghiệm bất cứ điều gì về việc các đặc trưng có liên quan tới nhau như thế nào.
 
 
 <!--
