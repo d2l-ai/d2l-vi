@@ -76,10 +76,10 @@ It accepts the input array `X` with the kernel array `K` and outputs the array `
 -->
 
 Lưu ý rằng dọc theo mỗi trục, đầu ra hơi *nhỏ hơn* so với đầu vào.
-Bời vì bộ lọc có độ rộng lớn hơn một, và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó kenrnel nằm hoàn toàn bên trong ảnh, kích thước đầu ra cho trước đầu vào $H \times W$ trừ kích thước của kernel tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Đây là trường hợp vì ta cần đủ không gian để 'di chuyển' convolutional kernel qua tấm hình (sau này ta sẽ tìm hiểu cách để có thể giữ nguyên kích thước bằng cách padding hình ảnh với số không xung quanh biên sao cho có đủ không gian đê di chuyển kernel)
+Bởi vì bộ lọc có chiều rộng lớn hơn một, và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
+Đây là trường hợp mà ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước không đổi bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc)
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
-Hàm nhận giá trị đầu vào là mảng `X` với mảng kernel `K` và trả về đầu ra là mảng `Y`
+Hàm nhận mảng đầu vào `X` với mảng bộ lọc `K` và trả về mảng đầu ra `Y`
 
 ```{.python .input}
 from mxnet import autograd, np, npx
@@ -102,7 +102,7 @@ We can construct the input array `X` and the kernel array `K` from the figure ab
 to validate the output of the above implementations of the two-dimensional cross-correlation operation.
 -->
 
-Ta có thể xây dựng mảng đầu vào `X` và mảng kernel `K` từ hình bên trên để kiểm tra kết quả lập trình của tương quan chéo hai chiều.
+Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc`K` từ hình bên trên để kiểm tra kết quả lập trình của phép toán tương quan chéo hai chiều.
 
 ```{.python .input}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
@@ -118,7 +118,7 @@ corr2d(X, K)
 ## Convolutional Layers
 -->
 
-## Tầng tích chập
+## Tầng Tích chập
 
 <!--
 A convolutional layer cross-correlates the input and kernels and adds a scalar bias to produce an output.
@@ -126,9 +126,9 @@ The parameters of the convolutional layer are precisely the values that constitu
 When training the models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully-connected layer.
 -->
 
-Tầng tích chập tương quan chéo đầu vào và kernel và cộng vào một hệ số điều chỉnh để ra được đầu ra.
-Các tham số của convolutional layer là giá trị chính xác cấu tạo nên kenel và hệ số điều chỉnh.
-Khi huấn luyện mô hình dựa trên các tầng tích chấp, thông thường ta khởi tạo ngẫu nhiên kernel, giống như những gì ta làm với tầng kết nối đầy đủ
+Tầng tích chập thực hiện phép toán tương quan chéo đầu vào và bộ lọc sau đó cộng vào một hệ số điều chỉnh để có được đầu ra.
+Các tham số của tầng tích chập là giá trị chính xác cấu tạo nên bộ lọc và hệ số điều chỉnh.
+Khi huấn luyện mô hình dựa trên các tầng tích chập, thông thường ta khởi tạo ngẫu nhiên bộ lọc, điều này giống như những gì ta làm với tầng kết nối đầy đủ
 
 <!--
 We are now ready to implement a two-dimensional convolutional layer based on the `corr2d` function defined above.
@@ -137,9 +137,9 @@ The forward computation function `forward` calls the `corr2d` function and adds 
 As with $h \times w$ cross-correlation we also refer to convolutional layers as $h \times w$ convolutions.
 -->
 
-Bây giờ ta đã sẳn sàng để lập trình một tầng tích chập hai chiều dựa vào hàm `corr2d` ta vừa định ở trên.
-Trong hàm constructor `__init__`, ta thiết lập hai tham số mô hình `weigh` và `bias`.
-Hàm tính toán truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm vào hệ số điều chỉnh.
+Bây giờ ta đã sẵn sàng để lập trình một tầng tích chập hai chiều dựa vào hàm `corr2d` ta vừa định nghĩa ở trên.
+Trong hàm khởi tạo`__init__`, ta thiết lập hai tham số mô hình `weigh` và `bias`.
+Hàm tính lượt truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm vào hệ số điều chỉnh.
 Giống như $h \times w$ tương quan chéo ta cũng đề cập đến tầng tích chập $h \times w$.
 
 ```{.python .input  n=70}
