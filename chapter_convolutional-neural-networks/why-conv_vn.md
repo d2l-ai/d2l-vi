@@ -346,7 +346,11 @@ We also need to decide how to compute things efficiently, how to combine multipl
 All of this will be addressed in the remainder of the chapter.
 -->
 
-*dịch đoạn phía trên*
+Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
+Vẫn còn nhiều phép toán mà ta cần phải giải quyết.
+Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
+Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
+Tất cả những điều này sẽ được giải quyết trong phần còn lại của chương.
 
 
 <!--
@@ -361,7 +365,9 @@ All of this will be addressed in the remainder of the chapter.
 * Channels on input and output allows for meaningful feature analysis.
 -->
 
-*dịch đoạn phía trên*
+* Tính bất biến tịnh tiến của hình ảnh ngụ ý rằng tất cả các mảng nhỏ trong một tấm ảnh đều được xử lý theo cùng một cách.
+* Tính cục bộ có nghĩa là chỉ một vùng lân cận nhỏ các điểm ảnh sẽ được sử dụng cho việc tính toán.
+* Các kênh ở đầu vào và đầu ra cho phép việc phân tích các đặc trưng trở nên ý nghĩa hơn.
 
 <!--
 ## Exercises
@@ -378,7 +384,12 @@ All of this will be addressed in the remainder of the chapter.
 6. Prove that $f \circledast g = g \circledast f$.
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một tập kênh.
+2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
+3. Điều gì xảy ra ở viền của một hình ảnh?
+4. Tự suy ra một tầng tích chập tương tự cho âm thanh.
+5. Vấn đề gì sẽ xảy ra khi áp dụng các suy luận trên cho văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
+6. Chứng minh rằng $f \circledast g = g \circledast f$.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -430,4 +441,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
