@@ -177,7 +177,7 @@ Under the hood this is possible because each layer contains a parameter dictiona
 -->
 
 Tham số là các đối tượng khá phức tạp bởi chúng chứa dữ liệu, gradient và một vài thông tin khác.
-Đó là lí do tại sao ta phải yêu cầu dữ liệu một cách rõ ràng.
+Đó là lí do tại sao ta cần yêu cầu dữ liệu một cách tường minh.
 Lưu ý rằng vector hệ số điều chỉnh chứa các giá trị không vì ta chưa hề cập nhật mô hình kể từ khi nó được khởi tạo.
 Ta cũng có thể truy cập các tham số theo tên của chúng, chẳng hạn như `dense0_weight` ở dưới.
 Điều này khả thi vì thực ra mỗi tầng đều chứa một từ điển tham số.
