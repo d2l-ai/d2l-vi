@@ -278,7 +278,7 @@ Sequential simply numbers them.
 We can exploit this naming convention by leveraging one clever feature of `collect_params`: it allows us to filter the parameters returned by using regular expressions.
 -->
 
-Xuyên suốt cuốn sách này ta sẽ thấy các khối đặt tên cho khối con theo nhiều cách khác nhau . 
+Xuyên suốt cuốn sách này ta sẽ thấy các khối đặt tên cho khối con theo nhiều cách khác nhau. 
 Khối Sequential chỉ đơn thuần đánh số chúng. 
 Ta có thể tận dụng quy ước định danh này cùng với một tính năng thông minh của `collect_params` để lọc ra các tham số được trả về bằng các biểu thức chính quy.
 
@@ -295,7 +295,7 @@ print(net.collect_params('dense0.*'))
 ### Collecting Parameters from Nested Blocks
 -->
 
-### Thu thập Tham số từ Khối lồng nhau 
+### Thu thập Tham số từ các Khối Lồng nhau 
 
 <!--
 Let's see how the parameter naming conventions work if we nest multiple blocks inside each other. 
@@ -341,7 +341,7 @@ Notice below that while `collect_params()` produces a list of named parameters, 
 -->
 
 Bây giờ ta đã xong phần thiết kế mạng, hãy cùng xem cách nó được tổ chức.
-Hãy để ý ở dưới rằng dù `collect_params()` tạo ra một danh sách các tham số được định danh, việc gọi `collect_params` như một thuộc tính sẽ tiết lộ cấu trúc của mạng.
+Hãy để ý ở dưới rằng dù `collect_params()` trả về một danh sách các tham số được định danh, việc gọi `collect_params` như một thuộc tính sẽ cho ta biết cấu trúc của mạng.
 
 ```{.python .input}
 print(rgnet.collect_params)
@@ -358,7 +358,7 @@ Since the layers are hierarchically nested, we can also access them as though in
 For instance, we can access the first major block, within it the second subblock, and within that the bias of the first layer, with as follows:
 -->
 
-Bởi vì các tầng được sinh ra theo cơ chế phân cấp, ta cũng có thể truy cập chúng theo cách này.
+Bởi vì các tầng được lồng vào nhau theo cơ chế phân cấp, ta cũng có thể truy cập chúng tương tự như cách ta dùng chỉ số để truy cập các danh sách lồng nhau.
 Chẳng hạn,  ta có thể truy cập khối chính đầu tiên, khối con thứ hai bên trong nó và hệ số điều chỉnh của tầng đầu tiên bên trong nữa như sau:
 
 ```{.python .input}
@@ -397,7 +397,7 @@ Ta đã thảo luận về sự cần thiết của việc khởi tạo tham s�
 Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
 Tuy nhiên, thường ta sẽ muốn khởi tạo trọng số theo nhiều phương pháp khác.
 Mô-đun `init` của MXNet cung cấp sẵn nhiều phương thức khởi tạo.
-Nếu ta muốn tạo một bộ khởi tạo tùy chỉnh, ta sẽ cần làm việc thêm một chút.
+Nếu ta muốn một bộ khởi tạo tùy chỉnh, ta sẽ cần làm việc thêm một chút.
 
 
 <!--
