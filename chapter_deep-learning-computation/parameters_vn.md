@@ -240,10 +240,10 @@ To avoid this, each Block comes with a `collect_params`  method that returns all
 We can invoke `collect_params` on a single layer  or a whole network as follows:
 -->
 
-Truy cập các tham số như mô tả phía trên có thể hơi dài dòng với các khối phức tạp, chẳng hạn như khi ta có khối của các khối (hoặc thậm chí nhiều khối của các khối của các khối), vì ta cần phải duyệt qua toàn bộ cây theo thứ tự ngược với cách các khối được xây dựng.
-Để tránh rắc rối này, các khối có thêm một phương thức `collect_params` giúp tập hợp tất cả các tham số có trong mạng thành một từ điển để ta có thể dễ dàng duyệt qua.
-Nó thực hiện điều này bằng cách lặp qua các thành phần của một khối và gọi `collect_params` trên các khối con khi cần thiết.
-Để thấy được sự khác nhau ta hãy xem ví dụ sau:
+Khi ta cần phải thực hiện các phép toán với tất cả tham số, việc truy cập lần lượt từng tham số sẽ trở nên khá khó chịu.
+Việc này sẽ càng chậm chạp khi ta làm việc với các khối phức tạp hơn, ví dụ như các khối lồng nhau vì lúc đó ta sẽ phải duyệt toàn bộ cây bằng đệ quy để có thể trích xuất tham số của từng khối con.
+Để tránh vấn đề này, mỗi khối có thêm một phương thức `collect_params` để trả về một từ điển duy nhất chứa tất cả tham số.
+Ta có thể gọi `collect_params` với một tầng duy nhất hoặc với toàn bộ mạng nơ-ron như sau:
 
 ```{.python .input  n=6}
 # parameters only for the first layer
@@ -261,8 +261,7 @@ If we wanted to get the value of the bias term of the second layer we could simp
 This provides us with a third way of accessing the parameters of the network:
 -->
 
-Đây là cách thứ ba để truy cập các tham số của mạng.
-Nếu muốn lấy giá trị của hệ số điều chỉnh của tầng thứ hai, đơn giản ta có thể dùng: 
+Từ đó, ta có cách thứ ba để truy cập các tham số của mạng:
 
 ```{.python .input  n=7}
 net.collect_params()['dense1_bias'].data()
@@ -279,8 +278,9 @@ Sequential simply numbers them.
 We can exploit this naming convention by leveraging one clever feature of `collect_params`: it allows us to filter the parameters returned by using regular expressions.
 -->
 
-Xuyên suốt cuốn sách này ta sẽ thấy cách các loại khối khác nhau định danh khối con của chúng (khối Sequential đơn giản là đánh số các khối con).
-Điều này làm cho việc sử dụng các biểu thức chính quy (_regular expression_) để lọc ra các tham số cần thiết thuận tiện rất nhiều.
+Xuyên suốt cuốn sách này ta sẽ thấy các khối đặt tên cho khối con theo nhiều cách khác nhau . 
+Khối Sequential chỉ đơn thuần đánh số chúng. 
+Ta có thể tận dụng quy ước định danh này cùng với một tính năng thông minh của `collect_params` để lọc ra các tham số được trả về bằng các biểu thức chính quy.
 
 ```{.python .input  n=8}
 print(net.collect_params('.*weight'))
@@ -295,7 +295,7 @@ print(net.collect_params('dense0.*'))
 ### Collecting Parameters from Nested Blocks
 -->
 
-### Rube Goldberg Lại Nổi lên
+### Thu thập Tham số từ Khối lồng nhau 
 
 <!--
 Let's see how the parameter naming conventions work if we nest multiple blocks inside each other. 
@@ -308,7 +308,7 @@ For that we first define a function that produces Blocks (a Block factory, so to
 -->
 
 Hãy cùng xem cách hoạt động của các quy ước định danh tham số khi ta lồng nhiều khối vào nhau.
-Trước hết ta định nghĩa một hàm tạo khối (có thể tạm gọi là một nhà máy khối) và sau đó ta kết hợp chúng vào bên trong các khối còn lớn hơn.
+Trước hết ta định nghĩa một hàm tạo khối (có thể gọi là một nhà máy khối) và rồi kết hợp chúng trong các khối lớn hơn.
 
 ```{.python .input  n=20}
 def block1():
@@ -340,8 +340,8 @@ Now that we have designed the network, let us see how it is organized.
 Notice below that while `collect_params()` produces a list of named parameters, invoking `collect_params` as an attribute reveals our network's structure.
 -->
 
-Bây giờ ta đã xong phần thiết kế mạng, hãy xem cách nó được tổ chức.
-`collect_params` cung cấp chúng ta thông tin này, cả về cách định danh lẫn cấu trúc logic.
+Bây giờ ta đã xong phần thiết kế mạng, hãy cùng xem cách nó được tổ chức.
+Hãy để ý ở dưới rằng dù `collect_params()` tạo ra một danh sách các tham số được định danh, việc gọi `collect_params` như một thuộc tính sẽ tiết lộ cấu trúc của mạng.
 
 ```{.python .input}
 print(rgnet.collect_params)
@@ -358,8 +358,8 @@ Since the layers are hierarchically nested, we can also access them as though in
 For instance, we can access the first major block, within it the second subblock, and within that the bias of the first layer, with as follows:
 -->
 
-Bởi vì các tầng được sinh ra theo cơ chế phân cấp, ta có thể truy cập chúng theo cách này.
-Chẳng hạn, để truy cập khối chính đầu tiên, bên trong nó là khối con thứ hai và tiếp theo bên trong nó, trong trường hợp này là hệ số điều chỉnh của tầng đầu tiên, ta thực hiện như sau.
+Bởi vì các tầng được sinh ra theo cơ chế phân cấp, ta cũng có thể truy cập chúng theo cách này.
+Chẳng hạn,  ta có thể truy cập khối chính đầu tiên, khối con thứ hai bên trong nó và hệ số điều chỉnh của tầng đầu tiên bên trong nữa như sau:
 
 ```{.python .input}
 rgnet[0][1][0].bias.data()
@@ -392,11 +392,12 @@ MXNet's `init` module provides a variety of preset initialization methods.
 If we want to create a custom initializer, we need to do some extra work.
 -->
 
-Bây giờ khi đã biết cách truy cập tham số, ta sẽ xem làm thế nào để khởi tạo chúng đúng cách.
+Bây giờ khi đã biết cách truy cập tham số, hãy cùng xem xét việc khởi tạo chúng đúng cách.
 Ta đã thảo luận về sự cần thiết của việc khởi tạo tham số trong :numref:`sec_numerical_stability`.
 Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
-Tuy nhiên, ta thường cần sử dụng các phương pháp khác để khởi tạo trọng số.
-Mô-đun `init` của MXNet đã cung cấp sẵn nhiều phương thức khởi tạo, nhưng nếu muốn một cái gì đó khác thường, ta sẽ cần làm việc thêm một chút.
+Tuy nhiên, thường ta sẽ muốn khởi tạo trọng số theo nhiều phương pháp khác.
+Mô-đun `init` của MXNet cung cấp sẵn nhiều phương thức khởi tạo.
+Nếu ta muốn tạo một bộ khởi tạo tùy chỉnh, ta sẽ cần làm việc thêm một chút.
 
 
 <!--
@@ -415,8 +416,8 @@ Let us begin by calling on built-in initializers.
 The code below initializes all parameters as Gaussian random variables with standard deviation $0.01$.
 -->
 
-Ta sẽ bắt đầu với các bộ khởi tạo có sẵn.
-Mã nguồn dưới đây khởi tạo tất cả các tham số với các biến ngẫu nhiên từ phân phối Gauss.
+Ta sẽ bắt đầu với việc gọi các bộ khởi tạo có sẵn.
+Đoạn mã dưới đây khởi tạo tất cả các tham số với các biến ngẫu nhiên Gauss có độ lệch chuẩn bằng $0.01$. 
 
 ```{.python .input  n=9}
 # force_reinit ensures that variables are freshly initialized
@@ -433,7 +434,7 @@ If we wanted to initialize all parameters to 1, we could do this simply by chang
 We can also initialize all parameters to a given constant value (say, $1$), by using the initializer `Constant(1)`.
 -->
 
-Nếu muốn khởi tạo tất cả các tham số bằng 1, ta có thể đơn thuần thay bộ khởi tạo thành `Constant(1)`.
+Ta cũng có thể khởi tạo tất cả tham số với một hằng số (ví dụ như $1$) bằng cách sử dụng bộ khởi tạo `Constant(1)`.
 
 ```{.python .input  n=10}
 net.initialize(init=init.Constant(1), force_reinit=True)
@@ -450,7 +451,7 @@ We can also apply different initialziers for certain Blocks.
 For example, below we initialize the first layer with the `Xavier` initializer and initialize the second layer to a constant value of 42.
 -->
 
-Nếu muốn khởi tạo một tham số cụ thể theo một cách riêng biệt, ta có thể đơn thuần sử dụng một bộ khởi tạo riêng cho khối con (hay tham số) tương ứng.
+Ta còn có thể áp dụng các bộ khởi tạo khác nhau cho các khối khác nhau.
 Ví dụ, trong đoạn mã nguồn bên dưới, ta khởi tạo tầng đầu tiên bằng cách sử dụng bộ khởi tạo `Xavier` và khởi tạo tầng thứ hai với một hằng số là 42.
 
 ```{.python .input  n=11}
