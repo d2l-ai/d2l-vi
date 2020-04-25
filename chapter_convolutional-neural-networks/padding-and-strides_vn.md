@@ -212,7 +212,7 @@ When the convolution window slides three columns to the right on the input, ther
 In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
-Thông thường, khi sải bước của chiều cao là $s_h$ và sải bước của chiều rộng là $s_w$ thì kích thước đầu ra là 
+Thông thường, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là 
 
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
