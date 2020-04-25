@@ -222,7 +222,7 @@ Going a step further, if the input height and width are divisible by the strides
 -->
 
 Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, thì kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$.
-Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước của chiều cao và chiều rộng tương ứng, thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
+Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng, thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
 
 <!--
 Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
