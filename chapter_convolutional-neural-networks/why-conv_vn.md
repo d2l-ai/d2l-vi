@@ -80,7 +80,7 @@ Có vẻ là hợp lý khi cho rằng bất cứ phương pháp nào ta sử d�
 Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác được kiến thức này.
 Lợn thường không bay và máy bay thường không bơi.
 Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn nếu nó xuất hiện.
-Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Where's Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
+Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
 Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
 Nhiệm vụ của người chơi là xác định vị trí anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
 Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng lớn các yếu tố gây nhiễu nên việc nhận dạng anh ta vẫn có thể khó khăn một cách đáng ngạc nhiên.
