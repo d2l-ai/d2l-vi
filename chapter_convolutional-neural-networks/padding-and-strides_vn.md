@@ -158,7 +158,7 @@ we can make the output and input have the same height and width by setting diffe
 -->
 
 Khi chiều dài và chiều rộng bộ lọc tích chập khác nhau,
-chúng ta có thể chỉnh kích thước đệm của chiều dài và chiều rộng khác nhau để đầu vào và đầu ra có cùng kích thước.
+chúng ta có thể chỉnh kích thước chiều dài và chiều rộng của phần đệm là khác nhau để đầu vào và đầu ra có cùng kích thước.
 
 ```{.python .input  n=2}
 # Here, we use a convolution kernel with a height of 5 and a width of 3. The
