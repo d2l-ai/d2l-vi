@@ -5,7 +5,7 @@
 # Multiple Input and Output Channels
 -->
 
-# *dịch tiêu đề phía trên*
+# Đa kênh đầu vào và ra
 :label:`sec_channels`
 
 <!--
@@ -14,7 +14,9 @@ until now, we simplified all of our numerical examples by working with just a si
 This has allowed us to think of our inputs, convolutional kernels, and outputs each as two-dimensional arrays.
 -->
 
-*dịch đoạn phía trên*
+Trong khi chúng ta đã mô tả các kênh tạo nên mỗi bức ảnh (cụ thể, ảnh màu có các kênh RGB chuẩn để thể hiện lượng màu đỏ, xanh lá và xanh dương), 
+đến tận lúc này, chúng ta đã đơn giản hóa tất cả các ví dụ tính toán chỉ với một kênh đầu vào đơn và một kênh đầu ra đơn. 
+Điều này cho phép chúng ta tư duy mỗi đối tượng đầu vào, các bộ lọc tích chập, và các đầu ra như một mảng hai chiều.
 
 <!--
 When we add channels into the mix, our inputs and hidden representations both become three-dimensional arrays.
@@ -23,13 +25,16 @@ We refer to this axis, with a size of 3, as the channel dimension.
 In this section, we will take a deeper look at convolution kernels with multiple input and multiple output channels.
 -->
 
-*dịch đoạn phía trên*
+Khi chúng ta thêm các kênh vào bộ trộn, cả các đầu vào lẫn các lớp biểu diễn ẩn của ta trở thành các mảng ba chiều.
+Chẳng hạn, mỗi ảnh RGB đầu vào có dạng $3\times h\times w$.
+Ta xem trục có kích thước là 3 này là chiều kênh. 
+Trong phần này, ta sẽ quan sát sâu hơn vào các bộ lọc tích chập với đa kênh đầu vào và ra.
 
 <!--
 ## Multiple Input Channels
 -->
 
-## *dịch tiêu đề phía trên*
+## Đa kênh đầu vào
 
 <!--
 When the input data contains multiple channels, we need to construct a convolution kernel with the same number of input channels as the input data, so that it can perform cross-correlation with the input data.
@@ -37,7 +42,9 @@ Assuming that the number of channels for the input data is $c_i$, the number of 
 If our convolution kernel's window shape is $k_h\times k_w$, then when $c_i=1$, we can think of our convolution kernel as just a two-dimensional array of shape $k_h\times k_w$.
 -->
 
-*dịch đoạn phía trên*
+Khi dữ liệu đầu vào có nhiều kênh, ta cần xây dựng một bộ lọc tích chập với cùng số kênh đầu vào như dữ liệu nhập, để nó có thể thực hiện tính tương quan chéo với dữ liệu này.
+Giả sử là số kênh dữ liệu đầu vào là $c_i$, số kênh đầu vào của bộ lọc tích chập này cũng sẽ cần là $c_i$.
+Nếu kích thước cửa sổ của bộ lọc tích chập là $k_h\times k_w$, thì khi $c_i=1$, ta có thể xem bộ lọc tích chập này đơn giản là một mảng hai chiều có kích thước $k_h\times k_w$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -328,7 +335,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 *
