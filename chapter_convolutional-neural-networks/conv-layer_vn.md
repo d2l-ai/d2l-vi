@@ -102,7 +102,7 @@ We can construct the input array `X` and the kernel array `K` from the figure ab
 to validate the output of the above implementations of the two-dimensional cross-correlation operation.
 -->
 
-Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc`K` như hình trên để kiểm tra lại kết quả lập trình của phép toán tương quan chéo hai chiều.
+Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` như hình trên để kiểm tra lại kết quả lập trình của phép toán tương quan chéo hai chiều.
 
 ```{.python .input}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
@@ -138,9 +138,9 @@ As with $h \times w$ cross-correlation we also refer to convolutional layers as 
 -->
 
 Bây giờ ta đã sẵn sàng lập trình một tầng tích chập hai chiều dựa vào hàm `corr2d` ta vừa định nghĩa ở trên.
-Trong hàm khởi tạo`__init__`, ta thiết lập hai tham số của mô hình `weigh` và `bias`.
+Trong hàm khởi tạo`__init__`, ta thiết lập hai tham số của mô hình `weight` và `bias`.
 Hàm tính lượt truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm vào hệ số điều chỉnh.
-Giống như $h \times w$ tương quan chéo ta cũng đề cập đến tầng tích chập $h \times w$ phép tích chập.
+Cũng giống cách gọi phép tương quan chéo $h \times w$, ta cũng đề cập đến các tầng tích chập là phép tích chập $h \times w$.
 
 ```{.python .input  n=70}
 class Conv2D(nn.Block):
