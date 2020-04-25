@@ -33,7 +33,7 @@ slicing off $30 \%$ of the image and with it obliterating any interesting inform
 *Padding* is the most popular tool for handling this issue.
 -->
 
-Trong một số trường hợp, ta sẽ kết hợp các kỹ thuật để tác động tới kích thước của đầu ra, bao gồm cả đệm và phép tích chập sải bước.
+Trong nhiều trường hợp, ta sẽ kết hợp thêm các kỹ thuật khác cũng có ảnh hưởng tới kích thước của đầu ra, như thêm phần đệm và phép tích chập sải bước.
 Lưu ý rằng vì các bộ lọc thường có chiều rộng và chiều cao lớn hơn $1$ nên sau khi áp dụng nhiều phép tích chập liên tiếp, đầu ra thường có kích thước nhỏ hơn đáng kể so với đầu vào.
 Nếu ta bắt đầu với một ảnh có $240 \times 240$ điểm ảnh và áp dụng $10$ tầng tích chập có kích thước $5 \times 5$ thì kích thước ảnh này sẽ giảm xuống $200 \times 200$ điểm ảnh, $30 \%$ của ảnh sẽ bị cắt bỏ và mọi thông tin thú vị trên viền của ảnh gốc sẽ bị xóa sạch. *Đệm* là công cụ phổ biến nhất để xử lý vấn đề này.
 
