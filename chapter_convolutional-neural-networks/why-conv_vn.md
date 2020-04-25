@@ -50,7 +50,7 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-Một bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
+Bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
 Tuy nhiên, ngay cả khi chỉ sử dụng 100,000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
 Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
 Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
