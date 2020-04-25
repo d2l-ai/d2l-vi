@@ -75,7 +75,7 @@ Next, we implement the above process in the `corr2d` function.
 It accepts the input array `X` with the kernel array `K` and outputs the array `Y`.
 -->
 
-Lưu ý rằng dọc theo mỗi trục, đầu ra hơi *nhỏ hơn* so với đầu vào.
+Lưu ý rằng theo mỗi trục, kích thước đầu ra hơi *nhỏ hơn* so với đầu vào.
 Bởi vì bộ lọc có chiều rộng lớn hơn một, và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
 Đây là trường hợp mà ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước không đổi bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
