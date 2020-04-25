@@ -228,7 +228,7 @@ Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết ch
 Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
 -->
 
-Dưới đây, chúng ta đặt sải bước cho cả chiều cao và chiều rộng là $2$, do đó chia đôi chiều cao và chiều rộng của đầu vào.  
+Dưới đây, chúng ta đặt sải bước cho cả chiều cao và chiều rộng là $2$, do đó chiều cao và chiều rộng của đầu ra bằng một nửa chiều cao và chiều rộng của đầu vào.   
 
 ```{.python .input}
 conv2d = nn.Conv2D(1, kernel_size=3, padding=1, strides=2)
