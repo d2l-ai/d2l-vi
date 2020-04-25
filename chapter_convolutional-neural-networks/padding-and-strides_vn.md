@@ -255,10 +255,10 @@ By default, the padding is $0$ and the stride is $1$.
 In practice, we rarely use inhomogeneous strides or padding, i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 -->
 
-Để đơn giản, khi số đệm trên chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta gọi là phần đệm $(p_h, p_w)$.
-Đặc biệt khi $p_h = p_w = p$, đây là phần đệm $p$.
-Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta gọi là sải bước $(s_h, s_w)$.
-Đặc biệt khi $s_h = s_w = s$, đây là sải bước $s$.
+Để đơn giản, khi số đệm trên chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta kí hiệu phần đệm là $(p_h, p_w)$.
+Trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$.
+Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$.
+Trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$.
 Mặc định, phần đệm là $0$ và sải bước là $1$.
 Trên thực tế, ít khi chúng ta sử dụng sải bước hoặc phần đệm khác biệt, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
 
