@@ -280,7 +280,7 @@ We can exploit this naming convention by leveraging one clever feature of `colle
 
 Xuyên suốt cuốn sách này ta sẽ thấy các khối đặt tên cho khối con theo nhiều cách khác nhau. 
 Khối Sequential chỉ đơn thuần đánh số chúng. 
-Ta có thể tận dụng quy ước định danh này cùng với một tính năng thông minh của `collect_params` để lọc ra các tham số được trả về bằng các biểu thức chính quy.
+Ta có thể tận dụng quy ước định danh này cùng với một tính năng thông minh của `collect_params` để lọc ra các tham số được trả về bằng các biểu thức chính quy (_regular expression_).
 
 ```{.python .input  n=8}
 print(net.collect_params('.*weight'))
@@ -397,7 +397,7 @@ Ta đã thảo luận về sự cần thiết của việc khởi tạo tham s�
 Theo mặc định, MXNet khởi tạo các ma trận trọng số bằng cách lấy mẫu từ phân phối đều $U[-0,07, 0,07]$ và đặt tất cả các hệ số điều chỉnh bằng $0$.
 Tuy nhiên, thường ta sẽ muốn khởi tạo trọng số theo nhiều phương pháp khác.
 Mô-đun `init` của MXNet cung cấp sẵn nhiều phương thức khởi tạo.
-Nếu ta muốn một bộ khởi tạo tùy chỉnh, ta sẽ cần làm việc thêm một chút.
+Nếu ta muốn một bộ khởi tạo tùy chỉnh, ta sẽ cần làm thêm một chút việc.
 
 
 <!--
