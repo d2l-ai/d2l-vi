@@ -5,7 +5,7 @@
 # Padding and Stride
 -->
 
-# *dịch tiêu đề phía trên*
+# Đệm và Sải Bước
 :label:`sec_padding`
 
 <!--
@@ -13,7 +13,8 @@ In the previous example, our input had both a height and width of $3$ and our co
 In general, assuming the input shape is $n_h\times n_w$ and the convolution kernel window shape is $k_h\times k_w$, then the output shape will be
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ trước, đầu vào có cả chiều dài và chiều rộng cùng bằng $3$, bộ lọc tích chập có cả chiều dài và chiều rộng cùng bằng $2$, và biểu diễn đầu ra có kích thước $2\times2$.
+Nói chung, giả sử kích thước của đầu vào là $n_h\times n_w$ và kích thước của cửa sổ bộ lọc tích chập là $k_h\times k_w$, thì kích thước của đầu ra sẽ là
 
 $$(n_h-k_h+1) \times (n_w-k_w+1).$$
 
@@ -21,7 +22,7 @@ $$(n_h-k_h+1) \times (n_w-k_w+1).$$
 Therefore, the output shape of the convolutional layer is determined by the shape of the input and the shape of the convolution kernel window.
 -->
 
-*dịch đoạn phía trên*
+Do đó, kích thước của đầu ra của tầng tích chập được xác định bởi kích thước của đầu vào và kích thước của cửa sổ bộ lọc tích chập.
 
 <!--
 In several cases, we incorporate techniques, including padding and strided convolutions, that affect the size of the output.
@@ -32,14 +33,17 @@ slicing off $30 \%$ of the image and with it obliterating any interesting inform
 *Padding* is the most popular tool for handling this issue.
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp, ta sẽ kết hợp thêm các kỹ thuật khác cũng có ảnh hưởng tới kích thước của đầu ra, như thêm phần đệm và phép tích chập sải bước.
+Lưu ý rằng vì các bộ lọc thường có chiều rộng và chiều cao lớn hơn $1$ nên sau khi áp dụng nhiều phép tích chập liên tiếp, đầu ra thường có kích thước nhỏ hơn đáng kể so với đầu vào.
+Nếu ta bắt đầu với một ảnh có $240 \times 240$ điểm ảnh và áp dụng $10$ tầng tích chập có kích thước $5 \times 5$ thì kích thước ảnh này sẽ giảm xuống $200 \times 200$ điểm ảnh, $30 \%$ của ảnh sẽ bị cắt bỏ và mọi thông tin thú vị trên viền của ảnh gốc sẽ bị xóa sạch. *Đệm* là công cụ phổ biến nhất để xử lý vấn đề này.
 
 <!--
 In other cases, we may want to reduce the dimensionality drastically, e.g., if we find the original input resolution to be unwieldy. 
 *Strided convolutions* are a popular technique that can help in these instances.
 -->
 
-*dịch đoạn phía trên*
+Trong những trường hợp khác, ta có thể muốn giảm đáng kể kích thước ảnh, ví dụ như khi độ phân giải của đầu vào là quá cao.
+*Phép tích chập sải bước* là một kỹ thuật phổ biến có thể giúp ích trong trường hợp này.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -327,7 +331,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 2 -->
 *
