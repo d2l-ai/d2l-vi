@@ -488,7 +488,7 @@ In the example below, we define an initializer for the following strange distrib
 
 Đôi khi, các phương thức khởi tạo mà ta cần không có sẵn trong mô-đun `init`.
 Trong trường hợp đó, ta có thể khai báo một lớp con của lớp `Initializer`.
-Thông thường, ta chỉ cần lập trình hàm `_init_weight` nhận một đối số `ndarray` (`data`) và gán cho nó giá trị khởi tạo mong muốn.
+Thông thường, ta chỉ cần lập trình hàm `_init_weight` để nhận một đối số `ndarray` (`data`) và gán giá trị khởi tạo mong muốn cho nó.
 Trong ví dụ bên dưới, ta sẽ khai báo một bộ khởi tạo cho phân phối kì lạ sau:
 
 $$
@@ -601,7 +601,7 @@ Since the model parameters contain gradients, the gradients of the second hidden
 -->
 
 Ví dụ này cho thấy các tham số của tầng thứ hai và thứ ba đã bị trói buộc với nhau.
-Chúng không chỉ có giá trị bằng nhau, chúng được biểu diễn bởi cùng một `ndarray`. 
+Chúng không chỉ có giá trị bằng nhau, chúng còn được biểu diễn bởi cùng một `ndarray`. 
 Vì vậy, nếu ta thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
 Bạn có thể tự hỏi rằng *chuyện gì sẽ xảy ra với gradient khi các tham số bị trói buộc?*.
 Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
@@ -642,6 +642,7 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
 4. Xây dựng và huấn luyện một perceptron đa tầng trong đó có một tầng sử dụng tham số được chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
 5. Tại sao việc chia sẻ tham số lại là là một ý tưởng hay?
+
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
