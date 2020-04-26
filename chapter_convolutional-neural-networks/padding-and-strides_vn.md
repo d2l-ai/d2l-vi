@@ -49,7 +49,7 @@ In other cases, we may want to reduce the dimensionality drastically, e.g., if w
 ## Padding
 -->
 
-## *dịch tiêu đề phía trên*
+## Đệm
 
 <!--
 As described above, one tricky issue when applying convolutional layers is that we tend to lose pixels on the perimeter of our image.
@@ -60,13 +60,19 @@ In :numref:`img_conv_pad`, we pad a $3 \times 5$ input, increasing its size to $
 The corresponding output then increases to a $4 \times 6$ matrix.
 -->
 
-*dịch đoạn phía trên*
+Như mô tả ở trên, một vấn đề rắc rối khi áp dụng các tầng tích chập là việc chúng ta có thể mất một số điểm trên biên của ảnh. 
+Vì chúng ta thường sử dụng các bộ lọc nhỏ, với bất kỳ phép tích chập nào, ta có thể chỉ mất một ít điểm ảnh, tuy nhiên sự mất mát này có thể tích lũy dần khi ta thực hiện qua nhiều tầng tích chập liên tiếp.
+Một giải pháp đơn giản cho vấn đề này là chèn thêm các điểm ảnh xung quanh đường biên trên bức ảnh đầu vào, nhờ đó làm tăng kích thước sử dụng của bức ảnh. 
+Thông thường, chúng ta thiết lập các giá trị của các điểm ảnh thêm vào là $0$. 
+Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tăng kích thước của nó tới $5 \times 7$.
+Đầu ra tương ứng sẽ tăng lên thành một ma trận $4 \times 6$.
 
 <!--
 ![Two-dimensional cross-correlation with padding. The shaded portions are the input and kernel array elements used by the first output element: $0\times0+0\times1+0\times2+0\times3=0$. ](../img/conv-pad.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/conv-pad.svg)
+![Tương quan chéo hai chiều khi thực hiện đệm.
+Phần tô đậm là các phần tử của mảng đầu vào và bộ lọc được sử dụng để tính phần tử đầu ra thứ nhất: $0\times0+0\times1+0\times2+0\times3=0$.](../img/conv-pad.svg)
 :label:`img_conv_pad`
 
 <!--
@@ -74,7 +80,7 @@ In general, if we add a total of $p_h$ rows of padding (roughly half on top and 
 a total of $p_w$ columns of padding (roughly half on the left and half on the right), the output shape will be
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung nếu chúng ta chèn thêm tổng cộng $p_h$ hàng đệm (phân nửa ở phía trên và phân nửa ở phía dưới) và $p_w$ cột đệm (phân nửa bên trái và phân nửa bên phải), thì kích thước đầu ra sẽ là
 
 $$(n_h-k_h+p_h+1)\times(n_w-k_w+p_w+1).$$
 
@@ -82,7 +88,7 @@ $$(n_h-k_h+p_h+1)\times(n_w-k_w+p_w+1).$$
 This means that the height and width of the output will increase by $p_h$ and $p_w$ respectively.
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là chiều cao và chiều rộng của đầu ra sẽ tăng thêm lần lượt là $p_h$ và $p_w$.
 
 <!--
 In many cases, we will want to set $p_h=k_h-1$ and $p_w=k_w-1$ to give the input and output the same height and width.
@@ -92,7 +98,11 @@ If $k_h$ is odd, one possibility is to pad $\lceil p_h/2\rceil$ rows on the top 
 We will pad both sides of the width in the same way.
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp, ta sẽ mong muốn thiết lập $p_h=k_h-1$ và $p_w=w_k-1$ để đưa kích thước đầu ra và đầu vào bằng nhau.
+Điều này sẽ làm việc dự đoán kích thước đầu ra của mỗi tầng dễ dàng hơn khi ta xây dựng mạng.
+Giả sử $k_h$ ở đây là chẵn, ta sẽ chèn $p_h/2$ hàng ở cả hai phía ở chiều dọc.
+Nếu $k_h$ là lẻ, một khả năng là phải chèn $\lceil p_h/2\rceil$ hàng phía trên của đầu vào và $\lfloor p_h/2\rfloor$ hàng cho phía dưới.
+Chúng ta cũng thực hiện chèn cả hai bên của chiều ngang theo cùng cách như vậy.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
