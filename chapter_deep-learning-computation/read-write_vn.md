@@ -27,11 +27,10 @@ Thus it is time we learned how to load and store both individual weight vectors 
 This section addresses both issues.
 -->
 
-Cho đến giờ ta đã thảo luận về cách xử lý dữ liệu, cách xây dựng, huấn luyện và kiểm tra các mô hình học sâu.
-Tuy nhiên, có thể đến một lúc nào đó ta sẽ cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng và phân phối.
-Tương tự như vậy, khi thực hiện một quá trình huấn luyện dài, việc lưu lại các kết quả trung gian (điểm kiểm tra) là một nguyên tắc thực hành tốt để đảm bảo rằng ta sẽ không mất kết quả tính toán sau nhiều ngày nếu chẳng may vấp phải dây nguồn của máy chủ.
-Đồng thời, ta có thể muốn nạp một mô hình đã được huấn luyện sẵn (ví dụ: sử dụng các embedding từ tiếng Anh có sẵn để xây dựng một bộ phân loại thư rác màu mè).
-Đối với tất cả các trường hợp này, ta cần đọc và lưu cả các vector trọng số đơn lẻ cũng như toàn bộ mô hình.
+Đến nay, ta đã thảo luận về cách xử lý dữ liệu và cách xây dựng, huấn luyện, kiểm tra những mô hình học sâu.
+Tuy nhiên, có thể đến một lúc nào đó ta sẽ cảm thấy hài lòng với những gì thu được và muốn lưu lại kết quả để sau này sử dụng trong những bối cảnh khác nhau (thậm chí có thể đưa ra dự đoán khi triển khai).
+Ngoài ra, khi vận hành một quá trình huấn luyện dài hơi, cách tốt nhất là lưu kết quả trung gian một cách định kỳ (điểm kiểm tra) nhằm đảm bảo rằng ta sẽ không mất kết quả tính toán sau nhiều ngày nếu chẳng may ta vấp phải dây nguồn của máy chủ.
+Vì vậy, đã đến lúc chúng ta học cách đọc và lưu trữ đồng thời các vector trọng số riêng lẻ cùng toàn bộ các mô hình.
 Mục này sẽ giải quyết cả hai vấn đề trên.
 
 <!--
@@ -50,8 +49,8 @@ For individual `ndarray`s, we can directly invoke their `load` and `save` functi
 Both functions require that we supply a name, and `save` requires as input the variable to be saved.
 -->
 
-Ở dạng đơn giản nhất, ta có thể sử dụng trực tiếp các hàm `load` và `save` để đọc và lưu các `ndarray` riêng rẽ.
-Cách này hoạt động đúng như mong đợi.
+Đối với `ndarray` riêng lẻ, ta có thể sử dụng trực tiếp các hàm `load` và `save` để đọc và ghi tương ứng.
+Cả hai hàm đều yêu cầu ta cung cấp tên, và hàm `save` yêu cầu đầu vào với biến đã được lưu.
 
 ```{.python .input}
 from mxnet import np, npx
@@ -66,7 +65,7 @@ npx.save('x-file', x)
 We can now read this data from the stored file back into memory.
 -->
 
-Sau đó, ta đọc lại dữ liệu từ các tệp được lưu vào trong bộ nhớ.
+Bây giờ, chúng ta có thể đọc lại dữ liệu từ các tệp được lưu vào trong bộ nhớ.
 
 ```{.python .input}
 x2 = npx.load('x-file')
@@ -77,7 +76,7 @@ x2
 MXNet also allows us to store a list of `ndarray`s and read them back into memory.
 -->
 
-Ta cũng có thể lưu một danh sách các `ndarray` và đọc lại chúng vào trong bộ nhớ.
+MXNet đồng thời cho phép ta lưu một danh sách các `ndarray` và đọc lại chúng vào trong bộ nhớ.
 
 ```{.python .input  n=2}
 y = np.zeros(4)
@@ -97,7 +96,7 @@ This is convenient when we want to read or write all the weights in a model.
 -->
 
 Ta còn có thể ghi và đọc một từ điển ánh xạ từ một chuỗi sang một `ndarray`.
-Điều này khá là thuận tiện, ví dụ như khi ta muốn đọc hoặc ghi tất cả các trọng số của một mô hình.
+Điều này khá là thuận tiện khi chúng ta muốn đọc hoặc ghi tất cả các trọng số của một mô hình.
 
 ```{.python .input  n=4}
 mydict = {'x': x, 'y': y}
