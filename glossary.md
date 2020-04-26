@@ -58,7 +58,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | clustering                          | phân cụm               | [https://git.io/JvojD](https://git.io/JvojD) |
 | code (danh từ)                      | mã nguồn               |                                              |
 | code (động từ)                      | viết mã                |                                              |
-| command line (interface)                | cửa sổ dòng lệnh       |                                              |
+| command line (interface)            | cửa sổ dòng lệnh       |                                              |
 | computer vision                     | thị giác máy tính      |                                              |
 | computing (trong Khoa Học Máy Tính) | điện toán              | [https://git.io/JvojH](https://git.io/JvojH) |
 | computational graph                 | đồ thị tính toán       | [https://git.io/JvohQ](https://git.io/JvohQ) |
@@ -274,7 +274,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | plateau (danh từ)                  | vùng nằm ngang             |                                              |
 | plateau (động từ)                  | nằm ngang                  |                                              |
 | pipeline                           | pipeline                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
-| pixel | điểm ảnh | |
+| pixel                              | điểm ảnh                   |                                              |
 | policy (trong Học Tăng cường)      | chính sách                 | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
 | pooling                            | gộp                        | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | positive sample/example            | mẫu dương                  |                                              |
@@ -298,7 +298,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-----------------------------------|-------------------------------------------|----------------------------------------------|
 | random variable                   | biến ngẫu nhiên                           |                                              |
 | recall                            | recall                                    |                                              |
-| receptive field (CNN) | vùng tiếp nhận | |
+| receptive field (CNN)             | vùng tiếp nhận                            | [https://git.io/Jftwh](https://git.io/Jftwh) |
 | recognition                       | nhận dạng                                 |                                              |
 | recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
 | rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
@@ -322,7 +322,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling without replacement    | lấy mẫu không hoàn lại   | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | satisficing metric              | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | scalar                          | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| scale invariant | bất biến quy mô | |
+| scale invariant                 | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scroing function                | hàm tính điểm            |                                              |
 | sentiment classification        | phân loại cảm xúc        |                                              |
 | sequence learning               | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
@@ -361,7 +361,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set               | tập huấn luyện                 |                                              |
 | training dev set           | tập phát triển huấn luyện      |                                              |
 | training set performance   | chất lượng trên tập huấn luyện |                                              |
-| translation invariant | bất biến tịnh tiến | |
+| translation invariant      | bất biến tịnh tiến             | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | transcribe                 | phiên thoại                    | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription              | bản ghi thoại                  |                                              |
 | true negative              | âm tính thật                   |                                              |

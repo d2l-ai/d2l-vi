@@ -2,7 +2,7 @@
 name: 🏗 Dịch thuật Giai đoạn 1
 about: Dành cho Điều phối viên Dự án
 title: 'Dịch "tên_tệp" - Phần '
-labels: 'status: help wanted'
+labels: ''
 assignees: ''
 
 ---

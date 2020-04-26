@@ -1,74 +1,66 @@
 ## Giới thiệu từ nhóm dịch
 
 ### Mục tiêu của dự án
-Trong những năm gần đây, học sâu là một trong các lĩnh vực được quan tâm nhiều nhất
-trong các trường đại học cũng như các công ty công nghệ. Ngày càng nhiều
-các diễn đàn liên quan đến học máy và học sâu với lượng thành viên và chủ đề trao
-đổi ngày
-một tăng. Một trong các diễn đàn tiếng Việt nổi bật nhất là [Forum Machine Learning cơ bản](https://www.facebook.com/groups/machinelearningcoban/) và [Diễn đàn Machine Learning cơ bản](https://forum.machinelearningcoban.com/) với hơn 35 ngàn thành viên và hàng chục chủ đề mới mỗi ngày.
+Trong những năm gần đây, học sâu là một trong các lĩnh vực được quan tâm nhiều nhất trong các trường Đại học cũng như các Công ty Công nghệ.
+Ngày càng nhiều các diễn đàn liên quan đến học máy và học sâu với lượng thành viên và chủ đề trao đổi ngày một tăng. 
+Một trong các diễn đàn tiếng Việt nổi bật nhất là [Forum Machine Learning cơ bản](https://www.facebook.com/groups/machinelearningcoban/) và 
+[Diễn đàn Machine Learning cơ bản](https://forum.machinelearningcoban.com/) với hơn 41 ngàn thành viên và hàng chục chủ đề mới mỗi ngày.
 
-Qua các diễn đàn đó, chúng tôi nhận ra rằng nhu cầu tìm hiểu lĩnh vực này ngày
-một tăng trong khi lượng tài liệu tiếng Việt còn rất hạn chế.
-Đặc biệt, các tài liệu tiếng Việt còn chưa nhất quán trong cách dịch,
-khiến độc giả bối rối trước quá nhiều thông tin nhưng
-lại quá ít thông tin đầy đủ. Việc này thúc đẩy chúng tôi tìm và dịch những cuốn sách
-được quan tâm nhiều về lĩnh vực này.
+Qua các diễn đàn đó, chúng tôi nhận ra rằng nhu cầu tìm hiểu lĩnh vực này ngày một tăng trong khi lượng tài liệu tiếng Việt còn rất hạn chế.
+Đặc biệt, các tài liệu tiếng Việt còn chưa nhất quán trong cách dịch, khiến độc giả bối rối trước quá nhiều thông tin nhưng
+lại quá ít thông tin đầy đủ. Việc này thúc đẩy chúng tôi tìm và dịch những cuốn sách được quan tâm nhiều về lĩnh vực này.
 
 Nhóm dịch đã bước đầu thành công khi dịch cuốn [Machine Learning Yearning](https://github.com/aivivn/Machine-Learning-Yearning-Vietnamese-Translation/blob/master/chapters/all_chapters.md)
-của tác giả Andrew Ng. Cuốn sách này đề cập đến các vấn đề cần lưu ý khi xây dựng
-các hệ thống học máy, trong đó đề cập đến nhiều kiến thức thực tế khi thực hiện dự 
-án. Tuy nhiên, cuốn sách này phần nào hướng tới những người đã có những kinh nghiệm
-nhất định đã đang tham gia các dự án học máy. Chúng tôi vẫn khao khát được mang một
-tài liệu đầy đủ hơn với đủ kiến thức toán nền tảng, cách triển khai các công thức
-toán bằng mã nguồn, cùng với cách triển khai một hệ thống thực tế trên một nền tảng
-học sâu được nhiều người sử dụng. Và quan trọng hơn, các kiến thức này phải cập nhật
-các xu hướng học máy mới nhất.
+của tác giả Andrew Ng. 
+Cuốn sách này đề cập đến các vấn đề cần lưu ý khi xây dựng các hệ thống học máy, trong đó đề cập đến nhiều kiến thức thực tế khi thực hiện dự án. 
+Tuy nhiên, cuốn sách này phần nào hướng tới những người đã có những kinh nghiệm nhất định đã đang tham gia các dự án học máy. Chúng tôi vẫn khao khát được mang một
+tài liệu đầy đủ hơn với đủ kiến thức toán nền tảng, cách triển khai các công thức toán bằng mã nguồn, cùng với cách triển khai một hệ thống thực tế trên một nền tảng
+học sâu được nhiều người sử dụng. Và quan trọng hơn, các kiến thức này phải cập nhật các xu hướng học máy mới nhất.
 
-Sau nhiều ngày tìm kiếm các cuốn sách về học máy/học sâu được các trường đại học
-lớn trên thế giới sử dụng trong quá trình giảng dạy, chúng
-tôi quyết định dịch cuốn [Dive into Deep Learning](https://www.d2l.ai/) của nhóm tác 
-giả từ công ty Amazon. Cuốn này hội tụ đủ các yếu tố: có giải thích toán dễ hiểu,
-có code đi kèm cho những bạn muốn thực hành ngay khi học xong lý thuyết,
-cập nhật đầy đủ những khía cạnh của
-học sâu, và quan trọng nhất là không đòi hỏi bản quyền để dịch. Chúng tôi đã liên hệ
-với nhóm tác giả và họ rất vui mừng khi cuốn sách sắp được phổ biến rộng rãi hơn nữa.
+Sau nhiều ngày tìm kiếm các cuốn sách về học máy/học sâu được các trường đại học lớn trên thế giới sử dụng trong quá trình giảng dạy, 
+chúng tôi quyết định dịch cuốn [Dive into Deep Learning](https://www.d2l.ai/) của nhóm tác  giả từ công ty Amazon. 
+Cuốn này hội tụ đủ các yếu tố: có giải thích toán dễ hiểu, có code đi kèm cho những bạn muốn thực hành ngay khi học xong lý thuyết,
+cập nhật đầy đủ những khía cạnh của học sâu, và quan trọng nhất là không đòi hỏi bản quyền để dịch. 
+Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi cuốn sách sắp được phổ biến rộng rãi hơn nữa.
 
-Hiện cuốn sách vẫn đang được thực hiện và sắp ra mắt phiên bản 0.7.0. Nhóm tác giả
-có lời khuyên chúng tôi có thể dịch bản 0.7.0 này ở branch
-[numpy2](https://github.com/d2l-ai/d2l-en/tree/numpy2) và có thể cập nhật khi cuốn 
-sách được xuất bản. Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là
-`numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
+Hiện cuốn sách vẫn đang được thực hiện và sắp ra mắt phiên bản 0.7.0. Nhóm tác giả có lời khuyên chúng tôi có thể dịch bản 0.7.0 này ở branch
+[numpy2](https://github.com/d2l-ai/d2l-en/tree/numpy2) và có thể cập nhật khi cuốn sách được xuất bản. 
+Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
 chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết.
 
-Để có thể thực hiện dịch dự án dịch cuốn sách hơn 800 trang này, chúng tôi rất cần
-sự chung tay của cộng đồng. Mọi sự đóng góp đều đáng quý và sẽ được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. Và sau đó nó có thể trở thành
-giáo trình trong các trường đại học. Hy vọng một ngày chúng ta có thể nhìn thấy
-một trường của Việt Nam trong danh sách này:
+Để có thể thực hiện dịch dự án dịch cuốn sách hơn 800 trang này, chúng tôi rất cần sự chung tay của cộng đồng. 
+Mọi sự đóng góp đều đáng quý và sẽ được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. 
+Và sau đó nó có thể trở thành giáo trình trong các trường đại học. 
+Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Việt Nam trong danh sách này:
 
 ![Danh sách các trường đại học sử dụng cuốn sách này](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
 
 #### Trình tự dịch
 Đây cũng là các nội dung được đề cập trong cuốn sách:
 
-* Preface
-* Introduction
-* Preliminaries
-* Mathematics for Deep Learning
-* Tools for Deep Learning
-* Linear Neural Networks
-* Multilayer Perceptrons
-* Deep Learning Computation
-* Convolutional Neural Networks
-* Modern Convolutional Networks
+* Preface (**Đã hoàn thành**)
+* Installation (**Đã hoàn thành**)
+* Notation (**Đã hoàn thành**)
+* Introduction (**Đã hoàn thành**)
+* Preliminaries (**Đã hoàn thành**)
+* Linear Neural Networks (**Đã hoàn thành**)
+* Multilayer Perceptrons (**Đã hoàn thành**)
+* Deep Learning Computation (*Đang tiến hành*)
+* Convolutional Neural Networks (*Đang tiến hành*)
+* Modern Convolutional Neural Networks (*Đang tiến hành*)
 * Recurrent Neural Networks
-* Modern Recurrent Networks
+* Modern Recurrent Neural Networks
 * Attention Mechanisms
 * Optimization Algorithms
 * Computational Performance
 * Computer Vision
-* Natural Language Processing
+* Natural Language Processing: Pretraining
+* Natural Language Processing: Applications
 * Recommender Systems
 * Generative Adversarial Networks
+* Appendix: Mathematics for Deep Learning
+* Appendix: Tools for Deep Learning
+* References
 
 #### Diễn đàn
 
