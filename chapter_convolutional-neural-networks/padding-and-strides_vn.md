@@ -260,7 +260,7 @@ Trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm l
 Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$.
 Trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$.
 Mặc định, phần đệm là $0$ và sải bước là $1$.
-Trên thực tế, ít khi chúng ta sử dụng sải bước hoặc phần đệm khác biệt, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
+Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
