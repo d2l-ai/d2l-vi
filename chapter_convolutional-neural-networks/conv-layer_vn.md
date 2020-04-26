@@ -77,7 +77,7 @@ It accepts the input array `X` with the kernel array `K` and outputs the array `
 
 Lưu ý rằng theo mỗi trục, kích thước đầu ra hơi *nhỏ hơn* so với đầu vào.
 Bởi vì bộ lọc có chiều rộng lớn hơn một, và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Đây là trường hợp mà ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước không đổi bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
+Đây là trường hợp sẽ xảy ra vì ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước không đổi bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
 Hàm nhận mảng đầu vào `X` với mảng bộ lọc `K` và trả về mảng đầu ra `Y`
 
@@ -128,7 +128,7 @@ When training the models based on convolutional layers, we typically initialize 
 
 Tầng tích chập thực hiện phép toán tương quan chéo giữa đầu vào và bộ lọc sau đó cộng vào một hệ số điều chỉnh để có được đầu ra.
 Các tham số của tầng tích chập là giá trị chính xác cấu tạo nên bộ lọc và hệ số điều chỉnh.
-Khi huấn luyện mô hình dựa trên các tầng tích chập, ta thường khởi tạo bộ lọc ngẫu nhiên, điều này giống như cách ta làm với tầng kết nối đầy đủ.
+Khi huấn luyện mô hình dựa trên các tầng tích chập, ta thường khởi tạo bộ lọc ngẫu nhiên, giống như cách ta làm với tầng kết nối đầy đủ.
 
 <!--
 We are now ready to implement a two-dimensional convolutional layer based on the `corr2d` function defined above.
