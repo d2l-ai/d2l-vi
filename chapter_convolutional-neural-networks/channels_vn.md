@@ -43,7 +43,7 @@ If our convolution kernel's window shape is $k_h\times k_w$, then when $c_i=1$, 
 -->
 
 Khi dữ liệu đầu vào có nhiều kênh, ta cần xây dựng một bộ lọc tích chập với cùng số kênh đầu vào như dữ liệu nhập, để nó có thể thực hiện tính tương quan chéo với dữ liệu này.
-Giả sử là số kênh dữ liệu đầu vào là $c_i$, số kênh đầu vào của bộ lọc tích chập này cũng sẽ cần là $c_i$.
+Giả sử số kênh dữ liệu đầu vào là $c_i$, ta sẽ cần số kênh đầu vào của bộ lọc tích chập là $c_i$.
 Nếu kích thước cửa sổ của bộ lọc tích chập là $k_h\times k_w$, thì khi $c_i=1$, ta có thể xem bộ lọc tích chập này đơn giản là một mảng hai chiều có kích thước $k_h\times k_w$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
