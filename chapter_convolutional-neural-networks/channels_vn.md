@@ -115,7 +115,7 @@ corr2d_multi_in(X, K)
 ## Multiple Output Channels
 -->
 
-Đa kênh đầu ra
+## Đa kênh đầu ra
 
 <!--
 Regardless of the number of input channels, so far we always ended up with one output channel.
