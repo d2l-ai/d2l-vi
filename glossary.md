@@ -134,7 +134,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | flatten             | trải phẳng       | [https://git.io/JvohO](https://git.io/JvohO) |
 | forward pass        | lượt truyền xuôi | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework           | framework        |                                              |
-| functional anaylsis | giải tích hàm    |                                              |
+| functional analysis | giải tích hàm    |                                              |
 | fully-connected     | kết nối đầy đủ   | [https://git.io/JvohR](https://git.io/JvohR) |
 
 ## G
