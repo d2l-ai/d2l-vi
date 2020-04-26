@@ -286,7 +286,9 @@ In practice, we rarely use inhomogeneous strides or padding, i.e., we usually ha
 * Padding and stride can be used to adjust the dimensionality of the data effectively.
 -->
 
-*dịch đoạn phía trên*
+* Đệm có thể tăng chiều dài vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào.
+* Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều dài và chiều rộng của đầu ra chỉ còn $1/n$ chiều dài và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$).
+* Đệm và sải bước có thể được dùng để điều chỉnh số chiều của dữ liệu một cách hiệu quả.
 
 <!--
 ## Exercises
@@ -301,7 +303,10 @@ In practice, we rarely use inhomogeneous strides or padding, i.e., we usually ha
 4. What are the computational benefits of a stride larger than $1$.
 -->
 
-*dịch đoạn phía trên*
+1. Trong ví dụ cuối của phần này, tính kích thước đầu ra bằng công thức để xác nhận đúng với kết quả chạy mã nguồn.
+2. Thử các cách kết hợp đệm và sải bước khác trong các ví dụ ở phần này.
+3. Với các tín hiệu âm thanh, sải bước bằng $2$ tương ứng với điều gì?
+4. Có những lợi ích nào về mặt tính toán khi sử dụng sải bước lớn hơn $1$?
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -346,4 +351,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Cường
