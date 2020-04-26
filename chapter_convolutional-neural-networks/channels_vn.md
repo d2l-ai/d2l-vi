@@ -14,8 +14,8 @@ until now, we simplified all of our numerical examples by working with just a si
 This has allowed us to think of our inputs, convolutional kernels, and outputs each as two-dimensional arrays.
 -->
 
-Trong khi chúng ta đã mô tả các kênh tạo nên mỗi bức ảnh (cụ thể, ảnh màu có các kênh RGB chuẩn để thể hiện lượng màu đỏ, xanh lá và xanh dương), 
-đến tận lúc này, chúng ta đã đơn giản hóa tất cả các ví dụ tính toán chỉ với một kênh đầu vào đơn và một kênh đầu ra đơn. 
+Chúng ta đã mô tả mỗi bức ảnh được tạo nên bởi nhiều kênh (cụ thể, ảnh màu có các kênh chuẩn RGB để thể hiện lượng màu đỏ, xanh lá và xanh dương), 
+nhưng cho đến lúc này, ta đã đơn giản hóa tất cả các ví dụ tính toán chỉ với một kênh đầu vào đơn và một kênh đầu ra đơn. 
 Điều này cho phép chúng ta coi các đầu vào, các bộ lọc tích chập, và các đầu ra như một mảng hai chiều.
 
 <!--
