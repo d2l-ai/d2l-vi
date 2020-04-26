@@ -114,9 +114,7 @@ we know that the output `Y[i, j]` is calculated by cross-correlation of the inpu
 -->
 
 Hơn nữa, việc sử dụng bộ lọc kích thước lẻ cùng đệm để giữ nguyên số chiều mang lại một lợi ích khác.
-Với mảng hai chiều `X` bất kì, khi kích thước bộ lọc là lẻ và số hàng và cột đệm là bằng nhau, 
-đầu ra của phép tích chập sẽ có cùng chiều dài và chiều rộng với đầu vào, tức là
-mỗi phần tử đầu ra `Y[i, j]` được tính bằng phép tương quan chéo giữa đầu vào và bộ lọc tích chập có tâm nằm tại `X[i, j]`.
+Với mảng hai chiều `X` bất kì, khi kích thước bộ lọc là lẻ và số hàng và cột đệm là bằng nhau, đầu ra của phép tích chập sẽ có cùng chiều dài và chiều rộng với đầu vào, tức là mỗi phần tử đầu ra `Y[i, j]` được tính bằng phép tương quan chéo giữa đầu vào và bộ lọc tích chập có tâm nằm tại `X[i, j]`.
 
 <!--
 In the following example, we create a two-dimensional convolutional layer with a height and width of $3$ and apply $1$ pixel of padding on all sides.
