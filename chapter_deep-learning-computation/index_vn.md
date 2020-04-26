@@ -20,7 +20,7 @@ and now often design architectures with far coarser *blocks* in mind.
 Ngoài các tập dữ liệu khổng lồ và phần cứng mạnh mẽ, không thể không nhắc tới vai trò quan trọng của các công cụ phần mềm tốt trong sự phát triển chóng mặt của học sâu.
 Mở đầu với thư viện tiên phong Theano được phát hành vào năm 2007, các công cụ mã nguồn mở linh hoạt đã giúp các nhà nghiên cứu nhanh chóng thử nghiệm các mô hình bằng cách tránh việc bắt người dùng phải xây dựng lại các thành phần tiêu chuẩn nhưng vẫn cho phép việc thay đổi ở bậc thấp. 
 Theo thời gian, các thư viện học sâu ngày càng phát triển để cung cấp tính trừu tượng cao hơn.
-Tương tự với việc các nhà thiết kế chất bán dẫn đi từ việc chỉ rõ các bóng bán dẫn đến mạch logic để viết mã nguồn, các nhà nghiên cứu mạng nơ-ron sâu đã thay đổi từ việc nghĩ về hành vi của từng nơ-ron nhân tạo đơn lẻ sang việc xem xét cả một tầng trong mạng nơ-ron.
+Tương tự với việc các nhà thiết kế chất bán dẫn đi từ việc chỉ rõ các lựa chọn bóng bán dẫn đến mạch logic để viết mã nguồn, các nhà nghiên cứu mạng nơ-ron sâu đã thay đổi từ việc nghĩ về hành vi của từng nơ-ron nhân tạo đơn lẻ sang việc xem xét cả một tầng trong mạng nơ-ron.
 Giờ đây, họ thường thiết kế các kiến trúc mạng thông qua các *khối* trừu tượng hơn.
 
 <!--
