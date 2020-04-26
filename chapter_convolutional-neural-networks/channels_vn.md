@@ -52,7 +52,10 @@ adding the $c_i$ results together (summing over the channels) to yield a two-dim
 This is the result of a two-dimensional cross-correlation between multi-channel input data and a *multi-input channel* convolution kernel.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, khi $c_i>1$, chúng ta cần một bộ lọc chứa mảng có kích thước $k_h\times k_w$ *cho mỗi kênh của đầu vào*.
+Gộp $c_i$ mảng này lại ta được một bộ lọc tích chập kích thước $c_i\times k_h\times k_w$.
+Vì đầu vào và bộ lọc đều có $c_i$ kênh, ta có thể thực hiện phép tương quan chéo trên từng cặp mảng hai chiều của đầu vào và bộ lọc cho mỗi kênh, rồi cộng kết quả của $c_i$ kênh lại để tạo ra một mảng hai chiều.
+Đây là kết quả của phép tương quan chéo hai chiều giữa dữ liệu đầu vào nhiều kênh và một bộ lọc tích chập *kênh nhiều đầu vào*.
 
 <!--
 In :numref:`fig_conv_multi_in`, we demonstrate an example of a two-dimensional cross-correlation with two input channels.
@@ -60,13 +63,15 @@ The shaded portions are the first output element as well as the input and kernel
 $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$.
 -->
 
-*dịch đoạn phía trên*
+Hình :numref:`fig_conv_multi_in` minh hoạ một ví dụ về phép tương quan chéo hai chiều với hai kênh đầu vào. 
+Phần tô đậm là phần tử đầu ra đầu tiên cùng các phần tử của mảng đầu vào và bộ lọc được sử dụng trong phép tính đó: 
+$(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$.
 
 <!--
 ![Cross-correlation computation with 2 input channels. The shaded portions are the first output element as well as the input and kernel array elements used in its computation: $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$. ](../img/conv-multi-in.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/conv-multi-in.svg)
+![Phép tính tương quan chéo với hai kênh đầu vào. Phần tô đậm là phần tử đầu ra đầu tiên cùng các phần tử của mảng đầu vào và bộ lọc được sử dụng trong phép tính đó: $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$. ](../img/conv-multi-in.svg)
 :label:`fig_conv_multi_in`
 
 
@@ -75,7 +80,8 @@ To make sure we really understand what is going on here, we can implement cross-
 Notice that all we are doing is performing one cross-correlation operation per channel and then adding up the results using the `add_n` function.
 -->
 
-*dịch đoạn phía trên*
+Để hiểu rõ cơ chế thực hiện, chúng ta có thể tự lập trình phép toán tương quan chéo với nhiều đầu vào.
+Chú ý rằng tất cả những gì chúng ta đang làm là thực hiện một phép tương quan chéo với mỗi kênh rồi cộng các kết quả lại bằng hàm `add_n`.
 
 ```{.python .input  n=1}
 import d2l
@@ -93,7 +99,7 @@ def corr2d_multi_in(X, K):
 We can construct the input array `X` and the kernel array `K` corresponding to the values in the above diagram to validate the output of the cross-correlation operation.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` tương ứng với các giá trị trong hình trên để kiểm chứng kết quả đầu ra của phép toán.
 
 ```{.python .input  n=2}
 X = np.array([[[0, 1, 2], [3, 4, 5], [6, 7, 8]],
@@ -331,7 +337,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
