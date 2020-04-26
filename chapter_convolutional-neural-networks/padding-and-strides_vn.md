@@ -121,7 +121,7 @@ In the following example, we create a two-dimensional convolutional layer with a
 Given an input with a height and width of $8$, we find that the height and width of the output is also $8$.
 -->
 
-Trong ví dụ trên, chúng ta tạo một tầng tích chập hai chiều với chiều dài và chiều rộng $3$ và đệm $1$ điểm ảnh vào viền các cạnh.
+Trong ví dụ dưới, chúng ta tạo một tầng tích chập hai chiều với chiều dài và chiều rộng $3$ và đệm $1$ điểm ảnh vào viền các cạnh.
 Biết chiều dài và chiều rộng đầu vào là $8$, ta tìm được chiều dài và chiều rộng đầu ra cũng là $8$.
 
 ```{.python .input  n=1}
