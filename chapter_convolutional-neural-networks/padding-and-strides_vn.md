@@ -188,7 +188,7 @@ comp_conv2d(conv2d, X).shape
 ## Stride
 -->
 
-## *dịch tiêu đề phía trên*
+## Sải bước
 
 <!--
 When computing the cross-correlation, we start with the convolution window at the top-left corner of the input array, and then slide it over all locations both down and to the right.
@@ -196,8 +196,9 @@ In previous examples, we default to sliding one pixel at a time.
 However, sometimes, either for computational efficiency or because we wish to downsample, we move our window more than one pixel at a time, skipping the intermediate locations.
 -->
 
-*dịch đoạn phía trên*
-
+Khi thực hiện phép tương quan chéo, ta bắt đầu với cửa sổ tích chập tại góc trên bên trái của mảng đầu vào, rồi di chuyển sang phải và xuống dưới qua tất cả các vị trí.
+Trong các ví dụ trước, ta mặc định di chuyển qua một điểm ảnh mỗi lần.
+Tuy nhiên, có những lúc để tăng hiệu suất tính toán hoặc vì muốn giảm kích thước của ảnh, ta di chuyển cửa sổ tích chập nhiều hơn một điểm ảnh mỗi lần, bỏ qua các vị trí ở giữa.
 
 <!--
 We refer to the number of rows and columns traversed per slide as the *stride*.
@@ -209,13 +210,19 @@ The convolution window slides two columns to the right when the second element o
 When the convolution window slides three columns to the right on the input, there is no output because the input element cannot fill the window (unless we add another column of padding).
 -->
 
-*dịch đoạn phía trên*
+Ta gọi số hàng và cột di chuyển qua mỗi lần là *sải bước* (_stride_). 
+Cho đến giờ, chúng ta sử dụng sải bước $1$ cho cả chiều dài và chiều rộng.
+Đôi lúc, chúng ta có thể muốn sử dụng sải bước lớn hơn.
+:numref:`img_conv_stride` biểu diễn phép tương quan chéo hai chiều với sải bước $3$ theo chiều dọc và $2$ theo chiều ngang.
+Có thể thấy khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng.
+Cửa sổ này di chuyển sang phải hai cột khi tính giá trị phần tử thứ hai của hàng đầu tiên.
+Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có giá trị đầu ra vì các phần tử đầu vào không lấp đầy cửa sổ (trừ khi ta thêm một cột đệm).
 
 <!--
 ![Cross-correlation with strides of 3 and 2 for height and width respectively. The shaded portions are the output element and the input and core array elements used in its computation: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/conv-stride.svg)
+![Phép tương quan chéo với sải bước 3 và 2 tương ứng theo chiều dài và chiều rộng. Phần tô đậm là các phần tử đầu ra cùng các phần tử đầu vào được sử dụng để tính các đầu ra này: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 :label:`img_conv_stride`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -351,8 +358,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
-
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 <!-- Phần 5 -->
 * Nguyễn Thành Hưng
 
