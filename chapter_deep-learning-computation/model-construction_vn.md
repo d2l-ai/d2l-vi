@@ -285,8 +285,8 @@ To build our own simplified `MySequential`, we just need to define two key metho
 Bây giờ ta có thể có cái nhìn rõ hơn về cách mà lớp `Sequential` (Tuần tự) hoạt động. 
 Nhắc lại rằng `Sequential` được thiết kế để xâu chuỗi các Khối lại với nhau.
 Để xây dựng một lớp `MySequential` đơn giản, ta chỉ cần định nghĩa hai phương thức chính sau: 
-1. Một phương thức `add` nhằm đẩy từng Block một vào trong danh sách. 
-2. Một phương thức `forward` nhằm truyền một đầu vào qua chuỗi các Blocks (theo thứ tự mà chúng được nối). 
+1. Phương thức `add` nhằm đẩy từng Block một vào trong danh sách. 
+2. Phương thức `forward` nhằm truyền một đầu vào qua chuỗi các Blocks (theo thứ tự mà chúng được nối). 
 
 <!--
 The following `MySequential` class delivers the same functionality as Gluon's default `Sequential` class:
@@ -321,7 +321,7 @@ Gluon knows to look in the `_children` dictionary to find sub-Blocks whose param
 
 Phương thức `add` thêm một Block đơn vào từ điển có thứ tự `_children`. 
 Bạn có thể thắc mắc tại sao mỗi `Block` của Gluon sở hữu một thuộc tính `_children` và tại sao ta sử dụng nó thay vì tự tạo một danh sách Python. 
-Nói ngắn gọn ưu điểm chính của `_children` là trong quá trình khởi tạo trọng số ban đầu của các khối, Gluon sẽ tự động tìm các khối con mà trọng số của chúng cũng cần được khởi tạo trong từ điển này.
+Thật ra, ưu điểm chính của `_children` là trong quá trình khởi tạo trọng số ban đầu của các khối, Gluon sẽ tự động tìm các khối con mà trọng số của chúng cũng cần được khởi tạo trong từ điển này.
 
 <!--
 When our `MySequential` Block's `forward` method is invoked, each added `Block` is executed in the order in which they were added.
@@ -364,7 +364,7 @@ Python's control flow within the forward method.
 Moreover we might want to perform arbitrary mathematical operations, not simply relying on predefined neural network layers.
 -->
 
-Lớp `nn.Sequential` giúp việc xây mô hình trở nên dễ hơn, cho phép ta lắp ráp các kiến trúc mới mà không cần tự định nghĩa một lớp riêng. 
+Lớp `nn.Sequential` giúp việc xây mô hình trở nên dễ hơn, cho phép ta xây dựng các kiến trúc mới mà không cần tự định nghĩa một lớp riêng. 
 Tuy nhiên, không phải tất cả mô hình đều có cấu trúc chuỗi xích đơn giản. 
 Trong trường hợp cần sự linh hoạt, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình, ví dụ như khi muốn tự phân luồng điều khiển Python trong lượt truyền xuôi. 
 Hơn nữa, ta cũng có thể muốn thêm vào các phép toán tùy ý, chứ không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa từ trước.
