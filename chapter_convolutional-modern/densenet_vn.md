@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Densely Connected Networks (DenseNet)
@@ -8,7 +8,10 @@
 # *dịch tiêu đề phía trên*
 
 <!--
-ResNet significantly changed the view of how to parametrize the functions in deep networks. DenseNet is to some extent the logical extension of this. To understand how to arrive at it, let us take a small detour to theory. Recall the Taylor expansion for functions. For scalars it can be written as
+ResNet significantly changed the view of how to parametrize the functions in deep networks.
+DenseNet is to some extent the logical extension of this.
+To understand how to arrive at it, let us take a small detour to theory.
+Recall the Taylor expansion for functions. For scalars it can be written as
 -->
 
 *dịch đoạn phía trên*
@@ -22,7 +25,8 @@ $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x
 ## *dịch tiêu đề phía trên*
 
 <!--
-The key point is that it decomposes the function into increasingly higher order terms. In a similar vein, ResNet decomposes functions into
+The key point is that it decomposes the function into increasingly higher order terms.
+In a similar vein, ResNet decomposes functions into
 -->
 
 *dịch đoạn phía trên*
@@ -30,11 +34,9 @@ The key point is that it decomposes the function into increasingly higher order 
 $$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x}).$$
 
 <!--
-That is, ResNet decomposes $f$ into a simple linear term and a more complex
-nonlinear one. What if we want to go beyond two terms? A solution was proposed
-by :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` in the form of
-DenseNet, an architecture that reported record performance on the ImageNet
-dataset.
+That is, ResNet decomposes $f$ into a simple linear term and a more complex nonlinear one.
+What if we want to go beyond two terms? A solution was proposed by :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` in the form of DenseNet, 
+an architecture that reported record performance on the ImageNetdataset.
 -->
 
 *dịch đoạn phía trên*
@@ -47,15 +49,26 @@ dataset.
 :label:`fig_densenet_block`
 
 <!--
-As shown in :numref:`fig_densenet_block`, the key difference between ResNet and DenseNet is that in the latter case outputs are *concatenated* rather than added. As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
+As shown in :numref:`fig_densenet_block`, the key difference between ResNet and DenseNet is that in the latter case outputs are *concatenated* rather than added.
+As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
 -->
 
 *dịch đoạn phía trên*
 
 $$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
-In the end, all these functions are combined in an MLP to reduce the number of features again. In terms of implementation this is quite simple---rather than adding terms, we concatenate them. The name DenseNet arises from the fact that the dependency graph between variables becomes quite dense. The last layer of such a chain is densely connected to all previous layers. The main components that compose a DenseNet are dense blocks and transition layers. The former defines how the inputs and outputs are concatenated, while the latter controls the number of channels so that it is not too large. The dense connections are shown in :numref:`fig_densenet`.
+In the end, all these functions are combined in an MLP to reduce the number of features again.
+In terms of implementation this is quite simple---rather than adding terms, we concatenate them.
+The name DenseNet arises from the fact that the dependency graph between variables becomes quite dense.
+The last layer of such a chain is densely connected to all previous layers.
+The main components that compose a DenseNet are dense blocks and transition layers.
+The former defines how the inputs and outputs are concatenated, while the latter controls the number of channels so that it is not too large.
+The dense connections are shown in :numref:`fig_densenet`.
 -->
 
 *dịch đoạn phía trên*
@@ -67,6 +80,9 @@ In the end, all these functions are combined in an MLP to reduce the number of f
 ![*dịch chú thích ảnh phía trên*](../img/densenet.svg)
 :label:`fig_densenet`
 
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Dense Blocks
@@ -75,10 +91,8 @@ In the end, all these functions are combined in an MLP to reduce the number of f
 ## *dịch tiêu đề phía trên*
 
 <!--
-DenseNet uses the modified "batch normalization, activation, and convolution"
-architecture of ResNet (see the exercise in :numref:`sec_resnet`).
-First, we implement this architecture in the
-`conv_block` function.
+DenseNet uses the modified "batch normalization, activation, and convolution" architecture of ResNet (see the exercise in :numref:`sec_resnet`).
+First, we implement this architecture in the `conv_block` function.
 -->
 
 *dịch đoạn phía trên*
@@ -98,7 +112,8 @@ def conv_block(num_channels):
 ```
 
 <!--
-A dense block consists of multiple `conv_block` units, each using the same number of output channels. In the forward computation, however, we concatenate the input and output of each block on the channel dimension.
+A dense block consists of multiple `conv_block` units, each using the same number of output channels.
+In the forward computation, however, we concatenate the input and output of each block on the channel dimension.
 -->
 
 *dịch đoạn phía trên*
@@ -121,7 +136,10 @@ class DenseBlock(nn.Block):
 ```
 
 <!--
-In the following example, we define a convolution block with two blocks of 10 output channels. When using an input with 3 channels, we will get an output with the $3+2\times 10=23$ channels. The number of convolution block channels controls the increase in the number of output channels relative to the number of input channels. This is also referred to as the growth rate.
+In the following example, we define a convolution block with two blocks of 10 output channels.
+When using an input with 3 channels, we will get an output with the $3+2\times 10=23$ channels.
+The number of convolution block channels controls the increase in the number of output channels relative to the number of input channels.
+This is also referred to as the growth rate.
 -->
 
 *dịch đoạn phía trên*
@@ -134,6 +152,10 @@ Y = blk(X)
 Y.shape
 ```
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ## Transition Layers
 -->
@@ -141,7 +163,10 @@ Y.shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-Since each dense block will increase the number of channels, adding too many of them will lead to an excessively complex model. A transition layer is used to control the complexity of the model. It reduces the number of channels by using the $1\times 1$ convolutional layer and halves the height and width of the average pooling layer with a stride of 2, further reducing the complexity of the model.
+Since each dense block will increase the number of channels, adding too many of them will lead to an excessively complex model.
+A transition layer is used to control the complexity of the model.
+It reduces the number of channels by using the $1\times 1$ convolutional layer and halves the height 
+and width of the average pooling layer with a stride of 2, further reducing the complexity of the model.
 -->
 
 *dịch đoạn phía trên*
@@ -156,7 +181,8 @@ def transition_block(num_channels):
 ```
 
 <!--
-Apply a transition layer with 10 channels to the output of the dense block in the previous example.  This reduces the number of output channels to 10, and halves the height and width.
+Apply a transition layer with 10 channels to the output of the dense block in the previous example.
+This reduces the number of output channels to 10, and halves the height and width.
 -->
 
 *dịch đoạn phía trên*
@@ -167,6 +193,10 @@ blk.initialize()
 blk(Y).shape
 ```
 
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
+
 <!--
 ## DenseNet Model
 -->
@@ -174,7 +204,8 @@ blk(Y).shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-Next, we will construct a DenseNet model. DenseNet first uses the same single convolutional layer and maximum pooling layer as ResNet.
+Next, we will construct a DenseNet model.
+DenseNet first uses the same single convolutional layer and maximum pooling layer as ResNet.
 -->
 
 *dịch đoạn phía trên*
@@ -186,14 +217,22 @@ net.add(nn.Conv2D(64, kernel_size=7, strides=2, padding=3),
         nn.MaxPool2D(pool_size=3, strides=2, padding=1))
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
-Then, similar to the four residual blocks that ResNet uses, DenseNet uses four dense blocks. Similar to ResNet, we can set the number of convolutional layers used in each dense block. Here, we set it to 4, consistent with the ResNet-18 in the previous section. Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
+Then, similar to the four residual blocks that ResNet uses, DenseNet uses four dense blocks.
+Similar to ResNet, we can set the number of convolutional layers used in each dense block.
+Here, we set it to 4, consistent with the ResNet-18 in the previous section.
+Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In ResNet, the height and width are reduced between each module by a residual block with a stride of 2. Here, we use the transition layer to halve the height and width and halve the number of channels.
+In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
+Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
 *dịch đoạn phía trên*
@@ -226,6 +265,10 @@ net.add(nn.BatchNorm(),
         nn.GlobalAvgPool2D(),
         nn.Dense(10))
 ```
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Data Acquisition and Training
@@ -278,6 +321,8 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2360)
@@ -314,7 +359,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *
