@@ -184,7 +184,7 @@ corr2d_multi_in_out(X, K)
 ## $1\times 1$ Convolutional Layer
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng Tích Chập $1\times 1$
 
 <!--
 At first, a $1 \times 1$ convolution, i.e., $k_h = k_w = 1$, does not seem to make much sense.
@@ -194,7 +194,11 @@ Nonetheless, they are popular operations that are sometimes included in the desi
 Let us see in some detail what it actually does.
 -->
 
-*dịch đoạn phía trên*
+Thoạt nhìn, một phép tích chập $1 \times 1$, tức là, $k_h = k_w = 1$, dường như không có nhiều ý nghĩa.
+Suy cho cùng, một phép tích chập tương quan các điểm ảnh liền kề.
+Một phép tích chập $1 \times 1$ rõ ràng là không làm như vậy.
+Tuy nhiên, chúng là các phép tính phổ biến đôi khi được sử dụng trong các thiết kế của các mạng sâu phức tạp.
+Hãy xem chi tiết những gì nó thực sự làm.
 
 <!--
 Because the minimum window is used, the $1\times 1$ convolution loses the ability of larger convolutional layers to recognize patterns 
@@ -202,7 +206,9 @@ consisting of interactions among adjacent elements in the height and width dimen
 The only computation of the $1\times 1$ convolution occurs on the channel dimension.
 -->
 
-*dịch đoạn phía trên*
+Vì cửa sổ tối thiểu được sử dụng, phép tích chập $1\times 1$ làm mất khả năng của các tầng tích chập lớn hơn để nhận dạng các mẫu
+bao gồm các tương tác giữa các yếu tố liền kề trong chiều cao và chiều rộng.
+Tính toán duy nhất của tích chập $1\times 1$ xảy ra trên chiều kênh.
 
 <!--
 :numref:`fig_conv_1x1` shows the cross-correlation computation using the $1\times 1$ convolution kernel with 3 input channels and 2 output channels.
@@ -210,18 +216,23 @@ Note that the inputs and outputs have the same height and width.
 Each element in the output is derived from a linear combination of elements *at the same position* in the input image.
 You could think of the $1\times 1$ convolutional layer as constituting a fully-connected layer applied at every single pixel location 
 to transform the $c_i$ corresponding input values into $c_o$ output values.
-Because this is still a convolutional layer, the weights are tied across pixel location
+Because this is still a convolutional layer, the weights are tied across pixel location.
 Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights (plus the bias terms).
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_conv_1x1` hiển thị tính toán tương quan chéo bằng cách sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và 2 kênh đầu ra.
+Lưu ý rằng đầu vào và đầu ra có cùng chiều cao và chiều rộng.
+Mỗi phần tử trong đầu ra được lấy từ một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào.
+Bạn có thể nghĩ về tầng tích chập $1\times 1$ khi tạo thành một tầng kết nối đầy đủ được áp dụng tại mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi các giá trị đầu vào tương ứng $c_i$ thành giá trị đầu ra $c_o$.
+Bởi vì đây vẫn là một tầng chập, các trọng số được gắn trên vị trí điểm ảnh.
+Do đó, tầng tích chập $1\times 1$ yêu cầu $c_o\times c_i$ trọng số (cộng với các hệ số điều chỉnh).
 
 
 <!--
 ![The cross-correlation computation uses the $1\times 1$ convolution kernel with 3 input channels and 2 output channels. The inputs and outputs have the same height and width. ](../img/conv-1x1.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/conv-1x1.svg)
+![Tính toán tương quan chéo sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và hai kênh đầu ra. Các đầu vào và các đầu ra có cùng chiều cao và chiều rộng. ](../img/conv-1x1.svg)
 :label:`fig_conv_1x1`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
