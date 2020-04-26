@@ -260,7 +260,7 @@ We exploit this versatility throughout the following chapters, especially when a
 -->
 
 Một ưu điểm chính của phép trừu tượng hóa `Block` là tính linh hoạt của nó. 
-Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng với độ phức tạp vừa phải khác. 
+Ta có thể kế thừa từ lớp `Block` để tạo các tầng (chẳng hạn như lớp `Dense` được cung cấp bởi Gluon), toàn bộ cả mô hình (như `MLP` ở phía trên) hoặc các thành phần đa dạng với độ phức tạp vừa phải. 
 Ta sẽ tận dụng tính linh hoạt này xuyên suốt ở các chương sau, đặc biệt khi làm việc với các mạng nơ-ron tích chập. 
 
 
