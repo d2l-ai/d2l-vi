@@ -42,8 +42,7 @@ In fact, even with a tripod and a stationary object, vibration of the camera due
 Hơn nữa, khi phát hiện các đặc trưng cấp thấp, như các cạnh (được thảo luận tại :numref:`sec_conv_layer`), 
 ta thường muốn cách biểu diễn bất biến với phép tịnh tiến trong một chừng mực nào đó.
 Ví dụ, nếu ta lấy bức ảnh `X` với một ranh giới rõ rệt giữa màu đen và màu trắng
-và dịch chuyển toàn bộ bức ảnh sang phải một điểm ảnh, nói cách khác, `Z[i, j] = X[i, j+1]`, thì đầu ra cho bức ảnh mới `Z`
-có thể sẽ khác nhau rất nhiều.
+và dịch chuyển toàn bộ bức ảnh sang phải một điểm ảnh, nói cách khác, `Z[i, j] = X[i, j+1]`, thì đầu ra cho bức ảnh mới `Z` có thể sẽ khác nhau rất nhiều.
 Ranh giới đó cũng sẽ dịch chuyển sang một điểm ảnh, cùng với tất cả các phép kích hoạt.
 Trong thực tế, các vật thể hiếm khi xuất hiện ở chính xác một vị trí.
 Thậm chí với một chân máy ảnh và một vật thể tĩnh, độ rung của máy ảnh do chuyển động của màn trập có thể dịch chuyển tất cả đi một vài điểm ảnh 
