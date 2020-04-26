@@ -227,7 +227,7 @@ Naturally, we would expect them them to represent two different learned models.
 Lưu ý rằng nó nhận giá trị đầu vào `x`, tính toán tầng biểu diễn ẩn (`self.hidden(x)`) và trả về các giá trị logit (`self.output( ... )`). 
 Ở cách lập trình MLP này, cả hai tầng trên đều là biến thực thể (_instance variables_). 
 Để thấy tại sao điều này có lý, tưởng tượng ta khởi tạo hai MLP, `net1` và `net2`, và huấn luyện chúng với dữ liệu khác nhau. 
-Dĩ nhiên là, ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
+Dĩ nhiên là ta mong đợi chúng đại diện cho hai mô hình học khác nhau. 
 
 <!--
 We instantiate the MLP's layers in the `__init__` method (the constructor) and subsequently invoke these layers on each call to the `forward` method.
