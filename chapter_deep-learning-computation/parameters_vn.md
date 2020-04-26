@@ -341,7 +341,7 @@ Notice below that while `collect_params()` produces a list of named parameters, 
 -->
 
 Bây giờ ta đã xong phần thiết kế mạng, hãy cùng xem cách nó được tổ chức.
-Hãy để ý ở dưới rằng dù `collect_params()` trả về một danh sách các tham số được định danh, việc gọi `collect_params` như một thuộc tính sẽ cho ta biết cấu trúc của mạng.
+Hãy để ý ở dưới rằng dù hàm `collect_params()` trả về một danh sách các tham số được định danh, việc gọi `collect_params` như một thuộc tính sẽ cho ta biết cấu trúc của mạng.
 
 ```{.python .input}
 print(rgnet.collect_params)
