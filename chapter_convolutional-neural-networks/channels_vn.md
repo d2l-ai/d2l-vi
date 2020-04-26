@@ -16,7 +16,7 @@ This has allowed us to think of our inputs, convolutional kernels, and outputs e
 
 Trong khi chúng ta đã mô tả các kênh tạo nên mỗi bức ảnh (cụ thể, ảnh màu có các kênh RGB chuẩn để thể hiện lượng màu đỏ, xanh lá và xanh dương), 
 đến tận lúc này, chúng ta đã đơn giản hóa tất cả các ví dụ tính toán chỉ với một kênh đầu vào đơn và một kênh đầu ra đơn. 
-Điều này cho phép chúng ta tư duy mỗi đối tượng đầu vào, các bộ lọc tích chập, và các đầu ra như một mảng hai chiều.
+Điều này cho phép chúng ta coi các đầu vào, các bộ lọc tích chập, và các đầu ra như một mảng hai chiều.
 
 <!--
 When we add channels into the mix, our inputs and hidden representations both become three-dimensional arrays.
