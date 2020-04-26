@@ -226,7 +226,7 @@ When the convolution window slides three columns to the right on the input, ther
 In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
-*dịch đoạn phía trên*
+Thông thường, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là 
 
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
@@ -235,13 +235,14 @@ If we set $p_h=k_h-1$ and $p_w=k_w-1$, then the output shape will be simplified 
 Going a step further, if the input height and width are divisible by the strides on the height and width, then the output shape will be $(n_h/s_h) \times (n_w/s_w)$.
 -->
 
-*dịch đoạn phía trên*
+Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, thì kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$.
+Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng, thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
 
 <!--
 Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta đặt sải bước cho cả chiều cao và chiều rộng là $2$, do đó chiều cao và chiều rộng của đầu ra bằng một nửa chiều cao và chiều rộng của đầu vào.   
 
 ```{.python .input}
 conv2d = nn.Conv2D(1, kernel_size=3, padding=1, strides=2)
@@ -252,7 +253,7 @@ comp_conv2d(conv2d, X).shape
 Next, we will look at a slightly more complicated example.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ xem xét một ví dụ phức tạp hơn một chút.
 
 ```{.python .input  n=3}
 conv2d = nn.Conv2D(1, kernel_size=(3, 5), padding=(0, 1), strides=(3, 4))
@@ -268,7 +269,12 @@ By default, the padding is $0$ and the stride is $1$.
 In practice, we rarely use inhomogeneous strides or padding, i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 -->
 
-*dịch đoạn phía trên*
+Để đơn giản, khi số đệm trên chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta kí hiệu phần đệm là $(p_h, p_w)$.
+Trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$.
+Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$.
+Trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$.
+Mặc định, phần đệm là $0$ và sải bước là $1$.
+Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -348,7 +354,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Thành Hưng
 
 <!-- Phần 6 -->
 * Nguyễn Văn Cường
