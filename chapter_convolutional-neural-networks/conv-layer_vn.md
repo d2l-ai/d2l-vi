@@ -302,12 +302,12 @@ In keeping with standard terminology with deep learning literature,
 we will continue to refer to the cross-correlation operation as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
-Nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương.
-Trong hình trên, dễ dàng nhận thấy sự tương ứng này.
+Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
+Trong hình trên, ta dễ dàng nhận thấy điều này.
 Đơn giản chỉ cần lật kernel từ dưới cùng bên trái sang trên cùng bên phải.
-Trong trường hợp này, việc lập chỉ mục trong tổng được hoàn nguyên, nhưng kết quả tương tự có thể thu được.
-Để phù hợp với thuật ngữ tiêu chuẩn với văn học học tập sâu,
-chúng tôi sẽ tiếp tục đề cập đến hoạt động tương quan chéo như là một tổ hợp mặc dù, nói đúng ra, nó hơi khác một chút.
+Trong trường hợp này, việc lập chỉ số trong tổng được hoàn nguyên, nhưng kết quả tương tự có thể thu được.
+Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
+ta sẽ tiếp tục đề cập đến phép đo tương quan chéo như là một tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
 
 <!--
 ## Summary
@@ -322,8 +322,8 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 * We can learn the kernel through data.
 -->
 
-* Tính toán cốt lõi của lớp chập hai chiều là hoạt động tương quan chéo hai chiều.
-Ở dạng đơn giản nhất, điều này thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và hạt nhân, sau đó thêm một độ lệch.
+* Tính toán cốt lõi của tầng tích chập hai chiều là phép tính tương quan chéo hai chiều.
+Ở dạng đơn giản nhất, điều này thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và kernel, sau đó thêm vào một độ lệch.
 * Chúng ta có thể thiết kế kernel để phát hiện các cạnh trong ảnh.
 * Chúng ta có thể tìm hiểu kernel thông qua dữ liệu.
 
@@ -349,15 +349,15 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 
 1. Xây dựng hình ảnh `X` với các cạnh chéo.
      * Điều gì xảy ra nếu bạn áp dụng kernel `K` cho nó?
-     * Điều gì xảy ra nếu bạn hoán chuyển `X`?
-     * Điều gì xảy ra nếu bạn hoán chuyển `K`?
-2. Khi bạn cố gắng tự động tìm gradient cho lớp `Conv2D` mà chúng ta đã tạo, bạn thấy loại thông báo lỗi nào?
-3. Làm thế nào để bạn biểu diễn một hoạt động tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và hạt nhân?
-4. Thiết kế một số hạt nhân bằng tay.
-     * Hình thức của hạt nhân cho đạo hàm thứ hai là gì?
+     * Điều gì xảy ra nếu bạn chuyển vị `X`?
+     * Điều gì xảy ra nếu bạn chuyển vị `K`?
+2. Khi bạn cố gắng một cách tự động tìm gradient cho lớp `Conv2D` mà ta đã tạo, bạn thấy loại thông báo lỗi nào?
+3. Làm thế nào để bạn biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và kernel?
+4. Thiết kế một số kernel bằng tay.
+     * Hình thức của kernel cho đạo hàm thứ hai là gì?
      * Hạt nhân cho toán tử Laplace là gì?
      * Hạt nhân cho một tích phân là gì?
-     * Kích thước tối thiểu của hạt nhân để có được đạo hàm độ $ d $ là bao nhiêu?
+     * Kích thước tối thiểu của hạt nhân để có được đạo hàm bậc $d$ là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
