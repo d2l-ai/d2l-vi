@@ -14,7 +14,7 @@ Often, as we process images, we want to gradually reduce the spatial resolution 
 aggregating information so that the higher up we go in the network, the larger the receptive field (in the input) to which each hidden node is sensitive.
 -->
 
-Thông thường, khi xử lý ảnh, ta muốn giảm dần độ phân giải của các biểu diễn ẩn, gộp chung thông tin lại để càng đi sâu vào mạng, vùng tiếp nhận (ở đầu vào) ảnh hưởng đến mỗi nút ẩn càng lớn.
+Thông thường, khi xử lý ảnh, ta muốn giảm dần độ phân giải không gian của các biểu diễn ẩn, gộp chung thông tin lại để càng đi sâu vào mạng, vùng tiếp nhận (ở đầu vào) ảnh hưởng đến mỗi nút ẩn càng lớn.
 
 <!--
 Often our ultimate task asks some global question about the image, e.g., *does it contain a cat?*
