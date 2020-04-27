@@ -25,7 +25,7 @@ while keeping all of the advantages of convolutional layers at the intermediate 
 
 Nhiệm vụ cuối cùng của chúng ta thường là trả lời một vài câu hỏi về toàn bộ bức ảnh, ví dụ như: *trong ảnh có mèo không?* 
 Vậy nên thường các nút của tầng cuối cùng cần phải chịu ảnh hưởng của toàn bộ đầu vào.
-Bằng cách dần gộp thông tin lại, tạo ra các ánh xạ đặc trưng thưa dần, chúng ta sẽ học được một cách biểu diễn toàn cục,
+Bằng cách dần gộp thông tin lại để tạo ra các ánh xạ đặc trưng thưa dần, chúng ta sẽ học được một cách biểu diễn toàn cục,
 trong khi giữ nguyên toàn bộ lợi ích của các tầng tích chập ở các tầng xử lý trung gian.
 
 <!--
