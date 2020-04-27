@@ -80,7 +80,7 @@ To make sure we really understand what is going on here, we can implement cross-
 Notice that all we are doing is performing one cross-correlation operation per channel and then adding up the results using the `add_n` function.
 -->
 
-Để hiểu rõ cơ chế thực hiện, chúng ta có thể tự lập trình phép toán tương quan chéo với nhiều kênh đầu vào.
+Để thực sự hiểu cơ chế thực hiện, chúng ta có thể tự lập trình phép toán tương quan chéo với nhiều kênh đầu vào.
 Chú ý rằng tất cả những gì chúng ta đang làm là thực hiện một phép tương quan chéo với mỗi kênh rồi cộng các kết quả lại bằng hàm `add_n`.
 
 ```{.python .input  n=1}
