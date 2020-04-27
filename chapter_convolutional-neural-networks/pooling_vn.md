@@ -53,7 +53,7 @@ This section introduces pooling layers, which serve the dual purposes of
 mitigating the sensitivity of convolutional layers to location and of spatially downsampling representations.
 -->
 
-Phần này giới thiệu về các tầng gộp, với hai chức năng là giảm độ nhạy của các tầng tích chập đối với vị trí, và giảm độ lớn của cách biểu diễn.
+Mục này sẽ giới thiệu về các tầng gộp, với hai chức năng là giảm độ nhạy của các tầng tích chập đối với vị trí và giảm kích thước của cách biểu diễn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
