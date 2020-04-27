@@ -510,16 +510,16 @@ This can accelerate things considerably in some cases but care needs to be taken
 We recommend that the interested reader check out the hybridization section (:numref:`sec_hybridize`) to learn about compilation after finishing the current chapter.
 -->
 
-Những người đọc có tâm có thể sẽ bắt đầu lo lắng về hiệu năng của một vài đoạn mã trên.
-Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ "đậm chất Python" khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu năng cao.
-Vấn đề của [Khóa Trình thông dịch Toàn cục]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến.
+Những người đọc có tâm có thể sẽ bắt đầu lo lắng về hiệu năng của một vài đoạn mã trên. 
+Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ "đậm chất Python" khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu năng cao. 
+Vấn đề của [Khóa Trình thông dịch Toàn cục (Global Interpreter Lock)]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến. 
 Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU "rùa bò" chạy xong những dòng lệnh Python trước khi nó có thể nhận tác vụ chạy tiếp theo.
-Cách tốt nhất để tăng tốc Python là tránh không sử dụng nó.
-Gluon làm việc này bằng cách cho phép Hybrid hóa (:numref:`sec_hybridize`).
+Cách tốt nhất để tăng tốc Python là tránh không sử dụng nó. 
+Gluon làm việc này bằng cách cho phép việc Hybrid hóa (:numref:`sec_hybridize`). 
 Ở đây, trình thông dịch của Python sẽ thực thi một Khối trong lần chạy đầu tiên.  
-Môi trường chạy của Gluon sẽ ghi lại những gì đang diễn ra và trong lần chạy tiếp theo, nó sẽ thực hiện các tác vụ gọi trong Python một cách vắn tắt hơn.
-Điều này có thể giúp tăng tốc độ chạy đáng kể trong một vài trường hợp, tuy nhiên, ta cần quan tâm tới việc luồng điều khiển (như ở trên) sẽ dẫn đến những nhánh khác nhau với mỗi lần truyền qua mạng.
-Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất chương này hãy đọc thêm mục hybrid hóa (:numref:`sec_hybridize`) để tìm hiểu về quá trình biên dịch.
+Môi trường chạy của Gluon sẽ ghi lại những gì đang diễn ra và trong lần chạy tiếp theo, nó sẽ thực hiện các tác vụ gọi trong Python một cách vắn tắt hơn. 
+Điều này có thể giúp tăng tốc độ chạy đáng kể trong một vài trường hợp, tuy nhiên, ta cần quan tâm tới việc luồng điều khiển (như trên) sẽ dẫn đến những nhánh khác nhau với mỗi lần truyền qua mạng. 
+Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất chương này hãy đọc thêm mục hybrid hóa (:numref:`sec_hybridize`) để tìm hiểu về quá trình biên dịch. 
 
 <!--
 ## Summary
@@ -536,12 +536,12 @@ Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất
 * Sequential concatenations of layers and blocks are handled by the `Sequential` Block.
 -->
 
-* Các tầng trong mạng nơ-ron là các Khối.
-* Nhiều tầng có thể cấu thành một Khối.
-* Nhiều Khối có thể cấu thành một Khối.
-* Một Khối có thể chứa mã nguồn.
-* Các Khối đảm nhiệm nhiều tác vụ bao gồm khởi tạo tham số và lan truyền ngược.
-* Việc gắn kết các tầng và khối một cách tuần tự được đảm nhiệm bởi Khối `Sequential`.
+* Các tầng trong mạng nơ-ron là các Khối. 
+* Nhiều tầng có thể cấu thành một Khối. 
+* Nhiều Khối có thể cấu thành một Khối. 
+* Một Khối có thể chứa các đoạn mã nguồn. 
+* Các Khối đảm nhiệm nhiều tác vụ bao gồm khởi tạo tham số và lan truyền ngược. 
+* Việc gắn kết các tầng và khối một cách tuần tự được đảm nhiệm bởi Khối `Sequential`. 
 
 
 <!--
@@ -558,9 +558,9 @@ Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất
 -->
 
 1. Vấn đề gì sẽ xảy ra nếu ta bỏ hàm `asscalar` trong lớp `FixedHiddenMLP`?
-2. Vấn đề gì sẽ xảy ra nếu ta thay đổi `self.net` được định nghĩa trong thực thể `Sequential` ở lớp `NestMLP` thành `self.net = [nn.Dense(64, activation='relu'), nn. Dense(32, activation='relu')]`?
-3. Hãy lập trình một khối nhận đối số là hai khối khác, ví dụ như `net1` và `net2`, và trả về kết quả của phép nối các giá trị đầu ra của cả hai mạng khi thực hiện lượt truyền xuôi.
-4. Giả sử bạn muốn nối nhiều thực thể của cùng một mạng với nhau. Hãy lập trình một hàm để tạo ra nhiều thực thể của cùng một mạng và dùng chúng để tạo thành một mạng lớn hơn. (Các hàm này trong mẫu thiết kế phần mềm được gọi là Factory Function) 
+2. Vấn đề gì sẽ xảy ra nếu`self.net` được định nghĩa trong thực thể `Sequential` ở lớp `NestMLP` được đổi thành `self.net = [nn.Dense(64, activation='relu'), nn. Dense(32, activation='relu')]`?
+3. Hãy lập trình một khối nhận đối số là hai khối khác, ví dụ như `net1` và `net2`, và trả về kết quả là phép nối các giá trị đầu ra của cả hai mạng đó khi thực hiện lượt truyền xuôi.
+4. Giả sử bạn muốn nối nhiều thực thể của cùng một mạng với nhau. Hãy lập trình một hàm để tạo ra nhiều thực thể của cùng một mạng và dùng chúng để tạo thành một mạng lớn hơn (các hàm này trong thiết kế phần mềm được gọi là Factory Function).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
