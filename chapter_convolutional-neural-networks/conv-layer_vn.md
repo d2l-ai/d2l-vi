@@ -75,9 +75,9 @@ Next, we implement the above process in the `corr2d` function.
 It accepts the input array `X` with the kernel array `K` and outputs the array `Y`.
 -->
 
-Lưu ý rằng theo mỗi trục, kích thước đầu ra hơi *nhỏ hơn* so với đầu vào.
-Bởi vì bộ lọc có chiều rộng lớn hơn một, và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Đây là trường hợp sẽ xảy ra vì ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước không đổi bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
+Lưu ý rằng theo mỗi trục, kích thước đầu ra *nhỏ hơn* một chút so với đầu vào.
+Bởi vì bộ lọc có chiều rộng lớn hơn một và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
+Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm vào các số không xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
 Hàm nhận mảng đầu vào `X` với mảng bộ lọc `K` và trả về mảng đầu ra `Y`
 
@@ -102,7 +102,7 @@ We can construct the input array `X` and the kernel array `K` from the figure ab
 to validate the output of the above implementations of the two-dimensional cross-correlation operation.
 -->
 
-Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` như hình trên để kiểm tra lại kết quả lập trình của phép toán tương quan chéo hai chiều.
+Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` như hình trên để kiểm tra lại kết quả của cách lập trình phép toán tương quan chéo hai chiều vừa rồi.
 
 ```{.python .input}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
@@ -127,7 +127,7 @@ When training the models based on convolutional layers, we typically initialize 
 -->
 
 Tầng tích chập thực hiện phép toán tương quan chéo giữa đầu vào và bộ lọc sau đó cộng vào một hệ số điều chỉnh để có được đầu ra.
-Các tham số của tầng tích chập là giá trị chính xác cấu tạo nên bộ lọc và hệ số điều chỉnh.
+Các tham số của tầng tích chập chính là các giá trị cấu tạo nên bộ lọc và hệ số điều chỉnh.
 Khi huấn luyện mô hình dựa trên các tầng tích chập, ta thường khởi tạo bộ lọc ngẫu nhiên, giống như cách ta làm với tầng kết nối đầy đủ.
 
 <!--
@@ -138,7 +138,7 @@ As with $h \times w$ cross-correlation we also refer to convolutional layers as 
 -->
 
 Bây giờ ta đã sẵn sàng lập trình một tầng tích chập hai chiều dựa vào hàm `corr2d` ta vừa định nghĩa ở trên.
-Trong hàm khởi tạo`__init__`, ta thiết lập hai tham số của mô hình `weight` và `bias`.
+Trong hàm khởi tạo `__init__`, ta khai báo hai tham số của mô hình `weight` và `bias`.
 Hàm tính lượt truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm vào hệ số điều chỉnh.
 Cũng giống cách gọi phép tương quan chéo $h \times w$, ta cũng đề cập đến các tầng tích chập là phép tích chập $h \times w$.
 
