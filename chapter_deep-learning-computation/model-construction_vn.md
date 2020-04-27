@@ -321,7 +321,7 @@ Gluon knows to look in the `_children` dictionary to find sub-Blocks whose param
 
 Phương thức `add` thêm một Block đơn vào từ điển có thứ tự `_children`. 
 Bạn có thể thắc mắc tại sao mỗi `Block` của Gluon sở hữu một thuộc tính `_children` và tại sao ta sử dụng nó thay vì tự tạo một danh sách Python. 
-Thật ra, ưu điểm chính của `_children` là trong quá trình khởi tạo trọng số ban đầu của các khối, Gluon sẽ tự động tìm các khối con mà trọng số của chúng cũng cần được khởi tạo trong từ điển này.
+Thật ra, ưu điểm chính của `_children` là trong quá trình khởi tạo trọng số ban đầu của các khối, Gluon sẽ tự động tìm các khối con có trọng số cần được khởi tạo trong từ điển này.
 
 <!--
 When our `MySequential` Block's `forward` method is invoked, each added `Block` is executed in the order in which they were added.
@@ -364,10 +364,10 @@ Python's control flow within the forward method.
 Moreover we might want to perform arbitrary mathematical operations, not simply relying on predefined neural network layers.
 -->
 
-Lớp `nn.Sequential` giúp việc xây mô hình trở nên dễ hơn, cho phép ta xây dựng các kiến trúc mới mà không cần tự định nghĩa một lớp riêng. 
+Lớp `nn.Sequential` giúp việc xây dựng mô hình trở nên dễ hơn, cho phép ta xây dựng các kiến trúc mới mà không cần phải tự định nghĩa một lớp riêng. 
 Tuy nhiên, không phải tất cả mô hình đều có cấu trúc chuỗi xích đơn giản. 
-Trong trường hợp cần sự linh hoạt, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình, ví dụ như khi muốn tự phân luồng điều khiển Python trong lượt truyền xuôi. 
-Hơn nữa, ta cũng có thể muốn thêm vào các phép toán tùy ý, chứ không chỉ đơn giản dựa vào các tầng mạng nơ-ron được định nghĩa từ trước.
+Khi cần phải linh hoạt hơn, ta vẫn sẽ muốn định nghĩa từng `Block` theo cách của mình, ví dụ như khi muốn sử dụng luồng điều khiển Python trong lượt truyền xuôi. 
+Hơn nữa, ta cũng có thể muốn thực hiện các phép toán tùy ý thay vì chỉ dựa vào các tầng mạng nơ-ron được định nghĩa từ trước.
 
 <!--
 You might have noticed that until now, all of the operations in our networks have acted upon our network's activations and its parameters.
@@ -378,10 +378,10 @@ $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, where $\mathbf{
 and $c$ is some specified constant that is not updated during optimization.
 -->
 
-Cho đến tận bây giờ, bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng của ta đều thao tác trên các giá trị kích hoạt và tham số của mạng. 
-Tuy nhiên, trong một vài trường hợp, ta có thể muốn kết hợp thêm với các hằng số không đổi, nó không phải là kết quả của tầng trước cũng không phải tham số có thể cập nhật. 
-Trong Gluon, ta gọi chúng là tham số *hằng số* (_constant parameter_).
-Ví dụ ta muốn một tầng tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $\mathbf{x}$, $\mathbf{w}$ là tham số, và $c$ là một hằng số đặc biệt giữ nguyên giá trị trong suốt quá trình tối ưu hóa. 
+Bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng cho tới giờ đều thao tác trên các giá trị kích hoạt và tham số của mạng. 
+Tuy nhiên, trong một vài trường hợp, ta có thể muốn kết hợp thêm các hằng số. Chúng không phải là kết quả của tầng trước mà cũng không phải là tham số có thể cập nhật được. 
+Trong Gluon, ta gọi chúng là tham số *không đổi* (_constant parameter_).
+Ví dụ ta muốn một tầng tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $\mathbf{x}$, $\mathbf{w}$ là tham số, và $c$ là một hằng số cho trước được giữ nguyên giá trị trong suốt quá trình tối ưu hóa. 
 
 <!--
 Declaring constants explicitly (via `get_constant`) makes this clear helps Gluon to speed up execution.
@@ -435,12 +435,12 @@ Note that this particular operation may not be useful in any real world task.
 Our point is only to show you how to integrate arbitrary code into the flow of your neural network computations.
 -->
 
-Lưu ý rằng trước khi trả giá trị đầu ra, mô hình của ta đã làm điều gì đó bất thường. 
+Lưu ý rằng trước khi trả về giá trị đầu ra, mô hình của ta đã làm điều gì đó bất thường. 
 Ta đã chạy một vòng lặp `while`, lấy vector đầu ra chia cho $2$ cho đến khi nó thỏa mãn điều kiện `np.abs(x).sum() > 1`.
 Cuối cùng, ta gán giá trị đầu ra bằng tổng các phần tử trong `x`.
 Theo sự hiểu biết của chúng tôi, không có mạng nơ-ron tiêu chuẩn nào thực hiện phép toán này. 
 Lưu ý rằng phép toán đặc biệt này có thể không hữu ích gì trong các công việc ngoài thực tế. 
-Ý tưởng của chúng tôi ở đây là chỉ cho bạn đọc thấy được cách tích hợp một đoạn mã tùy ý vào luồng tính toán của mạng nơ-ron. 
+Mục đích của chúng tôi ở đây là chỉ cho bạn đọc thấy được cách tích hợp một đoạn mã tùy ý vào luồng tính toán của mạng nơ-ron. 
 
 ```{.python .input  n=39}
 net = FixedHiddenMLP()
@@ -454,7 +454,7 @@ In the following example, we nest `Block`s in some creative ways.
 -->
 
 Với Gluon, ta có thể kết hợp nhiều cách khác nhau để lắp ráp các `Block` lại.
-Trong ví dụ dưới đây, ta lồng các `Block` với nhau bằng nhiều cách sáng tạo.
+Trong ví dụ dưới đây, ta lồng các `Block` với nhau theo nhiều cách sáng tạo.
 
 ```{.python .input  n=40}
 class NestMLP(nn.Block):
