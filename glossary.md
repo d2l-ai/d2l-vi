@@ -149,7 +149,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | generative adversarial network | mạng đối sinh                     | [https://git.io/JvojD](https://git.io/JvojD)                                               |
 | global maximum                 | giá trị lớn nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
 | global minimum                 | giá trị nhỏ nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
-| Global Interpreter Lock        | Khóa trình thông dịch toàn cục    |                                                                                                                |
+| Global Interpreter Lock        | Khóa Trình thông dịch Toàn cục    |                                                                                                                |
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
