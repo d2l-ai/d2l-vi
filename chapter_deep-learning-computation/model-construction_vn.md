@@ -284,7 +284,7 @@ To build our own simplified `MySequential`, we just need to define two key metho
 
 Bây giờ ta có thể có cái nhìn rõ hơn về cách mà lớp `Sequential` (Tuần tự) hoạt động. 
 Nhắc lại rằng `Sequential` được thiết kế để xâu chuỗi các Khối lại với nhau.
-Để xây dựng một lớp `MySequential` đơn giản, ta chỉ cần định nghĩa hai phương thức chính sau: 
+Để tự xây dựng một lớp `MySequential` đơn giản, ta chỉ cần định nghĩa hai phương thức chính sau: 
 1. Phương thức `add` nhằm đẩy từng Block một vào trong danh sách. 
 2. Phương thức `forward` nhằm truyền một đầu vào qua chuỗi các Blocks (theo thứ tự mà chúng được nối). 
 
