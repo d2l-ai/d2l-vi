@@ -506,7 +506,7 @@ We recommend that the interested reader check out the hybridization section (:nu
 
 Những người đọc có tâm có thể sẽ bắt đầu lo lắng về hiệu năng của một vài đoạn mã trên. 
 Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ "đậm chất Python" khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu năng cao. 
-Vấn đề của [Khóa Trình thông dịch Toàn cục]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến. 
+Vấn đề của [Khóa Trình thông dịch Toàn cục (Global Interpreter Lock)]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến. 
 Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU "rùa bò" chạy xong những dòng lệnh Python trước khi nó có thể nhận tác vụ chạy tiếp theo.
 Cách tốt nhất để tăng tốc Python là tránh không sử dụng nó. 
 Gluon làm việc này bằng cách cho phép việc Hybrid hóa (:numref:`sec_hybridize`). 
