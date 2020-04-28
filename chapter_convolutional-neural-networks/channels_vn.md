@@ -15,7 +15,7 @@ This has allowed us to think of our inputs, convolutional kernels, and outputs e
 -->
 
 Chúng ta đã mô tả mỗi bức ảnh được tạo nên bởi nhiều kênh (cụ thể, ảnh màu có các kênh chuẩn RGB để thể hiện lượng màu đỏ, xanh lá và xanh dương), 
-nhưng cho đến lúc này, ta đã đơn giản hóa tất cả các ví dụ tính toán chỉ với một kênh đầu vào đơn và một kênh đầu ra đơn. 
+nhưng cho đến lúc này, ta vẫn đơn giản hóa tất cả các ví dụ tính toán với chỉ một kênh đầu vào và một kênh đầu ra. 
 Điều này cho phép chúng ta coi các đầu vào, các bộ lọc tích chập, và các đầu ra như một mảng hai chiều.
 
 <!--
