@@ -15,8 +15,8 @@ This offers great opportunity but it also suggests a significant need to provide
 -->
 
 Trong phần giới thiệu của cuốn sách này, chúng ta đã thảo luận về sự tăng trưởng đột phá của năng lực tính toán trong hai thập niên vừa qua.
-Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần trong mỗi thập niên qua kể từ năm 2000.
-Điều này mang lại cơ hội to lớn nhưng cũng kèm theo một nhu cầu không nhỏ để cung cấp hiệu năng tính toán như vậy. 
+Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần trong mỗi thập niên kể từ năm 2000.
+Điều này mang lại cơ hội to lớn nhưng kèm theo đó là một nhu cầu không hề nhỏ để cung cấp hiệu năng tính toán như vậy. 
 
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
@@ -45,9 +45,9 @@ You might have noticed that MXNet `ndarray` looks almost identical to NumPy. But
 One of the key features that distinguishes MXNet from NumPy is its support for diverse hardware devices.
 -->
 
-Trong phần này, ta bắt đầu thảo luận cách để khai thác hiệu năng tính toán này cho vào việc nghiên cứu.
-Đầu tiên ta tìm hiểu cách sử dụng một GPU duy nhất, rồi sau này tiến tới cách sử dụng nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
-Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt NumPy. Nhưng chúng có một vài điểm khác biệt quan trọng.
+Trong phần này, ta bắt đầu thảo luận cách khai thác hiệu năng tính toán này cho việc nghiên cứu.
+Đầu tiên ta sẽ tìm hiểu cách sử dụng một GPU duy nhất, rồi sau này tiến tới nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
+Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt NumPy, nhưng chúng có một vài điểm khác biệt quan trọng.
 Một trong những tính năng chính khiến cho MXNet khác với NumPy là MXNet hỗ trợ nhiều loại phần cứng đa dạng.
 
 <!--
@@ -70,9 +70,9 @@ For example, when training neural networks on a server with a GPU, we typically 
 -->
 
 Trong MXNet, mỗi mảng có một bối cảnh. 
-Cho tới giờ, theo mặc định mọi biến và các phép toán liên quan đều được giao cho CPU.
+Cho tới giờ, tất cả các biến và phép toán liên quan đều được giao cho CPU theo mặc định.
 Thông thường, các bối cảnh khác có thể là nhiều GPU. 
-Mọi thứ còn có thể trở nên phức tạp hơn khi ta triển khai công việc trên nhiều máy chủ.
+Mọi thứ còn có thể trở nên rối rắm hơn khi ta triển khai công việc trên nhiều máy chủ.
 Bằng cách chỉ định bối cảnh cho các mảng một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
 Ví dụ, khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường muốn các tham số mô hình nằm ở trên GPU.
 
@@ -88,7 +88,7 @@ Then, [download CUDA](https://developer.nvidia.com/cuda-downloads) and follow th
 Once these preparations are complete, the `nvidia-smi` command can be used to view the graphics card information.
 -->
 
-Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU để tính toán có thể sẽ không hiệu quả.
+Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng mỗi CPU để tính toán có thể sẽ không hiệu quả.
 Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA duy nhất cho việc tính toán.
 Đầu tiên, hãy chắc chắn rằng bạn đã lắp đặt ít nhất một GPU NVIDIA.
 Sau đó, hãy [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
@@ -119,7 +119,7 @@ e.g., by using the AWS EC2 multi-GPU instances. Almost all other sections do *no
 Instead, this is simply to illustrate how data flows between different devices.
 -->
 
-Yêu cầu này có lẽ khá phung phí với hầu hết các bộ máy tính để bàn nhưng lại rất dễ dàng nếu ta dùng các dịch vụ đám mây, ví dụ như thuê một máy chủ AWS EC2 đa GPU.
+Yêu cầu này có vẻ khá phung phí với hầu hết các bộ máy tính để bàn nhưng lại rất dễ dàng nếu ta dùng các dịch vụ đám mây, chẳng hạn ta có thể thuê một máy chủ AWS EC2 đa GPU.
 Hầu hết các phần khác trong cuốn sách này *không* yêu cầu đa GPU.
 Tuy nhiên, việc này chỉ để minh họa cách dữ liệu được truyền giữa các thiết bị khác nhau.
 
