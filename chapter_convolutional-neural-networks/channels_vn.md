@@ -129,10 +129,10 @@ So it may not be that a single channel learns an edge detector but rather that s
 
 Cho đến nay, bất kể số lượng kênh đầu vào là bao nhiêu thì ta vẫn luôn kết thúc với chỉ một kênh đầu ra.
 Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều kênh ở mỗi lớp là rất cần thiết.
-Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước kênh khi tiến sâu hơn trong mạng, đồng thời lấy mẫu xuống để bù lại độ phân giải không gian cho *độ sâu kênh* lớn hơn.
+Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời lấy mẫu xuống để bù lại độ phân giải không gian cho *độ sâu kênh* lớn hơn.
 Một cách trực quan, ta có thể xem mỗi kênh tương ứng với một số đặc trưng khác nhau.
-Thực tế phức tạp hơn một chút so với những diễn giải ngây thơ nhất về trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích chung.
-Vì vậy, có thể không phải là một kênh duy nhất học một bộ nhận dạng cạnh mà là một số hướng trong không gian kênh tương ứng với việc nhận dạng các cạnh.
+Nhưng thực tế phức tạp hơn một chút so với cách diễn giải ngây thơ này vì các biểu diễn không được học độc lập mà được tối ưu hóa để cùng có ích.
+Vì vậy, có thể sẽ không phải là một kênh duy nhất học một bộ nhận dạng biên mà là một số chiều trong không gian kênh tương ứng với việc nhận dạng các biên.
 
 
 <!--
@@ -143,7 +143,7 @@ In cross-correlation operations, the result on each output channel is calculated
 -->
 
 Đặt $c_i$ và $c_o$ tương ứng với số lượng kênh đầu vào và đầu ra và đặt $k_h$ và $k_w$ tương ứng là chiều cao và chiều rộng của bộ lọc.
-Để có được một đầu ra với nhiều kênh, chúng ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra.
+Để có được một đầu ra với nhiều kênh, ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra.
 Ta ghép chúng lại trên chiều kênh đầu ra, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$.
 Trong các phép tính tương quan chéo, kết quả trên mỗi kênh đầu ra được tính từ bộ lọc tích chập tương ứng với kênh đầu ra đó và lấy đầu vào từ tất cả các kênh trong mảng đầu vào.
 
@@ -152,7 +152,7 @@ We implement a cross-correlation function to calculate the output of multiple ch
 -->
 
 
-Ta lập trình một hàm tương quan chéo để tính toán đầu ra của nhiều kênh như dưới đây.
+Ta lập trình một hàm tương quan chéo để tính đầu ra của nhiều kênh như dưới đây.
 
 ```{.python .input  n=3}
 def corr2d_multi_in_out(X, K):
@@ -181,7 +181,7 @@ The result of the first channel is consistent with the result of the previous in
 
 Dưới đây, ta thực hiện các phép tính tương quan chéo trên mảng đầu vào `X` với mảng bộ lọc `K`.
 Đầu ra gồm có 3 kênh.
-Kết quả của kênh đầu tiên phù hợp với kết quả của mảng đầu vào `X` trước đó và bộ lọc kênh đa đầu vào, một kênh đầu ra.
+Kết quả của kênh đầu tiên khớp với kết quả của mảng đầu vào `X` và bộ lọc kênh đa đầu vào, một kênh đầu ra trước đó.
 
 ```{.python .input  n=5}
 corr2d_multi_in_out(X, K)
