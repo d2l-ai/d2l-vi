@@ -21,7 +21,7 @@ Ngoài các tập dữ liệu khổng lồ và phần cứng mạnh mẽ, không
 Mở đầu với thư viện tiên phong Theano được phát hành vào năm 2007, các công cụ mã nguồn mở linh hoạt đã giúp các nhà nghiên cứu nhanh chóng thử nghiệm các mô hình bằng cách tránh việc bắt người dùng phải xây dựng lại các thành phần tiêu chuẩn nhưng vẫn cho phép việc thay đổi ở bậc thấp. 
 Theo thời gian, các thư viện học sâu ngày càng phát triển để cung cấp tính trừu tượng cao hơn.
 Tương tự với việc các nhà thiết kế chất bán dẫn đi từ việc chỉ rõ các lựa chọn bóng bán dẫn đến mạch logic để viết mã nguồn, các nhà nghiên cứu mạng nơ-ron sâu đã thay đổi từ việc nghĩ về hành vi của từng nơ-ron nhân tạo đơn lẻ sang việc xem xét cả một tầng trong mạng nơ-ron.
-Giờ đây, họ thường thiết kế các kiến trúc mạng thông qua các *khối* trừu tượng hơn.
+Giờ đây, họ thường thiết kế các kiến trúc mạng ở mức độ trừu tượng các *khối*.
 
 <!--
 So far, we have introduced some basic machine learning concepts, ramping up to fully-functional deep learning models.
@@ -39,7 +39,7 @@ While this chapter does not introduce any new models or datasets, the advanced m
 Để giúp bạn có những bước tiến xa hơn mức mong đợi, chúng tôi tập trung vào việc *sử dụng* các thư viện và không đề cập đến những chi tiết nâng cao hơn về *cách hoạt động của chúng*.
 Trong chương này, chúng tôi sẽ vén tấm màn bí ẩn và đào sâu vào những yếu tố chính của tính toán học sâu; cụ thể là việc xây dựng mô hình, truy cập và khởi tạo tham số, thiết kế các tầng và khối tùy chỉnh, đọc và ghi mô hình lên ổ cứng và cuối cùng là tận dụng GPU nhằm đạt được tốc độ đáng kể.
 Những hiểu biết này sẽ giúp bạn từ một *người dùng cuối* (*end user*) trở thành một *người dùng thành thạo* (*power user*), cung cấp cho bạn các công cụ cần thiết để gặt hái lợi ích của một thư viện học sâu trưởng thành, đồng thời giữ được sự linh hoạt để lập trình những mô hình phức tạp hơn, bao gồm cả những mô hình mà bạn tự phát minh!
-Mặc dù chương này không giới thiệu bất cứ mô hình hay tập dữ liệu mới nào, nhưng các chương sau về mô hình nâng cao sẽ phụ thuộc rất nhiều vào những kỹ thuật sắp được nhắc đến. 
+Mặc dù chương này không giới thiệu bất cứ mô hình hay tập dữ liệu mới nào, các chương sau về mô hình nâng cao sẽ phụ thuộc rất nhiều vào những kỹ thuật sắp được nhắc đến. 
 
 ```toc
 :maxdepth: 2
