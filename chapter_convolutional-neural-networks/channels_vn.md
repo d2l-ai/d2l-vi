@@ -27,7 +27,7 @@ In this section, we will take a deeper look at convolution kernels with multiple
 
 Khi chúng ta thêm kênh vào hỗn hợp ấy, cả các đầu vào lẫn các lớp biểu diễn ẩn của ta trở thành các mảng ba chiều.
 Chẳng hạn, mỗi ảnh RGB đầu vào có dạng $3\times h\times w$.
-Ta xem trục có kích thước là 3 này là chiều kênh. 
+Ta xem trục này là chiều kênh, có kích thước là 3.
 Trong phần này, ta sẽ quan sát sâu hơn vào các bộ lọc tích chập với đa kênh đầu vào và đầu ra.
 
 <!--
