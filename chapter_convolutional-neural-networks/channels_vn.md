@@ -196,9 +196,9 @@ Let us see in some detail what it actually does.
 
 Thoạt nhìn, một phép tích chập $1 \times 1$, tức $k_h = k_w = 1$, dường như không có nhiều ý nghĩa.
 Suy cho cùng, một phép tích chập tính toán tương quan giữa các điểm ảnh liền kề.
-Một phép tích chập $1 \times 1$ rõ ràng không làm như vậy.
-Tuy nhiên, chúng là các phép tính phổ biến đôi khi được sử dụng trong các thiết kế của các mạng sâu phức tạp.
-Ta sẽ xem chi tiết những gì nó thực sự làm.
+Nhưng rõ ràng một phép tích chập $1 \times 1$ lại không làm như vậy.
+Mặc dù vậy, chúng là các phép tính phổ biến đôi khi được sử dụng trong các thiết kế của các mạng sâu phức tạp.
+Ta sẽ xem chi tiết những gì chúng thực sự làm.
 
 <!--
 Because the minimum window is used, the $1\times 1$ convolution loses the ability of larger convolutional layers to recognize patterns 
@@ -206,8 +206,8 @@ consisting of interactions among adjacent elements in the height and width dimen
 The only computation of the $1\times 1$ convolution occurs on the channel dimension.
 -->
 
-Do cửa sổ tối thiểu được sử dụng nên phép tích chập $1\times 1$ mất đi khả năng nhận dạng các khuôn mẫu của các tầng tích chập lớn hơn bao gồm các tương tác giữa các phần tử liền kề trên chiều cao và chiều rộng.
-Tính toán duy nhất của phép tích chập $1\times 1$ xảy ra trên chiều kênh.
+Do sử dụng cửa sổ tối thiểu nên phép tích chập $1\times 1$ mất đi khả năng của các tầng tích chập lớn hơn để nhận dạng các khuôn mẫu bao gồm các tương tác giữa các phần tử liền kề trên chiều cao và chiều rộng.
+Tính toán duy nhất của phép tích chập $1\times 1$ được thực hiện trên chiều kênh.
 
 <!--
 :numref:`fig_conv_1x1` shows the cross-correlation computation using the $1\times 1$ convolution kernel with 3 input channels and 2 output channels.
@@ -222,8 +222,8 @@ Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights (plus 
 :numref:`fig_conv_1x1` biểu diễn phép tính tương quan chéo sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và 2 kênh đầu ra.
 Lưu ý rằng đầu vào và đầu ra có cùng chiều cao và chiều rộng.
 Mỗi phần tử trong đầu ra được lấy từ một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào.
-Bạn có thể xem tầng tích chập $1\times 1$ như một tầng kết nối đầy đủ được áp dụng tại mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi các giá trị đầu vào tương ứng $c_i$ thành giá trị đầu ra $c_o$.
-Bởi vì đây vẫn là một tầng chập nên các trọng số được gắn trên vị trí điểm ảnh.
+Bạn có thể xem tầng tích chập $1\times 1$ như một tầng kết nối đầy đủ được áp dụng lên mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi các giá trị đầu vào tương ứng $c_i$ thành giá trị đầu ra $c_o$.
+Bởi vì đây vẫn là một tầng chập nên các trọng số sẽ được chia sẻ giữa các vị trí điểm ảnh. <!-- theo mình hiểu thì cùng một trọng số sẽ được dùng tại các pixel khác của ảnh. Ngoài ra, mình thấy một vài tài liệu dùng "shared across pixel" thay vì "tied acrossed pixel" nên dịch là "chia sẻ"-->
 Do đó, tầng tích chập $1\times 1$ cần tới $c_o\times c_i$ trọng số (cộng thêm các hệ số điều chỉnh).
 
 
@@ -347,7 +347,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 *
