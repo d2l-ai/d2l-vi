@@ -246,8 +246,8 @@ This means that the number of output channels for the pooling layer is the same 
 Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 -->
 
-Khi phải xử lý dữ liệu đầu vào với nhiều channel, lớp gộp sẽ gộp mỗi channel của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng channel lại với nhau như trong lớp tính chập.
-Điều này có nghĩa là số lượng channel đầu ra cho lớp gộp sẽ giống như số lượng channel đầu vào.
+Khi phải xử lý dữ liệu đầu vào với nhiều channel, tầng gộp sẽ gộp mỗi channel của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng channel lại với nhau như trong tầng tính chập.
+Điều này có nghĩa là số lượng channel đầu ra cho tầng gộp sẽ giống như số lượng channel đầu vào.
 Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều của channel để xây dựng dữ liệu đầu vào với số lượng channel là 2.
 
 ```{.python .input  n=9}
@@ -259,7 +259,7 @@ X
 As we can see, the number of output channels is still 2 after pooling.
 -->
 
-Như chúng ta thấy bên dưới, số lượng channel của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua lớp gộp.
+Như chúng ta thấy bên dưới, số lượng channel của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua tầng gộp.
 
 ```{.python .input  n=10}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
@@ -280,11 +280,11 @@ pool2d(X)
 * The pooling layer's number of output channels is the same as the number of input channels.
 -->
 
-* Sau khi tiếp nhận từng phần tử đầu vào trong cửa sổ trượt của phép gộp, lớp gộp hoạt động với phương thức giá trị lớn nhất sẽ cho đầu ra là giá trị lớn nhất trong những phần tử đầu vào đó và lớp gộp hoạt động với phương thức giá trị trung bình sẽ cho đầu ra là giá trị trung bình cuả từng phần tử đầu vào.
-* Một trong những chức năng chủ yếu của lớp gộp là giúp giảm thiểu sự dễ bị thay đổi giá trị của đặc trưng ánh xạ đầu ra của lớp tính chập với cùng một giá trị đặc trưng đầu vào khi vị trí của giá trị đặc trưng đầu vào này thay đổi.
-* Chúng ta có thể định rõ giá trị của đệm và sải bước cho lớp gộp.
-* Lớp gộp theo phương thức giá trị lớn nhất, kết hợp với sải bước lớn hơn 1 có thể dùng để làm giảm kích thước dữ liệu đầu vào.
-* Số lượng channel đầu ra của lớp gộp sẽ giống như số lượng channels của dữ liệu đầu vào lớp gộp
+* Sau khi tiếp nhận từng phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp hoạt động với phương thức giá trị lớn nhất sẽ cho đầu ra là giá trị lớn nhất trong những phần tử đầu vào đó và tầng gộp hoạt động với phương thức giá trị trung bình sẽ cho đầu ra là giá trị trung bình cuả từng phần tử đầu vào.
+* Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự dễ bị thay đổi giá trị của đặc trưng ánh xạ đầu ra của  tính chập với cùng một giá trị đặc trưng đầu vào khi vị trí của giá trị đặc trưng đầu vào này thay đổi.
+* Chúng ta có thể định rõ giá trị của đệm và sải bước cho tầng gộp.
+* Tầng gộp theo phương thức giá trị lớn nhất, kết hợp với sải bước lớn hơn 1 có thể dùng để làm giảm kích thước dữ liệu đầu vào.
+* Số lượng channel đầu ra của tầng gộp sẽ giống như số lượng channels của dữ liệu đầu vào tầng gộp đó.
 <!--
 ## Exercises
 -->
@@ -300,12 +300,12 @@ pool2d(X)
 1. Is there another operation between average and maximum pooling that you could consider (hint: recall the softmax)? Why might it not be so popular?
 -->
 
-1. Bạn có nghĩ lớp gộp theo phương thức giá trị trung bình là một trường hợp đặc biệt của lớp tính chập? Nếu bạn nghĩ vậy, hãy thử thực hiện nó.
-2. Bạn có nghĩ lớp gộp theo phương thức giá trị lớn nhất là một trường hợp đặc biệt của lớp tính chập? Nếu bạn nghĩ vậy, hãy thử thực hiện nó.
-3. Bạn hãy tính chi phí tính toán của lớp gộp trong trường hợp, giả sử đầu vào của lớp gộp có kích thước là $c\times h\times w$, kích thước của cửa sổ trượt trong lớp gộp là $p_h\times p_w$ với giá trị số lần đệm là $(p_h, p_w)$ và giá trị sải bước là $(s_h, s_w)$ lần lượt cho chiều cao và chiều rộng của đầu vào.
-4. Bạn hãy chỉ ra sự khác biệt giữa kết quả đầu ra khi dùng lớp gộp theo phương thức lớn nhất và lớp gộp theo phương thức giá trị trung bình.
-5. Theo bạn nghĩ thì có cần thêm riêng một lớp gộp hoạt động theo phương thức giá trị nhỏ nhất không? Bạn có thể thay thế nó bằng một cơ chế hoạt động khác không?
-6. Liệu có một cơ chế hoạt động nào khác giữa lớp gộp theo phương thức giá trị trung bình và giá trị lớn nhất không (gợi ý: hãy nhớ lại hàm softmax)? Và tại sao nó không được phổ biến?
+1. Bạn có nghĩ tầng gộp theo phương thức giá trị trung bình là một trường hợp đặc biệt của tầng tính chập? Nếu bạn nghĩ vậy, hãy thử thực hiện nó.
+2. Bạn có nghĩ tầng gộp theo phương thức giá trị lớn nhất là một trường hợp đặc biệt của tầng tính chập? Nếu bạn nghĩ vậy, hãy thử thực hiện nó.
+3. Bạn hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước là $c\times h\times w$, kích thước của cửa sổ trượt trong tầng gộp là $p_h\times p_w$ với giá trị số lần đệm là $(p_h, p_w)$ và giá trị sải bước là $(s_h, s_w)$ lần lượt cho chiều cao và chiều rộng của đầu vào.
+4. Bạn hãy chỉ ra sự khác biệt giữa kết quả đầu ra khi dùng tầng gộp theo phương thức lớn nhất và tầng gộp theo phương thức giá trị trung bình.
+5. Theo bạn nghĩ thì có cần thêm riêng một tầng gộp hoạt động theo phương thức giá trị nhỏ nhất không? Bạn có thể thay thế nó bằng một cơ chế hoạt động khác không?
+6. Liệu có một cơ chế hoạt động nào khác giữa tầng gộp theo phương thức giá trị trung bình và giá trị lớn nhất không (gợi ý: hãy nhớ lại hàm softmax)? Và tại sao nó không được phổ biến?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -343,7 +343,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-Dac Dinh
+*
 
 <!-- Phần 5 -->
-Dac Dinh
+* Dac Dinh
