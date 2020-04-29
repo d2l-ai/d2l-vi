@@ -187,8 +187,8 @@ We can demonstrate the use of padding and strides in pooling layers via the two-
 We first construct an input data of shape `(1, 1, 4, 4)`, where the first two dimensions are batch and channel.
 -->
 
-Cũng giống như các lớp tính chập, các lớp gộp cũng có thể thay đổi được kích thước đầu ra. Và giống như lần trước, chúng ta có thể thay đổi cách thức hoạt động của lớp gộp để đạt được kích thước đầu ra như mong muốn bằng việc thêm vào phần đệm trên dữ liêu đầu vào và điều chỉnh sải bước. 
-Chúng ta có thể minh hoạ cách sử dụng việc thêm phần đệm và sải bước trong các lớp gộp thông qua lớp gộp hai chiều theo phương pháp giá trị lớn nhất có tên gọi là MaxPool2D được cung cấp trong mô đun `nn` của thư viên MXNet Gluon. Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên theo thứ tự lần lượt là batch và channel.
+Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi được kích thước đầu ra. Và giống như lần trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng việc thêm vào phần đệm trên dữ liêu đầu vào và điều chỉnh sải bước. 
+Chúng ta có thể minh hoạ cách sử dụng việc thêm phần đệm và sải bước trong các tầng gộp thông qua tầng gộp hai chiều theo phương pháp giá trị lớn nhất có tên gọi là MaxPool2D được cung cấp trong mô đun `nn` của thư viên MXNet Gluon. Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên theo thứ tự lần lượt là batch và channel.
 
 
 ```{.python .input  n=15}
@@ -201,8 +201,8 @@ By default, the stride in the `MaxPool2D` class has the same shape as the poolin
 Below, we use a pooling window of shape `(3, 3)`, so we get a stride shape of `(3, 3)` by default.
 -->
 
-Theo mặc định, sải bước trong lớp 'MaxPool2D' có cùng kích thước với cửa sổ trượt của lớp gộp.
-Dưới đây, chúng ta sử dụng cửa sổ trượt của lớp gộp với kích thước `(3,3)`, vì vậy chúng ta có kích thước của sải bước trong lớp gộp là `(3,3)` theo mặc định.
+Theo mặc định, sải bước trong tầng 'MaxPool2D' có cùng kích thước với cửa sổ trượt của tầng gộp.
+Dưới đây, chúng ta sử dụng cửa sổ trượt của tầng gộp với kích thước `(3,3)`, vì vậy chúng ta có kích thước của sải bước trong tầng gộp là `(3,3)` theo mặc định.
 
 
 ```{.python .input  n=16}
@@ -339,7 +339,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Dac Dinh
 
 <!-- Phần 5 -->
 *
