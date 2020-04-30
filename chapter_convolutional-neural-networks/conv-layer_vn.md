@@ -215,15 +215,15 @@ corr2d(X.T, K)
 ## Learning a Kernel
 -->
 
-## Học một Kernel
+## Học một Bộ lọc
 
 <!--
 Designing an edge detector by finite differences `[1, -1]` is neat if we know this is precisely what we are looking for.
 However, as we look at larger kernels, and consider successive layers of convolutions, it might be impossible to specify precisely what each filter should be doing manually.
 -->
 
-Thiết kế một máy dò cạnh bằng các khác biệt hữu hạn `[1, -1]` là gọn gàng nếu ta biết đây chính xác là những gì ta đang tìm kiếm.
-Tuy nhiên, khi ta xem xét các nhân lớn hơn và xem xét các tầng tích chập liên tiếp, điều đó có thể không thể chỉ định chính xác những gì mỗi bộ lọc nên làm thủ công.
+Thiết kế một máy dò cạnh bằng hiệu hữu hạn giữa`[1, -1]` thì rất tuyệt nếu ta biết điều này chính xác là những gì ta đang tìm kiếm.
+Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, sẽ không khả thi để chỉ định thủ công chính xác mỗi bộ lọc nên làm gì.
 
 <!--
 Now let us see whether we can learn the kernel that generated `Y` from `X` by looking at the (input, output) pairs only.
@@ -232,7 +232,7 @@ Next, in each iteration, we will use the squared error to compare `Y` and the ou
 For the sake of simplicity, in this convolutional layer, we will ignore the bias.
 -->
 
-Bây giờ ta hãy xem liệu ta có thể học nhân đã tạo `Y` từ` X` hay không bằng cách nhìn vào chỉ các cặp (đầu vào, đầu ra).
+Bây giờ ta hãy xem liệu ta có thể học nhân mà tạo ra `Y` từ` X` hay không chỉ bằng cách nhìn vào các cặp (đầu vào, đầu ra).
 Đầu tiên chúng ta xây dựng một tầng tích chập và khởi tạo nhân của nó như là một mảng ngẫu nhiên.
 Tiếp theo, trong mỗi lần lặp, ta sẽ sử dụng sai số bình phương để so sánh `Y` và đầu ra của lớp chập, sau đó tính toán gradient để cập nhật trọng số.
 Để đơn giản, trong tầng tích chập này, ta sẽ bỏ qua độ chệch.
@@ -245,7 +245,7 @@ Instead, we use the built-in `Conv2D` class provided by Gluon below.
 -->
 
 Trước đây ta đã xây dựng lớp `Conv2D`.
-Tuy nhiên, vì ta đã sử dụng các bài tập yếu tố đơn,
+Tuy nhiên, vì ta đã sử dụng các phép gán một phần tử,
 Gluon có một số khó khăn khi tìm gradient.
 Thay vào đó, ta sử dụng lớp `Conv2D` tích hợp được cung cấp bởi Gluon bên dưới.
 
@@ -278,8 +278,8 @@ As you can see, the error has dropped to a small value after 10 iterations.
 Now we will take a look at the kernel array we learned.
 -->
 
-Như bạn có thể thấy, sai số đã giảm xuống một giá trị nhỏ sau 10 lần lặp.
-Bây giờ ta sẽ xem xét mảng kernel mà ta đã học.
+Như bạn có thể thấy, sai số đã giảm còn một giá trị nhỏ sau 10 lần lặp.
+Bây giờ ta sẽ xem xét mảng bộ lọc đã được học.
 
 ```{.python .input}
 conv2d.weight.data().reshape(1, 2)
@@ -289,7 +289,7 @@ conv2d.weight.data().reshape(1, 2)
 Indeed, the learned kernel array is remarkably close to the kernel array `K` we defined earlier.
 -->
 
-Thật vậy, mảng kernel đã được học gần với mảng kernel `K` mà ta đã định nghĩa trước đó.
+Thật vậy, mảng bộ lọc mà đã được học rất gần với mảng bộ lọc `K` mà ta đã định nghĩa trước đó.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
