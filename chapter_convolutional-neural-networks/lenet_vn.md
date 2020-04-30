@@ -61,7 +61,7 @@ Trước đắm chìm vào các chi tiết phức tạp, ta hãy xem xét ngắn
 ![Data flow in LeNet 5. The input is a handwritten digit, the output a probability over 10 possible outcomes.](../img/lenet.svg)
 -->
 
-![Dòng dữ liệu trong LeNet 5. Đầu vào là một chữ số viết tay, đầu ra là một xác suất đối với 10 đầu ra khả thi.](../img/lenet.svg)
+![Dòng dữ liệu trong LeNet 5. Đầu vào là một chữ số viết tay, đầu ra là một xác suất đối với 10 kết quả khả thi.](../img/lenet.svg)
 :label:`img_lenet`
 
 <!--
