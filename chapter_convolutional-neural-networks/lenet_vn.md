@@ -179,7 +179,7 @@ Xin hãy chú ý rằng, chiều cao và chiều rộng của đặc trưng thu 
 ## Data Acquisition and Training
 -->
 
-## Thu thập và huấn luyện dữ 
+## Thu thập và huấn luyện dữ liệu 
 
 <!--
 Now that we have implemented the model, we might as well run some experiments to see what we can accomplish with the LeNet model.
