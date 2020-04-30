@@ -207,7 +207,7 @@ This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_
 -->
 
 Để thực hiện việc đánh giá hiệu quả của mô hình huấn luyện, chúng ta cần làm một điều chỉnh nhỏ cho hàm `evaluate_accuracy` mà chúng ta đã mô tả ở phần :numref:`sec_softmax_scratch`.
-Bởi vì toàn bộ tập dữ liệu đang được lưu trữ ở CPU, chúng ta cần sao chép nó lên GPU trước khi chúng ta có thể thực hiện tính toán với mô hình.
+Bởi vì toàn bộ tập dữ liệu đang nằm trên CPU, chúng ta cần sao chép nó lên GPU trước khi chúng ta có thể thực hiện tính toán với mô hình.
 Việc này được hoàn thành thông qua việc dùng hàm `as_in_ctx` đã được mô tả ở phần :numref:`sec_use_gpu`.  
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
