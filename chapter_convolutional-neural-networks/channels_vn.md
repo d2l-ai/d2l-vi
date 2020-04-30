@@ -308,7 +308,7 @@ np.abs(Y1 - Y2).sum() < 1e-6
     * Điều ngược lại có đúng không?
 2. Giả sử kích thước của đầu vào là $c_i\times h\times w$ và áp dụng một bộ lọc tích chập có kích thước $c_o\times c_i\times k_h\times k_w$, đồng thời sử dụng đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
     * Chi phí tính toán (phép nhân và phép cộng) cho lượt truyền xuôi là bao nhiêu?
-    * Độ phức tạp bộ nhớ cho tính toán truyền xuôi là bao nhiêu?
+    * Dung lượng bộ nhớ cho tính toán truyền xuôi là bao nhiêu?
     * Độ phức tạp bộ nhớ cho tính toán truyền ngược là bao nhiêu?
     * Chi phí tính toán cho tính toán truyền nguược là bao nhiên?
 3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta nhân đôi phần đệm?
