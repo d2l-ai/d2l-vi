@@ -132,7 +132,7 @@ Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều k
 Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời lấy mẫu xuống để bù lại độ phân giải không gian cho *chiều kênh* sâu hơn này.
 Một cách trực quan, ta có thể xem mỗi kênh tương ứng với một vài đặc trưng khác nhau.
 Nhưng thực tế thì lại phức tạp hơn một chút so với cách diễn giải ngây thơ này vì các biểu diễn không được học độc lập mà được tối ưu hóa để cùng có ích.
-Vì vậy, có thể việc nhận dạng biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
+Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
 <!--
 Vì vậy, có thể sẽ không phải là một kênh duy nhất học một bộ nhận dạng biên mà là một số hướng trong không gian kênh tương ứng với việc nhận dạng các biên.
 -->
