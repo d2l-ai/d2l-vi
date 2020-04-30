@@ -243,7 +243,7 @@ Since each epoch takes tens of seconds to run, we visualize the training loss in
 -->
 
 Hàm huấn luyện `train_ch6` thì cũng giống như hàm huấn luyện `train_ch3` đã được định nghĩa tại phần :numref:`sec_softmax_scratch`.
-Bởi vì hiện tại chúng ta phải xử lý một mạng có tới hàng chục các tầng, nên hàm này chỉ hỗ trợ các mô hình được xây dựng trên thư viện Gluon.
+Bởi vì hiện tại chúng ta phải xử lý một mạng có tới hàng chục tầng, nên hàm này chỉ hỗ trợ các mô hình được xây dựng trên thư viện Gluon.
 Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi hàm `ctx`, lần này chúng ta sẽ sử dụng bộ khởi tạo Xavier.
 Hàm mất mát và thuật toán huấn luyện sẽ vẫn dùng hàm entropy chéo làm hàm mất mát và phương pháp hạ gradient ngẫu nhiên cho những batch dữ liệu nhỏ làm thuật toán huấn luyện.
 Bởi vì mỗi epoch tốn khoảng hàng chục giây để chạy, chúng ta sẽ vẽ biểu đồ đường biểu diễn giá trị mất mát khi huấn luyện để thể hiện quá trình chi tiết hơn. 
