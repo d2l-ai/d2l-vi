@@ -40,7 +40,7 @@ In fact, even with a tripod and a stationary object, vibration of the camera due
 -->
 
 Hơn nữa, khi phát hiện các đặc trưng cấp thấp như cạnh (được thảo luận tại :numref:`sec_conv_layer`), 
-ta thường muốn cách biểu diễn bất biến với phép tịnh tiến trong một chừng mực nào đó.
+ta thường muốn cách biểu diễn này bất biến với phép tịnh tiến trong một chừng mực nào đó.
 Ví dụ, nếu ta lấy bức ảnh `X` với một ranh giới rõ rệt giữa màu đen và màu trắng
 và dịch chuyển toàn bộ bức ảnh sang phải một điểm ảnh, nói cách khác, `Z[i, j] = X[i, j+1]`, thì đầu ra cho bức ảnh mới `Z` có thể sẽ khác rất nhiều.
 Ranh giới đó và các kích hoạt sẽ đều dịch chuyển sang một điểm ảnh.
