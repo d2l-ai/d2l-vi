@@ -105,7 +105,8 @@ $$
 A pooling layer with a pooling window shape of $p \times q$ is called a $p \times q$ pooling layer.
 The pooling operation is called $p \times q$ pooling.
 -->
-
+Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$.
+Một phép gộp được gọi là phép gộp $p \times q$ .
 *dịch đoạn phía trên*
 
 <!--
@@ -116,7 +117,11 @@ or `X[i, j+1]` and `X[i, j+2]` are different, the pooling layer outputs all incl
 That is to say, using the $2\times 2$ maximum pooling layer, we can still detect if the pattern recognized by the convolutional layer
 moves no more than one element in height and width.
 -->
-
+Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập đến ở đầu chương.
+Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho $2\times 2$ tầng gộp cực đại.
+Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`. 
+Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]` có khác nhau hay không, hoặc `X[i, j+1]` và `X[i, j+2]` khác nhau, tất cả giá trị trả về của tầng gộp là `Y[i, j]=1`.
+Điều đó có nghĩa là, sử dụng $2\times 2$ tầng gộp cực đại, chúng ta vẫn có thể nhận diện nếu một mẫu được nhận diện bởi tầng tích chập chuyển dịch không nhiều hơn một phần tử theo chiều cao và chiều rộng.
 *dịch đoạn phía trên*
 
 <!--
@@ -124,7 +129,9 @@ In the code below, we implement the forward computation of the pooling layer in 
 This function is similar to the `corr2d` function in :numref:`sec_conv_layer`.
 However, here we have no kernel, computing the output as either the max or the average of each region in the input..
 -->
-
+Trong đoạn code bên dưới, chúng tôi lập trình phép tính toán xuôi của tầng gộp trong hàm `pool2d`.
+Hàm này tương tự với hàm `corr2d` trong :numref:`sec_conv_layer`.
+Tuy nhiên, ở đây chúng ta có nhân, kết quả đầu ra hoặc là giá trị lớn nhất hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=3}
@@ -147,7 +154,7 @@ def pool2d(X, pool_size, mode='max'):
 <!--
 We can construct the input array `X` in the above diagram to validate the output of the two-dimensional maximum pooling layer.
 -->
-
+Chúng ta có thể xây dựng mảng đầu vào `X` ở biểu đồ ở trên để kiểm tra giá trị kết quả của tầng gộp cực đại hai chiều.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=4}
@@ -158,7 +165,7 @@ pool2d(X, (2, 2))
 <!--
 At the same time, we experiment with the average pooling layer.
 -->
-
+Đồng thời, chúng tôi cũng thực hiện thí nghiệm với tầng gộp trung bình.
 *dịch đoạn phía trên*
 
 ```{.python .input  n=14}
@@ -315,7 +322,6 @@ Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
 hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
 Lưu ý:
 * Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
 với dấu `@` ở đầu. Ví dụ: @aivivn.
@@ -331,7 +337,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Đình Nam
 
 <!-- Phần 4 -->
 *
