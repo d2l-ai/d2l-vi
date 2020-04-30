@@ -54,7 +54,7 @@ mitigating the sensitivity of convolutional layers to location and of spatially 
 ## Maximum Pooling and Average Pooling
 -->
 
-## *dịch tiêu đề phía trên*
+## Gộp giá trị cực đại và gộp giá trị trung bình
 
 <!--
 Like convolutional layers, pooling operators consist of a fixed-shape window that is slid over all regions in the input according to its stride, 
@@ -64,7 +64,11 @@ Instead, pooling operators are deterministic, typically calculating either the m
 These operations are called *maximum pooling* (*max pooling* for short) and *average pooling*, respectively.
 -->
 
-*dịch đoạn phía trên*
+Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định thực hiện trượt trên tất cả các vùng ở đầu vào dựa trên sải bước của nó,
+thực hiện xuất một giá trị cho mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
+Tuy nhiên, không giống như các phép toán tương quan chéo giữa các đầu vào và các bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc").
+Thay vì vậy, các toán tử gộp là xác định với phép tính thường thực hiện là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
+Các phép tính này theo thứ tự được gọi là là *gộp giá trị cực đại* (*max pooling*) và *gộp giá trị trung bình* (*average pooling*).
 
 <!--
 In both cases, as with the cross-correlation operator, we can think of the pooling window as starting from the top left of the input array
@@ -73,14 +77,14 @@ At each location that the pooling window hits, it computes the maximum or averag
 value of the input subarray in the window (depending on whether *max* or *average* pooling is employed).
 -->
 
-*dịch đoạn phía trên*
-
+Trong cả hai trường hợp, giống như với toán tử tương quan chéo, ta có thể xem cửa sổ gộp thực hiện bắt đầu từ phía trên bên trái của mảng đầu vào và thực hiện trượt qua mảng này từ trái sang phải và từ trên xuống dưới.
+Ở mỗi vị trí mà cửa sổ gộp dừng, nó tính giá trị cực đại hay trung bình của mảng con nằm trong cửa sổ (tùy vào phép gộp nào được sử dụng).
 
 <!--
 ![Maximum pooling with a pooling window shape of $2\times 2$. The shaded portions represent the first output element and the input element used for its computation: $\max(0, 1, 3, 4)=4$](../img/pooling.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/pooling.svg)
+![Gộp giá trị cực đại với cửa sổ có kích thước $2\times 2$. Các phần tô đậm thể hiện phần tử xuất ra đầu tiên và phần tử đầu vào đã dùng để tính toán: $max(0, 1, 3, 4)=4$](../img/pooling.svg)
 :label:`fig_pooling`
 
 <!--
@@ -88,7 +92,8 @@ The output array in :numref:`fig_pooling` above has a height of 2 and a width of
 The four elements are derived from the maximum value of $\text{max}$:
 -->
 
-*dịch đoạn phía trên*
+Mảng xuất ra ở :numref:`fig_pooling` phía trên có chiều cao là 2 và chiều rộng là 2. 
+Bốn phần tử của nó được rút ra từ giá trị cực đại của hàm $\text{max}$:
 
 $$
 \max(0, 1, 3, 4)=4,\\
