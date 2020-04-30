@@ -206,7 +206,7 @@ consisting of interactions among adjacent elements in the height and width dimen
 The only computation of the $1\times 1$ convolution occurs on the channel dimension.
 -->
 
-Do sử dụng cửa sổ tối thiểu nên phép tích chập $1\times 1$ mất đi khả năng của các tầng tích chập lớn hơn để nhận dạng các khuôn mẫu bao gồm các tương tác giữa các phần tử liền kề trên chiều cao và chiều rộng.
+Do cửa sổ có kích thước tối thiểu nên so với các tầng tích chập lớn hơn, phép tích chập $1\times 1$ mất đi khả năng nhận dạng các khuôn mẫu bao gồm các tương tác giữa các phần tử liền kề trên chiều cao và chiều rộng.
 Tính toán duy nhất của phép tích chập $1\times 1$ được thực hiện trên chiều kênh.
 
 <!--
