@@ -53,7 +53,7 @@ This is the result of a two-dimensional cross-correlation between multi-channel 
 -->
 
 Tuy nhiên, khi $c_i>1$, chúng ta cần một bộ lọc chứa mảng có kích thước $k_h\times k_w$ *cho mỗi kênh của đầu vào*.
-Gộp $c_i$ mảng này lại ta được một bộ lọc tích chập kích thước $c_i\times k_h\times k_w$.
+Nối (_concatenate_) $c_i$ mảng này lại ta được một bộ lọc tích chập kích thước $c_i\times k_h\times k_w$.
 Vì đầu vào và bộ lọc đều có $c_i$ kênh, ta có thể thực hiện phép tương quan chéo trên từng cặp mảng hai chiều của đầu vào và bộ lọc cho mỗi kênh, rồi cộng kết quả của $c_i$ kênh lại để tạo ra một mảng hai chiều.
 Đây là kết quả của phép tương quan chéo hai chiều giữa dữ liệu đầu vào nhiều kênh và một bộ lọc tích chập *kênh nhiều đầu vào*.
 
