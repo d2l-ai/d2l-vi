@@ -195,7 +195,7 @@ Let us see in some detail what it actually does.
 -->
 
 Thoạt nhìn, một phép tích chập $1 \times 1$, tức $k_h = k_w = 1$, dường như không có nhiều ý nghĩa.
-Suy cho cùng, một phép tích chập tính toán tương quan giữa các điểm ảnh liền kề.
+Suy cho cùng, một phép tích chập là để tính toán tương quan giữa các điểm ảnh liền kề.
 Nhưng rõ ràng một phép tích chập $1 \times 1$ lại không làm như vậy.
 Mặc dù vậy, chúng là các phép tính phổ biến đôi khi được sử dụng trong các thiết kế của các mạng sâu phức tạp.
 Ta sẽ xem chi tiết những gì chúng thực sự làm.
