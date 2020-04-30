@@ -303,10 +303,10 @@ we will continue to refer to the cross-correlation operation as a convolution ev
 -->
 
 Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
-Trong hình trên, ta dễ dàng nhận thấy là đơn giản chỉ cần lật kernel từ góc dưới cùng bên trái lên góc trên cùng bên phải.
+Trong hình trên, ta dễ dàng nhận thấy điều này, đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
 Trong trường hợp này, việc lập chỉ số trong phép tổng được hoàn nguyên, nhưng ta vẫn thu được kết quả tương tự.
 Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
-ta sẽ tiếp tục đề cập đến phép đo tương quan chéo như là một tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
+ta sẽ tiếp tục đề cập đến phép tương quan chéo như là một phép tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
 
 <!--
 ## Summary
@@ -322,7 +322,7 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 -->
 
 * Tính toán cốt lõi của tầng tích chập hai chiều là phép tính tương quan chéo hai chiều.
-Ở dạng đơn giản nhất, điều này thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó thêm vào một độ lệch.
+Ở dạng đơn giản nhất, nó thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó thêm vào một độ lệch.
 * Chúng ta có thể thiết kế bộ lọc để phát hiện các cạnh trong ảnh.
 * Chúng ta có thể học các bộ lọc từ dữ liệu.
 
@@ -351,9 +351,9 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
      * Điều gì xảy ra nếu bạn chuyển vị `X`?
      * Điều gì xảy ra nếu bạn chuyển vị `K`?
 2. Khi thử tự động tìm gradient cho lớp `Conv2D` mà ta đã tạo, bạn thấy loại thông báo lỗi nào?
-3. Làm thế nào để bạn biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và kernel?
-4. Thiết kế một số kernel bằng tay.
-     * Đạo hàm bậc hai của bộ lọc có hình dạng gì?
+3. Làm thế nào để bạn biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và mảng bộ lọc?
+4. Hãy thiết kế thủ công một số bộ lọc sau.
+     * Bộ lọc để tính đạo hàm bậc hai có dạng như thế nào?
      * Bộ lọc của toán tử Laplace là gì?
      * Bộ lọc của phép tích phân là gì?
      * Kích thước tối thiểu của bộ lọc để có được đạo hàm bậc $d$ là bao nhiêu?
