@@ -231,7 +231,8 @@ Unlike the `train_epoch_ch3` defined in :numref:`sec_softmax_scratch`, we now ne
 prior to making the forward and backward passes.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cũng cần phải cập nhật hàm huấn luyện để mô hình có thể chạy được trên GPUs.
+Không giống như hàm `train_epoch_ch3` đã được định nghĩa ở phần :numref:`sec_softmax_scratch`, bây giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng ở đây là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.   
 
 <!--
 The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`.
@@ -241,7 +242,11 @@ The loss function and the training algorithm still use the cross-entropy loss fu
 Since each epoch takes tens of seconds to run, we visualize the training loss in a finer granularity.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện `train_ch6` thì cũng giống như hàm huấn luyện `train_ch3` đã được định nghĩa tại phần :numref:`sec_softmax_scratch`.
+Bởi vì hiện tại chúng ta phải xử lý một mạng có tới hàng chục các tầng, nên hàm này chỉ hỗ trợ các mô hình được xây dựng trên thư viện Gluon.
+Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi hàm `ctx`, lần này chúng ta sẽ sử dụng bộ khởi tạo Xavier.
+Hàm mất mát và thuật toán huấn luyện sẽ vẫn dùng hàm entropy chéo làm hàm mất mát và phương pháp hạ gradient ngẫu nhiên cho những batch dữ liệu nhỏ làm thuật toán huấn luyện.
+Bởi vì mỗi epoch tốn khoảng hàng chục giây để chạy, chúng ta sẽ vẽ biểu đồ đường biểu diễn giá trị mất mát khi huấn luyện để thể hiện quá trình chi tiết hơn. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -281,7 +286,7 @@ def train_ch6(net, train_iter, test_iter, num_epochs, lr, ctx=d2l.try_gpu()):
 Now let us train the model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, chúng ta hãy bắt đầu huấn luyện mô hình.
 
 ```{.python .input}
 lr, num_epochs = 0.9, 10
@@ -366,7 +371,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Dac Dinh
 
 <!-- Phần 6 -->
 *
