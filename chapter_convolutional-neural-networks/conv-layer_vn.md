@@ -304,7 +304,7 @@ we will continue to refer to the cross-correlation operation as a convolution ev
 
 Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
 Trong hình trên, ta dễ dàng nhận thấy điều này, đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
-Trong trường hợp này, việc lập chỉ số trong phép tổng được hoàn nguyên, nhưng ta vẫn thu được kết quả tương tự.
+Trong trường hợp này, việc lập chỉ số trong phép tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
 Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
 ta sẽ tiếp tục đề cập đến phép tương quan chéo như là một phép tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
 
