@@ -489,7 +489,7 @@ Even worse, it is now subject to the dreaded Global Interpreter Lock that makes 
 
 
 Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới việc tốn thêm thời gian chờ cho việc truyền dữ liệu. 
-Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào bộ khóa phiên dịch toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
+Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào Bộ Khóa Phiên dịch Toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -512,7 +512,7 @@ how to run models on GPUs in the following, simply since they will become somewh
 -->
 
 Tương tự, mô hình của Gluon có thể chỉ định thiết bị dựa vào tham số `ctx` trong quá trình khởi tạo.
-Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau này chúng ta sẽ thấy nhiều ví dụ về cách chạy các mô hình trên GPU, đơn giản bởi chúng sẽ cần khả năng tính toán mạnh hơn phần nào).
+Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau này chúng ta sẽ thấy nhiều ví dụ về cách chạy các mô hình trên GPU, đơn giản bởi chúng phần nào sẽ cần khả năng tính toán mạnh hơn).
 
 ```{.python .input  n=12}
 net = nn.Sequential()
@@ -564,11 +564,12 @@ on the command line (or logging it in a NumPy array) will trigger a global inter
 It is much better to allocate memory for logging inside the GPU and only move larger logs.
 -->
 
+
 * MXNet có thể chỉ định các thiết bị thực hiện việc lưu trữ và tính toán như CPU hay GPU.
 Mặc định, MXNet tạo dữ liệu trên bộ nhớ chính và sử dụng CPU để tính toán.
 * MXNet yêu cầu tất cả dữ liệu đầu vào *nằm trên cùng thiết bị* trước khi thực hiện tính toán, tức cùng một CPU hoặc cùng một GPU.
 * Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách không cẩn thận.
-Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi in kết quả ra cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt trình quản lý luồng (*Global Interpreter Lock*) làm tất cả GPU dừng hoạt động.
+Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi in kết quả ra cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt Bộ Khóa Phiên dịch Toàn cục làm tất cả GPU dừng hoạt động.
 Sẽ tốt hơn nếu cấp phát bộ nhớ cho việc ghi lại quá trình hoạt động (*logging*) ở GPU và chỉ di chuyển các bản ghi lớn.  
 
 <!--
@@ -589,7 +590,7 @@ on one GPU (hint: you should see almost linear scaling).
 
 1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn để thấy sự khác nhau về tốc độ giữa CPU và GPU.
 Và với tác vụ có khối lượng tính toán nhỏ thì sao?
-2. Nên làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
+2. Làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
 3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và ghi lại giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, rồi so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
 4. Đo thời gian thực hiện hai phép nhân ma trận tại hai GPU cùng lúc so với việc thực hiện chúng lần lượt trên cùng một GPU (gợi ý: bạn sẽ thấy tỉ lệ gần như tuyến tính).
 
@@ -625,3 +626,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
 * Phạm Minh Đức
+* Vũ Hữu Tiệp
