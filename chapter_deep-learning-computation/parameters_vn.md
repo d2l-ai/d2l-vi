@@ -470,7 +470,7 @@ print(net[1].weight.data()[0, 0])
 ### Custom Initialization
 -->
 
-### Phương thức Khởi tạo tùy chỉnh
+### Phương thức Khởi tạo Tùy chỉnh
 
 <!--
 Sometimes, the initialization methods we need are not provided in the `init` module. 
@@ -488,10 +488,9 @@ In the example below, we define an initializer for the following strange distrib
 -->
 
 Đôi khi, các phương thức khởi tạo mà ta cần không có sẵn trong mô-đun `init`.
-Trong trường hợp đó, ta có thể lập trình một lớp con của lớp `Initializer` và sử dụng nó như bất kỳ phương thức khởi tạo nào khác.
-Thông thường, ta chỉ cần lập trình hàm `_init_weight` để thay đổi đối số `ndarray` đầu vào bằng giá trị khởi tạo mong muốn.
-Trong ví dụ bên dưới, ta sẽ tự tạo một phân phối để chứng minh luận điểm trên.
-Ta sẽ lấy các hệ số từ phân phối sau:
+Trong trường hợp đó, ta có thể khai báo một lớp con của lớp `Initializer`.
+Thông thường, ta chỉ cần lập trình hàm `_init_weight` để nhận một đối số `ndarray` (`data`) và gán giá trị khởi tạo mong muốn cho nó.
+Trong ví dụ bên dưới, ta sẽ khai báo một bộ khởi tạo cho phân phối kì lạ sau:
 
 $$
 \begin{aligned}
@@ -525,9 +524,8 @@ Note that we always have the option of setting parameters directly by calling `d
 A note for advanced users: if you want to adjust parameters within an `autograd` scope, you need to use `set_data` to avoid confusing the automatic differentiation mechanics.
 -->
 
-Nếu thậm chí tính năng này vẫn là chưa đủ thì ta có thể đặt các tham số một cách trực tiếp.
-Do hàm `data()` trả về một mảng `ndarray` nên ta có thể truy cập nó giống như bất kỳ ma trận nào khác.
-Một lưu ý cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi `autograd`, bạn cần sử dụng `set_data` để tránh làm rối loạn các cơ chế tính vi phân tự động.
+Lưu ý rằng ta luôn có thể trực tiếp đặt giá trị cho tham số bằng cách gọi hàm `data()` để truy cập `ndarray` của tham số đó.
+Một lưu ý khác cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi của `autograd`, bạn cần sử dụng hàm `set_data` để tránh làm rối loạn cơ chế tính vi phân tự động.
 
 ```{.python .input  n=13}
 net[0].weight.data()[:] += 1
@@ -559,10 +557,10 @@ We discussed one such case when we introduced :numref:`sec_model_construction`.
 Let us see how to do this a bit more elegantly. In the following we allocate a dense layer and then use its parameters specifically to set those of another layer.
 -->
 
-Trong một số trường hợp, ta sẽ muốn chia sẻ các tham số mô hình trên nhiều tầng.
-Ví dụ, trong quá trình huấn luyện embedding từ, ta có thể quyết định sử dụng cùng một bộ tham số để mã hóa và giải mã các từ.
+Thông thường, ta sẽ muốn chia sẻ các tham số mô hình cho nhiều tầng.
+Sau này ta sẽ thấy trong quá trình huấn luyện embedding từ, việc sử dụng cùng một bộ tham số để mã hóa và giải mã các từ có thể khá hợp lý.
 Ta đã thảo luận về một trường hợp như vậy trong :numref:`sec_model_construction`.
-Hãy xem làm thế nào để thực hiện việc này một cách tinh tế hơn. Sau đây ta sẽ tạo một tầng kết nối đầy đủ và sử dụng chính tham số của nó làm tham số cho một tầng khác.
+Hãy cùng xem làm thế nào để thực hiện việc này một cách tinh tế hơn. Sau đây ta sẽ tạo một tầng kết nối đầy đủ và sử dụng chính tham số của nó làm tham số cho một tầng khác.
 
 
 ```{.python .input  n=14}
@@ -603,11 +601,11 @@ You might wonder, *when parameters are tied what happens to the gradients?*
 Since the model parameters contain gradients, the gradients of the second hidden layer and the third hidden layer are added together in `shared.params.grad( )` during backpropagation.
 -->
 
-Ví dụ trên cho thấy các tham số của tầng thứ hai và thứ ba đã bị trói buộc với nhau.
-Thay vì chỉ có giá trị bằng nhau, chúng là cùng một đối tượng.
-Tức là nếu thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
-Cách xử lý gradient ở đây là khá tài tình.
-Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
+Ví dụ này cho thấy các tham số của tầng thứ hai và thứ ba đã bị trói buộc với nhau.
+Chúng không chỉ có giá trị bằng nhau, chúng còn được biểu diễn bởi cùng một `ndarray`. 
+Vì vậy, nếu ta thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
+Bạn có thể tự hỏi rằng *chuyện gì sẽ xảy ra với gradient khi các tham số bị trói buộc?*.
+Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại tại `shared.params.grad( )` trong quá trình lan truyền ngược.
 
 <!--
 ## Summary
@@ -621,10 +619,9 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 * Gluon has a sophisticated mechanism for accessing parameters in a unique and hierarchical manner.
 -->
 
-* Ta có một số cách để truy cập, khởi tạo và trói buộc các tham số mô hình.
-* Ta có thể sử dụng các bộ khởi tạo tùy chỉnh.
+* Ta có vài cách để truy cập, khởi tạo và trói buộc các tham số mô hình.
+* Ta có thể sử dụng các phương thức khởi tạo tùy chỉnh.
 * Gluon có một cơ chế tinh vi để truy cập các tham số theo phân cấp một cách độc nhất.
-
 
 <!--
 ## Exercises
@@ -640,11 +637,13 @@ Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn th�
 5. Why is sharing parameters a good idea?
 -->
 
+
 1. Sử dụng FixedHiddenMLP được định nghĩa trong :numref:`sec_model_construction` và truy cập tham số của các tầng khác nhau. <!-- Trong `sec_model_construction` mình chỉ thấy có hàm FixedHiddenMLP chứ không có hàm FancyMLP, hình như FancyMLP là trong bản cũ của sách thì phải -->
 2. Xem [tài liệu của MXNet](http://beta.mxnet.io/api/gluon-related/mxnet.initializer.html) và nghiên cứu các bộ khởi tạo khác nhau.
 3. Thử truy cập các tham số mô hình sau khi gọi `net.initialize()` và trước khi gọi `net(x)` và quan sát kích thước của chúng. Điều gì đã thay đổi? Tại sao?
 4. Xây dựng và huấn luyện một perceptron đa tầng trong đó có một tầng sử dụng tham số được chia sẻ. Trong quá trình huấn luyện, hãy quan sát các tham số mô hình và gradient của từng tầng.
 5. Tại sao việc chia sẻ tham số lại là là một ý tưởng hay?
+
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
