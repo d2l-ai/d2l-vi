@@ -189,7 +189,7 @@ npx.num_gpus()
 Now we define two convenient functions that allow us to run codes even if the requested GPUs do not exist.
 -->
 
-Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho phép chạy mã kể cả khi GPU được yêu cầu không tồn tại.
+Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho việc chạy mã kể cả khi GPU được yêu cầu không tồn tại.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -217,7 +217,7 @@ By default, `ndarray` objects are created on the CPU.
 We can use the `ctx` property of `ndarray` to view the device where the `ndarray` is located.
 -->
 
-Theo mặc định, các đối tượng `ndarray` được tạo trên CPU.
+Mặc định, các đối tượng `ndarray` được tạo trên CPU.
 Do đó, ta sẽ thấy định danh `@cpu(0)` mỗi khi ta in một `ndarray`.
 
 ```{.python .input  n=4}
@@ -238,9 +238,8 @@ For instance, if we sum two ndarrays, we need to make sure that both arguments l
 would not know where to store the result or even how to decide where to perform the computation.
 -->
 
-Ta có thể sử dụng thuộc tính `ctx` của` ndarray` để xem thiết bị nơi `ndarray` được đặt.
 Điều quan trọng cần lưu ý là bất cứ khi nào ta muốn làm các phép toán trên nhiều số hạng, chúng cần phải ở trong cùng một bối cảnh.
-Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng cả hai đối số đều nằm trên cùng một thiết bị --- nếu không thì MXNet sẽ không biết nơi lưu trữ kết quả hoặc thậm chí cách để quyết định nơi thực hiện tính toán.
+Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng cả hai đối số đều nằm trên cùng một thiết bị --- nếu không thì MXNet sẽ không biết nơi lưu trữ kết quả hoặc thậm chí cách quyết định nơi thực hiện tính toán.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -273,6 +272,7 @@ We can use the `nvidia-smi` command to view GPU memory usage.
 In general, we need to make sure we do not create data that exceeds the GPU memory limit.
 -->
 
+
 Có một số cách để lưu trữ một `ndarray` trên GPU.
 Ví dụ: ta có thể chỉ định một thiết bị lưu trữ với tham số `ctx` khi tạo một` ndarray`.
 Tiếp theo, ta tạo biến cho `ndarray` là `a` trên `gpu(0)`.
@@ -289,6 +289,7 @@ x
 <!--
 Assuming you have at least two GPUs, the following code will create a random array on `gpu(1)`.
 -->
+
 
 Giả sử bạn có ít nhất hai GPU, đoạn mã sau sẽ tạo ra một mảng ngẫu nhiên trên `gpu(1)`.
 
@@ -323,14 +324,14 @@ The runtime engine would not know what to do, it cannot find data on the same de
 
 Nếu ta muốn tính $\mathbf{x} + \mathbf{y}$ thì ta cần quyết định nơi thực hiện phép tính này.
 Chẳng hạn, như trong :numref:`fig_copyto`, ta có thể chuyển $\mathbf{x}$ sang `gpu(1)` và thực hiện phép tính ở đó.
-*Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
+*Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một lỗi. <!--Từ exception chỉ lỗi khi chạy mã chứ không phải ngoại lệ-->
 Hệ thống thời gian chạy sẽ không biết phải làm gì và gặp lỗi bởi nó không thể tìm thấy dữ liệu trên cùng một thiết bị.
 
 <!--
 ![Copyto copies arrays to the target device](../img/copyto.svg)
 -->
 
-![Lệnh copyto sao chép các mảng đến thiết bị mục tiêu](../img/copyto.svg)
+![Lệnh `copyto` sao chép các mảng đến thiết bị mục tiêu](../img/copyto.svg)
 :label:`fig_copyto`
 
 <!--
@@ -389,8 +390,8 @@ If the variable already live in the specified context then this is a no-op.
 Unless you specifically want to make a copy, `as_in_ctx()` is the method of choice.
 -->
 
-Giả sử biến z hiện đang được lưu trong gpu(1).
-Điều gì sẽ xảy ra nếu ta gọi z.copyto(gpu(1))?
+Giả sử biến `z` hiện đang được lưu trong GPU thứ hai (gpu(1)).
+Điều gì sẽ xảy ra nếu ta gọi `z.copyto(gpu(1))`?
 Hàm này sẽ tạo một bản sao của biến và cấp phát vùng nhớ mới cho bản sao, ngay cả khi biến đang có trong thiết bị.
 Có những lúc mà tuỳ thuộc vào môi trường thực thi lệnh, hai biến có thể đã ở trên cùng một thiết bị.
 Do đó chúng ta muốn chỉ tạo bản sao khi các biến tồn tại ở các ngữ cảnh khác nhau.
@@ -448,8 +449,8 @@ So we want you to be 100% certain that you want to do something slow before we l
 If MXNet just did the copy automatically without crashing then you might not realize that you had written some slow code.
 -->
 
-Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng là chúng sẽ nhanh hơn.
-Nhưng việc truyền các biến giữa các ngữ cảnh lại diễn ra chậm. 
+Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng chúng sẽ nhanh hơn.
+Nhưng việc truyền các biến giữa các bối cảnh lại diễn ra chậm. 
 Do đó, chúng tôi mong bạn chắc chắn 100% rằng bạn muốn thực hiện một việc nào đó thật chậm trước khi chúng tôi để bạn thực hiện nó.
 Nếu MXNet chỉ thực hiện việc sao chép tự động mà không gặp sự cố thì có thể bạn sẽ không nhận ra được mình đã có những đoạn mã chưa tối ưu đến nhường nào.
 
@@ -472,7 +473,7 @@ This is the case since such operations can block if one device  has to wait for 
 It is a bit like ordering your coffee in a queue rather than pre-ordering it by phone and finding out that it is ready when you are.
 -->
 
-Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) là việc mà nó xử lý *chậm hơn nhiều* so với thực hiện tính toán.
+Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) *chậm hơn nhiều* so với việc thực hiện tính toán.
 Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chúng ta phải chờ cho dữ liệu được gửi đi (hoặc được nhận về) trước khi chúng ta có thể tiến hành nhiều tác vụ xử lý tính toán hơn.
 Đây là lý do tại sao các hoạt động sao chép nên được dành sự lưu tâm lớn. 
 Quy tắc nằm lòng là nhiều xử lý tính toán nhỏ thì tệ hơn nhiều so với một xử lý tính toán lớn.
@@ -485,6 +486,7 @@ Last, when we print `ndarray`s or convert `ndarray`s to the NumPy format, if the
 MXNet will copy it to the main memory first, resulting in additional transmission overhead. 
 Even worse, it is now subject to the dreaded Global Interpreter Lock that makes everything wait for Python to complete.
 -->
+
 
 Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới việc tốn thêm thời gian chờ cho việc truyền dữ liệu. 
 Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào bộ khóa phiên dịch toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
