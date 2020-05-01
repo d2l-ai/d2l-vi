@@ -523,7 +523,7 @@ Note that we always have the option of setting parameters directly by calling `d
 A note for advanced users: if you want to adjust parameters within an `autograd` scope, you need to use `set_data` to avoid confusing the automatic differentiation mechanics.
 -->
 
-Lưu ý rằng ta luôn có thể đặt trực tiếp giá trị của các tham số bằng cách gọi hàm `data()` để truy cập `ndarray` của tham số đó.
+Lưu ý rằng ta luôn có thể trực tiếp đặt giá trị cho tham số bằng cách gọi hàm `data()` để truy cập `ndarray` của tham số đó.
 Một lưu ý khác cho người dùng nâng cao: nếu muốn điều chỉnh các tham số trong phạm vi của `autograd`, bạn cần sử dụng hàm `set_data` để tránh làm rối loạn cơ chế tính vi phân tự động.
 
 ```{.python .input  n=13}
@@ -604,7 +604,7 @@ Ví dụ này cho thấy các tham số của tầng thứ hai và thứ ba đã
 Chúng không chỉ có giá trị bằng nhau, chúng còn được biểu diễn bởi cùng một `ndarray`. 
 Vì vậy, nếu ta thay đổi các tham số của tầng này này thì các tham số của tầng kia cũng sẽ thay đổi theo.
 Bạn có thể tự hỏi rằng *chuyện gì sẽ xảy ra với gradient khi các tham số bị trói buộc?*.
-Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại trong `shared.params.grad( )` trong quá trình lan truyền ngược.
+Vì các tham số mô hình chứa gradient nên gradient của tầng ẩn thứ hai và tầng ẩn thứ ba được cộng lại tại `shared.params.grad( )` trong quá trình lan truyền ngược.
 
 <!--
 ## Summary
