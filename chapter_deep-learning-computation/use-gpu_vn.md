@@ -29,7 +29,7 @@ Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần tron
 |2020|1 T (social network)|100 GB|1 PF (NVIDIA DGX-2)|
 -->
 
-| Thập niên | Tập dữ liệu                     | Bộ nhớ | Phép tính Dấu phẩy động trên Giây |
+| Thập niên | Tập dữ liệu                     | Bộ nhớ | Số Phép tính Dấu phẩy động trên Giây |
 |:----------|:--------------------------------|:-------|:----------------------------------|
 | 1970      |100 (Iris)                       | 1 KB   | 100 KF (Intel 8080)               |
 | 1980      |1 K (Giá nhà tại Boston)         | 100 KB | 1 MF (Intel 80186)                |
@@ -88,7 +88,7 @@ Then, [download CUDA](https://developer.nvidia.com/cuda-downloads) and follow th
 Once these preparations are complete, the `nvidia-smi` command can be used to view the graphics card information.
 -->
 
-Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng mỗi CPU để tính toán có thể sẽ không hiệu quả.
+Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU để tính toán có thể sẽ không hiệu quả.
 Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA duy nhất cho việc tính toán.
 Đầu tiên, hãy chắc chắn rằng bạn đã lắp đặt ít nhất một GPU NVIDIA.
 Sau đó, hãy [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
