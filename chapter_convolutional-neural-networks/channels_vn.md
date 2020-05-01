@@ -221,7 +221,7 @@ Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights (plus 
 
 :numref:`fig_conv_1x1` biểu diễn phép tính tương quan chéo sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và 2 kênh đầu ra.
 Lưu ý rằng đầu vào và đầu ra có cùng chiều cao và chiều rộng.
-Mỗi phần tử trong đầu ra được lấy từ một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào.
+Mỗi phần tử trong đầu ra là một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào.
 Bạn có thể xem tầng tích chập $1\times 1$ như một tầng kết nối đầy đủ được áp dụng lên mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi $c_i$ các giá trị đầu vào thành $c_o$ giá trị đầu ra tương ứng.
 Bởi vì đây vẫn là một tầng chập nên các trọng số sẽ được chia sẻ giữa các vị trí điểm ảnh. <!-- theo mình hiểu thì cùng một trọng số sẽ được dùng tại các pixel khác của ảnh. Ngoài ra, mình thấy một vài tài liệu dùng "shared across pixel" thay vì "tied acrossed pixel" nên dịch là "chia sẻ"-->
 Do đó, tầng tích chập $1\times 1$ cần tới $c_o\times c_i$ trọng số (cộng thêm các hệ số điều chỉnh).
