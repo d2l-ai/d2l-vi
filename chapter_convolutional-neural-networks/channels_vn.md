@@ -207,7 +207,7 @@ The only computation of the $1\times 1$ convolution occurs on the channel dimens
 -->
 
 Do cửa sổ có kích thước tối thiểu nên so với các tầng tích chập lớn hơn, phép tích chập $1\times 1$ mất đi khả năng nhận dạng các khuôn mẫu bao gồm các tương tác giữa các phần tử liền kề trên chiều cao và chiều rộng.
-Tính toán duy nhất của phép tích chập $1\times 1$ được thực hiện trên chiều kênh.
+Phép tích chập $1\times 1$ chỉ tính toán theo chiều kênh.
 
 <!--
 :numref:`fig_conv_1x1` shows the cross-correlation computation using the $1\times 1$ convolution kernel with 3 input channels and 2 output channels.
