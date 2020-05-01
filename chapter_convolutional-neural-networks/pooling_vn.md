@@ -5,7 +5,7 @@
 # Pooling
 -->
 
-# *dịch tiêu đề phía trên*
+# Gộp (*Pooling*)
 :label:`sec_pooling`
 
 
@@ -14,7 +14,7 @@ Often, as we process images, we want to gradually reduce the spatial resolution 
 aggregating information so that the higher up we go in the network, the larger the receptive field (in the input) to which each hidden node is sensitive.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, khi xử lý ảnh, ta muốn giảm dần độ phân giải không gian của các biểu diễn ẩn, tổng hợp thông tin lại để càng đi sâu vào mạng, vùng tiếp nhận (ở đầu vào) ảnh hưởng đến mỗi nút ẩn càng lớn.
 
 <!--
 Often our ultimate task asks some global question about the image, e.g., *does it contain a cat?*
@@ -23,8 +23,10 @@ By gradually aggregating information, yielding coarser and coarser maps, we acco
 while keeping all of the advantages of convolutional layers at the intermediate layers of processing.
 -->
 
-*dịch đoạn phía trên*
-
+Nhiệm vụ cuối cùng của chúng ta thường là trả lời một vài câu hỏi về toàn bộ bức ảnh, ví dụ như: *trong ảnh có mèo không?* 
+Vậy nên thường các nút của tầng cuối cùng cần phải chịu ảnh hưởng của toàn bộ đầu vào.
+Bằng cách dần gộp thông tin lại để tạo ra các ánh xạ đặc trưng thưa dần, chúng ta sẽ học được một cách biểu diễn toàn cục,
+trong khi giữ nguyên toàn bộ lợi ích của các tầng tích chập ở các tầng xử lý trung gian.
 
 <!--
 Moreover, when detecting lower-level features, such as edges (as discussed in :numref:`sec_conv_layer`),
@@ -37,14 +39,21 @@ In fact, even with a tripod and a stationary object, vibration of the camera due
 (high-end cameras are loaded with special features to address this problem).
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, khi phát hiện các đặc trưng cấp thấp như cạnh (được thảo luận tại :numref:`sec_conv_layer`), 
+ta thường muốn cách biểu diễn này bất biến với phép tịnh tiến trong một chừng mực nào đó.
+Ví dụ, nếu ta lấy bức ảnh `X` với một ranh giới rõ rệt giữa màu đen và màu trắng
+và dịch chuyển toàn bộ bức ảnh sang phải một điểm ảnh, nói cách khác, `Z[i, j] = X[i, j+1]`, thì đầu ra cho bức ảnh mới `Z` có thể sẽ khác rất nhiều.
+Ranh giới đó và các kích hoạt sẽ đều dịch chuyển sang một điểm ảnh.
+Trong thực tế, các vật thể hiếm khi xuất hiện ở chính xác một vị trí.
+Thậm chí với một chân máy ảnh và một vật thể tĩnh, độ rung của máy ảnh do chuyển động của màn trập có thể dịch chuyển tất cả đi một vài điểm ảnh 
+(các máy ảnh đắt tiền được trang bị các tính năng để khắc phục vấn đề này).
 
 <!--
 This section introduces pooling layers, which serve the dual purposes of
 mitigating the sensitivity of convolutional layers to location and of spatially downsampling representations.
 -->
 
-*dịch đoạn phía trên*
+Mục này sẽ giới thiệu về các tầng gộp, với hai chức năng là giảm độ nhạy của các tầng tích chập đối với vị trí và giảm kích thước của các biểu diễn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -325,8 +334,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
-
+* Nguyễn Văn Cường
+* Phạm Minh Đức
 <!-- Phần 2 -->
 *
 
