@@ -129,7 +129,7 @@ So it may not be that a single channel learns an edge detector but rather that s
 
 Cho đến nay, bất kể số lượng kênh đầu vào là bao nhiêu thì ta vẫn luôn kết thúc với chỉ một kênh đầu ra.
 Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều kênh ở mỗi tầng là rất cần thiết.
-Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, thường cũng đồng thời giảm độ phân giải chiều không gian để đánh đổi cho *chiều kênh* sâu hơn này.
+Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời giảm độ phân giải không gian để đánh đổi cho *chiều kênh* sâu hơn này.
 Theo trực giác, ta có thể xem mỗi kênh tương ứng với một tập đặc trưng nào đó khác nhau.
 Nhưng thực tế phức tạp hơn một chút so với cách diễn giải theo trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích khi kết hợp với nhau.
 Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
