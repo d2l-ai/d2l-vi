@@ -305,10 +305,10 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * LeNet was the first successful deployment of such a network.
 -->
 
-* Mạng nơ-ron tích chập (nói ngắn gọn là ConvNet) là một mạng sử dụng các tầng tích chập.
-* Trong một ConvNet, ta xen kẽ các phép tích chập, tính phi tuyến cũng như các phép gộp.
-* Cuối cùng, độ phân giải được giảm trước khi tạo ra một đầu ra thông qua một (hoặc nhiều) lớp dày đặc.
-* LeNet là ví dụ triển khai thành công đầu tiên của một mạng như vậy.
+* Mạng nơ-ron tích chập (gọi ngắn gọn là ConvNet) là một mạng sử dụng các tầng tích chập.
+* Trong ConvNet, ta xen kẽ các phép tích chập, các phép phi tuyến cũng như các phép gộp.
+* Cuối cùng, độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) lớp dày đặc.
+* LeNet là triển khai thành công đầu tiên của một mạng như vậy.
 
 <!--
 ## Exercises
@@ -329,8 +329,8 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 4. Display the activations of the first and second layer of LeNet for different inputs (e.g., sweaters, coats).
 -->
 
-1. Điều gì sẽ xảy ra khi ta thay thế phép gộp trung bình bằng phép gộp tối đa?
-2. Thử xây dựng một mạng phức tạp hơn dựa trên LeNet để cải thiện độ chính xác của nó.
+1. Điều gì sẽ xảy ra nếu ta thay thế phép gộp trung bình bằng phép gộp tối đa?
+2. Thử xây dựng một mạng phức tạp hơn dựa trên LeNet để cải thiện độ chính xác của mạng này.
      * Điều chỉnh kích thước cửa sổ tích chập.
      * Điều chỉnh số lượng kênh đầu ra.
      * Điều chỉnh hàm kích hoạt (ReLU?).
@@ -338,7 +338,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Điều chỉnh số lượng các tầng kết nối đầy đủ.
      * Điều chỉnh tốc độ học và các chi tiết huấn luyện khác (khởi tạo, số lượng epoch, v.v.)
 3. Thử nghiệm mạng cải tiến trên bộ dữ liệu MNIST ban đầu.
-4. Hiển thị các giá trị kích hoạt của lớp LeNet thứ nhất và thứ hai cho các đầu vào khác nhau (ví dụ: áo len, áo khoác).
+4. Hiển thị các giá trị kích hoạt của tầng thứ nhất và thứ hai của LeNet cho các đầu vào khác nhau (ví dụ: áo len, áo khoác).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -381,4 +381,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
