@@ -198,7 +198,7 @@ Thoạt nhìn, một phép tích chập $1 \times 1$, tức $k_h = k_w = 1$, dư
 Suy cho cùng, một phép tích chập là để tính toán tương quan giữa các điểm ảnh liền kề.
 Nhưng rõ ràng một phép tích chập $1 \times 1$ lại không làm như vậy.
 Mặc dù vậy, chúng là các phép tính phổ biến đôi khi được sử dụng khi thiết kế các mạng sâu phức tạp.
-Ta sẽ xem chi tiết những gì chúng thực sự làm.
+Ta sẽ xem kỹ cách hoạt động của chúng.
 
 <!--
 Because the minimum window is used, the $1\times 1$ convolution loses the ability of larger convolutional layers to recognize patterns 
