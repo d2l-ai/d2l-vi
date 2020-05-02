@@ -334,7 +334,7 @@ so that the model cannot be effectively trained.
 ### Capacity Control and Preprocessing
 -->
 
-### *dịch tiêu đề phía trên*
+### Kiểm soát Capacity và Tiền xử lý
 
 <!--
 AlexNet controls the model complexity of the fully-connected layer by dropout (:numref:`sec_dropout`), while LeNet only uses weight decay.
@@ -343,7 +343,10 @@ This makes the model more robust and the larger sample size effectively reduces 
 We will discuss data augmentation in greater detail in :numref:`sec_image_augmentation`.
 -->
 
-*dịch đoạn phía trên*
+AlexNet kiểm soát độ phức tạp mô hình của tầng kết nối đầy đủ bằng dropout ((numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
+Để tăng thêm dữ liệu, vòng lặp huấn luyện của AlexNet đã bổ sung rất nhiều tính năng tăng cường hình ảnh, chẳng hạn như lật lại, cắt và thay đổi màu sắc.
+Điều này làm cho mô hình mạnh mẽ hơn và kích thước mẫu lớn hơn và làm giảm vấn đề quá khớp một cách hiệu quả.
+Ta sẽ thảo luận về việc tăng dữ liệu chi tiết hơn trong :numref:`sec_image_augmentation`.
 
 ```{.python .input  n=1}
 import d2l
@@ -386,7 +389,8 @@ We construct a single-channel data instance with both height and width of 224 to
 It matches our diagram above.
 -->
 
-*dịch đoạn phía trên*
+Ta xây dựng một thực thể dữ liệu đơn kênh với cả chiều cao và chiều rộng đều bằng 224 để quan sát kích thước đầu ra của mỗi tầng.
+Nó khớp với đồ thị bên trên.
 
 ```{.python .input  n=2}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -404,7 +408,7 @@ for layer in net:
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc dữ liệu
 
 <!--
 Although AlexNet uses ImageNet in the paper, we use Fashion-MNIST here since training an ImageNet model to convergence could take hours or days even on a modern GPU.
@@ -413,7 +417,10 @@ To make things work, we upsample them to $244 \times 244$ (generally not a smart
 We perform this resizing with the `resize` argument in `load_data_fashion_mnist`.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù AlexNet sử dụng ImageNet trong bài báo, ta sẽ sử dụng Fashion-MNIST ở đây vì việc huấn luyện một mô hình ImageNet để hội tụ có thể mất hàng giờ hoặc nhiều ngày ngay cả trên GPU hiện đại.
+Một trong những vấn đề khi áp dụng AlexNet trực tiếp trên Fashion-MNIST là hình ảnh của ta có độ phân giải thấp hơn ($28 \times 28$ điểm ảnh) so với hình ảnh ImageNet.
+Để làm cho mọi thứ hoạt động, ta nâng kích thước các ảnh lên $244 \times 244$ (nói chung không phải là một cách thông minh, nhưng ta làm điều đó ở đây để trung thành với kiến trúc AlexNet).
+Ta thực hiện thay đổi kích thước này bằng đối số `resize` trong hàm `load_data_f Fashion_mnist`.
 
 ```{.python .input  n=3}
 batch_size = 128
