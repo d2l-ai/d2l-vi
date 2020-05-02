@@ -101,7 +101,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                  | Tiếng Việt             | Thảo luận tại                                  |
 |--------------------------|------------------------|------------------------------------------------|
 | early stopping           | dừng sớm               |                                                |
-| edge (computer vision)   | cạnh                   |                                                |
+| edge (computer vision)   | biên                   |                                                |
+| edge detector        | bộ phát hiện biên        |                                                                |
 | effect size              | hệ số ảnh hưởng        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
 | eigen-decomposition      | phân tích trị riêng    |                                                |
 | eigenvalue               | trị riêng              |                                                |
