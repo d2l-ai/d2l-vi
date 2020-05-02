@@ -16,7 +16,7 @@ which has served as a barometer of progress on supervised learning in computer v
 
 Chúng ta đã hiểu các khái niệm cơ bản khi nối các mạng nơ-ron tích chập với nhau, hãy cùng tìm hiểu về học sâu hiện đại.
 Trong chương này, mỗi phần sẽ trình bày một kiến trúc mạng nơ-ron quan trọng mà tại một số thời điểm (có thể cả trong hiện tại) là mô hình nền tảng được sử dụng trong một lượng lớn các nghiên cứu và dự án.
-Mỗi kiến trúc mạng này thống trị trong một khoảng thời gian, nhiều mạng đã về nhất hoặc nhì tại ImageNet, cuộc thi được coi là thước đo sự phát triển của học có giám sát và thị giác máy tính kể từ 2010.
+Mỗi kiến trúc mạng này thống trị trong một khoảng thời gian, nhiều mạng đã về nhất hoặc nhì tại ImageNet, cuộc thi được coi là thước đo sự phát triển của học có giám sát và thị giác máy tính kể từ năm 2010.
 
 <!--
 These models include AlexNet, the first large-scale network deployed to beat conventional computer vision methods on a large-scale vision challenge;
