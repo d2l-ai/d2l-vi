@@ -14,9 +14,9 @@ In a nutshell, GPU performance has increased by a factor of 1000 every decade si
 This offers great opportunity but it also suggests a significant need to provide such performance.
 -->
 
-Trong phần giới thiệu của cuốn sách này, chúng ta đã thảo luận về sự tăng trưởng đột phá của năng lực tính toán trong hơn hai thập niên vừa qua.
-Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần trong mỗi thập niên qua kể từ năm 2000.
-Điều này mang lợi cơ hội to lớn nhưng cũng đi kèm theo một nhu cầu không nhỏ để cung cấp hiệu năng tính toán ấy. 
+Trong phần giới thiệu của cuốn sách này, chúng ta đã thảo luận về sự tăng trưởng đột phá của năng lực tính toán trong hai thập niên vừa qua.
+Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần trong mỗi thập niên kể từ năm 2000.
+Điều này mang lại cơ hội to lớn nhưng kèm theo đó là một nhu cầu không hề nhỏ để cung cấp hiệu năng tính toán như vậy. 
 
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
@@ -29,14 +29,14 @@ Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần tron
 |2020|1 T (social network)|100 GB|1 PF (NVIDIA DGX-2)|
 -->
 
-| Thập niên | Tập dữ liệu                     | Bộ nhớ | Phép tính Dấu động trên Giây |
-|:----------|:--------------------------------|:-------|:-----------------------------|
-| 1970      |100 (Iris)                       | 1 KB   | 100 KF (Intel 8080)          |
-| 1980      |1 K (Giá nhà tại Boston)         | 100 KB | 1 MF (Intel 80186)           |
-| 1990      |10 K (Nhận diện ký tự quang học) | 10 MB  | 10 MF (Intel 80486)          |
-| 2000      |10 M (các trang web)             | 100 MB | 1 GF (Intel Core)            |
-| 2010      |10 G (quảng cáo)                 | 1 GB   | 1 TF (NVIDIA C2050)          |
-| 2020      |1 T (mạng xã hội)                | 100 GB | 1 PF (NVIDIA DGX-2)          |
+| Thập niên | Tập dữ liệu                     | Bộ nhớ | Số Phép tính Dấu phẩy động trên Giây |
+|:----------|:--------------------------------|:-------|:----------------------------------|
+| 1970      |100 (Iris)                       | 1 KB   | 100 KF (Intel 8080)               |
+| 1980      |1 K (Giá nhà tại Boston)         | 100 KB | 1 MF (Intel 80186)                |
+| 1990      |10 K (Nhận diện ký tự quang học) | 10 MB  | 10 MF (Intel 80486)               |
+| 2000      |10 M (các trang web)             | 100 MB | 1 GF (Intel Core)                 |
+| 2010      |10 G (quảng cáo)                 | 1 GB   | 1 TF (NVIDIA C2050)               |
+| 2020      |1 T (mạng xã hội)                | 100 GB | 1 PF (NVIDIA DGX-2)               |
 
 <!--
 In this section, we begin to discuss how to harness this compute performance for your research. 
@@ -45,10 +45,10 @@ You might have noticed that MXNet `ndarray` looks almost identical to NumPy. But
 One of the key features that distinguishes MXNet from NumPy is its support for diverse hardware devices.
 -->
 
-Trong phần này ta bắt đầu thảo luận cách để khai thác hiệu suất tính toán này cho nghiên cứu của mình.
-Đầu tiên ta tìm hiểu cách sử dụng GPU đơn và về sau là cách để sử dụng nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
-Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt Numpy. Nhưng có một vài điểm khác biệt quan trọng.
-Một trong những tính năng chính mà làm MXNet khác với Numpy đó là nó hỗ trợ đa dạng các loại phần cứng.
+Trong phần này, ta bắt đầu thảo luận cách khai thác hiệu năng tính toán này cho việc nghiên cứu.
+Đầu tiên ta sẽ tìm hiểu cách sử dụng một GPU duy nhất, rồi sau này tiến tới nhiều GPU và nhiều máy chủ (cùng với nhiều GPU).
+Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt NumPy, nhưng chúng có một vài điểm khác biệt quan trọng.
+Một trong những tính năng chính khiến cho MXNet khác với NumPy là MXNet hỗ trợ nhiều loại phần cứng đa dạng.
 
 <!--
 In MXNet, every array has a context. 
@@ -70,12 +70,11 @@ For example, when training neural networks on a server with a GPU, we typically 
 -->
 
 Trong MXNet, mỗi mảng có một bối cảnh. 
-Thực tế là, mỗi khi ta hiển thị một `ndarray` cho đến nay, nó thêm vào một thông báo khó hiểu `@cpu(0)` cho đầu ra mà vẫn không giải thích được tới tận bây giờ.
-Như chúng ta sẽ khám phá, điều này chỉ ra rằng việc tính toán đang được thực hiện trên CPU.
-Các bối cảnh khác có thể là các GPU khác nhau.
-Mọi thứ thậm chí có thể trở thành bờm xờm hơn khi ta triển khai công việc trên nhiều máy chủ.
-Bằng cách chỉ định mảng cho bối cảnh một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
-Ví dụ: khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường thích các tham số mô hình ở trên GPU hơn.
+Cho tới giờ, tất cả các biến và phép toán liên quan đều được giao cho CPU theo mặc định.
+Các bối cảnh thường có thể là nhiều GPU khác. 
+Mọi thứ còn có thể trở nên rối rắm hơn khi ta triển khai công việc trên nhiều máy chủ.
+Bằng cách chỉ định bối cảnh cho các mảng một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
+Ví dụ, khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường muốn các tham số mô hình nằm ở trên GPU.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -89,11 +88,11 @@ Then, [download CUDA](https://developer.nvidia.com/cuda-downloads) and follow th
 Once these preparations are complete, the `nvidia-smi` command can be used to view the graphics card information.
 -->
 
-Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU cho tính toán có thể thiếu hiệu quả.
+Nói ngắn gọn, với những mạng nơ-ron phức tạp và dữ liệu quy mô lớn, việc chỉ sử dụng CPU để tính toán có thể sẽ không hiệu quả.
 Trong phần này, ta sẽ thảo luận về cách sử dụng một GPU NVIDIA duy nhất cho việc tính toán.
 Đầu tiên, hãy chắc chắn rằng bạn đã lắp đặt ít nhất một GPU NVIDIA.
-Sau đó, [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
-Một khi các bước chuẩn bị đã được hoàn thành, lệnh `nvidia-smi` có thể được sử dụng để xem thông tin card đồ họa.
+Sau đó, hãy [tải CUDA](https://developer.nvidia.com/cuda-downloads) và làm theo gợi ý để thiết lập đường dẫn hợp lý.
+Một khi các bước chuẩn bị đã được hoàn thành, ta có thể dùng lệnh `nvidia-smi` để xem thông tin card đồ họa.
 
 
 ```{.python .input  n=1}
@@ -108,11 +107,11 @@ Assuming you have CUDA 9.0 installed, you can install the MXNet version that sup
 To run the programs in this section, you need at least two GPUs.
 -->
 
-Tiếp theo, ta cần chắc chắn rằng phiên bản GPU của MXNet được cài đặt.
-Nếu phiên bản CPU của MXNet đã cài sẵn rồi, ta cần phải gỡ bỏ cài đặt nó trước.
-Ví dụ, sử dụng lệnh `pip uninstall mxnet`, sau đó cài đặt phiên bản MXNet tương ứng tùy vào phiên bản của CUDA.
-Giả sử như bạn cài CUDA 9.0 rồi, bạn có thể cài phiên bản MXNet có hỗ trợ CUDA 9.0 bằng lệnh `pip install mxnet-cu90`.
-Để chạy chương trình trong phần này, bạn cần ít nhất hai GPU.
+Tiếp theo, cần chắc chắn rằng ta đã cài đặt phiên bản GPU của MXNet.
+Nếu phiên bản CPU của MXNet đã được cài trước, ta cần phải gỡ bỏ nó.
+Ví dụ, hãy sử dụng lệnh `pip uninstall mxnet`, sau đó cài đặt phiên bản MXNet tương ứng với phiên bản CUDA.
+Giả sử như bạn đã cài CUDA 9.0, bạn có thể cài phiên bản MXNet có hỗ trợ CUDA 9.0 bằng lệnh `pip install mxnet-cu90`.
+Để chạy các chương trình trong phần này, bạn cần ít nhất hai GPU.
 
 <!--
 Note that this might be extravagant for most desktop computers but it is easily available in the cloud, 
@@ -120,9 +119,9 @@ e.g., by using the AWS EC2 multi-GPU instances. Almost all other sections do *no
 Instead, this is simply to illustrate how data flows between different devices.
 -->
 
-Yêu cầu này có thể là khá phung phí với hầu hết các bộ máy tính để bàn nhưng nó lại dễ dàng có được từ các dịch vụ đám mây, ví dụ như khi thuê một máy chủ AWS EC2 đa GPU.
+Yêu cầu này có vẻ khá phung phí với hầu hết các bộ máy tính để bàn nhưng lại rất dễ dàng nếu ta dùng các dịch vụ đám mây, chẳng hạn ta có thể thuê một máy chủ AWS EC2 đa GPU.
 Hầu hết các phần khác trong cuốn sách này *không* yêu cầu đa GPU.
-Thay vào đó, điều này đơn giản chỉ để minh họa cách dữ liệu truyền đi giữa các thiết bị khác nhau.
+Tuy nhiên, việc này chỉ để minh họa cách dữ liệu được truyền giữa các thiết bị khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
