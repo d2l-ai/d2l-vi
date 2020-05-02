@@ -128,7 +128,7 @@ corr2d_multi_in(X, K)
 ## Multiple Output Channels
 -->
 
-## *dịch tiêu đề phía trên*
+## Đa kênh đầu ra
 
 <!--
 Regardless of the number of input channels, so far we always ended up with one output channel.
@@ -140,7 +140,13 @@ Reality is a bit more complicated than the most naive interpretations of this in
 So it may not be that a single channel learns an edge detector but rather that some direction in channel space corresponds to detecting edges.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay, bất kể số lượng kênh đầu vào là bao nhiêu thì ta vẫn luôn kết thúc với chỉ một kênh đầu ra.
+Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều kênh ở mỗi tầng là rất cần thiết.
+Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời giảm độ phân giải không gian để đánh đổi cho *chiều kênh* sâu hơn này.
+Theo trực giác, ta có thể xem mỗi kênh tương ứng với một tập đặc trưng nào đó khác nhau.
+Nhưng thực tế phức tạp hơn một chút so với cách diễn giải theo trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích khi kết hợp với nhau.
+Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
+
 
 
 <!--
@@ -150,13 +156,17 @@ We concatenate them on the output channel dimension, so that the shape of the co
 In cross-correlation operations, the result on each output channel is calculated from the convolution kernel corresponding to that output channel and takes input from all channels in the input array.
 -->
 
-*dịch đoạn phía trên*
+Đặt $c_i$ và $c_o$ lần lượt là số lượng kênh đầu vào và đầu ra, $k_h$ và $k_w$ lần lượt là chiều cao và chiều rộng của bộ lọc.
+Để có được một đầu ra với nhiều kênh, ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra.
+Ta nối chúng lại trên chiều kênh đầu ra, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$.
+Trong các phép tính tương quan chéo, kết quả trên mỗi kênh đầu ra được tính từ bộ lọc tích chập tương ứng với kênh đầu ra đó và lấy đầu vào từ tất cả các kênh trong mảng đầu vào.
 
 <!--
 We implement a cross-correlation function to calculate the output of multiple channels as shown below.
 -->
 
-*dịch đoạn phía trên*
+
+Ta lập trình một hàm tương quan chéo để tính đầu ra của nhiều kênh như dưới đây.
 
 ```{.python .input  n=3}
 def corr2d_multi_in_out(X, K):
@@ -170,7 +180,7 @@ def corr2d_multi_in_out(X, K):
 We construct a convolution kernel with 3 output channels by concatenating the kernel array `K` with `K+1` (plus one for each element in `K`) and `K+2`.
 -->
 
-*dịch đoạn phía trên*
+Ta xây dựng một bộ lọc tích chập với 3 kênh đầu ra bằng cách nối mảng bộ lọc `K` với `K+1` (cộng một cho mỗi phần tử trong `K`) và `K+2`.
 
 ```{.python .input  n=4}
 K = np.stack((K, K + 1, K + 2))
@@ -183,7 +193,9 @@ Now the output contains 3 channels.
 The result of the first channel is consistent with the result of the previous input array `X` and the multi-input channel, single-output channel kernel.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta thực hiện các phép tính tương quan chéo trên mảng đầu vào `X` với mảng bộ lọc `K`.
+Đầu ra sẽ gồm có 3 kênh.
+Kết quả của kênh đầu tiên khớp với kết quả trước đây khi áp dụng bộ lọc đa kênh đầu vào, một kênh đầu ra lên mảng đầu vào `X`.
 
 ```{.python .input  n=5}
 corr2d_multi_in_out(X, K)
@@ -358,7 +370,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * Nguyễn Duy Du
