@@ -133,9 +133,6 @@ Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng k
 Theo trực giác, ta có thể xem mỗi kênh tương ứng với một tập đặc trưng nào đó khác nhau.
 Nhưng thực tế phức tạp hơn một chút so với cách diễn giải theo trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích khi kết hợp với nhau.
 Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
-<!--
-Vì vậy, có thể sẽ không phải là một kênh duy nhất học một bộ nhận dạng biên mà là một số hướng trong không gian kênh tương ứng với việc nhận dạng các biên.
--->
 
 
 
