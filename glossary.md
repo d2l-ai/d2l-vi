@@ -26,6 +26,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | attention mechanisms                  | cơ chế tập trung          |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | automatic differentiation             | tính vi phân tự động      | [https://git.io/JvojU](https://git.io/JvojU) |
+| average pooling                       | gộp trung bình            |                                              |
 
 ## B
 | English                 | Tiếng Việt                     | Thảo luận tại                                |
@@ -222,6 +223,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | machine learning             | học máy                       |                                              |
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (computer vision) | mặt nạ | |
+| max pooling                  | gộp cực đại                   |                                              |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | metric                       | phép đo                       |                                              |
