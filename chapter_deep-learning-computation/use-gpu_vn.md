@@ -71,7 +71,7 @@ For example, when training neural networks on a server with a GPU, we typically 
 
 Trong MXNet, mỗi mảng có một bối cảnh. 
 Cho tới giờ, tất cả các biến và phép toán liên quan đều được giao cho CPU theo mặc định.
-Thông thường, các bối cảnh khác có thể là nhiều GPU. 
+Các bối cảnh thường có thể là nhiều GPU khác. 
 Mọi thứ còn có thể trở nên rối rắm hơn khi ta triển khai công việc trên nhiều máy chủ.
 Bằng cách chỉ định bối cảnh cho các mảng một cách thông minh, ta có thể giảm thiểu thời gian truyền tải dữ liệu giữa các thiết bị.
 Ví dụ, khi huấn luyện mạng nơ-ron trên máy chủ có GPU, ta thường muốn các tham số mô hình nằm ở trên GPU.
@@ -107,8 +107,8 @@ Assuming you have CUDA 9.0 installed, you can install the MXNet version that sup
 To run the programs in this section, you need at least two GPUs.
 -->
 
-Tiếp theo, ta cần chắc chắn rằng phiên bản GPU của MXNet được cài đặt.
-Nếu phiên bản CPU của MXNet đã cài sẵn rồi, ta cần phải gỡ bỏ nó trước.
+Tiếp theo, cần chắc chắn rằng ta đã cài đặt phiên bản GPU của MXNet.
+Nếu phiên bản CPU của MXNet đã được cài trước, ta cần phải gỡ bỏ nó.
 Ví dụ, hãy sử dụng lệnh `pip uninstall mxnet`, sau đó cài đặt phiên bản MXNet tương ứng với phiên bản CUDA.
 Giả sử như bạn đã cài CUDA 9.0, bạn có thể cài phiên bản MXNet có hỗ trợ CUDA 9.0 bằng lệnh `pip install mxnet-cu90`.
 Để chạy các chương trình trong phần này, bạn cần ít nhất hai GPU.
