@@ -326,7 +326,7 @@ Thật vậy, mảng bộ lọc mà đã được học rất gần với mảng
 ## Cross-Correlation and Convolution
 -->
 
-## *dịch tiêu đề phía trên*
+## Tương quan Chéo và Tích chập
 
 <!--
 Recall the observation from the previous section that cross-correlation and convolution are equivalent.
@@ -337,7 +337,11 @@ In keeping with standard terminology with deep learning literature,
 we will continue to refer to the cross-correlation operation as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
+Trong hình trên, ta dễ dàng nhận thấy điều này, đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
+Trong trường hợp này, việc lập chỉ số trong phép tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
+Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
+ta sẽ tiếp tục đề cập đến phép tương quan chéo như là một phép tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
 
 <!--
 ## Summary
@@ -352,7 +356,10 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 * We can learn the kernel through data.
 -->
 
-*dịch đoạn phía trên*
+* Tính toán cốt lõi của tầng tích chập hai chiều là phép tính tương quan chéo hai chiều.
+Ở dạng đơn giản nhất, nó thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó thêm vào một độ lệch.
+* Chúng ta có thể thiết kế bộ lọc để phát hiện các cạnh trong ảnh.
+* Chúng ta có thể học các bộ lọc từ dữ liệu.
 
 <!--
 ## Exercises
@@ -374,7 +381,17 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
     * What is the minimum size of a kernel to obtain a derivative of degree $d$?
 -->
 
-*dịch đoạn phía trên*
+1. Xây dựng hình ảnh `X` với các cạnh chéo.
+     * Điều gì xảy ra nếu bạn áp dụng bộ lọc `K` lên nó?
+     * Điều gì xảy ra nếu bạn chuyển vị `X`?
+     * Điều gì xảy ra nếu bạn chuyển vị `K`?
+2. Khi thử tự động tìm gradient cho lớp `Conv2D` mà ta đã tạo, bạn thấy loại thông báo lỗi nào?
+3. Làm thế nào để bạn biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và mảng bộ lọc?
+4. Hãy thiết kế thủ công một số bộ lọc sau.
+     * Bộ lọc để tính đạo hàm bậc hai có dạng như thế nào?
+     * Bộ lọc của toán tử Laplace là gì?
+     * Bộ lọc của phép tích phân là gì?
+     * Kích thước tối thiểu của bộ lọc để có được đạo hàm bậc $d$ là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -420,4 +437,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
