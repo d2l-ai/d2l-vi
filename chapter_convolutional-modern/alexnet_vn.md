@@ -296,11 +296,11 @@ Moreover, AlexNet has ten times more convolution channels than LeNet.
 -->
 
 Trong tầng thứ nhất của AlexNet, kích thước cửa sổ tích chập là $11\times11$.
-Vì hầu hết các ảnh trong ImageNet đều cao hơn và rộng hơn mười lần so với ản trong MNIST, các đối tượng trong dữ liệu ImageNet có xu hướng chiếm nhiều điểm ảnh hơn.
-Do đó, một cửa sổ chập lớn hơn là cần thiết để chụp được đối tượng.
+Vì hầu hết các ảnh trong ImageNet có chiều cao và chiều rộng hơn mười lần so với ảnh trong MNIST nên các đối tượng trong dữ liệu ImageNet có xu hướng chiếm nhiều điểm ảnh hơn.
+Do đó, một cửa sổ chập lớn hơn là cần thiết để chụp được các đối tượng này.
 Kích thước cửa sổ tích chập trong tầng thứ hai được giảm xuống $5\times5$ và sau đó là $3\times3$.
-Ngoài ra, sau các tầng chập thứ nhất, thứ hai và thứ năm, mạng thêm các lớp gộp cực đại với kích thước cửa sổ là $3\times3$ và sải bước là 2.
-Hơn nữa, số lượng các kênh tích chập trong AlexNet gấp mười lần so với LeNet.
+Ngoài ra, theo sau các tầng chập thứ nhất, thứ hai và thứ năm là các tầng gộp cực đại với kích thước cửa sổ là $3\times3$ với sải bước bằng 2.
+Hơn nữa, số lượng các kênh tích chập trong AlexNet nhiều hơn gấp mười lần so với LeNet.
 
 <!--
 After the last convolutional layer are two fully-connected layers with 4096 outputs.
@@ -311,8 +311,8 @@ Fortunately, GPU memory is comparatively abundant now, so we rarely need to brea
 
 Sau tầng chập cuối cùng là hai tầng kết nối đầy đủ với 4096 đầu ra.
 Hai tầng này tạo ra gần 1 GB tham số mô hình.
-Do giới hạn bộ nhớ trong các GPU thế hệ trước, AlexNet ban đầu đã sử dụng thiết kế luồng dữ liệu kép, do đó, mỗi GPU có thể chịu trách nhiệm lưu trữ và tính toán chỉ một nửa mô hình.
-May mắn thay, bộ nhớ GPU hiện tại tương đối dồi dào, vì vậy ta hiếm khi cần phải chia nhỏ các mô hình trên các GPU hiện nay (phiên bản mô hình AlexNet của chúng tôi lệch khỏi bài báo ban đầu ở khía cạnh này).
+Do các GPU thế hệ trước bị giới hạn về bộ nhớ trong nên AlexNet bản gốc đã sử dụng thiết kế luồng dữ liệu kép, trong đó, mỗi GPU chỉ phải chịu trách nhiệm lưu trữ và tính toán cho một nửa mô hình.
+May mắn thay, hiện nay các GPU có bộ nhớ tương đối dồi dào, vì vậy ta hiếm khi cần phải chia nhỏ các mô hình trên các GPU (phiên bản mô hình AlexNet của ta khác bài báo ban đầu ở khía cạnh này).
 
 <!--
 ### Activation Functions
@@ -332,9 +332,9 @@ Therefore, if the model parameters are not properly initialized, the sigmoid fun
 so that the model cannot be effectively trained.
 -->
 
-Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng một hàm kích hoạt đơn giản hơn ReLU.
+Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng một hàm kích hoạt ReLU đơn giản hơn.
 Một mặt, việc tính toán hàm kích hoạt ReLU đơn giản hơn.
-Ví dụ, nó không có phép lũy thừa được tìm thấy trong hàm kích hoạt sigmoid.
+Ví dụ, nó không có phép lũy thừa như trong hàm kích hoạt sigmoid.
 Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau.
 Điều này là do, khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1, gradient của các vùng này gần như bằng 0 khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
 Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn là 1.
