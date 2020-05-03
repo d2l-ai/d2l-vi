@@ -52,10 +52,10 @@ In a rough sense, we can think LeNet as consisting of two parts:
 Before getting into the weeds, let us briefly review the model in :numref:`img_lenet`.
 -->
 
-Hiểu theo nghĩa đen, ta có thể nghĩ LeNet gồm hai phần:
+Một cách đơn giản, ta có thể xem LeNet gồm hai phần:
 (i) một khối các tầng tích chập; và
-(ii) một khối các tầng được kết nối đầy đủ.
-Trước đắm chìm vào các chi tiết phức tạp, ta hãy xem xét ngắn gọn mô hình trong :numref:`img_lenet`.
+(ii) một khối các tầng kết nối đầy đủ.
+Trước khi đi vào các chi tiết cụ thể, hãy quan sát tổng thể mô hình trong :numref:`img_lenet`.
 
 <!--
 ![Data flow in LeNet 5. The input is a handwritten digit, the output a probability over 10 possible outcomes.](../img/lenet.svg)
@@ -75,10 +75,10 @@ Each convolutional layer uses a $5\times 5$ kernel and processes each output wit
 The first convolutional layer has 6 output channels, and second convolutional layer increases channel depth further to 16.
 -->
 
-Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình tiếp theo
-(lưu ý rằng gộp lớn nhất hoạt động tốt hơn, nhưng nó chưa được phát minh vào những năm 90).
+Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình phía sau
+(lưu ý rằng gộp cực đại hoạt động tốt hơn, nhưng nó chưa được phát minh vào những năm 90).
 Tầng tích chập được sử dụng để nhận dạng các mẫu không gian trong ảnh,
-chẳng hạn như các đường kẻ và các bộ phận của các đối tượng và lớp gộp trung bình tiếp theo được sử dụng để làm giảm tính chiều.
+chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
 Khối tầng tích chập gồm các ngăn xếp lặp lại của hai đơn vị cơ bản này.
 Mỗi tầng chập sử dụng bộ lọc có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
 (một lần nữa, lưu ý rằng ReLUs hiện được biết là hoạt động đáng tin cậy hơn, nhưng đã chưa được phát minh).
@@ -91,10 +91,10 @@ The two average pooling layers are of size $2\times 2$ and take stride 2 (note t
 In other words, the pooling layer downsamples the representation to be precisely *one quarter* the pre-pooling size.
 -->
 
-Tuy nhiên, trùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng bị thu hẹp đáng kể.
+Tuy nhiên, cùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng giảm đáng kể.
 Do đó, việc tăng số lượng kênh đầu ra làm cho kích thước tham số của hai tầng tích chập tương tự nhau.
-Hai lớp gộp trung bình có kích thước $2\times 2$ và tiến bước 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
-Nói cách khác, lớp gộp chung ép xung đại diện cho chính xác bằng *một phần tư* của kích thước trước khi gộp.
+Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
+Nói cách khác, lớp gộp giảm kích thước của cách biểu diễn còn *một phần tư* kích thước trước khi gộp.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
