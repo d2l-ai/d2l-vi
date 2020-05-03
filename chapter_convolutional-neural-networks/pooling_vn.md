@@ -300,7 +300,7 @@ pool2d(X)
 1. Is there another operation between average and maximum pooling that you could consider (hint: recall the softmax)? Why might it not be so popular?
 -->
 
-1. Có thể lập trình tầng gộp theo phương thức giá trị trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện.
+1. Có thể lập trình tầng gộp trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
 2. Có thể lập trình tầng gộp theo phương thức giá trị lớn nhất như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện.
 3. Bạn hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước là $c\times h\times w$, kích thước của cửa sổ trượt trong tầng gộp là $p_h\times p_w$ với giá trị số lần đệm là $(p_h, p_w)$ và giá trị sải bước là $(s_h, s_w)$ lần lượt cho chiều cao và chiều rộng của đầu vào.
 4. Bạn hãy chỉ ra sự khác biệt giữa kết quả đầu ra khi dùng tầng gộp cực đại và tầng gộp trung bình.
