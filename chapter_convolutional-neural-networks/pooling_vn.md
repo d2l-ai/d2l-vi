@@ -259,7 +259,7 @@ X
 As we can see, the number of output channels is still 2 after pooling.
 -->
 
-Như chúng ta thấy bên dưới, số lượng channel của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua tầng gộp.
+Như chúng ta thấy bên dưới, số kênh của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua tầng gộp.
 
 ```{.python .input  n=10}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
