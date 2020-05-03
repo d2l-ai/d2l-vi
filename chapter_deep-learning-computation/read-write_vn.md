@@ -152,7 +152,7 @@ Vì lý do đó mà Gluon cung cấp sẵn tính năng lưu và nạp toàn bộ
 Một chi tiết quan trọng cần lưu ý là chức năng này chỉ lưu các *tham số* của mô hình, không phải là toàn bộ mô hình.
 Điều đó có nghĩa là nếu ta có một MLP ba tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng lẻ.
 Lý do là vì bản thân các mô hình có thể chứa mã nguồn bất kỳ, chúng không được thêm vào tập tin một cách dễ dàng như các tham số
-(có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [tài liệu MXNet](http://www.mxnet.io)).
+(có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm trong [tài liệu MXNet](http://www.mxnet.io)).
 Vì vậy, để khôi phục lại một mô hình thì chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi nạp các tham số từ ổ cứng vào kiến trúc này.
 Việc khởi tạo trễ (:numref:`sec_deferred_init`) lúc này rất có lợi vì ta chỉ cần định nghĩa một mô hình mà không cần gán giá trị cụ thể cho tham số.
 Như thường lệ, hãy bắt đầu với một MLP quen thuộc.
