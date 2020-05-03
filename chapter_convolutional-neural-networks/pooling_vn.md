@@ -202,7 +202,7 @@ By default, the stride in the `MaxPool2D` class has the same shape as the poolin
 Below, we use a pooling window of shape `(3, 3)`, so we get a stride shape of `(3, 3)` by default.
 -->
 
-Theo mặc định, sải bước trong tầng 'MaxPool2D' có cùng kích thước với cửa sổ trượt của tầng gộp.
+Theo mặc định, sải bước trong tầng `MaxPool2D` có cùng kích thước với cửa sổ trượt của tầng gộp.
 Dưới đây, chúng ta sử dụng cửa sổ trượt của tầng gộp với kích thước `(3,3)`, vì vậy chúng ta có kích thước của sải bước trong tầng gộp là `(3,3)` theo mặc định.
 
 
