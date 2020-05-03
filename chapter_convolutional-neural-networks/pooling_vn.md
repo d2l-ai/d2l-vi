@@ -281,7 +281,7 @@ pool2d(X)
 -->
 
 * Sau khi tiếp nhận từng phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp hoạt động với phương thức giá trị lớn nhất sẽ cho đầu ra là giá trị lớn nhất trong những phần tử đầu vào đó và tầng gộp hoạt động với phương thức giá trị trung bình sẽ cho đầu ra là giá trị trung bình cuả từng phần tử đầu vào.
-* Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự dễ bị thay đổi giá trị của đặc trưng ánh xạ đầu ra của  tính chập với cùng một giá trị đặc trưng đầu vào khi vị trí của giá trị đặc trưng đầu vào này thay đổi.
+* Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự ảnh hưởng quá mức của vị trí đến tầng tích chập.
 * Chúng ta có thể định rõ giá trị của đệm và sải bước cho tầng gộp.
 * Tầng gộp theo phương thức giá trị lớn nhất, kết hợp với sải bước lớn hơn 1 có thể dùng để làm giảm kích thước dữ liệu đầu vào.
 * Số lượng channel đầu ra của tầng gộp sẽ giống như số lượng channels của dữ liệu đầu vào tầng gộp đó.
