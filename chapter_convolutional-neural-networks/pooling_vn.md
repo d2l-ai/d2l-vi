@@ -246,9 +246,9 @@ This means that the number of output channels for the pooling layer is the same 
 Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 -->
 
-Khi phải xử lý dữ liệu đầu vào với nhiều channel, tầng gộp sẽ gộp mỗi channel của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng channel lại với nhau như trong tầng tính chập.
-Điều này có nghĩa là số lượng channel đầu ra cho tầng gộp sẽ giống như số lượng channel đầu vào.
-Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều của channel để xây dựng dữ liệu đầu vào với số lượng channel là 2.
+Khi phải xử lý dữ liệu đầu vào với nhiều kênh, tầng gộp sẽ gộp mỗi kênh của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng kênh lại với nhau như trong tầng tính chập.
+Điều này có nghĩa là số lượng kênh đầu ra cho tầng gộp sẽ giống như số lượng kênh đầu vào.
+Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều kênh để tạo dữ liệu đầu vào với số kênh là 2.
 
 ```{.python .input  n=9}
 X = np.concatenate((X, X + 1), axis=1)
