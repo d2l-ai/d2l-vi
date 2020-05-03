@@ -147,16 +147,15 @@ Let us start with our familiar MLP.
 -->
 
 Khả năng lưu từng vector trọng số đơn lẻ (hoặc các `ndarray` tensor khác) là hữu ích nhưng sẽ mất nhiều thời gian nếu chúng ta muốn lưu (và sau đó nạp lại) toàn bộ mô hình.
-Dù sao, có thể chúng ta sẽ có hàng trăm nhóm tham số rải rác xuyên suốt mô hình.
-Việc viết một đoạn mã thu thập tất cả các nhóm này và khớp chúng với một kiến trúc là tương đối vất vả.
-Do đó, Gluon cung cấp sẵn chức năng lưu và nạp toàn bộ các mạng thay vì chỉ là các vector trọng số đơn lẻ.
+Dù sao, chúng ta có thể có hàng trăm nhóm tham số rải rác xuyên suốt mô hình.
+Vì lý do đó mà Gluon cung cấp sẵn tính năng lưu và nạp toàn bộ các mạng.
 Một chi tiết quan trọng cần lưu ý là chức năng này chỉ lưu các *tham số* của mô hình, không phải là toàn bộ mô hình.
-Điều đó có nghĩa, nếu ta có một Perceptron 3 tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng rẽ.
-Lý do là bởi bản thân các mô hình có thể chứa các đoạn mã tuỳ ý, các đoạn mã này khó có thể được đọc ghi vào tệp một cách dễ dàng như các tham số.
-(có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [MXNet documentation](http://www.mxnet.io)).
-Kết quả là, để khôi phục lại một mô hình chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi nạp các tham số từ ổ cứng vào kiến trúc này.
+Điều đó có nghĩa là nếu ta có một MLP ba tầng, ta cần chỉ rõ *kiến trúc* này một cách riêng lẻ.
+Lý do là vì bản thân các mô hình có thể chứa mã nguồn bất kỳ, chúng không được thêm vào tập tin một cách dễ dàng như các tham số
+(có một cách thực hiện điều này cho các mô hình đã được biên dịch, chi tiết kĩ thuật đọc thêm tại [tài liệu MXNet](http://www.mxnet.io)).
+Vì vậy, để khôi phục lại một mô hình thì chúng ta cần xây dựng kiến trúc của nó từ mã nguồn rồi nạp các tham số từ ổ cứng vào kiến trúc này.
 Việc khởi tạo trễ (:numref:`sec_deferred_init`) lúc này rất có lợi vì ta chỉ cần định nghĩa một mô hình mà không cần gán giá trị cụ thể cho tham số.
-Như thường lệ, hãy bắt đầu với Perceptron Đa tầng.
+Như thường lệ, hãy bắt đầu với một MLP quen thuộc.
 
 ```{.python .input  n=6}
 class MLP(nn.Block):
@@ -180,6 +179,7 @@ Gluon Blocks support a `save_parameters` method that writes all parameters to di
 -->
 
 Tiếp theo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
+Những khối Gloun hỗ trợ phương thức từ hàm `save_parameter` nhằm ghi tất cả các tham số vào ổ cứng được cung cấp với một chuỗi những tên tệp. 
 
 ```{.python .input}
 net.save_parameters('mlp.params')
@@ -196,8 +196,9 @@ Instead of randomly initializing the model parameters, we read the parameters st
 Conveniently we can load parameters into Blocks via their `load_parameters` method. 
 -->
 
-Để kiểm tra xem có thể khôi phục lại mô hình này không, chúng ta tạo một đối tượng khác của mô hình MLP trên.
-Khác với quá trình khởi tạo tham số ngẫu nhiên của mô hình, ở đây chúng ta trực tiếp đọc các tham số từ tệp được ghi trước đó.
+Để khôi phục mô hình, chúng ta tạo một đối tượng khác dựa trên mô hình MLP gốc.
+Thay vì khởi tạo ngẫu nhiên những tham số mô hình, ta đọc các tham số được lưu trực tiếp trong tập tin.
+Và thật thuận tiện, ta đã có thể nạp các tham số vào khối thông qua phương thức từ hàm `load_parameters`.
 
 ```{.python .input  n=8}
 clone = MLP()
@@ -233,7 +234,7 @@ yclone == y
 * Saving the architecture has to be done in code rather than in parameters.
 -->
 
-* Hàm `save` và `load` có thể được sử dụng để thực hiện xuất nhập tập tin cho các đối tượng `ndarray`.
+* Hàm `save` và `load` có thể được sử dụng để thực hiện việc xuất nhập tập tin cho các đối tượng `ndarray`.
 * Hàm `load_parameters` và `save_parameters` cho phép ta lưu toàn bộ tập tham số của một mạng trong Gluon.
 * Việc lưu kiến trúc này phải được hoàn thiện trong chương trình thay vì trong các tham số.
 
@@ -250,10 +251,10 @@ How would you go about using, say the first two layers from a previous network i
 3. How would you go about saving network architecture and parameters? What restrictions would you impose on the architecture?
 -->
 
-1. Thậm chí nếu không cần phải triển khai các mô hình huấn luyện sang một thiết bị khác, lợi ích thực tế của việc lưu các tham số mô hình là gì?
+1. Nếu không cần phải triển khai các mô hình huấn luyện sang một thiết bị khác, theo bạn thì lợi ích thực tế của việc lưu các tham số mô hình là gì?
 2. Giả sử chúng ta muốn sử dụng lại chỉ một phần của một mạng nào đó để phối hợp với một mạng của một kiến trúc *khác*.
-Bạn sẽ làm thế nào để thực hiện việc này, giả dụ ta muốn sử dụng hai lớp đầu tiên của mạng trước đó vào trong một mạng mới.
-3. Làm thế nào bạn có thể thực hiện lưu kiến trúc mạng và các tham số? Những hạn chế là gì khi bạn tận dụng kiến trúc này?
+Trong trường hợp ta muốn sử dụng hai lớp đầu tiên của mạng trước đó vào trong một mạng mới, bạn sẽ làm thể nào để thực hiện được việc này?
+3. Làm thế nào để bạn có thể lưu kiến trúc mạng và các tham số? Có những hạn chế nào khi bạn tận dụng kiến trúc này?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
