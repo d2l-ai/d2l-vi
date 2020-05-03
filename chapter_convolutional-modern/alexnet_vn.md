@@ -178,7 +178,7 @@ challenging researchers to identify which models performed best at a greater sca
 ### Missing Ingredient - Hardware
 -->
 
-### *dịch tiêu đề phía trên*
+### Yếu tố bị thiếu - Phần cứng
 
 <!--
 Deep learning models are voracious consumers of compute cycles.
@@ -186,7 +186,9 @@ Training can take hundreds of epochs, and each iteration requires passing data t
 This is one of the main reasons why in the 90s and early 2000s, simple algorithms based on the more-efficiently optimized convex objectives were preferred.
 -->
 
-*dịch đoạn phía trên*
+Các mô hình học sâu cần tốn rất nhiều các chu trình tính toán có tính tuần hoàn. 
+Quá trình huấn luyện sẽ cần hàng trăm epoch và mỗi vòng lặp yêu cầu đưa dữ liệu qua rất nhiều tầng tính toán cồng kềnh của phép toán đại số tuyến tính. 
+Đây là một trong những lý do chính tại sao vào những năm 90 và đầu những năm 2000, những thuật toán đơn giản dựa trên các hàm mục tiêu lồi được tối ưu hoá một cách hiệu quả hơn được ưa thích.
 
 <!--
 Graphical processing units (GPUs) proved to be a game changer in make deep learning feasible.
@@ -196,7 +198,11 @@ Fortunately, this math is strikingly similar to that required to calculate convo
 Around that time, NVIDIA and ATI had begun optimizing GPUs for general compute operations, going as far as to market them as General Purpose GPUs (GPGPU).
 -->
 
-*dịch đoạn phía trên*
+Bộ xử lý đồ hoạ (GPUs) đã chứng tỏ mình là người thay đổi cuộc chơi khi làm cho việc học sâu trở nên khả thi. 
+Những con chip này đã được phát triển một thời gian dài để tăng tốc độ xử lý đồ họa dành cho các trò chơi máy tính. 
+Đặc biệt chúng được tối ưu hoá cho các phép nhân ma trận - vector 4x4 thông lượng cao, cần thiết cho nhiều tác vụ đồ hoạ. 
+May mắn thay, phép toán này rất giống với phép tính cần thiết cho việc tính toán các tầng chập. 
+Trong khoảng thời gian này, các công ty NVIDIA và ATI đã bắt đầu tối ưu GPUs cho các mục đích tính toán chung, đi xa hơn nữa tới mức tiếp thị chúng dưới dạng GPUs cho mục đích chung (GPGPU).
 
 <!--
 To provide some intuition, consider the cores of a modern microprocessor (CPU).
@@ -208,7 +214,10 @@ and they are comparatively bad at any single task.
 Modern laptops have up to 4 cores, and even high end servers rarely exceed 64 cores, simply because it is not cost effective.
 -->
 
-*dịch đoạn phía trên*
+Để có cái nhìn trực quan hơn, hãy cùng xem lại các lõi của bộ vi xử lý ngày nay (CPU). Mỗi nhân thì khá mạnh khi chạy ở tần số xung nhịp cao với và với bộ nhớ đệm lớn (lên đến vài MB L3). 
+Mỗi nhân sẽ thì sẽ phù hợp với việc thực hiện hàng loạt các chỉ lệnh, với các bộ dự báo rẽ nhánh, một đường ống lệnh dài, và những tính năng phụ trợ tuyệt vời cho phép nó có khả năng chạy nhiều chương trình lớn khác nhau. Tuy nhiên, sức mạnh hiện hữu này cũng là điểm yếu của nó: những nhân cho những mục đích chung này rất đắt đỏ để sản xuất. 
+Chúng đòi hỏi nhiều diện tích cho chip, bộ cấu trúc hỗ trợ rất tinh vi (giao diện bộ nhớ, logic bộ nhớ đệm giữa các lõi, kết nối tốc độ cao, v.v.), và chúng tương đối tệ ở bất kỳ các tác vụ đơn lẻ nào. 
+Những máy tính xách tay ngày nay có tới 4 nhân, và thậm chí những máy chủ cao cấp hiếm khi vượt quá 64 nhân, đơn giản bởi vì nó không hiệu quả về chi phí nếu có nhiều nhân hơn.
 
 <!--
 By comparison, GPUs consist of 100-1000 small processing elements (the details differ somewhat between NVIDIA, ATI, ARM and other chip vendors), 
@@ -224,7 +233,17 @@ Last, many operations in deep learning require high memory bandwidth.
 Again, GPUs shine here with buses that are at least 10x as wide as many CPUs.
 -->
 
-*dịch đoạn phía trên*
+Để so sánh, GPUs bao gồm 100-1000 các phần tử xử lý nhỏ (các chi tiết khác nhau đôi chút giữ NVIDIA, ATI, ARM và các nhà sản xuất chip khác), 
+thường được gộp thành các nhóm lớn hơn (NVIDIA gọi các nhóm này là luồng). 
+Mặc dù mỗi nhân thì tương đối yếu, đôi khi thậm chí chạy ở tần số xung nhịp dưới 1GHZ,
+nhưng tổng số lượng của những nhân như thế này làm cho GPUs có tốc độ ở bậc lũy thừa 10 nhanh hơn so với CPUs. 
+Chẳng hạn, thế hệ Volta mới nhất của NVIDIA cung cấp lên tới 120 TFlop cho mỗi chip cho những chỉ lệnh chuyên biệt (và lên tới 24 TFlop cho các chỉ lệnh có mục đích chung hơn), 
+trong khi hiệu năng của CPU trong việc thực hiện tính toán với các số thực dấu chấm động  không vượt quá 1 TFlop cho đến nay. 
+Lý do tại sao điều này có thể khả thi thì thực tế khá đơn giản: thứ nhất, mức độ tiêu thụ năng lượng có xu hướng tăng theo phương trình bậc hai so với tần số xung nhịp. 
+Do đó, nếu dự tính cần một nhân CPU có sức mạnh chạy nhanh gấp 4 lần tốc độ x hiện tại, tốc độ CPU mới là 4x (x là một con số điển hình nào đó), chúng ta có thể thay thế bằng 16 nhân GPU với tốc độ mỗi nhân bằng 1/4 tốc độ của nhân CPU, sẽ cho kết quả là 16 x 1/4 = 4x cũng tương đương với tốc độ thực hiện của CPU hiện tại. 
+Hơn nữa, những nhân của GPU thì đơn giản hơn nhiều (trên thực tế, trong một khoảng thời gian dài, những nhân này thậm chí *không thể* thực thi được mã lệnh dành cho những mục đích chung), điều này giúp chúng tiết kiệm được năng lượng một cách hiệu quả hơn. 
+Cuối cùng, nhiều phép tính trong quá trình học sâu đòi hỏi bộ nhớ băng thông cao. 
+Và một lần nữa, GPUs đã thể hiện điểm sáng của nó ở đây khi các bus (tổng tuyến) của nó có thể truyền đi số bit lớn ít nhất gấp 10 lần so với nhiều loại CPUs.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -514,7 +533,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Dac Dinh 
 
 <!-- Phần 5 -->
 *
