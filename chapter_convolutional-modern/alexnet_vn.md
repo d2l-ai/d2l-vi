@@ -334,7 +334,7 @@ so that the model cannot be effectively trained.
 ### Capacity Control and Preprocessing
 -->
 
-### Kiểm soát Capacity và Tiền xử lý
+### Kiểm soát độ phức tạp và Tiền xử lý
 
 <!--
 AlexNet controls the model complexity of the fully-connected layer by dropout (:numref:`sec_dropout`), while LeNet only uses weight decay.
@@ -343,10 +343,10 @@ This makes the model more robust and the larger sample size effectively reduces 
 We will discuss data augmentation in greater detail in :numref:`sec_image_augmentation`.
 -->
 
-AlexNet kiểm soát độ phức tạp mô hình của tầng kết nối đầy đủ bằng dropout ((numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
-Để tăng thêm dữ liệu, vòng lặp huấn luyện của AlexNet đã bổ sung rất nhiều tính năng tăng cường hình ảnh, chẳng hạn như lật lại, cắt và thay đổi màu sắc.
-Điều này làm cho mô hình mạnh mẽ hơn và kích thước mẫu lớn hơn và làm giảm vấn đề quá khớp một cách hiệu quả.
-Ta sẽ thảo luận về việc tăng dữ liệu chi tiết hơn trong :numref:`sec_image_augmentation`.
+AlexNet kiểm soát độ phức tạp mô hình của tầng kết nối đầy đủ bằng cách áp dụng dropout ((numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
+Để tăng cường dữ liệu, vòng lặp huấn luyện của AlexNet đã bổ sung rất nhiều kỹ thuật tăng cường hình ảnh, chẳng hạn như lật, cắt và thay đổi màu sắc.
+Điều này làm cho mô hình trở nên mạnh mẽ hơn, kích thước dữ liệu trở nên lớn hơn và làm giảm trình trạng quá khớp một cách hiệu quả.
+Ta sẽ thảo luận về việc tăng cường dữ liệu chi tiết hơn trong :numref:`sec_image_augmentation`.
 
 ```{.python .input  n=1}
 import d2l
@@ -390,7 +390,7 @@ It matches our diagram above.
 -->
 
 Ta xây dựng một thực thể dữ liệu đơn kênh với cả chiều cao và chiều rộng đều bằng 224 để quan sát kích thước đầu ra của mỗi tầng.
-Nó khớp với đồ thị bên trên.
+Kết quả khớp với sơ đồ bên trên.
 
 ```{.python .input  n=2}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -417,10 +417,10 @@ To make things work, we upsample them to $244 \times 244$ (generally not a smart
 We perform this resizing with the `resize` argument in `load_data_fashion_mnist`.
 -->
 
-Mặc dù AlexNet sử dụng ImageNet trong bài báo, ta sẽ sử dụng Fashion-MNIST ở đây vì việc huấn luyện một mô hình ImageNet để hội tụ có thể mất hàng giờ hoặc nhiều ngày ngay cả trên GPU hiện đại.
+Mặc dù trong bài báo AlexNet sử dụng ImageNet, nhưng ở đây ta sẽ sử dụng Fashion-MNIST vì việc huấn luyện một mô hình ImageNet có thể mất hàng giờ hoặc nhiều ngày để hội tụ ngay cả trên GPU hiện đại.
 Một trong những vấn đề khi áp dụng AlexNet trực tiếp trên Fashion-MNIST là hình ảnh của ta có độ phân giải thấp hơn ($28 \times 28$ điểm ảnh) so với hình ảnh ImageNet.
-Để làm cho mọi thứ hoạt động, ta nâng kích thước các ảnh lên $244 \times 244$ (nói chung không phải là một cách thông minh, nhưng ta làm điều đó ở đây để trung thành với kiến trúc AlexNet).
-Ta thực hiện thay đổi kích thước này bằng đối số `resize` trong hàm `load_data_f Fashion_mnist`.
+Để tiến hành được thử nghiệm, ta nâng kích thước các ảnh lên $244 \times 244$ (nói chung đây không phải là một giải pháp thông minh, nhưng ta làm cách này ở đây để trung thành với kiến trúc AlexNet).
+Ta thực hiện việc thay đổi kích thước này thông qua đối số `resize` trong hàm `load_data_fashion_mnist`.
 
 ```{.python .input  n=3}
 batch_size = 128
