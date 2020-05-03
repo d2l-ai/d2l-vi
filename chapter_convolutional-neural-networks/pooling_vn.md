@@ -238,7 +238,7 @@ pool2d(X)
 ## Multiple Channels
 -->
 
-## Đầu vào với nhiều Channel
+## Nhiều Kênh
 
 <!--
 When processing multi-channel input data, the pooling layer pools each input channel separately, rather than adding the inputs of each channel by channel as in a convolutional layer.
