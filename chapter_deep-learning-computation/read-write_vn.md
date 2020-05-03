@@ -178,7 +178,7 @@ Next, we store the parameters of the model as a file with the name `mlp.params`.
 Gluon Blocks support a `save_parameters` method that writes all parameters to disk given a string for the file name. 
 -->
 
-Tiếp theo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
+Tiếp heo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
 Những khối Gloun hỗ trợ phương thức từ hàm `save_parameter` nhằm ghi tất cả các tham số vào ổ cứng được cung cấp với một chuỗi những tên tệp. 
 
 ```{.python .input}
