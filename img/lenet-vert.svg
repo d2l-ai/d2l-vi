@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="lenet-vert.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
      id="defs2">
     <g
@@ -599,7 +599,7 @@
      inkscape:current-layer="surface1-0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1026"
+     inkscape:window-height="1028"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1" />
@@ -753,58 +753,58 @@
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
-             x="12.421376"
+             x="24.543205"
              y="364.12744"
              id="text6181-2"><tspan
                sodipodi:role="line"
                id="tspan6179-0"
-               x="12.421376"
+               x="24.543205"
                y="364.12744"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">5x5 tích chập (6) đệm 2</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">5x5 Conv (6) đệm 2</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
-             x="33.257259"
+             x="45.379089"
              y="250.51529"
              id="text6181-2-6"><tspan
                sodipodi:role="line"
                id="tspan6179-0-1"
-               x="33.257259"
+               x="45.379089"
                y="250.51529"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">5x5 tích chập (16)</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">5x5 Conv (16)</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
-             x="33.733124"
+             x="9.4894629"
              y="307.14337"
              id="text6181-2-5"><tspan
                sodipodi:role="line"
                id="tspan6179-0-5"
-               x="33.733124"
+               x="9.4894629"
                y="307.14337"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">2x2 gộp TB, sải 2</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">2x2 AvgPool, sải bước 2</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
-             x="34.153412"
+             x="9.1521358"
              y="193.68069"
              id="text6181-2-5-4"><tspan
                sodipodi:role="line"
                id="tspan6179-0-5-7"
-               x="34.153412"
+               x="9.1521358"
                y="193.68069"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">2x2 gộp TB, sải 2</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">2x2 AvgPool, sải bước 2</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
-             x="47.953533"
+             x="51.741604"
              y="137.05261"
              id="text6181-2-5-6"><tspan
                sodipodi:role="line"
                id="tspan6179-0-5-5"
-               x="47.953533"
+               x="51.741604"
                y="137.05261"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Đầy đủ (120)</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Dense (120)</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
@@ -815,7 +815,7 @@
                id="tspan6179-0-5-5-9"
                x="56.344021"
                y="79.796402"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Đầy đủ (84)</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Dense (84)</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:53.29702377px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:34.44320297px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33242559"
@@ -826,7 +826,7 @@
                id="tspan6179-0-5-5-7"
                x="55.868156"
                y="23.64418"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Đầy đủ (10)</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.98910713px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.33242559">Dense (10)</tspan></text>
         </g>
       </g>
     </g>

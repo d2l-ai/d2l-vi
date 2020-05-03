@@ -15,7 +15,7 @@
    viewBox="0 0 124.76482 51.403363"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="pooling.svg">
   <defs
      id="defs2">
@@ -280,14 +280,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="138.47748"
-     inkscape:cy="128.25042"
+     inkscape:zoom="1.979899"
+     inkscape:cx="181.15311"
+     inkscape:cy="99.307439"
      inkscape:document-units="mm"
      inkscape:current-layer="surface1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1026"
+     inkscape:window-height="1028"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1" />
@@ -536,6 +536,11 @@
              y="46.118999"
              id="use546" />
         </g>
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.99275589;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+           d="M 142.25556,66.543505 H 249.90125 V 120.36635 H 142.25556 Z m 0,0"
+           id="path550" />
         <g
            style="fill:#000000;fill-opacity:1"
            id="g554"
@@ -620,19 +625,14 @@
         <text
            xml:space="preserve"
            style="font-style:normal;font-weight:normal;font-size:59.80316162px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:38.64779282px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.49507904"
-           x="152.28093"
+           x="155.31139"
            y="110.06776"
            id="text275"><tspan
              sodipodi:role="line"
              id="tspan273"
-             x="152.28093"
+             x="155.31139"
              y="110.06776"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.94750977px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.49507904">Gộp lớn nhất</tspan></text>
-        <path
-           inkscape:connector-curvature="0"
-           style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.9934386;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-           d="M 142.25556,66.543505 H 249.90125 V 120.36635 H 142.25556 Z m 0,0"
-           id="path550" />
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.94750977px;line-height:0;font-family:Roboto;-inkscape-font-specification:Roboto;word-spacing:0px;stroke-width:1.49507904">Gộp cực đại</tspan></text>
       </g>
     </g>
   </g>
