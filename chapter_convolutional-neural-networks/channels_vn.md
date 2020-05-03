@@ -311,7 +311,7 @@ np.abs(Y1 - Y2).sum() < 1e-6
     * Dung lượng bộ nhớ cho tính toán truyền xuôi là bao nhiêu?
     * Dung lượng bộ nhớ cho tính toán truyền ngược là bao nhiêu?
     * Chi phí tính toán cho lượt lan truyền nguược là bao nhiêu?
-3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta nhân đôi phần đệm?
+3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta gấp đôi phần đệm?
 4. Nếu chiều cao và chiều rộng của bộ lọc tích chập là $k_h =k_w=1$, thì độ phức tạp của tính toán truyền xuôi là bao nhiêu?
 5. Các biến `Y1` và` Y2` trong ví dụ cuối cùng của mục này có giống nhau không? Tại sao?
 6. Khi cửa sổ tích chập không phải là $1\times 1$, bạn sẽ lập trình các phép tích chập sử dụng phép nhân ma trận như thế nào?
