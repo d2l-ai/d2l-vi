@@ -8,16 +8,6 @@
 # Đọc/Ghi tệp
 
 <!--
-So far we discussed how to process data, how to build, train and test deep learning models. 
-However, at some point we are likely happy with what we obtained and we want to save the results for later use and distribution. 
-Likewise, when running a long training process it is best practice to save intermediate results (checkpointing) to ensure that 
-we do not lose several days worth of computation when tripping over the power cord of our server. 
-At the same time, we might want to load a pre-trained model (e.g., we might have word embeddings for English and use it for our fancy spam classifier). 
-For all of these cases we need to load and store both individual weight vectors and entire models. 
-This section addresses both issues.
--->
-
-<!-- UPDATE
 So far we discussed how to process data and how to build, train, and test deep learning models. 
 However, at some point, we will hopefully be happy enough with the learned models that 
 we will want to save the results for later use in various contexts (perhaps even to make predictions in deployment). 
@@ -40,11 +30,6 @@ Mục này sẽ giải quyết cả hai vấn đề trên.
 ## Đọc và Lưu các `ndarray`
 
 <!--
-In its simplest form, we can directly use the `load` and `save` functions to store and read `ndarray`s separately. 
-This works just as expected.
--->
-
-<!-- UPDATE
 For individual `ndarray`s, we can directly invoke their `load` and `save` functions to read and write them respectively. 
 Both functions require that we supply a name, and `save` requires as input the variable to be saved.
 -->
@@ -86,11 +71,6 @@ x2, y2 = npx.load('x-files')
 ```
 
 <!--
-We can even write and read a dictionary that maps from a string to an `ndarray`. 
-This is convenient, for instance when we want to read or write all the weights in a model.
--->
-
-<!-- UPDATE
 We can even write and read a dictionary that maps from strings to `ndarray`s. 
 This is convenient when we want to read or write all the weights in a model.
 -->
@@ -120,20 +100,6 @@ mydict2
 ## Tham số mô hình Gluon
 
 <!--
-Saving individual weight vectors (or other `ndarray` tensors) is useful but it gets very tedious if we want to save (and later load) an entire model. 
-After all, we might have hundreds of parameter groups sprinkled throughout. 
-Writing a script that collects all the terms and matches them to an architecture is quite some work. 
-For this reason Gluon provides built-in functionality to load and save entire networks rather than just single weight vectors. 
-An important detail to note is that this saves model *parameters* and not the entire model. 
-I.e. if we have a 3 layer MLP we need to specify the *architecture* separately. 
-The reason for this is that the models themselves can contain arbitrary code, hence they cannot be serialized quite so easily 
-(there is a way to do this for compiled models: please refer to the [MXNet documentation](http://www.mxnet.io) for the technical details on it). 
-The result is that in order to reinstate a model we need to generate the architecture in code and then load the parameters from disk. 
-The deferred initialization (:numref:`sec_deferred_init`) is quite advantageous here since we can simply define a model without the need to put actual values in place. 
-Let's start with our favorite MLP.
--->
-
-<!-- UPDATE
 Saving individual weight vectors (or other `ndarray` tensors) is useful but it gets very tedious if we want to save (and later load) an entire model.
 After all, we might have hundreds of parameter groups sprinkled throughout. 
 For this reason Gluon provides built-in functionality to load and save entire networks.
@@ -157,6 +123,7 @@ Vì vậy, để khôi phục lại một mô hình thì chúng ta cần xây d�
 Việc khởi tạo trễ (:numref:`sec_deferred_init`) lúc này rất có lợi vì ta chỉ cần định nghĩa một mô hình mà không cần gán giá trị cụ thể cho tham số.
 Như thường lệ, hãy bắt đầu với một MLP quen thuộc.
 
+
 ```{.python .input  n=6}
 class MLP(nn.Block):
     def __init__(self, **kwargs):
@@ -178,7 +145,7 @@ Next, we store the parameters of the model as a file with the name `mlp.params`.
 Gluon Blocks support a `save_parameters` method that writes all parameters to disk given a string for the file name. 
 -->
 
-Tiếp heo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
+Tiếp theo, chúng ta lưu các tham số của mô hình vào tệp `mlp.params`.
 Những khối Gloun hỗ trợ phương thức từ hàm `save_parameter` nhằm ghi tất cả các tham số vào ổ cứng được cung cấp với một chuỗi những tên tệp. 
 
 ```{.python .input}
@@ -186,11 +153,6 @@ net.save_parameters('mlp.params')
 ```
 
 <!--
-To check whether we are able to recover the model we instantiate a clone of the original MLP model. 
-Unlike the random initialization of model parameters, here we read the parameters stored in the file directly.
--->
-
-<!-- UPDATE
 To recover the model, we instantiate a clone of the original MLP model.
 Instead of randomly initializing the model parameters, we read the parameters stored in the file directly.
 Conveniently we can load parameters into Blocks via their `load_parameters` method. 
