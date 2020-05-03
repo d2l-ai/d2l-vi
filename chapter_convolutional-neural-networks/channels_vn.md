@@ -248,7 +248,7 @@ def corr2d_multi_in_out_1x1(X, K):
 
 <!--
 When performing $1\times 1$ convolution, the above function is equivalent to the previously implemented cross-correlation function `corr2d_multi_in_out`.
-Let us check this with some reference data.
+Hãy kiểm tra điều này với dữ liệu tham chiếu.
 -->
 
 Khi thực hiện phép tích chập $1\times 1$, hàm bên trên tương đương với hàm tương quan chéo đã được lập trình ở `corr2d_multi_in_out`.
