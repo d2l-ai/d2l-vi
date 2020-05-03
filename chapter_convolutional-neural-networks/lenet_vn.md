@@ -192,7 +192,8 @@ We will use Fashion-MNIST as our dataset.
 It is more challenging than the original MNIST dataset while it has the same shape ($28\times28$ images).
 -->
 
-Sau khi triển khai và xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. Chúng ta sẽ sử dụng Fashion-MNIST là bộ dữ liệu huấn luyện. Bộ dữ liệu này sẽ thử thách hơn so với bộ MNIST trong bài toán phân loại mặc dù chúng có cùng kích thước của hình ảnh huấn luyện là $28\times28$. 
+Sau khi triển khai và xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. Chúng ta sẽ sử dụng Fashion-MNIST là bộ dữ liệu huấn luyện. 
+Bộ dữ liệu này sẽ thử thách hơn so với bộ MNIST trong bài toán phân loại mặc dù chúng có cùng kích thước của hình ảnh huấn luyện là $28\times28$. 
 
 ```{.python .input}
 batch_size = 256
