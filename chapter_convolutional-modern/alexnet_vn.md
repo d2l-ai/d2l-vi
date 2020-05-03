@@ -437,8 +437,7 @@ the higher image resolution and the more costly convolutions.
 -->
 
 Bây giờ, ta có thể bắt đầu quá trình huấn luyện AlexNet.
-So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và huấn luyện chậm hơn nhiều do mạng lưới sâu hơn và rộng hơn,
-độ phân giải hình ảnh cao hơn và các phép tích chập tốn kém hơn.
+So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do mạng sâu hơn và rộng hơn, đồng thời độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn.
 
 ```{.python .input  n=5}
 lr, num_epochs = 0.01, 10
@@ -459,8 +458,8 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 -->
 
 * AlexNet có cấu trúc tương tự như LeNet, nhưng sử dụng nhiều tầng chập hơn và không gian tham số lớn hơn để khớp với tập dữ liệu ImageNet có kích thước lớn.
-* Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng đó là một bước quan trọng từ các mạng nông đến sâu được sử dụng ngày nay.
-* Mặc dù có vẻ như chỉ có thêm một vài dòng trong lập trình của AlexNet so với LeNet, nhưng cộng đồng học thuật phải mất nhiều năm để nắm lấy sự thay đổi khái niệm này và tận dụng kết quả thử nghiệm tuyệt vời của nó. Điều này cũng là do thiếu các công cụ tính toán hiệu quả.
+* Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng nó là một bước quan trọng từ các mạng nông đến các mạng sâu được sử dụng ngày nay.
+* Mặc dù có vẻ như chỉ có thêm một vài dòng trong cách lập trình của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm để đón nhận sự thay đổi khái niệm này và tận dụng kết quả thực nghiệm tuyệt vời của nó. Điều này cũng là do thiếu các công cụ tính toán hiệu quả.
 * Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được hiệu suất tuyệt vời trong các bài toán thị giác máy tính.
 
 <!--
