@@ -96,11 +96,11 @@ LeNet's fully-connected layer block has three fully-connected layers, with 120, 
 Because we are still performing classification, the 10 dimensional output layer corresponds to the number of possible output classes.
 -->
 
-Khối tích chập phát ra một đầu ra với kích thước được cho bởi (kích thước lô, kênh, chiều cao, chiều rộng).
-Trước khi ta có thể chuyển đầu ra của khối tích chập sang khối được kết nối đầy đủ, ta phải làm phẳng từng ví dụ trong minibatch.
-Nói cách khác, ta lấy đầu vào 4D này và biến đổi nó thành đầu vào 2D được mong đợi bởi các tầng được kết nối đầy đủ:
-như một lời nhắc nhở, chiều thứ nhất lập chỉ số các ví dụ trong minibatch và chiều thứ hai đưa ra biểu diễn vector phẳng của mỗi ví dụ.
-Khối tầng được kết nối đầy đủ của LeNet có ba tầng được kết nối đầy đủ, với các đầu ra lần lượt là 120, 84 và 10.
+Đầu ra của khối tích chập có kích thước được cho bởi (kích thước batch, kênh, chiều cao, chiều rộng).
+Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch.
+Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
+nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu.
+Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
 Bởi vì ta vẫn đang thực hiện phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi.
 
 <!--
@@ -110,7 +110,7 @@ Again, we will rely on the Sequential class.
 -->
 
 Trong khi đạt đến mức độ mà bạn thực sự hiểu những gì đang diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
-bạn có thể thấy bên dưới việc lập trình nó trong một thư viện học sâu hiện đại đơn giản đáng kể.
+bạn có thể thấy bên dưới việc lập trình nó trong một thư viện học sâu hiện đại rất đơn giản.
 Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
 ```{.python .input}
@@ -138,8 +138,8 @@ which tends to be significantly more convenient to train.
 Other than that, this network matches the historical definition of LeNet5.
 -->
 
-So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gaussian ở tầng cuối cùng bằng một tầng dày đặc thông thường mà có xu hướng thuận tiện hơn đáng kể cho đào tạo.
-Ngoài ra, mạng này phù hợp với định nghĩa lịch sử của LeNet5.
+So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gaussian ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
+Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong lịch sử.
 
 <!--
 Next, let us take a look of an example.
@@ -148,8 +148,8 @@ a forward computation layer by layer printing the output shape at each layer to 
 -->
 
 Tiếp theo, ta hãy xem một ví dụ.
-Như được hiển thị trong :numref:`img_lenet_vert`, ta cung cấp một ví dụ kênh đơn lẻ có kích thước $28 \times 28$ vào mạng và thực hiện
-một tầng tính toán chuyển tiếp bằng cách in theo tầng hình dạng đầu ra ở mỗi lớp để đảm bảo ta hiểu những gì đang xảy ra ở đây.
+Như trong :numref:`img_lenet_vert`, ta đưa vào mạng một mẫu đơn kênh kích thước $28 \times 28$ và thực hiện
+một lượt truyền xuôi qua các tầng và in kích thước đầu ra ở mỗi tầng để đảm bảo ta hiểu những gì đang xảy ra bên trong.
 
 ```{.python .input}
 X = np.random.uniform(size=(1, 1, 28, 28))
