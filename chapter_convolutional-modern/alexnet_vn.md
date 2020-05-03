@@ -114,13 +114,13 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 :numref:`fig_filters` is reproduced from this paper and describes lower-level image descriptors.
 -->
 
-*dịch đoạn phía trên*
+Điều thú vị ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. Hình :numref:`fig_filters` được trích lại từ bài báo này mô tả các đặc trưng cấp thấp của hình ảnh.
 
 <!--
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/filters.png)
+![Hình ảnh bộ lọc học được ở tầng đầu tiên của mô hình AlexNet](../img/filters.png)
 :width:`400px`
 :label:`fig_filters`
 
@@ -130,7 +130,9 @@ Even higher layers might represent whole objects like people, airplanes, dogs, o
 Ultimately, the final hidden state learns a compact representation of the image that summarizes its contents such that data belonging to different categories be separated easily.
 -->
 
-*dịch đoạn phía trên*
+Các tầng cao hơn của mạng được xây dựng dựa trên những đặc trưng biểu diễn này để thể hiện các cấu trúc lớn hơn, như mắt, mũi, ngọn cỏ, v.v. 
+Thậm chí các tầng cao hơn có thể đại diện cho toàn bộ các vật thể như con người, máy bay, chó hoặc là dĩa ném. 
+Cuối cùng, tầng trạng thái ẩn cuối sẽ học cả khối đặc trưng biểu diễn của hình ảnh để tóm tắt nội dung sao cho dữ liệu thuộc các lớp khác nhau được tách biệt một cách dễ dàng.
 
 
 <!--
@@ -139,7 +141,9 @@ a core group of researchers had dedicated themselves to this idea, attempting to
 The ultimate breakthrough in 2012 can be attributed to two key factors.
 -->
 
-*dịch đoạn phía trên*
+Trong khoảng thời gian cho đến khi xuất hiện bước đột phá tối tân cho các mạng chập nhiều tầng vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các đặc trưng biểu diễn theo nhiều tầng của dữ liệu hình ảnh trong nhiều năm. 
+Nhưng để có được bước đột phá tối tân vào năm 2012 thì được quy cho hai yếu tố chính sau.
+
 
 <!--
 ### Missing Ingredient - Data
@@ -153,7 +157,9 @@ However, given the limited storage capacity of computers, the relative expense o
 Numerous papers addressed the UCI collection of datasets, many of which contained only hundreds or (a few) thousands of images captured in unnatural settings with low resolution.
 -->
 
-*dịch đoạn phía trên*
+Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có thể đạt được khả năng thể hiện vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp hồi quy và kernel). 
+Tuy nhiên, do hạn chế ở khả năng lưu trữ của máy tính, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
+Có rất nhiều bài báo nghiên cứu khoa học giải quyết các vấn đề dựa trên bộ dữ liệu tổng hợp của UCI, nhiều bộ dữ liệu trong số đó chỉ chứa khoảng hàng trăm hoặc (một vài) hay hàng ngàn hình ảnh được chụp trong điều kiện thiếu tính tự nhiên và độ phân giải thấp.
 
 <!--
 In 2009, the ImageNet dataset was released, challenging researchers to learn models from 1 million examples, 1,000 each from 1,000 distinct categories of objects.
@@ -164,7 +170,10 @@ The associated competition, dubbed the ImageNet Challenge pushed computer vision
 challenging researchers to identify which models performed best at a greater scale than academics had previously considered.
 -->
 
-*dịch đoạn phía trên*
+Năm 2009, bộ dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu ví dụ hình ảnh, 1.000 ví dụ cho mỗi 1.000 lớp đối tượng khác nhau. 
+Các nhà nghiên cứu, dẫn đầu bởi Fei-Fei Li, người mà giới thiệu bộ dữ liệu này đã dựa trên công cụ Tìm kiếm hình ảnh của Google để chọn lọc ra trước các bộ dữ liệu hình ảnh lớn làm ứng cử viên cho mỗi lớp và sử dụng kênh cung cấp dịch vụ cộng động Mechanical Turk của Amazon, dùng người đánh nhãn để xác định từng hình ảnh xem nó có thuộc về các lớp có liên quan hay không. 
+Với quy mô lớn chưa từng có từ trước đến nay. 
+Cuộc thi đi liền với bộ dữ liệu này, với cùng tên gọi là ImageNet Challenge đã thúc đẩy sự phát triển nghiên cứu về thị giác máy tính và học máy tiến tới một bước mới, thách thức các nhà nghiên cứu tìm ra được mô hình nào thể hiện tốt nhất với một bộ dữ liệu có quy mô lớn hơn so với các bộ dữ liệu dành cho học thuật đã được đề cập ở trước. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
