@@ -280,7 +280,7 @@ pool2d(X)
 * The pooling layer's number of output channels is the same as the number of input channels.
 -->
 
-* Sau khi tiếp nhận từng phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp hoạt động với phương thức giá trị lớn nhất sẽ cho đầu ra là giá trị lớn nhất trong những phần tử đầu vào đó và tầng gộp hoạt động với phương thức giá trị trung bình sẽ cho đầu ra là giá trị trung bình cuả từng phần tử đầu vào.
+* Sau khi tiếp nhận các phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp cực đại sẽ gán giá trị lớn nhất làm đầu ra và tầng gộp trung bình sẽ cho đầu ra là giá trị trung bình cuả tất cả phần tử đầu vào.
 * Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự ảnh hưởng quá mức của vị trí đến tầng tích chập.
 * Chúng ta có thể định rõ giá trị của đệm và sải bước cho tầng gộp.
 * Tầng gộp theo phương thức giá trị lớn nhất, kết hợp với sải bước lớn hơn 1 có thể dùng để làm giảm kích thước dữ liệu đầu vào.
