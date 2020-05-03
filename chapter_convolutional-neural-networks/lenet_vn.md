@@ -162,7 +162,12 @@ However, as we go up the stack of layers, the number of channels increases layer
 Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
-Xin hãy chú ý rằng, chiều cao và chiều rộng của đặc trưng thu được từ việc học biểu diễn tại mỗi tầng trong toàn bộ khối tính chập sẽ bị giảm đi (so với chiều cao và chiều rộng của đặc trưng ở tầng trước). Tầng tính chập đầu tiên sử dụng một kernel với chiều cao và chiều rộng là $5$, và tiếp theo đó là đệm thêm vào $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. Trong khi đó tầng tính chập thứ hai cũng dùng cùng một kernel với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc giảm cả chiều cao và chiều rộng bằng một giá trị là 4 đơn vị điểm ảnh. Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào cho lên tới 6 kênh sau khi đi qua tầng tính chập thứ nhất và 16 kênh sau khi đi qua tầng tính chập thứ hai. Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng các loại nhãn của hình ảnh. 
+Xin hãy chú ý rằng, chiều cao và chiều rộng của đặc trưng thu được từ việc học biểu diễn tại mỗi tầng trong toàn bộ khối tính chập sẽ bị giảm đi (so với chiều cao và chiều rộng của đặc trưng ở tầng trước). 
+Tầng tính chập đầu tiên sử dụng một kernel với chiều cao và chiều rộng là $5$, và tiếp theo đó là đệm thêm vào $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
+Trong khi đó tầng tính chập thứ hai cũng dùng cùng một kernel với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc giảm cả chiều cao và chiều rộng bằng một giá trị là 4 đơn vị điểm ảnh. 
+Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. 
+Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào cho lên tới 6 kênh sau khi đi qua tầng tính chập thứ nhất và 16 kênh sau khi đi qua tầng tính chập thứ hai. 
+Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng các loại nhãn của hình ảnh. 
 
 <!--
 ![Compressed notation for LeNet5](../img/lenet-vert.svg)
