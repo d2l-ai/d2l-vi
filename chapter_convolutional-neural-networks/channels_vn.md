@@ -276,7 +276,7 @@ np.abs(Y1 - Y2).sum() < 1e-6
 -->
 
 * Ta có thể sử dụng nhiều kênh để mở rộng các tham số mô hình của tầng tích chập.
-* Tầng tích chập $1\times 1$ khi được áp dụng lên từng điểm ảnh tương đương với tầng kết nối đầy đủ.
+* Tầng tích chập $1\times 1$ khi được áp dụng lên từng điểm ảnh tương đương với tầng kết nối đầy đủ giữa các kênh.
 * Tầng tích chập $1\times 1$ thường được sử dụng để điều chỉnh số lượng kênh giữa các tầng của mạng và để kiểm soát độ phức tạp của mô hình.
 
 
