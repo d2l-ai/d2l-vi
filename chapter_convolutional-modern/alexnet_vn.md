@@ -114,7 +114,7 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 :numref:`fig_filters` is reproduced from this paper and describes lower-level image descriptors.
 -->
 
-Điều thú vị ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. Hình :numref:`fig_filters` được trích lại từ bài báo này mô tả các đặc trưng cấp thấp của hình ảnh.
+Điều thú vị ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. Hình :numref:`fig_filters` được trích lại từ bài báo khoa học này mô tả các đặc trưng cấp thấp của hình ảnh.
 
 <!--
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
@@ -132,7 +132,7 @@ Ultimately, the final hidden state learns a compact representation of the image 
 
 Các tầng cao hơn của mạng được xây dựng dựa trên những đặc trưng biểu diễn này để thể hiện các cấu trúc lớn hơn, như mắt, mũi, ngọn cỏ, v.v. 
 Thậm chí các tầng cao hơn có thể đại diện cho toàn bộ các vật thể như con người, máy bay, chó hoặc là dĩa ném. 
-Cuối cùng, tầng trạng thái ẩn cuối sẽ học cả khối đặc trưng biểu diễn của hình ảnh để tóm tắt nội dung sao cho dữ liệu thuộc các lớp khác nhau được tách biệt một cách dễ dàng.
+Cuối cùng, tầng trạng thái ẩn cuối sẽ học cả khối đặc trưng biểu diễn của hình ảnh để tổng hợp lại nội dung sao cho dữ liệu thuộc các lớp khác nhau được tách biệt một cách dễ dàng.
 
 
 <!--
@@ -149,7 +149,7 @@ Nhưng để có được bước đột phá tối tân vào năm 2012 thì đ�
 ### Missing Ingredient - Data
 -->
 
-### *dịch tiêu đề phía trên*
+### Yếu tố bị thiếu - Dữ liệu
 
 <!--
 Deep models with many layers require large amounts of data in order to enter the regime where they significantly outperform traditional methods based on convex optimizations (e.g., linear and kernel methods).
@@ -520,7 +520,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Dac 
 
 <!-- Phần 4 -->
 *
