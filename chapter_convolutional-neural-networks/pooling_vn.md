@@ -77,7 +77,7 @@ At each location that the pooling window hits, it computes the maximum or averag
 value of the input subarray in the window (depending on whether *max* or *average* pooling is employed).
 -->
 
-Trong cả hai trường hợp, giống như với toán tử tương quan chéo, ta có thể xem cửa sổ gộp thực hiện bắt đầu từ phía trên bên trái của mảng đầu vào và thực hiện trượt qua mảng này từ trái sang phải và từ trên xuống dưới.
+Trong cả hai trường hợp, giống như với toán tử tương quan chéo, ta có thể xem như cửa sổ gộp bắt đầu từ phía trên bên trái của mảng đầu vào và thực hiện trượt qua mảng này từ trái sang phải và từ trên xuống dưới.
 Ở mỗi vị trí mà cửa sổ gộp dừng, nó tính giá trị cực đại hay trung bình của mảng con nằm trong cửa sổ (tùy vào phép gộp nào được sử dụng).
 
 <!--
