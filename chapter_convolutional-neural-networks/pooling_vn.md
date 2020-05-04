@@ -68,7 +68,7 @@ Giống như ở các tầng tích chập, các toán tử gộp bao gồm một
 thực hiện xuất một giá trị cho mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
 Tuy nhiên, không giống như các phép toán tương quan chéo giữa các đầu vào và các bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc").
 Thay vì vậy, các toán tử gộp là xác định với phép tính thường thực hiện là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
-Các phép tính này theo thứ tự được gọi là là *gộp giá trị cực đại* (*max pooling*) và *gộp giá trị trung bình* (*average pooling*).
+Các phép tính này lần lượt được gọi là là *gộp cực đại* (*max pooling*) và *gộp trung bình* (*average pooling*).
 
 <!--
 In both cases, as with the cross-correlation operator, we can think of the pooling window as starting from the top left of the input array
