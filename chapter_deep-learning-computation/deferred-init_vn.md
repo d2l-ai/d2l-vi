@@ -32,7 +32,7 @@ Cho tới nay, có vẻ như ta đã trốn tránh việc đã cẩu thả trong
 
 * Ta định nghĩa kiến trúc mạng mà không xét đến chiều đầu vào.
 * Ta thêm các tầng mà không xét đến chiều đầu ra của tầng trước đó.
-* Ta thậm chí đã "khởi tạo" các tham số mà không có đầy đủ thông tin để xác định số lượng các tham số mà mô hình cần. 
+* Ta thậm chí còn "khởi tạo" các tham số mà không có đầy đủ thông tin để xác định số lượng các tham số của mô hình. 
 
 <!--
 All of those things sound impossible and indeed, they are. 
@@ -56,11 +56,11 @@ Next, we go deeper into the mechanics of initialization.
 -->
 
 Bạn có thể khá bất ngờ khi thấy mã nguồn của ta vẫn chạy. 
-Suy cho cùng, MXNet (hay bất cứ framework nào khác) không thể dự đoán được chiều của đầu vào sẽ như thế nào.
-Thủ thuật ở đây đó là MXNet đã "khởi tạo trễ", đợi cho đến khi ta truyền dữ liệu qua mô hình lần đầu, từ đó suy ra kích thước của mỗi lớp khi chúng "di chuyển".  
-Ở các chương sau, khi làm việc với các mạng nơ-ron tích chập và ảnh, vấn đề này còn trở nên rõ ràng hơn, khi chiều của đầu vào (trong trường hợp này là độ phân giải của một bức ảnh) về lâu dài sẽ tác động đến chiều các tầng phía sau của mạng.
-Do đó, khả năng gán giá trị các tham số mà không cần biết số chiều tại thời điểm viết mã, có thể đơn giản hóa đáng kể việc xác định và sửa đổi mô hình về sau.
-Tiếp theo, chúng ta sẽ đi sâu hơn về các cơ chế của việc khởi tạo.
+Suy cho cùng, MXNet (hay bất cứ framework nào khác) không thể dự đoán được chiều của đầu vào.
+Thủ thuật ở đây đó là MXNet đã "khởi tạo trễ", tức đợi cho đến khi ta truyền dữ liệu qua mô hình lần đầu để suy ra kích thước của mỗi tầng khi chúng "di chuyển".  
+Ở các chương sau, khi làm việc với các mạng nơ-ron tích chập, kỹ thuật này sẽ còn trở nên tiện lợi hơn, bởi chiều của đầu vào (tức độ phân giải của một bức ảnh) sẽ tác động đến chiều của các tầng tiếp theo trong mạng.
+Do đó, khả năng gán giá trị các tham số mà không cần biết số chiều tại thời điểm viết mã có thể đơn giản hóa việc xác định và sửa đổi mô hình về sau một cách đáng kể.
+Tiếp theo, chúng ta sẽ đi sâu hơn vào cơ chế của việc khởi tạo.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -109,9 +109,9 @@ Consequently MXNet has not yet initialized any parameters.
 We confirm by attempting to access the parameters below.
 -->
 
-Lúc này, mạng nơ-ron không thể biết được chiều của các trọng số lớp đầu vào.
+Lúc này, mạng nơ-ron không thể biết được chiều của các trọng số ở tầng đầu vào bởi nó còn chưa biết chiều của đầu vào.
 Và vì thế MXNet chưa khởi tạo bất kỳ tham số nào cả.
-Ta có thể xác nhận bằng cách truy cập vào các tham số như dưới đây.
+Ta có thể xác thực việc này bằng cách truy cập các tham số như dưới đây.
 
 ```{.python .input}
 print(net.collect_params)
@@ -131,9 +131,9 @@ Now let us see what happens when we attempt to initialze parameters via the `ini
 -->
 
 Chú ý rằng mặc dù đối tượng Parameter có tồn tại, chiều đầu vào của mỗi tầng được liệt kê là `-1`.
-MXNet sử dụng giá trị đặc biệt `-1` để chỉ chiều tham số chưa biết.
+MXNet sử dụng giá trị đặc biệt `-1` để ám chỉ việc chưa biết chiều tham số.
 Tại thời điểm này, việc thử truy cập `net[0].weight.data()` sẽ gây ra lỗi thực thi báo rằng mạng cần khởi tạo trước khi truy cập tham số. 
-Bây giờ cùng xem điều gì sẽ xảy ra khi ta thử khởi tạo các tham số với phương thức `initialize`.
+Bây giờ hãy cùng xem điều gì sẽ xảy ra khi ta thử khởi tạo các tham số với phương thức `initialize`.
 
 ```{.python .input}
 net.initialize()
@@ -155,8 +155,8 @@ Only once we pass data through the network will MXNet finally initialize paramet
 
 Như ta đã thấy, không có gì thay đổi ở đây cả.
 Dù đã biết chiều đầu vào, gọi phương thức khởi tạo không thực sự khởi tạo các tham số.
-Thay vào đó, việc gọi phương thức trên chỉ là bước đăng ký với MXNet là chúng ta muốn khởi tạo các tham số (tùy chọn theo phân phối).
-Chỉ khi truyền dữ liệu qua mạng thì MXNet mới khởi tạo các tham số và như vậy thì ta mới thấy được sự khác biệt. 
+Thay vào đó, việc gọi phương thức trên sẽ chỉ đăng ký với MXNet là chúng ta muốn khởi tạo các tham số và phân phối mà ta muốn dùng để khởi tạo (không bắt buộc).
+Chỉ khi truyền dữ liệu qua mạng thì MXNet mới khởi tạo các tham số và ta mới thấy được sự khác biệt. 
 
 ```{.python .input}
 x = np.random.uniform(size=(2, 20))
@@ -182,9 +182,9 @@ Note that in this case, only the first layer required deferred initialization, b
 Once all parameter shapes are known, MXNet can finally initialize the parameters. 
 -->
 
-Ngay khi biết được kích thước đầu vào, $\mathbf{x} \in \mathbb{R}^{20}$ MXNet có thể xác định chiều của ma trận trọng số tầng đầu tiên, ví dụ: $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
-Sau khi nhận dạng được lớp đầu tiên, MXNet thực thi lớp thứ hai với kích thước là $10 \times 256$ và cứ thế đi hết đồ thị tính toán cho đến khi mọi chiều của các tầng được biết. 
-Chú ý rằng trong trường hợp này, chỉ lớp đầu tiên là cần khởi tạo trễ, tuy nhiên MXNet vẫn khởi tạo theo thứ tự. 
+Ngay khi biết được chiều của đầu vào là $\mathbf{x} \in \mathbb{R}^{20}$, MXNet có thể xác định kích thước của ma trận trọng số tầng đầu tiên: $\mathbf{W}_1 \in \mathbb{R}^{256 \times 20}$.
+Sau khi biết được kích thước tầng đầu tiên, MXNet tiếp tục tính kích thước tầng thứ hai ($10 \times 256$) và cứ thế đi hết đồ thị tính toán cho đến khi nó biết được kích thước của mọi tầng.
+Chú ý rằng trong trường hợp này, chỉ tầng đầu tiên cần được khởi tạo trễ, tuy nhiên MXNet vẫn khởi tạo theo thứ tự. 
 Khi mà tất cả kích thước tham số đã được biết, MXNet cuối cùng có thể khởi tạo các tham số. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
