@@ -273,7 +273,7 @@ After that, we will not re-initialize when we run the forward calculation `net(x
 -->
 
 Việc khởi tạo này sẽ chỉ được gọi khi lượt truyền xuôi đầu tiên hoàn thành. 
-Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi ta chạy phương thức truyền xuôi `net(x)`, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa.  
+Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi dùng lệnh `net(x)` để thực hiện lượt truyền xuôi, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa.  
 
 ```{.python .input}
 y = net(x)
@@ -294,8 +294,9 @@ Therefore, we often force initialization by sending a sample observation through
 -->
 
 Như đã đề cập ở phần mở đầu của mục này, việc khởi tạo trễ cũng có thể gây ra sự khó hiểu. 
-Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
-Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách chạy một quan sát mẫu qua mạng này. 
+Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. 
+Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
+Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách đưa một mẫu dữ liệu qua mạng này. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -326,7 +327,7 @@ Việc này có thể xảy ra trong hai trường hợp:
 -->
 
 * Ta đã truyền dữ liệu vào mạng từ trước và chỉ muốn khởi tạo lại các tham số. 
-* Ta chỉ rõ tất cả chiều đầu vào và đầu ra của mạng khi định nghĩa nó. 
+* Ta đã chỉ rõ cả chiều đầu vào và chiều đầu ra của mạng khi định nghĩa nó. 
 
 <!--
 Forced reinitialization works as illustrated below.
@@ -349,7 +350,7 @@ For instance, for dense layers we must specify `in_units` at the time that the l
 -->
 
 Trường hợp thứ hai yêu cầu ta chỉ rõ tất cả tham số khi tạo mỗi tầng trong mạng.
-Ví dụ, với các tầng kết nối đầy đủ thì chúng ta cần chỉ rõ `in_units` tại thời điểm tầng đó được khởi tạo.
+Ví dụ, với các tầng kết nối dày đặc thì chúng ta cần chỉ rõ `in_units` tại thời điểm tầng đó được khởi tạo.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -377,9 +378,9 @@ net.initialize(init=MyInit())
 * We can forcibly re-initialize a network's parameters by invoking initalize with the `force_reinit=True` flag.
 -->
 
-* Khởi tạo trễ có thể khá tiện lợi, cho phép Gluon gán giá trị một cách tự động và nhờ vậy giúp ta dễ dàng sửa đổi các kiến trúc mạng cũng như loại bỏ những nguồn gây lỗi thông dụng. 
+* Khởi tạo trễ có thể khá tiện lợi, cho phép Gluon suy ra kích thước của tham số một cách tự động và nhờ vậy giúp ta dễ dàng sửa đổi các kiến trúc mạng cũng như loại bỏ những nguồn gây lỗi thông dụng. 
 * Chúng ta không cần khởi tạo trễ khi đã định nghĩa các biến một cách tường minh.
-* Chúng ta có thể cưỡng chế việc khởi tạo lại các tham số mạng bằng cách gọi khởi tạo với cờ `force_reinit=True`. 
+* Chúng ta có thể cưỡng chế việc khởi tạo lại các tham số mạng bằng cách gọi khởi tạo với `force_reinit=True`. 
 
 <!--
 ## Exercises
@@ -393,9 +394,9 @@ net.initialize(init=MyInit())
 3. What would you need to do if you have input of varying dimensionality? Hint - look at parameter tying.
 -->
 
-1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ chiều đầu vào của tầng đầu tiên nhưng không làm vậy với các tầng tiếp theo? Có thể vẫn khởi tạo ngay lập tức được không?
-2. Chuyện gì xảy ra nếu ta truyền vào giá trị chiều không phù hợp? 
-3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (*parameter tying*). 
+1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ chiều đầu vào của tầng đầu tiên nhưng không làm vậy với các tầng tiếp theo? Việc khởi tạo có xảy ra ngay lập tức không?
+2. Chuyện gì xảy ra nếu ta chỉ định các chiều không khớp nhau? 
+3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - hãy tìm hiểu về cách ràng buộc tham số (*parameter tying*). 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
