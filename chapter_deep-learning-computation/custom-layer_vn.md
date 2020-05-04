@@ -24,8 +24,8 @@ In this section, we show you how.
 -->
 
 Một trong những yếu tố dẫn đến thành công của học sâu là sự đa dạng của các tầng. 
-Những tầng này có thể được sắp xếp theo nhiều cách sáng tạo để thiết kế nên những kiến trúc phù hợp với nhiều nhiệm vụ khác nhau. 
-Ví dụ, các nhà nghiên cứu đã phát minh ra các tầng chuyên dụng cho xử lý ảnh, chữ viết, vòng lặp trên dữ liệu tuần tự, thực thi quy hoạch động, v.v...
+Những tầng này có thể được sắp xếp theo nhiều cách sáng tạo để thiết kế nên những kiến trúc phù hợp với nhiều tác vụ khác nhau. 
+Ví dụ, các nhà nghiên cứu đã phát minh ra các tầng chuyên dụng để xử lý ảnh, chữ viết, lặp trên dữ liệu tuần tự, thực thi quy hoạch động, v.v...
 Dù sớm hay muộn, bạn cũng sẽ gặp (hoặc sáng tạo) một tầng không có trong Gluon.
 Đối với những trường hợp như vậy, bạn cần xây dựng một tầng tuỳ chỉnh. 
 Phần này sẽ hướng dẫn bạn cách thực hiện điều đó.
@@ -52,8 +52,8 @@ To build it, we simply need to inherit from the Block class and implement the `f
 
 Để bắt đầu, ta tạo một tầng tùy chỉnh (một Khối) không chứa bất kỳ tham số nào.
 Bước này khá quen thuộc nếu bạn còn nhớ phần giới thiệu về `Block` của Gluon tại :numref:`sec_model_construction`.
-Lớp `CenteredLayer` đơn giản là trừ đi giá trị trung bình từ đầu vào của nó.
-Để xây dựng nó, chúng ta chỉ cần kế thừa từ lớp `Block` và chạy phương thức `forward`.
+Lớp `CenteredLayer` chỉ đơn thuần trừ đi giá trị trung bình từ đầu vào của nó.
+Để xây dựng nó, chúng ta chỉ cần kế thừa từ lớp `Block` và lập trình phương thức `forward`.
 
 ```{.python .input  n=1}
 from mxnet import gluon, np, npx
@@ -72,7 +72,7 @@ class CenteredLayer(nn.Block):
 Let us verify that our layer works as intended by feeding some data through it.
 -->
 
-Để xem tầng này hoạt động thế nào, hãy truyền vào một số dữ liệu.
+Hãy cùng xác thực rằng tầng này hoạt động như ta mong muốn bằng cách truyền dữ liệu vào nó.
 
 ```{.python .input  n=2}
 layer = CenteredLayer()
@@ -102,7 +102,7 @@ As an extra sanity check, we can send random data through the network and check 
 Because we are dealing with floating point numbers, we may still see a *very* small nonzero number due to quantization.
 -->
 
-Để kiểm tra, chúng ta có thể truyền dữ liệu ngẫu nhiên qua mạng và chứng thực xem giá trị trung bình đã về 0 hay chưa.
+Để kiểm tra thêm, chúng ta có thể truyền dữ liệu ngẫu nhiên qua mạng và chứng thực xem giá trị trung bình đã về 0 hay chưa.
 Chú ý rằng vì đang làm việc với các số thực dấu phẩy động, chúng ta sẽ thấy một giá trị khác không *rất* nhỏ.
 
 ```{.python .input  n=4}
