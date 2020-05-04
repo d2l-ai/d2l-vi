@@ -260,7 +260,7 @@ Once the system has created these parameters, it calls the `MyInit` instance to 
 
 Lúc này, thông tin về các tham số mô hình mới được in ra. 
 Khi thực hiện lượt truyền xuôi dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các tầng dựa trên kích thước của biến đầu vào này. 
-Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện phép truyền xuôi. 
+Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi. 
 
 <!--
 Of course, this initialization will only be called when completing the initial forward calculation. 
@@ -333,7 +333,7 @@ Việc này có thể xảy ra trong hai trường hợp:
 Forced reinitialization works as illustrated below.
 -->
 
-Trường hợp thứ nhất hoạt động tốt, như minh hoạ dưới đây.
+Khởi tạo cưỡng chế hoạt động như minh hoạ dưới đây.
 
 ```{.python .input}
 net.initialize(init=MyInit(), force_reinit=True)
