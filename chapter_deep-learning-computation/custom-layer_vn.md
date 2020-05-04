@@ -50,8 +50,7 @@ The following `CenteredLayer` class simply subtracts the mean from its input.
 To build it, we simply need to inherit from the Block class and implement the `forward` method.
 -->
 
-Để bắt đầu, ta tạo một tầng tùy chỉnh (một Khối) không chứa bất kỳ 
-tham số nào.
+Để bắt đầu, ta tạo một tầng tùy chỉnh (một Khối) không chứa bất kỳ tham số nào.
 Bước này khá quen thuộc nếu bạn còn nhớ phần giới thiệu về `Block` của Gluon tại :numref:`sec_model_construction`.
 Lớp `CenteredLayer` đơn giản là trừ đi giá trị trung bình từ đầu vào của nó.
 Để xây dựng nó, chúng ta chỉ cần kế thừa từ lớp `Block` và chạy phương thức `forward`.
