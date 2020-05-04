@@ -54,7 +54,7 @@ mitigating the sensitivity of convolutional layers to location and of spatially 
 ## Maximum Pooling and Average Pooling
 -->
 
-## Gộp giá trị cực đại và gộp giá trị trung bình
+## Gộp cực đại và gộp trung bình
 
 <!--
 Like convolutional layers, pooling operators consist of a fixed-shape window that is slid over all regions in the input according to its stride, 
