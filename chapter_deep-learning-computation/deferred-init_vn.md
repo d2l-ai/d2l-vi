@@ -16,7 +16,7 @@ In the previous examples we played fast and loose with setting up our networks. 
 So far, it might seem that we got away with being sloppy in setting up our networks.
 Specifically, we did the following unintuitive things, which not might seem like they should work:
 -->
-Cho tới nay, có vẻ như ta đã trốn tránh việc đã cẩu thả trong thiết lập mạng như thế nào. Cụ thể, ta đã "giả mù" và làm những điều không nên sau: 
+Cho tới nay, có vẻ như ta chưa phải chịu hậu quả của việc thiết lập mạng cẩu thả. Cụ thể, ta đã "giả mù" và làm những điều không trực quan sau: 
 
 <!--
 * We defined the network architecture with no regard to the input dimensionality.
