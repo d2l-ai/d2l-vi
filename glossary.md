@@ -90,6 +90,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data manipulation       | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning           | học sâu                         |                                              |
 | deferred initialization | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
+| dense layer             | tầng kết nối dày đặc            |                                              |
 | dev set                 | tập phát triển                  |                                              |
 | dev set performance     | chất lượng trên tập phát triển  |                                              |
 | development set         | tập phát triển                  |                                              |
