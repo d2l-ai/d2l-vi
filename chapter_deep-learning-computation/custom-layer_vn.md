@@ -157,7 +157,7 @@ The `ParameterDict` also supplied a `get` function that makes it easy to generat
 -->
 Lớp `Block` chứa biến `params` với kiểu dữ liệu `ParameterDict`.
 Từ điển này ánh xạ các xâu kí tự biểu thị tên tham số vào các tham số mô hình (thuộc kiểu `Parameter`).
-`ParameterDict` cũng cung cấp hàm `get` giúp ta dễ dàng hơn trong việc tạo tham số mới với tên và chiều cụ thể.
+`ParameterDict` cũng cung cấp hàm `get` giúp việc tạo tham số mới với tên và chiều cụ thể trở nên dễ dàng.
 
 ```{.python .input  n=7}
 params = gluon.ParameterDict()
