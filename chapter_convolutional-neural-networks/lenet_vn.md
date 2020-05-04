@@ -75,13 +75,13 @@ Each convolutional layer uses a $5\times 5$ kernel and processes each output wit
 The first convolutional layer has 6 output channels, and second convolutional layer increases channel depth further to 16.
 -->
 
-Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình phía sau
+Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình theo sau
 (lưu ý rằng gộp cực đại hoạt động tốt hơn, nhưng nó chưa được phát minh vào những năm 90).
 Tầng tích chập được sử dụng để nhận dạng các mẫu không gian trong ảnh,
 chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
 Khối tầng tích chập tạo nên từ việc xếp chồng các khối nhỏ gồm hai đơn vị cơ bản này.
 Mỗi tầng chập sử dụng bộ lọc có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
-(một lần nữa, lưu ý rằng ReLUs hiện được biết là hoạt động đáng tin cậy hơn, nhưng đã chưa được phát minh).
+(một lần nữa, lưu ý rằng ReLUs hiện được biết là hoạt động đáng tin cậy hơn nhưng lúc đó chưa được phát minh).
 Tầng tích chập đầu tiên có 6 kênh đầu ra và tầng tích chập thứ hai tăng độ sâu kênh hơn nữa lên 16.
 
 <!--
