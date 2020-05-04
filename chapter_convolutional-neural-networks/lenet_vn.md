@@ -37,7 +37,7 @@ Their model achieved outstanding results (only matched by Support Vector Machine
 Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in the 1990s!
 -->
 
-Trong phần này, ta sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên, ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun, tiếp sau đó là một nhà nghiên cứu tại AT&T Bell Labs, với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
+Trong phần này, ta sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên, ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun, khi đó là một nhà nghiên cứu tại AT&T Bell Labs, với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
 Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên rằng có thể huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược.
 Mô hình của họ đã đạt được kết quả nổi bật (chỉ có Support Vector Machines là ngang hàng tại thời điểm đó) và được sử dụng để nhận biết các chữ số để xử lý tiền gửi trong máy ATM.
 Một số máy ATM vẫn chạy các đoạn mã mà Yann và đồng nghiệp Leon Bottou đã viết vào những năm 1990!
