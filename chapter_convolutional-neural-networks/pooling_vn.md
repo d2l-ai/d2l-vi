@@ -340,7 +340,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-* Đinh Đắc, Nguyễn Văn Cường, Phạm Hồng Vinh
-
+* Đinh Đắc
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
 <!-- Phần 5 -->
 *
