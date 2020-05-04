@@ -247,7 +247,7 @@ pool2d(X)
 ## Multiple Channels
 -->
 
-## *dịch tiêu đề phía trên*
+## Nhiều Kênh
 
 <!--
 When processing multi-channel input data, the pooling layer pools each input channel separately, rather than adding the inputs of each channel by channel as in a convolutional layer.
@@ -255,7 +255,9 @@ This means that the number of output channels for the pooling layer is the same 
 Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 -->
 
-*dịch đoạn phía trên*
+Khi phải xử lý dữ liệu đầu vào với nhiều kênh, tầng gộp sẽ gộp mỗi kênh của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng kênh lại với nhau như trong tầng tính chập.
+Điều này có nghĩa là số lượng kênh đầu ra cho tầng gộp sẽ giống như số lượng kênh đầu vào.
+Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều kênh để tạo dữ liệu đầu vào với số kênh là 2.
 
 ```{.python .input  n=9}
 X = np.concatenate((X, X + 1), axis=1)
@@ -266,7 +268,7 @@ X
 As we can see, the number of output channels is still 2 after pooling.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta thấy bên dưới, số kênh của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua tầng gộp.
 
 ```{.python .input  n=10}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
@@ -287,9 +289,11 @@ pool2d(X)
 * The pooling layer's number of output channels is the same as the number of input channels.
 -->
 
-*dịch đoạn phía trên*
-
-
+* Sau khi tiếp nhận các phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp cực đại sẽ gán giá trị lớn nhất làm đầu ra và tầng gộp trung bình sẽ cho đầu ra là giá trị trung bình cuả tất cả phần tử đầu vào.
+* Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự nhạy cảm quá mức tới vị trí của tầng tích chập.
+* Chúng ta có thể định rõ giá trị của đệm và sải bước cho tầng gộp.
+* Tầng gộp cực đại kết hợp với sải bước lớn hơn 1 có thể dùng để giảm kích thước dữ liệu đầu vào.
+* Số lượng kênh đầu ra của tầng gộp sẽ bằng số lượng kênh đầu vào tầng gộp đó.
 <!--
 ## Exercises
 -->
@@ -305,7 +309,12 @@ pool2d(X)
 1. Is there another operation between average and maximum pooling that you could consider (hint: recall the softmax)? Why might it not be so popular?
 -->
 
-*dịch đoạn phía trên*
+1. Có thể lập trình tầng gộp trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
+2. Có thể lập trình tầng gộp cực đại như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
+3. Bạn hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước là $c\times h\times w$, kích thước của cửa sổ trượt trong tầng gộp là $p_h\times p_w$ với giá trị số lần đệm là $(p_h, p_w)$ và giá trị sải bước là $(s_h, s_w)$ lần lượt cho chiều cao và chiều rộng của đầu vào.
+4. Bạn hãy chỉ ra sự khác biệt giữa kết quả đầu ra khi dùng tầng gộp cực đại và tầng gộp trung bình.
+5. Theo bạn nghĩ thì có cần thêm riêng một tầng gộp cực tiểu không? Bạn có thể thay thế nó bằng một cơ chế hoạt động khác không?
+6. Liệu có một cơ chế hoạt động nào khác giữa tầng gộp theo phương thức giá trị trung bình và giá trị lớn nhất không (gợi ý: hãy nhớ lại hàm softmax)? Và tại sao nó không được phổ biến?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -346,4 +355,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Dac Dinh

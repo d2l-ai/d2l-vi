@@ -26,6 +26,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | attention mechanisms                  | cơ chế tập trung          |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | automatic differentiation             | tính vi phân tự động      | [https://git.io/JvojU](https://git.io/JvojU) |
+| average pooling                       | gộp trung bình            |                                              |
 
 ## B
 | English                 | Tiếng Việt                     | Thảo luận tại                                |
@@ -53,6 +54,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
+| channel (computer vision)           | kênh                   |                                              |
 | classifier                          | bộ phân loại           |                                              |
 | closed-form solution                | biểu thức dạng đóng    | [https://git.io/Jvopd](https://git.io/Jvopd) |
 | clustering                          | phân cụm               | [https://git.io/JvojD](https://git.io/JvojD) |
@@ -88,7 +90,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data manipulation       | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning           | học sâu                         |                                              |
 | deferred initialization | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
-| Densely Connected Network | Mạng Kết nối Dày đặc          |                                              |
+| densely connected network | mạng kết nối dày đặc          |                                              |
+| dense layer             | tầng kết nối dày đặc            |                                              |
 | dev set                 | tập phát triển                  |                                              |
 | dev set performance     | chất lượng trên tập phát triển  |                                              |
 | development set         | tập phát triển                  |                                              |
@@ -102,6 +105,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                  | Tiếng Việt             | Thảo luận tại                                  |
 |--------------------------|------------------------|------------------------------------------------|
 | early stopping           | dừng sớm               |                                                |
+| edge (computer vision)   | biên                   |                                                |
+| edge detector        | bộ phát hiện biên        |                                                                |
 | effect size              | hệ số ảnh hưởng        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
 | eigen-decomposition      | phân tích trị riêng    |                                                |
 | eigenvalue               | trị riêng              |                                                |
@@ -221,6 +226,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | machine learning             | học máy                       |                                              |
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (computer vision) | mặt nạ | |
+| max pooling                  | gộp cực đại                   |                                              |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | metric                       | phép đo                       |                                              |
