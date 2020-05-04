@@ -343,8 +343,8 @@ This makes the model more robust and the larger sample size effectively reduces 
 We will discuss data augmentation in greater detail in :numref:`sec_image_augmentation`.
 -->
 
-AlexNet kiểm soát độ phức tạp mô hình của tầng kết nối đầy đủ bằng cách áp dụng dropout ((numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
-Để tăng cường dữ liệu, vòng lặp huấn luyện của AlexNet đã bổ sung rất nhiều kỹ thuật tăng cường hình ảnh, chẳng hạn như lật, cắt và thay đổi màu sắc.
+AlexNet kiểm soát độ phức tạp của tầng kết nối đầy đủ bằng cách áp dụng dropout ((numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
+Để tăng cường dữ liệu, vòng lặp huấn luyện của AlexNet đã bổ sung rất nhiều kỹ thuật tăng cường hình ảnh, chẳng hạn như lật, cắt hay thay đổi màu sắc.
 Điều này làm cho mô hình trở nên mạnh mẽ hơn, kích thước dữ liệu trở nên lớn hơn và làm giảm trình trạng quá khớp một cách hiệu quả.
 Ta sẽ thảo luận về việc tăng cường dữ liệu chi tiết hơn trong :numref:`sec_image_augmentation`.
 
@@ -390,7 +390,7 @@ It matches our diagram above.
 -->
 
 Ta xây dựng một thực thể dữ liệu đơn kênh với cả chiều cao và chiều rộng đều bằng 224 để quan sát kích thước đầu ra của mỗi tầng.
-Kết quả khớp với sơ đồ bên trên.
+Kết quả in ra khớp với sơ đồ bên trên.
 
 ```{.python .input  n=2}
 X = np.random.uniform(size=(1, 1, 224, 224))
