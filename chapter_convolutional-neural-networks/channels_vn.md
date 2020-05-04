@@ -268,7 +268,8 @@ Let us check whether this works in practice: we implement the $1 \times 1$ convo
 The only thing is that we need to make some adjustments to the data shape before and after the matrix multiplication.
 -->
 
-*dịch đoạn phía trên*
+Hãy kiểm tra xem liệu nó có hoạt động trong thực tế: Ta sẽ lập trình một phép tích chập $1 \times 1$ sử dụng một tầng kết nối đầy đủ.
+Vấn đề duy nhất là ta cần phải điều chỉnh kích thước dữ liệu trước và sau phép nhân ma trận.
 
 ```{.python .input  n=6}
 def corr2d_multi_in_out_1x1(X, K):
@@ -282,10 +283,10 @@ def corr2d_multi_in_out_1x1(X, K):
 
 <!--
 When performing $1\times 1$ convolution, the above function is equivalent to the previously implemented cross-correlation function `corr2d_multi_in_out`.
-Let us check this with some reference data.
+Hãy kiểm tra điều này với dữ liệu tham chiếu.
 -->
 
-*dịch đoạn phía trên*
+Khi thực hiện phép tích chập $1\times 1$, hàm bên trên tương đương với hàm tương quan chéo đã được lập trình ở `corr2d_multi_in_out`.
 
 ```{.python .input  n=7}
 X = np.random.uniform(size=(3, 3, 3))
@@ -309,7 +310,9 @@ np.abs(Y1 - Y2).sum() < 1e-6
 * The $1\times 1$ convolutional layer is typically used to adjust the number of channels between network layers and to control model complexity.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể sử dụng nhiều kênh để mở rộng các tham số mô hình của tầng tích chập.
+* Tầng tích chập $1\times 1$ khi được áp dụng lên từng điểm ảnh tương đương với tầng kết nối đầy đủ giữa các kênh.
+* Tầng tích chập $1\times 1$ thường được sử dụng để điều chỉnh số lượng kênh giữa các tầng của mạng và để kiểm soát độ phức tạp của mô hình.
 
 
 <!--
@@ -334,7 +337,19 @@ np.abs(Y1 - Y2).sum() < 1e-6
 6. How would you implement convolutions using matrix multiplication when the convolution window is not $1\times 1$?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử rằng ta có hai bộ lọc tích chập có kích thước tương ứng là $k_1$ và $k_2$ (không có tính phi tuyến ở giữa).
+    * Chứng minh rằng kết quả của phép tính có thể được biểu diễn bằng chỉ một phép tích chập.
+    * Phép tích chập tương đương này có kích thước là bao nhiêu?
+    * Điều ngược lại có đúng không?
+2. Giả sử kích thước của đầu vào là $c_i\times h\times w$ và áp dụng một bộ lọc tích chập có kích thước $c_o\times c_i\times k_h\times k_w$, đồng thời sử dụng đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
+    * Chi phí tính toán (phép nhân và phép cộng) cho lượt truyền xuôi là bao nhiêu?
+    * Dung lượng bộ nhớ cho tính toán truyền xuôi là bao nhiêu?
+    * Dung lượng bộ nhớ cho tính toán truyền ngược là bao nhiêu?
+    * Chi phí tính toán cho lượt lan truyền nguược là bao nhiêu?
+3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta gấp đôi phần đệm?
+4. Nếu chiều cao và chiều rộng của bộ lọc tích chập là $k_h =k_w=1$, thì độ phức tạp của tính toán truyền xuôi là bao nhiêu?
+5. Các biến `Y1` và` Y2` trong ví dụ cuối cùng của mục này có giống nhau không? Tại sao?
+6. Khi cửa sổ tích chập không phải là $1\times 1$, bạn sẽ lập trình các phép tích chập sử dụng phép nhân ma trận như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -378,4 +393,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
+* Phạm Hồng Vinh
