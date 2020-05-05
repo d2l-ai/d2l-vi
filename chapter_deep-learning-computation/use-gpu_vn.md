@@ -30,13 +30,13 @@ Một cách ngắn gọn, hiệu năng GPU đã tăng lên gấp 1000 lần tron
 -->
 
 | Thập niên | Tập dữ liệu                     | Bộ nhớ | Số Phép tính Dấu phẩy động trên Giây |
-|:----------|:--------------------------------|:-------|:----------------------------------|
-| 1970      |100 (Iris)                       | 1 KB   | 100 KF (Intel 8080)               |
-| 1980      |1 K (Giá nhà tại Boston)         | 100 KB | 1 MF (Intel 80186)                |
-| 1990      |10 K (Nhận diện ký tự quang học) | 10 MB  | 10 MF (Intel 80486)               |
-| 2000      |10 M (các trang web)             | 100 MB | 1 GF (Intel Core)                 |
-| 2010      |10 G (quảng cáo)                 | 1 GB   | 1 TF (NVIDIA C2050)               |
-| 2020      |1 T (mạng xã hội)                | 100 GB | 1 PF (NVIDIA DGX-2)               |
+|:----------|:--------------------------------|:-------|:-------------------------------------|
+| 1970      |100 (Iris)                       | 1 KB   | 100 KF (Intel 8080)                  |
+| 1980      |1 K (Giá nhà tại Boston)         | 100 KB | 1 MF (Intel 80186)                   |
+| 1990      |10 K (Nhận diện ký tự quang học) | 10 MB  | 10 MF (Intel 80486)                  |
+| 2000      |10 M (các trang web)             | 100 MB | 1 GF (Intel Core)                    |
+| 2010      |10 G (quảng cáo)                 | 1 GB   | 1 TF (NVIDIA C2050)                  |
+| 2020      |1 T (mạng xã hội)                | 100 GB | 1 PF (NVIDIA DGX-2)                  |
 
 <!--
 In this section, we begin to discuss how to harness this compute performance for your research. 
@@ -51,16 +51,6 @@ Bạn có thể đã nhận ra MXNet `ndarray` trông gần như giống hệt N
 Một trong những tính năng chính khiến cho MXNet khác với NumPy là MXNet hỗ trợ nhiều loại phần cứng đa dạng.
 
 <!--
-In MXNet, every array has a context. 
-In fact, whenever we displayed an `ndarray` so far, it added a cryptic `@cpu(0)` notice to the output which remained unexplained so far. 
-As we will discover, this just indicates that the computation is being executed on the CPU. 
-Other contexts might be various GPUs. 
-Things can get even hairier when we deploy jobs across multiple servers. 
-By assigning arrays to contexts intelligently, we can minimize the time spent transferring data between devices. 
-For example, when training neural networks on a server with a GPU, we typically prefer for the model’s parameters to live on the GPU.
--->
-
-<!-- UPDATE
 In MXNet, every array has a context.
 So far, by default, all variables and associated computation have been assigned to the CPU.
 Typically, other contexts might be various GPUs.
@@ -108,7 +98,7 @@ To run the programs in this section, you need at least two GPUs.
 -->
 
 Tiếp theo, cần chắc chắn rằng ta đã cài đặt phiên bản GPU của MXNet.
-Nếu phiên bản CPU của MXNet đã được cài trước, ta cần phải gỡ bỏ nó.
+Nếu phiên bản CPU của MXNet đã được cài đặt trước, ta cần phải gỡ bỏ nó.
 Ví dụ, hãy sử dụng lệnh `pip uninstall mxnet`, sau đó cài đặt phiên bản MXNet tương ứng với phiên bản CUDA.
 Giả sử như bạn đã cài CUDA 9.0, bạn có thể cài phiên bản MXNet có hỗ trợ CUDA 9.0 bằng lệnh `pip install mxnet-cu90`.
 Để chạy các chương trình trong phần này, bạn cần ít nhất hai GPU.
@@ -138,16 +128,6 @@ Tuy nhiên, việc này chỉ để minh họa cách dữ liệu được truy�
 ## Thiết bị Tính toán
 
 <!--
-MXNet can specify devices, such as CPUs and GPUs, for storage and calculation. 
-By default, MXNet creates data in the main memory and then uses the CPU to calculate it. 
-In MXNet, the CPU and GPU can be indicated by `cpu()` and `gpu()`. 
-It should be noted that `cpu()` (or any integer in the parentheses) means all physical CPUs and memory. 
-This means that MXNet's calculations will try to use all CPU cores. However, `gpu()` only represents one graphic card and the corresponding graphic memory. 
-If there are multiple GPUs, we use `gpu(i)` to represent the $i^\mathrm{th}$ GPU ($i$ starts from 0). 
-Also, `gpu(0)` and `gpu()` are equivalent.
--->
-
-<!-- UPDATE
 MXNet can specify devices, such as CPUs and GPUs, for storage and calculation.
 By default, MXNet creates data in the main memory and then uses the CPU to calculate it.
 In MXNet, the CPU and GPU can be indicated by `cpu()` and `gpu()`. 
@@ -188,7 +168,7 @@ npx.num_gpus()
 Now we define two convenient functions that allow us to run codes even if the requested GPUs do not exist.
 -->
 
-Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho phép chạy mã kể cả khi GPU được yêu cầu không tồn tại.
+Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho việc chạy mã kể cả khi GPU được yêu cầu không tồn tại.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -216,7 +196,7 @@ By default, `ndarray` objects are created on the CPU.
 We can use the `ctx` property of `ndarray` to view the device where the `ndarray` is located.
 -->
 
-Theo mặc định, các đối tượng `ndarray` được tạo trên CPU.
+Mặc định, các đối tượng `ndarray` được tạo trên CPU.
 Do đó, ta sẽ thấy định danh `@cpu(0)` mỗi khi ta in một `ndarray`.
 
 ```{.python .input  n=4}
@@ -225,21 +205,13 @@ x.ctx
 ```
 
 <!--
-We can use the `ctx` property of `ndarray` to view the device where the `ndarray` is located. 
-It is important to note that whenever we want to operate on multiple terms they need to be in the same context. 
-For instance, if we sum two variables, we need to make sure that both arguments are on the same device---otherwise MXNet 
-would not know where to store the result or even how to decide where to perform the computation.
--->
-
-<!--UPDATE
 It is important to note that whenever we want to operate on multiple terms, they need to be in the same context. 
 For instance, if we sum two ndarrays, we need to make sure that both arguments live on the same device---otherwise MXNet
 would not know where to store the result or even how to decide where to perform the computation.
 -->
 
-Ta có thể sử dụng thuộc tính `ctx` của` ndarray` để xem thiết bị nơi `ndarray` được đặt.
 Điều quan trọng cần lưu ý là bất cứ khi nào ta muốn làm các phép toán trên nhiều số hạng, chúng cần phải ở trong cùng một bối cảnh.
-Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng cả hai đối số đều nằm trên cùng một thiết bị --- nếu không thì MXNet sẽ không biết nơi lưu trữ kết quả hoặc thậm chí cách để quyết định nơi thực hiện tính toán.
+Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng cả hai đối số đều nằm trên cùng một thiết bị --- nếu không thì MXNet sẽ không biết nơi lưu trữ kết quả hoặc thậm chí cách quyết định nơi thực hiện tính toán.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -253,16 +225,6 @@ Chẳng hạn, nếu ta tính tổng hai biến, ta cần đảm bảo rằng c�
 ### Lưu trữ trên GPU
 
 <!--
-There are several ways to store an `ndarray` on the GPU. 
-For example, we can specify a storage device with the `ctx` parameter when creating an `ndarray`. 
-Next, we create the `ndarray` variable `a` on `gpu(0)`. 
-Notice that when printing `a`, the device information becomes `@gpu(0)`. 
-The `ndarray` created on a GPU only consumes the memory of this GPU. 
-We can use the `nvidia-smi` command to view GPU memory usage. 
-In general, we need to make sure we do not create data that exceeds the GPU memory limit.
--->
-
-<!-- UPDATE
 There are several ways to store an `ndarray` on the GPU.
 For example, we can specify a storage device with the `ctx` parameter when creating an `ndarray`.
 Next, we create the `ndarray` variable `a` on `gpu(0)`.
@@ -272,9 +234,10 @@ We can use the `nvidia-smi` command to view GPU memory usage.
 In general, we need to make sure we do not create data that exceeds the GPU memory limit.
 -->
 
+
 Có một số cách để lưu trữ một `ndarray` trên GPU.
 Ví dụ: ta có thể chỉ định một thiết bị lưu trữ với tham số `ctx` khi tạo một` ndarray`.
-Tiếp theo, ta tạo biến cho `ndarray` là `a` trên `gpu(0)`.
+Tiếp theo, ta tạo biến `ndarray` là `a` trên `gpu(0)`.
 Lưu ý rằng khi in `a` ra màn hình, thông tin thiết bị sẽ trở thành `@gpu(0)`.
 `ndarray` được tạo trên GPU nào chỉ chiếm bộ nhớ của GPU đó.
 Ta có thể sử dụng lệnh `nvidia-smi` để xem việc sử dụng bộ nhớ GPU.
@@ -288,6 +251,7 @@ x
 <!--
 Assuming you have at least two GPUs, the following code will create a random array on `gpu(1)`.
 -->
+
 
 Giả sử bạn có ít nhất hai GPU, đoạn mã sau sẽ tạo ra một mảng ngẫu nhiên trên `gpu(1)`.
 
@@ -307,13 +271,6 @@ y
 ### Sao chép
 
 <!--
-If we want to compute $\mathbf{x} + \mathbf{y}$ we need to decide where to perform this operation. 
-For instance, as shown in :numref:`fig_copyto`, we can transfer $\mathbf{x}$ to `gpu(1)` and perform the operation there. 
-*Do not* simply add `x + y` since this will result in an exception. 
-The runtime engine would not know what to do, it cannot find data on the same device and it fails.
--->
-
-<!-- UPDATE
 If we want to compute $\mathbf{x} + \mathbf{y}$, we need to decide where to perform this operation.
 For instance, as shown in :numref:`fig_copyto`, we can transfer $\mathbf{x}$ to `gpu(1)` and perform the operation there. 
 *Do not* simply add `x + y`, since this will result in an exception. 
@@ -322,14 +279,14 @@ The runtime engine would not know what to do, it cannot find data on the same de
 
 Nếu ta muốn tính $\mathbf{x} + \mathbf{y}$ thì ta cần quyết định nơi thực hiện phép tính này.
 Chẳng hạn, như trong :numref:`fig_copyto`, ta có thể chuyển $\mathbf{x}$ sang `gpu(1)` và thực hiện phép tính ở đó.
-*Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một ngoại lệ.
+*Đừng* chỉ thêm `x + y` vì điều này sẽ dẫn đến một lỗi. <!--Từ exception chỉ lỗi khi chạy mã chứ không phải ngoại lệ-->
 Hệ thống thời gian chạy sẽ không biết phải làm gì và gặp lỗi bởi nó không thể tìm thấy dữ liệu trên cùng một thiết bị.
 
 <!--
 ![Copyto copies arrays to the target device](../img/copyto.svg)
 -->
 
-![Lệnh copyto sao chép các mảng đến thiết bị mục tiêu](../img/copyto.svg)
+![Lệnh `copyto` sao chép các mảng đến thiết bị mục tiêu](../img/copyto.svg)
 :label:`fig_copyto`
 
 <!--
@@ -352,11 +309,6 @@ print(z)
 
 <!--
 Now that the data is on the same GPU (both $\mathbf{z}$ and $\mathbf{y}$ are), we can add them up. 
-In such cases MXNet places the result on the same device as its constituents. In our case that is `@gpu(1)`.
--->
-
-<!-- UPDATE
-Now that the data is on the same GPU (both $\mathbf{z}$ and $\mathbf{y}$ are), we can add them up. 
 In such cases, MXNet places the result on the same device as its constituents.
 In our case, that is `@gpu(1)`.
 -->
@@ -369,15 +321,6 @@ y + z
 ```
 
 <!--
-Imagine that your variable z already lives on your second GPU (gpu(1)). 
-What happens if we call z.copyto(gpu(1))? It will make a copy and allocate new memory, even though that variable already lives on the desired device!
-There are times where depending on the environment our code is running in, two variables may already live on the same device. 
-So we only want to make a copy if the variables currently lives on different contexts. 
-In these cases, we can call `as_in_ctx()`. If the variable is already the specified context then this is a no-op. 
-In fact, unless you specifically want to make a copy, `as_in_ctx()` is the method of choice.
--->
-
-<!-- UPDATE
 Imagine that your variable z already lives on your second GPU (gpu(1)).
 What happens if we call z.copyto(gpu(1))? 
 It will make a copy and allocate new memory, even though that variable already lives on the desired device!
@@ -388,8 +331,8 @@ If the variable already live in the specified context then this is a no-op.
 Unless you specifically want to make a copy, `as_in_ctx()` is the method of choice.
 -->
 
-Giả sử biến z hiện đang được lưu trong gpu(1).
-Điều gì sẽ xảy ra nếu ta gọi z.copyto(gpu(1))?
+Giả sử biến `z` hiện đang được lưu trong GPU thứ hai (gpu(1)).
+Điều gì sẽ xảy ra nếu ta gọi `z.copyto(gpu(1))`?
 Hàm này sẽ tạo một bản sao của biến và cấp phát vùng nhớ mới cho bản sao, ngay cả khi biến đang có trong thiết bị.
 Có những lúc mà tuỳ thuộc vào môi trường thực thi lệnh, hai biến có thể đã ở trên cùng một thiết bị.
 Do đó chúng ta muốn chỉ tạo bản sao khi các biến tồn tại ở các ngữ cảnh khác nhau.
@@ -434,34 +377,18 @@ y.copyto(try_gpu(1)) is y
 ### Những lưu ý bên lề
 
 <!--
-People use GPUs to do machine learning because they expect them to be fast. 
-But transferring variables between contexts is slow. 
-So we want you to be 100% certain that you want to do something slow before we let you do it. 
-If MXNet just did the copy automatically without crashing then you might not realize that you had written some slow code.
--->
-
-<!-- UPDATE
 People use GPUs to do machine learning because they expect them to be fast.
 But transferring variables between contexts is slow.
 So we want you to be 100% certain that you want to do something slow before we let you do it.
 If MXNet just did the copy automatically without crashing then you might not realize that you had written some slow code.
 -->
 
-Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng là chúng sẽ nhanh hơn.
-Nhưng việc truyền các biến giữa các ngữ cảnh lại diễn ra chậm. 
+Mọi người sử dụng GPU để thực hiện việc tính toán trong học máy vì họ kỳ vọng chúng sẽ nhanh hơn.
+Nhưng việc truyền các biến giữa các bối cảnh lại diễn ra chậm. 
 Do đó, chúng tôi mong bạn chắc chắn 100% rằng bạn muốn thực hiện một việc nào đó thật chậm trước khi chúng tôi để bạn thực hiện nó.
 Nếu MXNet chỉ thực hiện việc sao chép tự động mà không gặp sự cố thì có thể bạn sẽ không nhận ra được mình đã có những đoạn mã chưa tối ưu đến nhường nào.
 
 <!--
-Also, transferring data between devices (CPU, GPUs, other machines) is something that is *much slower* than computation. 
-It also makes parallelization a lot more difficult, since we have to wait for data to be sent (or rather to be received) before we can proceed with more operations. 
-This is why copy operations should be taken with great care. As a rule of thumb, many small operations are much worse than one big operation. 
-Moreover, several operations at a time are much better than many single operations interspersed in the code (unless you know what you are doing). 
-This is the case since such operations can block if one device has to wait for the other before it can do something else. 
-It is a bit like ordering your coffee in a queue rather than pre-ordering it by phone and finding out that it is ready when you are.
--->
-
-<!-- UPDATE
 Also, transferring data between devices (CPU, GPUs, other machines) is something that is *much slower* than computation.
 It also makes parallelization a lot more difficult, since we have to wait for data to be sent (or rather to be received) before we can proceed with more operations. 
 This is why copy operations should be taken with great care.
@@ -471,7 +398,7 @@ This is the case since such operations can block if one device  has to wait for 
 It is a bit like ordering your coffee in a queue rather than pre-ordering it by phone and finding out that it is ready when you are.
 -->
 
-Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) là việc mà nó xử lý *chậm hơn nhiều* so với thực hiện tính toán.
+Thêm vào đó, việc truyền dữ liệu giữa các thiết bị (CPU, GPU và các máy khác) *chậm hơn nhiều* so với việc thực hiện tính toán.
 Nó cũng làm cho việc song song hóa trở nên khó hơn nhiều, vì chúng ta phải chờ cho dữ liệu được gửi đi (hoặc được nhận về) trước khi chúng ta có thể tiến hành nhiều tác vụ xử lý tính toán hơn.
 Đây là lý do tại sao các hoạt động sao chép nên được dành sự lưu tâm lớn. 
 Quy tắc nằm lòng là nhiều xử lý tính toán nhỏ thì tệ hơn nhiều so với một xử lý tính toán lớn.
@@ -485,8 +412,9 @@ MXNet will copy it to the main memory first, resulting in additional transmissio
 Even worse, it is now subject to the dreaded Global Interpreter Lock that makes everything wait for Python to complete.
 -->
 
+
 Sau cùng, khi chúng ta in các `ndarray` hoặc chuyển các `ndarray` sang định dạng Numpy, nếu dữ liệu không có trong bộ nhớ chính, MXNet sẽ sao chép nó tới bộ nhớ chính trước tiên, dẫn tới việc tốn thêm thời gian chờ cho việc truyền dữ liệu. 
-Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào bộ khóa phiên dịch toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
+Thậm chí tệ hơn, điều đáng sợ lúc này là nó phụ thuộc vào Bộ Khóa Phiên dịch Toàn cục (*Global Interpreter Lock*) khiến mọi thứ phải chờ Python hoàn tất.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -509,7 +437,7 @@ how to run models on GPUs in the following, simply since they will become somewh
 -->
 
 Tương tự, mô hình của Gluon có thể chỉ định thiết bị dựa vào tham số `ctx` trong quá trình khởi tạo.
-Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau này chúng ta sẽ thấy nhiều ví dụ về cách chạy các mô hình trên GPU, đơn giản bởi chúng sẽ cần khả năng tính toán mạnh hơn phần nào).
+Đoạn mã dưới đây khởi tạo các tham số của mô hình trên GPU (sau này chúng ta sẽ thấy nhiều ví dụ về cách chạy các mô hình trên GPU, đơn giản bởi chúng phần nào sẽ cần khả năng tính toán mạnh hơn).
 
 ```{.python .input  n=12}
 net = nn.Sequential()
@@ -561,11 +489,12 @@ on the command line (or logging it in a NumPy array) will trigger a global inter
 It is much better to allocate memory for logging inside the GPU and only move larger logs.
 -->
 
+
 * MXNet có thể chỉ định các thiết bị thực hiện việc lưu trữ và tính toán như CPU hay GPU.
 Mặc định, MXNet tạo dữ liệu trên bộ nhớ chính và sử dụng CPU để tính toán.
 * MXNet yêu cầu tất cả dữ liệu đầu vào *nằm trên cùng thiết bị* trước khi thực hiện tính toán, tức cùng một CPU hoặc cùng một GPU.
 * Hiệu năng có thể giảm đáng kể nếu di chuyển dữ liệu một cách không cẩn thận.
-Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi in kết quả ra cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt trình quản lý luồng (*Global Interpreter Lock*) làm tất cả GPU dừng hoạt động.
+Một lỗi thường gặp là: việc tính toán mất mát cho các minibatch trên GPU rồi in kết quả ra cửa sổ dòng lệnh (hoặc ghi kết quả vào mảng NumPy) sẽ kích hoạt Bộ Khóa Phiên dịch Toàn cục làm tất cả GPU dừng hoạt động.
 Sẽ tốt hơn nếu cấp phát bộ nhớ cho việc ghi lại quá trình hoạt động (*logging*) ở GPU và chỉ di chuyển các bản ghi lớn.  
 
 <!--
@@ -586,17 +515,12 @@ on one GPU (hint: you should see almost linear scaling).
 
 1. Thử một tác vụ có khối lượng tính toán lớn, ví dụ như nhân các ma trận kích thước lớn để thấy sự khác nhau về tốc độ giữa CPU và GPU.
 Và với tác vụ có khối lượng tính toán nhỏ thì sao?
-2. Nên làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
+2. Làm thế nào để đọc và ghi các tham số của mô hình trên GPU?
 3. Đo thời gian thực hiện 1000 phép nhân ma trận kích thước $100 \times 100$ và ghi lại giá trị chuẩn $\mathrm{tr} M M^\top$ của từng kết quả, rồi so sánh với việc lưu tất cả giá trị chuẩn tại một bản ghi ở GPU và chỉ trả về bản ghi đó.
 4. Đo thời gian thực hiện hai phép nhân ma trận tại hai GPU cùng lúc so với việc thực hiện chúng lần lượt trên cùng một GPU (gợi ý: bạn sẽ thấy tỉ lệ gần như tuyến tính).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
-
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2330)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2330)
@@ -604,16 +528,6 @@ Và với tác vụ có khối lượng tính toán nhỏ thì sao?
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Trần Yến Thy
@@ -622,3 +536,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
 * Phạm Minh Đức
+* Vũ Hữu Tiệp

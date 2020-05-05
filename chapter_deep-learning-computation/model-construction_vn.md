@@ -75,14 +75,12 @@ Fortunately, due to some behind-the-scenes magic supplied by the `autograd` pack
 -->
 
 Để lập trình các mạng phức tạp này, ta sẽ giới thiệu khái niệm *khối* trong mạng nơ-ron. 
-Một khối có thể mô tả một tầng duy nhất, một mảng đa tầng hoặc toàn bộ một mô hình! <!-- Reviewer thấy từ này hợp lý hơn 'thành phần'('component') thì thay giúp mình nhé, thanks-->
+Một khối có thể mô tả một tầng duy nhất, một mảng đa tầng hoặc toàn bộ một mô hình!
 Dưới góc nhìn xây dựng phần mềm, một `Block` (Khối) là một *lớp*. 
 Bất kỳ một lớp con nào của `Block` đều phải định nghĩa phương thức `forward` để chuyển hóa đầu vào thành đầu ra và phải lưu trữ mọi tham số cần thiết. 
 Lưu ý rằng có một vài `Block` sẽ không yêu cầu chứa bất kỳ tham số nào cả! 
 Ngoài ra, một `Block` phải sở hữu một phương thức `backward` cho mục đích tính toán gradient. 
 May mắn thay, nhờ sự trợ giúp đắc lực của gói `autograd` (được giới thiệu trong :numref:`chap_preliminaries`) nên khi định nghĩa `Block`, ta chỉ cần quan tâm đến các tham số và hàm `forward`. 
-<!-- Cụm 'some behind-the-scenes magic' mình thấy khá hay nhưng dịch sang tiếng Việt hơi thô nên để đơn giản là 'trợ giúp', reviewer có cách dịch nào sát với sách hơn thì thay giúp mình.
-Mình không dịch các từ 'Block' (khi được viết hoa), 'forward', 'backward' vì thấy ở phần sau các từ này đ xuất hiện trong code, nên nếu dịch có thể gây nhầm lẫn, không biết mình hiểu vậy đúng không-->
 
 <!--
 One benefit of working with the `Block` abstraction is that they can be combined into larger artifacts, often recursively, (see illustration in :numref:`fig_blocks`).
@@ -108,7 +106,7 @@ To begin, we revisit the Blocks that we used to implement multilayer perceptrons
 The following code generates a network with one fully-connected hidden layer with 256 units and ReLU activation, followed by a fully-connected *output layer* with 10 units (no activation function).
 -->
 
-Để bắt đầu, ta sẽ xem lại các `Block` mà ta đã sử dụng để lập trình perceptron đa tầng (:numref:`sec_mlp_gluon`).
+Để bắt đầu, ta sẽ xem lại các khối mà ta đã sử dụng để lập trình perceptron đa tầng (:numref:`sec_mlp_gluon`).
 Đoạn mã nguồn sau tạo ra một mạng gồm một tầng ẩn kết nối đầy đủ với 256 nút sử dụng hàm kích hoạt ReLU, theo sau là một *tầng đầu ra* kết nối đầy đủ với 10 nút (không có hàm kích hoạt).
 
 ```{.python .input  n=33}
@@ -243,7 +241,7 @@ Let's try this out:
 
 Ta khởi tạo các tầng của MLP trong phương thức `__init__` (hàm khởi tạo) và sau đó gọi các tầng này mỗi khi ta gọi phương thức `forward`. 
 Hãy chú ý một vài chi tiết quan trọng. 
-Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` để tránh việc viết lại cùng một phần mã nguồn áp dụng cho hầu hết các Block. 
+Đầu tiên, phương thức `__init__` tùy chỉnh của ta gọi phương thức `__init__` của lớp cha thông qua `super(MLP, self).__init__(**kwargs)` để tránh việc viết lại cùng một phần mã nguồn áp dụng cho hầu hết các khối. 
 Chúng ta sau đó khởi tạo hai tầng `Dense`, gán chúng lần lượt là `self.hidden` và `self.output`. 
 Chú ý rằng trừ khi đang phát triển một toán tử mới, chúng ta không cần lo lắng về lan truyền ngược (phương thức `backward`) hoặc khởi tạo tham số (phương thức `initialize`).
 Gluon sẽ tự động khởi tạo các phương thức đó. 
@@ -384,7 +382,7 @@ $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, where $\mathbf{
 and $c$ is some specified constant that is not updated during optimization.
 -->
 
-Bạn đọc có thể nhận ra rằng tất cả phép toán trong mạng cho tới giờ đều thao tác trên các giá trị kích hoạt và tham số của mạng. 
+Độc giả có thể nhận ra rằng tất cả phép toán trong mạng cho tới giờ đều thao tác trên các giá trị kích hoạt và tham số của mạng. 
 Tuy nhiên, trong một vài trường hợp, ta có thể muốn kết hợp thêm các hằng số. Chúng không phải là kết quả của tầng trước mà cũng không phải là tham số có thể cập nhật được. 
 Trong Gluon, ta gọi chúng là tham số *không đổi* (_constant parameter_).
 Ví dụ ta muốn một tầng tính hàm $f(\mathbf{x},\mathbf{w}) = c \cdot \mathbf{w}^\top \mathbf{x}$, trong đó $\mathbf{x}$, $\mathbf{w}$ là tham số, và $c$ là một hằng số cho trước được giữ nguyên giá trị trong suốt quá trình tối ưu hóa. 
@@ -446,7 +444,7 @@ Ta đã chạy một vòng lặp `while`, lấy vector đầu ra chia cho $2$ ch
 Cuối cùng, ta gán giá trị đầu ra bằng tổng các phần tử trong `x`.
 Theo sự hiểu biết của chúng tôi, không có mạng nơ-ron tiêu chuẩn nào thực hiện phép toán này. 
 Lưu ý rằng phép toán đặc biệt này có thể không hữu ích gì trong các công việc ngoài thực tế. 
-Mục đích của chúng tôi ở đây là chỉ cho bạn đọc thấy được cách tích hợp một đoạn mã tùy ý vào luồng tính toán của mạng nơ-ron. 
+Mục đích của chúng tôi ở đây là chỉ cho độc giả thấy được cách tích hợp một đoạn mã tùy ý vào luồng tính toán của mạng nơ-ron. 
 
 ```{.python .input  n=39}
 net = FixedHiddenMLP()
@@ -511,14 +509,14 @@ We recommend that the interested reader check out the hybridization section (:nu
 
 Những người đọc có tâm có thể sẽ bắt đầu lo lắng về hiệu năng của một vài đoạn mã trên. 
 Sau cùng thì, chúng ta có rất nhiều thao tác truy cập từ điển, thực thi mã lập trình và rất nhiều thứ "đậm chất Python" khác xuất hiện trong thứ mà lẽ ra nên là một thư viện học sâu hiệu năng cao. 
-Vấn đề của [Khóa Trình thông dịch Toàn cục (Global Interpreter Lock)]((https://wiki.python.org/moin/GlobalInterpreterLock)) trong Python khá phổ biến. 
+Vấn đề của [Khóa Trình thông dịch Toàn cục (*Global Interpreter Lock*)](https://wiki.python.org/moin/GlobalInterpreterLock) trong Python khá phổ biến. 
 Trong bối cảnh học sâu, ta lo sợ rằng GPU cực kỳ nhanh của ta có thể sẽ phải đợi CPU "rùa bò" chạy xong những dòng lệnh Python trước khi nó có thể nhận tác vụ chạy tiếp theo.
 Cách tốt nhất để tăng tốc Python là tránh không sử dụng nó. 
 Gluon làm việc này bằng cách cho phép việc Hybrid hóa (:numref:`sec_hybridize`). 
 Ở đây, trình thông dịch của Python sẽ thực thi một Khối trong lần chạy đầu tiên.  
 Môi trường chạy của Gluon sẽ ghi lại những gì đang diễn ra và trong lần chạy tiếp theo, nó sẽ thực hiện các tác vụ gọi trong Python một cách vắn tắt hơn. 
 Điều này có thể giúp tăng tốc độ chạy đáng kể trong một vài trường hợp, tuy nhiên, ta cần quan tâm tới việc luồng điều khiển (như trên) sẽ dẫn đến những nhánh khác nhau với mỗi lần truyền qua mạng. 
-Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất chương này hãy đọc thêm mục hybrid hóa (:numref:`sec_hybridize`) để tìm hiểu về quá trình biên dịch. 
+Chúng tôi khuyến khích những độc giả có hứng thú sau khi hoàn tất chương này hãy đọc thêm mục hybrid hóa (:numref:`sec_hybridize`) để tìm hiểu về quá trình biên dịch. 
 
 <!--
 ## Summary
@@ -564,49 +562,18 @@ Chúng tôi khuyến khích những bạn đọc hiếu kỳ sau khi hoàn tất
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2325)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2325)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
-<!-- Phần 2 -->
-* Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-<!-- Phần 3 -->
 * Trần Yến Thy
-* Phạm Minh Đức
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Phạm Minh Đức
 * Phạm Hồng Vinh
-
-<!-- Phần 5 -->
 * Lý Phi Long
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
-* Phạm Hồng Vinh

@@ -23,11 +23,12 @@ In these cases, you must build a custom layer.
 In this section, we show you how.
 -->
 
-Một trong những lý do dẫn đến thành công của học sâu là sự đa dạng của các tầng có thể sử dụng trong một mạng.
-Điều này cho phép một mức độ tuỳ chỉnh và thích ứng rất lớn.
-Ví dụ, các nhà khoa học đã phát minh ra các tầng cho hình ảnh, chữ viết, gộp (*pooling*), vòng lặp, quy hoạch động, thậm chí cho cả các chương trình máy tính.
-Dù sớm hay muộn, bạn cũng sẽ gặp một tầng không có trong Gluon, hay thậm chí tuyệt vời hơn, bạn sẽ phát minh ra một tầng mới hoạt động tốt mà có thể sử dụng ngay cho bài toán của mình.
-Đó là khi bạn cần xây dựng một tầng tuỳ chỉnh. Phần này sẽ hướng dẫn bạn cách thực hiện việc này.
+Một trong những yếu tố dẫn đến thành công của học sâu là sự đa dạng của các tầng. 
+Những tầng này có thể được sắp xếp theo nhiều cách sáng tạo để thiết kế nên những kiến trúc phù hợp với nhiều tác vụ khác nhau. 
+Ví dụ, các nhà nghiên cứu đã phát minh ra các tầng chuyên dụng để xử lý ảnh, chữ viết, lặp trên dữ liệu tuần tự, thực thi quy hoạch động, v.v...
+Dù sớm hay muộn, bạn cũng sẽ gặp (hoặc sáng tạo) một tầng không có trong Gluon.
+Đối với những trường hợp như vậy, bạn cần xây dựng một tầng tuỳ chỉnh. 
+Phần này sẽ hướng dẫn bạn cách thực hiện điều đó.
 
 <!--
 ## Layers without Parameters
@@ -49,10 +50,10 @@ The following `CenteredLayer` class simply subtracts the mean from its input.
 To build it, we simply need to inherit from the Block class and implement the `forward` method.
 -->
 
-Do việc này hơi phức tạp một chút, chúng ta sẽ bắt đầu với một tầng tuỳ chỉnh (hay còn gọi là Khối) mà tự thân không có bất kì tham số nào.
-Bước đầu tiên rất giống với khi chúng ta giới thiệu các khối ở :numref:`sec_model_construction`.
-Lớp `CenteredLayer` dưới đây xây dựng một tầng có chức năng trừ đi giá trị trung bình khỏi đầu vào.
-Chúng ta xây dựng lớp này bằng việc kế thừa từ lớp `Block` và lập trình phương thức `forward`.
+Để bắt đầu, ta tạo một tầng tùy chỉnh (một Khối) không chứa bất kỳ tham số nào.
+Bước này khá quen thuộc nếu bạn còn nhớ phần giới thiệu về `Block` của Gluon tại :numref:`sec_model_construction`.
+Lớp `CenteredLayer` chỉ đơn thuần trừ đi giá trị trung bình từ đầu vào của nó.
+Để xây dựng nó, chúng ta chỉ cần kế thừa từ lớp `Block` và lập trình phương thức `forward`.
 
 ```{.python .input  n=1}
 from mxnet import gluon, np, npx
@@ -71,7 +72,7 @@ class CenteredLayer(nn.Block):
 Let us verify that our layer works as intended by feeding some data through it.
 -->
 
-Để xem tầng này hoạt động thế nào, hãy truyền vào một chút dữ liệu.
+Hãy cùng xác thực rằng tầng này hoạt động như ta mong muốn bằng cách truyền dữ liệu vào nó.
 
 ```{.python .input  n=2}
 layer = CenteredLayer()
@@ -82,7 +83,7 @@ layer(np.array([1, 2, 3, 4, 5]))
 We can now incorporate our layer as a component in constructing more complex models.
 -->
 
-Chúng ta cũng có thể sử dụng tầng này để xây dựng các mô hình phức tạp hơn.
+Chúng ta cũng có thể kết hợp tầng này như là một thành phần để xây dựng các mô hình phức tạp hơn.
 
 ```{.python .input  n=3}
 net = nn.Sequential()
@@ -101,9 +102,8 @@ As an extra sanity check, we can send random data through the network and check 
 Because we are dealing with floating point numbers, we may still see a *very* small nonzero number due to quantization.
 -->
 
-Hãy xem tầng này có hoạt động không.
-Để làm việc đó, chúng ta truyền dữ liệu ngẫu nhiên vào mạng và kiểm tra xem giá trị trung bình đã về 0 chưa.
-Chú ý rằng vì đang làm việc với các số thực dấu phẩy động, chúng ta sẽ thấy một giá trị khác không rất nhỏ.
+Để kiểm tra thêm, chúng ta có thể truyền dữ liệu ngẫu nhiên qua mạng và chứng thực xem giá trị trung bình đã về 0 hay chưa.
+Chú ý rằng vì đang làm việc với các số thực dấu phẩy động, chúng ta sẽ thấy một giá trị khác không *rất* nhỏ.
 
 ```{.python .input  n=4}
 y = net(np.random.uniform(size=(4, 8)))
@@ -335,6 +335,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
+* Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
