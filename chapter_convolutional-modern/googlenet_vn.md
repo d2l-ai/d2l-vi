@@ -5,7 +5,7 @@
 # Networks with Parallel Concatenations (GoogLeNet)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng ghép song song (GoogLeNet)
 :label:`sec_googlenet`
 
 <!--
@@ -17,26 +17,32 @@ In this section, we will introduce GoogLeNet, presenting a slightly simplified v
 omit a few ad hoc features that were added to stabilize training but are unnecessary now with better training algorithms available.
 -->
 
-*dịch đoạn phía trên*
+Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã dành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp lại những điểm mạnh của mô hình NiN và các mô hình có kiểu dạng các khối lặp.
+Trọng tâm của bài báo này là giải quyết câu hỏi với kích thước nào của lớp lọc trong tính chập thì cho ra mô hình có khả năng thể hiện tốt nhất.
+Sự thật là, các mạng phổ biến trước đây đã sử dụng những chọn lựa với kích thước lớp lọc nhỏ như $1 \times 1$ và lớn như $11 \times 11$.
+Bài báo này đã có cái nhìn sâu sắc khi chỉ ra rằng đôi khi nó có thể đem lại hiệu quả hơn khi sử dụng kết hợp các lớp lọc có kích thước khác nhau.
+Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản ban đầu---chúng tôi 
+bỏ qua một số tính năng đặc biệt được thêm vào nhằm giúp cho quá trình huấn luyện mô hình được ổn định nhưng hiện giờ lại không còn cần thiết nữa do đã được giải quyết bằng các thuật toán huấn luyện tốt hơn.
 
 <!--
 ## Inception Blocks
 -->
 
-## *dịch tiêu đề phía trên*
+## Khối Inception
 
 <!--
 The basic convolutional block in GoogLeNet is called an Inception block,
 likely named due to a quote from the movie Inception ("We Need To Go Deeper"), which launched a viral meme.
 -->
 
-*dịch đoạn phía trên*
+Khối tính chập cơ bản trong mô hình GoogLeNet được gọi là khối Inception, 
+khả năng cao là được đặt tên theo trích dẫn trong bộ phim Inception (‘We Need To Go Deeper’), mà sau này đã trở thành một meme có sức lan tỏa rất lớn trên cộng đồng mạng.
 
 <!--
 ![Structure of the Inception block. ](../img/inception.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/inception.svg)
+![Cấu trúc của khối Inception](../img/inception.svg)
 
 <!--
 As depicted in the figure above, the inception block consists of four parallel paths.
@@ -48,7 +54,13 @@ Finally, the outputs along each path are concatenated along the channel dimensio
 The commonly-tuned parameters of the Inception block are the number of output channels per layer.
 -->
 
-*dịch đoạn phía trên*
+Như đã mô tả ở hình trên, khối inception bao gồm bốn nhánh song song với nhau. 
+Ba nhánh đầu sử dụng các tầng tính chập với kích thước của cửa sổ trượt lần lượt là $1\times 1$, $3\times 3$, và $5\times 5$ để trích xuất thông tin từ các vùng không gian với các kích thước khác nhau. 
+Hai nhánh giữa thực hiện phép tính chập với kích thước cửa sổ trượt là $1\times 1$ trên dữ liệu đầu vào để giảm đi số kênh của dữ liệu đầu vào, việc này giảm thiểu độ phức tạp của mô hình.
+Nhánh thứ tư sử dụng một một tầng gộp cực đại với kích thước cửa sổ trượt là $3\times 3$, theo sau đó là một tầng gộp với kích thước cửa sổ trượt là $1\times 1$ để thay đổi số lượng kênh. 
+Cả bốn nhánh đều sử dụng một phần đệm được thêm vào hợp lý sao cho đầu vào và đầu ra của khối có cùng kích thước chiều dài và chiều rộng là như nhau.
+Cuối cùng, những đầu ra của mỗi nhánh sẽ được ghép nối lại với nhau theo chiều của kênh để tạo ra đầu ra tổng hợp cuối cùng của khối.
+Các tham số thường được điều chỉnh của khối Inception là số lượng các kênh đầu ra của mỗi tầng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -324,7 +336,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Đắc
 
 <!-- Phần 2 -->
 *
