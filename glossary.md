@@ -90,6 +90,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data manipulation       | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning           | học sâu                         |                                              |
 | deferred initialization | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
+| densely connected network | mạng kết nối dày đặc          |                                              |
 | dense layer             | tầng kết nối dày đặc            |                                              |
 | dev set                 | tập phát triển                  |                                              |
 | dev set performance     | chất lượng trên tập phát triển  |                                              |
@@ -247,6 +248,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
+| Network in Network                | Mạng trong Mạng                   |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
@@ -314,6 +316,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| Residual Network                  | Mạng Thặng dư                              |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
 | robust to noise                   | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
