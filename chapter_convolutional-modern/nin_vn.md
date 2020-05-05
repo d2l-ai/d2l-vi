@@ -143,14 +143,15 @@ for layer in net:
 ## Data Acquisition and Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập dữ liệu và Huấn luyện
 
 <!--
 As before we use Fashion-MNIST to train the model.
 NiN's training is similar to that for AlexNet and VGG, but it often uses a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây ta sử dụng Fashion-MNIST để huấn luyện mô hình.
+Huấn luyện NiN cũng tương tự như AlexNet và VGG, nhưng nó thường sử dụng một tốc độ học lớn hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 128
@@ -171,7 +172,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * The NiN design influenced many subsequent convolutional neural networks designs.
 -->
 
-*dịch đoạn phía trên*
+* NiN sử dụng các khối bao gồm một tầng tích chập chập và nhiều tầng tích chập $1\times 1$. Điều này có thể được sử dụng trong ngăn tích chập để cho phép tính phi tuyến trên mỗi điểm ảnh nhiều hơn.
+* NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng gộp trung bình toàn cục (nghĩa là tổng hợp tất cả các vị trí) sau khi giảm số lượng kênh xuống số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST).
+* Loại bỏ các tầng dày đặc làm giảm tình trạng quá khớp. NiN có số lượng tham số ít hơn đáng kể.
+* Thiết kế NiN có ảnh hưởng đến nhiều thiết kế mạng nơ ron tích chập tiếp theo.
 
 <!--
 ## Exercises
@@ -190,7 +194,14 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 4. What are possible problems with reducing the $384 \times 5 \times 5$ representation to a $10 \times 5 \times 5$ representation in one step?
 -->
 
-*dịch đoạn phía trên*
+1. Điều chỉnh các siêu tham số để cải thiện độ chính xác phân loại.
+2. Tại sao có hai tầng chập $1\times 1$ trong khối NiN? Loại bỏ một trong số chúng, sau đó quan sát và phân tích các hiện tượng thực nghiệm.
+3. Tính toán việc sử dụng tài nguyên của NiN
+     * Số lượng tham số là bao nhiêu?
+     * Số lượng tính toán là bao nhiêu?
+     * Lượng bộ nhớ cần thiết trong quá trình huấn luyện là bao nhiêu?
+     * Lượng bộ nhớ cần thiết trong quá trình suy luận là bao nhiêu?
+4. Những vấn đề có thể xảy ra với việc giảm biểu diễn $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -224,4 +235,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
