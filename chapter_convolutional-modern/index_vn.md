@@ -30,7 +30,7 @@ VGG, mạng này tận dụng một số lượng lặp đi lặp lại các kh�
 Mạng trong Mạng (*Network in Network - NiN*), kiến trúc này di chuyển toàn bộ các mạng nơ-ron theo từng điểm ảnh ở đầu vào;
 GoogLeNet, sử dụng phép nối song song giữa các mạng;
 Mạng thặng dư (*residual networks - ResNet*), đây là kiến trúc được sử dụng phổ biến nhất hiện nay;
-và Mạng Kết nối Dày đặc (*Densely Connected Network - DenseNet*), dù yêu cầu khối lượng tính toán lớn nhưng đạt được đánh giá xếp hạng cao gần đây.
+và mạng kết nối dày đặc (*densely connected network - DenseNet*), dù yêu cầu khối lượng tính toán lớn nhưng đạt được đánh giá xếp hạng cao gần đây.
 
 ```toc
 :maxdepth: 2
