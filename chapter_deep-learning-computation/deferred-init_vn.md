@@ -212,7 +212,7 @@ In order to do so, we mock up an initializer which does nothing but report a deb
 -->
 
 Giờ ta đã biết nó hoạt động như thế nào về mặt lý thuyết, hãy xem thử khi nào thì việc khởi tạo này thực sự diễn ra.
-Để làm như vậy, chúng ta cần lập trình thử một bộ khởi tạo. Nó sẽ không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
+Để làm điều này, chúng ta cần lập trình thử một bộ khởi tạo. Nó sẽ không làm gì ngoài việc gửi một thông điệp gỡ lỗi cho biết khi nào nó được gọi và cùng với các tham số nào.
 
 ```{.python .input  n=22}
 class MyInit(init.Initializer):
@@ -237,7 +237,7 @@ Therefore there is no real initialization parameter when calling the `initialize
 Next, we define the input and perform a forward calculation.
 -->
 
-Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi nó đã thực thi. 
+Lưu ý rằng, mặc dù `MyInit` sẽ in thông tin về các tham số mô hình khi nó được gọi, hàm khởi tạo `initialize` ở trên không xuất bất cứ thông tin nào sau khi được thực thi. 
 Do đó, việc khởi tạo tham số không thực sự được thực hiện khi gọi hàm `initialize`.
 Kế tiếp, ta định nghĩa đầu vào và thực hiện một lượt phép tính truyền xuôi.
 
@@ -258,9 +258,9 @@ When performing a forward calculation based on the input `x`, the system can aut
 Once the system has created these parameters, it calls the `MyInit` instance to initialize them before proceeding to the forward calculation.
 -->
 
-Lúc này, thông tin về các tham số mô hình mới được in ra.
+Lúc này, thông tin về các tham số mô hình mới được in ra. 
 Khi thực hiện lượt truyền xuôi dựa trên biến đầu vào `x`, hệ thống có thể tự động suy ra kích thước các tham số của tất cả các tầng dựa trên kích thước của biến đầu vào này. 
-Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi.
+Một khi hệ thống đã tạo ra các tham số trên, nó sẽ gọi thực thể `MyInit` để khởi tạo chúng trước khi bắt đầu thực hiện lượt truyền xuôi. 
 
 <!--
 Of course, this initialization will only be called when completing the initial forward calculation. 
@@ -272,8 +272,8 @@ This initialization will only be called when completing the initial forward calc
 After that, we will not re-initialize when we run the forward calculation `net(x)`, so the output of the `MyInit` instance will not be generated again.
 -->
 
-Tất nhiên việc khởi tạo này sẽ chỉ được gọi khi ta hoàn thành lượt truyền xuôi lần đầu tiên.
-Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi chúng ta chạy lệnh thực hiện lượt truyền xuôi `net(x)`, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa. 
+Việc khởi tạo này sẽ chỉ được gọi khi lượt truyền xuôi đầu tiên hoàn thành. 
+Sau thời điểm này, chúng ta sẽ không khởi tạo lại khi dùng lệnh `net(x)` để thực hiện lượt truyền xuôi, do đó đầu ra của thực thể `MyInit` sẽ không được sinh ra nữa.  
 
 ```{.python .input}
 y = net(x)
@@ -293,9 +293,10 @@ for example, we could not use the `data` and `set_data` functions to get and mod
 Therefore, we often force initialization by sending a sample observation through the network.
 -->
 
-Như đã đề cập ở phần mở đầu của mục này, việc khởi tạo trễ cũng có thể gây ra sự khó hiểu.
-Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
-Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách chạy một quan sát mẫu qua mạng này. 
+Như đã đề cập ở phần mở đầu của mục này, việc khởi tạo trễ cũng có thể gây ra sự khó hiểu. 
+Trước khi lượt truyền xuôi đầu tiên được thực thi, chúng ta không thể thao tác trực tiếp lên các tham số của mô hình. 
+Chẳng hạn, chúng ta sẽ không thể dùng các hàm `data` và `set_data` để nhận và thay đổi các tham số. 
+Do đó, chúng ta thường ép việc khởi tạo diễn ra bằng cách đưa một mẫu dữ liệu qua mạng này. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -317,22 +318,22 @@ Deferred initialization does not occur if the system knows the shape of all para
 This can occur in two cases:
 -->
 
-Khởi tạo trễ không xảy ra nếu hệ thống biết kích thước của tất cả các tham số khi gọi hàm `initialize`.
-Việc này có thể xảy ra trong hai trường hợp:
+Khởi tạo trễ không xảy ra nếu hệ thống đã biết kích thước của tất cả các tham số khi gọi hàm `initialize`.
+Việc này có thể xảy ra trong hai trường hợp: 
 
 <!--
 * We have already seen some data and we just want to reset the parameters.
 * We specified all input and output dimensions of the network when defining it.
 -->
 
-* Ta đã truyền dữ liệu vào mạng từ trước và chỉ muốn khởi tạo lại các tham số.
-* Ta chỉ rõ tất cả chiều đầu vào và đầu ra của mạng khi định nghĩa mạng.
+* Ta đã truyền dữ liệu vào mạng từ trước và chỉ muốn khởi tạo lại các tham số. 
+* Ta đã chỉ rõ cả chiều đầu vào và chiều đầu ra của mạng khi định nghĩa nó. 
 
 <!--
 Forced reinitialization works as illustrated below.
 -->
 
-Trường hợp thứ nhất hoạt động tốt, như minh hoạ dưới đây.
+Khởi tạo cưỡng chế hoạt động như minh hoạ dưới đây.
 
 ```{.python .input}
 net.initialize(init=MyInit(), force_reinit=True)
@@ -348,8 +349,8 @@ The second case requires that we specify all parameters when creating each layer
 For instance, for dense layers we must specify `in_units` at the time that the layer is instantiated.
 -->
 
-Trường hợp thứ hai yêu cầu chỉ rõ phần còn lại của các tham số khi tạo tầng trong mạng.
-Ví dụ, với các tầng kết nối đầy đủ chúng ta cần chỉ rõ `in_units` để việc khởi tạo có thể được thực hiện ngay khi `initialize` được gọi.
+Trường hợp thứ hai yêu cầu ta chỉ rõ tất cả tham số khi tạo mỗi tầng trong mạng.
+Ví dụ, với các tầng kết nối dày đặc thì chúng ta cần chỉ rõ `in_units` tại thời điểm tầng đó được khởi tạo.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -377,9 +378,9 @@ net.initialize(init=MyInit())
 * We can forcibly re-initialize a network's parameters by invoking initalize with the `force_reinit=True` flag.
 -->
 
-* Khởi tạo trễ là một điều tốt. Nó cho phép Gluon gán giá trị một cách tự động và loại bỏ nhiều nguồn gây lỗi trong việc định nghĩa các kiến trúc mạng mới lạ.
-* Chúng ta có thể ghi đè việc khởi tạo này bằng cách chỉ rõ giá trị của tất cả các biến ngầm định.
-* Việc khởi tạo có thể được lặp lại (hoặc bị cưỡng chế) bằng việc gán cờ `force_reinit=True`.
+* Khởi tạo trễ có thể khá tiện lợi, cho phép Gluon suy ra kích thước của tham số một cách tự động và nhờ vậy giúp ta dễ dàng sửa đổi các kiến trúc mạng cũng như loại bỏ những nguồn gây lỗi thông dụng. 
+* Chúng ta không cần khởi tạo trễ khi đã định nghĩa các biến một cách tường minh.
+* Chúng ta có thể cưỡng chế việc khởi tạo lại các tham số mạng bằng cách gọi khởi tạo với `force_reinit=True`. 
 
 <!--
 ## Exercises
@@ -393,9 +394,9 @@ net.initialize(init=MyInit())
 3. What would you need to do if you have input of varying dimensionality? Hint - look at parameter tying.
 -->
 
-1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ vài phần của các chiều đầu vào? Có thể vẫn khởi tạo ngay lập tức được không?
-2. Chuyện gì xảy ra nếu ta truyền vào giá trị chiều không phù hợp?
-3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - tìm hiểu về ràng buộc tham số (*parameter tying*).
+1. Chuyện gì xảy ra nếu ta chỉ chỉ rõ chiều đầu vào của tầng đầu tiên nhưng không làm vậy với các tầng tiếp theo? Việc khởi tạo có xảy ra ngay lập tức không?
+2. Chuyện gì xảy ra nếu ta chỉ định các chiều không khớp nhau? 
+3. Bạn cần làm gì nếu đầu vào có chiều biến thiên? Gợi ý - hãy tìm hiểu về cách ràng buộc tham số (*parameter tying*). 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
