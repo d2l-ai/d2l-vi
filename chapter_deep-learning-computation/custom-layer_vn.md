@@ -139,11 +139,10 @@ In particular, they govern access, initialization, sharing, saving and loading m
 This way, among other benefits, we will not need to write custom serialization routines for every custom layer.
 -->
 
-Bây giờ về nguyên tắc ta đã biết cách định nghĩa các tầng, hãy chuyển sang việc định nghĩa các tầng có tham số.
-Các tham số có thể được điều chỉnh thông qua quá trình huấn luyện.
-Lớp `Parameter` và từ điển `ParameterDict` sẽ cung cấp một số tính năng quản trị cơ bản nhằm đơn giản hóa công việc cho các nhà nghiên cứu học sâu.
-Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và nạp các tham số mô hình.
-Bằng cách này, ta không cần phải viết lại các thủ tục tuần tự hóa cho mỗi tầng tùy chỉnh mới.
+Giờ đây ta đã biết cách định nghĩa các tầng đơn giản, hãy chuyển sang việc định nghĩa các tầng chứa tham số có thể điều chỉnh được trong quá trình huấn luyện. 
+Để tự động hóa các công việc lặp lại, lớp `Parameter` và từ điển `ParameterDict` cung cấp một số tính năng quản trị cơ bản. 
+Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và nạp các tham số mô hình. 
+Bằng cách này, cùng với nhiều lợi ích khác, ta không cần phải viết lại các thủ tục tuần tự hóa (_serialization_) cho mỗi tầng tùy chỉnh mới.
 
 <!--
 For instance, we can use the member variable `params` of the `ParameterDict` type that comes with the Block class. 
@@ -156,10 +155,9 @@ The `Block` class contains a `params` variable of the `ParameterDict` type.
 This dictionary maps strings representing parameter names to model parameters (of the `Parameter` type). 
 The `ParameterDict` also supplied a `get` function that makes it easy to generate a new parameter with a specified name and shape.
 -->
-
-Ví dụ, ta có thể sử dụng biến thành viên `params` với kiểu `ParameterDict` đi kèm với lớp `Block`.
-Nó là một từ điển ánh xạ các xâu kí tự là tên tham số sang các tham số mô hình có kiểu `Parameter`.
-Ta có thể tạo một thực thể `Parameter` từ `ParameterDict` thông qua hàm `get`.
+Lớp `Block` chứa biến `params` với kiểu dữ liệu `ParameterDict`.
+Từ điển này ánh xạ các xâu kí tự biểu thị tên tham số đến các tham số mô hình (thuộc kiểu `Parameter`).
+`ParameterDict` cũng cung cấp hàm `get` giúp việc tạo tham số mới với tên và chiều cụ thể trở nên dễ dàng.
 
 ```{.python .input  n=7}
 params = gluon.ParameterDict()
@@ -178,14 +176,13 @@ It uses ReLU as an activation function, where `in_units` and `units` are the num
 We now have all the basic ingredients that we need to implement our own version of Gluon's `Dense` layer. 
 Recall that this layer requires two parameters, one to represent the weight and another for the bias. 
 In this implementation, we bake in the ReLU activation as a default.
-In the `__init__` function, `in_units` and `units` denote the number of inputs and outputs, respectively.
+In the `__init__`, function, `in_units` and `units` denote the number of inputs and outputs, respectively.
 -->
 
-Ta sẽ sử dụng biến `params` này để tự lập trình một phiên bản khác của tầng `Dense`.
-Tầng này gồm có hai tham số: hệ số điều chỉnh và trọng số. Để biến tấu một chút, ta sẽ mặc định sử dụng hàm kích hoạt ReLU.
-Tiếp theo, ta lập trình một tầng kết nối đầy đủ với cả trọng số và hệ số điều chỉnh.
-Tầng này sử dụng hàm kích hoạt ReLU, trong đó `in_units` và `units` lần lượt là số lượng đầu vào và số lượng đầu ra.
-
+Giờ đây chúng ta đã có tất cả các thành phần cơ bản cần thiết để tự tạo một phiên bản tùy chỉnh của tầng `Dense` trong Gluon. 
+Chú ý rằng tầng này yêu cầu hai tham số: một cho trọng số và một cho hệ số điều chỉnh. 
+Trong cách lập trình này, ta sử dụng hàm kích hoạt mặc định là hàm ReLU. 
+Trong hàm `__init__`, `in_units` và `units` biểu thị lần lượt số lượng đầu vào và đầu ra. 
 
 ```{.python .input  n=19}
 class MyDense(nn.Block):
@@ -214,9 +211,10 @@ Next, we instantiate the `MyDense` class and access its model parameters.
 Note that the Block's name is automatically prepended to each Parameter's name.
 -->
 
-Việc đặt tên cho các tham số sẽ cho phép ta sau này truy cập chúng theo tên thông qua việc tra cứu từ điển.
-Vì vậy, việc sử dụng các tên có tính chất gợi nhớ sẽ là một ý tưởng hay.
+Việc đặt tên cho các tham số cho phép ta truy cập chúng theo tên thông qua tra cứu từ điển sau này. 
+Nhìn chung, bạn sẽ muốn đặt cho các biến những tên đơn giản biểu thị rõ mục đích của chúng.
 Tiếp theo, ta sẽ khởi tạo lớp `MyDense` và truy cập các tham số mô hình.
+Lưu ý rằng tên của Khối được tự động thêm vào trước tên các tham số.
 
 ```{.python .input}
 dense = MyDense(units=3, in_units=5)
@@ -227,7 +225,7 @@ dense.params
 We can directly carry out forward calculations using custom layers.
 -->
 
-Ta có thể trực tiếp sử dụng các tầng tùy chỉnh để thực thi các phép tính trong lượt truyền xuôi.
+Ta có thể trực tiếp thực thi các phép tính truyền xuôi có sử dụng các tầng tùy chỉnh.
 
 
 ```{.python .input  n=20}
@@ -249,10 +247,10 @@ The only exception is that in our case, shape inference is not automatic.
 If you are interested in these bells and whisteles, please consult the [MXNet documentation](http://www.mxnet.io) for details on how to implement shape inference in custom layers.
 -->
 
-Các tầng tùy chỉnh cũng có thể được dùng để xây dựng mô hình.
-Các tầng này có thể được sử dụng giống như các tầng dày đặc được lập trình sẵn.
+Các tầng tùy chỉnh cũng có thể được dùng để xây dựng mô hình. 
+Chúng có thể được sử dụng như các tầng kết nối dày đặc được lập trình sẵn.
 Ngoại lệ duy nhất là việc suy luận kích thước sẽ không được thực hiện tự động.
-Để biết thêm chi tiết về cách thực hiện việc này, vui lòng tham khảo [tài liệu MXNet] (http://www.mxnet.io).
+Để biết thêm chi tiết về cách thực hiện việc này, vui lòng tham khảo [tài liệu MXNet](http://www.mxnet.io).
 
 ```{.python .input  n=19}
 net = nn.Sequential()
@@ -283,9 +281,9 @@ net(np.random.uniform(size=(2, 64)))
 * Blocks can have local parameters, which are stored as a `ParameterDict` object in each Blovk's `params` attribute.
 -->
 
-* Ta có thể thiết kế các tầng tùy chỉnh thông qua lớp Block. Cách này linh hoạt hơn việc định nghĩa một khối vì các tầng tùy chỉnh có thể được gọi trong nhiều ngữ cảnh khác nhau.
-* Các khối có thể có các tham số cục bộ.
-
+* Ta có thể thiết kế các tầng tùy chỉnh thông qua lớp `Block`. Điều này cho phép ta định nghĩa một cách linh hoạt các tầng có cách hoạt động khác với các tầng có sẵn trong thư viện.
+* Một khi đã được định nghĩa, các tầng tùy chỉnh có thể được gọi trong những bối cảnh và kiến trúc tùy ý.
+* Các khối có thể có các tham số cục bộ, được lưu trữ dưới dạng đối tượng `ParameterDict` trong mỗi thuộc tính `params` của Block.
 
 <!--
 ## Exercises
@@ -305,9 +303,9 @@ net(np.random.uniform(size=(2, 64)))
 3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
 -->
 
-1. Thiết kế một tầng học một phép biến đổi affine của dữ liệu, tức là, loại bỏ giá trị trung bình và thay vào đó học một tham số phụ gia. <!--  -->
-2. Thiết kế một tầng nhận đầu vào và tính toán phép giảm tensor, tức là, trả về $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
-3. Thiết kế một tầng trả về nửa đầu của các hệ số Fourier của dữ liệu. Gợi ý: tra cứu hàm `fft` trong MXNet.
+1. Thiết kế một tầng có khả năng học một phép biến đổi affine của dữ liệu. 
+2. Thiết kế một tầng nhận đầu vào và tính toán phép giảm tensor, tức trả về $y_k = \sum_{i, j} W_{ijk} x_i x_j$. 
+3. Thiết kế một tầng trả về nửa đầu của các hệ số Fourier của dữ liệu. Gợi ý: hãy tra cứu hàm `fft` trong MXNet. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
