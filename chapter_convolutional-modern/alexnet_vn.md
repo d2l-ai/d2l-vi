@@ -296,10 +296,10 @@ Moreover, AlexNet has ten times more convolution channels than LeNet.
 -->
 
 Trong tầng thứ nhất của AlexNet, kích thước cửa sổ tích chập là $11\times11$.
-Vì hầu hết các ảnh trong ImageNet có chiều cao và chiều rộng gấp hơn mười lần so với ảnh trong MNIST nên các đối tượng trong dữ liệu ImageNet có xu hướng chiếm nhiều điểm ảnh hơn.
-Do đó, một cửa sổ chập lớn hơn là cần thiết để chụp được các đối tượng này.
+Vì hầu hết các ảnh trong ImageNet đều có chiều cao và chiều rộng lớn gấp hơn mười lần so với các ảnh trong MNIST nên các đối tượng trong dữ liệu ImageNet thường có xu hướng chiếm nhiều điểm ảnh hơn.
+Do đó, để chụp được các đối tượng này thì việc sử dụng một cửa sổ tích chập lớn hơn là điều cần thiết.
 Kích thước cửa sổ tích chập trong tầng thứ hai được giảm xuống $5\times5$ và sau đó là $3\times3$.
-Ngoài ra, theo sau các tầng chập thứ nhất, thứ hai và thứ năm là các tầng gộp cực đại với kích thước cửa sổ là $3\times3$ với sải bước bằng 2.
+Ngoài ra, theo sau các tầng chập thứ nhất, thứ hai và thứ năm là các tầng gộp cực đại với kích thước cửa sổ là $3\times3$ và sải bước bằng 2.
 Hơn nữa, số lượng các kênh tích chập trong AlexNet nhiều hơn gấp mười lần so với LeNet.
 
 <!--
@@ -336,9 +336,9 @@ Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng một hàm kích h
 Một mặt, việc tính toán hàm kích hoạt ReLU đơn giản hơn.
 Ví dụ, nó không có phép lũy thừa như trong hàm kích hoạt sigmoid.
 Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình trở nên dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau.
-Điều này là do, khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1, gradient của các vùng này gần như bằng 0 khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
+Điều này là do khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1 thì gradient sẽ gần như bằng 0 và khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
 Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn bằng 1.
-Do đó, nếu các tham số mô hình không được khởi tạo đúng cách, hàm sigmoid có thể thu được gradient gần bằng 0 trong khoảng dương, dẫn đến mô hình không thể được huấn luyện một cách hiệu quả.
+Do đó, nếu các tham số mô hình không được khởi tạo đúng cách thì hàm sigmoid có thể thu được gradient gần bằng 0 trong khoảng dương và dẫn đến mô hình không thể được huấn luyện một cách hiệu quả.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -534,7 +534,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 7 -->
 *
