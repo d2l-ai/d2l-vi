@@ -82,7 +82,7 @@ def nin_block(num_channels, kernel_size, strides, padding):
 ## NiN Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình NiN
 
 <!--
 The original NiN network was proposed shortly after AlexNet and clearly draws some inspiration.
@@ -90,7 +90,9 @@ NiN uses convolutional layers with window shapes of $11\times 11$, $5\times 5$, 
 Each NiN block is followed by a maximum pooling layer with a stride of 2 and a window shape of $3\times 3$.
 -->
 
-*dịch đoạn phía trên*
+Cấu trúc mạng mới NiN được đề xuất một thời gian ngắn sau AlexNet và tạo được một vài cảm hứng rõ rệt.
+NiN sử dụng các tầng tích chập có kích thước cửa sổ $11\times 11$, $5\times 5$, và $3\times 3$, số lượng các kênh đầu ra tương ứng giống với AlexNet.
+Mỗi khối NiN theo sau bởi một tầng gộp cực đại với sải bước 2 và kích thước cửa sổ $3\times 3$.
 
 <!--
 Once significant difference between NiN and AlexNet is that NiN avoids dense connections altogether.
@@ -100,7 +102,11 @@ One advantage of NiN's design is that it significantly reduces the number of req
 However, in practice, this design sometimes requires increased model training time.
 -->
 
-*dịch đoạn phía trên*
+Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh sử dụng các kết nối dày đặc hoàn toàn.
+Thay vào đó, mạng này sử dụng các khối NiN với số kênh đầu ra bằng với số lớp nhãn, theo sau bởi một tầng gộp trung bình *toàn cục*,
+tạo ra một vector [logits](https://en.wikipedia.org/wiki/Logit).
+Một lợi thế của thiết kế NiN là giảm được các tham số cần thiết của mô hình một cách đáng kể.
+Tuy nhiên, trong thực tế, cách thiết kế này đôi lúc cần tăng thời gian huấn luyện mô hình.
 
 ```{.python .input  n=9}
 net = nn.Sequential()
@@ -125,7 +131,7 @@ net.add(nin_block(96, kernel_size=11, strides=4, padding=0),
 We create a data example to see the output shape of each block.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tạo một mẫu dữ liệu để xem kích thước đầu ra của từng khối.
 
 ```{.python .input}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -221,7 +227,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
