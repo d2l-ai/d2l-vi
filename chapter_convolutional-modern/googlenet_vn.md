@@ -216,7 +216,11 @@ This block uses the global average pooling layer to change the height and width 
 Finally, we turn the output into a two-dimensional array followed by a fully-connected layer whose number of outputs is the number of label classes.
 -->
 
-*dịch đoạn phía trên*
+Khối thứ năm có hai khối Inception với số lượng kênh đầu ra lần lượt là $256+320+128+128=832$ và $384+384+128+128=1024$. 
+Số lượng kênh được chỉ định cho mỗi đường dẫn tương tự với mô đun thứ ba và thứ tư, nhưng khác nhau ở giá trị cụ thể.
+Cần lưu ý rằng khối thứ năm được theo sau bởi tầng đầu ra.
+Khối này sử dụng tầng gộp trung bình toàn cục để thay đổi chiều cao và chiều rộng của mỗi kênh thành 1, giống như trong mô hình NiN. 
+Cuối cùng, chúng ta chuyển đổi đầu ra thành một mảng hai chiều, theo sau là một lớp kết nối đầy đủ với số lượng đầu ra bằng với số lượng các lớp nhãn.
 
 ```{.python .input  n=6}
 b5 = nn.Sequential()
@@ -235,7 +239,10 @@ This simplifies the computation.
 The changes in the shape of the output between the various modules is demonstrated below.
 -->
 
-*dịch đoạn phía trên*
+Mô hình GoogLeNet thì phức tạp về mặt tính toán, vì vậy nó không dễ để thay đổi được số lượng kênh giống như trong mô hình VGG.
+Để có thời gian huấn luyện hợp lý trên bộ dữ liệu Fashion-MNIST, chúng ta cần giảm chiều cao và rộng của đầu vào từ 224 xuống 96.
+Điều này làm đơn giản hoá việc tính toán.
+Những thay đổi về kích thước của đầu ra giữa các mô đun khác nhau được trình bày dưới đây.
 
 ```{.python .input  n=7}
 X = np.random.uniform(size=(1, 1, 96, 96))
