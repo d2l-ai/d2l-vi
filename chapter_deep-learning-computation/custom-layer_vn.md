@@ -139,10 +139,10 @@ In particular, they govern access, initialization, sharing, saving and loading m
 This way, among other benefits, we will not need to write custom serialization routines for every custom layer.
 -->
 
-Giờ đây ta đã biết cách định nghĩa các tầng đơn giản, hãy chuyển sang việc định nghĩa các tầng chứa tham số có thể điều chỉnh trong quá trình huấn luyện. 
+Giờ đây ta đã biết cách định nghĩa các tầng đơn giản, hãy chuyển sang việc định nghĩa các tầng chứa tham số có thể điều chỉnh được trong quá trình huấn luyện. 
 Để tự động hóa các công việc lặp lại, lớp `Parameter` và từ điển `ParameterDict` cung cấp một số tính năng quản trị cơ bản. 
 Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, lưu và nạp các tham số mô hình. 
-Bằng cách này, cùng với nhiều lợi ích khác, ta không cần phải viết lại các thủ tục tuần tự hóa cho mỗi tầng tùy chỉnh mới.
+Bằng cách này, cùng với nhiều lợi ích khác, ta không cần phải viết lại các thủ tục tuần tự hóa (_serialization_) cho mỗi tầng tùy chỉnh mới.
 
 <!--
 For instance, we can use the member variable `params` of the `ParameterDict` type that comes with the Block class. 
@@ -156,7 +156,7 @@ This dictionary maps strings representing parameter names to model parameters (o
 The `ParameterDict` also supplied a `get` function that makes it easy to generate a new parameter with a specified name and shape.
 -->
 Lớp `Block` chứa biến `params` với kiểu dữ liệu `ParameterDict`.
-Từ điển này ánh xạ các xâu kí tự biểu thị tên tham số vào các tham số mô hình (thuộc kiểu `Parameter`).
+Từ điển này ánh xạ các xâu kí tự biểu thị tên tham số đến các tham số mô hình (thuộc kiểu `Parameter`).
 `ParameterDict` cũng cung cấp hàm `get` giúp việc tạo tham số mới với tên và chiều cụ thể trở nên dễ dàng.
 
 ```{.python .input  n=7}
