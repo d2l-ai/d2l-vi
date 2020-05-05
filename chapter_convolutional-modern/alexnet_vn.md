@@ -530,7 +530,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 8 -->
 *
