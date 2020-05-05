@@ -154,7 +154,7 @@ Only once we pass data through the network will MXNet finally initialize paramet
 -->
 
 Như ta đã thấy, không có gì thay đổi ở đây cả.
-Dù đã biết chiều đầu vào, gọi phương thức khởi tạo không thực sự khởi tạo các tham số.
+Khi chưa biết chiều của đầu vào, việc gọi phương thức khởi tạo không thực sự khởi tạo các tham số.
 Thay vào đó, việc gọi phương thức trên sẽ chỉ đăng ký với MXNet là chúng ta muốn khởi tạo các tham số và phân phối mà ta muốn dùng để khởi tạo (không bắt buộc).
 Chỉ khi truyền dữ liệu qua mạng thì MXNet mới khởi tạo các tham số và ta mới thấy được sự khác biệt. 
 
