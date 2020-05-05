@@ -8,14 +8,6 @@
 # Các tầng Tuỳ chỉnh
 
 <!--
-One of the reasons for the success of deep learning can be found in the wide range of layers that can be used in a deep network. 
-This allows for a tremendous degree of customization and adaptation. 
-For instance, scientists have invented layers for images, text, pooling, loops, dynamic programming, even for computer programs. 
-Sooner or later you will encounter a layer that does not exist yet in Gluon, or even better, you will eventually invent a new layer that works well for your problem at hand. 
-This is when it is time to build a custom layer. This section shows you how.
--->
-
-<!-- UPDATE
 One of factors behind deep learnings success is the availability of a wide range of layers that can be composed in creative ways to design architectures suitable for a wide variety of tasks.
 For instance, researchers have invented layers specifically for handling images, text, looping over sequential data, performing dynamic programming, etc.
 Sooner or later you will encounter (or invent) a layer that does not exist yet in Gluon,
@@ -37,13 +29,6 @@ Phần này sẽ hướng dẫn bạn cách thực hiện điều đó.
 ## Các tầng không có Tham số
 
 <!--
-Since this is slightly intricate, we start with a custom layer (also known as Block) that does not have any inherent parameters. 
-Our first step is very similar to when we introduced blocks in :numref:`sec_model_construction`. 
-The following `CenteredLayer` class constructs a layer that subtracts the mean from the input.
-We build it by inheriting from the Block class and implementing the `forward` method.
--->
-
-<!-- UPDATE
 To start, we construct a custom layer (a Block) that does not have any parameters of its own. 
 This should look familiar if you recall our introduction to Gluon's `Block` in :numref:`sec_model_construction`. 
 The following `CenteredLayer` class simply subtracts the mean from its input. 
@@ -92,12 +77,6 @@ net.initialize()
 ```
 
 <!--
-Let's see whether the centering layer did its job. 
-For that we send random data through the network and check whether the mean vanishes. 
-Note that since we are dealing with floating point numbers, we are going to see a very small albeit typically nonzero number.
--->
-
-<!-- UPDATE
 As an extra sanity check, we can send random data through the network and check that the mean is in fact 0.
 Because we are dealing with floating point numbers, we may still see a *very* small nonzero number due to quantization.
 -->
@@ -125,14 +104,6 @@ y.mean()
 ## Tầng có Tham số
 
 <!--
-Now that we know how to define layers in principle, let's define layers with parameters. 
-These can be adjusted through training. 
-In order to simplify things for an avid deep learning researcher the `Parameter` class and the `ParameterDict` dictionary provide some basic housekeeping functionality. 
-In particular, they govern access, initialization, sharing, saving and loading model parameters. 
-For instance, this way we do not need to write custom serialization routines for each new custom layer.
--->
-
-<!-- UPDATE
 Now that we know how to define simple layers let us move on to defining layers with parameters that can be adjusted through training. 
 To automate some of the routine work the `Parameter` class and the `ParameterDict` dictionary provide some basic housekeeping functionality.
 In particular, they govern access, initialization, sharing, saving and loading model parameters. 
@@ -145,16 +116,11 @@ Cụ thể, chúng sẽ quản lý việc truy cập, khởi tạo, chia sẻ, l
 Bằng cách này, cùng với nhiều lợi ích khác, ta không cần phải viết lại các thủ tục tuần tự hóa (_serialization_) cho mỗi tầng tùy chỉnh mới.
 
 <!--
-For instance, we can use the member variable `params` of the `ParameterDict` type that comes with the Block class. 
-It is a dictionary that maps string type parameter names to model parameters in the `Parameter` type.
-We can create a `Parameter` instance from `ParameterDict` via the `get` function.
--->
-
-<!-- UPDATE
 The `Block` class contains a `params` variable of the `ParameterDict` type. 
 This dictionary maps strings representing parameter names to model parameters (of the `Parameter` type). 
 The `ParameterDict` also supplied a `get` function that makes it easy to generate a new parameter with a specified name and shape.
 -->
+
 Lớp `Block` chứa biến `params` với kiểu dữ liệu `ParameterDict`.
 Từ điển này ánh xạ các xâu kí tự biểu thị tên tham số đến các tham số mô hình (thuộc kiểu `Parameter`).
 `ParameterDict` cũng cung cấp hàm `get` giúp việc tạo tham số mới với tên và chiều cụ thể trở nên dễ dàng.
@@ -166,13 +132,6 @@ params
 ```
 
 <!--
-Let's use this to implement our own version of the dense layer. 
-It has two parameters: bias and weight. To make it a bit nonstandard, we bake in the ReLU activation as default. 
-Next, we implement a fully connected layer with both weight and bias parameters.
-It uses ReLU as an activation function, where `in_units` and `units` are the number of inputs and the number of outputs, respectively.
--->
-
-<!-- UPDATE
 We now have all the basic ingredients that we need to implement our own version of Gluon's `Dense` layer. 
 Recall that this layer requires two parameters, one to represent the weight and another for the bias. 
 In this implementation, we bake in the ReLU activation as a default.
@@ -199,12 +158,6 @@ class MyDense(nn.Block):
 ```
 
 <!--
-Naming the parameters allows us to access them by name through dictionary lookup later. 
-It is a good idea to give them instructive names. 
-Next, we instantiate the `MyDense` class and access its model parameters.
--->
-
-<!-- UPDATE
 Naming our parameters allows us to access them by name through dictionary lookup later.
 Generally, you will want to give your variables simple names that make their purpose clear.
 Next, we instantiate the `MyDense` class and access its model parameters.
@@ -234,13 +187,6 @@ dense(np.random.uniform(size=(2, 5)))
 ```
 
 <!--
-We can also construct models using custom layers. 
-Once we have that we can use it just like the built-in dense layer. 
-The only exception is that in our case size inference is not automatic. 
-Please consult the [MXNet documentation](http://www.mxnet.io) for details on how to do this.
--->
-
-<!-- UPDATE
 We can also construct models using custom layers.
 Once we have that we can use it just like the built-in dense layer.
 The only exception is that in our case, shape inference is not automatic. 
@@ -271,11 +217,6 @@ net(np.random.uniform(size=(2, 64)))
 ## Tóm tắt
 
 <!--
-* We can design custom layers via the Block class. This is more powerful than defining a block factory, since it can be invoked in many contexts.
-* Blocks can have local parameters.
--->
-
-<!-- UPDATE
 * We can design custom layers via the Block class. This allows us to define flexible new layers that behave differently from any existing layers in the library.
 * Once defined, custom layers can be invoked in arbitrary contexts and architectures.
 * Blocks can have local parameters, which are stored as a `ParameterDict` object in each Blovk's `params` attribute.
@@ -292,12 +233,6 @@ net(np.random.uniform(size=(2, 64)))
 ## Bài tập
 
 <!--
-1. Design a layer that learns an affine transform of the data, i.e., it removes the mean and learns an additive parameter instead.
-2. Design a layer that takes an input and computes a tensor reduction, i.e., it returns $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
-3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
--->
-
-<!-- UPDATE
 1. Design a layer that learns an affine transform of the data.
 2. Design a layer that takes an input and computes a tensor reduction, i.e., it returns $y_k = \sum_{i, j} W_{ijk} x_i x_j$.
 3. Design a layer that returns the leading half of the Fourier coefficients of the data. Hint: look up the `fft` function in MXNet.
@@ -310,38 +245,17 @@ net(np.random.uniform(size=(2, 64)))
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2328)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2328)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-<!-- Phần 2 -->
 * Nguyễn Duy Du
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
-* Lê Khắc Hồng Phúc

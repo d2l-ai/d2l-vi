@@ -43,3 +43,5 @@
 | 39. | [buiminhptit](https://github.com/buiminhptit)                   | Bùi Chí Minh                   |
 | 40. | [cuongvng](https://github.com/cuongvng)                         | Nguyễn Văn Cường               |
 | 41. | [thhung](https://github.com/thhung)                             | Nguyễn Thành Hưng              |
+| 42. | [namndtth](https://github.com/namndtth)                         | Nguyễn Đình Nam                |
+| 43. | [dacdinh147](https://github.com/dacdinh147)                     | Đinh Đắc                       |

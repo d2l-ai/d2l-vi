@@ -26,7 +26,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | attention mechanisms                  | cơ chế tập trung          |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | automatic differentiation             | tính vi phân tự động      | [https://git.io/JvojU](https://git.io/JvojU) |
-| average pooling                       | gộp trung bình            |                                              |
+| average pooling                       | gộp trung bình            | [https://git.io/JfGi6](https://git.io/JfGi6) |
 
 ## B
 | English                 | Tiếng Việt                     | Thảo luận tại                                |
@@ -79,34 +79,34 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | cross validation                    | kiểm định chéo         |                                              |
 
 ## D
-| English                 | Tiếng Việt                      | Thảo luận tại                                |
-|-------------------------|---------------------------------|----------------------------------------------|
-| data                    | dữ liệu                         |                                              |
-| data science            | khoa học dữ liệu                | [https://git.io/JvojD](https://git.io/JvojD) |
-| data scientist          | nhà khoa học dữ liệu            | [https://git.io/JvojD](https://git.io/JvojD) |
-| datapoint (data point)  | điểm dữ liệu                    |                                              |
-| data mismatch           | dữ liệu không tương đồng        |                                              |
-| dataset (data set)      | tập dữ liệu                     |                                              |
-| data manipulation       | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
-| deep learning           | học sâu                         |                                              |
-| deferred initialization | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
-| densely connected network | mạng kết nối dày đặc          |                                              |
-| dense layer             | tầng kết nối dày đặc            |                                              |
-| dev set                 | tập phát triển                  |                                              |
-| dev set performance     | chất lượng trên tập phát triển  |                                              |
-| development set         | tập phát triển                  |                                              |
-| differentiable          | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
-| distribution            | phân phối                       |                                              |
-| domain adaptation       | thích ứng miền                  |                                              |
-| dot product             | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
-| dropout                 | dropout                         |                                              |
+| English                   | Tiếng Việt                      | Thảo luận tại                                |
+|---------------------------|---------------------------------|----------------------------------------------|
+| data                      | dữ liệu                         |                                              |
+| data science              | khoa học dữ liệu                | [https://git.io/JvojD](https://git.io/JvojD) |
+| data scientist            | nhà khoa học dữ liệu            | [https://git.io/JvojD](https://git.io/JvojD) |
+| datapoint (data point)    | điểm dữ liệu                    |                                              |
+| data mismatch             | dữ liệu không tương đồng        |                                              |
+| dataset (data set)        | tập dữ liệu                     |                                              |
+| data manipulation         | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
+| deep learning             | học sâu                         |                                              |
+| deferred initialization   | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
+| densely connected network | mạng kết nối dày đặc            | [https://git.io/JfGi1](https://git.io/JfGi1) |
+| dense layer               | tầng kết nối dày đặc            |                                              |
+| dev set                   | tập phát triển                  |                                              |
+| dev set performance       | chất lượng trên tập phát triển  |                                              |
+| development set           | tập phát triển                  |                                              |
+| differentiable            | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
+| distribution              | phân phối                       |                                              |
+| domain adaptation         | thích ứng miền                  |                                              |
+| dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
+| dropout                   | dropout                         |                                              |
 
 ## E
 | English                  | Tiếng Việt             | Thảo luận tại                                  |
 |--------------------------|------------------------|------------------------------------------------|
 | early stopping           | dừng sớm               |                                                |
-| edge (computer vision)   | biên                   |                                                |
-| edge detector        | bộ phát hiện biên        |                                                                |
+| edge (computer vision)   | biên                   | [https://git.io/JfGiw](https://git.io/JfGiw)   |
+| edge detector            | bộ phát hiện biên      | [https://git.io/JfGiw](https://git.io/JfGiw)   |
 | effect size              | hệ số ảnh hưởng        | [https://git.io/Jvoja](https://git.io/Jvoja)   |
 | eigen-decomposition      | phân tích trị riêng    |                                                |
 | eigenvalue               | trị riêng              |                                                |
@@ -155,7 +155,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | generative adversarial network | mạng đối sinh                     | [https://git.io/JvojD](https://git.io/JvojD)                                               |
 | global maximum                 | giá trị lớn nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
 | global minimum                 | giá trị nhỏ nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
-| Global Interpreter Lock        | Khóa Trình thông dịch Toàn cục    |                                                                                                                |
+| global interpreter lock        | khóa trình thông dịch toàn cục    | [https://git.io/JfGiV](https://git.io/JfGiV)                                               |
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
@@ -225,8 +225,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------------------|-------------------------------|----------------------------------------------|
 | machine learning             | học máy                       |                                              |
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| mask (computer vision) | mặt nạ | |
-| max pooling                  | gộp cực đại                   |                                              |
+| mask (computer vision)       | mặt nạ                        | |
+| max pooling                  | gộp cực đại                   | [https://git.io/JfGi6](https://git.io/JfGi6) |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | metric                       | phép đo                       |                                              |
@@ -248,7 +248,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
-| Network in Network                | Mạng trong Mạng                   |
+| network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
@@ -316,7 +316,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| Residual Network                  | Mạng Thặng dư                              |
+| residual network                  | mạng thặng dư                             | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
 | robust to noise                   | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
