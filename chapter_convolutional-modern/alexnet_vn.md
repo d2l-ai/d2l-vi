@@ -243,7 +243,7 @@ Lý do khá đơn giản: thứ nhất, mức độ tiêu thụ năng lượng c
 Do đó, nếu dự tính cần một nhân CPU có sức mạnh chạy nhanh gấp 4 lần tốc độ x hiện tại, tốc độ CPU mới là 4x (x là một con số điển hình nào đó), chúng ta có thể thay thế bằng 16 nhân GPU với tốc độ mỗi nhân bằng 1/4 tốc độ của nhân CPU, sẽ cho kết quả là 16 x 1/4 = 4x cũng tương đương với tốc độ thực hiện của CPU hiện tại. 
 Hơn nữa, các nhân của GPU thì đơn giản hơn nhiều (trên thực tế, trong một khoảng thời gian dài, những nhân này thậm chí *không thể* thực thi được mã lệnh dành cho những mục đích cơ bản), điều này giúp chúng tiết kiệm năng lượng hơn. 
 Cuối cùng, nhiều phép tính trong quá trình học sâu đòi hỏi bộ nhớ băng thông cao. 
-Và một lần nữa, GPUs đã thể hiện điểm sáng của nó ở đây khi các bus (tổng tuyến) của nó có thể truyền đi số bit lớn ít nhất gấp 10 lần so với nhiều loại CPUs.
+Và một lần nữa, GPUs vượt trội khi độ rộng đường bus của nó lớn hơn ít nhất 10 lần so với nhiều loại CPUs.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
