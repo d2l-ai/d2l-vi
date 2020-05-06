@@ -130,7 +130,7 @@ Even higher layers might represent whole objects like people, airplanes, dogs, o
 Ultimately, the final hidden state learns a compact representation of the image that summarizes its contents such that data belonging to different categories be separated easily.
 -->
 
-Các tầng cao hơn của mạng được xây dựng dựa trên những đặc trưng biểu diễn này để thể hiện các cấu trúc lớn hơn, như mắt, mũi, ngọn cỏ, v.v. 
+Các tầng cao hơn của mạng được xây dựng dựa trên các biểu diễn đặc trưng này để thể hiện các cấu trúc lớn hơn, như mắt, mũi, ngọn cỏ, v.v. 
 Thậm chí các tầng cao hơn có thể đại diện cho toàn bộ các vật thể như con người, máy bay, chó hoặc là đĩa ném. 
 Cuối cùng, tầng trạng thái ẩn cuối sẽ học cách biểu diễn cô đọng của toàn bộ hình ảnh để tổng hợp lại nội dung sao cho dữ liệu thuộc các lớp khác nhau được tách biệt một cách dễ dàng.
 
