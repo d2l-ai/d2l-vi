@@ -305,7 +305,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * LeNet was the first successful deployment of such a network.
 -->
 
-* Mạng nơ-ron tích chập (gọi ngắn gọn là ConvNet) là một mạng sử dụng các tầng tích chập.
+* Mạng nơ-ron tích chập (gọi tắt là ConvNet) là một mạng sử dụng các tầng tích chập.
 * Trong ConvNet, ta xen kẽ các phép tích chập, các hàm phi tuyến và các phép gộp.
 * Cuối cùng, độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) lớp dày đặc.
 * LeNet là triển khai thành công đầu tiên của một mạng như vậy.
