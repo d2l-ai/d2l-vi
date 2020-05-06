@@ -107,7 +107,6 @@ The pooling operation is called $p \times q$ pooling.
 -->
 Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$.
 Một phép gộp được gọi là phép gộp $p \times q$ .
-*dịch đoạn phía trên*
 
 <!--
 Let us return to the object edge detection example mentioned at the beginning of this section.
@@ -122,7 +121,6 @@ Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập là
 Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`. 
 Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]` có khác nhau hay không, hoặc `X[i, j+1]` và `X[i, j+2]` khác nhau, tất cả giá trị trả về của tầng gộp là `Y[i, j]=1`.
 Điều đó có nghĩa là, sử dụng $2\times 2$ tầng gộp cực đại, chúng ta vẫn có thể nhận diện nếu một mẫu được nhận diện bởi tầng tích chập chuyển dịch không nhiều hơn một phần tử theo chiều cao và chiều rộng.
-*dịch đoạn phía trên*
 
 <!--
 In the code below, we implement the forward computation of the pooling layer in the `pool2d` function.
@@ -132,7 +130,6 @@ However, here we have no kernel, computing the output as either the max or the a
 Trong đoạn code bên dưới, chúng tôi lập trình phép tính toán xuôi của tầng gộp trong hàm `pool2d`.
 Hàm này tương tự với hàm `corr2d` trong :numref:`sec_conv_layer`.
 Tuy nhiên, ở đây chúng ta có nhân, kết quả đầu ra hoặc là giá trị lớn nhất hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=3}
 from mxnet import np, npx
@@ -155,7 +152,6 @@ def pool2d(X, pool_size, mode='max'):
 We can construct the input array `X` in the above diagram to validate the output of the two-dimensional maximum pooling layer.
 -->
 Chúng ta có thể xây dựng mảng đầu vào `X` ở biểu đồ ở trên để kiểm tra giá trị kết quả của tầng gộp cực đại hai chiều.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=4}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
@@ -166,7 +162,6 @@ pool2d(X, (2, 2))
 At the same time, we experiment with the average pooling layer.
 -->
 Đồng thời, chúng tôi cũng thực hiện thí nghiệm với tầng gộp trung bình.
-*dịch đoạn phía trên*
 
 ```{.python .input  n=14}
 pool2d(X, (2, 2), 'avg')
