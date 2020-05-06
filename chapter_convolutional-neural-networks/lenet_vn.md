@@ -336,7 +336,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Điều chỉnh hàm kích hoạt (ReLU?).
      * Điều chỉnh số lượng các tầng chập.
      * Điều chỉnh số lượng các tầng kết nối đầy đủ.
-     * Điều chỉnh tốc độ học và các chi tiết huấn luyện khác (khởi tạo, số lượng epoch, v.v.)
+     * Điều chỉnh tốc độ học và các chi tiết huấn luyện khác (phương thức khởi tạo, số lượng epoch, v.v.)
 3. Kiểm tra mạng được cải tiến trên bộ dữ liệu MNIST ban đầu.
 4. Hiển thị các giá trị kích hoạt của tầng thứ nhất và tầng thứ hai của LeNet với các đầu vào khác nhau (ví dụ: áo len, áo khoác).
 
