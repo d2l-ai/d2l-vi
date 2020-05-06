@@ -18,7 +18,7 @@ we first flattened each image, yielding vectors of length 784, before processing
 
 Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập với đầy đủ chức năng.
 Khi ta lần đầu làm việc với dữ liệu hình ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho hình ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
-Mỗi hình ảnh trong Fashion-MNIST bao gồm một ma trận hai chiều có kích thước $28 \times 28$.
+Mỗi hình ảnh trong Fashion-MNIST là một ma trận hai chiều có kích thước $28 \times 28$.
 Để làm cho dữ liệu này tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, đầu tiên ta trải phẳng từng hình ảnh, thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
 
 <!--
@@ -26,8 +26,8 @@ Now that we have introduced convolutional layers, we can keep the image in its o
 Moreover, because we are using convolutional layers, we can enjoy a considerable savings in the number of parameters required.
 -->
 
-Bây giờ đã có các tầng tích chập, ta có thể giữ định dạng đầu vào của hình ảnh như ban đầu, ở dạng lưới trong không gian, rồi xử lý với một chuỗi các tầng tích chập liên tiếp.
-Hơn nữa, vì ta đang sử dụng các tầng chập, ta có thể tiết kiệm đáng kể số lượng tham số cần thiết.
+Bây giờ đã có các tầng tích chập, ta có thể giữ nguyên ảnh đầu vào ở dạng lưới trong không gian và xử lý chúng với một chuỗi các tầng tích chập liên tiếp.
+Hơn nữa, vì ta đang sử dụng các tầng tích chập, số lượng tham số cần thiết sẽ giảm đi đáng kể.
 
 <!--
 In this section, we will introduce one of the first published convolutional neural networks whose benefit was first demonstrated by Yann Lecun, 
@@ -37,8 +37,8 @@ Their model achieved outstanding results (only matched by Support Vector Machine
 Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in the 1990s!
 -->
 
-Trong phần này, ta sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên, ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun, khi đó là một nhà nghiên cứu tại AT&T Bell Labs, với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
-Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên rằng có thể huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược.
+Trong phần này, chúng tôi sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên. Ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun, khi đó là một nhà nghiên cứu tại AT&T Bell Labs, với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
+Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên rằng việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược là khả thi.
 Mô hình của họ đã đạt được kết quả nổi bật (chỉ có Support Vector Machines là ngang hàng tại thời điểm đó) và được sử dụng để nhận biết các chữ số để xử lý tiền gửi trong máy ATM.
 Một số máy ATM vẫn chạy các đoạn mã mà Yann và đồng nghiệp Leon Bottou đã viết vào những năm 1990!
 
