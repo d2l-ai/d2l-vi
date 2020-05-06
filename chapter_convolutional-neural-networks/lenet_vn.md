@@ -162,12 +162,12 @@ However, as we go up the stack of layers, the number of channels increases layer
 Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
-Xin hãy chú ý rằng, chiều cao và chiều rộng của đặc trưng thu được từ việc học biểu diễn tại mỗi tầng trong toàn bộ khối tính chập sẽ bị giảm đi (so với chiều cao và chiều rộng của đặc trưng ở tầng trước). 
-Tầng tính chập đầu tiên sử dụng một kernel với chiều cao và chiều rộng là $5$, và tiếp theo đó là đệm thêm vào $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
-Trong khi đó tầng tính chập thứ hai cũng dùng cùng một kernel với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc giảm cả chiều cao và chiều rộng bằng một giá trị là 4 đơn vị điểm ảnh. 
+Xin hãy chú ý rằng, chiều cao và chiều rộng của biểu diễn tại mỗi tầng trong toàn bộ khối tích chập sẽ bị giảm đi (so với chiều cao và chiều rộng của biểu diễn ở tầng trước). 
+Tầng tích chập đầu tiên sử dụng một kernel với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
+Trong khi đó tầng tích chập thứ hai cũng dùng cùng một kernel với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh. 
 Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. 
-Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào cho lên tới 6 kênh sau khi đi qua tầng tính chập thứ nhất và 16 kênh sau khi đi qua tầng tính chập thứ hai. 
-Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng các loại nhãn của hình ảnh. 
+Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào lên tới 6 kênh sau khi đi qua tầng tích chập thứ nhất và 16 kênh sau khi đi qua tầng tích chập thứ hai. 
+Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng lớp của hình ảnh. 
 
 <!--
 ![Compressed notation for LeNet5](../img/lenet-vert.svg)
@@ -184,7 +184,7 @@ Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt
 ## Data Acquisition and Training
 -->
 
-## Thu thập và huấn luyện dữ liệu 
+## Thu thập dữ liệu và Huấn luyện
 
 <!--
 Now that we have implemented the model, we might as well run some experiments to see what we can accomplish with the LeNet model.
@@ -192,8 +192,9 @@ We will use Fashion-MNIST as our dataset.
 It is more challenging than the original MNIST dataset while it has the same shape ($28\times28$ images).
 -->
 
-Sau khi triển khai và xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. Chúng ta sẽ sử dụng Fashion-MNIST là bộ dữ liệu huấn luyện. 
-Bộ dữ liệu này sẽ thử thách hơn so với bộ MNIST trong bài toán phân loại mặc dù chúng có cùng kích thước của hình ảnh huấn luyện là $28\times28$. 
+Sau khi xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. 
+Chúng ta sẽ sử dụng tập dữ liệu Fashion-MNIST.
+Việc phân loại tập dữ liệu này sẽ khó hơn so với tập MNIST gốc mặc dù chúng chứa các ảnh có cùng kích thước là $28\times28$. 
 
 ```{.python .input}
 batch_size = 256
@@ -212,9 +213,9 @@ Since the full dataset lives on the CPU, we need to copy it to the GPU before we
 This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_gpu`.
 -->
 
-Để thực hiện việc đánh giá hiệu quả của mô hình huấn luyện, chúng ta cần làm một điều chỉnh nhỏ cho hàm `evaluate_accuracy` mà chúng ta đã mô tả ở phần :numref:`sec_softmax_scratch`.
+Để đánh giá mô hình, chúng ta cần phải điều chỉnh hàm `evaluate_accuracy` mà chúng ta đã mô tả ở phần :numref:`sec_softmax_scratch` một chút.
 Bởi vì toàn bộ tập dữ liệu đang nằm trên CPU, chúng ta cần sao chép nó lên GPU trước khi chúng ta có thể thực hiện tính toán với mô hình.
-Việc này được hoàn thành thông qua việc dùng hàm `as_in_ctx` đã được mô tả ở phần :numref:`sec_use_gpu`.  
+Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` mô tả ở phần :numref:`sec_use_gpu`.  
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
