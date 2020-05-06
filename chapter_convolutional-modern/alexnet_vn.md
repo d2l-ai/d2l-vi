@@ -120,7 +120,7 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
 -->
 
-![Hình ảnh bộ lọc học được ở tầng đầu tiên của mô hình AlexNet](../img/filters.png)
+![Các bộ lọc hình ảnh học được ở tầng đầu tiên của mô hình AlexNet](../img/filters.png)
 :width:`400px`
 :label:`fig_filters`
 
