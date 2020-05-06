@@ -186,7 +186,8 @@ pool2d(X, (2, 2), 'avg')
 ## Padding and Stride
 -->
 
-## *dịch tiêu đề phía trên*
+## Đệm và Sải bước
+
 
 <!--
 As with convolutional layers, pooling layers can also change the output shape.
@@ -195,7 +196,11 @@ We can demonstrate the use of padding and strides in pooling layers via the two-
 We first construct an input data of shape `(1, 1, 4, 4)`, where the first two dimensions are batch and channel.
 -->
 
-*dịch đoạn phía trên*
+Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi kích thước đầu ra. 
+Và giống như lần trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách đệm dữ liệu đầu vào và điều chỉnh sải bước. 
+Chúng ta có thể minh hoạ cách sử dụng phần đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô đun `nn` của thư viện MXNet Gluon. 
+Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên lần lượt là kích thước batch và số kênh.
+
 
 ```{.python .input  n=15}
 X = np.arange(16).reshape(1, 1, 4, 4)
@@ -207,7 +212,9 @@ By default, the stride in the `MaxPool2D` class has the same shape as the poolin
 Below, we use a pooling window of shape `(3, 3)`, so we get a stride shape of `(3, 3)` by default.
 -->
 
-*dịch đoạn phía trên*
+Theo mặc định, sải bước trong tầng `MaxPool2D` có cùng kích thước với cửa sổ trượt của tầng gộp.
+Dưới đây, chúng ta sử dụng cửa sổ trượt của tầng gộp với kích thước `(3,3)`, vì vậy chúng ta có kích thước của sải bước trong tầng gộp là `(3,3)` theo mặc định.
+
 
 ```{.python .input  n=16}
 pool2d = nn.MaxPool2D(3)
@@ -220,7 +227,7 @@ pool2d(X)
 The stride and padding can be manually specified.
 -->
 
-*dịch đoạn phía trên*
+Giá trị của sải bước và phần đệm có thể được định rõ bởi người sử dụng.
 
 ```{.python .input  n=7}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
@@ -232,7 +239,7 @@ Of course, we can specify an arbitrary rectangular pooling window
 and specify the padding and stride for height and width, respectively.
 -->
 
-*dịch đoạn phía trên*
+Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ trượt hình chữ nhật tuỳ ý và đặt giá trị phần đệm và sải bước lần lượt ứng với chiều cao và chiều rộng của dữ liệu đầu vào.
 
 ```{.python .input  n=8}
 pool2d = nn.MaxPool2D((2, 3), padding=(1, 2), strides=(2, 3))
@@ -352,7 +359,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
-
+* Đinh Đắc
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
 <!-- Phần 5 -->
 * Dac Dinh
