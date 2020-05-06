@@ -202,7 +202,7 @@ Bộ xử lý đồ hoạ (GPUs) đã chứng tỏ vai trò thay đổi cuộc c
 Những chip này đã được phát triển một thời gian dài để tăng tốc độ xử lý đồ họa dành cho các trò chơi máy tính. 
 Cụ thể, chúng được tối ưu hoá cho các phép nhân ma trận - vector 4x4 thông lượng cao, cần thiết cho nhiều tác vụ đồ hoạ. 
 May mắn thay, phép toán này rất giống với phép tính cần thiết cho việc tính toán các tầng chập. 
-Trong khoảng thời gian này, các công ty NVIDIA và ATI đã bắt đầu tối ưu GPUs cho các mục đích tính toán chung, đi xa hơn nữa tới mức tiếp thị chúng dưới dạng GPUs cho mục đích chung (GPGPU).
+Trong khoảng thời gian này, các công ty NVIDIA và ATI đã bắt đầu tối ưu GPUs cho các mục đích tính toán thông thường, đi xa tới mức tiếp thị chúng dưới dạng GPUs cho mục đích chung (*General Purpose GPUs - GPGPU*).
 
 <!--
 To provide some intuition, consider the cores of a modern microprocessor (CPU).
