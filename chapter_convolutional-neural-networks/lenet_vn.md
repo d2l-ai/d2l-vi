@@ -81,7 +81,7 @@ Tầng tích chập được sử dụng để nhận dạng các mẫu không g
 chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
 Khối tầng tích chập tạo nên từ việc xếp chồng các khối nhỏ gồm hai đơn vị cơ bản này.
 Mỗi tầng chập sử dụng bộ lọc có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
-(một lần nữa, lưu ý rằng ReLUs hiện được biết là hoạt động đáng tin cậy hơn nhưng lúc đó chưa được phát minh).
+(một lần nữa, lưu ý rằng ReLU hiện được biết là hoạt động đáng tin cậy hơn nhưng lúc đó chưa được phát minh).
 Tầng tích chập đầu tiên có 6 kênh đầu ra và tầng tích chập thứ hai tăng độ sâu kênh hơn nữa lên 16.
 
 <!--
@@ -91,10 +91,10 @@ The two average pooling layers are of size $2\times 2$ and take stride 2 (note t
 In other words, the pooling layer downsamples the representation to be precisely *one quarter* the pre-pooling size.
 -->
 
-Tuy nhiên, cùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng giảm đáng kể.
+Tuy nhiên, cùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng lại giảm đáng kể.
 Do đó, việc tăng số lượng kênh đầu ra làm cho kích thước tham số của hai tầng tích chập tương tự nhau.
-Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
-Nói cách khác, lớp gộp giảm kích thước của cách biểu diễn còn *một phần tư* kích thước trước khi gộp.
+Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước bằng 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
+Nói cách khác, lớp gộp giảm kích thước của các biểu diễn còn *một phần tư* kích thước trước khi gộp.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
