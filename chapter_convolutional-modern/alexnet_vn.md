@@ -241,7 +241,7 @@ Chẳng hạn, thế hệ Volta mới nhất của NVIDIA cung cấp lên tới 
 trong khi hiệu năng của CPU trong việc thực hiện tính toán với các số thực dấu phẩy động  không vượt quá 1 TFlop cho đến nay. 
 Lý do tại sao điều này có thể khả thi thì thực tế khá đơn giản: thứ nhất, mức độ tiêu thụ năng lượng có xu hướng tăng theo phương trình bậc hai so với tần số xung nhịp. 
 Do đó, nếu dự tính cần một nhân CPU có sức mạnh chạy nhanh gấp 4 lần tốc độ x hiện tại, tốc độ CPU mới là 4x (x là một con số điển hình nào đó), chúng ta có thể thay thế bằng 16 nhân GPU với tốc độ mỗi nhân bằng 1/4 tốc độ của nhân CPU, sẽ cho kết quả là 16 x 1/4 = 4x cũng tương đương với tốc độ thực hiện của CPU hiện tại. 
-Hơn nữa, những nhân của GPU thì đơn giản hơn nhiều (trên thực tế, trong một khoảng thời gian dài, những nhân này thậm chí *không thể* thực thi được mã lệnh dành cho những mục đích chung), điều này giúp chúng tiết kiệm được năng lượng một cách hiệu quả hơn. 
+Hơn nữa, các nhân của GPU thì đơn giản hơn nhiều (trên thực tế, trong một khoảng thời gian dài, những nhân này thậm chí *không thể* thực thi được mã lệnh dành cho những mục đích cơ bản), điều này giúp chúng tiết kiệm năng lượng hơn. 
 Cuối cùng, nhiều phép tính trong quá trình học sâu đòi hỏi bộ nhớ băng thông cao. 
 Và một lần nữa, GPUs đã thể hiện điểm sáng của nó ở đây khi các bus (tổng tuyến) của nó có thể truyền đi số bit lớn ít nhất gấp 10 lần so với nhiều loại CPUs.
 
