@@ -218,7 +218,7 @@ pool2d(X)
 The stride and padding can be manually specified.
 -->
 
-Giá trị của sải bước và số lần đệm có thể được định rõ bởi người sử dụng.
+Giá trị của sải bước và phần đệm có thể được định rõ bởi người sử dụng.
 
 ```{.python .input  n=7}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
