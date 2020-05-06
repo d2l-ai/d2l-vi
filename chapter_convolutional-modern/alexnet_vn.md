@@ -186,7 +186,7 @@ Training can take hundreds of epochs, and each iteration requires passing data t
 This is one of the main reasons why in the 90s and early 2000s, simple algorithms based on the more-efficiently optimized convex objectives were preferred.
 -->
 
-Các mô hình học sâu cần tốn rất nhiều các chu trình tính toán có tính tuần hoàn. 
+Các mô hình học sâu cần rất nhiều chu kì tính toán. 
 Quá trình huấn luyện sẽ cần hàng trăm epoch và mỗi vòng lặp yêu cầu đưa dữ liệu qua rất nhiều tầng tính toán cồng kềnh của phép toán đại số tuyến tính. 
 Đây là một trong những lý do chính tại sao vào những năm 90 và đầu những năm 2000, những thuật toán đơn giản dựa trên các hàm mục tiêu lồi được tối ưu hoá một cách hiệu quả hơn được ưa thích.
 
