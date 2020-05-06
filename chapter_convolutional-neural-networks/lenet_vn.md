@@ -308,7 +308,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * Mạng nơ-ron tích chập (gọi tắt là ConvNet) là một mạng sử dụng các tầng tích chập.
 * Trong ConvNet, ta xen kẽ các phép tích chập, các hàm phi tuyến và các phép gộp.
 * Cuối cùng, độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) lớp dày đặc.
-* LeNet là cấu trúc ConvNet được triển khai thành công đầu tiên.
+* LeNet là mạng ConvNet đầu tiên được triển khai thành công.
 
 <!--
 ## Exercises
