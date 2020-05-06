@@ -229,7 +229,7 @@ Of course, we can specify an arbitrary rectangular pooling window
 and specify the padding and stride for height and width, respectively.
 -->
 
-Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ trượt hình chữ nhật tuỳ ý và định nghĩa giá trị số lần đệm và sải bước lần lượt theo chiều cao và chiều rộng của dữ liệu đầu vào.
+Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ trượt hình chữ nhật tuỳ ý và đặt giá trị phần đệm và sải bước lần lượt ứng với chiều cao và chiều rộng của dữ liệu đầu vào.
 
 ```{.python .input  n=8}
 pool2d = nn.MaxPool2D((2, 3), padding=(1, 2), strides=(2, 3))
