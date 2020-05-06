@@ -231,8 +231,8 @@ Unlike the `train_epoch_ch3` defined in :numref:`sec_softmax_scratch`, we now ne
 prior to making the forward and backward passes.
 -->
 
-Chúng ta cũng cần phải cập nhật hàm huấn luyện để mô hình có thể chạy được trên GPUs.
-Không giống như hàm `train_epoch_ch3` đã được định nghĩa ở phần :numref:`sec_softmax_scratch`, bây giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng ở đây là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.   
+Chúng ta cũng cần phải cập nhật hàm huấn luyện để mô hình có thể chạy được trên GPU.
+Không giống như hàm `train_epoch_ch3` đã được định nghĩa ở phần :numref:`sec_softmax_scratch`, bây giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.   
 
 <!--
 The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`.
@@ -242,11 +242,11 @@ The loss function and the training algorithm still use the cross-entropy loss fu
 Since each epoch takes tens of seconds to run, we visualize the training loss in a finer granularity.
 -->
 
-Hàm huấn luyện `train_ch6` thì cũng giống như hàm huấn luyện `train_ch3` đã được định nghĩa tại phần :numref:`sec_softmax_scratch`.
-Bởi vì hiện tại chúng ta phải xử lý một mạng có tới hàng chục tầng, nên hàm này chỉ hỗ trợ các mô hình được xây dựng bằng thư viện Gluon.
-Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi hàm `ctx`, lần này chúng ta sẽ sử dụng bộ khởi tạo Xavier.
-Hàm mất mát và thuật toán huấn luyện sẽ vẫn dùng hàm entropy chéo làm hàm mất mát và phương pháp hạ gradient ngẫu nhiên cho những batch dữ liệu nhỏ làm thuật toán huấn luyện.
-Bởi vì mỗi epoch tốn khoảng hàng chục giây để chạy, chúng ta sẽ vẽ biểu đồ đường biểu diễn giá trị mất mát khi huấn luyện để thể hiện quá trình chi tiết hơn. 
+Hàm huấn luyện `train_ch6` khá giống với hàm huấn luyện `train_ch3` đã được định nghĩa tại :numref:`sec_softmax_scratch`.
+Bởi vì hiện tại chúng ta phải làm việc với một mạng có tới hàng chục tầng, hàm này chỉ hỗ trợ các mô hình được xây dựng bằng thư viện Gluon.
+Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi `ctx`, lần này sử dụng bộ khởi tạo Xavier.
+Ta vẫn sử dụng hàm mất mát entropy chéo và thuật toán huấn luyện là phương pháp hạ gradient ngẫu nhiên theo minibatch.
+Bởi vì mỗi epoch tốn khoảng hàng chục giây để chạy, chúng ta sẽ vẽ đường biểu diễn giá trị mất mát huấn luyện với nhiều giá trị chi tiết hơn. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
