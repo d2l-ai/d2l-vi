@@ -141,7 +141,7 @@ a core group of researchers had dedicated themselves to this idea, attempting to
 The ultimate breakthrough in 2012 can be attributed to two key factors.
 -->
 
-Trong khoảng thời gian cho đến khi xuất hiện bước đột phá tối tân cho các mạng chập nhiều tầng vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các đặc trưng biểu diễn theo nhiều tầng của dữ liệu hình ảnh trong nhiều năm. 
+Khi bước đột phá của các mạng tích chập nhiều tầng xuất hiện vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các biểu diễn phân cấp của dữ liệu hình ảnh trong nhiều năm. 
 Nhưng để có được bước đột phá tối tân vào năm 2012 thì được quy cho hai yếu tố chính sau.
 
 
