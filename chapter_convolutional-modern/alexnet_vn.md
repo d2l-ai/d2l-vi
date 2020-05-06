@@ -173,7 +173,7 @@ challenging researchers to identify which models performed best at a greater sca
 Năm 2009, bộ dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu ví dụ hình ảnh, 1.000 ví dụ cho mỗi 1.000 lớp đối tượng khác nhau. 
 Các nhà nghiên cứu, dẫn đầu bởi Fei-Fei Li, người mà giới thiệu bộ dữ liệu này đã dựa trên công cụ Tìm kiếm hình ảnh của Google để chọn lọc ra trước các bộ dữ liệu hình ảnh lớn làm ứng cử viên cho mỗi lớp và sử dụng kênh cung cấp dịch vụ cộng động Mechanical Turk của Amazon, dùng người đánh nhãn để xác định từng hình ảnh xem nó có thuộc về các lớp có liên quan hay không. 
 Đây là quy mô lớn chưa từng có từ trước đến nay. 
-Cuộc thi đi liền với bộ dữ liệu này, với cùng tên gọi là ImageNet Challenge đã thúc đẩy sự phát triển nghiên cứu về thị giác máy tính và học máy tiến tới một bước mới, thách thức các nhà nghiên cứu tìm ra được mô hình nào thể hiện tốt nhất với một bộ dữ liệu có quy mô lớn hơn so với các bộ dữ liệu dành cho học thuật đã được đề cập ở trước. 
+Cuộc thi đi liền với bộ dữ liệu này, được đặt tên là ImageNet Challenge đã thúc đẩy sự phát triển nghiên cứu thị giác máy tính và học máy, thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn quy mô nghiên cứu học thuật trước đó. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
