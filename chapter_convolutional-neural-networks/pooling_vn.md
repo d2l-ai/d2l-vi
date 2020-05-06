@@ -190,7 +190,7 @@ We first construct an input data of shape `(1, 1, 4, 4)`, where the first two di
 Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi kích thước đầu ra. 
 Và giống như lần trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách đệm dữ liệu đầu vào và điều chỉnh sải bước. 
 Chúng ta có thể minh hoạ cách sử dụng phần đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô đun `nn` của thư viện MXNet Gluon. 
-Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên theo thứ tự lần lượt là số batch và số kênh.
+Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên lần lượt là kích thước batch và số kênh.
 
 
 ```{.python .input  n=15}
