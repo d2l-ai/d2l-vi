@@ -214,7 +214,7 @@ and they are comparatively bad at any single task.
 Modern laptops have up to 4 cores, and even high end servers rarely exceed 64 cores, simply because it is not cost effective.
 -->
 
-Để có cái nhìn trực quan hơn, hãy cùng xem lại các lõi của bộ vi xử lý ngày nay (CPU). Mỗi nhân thì khá mạnh khi chạy ở tần số xung nhịp cao với và với bộ nhớ đệm lớn (lên đến vài MB L3). 
+Để hình dung rõ hơn, hãy cùng xem lại các nhân của bộ vi xử lý ngày nay (CPU). Mỗi nhân thì khá mạnh khi chạy ở tần số xung nhịp cao với và với bộ nhớ đệm lớn (lên đến vài MB ở bộ nhớ đệm L3). 
 Mỗi nhân sẽ thì sẽ phù hợp với việc thực hiện hàng loạt các chỉ lệnh, với các bộ dự báo rẽ nhánh, một đường ống lệnh dài, và những tính năng phụ trợ tuyệt vời cho phép nó có khả năng chạy nhiều chương trình lớn khác nhau. Tuy nhiên, sức mạnh hiện hữu này cũng là điểm yếu của nó: những nhân cho những mục đích chung này rất đắt đỏ để sản xuất. 
 Chúng đòi hỏi nhiều diện tích cho chip, bộ cấu trúc hỗ trợ rất tinh vi (giao diện bộ nhớ, logic bộ nhớ đệm giữa các lõi, kết nối tốc độ cao, v.v.), và chúng tương đối tệ ở bất kỳ các tác vụ đơn lẻ nào. 
 Những máy tính xách tay ngày nay có tới 4 nhân, và thậm chí những máy chủ cao cấp hiếm khi vượt quá 64 nhân, đơn giản bởi vì nó không hiệu quả về chi phí nếu có nhiều nhân hơn.
