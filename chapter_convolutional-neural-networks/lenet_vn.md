@@ -43,7 +43,7 @@ Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in th
 ## LeNet
 -->
 
-## *dịch tiêu đề phía trên*
+## LeNet
 
 <!--
 In a rough sense, we can think LeNet as consisting of two parts:
@@ -52,13 +52,16 @@ In a rough sense, we can think LeNet as consisting of two parts:
 Before getting into the weeds, let us briefly review the model in :numref:`img_lenet`.
 -->
 
-*dịch đoạn phía trên*
+Một cách đơn giản, ta có thể xem LeNet gồm hai phần:
+(i) một khối các tầng tích chập; và
+(ii) một khối các tầng kết nối đầy đủ.
+Trước khi đi vào các chi tiết cụ thể, hãy quan sát tổng thể mô hình trong :numref:`img_lenet`.
 
 <!--
 ![Data flow in LeNet 5. The input is a handwritten digit, the output a probability over 10 possible outcomes.](../img/lenet.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lenet.svg)
+![Dòng dữ liệu trong LeNet 5. Đầu vào là một chữ số viết tay, đầu ra là một xác suất đối với 10 kết quả khả thi.](../img/lenet.svg)
 :label:`img_lenet`
 
 <!--
@@ -72,7 +75,14 @@ Each convolutional layer uses a $5\times 5$ kernel and processes each output wit
 The first convolutional layer has 6 output channels, and second convolutional layer increases channel depth further to 16.
 -->
 
-*dịch đoạn phía trên*
+Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình theo sau
+(lưu ý rằng gộp cực đại hoạt động tốt hơn, nhưng nó chưa được phát minh vào những năm 90).
+Tầng tích chập được sử dụng để nhận dạng các mẫu không gian trong ảnh,
+chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
+Khối tầng tích chập tạo nên từ việc xếp chồng các khối nhỏ gồm hai đơn vị cơ bản này.
+Mỗi tầng chập sử dụng bộ lọc có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
+(một lần nữa, lưu ý rằng ReLU hiện được biết là hoạt động đáng tin cậy hơn nhưng lúc đó chưa được phát minh).
+Tầng tích chập đầu tiên có 6 kênh đầu ra và tầng tích chập thứ hai tăng độ sâu kênh hơn nữa lên 16.
 
 <!--
 However, coinciding with this increase in the number of channels, the height and width are shrunk considerably.
@@ -81,7 +91,10 @@ The two average pooling layers are of size $2\times 2$ and take stride 2 (note t
 In other words, the pooling layer downsamples the representation to be precisely *one quarter* the pre-pooling size.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, cùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng lại giảm đáng kể.
+Do đó, việc tăng số lượng kênh đầu ra làm cho kích thước tham số của hai tầng tích chập tương tự nhau.
+Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước bằng 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
+Nói cách khác, lớp gộp giảm kích thước của các biểu diễn còn *một phần tư* kích thước trước khi gộp.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -362,7 +375,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
