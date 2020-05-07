@@ -157,7 +157,7 @@ However, given the limited storage capacity of computers, the relative expense o
 Numerous papers addressed the UCI collection of datasets, many of which contained only hundreds or (a few) thousands of images captured in unnatural settings with low resolution.
 -->
 
-Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có thể đạt được khả năng thể hiện vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp hồi quy và kernel). 
+Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có hiệu quả vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp tuyến tính và phương pháp nhân). 
 Tuy nhiên, do hạn chế ở khả năng lưu trữ của máy tính, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
 Có rất nhiều bài báo nghiên cứu khoa học giải quyết các vấn đề dựa trên bộ dữ liệu tổng hợp UCI, nhiều bộ dữ liệu trong số đó chỉ chứa khoảng hàng trăm hoặc (một vài) ngàn hình ảnh được chụp trong điều kiện thiếu tự nhiên và độ phân giải thấp.
 
