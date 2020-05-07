@@ -240,7 +240,7 @@ thường được gộp thành các nhóm lớn hơn (NVIDIA gọi các nhóm n
 Mặc dù mỗi nhân thì tương đối yếu, đôi khi thậm chí chạy ở tần số xung nhịp dưới 1GHZ,
 nhưng số lượng của những nhân này làm cho GPUs có tốc độ nhanh hơn so với CPUs hàng chục, trăm hoặc hàng nghìn lần. 
 Chẳng hạn, thế hệ Volta mới nhất của NVIDIA có thể thực hiện tới 120 nghìn tỷ phép toán dấu phẩy động (TFlop) cho mỗi chip cho những lệnh chuyên biệt (và lên tới 24 TFlop cho các lệnh có mục đích chung), 
-trong khi hiệu năng của CPU trong việc thực hiện tính toán với các số thực dấu phẩy động  không vượt quá 1 TFlop cho đến nay. 
+trong khi hiệu năng của CPU trong việc thực hiện tính toán với các số thực dấu phẩy động cho đến nay không vượt quá 1 TFlop. 
 Lý do khá đơn giản: thứ nhất, mức độ tiêu thụ năng lượng có xu hướng tăng theo hàm bậc hai so với tần số xung nhịp. 
 Do đó, với cùng lượng năng lượng để một nhân CPU chạy nhanh gấp 4 lần tốc độ hiện tại (mức tăng thường gặp), chúng ta có thể thay bằng 16 nhân GPU với tốc độ mỗi nhân giảm còn 1/4, cũng sẽ cho kết quả là 16 x 1/4 = 4 lần tốc độ hiện tại.
 Hơn nữa, các nhân của GPU thì đơn giản hơn nhiều (trên thực tế, trong một khoảng thời gian dài, những nhân này thậm chí *không thể* thực thi được mã lệnh dành cho những mục đích cơ bản), điều này giúp chúng tiết kiệm năng lượng hơn. 
