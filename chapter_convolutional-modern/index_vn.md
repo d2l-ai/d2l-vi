@@ -27,7 +27,7 @@ most popular go-to architecture today, and densely connected networks (DenseNet)
 
 Các mô hình này bao gồm AlexNet, mạng quy mô lớn đầu tiên được triển khai để đánh bại các phương pháp thị giác máy tính truyền thống trong một thử thách quy mô lớn;
 VGG, mạng này tận dụng một số lượng lặp đi lặp lại các khối;
-Mạng trong Mạng (*Network in Network - NiN*), kiến trúc này di chuyển toàn bộ các mạng nơ-ron theo từng điểm ảnh ở đầu vào;
+Mạng trong Mạng (*Network in Network - NiN*), kiến trúc này di chuyển toàn bộ mạng nơ-ron theo từng điểm ảnh ở đầu vào;
 GoogLeNet, sử dụng phép nối song song giữa các mạng;
 Mạng thặng dư (*residual networks - ResNet*), đây là kiến trúc được sử dụng phổ biến nhất hiện nay;
 và mạng kết nối dày đặc (*densely connected network - DenseNet*), dù yêu cầu khối lượng tính toán lớn nhưng đạt được đánh giá xếp hạng cao gần đây.
