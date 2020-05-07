@@ -142,7 +142,7 @@ The ultimate breakthrough in 2012 can be attributed to two key factors.
 -->
 
 Khi bước đột phá của các mạng tích chập nhiều tầng xuất hiện vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các biểu diễn phân cấp của dữ liệu hình ảnh trong nhiều năm. 
-Nhưng để có được bước đột phá tối tân vào năm 2012 thì được quy cho hai yếu tố chính sau.
+Có hai yếu tố chính dẫn tới bước đột phá cuối cùng năm 2012.
 
 
 <!--
