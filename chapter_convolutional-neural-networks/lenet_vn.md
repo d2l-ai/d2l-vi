@@ -175,13 +175,18 @@ However, as we go up the stack of layers, the number of channels increases layer
 Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
-*dịch đoạn phía trên*
+Xin hãy chú ý rằng, chiều cao và chiều rộng của biểu diễn tại mỗi tầng trong toàn bộ khối tích chập sẽ bị giảm đi (so với chiều cao và chiều rộng của biểu diễn ở tầng trước). 
+Tầng tích chập đầu tiên sử dụng một bộ lọc với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
+Trong khi đó tầng tích chập thứ hai cũng dùng cùng một bộ lọc với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh. 
+Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. 
+Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào lên tới 6 kênh sau khi đi qua tầng tích chập thứ nhất và 16 kênh sau khi đi qua tầng tích chập thứ hai. 
+Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng lớp của hình ảnh. 
 
 <!--
 ![Compressed notation for LeNet5](../img/lenet-vert.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lenet-vert.svg)
+![Kí hiệu vắn tắt cho mô hình LeNet5](../img/lenet-vert.svg)
 :label:`img_lenet_vert`
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -192,7 +197,7 @@ Then, the fully-connected layer reduces dimensionality layer by layer, until emi
 ## Data Acquisition and Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập dữ liệu và Huấn luyện
 
 <!--
 Now that we have implemented the model, we might as well run some experiments to see what we can accomplish with the LeNet model.
@@ -200,7 +205,9 @@ We will use Fashion-MNIST as our dataset.
 It is more challenging than the original MNIST dataset while it has the same shape ($28\times28$ images).
 -->
 
-*dịch đoạn phía trên*
+Sau khi xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. 
+Chúng ta sẽ sử dụng tập dữ liệu Fashion-MNIST.
+Việc phân loại tập dữ liệu này sẽ khó hơn so với tập MNIST gốc mặc dù chúng chứa các ảnh có cùng kích thước là $28\times28$. 
 
 ```{.python .input}
 batch_size = 256
@@ -208,11 +215,11 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 ```
 
 <!--
-While convolutional networks may have few parameters, they can still be significantly more expensive to compute than 
-a similarly deep multilayer perceptron so if you have access to a GPU, this might be a good time to put it into action to speed up training.
+While convolutional networks may have few parameters, they can still be significantly more expensive to compute than a similarly deep multilayer perceptron so if you have access to a GPU, this might be a good time to put it into action to speed up training.
 -->
 
-*dịch đoạn phía trên*
+Dù mạng tích chập có thể có số lượng tham số không lớn, chúng vẫn tiêu tốn tài nguyên tính toán hơn nhiều so với perceptron sâu đa tầng. 
+Vì vậy, nếu bạn có GPU thì đây là thời điểm thích hợp để dùng nó tăng tốc quá trình huấn luyện. 
 
 <!--
 For evaluation, we need to make a slight modification to the `evaluate_accuracy` function that we described in :numref:`sec_softmax_scratch`.
@@ -220,7 +227,9 @@ Since the full dataset lives on the CPU, we need to copy it to the GPU before we
 This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_gpu`.
 -->
 
-*dịch đoạn phía trên*
+Để đánh giá mô hình, chúng ta cần phải điều chỉnh hàm `evaluate_accuracy` mà chúng ta đã mô tả ở phần :numref:`sec_softmax_scratch` một chút.
+Bởi vì toàn bộ tập dữ liệu đang nằm trên CPU, chúng ta cần sao chép nó lên GPU trước khi chúng ta có thể thực hiện tính toán với mô hình.
+Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` mô tả ở phần :numref:`sec_use_gpu`.  
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -382,7 +391,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
+* Phạm Hồng Vinh
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
 * Dac Dinh
