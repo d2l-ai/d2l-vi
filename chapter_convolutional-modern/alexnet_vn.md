@@ -219,7 +219,7 @@ Mỗi nhân thì khá mạnh khi chạy ở tần số xung nhịp cao với b�
 Mỗi nhân phù hợp với việc thực hiện hàng loạt các lệnh, với các bộ dự báo rẽ nhánh, một đường ống lệnh dài, và những tính năng phụ trợ khác cho phép nó có khả năng chạy nhiều chương trình lớn khác nhau. 
 Tuy nhiên, sức mạnh rõ rệt này cũng có điểm yếu: sản xuất các nhân đa dụng rất đắt đỏ. 
 Chúng đòi hỏi nhiều diện tích cho vi xử lý, cùng cấu trúc hỗ trợ phức tạp (giao diện bộ nhớ, logic bộ nhớ đệm giữa các nhân, kết nối tốc độ cao, v.v.), và chúng tương đối tệ ở bất kỳ tác vụ đơn lẻ nào. 
-Những máy tính xách tay ngày nay có tới 4 nhân, và thậm chí những máy chủ cao cấp hiếm khi vượt quá 64 nhân, đơn giản bởi không hiệu quả về chi phí.
+Những máy tính xách tay ngày nay chỉ có tới 4 nhân, và thậm chí những máy chủ cao cấp hiếm khi vượt quá 64 nhân, đơn giản bởi vì chúng không hiệu quả về chi phí.
 
 <!--
 By comparison, GPUs consist of 100-1000 small processing elements (the details differ somewhat between NVIDIA, ATI, ARM and other chip vendors), 
