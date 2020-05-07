@@ -203,6 +203,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | learning algorithm                 | thuật toán học                 |                                              |
+| learning rate                      | tốc độ học                     |                                              |
 | linear                             | tuyến tính                     | [https://git.io/JvohV](https://git.io/JvohV) |
 | linear algebra                     | đại số tuyến tính              |                                              |
 | linear dependence                  | phụ thuộc tuyến tính           | [https://git.io/JvKet](https://git.io/JvKet) |
