@@ -188,7 +188,7 @@ This is one of the main reasons why in the 90s and early 2000s, simple algorithm
 
 Các mô hình học sâu cần rất nhiều chu kì tính toán. 
 Quá trình huấn luyện sẽ cần hàng trăm epoch và mỗi vòng lặp yêu cầu đưa dữ liệu qua rất nhiều tầng các phép toán đại số tuyến tính cồng kềnh. 
-Đây là một trong những lý do chính tại sao vào những năm 90 và đầu những năm 2000, những thuật toán đơn giản dựa trên các hàm mục tiêu lồi được tối ưu hoá một cách hiệu quả hơn được ưa thích.
+Đây là một trong những lý do chính tại sao vào những năm 90 và đầu những năm 2000, những thuật toán đơn giản được tối ưu hiệu quả dựa trên các hàm mục tiêu lồi  lại được ưa chuộng hơn.
 
 <!--
 Graphical processing units (GPUs) proved to be a game changer in make deep learning feasible.
