@@ -14,7 +14,7 @@ at one point winners or runners-up in the famous ImageNet competition,
 which has served as a barometer of progress on supervised learning in computer vision since 2010.
 -->
 
-Chúng ta đã hiểu các khái niệm cơ bản khi nối các mạng nơ-ron tích chập với nhau, hãy cùng tìm hiểu về học sâu hiện đại.
+Chúng ta đã hiểu các khái niệm cơ bản trong việc xây dựng mạng nơ-ron tích chập, giờ hãy cùng tìm hiểu về học sâu hiện đại.
 Trong chương này, mỗi phần sẽ trình bày một kiến trúc mạng nơ-ron quan trọng mà tại một thời điểm nào đó (có thể cả trong hiện tại) là mô hình nền tảng được sử dụng trong một lượng lớn các nghiên cứu và dự án.
 Mỗi kiến trúc mạng này thống trị trong một khoảng thời gian, nhiều mạng đã về nhất hoặc nhì tại ImageNet, cuộc thi được coi là thước đo sự phát triển của học có giám sát và thị giác máy tính kể từ năm 2010.
 
