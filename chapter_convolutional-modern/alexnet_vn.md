@@ -158,7 +158,7 @@ Numerous papers addressed the UCI collection of datasets, many of which containe
 -->
 
 Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có hiệu quả vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp tuyến tính và phương pháp nhân). 
-Tuy nhiên, do hạn chế ở khả năng lưu trữ của máy tính, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
+Tuy nhiên, do khả năng lưu trữ của máy tính còn hạn chế, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
 Có rất nhiều bài báo nghiên cứu khoa học giải quyết các vấn đề dựa trên bộ dữ liệu tổng hợp UCI, nhiều bộ dữ liệu trong số đó chỉ chứa khoảng hàng trăm hoặc (một vài) ngàn hình ảnh được chụp trong điều kiện thiếu tự nhiên và độ phân giải thấp.
 
 <!--
