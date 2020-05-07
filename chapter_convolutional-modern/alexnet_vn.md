@@ -198,7 +198,7 @@ Fortunately, this math is strikingly similar to that required to calculate convo
 Around that time, NVIDIA and ATI had begun optimizing GPUs for general compute operations, going as far as to market them as General Purpose GPUs (GPGPU).
 -->
 
-Bộ xử lý đồ hoạ (GPUs) đã chứng tỏ vai trò thay đổi cuộc chơi khi làm cho việc học sâu trở nên khả thi. 
+Bộ xử lý đồ hoạ (GPUs) đóng vai trò thay đổi hoàn toàn cuộc chơi khi làm cho việc học sâu trở nên khả thi. 
 Những chip này đã được phát triển một thời gian dài để tăng tốc độ xử lý đồ họa dành cho các trò chơi máy tính. 
 Cụ thể, chúng được tối ưu hoá cho các phép nhân ma trận - vector 4x4 thông lượng cao, cần thiết cho nhiều tác vụ đồ hoạ. 
 May mắn thay, phép toán này rất giống với phép tính cần thiết cho việc tính toán các tầng chập. 
