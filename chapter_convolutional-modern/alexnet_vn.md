@@ -114,7 +114,8 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 :numref:`fig_filters` is reproduced from this paper and describes lower-level image descriptors.
 -->
 
-Điều thú vị ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. Hình :numref:`fig_filters` được trích lại từ bài báo khoa học này mô tả các đặc trưng cấp thấp của hình ảnh.
+Một điều thú vị là ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. 
+Hình :numref:`fig_filters` trích lại từ bài báo khoa học này mô tả các đặc trưng cấp thấp của hình ảnh.
 
 <!--
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
