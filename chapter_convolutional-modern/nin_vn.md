@@ -172,10 +172,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * The NiN design influenced many subsequent convolutional neural networks designs.
 -->
 
-* NiN sử dụng các khối bao gồm một tầng tích chập theo sau bởi nhiều tầng tích chập $1\times 1$. Điều này có thể được sử dụng trong ngăn tích chập để cho phép tính phi tuyến trên mỗi điểm ảnh nhiều hơn.
+* NiN sử dụng các khối được tạo thành bởi một tầng tích chập và nhiều tầng tích chập $1\times 1$. Điều này có thể được sử dụng trong chồng tích chập để cho phép tính phi tuyến cao hơn trên từng điểm ảnh.
 * NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính tổng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST).
 * Việc bỏ đi các các tầng dày đặc làm giảm đi tình trạng quá khớp. NiN có số lượng tham số ít hơn đáng kể.
-* Thiết kế của NiN có ảnh hưởng đến nhiều thiết kế mạng nơ ron tích chập tiếp theo.
+* Thiết kế của NiN có ảnh hưởng đến nhiều thiết kế mạng nơ-ron tích chập theo sau.
 
 <!--
 ## Exercises
