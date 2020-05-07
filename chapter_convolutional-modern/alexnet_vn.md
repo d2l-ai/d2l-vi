@@ -238,7 +238,7 @@ The code [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) was goo
 -->
 Quay trở lại năm 2012. Một bước đột phá lớn khi Alex Krizhevsky và Ilya Sutskever đã xây dựng thành công một mạng nơ-ron tích chập sâu có thể chạy trên GPU.
 Họ nhận ra rằng nút thắt cổ chai cho khả năng tính toán trong CNN (phép nhân tích chập và ma trận) có thể được xử lý song song trên phần cứng.
-Với việc sử dụng hai card màn hình NVIDIA GTX 580s 3GB, họ đã xây dựng các phép toán tích chập nhanh.
+Với việc sử dụng hai card màn hình NVIDIA GTX 580s có 3GB bộ nhớ, họ đã xây dựng các phép toán tích chập nhanh.
 Phần mã nguồn [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) được coi là ngòi nổ cho sự phát triển vượt bậc của học sâu ngày hôm nay.
 
 <!--
@@ -254,10 +254,10 @@ The architectures of AlexNet and LeNet are *very similar*, as :numref:`fig_alexn
 Note that we provide a slightly streamlined version of AlexNet removing some of the design quirks that were needed in 2012 to make the model fit on two small GPUs.
 -->
 Mạng AlexNet được giới thiệu vào năm 2012, được đặt theo tên của Alex Krizhevsky, tác giả thứ nhất của bài báo phân loại ImageNet đột phá :cite:`Krizhevsky.Sutskever.Hinton.2012`.
-Mạng AlexNet bao gồm 8 lớp mạng nơ-ron tích chập đã chiến thắng cuộc thi ImageNet Large Scale Visual Recognition Challenge năm 2012 với cách biệt lớn.
-Mạng này lần đầu tiên đã chứng mình được rằng, các đặc trưng thu được bởi việc học có thể vượt qua các đặc trưng được thiết kế thủ công, phá vỡ kiểu mẫu trước đây trong nghiên cứu thị giác máy tính.
-Cấu trúc mạng AlexNet và LeNet *rất giống nhau*, như :numref:`fig_alexnet` minh họa.
-Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý một chút, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ, mà bây giờ đã không còn cần thiết.
+Mạng AlexNet bao gồm 8 tầng mạng nơ-ron tích chập đã chiến thắng cuộc thi ImageNet Large Scale Visual Recognition Challenge năm 2012 với cách biệt lớn.
+Mạng này lần đầu tiên đã chứng minh được rằng các đặc trưng thu được bởi việc học có thể vượt qua các đặc trưng được thiết kế thủ công, phá vỡ kiểu mẫu trước đây trong nghiên cứu thị giác máy tính.
+Cấu trúc mạng AlexNet và LeNet *rất giống nhau*, như :numref:`fig_alexnet` đã minh họa.
+Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ, mà bây giờ đã không còn cần thiết.
 
 
 <!--
@@ -275,9 +275,9 @@ Let us delve into the details below.
 -->
 Các triết lý thiết kế của AlexNet và LeNet rất giống nhau, nhưng cũng có những khác biệt đáng kể.
 Đầu tiên, AlexNet sâu hơn nhiều so với LeNet5.
-AlexNet gồm có 8 lớp mạng: 5 lớp tích chập, 2 lớp ẩn kết nối đầy đủ, và một lớp đầu ra kết nối đầy đủ.
-Thứ hai, AlexNet sử dung ReLU thay vì sigmoid để làm hàm kích hoạt.
-Hãy để chúng tôi đi sâu vào các chi tiết bên dưới.
+AlexNet có tám tầng gồm: năm tầng tích chập, hai tầng ẩn kết nối đầy đủ, và một tầng đầu ra kết nối đầy đủ.
+Thứ hai, AlexNet sử dụng ReLU thay vì sigmoid để làm hàm kích hoạt.
+Chúng tôi sẽ đi sâu vào các chi tiết ở bên dưới.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
