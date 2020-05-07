@@ -235,7 +235,7 @@ Again, GPUs shine here with buses that are at least 10x as wide as many CPUs.
 -->
 
 Để so sánh, GPUs bao gồm 100-1000 các phần tử xử lý nhỏ (các chi tiết khác nhau đôi chút giữ NVIDIA, ATI, ARM và các nhà sản xuất chip khác), 
-thường được gộp thành các nhóm lớn hơn (NVIDIA gọi các nhóm này là luồng). 
+thường được gộp thành các nhóm lớn hơn (NVIDIA gọi các nhóm này là luồng (*warp*). 
 Mặc dù mỗi nhân thì tương đối yếu, đôi khi thậm chí chạy ở tần số xung nhịp dưới 1GHZ,
 nhưng tổng số lượng của những nhân như thế này làm cho GPUs có tốc độ ở bậc lũy thừa 10 nhanh hơn so với CPUs. 
 Chẳng hạn, thế hệ Volta mới nhất của NVIDIA cung cấp lên tới 120 TFlop cho mỗi chip cho những chỉ lệnh chuyên biệt (và lên tới 24 TFlop cho các chỉ lệnh có mục đích chung hơn), 
