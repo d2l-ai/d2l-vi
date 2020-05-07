@@ -171,7 +171,7 @@ The associated competition, dubbed the ImageNet Challenge pushed computer vision
 challenging researchers to identify which models performed best at a greater scale than academics had previously considered.
 -->
 
-Năm 2009, bộ dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu ví dụ hình ảnh, 1.000 ví dụ cho mỗi 1.000 lớp đối tượng khác nhau. 
+Năm 2009, tập dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu hình ảnh, trong đó có 1.000 ảnh cho mỗi 1.000 lớp đối tượng khác nhau. 
 Các nhà nghiên cứu, dẫn đầu bởi Fei-Fei Li, người giới thiệu bộ dữ liệu này đã dựa trên công cụ Tìm kiếm Hình ảnh của Google để lọc sơ bộ các bộ dữ liệu hình ảnh lớn của mỗi lớp và sử dụng dịch vụ cộng đồng (*crowdsourcing*) Mechanical Turk của Amazon để xác nhận gán đúng nhãn cho từng ảnh. 
 Đây là quy mô lớn chưa từng có từ trước đến nay. 
 Cuộc thi đi liền với bộ dữ liệu này, được đặt tên là ImageNet Challenge đã thúc đẩy sự phát triển nghiên cứu thị giác máy tính và học máy, thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn quy mô nghiên cứu học thuật trước đó. 
