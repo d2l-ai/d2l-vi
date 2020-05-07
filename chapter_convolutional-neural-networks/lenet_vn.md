@@ -332,7 +332,10 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * LeNet was the first successful deployment of such a network.
 -->
 
-*dịch đoạn phía trên*
+* Mạng nơ-ron tích chập (gọi tắt là ConvNet) là một mạng sử dụng các tầng tích chập.
+* Trong ConvNet, ta xen kẽ các phép tích chập, các hàm phi tuyến và các phép gộp.
+* Cuối cùng, độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) tầng kết nối dày đặc.
+* LeNet là mạng ConvNet đầu tiên được triển khai thành công.
 
 <!--
 ## Exercises
@@ -353,7 +356,16 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 4. Display the activations of the first and second layer of LeNet for different inputs (e.g., sweaters, coats).
 -->
 
-*dịch đoạn phía trên*
+1. Điều gì sẽ xảy ra nếu ta thay thế phép gộp trung bình bằng phép gộp cực đại?
+2. Thử xây dựng một mạng phức tạp hơn dựa trên LeNet để cải thiện độ chính xác của mạng này.
+     * Điều chỉnh kích thước cửa sổ tích chập.
+     * Điều chỉnh số lượng kênh đầu ra.
+     * Điều chỉnh hàm kích hoạt (ReLU?).
+     * Điều chỉnh số lượng các tầng chập.
+     * Điều chỉnh số lượng các tầng kết nối đầy đủ.
+     * Điều chỉnh tốc độ học và các chi tiết huấn luyện khác (phương thức khởi tạo, số lượng epoch, v.v.)
+3. Thử sử dụng mạng đã được cải thiện với tập dữ liệu MNIST ban đầu.
+4. Hiển thị các giá trị kích hoạt của tầng thứ nhất và tầng thứ hai của LeNet với các đầu vào khác nhau (ví dụ: áo len, áo khoác).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -400,4 +412,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Dac Dinh
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
