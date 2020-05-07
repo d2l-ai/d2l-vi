@@ -5,7 +5,7 @@
 # Network in Network (NiN)
 -->
 
-# *dịch tiêu đề phía trên*
+# Network in Network (NiN)
 :label:`sec_nin`
 
 <!--
@@ -18,10 +18,10 @@ Network in Network (NiN) blocks offer an alternative.
 They were proposed in :cite:`Lin.Chen.Yan.2013` based on a very simple insight---to use an MLP on the channels for each pixel separately.
 -->
 
-LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: đầu tiên là trích xuất các đặc trưng *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó xử lý các biểu diễn thông qua các tầng kết nối đầy đủ.
-Những cải tiến lên LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng này mở rộng và đào sâu hai mô-đun trên.
-Cách khác, ta có thể nghĩ tới việc sử dụng các tầng kết nối đầy đủ ở ngay đầu quá trình.
-Tuy nhiên, việc sử dụng các tầng dày đặc một cách bất cẩn có thể gạt bỏ cấu trúc không gian của biểu diễn một cách hoàn toàn. Các khối trong Network in Network (NiN) cung cấp một giải pháp thay thế.
+LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: bắt đầu bằng việc trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó xử lý các biểu diễn thông qua các tầng kết nối đầy đủ.
+Những cải tiến lên LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng này mở rộng và đào sâu hai mô-đun này.
+Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ở ngay đầu quá trình.
+Tuy nhiên, việc sử dụng các tầng dày đặc một cách bất cẩn có thể làm mất đi hoàn toàn các cấu trúc không gian của biểu diễn. Các khối trong Network in Network (NiN) cung cấp một giải pháp thay thế cho vấn đề này.
 Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt.
 
 <!--
