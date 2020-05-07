@@ -205,7 +205,8 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 While convolutional networks may have few parameters, they can still be significantly more expensive to compute than a similarly deep multilayer perceptron so if you have access to a GPU, this might be a good time to put it into action to speed up training.
 -->
 
-Trong khi những mạng tính chập có thể có số lượng tham số không lớn, nhưng chúng vẫn cần tiêu tốn tài nguyên tính toán hơn nhiều so với perceptron sâu đa tầng, vì vậy, nếu bạn có thể sử dụng được GPU, đây là thời điểm thích hợp để dùng nó vào việc tăng tốc thời gian huấn luyện. 
+Dù mạng tích chập có thể có số lượng tham số không lớn, chúng vẫn tiêu tốn tài nguyên tính toán hơn nhiều so với perceptron sâu đa tầng. 
+Vì vậy, nếu bạn có GPU thì đây là thời điểm thích hợp để dùng nó tăng tốc quá trình huấn luyện. 
 
 <!--
 For evaluation, we need to make a slight modification to the `evaluate_accuracy` function that we described in :numref:`sec_softmax_scratch`.
