@@ -5,7 +5,7 @@
 # Batch Normalization
 -->
 
-# *dịch tiêu đề phía trên*
+# Chuẩn hoá theo batch
 :label:`sec_batch_norm`
 
 <!--
@@ -15,22 +15,23 @@ In this section, we describe batch normalization (BN) :cite:`Ioffe.Szegedy.2015`
 Together with residual blocks—covered in :numref:`sec_resnet`—BN has made it possible for practitioners to routinely train networks with over 100 layers.
 -->
 
-*dịch đoạn phía trên*
-
-
+Việc huấn luyện mạng nơ-ron học sâu thì không dễ. 
+Và để cho mô hình hội tụ trong một khoảng thời gian hợp lý là một vấn đề hóc búa.
+Trong phần này, chúng ta sẽ đề cập đến việc chuẩn hóa theo batch (BN) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm giúp tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
+Cùng với các khối thặng dư được đề cập ở phần :numref:`sec_resnet`—BN đã giúp những người thực nghiệm có thể huấn luyện mạng học sâu với hơn 100 tầng.
 
 <!--
 ## Training Deep Networks
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mạng học sâu
 
 <!--
 To motivate batch normalization, let us review a few practical challenges that arise
 when training ML models and neural nets in particular.
 -->
 
-*dịch đoạn phía trên*
+Để thấy được mục đích của việc chuẩn hóa theo batch, hãy cùng chúng tôi xem xét lại một vài vấn đề thực tế phát sinh khi huấn luyện mô hình ML (học máy) và mạng nơ-ron.
 
 <!--
 1. Choices regarding data preprocessing often make an enormous difference in the final results.
@@ -45,7 +46,17 @@ Intuitively, we might conjecture that if one layer has activation values that ar
 This means that regularization becomes more critical.
 -->
 
-*dịch đoạn phía trên*
+1. Những lựa chọn liên quan đến việc tiền xử lý dữ liệu thường tạo nên sự khác biệt rất lớn trong kết quả cuối cùng.
+Hãy nhớ lại việc áp dụng mạng perceptron đa tầng để dự đoán giá nhà ở phần (:numref:`sec_kaggle_house`). 
+Việc đầu tiên khi chúng ta làm việc với dữ liệu thực tế là chuẩn hóa các đặc trưng đầu vào để chúng có giá trị trung bình bằng *không* và phương sai bằng *một*. 
+Một cách trực quan, việc chuẩn hóa này, hoạt động tốt với những bộ tối ưu bởi vì nó đặt giá trị các tham số làm một tiên nghiệm tại cùng một tỷ lệ.
+2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
+dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
+Những nhà nghiên cứu phát minh ra kỹ thuật chuẩn hoá theo batch đã đưa ra một định đề chưa chính thức rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể làm cản trở sự hội tụ của mạng.
+Một cách trực quan, chúng ta có thể phỏng đoán rằng nếu một tầng có những giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì điều này bắt buộc cần phải có điều chỉnh bổ trợ trong tốc độ học.
+3. Mạng nhiều tầng thì phức tạp và dễ có khả năng gặp vấn đề quá khớp.
+Điều này có nghĩa rằng sự điều chuẩn càng trở nên cấp thiết.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -573,7 +584,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Đắc
 
 <!-- Phần 2 -->
 *
