@@ -297,7 +297,7 @@ Moreover, AlexNet has ten times more convolution channels than LeNet.
 
 Trong tầng thứ nhất của AlexNet, kích thước cửa sổ tích chập là $11\times11$.
 Vì hầu hết các ảnh trong ImageNet đều có chiều cao và chiều rộng lớn gấp hơn mười lần so với các ảnh trong MNIST nên các đối tượng trong dữ liệu ImageNet thường có xu hướng chiếm nhiều điểm ảnh hơn.
-Do đó, để chụp được các đối tượng này thì việc sử dụng một cửa sổ tích chập lớn hơn là điều cần thiết.
+Do đó, ta cần sử dụng một cửa sổ tích chập lớn hơn để xác định được các vật thể này.
 Kích thước cửa sổ tích chập trong tầng thứ hai được giảm xuống $5\times5$ và sau đó là $3\times3$.
 Ngoài ra, theo sau các tầng chập thứ nhất, thứ hai và thứ năm là các tầng gộp cực đại với kích thước cửa sổ là $3\times3$ và sải bước bằng 2.
 Hơn nữa, số lượng các kênh tích chập trong AlexNet nhiều hơn gấp mười lần so với LeNet.
