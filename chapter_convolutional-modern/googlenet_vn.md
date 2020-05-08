@@ -167,7 +167,7 @@ The second and third paths first reduce the number of input channels to $128/256
 
 Thành phần thứ ba kết nối hai khối Inception hoàn chỉnh trong chuỗi tổng cộng 9 khối này. 
 Số lượng kênh đầu ra của khối Inception đầu tiên là $64+128+32+32=256$, và tỉ lệ giữa số lượng kênh của bốn nhánh đầu ra $64:128:32:32=2:4:1:1$. 
-Nhánh thứ hai và nhánh thứ ba đầu tiên làm giảm số lượng kênh đầu vào với tỉ lệ lần lượt là $96/192=1/2$ và $16/192=1/12$, và sau đó kết nối với tầng tính chập thứ hai.
+Nhánh thứ hai và nhánh thứ ba đầu tiên làm giảm số lượng kênh đầu vào với tỉ lệ lần lượt là $96/192=1/2$ và $16/192=1/12$, và sau đó kết nối với tầng tích chập thứ hai.
 Số lượng kênh đầu ra của khối Inception thứ hai được tăng lên tới $128+192+96+64=480$, và tỉ lệ của số kênh đầu ra mỗi nhánh là $128:192:96:64 = 4:6:3:2$. 
 Nhánh thứ hai và thứ ba đầu tiên làm giảm đi số kênh đầu vào với tỉ lệ lần lượt là $128/256=1/2$ và $32/256=1/8$. 
 
@@ -193,8 +193,8 @@ These ratios are slightly different in different Inception blocks.
 Thành phần thứ tư thì rắc rối hơn. 
 Nó kết nối năm khối Inception thành một chuỗi, và chúng có số lượng kênh đầu ra lần lượt là $192+208+48+64=512$, $160+224+64+64=512$,
 $128+256+64+64=512$, $112+288+64+64=528$, và $256+320+128+128=832$.
-Số lượng kênh được chỉ định ở các nhánh thì tương tự như ở mô đun thứ ba: nhánh thứ hai với tầng tính chập có kích thước cửa sổ trượt là $3\times 3$ sẽ cho đầu ra với số lượng kênh lớn nhất, 
-tiếp đó số lượng kênh đầu ra lần lượt giảm dần theo thứ tự từ là nhánh thứ nhất có tầng tính chập có kích thước cửa sổ trượt là $1\times 1$, nhánh thứ ba có tầng tính chập có kích thước cửa sổ trượt là $3\times 3$, và cuối cùng là nhánh thứ tư với tầng gộp cực đại có kích thước cửa sổ trượt là $3\times 3$.
+Số lượng kênh được chỉ định ở các nhánh thì tương tự như ở mô đun thứ ba: nhánh thứ hai với tầng tích chập có kích thước cửa sổ trượt là $3\times 3$ sẽ cho đầu ra với số lượng kênh lớn nhất, 
+tiếp đó số lượng kênh đầu ra lần lượt giảm dần theo thứ tự từ là nhánh thứ nhất có tầng tích chập có kích thước cửa sổ trượt là $1\times 1$, nhánh thứ ba có tầng tích chập có kích thước cửa sổ trượt là $3\times 3$, và cuối cùng là nhánh thứ tư với tầng gộp cực đại có kích thước cửa sổ trượt là $3\times 3$.
 Nhánh thứ hai và thứ ba đầu tiên sẽ làm giảm số lượng kênh theo tỷ lệ nhất định. 
 Tỷ lệ này thì hơi khác nhau trong các khối Inception khác nhau.
 
