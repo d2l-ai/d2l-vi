@@ -460,7 +460,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * AlexNet có cấu trúc tương tự như LeNet, nhưng sử dụng nhiều tầng tích chập hơn và không gian tham số lớn hơn để khớp tập dữ liệu ImageNet có kích thước lớn.
 * Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng nó là một bước quan trọng để đi từ các mạng nông đến các mạng sâu được sử dụng ngày nay.
 * Mặc dù có vẻ như chỉ tốn thêm một vài dòng trong mã nguồn của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm để đón nhận sự thay đổi khái niệm này và tận dụng kết quả thực nghiệm tuyệt vời của nó. Một phần cũng là do sự thiếu thốn của các công cụ tính toán hiệu quả.
-* Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được hiệu suất tuyệt vời trong các bài toán thị giác máy tính.
+* Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được kết quả rất tốt trong các bài toán thị giác máy tính.
 
 <!--
 ## Exercises
