@@ -201,6 +201,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
 |------------------------------------|--------------------------------|----------------------------------------------|
+| label smoothing                    | làm phẳng nhãn                 |                                              |
 | layer                              | tầng                           |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
