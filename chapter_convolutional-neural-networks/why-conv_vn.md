@@ -15,7 +15,8 @@ but do not assume anything a priori about which features are related to each oth
 -->
 
 Cho đến giờ, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không hề giả định trước rằng những đặc trưng nào liên quan tới nhau và như thế nào.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không hề giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
+
 
 <!--
 Sometimes we truly may not have any knowledge to guide the construction of more cleverly-organized architectures.
@@ -81,14 +82,14 @@ Despite his characteristic outfit, this can be surprisingly difficult, due to th
 -->
 
 Hãy tưởng tượng rằng ta muốn nhận diện một vật thể trong ảnh.
-Việc cho rằng bất cứ phương pháp nào ta sử dụng đều không nên quá quan tâm đến vị trí *chính xác* của vật thể trong ảnh nghe có vẻ hợp lý.
-Lý tưởng nhất là ta có thể học một hệ thống có khả năng khai thác kiến thức này bằng một cách nào đó.
+Có vẻ sẽ hợp lý nếu cho rằng bất cứ phương pháp nào ta sử dụng đều không nên quá quan tâm đến vị trí *chính xác* của vật thể trong ảnh.
+Lý tưởng nhất, ta có thể học một hệ thống có khả năng tận dụng được kiến thức này bằng một cách nào đó.
 Lợn thường không bay và máy bay thường không bơi.
 Tuy nhiên, ta vẫn có thể nhận ra một con lợn đang bay nếu nó xuất hiện.
 Ý tưởng này được thể hiện rõ rệt trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
 Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
-Nhiệm vụ của người chơi là xác định vị trí của anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
-Mặc dù Waldo có trang phục khá nổi bật, việc phát hiện ra anh ta vẫn có thể rất khó khăn do có quá nhiều yếu tố gây nhiễu.
+Nhiệm vụ của người chơi là xác định vị trí của anh ta.
+Mặc dù Waldo có trang phục khá nổi bật, việc này có thể vẫn rất khó khăn do có quá nhiều yếu tố gây nhiễu.
 
 <!--
 ![Image via Walker Books](../img/where-wally-walker-books.jpg)
@@ -103,7 +104,7 @@ Mặc dù Waldo có trang phục khá nổi bật, việc phát hiện ra anh ta
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với ảnh, những cách hiểu trực quan mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
+Quay lại với ảnh, những trực giác mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
