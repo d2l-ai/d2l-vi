@@ -311,7 +311,7 @@ Fortunately, GPU memory is comparatively abundant now, so we rarely need to brea
 
 Sau tầng chập cuối cùng là hai tầng kết nối đầy đủ với 4096 đầu ra.
 Hai tầng này tạo ra tới gần 1 GB tham số mô hình.
-Do các GPU thế hệ trước bị giới hạn về bộ nhớ trong nên AlexNet phiên bản gốc đã sử dụng thiết kế luồng dữ liệu kép, trong đó, mỗi GPU chỉ phải chịu trách nhiệm lưu trữ và tính toán cho một nửa mô hình.
+Do các GPU thế hệ trước bị giới hạn về bộ nhớ, phiên bản gốc của AlexNet sử dụng thiết kế luồng dữ liệu kép cùng hai GPU, trong đó mỗi GPU chỉ phải chịu trách nhiệm lưu trữ và tính toán cho một nửa mô hình.
 May mắn thay, hiện nay các GPU có bộ nhớ tương đối dồi dào, vì vậy ta hiếm khi cần phải chia nhỏ mô hình trên các GPU (phiên bản mô hình AlexNet của ta khác với bài báo ban đầu ở khía cạnh này).
 
 <!--
