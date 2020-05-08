@@ -66,7 +66,7 @@ These operations are called *maximum pooling* (*max pooling* for short) and *ave
 
 Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định trượt trên tất cả các vùng ở đầu vào theo sải bước của nó, tính toán một giá trị đầu ra tại mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
 Tuy nhiên, không giống như các phép toán tương quan chéo giữa đầu vào và bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc").
-Thay vì vậy, các toán tử gộp là xác định với phép tính thường thực hiện là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
+Thay vì vậy, các toán tử gộp thường được định sẵn là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
 Các phép tính này lần lượt được gọi là là *gộp cực đại* (*max pooling*) và *gộp trung bình* (*average pooling*).
 
 <!--
