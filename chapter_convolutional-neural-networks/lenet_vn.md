@@ -138,7 +138,7 @@ which tends to be significantly more convenient to train.
 Other than that, this network matches the historical definition of LeNet5.
 -->
 
-So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gaussian ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
+So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
 Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong lịch sử.
 
 <!--
