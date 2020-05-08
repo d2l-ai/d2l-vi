@@ -207,8 +207,8 @@ This is 1 million fewer parameters since it no longer depends on the location wi
 
 Đây là một phép tích chập!
 Ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ bằng các hệ số $V[a, b]$ để thu được giá trị $h[i, j]$.
-Lưu ý rằng $V[a, b]$ cần ít trọng số hơn hẳn so với $V[i, j, a, b]$. Với đầu vào là hình ảnh 1 megapixel (với tối đa 1 triệu trọng số cho mỗi vị trí),
-lượng trọng số của $V[a, b]$ giảm đi 1 triệu vì không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
+Lưu ý rằng $V[a, b]$ cần ít hệ số hơn hẳn so với $V[i, j, a, b]$. Với đầu vào là hình ảnh 1 megapixel (với tối đa 1 triệu hệ số cho mỗi vị trí),
+lượng tham số của $V[a, b]$ giảm đi 1 triệu vì không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
 
 <!--
 Now let us invoke the second principle---*locality*.
