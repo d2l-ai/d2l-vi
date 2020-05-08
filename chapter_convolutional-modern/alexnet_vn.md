@@ -437,7 +437,7 @@ the higher image resolution and the more costly convolutions.
 -->
 
 Bây giờ, ta có thể bắt đầu quá trình huấn luyện AlexNet.
-So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do mạng sâu hơn và rộng hơn, đồng thời độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn.
+So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do mạng sâu hơn và rộng hơn, đồng thời do độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn.
 
 ```{.python .input  n=5}
 lr, num_epochs = 0.01, 10
