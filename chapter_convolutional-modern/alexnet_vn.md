@@ -333,8 +333,7 @@ so that the model cannot be effectively trained.
 -->
 
 Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng một hàm kích hoạt ReLU đơn giản hơn.
-Một mặt, việc tính toán hàm kích hoạt ReLU đơn giản hơn.
-Ví dụ, nó không có phép lũy thừa như trong hàm kích hoạt sigmoid.
+Một mặt là việc tính toán, nó không có phép lũy thừa như trong hàm kích hoạt sigmoid.
 Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình trở nên dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau.
 Điều này là do khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1 thì gradient sẽ gần như bằng 0 và khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
 Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn bằng 1.
