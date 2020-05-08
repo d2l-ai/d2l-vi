@@ -334,7 +334,7 @@ so that the model cannot be effectively trained.
 ### Capacity Control and Preprocessing
 -->
 
-### Kiểm soát độ phức tạp và Tiền xử lý
+### Kiểm soát năng lực mô hình và Tiền xử lý
 
 <!--
 AlexNet controls the model complexity of the fully-connected layer by dropout (:numref:`sec_dropout`), while LeNet only uses weight decay.
