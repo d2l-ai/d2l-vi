@@ -389,7 +389,7 @@ We construct a single-channel data instance with both height and width of 224 to
 It matches our diagram above.
 -->
 
-Ta sẽ tạo một thực thể dữ liệu đơn kênh với cả chiều cao và chiều rộng đều bằng 224 để quan sát kích thước đầu ra của mỗi tầng.
+Ta sẽ tạo một thực thể dữ liệu đơn kênh với chiều cao và chiều rộng đều bằng 224 để quan sát kích thước đầu ra của mỗi tầng.
 Kết quả in ra khớp với sơ đồ bên trên.
 
 ```{.python .input  n=2}
