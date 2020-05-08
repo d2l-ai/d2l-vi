@@ -337,7 +337,7 @@ Một mặt là việc tính toán, nó không có phép lũy thừa như trong 
 Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình trở nên dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau.
 Điều này là do khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1 thì gradient sẽ gần như bằng 0 và khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
 Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn bằng 1.
-Do đó, nếu các tham số mô hình không được khởi tạo đúng cách thì hàm sigmoid có thể thu được gradient gần bằng 0 trong khoảng dương và dẫn đến mô hình không thể được huấn luyện một cách hiệu quả.
+Do đó, nếu các tham số mô hình không được khởi tạo đúng cách thì hàm sigmoid có thể thu được gradient gần bằng 0 trong khoảng dương, dẫn đến việc mô hình không thể được huấn luyện một cách hiệu quả.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
