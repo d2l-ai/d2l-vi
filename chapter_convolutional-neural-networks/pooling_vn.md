@@ -106,7 +106,7 @@ A pooling layer with a pooling window shape of $p \times q$ is called a $p \time
 The pooling operation is called $p \times q$ pooling.
 -->
 Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$.
-Một phép gộp được gọi là phép gộp $p \times q$ .
+Một phép gộp được gọi là phép gộp $p \times q$.
 
 <!--
 Let us return to the object edge detection example mentioned at the beginning of this section.
@@ -117,7 +117,7 @@ That is to say, using the $2\times 2$ maximum pooling layer, we can still detect
 moves no more than one element in height and width.
 -->
 Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập đến ở đầu chương.
-Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho $2\times 2$ tầng gộp cực đại.
+Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho tầng gộp cực đại $2\times 2$.
 Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`. 
 Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]` có khác nhau hay không, hoặc `X[i, j+1]` và `X[i, j+2]` khác nhau, tất cả giá trị trả về của tầng gộp là `Y[i, j]=1`.
 Điều đó có nghĩa là, sử dụng $2\times 2$ tầng gộp cực đại, chúng ta vẫn có thể nhận diện nếu một mẫu được nhận diện bởi tầng tích chập chuyển dịch không nhiều hơn một phần tử theo chiều cao và chiều rộng.
