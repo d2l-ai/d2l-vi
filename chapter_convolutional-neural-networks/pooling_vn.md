@@ -64,7 +64,7 @@ Instead, pooling operators are deterministic, typically calculating either the m
 These operations are called *maximum pooling* (*max pooling* for short) and *average pooling*, respectively.
 -->
 
-Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định thực hiện trượt trên tất cả các vùng ở đầu vào dựa trên sải bước của nó, tính toán một giá trị đầu ra tại mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
+Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định trượt trên tất cả các vùng ở đầu vào theo sải bước của nó, tính toán một giá trị đầu ra tại mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
 Tuy nhiên, không giống như các phép toán tương quan chéo giữa đầu vào và bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc").
 Thay vì vậy, các toán tử gộp là xác định với phép tính thường thực hiện là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
 Các phép tính này lần lượt được gọi là là *gộp cực đại* (*max pooling*) và *gộp trung bình* (*average pooling*).
@@ -83,7 +83,7 @@ Trong cả hai trường hợp, giống như với toán tử tương quan chéo
 ![Maximum pooling with a pooling window shape of $2\times 2$. The shaded portions represent the first output element and the input element used for its computation: $\max(0, 1, 3, 4)=4$](../img/pooling.svg)
 -->
 
-![Gộp giá trị cực đại với cửa sổ có kích thước $2\times 2$. Các phần tô đậm thể hiện phần tử xuất ra đầu tiên và phần tử đầu vào đã dùng để tính toán: $max(0, 1, 3, 4)=4$](../img/pooling.svg)
+![Gộp cực đại với cửa sổ có kích thước $2\times 2$. Các phần tô đậm thể hiện phần tử đầu ra đầu tiên và phần tử đầu vào đã dùng để tính toán: $max(0, 1, 3, 4)=4$](../img/pooling.svg)
 :label:`fig_pooling`
 
 <!--
@@ -91,7 +91,7 @@ The output array in :numref:`fig_pooling` above has a height of 2 and a width of
 The four elements are derived from the maximum value of $\text{max}$:
 -->
 
-Mảng xuất ra ở :numref:`fig_pooling` phía trên có chiều cao là 2 và chiều rộng là 2. 
+Mảng đầu ra ở :numref:`fig_pooling` phía trên có chiều cao là 2 và chiều rộng là 2. 
 Bốn phần tử của nó được rút ra từ giá trị cực đại của hàm $\text{max}$:
 
 $$
