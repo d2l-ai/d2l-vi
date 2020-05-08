@@ -137,7 +137,7 @@ The first component uses a 64-channel 7×7 convolutional layer.
 -->
 
 Bây giờ chúng ta có thể triển khai mô hình GoogLeNet theo từng phần riêng biệt.
-Thành phần đầu tiên sử dụng một tầng tính chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là 7x7.
+Thành phần đầu tiên sử dụng một tầng tích chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là 7x7.
 
 ```{.python .input  n=2}
 b1 = nn.Sequential()
@@ -151,8 +151,8 @@ then a $3\times 3$ convolutional layer that triples the number of channels.
 This corresponds to the second path in the Inception block.
 -->
 
-Thành phần thứ hai sử dụng hai tầng tính chập: đầu tiên là một tầng tính chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là $1\times 1$, 
-tiếp theo đó là một tầng tính chập có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
+Thành phần thứ hai sử dụng hai tầng tích chập: đầu tiên là một tầng tích chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là $1\times 1$, 
+tiếp theo đó là một tầng tíh chập có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
 Phần này tương ứng với nhánh thứ hai trong khối Inception.
 
 ```{.python .input  n=3}
