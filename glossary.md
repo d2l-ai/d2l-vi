@@ -358,6 +358,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
 | superscript                     | chỉ số trên              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | supervised learning             | học có giám sát          |                                              |
+| support vector machine (SVM)    | Máy vector hỗ trợ        |                                              |
 | surprisal (information theory)  | lượng tin                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
 | surrogate objective             | mục tiêu thay thế        | [https://git.io/JvQxV](https://git.io/JvQxV) |
 | symbolic graph                  | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
