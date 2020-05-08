@@ -408,7 +408,7 @@ for layer in net:
 ## Reading the Dataset
 -->
 
-## Đọc dữ liệu
+## Đọc Tập dữ liệu
 
 <!--
 Although AlexNet uses ImageNet in the paper, we use Fashion-MNIST here since training an ImageNet model to convergence could take hours or days even on a modern GPU.
