@@ -132,7 +132,7 @@ Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán họ
 ## Constraining the MLP
 -->
 
-## Ràng buộc MLP
+## Giới hạn perceptron đa tầng
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
@@ -144,19 +144,19 @@ we would switch from using weight matrices (as we did previously in MLPs)
 to representing our parameters as four-dimensional weight tensors.
 -->
 
-Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
-Để bắt đầu, hãy nghĩ xem một MLP sẽ trông như thế nào với đầu vào là ảnh có kích thước $h \times w$ 
-(được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
-và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
-Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
-Do vậy, để mỗi nút trong $hw$ nút ẩn nhận đầu vào từ $hw$ đầu vào,
-ta sẽ chuyển từ việc sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang việc sử dụng tensor trọng số bốn chiều.
+Trong phần này, ta coi hình ảnh và các tầng ẩn là các mảng hai chiều.
+Để bắt đầu, hãy tưởng tượng một perceptron đa tầng sẽ như thế nào với đầu vào là ảnh kích thước $h \times w$ 
+(biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều khi lập trình),
+và với các biểu diễn ẩn cũng là các ma trận / mảng 2 chiều kích thước $h \times w$.
+Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của ảnh và biểu diễn ẩn.
+Để mỗi nút ẩn trong tổng số $hw$ nút nhận dữ liệu từ tất cả $hw$ đầu vào,
+ta sẽ chuyển từ việc biểu diễn các tham số bằng ma trận trọng số (như đã thực hiện với perceptron đa tầng trước đây) sang sử dụng các tensor trọng số bốn chiều.
 
 <!--
 We could formally express this dense layer as follows:
 -->
 
-Ta có thể biểu diễn lớp dày đặc này một cách hình thức như sau:
+Ta có thể biểu diễn tầng kết nối đầy đủ bằng công thức toán sau:
 
 <!--
 $$h[i, j] = u[i, j] + \sum_{k, l} W[i, j, k, l] \cdot x[k, l] =  u[i, j] +
@@ -174,11 +174,11 @@ The indices $a, b$ run over both positive and negative offsets, covering the ent
 For any given location $(i, j)$ in the hidden layer $h[i, j]$, we compute its value by summing over pixels in $x$, centered around $(i, j)$ and weighted by $V[i, j, a, b]$.
 -->
 
-Việc chuyển từ $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
-Ta chỉ đơn thuần đánh lại các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
-Nói cách khác, ta đặt $V[i, j, a, b] = W[i, j, i+a, j+b]$.
-Các chỉ số $a, b$ chạy trên cả độ lệch dương và âm, bao trùm toàn bộ hình ảnh.
-Đối với một vị trí $(i, j)$ bất kỳ trong tầng ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các điểm ảnh của $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
+Việc chuyển từ $W$ sang $V$ hoàn toàn chỉ có mục đích thẩm mĩ (tại thời điểm này) bởi có một sự tương ứng một-một giữa các hệ số trong cả hai tensor.
+Ta chỉ đơn thuần đặt lại các chỉ số dưới $(k, l)$ với $k = i+a$ và $l = j+b$.
+Nói cách khác, $V[i, j, a, b] = W[i, j, i+a, j+b]$.
+Các chỉ số $a, b$ chạy trên toàn bộ hình ảnh, có thể mang cả giá trị dương và âm.
+Với bất kỳ vị trí $(i, j)$ nào ở tầng ẩn, giá trị biểu diễn ẩn $h[i, j]$ được tính bằng tổng trọng số của các điểm ảnh nằm xung quanh vị trí $(i, j)$ của $x$, với trọng số là $V[i, j, a, b]$.
 
 <!--
 Now let us invoke the first principle we established above: *translation invariance*.
@@ -187,10 +187,10 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
-Ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
-Điều này chỉ khả thi nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
-Kết quả là ta có thể đơn giản hóa định nghĩa của $h$.
+Bây giờ hãy sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
+Nguyên tắc này ngụ ý rằng một sự dịch chuyển ở đầu vào $x$ cũng sẽ tạo ra sự dịch chuyển ở biểu diễn ẩn $h$.
+Điều này chỉ có thể xảy ra nếu $V$ và $u$ không phụ thuộc vào $(i, j)$, tức $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
+Kết quả, ta có thể đơn giản hóa định nghĩa của $h$.
 
 $$h[i, j] = u + \sum_{a, b} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -205,10 +205,10 @@ Note that $V[a, b]$ needs many fewer coefficients than $V[i, j, a, b]$. For a 1 
 This is 1 million fewer parameters since it no longer depends on the location within the image. We have made significant progress!
 -->
 
-Đây là tích chập!
-Thực chất, ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ với các hệ số $V[a, b]$ để thu được giá trị $h[i, j]$.
-Lưu ý rằng $V[a, b]$ cần ít hệ số hơn hẳn so với $V[i, j, a, b]$. Đối với hình ảnh 1 megapixel, nó có tối đa 1 triệu hệ số.
-Con số này đã giảm đi 1 triệu vì nó không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
+Đây là một phép tích chập!
+Ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ bằng các trọng số $V[a, b]$ để thu được giá trị $h[i, j]$.
+Lưu ý rằng $V[a, b]$ cần ít trọng số hơn hẳn so với $V[i, j, a, b]$. Với đầu vào là hình ảnh 1 megapixel (với tối đa 1 triệu trọng số cho mỗi vị trí),
+lượng trọng số của $V[a, b]$ giảm đi 1 triệu vì không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
 
 <!--
 Now let us invoke the second principle---*locality*.
@@ -217,10 +217,10 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-Bây giờ hãy viện dẫn nguyên tắc thứ hai---*tính cục bộ*.
-Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa khỏi $(i, j)$ để thu thập thông tin liên quan cho việc đánh giá những gì đang diễn ra tại $h[i, j]$.
-Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
-Tương tự, ta có thể viết lại $h[i, j]$ như sau
+Bây giờ sử dụng nguyên tắc thứ hai---*tính cục bộ*.
+Như trình bày ở trên, giả sử rằng ta không cần thông tin tại các vị trí quá xa $(i, j)$ để đánh giá những gì đang diễn ra tại $h[i, j]$.
+Điều này có nghĩa là ở các miền giá trị $|a|, |b| > \Delta$, ta có thể đặt $V[a, b] = 0$.
+Tương tự, ta có thể đơn giản hoá $h[i, j]$ như sau
 
 $$h[i, j] = u + \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -234,13 +234,13 @@ When that bias agrees with reality, we get sample-efficient models that generali
 But of course, if those biases do not agree with reality, e.g., if images turned out not to be translation invariant, our models may not generalize well.
 -->
 
-Nói một cách ngắn gọn, đây chính là tầng tích chập.
-Khi miền cục bộ (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt mà nó mang lại có thể rất lớn so với mạng kết nối đầy đủ.
-Mặc dù trước đây ta có thể cần tới hàng tỷ tham số để biểu diễn một tầng duy nhất trong mạng xử lý ảnh, hiện giờ ta thường chỉ cần vài trăm.
-Cái giá mà ta phải trả cho sự thay đổi lớn này là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể suy xét các thông tin cục bộ.
-Toàn bộ quá trình học sẽ dựa trên việc áp đặt các thiên kiến quy nạp.
-Khi các thiên kiến đó phù hợp với thực tế, ta sẽ có được các mô hình hoạt động hiệu quả với ít mẫu và khái quát tốt cho dữ liệu chưa gặp.
-Nhưng tất nhiên, nếu những thiên kiến đó không phù hợp với thực tế, ví dụ như hóa ra các ảnh không có tính bất biến tịnh tiến, các mô hình của ta có thể sẽ không khái quát tốt.
+Một cách ngắn gọn, đây chính là biểu diễn toán học của tầng tích chập.
+Khi vùng cục bộ xung quanh vị trí đang xét (còn được gọi là *vùng tiếp nhận*) nhỏ, sự khác biệt so với mạng kết nối đầy đủ có thể rất lớn.
+Trước đây ta có thể phải cần hàng tỷ tham số để biểu diễn một tầng duy nhất trong mạng xử lý ảnh, hiện giờ chỉ cần vài trăm.
+Cái giá phải trả là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể nhận thông tin cục bộ.
+Toàn bộ quá trình học dựa trên việc đặt các giả thiết. <!-- từ cũ `thiên kiến quy nạp` nghe lạ quá :) -->
+Khi các giả thiết đó phù hợp với thực tế, ta sẽ có được các mô hình hoạt động hiệu quả với ít mẫu và khái quát tốt cho dữ liệu chưa gặp.
+Nhưng tất nhiên, nếu những giả thiết đó không phù hợp với thực tế, ví dụ như nếu các ảnh không có tính bất biến tịnh tiến, các mô hình có thể sẽ không hoạt động tốt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -258,7 +258,7 @@ In mathematics, the convolution between two functions,
 say $f, g: \mathbb{R}^d \to R$ is defined as
 -->
 
-Hãy cùng nhanh chóng xem lại lý do tại sao toán tử trên được gọi là *tích chập*.
+Hãy cùng xem qua lý do tại sao toán tử trên được gọi là *tích chập*.
 Trong toán học, phép tích chập giữa hai hàm số $f, g: \mathbb{R}^d \to R$ được định nghĩa như sau
 
 $$[f \circledast g](x) = \int_{\mathbb{R}^d} f(z) g(x-z) dz.$$
@@ -269,9 +269,9 @@ Whenever we have discrete objects, the integral turns into a sum.
 For instance, for vectors defined on $\ell_2$, i.e., the set of square summable infinite dimensional vectors with index running over $\mathbb{Z}$ we obtain the following definition.
 -->
 
-Đó là, ta đo lường sự chồng chéo giữa $f$ và $g$ khi cả hai hàm được dịch chuyển một khoảng $x$ và "bị lật lại".
-Bất cứ khi nào ta có các đối tượng rời rạc, phép tích phân trở thành phép lấy tổng.
-Chẳng hạn như, đối với các vector được xác định trên $\ell_2$, tức là, tập hợp có thể lấy tổng được của bình phương các vector vô hạn chiều có chỉ số chạy trên $\mathbb{Z}$, ta có được định nghĩa sau:
+Trong phép toán này, ta đo lường sự chồng chéo giữa $f$ và $g$ khi $g$ được dịch chuyển một khoảng $x$ và "bị lật lại".
+Đối với các đối tượng rời rạc, phép tích phân trở thành phép lấy tổng.
+Chẳng hạn như, đối với các vector được định nghĩa trên $\ell_2$, là tập các vector vô hạn chiều có tổng bình phương hội tụ,  chỉ số chạy trên $\mathbb{Z}$, ta có phép tích chập sau:
 
 $$[f \circledast g](i) = \sum_a f(a) g(i-a).$$
 
@@ -284,12 +284,12 @@ Also note that the original definition is actually a *cross correlation*.
 We will come back to this in the following section.
 -->
 
-Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$ theo tuần tự.
-Điều này trông tương tự như định nghĩa ở trên, với một sự khác biệt lớn.
-Thay vì sử dụng $(i+a, j+b)$, ta lại sử dụng hiệu.
-Tuy nhiên, lưu ý rằng sự cách biệt này chủ yếu là ảo vì ta luôn có thể chuyển về ký hiệu của phép tích chập bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có được $h = x \circledast \tilde{V}$.
-Cũng lưu ý rằng định nghĩa ban đầu thực ra là một phép *tương quan chéo*.
-Ta sẽ quay trở lại vấn đề này trong phần tiếp theo.
+Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$.
+Nhìn gần giống với định nghĩa tầng tích chập ở trên, với một khác biệt lớn.
+Thay vì $(i+a, j+b)$, ta lại sử dụng hiệu.
+Tuy nhiên, lưu ý rằng sự khác biệt này không phải vấn đề lớn vì ta luôn có thể chuyển về ký hiệu của phép tích chập bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có $h = x \circledast \tilde{V}$.
+Cũng lưu ý rằng định nghĩa ban đầu thực ra là của phép toán *tương quan chéo*.
+Ta sẽ quay trở lại phép toán này trong phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -471,3 +471,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 7 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
