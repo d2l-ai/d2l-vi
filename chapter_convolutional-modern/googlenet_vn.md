@@ -279,8 +279,8 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 -->
 
 * Khối Inception thì tương đương với một mạng con với bốn nhánh. 
-Nó trích xuất thông tin song song với nhau thông qua các tầng tính chập với kích thước các cửa sổ trượt khác nhau và các tầng gộp cực đại. 
-Phép tính chập với kích thước cửa sổ trượt $1 \times 1$ làm giảm đi số chiều của kênh trên mỗi mức điểm ảnh. Phép gộp cực đại làm giảm đi độ phân giải.
+Nó trích xuất thông tin song song với nhau thông qua các tầng tích chập với kích thước các cửa sổ trượt khác nhau và các tầng gộp cực đại. 
+Phép tích chập với kích thước cửa sổ trượt $1 \times 1$ làm giảm đi số chiều của kênh trên mỗi mức điểm ảnh. Phép gộp cực đại làm giảm đi độ phân giải.
 * Mô hình GoogLeNet kết nối nhiều khối Inception được khéo léo thiết kế với các tầng khác nhau trong chuỗi mô hình. 
 Tỷ lệ số lượng các kênh được chỉ định trong khối Inception thì có được nhờ vào nhiều lần thực nghiệm trên bộ dữ liệu ImageNet.
 * Mô hình GoogLeNet, cũng như các phiên bản kế tiếp của nó, là một trong những mô hình hiệu quả nhất trên ImageNet, chúng cùng cho ra độ chính xác tương tự nhau trên tập kiểm tra mà với độ phức tạp tính toán thấp hơn.
@@ -309,7 +309,7 @@ Tỷ lệ số lượng các kênh được chỉ định trong khối Inception
     * Thêm khối Inception vào trong kết nối thặng dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả sau ở phần :numref:`sec_resnet`.
 1. Kích thước tối thiểu của hình ảnh đầu vào để mô hình GoogLeNet hoạt động là bao nhiêu?
 2. So sánh số lượng tham số của mô hình của AlexNet, VGG và NiN với GoogLeNet. Làm thế nào mà hai kiến trúc mạng NiN và GoogLeNet lại giảm đáng kể về số lượng tham số? 
-3. Tại chúng ta cần nhiều tầng tính chập có kích thước vùng tiếp nhận khác nhau?
+3. Tại chúng ta cần nhiều tầng tíh chập có kích thước vùng tiếp nhận khác nhau?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
