@@ -57,7 +57,10 @@ or [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), the Speeded
 4. Dump the resulting representations into your favorite classifier, likely a linear model or kernel method, to learn a classifier.
 -->
 
-*dịch đoạn phía trên*
+1. Thu được tập dữ liệu đáng chú ý. Trong những ngày đầu sơ khai, các tập dữ liệu này đòi hỏi các cảm biến đắt tiền (thời điểm đó, ảnh có dung lượng 1 triệu điểm ảnh là mức cao nhất).
+2. Việc xử lý tập dữ liệu bước đầu thủ công với các đặc trưng dựa trên kiến thức về quang học, hình học, các công cụ phân tích khác và thi thoảng dựa trên các khám phá tình cờ nhờ may mắn của các sinh viên sau đại học.
+3. Dữ liệu này được đưa qua một bộ rút trích đặc trưng chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay một trong số bất kỳ piplines điều chỉnh bằng tay nào khác. 
+4. Các kết quả biểu diễn được bỏ vào bộ phân loại mà ta ưa thích, có thể là một mô hình tuyến tính hoặc một phương pháp lọc, để huấn luyện bộ phân loại. 
 
 <!--
 If you spoke to machine learning researchers, they believed that machine learning was both important and beautiful.
@@ -69,7 +72,12 @@ Computer vision researchers justifiably believed that a slightly bigger or clean
 or a slightly improved feature-extraction pipeline mattered far more to the final accuracy than any learning algorithm.
 -->
 
-*dịch đoạn phía trên*
+Nếu giả sử bạn từng nói chuyện với những nhà nghiên cứu về học máy, họ đã tin rằng học máy vừa có cả tầm quan trọng lẫn vẻ đẹp cuốn hút.
+Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
+Lĩnh vực học máy đang ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
+Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu trong lĩnh vực thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
+Sự thật trần trụi trong việc nhận dạng ảnh, như họ sẽ kể cho bạn, đó là các đặc trưng chứ không phải các giải thuật học, quyết định sự cải thiện.
+Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline rút trích đặc trưng với một chút cải thiện làm độ chính xác cuối cùng khác xa hơn nhiều so với bất kỳ giải thuật huấn luyện nào.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -79,7 +87,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 ## Learning Feature Representation
 -->
 
-## *dịch tiêu đề phía trên*
+## Học biểu diễn đặc trưng
 
 <!--
 Another way to cast the state of affairs is that the most important part of the pipeline was the representation.
@@ -92,7 +100,14 @@ In fact, engineering a new set of feature functions, improving results, and writ
 and similar feature extractors ruled the roost.
 -->
 
-*dịch đoạn phía trên*
+Cách khác để kết nối trạng thái của các dữ kiện liên quan với nhau, đó cũng là phần quan trọng nhất của pipeline là thực hiện biểu diễn.
+Và cho tới năm 2012 việc biểu diễn vẫn được tính toán một cách cơ học.
+Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng mới, thực hiện cải thiện kết quả, và viết ra phương pháp thực hiện là một phần quan trọng của bài báo nghiên cứu. 
+[SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform),
+[SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features),
+[HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients),
+[Bags of visual words](https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision)
+và các bộ rút đặc trưng tương tự quyết định căn bản. 
 
 <!--
 Another group of researchers, including Yann LeCun, Geoff Hinton, Yoshua Bengio,
@@ -103,7 +118,12 @@ In the case of an image, the lowest layers might come to detect edges, colors, a
 Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a convolutional neural network which achieved excellent performance in the ImageNet challenge.
 -->
 
-*dịch đoạn phía trên*
+Một nhóm nhà nghiên cứu khác, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, đã có những kế hoạch khác. 
+Họ tin rằng các đặc trưng tự chúng có thể được học. 
+Hơn nữa, họ cũng tin rằng với một độ phức tạp hợp lý, các đặc trưng có thể được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số huấn luyện có thể học được. 
+Trong trường hợp ảnh, các tầng thấp nhất có thể đi đến phát hiện biên, màu sắc và đường nét.
+Thật vậy, :cite:`Krizhevsky.Sutskever.Hinton.2012` đề xuất một biến thể mới của một mạng tích chập đã đạt được hiệu năng xuất sắc trong 
+cuộc thi Thách thức Imagenet. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -114,14 +134,13 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 :numref:`fig_filters` is reproduced from this paper and describes lower-level image descriptors.
 -->
 
-Một điều thú vị là ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. 
-Hình :numref:`fig_filters` trích lại từ bài báo khoa học này mô tả các đặc trưng cấp thấp của hình ảnh.
+*dịch đoạn phía trên*
 
 <!--
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
 -->
 
-![Các bộ lọc hình ảnh học được ở tầng đầu tiên của mô hình AlexNet](../img/filters.png)
+![*dịch chú thích ảnh phía trên*](../img/filters.png)
 :width:`400px`
 :label:`fig_filters`
 
@@ -131,9 +150,7 @@ Even higher layers might represent whole objects like people, airplanes, dogs, o
 Ultimately, the final hidden state learns a compact representation of the image that summarizes its contents such that data belonging to different categories be separated easily.
 -->
 
-Các tầng cao hơn của mạng sẽ dựa vào các biểu diễn này để thể hiện các cấu trúc lớn hơn như mắt, mũi, ngọn cỏ, v.v. 
-Thậm chí các tầng cao hơn có thể đại diện cho nguyên một vật thể như con người, máy bay, chó hoặc là đĩa ném. 
-Cuối cùng, tầng trạng thái ẩn cuối sẽ học cách biểu diễn cô đọng của toàn bộ hình ảnh để tổng hợp lại nội dung sao cho dữ liệu thuộc các lớp khác nhau được dễ dàng phân biệt.
+*dịch đoạn phía trên*
 
 
 <!--
@@ -142,15 +159,13 @@ a core group of researchers had dedicated themselves to this idea, attempting to
 The ultimate breakthrough in 2012 can be attributed to two key factors.
 -->
 
-Khi bước đột phá của các mạng tích chập nhiều tầng xuất hiện vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các biểu diễn phân cấp của dữ liệu hình ảnh trong nhiều năm. 
-Có hai yếu tố chính dẫn tới bước đột phá lớn ở năm 2012.
-
+*dịch đoạn phía trên*
 
 <!--
 ### Missing Ingredient - Data
 -->
 
-### Yếu tố bị thiếu - Dữ liệu
+### *dịch tiêu đề phía trên*
 
 <!--
 Deep models with many layers require large amounts of data in order to enter the regime where they significantly outperform traditional methods based on convex optimizations (e.g., linear and kernel methods).
@@ -158,9 +173,7 @@ However, given the limited storage capacity of computers, the relative expense o
 Numerous papers addressed the UCI collection of datasets, many of which contained only hundreds or (a few) thousands of images captured in unnatural settings with low resolution.
 -->
 
-Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có hiệu quả vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp tuyến tính và phương pháp nhân). 
-Tuy nhiên, do khả năng lưu trữ của máy tính còn hạn chế, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
-Có rất nhiều bài báo nghiên cứu khoa học giải quyết các vấn đề dựa trên bộ dữ liệu tổng hợp UCI, nhiều bộ dữ liệu trong số đó chỉ chứa khoảng vài trăm hoặc (một vài) ngàn hình ảnh được chụp trong điều kiện thiếu tự nhiên và độ phân giải thấp.
+*dịch đoạn phía trên*
 
 <!--
 In 2009, the ImageNet dataset was released, challenging researchers to learn models from 1 million examples, 1,000 each from 1,000 distinct categories of objects.
@@ -171,10 +184,7 @@ The associated competition, dubbed the ImageNet Challenge pushed computer vision
 challenging researchers to identify which models performed best at a greater scale than academics had previously considered.
 -->
 
-Năm 2009, tập dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu hình ảnh, trong đó có 1.000 ảnh cho mỗi 1.000 lớp đối tượng khác nhau. 
-Các nhà nghiên cứu giới thiệu tập dữ liệu này, dẫn đầu bởi Fei-Fei Li, đã tận dụng công cụ Tìm kiếm Hình ảnh của Google để lọc sơ bộ ra các tập dữ liệu hình ảnh lớn cho mỗi lớp và sử dụng dịch vụ cộng đồng (*crowdsourcing*) Mechanical Turk của Amazon để xác thực nhãn cho từng ảnh. 
-Đây là quy mô lớn chưa từng có từ trước đến nay. 
-Cuộc thi đi liền với tập dữ liệu này được đặt tên là ImageNet Challenge và đã thúc đẩy sự phát triển của nghiên cứu thị giác máy tính và học máy, thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn bao giờ hết trong giới học thuật. 
+*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -521,10 +531,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-* Đinh Đắc
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
+*
 
 <!-- Phần 4 -->
 *
