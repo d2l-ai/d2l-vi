@@ -107,7 +107,6 @@ $$\hat{\mathbf{\mu}}_\mathcal{B} \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathb
 \hat{\mathbf{\sigma}}_\mathcal{B}^2 \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathbf{x} \in \mathcal{B}} (\mathbf{x} - \mathbf{\mu}_{\mathcal{B}})^2 + \epsilon$$
 -->
 
-*dịch đoạn phía trên* / đoạn này là công thức???
 
 <!--
 Note that we add a small constant $\epsilon > 0$ to the variance estimate
