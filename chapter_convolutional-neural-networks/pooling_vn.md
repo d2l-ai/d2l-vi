@@ -119,17 +119,17 @@ moves no more than one element in height and width.
 Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập đến ở đầu chương.
 Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho tầng gộp cực đại $2\times 2$.
 Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`. 
-Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]` có khác nhau hay không, hoặc `X[i, j+1]` và `X[i, j+2]` khác nhau, tất cả giá trị trả về của tầng gộp là `Y[i, j]=1`.
-Điều đó có nghĩa là, sử dụng $2\times 2$ tầng gộp cực đại, chúng ta vẫn có thể nhận diện nếu một mẫu được nhận diện bởi tầng tích chập chuyển dịch không nhiều hơn một phần tử theo chiều cao và chiều rộng.
+Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]`hay giữa `X[i, j+1]` và `X[i, j+2]` có khác nhau không, tất cả giá trị trả về của tầng gộp là `Y[i, j]=1`.
+Điều đó có nghĩa là, sử dụng tầng gộp cực đại $2\times 2$, chúng ta vẫn có thể phát hiện được khuôn mẫu được nhận diện bởi tầng tích chập nếu nó bị chuyển dịch không nhiều hơn một phần tử theo chiều cao và chiều rộng.
 
 <!--
 In the code below, we implement the forward computation of the pooling layer in the `pool2d` function.
 This function is similar to the `corr2d` function in :numref:`sec_conv_layer`.
 However, here we have no kernel, computing the output as either the max or the average of each region in the input..
 -->
-Trong đoạn code bên dưới, chúng tôi lập trình phép tính toán xuôi của tầng gộp trong hàm `pool2d`.
+Trong đoạn mã bên dưới, chúng tôi lập trình lượt truyền xuôi của tầng gộp trong hàm `pool2d`.
 Hàm này tương tự với hàm `corr2d` trong :numref:`sec_conv_layer`.
-Tuy nhiên, ở đây chúng ta có nhân, kết quả đầu ra hoặc là giá trị lớn nhất hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
+Tuy nhiên, hàm này không có bộ lọc nên kết quả đầu ra hoặc là giá trị lớn nhất, hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
 
 ```{.python .input  n=3}
 from mxnet import np, npx
@@ -333,6 +333,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Đình Nam
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 *
