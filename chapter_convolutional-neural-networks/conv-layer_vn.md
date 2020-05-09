@@ -15,6 +15,12 @@ we will stick with image data in our examples, and begin by revisiting the convo
 We note that strictly speaking, *convolutional* layers are a slight misnomer, since the operations are typically expressed as cross correlations.
 -->
 
+<!-- UPDATE
+Now that we understand how convolutional layers work in theory, we are ready to see how they work in practice.
+Building on our motivation of convolutional neural networks as efficient architectures for epxloring structure in image data,
+we stick with images as our running example.
+-->
+
 Giờ chúng ta đã hiểu cách các tầng tích chập hoạt động trên lý thuyết, hãy xem chúng hoạt động trong thực tế như thế nào.
 Với cảm hứng từ khả năng ứng dụng các mạng nơ-ron tích chập với dữ liệu hình ảnh, chúng ta vẫn sẽ sử dụng loại dữ liệu này trong các ví dụ, và bắt đầu với tầng tích chập được giới thiệu ở phần trước.
 Chú ý rằng, một cách chặt chẽ, việc đặt tên các tầng là *tích chập* là không chính xác, vì các phép toán thường được biểu diễn dưới dạng tương quan chéo.
@@ -33,6 +39,17 @@ We mark the shape of the array as $3 \times 3$ or (3, 3).
 The height and width of the kernel array are both 2.
 Common names for this array in the deep learning research community include *kernel* and *filter*.
 The shape of the kernel window (also known as the convolution window) is given precisely by the height and width of the kernel (here it is $2 \times 2$).
+-->
+
+<!-- UPDATE
+Recall that strictly speaking, *convolutional* layers are a (slight) misnomer, since the operations they express are more accurately described as cross correlations.
+In a convolutional layer, an input array and a *correlation kernel* array are combined to produce an output array through a cross-correlation operation.
+Let's ignore channels for now and see how this works with two-dimensional data and hidden representations.
+In :numref:`fig_correlation`, the input is a two-dimensional array with a height of 3 and width of 3.
+We mark the shape of the array as $3 \times 3$ or ($3$, $3$).
+The height and width of the kernel are both $2$.
+Note that in the deep learning research community, this object may be referred to as *a convolutional kernel*, *a filter*, or simply the layer's *weights*.
+The shape of the kernel window is given by the height and width of the kernel (here it is $2 \times 2$).
 -->
 
 Trong một tầng tích chập, một mảng đầu vào và một mảng bộ lọc tương quan được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo (*cross correlation*).
@@ -56,7 +73,7 @@ In the two-dimensional cross-correlation operation, we begin with the convolutio
 and slide it across the input array, both from left to right and top to bottom.
 When the convolution window slides to a certain position, the input subarray contained in that window and the kernel array are multiplied (elementwise) 
 and the resulting array is summed up yielding a single scalar value.
-This result if precisely the value of the output array at the corresponding location.
+TThis result gives the value of the output array at the corresponding location.
 Here, the output array has a height of 2 and width of 2 and the four elements are derived from the two-dimensional cross-correlation operation:
 -->
 
@@ -87,6 +104,15 @@ Next, we implement the above process in the `corr2d` function.
 It accepts the input array `X` with the kernel array `K` and outputs the array `Y`.
 -->
 
+<!-- UPDATE
+Note that along each axis, the output is slightly *smaller* than the input.
+Because the kernel has width and height greater than one, we can only properly compute the cross-correlation for locations where the kernel fits wholly within the image,
+the output size is given by the input size $H \times W$ minus the size of the convolutional kernel $h \times w$ via $(H-h+1) \times (W-w+1)$.
+This is the case since we need enough space to 'shift' the convolutional kernel across the image
+(later we will see how to keep the size unchanged by padding the image with zeros around its boundary such that there is enough space to shift the kernel).
+Next, we implement this process in the `corr2d` function, which accepts the input array `X` and kernel array `K` and returns the output array `Y`.
+-->
+
 Lưu ý rằng theo mỗi trục, kích thước đầu ra *nhỏ hơn* một chút so với đầu vào.
 Bởi vì bộ lọc có chiều rộng lớn hơn một và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
 Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
@@ -111,7 +137,7 @@ def corr2d(X, K):
 
 <!--
 We can construct the input array `X` and the kernel array `K` from the figure above
-to validate the output of the above implementations of the two-dimensional cross-correlation operation.
+to validate the output of the above implementation of the two-dimensional cross-correlation operation.
 -->
 
 Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` như hình trên để kiểm tra lại kết quả của cách lập trình phép toán tương quan chéo hai chiều vừa rồi.
@@ -136,6 +162,12 @@ corr2d(X, K)
 A convolutional layer cross-correlates the input and kernels and adds a scalar bias to produce an output.
 The parameters of the convolutional layer are precisely the values that constitute the kernel and the scalar bias.
 When training the models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully-connected layer.
+-->
+
+<!-- UPDATE
+A convolutional layer cross-correlates the input and kernels and adds a scalar bias to produce an output.
+The two parameters of the convolutional layer are the kernel and the scalar bias.
+When training models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully connected layer.
 -->
 
 Tầng tích chập thực hiện phép toán tương quan chéo giữa đầu vào và bộ lọc sau đó cộng vào một hệ số điều chỉnh để có được đầu ra.
@@ -176,7 +208,7 @@ class Conv2D(nn.Block):
 ## Phát hiện biên của vật thể trong ảnh
 
 <!--
-Let us look at a simple application of a convolutional layer: detecting the edge of an object in an image by finding the location of the pixel change.
+Let's take a moment to parse a simple application of a convolutional layer: detecting the edge of an object in an image by finding the location of the pixel change.
 First, we construct an 'image' of $6\times 8$ pixels.
 The middle four columns are black (0) and the rest are white (1).
 -->
@@ -192,11 +224,11 @@ X
 ```
 
 <!--
-Next, we construct a kernel `K` with a height of 1 and width of 2.
+Next, we construct a kernel `K` with a height of $1$ and width of $2$.
 When we perform the cross-correlation operation with the input, if the horizontally adjacent elements are the same, the output is 0. Otherwise, the output is non-zero.
 -->
 
-Sau đó, ta tạo một bộ lọc `K` có chiều cao bằng 1 và chiều rộng bằng 2.
+Sau đó, ta tạo một bộ lọc `K` có chiều cao bằng $1$ và chiều rộng bằng $2$.
 Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0, còn lại đầu ra sẽ khác không.
 
 ```{.python .input  n=67}
@@ -209,6 +241,12 @@ As you can see, we will detect 1 for the edge from white to black and -1 for the
 The rest of the outputs are 0.
 -->
 
+<!-- UPDATE
+We are ready to perform the cross-correlation operation with arguments `X` (our input) and `K` (our kernel).
+As you can see, we detect 1 for the edge from white to black and -1 for the edge from black to white.
+All other outputs take value $0$.
+-->
+
 Truyền giá trị của `X` và bộ lọc `K` để thực hiện phép tương quan chéo.
 Bạn có thể thấy, tại các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
 Các vị trí còn lại của đầu ra có giá trị 0.
@@ -219,7 +257,7 @@ Y
 ```
 
 <!--
-Let us apply the kernel to the transposed image.
+We can now apply the kernel to the transposed image.
 As expected, it vanishes. The kernel `K` only detects vertical edges.
 -->
 
@@ -255,7 +293,8 @@ Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích ch�
 <!--
 Now let us see whether we can learn the kernel that generated `Y` from `X` by looking at the (input, output) pairs only.
 We first construct a convolutional layer and initialize its kernel as a random array.
-Next, in each iteration, we will use the squared error to compare `Y` and the output of the convolutional layer, then calculate the gradient to update the weight.
+Next, in each iteration, we will use the squared error to compare `Y` to the output of the convolutional layer.
+We can then calculate the gradient to update the weight.
 For the sake of simplicity, in this convolutional layer, we will ignore the bias.
 -->
 
@@ -284,7 +323,7 @@ conv2d = nn.Conv2D(1, kernel_size=(1, 2))
 conv2d.initialize()
 
 # The two-dimensional convolutional layer uses four-dimensional input and
-# output in the format of (example channel, height, width), where the batch
+# output in the format of (example, channel, height, width), where the batch
 # size (number of examples in the batch) and the number of channels are both 1
 X = X.reshape(1, 1, 6, 8)
 Y = Y.reshape(1, 1, 6, 7)
@@ -302,6 +341,11 @@ for i in range(10):
 
 <!--
 As you can see, the error has dropped to a small value after 10 iterations.
+Now we will take a look at the kernel array we learned.
+-->
+
+<!-- UPDATE
+Note that the error has dropped to a small value after 10 iterations.
 Now we will take a look at the kernel array we learned.
 -->
 
@@ -337,6 +381,15 @@ In keeping with standard terminology with deep learning literature,
 we will continue to refer to the cross-correlation operation as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
+<!-- UPDATE
+Recall our observation from the previous section of the correspondence between the cross-correlation and convolution operators.
+The figure above makes this correspondence apparent.
+Simply flip the kernel from the bottom left to the top right.
+In this case, the indexing in the sum is reverted, yet the same result can be obtained.
+In keeping with standard terminology with deep learning literature, we will continue to refer to the cross-correlation operation
+as a convolution even though, strictly-speaking, it is slightly different.
+-->
+
 Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
 Trong hình trên, ta dễ dàng nhận thấy điều này, đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
 Trong trường hợp này, việc lập chỉ số trong phép tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
@@ -353,7 +406,7 @@ ta sẽ tiếp tục đề cập đến phép tương quan chéo như là một 
 * The core computation of a two-dimensional convolutional layer is a two-dimensional cross-correlation operation. 
 In its simplest form, this performs a cross-correlation operation on the two-dimensional input data and the kernel, and then adds a bias.
 * We can design a kernel to detect edges in images.
-* We can learn the kernel through data.
+* We can learn the kernel's parameters from data.
 -->
 
 * Tính toán cốt lõi của tầng tích chập hai chiều là phép tính tương quan chéo hai chiều.
@@ -396,11 +449,6 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2349)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2349)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -419,23 +467,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-<!-- Phần 2 -->
 * Lý Phi Long
-
-<!-- Phần 3 -->
-* Nguyễn Văn Cường
 * Phạm Minh Đức
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
