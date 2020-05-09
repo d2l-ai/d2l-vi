@@ -63,7 +63,7 @@ Sự chuẩn hoá theo batch được áp dụng vào từng tầng riêng lẻ 
 Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên chúng ta tính giá trị kích hoạt của tầng như thường lệ.
 Sau đó, chúng ta chuẩn hóa những giá trị kích hoạt này của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn của nó, 
 cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
-Vì việc *chuẩn hóa* này dựa trên các số liệu thống kê của *batch* cho nên tên gọi *chuẩn hoá theo batch* xuất phát từ đây.
+Chính vì *chuẩn hóa* dựa trên các số liệu thống kê của *batch* nên kỹ thuật này có tên gọi *chuẩn hoá theo batch*.
 
 
 <!--
