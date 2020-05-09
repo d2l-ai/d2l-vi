@@ -116,7 +116,12 @@ LeNet's fully-connected layer block has three fully-connected layers, with 120, 
 Because we are still performing classification, the 10 dimensional output layer corresponds to the number of possible output classes.
 -->
 
-*dịch đoạn phía trên*
+Đầu ra của khối tích chập có kích thước được cho bởi (kích thước batch, kênh, chiều cao, chiều rộng).
+Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch.
+Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
+nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu.
+Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
+Bởi vì ta vẫn đang thực hiện phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi.
 
 <!--
 While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
@@ -124,7 +129,9 @@ you can see below that implementing it in a modern deep learning library is rema
 Again, we will rely on the Sequential class.
 -->
 
-*dịch đoạn phía trên*
+Trong khi đạt đến mức độ mà bạn thực sự hiểu những gì đang diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
+bạn có thể thấy bên dưới việc lập trình nó trong một thư viện học sâu hiện đại rất đơn giản.
+Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
 ```{.python .input}
 import d2l
@@ -151,7 +158,8 @@ which tends to be significantly more convenient to train.
 Other than that, this network matches the historical definition of LeNet5.
 -->
 
-*dịch đoạn phía trên*
+So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
+Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong lịch sử.
 
 <!--
 Next, let us take a look of an example.
@@ -159,7 +167,9 @@ As shown in :numref:`img_lenet_vert`, we feed a single-channel example of size $
 a forward computation layer by layer printing the output shape at each layer to make sure we understand what is happening here.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta hãy xem một ví dụ.
+Như trong :numref:`img_lenet_vert`, ta đưa vào mạng một mẫu đơn kênh kích thước $28 \times 28$ và thực hiện
+một lượt truyền xuôi qua các tầng và in kích thước đầu ra ở mỗi tầng để đảm bảo ta hiểu những gì đang xảy ra bên trong.
 
 ```{.python .input}
 X = np.random.uniform(size=(1, 1, 28, 28))
@@ -410,7 +420,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 4 -->
 * Đinh Đắc
