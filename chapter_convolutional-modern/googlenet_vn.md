@@ -278,7 +278,7 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 * GoogLeNet, as well as its succeeding versions, was one of the most efficient models on ImageNet, providing similar test accuracy with lower computational complexity.
 -->
 
-* Khối Inception thì tương đương với một mạng con với bốn nhánh. 
+* Khối Inception tương đương với một mạng con với bốn nhánh. 
 Nó trích xuất thông tin song song với nhau thông qua các tầng tích chập với kích thước các cửa sổ trượt khác nhau và các tầng gộp cực đại. 
 * Phép tích chập với kích thước cửa sổ trượt $1 \times 1$ làm giảm đi số chiều của kênh trên mức độ mỗi điểm ảnh. Phép gộp cực đại thì làm giảm độ phân giải.
 * Trong mô hình GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác tạo thành chuỗi. 
