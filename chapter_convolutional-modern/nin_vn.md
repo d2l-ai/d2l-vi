@@ -5,7 +5,7 @@
 # Network in Network (NiN)
 -->
 
-# Network in Network (NiN)
+# Mạng trong Mạng (_Network in Network - NiN_)
 :label:`sec_nin`
 
 <!--
