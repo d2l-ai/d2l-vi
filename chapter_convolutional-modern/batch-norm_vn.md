@@ -157,7 +157,7 @@ We are now ready to take a look at how batch normalization works in practice.
 ## Batch Normalization Layers
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng chuẩn hoá theo batch
 
 <!--
 Batch normalization implementations for fully-connected layers and convolutional layers are slightly different.
@@ -166,14 +166,16 @@ Recall that one key differences between BN and other layers is that because BN o
  we cannot just ignore the batch dimension as we did before when introducing other layers.
 -->
 
-*dịch đoạn phía trên*
-
+Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập thì hơi khác nhau một chút.
+Chúng ta sẽ thảo luận cho cả hai trường hợp trên ở phía dưới.
+Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì BN hoạt động trên một minibatch đầy đủ tại một thời điểm, 
+chúng ta không thể bỏ qua kích thước của batch như chúng ta đã làm trước đây khi giới thiệu về các tầng khác.
 
 <!--
 ### Fully-Connected Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng kết nối đầy đủ
 
 <!--
 When applying BN to fully-connected layers, we usually insert BN after the affine transformation and before the nonlinear activation function.
@@ -182,7 +184,10 @@ the activation function by $\phi(\cdot)$, and the BN operation with parameters $
 we can express the computation of a BN-enabled, fully-connected layer $\mathbf{h}$ as follows:
 -->
 
-*dịch đoạn phía trên*
+Khi áp dụng BN vào tầng kết nối đầy đủ, chúng ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến tính. 
+Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính (với trọng số là $\theta$) là $f_{\theta}(\cdot)$, 
+hàm kích hoạt là $\phi(\cdot)$, và phép tính BN với tham số $\mathbf{\beta}$ và $\mathbf{\gamma}$ là $\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}$, 
+chúng ta sẽ biểu thị việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
 
 $$\mathbf{h} = \phi(\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}(f_{\mathbf{\theta}}(\mathbf{x}) ) ) $$
 
@@ -191,13 +196,14 @@ Recall that mean and variance are computed on the *same* minibatch $\mathcal{B}$
 Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\mathbf{\beta}$ are parameters that need to be learned jointly with the more familiar parameters $\mathbf{\theta}$.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ rằng giá trị trung bình và phương sai thì được tính toán dựa trên *cùng* minibatch $\mathcal{B}$ khi đã được đi qua hàm biến đổi. 
+Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và hệ số xê dịch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
 
 <!--
 ### Convolutional Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng tích chập
 
 <!--
 Similarly, with convolutional layers, we typically apply BN after the convolution and before the nonlinear activation function.
@@ -209,7 +215,14 @@ Thus we collect the values over all spatial locations when computing the mean an
 apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the values at each spatial location.
 -->
 
-*dịch đoạn phía trên*
+Tương tự với tầng tích chập, chúng ta thường áp dụng BN sau khi thực hiện tích chập và trước hàm kích hoạt phi tuyến tính.
+Khi phép tích chập cho đầu ra có nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
+và mỗi kênh sẽ có riêng cho nó những tham số tỉ lệ và xê dịch, cả hai đều là những số thực.
+Giả sử những minibatch của chúng ta có kích thước là $m$ và cho mỗi kênh, đầu ra của tích chập có chiều cao là $p$ và rộng là $q$.
+Đối với tầng tích chập, chúng ta sẽ thực hiện mỗi phép tính chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng đồng thời một lúc.
+Vì thế chúng ta thu được các giá trị trên tất cả các vị trí không gian khi tính toán giá trị trung bình và phương sai 
+và tiếp đó (trong cùng một kênh nhất định) cùng áp dụng hai giá trị $\hat{\mathbf{\mu}}$ và $\hat{\mathbf{\sigma}}$ để chuẩn hóa các giá trị tại mỗi vị trí không gian.
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -582,7 +595,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
 
 <!-- Phần 5 -->
 *
