@@ -247,7 +247,7 @@ for layer in net:
 ## Data Acquisition and Training
 -->
 
-## Thu thập và huấn luyện dữ liệu
+## Thu thập Dữ liệu và Huấn luyện 
 
 <!--
 As before, we train our model using the Fashion-MNIST dataset.
