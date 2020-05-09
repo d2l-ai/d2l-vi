@@ -152,7 +152,7 @@ This corresponds to the second path in the Inception block.
 -->
 
 Thành phần thứ hai sử dụng hai tầng tích chập: tầng đầu tiên có đầu ra là 64 kênh và cửa sổ trượt kích thước $1\times 1$, 
-tiếp theo đó là một tầng tíh chập có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
+tiếp theo là một tầng có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
 Phần này tương ứng với nhánh thứ hai trong khối Inception.
 
 ```{.python .input  n=3}
