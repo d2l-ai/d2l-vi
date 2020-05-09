@@ -52,7 +52,7 @@ Việc đầu tiên khi chúng ta làm việc với dữ liệu thực tế là 
 Theo trực giác, việc chuẩn hóa này hoạt động tốt với những bộ tối ưu vì nó đặt giá trị các tham số tiên nghiệm tại cùng một tỷ lệ.
 2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
 dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
-Những nhà nghiên cứu phát minh ra kỹ thuật chuẩn hoá theo batch đã đưa ra một định đề chưa chính thức rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể làm cản trở sự hội tụ của mạng.
+Những nhà phát minh ra kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
 Một cách trực quan, chúng ta có thể phỏng đoán rằng nếu một tầng có những giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì điều này bắt buộc cần phải có điều chỉnh bổ trợ trong tốc độ học.
 3. Mạng nhiều tầng thì phức tạp và dễ có khả năng gặp vấn đề quá khớp.
 Điều này có nghĩa rằng sự điều chuẩn càng trở nên cấp thiết.
