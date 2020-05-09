@@ -76,7 +76,7 @@ One takeaway here is that when applying BN, the choice of minibatch size may be 
 Lưu ý rằng, khi chúng ta thử áp dụng BN với những minibatch có kích thước là 1, mô hình của chúng ta sẽ không thể học được gì. 
 Đó là bởi vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
 Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, việc chuẩn hóa cho thấy tính hiệu quả và ổn định của nó. 
-Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với việc khi không áp dụng BN.
+Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với khi không áp dụng BN.
 
 <!--
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
