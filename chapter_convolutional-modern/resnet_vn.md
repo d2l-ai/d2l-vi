@@ -209,9 +209,7 @@ the $7\times 7$ convolutional layer with 64 output channels and a stride of 2 is
 The difference is the batch normalization layer added after each convolutional layer in ResNet.
 -->
 
-Hai tầng đầu tiên của ResNet giống như hai tầng đầu tiên của GoogLeNet mà chúng ta đã mô tả trước đây:
-tầng tích chập $7\times 7$ với 64 kênh đầu ra và sải bước bằng 2, theo sau bởi tầng gộp cực đại $3 \times 3$ với sải bước bằng 2.
-Sự khác biệt là tầng chuẩn hóa theo batch được thêm vào sau mỗi tầng tích chập trong ResNet.
+*dịch đoạn phía trên*
 
 ```{.python .input}
 net = nn.Sequential()
@@ -228,19 +226,14 @@ Since a maximum pooling layer with a stride of 2 has already been used, it is no
 In the first residual block for each of the subsequent modules, the number of channels is doubled compared with that of the previous module, and the height and width are halved.
 -->
 
-GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
-Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư, mỗi mô-đun sử dụng một số khối thặng dư có cùng số kênh đầu ra.
-Số lượng kênh trong mô-đun đầu tiên giống với số lượng kênh đầu vào.
-Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
-Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
+*dịch đoạn phía trên*
 
 <!--
 Now, we implement this module.
 Note that special processing has been performed on the first module.
 -->
 
-Bây giờ, chúng ta cài đặt mô-đun này.
-Lưu ý rằng một phép xử lý đặc biệt đã được thực hiện ở mô-đun đầu tiên.
+*dịch đoạn phía trên*
 
 ```{.python .input  n=4}
 def resnet_block(num_channels, num_residuals, first_block=False):
@@ -258,8 +251,7 @@ Then, we add all the residual blocks to ResNet.
 Here, two residual blocks are used for each module.
 -->
 
-Sau đó, chúng ta thêm tất cả các khối thặng dư vào ResNet.
-Ở đây, hai khối thặng dư được sử dụng cho mỗi mô-đun.
+*dịch đoạn phía trên*
 
 ```{.python .input  n=5}
 net.add(resnet_block(64, 2, first_block=True),
@@ -276,7 +268,7 @@ net.add(resnet_block(64, 2, first_block=True),
 Finally, just like GoogLeNet, we add a global average pooling layer, followed by the fully connected layer output.
 -->
 
-Cuối cùng, giống như GoogLeNet, chúng ta thêm một tầng gộp trung bình toàn cục, theo sau là đầu ra của tầng kết nối đầy đủ.
+*dịch đoạn phía trên*
 
 ```{.python .input}
 net.add(nn.GlobalAvgPool2D(), nn.Dense(10))
@@ -292,20 +284,13 @@ All these factors have resulted in the rapid and widespread use of ResNet.
 :numref:`fig_ResNetFull` is a diagram of the full ResNet-18.
 -->
 
-Có 4 tầng tích chập trong mỗi mô-đun (không bao gồm tầng tích chập $1 \times 1$).
-Cùng với tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, có tổng cộng 18 tầng.
-Do đó, mô hình này thường được gọi là ResNet-18.
-Bằng cách thay đổi số lượng kênh và khối thặng dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
-ví dụ ResNet-152 sâu hơn với 152 tầng.
-Mặc dù kiến trúc chính của ResNet tương tự như của GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
-Tất cả các yếu tố này đã dẫn đến sự phổ cập của ResNet diễn ra rất nhanh chóng và rộng rãi.
-: numref: `fig_ResNetFull` là sơ đồ của mạng ResNet-18 đầy đủ.
+*dịch đoạn phía trên*
 
 <!--
 ![ResNet 18](../img/ResNetFull.svg)
 -->
 
-![Mạng ResNet-18](../img/ResNetFull.svg)
+![*dịch chú thích ảnh phía trên*](../img/ResNetFull.svg)
 :label:`fig_ResNetFull`
 
 <!--
@@ -313,8 +298,7 @@ Before training ResNet, let us observe how the input shape changes between diffe
 As in all previous architectures, the resolution decreases while the number of channels increases up until the point where a global average pooling layer aggregates all features.
 -->
 
-Trước khi huấn luyện ResNet, chúng ta hãy quan sát cách kích thước đầu vào thay đổi giữa các mô-đun khác nhau trong mạng ResNet.
-Như trong tất cả các kiến trúc trước đây, độ phân giải giảm trong khi số lượng kênh tăng lên cho đến khi một tầng gộp trung bình toàn cục tổng hợp tất cả các đặc trưng.
+*dịch đoạn phía trên*
 
 ```{.python .input  n=6}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -416,7 +400,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-* Nguyễn Văn Quang
+*
 
 <!-- Phần 5 -->
 *
