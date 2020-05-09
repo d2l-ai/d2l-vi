@@ -198,7 +198,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 2. Tại sao có hai tầng chập $1\times 1$ trong khối NiN? Thử loại bỏ một trong số chúng, sau đó quan sát và phân tích các hiện tượng thực nghiệm.
 3. Tính toán việc sử dụng tài nguyên của NiN
      * Số lượng tham số là bao nhiêu?
-     * Số lượng tính toán là bao nhiêu?
+     * Số lượng phép tính là bao nhiêu?
      * Lượng bộ nhớ cần thiết trong quá trình huấn luyện là bao nhiêu?
      * Lượng bộ nhớ cần thiết trong quá trình dự đoán là bao nhiêu?
 4. Những vấn đề có thể xảy ra với việc giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước?
