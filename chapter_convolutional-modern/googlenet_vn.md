@@ -119,7 +119,7 @@ The first part is identical to AlexNet and LeNet, the stack of blocks is inherit
 The architecture is depicted below.
 -->
 
-Như trình bày ở hình :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau để tạo ra sự ước tính của nó. 
+Như trình bày ở hình :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau để đưa ra ước tính. 
 Phép gộp cực đại giữa các khối inception có tác dụng làm giảm đi số chiều. 
 Phần đầu tiên của mô hình thì giống với mô hình AlexNet và LeNet, sự xếp chồng các khối lên nhau thì kế thừa thiết kế của mô hình VGG và phép gộp trung bình toàn cục giúp tránh việc phải sử dụng các tầng kết nối đầy đủ ở cuối. 
 Cấu trúc của mô hình được mô tả dưới đây.
