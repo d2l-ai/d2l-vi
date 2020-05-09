@@ -151,7 +151,7 @@ then a $3\times 3$ convolutional layer that triples the number of channels.
 This corresponds to the second path in the Inception block.
 -->
 
-Thành phần thứ hai sử dụng hai tầng tích chập: đầu tiên là một tầng tích chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là $1\times 1$, 
+Thành phần thứ hai sử dụng hai tầng tích chập: tầng đầu tiên có đầu ra là 64 kênh và cửa sổ trượt kích thước $1\times 1$, 
 tiếp theo đó là một tầng tíh chập có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
 Phần này tương ứng với nhánh thứ hai trong khối Inception.
 
