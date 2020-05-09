@@ -166,7 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt               | Thảo luận tại                                                                              |
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | hand-engineering        | thiết kế thủ công        |                                                                                            |
-| heuristic               | thực nghiệm              |                                                                                            |
+| heuristic               | dựa trên kinh nghiệm     |                                                                                            |
 | hidden unit             | nút ẩn                   |                                                                                            |
 | human-level performance | chất lượng mức con người | [https://git.io/JvQx4](https://git.io/JvQx4), [https://git.io/JvQxB](https://git.io/JvQxB) |
 | hyperparameter          | siêu tham số             |                                                                                            |
