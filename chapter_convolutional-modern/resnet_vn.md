@@ -5,7 +5,7 @@
 # Residual Networks (ResNet)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng thặng dư (ResNet)
 :label:`sec_resnet`
 
 <!--
@@ -14,13 +14,13 @@ Even more important is the ability to design networks where adding layers makes 
 To make some progress we need a bit of theory.
 -->
 
-*dịch đoạn phía trên*
-
+Khi thiết kế các mạng ngày càng sâu hơn, chúng ta cần hiểu rằng việc thêm các tầng vào mạng sẽ khiến tính phức tạp và biểu diễn của mạng tăng lên.
+Điều quan trọng hơn nữa là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng khiến chúng có tính biểu diễn cao hơn thay vì chỉ khác nhau.
 <!--
 ## Function Classes
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Lớp Hàm Số
 
 <!--
 Consider $\mathcal{F}$, the class of functions that a specific network architecture (together with learning rates and other hyperparameter settings) can reach.
@@ -30,8 +30,12 @@ If it is in $\mathcal{F}$, we are in good shape but typically we will not be qui
 Instead, we will try to find some $f^*_\mathcal{F}$ which is our best bet within $\mathcal{F}$.
 For instance, we might try finding it by solving the following optimization problem:
 -->
-
-*dịch đoạn phía trên*
+Hãy xem xét $ \ mathcal {F} $, một lớp các hàm số mà một kiến trúc mạng cụ thể (cùng với tốc độ học và các siêu tham số khác) có thể biểu diễn được.
+Đó là, luôn tồn tại một số tập tham số $W$ có thể tìm được thông qua việc huấn luyện trên một tập dữ liệu phù hợp, cho mọi hàm số $f \in \mathcal{F}$.
+Giả sử $f^*$ là hàm số chúng ta đang muốn tìm kiếm.
+Nếu hàm số này thuộc tập $\mathcal{F}$, thì việc tìm kiếm sẽ thuận lợi nhưng thường thì chúng ta sẽ không may mắn như vậy. 
+Thay vào đó, chúng ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ mà chúng ta tin rằng chúng nằm trong tập $\mathcal{F}$.  
+Ví dụ, chúng ta có thể thử tìm các hàm số này bằng cách giải bài toán tối ưu sau đây:
 
 $$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ subject to } f \in \mathcal{F}.$$
 
@@ -42,14 +46,17 @@ However, if $\mathcal{F} \not\subseteq \mathcal{F}'$ there is no guarantee that 
 In fact, $f^*_{\mathcal{F}'}$ might well be worse.
 This is a situation that we often encounter in practice---adding layers does not only make the network more expressive, it also changes it in sometimes not quite so predictable ways. :numref:`fig_functionclasses`illustrates this in slightly abstract terms.
 -->
-
-*dịch đoạn phía trên*
+Chỉ có lý khi giả sử rằng nếu chúng ta thiết kế một kiến trúc $\mathcal{F}'$ khác biệt và mạnh mẽ hơn thì chúng ta mới đạt được kết quả tốt hơn.
+Nói cách khác, chúng ta kỳ vọng rằng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
+Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì sẽ không đảm bảo rằng điều này có thể xảy ra.
+Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
+Đây là tình huống hay xảy ra trong thực tế--- việc thêm các tầng không chỉ khiến cho một mạng có tính biểu diễn cao hơn, mà nó còn mang lại những thay đổi mà đôi khi rất khó lường.
 
 <!--
 ![Left: non-nested function classes. The distance may in fact increase as the complexity increases. Right: with nested function classes this does not happen.](../img/functionclasses.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/functionclasses.svg)
+![Trái: Các lớp hàm số không lồng nhau. Khoảng cách này, trên thực tế, có thể tăng khi độ phức tạp tăng lên. Phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
 :label:`fig_functionclasses`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
