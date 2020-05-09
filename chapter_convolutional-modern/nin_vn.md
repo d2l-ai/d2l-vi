@@ -102,7 +102,7 @@ One advantage of NiN's design is that it significantly reduces the number of req
 However, in practice, this design sometimes requires increased model training time.
 -->
 
-Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh sử dụng các kết nối dày đặc hoàn toàn.
+Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh hoàn toàn việc sử dụng các kết nối dày đặc.
 Thay vào đó, mạng này sử dụng các khối NiN với số kênh đầu ra bằng với số lớp nhãn, theo sau bởi một tầng gộp trung bình *toàn cục*,
 tạo ra một vector [logits](https://en.wikipedia.org/wiki/Logit).
 Một lợi thế của thiết kế NiN là giảm được các tham số cần thiết của mô hình một cách đáng kể.
