@@ -268,7 +268,7 @@ net.add(resnet_block(64, 2, first_block=True),
 Finally, just like GoogLeNet, we add a global average pooling layer, followed by the fully connected layer output.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, giống như GoogLeNet, chúng ta thêm một tầng gộp trung bình toàn cục, theo sau là đầu ra của tầng kết nối đầy đủ.
 
 ```{.python .input}
 net.add(nn.GlobalAvgPool2D(), nn.Dense(10))
@@ -284,13 +284,20 @@ All these factors have resulted in the rapid and widespread use of ResNet.
 :numref:`fig_ResNetFull` is a diagram of the full ResNet-18.
 -->
 
-*dịch đoạn phía trên*
+Có 4 tầng tích chập trong mỗi mô-đun (không bao gồm tầng tích chập $1 \times 1$).
+Cùng với tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, có tổng cộng 18 tầng.
+Do đó, mô hình này thường được gọi là ResNet-18.
+Bằng cách thay đổi số lượng kênh và khối thặng dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
+ví dụ ResNet-152 sâu hơn với 152 tầng.
+Mặc dù kiến trúc chính của ResNet tương tự như của GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
+Tất cả các yếu tố này đã dẫn đến sự phổ cập của ResNet diễn ra rất nhanh chóng và rộng rãi.
+: numref: `fig_ResNetFull` là sơ đồ của mạng ResNet-18 đầy đủ.
 
 <!--
 ![ResNet 18](../img/ResNetFull.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ResNetFull.svg)
+![Mạng ResNet-18](../img/ResNetFull.svg)
 :label:`fig_ResNetFull`
 
 <!--
@@ -298,7 +305,8 @@ Before training ResNet, let us observe how the input shape changes between diffe
 As in all previous architectures, the resolution decreases while the number of channels increases up until the point where a global average pooling layer aggregates all features.
 -->
 
-*dịch đoạn phía trên*
+Trước khi huấn luyện ResNet, chúng ta hãy quan sát cách kích thước đầu vào thay đổi giữa các mô-đun khác nhau trong mạng ResNet.
+Như trong tất cả các kiến trúc trước đây, độ phân giải giảm trong khi số lượng kênh tăng lên cho đến khi một tầng gộp trung bình toàn cục tổng hợp tất cả các đặc trưng.
 
 ```{.python .input  n=6}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -403,7 +411,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 *
