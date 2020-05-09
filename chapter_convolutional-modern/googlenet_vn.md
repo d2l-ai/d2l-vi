@@ -217,7 +217,7 @@ Finally, we turn the output into a two-dimensional array followed by a fully-con
 -->
 
 Khối thứ năm có hai khối Inception với số lượng kênh đầu ra lần lượt là $256+320+128+128=832$ và $384+384+128+128=1024$. 
-Số lượng kênh được chỉ định cho mỗi đường dẫn tương tự với mô đun thứ ba và thứ tư, nhưng khác nhau ở giá trị cụ thể.
+Số lượng kênh được chỉ định cho mỗi nhánh tương tự như mô đun thứ ba và thứ tư, nhưng khác nhau ở giá trị cụ thể.
 Cần lưu ý rằng khối thứ năm được theo sau bởi tầng đầu ra.
 Khối này sử dụng tầng gộp trung bình toàn cục để thay đổi chiều cao và chiều rộng của mỗi kênh thành 1, giống như trong mô hình NiN. 
 Cuối cùng, chúng ta chuyển đổi đầu ra thành một mảng hai chiều, theo sau là một lớp kết nối đầy đủ với số lượng đầu ra bằng với số lượng các lớp nhãn.
