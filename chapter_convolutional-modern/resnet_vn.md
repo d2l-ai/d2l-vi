@@ -209,7 +209,9 @@ the $7\times 7$ convolutional layer with 64 output channels and a stride of 2 is
 The difference is the batch normalization layer added after each convolutional layer in ResNet.
 -->
 
-*dịch đoạn phía trên*
+Hai tầng đầu tiên của ResNet giống như hai tầng đầu tiên của GoogLeNet mà chúng ta đã mô tả trước đây:
+tầng tích chập $7\times 7$ với 64 kênh đầu ra và sải bước bằng 2, theo sau bởi tầng gộp cực đại $3 \times 3$ với sải bước bằng 2.
+Sự khác biệt là tầng chuẩn hóa theo batch được thêm vào sau mỗi tầng tích chập trong ResNet.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -226,14 +228,19 @@ Since a maximum pooling layer with a stride of 2 has already been used, it is no
 In the first residual block for each of the subsequent modules, the number of channels is doubled compared with that of the previous module, and the height and width are halved.
 -->
 
-*dịch đoạn phía trên*
+GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
+Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư, mỗi mô-đun sử dụng một số khối thặng dư có cùng số kênh đầu ra.
+Số lượng kênh trong mô-đun đầu tiên giống với số lượng kênh đầu vào.
+Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
+Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
 
 <!--
 Now, we implement this module.
 Note that special processing has been performed on the first module.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, chúng ta cài đặt mô-đun này.
+Lưu ý rằng một phép xử lý đặc biệt đã được thực hiện ở mô-đun đầu tiên.
 
 ```{.python .input  n=4}
 def resnet_block(num_channels, num_residuals, first_block=False):
@@ -251,7 +258,8 @@ Then, we add all the residual blocks to ResNet.
 Here, two residual blocks are used for each module.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, chúng ta thêm tất cả các khối thặng dư vào ResNet.
+Ở đây, hai khối thặng dư được sử dụng cho mỗi mô-đun.
 
 ```{.python .input  n=5}
 net.add(resnet_block(64, 2, first_block=True),
@@ -400,7 +408,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 *
