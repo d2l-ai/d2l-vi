@@ -45,7 +45,7 @@ and the channel as equivalent to a feature. :numref:`fig_nin` illustrates the ma
 Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập là các mảng bốn chiều với các trục tương ứng với batch, kênh, chiều cao và chiều rộng.
 Cũng nhớ lại rằng đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng.
 Ý tưởng đằng sau NiN là việc áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (cho mỗi chiều cao và chiều rộng).
-Nếu gắn các trọng số trên mỗi vị trí không gian, ta có thể nghĩ đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ tính toán độc lập trên từng vị trí điểm ảnh.
+Nếu trói buộc các trọng số trên mỗi vị trí không gian, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh.
 Một cách khác để nhìn nhận điều này là coi từng yếu tố trong chiều không gian (chiều cao và chiều rộng) tương đương với một mẫu
 và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG và các mạng khác.
 
