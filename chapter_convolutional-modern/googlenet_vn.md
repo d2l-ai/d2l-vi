@@ -55,7 +55,7 @@ The commonly-tuned parameters of the Inception block are the number of output ch
 
 Như đã mô tả ở hình trên, khối inception bao gồm bốn nhánh song song với nhau. 
 Ba nhánh đầu sử dụng các tầng tích chập với kích thước của cửa sổ trượt lần lượt là $1\times 1$, $3\times 3$, và $5\times 5$ để trích xuất thông tin từ các vùng không gian có kích thước khác nhau. 
-Hai nhánh giữa thực hiện phép tính chập với kích thước cửa sổ trượt là $1\times 1$ trên dữ liệu đầu vào để giảm đi số kênh của dữ liệu đầu vào, việc này giảm thiểu độ phức tạp của mô hình.
+Hai nhánh giữa thực hiện phép tích chập với kích thước cửa sổ trượt là $1\times 1$ trên dữ liệu đầu vào để giảm số kênh của đầu vào, giảm độ phức tạp của mô hình.
 Nhánh thứ tư sử dụng một một tầng gộp cực đại với kích thước cửa sổ trượt là $3\times 3$, theo sau đó là một tầng gộp với kích thước cửa sổ trượt là $1\times 1$ để thay đổi số lượng kênh. 
 Cả bốn nhánh sử dụng đệm hợp lý để đầu vào và đầu ra của khối có cùng kích thước chiều dài và chiều rộng.
 Cuối cùng, những đầu ra của mỗi nhánh sẽ được nối lại với nhau theo chiều của kênh để tạo ra đầu ra của cả khối.
