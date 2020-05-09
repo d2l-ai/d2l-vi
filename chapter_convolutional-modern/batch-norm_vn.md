@@ -59,7 +59,12 @@ estimating both quantities based on the statistics of the current the current mi
 It is precisely due to this *normalization* based on *batch* statistics that *batch normalization* derives its name.
 -->
 
-*dịch đoạn phía trên*
+Sự chuẩn hoá theo batch được áp dụng vào từng tầng riêng lẻ (hoặc có thể tùy chọn cho tất cả các tầng) và cách thức hoạt động như sau:
+Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên chúng ta tính giá trị kích hoạt của tầng như thường lệ.
+Sau đó, chúng ta chuẩn hóa những giá trị kích hoạt này của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn của nó, 
+cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
+Vì việc *chuẩn hóa* này dựa trên các số liệu thống kê của *batch* cho nên tên gọi *chuẩn hoá theo batch* xuất phát từ đây.
+
 
 <!--
 Note that if we tried to apply BN with minibatches of size $1$, we would not be able to learn anything.
@@ -68,13 +73,16 @@ As you might guess, since we are devoting a whole section to BN, with large enou
 One takeaway here is that when applying BN, the choice of minibatch size may be even more significant than without BN.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, khi chúng ta thử áp dụng BN với những minibatch có kích thước là 1, mô hình của chúng ta sẽ không thể học được gì. 
+Đó là bởi vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
+Đúng như bạn suy đoán, bởi vì nguyên cả phần này dành cho BN, với số lượng minibatch đủ lớn, việc chuẩn hóa cho thấy tính hiệu quả và ổn định của nó. 
+Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với việc khi không áp dụng BN.
 
 <!--
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
 -->
 
-*dịch đoạn phía trên*
+Một cách chính thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
 
 $$\mathrm{BN}(\mathbf{x}) = \mathbf{\gamma} \odot \frac{\mathbf{x} - \hat{\mathbf{\mu}}}{\hat\sigma} + \mathbf{\beta}$$
 
@@ -88,7 +96,14 @@ because BN actively centers and rescales them back to a given mean and size (via
 One piece of practitioner's intuition/wisdom is that BN seems to allows for more aggressive learning rates.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, $\hat{\mathbf{\mu}}$  là giá trị trung bình mẫu và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn mẫu của minibatch.
+Sau khi áp dụng BN, minibatch của những giá trị kích hoạt thu được có giá trị trung bình bằng không và phương sai đơn vị.
+Bởi vì việc lựa chọn phương sai đơn vị (so với một số số ma thuật khác) là việc lựa chọn tuỳ ý, 
+cho nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số chuyển đổi tỷ lệ $\mathbf{\gamma}$ và hệ số xê dịch $\mathbf{\beta}$.
+Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện 
+bởi vì BN chủ động định trung tâm và chuyển đổi giá trị của chúng về giá trị trung bình và kích cỡ nhất định (thông qua $\mathbf{\mu}$ và $\sigma$).
+Qua trực giác/kinh nghiệm rút ra từ những người thực nghiệm, dùng BN có khả năng cho phép chọn mức tốc độ học thô bạo hơn.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -576,7 +591,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Đinh Đắc
 
 <!-- Phần 3 -->
 *
