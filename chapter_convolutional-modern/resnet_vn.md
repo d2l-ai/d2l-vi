@@ -316,14 +316,15 @@ for layer in net:
 ## Data Acquisition and Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập dữ liệu và Huấn luyện 
 
 <!--
 We train ResNet on the Fashion-MNIST dataset, just like before.
 The only thing that has changed is the learning rate that decreased again, due to the more complex architecture.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta huấn luyện mạng ResNet trên bộ dữ liệu Fashion-MNIST giống như trước đây.
+Điều duy nhất được thay đổi là tốc độ học giảm trở lại, do kiến trúc mạng phức tạp hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 256
@@ -344,8 +345,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-*dịch đoạn phía trên*
-
+* Các khối thặng dư cho phép tham số hóa liên quan đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
+* Thêm các khối thặng dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
+* Chúng ta có thể huấn luyện một mạng nơ-ron sâu hiệu quả bằng cách cho các khối dư đi qua các kênh dữ liệu liên tầng.
+* ResNet có ảnh hưởng lớn đến việc thiết kế của các mạng nơ-ron sâu tiếp theo, cả về bản chất tích chập và tuần tự.
 
 <!--
 ## Exercises
@@ -362,7 +365,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 5. Why cannot we just increase the complexity of functions without bound, even if the function classes are nested?
 -->
 
-*dịch đoạn phía trên*
+1. Tham khảo Bảng 1 trong bài báo :cite:`He.Zhang.Ren.ea.2016` để cài đặt các biến thể khác nhau.
+2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "nút cổ chai" để giảm độ phức tạp của mô hình. Hãy thử cài đặt kiến trúc đó.
+3. Trong các phiên bản tiếp theo của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự cài đặt phép cải thiện này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
+4. Chứng minh rằng nếu $\mathbf{x}$ được tạo bởi ReLU, thì khối ResNet thực sự bao gồm hàm số đồng nhất.
+5. Tại sao chúng ta không thể tăng độ phức tạp của các hàm số mà không bị ràng buộc, ngay cả khi các lớp hàm số được lồng nhau?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -406,4 +413,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Quang
