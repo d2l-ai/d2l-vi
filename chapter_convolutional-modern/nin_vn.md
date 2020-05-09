@@ -175,7 +175,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * NiN sử dụng các khối được tạo thành bởi một tầng tích chập thường và nhiều tầng tích chập $1\times 1$. Điều này cho phép mô hình học được các biểu diễn có tính phi tuyến cao hơn trên từng điểm ảnh. <!-- Câu này mình hơi bí có lẽ do chưa hiểu hết kỹ thuật này, reviewers giúp mình nhé. Thanks :D  -->
 * NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính tổng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST).
 * Việc bỏ đi các các tầng dày đặc giúp làm giảm đi hiện tượng quá khớp. NiN có số lượng tham số ít hơn đáng kể.
-* Thiết kế của NiN đã ảnh hưởng đến nhiều thiết kế của mạng nơ-ron tích chập sau này.
+* Thiết kế của NiN đã ảnh hưởng đến thiết kế của nhiều mạng nơ-ron tích chập sau này.
 
 <!--
 ## Exercises
