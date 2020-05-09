@@ -19,7 +19,7 @@ omit a few ad hoc features that were added to stabilize training but are unneces
 
 Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã dành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp lại những điểm mạnh của mô hình NiN và các mô hình có kiểu dạng các khối lặp.
 Trọng tâm của bài báo này là giải quyết câu hỏi: kích thước nào của bộ lọc tầng tích chập là tốt nhất.
-Sự thật là, các mạng phổ biến trước đây đã sử dụng những chọn lựa với kích thước bộ lọc nhỏ như $1 \times 1$ và lớn như $11 \times 11$.
+Sự thật là, các mạng phổ biến trước đây đã chọn kích thước bộ lọc từ nhỏ như $1 \times 1$ tới lớn như $11 \times 11$.
 Bài báo này đã có cái nhìn sâu sắc khi chỉ ra rằng đôi khi nó có thể đem lại hiệu quả hơn khi sử dụng kết hợp các  lọc có kích thước khác nhau.
 Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản ban đầu---chúng tôi 
 bỏ qua một số tính năng đặc biệt được thêm vào nhằm giúp cho quá trình huấn luyện mô hình được ổn định nhưng hiện giờ lại không còn cần thiết nữa do đã được giải quyết bằng các thuật toán huấn luyện tốt hơn.
