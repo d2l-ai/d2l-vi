@@ -34,7 +34,7 @@ The basic convolutional block in GoogLeNet is called an Inception block,
 likely named due to a quote from the movie Inception ("We Need To Go Deeper"), which launched a viral meme.
 -->
 
-Khối tính chập cơ bản trong mô hình GoogLeNet được gọi là khối Inception, 
+Khối tích chập cơ bản trong mô hình GoogLeNet được gọi là Inception, 
 khả năng cao là được đặt tên theo trích dẫn trong bộ phim Inception (‘We Need To Go Deeper’), mà sau này đã trở thành một meme có sức lan tỏa rất lớn trên cộng đồng mạng.
 
 <!--
