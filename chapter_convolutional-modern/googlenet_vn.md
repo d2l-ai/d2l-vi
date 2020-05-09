@@ -35,7 +35,7 @@ likely named due to a quote from the movie Inception ("We Need To Go Deeper"), w
 -->
 
 Khối tích chập cơ bản trong mô hình GoogLeNet được gọi là Inception, 
-khả năng cao là được đặt tên theo trích dẫn trong bộ phim Inception (‘We Need To Go Deeper’), mà sau này đã trở thành một meme có sức lan tỏa rất lớn trên cộng đồng mạng.
+nhiều khả năng được đặt tên dựa theo trích dẫn "Chúng ta cần đi sâu hơn" ("_We Need To Go Deeper_") trong bộ phim Inception, mà sau này đã trở thành một bức biếm hoạ có sức lan tỏa rất lớn trong cộng đồng mạng.
 
 <!--
 ![Structure of the Inception block. ](../img/inception.svg)
