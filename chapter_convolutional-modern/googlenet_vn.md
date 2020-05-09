@@ -309,7 +309,7 @@ Tỷ lệ số lượng các kênh trong khối Inception được xác định 
     * Thêm khối Inception vào trong kết nối thặng dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả sau ở phần :numref:`sec_resnet`.
 1. Kích thước tối thiểu của hình ảnh đầu vào để mô hình GoogLeNet hoạt động là bao nhiêu?
 2. So sánh số lượng tham số của mô hình của AlexNet, VGG và NiN với GoogLeNet. Làm thế nào mà hai kiến trúc mạng NiN và GoogLeNet lại giảm đáng kể về số lượng tham số? 
-3. Tại chúng ta cần nhiều tầng tíh chập có kích thước vùng tiếp nhận khác nhau?
+3. Tại sao chúng ta cần nhiều tầng tích chập với kích thước vùng tiếp nhận khác nhau?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
