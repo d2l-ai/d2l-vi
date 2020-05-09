@@ -305,7 +305,7 @@ Tỷ lệ số lượng các kênh trong khối Inception được xác định 
 1. Có nhiều biến thể của mô hình GoogLeNet. Hãy thử lập trình và chạy chúng. Một số biến thể bao gồm:
     * Thêm vào một tầng chuẩn hoá theo batch :cite:`Ioffe.Szegedy.2015`, như đã được mô tả ở phần :numref:`sec_batch_norm`.
     * Thực hiện chỉnh sửa khối Inception theo :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
-    * Sử dụng kỹ thuật 'label smoothing' cho sự điều chuẩn hoá mô hình
+    * Sử dụng kỹ thuật 'làm mượt nhãn' (label smoothing) cho sự điều chuẩn hoá mô hình
     * Thêm khối Inception vào trong kết nối thặng dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả sau ở phần :numref:`sec_resnet`.
 1. Kích thước tối thiểu của hình ảnh đầu vào để mô hình GoogLeNet hoạt động là bao nhiêu?
 2. So sánh số lượng tham số của mô hình của AlexNet, VGG và NiN với GoogLeNet. Làm thế nào mà hai kiến trúc mạng NiN và GoogLeNet lại giảm đáng kể về số lượng tham số? 
