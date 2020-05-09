@@ -29,7 +29,7 @@ Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một t
 ## NiN Blocks
 -->
 
-## Các Khối trong NiN
+## Khối NiN
 
 <!--
 Recall that the inputs and outputs of convolutional layers consist of four-dimensional arrays with axes corresponding to the batch, channel, height, and width.
