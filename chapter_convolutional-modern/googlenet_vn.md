@@ -58,7 +58,7 @@ Ba nhánh đầu sử dụng các tầng tích chập với kích thước của
 Hai nhánh giữa thực hiện phép tính chập với kích thước cửa sổ trượt là $1\times 1$ trên dữ liệu đầu vào để giảm đi số kênh của dữ liệu đầu vào, việc này giảm thiểu độ phức tạp của mô hình.
 Nhánh thứ tư sử dụng một một tầng gộp cực đại với kích thước cửa sổ trượt là $3\times 3$, theo sau đó là một tầng gộp với kích thước cửa sổ trượt là $1\times 1$ để thay đổi số lượng kênh. 
 Cả bốn nhánh sử dụng đệm hợp lý để đầu vào và đầu ra của khối có cùng kích thước chiều dài và chiều rộng.
-Cuối cùng, những đầu ra của mỗi nhánh sẽ được ghép nối lại với nhau theo chiều của kênh để tạo ra đầu ra tổng hợp cuối cùng của khối.
+Cuối cùng, những đầu ra của mỗi nhánh sẽ được nối lại với nhau theo chiều của kênh để tạo ra đầu ra của cả khối.
 Các tham số thường được điều chỉnh của khối Inception là số lượng kênh đầu ra của mỗi tầng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
