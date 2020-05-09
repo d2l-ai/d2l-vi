@@ -97,7 +97,7 @@ This means that details at different extents can be recognized efficiently by di
 At the same time, we can allocate different amounts of parameters for different ranges (e.g., more for short range but not ignore the long range entirely).
 -->
 
-Để có được một cái nhìn trực quan là tại sao mạng này hoạt động rất tốt, hãy cùng xem xét qua sự kết hợp của các bộ lọc.
+Để hình dung tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
 Các bộ lọc này khám phá hình ảnh trên các vùng tiếp nhận có phạm vi kích thước khác nhau. 
 Điều này có nghĩa là những chi tiết ở những vùng phạm vi khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
 Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không cần hoàn toàn bỏ qua vùng có phạm vi lớn hơn)
