@@ -100,7 +100,7 @@ At the same time, we can allocate different amounts of parameters for different 
 Để hình dung tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
 Các bộ lọc này khám phá hình ảnh trên các vùng tiếp nhận có phạm vi kích thước khác nhau. 
 Điều này có nghĩa là những chi tiết ở những vùng phạm vi khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
-Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không cần hoàn toàn bỏ qua vùng có phạm vi lớn hơn)
+Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng có phạm vi lớn)
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
