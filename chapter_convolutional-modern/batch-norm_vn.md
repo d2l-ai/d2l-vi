@@ -49,7 +49,7 @@ This means that regularization becomes more critical.
 1. Những lựa chọn liên quan đến việc tiền xử lý dữ liệu thường tạo nên sự khác biệt rất lớn trong kết quả cuối cùng.
 Hãy nhớ lại việc áp dụng mạng perceptron đa tầng để dự đoán giá nhà ở phần (:numref:`sec_kaggle_house`). 
 Việc đầu tiên khi chúng ta làm việc với dữ liệu thực tế là chuẩn hóa các đặc trưng đầu vào để chúng có giá trị trung bình bằng *không* và phương sai bằng *một*. 
-Một cách trực quan, việc chuẩn hóa này, hoạt động tốt với những bộ tối ưu bởi vì nó đặt giá trị các tham số làm một tiên nghiệm tại cùng một tỷ lệ.
+Theo trực giác, việc chuẩn hóa này hoạt động tốt với những bộ tối ưu vì nó đặt giá trị các tham số tiên nghiệm tại cùng một tỷ lệ.
 2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
 dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
 Những nhà nghiên cứu phát minh ra kỹ thuật chuẩn hoá theo batch đã đưa ra một định đề chưa chính thức rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể làm cản trở sự hội tụ của mạng.
