@@ -21,8 +21,7 @@ Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã dành 
 Trọng tâm của bài báo này là giải quyết câu hỏi: kích thước nào của bộ lọc tầng tích chập là tốt nhất.
 Sự thật là, các mạng phổ biến trước đây đã chọn kích thước bộ lọc từ nhỏ như $1 \times 1$ tới lớn như $11 \times 11$.
 Một cái nhìn sâu sắc trong bài báo này đó là đôi khi nó có thể đem lại hiệu quả khi sử dụng kết hợp các bộ lọc có kích thước khác nhau.
-Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản ban đầu---chúng tôi 
-bỏ qua một số tính năng đặc biệt được thêm vào nhằm giúp cho quá trình huấn luyện mô hình được ổn định nhưng hiện giờ lại không còn cần thiết nữa do đã được giải quyết bằng các thuật toán huấn luyện tốt hơn.
+Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản ban đầu---chúng tôi bỏ qua một số tính năng đặc biệt trước đây được thêm vào nhằm ổn định quá trình huấn luyện nhưng hiện nay không còn cần thiết nữa do đã có các thuật toán huấn luyện tốt hơn.
 
 <!--
 ## Inception Blocks
