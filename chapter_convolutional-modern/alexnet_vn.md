@@ -481,7 +481,16 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 5. Apply dropout and ReLU to LeNet5. Does it improve? How about preprocessing?
 -->
 
-*dịch đoạn phía trên*
+1. Thử tăng số lượng epoch và xem kết quả khác nhau như thế nào so với LeNet? Tại sao lại có sự khác nhau như vậy?
+2. AlexNet có thể là quá phức tạp đối với tập dữ liệu Fashion-MNIST.
+     * Thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo rằng độ chính xác không bị giảm đi đáng kể.
+     * Thử thiết kế một mô hình tốt hơn mà có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$.
+3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU.
+4. Rooflines: <!-- mình chưa tìm được cách dịch cho từ rooflines -->
+     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc sử dụng bộ nhớ của mạng này?
+     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc tính toán của mạng này?
+     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới băng thông bộ nhớ khi tính toán kết quả?
+5. Áp dụng dropout và ReLU cho LeNet5. Độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
@@ -531,3 +540,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 8 -->
 * Nguyễn Duy Du
+* Phạm Minh Đức
