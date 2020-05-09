@@ -118,7 +118,7 @@ As it turns out, this is actually beneficial.
 -->
 
 Lưu ý rằng chúng ta thêm một hàng số $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo rằng chúng ta không bao giờ chia cho không khi chuẩn hoá, trong trường hợp giá trị ước lượng phương sai thực nghiệm tiêu biến.
-Sự ước tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giải quyết vấn đề chênh lệch tỷ lệ bằng việc sử dụng sự ước tính nhiễu của gía trị trung bình và phương sai.
+Sự ước tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giải quyết vấn đề chênh lệch tỷ lệ bằng việc sử dụng sự ước tính có nhiễu của giá trị trung bình và phương sai.
 Bạn sẽ nghĩ rằng những nhiễu này sẽ là trở thành vấn đề đáng ngại.
 Nhưng thực ra, điều này thực sự có lợi.
 
@@ -145,8 +145,8 @@ Indeed this is standard practice for models employing batch normalization and th
 in *training mode* (normalizing by minibatch statistics) and in *prediction mode* (normalizing by dataset statistics).
 -->
 
-Điều chỉnh mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
-Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại có cách phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
+Về việc điều chỉnh mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
+Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn với cùng một hình ảnh lại có cách phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
 Trong suốt quá trình huấn luyện, những tính toán như thế này thì không khả thi bởi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi lần khi chúng ta cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
 Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
