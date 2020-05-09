@@ -193,8 +193,8 @@ These ratios are slightly different in different Inception blocks.
 Thành phần thứ tư thì rắc rối hơn. 
 Nó kết nối năm khối Inception thành một chuỗi, và chúng có số lượng kênh đầu ra lần lượt là $192+208+48+64=512$, $160+224+64+64=512$,
 $128+256+64+64=512$, $112+288+64+64=528$, và $256+320+128+128=832$.
-Số lượng kênh được chỉ định ở các nhánh thì tương tự như ở mô đun thứ ba: nhánh thứ hai với tầng tích chập có kích thước cửa sổ trượt là $3\times 3$ sẽ cho đầu ra với số lượng kênh lớn nhất, 
-tiếp đó số lượng kênh đầu ra lần lượt giảm dần theo thứ tự từ là nhánh thứ nhất có tầng tích chập có kích thước cửa sổ trượt là $1\times 1$, nhánh thứ ba có tầng tích chập có kích thước cửa sổ trượt là $3\times 3$, và cuối cùng là nhánh thứ tư với tầng gộp cực đại có kích thước cửa sổ trượt là $3\times 3$.
+Số lượng kênh được chỉ định ở các nhánh thì tương tự như ở mô đun thứ ba: nhánh thứ hai với tầng tích chập $3\times 3$ sẽ cho đầu ra với số lượng kênh lớn nhất, 
+tiếp đó số lượng kênh đầu ra lần lượt giảm dần theo thứ tự từ là nhánh thứ nhất với tầng tích chập $1\times 1$, nhánh thứ ba với tầng tích chập $3\times 3$, và cuối cùng là nhánh thứ tư với tầng gộp cực đại $3\times 3$.
 Nhánh thứ hai và thứ ba đầu tiên sẽ làm giảm số lượng kênh theo tỷ lệ nhất định. 
 Tỷ lệ này thì hơi khác nhau trong các khối Inception khác nhau.
 
