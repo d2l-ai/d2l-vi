@@ -35,7 +35,7 @@ non-squashing activation functions, and effective regularization techniques were
 -->
 Mặc dù đã có những động lực thúc đẩy mạng nơ-ron vào đầu những năm 1990, nhưng chúng chưa đủ mạnh để có thể tạo ra những mạng nơ-ron với nhiều kênh, nhiều tầng với số lượng tham số rất lớn.
 Ngoài ra, những tập dữ liệu liên quan vẫn còn rất nhỏ.
-Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số , các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không nén, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
+Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số dựa trên kinh nghiệm, các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không nén, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
 -->
