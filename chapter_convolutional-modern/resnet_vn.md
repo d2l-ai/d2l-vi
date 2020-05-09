@@ -16,6 +16,8 @@ To make some progress we need a bit of theory.
 
 Khi thiết kế các mạng ngày càng sâu hơn, chúng ta cần hiểu rằng việc thêm các tầng vào mạng sẽ khiến tính phức tạp và biểu diễn của mạng tăng lên.
 Điều quan trọng hơn nữa là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng khiến chúng có tính biểu diễn cao hơn thay vì chỉ khác nhau.
+Để đạt được một số tiến bộ, chúng ta cần một chút lý thuyết.
+
 <!--
 ## Function Classes
 -->
@@ -30,6 +32,7 @@ If it is in $\mathcal{F}$, we are in good shape but typically we will not be qui
 Instead, we will try to find some $f^*_\mathcal{F}$ which is our best bet within $\mathcal{F}$.
 For instance, we might try finding it by solving the following optimization problem:
 -->
+
 Hãy xem xét $ \ mathcal {F} $, một lớp các hàm số mà một kiến trúc mạng cụ thể (cùng với tốc độ học và các siêu tham số khác) có thể biểu diễn được.
 Đó là, luôn tồn tại một số tập tham số $W$ có thể tìm được thông qua việc huấn luyện trên một tập dữ liệu phù hợp, cho mọi hàm số $f \in \mathcal{F}$.
 Giả sử $f^*$ là hàm số chúng ta đang muốn tìm kiếm.
@@ -46,6 +49,7 @@ However, if $\mathcal{F} \not\subseteq \mathcal{F}'$ there is no guarantee that 
 In fact, $f^*_{\mathcal{F}'}$ might well be worse.
 This is a situation that we often encounter in practice---adding layers does not only make the network more expressive, it also changes it in sometimes not quite so predictable ways. :numref:`fig_functionclasses`illustrates this in slightly abstract terms.
 -->
+
 Chỉ có lý khi giả sử rằng nếu chúng ta thiết kế một kiến trúc $\mathcal{F}'$ khác biệt và mạnh mẽ hơn thì chúng ta mới đạt được kết quả tốt hơn.
 Nói cách khác, chúng ta kỳ vọng rằng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
 Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì sẽ không đảm bảo rằng điều này có thể xảy ra.
@@ -398,7 +402,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
