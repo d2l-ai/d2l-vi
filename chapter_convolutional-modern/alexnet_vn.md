@@ -11,9 +11,9 @@ Although convolutional neural networks were well known in the computer vision an
 Although LeNet achieved good results on early small datasets, the performance and feasability of training convolutional networks on larger, more realistic datasets had yet to be established.
 In fact, for much of the intervening time between the early 1990s and the watershed results of 2012, neural networks were often surpassed by other machine learning methods, such as support vector machines.
 -->
-Mặc dù mạng nơ-ron tích chập nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi LeNet được giới thiệu, chúng vẫn chưa ngay lập tức thống trị lĩnh vực này.
+Mặc dù mạng nơ-ron tích chập nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
 Mặc dù LeNet đã đạt được những kết quả tốt trên những tập dữ liệu nhỏ, hiệu suất và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn hơn, thực tế hơn vẫn chưa được thiết lập.
-Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 và những kết quả quan trọng trong năm 2012, mạng nơ-ron tích chập thường bị vượt qua bởi những phương pháp học máy khác, như máy hỗ trợ vector.
+Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 và những kết quả quan trọng trong năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như SVM (support vector machines).
 <!--
 For computer vision, this comparison is perhaps not fair.
 That is although the inputs to convolutional networks consist of raw or lightly-processed (e.g., by centering) pixel values, practitioners would never feed raw pixels into traditional models.
@@ -22,10 +22,10 @@ Rather than *learn the features*, the features were *crafted*.
 Most of the progress came from having more clever ideas for features, and the learning algorithm was often relegated to an afterthought.
 -->
 Đối với thị giác máy tính, sự so sánh này có lẽ không công bằng.
-Lí do là giá trị đầu vào của mạng tích chập bao gồm các giá trị điểm ảnh thô hoặc chỉ được xử ít, trong khi đó những giá trị này không bao giờ được đưa vào các mô hình truyền thống.
-Thay vào đó, những pipeline thị giác máy tính điển hình bao gồm những pipeline rút trích đặc trưng một cách thủ công.
+Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhưng không quá nhiều, trong khi đó những giá trị thô này không bao giờ được đưa vào các mô hình truyền thống để học.
+Thay vào đó, những hệ thống thị giác máy tính sẽ có những pipeline dùng để rút trích những đặc trưng một cách thủ công.
 Thay vì *học đặc trưng*, những đặc trưng được *tạo ra*.
-Hầu hết những tiến bộ đều đến từ việc có nhiều ý tưởng thông minh hơn trong việc tạo ra đặc trưng, và thuật toán dùng để học thường ít được để ý hơn.
+Hầu hết những phát triển của các hệ thống đều đến từ việc có nhiều ý tưởng thông minh hơn trong việc tạo ra đặc trưng, và thuật toán dùng để học thường ít được để ý hơn.
 <!--
 Although some neural network accelerators were available in the 1990s, they were not yet sufficiently powerful to make deep multichannel, 
 multilayer convolutional neural networks with a large number of parameters.
@@ -33,13 +33,13 @@ Moreover, datasets were still relatively small.
 Added to these obstacles, key tricks for training neural networks including parameter initialization heuristics, clever variants of stochastic gradient descent,
 non-squashing activation functions, and effective regularization techniques were still missing.
 -->
-Mặc dù đã có những động lực thúc đẩy mạng nơ-ron vào đầu những năm 1990, nhưng chúng chưa đủ mạnh để có thể tạo ra mạng nơ-ron với nhiều kênh, nhiều tầng với một số lượng lớn tham số.
-Ngoài ra, những tập dữ liệu vẫn còn rất nhỏ.
-Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số, các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không, và kĩ thuật chuẩn hóa hiệu quả vẫn còn thiếu.
+Mặc dù đã có những động lực thúc đẩy mạng nơ-ron vào đầu những năm 1990, nhưng chúng chưa đủ mạnh để có thể tạo ra những mạng nơ-ron với nhiều kênh, nhiều tầng với số lượng tham số rất lớn.
+Ngoài ra, những tập dữ liệu liên quan vẫn còn rất nhỏ.
+Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số , các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không nén, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
 -->
-Vì vây, thay vì huấn luyện *đầu-cuối* (pixel đến phân loại) hệ thống, các pipeline cổ điển trông giống như thế này:
+Vì vây, thay vì huấn luyện *đầu-cuối* (điểm ảnh đến phân loại) hệ thống, các pipeline cổ điển trông giống như thế này:
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -501,7 +501,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Đình Nam
 
 <!-- Phần 2 -->
 *
