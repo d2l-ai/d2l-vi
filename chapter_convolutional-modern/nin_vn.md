@@ -90,7 +90,7 @@ NiN uses convolutional layers with window shapes of $11\times 11$, $5\times 5$, 
 Each NiN block is followed by a maximum pooling layer with a stride of 2 and a window shape of $3\times 3$.
 -->
 
-Cấu trúc mạng mới NiN được đề xuất một thời gian ngắn sau AlexNet và tạo được một vài cảm hứng rõ rệt.
+Cấu trúc mạng NiN gốc được đề xuất một thời gian ngắn sau AlexNet và rõ ràng có lấy cảm hứng từ đó.
 NiN sử dụng các tầng tích chập có kích thước cửa sổ $11\times 11$, $5\times 5$, và $3\times 3$, số lượng các kênh đầu ra tương ứng giống với AlexNet.
 Mỗi khối NiN theo sau bởi một tầng gộp cực đại với sải bước 2 và kích thước cửa sổ $3\times 3$.
 
