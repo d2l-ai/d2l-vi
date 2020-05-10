@@ -22,7 +22,7 @@ LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: bắt �
 Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng này mở rộng và đào sâu hai mô-đun này.
 Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ quá trình trước.
 Tuy nhiên, việc sử dụng các tầng dày đặc một cách bất cẩn có thể làm mất đi hoàn toàn các cấu trúc không gian của biểu diễn. 
-Các khối Mạng trong Mạng (_Network in Network - NiN_) cung cấp một giải pháp thay.
+Các khối Mạng trong Mạng (_Network in Network - NiN_) cung cấp một giải pháp thay thế.
 Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt.
 
 <!--
