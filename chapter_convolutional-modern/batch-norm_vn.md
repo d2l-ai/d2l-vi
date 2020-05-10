@@ -53,7 +53,7 @@ Theo trực giác, việc chuẩn hóa này hoạt động tốt với những b
 2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
 dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
 Những nhà phát minh ra kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
-Một cách trực quan, chúng ta có thể phỏng đoán rằng nếu một tầng có những giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì điều này bắt buộc cần phải có điều chỉnh bổ trợ trong tốc độ học.
+Bằng trực giác, chúng ta có thể phỏng đoán rằng nếu một tầng có các giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì cần phải có các điều chỉnh bổ trợ trong tốc độ học.
 3. Mạng nhiều tầng thì phức tạp và dễ có khả năng gặp vấn đề quá khớp.
 Điều này có nghĩa rằng sự điều chuẩn càng trở nên cấp thiết.
 
