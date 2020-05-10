@@ -149,7 +149,7 @@ Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại mu�
 Trong suốt quá trình huấn luyện, những tính toán như thế này thì không khả thi bởi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi lần khi chúng ta cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
 Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
-trong 'chế độ huấn luyện' (chuẩn hoá bằng số liệu thống kê của minibatch) và trong 'chế độ dự đoán' (chuẩn hoá bằng số liệu thống kê của tập dữ liệu)
+trong *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và trong *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của tập dữ liệu)
 
 <!--
 We are now ready to take a look at how batch normalization works in practice.
