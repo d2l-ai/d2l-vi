@@ -84,6 +84,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                   | Tiếng Việt                      | Thảo luận tại                                |
 |---------------------------|---------------------------------|----------------------------------------------|
 | data                      | dữ liệu                         |                                              |
+| data augmentation         | tăng cường dữ liệu              |                                              |
 | data science              | khoa học dữ liệu                | [https://git.io/JvojD](https://git.io/JvojD) |
 | data scientist            | nhà khoa học dữ liệu            | [https://git.io/JvojD](https://git.io/JvojD) |
 | datapoint (data point)    | điểm dữ liệu                    |                                              |
