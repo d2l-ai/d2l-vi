@@ -246,14 +246,15 @@ They realized that the computational bottlenecks in CNNs (convolutions and matri
 Using two NVIDIA GTX 580s with 3GB of memory, they implemented fast convolutions.
 The code [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) was good enough that for several years it was the industry standard and powered the first couple years of the deep learning boom.
 -->
-
-*dịch đoạn phía trên*
+Quay trở lại năm 2012. Một bước đột phá lớn khi Alex Krizhevsky và Ilya Sutskever đã xây dựng thành công một mạng nơ-ron tích chập sâu có thể chạy trên GPU.
+Họ nhận ra rằng nút thắt cổ chai khi tính toán trong CNN (phép nhân tích chập và ma trận) có thể được xử lý song song trên phần cứng.
+Với việc sử dụng hai card màn hình NVIDIA GTX 580s có 3GB bộ nhớ, họ đã xây dựng các phép toán tích chập nhanh.
+Phần mã nguồn [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) được coi là ngòi nổ cho sự phát triển vượt bậc của học sâu ngày hôm nay.
 
 <!--
 ## AlexNet
 -->
-
-## *dịch tiêu đề phía trên*
+## Mạng AlexNet
 
 <!--
 AlexNet was introduced in 2012, named after Alex Krizhevsky, the first author of the breakthrough ImageNet classification paper :cite:`Krizhevsky.Sutskever.Hinton.2012`.
@@ -262,14 +263,17 @@ This network proved, for the first time, that the features obtained by learning 
 The architectures of AlexNet and LeNet are *very similar*, as :numref:`fig_alexnet` illustrates.
 Note that we provide a slightly streamlined version of AlexNet removing some of the design quirks that were needed in 2012 to make the model fit on two small GPUs.
 -->
+Mạng AlexNet được giới thiệu vào năm 2012, được đặt theo tên của Alex Krizhevsky, tác giả thứ nhất của bài báo phân loại ImageNet đột phá :cite:`Krizhevsky.Sutskever.Hinton.2012`.
+Mạng AlexNet bao gồm 8 tầng mạng nơ-ron tích chập đã chiến thắng cuộc thi ImageNet Large Scale Visual Recognition Challenge năm 2012 với cách biệt lớn.
+Mạng này lần đầu tiên đã chứng minh được rằng các đặc trưng thu được bởi việc học có thể vượt qua các đặc trưng được thiết kế thủ công, phá vỡ kiểu mẫu trước đây trong nghiên cứu thị giác máy tính.
+Cấu trúc mạng AlexNet và LeNet *rất giống nhau*, như :numref:`fig_alexnet` đã minh họa.
+Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ mà bây giờ đã không còn cần thiết.
 
-*dịch đoạn phía trên*
 
 <!--
 ![LeNet (left) and AlexNet (right)](../img/alexnet.svg)
 -->
-
-![*dịch chú thích ảnh phía trên*](../img/alexnet.svg)
+![LeNet (trái) và AlexNet (phải)](../img/alexnet.svg)
 :label:`fig_alexnet`
 
 <!--
@@ -279,8 +283,12 @@ AlexNet consists of eight layers: five convolutional layers, two fully-connected
 Second, AlexNet used the ReLU instead of the sigmoid as its activation function.
 Let us delve into the details below.
 -->
+Các triết lý thiết kế của AlexNet và LeNet rất giống nhau, nhưng cũng có những khác biệt đáng kể.
+Đầu tiên, AlexNet sâu hơn nhiều so với LeNet5.
+AlexNet có tám tầng gồm: năm tầng tích chập, hai tầng ẩn kết nối đầy đủ, và một tầng đầu ra kết nối đầy đủ.
+Thứ hai, AlexNet sử dụng ReLU thay vì sigmoid để làm hàm kích hoạt.
+Chúng tôi sẽ đi sâu vào các chi tiết ở bên dưới.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -550,7 +558,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Thành Nhân
 
 <!-- Phần 6 -->
 * Nguyễn Duy Du
