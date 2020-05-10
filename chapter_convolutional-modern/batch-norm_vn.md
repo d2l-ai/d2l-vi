@@ -100,8 +100,7 @@ One piece of practitioner's intuition/wisdom is that BN seems to allows for more
 Sau khi áp dụng BN, minibatch của những giá trị kích hoạt thu được có giá trị trung bình bằng không và phương sai đơn vị.
 Bởi vì việc lựa chọn phương sai đơn vị (so với một số số ma thuật khác) là việc lựa chọn tuỳ ý, 
 cho nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số chuyển đổi tỷ lệ $\mathbf{\gamma}$ và hệ số xê dịch $\mathbf{\beta}$.
-Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện 
-bởi vì BN chủ động định trung tâm và chuyển đổi giá trị của chúng về giá trị trung bình và kích cỡ nhất định (thông qua $\mathbf{\mu}$ và $\sigma$).
+Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
 Qua trực giác/kinh nghiệm rút ra từ những người thực nghiệm, dùng BN có khả năng cho phép chọn tốc độ học nhanh hơn.
 
 
