@@ -108,7 +108,10 @@ This means that details at different extents can be recognized efficiently by di
 At the same time, we can allocate different amounts of parameters for different ranges (e.g., more for short range but not ignore the long range entirely).
 -->
 
-*dịch đoạn phía trên*
+Để hình dung tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
+Các bộ lọc này khám phá hình ảnh trên các vùng tiếp nhận có phạm vi kích thước khác nhau. 
+Điều này có nghĩa là những chi tiết ở những vùng phạm vi khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
+Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng có phạm vi lớn)
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -118,7 +121,7 @@ At the same time, we can allocate different amounts of parameters for different 
 ## GoogLeNet Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình GoogLeNet
 
 <!--
 As shown in :numref:`fig_inception_full`, GoogLeNet uses a stack of a total of 9 inception blocks and global average pooling to generate its estimates.
@@ -127,13 +130,16 @@ The first part is identical to AlexNet and LeNet, the stack of blocks is inherit
 The architecture is depicted below.
 -->
 
-*dịch đoạn phía trên*
+Như trình bày ở hình :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau để đưa ra ước tính. 
+Phép gộp cực đại giữa các khối inception có tác dụng làm giảm đi số chiều. 
+Phần đầu tiên của GoogleNet giống AlexNet và LeNet, sự xếp chồng các khối lên nhau kế thừa từ thiết kế của VGG và phép gộp trung bình toàn cục giúp tránh việc phải sử dụng nhiều tầng kết nối đầy đủ liên tiếp ở cuối. 
+Cấu trúc của mô hình được mô tả dưới đây.
 
 <!--
 ![Full GoogLeNet Model](../img/inception-full.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/inception-full.svg)
+![Mô hình GoogLeNet đầy đủ](../img/inception-full.svg)
 :label:`fig_inception_full`
 
 <!--
@@ -141,7 +147,8 @@ We can now implement GoogLeNet piece by piece.
 The first component uses a 64-channel 7×7 convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể triển khai mô hình GoogLeNet theo từng phần riêng biệt.
+Thành phần đầu tiên sử dụng một tầng tích chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là 7x7.
 
 ```{.python .input  n=2}
 b1 = nn.Sequential()
@@ -155,7 +162,9 @@ then a $3\times 3$ convolutional layer that triples the number of channels.
 This corresponds to the second path in the Inception block.
 -->
 
-*dịch đoạn phía trên*
+Thành phần thứ hai sử dụng hai tầng tích chập: tầng đầu tiên có đầu ra là 64 kênh và cửa sổ trượt kích thước $1\times 1$, 
+tiếp theo là một tầng có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
+Phần này tương ứng với nhánh thứ hai trong khối Inception.
 
 ```{.python .input  n=3}
 b2 = nn.Sequential()
@@ -340,7 +349,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-*
+* Đinh Đắc
 
 <!-- Phần 3 -->
 *
