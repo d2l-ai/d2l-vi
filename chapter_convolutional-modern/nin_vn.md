@@ -162,14 +162,15 @@ for layer in net:
 ## Data Acquisition and Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập Dữ liệu và Huấn luyện
 
 <!--
 As before we use Fashion-MNIST to train the model.
 NiN's training is similar to that for AlexNet and VGG, but it often uses a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+Như thường lệ, ta sẽ sử dụng Fashion-MNIST để huấn luyện mô hình.
+Quá trình huấn luyện NiN cũng tương tự như AlexNet và VGG, nhưng thường sử dụng một tốc độ học lớn hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 128
@@ -190,7 +191,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * The NiN design influenced many subsequent convolutional neural networks designs.
 -->
 
-*dịch đoạn phía trên*
+* NiN sử dụng các khối được tạo thành bởi một tầng tích chập thường và nhiều tầng tích chập $1\times 1$. 
+Sử dụng trong các tầng tích chập sẽ cho phép nó học được các biểu diễn có tính phi tuyến cao hơn trên từng điểm ảnh.
+* NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính tổng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST).
+* Việc bỏ đi các các tầng dày đặc giúp làm giảm đi hiện tượng quá khớp. NiN có số lượng tham số ít hơn đáng kể.
+* Thiết kế của NiN đã ảnh hưởng đến thiết kế của nhiều mạng nơ-ron tích chập sau này.
 
 <!--
 ## Exercises
@@ -209,7 +214,14 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 4. What are possible problems with reducing the $384 \times 5 \times 5$ representation to a $10 \times 5 \times 5$ representation in one step?
 -->
 
-*dịch đoạn phía trên*
+1. Điều chỉnh các siêu tham số để cải thiện độ chính xác phân loại.
+2. Tại sao có hai tầng chập $1\times 1$ trong khối NiN? Thử loại bỏ một trong số chúng, sau đó quan sát và phân tích các hiện tượng thực nghiệm.
+3. Tính toán việc sử dụng tài nguyên của NiN
+     * Số lượng tham số là bao nhiêu?
+     * Số lượng phép tính là bao nhiêu?
+     * Lượng bộ nhớ cần thiết trong quá trình huấn luyện là bao nhiêu?
+     * Lượng bộ nhớ cần thiết trong quá trình dự đoán là bao nhiêu?
+4. Những vấn đề có thể xảy ra với việc giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -244,4 +256,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
