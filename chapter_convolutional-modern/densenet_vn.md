@@ -5,7 +5,7 @@
 # Densely Connected Networks (DenseNet)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng kết nối dày đặc (DenseNet)
 
 <!--
 ResNet significantly changed the view of how to parametrize the functions in deep networks.
@@ -14,7 +14,10 @@ To understand how to arrive at it, let us take a small detour to theory.
 Recall the Taylor expansion for functions. For scalars it can be written as
 -->
 
-*dịch đoạn phía trên*
+ResNet đã thay đổi đáng kể quan điểm về cách tham số hóa các hàm trong các mạng sâu.
+DenseNet ở một mức độ nào đó là một mở rộng hợp lý của điều này.
+Để hiểu làm thế nào để đến được nó, ta hãy đi đường vòng nhỏ đến lý thuyết.
+Nhớ lại việc mở rộng chuỗi Taylor cho các hàm. Đối với các số nó có thể được viết là
 
 $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3).$$
 
@@ -22,30 +25,32 @@ $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x
 ## Function Decomposition
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân rã hàm
 
 <!--
 The key point is that it decomposes the function into increasingly higher order terms.
 In a similar vein, ResNet decomposes functions into
 -->
 
-*dịch đoạn phía trên*
+Điểm mấu chốt là nó phân rã hàm thành các số có bậc ngày càng cao.
+Với cùng một cơ chế, ResNet phân rã các hàm thành
 
 $$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x}).$$
 
 <!--
 That is, ResNet decomposes $f$ into a simple linear term and a more complex nonlinear one.
 What if we want to go beyond two terms? A solution was proposed by :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` in the form of DenseNet, 
-an architecture that reported record performance on the ImageNetdataset.
+an architecture that reported record performance on the ImageNet dataset.
 -->
 
-*dịch đoạn phía trên*
+Đó là, ResNet phân rã hàm $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
+Điều gì xảy ra nếu chúng ta muốn vượt quá hai số hạng? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` với tên gọi DenseNet, một kiến trúc đã đạt hiệu suất tốt nhất trên tập dữ liệu ImageNet.
 
 <!--
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/densenet-block.svg)
+![Sự khác biệt chính giữa ResNet (bên trái) và DenseNet (bên phải) trong các kết nối liên tầng: sử dụng phép cộng và sử dụng phép nối.](../img/densenet-block.svg)
 :label:`fig_densenet_block`
 
 <!--
@@ -53,7 +58,8 @@ As shown in :numref:`fig_densenet_block`, the key difference between ResNet and 
 As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
 -->
 
-*dịch đoạn phía trên*
+Như được biểu diễn trong :numref:`fig_densenet_block`, điểm khác biệt chính giữa ResNet và DenseNet là trong kiến trúc DenseNet đầu ra được *nối* thay vì được cộng vào.
+Kết quả là ta thực hiện ánh xạ từ $\mathbf{x}$ đến các giá trị của nó sau khi áp dụng một chuỗi các hàm ngày càng phức tạp.
 
 $$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
 
