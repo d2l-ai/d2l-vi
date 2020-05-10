@@ -490,7 +490,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc sử dụng bộ nhớ của mạng này?
      * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc tính toán của mạng này?
      * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới băng thông bộ nhớ khi tính toán kết quả?
-5. Áp dụng dropout và ReLU cho LeNet5. Độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào?
+5. Khi áp dụng dropout và ReLU cho LeNet5, độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
