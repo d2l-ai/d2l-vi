@@ -483,7 +483,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Thử tăng số lượng epoch và xem kết quả khác như thế nào so với LeNet? Tại sao lại có sự khác nhau như vậy?
 2. AlexNet có thể là quá phức tạp đối với tập dữ liệu Fashion-MNIST. Vậy: 
-     * Thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo rằng độ chính xác không bị giảm đi đáng kể.
+     * Hãy thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo rằng độ chính xác không bị giảm đi đáng kể.
      * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$.
 3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU.
 4. Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn đến:
