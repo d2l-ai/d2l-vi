@@ -267,14 +267,15 @@ for layer in net:
 ## Data Acquisition and Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập Dữ liệu và Huấn luyện 
 
 <!--
 As before, we train our model using the Fashion-MNIST dataset.
 We transform it to $96 \times 96$ pixel resolution before invoking the training procedure.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, chúng ta huấn luyện mô hình sử dụng bộ dữ liệu Fashion-MNIST. 
+Chúng ta chuyển đổi kích thước hình ảnh thành $96 \times 96$ đơn vị điểm ảnh trước khi bắt đầu thực hiện quy trình huấn luyện.
 
 ```{.python .input  n=8}
 lr, num_epochs, batch_size = 0.1, 10, 128
@@ -297,7 +298,12 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 * GoogLeNet, as well as its succeeding versions, was one of the most efficient models on ImageNet, providing similar test accuracy with lower computational complexity.
 -->
 
-*dịch đoạn phía trên*
+* Khối Inception tương đương với một mạng con với bốn nhánh. 
+Nó trích xuất thông tin song song với nhau thông qua các tầng tích chập với kích thước các cửa sổ trượt khác nhau và các tầng gộp cực đại. 
+* Phép tích chập với kích thước cửa sổ trượt $1 \times 1$ làm giảm đi số chiều của kênh trên mức độ mỗi điểm ảnh. Phép gộp cực đại thì làm giảm độ phân giải.
+* Trong mô hình GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác tạo thành chuỗi. 
+Tỷ lệ số lượng các kênh trong khối Inception được xác định dựa vào nhiều kết quả thử nghiệm trên bộ dữ liệu ImageNet.
+* Mô hình GoogLeNet, cũng như các phiên bản kế tiếp của nó, là một trong những mô hình hiệu quả nhất trên ImageNet, chúng cùng cho ra độ chính xác tương tự nhau trên tập kiểm tra mà với độ phức tạp tính toán thấp hơn.
 
 <!--
 ## Exercises
@@ -316,7 +322,14 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 3. Why do we need a large range convolution initially?
 -->
 
-*dịch đoạn phía trên*
+1. Có nhiều biến thể của mô hình GoogLeNet. Hãy thử lập trình và chạy chúng. Một số biến thể bao gồm:
+    * Thêm vào một tầng chuẩn hoá theo batch :cite:`Ioffe.Szegedy.2015`, như đã được mô tả ở phần :numref:`sec_batch_norm`.
+    * Thực hiện chỉnh sửa khối Inception theo :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
+    * Sử dụng kỹ thuật 'làm mượt nhãn' (label smoothing) cho sự điều chuẩn hoá mô hình
+    * Thêm khối Inception vào trong kết nối thặng dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả sau ở phần :numref:`sec_resnet`.
+1. Kích thước tối thiểu của hình ảnh đầu vào để mô hình GoogLeNet hoạt động là bao nhiêu?
+2. So sánh số lượng tham số của mô hình của AlexNet, VGG và NiN với GoogLeNet. Làm thế nào mà hai kiến trúc mạng NiN và GoogLeNet lại giảm đáng kể về số lượng tham số? 
+3. Tại sao chúng ta cần tầng tích chập kích thước lớn ở đầu mạng?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -355,4 +368,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
