@@ -5,7 +5,7 @@
 # Network in Network (NiN)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng trong Mạng (_Network in Network - NiN_)
 :label:`sec_nin`
 
 <!--
@@ -18,13 +18,18 @@ Network in Network (NiN) blocks offer an alternative.
 They were proposed in :cite:`Lin.Chen.Yan.2013` based on a very simple insight---to use an MLP on the channels for each pixel separately.
 -->
 
-*dịch đoạn phía trên*
+LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: bắt đầu bằng việc trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó xử lý các biểu diễn thông qua các tầng kết nối đầy đủ.
+Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng này mở rộng và đào sâu hai mô-đun này.
+Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ quá trình trước.
+Tuy nhiên, việc sử dụng các tầng dày đặc một cách bất cẩn có thể làm mất đi hoàn toàn các cấu trúc không gian của biểu diễn. 
+Các khối Mạng trong Mạng (_Network in Network - NiN_) cung cấp một giải pháp thay thế.
+Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt.
 
 <!--
 ## NiN Blocks
 -->
 
-## *dịch tiêu đề phía trên*
+## Khối NiN
 
 <!--
 Recall that the inputs and outputs of convolutional layers consist of four-dimensional arrays with axes corresponding to the batch, channel, height, and width.
@@ -36,13 +41,19 @@ Another way to view this is to think of each element in the spatial dimension (h
 and the channel as equivalent to a feature. :numref:`fig_nin` illustrates the main structural differences between NiN and AlexNet, VGG, and other networks.
 -->
 
-*dịch đoạn phía trên*
+
+Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập là các mảng bốn chiều với các trục tương ứng với batch, kênh, chiều cao và chiều rộng.
+Cũng nhớ lại rằng đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng.
+Ý tưởng đằng sau NiN là việc áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (cho mỗi chiều cao và chiều rộng).
+Nếu trói buộc các trọng số trên mỗi vị trí không gian, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh.
+Một cách khác để nhìn nhận điều này là coi từng yếu tố trong chiều không gian (chiều cao và chiều rộng) tương đương với một mẫu
+và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG và các mạng khác.
 
 <!--
 ![The figure on the left shows the network structure of AlexNet and VGG, and the figure on the right shows the network structure of NiN. ](../img/nin.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/nin.svg)
+![Hình bên trái biểu diễn cấu trúc mạng của AlexNet và VGG, và hình bênh phải biểu diễn cấu trúc mạng của NiN](../img/nin.svg)
 :width:`600px`
 :label:`fig_nin`
 
@@ -53,7 +64,9 @@ The convolution width of the first layer is typically set by the user.
 The subsequent widths are fixed to $1 \times 1$.
 -->
 
-*dịch đoạn phía trên*
+Khối NiN bao gồm một tầng tích chập, theo sau bởi hai tầng tích chập $1\times 1$ hoạt động như các tầng kết nối đầy đủ trên điểm ảnh với hàm kích hoạt ReLU.
+Cửa sổ tích chập của tầng thứ nhất thường được đặt bởi người dùng.
+Cửa sổ tích chập ở các tầng tiếp theo được cố định bằng $1 \times 1$.
 
 ```{.python .input  n=2}
 import d2l
@@ -218,7 +231,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 *
