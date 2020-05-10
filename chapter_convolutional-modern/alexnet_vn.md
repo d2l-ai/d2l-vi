@@ -237,7 +237,7 @@ Using two NVIDIA GTX 580s with 3GB of memory, they implemented fast convolutions
 The code [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) was good enough that for several years it was the industry standard and powered the first couple years of the deep learning boom.
 -->
 Quay trở lại năm 2012. Một bước đột phá lớn khi Alex Krizhevsky và Ilya Sutskever đã xây dựng thành công một mạng nơ-ron tích chập sâu có thể chạy trên GPU.
-Họ nhận ra rằng nút thắt cổ chai cho khả năng tính toán trong CNN (phép nhân tích chập và ma trận) có thể được xử lý song song trên phần cứng.
+Họ nhận ra rằng nút thắt cổ chai khi tính toán trong CNN (phép nhân tích chập và ma trận) có thể được xử lý song song trên phần cứng.
 Với việc sử dụng hai card màn hình NVIDIA GTX 580s có 3GB bộ nhớ, họ đã xây dựng các phép toán tích chập nhanh.
 Phần mã nguồn [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) được coi là ngòi nổ cho sự phát triển vượt bậc của học sâu ngày hôm nay.
 
@@ -257,7 +257,7 @@ Mạng AlexNet được giới thiệu vào năm 2012, được đặt theo tên
 Mạng AlexNet bao gồm 8 tầng mạng nơ-ron tích chập đã chiến thắng cuộc thi ImageNet Large Scale Visual Recognition Challenge năm 2012 với cách biệt lớn.
 Mạng này lần đầu tiên đã chứng minh được rằng các đặc trưng thu được bởi việc học có thể vượt qua các đặc trưng được thiết kế thủ công, phá vỡ kiểu mẫu trước đây trong nghiên cứu thị giác máy tính.
 Cấu trúc mạng AlexNet và LeNet *rất giống nhau*, như :numref:`fig_alexnet` đã minh họa.
-Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ, mà bây giờ đã không còn cần thiết.
+Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ mà bây giờ đã không còn cần thiết.
 
 
 <!--
