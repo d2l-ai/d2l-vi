@@ -133,7 +133,7 @@ In particular, this sheds some light on the puzzle of why BN works best for mode
 Vì những lý do vẫn chưa được định rõ đặc điểm về mặt lý thuyết một cách cụ thể, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến việc huấn luyện nhanh hơn và ít bị quá khớp.
 Trong khi những nhà lý thuyết gia máy học truyền thống có thể bị vướng mắc ở việc định rõ được những đặc điểm này, biến thể này dường như hoạt động như một dạng của điều chuẩn hoá.
 Trong một số nghiên cứu sơ bộ, :cite:`Teye.Azizpour.Smith.2018` và :cite:`Luo.Wang.Shao.ea.2018` đã chỉ ra các thuộc tính của BN liên quan lần lượt với tiên nghiệm Bayesian và những lượng phạt. 
-Đặc biệt, điều này làm sáng tỏ về câu hỏi tại BN hoạt động tốt nhất cho các minibatch có kích cỡ trong khoảng 50 - 100.
+Đặc biệt, điều này làm sáng tỏ tại sao BN hoạt động tốt nhất với các minibatch có kích cỡ trong khoảng 50 - 100.
 
 <!--
 Fixing a trained model, you might (rightly) think that we would prefer to use the entire dataset to estimate the mean and variance.
