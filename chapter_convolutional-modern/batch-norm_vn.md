@@ -145,7 +145,7 @@ in *training mode* (normalizing by minibatch statistics) and in *prediction mode
 -->
 
 Về việc điều chỉnh mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
-Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn với cùng một hình ảnh lại có cách phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
+Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại được phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
 Trong suốt quá trình huấn luyện, những tính toán như thế này thì không khả thi bởi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi lần khi chúng ta cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
 Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
