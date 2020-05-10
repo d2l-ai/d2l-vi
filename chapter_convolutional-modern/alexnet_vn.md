@@ -486,10 +486,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo rằng độ chính xác không bị giảm đi đáng kể.
      * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$.
 3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU.
-4. Rooflines: <!-- mình chưa tìm được cách dịch cho từ rooflines -->
-     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc sử dụng bộ nhớ của mạng này?
-     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới việc tính toán của mạng này?
-     * Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn tới băng thông bộ nhớ khi tính toán kết quả?
+4. Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn đến:
+     * Việc sử dụng bộ nhớ của mạng này?
+     * Sự tính toán của mạng này?
+     * Băng thông bộ nhớ khi tính toán kết quả?
 5. Khi áp dụng dropout và ReLU cho LeNet5, độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
