@@ -240,7 +240,7 @@ Trước đây ta có thể phải cần hàng tỷ tham số để biểu diễ
 Cái giá phải trả là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể nhận thông tin cục bộ.
 Toàn bộ quá trình học dựa trên việc đặt các giả thiết. <!-- từ cũ `thiên kiến quy nạp` nghe lạ quá :) -->
 Khi các giả thiết đó phù hợp với thực tế, ta sẽ có được các mô hình hoạt động hiệu quả với ít mẫu và khái quát tốt cho dữ liệu chưa gặp.
-Nhưng tất nhiên, nếu những giả thiết đó không phù hợp với thực tế, ví dụ như nếu các ảnh không có tính bất biến tịnh tiến, các mô hình có thể sẽ không hoạt động tốt.
+Nhưng tất nhiên, nếu những giả thiết đó không phù hợp với thực tế, ví dụ như nếu các ảnh không có tính bất biến tịnh tiến, các mô hình có thể sẽ không khái quát tốt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
