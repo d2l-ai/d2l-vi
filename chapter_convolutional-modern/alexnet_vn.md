@@ -22,7 +22,7 @@ Rather than *learn the features*, the features were *crafted*.
 Most of the progress came from having more clever ideas for features, and the learning algorithm was often relegated to an afterthought.
 -->
 Đối với thị giác máy tính, sự so sánh này có lẽ không công bằng.
-Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhưng không quá nhiều, trong khi đó những giá trị thô này không bao giờ được đưa vào các mô hình truyền thống để học.
+Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhẹ trên các giá trị điểm ảnh (chẳng hạn định tâm ảnh), trong khi đó những giá trị thô này không bao giờ được đưa trực tiếp vào các mô hình truyền thống để học.
 Thay vào đó, những hệ thống thị giác máy tính sẽ có những pipeline dùng để trích xuất đặc trưng một cách thủ công.
 Thay vì *học đặc trưng*, những đặc trưng được *tạo thủ công*.
 Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong việc tạo ra đặc trưng và thuật toán học thường ít được để ý hơn.
