@@ -184,6 +184,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | imputation (Preprocessing) | quy buộc                    | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
 | independence assumption    | giả định độc lập            | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | indicator variable         | biến chỉ định               | [https://git.io/JvQha](https://git.io/JvQha) |
+| inductive bias             | thiên kiến quy nạp          |                                              |
 | initializer                | bộ khởi tạo                 | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
