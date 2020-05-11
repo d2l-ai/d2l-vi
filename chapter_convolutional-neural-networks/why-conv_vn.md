@@ -285,7 +285,7 @@ We will come back to this in the following section.
 -->
 
 Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$.
-Nhìn gần giống với định nghĩa tầng tích chập ở trên, với một khác biệt lớn.
+Tổng này nhìn gần giống với định nghĩa tầng tích chập ở trên, nhưng với một khác biệt lớn.
 Thay vì $(i+a, j+b)$, ta lại sử dụng hiệu.
 Tuy nhiên, lưu ý rằng sự khác biệt này không phải vấn đề lớn vì ta luôn có thể chuyển về ký hiệu của phép tích chập bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có $h = x \circledast \tilde{V}$.
 Cũng lưu ý rằng định nghĩa ban đầu thực ra là của phép toán *tương quan chéo*.
