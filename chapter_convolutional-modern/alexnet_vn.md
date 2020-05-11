@@ -39,7 +39,7 @@ Thêm vào những trở ngại này, những thủ thuật chính để huấn 
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
 -->
-Vì vây, thay vì huấn luyện *đầu-cuối* (điểm ảnh đến phân loại) hệ thống, các pipeline cổ điển trông giống như thế này:
+Vì vây, thay vì huấn luyện các hệ thống *đầu-cuối* (điểm ảnh đến phân loại), các pipeline cổ điển trông giống như thế này:
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
