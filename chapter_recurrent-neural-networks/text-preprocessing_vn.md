@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE BẮT ĐẦU =================================== -->
 
 <!--
 # Text Preprocessing
@@ -9,16 +9,19 @@
 :label:`sec_text_preprocessing`
 
 <!--
-Text is an important example of sequence data. An article can be simply viewed as a sequence of words, or a sequence of characters. Given text data is a major data format besides images we are using in this book, this section will dedicate to explain the common preprocessing steps for text data. Such preprocessing often consists of four steps:
+Text is an important example of sequence data.
+An article can be simply viewed as a sequence of words, or a sequence of characters.
+Given text data is a major data format besides images we are using in this book, this section will dedicate to explain the common preprocessing steps for text data.
+Such preprocessing often consists of four steps:
 -->
 
 *dịch đoạn phía trên*
 
 <!--
 1. Load text as strings into memory.
-1. Split strings into tokens, where a token could be a word or a character.
-1. Build a vocabulary for these tokens to map them into numerical indices.
-1. Map all the tokens in data into indices for ease of feeding into models.
+2. Split strings into tokens, where a token could be a word or a character.
+3. Build a vocabulary for these tokens to map them into numerical indices.
+4. Map all the tokens in data into indices for ease of feeding into models.
 -->
 
 *dịch đoạn phía trên*
@@ -31,7 +34,11 @@ Text is an important example of sequence data. An article can be simply viewed a
 ## *dịch tiêu đề phía trên*
 
 <!--
-To get started we load text from H. G. Wells' [Time Machine](http://www.gutenberg.org/ebooks/35). This is a fairly small corpus of just over $30,000$ words, but for the purpose of what we want to illustrate this is just fine. More realistic document collections contain many billions of words. The following function reads the dataset into a list of sentences, each sentence is a string. Here we ignore punctuation and capitalization.
+To get started we load text from H. G. Wells' [Time Machine](http://www.gutenberg.org/ebooks/35).
+This is a fairly small corpus of just over $30,000$ words, but for the purpose of what we want to illustrate this is just fine.
+More realistic document collections contain many billions of words.
+The following function reads the dataset into a list of sentences, each sentence is a string.
+Here we ignore punctuation and capitalization.
 -->
 
 *dịch đoạn phía trên*
@@ -57,6 +64,10 @@ lines = read_time_machine()
 '# sentences %d' % len(lines)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
 ## Tokenization
 -->
@@ -64,8 +75,9 @@ lines = read_time_machine()
 ## *dịch tiêu đề phía trên*
 
 <!--
-For each sentence, we split it into a list of tokens. A token is a data point
-the model will train and predict. The following function supports splitting a sentence into words or characters, and returns a list of split strings.
+For each sentence, we split it into a list of tokens.
+A token is a data point the model will train and predict.
+The following function supports splitting a sentence into words or characters, and returns a list of split strings.
 -->
 
 *dịch đoạn phía trên*
@@ -92,10 +104,16 @@ tokens[0:2]
 ## *dịch tiêu đề phía trên*
 
 <!--
-The string type of the token is inconvenient to be used by models, which take numerical inputs. Now let us build a dictionary, often called *vocabulary* as well, to map string tokens into numerical indices starting from 0. To do so, we first count the unique tokens in all documents, called *corpus*, and then assign a numerical index to each unique token according to its frequency. Rarely appeared tokens are often removed to reduce the complexity. A token does not exist in corpus or has been removed is mapped into a special unknown (“&lt;unk&gt;”) token. We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token for padding, “&lt;bos&gt;” to present the beginning for a sentence, and “&lt;eos&gt;” for the ending of a sentence.
+The string type of the token is inconvenient to be used by models, which take numerical inputs.
+Now let us build a dictionary, often called *vocabulary* as well, to map string tokens into numerical indices starting from 0.
+To do so, we first count the unique tokens in all documents, called *corpus*, and then assign a numerical index to each unique token according to its frequency.
+Rarely appeared tokens are often removed to reduce the complexity.
+A token does not exist in corpus or has been removed is mapped into a special unknown (“&lt;unk&gt;”) token.
+We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token for padding, “&lt;bos&gt;” to present the beginning for a sentence, and “&lt;eos&gt;” for the ending of a sentence.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
@@ -147,7 +165,8 @@ print(list(vocab.token_to_idx.items())[0:10])
 ```
 
 <!--
-After that, we can convert each sentence into a list of numerical indices. To illustrate in detail, we print two sentences with their corresponding indices.
+After that, we can convert each sentence into a list of numerical indices.
+To illustrate in detail, we print two sentences with their corresponding indices.
 -->
 
 *dịch đoạn phía trên*
@@ -158,6 +177,10 @@ for i in range(8, 10):
     print('indices:', vocab[tokens[i]])
 ```
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ## Putting All Things Together
 -->
@@ -165,10 +188,14 @@ for i in range(8, 10):
 ## *dịch tiêu đề phía trên*
 
 <!--
-Using the above functions, we package everything into the `load_corpus_time_machine` function, which returns `corpus`, a list of token indices, and `vocab`, the vocabulary of the time machine corpus. The modification we did here is that `corpus` is a single list, not a list of token lists, since we do not keep the sequence information in the following models. Besides, we use character tokens to simplify the training in later sections.
+Using the above functions, we package everything into the `load_corpus_time_machine` function, 
+which returns `corpus`, a list of token indices, and `vocab`, the vocabulary of the time machine corpus.
+The modification we did here is that `corpus` is a single list, not a list of token lists, since we do not keep the sequence information in the following models.
+Besides, we use character tokens to simplify the training in later sections.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -189,7 +216,7 @@ len(corpus), len(vocab)
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
@@ -202,28 +229,22 @@ len(corpus), len(vocab)
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
-1. Tokenization is a key preprocessing step. It varies for different languages. Try to find another 3 commonly used methods to tokenize sentences.
+Tokenization is a key preprocessing step.
+It varies for different languages.
+Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
 *dịch đoạn phía trên*
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2363)
--->
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+<!-- ========================================= REVISE KẾT THÚC =================================== -->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_lang-model-dataset.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_lang-model-dataset.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2363)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -238,6 +259,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
@@ -245,13 +267,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *
