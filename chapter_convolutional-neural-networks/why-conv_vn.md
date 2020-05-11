@@ -190,7 +190,7 @@ As a result we can simplify the definition for $h$.
 Bây giờ hãy sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
 Nguyên tắc này ngụ ý rằng một sự dịch chuyển ở đầu vào $x$ cũng sẽ tạo ra sự dịch chuyển ở biểu diễn ẩn $h$.
 Điều này chỉ có thể xảy ra nếu $V$ và $u$ không phụ thuộc vào $(i, j)$, tức $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
-Kết quả, ta có thể đơn giản hóa định nghĩa của $h$.
+Vì vậy, ta có thể đơn giản hóa định nghĩa của $h$.
 
 $$h[i, j] = u + \sum_{a, b} V[a, b] \cdot x[i+a, j+b].$$
 
