@@ -203,9 +203,9 @@ We first construct an input data of shape `(1, 1, 4, 4)`, where the first two di
 -->
 
 Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi kích thước đầu ra. 
-Và giống như lần trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách đệm dữ liệu đầu vào và điều chỉnh sải bước. 
-Chúng ta có thể minh hoạ cách sử dụng phần đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô đun `nn` của thư viện MXNet Gluon. 
-Đầu tiên, chúng ta tạo ra dữ liệu đầu vào có kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên lần lượt là kích thước batch và số kênh.
+Và cũng như trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách thêm đệm vào đầu vào và điều chỉnh sải bước. 
+Chúng ta có thể minh hoạ cách sử dụng đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô đun `nn` của thư viện MXNet Gluon. 
+Đầu tiên, chúng ta tạo ra dữ liệu đầu vào kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên lần lượt là kích thước batch và số kênh.
 
 
 ```{.python .input  n=15}
@@ -218,8 +218,8 @@ By default, the stride in the `MaxPool2D` class has the same shape as the poolin
 Below, we use a pooling window of shape `(3, 3)`, so we get a stride shape of `(3, 3)` by default.
 -->
 
-Theo mặc định, sải bước trong tầng `MaxPool2D` có cùng kích thước với cửa sổ trượt của tầng gộp.
-Dưới đây, chúng ta sử dụng cửa sổ trượt của tầng gộp với kích thước `(3,3)`, vì vậy chúng ta có kích thước của sải bước trong tầng gộp là `(3,3)` theo mặc định.
+Theo mặc định, sải bước trong lớp `MaxPool2D` có cùng kích thước với cửa sổ gộp.
+Dưới đây, chúng ta sử dụng cửa sổ gộp kích thước `(3,3)`, vì vậy theo mặc định kích thước của sải bước trong tầng gộp này là `(3,3)`.
 
 
 ```{.python .input  n=16}
@@ -233,7 +233,7 @@ pool2d(X)
 The stride and padding can be manually specified.
 -->
 
-Giá trị của sải bước và phần đệm có thể được định rõ bởi người sử dụng.
+Giá trị của sải bước và đệm có thể được gán thủ công.
 
 ```{.python .input  n=7}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
@@ -245,7 +245,7 @@ Of course, we can specify an arbitrary rectangular pooling window
 and specify the padding and stride for height and width, respectively.
 -->
 
-Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ trượt hình chữ nhật tuỳ ý và đặt giá trị phần đệm và sải bước lần lượt ứng với chiều cao và chiều rộng của dữ liệu đầu vào.
+Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ gộp chữ nhật tuỳ ý và chỉ rõ giá trị phần đệm và sải bước tương ứng với chiều cao và chiều rộng của cửa sổ.
 
 ```{.python .input  n=8}
 pool2d = nn.MaxPool2D((2, 3), padding=(1, 2), strides=(2, 3))
@@ -260,7 +260,7 @@ pool2d(X)
 ## Multiple Channels
 -->
 
-## Nhiều Kênh
+## Với đầu vào Đa Kênh
 
 <!--
 When processing multi-channel input data, the pooling layer pools each input channel separately, rather than adding the inputs of each channel by channel as in a convolutional layer.
@@ -268,9 +268,9 @@ This means that the number of output channels for the pooling layer is the same 
 Below, we will concatenate arrays `X` and `X+1` on the channel dimension to construct an input with 2 channels.
 -->
 
-Khi phải xử lý dữ liệu đầu vào với nhiều kênh, tầng gộp sẽ gộp mỗi kênh của dữ liệu đầu vào một cách tách biệt thay vì cộng từng phần tử tương ứng của từng kênh lại với nhau như trong tầng tính chập.
-Điều này có nghĩa là số lượng kênh đầu ra cho tầng gộp sẽ giống như số lượng kênh đầu vào.
-Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều kênh để tạo dữ liệu đầu vào với số kênh là 2.
+Khi xử lý dữ liệu đầu vào đa kênh, tầng gộp sẽ áp dụng lên từng kênh một cách riêng biệt thay vì cộng từng phần tử tương ứng của các kênh lại với nhau như tầng tích chập.
+Điều này có nghĩa là số lượng kênh đầu ra của tầng gộp sẽ giống số lượng kênh đầu vào.
+Dưới đây, chúng ta sẽ ghép 2 mảng `X` và `X+1` theo chiều kênh để tạo ra đầu vào 2 kênh.
 
 ```{.python .input  n=9}
 X = np.concatenate((X, X + 1), axis=1)
@@ -281,7 +281,7 @@ X
 As we can see, the number of output channels is still 2 after pooling.
 -->
 
-Như chúng ta thấy bên dưới, số kênh của đầu ra vẫn là 2 sau khi dữ liệu đầu vào đi qua tầng gộp.
+Có thể thấy, số kênh của đầu ra vẫn là 2 sau khi gộp.
 
 ```{.python .input  n=10}
 pool2d = nn.MaxPool2D(3, padding=1, strides=2)
@@ -302,10 +302,10 @@ pool2d(X)
 * The pooling layer's number of output channels is the same as the number of input channels.
 -->
 
-* Sau khi tiếp nhận các phần tử đầu vào trong cửa sổ trượt của phép gộp, tầng gộp cực đại sẽ gán giá trị lớn nhất làm đầu ra và tầng gộp trung bình sẽ cho đầu ra là giá trị trung bình cuả tất cả phần tử đầu vào.
-* Một trong những chức năng chủ yếu của tầng gộp là giúp giảm thiểu sự nhạy cảm quá mức tới vị trí của tầng tích chập.
-* Chúng ta có thể định rõ giá trị của đệm và sải bước cho tầng gộp.
-* Tầng gộp cực đại kết hợp với sải bước lớn hơn 1 có thể dùng để giảm kích thước dữ liệu đầu vào.
+* Với các phần tử đầu vào nằm trong cửa sổ gộp, tầng gộp cực đại sẽ cho đầu ra là giá trị lớn nhất trong số các phần tử đó và tầng gộp trung bình sẽ cho đầu ra là giá trị trung bình của các phần tử.
+* Một trong những chức năng chủ yếu của tầng gộp là giảm thiểu sự ảnh hưởng quá mức của vị trí tới tầng tích chập.
+* Chúng ta có thể chỉ rõ giá trị của đệm và sải bước cho tầng gộp.
+* Tầng gộp cực đại kết hợp với sải bước lớn hơn 1 có thể dùng để giảm độ phân giải.
 * Số lượng kênh đầu ra của tầng gộp sẽ bằng số lượng kênh đầu vào tầng gộp đó.
 <!--
 ## Exercises
@@ -324,10 +324,10 @@ pool2d(X)
 
 1. Có thể lập trình tầng gộp trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
 2. Có thể lập trình tầng gộp cực đại như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
-3. Bạn hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước là $c\times h\times w$, kích thước của cửa sổ trượt trong tầng gộp là $p_h\times p_w$ với giá trị số lần đệm là $(p_h, p_w)$ và giá trị sải bước là $(s_h, s_w)$ lần lượt cho chiều cao và chiều rộng của đầu vào.
-4. Bạn hãy chỉ ra sự khác biệt giữa kết quả đầu ra khi dùng tầng gộp cực đại và tầng gộp trung bình.
-5. Theo bạn nghĩ thì có cần thêm riêng một tầng gộp cực tiểu không? Bạn có thể thay thế nó bằng một cơ chế hoạt động khác không?
-6. Liệu có một cơ chế hoạt động nào khác giữa tầng gộp theo phương thức giá trị trung bình và giá trị lớn nhất không (gợi ý: hãy nhớ lại hàm softmax)? Và tại sao nó không được phổ biến?
+3. Hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước $c\times h\times w$, kích thước của cửa sổ gộp $p_h\times p_w$ với đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
+4. Tại sao kết quả đầu ra khi dùng tầng gộp cực đại và tầng gộp trung bình lại khác nhau?
+5. Theo ý kiến của bạn, có cần riêng một tầng gộp cực tiểu không? Có thể thay thế bằng một cơ chế khác không?
+6. Hãy thử suy nghĩ một cơ chế khác nằm giữa gộp trung bình và gộp cực đại (gợi ý: hãy nhớ lại hàm softmax). Tại sao nó không phổ biến?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
