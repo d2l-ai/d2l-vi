@@ -229,16 +229,16 @@ Furthermore, we set the number of channels (i.e., growth rate) for the convoluti
 -->
 
 Sau đó, tương tự như bốn khối residual mà ResNet sử dụng, DenseNet sử dụng bốn khối dày đặc.
-Tương tự như ResNet, ta có thể tùy chỉnh số lượng các khối tích chập được sử dụng trong mỗi khối dày đặc.
-Ở đây, ta sẽ đặt nó bằng 4 để phù hợp với ResNet-18 trong phần trước.
-Hơn nữa, ta sẽ đặt số lượng kênh (tức là tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào mỗi khối dày đặc.
+Tương tự như ResNet, ta cũng có thể tùy chỉnh số lượng các khối tích chập được sử dụng trong mỗi khối dày đặc.
+Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để phù hợp với ResNet-18 trong phần trước.
+Ngoài ra, ta sẽ đặt số lượng kênh (tức là tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào mỗi khối dày đặc.
 
 <!--
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi mô-đun bằng một khối residual với sải bước bằng 2.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi mô-đun bằng cách sử dụng một khối residual với sải bước bằng 2.
 Ở đây, ta sử dụng tầng chuyển tiếp để giảm một nửa chiều cao và chiều rộng và giảm một nửa số lượng kênh.
 
 ```{.python .input  n=5}
