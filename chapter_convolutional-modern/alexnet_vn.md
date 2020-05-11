@@ -34,7 +34,7 @@ Added to these obstacles, key tricks for training neural networks including para
 non-squashing activation functions, and effective regularization techniques were still missing.
 -->
 Mặc dù cũng đã có các thiết bị phần cứng tăng tốc độ thực thi mạng nơ-ron vào đầu những năm 1990, chúng vẫn chưa đủ mạnh để có thể tạo ra những mạng nơ-ron với nhiều kênh, nhiều tầng với số lượng tham số rất lớn.
-Ngoài ra, những tập dữ liệu liên quan vẫn còn rất nhỏ.
+Ngoài ra, những tập dữ liệu vẫn còn tương đối nhỏ.
 Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số dựa trên kinh nghiệm, các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không ép, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
