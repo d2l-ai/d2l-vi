@@ -280,7 +280,7 @@ net.add(nn.BatchNorm(),
 Since we are using a deeper network here, in this section, we will reduce the input height and width from 224 to 96 to simplify the computation.
 -->
 
-Do đang sử dụng một mạng sâu hơn nên trong phần này ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống 96 để đơn giản hóa việc tính toán.
+Trong mục này, do sử dụng một mạng sâu hơn nên ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống 96 để đơn giản hóa việc tính toán.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 256
@@ -300,9 +300,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * We need to keep the dimensionality under control when composing the network by adding transition layers that shrink the number of channels again.
 -->
 
-* Về mặt kết nối giữa các tầng, không giống như ResNet khi đầu vào và đầu ra được thêm vào với nhau, DenseNet nối các đầu vào và đầu ra trên chiều kênh.
+* Về mặt kết nối liên tầng, không giống như ResNet khi đầu vào và đầu ra được cộng vào với nhau, DenseNet nối các đầu vào và đầu ra trên chiều kênh.
 * Các đơn vị chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-* Ta cần kiểm soát số chiều khi lập trình mạng bằng cách thêm các tầng chuyển tiếp để thu nhỏ số lượng kênh một lần nữa.
+* Ta cần kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để giảm số lượng kênh.
 
 <!--
 ## Exercises
@@ -323,11 +323,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Tại sao ta sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
-3. Một vấn đề mà DenseNet đã bị chỉ trích là mức tiêu thụ bộ nhớ cao.
+3. Một vấn đề mà DenseNet bị chỉ trích là mức tiêu thụ bộ nhớ cao.
      * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Để làm được điều này, bạn cần thay đổi framework như thế nào?
+     * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Để làm được điều này, bạn cần thay đổi kiến trúc như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
-5. Tại sao ta không cần nối các số hạng nếu chúng ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ cho ResNet? Tại sao ta cần điều này cho hơn hai tầng trong DenseNet?
+5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ cho ResNet? Tại sao ta cần điều này cho hơn hai tầng trong DenseNet?
 6. Thiết kế một DenseNet cho các mạng kết nối đầy đủ và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
