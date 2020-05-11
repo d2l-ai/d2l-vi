@@ -311,7 +311,7 @@ The convolutional layer picks windows of a given size and weighs intensities acc
 We expect that wherever the "waldoness" is highest, we will also find a peak in the hidden layer activations.
 -->
 
-Hãy cùng xem việc này sẽ thế nào nếu ta muốn xây dựng một bộ phát hiện Waldo cải tiến.
+Hãy cùng xem việc xây dựng một bộ phát hiện Waldo cải tiến sẽ trông như thế nào.
 Tầng tích chập chọn các cửa sổ có kích thước cho sẵn và đánh trọng số cường độ dựa theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
 Ta hy vọng rằng ở đâu có "tính Waldo" cao nhất, các tầng kích hoạt ẩn cũng sẽ có cao điểm ở đó.
 
@@ -331,7 +331,7 @@ Only two of these axes concern spatial relationships, while the $3^{\mathrm{rd}}
 
 Chỉ có một vấn đề với cách tiếp cận này là cho đến nay ta đã vô tư bỏ qua việc hình ảnh bao gồm 3 kênh màu: đỏ, xanh lá cây và xanh dương.
 Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều mà là một tensor bậc ba, ví dụ tensor với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
-Chỉ có hai trong số các trục này chứa mối quan hệ về mặt không gian, trong khi trục thứ ba có thể được coi như việc gán biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
+Chỉ có hai trong số các trục này chứa mối quan hệ về mặt không gian, trong khi trục thứ ba có thể được coi như là một biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
 
 <!--
 We thus index $\mathbf{x}$ as $x[i, j, k]$.
@@ -379,7 +379,7 @@ All of this will be addressed in the remainder of the chapter.
 
 Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
 Vẫn còn nhiều phép toán mà ta cần phải giải quyết.
-Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
+Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ đầu ra cho: có Waldo trong ảnh không).
 Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu có nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
 Tất cả những điều này sẽ được giải quyết trong phần còn lại của chương.
 
@@ -415,9 +415,9 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 6. Prove that $f \circledast g = g \circledast f$.
 -->
 
-1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một tập kênh.
+1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập xây dựng một MLP độc lập cho mỗi một tập kênh.
 2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
-3. Điều gì xảy ra ở viền của một hình ảnh?
+3. Điều gì xảy ra ở viền của một tấm ảnh?
 4. Hãy suy ra một tầng tích chập tương tự cho âm thanh.
 5. Vấn đề gì sẽ xảy ra khi áp dụng các suy luận trên cho văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
 6. Chứng minh rằng $f \circledast g = g \circledast f$.
