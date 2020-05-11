@@ -314,7 +314,13 @@ Also note that for the sake of convenience we did not worry about automatically 
 Do not worry, the Gluon `BatchNorm` layer will care of this for us.
 -->
 
-*dịch đoạn phía trên*
+Ta tạm để các chi tiết thuật toán sang một bên, chú ý đến design pattern bên dưới tầng lập trình của chúng ta.
+Thông thường, chúng ta định nghĩa toán học trong một hàm riêng biệt, giả sử `batch_norm`.
+Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, có mã chủ yếu giải quyết các vấn đề về sổ sách chứng từ,
+chẳng hạn như di chuyển dữ liệu đến thiết bị phù hợp ngữ cảnh, phân bổ và khởi tạo bất kỳ biến nào được yêu cầu, theo dõi mức trung bình đang chạy (ở đây là trung bình và phương sai), v.v.
+Pattern này cho phép tách toán hoàn toàn ra khỏi đoạn mã soạn sẵn.
+Cũng lưu ý rằng để cho thuận tiện, ta không lo lắng về việc tự động suy ra kích thước đầu vào ở đây, do đó ta cần chỉ định số lượng đặc trưng xuyên suốt.
+Đừng lo lắng, lớp `BatchNorm` của Glamon sẽ làm điều này cho chúng ta.
 
 ```{.python .input  n=73}
 class BatchNorm(nn.Block):
@@ -350,14 +356,15 @@ class BatchNorm(nn.Block):
 ## Using a Batch Normalization LeNet
 -->
 
-## *dịch tiêu đề phía trên*
+## Sử dụng một cấu trúc mạng LeNet Chuẩn hóa theo Batch 
 
 <!--
 To see how to apply `BatchNorm` in context, below we apply it to a traditional LeNet model (:numref:`sec_lenet`).
 Recall that BN is typically applied after the convolutional layers and fully-connected layers but before the corresponding activation functions.
 -->
 
-*dịch đoạn phía trên*
+Để xem cách áp dụng `BatchNorm` trong ngữ cảnh, bên dưới chúng tôi áp dụng nó cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
+Hãy nhớ lại rằng BN thường được áp dụng sau các tầng tích chập và các lớp được kết nối đầy đủ nhưng trước các hàm kích hoạt tương ứng.
 
 ```{.python .input  n=74}
 net = nn.Sequential()
@@ -384,7 +391,9 @@ This code is virtually identical to that when we first trained LeNet (:numref:`s
 The main difference is the considerably larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, ta sẽ đào tạo mạng trên bộ dữ liệu Fashion-MNIST.
+Đoạn mã này gần giống với mã này khi chúng tôi lần đầu tiên đào tạo LeNet (: numref: `sec_lenet`).
+Sự khác biệt chính là tốc độ học lớn hơn đáng kể.
 
 ```{.python .input  n=77}
 lr, num_epochs, batch_size = 1.0, 10, 256
@@ -396,7 +405,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 Let us have a look at the scale parameter `gamma` and the shift parameter `beta` learned from the first batch normalization layer.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xem tham số quy mô `gamma` và tham số shift` beta` đã học được từ tầng chuẩn hóa theo batch đầu tiên.
 
 ```{.python .input  n=60}
 net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
