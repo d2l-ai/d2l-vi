@@ -87,8 +87,8 @@ the number of convolutional layers and the number of output channels, which are 
 The fully-connected module is identical to that covered in AlexNet.
 -->
 
-Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng chập và tầng gộp, phần thứ hai chứa các tầng kết nối đầy đủ. 
-Phần tích chập của mạng kết nối các mô-đun `vgg_block` tiếp nối nhau.
+Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng tích chập và tầng gộp và phần thứ hai bao gồm các tầng kết nối đầy đủ. 
+Phần tích chập của mạng kết nối các mô-đun `vgg_block` liên tiếp lại.
 Trong :numref:`fig_vgg`, biến `conv_arch` bao gồm một danh sách các tuples (một tuple cho mỗi khối), trong đó mỗi tuple chứa hai giá trị: 
 số các tầng tích chập và số kênh đầu ra, cũng chính là những tham số cần thiết để gọi hàm `vgg_block`. 
 Mô-đun kết nối đầy đủ có cùng kiến trúc với mô-đun tương ứng tại AlexNet.
@@ -97,7 +97,7 @@ Mô-đun kết nối đầy đủ có cùng kiến trúc với mô-đun tương 
 ![Designing a network from building blocks](../img/vgg.svg)
 -->
 
-![Thiết kế một mạng bằng cách xây dựng các khối](../img/vgg.svg)
+![Thiết kế mạng từ các khối cơ bản](../img/vgg.svg)
 :width:`400px`
 :label:`fig_vgg`
 
@@ -107,9 +107,9 @@ The first block has 64 output channels and each subsequent block doubles the num
 Since this network uses $8$ convolutional layers and $3$ fully-connected layers, it is often called VGG-11.
 -->
 
-Mạng VGG nguyên thủy có 5 khối tích chập, trong đó hai khối đầu tiên chứa một tầng chập mỗi khối, ba khối còn lại chứa hai tầng chập mỗi khối.
+Mạng VGG nguyên thủy có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng  tích chập mỗi khối, ba khối còn lại chứa hai tầng tích chập mỗi khối.
 Khối đầu tiên chứa 64 kênh đầu ra, mỗi khối tiếp theo chứa gấp đôi số kênh đâu ra cho đến $512$.
-Vì mạng này sử dụng $8$ tầng chập và $3$ tầng kết nối đầy đủ, nó thường được gọi là VGG-11. 
+Vì mạng này sử dụng $8$ tầng tích chập và $3$ tầng kết nối đầy đủ nên nó thường được gọi là VGG-11. 
 
 ```{.python .input  n=2}
 conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
@@ -119,7 +119,7 @@ conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 The following code implements VGG-11. This is a simple matter of executing a for loop over `conv_arch`.
 -->
 
-Đoạn mã nguồn sau đây sử dụng VGG 11. Việc này khá đơn giản khi thực hiện với vòng lặp for trên `conv_arch`.
+Đoạn mã nguồn sau đây xây dựng mạng VGG 11. Việc này chỉ đơn giản là thực hiện vòng lặp `for` trên  biến `conv_arch`.
 
 ```{.python .input  n=3}
 def vgg(conv_arch):
@@ -140,7 +140,7 @@ net = vgg(conv_arch)
 Next, we will construct a single-channel data example with a height and width of 224 to observe the output shape of each layer.
 -->
 
-Tiếp theo, chúng ta sẽ tạo ví dụ dữ liệu một kênh với chiều cao và chiều rộng là 224 để quan sát kích thước đầu ra của mỗi tầng.
+Tiếp theo, chúng ta sẽ tạo một mẫu dữ liệu một kênh với chiều cao và chiều rộng là 224 để quan sát kích thước đầu ra của mỗi tầng.
 
 ```{.python .input  n=4}
 net.initialize()
@@ -154,7 +154,7 @@ for blk in net:
 As you can see, we halve height and width at each block, finally reaching a height and width of 7 before flattening the representations for processing by the fully-connected layer.
 -->
 
-Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm một nửa, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi các biểu diễn được làm phẳng để tiếp tục xử lý trong tầng kết nối đầy đủ. 
+Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm một nửa, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi các biểu diễn được trải phẳng để tiếp tục xử lý trong tầng kết nối đầy đủ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
