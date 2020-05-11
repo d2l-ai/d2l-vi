@@ -82,7 +82,7 @@ Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa 
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
 -->
 
-Một cách chính thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
+Một cách hình thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
 
 $$\mathrm{BN}(\mathbf{x}) = \mathbf{\gamma} \odot \frac{\mathbf{x} - \hat{\mathbf{\mu}}}{\hat\sigma} + \mathbf{\beta}$$
 
