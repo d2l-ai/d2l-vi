@@ -613,7 +613,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 8 -->
 *
