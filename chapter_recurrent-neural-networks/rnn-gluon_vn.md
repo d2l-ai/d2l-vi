@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE BẮT ĐẦU =================================== -->
 
 <!--
 # Concise Implementation of Recurrent Neural Networks
@@ -9,10 +9,13 @@
 :label:`sec_rnn_gluon`
 
 <!--
-While :numref:`sec_rnn_scratch` was instructive to see how recurrent neural networks (RNNs) are implemented, this is not convenient or fast. This section will show how to implement the same language model more efficiently using functions provided by Gluon. We begin as before by reading the "Time Machine" corpus.
+While :numref:`sec_rnn_scratch` was instructive to see how recurrent neural networks (RNNs) are implemented, this is not convenient or fast.
+This section will show how to implement the same language model more efficiently using functions provided by Gluon.
+We begin as before by reading the "Time Machine" corpus.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=1}
 import d2l
@@ -31,10 +34,12 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ## *dịch tiêu đề phía trên*
 
 <!--
-Gluon's `rnn` module provides a recurrent neural network implementation (beyond many other sequence models). We construct the recurrent neural network layer `rnn_layer` with a single hidden layer and 256 hidden units, and initialize the weights.
+Gluon's `rnn` module provides a recurrent neural network implementation (beyond many other sequence models).
+We construct the recurrent neural network layer `rnn_layer` with a single hidden layer and 256 hidden units, and initialize the weights.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=26}
 num_hiddens = 256
@@ -43,10 +48,16 @@ rnn_layer.initialize()
 ```
 
 <!--
-Initializing the state is straightforward. We invoke the member function `rnn_layer.begin_state(batch_size)`. This returns an initial state for each element in the minibatch. That is, it returns an object of size (hidden layers, batch size, number of hidden units). The number of hidden layers defaults to be 1. In fact, we have not even discussed yet what it means to have multiple layers---this will happen in :numref:`sec_deep_rnn`. For now, suffice it to say that multiple layers simply amount to the output of one RNN being used as the input for the next RNN.
+Initializing the state is straightforward. We invoke the member function `rnn_layer.begin_state(batch_size)`.
+This returns an initial state for each element in the minibatch.
+That is, it returns an object of size (hidden layers, batch size, number of hidden units).
+The number of hidden layers defaults to be 1.
+In fact, we have not even discussed yet what it means to have multiple layers---this will happen in :numref:`sec_deep_rnn`.
+For now, suffice it to say that multiple layers simply amount to the output of one RNN being used as the input for the next RNN.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=37}
 batch_size = 1
@@ -60,6 +71,7 @@ With a state variable and an input, we can compute the output with the updated s
 
 *dịch đoạn phía trên*
 
+
 ```{.python .input  n=38}
 num_steps = 1
 X = np.random.uniform(size=(num_steps, batch_size, len(vocab)))
@@ -67,11 +79,18 @@ Y, state_new = rnn_layer(X, state)
 Y.shape, len(state_new), state_new[0].shape
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
-Similar to :numref:`sec_rnn_scratch`, we define an `RNNModel` block by subclassing the `Block` class for a complete recurrent neural network. Note that `rnn_layer` only contains the hidden recurrent layers, we need to create a separate output layer. While in the previous section, we have the output layer within the `rnn` block.
+Similar to :numref:`sec_rnn_scratch`, we define an `RNNModel` block by subclassing the `Block` class for a complete recurrent neural network.
+Note that `rnn_layer` only contains the hidden recurrent layers, we need to create a separate output layer.
+While in the previous section, we have the output layer within the `rnn` block.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
@@ -135,7 +154,7 @@ Compared with the last section, this model achieves comparable perplexity, albei
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Gluon's `rnn` module provides an implementation at the recurrent neural network layer.
@@ -149,39 +168,32 @@ Compared with the last section, this model achieves comparable perplexity, albei
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Compare the implementation with the previous section.
     * Why does Gluon's implementation run faster?
     * If you observe a significant difference beyond speed, try to find the reason.
-1. Can you make the model overfit?
+2. Can you make the model overfit?
     * Increase the number of hidden units.
     * Increase the number of iterations.
     * What happens if you adjust the clipping parameter?
-1. Implement the autoregressive model of the introduction to the current chapter using an RNN.
-1. What happens if you increase the number of hidden layers in the RNN model? Can you make the model work?
-1. How well can you compress the text using this model?
+3. Implement the autoregressive model of the introduction to the current chapter using an RNN.
+4. What happens if you increase the number of hidden layers in the RNN model? Can you make the model work?
+5. How well can you compress the text using this model?
     * How many bits do you need?
     * Why does not everyone use this model for text compression? Hint: what about the compressor itself?
 -->
 
 *dịch đoạn phía trên*
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2365)
--->
 
-## *dịch tiêu đề phía trên*
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+<!-- ========================================= REVISE KẾT THÚC =================================== -->
 
-<!--
-![](../img/qr_rnn-gluon.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_rnn-gluon.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2365)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -196,20 +208,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
 <!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *

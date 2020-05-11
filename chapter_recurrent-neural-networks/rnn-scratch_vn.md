@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Implementation of Recurrent Neural Networks from Scratch
@@ -9,10 +9,13 @@
 :label:`sec_rnn_scratch`
 
 <!--
-In this section we implement a language model introduced in :numref:`chap_rnn` from scratch. It is based on a character-level recurrent neural network trained on H. G. Wells' *The Time Machine*. As before, we start by reading the dataset first, which is introduced in :numref:`sec_language_model`.
+In this section we implement a language model introduced in :numref:`chap_rnn` from scratch.
+It is based on a character-level recurrent neural network trained on H. G. Wells' *The Time Machine*.
+As before, we start by reading the dataset first, which is introduced in :numref:`sec_language_model`.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=14}
 %matplotlib inline
@@ -33,33 +36,44 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 
 <!--
 Remember that each token is presented as a numerical index in `train_iter`.
-Feeding these indices directly to the neural network might make it hard to
-learn. We often present each token as a more expressive feature vector. The
-easiest representation is called *one-hot encoding*.
+Feeding these indices directly to the neural network might make it hard to learn.
+We often present each token as a more expressive feature vector.
+The easiest representation is called *one-hot encoding*.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$. If the index of a token is the integer $i$, then we create a vector $\mathbf{e}_i$ of all 0s with a length of $N$ and set the element at position $i$ to 1. This vector is the one-hot vector of the original token. The one-hot vectors with indices 0 and 2 are shown below.
+In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
+If the index of a token is the integer $i$, then we create a vector $\mathbf{e}_i$ of all 0s with a length of $N$ and set the element at position $i$ to 1.
+This vector is the one-hot vector of the original token.
+The one-hot vectors with indices 0 and 2 are shown below.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=21}
 npx.one_hot(np.array([0, 2]), len(vocab))
 ```
 
 <!--
-The shape of the minibatch we sample each time is (batch size, timestep). The `one_hot` function transforms such a minibatch into a 3-D tensor with the last dimension equals to the vocabulary size. We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
+The shape of the minibatch we sample each time is (batch size, timestep).
+The `one_hot` function transforms such a minibatch into a 3-D tensor with the last dimension equals to the vocabulary size.
+We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=18}
 X = np.arange(batch_size * num_steps).reshape(batch_size, num_steps)
 npx.one_hot(X.T, len(vocab)).shape
 ```
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Initializing the Model Parameters
@@ -68,10 +82,12 @@ npx.one_hot(X.T, len(vocab)).shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-Next, we initialize the model parameters for a RNN model. The number of hidden units `num_hiddens` is a tunable parameter.
+Next, we initialize the model parameters for a RNN model.
+The number of hidden units `num_hiddens` is a tunable parameter.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=19}
 def get_params(vocab_size, num_hiddens, ctx):
@@ -100,10 +116,13 @@ def get_params(vocab_size, num_hiddens, ctx):
 ## *dịch tiêu đề phía trên*
 
 <!--
-First, we need an `init_rnn_state` function to return the hidden state at initialization. It returns an `ndarray` filled with 0 and with a shape of (batch size, number of hidden units). Using tuples makes it easier to handle situations where the hidden state contains multiple variables (e.g., when combining multiple layers in an RNN where each layer requires initializing).
+First, we need an `init_rnn_state` function to return the hidden state at initialization.
+It returns an `ndarray` filled with 0 and with a shape of (batch size, number of hidden units).
+Using tuples makes it easier to handle situations where the hidden state contains multiple variables (e.g., when combining multiple layers in an RNN where each layer requires initializing).
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=20}
 def init_rnn_state(batch_size, num_hiddens, ctx):
@@ -111,14 +130,13 @@ def init_rnn_state(batch_size, num_hiddens, ctx):
 ```
 
 <!--
-The following `rnn` function defines how to compute the hidden state and output
-in a timestep. The activation function here uses the $\tanh$ function. As
-described in :numref:`sec_mlp`, the
-mean value of the $\tanh$ function is 0, when the elements are evenly
-distributed over the real numbers.
+The following `rnn` function defines how to compute the hidden state and output in a timestep.
+The activation function here uses the $\tanh$ function.
+As described in :numref:`sec_mlp`, the mean value of the $\tanh$ function is 0, when the elements are evenly distributed over the real numbers.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=6}
 def rnn(inputs, state, params):
@@ -138,6 +156,7 @@ Now we have all functions defined, next we create a class to wrap these function
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -179,6 +198,14 @@ We can see that the output shape is (number steps $\times$ batch size, vocabular
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Prediction
 -->
@@ -186,10 +213,14 @@ We can see that the output shape is (number steps $\times$ batch size, vocabular
 ## *dịch tiêu đề phía trên*
 
 <!--
-We first explain the predicting function so we can regularly check the prediction during training. This function predicts the next `num_predicts` characters based on the `prefix` (a string containing several characters). For the beginning of the sequence, we only update the hidden state. After that we begin generating new characters and emitting them.
+We first explain the predicting function so we can regularly check the prediction during training.
+This function predicts the next `num_predicts` characters based on the `prefix` (a string containing several characters).
+For the beginning of the sequence, we only update the hidden state.
+After that we begin generating new characters and emitting them.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -209,10 +240,13 @@ def predict_ch8(prefix, num_predicts, model, vocab, ctx):
 ```
 
 <!--
-We test the `predict_rnn` function first. Given that we did not train the network, it will generate nonsensical predictions. We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
+We test the `predict_rnn` function first.
+Given that we did not train the network, it will generate nonsensical predictions.
+We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=9}
 predict_ch8('time traveller ', 10, model, vocab, ctx)
@@ -225,27 +259,41 @@ predict_ch8('time traveller ', 10, model, vocab, ctx)
 ## *dịch tiêu đề phía trên*
 
 <!--
-For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length  $\mathcal{O}(T)$ during backpropagating. As mentioned in :numref:`sec_numerical_stability`, it might result in numerical instability, e.g., the gradients may either explode or vanish, when $T$ is large. Therefore, RNN models often need extra help to stabilize the training.
+For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length $\mathcal{O}(T)$ during backpropagating.
+As mentioned in :numref:`sec_numerical_stability`, it might result in numerical instability, e.g., the gradients may either explode or vanish, when $T$ is large.
+Therefore, RNN models often need extra help to stabilize the training.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Recall that when solving an optimization problem, we take update steps for the weights $\mathbf{w}$ in the general direction of the negative gradient $\mathbf{g}_t$ on a minibatch, say $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Let us further assume that the objective is well behaved, i.e., it is Lipschitz continuous with constant $L$, i.e.,
+Recall that when solving an optimization problem, we take update steps for the weights $\mathbf{w}$ in the general direction of the negative gradient $\mathbf{g}_t$ on a minibatch, 
+say $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Let us further assume that the objective is well behaved, i.e., it is Lipschitz continuous with constant $L$, i.e.,
 -->
 
 *dịch đoạn phía trên*
+
 
 $$|l(\mathbf{w}) - l(\mathbf{w}')| \leq L \|\mathbf{w} - \mathbf{w}'\|.$$
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
-In this case we can safely assume that if we update the weight vector by $\eta \cdot \mathbf{g}_t$, we will not observe a change by more than $L \eta \|\mathbf{g}_t\|$. This is both a curse and a blessing. A curse since it limits the speed of making progress, whereas a blessing since it limits the extent to which things can go wrong if we move in the wrong direction.
+In this case we can safely assume that if we update the weight vector by $\eta \cdot \mathbf{g}_t$, we will not observe a change by more than $L \eta \|\mathbf{g}_t\|$.
+This is both a curse and a blessing.
+A curse since it limits the speed of making progress, whereas a blessing since it limits the extent to which things can go wrong if we move in the wrong direction.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Sometimes the gradients can be quite large and the optimization algorithm may fail to converge. We could address this by reducing the learning rate $\eta$ or by some other higher order trick. But what if we only rarely get large gradients? In this case such an approach may appear entirely unwarranted. One alternative is to clip the gradients by projecting them back to a ball of a given radius, say $\theta$ via
+Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
+We could address this by reducing the learning rate $\eta$ or by some other higher order trick.
+But what if we only rarely get large gradients?
+In this case such an approach may appear entirely unwarranted.
+One alternative is to clip the gradients by projecting them back to a ball of a given radius, say $\theta$ via
 -->
 
 *dịch đoạn phía trên*
@@ -253,21 +301,22 @@ Sometimes the gradients can be quite large and the optimization algorithm may fa
 $$\mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g}.$$
 
 <!--
-By doing so we know that the gradient norm never exceeds $\theta$ and that the
-updated gradient is entirely aligned with the original direction $\mathbf{g}$.
-It also has the desirable side-effect of limiting the influence any given
-minibatch (and within it any given sample) can exert on the weight vectors. This
-bestows a certain degree of robustness to the model. Gradient clipping provides
-a quick fix to the gradient exploding. While it does not entirely solve the problem, it is one of the many techniques to alleviate it.
+By doing so we know that the gradient norm never exceeds $\theta$ and that the updated gradient is entirely aligned with the original direction $\mathbf{g}$.
+It also has the desirable side-effect of limiting the influence any given minibatch (and within it any given sample) can exert on the weight vectors.
+This bestows a certain degree of robustness to the model.
+Gradient clipping provides a quick fix to the gradient exploding.
+While it does not entirely solve the problem, it is one of the many techniques to alleviate it.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-Below we define a function to clip the gradients of a model that is either a `RNNModelScratch` instance or a Gluon model. Also note that we compute the gradient norm over all parameters.
+Below we define a function to clip the gradients of a model that is either a `RNNModelScratch` instance or a Gluon model.
+Also note that we compute the gradient norm over all parameters.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=10}
 # Saved in the d2l package for later use
@@ -282,6 +331,14 @@ def grad_clipping(model, theta):
             param.grad[:] *= theta / norm
 ```
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Training
 -->
@@ -289,27 +346,32 @@ def grad_clipping(model, theta):
 ## *dịch tiêu đề phía trên*
 
 <!--
-Let us first define the function to train the model on one data epoch. It differs from the models training of :numref:`sec_softmax_scratch` in three places:
+Let us first define the function to train the model on one data epoch.
+It differs from the models training of :numref:`sec_softmax_scratch` in three places:
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-1. Different sampling methods for sequential data (independent sampling and
-   sequential partitioning) will result in differences in the initialization of
-   hidden states.
-1. We clip the gradients before updating the model parameters. This ensures that the model does not diverge even when gradients blow up at some point during the training process, and it effectively reduces the step size automatically.
-1. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
+1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
+2. We clip the gradients before updating the model parameters. 
+This ensures that the model does not diverge even when gradients blow up at some point during the training process, and it effectively reduces the step size automatically.
+3. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
 -->
 
 *dịch đoạn phía trên*
 
 
 <!--
-When the consecutive sampling is used, we initialize the hidden state at the beginning of each epoch. Since the $i^\mathrm{th}$ example in the next minibatch is adjacent to the current $i^\mathrm{th}$ example, so the next minibatch can use the current hidden state directly, we only detach the gradient so that we compute the gradients within a minibatch. When using the random sampling, we need to re-initialize the hidden state for each iteration since each example is sampled with a random position. Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
+When the consecutive sampling is used, we initialize the hidden state at the beginning of each epoch.
+Since the $i^\mathrm{th}$ example in the next minibatch is adjacent to the current $i^\mathrm{th}$ example, 
+so the next minibatch can use the current hidden state directly, we only detach the gradient so that we compute the gradients within a minibatch.
+When using the random sampling, we need to re-initialize the hidden state for each iteration since each example is sampled with a random position.
+Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -341,6 +403,7 @@ The training function again supports either we implement the model from scratch 
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -376,11 +439,17 @@ def train_ch8(model, train_iter, vocab, lr, num_epochs, ctx,
     print(predict('traveller'))
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
+
 <!--
-Now we can train a model. Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
+Now we can train a model.
+Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 num_epochs, lr = 500, 1
@@ -392,6 +461,7 @@ Finally let us check the results to use a random sampling iterator.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
@@ -408,7 +478,7 @@ While implementing the above RNN model from scratch is instructive, it is not co
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Sequence models need state initialization for training.
@@ -425,38 +495,30 @@ While implementing the above RNN model from scratch is instructive, it is not co
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Show that one-hot encoding is equivalent to picking a different embedding for each object.
-1. Adjust the hyperparameters to improve the perplexity.
+2. Adjust the hyperparameters to improve the perplexity.
     * How low can you go? Adjust embeddings, hidden units, learning rate, etc.
     * How well will it work on other books by H. G. Wells, e.g., [The War of the Worlds](http://www.gutenberg.org/ebooks/36).
-1. Modify the predict function such as to use sampling rather than picking the most likely next character.
+3. Modify the predict function such as to use sampling rather than picking the most likely next character.
     * What happens?
     * Bias the model towards more likely outputs, e.g., by sampling from $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ for $\alpha > 1$.
-1. Run the code in this section without clipping the gradient. What happens?
-1. Change adjacent sampling so that it does not separate hidden states from the computational graph. Does the running time change? How about the accuracy?
-1. Replace the activation function used in this section with ReLU and repeat the experiments in this section.
-1. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
+4. Run the code in this section without clipping the gradient. What happens?
+5. Change adjacent sampling so that it does not separate hidden states from the computational graph. Does the running time change? How about the accuracy?
+6. Replace the activation function used in this section with ReLU and repeat the experiments in this section.
+7. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
 -->
 
 *dịch đoạn phía trên*
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2364)
--->
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_rnn-scratch.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_rnn-scratch.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2364)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -471,6 +533,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
