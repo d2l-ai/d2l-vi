@@ -85,7 +85,7 @@ def vgg_block(num_convs, num_channels):
 ## VGG Network
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng VGG
 
 <!--
 Like AlexNet and LeNet, the VGG Network can be partitioned into two parts: the first consisting mostly of convolutional and pooling layers and a second consisting of fully-connected layers.
@@ -95,13 +95,17 @@ the number of convolutional layers and the number of output channels, which are 
 The fully-connected module is identical to that covered in AlexNet.
 -->
 
-*dịch đoạn phía trên*
+Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng tích chập và tầng gộp và phần thứ hai bao gồm các tầng kết nối đầy đủ. 
+Phần tích chập của mạng kết nối các mô-đun `vgg_block` liên tiếp lại.
+Trong :numref:`fig_vgg`, biến `conv_arch` bao gồm một danh sách các tuples (một tuple cho mỗi khối), trong đó mỗi tuple chứa hai giá trị: 
+số các tầng tích chập và số kênh đầu ra, cũng chính là những tham số cần thiết để gọi hàm `vgg_block`. 
+Mô-đun kết nối đầy đủ có cùng kiến trúc với mô-đun tương ứng tại AlexNet.
 
 <!--
 ![Designing a network from building blocks](../img/vgg.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/vgg.svg)
+![Thiết kế mạng từ các khối cơ bản](../img/vgg.svg)
 :width:`400px`
 :label:`fig_vgg`
 
@@ -111,7 +115,9 @@ The first block has 64 output channels and each subsequent block doubles the num
 Since this network uses $8$ convolutional layers and $3$ fully-connected layers, it is often called VGG-11.
 -->
 
-*dịch đoạn phía trên*
+Mạng VGG nguyên thủy có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng  tích chập mỗi khối, ba khối còn lại chứa hai tầng tích chập mỗi khối.
+Khối đầu tiên chứa 64 kênh đầu ra, mỗi khối tiếp theo chứa gấp đôi số kênh đâu ra cho đến $512$.
+Vì mạng này sử dụng $8$ tầng tích chập và $3$ tầng kết nối đầy đủ nên nó thường được gọi là VGG-11. 
 
 ```{.python .input  n=2}
 conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
@@ -121,7 +127,7 @@ conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 The following code implements VGG-11. This is a simple matter of executing a for loop over `conv_arch`.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã nguồn sau đây xây dựng mạng VGG 11. Việc này chỉ đơn giản là thực hiện vòng lặp `for` trên  biến `conv_arch`.
 
 ```{.python .input  n=3}
 def vgg(conv_arch):
@@ -142,7 +148,7 @@ net = vgg(conv_arch)
 Next, we will construct a single-channel data example with a height and width of 224 to observe the output shape of each layer.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ tạo một mẫu dữ liệu một kênh với chiều cao và chiều rộng là 224 để quan sát kích thước đầu ra của mỗi tầng.
 
 ```{.python .input  n=4}
 net.initialize()
@@ -156,7 +162,7 @@ for blk in net:
 As you can see, we halve height and width at each block, finally reaching a height and width of 7 before flattening the representations for processing by the fully-connected layer.
 -->
 
-*dịch đoạn phía trên*
+Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm một nửa, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi các biểu diễn được trải phẳng để tiếp tục xử lý trong tầng kết nối đầy đủ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -255,7 +261,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 *
