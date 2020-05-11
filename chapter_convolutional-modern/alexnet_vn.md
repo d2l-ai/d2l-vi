@@ -11,7 +11,7 @@ Although convolutional neural networks were well known in the computer vision an
 Although LeNet achieved good results on early small datasets, the performance and feasability of training convolutional networks on larger, more realistic datasets had yet to be established.
 In fact, for much of the intervening time between the early 1990s and the watershed results of 2012, neural networks were often surpassed by other machine learning methods, such as support vector machines.
 -->
-Mặc dù mạng nơ-ron tích chập nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
+Mặc dù mạng nơ-ron tích chập đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
 Mặc dù LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, hiệu năng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và thực tế hơn vẫn chưa được thiết lập.
 Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 cho tới thành tựu to lớn năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như là Máy Vector hỗ trợ - SVM.
 <!--
