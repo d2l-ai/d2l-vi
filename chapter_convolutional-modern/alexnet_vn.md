@@ -25,7 +25,7 @@ Most of the progress came from having more clever ideas for features, and the le
 Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhưng không quá nhiều, trong khi đó những giá trị thô này không bao giờ được đưa vào các mô hình truyền thống để học.
 Thay vào đó, những hệ thống thị giác máy tính sẽ có những pipeline dùng để rút trích những đặc trưng một cách thủ công.
 Thay vì *học đặc trưng*, những đặc trưng được *tạo ra*.
-Hầu hết những phát triển của các hệ thống đều đến từ việc có nhiều ý tưởng thông minh hơn trong việc tạo ra đặc trưng, và thuật toán dùng để học thường ít được để ý hơn.
+Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong việc tạo ra đặc trưng và thuật toán học thường ít được để ý hơn.
 <!--
 Although some neural network accelerators were available in the 1990s, they were not yet sufficiently powerful to make deep multichannel, 
 multilayer convolutional neural networks with a large number of parameters.
