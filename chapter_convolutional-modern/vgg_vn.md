@@ -172,14 +172,15 @@ Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm mộ
 ## Model Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện Mô hình
 
 <!--
 Since VGG-11 is more computationally-heavy than AlexNet we construct a network with a smaller number of channels.
 This is more than sufficient for training on Fashion-MNIST.
 -->
 
-*dịch đoạn phía trên*
+Vì VGG-11 thực hiện nhiều tính toán hơn AlexNet, ta sẽ xây dựng một mạng với số kênh nhỏ hơn.
+Như vậy vẫn là quá đủ để huấn luyện trên bộ dữ liệu Fashion-MNIST.
 
 ```{.python .input  n=5}
 ratio = 4
@@ -191,7 +192,7 @@ net = vgg(small_conv_arch)
 Apart from using a slightly larger learning rate, the model training process is similar to that of AlexNet in the last section.
 -->
 
-*dịch đoạn phía trên*
+Trừ việc sử dụng tốc độ học lớn hơn một chút, quy trình huấn luyện mô hình này tương tự như của AlexNet trong phần trước. 
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 128,
@@ -211,7 +212,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * In their work Simonyan and Ziserman experimented with various architectures. In particular, they found that several layers of deep and narrow convolutions (i.e., $3 \times 3$) were more effective than fewer layers of wider convolutions.
 -->
 
-*dịch đoạn phía trên*
+* Mạng VGG-11 tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được xác định bằng số lượng các tầng chập và kênh đầu ra trên mỗi khối khác nhau.
+* Việc sử dụng các khối cho phép các đoạn mã nguồn định nghĩa mạng có biểu diễn rất nhỏ gọn. Nó cho phép ta thiết kế hiệu quả các mạng phức tạp.
+* Simonyan và Zisserman đã thử nghiệm nhiều kiến trúc khác nhau. Cụ thể, họ đã phát hiện ra rằng nhiều tầng tích chập sâu và hẹp (như $3 \times 3$) thì có hiệu quả cao hơn so với một ít các tầng tích chập rộng.
 
 <!--
 ## Exercises
@@ -226,7 +229,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 4. Refer to Table 1 in :cite:`Simonyan.Zisserman.2014` to construct other common models, such as VGG-16 or VGG-19.
 -->
 
-*dịch đoạn phía trên*
+1. Khi in ra kích thước của các tầng, chúng ta chỉ thấy 8 kết quả chứ không phải 11. Thông tin về 3 tầng còn lại nằm ở đâu?
+2. So với AlexNet, VGG chậm hơn đáng kể về mặt tính toán và cũng đòi hỏi nhiều bộ nhớ GPU hơn. Hãy phân tích lý do cho hiện tượng này?
+3. Thử thay đổi chiều cao vầ chiều rộng của các ảnh trong Fashion-MNIST từ 224 xuống 96. Điều này ảnh hưởng thế nào tới các thử nghiệm?
+4. Tham khảo Bảng 1 trong :cite:`Simonyan.Zisserman.2014` để xây dựng các mô hình thông dụng khác, ví dụ như là VGG-16 và VGG-19.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -264,4 +270,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
-*
+* Nguyễn Lê Quang Nhật
