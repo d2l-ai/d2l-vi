@@ -232,10 +232,7 @@ This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
--->
 
-
-*dịch đoạn phía trên*
 
 <!--
 This should already give us pause if we want to model words by count statistics and smoothing.
