@@ -380,6 +380,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Nguyễn Văn Cường
