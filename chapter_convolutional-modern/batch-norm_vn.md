@@ -31,7 +31,7 @@ To motivate batch normalization, let us review a few practical challenges that a
 when training ML models and neural nets in particular.
 -->
 
-Để thấy được mục đích của việc chuẩn hóa theo batch, hãy cùng chúng tôi xem xét lại một vài vấn đề thực tế phát sinh khi huấn luyện các mô hình học máy và mạng nơ-ron.
+Để thấy được mục đích của việc chuẩn hóa theo batch, hãy cùng chúng tôi xem xét lại một vài vấn đề thực tế phát sinh khi huấn luyện các mô hình học máy và đặc biệt là mạng nơ-ron.
 
 <!--
 1. Choices regarding data preprocessing often make an enormous difference in the final results.
