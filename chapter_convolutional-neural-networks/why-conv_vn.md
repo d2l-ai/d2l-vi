@@ -5,7 +5,7 @@
 # From Dense Layers to Convolutions
 -->
 
-# Từ Tầng kết nối Dày Đặc tới Phép Tích Chập
+# Từ Tầng Kết nối Dày đặc đến phép Tích chập
 
 <!--
 The models that we have discussed so far are fine options if you are dealing with *tabular* data.
@@ -14,8 +14,8 @@ With tabular data, we might anticipate that pattern we seek could require modeli
 but do not assume anything a priori about which features are related to each other or in what way.
 -->
 
-Cho đến giờ, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không hề giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
+Đến nay, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu, còn các cột tương ứng với các đặc trưng.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
 
 
 <!--
@@ -56,8 +56,8 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-Bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
-Tuy nhiên, ngay cả khi chỉ sử dụng 100,000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
+Độc giả kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
+Tuy nhiên, ngay cả khi chỉ sử dụng 100.000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
 Việc học một bộ phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một tập dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
 Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
 Đó là bởi vì các ảnh thể hiện cấu trúc phong phú, thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
@@ -87,7 +87,7 @@ Lý tưởng nhất, ta có thể học một hệ thống có khả năng tận
 Lợn thường không bay và máy bay thường không bơi.
 Tuy nhiên, ta vẫn có thể nhận ra một con lợn đang bay nếu nó xuất hiện.
 Ý tưởng này được thể hiện rõ rệt trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
-Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
+Trò chơi này bao gồm một số cảnh hỗn loạn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
 Nhiệm vụ của người chơi là xác định vị trí của anh ta.
 Mặc dù Waldo có trang phục khá nổi bật, việc này có thể vẫn rất khó khăn do có quá nhiều yếu tố gây nhiễu.
 
