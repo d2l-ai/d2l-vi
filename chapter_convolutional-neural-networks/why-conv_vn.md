@@ -132,7 +132,7 @@ Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán họ
 ## Constraining the MLP
 -->
 
-## Giới hạn perceptron đa tầng
+## Ràng buộc Perceptron đa tầng
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
