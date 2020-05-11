@@ -71,10 +71,10 @@ The former defines how the inputs and outputs are concatenated, while the latter
 The dense connections are shown in :numref:`fig_densenet`.
 -->
 
-Cuối cùng, tất cả các chức năng này được kết hợp trong MLP để giảm số lượng đặc trưng một lần nữa.
-Về mặt triển khai, việc này khá đơn giản --- thay vì cộng các số hạng, ta sẽ nối chúng lại.
+Cuối cùng, tất cả các hàm số này được kết hợp trong một MLP để giảm số lượng đặc trưng một lần nữa.
+Về mặt triển khai, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
 Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
-Tầng cuối cùng của chuỗi như vậy được kết nối dày đặc với tất cả các tầng trước đó.
+Tầng cuối cùng của một chuỗi như vậy được kết nối dày đặc với tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các kết nối dày đặc định nghĩa cách đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
 Các kết nối dày đặc được hiển thị trong :numref:`fig_densenet`.
@@ -150,10 +150,10 @@ The number of convolution block channels controls the increase in the number of 
 This is also referred to as the growth rate.
 -->
 
-Trong ví dụ sau, ta định nghĩa khối tích chập gồm hai khối với 10 kênh đầu ra.
+Trong ví dụ sau đây, ta định nghĩa một khối tích chập gồm hai khối với 10 kênh đầu ra.
 Khi sử dụng đầu vào có 3 kênh, ta sẽ nhận được đầu ra với $3+2\times 10=23$ kênh.
 Số lượng kênh của khối tích chập kiểm soát sự gia tăng số lượng kênh đầu ra so với số lượng kênh đầu vào.
-Điều này thường được gọi là tốc độ tăng.
+Điều này thường được gọi là tốc độ tăng tưởng.
 
 ```{.python .input  n=8}
 blk = DenseBlock(2, 10)
