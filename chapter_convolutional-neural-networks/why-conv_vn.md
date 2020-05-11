@@ -271,7 +271,7 @@ For instance, for vectors defined on $\ell_2$, i.e., the set of square summable 
 
 Trong phép toán này, ta đo lường sự chồng chéo giữa $f$ và $g$ khi $g$ được dịch chuyển một khoảng $x$ và "bị lật lại".
 Đối với các đối tượng rời rạc, phép tích phân trở thành phép lấy tổng.
-Chẳng hạn, đối với các vector được định nghĩa trên $\ell_2$, tức tập các vector vô hạn chiều có tổng bình phương hội tụ với chỉ số chạy trên $\mathbb{Z}$, ta có phép tích chập sau:
+Chẳng hạn, đối với các vector được định nghĩa trên $\ell_2$, là tập các vector vô hạn chiều có tổng bình phương hội tụ, với chỉ số chạy trên $\mathbb{Z}$, ta có phép tích chập sau:
 
 $$[f \circledast g](i) = \sum_a f(a) g(i-a).$$
 
