@@ -14,7 +14,7 @@ In the following sections, we will introduce several heuristic concepts commonly
 -->
 
 Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để hỗ trợ những nhà nghiên cứu về sau thiết kế các mạng mới. 
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm tiến bộ được sử dụng rộng rãi trong thiết kế mạng học sâu. 
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi trong thiết kế mạng học sâu. 
 
 <!--
 Progress in this field mirrors that in chip design where engineers went from placing transistors to logical elements to logic blocks.
@@ -30,8 +30,8 @@ The idea of using blocks first emerged from the [Visual Geometry Group](http://w
 It is easy to implement these repeated structures in code with any modern deep learning framework by using loops and subroutines.
 -->
 
-Ý tưởng sử dụng các khối lần đầu xuất hiện từ [Nhóm Hình Học Trực Quan](http://www.robots.ox.ac.uk/~vgg/) (VGG) tại Đại Học Oxford, trong mạng VGG được lấy từ tên của họ. 
-Việc thực hiện các cấu trúc lặp lại này, sử dụng mã nguồn với bất kỳ các framework học sâu hiện đại với các vòng lặp và chương trình con, là tương đối dễ dàng. 
+Ý tưởng sử dụng các khối lần đầu xuất hiện trong mạng VGG được đặt cùng tên bởi nhóm [VGG](http://www.robots.ox.ac.uk/~vgg/) thuộc Đại học Oxford.
+Sử dụng bất kỳ các framework học sâu hiện đại nào với vòng lặp và chương trình con để xây dựng các cấu trúc lặp lại này là tương đối dễ dàng. 
 
 <!--
 ## VGG Blocks
@@ -50,14 +50,13 @@ In the code below, we define a function called `vgg_block` to implement one VGG 
 The function takes two arguments corresponding to the number of convolutional layers `num_convs` and the number of output channels `num_channels`.
 -->
 
-Khối xây dựng cơ bản của mạng tích chấp cổ điển là sự nối tiếp theo thứ tự các lớp sau: 
+Khối cơ bản của mạng tích chấp cổ điển là một chuỗi các tầng sau đây:
 (i) một tầng tích chập (với phần đệm để duy trì độ phân giải),
 (ii) một tầng phi tuyến tính như ReLU, (iii) một tầng gộp như tầng gộp cực đại (_max pooling layer__).
-Một khối VGG gồm một chuỗi các tầng tích chập, tiếp nối bởi một tầng gộp cực đại để giảm mẫu không gian. 
-Trong bài báo gốc của VGG :cite:`Simonyan.Zisserman.2014`, tác giả sử dụng tích chập với nhân $3\times3$
-và $2 \times 2$ tầng gộp cực đại với sải bước $2$ (giảm một nửa độ phân giải sau mỗi khối).
-Trong mã nguồn dưới đây, ta định nghĩa một hàm tên `vgg_block` để sử dụng một khối VGG. 
-Hàm này nhận hai tham số `num_convs` và `num_channels` tương ứng lần lượt với số tầng tích chập và số kênh đầu ra. 
+Một khối VGG gồm một chuỗi các tầng tích chập, tiếp nối bởi một tầng gộp cực đại để giảm chiều không gian. 
+Trong bài báo gốc của VGG :cite:`Simonyan.Zisserman.2014`, tác giả sử dụng tích chập với nhân $3\times3$ và tầng gộp cực đại $2 \times 2$ với sải bước bằng $2$ (giảm một nửa độ phân giải sau mỗi khối).
+Trong mã nguồn dưới đây, ta định nghĩa một hàm tên `vgg_block` để tạo một khối VGG. 
+Hàm này nhận hai đối số `num_convs` và `num_channels` tương ứng lần lượt với số tầng tích chập và số kênh đầu ra. 
 
 ```{.python .input  n=1}
 import d2l
