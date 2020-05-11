@@ -13,7 +13,7 @@ In fact, for much of the intervening time between the early 1990s and the waters
 -->
 Mặc dù mạng nơ-ron tích chập nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
 Mặc dù LeNet đã đạt được những kết quả tốt trên những tập dữ liệu nhỏ, hiệu suất và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn hơn, thực tế hơn vẫn chưa được thiết lập.
-Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 và những kết quả quan trọng trong năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như SVM (support vector machines).
+Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 cho tới thành tựu to lớn năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như là Máy Vector hỗ trợ - SVM.
 <!--
 For computer vision, this comparison is perhaps not fair.
 That is although the inputs to convolutional networks consist of raw or lightly-processed (e.g., by centering) pixel values, practitioners would never feed raw pixels into traditional models.
