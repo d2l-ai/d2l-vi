@@ -4,7 +4,7 @@
 <!--
 # Deep Convolutional Neural Networks (AlexNet)
 -->
-Mạng Nơ-ron Tích Chập sâu (AlexNet)
+# Mạng Nơ-ron Tích Chập sâu (AlexNet)
 :label:`sec_alexnet`
 <!--
 Although convolutional neural networks were well known in the computer vision and machine learning communities following the introduction of LeNet, they did not immediately dominate the field.
