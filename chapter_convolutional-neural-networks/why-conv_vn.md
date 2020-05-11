@@ -5,7 +5,7 @@
 # From Dense Layers to Convolutions
 -->
 
-# Từ Tầng Dày Đặc tới Phép Tích Chập
+# Từ Tầng Kết nối Dày đặc đến phép Tích chập
 
 <!--
 The models that we have discussed so far are fine options if you are dealing with *tabular* data.
@@ -14,8 +14,8 @@ With tabular data, we might anticipate that pattern we seek could require modeli
 but do not assume anything a priori about which features are related to each other or in what way.
 -->
 
-Cho đến giờ các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các đặc trưng, nhưng ta không giả định từ kinh nghiệm bất cứ điều gì về việc các đặc trưng có liên quan tới nhau như thế nào.
+Đến nay, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu, còn các cột tương ứng với các đặc trưng.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
 
 
 <!--
@@ -24,8 +24,8 @@ In these cases, a multilayer perceptron is often the best that we can do.
 However, once we start dealing with high-dimensional perceptual data, these *structure-less* networks can grow unwieldy.
 -->
 
-Đôi khi ta thực sự không có bất kỳ kiến thức nào để định hướng việc thiết kế các kiến trúc được khéo léo hơn.
-Trong những trường hợp này, sử dụng một perceptron đa tầng thường là giải pháp tốt nhất ta có thể làm.
+Đôi khi ta thực sự không có bất kỳ kiến thức nào để định hướng việc thiết kế các kiến trúc được sắp xếp khéo léo hơn.
+Trong những trường hợp này, một perceptron đa tầng thường là giải pháp tốt nhất.
 Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu tri giác đa chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
 
 <!--
@@ -38,10 +38,10 @@ learning the parameters of this network may turn out to be impossible.
 -->
 
 Hãy quay trở lại với ví dụ phân biệt chó và mèo quen thuộc.
-Giả sử ta thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn có độ phân giải 1 triệu điểm ảnh.
+Giả sử ta đã thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn chất lượng cao với độ phân giải 1 triệu điểm ảnh.
 Điều này có nghĩa là đầu vào của mạng sẽ có *1 triệu chiều*.
-Ngay cả việc giảm mạnh xuống *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) để hỗ trợ $10^9$ tham số.
-Trừ khi ta có một bộ dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, một tài năng để tối ưu hóa phân tán và sức kiên nhẫn phi thường, thì việc học các tham số của mạng này có thể sẽ là điều bất khả thi.
+Ngay cả việc giảm mạnh xuống còn *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) có $10^9$ tham số.
+Trừ khi ta có một tập dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, chuyên môn cao trong việc tối ưu hóa phân tán và sức kiên nhẫn phi thường, việc học các tham số của mạng này có thể là điều bất khả thi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -56,11 +56,11 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-Bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
-Tuy nhiên, ngay cả khi chỉ sử dụng 100,000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
-Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
+Độc giả kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
+Tuy nhiên, ngay cả khi chỉ sử dụng 100.000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
+Việc học một bộ phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một tập dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
 Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
-Đó là bởi vì các ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
+Đó là bởi vì các ảnh thể hiện cấu trúc phong phú, thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
 
 <!--
 ## Invariances
@@ -81,15 +81,15 @@ The reader's goal is to locate him.
 Despite his characteristic outfit, this can be surprisingly difficult, due to the large number of confounders.
 -->
 
-Hãy tưởng tượng rằng ta muốn nhận dạng một đối tượng trong ảnh.
-Có vẻ là hợp lý khi cho rằng bất cứ phương pháp nào ta sử dụng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
-Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác được kiến thức này.
+Hãy tưởng tượng rằng ta muốn nhận diện một vật thể trong ảnh.
+Có vẻ sẽ hợp lý nếu cho rằng bất cứ phương pháp nào ta sử dụng đều không nên quá quan tâm đến vị trí *chính xác* của vật thể trong ảnh.
+Lý tưởng nhất, ta có thể học một hệ thống có khả năng tận dụng được kiến thức này bằng một cách nào đó.
 Lợn thường không bay và máy bay thường không bơi.
-Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn nếu nó xuất hiện.
-Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
-Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
-Nhiệm vụ của người chơi là xác định vị trí anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
-Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng lớn các yếu tố gây nhiễu nên việc nhận dạng anh ta vẫn có thể khó khăn một cách đáng ngạc nhiên.
+Tuy nhiên, ta vẫn có thể nhận ra một con lợn đang bay nếu nó xuất hiện.
+Ý tưởng này được thể hiện rõ rệt trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
+Trò chơi này bao gồm một số cảnh hỗn loạn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
+Nhiệm vụ của người chơi là xác định vị trí của anh ta.
+Mặc dù Waldo có trang phục khá nổi bật, việc này có thể vẫn rất khó khăn do có quá nhiều yếu tố gây nhiễu.
 
 <!--
 ![Image via Walker Books](../img/where-wally-walker-books.jpg)
@@ -104,21 +104,21 @@ Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng l�
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với các ảnh, những trực giác mà ta đã thảo luận có thể được làm cụ thể hơn để đạt được một vài nguyên tắc chủ chốt cho việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
+Quay lại với ảnh, những trực giác mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-1. Ở một khía cạnh nào đó, các hệ thống thị giác nên phản ứng tương tự với cùng một đối tượng bất kể đối tượng đó xuất hiện ở đâu trong ảnh (tính bất biến tịnh tiến).
-2. Ở khía cạnh khác, các hệ thống thị giác nên tập trung vào các khu vực cục bộ, mà không quan tâm đến bất kỳ điều gì khác ở khoảng cách xa hơn trong ảnh (tính cục bộ).
+1. Ở một khía cạnh nào đó, các hệ thống thị giác nên phản ứng tương tự với cùng một vật thể bất kể vật thể đó xuất hiện ở đâu trong ảnh (tính bất biến tịnh tiến).
+2. Ở khía cạnh khác, các hệ thống thị giác nên tập trung vào các khu vực cục bộ và không quan tâm đến bất kỳ thứ gì khác ở xa hơn trong ảnh (tính cục bộ).
 
 <!--
 Let us see how this translates into mathematics.
 -->
 
-Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán học.
+Hãy cùng xem cách biểu diễn những điều trên bằng ngôn ngữ toán học.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
