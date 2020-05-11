@@ -40,7 +40,7 @@ learning the parameters of this network may turn out to be impossible.
 Hãy quay trở lại với ví dụ phân biệt chó và mèo quen thuộc.
 Giả sử ta đã thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn chất lượng cao với độ phân giải 1 triệu điểm ảnh.
 Điều này có nghĩa là đầu vào của mạng sẽ có *1 triệu chiều*.
-Ngay cả việc giảm mạnh xuống *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) có $10^9$ tham số.
+Ngay cả việc giảm mạnh xuống còn *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) có $10^9$ tham số.
 Trừ khi ta có một tập dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, chuyên môn cao trong việc tối ưu hóa phân tán và sức kiên nhẫn phi thường, việc học các tham số của mạng này có thể là điều bất khả thi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
