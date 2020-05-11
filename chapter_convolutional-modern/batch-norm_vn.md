@@ -17,7 +17,7 @@ Together with residual blocks—covered in :numref:`sec_resnet`—BN has made it
 
 Việc huấn luyện mạng nơ-ron học sâu thì không dễ. 
 Và để cho mô hình hội tụ trong một khoảng thời gian hợp lý là một vấn đề hóc búa.
-Trong phần này, chúng ta sẽ đề cập đến việc chuẩn hóa theo batch (BN) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm giúp tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
+Trong phần này, chúng ta sẽ đề cập đến việc chuẩn hóa theo batch (_Batch Normalization - BN_) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm giúp tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
 Cùng với các khối thặng dư được đề cập ở phần :numref:`sec_resnet`—BN đã giúp những người thực nghiệm có thể huấn luyện mạng học sâu với hơn 100 tầng.
 
 <!--
