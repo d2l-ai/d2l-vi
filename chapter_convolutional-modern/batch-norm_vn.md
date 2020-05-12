@@ -228,7 +228,7 @@ Second, we might not have the luxury of computing per-batch normalization statis
 -->
 
 Như chúng tôi đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc ước tính chúng trên những minibatch thì không còn là nhiễu mà chúng ta mong muốn khi chúng ta huấn luyện mô hình.
+Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên những minibatch không còn là nhiễu được mong muốn, một khi ta đã huấn luyện xong mô hình.
 Thứ hai, chúng ta không có tài nguyên xa xỉ để tính toán các con số thống kê trên mỗi lần chuẩn hoá theo batch, ví dụ: chúng ta cần áp dụng mô hình để đưa ra kết quả dự đoán tại một thời điểm.
 
 <!--
