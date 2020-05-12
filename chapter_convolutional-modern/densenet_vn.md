@@ -72,12 +72,12 @@ The dense connections are shown in :numref:`fig_densenet`.
 -->
 
 Cuối cùng, tất cả các hàm số này được kết hợp trong một MLP để giảm số lượng đặc trưng một lần nữa.
-Về mặt triển khai, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
+Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
 Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
-Tầng cuối cùng của một chuỗi như vậy được kết nối dày đặc với tất cả các tầng trước đó.
+Tầng cuối cùng của một chuỗi như vậy được kết nối dày đặc tới tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các kết nối dày đặc định nghĩa cách đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
-Các kết nối dày đặc được hiển thị trong :numref:`fig_densenet`.
+Các kết nối dày đặc được biểu diễn trong :numref:`fig_densenet`.
 
 <!--
 ![Dense connections in DenseNet](../img/densenet.svg)
@@ -101,7 +101,7 @@ DenseNet uses the modified "batch normalization, activation, and convolution" ar
 First, we implement this architecture in the `conv_block` function.
 -->
 
-DenseNet sử dụng một kiến trúc được sửa đổi "chuẩn hóa batch, hàm kích hoạt và phép tích chập" của ResNet (xem phần bài tập trong :numref:`sec_resnet`).
+DenseNet sử dụng một kiến trúc được sửa đổi của ResNet "chuẩn hóa theo batch, hàm kích hoạt và phép tích chập" (xem phần bài tập trong :numref:`sec_resnet`).
 Đầu tiên, ta sẽ lập trình kiến trúc này trong hàm `conv_block`.
 
 ```{.python .input  n=1}
@@ -123,7 +123,7 @@ A dense block consists of multiple `conv_block` units, each using the same numbe
 In the forward computation, however, we concatenate the input and output of each block on the channel dimension.
 -->
 
-Một khối dày đặc bao gồm nhiều đơn vị `conv_block`, mỗi đơn vị sử dụng cùng một số kênh đầu ra.
+Một khối dày đặc bao gồm nhiều khối `conv_block`, mỗi khối sử dụng cùng một số kênh đầu ra.
 Tuy nhiên, trong tính toán lượt truyền xuôi, ta nối đầu vào và đầu ra của từng khối trên chiều kênh.
 
 ```{.python .input  n=2}
@@ -150,10 +150,10 @@ The number of convolution block channels controls the increase in the number of 
 This is also referred to as the growth rate.
 -->
 
-Trong ví dụ sau đây, ta định nghĩa một khối tích chập gồm hai khối với 10 kênh đầu ra.
-Khi sử dụng đầu vào có 3 kênh, ta sẽ nhận được đầu ra với $3+2\times 10=23$ kênh.
-Số lượng kênh của khối tích chập kiểm soát sự gia tăng số lượng kênh đầu ra so với số lượng kênh đầu vào.
-Điều này thường được gọi là tốc độ tăng tưởng.
+Trong ví dụ sau đây, ta định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, chỗ này mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" nên tự sửa lại bản dịch, nếu reviewer thấy không hợp lý thì sửa lại giúp mình nhé. Thanks! -->
+Với một đầu vào có 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
+Số lượng kênh của khối tích chập kiểm soát sự gia tăng số lượng kênh đầu ra tương đối so với số lượng kênh đầu vào.
+Sự gia tăng này thường được gọi là tốc độ tăng tưởng.
 
 ```{.python .input  n=8}
 blk = DenseBlock(2, 10)
@@ -361,7 +361,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 *
