@@ -217,7 +217,7 @@ apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the
 
 Tương tự với tầng tích chập, chúng ta thường áp dụng BN sau khi thực hiện tích chập và trước hàm kích hoạt phi tuyến tính.
 Khi phép tích chập cho đầu ra có nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
-và mỗi kênh sẽ có riêng cho nó những tham số tỉ lệ và xê dịch, cả hai đều là những số thực.
+và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là những số thực.
 Giả sử những minibatch của chúng ta có kích thước là $m$ và đầu ra cho mỗi kênh của phép tích chập có chiều cao là $p$ và rộng là $q$.
 Đối với tầng tích chập, chúng ta sẽ thực hiện mỗi phép tính chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng đồng thời một lúc.
 Vì thế chúng ta thu được các giá trị trên tất cả các vị trí không gian khi tính toán giá trị trung bình và phương sai 
