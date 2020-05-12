@@ -197,7 +197,7 @@ Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\math
 -->
 
 Hãy nhớ rằng giá trị trung bình và phương sai thì được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
-Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và hệ số xê dịch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
+Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
 
 <!--
 ### Convolutional Layers
