@@ -115,7 +115,7 @@ As it turns out, this is actually beneficial.
 -->
 
 Lưu ý rằng chúng ta thêm một hằng số $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
-$\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giải quyết vấn đề chênh lệch tỷ lệ bằng việc sử dụng của giá trị trung bình và phương sai có nhiễu.
+Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu của ước tính giá trị trung bình và phương sai.
 Bạn có thể nghĩ rằng những nhiễu này sẽ là vấn đề đáng ngại.
 Nhưng thực ra, điều này lại có lợi.
 
