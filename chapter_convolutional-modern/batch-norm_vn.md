@@ -302,7 +302,7 @@ The `num_features` parameter required by the `BatchNorm` instance is the number 
 The `num_dims` parameter also required by this instance is 2 for a fully-connected layer and 4 for a convolutional layer.
 -->
 
-Bây giờ chúng ta có thể tạo ra một tầng `BatchNorm` thích hợp.
+Bây giờ chúng ta có thể tạo ra một tầng `BatchNorm` đúng cách.
 Tầng này sẽ duy trì những tham số thích hợp tương ứng với tỉ lệ `gamma` và độ xê dịch `beta`, hai tham số này sẽ được cập nhật trong quá trình huấn luyện.
 Thêm vào đó, tầng BN sẽ sẽ duy trì một giá trị trung bình động của những giá trị trung bình và phương sai cho lần dùng tiếp theo trong việc dự đoán của mô hình. 
 Tham số `num_features` được yêu cầu truyền vào bởi đối tượng `BatchNorm` là số lượng các đầu ra cho tầng kết nối đầy đủ và số lượng kênh đầu ra cho tầng tích chập.
