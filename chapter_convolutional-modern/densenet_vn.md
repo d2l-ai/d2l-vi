@@ -228,18 +228,18 @@ Here, we set it to 4, consistent with the ResNet-18 in the previous section.
 Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
-Sau đó, tương tự như bốn khối residual mà ResNet sử dụng, DenseNet sử dụng bốn khối dày đặc.
-Tương tự như ResNet, ta cũng có thể tùy chỉnh số lượng các khối tích chập được sử dụng trong mỗi khối dày đặc.
-Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để phù hợp với ResNet-18 trong phần trước.
-Ngoài ra, ta sẽ đặt số lượng kênh (tức là tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào mỗi khối dày đặc.
+Sau đó, tương tự việc ResNet sử dụng bốn khối dư, DenseNet sẽ sử dụng bốn khối dày đặc.
+Cũng giống như với ResNet, ta có thể tùy chỉnh số lượng các khối tích chập được sử dụng trong mỗi khối dày đặc.
+Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với với kiến trúc ResNet-18 trong phần trước.
+Ngoài ra, ta sẽ đặt số lượng kênh (tức tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào mỗi khối dày đặc.
 
 <!--
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi mô-đun bằng cách sử dụng một khối residual với sải bước bằng 2.
-Ở đây, ta sử dụng tầng chuyển tiếp để giảm một nửa chiều cao và chiều rộng và giảm một nửa số lượng kênh.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi mô-đun bằng cách sử dụng một khối dư với sải bước bằng 2.
+Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, chiều rộng và số lượng kênh.
 
 ```{.python .input  n=5}
 # Num_channels: the current number of channels
@@ -261,7 +261,7 @@ for i, num_convs in enumerate(num_convs_in_dense_blocks):
 Similar to ResNet, a global pooling layer and fully connected layer are connected at the end to produce the output.
 -->
 
-Tương tự như ResNet, một tầng gộp toàn cục và một tầng kết nối đầy đủ được thêm ở cuối để tạo đầu ra.
+Cuối cùng, tương tự như ResNet, một tầng gộp toàn cục và một tầng kết nối đầy đủ sẽ được thêm vào để tính toán đầu ra.
 
 ```{.python .input}
 net.add(nn.BatchNorm(),
