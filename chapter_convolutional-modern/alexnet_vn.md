@@ -4,20 +4,16 @@
 <!--
 # Deep Convolutional Neural Networks (AlexNet)
 -->
-
-# *dịch tiêu đề phía trên*
+# Mạng Nơ-ron Tích Chập sâu (AlexNet)
 :label:`sec_alexnet`
-
-
 <!--
 Although convolutional neural networks were well known in the computer vision and machine learning communities following the introduction of LeNet, they did not immediately dominate the field.
 Although LeNet achieved good results on early small datasets, the performance and feasability of training convolutional networks on larger, more realistic datasets had yet to be established.
 In fact, for much of the intervening time between the early 1990s and the watershed results of 2012, neural networks were often surpassed by other machine learning methods, such as support vector machines.
 -->
-
-*dịch đoạn phía trên*
-
-
+Mặc dù mạng nơ-ron tích chập đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
+Mặc dù LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, hiệu năng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và thực tế hơn vẫn chưa được thiết lập.
+Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 cho tới thành tựu to lớn năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như là Máy Vector hỗ trợ - SVM.
 <!--
 For computer vision, this comparison is perhaps not fair.
 That is although the inputs to convolutional networks consist of raw or lightly-processed (e.g., by centering) pixel values, practitioners would never feed raw pixels into traditional models.
@@ -25,9 +21,11 @@ Instead, typical computer vision pipelines consisted of manually engineering fea
 Rather than *learn the features*, the features were *crafted*.
 Most of the progress came from having more clever ideas for features, and the learning algorithm was often relegated to an afterthought.
 -->
-
-*dịch đoạn phía trên*
-
+Đối với thị giác máy tính, sự so sánh này có lẽ không công bằng.
+Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhẹ trên các giá trị điểm ảnh (chẳng hạn định tâm ảnh), trong khi đó những giá trị thô này không bao giờ được đưa trực tiếp vào các mô hình truyền thống để học.
+Thay vào đó, những hệ thống thị giác máy tính sẽ có những pipeline dùng để trích xuất đặc trưng một cách thủ công.
+Thay vì *học đặc trưng*, những đặc trưng được *tạo thủ công*.
+Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong việc tạo ra đặc trưng và thuật toán học thường ít được để ý hơn.
 <!--
 Although some neural network accelerators were available in the 1990s, they were not yet sufficiently powerful to make deep multichannel, 
 multilayer convolutional neural networks with a large number of parameters.
@@ -35,15 +33,13 @@ Moreover, datasets were still relatively small.
 Added to these obstacles, key tricks for training neural networks including parameter initialization heuristics, clever variants of stochastic gradient descent,
 non-squashing activation functions, and effective regularization techniques were still missing.
 -->
-
-*dịch đoạn phía trên*
-
+Mặc dù cũng đã có các thiết bị phần cứng tăng tốc độ thực thi mạng nơ-ron vào đầu những năm 1990, chúng vẫn chưa đủ mạnh để có thể tạo ra những mạng nơ-ron với nhiều kênh, nhiều tầng với số lượng tham số rất lớn.
+Ngoài ra, những tập dữ liệu vẫn còn tương đối nhỏ.
+Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số dựa trên kinh nghiệm, các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không ép, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
 -->
-
-*dịch đoạn phía trên*
-
+Vì vây, thay vì huấn luyện các hệ thống *đầu-cuối* (điểm ảnh đến phân loại), các pipeline cổ điển trông giống như thế này:
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -577,7 +573,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Đình Nam
 
 <!-- Phần 2 -->
 *
