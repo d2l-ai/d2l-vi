@@ -199,6 +199,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|--------------------------|----------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | kernel                  | nhân                     | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
+| kernel method(s)        | (các) phương pháp kernel |                                              |
+| kernel function(s)      | (các) hàm kernel         |                                              |
+
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
