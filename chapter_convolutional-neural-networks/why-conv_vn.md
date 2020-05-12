@@ -303,7 +303,7 @@ Ta sẽ quay trở lại phép toán này trong phần tiếp theo.
 ## Waldo Revisited
 -->
 
-## Xem lại Waldo
+## Xem lại ví dụ về Waldo
 
 <!--
 Let us see what this looks like if we want to build an improved Waldo detector.
@@ -311,7 +311,7 @@ The convolutional layer picks windows of a given size and weighs intensities acc
 We expect that wherever the "waldoness" is highest, we will also find a peak in the hidden layer activations.
 -->
 
-Ta hãy xem điều này trông ra sao nếu ta muốn xây dựng một máy dò Waldo cải tiến.
+Hãy cùng xem việc xây dựng một bộ phát hiện Waldo cải tiến sẽ trông như thế nào.
 Tầng tích chập chọn các cửa sổ có kích thước cho sẵn và đánh trọng số cường độ dựa theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
 Ta hy vọng rằng ở đâu có "tính Waldo" cao nhất, các tầng kích hoạt ẩn cũng sẽ có cao điểm ở đó.
 
@@ -330,14 +330,15 @@ Only two of these axes concern spatial relationships, while the $3^{\mathrm{rd}}
 -->
 
 Chỉ có một vấn đề với cách tiếp cận này là cho đến nay ta đã vô tư bỏ qua việc hình ảnh bao gồm 3 kênh màu: đỏ, xanh lá cây và xanh dương.
-Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều nhưng thay vào đó là một tensor bậc ba, ví dụ, với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
-Chỉ có hai trong số các trục này liên quan về mặt không gian, trong khi trục thứ ba có thể được coi là để gán biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
+Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều mà là một tensor bậc ba, ví dụ tensor với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
+Chỉ có hai trong số các trục này chứa mối quan hệ về mặt không gian, trong khi trục thứ ba có thể được coi như là một biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
 
 <!--
 We thus index $\mathbf{x}$ as $x[i, j, k]$.
 The convolutional mask has to adapt accordingly.
 Instead of $V[a, b]$ we now have $V[a, b, c]$.
 -->
+
 
 Do đó, ta phải truy cập $\mathbf{x}$ dưới dạng $x[i, j, k]$.
 Mặt nạ tích chập phải thích ứng cho phù hợp.
@@ -348,16 +349,19 @@ Moreover, just as our input consists of a $3^{\mathrm{rd}}$ order tensor it turn
 In other words, rather than just having a 1D representation corresponding to each spatial location, we want to have a multidimensional hidden representations corresponding to each spatial location.
 We could think of the hidden representation as comprising a number of 2D grids stacked on top of each other.
 These are sometimes called *channels* or *feature maps*.
-Intuitively you might imagine that at lower layers, some channels specialize to recognizing edges,
-We can take care of this by adding a fourth coordinate to $V$ via $V[a, b, c, d]$. Putting all together we have:
+Intuitively, you might imagine that at lower layers, some channels could become specialized to recognize edges, others to recognize textures, etc. 
+To support multiple channels in both inputs and hidden activations, we can add a fourth coordinate to $V: V[a, b, c, d]$. 
+Putting all together we have:
 -->
+<!-- đoạn này trước bị thiếu nên mình update luôn -->
 
-Hơn nữa, cũng giống như đầu vào là các tensor bậc ba, xây dựng các biểu diễn ẩn như là các tensor bậc ba tương ứng hoá ra lại là một ý tưởng hay.
+Hơn nữa, tương tự như việc đầu vào là các tensor bậc ba, việc xây dựng các biểu diễn ẩn là các tensor bậc ba tương ứng hoá ra cũng là một ý tưởng hay.
 Nói cách khác, thay vì chỉ có một biểu diễn 1D tương ứng với từng vị trí không gian, ta muốn có một biểu diễn ẩn đa chiều tương ứng với từng vị trí không gian.
-Ta có thể coi các biểu diễn ẩn như được cấu thành từ các lưới 2D xếp chồng lên nhau.
-Đôi khi chúng được gọi là các *kênh* (*channel*) hoặc các *ánh xạ đặc trưng* (*feature maps*).
-Theo trực giác bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh chuyên nhận biết các cạnh.
-Ta có thể xử lý vấn đề này bằng cách thêm tọa độ thứ tư vào $V$ thông qua $V[a, b, c, d]$. Đặt tất cả lại với nhau ta có:
+Ta có thể coi các biểu diễn ẩn như được cấu thành từ các lưới hai chiều xếp chồng lên nhau.
+Đôi khi chúng được gọi là *kênh* (*channel*) hoặc *ánh xạ đặc trưng* (*feature map*).
+Theo trực giác, bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh tập trung vào việc nhận diện cạnh trong khi các kênh khác đảm nhiệm việc nhận diện kết cấu, v.v.
+Để hỗ trợ đa kênh ở cả đầu vào và kích hoạt ẩn, ta có thể thêm tọa độ thứ tư vào $V: V[a, b, c, d]$. 
+Từ mọi điều trên, ta có:
 
 $$h[i, j, k] = \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} \sum_c V[a, b, c, k] \cdot x[i+a, j+b, c].$$
 
@@ -375,10 +379,9 @@ All of this will be addressed in the remainder of the chapter.
 
 Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
 Vẫn còn nhiều phép toán mà ta cần phải giải quyết.
-Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
-Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
+Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ đầu ra cho: có Waldo trong ảnh không).
+Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu có nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
 Tất cả những điều này sẽ được giải quyết trong phần còn lại của chương.
-
 
 <!--
 ## Summary
@@ -391,6 +394,7 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 * Locality means that only a small neighborhood of pixels will be used for computation.
 * Channels on input and output allows for meaningful feature analysis.
 -->
+
 
 * Tính bất biến tịnh tiến của hình ảnh ngụ ý rằng tất cả các mảng nhỏ trong một tấm ảnh đều được xử lý theo cùng một cách.
 * Tính cục bộ có nghĩa là chỉ một vùng lân cận nhỏ các điểm ảnh sẽ được sử dụng cho việc tính toán.
@@ -411,10 +415,10 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 6. Prove that $f \circledast g = g \circledast f$.
 -->
 
-1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một tập kênh.
+1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập xây dựng một MLP độc lập cho mỗi một tập kênh.
 2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
-3. Điều gì xảy ra ở viền của một hình ảnh?
-4. Tự suy ra một tầng tích chập tương tự cho âm thanh.
+3. Điều gì xảy ra ở viền của một tấm ảnh?
+4. Hãy suy ra một tầng tích chập tương tự cho âm thanh.
 5. Vấn đề gì sẽ xảy ra khi áp dụng các suy luận trên cho văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
 6. Chứng minh rằng $f \circledast g = g \circledast f$.
 
