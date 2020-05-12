@@ -168,7 +168,7 @@ Recall that one key differences between BN and other layers is that because BN o
 
 Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập thì hơi khác nhau một chút.
 Chúng ta sẽ thảo luận cho cả hai trường hợp trên ở phía dưới.
-Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì BN hoạt động trên một minibatch đầy đủ tại một thời điểm, 
+Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì mỗi lần BN hoạt động trên cả một minibatch, 
 chúng ta không thể bỏ qua kích thước của batch như chúng ta đã làm trước đây khi giới thiệu về các tầng khác.
 
 <!--
