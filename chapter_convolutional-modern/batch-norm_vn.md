@@ -185,7 +185,7 @@ we can express the computation of a BN-enabled, fully-connected layer $\mathbf{h
 -->
 
 Khi áp dụng BN vào tầng kết nối đầy đủ, chúng ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến tính. 
-Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính (với trọng số là $\theta$) là $f_{\theta}(\cdot)$, 
+Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính là $f_{\theta}(\cdot)$ (với trọng số là $\theta$), 
 hàm kích hoạt là $\phi(\cdot)$, và phép tính BN với tham số $\mathbf{\beta}$ và $\mathbf{\gamma}$ là $\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}$, 
 chúng ta sẽ biểu thị việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
 
