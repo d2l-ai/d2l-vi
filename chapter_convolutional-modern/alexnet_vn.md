@@ -123,7 +123,7 @@ Họ tin rằng các đặc trưng tự chúng có thể được học.
 Hơn nữa, họ cũng tin rằng với một độ phức tạp hợp lý, các đặc trưng có thể được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số huấn luyện có thể học được. 
 Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
 Thật vậy, :cite:`Krizhevsky.Sutskever.Hinton.2012` đề xuất một biến thể mới của một mạng tích chập đã đạt được hiệu năng xuất sắc trong 
-cuộc thi Thách thức Imagenet. 
+cuộc thi ImageNet. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
