@@ -73,7 +73,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | (strictly) convex function          | hàm lồi (chặt)         | [https://git.io/JvohV](https://git.io/JvohV) |
 | convex optimization                 | tối ưu lồi             |                                              |
 | convex set                          | tập lồi                | [https://git.io/JvohV](https://git.io/JvohV) |
-| convolution neural networks         | mạng nơ-ron tích chập  |                                              |
+| convolutional neural network        | mạng nơ-ron tích chập  |                                              |
 | correlation coefficient             | hệ số tương quan       |                                              |
 | cost function                       | hàm chi phí            | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                           | hiệp biến              | [https://git.io/JvohK](https://git.io/JvohK) |
@@ -94,7 +94,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data manipulation         | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning             | học sâu                         |                                              |
 | deferred initialization   | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
-| densely connected network | mạng kết nối dày đặc            | [https://git.io/JfGi1](https://git.io/JfGi1) |
+| densely connected network | mạng tích chập kết nối dày đặc            | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | dense layer               | tầng kết nối dày đặc            |                                              |
 | dev set                   | tập phát triển                  |                                              |
 | dev set performance       | chất lượng trên tập phát triển  |                                              |
