@@ -102,7 +102,7 @@ and similar feature extractors ruled the roost.
 
 Cách khác để kết nối trạng thái của các dữ kiện liên quan với nhau, đó cũng là phần quan trọng nhất của pipeline là thực hiện biểu diễn.
 Và cho tới năm 2012 việc biểu diễn vẫn được tính toán một cách cơ học.
-Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng mới, thực hiện cải thiện kết quả, và viết ra phương pháp thực hiện là một phần quan trọng của bài báo nghiên cứu. 
+Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng mới, thực hiện cải thiện kết quả, và viết ra phương pháp thực hiện từng là một phần quan trọng của các bài báo nghiên cứu. 
 [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform),
 [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features),
 [HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients),
