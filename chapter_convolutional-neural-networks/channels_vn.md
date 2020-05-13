@@ -60,7 +60,7 @@ This is the result of a two-dimensional cross-correlation between multi-channel 
 -->
 
 Tuy nhiên, khi $c_i>1$, chúng ta cần một bộ lọc chứa mảng có kích thước $k_h\times k_w$ *cho mỗi kênh của đầu vào*. 
-Nối (_concatenate_) $c_i$ mảng này lại ta được một bộ lọc tích chập kích thước $c_i\times k_h\times k_w$. 
+Gộp $c_i$ mảng này lại ta được một bộ lọc tích chập kích thước $c_i\times k_h\times k_w$. 
 Vì đầu vào và bộ lọc đều có $c_i$ kênh, ta có thể thực hiện phép tương quan chéo trên từng cặp mảng hai chiều của đầu vào và bộ lọc cho mỗi kênh, 
 rồi cộng kết quả của $c_i$ kênh lại để tạo ra một mảng hai chiều. 
 Đây là kết quả của phép tương quan chéo hai chiều giữa dữ liệu đầu vào đa kênh và kênh bộ lọc tích chập *đa đầu vào*. 
@@ -88,8 +88,8 @@ To make sure we really understand what is going on here, we can implement cross-
 Notice that all we are doing is performing one cross-correlation operation per channel and then adding up the results using the `add_n` function.
 -->
 
-Để thực sự được những gì đang xảy ra ở đây, chúng ta có thể tự lập trình phép toán tương quan chéo với nhiều kênh đầu vào.
-Chú ý rằng tất cả những gì chúng ta đang làm là thực hiện một phép tương quan chéo với mỗi kênh rồi cộng các kết quả lại bằng hàm `add_n`. 
+Để thực sự hiểu được những gì đang xảy ra ở đây, chúng ta có thể tự lập trình phép toán tương quan chéo với nhiều kênh đầu vào.
+Chú ý rằng tất cả những gì chúng ta đang làm là thực hiện một phép tương quan chéo trên mỗi kênh rồi cộng các kết quả lại bằng hàm `add_n`. 
 
 ```{.python .input  n=1}
 import d2l
