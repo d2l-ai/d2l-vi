@@ -21,6 +21,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | agent                                 | tác nhân                  |                                              |
 | algorithm's performance               | chất lượng thuật toán     |                                              |
 | avoidable bias                        | độ chệch tránh được       |                                              |
+| argument (programming)                | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
 | attention mechanisms                  | cơ chế tập trung          |                                              |
@@ -136,6 +137,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false negative      | âm tính giả      |                                              |
 | false positive      | dương tính giả   |                                              |
 | feature             | đặc trưng        |                                              |
+| feature extraction  | trích xuất đặc trưng | |
 | feature map (CNN)   | ánh xạ đặc trưng |                                              |
 | filter (CNN)        | bộ lọc           | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                 | khớp             | [https://git.io/JvKet](https://git.io/JvKet) |
