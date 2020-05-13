@@ -107,7 +107,7 @@ Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng m
 [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features),
 [HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients),
 [Bags of visual words](https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision)
-và các bộ rút đặc trưng tương tự quyết định căn bản. 
+và các bộ trích chọn đặc trưng tương tự đã chiếm ưu thế vượt trội. 
 
 <!--
 Another group of researchers, including Yann LeCun, Geoff Hinton, Yoshua Bengio,
