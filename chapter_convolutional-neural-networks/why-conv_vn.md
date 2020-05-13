@@ -5,7 +5,7 @@
 # From Dense Layers to Convolutions
 -->
 
-# Từ Tầng Dày Đặc tới Phép Tích Chập
+# Từ Tầng Kết nối Dày đặc đến phép Tích chập
 
 <!--
 The models that we have discussed so far are fine options if you are dealing with *tabular* data.
@@ -14,8 +14,8 @@ With tabular data, we might anticipate that pattern we seek could require modeli
 but do not assume anything a priori about which features are related to each other or in what way.
 -->
 
-Cho đến giờ các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu mô hình hóa các tương tác giữa các đặc trưng, nhưng ta không giả định từ kinh nghiệm bất cứ điều gì về việc các đặc trưng có liên quan tới nhau như thế nào.
+Đến nay, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu, còn các cột tương ứng với các đặc trưng.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
 
 
 <!--
@@ -24,8 +24,8 @@ In these cases, a multilayer perceptron is often the best that we can do.
 However, once we start dealing with high-dimensional perceptual data, these *structure-less* networks can grow unwieldy.
 -->
 
-Đôi khi ta thực sự không có bất kỳ kiến thức nào để định hướng việc thiết kế các kiến trúc được khéo léo hơn.
-Trong những trường hợp này, sử dụng một perceptron đa tầng thường là giải pháp tốt nhất ta có thể làm.
+Đôi khi ta thực sự không có bất kỳ kiến thức nào để định hướng việc thiết kế các kiến trúc được sắp xếp khéo léo hơn.
+Trong những trường hợp này, một perceptron đa tầng thường là giải pháp tốt nhất.
 Tuy nhiên, một khi ta bắt đầu xử lý dữ liệu tri giác đa chiều, các mạng *không có cấu trúc* này có thể sẽ trở nên quá cồng kềnh.
 
 <!--
@@ -38,10 +38,10 @@ learning the parameters of this network may turn out to be impossible.
 -->
 
 Hãy quay trở lại với ví dụ phân biệt chó và mèo quen thuộc.
-Giả sử ta thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn có độ phân giải 1 triệu điểm ảnh.
+Giả sử ta đã thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn chất lượng cao với độ phân giải 1 triệu điểm ảnh.
 Điều này có nghĩa là đầu vào của mạng sẽ có *1 triệu chiều*.
-Ngay cả việc giảm mạnh xuống *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) để hỗ trợ $10^9$ tham số.
-Trừ khi ta có một bộ dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, một tài năng để tối ưu hóa phân tán và sức kiên nhẫn phi thường, thì việc học các tham số của mạng này có thể sẽ là điều bất khả thi.
+Ngay cả việc giảm mạnh xuống còn *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) có $10^9$ tham số.
+Trừ khi ta có một tập dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, chuyên môn cao trong việc tối ưu hóa phân tán và sức kiên nhẫn phi thường, việc học các tham số của mạng này có thể là điều bất khả thi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -56,11 +56,11 @@ And yet both humans and computers are able to distinguish cats from dogs quite w
 That is because images exhibit rich structure that is typically exploited by humans and machine learning models alike.
 -->
 
-Bạn đọc kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
-Tuy nhiên, ngay cả khi chỉ sử dụng 100,000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
-Học một trình phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một bộ dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
+Độc giả kỹ tính có thể phản đối lập luận này trên cơ sở độ phân giải 1 triệu điểm ảnh có thể là không cần thiết.
+Tuy nhiên, ngay cả khi chỉ sử dụng 100.000 điểm ảnh, ta đã đánh giá quá thấp số lượng các nút ẩn cần thiết để tìm các biểu diễn ẩn tốt của các ảnh.
+Việc học một bộ phân loại nhị phân với rất nhiều tham số có thể sẽ cần tới một tập dữ liệu khổng lồ, có lẽ tương đương với số lượng chó và mèo trên hành tinh này.
 Tuy nhiên, việc cả con người và máy tính đều có thể phân biệt mèo với chó khá tốt dường như mâu thuẫn với các kết luận trên.
-Đó là bởi vì các ảnh thể hiện cấu trúc phong phú thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
+Đó là bởi vì các ảnh thể hiện cấu trúc phong phú, thường được khai thác bởi con người và các mô hình học máy theo các cách giống nhau.
 
 <!--
 ## Invariances
@@ -81,15 +81,15 @@ The reader's goal is to locate him.
 Despite his characteristic outfit, this can be surprisingly difficult, due to the large number of confounders.
 -->
 
-Hãy tưởng tượng rằng ta muốn nhận dạng một đối tượng trong ảnh.
-Có vẻ là hợp lý khi cho rằng bất cứ phương pháp nào ta sử dụng không nên quá quan tâm đến vị trí *chính xác* của đối tượng trong ảnh.
-Lý tưởng nhất là ta có thể học một hệ thống bằng cách nào đó khai thác được kiến thức này.
+Hãy tưởng tượng rằng ta muốn nhận diện một vật thể trong ảnh.
+Có vẻ sẽ hợp lý nếu cho rằng bất cứ phương pháp nào ta sử dụng đều không nên quá quan tâm đến vị trí *chính xác* của vật thể trong ảnh.
+Lý tưởng nhất, ta có thể học một hệ thống có khả năng tận dụng được kiến thức này bằng một cách nào đó.
 Lợn thường không bay và máy bay thường không bơi.
-Tuy nhiên, ta vẫn có thể nhận ra một con lợn bay là một con lợn nếu nó xuất hiện.
-Ý tưởng này được thể hiện một cách cực kỳ rõ nét trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
-Trò chơi này bao gồm một số cảnh hỗn độn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
-Nhiệm vụ của người chơi là xác định vị trí anh ta. <!-- Vì là trò chơi nên mình nghĩ để là "người chơi" phù hợp hơn "người đọc" -->
-Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng lớn các yếu tố gây nhiễu nên việc nhận dạng anh ta vẫn có thể khó khăn một cách đáng ngạc nhiên.
+Tuy nhiên, ta vẫn có thể nhận ra một con lợn đang bay nếu nó xuất hiện.
+Ý tưởng này được thể hiện rõ rệt trong trò chơi trẻ em 'Đi tìm Waldo', một ví dụ được miêu tả trong :numref:`img_waldo`.
+Trò chơi này bao gồm một số cảnh hỗn loạn với nhiều hoạt động đan xen và Waldo xuất hiện ở đâu đó trong mỗi cảnh (thường ẩn nấp ở một số vị trí khó ngờ tới).
+Nhiệm vụ của người chơi là xác định vị trí của anh ta.
+Mặc dù Waldo có trang phục khá nổi bật, việc này có thể vẫn rất khó khăn do có quá nhiều yếu tố gây nhiễu.
 
 <!--
 ![Image via Walker Books](../img/where-wally-walker-books.jpg)
@@ -104,21 +104,21 @@ Mặc dù Waldo có trang phục rất đặc trưng nhưng do số lượng l�
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với các ảnh, những trực giác mà ta đã thảo luận có thể được làm cụ thể hơn để đạt được một vài nguyên tắc chủ chốt cho việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
+Quay lại với ảnh, những trực giác mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
 2. Our visions systems should, in some sense, focus on local regions, without regard for what else is happening in the image at greater distances (locality).
 -->
 
-1. Ở một khía cạnh nào đó, các hệ thống thị giác nên phản ứng tương tự với cùng một đối tượng bất kể đối tượng đó xuất hiện ở đâu trong ảnh (tính bất biến tịnh tiến).
-2. Ở khía cạnh khác, các hệ thống thị giác nên tập trung vào các khu vực cục bộ, mà không quan tâm đến bất kỳ điều gì khác ở khoảng cách xa hơn trong ảnh (tính cục bộ).
+1. Ở một khía cạnh nào đó, các hệ thống thị giác nên phản ứng tương tự với cùng một vật thể bất kể vật thể đó xuất hiện ở đâu trong ảnh (tính bất biến tịnh tiến).
+2. Ở khía cạnh khác, các hệ thống thị giác nên tập trung vào các khu vực cục bộ và không quan tâm đến bất kỳ thứ gì khác ở xa hơn trong ảnh (tính cục bộ).
 
 <!--
 Let us see how this translates into mathematics.
 -->
 
-Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán học.
+Hãy cùng xem cách biểu diễn những điều trên bằng ngôn ngữ toán học.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -132,7 +132,7 @@ Hãy xem cách biểu diễn các vấn đề này bằng ngôn ngữ toán họ
 ## Constraining the MLP
 -->
 
-## Ràng buộc MLP
+## Ràng buộc Perceptron đa tầng
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
@@ -144,19 +144,19 @@ we would switch from using weight matrices (as we did previously in MLPs)
 to representing our parameters as four-dimensional weight tensors.
 -->
 
-Trong giải trình này, ta coi hình ảnh và các lớp ẩn giống nhau tựa như các mảng hai chiều.
-Để bắt đầu, hãy nghĩ xem một MLP sẽ trông như thế nào với đầu vào là ảnh có kích thước $h \times w$ 
-(được biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều trong lập trình),
-và tương tự, các biểu diễn ẩn cũng được sắp xếp thành các ma trận / mảng 2 chiều $h \times w$.
-Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của một ảnh và một biểu diễn ẩn.
-Do vậy, để mỗi nút trong $hw$ nút ẩn nhận đầu vào từ $hw$ đầu vào,
-ta sẽ chuyển từ việc sử dụng ma trận trọng số để biểu diễn các tham số (như đã làm trước đây trong MLP) sang việc sử dụng tensor trọng số bốn chiều.
+Trong phần này, ta coi hình ảnh và các tầng ẩn là các mảng hai chiều.
+Để bắt đầu, hãy tưởng tượng một perceptron đa tầng sẽ như thế nào với đầu vào là ảnh kích thước $h \times w$ 
+(biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều khi lập trình),
+và với các biểu diễn ẩn cũng là các ma trận / mảng 2 chiều kích thước $h \times w$.
+Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của ảnh và biểu diễn ẩn.
+Để mỗi nút ẩn trong tổng số $hw$ nút nhận dữ liệu từ tất cả $hw$ đầu vào,
+ta sẽ chuyển từ việc biểu diễn các tham số bằng ma trận trọng số (như đã thực hiện với perceptron đa tầng trước đây) sang sử dụng các tensor trọng số bốn chiều.
 
 <!--
 We could formally express this dense layer as follows:
 -->
 
-Ta có thể biểu diễn lớp dày đặc này một cách hình thức như sau:
+Ta có thể biểu diễn tầng kết nối đầy đủ bằng công thức toán sau:
 
 <!--
 $$h[i, j] = u[i, j] + \sum_{k, l} W[i, j, k, l] \cdot x[k, l] =  u[i, j] +
@@ -174,11 +174,11 @@ The indices $a, b$ run over both positive and negative offsets, covering the ent
 For any given location $(i, j)$ in the hidden layer $h[i, j]$, we compute its value by summing over pixels in $x$, centered around $(i, j)$ and weighted by $V[i, j, a, b]$.
 -->
 
-Việc chuyển từ $W$ sang $V$ lúc này hoàn toàn là vì mục đích thẩm mĩ bởi có một sự tương quan một-một giữa các hệ số trong cả hai tensor.
-Ta chỉ đơn thuần đánh lại các chỉ số dưới $(k, l)$ sao cho $k = i+a$ và $l = j+b$.
-Nói cách khác, ta đặt $V[i, j, a, b] = W[i, j, i+a, j+b]$.
-Các chỉ số $a, b$ chạy trên cả độ lệch dương và âm, bao trùm toàn bộ hình ảnh.
-Đối với một vị trí $(i, j)$ bất kỳ trong tầng ẩn $h[i, j]$, ta tính toán giá trị của nó bằng cách tính tổng các điểm ảnh của $x$, xoay quanh $(i, j)$ và có trọng số là $V[i, j, a, b]$.
+Việc chuyển từ $W$ sang $V$ hoàn toàn chỉ có mục đích thẩm mĩ (tại thời điểm này) bởi có một sự tương ứng một-một giữa các hệ số trong cả hai tensor.
+Ta chỉ đơn thuần đặt lại các chỉ số dưới $(k, l)$ với $k = i+a$ và $l = j+b$.
+Nói cách khác, $V[i, j, a, b] = W[i, j, i+a, j+b]$.
+Các chỉ số $a, b$ chạy trên toàn bộ hình ảnh, có thể mang cả giá trị dương và âm.
+Với bất kỳ vị trí $(i, j)$ nào ở tầng ẩn, giá trị biểu diễn ẩn $h[i, j]$ được tính bằng tổng trọng số của các điểm ảnh nằm xung quanh vị trí $(i, j)$ của $x$, với trọng số là $V[i, j, a, b]$.
 
 <!--
 Now let us invoke the first principle we established above: *translation invariance*.
@@ -187,10 +187,10 @@ This is only possible if $V$ and $u$ do not actually depend on $(i, j)$, i.e., w
 As a result we can simplify the definition for $h$.
 -->
 
-Bây giờ ta sẽ sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
-Ngụ ý rằng việc dịch chuyển các đầu vào $x$ sẽ chỉ đơn thuần dịch chuyển các kích hoạt $h$.
-Điều này chỉ khả thi nếu $V$ và $u$ không thực sự phụ thuộc vào $(i, j)$, tức là ta có $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
-Kết quả là ta có thể đơn giản hóa định nghĩa của $h$.
+Bây giờ hãy sử dụng nguyên tắc đầu tiên mà ta đã thiết lập ở trên: *tính bất biến tịnh tiến*.
+Nguyên tắc này ngụ ý rằng một sự dịch chuyển ở đầu vào $x$ cũng sẽ tạo ra sự dịch chuyển ở biểu diễn ẩn $h$.
+Điều này chỉ có thể xảy ra nếu $V$ và $u$ không phụ thuộc vào $(i, j)$, tức $V[i, j, a, b] = V[a, b]$ và $u$ là một hằng số.
+Vì vậy, ta có thể đơn giản hóa định nghĩa của $h$.
 
 $$h[i, j] = u + \sum_{a, b} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -205,10 +205,10 @@ Note that $V[a, b]$ needs many fewer coefficients than $V[i, j, a, b]$. For a 1 
 This is 1 million fewer parameters since it no longer depends on the location within the image. We have made significant progress!
 -->
 
-Đây là tích chập!
-Thực chất, ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ với các hệ số $V[a, b]$ để thu được giá trị $h[i, j]$.
-Lưu ý rằng $V[a, b]$ cần ít hệ số hơn hẳn so với $V[i, j, a, b]$. Đối với hình ảnh 1 megapixel, nó có tối đa 1 triệu hệ số.
-Con số này đã giảm đi 1 triệu vì nó không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
+Đây là một phép tích chập!
+Ta đang đánh trọng số cho các điểm ảnh $(i+a, j+b)$ trong vùng lân cận của $(i, j)$ bằng các hệ số $V[a, b]$ để thu được giá trị $h[i, j]$.
+Lưu ý rằng $V[a, b]$ cần ít hệ số hơn hẳn so với $V[i, j, a, b]$. Với đầu vào là hình ảnh 1 megapixel (với tối đa 1 triệu hệ số cho mỗi vị trí),
+lượng tham số của $V[a, b]$ giảm đi 1 triệu vì không còn phụ thuộc vào vị trí trong ảnh. Ta đã có được tiến triển đáng kể!
 
 <!--
 Now let us invoke the second principle---*locality*.
@@ -217,10 +217,10 @@ This means that outside some range $|a|, |b| > \Delta$, we should set $V[a, b] =
 Equivalently, we can rewrite $h[i, j]$ as
 -->
 
-Bây giờ hãy viện dẫn nguyên tắc thứ hai---*tính cục bộ*.
-Như đã tạo động lực ở trên, ta tin rằng ta không cần phải tìm kiếm quá xa khỏi $(i, j)$ để thu thập thông tin liên quan cho việc đánh giá những gì đang diễn ra tại $h[i, j]$.
-Điều này có nghĩa là ngoài phạm vi $|a|, |b| > \Delta$, ta nên đặt $V[a, b] = 0$.
-Tương tự, ta có thể viết lại $h[i, j]$ như sau
+Bây giờ hãy sử dụng nguyên tắc thứ hai---*tính cục bộ*.
+Như trình bày ở trên, giả sử rằng ta không cần thông tin tại các vị trí quá xa $(i, j)$ để đánh giá những gì đang diễn ra tại $h[i, j]$.
+Điều này có nghĩa là ở các miền giá trị $|a|, |b| > \Delta$, ta có thể đặt $V[a, b] = 0$.
+Tương tự, ta có thể đơn giản hoá $h[i, j]$ như sau
 
 $$h[i, j] = u + \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} V[a, b] \cdot x[i+a, j+b].$$
 
@@ -234,13 +234,13 @@ When that bias agrees with reality, we get sample-efficient models that generali
 But of course, if those biases do not agree with reality, e.g., if images turned out not to be translation invariant, our models may not generalize well.
 -->
 
-Nói một cách ngắn gọn, đây chính là tầng tích chập.
-Khi miền cục bộ (còn được gọi là *trường tiếp nhận*) nhỏ, sự khác biệt mà nó mang lại có thể rất lớn so với mạng kết nối đầy đủ.
-Mặc dù trước đây ta có thể cần tới hàng tỷ tham số để biểu diễn một tầng duy nhất trong mạng xử lý ảnh, hiện giờ ta thường chỉ cần vài trăm.
-Cái giá mà ta phải trả cho sự thay đổi lớn này là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể suy xét các thông tin cục bộ.
-Toàn bộ quá trình học sẽ dựa trên việc áp đặt các thiên kiến quy nạp.
+Một cách ngắn gọn, đây chính là biểu diễn toán học của tầng tích chập.
+Khi vùng cục bộ xung quanh vị trí đang xét (còn được gọi là *vùng tiếp nhận*) nhỏ, sự khác biệt so với mạng kết nối đầy đủ có thể rất lớn.
+Trước đây ta có thể phải cần hàng tỷ tham số để biểu diễn một tầng duy nhất trong mạng xử lý ảnh, hiện giờ chỉ cần vài trăm.
+Cái giá phải trả là các đặc trưng sẽ trở nên bất biến tịnh tiến và các tầng chỉ có thể nhận thông tin cục bộ.
+Toàn bộ quá trình học dựa trên việc áp đặt các thiên kiến quy nạp (*inductive bias*).
 Khi các thiên kiến đó phù hợp với thực tế, ta sẽ có được các mô hình hoạt động hiệu quả với ít mẫu và khái quát tốt cho dữ liệu chưa gặp.
-Nhưng tất nhiên, nếu những thiên kiến đó không phù hợp với thực tế, ví dụ như hóa ra các ảnh không có tính bất biến tịnh tiến, các mô hình của ta có thể sẽ không khái quát tốt.
+Nhưng tất nhiên, nếu những thiên kiến đó không phù hợp với thực tế, ví dụ như nếu các ảnh không có tính bất biến tịnh tiến, các mô hình có thể sẽ không khái quát tốt.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -258,7 +258,7 @@ In mathematics, the convolution between two functions,
 say $f, g: \mathbb{R}^d \to R$ is defined as
 -->
 
-Hãy cùng nhanh chóng xem lại lý do tại sao toán tử trên được gọi là *tích chập*.
+Hãy cùng xem qua lý do tại sao toán tử trên được gọi là *tích chập*.
 Trong toán học, phép tích chập giữa hai hàm số $f, g: \mathbb{R}^d \to R$ được định nghĩa như sau
 
 $$[f \circledast g](x) = \int_{\mathbb{R}^d} f(z) g(x-z) dz.$$
@@ -269,9 +269,9 @@ Whenever we have discrete objects, the integral turns into a sum.
 For instance, for vectors defined on $\ell_2$, i.e., the set of square summable infinite dimensional vectors with index running over $\mathbb{Z}$ we obtain the following definition.
 -->
 
-Đó là, ta đo lường sự chồng chéo giữa $f$ và $g$ khi cả hai hàm được dịch chuyển một khoảng $x$ và "bị lật lại".
-Bất cứ khi nào ta có các đối tượng rời rạc, phép tích phân trở thành phép lấy tổng.
-Chẳng hạn như, đối với các vector được xác định trên $\ell_2$, tức là, tập hợp có thể lấy tổng được của bình phương các vector vô hạn chiều có chỉ số chạy trên $\mathbb{Z}$, ta có được định nghĩa sau:
+Trong phép toán này, ta đo lường sự chồng chéo giữa $f$ và $g$ khi $g$ được dịch chuyển một khoảng $x$ và "bị lật lại".
+Đối với các đối tượng rời rạc, phép tích phân trở thành phép lấy tổng.
+Chẳng hạn, đối với các vector được định nghĩa trên $\ell_2$, là tập các vector vô hạn chiều có tổng bình phương hội tụ, với chỉ số chạy trên $\mathbb{Z}$, ta có phép tích chập sau:
 
 $$[f \circledast g](i) = \sum_a f(a) g(i-a).$$
 
@@ -284,12 +284,12 @@ Also note that the original definition is actually a *cross correlation*.
 We will come back to this in the following section.
 -->
 
-Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$ theo tuần tự.
-Điều này trông tương tự như định nghĩa ở trên, với một sự khác biệt lớn.
-Thay vì sử dụng $(i+a, j+b)$, ta lại sử dụng hiệu.
-Tuy nhiên, lưu ý rằng sự cách biệt này chủ yếu là ảo vì ta luôn có thể chuyển về ký hiệu của phép tích chập bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có được $h = x \circledast \tilde{V}$.
-Cũng lưu ý rằng định nghĩa ban đầu thực ra là một phép *tương quan chéo*.
-Ta sẽ quay trở lại vấn đề này trong phần tiếp theo.
+Đối với mảng hai chiều, ta có một tổng tương ứng với các chỉ số $(i, j)$ cho $f$ và $(i-a, j-b)$ cho $g$.
+Tổng này nhìn gần giống với định nghĩa tầng tích chập ở trên, nhưng với một khác biệt lớn.
+Thay vì $(i+a, j+b)$, ta lại sử dụng hiệu.
+Tuy nhiên, lưu ý rằng sự khác biệt này không phải vấn đề lớn vì ta luôn có thể chuyển về ký hiệu của phép tích chập bằng cách sử dụng $\tilde{V}[a, b] = V[-a, -b]$ để có $h = x \circledast \tilde{V}$.
+Cũng lưu ý rằng định nghĩa ban đầu thực ra là của phép toán *tương quan chéo*.
+Ta sẽ quay trở lại phép toán này trong phần tiếp theo.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -303,7 +303,7 @@ Ta sẽ quay trở lại vấn đề này trong phần tiếp theo.
 ## Waldo Revisited
 -->
 
-## Xem lại Waldo
+## Xem lại ví dụ về Waldo
 
 <!--
 Let us see what this looks like if we want to build an improved Waldo detector.
@@ -311,7 +311,7 @@ The convolutional layer picks windows of a given size and weighs intensities acc
 We expect that wherever the "waldoness" is highest, we will also find a peak in the hidden layer activations.
 -->
 
-Ta hãy xem điều này trông ra sao nếu ta muốn xây dựng một máy dò Waldo cải tiến.
+Hãy cùng xem việc xây dựng một bộ phát hiện Waldo cải tiến sẽ trông như thế nào.
 Tầng tích chập chọn các cửa sổ có kích thước cho sẵn và đánh trọng số cường độ dựa theo mặt nạ $V$, như được minh họa trong :numref:`fig_waldo_mask`.
 Ta hy vọng rằng ở đâu có "tính Waldo" cao nhất, các tầng kích hoạt ẩn cũng sẽ có cao điểm ở đó.
 
@@ -330,14 +330,15 @@ Only two of these axes concern spatial relationships, while the $3^{\mathrm{rd}}
 -->
 
 Chỉ có một vấn đề với cách tiếp cận này là cho đến nay ta đã vô tư bỏ qua việc hình ảnh bao gồm 3 kênh màu: đỏ, xanh lá cây và xanh dương.
-Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều nhưng thay vào đó là một tensor bậc ba, ví dụ, với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
-Chỉ có hai trong số các trục này liên quan về mặt không gian, trong khi trục thứ ba có thể được coi là để gán biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
+Trong thực tế, hình ảnh không hẳn là các đối tượng hai chiều mà là một tensor bậc ba, ví dụ tensor với kích thước $1024 \times 1024 \times 3$ điểm ảnh.
+Chỉ có hai trong số các trục này chứa mối quan hệ về mặt không gian, trong khi trục thứ ba có thể được coi như là một biểu diễn đa chiều *cho từng vị trí điểm ảnh*.
 
 <!--
 We thus index $\mathbf{x}$ as $x[i, j, k]$.
 The convolutional mask has to adapt accordingly.
 Instead of $V[a, b]$ we now have $V[a, b, c]$.
 -->
+
 
 Do đó, ta phải truy cập $\mathbf{x}$ dưới dạng $x[i, j, k]$.
 Mặt nạ tích chập phải thích ứng cho phù hợp.
@@ -348,16 +349,19 @@ Moreover, just as our input consists of a $3^{\mathrm{rd}}$ order tensor it turn
 In other words, rather than just having a 1D representation corresponding to each spatial location, we want to have a multidimensional hidden representations corresponding to each spatial location.
 We could think of the hidden representation as comprising a number of 2D grids stacked on top of each other.
 These are sometimes called *channels* or *feature maps*.
-Intuitively you might imagine that at lower layers, some channels specialize to recognizing edges,
-We can take care of this by adding a fourth coordinate to $V$ via $V[a, b, c, d]$. Putting all together we have:
+Intuitively, you might imagine that at lower layers, some channels could become specialized to recognize edges, others to recognize textures, etc. 
+To support multiple channels in both inputs and hidden activations, we can add a fourth coordinate to $V: V[a, b, c, d]$. 
+Putting all together we have:
 -->
+<!-- đoạn này trước bị thiếu nên mình update luôn -->
 
-Hơn nữa, cũng giống như đầu vào là các tensor bậc ba, xây dựng các biểu diễn ẩn như là các tensor bậc ba tương ứng hoá ra lại là một ý tưởng hay.
+Hơn nữa, tương tự như việc đầu vào là các tensor bậc ba, việc xây dựng các biểu diễn ẩn là các tensor bậc ba tương ứng hoá ra cũng là một ý tưởng hay.
 Nói cách khác, thay vì chỉ có một biểu diễn 1D tương ứng với từng vị trí không gian, ta muốn có một biểu diễn ẩn đa chiều tương ứng với từng vị trí không gian.
-Ta có thể coi các biểu diễn ẩn như được cấu thành từ các lưới 2D xếp chồng lên nhau.
-Đôi khi chúng được gọi là các *kênh* (*channel*) hoặc các *ánh xạ đặc trưng* (*feature maps*).
-Theo trực giác bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh chuyên nhận biết các cạnh.
-Ta có thể xử lý vấn đề này bằng cách thêm tọa độ thứ tư vào $V$ thông qua $V[a, b, c, d]$. Đặt tất cả lại với nhau ta có:
+Ta có thể coi các biểu diễn ẩn như được cấu thành từ các lưới hai chiều xếp chồng lên nhau.
+Đôi khi chúng được gọi là *kênh* (*channel*) hoặc *ánh xạ đặc trưng* (*feature map*).
+Theo trực giác, bạn có thể tưởng tượng rằng ở các tầng thấp hơn, một số kênh tập trung vào việc nhận diện cạnh trong khi các kênh khác đảm nhiệm việc nhận diện kết cấu, v.v.
+Để hỗ trợ đa kênh ở cả đầu vào và kích hoạt ẩn, ta có thể thêm tọa độ thứ tư vào $V: V[a, b, c, d]$. 
+Từ mọi điều trên, ta có:
 
 $$h[i, j, k] = \sum_{a = -\Delta}^{\Delta} \sum_{b = -\Delta}^{\Delta} \sum_c V[a, b, c, k] \cdot x[i+a, j+b, c].$$
 
@@ -375,10 +379,9 @@ All of this will be addressed in the remainder of the chapter.
 
 Đây là định nghĩa của một tầng mạng nơ-ron tích chập.
 Vẫn còn nhiều phép toán mà ta cần phải giải quyết.
-Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ: có Waldo trong ảnh không).
-Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
+Chẳng hạn, ta cần tìm ra cách kết hợp tất cả các giá trị kích hoạt thành một đầu ra duy nhất (ví dụ đầu ra cho: có Waldo trong ảnh không).
+Ta cũng cần quyết định cách tính toán mọi thứ một cách hiệu quả, cách kết hợp các tầng với nhau và liệu có nên sử dụng thật nhiều tầng hẹp hay chỉ một vài tầng rộng.
 Tất cả những điều này sẽ được giải quyết trong phần còn lại của chương.
-
 
 <!--
 ## Summary
@@ -391,6 +394,7 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 * Locality means that only a small neighborhood of pixels will be used for computation.
 * Channels on input and output allows for meaningful feature analysis.
 -->
+
 
 * Tính bất biến tịnh tiến của hình ảnh ngụ ý rằng tất cả các mảng nhỏ trong một tấm ảnh đều được xử lý theo cùng một cách.
 * Tính cục bộ có nghĩa là chỉ một vùng lân cận nhỏ các điểm ảnh sẽ được sử dụng cho việc tính toán.
@@ -411,10 +415,10 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 6. Prove that $f \circledast g = g \circledast f$.
 -->
 
-1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập cài đặt một MLP độc lập cho mỗi một tập kênh.
+1. Giả sử rằng kích thước của mặt nạ tích chập có $\Delta = 0$. Chứng minh rằng trong trường hợp này, mặt nạ tích chập xây dựng một MLP độc lập cho mỗi một tập kênh.
 2. Tại sao tính bất biến tịnh tiến có thể không phải là một ý tưởng tốt? Việc lợn biết bay là có hợp lý không?
-3. Điều gì xảy ra ở viền của một hình ảnh?
-4. Tự suy ra một tầng tích chập tương tự cho âm thanh.
+3. Điều gì xảy ra ở viền của một tấm ảnh?
+4. Hãy suy ra một tầng tích chập tương tự cho âm thanh.
 5. Vấn đề gì sẽ xảy ra khi áp dụng các suy luận trên cho văn bản? Gợi ý: cấu trúc của ngôn ngữ là gì?
 6. Chứng minh rằng $f \circledast g = g \circledast f$.
 
@@ -471,3 +475,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 7 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường

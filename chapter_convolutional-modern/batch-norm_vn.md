@@ -5,7 +5,7 @@
 # Batch Normalization
 -->
 
-# *dịch tiêu đề phía trên*
+# Chuẩn hoá theo batch
 :label:`sec_batch_norm`
 
 <!--
@@ -15,22 +15,23 @@ In this section, we describe batch normalization (BN) :cite:`Ioffe.Szegedy.2015`
 Together with residual blocks—covered in :numref:`sec_resnet`—BN has made it possible for practitioners to routinely train networks with over 100 layers.
 -->
 
-*dịch đoạn phía trên*
-
-
+Việc huấn luyện mạng nơ-ron học sâu thì không dễ. 
+Và để cho mô hình hội tụ trong một khoảng thời gian hợp lý là một vấn đề hóc búa.
+Trong phần này, chúng ta sẽ đề cập đến việc chuẩn hóa theo batch (_Batch Normalization - BN_) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm giúp tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
+Cùng với các khối thặng dư được đề cập ở phần :numref:`sec_resnet` — BN đã giúp những người hành nghề có thể huấn luyện mạng học sâu với hơn 100 tầng một cách đều đặn.
 
 <!--
 ## Training Deep Networks
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mạng học sâu
 
 <!--
 To motivate batch normalization, let us review a few practical challenges that arise
 when training ML models and neural nets in particular.
 -->
 
-*dịch đoạn phía trên*
+Để thấy được mục đích của việc chuẩn hóa theo batch, hãy cùng chúng tôi xem xét lại một vài vấn đề thực tế phát sinh khi huấn luyện các mô hình học máy và đặc biệt là mạng nơ-ron.
 
 <!--
 1. Choices regarding data preprocessing often make an enormous difference in the final results.
@@ -45,7 +46,17 @@ Intuitively, we might conjecture that if one layer has activation values that ar
 This means that regularization becomes more critical.
 -->
 
-*dịch đoạn phía trên*
+1. Những lựa chọn liên quan đến việc tiền xử lý dữ liệu thường tạo nên sự khác biệt rất lớn trong kết quả cuối cùng.
+Hãy nhớ lại việc áp dụng mạng perceptron đa tầng để dự đoán giá nhà ở phần (:numref:`sec_kaggle_house`). 
+Việc đầu tiên khi chúng ta làm việc với dữ liệu thực tế là chuẩn hóa các đặc trưng đầu vào để chúng có giá trị trung bình bằng *không* và phương sai bằng *một*. 
+Theo trực giác, việc chuẩn hóa này hoạt động tốt với những bộ tối ưu vì nó đặt giá trị các tham số tiên nghiệm tại cùng một tỷ lệ.
+2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
+dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
+Những nhà phát minh ra kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
+Bằng trực giác, chúng ta có thể phỏng đoán rằng nếu một tầng có các giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì cần phải có các điều chỉnh bổ trợ trong tốc độ học.
+3. Mạng nhiều tầng thì phức tạp và dễ có khả năng gặp vấn đề quá khớp.
+Điều này có nghĩa rằng sự điều chuẩn càng trở nên cấp thiết.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -59,7 +70,12 @@ estimating both quantities based on the statistics of the current the current mi
 It is precisely due to this *normalization* based on *batch* statistics that *batch normalization* derives its name.
 -->
 
-*dịch đoạn phía trên*
+Sự chuẩn hoá theo batch được áp dụng vào từng tầng riêng lẻ (hoặc có thể tùy chọn cho tất cả các tầng) và cách thức hoạt động như sau:
+Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên chúng ta tính giá trị kích hoạt của tầng như thường lệ.
+Sau đó, chúng ta chuẩn hóa những giá trị kích hoạt này của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn của nó, 
+cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
+Chính vì *chuẩn hóa* dựa trên các số liệu thống kê của *batch* nên kỹ thuật này có tên gọi *chuẩn hoá theo batch*.
+
 
 <!--
 Note that if we tried to apply BN with minibatches of size $1$, we would not be able to learn anything.
@@ -68,13 +84,16 @@ As you might guess, since we are devoting a whole section to BN, with large enou
 One takeaway here is that when applying BN, the choice of minibatch size may be even more significant than without BN.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, khi chúng ta thử áp dụng BN với những minibatch có kích thước là 1, mô hình của chúng ta sẽ không thể học được gì. 
+Đó là bởi vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
+Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, việc chuẩn hóa cho thấy tính hiệu quả và ổn định của nó. 
+Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với khi không áp dụng BN.
 
 <!--
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
 -->
 
-*dịch đoạn phía trên*
+Một cách hình thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
 
 $$\mathrm{BN}(\mathbf{x}) = \mathbf{\gamma} \odot \frac{\mathbf{x} - \hat{\mathbf{\mu}}}{\hat\sigma} + \mathbf{\beta}$$
 
@@ -88,7 +107,13 @@ because BN actively centers and rescales them back to a given mean and size (via
 One piece of practitioner's intuition/wisdom is that BN seems to allows for more aggressive learning rates.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, $\hat{\mathbf{\mu}}$  là giá trị trung bình mẫu và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn mẫu của minibatch.
+Sau khi áp dụng BN, minibatch của những giá trị kích hoạt thu được có giá trị trung bình bằng không và phương sai đơn vị.
+Bởi vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là việc lựa chọn tuỳ ý, 
+cho nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
+Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
+Qua trực giác/kinh nghiệm rút ra từ những người thực nghiệm, dùng BN có khả năng cho phép chọn tốc độ học nhanh hơn.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -157,7 +182,7 @@ We are now ready to take a look at how batch normalization works in practice.
 ## Batch Normalization Layers
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng chuẩn hoá theo batch
 
 <!--
 Batch normalization implementations for fully-connected layers and convolutional layers are slightly different.
@@ -166,14 +191,16 @@ Recall that one key differences between BN and other layers is that because BN o
  we cannot just ignore the batch dimension as we did before when introducing other layers.
 -->
 
-*dịch đoạn phía trên*
-
+Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập thì hơi khác nhau một chút.
+Chúng ta sẽ thảo luận cho cả hai trường hợp trên ở phía dưới.
+Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì mỗi lần BN hoạt động trên cả một minibatch, 
+chúng ta không thể bỏ qua kích thước của batch như chúng ta đã làm trước đây khi giới thiệu về các tầng khác.
 
 <!--
 ### Fully-Connected Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng kết nối đầy đủ
 
 <!--
 When applying BN to fully-connected layers, we usually insert BN after the affine transformation and before the nonlinear activation function.
@@ -182,7 +209,10 @@ the activation function by $\phi(\cdot)$, and the BN operation with parameters $
 we can express the computation of a BN-enabled, fully-connected layer $\mathbf{h}$ as follows:
 -->
 
-*dịch đoạn phía trên*
+Khi áp dụng BN vào tầng kết nối đầy đủ, chúng ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến tính. 
+Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính là $f_{\theta}(\cdot)$ (với trọng số là $\theta$), 
+hàm kích hoạt là $\phi(\cdot)$, và phép tính BN là $\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}$ với tham số $\mathbf{\beta}$ và $\mathbf{\gamma}$, 
+chúng ta sẽ biểu thị việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
 
 $$\mathbf{h} = \phi(\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}(f_{\mathbf{\theta}}(\mathbf{x}) ) ) $$
 
@@ -191,13 +221,14 @@ Recall that mean and variance are computed on the *same* minibatch $\mathcal{B}$
 Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\mathbf{\beta}$ are parameters that need to be learned jointly with the more familiar parameters $\mathbf{\theta}$.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ rằng giá trị trung bình và phương sai thì được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
+Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
 
 <!--
 ### Convolutional Layers
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng tích chập
 
 <!--
 Similarly, with convolutional layers, we typically apply BN after the convolution and before the nonlinear activation function.
@@ -209,7 +240,14 @@ Thus we collect the values over all spatial locations when computing the mean an
 apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the values at each spatial location.
 -->
 
-*dịch đoạn phía trên*
+Tương tự với tầng tích chập, chúng ta thường áp dụng BN sau khi thực hiện tích chập và trước hàm kích hoạt phi tuyến tính.
+Khi phép tích chập cho đầu ra có nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
+và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là những số thực.
+Giả sử những minibatch của chúng ta có kích thước là $m$ và đầu ra cho mỗi kênh của phép tích chập có chiều cao là $p$ và rộng là $q$.
+Đối với tầng tích chập, chúng ta sẽ thực hiện mỗi phép tính chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng đồng thời một lúc.
+Vì thế chúng ta thu được các giá trị trên tất cả các vị trí không gian khi tính toán giá trị trung bình và phương sai 
+và tiếp đó (trong cùng một kênh nhất định) cùng áp dụng hai giá trị $\hat{\mathbf{\mu}}$ và $\hat{\mathbf{\sigma}}$ để chuẩn hóa các giá trị tại mỗi vị trí không gian.
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -573,16 +611,18 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Đắc
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-*
+* Đinh Đắc
 
 <!-- Phần 3 -->
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
 
 <!-- Phần 5 -->
 *
