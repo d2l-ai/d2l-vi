@@ -5,7 +5,7 @@
 # Convolutions for Images
 -->
 
-# Phép tích chập cho ảnh
+# Phép Tích chập cho Ảnh
 :label:`sec_conv_layer`
 
 <!--
@@ -22,14 +22,13 @@ we stick with images as our running example.
 -->
 
 Giờ chúng ta đã hiểu cách các tầng tích chập hoạt động trên lý thuyết, hãy xem chúng hoạt động trong thực tế như thế nào.
-Với cảm hứng từ khả năng ứng dụng các mạng nơ-ron tích chập với dữ liệu hình ảnh, chúng ta vẫn sẽ sử dụng loại dữ liệu này trong các ví dụ, và bắt đầu với tầng tích chập được giới thiệu ở phần trước.
-Chú ý rằng, một cách chặt chẽ, việc đặt tên các tầng là *tích chập* là không chính xác, vì các phép toán thường được biểu diễn dưới dạng tương quan chéo.
+Dựa vào ý tưởng mạng nơ-ron tích chập là kiến trúc hiệu quả để khám phá cấu trúc của dữ liệu ảnh, chúng tôi vẫn sẽ sử dụng loại dữ liệu này khi lấy ví dụ.
 
 <!--
 ## The Cross-Correlation Operator
 -->
 
-## Toán tử tương quan chéo
+## Toán tử Tương quan Chéo
 
 <!--
 In a convolutional layer, an input array and a correlation kernel array are combined to produce an output array through a cross-correlation operation.
@@ -52,20 +51,21 @@ Note that in the deep learning research community, this object may be referred t
 The shape of the kernel window is given by the height and width of the kernel (here it is $2 \times 2$).
 -->
 
-Trong một tầng tích chập, một mảng đầu vào và một mảng bộ lọc tương quan được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo (*cross correlation*).
-Hãy xem phép toán này hoạt động như thế nào với mảng hai chiều.
+Nhắc lại rằng, nói đúng ra thì cái tên tầng *tích chập* là không chính xác, vì phép toán mà chúng biểu diễn là phép tương quan chéo (*cross correlation*).
+Trong một tầng tích chập, một mảng đầu vào và một mảng *hạt nhân tương quan* được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo.
+Hãy tạm thời bỏ qua chiều kênh và xem  phép toán này hoạt động như thế nào với dữ liệu và biểu diễn ẩn hai chiều.
 Trong :numref:`fig_correlation`, đầu vào là một mảng hai chiều với chiều dài 3 và chiều rộng 3.
-Ta kí hiệu kích thước của mảng là $3 \times 3$ hoặc (3, 3).
-Chiều dài và chiều rộng của mảng bộ lọc đều là 2.
-Trong cộng đồng nghiên cứu học sâu, các tên thường gặp của mảng này gồm có *kernel* và *filter*.
-Kích thước của cửa sổ bộ lọc (còn gọi là cửa sổ tích chập) được định nghĩa từ chiều dài và chiều rộng của bộ lọc (ở đây là $2 \times 2$).
+Ta kí hiệu kích thước của mảng là $3 \times 3$ hoặc ($3$, $3$).
+Chiều dài và chiều rộng của hạt nhân đều là 2.
+Chú ý rằng trong cộng đồng nghiên cứu học sâu, mảng này còn có thể được gọi là *hạt nhân tích chập*, *bộ lọc* hay đơn thuần là *trọng số* của tầng.
+Kích thước của cửa sổ hạt nhân là chiều dài và chiều rộng của hạt nhân (ở đây là $2 \times 2$).
 
 
 <!--
 ![Two-dimensional cross-correlation operation. The shaded portions are the first output element and the input and kernel array elements used in its computation: $0\times0+1\times1+3\times2+4\times3=19$. ](../img/correlation.svg)
 -->
 
-![Phép tương quan chéo hai chiều. Các phần in đậm là phần tử đầu tiên của đầu ra, các phần tử của đầu vào và bộ lọc được sử dụng trong phép toán: $0\times0+1\times1+3\times2+4\times3=19$. ](../img/correlation.svg)
+![Phép tương quan chéo hai chiều. Các phần được tô màu là phần tử đầu tiên của đầu ra cùng với các phần tử của mảng đầu vào và mảng hạt nhân được sử dụng trong phép toán: $0\times0+1\times1+3\times2+4\times3=19$. ](../img/correlation.svg)
 :label:`fig_correlation`
 
 <!--
@@ -78,10 +78,10 @@ Here, the output array has a height of 2 and width of 2 and the four elements ar
 -->
 
 Trong phép tương quan chéo hai chiều, ta bắt đầu với cửa sổ tích chập đặt tại vị trí góc trên bên trái của mảng đầu vào và di chuyển cửa sổ này từ trái sang phải và từ trên xuống dưới.
-Khi cửa sổ tích chập ở một vị trí nào đó, mảng con của đầu vào chứa trong cửa sổ đó và mảng bộ lọc được nhân theo từng phần tử
-và cộng các kết quả với nhau tạo thành một giá trị số vô hướng duy nhất.
+Khi cửa sổ tích chập được dịch tới một vị trí nào đó, mảng con nằm trong cửa sổ đó của đầu vào và mảng hạt nhân được nhân theo từng phần tử,
+rồi sau đó ta lấy tổng các phần tử trong mảng kết quả để có được một giá trị số vô hướng duy nhất.
 Giá trị này được ghi vào mảng đầu ra tại vị trí tương ứng.
-Ở đây, mảng đầu ra có chiều dài 2 và chiều rộng 2, với bốn phần tử được tính từ phép tương quan chéo hai chiều.
+Ở đây, mảng đầu ra có chiều dài 2 và chiều rộng 2, với bốn phần tử được tính bằng phép tương quan chéo hai chiều:
 
 $$
 0\times0+1\times1+3\times2+4\times3=19,\\
@@ -114,10 +114,10 @@ Next, we implement this process in the `corr2d` function, which accepts the inpu
 -->
 
 Lưu ý rằng theo mỗi trục, kích thước đầu ra *nhỏ hơn* một chút so với đầu vào.
-Bởi vì bộ lọc có chiều rộng lớn hơn một và ta chỉ có thể tính độ tương quan chéo cho mỗi vị trí mà ở đó bộ lọc nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' bộ lọc tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
+Bởi vì bộ lọc có chiều dài và chiều rộng lớn hơn một, ta chỉ có thể tính độ tương quan chéo cho những vị trí mà ở đó hạt nhân nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
+Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' hạt nhân tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
-Hàm nhận mảng đầu vào `X` với mảng bộ lọc `K` và trả về mảng đầu ra `Y`
+Hàm này nhận mảng đầu vào `X` với mảng hạt nhân `K` và trả về mảng đầu ra `Y`
 
 ```{.python .input}
 from mxnet import autograd, np, npx
@@ -140,7 +140,7 @@ We can construct the input array `X` and the kernel array `K` from the figure ab
 to validate the output of the above implementation of the two-dimensional cross-correlation operation.
 -->
 
-Ta có thể xây dựng mảng đầu vào `X` và mảng bộ lọc `K` như hình trên để kiểm tra lại kết quả của cách lập trình phép toán tương quan chéo hai chiều vừa rồi.
+Ta có thể xây dựng mảng đầu vào `X` và mảng hạt nhân `K` như hình trên để kiểm tra lại kết quả của cách lập trình phép toán tương quan chéo hai chiều vừa rồi.
 
 ```{.python .input}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
