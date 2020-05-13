@@ -59,8 +59,8 @@ or [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), the Speeded
 
 1. Thu thập tập dữ liệu đáng chú ý. Trong những ngày đầu sơ khai, các tập dữ liệu này đòi hỏi các cảm biến đắt tiền (thời điểm đó, ảnh có dung lượng 1 triệu điểm ảnh là mức cao nhất).
 2. Tiền xử lý tập dữ liệu với các đặc trưng được lấy thủ công dựa trên kiến thức quang học, hình học, các công cụ phân tích khác và thi thoảng dựa trên các khám phá tình cờ của các sinh viên sau đại học.```
-3. Dữ liệu này được đưa qua một bộ rút trích đặc trưng chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay một trong số bất kỳ piplines điều chỉnh bằng tay nào khác. 
-4. Các kết quả biểu diễn được bỏ vào bộ phân loại mà ta ưa thích, có thể là một mô hình tuyến tính hoặc một phương pháp lọc, để huấn luyện bộ phân loại. 
+3. Đưa dữ liệu qua một bộ trích chọn đặc trưng tiêu chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay bất kỳ một piplines điều chỉnh thủ công nào khác. 
+4. Đưa các kết quả biểu diễn vào bộ phân loại mà ta ưa thích, có thể là một mô hình tuyến tính hoặc phương pháp kernel, để huấn luyện bộ phân loại. 
 
 <!--
 If you spoke to machine learning researchers, they believed that machine learning was both important and beautiful.
