@@ -302,7 +302,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Về mặt kết nối liên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra trên chiều kênh.
 * Các thành phần chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-* Ta kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để giảm số lượng kênh.
+* Ta kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
 
 <!--
 ## Exercises
@@ -325,9 +325,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
 3. Một vấn đề mà DenseNet bị chỉ trích là mức tiêu thụ bộ nhớ cao.
      * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Để làm được điều này, ta sẽ cần thay đổi kiến trúc như thế nào?
+     * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Ta sẽ cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
-5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ cho ResNet? Tại sao ta làm việc này cho hơn hai tầng trong DenseNet?
+5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta làm việc này cho hơn hai tầng trong DenseNet?
 6. Thiết kế một DenseNet cho một mạng kết nối đầy đủ và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
