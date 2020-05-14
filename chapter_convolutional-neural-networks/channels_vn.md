@@ -158,7 +158,7 @@ In cross-correlation operations, the result on each output channel is calculated
 
 Đặt $c_i$ và $c_o$ lần lượt là số lượng kênh đầu vào và đầu ra, $k_h$ và $k_w$ lần lượt là chiều cao và chiều rộng của bộ lọc. 
 Để có được một đầu ra với nhiều kênh, ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra. 
-Ta nối chúng lại trên chiều kênh đầu ra, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$. 
+Ta nối chúng lại dựa trên chiều kênh đầu ra đã biết, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$. 
 Trong các phép tính tương quan chéo, kết quả trên mỗi kênh đầu ra được tính từ bộ lọc tích chập tương ứng với kênh đầu ra đó và lấy đầu vào từ tất cả các kênh trong mảng đầu vào. 
 
 <!--
