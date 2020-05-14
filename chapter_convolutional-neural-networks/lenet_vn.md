@@ -16,8 +16,8 @@ To make this data amenable to multilayer perceptrons which anticipate receiving 
 we first flattened each image, yielding vectors of length 784, before processing them with a series of fully-connected layers.
 -->
 
-Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập với đầy đủ chức năng.
-Khi ta lần đầu làm việc với dữ liệu hình ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho hình ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
+Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập với đầy đủ chức năng đầu tiên.
+Lần đầu làm việc với dữ liệu hình ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho hình ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
 Mỗi hình ảnh trong Fashion-MNIST là một ma trận hai chiều có kích thước $28 \times 28$.
 Để làm cho dữ liệu này tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, đầu tiên ta trải phẳng từng hình ảnh, thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
 
@@ -37,8 +37,9 @@ Their model achieved outstanding results (only matched by Support Vector Machine
 Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in the 1990s!
 -->
 
-Trong phần này, chúng tôi sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên. Ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun, khi đó là một nhà nghiên cứu tại AT&T Bell Labs, với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
-Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên rằng việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược là khả thi.
+Trong phần này, chúng tôi sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên.
+Ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun (thời điểm đó đang là một nhà nghiên cứu tại AT&T Bell Labs) với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
+Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng đầu tiên thuyết phục rằng việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược là khả thi.
 Mô hình của họ đã đạt được kết quả rất tốt (chỉ ngang hàng với Máy Vector Hỗ trợ --- SVM tại thời điểm đó) và đã được đưa vào sử dụng để nhận diện các chữ số khi xử lý tiền gửi trong máy ATM.
 Một số máy ATM vẫn chạy các đoạn mã mà Yann và đồng nghiệp Leon Bottou đã viết vào những năm 1990!
 
@@ -61,7 +62,7 @@ Before getting into the weeds, let us briefly review the model in :numref:`img_l
 
 Một cách đơn giản, ta có thể xem LeNet gồm hai phần:
 (i) một khối các tầng tích chập; và
-(ii) một khối các tầng kết nối đầy đủ.
+(ii) một khối các tầng kết nối đầy đủ. 
 Trước khi đi vào các chi tiết cụ thể, hãy quan sát tổng thể mô hình trong :numref:`img_lenet`.
 
 <!--
@@ -87,8 +88,8 @@ Các đơn vị cơ bản trong khối tích chập là một tầng tích chậ
 Tầng tích chập được sử dụng để nhận dạng các mẫu không gian trong ảnh,
 chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
 Khối tầng tích chập tạo nên từ việc xếp chồng các khối nhỏ gồm hai đơn vị cơ bản này.
-Mỗi tầng chập sử dụng bộ lọc có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
-(một lần nữa, lưu ý rằng ReLU hiện được biết là hoạt động đáng tin cậy hơn nhưng lúc đó chưa được phát minh).
+Mỗi tầng tích chập sử dụng hạt nhân có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
+(nhấn mạnh rằng ReLU hiện được biết là hoạt động đáng tin cậy hơn, nhưng chưa được phát minh vào thời điểm đó).
 Tầng tích chập đầu tiên có 6 kênh đầu ra và tầng tích chập thứ hai tăng độ sâu kênh hơn nữa lên 16.
 
 <!--
@@ -100,7 +101,7 @@ In other words, the pooling layer downsamples the representation to be precisely
 
 Tuy nhiên, cùng với sự gia tăng số lượng kênh này, chiều cao và chiều rộng lại giảm đáng kể.
 Do đó, việc tăng số lượng kênh đầu ra làm cho kích thước tham số của hai tầng tích chập tương tự nhau.
-Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước bằng 2 (lưu ý rằng điều này có nghĩa là chúng không chồng chéo).
+Hai lớp gộp trung bình có kích thước $2\times 2$ và sải bước bằng 2 (điều này có nghĩa là chúng không chồng chéo).
 Nói cách khác, lớp gộp giảm kích thước của các biểu diễn còn *một phần tư* kích thước trước khi gộp.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -117,11 +118,11 @@ Because we are still performing classification, the 10 dimensional output layer 
 -->
 
 Đầu ra của khối tích chập có kích thước được cho bởi (kích thước batch, kênh, chiều cao, chiều rộng).
-Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch.
+Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch. 
 Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
-nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu.
+nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu. 
 Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
-Bởi vì ta vẫn đang thực hiện phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi.
+Bởi vì ta vẫn đang thực hiện phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi. 
 
 <!--
 While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
@@ -129,8 +130,8 @@ you can see below that implementing it in a modern deep learning library is rema
 Again, we will rely on the Sequential class.
 -->
 
-Trong khi đạt đến mức độ mà bạn thực sự hiểu những gì đang diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
-bạn có thể thấy bên dưới việc lập trình nó trong một thư viện học sâu hiện đại rất đơn giản.
+Để đạt đến mức độ mà bạn thực sự hiểu những gì đang diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
+bạn có thể thấy bên dưới đây việc lập trình nó trong một thư viện học sâu hiện đại rất đơn giản.
 Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
 ```{.python .input}
@@ -159,7 +160,7 @@ Other than that, this network matches the historical definition of LeNet5.
 -->
 
 So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
-Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong lịch sử.
+Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong quá khứ.
 
 <!--
 Next, let us take a look of an example.
@@ -168,7 +169,7 @@ a forward computation layer by layer printing the output shape at each layer to 
 -->
 
 Tiếp theo, ta hãy xem một ví dụ.
-Như trong :numref:`img_lenet_vert`, ta đưa vào mạng một mẫu đơn kênh kích thước $28 \times 28$ và thực hiện
+Như trong :numref:`img_lenet_vert`, ta đưa vào mạng một mẫu đơn kênh kích thước $28 \times 28$ và thực hiện 
 một lượt truyền xuôi qua các tầng và in kích thước đầu ra ở mỗi tầng để đảm bảo ta hiểu những gì đang xảy ra bên trong.
 
 ```{.python .input}
@@ -186,17 +187,17 @@ for layer in net:
 <!--
 Note that the height and width of the representation at each layer throughout the convolutional block is reduced (compared to the previous layer).
 The first convolutional layer uses a kernel with a height and width of $5$, and then a $2$ pixels of padding which compensates the reduction in its original shape.
-While the second convolutional layer applies the same shape of $5 x 5$ kernel without padding, resulting in reductions in both height and width by $4$ pixels.
+While the second convolutional layer applies the same shape of $5 \times 5$ kernel without padding, resulting in reductions in both height and width by $4$ pixels.
 Moreover each pooling layer halves the height and width.
 However, as we go up the stack of layers, the number of channels increases layer-over-layer from 1 in the input to 6 after the first convolutional layer and 16 after the second layer.
 Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
 Xin hãy chú ý rằng, chiều cao và chiều rộng của biểu diễn tại mỗi tầng trong toàn bộ khối tích chập sẽ bị giảm đi (so với chiều cao và chiều rộng của biểu diễn ở tầng trước). 
-Tầng tích chập đầu tiên sử dụng một bộ lọc với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
-Trong khi đó tầng tích chập thứ hai cũng dùng cùng một bộ lọc với kích thước là $5 x 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh. 
+Tầng tích chập đầu tiên sử dụng một hạt nhân với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để bù trừ cho sự giảm đi kích thước của đặc trưng đầu ra so với kích thước ban đầu của nó. 
+Trong khi đó tầng tích chập thứ hai cũng dùng cùng một hạt nhân với kích thước là $5 \times 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh. 
 Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. 
-Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào lên tới 6 kênh sau khi đi qua tầng tích chập thứ nhất và 16 kênh sau khi đi qua tầng tích chập thứ hai. 
+Tuy nhiên, khi chúng ta đi từ thứ tự từ dưới lên trên của các tầng chồng lên nhau, số kênh sẽ tăng lần lượt theo từng tầng, từ 1 kênh của dữ liệu đầu vào lên tới 6 kênh sau khi đi qua tầng tích chập thứ nhất và 16 kênh sau khi đi qua tầng tích chập thứ hai.
 Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt qua từng tầng cho đến khi tạo thành một đầu ra khớp với số lượng lớp của hình ảnh. 
 
 <!--
