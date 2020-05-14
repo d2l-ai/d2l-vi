@@ -410,7 +410,7 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 * We can learn the kernel's parameters from data.
 -->
 
-* Tính toán cốt lõi của tầng tích chập hai chiều là phép tương quan chéo hai chiều.
+* Về cốt lõi, phần tính toán của tầng tích chập hai chiều là phép tương quan chéo hai chiều.
 Ở dạng đơn giản nhất, phép tương quan chéo thao tác trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó cộng thêm hệ số điều chỉnh.
 * Chúng ta có thể thiết kế bộ lọc để phát hiện các biên trong ảnh.
 * Chúng ta có thể học các tham số của bộ lọc từ dữ liệu.
