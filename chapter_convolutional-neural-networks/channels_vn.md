@@ -71,7 +71,7 @@ The shaded portions are the first output element as well as the input and kernel
 $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$.
 -->
 
-Hình :numref:`fig_conv_multi_in` minh hoạ một ví dụ về phép tương quan chéo hai chiều với hai kênh đầu vào.  
+Trong :numref:`fig_conv_multi_in` minh hoạ một ví dụ về phép tương quan chéo hai chiều với hai kênh đầu vào.  
 Phần tô đậm là phần tử đầu ra đầu tiên cùng các phần tử của mảng đầu vào và bộ lọc được sử dụng trong phép tính đó: 
 $(1\times1+2\times2+4\times3+5\times4)+(0\times0+1\times1+3\times2+4\times3)=56$.
 
