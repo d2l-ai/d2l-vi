@@ -245,7 +245,7 @@ Of course, we can specify an arbitrary rectangular pooling window
 and specify the padding and stride for height and width, respectively.
 -->
 
-Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ gộp chữ nhật tuỳ ý và chỉ rõ giá trị phần đệm và sải bước tương ứng với chiều cao và chiều rộng của cửa sổ.
+Dĩ nhiên, chúng ta có thể định nghĩa một cửa sổ gộp hình chữ nhật tuỳ ý và chỉ rõ giá trị phần đệm và sải bước tương ứng với chiều cao và chiều rộng của cửa sổ.
 
 ```{.python .input  n=8}
 pool2d = nn.MaxPool2D((2, 3), padding=(1, 2), strides=(2, 3))
