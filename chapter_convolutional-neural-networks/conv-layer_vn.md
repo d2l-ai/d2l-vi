@@ -288,7 +288,7 @@ However, as we look at larger kernels, and consider successive layers of convolu
 -->
 
 Việc thiết kế bộ phát hiện biên bằng sai phân `[1, -1]` thì khá là gọn gàng nếu ta biết chính xác đây là những gì cần làm.
-Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, việc chỉ định chính xác mỗi bộ lọc cần làm gì một cách thủ công là không khả thi.
+Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, việc chỉ định chính xác mỗi bộ lọc cần làm gì một cách thủ công là bất khả thi.
 
 <!--
 Now let us see whether we can learn the kernel that generated `Y` from `X` by looking at the (input, output) pairs only.
