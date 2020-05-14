@@ -439,9 +439,9 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
      * Điều gì xảy ra nếu bạn áp dụng bộ lọc `K` lên nó?
      * Điều gì xảy ra nếu bạn chuyển vị `X`?
      * Điều gì xảy ra nếu bạn chuyển vị `K`?
-2. Khi thử tìm gradient tự động cho lớp `Conv2D` tự xây dựng, bạn gặp loại thông báo lỗi nào?
-3. Làm thế nào để biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và mảng bộ lọc?
-4. Hãy thiết kế thủ công một số bộ lọc.
+2. Khi thử tự động tìm gradient cho lớp `Conv2D` mà ta đã tạo, bạn thấy loại thông báo lỗi nào?
+3. Làm thế nào để bạn biểu diễn một phép tính tương quan chéo như là một phép nhân ma trận bằng cách thay đổi các mảng đầu vào và mảng bộ lọc?
+4. Hãy thiết kế thủ công một số bộ lọc sau.
      * Bộ lọc để tính đạo hàm bậc hai có dạng như thế nào?
      * Bộ lọc của toán tử Laplace là gì?
      * Bộ lọc của phép tích phân là gì?
