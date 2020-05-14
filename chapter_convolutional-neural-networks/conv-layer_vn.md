@@ -287,7 +287,7 @@ Designing an edge detector by finite differences `[1, -1]` is neat if we know th
 However, as we look at larger kernels, and consider successive layers of convolutions, it might be impossible to specify precisely what each filter should be doing manually.
 -->
 
-Việc thiết kế bộ phát hiện biên bằng sai phân `[1, -1]` rất tinh tế nếu ta biết chính xác đây là những gì cần làm.
+Việc thiết kế bộ phát hiện biên bằng sai phân `[1, -1]` thì khá là gọn gàng nếu ta biết chính xác đây là những gì cần làm.
 Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, việc chỉ định chính xác mỗi bộ lọc cần làm gì một cách thủ công là không khả thi.
 
 <!--
