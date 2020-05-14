@@ -299,7 +299,7 @@ For the sake of simplicity, in this convolutional layer, we will ignore the bias
 -->
 
 Bây giờ ta hãy xem liệu có thể học một bộ lọc có khả năng tạo ra `Y` từ` X` chỉ từ các cặp (đầu vào, đầu ra) hay không.
-Đầu tiên chúng ta xây dựng một tầng tích chập và khởi tạo bộ lọc của nó là một mảng ngẫu nhiên.
+Đầu tiên chúng ta xây dựng một tầng tích chập và khởi tạo một mảng ngẫu nhiên làm bộ lọc.
 Tiếp theo, trong mỗi lần lặp, ta sẽ sử dụng bình phương sai số để so sánh `Y` và đầu ra của tầng tích chập, sau đó tính toán gradient để cập nhật trọng số.
 Để đơn giản, trong tầng tích chập này, ta sẽ bỏ qua hệ số điều chỉnh.
 
