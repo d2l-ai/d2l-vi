@@ -134,13 +134,14 @@ Interestingly in the lowest layers of the network, the model learned feature ext
 :numref:`fig_filters` is reproduced from this paper and describes lower-level image descriptors.
 -->
 
-*dịch đoạn phía trên*
+Một điều thú vị là ở các tầng thấp nhất của mạng, mô hình đã học cách trích xuất đặc trưng giống như các bộ lọc truyền thống. 
+Hình :numref:`fig_filters` trích lại từ bài báo khoa học này mô tả các đặc trưng cấp thấp của hình ảnh.
 
 <!--
 ![Image filters learned by the first layer of AlexNet](../img/filters.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/filters.png)
+![Các bộ lọc hình ảnh học được ở tầng đầu tiên của mô hình AlexNet](../img/filters.png)
 :width:`400px`
 :label:`fig_filters`
 
@@ -150,7 +151,9 @@ Even higher layers might represent whole objects like people, airplanes, dogs, o
 Ultimately, the final hidden state learns a compact representation of the image that summarizes its contents such that data belonging to different categories be separated easily.
 -->
 
-*dịch đoạn phía trên*
+Các tầng cao hơn của mạng sẽ dựa vào các biểu diễn này để thể hiện các cấu trúc lớn hơn như mắt, mũi, ngọn cỏ, v.v. 
+Thậm chí các tầng cao hơn có thể đại diện cho nguyên một vật thể như con người, máy bay, chó hoặc là đĩa ném. 
+Cuối cùng, tầng trạng thái ẩn cuối sẽ học cách biểu diễn cô đọng của toàn bộ hình ảnh để tổng hợp lại nội dung sao cho dữ liệu thuộc các lớp khác nhau được dễ dàng phân biệt.
 
 
 <!--
@@ -159,13 +162,15 @@ a core group of researchers had dedicated themselves to this idea, attempting to
 The ultimate breakthrough in 2012 can be attributed to two key factors.
 -->
 
-*dịch đoạn phía trên*
+Khi bước đột phá của các mạng tích chập nhiều tầng xuất hiện vào năm 2012, một nhóm các nhà nghiên cứu cốt cán đã theo đuổi ý tưởng này, cố gắng học các biểu diễn phân cấp của dữ liệu hình ảnh trong nhiều năm. 
+Có hai yếu tố chính dẫn tới bước đột phá lớn ở năm 2012.
+
 
 <!--
 ### Missing Ingredient - Data
 -->
 
-### *dịch tiêu đề phía trên*
+### Yếu tố bị thiếu - Dữ liệu
 
 <!--
 Deep models with many layers require large amounts of data in order to enter the regime where they significantly outperform traditional methods based on convex optimizations (e.g., linear and kernel methods).
@@ -173,7 +178,9 @@ However, given the limited storage capacity of computers, the relative expense o
 Numerous papers addressed the UCI collection of datasets, many of which contained only hundreds or (a few) thousands of images captured in unnatural settings with low resolution.
 -->
 
-*dịch đoạn phía trên*
+Mô hình học sâu với nhiều tầng đòi hỏi phải có một lượng dữ liệu lớn để có hiệu quả vượt trội so với các phương pháp truyền thống dựa trên phương pháp tối ưu lồi (ví dụ: phương pháp tuyến tính và phương pháp nhân). 
+Tuy nhiên, do khả năng lưu trữ của máy tính còn hạn chế, các bộ cảm biến khá đắt đỏ, và ngân sách dành cho việc nghiên cứu tương đối bị thắt chặt vào những năm 1990, cho nên phần lớn các nghiên cứu đều dựa vào các bộ dữ liệu nhỏ. 
+Có rất nhiều bài báo nghiên cứu khoa học giải quyết các vấn đề dựa trên bộ dữ liệu tổng hợp UCI, nhiều bộ dữ liệu trong số đó chỉ chứa khoảng vài trăm hoặc (một vài) ngàn hình ảnh được chụp trong điều kiện thiếu tự nhiên và độ phân giải thấp.
 
 <!--
 In 2009, the ImageNet dataset was released, challenging researchers to learn models from 1 million examples, 1,000 each from 1,000 distinct categories of objects.
@@ -184,7 +191,10 @@ The associated competition, dubbed the ImageNet Challenge pushed computer vision
 challenging researchers to identify which models performed best at a greater scale than academics had previously considered.
 -->
 
-*dịch đoạn phía trên*
+Năm 2009, tập dữ liệu ImageNet được tung ra, thách thức các nhà nghiên cứu huấn luyện các mô hình với 1 triệu hình ảnh, trong đó có 1.000 ảnh cho mỗi 1.000 lớp đối tượng khác nhau. 
+Các nhà nghiên cứu giới thiệu tập dữ liệu này, dẫn đầu bởi Fei-Fei Li, đã tận dụng công cụ Tìm kiếm Hình ảnh của Google để lọc sơ bộ ra các tập dữ liệu hình ảnh lớn cho mỗi lớp và sử dụng dịch vụ cộng đồng (*crowdsourcing*) Mechanical Turk của Amazon để xác thực nhãn cho từng ảnh. 
+Đây là quy mô lớn chưa từng có từ trước đến nay. 
+Cuộc thi đi liền với tập dữ liệu này được đặt tên là ImageNet Challenge và đã thúc đẩy sự phát triển của nghiên cứu thị giác máy tính và học máy, thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn bao giờ hết trong giới học thuật. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
