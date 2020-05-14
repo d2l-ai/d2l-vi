@@ -222,9 +222,10 @@ We will use Fashion-MNIST as our dataset.
 It is more challenging than the original MNIST dataset while it has the same shape ($28\times28$ images).
 -->
 
-Sau khi xây dựng xong mô hình, chúng ta thực hiện một số thử nghiệm để xem chúng ta có thể đạt được kết quả gì với mô hình LeNet. 
+Sau khi xây dựng xong mô hình, chúng ta sẽ thực hiện một số thử nghiệm để xem ta có thể đạt được kết quả gì với mô hình LeNet. 
 Chúng ta sẽ sử dụng tập dữ liệu Fashion-MNIST.
-Việc phân loại tập dữ liệu này sẽ khó hơn so với tập MNIST gốc mặc dù chúng chứa các ảnh có cùng kích thước là $28\times28$. 
+Việc phân loại tập dữ liệu này sẽ khó hơn so với tập MNIST gốc mặc dù chúng chứa các ảnh có cùng kích thước $28\times28$. 
+
 
 ```{.python .input}
 batch_size = 256
@@ -236,7 +237,7 @@ While convolutional networks may have few parameters, they can still be signific
 -->
 
 Dù mạng tích chập có thể có số lượng tham số không lớn, chúng vẫn tiêu tốn tài nguyên tính toán hơn nhiều so với perceptron sâu đa tầng. 
-Vì vậy, nếu bạn có GPU thì đây là thời điểm thích hợp để dùng nó tăng tốc quá trình huấn luyện. 
+Vì vậy, nếu bạn có GPU thì đây là thời điểm thích hợp để dùng nó nhằm tăng tốc quá trình huấn luyện. 
 
 <!--
 For evaluation, we need to make a slight modification to the `evaluate_accuracy` function that we described in :numref:`sec_softmax_scratch`.
@@ -244,9 +245,9 @@ Since the full dataset lives on the CPU, we need to copy it to the GPU before we
 This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_gpu`.
 -->
 
-Để đánh giá mô hình, chúng ta cần phải điều chỉnh hàm `evaluate_accuracy` mà chúng ta đã mô tả ở phần :numref:`sec_softmax_scratch` một chút.
-Bởi vì toàn bộ tập dữ liệu đang nằm trên CPU, chúng ta cần sao chép nó lên GPU trước khi chúng ta có thể thực hiện tính toán với mô hình.
-Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` mô tả ở phần :numref:`sec_use_gpu`.  
+Để đánh giá mô hình, chúng ta cần điều chỉnh một chút với hàm `evaluate_accuracy` mà ta đã mô tả ở phần :numref:`sec_softmax_scratch`.
+Vì toàn bộ tập dữ liệu đang nằm trên CPU, ta cần sao chép nó lên GPU trước khi thực hiện tính toán với mô hình.
+Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` được mô tả ở phần :numref:`sec_use_gpu`.  
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -271,7 +272,7 @@ prior to making the forward and backward passes.
 -->
 
 Chúng ta cũng cần phải cập nhật hàm huấn luyện để mô hình có thể chạy được trên GPU.
-Không giống như hàm `train_epoch_ch3` đã được định nghĩa ở phần :numref:`sec_softmax_scratch`, bây giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.   
+Không giống như hàm `train_epoch_ch3` đã được định nghĩa ở phần :numref:`sec_softmax_scratch`, bây giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.
 
 <!--
 The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`.
@@ -282,10 +283,10 @@ Since each epoch takes tens of seconds to run, we visualize the training loss in
 -->
 
 Hàm huấn luyện `train_ch6` khá giống với hàm huấn luyện `train_ch3` đã được định nghĩa tại :numref:`sec_softmax_scratch`.
-Bởi vì hiện tại chúng ta phải làm việc với một mạng có tới hàng chục tầng, hàm này chỉ hỗ trợ các mô hình được xây dựng bằng thư viện Gluon.
-Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi `ctx`, lần này sử dụng bộ khởi tạo Xavier.
+Hiện tại ta sẽ làm việc với một mạng có tới hàng chục tầng, hàm này chỉ hỗ trợ các mô hình được xây dựng bằng thư viện Gluon.
+Chúng ta sẽ khởi tạo bộ tham số của mô hình trên thiết bị đã được chỉ định bởi `ctx`, lần này ta sẽ sử dụng bộ khởi tạo Xavier.
 Ta vẫn sử dụng hàm mất mát entropy chéo và thuật toán huấn luyện là phương pháp hạ gradient ngẫu nhiên theo minibatch.
-Bởi vì mỗi epoch tốn khoảng hàng chục giây để chạy, chúng ta sẽ vẽ đường biểu diễn giá trị mất mát huấn luyện với nhiều giá trị chi tiết hơn. 
+Với mỗi epoch tốn khoảng hàng chục giây để chạy, ta sẽ vẽ đường biểu diễn giá trị mất mát huấn luyện với nhiều giá trị chi tiết hơn. 
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -351,7 +352,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Mạng nơ-ron tích chập (gọi tắt là ConvNet) là một mạng sử dụng các tầng tích chập.
 * Trong ConvNet, ta xen kẽ các phép tích chập, các hàm phi tuyến và các phép gộp.
-* Cuối cùng, độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) tầng kết nối dày đặc.
+* Độ phân giải được giảm xuống trước khi tạo một đầu ra thông qua một (hoặc nhiều) tầng kết nối dày đặc.
 * LeNet là mạng ConvNet đầu tiên được triển khai thành công.
 
 <!--
@@ -374,22 +375,19 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 -->
 
 1. Điều gì sẽ xảy ra nếu ta thay thế phép gộp trung bình bằng phép gộp cực đại?
-2. Thử xây dựng một mạng phức tạp hơn dựa trên LeNet để cải thiện độ chính xác của mạng này.
+2. Thử xây dựng một mạng phức tạp hơn dựa trên LeNet để cải thiện độ chính xác của mạng này:
      * Điều chỉnh kích thước cửa sổ tích chập.
      * Điều chỉnh số lượng kênh đầu ra.
      * Điều chỉnh hàm kích hoạt (ReLU?).
-     * Điều chỉnh số lượng các tầng chập.
+     * Điều chỉnh số lượng các tầng tích chập.
      * Điều chỉnh số lượng các tầng kết nối đầy đủ.
      * Điều chỉnh tốc độ học và các chi tiết huấn luyện khác (phương thức khởi tạo, số lượng epoch, v.v.)
-3. Thử sử dụng mạng đã được cải thiện với tập dữ liệu MNIST ban đầu.
+3. Hãy thử sử dụng mạng đã được cải thiện với tập dữ liệu MNIST ban đầu.
 4. Hiển thị các giá trị kích hoạt của tầng thứ nhất và tầng thứ hai của LeNet với các đầu vào khác nhau (ví dụ: áo len, áo khoác).
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2353)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2353)
@@ -397,39 +395,12 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
 * Nguyễn Văn Cường
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-
-<!-- Phần 4 -->
 * Đinh Đắc
 * Phạm Hồng Vinh
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Dac Dinh
-
-<!-- Phần 6 -->
 * Nguyễn Duy Du
