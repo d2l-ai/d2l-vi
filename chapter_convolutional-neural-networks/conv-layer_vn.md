@@ -390,7 +390,7 @@ In keeping with standard terminology with deep learning literature, we will cont
 as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
-Hãy nhớ lại kiến thức của phần trước rằng tương quan chéo và tích chập là tương đương nhau.
+Hãy nhớ lại kiến thức của phần trước về mối liên hệ giữa phép tương quan chéo và tích chập.
 Trong hình trên, ta dễ dàng nhận thấy điều này. 
 Đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
 Trong trường hợp này, chỉ số trong phép lấy tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
