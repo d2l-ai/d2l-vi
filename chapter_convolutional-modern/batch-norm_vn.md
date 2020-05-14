@@ -124,14 +124,12 @@ Formally, denoting a particular minibatch by $\mathcal{B}$,
 we calculate $\hat{\mathbf{\mu}}_\mathcal{B}$ and $\hat\sigma_\mathcal{B}$ as follows:
 -->
 
-*dịch đoạn phía trên*
+Ký hiệu một minibatch là $\mathcal{B}$, chúng ta tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat\sigma_\mathcal{B}$ một cách hình thức như sau:
 
 $$\hat{\mathbf{\mu}}_\mathcal{B} \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathbf{x} \in \mathcal{B}} \mathbf{x}
 \text{ và }
 \hat{\mathbf{\sigma}}_\mathcal{B}^2 \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathbf{x} \in \mathcal{B}} (\mathbf{x} - \mathbf{\mu}_{\mathcal{B}})^2 + \epsilon$$
--->
 
-*dịch đoạn phía trên*
 
 <!--
 Note that we add a small constant $\epsilon > 0$ to the variance estimate
@@ -141,7 +139,10 @@ You might think that this noisiness should be a problem.
 As it turns out, this is actually beneficial.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta thêm một hằng số $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
+Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu của ước tính giá trị trung bình và phương sai.
+Bạn có thể nghĩ rằng những nhiễu này sẽ là vấn đề đáng ngại.
+Nhưng thực ra, điều này lại có lợi.
 
 <!--
 This turns out to be a recurring theme in deep learning.
@@ -151,7 +152,11 @@ In some preliminary research, :cite:`Teye.Azizpour.Smith.2018` and :cite:`Luo.Wa
 In particular, this sheds some light on the puzzle of why BN works best for moderate minibatches sizes in the $50$–$100$ range.
 -->
 
-*dịch đoạn phía trên*
+Điều này hoá ra lại là chủ đề thường thấy ở trong học sâu.
+Vì những lý do vẫn chưa được định rõ theo lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến việc huấn luyện nhanh hơn và ít bị quá khớp.
+Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ những đặc điểm này, biến thể này dường như hoạt động giống một dạng điều chuẩn.
+Trong một số nghiên cứu sơ bộ, :cite:`Teye.Azizpour.Smith.2018` và :cite:`Luo.Wang.Shao.ea.2018` đã lần lượt chỉ ra các thuộc tính của BN liên quan tới tiên nghiệm Bayesian (_Bayesian prior_) và các lượng phạt (_penalty_). 
+Đặc biệt, điều này làm sáng tỏ tại sao BN hoạt động tốt nhất với các minibatch có kích cỡ trong khoảng 50 - 100.
 
 <!--
 Fixing a trained model, you might (rightly) think that we would prefer to use the entire dataset to estimate the mean and variance.
@@ -162,13 +167,18 @@ Indeed this is standard practice for models employing batch normalization and th
 in *training mode* (normalizing by minibatch statistics) and in *prediction mode* (normalizing by dataset statistics).
 -->
 
-*dịch đoạn phía trên*
+Cố định một mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
+Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại được phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
+Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi chúng ta cập nhật mô hình.
+Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
+Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
+trong *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và trong *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của tập dữ liệu)
 
 <!--
 We are now ready to take a look at how batch normalization works in practice.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã sẵn sàng để xem chuẩn hoá theo batch hoạt động thế nào trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -619,7 +629,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đinh Đắc
 
 <!-- Phần 3 -->
-*
+* Đinh Đắc
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * Đinh Đắc
