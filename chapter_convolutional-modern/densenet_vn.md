@@ -280,7 +280,7 @@ net.add(nn.BatchNorm(),
 Since we are using a deeper network here, in this section, we will reduce the input height and width from 224 to 96 to simplify the computation.
 -->
 
-Trong phần này, do sử dụng một mạng sâu hơn nên ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96 để đơn giản hóa việc tính toán.
+Trong phần này, do sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 256
@@ -328,7 +328,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Ta sẽ cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
 5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta làm việc này cho hơn hai tầng trong DenseNet?
-6. Thiết kế một DenseNet cho một mạng kết nối đầy đủ và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
+6. Thiết kế một DenseNet cho mạng kết nối đầy đủ và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
