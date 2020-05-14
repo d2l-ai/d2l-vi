@@ -71,9 +71,9 @@ The former defines how the inputs and outputs are concatenated, while the latter
 The dense connections are shown in :numref:`fig_densenet`.
 -->
 
-Cuối cùng, tất cả các hàm số này được kết hợp trong một MLP để giảm số lượng đặc trưng một lần nữa.
+Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một MLP để giảm số lượng đặc trưng một lần nữa.
 Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
-Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
+Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
 Tầng cuối cùng của một chuỗi như vậy được kết nối tới tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các khối dày đặc định nghĩa cách đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
@@ -150,9 +150,9 @@ The number of convolution block channels controls the increase in the number of 
 This is also referred to as the growth rate.
 -->
 
-Trong ví dụ sau đây, ta định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" nên tự sửa lại bản dịch, nếu reviewer thấy không hợp lý thì sửa lại giúp mình nhé. Thanks! -->
+Trong ví dụ sau đây, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" không biết có đúng không -->
 Với một đầu vào gồm 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
-Số lượng kênh của khối tích chập kiểm soát sự gia tăng số lượng kênh đầu ra tương đối so với số lượng kênh đầu vào.
+Số lượng kênh của khối tích chập kiểm soát sự gia tăng trong số lượng kênh đầu ra tương đối so với số lượng kênh đầu vào.
 Sự gia tăng này thường được gọi là tốc độ tăng tưởng.
 
 ```{.python .input  n=8}
