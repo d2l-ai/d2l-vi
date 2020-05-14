@@ -267,7 +267,7 @@ và tiếp đó (trong cùng một kênh nhất định) cùng áp dụng hai gi
 ### Batch Normalization During Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuẩn hoá theo Batch trong Quá trình Dự đoán
 
 <!--
 As we mentioned earlier, BN typically behaves differently in training mode and prediction mode.
@@ -275,7 +275,9 @@ First, the noise in $\mathbf{\mu}$ and $\mathbf{\sigma}$ arising from estimating
 Second, we might not have the luxury of computing per-batch normalization statistics, e.g., we might need to apply our model to make one prediction at a time.
 -->
 
-*dịch đoạn phía trên*
+Như chúng tôi đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên những minibatch không còn là nhiễu được mong muốn, một khi ta đã huấn luyện xong mô hình.
+Thứ hai, chúng ta không có tài nguyên xa xỉ để tính toán các con số thống kê trên mỗi lần chuẩn hoá theo batch, ví dụ: chúng ta cần áp dụng mô hình để đưa ra một kết quả dự đoán mỗi lần.
 
 <!--
 Typically, after training, we use the entire dataset to compute stable estimates of the activation statistics and then fix them at prediction time.
@@ -283,7 +285,9 @@ Consequently, BN behaves differently during training and at test time.
 Recall that dropout also exhibits this characteristic.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, sau khi huấn luyện, chúng ta sẽ sử dụng toàn bộ tập dữ liệu để tính toán sự ước lượng ổn định các con số thống kê của những giá trị kích hoạt và sau đó cố định chúng tại thời điểm dự đoán.
+Do đó, BN hoạt động khác nhau ở trong quá trình huấn luyện và quá trình kiểm tra.
+Hãy nhớ rằng dropout cũng thể hiện tính chất này.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -293,13 +297,13 @@ Recall that dropout also exhibits this characteristic.
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình Từ đầu
 
 <!--
 Below, we implement a batch normalization layer with `ndarray`s from scratch:
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta lập trình lại từ đầu tầng chuẩn hoá theo batch mà chỉ dùng $ndarrays$.
 
 ```{.python .input  n=72}
 import d2l
@@ -346,7 +350,12 @@ The `num_features` parameter required by the `BatchNorm` instance is the number 
 The `num_dims` parameter also required by this instance is 2 for a fully-connected layer and 4 for a convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể tạo ra một tầng `BatchNorm` đúng cách.
+Tầng này sẽ duy trì những tham số thích hợp tương ứng với tỉ lệ `gamma` và độ chệch `beta`, hai tham số này sẽ được cập nhật trong quá trình huấn luyện.
+Thêm vào đó, tầng BN sẽ sẽ duy trì một giá trị trung bình động của những giá trị trung bình và phương sai cho các lần chạy sau trong lúc mô hình dự đoán. 
+Tham số `num_features` được yêu cầu truyền vào bởi đối tượng `BatchNorm` là số lượng các đầu ra cho tầng kết nối đầy đủ và số lượng kênh đầu ra cho tầng tích chập.
+Tham số `num_dims` cũng được yêu cầu truyền vào bởi đối tượng này là 2 cho tầng kết nối đầy đủ và 4 cho tầng tích chập.
+
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -637,7 +646,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đinh Đắc
 
 <!-- Phần 5 -->
-*
+* Đinh Đắc
 
 <!-- Phần 6 -->
 *
