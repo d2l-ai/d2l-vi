@@ -395,7 +395,7 @@ Trong hình trên, ta dễ dàng nhận thấy điều này.
 Đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
 Trong trường hợp này, chỉ số trong phép lấy tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
 Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
-ta sẽ tiếp tục đề cập đến phép tương quan chéo như là phép tích chập mặc dù, đúng ra hơi khác một chút.
+ta sẽ tiếp tục đề cập đến phép tương quan chéo như là phép tích chập, mặc dù đúng ra chúng hơi khác nhau một chút.
 
 <!--
 ## Summary
