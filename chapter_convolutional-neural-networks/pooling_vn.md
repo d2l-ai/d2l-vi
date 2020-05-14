@@ -118,6 +118,7 @@ $$
 A pooling layer with a pooling window shape of $p \times q$ is called a $p \times q$ pooling layer.
 The pooling operation is called $p \times q$ pooling.
 -->
+
 Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$.
 Một phép gộp được gọi là phép gộp $p \times q$.
 
@@ -129,6 +130,7 @@ or `X[i, j+1]` and `X[i, j+2]` are different, the pooling layer outputs all incl
 That is to say, using the $2\times 2$ maximum pooling layer, we can still detect if the pattern recognized by the convolutional layer
 moves no more than one element in height and width.
 -->
+
 Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập đến ở đầu chương.
 Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho tầng gộp cực đại $2\times 2$.
 Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`. 
@@ -140,6 +142,7 @@ In the code below, we implement the forward computation of the pooling layer in 
 This function is similar to the `corr2d` function in :numref:`sec_conv_layer`.
 However, here we have no kernel, computing the output as either the max or the average of each region in the input..
 -->
+
 Trong đoạn mã bên dưới, chúng tôi lập trình lượt truyền xuôi của tầng gộp trong hàm `pool2d`.
 Hàm này tương tự với hàm `corr2d` trong :numref:`sec_conv_layer`.
 Tuy nhiên, hàm này không có bộ lọc nên kết quả đầu ra hoặc là giá trị lớn nhất, hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
@@ -332,41 +335,17 @@ pool2d(X)
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2352)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2352)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
 * Phạm Minh Đức
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
 * Nguyễn Đình Nam
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
 * Đinh Đắc
-* Nguyễn Văn Cường
 * Phạm Hồng Vinh
-<!-- Phần 5 -->
-* Dac Dinh
