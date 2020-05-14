@@ -219,7 +219,7 @@ apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the
 ### Batch Normalization During Prediction
 -->
 
-### Chuẩn hoá theo batch trong quá trình dự đoán
+### Chuẩn hoá theo Batch trong Quá trình Dự đoán
 
 <!--
 As we mentioned earlier, BN typically behaves differently in training mode and prediction mode.
@@ -249,7 +249,7 @@ Hãy nhớ rằng dropout cũng thể hiện tính chất này.
 ## Implementation from Scratch
 -->
 
-## Lập trình từ đầu
+## Lập trình Từ đầu
 
 <!--
 Below, we implement a batch normalization layer with `ndarray`s from scratch:
