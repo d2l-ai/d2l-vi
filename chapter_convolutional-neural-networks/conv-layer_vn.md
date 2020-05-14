@@ -311,8 +311,7 @@ Instead, we use the built-in `Conv2D` class provided by Gluon below.
 -->
 
 Trước đây ta đã tự xây dựng lớp `Conv2D`.
-Tuy nhiên, do ta sử dụng các phép gán một phần tử,
-Gluon sẽ gặp một số khó khăn khi tính gradient.
+Tuy nhiên, do ta sử dụng các phép gán một phần tử, Gluon sẽ gặp một số khó khăn khi tính gradient.
 Thay vào đó, ta sử dụng lớp `Conv2D` có sẵn của Gluon như sau.
 
 ```{.python .input  n=83}
