@@ -325,7 +325,7 @@ pool2d(X)
 1. Có thể lập trình tầng gộp trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
 2. Có thể lập trình tầng gộp cực đại như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
 3. Hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước $c\times h\times w$, kích thước của cửa sổ gộp $p_h\times p_w$ với đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
-4. Tại sao kết quả đầu ra khi dùng tầng gộp cực đại và tầng gộp trung bình lại khác nhau?
+4. Tại sao ta mong đợi tầng gộp cực đại và tầng gộp trung bình có những ảnh hưởng khác nhau?
 5. Theo ý kiến của bạn, có cần riêng một tầng gộp cực tiểu không? Có thể thay thế bằng một cơ chế khác không?
 6. Hãy thử suy nghĩ một cơ chế khác nằm giữa gộp trung bình và gộp cực đại (gợi ý: hãy nhớ lại hàm softmax). Tại sao nó không phổ biến?
 
