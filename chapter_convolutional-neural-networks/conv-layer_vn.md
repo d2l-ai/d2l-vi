@@ -170,9 +170,9 @@ The two parameters of the convolutional layer are the kernel and the scalar bias
 When training models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully connected layer.
 -->
 
-Tầng tích chập thực hiện phép toán tương quan chéo giữa đầu vào và bộ lọc sau đó cộng vào một hệ số điều chỉnh để có được đầu ra.
-Các tham số của tầng tích chập chính là các giá trị cấu tạo nên bộ lọc và hệ số điều chỉnh.
-Khi huấn luyện mô hình dựa trên các tầng tích chập, ta thường khởi tạo bộ lọc ngẫu nhiên, giống như cách ta làm với tầng kết nối đầy đủ.
+Tầng tích chập thực hiện phép toán tương quan chéo giữa đầu vào và hạt nhân, sau đó cộng thêm một hệ số điều chỉnh để có được đầu ra.
+Hai tham số của tầng tích chập là hạt nhân và hệ số điều chỉnh.
+Khi huấn luyện mô hình chứa các tầng tích chập, ta thường khởi tạo hạt nhân ngẫu nhiên, giống như cách ta làm với tầng kết nối đầy đủ.
 
 <!--
 We are now ready to implement a two-dimensional convolutional layer based on the `corr2d` function defined above.
@@ -183,8 +183,8 @@ As with $h \times w$ cross-correlation we also refer to convolutional layers as 
 
 Bây giờ ta đã sẵn sàng lập trình một tầng tích chập hai chiều dựa vào hàm `corr2d` ta vừa định nghĩa ở trên.
 Trong hàm khởi tạo `__init__`, ta khai báo hai tham số của mô hình `weight` và `bias`.
-Hàm tính lượt truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm vào hệ số điều chỉnh.
-Cũng giống cách gọi phép tương quan chéo $h \times w$, ta cũng đề cập đến các tầng tích chập là phép tích chập $h \times w$.
+Hàm tính lượt truyền xuôi `forward` gọi hàm `corr2d` và cộng thêm hệ số điều chỉnh.
+Cũng giống cách gọi phép tương quan chéo $h \times w$, ta cũng gọi các tầng tích chập là phép tích chập $h \times w$.
 
 ```{.python .input  n=70}
 class Conv2D(nn.Block):
@@ -205,7 +205,7 @@ class Conv2D(nn.Block):
 ## Object Edge Detection in Images
 -->
 
-## Phát hiện biên của vật thể trong ảnh
+## Phát hiện Biên của Vật thể trong Ảnh
 
 <!--
 Let's take a moment to parse a simple application of a convolutional layer: detecting the edge of an object in an image by finding the location of the pixel change.
@@ -213,7 +213,7 @@ First, we construct an 'image' of $6\times 8$ pixels.
 The middle four columns are black (0) and the rest are white (1).
 -->
 
-Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một đối tượng trong một bức ảnh bằng cách xác định vị trí các điểm ảnh thay đổi.
+Hãy quan sát một ứng dụng đơn giản của tầng tích chập: phát hiện đường biên của một vật thể trong một bức ảnh bằng cách xác định vị trí các điểm ảnh thay đổi.
 Đầu tiên, ta dựng một 'bức ảnh' có kích thước là $6\times 8$ điểm ảnh.
 Bốn cột ở giữa có màu đen (giá trị 0) và các cột còn lại có màu trắng (giá trị 1).
 
@@ -228,7 +228,7 @@ Next, we construct a kernel `K` with a height of $1$ and width of $2$.
 When we perform the cross-correlation operation with the input, if the horizontally adjacent elements are the same, the output is 0. Otherwise, the output is non-zero.
 -->
 
-Sau đó, ta tạo một bộ lọc `K` có chiều cao bằng $1$ và chiều rộng bằng $2$.
+Sau đó, ta tạo một hạt nhân `K` có chiều cao bằng $1$ và chiều rộng bằng $2$.
 Khi thực hiện phép tương quan chéo với đầu vào, nếu hai phần tử cạnh nhau theo chiều ngang có giá trị giống nhau thì đầu ra sẽ bằng 0, còn lại đầu ra sẽ khác không.
 
 ```{.python .input  n=67}
@@ -247,8 +247,8 @@ As you can see, we detect 1 for the edge from white to black and -1 for the edge
 All other outputs take value $0$.
 -->
 
-Truyền giá trị của `X` và bộ lọc `K` để thực hiện phép tương quan chéo.
-Bạn có thể thấy, tại các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
+Ta đã sẵn sàng thực hiện phép tương quan chéo với các đối số `X` (đầu vào) và `K` (hạt nhân).
+Bạn có thể thấy rằng các vị trí biên trắng đổi thành đen có giá trị 1, còn các vị trí biên đen đổi thành trắng có giá trị -1.
 Các vị trí còn lại của đầu ra có giá trị 0.
 
 ```{.python .input  n=69}
@@ -261,8 +261,8 @@ We can now apply the kernel to the transposed image.
 As expected, it vanishes. The kernel `K` only detects vertical edges.
 -->
 
-Hãy áp dụng bộ lọc này cho chuyển vị của ma trận điểm ảnh.
-Như kì vọng, giá trị tương quan chéo bằng không. Bộ lọc `K` chỉ có thể phát hiện biên dọc.
+Bầy giờ hãy áp dụng hạt nhân này cho chuyển vị của ma trận điểm ảnh.
+Như kì vọng, giá trị tương quan chéo bằng không. Hạt nhân `K` chỉ có thể phát hiện biên dọc.
 
 ```{.python .input}
 corr2d(X.T, K)
