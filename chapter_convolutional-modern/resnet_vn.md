@@ -201,7 +201,7 @@ blk(X).shape
 ## ResNet Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình ResNet
 
 <!--
 The first two layers of ResNet are the same as those of the GoogLeNet we described before: 
