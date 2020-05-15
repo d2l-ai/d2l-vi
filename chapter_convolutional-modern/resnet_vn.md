@@ -106,7 +106,7 @@ Ký hiệu đầu vào bởi $\mathbf{x}$.
 Chúng ta giả sử rằng phép chiếu lý tưởng chúng ta muốn đạt được bằng việc học là $f(\mathbf{x})$, được sử dụng là đầu vào của hàm kích hoạt.
 Phần nằm trong hộp đường chấm ở bên trái của ảnh cần khớp trực tiết với phép chiếu $f(\mathbf{x})$.
 Điều này có thể không đơn giản nếu chúng ta không cần một tầng cụ thể đó và chúng ta muốn giữ lại đầu vào $\mathbf{x}$.
-Trong thực tế, phép chiếu thặng dư thường dễ dàng hơn để tối ưu.
+Trong thực tế, phép chiếu thặng dư thường dễ để tối ưu hơn.
 Chúng ta chỉ cần đặt $f(\mathbf{x}) = 0$.
 Phía bên phải ảnh trong :numref:`fig_residual_block` mô tả Khối Thặng dư cơ bản của mạng ResNet.
 Những kiến trúc tương tự sau đó đã được đề xuất cho các mô hình chuỗi mà chúng ta sẽ nghiên cứu trong các chương sau.
