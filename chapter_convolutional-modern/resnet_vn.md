@@ -69,7 +69,7 @@ Chỉ khi các lớp hàm số lớn hơn chứa các lớp nhỏ hơn, thì m�
 Đây là câu hỏi mà He và các cộng sự đã cân nhắc năm 2016 khi họ nghiên cứu các mô hình thị giác sâu.
 Trọng tâm của ResNet nằm ở ý tưởng rằng mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
 Điều này có nghĩa là nếu chúng ta huấn luyện tầng mới được thêm vào thành một phép chiếu đồng nhất $f(\mathbf{x}) = \mathbf{x}$, mô hình mới sẽ có hiệu quả như mô hình ban đầu.
-Khi mô hình mới đạt kết quả tốt hơn để khớp với tập dữ liệu huấn luyện, tầng được thêm vào có giúp giảm bớt sai số huấn luyện.
+Vì mô hình mới có thể đạt kết quả khớp tập dữ liệu huấn luyện tốt hơn, tầng được thêm vào có thể giúp giảm sai số huấn luyện dễ dàng hơn.
 Thậm chí tốt hơn, hàm số đồng nhất nên là hàm số đơn giản nhất trong một tầng thay vì hàm số null $f(\mathbf{x}) = 0$.
 
 <!--
