@@ -203,14 +203,15 @@ Control and reinforcement learning algorithms use such tools extensively.
 ### Causality
 -->
 
-### *dịch tiêu đề phía trên*
+### Quan hệ nhân quả
 
 <!--
 In principle, there is nothing wrong with unfolding $p(x_1, \ldots, x_T)$ in reverse order.
 After all, by conditioning we can always write it via
 -->
 
-*dịch đoạn phía trên*
+Về nguyên tắc, không có gì sai cả khi trải $p(x_1, \ldots, x_T)$ theo thứ tự ngược lại.
+Bằng cách đặt điều kiện như vậy, chúng ta luôn có thể viết chúng như sau
 
 $$p(x_1, \ldots, x_T) = \prod_{t=T}^1 p(x_t \mid x_{t+1}, \ldots, x_T).$$
 
@@ -227,13 +228,21 @@ For more on this topic see e.g., the book by :cite:`Peters.Janzing.Scholkopf.201
 We are barely scratching the surface of it.
 -->
 
-*dịch đoạn phía trên*
+Trên thực tế, nếu chúng ta có một mô hình Markov, chúng ta cũng có được phân phối xác suất có điều kiện ngược.
+Tuy nhiên, trong nhiều trường hợp, dữ liệu tồn tại một hướng nhất định, cụ thể là luôn đi về phía trước theo thời gian.
+Rõ ràng là các sự kiện trong tương lai sẽ ảnh hưởng đến quá khứ.
+Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ.
+Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi.
+Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn hơn là $p(x_t \mid x_{t+1})$.
+Ví dụ: bài báo :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta không thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có nhiễu cộng hưởng, trong khi đó, điều ngược lại không đúng. Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới hướng truyền xuôi để ước lượng.
+Để biết thêm về chủ đề này, hãy tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
+Chúng ta chỉ lướt qua đôi chút về vấn đề này ở đây.
 
 <!--
 ## A Toy Example
 -->
 
-## *dịch tiêu đề phía trên*
+## Một ví dụ đơn giản
 
 <!--
 After so much theory, let us try this out in practice.
@@ -241,7 +250,9 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy xem xét vấn đề này trong thực tế sau khi đã đề cập về lý thuyết ở trên.
+Đầu tiên, hãy sinh một vài dữ liệu như sau.
+Để đơn giản, chúng ta tạo chuỗi thời gian của mình bằng cách sử dụng hàm sin cộng thêm với ít nhiễu.
 
 
 ```{.python .input}
@@ -269,7 +280,15 @@ A few layers of a fully connected network, ReLU activation and $\ell_2$ loss.
 Since much of the modeling is identical to the previous sections when we built regression estimators in Gluon, we will not delve into much detail.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn được sử dụng để huấn luyện mạng.
+Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$.
+Sẽ rất tinh tế nếu bạn đọc có thể nhận thấy rằng hiện tại chúng ta mới có $\tau$ ít điểm dữ liệu hơn, vì chúng ta không có đủ lịch sử cho $ \ tau $ đầu tiên trong số đó.
+Một sửa chữa đơn giản, đặc biệt nếu chuỗi thời gian dài là loại bỏ các điều khoản đó.
+Ngoài ra, chúng ta có thể đệm chuỗi thời gian với số không.
+Mã dưới đây về cơ bản là giống hệt với mã huấn luyện trong các phần trước.
+Chúng tôi giữ kiến trúc khá đơn giản.
+Một vài lớp của mạng được kết nối đầy đủ, kích hoạt ReLU và mất $ \ ell_2 $.
+Do phần lớn mô hình giống hệt với các phần trước khi chúng ta xây dựng các công cụ ước tính hồi quy trong Glamon, chúng ta sẽ không đi sâu vào chi tiết.
 
 
 ```{.python .input}
@@ -301,7 +320,7 @@ loss = gluon.loss.L2Loss()
 Now we are ready to train.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ thì chúng ta đã sẵn sàng để huấn luyện.
 
 ```{.python .input}
 def train_net(net, train_iter, loss, epochs, lr):
