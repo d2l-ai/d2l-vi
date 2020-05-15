@@ -367,7 +367,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Tham khảo Bảng 1 trong bài báo :cite:`He.Zhang.Ren.ea.2016` để cài đặt các biến thể khác nhau.
 2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "nút cổ chai" để giảm độ phức tạp của mô hình. Hãy thử xây dựng kiến trúc đó.
-3. Trong các phiên bản tiếp theo của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự cài đặt phép cải thiện này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
+3. Trong các phiên bản tiếp theo của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình phép cải thiện này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
 4. Chứng minh rằng nếu $\mathbf{x}$ được tạo bởi ReLU, thì khối ResNet thực sự bao gồm hàm số đồng nhất.
 5. Tại sao chúng ta không thể tăng không giới hạn độ phức tạp của các hàm số, ngay cả khi các lớp hàm số được lồng nhau?
 
