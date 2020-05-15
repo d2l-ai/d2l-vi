@@ -65,7 +65,12 @@ As the new model may get a better solution to fit the training dataset, the adde
 Even better, the identity function rather than the null $f(\mathbf{x}) = 0$ should be the simplest function within a layer.
 -->
 
-*dịch đoạn phía trên*
+Chỉ khi các lớp hàm số lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của một mạng.
+Đây là câu hỏi mà He và các cộng sự đã cân nhắc năm 2016 khi họ nghiên cứu các mô hình thị giác sâu.
+Trọng tâm của ResNet nằm ở ý tưởng rằng mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
+Điều này có nghĩa là nếu chúng ta huấn luyện tầng mới được thêm vào thành một phép chiếu đồng nhất $f(\mathbf{x}) = \mathbf{x}$, mô hình mới sẽ có hiệu quả như mô hình ban đầu.
+Vì mô hình mới có thể đạt kết quả khớp tập dữ liệu huấn luyện tốt hơn, tầng được thêm vào có thể giúp giảm sai số huấn luyện dễ dàng hơn.
+Thậm chí tốt hơn, hàm số đồng nhất nên là hàm số đơn giản nhất trong một tầng thay vì hàm số null $f(\mathbf{x}) = 0$.
 
 <!--
 These considerations are rather profound but they led to a surprisingly simple solution, a residual block.
@@ -73,14 +78,15 @@ With it, :cite:`He.Zhang.Ren.ea.2016` won the ImageNet Visual Recognition Challe
 The design had a profound influence on how to build deep neural networks.
 -->
 
-*dịch đoạn phía trên*
-
+Những xem xét này rất sâu sắc nhưng chúng đã dẫn đến một lời giải đơn giản đáng ngạc nhiên, đó là một khối thặng dư.
+Với ý tưởng này, :cite:`He.Zhang.Ren.ea.2016` đã giành chiến thắng cuộc thi Nhận dạng Ảnh ImageNet năm 2015.
+Thiết kế này có ảnh hưởng sâu sắc tới các xây dựng dựng các kiến trúc mạng nơ-ron sâu.
 
 <!--
 ## Residual Blocks
 -->
 
-## *dịch tiêu đề phía trên*
+## Khối Thặng dư
 
 <!--
 Let us focus on a local neural network, as depicted below.
@@ -95,13 +101,21 @@ The right image in :numref:`fig_residual_block` illustrates the basic Residual B
 Similar architectures were later proposed for sequence models which we will study later.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, chúng ta hãy tập trung vào mạng nơ-ron cục bộ như mô tả dưới đây.
+Ký hiệu đầu vào bởi $\mathbf{x}$.
+Chúng ta giả sử rằng phép chiếu lý tưởng chúng ta muốn đạt được bằng việc học là $f(\mathbf{x})$, được sử dụng là đầu vào của hàm kích hoạt.
+Phần nằm trong viền nét đứt ở bên trái của ảnh cần trực tiếp khớp với ánh xạ $f(\mathbf{x})$.
+Điều này có thể không đơn giản nếu chúng ta không cần một tầng cụ thể đó và chúng ta muốn giữ lại đầu vào $\mathbf{x}$.
+Trong thực tế, phép chiếu thặng dư thường dễ để tối ưu hơn.
+Chúng ta chỉ cần đặt $f(\mathbf{x}) = 0$.
+Phía bên phải ảnh trong :numref:`fig_residual_block` mô tả Khối Thặng dư cơ bản của mạng ResNet.
+Những kiến trúc tương tự sau đó đã được đề xuất cho các mô hình chuỗi mà chúng ta sẽ nghiên cứu trong các chương sau.
 
 <!--
 ![The difference between a regular block (left) and a residual block (right). In the latter case, we can short-circuit the convolutions.](../img/residual-block.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/residual-block.svg)
+![Sự khác biệt giữa một khối thông thường (trái) và một khối thặng dư (phải). Trong trường hợp sau, chúng ta có thể bỏ qua các tích chập.](../img/residual-block.svg)
 :label:`fig_residual_block`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -410,7 +424,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
