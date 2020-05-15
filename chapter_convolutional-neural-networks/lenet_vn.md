@@ -16,10 +16,10 @@ To make this data amenable to multilayer perceptrons which anticipate receiving 
 we first flattened each image, yielding vectors of length 784, before processing them with a series of fully-connected layers.
 -->
 
-Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập với đầy đủ chức năng đầu tiên.
-Lần đầu làm việc với dữ liệu hình ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho hình ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
-Mỗi hình ảnh trong Fashion-MNIST là một ma trận hai chiều có kích thước $28 \times 28$.
-Để làm cho dữ liệu này tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, đầu tiên ta trải phẳng từng hình ảnh, thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
+Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập hoàn chỉnh đầu tiên.
+Lần đầu làm việc với dữ liệu ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
+Mỗi ảnh trong Fashion-MNIST là một ma trận hai chiều có kích thước $28 \times 28$.
+Để tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, đầu tiên ta trải phẳng từng hình ảnh và thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
 
 <!--
 Now that we have introduced convolutional layers, we can keep the image in its original spatially-organized grid, processing it with a series of successive convolutional layers.
@@ -38,8 +38,8 @@ Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in th
 -->
 
 Trong phần này, chúng tôi sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên.
-Ưu điểm của nó được minh hoạ lần đầu bởi Yann Lecun (thời điểm đó đang là một nhà nghiên cứu tại AT&T Bell Labs) với mục đích nhận dạng các chữ số viết tay trong hình ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
-Vào những năm 90, các thí nghiệm của họ với LeNet đã đưa ra bằng chứng đầu tiên thuyết phục rằng việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược là khả thi.
+Ưu điểm của mạng tích chập được minh hoạ lần đầu bởi Yann Lecun (lúc đó đang nghiên cứu tại AT&T Bell Labs) với ứng dụng nhận dạng các số viết tay trong ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
+Vào những năm 90, các thí nghiệm của các nhà nghiên cứu với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên về tính khả thi của việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược.
 Mô hình của họ đã đạt được kết quả rất tốt (chỉ ngang hàng với Máy Vector Hỗ trợ --- SVM tại thời điểm đó) và đã được đưa vào sử dụng để nhận diện các chữ số khi xử lý tiền gửi trong máy ATM.
 Một số máy ATM vẫn chạy các đoạn mã mà Yann và đồng nghiệp Leon Bottou đã viết vào những năm 1990!
 
@@ -86,7 +86,7 @@ The first convolutional layer has 6 output channels, and second convolutional la
 Các đơn vị cơ bản trong khối tích chập là một tầng tích chập và một lớp gộp trung bình theo sau
 (lưu ý rằng gộp cực đại hoạt động tốt hơn, nhưng nó chưa được phát minh vào những năm 90).
 Tầng tích chập được sử dụng để nhận dạng các mẫu không gian trong ảnh,
-chẳng hạn như các đường kẻ và các bộ phận của các vật thể, lớp gộp trung bình phía sau được sử dụng để giảm số chiều.
+chẳng hạn như các đường cạnh và các bộ phận của vật thể, lớp gộp trung bình phía sau được dùng để giảm số chiều.
 Khối tầng tích chập tạo nên từ việc xếp chồng các khối nhỏ gồm hai đơn vị cơ bản này.
 Mỗi tầng tích chập sử dụng hạt nhân có kích thước $5\times 5$ và xử lý mỗi đầu ra với một hàm kích hoạt sigmoid
 (nhấn mạnh rằng ReLU hiện được biết là hoạt động đáng tin cậy hơn, nhưng chưa được phát minh vào thời điểm đó).
@@ -117,12 +117,12 @@ LeNet's fully-connected layer block has three fully-connected layers, with 120, 
 Because we are still performing classification, the 10 dimensional output layer corresponds to the number of possible output classes.
 -->
 
-Đầu ra của khối tích chập có kích thước được cho bởi (kích thước batch, kênh, chiều cao, chiều rộng).
+Đầu ra của khối tích chập có kích thước được xác định bằng (kích thước batch, kênh, chiều cao, chiều rộng).
 Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch. 
 Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
 nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu. 
 Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
-Bởi vì ta vẫn đang thực hiện phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi. 
+Bởi vì ta đang thực hiện bài toán phân loại, tầng đầu ra 10 chiều tương ứng vớisố lượng các lớp đầu ra khả thi ( 10 chữ số từ 0 đến 9). 
 
 <!--
 While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
@@ -130,8 +130,8 @@ you can see below that implementing it in a modern deep learning library is rema
 Again, we will rely on the Sequential class.
 -->
 
-Để đạt đến mức độ mà bạn thực sự hiểu những gì đang diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
-bạn có thể thấy bên dưới đây việc lập trình nó trong một thư viện học sâu hiện đại rất đơn giản.
+Để thực sự hiểu những gì diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
+bạn có thể thấy bên dưới đây việc lập trình Lenet bằng thư viện học sâu hiện đại rất đơn giản.
 Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
 ```{.python .input}
@@ -159,8 +159,8 @@ which tends to be significantly more convenient to train.
 Other than that, this network matches the historical definition of LeNet5.
 -->
 
-So với mạng ban đầu, ta đã tự do thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có xu hướng thuận tiện hơn đáng kể cho việc huấn luyện.
-Ngoại trừ điểm đó, mạng này giống với định nghĩa của LeNet5 trong quá khứ.
+So với mạng ban đầu, ta đã thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có thường dễ huấn luyện hơn đáng kể.
+Ngoại trừ điểm đó, mạng này giống với định nghĩa gốc của LeNet5 trong quá khứ.
 
 <!--
 Next, let us take a look of an example.
