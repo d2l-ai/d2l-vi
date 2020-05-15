@@ -104,7 +104,7 @@ Similar architectures were later proposed for sequence models which we will stud
 Bây giờ, chúng ta hãy tập trung vào mạng nơ-ron cục bộ như mô tả dưới đây.
 Ký hiệu đầu vào bởi $\mathbf{x}$.
 Chúng ta giả sử rằng phép chiếu lý tưởng chúng ta muốn đạt được bằng việc học là $f(\mathbf{x})$, được sử dụng là đầu vào của hàm kích hoạt.
-Phần nằm trong hộp đường chấm ở bên trái của ảnh cần khớp trực tiết với phép chiếu $f(\mathbf{x})$.
+Phần nằm trong viền nét đứt ở bên trái của ảnh cần trực tiếp khớp với ánh xạ $f(\mathbf{x})$.
 Điều này có thể không đơn giản nếu chúng ta không cần một tầng cụ thể đó và chúng ta muốn giữ lại đầu vào $\mathbf{x}$.
 Trong thực tế, phép chiếu thặng dư thường dễ để tối ưu hơn.
 Chúng ta chỉ cần đặt $f(\mathbf{x}) = 0$.
