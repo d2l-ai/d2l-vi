@@ -376,6 +376,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | target data / distribution | dữ liệu / phân phối mục tiêu   | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | tensor contraction         | phép co tensor                 | [https://git.io/JvojX](https://git.io/JvojX) |
 | test set                   | tập kiểm tra                   |                                              |
+| test data                  | dữ liệu văn bản                |                                              |
 | test set performance       | chất lượng trên tập kiểm tra   |                                              |
 | test statistic             | tiêu chuẩn kiểm định           | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | timestep                   | bước thời gian                 | [https://git.io/JvojQ](https://git.io/JvojQ) |
