@@ -26,7 +26,7 @@ Now that we have introduced convolutional layers, we can keep the image in its o
 Moreover, because we are using convolutional layers, we can enjoy a considerable savings in the number of parameters required.
 -->
 
-Bây giờ đã có các tầng tích chập, ta có thể giữ nguyên ảnh đầu vào ở dạng lưới trong không gian và xử lý chúng với một chuỗi các tầng tích chập liên tiếp.
+Bây giờ đã có các tầng tích chập, ta có thể giữ nguyên ảnh đầu vào ở dạng không gian 2 chiều như ảnh gốc và xử lý chúng với một chuỗi các tầng tích chập liên tiếp.
 Hơn nữa, vì ta đang sử dụng các tầng tích chập, số lượng tham số cần thiết sẽ giảm đi đáng kể.
 
 <!--
