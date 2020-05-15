@@ -54,7 +54,8 @@ Khá hợp lý khi giả sử rằng nếu chúng ta thiết kế một kiến t
 Nói cách khác, chúng ta kỳ vọng rằng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
 Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì sẽ không đảm bảo rằng điều này có thể xảy ra.
 Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
-Đây là tình huống hay xảy ra trong thực tế--- việc thêm các tầng không chỉ khiến cho một mạng có tính biểu diễn cao hơn, mà nó còn mang lại những thay đổi mà đôi khi rất khó lường.
+Đây là tình huống hay xảy ra trong thực tiễn --- việc thêm các tầng không chỉ khiến cho một mạng có tính biểu diễn cao hơn, mà nó còn mang lại những thay đổi mà đôi khi rất khó lường.
+:numref:`fig_functionclasses` mô tả điều này theo các thuật ngữ hơi trừu tượng.
 
 <!--
 ![Left: non-nested function classes. The distance may in fact increase as the complexity increases. Right: with nested function classes this does not happen.](../img/functionclasses.svg)
