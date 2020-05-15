@@ -345,7 +345,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-* Các khối thặng dư cho phép tham số hóa liên quan đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
+* Các khối thặng dư cho phép tham số hóa tương đối đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
 * Thêm các khối thặng dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
 * Chúng ta có thể huấn luyện một mạng nơ-ron sâu hiệu quả bằng cách cho dữ liệu đi xuyên qua các kênh dữ liệu liên tầng của các khối thặng dư.
 * ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu có bản chất tích chập và cả tuần tự.
