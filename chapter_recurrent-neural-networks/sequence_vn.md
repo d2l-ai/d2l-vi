@@ -144,7 +144,13 @@ Statisticians call dynamics that do not change *stationary*.
 Regardless of what we do, we will thus get an estimate of the entire time series via
 -->
 
-*dịch đoạn phía trên*
+Cả hai trường hợp đều đặt ra câu hỏi về cách sinh dữ liệu huấn luyện như thế nào.
+Người ta thường sử dụng các quan sát quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
+Chúng ta không hi vọng thời gian sẽ đứng yên.
+Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, thì ít nhất động lực của chuỗi thời gian sẽ không đổi.
+Điều này khá hợp lý, vì động lực học mới thì không thể dự đoán được bằng cách sử dụng dữ liệu mà chúng ta có.
+Các nhà thống kê gọi các động lực không thay đổi này là *đứng yên*.
+Do đó, bất kể những gì chúng ta làm gì, chúng ta sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}, \ldots, x_1).$$
@@ -154,7 +160,8 @@ Note that the above considerations still hold if we deal with discrete objects, 
 The only difference is that in such a situation we need to use a classifier rather than a regressor to estimate $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ, thay vì số.
+Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ  phân loại hơn là một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -164,7 +171,7 @@ The only difference is that in such a situation we need to use a classifier rath
 ### Markov Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình Markov
 
 <!--
 Recall the approximation that in an autoregressive model we use only $(x_{t-1}, \ldots, x_{t-\tau})$ instead of $(x_{t-1}, \ldots, x_1)$ to estimate $x_t$.
@@ -172,7 +179,9 @@ Whenever this approximation is accurate we say that the sequence satisfies a *Ma
 In particular, if $\tau = 1$, we have a *first order* Markov model and $p(x)$ is given by
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại phép xấp xỉ trong một mô hình truy hồi, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$.
+Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn điều kiện *Markov*.
+Cụ thể, nếu $\tau = 1$, chúng ta có mô hình *bậc nhất* Markov và $p(x)$ như sau
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}).$$
@@ -182,7 +191,8 @@ Such models are particularly nice whenever $x_t$ assumes only a discrete value, 
 For instance, we can compute $p(x_{t+1} \mid x_{t-1})$ efficiently using the fact that we only need to take into account a very short history of past observations:
 -->
 
-*dịch đoạn phía trên*
+Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ được giả định bằng một giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán các giá trị  tuần tự một cách chính xác.
+Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách là chúng ta chỉ sử dụng các quan sát trong quá khứ trong một khoảng thời gian ngắn:
 
 
 $$p(x_{t+1} \mid x_{t-1}) = \sum_{x_t} p(x_{t+1} \mid x_t) p(x_t \mid x_{t-1}).$$
@@ -193,7 +203,8 @@ Going into details of dynamic programming is beyond the scope of this section, b
 Control and reinforcement learning algorithms use such tools extensively.
 -->
 
-*dịch đoạn phía trên*
+Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong: numref: `sec_bi_rnn`.
+Các công cụ trên được sử dụng rất phổ biến trong các thuật toán học tăng cường.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -490,13 +501,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* 
 
 <!-- Phần 2 -->
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 *
