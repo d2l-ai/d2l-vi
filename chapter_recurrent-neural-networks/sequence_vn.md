@@ -282,13 +282,13 @@ Since much of the modeling is identical to the previous sections when we built r
 
 Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn được sử dụng để huấn luyện mạng.
 Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$.
-Sẽ rất tinh tế nếu bạn đọc có thể nhận thấy rằng hiện tại chúng ta mới có $\tau$ ít điểm dữ liệu hơn, vì chúng ta không có đủ lịch sử cho $ \ tau $ đầu tiên trong số đó.
-Một sửa chữa đơn giản, đặc biệt nếu chuỗi thời gian dài là loại bỏ các điều khoản đó.
-Ngoài ra, chúng ta có thể đệm chuỗi thời gian với số không.
-Mã dưới đây về cơ bản là giống hệt với mã huấn luyện trong các phần trước.
-Chúng tôi giữ kiến trúc khá đơn giản.
-Một vài lớp của mạng được kết nối đầy đủ, kích hoạt ReLU và mất $ \ ell_2 $.
-Do phần lớn mô hình giống hệt với các phần trước khi chúng ta xây dựng các công cụ ước tính hồi quy trong Glamon, chúng ta sẽ không đi sâu vào chi tiết.
+Sẽ rất tinh tế nếu bạn đọc có thể nhận thấy rằng hiện tại chúng ta mới có $\tau$ điểm dữ liệu ít hơn hơn, vì chúng ta không có đủ lịch sử về $\tau$ đầu tiên trong số đó.
+Chúng ta loại bỏ một vài phần tử trên để khắc phục điều này, đặc biệt nếu chuỗi thời gian rất dài.
+Hoặc là, chúng ta có thể đệm 0 vào chuỗi thời gian.
+Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước.
+Chúng tôi cố gắng giữ cho kiến trúc đơn giản.
+Một vài tầng của mạng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $ \ ell_2 $.
+Do phần lớn mô hình giống hệt với các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết.
 
 
 ```{.python .input}
@@ -518,7 +518,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 *
