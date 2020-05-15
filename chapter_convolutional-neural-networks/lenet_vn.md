@@ -122,7 +122,7 @@ Trước khi chuyển đầu ra của khối tích chập sang khối kết nố
 Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
 nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu. 
 Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
-Bởi vì ta đang thực hiện bài toán phân loại, tầng đầu ra 10 chiều tương ứng vớisố lượng các lớp đầu ra khả thi ( 10 chữ số từ 0 đến 9). 
+Bởi vì ta đang thực hiện bài toán phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi (10 chữ số từ 0 đến 9). 
 
 <!--
 While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
