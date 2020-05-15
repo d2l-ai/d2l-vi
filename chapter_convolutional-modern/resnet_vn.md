@@ -239,7 +239,7 @@ Now, we implement this module.
 Note that special processing has been performed on the first module.
 -->
 
-Bây giờ, chúng ta lập trình mô-đun này.
+Bây giờ chúng ta sẽ lập trình mô-đun này.
 Lưu ý rằng một phép xử lý đặc biệt đã được thực hiện ở mô-đun đầu tiên.
 
 ```{.python .input  n=4}
