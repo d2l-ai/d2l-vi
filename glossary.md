@@ -54,6 +54,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------------------|------------------------|----------------------------------------------|
 | categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
+| causality                           | quan hệ nhân quả       |                                              |
 | chain rule                          | quy tắc dây chuyền     | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | channel (computer vision)           | kênh                   |                                              |
 | classifier                          | bộ phân loại           |                                              |
