@@ -140,12 +140,12 @@ Reality is a bit more complicated than the most naive interpretations of this in
 So it may not be that a single channel learns an edge detector but rather that some direction in channel space corresponds to detecting edges.
 -->
 
-Cho đến nay, bất kể số lượng kênh đầu vào là bao nhiêu thì ta vẫn luôn kết thúc với chỉ một kênh đầu ra.
-Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều kênh ở mỗi tầng là rất cần thiết.
-Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời giảm độ phân giải không gian để đánh đổi cho *chiều kênh* sâu hơn này.
-Theo trực giác, ta có thể xem mỗi kênh tương ứng với một tập đặc trưng nào đó khác nhau.
-Nhưng thực tế phức tạp hơn một chút so với cách diễn giải theo trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích khi kết hợp với nhau.
-Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất.
+Cho đến nay, bất kể số lượng kênh đầu vào là bao nhiêu thì ta vẫn luôn kết thúc với chỉ một kênh đầu ra. 
+Tuy nhiên, như đã thảo luận trước đây, hóa ra việc có nhiều kênh ở mỗi tầng là rất cần thiết. 
+Trong các kiến trúc mạng nơ-ron phổ biến nhất, ta thường tăng kích thước chiều kênh khi tiến sâu hơn trong mạng, đồng thời giảm độ phân giải không gian để đánh đổi với *chiều kênh* sâu hơn này.
+Theo trực giác, ta có thể xem mỗi kênh tương ứng với một tập các đặc trưng khác nhau. 
+Nhưng thực tế phức tạp hơn một chút so với cách diễn giải theo trực giác này vì các biểu diễn không được học độc lập mà được tối ưu hóa để có ích khi kết hợp với nhau. 
+Vì vậy, có thể việc phát hiện biên sẽ được học bởi một vài kênh thay vì chỉ một kênh duy nhất. 
 
 
 
@@ -156,10 +156,10 @@ We concatenate them on the output channel dimension, so that the shape of the co
 In cross-correlation operations, the result on each output channel is calculated from the convolution kernel corresponding to that output channel and takes input from all channels in the input array.
 -->
 
-Đặt $c_i$ và $c_o$ lần lượt là số lượng kênh đầu vào và đầu ra, $k_h$ và $k_w$ lần lượt là chiều cao và chiều rộng của bộ lọc.
-Để có được một đầu ra với nhiều kênh, ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra.
-Ta nối chúng lại trên chiều kênh đầu ra, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$.
-Trong các phép tính tương quan chéo, kết quả trên mỗi kênh đầu ra được tính từ bộ lọc tích chập tương ứng với kênh đầu ra đó và lấy đầu vào từ tất cả các kênh trong mảng đầu vào.
+Đặt $c_i$ và $c_o$ lần lượt là số lượng kênh đầu vào và đầu ra, $k_h$ và $k_w$ lần lượt là chiều cao và chiều rộng của bộ lọc. 
+Để có được một đầu ra với nhiều kênh, ta có thể tạo một mảng bộ lọc có kích thước $c_i\timesk_h\timesk_w$ cho mỗi kênh đầu ra. 
+Ta nối chúng lại dựa trên chiều kênh đầu ra đã biết, sao cho kích thước của bộ lọc tích chập là $c_o\times c_i\times k_h\times k_w$. 
+Trong các phép tính tương quan chéo, kết quả trên mỗi kênh đầu ra được tính từ bộ lọc tích chập tương ứng với kênh đầu ra đó và lấy đầu vào từ tất cả các kênh trong mảng đầu vào. 
 
 <!--
 We implement a cross-correlation function to calculate the output of multiple channels as shown below.
@@ -180,7 +180,7 @@ def corr2d_multi_in_out(X, K):
 We construct a convolution kernel with 3 output channels by concatenating the kernel array `K` with `K+1` (plus one for each element in `K`) and `K+2`.
 -->
 
-Ta xây dựng một bộ lọc tích chập với 3 kênh đầu ra bằng cách nối mảng bộ lọc `K` với `K+1` (cộng một cho mỗi phần tử trong `K`) và `K+2`.
+Ta tạo một bộ lọc tích chập với 3 kênh đầu ra bằng cách nối mảng bộ lọc `K` với `K+1` (cộng một cho mỗi phần tử trong `K`) và `K+2`. 
 
 ```{.python .input  n=4}
 K = np.stack((K, K + 1, K + 2))
@@ -193,9 +193,9 @@ Now the output contains 3 channels.
 The result of the first channel is consistent with the result of the previous input array `X` and the multi-input channel, single-output channel kernel.
 -->
 
-Dưới đây, ta thực hiện các phép tính tương quan chéo trên mảng đầu vào `X` với mảng bộ lọc `K`.
-Đầu ra sẽ gồm có 3 kênh.
-Kết quả của kênh đầu tiên khớp với kết quả trước đây khi áp dụng bộ lọc đa kênh đầu vào, một kênh đầu ra lên mảng đầu vào `X`.
+Dưới đây, ta thực hiện các phép tính tương quan chéo trên mảng đầu vào `X` với mảng bộ lọc `K`. 
+Đầu ra sẽ gồm có 3 kênh. 
+Kết quả của kênh đầu tiên khớp với kết quả trước đây khi áp dụng bộ lọc đa kênh đầu vào và một kênh đầu ra lên mảng đầu vào `X`. 
 
 ```{.python .input  n=5}
 corr2d_multi_in_out(X, K)
@@ -219,11 +219,11 @@ Nonetheless, they are popular operations that are sometimes included in the desi
 Let us see in some detail what it actually does.
 -->
 
-Thoạt nhìn, một phép tích chập $1 \times 1$, tức $k_h = k_w = 1$, dường như không có nhiều ý nghĩa.
-Suy cho cùng, một phép tích chập là để tính toán tương quan giữa các điểm ảnh liền kề.
-Nhưng rõ ràng một phép tích chập $1 \times 1$ lại không làm như vậy.
-Mặc dù vậy, chúng là các phép tính phổ biến đôi khi được sử dụng khi thiết kế các mạng sâu phức tạp.
-Ta sẽ xem kỹ cách hoạt động của chúng.
+Thoạt nhìn, một phép tích chập $1 \times 1$, tức $k_h = k_w = 1$, dường như không có nhiều ý nghĩa. 
+Suy cho cùng, một phép tích chập là để tính toán tương quan giữa các điểm ảnh liền kề. 
+Nhưng rõ ràng một phép tích chập $1 \times 1$ lại không làm như vậy. 
+Mặc dù vậy, chúng là các phép tính phổ biến đôi khi được sử dụng khi thiết kế các mạng sâu phức tạp. 
+Ta sẽ xem kỹ cách hoạt động của chúng. 
 
 <!--
 Because the minimum window is used, the $1\times 1$ convolution loses the ability of larger convolutional layers to recognize patterns 
@@ -231,8 +231,9 @@ consisting of interactions among adjacent elements in the height and width dimen
 The only computation of the $1\times 1$ convolution occurs on the channel dimension.
 -->
 
-Do cửa sổ có kích thước tối thiểu nên so với các tầng tích chập lớn hơn, phép tích chập $1\times 1$ mất đi khả năng nhận dạng các khuôn mẫu bao gồm sự tương tác giữa các phần tử liền kề theo chiều cao và chiều rộng.
-Phép tích chập $1\times 1$ chỉ tính toán theo chiều kênh.
+Do cửa sổ có kích thước tối thiểu nên so với các tầng tích chập lớn hơn, phép tích chập $1\times 1$ mất đi khả năng nhận dạng các khuôn mẫu 
+chứa các tương tác giữa các phần tử liền kề theo chiều cao và chiều rộng. 
+Phép tích chập $1\times 1$ chỉ xảy ra trên chiều kênh.
 
 <!--
 :numref:`fig_conv_1x1` shows the cross-correlation computation using the $1\times 1$ convolution kernel with 3 input channels and 2 output channels.
@@ -244,11 +245,11 @@ Because this is still a convolutional layer, the weights are tied across pixel l
 Thus the $1\times 1$ convolutional layer requires $c_o\times c_i$ weights (plus the bias terms).
 -->
 
-:numref:`fig_conv_1x1` biểu diễn phép tính tương quan chéo sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và 2 kênh đầu ra.
-Lưu ý rằng đầu vào và đầu ra có cùng chiều cao và chiều rộng.
-Mỗi phần tử trong đầu ra là một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào.
-Bạn có thể xem tầng tích chập $1\times 1$ như một tầng kết nối đầy đủ được áp dụng lên mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi $c_i$ giá trị đầu vào thành $c_o$ giá trị đầu ra tương ứng.
-Bởi vì đây vẫn là một tầng tích chập nên các trọng số sẽ được chia sẻ giữa các vị trí điểm ảnh. <!-- theo mình hiểu thì cùng một trọng số sẽ được dùng tại các pixel khác của ảnh. Ngoài ra, mình thấy một vài tài liệu dùng "shared across pixel" thay vì "tied acrossed pixel" nên dịch là "chia sẻ"-->
+:numref:`fig_conv_1x1` biểu diễn phép tính tương quan chéo sử dụng bộ lọc tích chập $1\times 1$ với 3 kênh đầu vào và 2 kênh đầu ra. 
+Lưu ý rằng đầu vào và đầu ra có cùng chiều cao và chiều rộng. 
+Mỗi phần tử trong đầu ra là một tổ hợp tuyến tính của các phần tử *ở cùng một vị trí* trong ảnh đầu vào. 
+Bạn có thể xem tầng tích chập $1\times 1$ như một tầng kết nối đầy đủ được áp dụng lên mỗi vị trí điểm ảnh đơn lẻ để chuyển đổi $c_i$ giá trị đầu vào thành $c_o$ giá trị đầu ra tương ứng. 
+Bởi vì đây vẫn là một tầng tích chập nên các trọng số sẽ được chia sẻ giữa các vị trí điểm ảnh.<!-- theo mình hiểu thì cùng một trọng số sẽ được dùng tại các pixel khác của ảnh. Ngoài ra, mình thấy một vài tài liệu dùng "shared across pixel" thay vì "tied acrossed pixel" nên dịch là "chia sẻ"-->
 Do đó, tầng tích chập $1\times 1$ cần tới $c_o\times c_i$ trọng số (cộng thêm các hệ số điều chỉnh).
 
 
@@ -268,8 +269,8 @@ Let us check whether this works in practice: we implement the $1 \times 1$ convo
 The only thing is that we need to make some adjustments to the data shape before and after the matrix multiplication.
 -->
 
-Hãy kiểm tra xem liệu nó có hoạt động trong thực tế: Ta sẽ lập trình một phép tích chập $1 \times 1$ sử dụng một tầng kết nối đầy đủ.
-Vấn đề duy nhất là ta cần phải điều chỉnh kích thước dữ liệu trước và sau phép nhân ma trận.
+Hãy kiểm tra xem liệu nó có hoạt động trong thực tế: Ta sẽ lập trình một phép tích chập $1 \times 1$ sử dụng một tầng kết nối đầy đủ. 
+Vấn đề duy nhất là ta cần phải điều chỉnh kích thước dữ liệu trước và sau phép nhân ma trận. 
 
 ```{.python .input  n=6}
 def corr2d_multi_in_out_1x1(X, K):
@@ -310,9 +311,9 @@ np.abs(Y1 - Y2).sum() < 1e-6
 * The $1\times 1$ convolutional layer is typically used to adjust the number of channels between network layers and to control model complexity.
 -->
 
-* Ta có thể sử dụng nhiều kênh để mở rộng các tham số mô hình của tầng tích chập.
-* Tầng tích chập $1\times 1$ khi được áp dụng lên từng điểm ảnh tương đương với tầng kết nối đầy đủ giữa các kênh.
-* Tầng tích chập $1\times 1$ thường được sử dụng để điều chỉnh số lượng kênh giữa các tầng của mạng và để kiểm soát độ phức tạp của mô hình.
+* Ta có thể sử dụng nhiều kênh để mở rộng các tham số mô hình của tầng tích chập. 
+* Tầng tích chập $1\times 1$ khi được áp dụng lên từng điểm ảnh tương đương với tầng kết nối đầy đủ giữa các kênh. 
+* Tầng tích chập $1\times 1$ thường được sử dụng để điều chỉnh số lượng kênh giữa các tầng của mạng và để kiểm soát độ phức tạp của mô hình. 
 
 
 <!--
@@ -341,15 +342,15 @@ np.abs(Y1 - Y2).sum() < 1e-6
     * Chứng minh rằng kết quả của phép tính có thể được biểu diễn bằng chỉ một phép tích chập.
     * Phép tích chập tương đương này có kích thước là bao nhiêu?
     * Điều ngược lại có đúng không?
-2. Giả sử kích thước của đầu vào là $c_i\times h\times w$ và áp dụng một bộ lọc tích chập có kích thước $c_o\times c_i\times k_h\times k_w$, đồng thời sử dụng đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
-    * Chi phí tính toán (phép nhân và phép cộng) cho lượt truyền xuôi là bao nhiêu?
-    * Dung lượng bộ nhớ cho tính toán truyền xuôi là bao nhiêu?
-    * Dung lượng bộ nhớ cho tính toán truyền ngược là bao nhiêu?
-    * Chi phí tính toán cho lượt lan truyền nguược là bao nhiêu?
-3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta gấp đôi phần đệm?
-4. Nếu chiều cao và chiều rộng của bộ lọc tích chập là $k_h =k_w=1$, thì độ phức tạp của tính toán truyền xuôi là bao nhiêu?
-5. Các biến `Y1` và` Y2` trong ví dụ cuối cùng của mục này có giống nhau không? Tại sao?
-6. Khi cửa sổ tích chập không phải là $1\times 1$, bạn sẽ lập trình các phép tích chập sử dụng phép nhân ma trận như thế nào?
+2. Giả sử kích thước của đầu vào là $c_i\times h\times w$ và một bộ lọc tích chập có kích thước $c_o\times c_i\times k_h\times k_w$, đồng thời sử dụng đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$. 
+    * Chi phí tính toán (phép nhân và phép cộng) cho lượt truyền xuôi là bao nhiêu? 
+    * Dung lượng bộ nhớ cho tính toán truyền xuôi là bao nhiêu? 
+    * Dung lượng bộ nhớ cho tính toán truyền ngược là bao nhiêu? 
+    * Chi phí tính toán cho lượt lan truyền ngược là bao nhiêu? 
+3. Số lượng tính toán sẽ tăng lên bao nhiêu lần nếu ta nhân đôi số lượng kênh đầu vào $c_i$ và số lượng kênh đầu ra $c_o$? Điều gì xảy ra nếu ta gấp đôi phần đệm? 
+4. Nếu chiều cao và chiều rộng của bộ lọc tích chập là $k_h=k_w=1$, thì độ phức tạp của tính toán truyền xuôi là bao nhiêu? 
+5. Các biến `Y1` và` Y2` trong ví dụ cuối cùng của mục này có giống nhau không? Tại sao? 
+6. Khi cửa sổ tích chập không phải là $1\times 1$, bạn sẽ lập trình các phép tích chập sử dụng phép nhân ma trận như thế nào? 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
