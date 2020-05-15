@@ -229,7 +229,7 @@ In the first residual block for each of the subsequent modules, the number of ch
 -->
 
 GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
-Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư, mỗi mô-đun sử dụng một số khối thặng dư có cùng số kênh đầu ra.
+Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư có cùng số kênh đầu ra trong mỗi mô-đun.
 Số lượng kênh trong mô-đun đầu tiên giống với số lượng kênh đầu vào.
 Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
 Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
