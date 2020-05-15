@@ -237,7 +237,7 @@ Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có
 In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
-Thông thường, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là:
+Tổng quát, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là:
 
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
@@ -303,7 +303,7 @@ Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho 
 * Padding and stride can be used to adjust the dimensionality of the data effectively.
 -->
 
-* Đệm có thể tăng chiều dài vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào. 
+* Phần đệm có thể tăng chiều dài vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào. 
 * Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều dài và chiều rộng của đầu ra chỉ còn $1/n$ chiều dài và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$). 
 * Đệm và sải bước có thể được dùng để điều chỉnh số chiều của dữ liệu một cách hiệu quả. 
 
