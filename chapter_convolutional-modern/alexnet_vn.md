@@ -72,7 +72,7 @@ Computer vision researchers justifiably believed that a slightly bigger or clean
 or a slightly improved feature-extraction pipeline mattered far more to the final accuracy than any learning algorithm.
 -->
 
-Nếu giả sử bạn từng nói chuyện với những nhà nghiên cứu về học máy, họ đã tin rằng học máy vừa có cả tầm quan trọng lẫn vẻ đẹp cuốn hút.
+Nói chuyện với những nhà nghiên cứu học máy, bạn sẽ thấy được họ tin rằng học máy vừa có cả tầm quan trọng lẫn vẻ đẹp cuốn hút.
 Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
 Lĩnh vực học máy đang ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu trong lĩnh vực thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
