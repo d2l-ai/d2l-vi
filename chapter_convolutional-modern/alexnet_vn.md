@@ -118,7 +118,7 @@ In the case of an image, the lowest layers might come to detect edges, colors, a
 Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a convolutional neural network which achieved excellent performance in the ImageNet challenge.
 -->
 
-Một nhóm nhà nghiên cứu khác, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, đã có những kế hoạch khác. 
+Một nhóm nhà nghiên cứu khác, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác. 
 Họ tin rằng các đặc trưng tự chúng có thể được học. 
 Hơn nữa, họ cũng tin rằng với một độ phức tạp hợp lý, các đặc trưng có thể được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số huấn luyện có thể học được. 
 Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
