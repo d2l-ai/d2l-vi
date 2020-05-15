@@ -37,7 +37,7 @@ Hãy xem xét $ \ mathcal {F} $, một lớp các hàm số mà một kiến tr�
 Đó là, luôn tồn tại một số tập tham số $W$ có thể tìm được thông qua việc huấn luyện trên một tập dữ liệu phù hợp, cho mọi hàm số $f \in \mathcal{F}$.
 Giả sử $f^*$ là hàm số chúng ta đang muốn tìm kiếm.
 Nếu hàm số này thuộc tập $\mathcal{F}$, thì việc tìm kiếm sẽ thuận lợi nhưng thường thì chúng ta sẽ không may mắn như vậy. 
-Thay vào đó, chúng ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ mà chúng ta tin rằng chúng nằm trong tập $\mathcal{F}$.  
+Thay vào đó, chúng ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
 Ví dụ, chúng ta có thể thử tìm các hàm số này bằng cách giải bài toán tối ưu sau đây:
 
 $$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ subject to } f \in \mathcal{F}.$$
