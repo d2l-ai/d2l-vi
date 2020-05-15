@@ -379,6 +379,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | test set                   | tập kiểm tra                   |                                              |
 | test set performance       | chất lượng trên tập kiểm tra   |                                              |
 | test statistic             | tiêu chuẩn kiểm định           | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| text data                  | dữ liệu văn bản                |                                              |
 | timestep                   | bước thời gian                 | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | timeseries analysis        | phân tích dữ liệu chuỗi thời gian   |  |
 | training set               | tập huấn luyện                 |                                              |
