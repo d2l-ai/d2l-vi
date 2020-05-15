@@ -15,12 +15,12 @@ we preserve an order corresponding ot the spatial structure of the pixels or if 
 Preferably, we would leverage our prior knowledge that nearby pixels are typically related to each other, to build efficient models for learning from image data.
 -->
 
-Trong những chương đầu tiên, chúng ta đã tiếp cận với dữ liệu ảnh mà mỗi mẫu bao gồm một mảng điểm ảnh 2D.
-Tùy vào loại ảnh là trắng đen hay ảnh màu mà ta cần xử lý *một* hay *nhiều* giá trị số học tương ứng tại mỗi vị trí điểm ảnh. 
+Trong những chương đầu tiên, chúng ta đã tiếp cận với dữ liệu ảnh với mỗi mẫu là một mảng điểm ảnh 2D.
+Tùy vào ảnh đen trắng hay ảnh màu mà ta cần xử lý *một* hay *nhiều* giá trị số học tương ứng tại mỗi vị trí điểm ảnh. 
 Cho đến nay, cách ta xử lý dữ liệu với cấu trúc phong phú này vẫn chưa thật sự thoả đáng.
 Ta chỉ đang đơn thuần loại bỏ cấu trúc không gian từ mỗi bức ảnh bằng cách chuyển chúng thành các vector và truyền chúng qua một mạng MLP (kết nối đầy đủ).
 Vì các mạng này là bất biến với thứ tự của các đặc trưng, ta sẽ nhận được cùng một kết quả bất kể việc chúng ta có giữ lại thứ tự cấu trúc không gian của các điểm ảnh hay hoán vị các cột của ma trận đặc trưng trước khi khớp các tham số của mạng MLP. 
-Tốt hơn hết, ta nên tận dụng điều đã biết là các điểm ảnh kề cận thường có liên hệ lẫn nhau để xây dựng những mô hình hiệu quả hơn cho việc học từ dữ liệu ảnh.
+Tốt hơn hết, ta nên tận dụng điều đã biết là các điểm ảnh kề cận thường có tương quan lẫn nhau để xây dựng những mô hình hiệu quả hơn cho việc học từ dữ liệu ảnh.
 
 <!--
 This chapter introduces convolutional neural networks (CNNs), a powerful family of neural networks that were designed for precisely this purpose.
@@ -29,7 +29,7 @@ today would develop a commercial application or enter a competition related to i
 -->
 
 Chương này sẽ giới thiệu về các Mạng Nơ-ron Tích chập (*Convolutional Neural Network* - CNN), một họ các mạng nơ-ron ưu việt được thiết kế chính xác cho mục đích trên. 
-Các kiến trúc dựa trên CNN hiện nay xuất hiện trong mọi ngóc ngách của lĩnh vực thị giác máy tính, và đã trở thành chủ đạo mà hiếm có ai ngày nay khi phát triển các ứng dụng thương mại hay tham gia một cuộc thi nào đó liên quan tới nhận dạng ảnh, phát hiện đối tượng, hay phân vùng theo ngữ cảnh mà không xây nền móng bằng phương pháp này.
+Các kiến trúc dựa trên CNN hiện nay xuất hiện trong mọi ngóc ngách của lĩnh vực thị giác máy tính, và đã trở thành kiến trúc chủ đạo mà hiếm ai ngày nay phát triển các ứng dụng thương mại hay tham gia một cuộc thi nào đó liên quan tới nhận dạng ảnh, phát hiện đối tượng, hay phân vùng theo ngữ cảnh mà không xây nền móng dựa trên phương pháp này.
 
 <!--
 Modern *ConvNets*, as they are called colloquially owe their design to inspirations from biology, group theory, and a healthy dose of experimental tinkering.
@@ -40,11 +40,11 @@ such as audio, text, and time series analysis, where recurrent neural networks a
 Some clever adaptations of CNNs have also brought them to bear on graph-structured data and in recommender systems.
 -->
 
-Theo cách gọi thông dụng ngày nay, thiết kế của mạng *ConvNets* đã vay mượn rất nhiều ý tưởng từ ngành sinh học, lý thuyết nhóm và lượng không nhỏ những thí nghiệm nhỏ lẻ.
-Bênh cạnh hiệu năng cao trên số lượng mẫu cần thiết để đạt được đủ độ chính xác, các mạng nơ-ron tích chập còn rất hiệu quả về mặt tính toán, bởi mạng tích chập đòi hỏi lượng tham số ít hơn và dễ thực thi song song trên nhiều GPU hơn các kiến trúc mạng dày đặc.  
+Theo cách hiểu thông dụng, thiết kế của mạng *ConvNets* đã vay mượn rất nhiều ý tưởng từ ngành sinh học, lý thuyết nhóm và lượng rất nhiều những thí nghiệm nhỏ lẻ khác.
+Bênh cạnh hiệu năng cao trên số lượng mẫu cần thiết để đạt được đủ độ chính xác, các mạng nơ-ron tích chập thường hiệu quả tính toán hơn, bởi đòi hỏi ít tham số hơn và dễ thực thi song song trên nhiều GPU hơn các kiến trúc mạng dày đặc.  
 Do đó, những người hành nghề thường áp dụng các mạng CNN bất cứ khi nào có thể, và chúng đã nhanh chóng trở thành một công cụ quan trọng đáng tin cậy thậm chí với các tác vụ liên quan tới cấu trúc tuần tự một chiều, 
 như là xử lý âm thanh, văn bản, và phân tích dữ liệu chuỗi thời gian (*time series analysis*), mà ở đó các mạng nơ-rơn truy hồi vốn thường được sử dụng. 
-Với một số điều chỉnh khôn khéo còn cho phép sử dụng các mạng CNN với dữ liệu có cấu trúc đồ thị và trong các hệ thống đề xuất. 
+Với một số điều chỉnh khôn khéo, ta còn có thể dùng mạng CNN cho dữ liệu có cấu trúc đồ thị và hệ thống đề xuất. 
 
 <!--
 First, we will walk through the basic operations that comprise the backbone of all convolutional networks.
