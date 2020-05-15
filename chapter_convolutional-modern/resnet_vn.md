@@ -67,7 +67,7 @@ Even better, the identity function rather than the null $f(\mathbf{x}) = 0$ shou
 
 Chỉ khi các lớp hàm số lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của một mạng.
 Đây là câu hỏi mà He và các cộng sự đã cân nhắc năm 2016 khi họ nghiên cứu các mô hình thị giác sâu.
-Trọng tâm của ResNet nằm ở ý tưởng rằng mỗi tầng được thêm vào có thể chứa một hàm số đồng nhất như một phần của nó. 
+Trọng tâm của ResNet nằm ở ý tưởng rằng mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
 Điều này có nghĩa là nếu chúng ta huấn luyện tầng mới được thêm vào thành một phép chiếu đồng nhất $f(\mathbf{x}) = \mathbf{x}$, mô hình mới sẽ có hiệu quả như mô hình ban đầu.
 Khi mô hình mới đạt kết quả tốt hơn để khớp với tập dữ liệu huấn luyện, tầng được thêm vào có giúp giảm bớt sai số huấn luyện.
 Thậm chí tốt hơn, hàm số đồng nhất nên là hàm số đơn giản nhất trong một tầng thay vì hàm số null $f(\mathbf{x}) = 0$.
