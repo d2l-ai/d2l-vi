@@ -53,7 +53,7 @@ The shape of the kernel window is given by the height and width of the kernel (h
 
 Nhắc lại rằng, nói đúng ra thì cái tên tầng *tích chập* là không chính xác, vì phép toán mà chúng biểu diễn là phép tương quan chéo (*cross correlation*).
 Trong một tầng tích chập, một mảng đầu vào và một mảng *hạt nhân tương quan* được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo.
-Hãy tạm thời bỏ qua chiều kênh và xem  phép toán này hoạt động như thế nào với dữ liệu và biểu diễn ẩn hai chiều.
+Hãy tạm thời bỏ qua chiều kênh và xem phép toán này hoạt động như thế nào với dữ liệu và biểu diễn ẩn hai chiều.
 Trong :numref:`fig_correlation`, đầu vào là một mảng hai chiều với chiều dài 3 và chiều rộng 3.
 Ta kí hiệu kích thước của mảng là $3 \times 3$ hoặc ($3$, $3$).
 Chiều dài và chiều rộng của hạt nhân đều là 2.
@@ -78,7 +78,7 @@ Here, the output array has a height of 2 and width of 2 and the four elements ar
 -->
 
 Trong phép tương quan chéo hai chiều, ta bắt đầu với cửa sổ tích chập đặt tại vị trí góc trên bên trái của mảng đầu vào và di chuyển cửa sổ này từ trái sang phải và từ trên xuống dưới.
-Khi cửa sổ tích chập được dịch tới một vị trí nào đó, mảng con nằm trong cửa sổ đó của đầu vào và mảng hạt nhân được nhân theo từng phần tử,
+Khi cửa sổ tích chập được đẩy tới một vị trí nhất định, mảng con đầu vào nằm trong cửa sổ đó và mảng hạt nhân được nhân theo từng phần tử,
 rồi sau đó ta lấy tổng các phần tử trong mảng kết quả để có được một giá trị số vô hướng duy nhất.
 Giá trị này được ghi vào mảng đầu ra tại vị trí tương ứng.
 Ở đây, mảng đầu ra có chiều dài 2 và chiều rộng 2, với bốn phần tử được tính bằng phép tương quan chéo hai chiều:
@@ -115,9 +115,9 @@ Next, we implement this process in the `corr2d` function, which accepts the inpu
 
 Lưu ý rằng theo mỗi trục, kích thước đầu ra *nhỏ hơn* một chút so với đầu vào.
 Bởi vì bộ lọc có chiều dài và chiều rộng lớn hơn một, ta chỉ có thể tính độ tương quan chéo cho những vị trí mà ở đó hạt nhân nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' hạt nhân tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để di chuyển bộ lọc).
+Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' hạt nhân tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để dịch chuyển hạt nhân).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
-Hàm này nhận mảng đầu vào `X` với mảng hạt nhân `K` và trả về mảng đầu ra `Y`
+Hàm này nhận mảng đầu vào `X` với mảng hạt nhân `K` và trả về mảng đầu ra `Y`.
 
 ```{.python .input}
 from mxnet import autograd, np, npx
