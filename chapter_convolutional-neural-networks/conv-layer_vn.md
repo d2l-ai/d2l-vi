@@ -51,7 +51,7 @@ Note that in the deep learning research community, this object may be referred t
 The shape of the kernel window is given by the height and width of the kernel (here it is $2 \times 2$).
 -->
 
-Nhắc lại rằng, nói đúng ra thì cái tên tầng *tích chập* là không chính xác, vì phép toán mà chúng biểu diễn là phép tương quan chéo (*cross correlation*).
+Như ta đã biết, tầng *tích chập* là cái tên có phần không chính xác, vì phép toán mà chúng biểu diễn là phép tương quan chéo (*cross correlation*).
 Trong một tầng tích chập, một mảng đầu vào và một mảng *hạt nhân tương quan* được kết hợp để tạo ra mảng đầu ra bằng phép toán tương quan chéo.
 Hãy tạm thời bỏ qua chiều kênh và xem phép toán này hoạt động như thế nào với dữ liệu và biểu diễn ẩn hai chiều.
 Trong :numref:`fig_correlation`, đầu vào là một mảng hai chiều với chiều dài 3 và chiều rộng 3.
