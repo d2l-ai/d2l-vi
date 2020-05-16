@@ -101,7 +101,7 @@ DenseNet uses the modified "batch normalization, activation, and convolution" ar
 First, we implement this architecture in the `conv_block` function.
 -->
 
-DenseNet sử dụng một kiến trúc được sửa đổi của ResNet "chuẩn hóa theo batch, hàm kích hoạt và phép tích chập" (xem phần bài tập trong :numref:`sec_resnet`).
+DenseNet sử dụng kiến trúc "chuẩn hóa theo batch, hàm kích hoạt và phép tích chập" được sửa đổi của ResNet (xem phần bài tập trong :numref:`sec_resnet`).
 Đầu tiên, ta sẽ lập trình kiến trúc này trong hàm `conv_block`.
 
 ```{.python .input  n=1}
