@@ -218,9 +218,9 @@ Ta gọi số hàng và cột di chuyển qua mỗi lần là *sải bước* (_
 Cho đến giờ, chúng ta sử dụng sải bước $1$ cho cả chiều dài và chiều rộng.
 Đôi lúc, chúng ta có thể muốn sử dụng sải bước lớn hơn. 
 :numref:`img_conv_stride` biểu diễn phép tương quan chéo hai chiều với sải bước $3$ theo chiều dọc và $2$ theo chiều ngang. 
-Có thể thấy khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng. 
+Có thể thấy rằng khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng. 
 Cửa sổ này di chuyển sang phải hai cột khi tính giá trị phần tử thứ hai của hàng đầu tiên. 
-Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có giá trị đầu ra vì các phần tử đầu vào không lấp đầy cửa sổ (trừ khi ta thêm một cột đệm).  
+Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, giá trị đầu ra không tồn tại vì các phần tử đầu vào không lấp đầy cửa sổ (trừ khi ta thêm một cột đệm).  
 
 <!--
 ![Cross-correlation with strides of 3 and 2 for height and width respectively. The shaded portions are the output element and the input and core array elements used in its computation: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
@@ -237,7 +237,7 @@ Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có
 In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
-Tổng quát, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là:
+Nhìn chung, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$, kích thước đầu ra là:
 
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
@@ -246,8 +246,8 @@ If we set $p_h=k_h-1$ and $p_w=k_w-1$, then the output shape will be simplified 
 Going a step further, if the input height and width are divisible by the strides on the height and width, then the output shape will be $(n_h/s_h) \times (n_w/s_w)$.
 -->
 
-Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, thì kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$. 
-Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng, thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
+Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$. 
+Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
 
 <!--
 Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
@@ -280,12 +280,12 @@ By default, the padding is $0$ and the stride is $1$.
 In practice, we rarely use inhomogeneous strides or padding, i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 -->
 
-Để đơn giản, khi số đệm trên chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta kí hiệu phần đệm là $(p_h, p_w)$. 
-Trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$. 
+Để đơn giản hóa vấn đề, khi phần đệm theo chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta sẽ kí hiệu phần đệm là $(p_h, p_w)$. 
+Ở trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$. 
 Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$. 
-Trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$. 
+Ở trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$. 
 Mặc định, phần đệm là $0$ và sải bước là $1$. 
-Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
+Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức ta thường đặt $p_h = p_w$ và $s_h = s_w$. 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -303,9 +303,9 @@ Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho 
 * Padding and stride can be used to adjust the dimensionality of the data effectively.
 -->
 
-* Phần đệm có thể tăng chiều dài vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào. 
-* Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều dài và chiều rộng của đầu ra chỉ còn $1/n$ chiều dài và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$). 
-* Đệm và sải bước có thể được dùng để điều chỉnh số chiều của dữ liệu một cách hiệu quả. 
+* Phần đệm có thể tăng chiều cao vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào. 
+* Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều cao và chiều rộng của đầu ra xuống $1/n$ chiều cao và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$). 
+* Đệm và sải bước có thể được dùng để điều chỉnh kích thước chiều của dữ liệu một cách hiệu quả. 
 
 <!--
 ## Exercises
