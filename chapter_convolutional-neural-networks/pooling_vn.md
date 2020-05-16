@@ -25,8 +25,8 @@ while keeping all of the advantages of convolutional layers at the intermediate 
 
 Nhiệm vụ cuối cùng của chúng ta thường là trả lời một vài câu hỏi về toàn bộ tấm ảnh, ví dụ như: *trong ảnh có mèo không?* 
 Vậy nên các nút của tầng cuối cùng thường cần phải chịu ảnh hưởng của toàn bộ đầu vào.
-Bằng cách dần gộp thông tin lại để tạo ra các ánh xạ đặc trưng thưa dần, ta sẽ học được một cách biểu diễn toàn cục,
-trong khi vẫn có thể giữ nguyên toàn bộ lợi thế của các tầng tích chập ở các tầng xử lý trung gian mang lại.
+Bằng cách dần gộp thông tin lại để tạo ra các ánh xạ đặc trưng thưa dần, ta sẽ học được một biểu diễn toàn cục,
+trong khi vẫn có thể giữ nguyên toàn bộ lợi thế đến từ các tầng tích chập xử lý trung gian.
 
 <!--
 Moreover, when detecting lower-level features, such as edges (as discussed in :numref:`sec_conv_layer`),
@@ -43,9 +43,9 @@ Hơn nữa, khi phát hiện các đặc trưng cấp thấp như cạnh (đư�
 ta thường muốn cách biểu diễn này bất biến với phép tịnh tiến trong một chừng mực nào đó.
 Ví dụ, nếu ta lấy ảnh `X` với một ranh giới rõ rệt giữa màu đen và màu trắng
 và dịch chuyển toàn bộ tấm ảnh sang phải một điểm ảnh, tức `Z[i, j] = X[i, j+1]` thì đầu ra cho ảnh mới `Z` có thể sẽ khác rất nhiều.
-Ranh giới đó và các kích hoạt sẽ đều dịch chuyển sang một điểm ảnh.
+Cạnh đó và các giá trị kích hoạt sẽ đều dịch chuyển sang một điểm ảnh.
 Trong thực tế, các vật thể hiếm khi xuất hiện ở chính xác một vị trí.
-Thậm chí với một chân máy ảnh và một vật thể tĩnh, độ rung của máy ảnh do chuyển động của màn trập có thể dịch chuyển tất cả đi một vài điểm ảnh 
+Thậm chí với một chân máy ảnh và một vật thể tĩnh, chuyển động của màn trập vẫn có thể làm rung máy ảnh và dịch chuyển tất cả đi một vài điểm ảnh 
 (các máy ảnh cao cấp được trang bị những tính năng đặc biệt nhằm khắc phục vấn đề này).
 
 <!--
@@ -53,7 +53,7 @@ This section introduces pooling layers, which serve the dual purposes of
 mitigating the sensitivity of convolutional layers to location and of spatially downsampling representations.
 -->
 
-Trong mục này sẽ giới thiệu về các tầng gộp, với hai chức năng là giảm độ nhạy của các tầng tích chập đối với vị trí và giảm kích thước của các biểu diễn.
+Trong mục này sẽ giới thiệu về các tầng gộp, với hai chức năng là giảm độ nhạy cảm của các tầng tích chập đối với vị trí và giảm kích thước của các biểu diễn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -73,7 +73,7 @@ Instead, pooling operators are deterministic, typically calculating either the m
 These operations are called *maximum pooling* (*max pooling* for short) and *average pooling*, respectively.
 -->
 
-Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định trượt trên tất cả các vùng ở đầu vào theo sải bước của nó, 
+Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định trượt trên tất cả các vùng đầu vào theo từng sải bước, 
 tính toán một giá trị đầu ra tại mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
 Tuy nhiên, không giống như các phép toán tương quan chéo giữa đầu vào và bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc"). 
 Thay vì vậy, các toán tử gộp thường được định sẵn là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
@@ -179,7 +179,7 @@ pool2d(X, (2, 2))
 <!--
 At the same time, we experiment with the average pooling layer.
 -->
-Đồng thời, chúng tôi cũng thực hiện thí nghiệm với tầng gộp trung bình. 
+Đồng thời, chúng ta cũng thực hiện thí nghiệm với tầng gộp trung bình. 
 
 ```{.python .input  n=14}
 pool2d(X, (2, 2), 'avg')
