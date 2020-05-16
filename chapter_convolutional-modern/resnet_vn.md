@@ -323,7 +323,7 @@ We train ResNet on the Fashion-MNIST dataset, just like before.
 The only thing that has changed is the learning rate that decreased again, due to the more complex architecture.
 -->
 
-Chúng ta huấn luyện mạng ResNet trên bộ dữ liệu Fashion-MNIST giống như trước đây.
+Giống như các phần trước, chúng ta huấn luyện mạng ResNet trên bộ dữ liệu Fashion-MNIST.
 Điều duy nhất được thay đổi là tốc độ học giảm trở lại, do kiến trúc mạng phức tạp hơn.
 
 ```{.python .input}
