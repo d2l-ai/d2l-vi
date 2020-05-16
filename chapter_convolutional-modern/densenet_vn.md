@@ -302,7 +302,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Về mặt kết nối liên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra trên chiều kênh.
 * Các thành phần chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-* Ta kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
+* Ta cần kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
 
 <!--
 ## Exercises
