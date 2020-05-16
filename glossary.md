@@ -165,6 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
+| growth rate                    | tốc độ tăng trưởng                |                                             |
 
 ## H
 | English                 | Tiếng Việt               | Thảo luận tại                                                                              |
@@ -388,6 +389,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | translation invariant      | bất biến tịnh tiến                | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | transcribe                 | phiên thoại                       | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription              | bản ghi thoại                     |                                              |
+| transition layer           | tầng chuyển tiếp                  |                                              |
 | true negative              | âm tính thật                      |                                              |
 | true positive              | dương tính thật                   |                                              |
 | tune parameters            | điều chỉnh tham số                |                                              |
