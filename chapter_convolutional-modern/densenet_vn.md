@@ -5,7 +5,7 @@
 # Densely Connected Networks (DenseNet)
 -->
 
-# Mạng kết nối dày đặc (_Densely Connected Networks - DenseNet_)
+# Mạng Tích chập Kết nối Dày đặc (_Densely Connected Networks - DenseNet_)
 
 <!--
 ResNet significantly changed the view of how to parametrize the functions in deep networks.
