@@ -13,8 +13,8 @@ In the previous example, our input had both a height and width of $3$ and our co
 In general, assuming the input shape is $n_h\times n_w$ and the convolution kernel window shape is $k_h\times k_w$, then the output shape will be
 -->
 
-Trong ví dụ trước, đầu vào có cả chiều dài và chiều rộng cùng bằng $3$, bộ lọc tích chập có cả chiều dài và chiều rộng cùng bằng $2$, và biểu diễn đầu ra có kích thước $2\times2$.
-Nói chung, giả sử kích thước của đầu vào là $n_h\times n_w$ và kích thước của cửa sổ bộ lọc tích chập là $k_h\times k_w$, thì kích thước của đầu ra sẽ là
+Trong ví dụ trước, đầu vào có cả chiều dài và chiều rộng cùng bằng $3$, cửa sổ hạt nhân tích chập có cả chiều dài và chiều rộng cùng bằng $2$, nên ta thu được biểu diễn đầu ra có kích thước $2\times2$. 
+Nói chung, giả sử kích thước của đầu vào là $n_h\times n_w$ và kích thước của cửa sổ hạt nhân tích chập là $k_h\times k_w$, kích thước của đầu ra sẽ là: 
 
 $$(n_h-k_h+1) \times (n_w-k_w+1).$$
 
@@ -22,7 +22,7 @@ $$(n_h-k_h+1) \times (n_w-k_w+1).$$
 Therefore, the output shape of the convolutional layer is determined by the shape of the input and the shape of the convolution kernel window.
 -->
 
-Do đó, kích thước của đầu ra của tầng tích chập được xác định bởi kích thước của đầu vào và kích thước của cửa sổ bộ lọc tích chập.
+Do đó, kích thước của đầu ra tầng tích chập được xác định bởi kích thước đầu vào và kích thước cửa sổ hạt nhân tích chập. 
 
 <!--
 In several cases, we incorporate techniques, including padding and strided convolutions, that affect the size of the output.
@@ -33,17 +33,18 @@ slicing off $30 \%$ of the image and with it obliterating any interesting inform
 *Padding* is the most popular tool for handling this issue.
 -->
 
-Trong nhiều trường hợp, ta sẽ kết hợp thêm các kỹ thuật khác cũng có ảnh hưởng tới kích thước của đầu ra, như thêm phần đệm và phép tích chập sải bước.
-Lưu ý rằng vì các bộ lọc thường có chiều rộng và chiều cao lớn hơn $1$ nên sau khi áp dụng nhiều phép tích chập liên tiếp, đầu ra thường có kích thước nhỏ hơn đáng kể so với đầu vào.
-Nếu ta bắt đầu với một ảnh có $240 \times 240$ điểm ảnh và áp dụng $10$ tầng tích chập có kích thước $5 \times 5$ thì kích thước ảnh này sẽ giảm xuống $200 \times 200$ điểm ảnh, $30 \%$ của ảnh sẽ bị cắt bỏ và mọi thông tin thú vị trên viền của ảnh gốc sẽ bị xóa sạch. *Đệm* là công cụ phổ biến nhất để xử lý vấn đề này.
+Trong vài trường hợp, ta sẽ kết hợp thêm các kỹ thuật khác cũng có ảnh hưởng tới kích thước của đầu ra, như thêm phần đệm và phép tích chập sải bước. 
+Lưu ý rằng vì các hạt nhân thường có chiều rộng và chiều cao lớn hơn $1$ nên sau khi áp dụng nhiều phép tích chập liên tiếp, đầu ra thường có kích thước nhỏ hơn đáng kể so với đầu vào. 
+Nếu ta bắt đầu với một ảnh có $240 \times 240$ điểm ảnh và áp dụng $10$ tầng tích chập có kích thước $5 \times 5$ thì kích thước ảnh này sẽ giảm xuống $200 \times 200$ điểm ảnh, $30 \%$ của ảnh sẽ bị cắt bỏ và mọi thông tin có ích trên viền của ảnh gốc sẽ bị xóa sạch. 
+*Đệm* là công cụ phổ biến nhất để xử lý vấn đề này. 
 
 <!--
 In other cases, we may want to reduce the dimensionality drastically, e.g., if we find the original input resolution to be unwieldy. 
 *Strided convolutions* are a popular technique that can help in these instances.
 -->
 
-Trong những trường hợp khác, ta có thể muốn giảm đáng kể kích thước ảnh, ví dụ như khi độ phân giải của đầu vào là quá cao.
-*Phép tích chập sải bước* là một kỹ thuật phổ biến có thể giúp ích trong trường hợp này.
+Trong những trường hợp khác, ta có thể muốn giảm đáng kể kích thước ảnh, ví dụ như khi độ phân giải của đầu vào quá cao. 
+*Phép tích chập sải bước (Strided convolution)* là một kỹ thuật phổ biến có thể giúp ích trong trường hợp này. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -64,19 +65,19 @@ In :numref:`img_conv_pad`, we pad a $3 \times 5$ input, increasing its size to $
 The corresponding output then increases to a $4 \times 6$ matrix.
 -->
 
-Như mô tả ở trên, một vấn đề rắc rối khi áp dụng các tầng tích chập là việc chúng ta có thể mất một số điểm trên biên của ảnh. 
-Vì chúng ta thường sử dụng các bộ lọc nhỏ, với bất kỳ phép tích chập nào, ta có thể chỉ mất một ít điểm ảnh, tuy nhiên sự mất mát này có thể tích lũy dần khi ta thực hiện qua nhiều tầng tích chập liên tiếp.
-Một giải pháp đơn giản cho vấn đề này là chèn thêm các điểm ảnh xung quanh đường biên trên bức ảnh đầu vào, nhờ đó làm tăng kích thước sử dụng của bức ảnh. 
+Như mô tả ở trên, một vấn đề rắc rối khi áp dụng các tầng tích chập là việc chúng ta có thể mất một số điểm ảnh trên biên của ảnh. 
+Vì chúng ta thường sử dụng các hạt nhân nhỏ, với một phép tích chập ta có thể chỉ mất một ít điểm ảnh, tuy nhiên sự mất mát này có thể tích lũy dần khi ta thực hiện qua nhiều tầng tích chập liên tiếp. 
+Một giải pháp đơn giản cho vấn đề này là chèn thêm các điểm ảnh xung quanh đường biên trên bức ảnh đầu vào, nhờ đó làm tăng kích thước sử dụng của bức ảnh.  
 Thông thường, chúng ta thiết lập các giá trị của các điểm ảnh thêm vào là $0$. 
-Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tăng kích thước của nó tới $5 \times 7$.
-Đầu ra tương ứng sẽ tăng lên thành một ma trận $4 \times 6$.
+Trong :numref:`img_conv_pad`, ta đệm một đầu vào $3 \times 5$, làm tăng kích thước lên thành $5 \times 7$. 
+Đầu ra tương ứng sẽ tăng lên thành một ma trận $4 \times 6$. 
 
 <!--
 ![Two-dimensional cross-correlation with padding. The shaded portions are the input and kernel array elements used by the first output element: $0\times0+0\times1+0\times2+0\times3=0$. ](../img/conv-pad.svg)
 -->
 
 ![Tương quan chéo hai chiều khi thực hiện đệm.
-Phần tô đậm là các phần tử của mảng đầu vào và bộ lọc được sử dụng để tính phần tử đầu ra thứ nhất: $0\times0+0\times1+0\times2+0\times3=0$.](../img/conv-pad.svg)
+Phần tô đậm là các phần tử của mảng đầu vào và hạt nhân được sử dụng để tính phần tử đầu ra thứ nhất: $0\times0+0\times1+0\times2+0\times3=0$.](../img/conv-pad.svg) 
 :label:`img_conv_pad`
 
 <!--
@@ -84,7 +85,7 @@ In general, if we add a total of $p_h$ rows of padding (roughly half on top and 
 a total of $p_w$ columns of padding (roughly half on the left and half on the right), the output shape will be
 -->
 
-Nhìn chung nếu chúng ta chèn thêm tổng cộng $p_h$ hàng đệm (phân nửa ở phía trên và phân nửa ở phía dưới) và $p_w$ cột đệm (phân nửa bên trái và phân nửa bên phải), thì kích thước đầu ra sẽ là
+Nhìn chung nếu chúng ta chèn thêm tổng cộng $p_h$ hàng đệm (phân nửa ở phía trên và phân nửa ở phía dưới) và $p_w$ cột đệm (phân nửa bên trái và phân nửa bên phải), kích thước đầu ra sẽ là: 
 
 $$(n_h-k_h+p_h+1)\times(n_w-k_w+p_w+1).$$
 
@@ -92,7 +93,7 @@ $$(n_h-k_h+p_h+1)\times(n_w-k_w+p_w+1).$$
 This means that the height and width of the output will increase by $p_h$ and $p_w$ respectively.
 -->
 
-Điều này có nghĩa là chiều cao và chiều rộng của đầu ra sẽ tăng thêm lần lượt là $p_h$ và $p_w$.
+Điều này có nghĩa là chiều cao và chiều rộng của đầu ra sẽ tăng thêm lần lượt là $p_h$ và $p_w$. 
 
 <!--
 In many cases, we will want to set $p_h=k_h-1$ and $p_w=k_w-1$ to give the input and output the same height and width.
@@ -102,11 +103,11 @@ If $k_h$ is odd, one possibility is to pad $\lceil p_h/2\rceil$ rows on the top 
 We will pad both sides of the width in the same way.
 -->
 
-Trong nhiều trường hợp, ta sẽ mong muốn thiết lập $p_h=k_h-1$ và $p_w=w_k-1$ để đưa kích thước đầu ra và đầu vào bằng nhau.
-Điều này sẽ làm việc dự đoán kích thước đầu ra của mỗi tầng dễ dàng hơn khi ta xây dựng mạng.
-Giả sử $k_h$ ở đây là chẵn, ta sẽ chèn $p_h/2$ hàng ở cả hai phía ở chiều dọc.
-Nếu $k_h$ là lẻ, một khả năng là phải chèn $\lceil p_h/2\rceil$ hàng phía trên của đầu vào và $\lfloor p_h/2\rfloor$ hàng cho phía dưới.
-Chúng ta cũng thực hiện chèn cả hai bên của chiều ngang theo cùng cách như vậy.
+Trong nhiều trường hợp, ta sẽ muốn thiết lập $p_h=k_h-1$ và $p_w=w_k-1$ để đầu vào và đầu ra có cùng chiều dài và chiều rộng.
+Điều này sẽ giúp việc dự đoán kích thước đầu ra của mỗi tầng dễ dàng hơn khi ta xây dựng mạng. 
+Giả sử $k_h$ ở đây chẵn, ta sẽ chèn $p_h/2$ hàng ở cả phía trên và phía dưới.
+Nếu $k_h$ lẻ, ta có thể chèn $\lceil p_h/2\rceil$ hàng ở phía trên của đầu vào và $\lfloor p_h/2\rfloor$ hàng cho phía dưới. 
+Chúng ta cũng thực hiện chèn cả hai bên của chiều ngang tương tự như vậy. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -117,8 +118,8 @@ Convolutional neural networks commonly use convolutional kernels with odd height
 Choosing odd kernel sizes has the benefit that we can preserve the spatial dimensionality while padding with the same number of rows on top and bottom, and the same number of columns on left and right.
 -->
 
-Các mạng nơ-ron tích chập thường sử dụng các bộ lọc tích chập với chiều dài và chiều rộng là số lẻ, như $1$, $3$, $5$ hay $7$.
-Việc chọn bộ lọc có kích thước lẻ giúp chúng ta giữ chiều đầu ra bằng chiều đầu vào khi thêm cùng số hàng đệm cho cạnh trên và dưới, thêm cùng số cột đệm cho cạnh trái và phải. 
+Các mạng nơ-ron tích chập thường sử dụng các hạt nhân tích chập với chiều dài và chiều rộng là số lẻ, như $1$, $3$, $5$ hay $7$.
+Việc chọn hạt nhân có kích thước lẻ giúp chúng ta bảo toàn được các chiều không gian khi thêm cùng số hàng đệm cho cạnh trên và dưới, và thêm cùng số cột đệm cho cạnh trái và phải. 
 
 <!--
 Moreover, this practice of using odd kernels and padding to precisely preserve dimensionality offers a clerical benefit.
@@ -127,8 +128,8 @@ producing an output with the same height and width as the input,
 we know that the output `Y[i, j]` is calculated by cross-correlation of the input and convolution kernel with the window centered on `X[i, j]`.
 -->
 
-Hơn nữa, việc sử dụng bộ lọc kích thước lẻ cùng đệm để giữ nguyên số chiều mang lại một lợi ích khác.
-Với mảng hai chiều `X` bất kì, khi kích thước bộ lọc là lẻ và số hàng và cột đệm là bằng nhau, đầu ra của phép tích chập sẽ có cùng chiều dài và chiều rộng với đầu vào, tức là mỗi phần tử đầu ra `Y[i, j]` được tính bằng phép tương quan chéo giữa đầu vào và bộ lọc tích chập có tâm nằm tại `X[i, j]`.
+Hơn nữa, việc sử dụng bộ lọc kích thước lẻ cùng đệm để giữ nguyên số chiều mang lại một lợi ích khác. 
+Với mảng hai chiều `X` bất kì, khi kích thước bộ lọc lẻ và số hàng và số cột đệm bằng nhau, thu được đầu ra có cùng chiều dài và chiều rộng với đầu vào, ta sẽ biết chắc chắn rằng mỗi phần tử đầu ra `Y[i, j]` được tính bằng phép tương quan chéo giữa đầu vào và hạt nhân tích chập có tâm nằm tại `X[i, j]`.
 
 <!--
 In the following example, we create a two-dimensional convolutional layer with a height and width of $3$ and apply $1$ pixel of padding on all sides.
@@ -136,7 +137,7 @@ Given an input with a height and width of $8$, we find that the height and width
 -->
 
 Trong ví dụ dưới, chúng ta tạo một tầng tích chập hai chiều với chiều dài và chiều rộng $3$ và đệm $1$ điểm ảnh vào viền các cạnh.
-Biết chiều dài và chiều rộng đầu vào là $8$, ta tìm được chiều dài và chiều rộng đầu ra cũng là $8$.
+Với đầu vào có chiều dài và chiều rộng là $8$, ta thấy rằng chiều dài và chiều rộng đầu ra cũng là $8$.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -169,8 +170,8 @@ When the height and width of the convolution kernel are different,
 we can make the output and input have the same height and width by setting different padding numbers for height and width.
 -->
 
-Khi chiều dài và chiều rộng bộ lọc tích chập khác nhau,
-chúng ta có thể chỉnh kích thước chiều dài và chiều rộng của phần đệm là khác nhau để đầu vào và đầu ra có cùng kích thước.
+Khi chiều dài và chiều rộng của hạt nhân tích chập khác nhau, 
+chúng ta có thể chỉnh chiều dài và chiều rộng khác nhau cho phần đệm để đầu vào và đầu ra có cùng kích thước. 
 
 ```{.python .input  n=2}
 # Here, we use a convolution kernel with a height of 5 and a width of 3. The
@@ -354,6 +355,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Duy Du
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 *
