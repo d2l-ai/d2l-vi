@@ -261,7 +261,7 @@ We can now apply the kernel to the transposed image.
 As expected, it vanishes. The kernel `K` only detects vertical edges.
 -->
 
-Bầy giờ hãy áp dụng hạt nhân này cho chuyển vị của ma trận điểm ảnh.
+Bây giờ hãy áp dụng hạt nhân này cho chuyển vị của ma trận điểm ảnh.
 Như kì vọng, giá trị tương quan chéo bằng không. Hạt nhân `K` chỉ có thể phát hiện biên dọc.
 
 ```{.python .input}
