@@ -43,7 +43,7 @@ What if we want to go beyond two terms? A solution was proposed by :cite:`Huang.
 an architecture that reported record performance on the ImageNet dataset.
 -->
 
-Cụ thể là, ResNet phân rã hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
+Cụ thể là, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
 Điều gì xảy ra nếu ta muốn dùng nhiều hơn hai số hạng? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` với tên gọi DenseNet. Kiến trúc này đã được ghi nhận là đạt được hiệu suất cao nhất trên tập dữ liệu ImageNet.
 
 <!--
