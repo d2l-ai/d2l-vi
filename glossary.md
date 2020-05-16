@@ -62,7 +62,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | clustering                          | phân cụm               | [https://git.io/JvojD](https://git.io/JvojD) |
 | code (danh từ)                      | mã nguồn               |                                              |
 | code (động từ)                      | viết mã                |                                              |
-| coefficient                         | hệ số               |                                              |
+| coefficient                         | hệ số                  |                                              |
 | command line (interface)            | cửa sổ dòng lệnh       |                                              |
 | computer vision                     | thị giác máy tính      |                                              |
 | computing (trong Khoa Học Máy Tính) | điện toán              | [https://git.io/JvojH](https://git.io/JvojH) |
@@ -95,7 +95,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | data manipulation         | thao tác với dữ liệu            | [https://git.io/Jvohh](https://git.io/Jvohh) |
 | deep learning             | học sâu                         |                                              |
 | deferred initialization   | khởi tạo trễ                    | [https://git.io/Jfe1i](https://git.io/Jfe1i) |
-| densely connected network | mạng tích chập kết nối dày đặc            | [https://git.io/JfGi1](https://git.io/JfGi1) |
+| densely connected network | mạng tích chập kết nối dày đặc  | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | dense layer               | tầng kết nối dày đặc            |                                              |
 | dev set                   | tập phát triển                  |                                              |
 | dev set performance       | chất lượng trên tập phát triển  |                                              |
@@ -132,22 +132,22 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Eyeball dev set          | tập phát triển Eyeball | [https://git.io/JvQx3](https://git.io/JvQx3)   |
 
 ## F
-| English             | Tiếng Việt       | Thảo luận tại                                |
-|---------------------|------------------|----------------------------------------------|
-| F1 score            | chỉ số F1        |                                              |
-| false negative      | âm tính giả      |                                              |
-| false positive      | dương tính giả   |                                              |
-| feature             | đặc trưng        |                                              |
-| feature extraction  | trích xuất đặc trưng | |
-| feature map (CNN)   | ánh xạ đặc trưng |                                              |
-| filter (CNN)        | bộ lọc           | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
-| fit                 | khớp             | [https://git.io/JvKet](https://git.io/JvKet) |
-| first principle     | định đề cơ bản   | [https://git.io/JvKet](https://git.io/JvKet) |
-| flatten             | trải phẳng       | [https://git.io/JvohO](https://git.io/JvohO) |
-| forward pass        | lượt truyền xuôi | [https://git.io/JvohG](https://git.io/JvohG) |
-| framework           | framework        |                                              |
-| functional analysis | giải tích hàm    |                                              |
-| fully-connected     | kết nối đầy đủ   | [https://git.io/JvohR](https://git.io/JvohR) |
+| English             | Tiếng Việt           | Thảo luận tại                                |
+|---------------------|----------------------|----------------------------------------------|
+| F1 score            | chỉ số F1            |                                              |
+| false negative      | âm tính giả          |                                              |
+| false positive      | dương tính giả       |                                              |
+| feature             | đặc trưng            |                                              |
+| feature extraction  | trích xuất đặc trưng |                                              |
+| feature map (CNN)   | ánh xạ đặc trưng     |                                              |
+| filter (CNN)        | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
+| fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
+| first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
+| flatten             | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
+| forward pass        | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
+| framework           | framework            |                                              |
+| functional analysis | giải tích hàm        |                                              |
+| fully-connected     | kết nối đầy đủ       | [https://git.io/JvohR](https://git.io/JvohR) |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
@@ -199,16 +199,16 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | joint distribution | phân phối đồng thời | [https://git.io/Jvohb](https://git.io/Jvohb) |
 
 ## K
-| English                 | Tiếng Việt               | Thảo luận tại                                |
-|-------------------------|--------------------------|----------------------------------------------|
-| k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK) |
-| kernel                  | hạt nhân                     | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
+| English                 | Tiếng Việt               | Thảo luận tại                                                                              |
+|-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
+| k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK)                                               |
+| kernel                  | hạt nhân                 | [https://git.io/Jfe1I](https://git.io/Jfe1I), [https://git.io/Jf0vK](https://git.io/Jf0vK) |
 
 
 ## L
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
 |------------------------------------|--------------------------------|----------------------------------------------|
-| label smoothing                    | làm mượt nhãn                 |                                              |
+| label smoothing                    | làm mượt nhãn                  |                                              |
 | layer                              | tầng                           |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
@@ -373,28 +373,28 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | symbolic graph                  | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
-| English                    | Tiếng Việt                     | Thảo luận tại                                |
-|----------------------------|--------------------------------|----------------------------------------------|
-| target data / distribution | dữ liệu / phân phối mục tiêu   | [https://git.io/JvQAy](https://git.io/JvQAy) |
-| tensor contraction         | phép co tensor                 | [https://git.io/JvojX](https://git.io/JvojX) |
-| test set                   | tập kiểm tra                   |                                              |
-| test set performance       | chất lượng trên tập kiểm tra   |                                              |
-| test statistic             | tiêu chuẩn kiểm định           | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| text data                  | dữ liệu văn bản                |                                              |
-| timestep                   | bước thời gian                 | [https://git.io/JvojQ](https://git.io/JvojQ) |
-| timeseries analysis        | phân tích dữ liệu chuỗi thời gian   |  |
-| training set               | tập huấn luyện                 |                                              |
-| training dev set           | tập phát triển huấn luyện      |                                              |
-| training set performance   | chất lượng trên tập huấn luyện |                                              |
-| translation invariant      | bất biến tịnh tiến             | [https://git.io/Jftwj](https://git.io/Jftwj) |
-| transcribe                 | phiên thoại                    | [https://git.io/JvojN](https://git.io/JvojN) |
-| transcription              | bản ghi thoại                  |                                              |
-| transition layer           | tầng chuyển tiếp               |                                              |
-| true negative              | âm tính thật                   |                                              |
-| true positive              | dương tính thật                |                                              |
-| tune parameters            | điều chỉnh tham số             |                                              |
-| two-sided test             | kiểm định hai phía             | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| two-tailed test            | kiểm định hai đuôi             | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| English                    | Tiếng Việt                        | Thảo luận tại                                |
+|----------------------------|-----------------------------------|----------------------------------------------|
+| target data / distribution | dữ liệu / phân phối mục tiêu      | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| tensor contraction         | phép co tensor                    | [https://git.io/JvojX](https://git.io/JvojX) |
+| test set                   | tập kiểm tra                      |                                              |
+| test set performance       | chất lượng trên tập kiểm tra      |                                              |
+| test statistic             | tiêu chuẩn kiểm định              | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| text data                  | dữ liệu văn bản                   |                                              |
+| timestep                   | bước thời gian                    | [https://git.io/JvojQ](https://git.io/JvojQ) |
+| timeseries analysis        | phân tích dữ liệu chuỗi thời gian |                                              |
+| training set               | tập huấn luyện                    |                                              |
+| training dev set           | tập phát triển huấn luyện         |                                              |
+| training set performance   | chất lượng trên tập huấn luyện    |                                              |
+| translation invariant      | bất biến tịnh tiến                | [https://git.io/Jftwj](https://git.io/Jftwj) |
+| transcribe                 | phiên thoại                       | [https://git.io/JvojN](https://git.io/JvojN) |
+| transcription              | bản ghi thoại                     |                                              |
+| transition layer           | tầng chuyển tiếp                  |                                              |
+| true negative              | âm tính thật                      |                                              |
+| true positive              | dương tính thật                   |                                              |
+| tune parameters            | điều chỉnh tham số                |                                              |
+| two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 
 ## U
 | English                  | Tiếng Việt                | Thảo luận tại                                |

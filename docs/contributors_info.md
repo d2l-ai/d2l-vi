@@ -45,3 +45,4 @@
 | 41. | [thhung](https://github.com/thhung)                             | Nguyễn Thành Hưng              |
 | 42. | [namndtth](https://github.com/namndtth)                         | Nguyễn Đình Nam                |
 | 43. | [dacdinh147](https://github.com/dacdinh147)                     | Đinh Đắc                       |
+| 44. | [davidnvq](https://github.com/davidnvq)                         | Nguyễn Văn Quang               |

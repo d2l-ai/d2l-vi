@@ -46,10 +46,10 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Linear Neural Networks (**Đã hoàn thành**)
 * Multilayer Perceptrons (**Đã hoàn thành**)
 * Deep Learning Computation (**Đã hoàn thành**)
-* Convolutional Neural Networks (*Đang tiến hành*)
+* Convolutional Neural Networks (**Đã hoàn thành**)
 * Modern Convolutional Neural Networks (*Đang tiến hành*)
-* Recurrent Neural Networks
-* Modern Recurrent Neural Networks
+* Recurrent Neural Networks (*Đang tiến hành*)
+* Modern Recurrent Neural Networks (*Đang tiến hành*)
 * Attention Mechanisms
 * Optimization Algorithms
 * Computational Performance
