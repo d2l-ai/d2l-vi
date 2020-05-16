@@ -33,7 +33,7 @@ In a similar vein, ResNet decomposes functions into
 -->
 
 Điểm mấu chốt là khai triển Taylor phân tách hàm số thành các số hạng có bậc tăng dần.
-Tương tự, ResNet phân rã các hàm số thành
+Tương tự, ResNet phân tách các hàm số thành
 
 $$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x}).$$
 
