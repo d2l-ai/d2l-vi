@@ -32,7 +32,7 @@ The key point is that it decomposes the function into increasingly higher order 
 In a similar vein, ResNet decomposes functions into
 -->
 
-Điểm mấu chốt là khai triển Taylor phân rã hàm số thành các số hạng có bậc ngày càng cao.
+Điểm mấu chốt là khai triển Taylor phân tách hàm số thành các số hạng có bậc tăng dần.
 Tương tự, ResNet phân rã các hàm số thành
 
 $$f(\mathbf{x}) = \mathbf{x} + g(\mathbf{x}).$$
