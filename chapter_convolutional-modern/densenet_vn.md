@@ -71,7 +71,7 @@ The former defines how the inputs and outputs are concatenated, while the latter
 The dense connections are shown in :numref:`fig_densenet`.
 -->
 
-Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một MLP để giảm số lượng đặc trưng một lần nữa.
+Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một Perceptron đa tầng để giảm số lượng đặc trưng một lần nữa.
 Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
 Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
 Tầng cuối cùng của một chuỗi như vậy được kết nối tới tất cả các tầng trước đó.
