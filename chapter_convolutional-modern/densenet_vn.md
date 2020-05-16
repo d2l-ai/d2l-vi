@@ -44,7 +44,7 @@ an architecture that reported record performance on the ImageNet dataset.
 -->
 
 Cụ thể là, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
-Điều gì xảy ra nếu ta muốn dùng nhiều hơn hai số hạng? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` với tên gọi DenseNet. Kiến trúc này đã được ghi nhận là đạt được hiệu suất cao nhất trên tập dữ liệu ImageNet.
+Nếu ta muốn tách ra nhiều hơn hai số hạng thì sao? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` trong kiến trúc DenseNet. Kiến trúc này đạt được hiệu suất kỉ lục trên tập dữ liệu ImageNet.
 
 <!--
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
