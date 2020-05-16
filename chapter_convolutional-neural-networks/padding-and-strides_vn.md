@@ -137,7 +137,7 @@ Given an input with a height and width of $8$, we find that the height and width
 -->
 
 Trong ví dụ dưới, chúng ta tạo một tầng tích chập hai chiều với chiều dài và chiều rộng $3$ và đệm $1$ điểm ảnh vào viền các cạnh.
-Biết chiều dài và chiều rộng đầu vào là $8$, ta tìm được chiều dài và chiều rộng đầu ra cũng là $8$.
+Với đầu vào có chiều dài và chiều rộng là $8$, ta thấy rằng chiều dài và chiều rộng đầu ra cũng là $8$.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
