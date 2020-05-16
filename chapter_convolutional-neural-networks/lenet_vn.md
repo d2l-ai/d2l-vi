@@ -236,7 +236,7 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 While convolutional networks may have few parameters, they can still be significantly more expensive to compute than a similarly deep multilayer perceptron so if you have access to a GPU, this might be a good time to put it into action to speed up training.
 -->
 
-Dù mạng tích chập có thể có số lượng tham số không lớn, chúng vẫn tiêu tốn tài nguyên tính toán hơn nhiều so với perceptron sâu đa tầng. 
+Dù mạng tích chập có thể có số lượng tham số không lớn, chúng vẫn tiêu tốn nhiều tài nguyên tính toán hơn so với perceptron sâu đa tầng. 
 Vì vậy, nếu có sẵn GPU, thì đây là thời điểm thích hợp để dùng nó nhằm tăng tốc quá trình huấn luyện. 
 
 <!--
@@ -245,7 +245,7 @@ Since the full dataset lives on the CPU, we need to copy it to the GPU before we
 This is accomplished via the `as_in_ctx` function described in :numref:`sec_use_gpu`.
 -->
 
-Để đánh giá mô hình, chúng ta cần điều chỉnh một chút với hàm `evaluate_accuracy` đã mô tả ở phần :numref:`sec_softmax_scratch`.
+Để đánh giá mô hình, chúng ta cần điều chỉnh một chút hàm `evaluate_accuracy` đã mô tả ở phần :numref:`sec_softmax_scratch`.
 Vì toàn bộ tập dữ liệu đang nằm trên CPU, ta cần sao chép nó lên GPU trước khi thực hiện tính toán với mô hình.
 Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` được mô tả ở phần :numref:`sec_use_gpu`.  
 
