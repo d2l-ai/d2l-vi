@@ -200,9 +200,9 @@ In previous examples, we default to sliding one pixel at a time.
 However, sometimes, either for computational efficiency or because we wish to downsample, we move our window more than one pixel at a time, skipping the intermediate locations.
 -->
 
-Khi thực hiện phép tương quan chéo, ta bắt đầu với cửa sổ tích chập tại góc trên bên trái của mảng đầu vào, rồi di chuyển sang phải và xuống dưới qua tất cả các vị trí.
-Trong các ví dụ trước, ta mặc định di chuyển qua một điểm ảnh mỗi lần.
-Tuy nhiên, có những lúc để tăng hiệu suất tính toán hoặc vì muốn giảm kích thước của ảnh, ta di chuyển cửa sổ tích chập nhiều hơn một điểm ảnh mỗi lần, bỏ qua các vị trí ở giữa.
+Khi thực hiện phép tương quan chéo, ta bắt đầu với cửa sổ tích chập tại góc trên bên trái của mảng đầu vào, rồi di chuyển sang phải và xuống dưới qua tất cả các vị trí. 
+Trong các ví dụ trước, ta mặc định di chuyển qua một điểm ảnh mỗi lần. 
+Tuy nhiên, có những lúc để tăng hiệu suất tính toán hoặc vì muốn giảm kích thước của ảnh, ta di chuyển cửa sổ tích chập nhiều hơn một điểm ảnh mỗi lần, bỏ qua các vị trí ở giữa. 
 
 <!--
 We refer to the number of rows and columns traversed per slide as the *stride*.
@@ -216,17 +216,17 @@ When the convolution window slides three columns to the right on the input, ther
 
 Ta gọi số hàng và cột di chuyển qua mỗi lần là *sải bước* (_stride_). 
 Cho đến giờ, chúng ta sử dụng sải bước $1$ cho cả chiều dài và chiều rộng.
-Đôi lúc, chúng ta có thể muốn sử dụng sải bước lớn hơn.
-:numref:`img_conv_stride` biểu diễn phép tương quan chéo hai chiều với sải bước $3$ theo chiều dọc và $2$ theo chiều ngang.
-Có thể thấy khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng.
-Cửa sổ này di chuyển sang phải hai cột khi tính giá trị phần tử thứ hai của hàng đầu tiên.
-Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có giá trị đầu ra vì các phần tử đầu vào không lấp đầy cửa sổ (trừ khi ta thêm một cột đệm).
+Đôi lúc, chúng ta có thể muốn sử dụng sải bước lớn hơn. 
+:numref:`img_conv_stride` biểu diễn phép tương quan chéo hai chiều với sải bước $3$ theo chiều dọc và $2$ theo chiều ngang. 
+Có thể thấy rằng khi tính giá trị phần tử thứ hai của cột đầu tiên, cửa sổ tích chập di chuyển xuống ba hàng. 
+Cửa sổ này di chuyển sang phải hai cột khi tính giá trị phần tử thứ hai của hàng đầu tiên. 
+Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, giá trị đầu ra không tồn tại vì các phần tử đầu vào không lấp đầy cửa sổ (trừ khi ta thêm một cột đệm).  
 
 <!--
 ![Cross-correlation with strides of 3 and 2 for height and width respectively. The shaded portions are the output element and the input and core array elements used in its computation: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 -->
 
-![Phép tương quan chéo với sải bước 3 và 2 tương ứng theo chiều dài và chiều rộng. Phần tô đậm là các phần tử đầu ra cùng các phần tử đầu vào được sử dụng để tính các đầu ra này: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
+![Phép tương quan chéo với sải bước 3 theo chiều dài và và 2 theo chiều rộng. Phần tô đậm là các phần tử đầu ra, các phần tử đầu vào và bộ lọc được sử dụng để tính các đầu ra này: $0\times0+0\times1+1\times2+2\times3=8$, $0\times0+6\times1+0\times2+0\times3=6$. ](../img/conv-stride.svg)
 :label:`img_conv_stride`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -237,7 +237,7 @@ Khi cửa sổ di chuyển sang phải ba cột ở đầu vào, sẽ không có
 In general, when the stride for the height is $s_h$ and the stride for the width is $s_w$, the output shape is
 -->
 
-Thông thường, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$ thì kích thước đầu ra là 
+Nhìn chung, khi sải bước theo chiều cao là $s_h$ và sải bước theo chiều rộng là $s_w$, kích thước đầu ra là:
 
 $$\lfloor(n_h-k_h+p_h+s_h)/s_h\rfloor \times \lfloor(n_w-k_w+p_w+s_w)/s_w\rfloor.$$
 
@@ -246,8 +246,8 @@ If we set $p_h=k_h-1$ and $p_w=k_w-1$, then the output shape will be simplified 
 Going a step further, if the input height and width are divisible by the strides on the height and width, then the output shape will be $(n_h/s_h) \times (n_w/s_w)$.
 -->
 
-Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, thì kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$.
-Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng, thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
+Nếu đặt $p_h=k_h-1$ và $p_w=k_w-1$, kích thước đầu ra sẽ được thu gọn thành $\lfloor(n_h+s_h-1)/s_h\rfloor \times \lfloor(n_w+s_w-1)/s_w\rfloor$. 
+Hơn nữa, nếu chiều cao và chiều rộng của đầu vào chia hết cho sải bước theo chiều cao và chiều rộng tương ứng thì kích thước đầu ra sẽ là $(n_h/s_h) \times (n_w/s_w)$. 
 
 <!--
 Below, we set the strides on both the height and width to $2$, thus halving the input height and width.
@@ -264,7 +264,7 @@ comp_conv2d(conv2d, X).shape
 Next, we will look at a slightly more complicated example.
 -->
 
-Tiếp theo, chúng ta sẽ xem xét một ví dụ phức tạp hơn một chút.
+Tiếp theo, chúng ta sẽ xem xét một ví dụ phức tạp hơn một chút. 
 
 ```{.python .input  n=3}
 conv2d = nn.Conv2D(1, kernel_size=(3, 5), padding=(0, 1), strides=(3, 4))
@@ -280,12 +280,12 @@ By default, the padding is $0$ and the stride is $1$.
 In practice, we rarely use inhomogeneous strides or padding, i.e., we usually have $p_h = p_w$ and $s_h = s_w$.
 -->
 
-Để đơn giản, khi số đệm trên chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta kí hiệu phần đệm là $(p_h, p_w)$.
-Trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$.
-Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$.
-Trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$.
-Mặc định, phần đệm là $0$ và sải bước là $1$.
-Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức là thông thường, chúng ta có $p_h = p_w$ và $s_h = s_w$. 
+Để đơn giản hóa vấn đề, khi phần đệm theo chiều cao và chiều rộng của đầu vào lần lượt là $p_h$ và $p_w$, chúng ta sẽ kí hiệu phần đệm là $(p_h, p_w)$. 
+Ở trường hợp đặc biệt khi $p_h = p_w = p$, ta kí hiệu phần đệm là $p$. 
+Khi sải bước trên chiều cao và chiều rộng lần lượt là $s_h$ và $s_w$, chúng ta kí hiệu sải bước là $(s_h, s_w)$. 
+Ở trường hợp đặc biệt khi $s_h = s_w = s$, ta kí hiệu sải bước là $s$. 
+Mặc định, phần đệm là $0$ và sải bước là $1$. 
+Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho sải bước hoặc phần đệm, tức ta thường đặt $p_h = p_w$ và $s_h = s_w$. 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -303,9 +303,9 @@ Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho 
 * Padding and stride can be used to adjust the dimensionality of the data effectively.
 -->
 
-* Đệm có thể tăng chiều dài vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào.
-* Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều dài và chiều rộng của đầu ra chỉ còn $1/n$ chiều dài và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$).
-* Đệm và sải bước có thể được dùng để điều chỉnh số chiều của dữ liệu một cách hiệu quả.
+* Phần đệm có thể tăng chiều cao vào chiều rộng của đầu ra. Nó thường được sử dụng để đầu ra có cùng kích thước với đầu vào. 
+* Sải bước có thể giảm độ phân giải của đầu ra, ví dụ giảm chiều cao và chiều rộng của đầu ra xuống $1/n$ chiều cao và chiều rộng của đầu vào ($n$ là một số nguyên lớn hơn $1$). 
+* Đệm và sải bước có thể được dùng để điều chỉnh kích thước chiều của dữ liệu một cách hiệu quả. 
 
 <!--
 ## Exercises
@@ -320,10 +320,10 @@ Trên thực tế, ít khi chúng ta sử dụng các giá trị khác nhau cho 
 4. What are the computational benefits of a stride larger than $1$.
 -->
 
-1. Trong ví dụ cuối của phần này, tính kích thước đầu ra bằng công thức để xác nhận đúng với kết quả chạy mã nguồn.
-2. Thử các cách kết hợp đệm và sải bước khác trong các ví dụ ở phần này.
-3. Với các tín hiệu âm thanh, sải bước bằng $2$ tương ứng với điều gì?
-4. Có những lợi ích nào về mặt tính toán khi sử dụng sải bước lớn hơn $1$?
+1. Trong ví dụ cuối của phần này, tính kích thước đầu ra bằng công thức và xác nhận lại với kết quả khi chạy mã nguồn. 
+2. Thử các cách kết hợp đệm và sải bước khác trong các ví dụ ở phần này. 
+3. Với các tín hiệu âm thanh, sải bước bằng $2$ tương ứng với điều gì? 
+4. Có những lợi ích nào về mặt tính toán khi sử dụng sải bước lớn hơn $1$? 
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
