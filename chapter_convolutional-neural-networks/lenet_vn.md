@@ -40,7 +40,7 @@ Some ATMs still run the code that Yann and his colleague Leon Bottou wrote in th
 Trong phần này, chúng tôi sẽ giới thiệu một trong những mạng nơ-ron tích chập được công bố đầu tiên.
 Ưu điểm của mạng tích chập được minh hoạ lần đầu bởi Yann Lecun (lúc đó đang nghiên cứu tại AT&T Bell Labs) với ứng dụng nhận dạng các số viết tay trong ảnh-[LeNet5](http://yann.lecun.com/exdb/lenet/).
 Vào những năm 90, các thí nghiệm của các nhà nghiên cứu với LeNet đã đưa ra bằng chứng thuyết phục đầu tiên về tính khả thi của việc huấn luyện mạng nơ-ron tích chập bằng lan truyền ngược.
-Mô hình của họ đã đạt được kết quả rất tốt (chỉ ngang hàng với Máy Vector Hỗ trợ --- SVM tại thời điểm đó) và đã được đưa vào sử dụng để nhận diện các chữ số khi xử lý tiền gửi trong máy ATM.
+Mô hình của họ đã đạt được kết quả rất tốt (chỉ có Máy Vector Hỗ trợ --- SVM tại thời điểm đó là có thể sánh bằng) và đã được đưa vào sử dụng để nhận diện các chữ số khi xử lý tiền gửi trong máy ATM.
 Một số máy ATM vẫn chạy các đoạn mã mà Yann và đồng nghiệp Leon Bottou đã viết vào những năm 1990!
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -130,7 +130,7 @@ you can see below that implementing it in a modern deep learning library is rema
 Again, we will rely on the Sequential class.
 -->
 
-Để thực sự hiểu những gì diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực,
+Để thực sự hiểu những gì diễn ra bên trong LeNet có thể đòi hỏi một chút nỗ lực, tuy nhiên
 bạn có thể thấy bên dưới đây việc lập trình Lenet bằng thư viện học sâu hiện đại rất đơn giản.
 Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
@@ -159,8 +159,8 @@ which tends to be significantly more convenient to train.
 Other than that, this network matches the historical definition of LeNet5.
 -->
 
-So với mạng ban đầu, ta đã thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà có thường dễ huấn luyện hơn đáng kể.
-Ngoại trừ điểm đó, mạng này giống với định nghĩa gốc của LeNet5 trong quá khứ.
+So với mạng ban đầu, ta đã thay thế kích hoạt Gauss ở tầng cuối cùng bằng một tầng kết nối đầy đủ thông thường mà thường dễ huấn luyện hơn đáng kể.
+Ngoại trừ điểm đó, mạng này giống với định nghĩa gốc của LeNet5.
 
 <!--
 Next, let us take a look of an example.
