@@ -15,12 +15,12 @@ we preserve an order corresponding ot the spatial structure of the pixels or if 
 Preferably, we would leverage our prior knowledge that nearby pixels are typically related to each other, to build efficient models for learning from image data.
 -->
 
-Trong những chương đầu tiên, chúng ta đã tiếp cận với dữ liệu ảnh với mỗi mẫu là một mảng điểm ảnh 2D.
+Trong những chương đầu tiên, chúng ta đã làm việc trên dữ liệu ảnh với mỗi mẫu là một mảng điểm ảnh 2D.
 Tùy vào ảnh đen trắng hay ảnh màu mà ta cần xử lý *một* hay *nhiều* giá trị số học tương ứng tại mỗi vị trí điểm ảnh. 
 Cho đến nay, cách ta xử lý dữ liệu với cấu trúc phong phú này vẫn chưa thật sự thoả đáng.
 Ta chỉ đang đơn thuần loại bỏ cấu trúc không gian từ mỗi bức ảnh bằng cách chuyển chúng thành các vector và truyền chúng qua một mạng MLP (kết nối đầy đủ).
 Vì các mạng này là bất biến với thứ tự của các đặc trưng, ta sẽ nhận được cùng một kết quả bất kể việc chúng ta có giữ lại thứ tự cấu trúc không gian của các điểm ảnh hay hoán vị các cột của ma trận đặc trưng trước khi khớp các tham số của mạng MLP. 
-Tốt hơn hết, ta nên tận dụng điều đã biết là các điểm ảnh kề cận thường có tương quan lẫn nhau để xây dựng những mô hình hiệu quả hơn cho việc học từ dữ liệu ảnh.
+Tốt hơn hết, ta nên tận dụng điều đã biết là các điểm ảnh kề cận thường có tương quan lẫn nhau, để xây dựng những mô hình hiệu quả hơn cho việc học từ dữ liệu ảnh.
 
 <!--
 This chapter introduces convolutional neural networks (CNNs), a powerful family of neural networks that were designed for precisely this purpose.
@@ -41,8 +41,8 @@ Some clever adaptations of CNNs have also brought them to bear on graph-structur
 -->
 
 Theo cách hiểu thông dụng, thiết kế của mạng *ConvNets* đã vay mượn rất nhiều ý tưởng từ ngành sinh học, lý thuyết nhóm và lượng rất nhiều những thí nghiệm nhỏ lẻ khác.
-Bênh cạnh hiệu năng cao trên số lượng mẫu cần thiết để đạt được đủ độ chính xác, các mạng nơ-ron tích chập thường hiệu quả tính toán hơn, bởi đòi hỏi ít tham số hơn và dễ thực thi song song trên nhiều GPU hơn các kiến trúc mạng dày đặc.  
-Do đó, những người hành nghề thường áp dụng các mạng CNN bất cứ khi nào có thể, và chúng đã nhanh chóng trở thành một công cụ quan trọng đáng tin cậy thậm chí với các tác vụ liên quan tới cấu trúc tuần tự một chiều, 
+Bênh cạnh hiệu năng cao trên số lượng mẫu cần thiết để đạt được đủ độ chính xác, các mạng nơ-ron tích chập thường có hiệu quả tính toán hơn, bởi đòi hỏi ít tham số hơn và dễ thực thi song song trên nhiều GPU hơn các kiến trúc mạng dày đặc.  
+Do đó, các mạng CNN sẽ được áp dụng bất cứ khi nào có thể, và chúng đã nhanh chóng trở thành một công cụ quan trọng đáng tin cậy thậm chí với các tác vụ liên quan tới cấu trúc tuần tự một chiều, 
 như là xử lý âm thanh, văn bản, và phân tích dữ liệu chuỗi thời gian (*time series analysis*), mà ở đó các mạng nơ-rơn truy hồi vốn thường được sử dụng. 
 Với một số điều chỉnh khôn khéo, ta còn có thể dùng mạng CNN cho dữ liệu có cấu trúc đồ thị và hệ thống đề xuất. 
 
@@ -59,7 +59,8 @@ comparatively recent CNN architectures whose designs representat most of the tec
 Trước hết, chúng ta sẽ đi qua các phép toán cơ bản nhằm tạo nên bộ khung sườn của tất cả các mạng nơ-ron tích chập.
 Chúng bao gồm các tầng tích chập, các chi tiết cơ bản quan trọng như đệm và sải bước, các tầng gộp dùng để kết hợp thông tin qua các vùng không gian kề nhau, việc sử dụng đa kênh (cũng được gọi là *các bộ lọc*) ở mỗi tầng và một cuộc thảo luận cẩn thận về cấu trúc của các mạng hiện đại. 
 Chúng ta sẽ kết thúc cho chương này với một ví dụ hoàn toàn hoạt động của mạng LeNet, mạng tích chập đầu tiên đã triển khai thành công và tồn tại nhiều năm trước khi có sự trỗi dậy của kỹ thuật học sâu hiện đại.
-Ở chương kế tiếp, chúng ta sẽ đắm mình vào việc xây dựng hoàn chỉnh một số kiến trúc CNN tương đối gần đây và khá phổ biến mà những thiết kế này thể hiện hầu hết các kỹ thuật được sử dụng bởi những người hành nghề hiện nay. 
+Ở chương kế tiếp, chúng ta sẽ đắm mình vào việc xây dựng hoàn chỉnh một số kiến trúc CNN tương đối gần đây và khá phổ biến. 
+Thiết kế của chúng chứa hầu hết những kỹ thuật mà ngày nay hay được sử dụng. 
 
 
 ```toc
