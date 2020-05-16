@@ -287,8 +287,8 @@ Designing an edge detector by finite differences `[1, -1]` is neat if we know th
 However, as we look at larger kernels, and consider successive layers of convolutions, it might be impossible to specify precisely what each filter should be doing manually.
 -->
 
-Thiết kế một máy dò cạnh bằng hiệu hữu hạn giữa `[1, -1]` thì rất tuyệt nếu ta biết điều này chính xác là những gì ta đang tìm kiếm.
-Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, sẽ không khả thi để chỉ định thủ công chính xác mỗi bộ lọc nên làm gì.
+Việc thiết kế bộ phát hiện biên bằng sai phân hữu hạn `[1, -1]` thì khá gọn gàng nếu ta biết chính xác đây là những gì cần làm.
+Tuy nhiên, khi xét tới các bộ lọc lớn hơn và các tầng tích chập liên tiếp, việc chỉ định chính xác mỗi bộ lọc cần làm gì một cách thủ công là bất khả thi.
 
 <!--
 Now let us see whether we can learn the kernel that generated `Y` from `X` by looking at the (input, output) pairs only.
@@ -298,10 +298,10 @@ We can then calculate the gradient to update the weight.
 For the sake of simplicity, in this convolutional layer, we will ignore the bias.
 -->
 
-Bây giờ ta hãy xem liệu ta có thể học một bộ lọc có khả năng tạo ra `Y` từ` X` chỉ bằng cách nhìn vào các cặp (đầu vào, đầu ra) hay không.
-Đầu tiên chúng ta xây dựng một tầng tích chập và khởi tạo nhân của nó như là một mảng ngẫu nhiên.
-Tiếp theo, trong mỗi lần lặp, ta sẽ sử dụng sai số bình phương để so sánh `Y` và đầu ra của lớp chập, sau đó tính toán gradient để cập nhật trọng số.
-Để đơn giản, trong tầng tích chập này, ta sẽ bỏ qua độ chệch.
+Bây giờ ta hãy xem liệu có thể học một bộ lọc có khả năng tạo ra `Y` từ` X` chỉ từ các cặp (đầu vào, đầu ra) hay không.
+Đầu tiên chúng ta xây dựng một tầng tích chập và khởi tạo một mảng ngẫu nhiên làm bộ lọc.
+Tiếp theo, trong mỗi lần lặp, ta sẽ sử dụng bình phương sai số để so sánh `Y` và đầu ra của tầng tích chập, sau đó tính toán gradient để cập nhật trọng số.
+Để đơn giản, trong tầng tích chập này, ta sẽ bỏ qua hệ số điều chỉnh.
 
 <!--
 We previously constructed the `Conv2D` class.
@@ -310,10 +310,9 @@ Gluon has some trouble finding the gradient.
 Instead, we use the built-in `Conv2D` class provided by Gluon below.
 -->
 
-Trước đây ta đã xây dựng lớp `Conv2D`.
-Tuy nhiên, vì ta đã sử dụng các phép gán một phần tử,
-Gluon sẽ có một số khó khăn khi tìm gradient.
-Thay vào đó, ta sử dụng lớp `Conv2D` tích hợp được cung cấp bởi Gluon bên dưới.
+Trước đây ta đã tự xây dựng lớp `Conv2D`.
+Tuy nhiên, do ta sử dụng các phép gán một phần tử, Gluon sẽ gặp một số khó khăn khi tính gradient.
+Thay vào đó, ta sử dụng lớp `Conv2D` có sẵn của Gluon như sau.
 
 ```{.python .input  n=83}
 # Construct a convolutional layer with 1 output channel
@@ -349,8 +348,8 @@ Note that the error has dropped to a small value after 10 iterations.
 Now we will take a look at the kernel array we learned.
 -->
 
-Như bạn có thể thấy, sai số đã giảm về một giá trị nhỏ sau 10 lần lặp.
-Bây giờ ta sẽ xem xét mảng bộ lọc đã được học.
+Có thể thấy sai số đã giảm xuống còn khá nhỏ sau 10 lần lặp.
+Bây giờ hãy xem mảng bộ lọc đã học được.
 
 ```{.python .input}
 conv2d.weight.data().reshape(1, 2)
@@ -360,7 +359,7 @@ conv2d.weight.data().reshape(1, 2)
 Indeed, the learned kernel array is remarkably close to the kernel array `K` we defined earlier.
 -->
 
-Thật vậy, mảng bộ lọc mà đã được học rất gần với mảng bộ lọc `K` mà ta đã định nghĩa trước đó.
+Thật vậy, mảng bộ lọc học được rất gần với mảng bộ lọc `K` mà ta tự định nghĩa trước đó.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -390,11 +389,11 @@ In keeping with standard terminology with deep learning literature, we will cont
 as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
-Hãy nhớ lại các quan sát từ phần trước rằng tương quan chéo và tích chập là tương đương nhau.
-Trong hình trên, ta dễ dàng nhận thấy điều này, đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
-Trong trường hợp này, việc lập chỉ số trong phép tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
-Để phù hợp với thuật ngữ tiêu chuẩn trong học sâu,
-ta sẽ tiếp tục đề cập đến phép tương quan chéo như là một phép tích chập mặc dù, đúng ra mà nói, nó hơi khác một chút.
+Hãy nhớ lại kiến thức của phần trước về mối liên hệ giữa phép tương quan chéo và tích chập.
+Trong hình trên, ta dễ dàng nhận thấy điều này. 
+Đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
+Trong trường hợp này, chỉ số trong phép lấy tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
+Để thống nhất với các thuật ngữ tiêu chuẩn trong tài liệu học sâu, ta sẽ tiếp tục đề cập đến phép tương quan chéo như là phép tích chập, mặc dù đúng ra chúng hơi khác nhau một chút.
 
 <!--
 ## Summary
@@ -409,10 +408,10 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 * We can learn the kernel's parameters from data.
 -->
 
-* Tính toán cốt lõi của tầng tích chập hai chiều là phép tính tương quan chéo hai chiều.
-Ở dạng đơn giản nhất, nó thực hiện thao tác tương quan chéo trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó thêm vào một độ lệch.
-* Chúng ta có thể thiết kế bộ lọc để phát hiện các cạnh trong ảnh.
-* Chúng ta có thể học các bộ lọc từ dữ liệu.
+* Về cốt lõi, phần tính toán của tầng tích chập hai chiều là phép tương quan chéo hai chiều.
+Ở dạng đơn giản nhất, phép tương quan chéo thao tác trên dữ liệu đầu vào hai chiều và bộ lọc, sau đó cộng thêm hệ số điều chỉnh.
+* Chúng ta có thể thiết kế bộ lọc để phát hiện các biên trong ảnh.
+* Chúng ta có thể học các tham số của bộ lọc từ dữ liệu.
 
 <!--
 ## Exercises
