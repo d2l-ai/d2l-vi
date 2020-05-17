@@ -377,7 +377,7 @@ train_ch6(net, train_iter, test_iter, num_epochs, lr)
 -->
 
 1. Điều gì sẽ xảy ra nếu ta thay thế phép gộp trung bình bằng phép gộp cực đại?
-2. Thử xây cải thiện độ chính xác dự đoán dựa trên LeNet bằng cách:
+2. Thử cải thiện độ chính xác dự đoán dựa trên LeNet bằng cách:
      * Điều chỉnh kích thước cửa sổ tích chập.
      * Điều chỉnh số lượng kênh đầu ra.
      * Điều chỉnh hàm kích hoạt (ReLU?).
