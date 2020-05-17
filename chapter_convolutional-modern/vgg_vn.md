@@ -22,7 +22,7 @@ Similarly, the design of neural network architectures had grown progressively mo
 individual neurons to whole layers, and now to blocks, repeating patterns of layers.
 -->
 
-Tiến bộ trong lĩnh vực này giống như cách mà các kỹ sư đi từ việc đặt các bóng bán dẫn, đến các phần tử logic và sau đó là các khối logic.  
+Tiến bộ trong lĩnh vực này giống cách chuyển từ việc sắp đặt các bóng bán dẫn, đến các phần tử logic và các khối logic.  
 Tương tự như vậy, việc thiết kế kiến trúc các mạng nơ-ron đã phát triển theo hướng ngày một trừu tượng hơn. Điển hình là việc các nhà nghiên cứu đã thay đổi suy nghĩ từ quy mô các nơ-ron riêng lẻ sang các tầng, và giờ đây là các khối chứa các tầng lặp lại theo khuôn mẫu. 
 
 <!--
