@@ -214,7 +214,7 @@ Sau đó, tầng kết nối đầy đủ làm giảm số chiều lần lượt
 ## Data Acquisition and Training
 -->
 
-## Thu thập dữ liệu và Huấn luyện
+## Thu thập Dữ liệu và Huấn luyện
 
 <!--
 Now that we have implemented the model, we might as well run some experiments to see what we can accomplish with the LeNet model.
@@ -253,6 +253,7 @@ Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` đư
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
+
 ```{.python .input}
 # Saved in the d2l package for later use
 def evaluate_accuracy_gpu(net, data_iter, ctx=None):
@@ -272,7 +273,8 @@ prior to making the forward and backward passes.
 -->
 
 Chúng ta cũng cần phải cập nhật hàm huấn luyện để mô hình có thể chạy được trên GPU.
-Không giống hàm `train_epoch_ch3` được định nghĩa ở phần :numref:`sec_softmax_scratch`, giờ chúng ta cần chuyển từng batch dữ liệu tới dạng xử lý tín hiệu tương ứng (hy vọng là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.
+Không giống hàm `train_epoch_ch3` được định nghĩa ở phần :numref:`sec_softmax_scratch`, 
+giờ chúng ta cần chuyển từng batch dữ liệu tới ngữ cảnh được chỉ định (hy vọng là GPU thay vì CPU) trước khi thực hiện lượt truyền xuôi và lượt truyền ngược.
 
 <!--
 The training function `train_ch6` is also very similar to `train_ch3` defined in :numref:`sec_softmax_scratch`.
