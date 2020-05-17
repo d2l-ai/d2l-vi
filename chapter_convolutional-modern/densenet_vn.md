@@ -300,7 +300,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * We need to keep the dimensionality under control when composing the network by adding transition layers that shrink the number of channels again.
 -->
 
-* Về mặt kết nối liên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra trên chiều kênh.
+* Về mặt kết nối xuyên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra theo chiều kênh.
 * Các thành phần chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 * Ta cần kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
 
