@@ -61,7 +61,7 @@ Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
 ![Left: non-nested function classes. The distance may in fact increase as the complexity increases. Right: with nested function classes this does not happen.](../img/functionclasses.svg)
 -->
 
-![Trái: Các lớp hàm số không lồng nhau. Khoảng cách này, trên thực tế, có thể tăng khi độ phức tạp tăng lên. Phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
+![Trái: Các lớp hàm số không lồng nhau. Khoảng cách đến hàm cần tìm $f^*$ (ngôi sao), trên thực tế có thể tăng khi độ phức tạp tăng lên. Phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
 :label:`fig_functionclasses`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
