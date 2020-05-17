@@ -212,7 +212,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * In their work Simonyan and Ziserman experimented with various architectures. In particular, they found that several layers of deep and narrow convolutions (i.e., $3 \times 3$) were more effective than fewer layers of wider convolutions.
 -->
 
-* Mạng VGG-11 tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được định nghĩa bằng số lượng các tầng chập và kênh đầu ra trên mỗi khối khác nhau.
+* Mạng VGG-11 được xây dựng bằng cách tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được định nghĩa bằng cách thay đổi số lượng các tầng tích chập và số kênh đầu ra ở mỗi khối.
 * Việc sử dụng các khối cho phép các đoạn mã nguồn định nghĩa mạng có biểu diễn rất nhỏ gọn. Nó cho phép ta thiết kế hiệu quả các mạng phức tạp.
 * Thử nghiệm nhiều kiến trúc khác nhau, Simonyan và Zisserman đã phát hiện rằng mạng có tích chập hẹp (như $3 \times 3$) và nhiều tầng cho hiệu quả cao hơn mạng có tích chập rộng nhưng ít tầng.
 
