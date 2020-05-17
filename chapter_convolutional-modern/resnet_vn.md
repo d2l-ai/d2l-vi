@@ -131,9 +131,13 @@ This kind of design requires that the output of the two convolutional layers be 
 If we want to change the number of channels or the stride, we need to introduce an additional $1\times 1$ convolutional layer to transform the input into the desired shape for the addition operation.
 Let us have a look at the code below.
 -->
-
-*dịch đoạn phía trên*
-
+ResNet tuân theo thiết kế tầng tích chập đầy đủ $3\times 3$ của VGG.
+Khối thặng dư có hai tầng tích chập $3\times 3$ mà giá trị trả về có cùng số kênh với nhau.
+Mỗi tầng tích chập theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
+Sau đó, chúng ta bỏ qua hai phép tính tích chập và thêm giá trị đầu vào trực tiếp vào trước hàm kích hoạt ReLU cuối cùng.
+Kiểu thiết kế này đòi hỏi giá trị trả về của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, như vậy chúng mới có thể cộng lại với nhau.
+Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần thêm một tầng tích chập $1\times 1$ bổ sung để thay đổi kích thước giá trị đầu vào phù hợp với phép tính được thêm vào.
+Hãy xem đoạn mã bên dưới.
 ```{.python .input  n=1}
 import d2l
 from mxnet import np, npx
@@ -168,22 +172,19 @@ This code generates two types of networks: one where we add the input to the out
 and whenever `use_1x1conv=True`, one where we adjust channels and resolution by means of a $1 \times 1$ convolution before adding.
 :numref:`fig_resnet_block` illustrates this:
 -->
-
-*dịch đoạn phía trên*
-
+Đoạn mã sinh ra hai loại mạng nơ-ron: một là chúng ta thêm giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU, và khi nào `use_1x1conv=True`, cái còn lại là chúng ta thay đổi số kênh và độ phân giải bằng trung bình của một lớp tích chập $1 \times 1$ trước khi thêm vào.
+:numref:`fig_resnet_block` minh họa cho điều này:
 <!--
 ![Left: regular ResNet block; Right: ResNet block with 1x1 convolution](../img/resnet-block.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/resnet-block.svg)
+![Trái: khối ResNet thông thường; Phải: Khối ResNet với tầng tích chập 1x1](../img/resnet-block.svg)
 :label:`fig_resnet_block`
 
 <!--
 Now let us look at a situation where the input and output are of the same shape.
 -->
-
-*dịch đoạn phía trên*
-
+Cùng xem xét một tình huống mà cả giá trị đầu vào và đầu ra có cùng kích thước.
 ```{.python .input  n=2}
 blk = Residual(3)
 blk.initialize()
@@ -194,9 +195,7 @@ blk(X).shape
 <!--
 We also have the option to halve the output height and width while increasing the number of output channels.
 -->
-
-*dịch đoạn phía trên*
-
+Chúng ta cũng có một lựa chọn khác nữa là giảm kích thước chiều cao và chiều rộng đi một nửa trong khi tăng số lượng kênh của đầu ra.
 ```{.python .input  n=3}
 blk = Residual(6, use_1x1conv=True, strides=2)
 blk.initialize()
@@ -429,7 +428,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Nguyễn Đình Nam
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
