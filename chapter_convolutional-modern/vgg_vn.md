@@ -95,7 +95,7 @@ the number of convolutional layers and the number of output channels, which are 
 The fully-connected module is identical to that covered in AlexNet.
 -->
 
-Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng tích chập và tầng gộp và phần thứ hai bao gồm các tầng kết nối đầy đủ. 
+Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng tích chập và tầng gộp, còn phần thứ hai bao gồm các tầng kết nối đầy đủ. 
 Phần tích chập của mạng gồm các mô-đun `vgg_block` kết nối liên tiếp với nhau.
 Trong :numref:`fig_vgg`, biến `conv_arch` bao gồm một danh sách các tuples (một tuple cho mỗi khối), trong đó mỗi tuple chứa hai giá trị: 
 số các tầng tích chập và số kênh đầu ra, cũng chính là những tham số cần thiết để gọi hàm `vgg_block`. 
