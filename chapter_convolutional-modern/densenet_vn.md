@@ -50,7 +50,7 @@ Nếu ta muốn tách ra nhiều hơn hai số hạng thì sao? Một giải ph�
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
 -->
 
-![Sự khác biệt chính giữa ResNet (bên trái) và DenseNet (bên phải) trong các kết nối liên tầng: sử dụng phép cộng và sử dụng phép nối.](../img/densenet-block.svg)
+![Sự khác biệt chính giữa ResNet (bên trái) và DenseNet (bên phải) trong các kết nối xuyên tầng: sử dụng phép cộng và sử dụng phép nối.](../img/densenet-block.svg)
 :label:`fig_densenet_block`
 
 <!--
