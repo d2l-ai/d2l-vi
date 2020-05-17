@@ -15,7 +15,8 @@ but do not assume anything a priori about which features are related to each oth
 -->
 
 Đến nay, các mô hình mà ta đã thảo luận là các lựa chọn phù hợp nếu dữ liệu mà ta đang xử lý có *dạng bảng* với các hàng tương ứng với các mẫu, còn các cột tương ứng với các đặc trưng.
-Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, nhưng ta không giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
+Với dữ liệu có dạng như vậy, ta có thể dự đoán rằng khuôn mẫu mà ta đang tìm kiếm có thể yêu cầu việc mô hình hóa sự tương tác giữa các đặc trưng, 
+nhưng ta không giả định trước rằng những đặc trưng nào liên quan tới nhau và mối quan hệ của chúng.
 
 
 <!--
@@ -41,7 +42,8 @@ Hãy quay trở lại với ví dụ phân biệt chó và mèo quen thuộc.
 Giả sử ta đã thực hiện việc thu thập dữ liệu một cách kỹ lưỡng và thu được một bộ ảnh được gán nhãn chất lượng cao với độ phân giải 1 triệu điểm ảnh.
 Điều này có nghĩa là đầu vào của mạng sẽ có *1 triệu chiều*.
 Ngay cả việc giảm mạnh xuống còn *1000 chiều ẩn* sẽ cần tới một tầng *dày đặc* (kết nối đầy đủ) có $10^9$ tham số.
-Trừ khi ta có một tập dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, chuyên môn cao trong việc tối ưu hóa phân tán và sức kiên nhẫn phi thường, việc học các tham số của mạng này có thể là điều bất khả thi.
+Trừ khi ta có một tập dữ liệu cực lớn (có thể là hàng tỷ ảnh?), một số lượng lớn GPU, 
+chuyên môn cao trong việc tối ưu hóa phân tán và sức kiên nhẫn phi thường, việc học các tham số của mạng này có thể là điều bất khả thi.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -66,7 +68,7 @@ Tuy nhiên, việc cả con người và máy tính đều có thể phân biệ
 ## Invariances
 -->
 
-## Tính Bất Biến
+## Tính Bất biến
 
 <!--
 Imagine that you want to detect an object in an image.
@@ -104,7 +106,7 @@ Mặc dù Waldo có trang phục khá nổi bật, việc này có thể vẫn r
 Back to images, the intuitions we have been discussing could be made more concrete yielding a few key principles for building neural networks for computer vision:
 -->
 
-Quay lại với ảnh, những trực giác mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính: <!-- Reviewers xem giúp mình có cách nào dịch từ "intuitions" hợp lý hơn trực giác không. Thanks -->
+Quay lại với ảnh, những trực giác mà ta đã thảo luận có thể được cụ thể hóa hơn nữa để thu được một vài nguyên tắc chính trong việc xây dựng mạng nơ-ron cho thị giác máy tính:
 
 <!--
 1. Our vision systems should, in some sense, respond similarly to the same object regardless of where it appears in the image (translation invariance).
@@ -132,24 +134,24 @@ Hãy cùng xem cách biểu diễn những điều trên bằng ngôn ngữ toá
 ## Constraining the MLP
 -->
 
-## Ràng buộc Perceptron đa tầng
+## Ràng buộc Perceptron Đa tầng
 
 <!-- In this exposition, we treat both images and hidden layers alike as two-dimensional arrays.
 To start off let us consider what an MLP would look like with $h \times w$ images as inputs
 (represented as matrices in math, and as 2D arrays in code),
 and hidden representations similarly organized as $h \times w$ matrices / 2D arrays.
 Let $x[i, j]$ and $h[i, j]$ denote pixel location $(i, j)$ in an image and hidden representation, respectively.
-Consequently, to have each of the $hw$ hidden nodes receive input from each of the $hw$ inputs,
+Consequently, to have each of the $h \times w$ hidden nodes receive input from each of the $h \times w$ inputs,
 we would switch from using weight matrices (as we did previously in MLPs)
 to representing our parameters as four-dimensional weight tensors.
 -->
 
 Trong phần này, ta coi hình ảnh và các tầng ẩn là các mảng hai chiều.
 Để bắt đầu, hãy tưởng tượng một perceptron đa tầng sẽ như thế nào với đầu vào là ảnh kích thước $h \times w$ 
-(biểu diễn dưới dạng ma trận trong toán học và mảng 2 chiều khi lập trình),
-và với các biểu diễn ẩn cũng là các ma trận / mảng 2 chiều kích thước $h \times w$.
+(biểu diễn dưới dạng ma trận trong toán học và mảng hai chiều khi lập trình),
+và với các biểu diễn ẩn cũng là các ma trận / mảng hai chiều kích thước $h \times w$.
 Đặt $x[i, j]$ và $h[i, j]$ lần lượt là điểm ảnh tại vị trí $(i, j)$ của ảnh và biểu diễn ẩn.
-Để mỗi nút ẩn trong tổng số $hw$ nút nhận dữ liệu từ tất cả $hw$ đầu vào,
+Để mỗi nút ẩn trong tổng số $h \times w$ nút nhận dữ liệu từ tất cả $h \times w$ đầu vào,
 ta sẽ chuyển từ việc biểu diễn các tham số bằng ma trận trọng số (như đã thực hiện với perceptron đa tầng trước đây) sang sử dụng các tensor trọng số bốn chiều.
 
 <!--
@@ -425,54 +427,17 @@ Tất cả những điều này sẽ được giải quyết trong phần còn l
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2348)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2348)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
-
-<!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
-* Trần Yến Thy
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 7 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
