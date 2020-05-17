@@ -19,14 +19,15 @@ we first flattened each image, yielding vectors of length 784, before processing
 Bây giờ ta đã sẵn sàng kết hợp tất cả các công cụ lại với nhau để triển khai mạng nơ-ron tích chập hoàn chỉnh đầu tiên.
 Lần đầu làm việc với dữ liệu ảnh, ta đã áp dụng một perceptron đa tầng (:numref:`sec_mlp_scratch`) cho ảnh quần áo trong bộ dữ liệu Fashion-MNIST.
 Mỗi ảnh trong Fashion-MNIST là một ma trận hai chiều có kích thước $28 \times 28$.
-Để tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, đầu tiên ta trải phẳng từng hình ảnh và thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
+Để tương thích với đầu vào dạng vector một chiều với độ dài cố định của các perceptron đa tầng, 
+đầu tiên ta trải phẳng từng hình ảnh và thu được các vector có chiều dài 784, trước khi xử lý chúng với một chuỗi các tầng kết nối đầy đủ.
 
 <!--
 Now that we have introduced convolutional layers, we can keep the image in its original spatially-organized grid, processing it with a series of successive convolutional layers.
 Moreover, because we are using convolutional layers, we can enjoy a considerable savings in the number of parameters required.
 -->
 
-Bây giờ đã có các tầng tích chập, ta có thể giữ nguyên ảnh đầu vào ở dạng không gian 2 chiều như ảnh gốc và xử lý chúng với một chuỗi các tầng tích chập liên tiếp.
+Bây giờ đã có các tầng tích chập, ta có thể giữ nguyên ảnh đầu vào ở dạng không gian hai chiều như ảnh gốc và xử lý chúng với một chuỗi các tầng tích chập liên tiếp.
 Hơn nữa, vì ta đang sử dụng các tầng tích chập, số lượng tham số cần thiết sẽ giảm đi đáng kể.
 
 <!--
@@ -62,7 +63,7 @@ Before getting into the weeds, let us briefly review the model in :numref:`img_l
 
 Một cách đơn giản, ta có thể xem LeNet gồm hai phần:
 (i) một khối các tầng tích chập; và
-(ii) một khối các tầng kết nối đầy đủ. 
+(ii) một khối các tầng kết nối đầy đủ.
 Trước khi đi vào các chi tiết cụ thể, hãy quan sát tổng thể mô hình trong :numref:`img_lenet`.
 
 <!--
@@ -118,11 +119,11 @@ Because we are still performing classification, the 10 dimensional output layer 
 -->
 
 Đầu ra của khối tích chập có kích thước được xác định bằng (kích thước batch, kênh, chiều cao, chiều rộng).
-Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch. 
+Trước khi chuyển đầu ra của khối tích chập sang khối kết nối đầy đủ, ta phải trải phẳng từng mẫu trong minibatch.
 Nói cách khác, ta biến đổi đầu vào 4D thành đầu vào 2D tương thích với các tầng kết nối đầy đủ:
-nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu. 
+nhắc lại, chiều thứ nhất là chỉ số các mẫu trong minibatch và chiều thứ hai là biểu diễn vector phẳng của mỗi mẫu.
 Khối tầng kết nối đầy đủ của LeNet có ba tầng kết nối đầy đủ, với số lượng đầu ra lần lượt là 120, 84 và 10.
-Bởi vì ta đang thực hiện bài toán phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi (10 chữ số từ 0 đến 9). 
+Bởi vì ta đang thực hiện bài toán phân loại, tầng đầu ra 10 chiều tương ứng với số lượng các lớp đầu ra khả thi (10 chữ số từ 0 đến 9).
 
 <!--
 While getting to the point where you truly understand what is going on inside LeNet may have taken a bit of work, 
@@ -193,12 +194,12 @@ However, as we go up the stack of layers, the number of channels increases layer
 Then, the fully-connected layer reduces dimensionality layer by layer, until emitting an output that matches the number of image classes.
 -->
 
-Xin hãy chú ý rằng, chiều cao và chiều rộng của biểu diễn sau mỗi tầng trong toàn bộ khối tích chập sẽ giảm theo chiều sâu của mạng(so với chiều cao và chiều rộng của biểu diễn ở tầng trước). 
-Tầng tích chập đầu tiên sử dụng một hạt nhân với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để giữ nguyên kích thước đầu vào. 
-Trong khi đó, tầng tích chập thứ hai cũng dùng cùng một hạt nhân với kích thước là $5 \times 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh. 
-Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào. 
+Xin hãy chú ý rằng, chiều cao và chiều rộng của biểu diễn sau mỗi tầng trong toàn bộ khối tích chập sẽ giảm theo chiều sâu của mạng(so với chiều cao và chiều rộng của biểu diễn ở tầng trước).
+Tầng tích chập đầu tiên sử dụng một hạt nhân với chiều cao và chiều rộng là $5$ rồi đệm thêm $2$ đơn vị điểm ảnh để giữ nguyên kích thước đầu vào.
+Trong khi đó, tầng tích chập thứ hai cũng dùng cùng một hạt nhân với kích thước là $5 \times 5$ mà không có sử dụng giá trị đệm thêm vào, dẫn đến việc chiều cao và chiều rộng giảm đi 4 đơn vị điểm ảnh.
+Ngoài ra, mỗi tầng gộp sẽ làm giảm đi một nửa chiều cao và chiều rộng của đặc trưng ánh xạ đầu vào.
 Tuy nhiên, khi chúng ta đi theo chiều sâu của mạng, số kênh sẽ tăng lần lượt theo từng tầng. Từ 1 kênh của dữ liệu đầu vào lên tới 6 kênh sau tầng tích chập thứ nhất và 16 kênh sau tầng tích chập thứ hai.
-Sau đó,giảm số chiều lần lượt qua từng tầng kết nối đầy đủ đến khi trả về một đầu ra có kích thước bằng số lượng lớp của hình ảnh. 
+Sau đó,giảm số chiều lần lượt qua từng tầng kết nối đầy đủ đến khi trả về một đầu ra có kích thước bằng số lượng lớp của hình ảnh.
 
 <!--
 ![Compressed notation for LeNet5](../img/lenet-vert.svg)

@@ -202,9 +202,9 @@ We can demonstrate the use of padding and strides in pooling layers via the two-
 We first construct an input data of shape `(1, 1, 4, 4)`, where the first two dimensions are batch and channel.
 -->
 
-Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi kích thước đầu ra. 
-Và cũng như trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách thêm đệm vào đầu vào và điều chỉnh sải bước. 
-Chúng ta có thể minh hoạ cách sử dụng đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô đun `nn` của thư viện MXNet Gluon. 
+Cũng giống như các tầng tính chập, các tầng gộp cũng có thể thay đổi kích thước đầu ra.
+Và cũng như trước, chúng ta có thể thay đổi cách thức hoạt động của tầng gộp để đạt được kích thước đầu ra như mong muốn bằng cách thêm đệm vào đầu vào và điều chỉnh sải bước.
+Chúng ta có thể minh hoạ cách sử dụng đệm và sải bước trong các tầng gộp thông qua tầng gộp cực đại hai chiều MaxPool2D được cung cấp trong mô-đun `nn` của thư viện MXNet Gluon.
 Đầu tiên, chúng ta tạo ra dữ liệu đầu vào kích thước `(1, 1, 4, 4)`, trong đó hai chiều đầu tiên lần lượt là kích thước batch và số kênh.
 
 
@@ -307,6 +307,7 @@ pool2d(X)
 * Chúng ta có thể chỉ rõ giá trị của đệm và sải bước cho tầng gộp.
 * Tầng gộp cực đại kết hợp với sải bước lớn hơn 1 có thể dùng để giảm độ phân giải.
 * Số lượng kênh đầu ra của tầng gộp sẽ bằng số lượng kênh đầu vào tầng gộp đó.
+
 <!--
 ## Exercises
 -->
@@ -324,7 +325,8 @@ pool2d(X)
 
 1. Có thể lập trình tầng gộp trung bình như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
 2. Có thể lập trình tầng gộp cực đại như một trường hợp đặc biệt của tầng tích chập không? Nếu được, hãy thực hiện nó.
-3. Hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước $c\times h\times w$, kích thước của cửa sổ gộp $p_h\times p_w$ với đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
+3. Hãy tính chi phí tính toán của tầng gộp trong trường hợp, giả sử đầu vào của tầng gộp có kích thước $c\times h\times w$, 
+kích thước của cửa sổ gộp $p_h\times p_w$ với đệm $(p_h, p_w)$ và sải bước $(s_h, s_w)$.
 4. Tại sao ta mong đợi tầng gộp cực đại và tầng gộp trung bình có những ảnh hưởng khác nhau?
 5. Theo ý kiến của bạn, có cần riêng một tầng gộp cực tiểu không? Có thể thay thế bằng một cơ chế khác không?
 6. Hãy thử suy nghĩ một cơ chế khác nằm giữa gộp trung bình và gộp cực đại (gợi ý: hãy nhớ lại hàm softmax). Tại sao nó không phổ biến?

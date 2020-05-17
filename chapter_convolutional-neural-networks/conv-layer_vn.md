@@ -9,13 +9,6 @@
 :label:`sec_conv_layer`
 
 <!--
-Now that we understand how convolutional layers work in theory, we are ready to see how this works in practice.
-Since we have motivated convolutional neural networks by their applicability to image data, 
-we will stick with image data in our examples, and begin by revisiting the convolutional layer that we introduced in the previous section.
-We note that strictly speaking, *convolutional* layers are a slight misnomer, since the operations are typically expressed as cross correlations.
--->
-
-<!-- UPDATE
 Now that we understand how convolutional layers work in theory, we are ready to see how they work in practice.
 Building on our motivation of convolutional neural networks as efficient architectures for epxloring structure in image data,
 we stick with images as our running example.
@@ -31,16 +24,6 @@ Dựa vào ý tưởng mạng nơ-ron tích chập là kiến trúc hiệu quả
 ## Toán tử Tương quan Chéo
 
 <!--
-In a convolutional layer, an input array and a correlation kernel array are combined to produce an output array through a cross-correlation operation.
-Let us see how this works for two dimensions.
-In :numref:`fig_correlation`, the input is a two-dimensional array with a height of 3 and width of 3.
-We mark the shape of the array as $3 \times 3$ or (3, 3).
-The height and width of the kernel array are both 2.
-Common names for this array in the deep learning research community include *kernel* and *filter*.
-The shape of the kernel window (also known as the convolution window) is given precisely by the height and width of the kernel (here it is $2 \times 2$).
--->
-
-<!-- UPDATE
 Recall that strictly speaking, *convolutional* layers are a (slight) misnomer, since the operations they express are more accurately described as cross correlations.
 In a convolutional layer, an input array and a *correlation kernel* array are combined to produce an output array through a cross-correlation operation.
 Let's ignore channels for now and see how this works with two-dimensional data and hidden representations.
@@ -96,16 +79,6 @@ $$
 
 <!--
 Note that along each axis, the output is slightly *smaller* than the input.
-Because the kernel has a width greater than one, and we can only computer the cross-correlation for locations where the kernel fits wholly within the image, 
-the output size is given by the input size $H \times W$ minus the size of the convolutional kernel $h \times w$ via $(H-h+1) \times (W-w+1)$.
-This is the case since we need enough space to 'shift' the convolutional kernel across the image 
-(later we will see how to keep the size unchanged by padding the image with zeros around its boundary such that there is enough space to shift the kernel).
-Next, we implement the above process in the `corr2d` function.
-It accepts the input array `X` with the kernel array `K` and outputs the array `Y`.
--->
-
-<!-- UPDATE
-Note that along each axis, the output is slightly *smaller* than the input.
 Because the kernel has width and height greater than one, we can only properly compute the cross-correlation for locations where the kernel fits wholly within the image,
 the output size is given by the input size $H \times W$ minus the size of the convolutional kernel $h \times w$ via $(H-h+1) \times (W-w+1)$.
 This is the case since we need enough space to 'shift' the convolutional kernel across the image
@@ -114,10 +87,13 @@ Next, we implement this process in the `corr2d` function, which accepts the inpu
 -->
 
 Lưu ý rằng theo mỗi trục, kích thước đầu ra *nhỏ hơn* một chút so với đầu vào.
-Bởi vì hạt nhân có chiều dài và chiều rộng lớn hơn một, ta chỉ có thể tính độ tương quan chéo cho những vị trí mà ở đó hạt nhân nằm hoàn toàn bên trong ảnh, kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
-Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' hạt nhân tích chập qua tấm hình (sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để dịch chuyển hạt nhân).
+Bởi vì hạt nhân có chiều dài và chiều rộng lớn hơn một, ta chỉ có thể tính độ tương quan chéo cho những vị trí mà ở đó hạt nhân nằm hoàn toàn bên trong ảnh, 
+kích thước đầu ra được tính bằng cách lấy đầu vào $H \times W$ trừ kích thước của bộ lọc tích chập $h \times w$ bằng $(H-h+1) \times (W-w+1)$.
+Điều này xảy ra vì ta cần đủ không gian để 'dịch chuyển' hạt nhân tích chập qua tấm hình 
+(sau này ta sẽ xem làm thế nào để có thể giữ nguyên kích thước bằng cách đệm các số không vào xung quanh biên của hình ảnh sao cho có đủ không gian để dịch chuyển hạt nhân).
 Kế tiếp, ta lập trình quá trình ở trên trong hàm `corr2d`.
 Hàm này nhận mảng đầu vào `X` với mảng hạt nhân `K` và trả về mảng đầu ra `Y`.
+
 
 ```{.python .input}
 from mxnet import autograd, np, npx
@@ -159,12 +135,6 @@ corr2d(X, K)
 ## Tầng Tích chập
 
 <!--
-A convolutional layer cross-correlates the input and kernels and adds a scalar bias to produce an output.
-The parameters of the convolutional layer are precisely the values that constitute the kernel and the scalar bias.
-When training the models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully-connected layer.
--->
-
-<!-- UPDATE
 A convolutional layer cross-correlates the input and kernels and adds a scalar bias to produce an output.
 The two parameters of the convolutional layer are the kernel and the scalar bias.
 When training models based on convolutional layers, we typically initialize the kernels randomly, just as we would with a fully connected layer.
@@ -236,12 +206,6 @@ K = np.array([[1, -1]])
 ```
 
 <!--
-Enter `X` and our designed kernel `K` to perform the cross-correlation operations.
-As you can see, we will detect 1 for the edge from white to black and -1 for the edge from black to white.
-The rest of the outputs are 0.
--->
-
-<!-- UPDATE
 We are ready to perform the cross-correlation operation with arguments `X` (our input) and `K` (our kernel).
 As you can see, we detect 1 for the edge from white to black and -1 for the edge from black to white.
 All other outputs take value $0$.
@@ -262,7 +226,7 @@ As expected, it vanishes. The kernel `K` only detects vertical edges.
 -->
 
 Bây giờ hãy áp dụng hạt nhân này cho chuyển vị của ma trận điểm ảnh.
-Như kì vọng, giá trị tương quan chéo bằng không. Hạt nhân `K` chỉ có thể phát hiện biên dọc.
+Như kỳ vọng, giá trị tương quan chéo bằng không. Hạt nhân `K` chỉ có thể phát hiện biên dọc.
 
 ```{.python .input}
 corr2d(X.T, K)
@@ -314,6 +278,7 @@ Trước đây ta đã tự xây dựng lớp `Conv2D`.
 Tuy nhiên, do ta sử dụng các phép gán một phần tử, Gluon sẽ gặp một số khó khăn khi tính gradient.
 Thay vào đó, ta sử dụng lớp `Conv2D` có sẵn của Gluon như sau.
 
+
 ```{.python .input  n=83}
 # Construct a convolutional layer with 1 output channel
 # (channels will be introduced in the following section)
@@ -339,11 +304,6 @@ for i in range(10):
 ```
 
 <!--
-As you can see, the error has dropped to a small value after 10 iterations.
-Now we will take a look at the kernel array we learned.
--->
-
-<!-- UPDATE
 Note that the error has dropped to a small value after 10 iterations.
 Now we will take a look at the kernel array we learned.
 -->
@@ -372,15 +332,6 @@ Thật vậy, mảng bộ lọc học được rất gần với mảng bộ l�
 ## Tương quan Chéo và Tích chập
 
 <!--
-Recall the observation from the previous section that cross-correlation and convolution are equivalent.
-In the figure above it is easy to see this correspondence.
-Simply flip the kernel from the bottom left to the top right.
-In this case the indexing in the sum is reverted, yet the same result can be obtained.
-In keeping with standard terminology with deep learning literature, 
-we will continue to refer to the cross-correlation operation as a convolution even though, strictly-speaking, it is slightly different.
--->
-
-<!-- UPDATE
 Recall our observation from the previous section of the correspondence between the cross-correlation and convolution operators.
 The figure above makes this correspondence apparent.
 Simply flip the kernel from the bottom left to the top right.
@@ -390,7 +341,7 @@ as a convolution even though, strictly-speaking, it is slightly different.
 -->
 
 Hãy nhớ lại kiến thức của phần trước về mối liên hệ giữa phép tương quan chéo và tích chập.
-Trong hình trên, ta dễ dàng nhận thấy điều này. 
+Trong hình trên, ta dễ dàng nhận thấy điều này.
 Đơn giản chỉ cần lật bộ lọc từ góc dưới cùng bên trái lên góc trên cùng bên phải.
 Trong trường hợp này, chỉ số trong phép lấy tổng được đảo ngược, nhưng ta vẫn thu được kết quả tương tự.
 Để thống nhất với các thuật ngữ tiêu chuẩn trong tài liệu học sâu, ta sẽ tiếp tục đề cập đến phép tương quan chéo như là phép tích chập, mặc dù đúng ra chúng hơi khác nhau một chút.
@@ -454,16 +405,6 @@ In its simplest form, this performs a cross-correlation operation on the two-dim
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
