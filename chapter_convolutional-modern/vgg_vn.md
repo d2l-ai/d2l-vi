@@ -23,7 +23,7 @@ individual neurons to whole layers, and now to blocks, repeating patterns of lay
 -->
 
 Tiến bộ trong lĩnh vực này giống như cách mà các kỹ sư đi từ việc đặt các bóng bán dẫn, đến các phần tử logic và sau đó là các khối logic.  
-Tương tự như vậy, việc thiết kế kiến trúc các mạng nơ-ron đã phát triển ngày một trừu tượng hơn, điển hình là việc các nhà nghiên cứu đã thay đổi suy nghĩ từ quy mô các nơ-ron riêng lẻ sang các tầng, và giờ đây là các khối chứa các tầng lặp lại theo khuôn mẫu. 
+Tương tự như vậy, việc thiết kế kiến trúc các mạng nơ-ron đã phát triển theo hướng ngày một trừu tượng hơn. Điển hình là việc các nhà nghiên cứu đã thay đổi suy nghĩ từ quy mô các nơ-ron riêng lẻ sang các tầng, và giờ đây là các khối chứa các tầng lặp lại theo khuôn mẫu. 
 
 <!--
 The idea of using blocks first emerged from the [Visual Geometry Group](http://www.robots.ox.ac.uk/~vgg/) (VGG) at Oxford University, in their eponymously-named VGG network.
