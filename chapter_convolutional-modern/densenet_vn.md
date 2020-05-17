@@ -325,7 +325,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
 3. DenseNet thường bị chỉ trích vì ngốn nhiều bộ nhớ.
      * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Ta sẽ cần thay đổi kiến trúc này như thế nào?
+     * Hãy tìm cách khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
 5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta cần nối các số hạng của hơn hai tầng trong DenseNet?
 6. Thiết kế một DenseNet cho mạng kết nối đầy đủ và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
