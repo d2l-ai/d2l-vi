@@ -323,7 +323,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Tại sao ta sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
-3. Một vấn đề mà DenseNet bị chỉ trích là mức tiêu thụ bộ nhớ cao.
+3. DenseNet thường bị chỉ trích vì ngốn nhiều bộ nhớ.
      * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
      * Hãy thử nghĩ ra một cách khác để giảm mức tiêu thụ bộ nhớ. Ta sẽ cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
