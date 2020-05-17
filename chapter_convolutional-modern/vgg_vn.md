@@ -115,7 +115,7 @@ The first block has 64 output channels and each subsequent block doubles the num
 Since this network uses $8$ convolutional layers and $3$ fully-connected layers, it is often called VGG-11.
 -->
 
-Mạng VGG gốc có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng tích chập mỗi khối, ba khối còn lại chứa hai tầng tích chập mỗi khối.
+Mạng VGG gốc có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng tích chập ở mỗi khối, ba khối còn lại chứa hai tầng tích chập ở mỗi khối.
 Khối đầu tiên có 64 kênh đầu ra, mỗi khối tiếp theo nhân đôi số kênh đầu ra cho tới khi đạt giá trị $512$.
 Vì mạng này sử dụng $8$ tầng tích chập và $3$ tầng kết nối đầy đủ nên nó thường được gọi là VGG-11. 
 
