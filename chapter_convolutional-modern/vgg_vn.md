@@ -214,7 +214,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Mạng VGG-11 tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được định nghĩa bằng số lượng các tầng chập và kênh đầu ra trên mỗi khối khác nhau.
 * Việc sử dụng các khối cho phép các đoạn mã nguồn định nghĩa mạng có biểu diễn rất nhỏ gọn. Nó cho phép ta thiết kế hiệu quả các mạng phức tạp.
-* Simonyan và Zisserman đã thử nghiệm nhiều kiến trúc khác nhau. Cụ thể, họ đã phát hiện ra rằng mạng có nhiều tầng tích chập sâu và hẹp (như $3 \times 3$) thì có hiệu quả cao hơn so với mạng chứa các tầng tích chập rộng nhưng có số tầng ít hơn.
+* Simonyan và Zisserman đã thử nghiệm nhiều kiến trúc khác nhau. Cụ thể, họ đã phát hiện ra rằng mạng có nhiều tầng tích chập sâu và hẹp (như $3 \times 3$) thì có hiệu quả cao hơn so với mạng chứa các tầng tích chập rộng hơn nhưng có số tầng ít hơn.
 
 <!--
 ## Exercises
