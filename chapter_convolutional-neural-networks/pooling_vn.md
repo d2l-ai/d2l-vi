@@ -23,7 +23,7 @@ By gradually aggregating information, yielding coarser and coarser maps, we acco
 while keeping all of the advantages of convolutional layers at the intermediate layers of processing.
 -->
 
-Nhiệm vụ cuối cùng của chúng ta thường là trả lời một vài câu hỏi về toàn bộ tấm ảnh, ví dụ như: *trong ảnh có mèo không?* 
+Nhiệm vụ cuối cùng của chúng ta thường là trả lời một vài câu hỏi về toàn bộ tấm ảnh, ví dụ như: *trong ảnh có mèo không?*
 Vậy nên các nút của tầng cuối cùng thường cần phải chịu ảnh hưởng của toàn bộ đầu vào.
 Bằng cách dần gộp thông tin lại để tạo ra các ánh xạ đặc trưng thưa dần, ta sẽ học được một biểu diễn toàn cục,
 trong khi vẫn có thể giữ nguyên toàn bộ lợi thế đến từ các tầng tích chập xử lý trung gian.
@@ -75,9 +75,9 @@ These operations are called *maximum pooling* (*max pooling* for short) and *ave
 
 Giống như ở các tầng tích chập, các toán tử gộp bao gồm một cửa sổ có kích thước cố định trượt trên tất cả các vùng đầu vào theo từng sải bước, 
 tính toán một giá trị đầu ra tại mỗi vị trí mà cửa sổ của nó duyệt qua (đôi lúc được gọi là *cửa sổ gộp*).
-Tuy nhiên, không giống như các phép toán tương quan chéo giữa đầu vào và bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc"). 
+Tuy nhiên, không giống như các phép toán tương quan chéo giữa đầu vào và bộ lọc ở tầng tích chập, tầng gộp không chứa bất kỳ tham số nào (ở đây không có "bộ lọc").
 Thay vì vậy, các toán tử gộp thường được định sẵn là lấy giá trị cực đại hoặc trung bình của các phần tử trong cửa sổ thực hiện gộp.
-Các phép tính này lần lượt được gọi là là *gộp cực đại* (*max pooling*) và *gộp trung bình* (*average pooling*). 
+Các phép tính này lần lượt được gọi là là *gộp cực đại* (*max pooling*) và *gộp trung bình* (*average pooling*).
 
 <!--
 In both cases, as with the cross-correlation operator, we can think of the pooling window as starting from the top left of the input array
@@ -102,7 +102,7 @@ The output array in :numref:`fig_pooling` above has a height of 2 and a width of
 The four elements are derived from the maximum value of $\text{max}$:
 -->
 
-Mảng đầu ra ở :numref:`fig_pooling` phía trên có chiều cao là 2 và chiều rộng là 2. 
+Mảng đầu ra ở :numref:`fig_pooling` phía trên có chiều cao là 2 và chiều rộng là 2.
 Bốn phần tử của nó được rút ra từ giá trị cực đại của hàm $\text{max}$:
 
 $$
@@ -121,8 +121,8 @@ A pooling layer with a pooling window shape of $p \times q$ is called a $p \time
 The pooling operation is called $p \times q$ pooling.
 -->
 
-Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$. 
-Một phép gộp được gọi là phép gộp $p \times q$. 
+Một tầng gộp với một cửa sổ gộp có kích thước $p \times q$ được gọi là một tầng gộp $p \times q$.
+Một phép gộp được gọi là phép gộp $p \times q$.
 
 <!--
 Let us return to the object edge detection example mentioned at the beginning of this section.
@@ -133,7 +133,7 @@ That is to say, using the $2\times 2$ maximum pooling layer, we can still detect
 moves no more than one element in height and width.
 -->
 
-Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập ở đầu chương. 
+Quay trở lại với ví dụ nhận diện cạnh của vật thể đã được đề cập ở đầu chương.
 Bây giờ, chúng ta sẽ sử dụng kết quả của tầng tích chập làm giá trị đầu vào cho tầng gộp cực đại $2\times 2$.
 Đặt giá trị đầu vào của tầng tích chập là `X` và kết quả của tầng gộp là `Y`.
 Không quan trọng giá trị của `X[i, j]` và `X[i, j+1]` hay giữa `X[i, j+1]` và `X[i, j+2]` có khác nhau hay không, tất cả giá trị trả về của tầng gộp sẽ là `Y[i, j]=1`.
@@ -145,9 +145,9 @@ This function is similar to the `corr2d` function in :numref:`sec_conv_layer`.
 However, here we have no kernel, computing the output as either the max or the average of each region in the input..
 -->
 
-Trong đoạn mã bên dưới, chúng tôi lập trình lượt truyền xuôi của tầng gộp trong hàm `pool2d`. 
+Trong đoạn mã bên dưới, chúng tôi lập trình lượt truyền xuôi của tầng gộp trong hàm `pool2d`.
 Hàm này tương tự với hàm `corr2d` trong :numref:`sec_conv_layer`.
-Tuy nhiên, hàm này không có bộ lọc nên kết quả đầu ra hoặc là giá trị lớn nhất, hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào. 
+Tuy nhiên, hàm này không có bộ lọc nên kết quả đầu ra hoặc là giá trị lớn nhất, hoặc là giá trị trung bình tương ứng cho mỗi vùng của giá trị đầu vào.
 
 ```{.python .input  n=3}
 from mxnet import np, npx
@@ -169,7 +169,7 @@ def pool2d(X, pool_size, mode='max'):
 <!--
 We can construct the input array `X` in the above diagram to validate the output of the two-dimensional maximum pooling layer.
 -->
-Chúng ta có thể xây dựng mảng đầu vào `X` ở biểu đồ ở trên để kiểm tra giá trị kết quả của tầng gộp cực đại hai chiều. 
+Chúng ta có thể xây dựng mảng đầu vào `X` ở biểu đồ ở trên để kiểm tra giá trị kết quả của tầng gộp cực đại hai chiều.
 
 ```{.python .input  n=4}
 X = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
@@ -179,7 +179,7 @@ pool2d(X, (2, 2))
 <!--
 At the same time, we experiment with the average pooling layer.
 -->
-Đồng thời, chúng ta cũng thực hiện thí nghiệm với tầng gộp trung bình. 
+Đồng thời, chúng ta cũng thực hiện thí nghiệm với tầng gộp trung bình.
 
 ```{.python .input  n=14}
 pool2d(X, (2, 2), 'avg')
