@@ -171,7 +171,7 @@ and width of the average pooling layer with a stride of 2, further reducing the 
 
 Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
 Do đó, một tầng chuyển tiếp sẽ được sử dụng để kiểm soát độ phức tạp của mô hình.
-Tầng này sẽ sử dụng một tầng tích chập $1\times 1$ để làm giảm số lượng kênh và sau đó áp dụng một tầng gộp trung bình với sải bước bằng 2 để làm giảm một nửa chiều cao và chiều rộng, dẫn tới giảm thêm độ phức tạp của mô hình.
+Tầng này sẽ dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh và theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng để giảm thêm độ phức tạp của mô hình.
 
 ```{.python .input  n=3}
 def transition_block(num_channels):
