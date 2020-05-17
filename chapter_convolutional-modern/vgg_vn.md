@@ -13,7 +13,7 @@ While AlexNet proved that deep convolutional neural networks can achieve good re
 In the following sections, we will introduce several heuristic concepts commonly used to design deep networks.
 -->
 
-Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để hỗ trợ những nhà nghiên cứu sau này trong việc thiết kế các mạng mới. 
+Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để định hướng nghiên cứu sau này trong việc thiết kế các mạng mới. 
 Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi trong thiết kế các mạng học sâu. 
 
 <!--
