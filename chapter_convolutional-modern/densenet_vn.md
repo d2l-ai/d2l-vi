@@ -238,7 +238,7 @@ In ResNet, the height and width are reduced between each module by a residual bl
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi mô-đun bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
 Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, một nửa chiều rộng và một nửa số kênh.
 
 ```{.python .input  n=5}
