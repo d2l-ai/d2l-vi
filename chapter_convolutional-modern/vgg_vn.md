@@ -14,7 +14,7 @@ In the following sections, we will introduce several heuristic concepts commonly
 -->
 
 Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để định hướng nghiên cứu sau này trong việc thiết kế các mạng mới. 
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi trong thiết kế mạng học sâu. 
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi khi thiết kế mạng học sâu. 
 
 <!--
 Progress in this field mirrors that in chip design where engineers went from placing transistors to logical elements to logic blocks.
