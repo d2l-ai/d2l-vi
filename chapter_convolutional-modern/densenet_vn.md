@@ -74,7 +74,7 @@ The dense connections are shown in :numref:`fig_densenet`.
 Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một Perceptron đa tầng để giảm số lượng đặc trưng một lần nữa.
 Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
 Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
-Tầng cuối cùng của một chuỗi như vậy được kết nối tới tất cả các tầng trước đó.
+Tầng cuối cùng của một chuỗi như vậy được kết nối "dầy đặc" tới tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các khối dày đặc định nghĩa cách đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
 Các kết nối dày đặc được biểu diễn trong :numref:`fig_densenet`.
