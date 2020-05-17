@@ -13,8 +13,8 @@ While AlexNet proved that deep convolutional neural networks can achieve good re
 In the following sections, we will introduce several heuristic concepts commonly used to design deep networks.
 -->
 
-Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để hỗ trợ những nhà nghiên cứu về sau thiết kế các mạng mới. 
-Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi trong thiết kế mạng học sâu. 
+Mặc dù AlexNet đã chứng minh rằng các mạng nơ-ron tích chập có thể đạt được kết quả tốt, nó lại không cung cấp một khuôn mẫu chung để hỗ trợ những nhà nghiên cứu sau này trong việc thiết kế các mạng mới. 
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu một số khái niệm dựa trên thực nghiệm được sử dụng rộng rãi trong thiết kế các mạng học sâu. 
 
 <!--
 Progress in this field mirrors that in chip design where engineers went from placing transistors to logical elements to logic blocks.
@@ -22,8 +22,8 @@ Similarly, the design of neural network architectures had grown progressively mo
 individual neurons to whole layers, and now to blocks, repeating patterns of layers.
 -->
 
-Tiến bộ trong lĩnh vực này phản chiếu cách mà các kỹ sư đi từ việc đặt các bóng bán dẫn, đến các thành phần logic và sau đó là các khối logic.  
-Tương tự như vậy, việc thiết kế các cấu trúc của mạng nơ-ron đã phát triển ngày một trừu tượng hơn, điển hình là việc các nhà nghiên cứu đã thay đổi suy nghĩ từ quy mô các nơ-ron riêng lẻ sang các tầng, và giờ đây là các khối - đại diện cho các khuôn tầng lặp lại. 
+Tiến bộ trong lĩnh vực này giống như cách mà các kỹ sư đi từ việc đặt các bóng bán dẫn, đến các phần tử logic và sau đó là các khối logic.  
+Tương tự như vậy, việc thiết kế kiến trúc các mạng nơ-ron đã phát triển ngày một trừu tượng hơn, điển hình là việc các nhà nghiên cứu đã thay đổi suy nghĩ từ quy mô các nơ-ron riêng lẻ sang các tầng, và giờ đây là các khối chứa các tầng lặp lại theo khuôn mẫu. 
 
 <!--
 The idea of using blocks first emerged from the [Visual Geometry Group](http://www.robots.ox.ac.uk/~vgg/) (VGG) at Oxford University, in their eponymously-named VGG network.
@@ -50,11 +50,11 @@ In the code below, we define a function called `vgg_block` to implement one VGG 
 The function takes two arguments corresponding to the number of convolutional layers `num_convs` and the number of output channels `num_channels`.
 -->
 
-Khối cơ bản của mạng tích chấp cổ điển là một chuỗi các tầng sau đây:
+Khối cơ bản của mạng tích chập cổ điển là một chuỗi các tầng sau đây:
 (i) một tầng tích chập (với phần đệm để duy trì độ phân giải),
-(ii) một tầng phi tuyến tính như ReLU, (iii) một tầng gộp như tầng gộp cực đại (_max pooling layer__).
+(ii) một tầng phi tuyến như ReLU, (iii) một tầng gộp như tầng gộp cực đại.
 Một khối VGG gồm một chuỗi các tầng tích chập, tiếp nối bởi một tầng gộp cực đại để giảm chiều không gian. 
-Trong bài báo gốc của VGG :cite:`Simonyan.Zisserman.2014`, tác giả sử dụng tích chập với nhân $3\times3$ và tầng gộp cực đại $2 \times 2$ với sải bước bằng $2$ (giảm một nửa độ phân giải sau mỗi khối).
+Trong bài báo gốc của VGG :cite:`Simonyan.Zisserman.2014`, tác giả sử dụng tích chập với các hạt nhân $3\times3$ và tầng gộp cực đại $2 \times 2$ với sải bước bằng $2$ (giảm một nửa độ phân giải sau mỗi khối).
 Trong mã nguồn dưới đây, ta định nghĩa một hàm tên `vgg_block` để tạo một khối VGG. 
 Hàm này nhận hai đối số `num_convs` và `num_channels` tương ứng lần lượt với số tầng tích chập và số kênh đầu ra. 
 
@@ -96,10 +96,10 @@ The fully-connected module is identical to that covered in AlexNet.
 -->
 
 Giống như AlexNet và LeNet, mạng VGG có thể được phân chia thành hai phần: phần đầu tiên bao gồm chủ yếu các tầng tích chập và tầng gộp và phần thứ hai bao gồm các tầng kết nối đầy đủ. 
-Phần tích chập của mạng kết nối các mô-đun `vgg_block` liên tiếp lại.
+Phần tích chập của mạng gồm các mô-đun `vgg_block` kết nối liên tiếp với nhau.
 Trong :numref:`fig_vgg`, biến `conv_arch` bao gồm một danh sách các tuples (một tuple cho mỗi khối), trong đó mỗi tuple chứa hai giá trị: 
 số các tầng tích chập và số kênh đầu ra, cũng chính là những tham số cần thiết để gọi hàm `vgg_block`. 
-Mô-đun kết nối đầy đủ có cùng kiến trúc với mô-đun tương ứng tại AlexNet.
+Mô-đun kết nối đầy đủ giống hệt với mô-đun tương ứng trong AlexNet.
 
 <!--
 ![Designing a network from building blocks](../img/vgg.svg)
@@ -115,8 +115,8 @@ The first block has 64 output channels and each subsequent block doubles the num
 Since this network uses $8$ convolutional layers and $3$ fully-connected layers, it is often called VGG-11.
 -->
 
-Mạng VGG nguyên thủy có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng  tích chập mỗi khối, ba khối còn lại chứa hai tầng tích chập mỗi khối.
-Khối đầu tiên chứa 64 kênh đầu ra, mỗi khối tiếp theo chứa gấp đôi số kênh đâu ra cho đến $512$.
+Mạng VGG nguyên thủy có 5 khối tích chập, trong đó hai khối đầu tiên bao gồm một tầng tích chập mỗi khối, ba khối còn lại chứa hai tầng tích chập mỗi khối.
+Khối đầu tiên chứa 64 kênh đầu ra, mỗi khối tiếp theo nhân đôi số kênh đầu ra cho tới khi đạt giá trị $512$.
 Vì mạng này sử dụng $8$ tầng tích chập và $3$ tầng kết nối đầy đủ nên nó thường được gọi là VGG-11. 
 
 ```{.python .input  n=2}
@@ -127,7 +127,7 @@ conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 The following code implements VGG-11. This is a simple matter of executing a for loop over `conv_arch`.
 -->
 
-Đoạn mã nguồn sau đây xây dựng mạng VGG 11. Việc này chỉ đơn giản là thực hiện vòng lặp `for` trên  biến `conv_arch`.
+Đoạn mã nguồn sau đây lập trình mạng VGG-11. Việc này chỉ đơn giản là thực hiện vòng lặp `for` trên  biến `conv_arch`.
 
 ```{.python .input  n=3}
 def vgg(conv_arch):
@@ -162,7 +162,7 @@ for blk in net:
 As you can see, we halve height and width at each block, finally reaching a height and width of 7 before flattening the representations for processing by the fully-connected layer.
 -->
 
-Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm một nửa, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi các biểu diễn được trải phẳng để tiếp tục xử lý trong tầng kết nối đầy đủ.
+Như bạn thấy, chiều cao và chiều rộng của mỗi khối giảm một nửa, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi trải phẳng các biểu diễn để tiếp tục xử lý trong tầng kết nối đầy đủ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -192,7 +192,7 @@ net = vgg(small_conv_arch)
 Apart from using a slightly larger learning rate, the model training process is similar to that of AlexNet in the last section.
 -->
 
-Trừ việc sử dụng tốc độ học lớn hơn một chút, quy trình huấn luyện mô hình này tương tự như của AlexNet trong phần trước. 
+Ngoại trừ việc sử dụng tốc độ học lớn hơn một chút, quy trình huấn luyện mô hình này tương tự như của AlexNet trong phần trước. 
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 128,
@@ -212,9 +212,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * In their work Simonyan and Ziserman experimented with various architectures. In particular, they found that several layers of deep and narrow convolutions (i.e., $3 \times 3$) were more effective than fewer layers of wider convolutions.
 -->
 
-* Mạng VGG-11 tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được xác định bằng số lượng các tầng chập và kênh đầu ra trên mỗi khối khác nhau.
+* Mạng VGG-11 tái sử dụng các khối tích chập. Các mô hình VGG khác nhau có thể được định nghĩa bằng số lượng các tầng chập và kênh đầu ra trên mỗi khối khác nhau.
 * Việc sử dụng các khối cho phép các đoạn mã nguồn định nghĩa mạng có biểu diễn rất nhỏ gọn. Nó cho phép ta thiết kế hiệu quả các mạng phức tạp.
-* Simonyan và Zisserman đã thử nghiệm nhiều kiến trúc khác nhau. Cụ thể, họ đã phát hiện ra rằng nhiều tầng tích chập sâu và hẹp (như $3 \times 3$) thì có hiệu quả cao hơn so với một ít các tầng tích chập rộng.
+* Simonyan và Zisserman đã thử nghiệm nhiều kiến trúc khác nhau. Cụ thể, họ đã phát hiện ra rằng mạng có nhiều tầng tích chập sâu và hẹp (như $3 \times 3$) thì có hiệu quả cao hơn so với mạng chứa các tầng tích chập rộng nhưng có số tầng ít hơn.
 
 <!--
 ## Exercises
