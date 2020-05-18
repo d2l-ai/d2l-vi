@@ -25,7 +25,7 @@ Likewise, image frames in a video, the audio signal in a conversation, or the br
 It is thus only reasonable to assume that specialized models for such data will do better at describing it and at solving estimation problems.
 -->
 
-Quan trọng hơn cả, cho đến thời điểm này, chúng ta đã giả định rằng dữ liệu được sinh từ các phân phối độc lập và giống hệt nhau (viết tắt là i.i.d).
+Quan trọng hơn cả, cho đến thời điểm này, chúng ta đã ngầm định rằng dữ liệu được sinh ra từ các phân phối độc lập và giống hệt nhau (*independently and identically distributed - i.i.d.*).
 Thật không may, điều này không đúng với hầu hết các dữ liệu.
 Ví dụ, các từ trong đoạn này được viết theo trình tự, và sẽ rất khó để giải mã nghĩa của chúng nếu các từ được hoán vị một cách ngẫu nhiên.
 Tương tự, các khung hình ảnh trong video, tín hiệu âm thanh trong cuộc hội thoại, hoặc hành vi duyệt web, tất cả đều tuân theo thứ tựchuỗi.
