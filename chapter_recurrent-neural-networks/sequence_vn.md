@@ -19,7 +19,7 @@ In fact, psychologists even have names for some of the effects:
 
 Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
 Là một người dùng Netflix tốt, bạn quyết định sẽ xếp hạng từng bộ phim một cách cẩn thận.
-Xét cho cùng, một bộ phim hay là một bộ phim hay, và bạn muốn xem nhiều hơn, phải không?
+Xét cho cùng, bạn muốn xem nhiều bộ phim hay phải không?
 Hóa ra, mọi thứ không đơn giản như vậy.
 Ý kiến của mọi người về một bộ phim có thể thay đổi một cách đáng kể theo thời gian.
 Trên thực tế, các nhà tâm lý học thậm chí còn đặt tên cho một số hiệu ứng:
@@ -38,11 +38,11 @@ the expectations that the next movie is equally good or better are high, hence e
 -->
 
 * [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring), dựa trên ý kiến của người khác.
-Chẳng hạn, sau khi một bộ phim nhận được giải thưởng Oscar, xếp hạng cho bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
+Chẳng hạn, sau khi một bộ phim thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
 Hiệu ứng này tồn tại trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` cho thấy hiệu ứng này làm tăng xếp hạng thêm hơn nửa điểm.
 * [Hiệu ứng vòng xoáy hưởng lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill), con người nhanh chóng thích nghi để chấp nhận một tình huống được cải thiện (hoặc xấu đi) như một điều bình thường mới.
-Chẳng hạn, sau khi xem nhiều phim hay, sự kỳ vọng rằng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hơn sẽ là khá cao, do đó, ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi sau nhiều bộ phim hay.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hơn sẽ là khá cao, do đó, ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ. Rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên trong quá trình sản xuất.
 * Một số phim trở nên đình đám, vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* đạt được mức độ nổi tiếng cao vì lý do này.
@@ -53,9 +53,9 @@ Using temporal dynamics helped :cite:`Koren.2009` to recommend movies more accur
 But it is not just about movies.
 -->
 
-Trong ngắn hạn, xếp hạng sẽ không thay đổi.
+Nói tóm lại, xếp hạng thường không đứng yên.
 Sử dụng động lực thời gian đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
-Nhưng nó không chỉ là về phim ảnh.
+Tuy nhiên, nó không chỉ là về phim ảnh.
 
 <!--
 * Many users have highly particular behavior when it comes to the time when they open apps. 
@@ -75,15 +75,15 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 * Nhiều người dùng có hành vi đặc biệt cao ở thời điểm họ mở ứng dụng.
 Chẳng hạn, các ứng dụng truyền thông xã hội phổ biến hơn nhiều sau giờ học với học sinh.
 Các ứng dụng giao dịch trên thị trường chứng khoán được sử dụng phổ biến hơn khi thị trường mở cửa.
-* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu mà ta đã bỏ qua ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
+* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu mà ta đã bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
 Rốt cuộc, nhìn lại dễ hơn nhiều so với nhìn về tương lại.
-Trong thống kê, bài toán trước được gọi là *ngoại suy* trong khi bài toán sau được gọi là *nội suy*.
-* Âm nhạc, lời nói, văn bản, phim ảnh, các bước, v.v ... đều có tính chất tuần tự.
+Trong thống kê, bài toán trước được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
+* Âm nhạc, lời nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
-Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó *, mặc dù các từ giống hệt nhau.
+Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức là, các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
-* Con người tương tác với nhau theo một cách tuần tự, có thể thấy trong các cuộc cãi vã, các kiểu nhảy và tranh luận trên Twitter.
+* Con người tương tác với nhau theo một cách tuần tự, có thể thấy trong các cuộc cãi vã trên Twitter, các kiểu nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
