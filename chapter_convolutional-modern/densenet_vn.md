@@ -234,14 +234,18 @@ Here, we set it to 4, consistent with the ResNet-18 in the previous section.
 Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, tương tự như cách ResNet sử dụng bốn khối thặng dư, DenseNet sẽ dùng bốn khối dày đặc.
+Và cũng giống như ResNet, ta có thể tùy chỉnh số lượng tầng tích chập được sử dụng trong mỗi khối dày đặc.
+Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với với kiến trúc ResNet-18 trong phần trước.
+Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào qua mỗi khối dày đặc.
 
 <!--
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-*dịch đoạn phía trên*
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
+Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, một nửa chiều rộng và một nửa số kênh.
 
 ```{.python .input  n=5}
 # Num_channels: the current number of channels
@@ -263,7 +267,7 @@ for i, num_convs in enumerate(num_convs_in_dense_blocks):
 Similar to ResNet, a global pooling layer and fully connected layer are connected at the end to produce the output.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như ResNet, một tầng gộp toàn cục và một tầng kết nối đầy đủ sẽ được thêm vào cuối mạng để tính toán đầu ra.
 
 ```{.python .input}
 net.add(nn.BatchNorm(),
@@ -363,7 +367,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 *
