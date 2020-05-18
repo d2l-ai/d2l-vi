@@ -31,7 +31,7 @@ It is easy to implement these repeated structures in code with any modern deep l
 -->
 
 Ý tưởng sử dụng các khối lần đầu xuất hiện trong mạng VGG được đặt cùng tên bởi nhóm [VGG](http://www.robots.ox.ac.uk/~vgg/) thuộc Đại học Oxford.
-Sử dụng bất kỳ các framework học sâu hiện đại nào với vòng lặp và chương trình con để xây dựng các cấu trúc lặp lại này là tương đối dễ dàng. 
+Sử dụng bất kỳ các framework học sâu hiện đại nào với vòng lặp và chương trình con để xây dựng các cấu trúc lặp lại này là tương đối dễ dàng.
 
 <!--
 ## VGG Blocks
