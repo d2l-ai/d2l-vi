@@ -12,7 +12,7 @@ In other words, if we were to permute the pixels in an image, it would be much m
 its content of something that would look much like the background of a test pattern in the times of analog TV.
 -->
 
-Cho đến nay, chúng ta đã gặp hai loại dữ liệu: vector chung và hình ảnh.
+Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector đơn thuần và hình ảnh.
 Với dữ liệu hình ảnh, chúng ta đã thiết kế các tầng chuyên biệt để tận dụng các tính chất tương tự trong hình ảnh.
 Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, sẽ rất khó để suy luận về 
 nội dung của một thứ tương tự như nền trong ảnh mẫu trong thời đại truyền hình tương tự.
