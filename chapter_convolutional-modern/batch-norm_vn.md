@@ -477,7 +477,7 @@ Even with dropout and L2 regularization, they remain so flexible that their abil
 
 Theo trực giác, chuẩn hóa theo batch được cho là làm cho câu chuyện tối ưu hóa mượt mà hơn.
 Tuy nhiên, chúng ta phải cẩn thận để phân biệt giữa trực giác suy đoán và giải thích thực sự cho các hiện tượng mà ta quan sát thấy khi đào tạo các mô hình học sâu.
-Hãy nhớ lại rằng chúng ta thậm chí không biết tại sao các mạng thần kinh sâu đơn giản hơn (các mạng MLP và CNN thông thường) lại khái quát tốt ngay từ đầu.
+Hãy nhớ lại rằng ta thậm chí không biết tại sao các mạng thần kinh sâu đơn giản hơn (các mạng MLP và CNN thông thường) lại khái quát tốt ngay từ đầu.
 Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa dữ liệu không nhìn thấy của chúng có thể được giải thích thông qua các đảm bảo khái quát hóa lý thuyết học tập thông thường.
 
 <!--
@@ -492,11 +492,11 @@ However, we believe that it is important to separate these guiding intuitions fr
 Eventually, when you master this material and start writing your own research papers you will want to be clear to delineate between technical claims and hunches.
 -->
 
-Trong bài báo gốc đề xuất chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra một lời giải thích cho lý do tại sao nó hoạt động: bằng cách giảm *sự thay đổi đồng biến nội bộ*.
-Có lẽ bởi *sự thay đổi đồng biến nội bộ* các tác giả muốn nói điều gì đó giống như trực giác được thể hiện ở trên, khái niệm rằng sự phân phối các kích hoạt thay đổi trong quá trình đào tạo.
+Trong bài báo gốc đề xuất chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra một lời giải thích cho lý do tại sao nó hoạt động: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ*.
+Có lẽ bởi *sự dịch chuyển hiệp biến nội bộ* các tác giả muốn nói điều gì đó giống như trực giác được thể hiện ở trên, khái niệm rằng sự phân phối các kích hoạt thay đổi trong quá trình đào tạo.
 Tuy nhiên, có hai vấn đề với lời giải thích này:
-(1) Sự trôi dạt này rất khác so với *covariate shift*, khiến tên bị nhầm lẫn.
-(2) Giải thích đưa ra một trực giác được chỉ định dưới nhưng để lại câu hỏi *tại sao chính xác kỹ thuật này hoạt động* một câu hỏi mở muốn một giải thích nghiêm ngặt.
+(1) Sự trôi dạt này rất khác so với *sự dịch chuyển hiệp biến*, khiến tên bị nhầm lẫn.
+(2) Giải thích đem lại một trực giác không cụ thể nhưng để lại câu hỏi *tại sao một cách chính xác kỹ thuật này hoạt động* là một câu hỏi mở mong muốn một giải thích chặt chẽ.
 Trong suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những trực giác mà các học viên sử dụng để hướng dẫn họ phát triển mạng lưới thần kinh học sâu.
 Tuy nhiên, chúng tôi tin rằng tách những trực giác hướng dẫn này khỏi những thực tế khoa học đã được thiết lập là quan trọng.
 Cuối cùng, khi bạn thành thạo tài liệu này và bắt đầu viết các tài liệu nghiên cứu của riêng mình, bạn sẽ muốn phân định rõ ràng giữa các yêu cầu kỹ thuật và linh cảm.
@@ -511,13 +511,12 @@ In the technical literature other authors (:cite:`Santurkar.Tsipras.Ilyas.ea.201
 some claiming that BN's success comes despite exhibiting behavior that is in some ways opposite to those claimed in the original paper.
 -->
 
-Tiếp sau thành công của chuẩn hóa theo batch, giải thích của nó về *sự thay đổi đồng biến nội bộ* đã liên tục xuất hiện
-trong các cuộc tranh luận trong tài liệu kỹ thuật và diễn ngôn rộng hơn về cách trình bày nghiên cứu học máy.
+Tiếp sau thành công của chuẩn hóa theo batch, giải thích của nó về *sự dịch chuyển hiệp biến nội bộ* đã liên tục xuất hiện
+giữa các cuộc tranh luận trong tài liệu kỹ thuật và các bài giảng rộng hơn về cách trình bày nghiên cứu học máy.
 Trong một bài phát biểu đáng nhớ được đưa ra trong khi chấp nhận Giải thưởng Thử nghiệm Thời gian tại hội nghị NeurIPS 2017,
-Ali Rahimi đã sử dụng *sự thay đổi đồng biến nội bộ* như một tiêu điểm trong một cuộc tranh luận giống như thực tiễn hiện đại của việc học sâu để giả kim thuật.
+Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực tiễn hiện đại của học sâu với giả kim thuật.
 Sau đó, ví dụ đã được xem xét lại một cách chi tiết trong một bài viết về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
-Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN,
-một số người cho rằng thành công của BN xuất hiện mặc dù thể hiện hành vi trái ngược với những gì được tuyên bố trong bài báo gốc.
+Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, một số người cho rằng thành công của BN xuất hiện mặc dù thể hiện hành vi trái ngược với những gì được tuyên bố trong bài báo gốc.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
