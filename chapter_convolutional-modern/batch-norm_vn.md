@@ -415,7 +415,7 @@ net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
 
 -->
 
-## Cách lập trình Concise 
+## Lập trình Concise 
 
 <!--
 Compared with the `BatchNorm` class, which we just defined ourselves, the `BatchNorm` class defined by the `nn` model in Gluon is easier to use.
@@ -424,10 +424,10 @@ Instead, these parameter values will be inferred automatically via delayed initi
 Otherwise, the code looks virtually identical to the application our implementation above.
 -->
 
-So với lớp `BatchNorm` mà chúng ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình` nn` trong Gluon dễ sử dụng hơn.
-Trong Gluon, ta không phải lo lắng về `num_features` hay ` num_dims`.
+So với lớp `BatchNorm` mà ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình` nn` trong Gluon dễ sử dụng hơn.
+Trong Gluon, ta không phải lo lắng về `num_features` hay `num_dims`.
 Thay vào đó, các giá trị tham số này sẽ được suy luận tự động thông qua việc khởi tạo chậm.
-Mặt khác, đoạn mã trông gần giống với ứng dụng mà chúng ta đã thực hiện ở trên.
+Mặt khác, đoạn mã trông gần giống với ứng dụng mà ta đã thực hiện ở trên.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -455,7 +455,7 @@ while our custom implementation must be interpreted by Python.
 -->
 
 Dưới đây, chúng ta sử dụng cùng một siêu tham số để đào tạo mô hình.
-Lưu ý rằng như thường lệ, biến thể Gluon chạy nhanh hơn nhiều vì mã của nó đã được biên dịch thành C++/CUDA
+Lưu ý rằng như thường lệ, biến thể của Gluon chạy nhanh hơn nhiều vì mã của nó đã được biên dịch thành C++/CUDA
 trong khi đoạn mã tùy chỉnh của chúng ta phải được thông dịch bởi Python.
 
 ```{.python .input}
@@ -466,7 +466,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Controversy
 -->
 
-## Tranh luận
+## Việc gây tranh cãi
 
 <!--
 Intuitively, batch normalization is thought to make the optimization landscape smoother.
@@ -514,7 +514,7 @@ some claiming that BN's success comes despite exhibiting behavior that is in som
 Tiếp sau thành công của chuẩn hóa theo batch, giải thích của nó về *sự dịch chuyển hiệp biến nội bộ* đã liên tục xuất hiện
 giữa các cuộc tranh luận trong tài liệu kỹ thuật và các bài giảng rộng hơn về cách trình bày nghiên cứu học máy.
 Trong một bài phát biểu đáng nhớ được đưa ra trong khi chấp nhận Giải thưởng Thử nghiệm Thời gian tại hội nghị NeurIPS 2017,
-Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực tiễn hiện đại của học sâu với giả kim thuật.
+Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với giả kim thuật.
 Sau đó, ví dụ đã được xem xét lại một cách chi tiết trong một bài viết về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
 Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, một số người cho rằng thành công của BN xuất hiện mặc dù thể hiện hành vi trái ngược với những gì được tuyên bố trong bài báo gốc.
 
