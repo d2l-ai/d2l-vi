@@ -76,7 +76,7 @@ Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các 
 Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
 Tầng cuối cùng của một chuỗi như vậy được kết nối "dầy đặc" tới tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-Các khối dày đặc định nghĩa cách đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
+Các khối dày đặc định nghĩa cách các đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
 Các kết nối dày đặc được biểu diễn trong :numref:`fig_densenet`.
 
 <!--
