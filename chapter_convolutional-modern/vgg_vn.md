@@ -127,7 +127,7 @@ conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
 The following code implements VGG-11. This is a simple matter of executing a for loop over `conv_arch`.
 -->
 
-Đoạn mã nguồn sau đây lập trình mạng VGG-11. Ở đây ta chỉ đơn thuần thực hiện vòng lặp `for` trên  biến `conv_arch`.
+Đoạn mã nguồn sau đây lập trình mạng VGG-11. Ở đây ta chỉ đơn thuần thực hiện vòng lặp `for` trên biến `conv_arch`.
 
 ```{.python .input  n=3}
 def vgg(conv_arch):
