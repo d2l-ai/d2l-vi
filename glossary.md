@@ -190,6 +190,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | indicator variable         | biến chỉ định               | [https://git.io/JvQha](https://git.io/JvQha) |
 | inductive bias             | thiên kiến quy nạp          |                                              |
 | initializer                | bộ khởi tạo                 | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
+| internal covariate shift   | dịch chuyển hiệp biến nội bộ |  |
 | iteration                  | vòng lặp                    |                                              |
 | iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
 
