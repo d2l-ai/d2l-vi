@@ -75,7 +75,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 Nói chuyện với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
 Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
 Lĩnh vực học máy đang ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
-Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu trong lĩnh vực thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
+Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
 Sự thật trần trụi trong việc nhận dạng ảnh, như họ sẽ kể cho bạn, đó là các đặc trưng chứ không phải các giải thuật học, mới quyết định sự cải thiện.
 Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline trích chọn đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ giải thuật huấn luyện nào.
 
