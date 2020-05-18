@@ -25,7 +25,7 @@ $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x
 ## Function Decomposition
 -->
 
-## Sự Phân tách Hàm số
+## Phân tách Hàm số
 
 <!--
 The key point is that it decomposes the function into increasingly higher order terms.
