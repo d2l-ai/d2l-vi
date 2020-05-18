@@ -566,7 +566,7 @@ Batch normalization has proven an indispensable method, applied in nearly all de
 
 Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích hơn bất kỳ hàng ngàn yêu cầu mơ hồ tương tự được đưa ra mỗi năm trong tài liệu kỹ thuật về ML .
 Có khả năng, sự cộng hưởng của nó như là một tâm điểm của những cuộc tranh luận này nhờ vào khả năng nhận diện rộng rãi của nó đối với đối tượng mục tiêu.
-Chuẩn hóa theo Batch đã chứng minh một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các phân loại hình ảnh được triển khai, kiếm được hàng chục ngàn trích dẫn cho bài báo giới thiệu kỹ thuật về nó.
+Chuẩn hóa theo Batch đã chứng minh là một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các phân loại hình ảnh được triển khai, kiếm được hàng chục ngàn trích dẫn cho bài báo giới thiệu kỹ thuật về nó.
 
 
 <!--
@@ -611,11 +611,11 @@ Chuẩn hóa theo Batch đã chứng minh một phương pháp không thể thi�
     * Tìm một chuyển hóa tương đương áp dụng trước lớp được kết nối đầy đủ.
     * Cải cách này có hiệu quả. Tại sao (không)?
 2. So sánh tỷ lệ học tập cho LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
-    * Vẽ sự giảm lỗi trong đào tạo và kiểm tra lỗi.
+    * Phác họa sự giảm lỗi trong đào tạo và kiểm tra lỗi.
     * Còn về miền hội tụ thì sao? Bạn có thể tạo ra tỷ lệ học tập lớn như thế nào?
 3. Chúng ta có cần Chuẩn hóa theo Batch trong mỗi lớp không? Thử nghiệm với nó thì sao?
 4. Bạn có thể thay thế Dropout bằng Chuẩn hóa theo Batch không? Hành vi thay đổi như thế nào?
-5. Khắc phục các hệ số `beta` và` gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để tránh tính toán gradient), đồng thời quan sát và phân tích kết quả.
+5. Khắc phục các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để tránh tính toán gradient), đồng thời quan sát và phân tích kết quả.
 6. Xem lại tài liệu về Gluon cho `BatchNorm` để xem các ứng dụng khác cho Chuẩn hóa theo Batch.
 7. Ý tưởng nghiên cứu: nghĩ về các biến đổi chuẩn hóa khác mà bạn có thể áp dụng? Bạn có thể áp dụng biến đổi tích phân xác suất không? Còn về ước lượng hiệp phương sai ma trận hạng tối đa thì sao?
 
