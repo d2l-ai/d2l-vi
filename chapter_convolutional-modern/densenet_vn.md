@@ -152,7 +152,7 @@ This is also referred to as the growth rate.
 
 Trong ví dụ sau đây, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" không biết có đúng không -->
 Với một đầu vào gồm 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
-Số lượng kênh của khối tích chập kiểm soát sự gia tăng trong số lượng kênh đầu ra tương đối so với số lượng kênh đầu vào.
+Số lượng kênh của khối tích chập kiểm soát sự gia tăng trong số lượng kênh đầu ra so với số lượng kênh đầu vào.
 Số lượng kênh này còn được gọi là tốc độ tăng trưởng (*growth rate*).
 
 ```{.python .input  n=8}
