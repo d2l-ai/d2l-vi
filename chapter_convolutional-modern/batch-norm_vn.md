@@ -415,7 +415,7 @@ net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
 
 -->
 
-## Lập trình Concise 
+## Lập trình Ngắn gọn 
 
 <!--
 Compared with the `BatchNorm` class, which we just defined ourselves, the `BatchNorm` class defined by the `nn` model in Gluon is easier to use.
