@@ -162,7 +162,7 @@ for blk in net:
 As you can see, we halve height and width at each block, finally reaching a height and width of 7 before flattening the representations for processing by the fully-connected layer.
 -->
 
-Như bạn thấy, ta đã giảm chiều cao và chiều rộng đi một nửa sau mỗi khối, cuối cùng đạt đến chiều cao và chiều rộng bằng 7 trước khi trải phẳng các biểu diễn để tiếp tục xử lý trong tầng kết nối đầy đủ.
+Như bạn thấy, ta đã giảm chiều cao và chiều rộng đi một nửa sau mỗi khối, cuối cùng kích thước của các biễu diễn chỉ còn là 7 trên mỗi chiều trước khi được trải phẳng ra để tiếp tục xử lý trong tầng kết nối đầy đủ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
