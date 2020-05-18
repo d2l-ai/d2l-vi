@@ -187,7 +187,7 @@ Apply a transition layer with 10 channels to the output of the dense block in th
 This reduces the number of output channels to 10, and halves the height and width.
 -->
 
-Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh vào đầu ra của khối dày đặc trong ví dụ trước.
+Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên các đầu ra của khối dày đặc trong ví dụ trước.
 Việc này sẽ làm giảm số lượng kênh đầu ra xuống còn 10, đồng thời làm giảm đi một nửa chiều cao và chiều rộng.
 
 ```{.python .input}
