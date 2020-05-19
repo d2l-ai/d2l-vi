@@ -391,8 +391,8 @@ This code is virtually identical to that when we first trained LeNet (:numref:`s
 The main difference is the considerably larger learning rate.
 -->
 
-Như trước đây, ta sẽ đào tạo mạng trên bộ dữ liệu Fashion-MNIST.
-Đoạn mã này gần giống với mã này khi chúng tôi lần đầu tiên đào tạo LeNet (: numref: `sec_lenet`).
+Như trước đây, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
+Đoạn mã này gần như là tương tự với khi chúng ta lần đầu huấn luyên LeNet (: numref: `sec_lenet`).
 Sự khác biệt chính là tốc độ học lớn hơn đáng kể.
 
 ```{.python .input  n=77}
@@ -405,7 +405,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 Let us have a look at the scale parameter `gamma` and the shift parameter `beta` learned from the first batch normalization layer.
 -->
 
-Chúng ta hãy xem tham số quy mô `gamma` và tham số shift` beta` đã học được từ tầng chuẩn hóa theo batch đầu tiên.
+Chúng ta hãy xem tham số tỷ lệ `gamma` và tham số dịch chuyển ` beta` đã học được tại tầng chuẩn hóa theo batch đầu tiên.
 
 ```{.python .input  n=60}
 net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
