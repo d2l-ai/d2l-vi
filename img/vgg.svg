@@ -41,7 +41,7 @@
      showgrid="false"
      inkscape:zoom="1.6512262"
      inkscape:cx="289.33333"
-     inkscape:cy="244.66667"
+     inkscape:cy="365.78878"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -1763,38 +1763,38 @@
          x="61.049053"
          y="295.74741"
          style="font-size:9px;stroke-width:0.75">5x5 Conv (256), đệm 2</tspan></text>
-  </g>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="213.98245"
-     y="254.84979"
-     id="text6127-20-3-2"><tspan
-       sodipodi:role="line"
-       id="tspan6125-9-9-1"
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
        x="213.98245"
        y="254.84979"
-       style="font-size:9px;stroke-width:0.75">3x3 MaxPool, sải bước 2</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="214.57133"
-     y="350.70657"
-     id="text6127-20-7-3-7"><tspan
-       sodipodi:role="line"
-       id="tspan6125-9-62-5-6"
+       id="text6127-20-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan6125-9-9-1"
+         x="213.98245"
+         y="254.84979"
+         style="font-size:9px;stroke-width:0.75">2x2 MaxPool, sải bước 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
        x="214.57133"
        y="350.70657"
-       style="font-size:9px;stroke-width:0.75">3x3 Conv, đệm 1</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-     x="214.57133"
-     y="286.89615"
-     id="text6127-20-7-3-7-4"><tspan
-       sodipodi:role="line"
-       id="tspan6125-9-62-5-6-1"
+       id="text6127-20-7-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan6125-9-62-5-6"
+         x="214.57133"
+         y="350.70657"
+         style="font-size:9px;stroke-width:0.75">3x3 Conv, đệm 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
        x="214.57133"
        y="286.89615"
-       style="font-size:9px;stroke-width:0.75">3x3 Conv, đệm 1</tspan></text>
+       id="text6127-20-7-3-7-4"><tspan
+         sodipodi:role="line"
+         id="tspan6125-9-62-5-6-1"
+         x="214.57133"
+         y="286.89615"
+         style="font-size:9px;stroke-width:0.75">3x3 Conv, đệm 1</tspan></text>
+  </g>
 </svg>
