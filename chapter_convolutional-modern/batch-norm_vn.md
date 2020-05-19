@@ -405,7 +405,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 Let us have a look at the scale parameter `gamma` and the shift parameter `beta` learned from the first batch normalization layer.
 -->
 
-Chúng ta hãy xem tham số tỷ lệ `gamma` và tham số dịch chuyển ` beta` đã học được tại tầng chuẩn hóa theo batch đầu tiên.
+Chúng ta hãy xem tham số tỷ lệ `gamma` và tham số dịch chuyển `beta` đã học được tại tầng chuẩn hóa theo batch đầu tiên.
 
 ```{.python .input  n=60}
 net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
@@ -598,6 +598,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Trần Yến Thy
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
 *
