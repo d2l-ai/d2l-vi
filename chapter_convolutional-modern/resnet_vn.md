@@ -33,10 +33,10 @@ Instead, we will try to find some $f^*_\mathcal{F}$ which is our best bet within
 For instance, we might try finding it by solving the following optimization problem:
 -->
 
-Hãy xem xét $ \ mathcal {F} $, một lớp các hàm số mà một kiến trúc mạng cụ thể (cùng với tốc độ học và các siêu tham số khác) có thể biểu diễn được.
+Hãy coi $\mathcal{F}$ là một lớp các hàm mà một kiến trúc mạng cụ thể (ở cùng với tốc độ học và các siêu tham số khác) có thể biểu diễn được.
 Đó là, luôn tồn tại một số tập tham số $W$ có thể tìm được thông qua việc huấn luyện trên một tập dữ liệu phù hợp, cho mọi hàm số $f \in \mathcal{F}$.
 Giả sử $f^*$ là hàm cần tìm.
-Nếu hàm số này thuộc tập $\mathcal{F}$, thì việc tìm kiếm sẽ thuận lợi nhưng thường thì chúng ta sẽ không may mắn như vậy. 
+Nếu hàm này thuộc tập $\mathcal{F}$, thì việc tìm kiếm sẽ thuận lợi nhưng thường thì chúng ta sẽ không may mắn như vậy. 
 Thay vào đó, chúng ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
 Ví dụ, chúng ta có thể thử tìm các hàm số này bằng cách giải bài toán tối ưu sau đây:
 
