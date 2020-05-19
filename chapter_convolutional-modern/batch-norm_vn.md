@@ -392,7 +392,7 @@ The main difference is the considerably larger learning rate.
 -->
 
 Như trước đây, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
-Đoạn mã này gần như là tương tự với khi chúng ta lần đầu huấn luyên LeNet (: numref: `sec_lenet`).
+Đoạn mã này gần như là tương tự với khi chúng ta lần đầu huấn luyên LeNet (:numref:`sec_lenet`).
 Sự khác biệt chính là tốc độ học lớn hơn đáng kể.
 
 ```{.python .input  n=77}
