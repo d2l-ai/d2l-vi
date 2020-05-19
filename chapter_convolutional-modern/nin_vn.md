@@ -18,12 +18,12 @@ Network in Network (NiN) blocks offer an alternative.
 They were proposed in :cite:`Lin.Chen.Yan.2013` based on a very simple insight---to use an MLP on the channels for each pixel separately.
 -->
 
-LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: bắt đầu bằng việc trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó xử lý các biểu diễn thông qua các tầng kết nối đầy đủ.
-Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng này mở rộng và đào sâu hai mô-đun này.
+LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: bắt đầu bằng việc trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó xử lý các biểu diễn thông qua các tầng kết nối đầy đủ. 
+Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở cách các mạng đó mở rộng và đào sâu hai mô-đun này. 
 Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ quá trình trước.
-Tuy nhiên, việc sử dụng các tầng dày đặc một cách bất cẩn có thể làm mất đi hoàn toàn các cấu trúc không gian của biểu diễn. 
-Các khối Mạng trong Mạng (_Network in Network - NiN_) cung cấp một giải pháp thay thế.
-Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt.
+Tuy nhiên, việc sử dụng các tầng kết nối dày đặc một cách bất cẩn có thể làm mất đi hoàn toàn các cấu trúc không gian của biểu diễn. 
+Các khối Mạng trong Mạng (_Network in Network - NiN_) cung cấp một giải pháp thay thế. 
+Chúng được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt. 
 
 <!--
 ## NiN Blocks
@@ -42,12 +42,12 @@ and the channel as equivalent to a feature. :numref:`fig_nin` illustrates the ma
 -->
 
 
-Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập là các mảng bốn chiều với các trục tương ứng với batch, kênh, chiều cao và chiều rộng.
-Cũng nhớ lại rằng đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng.
-Ý tưởng đằng sau NiN là việc áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (cho mỗi chiều cao và chiều rộng).
-Nếu trói buộc các trọng số trên mỗi vị trí không gian, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh.
-Một cách khác để nhìn nhận điều này là coi từng yếu tố trong chiều không gian (chiều cao và chiều rộng) tương đương với một mẫu
-và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG và các mạng khác.
+Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập là các mảng bốn chiều với các trục tương ứng với batch, kênh, chiều cao và chiều rộng. 
+Cũng nhớ lại rằng đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng. 
+Ý tưởng đằng sau NiN là việc áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (cho mỗi chiều cao và chiều rộng). 
+Nếu trói buộc các trọng số trên mỗi vị trí không gian, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh. 
+Một cách khác để nhìn nhận điều này là coi từng yếu tố trong chiều không gian (chiều cao và chiều rộng) tương đương với một mẫu 
+và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG và các mạng khác. 
 
 <!--
 ![The figure on the left shows the network structure of AlexNet and VGG, and the figure on the right shows the network structure of NiN. ](../img/nin.svg)
@@ -64,9 +64,9 @@ The convolution width of the first layer is typically set by the user.
 The subsequent widths are fixed to $1 \times 1$.
 -->
 
-Khối NiN bao gồm một tầng tích chập, theo sau bởi hai tầng tích chập $1\times 1$ hoạt động như các tầng kết nối đầy đủ trên điểm ảnh với hàm kích hoạt ReLU.
-Cửa sổ tích chập của tầng thứ nhất thường được đặt bởi người dùng.
-Cửa sổ tích chập ở các tầng tiếp theo được cố định bằng $1 \times 1$.
+Khối NiN bao gồm một tầng tích chập, theo sau bởi hai tầng tích chập $1\times 1$ hoạt động như các tầng kết nối đầy đủ trên điểm ảnh với hàm kích hoạt ReLU. 
+Cửa sổ tích chập của tầng thứ nhất thường được định nghĩa bởi người dùng. 
+Cửa sổ tích chập ở các tầng tiếp theo được cố định bằng $1 \times 1$. 
 
 ```{.python .input  n=2}
 import d2l
@@ -104,8 +104,8 @@ Each NiN block is followed by a maximum pooling layer with a stride of 2 and a w
 -->
 
 Cấu trúc mạng NiN gốc được đề xuất một thời gian ngắn sau AlexNet và rõ ràng có lấy cảm hứng từ đó.
-NiN sử dụng các tầng tích chập có kích thước cửa sổ $11\times 11$, $5\times 5$, và $3\times 3$, số lượng các kênh đầu ra tương ứng giống với AlexNet.
-Mỗi khối NiN theo sau bởi một tầng gộp cực đại với sải bước 2 và kích thước cửa sổ $3\times 3$.
+NiN sử dụng các tầng tích chập có kích thước cửa sổ $11\times 11$, $5\times 5$, $3\times 3$, và số lượng các kênh đầu ra tương ứng giống với AlexNet.
+Mỗi khối NiN theo sau bởi một tầng gộp cực đại với sải bước 2 và kích thước cửa sổ $3\times 3$. 
 
 <!--
 Once significant difference between NiN and AlexNet is that NiN avoids dense connections altogether.
@@ -115,11 +115,11 @@ One advantage of NiN's design is that it significantly reduces the number of req
 However, in practice, this design sometimes requires increased model training time.
 -->
 
-Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh hoàn toàn việc sử dụng các kết nối dày đặc.
-Thay vào đó, mạng này sử dụng các khối NiN với số kênh đầu ra bằng với số lớp nhãn, theo sau bởi một tầng gộp trung bình *toàn cục*,
+Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh hoàn toàn việc sử dụng các kết nối dày đặc. 
+Thay vào đó, mạng này sử dụng các khối NiN với số kênh đầu ra bằng với số lớp nhãn, theo sau bởi một tầng gộp trung bình *toàn cục*, 
 tạo ra một vector [logits](https://en.wikipedia.org/wiki/Logit).
-Một lợi thế của thiết kế NiN là giảm được các tham số cần thiết của mô hình một cách đáng kể.
-Tuy nhiên, trong thực tế, cách thiết kế này đôi lúc cần tăng thời gian huấn luyện mô hình.
+Một lợi thế của thiết kế NiN là giảm được các tham số cần thiết của mô hình một cách đáng kể. 
+Tuy nhiên, trong thực tế, cách thiết kế này đôi lúc cần tăng thời gian huấn luyện mô hình. 
 
 ```{.python .input  n=9}
 net = nn.Sequential()
@@ -144,7 +144,7 @@ net.add(nin_block(96, kernel_size=11, strides=4, padding=0),
 We create a data example to see the output shape of each block.
 -->
 
-Chúng ta tạo một mẫu dữ liệu để xem kích thước đầu ra của từng khối.
+Chúng ta tạo một mẫu dữ liệu để xem kích thước đầu ra của từng khối. 
 
 ```{.python .input}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -169,8 +169,8 @@ As before we use Fashion-MNIST to train the model.
 NiN's training is similar to that for AlexNet and VGG, but it often uses a larger learning rate.
 -->
 
-Như thường lệ, ta sẽ sử dụng Fashion-MNIST để huấn luyện mô hình.
-Quá trình huấn luyện NiN cũng tương tự như AlexNet và VGG, nhưng thường sử dụng một tốc độ học lớn hơn.
+Như thường lệ, ta sẽ sử dụng Fashion-MNIST để huấn luyện mô hình. 
+Quá trình huấn luyện NiN cũng tương tự như AlexNet và VGG, nhưng thường sử dụng tốc độ học lớn hơn. 
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 128
@@ -191,11 +191,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * The NiN design influenced many subsequent convolutional neural networks designs.
 -->
 
-* NiN sử dụng các khối được tạo thành bởi một tầng tích chập thường và nhiều tầng tích chập $1\times 1$. 
-Sử dụng trong các tầng tích chập sẽ cho phép nó học được các biểu diễn có tính phi tuyến cao hơn trên từng điểm ảnh.
-* NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính tổng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST).
-* Việc bỏ đi các các tầng dày đặc giúp làm giảm đi hiện tượng quá khớp. NiN có số lượng tham số ít hơn đáng kể.
-* Thiết kế của NiN đã ảnh hưởng đến thiết kế của nhiều mạng nơ-ron tích chập sau này.
+* NiN sử dụng các khối được tạo thành bởi một tầng tích chập và nhiều tầng tích chập $1\times 1$. 
+Kỹ thuật này khi sử dụng trong các khối tích chập cho phép học được nhiều hơn các biểu diễn có tính phi tuyến trên từng điểm ảnh. 
+* NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính tổng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST). 
+* Việc bỏ đi các các tầng dày đặc giúp làm giảm hiện tượng quá khớp. NiN có số lượng tham số ít hơn đáng kể. 
+* Thiết kế của NiN đã ảnh hưởng đến thiết kế của nhiều mạng nơ-ron tích chập sau này. 
 
 <!--
 ## Exercises
@@ -216,12 +216,12 @@ Sử dụng trong các tầng tích chập sẽ cho phép nó học được cá
 
 1. Điều chỉnh các siêu tham số để cải thiện độ chính xác phân loại.
 2. Tại sao có hai tầng chập $1\times 1$ trong khối NiN? Thử loại bỏ một trong số chúng, sau đó quan sát và phân tích các hiện tượng thực nghiệm.
-3. Tính toán việc sử dụng tài nguyên của NiN
-     * Số lượng tham số là bao nhiêu?
-     * Số lượng phép tính là bao nhiêu?
-     * Lượng bộ nhớ cần thiết trong quá trình huấn luyện là bao nhiêu?
-     * Lượng bộ nhớ cần thiết trong quá trình dự đoán là bao nhiêu?
-4. Những vấn đề có thể xảy ra với việc giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước?
+3. Tính toán việc sử dụng tài nguyên của NiN 
+     * Số lượng tham số là bao nhiêu? 
+     * Số lượng phép tính là bao nhiêu? 
+     * Lượng bộ nhớ cần thiết trong quá trình huấn luyện là bao nhiêu? 
+     * Lượng bộ nhớ cần thiết trong quá trình dự đoán là bao nhiêu? 
+4. Những vấn đề có thể xảy ra với việc giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước? 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -251,6 +251,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 1 -->
 * Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Nguyễn Văn Cường
