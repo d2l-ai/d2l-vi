@@ -177,7 +177,7 @@ Y.shape
 ## Transition Layers
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng Chuyển Tiếp
 
 <!--
 Since each dense block will increase the number of channels, adding too many of them will lead to an excessively complex model.
@@ -186,7 +186,9 @@ It reduces the number of channels by using the $1\times 1$ convolutional layer a
 and width of the average pooling layer with a stride of 2, further reducing the complexity of the model.
 -->
 
-*dịch đoạn phía trên*
+Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
+Do đó, một tầng chuyển tiếp sẽ được sử dụng để kiểm soát độ phức tạp của mô hình.
+Tầng này sẽ dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh và theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng để giảm thêm độ phức tạp của mô hình.
 
 ```{.python .input  n=3}
 def transition_block(num_channels):
@@ -202,7 +204,8 @@ Apply a transition layer with 10 channels to the output of the dense block in th
 This reduces the number of output channels to 10, and halves the height and width.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên các đầu ra của khối dày đặc trong ví dụ trước.
+Việc này sẽ làm giảm số lượng kênh đầu ra xuống còn 10, đồng thời làm giảm đi một nửa chiều cao và chiều rộng.
 
 ```{.python .input}
 blk = transition_block(10)
@@ -218,14 +221,15 @@ blk(Y).shape
 ## DenseNet Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình DenseNet
 
 <!--
 Next, we will construct a DenseNet model.
 DenseNet first uses the same single convolutional layer and maximum pooling layer as ResNet.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xây dựng một mô hình DenseNet.
+Đầu tiên DenseNet sử dụng một tầng tích chập và một tầng gộp cực đại như trong ResNet.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -384,7 +388,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 4 -->
 * Nguyễn Duy Du
