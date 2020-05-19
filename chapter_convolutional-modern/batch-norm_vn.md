@@ -314,12 +314,12 @@ Also note that for the sake of convenience we did not worry about automatically 
 Do not worry, the Gluon `BatchNorm` layer will care of this for us.
 -->
 
-Ta tạm để các chi tiết thuật toán sang một bên, chú ý đến design pattern bên dưới tầng lập trình.
-Thông thường, ta định nghĩa phần toán trong một hàm riêng biệt, giả sử `batch_norm`.
-Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, có mã chủ yếu giải quyết các vấn đề về sổ sách chứng từ,
-chẳng hạn như di chuyển dữ liệu đến thiết bị phù hợp ngữ cảnh, phân bổ và khởi tạo bất kỳ biến nào được yêu cầu, theo dõi mức trung bình đang chạy (ở đây là trung bình và phương sai), v.v.
-Pattern này cho phép tách toán hoàn toàn ra khỏi đoạn mã soạn sẵn.
-Cũng lưu ý rằng để thuận tiện, ta không lo lắng về việc tự động suy ra kích thước đầu vào ở đây, do đó chúng ta cần chỉ định số lượng đặc trưng xuyên suốt.
+Ta tạm để các chi tiết thuật toán sang một bên mà tập trung vào các khuôn mẫu thiết kế nền tảng cho việc lập trình. 
+Thông thường, ta định nghĩa phần toán trong một hàm riêng biệt, chẳng hạn như `batch_norm`.
+Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu để giải quyết các vấn đề sổ sách chứng từ,
+chẳng hạn như di chuyển dữ liệu đến thiết bị phù hợp ngữ cảnh, phân bổ và khởi tạo bất kỳ biến nào được yêu cầu, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
+Khuôn mẫu này cho phép ta tách hoàn toàn các phép tính toán ra khỏi đoạn mã phụ trợ.
+Cũng lưu ý rằng để thuận tiện, ta không cần lo về việc tự động suy ra kích thước đầu vào ở đây, do đó chúng ta cũng không cần chỉ định số lượng đặc trưng xuyên suốt.
 Đừng lo lắng, lớp `BatchNorm` của Gluon sẽ làm điều này.
 
 ```{.python .input  n=73}
