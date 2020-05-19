@@ -230,6 +230,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | logit (trong softmax)              | logit                          | [https://git.io/JvohR](https://git.io/JvohR) |
 | log-likelihood function            | hàm log hợp lý                 | [https://git.io/Jvopx](https://git.io/Jvopx) |
 | loss function                      | hàm mất mát                    | [https://git.io/Jvojp](https://git.io/Jvojp) |
+| loss landscape                     | cảnh quan mất mát              |                                              |
+| loss surface                       | bề mặt mất mát                 |                                              |
 
 ## M
 | English                      | Tiếng Việt                    | Thảo luận tại                                |
