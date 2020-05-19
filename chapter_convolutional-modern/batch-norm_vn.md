@@ -564,9 +564,9 @@ Likely, its resonance as a focal point of these debates owes to its broad recogn
 Batch normalization has proven an indispensable method, applied in nearly all deployed image classifiers, earning the paper that introduced the technique tens of thousands of citations.
 -->
 
-Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích hơn bất kỳ hàng ngàn yêu cầu mơ hồ tương tự được đưa ra mỗi năm trong tài liệu kỹ thuật về ML .
-Có khả năng, sự cộng hưởng của nó như là một tâm điểm của những cuộc tranh luận này nhờ vào khả năng nhận diện rộng rãi của nó đối với đối tượng mục tiêu.
-Chuẩn hóa theo Batch đã chứng minh là một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các phân loại hình ảnh được triển khai, kiếm được hàng chục ngàn trích dẫn cho bài báo giới thiệu kỹ thuật về nó.
+Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích hơn bất kỳ khẳng định nào trong số hàng ngàn  các lập luận mơ hồ được đưa ra mỗi năm trong nhiều tài liệu kỹ thuật về học máy .
+Có khả năng, nó cộng hưởng như là một tâm điểm của những cuộc tranh luận này nhờ vào sự phổ biến của nó trong nhóm khán giả mục tiêu. 
+Chuẩn hóa theo Batch đã chứng minh là một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các bộ phân loại hình ảnh được triển khai, và bài báo kỹ thuật giới thiệu nó đã có tới hàng chục ngàn trích dẫn.
 
 
 <!--
@@ -583,8 +583,8 @@ Chuẩn hóa theo Batch đã chứng minh là một phương pháp không thể 
 -->
 
 * Trong quá trình đào tạo mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron bằng cách sử dụng giá trị trung bình và độ lệch chuẩn của minibatch, để các giá trị của đầu ra trung gian trong mỗi lớp trong mạng lưới thần kinh ổn định hơn.
-* Các phương pháp chuẩn hóa theo batch cho các lớp được kết nối đầy đủ và các lớp chập có chút khác nhau.
-* Giống như một lớp dropout, các tầng chuẩn hóa theo batch có kết quả tính toán khác nhau trong chế độ đào tạo và chế độ dự đoán.
+* Các phương pháp chuẩn hóa theo batch cho các tầng kết nối đầy đủ và các tầng tích chập có chút khác biệt.
+* Giống như tầng dropout, các tầng chuẩn hóa theo batch có kết quả tính toán khác nhau trong chế độ đào tạo và chế độ dự đoán.
 * Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Mặt khác, động lực ban đầu của việc giảm sự dịch chuyển hiệp biến dường như không phải là một lời giải thích hợp lệ.
 
 <!--
@@ -607,16 +607,16 @@ Chuẩn hóa theo Batch đã chứng minh là một phương pháp không thể 
 7. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
 -->
 
-1. Chúng ta có thể loại bỏ phép biến đổi được kết nối đầy đủ affine trước khi chuẩn hóa theo batch hoặc tham số sai lệch trong tính toán tích chập không?
+1. Chúng ta có thể loại bỏ phép biến đổi affine được kết nối đầy đủ trước khi chuẩn hóa theo batch hay tham số độ chệch trong phép tính tích chập không?
     * Tìm một chuyển hóa tương đương áp dụng trước lớp được kết nối đầy đủ.
-    * Cải cách này có hiệu quả. Tại sao (không)?
-2. So sánh tỷ lệ học tập cho LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
-    * Phác họa sự giảm lỗi trong đào tạo và kiểm tra lỗi.
-    * Còn về miền hội tụ thì sao? Bạn có thể tạo ra tỷ lệ học tập lớn như thế nào?
-3. Chúng ta có cần Chuẩn hóa theo Batch trong mỗi lớp không? Thử nghiệm với nó thì sao?
+    * Cải tiến này có hiệu quả không và tại sao?
+2. So sánh tốc độ học của LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
+    * Phác họa sự giảm lỗi đào tạo và lỗi kiểm tra.
+    * Còn về miền hội tụ thì sao? Bạn có thể chọn tốc độ học lớn tới đâu?
+3. Chúng ta có cần chuẩn hóa theo batch trong mỗi lớp không? Hãy thử nghiệm điều này.
 4. Bạn có thể thay thế Dropout bằng Chuẩn hóa theo Batch không? Hành vi thay đổi như thế nào?
-5. Khắc phục các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để tránh tính toán gradient), đồng thời quan sát và phân tích kết quả.
-6. Xem lại tài liệu về Gluon cho `BatchNorm` để xem các ứng dụng khác cho Chuẩn hóa theo Batch.
+5. Cố định các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để không tính gradient), đồng thời quan sát và phân tích kết quả.
+6. Xem tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác cho Chuẩn hóa theo Batch.
 7. Ý tưởng nghiên cứu: nghĩ về các biến đổi chuẩn hóa khác mà bạn có thể áp dụng? Bạn có thể áp dụng biến đổi tích phân xác suất không? Còn về ước lượng hiệp phương sai ma trận hạng tối đa thì sao?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
