@@ -6,14 +6,17 @@
 -->
 # Mạng Nơ-ron Tích Chập sâu (AlexNet)
 :label:`sec_alexnet`
+
 <!--
 Although convolutional neural networks were well known in the computer vision and machine learning communities following the introduction of LeNet, they did not immediately dominate the field.
 Although LeNet achieved good results on early small datasets, the performance and feasability of training convolutional networks on larger, more realistic datasets had yet to be established.
 In fact, for much of the intervening time between the early 1990s and the watershed results of 2012, neural networks were often surpassed by other machine learning methods, such as support vector machines.
 -->
-Mặc dù mạng nơ-ron tích chập đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi mạng LeNet được giới thiệu, chúng vẫn chưa thống trị lĩnh vực này ngay lập tức.
-Mặc dù LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, hiệu năng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và thực tế hơn vẫn chưa được thiết lập.
-Trong thực tế, hầu hết khoảng thời gian giữa đầu những năm 1990 cho tới thành tựu to lớn năm 2012, mạng nơ-ron tích chập vẫn thường bị vượt qua bởi những phương pháp học máy khác, như là Máy Vector hỗ trợ - SVM.
+
+Mặc dù mạng nơ-ron tích chập đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi LeNet được giới thiệu, chúng chưa ngay lập tức thống trị lĩnh vực này.
+Mặc dù LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, hiệu năng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và sát thực tế hơn vẫn chưa được thiết lập.
+Trên thực tế, hầu hết khoảng thời gian từ đầu những năm 1990 cho tới thành tựu bước ngoặt năm 2012, mạng nơ-ron tích chập thường không sánh bằng những phương pháp học máy khác, như Máy vector hỗ trợ - SVM.
+
 <!--
 For computer vision, this comparison is perhaps not fair.
 That is although the inputs to convolutional networks consist of raw or lightly-processed (e.g., by centering) pixel values, practitioners would never feed raw pixels into traditional models.
@@ -21,11 +24,13 @@ Instead, typical computer vision pipelines consisted of manually engineering fea
 Rather than *learn the features*, the features were *crafted*.
 Most of the progress came from having more clever ideas for features, and the learning algorithm was often relegated to an afterthought.
 -->
-Đối với thị giác máy tính, sự so sánh này có lẽ không công bằng.
-Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh chưa được xử lý hoặc được xử lý nhẹ trên các giá trị điểm ảnh (chẳng hạn định tâm ảnh), trong khi đó những giá trị thô này không bao giờ được đưa trực tiếp vào các mô hình truyền thống để học.
-Thay vào đó, những hệ thống thị giác máy tính sẽ có những pipeline dùng để trích xuất đặc trưng một cách thủ công.
-Thay vì *học đặc trưng*, những đặc trưng được *tạo thủ công*.
-Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong việc tạo ra đặc trưng và thuật toán học thường ít được để ý hơn.
+
+Với thị giác máy tính, sự so sánh này không công bằng cho lắm.
+Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh thô hoặc xử lý sơ qua (như định tâm ảnh (*centering*)), và những giá trị thô này không bao giờ được truyền trực tiếp vào các mô hình truyền thống.
+Thay vào đó, các hệ thống thị giác máy tính cổ điển sẽ có những pipeline trích xuất đặc trưng một cách thủ công.
+Thay vì *học*, các đặc trưng được *tạo thủ công*.
+Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong việc tạo ra đặc trưng, còn thuật toán học thường ít được để ý hơn.
+
 <!--
 Although some neural network accelerators were available in the 1990s, they were not yet sufficiently powerful to make deep multichannel, 
 multilayer convolutional neural networks with a large number of parameters.
@@ -33,13 +38,16 @@ Moreover, datasets were still relatively small.
 Added to these obstacles, key tricks for training neural networks including parameter initialization heuristics, clever variants of stochastic gradient descent,
 non-squashing activation functions, and effective regularization techniques were still missing.
 -->
-Mặc dù cũng đã có các thiết bị phần cứng tăng tốc độ thực thi mạng nơ-ron vào đầu những năm 1990, chúng vẫn chưa đủ mạnh để có thể tạo ra những mạng nơ-ron với nhiều kênh, nhiều tầng với số lượng tham số rất lớn.
+
+Mặc dù cũng đã có các thiết bị phần cứng tăng tốc độ thực thi mạng nơ-ron vào đầu những năm 1990, chúng vẫn chưa đủ mạnh để triển khai những mạng nơ-ron nhiều kênh, nhiều tầng với số lượng tham số cực lớn.
 Ngoài ra, những tập dữ liệu vẫn còn tương đối nhỏ.
-Thêm vào những trở ngại này, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số dựa trên kinh nghiệm, các biến thể khác tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không ép, và kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
+Thêm vào đó, những thủ thuật chính để huấn luyện mạng nơ-ron bao gồm khởi tạo tham số dựa trên kinh nghiệm, các biến thể tốt hơn của hạ gradient ngẫu nhiên, hàm kích hoạt không ép (*non-squashing activation functions*), và các kĩ thuật điều chuẩn hiệu quả vẫn còn thiếu.
+
 <!--
 Thus, rather than training *end-to-end* (pixel to classification) systems, classical pipelines looked more like this:
 -->
-Vì vây, thay vì huấn luyện các hệ thống *đầu-cuối* (điểm ảnh đến phân loại), các pipeline cổ điển trông giống như thế này:
+Vì vậy, thay vì huấn luyện các hệ thống *đầu-cuối* (từ điểm ảnh đến phân loại), các pipeline cổ điển sẽ thực hiện các bước sau:
+
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -53,10 +61,10 @@ or [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), the Speeded
 4. Dump the resulting representations into your favorite classifier, likely a linear model or kernel method, to learn a classifier.
 -->
 
-1. Thu thập tập dữ liệu đáng chú ý. Trong những ngày đầu sơ khai, các tập dữ liệu này đòi hỏi các cảm biến đắt tiền ( ảnh có 1 triệu điểm ảnh được coi là nhiều tại thời điểm đó).
-2. Tiền xử lý tập dữ liệu với các đặc trưng được lấy thủ công dựa trên kiến thức quang học, hình học, các công cụ phân tích khác và thi thoảng dựa trên các khám phá tình cờ của các sinh viên sau đại học.
-3. Đưa dữ liệu qua một bộ trích chọn đặc trưng tiêu chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay bất kỳ một piplines được tinh chỉnh thủ công nào khác. 
-4. Đưa các kết quả biểu diễn vào bộ phân loại mà ta ưa thích, có thể là một mô hình tuyến tính hoặc phương pháp hạt nhân, để huấn luyện bộ phân loại. 
+1. Thu thập tập dữ liệu đáng chú ý. Trong những ngày đầu, các tập dữ liệu này đòi hỏi các cảm biến đắt tiền (ảnh có 1 triệu điểm ảnh được coi là tối tân vào thời điểm đó).
+2. Tiền xử lý tập dữ liệu với các đặc trưng được tạo thủ công dựa trên các kiến thức quang học, hình học, các công cụ phân tích khác và thi thoảng dựa trên các khám phá tình cờ của các nghiên cứu sinh.
+3. Đưa dữ liệu qua một bộ trích chọn đặc trưng tiêu chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay bất kỳ pipline được tinh chỉnh thủ công nào. 
+4. Đưa các kết quả biểu diễn vào một bộ phân loại ưa thích, có thể là một mô hình tuyến tính hoặc phương pháp hạt nhân, để huấn luyện bộ phân loại đó. 
 
 <!--
 If you spoke to machine learning researchers, they believed that machine learning was both important and beautiful.
@@ -70,10 +78,10 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 
 Nói chuyện với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
 Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
-Lĩnh vực học máy đang ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
-Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
-Sự thật trần trụi trong việc nhận dạng ảnh, như họ sẽ kể cho bạn, đó là các đặc trưng chứ không phải các giải thuật học, mới quyết định sự cải thiện.
-Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline trích chọn đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ giải thuật huấn luyện nào.
+Lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
+Tuy nhiên, nếu nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
+Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là các đặc trưng, chứ không phải các thuật toán học, mới quyết định sự cải thiện.
+Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
