@@ -332,7 +332,7 @@ train_net(net, train_iter, loss, 10, 0.01)
 ## Predictions
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán của Mô hình
 
 <!--
 Since both training and test loss are small, we would expect our model to work well.
@@ -340,7 +340,9 @@ Let us see what this means in practice.
 The first thing to check is how well the model is able to predict what happens in the next timestep.
 -->
 
-*dịch đoạn phía trên*
+Cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
+Chúng ta hãy cùng xem xét điều này có nghĩa gì trong thực tế.
+Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào.
 
 ```{.python .input}
 estimates = net(features)
@@ -355,7 +357,10 @@ There is just one little problem to this: if we observe data only until timestep
 Instead, we need to work our way forward one step at a time:
 -->
 
-*dịch đoạn phía trên*
+Điều này trông có vẻ ổn như những gì chúng ta mong đợi.
+Thậm chí phép ước lượng vẫn trông khá tin cậy với hợn 600 mẫu quan sát.
+Chỉ có một chút vấn đề như thế này: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán trong tất cả các bước thời gian tiếp đó.
+Thay vào đó, chúng ta cần dịch về phía trước một bước tại một thời điểm:
 
 
 $$\begin{aligned}
@@ -370,7 +375,8 @@ In other words, we will have to use our own predictions to make future predictio
 Let us see how well this goes.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán để đưa ra dự đoán trong tương lai.
+Chúng ta hãy xem cách này có ổn không.
 
 
 ```{.python .input}
@@ -397,13 +403,22 @@ For instance, weather forecasts for the next 24 hours tend to be pretty accurate
 We will discuss methods for improving this throughout this chapter and beyond.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
+Các giá trị ước lượng giảm dần tới một hằng số khá nhanh sau một vài bước thời gian.
+Tại sao thuật toán trên hoạt động tệ đến thế?
+Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
+Cụ thể, sau bước thời gian thứ 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
+Tiếp theo, *đầu vào* cho bước thời gian thứ 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
+Các sai số có thể phân kỳ khá nhanh chóng từ những quan sát sự thật.
+Đây là một hiện tượng khá phổ biến.
+Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng được khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
+Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
 
 <!--
 Let us verify this observation by computing the $k$-step predictions on the entire sequence.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy kiểm chứng quan sát trên bằng cách tính toán dự đoán ở bước thời gian thứ $k$ trên toàn bộ chuỗi.
 
 ```{.python .input}
 k = 33  # Look up to k - tau steps ahead
@@ -425,7 +440,8 @@ This clearly illustrates how the quality of the estimates changes as we try to p
 While the 8-step predictions are still pretty good, anything beyond that is pretty useless.
 -->
 
-*dịch đoạn phía trên*
+Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai.
+Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó rất khó tin cậy.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
