@@ -16,8 +16,10 @@ However, the number of model parameters would also increase exponentially with i
 Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is preferable to use a *latent variable model* in which we have
 -->
 
-*dịch đoạn phía trên*
-
+:numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t% chỉ phụ thuộc vào $n-1$ từ trước đó.
+Nếu muốn kiểm tra ảnh hưởng có thể có của các từ phía trước $t-(n-1)$ đến từ $x_t$, ta phải tăng $n$.
+Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị của từ điển $V$.
+Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm tàng* (*latent variable model*), trong đó
 
 $$p(x_t \mid x_{t-1}, \ldots, x_1) \approx p(x_t \mid x_{t-1}, h_{t}).$$
 
@@ -27,8 +29,9 @@ A latent variable is also called as *hidden variable*, *hidden state* or *hidden
 The hidden state at time $t$ could be computed based on both input $x_{t}$ and hidden state $h_{t-1}$, that is
 -->
 
-*dịch đoạn phía trên*
-
+$h_t$ còn được gọi là *biến tiềm tàng*, lưu trữ thông tin của chuỗi.
+Biến tiềm tàng còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*)
+Trạng thái ẩn tại thời điểm $t$ có thể được tính dựa trên cả đầu vào $x_{t}$ và trạng thái ẩn $h_{t-1}$ như sau 
 
 $$h_t = f(x_{t}, h_{t-1}).$$
 
