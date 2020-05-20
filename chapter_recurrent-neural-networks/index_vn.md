@@ -58,7 +58,7 @@ Next, we describe the gradient calculation method in recurrent neural networks t
 -->
 
 Rất nhiều ví dụ về các mạng truy hồi trong chương này dựa trên dữ liệu văn bản.
-Do vậy, chúng tôi sẽ bàn nhiều hơn các mô hình ngôn ngữ trong chương này.
+Do vậy, chúng ta sẽ đi sâu vào các mô hình ngôn ngữ trong chương này.
 Sau khi xem xét về dữ liệu chuỗi, chúng tôi sẽ thảo luận về các khái niệm cơ bản của mô hình ngôn ngữ  để lấy nguồn cảm hứng thiết kế các mạng nơ-ron truy hồi.
 Tiếp đến, chúng tôi sẽ mô tả phương pháp tính toán gradient trong các mạng nơ-ron truy hồi, từ đó hiểu rõ hơn các vấn đề có thể gặp phải trong việc huấn luyện mạng nơ-ron truy hồi.
 
