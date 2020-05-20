@@ -47,7 +47,7 @@ In short, while convolutional neural networks can efficiently process spatial in
 These networks introduce state variables to store past information, and then determine the current outputs, together with the current inputs.
 -->
 
-Nói tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả những dữ liệu không gian, thì các mạng nơ-ron truy hồi được thiết kế để xử lý dữ liệu chuỗi tốt hơn.
+Nói tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả dữ liệu không gian, các mạng nơ-ron truy hồi được thiết kế để xử lý dữ liệu chuỗi tốt hơn.
 Các mạng này giới thiệu các biến trạng thái để lưu trữ thông tin trong quá khứ và sau đó xác định các đầu ra hiện tại, cùng với các đầu vào hiện tại.
 
 <!--
