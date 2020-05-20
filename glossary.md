@@ -173,6 +173,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hand-engineering        | thiết kế thủ công        |                                                                                            |
 | heuristic               | thực nghiệm              |                                                                                            |
 | hidden unit             | nút ẩn                   |                                                                                            |
+| hidden state            | trạng thái ẩn            |                                                                                            |
 | human-level performance | chất lượng mức con người | [https://git.io/JvQx4](https://git.io/JvQx4), [https://git.io/JvQxB](https://git.io/JvQxB) |
 | hyperparameter          | siêu tham số             |                                                                                            |
 | hyperplane              | siêu phẳng               | [https://git.io/JvojD](https://git.io/JvojD)                                               |
@@ -210,6 +211,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
 |------------------------------------|--------------------------------|----------------------------------------------|
 | label smoothing                    | làm mượt nhãn                  |                                              |
+| latent variable                    | biến tiềm tàng                 |                                              |
 | layer                              | tầng                           |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
