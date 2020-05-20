@@ -28,7 +28,7 @@ It is thus only reasonable to assume that specialized models for such data will 
 Quan trọng hơn cả, cho đến thời điểm này, chúng ta đã ngầm định rằng dữ liệu được sinh ra từ các phân phối độc lập và giống hệt nhau (*independently and identically distributed - i.i.d.*).
 Thật không may, điều này không đúng với hầu hết các dữ liệu.
 Ví dụ, các từ trong đoạn này được viết theo trình tự, và sẽ rất khó để giải mã nghĩa của chúng nếu các từ được hoán vị một cách ngẫu nhiên.
-Tương tự, các khung hình ảnh trong video, tín hiệu âm thanh trong cuộc hội thoại, hoặc hành vi duyệt web, tất cả đều tuân theo thứ tựchuỗi.
+Tương tự, các khung hình ảnh trong video, tín hiệu âm thanh trong cuộc hội thoại, hoặc hành vi duyệt web, tất cả đều có cấu trúc chuỗi.
 Do đó, chỉ hợp lý khi giả định rằng các mô hình chuyên biệt cho những dữ liệu này sẽ giúp việc mô tả dữ liệu và giải quyết các bài toán ước lượng tốt hơn.
 
 <!--
