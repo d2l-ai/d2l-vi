@@ -19,7 +19,7 @@ Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is prefe
 :numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t% chỉ phụ thuộc vào $n-1$ từ trước đó.
 Nếu muốn kiểm tra ảnh hưởng có thể có của các từ phía trước $t-(n-1)$ đến từ $x_t$, ta phải tăng $n$.
 Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị của từ điển $V$.
-Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm tàng* (*latent variable model*), trong đó
+Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
 
 $$p(x_t \mid x_{t-1}, \ldots, x_1) \approx p(x_t \mid x_{t-1}, h_{t}).$$
 
@@ -29,7 +29,7 @@ A latent variable is also called as *hidden variable*, *hidden state* or *hidden
 The hidden state at time $t$ could be computed based on both input $x_{t}$ and hidden state $h_{t-1}$, that is
 -->
 
-$h_t$ còn được gọi là *biến tiềm tàng*, lưu trữ thông tin của chuỗi.
+$h_t$ còn được gọi là *biến tiềm ẩn*, lưu trữ thông tin của chuỗi.
 Biến tiềm tàng còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*)
 Trạng thái ẩn tại thời điểm $t$ có thể được tính dựa trên cả đầu vào $x_{t}$ và trạng thái ẩn $h_{t-1}$ như sau 
 
@@ -42,7 +42,9 @@ We discussed this in :numref:`sec_sequence`.
 But it could potentially makes both computation and storage expensive.
 -->
 
-*dịch đoạn phía trên*
+Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không cần xấp xỉ.
+Sau cùng, $h_t$ có thể chỉ đơn giản lưu tất cả dữ liệu quan sát được đến thời điểm đó.
+Điều này đã được thảo luận tại :numref:`sec_sequence`.
 
 <!--
 Note that we also use $h$ to denote by the number of hidden units of a hidden layer.
@@ -53,14 +55,18 @@ Instead, they can only be computed by looking at data at previous iterations.
 In this sense they have much in common with latent variable models in statistics, such as clustering or topic models where the clusters affect the output but cannot be directly observed.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng ta cũng sử dụng $h$ để kí hiệu số lượng nút ẩn trong một tầng ẩn.
+Tầng ẩn và trạng thái ẩn là hai khái niệm rất khác nhau.
+Tầng ẩn, như đã đề cập, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
+Trạng thái ẩn, về kỹ thuật là *đầu vào* của một bước tính toán tại một thời điểm xác định.
 
 <!--
 Recurrent neural networks are neural networks with hidden states.
 Before introducing this model, let us first revisit the multi-layer perceptron introduced in :numref:`sec_mlp`.
 -->
 
-*dịch đoạn phía trên*
+Mạng nơ-ron truy hồi là mạng nơ-ron với các trạng thái ẩn.
+Trước khi tìm hiểu mô hình này, hãy xem lại perceptron đa tầng tại :numref:`sec_mlp`.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
