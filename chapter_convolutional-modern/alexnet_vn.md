@@ -53,7 +53,10 @@ or [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), the Speeded
 4. Dump the resulting representations into your favorite classifier, likely a linear model or kernel method, to learn a classifier.
 -->
 
-*dịch đoạn phía trên*
+1. Thu thập tập dữ liệu đáng chú ý. Trong những ngày đầu sơ khai, các tập dữ liệu này đòi hỏi các cảm biến đắt tiền ( ảnh có 1 triệu điểm ảnh được coi là nhiều tại thời điểm đó).
+2. Tiền xử lý tập dữ liệu với các đặc trưng được lấy thủ công dựa trên kiến thức quang học, hình học, các công cụ phân tích khác và thi thoảng dựa trên các khám phá tình cờ của các sinh viên sau đại học.
+3. Đưa dữ liệu qua một bộ trích chọn đặc trưng tiêu chuẩn như [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), hoặc [SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), hay bất kỳ một piplines được tinh chỉnh thủ công nào khác. 
+4. Đưa các kết quả biểu diễn vào bộ phân loại mà ta ưa thích, có thể là một mô hình tuyến tính hoặc phương pháp hạt nhân, để huấn luyện bộ phân loại. 
 
 <!--
 If you spoke to machine learning researchers, they believed that machine learning was both important and beautiful.
@@ -65,7 +68,12 @@ Computer vision researchers justifiably believed that a slightly bigger or clean
 or a slightly improved feature-extraction pipeline mattered far more to the final accuracy than any learning algorithm.
 -->
 
-*dịch đoạn phía trên*
+Nói chuyện với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
+Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
+Lĩnh vực học máy đang ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
+Tuy nhiên, nếu bạn lúc ấy nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
+Sự thật trần trụi trong việc nhận dạng ảnh, như họ sẽ kể cho bạn, đó là các đặc trưng chứ không phải các giải thuật học, mới quyết định sự cải thiện.
+Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline trích chọn đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ giải thuật huấn luyện nào.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -75,7 +83,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 ## Learning Feature Representation
 -->
 
-## *dịch tiêu đề phía trên*
+## Học biểu diễn đặc trưng
 
 <!--
 Another way to cast the state of affairs is that the most important part of the pipeline was the representation.
@@ -88,7 +96,14 @@ In fact, engineering a new set of feature functions, improving results, and writ
 and similar feature extractors ruled the roost.
 -->
 
-*dịch đoạn phía trên*
+Nói một cách khác, tại thời điểm đó phần lớn các nhà nghiên cứu tin rằng phần quan trọng nhất của pipeline là các biểu diễn.
+Và cho tới năm 2012 các biểu diễn vẫn được tính toán một cách máy móc.
+Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng mới, thực hiện cải thiện kết quả, và viết ra phương pháp thực hiện từng là một phần quan trọng của các bài báo nghiên cứu. 
+[SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform),
+[SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features),
+[HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients),
+[Bags of visual words](https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision)
+và các bộ trích chọn đặc trưng tương tự đã chiếm ưu thế vượt trội. 
 
 <!--
 Another group of researchers, including Yann LeCun, Geoff Hinton, Yoshua Bengio,
@@ -99,7 +114,12 @@ In the case of an image, the lowest layers might come to detect edges, colors, a
 Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a convolutional neural network which achieved excellent performance in the ImageNet challenge.
 -->
 
-*dịch đoạn phía trên*
+Một nhóm nhà nghiên cứu khác, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác. 
+Họ tin rằng đặc trưng cũng có thể được học. 
+Hơn nữa, họ cũng tin rằng để có được độ phức tạp hợp lý, các đặc trưng nên được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số có thể được huấn luyện. 
+Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
+Thật vậy, :cite:`Krizhevsky.Sutskever.Hinton.2012` đề xuất một biến thể mới của một mạng tích chập đã đạt được hiệu năng xuất sắc trong 
+cuộc thi ImageNet. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -576,7 +596,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Đình Nam
 
 <!-- Phần 2 -->
-*
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * Đinh Đắc
