@@ -384,7 +384,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | text data                  | dữ liệu văn bản                   |                                              |
 | timestep                   | bước thời gian                    | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | timeseries analysis        | phân tích dữ liệu chuỗi thời gian |                                              |
-| token                      | đơn vị kí tự                      |                                              |
+| token                      | mã                                |                                              |
 | training set               | tập huấn luyện                    |                                              |
 | training dev set           | tập phát triển huấn luyện         |                                              |
 | training set performance   | chất lượng trên tập huấn luyện    |                                              |
