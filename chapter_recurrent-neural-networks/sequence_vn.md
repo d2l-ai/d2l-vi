@@ -40,7 +40,7 @@ the expectations that the next movie is equally good or better are high, hence e
 * [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring), dựa trên ý kiến của người khác.
 Chẳng hạn, sau khi một bộ phim thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
 Hiệu ứng này tồn tại trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
-:cite:`Wu.Ahmed.Beutel.ea.2017` cho thấy hiệu ứng này làm tăng xếp hạng thêm hơn nửa điểm.
+:cite:`Wu.Ahmed.Beutel.ea.2017` cho thấy hiệu ứng này tăng xếp hạng thêm hơn nửa điểm.
 * [Hiệu ứng vòng xoáy hưởng lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill), con người nhanh chóng thích nghi để chấp nhận một tình huống được cải thiện (hoặc xấu đi) như một điều bình thường mới.
 Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hơn sẽ là khá cao, do đó, ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ. Rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
@@ -55,7 +55,7 @@ But it is not just about movies.
 
 Nói tóm lại, xếp hạng thường không đứng yên.
 Sử dụng động lực thời gian đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
-Tuy nhiên, nó không chỉ là về phim ảnh.
+Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
 <!--
 * Many users have highly particular behavior when it comes to the time when they open apps. 
@@ -72,18 +72,18 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 * Humans interact with each other in a sequential nature, as can be seen in Twitter fights, dance patterns and debates.
 -->
 
-* Nhiều người dùng có hành vi đặc biệt cao ở thời điểm họ mở ứng dụng.
+* Nhiều người dùng có tần suất sử dụng ứng dụng cao ở một số thời điểm nhất định.
 Chẳng hạn, các ứng dụng truyền thông xã hội phổ biến hơn nhiều sau giờ học với học sinh.
 Các ứng dụng giao dịch trên thị trường chứng khoán được sử dụng phổ biến hơn khi thị trường mở cửa.
-* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu mà ta đã bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
-Rốt cuộc, nhìn lại dễ hơn nhiều so với nhìn về tương lại.
+* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
+Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
 Trong thống kê, bài toán trước được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
 * Âm nhạc, lời nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức là, các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
-* Con người tương tác với nhau theo một cách tuần tự, có thể thấy trong các cuộc cãi vã trên Twitter, các kiểu nhảy và các cuộc tranh luận.
+* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc cãi vã trên Twitter, các bước nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
