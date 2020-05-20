@@ -172,7 +172,7 @@ This code generates two types of networks: one where we add the input to the out
 and whenever `use_1x1conv=True`, one where we adjust channels and resolution by means of a $1 \times 1$ convolution before adding.
 :numref:`fig_resnet_block` illustrates this:
 -->
-Đoạn mã này sinh ra hai loại mạng nơ-ron: ở một loại chúng ta cộng giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), ở loại còn lại chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
+Đoạn mã này sinh ra hai loại mạng nơ-ron: một loại cộng giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), còn ở loại thứ hai chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
 :numref:`fig_resnet_block` minh họa cho điều này:
 <!--
 ![Left: regular ResNet block; Right: ResNet block with 1x1 convolution](../img/resnet-block.svg)
