@@ -135,7 +135,7 @@ ResNet tuân theo thiết kế tầng tích chập đầy đủ $3\times 3$ củ
 Khối thặng dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
 Mỗi tầng tích chập được theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
 Sau đó, chúng ta bỏ qua hai phép tính tích chập và thêm giá trị đầu vào trực tiếp vào trước hàm kích hoạt ReLU cuối cùng.
-Kiểu thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, như vậy chúng mới có thể cộng lại với nhau.
+Kiểu thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, để có thể cộng lại với nhau.
 Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần bổ sung một tầng tích chập $1\times 1$ để thay đổi kích thước giá trị đầu vào cho phù hợp với phép cộng.
 Hãy cùng xem đoạn mã bên dưới.
 ```{.python .input  n=1}
