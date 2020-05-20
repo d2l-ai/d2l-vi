@@ -260,7 +260,7 @@ Here, we use the transition layer to halve the height and width and halve the nu
 -->
 
 Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
-Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa cả chiều cao, chiều rộng và số kênh.
+Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, chiều rộng và số kênh.
 
 ```{.python .input  n=5}
 # Num_channels: the current number of channels
@@ -306,7 +306,7 @@ net.add(nn.BatchNorm(),
 Since we are using a deeper network here, in this section, we will reduce the input height and width from 224 to 96 to simplify the computation.
 -->
 
-Trong phần này, vì ta đang sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán, ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
+Trong phần này, vì đang sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán, ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 256
