@@ -39,7 +39,7 @@ Again we want to have models that can handle such data.
 
 Một vấn đề nữa nảy sinh khi chúng ta không chỉ nhận một chuỗi làm đầu vào mà còn muốn dự đoán những phần tử tiếp theo của chuỗi.
 Ví dụ, bài toán có thể là dự đoán phần tử tiếp theo trong dãy 2, 4, 6, 8, 10, ...
-Điều này khá phổ biến trong phân tích chuỗi thời gian, để dự đoán thị trường chứng khoán, đường cong biểu hiện sốt của bệnh nhân, hoặc khả gia tốc cần thiết cho một chiếc xe đua.
+Tác vụ này khá phổ biến trong phân tích chuỗi thời gian: để dự đoán thị trường chứng khoán, đường cong biểu hiện sốt của bệnh nhân, hoặc gia tốc cần thiết cho một chiếc xe đua.
 Một lần nữa, chúng ta muốn xây dựng các mô hình có thể xử lý dữ liệu trên.
 
 <!--
