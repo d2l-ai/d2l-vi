@@ -107,6 +107,7 @@ DenseNet uses the modified "batch normalization, activation, and convolution" ar
 First, we implement this architecture in the `conv_block` function.
 -->
 
+
 DenseNet sử dụng kiến trúc "chuẩn hóa theo batch, hàm kích hoạt và phép tích chập" đã qua sửa đổi của ResNet (xem phần bài tập trong :numref:`sec_resnet`).
 Đầu tiên, ta sẽ lập trình kiến trúc này trong hàm `conv_block`.
 
@@ -130,7 +131,7 @@ In the forward computation, however, we concatenate the input and output of each
 -->
 
 Một khối dày đặc bao gồm nhiều khối `conv_block` với cùng số lượng kênh đầu ra.
-Tuy nhiên, trong tính toán lượt truyền xuôi, ta nối đầu vào và đầu ra của từng khối trên chiều kênh.
+Tuy nhiên, ta sẽ nối đầu vào và đầu ra của từng khối theo chiều kênh khi tính toán lượt truyền xuôi.
 
 ```{.python .input  n=2}
 class DenseBlock(nn.Block):
@@ -156,10 +157,10 @@ The number of convolution block channels controls the increase in the number of 
 This is also referred to as the growth rate.
 -->
 
-Trong ví dụ sau đây, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" không biết có đúng không -->
+Trong ví dụ sau, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra.
 Với một đầu vào gồm 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
-Số lượng kênh của khối tích chập kiểm soát sự gia tăng trong số lượng kênh đầu ra so với số lượng kênh đầu vào.
-Số lượng kênh này còn được gọi là tốc độ tăng trưởng (*growth rate*).
+Số lượng kênh của khối tích chập kiểm soát sự gia tăng của số lượng kênh đầu ra so với số lượng kênh đầu vào.
+Sự gia tăng này còn được gọi là tốc độ tăng trưởng (*growth rate*).
 
 ```{.python .input  n=8}
 blk = DenseBlock(2, 10)
@@ -186,9 +187,9 @@ It reduces the number of channels by using the $1\times 1$ convolutional layer a
 and width of the average pooling layer with a stride of 2, further reducing the complexity of the model.
 -->
 
-Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
+Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng việc thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
 Do đó, một tầng chuyển tiếp sẽ được sử dụng để kiểm soát độ phức tạp của mô hình.
-Tầng này sẽ dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh và theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng để giảm thêm độ phức tạp của mô hình.
+Tầng này dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh, theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng, từ đó giảm độ phức tạp của mô hình hơn nữa.
 
 ```{.python .input  n=3}
 def transition_block(num_channels):
@@ -204,7 +205,7 @@ Apply a transition layer with 10 channels to the output of the dense block in th
 This reduces the number of output channels to 10, and halves the height and width.
 -->
 
-Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên các đầu ra của khối dày đặc trong ví dụ trước.
+Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên đầu ra của khối dày đặc trong ví dụ trước.
 Việc này sẽ làm giảm số lượng kênh đầu ra xuống còn 10, đồng thời làm giảm đi một nửa chiều cao và chiều rộng.
 
 ```{.python .input}
