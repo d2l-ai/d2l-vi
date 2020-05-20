@@ -120,9 +120,9 @@ This helps with singletons, e.g., via
 
 
 $$\begin{aligned}
-	\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
-	\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
-	\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
+\t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
+\t\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
+\t\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
 \end{aligned}$$
 
 
@@ -327,7 +327,7 @@ Note that we have quite some freedom since we could pick an arbitrary offset.
 ![Different offsets lead to different subsequences when splitting up text.](../img/timemachine-5gram.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/timemachine-5gram.svg)
+![Các giá trị offset khác nhau dẫn đến các chuỗi nhỏ khác nhau khi phân tách văn bản.](../img/timemachine-5gram.svg)
 :label:`fig_timemachine_5gram`
 
 <!--
@@ -342,7 +342,16 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, giá trị offset nào nói trên đều tốt cả.
+Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
+Nhưng nếu chúng ta chọn tất cả các offset, chúng ta sẽ nhận được một dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt hoặc vì nó không đảm bảo tính bao hàm (*coverage*) đều đặn của mảng.
+Ví dụ, nếu chúng ta lấy có hoàn lại $n$ vật ngẫu nhiên từ một tập $n$ vật, xác suất cho một vật cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
+Điều này có nghĩa là chúng ta không thể kỳ vọng một tính bao hàm đều theo cách này.
+Ngay cả phép hoán vị ngẫu nhiên một tập của tất cả các giá trị offset cũng không bảo đảm hoàn toàn.
+Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả hai tính *bao hàm* và tính *ngẫu nhiên*, đó là: sử dụng một giá trị offset ngẫu nhiên, sau đó chúng ta có sử dụng các *term* một cách tuần tự.
+Chúng ta sẽ mô tả làm thế nào để thực hiện điều này cho cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
+
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -352,7 +361,8 @@ We describe how to accomplish this for both random sampling and sequential parti
 ### Random Sampling
 -->
 
-### *dịch tiêu đề phía trên*
+### Lấy Mẫu Ngẫu nhiên
+
 
 <!--
 The following code randomly generates a minibatch from the data each time.
@@ -362,7 +372,12 @@ The positions of two adjacent random minibatches on the original sequence are no
 The target is to predict the next character based on what we have seen so far, hence the labels are the original sequence, shifted by one character.
 -->
 
-*dịch đoạn phía trên*
+Các mã dưới đây sinh ngẫu nhiên từng minibatch một từ dữ liệu.
+Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
+Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý nằm trên trên chuỗi gốc của nó.
+Các vị trí của hai minibatch liền kề ngẫu nhiên trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
+Mục đích là để dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn của mẫu chính là là chuỗi ban đầu được dịch chuyển bởi một ký tự.
+
 
 
 ```{.python .input  n=1}
@@ -396,7 +411,11 @@ This means that depending on the offset we can generate between 4 and 5 $(x, y)$
 With a minibatch size of 2, we only get 2 minibatches.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy sinh một chuỗi từ 0 tới 30.
+Chúng ta giả định rằng kích thước hàng loạt và số lượng bước thời gian là 2 và 6 tương ứng.
+Điều này có nghĩa là tùy thuộc vào giá trị offset, chúng ta có thể sinh các cặp $(x, y)$  nằm trong khoảng từ 4 tới 5.
+Với kích thước minibatch 2, chúng ta chỉ nhận được 2 minibatch.
+
 
 ```{.python .input  n=6}
 my_seq = list(range(30))
@@ -564,7 +583,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 7 -->
 *
