@@ -120,9 +120,9 @@ This helps with singletons, e.g., via
 
 
 $$\begin{aligned}
-	\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
-	\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
-	\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
+\t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
+\t\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
+\t\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
 \end{aligned}$$
 
 
@@ -304,7 +304,7 @@ Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsu
 
 <!--
 Before introducing the model, let us assume we will use a neural network to train a language model.
-Now the question is how to read minibatches of examples and labels at random.
+Now the question is how to read minibatch of examples and labels at random.
 Since sequence data is by its very nature sequential, we need to address the issue of processing it.
 We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`.
 Let us formalize this a bit.
@@ -356,9 +356,9 @@ We describe how to accomplish this for both random sampling and sequential parti
 
 <!--
 The following code randomly generates a minibatch from the data each time.
-Here, the batch size `batch_size` indicates the number of examples in each minibatch and `num_steps` is the length of the sequence (or timesteps if we have a time series) included in each example.
+Here, the batch size `batch_size` indicates the number of examples in each minibatch and `num_steps` is the length of the sequence (or bước thời gian if we have a time series) included in each example.
 In random sampling, each example is a sequence arbitrarily captured on the original sequence.
-The positions of two adjacent random minibatches on the original sequence are not necessarily adjacent.
+The positions of two adjacent random minibatch on the original sequence are not necessarily adjacent.
 The target is to predict the next character based on what we have seen so far, hence the labels are the original sequence, shifted by one character.
 -->
 
@@ -391,9 +391,9 @@ def seq_data_iter_random(corpus, batch_size, num_steps):
 
 <!--
 Let us generate an artificial sequence from 0 to 30.
-We assume that the batch size and numbers of timesteps are 2 and 6 respectively.
+We assume that the batch size and numbers of bước thời gian are 2 and 6 respectively.
 This means that depending on the offset we can generate between 4 and 5 $(x, y)$ pairs.
-With a minibatch size of 2, we only get 2 minibatches.
+With a minibatch size of 2, we only get 2 minibatch.
 -->
 
 *dịch đoạn phía trên*
@@ -412,13 +412,15 @@ for X, Y in seq_data_iter_random(my_seq, batch_size=2, num_steps=6):
 ### Sequential Partitioning
 -->
 
-### *dịch tiêu đề phía trên*
+### tuần tự phân vùng
+
 
 <!--
-In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatches adjacent in the original sequence.
+In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatch adjacent in the original sequence.
 -->
 
-*dịch đoạn phía trên*
+Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi ban đầu, chúng ta cũng có thể làm cho vị trí của hai minibatch ngẫu nhiên liền kề thực sự liền kề nhau trong chuỗi gốc.
+
 
 
 ```{.python .input  n=7}
@@ -440,10 +442,12 @@ def seq_data_iter_consecutive(corpus, batch_size, num_steps):
 
 <!--
 Using the same settings, print input `X` and label `Y` for each minibatch of examples read by random sampling.
-The positions of two adjacent minibatches on the original sequence are adjacent.
+The positions of two adjacent minibatch on the original sequence are adjacent.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng các các giá trị cài đặt tương tự các phần trên, hãy in đầu vào `x` và nhãn `y` cho mỗi minibatch được lấy mẫu ngẫu nhiên.
+Các vị trí của hai minibatch liền kề trên dãy ban đầu là liền kề nhau.
+
 
 
 ```{.python .input  n=8}
@@ -455,7 +459,8 @@ for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
 Now we wrap the above two sampling functions to a class so that we can use it as a Gluon data iterator later.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy gộp hai hàm lấy mẫu trên thành một lớp để chúng ta có thể sử dụng nó như là một iterator dữ liệu Gluon trong các phần sau.
+
 
 
 ```{.python .input}
@@ -478,7 +483,8 @@ class SeqDataLoader:
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta hãy viết một hàm `load_data_time_machine` mà trả về cả iterator dữ liệu và bộ từ vựng, từ đó chúng ta có thể sử dụng hàm đó tương tự như các hàm khác với tiền tố `load_data`.
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -502,10 +508,17 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Zipf's law governs the word distribution for not only unigrams but also the other $n$-grams.
 * There is a lot of structure but not enough frequency to deal with infrequent word combinations efficiently via Laplace smoothing.
 * The main choices for sequence partitioning are picking between consecutive and random sequences.
-* Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatches.
+* Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatch.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình ngôn ngữ là một công nghệ quan trọng trong xử lý ngôn ngữ tự nhiên.
+* $n$-grams cung cấp một mô hình tiện lợi để xử lý các chuỗi dài bằng cách cắt giảm tính phụ thuộc.
+* Các chuỗi dài thường gặp vấn đề khi chúng rất hiếm hoặc không bao giờ xuất hiện.
+* Định luật Zipf chi phối các phân phối từ không chỉ 1-gram mà còn là $n$-gram.
+* Có rất nhiều cấu trúc không bao gồm hết các tuần suất xuất hiện của từ có thể xử lý các tổ hợp từ không thường xuyên xuất hiện một cách hiệu quả thông qua phép làm mịn Laplace.
+* Giải pháp chủ yếu cho bài toán phân tách chuỗi đó là chọn giữa các chuỗi liên tiếp và ngẫu nhiên.
+* Căn cứ vào độ dài của toàn bộ tài liệu, việc loại bỏ một số tài liệu và các minibatch nửa rỗng có thể chấp nhận được.
+
 
 <!--
 ## Exercises
@@ -525,7 +538,16 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 7. If we want a sequence example to be a complete sentence, what kinds of problems does this introduce in minibatch sampling? Why would we want to do this anyway?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Bao nhiêu tần suất của từ và tần suất đa từ liền kề mà mô hình 4-gram cần để lưu trữ?
+2. Hãy xem lại các ước lượng xác suất được làm mịn. Tại sao chúng lại không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
+3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
+4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
+5. Hãy liệt kê những phương pháp lấy mẫu cho minibatch nào khác bạn có thể nghĩ đến?
+6. Tại sao lấy một giá trị offset ngẫu nhiên là một ý tưởng hay?
+    * Liệu nó  có thực sự dẫn đến phân phối đều một cách hoàn hảo cho các chuỗi dữ liệu văn bản?
+    * Bạn sẽ làm gì để có được một phân phối đều hơn? 
+7. Nếu chúng ta muốn có một mẫu chuỗi là một câu hoàn chỉnh, thì sẽ có những vấn đề gì nảy sinh khi lấy mẫu minibatch? Tại sao chúng ta lại muốn giải quyết như vậy?
+
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -567,4 +589,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Quang
