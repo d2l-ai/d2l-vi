@@ -174,6 +174,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | heuristic               | thực nghiệm              |                                                                                            |
 | hidden unit             | nút ẩn                   |                                                                                            |
 | hidden state            | trạng thái ẩn            |                                                                                            |
+| hidden state variable          | biến trạng thái ẩn            |                                                                                            |
+| hidden variable            | biến trạng thái            |                                                                                            |
+
 | human-level performance | chất lượng mức con người | [https://git.io/JvQx4](https://git.io/JvQx4), [https://git.io/JvQxB](https://git.io/JvQxB) |
 | hyperparameter          | siêu tham số             |                                                                                            |
 | hyperplane              | siêu phẳng               | [https://git.io/JvojD](https://git.io/JvojD)                                               |
