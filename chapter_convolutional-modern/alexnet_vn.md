@@ -100,7 +100,7 @@ In fact, engineering a new set of feature functions, improving results, and writ
 and similar feature extractors ruled the roost.
 -->
 
-Cách khác để kết nối trạng thái của các dữ kiện liên quan với nhau, đó cũng là phần quan trọng nhất của pipeline là thực hiện biểu diễn.
+Nói một cách khác, tại thời điểm đó phần lớn các nhà nghiên cứu tin rằng phần quan trọng nhất của pipeline là các biểu diễn.
 Và cho tới năm 2012 các biểu diễn vẫn được tính toán một cách máy móc.
 Thật vậy, thiết kế và xây dựng một tập các hàm đặc trưng mới, thực hiện cải thiện kết quả, và viết ra phương pháp thực hiện từng là một phần quan trọng của các bài báo nghiên cứu. 
 [SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform),
@@ -119,8 +119,8 @@ Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a con
 -->
 
 Một nhóm nhà nghiên cứu khác, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác. 
-Họ tin rằng các đặc trưng tự chúng có thể được học. 
-Hơn nữa, họ cũng tin rằng với một độ phức tạp hợp lý, các đặc trưng có thể được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số huấn luyện có thể học được. 
+Họ tin rằng đặc trưng cũng có thể được học. 
+Hơn nữa, họ cũng tin rằng để có được độ phức tạp hợp lý, các đặc trưng nên được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số có thể được huấn luyện. 
 Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
 Thật vậy, :cite:`Krizhevsky.Sutskever.Hinton.2012` đề xuất một biến thể mới của một mạng tích chập đã đạt được hiệu năng xuất sắc trong 
 cuộc thi ImageNet. 
