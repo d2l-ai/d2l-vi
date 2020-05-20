@@ -132,12 +132,12 @@ If we want to change the number of channels or the stride, we need to introduce 
 Let us have a look at the code below.
 -->
 ResNet tuân theo thiết kế tầng tích chập đầy đủ $3\times 3$ của VGG.
-Khối thặng dư có hai tầng tích chập $3\times 3$ mà giá trị trả về có cùng số kênh với nhau.
-Mỗi tầng tích chập theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
+Khối thặng dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
+Mỗi tầng tích chập được theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
 Sau đó, chúng ta bỏ qua hai phép tính tích chập và thêm giá trị đầu vào trực tiếp vào trước hàm kích hoạt ReLU cuối cùng.
-Kiểu thiết kế này đòi hỏi giá trị trả về của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, như vậy chúng mới có thể cộng lại với nhau.
-Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần thêm một tầng tích chập $1\times 1$ bổ sung để thay đổi kích thước giá trị đầu vào phù hợp với phép tính được thêm vào.
-Hãy xem đoạn mã bên dưới.
+Kiểu thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, như vậy chúng mới có thể cộng lại với nhau.
+Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần bổ sung một tầng tích chập $1\times 1$ để thay đổi kích thước giá trị đầu vào cho phù hợp với phép cộng.
+Hãy cùng xem đoạn mã bên dưới.
 ```{.python .input  n=1}
 import d2l
 from mxnet import np, npx
@@ -172,7 +172,7 @@ This code generates two types of networks: one where we add the input to the out
 and whenever `use_1x1conv=True`, one where we adjust channels and resolution by means of a $1 \times 1$ convolution before adding.
 :numref:`fig_resnet_block` illustrates this:
 -->
-Đoạn mã sinh ra hai loại mạng nơ-ron: một là chúng ta thêm giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU, và khi nào `use_1x1conv=True`, cái còn lại là chúng ta thay đổi số kênh và độ phân giải bằng trung bình của một lớp tích chập $1 \times 1$ trước khi thêm vào.
+Đoạn mã này sinh ra hai loại mạng nơ-ron: ở một loại chúng ta cộng giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), ở loại còn lại chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
 :numref:`fig_resnet_block` minh họa cho điều này:
 <!--
 ![Left: regular ResNet block; Right: ResNet block with 1x1 convolution](../img/resnet-block.svg)
@@ -184,7 +184,7 @@ and whenever `use_1x1conv=True`, one where we adjust channels and resolution by 
 <!--
 Now let us look at a situation where the input and output are of the same shape.
 -->
-Cùng xem xét một tình huống mà cả giá trị đầu vào và đầu ra có cùng kích thước.
+Giờ hãy cùng xem xét một tình huống mà cả giá trị đầu vào và đầu ra có cùng kích thước.
 ```{.python .input  n=2}
 blk = Residual(3)
 blk.initialize()
@@ -195,7 +195,7 @@ blk(X).shape
 <!--
 We also have the option to halve the output height and width while increasing the number of output channels.
 -->
-Chúng ta cũng có một lựa chọn khác nữa là giảm kích thước chiều cao và chiều rộng đi một nửa trong khi tăng số lượng kênh của đầu ra.
+Chúng ta cũng có một lựa chọn khác là giảm kích thước chiều cao và chiều rộng đi một nửa trong khi tăng số lượng kênh của đầu ra.
 ```{.python .input  n=3}
 blk = Residual(6, use_1x1conv=True, strides=2)
 blk.initialize()
