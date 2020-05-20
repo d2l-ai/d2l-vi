@@ -160,7 +160,7 @@ This is also referred to as the growth rate.
 Trong ví dụ sau, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra.
 Với một đầu vào gồm 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
 Số lượng kênh của khối tích chập kiểm soát sự gia tăng của số lượng kênh đầu ra so với số lượng kênh đầu vào.
-Sự gia tăng này còn được gọi là tốc độ tăng trưởng (*growth rate*).
+Số lượng kênh này còn được gọi là tốc độ tăng trưởng (*growth rate*).
 
 ```{.python .input  n=8}
 blk = DenseBlock(2, 10)
