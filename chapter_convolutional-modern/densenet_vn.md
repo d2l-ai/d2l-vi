@@ -14,10 +14,10 @@ To understand how to arrive at it, let us take a small detour to theory.
 Recall the Taylor expansion for functions. For scalars it can be written as
 -->
 
-ResNet đã làm thay đổi đáng kể quan điểm về cách tham số hóa các hàm số trong mạng học sâu.
-Ở một mức độ nào đó, DenseNet có thể được coi là một mở rộng hợp lý của ResNet.
+ResNet đã làm thay đổi đáng kể quan điểm về cách tham số hóa các hàm số trong mạng nơ-ron sâu.
+Ở một mức độ nào đó, DenseNet có thể được coi là phiên bản mở rộng hợp lý của ResNet.
 Để hiểu cách đi đến kết luận đó, ta cần tìm hiểu một chút lý thuyết.
-Hãy nhớ lại công thức khai triển Taylor cho hàm một biến vô hướng
+Nhắc lại công thức khai triển Taylor cho hàm một biến vô hướng
 
 $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3).$$
 
@@ -32,6 +32,7 @@ The key point is that it decomposes the function into increasingly higher order 
 In a similar vein, ResNet decomposes functions into
 -->
 
+
 Điểm mấu chốt là khai triển Taylor phân tách hàm số thành các số hạng có bậc tăng dần.
 Tương tự, ResNet phân tách các hàm số thành
 
@@ -43,12 +44,14 @@ What if we want to go beyond two terms? A solution was proposed by :cite:`Huang.
 an architecture that reported record performance on the ImageNet dataset.
 -->
 
-Cụ thể là, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
-Nếu ta muốn tách ra nhiều hơn hai số hạng thì sao? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` trong kiến trúc DenseNet. Kiến trúc này đạt được hiệu suất kỉ lục trên tập dữ liệu ImageNet.
+Cụ thể, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
+Nếu ta muốn tách ra thành nhiều hơn hai số hạng thì sao? 
+Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` trong kiến trúc DenseNet. Kiến trúc này đạt được hiệu suất kỉ lục trên tập dữ liệu ImageNet.
 
 <!--
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
 -->
+
 
 ![Sự khác biệt chính giữa ResNet (bên trái) và DenseNet (bên phải) trong các kết nối xuyên tầng: sử dụng phép cộng và sử dụng phép nối.](../img/densenet-block.svg)
 :label:`fig_densenet_block`
@@ -57,6 +60,7 @@ Nếu ta muốn tách ra nhiều hơn hai số hạng thì sao? Một giải ph�
 As shown in :numref:`fig_densenet_block`, the key difference between ResNet and DenseNet is that in the latter case outputs are *concatenated* rather than added.
 As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
 -->
+
 
 Như được biểu diễn trong :numref:`fig_densenet_block`, điểm khác biệt chính giữa ResNet và DenseNet là trong kiến trúc DenseNet, đầu ra được *nối* với nhau thay vì được cộng lại.
 Kết quả là ta thực hiện một ánh xạ từ $\mathbf{x}$ đến các giá trị của nó sau khi áp dụng một chuỗi các hàm với độ phức tạp tăng dần.
@@ -79,7 +83,7 @@ The dense connections are shown in :numref:`fig_densenet`.
 
 Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một Perceptron đa tầng để giảm số lượng đặc trưng một lần nữa.
 Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
-Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
+Cái tên DenseNet phát sinh từ việc đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
 Tầng cuối cùng của một chuỗi như vậy được kết nối "dầy đặc" tới tất cả các tầng trước đó.
 Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các khối dày đặc định nghĩa cách các đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
