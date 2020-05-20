@@ -48,7 +48,7 @@ These networks introduce state variables to store past information, and then det
 -->
 
 Nói tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả dữ liệu không gian, các mạng nơ-ron truy hồi được thiết kế để xử lý dữ liệu chuỗi tốt hơn.
-Các mạng này giới thiệu các biến trạng thái để lưu trữ thông tin trong quá khứ và sau đó xác định các đầu ra hiện tại, cùng với các đầu vào hiện tại.
+Các mạng này sử dụng các biến trạng thái để lưu trữ thông tin trong quá khứ, sau đó dựa vào chúng và các đầu vào hiện tại để xác định các đầu ra hiện tại.
 
 <!--
 Many of the examples for using recurrent networks are based on text data.
