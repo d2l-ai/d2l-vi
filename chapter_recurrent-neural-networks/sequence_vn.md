@@ -20,12 +20,12 @@ In fact, psychologists even have names for some of the effects:
 *dịch đoạn phía trên*
 
 <!--
-* There is [anchoring](https://en.wikipedia.org/wiki/Anchoring), based on someone else's opinion. 
-For instance after the Oscar awards, ratings for the corresponding movie go up, even though it is still the same movie. 
-This effect persists for a few months until the award is forgotten. 
+* There is [anchoring](https://en.wikipedia.org/wiki/Anchoring), based on someone else's opinion.
+For instance after the Oscar awards, ratings for the corresponding movie go up, even though it is still the same movie.
+This effect persists for a few months until the award is forgotten.
 :cite:`Wu.Ahmed.Beutel.ea.2017` showed that the effect lifts rating by over half a point.
-* There is the [Hedonic adaptation](https://en.wikipedia.org/wiki/Hedonic_treadmill), where humans quickly adapt to accept an improved (or a bad) situation as the new normal. 
-For instance, after watching many good movies, 
+* There is the [Hedonic adaptation](https://en.wikipedia.org/wiki/Hedonic_treadmill), where humans quickly adapt to accept an improved (or a bad) situation as the new normal.
+For instance, after watching many good movies,
 the expectations that the next movie is equally good or better are high, hence even an average movie might be considered a bad movie after many great ones.
 * There is seasonality. Very few viewers like to watch a Santa Claus movie in August.
 * In some cases movies become unpopular due to the misbehaviors of directors or actors in the production.
@@ -43,16 +43,16 @@ But it is not just about movies.
 *dịch đoạn phía trên*
 
 <!--
-* Many users have highly particular behavior when it comes to the time when they open apps. 
-For instance, social media apps are much more popular after school with students. 
+* Many users have highly particular behavior when it comes to the time when they open apps.
+For instance, social media apps are much more popular after school with students.
 Stock market trading apps are more commonly used when the markets are open.
-* It is much harder to predict tomorrow's stock prices than to fill in the blanks for a stock price we missed yesterday, even though both are just a matter of estimating one number. 
-After all, hindsight is so much easier than foresight. 
+* It is much harder to predict tomorrow's stock prices than to fill in the blanks for a stock price we missed yesterday, even though both are just a matter of estimating one number.
+After all, hindsight is so much easier than foresight.
 In statistics the former is called *extrapolation* whereas the latter is called *interpolation*.
-* Music, speech, text, movies, steps, etc. are all sequential in nature. 
-If we were to permute them they would make little sense. 
+* Music, speech, text, movies, steps, etc. are all sequential in nature.
+If we were to permute them they would make little sense.
 The headline *dog bites man* is much less surprising than *man bites dog*, even though the words are identical.
-* Earthquakes are strongly correlated, i.e., after a massive earthquake there are very likely several smaller aftershocks, much more so than without the strong quake. 
+* Earthquakes are strongly correlated, i.e., after a massive earthquake there are very likely several smaller aftershocks, much more so than without the strong quake.
 In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typically occur within a short time span and in close proximity.
 * Humans interact with each other in a sequential nature, as can be seen in Twitter fights, dance patterns and debates.
 -->
@@ -110,14 +110,14 @@ In a nutshell it boils down to two strategies:
 *dịch đoạn phía trên*
 
 <!--
-1. Assume that the potentially rather long sequence $x_{t-1}, \ldots, x_1$ is not really necessary. 
-In this case we might content ourselves with some timespan $\tau$ and only use $x_{t-1}, \ldots, x_{t-\tau}$ observations. 
-The immediate benefit is that now the number of arguments is always the same, at least for $t > \tau$. 
-This allows us to train a deep network as indicated above. 
+1. Assume that the potentially rather long sequence $x_{t-1}, \ldots, x_1$ is not really necessary.
+In this case we might content ourselves with some timespan $\tau$ and only use $x_{t-1}, \ldots, x_{t-\tau}$ observations.
+The immediate benefit is that now the number of arguments is always the same, at least for $t > \tau$.
+This allows us to train a deep network as indicated above.
 Such models will be called *autoregressive* models, as they quite literally perform regression on themselves.
-2. Another strategy, shown in :numref:`fig_sequence-model`, is to try and keep some summary $h_t$ of the past observations, at the same time update $h_t$ in addition to the prediction $\hat{x}_t$. 
-This leads to models that estimate $x_t$ with $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ and moreover updates of the form  $h_t = g(h_{t-1}, x_{t-1})$. 
-Since $h_t$ is never observed, these models are also called *latent autoregressive models*. 
+2. Another strategy, shown in :numref:`fig_sequence-model`, is to try and keep some summary $h_t$ of the past observations, at the same time update $h_t$ in addition to the prediction $\hat{x}_t$.
+This leads to models that estimate $x_t$ with $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ and moreover updates of the form  $h_t = g(h_{t-1}, x_{t-1})$.
+Since $h_t$ is never observed, these models are also called *latent autoregressive models*.
 LSTMs and GRUs are examples of this.
 -->
 
@@ -276,22 +276,22 @@ Since much of the modeling is identical to the previous sections when we built r
 tau = 4
 features = np.zeros((T-tau, tau))
 for i in range(tau):
-    features[:, i] = x[i: T-tau+i]
+features[:, i] = x[i: T-tau+i]
 labels = x[tau:]
 
 batch_size, n_train = 16, 600
 train_iter = d2l.load_array((features[:n_train], labels[:n_train]),
-                            batch_size, is_train=True)
+batch_size, is_train=True)
 test_iter = d2l.load_array((features[:n_train], labels[:n_train]),
-                           batch_size, is_train=False)
+batch_size, is_train=False)
 
 # Vanilla MLP architecture
 def get_net():
-    net = nn.Sequential()
-    net.add(nn.Dense(10, activation='relu'),
-            nn.Dense(1))
-    net.initialize(init.Xavier())
-    return net
+net = nn.Sequential()
+net.add(nn.Dense(10, activation='relu'),
+nn.Dense(1))
+net.initialize(init.Xavier())
+return net
 
 # Least mean squares loss
 loss = gluon.loss.L2Loss()
@@ -305,16 +305,16 @@ Now we are ready to train.
 
 ```{.python .input}
 def train_net(net, train_iter, loss, epochs, lr):
-    trainer = gluon.Trainer(net.collect_params(), 'adam',
-                            {'learning_rate': lr})
-    for epoch in range(1, epochs + 1):
-        for X, y in train_iter:
-            with autograd.record():
-                l = loss(net(X), y)
-            l.backward()
-            trainer.step(batch_size)
-        print('epoch %d, loss: %f' % (
-            epoch, d2l.evaluate_loss(net, train_iter, loss)))
+trainer = gluon.Trainer(net.collect_params(), 'adam',
+{'learning_rate': lr})
+for epoch in range(1, epochs + 1):
+for X, y in train_iter:
+with autograd.record():
+l = loss(net(X), y)
+l.backward()
+trainer.step(batch_size)
+print('epoch %d, loss: %f' % (
+epoch, d2l.evaluate_loss(net, train_iter, loss)))
 
 net = get_net()
 train_net(net, train_iter, loss, 10, 0.01)
@@ -332,7 +332,8 @@ train_net(net, train_iter, loss, 10, 0.01)
 ## Predictions
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán của Mô hình
+
 
 <!--
 Since both training and test loss are small, we would expect our model to work well.
@@ -340,12 +341,15 @@ Let us see what this means in practice.
 The first thing to check is how well the model is able to predict what happens in the next timestep.
 -->
 
-*dịch đoạn phía trên*
+Cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
+Chúng ta hãy cùng xem xét điều này có nghĩa gì trong thực tế.
+Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào.
+
 
 ```{.python .input}
 estimates = net(features)
 d2l.plot([time, time[tau:]], [x, estimates],
-         legend=['data', 'estimate'])
+legend=['data', 'estimate'])
 ```
 
 <!--
@@ -355,7 +359,11 @@ There is just one little problem to this: if we observe data only until timestep
 Instead, we need to work our way forward one step at a time:
 -->
 
-*dịch đoạn phía trên*
+Điều này trông có vẻ ổn như những gì chúng ta mong đợi.
+Thậm chí phép ước lượng vẫn trông khá tin cậy với hợn 600 mẫu quan sát.
+Chỉ có một chút vấn đề như thế này: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán trong tất cả các bước thời gian tiếp đó.
+Thay vào đó, chúng ta cần dịch về phía trước một bước tại một thời điểm:
+
 
 
 $$\begin{aligned}
@@ -370,18 +378,20 @@ In other words, we will have to use our own predictions to make future predictio
 Let us see how well this goes.
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán để đưa ra dự đoán trong tương lai.
+Chúng ta hãy xem cách này có ổn không.
+
 
 
 ```{.python .input}
 predictions = np.zeros(T)
 predictions[:n_train] = x[:n_train]
 for i in range(n_train, T):
-    predictions[i] = net(
-        predictions[(i-tau):i].reshape(1, -1)).reshape(1)
+predictions[i] = net(
+predictions[(i-tau):i].reshape(1, -1)).reshape(1)
 d2l.plot([time, time[tau:], time[n_train:]],
-         [x, estimates, predictions[n_train:]],
-         legend=['data', 'estimate', 'multistep'], figsize=(4.5, 2.5))
+[x, estimates, predictions[n_train:]],
+legend=['data', 'estimate', 'multistep'], figsize=(4.5, 2.5))
 ```
 
 <!--
@@ -397,27 +407,38 @@ For instance, weather forecasts for the next 24 hours tend to be pretty accurate
 We will discuss methods for improving this throughout this chapter and beyond.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
+Các giá trị ước lượng giảm dần tới một hằng số khá nhanh sau một vài bước thời gian.
+Tại sao thuật toán trên hoạt động tệ đến thế?
+Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
+Cụ thể, sau bước thời gian thứ 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
+Tiếp theo, *đầu vào* cho bước thời gian thứ 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
+Các sai số có thể phân kỳ khá nhanh chóng từ những quan sát sự thật.
+Đây là một hiện tượng khá phổ biến.
+Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng được khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
+Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
+
 
 <!--
 Let us verify this observation by computing the $k$-step predictions on the entire sequence.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy kiểm chứng quan sát trên bằng cách tính toán dự đoán ở bước thời gian thứ $k$ trên toàn bộ chuỗi.
+
 
 ```{.python .input}
 k = 33  # Look up to k - tau steps ahead
 
 features = np.zeros((k, T-k))
 for i in range(tau):  # Copy the first tau features from x
-    features[i] = x[i:T-k+i]
+features[i] = x[i:T-k+i]
 
 for i in range(tau, k):  # Predict the (i-tau)-th step
-    features[i] = net(features[(i-tau):i].T).T
+features[i] = net(features[(i-tau):i].T).T
 
 steps = (4, 8, 16, 32)
 d2l.plot([time[i:T-k+i] for i in steps], [features[i] for i in steps],
-         legend=['step %d' % i for i in steps], figsize=(4.5, 2.5))
+legend=['step %d' % i for i in steps], figsize=(4.5, 2.5))
 ```
 
 <!--
@@ -425,7 +446,9 @@ This clearly illustrates how the quality of the estimates changes as we try to p
 While the 8-step predictions are still pretty good, anything beyond that is pretty useless.
 -->
 
-*dịch đoạn phía trên*
+Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai.
+Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó rất khó tin cậy.
+
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -441,7 +464,7 @@ While the 8-step predictions are still pretty good, anything beyond that is pret
 * Sequence models require specialized statistical tools for estimation.
 Two popular choices are autoregressive models and latent-variable autoregressive models.
 * As we predict further in time, the errors accumulate and the quality of the estimates degrades, often dramatically.
-* There is quite a difference in difficulty between interpolation and extrapolation. 
+* There is quite a difference in difficulty between interpolation and extrapolation.
 Consequently, if you have a time series, always respect the temporal order of the data when training, i.e., never train on future data.
 * For causal models (e.g., time going forward), estimating the forward direction is typically a lot easier than the reverse direction.
 -->
@@ -457,10 +480,10 @@ Consequently, if you have a time series, always respect the temporal order of th
 
 <!--
 1. Improve the above model.
-    * Incorporate more than the past 4 observations? How many do you really need?
-    * How many would you need if there was no noise? Hint: you can write $\sin$ and $\cos$ as a differential equation.
-    * Can you incorporate older features while keeping the total number of features constant? Does this improve accuracy? Why?
-    * Change the neural network architecture and see what happens.
+* Incorporate more than the past 4 observations? How many do you really need?
+* How many would you need if there was no noise? Hint: you can write $\sin$ and $\cos$ as a differential equation.
+* Can you incorporate older features while keeping the total number of features constant? Does this improve accuracy? Why?
+* Change the neural network architecture and see what happens.
 2. An investor wants to find a good security to buy. She looks at past returns to decide which one is likely to do well. What could possibly go wrong with this strategy?
 3. Does causality also apply to text? To which extent?
 4. Give an example for when a latent autoregressive model might be needed to capture the dynamic of the data.
@@ -502,7 +525,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 *
