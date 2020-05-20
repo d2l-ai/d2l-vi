@@ -5,7 +5,8 @@
 # Text Preprocessing
 -->
 
-# *dịch tiêu đề phía trên*
+# Tiền Xử lý Dữ liệu Văn bản
+
 :label:`sec_text_preprocessing`
 
 <!--
@@ -15,7 +16,10 @@ Given text data is a major data format besides images we are using in this book,
 Such preprocessing often consists of four steps:
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu văn bản là một ví dụ điển hình của dữ liệu chuỗi.
+Một bài báo có thể coi là một chuỗi các từ, hoặc một chuỗi các ký tự.
+Với dữ liệu văn bản là một định dạng dữ liệu quan trọng bên cạnh những dữ liệu hình ảnh được chúng ta sử dụng trong cuốn sách này, phần này được dành để giải thích các bước tiền xử lý phổ biến cho dữ liệu văn bản.
+Các bước tiền xử lý thường bao gồm bốn bước sau:
 
 <!--
 1. Load text as strings into memory.
@@ -24,14 +28,19 @@ Such preprocessing often consists of four steps:
 4. Map all the tokens in data into indices for ease of feeding into models.
 -->
 
-*dịch đoạn phía trên*
+1. Nạp dữ liệu văn bản ở dạng chuỗi ký tự vào bộ nhớ.
+2. Chia chuỗi thành các token trong đó một token có thể là một từ hoặc một ký tự.
+3. Xây dựng một bộ từ vựng cho các token để ánh xạ chúng thành các chỉ số (*index*).
+4. Ánh xạ tất cả các token trong dữ liệu văn bản thành các chỉ số để dễ dàng đưa vào các mô hình.
+
 
 
 <!--
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Dataset
+
 
 <!--
 To get started we load text from H. G. Wells' [Time Machine](http://www.gutenberg.org/ebooks/35).
@@ -41,7 +50,12 @@ The following function reads the dataset into a list of sentences, each sentence
 Here we ignore punctuation and capitalization.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells' (*Time Machine*).
+Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30,000$ từ, nhưng nó đủ tốt cho mục đích minh họa.
+Nhiều bộ dữ liệu trên thực tế chứa hàng tỷ từ.
+Hàm sau đây đọc dữ liệu thành một danh sách các câu, mỗi câu là một chuỗi.
+Chúng ta bỏ qua dấu chấm câu và viết hoa.
+
 
 ```{.python .input}
 import collections
@@ -261,7 +275,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
