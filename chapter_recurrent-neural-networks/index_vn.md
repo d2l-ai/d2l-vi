@@ -14,8 +14,7 @@ its content of something that would look much like the background of a test patt
 
 Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector đơn thuần và hình ảnh.
 Với dữ liệu hình ảnh, chúng ta đã thiết kế các tầng chuyên biệt để tận dụng các tính chất tương tự trong hình ảnh.
-Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, sẽ rất khó để suy luận về 
-nội dung của một thứ tương tự như nền trong ảnh mẫu trong thời đại truyền hình tương tự.
+Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình tương tự, và rất khó để suy luận về nội dung của chúng.
 
 <!--
 Most importantly, so far we tacitly assumed that our data is generated i.i.d., i.e., independently and identically distributed, all drawn from some distribution.
