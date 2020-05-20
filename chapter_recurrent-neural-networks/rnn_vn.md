@@ -45,6 +45,8 @@ But it could potentially makes both computation and storage expensive.
 Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không cần xấp xỉ.
 Sau cùng, $h_t$ có thể chỉ đơn giản lưu tất cả dữ liệu quan sát được đến thời điểm đó.
 Điều này đã được thảo luận tại :numref:`sec_sequence`.
+Tuy nhiên điều này có thể sẽ làm việc tính toán và lưu trữ trở nên nặng nề.
+
 
 <!--
 Note that we also use $h$ to denote by the number of hidden units of a hidden layer.
@@ -59,6 +61,8 @@ Chú ý rằng ta cũng sử dụng $h$ để kí hiệu số lượng nút ẩn
 Tầng ẩn và trạng thái ẩn là hai khái niệm rất khác nhau.
 Tầng ẩn, như đã đề cập, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
 Trạng thái ẩn, về kỹ thuật là *đầu vào* của một bước tính toán tại một thời điểm xác định.
+Chúng chỉ có thể được tính dựa vào dữ liệu tại các bước trước đó.
+Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê, như phân cụm hoặc mô hình chủ đề (*topic model*) với các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
 
 <!--
 Recurrent neural networks are neural networks with hidden states.
@@ -395,7 +399,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
