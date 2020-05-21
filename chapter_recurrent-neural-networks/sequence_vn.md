@@ -340,8 +340,8 @@ Let us see what this means in practice.
 The first thing to check is how well the model is able to predict what happens in the next timestep.
 -->
 
-Cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
-Chúng ta hãy cùng xem xét điều này có nghĩa gì trong thực tế.
+Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
+Hãy cùng xác nhận điều này trên thực tế.
 Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào.
 
 ```{.python .input}
@@ -357,9 +357,9 @@ There is just one little problem to this: if we observe data only until timestep
 Instead, we need to work our way forward one step at a time:
 -->
 
-Điều này trông có vẻ ổn như những gì chúng ta mong đợi.
-Thậm chí phép ước lượng vẫn trông khá tin cậy với hợn 600 mẫu quan sát.
-Chỉ có một chút vấn đề như thế này: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán trong tất cả các bước thời gian tiếp đó.
+Kết quả khá tốt như những gì chúng ta mong đợi.
+Thậm chí với hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy.
+Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tại các bước thời gian sau đó.
 Thay vào đó, chúng ta cần dịch về phía trước một bước tại một thời điểm:
 
 
@@ -375,7 +375,7 @@ In other words, we will have to use our own predictions to make future predictio
 Let us see how well this goes.
 -->
 
-Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán để đưa ra dự đoán trong tương lai.
+Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán của mình để đưa ra dự đoán trong tương lai.
 Chúng ta hãy xem cách này có ổn không.
 
 
@@ -407,18 +407,18 @@ Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
 Các giá trị ước lượng giảm dần tới một hằng số khá nhanh sau một vài bước thời gian.
 Tại sao thuật toán trên hoạt động tệ đến thế?
 Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
-Cụ thể, sau bước thời gian thứ 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
-Tiếp theo, *đầu vào* cho bước thời gian thứ 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
-Các sai số có thể phân kỳ khá nhanh chóng từ những quan sát sự thật.
+Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
+Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
+Các sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng.
 Đây là một hiện tượng khá phổ biến.
-Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng được khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
+Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
 Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
 
 <!--
 Let us verify this observation by computing the $k$-step predictions on the entire sequence.
 -->
 
-Chúng ta hãy kiểm chứng quan sát trên bằng cách tính toán dự đoán ở bước thời gian thứ $k$ trên toàn bộ chuỗi.
+Chúng ta hãy kiểm chứng quan sát trên bằng cách tính toán dự đoán $k$ bước thời gian trên toàn bộ chuỗi.
 
 ```{.python .input}
 k = 33  # Look up to k - tau steps ahead
@@ -519,6 +519,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
 *
