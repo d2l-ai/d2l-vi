@@ -17,7 +17,7 @@ Recall the Taylor expansion for functions. For scalars it can be written as
 ResNet đã làm thay đổi đáng kể quan điểm về cách tham số hóa các hàm số trong mạng nơ-ron sâu.
 Ở một mức độ nào đó, DenseNet có thể được coi là phiên bản mở rộng hợp lý của ResNet.
 Để hiểu cách đi đến kết luận đó, ta cần tìm hiểu một chút lý thuyết.
-Nhắc lại công thức khai triển Taylor cho hàm một biến vô hướng
+Nhắc lại công thức khai triển Taylor cho hàm một biến vô hướng như sau 
 
 $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3).$$
 
@@ -62,7 +62,7 @@ As a result we perform a mapping from $\mathbf{x}$ to its values after applying 
 -->
 
 
-Được thể hiện trong :numref:`fig_densenet_block`, điểm khác biệt chính giữa ResNet và DenseNet là trong kiến trúc DenseNet, đầu ra được *nối* với nhau thay vì được cộng lại.
+Được thể hiện trong :numref:`fig_densenet_block`, điểm khác biệt chính là DenseNet *nối* đầu ra lại với nhau thay vì cộng lại như ở ResNet.
 Kết quả là ta thực hiện một ánh xạ từ $\mathbf{x}$ đến các giá trị của nó sau khi áp dụng một chuỗi các hàm với độ phức tạp tăng dần.
 
 $$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
@@ -82,10 +82,10 @@ The dense connections are shown in :numref:`fig_densenet`.
 -->
 
 Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một Perceptron đa tầng để giảm số lượng đặc trưng một lần nữa.
-Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
+Lập trình thay đổi này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
 Cái tên DenseNet phát sinh từ việc đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
 Tầng cuối cùng của một chuỗi như vậy được kết nối "dày đặc" tới tất cả các tầng trước đó.
-Các thành phần chính của DenseNet là các khối dày đặc và các tầng chuyển tiếp.
+Thành phần chính của DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các khối dày đặc định nghĩa cách các đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
 Các kết nối dày đặc được biểu diễn trong :numref:`fig_densenet`.
 
