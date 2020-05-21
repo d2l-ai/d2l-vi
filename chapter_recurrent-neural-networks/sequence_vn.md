@@ -5,7 +5,7 @@
 # Sequence Models
 -->
 
-# Mô hình tuần tự
+# Mô hình chuỗi
 :label:`sec_sequence`
 
 <!--
