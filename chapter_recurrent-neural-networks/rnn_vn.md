@@ -287,7 +287,12 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng của chuỗi.
+Thật không may, đây là một con số khó hiểu và khó so sánh.
+Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng để xảy ra hơn các chuỗi dài,
+do đó việc đánh giá mô hình trên kiệt tác của Tolstoy ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) chắc chắn sẽ tạo ra
+khả năng nhỏ hơn nhiều so với, nói, trên tiểu thuyết của Saint-Exupery ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince). 
+Những gì còn thiếu là tương đương với mức trung bình.
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -298,7 +303,12 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-*dịch đoạn phía trên*
+Lý thuyết thông tin có ích ở đây và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
+Nếu chúng ta muốn nén văn bản, ta có thể hỏi về việc ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
+Giới hạn dưới của số lượng bit được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
+Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo khá chính xác.
+Vì vậy, nó sẽ cho phép chúng ta dành rất ít số bit để nén chuỗi.
+Vì vậy, ta có thể đo nó bằng số bit trung bình mà chúng ta cần sử dụng.
 
 $$\frac{1}{n} \sum_{t=1}^n -\log p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
@@ -308,7 +318,9 @@ For historical reasons, scientists in natural language processing prefer to use 
 In a nutshell, it is the exponential of the above:
 -->
 
-*dịch đoạn phía trên*
+Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được.
+Vì lý do lịch sử, các nhà khoa học trong xử lý ngôn ngữ tự nhiên thích sử dụng một số lượng gọi là *sự hỗn loạn* hơn là bitrate.
+Tóm lại, đó là số mũ của những điều trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
 
@@ -319,7 +331,10 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-*dịch đoạn phía trên*
+Nó có thể được hiểu rõ nhất là trung bình hài hòa của số lượng lựa chọn thực tế mà chúng ta có khi quyết định chọn từ nào tiếp theo.
+Lưu ý rằng sự bối rối tự nhiên khái quát hóa khái niệm tổn thất entropy chéo được xác định khi chúng tôi đưa ra hồi quy softmax (:numref:`sec_softmax`).
+Đó là, đối với một ký hiệu duy nhất cả hai định nghĩa là thanh giống hệt nhau, thực tế là một là số mũ của số kia.
+Chúng ta hãy xem xét một số trường hợp:
 
 <!--
 * In the best case scenario, the model always estimates the probability of the next symbol as $1$. In this case the perplexity of the model is $1$.
@@ -328,7 +343,10 @@ Let us look at a number of cases:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-*dịch đoạn phía trên*
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ hỗn loạn của mô hình là $1$.
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ hỗn loạn là vô hạn.
+* Tại đường cơ sở, mô hình dự đoán phân phối đồng đều trên tất cả các mã thông báo. Trong trường hợp này, độ hỗn loạn bằng kích thước của từ điển `len(vocab)`.
+* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không có bất kỳ nén nào, đây sẽ là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, điều này cung cấp một giới hạn trên không cần thiết mà bất kỳ mô hình nào cũng phải đáp ứng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
