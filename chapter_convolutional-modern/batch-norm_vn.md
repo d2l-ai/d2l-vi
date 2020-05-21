@@ -478,9 +478,10 @@ net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
 
 <!--
 ## Concise Implementation
+
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình Súc tích
 
 <!--
 Compared with the `BatchNorm` class, which we just defined ourselves, the `BatchNorm` class defined by the `nn` model in Gluon is easier to use.
@@ -489,7 +490,10 @@ Instead, these parameter values will be inferred automatically via delayed initi
 Otherwise, the code looks virtually identical to the application our implementation above.
 -->
 
-*dịch đoạn phía trên*
+So với lớp `BatchNorm` mà ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình `nn` trong Gluon dễ sử dụng hơn.
+Trong Gluon, ta không phải lo lắng về `num_features` hay `num_dims`.
+Thay vào đó, các giá trị tham số này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
+Còn lại, đoạn mã trông gần như y hệt với đoạn mã mà ta đã lập trình ở trên.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -516,7 +520,9 @@ Note that as usual, the Gluon variant runs much faster because its code has been
 while our custom implementation must be interpreted by Python.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, chúng ta sử dụng cùng một siêu tham số để đào tạo mô hình.
+Như thường lệ, biến thể Gluon này chạy nhanh hơn nhiều vì mã của nó đã được biên dịch thành C++/CUDA
+trong khi đoạn mã tùy chỉnh của chúng ta phải được thông dịch bởi Python.
 
 ```{.python .input}
 d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
@@ -526,7 +532,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Controversy
 -->
 
-## *dịch tiêu đề phía trên*
+## Tranh luận
 
 <!--
 Intuitively, batch normalization is thought to make the optimization landscape smoother.
@@ -535,7 +541,10 @@ Recall that we do not even know why simpler deep neural networks (MLPs and conve
 Even with dropout and L2 regularization, they remain so flexible that their ability to generalize to unseen data cannot be explained via conventional learning-theoretic generalization guarantees.
 -->
 
-*dịch đoạn phía trên*
+Theo trực giác, chuẩn hóa theo batch được cho là làm cho cảnh quan tối ưu trở nên mượt mà hơn.
+Tuy nhiên, chúng ta phải cẩn thận phân biệt giữa trực giác suy đoán và lời giải thích thực sự cho các hiện tượng mà ta quan sát thấy khi đào tạo các mô hình học sâu.
+Hãy nhớ lại rằng ngay từ đầu ta thậm chí còn không biết tại sao các mạng nơ-ron sâu đơn giản hơn (các mạng MLP và CNN thông thường) lại có thể khái quát tốt như vậy.
+Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được thông qua các bảo đảm khái quát hóa dựa trên lý thuyết học tập truyền thống.
 
 <!--
 In the original paper proposing batch normalization, the authors, in addition to introducing a powerful and useful tool, 
@@ -549,7 +558,14 @@ However, we believe that it is important to separate these guiding intuitions fr
 Eventually, when you master this material and start writing your own research papers you will want to be clear to delineate between technical claims and hunches.
 -->
 
-*dịch đoạn phía trên*
+Trong bài báo gốc khi đề xuất phương pháp chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra một lời giải thích cho lý do tại sao nó hoạt động: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ*.
+Có lẽ ý của các tác giả khi nói *sự dịch chuyển hiệp biến nội bộ* giống với cách giải thích trực quan của ta ở trên - ý niệm rằng phân phối của giá trị kích hoạt thay đổi trong quá trình đào tạo.
+Tuy nhiên, có hai vấn đề với lời giải thích này:
+(1) Sự trôi đi này rất khác so với *sự dịch chuyển hiệp biến*, khiến cái tên này hay bị nhầm lẫn.
+(2) Giải thích của tác giả vẫn chưa đủ độ cụ thể và chính xác, và để ngỏ một câu hỏi: *chính xác thì tại sao kỹ thuật này lại hoạt động?*
+Xuyên suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những kinh nghiệm trực giác đã giúp những người thực hành xây dựng các mạng nơ-ron sâu.
+Tuy nhiên, chúng tôi tin rằng cần phải phân biệt rõ ràng giữa những hiểu biết trực giác này với những bằng chứng khoa học đã được khẳng định.
+Một khi đã thành thạo tài liệu này và bắt đầu viết các tài liệu nghiên cứu của riêng mình, bạn sẽ muốn phân định rõ ràng giữa các khẳng định và những linh cảm.
 
 <!--
 Following the success of batch normalization, its explanation in terms of *internal covariate shift* has repeatedly surfaced 
@@ -561,7 +577,12 @@ In the technical literature other authors (:cite:`Santurkar.Tsipras.Ilyas.ea.201
 some claiming that BN's success comes despite exhibiting behavior that is in some ways opposite to those claimed in the original paper.
 -->
 
-*dịch đoạn phía trên*
+Tiếp sau thành công của chuẩn hóa theo batch, lời giải thích bằng *sự dịch chuyển hiệp biến nội bộ* đã liên tục xuất hiện
+ở các cuộc tranh luận trong tài liệu kỹ thuật và rộng hơn trên các diễn đàn về cách trình bày một nghiên cứu học máy.
+Trong một bài phát biểu đáng nhớ được đưa ra khi nhận giải thưởng **Test of Time Award** tại hội nghị NeurIPS 2017,
+Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với giả kim thuật.
+Sau đó, ví dụ đã được xem xét lại một cách chi tiết trong một bài viết về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
+Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, dù cho nó có thể hiện những hành vi trái ngược với những gì đã được tuyên bố trong bài báo gốc.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -662,7 +683,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 7 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 8 -->
 *
