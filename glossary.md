@@ -75,6 +75,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | convex optimization                 | tối ưu lồi             |                                              |
 | convex set                          | tập lồi                | [https://git.io/JvohV](https://git.io/JvohV) |
 | convolutional neural network        | mạng nơ-ron tích chập  |                                              |
+| corpus                              | kho ngữ liệu           |                                              |
 | correlation coefficient             | hệ số tương quan       |                                              |
 | cost function                       | hàm chi phí            | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                           | hiệp biến              | [https://git.io/JvohK](https://git.io/JvohK) |
