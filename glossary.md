@@ -27,6 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | attention mechanisms                  | cơ chế tập trung          |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | automatic differentiation             | tính vi phân tự động      | [https://git.io/JvojU](https://git.io/JvojU) |
+| autoregressive model                  | mô hình tự hồi quy        |                                              |
 | average pooling                       | gộp trung bình            | [https://git.io/JfGi6](https://git.io/JfGi6) |
 
 ## B
