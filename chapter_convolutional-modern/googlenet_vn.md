@@ -130,10 +130,10 @@ The first part is identical to AlexNet and LeNet, the stack of blocks is inherit
 The architecture is depicted below.
 -->
 
-Như trình bày ở hình :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau để đưa ra ước tính. 
-Phép gộp cực đại giữa các khối inception có tác dụng làm giảm đi số chiều. 
-Phần đầu tiên của GoogleNet giống AlexNet và LeNet, sự xếp chồng các khối lên nhau kế thừa từ thiết kế của VGG và phép gộp trung bình toàn cục giúp tránh việc phải sử dụng nhiều tầng kết nối đầy đủ liên tiếp ở cuối. 
-Cấu trúc của mô hình được mô tả dưới đây.
+Như trình bày ở :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau. 
+Phép gộp cực đại giữa các khối inception có tác dụng làm giảm số chiều. 
+Phần đầu tiên của GoogleNet giống AlexNet và LeNet, có các khối xếp chồng lên nhau kế thừa từ thiết kế của VGG và phép gộp trung bình toàn cục giúp tránh phải sử dụng nhiều tầng kết nối đầy đủ liên tiếp ở cuối. 
+Cấu trúc của mô hình được mô tả như dưới đây.
 
 <!--
 ![Full GoogLeNet Model](../img/inception-full.svg)
@@ -147,8 +147,8 @@ We can now implement GoogLeNet piece by piece.
 The first component uses a 64-channel 7×7 convolutional layer.
 -->
 
-Bây giờ chúng ta có thể triển khai mô hình GoogLeNet theo từng phần riêng biệt.
-Thành phần đầu tiên sử dụng một tầng tích chập với đầu ra là 64 kênh và cửa sổ trượt có kích thước là 7x7.
+Bây giờ chúng ta có thể lập trình GoogLeNet theo từng phần.
+Thành phần đầu tiên sử dụng một tầng tích chập đầu ra 64 kênh và cửa sổ trượt kích thước $7\times 7$.
 
 ```{.python .input  n=2}
 b1 = nn.Sequential()
@@ -162,9 +162,9 @@ then a $3\times 3$ convolutional layer that triples the number of channels.
 This corresponds to the second path in the Inception block.
 -->
 
-Thành phần thứ hai sử dụng hai tầng tích chập: tầng đầu tiên có đầu ra là 64 kênh và cửa sổ trượt kích thước $1\times 1$, 
-tiếp theo là một tầng có kích thước cửa sổ trượt là $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
-Phần này tương ứng với nhánh thứ hai trong khối Inception.
+Thành phần thứ hai sử dụng hai tầng tích chập: tầng đầu tiên có đầu ra 64 kênh và cửa sổ $1\times 1$, 
+tiếp theo là một tầng có cửa sổ $3\times 3$ và số kênh đầu ra gấp ba lần số kênh đầu vào. 
+Phần này giống với nhánh thứ hai trong khối Inception.
 
 ```{.python .input  n=3}
 b2 = nn.Sequential()
@@ -185,11 +185,11 @@ The number of output channels of the second Inception block is increased to $128
 The second and third paths first reduce the number of input channels to $128/256=1/2$ and $32/256=1/8$, respectively.
 -->
 
-Thành phần thứ ba kết nối hai khối Inception hoàn chỉnh trong chuỗi tổng cộng 9 khối này. 
-Số lượng kênh đầu ra của khối Inception đầu tiên là $64+128+32+32=256$, và tỉ lệ giữa số lượng kênh của bốn nhánh đầu ra $64:128:32:32=2:4:1:1$. 
-Nhánh thứ hai và nhánh thứ ba đầu tiên làm giảm số lượng kênh đầu vào với tỉ lệ lần lượt là $96/192=1/2$ và $16/192=1/12$, và sau đó kết nối với tầng tích chập thứ hai.
-Số lượng kênh đầu ra của khối Inception thứ hai được tăng lên tới $128+192+96+64=480$, và tỉ lệ của số kênh đầu ra mỗi nhánh là $128:192:96:64 = 4:6:3:2$. 
-Nhánh thứ hai và thứ ba đầu tiên làm giảm đi số kênh đầu vào với tỉ lệ lần lượt là $128/256=1/2$ và $32/256=1/8$. 
+Thành phần thứ ba kết nối hai khối Inception hoàn chỉnh. 
+Số kênh đầu ra của khối Inception đầu tiên là $64+128+32+32=256$, và tỉ lệ số kênh của bốn nhánh là $64:128:32:32=2:4:1:1$. 
+Nhánh thứ hai và nhánh thứ ba của khối này ở tầng tích chập đầu tiên làm giảm số lượng kênh đầu vào với tỉ lệ lần lượt là $96/192=1/2$ và $16/192=1/12$, sau đó kết nối với tầng tích chập thứ hai. 
+Số kênh đầu ra của khối Inception thứ hai tăng lên tới $128+192+96+64=480$, và tỉ lệ số kênh của bốn nhánh là $128:192:96:64 = 4:6:3:2$. 
+Tầng tích chập đầu tiên của nhánh thứ hai và thứ ba làm giảm số kênh đầu vào với tỉ lệ lần lượt là $128/256=1/2$ và $32/256=1/8$. 
 
 ```{.python .input  n=4}
 b3 = nn.Sequential()
@@ -210,13 +210,14 @@ The second and third paths will first reduce the number of channels according th
 These ratios are slightly different in different Inception blocks.
 -->
 
-Thành phần thứ tư thì rắc rối hơn. 
-Nó kết nối năm khối Inception thành một chuỗi, và chúng có số lượng kênh đầu ra lần lượt là $192+208+48+64=512$, $160+224+64+64=512$,
+Thành phần thứ tư phức tạp hơn. 
+Thành phần này kết nối năm khối Inception có số kênh đầu ra lần lượt là $192+208+48+64=512$, $160+224+64+64=512$,
 $128+256+64+64=512$, $112+288+64+64=528$, và $256+320+128+128=832$.
-Số lượng kênh được chỉ định ở các nhánh thì tương tự như ở mô đun thứ ba: nhánh thứ hai với tầng tích chập $3\times 3$ sẽ cho đầu ra với số lượng kênh lớn nhất, 
-tiếp đó số lượng kênh đầu ra lần lượt giảm dần theo thứ tự từ là nhánh thứ nhất với tầng tích chập $1\times 1$, nhánh thứ ba với tầng tích chập $3\times 3$, và cuối cùng là nhánh thứ tư với tầng gộp cực đại $3\times 3$.
+Số kênh được gán cho các nhánh tương tự như trong mô đun thứ ba: 
+nhánh thứ hai với tầng tích chập $3\times 3$ sẽ cho đầu ra với số kênh lớn nhất, 
+tiếp theo là nhánh thứ nhất với chỉ tầng tích chập $1\times 1$, nhánh thứ ba với tầng tích chập $3\times 3$, cuối cùng là nhánh thứ tư với tầng gộp cực đại $3\times 3$.
 Nhánh thứ hai và thứ ba đầu tiên sẽ làm giảm số lượng kênh theo tỷ lệ nhất định. 
-Tỷ lệ này thì hơi khác nhau trong các khối Inception khác nhau.
+Tỷ lệ này sẽ hơi khác nhau trong các khối Inception khác nhau.
 
 ```{.python .input  n=5}
 b4 = nn.Sequential()
@@ -236,11 +237,11 @@ This block uses the global average pooling layer to change the height and width 
 Finally, we turn the output into a two-dimensional array followed by a fully-connected layer whose number of outputs is the number of label classes.
 -->
 
-Khối thứ năm có hai khối Inception với số lượng kênh đầu ra lần lượt là $256+320+128+128=832$ và $384+384+128+128=1024$. 
-Số lượng kênh được chỉ định cho mỗi nhánh tương tự như mô đun thứ ba và thứ tư, nhưng khác nhau ở giá trị cụ thể.
-Cần lưu ý rằng khối thứ năm được theo sau bởi tầng đầu ra.
-Khối này sử dụng tầng gộp trung bình toàn cục để thay đổi chiều cao và chiều rộng của mỗi kênh thành 1, giống như trong mô hình NiN. 
-Cuối cùng, chúng ta chuyển đổi đầu ra thành một mảng hai chiều, theo sau là một lớp kết nối đầy đủ với số lượng đầu ra bằng với số lượng các lớp nhãn.
+Thành phần thứ năm có hai khối Inception với số kênh đầu ra lần lượt là $256+320+128+128=832$ và $384+384+128+128=1024$. 
+Số lượng kênh được gán cho mỗi nhánh tương tự như trong mô đun thứ ba và thứ tư, chỉ khác nhau ở giá trị cụ thể.
+Lưu ý rằng thành phần thứ năm được theo sau bởi tầng đầu ra.
+Thành phần này sử dụng tầng gộp trung bình toàn cục để giảm chiều cao và chiều rộng của mỗi kênh còn 1, giống như trong mô hình NiN. 
+Cuối cùng, chúng ta biến đổi đầu ra thành một mảng hai chiều, đưa vào một tầng kết nối đầy đủ với số đầu ra bằng với số các lớp nhãn.
 
 ```{.python .input  n=6}
 b5 = nn.Sequential()
@@ -259,10 +260,10 @@ This simplifies the computation.
 The changes in the shape of the output between the various modules is demonstrated below.
 -->
 
-Mô hình GoogLeNet thì phức tạp về mặt tính toán, vậy nên không dễ để thay đổi được số lượng kênh giống như trong mô hình VGG.
-Để có thời gian huấn luyện hợp lý trên bộ dữ liệu Fashion-MNIST, chúng ta cần giảm chiều cao và rộng của đầu vào từ 224 xuống 96.
+Mô hình GoogLeNet phức tạp về mặt tính toán, nên không dễ để thay đổi số lượng kênh giống như VGG.
+Để có thời gian huấn luyện hợp lý trên bộ dữ liệu Fashion-MNIST, chúng ta cần giảm chiều cao và chiều rộng của đầu vào từ 224 xuống 96.
 Điều này làm đơn giản hoá việc tính toán.
-Những thay đổi về kích thước của đầu ra giữa các mô đun khác nhau được trình bày dưới đây.
+Những thay đổi về kích thước đầu ra giữa các mô đun khác nhau được minh hoạ như dưới đây.
 
 ```{.python .input  n=7}
 X = np.random.uniform(size=(1, 1, 96, 96))
