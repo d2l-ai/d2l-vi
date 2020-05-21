@@ -447,8 +447,8 @@ Consequently, if you have a time series, always respect the temporal order of th
 -->
 
 * Các mô hình chuỗi thường yêu cầu các công cụ thống kê chuyên biệt để dự đoán và ước lượng.
-Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến ẩn.
-* Các sai số tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán xa hơn theo số bước thời gian.
+Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến tiềm ẩn.
+* Các sai số tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán xa hơn.
 * Khó khăn trong phép nội suy và ngoại suy khá khác biệt.
 Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luôn để ý trình tự thời gian của dữ liệu khi huấn luyện, hay nói cách khác, không bao giờ huấn luyện trên dữ liệu thuộc về bước thời gian trong tương lai.
 * Đối với các mô hình nhân quả (ví dụ, ở đó thời gian đi về phía trước), ước lượng theo chiều xuôi thường dễ dàng hơn rất nhiều so với chiều ngược lại.
@@ -475,11 +475,11 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
 1. Hãy cải thiện mô hình nói trên bằng cách
 * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bạn thực sự cần bao nhiêu mẫu quan sát?
 * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân.
-* Bạn có thể kết hợp các đặc trưng trong các bước xa hơn ở quá khứ trong khi đảm bảo tổng số đặc trưng là không đổi? Điều này có cải thiện độ chính xác không? Tại sao?
+* Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao?
 * Thay đổi cấu trúc mạng nơ-ron và xem những gì sẽ xảy ra.
 1. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm?
 2. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào?
-3. Hãy cho một ví dụ khi nào một mô hình tự hồi quy ẩn có thể được sử dụng để nắm bắt được động lực học của dữ liệu.
+3. Hãy cho một ví dụ khi một mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
