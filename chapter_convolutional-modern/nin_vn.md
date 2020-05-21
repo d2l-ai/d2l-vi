@@ -20,7 +20,7 @@ They were proposed in :cite:`Lin.Chen.Yan.2013` based on a very simple insight--
 
 LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: (1) trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, (2) sau đó hậu xử lý các biểu diễn thông qua các tầng kết nối đầy đủ. 
 Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở việc mở rộng và tăng chiều sâu hai mô-đun này. 
-Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ quá trình trước.
+Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ giai đoạn trước.
 Tuy nhiên, việc tùy tiện sử dụng các tầng kết nối dày đặc có thể làm mất đi cấu trúc không gian của biểu diễn. 
 Dùng các khối của Mạng trong Mạng (_Network in Network - NiN_) là một giải pháp thay thế khác. 
 Ý tưởng này được đề xuất trong :cite:`Lin.Chen.Yan.2013` dựa trên một thay đổi rất đơn giản --- sử dụng MLP trên các kênh cho từng điểm ảnh riêng biệt. 
@@ -44,8 +44,8 @@ and the channel as equivalent to a feature. :numref:`fig_nin` illustrates the ma
 
 Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập là các mảng bốn chiều với các trục tương ứng với batch, kênh, chiều cao và chiều rộng. 
 Đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng. 
-Ý tưởng  chính của NiN là áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (cho mỗi chiều cao và chiều rộng). 
-Nếu liên hệ tới các việc dùng trọng số tại mỗi vị trí không gian, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh. 
+Ý tưởng chính của NiN là áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (theo chiều cao và chiều rộng). 
+Nếu trọng số tại mỗi vị trí không gian được chia sẻ với nhau, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh. 
 Nói theo một cách khác, ta có thể coi từng phần tử trong chiều không gian (chiều cao và chiều rộng) là tương đương với một mẫu 
 và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG cũng như các mạng khác. 
 
@@ -191,7 +191,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * The NiN design influenced many subsequent convolutional neural networks designs.
 -->
 
-* NiN sử dụng các khối được cấu thành bởi một tầng tích chập và nhiều tầng tích chập $1\times 1$. 
+* NiN sử dụng các khối được cấu thành từ một tầng tích chập thông thường và nhiều tầng tích chập $1\times 1$. 
 Kỹ thuật này có thể dùng trong các khối tích chập để tăng tính phi tuyến trên điểm ảnh. 
 * NiN loại bỏ các tầng kết nối đầy đủ và thay thế chúng bằng phép gộp trung bình toàn cục (nghĩa là tính trung bình cộng từ tất cả các vị trí) sau khi giảm số lượng kênh xuống bằng với số lượng đầu ra mong muốn (ví dụ: 10 kênh cho Fashion-MNIST). 
 * Việc bỏ đi các các tầng dày đặc giúp làm giảm hiện tượng quá khớp. NiN có số lượng tham số ít hơn đáng kể. 
