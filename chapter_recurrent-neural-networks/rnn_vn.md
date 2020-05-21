@@ -205,7 +205,7 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 ## Steps in a Language Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Các bước xây dựng một Mô hình Ngôn ngữ
 
 <!--
 Now we illustrate how RNNs can be used to build a language model.
@@ -220,7 +220,16 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng tôi minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
+Để đơn giản minh họa, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì trước đây dễ hiểu hơn.
+Đặt kích thước minibatch là 1 và chuỗi văn bản là phần đầu của tập dữ liệu của chúng tôi, tức là "the time machine by H. G. Wells".
+:numref:`fig_rnn_train` minh họa cách  từ tiếp theo dựa trên các từ hiện tại và trước đó.
+Trong quá trình đào tạo, chúng tôi chạy một hoạt động softmax trên đầu ra từ lớp đầu ra cho mỗi dấu thời gian,
+và sau đó sử dụng hàm mất entropy chéo để tính toán sai số giữa kết quả và nhãn.
+Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của dấu thời gian 3,
+$ \ mathbf {O} _3 $, được xác định bởi chuỗi văn bản "lần lượt", "thời gian" và "máy".
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên việc mất dấu thời gian 3 sẽ phụ thuộc vào
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi tính năng "the", "time", "machine" và nhãn "by" của dấu thời gian này.
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
