@@ -426,7 +426,7 @@ Otherwise, the code looks virtually identical to the application our implementat
 
 So với lớp `BatchNorm` mà ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình `nn` trong Gluon dễ sử dụng hơn.
 Trong Gluon, ta không phải lo lắng về `num_features` hay `num_dims`.
-Thay vào đó, các giá trị tham số này sẽ được suy luận tự động thông qua quá trình khởi tạo trễ.
+Thay vào đó, các giá trị tham số này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
 Còn lại, đoạn mã trông gần như y hệt với đoạn mã mà ta đã lập trình ở trên.
 
 ```{.python .input}
