@@ -229,14 +229,14 @@ We are barely scratching the surface of it.
 -->
 
 Trên thực tế, nếu chúng ta có một mô hình Markov, chúng ta cũng có được phân phối xác suất có điều kiện ngược.
-Tuy nhiên, trong nhiều trường hợp, dữ liệu tồn tại một hướng nhất định, cụ thể là luôn đi về phía trước theo thời gian.
-Rõ ràng là các sự kiện trong tương lai sẽ ảnh hưởng đến quá khứ.
-Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ.
+Tuy nhiên, trong nhiều trường hợp, có tồn tại một hướng nhất định của dữ liệu, cụ thể là luôn tiến về phía trước theo thời gian.
+Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ.
+Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ ở chiều ngược lại.
 Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi.
-Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn hơn là $p(x_t \mid x_{t+1})$.
-Ví dụ: bài báo :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta không thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có nhiễu cộng hưởng, trong khi đó, điều ngược lại không đúng. Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới hướng truyền xuôi để ước lượng.
-Để biết thêm về chủ đề này, hãy tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
-Chúng ta chỉ lướt qua đôi chút về vấn đề này ở đây.
+Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$.
+Ví dụ: bài báo :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi đó, điều ngược lại không đúng. Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới hướng truyền xuôi để ước lượng.
+Để tìm hiểu thêm về chủ đề này, có thể tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
+Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này.
 
 <!--
 ## A Toy Example
@@ -250,9 +250,9 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Bây giờ chúng ta hãy xem xét vấn đề này trong thực tế sau khi đã đề cập về lý thuyết ở trên.
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử minh hoạ bằng lập trình.
 Đầu tiên, hãy sinh một vài dữ liệu như sau.
-Để đơn giản, chúng ta tạo chuỗi thời gian của mình bằng cách sử dụng hàm sin cộng thêm với ít nhiễu.
+Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm với chút nhiễu.
 
 
 ```{.python .input}
@@ -282,12 +282,12 @@ Since much of the modeling is identical to the previous sections when we built r
 
 Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn được sử dụng để huấn luyện mạng.
 Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$.
-Sẽ rất tinh tế nếu bạn đọc có thể nhận thấy rằng hiện tại chúng ta mới có $\tau$ điểm dữ liệu ít hơn hơn, vì chúng ta không có đủ lịch sử về $\tau$ đầu tiên trong số đó.
-Chúng ta loại bỏ một vài phần tử trên để khắc phục điều này, đặc biệt nếu chuỗi thời gian rất dài.
-Hoặc là, chúng ta có thể đệm 0 vào chuỗi thời gian.
+Để ý kĩ, có thể thấy rằng chúng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì không có đủ $\tau$ dữ liệu trong quá khứ của chúng.
+Một cách đơn giản để khắc phục điều này là loại bỏ vài phần tử đó, đặc biệt nếu chuỗi thời gian rất dài.
+Hoặc cũng có thể đệm 0 vào chuỗi thời gian.
 Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước.
 Chúng tôi cố gắng giữ cho kiến trúc đơn giản.
-Một vài tầng của mạng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $ \ ell_2 $.
+Một vài tầng của mạng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$.
 Do phần lớn mô hình giống hệt với các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết.
 
 
@@ -320,7 +320,7 @@ loss = gluon.loss.L2Loss()
 Now we are ready to train.
 -->
 
-Bây giờ thì chúng ta đã sẵn sàng để huấn luyện.
+Bây giờ chúng ta đã sẵn sàng huấn luyện.
 
 ```{.python .input}
 def train_net(net, train_iter, loss, epochs, lr):
@@ -519,6 +519,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 *
