@@ -37,15 +37,15 @@ the expectations that the next movie is equally good or better are high, hence e
 * Some movies become cult movies, because they were almost comically bad. *Plan 9 from Outer Space* and *Troll 2* achieved a high degree of notoriety for this reason.
 -->
 
-* [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring), dựa trên ý kiến của người khác.
+* [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
 Chẳng hạn, sau khi một bộ phim thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
 Hiệu ứng này tồn tại trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
-:cite:`Wu.Ahmed.Beutel.ea.2017` cho thấy hiệu ứng này tăng xếp hạng thêm hơn nửa điểm.
-* [Hiệu ứng vòng xoáy hưởng lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill), con người nhanh chóng thích nghi để chấp nhận một tình huống được cải thiện (hoặc xấu đi) như một điều bình thường mới.
-Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hơn sẽ là khá cao, do đó, ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
+:cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng xếp hạng thêm hơn nửa điểm.
+* [Hiệu ứng vòng xoáy hưởng lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hay hơn sẽ là khá cao, do đó, ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ. Rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên trong quá trình sản xuất.
-* Một số phim trở nên đình đám, vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* đạt được mức độ nổi tiếng cao vì lý do này.
+* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* đạt được mức độ nổi tiếng cao vì lý do này.
 
 <!--
 In short, ratings are anything but stationary.
@@ -81,9 +81,9 @@ Trong thống kê, bài toán trước được gọi là *ngoại suy* và bài
 * Âm nhạc, lời nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
-* Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
+* Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, và xác suất này cao hơn nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức là, các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
-* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc cãi vã trên Twitter, các bước nhảy và các cuộc tranh luận.
+* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -516,7 +516,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 2 -->
 *
