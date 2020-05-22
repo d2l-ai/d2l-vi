@@ -19,7 +19,7 @@ In fact, psychologists even have names for some of the effects:
 
 Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
 Là một người dùng Netflix tốt, bạn quyết định đánh giá từng bộ phim một cách cẩn thận.
-Xét cho cùng, bạn muốn xem nhiều bộ phim hay phải không?
+Xét cho cùng, bạn muốn xem thêm nhiều bộ phim hay phải không?
 Hóa ra, mọi thứ không đơn giản như vậy.
 Ý kiến của mọi người về một bộ phim có thể thay đổi một cách đáng kể theo thời gian.
 Trên thực tế, các nhà tâm lý học thậm chí còn đặt tên cho một số hiệu ứng:
