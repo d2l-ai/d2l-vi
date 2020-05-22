@@ -70,7 +70,7 @@ Before introducing this model, let us first revisit the multi-layer perceptron i
 -->
 
 Mạng nơ-ron truy hồi là mạng nơ-ron với các trạng thái ẩn.
-Trước khi tìm hiểu mô hình này, hãy xem lại perceptron đa tầng tại :numref:`sec_mlp`.
+Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa tầng tại :numref:`sec_mlp`.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
