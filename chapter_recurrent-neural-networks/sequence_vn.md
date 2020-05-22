@@ -77,7 +77,7 @@ Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hộ
 Các ứng dụng giao dịch trên thị trường chứng khoán được sử dụng phổ biến hơn khi thị trường mở cửa.
 * Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
-Trong thống kê, bài toán trước được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
+Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
 * Âm nhạc, lời nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
