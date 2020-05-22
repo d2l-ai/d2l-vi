@@ -70,9 +70,9 @@ estimating both quantities based on the statistics of the current the current mi
 It is precisely due to this *normalization* based on *batch* statistics that *batch normalization* derives its name.
 -->
 
-Sự chuẩn hoá theo batch được áp dụng vào từng tầng riêng lẻ (hoặc có thể tùy chọn cho tất cả các tầng) và cách thức hoạt động như sau:
-Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên chúng ta tính giá trị kích hoạt của tầng như thường lệ.
-Sau đó, chúng ta chuẩn hóa những giá trị kích hoạt này của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn của nó, 
+Chuẩn hoá theo batch được áp dụng cho từng tầng riêng lẻ (hoặc có thể cho tất cả các tầng) và hoạt động như sau:
+Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên tính giá trị kích hoạt như thường lệ.
+Sau đó chuẩn hóa những giá trị kích hoạt của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn, 
 cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
 Chính vì *chuẩn hóa* dựa trên các số liệu thống kê của *batch* nên kỹ thuật này có tên gọi *chuẩn hoá theo batch*.
 
@@ -84,16 +84,16 @@ As you might guess, since we are devoting a whole section to BN, with large enou
 One takeaway here is that when applying BN, the choice of minibatch size may be even more significant than without BN.
 -->
 
-Lưu ý rằng, khi chúng ta thử áp dụng BN với những minibatch có kích thước là 1, mô hình của chúng ta sẽ không thể học được gì. 
-Đó là bởi vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
-Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, việc chuẩn hóa cho thấy tính hiệu quả và ổn định của nó. 
-Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với khi không áp dụng BN.
+Lưu ý rằng, khi áp dụng BN với những minibatch có kích thước 1, mô hình sẽ không thể học được gì. 
+Vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
+Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, cách làm này phải có hiệu quả và ổn định. 
+Điều cần nhớ ở đây là khi áp dụng BN, việc lựa chọn kích thước minibatch sẽ quan trọng hơn so với khi không áp dụng BN.
 
 <!--
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
 -->
 
-Một cách hình thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
+BN chuyển đổi những giá trị kích hoạt tại tầng $x$ nhất định theo công thức sau:
 
 $$\mathrm{BN}(\mathbf{x}) = \mathbf{\gamma} \odot \frac{\mathbf{x} - \hat{\mathbf{\mu}}}{\hat\sigma} + \mathbf{\beta}$$
 
@@ -107,12 +107,12 @@ because BN actively centers and rescales them back to a given mean and size (via
 One piece of practitioner's intuition/wisdom is that BN seems to allows for more aggressive learning rates.
 -->
 
-Ở đây, $\hat{\mathbf{\mu}}$  là giá trị trung bình mẫu và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn mẫu của minibatch.
-Sau khi áp dụng BN, minibatch của những giá trị kích hoạt thu được có giá trị trung bình bằng không và phương sai đơn vị.
-Bởi vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là việc lựa chọn tuỳ ý, 
-cho nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
-Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
-Qua trực giác/kinh nghiệm rút ra từ những người thực nghiệm, dùng BN có khả năng cho phép chọn tốc độ học nhanh hơn.
+Ở đây, $\hat{\mathbf{\mu}}$ là giá trị trung bình và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn của các mẫu trong minibatch.
+Sau khi áp dụng BN, những giá trị kích hoạt của minibatch có giá trị trung bình bằng không và phương sai đơn vị.
+Vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là tuỳ ý, 
+nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
+Do đó, độ lớn giá trị kích hoạt ở những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
+Qua trực giác/kinh nghiệm rút ra từ thực nghiệm, dùng BN có thể cho phép chọn tốc độ học nhanh hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -124,7 +124,7 @@ Formally, denoting a particular minibatch by $\mathcal{B}$,
 we calculate $\hat{\mathbf{\mu}}_\mathcal{B}$ and $\hat\sigma_\mathcal{B}$ as follows:
 -->
 
-Ký hiệu một minibatch là $\mathcal{B}$, chúng ta tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat\sigma_\mathcal{B}$ một cách hình thức như sau:
+Ký hiệu một minibatch là $\mathcal{B}$, chúng ta tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat\sigma_\mathcal{B}$ theo công thức sau:
 
 $$\hat{\mathbf{\mu}}_\mathcal{B} \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathbf{x} \in \mathcal{B}} \mathbf{x}
 \text{ và }
@@ -139,10 +139,10 @@ You might think that this noisiness should be a problem.
 As it turns out, this is actually beneficial.
 -->
 
-Lưu ý rằng chúng ta thêm một hằng số $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
-Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu của ước tính giá trị trung bình và phương sai.
-Bạn có thể nghĩ rằng những nhiễu này sẽ là vấn đề đáng ngại.
-Nhưng thực ra, điều này lại có lợi.
+Lưu ý rằng chúng ta thêm hằng số rất nhỏ $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
+Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu khi tính giá trị trung bình và phương sai.
+Bạn có thể nghĩ rằng nhiễu sẽ là vấn đề đáng ngại.
+Nhưng thực ra, điều này lại có ích.
 
 <!--
 This turns out to be a recurring theme in deep learning.
@@ -152,11 +152,11 @@ In some preliminary research, :cite:`Teye.Azizpour.Smith.2018` and :cite:`Luo.Wa
 In particular, this sheds some light on the puzzle of why BN works best for moderate minibatches sizes in the $50$–$100$ range.
 -->
 
-Điều này hoá ra lại là chủ đề thường thấy ở trong học sâu.
-Vì những lý do vẫn chưa được định rõ theo lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến việc huấn luyện nhanh hơn và ít bị quá khớp.
-Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ những đặc điểm này, biến thể này dường như hoạt động giống một dạng điều chuẩn.
+Đây là chủ đề thường thấy trong học sâu.
+Vì những lý do vẫn chưa giải thích rõ bằng lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến việc huấn luyện nhanh hơn và ít bị quá khớp.
+Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ những đặc điểm này, nhiễu này dường như hoạt động giống một dạng điều chuẩn.
 Trong một số nghiên cứu sơ bộ, :cite:`Teye.Azizpour.Smith.2018` và :cite:`Luo.Wang.Shao.ea.2018` đã lần lượt chỉ ra các thuộc tính của BN liên quan tới tiên nghiệm Bayesian (_Bayesian prior_) và các lượng phạt (_penalty_). 
-Đặc biệt, điều này làm sáng tỏ tại sao BN hoạt động tốt nhất với các minibatch có kích cỡ trong khoảng 50 - 100.
+Cụ thể, điều này làm sáng tỏ tại sao BN hoạt động tốt nhất với các minibatch có kích cỡ vừa phải, trong khoảng 50 - 100.
 
 <!--
 Fixing a trained model, you might (rightly) think that we would prefer to use the entire dataset to estimate the mean and variance.
@@ -167,12 +167,12 @@ Indeed this is standard practice for models employing batch normalization and th
 in *training mode* (normalizing by minibatch statistics) and in *prediction mode* (normalizing by dataset statistics).
 -->
 
-Cố định một mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
+Cố định một mô hình đã được huấn luyện, bạn có thể nghĩ rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai (đúng là vậy).
 Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại được phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
-Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi chúng ta cập nhật mô hình.
+Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
-Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
-trong *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và trong *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của tập dữ liệu)
+Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các tầng BN của MXNet hoạt động khác nhau
+trong *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và trong *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của toàn bộ tập dữ liệu)
 
 <!--
 We are now ready to take a look at how batch normalization works in practice.
