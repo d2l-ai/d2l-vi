@@ -81,7 +81,7 @@ Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và 
 * Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
-* Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, và xác suất này cao hơn nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
+* Các trận động đất có mối tương quan mạnh mẽ, tức sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn và xác suất xảy ra dư chấn cao hơn nhiều so với trường hợp trận động đất lớn không xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức là, các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
 * Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
 
