@@ -21,7 +21,7 @@ Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
 Là một người dùng Netflix tốt, bạn quyết định đánh giá từng bộ phim một cách cẩn thận.
 Xét cho cùng, bạn muốn xem thêm nhiều bộ phim hay phải không?
 Nhưng hóa ra, mọi thứ không hề đơn giản như vậy.
-Ý kiến của mọi người về một bộ phim có thể thay đổi một cách đáng kể theo thời gian.
+Đánh giá của mỗi người về một bộ phim có thể thay đổi đáng kể theo thời gian.
 Trên thực tế, các nhà tâm lý học thậm chí còn đặt tên cho một số hiệu ứng:
 
 <!--
