@@ -54,7 +54,7 @@ But it is not just about movies.
 -->
 
 Nói tóm lại, xếp hạng là không cố định.
-Sử dụng động lực thời gian đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
+Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
 Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
 <!--
