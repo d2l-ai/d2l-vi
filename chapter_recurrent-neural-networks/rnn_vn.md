@@ -30,7 +30,7 @@ The hidden state at time $t$ could be computed based on both input $x_{t}$ and h
 -->
 
 $h_t$ còn được gọi là *biến tiềm ẩn* và nó lưu trữ thông tin của chuỗi.
-Biến tiềm tàng còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*).
+Biến tiềm ẩn còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*).
 Trạng thái ẩn tại thời điểm $t$ có thể được tính dựa trên cả đầu vào $x_{t}$ và trạng thái ẩn $h_{t-1}$ như sau 
 
 $$h_t = f(x_{t}, h_{t-1}).$$
