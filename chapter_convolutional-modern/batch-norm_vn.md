@@ -275,9 +275,9 @@ First, the noise in $\mathbf{\mu}$ and $\mathbf{\sigma}$ arising from estimating
 Second, we might not have the luxury of computing per-batch normalization statistics, e.g., we might need to apply our model to make one prediction at a time.
 -->
 
-Như chúng tôi đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên những minibatch không còn là nhiễu được mong muốn, một khi ta đã huấn luyện xong mô hình.
-Thứ hai, chúng ta không có tài nguyên xa xỉ để tính toán các con số thống kê trên mỗi lần chuẩn hoá theo batch, ví dụ: chúng ta cần áp dụng mô hình để đưa ra một kết quả dự đoán mỗi lần.
+Như đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên các minibatch không còn là nhiễu được mong muốn, một khi ta đã huấn luyện xong mô hình.
+Thứ hai, trong nhiều trường hợp sẽ là xa xỉ khi tính toán các con số thống kê sau mỗi lần chuẩn hoá theo batch, ví dụ, khi cần áp dụng mô hình để đưa ra một kết quả dự đoán mỗi lần.
 
 <!--
 Typically, after training, we use the entire dataset to compute stable estimates of the activation statistics and then fix them at prediction time.
@@ -285,9 +285,9 @@ Consequently, BN behaves differently during training and at test time.
 Recall that dropout also exhibits this characteristic.
 -->
 
-Thông thường, sau khi huấn luyện, chúng ta sẽ sử dụng toàn bộ tập dữ liệu để tính toán sự ước lượng ổn định các con số thống kê của những giá trị kích hoạt và sau đó cố định chúng tại thời điểm dự đoán.
-Do đó, BN hoạt động khác nhau ở trong quá trình huấn luyện và quá trình kiểm tra.
-Hãy nhớ rằng dropout cũng thể hiện tính chất này.
+Thông thường, sau khi huấn luyện, chúng ta sử dụng toàn bộ tập dữ liệu để tính toán các con số thống kê của các giá trị kích hoạt và sau đó cố định chúng tại thời điểm dự đoán.
+Do đó, BN hoạt động khác nhau trong quá trình huấn luyện và kiểm tra.
+Lưu ý rằng dropout cũng có tính chất này.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
