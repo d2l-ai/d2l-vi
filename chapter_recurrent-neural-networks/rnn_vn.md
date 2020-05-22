@@ -16,7 +16,7 @@ However, the number of model parameters would also increase exponentially with i
 Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is preferable to use a *latent variable model* in which we have
 -->
 
-:numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t% chỉ phụ thuộc vào $n-1$ từ trước đó.
+:numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t$ chỉ phụ thuộc vào $n-1$ từ trước đó.
 Nếu muốn kiểm tra ảnh hưởng có thể có của các từ phía trước $t-(n-1)$ đến từ $x_t$, ta phải tăng $n$.
 Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị của từ điển $V$.
 Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
