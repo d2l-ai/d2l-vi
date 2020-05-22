@@ -235,7 +235,7 @@ phân phối xác suất của từ tiếp theo được tạo dựa trên chu�
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
 -->
 
-![Mô hình ngôn ngữ theo tầng từ ngữ RNN. Đầu vào và chuỗi nhãn lần lượt là `the time machine by H.` và `time machine by H. G.`.](../img/rnn-train.svg)
+![Mô hình ngôn ngữ theo tầng từ ngữ RNN. Đầu vào và chuỗi nhãn lần lượt là `the time machine by H.` và `time machine by H. G.`](../img/rnn-train.svg)
 :label:`fig_rnn_train`
 
 <!--
