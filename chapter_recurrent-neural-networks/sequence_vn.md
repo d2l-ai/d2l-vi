@@ -79,7 +79,7 @@ Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi th
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
 Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
 * Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
-Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
+Nếu chúng ta hoán vị chúng, chúng sẽ không còn nhiều ý nghĩa.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn và xác suất xảy ra dư chấn cao hơn nhiều so với trường hợp trận động đất lớn không xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
