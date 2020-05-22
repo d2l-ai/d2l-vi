@@ -201,10 +201,10 @@ Recall that one key differences between BN and other layers is that because BN o
  we cannot just ignore the batch dimension as we did before when introducing other layers.
 -->
 
-Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập thì hơi khác nhau một chút.
-Chúng ta sẽ thảo luận cho cả hai trường hợp trên ở phía dưới.
-Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì mỗi lần BN hoạt động trên cả một minibatch, 
-chúng ta không thể bỏ qua kích thước của batch như chúng ta đã làm trước đây khi giới thiệu về các tầng khác.
+Lập trình chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập hơi khác nhau một chút.
+Chúng ta sẽ thảo luận cả hai trường hợp trên.
+Nhớ rằng một khác biệt lớn của BN so với những tầng khác là vì BN cần số liệu thống kê trên toàn minibatch,
+chúng ta không thể bỏ qua kích thước batch như đã làm với các tầng khác.
 
 <!--
 ### Fully-Connected Layers
@@ -219,10 +219,10 @@ the activation function by $\phi(\cdot)$, and the BN operation with parameters $
 we can express the computation of a BN-enabled, fully-connected layer $\mathbf{h}$ as follows:
 -->
 
-Khi áp dụng BN vào tầng kết nối đầy đủ, chúng ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến tính. 
+Khi áp dụng BN cho tầng kết nối đầy đủ, ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến. 
 Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính là $f_{\theta}(\cdot)$ (với trọng số là $\theta$), 
 hàm kích hoạt là $\phi(\cdot)$, và phép tính BN là $\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}$ với tham số $\mathbf{\beta}$ và $\mathbf{\gamma}$, 
-chúng ta sẽ biểu thị việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
+chúng ta sẽ biểu diễn việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
 
 $$\mathbf{h} = \phi(\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}(f_{\mathbf{\theta}}(\mathbf{x}) ) ) $$
 
@@ -231,8 +231,8 @@ Recall that mean and variance are computed on the *same* minibatch $\mathcal{B}$
 Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\mathbf{\beta}$ are parameters that need to be learned jointly with the more familiar parameters $\mathbf{\theta}$.
 -->
 
-Hãy nhớ rằng giá trị trung bình và phương sai thì được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
-Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
+Hãy nhớ rằng giá trị trung bình và phương sai sẽ được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
+Cũng cần lưu ý rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số quen thuộc $\mathbf{\theta}$.
 
 <!--
 ### Convolutional Layers
@@ -250,13 +250,13 @@ Thus we collect the values over all spatial locations when computing the mean an
 apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the values at each spatial location.
 -->
 
-Tương tự với tầng tích chập, chúng ta thường áp dụng BN sau khi thực hiện tích chập và trước hàm kích hoạt phi tuyến tính.
-Khi phép tích chập cho đầu ra có nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
-và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là những số thực.
-Giả sử những minibatch của chúng ta có kích thước là $m$ và đầu ra cho mỗi kênh của phép tích chập có chiều cao là $p$ và rộng là $q$.
-Đối với tầng tích chập, chúng ta sẽ thực hiện mỗi phép tính chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng đồng thời một lúc.
-Vì thế chúng ta thu được các giá trị trên tất cả các vị trí không gian khi tính toán giá trị trung bình và phương sai 
-và tiếp đó (trong cùng một kênh nhất định) cùng áp dụng hai giá trị $\hat{\mathbf{\mu}}$ và $\hat{\mathbf{\sigma}}$ để chuẩn hóa các giá trị tại mỗi vị trí không gian.
+Tương tự, với tầng tích chập, chúng ta áp dụng BN sau phép tích chập và trước hàm kích hoạt phi tuyến.
+Khi áp dụng phép tích chập cho đầu ra nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
+và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là các số vô hướng.
+Giả sử các minibatch có kích thước $m$, đầu ra cho mỗi kênh của phép tích chập có chiều cao $p$ và chiều rộng $q$.
+Với tầng tích chập, ta sẽ thực hiện mỗi phép chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng lúc.
+Vì thế trên từng kênh, ta sử dụng giá trị trên tất cả các vị trí không gian để tính trung bình $\hat{\mathbf{\mu}}$ và phương sai $\hat{\mathbf{\sigma}}$
+và sau đó dùng hai giá trị này để chuẩn hóa các giá trị tại mỗi vị trí không gian trên kênh đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
