@@ -62,7 +62,7 @@ As a result we perform a mapping from $\mathbf{x}$ to its values after applying 
 -->
 
 
-Được thể hiện trong :numref:`fig_densenet_block`, điểm khác biệt chính là DenseNet *nối* đầu ra lại với nhau thay vì cộng lại như ở ResNet.
+Như được thể hiện trong :numref:`fig_densenet_block`, điểm khác biệt chính là DenseNet *nối* đầu ra lại với nhau thay vì cộng lại như ở ResNet.
 Kết quả là ta thực hiện một ánh xạ từ $\mathbf{x}$ đến các giá trị của nó sau khi áp dụng một chuỗi các hàm với độ phức tạp tăng dần.
 
 $$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
