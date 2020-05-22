@@ -42,7 +42,7 @@ We discussed this in :numref:`sec_sequence`.
 But it could potentially makes both computation and storage expensive.
 -->
 
-Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không cần xấp xỉ.
+Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không phải là một sự ước chừng.
 Sau cùng, $h_t$ có thể chỉ đơn giản lưu tất cả dữ liệu quan sát được đến thời điểm đó.
 Điều này đã được thảo luận tại :numref:`sec_sequence`.
 Tuy nhiên điều này có thể sẽ làm việc tính toán và lưu trữ trở nên nặng nề.
