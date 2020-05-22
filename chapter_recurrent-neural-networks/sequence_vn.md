@@ -72,7 +72,7 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 * Humans interact with each other in a sequential nature, as can be seen in Twitter fights, dance patterns and debates.
 -->
 
-* Nhiều người dùng có tần suất sử dụng ứng dụng cao ở một số thời điểm nhất định.
+* Nhiều người dùng có thói quen rất đặc biệt liên quan tới thời gian mở ứng dụng.
 Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
 Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi thị trường mở cửa.
 * Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
