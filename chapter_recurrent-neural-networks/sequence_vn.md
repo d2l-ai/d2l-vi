@@ -45,7 +45,7 @@ Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải 
 Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ: rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên tham gia vào quá trình sản xuất phim.
-* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* đạt được mức độ nổi tiếng cao vì lý do này.
+* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
 
 <!--
 In short, ratings are anything but stationary.
