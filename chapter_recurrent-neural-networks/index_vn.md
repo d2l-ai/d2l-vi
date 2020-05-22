@@ -12,9 +12,9 @@ In other words, if we were to permute the pixels in an image, it would be much m
 its content of something that would look much like the background of a test pattern in the times of analog TV.
 -->
 
-Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector đơn thuần và hình ảnh.
-Với dữ liệu hình ảnh, chúng ta đã thiết kế các tầng chuyên biệt để tận dụng các tính chất tương tự trong hình ảnh.
-Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình tương tự, và rất khó để suy luận về nội dung của chúng.
+Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector tổng quát và hình ảnh.
+Với dữ liệu hình ảnh, chúng ta đã thiết kế các tầng chuyên biệt để tận dụng tính chính quy của hình ảnh.
+Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các hình mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình tương tự (*analog*), và rất khó để suy luận về nội dung của chúng.
 
 <!--
 Most importantly, so far we tacitly assumed that our data is generated i.i.d., i.e., independently and identically distributed, all drawn from some distribution.
@@ -26,9 +26,9 @@ It is thus only reasonable to assume that specialized models for such data will 
 
 Quan trọng hơn cả, cho đến thời điểm này, chúng ta đã ngầm định rằng dữ liệu được sinh ra từ các phân phối độc lập và giống hệt nhau (*independently and identically distributed - i.i.d.*).
 Thật không may, điều này không đúng với hầu hết các loại dữ liệu.
-Ví dụ, các từ trong đoạn này được viết theo trình tự, và sẽ rất khó để giải mã nghĩa của chúng nếu các từ được hoán vị một cách ngẫu nhiên.
+Ví dụ, các từ trong đoạn văn này được viết theo một trình tự nhất định mà nếu bị hoán vị đi một cách ngẫu nhiên thì sẽ rất khó để giải mã ý nghĩa của chúng.
 Tương tự, các khung hình ảnh trong video, tín hiệu âm thanh trong cuộc hội thoại, hoặc hành vi duyệt web, tất cả đều có cấu trúc chuỗi.
-Do đó, chỉ hợp lý khi giả định rằng các mô hình chuyên biệt cho những dữ liệu này sẽ giúp việc mô tả dữ liệu và giải quyết các bài toán ước lượng tốt hơn.
+Do đó, hoàn toàn hợp lý khi ta giả định rằng các mô hình chuyên biệt cho những kiểu dữ liệu này sẽ giúp việc mô tả dữ liệu và giải quyết các bài toán ước lượng tốt hơn.
 
 <!--
 Another issue arises from the fact that we might not only receive a sequence as an input but rather might be expected to continue the sequence.
