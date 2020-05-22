@@ -77,8 +77,8 @@ Hence, the hidden layer's output $\mathbf{H} \in \mathbb{R}^{n \times h}$ is cal
 -->
 
 Ta hãy xem xét một perception đa tầng với một tầng ẩn duy nhất.
-Giả sử một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
-Đặt hàm kích hoạt của tầng ẩn là $\phi$.
+Giả sử ta có một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
+Gọi hàm kích hoạt của tầng ẩn là $\phi$.
 Khi đó, đầu ra của tầng ẩn $\mathbf{H} \in \mathbb{R}^{n \times h}$ được tính như sau
 
 
@@ -90,7 +90,7 @@ $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
 Here, we have the weight parameter $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, bias parameter $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, and the number of hidden units $h$, for the hidden layer.
 -->
 
-Ở đây, ta có tham số trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, hệ số $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$ và số đơn vị ẩn $h$ cho tầng ẩn.
+Ở đây, ta có tham số trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$ và số nút ẩn $h$ cho tầng ẩn.
 
 <!--
 The hidden variable $\mathbf{H}$ is used as the input of the output layer.
@@ -98,7 +98,7 @@ The output layer is given by
 -->
 
 Biến ẩn $\mathbf{H}$ được sử dụng làm đầu vào của tầng đầu ra.
-Tầng đầu ra được đưa ra bởi
+Tầng đầu ra được tính toán bởi
 
 $$\mathbf{O} = \mathbf{H} \mathbf{W}_{hq} + \mathbf{b}_q.$$
 
@@ -108,9 +108,8 @@ $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ is the weight parameter, and $\mat
 If it is a classification problem, we can use $\text{softmax}(\mathbf{O})$ to compute the probability distribution of the output category.
 -->
 
-Ở đây, $\mathbf{O} \in \mathbb{R}^{n \times q}$ là biến đầu ra,
-$\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ là tham số trọng số và $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là hệ số điều chỉnh của tầng đầu ra.
-Nếu bài toán là phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của lớp đầu ra.
+Ở đây, $\mathbf{O} \in \mathbb{R}^{n \times q}$ là biến đầu ra, $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ là tham số trọng số và $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là hệ số điều chỉnh của tầng đầu ra.
+Nếu bài toán là phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của tầng đầu ra.
 
 <!--
 This is entirely analogous to the regression problem we solved previously in :numref:`sec_sequence`, hence we omit details.
@@ -118,7 +117,7 @@ Suffice it to say that we can pick $(x_t, x_{t-1})$ pairs at random and estimate
 -->
 
 Điều này hoàn toàn tương tự với bài toán hồi quy mà ta đã giải quyết trước đây trong :numref:`sec_sequence`, do đó ta sẽ bỏ qua chi tiết.
-Chỉ cần nói rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua autograd và hạ gradient ngẫu nhiên.
+Chắc chắn rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua autograd và hạ gradient ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
