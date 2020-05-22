@@ -21,8 +21,8 @@ RUN apt-get install -y pandoc libgomp1
 
 # clone and build d2l-book, changing D2L_VER will break the cache here
 ARG D2L_VER=unknown
-# RUN pip3 install git+https://github.com/aivivn/d2l-book
-RUN pip3 install git+https://github.com/d2l-ai/d2l-book
+RUN pip3 install git+https://github.com/aivivn/d2l-book
+# RUN pip3 install git+https://github.com/d2l-ai/d2l-book
 RUN pip3 install --no-cache-dir mxnet==1.6.0 git+https://github.com/d2l-ai/d2l-en
 
 CMD ["d2lbook", "build", "all"]
