@@ -62,7 +62,7 @@ Tầng ẩn và trạng thái ẩn là hai khái niệm rất khác nhau.
 Tầng ẩn, như đã đề cập, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
 Trạng thái ẩn, về kỹ thuật là *đầu vào* của một bước tính toán tại một thời điểm xác định.
 Chúng chỉ có thể được tính dựa vào dữ liệu tại các vòng lặp trước đó.
-Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê, như phân cụm hoặc mô hình chủ đề (*topic model*) với các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
+Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê như mô hình phân cụm hoặc mô hình chủ đề (*topic model*), với các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
 
 <!--
 Recurrent neural networks are neural networks with hidden states.
