@@ -78,7 +78,7 @@ Các ứng dụng giao dịch trên thị trường chứng khoán được sử
 * Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
 Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
-* Âm nhạc, lời nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
+* Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
 Nếu chúng ta hoán vị chúng, chúng sẽ không có ý nghĩa gì hết.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức là, sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn, và xác suất này cao hơn nhiều hơn nhiều so với trường hợp không có trận động đất mạnh nào xảy ra trước đó.
