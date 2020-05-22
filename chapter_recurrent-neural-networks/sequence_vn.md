@@ -73,7 +73,7 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 -->
 
 * Nhiều người dùng có tần suất sử dụng ứng dụng cao ở một số thời điểm nhất định.
-Chẳng hạn, các ứng dụng truyền thông xã hội phổ biến hơn nhiều sau giờ học với học sinh.
+Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
 Các ứng dụng giao dịch trên thị trường chứng khoán được sử dụng phổ biến hơn khi thị trường mở cửa.
 * Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
