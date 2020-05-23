@@ -5,7 +5,7 @@
 # Sequence Models
 -->
 
-# *dịch tiêu đề phía trên*
+# Mô hình chuỗi
 :label:`sec_sequence`
 
 <!--
@@ -17,7 +17,12 @@ People's opinions on movies can change quite significantly over time.
 In fact, psychologists even have names for some of the effects:
 -->
 
-*dịch đoạn phía trên*
+Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
+Là một người dùng Netflix tốt, bạn quyết định đánh giá từng bộ phim một cách cẩn thận.
+Xét cho cùng, bạn muốn xem thêm nhiều bộ phim hay phải không?
+Nhưng hóa ra, mọi thứ không hề đơn giản như vậy.
+Đánh giá của mỗi người về một bộ phim có thể thay đổi đáng kể theo thời gian.
+Trên thực tế, các nhà tâm lý học thậm chí còn đặt tên cho một số hiệu ứng:
 
 <!--
 * There is [anchoring](https://en.wikipedia.org/wiki/Anchoring), based on someone else's opinion. 
@@ -32,7 +37,15 @@ the expectations that the next movie is equally good or better are high, hence e
 * Some movies become cult movies, because they were almost comically bad. *Plan 9 from Outer Space* and *Troll 2* achieved a high degree of notoriety for this reason.
 -->
 
-*dịch đoạn phía trên*
+* [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
+Ví dụ như sau khi thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
+Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
+:cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
+* [Hiệu ứng vòng xoáy khoái lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
+* Tính thời vụ: rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
+* Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên tham gia vào quá trình sản xuất phim.
+* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
 
 <!--
 In short, ratings are anything but stationary.
@@ -40,7 +53,9 @@ Using temporal dynamics helped :cite:`Koren.2009` to recommend movies more accur
 But it is not just about movies.
 -->
 
-*dịch đoạn phía trên*
+Nói tóm lại, thứ bậc xếp hạng là không cố định.
+Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
+Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
 <!--
 * Many users have highly particular behavior when it comes to the time when they open apps. 
@@ -57,7 +72,18 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 * Humans interact with each other in a sequential nature, as can be seen in Twitter fights, dance patterns and debates.
 -->
 
-*dịch đoạn phía trên*
+* Nhiều người dùng có thói quen rất đặc biệt liên quan tới thời gian mở ứng dụng.
+Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
+Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi thị trường mở cửa.
+* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
+Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
+Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
+* Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
+Nếu chúng ta hoán vị chúng, chúng sẽ không còn nhiều ý nghĩa.
+Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
+* Các trận động đất có mối tương quan mạnh mẽ, tức sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn và xác suất xảy ra dư chấn cao hơn nhiều so với trường hợp trận động đất lớn không xảy ra trước đó.
+Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
+* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -490,7 +516,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Nguyễn Cảnh Thướng
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 *
