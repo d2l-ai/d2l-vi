@@ -612,10 +612,10 @@ Chuẩn hóa theo batch là một phương pháp quan trọng, được áp dụ
 * Batch Normalization has many beneficial side effects, primarily that of regularization. On the other hand, the original motivation of reducing covariate shift seems not to be a valid explanation.
 -->
 
-* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron bằng cách sử dụng giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị của đầu ra trung gian của mỗi tầng trong mạng nơ-ron ổn định hơn.
-* Các phương pháp chuẩn hóa theo batch cho các tầng kết nối đầy đủ và các tầng tích chập có chút khác biệt.
-* Giống như tầng dropout, các tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Mặt khác, động lực ban đầu của việc giảm sự dịch chuyển hiệp biến dường như không phải là một lời giải thích hợp lệ.
+* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron theo giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị này ổn định hơn.
+* Chuẩn hóa theo batch có chút khác biệt khi áp dụng cho tầng kết nối đầy đủ và tầng tích chập.
+* Giống như tầng dropout, tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Tuy nhiên, cách giải thích gốc về việc giảm sự dịch chuyển hiệp biến dường như không hợp lý.
 
 <!--
 ## Exercises
@@ -637,17 +637,17 @@ Chuẩn hóa theo batch là một phương pháp quan trọng, được áp dụ
 7. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
 -->
 
-1. Chúng ta có thể loại bỏ phép biến đổi affine kết nối đầy đủ trước khi chuẩn hóa theo batch hoặc tham số độ chệch trong phép tích chập không?
+1. Trước khi chuẩn hóa theo batch, có thể loại bỏ phép biến đổi affine trong tầng kết nối đầy đủ hoặc tham số độ chệch trong phép tích chập không?
     * Tìm một phép biến đổi tương đương được áp dụng trước tầng kết nối đầy đủ.
-    * Sự cải tiến này có hiệu quả không và tại sao?
+    * Sự cải tiến này có hiệu quả không, tại sao?
 2. So sánh tốc độ học của LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
     * Vẽ đồ thị biểu diễn sự giảm xuống của lỗi huấn luyện và lỗi kiểm tra.
-    * Còn về miền hội tụ thì sao? Bạn có thể chọn tốc độ học lớn tới đâu?
-3. Chúng ta có cần chuẩn hóa theo batch trong mỗi tầng không? Hãy thử nghiệm điều này.
-4. Bạn có thể thay thế Dropout bằng Chuẩn hóa theo Batch không? Hành vi sẽ thay đổi như thế nào?
-5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để không tính gradient) rồi quan sát và phân tích kết quả.
-6. Xem tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của Chuẩn hóa theo Batch.
-7. Ý tưởng nghiên cứu: hãy nghĩ về các phép biến đổi chuẩn hóa khác mà bạn có thể áp dụng? Bạn có thể áp dụng phép biến đổi tích phân xác suất không? Còn ước lượng ma trận hiệp phương sai có hạng tối đa thì sao?
+    * Về miền hội tụ thì sao? Có thể chọn tốc độ học lớn tới đâu?
+3. Chúng ta có cần chuẩn hóa theo batch trong tất cả các tầng không? Hãy thử nghiệm điều này.
+4. Có thể thay thế Dropout bằng BN không? Sẽ có thay đổi như thế nào?
+5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` khi xây dựng mạng để không tính gradient) rồi quan sát và phân tích kết quả.
+6. Đọc tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của chuẩn hóa theo batch.
+7. Ý tưởng nghiên cứu: nghĩ về các phép biến đổi chuẩn hóa khác có thể áp dụng. Bạn có thể áp dụng biến đổi tích phân xác suất (*probability integral transform*) không? Còn ước lượng ma trận hiệp phương sai hạng tối đa thì sao?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -674,34 +674,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đinh Đắc
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-* Đinh Đắc
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Đinh Đắc
-
-<!-- Phần 5 -->
-* Đinh Đắc
-
-<!-- Phần 6 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 7 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 8 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Nguyễn Cảnh Thướng
