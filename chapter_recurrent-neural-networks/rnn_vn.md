@@ -287,11 +287,10 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng của chuỗi.
-Thật không may, đây là một con số khó hiểu và khó so sánh.
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xảy ra của chuỗi.
+Thật không may, đây là một con số khó để hiểu và khó để so sánh.
 Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng để xảy ra hơn các chuỗi dài,
-do đó việc đánh giá mô hình trên kiệt tác của Tolstoy ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) chắc chắn sẽ tạo ra
-khả năng nhỏ hơn nhiều so với, nói, trên tiểu thuyết của Saint-Exupery ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince). 
+do đó việc đánh giá mô hình trên kiệt tác của Tolstoy ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) chắc chắn sẽ tạo ra khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết của Saint-Exupery ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince). 
 Những gì còn thiếu là tương đương với mức trung bình.
 
 <!--
@@ -331,9 +330,9 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-Nó có thể được hiểu rõ nhất là trung bình hài hòa của số lượng lựa chọn thực tế mà chúng ta có khi quyết định chọn từ nào tiếp theo.
-Lưu ý rằng sự bối rối tự nhiên khái quát hóa khái niệm tổn thất entropy chéo được xác định khi chúng tôi đưa ra hồi quy softmax (:numref:`sec_softmax`).
-Đó là, đối với một ký hiệu duy nhất cả hai định nghĩa là thanh giống hệt nhau, thực tế là một là số mũ của số kia.
+Nó có thể được hiểu rõ nhất là trung bình hài hòa của số lượng lựa chọn thực sự mà ta có khi quyết định chọn từ nào tiếp theo.
+Lưu ý rằng độ bối rối tự nhiên khái quát hóa khái niệm mất mát entropy chéo được xác định khi chúng tôi đưa ra hồi quy softmax (:numref:`sec_softmax`).
+Đó là, đối với một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, thực tế là một ký hiệu là số mũ của ký hiệu kia.
 Chúng ta hãy xem xét một số trường hợp:
 
 <!--
@@ -343,9 +342,9 @@ Chúng ta hãy xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ hỗn loạn của mô hình là $1$.
-* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ hỗn loạn là vô hạn.
-* Tại đường cơ sở, mô hình dự đoán phân phối đồng đều trên tất cả các mã thông báo. Trong trường hợp này, độ hỗn loạn bằng kích thước của từ điển `len(vocab)`.
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ bối rối của mô hình là $1$.
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ bối rối là vô hạn.
+* Tại đường cơ sở, mô hình dự đoán phân phối đồng đều trên tất cả các mã thông báo. Trong trường hợp này, độ bối rối bằng kích thước của từ điển `len(vocab)`.
 * Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không có bất kỳ nén nào, đây sẽ là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, điều này cung cấp một giới hạn trên không cần thiết mà bất kỳ mô hình nào cũng phải đáp ứng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
