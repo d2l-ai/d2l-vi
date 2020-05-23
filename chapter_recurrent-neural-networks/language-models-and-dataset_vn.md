@@ -5,7 +5,7 @@
 # Language Models and the Dataset
 -->
 
-# *dịch tiêu đề phía trên*
+# Mô hình ngôn ngữ và tập dữ liệu
 
 :label:`sec_language_model`
 
@@ -17,7 +17,10 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-*dịch đoạn phía trên*
+Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách làm sao để ánh xạ dữ liệu dạng văn bản thành những token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, 
+tiếp theo đó, trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
+Khi đã có được một chuỗi như trên, mục tiêu của một mô hình ngôn ngữ là nhằm để ước tính xác suất sau
 
 $$p(x_1, x_2, \ldots, x_T).$$
 
@@ -29,7 +32,11 @@ Furthermore, it would be sufficient for generating a meaningful dialog, simply b
 Clearly we are still very far from designing such a system, since it would need to *understand* the text rather than just generate grammatically sensible content.
 -->
 
-*dịch đoạn phía trên*
+Mô hình ngôn ngữ thì vô cùng hữu dụng. 
+Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản mang tính tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Không giống như việc khỉ sử dụng máy đánh chữ, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống như ngôn ngữ tự nhiên, ví dụ: văn bản bằng tiếng anh.
+Hơn nữa, mô hình sẽ đủ khả năng để tạo một hội thoại có ý nghĩa, chỉ đơn giản bằng việc điều chỉnh văn bản tiếp theo phụ thuộc trên các đoạn hội thoại trước đó.
+Trên thực tế, chúng ta vẫn còn khoảng cách rất xa để có thể thiết kế được một hệ thống giống như vậy, vì việc này sẽ cần mô hình phải *hiểu* được văn bản hơn là chỉ tạo ra nội dung phù hợp về mặt ngữ pháp.
 
 <!--
 Nonetheless language models are of great service even in their limited form.
@@ -39,7 +46,11 @@ Likewise, in a document summarization algorithm it is worth while knowing that "
 or that "I want to eat grandma" is a rather disturbing statement, whereas "I want to eat, grandma" is much more benign.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn những mặt hạn chế.
+Chẳng hạn, cụm từ  “to recognize speech” và “to wreck a nice beach” khi nghe phát âm thì có vẻ rất giống nhau.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà mô hình này sẽ loại bỏ đi đoạn chuyển đổi của cụm từ thứ hai, cụm từ mà mang ý nghĩa không hợp lý.
+Tương tự như vậy, trong một thuật toán tóm tắt tài liệu, nó thì đáng để thuật toán nhận biết được rằng câu “con chó cắn người đàn ông” thì xuất hiện thường xuyên hơn nhiều so với câu “người đàn ông cắn con chó”, hoặc là câu “cháu muốn ăn bà ngoại” (“I want to eat grandma”) thì là một câu nói mang tính chất khá là gây náo động và nhõng nhẽo, trong khi  câu “cháu muốn ăn, bà ơi” (“I want to eat, grandma” ) thì lại là câu mang tính chất ôn hoà hơn.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -549,7 +560,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Đắc
 
 <!-- Phần 2 -->
 *
