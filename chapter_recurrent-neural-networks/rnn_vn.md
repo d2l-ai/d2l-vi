@@ -254,7 +254,7 @@ Do đó, đầu vào $\mathbf X_t$ tại dấu thời gian $t$ sẽ là ma trậ
 ## Perplexity
 -->
 
-## Độ bối rối
+## Độ Bối rối
 
 <!--
 Last, let us discuss about how to measure the sequence model quality.
