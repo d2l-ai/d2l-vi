@@ -49,7 +49,7 @@ or that "I want to eat grandma" is a rather disturbing statement, whereas "I wan
 Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn những mặt hạn chế.
 Chẳng hạn, cụm từ  “to recognize speech” và “to wreck a nice beach” khi nghe phát âm thì có vẻ rất giống nhau.
 Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà mô hình này sẽ loại bỏ đi đoạn chuyển đổi của cụm từ thứ hai, cụm từ mà mang ý nghĩa không hợp lý.
-Tương tự như vậy, trong một thuật toán tóm tắt tài liệu, nó thì đáng để thuật toán nhận biết được rằng câu “con chó cắn người đàn ông” thì xuất hiện thường xuyên hơn nhiều so với câu “người đàn ông cắn con chó”, hoặc là câu “cháu muốn ăn bà ngoại” (“I want to eat grandma”) thì là một câu nói mang tính chất khá là gây náo động và nhõng nhẽo, trong khi  câu “cháu muốn ăn, bà ơi” (“I want to eat, grandma” ) thì lại là câu mang tính chất ôn hoà hơn.
+Tương tự như vậy, trong một thuật toán tóm tắt tài liệu, nó thì đáng để thuật toán nhận biết được rằng câu “con chó cắn người đàn ông” thì xuất hiện thường xuyên hơn nhiều so với câu “người đàn ông cắn con chó”, hoặc là câu “Bà ngoại, cháu muốn ăn” (“I want to eat grandma”) thì là một câu nói mang tính chất khá là gây náo động và nhõng nhẽo, trong khi  câu “cháu muốn ăn, bà ơi” (“I want to eat, grandma” ) thì lại là câu mang tính chất ôn hoà hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
