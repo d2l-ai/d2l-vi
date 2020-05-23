@@ -49,7 +49,7 @@ or that "I want to eat grandma" is a rather disturbing statement, whereas "I wan
 ## Estimating a Language Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Ước tính một mô hình ngôn ngữ
 
 <!--
 The obvious question is how we should model a document, or even a sequence of words.
@@ -57,18 +57,17 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-*dịch đoạn phía trên*
-
+Câu hỏi rõ ràng ở đây là làm thế nào để mô hình hoá một tài liệu, hay thậm chí là một chuỗi các từ.
+Chúng ta có thể xem lại cách phân tích chúng ta đã áp dụng lên những mô hình chuỗi ở phần trước.
+Hãy bắt đầu bằng việc áp dụng những quy tắc xác suất cơ bản sau:
 
 $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t-1}).$$
-
 
 <!--
 For example, the probability of a text sequence containing four tokens consisting of words and punctuation would be given as:
 -->
 
-*dịch đoạn phía trên*
-
+Ví dụ: xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu sẽ được tính như sau:
 
 $$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 
@@ -79,7 +78,10 @@ Here, we assume that the training dataset is a large text corpus, such as all Wi
 The probability of words can be calculated from the relative word frequency of a given word in the training dataset.
 -->
 
-*dịch đoạn phía trên*
+Để mà tính toán mô hình ngôn ngữ, chúng ta cần tính xác suất xảy ra của riêng những từ trong đoạn văn bản và xác suất có điều kiện của một từ dựa trên một vài từ xảy ra trước đó, tức là, những tham số của mô hình ngôn ngữ.
+Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho dữ liệu văn bản lớn, chẳng hạn như là tất cả các mục của Wikipedia, [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg) hoặc tất cả văn bản được đăng trực tuyến trên web.
+Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho dữ liệu văn bản lớn, chẳng hạn như là tất cả các mục của Wikipedia, [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg) hoặc tất cả văn bản được đăng trực tuyến trên web.
+Xác suất của riêng những từ có thể được tính bằng tần số xuất hiện tương đối của từ đó, từ đã được cho trong tập dữ liệu huấn luyện.
 
 <!--
 For example, $p(\mathrm{Statistics})$ can be calculated as the probability of any sentence starting with the word "statistics".
@@ -88,11 +90,12 @@ This works fairly well, particularly for frequent words.
 Moving on, we could attempt to estimate
 -->
 
-*dịch đoạn phía trên*
-
+Ví dụ: $p(\mathrm{Statistics})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu với từ “statistics”.
+Một cách tiếp cận ít chính xác hơn sẽ là đếm tất cả các lần xuất hiện của từ ”statistics”, và chia nó cho tổng số từ trong kho dữ liệu văn bản.
+Cách làm này hoạt động khá hiệu quả, đặc biệt là cho các từ thường xuyên xuất hiện. 
+Tiếp theo, chúng ta có thể thử ước tính 
 
 $$\hat{p}(\mathrm{is} \mid \mathrm{Statistics}) = \frac{n(\mathrm{Statistics~is})}{n(\mathrm{Statistics})}.$$
-
 
 <!--
 Here $n(w)$ and $n(w, w')$ are the number of occurrences of singletons and pairs of words respectively.
@@ -104,7 +107,14 @@ Unless we provide some solution to give such word combinations nonzero weight, w
 If the dataset is small or if the words are very rare, we might not find even a single one of them.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ đơn.
+Thật không may, việc ước tính xác suất của một cặp từ có phần khó khăn hơn, bởi vì sự xuất hiện của cặp từ “statistics is” là hiếm khi xảy ra hơn.
+Đặc biệt, đối với một số sự kết hợp từ bất thường, rất khó để tìm đủ số lần xuất hiện của những kết hợp từ này để có được một ước tính chính xác.
+Mọi thứ trở nên tệ hơn đối với các kết hợp có 3 từ hoặc số lượng từ nhiều hơn thế nữa.
+Sẽ có nhiều kết hợp có 3 từ hợp lý mà chúng ta hầu như có thể sẽ không thấy trong tập dữ liệu của chúng ta.
+Trừ khi chúng ta nghĩ ra một số giải pháp để cho các tổ hợp từ như vậy có được trọng số khác không, nếu không, chúng ta sẽ không thể sử dụng chúng như một mô hình ngôn ngữ.
+Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể sẽ không tìm thấy ngay cả một trong số các tổ hợp từ này.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -552,7 +562,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Đinh Đắc
 
 <!-- Phần 3 -->
 *
