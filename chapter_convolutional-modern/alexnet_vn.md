@@ -83,7 +83,7 @@ Những nhà nghiên cứu thị giác máy tính thời đó có lý do để t
 ## Learning Feature Representation
 -->
 
-## Học Biểu Diễn Đặc Trưng
+## Học Biểu diễn Đặc trưng
 
 <!--
 Another way to cast the state of affairs is that the most important part of the pipeline was the representation.
