@@ -5,7 +5,7 @@
 # Residual Networks (ResNet)
 -->
 
-# Mạng thặng dư (ResNet)
+# Mạng phần dư (ResNet)
 :label:`sec_resnet`
 
 <!--
