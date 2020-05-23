@@ -139,7 +139,7 @@ You might think that this noisiness should be a problem.
 As it turns out, this is actually beneficial.
 -->
 
-Lưu ý rằng chúng ta thêm hằng số rất nhỏ $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
+Lưu ý rằng chúng ta thêm hằng số rất nhỏ $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo tránh phép chia cho 0 khi chuẩn hoá, ngay cả khi giá trị ước lượng phương sai thực nghiệm bằng không.```
 Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu khi tính giá trị trung bình và phương sai.
 Bạn có thể nghĩ rằng nhiễu sẽ là vấn đề đáng ngại.
 Nhưng thực ra, điều này lại có ích.
