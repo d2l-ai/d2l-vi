@@ -132,7 +132,7 @@ Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng 
 Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
 Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy.
 2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một số tóm tắt $h_t$ của các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
-Điều này dẫn đến các mô hình ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và các cập nhật với biểu mẫu $h_t = g(h_{t-1}, x_{t-1})$.
+Điều này dẫn đến các mô hình ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
 Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy tiềm ẩn*.
 LSTM và GRU là các ví dụ cho kiểu mô hình này.
 
