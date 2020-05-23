@@ -204,7 +204,7 @@ Cuộc thi đi liền với tập dữ liệu này được đặt tên là Imag
 ### Missing Ingredient - Hardware
 -->
 
-### Yếu Tố bị Thiếu - Phần cứng
+### Yếu tố bị Thiếu - Phần cứng
 
 <!--
 Deep learning models are voracious consumers of compute cycles.
