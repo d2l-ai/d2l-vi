@@ -130,7 +130,7 @@ LSTMs and GRUs are examples of this.
 Trong trường hợp này, ta có thể hài lòng với một khoảng thời gian $\tau$ và chỉ sử dụng các quan sát $x_{t-1}, \ldots, x_{t-\tau}$.
 Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng nhau, ít nhất là với $t > \tau$.
 Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
-Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy.
+Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy trên chính nó.
 2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một số tóm tắt $h_t$ của các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
 Điều này dẫn đến các mô hình ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
 Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy ẩn* (_latent autoregressive model_).
