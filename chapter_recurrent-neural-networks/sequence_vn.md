@@ -91,6 +91,7 @@ For a trader to do well in the stock market on day $t$ he should want to predict
 -->
 
 Ta sẽ đặt giá cổ phiếu là $x_t \geq 0$, tức tại thời điểm $t \in \mathbb{N}$ ta thấy giá cổ phiếu bằng $x_t$.
+Để một có thể làm tốt trên thị trường chứng khoán vào ngày $t$ thì một nhà đầu tư sẽ muốn dự đoán $x_t$ thông qua
 
 $$x_t \sim p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
