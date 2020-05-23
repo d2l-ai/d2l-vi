@@ -55,7 +55,7 @@ dọc theo các tầng từ đầu vào đến đầu ra, qua các nút ở cùn
 Những nhà phát minh kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
 Dễ thấy rằng nếu một tầng có các giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì cần phải có các điều chỉnh bổ trợ trong tốc độ học.
 3. Mạng nhiều tầng có độ phức tạp cao và dễ gặp vấn đề quá khớp.
-Điều này có nghĩa rằng việc điều chuẩn càng trở nên quan trọng.
+Điều này cũng đồng nghĩa rằng kỹ thuật điều chuẩn càng trở nên quan trọng.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
