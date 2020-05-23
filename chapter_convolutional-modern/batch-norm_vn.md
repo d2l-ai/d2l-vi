@@ -167,7 +167,7 @@ Indeed this is standard practice for models employing batch normalization and th
 in *training mode* (normalizing by minibatch statistics) and in *prediction mode* (normalizing by dataset statistics).
 -->
 
-Cố định một mô hình đã được huấn luyện, bạn có thể nghĩ rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai (đúng là vậy).
+Cố định một mô hình đã được huấn luyện, bạn có thể nghĩ rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai. Và đúng là như vậy.
 Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại được phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
 Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
