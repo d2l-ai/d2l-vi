@@ -116,8 +116,9 @@ We already encountered this in our discussion of naive Bayes in :numref:`sec_nai
 This helps with singletons, e.g., via
 -->
 
-*dịch đoạn phía trên*
-
+Một cách tiếp cận phổ biến là thực hiện một số dạng của kỹ thuật Laplace smoothing.
+Chúng ta đã biết kỹ thuật này khi thảo luận về naive Bayes trong phần :numref:`sec_naive_bayes`, trong đó giải pháp là thêm một hằng số nhỏ cho tất cả các số đếm. 
+Điều này được thực hiện bằng việc thêm các hệ số đơn, ví dụ: thông qua
 
 $$\begin{aligned}
 	\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
@@ -138,7 +139,17 @@ It is quite difficult to adjust such models to additional contexts, whereas, dee
 Last, long word sequences are almost certain to be novel, hence a model that simply counts the frequency of previously seen word sequences is bound to perform poorly there.
 -->
 
-*dịch đoạn phía trên*
+Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ chúng ta sử dụng ước tính của một chuỗi ngắn hơn làm phần bổ sung cho chuỗi dài hơn.
+Thêm nữa, $m$ là tổng số từ trong tập văn bản.
+Công thức trên là một biến thể khá nguyên thủy của những gì kỹ thuật Kneser-Ney smoothing và Bayesian nonparametrics có thể làm được.
+Xem ví dụ: [Wood et al., 2011] để biết thêm chi tiết về cách thực hiện việc này.
+Thật không may, các mô hình như thế này trở nên khó sử dụng khá nhanh vì những lý do sau.
+Đầu tiên, chúng ta cần lưu trữ tất cả các số đếm. 
+Thứ hai, điều này hoàn toàn bỏ qua ý nghĩa của các từ.
+Chẳng hạn, danh từ *“mèo”(“cat")* và tính từ *“thuộc về mèo”(“feline”)* nên xuất hiện trong các ngữ cảnh có liên quan đến nhau.
+Rất khó để điều chỉnh thêm vào các mô hình như vậy các ngữ cảnh bổ trợ, trong khi đó, các mô hình ngôn ngữ dựa trên học sâu rất phù hợp để thực hiện các điều này.
+Cuối cùng, các chuỗi từ dài gần như chắc chắn là thuộc văn bản dạng tiểu thuyết, do đó với một mô hình chỉ đơn giản là đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động kém vì bị giới hạn ở điểm này.
+
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -148,7 +159,7 @@ Last, long word sequences are almost certain to be novel, hence a model that sim
 ## Markov Models and $n$-grams
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình Markov và n-grams 
 
 <!--
 Before we discuss solutions involving deep learning, we need some more terminology and concepts.
@@ -159,7 +170,12 @@ Higher orders correspond to longer dependencies.
 This leads to a number of approximations that we could apply to model a sequence:
 -->
 
-*dịch đoạn phía trên*
+Trước khi chúng ta thảo luận về các giải pháp liên quan đến học sâu, chúng ta cần có thêm một số thuật ngữ và khái niệm.
+Hãy nhớ lại cuộc thảo luận của chúng ta về mô hình Markov ở phần trước. 
+Chúng ta hãy áp dụng mô hình này để mô hình hóa ngôn ngữ. 
+Một phân phối trên các chuỗi thỏa mãn thuộc tính của mô hình Markov bậc nhất nếu $p(w_{t+1} \mid w_t, \ldots, w_1) = p(w_{t+1} \mid w_t)$.
+Những bậc cao hơn sẽ tương ứng với những chuỗi phụ thuộc dài hơn. 
+Điều này dẫn đến một số lượng các phép xấp xỉ mà chúng ta có thể áp dụng để mô hình hóa một chuỗi:
 
 $$
 \begin{aligned}
@@ -174,7 +190,8 @@ The probability formulae that involve one, two, and three variables are typicall
 In the following, we will learn how to design better models.
 -->
 
-*dịch đoạn phía trên*
+Các công thức xác suất liên quan đến một, hai và ba biến thường được gọi lần lượt là các mô hình unigram, bigram và trigram.
+Sau đây, chúng ta sẽ học cách thiết kế các mô hình tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
