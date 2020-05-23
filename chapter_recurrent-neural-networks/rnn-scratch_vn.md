@@ -79,14 +79,15 @@ npx.one_hot(X.T, len(vocab)).shape
 ## Initializing the Model Parameters
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tham số cho Mô hình
 
 <!--
 Next, we initialize the model parameters for a RNN model.
 The number of hidden units `num_hiddens` is a tunable parameter.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng tôi khởi tạo các tham số mô hình cho một mô hình RNN.
+Số lượng nút ẩn `num_hiddens` là một tham số có thể điều chỉnh.
 
 
 ```{.python .input  n=19}
@@ -113,7 +114,7 @@ def get_params(vocab_size, num_hiddens, ctx):
 ## RNN Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình RNN
 
 <!--
 First, we need an `init_rnn_state` function to return the hidden state at initialization.
@@ -121,7 +122,9 @@ It returns an `ndarray` filled with 0 and with a shape of (batch size, number of
 Using tuples makes it easier to handle situations where the hidden state contains multiple variables (e.g., when combining multiple layers in an RNN where each layer requires initializing).
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, chúng ta cần một hàm `init_rnn_state` để trả về trạng thái ẩn khi khởi tạo.
+Nó trả về một `ndarray` chứa 0 và có hình dạng (kích thước batch, số nút ẩn).
+Sử dụng tuple giúp dễ dàng xử lý các tình huống trong đó trạng thái ẩn chứa nhiều biến (ví dụ: khi kết hợp nhiều tầng trong RNN trong đó mỗi tầng yêu cầu khởi tạo).
 
 
 ```{.python .input  n=20}
@@ -135,7 +138,9 @@ The activation function here uses the $\tanh$ function.
 As described in :numref:`sec_mlp`, the mean value of the $\tanh$ function is 0, when the elements are evenly distributed over the real numbers.
 -->
 
-*dịch đoạn phía trên*
+Hàm `rnn` sau đây định nghĩa cách tính trạng thái ẩn và đầu ra trong bước thời gian.
+Hàm kích hoạt ở đây sử dụng hàm $\tanh$.
+Như được mô tả trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên các số thực.
 
 
 ```{.python .input  n=6}
@@ -155,7 +160,7 @@ def rnn(inputs, state, params):
 Now we have all functions defined, next we create a class to wrap these functions and store parameters.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có tất cả các hàm được định nghĩa, tiếp theo chúng ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
 
 
 ```{.python .input}
@@ -181,7 +186,7 @@ class RNNModelScratch:
 Let us do a sanity check whether inputs and outputs have the correct dimensions, e.g., to ensure that the dimensionality of the hidden state has not changed.
 -->
 
-*dịch đoạn phía trên*
+Hãy kiểm tra sự tỉnh táo xem liệu đầu vào và đầu ra có số chiều đúng hay không, ví dụ, để đảm bảo rằng chiều của trạng thái ẩn không thay đổi.
 
 ```{.python .input}
 num_hiddens, ctx = 512, d2l.try_gpu()
@@ -196,7 +201,7 @@ Y.shape, len(new_state), new_state[0].shape
 We can see that the output shape is (number steps $\times$ batch size, vocabulary size), while the hidden state shape remains the same, i.e., (batch size, number of hidden units).
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể thấy rằng kích thước đầu ra là (số bước $\times$ kích thước batch, kích thước từ vựng), trong khi kích thước trạng thái ẩn vẫn giữ nguyên, tức là (kích thước batch, số nút ẩn).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
