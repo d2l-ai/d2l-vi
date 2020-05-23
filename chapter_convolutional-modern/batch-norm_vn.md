@@ -73,7 +73,7 @@ It is precisely due to this *normalization* based on *batch* statistics that *ba
 Chuẩn hoá theo batch được áp dụng cho từng tầng riêng lẻ (hoặc có thể cho tất cả các tầng) và hoạt động như sau:
 Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên tính giá trị kích hoạt như thường lệ.
 Sau đó chuẩn hóa những giá trị kích hoạt của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn. 
-cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
+Cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
 Chính vì *chuẩn hóa* dựa trên các số liệu thống kê của *batch* nên kỹ thuật này có tên gọi *chuẩn hoá theo batch*.
 
 
