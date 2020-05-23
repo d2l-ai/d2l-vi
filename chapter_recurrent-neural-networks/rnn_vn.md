@@ -221,15 +221,15 @@ the probability distribution of the next word generated based on the feature seq
 -->
 
 Bây giờ chúng tôi minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
-Để đơn giản minh họa, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì trước đây dễ hiểu hơn.
-Đặt kích thước minibatch là 1 và chuỗi văn bản là phần đầu của tập dữ liệu của chúng tôi, tức là "the time machine by H. G. Wells".
+Để đơn giản minh họa, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
+Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu của chúng tôi, tức là "the time machine by H. G. Wells".
 :numref:`fig_rnn_train` minh họa cách  từ tiếp theo dựa trên các từ hiện tại và trước đó.
-Trong quá trình đào tạo, chúng tôi chạy một hoạt động softmax trên đầu ra từ lớp đầu ra cho mỗi dấu thời gian,
-và sau đó sử dụng hàm mất entropy chéo để tính toán sai số giữa kết quả và nhãn.
-Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của dấu thời gian 3,
-$ \ mathbf {O} _3 $, được xác định bởi chuỗi văn bản "lần lượt", "thời gian" và "máy".
-Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên việc mất dấu thời gian 3 sẽ phụ thuộc vào
-phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi tính năng "the", "time", "machine" và nhãn "by" của dấu thời gian này.
+Trong quá trình đào tạo, chúng tôi chạy một hoạt động softmax trên đầu ra từ lớp đầu ra cho mỗi bước thời gian,
+và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
+Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian 3,
+$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên việc mất mát của bước thời gian 3 sẽ phụ thuộc vào
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này.
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
@@ -264,7 +264,7 @@ Consider the following continuations of the phrase "It is raining", as proposed 
 -->
 
 Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi.
-Một cách là kiểm tra xem văn bản đáng ngạc nhiên như thế nào.
+Một cách là kiểm tra tính gây ngạc nhiên của văn bản.
 Một mô hình ngôn ngữ tốt có thể dự đoán với các mã thông báo có độ chính xác cao mà chúng ta sẽ thấy tiếp theo.
 Hãy xem xét các phần tiếp theo sau của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
@@ -274,7 +274,7 @@ Hãy xem xét các phần tiếp theo sau của cụm từ "Trời đang mưa", 
 3. "It is raining piouw;kcj pwepoiut"
 -->
 
-1. "Ngoài trời đang mưa"
+1. "Trời đang mưa bên ngoài"
 2. "Trời đang mưa cây chuối"
 3. "Trời đang mưa piouw;kcj pwepoiut"
 
@@ -294,7 +294,7 @@ Mặc dù nó có thể không hoàn toàn phản ánh chính xác từ nào the
 mô hình có thể nắm bắt loại từ nào theo sau.
 Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
 Tuy nhiên, ít nhất mô hình đã học cách đánh vần các từ và một số mức độ tương quan giữa các từ.
-Cuối cùng, ví dụ 3 chỉ ra một mô hình được đào tạo kém, không phù hợp với dữ liệu.
+Cuối cùng, ví dụ 3 chỉ ra một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
