@@ -140,7 +140,7 @@ LSTM và GRU là các ví dụ cho kiểu mô hình này.
 ![A latent autoregressive model. ](../img/sequence-model.svg)
 -->
 
-![Một mô hình tự hồi quy tiềm ẩn. ](../img/sequence-model.svg)
+![Một mô hình tự hồi quy ẩn. ](../img/sequence-model.svg)
 :label:`fig_sequence-model`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
