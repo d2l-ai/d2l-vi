@@ -15,7 +15,7 @@ In this section, we describe batch normalization (BN) :cite:`Ioffe.Szegedy.2015`
 Together with residual blocks—covered in :numref:`sec_resnet`—BN has made it possible for practitioners to routinely train networks with over 100 layers.
 -->
 
-Việc huấn luyện các mạng nơ-ron sâu không hề dễ, 
+Huấn luyện mạng nơ-ron sâu không hề đơn giản, 
 để chúng hội tụ trong khoảng thời gian chấp nhận được là một câu hỏi khá hóc búa.
 Trong phần này, chúng ta giới thiệu chuẩn hóa theo batch (_Batch Normalization - BN_) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
 Cùng với các khối thặng dư được đề cập ở :numref:`sec_resnet` — BN giúp việc huấn luyện mạng học sâu với hơn 100 tầng trở nên đơn giản hơn.
