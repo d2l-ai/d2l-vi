@@ -112,7 +112,7 @@ Sau khi áp dụng BN, những giá trị kích hoạt của minibatch có giá 
 Vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là tuỳ ý, 
 nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
 Do đó, độ lớn giá trị kích hoạt ở những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
-Qua trực giác/kinh nghiệm rút ra từ thực nghiệm, dùng BN có thể cho phép chọn tốc độ học nhanh hơn.
+Qua trực giác và thực nghiệm, dùng BN có thể cho phép chọn tốc độ học nhanh hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
