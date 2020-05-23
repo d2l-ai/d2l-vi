@@ -165,7 +165,7 @@ Có hai yếu tố chính dẫn tới bước đột phá lớn vào năm 2012.
 ### Missing Ingredient - Data
 -->
 
-### Yếu Tố bị Thiếu - Dữ liệu
+### Yếu tố bị Thiếu - Dữ liệu
 
 <!--
 Deep models with many layers require large amounts of data in order to enter the regime where they significantly outperform traditional methods based on convex optimizations (e.g., linear and kernel methods).
