@@ -4,7 +4,7 @@
 <!--
 # Deep Convolutional Neural Networks (AlexNet)
 -->
-# Mạng Nơ-ron Tích Chập Sâu (AlexNet)
+# Mạng Nơ-ron Tích chập Sâu (AlexNet)
 :label:`sec_alexnet`
 
 <!--
