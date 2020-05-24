@@ -15,7 +15,7 @@ In fact, for much of the intervening time between the early 1990s and the waters
 
 Mặc dù đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi LeNet được giới thiệu, mạng nơ-ron tích chập chưa lập tức thống trị lĩnh vực này.
 Dẫu LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, chất lượng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và sát thực tế hơn vẫn là một câu hỏi.
-Trên thực tế, hầu hết khoảng thời gian từ đầu những năm 1990 cho tới thành tựu bước ngoặt năm 2012, mạng nơ-ron tích chập thường không sánh bằng những phương pháp học máy khác, như Máy vector hỗ trợ - SVM.
+Trên thực tế, hầu hết trong khoảng thời gian từ đầu những năm 1990 cho tới năm 2012 với những thành tựu mang tính bước ngoặt, mạng nơ-ron tích chập thường không sánh bằng những phương pháp học máy khác, như Máy Vector hỗ trợ - SVM.
 
 <!--
 For computer vision, this comparison is perhaps not fair.
