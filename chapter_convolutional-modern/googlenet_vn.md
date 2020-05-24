@@ -320,7 +320,7 @@ Nó trích xuất thông tin một cách song song thông qua các tầng tích 
 * Phép tích chập $1 \times 1$ giảm số kênh ở mức độ điểm ảnh. Phép gộp cực đại giảm độ phân giải.
 * Trong GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác theo chuỗi. 
 Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhiều kết quả thử nghiệm trên tập dữ liệu ImageNet.
-* Mô hình GoogLeNet, cũng như các phiên bản kế tiếp của nó, là một trong những mô hình hiệu quả nhất trên ImageNet, chúng cho ra độ chính xác tương tự nhau trên tập kiểm tra với độ phức tạp tính toán thấp hơn.
+* Mô hình GoogLeNet, cũng như các phiên bản kế tiếp của nó, là một trong những mô hình hiệu quả nhất trên ImageNet, với độ chính xác tương tự trên tập kiểm tra nhưng độ phức tạp tính toán lại thấp hơn.
 
 <!--
 ## Exercises
