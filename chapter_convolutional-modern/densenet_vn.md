@@ -249,7 +249,7 @@ Here, we set it to 4, consistent with the ResNet-18 in the previous section.
 Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
-Sau đó, tương tự như cách ResNet sử dụng bốn khối thặng dư, DenseNet cũng dùng bốn khối dày đặc.
+Sau đó, tương tự như cách ResNet sử dụng bốn khối phần dư, DenseNet cũng dùng bốn khối dày đặc.
 Và cũng giống như ResNet, ta có thể tùy chỉnh số lượng tầng tích chập được sử dụng trong mỗi khối dày đặc.
 Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với kiến trúc ResNet-18 trong phần trước.
 Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) của các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào sau mỗi khối dày đặc.
@@ -259,7 +259,7 @@ In ResNet, the height and width are reduced between each module by a residual bl
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối phần dư với sải bước bằng 2.
 Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, chiều rộng và số kênh.
 
 ```{.python .input  n=5}
@@ -354,7 +354,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
      * Hãy tìm các phương án khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
 5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần làm vậy với nhiều hơn hai tầng trong DenseNet?
-6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
+6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
