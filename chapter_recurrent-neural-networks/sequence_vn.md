@@ -360,7 +360,7 @@ Instead, we need to work our way forward one step at a time:
 Kết quả khá tốt như những gì chúng ta mong đợi.
 Thậm chí với hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy.
 Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tại các bước thời gian sau đó.
-Thay vào đó, chúng ta cần dịch về phía trước một bước tại một thời điểm:
+Thay vào đó, chúng ta cần dịch về phía trước từng bước một:
 
 
 $$\begin{aligned}
@@ -409,7 +409,7 @@ Tại sao thuật toán trên hoạt động tệ đến thế?
 Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
 Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
 Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
-Các sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng.
+Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng.
 Đây là một hiện tượng khá phổ biến.
 Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
 Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
