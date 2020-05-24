@@ -216,7 +216,7 @@ $128+256+64+64=512$, $112+288+64+64=528$, và $256+320+128+128=832$.
 Số kênh được gán cho các nhánh tương tự như trong mô đun thứ ba: 
 nhánh thứ hai với tầng tích chập $3\times 3$ sẽ cho đầu ra với số kênh lớn nhất, 
 tiếp theo là nhánh thứ nhất với tầng tích chập $1\times 1$, nhánh thứ ba với tầng tích chập $5\times 5$, cuối cùng là nhánh thứ tư với tầng gộp cực đại $3\times 3$.
-Nhánh thứ hai và thứ ba đầu tiên sẽ làm giảm số lượng kênh theo tỷ lệ nhất định. 
+Đầu tiên, nhánh thứ hai và thứ ba sẽ làm giảm số lượng kênh theo một tỷ lệ nhất định.
 Tỷ lệ này sẽ hơi khác nhau trong các khối Inception khác nhau.
 
 ```{.python .input  n=5}
