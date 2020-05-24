@@ -264,10 +264,10 @@ In the first residual block for each of the subsequent modules, the number of ch
 -->
 
 GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
-Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối phần dư có cùng số kênh đầu ra trong mỗi mô-đun.
+Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư có cùng số kênh đầu ra trong mỗi mô-đun.
 Số lượng kênh trong mô-đun đầu tiên bằng số lượng kênh đầu vào.
 Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
-Trong khối phần dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
+Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
 
 <!--
 Now, we implement this module.
@@ -293,8 +293,8 @@ Then, we add all the residual blocks to ResNet.
 Here, two residual blocks are used for each module.
 -->
 
-Sau đó, chúng ta thêm tất cả các khối phần dư vào ResNet.
-Ở đây, hai khối phần dư được sử dụng cho mỗi mô-đun.
+Sau đó, chúng ta thêm tất cả các khối thặng dư vào ResNet.
+Ở đây, hai khối thặng dư được sử dụng cho mỗi mô-đun.
 
 ```{.python .input  n=5}
 net.add(resnet_block(64, 2, first_block=True),
@@ -330,7 +330,7 @@ All these factors have resulted in the rapid and widespread use of ResNet.
 Có 4 tầng tích chập trong mỗi mô-đun (không bao gồm tầng tích chập $1 \times 1$).
 Cùng với tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, có tổng cộng 18 tầng.
 Do đó, mô hình này thường được gọi là ResNet-18.
-Bằng cách thay đổi số lượng kênh và khối phần dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
+Bằng cách thay đổi số lượng kênh và khối thặng dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
 ví dụ ResNet-152 sâu hơn với 152 tầng.
 Mặc dù kiến trúc chính của ResNet tương tự như của GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
 Tất cả các yếu tố này đã dẫn đến sự phổ cập của ResNet diễn ra rất nhanh chóng và rộng rãi.
@@ -396,9 +396,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-* Các khối phần dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
-* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
-* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối phần dư chuyển dữ liệu liên tầng.
+* Các khối thặng dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
+* Thêm các khối thặng dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
+* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối thặng dư chuyển dữ liệu liên tầng.
 * ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu có bản chất tích chập và cả tuần tự.
 
 <!--
