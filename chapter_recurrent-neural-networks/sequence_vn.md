@@ -181,7 +181,7 @@ In particular, if $\tau = 1$, we have a *first order* Markov model and $p(x)$ is
 
 Nhắc lại phép xấp xỉ trong một mô hình tự hồi quy, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$.
 Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn điều kiện *Markov*.
-Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc nhất* và $p(x)$ như sau
+Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc một* và $p(x)$ như sau
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}).$$
