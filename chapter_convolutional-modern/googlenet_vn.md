@@ -5,7 +5,7 @@
 # Networks with Parallel Concatenations (GoogLeNet)
 -->
 
-# Mạng ghép song song (GoogLeNet)
+# Mạng nối song song (GoogLeNet)
 :label:`sec_googlenet`
 
 <!--
@@ -17,11 +17,11 @@ In this section, we will introduce GoogLeNet, presenting a slightly simplified v
 omit a few ad hoc features that were added to stabilize training but are unnecessary now with better training algorithms available.
 -->
 
-Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã dành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp những điểm mạnh của mô hình NiN và các mô hình có cấu trúc các khối lặp lại.
-Trọng tâm của bài báo này là giải quyết câu hỏi: kích thước nào của bộ lọc tầng tích chập là tốt nhất.
-Sự thật là, các mạng phổ biến trước đây đã chọn kích thước bộ lọc từ nhỏ như $1 \times 1$ tới lớn như $11 \times 11$.
-Một cái nhìn sâu sắc trong bài báo này đó là đôi khi nó có thể đem lại hiệu quả khi sử dụng kết hợp các bộ lọc có kích thước khác nhau.
-Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản ban đầu---chúng tôi bỏ qua một số tính năng đặc biệt trước đây được thêm vào nhằm ổn định quá trình huấn luyện nhưng hiện nay không còn cần thiết nữa do đã có các thuật toán huấn luyện tốt hơn.
+Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã giành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp những điểm mạnh của mô hình NiN và mô hình chứa các khối lặp lại.
+Bài báo này tập trung giải quyết câu hỏi: kích thước nào của bộ lọc tích chập là tốt nhất.
+Suy cho cùng, các mạng phổ biến trước đây chọn kích thước bộ lọc từ nhỏ như $1 \times 1$ tới lớn như $11 \times 11$.
+Một góc nhìn sâu sắc trong bài báo này là đôi khi việc kết hợp các bộ lọc có kích thước khác nhau có thể sẽ hiệu quả.
+Trong phần này, chúng tôi sẽ giới thiệu mô hình GoogLeNet, bằng việc trình bày một phiên bản đơn giản hơn một chút so với phiên bản gốc---bỏ qua một số tính năng đặc biệt trước đây được thêm vào nhằm ổn định quá trình huấn luyện nhưng hiện nay không cần thiết nữa do đã có các thuật toán huấn luyện tốt hơn.
 
 <!--
 ## Inception Blocks
@@ -35,7 +35,7 @@ likely named due to a quote from the movie Inception ("We Need To Go Deeper"), w
 -->
 
 Khối tích chập cơ bản trong mô hình GoogLeNet được gọi là Inception, 
-nhiều khả năng được đặt tên dựa theo trích dẫn "Chúng ta cần đi sâu hơn" ("_We Need To Go Deeper_") trong bộ phim Inception, mà sau này đã trở thành một bức biếm hoạ có sức lan tỏa rất lớn trong cộng đồng mạng.
+nhiều khả năng được đặt tên dựa theo câu nói "Chúng ta cần đi sâu hơn" ("_We Need To Go Deeper_") trong bộ phim Inception, sau này đã tạo ra một trào lưu lan rộng trên internet.
 
 <!--
 ![Structure of the Inception block. ](../img/inception.svg)
@@ -53,13 +53,13 @@ Finally, the outputs along each path are concatenated along the channel dimensio
 The commonly-tuned parameters of the Inception block are the number of output channels per layer.
 -->
 
-Như đã mô tả ở hình trên, khối inception bao gồm bốn nhánh song song với nhau. 
-Ba nhánh đầu sử dụng các tầng tích chập với kích thước của cửa sổ trượt lần lượt là $1\times 1$, $3\times 3$, và $5\times 5$ để trích xuất thông tin từ các vùng không gian có kích thước khác nhau. 
-Hai nhánh giữa thực hiện phép tích chập với kích thước cửa sổ trượt là $1\times 1$ trên dữ liệu đầu vào để giảm số kênh của đầu vào, giảm độ phức tạp của mô hình.
-Nhánh thứ tư sử dụng một một tầng gộp cực đại với kích thước cửa sổ trượt là $3\times 3$, theo sau đó là một tầng gộp với kích thước cửa sổ trượt là $1\times 1$ để thay đổi số lượng kênh. 
-Cả bốn nhánh sử dụng đệm hợp lý để đầu vào và đầu ra của khối có cùng kích thước chiều dài và chiều rộng.
-Cuối cùng, những đầu ra của mỗi nhánh sẽ được nối lại với nhau theo chiều của kênh để tạo ra đầu ra của cả khối.
-Các tham số thường được điều chỉnh của khối Inception là số lượng kênh đầu ra của mỗi tầng.
+Như mô tả ở hình trên, khối inception bao gồm bốn nhánh song song với nhau. 
+Ba nhánh đầu sử dụng các tầng tích chập với kích thước cửa sổ trượt lần lượt là $1\times 1$, $3\times 3$, và $5\times 5$ để trích xuất thông tin từ các vùng không gian có kích thước khác nhau. 
+Hai nhánh giữa thực hiện phép tích chập $1\times 1$ trên dữ liệu đầu vào để giảm số kênh đầu vào, từ đó giảm độ phức tạp của mô hình.
+Nhánh thứ tư sử dụng một tầng gộp cực đại kích thước $3\times 3$, theo sau là một tầng tích chập $1\times 1$ để thay đổi số lượng kênh. 
+Cả bốn nhánh sử dụng phần đệm phù hợp để đầu vào và đầu ra của khối có cùng chiều cao và chiều rộng.
+Cuối cùng, các đầu ra của mỗi nhánh sẽ được nối lại theo chiều kênh để tạo thành đầu ra của cả khối.
+Các tham số thường được tinh chỉnh của khối Inception là số lượng kênh đầu ra mỗi tầng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -108,10 +108,10 @@ This means that details at different extents can be recognized efficiently by di
 At the same time, we can allocate different amounts of parameters for different ranges (e.g., more for short range but not ignore the long range entirely).
 -->
 
-Để hình dung tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
-Các bộ lọc này khám phá hình ảnh trên các vùng tiếp nhận có phạm vi kích thước khác nhau. 
-Điều này có nghĩa là những chi tiết ở những vùng phạm vi khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
-Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng có phạm vi lớn)
+Để hiểu trực quan tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
+Chúng khám phá hình ảnh trên các vùng có kích thước khác nhau. 
+Tức là những chi tiết ở những mức độ khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
+Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng phạm vi lớn)
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
