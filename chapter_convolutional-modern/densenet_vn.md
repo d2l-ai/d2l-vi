@@ -234,7 +234,7 @@ DenseNet first uses the same single convolutional layer and maximum pooling laye
 -->
 
 Tiếp theo, ta sẽ xây dựng một mô hình DenseNet.
-Đầu tiên DenseNet sử dụng một tầng tích chập và một tầng gộp cực đại như trong ResNet.
+Đầu tiên, DenseNet sử dụng một tầng tích chập và một tầng gộp cực đại như trong ResNet.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -254,18 +254,18 @@ Here, we set it to 4, consistent with the ResNet-18 in the previous section.
 Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
-Sau đó, tương tự như cách ResNet sử dụng bốn khối thặng dư, DenseNet sẽ dùng bốn khối dày đặc.
+Sau đó, tương tự như cách ResNet sử dụng bốn khối phần dư, DenseNet cũng dùng bốn khối dày đặc.
 Và cũng giống như ResNet, ta có thể tùy chỉnh số lượng tầng tích chập được sử dụng trong mỗi khối dày đặc.
-Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với với kiến trúc ResNet-18 trong phần trước.
-Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào qua mỗi khối dày đặc.
+Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với kiến trúc ResNet-18 trong phần trước.
+Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) của các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào trong mỗi khối dày đặc.
 
 <!--
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
-Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, một nửa chiều rộng và một nửa số kênh.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối phần dư với sải bước bằng 2.
+Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, chiều rộng và số kênh.
 
 ```{.python .input  n=5}
 # Num_channels: the current number of channels
@@ -286,6 +286,7 @@ for i, num_convs in enumerate(num_convs_in_dense_blocks):
 <!--
 Similar to ResNet, a global pooling layer and fully connected layer are connected at the end to produce the output.
 -->
+
 
 Tương tự như ResNet, một tầng gộp toàn cục và một tầng kết nối đầy đủ sẽ được thêm vào cuối mạng để tính toán đầu ra.
 
@@ -310,7 +311,7 @@ net.add(nn.BatchNorm(),
 Since we are using a deeper network here, in this section, we will reduce the input height and width from 224 to 96 to simplify the computation.
 -->
 
-Trong phần này, do sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
+Trong phần này, vì đang sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán, ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 256
@@ -332,7 +333,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Về mặt kết nối xuyên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra theo chiều kênh.
 * Các thành phần chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-* Ta cần kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
+* Ta cần kiểm soát kích thước của các chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
 
 <!--
 ## Exercises
@@ -351,14 +352,14 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 6. Design a DenseNet for fully connected networks and apply it to the Housing Price prediction task.
 -->
 
-1. Tại sao ta sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
+1. Tại sao ta lại sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
-3. DenseNet thường bị chỉ trích vì ngốn nhiều bộ nhớ.
+3. DenseNet thường bị chỉ trích vì nó tiêu tốn nhiều bộ nhớ.
      * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy tìm cách khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
+     * Hãy tìm các phương án khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
-5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần nối các số hạng trong DenseNet có từ hai tầng trở lên?
-6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
+5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần làm vậy với nhiều hơn hai tầng trong DenseNet?
+6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
