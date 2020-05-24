@@ -113,21 +113,22 @@ The right image in :numref:`fig_residual_block` illustrates the basic Residual B
 Similar architectures were later proposed for sequence models which we will study later.
 -->
 
-Bây giờ, chúng ta hãy tập trung vào mạng nơ-ron cục bộ như mô tả dưới đây.
-Ký hiệu đầu vào bởi $\mathbf{x}$.
-Chúng ta giả sử rằng phép chiếu lý tưởng chúng ta muốn đạt được bằng việc học là $f(\mathbf{x})$, được sử dụng là đầu vào của hàm kích hoạt.
-Phần nằm trong viền nét đứt ở bên trái của ảnh cần trực tiếp khớp với ánh xạ $f(\mathbf{x})$.
-Điều này có thể không đơn giản nếu chúng ta không cần một tầng cụ thể đó và chúng ta muốn giữ lại đầu vào $\mathbf{x}$.
-Trong thực tế, phép chiếu thặng dư thường dễ để tối ưu hơn.
-Chúng ta chỉ cần đặt $f(\mathbf{x}) = 0$.
-Phía bên phải ảnh trong :numref:`fig_residual_block` mô tả Khối Thặng dư cơ bản của mạng ResNet.
-Những kiến trúc tương tự sau đó đã được đề xuất cho các mô hình chuỗi mà chúng ta sẽ nghiên cứu trong các chương sau.
+Bây giờ, hãy tập trung vào mạng nơ-ron dưới đây.
+Ký hiệu đầu vào là $\mathbf{x}$.
+Giả sử ánh xạ lý tưởng muốn học được là $f(\mathbf{x})$, là đầu vào của hàm kích hoạt.
+Phần nằm trong viền nét đứt bên trái phải khớp trực tiếp với ánh xạ $f(\mathbf{x})$.
+Điều này có thể không đơn giản nếu chúng ta không cần khối đó và muốn giữ lại đầu vào $\mathbf{x}$.
+Phần nằm trong viền nét đứt bên phải giờ chỉ cần tham số hoá *độ lệch* khỏi giá trị $\mathbf{x}$, vì ta trả về $\mathbf{x} + f(\mathbf{x})$.
+Trên thực tế, ánh xạ phần dư thường dễ tối ưu hơn,
+vì chỉ cần đặt $f(\mathbf{x}) = 0$.
+Nửa bên phải :numref:`fig_residual_block` mô tả khối phần dư cơ bản của ResNet.
+Về sau, những kiến trúc tương tự đã được đề xuất cho các mô hình chuỗi (*sequence model*), sẽ đề cập ở chương sau.
 
 <!--
 ![The difference between a regular block (left) and a residual block (right). In the latter case, we can short-circuit the convolutions.](../img/residual-block.svg)
 -->
 
-![Sự khác biệt giữa một khối thông thường (trái) và một khối thặng dư (phải). Trong trường hợp sau, chúng ta có thể bỏ qua các tích chập.](../img/residual-block.svg)
+![Sự khác biệt giữa một khối thông thường (trái) và một khối phần dư (phải). Trong khối phần dư, ta có thể nối tắt các tích chập.](../img/residual-block.svg)
 :label:`fig_residual_block`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -143,13 +144,15 @@ This kind of design requires that the output of the two convolutional layers be 
 If we want to change the number of channels or the stride, we need to introduce an additional $1\times 1$ convolutional layer to transform the input into the desired shape for the addition operation.
 Let us have a look at the code below.
 -->
-ResNet tuân theo thiết kế tầng tích chập đầy đủ $3\times 3$ của VGG.
-Khối thặng dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
+
+ResNet có thiết kế tầng tích chập $3\times 3$ giống VGG.
+Khối phần dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
 Mỗi tầng tích chập được theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
-Sau đó, chúng ta bỏ qua hai phép tính tích chập và cộng với giá trị đầu vào trước hàm kích hoạt ReLU cuối cùng.
-Kiểu thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, để có thể cộng lại với nhau.
-Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần bổ sung một tầng tích chập $1\times 1$ để thay đổi kích thước giá trị đầu vào cho phù hợp với phép cộng.
+Ta đưa đầu vào qua khối phần dư rồi cộng với chính nó trước hàm kích hoạt ReLU cuối cùng.
+Thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với đầu vào, để có thể cộng lại với nhau.
+Nếu muốn thay đổi số lượng kênh hoặc sải bước trong khối phần dư, cần thêm một tầng tích chập $1\times 1$ để thay đổi kích thước đầu vào tương ứng ở nhánh ngoài.
 Hãy cùng xem đoạn mã bên dưới.
+
 ```{.python .input  n=1}
 import d2l
 from mxnet import np, npx
@@ -184,8 +187,11 @@ This code generates two types of networks: one where we add the input to the out
 and whenever `use_1x1conv=True`, one where we adjust channels and resolution by means of a $1 \times 1$ convolution before adding.
 :numref:`fig_resnet_block` illustrates this:
 -->
-Đoạn mã này sinh ra hai loại mạng nơ-ron: một loại cộng giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), còn ở loại thứ hai chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
-:numref:`fig_resnet_block` minh họa cho điều này:
+
+Đoạn mã này tạo ra hai loại mạng: một loại cộng đầu vào vào đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), 
+còn ở loại thứ hai chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
+:numref:`fig_resnet_block` minh họa điều này:
+
 <!--
 ![Left: regular ResNet block; Right: ResNet block with 1x1 convolution](../img/resnet-block.svg)
 -->
@@ -196,7 +202,9 @@ and whenever `use_1x1conv=True`, one where we adjust channels and resolution by 
 <!--
 Now let us look at a situation where the input and output are of the same shape.
 -->
-Giờ hãy cùng xem xét một tình huống mà cả giá trị đầu vào và đầu ra có cùng kích thước.
+
+Giờ hãy xem xét tình huống khi cả đầu vào và đầu ra có cùng kích thước.
+
 ```{.python .input  n=2}
 blk = Residual(3)
 blk.initialize()
@@ -207,7 +215,9 @@ blk(X).shape
 <!--
 We also have the option to halve the output height and width while increasing the number of output channels.
 -->
-Chúng ta cũng có một lựa chọn khác là giảm kích thước chiều cao và chiều rộng đi một nửa trong khi tăng số lượng kênh của đầu ra.
+
+Chúng ta cũng có thể giảm một nửa kích thước chiều cao và chiều rộng của đầu ra trong khi tăng số kênh.
+
 ```{.python .input  n=3}
 blk = Residual(6, use_1x1conv=True, strides=2)
 blk.initialize()
@@ -254,10 +264,10 @@ In the first residual block for each of the subsequent modules, the number of ch
 -->
 
 GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
-Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư có cùng số kênh đầu ra trong mỗi mô-đun.
+Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối phần dư có cùng số kênh đầu ra trong mỗi mô-đun.
 Số lượng kênh trong mô-đun đầu tiên bằng số lượng kênh đầu vào.
 Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
-Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
+Trong khối phần dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
 
 <!--
 Now, we implement this module.
@@ -283,8 +293,8 @@ Then, we add all the residual blocks to ResNet.
 Here, two residual blocks are used for each module.
 -->
 
-Sau đó, chúng ta thêm tất cả các khối thặng dư vào ResNet.
-Ở đây, hai khối thặng dư được sử dụng cho mỗi mô-đun.
+Sau đó, chúng ta thêm tất cả các khối phần dư vào ResNet.
+Ở đây, hai khối phần dư được sử dụng cho mỗi mô-đun.
 
 ```{.python .input  n=5}
 net.add(resnet_block(64, 2, first_block=True),
@@ -320,7 +330,7 @@ All these factors have resulted in the rapid and widespread use of ResNet.
 Có 4 tầng tích chập trong mỗi mô-đun (không bao gồm tầng tích chập $1 \times 1$).
 Cùng với tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, có tổng cộng 18 tầng.
 Do đó, mô hình này thường được gọi là ResNet-18.
-Bằng cách thay đổi số lượng kênh và khối thặng dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
+Bằng cách thay đổi số lượng kênh và khối phần dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
 ví dụ ResNet-152 sâu hơn với 152 tầng.
 Mặc dù kiến trúc chính của ResNet tương tự như của GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
 Tất cả các yếu tố này đã dẫn đến sự phổ cập của ResNet diễn ra rất nhanh chóng và rộng rãi.
@@ -386,9 +396,9 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-* Các khối thặng dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
-* Thêm các khối thặng dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
-* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối thặng dư chuyển dữ liệu liên tầng.
+* Các khối phần dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
+* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
+* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối phần dư chuyển dữ liệu liên tầng.
 * ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu có bản chất tích chập và cả tuần tự.
 
 <!--
