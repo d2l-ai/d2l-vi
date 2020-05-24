@@ -241,7 +241,7 @@ Thành phần thứ năm có hai khối Inception với số kênh đầu ra l�
 Số lượng kênh được gán cho mỗi nhánh tương tự như trong mô đun thứ ba và thứ tư, chỉ khác nhau ở giá trị cụ thể.
 Lưu ý rằng thành phần thứ năm được theo sau bởi tầng đầu ra.
 Thành phần này sử dụng tầng gộp trung bình toàn cục để giảm chiều cao và chiều rộng của mỗi kênh xuống còn 1, giống như trong mô hình NiN. 
-Cuối cùng, chúng ta biến đổi đầu ra thành một mảng hai chiều, đưa vào một tầng kết nối đầy đủ với số đầu ra bằng với số các lớp nhãn.
+Cuối cùng, chúng ta biến đổi đầu ra thành một mảng hai chiều, đưa vào một tầng kết nối đầy đủ với số đầu ra bằng số lượng lớp của nhãn.
 
 ```{.python .input  n=6}
 b5 = nn.Sequential()
