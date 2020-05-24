@@ -260,7 +260,7 @@ This simplifies the computation.
 The changes in the shape of the output between the various modules is demonstrated below.
 -->
 
-Mô hình GoogLeNet phức tạp về mặt tính toán, nên không dễ để thay đổi số lượng kênh giống như VGG.
+Mô hình GoogLeNet khá phức tạp về mặt tính toán, nên không dễ để thay đổi số lượng kênh giống như VGG.
 Để có thời gian huấn luyện hợp lý trên bộ dữ liệu Fashion-MNIST, chúng ta cần giảm chiều cao và chiều rộng của đầu vào từ 224 xuống 96.
 Điều này làm đơn giản hoá việc tính toán.
 Sự thay đổi ở kích thước đầu ra giữa các mô đun khác nhau được minh hoạ như dưới đây.
