@@ -58,7 +58,7 @@ Ba nhánh đầu sử dụng các tầng tích chập với kích thước cửa
 Hai nhánh giữa thực hiện phép tích chập $1\times 1$ trên dữ liệu đầu vào để giảm số kênh đầu vào, từ đó giảm độ phức tạp của mô hình.
 Nhánh thứ tư sử dụng một tầng gộp cực đại kích thước $3\times 3$, theo sau là một tầng tích chập $1\times 1$ để thay đổi số lượng kênh. 
 Cả bốn nhánh sử dụng phần đệm phù hợp để đầu vào và đầu ra của khối có cùng chiều cao và chiều rộng.
-Cuối cùng, các đầu ra của mỗi nhánh sẽ được nối lại theo chiều kênh để tạo ra đầu ra của cả khối.
+Cuối cùng, các đầu ra của mỗi nhánh sẽ được nối lại theo chiều kênh để tạo thành đầu ra của cả khối.
 Các tham số thường được tinh chỉnh của khối Inception là số lượng kênh đầu ra mỗi tầng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
