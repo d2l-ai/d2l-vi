@@ -261,8 +261,8 @@ Out of the 10 most frequent word pairs, 9 are composed of stop words and only on
 Furthermore, let us see whether the trigram frequency behaves in the same manner.
 -->
 
-Hai điều này rất đáng chú ý.
-9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là có liên quan đến cuốn sách đó là từ --- "thời gian".
+Có hai điều đáng chú ý ở đây.
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách---từ "the time".
 Hơn nữa, chúng ta hãy xem liệu tần xuất trigram có hoạt động theo cách tương tự hay không.
 
 
@@ -277,7 +277,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-Cuối cùng, chúng ta hãy hình dung tần xuất của token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
+Cuối cùng, chúng ta hãy quan sát biểu đồ tần xuất token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
 
 
 ```{.python .input  n=5}
@@ -296,10 +296,10 @@ This gives us hope that there is quite a lot of structure in language.
 Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use deep learning based models.
 -->
 
-Biểu đồ này khá thú vị với một số lý do sau đây.
+Biểu đồ này khá thú vị bởi một vài lý do.
 Thứ nhất, ngoài các từ unigram, các chuỗi của các từ cũng xuất hiện theo định luật Zipf, mặc dù với một số mũ thấp hơn, tùy thuộc vào chiều dài chuỗi.
 Thứ hai, số lượng các n-gram duy nhất không phải là lớn.
-Điều này cho phép chúng ta hy vọng rằng có khá nhiều cấu trúc trong ngôn ngữ.
+Điều này cho chúng ta hy vọng về số lượng lớn các cấu trúc trong ngôn ngữ.
 Thứ ba, rất nhiều n-gram hiếm khi tồn tại, khiến cho phép làm mịn Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng mô hình học sâu.
 
 
@@ -318,20 +318,19 @@ We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`
 Let us formalize this a bit.
 -->
 
-Trước khi giới thiệu các mô hình này, chúng ta hãy giả sử sẽ sử dụng một mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
-Bây giờ câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
-Bởi vì dữ liệu chuỗi có bản chất tuần tự, chúng ta cần phải giải quyết vấn đề xử lý xử liệu này.
-Chúng ta đã thực hiện bức này một cách khá đặc biệt được giới thiệu trong :numref: `sec_sequence`.
-Hãy để chúng ta hợp thức hóa bước này một chút.
-
+Trước khi giới thiệu các mô hình này, hãy giả sử ta sử dụng mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
+Câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
+Do bản chất tuần tự của dữ liệu chuỗi, chúng ta cần giải quyết các vấn đề khi thực hiện xử lý nó .
+Điều này đã được giới thiệu một cách khá đặc biệt trong :numref:`sec_sequence`.
+Hãy hợp thức hóa bước này một chút.
 
 <!--
 In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtain 5-grams in a sentence, here a token is a character.
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-Trong hình :numref: `fig_timemachine_5gram`, chúng ta đã biểu diễn một vài cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
-Lưu ý rằng chúng ta có khá nhiều tự do vì chúng ta có thể chọn một tùy ý bù đắp.
+Trong :numref: `fig_timemachine_5gram`, ta đã biểu diễn bằng nhiều cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+Lưu ý rằng chúng ta có khá nhiều tự do vì có thể chọn một phần bù tùy ý.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
