@@ -25,7 +25,7 @@ Rather than *learn the features*, the features were *crafted*.
 Most of the progress came from having more clever ideas for features, and the learning algorithm was often relegated to an afterthought.
 -->
 
-Với thị giác máy tính, sự so sánh này không công bằng cho lắm.
+Với thị giác máy tính, phép so sánh này dường như không công bằng cho lắm.
 Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh thô hoặc xử lý sơ qua (như định tâm ảnh (*centering*)), và những giá trị thô này không bao giờ được truyền trực tiếp vào các mô hình truyền thống.
 Thay vào đó, các hệ thống thị giác máy tính cổ điển sẽ có những pipeline trích xuất đặc trưng một cách thủ công.
 Thay vì *học*, các đặc trưng được *tạo thủ công*.
