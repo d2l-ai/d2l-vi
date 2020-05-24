@@ -29,7 +29,7 @@ Với thị giác máy tính, phép so sánh này dường như không công b�
 Lí do là giá trị đầu vào của mạng tích chập chỉ bao gồm giá trị điểm ảnh thô hoặc xử lý sơ qua (như định tâm ảnh (*centering*)), và kinh nghiệm cho thấy những giá trị thô này không bao giờ được dùng trực tiếp trong các mô hình truyền thống.
 Thay vào đó, các hệ thống thị giác máy tính cổ điển dùng những pipeline trích xuất đặc trưng một cách thủ công.
 Thay vì *được học*, các đặc trưng được *tạo thủ công*.
-Hầu hết những phát triển đều đến từ các ý tưởng thông minh hơn trong tạo đặc trưng, và ít để ý hơn tới thuật toán học.
+Hầu hết những tiến triển đều đến từ các ý tưởng thông minh hơn trong tạo đặc trưng, và ít để ý hơn tới thuật toán học.
 
 <!--
 Although some neural network accelerators were available in the 1990s, they were not yet sufficiently powerful to make deep multichannel, 
