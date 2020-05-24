@@ -345,7 +345,7 @@ Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhi
     * Sử dụng kỹ thuật 'làm mượt nhãn' (*label smoothing*) để điều chuẩn mô hình :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
     * Tích hợp nó vào kết nối phần dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả trong phần sau :numref:`sec_resnet`.
 1. Kích thước tối thiểu của hình ảnh với GoogLeNet là bao nhiêu?
-2. So sánh số lượng tham số mô hình của AlexNet, VGG và NiN với GoogLeNet. Làm thế nào NiN và GoogLeNet giảm đáng kể số lượng tham số? 
+2. So sánh số lượng tham số mô hình của AlexNet, VGG và NiN với GoogLeNet. NiN và GoogLeNet đã giảm được đáng kể số lượng tham số như thế nào? 
 3. Tại sao chúng ta cần tầng tích chập kích thước lớn ở đầu mạng?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
