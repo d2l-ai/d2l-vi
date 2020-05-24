@@ -316,7 +316,7 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 -->
 
 * Khối Inception tương đương với một mạng con với bốn nhánh. 
-Nó trích xuất thông tin song song với nhau thông qua các tầng tích chập với kích thước cửa sổ khác nhau và các tầng gộp cực đại. 
+Nó trích xuất thông tin một cách song song thông qua các tầng tích chập với kích thước cửa sổ khác nhau và các tầng gộp cực đại. 
 * Phép tích chập $1 \times 1$ giảm số kênh ở mức độ điểm ảnh. Phép gộp cực đại giảm độ phân giải.
 * Trong GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác theo chuỗi. 
 Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhiều kết quả thử nghiệm trên bộ dữ liệu ImageNet.
