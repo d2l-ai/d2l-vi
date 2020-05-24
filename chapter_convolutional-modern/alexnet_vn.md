@@ -13,7 +13,7 @@ Although LeNet achieved good results on early small datasets, the performance an
 In fact, for much of the intervening time between the early 1990s and the watershed results of 2012, neural networks were often surpassed by other machine learning methods, such as support vector machines.
 -->
 
-Mặc dù đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi LeNet được giới thiệu, mạng nơ-ron tích chập chưa ngay lập tức thống trị lĩnh vực này.
+Mặc dù đã trở nên nổi tiếng trong cộng đồng thị giác máy tính và học máy sau khi LeNet được giới thiệu, mạng nơ-ron tích chập chưa lập tức thống trị lĩnh vực này.
 Dẫu LeNet đã đạt được kết quả tốt trên những tập dữ liệu nhỏ, chất lượng và tính khả thi của việc huấn luyện mạng tích chập trên một tập dữ liệu lớn và sát thực tế hơn vẫn là một câu hỏi.
 Trên thực tế, hầu hết khoảng thời gian từ đầu những năm 1990 cho tới thành tựu bước ngoặt năm 2012, mạng nơ-ron tích chập thường không sánh bằng những phương pháp học máy khác, như Máy vector hỗ trợ - SVM.
 
