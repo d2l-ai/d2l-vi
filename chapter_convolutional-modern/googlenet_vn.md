@@ -185,7 +185,7 @@ The number of output channels of the second Inception block is increased to $128
 The second and third paths first reduce the number of input channels to $128/256=1/2$ and $32/256=1/8$, respectively.
 -->
 
-Thành phần thứ ba kết nối hai khối Inception hoàn chỉnh. 
+Thành phần thứ ba kết nối hai khối Inception hoàn chỉnh một cách tuần tự. 
 Số kênh đầu ra của khối Inception đầu tiên là $64+128+32+32=256$, và tỉ lệ số kênh của bốn nhánh là $64:128:32:32=2:4:1:1$. 
 Nhánh thứ hai và nhánh thứ ba của khối này ở tầng tích chập đầu tiên làm giảm số lượng kênh đầu vào với tỉ lệ lần lượt là $96/192=1/2$ và $16/192=1/12$, sau đó kết nối với tầng tích chập thứ hai. 
 Số kênh đầu ra của khối Inception thứ hai tăng lên tới $128+192+96+64=480$, và tỉ lệ số kênh của bốn nhánh là $128:192:96:64 = 4:6:3:2$. 
