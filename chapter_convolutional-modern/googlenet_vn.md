@@ -291,7 +291,7 @@ As before, we train our model using the Fashion-MNIST dataset.
 We transform it to $96 \times 96$ pixel resolution before invoking the training procedure.
 -->
 
-Vẫn như trước, chúng ta huấn luyện mô hình sử dụng bộ dữ liệu Fashion-MNIST. 
+Vẫn như trước, chúng ta sử dụng tập dữ liệu Fashion-MNIST để huấn luyện mô hình. 
 Chúng ta chuyển đổi độ phân giải hình ảnh thành $96 \times 96$ điểm ảnh trước khi bắt đầu quá trình huấn luyện.
 
 ```{.python .input  n=8}
