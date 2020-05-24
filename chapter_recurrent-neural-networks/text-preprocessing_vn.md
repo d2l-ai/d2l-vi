@@ -185,7 +185,7 @@ for i in range(8, 10):
 ## Putting All Things Together
 -->
 
-## Tổng hợp lại tất cả các bước trên
+## Kết hợp các bước trên
 
 
 <!--
@@ -196,7 +196,7 @@ Besides, we use character tokens to simplify the training in later sections.
 -->
 
 Chúng ta đóng gói tất cả các hàm trên thành hàm `load_corpus_time_machine`, mà trả về `corpus`, một danh sách các chỉ số của token, và bộ từ vựng `vocab` của kho ngữ liệu cỗ máy thời gian.
-Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách duy nhất, không phải là một danh sách của các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình sau.
+Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách đơn nhất, không phải một danh sách các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình sau.
 Bên cạnh đó, chúng ta sẽ sử dụng các token ký tự để đơn giản hóa việc huấn luyện mô hình trong các phần sau.
 
 
@@ -226,7 +226,7 @@ len(corpus), len(vocab)
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
 -->
 
-* Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách chia chúng thành các từ hoặc các ký tự (*tokenize*) và sau đó ánh xạ chúng thành các chỉ số tương ứng.
+* Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá và sau đó ánh xạ chúng thành các chỉ số tương ứng.
 
 
 
@@ -242,9 +242,9 @@ It varies for different languages.
 Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
-Phép chia nhỏ thành các token (*Tokenization*) là một bước tiền xử lý quan trọng.
+Token hoá là một bước tiền xử lý quan trọng.
 Nó thay đổi theo các ngôn ngữ khác nhau.
-Hãy thử tìm thêm 3 phương pháp thường được sử dụng để chia các câu thành các token.
+Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câu.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
