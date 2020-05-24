@@ -93,20 +93,21 @@ Trên thực tế, các trận động đất có mối tương quan về mặt 
 ## Statistical Tools
 -->
 
-## *dịch tiêu đề phía trên*
+## Các công cụ thống kê
 
 <!--
 In short, we need statistical tools and new deep neural networks architectures to deal with sequence data.
 To keep things simple, we use the stock price illustrated in :numref:`fig_ftse100` as an example.
 -->
 
-*dịch đoạn phía trên*
+Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
+Để đơn giản hóa mọi việc, ta sẽ sử dụng giá cổ phiếu được minh họa trong :numref:`fig_ftse100` để làm ví dụ.
 
 <!--
 ![FTSE 100 index over 30 years](../img/ftse100.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ftse100.png)
+![Giá cổ phiếu FTSE 100 trong vòng 30 năm](../img/ftse100.png)
 :width:`400px`
 :label:`fig_ftse100`
 
@@ -115,7 +116,8 @@ Let us denote the prices by $x_t \geq 0$, i.e., at time $t \in \mathbb{N}$ we ob
 For a trader to do well in the stock market on day $t$ he should want to predict $x_t$ via
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ gọi giá cổ phiếu là $x_t \geq 0$, tức tại thời điểm $t \in \mathbb{N}$ ta thấy giá cổ phiếu bằng $x_t$.
+Để có thể kiếm lời trên thị trường chứng khoán vào ngày $t$, một nhà giao dịch sẽ muốn dự đoán $x_t$ thông qua
 
 $$x_t \sim p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
@@ -123,7 +125,7 @@ $$x_t \sim p(x_t \mid x_{t-1}, \ldots, x_1).$$
 ### Autoregressive Models
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình tự hồi quy
 
 <!--
 In order to achieve this, our trader could use a regressor such as the one we trained in :numref:`sec_linear_gluon`.
@@ -133,7 +135,11 @@ Much of what follows in this chapter will revolve around how to estimate $p(x_t 
 In a nutshell it boils down to two strategies:
 -->
 
-*dịch đoạn phía trên*
+Để dự đoán giá cổ phiếu, các nhà giao dịch có thể sử dụng một mô hình hồi quy, chẳng hạn như mô hình mà ta đã huấn luyện trong :numref:`sec_linear_gluon`.
+Chỉ có một vấn đề lớn ở đây, đó là số lượng đầu vào, $x_{t-1}, \ldots, x_1$ thay đổi tùy thuộc vào $t$.
+Cụ thể, số lượng đầu vào sẽ tăng cùng với lượng dữ liệu thu được và ta sẽ cần một phép tính xấp xỉ để làm cho giải pháp này khả thi về mặt tính toán.
+Phần lớn nội dung tiếp theo trong chương này sẽ xoay quanh việc làm thế nào để ước lượng $p(x_t \mid x_{t-1}, \ldots, x_1)$ một cách hiệu quả.
+Tóm lại, ta có hai chiến lược:
 
 <!--
 1. Assume that the potentially rather long sequence $x_{t-1}, \ldots, x_1$ is not really necessary. 
@@ -147,13 +153,21 @@ Since $h_t$ is never observed, these models are also called *latent autoregressi
 LSTMs and GRUs are examples of this.
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử rằng việc sử dụng một chuỗi có thể rất dài $x_{t-1}, \ldots, x_1$ là không thực sự cần thiết.
+Trong trường hợp này, ta có thể hài lòng với một khoảng thời gian $\tau$ và chỉ sử dụng các quan sát $x_{t-1}, \ldots, x_{t-\tau}$.
+Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng nhau, ít nhất là với $t > \tau$.
+Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
+Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy trên chính nó.
+2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một giá trị $h_t$ để tóm tắt các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
+Kết quả là mô hình sẽ ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
+Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy tiềm ẩn* (_latent autoregressive model_).
+LSTM và GRU là hai ví dụ cho kiểu mô hình này.
 
 <!--
 ![A latent autoregressive model. ](../img/sequence-model.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/sequence-model.svg)
+![Một mô hình tự hồi quy tiềm ẩn. ](../img/sequence-model.svg)
 :label:`fig_sequence-model`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
