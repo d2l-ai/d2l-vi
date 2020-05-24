@@ -103,6 +103,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dev set performance       | chất lượng trên tập phát triển  |                                              |
 | development set           | tập phát triển                  |                                              |
 | differentiable            | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
+| dimension                   |  chiều                         |                                       |
 | dimensionality            | kích thước chiều                |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
