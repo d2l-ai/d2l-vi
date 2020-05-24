@@ -18,8 +18,8 @@ Such preprocessing often consists of four steps:
 
 Dữ liệu văn bản là một ví dụ điển hình của dữ liệu chuỗi.
 Một bài báo có thể coi là một chuỗi các từ, hoặc một chuỗi các ký tự.
-Với dữ liệu văn bản là một định dạng dữ liệu quan trọng bên cạnh những dữ liệu hình ảnh được chúng ta sử dụng trong cuốn sách này, phần này được dành để giải thích các bước tiền xử lý phổ biến cho dữ liệu văn bản.
-Các bước tiền xử lý thường bao gồm bốn bước sau:
+Với dữ liệu văn bản là một dạng dữ liệu quan trọng bên cạnh dữ liệu hình ảnh được sử dụng trong cuốn sách này, phần này sẽ dành để giải thích các bước tiền xử lý thường gặp cho loại dữ liệu này.
+Quá trình tiền xử lý thường bao gồm bốn bước sau:
 
 <!--
 1. Load text as strings into memory.
@@ -50,11 +50,11 @@ The following function reads the dataset into a list of sentences, each sentence
 Here we ignore punctuation and capitalization.
 -->
 
-Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells' (*Time Machine*).
+Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian (*Time Machine*)] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells.
 Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30,000$ từ, nhưng nó đủ tốt cho mục đích minh họa.
 Nhiều bộ dữ liệu trên thực tế chứa hàng tỷ từ.
 Hàm sau đây đọc dữ liệu thành một danh sách các câu, mỗi câu là một chuỗi.
-Chúng ta bỏ qua dấu chấm câu và viết hoa.
+Chúng ta bỏ qua dấu câu và chữ viết hoa.
 
 
 ```{.python .input}
