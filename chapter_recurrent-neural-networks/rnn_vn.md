@@ -365,8 +365,8 @@ Let us look at a number of cases:
 4. What are some of the problems associated with the simple sequence model described above?
 -->
 
-1. Nếu ta sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản, ta sẽ cần đầu ra có bao nhiêu chiều?
-2. Thử thiết kế một ánh xạ trong đó một RNN với các trạng thái ẩn là chính xác. Gợi ý: một số lượng từ hữu hạn thì sao? <!-- Mình chưa hiểu câu hỏi này, reviewers gợi ý giúp mình cách dịch. Thanks -->
+1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều?
+2. Thử thiết kế một ánh xạ trong đó một RNN với các trạng thái ẩn  chính xác. Gợi ý: một số lượng từ hữu hạn thì sao? <!-- Mình chưa hiểu rõ câu hỏi này, bạn nào review gợi ý giúp mình nhé. Thanks -->
 3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài?
 4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì?
 
