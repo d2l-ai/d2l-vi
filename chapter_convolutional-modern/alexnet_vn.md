@@ -81,7 +81,7 @@ Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều b
 Lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
 Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là các đặc trưng mới mang tính quyết định tới chất lượng chứ không phải các thuật toán học.
-Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn hay sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
+Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn, sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
