@@ -17,7 +17,7 @@ In this section, we will introduce GoogLeNet, presenting a slightly simplified v
 omit a few ad hoc features that were added to stabilize training but are unnecessary now with better training algorithms available.
 -->
 
-Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã dành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp những điểm mạnh của mô hình NiN và các mô hình có cấu trúc các khối lặp lại.
+Vào năm 2014, bài báo khoa học :cite:`Szegedy.Liu.Jia.ea.2015` đã giành chiến thắng ở cuộc thi ImageNet, bằng việc đề xuất một cấu trúc kết hợp những điểm mạnh của mô hình NiN và mô hình chứa các khối lặp lại.
 Bài báo này tập trung giải quyết câu hỏi: kích thước nào của bộ lọc tích chập là tốt nhất.
 Suy cho cùng, các mạng phổ biến trước đây chọn kích thước bộ lọc từ nhỏ như $1 \times 1$ tới lớn như $11 \times 11$.
 Một góc nhìn sâu sắc trong bài báo này là đôi khi việc kết hợp các bộ lọc có kích thước khác nhau có thể sẽ hiệu quả.
