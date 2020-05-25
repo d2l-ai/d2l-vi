@@ -86,7 +86,8 @@ lines = read_time_machine()
 ## Tokenization
 -->
 
-## *dịch tiêu đề phía trên*
+## Token hoá
+
 
 <!--
 For each sentence, we split it into a list of tokens.
@@ -94,7 +95,10 @@ A token is a data point the model will train and predict.
 The following function supports splitting a sentence into words or characters, and returns a list of split strings.
 -->
 
-*dịch đoạn phía trên*
+Với mỗi câu, chúng ta chia nó thành một danh sách các token.
+Một token là một điểm dữ liệu mà mô hình sẽ huấn luyện và đưa ra dự đoán cho nó.
+Hàm dưới đây làm nhiệm vụ tách một câu thành các từ hoặc các ký tự, và trả về một danh sách các chuỗi đã được phân tách.
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -115,7 +119,8 @@ tokens[0:2]
 ## Vocabulary
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Từ vựng
+
 
 <!--
 The string type of the token is inconvenient to be used by models, which take numerical inputs.
@@ -126,7 +131,12 @@ A token does not exist in corpus or has been removed is mapped into a special un
 We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token for padding, “&lt;bos&gt;” to present the beginning for a sentence, and “&lt;eos&gt;” for the ending of a sentence.
 -->
 
-*dịch đoạn phía trên*
+Chuỗi của các token là không kiểu dữ liệu tiện lợi cho các mô hình mà thường nhận dữ liệu đầu vào dưới dạng số.
+Bây giờ, chúng ta sẽ xây dựng một bộ từ điển, thường được gọi là *bộ từ vựng* (*vocabulary*), để ánh xạ chuỗi token thành các chỉ số bắt đầu từ 0.
+Để làm điều này, đầu tiên chúng ta lấy các token xuất hiện (không lặp lại) trong toàn bộ tài liệu, thường được gọi là kho ngữ liệu (*corpus*), và sau đó gán một giá trị số (chỉ số) cho mỗi token dựa trên tần suất xuất hiện của chúng.
+Các token có tần suất xuất hiện rất ít thường được loại bỏ để giảm độ phức tạp.
+Một token không xuất hiện trong kho ngữ liệu hay đã bị loại bỏ thường được ánh xạ vào một token vô danh đặc biệt (“&lt;unk&gt;”). 
+Chúng ta có thể thêm vào các token dự trữ, ví dụ token “&lt;pad&gt;” được sử dụng để đệm từ, token “&lt;bos&gt;” để biểu thị vị trí bắt đầu của câu, và token “&lt;eos&gt;” để biểu thị vị trí kết thúc của câu.
 
 
 ```{.python .input  n=9}
@@ -171,7 +181,8 @@ def count_corpus(sentences):
 We construct a vocabulary with the time machine dataset as the corpus, and then print the map between a few tokens and their indices.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xây dựng một bộ từ vựng với tập dữ liệu cỗ máy thời gian nói trên thành một kho ngữ liệu và hãy in phép chiếu giữa một vài token và các chỉ số của chúng.
+
 
 ```{.python .input  n=23}
 vocab = Vocab(tokens)
@@ -183,7 +194,9 @@ After that, we can convert each sentence into a list of numerical indices.
 To illustrate in detail, we print two sentences with their corresponding indices.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, chúng ta có thể chuyển đổi từng câu vào một danh sách các chỉ số.
+Để minh họa một cách chi tiết, chúng ta hãy in hai câu với các chỉ số tương ứng của chúng.
+
 
 ```{.python .input  n=25}
 for i in range(8, 10):
@@ -278,7 +291,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 *
