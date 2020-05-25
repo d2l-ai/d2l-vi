@@ -360,7 +360,7 @@ Instead, we need to work our way forward one step at a time:
 Kết quả khá tốt như những gì chúng ta mong đợi.
 Thậm chí với hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy.
 Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tại các bước thời gian sau đó.
-Thay vào đó, chúng ta cần dịch về phía trước từng bước một:
+Thay vào đó, chúng ta cần tiến lên từng bước một:
 
 
 $$\begin{aligned}
@@ -404,7 +404,7 @@ We will discuss methods for improving this throughout this chapter and beyond.
 -->
 
 Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
-Các giá trị ước lượng giảm dần tới một hằng số khá nhanh sau một vài bước thời gian.
+Các giá trị ước lượng rất nhanh chóng suy giảm thành một hằng số chỉ sau một vài bước.
 Tại sao thuật toán trên hoạt động tệ đến thế?
 Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
 Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
@@ -441,7 +441,7 @@ While the 8-step predictions are still pretty good, anything beyond that is pret
 -->
 
 Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai.
-Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó rất khó tin cậy.
+Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó thì hoàn toàn vô dụng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
