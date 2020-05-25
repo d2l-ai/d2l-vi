@@ -131,7 +131,7 @@ The architecture is depicted below.
 -->
 
 Như trình bày ở :numref:`fig_inception_full`, mô hình GoogLeNet sử dụng tổng cộng 9 khối inception và tầng gộp trung bình toàn cục xếp chồng lên nhau. 
-Phép gộp cực đại giữa các khối inception có tác dụng làm giảm số chiều. 
+Phép gộp cực đại giữa các khối inception có tác dụng làm giảm kích thước chiều. 
 Phần đầu tiên của GoogleNet giống AlexNet và LeNet, có các khối xếp chồng lên nhau kế thừa từ thiết kế của VGG và phép gộp trung bình toàn cục giúp tránh phải sử dụng nhiều tầng kết nối đầy đủ liên tiếp ở cuối. 
 Cấu trúc của mô hình được mô tả như dưới đây.
 
