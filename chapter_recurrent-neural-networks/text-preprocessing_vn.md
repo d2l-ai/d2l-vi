@@ -185,7 +185,7 @@ for i in range(8, 10):
 ## Putting All Things Together
 -->
 
-## Kết hợp các bước trên
+## Kết hợp Tất cả lại
 
 
 <!--
@@ -196,7 +196,7 @@ Besides, we use character tokens to simplify the training in later sections.
 -->
 
 Chúng ta đóng gói tất cả các hàm trên thành hàm `load_corpus_time_machine`, mà trả về `corpus`, một danh sách các chỉ số của token, và bộ từ vựng `vocab` của kho ngữ liệu cỗ máy thời gian.
-Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách đơn nhất, không phải một danh sách các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình sau.
+Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách đơn nhất, không phải một danh sách các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình bên dưới.
 Bên cạnh đó, chúng ta sẽ sử dụng các token ký tự để đơn giản hóa việc huấn luyện mô hình trong các phần sau.
 
 
@@ -243,7 +243,7 @@ Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
 Token hoá là một bước tiền xử lý quan trọng.
-Nó thay đổi theo các ngôn ngữ khác nhau.
+Mỗi ngôn ngữ có đều có các cách làm khác nhau.
 Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câu.
 
 
