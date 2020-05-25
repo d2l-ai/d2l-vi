@@ -212,7 +212,8 @@ for i in range(8, 10):
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại
+
 
 <!--
 Using the above functions, we package everything into the `load_corpus_time_machine` function, 
@@ -221,7 +222,10 @@ The modification we did here is that `corpus` is a single list, not a list of to
 Besides, we use character tokens to simplify the training in later sections.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đóng gói tất cả các hàm trên thành hàm `load_corpus_time_machine`, mà trả về `corpus`, một danh sách các chỉ số của token, và bộ từ vựng `vocab` của kho ngữ liệu cỗ máy thời gian.
+Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách đơn nhất, không phải một danh sách các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình bên dưới.
+Bên cạnh đó, chúng ta sẽ sử dụng các token ký tự để đơn giản hóa việc huấn luyện mô hình trong các phần sau.
+
 
 
 ```{.python .input}
@@ -249,7 +253,8 @@ len(corpus), len(vocab)
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá và sau đó ánh xạ chúng thành các chỉ số tương ứng.
+
 
 
 <!--
@@ -264,7 +269,10 @@ It varies for different languages.
 Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
-*dịch đoạn phía trên*
+Token hoá là một bước tiền xử lý quan trọng.
+Mỗi ngôn ngữ có đều có các cách làm khác nhau.
+Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câu.
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE KẾT THÚC =================================== -->
@@ -294,4 +302,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Quang
