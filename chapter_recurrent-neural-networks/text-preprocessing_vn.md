@@ -39,7 +39,7 @@ Quá trình tiền xử lý thường bao gồm bốn bước sau:
 ## Reading the Dataset
 -->
 
-## Đọc Dataset
+## Đọc Bộ dữ liệu
 
 
 <!--
@@ -51,7 +51,7 @@ Here we ignore punctuation and capitalization.
 -->
 
 Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian (*Time Machine*)] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells.
-Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30,000$ từ, nhưng nó đủ tốt cho mục đích minh họa.
+Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30.000$ từ, nhưng nó đủ tốt cho mục đích minh họa.
 Nhiều bộ dữ liệu trên thực tế chứa hàng tỷ từ.
 Hàm sau đây đọc dữ liệu thành một danh sách các câu, mỗi câu là một chuỗi.
 Chúng ta bỏ qua dấu câu và chữ viết hoa.
