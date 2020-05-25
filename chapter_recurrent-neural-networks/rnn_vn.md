@@ -142,9 +142,9 @@ Specifically, the calculation of the hidden variable of the current timestep is 
 Vấn đề sẽ hoàn toàn khác đi nếu ta sử dụng các trạng thái ẩn.
 Hãy xem xét cấu trúc này một cách chi tiết hơn.
 Nhớ rằng ta thường gọi vòng lặp $t$ là thời gian $t$ trong thuật toán tối ưu, thời gian trong mạng nơ-ron truy hồi đề cập đến các bước trong một vòng lặp.
-Giả sử rằng ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
+Giả sử ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
 Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi.
-Không giống như perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và giới thiệu một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$, để mô tả cách sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
+Không giống như perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và sử dụng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$, để mô tả cách sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
 Cụ thể, biến ẩn của bước thời gian hiện tại được tính toán bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó:
 
 
@@ -161,11 +161,9 @@ the computation of the equation above is recurrent, hence the name recurrent neu
 -->
 
 So với :eqref:`rnn_h_without_state`, ở đây ta đã thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$.
-Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề,
-ta biết rằng các biến đó đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại,
-cũng giống như trạng thái hoặc bộ nhớ của bước thời gian hiện tại của mạng nơ-ron.
+Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng các biến đó đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ của bước thời gian hiện tại của mạng nơ-ron.
 Do đó, một biến ẩn như vậy được gọi là một *trạng thái ẩn*.
-Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại, tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
+Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại nên tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
 
 <!--
 There are many different RNN construction methods.
@@ -189,8 +187,8 @@ Therefore, the number of RNN model parameters does not grow as the number of tim
 -->
 
 Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
-Điều đáng nói là ngay cả đối với các bước thời gian khác nhau thì RNN vẫn luôn sử dụng cùng các tham số mô hình này.
-Do đó, số lượng tham số mô hình RNN không tăng khi số lượng bước thời gian tăng.
+Điều đáng nói là ngay cả đối với các bước thời gian khác nhau thì RNN vẫn luôn sử dụng cùng các tham số mô hình.
+Do đó, số lượng tham số mô hình RNN sẽ không tăng ngay cả khi số lượng bước thời gian tăng.
 
 <!--
 :numref:`fig_rnn` shows the computational logic of an RNN at three adjacent timesteps.
@@ -205,7 +203,7 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 :numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề.
 Trong bước thời gian $t$, tính toán của trạng thái ẩn có thể được coi là một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$ sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ của bước thời gian trước đó.
 Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn của bước thời gian hiện tại $\mathbf{H}_t$.
-Tham số mô hình của nó là ghép nối của $\mathbf{W}_{xh}$ và $\mathbf{W}_{hh}$, với hệ số điều chỉnh là $\mathbf{b}_h$.
+Tham số mô hình của bước thời gian hiện tại là ghép nối của $\mathbf{W}_{xh}$ và $\mathbf{W}_{hh}$, với hệ số điều chỉnh là $\mathbf{b}_h$.
 Trạng thái ẩn của bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
 Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho $\mathbf{O}_t$, tầng đầu ra kết nối đầy đủ của bước thời gian hiện tại.
 
