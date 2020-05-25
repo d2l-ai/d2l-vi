@@ -154,7 +154,7 @@ In particular, this sheds some light on the puzzle of why BN works best for mode
 
 Và đây là chủ đề thường xuất hiện trong học sâu.
 Vì những lý do vẫn chưa được giải thích rõ bằng lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến huấn luyện nhanh hơn và giảm quá khớp.
-Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ những đặc điểm này, nhiễu này dường như hoạt động giống một dạng điều chuẩn.
+Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ điểm này, những thay đổi do nhiễu dường như hoạt động giống một dạng điều chuẩn.
 Trong một số nghiên cứu sơ bộ, :cite:`Teye.Azizpour.Smith.2018` và :cite:`Luo.Wang.Shao.ea.2018` đã lần lượt chỉ ra các thuộc tính của BN liên quan tới tiên nghiệm Bayesian (_Bayesian prior_) và các lượng phạt (_penalty_). 
 Cụ thể, nghiên cứu này làm sáng tỏ lý do BN hoạt động tốt nhất với các minibatch có kích cỡ vừa phải, trong khoảng 50 - 100.
 
