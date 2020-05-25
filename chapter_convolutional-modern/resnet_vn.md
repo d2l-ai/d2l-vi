@@ -54,7 +54,7 @@ Khá hợp lý khi giả sử rằng nếu thiết kế một kiến trúc khác
 Nói cách khác, ta kỳ vọng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
 Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì không khẳng định được $f^*_{\mathcal{F}'}$ "tốt hơn" $f^*_{\mathcal{F}}$.
 Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
-Đây là tình huống hay xảy ra---việc thêm các tầng không phải luôn làm tăng tính biểu diễn của mạng, mà đôi khi tạo ra những thay đổi rất khó lường.
+Và đây là trường hợp thường xuyên xảy ra --- việc thêm các tầng không phải lúc nào cũng tăng tính biểu diễn của mạng mà đôi khi còn tạo ra những thay đổi rất khó lường.
 :numref:`fig_functionclasses` minh hoạ rõ hơn điều này.
 
 <!--
