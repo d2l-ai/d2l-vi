@@ -365,7 +365,7 @@ The only thing that has changed is the learning rate that decreased again, due t
 -->
 
 Giống như các phần trước, chúng ta huấn luyện ResNet trên bộ dữ liệu Fashion-MNIST.
-Thay đổi duy nhất là tốc độ học giảm trở lại, do kiến trúc mạng phức tạp hơn.
+Thay đổi duy nhất là giảm tốc độ học lại do kiến trúc mạng phức tạp hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 256
