@@ -118,7 +118,7 @@ Ký hiệu đầu vào là $\mathbf{x}$.
 Giả sử ánh xạ lý tưởng muốn học được là $f(\mathbf{x})$, là đầu vào của hàm kích hoạt.
 Phần nằm trong viền nét đứt bên trái phải khớp trực tiếp với ánh xạ $f(\mathbf{x})$.
 Điều này có thể không đơn giản nếu chúng ta không cần khối đó và muốn giữ lại đầu vào $\mathbf{x}$.
-Phần nằm trong viền nét đứt bên phải giờ chỉ cần tham số hoá *độ lệch* khỏi giá trị $\mathbf{x}$, vì ta trả về $\mathbf{x} + f(\mathbf{x})$.
+Khi đó, phần nằm trong viền nét đứt bên phải chỉ cần tham số hoá *độ lệch* khỏi giá trị $\mathbf{x}$, bởi vì ta đã trả về $\mathbf{x} + f(\mathbf{x})$.
 Trên thực tế, ánh xạ phần dư thường dễ tối ưu hơn,
 vì chỉ cần đặt $f(\mathbf{x}) = 0$.
 Nửa bên phải :numref:`fig_residual_block` mô tả khối phần dư cơ bản của ResNet.
