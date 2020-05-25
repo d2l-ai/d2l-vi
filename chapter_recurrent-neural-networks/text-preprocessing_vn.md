@@ -118,7 +118,7 @@ We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token f
 -->
 
 Chuỗi của các token là không kiểu dữ liệu tiện lợi cho các mô hình mà thường nhận dữ liệu đầu vào dưới dạng số.
-Bây giờ, chúng ta sẽ xây dựng một bộ từ điển, thường được gọi là bộ *từ vựng* (*vocabulary*), để ánh xạ chuỗi token thành chỉ số bắt đầu từ 0.
+Bây giờ, chúng ta sẽ xây dựng một bộ từ điển, thường được gọi là *bộ từ vựng* (*vocabulary*), để ánh xạ chuỗi token thành các chỉ số bắt đầu từ 0.
 Để làm điều này, đầu tiên chúng ta lấy các token xuất hiện (không lặp lại) trong toàn bộ tài liệu, thường được gọi là kho ngữ liệu (*corpus*), và sau đó gán một giá trị số (chỉ số) cho mỗi token dựa trên tần suất xuất hiện của chúng.
 Các token có tần suất xuất hiện rất ít thường được loại bỏ để giảm độ phức tạp.
 Một token không xuất hiện trong kho ngữ liệu hay đã bị loại bỏ thường được ánh xạ vào một token vô danh đặc biệt (“&lt;unk&gt;”). 
