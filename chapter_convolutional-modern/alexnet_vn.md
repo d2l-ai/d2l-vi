@@ -80,7 +80,7 @@ Khi tiếp xúc với những nhà nghiên cứu học máy, bạn sẽ thấy h
 Bởi lẽ có nhiều lý thuyết tinh vi được đưa ra để chứng minh các tính chất của nhiều bộ phân loại.
 Và cứ như vậy, lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt hơn, và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu có dịp thảo luận với một nhà nghiên cứu thị giác máy tính, thì có thể ta lại được nghe một câu chuyện rất khác.
-Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là các đặc trưng mới mang tính quyết định tới chất lượng chứ không phải các thuật toán học.
+Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là "đặc trưng mới mang tính quyết định tới chất lượng chứ không phải thuật toán học".
 Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn, sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
