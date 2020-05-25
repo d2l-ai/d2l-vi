@@ -77,7 +77,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 -->
 
 Khi tiếp xúc với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
-Nhiều lý thuyết tinh vi đã chứng minh các tính chất của nhiều bộ phân loại khác nhau.
+Bởi lẽ có nhiều lý thuyết tinh vi được đưa ra để chứng minh các tính chất của nhiều bộ phân loại.
 Lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
 Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là các đặc trưng mới mang tính quyết định tới chất lượng chứ không phải các thuật toán học.
