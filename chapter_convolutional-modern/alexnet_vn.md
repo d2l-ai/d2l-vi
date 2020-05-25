@@ -78,7 +78,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 
 Khi tiếp xúc với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
 Bởi lẽ có nhiều lý thuyết tinh vi được đưa ra để chứng minh các tính chất của nhiều bộ phân loại.
-Lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt và hữu dụng hơn bao giờ hết.
+Và cứ như vậy, lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt hơn, và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu nói chuyện với một nhà nghiên cứu thị giác máy tính, bạn có thể sẽ nghe một câu chuyện rất khác.
 Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là các đặc trưng mới mang tính quyết định tới chất lượng chứ không phải các thuật toán học.
 Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng một tập dữ liệu hơi lớn hơn, sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
