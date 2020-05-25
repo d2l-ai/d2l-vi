@@ -86,7 +86,7 @@ One takeaway here is that when applying BN, the choice of minibatch size may be 
 
 Lưu ý rằng, khi áp dụng BN với những minibatch có kích thước 1, mô hình sẽ không học được gì. 
 Vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
-Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, cách làm này phải có hiệu quả và ổn định. 
+Dễ dàng suy luận ra là BN chỉ hoạt động hiệu quả và ổn định với kích thước minibatch đủ lớn. 
 Điều cần nhớ ở đây là khi áp dụng BN, việc lựa chọn kích thước minibatch sẽ quan trọng hơn so với khi không áp dụng BN.
 
 <!--
