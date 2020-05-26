@@ -480,7 +480,7 @@ net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
 
 -->
 
-## Lập trình Súc tích
+## Lập trình súc tích
 
 <!--
 Compared with the `BatchNorm` class, which we just defined ourselves, the `BatchNorm` class defined by the `nn` model in Gluon is easier to use.
@@ -489,10 +489,10 @@ Instead, these parameter values will be inferred automatically via delayed initi
 Otherwise, the code looks virtually identical to the application our implementation above.
 -->
 
-So với lớp `BatchNorm` mà ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình `nn` trong Gluon dễ sử dụng hơn.
-Trong Gluon, ta không phải lo lắng về `num_features` hay `num_dims`.
-Thay vào đó, các giá trị tham số này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
-Còn lại, đoạn mã trông gần như y hệt với đoạn mã mà ta đã lập trình ở trên.
+So với lớp `BatchNorm` tự định nghĩa thì lớp` BatchNorm` định nghĩa trong `nn` của Gluon dễ sử dụng hơn.
+Trong Gluon, ta không cần chỉ rõ `num_features` và `num_dims`.
+Thay vào đó, các giá trị này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
+Ngoại trừ điểm đó, đoạn mã trông giống hệt đoạn mã phía trên.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -519,9 +519,8 @@ Note that as usual, the Gluon variant runs much faster because its code has been
 while our custom implementation must be interpreted by Python.
 -->
 
-Dưới đây, chúng ta sử dụng cùng một siêu tham số để đào tạo mô hình.
-Như thường lệ, biến thể Gluon này chạy nhanh hơn nhiều vì mã của nó đã được biên dịch thành C++/CUDA
-trong khi đoạn mã tùy chỉnh của chúng ta phải được thông dịch bởi Python.
+Chúng ta sử dụng cùng các siêu tham số như trước để huấn luyện mô hình.
+Như thường lệ, biến thể dùng Gluon này chạy nhanh hơn nhiều vì được biên dịch thành C++/CUDA trong khi đoạn mã tùy chỉnh của chúng ta phải qua thông dịch bằng Python.
 
 ```{.python .input}
 d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
@@ -540,10 +539,10 @@ Recall that we do not even know why simpler deep neural networks (MLPs and conve
 Even with dropout and L2 regularization, they remain so flexible that their ability to generalize to unseen data cannot be explained via conventional learning-theoretic generalization guarantees.
 -->
 
-Theo trực giác, chuẩn hóa theo batch được cho là làm cho cảnh quan tối ưu trở nên mượt mà hơn.
-Tuy nhiên, chúng ta phải cẩn thận phân biệt giữa trực giác suy đoán và lời giải thích thực sự cho các hiện tượng mà ta quan sát thấy khi đào tạo các mô hình học sâu.
-Hãy nhớ lại rằng ngay từ đầu ta thậm chí còn không biết tại sao các mạng nơ-ron sâu đơn giản hơn (các mạng MLP và CNN thông thường) lại có thể khái quát tốt như vậy.
-Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được thông qua các bảo đảm khái quát hóa dựa trên lý thuyết học tập truyền thống.
+Theo trực giác, chuẩn hóa theo batch được cho là làm cảnh quan tối ưu (*optimization landscape*) mượt mà hơn.
+Tuy nhiên, cần cẩn thận phân biệt giữa suy đoán theo trực giác và lời giải thích thực sự cho các hiện tượng quan sát thấy khi huấn luyện các mô hình học sâu.
+Hãy nhớ lại rằng ngay từ đầu ta thậm chí không rõ tại sao các mạng nơ-ron sâu đơn giản hơn (như Perceptron đa tầng và CNN truyền thống) lại có thể khái quát tốt như vậy.
+Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được bằng các điều kiện bảo đảm sự khái quát hóa trong lý thuyết học truyền thống.
 
 <!--
 In the original paper proposing batch normalization, the authors, in addition to introducing a powerful and useful tool, 
@@ -557,14 +556,14 @@ However, we believe that it is important to separate these guiding intuitions fr
 Eventually, when you master this material and start writing your own research papers you will want to be clear to delineate between technical claims and hunches.
 -->
 
-Trong bài báo gốc khi đề xuất phương pháp chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra một lời giải thích cho lý do tại sao nó hoạt động: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ*.
-Có lẽ ý của các tác giả khi nói *sự dịch chuyển hiệp biến nội bộ* giống với cách giải thích trực quan của ta ở trên - ý niệm rằng phân phối của giá trị kích hoạt thay đổi trong quá trình đào tạo.
-Tuy nhiên, có hai vấn đề với lời giải thích này:
-(1) Sự trôi đi này rất khác so với *sự dịch chuyển hiệp biến*, khiến cái tên này hay bị nhầm lẫn.
-(2) Giải thích của tác giả vẫn chưa đủ độ cụ thể và chính xác, và để ngỏ một câu hỏi: *chính xác thì tại sao kỹ thuật này lại hoạt động?*
-Xuyên suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những kinh nghiệm trực giác đã giúp những người thực hành xây dựng các mạng nơ-ron sâu.
-Tuy nhiên, chúng tôi tin rằng cần phải phân biệt rõ ràng giữa những hiểu biết trực giác này với những bằng chứng khoa học đã được khẳng định.
-Một khi đã thành thạo tài liệu này và bắt đầu viết các tài liệu nghiên cứu của riêng mình, bạn sẽ muốn phân định rõ ràng giữa các khẳng định và những linh cảm.
+Trong bài báo gốc khi đề xuất phương pháp chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra lời giải thích lý do BN hoạt động tốt: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ - internal covariate shift*.
+Có thể hiểu ý các tác giả về *sự dịch chuyển hiệp biến nội bộ* giống với cách giải thích ở trên-rằng phân phối của giá trị kích hoạt thay đổi trong quá trình huấn luyện.
+Tuy nhiên, có hai vấn đề với cách giải thích này:
+(1) Sự dịch chuyển phân phối này rất khác so với *sự dịch chuyển hiệp biến*, việc đặt tên như vậy có sự nhầm lẫn.
+(2) Cách giải thích này vẫn chưa đủ cụ thể và chặt chẽ, vẫn để ngỏ câu hỏi: *chính xác thì tại sao kỹ thuật này hoạt động?*
+Xuyên suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những kinh nghiệm thực tế để xây dựng các mạng nơ-ron sâu.
+Tuy nhiên, chúng tôi tin rằng cần phân biệt rõ những kinh nghiệm dựa trên trực giác này với những bằng chứng khoa học rõ ràng.
+Cuối cùng, khi đã thành thạo tài liệu này và bắt đầu viết các nghiên cứu của riêng mình, bạn cần phân biệt rõ ràng giữa khẳng định và linh cảm.
 
 <!--
 Following the success of batch normalization, its explanation in terms of *internal covariate shift* has repeatedly surfaced 
@@ -576,12 +575,12 @@ In the technical literature other authors (:cite:`Santurkar.Tsipras.Ilyas.ea.201
 some claiming that BN's success comes despite exhibiting behavior that is in some ways opposite to those claimed in the original paper.
 -->
 
-Tiếp sau thành công của chuẩn hóa theo batch, lời giải thích bằng *sự dịch chuyển hiệp biến nội bộ* đã liên tục xuất hiện
-ở các cuộc tranh luận trong tài liệu kỹ thuật và rộng hơn trên các diễn đàn về cách trình bày một nghiên cứu học máy.
+Nối tiếp thành công của BN, cách giải thích của kỹ thuật này thông qua khái niệm *sự dịch chuyển hiệp biến nội bộ* liên tục xuất hiện
+trong các tranh luận, các tài liệu kỹ thuật và trên các diễn đàn về cách trình bày nghiên cứu học máy.
 Trong một bài phát biểu đáng nhớ được đưa ra khi nhận giải thưởng **Test of Time Award** tại hội nghị NeurIPS 2017,
-Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với giả kim thuật.
-Sau đó, ví dụ đã được xem xét lại một cách chi tiết trong một bài viết về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
-Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, dù cho nó có thể hiện những hành vi trái ngược với những gì đã được tuyên bố trong bài báo gốc.
+Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với thuật giả kim.
+Sau đó, cách giải thích này đã được xem xét lại một cách chi tiết trong một bài báo về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
+Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, dù phần nào đó trái ngược với cách giải thích trong bài báo gốc.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -593,9 +592,9 @@ Likely, its resonance as a focal point of these debates owes to its broad recogn
 Batch normalization has proven an indispensable method, applied in nearly all deployed image classifiers, earning the paper that introduced the technique tens of thousands of citations.
 -->
 
-Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích hơn bất kỳ khẳng định nào trong số hàng ngàn lập luận mơ hồ được đưa ra mỗi năm trong nhiều tài liệu kỹ thuật về học máy.
-Việc nó trở thành tâm điểm của những cuộc tranh luận này rất có thể là do sự phổ biến của nó trong cộng đồng học máy.
-Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các bộ phân loại hình ảnh đã được triển khai, giúp cho bài báo giới thiệu kỹ thuật này có được hàng chục ngàn trích dẫn.
+Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích, có hàng ngàn lập luận mơ hồ được đưa ra mỗi năm trong nhiều tài liệu kỹ thuật về học máy.
+Việc nó trở thành tâm điểm của những cuộc tranh luận rất có thể là do sự phổ biến của nó trong cộng đồng học máy.
+Chuẩn hóa theo batch là một phương pháp quan trọng, được áp dụng trong gần như tất cả các bộ phân loại hình ảnh đã được triển khai, mang lại hàng chục ngàn trích dẫn cho bài báo giới thiệu kĩ thuật này.
 
 
 <!--
@@ -611,10 +610,10 @@ Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp khô
 * Batch Normalization has many beneficial side effects, primarily that of regularization. On the other hand, the original motivation of reducing covariate shift seems not to be a valid explanation.
 -->
 
-* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron bằng cách sử dụng giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị của đầu ra trung gian của mỗi tầng trong mạng nơ-ron ổn định hơn.
-* Các phương pháp chuẩn hóa theo batch cho các tầng kết nối đầy đủ và các tầng tích chập có chút khác biệt.
-* Giống như tầng dropout, các tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Mặt khác, động lực ban đầu của việc giảm sự dịch chuyển hiệp biến dường như không phải là một lời giải thích hợp lệ.
+* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron theo giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị này ổn định hơn.
+* Chuẩn hóa theo batch có chút khác biệt khi áp dụng cho tầng kết nối đầy đủ và tầng tích chập.
+* Giống như tầng dropout, tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Tuy nhiên, cách giải thích ban đầu về việc giảm sự dịch chuyển hiệp biến dường như không hợp lý.
 
 <!--
 ## Exercises
@@ -636,17 +635,17 @@ Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp khô
 7. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
 -->
 
-1. Chúng ta có thể loại bỏ phép biến đổi affine kết nối đầy đủ trước khi chuẩn hóa theo batch hoặc tham số độ chệch trong phép tích chập không?
+1. Trước khi chuẩn hóa theo batch, có thể loại bỏ phép biến đổi affine trong tầng kết nối đầy đủ hoặc tham số độ chệch trong phép tích chập không?
     * Tìm một phép biến đổi tương đương được áp dụng trước tầng kết nối đầy đủ.
-    * Sự cải tiến này có hiệu quả không và tại sao?
+    * Sự cải tiến này có hiệu quả không, tại sao?
 2. So sánh tốc độ học của LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
     * Vẽ đồ thị biểu diễn sự giảm xuống của lỗi huấn luyện và lỗi kiểm tra.
-    * Còn về miền hội tụ thì sao? Bạn có thể chọn tốc độ học lớn tới đâu?
-3. Chúng ta có cần chuẩn hóa theo batch trong mỗi tầng không? Hãy thử nghiệm điều này.
-4. Bạn có thể thay thế Dropout bằng Chuẩn hóa theo Batch không? Hành vi sẽ thay đổi như thế nào?
-5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để không tính gradient) rồi quan sát và phân tích kết quả.
-6. Xem tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của Chuẩn hóa theo Batch.
-7. Ý tưởng nghiên cứu: hãy nghĩ về các phép biến đổi chuẩn hóa khác mà bạn có thể áp dụng? Bạn có thể áp dụng phép biến đổi tích phân xác suất không? Còn ước lượng ma trận hiệp phương sai có hạng tối đa thì sao?
+    * Về miền hội tụ thì sao? Có thể chọn tốc độ học lớn tới đâu?
+3. Chúng ta có cần chuẩn hóa theo batch trong tất cả các tầng không? Hãy thử nghiệm điều này.
+4. Có thể thay thế Dropout bằng BN không? Sẽ có thay đổi như thế nào?
+5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` khi xây dựng mạng để không tính gradient) rồi quan sát và phân tích kết quả.
+6. Đọc tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của chuẩn hóa theo batch.
+7. Ý tưởng nghiên cứu: nghĩ về các phép biến đổi chuẩn hóa khác có thể áp dụng. Bạn có thể áp dụng biến đổi tích phân xác suất (*probability integral transform*) không? Còn ước lượng ma trận hiệp phương sai hạng tối đa thì sao?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -673,36 +672,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đinh Đắc
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-* Đinh Đắc
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Đinh Đắc
-
-<!-- Phần 5 -->
-* Đinh Đắc
-
-<!-- Phần 6 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 7 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 8 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
+* Phạm Minh Đức
 * Nguyễn Cảnh Thướng
+* Phạm Hồng Vinh
