@@ -40,7 +40,7 @@ Sẽ rất thuận lợi nếu hàm này thuộc tập $\mathcal{F}$, nhưng th�
 Thay vào đó, ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
 Ví dụ, có thể thử tìm $f^*_\mathcal{F}$ bằng cách giải bài toán tối ưu sau:
 
-$$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ subject to } f \in \mathcal{F}.$$
+$$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ đối tượng thoả mãn } f \in \mathcal{F}.$$
 
 <!--
 It is only reasonable to assume that if we design a different and more powerful architecture $\mathcal{F}'$ we should arrive at a better outcome.
@@ -334,7 +334,7 @@ Có thể thay đổi số kênh và các khối phần dư trong mô-đun để
 ví dụ mô hình 152 tầng của ResNet-152.
 Mặc dù có kiến trúc lõi tương tự như GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
 Tất cả các yếu tố này dẫn đến sự phổ cập nhanh chóng và rộng rãi của ResNet.
-:numref: `fig_ResNetFull` là sơ đồ đầy đủ của ResNet-18.
+:numref:`fig_ResNetFull` là sơ đồ đầy đủ của ResNet-18.
 
 <!--
 ![ResNet 18](../img/ResNetFull.svg)
@@ -418,17 +418,12 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Tham khảo Bảng 1 trong :cite:`He.Zhang.Ren.ea.2016` để lập trình các biến thể khác nhau.
 2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "thắt cổ chai" để giảm độ phức tạp của mô hình. Hãy thử lập trình kiến trúc đó.
-3. Trong các phiên bản sau của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình kiến trúc này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
+3. Trong các phiên bản sau của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình kiến trúc này. Xem hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
 4. Chứng minh rằng nếu $\mathbf{x}$ được tạo ra bởi ReLU thì khối ResNet sẽ bao gồm hàm số đồng nhất.
 5. Tại sao không thể tăng không giới hạn độ phức tạp của các hàm số, ngay cả với các lớp hàm lồng nhau?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2359)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2359)
@@ -436,16 +431,6 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
@@ -453,3 +438,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 * Nguyễn Đình Nam
+* Phạm Minh Đức
+* Phạm Hồng Vinh

@@ -78,7 +78,7 @@ or a slightly improved feature-extraction pipeline mattered far more to the fina
 
 Khi tiếp xúc với những nhà nghiên cứu học máy, bạn sẽ thấy họ tin rằng học máy không những quan trọng mà còn "đẹp" nữa.
 Bởi lẽ có nhiều lý thuyết tinh vi được đưa ra để chứng minh các tính chất của nhiều bộ phân loại.
-Và cứ như vậy, lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt hơn, và hữu dụng hơn bao giờ hết.
+Và cứ như vậy, lĩnh vực học máy ngày một lớn mạnh, nghiêm ngặt, và hữu dụng hơn bao giờ hết.
 Tuy nhiên, nếu có dịp thảo luận với một nhà nghiên cứu thị giác máy tính, thì có thể ta lại được nghe một câu chuyện rất khác.
 Họ sẽ nói rằng sự thật trần trụi trong nhận dạng ảnh là "đặc trưng mới mang tính quyết định tới chất lượng chứ không phải thuật toán học".
 Những nhà nghiên cứu thị giác máy tính thời đó có lý do để tin rằng chỉ cần một tập dữ liệu hơi lớn hơn, sạch hơn hoặc một pipeline trích xuất đặc trưng tốt hơn một chút sẽ có ảnh hưởng lớn hơn bất kỳ thuật toán học nào.
@@ -107,10 +107,10 @@ and similar feature extractors ruled the roost.
 Nói một cách khác, tại thời điểm đó phần lớn các nhà nghiên cứu tin rằng phần quan trọng nhất của pipeline là sự biểu diễn.
 Và cho tới năm 2012 việc biểu diễn vẫn được tính toán một cách máy móc.
 Trong thực tế, thiết kế và xây dựng một tập các hàm đặc trưng mới, cải thiện kết quả, và viết ra phương pháp thực hiện từng là một phần quan trọng của các bài báo nghiên cứu.
-[SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform),
-[SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features),
-[HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients),
-[Bags of visual words](https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision)
+[SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform), 
+[SURF](https://en.wikipedia.org/wiki/Speeded_up_robust_features), 
+[HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients), 
+[Bags of visual words](https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision) 
 và các bộ trích chọn đặc trưng tương tự đã chiếm ưu thế vượt trội.
 
 <!--
@@ -122,7 +122,7 @@ In the case of an image, the lowest layers might come to detect edges, colors, a
 Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a convolutional neural network which achieved excellent performance in the ImageNet challenge.
 -->
 
-Một nhóm các nhà nghiên cứu, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác.
+Một nhóm các nhà nghiên cứu bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác.
 Họ tin rằng đặc trưng cũng có thể được học.
 Hơn nữa, họ cũng cho rằng để có được độ phức tạp hợp lý, các đặc trưng nên được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số có thể được huấn luyện.
 Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
@@ -198,7 +198,8 @@ Năm 2009, tập dữ liệu ImageNet được ban hành, thách thức các nh�
 Các nhà nghiên cứu giới thiệu tập dữ liệu này, dẫn đầu bởi Fei-Fei Li, đã tận dụng công cụ Tìm kiếm Hình ảnh của Google để lọc sơ bộ các tập dữ liệu hình ảnh lớn cho mỗi lớp 
 và sử dụng dịch vụ cộng đồng (*crowdsourcing*) Amazon Mechanical Turk để xác thực nhãn cho từng ảnh. 
 Đây là quy mô lớn chưa từng có từ trước đến nay. 
-Cuộc thi đi liền với tập dữ liệu này được đặt tên là ImageNet Challenge và đã thúc đẩy sự phát triển của nghiên cứu thị giác máy tính và học máy, thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn bao giờ hết trong toàn giới học thuật. 
+Cuộc thi đi liền với tập dữ liệu này được đặt tên là ImageNet Challenge và đã thúc đẩy sự phát triển của nghiên cứu thị giác máy tính và học máy, 
+thách thức các nhà nghiên cứu tìm ra mô hình tốt nhất ở quy mô lớn hơn bao giờ hết trong toàn giới học thuật. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -220,7 +221,7 @@ Training can take hundreds of epochs, and each iteration requires passing data t
 This is one of the main reasons why in the 90s and early 2000s, simple algorithms based on the more-efficiently optimized convex objectives were preferred.
 -->
 
-Các mô hình học sâu đòi hỏi rất nhiều chu kì tính toán. 
+Các mô hình học sâu đòi hỏi rất nhiều chu kỳ tính toán. 
 Quá trình huấn luyện có thể cần hàng trăm epoch, với mỗi vòng lặp yêu cầu đưa dữ liệu qua nhiều tầng nơi các phép toán đại số tuyến tính cồng kềnh được thực thi. 
 Đây là một trong những lý do chính tại sao vào những năm 90 tới đầu những năm 2000, các thuật toán đơn giản dựa trên những mục tiêu tối ưu lồi hiệu quả lại được ưa chuộng hơn.
 
@@ -232,7 +233,7 @@ Fortunately, this math is strikingly similar to that required to calculate convo
 Around that time, NVIDIA and ATI had begun optimizing GPUs for general compute operations, going as far as to market them as General Purpose GPUs (GPGPU).
 -->
 
-Bộ xử lý đồ hoạ (GPUs) đóng vai trò thay đổi hoàn toàn cuộc chơi khi làm cho việc học sâu trở nên khả thi.
+Bộ xử lý đồ hoạ (GPU) đóng vai trò thay đổi hoàn toàn cuộc chơi khi làm cho việc học sâu trở nên khả thi.
 Những vi xử lý này đã được phát triển một thời gian dài để tăng tốc độ xử lý đồ họa dành cho các trò chơi máy tính. 
 Cụ thể, chúng được tối ưu hoá cho các phép nhân ma trận - vector 4x4 thông lượng cao, cần thiết cho nhiều tác vụ đồ hoạ. 
 May mắn thay, phép toán này rất giống với phép toán sử dụng trong các tầng tích chập. 
@@ -252,8 +253,7 @@ Modern laptops have up to 4 cores, and even high end servers rarely exceed 64 co
 Mỗi nhân thì khá mạnh khi chạy ở tần số xung nhịp cao với bộ nhớ đệm lớn (lên đến vài MB ở bộ nhớ đệm L3).
 Mỗi nhân phù hợp với việc thực hiện hàng loạt các loại chỉ dẫn khác nhau, với các bộ dự báo rẽ nhánh, một pipeline sâu và những tính năng phụ trợ khác cho phép nó có khả năng chạy một lượng lớn các chương trình khác nhau.
 Tuy nhiên, sức mạnh rõ rệt này cũng có điểm yếu: sản xuất các nhân đa dụng rất đắt đỏ. 
-Chúng đòi hỏi nhiều diện tích cho vi xử lý, cùng cấu trúc hỗ trợ phức tạp (giao diện bộ nhớ, logic bộ nhớ đệm giữa các nhân, kết nối tốc độ cao, v.v.), 
-và chúng tương đối tệ ở bất kỳ tác vụ đơn lẻ nào. 
+Chúng đòi hỏi nhiều diện tích cho vi xử lý, cùng cấu trúc hỗ trợ phức tạp (giao diện bộ nhớ, logic bộ nhớ đệm giữa các nhân, kết nối tốc độ cao, v.v.), và chúng tương đối tệ ở bất kỳ tác vụ đơn lẻ nào. 
 Những máy tính xách tay ngày nay chỉ có tới 4 nhân, và thậm chí những máy chủ cao cấp hiếm khi vượt quá 64 nhân, đơn giản bởi vì chúng không hiệu quả về chi phí.
 
 <!--
@@ -270,7 +270,7 @@ Last, many operations in deep learning require high memory bandwidth.
 Again, GPUs shine here with buses that are at least 10x as wide as many CPUs.
 -->
 
-Để so sánh, GPUs bao gồm 100-1000 các phần tử xử lý nhỏ (về chi tiết có khác nhau đôi chút giữa NVIDIA, ATI, ARM và các nhà sản xuất khác), 
+Để so sánh, GPU bao gồm 100-1000 các phần tử xử lý nhỏ (về chi tiết có khác nhau đôi chút giữa NVIDIA, ATI, ARM và các nhà sản xuất khác), 
 thường được gộp thành các nhóm lớn hơn (NVIDIA gọi các nhóm này là luồng (*warp*)). 
 Mặc dù mỗi nhân thì tương đối yếu, đôi khi thậm chí chạy ở tần số xung nhịp dưới 1GHZ,
 nhưng số lượng của những nhân này giúp cho GPUs có tốc độ nhanh hơn rất nhiều so với CPUs.
@@ -295,7 +295,7 @@ The code [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) was goo
 Quay trở lại năm 2012. Một bước đột phá lớn khi Alex Krizhevsky và Ilya Sutskever đã xây dựng thành công một mạng nơ-ron tích chập sâu có thể chạy trên phần cứng GPU.
 Họ nhận ra rằng nút thắt cổ chai khi tính toán trong CNN (phép nhân tích chập và ma trận) có thể được xử lý song song trên phần cứng.
 Sử dụng hai card đồ họa NVIDIA GTX 580s với 3GB bộ nhớ, họ đã xây dựng các phép toán tích chập nhanh.
-Phần mã nguồn [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) được coi là ngòi nổ cho sự phát triển vượt bậc của học sâu ngày nay. 
+Phần mã nguồn [cuda-convnet](https://code.google.com/archive/p/cuda-convnet/) được xem là ngòi nổ cho sự phát triển vượt bậc của học sâu ngày nay. 
 
 <!--
 ## AlexNet
@@ -309,8 +309,9 @@ This network proved, for the first time, that the features obtained by learning 
 The architectures of AlexNet and LeNet are *very similar*, as :numref:`fig_alexnet` illustrates.
 Note that we provide a slightly streamlined version of AlexNet removing some of the design quirks that were needed in 2012 to make the model fit on two small GPUs.
 -->
+
 Mạng AlexNet được giới thiệu vào năm 2012, được đặt theo tên của Alex Krizhevsky, tác giả thứ nhất của bài báo đột phá trong phân loại ImageNet :cite:`Krizhevsky.Sutskever.Hinton.2012`. 
-Mạng AlexNet bao gồm 8 tầng mạng nơ-ron tích chập, đã chiến thắng cuộc thi ImageNet Large Scale Visual Recognition Challenge năm 2012 với cách biệt không tưởng.
+Mạng AlexNet bao gồm 8 tầng mạng nơ-ron tích chập, đã chiến thắng cuộc thi **ImageNet Large Scale Visual Recognition Challenge** năm 2012 với cách biệt không tưởng.
 AlexNet lần đầu tiên đã chứng minh được rằng các đặc trưng thu được bởi việc học có thể vượt qua các đặc trưng được thiết kế thủ công, phá vỡ định kiến trước đây trong nghiên cứu thị giác máy tính. 
 Cấu trúc mạng AlexNet và LeNet *rất giống nhau*, như :numref:`fig_alexnet` đã minh họa. 
 Lưu ý rằng chúng tôi cung cấp một phiên bản AlexNet được sắp xếp hợp lý, loại bỏ một số điểm thiết kế có từ năm 2012 với mục đích làm cho mô hình phù hợp với hai GPU dung lượng nhỏ mà bây giờ đã không còn cần thiết. 
@@ -329,6 +330,7 @@ AlexNet consists of eight layers: five convolutional layers, two fully-connected
 Second, AlexNet used the ReLU instead of the sigmoid as its activation function.
 Let us delve into the details below.
 -->
+
 Các triết lý thiết kế của AlexNet và LeNet rất giống nhau, nhưng cũng có những khác biệt đáng kể. 
 Đầu tiên, AlexNet sâu hơn nhiều so với LeNet5. 
 AlexNet có tám tầng gồm: năm tầng tích chập, hai tầng ẩn kết nối đầy đủ, và một tầng đầu ra kết nối đầy đủ. 
@@ -373,7 +375,7 @@ Due to the limited memory in early GPUs, the original AlexNet used a dual data s
 Fortunately, GPU memory is comparatively abundant now, so we rarely need to break up models across GPUs these days (our version of the AlexNet model deviates from the original paper in this aspect).
 -->
 
-Sau tầng chập cuối cùng là hai tầng kết nối đầy đủ với 4096 đầu ra. 
+Sau tầng tích chập cuối cùng là hai tầng kết nối đầy đủ với 4096 đầu ra. 
 Hai tầng này tạo ra tới gần 1 GB các tham số mô hình.
 Do các GPU thế hệ trước bị giới hạn về bộ nhớ, phiên bản gốc của AlexNet sử dụng thiết kế luồng dữ liệu kép cho hai GPU, trong đó mỗi GPU chỉ phải chịu trách nhiệm lưu trữ và tính toán cho một nửa mô hình. 
 May mắn thay, hiện nay các GPU có bộ nhớ tương đối dồi dào, vì vậy ta hiếm khi cần phải chia nhỏ mô hình trên các GPU (phiên bản mô hình AlexNet của ta khác với bài báo ban đầu ở khía cạnh này). 
@@ -396,12 +398,12 @@ Therefore, if the model parameters are not properly initialized, the sigmoid fun
 so that the model cannot be effectively trained.
 -->
 
-Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng hàm kích hoạt ReLU đơn giản hơn. 
-Một mặt là giảm việc tính toán, bởi ReLu không có phép lũy thừa như trong hàm kích hoạt sigmoid. 
-Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình trở nên dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau. 
+Thứ hai, AlexNet đã thay hàm kích hoạt sigmoid bằng hàm kích hoạt ReLU đơn giản hơn.
+Một mặt là giảm việc tính toán, bởi ReLu không có phép lũy thừa như trong hàm kích hoạt sigmoid.
+Mặt khác, hàm kích hoạt ReLU giúp cho việc huấn luyện mô hình trở nên dễ dàng hơn khi sử dụng các phương thức khởi tạo tham số khác nhau.
 Điều này là do khi đầu ra của hàm kích hoạt sigmoid rất gần với 0 hoặc 1 thì gradient sẽ gần như bằng 0,
-vì vậy khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình. 
-Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn bằng 1. 
+vì vậy khiến cho lan truyền ngược không thể tiếp tục cập nhật một số tham số mô hình.
+Ngược lại, gradient của hàm kích hoạt ReLU trong khoảng dương luôn bằng 1.
 Do đó, nếu các tham số mô hình không được khởi tạo đúng cách thì hàm sigmoid có thể có gradient gần bằng 0 trong khoảng dương, dẫn đến việc mô hình không được huấn luyện một cách hiệu quả. 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -421,10 +423,10 @@ This makes the model more robust and the larger sample size effectively reduces 
 We will discuss data augmentation in greater detail in :numref:`sec_image_augmentation`.
 -->
 
-AlexNet kiểm soát năng lực của tầng kết nối đầy đủ bằng cách áp dụng dropout (numref: `sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số. 
-Để tăng cường dữ liệu thì trong quá trình huấn luyện, AlexNet đã bổ sung rất nhiều kỹ thuật tăng cường hình ảnh chẳng hạn như lật, cắt hay thay đổi màu sắc. 
-Điều này giúp cho mô hình trở nên mạnh mẽ hơn, cùng với đó kích thước dữ liệu lớn hơn giúp làm giảm hiện tượng quá khớp một cách hiệu quả. 
-Ta sẽ thảo luận chi tiết hơn về việc tăng cường dữ liệu trong :numref:`sec_image_augmentation`. 
+AlexNet kiểm soát năng lực của tầng kết nối đầy đủ bằng cách áp dụng dropout (:numref:`sec_dropout`), trong khi LeNet chỉ sử dụng suy giảm trọng số.
+Để tăng cường dữ liệu thì trong quá trình huấn luyện, AlexNet đã bổ sung rất nhiều kỹ thuật tăng cường hình ảnh chẳng hạn như lật, cắt hay thay đổi màu sắc.
+Điều này giúp cho mô hình trở nên mạnh mẽ hơn, cùng với đó kích thước dữ liệu lớn hơn giúp làm giảm hiện tượng quá khớp một cách hiệu quả.
+Ta sẽ thảo luận chi tiết hơn về việc tăng cường dữ liệu trong :numref:`sec_image_augmentation`.
 
 ```{.python .input  n=1}
 import d2l
@@ -491,14 +493,15 @@ for layer in net:
 <!--
 Although AlexNet uses ImageNet in the paper, we use Fashion-MNIST here since training an ImageNet model to convergence could take hours or days even on a modern GPU.
 One of the problems with applying AlexNet directly on Fashion-MNIST is that our images are lower resolution ($28 \times 28$ pixels) than ImageNet images.
-To make things work, we upsample them to $244 \times 244$ (generally not a smart practice, but we do it here to be faithful to the AlexNet architecture).
+To make things work, we upsample them to $224 \times 224$ (generally not a smart practice, but we do it here to be faithful to the AlexNet architecture).
 We perform this resizing with the `resize` argument in `load_data_fashion_mnist`.
 -->
 
 Mặc dù AlexNet sử dụng ImageNet trong bài báo nêu trên, ở đây ta sẽ sử dụng Fashion-MNIST vì ngay cả với một GPU hiện đại thì việc huấn luyện một mô hình trên ImageNet có thể mất nhiều giờ hoặc nhiều ngày để hội tụ. 
 Một trong những vấn đề khi áp dụng AlexNet trực tiếp trên Fashion-MNIST là các ảnh trong tập dữ liệu này có độ phân giải thấp hơn ($28 \times 28$ điểm ảnh) so với các ảnh trong ImageNet. 
-Để có thể tiến hành được thử nghiệm, ta sẽ nâng kích thước ảnh lên $224 \times 224$ (nói chung đây không phải là một giải pháp thông minh, nhưng ta cần làm việc này để có thể sử dụng kiến trúc gốc của AlexNet). <!-- Ở đây code ảnh được resize thành 224x224 nhưng bản tiếng anh gốc lại để 244x244 -->
+Để có thể tiến hành được thử nghiệm, ta sẽ nâng kích thước ảnh lên $224 \times 224$ (nói chung đây không phải là một giải pháp thông minh, nhưng ta cần làm việc này để có thể sử dụng kiến trúc gốc của AlexNet).
 Việc thay đổi kích thước có thể được thực hiện thông qua đối số `resize` trong hàm `load_data_fashion_mnist`.
+
 
 ```{.python .input  n=3}
 batch_size = 128
@@ -522,7 +525,8 @@ the higher image resolution and the more costly convolutions.
 -->
 
 Bây giờ, ta có thể bắt đầu quá trình huấn luyện AlexNet. 
-So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do tính chất sâu và rộng hơn của mạng, đồng thời do độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn. 
+So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do tính chất sâu và rộng hơn của mạng, 
+đồng thời do độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn. 
 
 ```{.python .input  n=5}
 lr, num_epochs = 0.01, 10
@@ -544,7 +548,8 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * AlexNet có cấu trúc tương tự như LeNet, nhưng sử dụng nhiều tầng tích chập hơn với không gian tham số lớn hơn để khớp tập dữ liệu ImageNet với kích thước lớn. 
 * Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng nó là một bước quan trọng để đi từ các mạng nông đến các mạng sâu được sử dụng ngày nay. 
-* Mặc dù có vẻ như chỉ tốn thêm một vài dòng trong mã nguồn của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm để đón nhận sự thay đổi khái niệm này và tận dụng những kết quả thực nghiệm tuyệt vời của nó. Một phần cũng là do sự thiếu thốn của các công cụ tính toán hiệu quả. 
+* Mặc dù có vẻ như chỉ tốn thêm một vài dòng trong mã nguồn của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm 
+để đón nhận sự thay đổi khái niệm này và tận dụng những kết quả thực nghiệm tuyệt vời của nó. Một phần cũng do sự thiếu thốn của các công cụ tính toán hiệu quả. 
 * Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được kết quả xuất sắc trong các bài toán thị giác máy tính. 
 
 <!--
@@ -568,20 +573,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 1. Thử tăng số lượng epoch và xem kết quả khác như thế nào so với LeNet? Tại sao lại có sự khác nhau như vậy? 
 2. AlexNet có thể là quá phức tạp đối với tập dữ liệu Fashion-MNIST. Vậy: 
-     * Hãy thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo độ chính xác không bị giảm đi đáng kể. 
-     * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$. 
+    * Hãy thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo độ chính xác không bị giảm đi đáng kể. 
+    * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$. 
 3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU. 
 4. Băng thông bộ nhớ hoạt động như thế nào khi tính toán các kết quả? Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn đến:
-     * Việc sử dụng bộ nhớ của mạng này?
-     * Sự tính toán của mạng này?
+    * Việc sử dụng bộ nhớ của mạng này?
+    * Sự tính toán của mạng này?
 5. Khi áp dụng dropout và ReLU cho LeNet5, độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào? 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2354)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2354)
@@ -589,47 +591,16 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Vũ Hữu Tiệp
+* Nguyễn Cảnh Thướng
+* Phạm Hồng Vinh
 * Nguyễn Đình Nam
-
-<!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 3 -->
 * Đinh Đắc
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 4 -->
-* Dac Dinh 
-
-<!-- Phần 5 -->
 * Nguyễn Thành Nhân
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-
-<!-- Phần 7 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-
-<!-- Phần 8 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-* Đoàn Võ Duy Thanh
-
-* Nguyễn Cảnh Thướng
