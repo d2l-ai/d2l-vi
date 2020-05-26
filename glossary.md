@@ -287,6 +287,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | object detection       | nhận diện vật thể  |                                              |
 | objective function     | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | offline learning       | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
+| offset                 | độ dời             | [https://git.io/JfwX5](https://git.io/JfwX5) |
 | one-hot encoding       | biễu diễn one-hot  | [https://git.io/JvohR](https://git.io/JvohR) |
 | one-sided test         | kiểm định một phía | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | one-tailed test        | kiểm định một đuôi | [https://git.io/Jvoja](https://git.io/Jvoja) |
@@ -296,6 +297,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | orthonormal            | trực chuẩn         | [https://git.io/JvKem](https://git.io/JvKem) |
 | overfit                | quá khớp           | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | overflow (numerical)   | tràn (số) trên     | [https://git.io/JvohC](https://git.io/JvohC) |
+
 
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại                                |
