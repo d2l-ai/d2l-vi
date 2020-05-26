@@ -352,7 +352,7 @@ The `num_dims` parameter also required by this instance is 2 for a fully-connect
 
 Giờ ta có thể tạo một tầng `BatchNorm` đúng cách.
 Tầng này sẽ duy trì những tham số thích hợp tương ứng với tỉ lệ `gamma` và độ chệch `beta`, hai tham số này sẽ được cập nhật trong quá trình huấn luyện.
-Thêm vào đó, tầng BN sẽ duy trì giá trị trung bình động của trung bình và phương sai sử dụng về sau khi ở chế độ dự đoán. 
+Thêm vào đó, tầng BN sẽ duy trì giá trị trung bình động của trung bình và phương sai để sử dụng về sau khi ở chế độ dự đoán. 
 Tham số `num_features` truyền vào `BatchNorm` là số đầu ra của tầng kết nối đầy đủ hoặc số kênh đầu ra của tầng tích chập.
 Tham số `num_dims` bằng 2 nếu là tầng kết nối đầy đủ và bằng 4 nếu là tầng tích chập.
 
