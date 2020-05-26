@@ -347,7 +347,7 @@ Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả c
 Nhưng nếu chúng ta chọn tất cả các giá trị offset, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
 Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
 Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
-Điều này có nghĩa là chúng ta không thể kỳ vọng sự bao hàm đều nếu dùng cách này.
+Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
 Ngay cả phép hoán vị ngẫu nhiên một tập của tất cả các giá trị offset cũng không bảo đảm hoàn toàn.
 Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao hàm* và tính *ngẫu nhiên*, đó là: sử dụng một giá trị offset ngẫu nhiên, sau đó sử dụng các *term* một cách tuần tự.
 Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
