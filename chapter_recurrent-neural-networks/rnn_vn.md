@@ -117,7 +117,7 @@ Suffice it to say that we can pick $(x_t, x_{t-1})$ pairs at random and estimate
 -->
 
 Do vấn đề này hoàn toàn tương tự với bài toán hồi quy đã từng được giải quyết trong :numref:`sec_sequence`, ta sẽ bỏ qua các chi tiết ở đây.
-Ta có đủ cơ sở để nói rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
+Chỉ cần nói thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
