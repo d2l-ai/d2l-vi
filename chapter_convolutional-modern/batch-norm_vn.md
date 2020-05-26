@@ -201,7 +201,7 @@ Recall that one key differences between BN and other layers is that because BN o
  we cannot just ignore the batch dimension as we did before when introducing other layers.
 -->
 
-Lập trình chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập hơi khác nhau một chút.
+Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập hơi khác nhau một chút.
 Chúng ta sẽ thảo luận cả hai trường hợp trên.
 Nhớ rằng một khác biệt lớn của BN so với những tầng khác là vì BN cần số liệu thống kê trên toàn minibatch,
 chúng ta không thể bỏ qua kích thước batch như đã làm với các tầng khác.
