@@ -15,7 +15,7 @@ To make some progress we need a bit of theory.
 -->
 
 Khi thiết kế các mạng ngày càng sâu, ta cần hiểu việc thêm các tầng sẽ tăng độ phức tạp và khả năng biểu diễn của mạng như thế nào.
-Quan trọng hơn là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng chắc chắn sẽ làm tăng có tính biểu diễn thay vì chỉ tạo ra một chút khác biệt.
+Quan trọng hơn là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng chắc chắn sẽ làm tăng tính biểu diễn thay vì chỉ tạo ra một chút khác biệt.
 Để làm được điều này, chúng ta cần một chút lý thuyết.
 
 <!--
