@@ -244,9 +244,9 @@ the $7\times 7$ convolutional layer with 64 output channels and a stride of 2 is
 The difference is the batch normalization layer added after each convolutional layer in ResNet.
 -->
 
-Hai tầng đầu tiên của ResNet giống như hai tầng đầu tiên của GoogLeNet mà chúng ta đã mô tả trước đây:
-tầng tích chập $7\times 7$ với 64 kênh đầu ra và sải bước bằng 2, theo sau bởi tầng gộp cực đại $3 \times 3$ với sải bước bằng 2.
-Sự khác biệt là tầng chuẩn hóa theo batch được thêm vào sau mỗi tầng tích chập trong ResNet.
+Hai tầng đầu tiên của ResNet giống hai tầng đầu tiên của GoogLeNet:
+tầng tích chập $7\times 7$ với 64 kênh đầu ra và sải bước 2, theo sau bởi tầng gộp cực đại $3 \times 3$ với sải bước 2.
+Sự khác biệt là trong ResNet, mỗi tầng tích chập theo sau bởi tầng chuẩn hóa theo batch.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -263,19 +263,19 @@ Since a maximum pooling layer with a stride of 2 has already been used, it is no
 In the first residual block for each of the subsequent modules, the number of channels is doubled compared with that of the previous module, and the height and width are halved.
 -->
 
-GoogLeNet sử dụng bốn khối được tạo thành từ các khối Inception.
-Tuy nhiên, ResNet sử dụng bốn mô-đun được tạo thành từ các khối thặng dư có cùng số kênh đầu ra trong mỗi mô-đun.
-Số lượng kênh trong mô-đun đầu tiên bằng số lượng kênh đầu vào.
-Vì một tầng gộp cực đại với sải bước bằng 2 đã được sử dụng trước đó, nên không cần thiết phải giảm chiều cao và chiều rộng.
-Trong khối thặng dư đầu tiên của mỗi mô-đun tiếp theo, số lượng kênh được nhân đôi so với mô-đun trước đó, và chiều cao lẫn chiều rộng được giảm một nửa.
+GoogLeNet sử dụng bốn mô-đun được tạo thành từ các khối Inception.
+ResNet sử dụng bốn mô-đun được tạo thành từ các khối phần dư có cùng số kênh đầu ra.
+Mô-đun đầu tiên có số kênh bằng số kênh đầu vào.
+Vì trước đó đã sử dụng tầng gộp cực đại với sải bước 2, nên không cần phải giảm chiều cao và chiều rộng ở mô-đun này.
+Trong các mô-đun sau, khối phần dư đầu tiên nhân đôi số kênh, đồng thời giảm một nửa chiều cao và chiều rộng.
 
 <!--
 Now, we implement this module.
 Note that special processing has been performed on the first module.
 -->
 
-Bây giờ chúng ta sẽ lập trình mô-đun này.
-Lưu ý rằng một phép xử lý đặc biệt đã được thực hiện ở mô-đun đầu tiên.
+Bây giờ ta sẽ lập trình mô-đun này.
+Chú ý rằng mô-đun đầu tiên được xử lý khác một chút.
 
 ```{.python .input  n=4}
 def resnet_block(num_channels, num_residuals, first_block=False):
@@ -293,8 +293,8 @@ Then, we add all the residual blocks to ResNet.
 Here, two residual blocks are used for each module.
 -->
 
-Sau đó, chúng ta thêm tất cả các khối thặng dư vào ResNet.
-Ở đây, hai khối thặng dư được sử dụng cho mỗi mô-đun.
+Sau đó, chúng ta thêm các khối phần dư vào ResNet.
+Ở đây, mỗi mô-đun có hai khối phần dư.
 
 ```{.python .input  n=5}
 net.add(resnet_block(64, 2, first_block=True),
@@ -311,7 +311,7 @@ net.add(resnet_block(64, 2, first_block=True),
 Finally, just like GoogLeNet, we add a global average pooling layer, followed by the fully connected layer output.
 -->
 
-Cuối cùng, giống như GoogLeNet, chúng ta thêm một tầng gộp trung bình toàn cục, theo sau là đầu ra của tầng kết nối đầy đủ.
+Cuối cùng, giống như GoogLeNet, ta thêm một tầng gộp trung bình toàn cục và một tầng kết nối đầy đủ.
 
 ```{.python .input}
 net.add(nn.GlobalAvgPool2D(), nn.Dense(10))
@@ -327,20 +327,20 @@ All these factors have resulted in the rapid and widespread use of ResNet.
 :numref:`fig_ResNetFull` is a diagram of the full ResNet-18.
 -->
 
-Có 4 tầng tích chập trong mỗi mô-đun (không bao gồm tầng tích chập $1 \times 1$).
-Cùng với tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, có tổng cộng 18 tầng.
+Có 4 tầng tích chập trong mỗi mô-đun (không tính tầng tích chập $1 \times 1$).
+Cộng thêm tầng tích chập đầu tiên và tầng kết nối đầy đủ cuối cùng, mô hình có tổng cộng 18 tầng.
 Do đó, mô hình này thường được gọi là ResNet-18.
-Bằng cách thay đổi số lượng kênh và khối thặng dư khác nhau trong mô-đun, chúng ta có thể tạo ra các mô hình ResNet khác nhau, 
-ví dụ ResNet-152 sâu hơn với 152 tầng.
-Mặc dù kiến trúc chính của ResNet tương tự như của GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
-Tất cả các yếu tố này đã dẫn đến sự phổ cập của ResNet diễn ra rất nhanh chóng và rộng rãi.
-: numref: `fig_ResNetFull` là sơ đồ của mạng ResNet-18 đầy đủ.
+Có thể thay đổi số kênh và các khối phần dư trong mô-đun để tạo ra các mô hình ResNet khác nhau, 
+ví dụ mô hình 152 tầng của ResNet-152.
+Mặc dù có kiến trúc lõi tương tự như GoogLeNet, cấu trúc của ResNet đơn giản và dễ sửa đổi hơn.
+Tất cả các yếu tố này dẫn đến sự phổ cập nhanh chóng và rộng rãi của ResNet.
+:numref: `fig_ResNetFull` là sơ đồ đầy đủ của ResNet-18.
 
 <!--
 ![ResNet 18](../img/ResNetFull.svg)
 -->
 
-![Mạng ResNet-18](../img/ResNetFull.svg)
+![ResNet-18](../img/ResNetFull.svg)
 :label:`fig_ResNetFull`
 
 <!--
@@ -348,8 +348,8 @@ Before training ResNet, let us observe how the input shape changes between diffe
 As in all previous architectures, the resolution decreases while the number of channels increases up until the point where a global average pooling layer aggregates all features.
 -->
 
-Trước khi huấn luyện ResNet, chúng ta hãy quan sát cách kích thước đầu vào thay đổi giữa các mô-đun khác nhau trong mạng ResNet.
-Như trong tất cả các kiến trúc trước đây, độ phân giải giảm trong khi số lượng kênh tăng lên cho đến khi một tầng gộp trung bình toàn cục tổng hợp tất cả các đặc trưng.
+Trước khi huấn luyện, hãy quan sát thay đổi của kích thước đầu vào qua các mô-đun khác nhau trong ResNet.
+Như trong tất cả các kiến trúc trước, độ phân giải giảm trong khi số lượng kênh tăng đến khi tầng gộp trung bình toàn cục tổng hợp tất cả các đặc trưng.
 
 ```{.python .input  n=6}
 X = np.random.uniform(size=(1, 1, 224, 224))
@@ -374,8 +374,8 @@ We train ResNet on the Fashion-MNIST dataset, just like before.
 The only thing that has changed is the learning rate that decreased again, due to the more complex architecture.
 -->
 
-Giống như các phần trước, chúng ta huấn luyện mạng ResNet trên bộ dữ liệu Fashion-MNIST.
-Điều duy nhất được thay đổi là tốc độ học giảm trở lại, do kiến trúc mạng phức tạp hơn.
+Giống như các phần trước, chúng ta huấn luyện ResNet trên bộ dữ liệu Fashion-MNIST.
+Thay đổi duy nhất là giảm tốc độ học lại do kiến trúc mạng phức tạp hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 256
@@ -396,10 +396,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-* Các khối thặng dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
-* Thêm các khối thặng dư làm tăng độ phức tạp của hàm số theo cách được xác định rõ.
-* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối thặng dư chuyển dữ liệu liên tầng.
-* ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu có bản chất tích chập và cả tuần tự.
+* Khối phần dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
+* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo một cách chủ đích.
+* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối phần dư chuyển dữ liệu liên tầng.
+* ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu, cả tích chập và tuần tự.
 
 <!--
 ## Exercises
@@ -416,11 +416,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 5. Why cannot we just increase the complexity of functions without bound, even if the function classes are nested?
 -->
 
-1. Tham khảo Bảng 1 trong bài báo :cite:`He.Zhang.Ren.ea.2016` để lập trình các biến thể khác nhau.
-2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "thắt cổ chai" để giảm độ phức tạp của mô hình. Hãy thử xây dựng kiến trúc đó.
-3. Trong các phiên bản tiếp theo của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình phép cải thiện này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
-4. Chứng minh rằng nếu $\mathbf{x}$ được tạo bởi ReLU thì khối ResNet sẽ bao gồm hàm số đồng nhất.
-5. Tại sao không thể tăng không giới hạn độ phức tạp của các hàm số, ngay cả khi các lớp hàm số được lồng nhau?
+1. Tham khảo Bảng 1 trong :cite:`He.Zhang.Ren.ea.2016` để lập trình các biến thể khác nhau.
+2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "thắt cổ chai" để giảm độ phức tạp của mô hình. Hãy thử lập trình kiến trúc đó.
+3. Trong các phiên bản sau của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình kiến trúc này. Xem Hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
+4. Chứng minh rằng nếu $\mathbf{x}$ được tạo ra bởi ReLU thì khối ResNet sẽ bao gồm hàm số đồng nhất.
+5. Tại sao không thể tăng không giới hạn độ phức tạp của các hàm số, ngay cả với các lớp hàm lồng nhau?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -448,26 +448,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Nguyễn Cảnh Thướng
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
 * Nguyễn Đình Nam
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
