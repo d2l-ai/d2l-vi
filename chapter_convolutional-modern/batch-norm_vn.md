@@ -420,7 +420,7 @@ Recall that BN is typically applied after the convolutional layers and fully-con
 -->
 
 Để biết cách áp dụng `BatchNorm` trên thực tế, bên dưới ta áp dụng cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
-Nhớ lại rằng BN thường được áp dụng sau tầng tích chập và tầng kết nối đầy đủ và trước hàm kích hoạt tương ứng.
+Nhắc lại rằng BN thường được sử dụng sau tầng tích chập và tầng kết nối đầy đủ và trước hàm kích hoạt tương ứng.
 
 ```{.python .input  n=74}
 net = nn.Sequential()
