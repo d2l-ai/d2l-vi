@@ -27,7 +27,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | attention mechanisms                  | cơ chế tập trung          |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | automatic differentiation             | tính vi phân tự động      | [https://git.io/JvojU](https://git.io/JvojU) |
-| autoregressive                  |  tự hồi quy        |                                              |
+| autoregressive                        | tự hồi quy                |                                              |
 | average pooling                       | gộp trung bình            | [https://git.io/JfGi6](https://git.io/JfGi6) |
 
 ## B
@@ -103,7 +103,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dev set performance       | chất lượng trên tập phát triển  |                                              |
 | development set           | tập phát triển                  |                                              |
 | differentiable            | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
-| dimension                   |  chiều                         |                                       |
+| dimension                 | chiều                           |                                              |
 | dimensionality            | kích thước chiều                |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
@@ -170,7 +170,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
-| growth rate                    | tốc độ tăng trưởng                |                                             |
+| growth rate                    | tốc độ tăng trưởng                |                                                                                            |
 
 ## H
 | English                 | Tiếng Việt               | Thảo luận tại                                                                              |
@@ -179,29 +179,28 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | heuristic               | thực nghiệm              |                                                                                            |
 | hidden unit             | nút ẩn                   |                                                                                            |
 | hidden state            | trạng thái ẩn            |                                                                                            |
-| hidden state variable          | biến trạng thái ẩn            |                                                                                            |
-| hidden variable            | biến ẩn            |                                                                                            |
-
+| hidden state variable   | biến trạng thái ẩn       |                                                                                            |
+| hidden variable         | biến ẩn                  |                                                                                            |
 | human-level performance | chất lượng mức con người | [https://git.io/JvQx4](https://git.io/JvQx4), [https://git.io/JvQxB](https://git.io/JvQxB) |
 | hyperparameter          | siêu tham số             |                                                                                            |
 | hyperplane              | siêu phẳng               | [https://git.io/JvojD](https://git.io/JvojD)                                               |
 | hypothesis test         | kiểm định giả thuyết     | [https://git.io/Jvoja](https://git.io/Jvoja)                                               |
 
 ## I
-| English                    | Tiếng Việt                  | Thảo luận tại                                |
-|----------------------------|-----------------------------|----------------------------------------------|
-| implement                  | lập trình                   | [https://git.io/JvohG](https://git.io/JvohG) |
-| implementation             | cách lập trình              | [https://git.io/JvohG](https://git.io/JvohG) |
-| implicit feedback          | phản hồi gián tiếp          |                                              |
-| import (module, package)   | nhập (mô-đun, gói thư viện) | [https://git.io/JvQxK](https://git.io/JvQxK) |
-| imputation (Preprocessing) | quy buộc                    | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
-| independence assumption    | giả định độc lập            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| indicator variable         | biến chỉ định               | [https://git.io/JvQha](https://git.io/JvQha) |
-| inductive bias             | thiên kiến quy nạp          |                                              |
-| initializer                | bộ khởi tạo                 | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
-| internal covariate shift   | dịch chuyển hiệp biến nội bộ |  |
-| iteration                  | vòng lặp                    |                                              |
-| iterator                   | iterator                    | [https://git.io/JvohG](https://git.io/JvohG) |
+| English                    | Tiếng Việt                   | Thảo luận tại                                |
+|----------------------------|------------------------------|----------------------------------------------|
+| implement                  | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
+| implementation             | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
+| implicit feedback          | phản hồi gián tiếp           |                                              |
+| import (module, package)   | nhập (mô-đun, gói thư viện)  | [https://git.io/JvQxK](https://git.io/JvQxK) |
+| imputation (Preprocessing) | quy buộc                     | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
+| independence assumption    | giả định độc lập             | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| indicator variable         | biến chỉ định                | [https://git.io/JvQha](https://git.io/JvQha) |
+| inductive bias             | thiên kiến quy nạp           |                                              |
+| initializer                | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
+| internal covariate shift   | dịch chuyển hiệp biến nội bộ |                                              |
+| iteration                  | vòng lặp                     |                                              |
+| iterator                   | iterator                     | [https://git.io/JvohG](https://git.io/JvohG) |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại                                |
@@ -219,7 +218,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                            | Tiếng Việt                     | Thảo luận tại                                |
 |------------------------------------|--------------------------------|----------------------------------------------|
 | label smoothing                    | làm mượt nhãn                  |                                              |
-| latent variable                    | biến tiềm ẩn                 |                                              |
+| latent variable                    | biến tiềm ẩn                   |                                              |
 | layer                              | tầng                           |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
@@ -275,28 +274,28 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
-| non-squashing activation function | hàm kích hoạt không ép            |                                                                                           |
+| non-squashing activation function | hàm kích hoạt không ép            |                                                                                            |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
-| nonparametric        | phi tham số              |                                              |
+| nonparametric                     | phi tham số                       |                                                                                            |
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
 
 ## O
-| English              | Tiếng Việt         | Thảo luận tại                                |
-|----------------------|--------------------|----------------------------------------------|
-| object detection     | nhận diện vật thể  |                                              |
-| objective function   | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
-| offline learning     | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
-| one-hot encoding     | biễu diễn one-hot  | [https://git.io/JvohR](https://git.io/JvohR) |
-| one-sided test       | kiểm định một phía | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| one-tailed test      | kiểm định một đuôi | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| optimization landscape    | cảnh quan tối ưu  | [https://git.io/Jfwf3](https://git.io/Jfwf3) |
-| optimizing metric    | phép đo để tối ưu  | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| orthogonal           | trực giao          | [https://git.io/JvKem](https://git.io/JvKem) |
-| orthonormal          | trực chuẩn         | [https://git.io/JvKem](https://git.io/JvKem) |
-| overfit              | quá khớp           | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| overflow (numerical) | tràn (số) trên     | [https://git.io/JvohC](https://git.io/JvohC) |
+| English                | Tiếng Việt         | Thảo luận tại                                |
+|------------------------|--------------------|----------------------------------------------|
+| object detection       | nhận diện vật thể  |                                              |
+| objective function     | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
+| offline learning       | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
+| one-hot encoding       | biễu diễn one-hot  | [https://git.io/JvohR](https://git.io/JvohR) |
+| one-sided test         | kiểm định một phía | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| one-tailed test        | kiểm định một đuôi | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| optimization landscape | cảnh quan tối ưu   | [https://git.io/Jfwf3](https://git.io/Jfwf3) |
+| optimizing metric      | phép đo để tối ưu  | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| orthogonal             | trực giao          | [https://git.io/JvKem](https://git.io/JvKem) |
+| orthonormal            | trực chuẩn         | [https://git.io/JvKem](https://git.io/JvKem) |
+| overfit                | quá khớp           | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| overflow (numerical)   | tràn (số) trên     | [https://git.io/JvohC](https://git.io/JvohC) |
 
 ## P
 | English                            | Tiếng Việt                 | Thảo luận tại                                |
@@ -344,7 +343,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| residual network                  | mạng phần dư                             | [https://git.io/JfGi1](https://git.io/JfGi1) |
+| residual network                  | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
 | robust to noise                   | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
@@ -379,7 +378,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                                              |
-| stop word                       | từ dừng                  |  |
+| stop word                       | từ dừng                  |                                              |
 | stride                          | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                       | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
