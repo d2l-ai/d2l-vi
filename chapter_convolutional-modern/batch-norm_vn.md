@@ -412,7 +412,7 @@ class BatchNorm(nn.Block):
 ## Using a Batch Normalization LeNet
 -->
 
-## Sử dụng LeNet có BN 
+## Sử dụng LeNet với Chuẩn hóa theo Batch
 
 <!--
 To see how to apply `BatchNorm` in context, below we apply it to a traditional LeNet model (:numref:`sec_lenet`).
