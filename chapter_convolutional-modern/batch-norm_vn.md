@@ -297,13 +297,13 @@ Lưu ý rằng dropout cũng có tính chất này.
 ## Implementation from Scratch
 -->
 
-## Lập trình Từ đầu
+## Lập trình từ đầu
 
 <!--
 Below, we implement a batch normalization layer with `ndarray`s from scratch:
 -->
 
-Dưới đây, chúng ta lập trình lại từ đầu tầng chuẩn hoá theo batch mà chỉ dùng $ndarrays$.
+Dưới đây, chúng ta lập trình tầng chuẩn hoá theo batch chỉ dùng `ndarray`.
 
 ```{.python .input  n=72}
 import d2l
@@ -350,11 +350,11 @@ The `num_features` parameter required by the `BatchNorm` instance is the number 
 The `num_dims` parameter also required by this instance is 2 for a fully-connected layer and 4 for a convolutional layer.
 -->
 
-Bây giờ chúng ta có thể tạo ra một tầng `BatchNorm` đúng cách.
+Giờ ta có thể tạo một tầng `BatchNorm` đúng cách.
 Tầng này sẽ duy trì những tham số thích hợp tương ứng với tỉ lệ `gamma` và độ chệch `beta`, hai tham số này sẽ được cập nhật trong quá trình huấn luyện.
-Thêm vào đó, tầng BN sẽ sẽ duy trì một giá trị trung bình động của những giá trị trung bình và phương sai cho các lần chạy sau trong lúc mô hình dự đoán. 
-Tham số `num_features` được yêu cầu truyền vào bởi đối tượng `BatchNorm` là số lượng các đầu ra cho tầng kết nối đầy đủ và số lượng kênh đầu ra cho tầng tích chập.
-Tham số `num_dims` cũng được yêu cầu truyền vào bởi đối tượng này là 2 cho tầng kết nối đầy đủ và 4 cho tầng tích chập.
+Thêm vào đó, tầng BN sẽ duy trì giá trị trung bình động của trung bình và phương sai để sử dụng về sau khi ở chế độ dự đoán. 
+Tham số `num_features` truyền vào `BatchNorm` là số đầu ra của tầng kết nối đầy đủ hoặc số kênh đầu ra của tầng tích chập.
+Tham số `num_dims` bằng 2 nếu là tầng kết nối đầy đủ và bằng 4 nếu là tầng tích chập.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -371,13 +371,12 @@ Also note that for the sake of convenience we did not worry about automatically 
 Do not worry, the Gluon `BatchNorm` layer will care of this for us.
 -->
 
-Ta tạm để các chi tiết thuật toán sang một bên mà tập trung vào các khuôn mẫu thiết kế nền tảng cho việc lập trình. 
-Thông thường, ta định nghĩa phần toán trong một hàm riêng biệt, chẳng hạn như `batch_norm`.
-Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu để giải quyết các vấn đề quản trị,
-chẳng hạn như di chuyển dữ liệu đến thiết bị phù hợp ngữ cảnh, cấp phát và khởi tạo bất kỳ biến nào được yêu cầu, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
-Khuôn mẫu này cho phép ta tách hoàn toàn các phép tính toán ra khỏi đoạn mã phụ trợ.
-Cũng lưu ý rằng để thuận tiện, ta không cần lo về việc tự động suy ra kích thước đầu vào ở đây, do đó chúng ta cũng không cần chỉ định số lượng đặc trưng xuyên suốt.
-Đừng lo lắng, lớp `BatchNorm` của Gluon sẽ làm điều này.
+Tạm để thuật toán sang một bên và tập trung vào khuôn mẫu thiết kế (*design pattern*) của việc lập trình. 
+Thông thường, ta lập trình phần toán trong một hàm riêng biệt, ví dụ như `batch_norm`.
+Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu giải quyết các vấn đề phụ trợ như di chuyển dữ liệu đến thiết bị phù hợp, cấp phát và khởi tạo biến, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
+Khuôn mẫu này giúp tách biệt việc tính toán khỏi các đoạn mã rập khuôn.
+Cũng lưu ý rằng để thuận tiện khi lập trình BN từ đầu, ta không tự động suy ra kích thước đầu vào, do đó ta cần chỉ định số lượng đặc trưng xuyên suốt.
+Tầng `BatchNorm` của Gluon sẽ hỗ trợ việc tự động này bằng khởi tạo trễ.
 
 ```{.python .input  n=73}
 class BatchNorm(nn.Block):
@@ -413,15 +412,15 @@ class BatchNorm(nn.Block):
 ## Using a Batch Normalization LeNet
 -->
 
-## Sử dụng một cấu trúc mạng LeNet Chuẩn hóa theo Batch 
+## Sử dụng LeNet với Chuẩn hóa theo Batch
 
 <!--
 To see how to apply `BatchNorm` in context, below we apply it to a traditional LeNet model (:numref:`sec_lenet`).
 Recall that BN is typically applied after the convolutional layers and fully-connected layers but before the corresponding activation functions.
 -->
 
-Để xem cách áp dụng `BatchNorm` trong ngữ cảnh, bên dưới chúng tôi áp dụng nó cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
-Hãy nhớ lại rằng BN thường được áp dụng sau các tầng tích chập và các lớp được kết nối đầy đủ nhưng trước các hàm kích hoạt tương ứng.
+Để biết cách áp dụng `BatchNorm` trên thực tế, bên dưới ta áp dụng cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
+Nhắc lại rằng BN thường được sử dụng sau tầng tích chập và tầng kết nối đầy đủ và trước hàm kích hoạt tương ứng.
 
 ```{.python .input  n=74}
 net = nn.Sequential()
@@ -448,9 +447,9 @@ This code is virtually identical to that when we first trained LeNet (:numref:`s
 The main difference is the considerably larger learning rate.
 -->
 
-Như trước đây, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
-Đoạn mã này gần như là tương tự với khi chúng ta lần đầu huấn luyên LeNet (:numref:`sec_lenet`).
-Sự khác biệt chính là tốc độ học lớn hơn đáng kể.
+Như thường lệ, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
+Đoạn mã này gần tương tự với đoạn mã khi lần đầu huấn luyện LeNet (:numref:`sec_lenet`).
+Điểm khác biệt chính là tốc độ học lớn hơn đáng kể.
 
 ```{.python .input  n=77}
 lr, num_epochs, batch_size = 1.0, 10, 256
