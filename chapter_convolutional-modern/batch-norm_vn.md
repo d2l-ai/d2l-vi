@@ -521,8 +521,7 @@ while our custom implementation must be interpreted by Python.
 -->
 
 Chúng ta sử dụng cùng các siêu tham số như trước để huấn luyện mô hình.
-Như thường lệ, biến thể dùng Gluon này chạy nhanh hơn nhiều vì được biên dịch thành C++/CUDA
-trong khi đoạn mã tùy chỉnh của chúng ta phải qua thông dịch bằng Python.
+Như thường lệ, biến thể dùng Gluon này chạy nhanh hơn nhiều vì được biên dịch thành C++/CUDA trong khi đoạn mã tùy chỉnh của chúng ta phải qua thông dịch bằng Python.
 
 ```{.python .input}
 d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
