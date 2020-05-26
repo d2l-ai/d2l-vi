@@ -231,7 +231,7 @@ Recall that mean and variance are computed on the *same* minibatch $\mathcal{B}$
 Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\mathbf{\beta}$ are parameters that need to be learned jointly with the more familiar parameters $\mathbf{\theta}$.
 -->
 
-Hãy nhớ rằng giá trị trung bình và phương sai sẽ được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
+Nhắc lại rằng giá trị trung bình và phương sai sẽ được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
 Cũng cần lưu ý rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số quen thuộc $\mathbf{\theta}$.
 
 <!--
