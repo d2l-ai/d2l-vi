@@ -373,8 +373,7 @@ Do not worry, the Gluon `BatchNorm` layer will care of this for us.
 
 Tạm để thuật toán sang một bên và tập trung vào khuôn mẫu thiết kế (*design pattern*) của việc lập trình. 
 Thông thường, ta lập trình phần toán trong một hàm riêng biệt, ví dụ như `batch_norm`.
-Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu giải quyết các vấn đề phụ trợ,
-như di chuyển dữ liệu đến thiết bị phù hợp, cấp phát và khởi tạo biến, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
+Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu giải quyết các vấn đề phụ trợ như di chuyển dữ liệu đến thiết bị phù hợp, cấp phát và khởi tạo biến, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
 Khuôn mẫu này giúp tách biệt việc tính toán khỏi các đoạn mã dài.
 Cũng lưu ý rằng để thuận tiện, khi lập trình BN từ đầu, ta không tự động suy ra kích thước đầu vào, do đó cần chỉ định số lượng đặc trưng xuyên suốt.
 Tầng `BatchNorm` của Gluon sẽ hỗ trợ việc tự động này bằng khởi tạo trễ.
