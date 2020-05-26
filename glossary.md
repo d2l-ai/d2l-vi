@@ -291,7 +291,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | one-hot encoding     | biễu diễn one-hot  | [https://git.io/JvohR](https://git.io/JvohR) |
 | one-sided test       | kiểm định một phía | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | one-tailed test      | kiểm định một đuôi | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| optimization landscape    | cảnh quan tối ưu  | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| optimization landscape    | cảnh quan tối ưu  | [https://git.io/Jfwf3](https://git.io/Jfwf3) |
 | optimizing metric    | phép đo để tối ưu  | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | orthogonal           | trực giao          | [https://git.io/JvKem](https://git.io/JvKem) |
 | orthonormal          | trực chuẩn         | [https://git.io/JvKem](https://git.io/JvKem) |
