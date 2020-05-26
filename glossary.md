@@ -288,6 +288,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | object detection     | nhận diện vật thể  |                                              |
 | objective function   | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | offline learning     | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
+| offset               | độ dời             |  |
 | one-hot encoding     | biễu diễn one-hot  | [https://git.io/JvohR](https://git.io/JvohR) |
 | one-sided test       | kiểm định một phía | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | one-tailed test      | kiểm định một đuôi | [https://git.io/Jvoja](https://git.io/Jvoja) |
