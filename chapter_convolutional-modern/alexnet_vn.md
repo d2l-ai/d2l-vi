@@ -116,7 +116,7 @@ Indeed, :cite:`Krizhevsky.Sutskever.Hinton.2012` proposed a new variant of a con
 
 Một nhóm các nhà nghiên cứu, bao gồm Yann LeCun, Geoff Hinton, Yoshua Bengio, Andrew Ng, Shun-ichi Amari, và Juergen Schmidhuber, lại có những kế hoạch khác.
 Họ tin rằng đặc trưng cũng có thể được học.
-Hơn nữa, họ cũng cho rằng để có được độ phức tạp vừa phải, các đặc trưng nên được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số có thể được huấn luyện.
+Hơn nữa, họ cũng cho rằng để có được độ phức tạp hợp lý, các đặc trưng nên được phân thành thứ lớp với nhiều tầng học cùng nhau, mỗi tầng có các tham số có thể được huấn luyện.
 Trong trường hợp ảnh, các tầng thấp nhất có thể dùng để phát hiện biên, màu sắc và đường nét.
 Thật vậy, :cite:`Krizhevsky.Sutskever.Hinton.2012` giới thiệu một biến thể mới của mạng nơ-ron tích chập đã đạt được hiệu năng xuất sắc trong cuộc thi ImageNet. 
 
