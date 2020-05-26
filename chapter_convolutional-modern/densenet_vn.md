@@ -5,7 +5,7 @@
 # Densely Connected Networks (DenseNet)
 -->
 
-# Mạng Tích chập Kết nối Dày đặc (_Densely Connected Networks - DenseNet_)
+# Mạng Tích chập Kết nối Dày đặc (DenseNet)
 
 <!--
 ResNet significantly changed the view of how to parametrize the functions in deep networks.
@@ -355,8 +355,8 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 1. Tại sao ta lại sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
 3. DenseNet thường bị chỉ trích vì nó tiêu tốn nhiều bộ nhớ.
-     * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy tìm các phương án khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
+    * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
+    * Hãy tìm các phương án khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
 5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần làm vậy với nhiều hơn hai tầng trong DenseNet?
 6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự đoán Giá Nhà.
@@ -364,40 +364,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2360)
--->
-
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2360)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Duy Du
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
-
-<!-- Phần 4 -->
-* Nguyễn Duy Du
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
+* Nguyễn Cảnh Thướng
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh
