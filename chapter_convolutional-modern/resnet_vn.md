@@ -5,7 +5,7 @@
 # Residual Networks (ResNet)
 -->
 
-# Mạng thặng dư (ResNet)
+# Mạng phần dư (ResNet)
 :label:`sec_resnet`
 
 <!--
@@ -14,9 +14,9 @@ Even more important is the ability to design networks where adding layers makes 
 To make some progress we need a bit of theory.
 -->
 
-Khi thiết kế các mạng ngày càng sâu hơn, chúng ta cần nắm rõ việc thêm các tầng vào mạng sẽ tăng độ phức tạp và khả năng biểu diễn của mạng như thế nào.
-Điều quan trọng hơn nữa là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng chắc chắn sẽ làm chúng có tính biểu diễn cao hơn thay vì chỉ làm chúng khác đi.
-Để làm được điều này, trước tiên chúng ta cần một chút lý thuyết.
+Khi thiết kế các mạng ngày càng sâu, ta cần hiểu việc thêm các tầng sẽ tăng độ phức tạp và khả năng biểu diễn của mạng như thế nào.
+Quan trọng hơn là khả năng thiết kế các mạng trong đó việc thêm các tầng vào mạng chắc chắn sẽ làm tăng tính biểu diễn thay vì chỉ tạo ra một chút khác biệt.
+Để làm được điều này, chúng ta cần một chút lý thuyết.
 
 <!--
 ## Function Classes
@@ -33,12 +33,12 @@ Instead, we will try to find some $f^*_\mathcal{F}$ which is our best bet within
 For instance, we might try finding it by solving the following optimization problem:
 -->
 
-Hãy coi $\mathcal{F}$ là một lớp các hàm mà một kiến trúc mạng cụ thể (ở cùng với tốc độ học và các siêu tham số khác) có thể biểu diễn được.
-Đó là, luôn tồn tại một số tập tham số $W$ có thể tìm được thông qua việc huấn luyện trên một tập dữ liệu phù hợp, cho mọi hàm số $f \in \mathcal{F}$.
+Coi $\mathcal{F}$ là một lớp các hàm mà một kiến trúc mạng cụ thể (cùng với tốc độ học và các siêu tham số khác) có thể đạt được.
+Nói cách khác, với mọi hàm số $f \in \mathcal{F}$, luôn tồn tại một số tập tham số $W$ có thể tìm được bằng việc huấn luyện trên một tập dữ liệu phù hợp.
 Giả sử $f^*$ là hàm cần tìm.
-Nếu hàm này thuộc tập $\mathcal{F}$, thì việc tìm kiếm sẽ thuận lợi nhưng thường thì chúng ta sẽ không may mắn như vậy. 
-Thay vào đó, chúng ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
-Ví dụ, chúng ta có thể thử tìm các hàm số này bằng cách giải bài toán tối ưu sau đây:
+Sẽ rất thuận lợi nếu hàm này thuộc tập $\mathcal{F}$, nhưng thường không may mắn như vậy. 
+Thay vào đó, ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
+Ví dụ, có thể thử tìm $f^*_\mathcal{F}$ bằng cách giải bài toán tối ưu sau:
 
 $$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ subject to } f \in \mathcal{F}.$$
 
@@ -50,18 +50,18 @@ In fact, $f^*_{\mathcal{F}'}$ might well be worse.
 This is a situation that we often encounter in practice---adding layers does not only make the network more expressive, it also changes it in sometimes not quite so predictable ways. :numref:`fig_functionclasses`illustrates this in slightly abstract terms.
 -->
 
-Khá hợp lý khi giả sử rằng nếu chúng ta thiết kế một kiến trúc $\mathcal{F}'$ khác biệt và mạnh mẽ hơn thì sẽ đạt được kết quả tốt hơn.
-Nói cách khác, chúng ta kỳ vọng rằng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
-Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì sẽ không đảm bảo rằng điều này có thể xảy ra.
+Khá hợp lý khi giả sử rằng nếu thiết kế một kiến trúc khác $\mathcal{F}'$ mạnh mẽ hơn thì sẽ đạt được kết quả tốt hơn.
+Nói cách khác, ta kỳ vọng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
+Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì không khẳng định được $f^*_{\mathcal{F}'}$ "tốt hơn" $f^*_{\mathcal{F}}$.
 Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
-Đây là tình huống hay xảy ra trong thực tiễn --- việc thêm các tầng không chỉ khiến cho một mạng có tính biểu diễn cao hơn, mà nó còn mang lại những thay đổi mà đôi khi rất khó lường.
-:numref:`fig_functionclasses` mô tả điều này theo các thuật ngữ hơi trừu tượng.
+Và đây là trường hợp thường xuyên xảy ra --- việc thêm các tầng không phải lúc nào cũng tăng tính biểu diễn của mạng mà đôi khi còn tạo ra những thay đổi rất khó lường.
+:numref:`fig_functionclasses` minh hoạ rõ hơn điều này.
 
 <!--
 ![Left: non-nested function classes. The distance may in fact increase as the complexity increases. Right: with nested function classes this does not happen.](../img/functionclasses.svg)
 -->
 
-![Trái: Các lớp hàm số không lồng nhau. Khoảng cách đến hàm cần tìm $f^*$ (ngôi sao), trên thực tế có thể tăng khi độ phức tạp tăng lên. Phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
+![Hình trái: Các lớp hàm số tổng quát. Khoảng cách đến hàm cần tìm $f^*$ (ngôi sao), trên thực tế có thể tăng khi độ phức tạp tăng lên. Hình phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
 :label:`fig_functionclasses`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -77,12 +77,12 @@ As the new model may get a better solution to fit the training dataset, the adde
 Even better, the identity function rather than the null $f(\mathbf{x}) = 0$ should be the simplest function within a layer.
 -->
 
-Chỉ khi các lớp hàm số lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của một mạng.
-Đây là câu hỏi mà He và các cộng sự đã cân nhắc năm 2016 khi họ nghiên cứu các mô hình thị giác sâu.
-Trọng tâm của ResNet nằm ở ý tưởng rằng mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
-Điều này có nghĩa là nếu chúng ta huấn luyện tầng mới được thêm vào thành một phép chiếu đồng nhất $f(\mathbf{x}) = \mathbf{x}$, mô hình mới sẽ có hiệu quả như mô hình ban đầu.
-Vì mô hình mới có thể đạt kết quả khớp tập dữ liệu huấn luyện tốt hơn, tầng được thêm vào có thể giúp giảm sai số huấn luyện dễ dàng hơn.
-Thậm chí tốt hơn, hàm số đồng nhất nên là hàm số đơn giản nhất trong một tầng thay vì hàm số null $f(\mathbf{x}) = 0$.
+Chỉ khi các lớp hàm lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của mạng.
+Đây là câu hỏi mà He và các cộng sự đã suy nghĩ khi nghiên cứu các mô hình thị giác sâu năm 2016.
+Ý tưởng trọng tâm của ResNet là mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
+Điều này có nghĩa rằng, nếu ta huấn luyện tầng mới được thêm vào thành một ánh xạ đồng nhất $f(\mathbf{x}) = \mathbf{x}$, thì mô hình mới sẽ hiệu quả ít nhất bằng mô hình ban đầu.
+Vì tầng được thêm vào có thể khớp dữ liệu huấn luyện tốt hơn, dẫn đến sai số huấn luyện cũng nhỏ hơn.
+Tốt hơn nữa, hàm số đồng nhất nên là hàm đơn giản nhất trong một tầng thay vì hàm null $f(\mathbf{x}) = 0$.
 
 <!--
 These considerations are rather profound but they led to a surprisingly simple solution, a residual block.
@@ -90,15 +90,15 @@ With it, :cite:`He.Zhang.Ren.ea.2016` won the ImageNet Visual Recognition Challe
 The design had a profound influence on how to build deep neural networks.
 -->
 
-Những xem xét này rất sâu sắc nhưng chúng đã dẫn đến một lời giải đơn giản đáng ngạc nhiên, đó là một khối thặng dư.
-Với ý tưởng này, :cite:`He.Zhang.Ren.ea.2016` đã giành chiến thắng cuộc thi Nhận dạng Ảnh ImageNet năm 2015.
-Thiết kế này có ảnh hưởng sâu sắc tới các xây dựng dựng các kiến trúc mạng nơ-ron sâu.
+Cách suy nghĩ này khá trừu tượng nhưng lại dẫn đến một lời giải đơn giản đáng ngạc nhiên, một khối phần dư (*residual block*).
+Với ý tưởng này, :cite:`He.Zhang.Ren.ea.2016` đã chiến thắng cuộc thi Nhận dạng Ảnh ImageNet năm 2015.
+Thiết kế này có ảnh hưởng sâu sắc tới việc xây dựng các mạng nơ-ron sâu.
 
 <!--
 ## Residual Blocks
 -->
 
-## Khối Thặng dư
+## Khối phần dư
 
 <!--
 Let us focus on a local neural network, as depicted below.
@@ -113,21 +113,22 @@ The right image in :numref:`fig_residual_block` illustrates the basic Residual B
 Similar architectures were later proposed for sequence models which we will study later.
 -->
 
-Bây giờ, chúng ta hãy tập trung vào mạng nơ-ron cục bộ như mô tả dưới đây.
-Ký hiệu đầu vào bởi $\mathbf{x}$.
-Chúng ta giả sử rằng phép chiếu lý tưởng chúng ta muốn đạt được bằng việc học là $f(\mathbf{x})$, được sử dụng là đầu vào của hàm kích hoạt.
-Phần nằm trong viền nét đứt ở bên trái của ảnh cần trực tiếp khớp với ánh xạ $f(\mathbf{x})$.
-Điều này có thể không đơn giản nếu chúng ta không cần một tầng cụ thể đó và chúng ta muốn giữ lại đầu vào $\mathbf{x}$.
-Trong thực tế, phép chiếu thặng dư thường dễ để tối ưu hơn.
-Chúng ta chỉ cần đặt $f(\mathbf{x}) = 0$.
-Phía bên phải ảnh trong :numref:`fig_residual_block` mô tả Khối Thặng dư cơ bản của mạng ResNet.
-Những kiến trúc tương tự sau đó đã được đề xuất cho các mô hình chuỗi mà chúng ta sẽ nghiên cứu trong các chương sau.
+Bây giờ, hãy tập trung vào mạng nơ-ron dưới đây.
+Ký hiệu đầu vào là $\mathbf{x}$.
+Giả sử ánh xạ lý tưởng muốn học được là $f(\mathbf{x})$, và được dùng làm đầu vào của hàm kích hoạt.
+Phần nằm trong viền nét đứt bên trái phải khớp trực tiếp với ánh xạ $f(\mathbf{x})$.
+Điều này có thể không đơn giản nếu chúng ta không cần khối đó và muốn giữ lại đầu vào $\mathbf{x}$.
+Khi đó, phần nằm trong viền nét đứt bên phải chỉ cần tham số hoá *độ lệch* khỏi giá trị $\mathbf{x}$, bởi vì ta đã trả về $\mathbf{x} + f(\mathbf{x})$.
+Trên thực tế, ánh xạ phần dư thường dễ tối ưu hơn,
+vì chỉ cần đặt $f(\mathbf{x}) = 0$.
+Nửa bên phải :numref:`fig_residual_block` mô tả khối phần dư cơ bản của ResNet.
+Về sau, những kiến trúc tương tự đã được đề xuất cho các mô hình chuỗi (*sequence model*), sẽ đề cập ở chương sau.
 
 <!--
 ![The difference between a regular block (left) and a residual block (right). In the latter case, we can short-circuit the convolutions.](../img/residual-block.svg)
 -->
 
-![Sự khác biệt giữa một khối thông thường (trái) và một khối thặng dư (phải). Trong trường hợp sau, chúng ta có thể bỏ qua các tích chập.](../img/residual-block.svg)
+![Sự khác biệt giữa một khối thông thường (trái) và một khối phần dư (phải). Trong khối phần dư, ta có thể nối tắt các tích chập.](../img/residual-block.svg)
 :label:`fig_residual_block`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -143,13 +144,15 @@ This kind of design requires that the output of the two convolutional layers be 
 If we want to change the number of channels or the stride, we need to introduce an additional $1\times 1$ convolutional layer to transform the input into the desired shape for the addition operation.
 Let us have a look at the code below.
 -->
-ResNet tuân theo thiết kế tầng tích chập đầy đủ $3\times 3$ của VGG.
-Khối thặng dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
+
+ResNet có thiết kế tầng tích chập $3\times 3$ giống VGG.
+Khối phần dư có hai tầng tích chập $3\times 3$ với cùng số kênh đầu ra.
 Mỗi tầng tích chập được theo sau bởi một tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU.
-Sau đó, chúng ta bỏ qua hai phép tính tích chập và cộng với giá trị đầu vào trước hàm kích hoạt ReLU cuối cùng.
-Kiểu thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với giá trị đầu vào, để có thể cộng lại với nhau.
-Nếu chúng ta muốn thay đổi số lượng kênh hoặc sải bước, chúng ta cần bổ sung một tầng tích chập $1\times 1$ để thay đổi kích thước giá trị đầu vào cho phù hợp với phép cộng.
+Ta đưa đầu vào qua khối phần dư rồi cộng với chính nó trước hàm kích hoạt ReLU cuối cùng.
+Thiết kế này đòi hỏi đầu ra của hai tầng tích chập phải có cùng kích thước với đầu vào, để có thể cộng lại với nhau.
+Nếu muốn thay đổi số lượng kênh hoặc sải bước trong khối phần dư, cần thêm một tầng tích chập $1\times 1$ để thay đổi kích thước đầu vào tương ứng ở nhánh ngoài.
 Hãy cùng xem đoạn mã bên dưới.
+
 ```{.python .input  n=1}
 import d2l
 from mxnet import np, npx
@@ -184,8 +187,11 @@ This code generates two types of networks: one where we add the input to the out
 and whenever `use_1x1conv=True`, one where we adjust channels and resolution by means of a $1 \times 1$ convolution before adding.
 :numref:`fig_resnet_block` illustrates this:
 -->
-Đoạn mã này sinh ra hai loại mạng nơ-ron: một loại cộng giá trị đầu vào vào giá trị đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), còn ở loại thứ hai chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
-:numref:`fig_resnet_block` minh họa cho điều này:
+
+Đoạn mã này tạo ra hai loại mạng: một loại cộng đầu vào vào đầu ra trước khi áp dụng hàm phi tuyến ReLU (khi `use_1x1conv=True`), 
+còn ở loại thứ hai chúng ta thay đổi số kênh và độ phân giải bằng một tầng tích chập $1 \times 1$ trước khi thực hiện phép cộng.
+:numref:`fig_resnet_block` minh họa điều này:
+
 <!--
 ![Left: regular ResNet block; Right: ResNet block with 1x1 convolution](../img/resnet-block.svg)
 -->
@@ -196,7 +202,9 @@ and whenever `use_1x1conv=True`, one where we adjust channels and resolution by 
 <!--
 Now let us look at a situation where the input and output are of the same shape.
 -->
-Giờ hãy cùng xem xét một tình huống mà cả giá trị đầu vào và đầu ra có cùng kích thước.
+
+Giờ hãy xem xét tình huống khi cả đầu vào và đầu ra có cùng kích thước.
+
 ```{.python .input  n=2}
 blk = Residual(3)
 blk.initialize()
@@ -207,7 +215,9 @@ blk(X).shape
 <!--
 We also have the option to halve the output height and width while increasing the number of output channels.
 -->
-Chúng ta cũng có một lựa chọn khác là giảm kích thước chiều cao và chiều rộng đi một nửa trong khi tăng số lượng kênh của đầu ra.
+
+Chúng ta cũng có thể giảm một nửa kích thước chiều cao và chiều rộng của đầu ra trong khi tăng số kênh.
+
 ```{.python .input  n=3}
 blk = Residual(6, use_1x1conv=True, strides=2)
 blk.initialize()
