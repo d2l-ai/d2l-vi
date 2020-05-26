@@ -543,7 +543,7 @@ Even with dropout and L2 regularization, they remain so flexible that their abil
 Theo trực giác, chuẩn hóa theo batch được cho là làm cảnh quan tối ưu (*optimization landscape*) mượt mà hơn.
 Tuy nhiên, cần cẩn thận phân biệt giữa suy đoán theo trực giác và lời giải thích thực sự cho các hiện tượng quan sát thấy khi huấn luyện các mô hình học sâu.
 Hãy nhớ lại rằng ngay từ đầu ta thậm chí không rõ tại sao các mạng nơ-ron sâu đơn giản hơn (như Perceptron đa tầng và CNN truyền thống) lại có thể khái quát tốt như vậy.
-Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được bằng các bảo đảm khái quát hóa dựa trên lý thuyết học truyền thống.
+Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được bằng các điều kiện bảo đảm sự khái quát hóa trong lý thuyết học truyền thống.
 
 <!--
 In the original paper proposing batch normalization, the authors, in addition to introducing a powerful and useful tool, 
