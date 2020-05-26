@@ -110,8 +110,8 @@ At the same time, we can allocate different amounts of parameters for different 
 
 Để hiểu trực quan tại sao mạng này hoạt động tốt, hãy cùng tìm hiểu sự kết hợp của các bộ lọc.
 Chúng khám phá hình ảnh trên các vùng có kích thước khác nhau. 
-Tức là những chi tiết ở những mức độ khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau. 
-Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng phạm vi lớn)
+Tức là những chi tiết ở những mức độ khác nhau sẽ được nhận diện một cách hiệu quả bằng các bộ lọc khác nhau.
+Đồng thời, chúng ta có thể phân bổ số lượng tham số khác nhau cho những vùng có phạm vi khác nhau (ví dụ: nhiều tham số hơn cho vùng phạm vi nhỏ nhưng không bỏ qua hoàn toàn vùng phạm vi lớn).
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -238,7 +238,7 @@ Finally, we turn the output into a two-dimensional array followed by a fully-con
 -->
 
 Thành phần thứ năm có hai khối Inception với số kênh đầu ra lần lượt là $256+320+128+128=832$ và $384+384+128+128=1024$. 
-Số lượng kênh được gán cho mỗi nhánh tương tự như trong mô đun thứ ba và thứ tư, chỉ khác nhau ở giá trị cụ thể.
+Số lượng kênh được gán cho mỗi nhánh tương tự như trong mô-đun thứ ba và thứ tư, chỉ khác nhau ở giá trị cụ thể.
 Lưu ý rằng thành phần thứ năm được theo sau bởi tầng đầu ra.
 Thành phần này sử dụng tầng gộp trung bình toàn cục để giảm chiều cao và chiều rộng của mỗi kênh xuống còn 1, giống như trong mô hình NiN. 
 Cuối cùng, chúng ta biến đổi đầu ra thành một mảng hai chiều, đưa vào một tầng kết nối đầy đủ với số đầu ra bằng số lượng lớp của nhãn.
@@ -317,9 +317,9 @@ The ratio of the number of channels assigned in the Inception block is obtained 
 -->
 
 * Khối Inception tương đương với một mạng con với bốn nhánh. 
-Nó trích xuất thông tin một cách song song thông qua các tầng tích chập với kích thước cửa sổ khác nhau và các tầng gộp cực đại. 
+Nó trích xuất thông tin một cách song song thông qua các tầng tích chập với kích thước cửa sổ khác nhau và các tầng gộp cực đại.
 * Phép tích chập $1 \times 1$ giảm số kênh ở mức độ điểm ảnh. Phép gộp cực đại giảm độ phân giải.
-* Trong GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác theo chuỗi. 
+* Trong GoogLeNet, nhiều khối Inception với thiết kế khéo léo được nối với các tầng khác theo chuỗi.
 Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhiều kết quả thử nghiệm trên tập dữ liệu ImageNet.
 * Mô hình GoogLeNet, cũng như các phiên bản kế tiếp của nó, là một trong những mô hình hiệu quả nhất trên ImageNet, với độ chính xác tương tự trên tập kiểm tra nhưng độ phức tạp tính toán lại thấp hơn.
 
@@ -335,26 +335,22 @@ Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhi
     * Make adjustments to the Inception block :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
     * Use "label smoothing" for model regularization :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
     * Include it in the residual connection :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, as described later in :numref:`sec_resnet`.
-1. What is the minimum image size for GoogLeNet to work?
-2. Compare the model parameter sizes of AlexNet, VGG, and NiN with GoogLeNet. How do the latter two network architectures significantly reduce the model parameter size?
-3. Why do we need a large range convolution initially?
+2. What is the minimum image size for GoogLeNet to work?
+3. Compare the model parameter sizes of AlexNet, VGG, and NiN with GoogLeNet. How do the latter two network architectures significantly reduce the model parameter size?
+4. Why do we need a large range convolution initially?
 -->
 
 1. Có nhiều biến thể của mô hình GoogLeNet. Hãy thử lập trình và chạy chúng. Một số biến thể bao gồm:
     * Thêm vào một tầng chuẩn hoá theo batch :cite:`Ioffe.Szegedy.2015`, như đã được mô tả ở phần :numref:`sec_batch_norm`.
     * Chỉnh sửa khối Inception theo :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
-    * Sử dụng kỹ thuật 'làm mượt nhãn' (*label smoothing*) để điều chuẩn mô hình :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
+    * Sử dụng kỹ thuật "làm mượt nhãn" (*label smoothing*) để điều chuẩn mô hình :cite:`Szegedy.Vanhoucke.Ioffe.ea.2016`.
     * Tích hợp nó vào kết nối phần dư :cite:`Szegedy.Ioffe.Vanhoucke.ea.2017`, như mô tả trong phần sau :numref:`sec_resnet`.
-1. Kích thước tối thiểu của hình ảnh với GoogLeNet là bao nhiêu?
-2. So sánh số lượng tham số mô hình của AlexNet, VGG và NiN với GoogLeNet. NiN và GoogLeNet đã giảm được đáng kể số lượng tham số như thế nào? 
-3. Tại sao chúng ta cần tầng tích chập kích thước lớn ở đầu mạng?
+2. Kích thước tối thiểu của hình ảnh với GoogLeNet là bao nhiêu?
+3. So sánh số lượng tham số mô hình của AlexNet, VGG và NiN với GoogLeNet. NiN và GoogLeNet đã giảm được đáng kể số lượng tham số như thế nào? 
+4. Tại sao chúng ta cần tầng tích chập kích thước lớn ở đầu mạng?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2357)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2357)
@@ -362,28 +358,10 @@ Tỷ lệ số kênh trong khối Inception được xác định dựa vào nhi
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đinh Đắc
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-* Đinh Đắc
-
-<!-- Phần 4 -->
-* Đinh Đắc
+* Nguyễn Văn Quang
+* Phạm Minh Đức

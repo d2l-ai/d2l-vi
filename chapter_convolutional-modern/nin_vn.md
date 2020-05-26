@@ -18,7 +18,7 @@ Network in Network (NiN) blocks offer an alternative.
 They were proposed in :cite:`Lin.Chen.Yan.2013` based on a very simple insight---to use an MLP on the channels for each pixel separately.
 -->
 
-LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: (1) trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, (2) sau đó hậu xử lý các biểu diễn thông qua các tầng kết nối đầy đủ. 
+LeNet, AlexNet và VGG đều có chung một khuôn mẫu thiết kế: trích xuất các đặc trưng khai thác cấu trúc *không gian* thông qua một chuỗi các phép tích chập và các tầng gộp, sau đó hậu xử lý các biểu diễn thông qua các tầng kết nối đầy đủ. 
 Những cải tiến so với LeNet của AlexNet và VGG chủ yếu nằm ở việc mở rộng và tăng chiều sâu hai mô-đun này. 
 Một lựa chọn khác là ta có thể sử dụng các tầng kết nối đầy đủ ngay từ giai đoạn trước.
 Tuy nhiên, việc tùy tiện sử dụng các tầng kết nối dày đặc có thể làm mất đi cấu trúc không gian của biểu diễn. 
@@ -46,8 +46,8 @@ Hãy nhớ lại rằng đầu vào và đầu ra của các tầng tích chập
 Đầu vào và đầu ra của các tầng kết nối đầy đủ thường là các mảng hai chiều tương ứng với batch và các đặc trưng. 
 Ý tưởng chính của NiN là áp dụng một tầng kết nối đầy đủ tại mỗi vị trí điểm ảnh (theo chiều cao và chiều rộng). 
 Nếu trọng số tại mỗi vị trí không gian được chia sẻ với nhau, ta có thể coi đây là một tầng chập $1\times 1$ (như được mô tả trong :numref:`sec_channels`) hoặc như một tầng kết nối đầy đủ được áp dụng độc lập trên từng vị trí điểm ảnh. 
-Nói theo một cách khác, ta có thể coi từng phần tử trong chiều không gian (chiều cao và chiều rộng) là tương đương với một mẫu 
-và mỗi kênh tương đương với một đặc trưng. :numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG cũng như các mạng khác. 
+Nói theo một cách khác, ta có thể coi từng phần tử trong chiều không gian (chiều cao và chiều rộng) là tương đương với một mẫu và mỗi kênh tương đương với một đặc trưng.
+:numref:`fig_nin` minh họa sự khác biệt chính về cấu trúc giữa NiN và AlexNet, VGG cũng như các mạng khác. 
 
 <!--
 ![The figure on the left shows the network structure of AlexNet and VGG, and the figure on the right shows the network structure of NiN. ](../img/nin.svg)
@@ -117,7 +117,7 @@ However, in practice, this design sometimes requires increased model training ti
 
 Một điểm khác biệt đáng chú ý so với AlexNet là NiN tránh hoàn toàn việc sử dụng các kết nối dày đặc. 
 Thay vào đó, mạng này sử dụng các khối NiN với số kênh đầu ra bằng với số lớp nhãn, theo sau bởi một tầng gộp trung bình *toàn cục*, 
-tạo ra một vector [logits](https://en.wikipedia.org/wiki/Logit).
+tạo ra một vector [logit](https://en.wikipedia.org/wiki/Logit).
 Một lợi thế của thiết kế NiN là giảm được các tham số cần thiết của mô hình một cách đáng kể. 
 Tuy nhiên, trong thực tế, cách thiết kế này đôi lúc đòi hỏi tăng thời gian huấn luyện mô hình. 
 
@@ -216,19 +216,15 @@ Kỹ thuật này có thể dùng trong các khối tích chập để tăng tí
 
 1. Điều chỉnh các siêu tham số để cải thiện độ chính xác phân loại.
 2. Tại sao có hai tầng chập $1\times 1$ trong khối NiN? Thử loại bỏ một trong số chúng, sau đó quan sát và phân tích các hiện tượng thực nghiệm.
-3. Tính toán việc sử dụng tài nguyên của NiN 
-     * Số lượng tham số? 
-     * Số lượng phép tính? 
-     * Lượng bộ nhớ cần thiết trong quá trình huấn luyện? 
-     * Lượng bộ nhớ cần thiết trong quá trình dự đoán? 
-4. Các vấn đề nảy sinh khi giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước? 
+3. Tính toán việc sử dụng tài nguyên của NiN với:
+    * Số lượng tham số?
+    * Số lượng phép tính?
+    * Lượng bộ nhớ cần thiết trong quá trình huấn luyện? 
+    * Lượng bộ nhớ cần thiết trong quá trình dự đoán? 
+4. Các vấn đề nào sẽ nảy sinh khi giảm biểu diễn từ $384 \times 5 \times 5$ xuống $10 \times 5 \times 5$ trong một bước?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2356)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2356)
@@ -236,26 +232,12 @@ Kỹ thuật này có thể dùng trong các khối tích chập để tăng tí
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Vũ Hữu Tiệp
 * Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 2 -->
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
