@@ -387,7 +387,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 -->
 
 * Khối phần dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
-* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo chủ đích.
+* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo một cách chủ đích.
 * Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối phần dư chuyển dữ liệu liên tầng.
 * ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu, cả tích chập và tuần tự.
 
