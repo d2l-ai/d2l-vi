@@ -426,13 +426,15 @@ for X, Y in seq_data_iter_random(my_seq, batch_size=2, num_steps=6):
 ### Sequential Partitioning
 -->
 
-### *dịch tiêu đề phía trên*
+### Phân vùng Tuần tự
+
 
 <!--
 In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatches adjacent in the original sequence.
 -->
 
-*dịch đoạn phía trên*
+Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm cho vị trí của hai minibatch ngẫu nhiên liền kề thực sự liền kề nhau trong chuỗi gốc.
+
 
 
 ```{.python .input  n=7}
@@ -457,7 +459,9 @@ Using the same settings, print input `X` and label `Y` for each minibatch of exa
 The positions of two adjacent minibatches on the original sequence are adjacent.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng các giá trị cài đặt tương tự như ở trên, hãy cũng in đầu vào `X` và nhãn `Y` cho mỗi minibatch được lấy mẫu ngẫu nhiên.
+Các vị trí của hai minibatch liền kề trên chuỗi ban đầu cũng liền kề nhau.
+
 
 
 ```{.python .input  n=8}
@@ -469,7 +473,8 @@ for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
 Now we wrap the above two sampling functions to a class so that we can use it as a Gluon data iterator later.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy gộp hai hàm lấy mẫu trên vào một lớp để chúng ta có thể sử dụng nó như là một iterator dữ liệu Gluon trong các phần sau.
+
 
 
 ```{.python .input}
@@ -492,7 +497,8 @@ class SeqDataLoader:
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta sẽ viết một hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để có thể sử dụng nó tương tự như các hàm khác với tiền tố `load_data`.
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -519,7 +525,14 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatches.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình ngôn ngữ là công nghệ thiết yếu trong xử lý ngôn ngữ tự nhiên.
+* $n$-grams là một mô hình tiện lợi để xử lý các chuỗi dài bằng cách cắt giảm tính phụ thuộc.
+* Các chuỗi dài thường gặp vấn đề khi chúng rất hiếm hoặc không bao giờ xuất hiện.
+* Định luật Zipf kiểm soát các phân phối từ không chỉ ở 1-gram mà còn ở các $n$-gram khác.
+* Có rất nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện của chúng lại không đủ cao để áp dụng được phương pháp làm mượt Laplace trong việc xử lý các tổ hợp từ hiếm hơn.
+* Giải pháp chủ yếu cho bài toán phân tách chuỗi đó là chọn giữa các chuỗi liên tiếp và ngẫu nhiên.
+* Căn cứ vào độ dài của toàn bộ tài liệu, ta thường có thể lãng phí một chút và loại bỏ các minibatch rỗng một nửa.
+
 
 <!--
 ## Exercises
@@ -539,7 +552,16 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 7. If we want a sequence example to be a complete sentence, what kinds of problems does this introduce in minibatch sampling? Why would we want to do this anyway?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần suất từ và tần suất nhiều từ liền kề?
+2. Hãy xem lại các ước lượng xác suất được làm mượt. Tại sao chúng lại không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
+3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
+4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
+5. Bạn có thể nghĩ ra các phương pháp lấy mẫu cho minibatch khác không?
+6. Tại sao việc lấy một giá trị offset ngẫu nhiên lại là một ý tưởng hay?
+    * Liệu nó có thực sự dẫn đến phân phối đều hoàn hảo cho các chuỗi dữ liệu văn bản không?
+    * Bạn phải làm gì để có được một phân phối đều hơn? 
+7. Nếu chúng ta muốn có một mẫu chuỗi là một câu hoàn chỉnh, những vấn đề gì sẽ nảy sinh khi lấy mẫu minibatch? Mà tại sao ta lại muốn thực hiện việc này?
+
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -581,4 +603,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Quang
