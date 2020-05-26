@@ -493,10 +493,10 @@ To make things work, we upsample them to $244 \times 244$ (generally not a smart
 We perform this resizing with the `resize` argument in `load_data_fashion_mnist`.
 -->
 
-Mặc dù bài báo AlexNet sử dụng ImageNet, ở đây ta sẽ sử dụng Fashion-MNIST vì ngay cả với một GPU hiện đại thì việc huấn luyện một mô hình trên ImageNet có thể mất nhiều giờ hoặc nhiều ngày để hội tụ.
-Một trong những vấn đề khi áp dụng AlexNet trực tiếp trên Fashion-MNIST là các ảnh trong tập dữ liệu này có độ phân giải thấp hơn ($28 \times 28$ điểm ảnh) so với các ảnh trong ImageNet.
-Để có thể tiến hành được thử nghiệm, ta sẽ nâng kích thước ảnh lên $244 \times 244$ (nói chung đây không phải là một giải pháp thông minh, nhưng ta làm việc này ở đây để có thể sử dụng kiến trúc gốc của AlexNet).
-Ta thực hiện việc thay đổi kích thước này thông qua đối số `resize` trong hàm `load_data_fashion_mnist`.
+Mặc dù AlexNet sử dụng ImageNet trong bài báo nêu trên, ở đây ta sẽ sử dụng Fashion-MNIST vì ngay cả với một GPU hiện đại thì việc huấn luyện một mô hình trên ImageNet có thể mất nhiều giờ hoặc nhiều ngày để hội tụ. 
+Một trong những vấn đề khi áp dụng AlexNet trực tiếp trên Fashion-MNIST là các ảnh trong tập dữ liệu này có độ phân giải thấp hơn ($28 \times 28$ điểm ảnh) so với các ảnh trong ImageNet. 
+Để có thể tiến hành được thử nghiệm, ta sẽ nâng kích thước ảnh lên $224 \times 224$ (nói chung đây không phải là một giải pháp thông minh, nhưng ta cần làm việc này để có thể sử dụng kiến trúc gốc của AlexNet). <!-- Ở đây code ảnh được resize thành 224x224 nhưng bản tiếng anh gốc lại để 244x244 -->
+Việc thay đổi kích thước có thể được thực hiện thông qua đối số `resize` trong hàm `load_data_fashion_mnist`.
 
 ```{.python .input  n=3}
 batch_size = 128
@@ -519,8 +519,8 @@ Compared to LeNet in the previous section, the main change here is the use of a 
 the higher image resolution and the more costly convolutions.
 -->
 
-Bây giờ, ta có thể bắt đầu quá trình huấn luyện AlexNet.
-So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do mạng sâu hơn và rộng hơn, đồng thời do độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn.
+Bây giờ, ta có thể bắt đầu quá trình huấn luyện AlexNet. 
+So với LeNet, thay đổi chính ở đây là việc sử dụng tốc độ học nhỏ hơn và quá trình huấn luyện chậm hơn nhiều do tính chất sâu và rộng hơn của mạng, đồng thời do độ phân giải hình ảnh cao hơn và việc tính toán các phép tích chập tốn kém hơn. 
 
 ```{.python .input  n=5}
 lr, num_epochs = 0.01, 10
@@ -540,10 +540,10 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 * Dropout, ReLU and preprocessing were the other key steps in achieving excellent performance in computer vision tasks.
 -->
 
-* AlexNet có cấu trúc tương tự như LeNet, nhưng sử dụng nhiều tầng tích chập hơn với không gian tham số lớn hơn để khớp tập dữ liệu ImageNet có kích thước lớn.
-* Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng nó là một bước quan trọng để đi từ các mạng nông đến các mạng sâu được sử dụng ngày nay.
-* Mặc dù có vẻ như chỉ tốn thêm một vài dòng trong mã nguồn của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm để đón nhận sự thay đổi khái niệm này và tận dụng kết quả thực nghiệm tuyệt vời của nó. Một phần cũng là do sự thiếu thốn của các công cụ tính toán hiệu quả.
-* Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được kết quả rất tốt trong các bài toán thị giác máy tính.
+* AlexNet có cấu trúc tương tự như LeNet, nhưng sử dụng nhiều tầng tích chập hơn với không gian tham số lớn hơn để khớp tập dữ liệu ImageNet với kích thước lớn. 
+* Ngày nay AlexNet đã bị vượt qua bởi các kiến trúc hiệu quả hơn nhiều nhưng nó là một bước quan trọng để đi từ các mạng nông đến các mạng sâu được sử dụng ngày nay. 
+* Mặc dù có vẻ như chỉ tốn thêm một vài dòng trong mã nguồn của AlexNet so với LeNet, nhưng cộng đồng học thuật đã phải mất nhiều năm để đón nhận sự thay đổi khái niệm này và tận dụng những kết quả thực nghiệm tuyệt vời của nó. Một phần cũng là do sự thiếu thốn của các công cụ tính toán hiệu quả. 
+* Dropout, ReLU và tiền xử lý là những bước quan trọng khác để đạt được kết quả xuất sắc trong các bài toán thị giác máy tính. 
 
 <!--
 ## Exercises
@@ -564,16 +564,15 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 5. Apply dropout and ReLU to LeNet5. Does it improve? How about preprocessing?
 -->
 
-1. Thử tăng số lượng epoch và xem kết quả khác như thế nào so với LeNet? Tại sao lại có sự khác nhau như vậy?
+1. Thử tăng số lượng epoch và xem kết quả khác như thế nào so với LeNet? Tại sao lại có sự khác nhau như vậy? 
 2. AlexNet có thể là quá phức tạp đối với tập dữ liệu Fashion-MNIST. Vậy: 
-     * Hãy thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo rằng độ chính xác không bị giảm đi đáng kể.
-     * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$.
-3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU.
-4. Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn đến:
+     * Hãy thử đơn giản hóa mô hình để làm cho việc huấn luyện trở nên nhanh hơn nhưng đồng thời vẫn đảm bảo độ chính xác không bị giảm đi đáng kể. 
+     * Hãy thử thiết kế một mô hình tốt hơn có thể hoạt động trực tiếp trên các ảnh có kích thước $28 \times 28$. 
+3. Điều chỉnh kích thước batch và quan sát các thay đổi về độ chính xác và việc tiêu thụ bộ nhớ GPU. 
+4. Băng thông bộ nhớ hoạt động như thế nào khi tính toán các kết quả? Phần nào trong thiết kế của AlexNet có ảnh hưởng lớn đến:
      * Việc sử dụng bộ nhớ của mạng này?
      * Sự tính toán của mạng này?
-     * Băng thông bộ nhớ khi tính toán kết quả?
-5. Khi áp dụng dropout và ReLU cho LeNet5, độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào?
+5. Khi áp dụng dropout và ReLU cho LeNet5, độ chính xác của mô hình có được cải thiện hay không? Dữ liệu được tiền xử lý như thế nào? 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
