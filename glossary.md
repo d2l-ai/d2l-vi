@@ -103,6 +103,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dev set performance       | chất lượng trên tập phát triển  |                                              |
 | development set           | tập phát triển                  |                                              |
 | differentiable            | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
+| dimension                   |  chiều                         |                                       |
+| dimensionality            | kích thước chiều                |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
@@ -164,6 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | global maximum                 | giá trị lớn nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
 | global minimum                 | giá trị nhỏ nhất                  | [https://git.io/Jvopx](https://git.io/Jvopx)                                               |
 | global interpreter lock        | khóa trình thông dịch toàn cục    | [https://git.io/JfGiV](https://git.io/JfGiV)                                               |
+| gradient clipping              | gọt gradient                      |                                                                                            |
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
@@ -272,7 +275,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (trong mạng nơ-ron)          | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
+| non-squashing activation function | hàm kích hoạt không ép            |                                                                                           |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
+| nonparametric        | phi tham số              |                                              |
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
@@ -339,7 +344,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| residual network                  | mạng thặng dư                             | [https://git.io/JfGi1](https://git.io/JfGi1) |
+| residual network                  | mạng phần dư                             | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
 | robust to noise                   | kháng nhiễu                               | [https://git.io/JvQA1](https://git.io/JvQA1) |
@@ -374,6 +379,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent     | hạ gradient ngẫu nhiên   |                                              |
+| stop word                       | từ dừng                  |  |
 | stride                          | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                       | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation             | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
