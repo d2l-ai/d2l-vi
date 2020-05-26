@@ -576,7 +576,7 @@ In the technical literature other authors (:cite:`Santurkar.Tsipras.Ilyas.ea.201
 some claiming that BN's success comes despite exhibiting behavior that is in some ways opposite to those claimed in the original paper.
 -->
 
-Tiếp sau thành công của BN, giải thích về *sự dịch chuyển hiệp biến nội bộ* liên tục xuất hiện
+Nối tiếp thành công của BN, cách giải thích của kỹ thuật này thông qua khái niệm *sự dịch chuyển hiệp biến nội bộ* liên tục xuất hiện
 trong các tranh luận, các tài liệu kỹ thuật và trên các diễn đàn về cách trình bày nghiên cứu học máy.
 Trong một bài phát biểu đáng nhớ được đưa ra khi nhận giải thưởng **Test of Time Award** tại hội nghị NeurIPS 2017,
 Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với thuật giả kim.
