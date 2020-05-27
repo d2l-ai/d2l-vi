@@ -343,7 +343,7 @@ We describe how to accomplish this for both random sampling and sequential parti
 -->
 
 Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
-Nhưng nếu chúng ta chọn tất cả các giá trị offset, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Nhưng nếu chúng ta chọn tất cả các giá trị độ dời, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
 Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
 Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
 Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
