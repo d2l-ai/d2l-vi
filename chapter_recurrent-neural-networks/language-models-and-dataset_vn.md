@@ -219,7 +219,7 @@ Các từ này thường được gọi là [từ dừng](https://en.wikipedia.o
 Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
 Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
 Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
-Để nắm được ý tưởng tốt hơn, chúng ta vẽ đồ thị tần số của từ.
+Để nắm bắt được ý tưởng này rõ hơn, chúng ta vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
