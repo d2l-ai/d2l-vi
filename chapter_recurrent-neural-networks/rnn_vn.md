@@ -141,7 +141,7 @@ Specifically, the calculation of the hidden variable of the current timestep is 
 
 Vấn đề sẽ hoàn toàn khác đi nếu ta sử dụng các trạng thái ẩn.
 Hãy xem xét cấu trúc này một cách chi tiết hơn.
-Nhớ rằng ta thường gọi vòng lặp $t$ là thời gian $t$ trong thuật toán tối ưu, thời gian trong mạng nơ-ron truy hồi đề cập đến các bước trong một vòng lặp.
+Nhớ rằng ta thường gọi vòng lặp $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng thời điểm $t$ trong mạng nơ-ron truy hồi lại đề cập đến các bước trong một vòng lặp.
 Giả sử ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
 Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi.
 Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
