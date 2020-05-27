@@ -22,7 +22,7 @@ import tarfile
 import time
 import zipfile
 
-TIMEOUT = None
+TIMEOUT = 600*60
 
 # Defined in file: ./chapter_preliminaries/calculus.md
 def use_svg_display():
