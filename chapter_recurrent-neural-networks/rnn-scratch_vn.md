@@ -351,7 +351,7 @@ It differs from the models training of :numref:`sec_softmax_scratch` in three pl
 -->
 
 Trước tiên, ta sẽ định nghĩa hàm huấn luyện mô hình trên một epoch dữ liệu.
-Nó khác với quá trình huấn luyện mô hình của :numref:`sec_softmax_scratch` ở ba điểm:
+Quá trình huấn luyện ở đây sẽ khác với :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
@@ -361,9 +361,9 @@ This ensures that the model does not diverge even when gradients blow up at some
 -->
 
 1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
-2. Ta cắt các gradient trước khi cập nhật các tham số mô hình.
-Điều này đảm bảo rằng mô hình không phân kỳ ngay cả khi gradient bùng nổ tại một số điểm trong quá trình huấn luyện và nó tự động giảm số lượng bước một cách hiệu quả.
-3. Ta sử dụng *perplexity* để đánh giá mô hình. Điều này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
+2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
+Điều này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một số thời điểm trong quá trình huấn luyện và nó tự động giảm số lượng bước một cách hiệu quả.
+3. Ta sử dụng sự rối loạn (*perplexity*) để đánh giá mô hình. Điều này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
 
 
 <!--
@@ -375,8 +375,7 @@ Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use 
 -->
 
 Khi sử dụng phép lấy mẫu liên tục, ta khởi tạo trạng thái ẩn ở đầu mỗi epoch.
-Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại,
-nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để tính toán gradient trong một minibatch.
+Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại, nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để tính toán gradient trong một minibatch.
 Khi sử dụng lấy mẫu ngẫu nhiên, ta cần khởi tạo lại trạng thái ẩn cho mỗi lần lặp vì mỗi mẫu được lấy mẫu với một vị trí ngẫu nhiên.
 Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sẽ sử dụng `updater` tổng quát, có thể là một trình huấn luyện Gluon hoặc một trình huấn luyện được lập trình từ đầu.
 
@@ -410,7 +409,7 @@ def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
 The training function again supports either we implement the model from scratch or using Gluon.
 -->
 
-Hàm huấn luyện một lần nữa hỗ trợ hoặc ta lập trình mô hình từ đầu hoặc sử dụng Gluon.
+Hàm huấn luyện một lần nữa hỗ trợ ta lập trình mô hình từ đầu hoặc sử dụng Gluon.
 
 
 ```{.python .input  n=11}
