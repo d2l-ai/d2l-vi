@@ -15,8 +15,8 @@ As before, we start by reading the dataset first, which is introduced in :numref
 -->
 
 Trong phần này, ta triển khai một mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn` từ đầu.
-Nó dựa trên một mạng lưới thần kinh tái phát ở cấp độ nhân vật được huấn luyện trên *The Time Machine* của H. G. Wells.
-Như trước đây, chúng tôi bắt đầu bằng cách đọc tập dữ liệu trước, được giới thiệu trong :numref:`sec_language_model`.
+Mô hình này dựa trên một mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* của H. G. Wells.
+Như thường lệ, ta bắt đầu bằng cách đọc tập dữ liệu trước, được giới thiệu tại :numref:`sec_language_model`.
 
 
 ```{.python .input  n=14}
@@ -34,7 +34,7 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ## One-hot Encoding
 -->
 
-## Biểu diễn one-hot
+## Biểu diễn One-hot
 
 <!--
 Remember that each token is presented as a numerical index in `train_iter`.
@@ -43,10 +43,10 @@ We often present each token as a more expressive feature vector.
 The easiest representation is called *one-hot encoding*.
 -->
 
-Hãy nhớ rằng mỗi token được trình bày dưới dạng một chỉ số bằng số trong `train_iter`.
-Cho các chỉ số này trực tiếp vào mạng lưới nơ-ron có thể khiến nó khó học.
-Chúng tôi thường biểu diễn mỗi token như một vector đặc trưng có hàm ý hơn.
-Đại diện đơn giản nhất được gọi là *biểu diễn one-hot*.
+Hãy nhớ rằng mỗi token được trình bày dưới dạng một chỉ số (_numerical index_) trong `train_iter`.
+Cho trực tiếp các chỉ số này vào mạng nơ-ron có thể khiến việc học thêm khó khăn.
+Thay vào đó, chúng ta thường biểu diễn mỗi token như một vector đặc trưng chứa nhiều hàm ý hơn.
+Cách biểu diễn đơn giản nhất được gọi là *biểu diễn one-hot*.
 
 <!--
 In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
@@ -55,8 +55,8 @@ This vector is the one-hot vector of the original token.
 The one-hot vectors with indices 0 and 2 are shown below.
 -->
 
-Tóm lại, chúng tôi ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử rằng số lượng token khác nhau trong từ vựng là $N$ (các `len(vocab)`) và các chỉ số token nằm trong khoảng từ 0 đến $N-1$ .
-Nếu chỉ số của token là số nguyên $i$, thì chúng ta tạo một vector $\mathbf{e}_i$ của tất cả 0 với độ dài $N$ và đặt phần tử ở vị trí $i$ thành 1.
+Tóm lại, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử rằng số lượng token khác nhau trong từ vựng là $N$ (`len(vocab)`) và các chỉ số token nằm trong khoảng từ 0 đến $N-1$ .
+Nếu chỉ số của token là số nguyên $i$, thì chúng ta tạo một vector $\mathbf{e}_i$ chứa các phần tử 0 với độ dài $N$ và đặt phần tử 1 ở vị trí $i$.
 Vector này là vector one-hot của token gốc.
 Các vector one-hot với các chỉ số 0 và 2 được hiển thị bên dưới.
 
@@ -70,9 +70,9 @@ The `one_hot` function transforms such a minibatch into a 3-D tensor with the la
 We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
 -->
 
-Hình dạng của minibatch mà chúng tôi lấy mẫu mỗi lần là (kích thước batch, bước thời gian).
+Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (batch size, timestep).
 Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước cuối cùng bằng với kích thước từ vựng.
-Chúng tôi thường hoán vị đầu vào để có được đầu ra (bước thời gian, kích thước batch, kích thước từ vựng) phù hợp với mô hình chuỗi dễ dàng hơn.
+Chúng ta thường chuyển vị đầu vào để có được (timestep, batch size, vocabulary size) tại đầu ra phù hợp hơn với mô hình chuỗi.
 
 
 ```{.python .input  n=18}
