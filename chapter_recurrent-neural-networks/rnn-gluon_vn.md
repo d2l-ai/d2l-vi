@@ -90,7 +90,8 @@ While in the previous section, we have the output layer within the `rnn` block.
 -->
 
 Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
-
+Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn, ta cần tạo tầng đầu ra một cách tách biệt.
+Trong khi ở phần trước, tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
@@ -162,7 +163,9 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 * As before, the computational graph needs to be detached from previous steps for reasons of efficiency.
 -->
 
-*dịch đoạn phía trên*
+* Mô-đun `rnn` của Gluon lập trình sẵn tầng của mạng nơ-ron truy hồi.
+* Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không tính toán đầu ra của tầng đầu ra.
+* Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 
 <!--
 ## Exercises
@@ -185,7 +188,18 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
     * Why does not everyone use this model for text compression? Hint: what about the compressor itself?
 -->
 
-*dịch đoạn phía trên*
+1. So sánh với cách lập trình từ đầu ở phần trước.
+    * Tại sao lập trình bằng Gluon chạy nhanh hơn?
+    * Nếu bạn quan sát thấy khác biệt đáng kể nào ngoài tốc độ, hãy tìm hiểu lý do.
+2. Bạn có thể làm quá khớp mô hình không?
+    * Bằng cách tăng số nút ẩn.
+    * Bằng cách tằng số vòng lặp.
+    * Nếu thay đổi tham số gọt (*clipping*) thì sao?
+3. Lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
+4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
+5. Có thể nén văn bản sử dụng mô hình này không?
+    * Cần bao nhiêu bit?
+    * Tại sao không ai sử dụng mô hình này để nén văn bản? Gợi ý: sử dụng các bộ nén thì sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
