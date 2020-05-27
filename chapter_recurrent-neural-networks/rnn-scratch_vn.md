@@ -14,8 +14,8 @@ It is based on a character-level recurrent neural network trained on H. G. Wells
 As before, we start by reading the dataset first, which is introduced in :numref:`sec_language_model`.
 -->
 
-Trong phần này, ta triển khai một mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn` từ đầu.
-Mô hình này dựa trên một mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* của H. G. Wells.
+Trong phần này, ta xây dựng từ đầu một mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
+Mô hình này dựa trên một mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
 Như thường lệ, ta bắt đầu bằng cách đọc tập dữ liệu trước, được giới thiệu tại :numref:`sec_language_model`.
 
 
