@@ -408,7 +408,7 @@ def get_subpages(input_fn):
                         subpages.append(fn)
     return subpages
 
-def process_and_eval_notebook(input_fn, output_fn, run_cells, timeout=20*60,
+def process_and_eval_notebook(input_fn, output_fn, run_cells, timeout=200*60,
                               lang='python'):
     # process: add empty lines before and after a mark, otherwise it confuses
     # the rst parser
