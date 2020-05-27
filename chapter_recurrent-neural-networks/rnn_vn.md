@@ -205,7 +205,7 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 ## Steps in a Language Model
 -->
 
-## Các bước xây dựng một Mô hình Ngôn ngữ
+## Từng bước trong một Mô hình Ngôn ngữ
 
 <!--
 Now we illustrate how RNNs can be used to build a language model.
@@ -220,22 +220,22 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-Bây giờ chúng tôi minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
-Để đơn giản minh họa, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
-Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu của chúng tôi, tức là "the time machine by H. G. Wells".
-:numref:`fig_rnn_train` minh họa cách  từ tiếp theo dựa trên các từ hiện tại và trước đó.
-Trong quá trình đào tạo, chúng tôi chạy một hoạt động softmax trên đầu ra từ lớp đầu ra cho mỗi bước thời gian,
+Bây giờ chúng ta minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
+Để đơn giản, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
+Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu, "the time machine by H. G. Wells".
+:numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó.
+Trong quá trình huấn luyện, chúng ta áp dụng softmax vào đầu ra tại mỗi bước thời gian,
 và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
-Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian 3,
+Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3,
 $\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
-Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên việc mất mát của bước thời gian 3 sẽ phụ thuộc vào
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào
 phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này.
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
 -->
 
-![Mô hình ngôn ngữ theo tầng từ ngữ RNN. Đầu vào và chuỗi nhãn lần lượt là `the time machine by H.` và `time machine by H. G.`](../img/rnn-train.svg)
+![Mô hình ngôn ngữ ở mức từ ngữ RNN. Đầu vào và chuỗi nhãn lần lượt là `the time machine by H.` và `time machine by H. G.`](../img/rnn-train.svg)
 :label:`fig_rnn_train`
 
 <!--
@@ -243,8 +243,8 @@ In practice, each word is presented by a $d$ dimensional vector, and we use a ba
 Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix, which is identical to what we discussed before.
 -->
 
-Trong thực tế, mỗi từ được trình bày bởi một vector có $d$ chiều và chúng tôi sử dụng kích thước batch $n>1$.
-Do đó, đầu vào $\mathbf X_t$ tại dấu thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây.
+Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và chúng ta sử dụng kích thước batch $n>1$.
+Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -264,9 +264,9 @@ Consider the following continuations of the phrase "It is raining", as proposed 
 -->
 
 Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi.
-Một cách là kiểm tra tính gây ngạc nhiên của văn bản.
-Một mô hình ngôn ngữ tốt có thể dự đoán với các mã thông báo có độ chính xác cao mà chúng ta sẽ thấy tiếp theo.
-Hãy xem xét các phần tiếp theo sau của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
+Một cách làm là ta kiểm tra độ ngạc nhiên của văn bản.
+Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây.
+Hãy xem xét các phần tiếp theo của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
 <!--
 1. "It is raining outside"
@@ -289,12 +289,12 @@ Last, example 3 indicates a poorly trained model that does not fit data properly
 -->
 
 Về chất lượng, ví dụ 1 rõ ràng là tốt nhất.
-Các từ là hợp lý và hợp lý mạch lạc.
+Các từ là hợp lý và mạch lạc về mặt logic.
 Mặc dù nó có thể không hoàn toàn phản ánh chính xác từ nào theo ngữ nghĩa ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hoàn toàn hợp lý),
 mô hình có thể nắm bắt loại từ nào theo sau.
 Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
-Tuy nhiên, ít nhất mô hình đã học cách đánh vần các từ và một số mức độ tương quan giữa các từ.
-Cuối cùng, ví dụ 3 chỉ ra một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
+Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được một số mức độ tương quan giữa các từ.
+Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
