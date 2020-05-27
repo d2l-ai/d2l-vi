@@ -249,7 +249,7 @@ Let us see whether the bigram frequency behaves in the same manner as the unigra
 Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
 Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
 Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
-Chúng ta hãy xem liệu tần số bigram có hoạt động theo cách tương tự như tần số unigram hay không.
+Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
