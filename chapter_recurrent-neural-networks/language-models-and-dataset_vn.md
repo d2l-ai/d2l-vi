@@ -374,7 +374,7 @@ The target is to predict the next character based on what we have seen so far, h
 Đoạn mã sau sinh ngẫu nhiên từng minibatch dữ liệu một.
 Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
 Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý được lấy ra từ chuỗi gốc.
-Các vị trí của hai minibatch ngẫu nhiên liền kề trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
+Vị trí của hai minibatch ngẫu nhiên liên tiếp trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
 Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển đi một ký tự.
 
 
