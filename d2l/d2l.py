@@ -22,7 +22,7 @@ import tarfile
 import time
 import zipfile
 
-TIMEOUT = 600*60
+TIMEOUT = None
 
 # Defined in file: ./chapter_preliminaries/calculus.md
 def use_svg_display():
@@ -183,9 +183,9 @@ def load_data_fashion_mnist(batch_size, resize=None):
     mnist_train = dataset.FashionMNIST(train=True).transform_first(trans)
     mnist_test = dataset.FashionMNIST(train=False).transform_first(trans)
     return (gluon.data.DataLoader(mnist_train, batch_size, shuffle=True,
-                                  num_workers=get_dataloader_workers(), timeout=TIMEOUT),
+                                  num_workers=0, timeout=TIMEOUT),
             gluon.data.DataLoader(mnist_test, batch_size, shuffle=False,
-                                  num_workers=get_dataloader_workers(), timeout=TIMEOUT))
+                                  num_workers=0, timeout=TIMEOUT))
 
 
 # Defined in file: ./chapter_linear-networks/softmax-regression-scratch.md
