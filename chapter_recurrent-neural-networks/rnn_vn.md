@@ -80,7 +80,7 @@ Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa t�
 ## Recurrent Networks Without Hidden States
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng Truy hồi không có Trạng thái ẩn
 
 <!--
 Let us take a look at a multilayer perceptron with a single hidden layer.
@@ -89,7 +89,10 @@ Let the hidden layer's activation function be $\phi$.
 Hence, the hidden layer's output $\mathbf{H} \in \mathbb{R}^{n \times h}$ is calculated as
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ xem xét một perception đa tầng với một tầng ẩn duy nhất.
+Giả sử ta có một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
+Gọi hàm kích hoạt của tầng ẩn là $\phi$.
+Khi đó, đầu ra của tầng ẩn $\mathbf{H} \in \mathbb{R}^{n \times h}$ được tính như sau
 
 
 $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
@@ -100,14 +103,15 @@ $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
 Here, we have the weight parameter $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, bias parameter $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, and the number of hidden units $h$, for the hidden layer.
 -->
 
-*dịch đoạn phía trên*
+Trong đó, $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$ là tham số trọng số, $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$ là hệ số điều chỉnh và $h$ là số nút ẩn của tầng ẩn.
 
 <!--
 The hidden variable $\mathbf{H}$ is used as the input of the output layer.
 The output layer is given by
 -->
 
-*dịch đoạn phía trên*
+Biến ẩn $\mathbf{H}$ được sử dụng làm đầu vào của tầng đầu ra.
+Tầng đầu ra được tính toán bởi
 
 $$\mathbf{O} = \mathbf{H} \mathbf{W}_{hq} + \mathbf{b}_q.$$
 
@@ -117,14 +121,16 @@ $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ is the weight parameter, and $\mat
 If it is a classification problem, we can use $\text{softmax}(\mathbf{O})$ to compute the probability distribution of the output category.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $\mathbf{O} \in \mathbb{R}^{n \times q}$ là biến đầu ra, $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ là tham số trọng số và $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là hệ số điều chỉnh của tầng đầu ra.
+Nếu bài toán là phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của tầng đầu ra.
 
 <!--
 This is entirely analogous to the regression problem we solved previously in :numref:`sec_sequence`, hence we omit details.
 Suffice it to say that we can pick $(x_t, x_{t-1})$ pairs at random and estimate the parameters $\mathbf{W}$ and $\mathbf{b}$ of our network via autograd and stochastic gradient descent.
 -->
 
-*dịch đoạn phía trên*
+Do vấn đề này hoàn toàn tương tự với bài toán hồi quy đã từng được giải quyết trong :numref:`sec_sequence`, ta sẽ bỏ qua các chi tiết ở đây.
+Chỉ cần nói thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -402,7 +408,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 *
