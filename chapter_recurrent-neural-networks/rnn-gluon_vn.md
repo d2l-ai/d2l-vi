@@ -14,8 +14,9 @@ This section will show how to implement the same language model more efficiently
 We begin as before by reading the "Time Machine" corpus.
 -->
 
-*dịch đoạn phía trên*
-
+Dù :numref:`sec_rnn_scratch` mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
+Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ theo cách hiệu quả hơn bằng các hàm của Gluon.
+Ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
 ```{.python .input  n=1}
 import d2l
@@ -31,14 +32,15 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Mô hình
 
 <!--
 Gluon's `rnn` module provides a recurrent neural network implementation (beyond many other sequence models).
 We construct the recurrent neural network layer `rnn_layer` with a single hidden layer and 256 hidden units, and initialize the weights.
 -->
 
-*dịch đoạn phía trên*
+Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron truy hồi (cùng với các mô hình chuỗi khác).
+Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn và 256 nút ẩn, và khởi tạo các trọng số.
 
 
 ```{.python .input  n=26}
@@ -56,8 +58,12 @@ In fact, we have not even discussed yet what it means to have multiple layers---
 For now, suffice it to say that multiple layers simply amount to the output of one RNN being used as the input for the next RNN.
 -->
 
-*dịch đoạn phía trên*
-
+Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
+Phương thức này trả về trạng thái ban đầu cho mỗi phần tử trong minibatch.
+Tức là trả về đối tượng có kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+Số tầng ẩn mặc định là 1.
+Trên thực tế, ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
+Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
 
 ```{.python .input  n=37}
 batch_size = 1
@@ -69,7 +75,7 @@ len(state), state[0].shape
 With a state variable and an input, we can compute the output with the updated state.
 -->
 
-*dịch đoạn phía trên*
+Với một biến trạng thái và một đầu vào, ta có thể tính toán đầu ra và cập nhật trạng thái.
 
 
 ```{.python .input  n=38}
