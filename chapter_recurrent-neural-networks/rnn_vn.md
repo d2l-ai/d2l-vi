@@ -287,11 +287,11 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xảy ra của chuỗi.
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi.
 Thật không may, đây là một con số khó để hiểu và khó để so sánh.
-Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng để xảy ra hơn các chuỗi dài,
-do đó việc đánh giá mô hình trên kiệt tác của Tolstoy ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) chắc chắn sẽ tạo ra khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết của Saint-Exupery ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince). 
-Những gì còn thiếu là tương đương với mức trung bình.
+Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài,
+do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ có khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
+Thứ còn thiếu là một phép tính trung bình theo cách nào đó.
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -302,9 +302,9 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-Lý thuyết thông tin có ích ở đây và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
-Nếu chúng ta muốn nén văn bản, ta có thể hỏi về việc ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
-Giới hạn dưới của số lượng bit được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
+Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
+Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
+Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
 Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo khá chính xác.
 Vì vậy, nó sẽ cho phép chúng ta dành rất ít số bit để nén chuỗi.
 Vì vậy, ta có thể đo nó bằng số bit trung bình mà chúng ta cần sử dụng.
@@ -318,8 +318,8 @@ In a nutshell, it is the exponential of the above:
 -->
 
 Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được.
-Vì lý do lịch sử, các nhà khoa học trong xử lý ngôn ngữ tự nhiên thích sử dụng một số lượng gọi là *sự hỗn loạn* hơn là bitrate.
-Tóm lại, đó là số mũ của những điều trên:
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một số đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là bitrate.
+Tóm lại, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
 
@@ -330,9 +330,9 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-Nó có thể được hiểu rõ nhất là trung bình hài hòa của số lượng lựa chọn thực sự mà ta có khi quyết định chọn từ nào tiếp theo.
-Lưu ý rằng độ bối rối tự nhiên khái quát hóa khái niệm mất mát entropy chéo được xác định khi chúng tôi đưa ra hồi quy softmax (:numref:`sec_softmax`).
-Đó là, đối với một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, thực tế là một ký hiệu là số mũ của ký hiệu kia.
+Nó có thể được hiểu rõ nhất như là hàm trung bình điều hòa của số lượng lựa chọn thực sự mà ta có khi quyết định chọn từ nào tiếp theo.
+Lưu ý rằng độ bối rối mở rộng ra một cách tự nhiên tới mất mát entropy chéo được định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`).
+Đó là, khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, thực tế là rằng cái này là luỹ thừa của cái kia.
 Chúng ta hãy xem xét một số trường hợp:
 
 <!--
