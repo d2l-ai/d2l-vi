@@ -161,7 +161,7 @@ the computation of the equation above is recurrent, hence the name recurrent neu
 -->
 
 So với :eqref:`rnn_h_without_state`, ở đây ta đã thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$.
-Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ của bước thời gian hiện tại của mạng nơ-ron.
+Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron.
 Do đó, một biến ẩn như vậy được gọi là một *trạng thái ẩn*.
 Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại nên tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
 
