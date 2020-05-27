@@ -15,10 +15,10 @@ In this section, we describe batch normalization (BN) :cite:`Ioffe.Szegedy.2015`
 Together with residual blocks—covered in :numref:`sec_resnet`—BN has made it possible for practitioners to routinely train networks with over 100 layers.
 -->
 
-Việc huấn luyện mạng nơ-ron học sâu thì không dễ. 
-Và để cho mô hình hội tụ trong một khoảng thời gian hợp lý là một vấn đề hóc búa.
-Trong phần này, chúng ta sẽ đề cập đến việc chuẩn hóa theo batch (_Batch Normalization - BN_) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm giúp tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
-Cùng với các khối thặng dư được đề cập ở phần :numref:`sec_resnet` — BN đã giúp những người hành nghề có thể huấn luyện mạng học sâu với hơn 100 tầng một cách đều đặn.
+Huấn luyện mạng nơ-ron sâu không hề đơn giản, 
+để chúng hội tụ trong khoảng thời gian chấp nhận được là một câu hỏi khá hóc búa.
+Trong phần này, chúng ta giới thiệu chuẩn hóa theo batch (_Batch Normalization - BN_) :cite:`Ioffe.Szegedy.2015`, một kỹ thuật phổ biến và hiệu quả nhằm tăng tốc độ hội tụ của mạng học sâu một cách ổn định.
+Cùng với các khối phần dư (*residual block*) được đề cập ở :numref:`sec_resnet` — BN giúp dễ dàng hơn trong việc huấn luyện mạng học sâu với hơn 100 tầng.
 
 <!--
 ## Training Deep Networks
@@ -31,7 +31,7 @@ To motivate batch normalization, let us review a few practical challenges that a
 when training ML models and neural nets in particular.
 -->
 
-Để thấy được mục đích của việc chuẩn hóa theo batch, hãy cùng chúng tôi xem xét lại một vài vấn đề thực tế phát sinh khi huấn luyện các mô hình học máy và đặc biệt là mạng nơ-ron.
+Để thấy mục đích của việc chuẩn hóa theo batch, hãy cùng xem xét lại một vài vấn đề phát sinh trên thực tế khi huấn luyện các mô hình học máy và đặc biệt là mạng nơ-ron.
 
 <!--
 1. Choices regarding data preprocessing often make an enormous difference in the final results.
@@ -46,16 +46,16 @@ Intuitively, we might conjecture that if one layer has activation values that ar
 This means that regularization becomes more critical.
 -->
 
-1. Những lựa chọn liên quan đến việc tiền xử lý dữ liệu thường tạo nên sự khác biệt rất lớn trong kết quả cuối cùng.
-Hãy nhớ lại việc áp dụng mạng perceptron đa tầng để dự đoán giá nhà ở phần (:numref:`sec_kaggle_house`). 
-Việc đầu tiên khi chúng ta làm việc với dữ liệu thực tế là chuẩn hóa các đặc trưng đầu vào để chúng có giá trị trung bình bằng *không* và phương sai bằng *một*. 
-Theo trực giác, việc chuẩn hóa này hoạt động tốt với những bộ tối ưu vì nó đặt giá trị các tham số tiên nghiệm tại cùng một tỷ lệ.
-2. Đối với mạng điển hình như MLP hay CNN, khi huấn luyện, hàm kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
-dọc theo các tầng từ đầu vào cho đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số trong quá trình huấn luyện.
-Những nhà phát minh ra kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
-Bằng trực giác, chúng ta có thể phỏng đoán rằng nếu một tầng có các giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì cần phải có các điều chỉnh bổ trợ trong tốc độ học.
-3. Mạng nhiều tầng thì phức tạp và dễ có khả năng gặp vấn đề quá khớp.
-Điều này có nghĩa rằng sự điều chuẩn càng trở nên cấp thiết.
+1. Những lựa chọn tiền xử lý dữ liệu khác nhau thường tạo nên sự khác biệt rất lớn trong kết quả cuối cùng.
+Hãy nhớ lại việc áp dụng perceptron đa tầng để dự đoán giá nhà (:numref:`sec_kaggle_house`). 
+Việc đầu tiên khi làm việc với dữ liệu thực tế là chuẩn hóa các đặc trưng đầu vào để chúng có giá trị trung bình bằng *không* và phương sai bằng *một*. 
+Thông thường, việc chuẩn hóa này hoạt động tốt với các bộ tối ưu vì giá trị các tham số tiên nghiệm có cùng một khoảng tỷ lệ.
+2. Khi huấn luyện các mạng thường gặp như Perceptron đa tầng hay CNN, các giá trị kích hoạt ở các tầng trung gian có thể nhận các giá trị với mức độ biến thiên lớn-
+dọc theo các tầng từ đầu vào đến đầu ra, qua các nút ở cùng một tầng, và theo thời gian do việc cập nhật giá trị tham số.
+Những nhà phát minh kỹ thuật chuẩn hoá theo batch cho rằng sự thay đổi trong phân phối của những giá trị kích hoạt có thể cản trở sự hội tụ của mạng.
+Dễ thấy rằng nếu một tầng có các giá trị kích hoạt lớn gấp 100 lần so với các tầng khác, thì cần phải có các điều chỉnh bổ trợ trong tốc độ học.
+3. Mạng nhiều tầng có độ phức tạp cao và dễ gặp vấn đề quá khớp.
+Điều này cũng đồng nghĩa rằng kỹ thuật điều chuẩn càng trở nên quan trọng.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -70,10 +70,10 @@ estimating both quantities based on the statistics of the current the current mi
 It is precisely due to this *normalization* based on *batch* statistics that *batch normalization* derives its name.
 -->
 
-Sự chuẩn hoá theo batch được áp dụng vào từng tầng riêng lẻ (hoặc có thể tùy chọn cho tất cả các tầng) và cách thức hoạt động như sau:
-Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên chúng ta tính giá trị kích hoạt của tầng như thường lệ.
-Sau đó, chúng ta chuẩn hóa những giá trị kích hoạt này của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn của nó, 
-cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
+Chuẩn hoá theo batch được áp dụng cho từng tầng riêng lẻ (hoặc có thể cho tất cả các tầng) và hoạt động như sau:
+Trong mỗi vòng lặp huấn luyện, tại mỗi tầng, đầu tiên tính giá trị kích hoạt như thường lệ.
+Sau đó chuẩn hóa những giá trị kích hoạt của mỗi nút bằng việc trừ đi giá trị trung bình và chia cho độ lệch chuẩn. 
+Cả hai đại lượng này được ước tính dựa trên số liệu thống kê của minibatch hiện tại.
 Chính vì *chuẩn hóa* dựa trên các số liệu thống kê của *batch* nên kỹ thuật này có tên gọi *chuẩn hoá theo batch*.
 
 
@@ -84,16 +84,16 @@ As you might guess, since we are devoting a whole section to BN, with large enou
 One takeaway here is that when applying BN, the choice of minibatch size may be even more significant than without BN.
 -->
 
-Lưu ý rằng, khi chúng ta thử áp dụng BN với những minibatch có kích thước là 1, mô hình của chúng ta sẽ không thể học được gì. 
-Đó là bởi vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
-Như bạn có thể suy đoán, vì chúng ta dành cả phần này cho BN, với kích thước minibatch đủ lớn, việc chuẩn hóa cho thấy tính hiệu quả và ổn định của nó. 
-Một điều cần lưu ý nữa ở đây là khi áp dụng BN, việc lựa chọn kích thước của minibatch lại trở nên quan trọng hơn so với khi không áp dụng BN.
+Lưu ý rằng, khi áp dụng BN với những minibatch có kích thước 1, mô hình sẽ không học được gì. 
+Vì sau khi trừ đi giá trị trung bình, mỗi nút ẩn sẽ nhận giá trị $0$! 
+Dễ dàng suy luận ra là BN chỉ hoạt động hiệu quả và ổn định với kích thước minibatch đủ lớn. 
+Cần ghi nhớ rằng, khi áp dụng BN là lựa chọn kích thước minibatch quan trọng hơn so với trường hợp không áp dụng BN.
 
 <!--
 Formally, BN transforms the activations at a given layer $\mathbf{x}$ according to the following expression:
 -->
 
-Một cách hình thức, BN chuyển đổi những giá trị kích hoạt tại mỗi tầng $x$ nhất định theo biểu thức sau:
+BN chuyển đổi những giá trị kích hoạt tại tầng $x$ nhất định theo công thức sau:
 
 $$\mathrm{BN}(\mathbf{x}) = \mathbf{\gamma} \odot \frac{\mathbf{x} - \hat{\mathbf{\mu}}}{\hat\sigma} + \mathbf{\beta}$$
 
@@ -107,12 +107,12 @@ because BN actively centers and rescales them back to a given mean and size (via
 One piece of practitioner's intuition/wisdom is that BN seems to allows for more aggressive learning rates.
 -->
 
-Ở đây, $\hat{\mathbf{\mu}}$  là giá trị trung bình mẫu và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn mẫu của minibatch.
-Sau khi áp dụng BN, minibatch của những giá trị kích hoạt thu được có giá trị trung bình bằng không và phương sai đơn vị.
-Bởi vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là việc lựa chọn tuỳ ý, 
-cho nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
-Do đó, độ lớn giá trị kích hoạt cho những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
-Qua trực giác/kinh nghiệm rút ra từ những người thực nghiệm, dùng BN có khả năng cho phép chọn tốc độ học nhanh hơn.
+Ở đây, $\hat{\mathbf{\mu}}$ là giá trị trung bình và $\hat{\mathbf{\sigma}}$ là độ lệch chuẩn của các mẫu trong minibatch.
+Sau khi áp dụng BN, những giá trị kích hoạt của minibatch có giá trị trung bình bằng không và phương sai đơn vị.
+Vì việc lựa chọn phương sai đơn vị (so với một giá trị đặc biệt khác) là tuỳ ý, 
+nên chúng ta thường thêm vào từng cặp tham số tương ứng là hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$.
+Do đó, độ lớn giá trị kích hoạt ở những tầng trung gian không thể phân kỳ trong quá trình huấn luyện vì BN chủ động chuẩn hoá chúng theo giá trị trung bình và phương sai cho trước (thông qua $\mathbf{\mu}$ và $\sigma$).
+Qua trực giác và thực nghiệm, dùng BN có thể cho phép chọn tốc độ học nhanh hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -124,7 +124,7 @@ Formally, denoting a particular minibatch by $\mathcal{B}$,
 we calculate $\hat{\mathbf{\mu}}_\mathcal{B}$ and $\hat\sigma_\mathcal{B}$ as follows:
 -->
 
-Ký hiệu một minibatch là $\mathcal{B}$, chúng ta tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat\sigma_\mathcal{B}$ một cách hình thức như sau:
+Ký hiệu một minibatch là $\mathcal{B}$, chúng ta tính $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat\sigma_\mathcal{B}$ theo công thức sau:
 
 $$\hat{\mathbf{\mu}}_\mathcal{B} \leftarrow \frac{1}{|\mathcal{B}|} \sum_{\mathbf{x} \in \mathcal{B}} \mathbf{x}
 \text{ và }
@@ -139,10 +139,10 @@ You might think that this noisiness should be a problem.
 As it turns out, this is actually beneficial.
 -->
 
-Lưu ý rằng chúng ta thêm một hằng số $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo không thực hiện phép chia cho không khi chuẩn hoá, ngay cả trong trường hợp giá trị ước lượng phương sai thực nghiệm bằng không.
-Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu của ước tính giá trị trung bình và phương sai.
-Bạn có thể nghĩ rằng những nhiễu này sẽ là vấn đề đáng ngại.
-Nhưng thực ra, điều này lại có lợi.
+Lưu ý rằng chúng ta thêm hằng số rất nhỏ $\epsilon > 0$ vào biểu thức tính phương sai để đảm bảo tránh phép chia cho 0 khi chuẩn hoá, ngay cả khi giá trị ước lượng phương sai thực nghiệm bằng không.
+Các ước lượng $\hat{\mathbf{\mu}}_\mathcal{B}$ và $\hat{\mathbf{\sigma}}_\mathcal{B}$ giúp đương đầu với vấn đề khi cần mở rộng số tầng của mạng (mạng học sâu hơn) bằng việc sử dụng nhiễu khi tính giá trị trung bình và phương sai.
+Bạn có thể nghĩ rằng nhiễu sẽ là vấn đề đáng ngại.
+Nhưng thực ra, nhiễu lại đem đến lợi ích.
 
 <!--
 This turns out to be a recurring theme in deep learning.
@@ -152,11 +152,11 @@ In some preliminary research, :cite:`Teye.Azizpour.Smith.2018` and :cite:`Luo.Wa
 In particular, this sheds some light on the puzzle of why BN works best for moderate minibatches sizes in the $50$–$100$ range.
 -->
 
-Điều này hoá ra lại là chủ đề thường thấy ở trong học sâu.
-Vì những lý do vẫn chưa được định rõ theo lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến việc huấn luyện nhanh hơn và ít bị quá khớp.
-Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ những đặc điểm này, biến thể này dường như hoạt động giống một dạng điều chuẩn.
+Và đây là chủ đề thường xuất hiện trong học sâu.
+Vì những lý do vẫn chưa được giải thích rõ bằng lý thuyết, nhiều nguồn nhiễu khác nhau trong việc tối ưu hoá thường dẫn đến huấn luyện nhanh hơn và giảm quá khớp.
+Trong khi những nhà lý thuyết học máy truyền thống có thể bị vướng mắc ở việc định rõ điểm này, những thay đổi do nhiễu dường như hoạt động giống một dạng điều chuẩn.
 Trong một số nghiên cứu sơ bộ, :cite:`Teye.Azizpour.Smith.2018` và :cite:`Luo.Wang.Shao.ea.2018` đã lần lượt chỉ ra các thuộc tính của BN liên quan tới tiên nghiệm Bayesian (_Bayesian prior_) và các lượng phạt (_penalty_). 
-Đặc biệt, điều này làm sáng tỏ tại sao BN hoạt động tốt nhất với các minibatch có kích cỡ trong khoảng 50 - 100.
+Cụ thể, nghiên cứu này làm sáng tỏ lý do BN hoạt động tốt nhất với các minibatch có kích cỡ vừa phải, trong khoảng 50 - 100.
 
 <!--
 Fixing a trained model, you might (rightly) think that we would prefer to use the entire dataset to estimate the mean and variance.
@@ -167,12 +167,12 @@ Indeed this is standard practice for models employing batch normalization and th
 in *training mode* (normalizing by minibatch statistics) and in *prediction mode* (normalizing by dataset statistics).
 -->
 
-Cố định một mô hình đã được huấn luyện, bạn có thể sẽ nghĩ (đúng) rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai.
-Một khi quá trình huấn luyện hoàn tất, tại sao chúng ta lại muốn cùng một hình ảnh lại được phân loại khác nhau, phụ thuộc vào batch chứa hình ảnh này?
-Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi chúng ta cập nhật mô hình.
+Cố định một mô hình đã được huấn luyện, bạn có thể nghĩ rằng chúng ta nên sử dụng toàn bộ tập dữ liệu để ước tính giá trị trung bình và phương sai. Và đúng là như vậy.
+Bởi lẽ khi huấn luyện xong, tại sao ta lại muốn cùng một hình ảnh lại được phân loại khác nhau phụ thuộc vào batch chứa hình ảnh này?
+Trong quá trình huấn luyện, những tính toán chính xác như vậy không khả thi vì giá trị kích hoạt cho tất cả các điểm dữ liệu thay đổi mỗi khi cập nhật mô hình.
 Tuy nhiên, một khi mô hình đã được huấn luyện xong, chúng ta có thể tính được giá trị trung bình và phương sai của mỗi tầng dựa trên toàn bộ tập dữ liệu.
-Thực ra đây là tiêu chuẩn hiện hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các lớp BN của MXNet hoạt động khác nhau
-trong *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và trong *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của tập dữ liệu)
+Thực ra đây là tiêu chuẩn thực hành cho các mô hình sử dụng chuẩn hóa theo batch và do đó các tầng BN của MXNet hoạt động khác nhau
+giữa *chế độ huấn luyện* (chuẩn hoá bằng số liệu thống kê của minibatch) và *chế độ dự đoán* (chuẩn hoá bằng số liệu thống kê của toàn bộ tập dữ liệu)
 
 <!--
 We are now ready to take a look at how batch normalization works in practice.
@@ -201,10 +201,10 @@ Recall that one key differences between BN and other layers is that because BN o
  we cannot just ignore the batch dimension as we did before when introducing other layers.
 -->
 
-Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập thì hơi khác nhau một chút.
-Chúng ta sẽ thảo luận cho cả hai trường hợp trên ở phía dưới.
-Hãy nhớ lại rằng một trong những sự khác biệt chính giữa BN và những tầng khác là bởi vì mỗi lần BN hoạt động trên cả một minibatch, 
-chúng ta không thể bỏ qua kích thước của batch như chúng ta đã làm trước đây khi giới thiệu về các tầng khác.
+Thực hiện việc chuẩn hóa theo batch cho tầng kết nối đầy đủ và tầng tích chập hơi khác nhau một chút.
+Chúng ta sẽ thảo luận cả hai trường hợp trên.
+Nhớ rằng một khác biệt lớn của BN so với những tầng khác là vì BN cần số liệu thống kê trên toàn minibatch,
+chúng ta không thể bỏ qua kích thước batch như đã làm với các tầng khác.
 
 <!--
 ### Fully-Connected Layers
@@ -219,10 +219,10 @@ the activation function by $\phi(\cdot)$, and the BN operation with parameters $
 we can express the computation of a BN-enabled, fully-connected layer $\mathbf{h}$ as follows:
 -->
 
-Khi áp dụng BN vào tầng kết nối đầy đủ, chúng ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến tính. 
+Khi áp dụng BN cho tầng kết nối đầy đủ, ta thường chèn BN sau bước biến đổi affine và trước hàm kích hoạt phi tuyến. 
 Kí hiệu đầu vào của tầng là $\mathbf{x}$, hàm biến đổi tuyến tính là $f_{\theta}(\cdot)$ (với trọng số là $\theta$), 
 hàm kích hoạt là $\phi(\cdot)$, và phép tính BN là $\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}$ với tham số $\mathbf{\beta}$ và $\mathbf{\gamma}$, 
-chúng ta sẽ biểu thị việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
+chúng ta sẽ biểu diễn việc tính toán tầng kết nối đầy đủ $\mathbf{h}$ khi chèn lớp BN vào như sau:
 
 $$\mathbf{h} = \phi(\mathrm{BN}_{\mathbf{\beta}, \mathbf{\gamma}}(f_{\mathbf{\theta}}(\mathbf{x}) ) ) $$
 
@@ -231,8 +231,8 @@ Recall that mean and variance are computed on the *same* minibatch $\mathcal{B}$
 Also recall that the scaling coefficient $\mathbf{\gamma}$ and the offset $\mathbf{\beta}$ are parameters that need to be learned jointly with the more familiar parameters $\mathbf{\theta}$.
 -->
 
-Hãy nhớ rằng giá trị trung bình và phương sai thì được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
-Cũng hãy nhớ rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số $\mathbf{\theta}$ mà chúng ta đã quen thuộc.
+Nhắc lại rằng giá trị trung bình và phương sai sẽ được tính toán trên *chính* minibatch $\mathcal{B}$ mà sẽ được biến đổi. 
+Cũng cần lưu ý rằng hệ số tỷ lệ $\mathbf{\gamma}$ và độ chệch $\mathbf{\beta}$ là những tham số cần được học cùng với bộ tham số quen thuộc $\mathbf{\theta}$.
 
 <!--
 ### Convolutional Layers
@@ -250,13 +250,13 @@ Thus we collect the values over all spatial locations when computing the mean an
 apply the same $\hat{\mathbf{\mu}}$ and $\hat{\mathbf{\sigma}}$ to normalize the values at each spatial location.
 -->
 
-Tương tự với tầng tích chập, chúng ta thường áp dụng BN sau khi thực hiện tích chập và trước hàm kích hoạt phi tuyến tính.
-Khi phép tích chập cho đầu ra có nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
-và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là những số thực.
-Giả sử những minibatch của chúng ta có kích thước là $m$ và đầu ra cho mỗi kênh của phép tích chập có chiều cao là $p$ và rộng là $q$.
-Đối với tầng tích chập, chúng ta sẽ thực hiện mỗi phép tính chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng đồng thời một lúc.
-Vì thế chúng ta thu được các giá trị trên tất cả các vị trí không gian khi tính toán giá trị trung bình và phương sai 
-và tiếp đó (trong cùng một kênh nhất định) cùng áp dụng hai giá trị $\hat{\mathbf{\mu}}$ và $\hat{\mathbf{\sigma}}$ để chuẩn hóa các giá trị tại mỗi vị trí không gian.
+Tương tự với tầng tích chập, chúng ta áp dụng BN sau phép tích chập và trước hàm kích hoạt phi tuyến.
+Khi áp dụng phép tích chập cho đầu ra nhiều kênh, chúng ta cần thực hiện chuẩn hóa theo batch cho *mỗi* đầu ra của những kênh này, 
+và mỗi kênh sẽ có riêng cho nó các tham số tỉ lệ và độ chệch, cả hai đều là các số vô hướng.
+Giả sử các minibatch có kích thước $m$, đầu ra cho mỗi kênh của phép tích chập có chiều cao $p$ và chiều rộng $q$.
+Với tầng tích chập, ta sẽ thực hiện mỗi phép chuẩn hoá theo batch trên $m \cdot p \cdot q$ phần tử trên từng kênh đầu ra cùng lúc.
+Vì thế trên từng kênh, ta sử dụng giá trị trên tất cả các vị trí không gian để tính trung bình $\hat{\mathbf{\mu}}$ và phương sai $\hat{\mathbf{\sigma}}$
+và sau đó dùng hai giá trị này để chuẩn hóa các giá trị tại mỗi vị trí không gian trên kênh đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -275,9 +275,9 @@ First, the noise in $\mathbf{\mu}$ and $\mathbf{\sigma}$ arising from estimating
 Second, we might not have the luxury of computing per-batch normalization statistics, e.g., we might need to apply our model to make one prediction at a time.
 -->
 
-Như chúng tôi đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên những minibatch không còn là nhiễu được mong muốn, một khi ta đã huấn luyện xong mô hình.
-Thứ hai, chúng ta không có tài nguyên xa xỉ để tính toán các con số thống kê trên mỗi lần chuẩn hoá theo batch, ví dụ: chúng ta cần áp dụng mô hình để đưa ra một kết quả dự đoán mỗi lần.
+Như đã đề cập trước đó, BN thường hoạt động khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+Thứ nhất, nhiễu trong $\mu$ và $\sigma$ phát sinh từ việc chúng được xấp xỉ trên các minibatch không còn là nhiễu được mong muốn một khi ta đã huấn luyện xong mô hình.
+Thứ hai, trong nhiều trường hợp sẽ là xa xỉ khi tính toán các con số thống kê sau mỗi lần chuẩn hoá theo batch, ví dụ, khi cần áp dụng mô hình để đưa ra một kết quả dự đoán mỗi lần.
 
 <!--
 Typically, after training, we use the entire dataset to compute stable estimates of the activation statistics and then fix them at prediction time.
@@ -285,9 +285,9 @@ Consequently, BN behaves differently during training and at test time.
 Recall that dropout also exhibits this characteristic.
 -->
 
-Thông thường, sau khi huấn luyện, chúng ta sẽ sử dụng toàn bộ tập dữ liệu để tính toán sự ước lượng ổn định các con số thống kê của những giá trị kích hoạt và sau đó cố định chúng tại thời điểm dự đoán.
-Do đó, BN hoạt động khác nhau ở trong quá trình huấn luyện và quá trình kiểm tra.
-Hãy nhớ rằng dropout cũng thể hiện tính chất này.
+Thông thường, sau khi huấn luyện, chúng ta sử dụng toàn bộ tập dữ liệu để tính toán các con số thống kê của các giá trị kích hoạt và sau đó cố định chúng tại thời điểm dự đoán.
+Do đó, BN hoạt động khác nhau trong quá trình huấn luyện và kiểm tra.
+Lưu ý rằng dropout cũng có tính chất này.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -297,13 +297,13 @@ Hãy nhớ rằng dropout cũng thể hiện tính chất này.
 ## Implementation from Scratch
 -->
 
-## Lập trình Từ đầu
+## Lập trình từ đầu
 
 <!--
 Below, we implement a batch normalization layer with `ndarray`s from scratch:
 -->
 
-Dưới đây, chúng ta lập trình lại từ đầu tầng chuẩn hoá theo batch mà chỉ dùng $ndarrays$.
+Dưới đây, chúng ta lập trình tầng chuẩn hoá theo batch chỉ dùng `ndarray`.
 
 ```{.python .input  n=72}
 import d2l
@@ -350,11 +350,11 @@ The `num_features` parameter required by the `BatchNorm` instance is the number 
 The `num_dims` parameter also required by this instance is 2 for a fully-connected layer and 4 for a convolutional layer.
 -->
 
-Bây giờ chúng ta có thể tạo ra một tầng `BatchNorm` đúng cách.
+Giờ ta có thể tạo một tầng `BatchNorm` đúng cách.
 Tầng này sẽ duy trì những tham số thích hợp tương ứng với tỉ lệ `gamma` và độ chệch `beta`, hai tham số này sẽ được cập nhật trong quá trình huấn luyện.
-Thêm vào đó, tầng BN sẽ sẽ duy trì một giá trị trung bình động của những giá trị trung bình và phương sai cho các lần chạy sau trong lúc mô hình dự đoán. 
-Tham số `num_features` được yêu cầu truyền vào bởi đối tượng `BatchNorm` là số lượng các đầu ra cho tầng kết nối đầy đủ và số lượng kênh đầu ra cho tầng tích chập.
-Tham số `num_dims` cũng được yêu cầu truyền vào bởi đối tượng này là 2 cho tầng kết nối đầy đủ và 4 cho tầng tích chập.
+Thêm vào đó, tầng BN sẽ duy trì giá trị trung bình động của trung bình và phương sai để sử dụng về sau khi ở chế độ dự đoán. 
+Tham số `num_features` truyền vào `BatchNorm` là số đầu ra của tầng kết nối đầy đủ hoặc số kênh đầu ra của tầng tích chập.
+Tham số `num_dims` bằng 2 nếu là tầng kết nối đầy đủ và bằng 4 nếu là tầng tích chập.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -371,13 +371,12 @@ Also note that for the sake of convenience we did not worry about automatically 
 Do not worry, the Gluon `BatchNorm` layer will care of this for us.
 -->
 
-Ta tạm để các chi tiết thuật toán sang một bên mà tập trung vào các khuôn mẫu thiết kế nền tảng cho việc lập trình. 
-Thông thường, ta định nghĩa phần toán trong một hàm riêng biệt, chẳng hạn như `batch_norm`.
-Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu để giải quyết các vấn đề quản trị,
-chẳng hạn như di chuyển dữ liệu đến thiết bị phù hợp ngữ cảnh, cấp phát và khởi tạo bất kỳ biến nào được yêu cầu, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
-Khuôn mẫu này cho phép ta tách hoàn toàn các phép tính toán ra khỏi đoạn mã phụ trợ.
-Cũng lưu ý rằng để thuận tiện, ta không cần lo về việc tự động suy ra kích thước đầu vào ở đây, do đó chúng ta cũng không cần chỉ định số lượng đặc trưng xuyên suốt.
-Đừng lo lắng, lớp `BatchNorm` của Gluon sẽ làm điều này.
+Tạm để thuật toán sang một bên và tập trung vào khuôn mẫu thiết kế (*design pattern*) của việc lập trình. 
+Thông thường, ta lập trình phần toán trong một hàm riêng biệt, ví dụ như `batch_norm`.
+Sau đó, ta tích hợp chức năng này vào một tầng tùy chỉnh, với mã nguồn chủ yếu giải quyết các vấn đề phụ trợ như di chuyển dữ liệu đến thiết bị phù hợp, cấp phát và khởi tạo biến, theo dõi các giá trị trung bình động (của trung bình và phương sai trong trường hợp này), v.v.
+Khuôn mẫu này giúp tách biệt việc tính toán khỏi các đoạn mã rập khuôn.
+Cũng lưu ý rằng để thuận tiện khi lập trình BN từ đầu, ta không tự động suy ra kích thước đầu vào, do đó ta cần chỉ định số lượng đặc trưng xuyên suốt.
+Tầng `BatchNorm` của Gluon sẽ hỗ trợ việc tự động này bằng khởi tạo trễ.
 
 ```{.python .input  n=73}
 class BatchNorm(nn.Block):
@@ -413,15 +412,15 @@ class BatchNorm(nn.Block):
 ## Using a Batch Normalization LeNet
 -->
 
-## Sử dụng một cấu trúc mạng LeNet Chuẩn hóa theo Batch 
+## Sử dụng LeNet với Chuẩn hóa theo Batch
 
 <!--
 To see how to apply `BatchNorm` in context, below we apply it to a traditional LeNet model (:numref:`sec_lenet`).
 Recall that BN is typically applied after the convolutional layers and fully-connected layers but before the corresponding activation functions.
 -->
 
-Để xem cách áp dụng `BatchNorm` trong ngữ cảnh, bên dưới chúng tôi áp dụng nó cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
-Hãy nhớ lại rằng BN thường được áp dụng sau các tầng tích chập và các lớp được kết nối đầy đủ nhưng trước các hàm kích hoạt tương ứng.
+Để biết cách áp dụng `BatchNorm` trên thực tế, bên dưới ta áp dụng cho mô hình LeNet truyền thống (:numref:`sec_lenet`).
+Nhắc lại rằng BN thường được sử dụng sau tầng tích chập và tầng kết nối đầy đủ và trước hàm kích hoạt tương ứng.
 
 ```{.python .input  n=74}
 net = nn.Sequential()
@@ -448,9 +447,9 @@ This code is virtually identical to that when we first trained LeNet (:numref:`s
 The main difference is the considerably larger learning rate.
 -->
 
-Như trước đây, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
-Đoạn mã này gần như là tương tự với khi chúng ta lần đầu huấn luyên LeNet (:numref:`sec_lenet`).
-Sự khác biệt chính là tốc độ học lớn hơn đáng kể.
+Như thường lệ, ta sẽ huấn luyện trên bộ dữ liệu Fashion-MNIST.
+Đoạn mã này gần tương tự với đoạn mã khi lần đầu huấn luyện LeNet (:numref:`sec_lenet`).
+Điểm khác biệt chính là tốc độ học lớn hơn đáng kể.
 
 ```{.python .input  n=77}
 lr, num_epochs, batch_size = 1.0, 10, 256
@@ -481,7 +480,7 @@ net[1].gamma.data().reshape(-1,), net[1].beta.data().reshape(-1,)
 
 -->
 
-## Lập trình Súc tích
+## Lập trình súc tích
 
 <!--
 Compared with the `BatchNorm` class, which we just defined ourselves, the `BatchNorm` class defined by the `nn` model in Gluon is easier to use.
@@ -490,10 +489,10 @@ Instead, these parameter values will be inferred automatically via delayed initi
 Otherwise, the code looks virtually identical to the application our implementation above.
 -->
 
-So với lớp `BatchNorm` mà ta chỉ mới tự định nghĩa thì lớp` BatchNorm` được định nghĩa bởi mô hình `nn` trong Gluon dễ sử dụng hơn.
-Trong Gluon, ta không phải lo lắng về `num_features` hay `num_dims`.
-Thay vào đó, các giá trị tham số này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
-Còn lại, đoạn mã trông gần như y hệt với đoạn mã mà ta đã lập trình ở trên.
+So với lớp `BatchNorm` tự định nghĩa thì lớp` BatchNorm` định nghĩa trong `nn` của Gluon dễ sử dụng hơn.
+Trong Gluon, ta không cần chỉ rõ `num_features` và `num_dims`.
+Thay vào đó, các giá trị này sẽ được tự động suy ra trong quá trình khởi tạo trễ.
+Ngoại trừ điểm đó, đoạn mã trông giống hệt đoạn mã phía trên.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -520,9 +519,8 @@ Note that as usual, the Gluon variant runs much faster because its code has been
 while our custom implementation must be interpreted by Python.
 -->
 
-Dưới đây, chúng ta sử dụng cùng một siêu tham số để đào tạo mô hình.
-Như thường lệ, biến thể Gluon này chạy nhanh hơn nhiều vì mã của nó đã được biên dịch thành C++/CUDA
-trong khi đoạn mã tùy chỉnh của chúng ta phải được thông dịch bởi Python.
+Chúng ta sử dụng cùng các siêu tham số như trước để huấn luyện mô hình.
+Như thường lệ, biến thể dùng Gluon này chạy nhanh hơn nhiều vì được biên dịch thành C++/CUDA trong khi đoạn mã tùy chỉnh của chúng ta phải qua thông dịch bằng Python.
 
 ```{.python .input}
 d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
@@ -541,10 +539,10 @@ Recall that we do not even know why simpler deep neural networks (MLPs and conve
 Even with dropout and L2 regularization, they remain so flexible that their ability to generalize to unseen data cannot be explained via conventional learning-theoretic generalization guarantees.
 -->
 
-Theo trực giác, chuẩn hóa theo batch được cho là làm cho cảnh quan tối ưu trở nên mượt mà hơn.
-Tuy nhiên, chúng ta phải cẩn thận phân biệt giữa trực giác suy đoán và lời giải thích thực sự cho các hiện tượng mà ta quan sát thấy khi đào tạo các mô hình học sâu.
-Hãy nhớ lại rằng ngay từ đầu ta thậm chí còn không biết tại sao các mạng nơ-ron sâu đơn giản hơn (các mạng MLP và CNN thông thường) lại có thể khái quát tốt như vậy.
-Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được thông qua các bảo đảm khái quát hóa dựa trên lý thuyết học tập truyền thống.
+Theo trực giác, chuẩn hóa theo batch được cho là làm cảnh quan tối ưu (*optimization landscape*) mượt mà hơn.
+Tuy nhiên, cần cẩn thận phân biệt giữa suy đoán theo trực giác và lời giải thích thực sự cho các hiện tượng quan sát thấy khi huấn luyện các mô hình học sâu.
+Hãy nhớ lại rằng ngay từ đầu ta thậm chí không rõ tại sao các mạng nơ-ron sâu đơn giản hơn (như Perceptron đa tầng và CNN truyền thống) lại có thể khái quát tốt như vậy.
+Ngay cả với dropout và điều chuẩn L2, chúng vẫn linh hoạt đến mức khả năng khái quát hóa trên dữ liệu chưa nhìn thấy của chúng không thể giải thích được bằng các điều kiện bảo đảm sự khái quát hóa trong lý thuyết học truyền thống.
 
 <!--
 In the original paper proposing batch normalization, the authors, in addition to introducing a powerful and useful tool, 
@@ -558,14 +556,14 @@ However, we believe that it is important to separate these guiding intuitions fr
 Eventually, when you master this material and start writing your own research papers you will want to be clear to delineate between technical claims and hunches.
 -->
 
-Trong bài báo gốc khi đề xuất phương pháp chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra một lời giải thích cho lý do tại sao nó hoạt động: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ*.
-Có lẽ ý của các tác giả khi nói *sự dịch chuyển hiệp biến nội bộ* giống với cách giải thích trực quan của ta ở trên - ý niệm rằng phân phối của giá trị kích hoạt thay đổi trong quá trình đào tạo.
-Tuy nhiên, có hai vấn đề với lời giải thích này:
-(1) Sự trôi đi này rất khác so với *sự dịch chuyển hiệp biến*, khiến cái tên này hay bị nhầm lẫn.
-(2) Giải thích của tác giả vẫn chưa đủ độ cụ thể và chính xác, và để ngỏ một câu hỏi: *chính xác thì tại sao kỹ thuật này lại hoạt động?*
-Xuyên suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những kinh nghiệm trực giác đã giúp những người thực hành xây dựng các mạng nơ-ron sâu.
-Tuy nhiên, chúng tôi tin rằng cần phải phân biệt rõ ràng giữa những hiểu biết trực giác này với những bằng chứng khoa học đã được khẳng định.
-Một khi đã thành thạo tài liệu này và bắt đầu viết các tài liệu nghiên cứu của riêng mình, bạn sẽ muốn phân định rõ ràng giữa các khẳng định và những linh cảm.
+Trong bài báo gốc khi đề xuất phương pháp chuẩn hóa theo batch, các tác giả ngoài việc giới thiệu một công cụ mạnh mẽ và hữu ích đã đưa ra lời giải thích lý do BN hoạt động tốt: bằng cách giảm *sự dịch chuyển hiệp biến nội bộ - internal covariate shift*.
+Có thể hiểu ý các tác giả về *sự dịch chuyển hiệp biến nội bộ* giống với cách giải thích ở trên-rằng phân phối của giá trị kích hoạt thay đổi trong quá trình huấn luyện.
+Tuy nhiên, có hai vấn đề với cách giải thích này:
+(1) Sự dịch chuyển phân phối này rất khác so với *sự dịch chuyển hiệp biến*, việc đặt tên như vậy có sự nhầm lẫn.
+(2) Cách giải thích này vẫn chưa đủ cụ thể và chặt chẽ, vẫn để ngỏ câu hỏi: *chính xác thì tại sao kỹ thuật này hoạt động?*
+Xuyên suốt cuốn sách này, chúng tôi hướng đến việc truyền đạt những kinh nghiệm thực tế để xây dựng các mạng nơ-ron sâu.
+Tuy nhiên, chúng tôi tin rằng cần phân biệt rõ những kinh nghiệm dựa trên trực giác này với những bằng chứng khoa học rõ ràng.
+Cuối cùng, khi đã thành thạo tài liệu này và bắt đầu viết các nghiên cứu của riêng mình, bạn cần phân biệt rõ ràng giữa khẳng định và linh cảm.
 
 <!--
 Following the success of batch normalization, its explanation in terms of *internal covariate shift* has repeatedly surfaced 
@@ -577,12 +575,12 @@ In the technical literature other authors (:cite:`Santurkar.Tsipras.Ilyas.ea.201
 some claiming that BN's success comes despite exhibiting behavior that is in some ways opposite to those claimed in the original paper.
 -->
 
-Tiếp sau thành công của chuẩn hóa theo batch, lời giải thích bằng *sự dịch chuyển hiệp biến nội bộ* đã liên tục xuất hiện
-ở các cuộc tranh luận trong tài liệu kỹ thuật và rộng hơn trên các diễn đàn về cách trình bày một nghiên cứu học máy.
+Nối tiếp thành công của BN, cách giải thích của kỹ thuật này thông qua khái niệm *sự dịch chuyển hiệp biến nội bộ* liên tục xuất hiện
+trong các tranh luận, các tài liệu kỹ thuật và trên các diễn đàn về cách trình bày nghiên cứu học máy.
 Trong một bài phát biểu đáng nhớ được đưa ra khi nhận giải thưởng **Test of Time Award** tại hội nghị NeurIPS 2017,
-Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với giả kim thuật.
-Sau đó, ví dụ đã được xem xét lại một cách chi tiết trong một bài viết về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
-Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, dù cho nó có thể hiện những hành vi trái ngược với những gì đã được tuyên bố trong bài báo gốc.
+Ali Rahimi đã sử dụng *sự dịch chuyển hiệp biến nội bộ* như một tiêu điểm trong một cuộc tranh luận so sánh thực hành học sâu hiện đại với thuật giả kim.
+Sau đó, cách giải thích này đã được xem xét lại một cách chi tiết trong một bài báo về các xu hướng đáng lo ngại trong học máy :cite:`Lipton.Steinhardt.2018`.
+Trong các tài liệu kỹ thuật, các tác giả khác (:cite:`Santurkar.Tsipras.Ilyas.ea.2018`) đã đề xuất các giải thích thay thế cho sự thành công của BN, dù phần nào đó trái ngược với cách giải thích trong bài báo gốc.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -594,9 +592,9 @@ Likely, its resonance as a focal point of these debates owes to its broad recogn
 Batch normalization has proven an indispensable method, applied in nearly all deployed image classifiers, earning the paper that introduced the technique tens of thousands of citations.
 -->
 
-Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích hơn bất kỳ khẳng định nào trong số hàng ngàn lập luận mơ hồ được đưa ra mỗi năm trong nhiều tài liệu kỹ thuật về học máy.
-Việc nó trở thành tâm điểm của những cuộc tranh luận này rất có thể là do sự phổ biến của nó trong cộng đồng học máy.
-Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp không thể thiếu, được áp dụng trong gần như tất cả các bộ phân loại hình ảnh đã được triển khai, giúp cho bài báo giới thiệu kỹ thuật này có được hàng chục ngàn trích dẫn.
+Chúng tôi lưu ý rằng *sự dịch chuyển hiệp biến nội bộ* không đáng bị chỉ trích, có hàng ngàn lập luận mơ hồ được đưa ra mỗi năm trong nhiều tài liệu kỹ thuật về học máy.
+Việc nó trở thành tâm điểm của những cuộc tranh luận rất có thể là do sự phổ biến của nó trong cộng đồng học máy.
+Chuẩn hóa theo batch là một phương pháp quan trọng, được áp dụng trong gần như tất cả các bộ phân loại hình ảnh đã được triển khai, mang lại hàng chục ngàn trích dẫn cho bài báo giới thiệu kĩ thuật này.
 
 
 <!--
@@ -612,10 +610,10 @@ Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp khô
 * Batch Normalization has many beneficial side effects, primarily that of regularization. On the other hand, the original motivation of reducing covariate shift seems not to be a valid explanation.
 -->
 
-* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron bằng cách sử dụng giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị của đầu ra trung gian của mỗi tầng trong mạng nơ-ron ổn định hơn.
-* Các phương pháp chuẩn hóa theo batch cho các tầng kết nối đầy đủ và các tầng tích chập có chút khác biệt.
-* Giống như tầng dropout, các tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
-* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Mặt khác, động lực ban đầu của việc giảm sự dịch chuyển hiệp biến dường như không phải là một lời giải thích hợp lệ.
+* Trong quá trình huấn luyện mô hình, chuẩn hóa theo batch liên tục điều chỉnh đầu ra trung gian của mạng nơ-ron theo giá trị trung bình và độ lệch chuẩn của minibatch, giúp các giá trị này ổn định hơn.
+* Chuẩn hóa theo batch có chút khác biệt khi áp dụng cho tầng kết nối đầy đủ và tầng tích chập.
+* Giống như tầng dropout, tầng chuẩn hóa theo batch sẽ tính ra kết quả khác nhau trong chế độ huấn luyện và chế độ dự đoán.
+* Chuẩn hóa theo batch có nhiều tác dụng phụ có lợi, chủ yếu là về điều chuẩn. Tuy nhiên, cách giải thích ban đầu về việc giảm sự dịch chuyển hiệp biến dường như không hợp lý.
 
 <!--
 ## Exercises
@@ -637,24 +635,21 @@ Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp khô
 7. Research ideas: think of other normalization transforms that you can apply? Can you apply the probability integral transform? How about a full rank covariance estimate?
 -->
 
-1. Chúng ta có thể loại bỏ phép biến đổi affine kết nối đầy đủ trước khi chuẩn hóa theo batch hoặc tham số độ chệch trong phép tích chập không?
+1. Trước khi chuẩn hóa theo batch, có thể loại bỏ phép biến đổi affine trong tầng kết nối đầy đủ hoặc tham số độ chệch trong phép tích chập không?
     * Tìm một phép biến đổi tương đương được áp dụng trước tầng kết nối đầy đủ.
-    * Sự cải tiến này có hiệu quả không và tại sao?
+    * Sự cải tiến này có hiệu quả không, tại sao?
 2. So sánh tốc độ học của LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
     * Vẽ đồ thị biểu diễn sự giảm xuống của lỗi huấn luyện và lỗi kiểm tra.
-    * Còn về miền hội tụ thì sao? Bạn có thể chọn tốc độ học lớn tới đâu?
-3. Chúng ta có cần chuẩn hóa theo batch trong mỗi tầng không? Hãy thử nghiệm điều này.
-4. Bạn có thể thay thế Dropout bằng Chuẩn hóa theo Batch không? Hành vi sẽ thay đổi như thế nào?
-5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` tại thời điểm xây dựng để không tính gradient) rồi quan sát và phân tích kết quả.
-6. Xem tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của Chuẩn hóa theo Batch.
-7. Ý tưởng nghiên cứu: hãy nghĩ về các phép biến đổi chuẩn hóa khác mà bạn có thể áp dụng? Bạn có thể áp dụng phép biến đổi tích phân xác suất không? Còn ước lượng ma trận hiệp phương sai có hạng tối đa thì sao?
+    * Về miền hội tụ thì sao? Có thể chọn tốc độ học lớn tới đâu?
+3. Chúng ta có cần chuẩn hóa theo batch trong tất cả các tầng không? Hãy thử nghiệm điều này.
+4. Có thể thay thế Dropout bằng BN không? Sẽ có thay đổi như thế nào?
+5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` khi xây dựng mạng để không tính gradient) rồi quan sát và phân tích kết quả.
+6. Đọc tài liệu của Gluon về `BatchNorm` để xem các ứng dụng khác của chuẩn hóa theo batch.
+7. Ý tưởng nghiên cứu: nghĩ về các phép biến đổi chuẩn hóa khác có thể áp dụng. Bạn có thể áp dụng biến đổi tích phân xác suất (*probability integral transform*) không? Còn ước lượng ma trận hiệp phương sai hạng tối đa thì sao?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2358)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2358)
@@ -662,46 +657,12 @@ Chuẩn hóa theo Batch đã tự chứng minh nó là một phương pháp khô
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đinh Đắc
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-* Đinh Đắc
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Đinh Đắc
-
-<!-- Phần 5 -->
-* Đinh Đắc
-
-<!-- Phần 6 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 7 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 8 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Nguyễn Cảnh Thướng
+* Phạm Hồng Vinh

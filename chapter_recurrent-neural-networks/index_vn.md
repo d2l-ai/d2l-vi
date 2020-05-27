@@ -12,7 +12,9 @@ In other words, if we were to permute the pixels in an image, it would be much m
 its content of something that would look much like the background of a test pattern in the times of analog TV.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector tổng quát và hình ảnh.
+Với dữ liệu hình ảnh, chúng ta đã thiết kế các tầng chuyên biệt để tận dụng tính chính quy của hình ảnh.
+Nói cách khác, nếu chúng ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các hình mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình tương tự (*analog*), và rất khó để suy luận về nội dung của chúng.
 
 <!--
 Most importantly, so far we tacitly assumed that our data is generated i.i.d., i.e., independently and identically distributed, all drawn from some distribution.
@@ -22,7 +24,11 @@ Likewise, image frames in a video, the audio signal in a conversation, or the br
 It is thus only reasonable to assume that specialized models for such data will do better at describing it and at solving estimation problems.
 -->
 
-*dịch đoạn phía trên*
+Quan trọng hơn cả, cho đến thời điểm này, chúng ta đã ngầm định rằng dữ liệu được sinh ra từ các phân phối độc lập và giống hệt nhau (*independently and identically distributed - i.i.d.*).
+Thật không may, điều này không đúng với hầu hết các loại dữ liệu.
+Ví dụ, các từ trong đoạn văn này được viết theo một trình tự nhất định mà nếu bị hoán vị đi một cách ngẫu nhiên thì sẽ rất khó để giải mã ý nghĩa của chúng.
+Tương tự, các khung hình ảnh trong video, tín hiệu âm thanh trong cuộc hội thoại, hoặc hành vi duyệt web, tất cả đều có cấu trúc chuỗi.
+Do đó, hoàn toàn hợp lý khi ta giả định rằng các mô hình chuyên biệt cho những kiểu dữ liệu này sẽ giúp việc mô tả dữ liệu và giải quyết các bài toán ước lượng tốt hơn.
 
 <!--
 Another issue arises from the fact that we might not only receive a sequence as an input but rather might be expected to continue the sequence.
@@ -31,14 +37,18 @@ This is quite common in time series analysis, to predict the stock market, the f
 Again we want to have models that can handle such data.
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề nữa nảy sinh khi chúng ta không chỉ nhận một chuỗi làm đầu vào mà còn muốn dự đoán những phần tử tiếp theo của chuỗi.
+Ví dụ, bài toán có thể là dự đoán phần tử tiếp theo trong dãy 2, 4, 6, 8, 10, ...
+Tác vụ này khá phổ biến trong phân tích chuỗi thời gian: để dự đoán thị trường chứng khoán, đường cong biểu hiện sốt của bệnh nhân, hoặc gia tốc cần thiết cho một chiếc xe đua.
+Một lần nữa, chúng ta muốn xây dựng các mô hình có thể xử lý dữ liệu trên.
 
 <!--
 In short, while convolutional neural networks can efficiently process spatial information, recurrent neural networks are designed to better handle sequential information.
 These networks introduce state variables to store past information, and then determine the current outputs, together with the current inputs.
 -->
 
-*dịch đoạn phía trên*
+Nói tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả dữ liệu không gian, các mạng nơ-ron truy hồi được thiết kế để xử lý dữ liệu chuỗi tốt hơn.
+Các mạng này sử dụng các biến trạng thái để lưu trữ thông tin trong quá khứ, sau đó dựa vào chúng và các đầu vào hiện tại để xác định các đầu ra hiện tại.
 
 <!--
 Many of the examples for using recurrent networks are based on text data.
@@ -47,7 +57,10 @@ After a more formal review of sequence data we discuss basic concepts of a langu
 Next, we describe the gradient calculation method in recurrent neural networks to explore problems that may be encountered in recurrent neural network training.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều ví dụ về các mạng truy hồi trong chương này dựa trên dữ liệu văn bản.
+Do vậy, chúng ta sẽ đi sâu vào các mô hình ngôn ngữ trong chương này.
+Sau khi xem xét về dữ liệu chuỗi, chúng ta sẽ thảo luận các khái niệm cơ bản của mô hình ngôn ngữ để lấy cảm hứng thiết kế các mạng nơ-ron truy hồi.
+Tiếp đến, chúng ta sẽ mô tả phương pháp tính toán gradient trong các mạng nơ-ron truy hồi, từ đó hiểu rõ hơn các vấn đề có thể gặp phải trong quá trình huấn luyện.
 
 ```toc
 :maxdepth: 2
@@ -76,4 +89,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn. Ưu tiên kiểm tra danh sách p
 
 
 * Đoàn Võ Duy Thanh
-* 
+* Nguyễn Văn Quang
