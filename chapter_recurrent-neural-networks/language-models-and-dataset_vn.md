@@ -5,7 +5,7 @@
 # Language Models and the Dataset
 -->
 
-# Mô hình ngôn ngữ và tập dữ liệu
+# Mô hình Ngôn ngữ và Tập dữ liệu
 
 :label:`sec_language_model`
 
@@ -17,9 +17,8 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách làm sao để ánh xạ dữ liệu dạng văn bản thành những token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
-Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, 
-tiếp theo đó, trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
+Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách để ánh xạ dữ liệu văn bản sang token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, thì trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
 Khi đã có được một chuỗi như trên, mục tiêu của một mô hình ngôn ngữ là nhằm để ước tính xác suất sau
 
 $$p(x_1, x_2, \ldots, x_T).$$
@@ -33,9 +32,9 @@ Clearly we are still very far from designing such a system, since it would need 
 -->
 
 Mô hình ngôn ngữ thì vô cùng hữu dụng. 
-Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản mang tính tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
-Không giống như việc khỉ sử dụng máy đánh chữ, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống như ngôn ngữ tự nhiên, ví dụ: văn bản bằng tiếng anh.
-Hơn nữa, mô hình sẽ đủ khả năng để tạo một hội thoại có ý nghĩa, chỉ đơn giản bằng việc điều chỉnh văn bản tiếp theo phụ thuộc trên các đoạn hội thoại trước đó.
+Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Không giống như việc những con khỉ gõ phím, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống với ngôn ngữ tự nhiên, chẳng hạn như là văn bản tiếng anh.
+Hơn nữa, mô hình sẽ đủ khả năng để tạo một đoạn hội thoại có ý nghĩa, chỉ đơn giản bằng việc đặt điều kiện phụ thuộc trên các đoạn hội thoại trước đó.
 Trên thực tế, chúng ta vẫn còn khoảng cách rất xa để có thể thiết kế được một hệ thống giống như vậy, vì việc này sẽ cần mô hình phải *hiểu* được văn bản hơn là chỉ tạo ra nội dung phù hợp về mặt ngữ pháp.
 
 <!--
@@ -46,10 +45,10 @@ Likewise, in a document summarization algorithm it is worth while knowing that "
 or that "I want to eat grandma" is a rather disturbing statement, whereas "I want to eat, grandma" is much more benign.
 -->
 
-Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn những mặt hạn chế.
+Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn rất hạn chế.
 Chẳng hạn, cụm từ  “to recognize speech” và “to wreck a nice beach” khi nghe phát âm thì có vẻ rất giống nhau.
-Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà mô hình này sẽ loại bỏ đi đoạn chuyển đổi của cụm từ thứ hai, cụm từ mà mang ý nghĩa không hợp lý.
-Tương tự như vậy, trong một thuật toán tóm tắt tài liệu, nó thì đáng để thuật toán nhận biết được rằng câu “con chó cắn người đàn ông” thì xuất hiện thường xuyên hơn nhiều so với câu “người đàn ông cắn con chó”, hoặc là câu “Bà ngoại, cháu muốn ăn” (“I want to eat grandma”) thì là một câu nói mang tính chất khá là gây náo động và nhõng nhẽo, trong khi  câu “cháu muốn ăn, bà ơi” (“I want to eat, grandma” ) thì lại là câu mang tính chất ôn hoà hơn.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà sẽ loại bỏ ngay phương án thứ hai vì cụm từ này mang ý nghĩa quá kì lạ.
+Tương tự như vậy, một thuật toán tóm tắt tài liệu nên biết được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với câu “người cắn chó”, hoặc là câu “Cháu muốn ăn bà ngoại" nghe khá là kinh dị trong khi câu “Cháu muốn ăn, bà ngoại" thì lại mang ý nghĩa vô hại hơn nhiều.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
