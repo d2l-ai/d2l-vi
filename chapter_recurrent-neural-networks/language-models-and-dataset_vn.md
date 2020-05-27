@@ -113,7 +113,7 @@ Unless we provide some solution to give such word combinations nonzero weight, w
 If the dataset is small or if the words are very rare, we might not find even a single one of them.
 -->
 
-Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ.
+Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ ghép.
 Thật không may, việc ước tính xác suất của một cặp từ có phần khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” là hiếm khi xảy ra hơn.
 Đặc biệt, với một vài từ ghép bất thường, rất khó để tìm đủ số lần xuất hiện của những từ ghép này để có được một ước tính chính xác.
 Mọi thứ trở nên tệ hơn đối với các từ ghép từ ba chữ trở lên.
