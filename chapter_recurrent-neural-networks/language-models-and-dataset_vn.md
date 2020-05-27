@@ -215,7 +215,7 @@ To get a better idea we plot the graph of the word frequency.
 -->
 
 Như chúng ta có thể thấy, những từ phổ biến nhất thực sự khá nhàm chán để xem xét.
-Các từ này thường được gọi là [stop words](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
+Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
 Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
 Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
 Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
