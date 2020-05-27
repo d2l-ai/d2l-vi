@@ -89,7 +89,7 @@ Note that `rnn_layer` only contains the hidden recurrent layers, we need to crea
 While in the previous section, we have the output layer within the `rnn` block.
 -->
 
-*dịch đoạn phía trên*
+Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
 
 
 ```{.python .input  n=39}
@@ -118,13 +118,13 @@ class RNNModel(nn.Block):
 ## Training and Predicting
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện và Dự đoán
 
 <!--
 Before training the model, let us make a prediction with the a model that has random weights.
 -->
 
-*dịch đoạn phía trên*
+Trước khi huấn luyện, hãy thử dự đoán bằng mô hình có trọng số ngẫu nhiên.
 
 ```{.python .input  n=42}
 ctx = d2l.try_gpu()
@@ -137,7 +137,7 @@ d2l.predict_ch8('time traveller', 10, model, vocab, ctx)
 As is quite obvious, this model does not work at all. Next, we call `train_ch8` with the same hyper-parameters defined in :numref:`sec_rnn_scratch` and train our model with Gluon.
 -->
 
-*dịch đoạn phía trên*
+Khá rõ ràng, mô hình này không tốt. Tiếp theo, ta gọi hàm `train_ch8` với cùng các siêu tham số định nghĩa trong :numref:`sec_rnn_scratch` để huấn luyện mô hình bằng Gluon.
 
 ```{.python .input  n=19}
 num_epochs, lr = 500, 1
@@ -148,7 +148,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Compared with the last section, this model achieves comparable perplexity, albeit within a shorter period of time, due to the code being more optimized.
 -->
 
-*dịch đoạn phía trên*
+So với phần trước, mô hình này đạt được độ rối rắm tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
 
 <!--
 ## Summary
