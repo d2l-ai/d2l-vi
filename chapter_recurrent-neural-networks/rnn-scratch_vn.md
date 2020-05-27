@@ -70,6 +70,7 @@ The `one_hot` function transforms such a minibatch into a 3-D tensor with the la
 We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
 -->
 
+<!-- Revise phase 2 cần xem xét thêm có nên dịch batch size, timestep, vocabulary size hay không? -->
 Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (batch size, timestep).
 Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước cuối cùng bằng với kích thước từ vựng.
 Chúng ta thường chuyển vị đầu vào để có được (timestep, batch size, vocabulary size) tại đầu ra phù hợp hơn với mô hình chuỗi.
