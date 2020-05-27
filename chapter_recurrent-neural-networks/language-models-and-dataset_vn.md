@@ -214,7 +214,7 @@ The $10^{\mathrm{th}}$ most frequent word is less than $1/5$ as common as the mo
 To get a better idea we plot the graph of the word frequency.
 -->
 
-Như chúng ta có thể thấy, những từ phổ biến nhất thực sự khá nhàm chán để xem xét.
+Như chúng ta có thể thấy, những từ phổ biến nhất không có gì đáng để xem xét kĩ.
 Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
 Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
 Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
