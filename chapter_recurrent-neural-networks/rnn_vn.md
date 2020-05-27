@@ -203,7 +203,7 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 :numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề.
 Trong bước thời gian $t$, tính toán của trạng thái ẩn có thể được coi là một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$ sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ của bước thời gian trước đó.
 Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn của bước thời gian hiện tại $\mathbf{H}_t$.
-Tham số mô hình của bước thời gian hiện tại là ghép nối của $\mathbf{W}_{xh}$ và $\mathbf{W}_{hh}$, với hệ số điều chỉnh là $\mathbf{b}_h$.
+Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, có hệ số điều chỉnh là $\mathbf{b}_h$.
 Trạng thái ẩn của bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
 Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ của bước thời gian hiện tại $\mathbf{O}_t$.
 
