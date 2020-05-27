@@ -218,7 +218,7 @@ Như chúng ta có thể thấy, những từ phổ biến nhất thực sự kh
 Các từ này thường được gọi là [stop words](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
 Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
 Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
-Từ thứ $ 10 ^ {\ mathrm {th}} $ trong $10$ từ có tần suất xuất hiện thường xuyên nhất thì thấp hơn $ 1/5 $ lần so với tần suất xuất hiện của từ phổ biến nhất (từ có vị trí thứ nhất trong số $10$ từ).
+Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
 Để nắm được ý tưởng tốt hơn, chúng ta vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
@@ -233,9 +233,9 @@ After dealing with the first four words as exceptions ('the', 'i', 'and', 'of'),
 This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) which states that the item frequency is given by
 -->
 
-Chúng ta đang gặp một điều khá cơ bản ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
-Sau khi xử lý bốn từ đầu tiên dưới dạng ngoại lệ ('the', 'i', 'và', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ log-log.
-Điều này có nghĩa là những từ này thỏa mãn định luật [Zipf's law] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà định luật này phát biểu rằng tần suất các từ được tính bởi
+Chúng ta đang tiến tới gần một phát hiện nền tảng ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
+Sau khi xử lý bốn từ đầu tiên ('the', 'i', 'and', 'of') như là các ngoại lệ, tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
+Điều này có nghĩa là từ ngữ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà có phát biểu rằng tần suất xuất hiện sẽ được xác định bởi
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
@@ -246,9 +246,9 @@ After all, we will significantly overestimate the frequency of the tail, also kn
 But what about the other word combinations (such as bigrams, trigrams, and beyond)?
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
-Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng cách đếm các số liệu thống kê và dùng kỹ thuật làm mượt (Laplace smoothing).
+Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
 Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
-Nhưng còn về sự kết hợp từ khác nhau thì sẽ ra sao (chẳng hạn như bigram, trigram, và hơn thế nữa)?
+Vậy còn các tổ hợp từ khác thì sẽ ra sao (chẳng hạn như bigram, trigram, và hơn thế nữa)?
 Chúng ta hãy xem liệu tần số bigram có hoạt động theo cách tương tự như tần số unigram hay không.
 
 ```{.python .input  n=3}
