@@ -5,7 +5,7 @@
 # Densely Connected Networks (DenseNet)
 -->
 
-# Mạng Tích chập Kết nối Dày đặc (_Densely Connected Networks - DenseNet_)
+# Mạng Tích chập Kết nối Dày đặc (DenseNet)
 
 <!--
 ResNet significantly changed the view of how to parametrize the functions in deep networks.
@@ -14,10 +14,10 @@ To understand how to arrive at it, let us take a small detour to theory.
 Recall the Taylor expansion for functions. For scalars it can be written as
 -->
 
-ResNet đã làm thay đổi đáng kể quan điểm về cách tham số hóa các hàm số trong mạng học sâu.
-Ở một mức độ nào đó, DenseNet có thể được coi là một mở rộng hợp lý của ResNet.
+ResNet đã làm thay đổi đáng kể quan điểm về cách tham số hóa các hàm số trong mạng nơ-ron sâu.
+Ở một mức độ nào đó, DenseNet có thể được coi là phiên bản mở rộng hợp lý của ResNet.
 Để hiểu cách đi đến kết luận đó, ta cần tìm hiểu một chút lý thuyết.
-Hãy nhớ lại công thức khai triển Taylor cho hàm một biến vô hướng
+Nhắc lại công thức khai triển Taylor cho hàm một biến vô hướng như sau 
 
 $$f(x) = f(0) + f'(x) x + \frac{1}{2} f''(x) x^2 + \frac{1}{6} f'''(x) x^3 + o(x^3).$$
 
@@ -32,6 +32,7 @@ The key point is that it decomposes the function into increasingly higher order 
 In a similar vein, ResNet decomposes functions into
 -->
 
+
 Điểm mấu chốt là khai triển Taylor phân tách hàm số thành các số hạng có bậc tăng dần.
 Tương tự, ResNet phân tách các hàm số thành
 
@@ -43,12 +44,14 @@ What if we want to go beyond two terms? A solution was proposed by :cite:`Huang.
 an architecture that reported record performance on the ImageNet dataset.
 -->
 
-Cụ thể là, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
-Nếu ta muốn tách ra nhiều hơn hai số hạng thì sao? Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` trong kiến trúc DenseNet. Kiến trúc này đạt được hiệu suất kỉ lục trên tập dữ liệu ImageNet.
+Cụ thể, ResNet tách hàm số $f$ thành một số hạng tuyến tính đơn giản và một số hạng phi tuyến phức tạp hơn.
+Nếu ta muốn tách ra thành nhiều hơn hai số hạng thì sao? 
+Một giải pháp đã được đề xuất bởi :cite:`Huang.Liu.Van-Der-Maaten.ea.2017` trong kiến trúc DenseNet. Kiến trúc này đạt được hiệu suất kỉ lục trên tập dữ liệu ImageNet.
 
 <!--
 ![The main difference between ResNet (left) and DenseNet (right) in cross-layer connections: use of addition and use of concatenation. ](../img/densenet-block.svg)
 -->
+
 
 ![Sự khác biệt chính giữa ResNet (bên trái) và DenseNet (bên phải) trong các kết nối xuyên tầng: sử dụng phép cộng và sử dụng phép nối.](../img/densenet-block.svg)
 :label:`fig_densenet_block`
@@ -58,7 +61,8 @@ As shown in :numref:`fig_densenet_block`, the key difference between ResNet and 
 As a result we perform a mapping from $\mathbf{x}$ to its values after applying an increasingly complex sequence of functions.
 -->
 
-Như được biểu diễn trong :numref:`fig_densenet_block`, điểm khác biệt chính giữa ResNet và DenseNet là trong kiến trúc DenseNet, đầu ra được *nối* với nhau thay vì được cộng lại.
+
+Như được thể hiện trong :numref:`fig_densenet_block`, điểm khác biệt chính là DenseNet *nối* đầu ra lại với nhau thay vì cộng lại như ở ResNet.
 Kết quả là ta thực hiện một ánh xạ từ $\mathbf{x}$ đến các giá trị của nó sau khi áp dụng một chuỗi các hàm với độ phức tạp tăng dần.
 
 $$\mathbf{x} \to \left[\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), f_3(\mathbf{x}, f_1(\mathbf{x}), f_2(\mathbf{x}, f_1(\mathbf{x})), \ldots\right].$$
@@ -78,10 +82,10 @@ The dense connections are shown in :numref:`fig_densenet`.
 -->
 
 Cuối cùng, tất cả các hàm số này sẽ được kết hợp trong một Perceptron đa tầng để giảm số lượng đặc trưng một lần nữa.
-Về mặt lập trình, việc này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
-Cái tên DenseNet phát sinh từ thực tế là đồ thị phụ thuộc giữa các biến là khá dày đặc.
-Tầng cuối cùng của một chuỗi như vậy được kết nối "dầy đặc" tới tất cả các tầng trước đó.
-Các thành phần chính tạo nên một DenseNet là các khối dày đặc và các tầng chuyển tiếp.
+Lập trình thay đổi này khá đơn giản --- thay vì cộng các số hạng với nhau, ta sẽ nối chúng lại.
+Cái tên DenseNet phát sinh từ việc đồ thị phụ thuộc giữa các biến trở nên khá dày đặc.
+Tầng cuối cùng của một chuỗi như vậy được kết nối "dày đặc" tới tất cả các tầng trước đó.
+Thành phần chính của DenseNet là các khối dày đặc và các tầng chuyển tiếp.
 Các khối dày đặc định nghĩa cách các đầu vào và đầu ra được nối với nhau, trong khi các tầng chuyển tiếp kiểm soát số lượng kênh sao cho nó không quá lớn.
 Các kết nối dày đặc được biểu diễn trong :numref:`fig_densenet`.
 
@@ -107,6 +111,7 @@ DenseNet uses the modified "batch normalization, activation, and convolution" ar
 First, we implement this architecture in the `conv_block` function.
 -->
 
+
 DenseNet sử dụng kiến trúc "chuẩn hóa theo batch, hàm kích hoạt và phép tích chập" đã qua sửa đổi của ResNet (xem phần bài tập trong :numref:`sec_resnet`).
 Đầu tiên, ta sẽ lập trình kiến trúc này trong hàm `conv_block`.
 
@@ -130,7 +135,7 @@ In the forward computation, however, we concatenate the input and output of each
 -->
 
 Một khối dày đặc bao gồm nhiều khối `conv_block` với cùng số lượng kênh đầu ra.
-Tuy nhiên, trong tính toán lượt truyền xuôi, ta nối đầu vào và đầu ra của từng khối trên chiều kênh.
+Tuy nhiên, ta sẽ nối đầu vào và đầu ra của từng khối theo chiều kênh khi tính toán lượt truyền xuôi.
 
 ```{.python .input  n=2}
 class DenseBlock(nn.Block):
@@ -156,9 +161,9 @@ The number of convolution block channels controls the increase in the number of 
 This is also referred to as the growth rate.
 -->
 
-Trong ví dụ sau đây, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra. <!-- dựa vào đoạn code bên dưới, mình đoán tác giả muốn nói là "we define a dense block with two convolution blocks" không biết có đúng không -->
+Trong ví dụ sau, ta sẽ định nghĩa một khối dày đặc gồm hai khối tích chập với 10 kênh đầu ra.
 Với một đầu vào gồm 3 kênh, ta sẽ nhận được một đầu ra với $3+2\times 10=23$ kênh.
-Số lượng kênh của khối tích chập kiểm soát sự gia tăng trong số lượng kênh đầu ra so với số lượng kênh đầu vào.
+Số lượng kênh của khối tích chập kiểm soát sự gia tăng của số lượng kênh đầu ra so với số lượng kênh đầu vào.
 Số lượng kênh này còn được gọi là tốc độ tăng trưởng (*growth rate*).
 
 ```{.python .input  n=8}
@@ -186,9 +191,9 @@ It reduces the number of channels by using the $1\times 1$ convolutional layer a
 and width of the average pooling layer with a stride of 2, further reducing the complexity of the model.
 -->
 
-Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
+Mỗi khối dày đặc sẽ làm tăng thêm số lượng kênh. Nhưng việc thêm quá nhiều kênh sẽ tạo nên một mô hình phức tạp quá mức.
 Do đó, một tầng chuyển tiếp sẽ được sử dụng để kiểm soát độ phức tạp của mô hình.
-Tầng này sẽ dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh và theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng để giảm thêm độ phức tạp của mô hình.
+Tầng này dùng một tầng tích chập $1\times 1$ để giảm số lượng kênh, theo sau là một tầng gộp trung bình với sải bước bằng 2 để giảm một nửa chiều cao và chiều rộng, từ đó giảm độ phức tạp của mô hình hơn nữa.
 
 ```{.python .input  n=3}
 def transition_block(num_channels):
@@ -204,7 +209,7 @@ Apply a transition layer with 10 channels to the output of the dense block in th
 This reduces the number of output channels to 10, and halves the height and width.
 -->
 
-Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên các đầu ra của khối dày đặc trong ví dụ trước.
+Ta sẽ áp dụng một tầng chuyển tiếp với 10 kênh lên đầu ra của khối dày đặc trong ví dụ trước.
 Việc này sẽ làm giảm số lượng kênh đầu ra xuống còn 10, đồng thời làm giảm đi một nửa chiều cao và chiều rộng.
 
 ```{.python .input}
@@ -229,7 +234,7 @@ DenseNet first uses the same single convolutional layer and maximum pooling laye
 -->
 
 Tiếp theo, ta sẽ xây dựng một mô hình DenseNet.
-Đầu tiên DenseNet sử dụng một tầng tích chập và một tầng gộp cực đại như trong ResNet.
+Đầu tiên, DenseNet sử dụng một tầng tích chập và một tầng gộp cực đại như trong ResNet.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -249,18 +254,18 @@ Here, we set it to 4, consistent with the ResNet-18 in the previous section.
 Furthermore, we set the number of channels (i.e., growth rate) for the convolutional layers in the dense block to 32, so 128 channels will be added to each dense block.
 -->
 
-Sau đó, tương tự như cách ResNet sử dụng bốn khối thặng dư, DenseNet sẽ dùng bốn khối dày đặc.
+Sau đó, tương tự như cách ResNet sử dụng bốn khối phần dư, DenseNet cũng dùng bốn khối dày đặc.
 Và cũng giống như ResNet, ta có thể tùy chỉnh số lượng tầng tích chập được sử dụng trong mỗi khối dày đặc.
-Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với với kiến trúc ResNet-18 trong phần trước.
-Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) cho các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào qua mỗi khối dày đặc.
+Ở đây, ta sẽ đặt số lượng khối tích chập bằng 4 để giống với kiến trúc ResNet-18 trong phần trước.
+Ngoài ra, ta đặt số lượng kênh (tức tốc độ tăng trưởng) của các tầng tích chập trong khối dày đặc là 32, vì vậy 128 kênh sẽ được thêm vào trong mỗi khối dày đặc.
 
 <!--
 In ResNet, the height and width are reduced between each module by a residual block with a stride of 2.
 Here, we use the transition layer to halve the height and width and halve the number of channels.
 -->
 
-Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối thặng dư với sải bước bằng 2.
-Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, một nửa chiều rộng và một nửa số kênh.
+Trong ResNet, chiều cao và chiều rộng được giảm sau mỗi khối bằng cách sử dụng một khối phần dư với sải bước bằng 2.
+Ở đây, ta sẽ sử dụng tầng chuyển tiếp để làm giảm đi một nửa chiều cao, chiều rộng và số kênh.
 
 ```{.python .input  n=5}
 # Num_channels: the current number of channels
@@ -281,6 +286,7 @@ for i, num_convs in enumerate(num_convs_in_dense_blocks):
 <!--
 Similar to ResNet, a global pooling layer and fully connected layer are connected at the end to produce the output.
 -->
+
 
 Tương tự như ResNet, một tầng gộp toàn cục và một tầng kết nối đầy đủ sẽ được thêm vào cuối mạng để tính toán đầu ra.
 
@@ -305,7 +311,7 @@ net.add(nn.BatchNorm(),
 Since we are using a deeper network here, in this section, we will reduce the input height and width from 224 to 96 to simplify the computation.
 -->
 
-Trong phần này, do sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
+Trong phần này, vì đang sử dụng một mạng sâu hơn nên để đơn giản hóa việc tính toán, ta sẽ giảm chiều cao và chiều rộng của đầu vào từ 224 xuống còn 96.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.1, 10, 256
@@ -327,7 +333,7 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 * Về mặt kết nối xuyên tầng, không giống như trong ResNet khi đầu vào và đầu ra được cộng lại với nhau, DenseNet nối các đầu vào và đầu ra theo chiều kênh.
 * Các thành phần chính tạo nên DenseNet là các khối dày đặc và các tầng chuyển tiếp.
-* Ta cần kiểm soát số chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
+* Ta cần kiểm soát kích thước của các chiều khi thiết kế mạng bằng cách thêm các tầng chuyển tiếp để làm giảm số lượng kênh.
 
 <!--
 ## Exercises
@@ -346,21 +352,17 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 6. Design a DenseNet for fully connected networks and apply it to the Housing Price prediction task.
 -->
 
-1. Tại sao ta sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
+1. Tại sao ta lại sử dụng phép gộp trung bình thay vì gộp cực đại trong tầng chuyển tiếp?
 2. Một trong những ưu điểm được đề cập trong bài báo DenseNet là kiến trúc này có số lượng tham số nhỏ hơn so với ResNet. Tại sao lại như vậy?
-3. DenseNet thường bị chỉ trích vì ngốn nhiều bộ nhớ.
-     * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
-     * Hãy tìm cách khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
+3. DenseNet thường bị chỉ trích vì nó tiêu tốn nhiều bộ nhớ.
+    * Điều này có đúng không? Hãy thử thay đổi kích thước đầu vào thành $224\times 224$ để xem mức tiêu thụ bộ nhớ (GPU) thực tế.
+    * Hãy tìm các phương án khác để giảm mức tiêu thụ bộ nhớ. Ta cần thay đổi kiến trúc này như thế nào?
 4. Lập trình các phiên bản DenseNet khác nhau được trình bày trong Bảng 1 của :cite:`Huang.Liu.Van-Der-Maaten.ea.2017`.
-5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần nối các số hạng trong DenseNet có từ hai tầng trở lên?
-6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự Đoán Giá Nhà.
+5. Tại sao ta không cần nối các số hạng nếu ta chỉ quan tâm đến $\mathbf{x}$ và $f(\mathbf{x})$ như trong ResNet? Tại sao ta lại cần làm vậy với nhiều hơn hai tầng trong DenseNet?
+6. Thiết kế một mạng kết nối đầy đủ tương tự như DenseNet và áp dụng nó vào bài toán Dự đoán Giá Nhà.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2360)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2360)
@@ -368,30 +370,11 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Duy Du
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
-
-<!-- Phần 4 -->
-* Nguyễn Duy Du
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
+* Nguyễn Cảnh Thướng
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh

@@ -120,9 +120,9 @@ This helps with singletons, e.g., via
 
 
 $$\begin{aligned}
-	\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
-	\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
-	\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
+\t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
+\t\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
+\t\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
 \end{aligned}$$
 
 
@@ -261,7 +261,9 @@ Out of the 10 most frequent word pairs, 9 are composed of stop words and only on
 Furthermore, let us see whether the trigram frequency behaves in the same manner.
 -->
 
-*dịch đoạn phía trên*
+Có hai điều đáng chú ý ở đây.
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách---từ "the time".
+Hơn nữa, chúng ta hãy xem liệu tần xuất trigram có hoạt động theo cách tương tự hay không.
 
 
 ```{.python .input  n=4}
@@ -275,7 +277,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta hãy quan sát biểu đồ tần xuất token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
 
 
 ```{.python .input  n=5}
@@ -294,13 +296,19 @@ This gives us hope that there is quite a lot of structure in language.
 Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use deep learning based models.
 -->
 
-*dịch đoạn phía trên*
+Biểu đồ này khá thú vị bởi một vài lý do.
+Thứ nhất, ngoài các từ unigram, các chuỗi của các từ cũng xuất hiện theo định luật Zipf, mặc dù với một số mũ thấp hơn, tùy thuộc vào chiều dài chuỗi.
+Thứ hai, số lượng các n-gram duy nhất không phải là lớn.
+Điều này cho chúng ta hy vọng về số lượng lớn các cấu trúc trong ngôn ngữ.
+Thứ ba, rất nhiều n-gram hiếm khi tồn tại, khiến cho phép làm mịn Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng mô hình học sâu.
+
 
 <!--
 ## Training Data Preparation
 -->
 
-## *dịch tiêu đề phía trên*
+## Chuẩn bị Dữ liệu Huấn luyện
+
 
 <!--
 Before introducing the model, let us assume we will use a neural network to train a language model.
@@ -310,14 +318,20 @@ We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`
 Let us formalize this a bit.
 -->
 
-*dịch đoạn phía trên*
+Trước khi giới thiệu các mô hình này, hãy giả sử ta sử dụng mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
+Câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
+Do bản chất tuần tự của dữ liệu chuỗi, chúng ta cần giải quyết các vấn đề khi thực hiện xử lý nó .
+Điều này đã được giới thiệu một cách khá đặc biệt trong :numref:`sec_sequence`.
+Hãy hợp thức hóa bước này một chút.
 
 <!--
 In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtain 5-grams in a sentence, here a token is a character.
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref: `fig_timemachine_5gram`, ta đã biểu diễn bằng nhiều cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+Lưu ý rằng chúng ta có khá nhiều tự do vì có thể chọn một phần bù tùy ý.
+
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -327,7 +341,7 @@ Note that we have quite some freedom since we could pick an arbitrary offset.
 ![Different offsets lead to different subsequences when splitting up text.](../img/timemachine-5gram.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/timemachine-5gram.svg)
+![Các độ dời khác nhau dẫn đến các chuỗi con khác nhau khi phân tách văn bản.](../img/timemachine-5gram.svg)
 :label:`fig_timemachine_5gram`
 
 <!--
@@ -342,7 +356,15 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-*dịch đoạn phía trên*
+Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
+Nhưng nếu chúng ta chọn tất cả các giá trị độ dời, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
+Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
+Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
+Ngay cả khi hoán vị ngẫu nhiên một tập tất cả các giá trị độ dời cũng không bảo đảm hoàn toàn.
+Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
+Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
+
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -352,7 +374,8 @@ We describe how to accomplish this for both random sampling and sequential parti
 ### Random Sampling
 -->
 
-### *dịch tiêu đề phía trên*
+### Lấy Mẫu Ngẫu nhiên
+
 
 <!--
 The following code randomly generates a minibatch from the data each time.
@@ -362,7 +385,12 @@ The positions of two adjacent random minibatches on the original sequence are no
 The target is to predict the next character based on what we have seen so far, hence the labels are the original sequence, shifted by one character.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã sau sinh ngẫu nhiên từng minibatch dữ liệu một.
+Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
+Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý được lấy ra từ chuỗi gốc.
+Vị trí của hai minibatch ngẫu nhiên liên tiếp trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
+Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển đi một ký tự.
+
 
 
 ```{.python .input  n=1}
@@ -396,7 +424,11 @@ This means that depending on the offset we can generate between 4 and 5 $(x, y)$
 With a minibatch size of 2, we only get 2 minibatches.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng sinh một chuỗi từ 0 tới 30.
+Chúng ta giả định rằng kích thước batch là 2 và số lượng bước thời gian là 6.
+Điều này có nghĩa là tùy thuộc vào độ dời, chúng ta có thể sinh từ 4 tới 5 cặp $(x, y)$.
+Với kích thước minibatch bằng 2, chúng ta chỉ thu được 2 minibatch.
+
 
 ```{.python .input  n=6}
 my_seq = list(range(30))
@@ -412,13 +444,15 @@ for X, Y in seq_data_iter_random(my_seq, batch_size=2, num_steps=6):
 ### Sequential Partitioning
 -->
 
-### *dịch tiêu đề phía trên*
+### Phân vùng Tuần tự
+
 
 <!--
 In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatches adjacent in the original sequence.
 -->
 
-*dịch đoạn phía trên*
+Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm cho vị trí của hai minibatch ngẫu nhiên liền kề thực sự liền kề nhau trong chuỗi gốc.
+
 
 
 ```{.python .input  n=7}
@@ -443,7 +477,9 @@ Using the same settings, print input `X` and label `Y` for each minibatch of exa
 The positions of two adjacent minibatches on the original sequence are adjacent.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng các giá trị cài đặt tương tự như ở trên, hãy cũng in đầu vào `X` và nhãn `Y` cho mỗi minibatch được lấy mẫu ngẫu nhiên.
+Các vị trí của hai minibatch liền kề trên chuỗi ban đầu cũng liền kề nhau.
+
 
 
 ```{.python .input  n=8}
@@ -455,7 +491,8 @@ for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
 Now we wrap the above two sampling functions to a class so that we can use it as a Gluon data iterator later.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy gộp hai hàm lấy mẫu trên vào một lớp để chúng ta có thể sử dụng nó như là một iterator dữ liệu Gluon trong các phần sau.
+
 
 
 ```{.python .input}
@@ -478,7 +515,8 @@ class SeqDataLoader:
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta sẽ viết một hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để có thể sử dụng nó tương tự như các hàm khác với tiền tố `load_data`.
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -505,7 +543,14 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatches.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình ngôn ngữ là công nghệ thiết yếu trong xử lý ngôn ngữ tự nhiên.
+* $n$-grams là một mô hình tiện lợi để xử lý các chuỗi dài bằng cách cắt giảm tính phụ thuộc.
+* Các chuỗi dài thường gặp vấn đề khi chúng rất hiếm hoặc không bao giờ xuất hiện.
+* Định luật Zipf kiểm soát các phân phối từ không chỉ ở 1-gram mà còn ở các $n$-gram khác.
+* Có rất nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện của chúng lại không đủ cao để áp dụng được phương pháp làm mượt Laplace trong việc xử lý các tổ hợp từ hiếm hơn.
+* Giải pháp chủ yếu cho bài toán phân tách chuỗi đó là chọn giữa các chuỗi liên tiếp và ngẫu nhiên.
+* Căn cứ vào độ dài của toàn bộ tài liệu, ta thường có thể lãng phí một chút và loại bỏ các minibatch rỗng một nửa.
+
 
 <!--
 ## Exercises
@@ -525,7 +570,16 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 7. If we want a sequence example to be a complete sentence, what kinds of problems does this introduce in minibatch sampling? Why would we want to do this anyway?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần suất từ và tần suất nhiều từ liền kề?
+2. Hãy xem lại các ước lượng xác suất được làm mượt. Tại sao chúng lại không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
+3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
+4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
+5. Bạn có thể nghĩ ra các phương pháp lấy mẫu cho minibatch khác không?
+6. Tại sao việc lấy một giá trị offset ngẫu nhiên lại là một ý tưởng hay?
+    * Liệu nó có thực sự dẫn đến phân phối đều hoàn hảo cho các chuỗi dữ liệu văn bản không?
+    * Bạn phải làm gì để có được một phân phối đều hơn? 
+7. Nếu chúng ta muốn có một mẫu chuỗi là một câu hoàn chỉnh, những vấn đề gì sẽ nảy sinh khi lấy mẫu minibatch? Mà tại sao ta lại muốn thực hiện việc này?
+
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -561,10 +615,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Quang

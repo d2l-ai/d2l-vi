@@ -16,8 +16,10 @@ However, the number of model parameters would also increase exponentially with i
 Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is preferable to use a *latent variable model* in which we have
 -->
 
-*dịch đoạn phía trên*
-
+:numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t$ chỉ phụ thuộc vào $n-1$ từ trước đó.
+Nếu muốn kiểm tra ảnh hưởng có thể có của các từ phía trước $t-(n-1)$ đến từ $x_t$, ta phải tăng $n$.
+Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị của từ điển $V$.
+Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
 
 $$p(x_t \mid x_{t-1}, \ldots, x_1) \approx p(x_t \mid x_{t-1}, h_{t}).$$
 
@@ -27,8 +29,9 @@ A latent variable is also called as *hidden variable*, *hidden state* or *hidden
 The hidden state at time $t$ could be computed based on both input $x_{t}$ and hidden state $h_{t-1}$, that is
 -->
 
-*dịch đoạn phía trên*
-
+$h_t$ còn được gọi là *biến tiềm ẩn* và nó lưu trữ thông tin của chuỗi.
+Biến tiềm ẩn còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*).
+Trạng thái ẩn tại thời điểm $t$ có thể được tính dựa trên cả đầu vào $x_{t}$ và trạng thái ẩn $h_{t-1}$ như sau 
 
 $$h_t = f(x_{t}, h_{t-1}).$$
 
@@ -39,7 +42,11 @@ We discussed this in :numref:`sec_sequence`.
 But it could potentially makes both computation and storage expensive.
 -->
 
-*dịch đoạn phía trên*
+Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không phải là một sự ước lượng.
+Sau cùng, $h_t$ có thể chỉ đơn thuần lưu lại tất cả dữ liệu đã quan sát được cho đến thời điểm hiện tại.
+Điều này đã được thảo luận tại :numref:`sec_sequence`.
+Tuy nhiên điều này có thể sẽ làm việc tính toán và lưu trữ trở nên nặng nề.
+
 
 <!--
 Note that we also use $h$ to denote by the number of hidden units of a hidden layer.
@@ -50,14 +57,20 @@ Instead, they can only be computed by looking at data at previous iterations.
 In this sense they have much in common with latent variable models in statistics, such as clustering or topic models where the clusters affect the output but cannot be directly observed.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng ta cũng sử dụng $h$ để kí hiệu số lượng nút ẩn trong một tầng ẩn.
+Tầng ẩn và trạng thái ẩn là hai khái niệm rất khác nhau.
+Tầng ẩn, như đã đề cập, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
+Trạng thái ẩn, về mặt kỹ thuật là *đầu vào* của một bước tính toán tại một thời điểm xác định.
+Chúng chỉ có thể được tính dựa vào dữ liệu tại các vòng lặp trước đó.
+Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê như mô hình phân cụm hoặc mô hình chủ đề (*topic model*), với các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
 
 <!--
 Recurrent neural networks are neural networks with hidden states.
 Before introducing this model, let us first revisit the multi-layer perceptron introduced in :numref:`sec_mlp`.
 -->
 
-*dịch đoạn phía trên*
+Mạng nơ-ron truy hồi là mạng nơ-ron với các trạng thái ẩn.
+Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa tầng tại :numref:`sec_mlp`.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -67,7 +80,7 @@ Before introducing this model, let us first revisit the multi-layer perceptron i
 ## Recurrent Networks Without Hidden States
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng Truy hồi không có Trạng thái ẩn
 
 <!--
 Let us take a look at a multilayer perceptron with a single hidden layer.
@@ -76,7 +89,10 @@ Let the hidden layer's activation function be $\phi$.
 Hence, the hidden layer's output $\mathbf{H} \in \mathbb{R}^{n \times h}$ is calculated as
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ xem xét một perception đa tầng với một tầng ẩn duy nhất.
+Giả sử ta có một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
+Gọi hàm kích hoạt của tầng ẩn là $\phi$.
+Khi đó, đầu ra của tầng ẩn $\mathbf{H} \in \mathbb{R}^{n \times h}$ được tính như sau
 
 
 $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
@@ -87,14 +103,15 @@ $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
 Here, we have the weight parameter $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, bias parameter $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, and the number of hidden units $h$, for the hidden layer.
 -->
 
-*dịch đoạn phía trên*
+Trong đó, $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$ là tham số trọng số, $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$ là hệ số điều chỉnh và $h$ là số nút ẩn của tầng ẩn.
 
 <!--
 The hidden variable $\mathbf{H}$ is used as the input of the output layer.
 The output layer is given by
 -->
 
-*dịch đoạn phía trên*
+Biến ẩn $\mathbf{H}$ được sử dụng làm đầu vào của tầng đầu ra.
+Tầng đầu ra được tính toán bởi
 
 $$\mathbf{O} = \mathbf{H} \mathbf{W}_{hq} + \mathbf{b}_q.$$
 
@@ -104,14 +121,16 @@ $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ is the weight parameter, and $\mat
 If it is a classification problem, we can use $\text{softmax}(\mathbf{O})$ to compute the probability distribution of the output category.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $\mathbf{O} \in \mathbb{R}^{n \times q}$ là biến đầu ra, $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ là tham số trọng số và $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là hệ số điều chỉnh của tầng đầu ra.
+Nếu bài toán là phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của tầng đầu ra.
 
 <!--
 This is entirely analogous to the regression problem we solved previously in :numref:`sec_sequence`, hence we omit details.
 Suffice it to say that we can pick $(x_t, x_{t-1})$ pairs at random and estimate the parameters $\mathbf{W}$ and $\mathbf{b}$ of our network via autograd and stochastic gradient descent.
 -->
 
-*dịch đoạn phía trên*
+Do vấn đề này hoàn toàn tương tự với bài toán hồi quy đã từng được giải quyết trong :numref:`sec_sequence`, ta sẽ bỏ qua các chi tiết ở đây.
+Chỉ cần nói thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -386,10 +405,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
-
+* Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 *

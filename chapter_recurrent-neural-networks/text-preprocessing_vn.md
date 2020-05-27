@@ -5,7 +5,8 @@
 # Text Preprocessing
 -->
 
-# *dịch tiêu đề phía trên*
+# Tiền Xử lý Dữ liệu Văn bản
+
 :label:`sec_text_preprocessing`
 
 <!--
@@ -15,7 +16,10 @@ Given text data is a major data format besides images we are using in this book,
 Such preprocessing often consists of four steps:
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu văn bản là một ví dụ điển hình của dữ liệu chuỗi.
+Một bài báo có thể coi là một chuỗi các từ, hoặc một chuỗi các ký tự.
+Với dữ liệu văn bản là một dạng dữ liệu quan trọng bên cạnh dữ liệu hình ảnh được sử dụng trong cuốn sách này, phần này sẽ dành để giải thích các bước tiền xử lý thường gặp cho loại dữ liệu này.
+Quá trình tiền xử lý thường bao gồm bốn bước sau:
 
 <!--
 1. Load text as strings into memory.
@@ -24,14 +28,19 @@ Such preprocessing often consists of four steps:
 4. Map all the tokens in data into indices for ease of feeding into models.
 -->
 
-*dịch đoạn phía trên*
+1. Nạp dữ liệu văn bản ở dạng chuỗi ký tự vào bộ nhớ.
+2. Chia chuỗi thành các token trong đó một token có thể là một từ hoặc một ký tự.
+3. Xây dựng một bộ từ vựng cho các token để ánh xạ chúng thành các chỉ số (*index*).
+4. Ánh xạ tất cả các token trong dữ liệu văn bản thành các chỉ số để dễ dàng đưa vào các mô hình.
+
 
 
 <!--
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Bộ dữ liệu
+
 
 <!--
 To get started we load text from H. G. Wells' [Time Machine](http://www.gutenberg.org/ebooks/35).
@@ -41,7 +50,12 @@ The following function reads the dataset into a list of sentences, each sentence
 Here we ignore punctuation and capitalization.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian (*Time Machine*)] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells.
+Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30.000$ từ, nhưng nó đủ tốt cho mục đích minh họa.
+Nhiều bộ dữ liệu trên thực tế chứa hàng tỷ từ.
+Hàm sau đây đọc dữ liệu thành một danh sách các câu, mỗi câu là một chuỗi.
+Chúng ta bỏ qua dấu câu và chữ viết hoa.
+
 
 ```{.python .input}
 import collections
@@ -72,7 +86,8 @@ lines = read_time_machine()
 ## Tokenization
 -->
 
-## *dịch tiêu đề phía trên*
+## Token hoá
+
 
 <!--
 For each sentence, we split it into a list of tokens.
@@ -80,7 +95,10 @@ A token is a data point the model will train and predict.
 The following function supports splitting a sentence into words or characters, and returns a list of split strings.
 -->
 
-*dịch đoạn phía trên*
+Với mỗi câu, chúng ta chia nó thành một danh sách các token.
+Một token là một điểm dữ liệu mà mô hình sẽ huấn luyện và đưa ra dự đoán cho nó.
+Hàm dưới đây làm nhiệm vụ tách một câu thành các từ hoặc các ký tự, và trả về một danh sách các chuỗi đã được phân tách.
+
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -101,7 +119,8 @@ tokens[0:2]
 ## Vocabulary
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Từ vựng
+
 
 <!--
 The string type of the token is inconvenient to be used by models, which take numerical inputs.
@@ -112,7 +131,12 @@ A token does not exist in corpus or has been removed is mapped into a special un
 We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token for padding, “&lt;bos&gt;” to present the beginning for a sentence, and “&lt;eos&gt;” for the ending of a sentence.
 -->
 
-*dịch đoạn phía trên*
+Chuỗi của các token là không kiểu dữ liệu tiện lợi cho các mô hình mà thường nhận dữ liệu đầu vào dưới dạng số.
+Bây giờ, chúng ta sẽ xây dựng một bộ từ điển, thường được gọi là *bộ từ vựng* (*vocabulary*), để ánh xạ chuỗi token thành các chỉ số bắt đầu từ 0.
+Để làm điều này, đầu tiên chúng ta lấy các token xuất hiện (không lặp lại) trong toàn bộ tài liệu, thường được gọi là kho ngữ liệu (*corpus*), và sau đó gán một giá trị số (chỉ số) cho mỗi token dựa trên tần suất xuất hiện của chúng.
+Các token có tần suất xuất hiện rất ít thường được loại bỏ để giảm độ phức tạp.
+Một token không xuất hiện trong kho ngữ liệu hay đã bị loại bỏ thường được ánh xạ vào một token vô danh đặc biệt (“&lt;unk&gt;”). 
+Chúng ta có thể thêm vào các token dự trữ, ví dụ token “&lt;pad&gt;” được sử dụng để đệm từ, token “&lt;bos&gt;” để biểu thị vị trí bắt đầu của câu, và token “&lt;eos&gt;” để biểu thị vị trí kết thúc của câu.
 
 
 ```{.python .input  n=9}
@@ -157,7 +181,8 @@ def count_corpus(sentences):
 We construct a vocabulary with the time machine dataset as the corpus, and then print the map between a few tokens and their indices.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xây dựng một bộ từ vựng với tập dữ liệu cỗ máy thời gian nói trên thành một kho ngữ liệu và hãy in phép chiếu giữa một vài token và các chỉ số của chúng.
+
 
 ```{.python .input  n=23}
 vocab = Vocab(tokens)
@@ -169,7 +194,9 @@ After that, we can convert each sentence into a list of numerical indices.
 To illustrate in detail, we print two sentences with their corresponding indices.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, chúng ta có thể chuyển đổi từng câu vào một danh sách các chỉ số.
+Để minh họa một cách chi tiết, chúng ta hãy in hai câu với các chỉ số tương ứng của chúng.
+
 
 ```{.python .input  n=25}
 for i in range(8, 10):
@@ -185,7 +212,8 @@ for i in range(8, 10):
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại
+
 
 <!--
 Using the above functions, we package everything into the `load_corpus_time_machine` function, 
@@ -194,7 +222,10 @@ The modification we did here is that `corpus` is a single list, not a list of to
 Besides, we use character tokens to simplify the training in later sections.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đóng gói tất cả các hàm trên thành hàm `load_corpus_time_machine`, mà trả về `corpus`, một danh sách các chỉ số của token, và bộ từ vựng `vocab` của kho ngữ liệu cỗ máy thời gian.
+Chúng ta đã sửa đổi một vài thứ ở đây là: `corpus` là một danh sách đơn nhất, không phải một danh sách các danh sách token, vì chúng ta không lưu các thông tin chuỗi trong các mô hình bên dưới.
+Bên cạnh đó, chúng ta sẽ sử dụng các token ký tự để đơn giản hóa việc huấn luyện mô hình trong các phần sau.
+
 
 
 ```{.python .input}
@@ -222,7 +253,8 @@ len(corpus), len(vocab)
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá và sau đó ánh xạ chúng thành các chỉ số tương ứng.
+
 
 
 <!--
@@ -237,7 +269,10 @@ It varies for different languages.
 Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
-*dịch đoạn phía trên*
+Token hoá là một bước tiền xử lý quan trọng.
+Mỗi ngôn ngữ có đều có các cách làm khác nhau.
+Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câu.
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE KẾT THÚC =================================== -->
@@ -261,10 +296,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Quang
