@@ -327,7 +327,7 @@ Note that we have quite some freedom since we could pick an arbitrary offset.
 ![Different offsets lead to different subsequences when splitting up text.](../img/timemachine-5gram.svg)
 -->
 
-![Các độ dời khác nhau dẫn đến các chuỗi nhỏ khác nhau khi phân tách văn bản.](../img/timemachine-5gram.svg)
+![Các độ dời khác nhau dẫn đến các chuỗi con khác nhau khi phân tách văn bản.](../img/timemachine-5gram.svg)
 :label:`fig_timemachine_5gram`
 
 <!--
@@ -342,14 +342,13 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-Trong thực tế, giá trị offset nào nói trên đều tốt cả.
 Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
 Nhưng nếu chúng ta chọn tất cả các giá trị offset, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
 Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
 Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
 Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
-Ngay cả phép hoán vị ngẫu nhiên một tập của tất cả các giá trị offset cũng không bảo đảm hoàn toàn.
-Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao hàm* và tính *ngẫu nhiên*, đó là: sử dụng một giá trị offset ngẫu nhiên, sau đó sử dụng các *term* một cách tuần tự.
+Ngay cả khi hoán vị ngẫu nhiên một tập tất cả các giá trị độ dời cũng không bảo đảm hoàn toàn.
+Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
 Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
 
 
@@ -374,9 +373,9 @@ The target is to predict the next character based on what we have seen so far, h
 
 Đoạn mã sau sinh ngẫu nhiên từng minibatch dữ liệu một.
 Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
-Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý nằm lấy ra từ chuỗi gốc.
+Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý được lấy ra từ chuỗi gốc.
 Các vị trí của hai minibatch ngẫu nhiên liền kề trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
-Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển bởi một ký tự.
+Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển đi một ký tự.
 
 
 
@@ -413,7 +412,7 @@ With a minibatch size of 2, we only get 2 minibatches.
 
 Hãy cùng sinh một chuỗi từ 0 tới 30.
 Chúng ta giả định rằng kích thước batch là 2 và số lượng bước thời gian là 6.
-Điều này có nghĩa là tùy thuộc vào giá trị offset, chúng ta có thể sinh từ 4 tới 5 cặp $(x, y)$.
+Điều này có nghĩa là tùy thuộc vào độ dời, chúng ta có thể sinh từ 4 tới 5 cặp $(x, y)$.
 Với kích thước minibatch bằng 2, chúng ta chỉ thu được 2 minibatch.
 
 
