@@ -22,6 +22,7 @@ import tarfile
 import time
 import zipfile
 
+TIMEOUT = 500
 
 # Defined in file: ./chapter_preliminaries/calculus.md
 def use_svg_display():
@@ -138,7 +139,7 @@ def sgd(params, lr, batch_size):
 def load_array(data_arrays, batch_size, is_train=True):
     """Construct a Gluon data loader"""
     dataset = gluon.data.ArrayDataset(*data_arrays)
-    return gluon.data.DataLoader(dataset, batch_size, shuffle=is_train)
+    return gluon.data.DataLoader(dataset, batch_size, shuffle=is_train, timeout=TIMEOUT)
 
 
 # Defined in file: ./chapter_linear-networks/fashion-mnist.md
@@ -182,9 +183,9 @@ def load_data_fashion_mnist(batch_size, resize=None):
     mnist_train = dataset.FashionMNIST(train=True).transform_first(trans)
     mnist_test = dataset.FashionMNIST(train=False).transform_first(trans)
     return (gluon.data.DataLoader(mnist_train, batch_size, shuffle=True,
-                                  num_workers=get_dataloader_workers()),
+                                  num_workers=get_dataloader_workers(), timeout=TIMEOUT),
             gluon.data.DataLoader(mnist_test, batch_size, shuffle=False,
-                                  num_workers=get_dataloader_workers()))
+                                  num_workers=get_dataloader_workers(), timeout=TIMEOUT))
 
 
 # Defined in file: ./chapter_linear-networks/softmax-regression-scratch.md
@@ -1291,10 +1292,10 @@ def load_data_voc(batch_size, crop_size):
     num_workers = d2l.get_dataloader_workers()
     train_iter = gluon.data.DataLoader(
         VOCSegDataset(True, crop_size, voc_dir), batch_size,
-        shuffle=True, last_batch='discard', num_workers=num_workers)
+        shuffle=True, last_batch='discard', num_workers=num_workers, timeout=TIMEOUT)
     test_iter = gluon.data.DataLoader(
         VOCSegDataset(False, crop_size, voc_dir), batch_size,
-        last_batch='discard', num_workers=num_workers)
+        last_batch='discard', num_workers=num_workers, timeout=TIMEOUT)
     return train_iter, test_iter
 
 
@@ -1402,7 +1403,7 @@ def load_data_ptb(batch_size, max_window_size, num_noise_words):
     dataset = gluon.data.ArrayDataset(
         all_centers, all_contexts, all_negatives)
     data_iter = gluon.data.DataLoader(dataset, batch_size, shuffle=True,
-                                      batchify_fn=batchify)
+                                      batchify_fn=batchify, timeout=TIMEOUT)
     return data_iter, vocab
 
 
@@ -1523,9 +1524,9 @@ def split_and_load_ml100k(split_mode="seq-aware", feedback="explicit",
         np.array(test_u), np.array(test_i), np.array(test_r))
     train_iter = gluon.data.DataLoader(
         train_set, shuffle=True, last_batch="rollover",
-        batch_size=batch_size)
+        batch_size=batch_size, timeout=TIMEOUT)
     test_iter = gluon.data.DataLoader(
-        test_set, batch_size=batch_size)
+        test_set, batch_size=batch_size, timeout=TIMEOUT)
     return num_users, num_items, train_iter, test_iter
 
 
@@ -1627,7 +1628,7 @@ def evaluate_ranking(net, test_input, seq, candidates, num_users, num_items,
             x.append(seq[user_ids,:])
         x.extend([np.array(item_ids)])
         test_data_iter = gluon.data.DataLoader(gluon.data.ArrayDataset(*x), 
-            shuffle=False, last_batch="keep", batch_size=1024)
+            shuffle=False, last_batch="keep", batch_size=1024, timeout=TIMEOUT)
         for index, values in enumerate(test_data_iter):
             x = [gluon.utils.split_and_load(v, ctx, even_split=False)
                           for v in values]
