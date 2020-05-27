@@ -173,7 +173,7 @@ For timestep $t$, the output of the output layer is similar to the computation i
 
 Có nhiều phương pháp khác nhau để xây dựng RNN.
 Trong đó, RNN với trạng thái ẩn được định nghĩa bởi phương trình bên trên là rất phổ biến.
-Đối với bước thời gian $t$, đầu ra của tầng đầu ra được tính toán tương tự như trong perceptron đa tầng:
+Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng:
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
