@@ -21,6 +21,9 @@ RUN apt-get install -y pandoc libgomp1
 
 # clone and build d2l-book, changing D2L_VER will break the cache here
 ARG D2L_VER=unknown
+# Chỗ này mình để install d2l-book và d2l-en ở forked repos của mình,
+# vì nếu để như cũ hình như GitHub action clone code từ branch master của avivn đang cần sửa. 
+# Sau nếu ổn mọi người chỉnh lại nhé.
 RUN pip3 install git+https://github.com/cuongvng/d2l-book
 RUN pip3 install --no-cache-dir mxnet==1.6.0b20191122 git+https://github.com/cuongvng/d2l-en
 
