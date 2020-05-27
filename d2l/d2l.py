@@ -181,9 +181,9 @@ def load_data_fashion_mnist(batch_size, resize=None):
     mnist_train = dataset.FashionMNIST(train=True).transform_first(trans)
     mnist_test = dataset.FashionMNIST(train=False).transform_first(trans)
     return (gluon.data.DataLoader(mnist_train, batch_size, shuffle=True,
-                                  num_workers=get_dataloader_workers(), timeout=None),
+                                  num_workers=get_dataloader_workers(),prefetch=2),
             gluon.data.DataLoader(mnist_test, batch_size, shuffle=False,
-                                  num_workers=get_dataloader_workers(),timeout=None))
+                                  num_workers=get_dataloader_workers(),prefetch=2))
 
 
 # Defined in file: ./chapter_linear-networks/softmax-regression-scratch.md
