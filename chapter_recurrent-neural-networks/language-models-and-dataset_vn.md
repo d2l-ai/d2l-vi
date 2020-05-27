@@ -141,7 +141,7 @@ Last, long word sequences are almost certain to be novel, hence a model that sim
 
 Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ chúng ta sử dụng ước tính của một chuỗi ngắn hơn làm phần bổ sung cho chuỗi dài hơn.
 Thêm nữa, $m$ là tổng số từ trong tập văn bản.
-Công thức trên là một biến thể khá nguyên thủy của những gì kỹ thuật Kneser-Ney smoothing và Bayesian nonparametrics có thể làm được.
+Công thức trên là một biến thể khá nguyên thủy của kỹ thuật làm mượt Kneser-Ney và Bayesian phi tham số.
 Xem tài liệu :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết về cách thực hiện việc này.
 Thật không may, các mô hình như thế này sẽ rất nhanh chóng trở nên bất kham vì những lý do sau.
 Đầu tiên, chúng ta cần lưu trữ tất cả các số đếm. 
