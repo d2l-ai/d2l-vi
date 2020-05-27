@@ -205,7 +205,7 @@ Tại bước thời gian $t$, tính toán của trạng thái ẩn có thể đ
 Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$.
 Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, có hệ số điều chỉnh là $\mathbf{b}_h$.
 Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
-Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ của bước thời gian hiện tại $\mathbf{O}_t$.
+Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$.
 
 <!--
 ![An RNN with a hidden state. ](../img/rnn.svg)
