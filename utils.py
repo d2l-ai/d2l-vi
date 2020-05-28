@@ -12,7 +12,7 @@ HEADER_INDICATOR = ' *dịch tiêu đề phía trên*\n'
 IMAGE_CAPTION_INDICATOR = '*dịch chú thích ảnh phía trên*'
 START_FILE = '<!-- ===================== Bắt đầu dịch Phần  ==================== -->\n<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->\n'
 END_FILE = '<!-- ===================== Kết thúc dịch Phần  ==================== -->\n<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->\n'
-SUFIX_PATH = 'contributors_template_vn.md'
+SUFIX_PATH = 'docs/contributors_template_vn.md'
 
 # Our special mark in markdown, e.g. :label:`chapter_intro`
 MARK_RE_MD = re.compile(':([-\/\\._\w\d]+):`([\*-\/\\\._\w\d]+)`')
