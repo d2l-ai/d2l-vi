@@ -46,7 +46,7 @@ or that "I want to eat grandma" is a rather disturbing statement, whereas "I wan
 -->
 
 Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn rất hạn chế.
-Chẳng hạn, cụm từ  “to recognize speech” và “to wreck a nice beach” khi nghe phát âm thì có vẻ rất giống nhau.
+Chẳng hạn, cụm từ  “nhận dạng giọng nói” và “nhân gian giông tố” khi nghe phát âm thì có vẻ rất giống nhau.
 Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà sẽ loại bỏ ngay phương án thứ hai vì cụm từ này mang ý nghĩa quá kì lạ.
 Tương tự như vậy, một thuật toán tóm tắt tài liệu nên biết được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với câu “người cắn chó”, hoặc là câu “Cháu muốn ăn bà ngoại" nghe khá là kinh dị trong khi câu “Cháu muốn ăn, bà ngoại" thì lại mang ý nghĩa vô hại hơn nhiều.
 
