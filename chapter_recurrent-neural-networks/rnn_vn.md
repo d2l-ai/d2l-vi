@@ -144,7 +144,7 @@ Chỉ cần nói thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ m�
 ## Recurrent Networks with Hidden States
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng Truy hồi có Trạng thái ẩn
 
 <!--
 Matters are entirely different when we have hidden states.
@@ -158,7 +158,13 @@ to describe how to use the hidden variable of the previous timestep in the curre
 Specifically, the calculation of the hidden variable of the current timestep is determined by the input of the current timestep together with the hidden variable of the previous timestep:
 -->
 
-*dịch đoạn phía trên*
+Vấn đề sẽ hoàn toàn khác đi nếu ta sử dụng các trạng thái ẩn.
+Hãy xem xét cấu trúc này một cách chi tiết hơn.
+Nhớ rằng ta thường gọi vòng lặp $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng thời điểm $t$ trong mạng nơ-ron truy hồi lại đề cập đến các bước trong một vòng lặp.
+Giả sử ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
+Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi.
+Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
+Cụ thể, biến ẩn của bước thời gian hiện tại được tính toán bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó:
 
 
 $$\mathbf{H}_t = \phi(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1} \mathbf{W}_{hh}  + \mathbf{b}_h).$$
@@ -173,7 +179,10 @@ Since the hidden state uses the same definition of the previous timestep in the 
 the computation of the equation above is recurrent, hence the name recurrent neural network (RNN).
 -->
 
-*dịch đoạn phía trên*
+So với :eqref:`rnn_h_without_state`, ở đây ta đã thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$.
+Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron.
+Do đó, một biến ẩn như vậy được gọi là một *trạng thái ẩn* (_hidden state_).
+Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại nên tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
 
 <!--
 There are many different RNN construction methods.
@@ -181,7 +190,9 @@ RNNs with a hidden state defined by the equation above are very common.
 For timestep $t$, the output of the output layer is similar to the computation in the multilayer perceptron:
 -->
 
-*dịch đoạn phía trên*
+Có nhiều phương pháp khác nhau để xây dựng RNN.
+Trong đó, RNN với trạng thái ẩn được định nghĩa bởi phương trình bên trên là rất phổ biến.
+Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng:
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -194,7 +205,9 @@ It is worth mentioning that RNNs always use these model parameters, even for dif
 Therefore, the number of RNN model parameters does not grow as the number of timesteps increases.
 -->
 
-*dịch đoạn phía trên*
+Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
+Điều đáng nói là ngay cả đối với các bước thời gian khác nhau thì RNN vẫn luôn sử dụng cùng các tham số mô hình.
+Do đó, số lượng tham số mô hình RNN sẽ không tăng ngay cả khi số lượng bước thời gian tăng lên.
 
 <!--
 :numref:`fig_rnn` shows the computational logic of an RNN at three adjacent timesteps.
@@ -206,13 +219,18 @@ The hidden state of the current timestep $t$, $\mathbf{H}_t$, will participate i
 What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully connected output layer of the current timestep.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề.
+Tại bước thời gian $t$, tính toán của trạng thái ẩn có thể được coi là một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$ sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó.
+Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$.
+Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, có hệ số điều chỉnh là $\mathbf{b}_h$.
+Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
+Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$.
 
 <!--
 ![An RNN with a hidden state. ](../img/rnn.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/rnn.svg)
+![Một RNN với một trạng thái ẩn.](../img/rnn.svg)
 
 :label:`fig_rnn`
 
@@ -411,7 +429,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 *
