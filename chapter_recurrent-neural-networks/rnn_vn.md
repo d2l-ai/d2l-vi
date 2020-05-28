@@ -242,7 +242,7 @@ Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra k�
 ## Steps in a Language Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Từng bước trong một Mô hình Ngôn ngữ
 
 <!--
 Now we illustrate how RNNs can be used to build a language model.
@@ -257,13 +257,22 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
+Để đơn giản, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
+Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu, "the time machine by H. G. Wells".
+:numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó.
+Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian,
+và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
+Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3,
+$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này.
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/rnn-train.svg)
+![Mô hình ngôn ngữ ở mức từ ngữ RNN. Đầu vào và chuỗi nhãn lần lượt là `the time machine by H.` và `time machine by H. G.`](../img/rnn-train.svg)
 :label:`fig_rnn_train`
 
 <!--
@@ -271,7 +280,8 @@ In practice, each word is presented by a $d$ dimensional vector, and we use a ba
 Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix, which is identical to what we discussed before.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và chúng ta sử dụng kích thước batch $n>1$.
+Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -281,7 +291,7 @@ Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix,
 ## Perplexity
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ Rối rắm
 
 <!--
 Last, let us discuss about how to measure the sequence model quality.
@@ -290,7 +300,10 @@ A good language model is able to predict with high accuracy tokens that what we 
 Consider the following continuations of the phrase "It is raining", as proposed by different language models:
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi.
+Một cách làm là ta kiểm tra độ ngạc nhiên của văn bản.
+Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây.
+Hãy xem xét các phần tiếp theo của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
 <!--
 1. "It is raining outside"
@@ -298,7 +311,9 @@ Consider the following continuations of the phrase "It is raining", as proposed 
 3. "It is raining piouw;kcj pwepoiut"
 -->
 
-*dịch đoạn phía trên*
+1. "Trời đang mưa bên ngoài"
+2. "Trời đang mưa cây chuối"
+3. "Trời đang mưa piouw;kcj pwepoiut"
 
 <!--
 In terms of quality, example 1 is clearly the best.
@@ -310,7 +325,13 @@ Nonetheless, at least the model has learned how to spell words and some degree o
 Last, example 3 indicates a poorly trained model that does not fit data properly.
 -->
 
-*dịch đoạn phía trên*
+Về chất lượng, ví dụ 1 rõ ràng là tốt nhất.
+Các từ là hợp lý và mạch lạc về mặt logic.
+Mặc dù nó có thể không phản ánh từ nào nên theo sau một cách chính xác về mặt ngữ nghĩa  ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn),
+mô hình vẫn có thể nắm bắt loại từ nào nên theo sau.
+Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
+Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được một số mức độ tương quan giữa các từ.
+Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -433,7 +454,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 5 -->
 *
