@@ -27,7 +27,7 @@ ARG D2L_VER=unknown
 RUN pip3 install git+https://github.com/cuongvng/d2l-book
 RUN pip3 install --no-cache-dir mxnet==1.6.0b20191122 git+https://github.com/cuongvng/d2l-en
 
-CMD ["d2lbook", "build", "all"]
+CMD ["d2lbook", "build", "�html"]
 
   # && apt-get install -y wget \
   # && apt-get install -y unzip \
