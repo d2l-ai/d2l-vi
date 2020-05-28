@@ -224,7 +224,7 @@ Bây giờ chúng ta minh họa cách RNN có thể được sử dụng để x
 Để đơn giản, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
 Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu, "the time machine by H. G. Wells".
 :numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó.
-Trong quá trình huấn luyện, chúng ta áp dụng softmax vào đầu ra tại mỗi bước thời gian,
+Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian,
 và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
 Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3,
 $\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
@@ -254,7 +254,7 @@ Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma tr�
 ## Perplexity
 -->
 
-## Độ Bối rối
+## Độ Rối rắm
 
 <!--
 Last, let us discuss about how to measure the sequence model quality.
@@ -290,8 +290,8 @@ Last, example 3 indicates a poorly trained model that does not fit data properly
 
 Về chất lượng, ví dụ 1 rõ ràng là tốt nhất.
 Các từ là hợp lý và mạch lạc về mặt logic.
-Mặc dù nó có thể không hoàn toàn phản ánh chính xác từ nào theo ngữ nghĩa ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hoàn toàn hợp lý),
-mô hình có thể nắm bắt loại từ nào theo sau.
+Mặc dù nó có thể không phản ánh từ nào nên theo sau một cách chính xác về mặt ngữ nghĩa  ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn),
+mô hình vẫn có thể nắm bắt loại từ nào nên theo sau.
 Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
 Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được một số mức độ tương quan giữa các từ.
 Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
