@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
 
 <!--
 # Sequence to Sequence with Attention Mechanisms
@@ -9,13 +9,9 @@
 :label:`sec_seq2seq_attention`
 
 <!--
-In this section, we add the attention mechanism to the sequence to sequence (seq2seq)
-model as introduced in :numref:`sec_seq2seq`
-to explicitly aggregate states with weights.
-:numref:`fig_s2s_attention` shows the model
-architecture for encoding and decoding at the timestep $t$. Here, the memory of the
-attention layer consists of all the information that the encoder has
-seen---the encoder output at each timestep.
+In this section, we add the attention mechanism to the sequence to sequence (seq2seq) model as introduced in :numref:`sec_seq2seq` to explicitly aggregate states with weights.
+:numref:`fig_s2s_attention` shows the model architecture for encoding and decoding at the timestep $t$.
+Here, the memory of the attention layer consists of all the information that the encoder has seen---the encoder output at each timestep.
 During the decoding, the decoder output from the previous timestep $t-1$ is used as the query.
 The output of the attention model is viewed as the context information, and such context is concatenated with the decoder input $D_t$.
 Finally, we feed the concatenation into the decoder.
@@ -51,6 +47,10 @@ from mxnet.gluon import rnn, nn
 npx.set_np()
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
 ## Decoder
 -->
@@ -58,7 +58,9 @@ npx.set_np()
 ## *dịch tiêu đề phía trên*
 
 <!--
-Since the encoder of seq2seq with attention mechanisms is the same as `Seq2SeqEncoder` in :numref:`sec_seq2seq`, we will just focus on the decoder. We add an MLP attention layer (`MLPAttention`) which has the same hidden size as the LSTM layer in the decoder. Then we initialize the state of the decoder by passing three items from the encoder:
+Since the encoder of seq2seq with attention mechanisms is the same as `Seq2SeqEncoder` in :numref:`sec_seq2seq`, we will just focus on the decoder.
+We add an MLP attention layer (`MLPAttention`) which has the same hidden size as the LSTM layer in the decoder.
+Then we initialize the state of the decoder by passing three items from the encoder:
 -->
 
 *dịch đoạn phía trên*
@@ -82,7 +84,10 @@ Since the encoder of seq2seq with attention mechanisms is the same as `Seq2SeqEn
 *dịch đoạn phía trên*
 
 <!--
-At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer. The attention model's output is then concatenated with the input embedding vector to feed into the RNN layer. Although the RNN layer hidden state also contains history information from decoder, the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
+At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer.
+The attention model's output is then concatenated with the input embedding vector to feed into the RNN layer.
+Although the RNN layer hidden state also contains history information from decoder, 
+the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
 *dịch đoạn phía trên*
@@ -92,6 +97,7 @@ Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the 
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=2}
 class Seq2SeqAttentionDecoder(d2l.Decoder):
@@ -129,10 +135,13 @@ class Seq2SeqAttentionDecoder(d2l.Decoder):
 ```
 
 <!--
-Now we can test the seq2seq with attention model. To be consistent with the model without attention in :numref:`sec_seq2seq`, we use the same hyper-parameters for `vocab_size`, `embed_size`, `num_hiddens`, and `num_layers`. As a result, we get the same decoder output shape, but the state structure is changed.
+Now we can test the seq2seq with attention model.
+To be consistent with the model without attention in :numref:`sec_seq2seq`, we use the same hyper-parameters for `vocab_size`, `embed_size`, `num_hiddens`, and `num_layers`.
+As a result, we get the same decoder output shape, but the state structure is changed.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=3}
 encoder = d2l.Seq2SeqEncoder(vocab_size=10, embed_size=8,
@@ -147,6 +156,10 @@ out, state = decoder(X, state)
 out.shape, len(state), state[0].shape, len(state[1]), state[1][0].shape
 ```
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ## Training
 -->
@@ -154,18 +167,13 @@ out.shape, len(state), state[0].shape, len(state[1]), state[1][0].shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-Similar to :numref:`sec_seq2seq_training`, we try a toy model by applying
-the same training hyperparameters and the same training loss.
-As we can see from the result, since the
-sequences in the training dataset are relative short,
-the additional attention
-layer does not lead to a significant improvement.
-Due to the computational
-overhead of both the encoder's and the decoder's attention layers, this model
-is much slower than the seq2seq model without attention.
+Similar to :numref:`sec_seq2seq_training`, we try a toy model by applying the same training hyperparameters and the same training loss.
+As we can see from the result, since the sequences in the training dataset are relative short, the additional attention layer does not lead to a significant improvement.
+Due to the computational overhead of both the encoder's and the decoder's attention layers, this model is much slower than the seq2seq model without attention.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=5}
 embed_size, num_hiddens, num_layers, dropout = 32, 32, 2, 0.0
@@ -187,6 +195,7 @@ Last, we predict several sample examples.
 
 *dịch đoạn phía trên*
 
+
 ```{.python .input  n=6}
 for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
     print(sentence + ' => ' + d2l.predict_s2s_ch9(
@@ -197,7 +206,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * The seq2seq model with attention adds an additional attention layer to the model without attention.
@@ -210,30 +219,22 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Compare `Seq2SeqAttentionDecoder` and `Seq2seqDecoder` by using the same parameters and checking their losses.
-1. Can you think of any use cases where `Seq2SeqAttentionDecoder` will outperform `Seq2seqDecoder`?
+2. Can you think of any use cases where `Seq2SeqAttentionDecoder` will outperform `Seq2seqDecoder`?
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+<!-- ========================================= REVISE - KẾT THÚC =================================== -->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/seq2seq-attention/4345)
--->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_seq2seq-attention.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_seq2seq-attention.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/4345)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -248,6 +249,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
@@ -255,13 +257,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *
