@@ -448,8 +448,8 @@ Now we can train a model.
 Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
 -->
 
-Bây giờ ta có thể huấn luyện mô hình.
-Vì ta chỉ có thể sử dụng $10,000$ token trong tập dữ liệu nên mô hình sẽ cần nhiều epoch hơn để hội tụ.
+Bây giờ thì ta có thể huấn luyện mô hình.
+Do chỉ có thể sử dụng $10,000$ token trong tập dữ liệu nên mô hình này sẽ cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
@@ -472,7 +472,7 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
 While implementing the above RNN model from scratch is instructive, it is not convenient. In the next section we will see how to improve significantly on the current model and how to make it faster and easier to implement.
 -->
 
-Mặc dù việc lập trình mô hình RNN từ đầu có tính chỉ dẫn, nhưng nó không thực sự thuận tiện. Trong phần tiếp theo, ta sẽ xem cách cải thiện đáng kể mô hình hiện tại và cách làm cho nó nhanh hơn và dễ triển khai hơn.
+Mặc dù việc lập trình mô hình RNN từ đầu có tính hướng dẫn, nhưng nó không thực sự tiện lợi. Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể để làm cho nó nhanh hơn và dễ triển khai hơn.
 
 
 <!--
@@ -493,9 +493,9 @@ Mặc dù việc lập trình mô hình RNN từ đầu có tính chỉ dẫn, n
 * Mô hình chuỗi cần khởi tạo trạng thái cho quá trình huấn luyện.
 * Giữa các mô hình chuỗi, ta cần đảm bảo tách các gradient, để chắc chắn rằng phép vi phân tự động không lan truyền các hiệu ứng ra ngoài mẫu hiện tại.
 * Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
-* Cắt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
-* Perplexity điều chỉnh hiệu năng của mô hình trên các độ dài chuỗi khác nhau. Nó là trung bình lũy thừa của mất mát cross-entropy.
-* Chia dữ liệu tuần tự thường tạo ra các mô hình tốt hơn.
+* Gọt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
+* Độ rối rắm đánh giá hiệu năng của mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
+* Phân chia dữ liệu tuần tự thường dẫn đến các mô hình tốt hơn.
 
 <!--
 ## Exercises
@@ -518,16 +518,16 @@ Mặc dù việc lập trình mô hình RNN từ đầu có tính chỉ dẫn, n
 -->
 
 1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
-2. Điều chỉnh các siêu tham số để cải thiện *perplexity*.
-    * Bạn có thể giảm nó xuống bao nhiêu? Điều chỉnh embedding, nút ẩn, tốc độ học, vv
+2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
+    * Bạn có thể giảm nó xuống bao nhiêu? Thay đổi embedding, số nút ẩn, tốc độ học, vv
     * Mô hình này sẽ hoạt động như thế nào trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
-3. Thay đổi hàm dự đoán như sử dụng lấy mẫu thay vì chọn ký tự tiếp theo có khả năng cao nhất.
+3. Thay đổi hàm dự đoán sử dụng phép lấy mẫu thay vì chọn ký tự tiếp theo có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
     * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ for $\alpha > 1$.
 4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không xén gradient?
-5. Thay đổi phép lấy mẫu liền kề để nó không tách các trạng thái ẩn khỏi biểu đồ tính toán. Thời gian chạy và độ chính xác có thay đổi không?
+5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi biểu đồ tính toán. Thời gian chạy và độ chính xác có thay đổi không?
 6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
-7. Chứng minh rằng *perplexity* là nghịch đảo của trung bình điều hòa (*harmonic mean*) của xác suất từ có điều kiện.
+7. Chứng minh rằng độ rối rắm là nghịch đảo của trung bình điều hòa của xác suất từ có điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
