@@ -184,14 +184,15 @@ In the following, we will learn how to design better models.
 ## Natural Language Statistics
 -->
 
-## *dịch tiêu đề phía trên*
+## Thống kê ngôn ngữ tự nhiên
 
 <!--
 Let us see how this works on real data.
 We construct a vocabulary based on the time machine data similar to :numref:`sec_text_preprocessing` and print the top $10$ most frequent words.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng nhau xem mô hình hoạt động như thế nào trên dữ liệu thực tế.
+Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu có tên là 'máy thời gian' tương tự như ở phần :numref:`sec_text_preprocessing` và trả ra kết quả $10$ từ có tần suất xuất hiện cao nhất.
 
 ```{.python .input  n=1}
 import d2l
@@ -213,7 +214,12 @@ The $10^{\mathrm{th}}$ most frequent word is less than $1/5$ as common as the mo
 To get a better idea we plot the graph of the word frequency.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta có thể thấy, những từ phổ biến nhất không có gì đáng để xem xét kĩ.
+Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
+Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
+Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
+Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
+Để nắm bắt được ý tưởng này rõ hơn, chúng ta vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
@@ -227,12 +233,12 @@ After dealing with the first four words as exceptions ('the', 'i', 'and', 'of'),
 This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) which states that the item frequency is given by
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta đang tiến tới gần một phát hiện nền tảng ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
+Sau khi xử lý bốn từ đầu tiên ('the', 'i', 'and', 'of') như là các ngoại lệ, tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
+Điều này có nghĩa là từ ngữ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà có phát biểu rằng tần suất xuất hiện sẽ được xác định bởi
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
-
 
 <!--
 This should already give us pause if we want to model words by count statistics and smoothing.
@@ -240,9 +246,10 @@ After all, we will significantly overestimate the frequency of the tail, also kn
 But what about the other word combinations (such as bigrams, trigrams, and beyond)?
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
-
-*dịch đoạn phía trên*
-
+Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
+Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
+Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
+Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
@@ -612,7 +619,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
