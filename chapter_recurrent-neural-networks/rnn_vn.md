@@ -405,7 +405,10 @@ Let us look at a number of cases:
 * We can create language models using a character-level RNN.
 -->
 
-*dịch đoạn phía trên*
+* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN).
+* Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại.
+* Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng.
+* Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự.
 
 <!--
 ## Exercises
@@ -420,7 +423,10 @@ Let us look at a number of cases:
 4. What are some of the problems associated with the simple sequence model described above?
 -->
 
-*dịch đoạn phía trên*
+1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều?
+2. Thử thiết kế một ánh xạ trong đó các trạng thái ẩn của RNN là chính xác (không chỉ là xấp xỉ). Gợi ý: nếu có một số lượng từ hữu hạn thì sao?
+3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài?
+4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -460,4 +466,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
