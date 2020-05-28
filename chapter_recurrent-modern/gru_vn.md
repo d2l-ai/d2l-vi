@@ -42,6 +42,9 @@ Due to its simplicity, let us start with the GRU.
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Gating the Hidden State
@@ -118,6 +121,10 @@ We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform inpu
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ### Reset Gates in Action
 -->
@@ -164,6 +171,9 @@ The symbol $\odot$ indicates pointwise multiplication between tensors.
 ![*dịch chú thích ảnh phía trên*](../img/gru_2.svg)
 :label:`fig_gru_2`
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Update Gates in Action
@@ -219,6 +229,14 @@ To gain a better understanding of the model, let us implement a GRU from scratch
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Reading the Dataset
@@ -349,6 +367,10 @@ model = d2l.RNNModelScratch(len(vocab), num_hiddens, ctx, get_params,
 d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
+
 <!--
 ## Concise Implementation
 -->
@@ -401,6 +423,8 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2367)

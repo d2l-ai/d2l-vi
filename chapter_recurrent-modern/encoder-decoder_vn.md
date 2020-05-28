@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
 
 <!--
 # Encoder-Decoder Architecture
@@ -8,7 +8,12 @@
 # *dịch tiêu đề phía trên*
 
 <!--
-The *encoder-decoder architecture* is a neural network design pattern. As shown in :numref:`fig_encoder_decoder`, the architecture is partitioned into two parts, the encoder and the decoder. The encoder's role is to encode the inputs into state, which often contains several tensors. Then the state is passed into the decoder to generate the outputs. In machine translation, the encoder transforms a source sentence, e.g., "Hello world.", into state, e.g., a vector, that captures its semantic information. The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
+The *encoder-decoder architecture* is a neural network design pattern.
+As shown in :numref:`fig_encoder_decoder`, the architecture is partitioned into two parts, the encoder and the decoder.
+The encoder's role is to encode the inputs into state, which often contains several tensors.
+Then the state is passed into the decoder to generate the outputs.
+In machine translation, the encoder transforms a source sentence, e.g., "Hello world.", into state, e.g., a vector, that captures its semantic information.
+The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
 *dịch đoạn phía trên*
@@ -59,10 +64,14 @@ class Encoder(nn.Block):
 ## *dịch tiêu đề phía trên*
 
 <!--
-The decoder has an additional method `init_state` to parse the outputs of the encoder with possible additional information, e.g., the valid lengths of inputs, to return the state it needs. In the forward method, the decoder takes both inputs, e.g., a target sentence and the state. It returns outputs, with potentially modified state if the encoder contains RNN layers.
+The decoder has an additional method `init_state` to parse the outputs of the encoder with possible additional information,
+e.g., the valid lengths of inputs, to return the state it needs.
+In the forward method, the decoder takes both inputs, e.g., a target sentence and the state.
+It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
@@ -78,6 +87,10 @@ class Decoder(nn.Block):
         raise NotImplementedError
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
 ## Model
 -->
@@ -85,10 +98,14 @@ class Decoder(nn.Block):
 ## *dịch tiêu đề phía trên*
 
 <!--
-The encoder-decoder model contains both an encoder and a decoder. We implement its forward method for training. It takes both encoder inputs and decoder inputs, with optional additional arguments. During computation, it first computes encoder outputs to initialize the decoder state, and then returns the decoder outputs.
+The encoder-decoder model contains both an encoder and a decoder.
+We implement its forward method for training.
+It takes both encoder inputs and decoder inputs, with optional additional arguments.
+During computation, it first computes encoder outputs to initialize the decoder state, and then returns the decoder outputs.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=4}
 # Saved in the d2l package for later use
@@ -128,27 +145,18 @@ class EncoderDecoder(nn.Block):
 
 <!--
 1. Besides machine translation, can you think of another application scenarios where an encoder-decoder architecture can fit?
-1. Can you design a deep encoder-decoder architecture?
+2. Can you design a deep encoder-decoder architecture?
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+<!-- ========================================= REVISE - KẾT THÚC ===================================-->
 
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2393)
--->
-
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_encoder-decoder.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_encoder-decoder.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2393)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -163,20 +171,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
 <!-- Phần 2 -->
-*
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *

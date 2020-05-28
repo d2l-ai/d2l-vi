@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 #  Sequence to Sequence
@@ -9,7 +9,9 @@
 :label:`sec_seq2seq`
 
 <!--
-The sequence to sequence (seq2seq) model is based on the encoder-decoder architecture to generate a sequence output for a sequence input, as demonstrated in :numref:`fig_seq2seq`. Both the encoder and the decoder use recurrent neural networks (RNNs) to handle sequence inputs of variable length. The hidden state of the encoder is used directly to initialize the decoder hidden state to pass information from the encoder to the decoder.
+The sequence to sequence (seq2seq) model is based on the encoder-decoder architecture to generate a sequence output for a sequence input, as demonstrated in :numref:`fig_seq2seq`.
+Both the encoder and the decoder use recurrent neural networks (RNNs) to handle sequence inputs of variable length.
+The hidden state of the encoder is used directly to initialize the decoder hidden state to pass information from the encoder to the decoder.
 -->
 
 *dịch đoạn phía trên*
@@ -54,8 +56,11 @@ npx.set_np()
 ## *dịch tiêu đề phía trên*
 
 <!--
-Recall that the encoder of seq2seq can transform the inputs of variable length to a fixed-length context vector $\mathbf{c}$ by encoding the sequence information into $\mathbf{c}$. We usually use RNN layers within the encoder.
-Suppose that we have an input sequence $x_1, \ldots, x_T$, where $x_t$ is the $t^\mathrm{th}$ word. At timestep $t$, the RNN will have two vectors as the input: the feature vector $\mathbf{x}_t$ of $x_t$ and the hidden state of the last timestep $\mathbf{h}_{t-1}$. Let us denote the transformation of the RNN's hidden states by a function $f$:
+Recall that the encoder of seq2seq can transform the inputs of variable length to a fixed-length context vector $\mathbf{c}$ by encoding the sequence information into $\mathbf{c}$.
+We usually use RNN layers within the encoder.
+Suppose that we have an input sequence $x_1, \ldots, x_T$, where $x_t$ is the $t^\mathrm{th}$ word.
+At timestep $t$, the RNN will have two vectors as the input: the feature vector $\mathbf{x}_t$ of $x_t$ and the hidden state of the last timestep $\mathbf{h}_{t-1}$.
+Let us denote the transformation of the RNN's hidden states by a function $f$:
 -->
 
 *dịch đoạn phía trên*
@@ -77,20 +82,26 @@ For example, if we choose $q$ as $q (\mathbf{h}_1, \ldots, \mathbf{h}_T) = \math
 *dịch đoạn phía trên*
 
 <!--
-So far what we describe above is a unidirectional RNN, where each timestep's hidden state depends only on the previous timesteps'. We can also use other forms of RNNs such as GRUs, LSTMs, and bidirectional RNNs to encode the sequential input.
+So far what we describe above is a unidirectional RNN, where each timestep's hidden state depends only on the previous timesteps'.
+We can also use other forms of RNNs such as GRUs, LSTMs, and bidirectional RNNs to encode the sequential input.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 Now let us implement the seq2seq's encoder.
-Here we use the word embedding layer to obtain the feature vector
-according to the word index of the input language.
+Here we use the word embedding layer to obtain the feature vector according to the word index of the input language.
 Those feature vectors will be fed to a multi-layer LSTM.
-The input for the encoder is a batch of sequences, which is 2-D tensor with shape (batch size, sequence length). The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
+The input for the encoder is a batch of sequences, which is 2-D tensor with shape (batch size, sequence length).
+The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=2}
 # Saved in the d2l package for later use
@@ -113,11 +124,18 @@ class Seq2SeqEncoder(d2l.Encoder):
         return out, state
 ```
 
+
 <!--
-Next, we will create a minibatch sequence input with a batch size of 4 and 7 timesteps. We assume the number of hidden layers of the LSTM unit is 2 and the number of hidden units is 16. The output shape returned by the encoder after performing forward calculation on the input is (number of timesteps, batch size, number of hidden units). The shape of the multi-layer hidden state of the gated recurrent unit in the final timestep is (number of hidden layers, batch size, number of hidden units). For the gated recurrent unit, the `state` list contains only one element, which is the hidden state. If long short-term memory is used, the `state` list will also contain another element, which is the memory cell.
+Next, we will create a minibatch sequence input with a batch size of 4 and 7 timesteps.
+We assume the number of hidden layers of the LSTM unit is 2 and the number of hidden units is 16.
+The output shape returned by the encoder after performing forward calculation on the input is (number of timesteps, batch size, number of hidden units).
+The shape of the multi-layer hidden state of the gated recurrent unit in the final timestep is (number of hidden layers, batch size, number of hidden units).
+For the gated recurrent unit, the `state` list contains only one element, which is the hidden state.
+If long short-term memory is used, the `state` list will also contain another element, which is the memory cell.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=3}
 encoder = Seq2SeqEncoder(vocab_size=10, embed_size=8, num_hiddens=16,
@@ -128,8 +146,10 @@ output, state = encoder(X)
 output.shape
 ```
 
+
 <!--
-Since an LSTM is used, the `state` list will contain both the hidden state and the memory cell with same shape (number of hidden layers, batch size, number of hidden units). However, if a GRU is used, the `state` list will contain only one element---the hidden state in the final timestep with shape (number of hidden layers, batch size, number of hidden units).
+Since an LSTM is used, the `state` list will contain both the hidden state and the memory cell with same shape (number of hidden layers, batch size, number of hidden units).
+However, if a GRU is used, the `state` list will contain only one element---the hidden state in the final timestep with shape (number of hidden layers, batch size, number of hidden units).
 -->
 
 *dịch đoạn phía trên*
@@ -137,6 +157,10 @@ Since an LSTM is used, the `state` list will contain both the hidden state and t
 ```{.python .input  n=4}
 len(state), state[0].shape, state[1].shape
 ```
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Decoder
@@ -146,28 +170,39 @@ len(state), state[0].shape, state[1].shape
 :label:`sec_seq2seq_decoder`
 
 <!--
-As we just introduced, the context vector $\mathbf{c}$ encodes the information from the whole input sequence $x_1, \ldots, x_T$. Suppose that the given outputs in the training set are $y_1, \ldots, y_{T'}$. At each timestep $t'$, the conditional probability of output $y_{t'}$ will depend on the previous output sequence $y_1, \ldots, y_{t'-1}$ and the context vector $\mathbf{c}$, i.e.,
+As we just introduced, the context vector $\mathbf{c}$ encodes the information from the whole input sequence $x_1, \ldots, x_T$.
+Suppose that the given outputs in the training set are $y_1, \ldots, y_{T'}$.
+At each timestep $t'$, the conditional probability of output $y_{t'}$ will depend on the previous output sequence $y_1, \ldots, y_{t'-1}$ and the context vector $\mathbf{c}$, i.e.,
 -->
 
 *dịch đoạn phía trên*
+
 
 $$P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}).$$
 
 <!--
-Hence, we can use another RNN as the decoder. At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs: the feature vector $\mathbf{y}_{t'-1}$ of $y_{t'-1}$, the context vector $\mathbf{c}$, and the hidden state of the last timestep $\mathbf{s}_{t'-1}$. Let us denote the transformation of the RNN's hidden states within the decoder by a function $g$:
+Hence, we can use another RNN as the decoder.
+At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs: 
+the feature vector $\mathbf{y}_{t'-1}$ of $y_{t'-1}$, the context vector $\mathbf{c}$, and the hidden state of the last timestep $\mathbf{s}_{t'-1}$.
+Let us denote the transformation of the RNN's hidden states within the decoder by a function $g$:
 -->
 
 *dịch đoạn phía trên*
+
 
 $$\mathbf{s}_{t'} = g(\mathbf{y}_{t'-1}, \mathbf{c}, \mathbf{s}_{t'-1}).$$
 
 
 <!--
-When implementing the decoder, we directly use the hidden state of the encoder in the final timestep as the initial hidden state of the decoder. This requires that the encoder and decoder RNNs have the same numbers of layers and hidden units.
-The LSTM forward calculation of the decoder is similar to that of the encoder. The only difference is that we add a dense layer after the LSTM layers, where the hidden size is the vocabulary size. The dense layer will predict the confidence score for each word.
+When implementing the decoder, we directly use the hidden state of the encoder in the final timestep as the initial hidden state of the decoder.
+This requires that the encoder and decoder RNNs have the same numbers of layers and hidden units.
+The LSTM forward calculation of the decoder is similar to that of the encoder.
+The only difference is that we add a dense layer after the LSTM layers, where the hidden size is the vocabulary size.
+The dense layer will predict the confidence score for each word.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -191,11 +226,13 @@ class Seq2SeqDecoder(d2l.Decoder):
         return out, state
 ```
 
+
 <!--
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=6}
 decoder = Seq2SeqDecoder(vocab_size=10, embed_size=8,
@@ -206,6 +243,14 @@ out, state = decoder(X, state)
 out.shape, len(state), state[0].shape, state[1].shape
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 <!--
 ## The Loss Function
 -->
@@ -213,13 +258,17 @@ out.shape, len(state), state[0].shape, state[1].shape
 ## *dịch tiêu đề phía trên*
 
 <!--
-For each timestep, the decoder outputs a vocabulary-size confidence score vector to predict words. Similar to language modeling, we can apply softmax to obtain the probabilities and then use cross-entropy loss to calculate the loss. Note that we padded the target sentences to make them have the same length, but we do not need to compute the loss on the padding symbols.
+For each timestep, the decoder outputs a vocabulary-size confidence score vector to predict words.
+Similar to language modeling, we can apply softmax to obtain the probabilities and then use cross-entropy loss to calculate the loss.
+Note that we padded the target sentences to make them have the same length, but we do not need to compute the loss on the padding symbols.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`. It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1`). If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
+To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`.
+It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1`).
+If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
 *dịch đoạn phía trên*
@@ -230,7 +279,8 @@ npx.sequence_mask(X, np.array([1, 2]), True, axis=1)
 ```
 
 <!--
-Apply to $n$-dim tensor $X$, it sets `X[i, len[i]:, :, ..., :] = 0`. In addition, we can specify the filling value such as $-1$ as shown below.
+Apply to $n$-dim tensor $X$, it sets `X[i, len[i]:, :, ..., :] = 0`.
+In addition, we can specify the filling value such as $-1$ as shown below.
 -->
 
 *dịch đoạn phía trên*
@@ -241,10 +291,14 @@ npx.sequence_mask(X, np.array([1, 2]), True, value=-1, axis=1)
 ```
 
 <!--
-Now we can implement the masked version of the softmax cross-entropy loss. Note that each Gluon loss function allows to specify per-example weights, in default they are 1s. Then we can just use a zero weight for each example we would like to remove. So our customized loss function accepts an additional `valid_len` argument to ignore some failing elements in each sequence.
+Now we can implement the masked version of the softmax cross-entropy loss.
+Note that each Gluon loss function allows to specify per-example weights, in default they are 1s.
+Then we can just use a zero weight for each example we would like to remove.
+So our customized loss function accepts an additional `valid_len` argument to ignore some failing elements in each sequence.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=9}
 # Saved in the d2l package for later use
@@ -260,15 +314,21 @@ class MaskedSoftmaxCELoss(gluon.loss.SoftmaxCELoss):
 ```
 
 <!--
-For a sanity check, we create identical three sequences, keep 4 elements for the first sequence, 2 elements for the second sequence, and none for the last one. Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
+For a sanity check, we create identical three sequences, keep 4 elements for the first sequence, 2 elements for the second sequence, and none for the last one.
+Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=10}
 loss = MaskedSoftmaxCELoss()
 loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 ```
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Training
@@ -282,6 +342,7 @@ During training, if the target sequence has length $n$, we feed the first $n-1$ 
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=11}
 # Saved in the d2l package for later use
@@ -312,11 +373,14 @@ def train_s2s_ch9(model, data_iter, lr, num_epochs, ctx):
         metric[0]/metric[1], metric[1]/timer.stop(), ctx))
 ```
 
+
 <!--
-Next, we create a model instance and set hyper-parameters. Then, we can train the model.
+Next, we create a model instance and set hyper-parameters.
+Then, we can train the model.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=15}
 embed_size, num_hiddens, num_layers, dropout = 32, 32, 2, 0.0
@@ -332,6 +396,7 @@ model = d2l.EncoderDecoder(encoder, decoder)
 train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 ```
 
+
 <!--
 ## Predicting
 -->
@@ -339,8 +404,9 @@ train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 ## *dịch tiêu đề phía trên*
 
 <!--
-Here we implement the simplest method, greedy search, to generate an output
-sequence. As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we feed the same "&lt;bos&gt;" token to the decoder as training at timestep 0. But the input token for a later timestep is the predicted token from the previous timestep.
+Here we implement the simplest method, greedy search, to generate an output sequence.
+As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we feed the same "&lt;bos&gt;" token to the decoder as training at timestep 0.
+But the input token for a later timestep is the predicted token from the previous timestep.
 -->
 
 *dịch đoạn phía trên*
@@ -351,6 +417,7 @@ sequence. As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we
 
 ![*dịch chú thích ảnh phía trên*](../img/seq2seq_predict.svg)
 :label:`fig_seq2seq_predict`
+
 
 ```{.python .input  n=16}
 # Saved in the d2l package for later use
@@ -377,11 +444,13 @@ def predict_s2s_ch9(model, src_sentence, src_vocab, tgt_vocab, num_steps,
     return ' '.join(tgt_vocab.to_tokens(predict_tokens))
 ```
 
+
 <!--
 Try several examples:
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=17}
 for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
@@ -389,11 +458,12 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
         model, sentence, src_vocab, tgt_vocab, num_steps, ctx))
 ```
 
+
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * The sequence to sequence (seq2seq) model is based on the encoder-decoder architecture to generate a sequence output from a sequence input.
@@ -407,31 +477,23 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Can you think of other use cases of seq2seq besides neural machine translation?
-1. What if the input sequence in the example of this section is longer?
-1. If we do not use the `SequenceMask` in the loss function, what may happen?
+2. What if the input sequence in the example of this section is longer?
+3. If we do not use the `SequenceMask` in the loss function, what may happen?
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/4357)
--->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_seq2seq.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_seq2seq.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/4357)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -446,6 +508,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 *
 
@@ -459,7 +522,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
 *
