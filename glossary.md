@@ -131,6 +131,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | example                  | mẫu                    |                                                |
 | expectation              | kỳ vọng                | [https://git.io/Jvohb](https://git.io/Jvohb)   |
 | explicit feedback        | phản hồi trực tiếp     | [https://git.io/JvKee](https://git.io/JvKee)   |
+| exploding gradient       | bùng nổ gradient       |                                                |
 | exponential distribution | phân phối mũ           | [https://git.io/JvohC](https://git.io/JvohC)   |
 | expression (math)        | biểu thức (toán học)   | [https://git.io/Jvojk](https://git.io/Jvojk)   |
 | Eyeball dev set          | tập phát triển Eyeball | [https://git.io/JvQx3](https://git.io/JvQx3)   |
