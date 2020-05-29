@@ -429,7 +429,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underflow (numerical)    | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (trong mạng nơ-ron) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning    | học không giám sát        |                                              |
-| update gate              | cổng cập nhật             |                                              |
 
 ## V
 | English                     | Tiếng Việt         | Thảo luận tại                                |
