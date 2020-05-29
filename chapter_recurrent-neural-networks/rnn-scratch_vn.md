@@ -449,7 +449,7 @@ Since we only use $10,000$ tokens in the dataset, the model needs more epochs to
 -->
 
 Bây giờ thì ta có thể huấn luyện mô hình.
-Do chỉ có thể sử dụng $10,000$ token trong tập dữ liệu nên mô hình này sẽ cần nhiều epoch hơn để hội tụ.
+Do chỉ sử dụng $10,000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
