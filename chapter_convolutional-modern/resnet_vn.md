@@ -40,7 +40,7 @@ Sẽ rất thuận lợi nếu hàm này thuộc tập $\mathcal{F}$, nhưng th�
 Thay vào đó, ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
 Ví dụ, có thể thử tìm $f^*_\mathcal{F}$ bằng cách giải bài toán tối ưu sau:
 
-$$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ đối tượng thoả mãn } f \in \mathcal{F}.$$
+$$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ đối~tượng~thoả~mãn } f \in \mathcal{F}.$$
 
 <!--
 It is only reasonable to assume that if we design a different and more powerful architecture $\mathcal{F}'$ we should arrive at a better outcome.
