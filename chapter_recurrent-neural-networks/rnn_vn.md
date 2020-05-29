@@ -288,7 +288,7 @@ a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Pri
 -->
 
 Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi.
-Thật không may, đây là một con số khó để hiểu và khó để so sánh.
+Thật không may, đây là một con số khó để hiểu và so sánh.
 Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài,
 do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ có khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
 Thứ còn thiếu là một phép tính trung bình theo cách nào đó.
