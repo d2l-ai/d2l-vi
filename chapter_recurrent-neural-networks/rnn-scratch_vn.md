@@ -521,7 +521,7 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
     * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
-    * Mô hình này sẽ hoạt động như thế nào trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
+    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán sử dụng phép lấy mẫu thay vì chọn ký tự tiếp theo có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
     * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ for $\alpha > 1$.
