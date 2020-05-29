@@ -362,7 +362,7 @@ This ensures that the model does not diverge even when gradients blow up at some
 
 1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
 2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
-Việc làm này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một số thời điểm trong quá trình huấn luyện, đồng thời tự động giảm số lượng bước một cách hiệu quả.
+Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm độ lớn của bước cập nhật một cách hiệu quả.
 3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
 
 
