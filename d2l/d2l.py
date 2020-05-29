@@ -2163,6 +2163,7 @@ def split_batch_multi_inputs(X, y, ctx_list):
 
 
 # Defined in file: ./chapter_natural-language-processing-applications/natural-language-inference-attention.md
+vocab = None
 def predict_snli(net, premise, hypothesis):
     premise = np.array(vocab[premise], ctx=d2l.try_gpu())
     hypothesis = np.array(vocab[hypothesis], ctx=d2l.try_gpu())
