@@ -305,8 +305,7 @@ So we can measure it by the average number of bits that we need to spend.
 Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
 Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
 Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
-Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo khá chính xác.
-Vì vậy, nó sẽ cho phép chúng ta dành rất ít số bit để nén chuỗi.
+Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp.
 Vì vậy, ta có thể đo nó bằng số bit trung bình mà chúng ta cần sử dụng.
 
 $$\frac{1}{n} \sum_{t=1}^n -\log p(x_t \mid x_{t-1}, \ldots, x_1).$$
@@ -331,8 +330,8 @@ Let us look at a number of cases:
 -->
 
 Nó có thể được hiểu rõ nhất như là hàm trung bình điều hòa của số lượng lựa chọn thực sự mà ta có khi quyết định chọn từ nào tiếp theo.
-Lưu ý rằng độ bối rối mở rộng ra một cách tự nhiên tới mất mát entropy chéo được định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`).
-Đó là, khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, thực tế là rằng cái này là luỹ thừa của cái kia.
+Lưu ý rằng độ rối rắm mở rộng ra một cách tự nhiên tới hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`).
+Khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, chỉ khác chi tiết rằng cái này là luỹ thừa của cái kia.
 Chúng ta hãy xem xét một số trường hợp:
 
 <!--
@@ -342,9 +341,9 @@ Chúng ta hãy xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ bối rối của mô hình là $1$.
-* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ bối rối là vô hạn.
-* Tại đường cơ sở, mô hình dự đoán phân phối đồng đều trên tất cả các mã thông báo. Trong trường hợp này, độ bối rối bằng kích thước của từ điển `len(vocab)`.
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ rối rắm của mô hình là $1$.
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
+* Tại mức cơ bản nhất, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
 * Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không có bất kỳ nén nào, đây sẽ là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, điều này cung cấp một giới hạn trên không cần thiết mà bất kỳ mô hình nào cũng phải đáp ứng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
