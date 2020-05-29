@@ -5,7 +5,7 @@
 # Language Models and the Dataset
 -->
 
-# *dịch tiêu đề phía trên*
+# Mô hình Ngôn ngữ và Tập dữ liệu
 
 :label:`sec_language_model`
 
@@ -17,7 +17,9 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-*dịch đoạn phía trên*
+Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách để ánh xạ dữ liệu văn bản sang token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, thì trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
+Khi đã có được một chuỗi như trên, mục tiêu của một mô hình ngôn ngữ là nhằm để ước tính xác suất sau
 
 $$p(x_1, x_2, \ldots, x_T).$$
 
@@ -29,7 +31,11 @@ Furthermore, it would be sufficient for generating a meaningful dialog, simply b
 Clearly we are still very far from designing such a system, since it would need to *understand* the text rather than just generate grammatically sensible content.
 -->
 
-*dịch đoạn phía trên*
+Mô hình ngôn ngữ thì vô cùng hữu dụng. 
+Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Không giống như việc những con khỉ gõ phím, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống với ngôn ngữ tự nhiên, chẳng hạn như là văn bản tiếng anh.
+Hơn nữa, mô hình sẽ đủ khả năng để tạo một đoạn hội thoại có ý nghĩa, chỉ đơn giản bằng việc đặt điều kiện phụ thuộc trên các đoạn hội thoại trước đó.
+Trên thực tế, chúng ta vẫn còn khoảng cách rất xa để có thể thiết kế được một hệ thống giống như vậy, vì việc này sẽ cần mô hình phải *hiểu* được văn bản hơn là chỉ tạo ra nội dung phù hợp về mặt ngữ pháp.
 
 <!--
 Nonetheless language models are of great service even in their limited form.
@@ -39,7 +45,11 @@ Likewise, in a document summarization algorithm it is worth while knowing that "
 or that "I want to eat grandma" is a rather disturbing statement, whereas "I want to eat, grandma" is much more benign.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn rất hạn chế.
+Chẳng hạn, cụm từ  “nhận dạng giọng nói” và “nhân gian giông tố” khi nghe phát âm thì có vẻ rất giống nhau.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà sẽ loại bỏ ngay phương án thứ hai vì cụm từ này mang ý nghĩa quá kì lạ.
+Tương tự như vậy, một thuật toán tóm tắt tài liệu nên biết được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với câu “người cắn chó”, hoặc là câu “Cháu muốn ăn bà ngoại" nghe khá là kinh dị trong khi câu “Cháu muốn ăn, bà ngoại" thì lại mang ý nghĩa vô hại hơn nhiều.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -49,7 +59,7 @@ or that "I want to eat grandma" is a rather disturbing statement, whereas "I wan
 ## Estimating a Language Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Ước tính một mô hình ngôn ngữ
 
 <!--
 The obvious question is how we should model a document, or even a sequence of words.
@@ -57,20 +67,25 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-*dịch đoạn phía trên*
-
+Câu hỏi rõ ràng ở đây là làm thế nào để mô hình hoá một tài liệu, hay thậm chí là một chuỗi các từ.
+Chúng ta có thể xem lại cách phân tích chúng ta đã áp dụng lên những mô hình chuỗi ở phần trước.
+Hãy bắt đầu bằng việc áp dụng những quy tắc xác suất cơ bản sau:
 
 $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t-1}).$$
-
 
 <!--
 For example, the probability of a text sequence containing four tokens consisting of words and punctuation would be given as:
 -->
 
-*dịch đoạn phía trên*
+Ví dụ: xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu sẽ được tính như sau:
 
-
+<!--
 $$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
+-->
+
+
+$$p(\mathrm{Thống}, \mathrm{kê}, \mathrm{vui} \mathrm{.}) =  p(\mathrm{Thống}) p(\mathrm{kê}  \mid  \mathrm{Thống}) p(\mathrm{vui}  \mid  \mathrm{Thống}, \mathrm{kê}) p(\mathrm{.}  \mid  \mathrm{Thống}, \mathrm{kê}, \mathrm{vui}).$$
+
 
 
 <!--
@@ -79,7 +94,10 @@ Here, we assume that the training dataset is a large text corpus, such as all Wi
 The probability of words can be calculated from the relative word frequency of a given word in the training dataset.
 -->
 
-*dịch đoạn phía trên*
+Để mà tính toán mô hình ngôn ngữ, chúng ta cần tính xác suất của từng từ trong đoạn văn bản và xác suất có điều kiện của một từ dựa trên một vài từ xuất hiện trước đó. 
+Đây chính là các tham số của mô hình ngôn ngữ.
+Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục của Wikipedia, [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg) hoặc tất cả văn bản được đăng trên web.
+Xác suất riêng lẻ của từng từ có thể được tính bằng tần số xuất hiện tương đối của từ đó trong tập dữ liệu huấn luyện.
 
 <!--
 For example, $p(\mathrm{Statistics})$ can be calculated as the probability of any sentence starting with the word "statistics".
@@ -88,11 +106,12 @@ This works fairly well, particularly for frequent words.
 Moving on, we could attempt to estimate
 -->
 
-*dịch đoạn phía trên*
+Ví dụ: $p(\mathrm{Thống})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu với từ “Thống”.
+Một cách tiếp cận ít chính xác hơn sẽ là đếm tất cả các lần xuất hiện của từ ”thống”, và chia nó cho tổng số từ trong kho dữ liệu văn bản.
+Cách làm này hoạt động khá hiệu quả, đặc biệt là cho các từ thường xuyên xuất hiện. 
+Tiếp theo, chúng ta có thể thử ước tính 
 
-
-$$\hat{p}(\mathrm{is} \mid \mathrm{Statistics}) = \frac{n(\mathrm{Statistics~is})}{n(\mathrm{Statistics})}.$$
-
+$$\hat{p}(\mathrm{kê} \mid \mathrm{Thống}) = \frac{n(\mathrm{Thống~kê})}{n(\mathrm{Thống})}.$$
 
 <!--
 Here $n(w)$ and $n(w, w')$ are the number of occurrences of singletons and pairs of words respectively.
@@ -104,7 +123,14 @@ Unless we provide some solution to give such word combinations nonzero weight, w
 If the dataset is small or if the words are very rare, we might not find even a single one of them.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ ghép.
+Thật không may, việc ước tính xác suất của một cặp từ có phần khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” là hiếm khi xảy ra hơn.
+Đặc biệt, với một vài từ ghép bất thường, rất khó để tìm đủ số lần xuất hiện của những từ ghép này để có được một ước tính chính xác.
+Mọi thứ trở nên tệ hơn đối với các từ ghép có ba chữ trở lên.
+Sẽ có nhiều từ ghép ba chữ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
+Trừ khi chúng ta nghĩ ra một số giải pháp để cho các tổ hợp từ như vậy có được trọng số khác không, nếu không, chúng ta sẽ không thể sử dụng chúng như một mô hình ngôn ngữ.
+Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể sẽ không tìm thấy ngay cả dù chỉ là một lần xuất hiện của tổ hợp từ ấy.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -184,14 +210,15 @@ In the following, we will learn how to design better models.
 ## Natural Language Statistics
 -->
 
-## *dịch tiêu đề phía trên*
+## Thống kê ngôn ngữ tự nhiên
 
 <!--
 Let us see how this works on real data.
 We construct a vocabulary based on the time machine data similar to :numref:`sec_text_preprocessing` and print the top $10$ most frequent words.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng nhau xem mô hình hoạt động như thế nào trên dữ liệu thực tế.
+Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu có tên là 'máy thời gian' tương tự như ở phần :numref:`sec_text_preprocessing` và trả ra kết quả $10$ từ có tần suất xuất hiện cao nhất.
 
 ```{.python .input  n=1}
 import d2l
@@ -213,7 +240,12 @@ The $10^{\mathrm{th}}$ most frequent word is less than $1/5$ as common as the mo
 To get a better idea we plot the graph of the word frequency.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta có thể thấy, những từ phổ biến nhất không có gì đáng để xem xét kĩ.
+Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
+Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
+Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
+Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
+Để nắm bắt được ý tưởng này rõ hơn, chúng ta vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
@@ -227,12 +259,12 @@ After dealing with the first four words as exceptions ('the', 'i', 'and', 'of'),
 This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) which states that the item frequency is given by
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta đang tiến tới gần một phát hiện nền tảng ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
+Sau khi xử lý bốn từ đầu tiên ('the', 'i', 'and', 'of') như là các ngoại lệ, tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
+Điều này có nghĩa là từ ngữ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà có phát biểu rằng tần suất xuất hiện sẽ được xác định bởi
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
-
 
 <!--
 This should already give us pause if we want to model words by count statistics and smoothing.
@@ -240,9 +272,10 @@ After all, we will significantly overestimate the frequency of the tail, also kn
 But what about the other word combinations (such as bigrams, trigrams, and beyond)?
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
-
-*dịch đoạn phía trên*
-
+Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
+Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
+Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
+Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
@@ -603,16 +636,16 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Đinh Đắc
 
 <!-- Phần 2 -->
-*
+* Đinh Đắc
 
 <!-- Phần 3 -->
 *
 
 <!-- Phần 4 -->
-*
+* Đinh Đắc
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
