@@ -163,7 +163,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 -->
 
 * Mô-đun `rnn` của Gluon lập trình sẵn tầng của mạng nơ-ron truy hồi.
-* Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không tính toán đầu ra của tầng đầu ra.
+* Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không bao gồm tính toán tại tầng đầu ra.
 * Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 
 <!--
