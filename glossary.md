@@ -53,6 +53,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
+| candidate hidden state              | trạng thái ẩn ứng viên |                                              |
+| candidate memory                    | bộ nhớ ứng viên        |                                              |
 | categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | causality                           | quan hệ nhân quả       |                                              |
@@ -148,6 +150,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
 | flatten             | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
+| forget gate         | cổng quên            |                                              |
 | forward pass        | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework           | framework            |                                              |
 | functional analysis | giải tích hàm        |                                              |
@@ -346,6 +349,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| reset gate                        | cổng xoá                                  |                                             |
 | residual network                  | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
@@ -425,6 +429,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underflow (numerical)    | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (trong mạng nơ-ron) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning    | học không giám sát        |                                              |
+| update gate              | cổng cập nhật             |                                              |
 
 ## V
 | English                     | Tiếng Việt         | Thảo luận tại                                |
