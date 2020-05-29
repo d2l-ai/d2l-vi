@@ -150,7 +150,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
 | flatten             | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
-| forget gate         | cổng quên            |                                              |
 | forward pass        | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework           | framework            |                                              |
 | functional analysis | giải tích hàm        |                                              |
