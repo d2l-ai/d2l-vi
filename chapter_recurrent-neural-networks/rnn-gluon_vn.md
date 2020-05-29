@@ -14,7 +14,7 @@ This section will show how to implement the same language model more efficiently
 We begin as before by reading the "Time Machine" corpus.
 -->
 
-Dù :numref:`sec_rnn_scratch` mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
+Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
 Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ theo cách hiệu quả hơn bằng các hàm của Gluon.
 Ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
