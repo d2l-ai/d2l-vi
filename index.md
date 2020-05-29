@@ -24,6 +24,8 @@ chapter_preliminaries/index_vn
 chapter_linear-networks/index_vn
 chapter_multilayer-perceptrons/index_vn
 chapter_deep-learning-computation/index_vn
+chapter_convolutional-neural-networks/index_vn
+chapter_convolutional-modern/index_vn
 ```
 
 ```toc
