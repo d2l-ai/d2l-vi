@@ -205,13 +205,21 @@ Third, we actually *want* models that have only a short range of interaction.
 Hence, BPTT has a slight regularizing effect which can be desirable.
 -->
 
-*dịch đoạn phía trên*
+Từ định nghĩa $\xi_t$, ta có $E[z_t] = \partial_w h_t$.
+Bất cứ khi nào $\xi_t = 0$, tại điểm đó sự mở rộng kết thúc.
+Điều này dẫn đến một tổng trọng số của các chuỗi có chiều dài biến thiên, trong đó có ít chuỗi dài nhưng được đánh trọng số cao tương ứng.
+:cite:`Tallec.Ollivier.2017` đưa ra đề xuất này trong nghiên cứu của họ.
+Không may, dù lý thuyết rất đáng chú ý, cách làm này không tốt hơn cách cắt bỏ đơn giản, nhiều khả năng do các yếu tố sau.
+Thứ nhất, tác động đến quá khứ của quan sát sau một vài lượt lan truyền ngược tương đối đủ để nắm bắt các phụ thuộc trên thực tế.
+Thứ hai, phương sai tăng lên nên gradient không thể chính xác hơn.
+Thứ ba, ta thực sự *muốn* các mô hình có khoảng tương tác ngắn.
+Do đó, ta mong muốn BPTT có một hiệu ứng điều chuẩn nhỏ.
 
 <!--
 ![From top to bottom: randomized BPTT, regularly truncated BPTT and full BPTT](../img/truncated-bptt.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/truncated-bptt.svg)
+![Từ trên xuống dưới: BPTT ngẫu nhiên, BPTT cắt bỏ đều và BPTT đầy đủ](../img/truncated-bptt.svg)
 :label:`fig_truncated_bptt`
 
 
@@ -222,7 +230,10 @@ Hence, BPTT has a slight regularizing effect which can be desirable.
 * The third row is the full BPTT that leads to a computationally infeasible expression.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_truncated_bptt` minh hoạ ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*.
+* Dòng đầu tiên biểu diễn sự cắt bỏ ngẫu nghiên, chia văn bản thành các phần có độ dài biến thiên. 
+* Dòng thứ hai biểu diễn BPTT cắt bỏ đều, chia văn bản thành các phần có độ dài bằng nhau.
+* Dòng thứ ba là BPTT đầy đủ, dẫn đến một biểu thức không khả thi để tính toán.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -232,7 +243,7 @@ Hence, BPTT has a slight regularizing effect which can be desirable.
 ## The Computational Graph
 -->
 
-## *dịch tiêu đề phía trên*
+## Đồ thị tính toán
 
 <!--
 In order to visualize the dependencies between model variables and parameters during computation in a recurrent neural network, 
@@ -241,13 +252,14 @@ For example, the computation of the hidden states of timestep 3, $\mathbf{h}_3$,
 the hidden state of the last timestep $\mathbf{h}_2$, and the input of the current timestep $\mathbf{x}_3$.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
+Ví dụ, các tính toán tại trạng thái ẩn ở bước thời gian 3, $\mathbf{h}_3$, phụ thuộc vào các tham số $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ của mô hình, trạng thái ẩn ở bước thời gian trước đó $\mathbf{h}_2$, và đầu vào ở bước thời gian hiện tại $\mathbf{x}_3$.
 
 <!--
 ![ Computational dependencies for a recurrent neural network model with three timesteps. Boxes represent variables (not shaded) or parameters (shaded) and circles represent operators. ](../img/rnn-bptt.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/rnn-bptt.svg)
+![Sự phụ thuộc tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
 :label:`fig_rnn_bptt`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
