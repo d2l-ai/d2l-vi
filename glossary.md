@@ -348,7 +348,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | reinforcement learning            | học tăng cường                            |                                              |
 | representation learning           | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                           | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| reset gate                        | cổng xoá                                  |                                             |
 | residual network                  | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                   | hàm điểm thưởng                           |                                              |
 | robust (model, algorithm, system) | mạnh mẽ                                   | [https://git.io/Jfe1e](https://git.io/Jfe1e) |
