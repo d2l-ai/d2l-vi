@@ -374,7 +374,7 @@ When using the random sampling, we need to re-initialize the hidden state for ea
 Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
 -->
 
-Khi sử dụng phép lấy mẫu liên tục, ta sẽ khởi tạo trạng thái ẩn ở đầu mỗi epoch.
+Khi thực hiện lấy mẫu liên tục, ta sẽ khởi tạo trạng thái ẩn ở đầu mỗi epoch.
 Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại, nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để có thể tính toán gradient trong từng minibatch.
 Khi sử dụng lấy mẫu ngẫu nhiên, ta cần khởi tạo lại trạng thái ẩn cho mỗi lần lặp vì mỗi mẫu được lấy ra với một vị trí ngẫu nhiên.
 Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sẽ sử dụng một hàm `updater` tổng quát, hàm này có thể là một trình huấn luyện Gluon hoặc được lập trình từ đầu.
