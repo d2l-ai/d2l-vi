@@ -354,7 +354,14 @@ Later on in :numref:`chap_modern_rnn` we will see how more sophisticated sequenc
 In practice, this truncation is effected by *detaching* the gradient after a given number of steps.
 -->
 
-*dịch đoạn phía trên*
+Nhiều điều có thể rút ra từ biểu thức khá đáng sợ này.
+Đầu tiên, các kết quả trung gian được lưu lại, đó là các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$.
+Thứ hai, ví dụ tuyến tính đơn giản này cho thấy một vài vấn đề chính của các mô hình chuỗi dài: chúng bao gồm các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
+Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
+Các mô hình này có các giá trị số không ổn định, dẫn đến việc quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
+Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở mức độ thuận tiện cho tính toán.
+Sau đây tại :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
+Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gradient sau số bước xác định.
 
 <!--
 ## Summary
@@ -369,7 +376,10 @@ In practice, this truncation is effected by *detaching* the gradient after a giv
 * For efficient computation, intermediate values are cached.
 -->
 
-*dịch đoạn phía trên*
+* Lan truyền ngược theo thời gian là cách áp dụng lan truyền ngược cho các mô hình chuỗi có trạng thái ẩn.
+* Việc cắt bỏ là cần thiết để thuận tiện tính toán và ổn định các giá trị số.
+* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì. Điều này được thể hiện trong hiện tượng tiêu biến hoặc bùng nổ gradient.
+* Để tăng hiệu quả tính toán, các giá trị trung gian được lưu lại.
 
 <!--
 ## Exercises
@@ -388,7 +398,12 @@ Formalize this statement.
 4. Besides gradient clipping, can you think of any other methods to cope with gradient explosion in recurrent neural networks?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử ta có ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ có các trị riêng $\lambda_i$.
+Không mất tính tổng quát, giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
+Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
+2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ tương ứng với trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$. <!-- không hiểu đoạn này lắm, hóng cao nhân :) -->
+3. Kết quả trên áp dụng vào gradient của mạng nơ-ron truy hồi sẽ như thế nào?
+4. Ngoài gọt gradient, có phương pháp nào để xử lý bùng nổ gradient trong mạng nơ-ron truy hồi không?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -427,4 +442,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Cường
