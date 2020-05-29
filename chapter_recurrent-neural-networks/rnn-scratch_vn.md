@@ -343,7 +343,7 @@ def grad_clipping(model, theta):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Let us first define the function to train the model on one data epoch.
@@ -555,6 +555,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 5 -->
 * Nguyễn Duy Du
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 6 -->
 *
