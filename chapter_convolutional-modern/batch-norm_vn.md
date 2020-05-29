@@ -636,11 +636,11 @@ Chuẩn hóa theo batch là một phương pháp quan trọng, được áp dụ
 -->
 
 1. Trước khi chuẩn hóa theo batch, có thể loại bỏ phép biến đổi affine trong tầng kết nối đầy đủ hoặc tham số độ chệch trong phép tích chập không?
-    * Tìm một phép biến đổi tương đương được áp dụng trước tầng kết nối đầy đủ.
-    * Sự cải tiến này có hiệu quả không, tại sao?
+    * Tìm một phép biến đổi tương đương được áp dụng trước tầng kết nối đầy đủ.
+    * Sự cải tiến này có hiệu quả không, tại sao?
 2. So sánh tốc độ học của LeNet khi có sử dụng và không sử dụng chuẩn hóa theo batch.
-    * Vẽ đồ thị biểu diễn sự giảm xuống của lỗi huấn luyện và lỗi kiểm tra.
-    * Về miền hội tụ thì sao? Có thể chọn tốc độ học lớn tới đâu?
+    * Vẽ đồ thị biểu diễn sự giảm xuống của lỗi huấn luyện và lỗi kiểm tra.
+    * Về miền hội tụ thì sao? Có thể chọn tốc độ học lớn tới đâu?
 3. Chúng ta có cần chuẩn hóa theo batch trong tất cả các tầng không? Hãy thử nghiệm điều này.
 4. Có thể thay thế Dropout bằng BN không? Sẽ có thay đổi như thế nào?
 5. Giữ nguyên các hệ số `beta` và `gamma` (thêm tham số `grad_req='null'` khi xây dựng mạng để không tính gradient) rồi quan sát và phân tích kết quả.
