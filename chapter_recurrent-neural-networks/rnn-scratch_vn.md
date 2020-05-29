@@ -472,7 +472,8 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
 While implementing the above RNN model from scratch is instructive, it is not convenient. In the next section we will see how to improve significantly on the current model and how to make it faster and easier to implement.
 -->
 
-Mặc dù việc lập trình mô hình RNN từ đầu có tính hướng dẫn, nhưng nó không thực sự tiện lợi. Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể để làm cho nó nhanh hơn và dễ triển khai hơn.
+Mặc dù ta đã học được nhiều từ việc lập trình mô hình RNN từ đầu nhưng cách làm này không thực sự tiện lợi lắm. 
+Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể và cách làm nó nhanh và dễ lập trình hơn.
 
 
 <!--
