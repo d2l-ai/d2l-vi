@@ -354,7 +354,7 @@ Later on in :numref:`chap_modern_rnn` we will see how more sophisticated sequenc
 In practice, this truncation is effected by *detaching* the gradient after a given number of steps.
 -->
 
-Nhiều điều có thể rút ra từ biểu thức khá đáng sợ này.
+Nhiều điều có thể rút ra từ biểu thức phức tạp này.
 Đầu tiên, các kết quả trung gian được lưu lại, đó là các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$.
 Thứ hai, ví dụ tuyến tính đơn giản này cho thấy một vài vấn đề chính của các mô hình chuỗi dài: chúng bao gồm các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
