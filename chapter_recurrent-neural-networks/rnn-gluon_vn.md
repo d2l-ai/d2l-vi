@@ -90,8 +90,7 @@ While in the previous section, we have the output layer within the `rnn` block.
 -->
 
 Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
-Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn, ta cần tạo tầng đầu ra một cách tách biệt.
-Trong khi ở phần trước, tầng đầu ra được tích hợp sẵn trong khối `rnn`.
+Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
