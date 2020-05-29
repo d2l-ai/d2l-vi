@@ -461,7 +461,7 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Finally let us check the results to use a random sampling iterator.
 -->
 
-Cuối cùng, ta sẽ kiểm tra kết quả khi sử dụng một bộ lặp lấy mẫu ngẫu nhiên.
+Cuối cùng, ta sẽ kiểm tra kết quả khi sử dụng một iterator để lấy mẫu ngẫu nhiên.
 
 
 ```{.python .input}
