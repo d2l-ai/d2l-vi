@@ -526,7 +526,7 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
     * Điều gì sẽ xảy ra?
     * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
 4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không thực hiện gọt gradient?
-5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi biểu đồ tính toán. Thời gian chạy và độ chính xác có thay đổi không?
+5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
 6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
 7. Chứng minh rằng độ rối rắm là nghịch đảo của trung bình điều hòa của xác suất từ có điều kiện.
 
