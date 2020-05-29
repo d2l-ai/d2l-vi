@@ -198,7 +198,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
 5. Có thể nén văn bản sử dụng mô hình này không?
     * Cần bao nhiêu bit?
-    * Tại sao không ai sử dụng mô hình này để nén văn bản? Gợi ý: sử dụng các bộ nén thì sao?
+    * Tại sao không ai sử dụng mô hình này để nén văn bản? Gợi ý: bản thân bộ nén thì sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
