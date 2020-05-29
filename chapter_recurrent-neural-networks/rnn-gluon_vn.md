@@ -75,7 +75,7 @@ len(state), state[0].shape
 With a state variable and an input, we can compute the output with the updated state.
 -->
 
-Với một biến trạng thái và một đầu vào, ta có thể tính toán đầu ra và cập nhật trạng thái.
+Với một biến trạng thái và một đầu vào, ta có thể tính toán đầu ra với trạng thái vừa được cập nhật.
 
 
 ```{.python .input  n=38}
