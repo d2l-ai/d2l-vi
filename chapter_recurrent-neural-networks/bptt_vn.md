@@ -325,7 +325,7 @@ Cuối cùng, các trạng thái ẩn phụ thuộc lẫn nhau và phụ thuộc
 Một thành phần định lượng quan trọng là các trạng thái ẩn quá khứ ảnh hưởng tới các trạng thái ẩn tương lai như thế nào.
 
 $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
-\text{ do đó }
+\text{ do~đó }
 \partial_{\mathbf{h}_t} \mathbf{h}_T = \left(\mathbf{W}_{hh}^\top\right)^{T-t}.$$
 
 
