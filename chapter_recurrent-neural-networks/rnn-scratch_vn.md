@@ -495,7 +495,7 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 * Giữa các mô hình chuỗi, ta cần đảm bảo tách các gradient, để chắc chắn rằng phép vi phân tự động không lan truyền các ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
 * Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
 * Gọt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
-* Độ rối rắm đánh giá hiệu năng của mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
+* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
 * Phân vùng tuần tự thường dẫn đến các mô hình tốt hơn.
 
 <!--
