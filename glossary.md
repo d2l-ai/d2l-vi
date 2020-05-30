@@ -53,6 +53,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
+| candidate hidden state              | trạng thái ẩn tiềm năng |                                              |
+| candidate memory                    | ký ức tiềm năng        |                                              |
 | categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | causality                           | quan hệ nhân quả       |                                              |
