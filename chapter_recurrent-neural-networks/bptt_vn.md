@@ -51,7 +51,7 @@ In the following we will elucidate what happens and how to address this in pract
 ## A Simplified Recurrent Network
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng Truy Hồi Giản Thể
 
 <!--
 We start with a simplified model of how an RNN works.
@@ -62,7 +62,12 @@ In addition, $w_h$ and $w_o$ indicate the weights of hidden states and the outpu
 As a result, the hidden states and outputs at each timesteps can be explained as
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy bắt đầu với một mô hình đơn giản về cách mạng RNN hoạt động như thế nào.
+Mô hình này bỏ qua các chi tiết cụ thể của trạng thái ẩn và cách thức trạng này được cập nhật như thế nào.
+Những chi tiết này không quan trọng cho việc phân tích dưới đây mà khiến các ký hiệu trở nên lộn xộn và trông nguy hiểm hơn.
+Trong mô hình này đơn giản, chúng ta ký hiệu $h_t$ là trạng thái ẩn, $x_t$ là đầu vào, và $o_t$ là đầu ra tại bước thời gian $t$.
+Bên cạnh đó, $w_h$ và $w_o$ tương ứng với trọng số của các trạng thái ẩn và tầng đầu ra.
+Kết quả là, các trạng thái ẩn và kết quả đầu ra tại mỗi bước thời gian có thể được giải thích như sau
 
 $$h_t = f(x_t, h_{t-1}, w_h) \text{ and } o_t = g(h_t, w_o).$$
 
@@ -74,7 +79,10 @@ All we need is to loop through the $(x_t, h_t, o_t)$ triples one step at a time.
 The discrepancy between outputs $o_t$ and the desired targets $y_t$ is then evaluated by an objective function as
 -->
 
-*dịch đoạn phía trên*
+Do đó, chúng ta có một chuỗi các giá trị $\{\ldots, (h_{t-1}, x_{t-1}, o_{t-1}), (h_{t}, x_{t}, o_t), \ldots\}$ phụ thuộc vào nhau thông qua phép tính đệ quy.
+Lượt truyền xuôi khá đơn giản.
+Những gì chúng ta cần là lặp qua bộ ba $(x_t, h_t, o_t)$ một bước thời gian tại một thời điểm.
+Sự khác biệt giữa kết quả đầu ra $o_t$ và các giá trị mục tiêu mong muốn $y_t$ sau đó được đánh giá bởi một hàm mục tiêu dưới đây
 
 $$L(x, y, w_h, w_o) = \sum_{t=1}^T l(y_t, o_t).$$
 
@@ -84,7 +92,8 @@ For backpropagation, matters are a bit more tricky, especially when we compute t
 To be specific, by the chain rule,
 -->
 
-*dịch đoạn phía trên*
+Đối với lan truyền ngược, vấn đề phức tạp hơn một chút khi chúng ta tính toán gradient liên quan đến các tham số $w_h$ của hàm mục tiêu $L$.
+Cụ thể, bởi quy tắc dây chuyền dưới đây
 
 
 $$\begin{aligned}
@@ -97,7 +106,8 @@ The first and the second part of the derivative is easy to compute.
 The third part $\partial_{w_h} h_t$ is where things get tricky, since we need to compute the effect of the parameters on $h_t$.
 -->
 
-*dịch đoạn phía trên*
+Tính toán phần đầu tiên và phần thứ hai của đạo hàm khá dễ dàng.
+Phần thứ ba $\partial_{w_h} h_t$ là nơi mọi thứ trở nên khó khăn, vì chúng ta cần phải tính toán ảnh hưởng của các tham số liên quan tới $h_t$.
 
 
 <!--
@@ -105,7 +115,8 @@ To derive the above gradient, assume that we have three sequences $\{a_{t}\},\{b
 Then for $t\geq 1$, it is easy to show
 -->
 
-*dịch đoạn phía trên*
+Để tính được gradient ở trên, giả sử rằng chúng ta có ba chuỗi $\{a_{t}\},\{b_{t}\},\{c_{t}\}$ thỏa mãn $a_{0}=0, a_{1}=b_{1}$ và $a_{t}=b_{t}+c_{t}a_{t-1}$ với $t=1, 2,\ldots$.
+Sau đó, với $t\geq 1$ ta có
 
 $$a_{t}=b_{t}+\sum_{i=1}^{t-1}\left(\prod_{j=i+1}^{t}c_{j}\right)b_{i}.$$
 :eqlabel:`eq_bptt_at`
@@ -114,7 +125,7 @@ $$a_{t}=b_{t}+\sum_{i=1}^{t-1}\left(\prod_{j=i+1}^{t}c_{j}\right)b_{i}.$$
 Now let us apply :eqref:`eq_bptt_at` with
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta áp dụng :eqref: `eq_bptt_at` với
 
 
 $$a_t = \partial_{w_h}h_{t},$$
@@ -128,7 +139,8 @@ $$c_t = \partial_{h_{t-1}}f(x_{t},h_{t-1},w_h).$$
 Therefore, $a_{t}=b_{t}+c_{t}a_{t-1}$ becomes the following recursion
 -->
 
-*dịch đoạn phía trên*
+Vì vậy, công thức $a_{t}=b_{t}+c_{t}a_{t-1}$ trở thành phép đệ quy dưới đây
+
 
 $$
 \partial_{w_h}h_{t}=\partial_{w_h}f(x_{t},h_{t-1},w)+\partial_{h}f(x_{t},h_{t-1},w_h)\partial_{w_h}h_{t-1}.
@@ -138,7 +150,7 @@ $$
 By :eqref:`eq_bptt_at`, the third part will be
 -->
 
-*dịch đoạn phía trên*
+Sử dụng :eqref:`eq_bptt_at`, phần thứ ba sẽ là
 
 $$
 \partial_{w_h}h_{t}=\partial_{w_h}f(x_{t},h_{t-1},w_h)+\sum_{i=1}^{t-1}\left(\prod_{j=i+1}^{t}\partial_{h_{j-1}}f(x_{j},h_{j-1},w_h)\right)\partial_{w_h}f(x_{i},h_{i-1},w_h).
@@ -415,7 +427,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 *
