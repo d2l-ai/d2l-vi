@@ -345,7 +345,11 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi.
+Thật không may, đây là một con số khó để hiểu và so sánh.
+Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài,
+do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ có khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
+Thứ còn thiếu là một phép tính trung bình theo cách nào đó.
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -356,7 +360,11 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-*dịch đoạn phía trên*
+Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
+Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
+Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
+Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp.
+Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng.
 
 $$\frac{1}{n} \sum_{t=1}^n -\log p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
@@ -366,7 +374,9 @@ For historical reasons, scientists in natural language processing prefer to use 
 In a nutshell, it is the exponential of the above:
 -->
 
-*dịch đoạn phía trên*
+Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được.
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là tốc độ bit (_bitrate_).
+Tóm lại, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
 
@@ -377,7 +387,10 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-*dịch đoạn phía trên*
+Nó có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn mà ta có khi quyết định chọn từ nào là từ tiếp theo.
+Lưu ý rằng độ rối rắm khái quát lên hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax một cách tự nhiên(:numref:`sec_softmax`).
+Khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, chỉ khác chi tiết rằng cái này là luỹ thừa của cái kia.
+Chúng ta hãy xem xét một số trường hợp:
 
 <!--
 * In the best case scenario, the model always estimates the probability of the next symbol as $1$. In this case the perplexity of the model is $1$.
@@ -386,7 +399,10 @@ Let us look at a number of cases:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-*dịch đoạn phía trên*
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ rối rắm của mô hình là $1$.
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
+* Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
+* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không hề nén, đây là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, đây sẽ là mức giới hạn trên mà bất kỳ mô hình nào cũng phải thoả mãn có độ rối rắm thấp hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -463,7 +479,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Yến Thy
 
 <!-- Phần 5 -->
-*
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 6 -->
 * Nguyễn Duy Du
