@@ -39,7 +39,7 @@ the expectations that the next movie is equally good or better are high, hence e
 -->
 
 * [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
-Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù nó vẫn là cùng một bộ phim.
+Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù bộ phim đó không hề thay đổi.
 Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
 * [Hiệu ứng vòng xoáy khoái lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
@@ -192,9 +192,9 @@ Cả hai trường hợp đều đặt ra câu hỏi về cách tạo ra dữ li
 Người ta thường sử dụng các quan sát từ quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
 Rõ ràng chúng ta không thể trông đợi thời gian sẽ đứng yên.
 Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, ít nhất động lực của chuỗi thời gian sẽ không đổi.
-Điều này khá hợp lý, vì nếu động lực thay đổi thì ta không thể dự đoán được bằng cách sử dụng dữ liệu mà ta đang có. 
+Điều này khá hợp lý, vì nếu động lực thay đổi thì ta sẽ không thể dự đoán được nó bằng cách sử dụng dữ liệu mà ta đang có.
 Các nhà thống kê gọi các động lực không thay đổi này là *cố định* (*stationary*).
-Dù có làm gì đi chăng nữa, chúng ta sẽ vẫn tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
+Dù có làm gì đi chăng nữa, chúng ta vẫn sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}, \ldots, x_1).$$
