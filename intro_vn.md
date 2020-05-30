@@ -76,7 +76,7 @@ Những việc bạn có thể làm để đóng góp vào dự án:
 * Tham gia review các Pull Request
 * Hỗ trợ kỹ thuật
 * Sửa các lỗi chính tả, ngữ pháp, những điểm chưa nhất quán trong cách dịch
-* Start GitHub repo của dự án
+* Star GitHub repo của dự án
 * Chia sẻ dự án tới nhiều người hơn
 
 Bạn có thể tham gia thảo luận tại [Slack của nhóm dịch](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform?usp=sf_link) hoặc đóng góp trực tiếp trên [GitHub repo](https://github.com/aivivn/d2l-vn).
