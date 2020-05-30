@@ -196,7 +196,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
     * Nếu thay đổi tham số gọt (*clipping*) thì sao?
 3. Lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
 4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
-5. Có thể nén văn bản sử dụng mô hình này không?
+5. Có thể nén văn bản bằng cách sử dụng mô hình này không?
     * Nếu có thì cần bao nhiêu bit?
     * Tại sao không ai sử dụng mô hình này để nén văn bản? Gợi ý: bản thân bộ nén thì sao?
 
