@@ -213,7 +213,7 @@ Không may, dù phương pháp này khá hấp dẫn về mặt lý thuyết, n�
 Thứ nhất, tác động của quan sát đến quá khứ sau một vài lượt lan truyền ngược đã là tương đối đủ để nắm bắt các phụ thuộc trên thực tế.
 Thứ hai, phương sai tăng lên nên gradient không thể chính xác hơn.
 Thứ ba, ta thực sự *muốn* các mô hình có khoảng tương tác ngắn.
-Do đó, ta mong muốn BPTT có một hiệu ứng điều chuẩn nhỏ.
+Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà ta có thể mong muốn.
 
 <!--
 ![From top to bottom: randomized BPTT, regularly truncated BPTT and full BPTT](../img/truncated-bptt.svg)
