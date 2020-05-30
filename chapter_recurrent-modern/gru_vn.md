@@ -14,7 +14,9 @@ In particular we found that long products of matrices can lead to vanishing or d
 Let us briefly think about what such gradient anomalies mean in practice:
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng neuron truy hồi.
+Cụ thể đã phát hiện được rằng những tích dài của các ma trận có thể dẫn đến việc tiêu biến hoặc phân kỳ gradient.
+Giờ ta hãy nghĩ vắn tắt về việc những gradient bất thường như vậy có ý nghĩa như thế nào trong thực tế:
 
 <!--
 * We might encounter a situation where an early observation is highly significant for predicting all future observations.
@@ -30,7 +32,17 @@ For instance, there might be a transition between chapters in a book, or a trans
 In this case it would be nice to have a means of *resetting* our internal state representation.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể gặp phải những tình huống mà những quan sát (bước thời gian) xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
+Ví dụ, ta có một quan sát đầu tiên chứa checksum và mục tiêu ở đây là phân biệt liệu checksum có đúng hay không tại cuối dãy câu.
+Trong trường hợp này, ảnh hưởng của thẻ (token) đầu tiên là tối quan trọng.
+Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ngăn nhớ*.
+Nếu không có cơ thế như vậy, một gradient cực lớn phải được cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
+* Chúng ta có thể gặp phải những tình huống mà một vài ký hiệu không chứa quan sát phù hợp.
+Ví dụ, khi phân tích một trang web, có thể sẽ có những mã HTML phụ trợ không liên quan đến mục tiêu là truyền tải thông tin trên trang web.
+Chúng ta sẽ muốn có một số cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
+* Chúng ta có thể gặp phải những tình huống mà có những khoảng ngắt giữa những các phần của dãy câu.
+Ví dụ, có thể sẽ có những đoạn chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
+Trong trường hợp này, sẽ tốt hơn nếu có một phương tiện để đưa biểu diễn trạng thái bên trong *về trạng thái ban đầu (reset)*.
 
 <!--
 A number of methods have been proposed to address this.
@@ -40,7 +52,11 @@ See also :cite:`Chung.Gulcehre.Cho.ea.2014` for more details.
 Due to its simplicity, let us start with the GRU.
 -->
 
-*dịch đoạn phía trên*
+Nhiều phương pháp đã được đề xuất để giải quyết những điều này.
+Một trong những phương pháp sớm nhất chính là Trí nhớ ngắn hạn hướng dài hạn (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
+Đơn vị hồi quy có cổng (Gated Recurrent Unit - GRU) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể của LSTM, được tổ chức hợp lý hơn một chút, thường mang lại hiệu quả tương đương và có thể tính toán nhanh hơn đáng kể.
+Xem :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
+Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
