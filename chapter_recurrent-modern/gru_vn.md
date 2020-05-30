@@ -34,7 +34,7 @@ In this case it would be nice to have a means of *resetting* our internal state 
 
 * Chúng ta có thể gặp phải những tình huống mà những quan sát xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
 Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị đó tổng kiểm đó có đúng hay không tại cuối câu.
-Trong trường hợp này, ảnh hưởng của thẻ (token) đầu tiên là tối quan trọng.
+Trong trường hợp này, ảnh hưởng của token đầu tiên là tối quan trọng.
 Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ngăn nhớ*.
 Nếu không có cơ thế như vậy, ta phải gán một giá trị gradient cực lớn cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
 * Chúng ta có thể gặp phải những tình huống mà một vài ký hiệu không chứa quan sát phù hợp.
