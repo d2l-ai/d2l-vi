@@ -344,7 +344,7 @@ Chúng ta hãy xem xét một số trường hợp:
 * Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ rối rắm của mô hình là $1$.
 * Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
 * Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
-* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không có bất kỳ nén nào, đây sẽ là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, điều này cung cấp một giới hạn trên không cần thiết mà bất kỳ mô hình nào cũng phải đáp ứng.
+* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không hề nén, đây là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, đây sẽ là mức giới hạn trên mà bất kỳ mô hình nào cũng phải thoả mãn có độ rối rắm thấp hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
