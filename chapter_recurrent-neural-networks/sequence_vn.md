@@ -17,6 +17,7 @@ People's opinions on movies can change quite significantly over time.
 In fact, psychologists even have names for some of the effects:
 -->
 
+
 Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
 Là một người dùng Netflix tốt, bạn quyết định đánh giá từng bộ phim một cách cẩn thận.
 Xét cho cùng, bạn muốn xem thêm nhiều bộ phim hay phải không?
@@ -38,14 +39,14 @@ the expectations that the next movie is equally good or better are high, hence e
 -->
 
 * [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
-Ví dụ như sau khi thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
+Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù nó vẫn là cùng một bộ phim.
 Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
 * [Hiệu ứng vòng xoáy khoái lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
-Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ: rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên tham gia vào quá trình sản xuất phim.
-* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
+* Một số phim trở thành "phim cult" vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
 
 <!--
 In short, ratings are anything but stationary.
@@ -53,7 +54,7 @@ Using temporal dynamics helped :cite:`Koren.2009` to recommend movies more accur
 But it is not just about movies.
 -->
 
-Nói tóm lại, thứ bậc xếp hạng là không cố định.
+Nói tóm lại, thứ bậc xếp hạng không hề cố định.
 Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
 Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
@@ -75,7 +76,7 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 * Nhiều người dùng có thói quen rất đặc biệt liên quan tới thời gian mở ứng dụng.
 Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
 Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi thị trường mở cửa.
-* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
+* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai đều là bài toán ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
 Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
 * Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
@@ -83,7 +84,7 @@ Nếu chúng ta hoán vị chúng, chúng sẽ không còn nhiều ý nghĩa.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn và xác suất xảy ra dư chấn cao hơn nhiều so với trường hợp trận động đất lớn không xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
-* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
+* Con người tương tác với nhau một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -100,12 +101,14 @@ In short, we need statistical tools and new deep neural networks architectures t
 To keep things simple, we use the stock price illustrated in :numref:`fig_ftse100` as an example.
 -->
 
+
 Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
 Để đơn giản hóa mọi việc, ta sẽ sử dụng giá cổ phiếu được minh họa trong :numref:`fig_ftse100` để làm ví dụ.
 
 <!--
 ![FTSE 100 index over 30 years](../img/ftse100.png)
 -->
+
 
 ![Giá cổ phiếu FTSE 100 trong vòng 30 năm](../img/ftse100.png)
 :width:`400px`
@@ -115,6 +118,7 @@ Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạ
 Let us denote the prices by $x_t \geq 0$, i.e., at time $t \in \mathbb{N}$ we observe price $x_t$.
 For a trader to do well in the stock market on day $t$ he should want to predict $x_t$ via
 -->
+
 
 Ta sẽ gọi giá cổ phiếu là $x_t \geq 0$, tức tại thời điểm $t \in \mathbb{N}$ ta thấy giá cổ phiếu bằng $x_t$.
 Để có thể kiếm lời trên thị trường chứng khoán vào ngày $t$, một nhà giao dịch sẽ muốn dự đoán $x_t$ thông qua
@@ -139,7 +143,7 @@ In a nutshell it boils down to two strategies:
 Chỉ có một vấn đề lớn ở đây, đó là số lượng đầu vào, $x_{t-1}, \ldots, x_1$ thay đổi tùy thuộc vào $t$.
 Cụ thể, số lượng đầu vào sẽ tăng cùng với lượng dữ liệu thu được và ta sẽ cần một phép tính xấp xỉ để làm cho giải pháp này khả thi về mặt tính toán.
 Phần lớn nội dung tiếp theo trong chương này sẽ xoay quanh việc làm thế nào để ước lượng $p(x_t \mid x_{t-1}, \ldots, x_1)$ một cách hiệu quả.
-Tóm lại, ta có hai chiến lược:
+Nói ngắn gọn, ta có hai chiến lược:
 
 <!--
 1. Assume that the potentially rather long sequence $x_{t-1}, \ldots, x_1$ is not really necessary. 
@@ -157,7 +161,7 @@ LSTMs and GRUs are examples of this.
 Trong trường hợp này, ta có thể hài lòng với một khoảng thời gian $\tau$ và chỉ sử dụng các quan sát $x_{t-1}, \ldots, x_{t-\tau}$.
 Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng nhau, ít nhất là với $t > \tau$.
 Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
-Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy trên chính nó.
+Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng tự thực hiện hồi quy trên chính mình.
 2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một giá trị $h_t$ để tóm tắt các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
 Kết quả là mô hình sẽ ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
 Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy tiềm ẩn* (_latent autoregressive model_).
@@ -185,12 +189,12 @@ Regardless of what we do, we will thus get an estimate of the entire time series
 -->
 
 Cả hai trường hợp đều đặt ra câu hỏi về cách tạo ra dữ liệu huấn luyện.
-Người ta thường sử dụng các quan sát quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
+Người ta thường sử dụng các quan sát từ quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
 Rõ ràng chúng ta không thể trông đợi thời gian sẽ đứng yên.
-Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, thì ít nhất động lực của chuỗi thời gian sẽ không đổi.
-Điều này khá hợp lý, vì động lực thay đổi thì không thể dự đoán được bằng cách sử dụng dữ liệu mà chúng ta có.
+Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, ít nhất động lực của chuỗi thời gian sẽ không đổi.
+Điều này khá hợp lý, vì nếu động lực thay đổi thì ta không thể dự đoán được bằng cách sử dụng dữ liệu mà ta đang có. 
 Các nhà thống kê gọi các động lực không thay đổi này là *cố định* (*stationary*).
-Do đó, bất kể làm gì, chúng ta cũng sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
+Dù có làm gì đi chăng nữa, chúng ta sẽ vẫn tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}, \ldots, x_1).$$
@@ -200,8 +204,8 @@ Note that the above considerations still hold if we deal with discrete objects, 
 The only difference is that in such a situation we need to use a classifier rather than a regressor to estimate $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 -->
 
-Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ, thay vì số.
-Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ phân loại thay cho một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
+Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ thay vì số.
+Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ phân loại thay vì một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
