@@ -334,13 +334,13 @@ def lstm(inputs, state, params):
 ### Training and Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Dự đoán
 
 <!--
 Let us train an LSTM as same as what we did in :numref:`sec_gru`, by calling the `RNNModelScratch` function as introduced in :numref:`sec_rnn_scratch`.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ huấn luyện một LSTM giống như ta đã làm trong :numref:`sec_gru`, bằng cách gọi hàm `RNNModelScratch` như được giới thiệu ở :numref:`sec_rnn_scratch`.
 
 ```{.python .input  n=9}
 vocab_size, num_hiddens, ctx = len(vocab), 256, d2l.try_gpu()
@@ -354,7 +354,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Triển khai súc tích
 
 <!--
 In Gluon, we can directly call the `LSTM` class in the `rnn` module.
@@ -362,7 +362,8 @@ This encapsulates all the configuration details that we made explicit above.
 The code is significantly faster as it uses compiled operators rather than Python for many details that we spelled out in detail before.
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, ta có thể gọi trực tiếp lớp `LSTM` trong mô-đun `rnn`.
+Lớp này gói gọn tất cả các chi tiết cấu hình mà ta đã lập trình một cách cụ thể ở trên.
 
 ```{.python .input  n=10}
 lstm_layer = rnn.LSTM(num_hiddens)
@@ -378,7 +379,8 @@ However, training LSTMs and other sequence models (such as GRU) are quite costly
 Later we will encounter alternative models such as Transformers that can be used in some cases.
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng thường tốn kém hơn để huấn luyện và thực thi do số lượng trạng thái ẩn lớn hơn.
+Các mô hình LSTM là các mô hình tự động hồi quy tiềm ẩn nguyên mẫu với sự kiểm soát trạng thái không tầm thường.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
