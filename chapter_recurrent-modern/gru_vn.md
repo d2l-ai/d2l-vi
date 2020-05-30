@@ -42,7 +42,7 @@ Ví dụ, khi phân tích một trang web, có thể sẽ có những mã HTML p
 Chúng ta sẽ muốn có một số cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
 * Chúng ta có thể gặp phải những tình huống mà có những khoảng ngắt giữa những các phần của dãy câu.
 Ví dụ, có thể sẽ có những đoạn chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
-Trong trường hợp này, sẽ tốt hơn nếu có một phương tiện để đưa biểu diễn trạng thái bên trong *về trạng thái ban đầu (reset)*.
+Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về trạng thái ban đầu.
 
 <!--
 A number of methods have been proposed to address this.
