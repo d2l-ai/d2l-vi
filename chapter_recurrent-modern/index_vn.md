@@ -2,7 +2,7 @@
 # Modern Recurrent Neural Networks
 -->
 
-# Mạng Truy hồi Hiện đại
+# Mạng Nơ-ron Truy hồi Hiện đại
 :label:`chap_modern_rnn`
 
 <!--
@@ -12,7 +12,9 @@ We will begin by introducing two of such widely-used networks, namely gated recu
 with illustrations using the same language modeling problem as introduced in :numref:`chap_rnn`.
 -->
 
-*dịch đoạn phía trên*
+Dù chúng ta đã hiểu cơ bản về mạng nơ-ron truy hồi, chúng vẫn chưa đủ để giải quyết các vấn đề trong học chuỗi hiện nay.
+Ví dụ, RNN có hiện tượng không ổn định giá trị số khi tính gradient, về điểm này thì các mạng nơ-ron truy hồi theo cổng được sử dụng phổ biến hơn.
+Chúng ta bắt đầu chương này bằng việc giới thiệu hai cấu trúc mạng như vậy, là phần tử truy hồi theo cổng (*gated recurrent unit - GRU*) và bộ nhớ ngắn hạn dài (*long short term memory - LSTM*), sử dụng cùng vấn đề mô hình ngôn ngữ trong :numref:`chap_rnn` để minh hoạ.
 
 <!--
 Furthermore, we will modify recurrent neural networks with a single undirectional hidden layer.
@@ -20,7 +22,9 @@ We will describe deep architectures, and discuss the bidirectional design with b
 They are frequently adopted in modern recurrent networks.
 -->
 
-*dịch đoạn phía trên*
+Xa hơn, chúng ta sẽ thay đổi mạng nơ-ron truy hồi với một tầng ẩn vô hướng đơn.
+Ta cũng sẽ mô ta các kiến trúc mạng sâu, và thảo luận thiết kế hai chiều (*bidirectional*) với việc truy hồi xuôi và ngược.
+Chúng thường xuyên được sử dụng trong các mạng nơ-ron truy hồi hiện đại.
 
 
 <!--
@@ -30,7 +34,8 @@ Finally, we will take machine translation as an example, and introduce the encod
 recurrent neural networks and modern practices for such sequence to sequence learning problems.
 -->
 
-*dịch đoạn phía trên*
+Trên thực tế, phần lớn các vấn đề trong học chuỗi như nhận dạng giọng nói tự động, chuyển đổi văn bản thành giọng nói và dịch máy, có đầu vào và đầu ra đều là chuỗi chiều dài bất kì.
+Cuối cùng, ta sẽ lấy ví dụ về dịch máy, giới thiệu kiến trúc bộ biến đổi - giải biến đổi (*encoder-decoder*) dựa trên mạng nơ-ron truy hồi, và các phương pháp hiện đại để giải quyết các vấn đề học chuỗi trên.
 
 ```toc
 :maxdepth: 2
@@ -49,4 +54,4 @@ beam-search_vn
 Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
-* 
+* Nguyễn Văn Cường
