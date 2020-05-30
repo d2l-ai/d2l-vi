@@ -33,7 +33,7 @@ In this case it would be nice to have a means of *resetting* our internal state 
 -->
 
 * Chúng ta có thể gặp phải những tình huống mà những quan sát (bước thời gian) xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
-Ví dụ, ta có một quan sát đầu tiên chứa checksum và mục tiêu ở đây là phân biệt liệu checksum có đúng hay không tại cuối dãy câu.
+Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị đó tổng kiểm đó có đúng hay không tại cuối câu.
 Trong trường hợp này, ảnh hưởng của thẻ (token) đầu tiên là tối quan trọng.
 Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ngăn nhớ*.
 Nếu không có cơ thế như vậy, một gradient cực lớn phải được cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
