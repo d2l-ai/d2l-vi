@@ -353,14 +353,15 @@ def grad_clipping(model, theta):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Let us first define the function to train the model on one data epoch.
 It differs from the models training of :numref:`sec_softmax_scratch` in three places:
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, ta sẽ định nghĩa hàm huấn luyện mô hình trên một epoch dữ liệu.
+Quá trình huấn luyện ở đây sẽ khác với :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
@@ -369,7 +370,10 @@ This ensures that the model does not diverge even when gradients blow up at some
 3. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
 -->
 
-*dịch đoạn phía trên*
+1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
+2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
+Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm độ lớn của bước cập nhật một cách hiệu quả.
+3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
 
 
 <!--
@@ -380,7 +384,10 @@ When using the random sampling, we need to re-initialize the hidden state for ea
 Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
 -->
 
-*dịch đoạn phía trên*
+Khi thực hiện lấy mẫu liên tục, ta sẽ khởi tạo trạng thái ẩn ở đầu mỗi epoch.
+Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để có thể tính toán gradient trong từng minibatch.
+Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần khởi tạo lại trạng thái ẩn cho mỗi lần lặp vì mỗi mẫu được lấy ra với một vị trí ngẫu nhiên.
+Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sẽ sử dụng một hàm `updater` tổng quát, hàm này có thể là một trình huấn luyện Gluon hoặc được lập trình từ đầu.
 
 
 ```{.python .input}
@@ -412,7 +419,7 @@ def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
 The training function again supports either we implement the model from scratch or using Gluon.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon hoặc mô hình được ta lập trình từ đầu.
 
 
 ```{.python .input  n=11}
@@ -557,7 +564,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 6 -->
 *
