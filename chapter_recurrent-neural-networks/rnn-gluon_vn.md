@@ -89,8 +89,8 @@ Note that `rnn_layer` only contains the hidden recurrent layers, we need to crea
 While in the previous section, we have the output layer within the `rnn` block.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
+Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
@@ -118,13 +118,13 @@ class RNNModel(nn.Block):
 ## Training and Predicting
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện và Dự đoán
 
 <!--
 Before training the model, let us make a prediction with the a model that has random weights.
 -->
 
-*dịch đoạn phía trên*
+Trước khi huấn luyện, hãy thử dự đoán bằng mô hình có trọng số ngẫu nhiên.
 
 ```{.python .input  n=42}
 ctx = d2l.try_gpu()
@@ -137,7 +137,7 @@ d2l.predict_ch8('time traveller', 10, model, vocab, ctx)
 As is quite obvious, this model does not work at all. Next, we call `train_ch8` with the same hyper-parameters defined in :numref:`sec_rnn_scratch` and train our model with Gluon.
 -->
 
-*dịch đoạn phía trên*
+Khá rõ ràng, mô hình này không tốt. Tiếp theo, ta gọi hàm `train_ch8` với cùng các siêu tham số định nghĩa trong :numref:`sec_rnn_scratch` để huấn luyện mô hình bằng Gluon.
 
 ```{.python .input  n=19}
 num_epochs, lr = 500, 1
@@ -148,7 +148,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Compared with the last section, this model achieves comparable perplexity, albeit within a shorter period of time, due to the code being more optimized.
 -->
 
-*dịch đoạn phía trên*
+So với phần trước, mô hình này đạt được độ rối rắm tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
 
 <!--
 ## Summary
@@ -162,7 +162,9 @@ Compared with the last section, this model achieves comparable perplexity, albei
 * As before, the computational graph needs to be detached from previous steps for reasons of efficiency.
 -->
 
-*dịch đoạn phía trên*
+* Mô-đun `rnn` của Gluon lập trình sẵn tầng của mạng nơ-ron truy hồi.
+* Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không bao gồm tính toán tại tầng đầu ra.
+* Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 
 <!--
 ## Exercises
@@ -185,7 +187,18 @@ Compared with the last section, this model achieves comparable perplexity, albei
     * Why does not everyone use this model for text compression? Hint: what about the compressor itself?
 -->
 
-*dịch đoạn phía trên*
+1. So sánh với cách lập trình từ đầu ở phần trước.
+    * Tại sao lập trình bằng Gluon chạy nhanh hơn?
+    * Nếu bạn quan sát thấy khác biệt đáng kể nào ngoài tốc độ, hãy tìm hiểu lý do.
+2. Bạn có thể làm quá khớp mô hình không?
+    * Bằng cách tăng số nút ẩn.
+    * Bằng cách tằng số vòng lặp.
+    * Nếu thay đổi tham số gọt (*clipping*) thì sao?
+3. Lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
+4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
+5. Có thể nén văn bản bằng cách sử dụng mô hình này không?
+    * Nếu có thì cần bao nhiêu bit?
+    * Tại sao không ai sử dụng mô hình này để nén văn bản? Gợi ý: bản thân bộ nén thì sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
