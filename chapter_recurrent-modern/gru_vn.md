@@ -16,7 +16,7 @@ Let us briefly think about what such gradient anomalies mean in practice:
 
 Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng nơ-ron truy hồi.
 Cụ thể ta đã phát hiện rằng tích của một chuỗi dài các ma trận có thể dẫn đến việc gradient tiêu biến hoặc bùng nổ.
-Giờ ta hãy nghĩ vắn tắt về việc những gradient bất thường như vậy có ý nghĩa như thế nào trong thực tế:
+Bây giờ hãy suy nghĩ nhanh về ý nghĩa của những gradient bất thường như vậy trong thực tế:
 
 <!--
 * We might encounter a situation where an early observation is highly significant for predicting all future observations.
