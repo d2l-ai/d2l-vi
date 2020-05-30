@@ -375,7 +375,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình Ngắn gọn
 
 <!--
 In Gluon, we can directly call the `GRU` class in the `rnn` module.
@@ -383,7 +383,9 @@ This encapsulates all the configuration detail that we made explicit above.
 The code is significantly faster as it uses compiled operators rather than Python for many details that we spelled out in detail before.
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, chúng ta có thể trực tiếp gọi lớp `GRU` trong mô-đun `rnn`.
+Mô-đun này đóng gói tất cả các chi tiết cấu hình mà chúng ta đã thực hiện rõ ràng ở trên.
+Mã này nhanh hơn đáng kể vì nó sử dụng các toán tử đã được biên dịch chứ không phải là các toán tử thuần Python cho nhiều chi tiết mà chúng ta nêu ra ở trên.
 
 
 ```{.python .input  n=9}
@@ -405,7 +407,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed.
 -->
 
-*dịch đoạn phía trên*
+* Mạng nơ-ron truy hồi có cổng bắt các phụ thuộc trong chuỗi thời gian với khoảng cách bước thời gian lớn tốt hơn.
+* Cổng khởi động lại giúp ích trong việc bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng cập nhật giúp ích trong việc bắt các phụ thuộc dài hạn trong chuỗi thời gian.
+* Các mạng GRU chứa các khối RNN cơ bản như là một trường hợp cực đoan bất cứ khi nào cổng cài đặt lại được bật lên. Chúng có thể bỏ qua các chuỗi khi cần.
 
 
 <!--
@@ -421,7 +426,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. What happens if you implement only parts of a GRU? That is, implement a recurrent cell that only has a reset gate. Likewise, implement a recurrent cell only with an update gate.
 -->
 
-*dịch đoạn phía trên*
+1. Hãy so sánh thời gian chạy, độ hỗn độn, và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU` với nhau.
+2. Giả sử rằng chúng ta chỉ muốn sử dụng các đầu vào cho bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $ t> t'$. Hãy xác định các giá trị tốt nhất cho các cổng khởi động lại và cổng cập  tại mỗi bước thời gian?
+3. Điều chỉnh các siêu tham số, quan sát và phân tích tác động của điều chỉnh này tới thời gian chạy, độ hỗn độn, và các lời bài hát.
+4. Điều gì xảy ra nếu bạn thực hiện chỉ bộ phận của một khối GRU? Đó là, lập trình một khối hồi quy mà chỉ có một cổng khởi động lại. Tương tự như vậy, thực hiện một khối hồi quy chỉ với một cổng cập nhật.
+
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -460,4 +469,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Nguyễn Văn Quang
