@@ -208,7 +208,7 @@ Hence, BPTT has a slight regularizing effect which can be desirable.
 Từ định nghĩa của $\xi_t$, ta có $E[z_t] = \partial_w h_t$.
 Bất cứ khi nào $\xi_t = 0$, khai triển sẽ kết thúc tại điểm đó.
 Điều này dẫn đến một tổng trọng số của các chuỗi có chiều dài biến thiên, trong đó có ít chuỗi dài nhưng được đánh trọng số cao tương ứng.
-:cite:`Tallec.Ollivier.2017` đưa ra đề xuất này trong nghiên cứu của họ.
+:cite:`Tallec.Ollivier.2017` đưa ra đề xuất này trong bài báo nghiên cứu của họ.
 Không may, dù lý thuyết rất đáng chú ý, cách làm này không tốt hơn cách cắt bỏ đơn giản, nhiều khả năng do các yếu tố sau.
 Thứ nhất, tác động đến quá khứ của quan sát sau một vài lượt lan truyền ngược tương đối đủ để nắm bắt các phụ thuộc trên thực tế.
 Thứ hai, phương sai tăng lên nên gradient không thể chính xác hơn.
