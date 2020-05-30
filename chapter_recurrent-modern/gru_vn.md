@@ -14,7 +14,7 @@ In particular we found that long products of matrices can lead to vanishing or d
 Let us briefly think about what such gradient anomalies mean in practice:
 -->
 
-Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng neuron truy hồi.
+Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng nơ-ron truy hồi.
 Cụ thể đã phát hiện được rằng những tích dài của các ma trận có thể dẫn đến việc tiêu biến hoặc phân kỳ gradient.
 Giờ ta hãy nghĩ vắn tắt về việc những gradient bất thường như vậy có ý nghĩa như thế nào trong thực tế:
 
@@ -53,7 +53,7 @@ Due to its simplicity, let us start with the GRU.
 -->
 
 Nhiều phương pháp đã được đề xuất để giải quyết những điều này.
-Một trong những phương pháp sớm nhất chính là Trí nhớ ngắn hạn hướng dài hạn (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
+Một trong những phương pháp sớm nhất chính là Bộ nhớ ngắn hạn dài (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
 Đơn vị hồi quy có cổng (Gated Recurrent Unit - GRU) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể của LSTM, được tổ chức hợp lý hơn một chút, thường mang lại hiệu quả tương đương và có thể tính toán nhanh hơn đáng kể.
 Xem :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
 Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
@@ -461,7 +461,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Võ Tấn Phát
 
 <!-- Phần 2 -->
 *
