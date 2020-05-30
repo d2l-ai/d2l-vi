@@ -205,7 +205,7 @@ Third, we actually *want* models that have only a short range of interaction.
 Hence, BPTT has a slight regularizing effect which can be desirable.
 -->
 
-Từ định nghĩa $\xi_t$, ta có $E[z_t] = \partial_w h_t$.
+Từ định nghĩa của $\xi_t$, ta có $E[z_t] = \partial_w h_t$.
 Bất cứ khi nào $\xi_t = 0$, tại điểm đó sự mở rộng kết thúc.
 Điều này dẫn đến một tổng trọng số của các chuỗi có chiều dài biến thiên, trong đó có ít chuỗi dài nhưng được đánh trọng số cao tương ứng.
 :cite:`Tallec.Ollivier.2017` đưa ra đề xuất này trong nghiên cứu của họ.
