@@ -286,9 +286,9 @@ This is both a curse and a blessing.
 A curse since it limits the speed of making progress, whereas a blessing since it limits the extent to which things can go wrong if we move in the wrong direction.
 -->
 
-Trong trường hợp này, ta có thể giả định một cách an toàn rằng nếu chúng tôi cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, ta sẽ không quan sát thấy sự thay đổi nhiều hơn $L \eta \|\mathbf{g}_t\|$.
+Trong trường hợp này, ta có thể giả định một cách an toàn rằng bằng cách cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
 Đây là cả một lời nguyền và một phước lành.
-Nó là một lời nguyền vì nó giới hạn tốc độ tiến bộ, trong khi một phước lành vì nó giới hạn mức độ mà mọi thứ có thể đi sai nếu chúng ta đi sai hướng.
+Một lời nguyền là vì nó giới hạn tốc độ tiến bộ,  một phước lành là bởi nó hạn chế mức độ sai lệnh trong trường hợp chúng ta đi sai hướng.
 
 <!--
 Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
@@ -300,9 +300,9 @@ One alternative is to clip the gradients by projecting them back to a ball of a 
 
 Đôi khi gradient có thể khá lớn và thuật toán tối ưu có thể không hội tụ.
 Ta có thể giải quyết vấn đề này bằng cách giảm tốc độ học $\eta$ hoặc bằng một số thủ thuật bậc cao khác.
-Nhưng điều gì sẽ xảy ra nếu chúng ta hiếm khi nhận được độ dốc lớn?
-Trong trường hợp này, cách tiếp cận như vậy có thể xuất hiện hoàn toàn không chính đáng.
-Một cách khác là cắt bớt các gradient bằng cách chiếu chúng trở lại một quả bóng có bán kính nhất định, giả sử $\theta$ thông qua
+Nhưng điều gì sẽ xảy ra nếu chúng ta hiếm khi nhận được gradient lớn?
+Trong trường hợp này, cách tiếp cận như vậy không được bảo đảm hoàn toàn.
+Một cách khác là cắt bớt các gradient bằng cách chiếu chúng trở lại một quả cầu với bán kính $\theta$ thông qua:
 
 $$\mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g}.$$
 
@@ -314,18 +314,18 @@ Gradient clipping provides a quick fix to the gradient exploding.
 While it does not entirely solve the problem, it is one of the many techniques to alleviate it.
 -->
 
-Bằng cách làm như vậy, chúng tôi biết rằng định mức độ dốc không bao giờ vượt quá $\theta$ và độ dốc được cập nhật hoàn toàn phù hợp với hướng ban đầu $\mathbf{g}$.
-Nó cũng có tác dụng phụ mong muốn là hạn chế ảnh hưởng của bất kỳ xe buýt nhỏ nào (và bên trong nó là bất kỳ mẫu nào) có thể tác động lên các vector trọng số.
+Bằng cách làm như vậy, ta biết rằng chuẩn độ dốc không bao giờ vượt quá $\theta$ và độ dốc được cập nhật hoàn toàn phù hợp với hướng ban đầu $\mathbf{g}$.
+Nó cũng có tác dụng phụ tích cực là hạn chế ảnh hưởng của bất kỳ minibatch nào (và bên trong nó là bất kỳ mẫu nào) có thể tác động lên các vector trọng số.
 Điều này mang lại một độ mạnh mẽ nhất định cho mô hình.
-Cắt gradient cung cấp một sửa chữa nhanh chóng cho gradient phát nổ.
-Mặc dù nó không hoàn toàn giải quyết vấn đề, nhưng nó là một trong nhiều kỹ thuật để giảm bớt nó.
+Gọt gradient là một phương án sửa chữa nhanh chóng cho vấn đề gradient phát nổ.
+Mặc dù nó không hoàn toàn giải quyết vấn đề, nhưng là một trong nhiều kỹ thuật để giảm bớt vấn đề đó.
 
 <!--
 Below we define a function to clip the gradients of a model that is either a `RNNModelScratch` instance or a Gluon model.
 Also note that we compute the gradient norm over all parameters.
 -->
 
-Dưới đây, chúng tôi định nghĩa một hàm để cắt các gradient của một mô hình là một thể hiện `RNNModelScratch` hoặc một mô hình Gluon.
+Dưới đây, chúng tôi định nghĩa một hàm để gọt các gradient của mô hình: hoặc là một thực thể `RNNModelScratch` hoặc là một mô hình Gluon.
 Cũng lưu ý rằng chúng tôi tính toán trung bình gradient trên tất cả các tham số.
 
 
