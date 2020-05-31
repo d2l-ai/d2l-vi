@@ -189,7 +189,7 @@ Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo
 Do đó các lỗi xấp xỉ này được cho bởi $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
 Trong thực tế chiến lược này hoạt động khá tốt.
 Cách này thường được gọi là Cắt xén BPTT( *backpropagation through time* -- lan truyền ngược qua thời gian).
-Một trong những hệ quả của cách này là mô hình tập trung chủ yếu vào ảnh hưởng ngắn hạn hơn là lâu dài.
+Một trong những hệ quả của cách này là mô hình tập trung chủ yếu vào ảnh hưởng ngắn hạn thay vì dài hạn.
 Đây thực sự là điều chúng ta *mong muốn*, vì nó hướng các ước lượng tới mô hình đơn giản hơn và ổn định hơn.
 
 <!--
