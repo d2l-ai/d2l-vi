@@ -168,7 +168,7 @@ Hence this strategy is almost never used in practice.
 * ** Tính toàn bộ tổng.**
 Cách này rất chậm và gradient có thể bùng nổ vì những thay đổi nhỏ trong các điều kiện ban đầu cũng có khả năng ảnh hưởng đến kết quả rất nhiều.
 Nghĩa là, chúng ta có thể thấy những điều tương tự như hiệu ứng cánh bướm nơi mà những thay đổi tối thiểu trong điều kiện ban đầu dẫn đến những thay đổi không cân xứng trong kết quả.
-Đây thực sự là điều không mong muốn về mô hình mà chúng ta muốn ước lượng.
+Đây thực sự là điều không mong muốn khi xét tới mô hình mà chúng ta muốn ước lượng.
 Sau tất cả, chúng ta đang cố tìm kiếm một bộ ước lượng mạnh mẽ mà khái quát tốt.
 Do đó chiến lược này hầu như không bao giờ được sử dụng trong thực tế.
 
