@@ -321,7 +321,7 @@ The key quantity is how past hidden states affect future hidden states.
 -->
 
 Cuối cùng, các trạng thái ẩn phụ thuộc lẫn nhau và phụ thuộc vào đầu vào quá khứ.
-Một thành phần định lượng quan trọng là các trạng thái ẩn quá khứ ảnh hưởng tới các trạng thái ẩn tương lai như thế nào.
+Một đại lượng quan trọng là các trạng thái ẩn quá khứ ảnh hưởng tới các trạng thái ẩn tương lai như thế nào.
 
 $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
 \text{ do~đó }
