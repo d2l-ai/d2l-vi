@@ -5,7 +5,7 @@
 # Gated Recurrent Units (GRU)
 -->
 
-# *dịch tiêu đề phía trên*
+# Nút Truy hồi theo Cổng (GRU)
 :label:`sec_gru`
 
 <!--
