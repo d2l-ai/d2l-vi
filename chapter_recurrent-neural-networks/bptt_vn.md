@@ -16,7 +16,7 @@ In this section we will delve a bit more deeply into the details of backpropagat
 For a more detailed discussion about randomization and backpropagation also see the paper by :cite:`Tallec.Ollivier.2017`.
 -->
 
-Cho đến nay chúng ta liên tục nhắc đến những vấn đề như *bùng nổ gradient*, *tiêu biến gradient*, *cắt xén backprop*, và việc *tách khỏi đồ thị tính toán*.
+Cho đến nay chúng ta liên tục nhắc đến những vấn đề như *bùng nổ gradient*, *tiêu biến gradient*, *xén lan truyển ngược* và việc cần thiết phải *tách đồ thị tính toán*.
 Ví dụ, trong phần trước chúng ta gọi hàm `s.detach()` trên chuỗi.
 Những vấn đề này chưa được giải thích một cách đầy đủ với mục đích có thể xây dựng một mô hình một cách nhanh chóng và quan sát nó hoạt động như thế nào.
 Trong phần này chúng ta sẽ nghiên cứu sâu hơn và chi tiết hơn về lan truyền ngược cho các mô hình chuỗi và nguyên lý toán học đằng sau hoạt động như thế nào và tại sao.
