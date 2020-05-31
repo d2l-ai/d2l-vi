@@ -214,7 +214,7 @@ $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
 ![Computation of the hidden state. Multiplication is elementwise. ](../img/lstm_3.svg)
 -->
 
-![Các phép tính của trạng thái ẩn. Phép tính nhân được thực hiện từng phần tử một (elementwise). ](../img/lstm_3.svg)
+![Các phép tính của trạng thái ẩn. Phép tính nhân được thực hiện từng phần tử một (_elementwise_). ](../img/lstm_3.svg)
 :label:`lstm_3`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
