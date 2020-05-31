@@ -40,7 +40,7 @@ Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (
 Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào đơn vị LSTM.
 Chúng ta gọi cổng này là *cổng đầu vào* (input gate).
 Cuối cùng, chúng ta cần một cơ chế để thiết lập lại các nội dung của đơn vị LSTM, chi phối bởi một *cổng quên* (forget gate).
-Động lực cho một thiết kế trên tương tự như trước đây, cụ thể là để có thể quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
+Động lực của thiết kế trên cũng tương tự như trước đây, đó là đưa ra quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
 Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực tế.
 
 <!--
