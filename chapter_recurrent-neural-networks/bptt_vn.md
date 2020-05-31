@@ -93,7 +93,7 @@ To be specific, by the chain rule,
 -->
 
 Đối với lan truyền ngược, vấn đề phức tạp hơn một chút khi chúng ta tính toán gradient liên quan đến các tham số $w_h$ của hàm mục tiêu $L$.
-Cụ thể, bởi quy tắc dây chuyền dưới đây
+Cụ thể là theo quy tắc dây chuyền dưới đây
 
 
 $$\begin{aligned}
