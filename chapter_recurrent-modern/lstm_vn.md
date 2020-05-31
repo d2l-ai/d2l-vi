@@ -222,8 +222,8 @@ Now let us implement an LSTM from scratch.
 As same as the experiments in the previous sections, we first load data of *The Time Machine*.
 -->
 
-Bây giờ ta sẽ lập trình từ đầu một LSTM.
-Giống như các thử nghiệm trong các phần trước, trước tiên ta sẽ đọc dữ liệu *The Time Machine*.
+Bây giờ ta sẽ lập trình một LSTM từ đầu.
+Giống như các thử nghiệm trong các phần trước, trước tiên ta sẽ tải tập dữ liệu *Cỗ Máy Thời Gian*.
 
 ```{.python .input  n=1}
 import d2l
@@ -248,8 +248,8 @@ We initialize weights following a Gaussian distribution with $0.01$ standard dev
 -->
 
 Tiếp theo ta cần định nghĩa và khởi tạo các tham số mô hình.
-Như trước đây, siêu tham số `num_hiddens` định nghĩa số lượng nút ẩn.
-Ta sẽ khởi tạo các trọng số bằng phân phối Gauss với độ lệch chuẩn bằng $0.01$ và đặt các hệ số điều chỉnh bằng $0$.
+Cũng giống như trước đây, siêu tham số `num_hiddens` định nghĩa số lượng các nút ẩn.
+Ta sẽ khởi tạo các trọng số theo phân phối Gauss với độ lệch chuẩn bằng $0.01$ và đặt các hệ số điều chỉnh bằng $0$.
 
 
 ```{.python .input  n=2}
@@ -294,7 +294,7 @@ In the initialization function, the hidden state of the LSTM needs to return an 
 Hence we get the following state initialization.
 -->
 
-Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về một ô nhớ bổ sung có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
+Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về một đơn vị nhớ bổ sung có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
 
 ```{.python .input  n=3}
 def init_lstm_state(batch_size, num_hiddens, ctx):
@@ -308,9 +308,9 @@ Note that only the hidden state is passed to the output layer.
 The memory cells $\mathbf{C}_t$ do not participate in the output computation directly.
 -->
 
-Mô hình thực tế được định nghĩa giống như ta đã thảo luận trước đây: cung cấp ba cổng và một ô nhớ phụ trợ.
-Lưu ý rằng chỉ có trạng thái ẩn được truyền cho tầng đầu ra.
-Các ô nhớ $\mathbf{C}_t$ không tham gia trực tiếp vào tính toán đầu ra.
+Mô hình thực tế được định nghĩa giống như những gì ta đã thảo luận trước đây: cung cấp ba cổng và một đơn vị nhớ phụ.
+Lưu ý rằng chỉ có trạng thái ẩn được truyền tới tầng đầu ra.
+Các đơn vị nhớ $\mathbf{C}_t$ không tham gia trực tiếp vào việc tính toán đầu ra.
 
 
 ```{.python .input  n=4}
