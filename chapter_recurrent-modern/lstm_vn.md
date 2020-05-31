@@ -170,7 +170,7 @@ We thus arrive at the flow diagram in :numref:`lstm_2`.
 -->
 
 Nếu giá trị ở cổng quên luôn xấp xỉ $1$ và cổng đầu vào p luôn cũng xấp xỉ $0$, thì đơn vị bộ nhớ quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại theo thời gian và truyền cho bước thời gian hiện tại.
-Thiết kế này đã được giới thiệu để làm giảm bớt vấn đề tiêu biến gradient và để nắm bắt được phụ thuộc dài trong chuỗi thời gian.
+Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt tốt hơn các phụ thuộc cho chuỗi thời gian với các phụ thuộc dài hạn.
 Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
 <!--
