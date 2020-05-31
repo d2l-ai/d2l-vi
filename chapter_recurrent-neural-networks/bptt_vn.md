@@ -57,7 +57,7 @@ Sau đó, dựa trên quy tắc dây chuyền, chúng ta áp dụng lan truyền
 Vì chuỗi có thể khá dài nên sự phụ thuộc trong chuỗi cũng có thể rất dài.
 Ví dụ, đối với một chuỗi gồm 1000 ký tự, ký tự đầu tiên có thể ảnh hưởng đáng kể tới ký tự ở vị trí 1000.
 Điều này thực sự khả thi về mặt tính toán (đòi hỏi quá nhiều thời gian và bộ nhớ) và nó đòi hỏi hơn 1000 phép nhân ma trận-vector trước khi chúng ta sẽ đạt được các giá trị gradient rất khó nắm bắt.
-Đây là một quá trình bất định về mặt tính toán và thống kê.
+Đây là một quá trình chứa đầy sự bất định về mặt tính toán và thống kê.
 Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì xảy ra và làm thế nào để giải quyết vấn đề này trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
