@@ -401,7 +401,7 @@ Formalize this statement.
 1. Giả sử ta có ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ có các trị riêng $\lambda_i$.
 Không mất tính tổng quát, giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
 Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
-2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ tương ứng với trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$. <!-- không hiểu đoạn này lắm, hóng cao nhân :) -->
+2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ gần như là cùng phương với vector trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$.
 3. Kết quả trên có ý nghĩa như thế nào khi tính gradient của mạng nơ-ron truy hồi?
 4. Ngoài gọt gradient, có phương pháp nào để xử lý bùng nổ gradient trong mạng nơ-ron truy hồi không?
 
