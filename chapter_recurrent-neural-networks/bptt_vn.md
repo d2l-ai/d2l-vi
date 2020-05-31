@@ -5,7 +5,7 @@
 # Backpropagation Through Time
 -->
 
-# Lan Truyền Ngược Theo Thời Gian
+# Lan Truyền Ngược Qua Thời Gian
 :label:`sec_bptt`
 
 <!--
