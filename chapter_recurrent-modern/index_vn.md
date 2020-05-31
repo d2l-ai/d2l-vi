@@ -34,7 +34,7 @@ Finally, we will take machine translation as an example, and introduce the encod
 recurrent neural networks and modern practices for such sequence to sequence learning problems.
 -->
 
-Trên thực tế, phần lớn các vấn đề trong học chuỗi như nhận dạng giọng nói tự động, chuyển đổi văn bản thành giọng nói và dịch máy, có đầu vào và đầu ra đều là chuỗi chiều dài bất kì.
+Trên thực tế, phần lớn các bài toán học chuỗi như nhận dạng giọng nói tự động, chuyển đổi văn bản thành giọng nói và dịch máy đều có đầu vào và đầu ra là các chuỗi với chiều dài bất kì.
 Cuối cùng, ta sẽ lấy ví dụ về dịch máy, giới thiệu kiến trúc bộ biến đổi - giải biến đổi (*encoder-decoder*) dựa trên mạng nơ-ron truy hồi, và các phương pháp hiện đại để giải quyết các vấn đề học chuỗi trên.
 
 ```toc
