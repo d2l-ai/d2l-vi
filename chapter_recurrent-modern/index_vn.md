@@ -22,7 +22,7 @@ We will describe deep architectures, and discuss the bidirectional design with b
 They are frequently adopted in modern recurrent networks.
 -->
 
-Xa hơn, chúng ta sẽ thay đổi mạng nơ-ron truy hồi với một tầng ẩn vô hướng đơn.
+Hơn nữa, chúng ta sẽ thay đổi mạng nơ-ron truy hồi với một tầng ẩn vô hướng đơn.
 Ta cũng sẽ mô ta các kiến trúc mạng sâu, và thảo luận thiết kế hai chiều (*bidirectional*) với việc truy hồi xuôi và ngược.
 Chúng thường xuyên được sử dụng trong các mạng nơ-ron truy hồi hiện đại.
 
