@@ -183,7 +183,7 @@ One of the consequences of this is that the model focuses primarily on short-ter
 This is actually *desirable*, since it biases the estimate towards simpler and more stable models.
 -->
 
-* **Rút gọn tổng sau** $\tau$ **bước.**
+* **Cắt xén tổng sau** $\tau$ **bước.**
 Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo luận.
 Điều này dẫn tới một phép *xấp xỉ* gradient gần đúng, chỉ đơn giản bằng cách dừng tổng trên tại $\partial_w h_{t-\tau}$.
 Do đó các lỗi xấp xỉ này được cho bởi $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
