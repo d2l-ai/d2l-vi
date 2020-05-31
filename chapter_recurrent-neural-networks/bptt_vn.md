@@ -187,7 +187,7 @@ This is actually *desirable*, since it biases the estimate towards simpler and m
 Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo luận.
 Điều này dẫn tới một phép *xấp xỉ* gradient gần đúng, chỉ đơn giản bằng cách dừng tổng trên tại $\partial_w h_{t-\tau}$.
 Do đó các lỗi xấp xỉ này được cho bởi $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
-Trong thực tế này chiến lược này hoạt động khá tốt.
+Trong thực tế chiến lược này hoạt động khá tốt.
 Cách này thường được gọi là Rút gọn BPTT(lan truyền ngược theo thời gian).
 Một trong những hệ quả của cách này là mô hình tập trung chủ yếu vào ảnh hưởng ngắn hạn hơn là lâu dài.
 Đây thực sự là điều chúng ta *mong muốn*, vì nó hướng các ước lượng tới mô hình đơn giản hơn và ổn định hơn.
