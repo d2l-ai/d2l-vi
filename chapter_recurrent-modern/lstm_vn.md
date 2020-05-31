@@ -119,7 +119,7 @@ This leads to the following equation at timestep $t$.
 -->
 
 Tiếp theo, chúng ta sẽ thiết kế một đơn vị bộ nhớ.
-Vì chúng ta vẫn chưa xác định tác động của cổng khác nhau nào, nên đầu tiên chúng ta sẽ giới thiệu đơn vị bộ nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu đơn vị bộ nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
 Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
 Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
