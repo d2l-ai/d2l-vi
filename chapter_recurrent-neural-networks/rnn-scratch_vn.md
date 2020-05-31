@@ -288,7 +288,7 @@ A curse since it limits the speed of making progress, whereas a blessing since i
 
 Trong trường hợp này, ta có thể giả định một cách an toàn rằng bằng cách cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
 Đây là cả một lời nguyền và một phước lành.
-Một lời nguyền là vì nó giới hạn tốc độ tiến bộ,  một phước lành là bởi nó hạn chế mức độ sai lệnh trong trường hợp chúng ta đi sai hướng.
+Một lời nguyền là vì nó giới hạn tốc độ tiến bộ, trong khi việc nó là một phước lành là bởi nó hạn chế mức độ sai lệnh trong trường hợp chúng ta đi sai hướng.
 
 <!--
 Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
@@ -317,7 +317,7 @@ While it does not entirely solve the problem, it is one of the many techniques t
 Bằng cách làm như vậy, ta biết rằng chuẩn độ dốc không bao giờ vượt quá $\theta$ và độ dốc được cập nhật hoàn toàn phù hợp với hướng ban đầu $\mathbf{g}$.
 Nó cũng có tác dụng phụ tích cực là hạn chế ảnh hưởng của bất kỳ minibatch nào (và bên trong nó là bất kỳ mẫu nào) có thể tác động lên các vector trọng số.
 Điều này mang lại một độ mạnh mẽ nhất định cho mô hình.
-Gọt gradient là một phương án sửa chữa nhanh chóng cho vấn đề gradient phát nổ.
+Cắt bớt gradient là một phương án sửa chữa nhanh chóng cho vấn đề phát nổ gradient.
 Mặc dù nó không hoàn toàn giải quyết vấn đề, nhưng là một trong nhiều kỹ thuật để giảm bớt vấn đề đó.
 
 <!--
@@ -325,7 +325,7 @@ Below we define a function to clip the gradients of a model that is either a `RN
 Also note that we compute the gradient norm over all parameters.
 -->
 
-Dưới đây, chúng tôi định nghĩa một hàm để gọt các gradient của mô hình: hoặc là một thực thể `RNNModelScratch` hoặc là một mô hình Gluon.
+Dưới đây, chúng tôi định nghĩa một hàm để cắt bớt các gradient của mô hình là một thực thể `RNNModelScratch` hoặc một mô hình Gluon.
 Cũng lưu ý rằng chúng tôi tính toán trung bình gradient trên tất cả các tham số.
 
 
