@@ -159,6 +159,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
 |--------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
+| gated recurrent unit           | nút truy hồi theo cổng      | |
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | Gaussian noise                 | nhiễu Gauss                       |                                                                                            |
 | generalization error           | lỗi khái quát                     | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
