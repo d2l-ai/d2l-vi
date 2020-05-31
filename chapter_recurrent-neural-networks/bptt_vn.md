@@ -211,7 +211,7 @@ Bất cứ khi nào $\xi_t = 0$, khai triển sẽ kết thúc tại điểm đ�
 :cite:`Tallec.Ollivier.2017` đưa ra đề xuất này trong bài báo nghiên cứu của họ.
 Không may, dù phương pháp này khá hấp dẫn về mặt lý thuyết, nó lại không tốt hơn cách cắt bỏ đơn giản, nhiều khả năng do các yếu tố sau.
 Thứ nhất, tác động của một quan sát đến quá khứ sau một vài lượt lan truyền ngược đã là tương đối đủ để nắm bắt các phụ thuộc trên thực tế.
-Thứ hai, phương sai tăng lên nên gradient không thể chính xác hơn.
+Thứ hai, phương sai tăng lên làm phản tác dụng của việc có gradient chính xác hơn.
 Thứ ba, ta thực sự *muốn* các mô hình có khoảng tương tác ngắn.
 Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có ích.
 
