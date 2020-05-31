@@ -79,7 +79,7 @@ npx.one_hot(X.T, len(vocab)).shape
 ## Initializing the Model Parameters
 -->
 
-## Khởi tạo Tham số cho Mô hình
+## Khởi tạo Tham số Mô hình
 
 <!--
 Next, we initialize the model parameters for a RNN model.
@@ -123,8 +123,8 @@ Using tuples makes it easier to handle situations where the hidden state contain
 -->
 
 Đầu tiên, chúng ta cần một hàm `init_rnn_state` để trả về trạng thái ẩn khi khởi tạo.
-Nó trả về một `ndarray` chứa 0 và có hình dạng (kích thước batch, số nút ẩn).
-Sử dụng tuple giúp dễ dàng xử lý các tình huống trong đó trạng thái ẩn chứa nhiều biến (ví dụ: khi kết hợp nhiều tầng trong RNN trong đó mỗi tầng yêu cầu khởi tạo).
+Nó trả về một `ndarray` chứa giá trị 0 và có kích thước là (kích thước batch, số nút ẩn).
+Sử dụng tuple giúp ta dễ dàng xử lý các tình huống trong đó trạng thái ẩn chứa nhiều biến (ví dụ: khi ta cần khởi tạo nhiều tầng được kết hợp trong RNN).
 
 
 ```{.python .input  n=20}
@@ -139,8 +139,8 @@ As described in :numref:`sec_mlp`, the mean value of the $\tanh$ function is 0, 
 -->
 
 Hàm `rnn` sau đây định nghĩa cách tính trạng thái ẩn và đầu ra trong bước thời gian.
-Hàm kích hoạt ở đây sử dụng hàm $\tanh$.
-Như được mô tả trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên các số thực.
+Hàm kích hoạt ở đây là hàm $\tanh$.
+Như được mô tả trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên trục số thực.
 
 
 ```{.python .input  n=6}
@@ -160,7 +160,7 @@ def rnn(inputs, state, params):
 Now we have all functions defined, next we create a class to wrap these functions and store parameters.
 -->
 
-Bây giờ chúng ta có tất cả các hàm được định nghĩa, tiếp theo chúng ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
+Sau khi đã định nghĩa tất cả các hàm, tiếp theo chúng ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
 
 
 ```{.python .input}
@@ -186,7 +186,7 @@ class RNNModelScratch:
 Let us do a sanity check whether inputs and outputs have the correct dimensions, e.g., to ensure that the dimensionality of the hidden state has not changed.
 -->
 
-Hãy kiểm tra sự tỉnh táo xem liệu đầu vào và đầu ra có số chiều đúng hay không, ví dụ, để đảm bảo rằng chiều của trạng thái ẩn không thay đổi.
+Hãy kiểm tra sơ qua xem liệu đầu vào và đầu ra có số chiều đúng hay không, ví dụ, để đảm bảo rằng chiều của trạng thái ẩn không thay đổi.
 
 ```{.python .input}
 num_hiddens, ctx = 512, d2l.try_gpu()
