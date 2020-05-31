@@ -54,7 +54,7 @@ Strictly speaking this is just a fancy version of a hidden state, engineered to 
 ### Input Gates, Forget Gates, and Output Gates
 -->
 
-### *dịch tiêu đề phía trên*
+### Cổng Đầu vào, Cổng Quên, và Cổng Đầu ra
 
 <!--
 Just like with GRUs, the data feeding into the LSTM gates is the input at the current timestep $\mathbf{X}_t$ and the hidden state of the previous timestep $\mathbf{H}_{t-1}$.
@@ -62,13 +62,15 @@ These inputs are processed by a fully connected layer and a sigmoid activation f
 As a result, the three gates all output values in the range of $[0, 1]$. :numref:`lstm_0` illustrates the data flow for the input, forget, and output gates.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào $\mathbf{X}_t$ ở bước thời gian hiện tại và trạng thái ẩn $\mathbf{H}_{t-1}$ ở bước thời gian trước đó.
+Những đầu vào này được xử lý bởi một tầng kết nối đầy đủ và một hàm kích hoạt sigmoid để tính toán các giá trị của các cổng đầu vào, cổng quên, và cổng đầu ra.
+Kết quả là, có ba cổng mà tất cả các giá trị đầu ra nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
 
 <!--
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_0.svg)
+![Các phép tính trong cổng đầu vào, cổng quên và cổng đầu ra trong một đơn vị LSTM. ](../img/lstm_0.svg)
 :label:`lstm_0`
 
 <!--
@@ -79,8 +81,11 @@ the forget gate is $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, and the output ga
 They are calculated as follows:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và số lượng đầu vào là $d$.
+Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian cuối cùng là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
+Vì thế, các cổng được định nghĩa như sau: cổng đầu vào là $\mathbf{I}_t \in \mathbb{R}^{n \times h}$,
+cổng quên là $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, và cổng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
+Chúng được tính như sau:
 
 $$
 \begin{aligned}
@@ -96,14 +101,15 @@ where $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d \time
 are weight parameters and $\mathbf{b}_i, \mathbf{b}_f, \mathbf{b}_o \in \mathbb{R}^{1 \times h}$ are bias parameters.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hi}, \mathbf{W}_{hf}, \mathbf{W}_{ho} \in \mathbb{R}^{h \times h}$
+là các trọng số và $\mathbf{b}_i, \mathbf{b}_f, \mathbf{b}_o \in \mathbb{R}^{1 \times h}$ là các hệ số điều chỉnh.
 
 
 <!--
 ### Candidate Memory Cell
 -->
 
-### *dịch tiêu đề phía trên*
+### Đơn vị Bộ Nhớ Tiềm năng
 
 <!--
 Next we design the memory cell.
@@ -112,7 +118,10 @@ Its computation is similar to the three gates described above, but using a $\tan
 This leads to the following equation at timestep $t$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ thiết kế một đơn vị bộ nhớ.
+Vì chúng ta vẫn chưa xác định tác động của cổng khác nhau nào, nên đầu tiên chúng ta sẽ giới thiệu đơn vị bộ nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
+Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
 
 $$\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c).$$
@@ -122,19 +131,19 @@ $$\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{
 Here $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\mathbf{W}_{hc} \in \mathbb{R}^{h \times h}$ are weight parameters and $\mathbf{b}_c \in \mathbb{R}^{1 \times h}$ is a bias parameter.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hc} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{b}_c \in \mathbb{R}^{1 \times h}$ là một hệ số điều chỉnh.
 
 <!--
 A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 -->
 
-*dịch đoạn phía trên*
+Đơn vị bộ nhớ tiềm năng được mô tả ngắn ngọn trong :numref:`lstm_1`.
 
 <!--
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_1.svg)
+![Các phép tính toán trong đơn vị bộ nhớ tiềm năng của LSTM. ](../img/lstm_1.svg)
 :label:`lstm_1`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
