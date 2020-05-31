@@ -259,7 +259,7 @@ Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mat
 ![ Computational dependencies for a recurrent neural network model with three timesteps. Boxes represent variables (not shaded) or parameters (shaded) and circles represent operators. ](../img/rnn-bptt.svg)
 -->
 
-![Sự phụ thuộc tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
+![Mối liên hệ phụ thuộc về mặt tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
 :label:`fig_rnn_bptt`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
