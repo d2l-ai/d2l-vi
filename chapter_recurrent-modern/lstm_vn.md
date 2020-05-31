@@ -340,7 +340,7 @@ def lstm(inputs, state, params):
 Let us train an LSTM as same as what we did in :numref:`sec_gru`, by calling the `RNNModelScratch` function as introduced in :numref:`sec_rnn_scratch`.
 -->
 
-Ta sẽ huấn luyện một LSTM giống như ta đã làm trong :numref:`sec_gru`, bằng cách gọi hàm `RNNModelScratch` như được giới thiệu ở :numref:`sec_rnn_scratch`.
+Như đã từng làm trong :numref:`sec_gru`, ta sẽ huấn luyện một LSTM bằng cách gọi hàm `RNNModelScratch` như được giới thiệu ở :numref:`sec_rnn_scratch`.
 
 ```{.python .input  n=9}
 vocab_size, num_hiddens, ctx = len(vocab), 256, d2l.try_gpu()
@@ -354,7 +354,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## Triển khai súc tích
+## Lập trình súc tích
 
 <!--
 In Gluon, we can directly call the `LSTM` class in the `rnn` module.
@@ -363,7 +363,8 @@ The code is significantly faster as it uses compiled operators rather than Pytho
 -->
 
 Trong Gluon, ta có thể gọi trực tiếp lớp `LSTM` trong mô-đun `rnn`.
-Lớp này gói gọn tất cả các chi tiết cấu hình mà ta đã lập trình một cách cụ thể ở trên.
+Lớp này gói gọn tất cả các chi tiết cấu hình mà ta đã lập trình một cách chi tiết ở trên.
+Mã nguồn sẽ chạy nhanh hơn đáng kể vì nó sử dụng các toán tử được biên dịch thay vì các toán tử Python cho nhiều tính toán mà ta đã nêu ra một cách chi tiết trước đây.
 
 ```{.python .input  n=10}
 lstm_layer = rnn.LSTM(num_hiddens)
@@ -379,8 +380,11 @@ However, training LSTMs and other sequence models (such as GRU) are quite costly
 Later we will encounter alternative models such as Transformers that can be used in some cases.
 -->
 
-Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng thường tốn kém hơn để huấn luyện và thực thi do số lượng trạng thái ẩn lớn hơn.
-Các mô hình LSTM là các mô hình tự động hồi quy tiềm ẩn nguyên mẫu với sự kiểm soát trạng thái không tầm thường.
+Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng việc huấn luyện và thực thi các mô hình này là khá tốn kém do số lượng trạng thái ẩn lớn hơn.
+LSTM là mô hình tự động hồi quy tiềm ẩn nguyên mẫu có sự kiểm soát trạng thái không tầm thường.
+Nhiều biến thể đã được đề xuất qua từng năm, ví dụ như các kiến trúc đa tầng, các kết nối thặng dư hay các kiểu điều chuẩn khác nhau.
+Tuy nhiên, việc huấn luyện LSTM và các mô hình chuỗi khác (như GRU) là khá tốn kém do sự phụ thuộc dài hạn của chuỗi.
+Sau này ta sẽ gặp các mô hình thay thế như *Transformer* có thể được sử dụng trong một số trường hợp.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -452,7 +456,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 6 -->
 *
