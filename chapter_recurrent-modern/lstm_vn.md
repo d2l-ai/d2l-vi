@@ -57,7 +57,7 @@ Strictly speaking this is just a fancy version of a hidden state, engineered to 
 
 Ba cổng được giới thiệu trong LSTM đó là: cổng đầu vào, cổng quên, và cổng đầu ra.
 Bên cạnh đó chúng ta sẽ giới thiệu đơn vị bộ nhớ có kích thước giống như trạng thái ẩn.
-Nói đúng hơn đây chỉ là một phiên bản hấp dẫn của một trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
+Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
