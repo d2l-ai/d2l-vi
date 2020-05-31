@@ -70,7 +70,7 @@ Kết quả là, tại ba cổng tất cả các giá trị đầu ra đều n�
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
 -->
 
-![Các phép tính trong cổng đầu vào, cổng quên và cổng đầu ra trong một đơn vị LSTM. ](../img/lstm_0.svg)
+![Các phép tính tại cổng đầu vào, cổng quên và cổng đầu ra trong một đơn vị LSTM. ](../img/lstm_0.svg)
 :label:`lstm_0`
 
 <!--
