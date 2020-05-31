@@ -81,7 +81,7 @@ The discrepancy between outputs $o_t$ and the desired targets $y_t$ is then eval
 
 Do đó, chúng ta có một chuỗi các giá trị $\{\ldots, (h_{t-1}, x_{t-1}, o_{t-1}), (h_{t}, x_{t}, o_t), \ldots\}$ phụ thuộc vào nhau thông qua phép tính đệ quy.
 Lượt truyền xuôi khá đơn giản.
-Những gì chúng ta cần là lặp qua bộ ba $(x_t, h_t, o_t)$ một bước thời gian tại một thời điểm.
+Những gì chúng ta cần là lặp qua từng bộ ba $(x_t, h_t, o_t)$ mỗi lần.
 Sự khác biệt giữa kết quả đầu ra $o_t$ và các giá trị mục tiêu mong muốn $y_t$ sau đó được đánh giá bởi một hàm mục tiêu dưới đây
 
 $$L(x, y, w_h, w_o) = \sum_{t=1}^T l(y_t, o_t).$$
