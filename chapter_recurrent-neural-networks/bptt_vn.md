@@ -64,7 +64,7 @@ As a result, the hidden states and outputs at each timesteps can be explained as
 
 Chúng ta hãy bắt đầu với một mô hình đơn giản về cách mạng RNN hoạt động như thế nào.
 Mô hình này bỏ qua các chi tiết cụ thể của trạng thái ẩn và cách thức trạng thái này được cập nhật.
-Những chi tiết này không quan trọng cho việc phân tích dưới đây mà khiến các ký hiệu trở nên lộn xộn và trông nguy hiểm hơn.
+Những chi tiết này không quan trọng cho việc phân tích dưới đây mà khiến các ký hiệu trở nên lộn xộn và phức tạp quá mức.
 Trong mô hình này đơn giản, chúng ta ký hiệu $h_t$ là trạng thái ẩn, $x_t$ là đầu vào, và $o_t$ là đầu ra tại bước thời gian $t$.
 Bên cạnh đó, $w_h$ và $w_o$ tương ứng với trọng số của các trạng thái ẩn và tầng đầu ra.
 Kết quả là, các trạng thái ẩn và kết quả đầu ra tại mỗi bước thời gian có thể được giải thích như sau
