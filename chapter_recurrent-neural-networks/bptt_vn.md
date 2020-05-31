@@ -258,7 +258,7 @@ the hidden state of the last timestep $\mathbf{h}_2$, and the input of the curre
 ## BPTT in Detail
 -->
 
-## Phân tích cụ thể Lan truyền ngược theo thời gian
+## Phân tích cụ thể Lan truyền ngược qua thời gian
 
 <!--
 After discussing the general principle, let us discuss BPTT in detail.
