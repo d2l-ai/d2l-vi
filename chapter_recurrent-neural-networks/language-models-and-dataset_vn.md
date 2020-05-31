@@ -280,7 +280,7 @@ Chúng ta đang tiến gần tới một đặc điểm cơ bản: tần số c�
 Ngoại trừ bốn từ đầu tiên ('the', 'i', 'and', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
 Tức là các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), theo đó tần suất xuất hiện của từ được xác định bởi
 
-$$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
+$$n(x) \propto (x + c)^{-\alpha} \text{ và~do~đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
 
 <!--
@@ -290,10 +290,10 @@ But what about the other word combinations (such as bigrams, trigrams, and beyon
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
 
-Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
-Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
-Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
-Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
+Điều này khiến chúng ta cần suy nghĩ kĩ khi mô hình hóa các từ bằng cách đếm và kỹ thuật làm mượt.
+Rốt cuộc, chúng ta sẽ ước tính quá cao những từ có tần suất xuất hiện thấp.
+Vậy còn các tổ hợp từ khác như bộ đôi - _bigram_, bộ ba - _trigram_, và nhiều hơn?
+Hãy xem liệu tần số của bigram có tương tự như unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
@@ -312,9 +312,9 @@ Out of the 10 most frequent word pairs, 9 are composed of stop words and only on
 Furthermore, let us see whether the trigram frequency behaves in the same manner.
 -->
 
-Có hai điều đáng chú ý ở đây.
-9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách---từ "the time".
-Hơn nữa, chúng ta hãy xem liệu tần xuất trigram có hoạt động theo cách tương tự hay không.
+Có một điều đáng chú ý ở đây.
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách --- cặp từ "the time".
+Hãy xem tần số của trigram có tương tự hay không.
 
 
 ```{.python .input  n=4}
@@ -328,7 +328,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-Cuối cùng, chúng ta hãy quan sát biểu đồ tần xuất token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
+Cuối cùng, hãy quan sát biểu đồ tần số token của các mô hình: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
 
 
 ```{.python .input  n=5}
@@ -347,11 +347,11 @@ This gives us hope that there is quite a lot of structure in language.
 Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use deep learning based models.
 -->
 
-Biểu đồ này khá thú vị bởi một vài lý do.
-Thứ nhất, ngoài các từ unigram, các chuỗi của các từ cũng xuất hiện theo định luật Zipf, mặc dù với một số mũ thấp hơn, tùy thuộc vào chiều dài chuỗi.
-Thứ hai, số lượng các n-gram duy nhất không phải là lớn.
-Điều này cho chúng ta hy vọng về số lượng lớn các cấu trúc trong ngôn ngữ.
-Thứ ba, rất nhiều n-gram hiếm khi tồn tại, khiến cho phép làm mịn Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng mô hình học sâu.
+Có vài điều khá thú vị ở biểu đồ này.
+Thứ nhất, ngoài các từ đơn (unigram), các cụm từ cũng tuân theo định luật Zipf, với số mũ thấp hơn tùy vào chiều dài cụm từ.
+Thứ hai, số lượng các n-gram duy nhất không lớn.
+Điều này có thể liên quan đến số lượng lớn các cấu trúc trong ngôn ngữ.
+Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến cho phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
 
 
 <!--
