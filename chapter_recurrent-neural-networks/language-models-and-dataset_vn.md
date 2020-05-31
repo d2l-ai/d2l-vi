@@ -122,11 +122,11 @@ If the dataset is small or if the words are very rare, we might not find even a 
 -->
 
 Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của các từ đơn và cặp từ ghép.
-Không may, việc ước tính xác suất của một cặp từ sẽ khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” hiếm khi xảy ra hơn. <!-- Có lẽ nên lấy ví dụ khác, vì `thống kê` rất hay đi cùng nhau. Vì trước mình học qua NLP thì giảng viên có nói tiếng Việt là ngôn ngữ đơn âm tiết, dù có mang ý nghĩa hay không thì 1 word chỉ có 1 âm tiết (`thống`, `kê`), nên `Tokenization` sẽ có thêm 1 bước nữa là ghép `từ` (nếu cần) bằng cách xoá dấu cách giữa các cụm words: `thống kê` -> `thống_kê`, để đưa về giống tiếng Anh (1 word có thể có 1 hoặc nhiều âm tiết), sau đó mới xử lý tiếp. Nên đoạn này lấy ví dụ `Thống kê vui` thay cho `Statistic is fun` thì giải thích các khái niệm như ở câu trên sẽ hơi khó hiểu. Hoặc nên cân nhắc giữ ví dụ tiếng Anh, vì NLP còn phụ thuộc vào ngôn ngữ, nên nếu muốn dịch lý thuyết NLP dùng cho tiếng Việt thì sẽ cần nhiều chuyên gia :)  -->
+Không may, việc ước tính xác suất của một cặp từ sẽ khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” hiếm khi xảy ra hơn. <!-- Có lẽ nên lấy ví dụ khác, vì `thống kê` rất hay đi cùng nhau. Vì trước mình học qua NLP thì giảng viên có nói tiếng Việt là ngôn ngữ đơn âm tiết, dù có mang ý nghĩa hay không thì 1 word chỉ có 1 âm tiết (`thống`, `kê`), nên `Tokenization` sẽ có thêm 1 bước nữa là ghép `từ` (nếu cần) bằng cách xoá dấu cách giữa các cụm words: `thống kê` -> `thống_kê`, để đưa về giống tiếng Anh (1 word có thể có 1 hoặc nhiều âm tiết), sau đó mới xử lý tiếp. Nên đoạn này lấy ví dụ `Thống kê vui` thay cho `Statistic is fun` thì giải thích các khái niệm như ở câu trên sẽ hơi khó hiểu. Hoặc nên cân nhắc giữ ví dụ tiếng Anh, vì NLP còn phụ thuộc vào ngôn ngữ, nên nếu muốn dịch phần này dùng ví dụ tiếng Việt thì phải sửa nhiều.  -->
 Đặc biệt, với các cụm từ ít đi cùng nhau, rất khó tìm đủ số lần xuất hiện để ước tính chính xác. 
-Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên. <!-- như trên, 3-word combinations trong tiếng Anh chỉ là 3 words, còn tiếng Việt thì cụm 3 từ (từ có nghĩa) có thể nhiều hơn 3 words -->
+Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên. <!-- như trên, 3-word combinations trong tiếng Anh chỉ là 3 words, còn tiếng Việt thì đúng ra cụm 3 từ (từ có nghĩa) có thể nhiều hơn 3 words -->
 Sẽ có nhiều cụm ba từ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
-Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ như vậy, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
+Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ đó, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
 Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ.
 
 
@@ -141,8 +141,7 @@ This helps with singletons, e.g., via
 -->
 
 Một kỹ thuật phổ biến là làm mượt Laplace (*Laplace smoothing*).
-Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm. 
-Điều này được thực hiện bằng việc thêm các hệ số đơn, ví dụ
+Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm như sau
 
 $$\begin{aligned}
 \t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
@@ -163,16 +162,16 @@ It is quite difficult to adjust such models to additional contexts, whereas, dee
 Last, long word sequences are almost certain to be novel, hence a model that simply counts the frequency of previously seen word sequences is bound to perform poorly there.
 -->
 
-Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ chúng ta sử dụng ước tính của một chuỗi ngắn hơn làm phần bổ sung cho chuỗi dài hơn.
-Thêm nữa, $m$ là tổng số từ trong tập văn bản.
+Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ ảnh hưởng của chuỗi ngắn hơn khi ước tính chuỗi dài hơn,
+$m$ là tổng số từ trong tập văn bản.
 Công thức trên là một biến thể khá nguyên thủy của kỹ thuật làm mượt Kneser-Ney và Bayesian phi tham số.
-Xem tài liệu :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết về cách thực hiện việc này.
-Thật không may, các mô hình như thế này sẽ rất nhanh chóng trở nên bất kham vì những lý do sau.
+Xem :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết.
+Thật không may, các mô hình như vậy là bất khả thi vì những lý do sau.
 Đầu tiên, chúng ta cần lưu trữ tất cả các số đếm. 
-Thứ hai, điều này hoàn toàn bỏ qua ý nghĩa của các từ.
+Thứ hai, các mô hình hoàn toàn bỏ qua ý nghĩa của các từ.
 Chẳng hạn, danh từ *“mèo”(“cat")* và tính từ *“thuộc về mèo”(“feline”)* nên xuất hiện trong các ngữ cảnh có liên quan đến nhau.
-Rất khó để điều chỉnh thêm vào các mô hình như vậy các ngữ cảnh bổ trợ, trong khi đó, các mô hình ngôn ngữ dựa trên học sâu rất phù hợp để thực hiện các điều này.
-Cuối cùng, các chuỗi từ dài gần như chắc chắn là sẽ mang tính mới lạ, do đó với một mô hình chỉ đơn giản là đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém trong trường hợp này.
+Rất khó để thêm các ngữ cảnh bổ trợ vào các mô hình đó, trong khi các mô hình ngôn ngữ dựa trên học sâu hoàn toàn có thể làm được.
+Cuối cùng, các chuỗi từ dài gần như chắc chắn sẽ hoàn toàn mới lạ, do đó một mô hình chỉ đơn giản đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém.
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
