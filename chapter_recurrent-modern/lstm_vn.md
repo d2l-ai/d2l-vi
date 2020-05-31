@@ -202,8 +202,8 @@ Cuối cùng, chúng ta cần phải xác định làm thế nào để tính to
 Đây là nơi các cổng đầu ra được sử dụng.
 Trong LSTM, đây chỉ đơn giản là một phiên bản có cổng của hàm kích hoạt $\tanh$ trong đơn vị bộ nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
-Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán ngay tức khắc.
-Trong khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong đơn vị bộ nhớ và không thực hiện thêm bất kỳ xử lý nào.
+Bất cứ khi nào giá trị của cổng đầu ra là $1$, một cách hiệu quả chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán.
+Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong đơn vị bộ nhớ và không thực hiện thêm bất kỳ xử lý nào.
 :numref:`lstm_3` minh họa các luồng dữ liệu theo đồ thị.
 
 
