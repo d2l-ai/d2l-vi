@@ -33,7 +33,7 @@ Nonetheless, it is worth while reviewing backpropagation (:numref:`sec_backprop`
 
 Chúng ta gặp một số vấn đề liên quan tới bùng nổ gradient khi chúng ta lập trình các mạng nơ-ron truy hồi (:numref:`sec_rnn_scratch`).
 Đặc biệt, nếu bạn giải quyết các bài tập trong bộ câu hỏi, bạn sẽ thấy rằng việc gọt gradient đóng vai trò rất quan trọng giúp việc học hội tụ được thích đáng.
-Để cung cấp một cái nhìn rõ hơn về vấn đề này, trong phần này chúng ta sẽ xem xét cách tính gradient cho các mô hình chuỗi như thế nào.
+Để có cái nhìn rõ hơn về vấn đề này, trong phần này chúng ta sẽ xem xét cách tính gradient cho các mô hình chuỗi.
 Lưu ý rằng không khái niệm mới nào được giới thiệu trong cách tính gradient này.
 Sau tất cả, chúng ta vẫn chỉ đơn thuần áp dụng các quy tắc dây chuyền để tính gradient.
 Tuy nhiên, việc ôn tập một lần nữa về lan truyền ngược (:numref:`sec_backprop`) là rất cần thiết.
