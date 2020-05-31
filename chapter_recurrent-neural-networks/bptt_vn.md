@@ -198,7 +198,7 @@ Một trong những hệ quả của cách này là mô hình tập trung chủ 
 * We use this to replace the gradient:
 -->
 
-* **Rút gọn ngẫu nhiên.** Cuối cùng chúng ta có thể thay thế $\partial_{w_h} h_t$ bằng một biến ngẫu nhiên chính xác trong sự mong đợi nhưng mà rút gọn chuỗi.
+* **Cắt xén Ngẫu nhiên.** Cuối cùng chúng ta có thể thay thế $\partial_{w_h} h_t$ bằng một biến ngẫu nhiên chính xác theo kì vọng nhưng vẫn cắt xén chuỗi đi.
 * Điều này có thể đạt được bằng cách sử dụng một chuỗi các $\xi_t$ trong đó $E[\xi_t] = 1$, $P(\xi_t = 0) = 1-\pi$, và $P(\xi_t = \pi^{-1}) = \pi$.
 * Chúng ta sử dụng chúng để thay thế gradient:
 
