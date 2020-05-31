@@ -291,7 +291,6 @@ Tính đạo hàm theo $W_{oh}$ khá đơn giản, ta có
 
 $$\partial_{\mathbf{W}_{oh}} L = \sum_{t=1}^T \mathrm{prod}
 \left(\partial_{\mathbf{o}_t} l(\mathbf{o}_t, y_t), \mathbf{h}_t\right),$$
--->
 
 <!--
 where $\mathrm{prod} (\cdot)$ indicates the product of two or more matrices.
