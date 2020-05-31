@@ -177,7 +177,7 @@ Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 ![Computation of memory cells in an LSTM. Here, the multiplication is carried out elementwise. ](../img/lstm_2.svg)
 -->
 
-![Các phép tính toán trong đơn vị bộ nhớ của LSTM. Ở đây, phép tính nhân từng phần tử một (elementwise) được sử dụng. ](../img/lstm_2.svg)
+![Các phép tính toán trong đơn vị bộ nhớ của LSTM. Ở đây, phép tính nhân từng phần tử một (_elementwise_) được sử dụng. ](../img/lstm_2.svg)
 
 :label:`lstm_2`
 
