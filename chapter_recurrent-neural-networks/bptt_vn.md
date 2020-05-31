@@ -52,7 +52,7 @@ In the following we will elucidate what happens and how to address this in pract
 
 Lượt truyền xuôi trong một mạng nơ-ron truy hồi tương đối đơn giản.
 *Lan truyền ngược theo thời gian* thực chất là một ứng dụng cụ thể của lan truyền ngược trong các mạng nơ-ron truy hồi.
-Nó đòi hỏi chúng ta mở rộng mạng nơ-ron truy hồi một bước thời gian tại một thời điểm để thu được sự phụ thuộc giữa các biến mô hình và các tham số.
+Nó đòi hỏi chúng ta mở rộng mạng nơ-ron truy hồi theo từng bước thời gian một để thu được sự phụ thuộc giữa các biến mô hình và các tham số.
 Sau đó, dựa trên quy tắc dây chuyền, chúng ta áp dụng lan truyền ngược để tính toán và lưu các giá trị gradient.
 Vì chuỗi có thể khá dài nên sự phụ thuộc trong chuỗi cũng có thể rất dài.
 Ví dụ, đối với một chuỗi gồm 1000 ký tự, ký tự đầu tiên có thể ảnh hưởng đáng kể tới ký tự ở vị trí 1000.
