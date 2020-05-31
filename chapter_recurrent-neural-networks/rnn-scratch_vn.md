@@ -449,7 +449,7 @@ Since we only use $10,000$ tokens in the dataset, the model needs more epochs to
 -->
 
 Bây giờ thì ta có thể huấn luyện mô hình.
-Do chỉ sử dụng $10,000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
+Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
@@ -520,11 +520,11 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 
 1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
-    * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
-    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
+    * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
+    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
-    * Điều gì sẽ xảy ra?
-    * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
+    * Điều gì sẽ xảy ra?
+    * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
 4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không thực hiện gọt gradient?
 5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
 6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
