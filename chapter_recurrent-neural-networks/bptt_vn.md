@@ -153,7 +153,7 @@ While we can use the chain rule to compute $\partial_w h_t$ recursively, this ch
 Let us discuss a number of strategies for dealing with this problem.
 -->
 
-Trong khi chúng ta có thể sử dụng quy tắc dây chuyền để tính toán $\partial_w h_t$ một cách hồi quy, thì chuỗi này có thể rất dài khi giá trị $t$ lớn.
+Trong khi chúng ta có thể sử dụng quy tắc dây chuyền để tính toán $\partial_w h_t$ một cách đệ quy, chuỗi này có thể rất dài khi giá trị $t$ lớn.
 Chúng ta hãy thảo luận về một số chiến lược để giải quyết với vấn đề này.
 
 <!--
