@@ -124,7 +124,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | eigenvector              | vector riêng           |                                                |
 | elementwise              | (theo) từng phần tử    | [https://git.io/Jvojn](https://git.io/Jvojn)   |
 | embedding                | embedding              | [https://git.io/JvKeY](https://git.io/JvKeY)   |
-| encoder-decoder architecture | kiến trúc bộ biến đổi - bộ giải biến đổi | |
+| encoder-decoder architecture | kiến trúc mã hóa - giải mã | |
 | end-to-end               | đầu-cuối               | [https://git.io/JvQxG](https://git.io/JvQxG)   |
 | epoch (in training)      | epoch (khi huấn luyện) | [https://git.io/Jvoha](https://git.io/Jvoha)   |
 | error analysis           | phân tích lỗi          |                                                |
