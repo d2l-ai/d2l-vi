@@ -64,7 +64,7 @@ As a result, the three gates all output values in the range of $[0, 1]$. :numref
 
 Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào $\mathbf{X}_t$ ở bước thời gian hiện tại và trạng thái ẩn $\mathbf{H}_{t-1}$ ở bước thời gian trước đó.
 Những đầu vào này được xử lý bởi một tầng kết nối đầy đủ và một hàm kích hoạt sigmoid để tính toán các giá trị của các cổng đầu vào, cổng quên, và cổng đầu ra.
-Kết quả là, có ba cổng mà tất cả các giá trị đầu ra nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
+Kết quả là, tại ba cổng tất cả các giá trị đầu ra đều nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
 
 <!--
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
