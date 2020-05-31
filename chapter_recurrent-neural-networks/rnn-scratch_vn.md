@@ -465,7 +465,8 @@ Now we can train a model.
 Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ thì ta có thể huấn luyện mô hình.
+Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
@@ -477,7 +478,7 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Finally let us check the results to use a random sampling iterator.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta sẽ kiểm tra kết quả khi sử dụng một iterator để lấy mẫu ngẫu nhiên.
 
 
 ```{.python .input}
@@ -488,7 +489,8 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
 While implementing the above RNN model from scratch is instructive, it is not convenient. In the next section we will see how to improve significantly on the current model and how to make it faster and easier to implement.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù ta đã học được nhiều từ việc lập trình mô hình RNN từ đầu nhưng cách làm này không thực sự tiện lợi lắm. 
+Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể và cách làm nó nhanh và dễ lập trình hơn.
 
 
 <!--
@@ -506,7 +508,12 @@ While implementing the above RNN model from scratch is instructive, it is not co
 * Sequential partitioning typically leads to better models.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình chuỗi cần khởi tạo trạng thái cho quá trình huấn luyện.
+* Giữa các mô hình chuỗi, ta cần đảm bảo tách các gradient, để chắc chắn rằng phép vi phân tự động không lan truyền các ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
+* Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
+* Gọt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
+* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
+* Phân vùng tuần tự thường dẫn đến các mô hình tốt hơn.
 
 <!--
 ## Exercises
@@ -528,7 +535,17 @@ While implementing the above RNN model from scratch is instructive, it is not co
 7. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
 -->
 
-*dịch đoạn phía trên*
+1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
+2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
+    * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
+    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
+3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
+    * Điều gì sẽ xảy ra?
+    * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
+4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không thực hiện gọt gradient?
+5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
+6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
+7. Chứng minh rằng độ rối rắm là nghịch đảo của trung bình điều hòa của xác suất từ có điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -569,4 +586,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
