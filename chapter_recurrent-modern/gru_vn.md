@@ -407,7 +407,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed.
 -->
 
-* Các mạng nơ-ron truy hồi có cổng nắm bắt các phụ thuộc có khoảng cách bước thời gian lớn trong chuỗi thời gian tốt hơn.
+* Các mạng nơ-ron truy hồi có cổng nắm bắt tốt hơn các phụ thuộc có khoảng cách bước thời gian lớn trong chuỗi thời gian.
 * Cổng xoá giúp ích trong việc nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
 * Cổng cập nhật giúp ích trong việc nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
 * Các mạng GRU chứa các khối RNN cơ bản như là một trường hợp đặc biệt khi mà cổng xoá được bật lên. Chúng có thể bỏ qua các chuỗi khi cần.
