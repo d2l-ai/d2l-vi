@@ -320,7 +320,7 @@ Just like the `init_rnn_state` function defined in :numref:`sec_rnn_scratch`, th
 -->
 
 Bây giờ chúng ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
-Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với một kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
+Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
 
 
 ```{.python .input  n=3}
