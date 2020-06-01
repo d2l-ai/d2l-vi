@@ -351,7 +351,7 @@ Có vài điều khá thú vị ở biểu đồ này.
 Thứ nhất, ngoài các từ đơn (unigram), các cụm từ cũng tuân theo định luật Zipf, với số mũ thấp hơn tùy vào chiều dài cụm từ.
 Thứ hai, số lượng các n-gram duy nhất không lớn.
 Điều này có thể liên quan đến số lượng lớn các cấu trúc trong ngôn ngữ.
-Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến cho phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
+Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
 
 
 <!--
@@ -369,19 +369,18 @@ We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`
 Let us formalize this a bit.
 -->
 
-Trước khi giới thiệu các mô hình này, hãy giả sử ta sử dụng mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
-Câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
-Do bản chất tuần tự của dữ liệu chuỗi, chúng ta cần giải quyết các vấn đề khi thực hiện xử lý nó .
-Điều này đã được giới thiệu một cách khá đặc biệt trong :numref:`sec_sequence`.
-Hãy hợp thức hóa bước này một chút.
+Giả sử cần sử dụng mạng nơ-ron để huấn luyện mô hình ngôn ngữ.
+Với tính chất tuần tự của dữ liệu chuỗi, làm thế nào để đọc ngẫu nhiên các mini-batch gồm các mẫu và nhãn?
+Ví dụ đơn giản trong :numref:`sec_sequence` đã giới thiệu một cách thực hiện.
+Hãy tổng quát hóa cách làm này một chút.
 
 <!--
 In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtain 5-grams in a sentence, here a token is a character.
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-Trong :numref: `fig_timemachine_5gram`, ta đã biểu diễn bằng nhiều cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
-Lưu ý rằng chúng ta có khá nhiều tự do vì có thể chọn một phần bù tùy ý.
+:numref: `fig_timemachine_5gram`, biểu diễn các cách để chia một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+Ta có thể chọn tùy ý độ dời ở vị trí bắt đầu.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -407,14 +406,13 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
-Nhưng nếu chúng ta chọn tất cả các giá trị độ dời, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
-Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
-Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
-Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
-Ngay cả khi hoán vị ngẫu nhiên một tập tất cả các giá trị độ dời cũng không bảo đảm hoàn toàn.
-Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
-Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
+Chúng ta nên chọn giá trị độ dời nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
+Nhưng nếu chọn tất cả các giá trị độ dời, dữ liệu sẽ khá dư thừa do trùng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Việc chỉ chọn một tập ngẫu nhiên các vị trí đầu cũng không tốt vì không đảm bảo sẽ bao quát đồng đều cả mảng.
+Ví dụ, nếu lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
+Nghĩa là ta không thể kỳ vọng vào sự bao quát đồng đều, ngay cả khi hoán vị ngẫu nhiên một tập giá trị độ dời.
+Thay vào đó, có thể sử dụng một cách đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
+Điều này được mô tả trong phép lấy mẫu ngẫu nhiên và phép phân tách tuần tự dưới đây.
 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
