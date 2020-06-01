@@ -5,7 +5,7 @@
 # Gated Recurrent Units (GRU)
 -->
 
-# Nút Truy hồi theo Cổng (GRU)
+# Nút Truy hồi có Cổng (GRU)
 :label:`sec_gru`
 
 <!--
@@ -32,15 +32,15 @@ For instance, there might be a transition between chapters in a book, or a trans
 In this case it would be nice to have a means of *resetting* our internal state representation.
 -->
 
-* Chúng ta có thể gặp phải những tình huống mà những quan sát xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
-Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị đó tổng kiểm đó có đúng hay không tại cuối câu.
+* Chúng ta có thể gặp phải tình huống mà những quan sát xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
+Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị tổng kiểm đó có đúng hay không tại cuối chuỗi.
 Trong trường hợp này, ảnh hưởng của token đầu tiên là tối quan trọng.
 Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ngăn nhớ*.
-Nếu không có cơ thế như vậy, ta phải gán một giá trị gradient cực lớn cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
-* Chúng ta có thể gặp phải những tình huống mà một vài ký hiệu không chứa quan sát phù hợp.
-Ví dụ, khi phân tích một trang web, có thể sẽ có những mã HTML phụ trợ không liên quan đến mục tiêu là truyền tải thông tin trên trang web.
+Nếu không có cơ chế như vậy, ta phải gán một giá trị gradient cực lớn cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
+* Chúng ta có thể gặp phải tình huống mà một vài ký hiệu không chứa thông tin phù hợp.
+Ví dụ, khi phân tích một trang web, có thể sẽ có mã HTML phụ trợ không liên quan đến mục tiêu xác định thông tin được truyền tải trên trang web.
 Chúng ta sẽ muốn có một số cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
-* Chúng ta có thể gặp phải những tình huống mà có những khoảng ngắt giữa những các phần của dãy câu.
+* Chúng ta có thể gặp phải tình huống trong đó tồn tại những khoảng ngắt giữa các phần của một chuỗi.
 Ví dụ, có thể sẽ có những đoạn chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
 Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về trạng thái ban đầu.
 
@@ -52,10 +52,10 @@ See also :cite:`Chung.Gulcehre.Cho.ea.2014` for more details.
 Due to its simplicity, let us start with the GRU.
 -->
 
-Nhiều phương pháp đã được đề xuất để giải quyết những điều này.
+Nhiều phương pháp đã được đề xuất để giải quyết những vấn đề này.
 Một trong những phương pháp sớm nhất chính là Bộ nhớ ngắn hạn dài (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
 Nút Truy hồi theo Cổng(*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể của LSTM, được tổ chức hợp lý hơn một chút, thường mang lại hiệu quả tương đương và có thể tính toán nhanh hơn đáng kể.
-Xem :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
+Hãy đọc :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
 Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
