@@ -407,10 +407,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed.
 -->
 
-* Mạng nơ-ron truy hồi có cổng bắt các phụ thuộc trong chuỗi thời gian với khoảng cách bước thời gian lớn tốt hơn.
-* Cổng khởi động lại giúp ích trong việc bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
-* Cổng cập nhật giúp ích trong việc bắt các phụ thuộc dài hạn trong chuỗi thời gian.
-* Các mạng GRU chứa các khối RNN cơ bản như là một trường hợp cực đoan bất cứ khi nào cổng cài đặt lại được bật lên. Chúng có thể bỏ qua các chuỗi khi cần.
+* Các mạng nơ-ron truy hồi có cổng nắm bắt các phụ thuộc trong chuỗi thời gian với khoảng cách bước thời gian lớn tốt hơn.
+* Cổng xoá giúp ích trong việc nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng cập nhật giúp ích trong việc nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
+* Các mạng GRU chứa các khối RNN cơ bản như là một trường hợp đặc biệt khi mà cổng xoá được bật lên. Chúng có thể bỏ qua các chuỗi khi cần.
 
 
 <!--
@@ -427,9 +427,9 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 -->
 
 1. Hãy so sánh thời gian chạy, độ hỗn độn, và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU` với nhau.
-2. Giả sử rằng chúng ta chỉ muốn sử dụng các đầu vào cho bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $ t> t'$. Hãy xác định các giá trị tốt nhất cho các cổng khởi động lại và cổng cập  tại mỗi bước thời gian?
+2. Giả sử rằng chúng ta chỉ muốn sử dụng các đầu vào cho bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t> t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
 3. Điều chỉnh các siêu tham số, quan sát và phân tích tác động của điều chỉnh này tới thời gian chạy, độ hỗn độn, và các lời bài hát.
-4. Điều gì xảy ra nếu bạn thực hiện chỉ bộ phận của một khối GRU? Đó là, lập trình một khối hồi quy mà chỉ có một cổng khởi động lại. Tương tự như vậy, thực hiện một khối hồi quy chỉ với một cổng cập nhật.
+4. Điều gì xảy ra nếu bạn chỉ lập trình một phần của khối GRU? Đó là, lập trình một khối truy hồi mà chỉ có một cổng xoá. Tương tự như vậy, lập trình một khối truy hồi chỉ với một cổng cập nhật.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
