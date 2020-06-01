@@ -64,7 +64,7 @@ As a result, the three gates all output values in the range of $[0, 1]$. :numref
 
 Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào $\mathbf{X}_t$ ở bước thời gian hiện tại và trạng thái ẩn $\mathbf{H}_{t-1}$ ở bước thời gian trước đó.
 Những đầu vào này được xử lý bởi một tầng kết nối đầy đủ và một hàm kích hoạt sigmoid để tính toán các giá trị của các cổng đầu vào, cổng quên, và cổng đầu ra.
-Kết quả là, tại ba cổng tất cả các giá trị đầu ra đều nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
+Kết quả là, tất cả các giá trị đầu ra tại ba cổng đều nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
 
 <!--
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
@@ -82,7 +82,7 @@ They are calculated as follows:
 -->
 
 Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và số lượng đầu vào là $d$.
-Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian cuối cùng là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
+Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian trước đó là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
 Vì thế, các cổng được định nghĩa như sau: cổng đầu vào là $\mathbf{I}_t \in \mathbb{R}^{n \times h}$,
 cổng quên là $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, và cổng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
 Chúng được tính như sau:
@@ -109,7 +109,7 @@ là các trọng số và $\mathbf{b}_i, \mathbf{b}_f, \mathbf{b}_o \in \mathbb{
 ### Candidate Memory Cell
 -->
 
-### Đơn vị Bộ Nhớ Tiềm năng
+### Ô Nhớ Tiềm năng
 
 <!--
 Next we design the memory cell.
@@ -118,8 +118,8 @@ Its computation is similar to the three gates described above, but using a $\tan
 This leads to the following equation at timestep $t$.
 -->
 
-Tiếp theo, chúng ta sẽ thiết kế một đơn vị bộ nhớ.
-Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu đơn vị bộ nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Tiếp theo, chúng ta sẽ thiết kế một ô nhớ.
+Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
 Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
 Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
@@ -137,13 +137,13 @@ Here $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\mathbf{W}_{hc} \in \mat
 A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 -->
 
-Đơn vị bộ nhớ tiềm năng được mô tả ngắn ngọn trong :numref:`lstm_1`.
+Ô nhớ tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
 
 <!--
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
 -->
 
-![Các phép tính toán trong đơn vị bộ nhớ tiềm năng của LSTM. ](../img/lstm_1.svg)
+![Các phép tính toán trong ô nhớ tiềm năng của LSTM. ](../img/lstm_1.svg)
 :label:`lstm_1`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
