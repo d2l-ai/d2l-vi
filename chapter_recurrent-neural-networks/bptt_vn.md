@@ -182,7 +182,8 @@ While we can use the chain rule to compute $\partial_w h_t$ recursively, this ch
 Let us discuss a number of strategies for dealing with this problem.
 -->
 
-*dịch đoạn phía trên*
+Trong khi chúng ta có thể sử dụng quy tắc dây chuyền để tính toán $\partial_w h_t$ một cách đệ quy, chuỗi này có thể rất dài khi giá trị $t$ lớn.
+Chúng ta hãy thảo luận về một số chiến lược để giải quyết với vấn đề này.
 
 <!--
 * **Compute the full sum.**
@@ -193,7 +194,12 @@ After all, we are looking for robust estimators that generalize well.
 Hence this strategy is almost never used in practice.
 -->
 
-*dịch đoạn phía trên*
+* **Tính toàn bộ tổng.**
+Cách này rất chậm và gradient có thể bùng nổ vì những thay đổi nhỏ trong các điều kiện ban đầu cũng có khả năng ảnh hưởng đến kết quả rất nhiều.
+Tương tự như trong hiệu ứng cánh bướm, những thay đổi rất nhỏ trong điều kiện ban đầu dẫn đến những thay đổi không cân xứng trong kết quả.
+Đây thực sự là điều không mong muốn khi xét tới mô hình mà chúng ta muốn ước lượng.
+Sau tất cả, chúng ta đang cố tìm kiếm một bộ ước lượng mạnh mẽ mà khái quát tốt.
+Do đó chiến lược này hầu như không bao giờ được sử dụng trong thực tế.
 
 <!--
 * **Truncate the sum after** $\tau$ **steps.**
@@ -206,7 +212,14 @@ One of the consequences of this is that the model focuses primarily on short-ter
 This is actually *desirable*, since it biases the estimate towards simpler and more stable models.
 -->
 
-*dịch đoạn phía trên*
+* **Cắt xén tổng sau** $\tau$ **bước.**
+Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo luận.
+Điều này dẫn tới một phép *xấp xỉ* gradient gần đúng, chỉ đơn giản bằng cách dừng tổng trên tại $\partial_w h_{t-\tau}$.
+Do đó các lỗi xấp xỉ này được cho bởi $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
+Trong thực tế chiến lược này hoạt động khá tốt.
+Cách này thường được gọi là Cắt xén BPTT( *backpropagation through time* -- lan truyền ngược qua thời gian).
+Một trong những hệ quả của cách này là mô hình tập trung chủ yếu vào ảnh hưởng ngắn hạn thay vì dài hạn.
+Đây thực sự là điều chúng ta *mong muốn*, vì nó hướng các ước lượng tới mô hình đơn giản hơn và ổn định hơn.
 
 <!--
 * **Randomized Truncation.** Last we can replace $\partial_{w_h} h_t$ by a random variable which is correct in expectation but which truncates the sequence.
@@ -214,7 +227,9 @@ This is actually *desirable*, since it biases the estimate towards simpler and m
 * We use this to replace the gradient:
 -->
 
-*dịch đoạn phía trên*
+* **Cắt xén Ngẫu nhiên.** Cuối cùng chúng ta có thể thay thế $\partial_{w_h} h_t$ bằng một biến ngẫu nhiên chính xác theo kì vọng nhưng vẫn cắt xén chuỗi đi.
+* Điều này có thể đạt được bằng cách sử dụng một chuỗi các $\xi_t$ trong đó $E[\xi_t] = 1$, $P(\xi_t = 0) = 1-\pi$, và $P(\xi_t = \pi^{-1}) = \pi$.
+* Chúng ta sử dụng chúng để thay thế gradient:
 
 $$z_t  = \partial_w f(x_t, h_{t-1}, w) + \xi_t \partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}.$$
 
@@ -462,7 +477,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * Nguyễn Văn Cường
