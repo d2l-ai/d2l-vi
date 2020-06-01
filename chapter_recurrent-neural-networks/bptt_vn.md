@@ -359,7 +359,7 @@ Nhiều điều có thể rút ra từ biểu thức phức tạp này.
 Thứ hai, ví dụ tuyến tính đơn giản này mà đã cho thấy một vài vấn đề chủ chốt của các mô hình chuỗi dài: chúng tiềm ẩn các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
 Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
-Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở mức độ thuận tiện cho tính toán.
+Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
 Sau đây tại :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
 Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gradient sau số bước xác định.
 
