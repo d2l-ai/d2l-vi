@@ -278,7 +278,7 @@ Subsequently, we attach gradients to all the parameters.
 
 Bước tiếp theo là để khởi tạo các tham số mô hình.
 Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
-Các siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
+Siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
 Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
 Sau đó, chúng ta đính kèm gradient cho tất cả các tham số.
 
