@@ -5,7 +5,7 @@
 # Backpropagation Through Time
 -->
 
-# *dịch tiêu đề phía trên*
+# Lan Truyền Ngược Qua Thời Gian
 :label:`sec_bptt`
 
 <!--
@@ -16,7 +16,11 @@ In this section we will delve a bit more deeply into the details of backpropagat
 For a more detailed discussion about randomization and backpropagation also see the paper by :cite:`Tallec.Ollivier.2017`.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay chúng ta liên tục nhắc đến những vấn đề như *bùng nổ gradient*, *tiêu biến gradient*, *xén lan truyển ngược* và việc cần thiết phải *tách đồ thị tính toán*.
+Ví dụ, trong phần trước chúng ta gọi hàm `s.detach()` trên chuỗi.
+Những vấn đề này chưa được giải thích một cách đầy đủ nhằm nhanh chóng xây dựng và quan sát cách một mô hình hoạt động.
+Trong phần này chúng ta sẽ nghiên cứu sâu hơn và chi tiết hơn về lan truyền ngược cho các mô hình chuỗi và nguyên lý toán học đằng sau hoạt động như thế nào và tại sao.
+Thảo luận chi tiết hơn về tính ngẫu nhiên và lan truyền ngược vui lòng tham khảo bài báo :cite:`Tallec.Ollivier.2017`.
 
 <!--
 We encountered some of the effects of gradient explosion when we first implemented recurrent neural networks (:numref:`sec_rnn_scratch`).
@@ -27,7 +31,12 @@ After all, we are still merely applying the chain rule to compute gradients.
 Nonetheless, it is worth while reviewing backpropagation (:numref:`sec_backprop`) again.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta gặp một số vấn đề liên quan tới bùng nổ gradient khi chúng ta lập trình các mạng nơ-ron truy hồi (:numref:`sec_rnn_scratch`).
+Đặc biệt, nếu bạn giải quyết các bài tập trong bộ câu hỏi, bạn sẽ thấy rằng việc gọt gradient đóng vai trò rất quan trọng để đảm bảo mô hình hội tụ.
+Để có cái nhìn rõ hơn về vấn đề này, trong phần này chúng ta sẽ xem xét cách tính gradient cho các mô hình chuỗi.
+Lưu ý rằng không khái niệm mới nào được giới thiệu trong cách tính gradient này.
+Sau tất cả, chúng ta vẫn chỉ đơn thuần áp dụng các quy tắc dây chuyền để tính gradient.
+Tuy nhiên, việc ôn tập một lần nữa về lan truyền ngược (:numref:`sec_backprop`) là rất cần thiết.
 
 <!--
 Forward propagation in a recurrent neural network is relatively straightforward.
@@ -41,7 +50,15 @@ This is a process fraught with computational and statistical uncertainty.
 In the following we will elucidate what happens and how to address this in practice.
 -->
 
-*dịch đoạn phía trên*
+Lượt truyền xuôi trong một mạng nơ-ron truy hồi tương đối đơn giản.
+*Lan truyền ngược qua thời gian* thực chất là một ứng dụng cụ thể của lan truyền ngược trong các mạng nơ-ron truy hồi.
+Nó đòi hỏi chúng ta mở rộng mạng nơ-ron truy hồi theo từng bước thời gian một để thu được sự phụ thuộc giữa các biến mô hình và các tham số.
+Sau đó, dựa trên quy tắc dây chuyền, chúng ta áp dụng lan truyền ngược để tính toán và lưu các giá trị gradient.
+Vì chuỗi có thể khá dài nên sự phụ thuộc trong chuỗi cũng có thể rất dài.
+Ví dụ, đối với một chuỗi gồm 1000 ký tự, ký tự đầu tiên có thể ảnh hưởng đáng kể tới ký tự ở vị trí 1000.
+Điều này không thực sự khả thi về mặt tính toán (đòi hỏi quá nhiều thời gian và bộ nhớ) và nó đòi hỏi hơn 1000 phép nhân ma trận-vector trước khi thu được các giá trị gradient khó nắm bắt này.
+Đây là một quá trình chứa đầy sự bất định về mặt tính toán và thống kê.
+Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì xảy ra và làm thế nào để giải quyết vấn đề này trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -425,7 +442,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 *
