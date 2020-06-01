@@ -129,14 +129,14 @@ We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform inpu
 ### Reset Gates in Action
 -->
 
-### Hoạt động của Cổng thiết lập lại
+### Vai trò của Cổng Xóa
 
 <!--
 We begin by integrating the reset gate with a regular latent state updating mechanism.
 In a conventional RNN, we would have an hidden state update of the form
 -->
 
-Ta bắt đầu bằng cách tích hợp cổng thiết lập lại với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
+Ta bắt đầu bằng cách tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
 Trong một RNN thông thường, ta sẽ cập nhật trạng thái ẩn với biểu mẫu
 
 
@@ -152,12 +152,12 @@ Any pre-existing hidden state is thus reset to defaults.
 This leads to the following *candidate hidden state* (it is a *candidate* since we still need to incorporate the action of the update gate).
 -->
 
-Điều này về cơ bản giống với những gì ta đã thảo luận của phần trước, mặc dù có tính phi tuyến dưới dạng $\tanh$ để đảm bảo rằng các giá trị của các trạng thái ẩn vẫn nằm trong khoảng $(-1, 1)$.
-Nếu ta muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
-Bất cứ khi nào các phần tử trong cổng thiết lập lại $\mathbf{R}_t$ gần với $1$,ta sẽ phục hồi RNN thông thường.
-Đối với tất cả các đầu vào của cổng thiết lập lại $\mathbf{R}_t$ gần với $0$, trạng thái ẩn là kết quả của MLP với $\mathbf{X}_t$ làm đầu vào.
-Do đó, bất kỳ trạng thái ẩn nào tồn tại trước đó đều được đặt lại về giá trị mặc định.
-Điều này dẫn đến *trạng thái ẩn ứng viên* sau đây (nó là *ứng viên* vì ta vẫn cần kết hợp hành động của cổng cập nhật).
+Điều này về cơ bản giống với những gì ta đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng $\tanh$ để đảm bảo rằng các giá trị của các trạng thái ẩn vẫn nằm trong khoảng $(-1, 1)$.
+Nếu muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
+Bất cứ khi nào các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, ta sẽ khôi phục một RNN thông thường.
+Đối với tất cả các phần tử của cổng xóa $\mathbf{R}_t$ có giá trị gần với $0$, trạng thái ẩn sẽ là kết quả của MLP với $\mathbf{X}_t$ làm đầu vào.
+Bất kỳ trạng thái ẩn nào tồn tại trước đó đều được đặt lại về giá trị mặc định.
+Điều này dẫn đến *trạng thái ẩn tiềm năng* sau đây (nó là *tiềm năng* vì ta vẫn cần kết hợp đầu ra của cổng cập nhật).
 
 
 $$\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t \odot \mathbf{H}_{t-1}\right) \mathbf{W}_{hh} + \mathbf{b}_h).$$
@@ -168,14 +168,14 @@ $$\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t
 The symbol $\odot$ indicates pointwise multiplication between tensors.
 -->
 
-:numref:`fig_gru_2` minh họa luồng tính toán sau khi áp dụng cổng đặt lại.
+:numref:`fig_gru_2` minh họa luồng tính toán sau khi áp dụng cổng xóa.
 Ký hiệu $\odot$ biểu thị phép nhân theo chiều giữa các tensor.
 
 <!--
 ![ Candidate hidden state computation in a GRU. The multiplication is carried out elementwise. ](../img/gru_2.svg)
 -->
 
-![ Tính toán của trạng thái ẩn ứng viên trong một GRU. Phép nhân được tính toán theo từng phần tử. ](../img/gru_2.svg)
+![ Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được tính theo từng phần tử. ](../img/gru_2.svg)
 :label:`fig_gru_2`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -458,7 +458,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 4 -->
 *
