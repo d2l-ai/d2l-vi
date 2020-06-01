@@ -225,7 +225,7 @@ Chúng ta có thể thấy rằng kích thước đầu ra là (số bước $\t
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 <!--
 We first explain the predicting function so we can regularly check the prediction during training.
@@ -234,7 +234,10 @@ For the beginning of the sequence, we only update the hidden state.
 After that we begin generating new characters and emitting them.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên cần giải thích về hàm dự đoán để chúng ta có thể thường xuyên kiểm tra trong quá trình huấn luyện.
+Hàm này dự đoán các ký tự `num_predicts` tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
+Để bắt đầu chuỗi, ta cập nhật chỉ trạng thái ẩn.
+Sau đó, ta bắt đầu tạo ra các ký tự mới và ban hành chúng.
 
 
 ```{.python .input}
@@ -260,7 +263,9 @@ Given that we did not train the network, it will generate nonsensical prediction
 We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
-*dịch đoạn phía trên*
+Ta kiểm tra hàm `predict_rnn` trước tiên.
+Vì mạng không được huấn luyện, nó sẽ tạo ra các dự đoán vô nghĩa.
+Ta khởi tạo mạng với chuỗi `traveller` và để nó tạo thêm 10 ký tự.
 
 
 ```{.python .input  n=9}
@@ -271,7 +276,7 @@ predict_ch8('time traveller ', 10, model, vocab, ctx)
 ## Gradient Clipping
 -->
 
-## *dịch tiêu đề phía trên*
+## Cắt bớt Gradient
 
 <!--
 For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length $\mathcal{O}(T)$ during backpropagating.
@@ -279,14 +284,17 @@ As mentioned in :numref:`sec_numerical_stability`, it might result in numerical 
 Therefore, RNN models often need extra help to stabilize the training.
 -->
 
-*dịch đoạn phía trên*
+Đối với chuỗi có độ dài $T$, ta tính toán gradient theo các bước thời gian $T$ này trong một vòng lặp, dẫn đến một dây chuyền các tích ma trận có độ dài $\mathcal{O}(T)$ trong quá trình lan truyền ngược.
+Như đã đề cập trong :numref:`sec_numerical_stability`, việc này có thể dẫn đến mất ổn định số, ví dụ: các gradient có thể phát nổ hoặc biến mất, khi $T$ lớn.
+Do đó, các mô hình RNN thường cần thêm trợ giúp để ổn định việc huấn luyện.
 
 <!--
 Recall that when solving an optimization problem, we take update steps for the weights $\mathbf{w}$ in the general direction of the negative gradient $\mathbf{g}_t$ on a minibatch, 
 say $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Let us further assume that the objective is well behaved, i.e., it is Lipschitz continuous with constant $L$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại rằng khi giải quyết vấn đề tối ưu hóa, ta thực hiện các bước cập nhật cho các trọng số $\mathbf{w}$ theo hướng chung của gradient âm $\mathbf{g}_t$ trên một minibatch,
+ở đây là $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Giả định rằng mục tiêu được xử lý tốt, khi đó hàm Lipschitz liên tục với biến $L$, tức là:
 
 
 $$|l(\mathbf{w}) - l(\mathbf{w}')| \leq L \|\mathbf{w} - \mathbf{w}'\|.$$
@@ -580,7 +588,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Yến Thy
 
 <!-- Phần 3 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 4 -->
 *
