@@ -356,7 +356,7 @@ In practice, this truncation is effected by *detaching* the gradient after a giv
 
 Nhiều điều có thể rút ra từ biểu thức phức tạp này.
 Đầu tiên, lưu các kết quả trung gian lại sẽ rất có lợi, đó là các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$.
-Thứ hai, ví dụ tuyến tính đơn giản này mà đã cho thấy một vài vấn đề chủ chốt của các mô hình chuỗi dài: chúng tiềm ẩn chứa các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
+Thứ hai, ví dụ tuyến tính đơn giản này mà đã cho thấy một vài vấn đề chủ chốt của các mô hình chuỗi dài: chúng tiềm ẩn các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
 Các mô hình này có các giá trị số không ổn định, dẫn đến việc quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
 Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở mức độ thuận tiện cho tính toán.
