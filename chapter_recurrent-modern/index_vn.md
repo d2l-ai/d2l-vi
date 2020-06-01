@@ -13,7 +13,7 @@ with illustrations using the same language modeling problem as introduced in :nu
 -->
 
 Dù chúng ta đã biết các kiến thức cơ bản về mạng nơ-ron truy hồi, chúng vẫn chưa đủ để giải quyết các bài toán học chuỗi hiện nay.
-Ví dụ, RNN có hiện tượng không ổn định giá trị số khi tính gradient, do đó các mạng nơ-ron truy hồi theo cổng được sử dụng phổ biến hơn.
+Ví dụ, RNN có hiện tượng bất ổn số học khi tính gradient, do đó các mạng nơ-ron truy hồi có cổng được sử dụng phổ biến hơn.
 Chúng ta bắt đầu chương này bằng việc giới thiệu hai cấu trúc mạng như vậy: nút truy hồi theo cổng (*gated recurrent unit - GRU*) và bộ nhớ ngắn hạn dài (*long short term memory - LSTM*), minh họa bằng cách sử dụng chúng để giải quyết bài toán mô hình hóa ngôn ngữ trong :numref:`chap_rnn`.
 
 <!--
