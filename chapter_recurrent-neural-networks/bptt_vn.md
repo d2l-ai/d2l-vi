@@ -361,7 +361,7 @@ Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, c
 Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
 Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
 Sau đây tại :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
-Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gradient sau số bước xác định.
+Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gradient sau một số bước xác định.
 
 <!--
 ## Summary
