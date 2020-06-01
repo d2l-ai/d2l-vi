@@ -22,11 +22,11 @@ Our discussion below focuses primarily on LSTMs, but it applies to other sequenc
 
 Cho đến nay, chúng ta đã thảo luận các mạng nơ-ron truy hồi chỉ có một tầng ẩn một chiều duy nhất.
 Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý.
-Đây không phải là một vấn đề lớn khi mà chúng ta có đủ linh hoạt để mô hình hóa các loại tương tác khác nhau.
+Đây không phải là một vấn đề lớn khi mà chúng ta có thể mô hình hóa các loại tương tác khác nhau một cách linh hoạt.
 Tuy nhiên, điều này có thể khá thách thức với các mạng chỉ có một tầng ẩn duy nhất.
 Trong trường hợp của perceptron, chúng ta giải quyết vấn đề này bằng cách đưa thêm nhiều tầng vào mạng.
-Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến tính vào mạng ở đâu và như thế nào.
-Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho mô hình chuỗi khác.
+Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào.
+Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác.
 
 
 <!--
@@ -41,10 +41,10 @@ In particular, data might be relevant at different levels of the stack.
 For instance, we might want to keep high-level data about financial market conditions (bear or bull market) available, whereas at a lower level we only record shorter-term temporal dynamics.
 -->
 
-* Chúng ta có thể bổ sung thêm hàm phi tuyến vào các cơ chế cổng.
-Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất chúng ta có thể sử dụng nhiều tầng.
+* Chúng ta có thể bổ sung thêm các hàm phi tuyến vào các cơ chế cổng.
+Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perception.
 Cách này không làm cho *cơ chế* của mạng LSTM thay đổi.
-Thay vào đó, nó làm cho mạng phức tạp hơn.
+Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
 Điều này sẽ có ý nghĩa nếu chúng ta tin rằng cơ chế LSTM biểu diễn một số hình thái tổng quát về cách các mô hình biến ẩn tự hồi quy hoạt động.
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
 Cách này tạo ra một cơ chế linh hoạt hơn đến từ sự kết hợp của một vài tầng.
@@ -58,9 +58,9 @@ It describes a deep recurrent neural network with $L$ hidden layers.
 Each hidden state is continuously passed to both the next timestep of the current layer and the current timestep of the next layer.
 -->
 
-Ngoài tất cả các cuộc thảo luận chung chung này, để hiểu được lớp các mô hình chúng ta đang quan tâm dễ dàng nhất chúng ta nên xem lại :numref:`fig_deep_rnn`.
+Ngoài cuộc thảo luận khá trừu tượng trên, để hiểu được lớp các mô hình chúng ta đang quan tâm một cách dễ dàng nhất, thì chúng ta nên xem lại :numref:`fig_deep_rnn`.
 Hình trên mô tả một mạng nơ-ron truy hồi sâu với $L$ tầng ẩn.
-Mỗi trạng thái ẩn liên tục được truyền vào tầng hiện tại ở bước thời gian kế tiếp và tầng tiếp theo ở bước thời gian hiện tại.
+Mỗi trạng thái ẩn liên tục được truyền tới tầng hiện tại ở bước thời gian kế tiếp và tầng tiếp theo ở bước thời gian hiện tại.
 
 <!--
 ![ Architecture of a deep recurrent neural network. ](../img/deep-rnn.svg)
