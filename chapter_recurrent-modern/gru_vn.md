@@ -384,7 +384,7 @@ The code is significantly faster as it uses compiled operators rather than Pytho
 -->
 
 Trong Gluon, chúng ta có thể trực tiếp gọi lớp `GRU` trong mô-đun `rnn`.
-Mô-đun này đóng gói tất cả các chi tiết cấu hình mà chúng ta đã thực hiện rõ ràng ở trên.
+Mô-đun này đóng gói tất cả các chi tiết cấu hình mà chúng ta đã thực hiện tường minh ở trên.
 Mã này nhanh hơn đáng kể vì nó sử dụng các toán tử đã được biên dịch chứ không phải là các toán tử thuần Python cho nhiều chi tiết mà chúng ta nêu ra ở trên.
 
 
