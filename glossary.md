@@ -255,7 +255,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | max pooling                  | gộp cực đại                   | [https://git.io/JfGi6](https://git.io/JfGi6) |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
-| memory cell                  | đơn vị bộ nhớ                 |                                              |
+| memory cell                  | ô nhớ                 |                                              |
 | metric                       | phép đo                       |                                              |
 | minibatch                    | minibatch                     | [https://git.io/JvojE](https://git.io/JvojE) |
 | misclassified                | bị phân loại nhầm             |                                              |
