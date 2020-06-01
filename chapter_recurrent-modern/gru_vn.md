@@ -5,7 +5,7 @@
 # Gated Recurrent Units (GRU)
 -->
 
-# *dịch tiêu đề phía trên*
+# Nút Truy hồi có Cổng (GRU)
 :label:`sec_gru`
 
 <!--
@@ -14,7 +14,9 @@ In particular we found that long products of matrices can lead to vanishing or d
 Let us briefly think about what such gradient anomalies mean in practice:
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng nơ-ron truy hồi.
+Cụ thể ta đã phát hiện rằng tích của một chuỗi dài các ma trận có thể dẫn đến việc gradient tiêu biến hoặc bùng nổ.
+Bây giờ hãy suy nghĩ nhanh về ý nghĩa của những gradient bất thường như vậy trong thực tế:
 
 <!--
 * We might encounter a situation where an early observation is highly significant for predicting all future observations.
@@ -30,7 +32,17 @@ For instance, there might be a transition between chapters in a book, or a trans
 In this case it would be nice to have a means of *resetting* our internal state representation.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể gặp phải tình huống mà những quan sát xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
+Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị tổng kiểm đó có đúng hay không tại cuối chuỗi.
+Trong trường hợp này, ảnh hưởng của token đầu tiên là tối quan trọng.
+Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ô nhớ*.
+Nếu không có cơ chế như vậy, ta phải gán một giá trị gradient cực lớn cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
+* Chúng ta có thể gặp phải tình huống mà một vài ký hiệu không chứa thông tin phù hợp.
+Ví dụ, khi phân tích một trang web, có thể sẽ có mã HTML phụ trợ không liên quan đến mục tiêu xác định thông tin được truyền tải trên trang web.
+Chúng ta sẽ muốn có một số cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
+* Chúng ta có thể gặp phải tình huống trong đó tồn tại những khoảng ngắt giữa các phần của một chuỗi.
+Ví dụ, có thể sẽ có những đoạn chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
+Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về trạng thái ban đầu.
 
 <!--
 A number of methods have been proposed to address this.
@@ -40,7 +52,11 @@ See also :cite:`Chung.Gulcehre.Cho.ea.2014` for more details.
 Due to its simplicity, let us start with the GRU.
 -->
 
-*dịch đoạn phía trên*
+Nhiều phương pháp đã được đề xuất để giải quyết những vấn đề này.
+Một trong những phương pháp sớm nhất chính là Bộ nhớ ngắn hạn dài (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
+Nút Truy hồi có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường mang lại chất lượng tương đương và nhanh hơn đáng kể về mặt tính toán.
+Hãy đọc :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
+Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -445,7 +461,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Võ Tấn Phát
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 *
