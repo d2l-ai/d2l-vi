@@ -214,7 +214,7 @@ In summary, GRUs have the following two distinguishing features:
 
 Bất cứ khi nào cổng cập nhật $\mathbf{Z}_t$ gần tới giá trị $1$, chúng ta chỉ đơn giản là giữ lại trạng thái cũ.
 Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, dẫn đến việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc một cách hiệu quả.
-Ngược lại, bất cứ khi nào $\mathbf{Z}_t$ gần tới giá trị $0$, trạng thái ẩn $\mathbf{H}_t$ tiến gần tới trạng thái ẩn mục tiêu $\tilde{\mathbf{H}}_t$.
+Ngược lại, bất cứ khi nào $\mathbf{Z}_t$ gần tới giá trị $0$, trạng thái tiềm ẩn $\mathbf{H}_t$ tiến gần tới trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$.
 Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và bắt được những phụ thuộc có khoảng cách bước thời gian lớn trong chuỗi thời gian tốt hơn.
 Nói tóm lại, các mạng GRU có hai tính chất nổi bật như sau:
 
