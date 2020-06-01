@@ -152,7 +152,7 @@ Any pre-existing hidden state is thus reset to defaults.
 This leads to the following *candidate hidden state* (it is a *candidate* since we still need to incorporate the action of the update gate).
 -->
 
-Điều này về cơ bản giống với những gì ta đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng $\tanh$ để đảm bảo rằng các giá trị của các trạng thái ẩn vẫn nằm trong khoảng $(-1, 1)$.
+Điều này về cơ bản giống với những gì ta đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng hàm $\tanh$ để đảm bảo rằng các giá trị trạng thái ẩn nằm trong khoảng $(-1, 1)$.
 Nếu muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
 Bất cứ khi nào các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, ta sẽ khôi phục một RNN thông thường.
 Đối với tất cả các phần tử của cổng xóa $\mathbf{R}_t$ có giá trị gần với $0$, trạng thái ẩn sẽ là kết quả của MLP với $\mathbf{X}_t$ làm đầu vào.
