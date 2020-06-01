@@ -58,7 +58,8 @@ Each hidden state is continuously passed to both the next timestep of the curren
 ## Functional Dependencies
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Phụ thuộc Hàm
+
 
 <!--
 At timestep $t$ we assume that we have a minibatch $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (number of examples: $n$, number of inputs: $d$).
@@ -68,8 +69,11 @@ We compute the hidden state of layer $1$ as before, using $\mathbf{X}_t$ as inpu
 For all subsequent layers, the hidden state of the previous layer is used in its place.
 -->
 
-*dịch đoạn phía trên*
-
+Tại bước thời gian $t$, giả sử rằng chúng ta có một minibatch $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$ ).
+Trạng thái ẩn của tầng ẩn $\ell$ ($\ell=1,\ldots, T$) là $\mathbf{H}_t^{(\ell)}  \in \mathbb{R}^{n \times h}$ (số đơn vị ẩn: $h$),
+biến tầng ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ .
+Chúng ta tính toán trạng thái ẩn của tầng đầu tiên như trước đây, sử dụng đầu vào là $\mathbf{X}_t$.
+Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng tại vị trí đó.
 
 $$\begin{aligned}
 \mathbf{H}_t^{(1)} & = f_1\left(\mathbf{X}_t, \mathbf{H}_{t-1}^{(1)}\right), \\
@@ -82,8 +86,8 @@ Finally, the output layer is only based on the hidden state of hidden layer $L$.
 We use the output function $g$ to address this:
 -->
 
-*dịch đoạn phía trên*
-
+Cuối cùng, tầng đầu ra chỉ dựa trên trạng thái ẩn của tầng ẩn $L$.
+Chúng ta sử dụng một hàm đầu ra $g$ để xử lý trạng thái này:
 
 $$\mathbf{O}_t = g \left(\mathbf{H}_t^{(L)}\right).$$
 
@@ -93,7 +97,8 @@ Just as with multilayer perceptrons, the number of hidden layers $L$ and number 
 In particular, we can pick a regular RNN, a GRU, or an LSTM to implement the model.
 -->
 
-*dịch đoạn phía trên*
+Giống như perceptron đa tầng, số tầng ẩn $L$ và số đơn vị ẩn $h$ được coi là các siêu tham số.
+Đặc biệt, chúng ta có thể chọn một kiến trúc RNN cơ bản, GRU, hoặc LSTM để lập trình mô hình.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -103,7 +108,8 @@ In particular, we can pick a regular RNN, a GRU, or an LSTM to implement the mod
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình Ngắn gọn
+
 
 <!--
 Fortunately many of the logistical details required to implement multiple layers of an RNN are readily available in Gluon.
@@ -113,7 +119,11 @@ In fact, the only difference is that we specify the number of layers explicitly 
 Let us begin by importing the appropriate modules and loading data.
 -->
 
-*dịch đoạn phía trên*
+May mắn thay nhiều chi tiết phía sau cần thiết để lập trình một kiến trúc RNN nhiều tầng đã có sẵn trong Gluon.
+Để đơn giản, chúng tôi chỉ minh họa việc lập trình bằng cách sử dụng những mã nguồn tích hợp sẵn.
+Mã nguồn dưới đây rất giống những gì chúng ta sử dụng trước đây cho mạng LSTM.
+Trong thực tế, sự khác biệt duy nhất là chúng ta xác định số lượng các tầng một cách rõ ràng thay vì chọn mặc định là một tầng duy nhất.
+Chúng ta hãy bắt đầu bằng cách nhập các mô-đun thích hợp và nhập dữ liệu.
 
 
 ```{.python .input  n=17}
@@ -134,7 +144,10 @@ The number of hidden units is still 256.
 The only difference is that we now select a nontrivial number of layers `num_layers = 2`.
 -->
 
-*dịch đoạn phía trên*
+Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước.
+Chúng ta sử dụng cùng số lượng đầu vào và đầu ra với các token riêng biệt, cụ thể là, `vocab_size`.
+Số lượng đơn vị ẩn vẫn là 256.
+Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`.
 
 
 ```{.python .input  n=22}
@@ -222,7 +235,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 *
