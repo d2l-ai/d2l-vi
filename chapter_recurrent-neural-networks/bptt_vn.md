@@ -69,7 +69,7 @@ Trong mô hình đơn giản này, chúng ta ký hiệu $h_t$ là trạng thái 
 Bên cạnh đó, $w_h$ và $w_o$ tương ứng với trọng số của các trạng thái ẩn và tầng đầu ra.
 Kết quả là, các trạng thái ẩn và kết quả đầu ra tại mỗi bước thời gian có thể được giải thích như sau
 
-$$h_t = f(x_t, h_{t-1}, w_h) \text{ and } o_t = g(h_t, w_o).$$
+$$h_t = f(x_t, h_{t-1}, w_h) \text{ và } o_t = g(h_t, w_o).$$
 
 
 <!--
