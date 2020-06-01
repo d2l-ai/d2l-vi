@@ -250,7 +250,7 @@ The code for reading the dataset is given below:
 -->
 
 Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian* mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
-Các mã để đọc dữ liệu được cho dưới đây:
+Mã nguồn để đọc dữ liệu được cho dưới đây:
 
 ```{.python .input  n=1}
 import d2l
