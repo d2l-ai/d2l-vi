@@ -102,7 +102,7 @@ Ta bắt đầu bằng việc thiết kế các cổng để tạo ra các biế
 ![ Reset and update gate in a GRU. ](../img/gru_1.svg)
 -->
 
-![ Cổng xóa và cổng cập nhật trong một GRU. ](../img/gru_1.svg)
+![Cổng xóa và cổng cập nhật trong GRU.](../img/gru_1.svg)
 :label:`fig_gru_1`
 
 
