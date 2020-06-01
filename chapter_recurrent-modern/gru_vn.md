@@ -137,7 +137,7 @@ In a conventional RNN, we would have an hidden state update of the form
 -->
 
 Ta bắt đầu bằng cách tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
-Trong một RNN thông thường, ta sẽ cập nhật trạng thái ẩn với biểu mẫu
+Trong một RNN thông thường, ta sẽ cập nhật trạng thái ẩn bằng công thức
 
 
 $$\mathbf{H}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1}\mathbf{W}_{hh} + \mathbf{b}_h).$$
