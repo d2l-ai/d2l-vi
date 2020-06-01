@@ -74,6 +74,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence interval                 | khoảng tin cậy         |                                              |
 | confusion matrix                    | ma trận nhầm lẫn       | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                           | ràng buộc              |                                              |
+| convex combination                  | tổ hợp lồi             |                                              |
 | (strictly) convex function          | hàm lồi (chặt)         | [https://git.io/JvohV](https://git.io/JvohV) |
 | convex optimization                 | tối ưu lồi             |                                              |
 | convex set                          | tập lồi                | [https://git.io/JvohV](https://git.io/JvohV) |
