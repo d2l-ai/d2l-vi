@@ -169,7 +169,7 @@ The symbol $\odot$ indicates pointwise multiplication between tensors.
 -->
 
 :numref:`fig_gru_2` minh họa luồng tính toán sau khi áp dụng cổng xóa.
-Ký hiệu $\odot$ biểu thị phép nhân theo chiều giữa các tensor.
+Ký hiệu $\odot$ biểu thị phép nhân theo từng phần tử giữa các tensor.
 
 <!--
 ![ Candidate hidden state computation in a GRU. The multiplication is carried out elementwise. ](../img/gru_2.svg)
