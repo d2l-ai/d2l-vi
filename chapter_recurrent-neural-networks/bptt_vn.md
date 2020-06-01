@@ -270,7 +270,7 @@ Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mat
 ## BPTT in Detail
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân tích cụ thể Lan truyền ngược qua thời gian
 
 <!--
 After discussing the general principle, let us discuss BPTT in detail.
@@ -278,9 +278,10 @@ By decomposing $\mathbf{W}$ into different sets of weight matrices ($\mathbf{W}_
 we will get a simple linear latent variable model:
 -->
 
-*dịch đoạn phía trên*
+Sau khi thảo luận các nguyên lý chung, hãy phân tích BPTT một cách chi tiết.
+Bằng cách tách $\mathbf{W}$ thành các tập ma trận trọng số khác nhau $\mathbf{W}_{hx}, \mathbf{W}_{hh}$ và $\mathbf{W}_{oh}$), ta được mô hình biến tiềm ẩn tuyến tính đơn giản:
 
-$$\mathbf{h}_t = \mathbf{W}_{hx} \mathbf{x}_t + \mathbf{W}_{hh} \mathbf{h}_{t-1} \text{ and }
+$$\mathbf{h}_t = \mathbf{W}_{hx} \mathbf{x}_t + \mathbf{W}_{hh} \mathbf{h}_{t-1} \text{ và }
 \mathbf{o}_t = \mathbf{W}_{oh} \mathbf{h}_t.$$
 
 <!--
@@ -288,7 +289,7 @@ Following the discussion in :numref:`sec_backprop`, we compute the gradients $\f
 $\frac{\partial L}{\partial \mathbf{W}_{hh}}$, $\frac{\partial L}{\partial \mathbf{W}_{oh}}$ for
 -->
 
-*dịch đoạn phía trên*
+Theo thảo luận ở :numref:`sec_backprop`, ta tính các gradient $\frac{\partial L}{\partial \mathbf{W}_{hx}}$, $\frac{\partial L}{\partial \mathbf{W}_{hh}}$, $\frac{\partial L}{\partial \mathbf{W}_{oh}}$ cho
 
 $$L(\mathbf{x}, \mathbf{y}, \mathbf{W}) = \sum_{t=1}^T l(\mathbf{o}_t, y_t),$$
 
@@ -297,26 +298,25 @@ where $l(\cdot)$ denotes the chosen loss function.
 Taking the derivatives with respect to $W_{oh}$ is fairly straightforward and we obtain
 -->
 
-*dịch đoạn phía trên*
+với $l(\cdot)$ là hàm mất mát được chọn.
+Tính đạo hàm theo $W_{oh}$ khá đơn giản, ta có
 
 $$\partial_{\mathbf{W}_{oh}} L = \sum_{t=1}^T \mathrm{prod}
 \left(\partial_{\mathbf{o}_t} l(\mathbf{o}_t, y_t), \mathbf{h}_t\right),$$
--->
-
-*dịch đoạn phía trên*
 
 <!--
 where $\mathrm{prod} (\cdot)$ indicates the product of two or more matrices.
 -->
 
-*dịch đoạn phía trên*
+với $\mathrm{prod} (\cdot)$ là tích của hai hoặc nhiều ma trận.
 
 <!--
 The dependency on $\mathbf{W}_{hx}$ and $\mathbf{W}_{hh}$ is a bit more tricky since it involves a chain of derivatives.
 We begin with
 -->
 
-*dịch đoạn phía trên*
+Sự phụ thuộc vào $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ khó khăn hơn khi tính toán đạo hàm vì cần sử dụng quy tắc dây chuyền.
+Ta bắt đầu với
 
 
 $$\begin{aligned}
@@ -332,10 +332,11 @@ After all, hidden states depend on each other and on past inputs.
 The key quantity is how past hidden states affect future hidden states.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, các trạng thái ẩn phụ thuộc lẫn nhau và phụ thuộc vào đầu vào quá khứ.
+Một đại lượng quan trọng là các trạng thái ẩn quá khứ ảnh hưởng tới các trạng thái ẩn tương lai như thế nào.
 
 $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
-\text{ and thus }
+\text{ do~đó }
 \partial_{\mathbf{h}_t} \mathbf{h}_T = \left(\mathbf{W}_{hh}^\top\right)^{T-t}.$$
 
 
@@ -343,7 +344,7 @@ $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
 Chaining terms together yields
 -->
 
-*dịch đoạn phía trên*
+Áp dụng quy tắc dây chuyền ta được
 
 $$\begin{aligned}
 \partial_{\mathbf{W}_{hh}} \mathbf{h}_t & = \sum_{j=1}^t \left(\mathbf{W}_{hh}^\top\right)^{t-j} \mathbf{h}_j \\
@@ -438,7 +439,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
-*
-
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
 <!-- Phần 6 -->
 *
