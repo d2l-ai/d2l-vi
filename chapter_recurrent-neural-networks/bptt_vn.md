@@ -165,7 +165,7 @@ After all, we are looking for robust estimators that generalize well.
 Hence this strategy is almost never used in practice.
 -->
 
-* ** Tính toàn bộ tổng.**
+* **Tính toàn bộ tổng.**
 Cách này rất chậm và gradient có thể bùng nổ vì những thay đổi nhỏ trong các điều kiện ban đầu cũng có khả năng ảnh hưởng đến kết quả rất nhiều.
 Tương tự như trong hiệu ứng cánh bướm, những thay đổi rất nhỏ trong điều kiện ban đầu dẫn đến những thay đổi không cân xứng trong kết quả.
 Đây thực sự là điều không mong muốn khi xét tới mô hình mà chúng ta muốn ước lượng.
