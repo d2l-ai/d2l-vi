@@ -435,13 +435,11 @@ The positions of two adjacent random minibatches on the original sequence are no
 The target is to predict the next character based on what we have seen so far, hence the labels are the original sequence, shifted by one character.
 -->
 
-Đoạn mã sau sinh ngẫu nhiên từng minibatch dữ liệu một.
-Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
+Đoạn mã sau tạo ngẫu nhiên một minibatch dữ liệu.
+Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch, `num_steps` biểu thị chiều dài mỗi mẫu (là số bước thời gian trong trường hợp chuỗi thời gian).
 Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý được lấy ra từ chuỗi gốc.
-Vị trí của hai minibatch ngẫu nhiên liên tiếp trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
-Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển đi một ký tự.
-
-
+Hai minibatch ngẫu nhiên liên tiếp không nhất thiết phải liền kề nhau trong chuỗi góc.
+Mục tiêu của ta là dự đoán phần tử tiếp theo dựa trên các phần tử đã thấy cho đến hiện tại, do đó nhãn của một mẫu chính là mẫu đó dịch chuyển sang phải một phần tử.
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -474,10 +472,9 @@ This means that depending on the offset we can generate between 4 and 5 $(x, y)$
 With a minibatch size of 2, we only get 2 minibatches.
 -->
 
-Hãy cùng sinh một chuỗi từ 0 tới 30.
-Chúng ta giả định rằng kích thước batch là 2 và số lượng bước thời gian là 6.
-Điều này có nghĩa là tùy thuộc vào độ dời, chúng ta có thể sinh từ 4 tới 5 cặp $(x, y)$.
-Với kích thước minibatch bằng 2, chúng ta chỉ thu được 2 minibatch.
+Hãy tạo ra một chuỗi từ 0 đến 29, rồi sinh các minibatch từ chuỗi đó với kích thước batch là 2 và số bước thời gian là 6.
+Điều này nghĩa tùy vào độ dời, ta có thể sinh tối đa 4 hoặc 5 cặp $(x, y)$.
+Với kích thước batch bằng 2, ta thu được 2 minibatch.
 
 
 ```{.python .input  n=6}
@@ -494,16 +491,13 @@ for X, Y in seq_data_iter_random(my_seq, batch_size=2, num_steps=6):
 ### Sequential Partitioning
 -->
 
-### Phân vùng Tuần tự
-
+### Phân tách Tuần tự
 
 <!--
 In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatches adjacent in the original sequence.
 -->
 
-Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm cho vị trí của hai minibatch ngẫu nhiên liền kề thực sự liền kề nhau trong chuỗi gốc.
-
-
+Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm hai minibatch ngẫu nhiên liên tiếp có vị trí liền kề nhau trong chuỗi gốc.
 
 ```{.python .input  n=7}
 # Saved in the d2l package for later use
@@ -527,10 +521,8 @@ Using the same settings, print input `X` and label `Y` for each minibatch of exa
 The positions of two adjacent minibatches on the original sequence are adjacent.
 -->
 
-Sử dụng các giá trị cài đặt tương tự như ở trên, hãy cũng in đầu vào `X` và nhãn `Y` cho mỗi minibatch được lấy mẫu ngẫu nhiên.
-Các vị trí của hai minibatch liền kề trên chuỗi ban đầu cũng liền kề nhau.
-
-
+Sử dụng các đối số như ở trên, ta sẽ in đầu vào `X` và nhãn `Y` cho mỗi minibatch sau khi phân tách tuần tự.
+Hai minibatch liên tiếp sẽ có vị trí trên chuỗi ban đầu liền kề nhau.
 
 ```{.python .input  n=8}
 for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
@@ -541,9 +533,7 @@ for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
 Now we wrap the above two sampling functions to a class so that we can use it as a Gluon data iterator later.
 -->
 
-Bây giờ chúng ta hãy gộp hai hàm lấy mẫu trên vào một lớp để chúng ta có thể sử dụng nó như là một iterator dữ liệu Gluon trong các phần sau.
-
-
+Hãy gộp hai hàm lấy mẫu theo hai cách trên vào một lớp để duyệt dữ liệu trong Gluon ở các phần sau.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -565,7 +555,7 @@ class SeqDataLoader:
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
 -->
 
-Cuối cùng, chúng ta sẽ viết một hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để có thể sử dụng nó tương tự như các hàm khác với tiền tố `load_data`.
+Cuối cùng, ta sẽ viết hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để sử dụng như các hàm `load_data` khác.
 
 
 ```{.python .input}
@@ -652,23 +642,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
 * Đinh Đắc
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-* Đinh Đắc
-
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 7 -->
 * Nguyễn Văn Quang
