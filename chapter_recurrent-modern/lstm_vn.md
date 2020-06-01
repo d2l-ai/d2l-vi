@@ -34,7 +34,7 @@ Let us see how this works in practice.
 -->
 
 Có thể cho rằng thiết kế này được lấy cảm hứng từ các cổng logic trong máy tính.
-Để kiểm soát một đơn vị bộ nhớ chúng ta cần một số cổng.
+Để kiểm soát một ô nhớ chúng ta cần một số cổng.
 Một cổng để đọc các thông tin nhập từ đơn vị LSTM (như trái ngược với việc đọc bất kỳ đơn vị khác).
 Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (output gate).
 Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào đơn vị LSTM.
@@ -47,7 +47,7 @@ Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực
 ## Gated Memory Cells
 -->
 
-## Các Đơn vị Bộ nhớ có Cổng
+## Các Ô Nhớ có Cổng
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
@@ -56,7 +56,7 @@ Strictly speaking this is just a fancy version of a hidden state, engineered to 
 -->
 
 Ba cổng được giới thiệu trong LSTM đó là: cổng đầu vào, cổng quên, và cổng đầu ra.
-Bên cạnh đó chúng ta sẽ giới thiệu đơn vị bộ nhớ có kích thước giống như trạng thái ẩn.
+Bên cạnh đó chúng ta sẽ giới thiệu ô nhớ có kích thước giống như trạng thái ẩn.
 Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
 
 
