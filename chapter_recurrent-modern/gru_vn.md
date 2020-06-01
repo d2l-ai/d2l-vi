@@ -63,18 +63,18 @@ We discuss this in detail below.
 -->
 
 Sự khác biệt chính giữa RNN thông thường và GRU là GRU hỗ trợ việc kiểm soát trạng thái ẩn.
-Điều này có nghĩa là ta có các cơ chế chuyên dụng khi nào nên cập nhật trạng thái ẩn và khi nào cần thiết lập lại.
-Các cơ chế này được học và chúng giải quyết các vấn đề được liệt kê ở trên.
-Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, ta sẽ học cách không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
-Tương tự như vậy, ta sẽ học cách bỏ qua những quan sát tạm thời không liên quan.
-Cuối cùng, ta sẽ học cách thiết lập lại trạng thái tiềm ẩn bất cứ khi nào cần.
-Ta sẽ thảo luận chi tiết dưới đây.
+Điều này có nghĩa là ta có các cơ chế chuyên dụng để quyết định khi nào nên cập nhật và khi nào nên xóa trạng thái ẩn.
+Các cơ chế này được học để giải quyết các vấn đề được nêu đề cập ở bên trên.
+Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, ta sẽ học để không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
+Tương tự như vậy, ta sẽ học để bỏ qua những quan sát tạm thời không liên quan.
+Cuối cùng, ta sẽ học để xóa trạng thái tiềm ẩn bất cứ khi nào cần thiết.
+Ta sẽ thảo luận vấn đề này một cách chi tiết dưới đây.
 
 <!--
 ### Reset Gates and Update Gates
 -->
 
-### Thiết lập lại cổng và Cập nhật cổng
+### Cổng Xóa và Cổng Cập Nhật
 
 <!--
 The first thing we need to introduce are reset and update gates.
@@ -83,10 +83,10 @@ For instance, a reset variable would allow us to control how much of the previou
 Likewise, an update variable would allow us to control how much of the new state is just a copy of the old state.
 -->
 
-Điều đầu tiên ta cần giới thiệu là thiết lập lại và cập nhật cổng.
+Điều đầu tiên ta cần giới thiệu là cổng xóa và cổng cập nhật.
 Ta thiết kế chúng thành các vector với mỗi phần tử có giá trị trong khoảng $(0, 1)$ để ta có thể thực hiện các tổ hợp lồi.
-Chẳng hạn, một biến thiết lập lại sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái trước đây mà ta vẫn muốn ghi nhớ.
-Tương tự, một biến cập nhật sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái mới chỉ là một bản sao của trạng thái cũ.
+Chẳng hạn, một biến xóa sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái trước đây mà ta muốn ghi nhớ.
+Tương tự, một biến cập nhật sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái mới sẽ chỉ là một bản sao của trạng thái cũ.
 
 <!--
 We begin by engineering gates to generate these variables.
@@ -95,14 +95,14 @@ The output is given by a fully connected layer with a sigmoid as its activation 
 -->
 
 Ta bắt đầu bằng việc thiết kế các cổng để tạo ra các biến này.
-:numref:`fig_gru_1` minh họa các đầu vào cho cả hai cổng thiết lập lại và cập nhật trong GRU, với đầu vào là bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{H}_{t-1}$.
-Đầu ra được đưa ra bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
+:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào là bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{H}_{t-1}$.
+Đầu ra được tạo ra bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
 
 <!--
 ![ Reset and update gate in a GRU. ](../img/gru_1.svg)
 -->
 
-![ Cổng thiết lập lại và cập nhật trong một GRU. ](../img/gru_1.svg)
+![ Cổng xóa và cổng cập nhật trong một GRU. ](../img/gru_1.svg)
 :label:`fig_gru_1`
 
 
@@ -112,8 +112,7 @@ and the hidden state of the last timestep is $\mathbf{H}_{t-1} \in \mathbb{R}^{n
 Then, the reset gate $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ and update gate $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ are computed as follows:
 -->
 
-Với một bước thời gian nhất định $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số ví mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn của bước thời gian cuối cùng là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số trạng thái ẩn: $h$).
-Sau đó, cổng thiết lập lại $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
+Với một bước thời gian nhất định $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn của bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), thì cổng thiết lập lại $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
 
 
 $$
@@ -131,8 +130,8 @@ and $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ are biases.
 We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform input values to the interval $(0, 1)$.
 -->
 
-Tại đây, $\mathbf{W}_{xr}, \mathbf{W}_{xz} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các hệ số điều chỉnh.
-Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào thành khoảng $(0, 1)$.
+Ở đây, $\mathbf{W}_{xr}, \mathbf{W}_{xz} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các hệ số điều chỉnh.
+Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào thành các giá trị trong khoảng $(0, 1)$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
