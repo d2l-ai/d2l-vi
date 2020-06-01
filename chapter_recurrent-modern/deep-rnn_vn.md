@@ -28,7 +28,6 @@ Trong trường hợp của perceptron, chúng ta giải quyết vấn đề nà
 Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào.
 Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác.
 
-
 <!--
 * We could add extra nonlinearity to the gating mechanisms. 
 That is, instead of using a single perceptron we could use multiple layers. 
@@ -50,7 +49,6 @@ Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
 Cách này tạo ra một cơ chế linh hoạt hơn đến từ sự kết hợp của một vài tầng.
 Đặc biệt, dữ liệu có thể có liên quan tới nhau ở các tầng khác nhau.
 Ví dụ, chúng ta có thể muốn biểu diễn dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) có sẵn ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
-
 
 <!--
 Beyond all this abstract discussion it is probably easiest to understand the family of models we are interested in by reviewing :numref:`fig_deep_rnn`.
