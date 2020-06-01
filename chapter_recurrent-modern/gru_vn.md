@@ -249,7 +249,7 @@ We begin by reading *The Time Machine* corpus that we used in :numref:`sec_rnn_s
 The code for reading the dataset is given below:
 -->
 
-Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian**The Time Machine * corpus mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
+Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian* mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
 Các mã để đọc dữ liệu được cho dưới đây:
 
 ```{.python .input  n=1}
@@ -277,9 +277,9 @@ Subsequently, we attach gradients to all the parameters.
 -->
 
 Bước tiếp theo là để khởi tạo các tham số mô hình.
-Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh $0$.
-Các siêu tham số 'num_hiddens` xác định số lượng các đơn vị ẩn.
-Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng khởi động lại, và các trạng thái ẩn đích.
+Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
+Các siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
+Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
 Sau đó, chúng ta đính kèm gradient cho tất cả các tham số.
 
 
@@ -320,7 +320,7 @@ Just like the `init_rnn_state` function defined in :numref:`sec_rnn_scratch`, th
 -->
 
 Bây giờ chúng ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
-Cũng giống như hàm `init_rnn_state` được định nghĩa tại:numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với một kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị là bằng không.
+Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với một kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
 
 
 ```{.python .input  n=3}
@@ -334,7 +334,7 @@ Its structure is the same as the basic RNN cell, except that the update equation
 -->
 
 Bây giờ chúng ta đã sẵn sàng để định nghĩa mô hình GRU.
-Cấu trúc của nó cũng giống như một khối RNN cơ bản, ngoại trừ việc các phương trình cập nhật phức tạp hơn.
+Cấu trúc của nó cũng giống như một khối RNN cơ bản, ngoại trừ các phương trình cập nhật phức tạp hơn.
 
 
 ```{.python .input  n=4}
@@ -363,8 +363,8 @@ Training and prediction work in exactly the same manner as before.
 After training for one epoch, the perplexity and the output sentence will be like the following.
 -->
 
-Huấn luyện và dự đoán hoạt động theo cách tương tự như trước đây.
-Sau khi huấn luyện cho một epoch, độ hỗn độn (perplexity) và câu đầu ra sẽ giống dưới đây.
+Việc huấn luyện và dự đoán hoạt động theo cách tương tự như trước đây.
+Sau khi huấn luyện cho một epoch, độ hỗn độn (_perplexity_) và câu đầu ra sẽ giống dưới đây.
 
 
 ```{.python .input  n=3}
