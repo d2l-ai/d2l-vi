@@ -179,7 +179,7 @@ The symbol $\odot$ indicates pointwise multiplication between tensors.
 ### Update Gates in Action
 -->
 
-### Cập nhật các Cổng
+### Cổng Cập nhật
 
 <!--
 Next we need to incorporate the effect of the update gate $\mathbf{Z}_t$, as shown in :numref:`fig_gru_3`.
