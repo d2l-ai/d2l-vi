@@ -93,7 +93,7 @@ print(text[0:95])
 ## Tokenization
 -->
 
-## *dịch tiêu đề phía trên*
+## Token hóa
 
 <!--
 Different to using character tokens in :numref:`sec_language_model`, here a token is either a word or a punctuation mark.
@@ -102,7 +102,10 @@ Each one is a list of token list, with `source[i]` is the $i^\mathrm{th}$ senten
 To make the latter training faster, we sample the first `num_examples` sentences pairs.
 -->
 
-*dịch đoạn phía trên*
+Khác với việc sử dụng token trong :numref:`sec_language_model`, ở đây token là một từ hoặc dấu chấm câu.
+Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` và `target`.
+Mỗi đầu ra là một danh sách danh sách các token, với `source [i]` là câu thứ $i$ trong ngôn ngữ nguồn và `target [i]` là câu thứ $i$ câu trong ngôn ngữ đích.
+Để làm cho việc huấn luyện sau này trở nên nhanh hơn, ta sẽ lấy mẫu `num_examples` cặp câu đầu tiên.
 
 
 ```{.python .input  n=4}
@@ -127,7 +130,8 @@ We visualize the histogram of the number of tokens per sentence in the following
 As can be seen, a sentence in average contains 5 tokens, and most of the sentences have less than 10 tokens.
 -->
 
-*dịch đoạn phía trên*
+Ta vẽ biểu đồ tần suất của số lượng token cho mỗi câu trong hình dưới đây.
+Có thể thấy, một câu trung bình chứa 5 token và hầu hết các câu có ít hơn 10 token.
 
 ```{.python .input  n=5}
 d2l.set_figsize((3.5, 2.5))
@@ -140,7 +144,7 @@ d2l.plt.legend(loc='upper right');
 ## Vocabulary
 -->
 
-## *dịch tiêu đề phía trên*
+## Từ vựng
 
 <!--
 Since the tokens in the source language could be different to the ones in the target language, we need to build a vocabulary for each of them.
@@ -149,7 +153,10 @@ Here we map every token that appears less than 3 times into the &lt;unk&gt; toke
 In addition, we need other special tokens such as padding and sentence beginnings.
 -->
 
-*dịch đoạn phía trên*
+Vì các token trong ngôn ngữ nguồn có thể khác với các token trong ngôn ngữ đích, ta cần xây dựng một bộ từ vựng cho mỗi ngôn ngữ.
+Do ta đang sử dụng các từ thay vì các ký tự để làm token, kích thước bộ từ vựng sẽ lớn hơn đáng kể.
+Ở đây ta sẽ ánh xạ mọi token xuất hiện ít hơn 3 lần vào token &lt;unk&gt; :numref:`sec_text_preprocessing`.
+Ngoài ra, ta cần các token đặc biệt khác như phần đệm hay phần bắt đầu câu.
 
 ```{.python .input  n=6}
 src_vocab = d2l.Vocab(source, min_freq=3,
@@ -161,7 +168,7 @@ len(src_vocab)
 ## Loading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc dữ liệu
 
 <!--
 In language models, each example is a `num_steps` length sequence from the corpus, which may be a segment of a sentence, or span over multiple sentences.
@@ -169,14 +176,16 @@ In machine translation, an example should contain a pair of source sentence and 
 These sentences might have different lengths, while we need same length examples to form a minibatch.
 -->
 
-*dịch đoạn phía trên*
+Trong các mô hình ngôn ngữ, mỗi mẫu là một chuỗi có độ dài `num_steps` từ kho ngữ liệu, có thể là một phân đoạn của một câu hoặc trải dài trên nhiều câu.
+Trong máy dịch, một mẫu bao gồm một cặp câu nguồn và câu đích.
+Những câu này có thể có độ dài khác nhau, trong khi đó ta cần các mẫu có về độ dài bằng để tạo thành một minibatch.
 
 <!--
 One way to solve this problem is that if a sentence is longer than `num_steps`, we trim its length, otherwise pad with a special &lt;pad&gt; token to meet the length.
 Therefore we could transform any sentence to a fixed length.
 -->
 
-*dịch đoạn phía trên*
+Một cách để giải quyết vấn đề này là nếu một câu dài hơn `num_steps`, ta sẽ cắt bớt độ dài của nó, ngược lại nếu một câu ngắn hơn `num_steps`, thì ta sẽ đệm với một token đặc biệt &lt;pad&gt; để đáp ứng độ dài.
 
 
 ```{.python .input  n=7}
@@ -321,7 +330,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 *
