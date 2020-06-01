@@ -200,8 +200,9 @@ We also record the length of each sentence without the padding tokens, called *v
 In addition, we add the special “&lt;bos&gt;” and “&lt;eos&gt;” tokens to the target sentences so that our model will know the signals for starting and ending predicting.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta có thể chuyển đổi một danh sách các câu thành một mảng chỉ mục `(num_example, num_steps)`.
+Ta cũng sẽ ghi lại độ dài của mỗi câu mà không có token đệm, được gọi là *độ dài hợp lệ*. Thông tin này có thể được sử dụng bởi một số mô hình.
+Ngoài ra, ta sẽ thêm các token đặc biệt “&lt;bos&gt;” và “&lt;eos&gt;” vào các câu đích để mô hình biết được các tín hiệu để bắt đầu và kết thúc dự đoán.
 
 ```{.python .input  n=8}
 # Saved in the d2l package for later use
@@ -220,19 +221,19 @@ def build_array(lines, vocab, num_steps, is_source):
 Then we can construct minibatches based on these arrays.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta có thể xây dựng các minibatch dựa trên các mảng này.
 
 <!--
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại với nhau
 
 <!--
 Finally, we define the function `load_data_nmt` to return the data iterator with the vocabularies for source language and target language.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta sẽ định nghĩa hàm `load_data_nmt` để trả về iterator cho dữ liệu cùng với các bộ từ vựng cho ngôn ngữ nguồn và ngôn ngữ đích.
 
 
 ```{.python .input  n=9}
@@ -257,7 +258,7 @@ def load_data_nmt(batch_size, num_steps, num_examples=1000):
 Let us read the first batch.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ đọc vào batch đầu tiên.
 
 
 ```{.python .input  n=10}
@@ -281,7 +282,8 @@ for X, X_vlen, Y, Y_vlen in train_iter:
 * We read, preprocess, and tokenize the datasets from both source language and target language.
 -->
 
-*dịch đoạn phía trên*
+* Máy dịch (_Machine Translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
+* Ta đọc, tiền xử lý và token hóa bộ dữ liệu từ cả ngôn ngữ nguồn và ngôn ngữ đích.
 
 
 <!--
@@ -294,7 +296,7 @@ for X, X_vlen, Y, Y_vlen in train_iter:
 Find a machine translation dataset online and process it.
 -->
 
-*dịch đoạn phía trên*
+Tìm và xử lý một bộ dữ liệu máy dịch.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC =================================== -->
@@ -324,4 +326,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
