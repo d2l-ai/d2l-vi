@@ -23,7 +23,7 @@ They are frequently adopted in modern recurrent networks.
 -->
 
 Hơn nữa, chúng ta sẽ thay đổi mạng nơ-ron truy hồi với một tầng ẩn vô hướng đơn.
-Ta cũng sẽ mô tả các kiến trúc mạng sâu và thảo luận thiết kế hai chiều (*bidirectional*) với việc truy hồi xuôi và ngược.
+Ta cũng sẽ mô tả các kiến trúc mạng sâu và thảo luận thiết kế về hai chiều (*bidirectional*) với cả truy hồi xuôi và ngược.
 Chúng thường xuyên được sử dụng trong các mạng nơ-ron truy hồi hiện đại.
 
 
