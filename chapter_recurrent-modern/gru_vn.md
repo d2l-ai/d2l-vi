@@ -190,7 +190,7 @@ This leads to the final update equation for the GRU.
 
 Tiếp đến chúng ta cần kết hợp hiệu ứng của cổng cập nhật $\mathbf{Z}_t$, như trong :numref:`fig_gru_3`.
 Điều này xác định trạng thái mới $\mathbf{H}_t$ giống trạng thái cũ $\mathbf{H}_{t-1}$ tới mức độ nào và trạng thái mới $\tilde{\mathbf{H}}_t$ được sử dụng bao nhiêu.
-Các biến cổng (*gating*) $\mathbf{Z}_t$ được sử dụng cho mục đích này, chỉ đơn giản bằng cách kết hợp lồi theo từng phần tử một giữa hai ứng viên.
+Biến cổng (_gating variable_) $\mathbf{Z}_t$ được sử dụng cho mục đích này, chỉ đơn giản bằng cách kết hợp lồi theo từng phần tử một giữa hai trạng thái tiềm năng.
 Điều này dẫn đến phương trình cập nhật cuối cùng cho GRU.
 
 
@@ -213,18 +213,17 @@ In summary, GRUs have the following two distinguishing features:
 -->
 
 Bất cứ khi nào cổng cập nhật $\mathbf{Z}_t$ gần tới giá trị $1$, chúng ta chỉ đơn giản là giữ lại trạng thái cũ.
-Trong trường hợp này, các thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, dẫn đến việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc một cách hiệu quả.
-Ngược lại, bất cứ khi nào $\mathbf{Z}_t$ gần tới giá trị $0$, các trạng thái ẩn $\mathbf{H}_t$ tiến tới các trạng thái ẩn đích $\tilde{\mathbf{H}}_t$.
-Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và  bắt được những phụ thuộc cho chuỗi thời gian tốt hơn với khoảng cách các bước thời gian lớn.
-Nói tóm lại, GRUs có hai tính chất nổi bật như sau:
-
+Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, dẫn đến việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc một cách hiệu quả.
+Ngược lại, bất cứ khi nào $\mathbf{Z}_t$ gần tới giá trị $0$, trạng thái ẩn $\mathbf{H}_t$ tiến gần tới trạng thái ẩn đích $\tilde{\mathbf{H}}_t$.
+Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và bắt được những phụ thuộc cho chuỗi thời gian với khoảng cách các bước thời gian lớn tốt hơn.
+Nói tóm lại, các mạng GRU có hai tính chất nổi bật như sau:
 
 <!--
 * Reset gates help capture short-term dependencies in time series.
 * Update gates help capture long-term dependencies in time series.
 -->
 
-* Cổng khởi động lại giúp nắm bắt các phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng xoá giúp nắm bắt các phụ thuộc ngắn hạn trong chuỗi thời gian.
 * Cổng cập nhật giúp nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
 
 <!--
