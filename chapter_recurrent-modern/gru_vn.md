@@ -175,7 +175,7 @@ Ký hiệu $\odot$ biểu thị phép nhân theo chiều giữa các tensor.
 ![ Candidate hidden state computation in a GRU. The multiplication is carried out elementwise. ](../img/gru_2.svg)
 -->
 
-![ Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được tính theo từng phần tử. ](../img/gru_2.svg)
+![Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được tính theo từng phần tử.](../img/gru_2.svg)
 :label:`fig_gru_2`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
