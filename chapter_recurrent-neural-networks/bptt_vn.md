@@ -378,7 +378,7 @@ Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gr
 
 * Lan truyền ngược theo thời gian là cách áp dụng lan truyền ngược cho các mô hình chuỗi có trạng thái ẩn.
 * Việc cắt bỏ là cần thiết để thuận tiện cho việc tính toán và ổn định các giá trị số.
-* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì. Điều này được thể hiện trong hiện tượng tiêu biến hoặc bùng nổ gradient.
+* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì. Điều này được thể hiện dưới hiện tượng tiêu biến hoặc bùng nổ gradient.
 * Để tăng hiệu quả tính toán, các giá trị trung gian được lưu lại.
 
 <!--
