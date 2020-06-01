@@ -146,7 +146,7 @@ A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 ### Memory Cell
 -->
 
-### Đơn vị Bộ nhớ
+### Ô Nhớ
 
 <!--
 In GRUs, we had a single mechanism to govern input and forgetting.
@@ -156,7 +156,7 @@ Using the same pointwise multiplication trick as before, we arrive at the follow
 -->
 
 Trong GRU, chúng ta có một cơ chế duy nhất để quản lý và bỏ qua đầu vào.
-Trong LSTM, chúng ta có hai tham số, $\mathbf{I}_t$ điều chỉnh lượng dữ liệu mới cần lấy vào là bao nhiêu thông qua $\tilde{\mathbf{C}}_t$ và tham số quên $\mathbf{F}_t$ chỉ định nội dung cũ cần giữ lại trong đơn vị bộ nhớ $\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$ là bao nhiêu.
+Trong LSTM, chúng ta có hai tham số, $\mathbf{I}_t$ điều chỉnh lượng dữ liệu mới cần lấy vào là bao nhiêu thông qua $\tilde{\mathbf{C}}_t$ và tham số quên $\mathbf{F}_t$ chỉ định nội dung cũ cần giữ lại trong ô nhớ $\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$ là bao nhiêu.
 Sử dụng cùng một cách tính nhân theo từng điểm (_pointwise_) như trước đây, chúng ta đi đến phương trình cập nhật như sau.
 
 
@@ -169,15 +169,15 @@ This design was introduced to alleviate the vanishing gradient problem and to be
 We thus arrive at the flow diagram in :numref:`lstm_2`.
 -->
 
-Nếu giá trị ở cổng quên luôn xấp xỉ $1$ và cổng đầu vào p luôn xấp xỉ $0$, thì đơn vị bộ nhớ quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại theo thời gian và truyền cho bước thời gian hiện tại.
-Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt tốt hơn các phụ thuộc cho chuỗi thời gian với các phụ thuộc dài hạn.
+Nếu giá trị ở cổng quên luôn xấp xỉ $1$ và cổng đầu vào p luôn xấp xỉ $0$, thì ô nhớ quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại theo thời gian và truyền cho bước thời gian hiện tại.
+Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt các phụ thuộc dài hạn cho chuỗi thời gian tốt hơn.
 Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
 <!--
 ![Computation of memory cells in an LSTM. Here, the multiplication is carried out elementwise. ](../img/lstm_2.svg)
 -->
 
-![Các phép tính toán trong đơn vị bộ nhớ của LSTM. Ở đây, phép tính nhân từng phần tử một (_elementwise_) được sử dụng. ](../img/lstm_2.svg)
+![Các phép tính toán trong ô nhớ của LSTM. Ở đây, phép tính nhân từng phần tử một (_elementwise_) được sử dụng. ](../img/lstm_2.svg)
 
 :label:`lstm_2`
 
@@ -200,10 +200,10 @@ whereas for output $0$ we retain all the information only within the memory cell
 
 Cuối cùng, chúng ta cần phải xác định làm thế nào để tính toán trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
 Đây là nơi các cổng đầu ra được sử dụng.
-Trong LSTM, đây chỉ đơn giản là một phiên bản có cổng của hàm kích hoạt $\tanh$ trong đơn vị bộ nhớ.
+Trong LSTM, đây chỉ đơn giản là một phiên bản có cổng của hàm kích hoạt $\tanh$ trong ô nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
-Bất cứ khi nào giá trị của cổng đầu ra là $1$, một cách hiệu quả chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán.
-Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong đơn vị bộ nhớ và không thực hiện thêm bất kỳ xử lý nào.
+Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
+Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không thực hiện thêm bất kỳ xử lý nào.
 :numref:`lstm_3` minh họa các luồng dữ liệu theo đồ thị.
 
 
@@ -455,6 +455,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 4 -->
 *
