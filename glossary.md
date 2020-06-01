@@ -358,6 +358,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | running time                      | thời gian chạy                            |                                              |
 | region of rejection               | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | relative loss                     | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
+| reset gate                        | cổng xóa                        |                     
+   |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại                                |
