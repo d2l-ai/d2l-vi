@@ -32,7 +32,7 @@ Clearly we are still very far from designing such a system, since it would need 
 -->
 
 Mô hình ngôn ngữ vô cùng hữu dụng. 
-Chẳng hạn, một mô hình lý tưởng có thể tự tạo ra văn bản tự nhiên, chỉ bằng cách chọn một từ $w_t$ tại thời điểm $t$ dựa trên phân phối $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Chẳng hạn, một mô hình lý tưởng có thể tự tạo ra văn bản tự nhiên, chỉ bằng cách chọn một từ $w_t$ tại thời điểm $t$ với $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
 Không giống như khỉ gõ phím, văn bản được sinh ra từ mô hình này sẽ giống ngôn ngữ tự nhiên, giống tiếng Anh chẳng hạn.
 Hơn nữa, mô hình đủ khả năng tạo ra một đoạn hội thoại có ý nghĩa, chỉ cần dựa vào đoạn hội thoại trước đó.
 Trên thực tế, còn rất xa để thiết kế được hệ thống như vậy, vì mô hình sẽ cần *hiểu* văn bản hơn là chỉ tạo ra nội dung đúng ngữ pháp.
