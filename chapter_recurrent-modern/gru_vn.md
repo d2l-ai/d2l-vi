@@ -334,7 +334,7 @@ Its structure is the same as the basic RNN cell, except that the update equation
 -->
 
 Bây giờ chúng ta đã sẵn sàng để định nghĩa mô hình GRU.
-Cấu trúc của nó cũng giống như một khối RNN cơ bản, ngoại trừ các phương trình cập nhật phức tạp hơn.
+Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng với phương trình cập nhật phức tạp hơn.
 
 
 ```{.python .input  n=4}
