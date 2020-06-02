@@ -253,6 +253,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                      | Tiếng Việt                    | Thảo luận tại                                |
 |------------------------------|-------------------------------|----------------------------------------------|
 | machine learning             | học máy                       |                                              |
+| machine translation          | dịch máy                       |                                              |
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (computer vision)       | mặt nạ                        | |
 | max pooling                  | gộp cực đại                   | [https://git.io/JfGi6](https://git.io/JfGi6) |
