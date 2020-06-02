@@ -95,8 +95,8 @@ Next, we initialize the model parameters for a RNN model.
 The number of hidden units `num_hiddens` is a tunable parameter.
 -->
 
-Tiếp theo, chúng tôi khởi tạo các tham số mô hình cho một mô hình RNN.
-Số lượng nút ẩn `num_hiddens` là một tham số có thể điều chỉnh.
+Tiếp theo, ta khởi tạo các tham số cho mô hình RNN.
+Số nút ẩn `num_hiddens` là tham số có thể điều chỉnh.
 
 
 ```{.python .input  n=19}
@@ -131,9 +131,9 @@ It returns an `ndarray` filled with 0 and with a shape of (batch size, number of
 Using tuples makes it easier to handle situations where the hidden state contains multiple variables (e.g., when combining multiple layers in an RNN where each layer requires initializing).
 -->
 
-Đầu tiên, chúng ta cần một hàm `init_rnn_state` để trả về trạng thái ẩn khi khởi tạo.
-Nó trả về một `ndarray` chứa giá trị 0 và có kích thước là (kích thước batch, số nút ẩn).
-Sử dụng tuple giúp ta dễ dàng xử lý các tình huống trong đó trạng thái ẩn chứa nhiều biến (ví dụ: khi ta cần khởi tạo nhiều tầng được kết hợp trong RNN).
+Đầu tiên, chúng ta khởi tạo trạng thái ẩn bằng hàm `init_rnn_state`.
+Hàm này trả về tuple gồm một `ndarray` chứa giá trị 0 và có kích thước là (kích thước batch, số nút ẩn).
+Trả về tuple giúp ta dễ dàng xử lý các tình huống khi trạng thái ẩn chứa nhiều biến (ví dụ: khi ta cần khởi tạo nhiều tầng được kết hợp trong RNN).
 
 
 ```{.python .input  n=20}
@@ -147,10 +147,9 @@ The activation function here uses the $\tanh$ function.
 As described in :numref:`sec_mlp`, the mean value of the $\tanh$ function is 0, when the elements are evenly distributed over the real numbers.
 -->
 
-Hàm `rnn` sau đây định nghĩa cách tính trạng thái ẩn và đầu ra trong bước thời gian.
-Hàm kích hoạt ở đây là hàm $\tanh$.
-Như được mô tả trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên trục số thực.
-
+Hàm `rnn` sau định nghĩa cách tính toán trạng thái ẩn và đầu ra tại một bước thời gian.
+Hàm kích hoạt ở đây là $\tanh$.
+Như đã đề cập trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên trục số thực.
 
 ```{.python .input  n=6}
 def rnn(inputs, state, params):
@@ -169,7 +168,7 @@ def rnn(inputs, state, params):
 Now we have all functions defined, next we create a class to wrap these functions and store parameters.
 -->
 
-Sau khi đã định nghĩa tất cả các hàm, tiếp theo chúng ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
+Sau khi đã định nghĩa tất cả các hàm, ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
 
 
 ```{.python .input}
@@ -195,7 +194,7 @@ class RNNModelScratch:
 Let us do a sanity check whether inputs and outputs have the correct dimensions, e.g., to ensure that the dimensionality of the hidden state has not changed.
 -->
 
-Hãy kiểm tra sơ qua xem liệu đầu vào và đầu ra có số chiều đúng hay không, ví dụ, để đảm bảo rằng chiều của trạng thái ẩn không thay đổi.
+Hãy kiểm tra nhanh chiều của đầu vào và đầu ra, và xem chiều của trạng thái ẩn có thay đổi hay không.
 
 ```{.python .input}
 num_hiddens, ctx = 512, d2l.try_gpu()
@@ -210,7 +209,7 @@ Y.shape, len(new_state), new_state[0].shape
 We can see that the output shape is (number steps $\times$ batch size, vocabulary size), while the hidden state shape remains the same, i.e., (batch size, number of hidden units).
 -->
 
-Chúng ta có thể thấy rằng kích thước đầu ra là (số bước $\times$ kích thước batch, kích thước từ vựng), trong khi kích thước trạng thái ẩn vẫn giữ nguyên, tức là (kích thước batch, số nút ẩn).
+Có thể thấy kích thước đầu ra là (số bước $\times$ kích thước batch, kích thước bộ từ vựng), trong khi kích thước trạng thái ẩn vẫn giữ nguyên là (kích thước batch, số nút ẩn).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
