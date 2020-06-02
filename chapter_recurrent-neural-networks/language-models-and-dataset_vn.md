@@ -171,7 +171,7 @@ Thật không may, các mô hình như vậy là bất khả thi vì những lý
 Thứ hai, các mô hình hoàn toàn bỏ qua ý nghĩa của các từ.
 Chẳng hạn, danh từ *“mèo”(“cat")* và tính từ *“thuộc về mèo”(“feline”)* nên xuất hiện trong các ngữ cảnh có liên quan đến nhau.
 Rất khó để thêm các ngữ cảnh bổ trợ vào các mô hình đó, trong khi các mô hình ngôn ngữ dựa trên học sâu hoàn toàn có thể làm được.
-Cuối cùng, các chuỗi từ dài gần như chắc chắn sẽ hoàn toàn mới lạ, do đó một mô hình chỉ đơn giản đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém.
+Cuối cùng, các chuỗi từ dài gần như hoàn toàn mới lạ, do đó một mô hình chỉ đơn giản đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém.
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
