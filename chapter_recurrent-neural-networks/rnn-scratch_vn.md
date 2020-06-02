@@ -234,10 +234,10 @@ For the beginning of the sequence, we only update the hidden state.
 After that we begin generating new characters and emitting them.
 -->
 
-Trước tiên cần giải thích về hàm dự đoán để chúng ta có thể thường xuyên kiểm tra trong quá trình huấn luyện.
-Hàm này dự đoán các ký tự `num_predicts` tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
-Để bắt đầu chuỗi, ta cập nhật chỉ trạng thái ẩn.
-Sau đó, ta bắt đầu tạo ra các ký tự mới và ban hành chúng.
+Trước tiên chúng ta giải thích hàm dự đoán để có thể kiểm tra thường xuyên trong quá trình huấn luyện.
+Hàm này dự đoán `num_predicts` ký tự tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
+Khi bắt đầu chuỗi, ta chỉ cập nhật trạng thái ẩn.
+Sau đó bắt đầu tạo ra các ký tự mới.
 
 
 ```{.python .input}
@@ -263,9 +263,9 @@ Given that we did not train the network, it will generate nonsensical prediction
 We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
-Ta kiểm tra hàm `predict_rnn` trước tiên.
-Vì mạng không được huấn luyện, nó sẽ tạo ra các dự đoán vô nghĩa.
-Ta khởi tạo mạng với chuỗi `traveller` và để nó tạo thêm 10 ký tự.
+Ta kiểm tra hàm `predict_ch8` trước.
+Lúc này đầu ra sẽ là các dự đoán vô nghĩa do mạng chưa được huấn luyện.
+Ta khởi tạo mạng với chuỗi `traveller` và tạo ra thêm 10 ký tự.
 
 
 ```{.python .input  n=9}
@@ -276,7 +276,7 @@ predict_ch8('time traveller ', 10, model, vocab, ctx)
 ## Gradient Clipping
 -->
 
-## Cắt bớt Gradient
+## Gọt Gradient
 
 <!--
 For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length $\mathcal{O}(T)$ during backpropagating.
