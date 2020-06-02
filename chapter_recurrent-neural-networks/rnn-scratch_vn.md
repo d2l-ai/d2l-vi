@@ -14,9 +14,9 @@ It is based on a character-level recurrent neural network trained on H. G. Wells
 As before, we start by reading the dataset first, which is introduced in :numref:`sec_language_model`.
 -->
 
-Trong phần này, ta xây dựng từ đầu một mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
-Mô hình này dựa trên một mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
-Như thường lệ, ta bắt đầu bằng cách đọc tập dữ liệu trước, được giới thiệu tại :numref:`sec_language_model`.
+Trong phần này, ta lập trình từ đầu mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
+Mô hình này dựa trên mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
+Ta bắt đầu bằng cách đọc tập dữ liệu được đề cập trong :numref:`sec_language_model`.
 
 
 ```{.python .input  n=14}
@@ -43,10 +43,10 @@ We often present each token as a more expressive feature vector.
 The easiest representation is called *one-hot encoding*.
 -->
 
-Hãy nhớ rằng mỗi token được trình bày dưới dạng một chỉ số (_numerical index_) trong `train_iter`.
-Cho trực tiếp các chỉ số này vào mạng nơ-ron có thể khiến việc học thêm khó khăn.
-Thay vào đó, chúng ta thường biểu diễn mỗi token như một vector đặc trưng chứa nhiều hàm ý hơn.
-Cách biểu diễn đơn giản nhất được gọi là *biểu diễn one-hot*.
+Lưu ý rằng mỗi token được biểu diễn như một chỉ số (_numerical index_) trong `train_iter`.
+Đưa trực tiếp các chỉ số này vào mạng nơ-ron sẽ gây khó cho việc học.
+Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang mhiều thông tin hơn.
+Cách đơn giản nhất là sử dụng *biểu diễn one-hot*.
 
 <!--
 In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
@@ -55,10 +55,10 @@ This vector is the one-hot vector of the original token.
 The one-hot vectors with indices 0 and 2 are shown below.
 -->
 
-Tóm lại, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử rằng số lượng token khác nhau trong từ vựng là $N$ (`len(vocab)`) và các chỉ số token nằm trong khoảng từ 0 đến $N-1$ .
-Nếu chỉ số của token là số nguyên $i$, thì chúng ta tạo một vector $\mathbf{e}_i$ chứa các phần tử 0 với độ dài $N$ và đặt phần tử 1 ở vị trí $i$.
-Vector này là vector one-hot của token gốc.
-Các vector one-hot với các chỉ số 0 và 2 được hiển thị bên dưới.
+Nói ngắn gọn, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử số token không trùng lặp trong bộ từ vựng là $N$ (`len(vocab)`) và chỉ số của chúng nằm trong khoảng từ 0 đến $N-1$ .
+Với token chỉ số $i$, ta tạo một vector $\mathbf{e}_i$ độ dài $N$ có các phần tử bằng 0, trừ phần tử ở vị trí $i$ bằng 1. 
+Vector này là vector one-hot của token.
+Các vector one-hot với các chỉ số 0 và 2 được hiển thị phía dưới.
 
 ```{.python .input  n=21}
 npx.one_hot(np.array([0, 2]), len(vocab))
@@ -70,10 +70,9 @@ The `one_hot` function transforms such a minibatch into a 3-D tensor with the la
 We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
 -->
 
-<!-- Revise phase 2 cần xem xét thêm có nên dịch batch size, timestep, vocabulary size hay không? -->
-Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (batch size, timestep).
-Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước cuối cùng bằng với kích thước từ vựng.
-Chúng ta thường chuyển vị đầu vào để có được (timestep, batch size, vocabulary size) tại đầu ra phù hợp hơn với mô hình chuỗi.
+Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (kích thước batch, bước thời gian).
+Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước chiều cuối cùng bằng kích thước bộ từ vựng.
+Chúng ta thường chuyển vị đầu vào để có đầu ra kích thước (bước thời gian, kích thước batch, kích thước bộ từ vựng), phù hợp hơn với mô hình chuỗi.
 
 
 ```{.python .input  n=18}
