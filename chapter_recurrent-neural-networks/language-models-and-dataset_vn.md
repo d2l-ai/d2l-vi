@@ -105,7 +105,7 @@ Moving on, we could attempt to estimate
 -->
 
 Ví dụ, $p(\mathrm{Thống})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu bằng “Thống”.
-Một cách khác ít chính xác hơn là đếm tất cả các lần xuất hiện của từ ”thống”, và chia nó cho tổng số từ trong kho dữ liệu văn bản. <!-- hm câu này phải là câu "Ví dụ, ..." ở trên thì mới hợp logic câu trước nữa ở L98 nhỉ? -->
+Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hiện của từ ”thống” và chia số lần đó cho tổng số từ trong kho dữ liệu văn bản. <!-- hm câu này phải là câu "Ví dụ, ..." ở trên thì mới hợp logic câu trước nữa ở L98 nhỉ? -->
 Cách làm này khá hiệu quả, đặc biệt là với các từ xuất hiện thường xuyên. 
 Tiếp theo, ta tính 
 
