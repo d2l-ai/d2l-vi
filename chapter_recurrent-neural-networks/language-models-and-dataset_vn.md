@@ -67,7 +67,7 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-Làm thế nào để mô hình hoá một tài liệu, hay thậm chí là một chuỗi các từ?
+Làm thế nào để mô hình hoá một tài liệu hay thậm chí là một chuỗi các từ?
 Ta có thể sử dụng cách phân tích đã dùng trong mô hình chuỗi ở phần trước.
 Bắt đầu bằng việc áp dụng quy tắc xác suất cơ bản sau:
 
