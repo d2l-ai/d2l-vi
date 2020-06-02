@@ -38,12 +38,12 @@ the expectations that the next movie is equally good or better are high, hence e
 * Some movies become cult movies, because they were almost comically bad. *Plan 9 from Outer Space* and *Troll 2* achieved a high degree of notoriety for this reason.
 -->
 
-* [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
+* [Hiệu ứng mỏ neo](https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
 Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù bộ phim đó không hề thay đổi.
 Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
-* [Hiệu ứng vòng xoáy khoái lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
-Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
+* [Hiệu ứng vòng xoáy khoái lạc](https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc thậm chí phải hay hơn trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ: rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên tham gia vào quá trình sản xuất phim.
 * Một số phim trở thành "phim cult" vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
@@ -54,7 +54,7 @@ Using temporal dynamics helped :cite:`Koren.2009` to recommend movies more accur
 But it is not just about movies.
 -->
 
-Nói tóm lại, thứ bậc xếp hạng không hề cố định.
+Tóm lại, thứ bậc xếp hạng không hề cố định.
 Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
 Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
@@ -74,7 +74,7 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 -->
 
 * Nhiều người dùng có thói quen rất đặc biệt liên quan tới thời gian mở ứng dụng.
-Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
+Chẳng hạn, học sinh sử dụng các ứng dụng mạng xã hội nhiều hơn hẳn sau giờ học.
 Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi thị trường mở cửa.
 * Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai đều là bài toán ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
@@ -102,7 +102,7 @@ To keep things simple, we use the stock price illustrated in :numref:`fig_ftse10
 -->
 
 
-Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
+Tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
 Để đơn giản hóa mọi việc, ta sẽ sử dụng giá cổ phiếu được minh họa trong :numref:`fig_ftse100` để làm ví dụ.
 
 <!--
@@ -161,7 +161,7 @@ LSTMs and GRUs are examples of this.
 Trong trường hợp này, ta có thể hài lòng với một khoảng thời gian $\tau$ và chỉ sử dụng các quan sát $x_{t-1}, \ldots, x_{t-\tau}$.
 Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng nhau, ít nhất là với $t > \tau$.
 Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
-Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng tự thực hiện hồi quy trên chính mình.
+Các mô hình như vậy được gọi là các mô hình *tự hồi quy* (_autoregressive_), vì chúng tự thực hiện hồi quy trên chính mình.
 2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một giá trị $h_t$ để tóm tắt các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
 Kết quả là mô hình sẽ ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
 Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy tiềm ẩn* (_latent autoregressive model_).
@@ -204,7 +204,7 @@ Note that the above considerations still hold if we deal with discrete objects, 
 The only difference is that in such a situation we need to use a classifier rather than a regressor to estimate $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 -->
 
-Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ thay vì số.
+Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ ngữ thay vì số.
 Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ phân loại thay vì một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
