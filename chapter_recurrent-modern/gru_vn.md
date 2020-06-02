@@ -375,7 +375,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## Lập trình Ngắn gọn
+## Lập trình Súc tích
 
 <!--
 In Gluon, we can directly call the `GRU` class in the `rnn` module.
