@@ -94,7 +94,7 @@ The probability of words can be calculated from the relative word frequency of a
 
 Để tính toán mô hình ngôn ngữ, ta cần tính xác suất các từ và xác suất có điều kiện của một từ khi đã có vài từ trước đó. 
 Đây chính là các tham số của mô hình ngôn ngữ.
-Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục trong Wikipedia của [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg), hoặc tất cả văn bản được đăng trên mạng.
+Ở đây chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục trong Wikipedia của [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg), hoặc tất cả văn bản được đăng trên mạng.
 Xác suất riêng lẻ của từng từ có thể tính bằng tần suất của từ đó trong tập dữ liệu huấn luyện.
 
 <!--
