@@ -380,7 +380,7 @@ However, training LSTMs and other sequence models (such as GRU) are quite costly
 Later we will encounter alternative models such as Transformers that can be used in some cases.
 -->
 
-Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng việc huấn luyện và thực thi các mô hình này là khá tốn kém do số lượng trạng thái ẩn lớn hơn.
+Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng việc huấn luyện và thực thi các mô hình này là khá tốn kém do có kích thước trạng thái ẩn lớn hơn.
 LSTM là mô hình tự động hồi quy tiềm ẩn nguyên mẫu có sự kiểm soát trạng thái không tầm thường.
 Nhiều biến thể đã được đề xuất qua từng năm, ví dụ như các kiến trúc đa tầng, các kết nối thặng dư hay các kiểu điều chuẩn khác nhau.
 Tuy nhiên, việc huấn luyện LSTM và các mô hình chuỗi khác (như GRU) là khá tốn kém do sự phụ thuộc dài hạn của chuỗi.
