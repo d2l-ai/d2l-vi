@@ -108,7 +108,7 @@ trong đó $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d 
 ### Candidate Memory Cell
 -->
 
-### Ký ức Tiềm năng
+### Ô Ký ức Tiềm năng
 
 <!--
 Next we design the memory cell.
