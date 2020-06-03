@@ -294,7 +294,7 @@ In the initialization function, the hidden state of the LSTM needs to return an 
 Hence we get the following state initialization.
 -->
 
-Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về một đơn vị nhớ bổ sung có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
+Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về một ô nhớ bổ sung có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
 Do đó ta có hàm trạng khởi tạo trạng thái sau đây.
 
 ```{.python .input  n=3}
