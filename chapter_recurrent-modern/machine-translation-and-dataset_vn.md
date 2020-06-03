@@ -45,7 +45,7 @@ npx.set_np()
 ## Reading and Preprocessing the Dataset
 -->
 
-## Đọc và Tiền xử lý dữ liệu
+## Đọc và Tiền Xử lý Dữ liệu
 
 <!--
 We first download a dataset that contains a set of English sentences with the corresponding French translations.
