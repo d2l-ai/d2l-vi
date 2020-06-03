@@ -417,7 +417,7 @@ why does the hidden state need to use the $\tanh$ function again to ensure that 
 -->
 
 
-1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, sự rối rắm và đầu ra.
+1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, độ rối rắm và đầu ra.
 2. Cần thay đổi mô hình như thế nào để tạo ra các từ thích hợp trái ngược với chuỗi các ký tự?
 3. So sánh chi phí tính toán của GRU, LSTM và RNN thông thường cho một chiều ẩn nhất định. Đặc biệt chú ý đến chi phí huấn luyện và dự đoán.
 4. Trong khi các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
