@@ -18,7 +18,7 @@ Interestingly, LSTM's design is slightly more complex than GRU but predates GRU 
 
 Thách thức đối với việc lưu trữ những thông tin dài hạn và bỏ qua đầu vào ngắn hạn trong các mô hình biến ẩn đã tồn tại trong một thời gian dài.
 Một trong những phương pháp tiếp cận sớm nhất giải quyết vấn đề này là LSTM :cite:`Hochreiter.Schmidhuber.1997`.
-Nó có nhiều tính chất tương tự Đơn vị Truy hồi có Cổng (GRU).
+Nó có nhiều tính chất tương tự Nút Truy hồi có Cổng (GRU).
 Điều thú vị là thiết kế LSTM phức tạp hơn GRU một chút nhưng được xuất hiện trước GRU gần hai thập kỷ.
 
 <!--
