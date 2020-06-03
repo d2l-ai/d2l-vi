@@ -75,7 +75,7 @@ print(raw_text[0:106])
 We perform several preprocessing steps on the raw text data, including ignoring cases, replacing UTF-8 non-breaking space with space, and adding space between words and punctuation marks.
 -->
 
-Ta thực hiện một số bước tiền xử lý trên dữ liệu văn bản thô, bao gồm chuyển đổi tất cả ký tự sang chữ thường, thay thế các ký tự không dãn cách UTF-8 bằng khoảng trắng và thêm khoảng trắng vào giữa các từ và dấu chấm câu.
+Ta thực hiện một số bước tiền xử lý trên dữ liệu văn bản thô, bao gồm chuyển đổi tất cả ký tự sang chữ thường, thay thế các ký tự không dãn cách UTF-8 bằng dấu cách và thêm dấu cách vào giữa các từ và các dấu câu.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
