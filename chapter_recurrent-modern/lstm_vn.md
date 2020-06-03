@@ -136,7 +136,7 @@ Here $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\mathbf{W}_{hc} \in \mat
 A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 -->
 
-Ô nhớ tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
+Ô ký ức tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
 
 <!--
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
