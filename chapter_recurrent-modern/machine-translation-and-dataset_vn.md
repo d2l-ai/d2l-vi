@@ -186,7 +186,7 @@ Therefore we could transform any sentence to a fixed length.
 -->
 
 Một cách để giải quyết vấn đề này là nếu một câu dài hơn `num_steps`, ta sẽ cắt bớt độ dài của nó, ngược lại nếu một câu ngắn hơn `num_steps`, thì ta sẽ đệm với một token đặc biệt &lt;pad&gt; để đáp ứng độ dài.
-
+Do vậy, với cách trên, chúng ta có thể chuyển bất cứ câu nào về cùng một độ dài cố định.
 
 ```{.python .input  n=7}
 # Saved in the d2l package for later use
