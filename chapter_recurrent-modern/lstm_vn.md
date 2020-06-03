@@ -340,7 +340,7 @@ def lstm(inputs, state, params):
 Let us train an LSTM as same as what we did in :numref:`sec_gru`, by calling the `RNNModelScratch` function as introduced in :numref:`sec_rnn_scratch`.
 -->
 
-Như đã từng làm trong :numref:`sec_gru`, ta sẽ huấn luyện một LSTM bằng cách gọi hàm `RNNModelScratch` như được giới thiệu ở :numref:`sec_rnn_scratch`.
+Như đã từng làm trong :numref:`sec_gru`, ta sẽ huấn luyện một LSTM bằng cách gọi hàm `RNNModelScratch` đã được giới thiệu ở :numref:`sec_rnn_scratch`.
 
 ```{.python .input  n=9}
 vocab_size, num_hiddens, ctx = len(vocab), 256, d2l.try_gpu()
