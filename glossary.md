@@ -372,7 +372,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | satisficing metric              | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | scalar                          | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | scale invariant                 | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
-| scroing function                | hàm tính điểm            |                                              |
+| scoring function                | hàm tính điểm            |                                              |
 | sentiment classification        | phân loại cảm xúc        |                                              |
 | sequence learning               | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence            | chuỗi sang chuỗi         |                                              |
