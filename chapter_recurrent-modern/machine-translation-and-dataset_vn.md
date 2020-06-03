@@ -227,7 +227,7 @@ Sau đó, ta có thể xây dựng các minibatch dựa trên các mảng này.
 ## Putting All Things Together
 -->
 
-## Kết hợp Tất cả lại với nhau
+## Kết hợp Tất cả lại
 
 <!--
 Finally, we define the function `load_data_nmt` to return the data iterator with the vocabularies for source language and target language.
