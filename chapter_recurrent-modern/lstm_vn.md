@@ -142,7 +142,7 @@ A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
 -->
 
-![Các phép tính toán trong ô nhớ tiềm năng của LSTM. ](../img/lstm_1.svg)
+![Các phép tính toán trong ô ký ức tiềm năng của LSTM. ](../img/lstm_1.svg)
 :label:`lstm_1`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
