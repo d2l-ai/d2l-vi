@@ -102,7 +102,7 @@ Each one is a list of token list, with `source[i]` is the $i^\mathrm{th}$ senten
 To make the latter training faster, we sample the first `num_examples` sentences pairs.
 -->
 
-Khác với việc sử dụng token trong :numref:`sec_language_model`, ở đây token là một từ hoặc dấu chấm câu.
+Khác với việc sử dụng token trong :numref:`sec_language_model`, ở đây token là một từ hoặc dấu câu.
 Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` và `target`.
 Mỗi đầu ra là một danh sách danh sách các token, với `source [i]` là câu thứ $i$ trong ngôn ngữ nguồn và `target [i]` là câu thứ $i$ câu trong ngôn ngữ đích.
 Để làm cho việc huấn luyện sau này trở nên nhanh hơn, ta sẽ lấy mẫu `num_examples` cặp câu đầu tiên.
