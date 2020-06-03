@@ -384,8 +384,8 @@ Let us first define the function to train the model on one data epoch.
 It differs from the models training of :numref:`sec_softmax_scratch` in three places:
 -->
 
-Trước tiên, ta sẽ định nghĩa hàm huấn luyện mô hình trên một epoch dữ liệu.
-Quá trình huấn luyện ở đây sẽ khác với :numref:`sec_softmax_scratch` ở ba điểm:
+Trước tiên, ta định nghĩa hàm huấn luyện trên một epoch dữ liệu.
+Quá trình huấn luyện ở đây khác trong :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
@@ -394,11 +394,10 @@ This ensures that the model does not diverge even when gradients blow up at some
 3. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
 -->
 
-1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
-2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
-Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm độ lớn của bước cập nhật một cách hiệu quả.
-3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
-
+1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân tách tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
+2. Ta gọt gradient trước khi cập nhật tham số mô hình.
+Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm biên độ của bước cập nhật một cách hiệu quả.
+3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được. <!-- wait to resolve `perplexity` -->
 
 <!--
 When the consecutive sampling is used, we initialize the hidden state at the beginning of each epoch.
@@ -592,24 +591,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
 * Trần Yến Thy
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
+* Nguyễn Lê Quang Nhật
 * Nguyễn Duy Du
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
