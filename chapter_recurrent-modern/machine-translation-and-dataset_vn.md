@@ -130,8 +130,8 @@ We visualize the histogram of the number of tokens per sentence in the following
 As can be seen, a sentence in average contains 5 tokens, and most of the sentences have less than 10 tokens.
 -->
 
-Ta vẽ biểu đồ tần suất của số lượng token cho mỗi câu trong hình dưới đây.
-Có thể thấy, một câu trung bình chứa 5 token và hầu hết các câu có ít hơn 10 token.
+Dưới đây là biểu đồ tần suất của số lượng token cho mỗi câu.
+Có thể thấy, trung bình một câu chứa 5 token và hầu hết các câu có ít hơn 10 token.
 
 ```{.python .input  n=5}
 d2l.set_figsize((3.5, 2.5))
@@ -168,7 +168,7 @@ len(src_vocab)
 ## Loading the Dataset
 -->
 
-## Đọc dữ liệu
+## Đọc Dữ liệu
 
 <!--
 In language models, each example is a `num_steps` length sequence from the corpus, which may be a segment of a sentence, or span over multiple sentences.
@@ -177,7 +177,7 @@ These sentences might have different lengths, while we need same length examples
 -->
 
 Trong các mô hình ngôn ngữ, mỗi mẫu là một chuỗi có độ dài `num_steps` từ kho ngữ liệu, có thể là một phân đoạn của một câu hoặc trải dài trên nhiều câu.
-Trong máy dịch, một mẫu bao gồm một cặp câu nguồn và câu đích.
+Trong dịch máy, một mẫu bao gồm một cặp câu nguồn và câu đích.
 Những câu này có thể có độ dài khác nhau, trong khi đó ta cần các mẫu có về độ dài bằng để tạo thành một minibatch.
 
 <!--
