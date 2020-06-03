@@ -117,8 +117,8 @@ Its computation is similar to the three gates described above, but using a $\tan
 This leads to the following equation at timestep $t$.
 -->
 
-Tiếp theo, chúng ta sẽ thiết kế một ô nhớ.
-Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Tiếp theo, chúng ta sẽ thiết kế một ô ký ức.
+Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô ký ức *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
 Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
 Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
