@@ -169,7 +169,7 @@ This design was introduced to alleviate the vanishing gradient problem and to be
 We thus arrive at the flow diagram in :numref:`lstm_2`.
 -->
 
-Nếu giá trị ở cổng quên luôn xấp xỉ $1$ và cổng đầu vào p luôn xấp xỉ $0$, thì ô nhớ quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại theo thời gian và truyền cho bước thời gian hiện tại.
+Nếu giá trị ở cổng quên luôn xấp xỉ bằng $1$ và cổng đầu vào luôn xấp xỉ bằng $0$, thì giá trị ô nhớ trong quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại qua thời gian và truyền tới bước thời gian hiện tại.
 Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt các phụ thuộc dài hạn cho chuỗi thời gian tốt hơn.
 Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
