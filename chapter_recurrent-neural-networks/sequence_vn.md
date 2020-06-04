@@ -55,7 +55,7 @@ But it is not just about movies.
 -->
 
 Tóm lại, thứ bậc xếp hạng không hề cố định.
-Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
+Sử dụng các động lực dựa trên thời gian đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
 Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
 <!--
@@ -191,7 +191,7 @@ Regardless of what we do, we will thus get an estimate of the entire time series
 Cả hai trường hợp đều đặt ra câu hỏi về cách tạo ra dữ liệu huấn luyện.
 Người ta thường sử dụng các quan sát từ quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
 Rõ ràng chúng ta không thể trông đợi thời gian sẽ đứng yên.
-Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, ít nhất động lực của chuỗi thời gian sẽ không đổi.
+Tuy nhiên, một giả định phổ biến là: tuy các giá trị cụ thể của $x_t$ có thể thay đổi, ít ra động lực của chuỗi thời gian sẽ không đổi.
 Điều này khá hợp lý, vì nếu động lực thay đổi thì ta sẽ không thể dự đoán được nó bằng cách sử dụng dữ liệu mà ta đang có.
 Các nhà thống kê gọi các động lực không thay đổi này là *cố định* (*stationary*).
 Dù có làm gì đi chăng nữa, chúng ta vẫn sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
