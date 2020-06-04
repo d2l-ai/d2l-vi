@@ -166,7 +166,7 @@ len(state), state[0].shape, state[1].shape
 ## Decoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Giải mã
 :label:`sec_seq2seq_decoder`
 
 <!--
@@ -175,19 +175,23 @@ Suppose that the given outputs in the training set are $y_1, \ldots, y_{T'}$.
 At each timestep $t'$, the conditional probability of output $y_{t'}$ will depend on the previous output sequence $y_1, \ldots, y_{t'-1}$ and the context vector $\mathbf{c}$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Như đã giới thiệu, vector ngữ cảnh (*context vetor*) $\mathbf{c}$ mã hoá thông tin của chuỗi đầu vào $x_1, \ldots, x_T$.
+Giả sử đầu ra của tập dữ liệu huấn luyện là $y_1, \ldots, y_{T'}$.
+Tại mỗi thời điểm $t'$, xác suất điều kiện của đầu ra $y_{t'}$ phụ thuộc vào đầu ra trước đó $y_1, \ldots, y_{t'-1}$ và vector ngữ cảnh \mathbf{c}$, tức là
 
 
 $$P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}).$$
 
 <!--
 Hence, we can use another RNN as the decoder.
-At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs: 
+At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs:
 the feature vector $\mathbf{y}_{t'-1}$ of $y_{t'-1}$, the context vector $\mathbf{c}$, and the hidden state of the last timestep $\mathbf{s}_{t'-1}$.
 Let us denote the transformation of the RNN's hidden states within the decoder by a function $g$:
 -->
 
-*dịch đoạn phía trên*
+Do đó, chúng ta có thể sử dụng một mạng RNN khác như một bộ giải mã.
+Tại mỗi thời điểm $t'$, bộ giải mã cập nhật trạng thái ẩn của nó thông qua ba đầu vào: vector đặc trưng (*feature vector*) $\mathbf{y}_{t'-1}$ của $y_{t'-1}$, vector ngữ cảnh $\mathbf{c}$ và trạng thái ẩn của bước trước $\mathbf{s}_{t'-1}$.
+Quá trình tính toán trạng thái ẩn của mạng RNN trong bộ giải mã có được kí hiệu bằng $g$:
 
 
 $$\mathbf{s}_{t'} = g(\mathbf{y}_{t'-1}, \mathbf{c}, \mathbf{s}_{t'-1}).$$
@@ -201,7 +205,11 @@ The only difference is that we add a dense layer after the LSTM layers, where th
 The dense layer will predict the confidence score for each word.
 -->
 
-*dịch đoạn phía trên*
+Khi cài đặt bộ giải mã, chúng ta trực tiếp sử dụng trạng thái ẩn ở bước cuối cùng của bộ mã hoá làm trạng thái ẩn đầu tiên của bộ giải mã.
+Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số đơn vị ẩn.
+Các bước tính toán lan truyền thẳng trong mô hình LSTM của bộ giải mã tương tự như trong bộ mã hoá.
+Điểm khác biệt duy nhất giữa 2 bộ là một tầng ẩn đầy đủ , với kích thước bằng với kích thước của bảng từ vựng.
+Tầng ẩn này sẽ dự đoán độ tin cậy cho mỗi từ.
 
 
 ```{.python .input  n=5}
@@ -231,7 +239,7 @@ class Seq2SeqDecoder(d2l.Decoder):
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
-*dịch đoạn phía trên*
+Bộ giải mã được tạo ra với các siêu tham số giống với bộ mã hoá. Như ở trên, kích thước đầu ra được thay đổi theo (số phần tử trong một batch, độ dài chuỗi, kích thước bảng từ vựng)
 
 
 ```{.python .input  n=6}
@@ -516,7 +524,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
 *
