@@ -287,7 +287,7 @@ def get_lstm_params(vocab_size, num_hiddens, ctx):
 ### Defining the Model
 -->
 
-### Định nghĩa mô hình
+### Định nghĩa Mô hình
 
 <!--
 In the initialization function, the hidden state of the LSTM needs to return an additional memory cell with a value of $0$ and a shape of (batch size, number of hidden units).
