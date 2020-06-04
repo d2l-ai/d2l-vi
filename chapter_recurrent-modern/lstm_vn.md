@@ -309,7 +309,7 @@ Note that only the hidden state is passed to the output layer.
 The memory cells $\mathbf{C}_t$ do not participate in the output computation directly.
 -->
 
-Mô hình thực sự được định nghĩa giống như những gì ta đã thảo luận trước đây: cung cấp ba cổng và một ô nhớ phụ.
+Mô hình thực sự được định nghĩa giống như những gì ta đã thảo luận trước đây: nó có ba cổng và một ô nhớ phụ.
 Lưu ý rằng chỉ có trạng thái ẩn được truyền tới tầng đầu ra.
 Các ô nhớ $\mathbf{C}_t$ không tham gia trực tiếp vào việc tính toán đầu ra.
 
