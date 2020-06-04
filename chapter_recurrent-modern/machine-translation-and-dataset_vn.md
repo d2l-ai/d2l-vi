@@ -144,7 +144,7 @@ d2l.plt.legend(loc='upper right');
 ## Vocabulary
 -->
 
-## Từ vựng
+## Bộ Từ vựng
 
 <!--
 Since the tokens in the source language could be different to the ones in the target language, we need to build a vocabulary for each of them.
