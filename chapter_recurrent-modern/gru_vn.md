@@ -50,7 +50,7 @@ Due to its simplicity, let us start with the GRU.
 ## Gating the Hidden State
 -->
 
-## Kiểm soát trạng thái ẩn
+## Kiểm soát Trạng thái ẩn
 
 <!--
 The key distinction between regular RNNs and GRUs is that the latter support gating of the hidden state.
