@@ -239,7 +239,7 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ### Initializing Model Parameters
 -->
 
-### Khởi tạo tham số mô hình
+### Khởi tạo Tham số Mô hình
 
 <!--
 Next we need to define and initialize the model parameters.
