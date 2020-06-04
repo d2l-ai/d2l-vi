@@ -35,7 +35,7 @@ Let us see how this works in practice.
 
 Có thể cho rằng thiết kế này được lấy cảm hứng từ các cổng logic trong máy tính.
 Để kiểm soát một ô nhớ chúng ta cần một số cổng.
-Một cổng để đọc các thông tin từ đơn vị LSTM.
+Một cổng để đọc các thông tin từ ô nhớ đó (trái với việc đọc từ các ô khác).
 Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (output gate).
 Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào đơn vị LSTM.
 Chúng ta gọi cổng này là *cổng đầu vào* (input gate).
