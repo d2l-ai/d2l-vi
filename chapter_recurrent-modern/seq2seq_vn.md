@@ -176,7 +176,7 @@ At each timestep $t'$, the conditional probability of output $y_{t'}$ will depen
 -->
 
 Như đã giới thiệu, vector ngữ cảnh (*context vetor*) $\mathbf{c}$ mã hoá thông tin của chuỗi đầu vào $x_1, \ldots, x_T$.
-Giả sử đầu ra của tập dữ liệu huấn luyện là $y_1, \ldots, y_{T'}$.
+Giả sử đầu ra của tập huấn luyện là $y_1, \ldots, y_{T'}$.
 Tại mỗi thời điểm $t'$, xác suất điều kiện của đầu ra $y_{t'}$ phụ thuộc vào đầu ra trước đó $y_1, \ldots, y_{t'-1}$ và vector ngữ cảnh \mathbf{c}$, tức là
 
 
@@ -208,8 +208,8 @@ The dense layer will predict the confidence score for each word.
 Khi cài đặt bộ giải mã, chúng ta trực tiếp sử dụng trạng thái ẩn ở bước cuối cùng của bộ mã hoá làm trạng thái ẩn đầu tiên của bộ giải mã.
 Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số đơn vị ẩn.
 Các bước tính toán lan truyền thẳng trong mô hình LSTM của bộ giải mã tương tự như trong bộ mã hoá.
-Điểm khác biệt duy nhất giữa 2 bộ là một tầng ẩn đầy đủ , với kích thước bằng với kích thước của bảng từ vựng.
-Tầng ẩn này sẽ dự đoán độ tin cậy cho mỗi từ.
+Điểm khác biệt duy nhất giữa 2 bộ là một tầng kết nối dày đặc , với kích thước bằng với kích thước của bảng từ vựng.
+Tầng này sẽ dự đoán độ tin cậy cho mỗi từ.
 
 
 ```{.python .input  n=5}
@@ -239,7 +239,7 @@ class Seq2SeqDecoder(d2l.Decoder):
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
-Bộ giải mã được tạo ra với các siêu tham số giống với bộ mã hoá. Như ở trên, kích thước đầu ra được thay đổi theo (số phần tử trong một batch, độ dài chuỗi, kích thước bảng từ vựng)
+Bộ giải mã được tạo ra với các siêu tham số giống với bộ mã hoá. Như ở trên, kích thước đầu ra được thay đổi theo (kích thước batch, độ dài chuỗi, kích thước bảng từ vựng)
 
 
 ```{.python .input  n=6}
