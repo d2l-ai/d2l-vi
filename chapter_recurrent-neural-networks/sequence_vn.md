@@ -39,7 +39,7 @@ the expectations that the next movie is equally good or better are high, hence e
 -->
 
 * [Hiệu ứng mỏ neo](https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
-Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù bộ phim đó không hề thay đổi.
+Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù đoàn làm phim này không có bất kỳ tác động nào về mặt quảng bá đến bộ phim.
 Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
 * [Hiệu ứng vòng xoáy khoái lạc](https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
