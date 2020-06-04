@@ -204,7 +204,7 @@ Trong LSTM, đây chỉ đơn giản là một phiên bản hàm kích hoạt $\
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
 Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
 Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
-:numref:`lstm_3` minh họa các luồng dữ liệu theo đồ thị.
+:numref:`lstm_3` minh họa các luồng chảy của dữ liệu.
 
 
 $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
