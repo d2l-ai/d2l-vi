@@ -223,7 +223,7 @@ As same as the experiments in the previous sections, we first load data of *The 
 -->
 
 Bây giờ ta sẽ lập trình một LSTM từ đầu.
-Giống như các thử nghiệm trong các phần trước, trước tiên ta sẽ nạp tập dữ liệu *The Time Machine*.
+Giống như các thử nghiệm trong các phần trước, đầu tiên ta sẽ nạp tập dữ liệu *The Time Machine*.
 
 ```{.python .input  n=1}
 import d2l
