@@ -120,7 +120,7 @@ Let us begin by importing the appropriate modules and loading data.
 -->
 
 May mắn thay nhiều chi tiết phía sau cần thiết để lập trình một kiến trúc RNN nhiều tầng đã có sẵn trong Gluon.
-Để đơn giản, chúng tôi chỉ minh họa việc lập trình bằng cách sử dụng những mã nguồn tích hợp sẵn.
+Để đơn giản, chúng ta chỉ minh họa việc lập trình bằng cách sử dụng những mã nguồn tích hợp sẵn.
 Mã nguồn dưới đây rất giống những gì chúng ta sử dụng trước đây cho mạng LSTM.
 Trong thực tế, sự khác biệt duy nhất là chúng ta xác định số lượng các tầng một cách rõ ràng thay vì chọn mặc định là một tầng duy nhất.
 Chúng ta hãy bắt đầu bằng cách nhập các mô-đun thích hợp và đọc dữ liệu.
