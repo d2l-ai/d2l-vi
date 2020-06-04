@@ -127,7 +127,7 @@ If the dataset is small or if the words are very rare, we might not find even a 
 Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên. <!-- như trên, 3-word combinations trong tiếng Anh chỉ là 3 words, còn tiếng Việt thì đúng ra cụm 3 từ (từ có nghĩa) có thể nhiều hơn 3 words -->
 Sẽ có nhiều cụm ba từ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
 Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ đó, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
-Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ.
+Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
