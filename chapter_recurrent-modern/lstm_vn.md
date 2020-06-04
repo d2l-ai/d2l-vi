@@ -155,7 +155,7 @@ and the forget parameter $\mathbf{F}_t$ which addresses how much of the old memo
 Using the same pointwise multiplication trick as before, we arrive at the following update equation.
 -->
 
-Trong GRU, chúng ta có một cơ chế duy nhất để quản lý và bỏ qua đầu vào.
+Trong GRU, chúng ta có một cơ chế duy nhất để quản lý cả đầu vào và quá trình quên.
 Trong LSTM, chúng ta có hai tham số, $\mathbf{I}_t$ điều chỉnh lượng dữ liệu mới cần lấy vào là bao nhiêu thông qua $\tilde{\mathbf{C}}_t$ và tham số quên $\mathbf{F}_t$ chỉ định nội dung cũ cần giữ lại trong ô nhớ $\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$ là bao nhiêu.
 Sử dụng cùng một cách tính nhân theo từng điểm (_pointwise_) như trước đây, chúng ta đi đến phương trình cập nhật như sau.
 
