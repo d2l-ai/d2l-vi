@@ -200,7 +200,7 @@ whereas for output $0$ we retain all the information only within the memory cell
 
 Cuối cùng, chúng ta cần phải xác định cách tính trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
 Đây là nơi các cổng đầu ra được sử dụng.
-Trong LSTM, đây chỉ đơn giản là một phiên bản có cổng của hàm kích hoạt $\tanh$ trong ô nhớ.
+Trong LSTM, đây chỉ đơn giản là một phiên bản hàm kích hoạt $\tanh$ có cổng trong ô nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
 Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
 Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không thực hiện thêm bất kỳ xử lý nào.
