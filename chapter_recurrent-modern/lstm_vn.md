@@ -198,7 +198,7 @@ whereas for output $0$ we retain all the information only within the memory cell
 :numref:`lstm_3` has a graphical illustration of the data flow.
 -->
 
-Cuối cùng, chúng ta cần phải xác định làm thế nào để tính toán trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
+Cuối cùng, chúng ta cần phải xác định cách tính trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
 Đây là nơi các cổng đầu ra được sử dụng.
 Trong LSTM, đây chỉ đơn giản là một phiên bản có cổng của hàm kích hoạt $\tanh$ trong ô nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
