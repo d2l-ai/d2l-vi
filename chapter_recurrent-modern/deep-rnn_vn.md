@@ -64,7 +64,7 @@ Mỗi trạng thái ẩn liên tục được truyền tới tầng hiện tại
 ![ Architecture of a deep recurrent neural network. ](../img/deep-rnn.svg)
 -->
 
-![Kiến trúc của một mạng nơ-ron truy hồi sâu. ](../img/deep-rnn.svg)
+![Kiến trúc của một mạng nơ-ron truy hồi sâu.](../img/deep-rnn.svg)
 :label:`fig_deep_rnn`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
