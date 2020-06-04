@@ -47,7 +47,7 @@ or that "I want to eat grandma" is a rather disturbing statement, whereas "I wan
 
 Tuy nhiên, mô hình ngôn ngữ vẫn rất hữu dụng ngay cả khi còn hạn chế.
 Chẳng hạn, cụm từ “nhận dạng giọng nói” và “nhân gian rộng lối” có phát âm khá giống nhau.
-Điều này có thể gây ra sự mơ hồ trong nhận dạng giọng nói, nhưng điều này dễ dàng được giải quyết với một mô hình ngôn ngữ, mô hình sẽ loại bỏ ngay phương án thứ hai do mang ý nghĩa kì lạ.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng có thể dễ dàng được giải quyết với một mô hình ngôn ngữ. Mô hình sẽ loại bỏ ngay phương án thứ hai do mang ý nghĩa kì lạ.
 Tương tự, một thuật toán tóm tắt tài liệu nên phân biệt được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với “người cắn chó”, hay như “Cháu muốn ăn bà ngoại" nghe khá kinh dị trong khi “Cháu muốn ăn, bà ngoại" lại là bình thường.
 
 
