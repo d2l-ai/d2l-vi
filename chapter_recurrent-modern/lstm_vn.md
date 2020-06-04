@@ -38,7 +38,7 @@ Có thể cho rằng thiết kế này được lấy cảm hứng từ các c�
 Một cổng để đọc các thông tin từ ô nhớ đó (trái với việc đọc từ các ô khác).
 Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (output gate).
 Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào ô nhớ.
-Chúng ta gọi cổng này là *cổng đầu vào* (input gate).
+Chúng ta gọi cổng này là *cổng đầu vào* (*input gate*).
 Cuối cùng, chúng ta cần một cơ chế để thiết lập lại các nội dung của đơn vị LSTM, chi phối bởi một *cổng quên* (forget gate).
 Động lực của thiết kế trên cũng tương tự như trước đây, đó là đưa ra quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
 Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực tế.
