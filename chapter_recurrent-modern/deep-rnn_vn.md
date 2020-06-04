@@ -146,7 +146,7 @@ The only difference is that we now select a nontrivial number of layers `num_lay
 
 Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước.
 Chúng ta sử dụng cùng số lượng đầu vào và đầu ra với các token riêng biệt, cụ thể là, `vocab_size`.
-Số lượng đơn vị ẩn vẫn là 256.
+Số lượng nút ẩn vẫn là 256.
 Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`.
 
 
