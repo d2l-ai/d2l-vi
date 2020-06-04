@@ -5,7 +5,7 @@
 # Long Short Term Memory (LSTM)
 -->
 
-# *dịch tiêu đề phía trên*
+# Bộ nhớ Ngắn hạn Dài (LSTM)
 :label:`sec_lstm`
 
 <!--
@@ -16,7 +16,10 @@ Gated Recurrent Unit (GRU).
 Interestingly, LSTM's design is slightly more complex than GRU but predates GRU by almost two decades.
 -->
 
-*dịch đoạn phía trên*
+Thách thức đối với việc lưu trữ những thông tin dài hạn và bỏ qua đầu vào ngắn hạn trong các mô hình biến ẩn đã tồn tại trong một thời gian dài.
+Một trong những phương pháp tiếp cận sớm nhất giải quyết vấn đề này là LSTM :cite:`Hochreiter.Schmidhuber.1997`.
+Nó có nhiều tính chất tương tự Nút Truy hồi có Cổng (GRU).
+Điều thú vị là thiết kế LSTM phức tạp hơn GRU một chút nhưng xuất hiện trước GRU gần hai thập kỷ.
 
 <!--
 Arguably it is inspired by logic gates of a computer.
@@ -30,13 +33,21 @@ The motivation for such a design is the same as before, namely to be able to dec
 Let us see how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Có thể cho rằng thiết kế này được lấy cảm hứng từ các cổng logic trong máy tính.
+Để kiểm soát một ô nhớ chúng ta cần một số cổng.
+Một cổng để đọc các thông tin từ ô nhớ đó (trái với việc đọc từ các ô khác).
+Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (*output gate*).
+Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào ô nhớ.
+Chúng ta gọi cổng này là *cổng đầu vào* (*input gate*).
+Cuối cùng, chúng ta cần một cơ chế để thiết lập lại nội dung chứa trong ô nhớ, được chi phối bởi một *cổng quên* (*forget gate*).
+Động lực của thiết kế trên cũng tương tự như trước đây, đó là đưa ra quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
+Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực tế.
 
 <!--
 ## Gated Memory Cells
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Ô Nhớ có Cổng
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
@@ -44,7 +55,10 @@ In addition to that we will introduce the memory cell that has the same shape as
 Strictly speaking this is just a fancy version of a hidden state, engineered to record additional information.
 -->
 
-*dịch đoạn phía trên*
+Ba cổng được giới thiệu trong LSTM đó là: cổng đầu vào, cổng quên, và cổng đầu ra.
+Bên cạnh đó chúng ta sẽ giới thiệu ô nhớ có kích thước giống như trạng thái ẩn.
+Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -444,7 +458,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
