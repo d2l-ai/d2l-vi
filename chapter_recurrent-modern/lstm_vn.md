@@ -215,14 +215,15 @@ $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
 
 <!--
 Now let us implement an LSTM from scratch.
 As same as the experiments in the previous sections, we first load data of *The Time Machine*.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta sẽ lập trình một LSTM từ đầu.
+Giống như các thử nghiệm trong các phần trước, đầu tiên ta sẽ nạp tập dữ liệu *The Time Machine*.
 
 ```{.python .input  n=1}
 import d2l
@@ -238,7 +239,7 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ### Initializing Model Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi tạo Tham số Mô hình
 
 <!--
 Next we need to define and initialize the model parameters.
@@ -246,7 +247,9 @@ As previously, the hyperparameter `num_hiddens` defines the number of hidden uni
 We initialize weights following a Gaussian distribution with $0.01$ standard deviation, and we set the biases to $0$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo ta cần định nghĩa và khởi tạo các tham số mô hình.
+Cũng giống như trước đây, siêu tham số `num_hiddens` định nghĩa số lượng các nút ẩn.
+Ta sẽ khởi tạo các trọng số theo phân phối Gauss với độ lệch chuẩn bằng $0.01$ và đặt các hệ số điều chỉnh bằng $0$.
 
 
 ```{.python .input  n=2}
@@ -284,14 +287,15 @@ def get_lstm_params(vocab_size, num_hiddens, ctx):
 ### Defining the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Mô hình
 
 <!--
 In the initialization function, the hidden state of the LSTM needs to return an additional memory cell with a value of $0$ and a shape of (batch size, number of hidden units).
 Hence we get the following state initialization.
 -->
 
-*dịch đoạn phía trên*
+Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về thêm một ô nhớ có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
+Do đó ta có hàm khởi tạo trạng thái sau đây.
 
 ```{.python .input  n=3}
 def init_lstm_state(batch_size, num_hiddens, ctx):
@@ -305,7 +309,9 @@ Note that only the hidden state is passed to the output layer.
 The memory cells $\mathbf{C}_t$ do not participate in the output computation directly.
 -->
 
-*dịch đoạn phía trên*
+Mô hình thực sự được định nghĩa giống như những gì ta đã thảo luận trước đây: nó có ba cổng và một ô nhớ phụ.
+Lưu ý rằng chỉ có trạng thái ẩn được truyền tới tầng đầu ra.
+Các ô nhớ $\mathbf{C}_t$ không tham gia trực tiếp vào việc tính toán đầu ra.
 
 
 ```{.python .input  n=4}
@@ -447,7 +453,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 *
