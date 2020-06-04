@@ -20,7 +20,7 @@ Within RNNs this is a bit trickier, since we first need to decide how and where 
 Our discussion below focuses primarily on LSTMs, but it applies to other sequence models, too.
 -->
 
-Cho đến nay, chúng ta đã thảo luận các mạng nơ-ron truy hồi chỉ có một tầng ẩn một chiều duy nhất.
+Cho đến nay, chúng ta mới chỉ thảo luận các mạng nơ-ron truy hồi có một tầng ẩn một chiều duy nhất.
 Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý.
 Đây không phải là một vấn đề lớn khi mà chúng ta có thể mô hình hóa các loại tương tác khác nhau một cách linh hoạt.
 Tuy nhiên, điều này có thể khá thách thức với các mạng chỉ có một tầng ẩn duy nhất.
