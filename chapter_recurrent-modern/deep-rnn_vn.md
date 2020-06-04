@@ -73,7 +73,7 @@ Tại bước thời gian $t$, giả sử rằng chúng ta có một minibatch $
 Trạng thái ẩn của tầng ẩn $\ell$ ($\ell=1,\ldots, T$) là $\mathbf{H}_t^{(\ell)}  \in \mathbb{R}^{n \times h}$ (số đơn vị ẩn: $h$),
 biến tầng ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ .
 Chúng ta tính toán trạng thái ẩn của tầng đầu tiên như trước đây, sử dụng đầu vào là $\mathbf{X}_t$.
-Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng tại vị trí đó.
+Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng thay cho $\mathbf{X}_t$.
 
 $$\begin{aligned}
 \mathbf{H}_t^{(1)} & = f_1\left(\mathbf{X}_t, \mathbf{H}_{t-1}^{(1)}\right), \\
