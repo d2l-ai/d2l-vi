@@ -129,7 +129,7 @@ We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform inpu
 ### Reset Gates in Action
 -->
 
-### Vai trò của Cổng Xóa
+### Cổng Xóa
 
 <!--
 We begin by integrating the reset gate with a regular latent state updating mechanism.
