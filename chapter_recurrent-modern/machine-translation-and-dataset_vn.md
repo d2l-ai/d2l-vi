@@ -26,7 +26,7 @@ Therefore, the data preprocessing for machine translation data is different to t
 This section is dedicated to demonstrate how to pre-process such a dataset and then load into a set of minibatches.
 -->
 
-Máy dịch (_Machine translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
+Dịch máy (_Machine translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
 Giải quyết bài toán này với các mạng nơ-ron thường được gọi là dịch máy nơ-ron (_neural machine translation_ - NMT).
 So với các mô hình ngôn ngữ (:numref:`sec_language_model`), trong đó kho ngữ liệu chỉ chứa một ngôn ngữ duy nhất, bộ dữ liệu dịch máy có ít nhất hai ngôn ngữ, ngôn ngữ nguồn và ngôn ngữ đích.
 Ngoài ra, mỗi câu trong ngôn ngữ nguồn được ánh xạ tới bản dịch tương ứng trong ngôn ngữ đích.
