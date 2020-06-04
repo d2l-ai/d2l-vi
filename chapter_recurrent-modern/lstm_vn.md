@@ -81,7 +81,7 @@ the forget gate is $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, and the output ga
 They are calculated as follows:
 -->
 
-Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và số lượng đầu vào là $d$.
+Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và kích thước đầu vào là $d$.
 Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian trước đó là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
 Vì thế, các cổng được định nghĩa như sau: cổng đầu vào là $\mathbf{I}_t \in \mathbb{R}^{n \times h}$,
 cổng quên là $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, và cổng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
