@@ -66,7 +66,7 @@ Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
 ## Gating the Hidden State
 -->
 
-## *dịch tiêu đề phía trên*
+## Kiểm soát Trạng thái ẩn
 
 <!--
 The key distinction between regular RNNs and GRUs is that the latter support gating of the hidden state.
@@ -78,13 +78,19 @@ Last, we will learn to reset the latent state whenever needed.
 We discuss this in detail below.
 -->
 
-*dịch đoạn phía trên*
+Sự khác biệt chính giữa RNN thông thường và GRU là GRU hỗ trợ việc kiểm soát trạng thái ẩn.
+Điều này có nghĩa là ta có các cơ chế chuyên dụng để quyết định khi nào nên cập nhật và khi nào nên xóa trạng thái ẩn.
+Các cơ chế này được học để giải quyết các vấn đề được đề cập ở bên trên.
+Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, ta sẽ học để không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
+Tương tự như vậy, ta sẽ học để bỏ qua những quan sát tạm thời không liên quan.
+Cuối cùng, ta sẽ học để xóa trạng thái tiềm ẩn bất cứ khi nào cần thiết.
+Ta sẽ thảo luận vấn đề này một cách chi tiết dưới đây.
 
 <!--
 ### Reset Gates and Update Gates
 -->
 
-### *dịch tiêu đề phía trên*
+### Cổng Xóa và Cổng Cập Nhật
 
 <!--
 The first thing we need to introduce are reset and update gates.
@@ -93,7 +99,10 @@ For instance, a reset variable would allow us to control how much of the previou
 Likewise, an update variable would allow us to control how much of the new state is just a copy of the old state.
 -->
 
-*dịch đoạn phía trên*
+Điều đầu tiên ta cần giới thiệu là cổng xóa và cổng cập nhật.
+Ta thiết kế chúng thành các vector với mỗi phần tử có giá trị trong khoảng $(0, 1)$ để ta có thể thực hiện các tổ hợp lồi.
+Chẳng hạn, một biến xóa sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái trước đây mà ta muốn ghi nhớ.
+Tương tự, một biến cập nhật sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái mới sẽ chỉ là một bản sao của trạng thái cũ.
 
 <!--
 We begin by engineering gates to generate these variables.
@@ -101,13 +110,15 @@ We begin by engineering gates to generate these variables.
 The output is given by a fully connected layer with a sigmoid as its activation function.
 -->
 
-*dịch đoạn phía trên*
+Ta bắt đầu bằng việc thiết kế các cổng để tạo ra các biến này.
+:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào là bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{H}_{t-1}$.
+Đầu ra được tạo ra bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
 
 <!--
 ![ Reset and update gate in a GRU. ](../img/gru_1.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/gru_1.svg)
+![Cổng xóa và cổng cập nhật trong GRU.](../img/gru_1.svg)
 :label:`fig_gru_1`
 
 
@@ -117,7 +128,7 @@ and the hidden state of the last timestep is $\mathbf{H}_{t-1} \in \mathbb{R}^{n
 Then, the reset gate $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ and update gate $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ are computed as follows:
 -->
 
-*dịch đoạn phía trên*
+Với một bước thời gian nhất định $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn của bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), thì cổng xoá $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
 
 
 $$
@@ -135,7 +146,8 @@ and $\mathbf{b}_r, \mathbf{b}_z \in \mathbb{R}^{1 \times h}$ are biases.
 We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform input values to the interval $(0, 1)$.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, $\mathbf{W}_{xr}, \mathbf{W}_{xz} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{b}_r, \mathbf{b}_z \in \mathbb{R}^{1 \times h}$ là các hệ số điều chỉnh.
+Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào thành các giá trị trong khoảng $(0, 1)$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -473,7 +485,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
