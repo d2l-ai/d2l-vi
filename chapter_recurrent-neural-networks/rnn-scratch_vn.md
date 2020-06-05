@@ -72,7 +72,7 @@ We often transpose the input so that we will obtain a (timestep, batch size, voc
 
 Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (kích thước batch, bước thời gian).
 Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước chiều cuối cùng bằng kích thước bộ từ vựng.
-Chúng ta thường chuyển vị đầu vào để có đầu ra kích thước (bước thời gian, kích thước batch, kích thước bộ từ vựng), phù hợp hơn với mô hình chuỗi.
+Chúng ta thường chuyển vị đầu vào để có đầu ra có kích thước (bước thời gian, kích thước batch, kích thước bộ từ vựng), phù hợp hơn để đưa vào mô hình chuỗi.
 
 
 ```{.python .input  n=18}
