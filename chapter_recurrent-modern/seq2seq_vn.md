@@ -5,7 +5,8 @@
 #  Sequence to Sequence
 -->
 
-# *dịch tiêu đề phía trên*
+# Chuỗi sang Chuỗi
+
 :label:`sec_seq2seq`
 
 <!--
@@ -14,33 +15,37 @@ Both the encoder and the decoder use recurrent neural networks (RNNs) to handle 
 The hidden state of the encoder is used directly to initialize the decoder hidden state to pass information from the encoder to the decoder.
 -->
 
-*dịch đoạn phía trên*
+Mô hình chuỗi sang chuỗi (seq2seq) dựa trên kiến trúc mã hóa - giải mã để sinh một chuỗi từ chuỗi đầu vào như minh hoạ trong :numref:`fig_seq2seq`.
+Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron truy hồi (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
+Trạng thái ẩn của bộ mã hóa được sử dụng trực tiếp để khởi tạo trạng thái ẩn của bộ giải mã để truyền thông tin từ bộ mã hoá tới bộ giải mã.
 
 <!--
 ![The sequence to sequence model architecture.](../img/seq2seq.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/seq2seq.svg)
+![Kiến trúc mô hình chuỗi sang chuỗi.](../img/seq2seq.svg)
 :label:`fig_seq2seq`
 
 <!--
 The layers in the encoder and the decoder are illustrated in :numref:`fig_seq2seq_details`.
 -->
 
-*dịch đoạn phía trên*
+Các tầng trong bộ mã hóa và bộ giải mã được minh họa trong :numref:`fig_seq2seq_details`.
+
 
 <!--
 ![Layers in the encoder and the decoder.](../img/seq2seq-details.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/seq2seq-details.svg)
+![Các tầng trong bộ mã hoá và bộ giải mã.](../img/seq2seq-details.svg)
 :label:`fig_seq2seq_details`
 
 <!--
 In this section we will explain and implement the seq2seq model to train on the machine translation dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này chúng ta sẽ giới thiệu và lập trình các mô hình seq2seq để huấn luyện trên bộ dữ liệu dịch máy.
+
 
 ```{.python .input  n=1}
 import d2l
@@ -53,7 +58,8 @@ npx.set_np()
 ## Encoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Mã hoá
+
 
 <!--
 Recall that the encoder of seq2seq can transform the inputs of variable length to a fixed-length context vector $\mathbf{c}$ by encoding the sequence information into $\mathbf{c}$.
@@ -63,7 +69,11 @@ At timestep $t$, the RNN will have two vectors as the input: the feature vector 
 Let us denote the transformation of the RNN's hidden states by a function $f$:
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại rằng bộ mã hoá của mô hình seq2seq chuyển đổi các chuỗi đầu vào với độ dài khác nhau thành một vector ngữ cảnh $\mathbf{c}$ có độ dài không đổi bằng cách mã hoá thông tin chuỗi thành vector $\mathbf{c}$.
+Chúng ta thường sử dụng các tầng RNN trong bộ mã hoá.
+Giả sử chúng ta có một chuỗi đầu vào $x_1, \ldots, x_T$, trong đó $x_t$ là từ thứ $\mathrm{t}$.
+Tại bước thời gian $t$, mô hình RNN sẽ có hai vector đầu vào: vector đặc trưng $\mathbf{x}_t$ của $x_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{h}_{t-1}$.
+Chúng ta ký hiệu phép chuyển đổi của các trạng thái ẩn trong RNN bằng hàm $f$:
 
 $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 
@@ -71,7 +81,7 @@ $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 Next, the encoder captures information of all the hidden states and encodes it into the context vector $\mathbf{c}$ with a function $q$:
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, bộ mã hoá nắm bắt thông tin của tất cả các trạng thái ẩn và mã hoá chúng thành một vector ngữ cảnh $\mathbf{c}$ với hàm $q$:
 
 $$\mathbf{c} = q (\mathbf{h}_1, \ldots, \mathbf{h}_T).$$
 
@@ -79,14 +89,17 @@ $$\mathbf{c} = q (\mathbf{h}_1, \ldots, \mathbf{h}_T).$$
 For example, if we choose $q$ as $q (\mathbf{h}_1, \ldots, \mathbf{h}_T) = \mathbf{h}_T$, then the context vector will be the final hidden state $\mathbf{h}_T$.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, nếu chúng ta chọn $q$ là $q (\mathbf{h}_1, \ldots, \mathbf{h}_T) = \mathbf{h}_T$, thì vector ngữ cảnh sẽ là trạng thái ẩn của bước thời gian cuối cùng $\mathbf{h}_T$.
+
 
 <!--
 So far what we describe above is a unidirectional RNN, where each timestep's hidden state depends only on the previous timesteps'.
 We can also use other forms of RNNs such as GRUs, LSTMs, and bidirectional RNNs to encode the sequential input.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay những gì chúng ta mô tả ở trên đều là mạng RNN một chiều, ở đó trạng thái ẩn của mỗi bước thời gian chỉ phụ thuộc vào các bước thời gian trước.
+Chúng ta cũng có thể sử dụng các dạng RNN khác nhau như GRU, LSTM, hay là RNN hai chiều để mã hoá chuỗi đầu vào.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -510,7 +523,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
