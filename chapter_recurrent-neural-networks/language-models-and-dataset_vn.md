@@ -328,7 +328,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-Cuối cùng, hãy quan sát biểu đồ tần số token của các mô hình: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
+Cuối cùng, hãy quan sát biểu đồ tần số token của các mô hình: unigram, bigram, và trigram.
 
 
 ```{.python .input  n=5}
