@@ -588,7 +588,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Các phân phối từ tuân theo định luật Zipf, không chỉ 1-gram mà còn với các $n$-gram khác.
 * Có nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện lại không đủ cao, để xử lý các tổ hợp từ hiếm ta sử dụng làm mượt Laplace.
 * Hai giải pháp chủ yếu cho bài toán phân tách chuỗi là lấy mẫu ngẫu nhiên và phân tách tuần tự.
-* Nếu tài liệu đủ dài, việc lãng phí một chút và loại bỏ các minibatch rỗng một nửa là chấp nhận được.
+* Nếu tài liệu đủ dài, việc lãng phí một chút và loại bỏ các minibatch rỗng một nửa là điều chấp nhận được.
 
 <!--
 ## Exercises
