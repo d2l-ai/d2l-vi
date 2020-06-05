@@ -473,7 +473,7 @@ With a minibatch size of 2, we only get 2 minibatches.
 -->
 
 Hãy tạo ra một chuỗi từ 0 đến 29, rồi sinh các minibatch từ chuỗi đó với kích thước batch là 2 và số bước thời gian là 6.
-Điều này nghĩa tùy vào độ dời, ta có thể sinh tối đa 4 hoặc 5 cặp $(x, y)$.
+Nghĩa là tùy vào độ dời, ta có thể sinh tối đa 4 hoặc 5 cặp $(x, y)$.
 Với kích thước batch bằng 2, ta thu được 2 minibatch.
 
 
