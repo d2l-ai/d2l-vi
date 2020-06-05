@@ -157,14 +157,15 @@ Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`se
 ### Reset Gates in Action
 -->
 
-### *dịch tiêu đề phía trên*
+### Cổng Xóa
 
 <!--
 We begin by integrating the reset gate with a regular latent state updating mechanism.
 In a conventional RNN, we would have an hidden state update of the form
 -->
 
-*dịch đoạn phía trên*
+Ta bắt đầu bằng cách tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
+Trong một RNN thông thường, ta sẽ cập nhật trạng thái ẩn bằng công thức
 
 
 $$\mathbf{H}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1}\mathbf{W}_{hh} + \mathbf{b}_h).$$
@@ -179,7 +180,12 @@ Any pre-existing hidden state is thus reset to defaults.
 This leads to the following *candidate hidden state* (it is a *candidate* since we still need to incorporate the action of the update gate).
 -->
 
-*dịch đoạn phía trên*
+Điều này về cơ bản giống với những gì ta đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng hàm $\tanh$ để đảm bảo rằng các giá trị trạng thái ẩn nằm trong khoảng $(-1, 1)$.
+Nếu muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
+Bất cứ khi nào các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, kết quả sẽ giống RNN thông thường.
+Đối với tất cả các phần tử của cổng xóa $\mathbf{R}_t$ có giá trị gần với $0$, trạng thái ẩn sẽ là kết quả của MLP với $\mathbf{X}_t$ làm đầu vào.
+Bất kỳ trạng thái ẩn nào tồn tại trước đó đều được đặt lại về giá trị mặc định.
+Điều này dẫn đến *trạng thái ẩn tiềm năng* sau đây (nó là *tiềm năng* vì ta vẫn cần kết hợp đầu ra của cổng cập nhật).
 
 
 $$\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t \odot \mathbf{H}_{t-1}\right) \mathbf{W}_{hh} + \mathbf{b}_h).$$
@@ -190,13 +196,14 @@ $$\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t
 The symbol $\odot$ indicates pointwise multiplication between tensors.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_gru_2` minh họa luồng tính toán sau khi áp dụng cổng xóa.
+Ký hiệu $\odot$ biểu thị phép nhân theo từng phần tử giữa các tensor.
 
 <!--
 ![ Candidate hidden state computation in a GRU. The multiplication is carried out elementwise. ](../img/gru_2.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/gru_2.svg)
+![Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được tính theo từng phần tử.](../img/gru_2.svg)
 :label:`fig_gru_2`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -489,7 +496,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
