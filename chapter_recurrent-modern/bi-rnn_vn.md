@@ -377,10 +377,10 @@ For a discussion of more effective uses of bidirectional models, please see the 
 * Bidirectional RNNs are very costly to train due to long gradient chains.
 -->
 
-* Trong các mạng nơ ron tái phát hai chiều, trạng thái ẩn cho mỗi dấu thời gian được xác định đồng thời bởi dữ liệu trước và sau dấu thời gian hiện tại.
-* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán tiến lùi trong các mô hình đồ họa.
-* RNN hai chiều chủ yếu hữu ích cho việc nhúng trình tự và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
-* RNN hai chiều rất tốn kém để đào tạo do chuỗi độ dốc dài.
+* Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian hiện tại.
+* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ họa.
+* RNN hai chiều chủ yếu hữu ích cho việc nhúng chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
+* RNN hai chiều rất tốn kém để đào tạo do chuỗi gradient dài.
 
 <!--
 ## Exercises
@@ -395,11 +395,11 @@ For a discussion of more effective uses of bidirectional models, please see the 
 Hint: use the RNN to embed each word and then aggregate (average) all embedded outputs before sending the output into an MLP for classification. 
 For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we compute $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ first and then use the latter for sentiment classification.
 -->
-1. Nếu các hướng khác nhau sử dụng một số đơn vị ẩn khác nhau, hình dạng của $ \ mathbf {H} _t $ sẽ thay đổi như thế nào?
-2. Thiết kế một mạng nơ ron tái phát hai chiều với nhiều lớp ẩn.
-3. Thực hiện thuật toán phân loại trình tự bằng cách sử dụng RNN hai chiều.
-Gợi ý: sử dụng RNN để nhúng từng từ và sau đó tổng hợp (trung bình) tất cả các đầu ra được nhúng trước khi gửi đầu ra vào MLP để phân loại.
-Chẳng hạn, nếu chúng ta có $ (\ mathbf {o} _1, \ mathbf {o} _2, \ mathbf {o} _3) $, chúng ta sẽ tính $ \ bar {\ mathbf {o}} = \ frac {1} { 3} \ sum_i \ mathbf {o} _i $ trước rồi sử dụng cái sau để phân loại tình cảm.
+1. Nếu các hướng khác nhau sử dụng một số nút ẩn khác nhau, hình dạng của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
+2. Thiết kế một mạng nơ-ron truy hồi hai chiều với nhiều tầng ẩn.
+3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng RNN hai chiều.
+Gợi ý: sử dụng RNN để nhúng từng từ và sau đó tổng hợp (trung bình) tất cả các đầu ra đã được nhúng trước khi gửi đầu ra vào MLP cho việc phân loại.
+Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ trước rồi sử dụng cái sau để phân loại cảm xúc.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -438,4 +438,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 6 -->
-*
+* Trần Yến Thy
