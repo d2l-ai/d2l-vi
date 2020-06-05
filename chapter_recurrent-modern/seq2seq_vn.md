@@ -103,7 +103,7 @@ Bây giờ chúng ta hãy lập trình bộ mã hoá của mô hình seq2seq.
 Ở đây chúng ta sẽ sử dụng một tầng embedding để chuyển đổi chỉ số từ của ngôn ngữ đầu vào thành vector đặc trưng tương ứng.
 Những vector đặc trưng này sẽ được truyền vào một mạng LSTM đa tầng.
 Đầu vào cho bộ mã hoá là batch gồm các chuỗi là các tensor 2 chiều có kích thước (kích thước batch, độ dài chuỗi).
-Bộ mã hoá trả về cả đầu ra của LSTM gồm các trạng thái ẩn của tất cả các bước thời gian, cũng như trạng thái ẩn và ô nhớ của trạng thái ẩn ở bước thời gian cuối cùng.
+Bộ mã hoá trả về cả đầu ra của LSTM gồm các trạng thái ẩn của tất cả các bước thời gian, cũng như trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
 
 
 ```{.python .input  n=2}
