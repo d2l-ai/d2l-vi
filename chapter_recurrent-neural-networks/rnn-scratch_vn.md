@@ -46,7 +46,7 @@ The easiest representation is called *one-hot encoding*.
 Lưu ý rằng mỗi token được biểu diễn như một chỉ số (_numerical index_) trong `train_iter`.
 Đưa trực tiếp các chỉ số này vào mạng nơ-ron sẽ gây khó cho việc học.
 Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang mhiều thông tin hơn.
-Cách đơn giản nhất là sử dụng *biểu diễn one-hot*.
+Cách đơn giản nhất là sử dụng *biểu diễn one-hot* (_one-hot encoding_).
 
 <!--
 In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
