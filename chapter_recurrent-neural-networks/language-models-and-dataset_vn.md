@@ -609,7 +609,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 -->
 
 1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần số của từ đơn và cụm từ liền kề?
-2. Hãy xem lại các ước lượng xác suất được làm mượt. Tại sao chúng không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
+2. Hãy xem lại các ước lượng xác suất đã qua làm mượt. Tại sao chúng không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
 3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
 4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
 5. Hãy thử tìm các cách lấy mẫu minibatch khác.
