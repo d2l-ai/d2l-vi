@@ -58,7 +58,7 @@ The one-hot vectors with indices 0 and 2 are shown below.
 Nói ngắn gọn, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử số token không trùng lặp trong bộ từ vựng là $N$ (`len(vocab)`) và chỉ số của chúng nằm trong khoảng từ 0 đến $N-1$ .
 Với token chỉ số $i$, ta tạo một vector $\mathbf{e}_i$ độ dài $N$ có các phần tử bằng 0, trừ phần tử ở vị trí $i$ bằng 1. 
 Vector này là vector one-hot của token.
-Các vector one-hot với các chỉ số 0 và 2 được hiển thị phía dưới.
+Các vector one-hot với các chỉ số 0 và 2 được minh họa phía dưới.
 
 ```{.python .input  n=21}
 npx.one_hot(np.array([0, 2]), len(vocab))
