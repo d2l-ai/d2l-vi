@@ -26,9 +26,9 @@ Tuy nhiên, đó không phải là trường hợp duy nhất chúng ta sẽ g�
 3. `I am _____ very hungry, I could eat half a pig.`
 -->
 
-1. 'Tôi _____'
-2. 'Tôi _____ rất đói.`
-3. 'Tôi _____ rất đói, tôi có thể ăn một nửa con lợn.`
+1. `Tôi _____`
+2. `Tôi _____ rất đói.`
+3. `Tôi _____ rất đói, tôi có thể ăn một nửa con lợn.`
 
 
 <!--
@@ -41,7 +41,7 @@ To get some inspiration for addressing the problem let us take a detour to graph
 Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "rất".
 Rõ ràng sự kết thúc của cụm từ (nếu có) truyền đạt thông tin quan trọng về việc nên chọn từ nào.
 Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này.
-Ví dụ, để nhận dạng thực thể có tên (ví dụ: để nhận dạng từ "Green" đề cập đến "ông Green" hay là màu "xanh") một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
+Ví dụ, để nhận dạng thực thể có tên (ví dụ: để nhận dạng từ "Green" đề cập đến "ông Green" hay là màu xanh) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
 Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên.
 
 
