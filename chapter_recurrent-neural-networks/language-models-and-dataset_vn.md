@@ -586,7 +586,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * $n$-gram là một mô hình khá tốt để xử lý các chuỗi dài bằng cách cắt giảm số phụ thuộc.
 * Vấn đề của các chuỗi dài là chúng rất hiếm hoặc thậm chí không bao giờ xuất hiện.
 * Các phân phối từ tuân theo định luật Zipf, không chỉ 1-gram mà còn với các $n$-gram khác.
-* Có nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện lại không đủ cao để xử lý các tổ hợp từ hiếm bằng làm mượt Laplace.
+* Có nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện lại không đủ cao, để xử lý các tổ hợp từ hiếm ta sử dụng làm mượt Laplace.
 * Hai giải pháp chủ yếu cho bài toán phân tách chuỗi là lấy mẫu ngẫu nhiên và phân tách tuần tự.
 * Nếu tài liệu đủ dài, việc lãng phí một chút và loại bỏ các minibatch rỗng một nửa là chấp nhận được.
 
