@@ -280,7 +280,7 @@ The two directions can have different numbers of hidden units.
 ### Computational Cost and Applications
 -->
 
-### *dịch tiêu đề phía trên*
+### Chi phí Tính toán và Ứng dụng
 
 <!--
 One of the key features of a bidirectional RNN is that information from both ends of the sequence is used to estimate the output.
@@ -291,7 +291,12 @@ Hence, if we were to use a bidirectional RNN naively we would not get a very goo
 During test time we only have past data and thus poor accuracy (we will illustrate this in an experiment below).
 -->
 
-*dịch đoạn phía trên*
+Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
+Đó là chúng tôi sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mịn).
+Trong trường hợp mô hình ngôn ngữ, đây không phải là điều chúng ta muốn.
+Rốt cuộc, chúng ta không có hứng thú để biết biểu tượng tiếp theo khi dự đoán biểu tượng tiếp theo.
+Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác rất tốt: trong quá trình đào tạo, chúng ta có dữ liệu trong quá khứ và tương lai để ước tính hiện tại.
+Trong thời gian thử nghiệm, chúng tôi chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (chúng tôi sẽ minh họa điều này trong một thử nghiệm bên dưới).
 
 <!--
 To add insult to injury, bidirectional RNNs are also exceedingly slow.
@@ -299,7 +304,9 @@ The main reasons for this are that they require both a forward and a backward pa
 Hence, gradients will have a very long dependency chain.
 -->
 
-*dịch đoạn phía trên*
+Để thêm sự xúc phạm đến thương tích, RNN hai chiều cũng cực kỳ chậm.
+Những lý do chính cho điều này là vì chúng đòi hỏi cả đường chuyền về phía trước và đường chuyền ngược và đường chuyền ngược lại phụ thuộc vào kết quả của đường chuyền về phía trước.
+Do đó, độ dốc sẽ có một chuỗi phụ thuộc rất dài.
 
 
 <!--
@@ -308,7 +315,9 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, các lớp hai chiều được sử dụng rất ít và chỉ dành cho một bộ ứng dụng hẹp, chẳng hạn như điền từ còn thiếu, chú thích mã thông báo
+(ví dụ: đối với nhận dạng thực thể được đặt tên) hoặc mã hóa bán buôn trình tự dưới dạng một bước trong đường ống xử lý trình tự (ví dụ: đối với dịch máy).
+Tóm lại, xử lý cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
