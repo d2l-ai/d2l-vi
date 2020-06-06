@@ -582,7 +582,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatches.
 -->
 
-* Mô hình ngôn ngữ là một phần quan trọng trong xử lý ngôn ngữ tự nhiên.
+* Mô hình ngôn ngữ là một kĩ thuật quan trọng trong xử lý ngôn ngữ tự nhiên.
 * $n$-gram là một mô hình khá tốt để xử lý các chuỗi dài bằng cách cắt giảm số phụ thuộc.
 * Vấn đề của các chuỗi dài là chúng rất hiếm hoặc thậm chí không bao giờ xuất hiện.
 * Các phân phối từ tuân theo định luật Zipf, không chỉ 1-gram mà còn với các $n$-gram khác.
