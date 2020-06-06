@@ -17,7 +17,7 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-:numref:`sec_text_preprocessing`, trình bày cách ánh xạ dữ liệu văn bản sang token, những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+:numref:`sec_text_preprocessing` đã trình bày cách ánh xạ dữ liệu văn bản sang token, những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
 Giả sử văn bản độ dài $T$ có dãy token là $x_1, x_2, \ldots, x_T$, thì $x_t$($1 \leq t \leq T$) có thể coi là đầu ra (hoặc nhãn) tại bước thời gian $t$.
 Khi đã có chuỗi thời gian trên, mục tiêu của mô hình ngôn ngữ là ước tính xác suất của 
 
