@@ -349,7 +349,7 @@ Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsu
 
 Có vài điều khá thú vị ở biểu đồ này.
 Thứ nhất, ngoài unigram, các cụm từ cũng tuân theo định luật Zipf, với số mũ thấp hơn tùy vào chiều dài cụm từ.
-Thứ hai, số lượng các n-gram duy nhất không lớn.
+Thứ hai, số lượng các n-gram độc nhất là không nhiều.
 Điều này có thể liên quan đến số lượng lớn các cấu trúc trong ngôn ngữ.
 Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
 
