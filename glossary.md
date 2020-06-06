@@ -34,7 +34,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt                     | Thảo luận tại                                |
 |-------------------------|--------------------------------|----------------------------------------------|
 | background noise        | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
-| back-propagation        | lan truyền ngược               |                                              |
+| backpropagation         | lan truyền ngược               |                                              |
+| backpropagation through time        | lan truyền ngược qua thời gian              |                                              |
 | backward pass           | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
 | bandit                  | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                   | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
@@ -424,6 +425,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transition layer           | tầng chuyển tiếp                  |                                              |
 | true negative              | âm tính thật                      |                                              |
 | true positive              | dương tính thật                   |                                              |
+| truncated backpropagation through time  | lan truyền ngược qua thời gian bị cắt xén |                                              |
 | tune parameters            | điều chỉnh tham số                |                                              |
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
