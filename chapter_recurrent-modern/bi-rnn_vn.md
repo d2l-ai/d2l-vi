@@ -95,7 +95,7 @@ This yields:
 
 Bây giờ giả sử chúng ta đã có tất cả các quan sát $x_i$ ngoại trừ một vài quan sát $x_j$, mục tiêu là tính xác suất $p(x_j \mid x^{-j})$, trong đó $x^{-j} = (x_1, x_2, \ldots, x_{j-1})$.
 Để thực hiện điều này, chúng ta cần tính tổng tất cả các khả năng có thể của $h = (h_1, \ldots, h_T)$.
-Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm bất khả thi.
+Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm vụ bất khả thi.
 May mắn thay có một phương pháp rất hiệu quả cho bài toán trên, đó là quy hoạch động. 
 Để hiểu hơn về phương pháp này, hãy xem xét tổng của hai biến ẩn đầu tiên $h_1$ và $h_2$.
 Ta có:
