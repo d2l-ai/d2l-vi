@@ -261,7 +261,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* Đỗ Trường Giang
+*
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
