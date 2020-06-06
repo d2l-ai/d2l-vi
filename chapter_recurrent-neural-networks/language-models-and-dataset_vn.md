@@ -17,9 +17,9 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách để ánh xạ dữ liệu văn bản sang token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
-Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, thì trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
-Khi đã có được một chuỗi như trên, mục tiêu của một mô hình ngôn ngữ là nhằm để ước tính xác suất sau
+:numref:`sec_text_preprocessing` đã trình bày cách ánh xạ dữ liệu văn bản sang token, những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+Giả sử văn bản độ dài $T$ có dãy token là $x_1, x_2, \ldots, x_T$, thì $x_t$($1 \leq t \leq T$) có thể coi là đầu ra (hoặc nhãn) tại bước thời gian $t$.
+Khi đã có chuỗi thời gian trên, mục tiêu của mô hình ngôn ngữ là ước tính xác suất của 
 
 $$p(x_1, x_2, \ldots, x_T).$$
 
@@ -31,11 +31,11 @@ Furthermore, it would be sufficient for generating a meaningful dialog, simply b
 Clearly we are still very far from designing such a system, since it would need to *understand* the text rather than just generate grammatically sensible content.
 -->
 
-Mô hình ngôn ngữ thì vô cùng hữu dụng. 
-Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
-Không giống như việc những con khỉ gõ phím, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống với ngôn ngữ tự nhiên, chẳng hạn như là văn bản tiếng anh.
-Hơn nữa, mô hình sẽ đủ khả năng để tạo một đoạn hội thoại có ý nghĩa, chỉ đơn giản bằng việc đặt điều kiện phụ thuộc trên các đoạn hội thoại trước đó.
-Trên thực tế, chúng ta vẫn còn khoảng cách rất xa để có thể thiết kế được một hệ thống giống như vậy, vì việc này sẽ cần mô hình phải *hiểu* được văn bản hơn là chỉ tạo ra nội dung phù hợp về mặt ngữ pháp.
+Mô hình ngôn ngữ vô cùng hữu dụng. 
+Chẳng hạn, một mô hình lý tưởng có thể tự tạo ra văn bản tự nhiên, chỉ bằng cách chọn một từ $w_t$ tại thời điểm $t$ với $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Khác hoàn toàn với việc chỉ gõ phím ngẫu nhiên như trong định lý con khỉ vô hạn (*infinite monkey theorem*), văn bản được sinh ra từ mô hình này giống ngôn ngữ tự nhiên, giống tiếng Anh chẳng hạn.
+Hơn nữa, mô hình đủ khả năng tạo ra một đoạn hội thoại có ý nghĩa mà chỉ cần dựa vào đoạn hội thoại trước đó.
+Trên thực tế, còn rất xa để thiết kế được hệ thống như vậy, vì mô hình sẽ cần *hiểu* văn bản hơn là chỉ tạo ra nội dung đúng ngữ pháp.
 
 <!--
 Nonetheless language models are of great service even in their limited form.
@@ -45,10 +45,10 @@ Likewise, in a document summarization algorithm it is worth while knowing that "
 or that "I want to eat grandma" is a rather disturbing statement, whereas "I want to eat, grandma" is much more benign.
 -->
 
-Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn rất hạn chế.
-Chẳng hạn, cụm từ  “nhận dạng giọng nói” và “nhân gian giông tố” khi nghe phát âm thì có vẻ rất giống nhau.
-Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà sẽ loại bỏ ngay phương án thứ hai vì cụm từ này mang ý nghĩa quá kì lạ.
-Tương tự như vậy, một thuật toán tóm tắt tài liệu nên biết được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với câu “người cắn chó”, hoặc là câu “Cháu muốn ăn bà ngoại" nghe khá là kinh dị trong khi câu “Cháu muốn ăn, bà ngoại" thì lại mang ý nghĩa vô hại hơn nhiều.
+Tuy nhiên, mô hình ngôn ngữ vẫn rất hữu dụng ngay cả khi còn hạn chế.
+Chẳng hạn, cụm từ “nhận dạng giọng nói” và “nhân gian rộng lối” có phát âm khá giống nhau.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng có thể dễ dàng được giải quyết với một mô hình ngôn ngữ. Mô hình sẽ loại bỏ ngay phương án thứ hai do mang ý nghĩa kì lạ.
+Tương tự, một thuật toán tóm tắt tài liệu nên phân biệt được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với “người cắn chó”, hay như “Cháu muốn ăn bà ngoại" nghe khá kinh dị trong khi “Cháu muốn ăn, bà ngoại" lại là bình thường.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -67,9 +67,9 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-Câu hỏi rõ ràng ở đây là làm thế nào để mô hình hoá một tài liệu, hay thậm chí là một chuỗi các từ.
-Chúng ta có thể xem lại cách phân tích chúng ta đã áp dụng lên những mô hình chuỗi ở phần trước.
-Hãy bắt đầu bằng việc áp dụng những quy tắc xác suất cơ bản sau:
+Làm thế nào để mô hình hoá một tài liệu hay thậm chí là một chuỗi các từ?
+Ta có thể sử dụng cách phân tích đã dùng trong mô hình chuỗi ở phần trước.
+Bắt đầu bằng việc áp dụng quy tắc xác suất cơ bản sau:
 
 $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t-1}).$$
 
@@ -77,15 +77,13 @@ $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t
 For example, the probability of a text sequence containing four tokens consisting of words and punctuation would be given as:
 -->
 
-Ví dụ: xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu sẽ được tính như sau:
+Ví dụ, xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu được tính như sau:
 
 <!--
 $$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 -->
 
-
-$$p(\mathrm{Thống}, \mathrm{kê}, \mathrm{vui} \mathrm{.}) =  p(\mathrm{Thống}) p(\mathrm{kê}  \mid  \mathrm{Thống}) p(\mathrm{vui}  \mid  \mathrm{Thống}, \mathrm{kê}) p(\mathrm{.}  \mid  \mathrm{Thống}, \mathrm{kê}, \mathrm{vui}).$$
-
+$$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 
 
 <!--
@@ -94,10 +92,10 @@ Here, we assume that the training dataset is a large text corpus, such as all Wi
 The probability of words can be calculated from the relative word frequency of a given word in the training dataset.
 -->
 
-Để mà tính toán mô hình ngôn ngữ, chúng ta cần tính xác suất của từng từ trong đoạn văn bản và xác suất có điều kiện của một từ dựa trên một vài từ xuất hiện trước đó. 
+Để tính toán mô hình ngôn ngữ, ta cần tính xác suất các từ và xác suất có điều kiện của một từ khi đã có vài từ trước đó. 
 Đây chính là các tham số của mô hình ngôn ngữ.
-Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục của Wikipedia, [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg) hoặc tất cả văn bản được đăng trên web.
-Xác suất riêng lẻ của từng từ có thể được tính bằng tần số xuất hiện tương đối của từ đó trong tập dữ liệu huấn luyện.
+Ở đây chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục trong Wikipedia của [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg), hoặc tất cả văn bản được đăng trên mạng.
+Xác suất riêng lẻ của từng từ có thể tính bằng tần suất của từ đó trong tập dữ liệu huấn luyện.
 
 <!--
 For example, $p(\mathrm{Statistics})$ can be calculated as the probability of any sentence starting with the word "statistics".
@@ -106,12 +104,12 @@ This works fairly well, particularly for frequent words.
 Moving on, we could attempt to estimate
 -->
 
-Ví dụ: $p(\mathrm{Thống})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu với từ “Thống”.
-Một cách tiếp cận ít chính xác hơn sẽ là đếm tất cả các lần xuất hiện của từ ”thống”, và chia nó cho tổng số từ trong kho dữ liệu văn bản.
-Cách làm này hoạt động khá hiệu quả, đặc biệt là cho các từ thường xuyên xuất hiện. 
-Tiếp theo, chúng ta có thể thử ước tính 
+Ví dụ, $p(\mathrm{Statistics})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu bằng “statistics”.
+Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hiện của ”statistics” và chia số lần đó cho tổng số từ trong kho ngữ liệu văn bản.
+Cách làm này khá hiệu quả, đặc biệt là với các từ xuất hiện thường xuyên. 
+Tiếp theo, ta tính 
 
-$$\hat{p}(\mathrm{kê} \mid \mathrm{Thống}) = \frac{n(\mathrm{Thống~kê})}{n(\mathrm{Thống})}.$$
+$$\hat{p}(\mathrm{is} \mid \mathrm{Statistics}) = \frac{n(\mathrm{Statistics, is})}{n(\mathrm{Statistics})}.$$
 
 <!--
 Here $n(w)$ and $n(w, w')$ are the number of occurrences of singletons and pairs of words respectively.
@@ -123,13 +121,13 @@ Unless we provide some solution to give such word combinations nonzero weight, w
 If the dataset is small or if the words are very rare, we might not find even a single one of them.
 -->
 
-Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ ghép.
-Thật không may, việc ước tính xác suất của một cặp từ có phần khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” là hiếm khi xảy ra hơn.
-Đặc biệt, với một vài từ ghép bất thường, rất khó để tìm đủ số lần xuất hiện của những từ ghép này để có được một ước tính chính xác.
-Mọi thứ trở nên tệ hơn đối với các từ ghép có ba chữ trở lên.
-Sẽ có nhiều từ ghép ba chữ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
-Trừ khi chúng ta nghĩ ra một số giải pháp để cho các tổ hợp từ như vậy có được trọng số khác không, nếu không, chúng ta sẽ không thể sử dụng chúng như một mô hình ngôn ngữ.
-Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể sẽ không tìm thấy ngay cả dù chỉ là một lần xuất hiện của tổ hợp từ ấy.
+Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của các từ đơn và cặp từ ghép.
+Đáng tiếc là việc ước tính xác suất của một cặp từ thường khó khăn hơn, bởi vì sự xuất hiện của cặp từ “Statistics is” hiếm khi xảy ra hơn.
+Đặc biệt, với các cụm từ ít đi cùng nhau, rất khó tìm đủ số lần xuất hiện để ước tính chính xác. 
+Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên.
+Sẽ có nhiều cụm ba từ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
+Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ đó, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
+Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -142,9 +140,8 @@ We already encountered this in our discussion of naive Bayes in :numref:`sec_nai
 This helps with singletons, e.g., via
 -->
 
-Một chiến thuật phổ biến là thực hiện một kỹ thuật làm mượt Laplace.
-Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong phần :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm. 
-Điều này được thực hiện bằng việc thêm các hệ số đơn, ví dụ: thông qua
+Một kỹ thuật phổ biến là làm mượt Laplace (*Laplace smoothing*).
+Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm như sau
 
 $$\begin{aligned}
 \t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
@@ -165,16 +162,16 @@ It is quite difficult to adjust such models to additional contexts, whereas, dee
 Last, long word sequences are almost certain to be novel, hence a model that simply counts the frequency of previously seen word sequences is bound to perform poorly there.
 -->
 
-Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ chúng ta sử dụng ước tính của một chuỗi ngắn hơn làm phần bổ sung cho chuỗi dài hơn.
-Thêm nữa, $m$ là tổng số từ trong tập văn bản.
+Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ ảnh hưởng của chuỗi ngắn hơn khi ước tính chuỗi dài hơn,
+$m$ là tổng số từ trong tập văn bản.
 Công thức trên là một biến thể khá nguyên thủy của kỹ thuật làm mượt Kneser-Ney và Bayesian phi tham số.
-Xem tài liệu :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết về cách thực hiện việc này.
-Thật không may, các mô hình như thế này sẽ rất nhanh chóng trở nên bất kham vì những lý do sau.
+Xem :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết.
+Thật không may, các mô hình như vậy là bất khả thi vì những lý do sau.
 Đầu tiên, chúng ta cần lưu trữ tất cả các số đếm. 
-Thứ hai, điều này hoàn toàn bỏ qua ý nghĩa của các từ.
+Thứ hai, các mô hình hoàn toàn bỏ qua ý nghĩa của các từ.
 Chẳng hạn, danh từ *“mèo”(“cat")* và tính từ *“thuộc về mèo”(“feline”)* nên xuất hiện trong các ngữ cảnh có liên quan đến nhau.
-Rất khó để điều chỉnh thêm vào các mô hình như vậy các ngữ cảnh bổ trợ, trong khi đó, các mô hình ngôn ngữ dựa trên học sâu rất phù hợp để thực hiện các điều này.
-Cuối cùng, các chuỗi từ dài gần như chắc chắn là sẽ mang tính mới lạ, do đó với một mô hình chỉ đơn giản là đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém trong trường hợp này.
+Rất khó để thêm các ngữ cảnh bổ trợ vào các mô hình đó, trong khi các mô hình ngôn ngữ dựa trên học sâu hoàn toàn có thể làm được.
+Cuối cùng, các chuỗi từ dài gần như hoàn toàn mới lạ, do đó một mô hình chỉ đơn giản đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém.
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
