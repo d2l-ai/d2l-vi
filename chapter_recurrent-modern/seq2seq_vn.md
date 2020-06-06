@@ -184,7 +184,7 @@ $$P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}).$$
 
 <!--
 Hence, we can use another RNN as the decoder.
-At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs:
+At timestep $t'$, the decoder will update its hidden state $\mathbf{s}_{t'}$ using three inputs: 
 the feature vector $\mathbf{y}_{t'-1}$ of $y_{t'-1}$, the context vector $\mathbf{c}$, and the hidden state of the last timestep $\mathbf{s}_{t'-1}$.
 Let us denote the transformation of the RNN's hidden states within the decoder by a function $g$:
 -->
