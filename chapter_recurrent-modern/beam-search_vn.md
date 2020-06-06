@@ -178,7 +178,7 @@ At timestep 2, for all $y_2 \in \mathcal{Y},$ we compute
 -->
 
 :numref:`fig_beam-search` minh họa quá trình tìm kiếm chùm bằng một ví dụ.
-Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm phần tử : $\mathcal{Y} = \{A, B, C, D, E\}$ và mộ trong số chúng là ký tự đặc biệt “&lt;eos&gt;”.
+Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm từ : $\mathcal{Y} = \{A, B, C, D, E\}$ và một trong số chúng là ký tự đặc biệt “&lt;eos&gt;”.
 Đặt kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3.
 Tại bước thời gian 1 của chuỗi đầu ra, giả sử các từ có xác suất có điều kiện $P(y_1 \mid \mathbf{c})$ cao nhất là $A$ và $C$.
 Tại bước thời gian 2, với mọi $y_2 \in \mathcal{Y},$ ta tính
