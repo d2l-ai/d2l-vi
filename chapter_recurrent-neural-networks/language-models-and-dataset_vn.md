@@ -261,7 +261,7 @@ Có thể thấy những từ xuất hiện nhiều nhất không có gì đáng
 Các từ này được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng thường được lọc ra.
 Dù vậy, những từ này vẫn có nghĩa và ta vẫn sẽ sử dụng chúng.
 Tuy nhiên, rõ ràng là tần số của từ suy giảm khá nhanh.
-Từ phổ biến thứ $10$ xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
+Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $ 1/5 $ lần so với từ phổ biến nhất.
 Để hiểu rõ hơn, chúng ta sẽ vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
