@@ -644,3 +644,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Lê Quang Nhật
 * Đinh Đắc
 * Nguyễn Văn Quang
+* Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng
