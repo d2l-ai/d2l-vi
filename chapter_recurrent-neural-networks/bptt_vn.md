@@ -16,7 +16,7 @@ In this section we will delve a bit more deeply into the details of backpropagat
 For a more detailed discussion about randomization and backpropagation also see the paper by :cite:`Tallec.Ollivier.2017`.
 -->
 
-Cho đến nay chúng ta liên tục nhắc đến những vấn đề như *bùng nổ gradient*, *tiêu biến gradient*, *xén lan truyển ngược* và sự cần thiết của việc *tách đồ thị tính toán*.
+Cho đến nay chúng ta liên tục nhắc đến những vấn đề như *bùng nổ gradient*, *tiêu biến gradient*, *cắt xén lan truyển ngược* và sự cần thiết của việc *tách đồ thị tính toán*.
 Ví dụ, trong phần trước chúng ta gọi hàm `s.detach()` trên chuỗi.
 Vì muốn nhanh chóng xây dựng và quan sát cách một mô hình hoạt động nên những vấn đề này chưa được giải thích một cách đầy đủ.
 Trong phần này chúng ta sẽ nghiên cứu sâu và chi tiết hơn về lan truyền ngược cho các mô hình chuỗi và giải thích nguyên lý toán học đằng sau.
@@ -220,7 +220,7 @@ Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo
 Điều này dẫn tới một phép *xấp xỉ* của gradient, đơn giản bằng cách kết thúc tổng trên tại $\partial_w h_{t-\tau}$.
 Do đó lỗi xấp xỉ là $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
 Trong thực tế, chiến lược này hoạt động khá tốt.
-Phương pháp này thường được gọi là BPTT (*backpropagation through time* -- lan truyền ngược qua thời gian) được xén.
+Phương pháp này thường được gọi là BPTT (*backpropagation through time* -- lan truyền ngược qua thời gian) bị cắt xén.
 Một trong những hệ quả của phương pháp này là mô hình sẽ tập trung chủ yếu vào ảnh hưởng ngắn hạn thay vì dài hạn.
 Đây thực sự là điều mà chúng ta *mong muốn*, vì nó hướng sự ước lượng tới các mô hình đơn giản và ổn định hơn.
 
@@ -266,7 +266,7 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 ![From top to bottom: randomized BPTT, regularly truncated BPTT and full BPTT](../img/truncated-bptt.svg)
 -->
 
-![Từ trên xuống dưới: BPTT ngẫu nhiên, BPTT cắt xén đều và BPTT đầy đủ](../img/truncated-bptt.svg)
+![Từ trên xuống dưới: BPTT ngẫu nhiên, BPTT bị cắt xén đều và BPTT đầy đủ](../img/truncated-bptt.svg)
 :label:`fig_truncated_bptt`
 
 
@@ -279,7 +279,7 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 
 :numref:`fig_truncated_bptt` minh hoạ ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*.
 * Dòng đầu tiên biểu diễn sự cắt xén ngẫu nhiên, chia văn bản thành các phần có độ dài biến thiên. 
-* Dòng thứ hai biểu diễn BPTT cắt xén đều, chia văn bản thành các phần có độ dài bằng nhau.
+* Dòng thứ hai biểu diễn BPTT bị cắt xén đều, chia văn bản thành các phần có độ dài bằng nhau.
 * Dòng thứ ba là BPTT đầy đủ, dẫn đến một biểu thức không khả thi về mặt tính toán.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
