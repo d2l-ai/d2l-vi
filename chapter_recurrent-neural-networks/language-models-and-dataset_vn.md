@@ -124,7 +124,7 @@ If the dataset is small or if the words are very rare, we might not find even a 
 Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của các từ đơn và cặp từ ghép.
 Đáng tiếc là việc ước tính xác suất của một cặp từ thường khó khăn hơn, bởi vì sự xuất hiện của cặp từ “Statistics is” hiếm khi xảy ra hơn.
 Đặc biệt, với các cụm từ ít đi cùng nhau, rất khó tìm đủ số lần xuất hiện để ước tính chính xác. 
-Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên. <!-- như trên, 3-word combinations trong tiếng Anh chỉ là 3 words, còn tiếng Việt thì đúng ra cụm 3 từ (từ có nghĩa) có thể nhiều hơn 3 words -->
+Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên.
 Sẽ có nhiều cụm ba từ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
 Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ đó, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
 Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ đó.
