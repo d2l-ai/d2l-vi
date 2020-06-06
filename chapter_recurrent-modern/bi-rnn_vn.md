@@ -264,7 +264,7 @@ Last, the output layer computes the output $\mathbf{O}_t \in \mathbb{R}^{n \time
 -->
 
 Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu lấy trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và đưa nó đến tầng đầu ra.
-Trong các mạng nơ-ron sâu hai chiều, thông tin sẽ được truyền dưới dạng *đầu vào* cho tầng hai chiều tiếp theo.
+Trong các mạng nơ-ron sâu hai chiều, thông tin sẽ được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
 Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau:
 
 
