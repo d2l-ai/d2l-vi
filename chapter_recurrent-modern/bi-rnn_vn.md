@@ -277,7 +277,7 @@ The two directions can have different numbers of hidden units.
 -->
 
 Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra.
-
+Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
