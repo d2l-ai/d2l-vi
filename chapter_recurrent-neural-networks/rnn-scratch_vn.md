@@ -15,7 +15,7 @@ As before, we start by reading the dataset first, which is introduced in :numref
 -->
 
 Trong phần này, ta lập trình từ đầu mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
-Mô hình này dựa trên mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
+Mô hình này dựa trên mạng nơ-ron truy hồi ở cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
 Ta bắt đầu bằng cách đọc tập dữ liệu được đề cập trong :numref:`sec_language_model`.
 
 
