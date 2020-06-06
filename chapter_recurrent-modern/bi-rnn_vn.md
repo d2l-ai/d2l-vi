@@ -51,8 +51,8 @@ This section serves to illustrate the dynamic programming problem.
 The specific technical details do not matter for understanding the deep learning counterpart but they help in motivating why one might use deep learning and why one might pick specific architectures.
 -->
 
-Phần này sẽ trình bày bài toán quy hoạch động.
-Những chi tiết cụ thể này không ảnh hưởng tới hiểu biết về học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
+Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động.
+Những chi tiết cụ thể về quy hoạch động sẽ không ảnh hưởng nhiều tới hiểu biết của chúng ta về học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
 
 
 <!--
@@ -62,7 +62,7 @@ Moreover, the transitions $h_t \to h_{t+1}$ are given by some state transition p
 The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 -->
 
-Nếu chúng ta muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
+Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
 Giả sử tồn tại biến ẩn $h_t$ mô hình hoá lượng khí thải $x_t$ chúng ta quan sát được với xác suất $p(x_t \mid h_t)$.
 Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$.
 Mô hình đồ thị được sử dụng mà mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
@@ -72,7 +72,7 @@ Mô hình đồ thị được sử dụng mà mô hình Markov ẩn (_Hidden Ma
 ![ Hidden Markov Model. ](../img/hmm.svg)
 -->
 
-![Mô hình Markov ẩn](../img/hmm.svg)
+![Mô hình Markov ẩn.](../img/hmm.svg)
 :label:`fig_hmm`
 
 <!--
