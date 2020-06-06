@@ -196,12 +196,12 @@ Higher orders correspond to longer dependencies.
 This leads to a number of approximations that we could apply to model a sequence:
 -->
 
-Trước khi chúng ta thảo luận về các giải pháp liên quan đến học sâu, chúng ta cần có thêm một số thuật ngữ và khái niệm.
-Hãy nhớ lại cuộc thảo luận của chúng ta về mô hình Markov ở phần trước. 
-Chúng ta hãy áp dụng mô hình này để mô hình hóa ngôn ngữ. 
-Một phân phối trên các chuỗi thỏa mãn thuộc tính của mô hình Markov bậc nhất nếu $p(w_{t+1} \mid w_t, \ldots, w_1) = p(w_{t+1} \mid w_t)$.
-Những bậc cao hơn sẽ tương ứng với những chuỗi phụ thuộc dài hơn. 
-Điều này dẫn đến một lượt các phép xấp xỉ mà chúng ta có thể áp dụng để mô hình hóa một chuỗi:
+Trước khi thảo luận các giải pháp sử dụng học sâu, chúng ta sẽ giải thích một số thuật ngữ và khái niệm.
+Hãy nhớ lại mô hình Markov đề cập ở phần trước,
+và áp dụng để mô hình hóa ngôn ngữ. 
+Một phân phối trên các chuỗi thỏa mãn điều kiện Markov bậc nhất nếu $p(w_{t+1} \mid w_t, \ldots, w_1) = p(w_{t+1} \mid w_t)$.
+Những bậc cao hơn tương ứng với những chuỗi phụ thuộc dài hơn. 
+Do đó chúng ta có thể áp dụng các phép xấp xỉ để mô hình hóa một chuỗi:
 
 $$
 \begin{aligned}
@@ -216,8 +216,8 @@ The probability formulae that involve one, two, and three variables are typicall
 In the following, we will learn how to design better models.
 -->
 
-Các công thức xác suất liên quan đến một, hai và ba biến thường được gọi lần lượt là các mô hình unigram, bigram và trigram.
-Sau đây, chúng ta sẽ học cách thiết kế các mô hình tốt hơn.
+Các công thức xác suất liên quan đến một, hai và ba biến được gọi là các mô hình unigram, bigram và trigram.
+Sau đây, chúng ta sẽ tìm hiểu cách thiết kế các mô hình tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -234,8 +234,8 @@ Let us see how this works on real data.
 We construct a vocabulary based on the time machine data similar to :numref:`sec_text_preprocessing` and print the top $10$ most frequent words.
 -->
 
-Hãy cùng nhau xem mô hình hoạt động như thế nào trên dữ liệu thực tế.
-Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu có tên là 'máy thời gian' tương tự như ở phần :numref:`sec_text_preprocessing` và trả ra kết quả $10$ từ có tần suất xuất hiện cao nhất.
+Hãy cùng xem mô hình hoạt động thế nào trên dữ liệu thực tế.
+Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu "cỗ máy thời gian" tương tự như ở :numref:`sec_text_preprocessing` và in ra $10$ từ có tần suất xuất hiện cao nhất.
 
 ```{.python .input  n=1}
 import d2l
@@ -257,12 +257,12 @@ The $10^{\mathrm{th}}$ most frequent word is less than $1/5$ as common as the mo
 To get a better idea we plot the graph of the word frequency.
 -->
 
-Như chúng ta có thể thấy, những từ phổ biến nhất không có gì đáng để xem xét kĩ.
-Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
-Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
-Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
-Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
-Để nắm bắt được ý tưởng này rõ hơn, chúng ta vẽ đồ thị tần số của từ.
+Có thể thấy những từ xuất hiện nhiều nhất không có gì đáng chú ý.
+Các từ này được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng thường được lọc ra.
+Dù vậy, những từ này vẫn có nghĩa và ta vẫn sẽ sử dụng chúng.
+Tuy nhiên, rõ ràng là tần số của từ suy giảm khá nhanh.
+Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $ 1/5 $ lần so với từ phổ biến nhất.
+Để hiểu rõ hơn, chúng ta sẽ vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
@@ -276,11 +276,11 @@ After dealing with the first four words as exceptions ('the', 'i', 'and', 'of'),
 This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) which states that the item frequency is given by
 -->
 
-Chúng ta đang tiến tới gần một phát hiện nền tảng ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
-Sau khi xử lý bốn từ đầu tiên ('the', 'i', 'and', 'of') như là các ngoại lệ, tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
-Điều này có nghĩa là từ ngữ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà có phát biểu rằng tần suất xuất hiện sẽ được xác định bởi
+Chúng ta đang tiến gần tới một đặc điểm cơ bản: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
+Ngoại trừ bốn từ đầu tiên ('the', 'i', 'and', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
+Theo đó các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), tức là tần suất xuất hiện của từ được xác định bởi
 
-$$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
+$$n(x) \propto (x + c)^{-\alpha} \text{ và~do~đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
 
 <!--
@@ -289,10 +289,11 @@ After all, we will significantly overestimate the frequency of the tail, also kn
 But what about the other word combinations (such as bigrams, trigrams, and beyond)?
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
-Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
-Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
-Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
-Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
+
+Điều này khiến chúng ta cần suy nghĩ kĩ khi mô hình hóa các từ bằng cách đếm và kỹ thuật làm mượt.
+Rốt cuộc, chúng ta sẽ ước tính quá cao những từ có tần suất xuất hiện thấp.
+Vậy còn các tổ hợp từ khác như 2-gram, 3-gram và nhiều hơn thì sao?
+Hãy xem liệu tần số của bigram có tương tự như unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
@@ -311,9 +312,9 @@ Out of the 10 most frequent word pairs, 9 are composed of stop words and only on
 Furthermore, let us see whether the trigram frequency behaves in the same manner.
 -->
 
-Có hai điều đáng chú ý ở đây.
-9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách---từ "the time".
-Hơn nữa, chúng ta hãy xem liệu tần xuất trigram có hoạt động theo cách tương tự hay không.
+Có một điều đáng chú ý ở đây.
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách --- cặp từ "the time".
+Hãy xem tần số của trigram có tương tự hay không.
 
 
 ```{.python .input  n=4}
@@ -327,7 +328,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-Cuối cùng, chúng ta hãy quan sát biểu đồ tần xuất token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
+Cuối cùng, hãy quan sát biểu đồ tần số token của các mô hình: unigram, bigram, và trigram.
 
 
 ```{.python .input  n=5}
@@ -346,11 +347,11 @@ This gives us hope that there is quite a lot of structure in language.
 Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use deep learning based models.
 -->
 
-Biểu đồ này khá thú vị bởi một vài lý do.
-Thứ nhất, ngoài các từ unigram, các chuỗi của các từ cũng xuất hiện theo định luật Zipf, mặc dù với một số mũ thấp hơn, tùy thuộc vào chiều dài chuỗi.
-Thứ hai, số lượng các n-gram duy nhất không phải là lớn.
-Điều này cho chúng ta hy vọng về số lượng lớn các cấu trúc trong ngôn ngữ.
-Thứ ba, rất nhiều n-gram hiếm khi tồn tại, khiến cho phép làm mịn Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng mô hình học sâu.
+Có vài điều khá thú vị ở biểu đồ này.
+Thứ nhất, ngoài unigram, các cụm từ cũng tuân theo định luật Zipf, với số mũ thấp hơn tùy vào chiều dài cụm từ.
+Thứ hai, số lượng các n-gram độc nhất là không nhiều.
+Điều này có thể liên quan đến số lượng lớn các cấu trúc trong ngôn ngữ.
+Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
 
 
 <!--
@@ -368,19 +369,18 @@ We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`
 Let us formalize this a bit.
 -->
 
-Trước khi giới thiệu các mô hình này, hãy giả sử ta sử dụng mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
-Câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
-Do bản chất tuần tự của dữ liệu chuỗi, chúng ta cần giải quyết các vấn đề khi thực hiện xử lý nó .
-Điều này đã được giới thiệu một cách khá đặc biệt trong :numref:`sec_sequence`.
-Hãy hợp thức hóa bước này một chút.
+Giả sử cần sử dụng mạng nơ-ron để huấn luyện mô hình ngôn ngữ.
+Với tính chất tuần tự của dữ liệu chuỗi, làm thế nào để đọc ngẫu nhiên các mini-batch gồm các mẫu và nhãn?
+Ví dụ đơn giản trong :numref:`sec_sequence` đã giới thiệu một cách thực hiện.
+Hãy tổng quát hóa cách làm này một chút.
 
 <!--
 In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtain 5-grams in a sentence, here a token is a character.
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-Trong :numref: `fig_timemachine_5gram`, ta đã biểu diễn bằng nhiều cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
-Lưu ý rằng chúng ta có khá nhiều tự do vì có thể chọn một phần bù tùy ý.
+:numref: `fig_timemachine_5gram`, biểu diễn các cách để chia một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+Ta có thể chọn tùy ý độ dời ở vị trí bắt đầu.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -406,14 +406,13 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
-Nhưng nếu chúng ta chọn tất cả các giá trị độ dời, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
-Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
-Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
-Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
-Ngay cả khi hoán vị ngẫu nhiên một tập tất cả các giá trị độ dời cũng không bảo đảm hoàn toàn.
-Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
-Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
+Chúng ta nên chọn giá trị độ dời nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
+Nhưng nếu chọn tất cả các giá trị độ dời, dữ liệu sẽ khá dư thừa do trùng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Việc chỉ chọn một tập ngẫu nhiên các vị trí đầu cũng không tốt vì không đảm bảo sẽ bao quát đồng đều cả mảng.
+Ví dụ, nếu lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
+Nghĩa là ta không thể kỳ vọng vào sự bao quát đồng đều, ngay cả khi hoán vị ngẫu nhiên một tập giá trị độ dời.
+Thay vào đó, có thể sử dụng một cách đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
+Điều này được mô tả trong phép lấy mẫu ngẫu nhiên và phép phân tách tuần tự dưới đây.
 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
