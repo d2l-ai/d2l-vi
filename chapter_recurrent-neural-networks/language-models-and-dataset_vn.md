@@ -33,7 +33,7 @@ Clearly we are still very far from designing such a system, since it would need 
 
 Mô hình ngôn ngữ vô cùng hữu dụng. 
 Chẳng hạn, một mô hình lý tưởng có thể tự tạo ra văn bản tự nhiên, chỉ bằng cách chọn một từ $w_t$ tại thời điểm $t$ với $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
-Khác hoàn toàn với việc chỉ gõ phím một cách ngẫu nhiên, văn bản được sinh ra từ mô hình này giống ngôn ngữ tự nhiên, giống tiếng Anh chẳng hạn.
+Khác hoàn toàn với việc chỉ gõ phím ngẫu nhiên như trong định lý con khỉ vô hạn (*infinite monkey theorem*), văn bản được sinh ra từ mô hình này giống ngôn ngữ tự nhiên, giống tiếng Anh chẳng hạn.
 Hơn nữa, mô hình đủ khả năng tạo ra một đoạn hội thoại có ý nghĩa mà chỉ cần dựa vào đoạn hội thoại trước đó.
 Trên thực tế, còn rất xa để thiết kế được hệ thống như vậy, vì mô hình sẽ cần *hiểu* văn bản hơn là chỉ tạo ra nội dung đúng ngữ pháp.
 
