@@ -132,7 +132,7 @@ This yields:
 
 Phép đệ quy được khởi tạo với $\pi_1(h_1) = p(h_1)$.
 Nói chung, công thức đệ quy có thể được viết lại là $\pi_{t+1} = f(\pi_t, x_t)$, trong đó $f$ là một hàm chứa tham số được học.
-Nó trong rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN.
+Trông rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN.
 Tương tự, chúng ta có thể tính *đệ quy ngược* như sau:
 
 
