@@ -223,7 +223,7 @@ For a detailed discussion of the various architectures see also the paper by :ci
 Let us look at the specifics of such a network.
 -->
 
-Các mạng nơ-ron truy hồi hai chiều đã được đưa ra bởi :cite:`Schuster.Paliwal.1997`.
+Các mạng nơ-ron truy hồi hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
 Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` để biết về thảo luận chi tiết của các kiến trúc khác nhau.
 Còn giờ ta hãy đi vào chi tiết mạng này.
 
