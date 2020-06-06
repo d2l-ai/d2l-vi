@@ -257,14 +257,15 @@ To address such an issue, we may resort to the multilayer perceptron attention.
 ## Multilayer Perceptron Attention
 -->
 
-## *dịch tiêu đề phía trên*
+## Perceptron đa tầng tập trung
 
 <!--
 In *multilayer perceptron attention*, we project both query and keys into $\mathbb R^{h}$ by learnable weights parameters.
 Assume that the learnable weights are $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$, and $\mathbf v\in\mathbb R^{h}$. Then the score function is defined by
 -->
 
-*dịch đoạn phía trên*
+Trong *perceptron đa tầng tập trung*, chúng ta chiếu cả query và các key vào $\mathbb R^{h}$ bằng các tham số trọng số có thể học được.
+Giả định rằng các trọng số có thể học được là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và  $\mathbf v\in\mathbb R^{h}$.Hàm tính điểm số sẽ được định nghĩa như sau
 
 
 $$\alpha(\mathbf k, \mathbf q) = \mathbf v^\top \text{tanh}(\mathbf W_k \mathbf k + \mathbf W_q\mathbf q).$$
@@ -277,7 +278,9 @@ In this hidden layer, the activation function is $\tanh$ and no bias is applied.
 Now let us implement the multilayer perceptron attention.
 -->
 
-*dịch đoạn phía trên*
+Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối tiếp key và value với nhau trong không gian đặc trưng và đưa chúng vào perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
+Trong tầng ẩn này, hàm kích hoạt là $tanh$, không có dùng độ chệch.
+Giờ ta hãy khởi tạo perceptron đa tầng tập trung nhé.
 
 
 ```{.python .input  n=7}
@@ -308,7 +311,8 @@ To test the above `MLPAttention` class, we use the same inputs as in the previou
 As we can see below, despite `MLPAttention` containing an additional MLP model, we obtain the same outputs as for `DotProductAttention`.
 -->
 
-*dịch đoạn phía trên*
+Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng cùng một đầu vào như ở ví dụ trước đó.
+Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình ML, chúng ta vẫn thu được đầu ra tương tự với `DotProductAttention`.
 
 ```{.python .input  n=8}
 atten = MLPAttention(units=8, dropout=0.1)
@@ -328,7 +332,9 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 * Two commonly used attention models are dot product attention and multilayer perceptron attention.
 -->
 
-*dịch đoạn phía trên*
+* Tầng tập trung lựa chọn trước tiếp các thông tin liên quan.
+* Ký ức của tầng tập trung chứa các cặp key-value, do đó đầu ra của nó gần với các giá trị có các key tương tự với các query.
+* Hai mô hình tập trung được sử dụng phổ biến là Tích vô hướng tập trung và Perceptron đa tầng tập trung.
 
 
 <!--
@@ -341,7 +347,7 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 What are the advantages and disadvantages for dot product attention and multilayer perceptron attention, respectively?
 -->
 
-*dịch đoạn phía trên*
+Ưu và khuyết điểm của Tích vô hướng tập trung và Perceptron đa tầng tập trung là gì?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -375,4 +381,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Võ Tấn Phát   
