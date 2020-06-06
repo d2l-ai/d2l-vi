@@ -285,14 +285,15 @@ To gain a better understanding of the model, let us implement a GRU from scratch
 ### Reading the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Đọc Dữ liệu
 
 <!--
 We begin by reading *The Time Machine* corpus that we used in :numref:`sec_rnn_scratch`.
 The code for reading the dataset is given below:
 -->
 
-*dịch đoạn phía trên*
+Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian* mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
+Mã nguồn để đọc dữ liệu được cho dưới đây:
 
 ```{.python .input  n=1}
 import d2l
@@ -308,7 +309,7 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ### Initializing Model Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi tạo Tham số Mô hình
 
 <!--
 The next step is to initialize the model parameters.
@@ -318,7 +319,11 @@ We instantiate all weights and biases relating to the update gate, the reset gat
 Subsequently, we attach gradients to all the parameters.
 -->
 
-*dịch đoạn phía trên*
+Bước tiếp theo là để khởi tạo các tham số mô hình.
+Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
+Siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
+Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
+Sau đó, chúng ta gắn gradient cho tất cả các tham số.
 
 
 ```{.python .input  n=2}
@@ -350,14 +355,15 @@ def get_params(vocab_size, num_hiddens, ctx):
 ### Defining the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Mô hình
 
 <!--
 Now we will define the hidden state initialization function `init_gru_state`.
 Just like the `init_rnn_state` function defined in :numref:`sec_rnn_scratch`, this function returns an `ndarray` with a shape (batch size, number of hidden units) whose values are all zeros.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
+Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
 
 
 ```{.python .input  n=3}
@@ -370,7 +376,8 @@ Now we are ready to define the GRU model.
 Its structure is the same as the basic RNN cell, except that the update equations are more complex.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã sẵn sàng để định nghĩa mô hình GRU.
+Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng với phương trình cập nhật phức tạp hơn.
 
 
 ```{.python .input  n=4}
@@ -392,14 +399,15 @@ def gru(inputs, state, params):
 ### Training and Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Dự đoán
 
 <!--
 Training and prediction work in exactly the same manner as before.
 After training for one epoch, the perplexity and the output sentence will be like the following.
 -->
 
-*dịch đoạn phía trên*
+Việc huấn luyện và dự đoán hoạt động theo cách tương tự như trước đây.
+Sau khi huấn luyện cho một epoch, độ hỗn độn (_perplexity_) và câu đầu ra sẽ giống dưới đây.
 
 
 ```{.python .input  n=3}
@@ -502,7 +510,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 *
