@@ -95,7 +95,7 @@ class Decoder(nn.Block):
 ## Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 The encoder-decoder model contains both an encoder and a decoder.
@@ -104,7 +104,10 @@ It takes both encoder inputs and decoder inputs, with optional additional argume
 During computation, it first computes encoder outputs to initialize the decoder state, and then returns the decoder outputs.
 -->
 
-*dịch đoạn phía trên*
+Mô hình mã hoá - giải mã bao gồm một bộ mã hoá và một bộ giải mã.
+Chúng tôi thực hiện lan truyền thuận cho quá trình huấn luyện.
+Mô hình cần cả đầu vào cho bộ mã hoá và đầu vào cho bộ giải mã cùng với các đối số bổ sung tuỳ chọn.
+Trong quá trình tính toán, đầu tiên mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái giải mã, sau đó trả về đầu ra của bộ giải mã.
 
 
 ```{.python .input  n=4}
@@ -126,7 +129,7 @@ class EncoderDecoder(nn.Block):
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * An encoder-decoder architecture is a neural network design pattern mainly in natural language processing.
@@ -134,21 +137,24 @@ class EncoderDecoder(nn.Block):
 * An decoder is a network (usually the same network structure as encoder) that takes the feature vector from the encoder, and gives the best closest match to the actual input or intended output.
 -->
 
-*dịch đoạn phía trên*
+* Kiến trúc mã hoá - giải mã là một thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
+* Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron truy hồi - RNN, vân vân, ...) nhận đầu vào và trả về một ánh xạ đặc trưng, một vector hay một tensor.
+* Bộ giải mã là một mạng (thuồng giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quar gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Besides machine translation, can you think of another application scenarios where an encoder-decoder architecture can fit?
 2. Can you design a deep encoder-decoder architecture?
 -->
 
-*dịch đoạn phía trên*
+1. Ngoài dịch máy, bạn còn biết thêm những ứng dụng nào khác của kiến trúc mã hoá - giải mã không?
+2. Bạn có thể thiết kế một kiến trúc mã hoá - giải mã sâu không?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -176,4 +182,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Thanh Hoà
