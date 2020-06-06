@@ -5,7 +5,7 @@
 # Concise Implementation of Recurrent Neural Networks
 -->
 
-# Cách lập trình súc tích Mạng nơ-ron Truy hồi
+# Lập trình súc tích Mạng nơ-ron Truy hồi
 :label:`sec_rnn_gluon`
 
 <!--
@@ -15,8 +15,8 @@ We begin as before by reading the "Time Machine" corpus.
 -->
 
 Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
-Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ theo cách hiệu quả hơn bằng các hàm của Gluon.
-Ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
+Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ nhưng hiệu quả hơn bằng các hàm của Gluon.
+Như trước, ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
 ```{.python .input  n=1}
 import d2l
@@ -40,7 +40,7 @@ We construct the recurrent neural network layer `rnn_layer` with a single hidden
 -->
 
 Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron truy hồi (cùng với các mô hình chuỗi khác).
-Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn và 256 nút ẩn, và khởi tạo các trọng số.
+Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn và 256 nút ẩn rồi khởi tạo các trọng số.
 
 
 ```{.python .input  n=26}
@@ -61,7 +61,7 @@ For now, suffice it to say that multiple layers simply amount to the output of o
 Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
 Phương thức này trả về trạng thái ban đầu cho mỗi phần tử trong minibatch.
 Tức là nó trả về một đối tượng có kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
-Số tầng ẩn mặc định là 1.
+Số tầng ẩn mặc định là 1. 
 Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
 Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
 
@@ -75,7 +75,7 @@ len(state), state[0].shape
 With a state variable and an input, we can compute the output with the updated state.
 -->
 
-Với một biến trạng thái và một đầu vào, ta có thể tính toán đầu ra với trạng thái vừa được cập nhật.
+Với một biến trạng thái và một đầu vào, ta có thể tính toán được đầu ra và trạng thái được cập nhật.
 
 
 ```{.python .input  n=38}
@@ -143,7 +143,7 @@ d2l.predict_ch8('time traveller', 10, model, vocab, ctx)
 As is quite obvious, this model does not work at all. Next, we call `train_ch8` with the same hyper-parameters defined in :numref:`sec_rnn_scratch` and train our model with Gluon.
 -->
 
-Khá rõ ràng, mô hình này không tốt. Tiếp theo, ta gọi hàm `train_ch8` với cùng các siêu tham số định nghĩa trong :numref:`sec_rnn_scratch` để huấn luyện mô hình bằng Gluon.
+Khá rõ ràng, mô hình này không tốt. Tiếp theo, ta gọi hàm `train_ch8` với các siêu tham số định nghĩa trong :numref:`sec_rnn_scratch` để huấn luyện mô hình bằng Gluon.
 
 ```{.python .input  n=19}
 num_epochs, lr = 500, 1
@@ -168,7 +168,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 * As before, the computational graph needs to be detached from previous steps for reasons of efficiency.
 -->
 
-* Mô-đun `rnn` của Gluon lập trình sẵn tầng của mạng nơ-ron truy hồi.
+* Mô-đun `rnn` của Gluon đã lập trình sẵn tầng mạng nơ-ron truy hồi.
 * Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không bao gồm tính toán tại tầng đầu ra.
 * Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 
@@ -195,12 +195,12 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 
 1. So sánh với cách lập trình từ đầu ở phần trước.
     * Tại sao lập trình bằng Gluon chạy nhanh hơn?
-    * Nếu bạn quan sát thấy khác biệt đáng kể nào ngoài tốc độ, hãy tìm hiểu lý do.
-2. Bạn có thể làm quá khớp mô hình không?
-    * Bằng cách tăng số nút ẩn.
-    * Bằng cách tằng số vòng lặp.
-    * Nếu thay đổi tham số gọt (*clipping*) thì sao?
-3. Lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
+    * Nếu bạn nhận thấy khác biệt đáng kể nào khác ngoài tốc độ, hãy thử tìm hiểu tại sao.
+2. Bạn có thể làm quá khớp mô hình này không? Hãy thử
+    * Tăng số nút ẩn.
+    * Tằng số vòng lặp.
+    * Thay đổi tham số gọt (*clipping*) thì sao?
+3. Hãy lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
 4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
 5. Có thể nén văn bản bằng cách sử dụng mô hình này không?
     * Nếu có thì cần bao nhiêu bit?
@@ -228,8 +228,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-*
+* Phạm Hồng Vinh
