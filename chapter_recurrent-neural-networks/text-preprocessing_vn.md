@@ -131,7 +131,7 @@ A token does not exist in corpus or has been removed is mapped into a special un
 We optionally add a list of reserved tokens, such as “&lt;pad&gt;” a token for padding, “&lt;bos&gt;” to present the beginning for a sentence, and “&lt;eos&gt;” for the ending of a sentence.
 -->
 
-Kiểu chuỗi token không phải là kiểu dữ liệu tiện lợi được sử dụng bởi các mô hình, thay vào đó chúng thường nhận dữ liệu đầu vào dưới dạng số. 
+Token kiểu chuỗi không phải là kiểu dữ liệu tiện lợi được sử dụng bởi các mô hình, thay vào đó chúng thường nhận dữ liệu đầu vào dưới dạng số. 
 Bây giờ, chúng ta sẽ xây dựng một bộ từ điển, thường được gọi là *bộ từ vựng* (*vocabulary*), để ánh xạ chuỗi token thành các chỉ số bắt đầu từ 0. 
 Để làm điều này, đầu tiên chúng ta lấy các token xuất hiện (*không lặp lại*) trong toàn bộ tài liệu, thường được gọi là kho ngữ liệu (*corpus*), và sau đó gán một giá trị số (*chỉ số*) cho mỗi token dựa trên tần suất xuất hiện của chúng. 
 Các token có tần suất xuất hiện rất ít thường được loại bỏ để giảm độ phức tạp. 
