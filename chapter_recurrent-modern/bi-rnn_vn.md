@@ -158,9 +158,7 @@ bằng $\rho_T(h_T) = 1$.
 Hai recursions này cho phép ta tính tổng các biến $T$ trong thời gian $\mathcal{O}(kT)$ (tuyến tính) trên tất cả các giá trị trong khoảng $(h_1, \ldots, h_T)$ thay vì tính theo cấp số nhân. 
 Đây là một trong những điểm mạnh của probabilistic inference với các mô hình đồ họa.
 Đây là một ví dụ được trình bày trong :cite:`Aji.McEliece.2000` , được đề xuất bởi Aji và McEliece vào năm 2000. 
-Kết hợp cả forward và backward, ta có thể tính được 
-
-*dịch đoạn phía trên*
+Kết hợp cả forward và backward, ta có thể tính được
 
 
 $$p(x_j \mid x_{-j}) \propto \sum_{h_j} \pi_j(h_j) \rho_j(h_j) p(x_j \mid h_j).$$
@@ -174,15 +172,11 @@ Signal processing scientists distinguish between the two cases of knowing and no
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
 
-
-$$p(x_j \mid x_{-j}) \propto \sum_{h_j} \pi_j(h_j) \rho_j(h_j) p(x_j \mid h_j).$$
-
 Cần phải chú ý rằng, backward recursion có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một *learnable function*
 Một lần nữa, nó trông giống như một phương trình cập nhật, chỉ chạy ngược lại và không giống như những gì chúng ta biết về RNNs.
 Thật vậy, khi đó HMMs sẽ có lợi trong việc học các dữ liệu tiếp theo (nếu có).
 Người ta (các nhà khoa học chuyên về xử lí tín hiệu ấy) sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
 Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` phần Sequential Monte Carlo algorithms để biết thêm chi tiết. 
-*dịch đoạn phía trên*
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -191,9 +185,8 @@ Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-F
 <!--
 ## Bidirectional Model
 -->
-## Mô hình hai chiều
 
-## *dịch tiêu đề phía trên*
+## Mô hình hai chiều
 
 <!--
 If we want to have a mechanism in RNNs that offers comparable look-ahead ability as in HMMs, we need to modify the recurrent net design that we have seen so far.
@@ -209,8 +202,6 @@ Thay vì chỉ vận hành một chiều (từ kí tự đầu chạy thẳng đ
 *Mạng nơ ron truy hồi hai chiều* sẽ thêm một hidden layer cho phép dữ liệu truyền về theo chiều ngược lại. Khi đó dữ liệu sẽ được xử lí linh hoạt hơn (thay vì một chiều như trong RNN truyền thống).
 Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ ron truy hồi hai chiều với 1 hidden layer.
 
-*dịch đoạn phía trên*
-
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
 --> Cấu trúc của mạng nơ ron truy hồi hai chiều.
@@ -225,13 +216,12 @@ Now they are devoid of such easily accessible interpretation and we can just tre
 This transition epitomizes many of the principles guiding the design of modern deep networks: 
 first, use the type of functional dependencies of classical statistical models, and then use the models in a generic form.
 -->
+
 Trên thực tế, điều này không quá khác biệt với forward và backward recursion đã đề cập ở phần trước.
 Điểm khác biệt chính, là ở các trường hợp đã đề cập bên trên, các phương trình này có một ý nghĩa thống kê nhất định. 
 Còn ở đây thì chúng ta sẽ không tiếp cận một ý nghĩa nhất định nào, thay vào đó ta sẽ chỉ xét chúng như những khái niệm tổng quát.
 Quá trình chuyển đổi này là điển hình cho nhiều nguyên tắc thiết kế các mạng học sâu hiện đại:
 đầu tiên, sử dụng các loại functional dependancy (có thể hiểu là các phụ thuộc chức năng - một mối quan hệ giữa hai thuộc tính) của các mô hình thống kê cổ điển, sau đó sử dụng các mô hình dưới dạng tổng quát.
-
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
