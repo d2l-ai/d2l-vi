@@ -176,7 +176,10 @@ The dot product attention computes the scores by a dot product between the query
 In other words,
 -->
 
-*dịch đoạn phía trên*
+Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết của hai loại tầng tập trung được sử dụng phổ biến.
+Loại đầu tiên là *Tích vô hướng tập trung*: nó giả định rằng query có cùng số chiều với key, gọi là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Tích vô hướng tập trung tính điểm số bằng một tích vô hướng giữa query và key, sau đó chia cho $\sqrt{d}$ để tối thiểu các ảnh hưởng không liên quan của chiều $d$ trong các điểm số.
+Nói cách khác,
 
 
 $$\alpha(\mathbf q, \mathbf k) = \langle \mathbf q, \mathbf k \rangle /\sqrt{d}.$$
@@ -187,7 +190,8 @@ Beyond the single-dimensional queries and keys, we can always generalize them to
 Assume that $\mathbf Q\in\mathbb R^{m\times d}$ contains $m$ queries and $\mathbf K\in\mathbb R^{n\times d}$ has all the $n$ keys. We can compute all $mn$ scores by
 -->
 
-*dịch đoạn phía trên*
+Mở rộng ra khỏi các query và key một chiều, chúng ta luôn có thể tổng quát hóa chúng lên query và key đa chiều.
+Giả định rằng $\mathbf Q\in\mathbb R^{m\times d}$ chứa $m$ query và $\mathbf K\in\mathbb R^{n\times d}$ chứa toàn bộ $n$ key. Chúng ta có thể tính toàn bộ $mn$ điểm số bằng cách
 
 
 $$\alpha(\mathbf Q, \mathbf K) = \mathbf Q \mathbf K^\top /\sqrt{d}.$$
@@ -199,8 +203,8 @@ With :eqref:`eq_alpha_QK`, we can implement the dot product attention layer `Dot
 In addition, for regularization we also use a dropout layer.
 -->
 
-*dịch đoạn phía trên*
-
+Với :eqref:`eq_alpha_QK`, chúng ta có thể khởi tạo tầng tích vô hướng tập trung `DotProductAttention` hỗ trợ một batch các query và các cặp key-value.
+Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -229,7 +233,10 @@ Via the `valid_len` argument, we specify that we will check the first $2$ key-va
 Therefore, even though both batches have the same query and key-value pairs, we obtain different outputs.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
+Đầu tiên, tạo 2 batch, mỗi batch có 1 query và 10 cặp key-value.
+Thông qua đối số `valid_len`, chúng ta chỉ ra rằng mình sẽ kiểm tra $2$ cặp key-value đầu tiên cho batch đầu tiên và $6$ cặp key-value đầu tiên cho batch thứ hai.
+Do đó, mặc dù cả hai batch có dùng số query và số cặp key-value, chúng ta sẽ thu được các đầu ra khác nhau.
 
 
 ```{.python .input  n=6}
@@ -247,7 +254,9 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân query và key lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng của chúng.
+Trong khi đó, query và key có thể không có cùng số chiều.
+Để giải quyết vấn đề này, chúng ta có thể trông cậy đến perceptron đa tầng tập trung.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -372,7 +381,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Võ Tấn Phát
 
 <!-- Phần 4 -->
 *
