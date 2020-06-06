@@ -257,8 +257,8 @@ Beam search strikes a balance between computational overhead and search quality 
 -->
 
 Ở đây, $L$ là độ dài của chuỗi tiềm năng cuối cùng và $\alpha$ thường được đặt bằng 0.75.
-$L^\alpha$ trong mẫu số là hình phạt cho điểm cộng logarit đối với các chuỗi dài hơn ở trên.
-Chi phí tính toán $\mathcal{O}(k\left|\mathcal{Y}\right|T')$ của tìm kiếm chùm có thể thu được thông qua phân tích.
+$L^\alpha$ trong mẫu số là hình phạt lên điểm cộng logarit cho các chuỗi dài hơn ở trên.
+Chi phí tính toán $\mathcal{O}(k\left|\mathcal{Y}\right|T')$ của tìm kiếm chùm có thể được ước lượng thông qua phân tích.
 Nó nằm trong khoảng giữa chi phí tính toán của tìm kiếm tham lam và tìm kiếm vét cạn.
 Ngoài ra, tìm kiếm tham lam có thể được coi là tìm kiếm chùm với kích thước chùm bằng 1.
 Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và chất lượng tìm kiếm bằng cách sử dụng kích thước chùm $k$ linh hoạt.
@@ -292,7 +292,7 @@ Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và ch�
 -->
 
 1. Ta có thể coi một tìm kiếm vét cạn như một tìm kiếm chùm với kích thước chùm đặc biệt không? Tại sao?
-2. Ta đã sử dụng các mô hình ngôn ngữ để tạo các câu trong :numref:`sec_rnn_scratch`. Các mô hình này đã sử dụng phương pháp tìm kiếm đầu ra nào? Hãy cải thiện nó.
+2. Ta đã sử dụng các mô hình ngôn ngữ để tạo các câu trong :numref:`sec_rnn_scratch`. Các mô hình này đã sử dụng phương pháp tìm kiếm đầu ra nào? Hãy cải thiện các phương pháp đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
