@@ -265,7 +265,7 @@ Note that we padded the target sentences to make them have the same length, but 
 
 Tại mỗi bước thời gian, bộ giải mã tạo ra một vector điểm tin cậy có kích thước bằng bộ từ vựng để dự đoán các từ.
 Tương tự như việc mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
-Lưu ý rằng ta đã đệm các câu đích để làm cho chúng có cùng độ dài, nhưng ta không cần tính mất mát trên các ký tự đệm.
+Lưu ý rằng ta đã đệm các câu đích để làm cho chúng có độ dài bằng nhau, nhưng ta không cần tính mất mát trên các ký tự đệm.
 
 <!--
 To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`.
@@ -273,8 +273,8 @@ It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1
 If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
-Để lập trình hàm mất mát để loại ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
-Nó có thể chỉ định để che dấu chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
+Để lập trình hàm mất mát để lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
+Nó có thể chỉ định gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
 Nếu chiều thứ hai được chọn, với đầu vào là một vector có độ dài hợp lệ `len` và một mảng hai chiều `X`, toán tử này sẽ đặt `X[i, len[i]:] = 0` với mọi $i$.
 
 ```{.python .input  n=7}
@@ -303,10 +303,10 @@ So our customized loss function accepts an additional `valid_len` argument to ig
 -->
 
 
-Bây giờ ta có thể lập trình phiên bản mặt nạ của softmax mất mát entropy chéo.
-Lưu ý rằng mỗi hàm mất Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
+Bây giờ ta có thể lập trình phiên bản mặt nạ của hàm mất mát entropy chéo softmax.
+Lưu ý rằng hàm mất mát Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
 Vậy thì để loại bỏ các mẫu, ta có thể đặt trọng số cho chúng bằng 0.
-Vì vậy, hàm mất tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
+Vì vậy, hàm mất mát tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
 
 
 ```{.python .input  n=9}
@@ -327,7 +327,7 @@ For a sanity check, we create identical three sequences, keep 4 elements for the
 Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
-Để chắc chắn, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng.
+Để kiểm tra, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
 Khi đó, mất mát của chuỗi đầu tiên phải lớn hơn 2 lần so với chuỗi thứ hai và mất mát của chuỗi cuối cùng phải bằng 0.
 
 
@@ -529,7 +529,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
 *
