@@ -292,7 +292,7 @@ Let us see whether the bigram frequency behaves in the same manner as the unigra
 
 Điều này khiến chúng ta cần suy nghĩ kĩ khi mô hình hóa các từ bằng cách đếm và kỹ thuật làm mượt.
 Rốt cuộc, chúng ta sẽ ước tính quá cao những từ có tần suất xuất hiện thấp.
-Vậy còn các tổ hợp từ khác như 2-gram, 3-gram và nhiều hơn?
+Vậy còn các tổ hợp từ khác như 2-gram, 3-gram và nhiều hơn thì sao?
 Hãy xem liệu tần số của bigram có tương tự như unigram hay không.
 
 ```{.python .input  n=3}
