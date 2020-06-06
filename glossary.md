@@ -425,7 +425,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transition layer           | tầng chuyển tiếp                  |                                              |
 | true negative              | âm tính thật                      |                                              |
 | true positive              | dương tính thật                   |                                              |
-| truncated backpropagation through time  | lan truyền ngược qua thời gian được cắt xén |                                              |
+| truncated backpropagation through time  | lan truyền ngược qua thời gian bị cắt xén |                                              |
 | tune parameters            | điều chỉnh tham số                |                                              |
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
