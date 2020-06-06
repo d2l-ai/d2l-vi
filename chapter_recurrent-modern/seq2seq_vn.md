@@ -341,7 +341,7 @@ loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 During training, if the target sequence has length $n$, we feed the first $n-1$ tokens into the decoder as inputs, and the last $n-1$ tokens are used as ground truth label.
 -->
 
-Trong quá trình huấn luyện, nếu chuỗi mục tiêu có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào và $n-1$ token cuối cùng được sử dụng làm nhãn sự thật.
+Trong quá trình huấn luyện, nếu chuỗi mục tiêu có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào và $n-1$ token cuối cùng được sử dụng làm nhãn thật.
 
 
 ```{.python .input  n=11}
@@ -417,7 +417,7 @@ Nhưng token đầu vào cho bước thời gian sau đó sẽ là token đượ
 ![Sequence to sequence model predicting with greedy search](../img/seq2seq_predict.svg)
 -->
 
-![Mô hình chuỗi sang chuỗi dự đoán với tìm kiếm tham lam](../img/seq2seq_predict.svg)
+![Quá trình dự đoán của mô hình chuỗi sang chuỗi với tìm kiếm tham lam](../img/seq2seq_predict.svg)
 :label:`fig_seq2seq_predict`
 
 
@@ -451,7 +451,7 @@ def predict_s2s_ch9(model, src_sentence, src_vocab, tgt_vocab, num_steps,
 Try several examples:
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ thử một vài ví dụ:
 
 
 ```{.python .input  n=17}
@@ -472,7 +472,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * We use multiple LSTM layers for both the encoder and the decoder.
 -->
 
-* Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo đầu ra chuỗi từ chuỗi đầu vào.
+* Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo một đầu ra chuỗi từ chuỗi đầu vào.
 * Ta sử dụng nhiều LSTM đa tầng cho cả bộ mã hóa và bộ giải mã.
 
 
