@@ -27,8 +27,8 @@ Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta gặp p
 -->
 
 1. `Tôi _____`
-2. `Tôi _____ rất đói.`
-3. `Tôi _____ rất đói, tôi có thể ăn một nửa con lợn.`
+2. `Tôi _____ đói lắm.`
+3. `Tôi _____ đói lắm, tôi có thể ăn một nửa con lợn.`
 
 
 <!--
