@@ -141,7 +141,7 @@ Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi v�
 Chúng ta giả định số lượng tầng ẩn của đơn vị LSTM là 2 và số nút ẩn là 16.
 Kích thước của trạng thái ẩn đa tầng trong nút truy hồi có cổng ở bước thời gian cuối cùng là (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 Trong nút truy hồi có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn.
-Nếu bộ nhớ ngắn hạn dài (LSTM) được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ. 
+Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ. 
 Nếu  được sử dụng, 'danh sách state` cũng sẽ chứa một yếu tố, đó là các tế bào bộ nhớ.
 
 ```{.python .input  n=3}
