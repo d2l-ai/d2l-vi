@@ -83,7 +83,7 @@ Ví dụ, xác suất của chuỗi văn bản chứa bốn token bao gồm các
 $$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 -->
 
-$$p(\mathrm{Thống}, \mathrm{kê}, \mathrm{vui} \mathrm{.}) =  p(\mathrm{Thống}) p(\mathrm{kê}  \mid  \mathrm{Thống}) p(\mathrm{vui}  \mid  \mathrm{Thống}, \mathrm{kê}) p(\mathrm{.}  \mid  \mathrm{Thống}, \mathrm{kê}, \mathrm{vui}).$$
+$$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 
 
 <!--
