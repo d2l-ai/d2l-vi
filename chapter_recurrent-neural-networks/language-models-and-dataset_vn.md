@@ -109,7 +109,7 @@ Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hi�
 Cách làm này khá hiệu quả, đặc biệt là với các từ xuất hiện thường xuyên. 
 Tiếp theo, ta tính 
 
-$$\hat{p}(\mathrm{kê} \mid \mathrm{Thống}) = \frac{n(\mathrm{Thống, kê})}{n(\mathrm{Thống})}.$$
+$$\hat{p}(\mathrm{is} \mid \mathrm{Statistics}) = \frac{n(\mathrm{Statistics, is})}{n(\mathrm{Statistics})}.$$
 
 <!--
 Here $n(w)$ and $n(w, w')$ are the number of occurrences of singletons and pairs of words respectively.
