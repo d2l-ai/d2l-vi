@@ -43,7 +43,7 @@ We often present each token as a more expressive feature vector.
 The easiest representation is called *one-hot encoding*.
 -->
 
-Lưu ý rằng mỗi token được biểu diễn như một chỉ số (_numerical index_) trong `train_iter`.
+Lưu ý rằng mỗi token được biểu diễn bằng một chỉ số (_numerical index_) trong `train_iter`.
 Đưa trực tiếp các chỉ số này vào mạng nơ-ron sẽ gây khó cho việc học.
 Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang mhiều thông tin hơn.
 Cách đơn giản nhất là sử dụng *biểu diễn one-hot* (_one-hot encoding_).
