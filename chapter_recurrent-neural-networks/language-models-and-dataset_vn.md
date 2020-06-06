@@ -278,7 +278,7 @@ This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27
 
 Chúng ta đang tiến gần tới một đặc điểm cơ bản: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
 Ngoại trừ bốn từ đầu tiên ('the', 'i', 'and', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
-Tức là các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), theo đó tần suất xuất hiện của từ được xác định bởi
+Theo đó các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), tức là tần suất xuất hiện của từ được xác định bởi
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và~do~đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
