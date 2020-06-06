@@ -235,7 +235,7 @@ We construct a vocabulary based on the time machine data similar to :numref:`sec
 -->
 
 Hãy cùng xem mô hình hoạt động thế nào trên dữ liệu thực tế.
-Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu cỗ máy thời gian tương tự như ở :numref:`sec_text_preprocessing` và in ra $10$ từ có tần suất xuất hiện cao nhất.
+Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu "cỗ máy thời gian" tương tự như ở :numref:`sec_text_preprocessing` và in ra $10$ từ có tần suất xuất hiện cao nhất.
 
 ```{.python .input  n=1}
 import d2l
