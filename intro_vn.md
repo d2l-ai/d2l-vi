@@ -48,10 +48,10 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Deep Learning Computation (**Đã hoàn thành**)
 * Convolutional Neural Networks (**Đã hoàn thành**)
 * Modern Convolutional Neural Networks (**Đã hoàn thành**)
-* Recurrent Neural Networks (*Đang tiến hành*)
+* Recurrent Neural Networks (**Đã hoàn thành**)
 * Modern Recurrent Neural Networks (*Đang tiến hành*)
 * Attention Mechanisms (*Đang tiến hành*)
-* Optimization Algorithms
+* Optimization Algorithms (*Đang tiến hành*)
 * Computational Performance
 * Computer Vision
 * Natural Language Processing: Pretraining

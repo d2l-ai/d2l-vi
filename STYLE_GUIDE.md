@@ -137,13 +137,6 @@
 * External hyperlinks
     * [Layer](http:bla)
 
-
-## QR Code
-
-* https://www.the-qrcode-generator.com/
-    * 75pixel, SVG
-
-
 ## References
 
 * Append references at the end of each section
