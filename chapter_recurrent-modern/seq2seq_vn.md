@@ -160,7 +160,7 @@ However, if a GRU is used, the `state` list will contain only one element---the 
 -->
 
 Khi LSTM được sử dụng, danh sách `state` sẽ chứa cả trạng thái ẩn và ô nhớ với cùng kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
-Tuy nhiên, nếu một GRU được sử dụng thì danh sách `state` sẽ chỉ chứa một phần tử - trạng thái ẩn trong bước thời gian cuối cùng với kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
+Tuy nhiên, nếu GRU được sử dụng thì danh sách `state` sẽ chỉ chứa trạng thái ẩn của bước thời gian cuối cùng với kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 
 ```{.python .input  n=4}
 len(state), state[0].shape, state[1].shape
