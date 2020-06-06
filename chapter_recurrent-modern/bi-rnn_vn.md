@@ -79,7 +79,7 @@ Mô hình đồ thị được sử dụng mà mô hình Markov ẩn (_Hidden Ma
 Thus, for a sequence of $T$ observations we have the following joint probability distribution over observed and hidden states:
 -->
 
-Như vậy, với chuỗi đầu gồm có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn đã quan sát như sau:
+Như vậy, với chuỗi có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn đã quan sát như sau:
 
 
 $$p(x, h) = p(h_1) p(x_1 \mid h_1) \prod_{t=2}^T p(h_t \mid h_{t-1}) p(x_t \mid h_t).$$
