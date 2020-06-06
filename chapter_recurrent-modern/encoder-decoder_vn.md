@@ -139,7 +139,7 @@ class EncoderDecoder(nn.Block):
 
 * Kiến trúc mã hoá - giải mã là một thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
 * Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron truy hồi - RNN, vân vân, ...) nhận đầu vào và trả về một ánh xạ đặc trưng, một vector hay một tensor.
-* Bộ giải mã là một mạng (thuồng giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quar gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
+* Bộ giải mã là một mạng (thường giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quả gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
 
 
 <!--
