@@ -104,8 +104,8 @@ This works fairly well, particularly for frequent words.
 Moving on, we could attempt to estimate
 -->
 
-Ví dụ, $p(\mathrm{Thống})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu bằng “Thống”.
-Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hiện của từ ”thống” và chia số lần đó cho tổng số từ trong kho dữ liệu văn bản. <!-- hm câu này phải là câu "Ví dụ, ..." ở trên thì mới hợp logic câu trước nữa ở L98 nhỉ? -->
+Ví dụ, $p(\mathrm{Statistics})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu bằng “statistics”.
+Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hiện của ”statistics” và chia số lần đó cho tổng số từ trong kho ngữ liệu văn bản.
 Cách làm này khá hiệu quả, đặc biệt là với các từ xuất hiện thường xuyên. 
 Tiếp theo, ta tính 
 
