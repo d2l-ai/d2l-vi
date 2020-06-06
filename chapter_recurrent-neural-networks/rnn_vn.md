@@ -42,7 +42,7 @@ We discussed this in :numref:`sec_sequence`.
 But it could potentially makes both computation and storage expensive.
 -->
 
-Với một hàm $f$ đủ mạnh, mô hình biến tiềm ẩn không phải là một sự ước lượng.
+Với một hàm $f$ đủ mạnh, mô hình biến tiềm ẩn không phải là một phép xấp xỉ.
 Sau cùng, $h_t$ có thể chỉ đơn thuần lưu lại tất cả dữ liệu đã quan sát được cho đến thời điểm hiện tại.
 Điều này đã được thảo luận tại :numref:`sec_sequence`.
 Tuy nhiên nó có thể khiến cho việc tính toán và lưu trữ trở nên nặng nề.
@@ -90,7 +90,7 @@ Hence, the hidden layer's output $\mathbf{H} \in \mathbb{R}^{n \times h}$ is cal
 -->
 
 
-Ta sẽ xem xét một perception đa tầng với một tầng ẩn duy nhất.
+Xét một perception đa tầng với một tầng ẩn duy nhất.
 Giả sử ta có một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
 Gọi hàm kích hoạt của tầng ẩn là $\phi$.
 Khi đó, đầu ra của tầng ẩn $\mathbf{H} \in \mathbb{R}^{n \times h}$ được tính như sau
