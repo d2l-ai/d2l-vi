@@ -585,7 +585,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Mô hình ngôn ngữ là một kĩ thuật quan trọng trong xử lý ngôn ngữ tự nhiên.
 * $n$-gram là một mô hình khá tốt để xử lý các chuỗi dài bằng cách cắt giảm số phụ thuộc.
 * Vấn đề của các chuỗi dài là chúng rất hiếm hoặc thậm chí không bao giờ xuất hiện.
-* Các phân phối từ tuân theo định luật Zipf, không chỉ 1-gram mà còn với các $n$-gram khác.
+* Định luật Zipf không chỉ mô tả phân phối từ 1-gram mà còn cả các $n$-gram khác.
 * Có nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện lại không đủ cao, để xử lý các tổ hợp từ hiếm ta sử dụng làm mượt Laplace.
 * Hai giải pháp chủ yếu cho bài toán phân tách chuỗi là lấy mẫu ngẫu nhiên và phân tách tuần tự.
 * Nếu tài liệu đủ dài, việc lãng phí một chút và loại bỏ các minibatch rỗng một nửa là điều chấp nhận được.
