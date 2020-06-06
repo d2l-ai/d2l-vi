@@ -38,7 +38,7 @@ A sequence model that is incapable of taking advantage of this will perform poor
 For instance, to do well in named entity recognition (e.g., to recognize whether "Green" refers to "Mr. Green" or to the color) longer-range context is equally vital.
 To get some inspiration for addressing the problem let us take a detour to graphical models.
 -->
-Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "rất".
+Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "đang".
 Rõ ràng phần kết thúc của (nếu có) mang thông tin quan trọng về việc nên chọn từ nào.
 Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này.
 Ví dụ, để nhận dạng thực thể có tên (ví dụ: để nhận dạng từ "Green" đề cập đến "ông Green" hay là màu xanh) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
