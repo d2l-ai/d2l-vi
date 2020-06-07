@@ -223,10 +223,9 @@ Whenever this approximation is accurate we say that the sequence satisfies a *Ma
 In particular, if $\tau = 1$, we have a *first order* Markov model and $p(x)$ is given by
 -->
 
-Nhắc lại phép xấp xỉ trong một mô hình tự hồi quy, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$.
-Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn điều kiện *Markov*.
-Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc một* và $p(x)$ như sau
-
+Nhắc lại phép xấp xỉ trong một mô hình tự hồi quy, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$. 
+Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn *điều kiện Markov*. 
+Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc một* và $p(x)$ như sau 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}).$$
 
@@ -235,9 +234,8 @@ Such models are particularly nice whenever $x_t$ assumes only a discrete value, 
 For instance, we can compute $p(x_{t+1} \mid x_{t-1})$ efficiently using the fact that we only need to take into account a very short history of past observations:
 -->
 
-Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ được giả định có giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
-Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách chỉ sử dụng các quan sát trong một khoảng thời gian ngắn trong quá khứ:
-
+Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ chỉ là các giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
+Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách chỉ sử dụng các quan sát trong một khoảng thời gian ngắn tại quá khứ:
 
 $$p(x_{t+1} \mid x_{t-1}) = \sum_{x_t} p(x_{t+1} \mid x_t) p(x_t \mid x_{t-1}).$$
 
@@ -247,8 +245,8 @@ Going into details of dynamic programming is beyond the scope of this section, b
 Control and reinforcement learning algorithms use such tools extensively.
 -->
 
-Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong: numref: `sec_bi_rnn`.
-Các công cụ trên được sử dụng rất phổ biến trong các thuật toán điều khiển và học tăng cường.
+Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong :numref: `sec_bi_rnn`. 
+Các công cụ trên được sử dụng rất phổ biến trong các thuật toán điều khiển và học tăng cường. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -265,8 +263,8 @@ In principle, there is nothing wrong with unfolding $p(x_1, \ldots, x_T)$ in rev
 After all, by conditioning we can always write it via
 -->
 
-Về nguyên tắc, không có gì sai cả khi trải $p(x_1, \ldots, x_T)$ ra theo thứ tự ngược lại.
-Bằng cách đặt điều kiện như vậy, chúng ta luôn có thể viết chúng như sau
+Về nguyên tắc, không có gì sai khi trải (*unfolding*) $p(x_1, \ldots, x_T)$ theo thứ tự ngược lại. 
+Bằng cách đặt điều kiện như vậy, chúng ta luôn có thể viết chúng như sau 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=T}^1 p(x_t \mid x_{t+1}, \ldots, x_T).$$
 
@@ -283,16 +281,16 @@ For more on this topic see e.g., the book by :cite:`Peters.Janzing.Scholkopf.201
 We are barely scratching the surface of it.
 -->
 
-Trên thực tế, nếu có một mô hình Markov, chúng ta cũng có thể thu được một phân phối xác suất có điều kiện ngược.
-Tuy nhiên trong nhiều trường hợp, tự nhiên dữ liệu có tồn tại một trật tự nhất định, cụ thể là luôn tiến về phía trước theo thời gian.
-Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ.
-Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ ở chiều ngược lại.
-Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi.
-Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$.
-Ví dụ: bài báo :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi đó, điều ngược lại không đúng. 
-Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo hướng đi tới hơn.
+Trên thực tế, nếu có một mô hình Markov, chúng ta cũng có thể thu được một phân phối xác suất có điều kiện ngược. 
+Tuy nhiên trong nhiều trường hợp vẫn tồn tại một trật tự tự nhiên cho dữ liệu, cụ thể đó là chiều thuận theo thời gian. 
+Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ. 
+Do đó, nếu thay đổi $x_t$ thì ta có thể ảnh hưởng đến những gì xảy ra tại $x_{t+1}$ trong tương lai, nhưng lại không thể ảnh hưởng tới quá khứ theo chiều ngược lại. 
+Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi. 
+Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$. 
+Ví dụ: :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi điều ngược lại thì không đúng. 
+Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo chiều thuận hơn. 
 Để tìm hiểu thêm về chủ đề này, có thể tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
-Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này.
+Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này. 
 
 <!--
 ## A Toy Example
@@ -306,9 +304,9 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử minh hoạ bằng lập trình.
-Đầu tiên, hãy sinh một vài dữ liệu như sau.
-Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm với chút nhiễu.
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh hoạ. 
+Đầu tiên, hãy khởi tạo một vài dữ liệu như sau. 
+Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm một chút nhiễu. 
 
 
 ```{.python .input}
@@ -336,14 +334,14 @@ A few layers of a fully connected network, ReLU activation and $\ell_2$ loss.
 Since much of the modeling is identical to the previous sections when we built regression estimators in Gluon, we will not delve into much detail.
 -->
 
-Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn được sử dụng để huấn luyện mạng.
-Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$.
-Để ý kĩ, có thể thấy rằng chúng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng không có đủ $\tau$ điểm dữ liệu trong quá khứ.
-Một cách đơn giản để khắc phục điều này là loại bỏ vài phần tử đó, đặc biệt nếu chuỗi thời gian rất dài.
-Một cách khác là đệm giá trị 0 vào chuỗi thời gian.
-Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước.
-Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$.
-Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này.
+Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn có thể được sử dụng để huấn luyện mạng. 
+Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$. 
+Để ý kĩ, có thể thấy rằng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng ta không có đủ $\tau$ điểm dữ liệu trong quá khứ để làm đặc trưng cho chúng.
+Một cách đơn giản để khắc phục điều này, đặc biệt là khi chuỗi thời gian rất dài, là loại bỏ đi số ít các phần tử đó. 
+Một cách khác là đệm giá trị 0 vào chuỗi thời gian. 
+Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước. 
+Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$. 
+Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
 
 
 ```{.python .input}
@@ -375,7 +373,7 @@ loss = gluon.loss.L2Loss()
 Now we are ready to train.
 -->
 
-Bây giờ chúng ta đã sẵn sàng huấn luyện.
+Bây giờ chúng ta đã sẵn sàng để huấn luyện. 
 
 ```{.python .input}
 def train_net(net, train_iter, loss, epochs, lr):
@@ -599,7 +597,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 2 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
