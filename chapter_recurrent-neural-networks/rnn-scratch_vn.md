@@ -557,7 +557,7 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện đáng kể mô hình 
 7. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
 -->
 
-1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn embedding khác nhau cho từng đối tượng.
+1. Chứng minh rằng biễu diễn one-hot tương đương với mỗi embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
     * Bạn có thể giảm độ rối rắm xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
     * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
