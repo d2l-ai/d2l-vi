@@ -14,19 +14,19 @@ Let us recap their pros and cons:
 -->
 
 Trong các chương trước, ta đã đề cập đến các kiến trúc mạng nơ-ron quan trọng như mạng nơ-ron tích chập (CNN) và mạng nơ-ron truy hồi (RNN).
-Hãy tóm tắt ưu và nhược điểm của các kiến trúc mạng này:
+Ưu nhược điểm của các kiến trúc mạng này có thể được tóm tắt như sau:
 
 <!--
 * **CNNs** are easy to parallelize at a layer but cannot capture the variable-length sequential dependency very well.
 -->
 
-Các mạng * ** CNN ** dễ dàng song song hóa ở một tầng nhưng không thể học tốt được sự phụ thuộc tuần tự có độ dài thay đổi.
+* Các mạng **CNN** có thể được song song hóa dễ dàng ở một tầng nhưng không thể học tốt được sự phụ thuộc chuỗi có độ dài thay đổi.
 
 <!--
 * **RNNs** are able to capture the long-range, variable-length sequential information, but suffer from inability to parallelize within a sequence.
 -->
 
-Các mạng * ** RNN ** có thể học được thông tin tuần tự dài hạn, có độ dài thay đổi, nhưng không có khả năng song song trong một chuỗi.
+*  Các mạng **RNN** có thể học được thông tin chuỗi dài hạn với độ dài thay đổi, nhưng không có khả năng song song hóa trong một chuỗi.
 
 <!--
 To combine the advantages from both CNNs and RNNs, :cite:`Vaswani.Shazeer.Parmar.ea.2017` designed a novel architecture using the attention mechanism.
@@ -35,8 +35,8 @@ As a result, Transformer leads to a compatible model with significantly shorter 
 -->
 
 Để kết hợp các lợi thế từ cả CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
-Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi tái phát với sự tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
-Kết quả là Transformer là một mô hình thích hợp với thời gian huấn luyện ngắn hơn đáng kể.
+Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi truy hồi với sự tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
+Kết quả là Transformer tạo ra một mô hình thích hợp với thời gian huấn luyện ngắn hơn đáng kể.
 
 <!--
 Similar to the seq2seq model in :numref:`sec_seq2seq`, Transformer is also based on the encoder-decoder architecture.
@@ -46,8 +46,8 @@ We  compare Transformer and seq2seq  side-by-side in :numref:`fig_transformer`.
 -->
 
 Tương tự như mô hình seq2seq trong :numref:`sec_seq2seq`, Transformer cũng dựa trên kiến trúc mã hóa-giải mã.
-Tuy nhiên, Transformer khác với trước đây bằng cách thay thế các lớp lặp lại trong seq2seq bằng các lớp *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua *mã hóa vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
-Ta so sánh Transformer và seq2seq cạnh nhau trong :numref:`fig_transformer`.
+Tuy nhiên, nó thay thế các lớp lặp lại trong seq2seq bằng các lớp *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua *mã hóa vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
+Ta so sánh Transformer và seq2seq trong :numref:`fig_transformer`.
 
 <!--
 Overall, these two models are similar to each other: the source sequence embeddings are fed into $n$ repeated blocks.
@@ -55,9 +55,9 @@ The outputs of the last block are then used as attention memory for the decoder.
 The target sequence embeddings are similarly fed into $n$ repeated blocks in the decoder, and the final outputs are obtained by applying a dense layer with vocabulary size to the last block's outputs.
 -->
 
-Nhìn chung, hai mô hình này tương tự nhau: các chuỗi embedding nguồn được đưa vào các khối lặp lại $n$.
+Nhìn chung, hai mô hình này là tương tự nhau: các chuỗi embedding nguồn được đưa vào các khối lặp lại $n$.
 Đầu ra của khối cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
-Các chuỗi embedding mục tiêu được cung cấp tương tự vào $n$ khối lặp lại trong bộ giải mã và các đầu ra cuối cùng thu được bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng cho các đầu ra của khối cuối cùng.
+Các chuỗi embedding mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã và các đầu ra cuối cùng thu được bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng cho các đầu ra của khối cuối cùng.
 
 <!--
 ![The Transformer architecture.](../img/transformer.svg)
