@@ -13,8 +13,8 @@ its content of something that would look much like the background of a test patt
 -->
 
 Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector tổng quát và hình ảnh.
-Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy của hình ảnh.
-Nói cách khác, nếu ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các hình mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình tương tự (*analog*), và rất khó để suy luận về nội dung của chúng.
+Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy (_regularity property_) của hình ảnh.
+Nói cách khác, nếu ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các khuôn mẫu thử nghiệm (*test pattern*) trong thời đại truyền hình analog, và rất khó để suy luận về nội dung của chúng.
 
 <!--
 Most importantly, so far we tacitly assumed that our data is generated i.i.d., i.e., independently and identically distributed, all drawn from some distribution.
@@ -27,7 +27,7 @@ It is thus only reasonable to assume that specialized models for such data will 
 Quan trọng hơn là cho đến thời điểm này, chúng ta đã ngầm định rằng dữ liệu được sinh ra từ những phân phối độc lập và giống hệt nhau (*independently and identically distributed - i.i.d.*).
 Thật không may, điều này lại không đúng với hầu hết các loại dữ liệu.
 Ví dụ, các từ trong đoạn văn này được viết theo một trình tự nhất định mà nếu bị hoán vị đi một cách ngẫu nhiên thì sẽ rất khó để giải mã ý nghĩa của chúng.
-Tương tự với các khung hình trong video, tín hiệu âm thanh trong một cuộc hội thoại hoặc hành vi duyệt web, tất cả đều có cấu trúc chuỗi.
+Tương tự với các khung hình trong video, tín hiệu âm thanh trong một cuộc hội thoại hoặc hành vi duyệt web, tất cả đều có cấu trúc tuần tự.
 Do đó, hoàn toàn hợp lý khi ta giả định rằng các mô hình chuyên biệt cho những kiểu dữ liệu này sẽ giúp việc mô tả dữ liệu và giải quyết các bài toán ước lượng được tốt hơn.
 
 <!--
@@ -40,7 +40,7 @@ Again we want to have models that can handle such data.
 Một vấn đề nữa phát sinh khi chúng ta không chỉ nhận một chuỗi làm đầu vào mà còn muốn dự đoán những phần tử tiếp theo của chuỗi.
 Ví dụ, bài toán có thể là dự đoán phần tử tiếp theo trong dãy 2, 4, 6, 8, 10, ...
 Tác vụ này khá phổ biến trong phân tích chuỗi thời gian: để dự đoán thị trường chứng khoán, đường cong biểu hiện tình trạng sốt của bệnh nhân, hoặc gia tốc cần thiết cho một chiếc xe đua.
-Một lần nữa, chúng ta muốn xây dựng các mô hình có thể xử lý ổn thỏa dữ liệu trên.
+Một lần nữa, chúng ta muốn xây dựng các mô hình có thể xử lý ổn thỏa kiểu dữ liệu trên.
 
 <!--
 In short, while convolutional neural networks can efficiently process spatial information, recurrent neural networks are designed to better handle sequential information.
@@ -59,7 +59,7 @@ Next, we describe the gradient calculation method in recurrent neural networks t
 
 Ở chương này, đa phần những ví dụ đề cập đến các mạng truy hồi đều dựa trên dữ liệu văn bản.
 Vì vậy, chúng ta sẽ cùng đào sâu tìm hiểu những mô hình ngôn ngữ.
-Sau khi xem xét về dữ liệu chuỗi, ta sẽ thảo luận các khái niệm cơ bản của mô hình ngôn ngữ để lấy cảm hứng thiết kế các mạng nơ-ron truy hồi.
+Sau khi tìm hiểu về dữ liệu chuỗi, ta sẽ thảo luận các khái niệm cơ bản của mô hình ngôn ngữ để làm bàn đạp cho việc thiết kế các mạng nơ-ron truy hồi.
 Cuối cùng, ta sẽ tiến hành mô tả phương pháp tính toán gradient trong các mạng nơ-ron truy hồi để từ đó hiểu rõ hơn các vấn đề có thể gặp phải trong quá trình huấn luyện.
 
 ```toc
