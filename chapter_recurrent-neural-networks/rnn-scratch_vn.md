@@ -283,7 +283,7 @@ As mentioned in :numref:`sec_numerical_stability`, it might result in numerical 
 Therefore, RNN models often need extra help to stabilize the training.
 -->
 
-Với chuỗi độ dài $T$, trong một vòng lặp lan truyền ngược ta tính toán gradient qua $T$ bước thời gian, dẫn đến một chuỗi các tích ma trận có độ phức tạp $\mathcal{O}(T)$.
+Với chuỗi độ dài $T$, trong một vòng lặp lan truyền ngược ta tính toán gradient qua $T$ bước thời gian, dẫn đến một chuỗi các tích của ma trận có độ phức tạp $\mathcal{O}(T)$.
 Như đã đề cập trong :numref:`sec_numerical_stability`, khi $T$ lớn việc này có thể dẫn đến mất ổn định số học, biểu hiện qua hiện tượng bùng nổ hoặc tiêu biến gradient.
 Do đó, các mô hình RNN thường cần một chút hỗ trợ để ổn định việc huấn luyện.
 
