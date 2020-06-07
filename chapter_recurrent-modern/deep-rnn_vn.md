@@ -48,7 +48,7 @@ Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
 Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp từ nhiều tầng.
 Cụ thể là các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
-Ví dụ, chúng ta có thể muốn biểu diễn dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) có sẵn ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
+Ví dụ, chúng ta có thể muốn lưu dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
 
 <!--
 Beyond all this abstract discussion it is probably easiest to understand the family of models we are interested in by reviewing :numref:`fig_deep_rnn`.
