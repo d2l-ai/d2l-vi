@@ -320,7 +320,7 @@ One alternative is to clip the gradients by projecting them back to a ball of a 
 -->
 
 Đôi khi gradient có thể khá lớn và do đó thuật toán tối ưu không hội tụ.
-Vấn đề này có thể được giả quyết bằng cách giảm tốc độ học $\eta$ hoặc sử dụng một số thủ thuật liên quan tới đạo hàm bậc cao hơn.
+Vấn đề này có thể được giải quyết bằng cách giảm tốc độ học $\eta$ hoặc sử dụng một số thủ thuật liên quan tới đạo hàm bậc cao hơn.
 Nhưng nếu gradient hiếm khi đạt giá trị lớn, cách giải quyết như vậy không đảm bảo hội tụ hoàn toàn.
 Một cách khác là gọt gradient (*gradient clipping*) bằng cách chiếu gradient lên mặt cầu bán kính $\theta$ qua công thức:
 
