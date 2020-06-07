@@ -565,7 +565,7 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
     * Thay đổi cấu trúc mạng nơ-ron và quan sát tác động của nó. 
 2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm? 
 3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào? 
-4. Hãy cho một ví dụ khi mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt tính động của dữ liệu.
+4. Hãy cho một ví dụ khi mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
