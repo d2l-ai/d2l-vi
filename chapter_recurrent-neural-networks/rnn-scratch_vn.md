@@ -264,7 +264,7 @@ We initialize it with the sequence `traveller ` and have it generate 10 addition
 
 Ta kiểm tra hàm `predict_ch8` trước.
 Lúc này đầu ra sẽ là các dự đoán vô nghĩa do mạng chưa được huấn luyện.
-Ta khởi tạo mạng với chuỗi `traveller` và tạo ra thêm 10 ký tự.
+Ta khởi tạo mạng với chuỗi `traveller` và cho nó tạo ra thêm 10 ký tự.
 
 
 ```{.python .input  n=9}
