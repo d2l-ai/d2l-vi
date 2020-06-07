@@ -513,7 +513,7 @@ While implementing the above RNN model from scratch is instructive, it is not co
 -->
 
 Mặc dù học được nhiều điều từ việc lập trình từ đầu nhưng cách làm này không thực sự tiện lợi. 
-Trong phần tiếp theo, ta sẽ xem cách cải thiện đáng kể mô hình hiện tại, nhanh và dễ lập trình hơn.
+Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể mô hình hiện tại, nhanh và dễ lập trình hơn.
 
 <!--
 ## Summary
