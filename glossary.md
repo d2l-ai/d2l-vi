@@ -317,7 +317,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
 | perceptron                         | perceptron                 | [https://git.io/JvohC](https://git.io/JvohC) |
 | performance                        | chất lượng                 | [https://git.io/JvQx4](https://git.io/JvQx4) |
-| perplexity (metric)                | độ rối rắm                 |  |
+| perplexity (metric)                | độ hỗn độn                 |  |
 | perturbation                       | nhiễu                      | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | plateau (danh từ)                  | vùng nằm ngang             |                                              |
 | plateau (động từ)                  | nằm ngang                  |                                              |
