@@ -412,9 +412,9 @@ Let us see what this means in practice.
 The first thing to check is how well the model is able to predict what happens in the next timestep.
 -->
 
-Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
-Hãy cùng xác nhận điều này trên thực tế.
-Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào.
+Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt. 
+Hãy cùng xác nhận điều này trên thực tế. 
+Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào. 
 
 ```{.python .input}
 estimates = net(features)
@@ -429,10 +429,10 @@ There is just one little problem to this: if we observe data only until timestep
 Instead, we need to work our way forward one step at a time:
 -->
 
-Kết quả khá tốt như những gì chúng ta mong đợi.
-Thậm chí với hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy.
-Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tại các bước thời gian sau đó.
-Thay vào đó, chúng ta cần tiến lên từng bước một:
+Kết quả khá tốt, đúng như những gì chúng ta mong đợi. 
+Thậm chí sau hơn 600 mẫu quan sát, phép ước lượng vẫn trông khá tin cậy. 
+Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tương lai. 
+Thay vào đó, chúng ta cần tiến lên từng bước một: 
 
 
 $$\begin{aligned}
@@ -447,8 +447,8 @@ In other words, we will have to use our own predictions to make future predictio
 Let us see how well this goes.
 -->
 
-Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán của mình để đưa ra dự đoán trong tương lai.
-Chúng ta hãy xem cách này có ổn không.
+Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán của mình để đưa ra dự đoán trong tương lai. 
+Hãy cùng xem cách này có ổn không.
 
 
 ```{.python .input}
@@ -475,16 +475,16 @@ For instance, weather forecasts for the next 24 hours tend to be pretty accurate
 We will discuss methods for improving this throughout this chapter and beyond.
 -->
 
-Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
-Các giá trị ước lượng rất nhanh chóng suy giảm thành một hằng số chỉ sau một vài bước.
-Tại sao thuật toán trên hoạt động tệ đến thế?
-Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
+Ví dụ trên cho thấy, cách này đã thất bại thảm hại. 
+Các giá trị ước lượng rất nhanh chóng suy giảm thành một hằng số chỉ sau một vài bước. 
+Tại sao thuật toán trên hoạt động tệ đến thế? 
+Suy cho cùng, lý do là trên thực tế các sai số dự đoán bị chồng chất qua các bước thời gian.
 Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
-Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
-Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng.
-Đây là một hiện tượng khá phổ biến.
-Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
-Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
+Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo. 
+Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng. 
+Đây là một hiện tượng phổ biến. 
+Ví dụ, dự báo thời tiết trong 24 giờ tới có độ chính xác khá cao nhưng nó giảm đi nhanh chóng với những dự báo xa hơn quãng thời gian đó. 
+Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo. 
 
 <!--
 Let us verify this observation by computing the $k$-step predictions on the entire sequence.
@@ -512,8 +512,8 @@ This clearly illustrates how the quality of the estimates changes as we try to p
 While the 8-step predictions are still pretty good, anything beyond that is pretty useless.
 -->
 
-Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai.
-Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó thì hoàn toàn vô dụng.
+Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai. 
+Mặc dù những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó thì khá là vô dụng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -534,12 +534,12 @@ Consequently, if you have a time series, always respect the temporal order of th
 * For causal models (e.g., time going forward), estimating the forward direction is typically a lot easier than the reverse direction.
 -->
 
-* Các mô hình chuỗi thường yêu cầu các công cụ thống kê chuyên biệt để dự đoán và ước lượng.
-Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến ẩn.
-* Các sai số tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán các bước thời gian xa hơn.
+* Các mô hình chuỗi thường yêu cầu các công cụ thống kê chuyên biệt để ước lượng.
+Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến tiềm ẩn. 
+* Sai số bị tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán các bước thời gian xa hơn. 
 * Khó khăn trong phép nội suy và ngoại suy khá khác biệt.
-Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luôn để ý trình tự thời gian của dữ liệu khi huấn luyện, hay nói cách khác, không bao giờ huấn luyện trên dữ liệu thuộc về bước thời gian trong tương lai.
-* Đối với các mô hình nhân quả (ví dụ, ở đó thời gian đi về phía trước), ước lượng theo chiều xuôi thường dễ dàng hơn rất nhiều so với chiều ngược lại.
+Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luôn để ý trình tự thời gian của dữ liệu khi huấn luyện, hay nói cách khác, không bao giờ huấn luyện trên dữ liệu thuộc về bước thời gian trong tương lai. 
+* Đối với các mô hình nhân quả (ví dụ, ở đó thời gian đi về phía trước), ước lượng theo chiều xuôi thường dễ dàng hơn rất nhiều so với chiều ngược lại. 
 
 
 
@@ -561,13 +561,13 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
 -->
 
 1. Hãy cải thiện mô hình nói trên bằng cách
-    * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bạn thực sự cần bao nhiêu mẫu quan sát?
-    * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân.
-    * Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao?
-    * Thay đổi cấu trúc mạng nơ-ron và xem những gì sẽ xảy ra.
-2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm?
-3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào?
-4. Hãy cho một ví dụ khi một mô hình tự hồi quy ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
+    * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bao nhiêu mẫu quan sát là thực sự cần thiết? 
+    * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân. 
+    * Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao? 
+    * Thay đổi cấu trúc mạng nơ-ron và quan sát tác động của nó. 
+2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm? 
+3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào? 
+4. Hãy cho một ví dụ khi mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
