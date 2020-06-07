@@ -42,8 +42,7 @@ For instance, we might want to keep high-level data about financial market condi
 
 * Chúng ta có thể bổ sung thêm các hàm phi tuyến vào các cơ chế cổng.
 Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perceptron.
-Cách này không làm cho *cơ chế* của mạng LSTM thay đổi.
-Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
+Cách này không làm thay đổi *cơ chế* của mạng LSTM mà chỉ làm nó phức tạp hơn.
 Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái tổng quát nào đó về cách các mô hình tự hồi quy biến ẩn hoạt động.
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
 Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp từ nhiều tầng.
