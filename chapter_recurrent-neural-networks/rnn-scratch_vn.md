@@ -344,7 +344,7 @@ Also note that we compute the gradient norm over all parameters.
 -->
 
 Dưới đây, ta định nghĩa hàm gọt gradient, dùng cho cả mô hình lập trình từ đầu `RNNModelScratch` và mô hình tạo bằng Gluon.
-Lưu ý rằng ta tính toán chuẩn của gradient trên tất cả các tham số.
+Lưu ý rằng ta tính chuẩn của gradient trên tất cả các tham số.
 
 
 ```{.python .input  n=10}
