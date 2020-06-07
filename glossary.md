@@ -378,6 +378,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification        | phân loại cảm xúc        |                                              |
 | sequence learning               | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence            | chuỗi sang chuỗi         |                                              |
+| sequential partitioning         | phân tách tuần tự        |                                              |
 | sensitivity                     | độ nhạy                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | shape (trong Đại số Tuyến tính) | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn) |
 | significance test               | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
