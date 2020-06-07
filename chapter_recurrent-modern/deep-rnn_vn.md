@@ -44,7 +44,7 @@ For instance, we might want to keep high-level data about financial market condi
 Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perceptron.
 Cách này không làm cho *cơ chế* của mạng LSTM thay đổi.
 Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
-Điều này sẽ có ý nghĩa nếu chúng ta tin rằng cơ chế LSTM biểu diễn một số hình thái tổng quát về cách các mô hình biến ẩn tự hồi quy hoạt động.
+Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái tổng quát nào đó về cách các mô hình tự hồi quy biến ẩn hoạt động.
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
 Cách này tạo ra một cơ chế linh hoạt hơn đến từ sự kết hợp của một vài tầng.
 Cụ thể là các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
