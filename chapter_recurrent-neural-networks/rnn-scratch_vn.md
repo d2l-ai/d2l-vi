@@ -564,7 +564,7 @@ Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể m�
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
     * Điều chỉnh để mô hình ưu tiên các đầu ra có khả năng cao hơn, ví dụ, bằng cách lấy mẫu sử dụng $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
-4. Điều gì sẽ xảy ra nếu chạy mã nguồn phần này mà không gọt gradient?
+4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn phần này mà không gọt gradient?
 5. Thay đổi phép lấy mẫu phân tách tuần tự để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
 6. Thay hàm kích hoạt bằng ReLU và thực hiện lại các thử nghiệm.
 7. Chứng minh rằng độ rối rắm là nghịch đảo trung bình điều hòa (*harmonic mean*) của xác suất có điều kiện của từ.
