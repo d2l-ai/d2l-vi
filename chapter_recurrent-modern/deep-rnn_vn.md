@@ -23,7 +23,7 @@ Our discussion below focuses primarily on LSTMs, but it applies to other sequenc
 Cho đến nay, chúng ta mới chỉ thảo luận các mạng nơ-ron truy hồi có một tầng ẩn một chiều duy nhất.
 Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý.
 Đây không phải là một vấn đề lớn miễn là ta vẫn có đủ độ linh hoạt để mô hình hóa các loại tương tác khác nhau.
-Tuy nhiên, điều này có thể khá thách thức với các mạng chỉ có một tầng ẩn duy nhất.
+Tuy nhiên, đây là một thách thức với các mạng đơn tầng.
 Trong trường hợp của perceptron, chúng ta giải quyết vấn đề này bằng cách đưa thêm nhiều tầng vào mạng.
 Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào.
 Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác.
