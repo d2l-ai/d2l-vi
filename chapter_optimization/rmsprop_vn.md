@@ -1,5 +1,4 @@
-<!-- ===================== Bắt đầu dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
 
 <!--
 # RMSProp
@@ -9,22 +8,34 @@
 :label:`sec_rmsprop`
 
 <!--
-One of the key issues in :numref:`sec_adagrad` is that the learning rate decreases at a predefined schedule of effectively $\mathcal{O}(t^{-\frac{1}{2}})$. While this is generally appropriate for convex problems, it might not be ideal for nonconvex ones, such as those encountered in deep learning. Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
+One of the key issues in :numref:`sec_adagrad` is that the learning rate decreases at a predefined schedule of effectively $\mathcal{O}(t^{-\frac{1}{2}})$.
+While this is generally appropriate for convex problems, it might not be ideal for nonconvex ones, such as those encountered in deep learning.
+Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-:cite:`Tieleman.Hinton.2012` proposed the RMSProp algorithm as a simple fix to decouple rate scheduling from coordinate-adaptive learning rates. The issue is that Adagrad accumulates the squares of the gradient $\mathbf{g}_t$ into a state vector $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$. As a result $\mathbf{s}_t$ keeps on growing without bound due to the lack of normalization, essentially linarly as the algorithm converges.
+:cite:`Tieleman.Hinton.2012` proposed the RMSProp algorithm as a simple fix to decouple rate scheduling from coordinate-adaptive learning rates.
+The issue is that Adagrad accumulates the squares of the gradient $\mathbf{g}_t$ into a state vector $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$.
+As a result $\mathbf{s}_t$ keeps on growing without bound due to the lack of normalization, essentially linarly as the algorithm converges.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-One way of fixing this problem would be to use $\mathbf{s}_t / t$. For reasonable distributions of $\mathbf{g}_t$ this will converge. Unfortunately it might take a very long time until the limit behavior starts to matter since the procedure remembers the full trajectory of values. An alternative is to use a leaky average in the same way we used in the momentum method, i.e., $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ for some parameter $\gamma > 0$. Keeping all other parts unchanged yields RMSProp.
+One way of fixing this problem would be to use $\mathbf{s}_t / t$.
+For reasonable distributions of $\mathbf{g}_t$ this will converge.
+Unfortunately it might take a very long time until the limit behavior starts to matter since the procedure remembers the full trajectory of values.
+An alternative is to use a leaky average in the same way we used in the momentum method, i.e., $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ for some parameter $\gamma > 0$.
+Keeping all other parts unchanged yields RMSProp.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## The Algorithm
@@ -38,19 +49,22 @@ Let us write out the equations in detail.
 
 *dịch đoạn phía trên*
 
+
 $$\begin{aligned}
     \mathbf{s}_t & \leftarrow \gamma \mathbf{s}_{t-1} + (1 - \gamma) \mathbf{g}_t^2, \\
     \mathbf{x}_t & \leftarrow \mathbf{x}_{t-1} - \frac{\eta}{\sqrt{\mathbf{s}_t + \epsilon}} \odot \mathbf{g}_t.
 \end{aligned}$$
--->
 
-*dịch đoạn phía trên*
 
 <!--
-The constant $\epsilon > 0$ is typically set to $10^{-6}$ to ensure that we do not suffer from division by zero or overly large step sizes. Given this expansion we are now free to control the learning rate $\eta$ independently of the scaling that is applied on a per-coordinate basis. In terms of leaky averages we can apply the same reasoning as previously applied in the case of the momentum method. Expanding the definition of $\mathbf{s}_t$ yields
+The constant $\epsilon > 0$ is typically set to $10^{-6}$ to ensure that we do not suffer from division by zero or overly large step sizes.
+Given this expansion we are now free to control the learning rate $\eta$ independently of the scaling that is applied on a per-coordinate basis.
+In terms of leaky averages we can apply the same reasoning as previously applied in the case of the momentum method.
+Expanding the definition of $\mathbf{s}_t$ yields
 -->
 
 *dịch đoạn phía trên*
+
 
 $$
 \begin{aligned}
@@ -59,11 +73,15 @@ $$
 \end{aligned}
 $$
 
+
 <!--
-As before in :numref:`sec_momentum` we use $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$. Hence the sum of weights is normalized to $1$ with a half-life time of an observation of $\gamma^{-1}$. Let us visualize the weights for the past 40 timesteps for various choices of $\gamma$.
+As before in :numref:`sec_momentum` we use $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
+Hence the sum of weights is normalized to $1$ with a half-life time of an observation of $\gamma^{-1}$.
+Let us visualize the weights for the past 40 timesteps for various choices of $\gamma$.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -81,6 +99,7 @@ for gamma in gammas:
 d2l.plt.xlabel('time');
 ```
 
+
 <!--
 ## Implementation from Scratch
 -->
@@ -88,10 +107,14 @@ d2l.plt.xlabel('time');
 ## *dịch tiêu đề phía trên*
 
 <!--
-As before we use the quadratic function $f(\mathbf{x})=0.1x_1^2+2x_2^2$ to observe the trajectory of RMSProp. Recall that in :numref:`sec_adagrad`, when we used Adagrad with a learning rate of 0.4, the variables moved only very slowly in the later stages of the algorithm since the learning rate decreased too quickly. Since $\eta$ is controlled separately this does not happen with RMSProp.
+As before we use the quadratic function $f(\mathbf{x})=0.1x_1^2+2x_2^2$ to observe the trajectory of RMSProp.
+Recall that in :numref:`sec_adagrad`, when we used Adagrad with a learning rate of 0.4, 
+the variables moved only very slowly in the later stages of the algorithm since the learning rate decreased too quickly.
+Since $\eta$ is controlled separately this does not happen with RMSProp.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input}
 def rmsprop_2d(x1, x2, s1, s2):
@@ -109,11 +132,14 @@ eta, gamma = 0.4, 0.9
 d2l.show_trace_2d(f_2d, d2l.train_2d(rmsprop_2d))
 ```
 
+
 <!--
-Next, we implement RMSProp to be used in a deep network. This is equally straightforward.
+Next, we implement RMSProp to be used in a deep network.
+This is equally straightforward.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=22}
 def init_rmsprop_states(feature_dim):
@@ -128,17 +154,24 @@ def rmsprop(params, states, hyperparams):
         p[:] -= hyperparams['lr'] * p.grad / np.sqrt(s + eps)
 ```
 
+
 <!--
-We set the initial learning rate to 0.01 and the weighting term $\gamma$ to 0.9. That is, $\mathbf{s}$ aggregates on average over the past $1/(1-\gamma) = 10$ observations of the square gradient.
+We set the initial learning rate to 0.01 and the weighting term $\gamma$ to 0.9.
+That is, $\mathbf{s}$ aggregates on average over the past $1/(1-\gamma) = 10$ observations of the square gradient.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=24}
 data_iter, feature_dim = d2l.get_data_ch11(batch_size=10)
 d2l.train_ch11(rmsprop, init_rmsprop_states(feature_dim),
                {'lr': 0.01, 'gamma': 0.9}, data_iter, feature_dim);
 ```
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Concise Implementation
@@ -147,21 +180,24 @@ d2l.train_ch11(rmsprop, init_rmsprop_states(feature_dim),
 ## *dịch tiêu đề phía trên*
 
 <!--
-Since RMSProp is a rather popular algorithm it is also available in the `Trainer` instance. All we need to do is instantiate it using an algorithm named `rmsprop`, assigning $\gamma$ to the parameter `gamma1`.
+Since RMSProp is a rather popular algorithm it is also available in the `Trainer` instance.
+All we need to do is instantiate it using an algorithm named `rmsprop`, assigning $\gamma$ to the parameter `gamma1`.
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=29}
 d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
                      data_iter)
 ```
 
+
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * RMSProp is very similar to Adagrad insofar as both use the square of the gradient to scale coefficients.
@@ -176,32 +212,23 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. What happens experimentally if we set $\gamma = 1$? Why?
-1. Rotate the optimization problem to minimize $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. What happens to the convergence?
-1. Try out what happens to RMSProp on a real machine learning problem, such as training on Fashion-MNIST. Experiment with different choices for adjusting the learning rate.
-1. Would you want to adjust $\gamma$ as optimization progresses? How sensitive is RMSProp to this?
+2. Rotate the optimization problem to minimize $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. What happens to the convergence?
+3. Try out what happens to RMSProp on a real machine learning problem, such as training on Fashion-MNIST. Experiment with different choices for adjusting the learning rate.
+4. Would you want to adjust $\gamma$ as optimization progresses? How sensitive is RMSProp to this?
 -->
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2376)
--->
 
-## *dịch tiêu đề phía trên*
-
-<!--
-![](../img/qr_rmsprop.svg)
--->
-
-![*dịch chú thích ảnh phía trên*](../img/qr_rmsprop.svg)
-
-<!-- ===================== Kết thúc dịch Phần  ==================== -->
-<!-- ========================================= REVISE PHẦN  - KẾT THÚC ===================================-->
+## Thảo luận
+* [Tiếng Anh](https://discuss.mxnet.io/t/2376)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
@@ -216,20 +243,12 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
+* Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* 
 
 <!-- Phần 2 -->
-*
+* 
 
 <!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-*
-
-<!-- Phần 5 -->
-*
-
-<!-- Phần 6 -->
-*
+* 
