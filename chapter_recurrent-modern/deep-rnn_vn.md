@@ -47,7 +47,7 @@ Thay vào đó, cơ chế của mạng lúc này sẽ phức tạp hơn.
 Điều này sẽ có ý nghĩa nếu chúng ta tin rằng cơ chế LSTM biểu diễn một số hình thái tổng quát về cách các mô hình biến ẩn tự hồi quy hoạt động.
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
 Cách này tạo ra một cơ chế linh hoạt hơn đến từ sự kết hợp của một vài tầng.
-Đặc biệt, dữ liệu có thể có liên quan tới nhau ở các tầng khác nhau.
+Cụ thể là các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
 Ví dụ, chúng ta có thể muốn biểu diễn dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) có sẵn ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
 
 <!--
