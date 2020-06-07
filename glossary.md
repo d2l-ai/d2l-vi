@@ -430,6 +430,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | tune parameters            | điều chỉnh tham số                |                                              |
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| transformer            | transformer                |  |
+| position-wise feed-forward network (FFN)            | mạng lan truyền thuận định hướng vị trí                |  |
 
 ## U
 | English                  | Tiếng Việt                | Thảo luận tại                                |
