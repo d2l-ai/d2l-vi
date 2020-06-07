@@ -262,7 +262,7 @@ Given that we did not train the network, it will generate nonsensical prediction
 We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
-Ta kiểm tra hàm `predict_ch8` trước.
+Ta chạy thử hàm `predict_ch8` trước.
 Lúc này đầu ra sẽ là các dự đoán vô nghĩa do mạng chưa được huấn luyện.
 Ta khởi tạo mạng với chuỗi `traveller` và cho nó tạo ra thêm 10 ký tự.
 
