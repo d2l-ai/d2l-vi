@@ -309,7 +309,7 @@ A curse since it limits the speed of making progress, whereas a blessing since i
 
 Trong trường hợp này, có thể nói khi cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
 Điều này vừa có lợi vừa có hại.
-Có hại ở chỗ tốc độ tối ưu bị giới hạn, có lợi ở chỗ mức độ sai lệnh khi tối ưu sai hướng cũng bị hạn chế.
+Có hại ở chỗ tốc độ tối ưu bị giới hạn, có lợi ở chỗ mức độ sai lệch khi tối ưu sai hướng cũng bị hạn chế.
 
 <!--
 Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
