@@ -58,7 +58,7 @@ Each hidden state is continuously passed to both the next timestep of the curren
 
 Ngoài cuộc thảo luận khá trừu tượng trên, để hiểu được lớp các mô hình chúng ta đang quan tâm một cách dễ dàng nhất, thì chúng ta nên xem lại :numref:`fig_deep_rnn`.
 Hình trên mô tả một mạng nơ-ron truy hồi sâu với $L$ tầng ẩn.
-Mỗi trạng thái ẩn liên tục được truyền tới tầng hiện tại ở bước thời gian kế tiếp và tầng tiếp theo ở bước thời gian hiện tại.
+Mỗi trạng thái ẩn liên tục được truyền tới bước thời gian kế tiếp ở tầng hiện tại và tới bước thời gian hiện tại ở tầng kế tiếp.
 
 <!--
 ![ Architecture of a deep recurrent neural network. ](../img/deep-rnn.svg)
