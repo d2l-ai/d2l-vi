@@ -230,7 +230,7 @@ Such models are particularly nice whenever $x_t$ assumes only a discrete value, 
 For instance, we can compute $p(x_{t+1} \mid x_{t-1})$ efficiently using the fact that we only need to take into account a very short history of past observations:
 -->
 
-Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ chỉ giả định giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
+Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ chỉ là các giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
 Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách chỉ sử dụng các quan sát trong một khoảng thời gian ngắn tại quá khứ:
 
 $$p(x_{t+1} \mid x_{t-1}) = \sum_{x_t} p(x_{t+1} \mid x_t) p(x_t \mid x_{t-1}).$$
@@ -278,13 +278,13 @@ We are barely scratching the surface of it.
 -->
 
 Trên thực tế, nếu có một mô hình Markov, chúng ta cũng có thể thu được một phân phối xác suất có điều kiện ngược. 
-Tuy nhiên trong nhiều trường hợp, tồn tại một trật tự tự nhiên cho dữ liệu, cụ thể là luôn tiến về phía trước theo thời gian. 
+Tuy nhiên trong nhiều trường hợp vẫn tồn tại một trật tự tự nhiên cho dữ liệu, cụ thể đó là chiều thuận theo thời gian. 
 Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ. 
-Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ ở chiều ngược lại. 
+Do đó, nếu thay đổi $x_t$ thì ta có thể ảnh hưởng đến những gì xảy ra tại $x_{t+1}$ trong tương lai, nhưng lại không thể ảnh hưởng tới quá khứ theo chiều ngược lại. 
 Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi. 
 Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$. 
 Ví dụ: :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi điều ngược lại thì không đúng. 
-Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo hướng đi tới hơn. 
+Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo chiều thuận hơn. 
 Để tìm hiểu thêm về chủ đề này, có thể tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
 Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này. 
 
@@ -300,7 +300,7 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử minh hoạ bằng lập trình. 
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh hoạ. 
 Đầu tiên, hãy khởi tạo một vài dữ liệu như sau. 
 Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm một chút nhiễu. 
 
@@ -332,8 +332,8 @@ Since much of the modeling is identical to the previous sections when we built r
 
 Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn có thể được sử dụng để huấn luyện mạng. 
 Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$. 
-Để ý kĩ, có thể thấy rằng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng ta không có đủ $\tau$ điểm dữ liệu trong quá khứ. 
-Một cách đơn giản để khắc phục điều này là loại bỏ số ít các phần tử đó, đặc biệt nếu chuỗi thời gian rất dài. 
+Để ý kĩ, có thể thấy rằng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng ta không có đủ $\tau$ điểm dữ liệu trong quá khứ để làm đặc trưng cho chúng.
+Một cách đơn giản để khắc phục điều này, đặc biệt là khi chuỗi thời gian rất dài, là loại bỏ đi số ít các phần tử đó. 
 Một cách khác là đệm giá trị 0 vào chuỗi thời gian. 
 Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước. 
 Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$. 
