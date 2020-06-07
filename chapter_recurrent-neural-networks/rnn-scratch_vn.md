@@ -234,7 +234,7 @@ For the beginning of the sequence, we only update the hidden state.
 After that we begin generating new characters and emitting them.
 -->
 
-Trước tiên chúng ta giải thích hàm dự đoán mà thường xuyên được dùng để kiểm tra trong quá trình huấn luyện.
+Trước tiên chúng ta giải thích hàm dự đoán thường xuyên được dùng để kiểm tra trong quá trình huấn luyện.
 Hàm này dự đoán `num_predicts` ký tự tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
 Ở các ký tự đầu tiên trong chuỗi, ta chỉ cập nhật trạng thái ẩn rồi sau đó mới bắt đầu tạo ra các ký tự mới.
 
