@@ -442,7 +442,7 @@ def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
 The training function again supports either we implement the model from scratch or using Gluon.
 -->
 
-Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon hoặc mô hình lập trình từ đầu.
+Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon và mô hình lập trình từ đầu.
 
 
 ```{.python .input  n=11}
