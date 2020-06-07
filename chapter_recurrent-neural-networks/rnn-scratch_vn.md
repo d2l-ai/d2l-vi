@@ -385,7 +385,7 @@ It differs from the models training of :numref:`sec_softmax_scratch` in three pl
 -->
 
 Trước tiên, ta định nghĩa hàm huấn luyện trên một epoch dữ liệu.
-Quá trình huấn luyện ở đây khác trong :numref:`sec_softmax_scratch` ở ba điểm:
+Quá trình huấn luyện ở đây khác với :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
