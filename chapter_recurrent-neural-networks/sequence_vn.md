@@ -412,7 +412,7 @@ The first thing to check is how well the model is able to predict what happens i
 
 Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt. 
 Hãy cùng xác nhận điều này trên thực tế. 
-Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào. 
+Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào. 
 
 ```{.python .input}
 estimates = net(features)
@@ -428,7 +428,7 @@ Instead, we need to work our way forward one step at a time:
 -->
 
 Kết quả khá tốt, đúng như những gì chúng ta mong đợi. 
-Thậm chí sau hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy. 
+Thậm chí sau hơn 600 mẫu quan sát, phép ước lượng vẫn trông khá tin cậy. 
 Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tương lai. 
 Thay vào đó, chúng ta cần tiến lên từng bước một: 
 
@@ -481,7 +481,7 @@ Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\e
 Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo. 
 Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng. 
 Đây là một hiện tượng phổ biến. 
-Ví dụ, dự báo thời tiết trong 24 giờ tới có độ chính xác khá cao nhưng độ chính xác giảm đi nhanh chóng với những dự báo xa hơn thế. 
+Ví dụ, dự báo thời tiết trong 24 giờ tới có độ chính xác khá cao nhưng nó giảm đi nhanh chóng với những dự báo xa hơn quãng thời gian đó. 
 Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo. 
 
 <!--
@@ -562,7 +562,7 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
     * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bao nhiêu mẫu quan sát là thực sự cần thiết? 
     * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân. 
     * Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao? 
-    * Thay đổi cấu trúc mạng nơ-ron và xem những gì sẽ xảy ra. 
+    * Thay đổi cấu trúc mạng nơ-ron và quan sát tác động của nó. 
 2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm? 
 3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào? 
 4. Hãy cho một ví dụ khi mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt tính động của dữ liệu.
