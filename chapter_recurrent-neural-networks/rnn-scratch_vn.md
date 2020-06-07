@@ -335,7 +335,7 @@ While it does not entirely solve the problem, it is one of the many techniques t
 -->
 
 Như vậy chuẩn của gradient sẽ không vượt quá $\theta$ và gradient sau khi gọt sẽ cùng hướng gradient $\mathbf{g}$ ban đầu.
-Gọt gradient có tác dụng phụ tích cực là hạn chế ảnh hưởng quá lớn của bất kỳ minibatch nào (hoặc bất kỳ mẫu nào) lên các trọng số, làm cho mô hình mạnh mẽ hơn.
+Gọt gradient có tác dụng phụ tích cực là hạn chế ảnh hưởng quá lớn của bất kỳ minibatch nào (hoặc bất kỳ mẫu nào) lên các trọng số, làm cho mô hình ổn định hơn.
 Đây là một trong các kỹ thuật có thể nhanh chóng giảm thiểu bùng nổ gradient, dù không hoàn toàn giải quyết được.
 
 <!--
