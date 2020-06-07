@@ -232,10 +232,9 @@ For the beginning of the sequence, we only update the hidden state.
 After that we begin generating new characters and emitting them.
 -->
 
-Trước tiên cần giải thích về hàm dự đoán để chúng ta có thể thường xuyên kiểm tra trong quá trình huấn luyện.
-Hàm này dự đoán các ký tự `num_predicts` tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
-Để bắt đầu chuỗi, ta cập nhật chỉ trạng thái ẩn.
-Sau đó, ta bắt đầu tạo ra các ký tự mới và ban hành chúng.
+Trước tiên chúng ta giải thích hàm dự đoán thường xuyên được dùng để kiểm tra trong quá trình huấn luyện.
+Hàm này dự đoán `num_predicts` ký tự tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
+Ở các ký tự đầu tiên trong chuỗi, ta chỉ cập nhật trạng thái ẩn rồi sau đó mới bắt đầu tạo ra các ký tự mới.
 
 
 ```{.python .input}
@@ -261,9 +260,9 @@ Given that we did not train the network, it will generate nonsensical prediction
 We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
-Ta kiểm tra hàm `predict_rnn` trước tiên.
-Vì mạng không được huấn luyện, nó sẽ tạo ra các dự đoán vô nghĩa.
-Ta khởi tạo mạng với chuỗi `traveller` và để nó tạo thêm 10 ký tự.
+Ta chạy thử hàm `predict_ch8` trước.
+Lúc này đầu ra sẽ là các dự đoán vô nghĩa do mạng chưa được huấn luyện.
+Ta khởi tạo mạng với chuỗi `traveller` và cho nó tạo ra thêm 10 ký tự.
 
 
 ```{.python .input  n=9}
@@ -274,7 +273,7 @@ predict_ch8('time traveller ', 10, model, vocab, ctx)
 ## Gradient Clipping
 -->
 
-## Cắt bớt Gradient
+## Gọt Gradient
 
 <!--
 For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length $\mathcal{O}(T)$ during backpropagating.
@@ -282,18 +281,17 @@ As mentioned in :numref:`sec_numerical_stability`, it might result in numerical 
 Therefore, RNN models often need extra help to stabilize the training.
 -->
 
-Đối với chuỗi có độ dài $T$, ta tính toán gradient theo các bước thời gian $T$ này trong một vòng lặp, dẫn đến một dây chuyền các tích ma trận có độ dài $\mathcal{O}(T)$ trong quá trình lan truyền ngược.
-Như đã đề cập trong :numref:`sec_numerical_stability`, việc này có thể dẫn đến mất ổn định số, ví dụ: các gradient có thể phát nổ hoặc biến mất, khi $T$ lớn.
-Do đó, các mô hình RNN thường cần thêm trợ giúp để ổn định việc huấn luyện.
+Với chuỗi độ dài $T$, trong một vòng lặp lan truyền ngược ta tính toán gradient qua $T$ bước thời gian, dẫn đến một chuỗi các tích của ma trận có độ phức tạp $\mathcal{O}(T)$.
+Như đã đề cập trong :numref:`sec_numerical_stability`, khi $T$ lớn việc này có thể dẫn đến mất ổn định số học, biểu hiện qua hiện tượng bùng nổ hoặc tiêu biến gradient.
+Do đó, các mô hình RNN thường cần một chút hỗ trợ để ổn định việc huấn luyện.
 
 <!--
 Recall that when solving an optimization problem, we take update steps for the weights $\mathbf{w}$ in the general direction of the negative gradient $\mathbf{g}_t$ on a minibatch, 
 say $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Let us further assume that the objective is well behaved, i.e., it is Lipschitz continuous with constant $L$, i.e.,
 -->
 
-Hãy nhớ lại rằng khi giải quyết vấn đề tối ưu hóa, ta thực hiện các bước cập nhật cho các trọng số $\mathbf{w}$ theo hướng chung của gradient âm $\mathbf{g}_t$ trên một minibatch,
-ở đây là $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Giả định rằng mục tiêu được xử lý tốt, khi đó hàm Lipschitz liên tục với biến $L$, tức là:
-
+Nhớ lại rằng khi giải quyết vấn đề tối ưu, ta thực hiện cập nhật trọng số $\mathbf{w}$ ngược hướng gradient $\mathbf{g}_t$ trên một minibatch, theo công thức $\mathbf{w} - \eta \cdot \mathbf{g}_t$. 
+Giả sử hàm mục tiêu là hàm liên tục Lipschitz với hằng số $L$, tức:
 
 $$|l(\mathbf{w}) - l(\mathbf{w}')| \leq L \|\mathbf{w} - \mathbf{w}'\|.$$
 
@@ -307,9 +305,9 @@ This is both a curse and a blessing.
 A curse since it limits the speed of making progress, whereas a blessing since it limits the extent to which things can go wrong if we move in the wrong direction.
 -->
 
-Trong trường hợp này, ta có thể giả định một cách an toàn rằng bằng cách cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
-Đây là cả một lời nguyền và một phước lành.
-Một lời nguyền là vì nó giới hạn tốc độ tiến bộ, trong khi việc nó là một phước lành là bởi nó hạn chế mức độ sai lệnh trong trường hợp chúng ta đi sai hướng.
+Trong trường hợp này, có thể nói khi cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
+Điều này vừa có lợi vừa có hại.
+Có hại ở chỗ tốc độ tối ưu bị giới hạn, có lợi ở chỗ mức độ sai lệch khi tối ưu sai hướng cũng bị hạn chế.
 
 <!--
 Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
@@ -319,11 +317,10 @@ In this case such an approach may appear entirely unwarranted.
 One alternative is to clip the gradients by projecting them back to a ball of a given radius, say $\theta$ via
 -->
 
-Đôi khi gradient có thể khá lớn và thuật toán tối ưu có thể không hội tụ.
-Ta có thể giải quyết vấn đề này bằng cách giảm tốc độ học $\eta$ hoặc bằng một số thủ thuật bậc cao khác.
-Nhưng điều gì sẽ xảy ra nếu chúng ta hiếm khi nhận được gradient lớn?
-Trong trường hợp này, cách tiếp cận như vậy không được bảo đảm hoàn toàn.
-Một cách khác là cắt bớt các gradient bằng cách chiếu chúng trở lại một quả cầu với bán kính $\theta$ thông qua:
+Đôi khi gradient có thể khá lớn và do đó thuật toán tối ưu không hội tụ.
+Vấn đề này có thể được giải quyết bằng cách giảm tốc độ học $\eta$ hoặc sử dụng một số thủ thuật liên quan tới đạo hàm bậc cao hơn.
+Nhưng nếu gradient hiếm khi đạt giá trị lớn, cách giải quyết như vậy không đảm bảo hội tụ hoàn toàn.
+Một cách khác là gọt gradient (*gradient clipping*) bằng cách chiếu gradient lên mặt cầu bán kính $\theta$ qua công thức:
 
 $$\mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g}.$$
 
@@ -335,19 +332,17 @@ Gradient clipping provides a quick fix to the gradient exploding.
 While it does not entirely solve the problem, it is one of the many techniques to alleviate it.
 -->
 
-Bằng cách làm như vậy, ta biết rằng chuẩn độ dốc không bao giờ vượt quá $\theta$ và độ dốc được cập nhật hoàn toàn phù hợp với hướng ban đầu $\mathbf{g}$.
-Nó cũng có tác dụng phụ tích cực là hạn chế ảnh hưởng của bất kỳ minibatch nào (và bên trong nó là bất kỳ mẫu nào) có thể tác động lên các vector trọng số.
-Điều này mang lại một độ mạnh mẽ nhất định cho mô hình.
-Cắt bớt gradient là một phương án sửa chữa nhanh chóng cho vấn đề phát nổ gradient.
-Mặc dù nó không hoàn toàn giải quyết vấn đề, nhưng là một trong nhiều kỹ thuật để giảm bớt vấn đề đó.
+Như vậy chuẩn của gradient sẽ không vượt quá $\theta$ và gradient sau khi gọt sẽ cùng hướng gradient $\mathbf{g}$ ban đầu.
+Gọt gradient có tác dụng phụ tích cực là hạn chế ảnh hưởng quá lớn của bất kỳ minibatch nào (hoặc bất kỳ mẫu nào) lên các trọng số, làm cho mô hình ổn định hơn.
+Dù không giải quyết được hoàn toàn vấn đề, đây là một kỹ thuật đơn giản để làm giảm nhẹ vấn đề bùng nổ gradient.
 
 <!--
 Below we define a function to clip the gradients of a model that is either a `RNNModelScratch` instance or a Gluon model.
 Also note that we compute the gradient norm over all parameters.
 -->
 
-Dưới đây, chúng tôi định nghĩa một hàm để cắt bớt các gradient của mô hình là một thực thể `RNNModelScratch` hoặc một mô hình Gluon.
-Cũng lưu ý rằng chúng tôi tính toán trung bình gradient trên tất cả các tham số.
+Dưới đây, ta định nghĩa hàm gọt gradient, dùng cho cả mô hình lập trình từ đầu `RNNModelScratch` và mô hình tạo bằng Gluon.
+Lưu ý rằng ta tính chuẩn của gradient trên tất cả các tham số.
 
 
 ```{.python .input  n=10}
