@@ -434,7 +434,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transformer            | transformer                |  |
 
 ## U
-| English                  | Tiếng Việt               | Thảo luận tại                                |
+| English                  | Tiếng Việt                | Thảo luận tại                                |
 |--------------------------|---------------------------|----------------------------------------------|
 | unavoidable bias         | độ chệch không tránh được |                                              |
 | underfit                 | dưới khớp                 | [https://git.io/JvQxY](https://git.io/JvQxY) |
