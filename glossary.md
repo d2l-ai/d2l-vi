@@ -333,6 +333,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | probability theory                 | lý thuyết xác suất         |                                              |
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| position-wise feed-forward network (FFN)            | mạng lan truyền thuận định hướng vị trí                |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
@@ -431,10 +432,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | transformer            | transformer                |  |
-| position-wise feed-forward network (FFN)            | mạng lan truyền thuận định hướng vị trí                |  |
 
 ## U
-| English                  | Tiếng Việt                | Thảo luận tại                                |
+| English                  | Tiếng Việt               | Thảo luận tại                                |
 |--------------------------|---------------------------|----------------------------------------------|
 | unavoidable bias         | độ chệch không tránh được |                                              |
 | underfit                 | dưới khớp                 | [https://git.io/JvQxY](https://git.io/JvQxY) |
