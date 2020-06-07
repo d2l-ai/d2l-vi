@@ -5,7 +5,7 @@
 # Deep Recurrent Neural Networks
 -->
 
-# Các Mạng Nơ-ron Truy Hồi Sâu
+# Mạng Nơ-ron Truy Hồi Sâu
 
 
 :label:`sec_deep_rnn`
