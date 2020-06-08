@@ -276,7 +276,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## N
 | English                           | Tiếng Việt                        | Thảo luận tại                                                                              |
 |-----------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
-| named entity                      | danh từ riêng                     | [https://git.io/JvojG](https://git.io/JvojG)                                               |
+| named entity                      | thực thể có tên                   | [https://git.io/JvojG](https://git.io/JvojG)                                               |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
