@@ -5,7 +5,7 @@
 # Machine Translation and the Dataset
 -->
 
-# Dịch Máy và Dữ liệu
+# Dịch Máy và Tập dữ liệu
 :label:`sec_machine_translation`
 
 <!--
