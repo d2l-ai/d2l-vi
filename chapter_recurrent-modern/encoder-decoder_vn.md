@@ -137,7 +137,7 @@ class EncoderDecoder(nn.Block):
 * An decoder is a network (usually the same network structure as encoder) that takes the feature vector from the encoder, and gives the best closest match to the actual input or intended output.
 -->
 
-* Kiến trúc mã hoá - giải mã là một thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
+* Kiến trúc mã hoá - giải mã là một khuôn mẫu thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
 * Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron truy hồi - RNN, vân vân, ...) nhận đầu vào và trả về một ánh xạ đặc trưng, một vector hay một tensor.
 * Bộ giải mã là một mạng (thường giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quả gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
 
