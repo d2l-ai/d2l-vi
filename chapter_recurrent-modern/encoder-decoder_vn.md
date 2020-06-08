@@ -17,7 +17,7 @@ The decoder then uses this state to generate the translated target sentence, e.g
 -->
 
 *Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
-Như đã được trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này được phân làm 2 phần: bộ mã hoá và bộ giải mã.
+Như trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã.
 Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
 Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
 Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector, mà có thể nắm bắt được thông tin ngữ nghĩa của câu đó.
