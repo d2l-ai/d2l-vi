@@ -11,7 +11,7 @@
 
 <!--
 In :numref:`sec_language_model` we introduced $n$-gram models, where the conditional probability of word $x_t$ at position $t$ only depends on the $n-1$ previous words.
-If we want to check the possible efspefect of words earlier than $t-(n-1)$ on $x_t$, we need to increase $n$.
+If we want to check the possible effect of words earlier than $t-(n-1)$ on $x_t$, we need to increase $n$.
 However, the number of model parameters would also increase exponentially with it, as we need to store $|V|^n$ numbers for a vocabulary $V$.
 Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is preferable to use a *latent variable model* in which we have
 -->
