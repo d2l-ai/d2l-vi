@@ -53,7 +53,7 @@ As can be seen that each line contains an English sentence with its French trans
 -->
 
 Trước tiên ta tải xuống bộ dữ liệu có chứa một tập các câu tiếng Anh cùng với các bản dịch tiếng Pháp tương ứng.
-Ta có thể thấy mỗi dòng chứa một câu tiếng Anh cùng với bản dịch tiếng Pháp của nó được phân tách bằng một `TAB`.
+Ta có thể thấy mỗi dòng chứa một câu tiếng Anh cùng với bản dịch tiếng Pháp tương ứng, được phân chia bằng một ký tự `TAB`.
 
 
 ```{.python .input  n=2}
