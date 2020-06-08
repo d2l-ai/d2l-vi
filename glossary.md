@@ -149,7 +149,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | false positive      | dương tính giả       |                                              |
 | feature             | đặc trưng            |                                              |
 | feature extraction  | trích xuất đặc trưng |                                              |
-| feature map (CNN)   | ánh xạ đặc trưng     |                                              |
+| feature map (CNN)   | ánh xạ đặc trưng     |                                              | 
 | filter (CNN)        | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
