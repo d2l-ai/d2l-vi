@@ -327,7 +327,7 @@ For a sanity check, we create identical three sequences, keep 4 elements for the
 Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
-Để kiểm tra, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
+Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
 Khi đó, mất mát của chuỗi đầu tiên phải lớn hơn 2 lần so với chuỗi thứ hai và mất mát của chuỗi cuối cùng phải bằng 0.
 
 
