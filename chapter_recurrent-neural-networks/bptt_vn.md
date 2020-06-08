@@ -345,7 +345,7 @@ Taking the derivatives with respect to $W_{oh}$ is fairly straightforward and we
 -->
 
 
-với $l(\cdot)$ là hàm mất mát được chọn.
+với $l(\cdot)$ là hàm mất mát đã chọn trước.
 Tính đạo hàm theo $W_{oh}$ khá đơn giản, ta có
 
 $$\partial_{\mathbf{W}_{oh}} L = \sum_{t=1}^T \mathrm{prod}
@@ -460,8 +460,8 @@ Formalize this statement.
 4. Besides gradient clipping, can you think of any other methods to cope with gradient explosion in recurrent neural networks?
 -->
 
-1. Giả sử ta có ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ với các trị riêng $\lambda_i$.
-Không làm mất tính tổng quát, giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
+1. Cho ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ với các trị riêng $\lambda_i$.
+Không làm mất tính tổng quát, ta giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
 Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
 2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ xấp xỉ vector trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$.
 3. Kết quả trên có ý nghĩa như thế nào khi tính gradient của mạng nơ-ron truy hồi?
