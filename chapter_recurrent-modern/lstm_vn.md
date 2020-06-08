@@ -397,7 +397,7 @@ Later we will encounter alternative models such as Transformers that can be used
 -->
 
 * LSTM có ba loại cổng để kiểm soát luồng thông tin: cổng đầu vào, cổng quên và cổng đầu ra.
-* Tầng đầu ra ẩn của LSTM bao gồm các trạng thái ẩn và các đơn vị nhớ. Chỉ các trạng thái ẩn được truyền vào tầng đầu ra. Các đơn vị nhớ hoàn toàn ở bên trong.
+* Đầu ra tầng ẩn của LSTM bao gồm các trạng thái ẩn và các đơn vị nhớ. Chỉ các trạng thái ẩn được truyền tới tầng đầu ra. Các đơn vị nhớ hoàn toàn được sử dụng nội bộ trong tầng.
 * LSTM có thể đối phó với vấn đề tiêu biến và bùng nổ gradient.
 
 
