@@ -16,7 +16,7 @@ In machine translation, the encoder transforms a source sentence, e.g., "Hello w
 The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
-*Kiến trúc mã hoá - giải mã* là một thiết kế mạng nơ-ron.
+*Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
 Như đã được trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này được phân làm 2 phần: bộ mã hoá và bộ giải mã.
 Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
 Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
