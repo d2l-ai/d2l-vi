@@ -21,7 +21,7 @@ Như đã được trình bày trong :numref:`fig_encoder_decoder`, kiến trúc
 Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
 Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
 Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector, mà có thể nắm bắt được thông tin ngữ nghĩa của câu đó.
-
+Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang ngôn ngữ đích, ví dụ sang tiếng Pháp "Bonjour le monde.".
 <!--
 ![The encoder-decoder architecture.](../img/encoder-decoder.svg)
 -->
