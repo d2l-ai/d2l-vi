@@ -418,12 +418,12 @@ In practice, this truncation is effected by *detaching* the gradient after a giv
 
 Ta có thể rút ra nhiều điều từ biểu thức phức tạp này.
 Đầu tiên, việc lưu lại các kết quả trung gian, tức các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$, là rất hữu ích.
-Thứ hai, ví dụ tuyến tính đơn giản này đã biểu hiện môt vài vấn đề chủ chốt của các mô hình chuỗi dài: ta có thể phải làm việc với các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
+Thứ hai, ví dụ tuyến tính đơn giản này đã làm lộ ra môt vài vấn đề chủ chốt của các mô hình chuỗi dài: ta có thể phải làm việc với các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
 Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
 Một cách giải quyết vấn đề này là cắt xén các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
-Sau này tại :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
-Trong lập trình, ta cắt xén các số hạng bằng cách *tách rời* gradient sau một số lượng bước nhất định.
+Sau này ở :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
+Khi lập trình, ta cắt xén các số hạng bằng cách *tách rời* gradient sau một số lượng bước nhất định.
 
 <!--
 ## Summary
@@ -439,8 +439,8 @@ Trong lập trình, ta cắt xén các số hạng bằng cách *tách rời* gr
 -->
 
 * Lan truyền ngược theo thời gian chỉ là việc áp dụng lan truyền ngược cho các mô hình chuỗi có trạng thái ẩn.
-* Việc cắt xén là cần thiết để thuận tiện cho việc tính toán và sự ổn định số học.
-* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì. Vấn đề này biểu hiện dưới hiện tượng tiêu biến hoặc bùng nổ gradient.
+* Việc cắt xén là cần thiết để thuận tiện cho việc tính toán và ổn định các giá trị số.
+* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì, biểu hiện dưới hiện tượng tiêu biến hoặc bùng nổ gradient.
 * Để tăng hiệu năng tính toán, các giá trị trung gian được lưu lại.
 
 <!--
