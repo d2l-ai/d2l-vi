@@ -201,7 +201,7 @@ In addition, we add the special “&lt;bos&gt;” and “&lt;eos&gt;” tokens t
 -->
 
 Bây giờ ta có thể chuyển đổi một danh sách các câu thành một mảng chỉ số có kích thước `(num_example, num_steps)`.
-Ta cũng ghi lại độ dài của mỗi câu mà không có token đệm, được gọi là *độ dài hợp lệ*. Thông tin này có thể được sử dụng bởi một số mô hình.
+Ta cũng ghi lại độ dài của mỗi câu khi không có token đệm, còn được gọi là *độ dài hợp lệ*. Thông tin này có thể được sử dụng bởi một số mô hình.
 Ngoài ra, ta sẽ thêm các token đặc biệt “&lt;bos&gt;” và “&lt;eos&gt;” vào các câu đích để mô hình biết được các tín hiệu để bắt đầu và kết thúc dự đoán.
 
 ```{.python .input  n=8}
