@@ -303,9 +303,9 @@ A good language model is able to predict with high accuracy tokens that what we 
 Consider the following continuations of the phrase "It is raining", as proposed by different language models:
 -->
 
-Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi.
-Một cách làm là ta kiểm tra độ ngạc nhiên của văn bản.
-Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây.
+Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi. 
+Một cách đó là kiểm tra độ ngạc nhiên của văn bản. 
+Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây. 
 Hãy xem xét các phần tiếp theo của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
 <!--
@@ -328,13 +328,13 @@ Nonetheless, at least the model has learned how to spell words and some degree o
 Last, example 3 indicates a poorly trained model that does not fit data properly.
 -->
 
-Về chất lượng, ví dụ 1 rõ ràng là tốt nhất.
-Các từ là hợp lý và mạch lạc về mặt logic.
-Mặc dù nó có thể không phản ánh từ nào nên theo sau một cách chính xác về mặt ngữ nghĩa  ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn),
-mô hình vẫn có thể nắm bắt loại từ nào nên theo sau.
-Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
-Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được một số mức độ tương quan giữa các từ.
-Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
+Về chất lượng, ví dụ 1 rõ ràng là tốt nhất. 
+Các từ được sắp xếp hợp lý và mạch lạc về mặt logic. 
+Mặc dù nó có thể không phản ánh chính xác hoàn toàn mặt ngữ nghĩa của các từ theo sau ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn), 
+mô hình vẫn có thể nắm bắt loại từ của chúng. 
+Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa. 
+Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được sự tương quan giữa các từ ở một mức độ nhất định. 
+Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -348,11 +348,11 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi.
-Thật không may, đây là một con số khó để hiểu và so sánh.
-Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài,
-do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ có khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
-Thứ còn thiếu là một phép tính trung bình theo cách nào đó.
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi. 
+Thật không may, đây là một con số khó để hiểu và so sánh. 
+Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài, 
+do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ cho kết quả thấp hơn nhiều so với tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
+Thứ còn thiếu là sự tương đương của một phép tính trung bình. 
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -363,11 +363,11 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
-Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
-Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
-Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp.
-Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng.
+Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`. 
+Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại. 
+Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$. 
+Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp. 
+Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng. 
 
 $$\frac{1}{n} \sum_{t=1}^n -\log p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
@@ -377,8 +377,8 @@ For historical reasons, scientists in natural language processing prefer to use 
 In a nutshell, it is the exponential of the above:
 -->
 
-Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được.
-Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là tốc độ bit (_bitrate_).
+Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được. 
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là tốc độ bit (_bitrate_). 
 Tóm lại, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
@@ -390,9 +390,9 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-Nó có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn mà ta có khi quyết định chọn từ nào là từ tiếp theo.
-Lưu ý rằng độ rối rắm khái quát lên hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax một cách tự nhiên(:numref:`sec_softmax`).
-Khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, chỉ khác chi tiết rằng cái này là luỹ thừa của cái kia.
+Giá trị này có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn thực tế mà ta có khi quyết định chọn từ nào là từ tiếp theo. 
+Lưu ý rằng độ rối rắm khái quát lên hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax một cách tự nhiên (:numref:`sec_softmax`). 
+Đó là, chỉ với một khác biệt duy nhất trong ký hiệu, cái này trở thành luỹ thừa của cái kia.
 Chúng ta hãy xem xét một số trường hợp:
 
 <!--
@@ -402,10 +402,10 @@ Chúng ta hãy xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ rối rắm của mô hình là $1$.
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong tình huống này, độ rối rắm của mô hình là $1$. 
 * Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
 * Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
-* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không hề nén, đây là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, đây sẽ là mức giới hạn trên mà bất kỳ mô hình nào cũng phải thoả mãn có độ rối rắm thấp hơn.
+* Trong thực tế, nếu chúng ta lưu trữ chuỗi không nén, đây là cách tốt nhất ta có thể làm để mã hóa nó. Vì vậy, nó trở thành mức giới hạn trên mà bất kỳ mô hình nào cũng phải đáp ứng với mức độ rối rắm thấp hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -424,10 +424,10 @@ Chúng ta hãy xem xét một số trường hợp:
 * We can create language models using a character-level RNN.
 -->
 
-* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN).
-* Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại.
-* Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng.
-* Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự.
+* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN). 
+* Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại. 
+* Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng. 
+* Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự. 
 
 <!--
 ## Exercises
@@ -442,10 +442,10 @@ Chúng ta hãy xem xét một số trường hợp:
 4. What are some of the problems associated with the simple sequence model described above?
 -->
 
-1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều?
-2. Thử thiết kế một ánh xạ trong đó các trạng thái ẩn của RNN là chính xác (không chỉ là xấp xỉ). Gợi ý: nếu có một số lượng từ hữu hạn thì sao?
-3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài?
-4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì?
+1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều? 
+2. Thử thiết kế một ánh xạ trong đó các trạng thái ẩn của RNN là chính xác (không chỉ là xấp xỉ). Gợi ý: nếu có một số lượng từ hữu hạn thì sao? 
+3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài? 
+4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì? 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
