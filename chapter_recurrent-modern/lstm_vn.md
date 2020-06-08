@@ -420,7 +420,7 @@ why does the hidden state need to use the $\tanh$ function again to ensure that 
 1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, độ rối rắm và đầu ra.
 2. Cần thay đổi mô hình như thế nào để sinh ra các từ hoàn chỉnh thay vì các chuỗi ký tự?
 3. So sánh chi phí tính toán của GRU, LSTM và RNN thông thường với cùng một chiều ẩn. Đặc biệt chú ý đến chi phí huấn luyện và dự đoán.
-4. Trong khi các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
+4. Dù các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
 tại sao trạng thái ẩn lại cần sử dụng hàm $\tanh$ để đảm bảo rằng phạm vi giá trị đầu ra nằm trong khoảng từ $-1$ đến $1$?
 5. Lập trình một mô hình LSTM cho dự đoán chuỗi thời gian thay vì dự đoán chuỗi ký tự.
 
