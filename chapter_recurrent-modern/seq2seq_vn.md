@@ -328,7 +328,7 @@ Then the first example loss should be 2 times larger than the second one, and th
 -->
 
 Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
-Khi đó, mất mát của chuỗi đầu tiên phải lớn hơn 2 lần so với chuỗi thứ hai và mất mát của chuỗi cuối cùng phải bằng 0.
+Khi đó, giá trị mất mát của chuỗi đầu tiên phải lớn gấp 2 lần so với chuỗi thứ hai, còn giá trị mất mát của chuỗi cuối cùng phải bằng 0.
 
 
 ```{.python .input  n=10}
