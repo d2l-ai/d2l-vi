@@ -33,7 +33,7 @@ Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang n
 In this section, we will show an interface to implement this encoder-decoder architecture.
 -->
 
-Trong phần này, chúng tô sẽ trình bày cách để thực hiện kiến trúc mã hoá - giải mã.
+Phần này trình bày khuôn mẫu (*interface*) để lập trình kiến trúc mã hoá - giải mã.
 
 
 <!--
