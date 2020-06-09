@@ -181,8 +181,8 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * There exist many different flavors of deep RNNs, such as LSTMs, GRUs, or regular RNNs. Conveniently these models are all available as parts of the `rnn` module in Gluon.
 * Initialization of the models requires care. Overall, deep RNNs require considerable amount of work (such as learning rate and clipping) to ensure proper convergence.
 -->
-* Trong các mạng nơ-ron truy hồi sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở cùng tầng, và truyền tới bước thời gian hiện tại ở tầng kế tiếp.
-* Có nhiều lựa chọn khác nhau cho mạng RNN sâu, ví dụ LSTM, GRU, hoặc là RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon.
+* Trong các mạng nơ-ron truy hồi sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở cùng tầng và truyền tới bước thời gian hiện tại ở tầng kế tiếp.
+* Có nhiều lựa chọn khác nhau cho mạng RNN sâu, ví dụ LSTM, GRU hoặc là RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon.
 * Chúng ta cần chú ý tới việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học sẽ hội tụ.
 
 
