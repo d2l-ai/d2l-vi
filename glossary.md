@@ -176,6 +176,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | gradient clipping              | gọt gradient                      |                                                                                            |
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
+| greedy search                  | tìm kiếm tham lam                 |                                                                                            |
+| greedy algorithm               | thuật toán tham lam               |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
 | growth rate                    | tốc độ tăng trưởng                |                                                                                            |
 
