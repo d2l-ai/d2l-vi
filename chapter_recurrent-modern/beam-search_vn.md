@@ -11,9 +11,8 @@
 In :numref:`sec_seq2seq`, we discussed how to train an encoder-decoder with input and output sequences that are both of variable length.
 In this section, we are going to introduce how to use the encoder-decoder to predict sequences of variable length.
 -->
-
-*dịch đoạn phía trên*
-
+Trong :numref:`sec_seq2seq`, chúng ta đã thảo luận về làm thế nào để huấn luyện mô hình mã hóa - giải mã với đầu vào và đầu ra có độ dài thay đổi.
+Trong phần này, chúng tôi sẽ đưa ra cách sử dụng mã hóa - giải mã để dự đoán chuỗi có độ dài thay đổi.
 <!--
 As in :numref:`sec_machine_translation`, when preparing to train the dataset, we normally attach a special symbol "&lt;eos&gt;" after each sentence to indicate the termination of the sequence.
 We will continue to use this mathematical symbol in the discussion below. For ease of discussion, we assume that the output of the decoder is a sequence of text.
@@ -22,42 +21,36 @@ There are a total $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ types of possible
 All the subsequences after the special symbol "&lt;eos&gt;" in these output sequences will be discarded.
 Besides, we still denote the context vector as $\mathbf{c}$, which encodes information of all the hidden states from the input.
 -->
-
-*dịch đoạn phía trên*
-
-
+Như trong :numref:`sec_machine_translation`, khi chuẩn bị tập dữ liệu để huấn luyện, chúng ta thường thêm vào kí hiệu đặc biệt "&lt;eos&gt;" sau mỗi câu để biểu thị sự kết thúc của câu.
+Chúng tôi sẽ tiếp tục sử dụng ký hiệu toán học đã được nhắc đến ở trên. Để cho thuận tiện, chúng tôi giả sử rằng đầu ra của bộ giải mã là một chuỗi kí tự.
+Kích thước đầu ra của bộ từ điển kí tự đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
+Có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ loại chuỗi đầu ra có thể.
+Tất những chuỗi con sau kí tự đặc biệt "&lt;eos&gt;" trong những chuỗi đầu ra sẽ bị bỏ đi.
+Bên cạnh đó, chúng tôi cũng ký hiệu vector ngữ cảnh là $\mathbf{c}$, mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào.
 <!--
 ## Greedy Search
 -->
-
-## *dịch tiêu đề phía trên*
-
+## Tìm kiếm tham lam
 <!--
 First, we will take a look at a simple solution: greedy search.
 For any timestep $t'$ of the output sequence, we are going to search for the word with the highest conditional probability from $|\mathcal{Y}|$ numbers of words, with
 -->
-
-*dịch đoạn phía trên*
-
-
+Đầu tiên, chúng ta xem xét một phương pháp đơn giản: tìm kiếm tham lam.
+Với bất kì bước thời gian nào của chuỗi đầu ra, chúng ta sẽ tìm từ có xác suất có điều kiện từ $|\mathcal{Y}|$ số từ, với
 $$y_{t'} = \operatorname*{argmax}_{y \in \mathcal{Y}} P(y \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$$
-
-
 <!--
 as the output.  Once the "&lt;eos&gt;" symbol is detected, or the output sequence has reached its maximum length $T'$, the output is completed.
 -->
-
-*dịch đoạn phía trên*
-
+làm đầu ra. Một khi gặp kí tự "&lt;eos&gt;", hoặc chuỗi đầu ra đạt chiều dài tối đa $T'$ của nó, kết quả đầu ra được hoàn thành.
 <!--
 As we mentioned in our discussion of the decoder, the conditional probability of generating an output sequence based on the input sequence is 
 $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 We will take the output sequence with the highest conditional probability as the optimal sequence.
 The main problem with greedy search is that there is no guarantee that the optimal sequence will be obtained.
 -->
-
-*dịch đoạn phía trên*
-
+Như chúng tôi đã đề cập trong phần thảo luận của bộ giải mã, xác suất có điều kiện của việc tạo ra một chuỗi đầu ra dựa trên chuỗi đầu vào là $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
+Chuỗi đầu ra tối ưu là chuỗi có xác suất có điều kiện cao nhất.
+Vấn đề lớn nhất của phương pháp tìm kiếm tham lam chính là không đảm bảo được chuỗi đạt được là chuỗi tối ưu.
 <!--
 Take a look at the example below.
 We assume that there are four words "A", "B", "C", and "&lt;eos&gt;" in the output dictionary.
@@ -66,9 +59,12 @@ At each timestep, greedy search selects the word with the highest conditional pr
 Therefore, the output sequence "A", "B", "C", and "&lt;eos&gt;" will be generated in :numref:`fig_s2s-prob1`.
 The conditional probability of this output sequence is $0.5\times0.4\times0.4\times0.6 = 0.048$.
 -->
-
-*dịch đoạn phía trên*
-
+Xem xét ví dụ bên dưới.
+Giả sử chúng ta có bốn từ "A", "B", "C", và "&lt;eos&gt;" trong từ điển đầu ra.
+Bốn con số dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` biểu diễn xác suất có điều kiện của việc tạo ra "A", "B", "C", và "&lt;eos&gt;" tại mỗi bước thời gian.
+Tại mỗi bước thời gian, tìm kiếm tham lam chọn từ có xác suất có điều kiện cao nhất.
+Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" được tạo ra như trong :numref:`fig_s2s-prob1`.
+Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\times0.4\times0.6 = 0.048$.
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -309,7 +305,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyên Đình Nam
 
 <!-- Phần 2 -->
 *
