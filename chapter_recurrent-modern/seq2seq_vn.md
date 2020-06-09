@@ -288,7 +288,7 @@ In addition, we can specify the filling value such as $-1$ as shown below.
 -->
 
 Áp dụng vào một tensor $n$-chiều $X$, nó sẽ đặt `X[i, len[i]:, :, ..., :] = 0`.
-Ta cũng có thể đặt một giá trị điền khác ví dụ như $-1$ như dưới đây.
+Ta cũng có thể đặt một giá trị điền khác, ví dụ $-1$, như dưới đây.
 
 ```{.python .input  n=8}
 X = np.ones((2, 3, 4))
