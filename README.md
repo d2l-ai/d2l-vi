@@ -1,3 +1,5 @@
+<img src="static/logo-with-text-vi.png" width=35% align="center" />
+
 # Dự án dịch sách ["Dive into Deep Learning"](https://www.d2l.ai/)
 
 Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
