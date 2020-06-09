@@ -273,7 +273,7 @@ It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1
 If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
-Để lập trình hàm mất mát để lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
+Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
 Nó có thể chỉ định gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
 Nếu chiều thứ hai được chọn, với đầu vào là một vector có độ dài hợp lệ `len` và một mảng hai chiều `X`, toán tử này sẽ đặt `X[i, len[i]:] = 0` với mọi $i$.
 
