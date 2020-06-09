@@ -473,7 +473,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 * Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo một chuỗi đầu ra từ chuỗi đầu vào.
-* Ta sử dụng nhiều LSTM đa tầng cho cả bộ mã hóa và bộ giải mã.
+* Ta sử dụng nhiều tầng LSTM cho cả bộ mã hóa và bộ giải mã.
 
 
 <!--
