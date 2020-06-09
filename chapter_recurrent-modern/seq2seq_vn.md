@@ -472,7 +472,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * We use multiple LSTM layers for both the encoder and the decoder.
 -->
 
-* Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo một đầu ra chuỗi từ chuỗi đầu vào.
+* Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo một chuỗi đầu ra từ chuỗi đầu vào.
 * Ta sử dụng nhiều LSTM đa tầng cho cả bộ mã hóa và bộ giải mã.
 
 
