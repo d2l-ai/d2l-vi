@@ -292,11 +292,11 @@ During test time we only have past data and thus poor accuracy (we will illustra
 -->
 
 Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
-Đó là chúng tôi sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mịn).
-Trong trường hợp mô hình ngôn ngữ, đây không phải là điều chúng ta muốn.
-Rốt cuộc, chúng ta không có hứng thú để biết biểu tượng tiếp theo khi dự đoán biểu tượng tiếp theo.
-Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác rất tốt: trong quá trình đào tạo, chúng ta có dữ liệu trong quá khứ và tương lai để ước tính hiện tại.
-Trong thời gian thử nghiệm, chúng tôi chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (chúng tôi sẽ minh họa điều này trong một thử nghiệm bên dưới).
+Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt).
+Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
+Rốt cuộc, chúng ta không thể biết biểu tượng phía sau biểu tượng đang cần dự đoán.
+Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại.
+Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới).
 
 <!--
 To add insult to injury, bidirectional RNNs are also exceedingly slow.
@@ -304,8 +304,8 @@ The main reasons for this are that they require both a forward and a backward pa
 Hence, gradients will have a very long dependency chain.
 -->
 
-Để làm tình hình tệ hơn, RNN hai chiều cũng cực kỳ chậm.
-Những lý do chính cho điều này là vì chúng đòi hỏi lan truyền xuôi và lan truyền ngược và lan truyền ngược lại phụ thuộc vào kết quả của lan truyền xuôi.
+Tệ hơn, RNN hai chiều cũng cực kỳ chậm.
+Những lý do chính cho điều này là vì chúng đòi hỏi lan truyền xuôi và lan truyền ngược, và lan truyền ngược phụ thuộc vào kết quả của lan truyền xuôi.
 Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài.
 
 
@@ -315,8 +315,8 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một bộ ứng dụng hẹp, chẳng hạn như điền từ còn thiếu, token chú thích (ví dụ: đối với nhận dạng thực thể được đặt tên) hoặc mã hóa chuỗi số lượng lớn dưới dạng một bước trong đường ống xử lý chuỗi (ví dụ: đối với dịch máy).
-Tóm lại, xử lý cẩn thận!
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu, token chú thích (ví dụ: đối với nhận dạng thực thể có tên) hoặc mã hóa chuỗi số lượng lớn tại một bước trong đường ống xử lý chuỗi (ví dụ: đối với dịch máy).
+Tóm lại, sử dụng cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
