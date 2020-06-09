@@ -322,7 +322,7 @@ In short, handle with care!
 ### Training a Bidirectional RNN for the Wrong Application
 -->
 
-### Huấn luyện một mạng RNN hai chiều cho Ứng dụng Sai
+### Huấn luyện mạng RNN hai chiều không phù hợp với ứng dụng
 
 <!--
 If we were to ignore all advice regarding the fact that bidirectional LSTMs use past and future data and simply apply it to language models, we will get estimates with acceptable perplexity.
@@ -331,10 +331,10 @@ Despite reasonable perplexity, it only generates gibberish even after many itera
 We include the code below as a cautionary example against using them in the wrong context.
 -->
 
-Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến thực tế rằng các LSTM hai chiều sử dụng dữ liệu trong quá khứ và tương lai và chỉ cần áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được ước tính với sự bối rối chấp nhận được.
-Tuy nhiên, khả năng của mô hình dự đoán các biểu tượng trong tương lai bị tổn hại nghiêm trọng như ví dụ dưới đây minh họa.
+Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến thực tế rằng các LSTM hai chiều sử dụng dữ liệu trong quá khứ và tương lai và chỉ biết áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được ước tính với độ rối rắm chấp nhận được.
+Tuy nhiên, khả năng dự đoán các biểu tượng trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây.
 Mặc dù có sự lúng túng hợp lý, nó chỉ tạo ra sự vô nghĩa ngay cả sau nhiều lần lặp lại.
-Chúng tôi bao gồm mã dưới đây là một ví dụ cảnh báo chống lại việc sử dụng chúng trong bối cảnh sai.
+Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng sai bối cảnh.
 
 
 ```{.python .input}
@@ -361,7 +361,7 @@ The output is clearly unsatisfactory for the reasons described above.
 For a discussion of more effective uses of bidirectional models, please see the sentiment classification in :numref:`sec_sentiment_rnn`.
 -->
 
-Đầu ra rõ ràng là không thỏa đáng vì những lý do được mô tả ở trên.
+Đầu ra rõ ràng là không tốt vì những lý do trên.
 Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem phân loại tình cảm trong: numref: `sec_sentiment_rnn`.
 
 <!--
@@ -377,10 +377,10 @@ For a discussion of more effective uses of bidirectional models, please see the 
 * Bidirectional RNNs are very costly to train due to long gradient chains.
 -->
 
-* Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian hiện tại.
-* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ họa.
+* Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian đó.
+* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ thị.
 * RNN hai chiều chủ yếu hữu ích cho việc nhúng chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
-* RNN hai chiều rất tốn kém để đào tạo do chuỗi gradient dài.
+* RNN hai chiều rất tốn kém để huấn luyện do chuỗi gradient dài.
 
 <!--
 ## Exercises
@@ -395,11 +395,11 @@ For a discussion of more effective uses of bidirectional models, please see the 
 Hint: use the RNN to embed each word and then aggregate (average) all embedded outputs before sending the output into an MLP for classification. 
 For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we compute $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ first and then use the latter for sentiment classification.
 -->
-1. Nếu các hướng khác nhau sử dụng một số nút ẩn khác nhau, hình dạng của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
+1. Nếu các hướng khác nhau sử dụng số nút ẩn khác nhau, kích thước của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
 2. Thiết kế một mạng nơ-ron truy hồi hai chiều với nhiều tầng ẩn.
 3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng RNN hai chiều.
 Gợi ý: sử dụng RNN để nhúng từng từ và sau đó tổng hợp (trung bình) tất cả các đầu ra đã được nhúng trước khi gửi đầu ra vào MLP cho việc phân loại.
-Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ trước rồi sử dụng cái sau để phân loại cảm xúc.
+Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ rồi sử dụng để phân loại cảm xúc.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
