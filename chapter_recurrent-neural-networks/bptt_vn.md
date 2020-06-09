@@ -299,6 +299,7 @@ For example, the computation of the hidden states of timestep 3, $\mathbf{h}_3$,
 the hidden state of the last timestep $\mathbf{h}_2$, and the input of the current timestep $\mathbf{x}_3$.
 -->
 
+
 Để minh hoạ trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
 Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mathbf{h}_3$, phụ thuộc vào các tham số $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ của mô hình, trạng thái ẩn ở bước thời gian trước đó $\mathbf{h}_2$, và đầu vào ở bước thời gian hiện tại $\mathbf{x}_3$.
 
@@ -306,7 +307,7 @@ Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mat
 ![ Computational dependencies for a recurrent neural network model with three timesteps. Boxes represent variables (not shaded) or parameters (shaded) and circles represent operators. ](../img/rnn-bptt.svg)
 -->
 
-![Mối liên hệ phụ thuộc về mặt tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
+![Sự phụ thuộc về mặt tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
 :label:`fig_rnn_bptt`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -317,7 +318,7 @@ Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mat
 ## BPTT in Detail
 -->
 
-## Phân tích cụ thể Lan truyền ngược qua thời gian
+## BPTT chi tiết
 
 <!--
 After discussing the general principle, let us discuss BPTT in detail.
@@ -326,7 +327,7 @@ we will get a simple linear latent variable model:
 -->
 
 Sau khi thảo luận các nguyên lý chung, hãy phân tích BPTT một cách chi tiết.
-Bằng cách tách $\mathbf{W}$ thành các tập ma trận trọng số khác nhau $\mathbf{W}_{hx}, \mathbf{W}_{hh}$ và $\mathbf{W}_{oh}$), ta được mô hình biến tiềm ẩn tuyến tính đơn giản:
+Bằng cách tách $\mathbf{W}$ thành các tập ma trận trọng số khác nhau $\mathbf{W}_{hx}, \mathbf{W}_{hh}$ và $\mathbf{W}_{oh}$), ta thu được mô hình biến tiềm ẩn tuyến tính đơn giản:
 
 $$\mathbf{h}_t = \mathbf{W}_{hx} \mathbf{x}_t + \mathbf{W}_{hh} \mathbf{h}_{t-1} \text{ và }
 \mathbf{o}_t = \mathbf{W}_{oh} \mathbf{h}_t.$$
@@ -335,6 +336,7 @@ $$\mathbf{h}_t = \mathbf{W}_{hx} \mathbf{x}_t + \mathbf{W}_{hh} \mathbf{h}_{t-1}
 Following the discussion in :numref:`sec_backprop`, we compute the gradients $\frac{\partial L}{\partial \mathbf{W}_{hx}}$, 
 $\frac{\partial L}{\partial \mathbf{W}_{hh}}$, $\frac{\partial L}{\partial \mathbf{W}_{oh}}$ for
 -->
+
 
 Theo thảo luận ở :numref:`sec_backprop`, ta tính các gradient $\frac{\partial L}{\partial \mathbf{W}_{hx}}$, $\frac{\partial L}{\partial \mathbf{W}_{hh}}$, $\frac{\partial L}{\partial \mathbf{W}_{oh}}$ cho
 
@@ -345,7 +347,8 @@ where $l(\cdot)$ denotes the chosen loss function.
 Taking the derivatives with respect to $W_{oh}$ is fairly straightforward and we obtain
 -->
 
-với $l(\cdot)$ là hàm mất mát được chọn.
+
+với $l(\cdot)$ là hàm mất mát đã chọn trước.
 Tính đạo hàm theo $W_{oh}$ khá đơn giản, ta có
 
 $$\partial_{\mathbf{W}_{oh}} L = \sum_{t=1}^T \mathrm{prod}
@@ -355,6 +358,7 @@ $$\partial_{\mathbf{W}_{oh}} L = \sum_{t=1}^T \mathrm{prod}
 where $\mathrm{prod} (\cdot)$ indicates the product of two or more matrices.
 -->
 
+
 với $\mathrm{prod} (\cdot)$ là tích của hai hoặc nhiều ma trận.
 
 <!--
@@ -362,7 +366,7 @@ The dependency on $\mathbf{W}_{hx}$ and $\mathbf{W}_{hh}$ is a bit more tricky s
 We begin with
 -->
 
-Sự phụ thuộc vào $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ khó khăn hơn khi tính toán đạo hàm vì cần sử dụng quy tắc dây chuyền.
+Sự phụ thuộc vào $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ thì khó khăn hơn một chút vì cần sử dụng quy tắc dây chuyền khi tính toán đạo hàm.
 Ta bắt đầu với
 
 
@@ -379,8 +383,8 @@ After all, hidden states depend on each other and on past inputs.
 The key quantity is how past hidden states affect future hidden states.
 -->
 
-Cuối cùng, các trạng thái ẩn phụ thuộc lẫn nhau và phụ thuộc vào đầu vào quá khứ.
-Một đại lượng quan trọng là các trạng thái ẩn quá khứ ảnh hưởng tới các trạng thái ẩn tương lai như thế nào.
+Sau cùng, các trạng thái ẩn phụ thuộc lẫn nhau và phụ thuộc vào đầu vào quá khứ.
+Một đại lượng quan trọng là sư ảnh hưởng của các trạng thái ẩn quá khứ tới các trạng thái ẩn tương lai.
 
 $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
 \text{ do~đó }
@@ -390,6 +394,7 @@ $$\partial_{\mathbf{h}_t} \mathbf{h}_{t+1} = \mathbf{W}_{hh}^\top
 <!--
 Chaining terms together yields
 -->
+
 
 Áp dụng quy tắc dây chuyền ta được
 
@@ -414,14 +419,14 @@ Later on in :numref:`chap_modern_rnn` we will see how more sophisticated sequenc
 In practice, this truncation is effected by *detaching* the gradient after a given number of steps.
 -->
 
-Nhiều điều có thể rút ra từ biểu thức phức tạp này.
-Đầu tiên, lưu các kết quả trung gian lại sẽ rất có lợi, đó là các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$.
-Thứ hai, ví dụ tuyến tính đơn giản này mà đã cho thấy một vài vấn đề chủ chốt của các mô hình chuỗi dài: chúng tiềm ẩn các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
+Ta có thể rút ra nhiều điều từ biểu thức phức tạp này.
+Đầu tiên, việc lưu lại các kết quả trung gian, tức các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$, là rất hữu ích.
+Thứ hai, ví dụ tuyến tính này dù đơn giản nhưng đã làm lộ ra một vấn đề chủ chốt của các mô hình chuỗi dài: ta có thể phải làm việc với các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
 Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
-Một cách giải quyết vấn đề này là bỏ bớt các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
-Sau đây tại :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
-Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gradient sau một số bước xác định.
+Một cách giải quyết vấn đề này là cắt xén các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
+Sau này ở :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
+Khi lập trình, ta cắt xén các số hạng bằng cách *tách rời* gradient sau một số lượng bước nhất định.
 
 <!--
 ## Summary
@@ -436,10 +441,10 @@ Trong lập trình, ta bỏ bớt các số hạng bằng cách *tách rời* gr
 * For efficient computation, intermediate values are cached.
 -->
 
-* Lan truyền ngược theo thời gian là cách áp dụng lan truyền ngược cho các mô hình chuỗi có trạng thái ẩn.
-* Việc cắt bỏ là cần thiết để thuận tiện cho việc tính toán và ổn định các giá trị số.
-* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì. Điều này được thể hiện dưới hiện tượng tiêu biến hoặc bùng nổ gradient.
-* Để tăng hiệu quả tính toán, các giá trị trung gian được lưu lại.
+* Lan truyền ngược theo thời gian chỉ là việc áp dụng lan truyền ngược cho các mô hình chuỗi có trạng thái ẩn.
+* Việc cắt xén là cần thiết để thuận tiện cho việc tính toán và ổn định các giá trị số.
+* Luỹ thừa lớn của ma trận có thể làm các trị riêng tiêu biến hoặc phân kì, biểu hiện dưới hiện tượng tiêu biến hoặc bùng nổ gradient.
+* Để tăng hiệu năng tính toán, các giá trị trung gian được lưu lại.
 
 <!--
 ## Exercises
@@ -458,10 +463,10 @@ Formalize this statement.
 4. Besides gradient clipping, can you think of any other methods to cope with gradient explosion in recurrent neural networks?
 -->
 
-1. Giả sử ta có ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ có các trị riêng $\lambda_i$.
-Không mất tính tổng quát, giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
+1. Cho ma trận đối xứng $\mathbf{M} \in \mathbb{R}^{n \times n}$ với các trị riêng $\lambda_i$.
+Không làm mất tính tổng quát, ta giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
 Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
-2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ gần như là cùng phương với vector trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$.
+2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ xấp xỉ vector trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$.
 3. Kết quả trên có ý nghĩa như thế nào khi tính gradient của mạng nơ-ron truy hồi?
 4. Ngoài gọt gradient, có phương pháp nào để xử lý bùng nổ gradient trong mạng nơ-ron truy hồi không?
 
