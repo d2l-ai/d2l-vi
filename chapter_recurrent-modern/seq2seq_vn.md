@@ -303,7 +303,7 @@ So our customized loss function accepts an additional `valid_len` argument to ig
 -->
 
 
-Bây giờ ta có thể lập trình phiên bản mặt nạ của hàm mất mát entropy chéo softmax.
+Bây giờ ta có thể lập trình phiên bản có mặt nạ của hàm mất mát entropy chéo softmax.
 Lưu ý rằng hàm mất mát Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
 Để loại bỏ các mẫu, ta có thể đặt trọng số cho chúng bằng 0.
 Vì vậy, hàm mất mát tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
