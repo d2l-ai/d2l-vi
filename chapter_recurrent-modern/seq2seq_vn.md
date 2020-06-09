@@ -341,7 +341,7 @@ loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 During training, if the target sequence has length $n$, we feed the first $n-1$ tokens into the decoder as inputs, and the last $n-1$ tokens are used as ground truth label.
 -->
 
-Trong quá trình huấn luyện, nếu chuỗi mục tiêu có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào và $n-1$ token cuối cùng được sử dụng làm nhãn thật.
+Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
 
 
 ```{.python .input  n=11}
