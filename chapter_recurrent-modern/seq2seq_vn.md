@@ -15,7 +15,7 @@ Both the encoder and the decoder use recurrent neural networks (RNNs) to handle 
 The hidden state of the encoder is used directly to initialize the decoder hidden state to pass information from the encoder to the decoder.
 -->
 
-Mô hình chuỗi sang chuỗi (seq2seq) dựa trên kiến trúc mã hóa - giải mã để sinh một chuỗi từ chuỗi đầu vào như minh hoạ trong :numref:`fig_seq2seq`.
+Mô hình chuỗi sang chuỗi (seq2seq) dựa trên kiến trúc mã hóa - giải mã để sinh một chuỗi từ chuỗi đầu vào như minh họa trong :numref:`fig_seq2seq`.
 Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron truy hồi (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
 Trạng thái ẩn của bộ mã hóa được sử dụng trực tiếp để khởi tạo trạng thái ẩn của bộ giải mã để truyền thông tin từ bộ mã hoá tới bộ giải mã.
 
