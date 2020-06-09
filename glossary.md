@@ -272,8 +272,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | multitask learning           | học đa nhiệm                  | [https://git.io/JvohQ](https://git.io/JvohQ) |
-| multi-head attention           | tầng tập trung đa đầu                  |  |
-| masked multi-head attention    | tầng tập trung đa đầu có mặt nạ        |  |
+| multi-head attention layer          | tầng tập trung đa đầu                  |  |
+| masked multi-head attention layer    | tầng tập trung đa đầu có mặt nạ        |  |
 
 ## N
 | English                           | Tiếng Việt                        | Thảo luận tại                                                                              |
