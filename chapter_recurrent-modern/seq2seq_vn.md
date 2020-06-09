@@ -137,8 +137,8 @@ For the gated recurrent unit, the `state` list contains only one element, which 
 If long short-term memory is used, the `state` list will also contain another element, which is the memory cell.
 -->
 
-Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch 4 và số bước thời gian 7.
-Chúng ta giả định số lượng tầng ẩn của đơn vị LSTM là 2 và số nút ẩn là 16.
+Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch 4 cùng số bước thời gian 7.
+Ta sẽ giả định rằng số lượng tầng ẩn của đơn vị LSTM là 2 và số nút ẩn là 16.
 Kích thước của trạng thái ẩn đa tầng trong nút truy hồi có cổng ở bước thời gian cuối cùng là (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 Trong nút truy hồi có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn.
 Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ. 
