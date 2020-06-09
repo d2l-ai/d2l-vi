@@ -5,7 +5,7 @@
 # Machine Translation and the Dataset
 -->
 
-# *dịch tiêu đề phía trên*
+# Dịch Máy và Tập dữ liệu
 :label:`sec_machine_translation`
 
 <!--
@@ -13,7 +13,8 @@ So far we see how to use recurrent neural networks for language models, in which
 Now let us have a look at a different application, machine translation, whose predict output is no longer a single token, but a list of tokens.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay ta đã thấy cách sử dụng các mạng nơ-ron truy hồi cho các mô hình ngôn ngữ, trong đó ta dự đoán token tiếp theo khi đã biết tất cả các token trước đó trong bài viết.
+Bây giờ chúng ta sẽ xem xét một ứng dụng khác, với đầu ra dự đoán không còn là một token duy nhất mà là một chuỗi các token.
 
 <!--
 Machine translation (MT) refers to the automatic translation of a segment of text from one language to another.
@@ -25,7 +26,12 @@ Therefore, the data preprocessing for machine translation data is different to t
 This section is dedicated to demonstrate how to pre-process such a dataset and then load into a set of minibatches.
 -->
 
-*dịch đoạn phía trên*
+Dịch máy (_Machine translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
+Giải quyết bài toán này với các mạng nơ-ron thường được gọi là dịch máy nơ-ron (_neural machine translation_ - NMT).
+So với các mô hình ngôn ngữ (:numref:`sec_language_model`), trong đó kho ngữ liệu chỉ chứa một ngôn ngữ duy nhất, bộ dữ liệu dịch máy có ít nhất hai ngôn ngữ, ngôn ngữ nguồn và ngôn ngữ đích.
+Ngoài ra, mỗi câu trong ngôn ngữ nguồn được ánh xạ tới bản dịch tương ứng trong ngôn ngữ đích.
+Do đó, cách tiền xử lý dữ liệu dịch máy sẽ khác so với dữ liệu của mô hình ngôn ngữ.
+Phần này được dành riêng để trình bày cách tiền xử lý và nạp một tập dữ liệu như vậy vào các minibatch.
 
 
 ```{.python .input  n=1}
@@ -39,14 +45,15 @@ npx.set_np()
 ## Reading and Preprocessing the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc và Tiền Xử lý Dữ liệu
 
 <!--
 We first download a dataset that contains a set of English sentences with the corresponding French translations.
 As can be seen that each line contains an English sentence with its French translation, which are separated by a `TAB`.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên ta tải xuống bộ dữ liệu có chứa một tập các câu tiếng Anh cùng với các bản dịch tiếng Pháp tương ứng.
+Ta có thể thấy mỗi dòng chứa một câu tiếng Anh cùng với bản dịch tiếng Pháp tương ứng, được phân chia bằng một ký tự `TAB`.
 
 
 ```{.python .input  n=2}
@@ -68,7 +75,7 @@ print(raw_text[0:106])
 We perform several preprocessing steps on the raw text data, including ignoring cases, replacing UTF-8 non-breaking space with space, and adding space between words and punctuation marks.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ thực hiện một số bước tiền xử lý trên dữ liệu văn bản thô, bao gồm chuyển đổi tất cả ký tự sang chữ thường, thay thế các ký tự khoảng trắng không ngắt (*non-breaking space*) UTF-8 bằng dấu cách, thêm dấu cách vào giữa các từ và các dấu câu.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
@@ -318,7 +325,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 *
