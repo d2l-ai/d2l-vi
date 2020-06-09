@@ -150,6 +150,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng            |                                              |
 | feature extraction  | trích xuất đặc trưng |                                              |
 | feature map (CNN)   | ánh xạ đặc trưng     |                                              |
+| feed-forward network (FNN)   | mạng truyền xuôi     |                                              |
 | filter (CNN)        | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
@@ -335,6 +336,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | probability theory                 | lý thuyết xác suất         |                                              |
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| position-wise feed-forward network           | mạng truyền xuôi theo vị trí                |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
@@ -432,6 +434,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | tune parameters            | điều chỉnh tham số                |                                              |
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| transformer            | transformer                |  |
 
 ## U
 | English                  | Tiếng Việt                | Thảo luận tại                                |
