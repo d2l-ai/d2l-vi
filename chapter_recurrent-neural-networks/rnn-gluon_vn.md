@@ -40,7 +40,7 @@ We construct the recurrent neural network layer `rnn_layer` with a single hidden
 -->
 
 Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron truy hồi (cùng với các mô hình chuỗi khác).
-Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn và 256 nút ẩn rồi khởi tạo các trọng số.
+Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn có 256 nút rồi khởi tạo các trọng số.
 
 
 ```{.python .input  n=26}
@@ -59,8 +59,7 @@ For now, suffice it to say that multiple layers simply amount to the output of o
 -->
 
 Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
-Phương thức này trả về trạng thái ban đầu cho mỗi phần tử trong minibatch.
-Tức là nó trả về một đối tượng có kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+Phương thức này trả về một trạng thái ban đầu cho mỗi phần tử trong minibatch, có kích thước là (số tầng ẩn, kích thước batch, số nút ẩn).
 Số tầng ẩn mặc định là 1. 
 Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
 Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
@@ -75,7 +74,7 @@ len(state), state[0].shape
 With a state variable and an input, we can compute the output with the updated state.
 -->
 
-Với một biến trạng thái và một đầu vào, ta có thể tính toán được đầu ra và trạng thái được cập nhật.
+Với một biến trạng thái và một đầu vào, ta có thể tính đầu ra với trạng thái vừa được cập nhật.
 
 
 ```{.python .input  n=38}
@@ -198,7 +197,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
     * Nếu bạn nhận thấy khác biệt đáng kể nào khác ngoài tốc độ, hãy thử tìm hiểu tại sao.
 2. Bạn có thể làm quá khớp mô hình này không? Hãy thử
     * Tăng số nút ẩn.
-    * Tằng số vòng lặp.
+    * Tăng số vòng lặp.
     * Thay đổi tham số gọt (*clipping*) thì sao?
 3. Hãy lập trình mô hình tự hồi quy ở phần giới thiệu của chương này bằng RNN.
 4. Nếu tăng số tầng ẩn của mô hình RNN thì sao? Bạn có thể làm mô hình hoạt động không?
