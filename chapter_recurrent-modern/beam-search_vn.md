@@ -94,7 +94,7 @@ which is higher than the conditional probability of the output sequence obtained
 Therefore, the output sequence "A", "B", "C", and "&lt;eos&gt;" obtained by the greedy search is not an optimal sequence.
 -->
 Bây giờ, chúng ta sẽ nhìn vào một ví dụ khác :numref:`fig_s2s-prob2`.
-Không giống như trong :numref:`fig_s2s-prob1`, ở hình tiếp theo :numref:`fig_s2s-prob2` chọn từ "C", từ có xác suất có điều kiện cao thứ hai tại bước thời gian 2.
+Không giống như trong :numref:`fig_s2s-prob1`, :numref:`fig_s2s-prob2` chọn từ "C", từ có xác suất có điều kiện cao thứ hai tại bước thời gian 2.
 Bởi vì chuỗi con đầu ra của bước thời gian 1 và 2, bước thời gian 3 phụ thuộc vào hai bước thời gian này, bị thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, xác suất có điều kiện của mỗi từ được sinh ra tại bước thời gian 3 cũng bị thanh đổi trong :numref:`fig_s2s-prob2`.
 Chúng tôi chọn từ "B", từ có xác suất có điều kiện cao nhất.
 Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
