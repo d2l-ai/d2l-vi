@@ -63,27 +63,27 @@ We add an MLP attention layer (`MLPAttention`) which has the same hidden size as
 Then we initialize the state of the decoder by passing three items from the encoder:
 -->
 
-Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq`, chúng ta sẽ chỉ tập trung vào bộ giải mã.
-Chúng ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
-Sau đó ta tạo trạng thái của bộ giải mã bằng cách đưa vào ba  tham số từ bộ mã hoá:
+Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong phần :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
+Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
+Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách đưa vào ba tham số từ bộ mã hoá:
 
 <!--
 - **the encoder outputs of all timesteps**: they are used as the attention layer's memory with identical keys and values;
 -->
 
-- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung với các cặp khoá - trị số giống hệt;
+- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung với các cặp khoá - trị số không thay đổi;
 
 <!--
 - **the hidden state of the encoder's final timestep**: it is used as the initial decoder's hidden state;
 -->
 
-- **trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng**: được sử dụng làm trạng thái ẩn đầu tiên của bộ giải mã;
+- **trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng**: được sử dụng làm trạng thái ẩn ban đầu của bộ giải mã;
 
 <!--
 - **the encoder valid length**: so the attention layer will not consider the padding tokens with in the encoder outputs.
 -->
 
-- **chiều dài chuẩn của bộ mã hoá**: để tầng tập trung bỏ qua những padding tokens đi kèm với đầu ra của bộ mã hoá.
+- **chiều dài chuẩn của bộ mã hoá**: để tầng tập trung có thể bỏ qua những padding tokens đi kèm với đầu ra của bộ mã hoá.
 
 <!--
 At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer.
@@ -94,13 +94,13 @@ the attention output explicitly selects the encoder outputs based on `enc_valid_
 
 Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN.
-Mặc dù trạng thái ẩn của tầng RNN cũng bao gồm lịch sử thông tin từ bộ giải mã, đầu ra của tầng tập trung chọn ra từ các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách chi tiết, nhằm loại bỏ những thông tin không liên quan.
+Mặc dù trạng thái ẩn của tầng RNN cũng bao gồm lịch sử thông tin từ bộ giải mã, đầu ra của tầng tập trung chọn từ các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách chi tiết nhằm loại bỏ những thông tin không liên quan.
 
 <!--
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
 -->
 
-Hãy cùng cài đặt hàm `Seq2SeqAttentionDecoder`, và xem xét sự khác biết của nó so với bộ giải mã trong seq2seq ở :numref:`sec_seq2seq_decoder`.
+Hãy cùng lập trình hàm `Seq2SeqAttentionDecoder` và xem xét sự khác biết của nó so với bộ giải mã trong seq2seq ở phần :numref:`sec_seq2seq_decoder`.
 
 
 ```{.python .input  n=2}
@@ -145,7 +145,8 @@ As a result, we get the same decoder output shape, but the state structure is ch
 -->
 
 Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
-Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
+Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong phần :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
+Do vậy, ta thu được bộ giải mã với cùng kích thước, nhưng khác về cấu trúc trạng thái.
 
 
 ```{.python .input  n=3}
