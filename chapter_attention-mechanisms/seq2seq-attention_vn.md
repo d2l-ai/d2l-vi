@@ -17,11 +17,11 @@ The output of the attention model is viewed as the context information, and such
 Finally, we feed the concatenation into the decoder.
 -->
 
-Trong phần này, chúng tôi áp dụng cơ chế tập trung cho mô hình chuỗi sang chuỗi (seq2seq) như đã giới thiệu trong :numref:`sec_seq2seq` để tổng hợp lại một cách rõ ràng các trạng thái và trọng số.
-:numref:`fig_s2s_attention` mô tả cấu trúc của mô hình nhằm mã hoá và giải mã tại mỗi bước thời gian $t$.
-Ở đây, bộ nhớ của tầng tập trung bao gồm tất cả thông tin mà bộ mã hoá đã học---đầu ra của bộ mã hoá tại từng bước thời gian.
-Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng để truy vấn.
-Đầu ra của mô hình tập trung có thể được coi như là thông tin về ngữ cảnh, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
+Trong phần này, chúng tôi áp dụng cơ chế tập trung cho mô hình chuỗi sang chuỗi (seq2seq) như đã giới thiệu trong phần :numref:`sec_seq2seq` để tổng hợp lại một cách rõ ràng các trạng thái và trọng số.
+Hình :numref:`fig_s2s_attention` mô tả cấu trúc của mô hình nhằm mã hoá và giải mã tại mỗi bước thời gian $t$.
+Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
+Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm truy vấn.
+Đầu ra của mô hình tập trung có thể được hiểu là thông tin về ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
 Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải mã.
 
 <!--
@@ -36,7 +36,7 @@ Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải
 To illustrate the overall architecture of seq2seq with attention model, the layer structure of its encoder and decoder is shown in :numref:`fig_s2s_attention_details`.
 -->
 
-Để minh hoạ cho cấu trúc chung của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc các tầng của bộ mã hoá và giải mã được chỉ ra ở :numref:`fig_s2s_attention_details`.
+Để minh hoạ cho cấu trúc chung của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc các tầng của bộ mã hoá và giải mã được mô tả trong hình :numref:`fig_s2s_attention_details`.
 
 <!--
 ![The layers in the sequence to sequence model with attention mechanism.](../img/seq2seq-attention-details.svg)
