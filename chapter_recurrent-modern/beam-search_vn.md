@@ -28,7 +28,7 @@ Chúng ta sẽ tiếp tục sử dụng ký hiệu toán học trên. Để thu�
 Gọi kích thước đầu ra của bộ từ điển đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
 Có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ loại chuỗi đầu ra có thể có.
 Tất những chuỗi con sau kí tự đặc biệt "&lt;eos&gt;" trong những chuỗi đầu ra sẽ bị bỏ đi.
-Bên cạnh đó, chúng tôi cũng ký hiệu vector ngữ cảnh là $\mathbf{c}$, mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào.
+Bên cạnh đó, ta ký hiệu vector ngữ cảnh mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào là $\mathbf{c}$.
 <!--
 ## Greedy Search
 -->
