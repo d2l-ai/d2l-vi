@@ -5,7 +5,8 @@
 # Attention Mechanisms
 -->
 
-# *dịch tiêu đề phía trên*
+# Cơ chế Tập trung
+
 :label:`sec_attention`
 
 <!--
@@ -16,7 +17,12 @@ In the seq2seq model, the decoder may implicitly select the corresponding inform
 The attention mechanism, however, makes this selection explicit.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_seq2seq`, chúng ta mã hóa thông tin đầu vào của chuỗi nguồn thành trạng thái ẩn sinh bởi mạng truy hồi và truyền tới bộ giải mã để sinh chuỗi đích.
+Token trong chuỗi đích có thể liên quan mật thiết tới một hay nhiều token thay vì toàn bộ token trong chuỗi nguồn.
+Ví dụ, khi dịch "Hello world." thành "Bonjour le monde.", từ "Bonjour" ánh xạ tới từ "Hello" và từ "monde" ánh xạ tới từ "world". 
+Trong mô hình seq2seq, bộ giải mã có thể ngầm chọn thông tin tương ứng từ trạng thái ẩn được truyền đến từ bộ mã hoá.
+Tuy nhiên cơ chế tập trung (_attention mechanism_) thực hiện phép chọn này một cách tường minh.
+
 
 
 <!--
@@ -29,7 +35,14 @@ $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, with $\mat
 Given a query $\mathbf{q} \in \mathbb R^{d_q}$, the attention layer returns an output $\mathbf{o} \in \mathbb R^{d_v}$ with the same shape as the value.
 -->
 
-*dịch đoạn phía trên*
+Cơ chế *tập trung* có thể coi là phương pháp gộp được khái quát hoá với hiệu chỉnh độ chệch trên từng vector đầu vào.
+Thành phần trọng tâm trong cơ chế tập trung là tầng tập trung. <!--gọi tập trung không nghe hơi tối nghĩa-->
+Vector đầu vào của tầng tập trung được gọi ngắn gọn là *truy vấn* (*query*).
+Với mỗi truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp vector khoá-giá trị được mã hoá trong tầng tập trung này. 
+Cụ thể, giả sử bộ nhớ chứa $n$ cặp vector khoá-giá trị,
+$(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, với $\mathbf{k}_i \in \mathbb R^{d_k}$, $\mathbf{v}_i \in \mathbb R^{d_v}$.
+Với mỗi truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung trả về đầu ra $\mathbf{o} \in \mathbb R^{d_v}$ cùng kích thước giống vector giá trị.
+
 
 <!--
 ![The attention layer returns an output based on the input query and its memory.](../img/attention.svg)
@@ -45,7 +58,10 @@ To compute the output of attention, we first use a score function $\alpha$ that 
 Then for each key $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, we compute the scores $a_1, \ldots, a_n$ by
 -->
 
-*dịch đoạn phía trên*
+Chi tiết về phép tính toán xử lý trong tầng tập trung được thể hiện trong :numref:`fig_attention_output`.
+Để tính toán đầu ra của tầng tập trung, chúng ta sử dụng hàm tính $\alpha$ để đo độ tương tự giữa vector khoá và giá trị.
+Sau đó, với mỗi khoá $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, ta tính điểm trọng số $a_1, \ldots, a_n$ như sau:
+
 
 
 $$a_i = \alpha(\mathbf q, \mathbf k_i).$$
@@ -55,10 +71,11 @@ $$a_i = \alpha(\mathbf q, \mathbf k_i).$$
 Next we use softmax to obtain the attention weights, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sử dụng hàm softmax để thu được các trọng số tập trung (_attention weights_), cụ thể:
 
 
-$$\mathbf{b} = \mathrm{softmax}(\mathbf{a})\quad \text{, where }\quad
+
+$$\mathbf{b} = \mathrm{softmax}(\mathbf{a})\quad \text{trong đó }\quad
 {b}_i = \frac{\exp(a_i)}{\sum_j \exp(a_j)}, \mathbf{b} = [b_1, \ldots, b_n]^T .$$
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -366,7 +383,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
