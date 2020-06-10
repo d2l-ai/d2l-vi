@@ -53,7 +53,7 @@ The main problem with greedy search is that there is no guarantee that the optim
 Như đã đề cập trong phần thảo luận của bộ giải mã, xác suất có điều kiện của việc tạo ra một chuỗi đầu ra dựa trên chuỗi đầu vào là 
 $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 Chuỗi đầu ra tối ưu là chuỗi có xác suất có điều kiện cao nhất.
-Vấn đề lớn nhất của phương pháp tìm kiếm tham lam chính là không đảm bảo được chuỗi đạt được là chuỗi tối ưu.
+Vấn đề lớn nhất của phương pháp tìm kiếm tham lam chính là không đảm bảo sẽ tìm được chuỗi tối ưu.
 <!--
 Take a look at the example below.
 We assume that there are four words "A", "B", "C", and "&lt;eos&gt;" in the output dictionary.
