@@ -148,7 +148,11 @@ $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
 and $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Therefore, the output for each head is
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng thứ nguyên cho truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
+Sau đó, với mỗi đầu $i=1,\ldots, h$, chúng ta có thể đào tạo các tham số có thể học được
+$\mathbf W_q^{(i)}\in\mathbb R^{p_q\times d_q}$,
+$\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
+và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra cho mỗi đầu là
 
 
 $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{(i)}\mathbf k,\mathbf W_v^{(i)}\mathbf v),$$
@@ -158,7 +162,7 @@ $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{
 where $\textrm{attention}$ can be any attention layer, such as the `DotProductAttention` and `MLPAttention` as we introduced in :numref:`sec_attention`.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\textrm{attention}$ có thể là bất kỳ lớp chú ý nào, chẳng hạn như `DotProductAttention` và` MLPAttention` như chúng tôi đã giới thiệu trong :numref:`sec_attention`.
 
 
 <!--
@@ -167,7 +171,9 @@ The weights of this dense layer can be denoted by $\mathbf W_o\in\mathbb R^{d_o\
 As a result, the multi-head attention output will be
 -->
 
-*dịch đoạn phía trên*
+Sau đó, đầu ra có độ dài $ p_v $ từ mỗi đầu chú ý $h$ được nối với nhau thành đầu ra có độ dài $ h p_v $, sau đó được chuyển qua lớp dày đặc cuối cùng với các đơn vị ẩn $d_o$.
+Các trọng số của lớp dày đặc này có thể được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
+Do đó, đầu ra chú ý nhiều đầu sẽ là
 
 
 $$\mathbf o = \mathbf W_o \begin{bmatrix}\mathbf o^{(1)}\\\vdots\\\mathbf o^{(h)}\end{bmatrix}.$$
@@ -179,7 +185,9 @@ Assume that the multi-head attention contain the number heads `num_heads` $=h$, 
 In addition, since the multi-head attention keeps the same dimensionality between its input and its output, we have the output feature size $d_o =$ `num_hiddens` as well.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta có thể thực hiện sự chú ý nhiều đầu.
+Giả sử rằng sự chú ý của nhiều đầu chứa các đầu số `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ giống nhau cho các lớp dày đặc của truy vấn, khóa và giá trị.
+Ngoài ra, do sự chú ý của nhiều đầu giữ cùng một chiều giữa đầu vào và đầu ra của nó, chúng tôi cũng có kích thước tính năng đầu ra $d_o =$ `num_hiddens`.
 
 
 ```{.python .input  n=2}
@@ -228,7 +236,7 @@ class MultiHeadAttention(nn.Block):
 Here are the definitions of the transpose functions `transpose_qkv` and `transpose_output`, which are the inverse of each other.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là các định nghĩa của các hàm chuyển vị `transpose_qkv` và` transposeDefput`, là các nghịch đảo của nhau.
 
 
 ```{.python .input  n=3}
@@ -261,7 +269,8 @@ Let us test the `MultiHeadAttention` model in the a toy example. Create a multi-
 the output will share the same batch size and sequence length as the input, but the last dimension will be equal to the `num_hiddens` $= 100$.
 -->
 
-*dịch đoạn phía trên*
+Hãy để chúng tôi kiểm tra mô hình `MultiHeadAttention` trong ví dụ về đồ chơi. Tạo sự chú ý nhiều đầu với kích thước ẩn $d_o = 100$,
+đầu ra sẽ chia sẻ cùng kích thước lô và độ dài chuỗi như đầu vào, nhưng kích thước cuối cùng sẽ bằng với `num_hiddens` $= 100$.
 
 
 ```{.python .input  n=4}
