@@ -222,6 +222,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK)                                               |
 | kernel                  | hạt nhân                 | [https://git.io/Jfe1I](https://git.io/Jfe1I), [https://git.io/Jf0vK](https://git.io/Jf0vK) |
+| key                     | khoá                     |                |
 
 
 ## L
@@ -346,6 +347,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | quadratic             | toàn phương           | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic form        | dạng toàn phương      | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic programming | quy hoạch toàn phương |                                              |
+| query                 | truy vấn              |                                              |
 
 ## R
 | English                           | Tiếng Việt                                | Thảo luận tại                                |
@@ -454,6 +456,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | vanishing gradient          | tiêu biến gradient | [https://git.io/JvohI](https://git.io/JvohI) |
 | variance (bias as variance) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
 | vector                      | vector             |                                              |
+| value                       | giá trị            |                                              |
 
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |
