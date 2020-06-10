@@ -13,7 +13,7 @@ In this section, we are going to introduce how to use the encoder-decoder to pre
 -->
 
 Trong :numref:`sec_seq2seq`, chúng ta đã thảo luận cách huấn luyện mô hình mã hóa - giải mã với đầu vào và đầu ra có độ dài thay đổi.
-Trong phần này, chúng tôi sẽ đưa ra cách sử dụng mã hóa - giải mã để dự đoán chuỗi có độ dài thay đổi.
+Trong phần này, chúng tôi sẽ đưa ra cách sử dụng bộ mã hóa - bộ giải mã để dự đoán chuỗi có độ dài thay đổi.
 <!--
 As in :numref:`sec_machine_translation`, when preparing to train the dataset, we normally attach a special symbol "&lt;eos&gt;" after each sentence to indicate the termination of the sequence.
 We will continue to use this mathematical symbol in the discussion below. For ease of discussion, we assume that the output of the decoder is a sequence of text.
