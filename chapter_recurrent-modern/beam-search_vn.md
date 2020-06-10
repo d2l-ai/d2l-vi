@@ -50,7 +50,8 @@ $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 We will take the output sequence with the highest conditional probability as the optimal sequence.
 The main problem with greedy search is that there is no guarantee that the optimal sequence will be obtained.
 -->
-Như chúng tôi đã đề cập trong phần thảo luận của bộ giải mã, xác suất có điều kiện của việc tạo ra một chuỗi đầu ra dựa trên chuỗi đầu vào là $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
+Như đã đề cập trong phần thảo luận của bộ giải mã, xác suất có điều kiện của việc tạo ra một chuỗi đầu ra dựa trên chuỗi đầu vào là 
+$\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 Chuỗi đầu ra tối ưu là chuỗi có xác suất có điều kiện cao nhất.
 Vấn đề lớn nhất của phương pháp tìm kiếm tham lam chính là không đảm bảo được chuỗi đạt được là chuỗi tối ưu.
 <!--
