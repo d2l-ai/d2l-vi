@@ -108,7 +108,7 @@ Giống như perceptron đa tầng, số tầng ẩn $L$ và số đơn vị ẩ
 ## Concise Implementation
 -->
 
-## Lập trình Ngắn gọn
+## Lập trình Súc tích
 
 
 <!--
