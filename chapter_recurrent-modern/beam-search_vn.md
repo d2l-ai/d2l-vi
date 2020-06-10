@@ -32,7 +32,9 @@ Bên cạnh đó, chúng tôi cũng ký hiệu vector ngữ cảnh là $\mathbf{
 <!--
 ## Greedy Search
 -->
+
 ## Tìm kiếm tham lam
+
 <!--
 First, we will take a look at a simple solution: greedy search.
 For any timestep $t'$ of the output sequence, we are going to search for the word with the highest conditional probability from $|\mathcal{Y}|$ numbers of words, with
