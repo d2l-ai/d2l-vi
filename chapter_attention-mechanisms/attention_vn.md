@@ -59,7 +59,7 @@ Then for each key $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{
 -->
 
 Chi tiết về phép tính toán xử lý trong tầng tập trung được thể hiện trong :numref:`fig_attention_output`.
-Để tính toán đầu ra của tầng tập trung, chúng ta sử dụng hàm tính $\alpha$ để đo độ tương tự giữa vector khoá và giá trị.
+Để tính toán đầu ra của tầng tập trung, chúng ta sử dụng hàm tính điểm $\alpha$ để đo độ tương tự giữa vector khoá và giá trị.
 Sau đó, với mỗi khoá $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, ta tính điểm trọng số $a_1, \ldots, a_n$ như sau:
 
 
