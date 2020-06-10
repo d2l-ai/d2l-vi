@@ -22,7 +22,8 @@ There are a total $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ types of possible
 All the subsequences after the special symbol "&lt;eos&gt;" in these output sequences will be discarded.
 Besides, we still denote the context vector as $\mathbf{c}$, which encodes information of all the hidden states from the input.
 -->
-Như trong :numref:`sec_machine_translation`, khi chuẩn bị tập dữ liệu để huấn luyện, chúng ta thường thêm vào kí hiệu đặc biệt "&lt;eos&gt;" sau mỗi câu để biểu thị sự kết thúc của câu.
+
+Như trong :numref:`sec_machine_translation`, khi chuẩn bị huấn luyện dữ liệu, chúng ta thường thêm vào kí hiệu đặc biệt "&lt;eos&gt;" sau mỗi câu để biểu thị sự kết thúc của câu.
 Chúng tôi sẽ tiếp tục sử dụng ký hiệu toán học đã được nhắc đến ở trên. Để cho thuận tiện, chúng tôi giả sử rằng đầu ra của bộ giải mã là một chuỗi kí tự.
 Kích thước đầu ra của bộ từ điển kí tự đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
 Có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ loại chuỗi đầu ra có thể.
