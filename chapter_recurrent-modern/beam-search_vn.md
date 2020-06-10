@@ -68,6 +68,7 @@ Bốn con số dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` b
 Tại mỗi bước thời gian, tìm kiếm tham lam chọn từ có xác suất có điều kiện cao nhất.
 Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" được tạo ra như trong :numref:`fig_s2s-prob1`.
 Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\times0.4\times0.6 = 0.048$.
+
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
