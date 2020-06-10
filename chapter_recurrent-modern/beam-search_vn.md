@@ -5,7 +5,7 @@
 # Beam Search
 -->
 
-# *dịch tiêu đề phía trên*
+# Tìm kiếm Chùm tia
 
 <!--
 In :numref:`sec_seq2seq`, we discussed how to train an encoder-decoder with input and output sequences that are both of variable length.
