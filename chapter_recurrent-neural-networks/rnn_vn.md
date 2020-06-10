@@ -165,7 +165,7 @@ Vấn đề sẽ khác đi hoàn toàn nếu ta sử dụng các trạng thái �
 Hãy xem xét cấu trúc này một cách chi tiết hơn. 
 Chúng ta thường gọi vòng lặp thứ $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng trong mạng nơ-ron truy hồi, thời điểm $t$ lại tương ứng với các bước trong một vòng lặp. 
 Giả sử trong một vòng lặp ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$. 
-Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi. 
+Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn tại bước thời gian $t$ của chuỗi. 
 Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại. 
 Cụ thể, biến ẩn của bước thời gian hiện tại được xác định bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó: 
 
@@ -182,7 +182,7 @@ Since the hidden state uses the same definition of the previous timestep in the 
 the computation of the equation above is recurrent, hence the name recurrent neural network (RNN).
 -->
 
-So với :eqref:`rnn_h_without_state`, phương trình này được thêm vào $\mathbf{H}_{t-1} \mathbf{W}_{hh}$. 
+So với :eqref:`rnn_h_without_state`, phương trình này có thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$. 
 Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã lưu lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron. 
 Vì vậy, một biến ẩn còn được gọi là một *trạng thái ẩn* (_hidden state_). 
 Vì trạng thái ẩn ở bước thời gian hiện tại và trước đó đều có cùng định nghĩa, phương trình trên được tính toán theo phương pháp truy hồi. 
@@ -211,7 +211,7 @@ Therefore, the number of RNN model parameters does not grow as the number of tim
 
 Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
 Lưu ý rằng RNN luôn sử dùng cùng tham số mô hình cho dù tính toán ở các bước thời gian khác nhau. 
-Vì thế, tăng số bước thời gian không làm tăng lượng tham số mô hình của RNN. 
+Vì thế, việc tăng số bước thời gian không làm tăng lượng tham số mô hình của RNN. 
 
 <!--
 :numref:`fig_rnn` shows the computational logic of an RNN at three adjacent timesteps.
@@ -224,10 +224,10 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 -->
 
 :numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề. 
-Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, thì ta có thể coi việc tính toán của trạng thái ẩn tương ứng với một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
+Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, ta có thể coi việc tính toán trạng thái ẩn tương tự như việc tính toán trong một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
 Đầu ra của tầng kết nối đầy đủ chính là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$. 
-Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, cùng hệ số điều chỉnh là $\mathbf{b}_h$. 
-Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$ được sử dụng để tính trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian kế tiếp $t+1$. 
+Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, cùng với hệ số điều chỉnh $\mathbf{b}_h$. 
+Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$ được sử dụng để tính trạng thái ẩn $\mathbf{H}_{t+1}$ tại bước thời gian kế tiếp $t+1$. 
 Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$. 
 
 <!--
@@ -261,16 +261,16 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-Bây giờ chúng ta cùng xem ví dụ xây dựng mô hình ngôn ngữ bằng RNN.
+Bây giờ hãy cùng xem cách xây dựng mô hình ngôn ngữ bằng RNN.
 Vì dùng từ thường dễ hiểu hơn dùng chữ, nên các từ sẽ được dùng làm đầu vào trong ví dụ đơn giản này.  
 Đặt kích thước minibatch là 1, với chuỗi văn bản là phần đầu của tập dữ liệu: "the time machine by H. G. Wells". 
-:numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó. 
+:numref:`fig_rnn_train` minh họa cách ước lượng từ tiếp theo dựa trên từ hiện tại và các từ trước đó. 
 Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian, 
 và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
-Do việc tính toán truy hồi của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3, 
+Do việc tính toán truy hồi của trạng thái ẩn trong tầng ẩn, đầu ra của bước thời gian thứ 3, 
 $\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine". 
-Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
-phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này. 
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", giá trị mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" tại bước thời gian này. 
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
@@ -284,7 +284,7 @@ In practice, each word is presented by a $d$ dimensional vector, and we use a ba
 Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix, which is identical to what we discussed before.
 -->
 
-Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và kích thước batch thường lớn hơn 1, $n>1$.
+Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và kích thước batch thường là $n>1$.
 Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
