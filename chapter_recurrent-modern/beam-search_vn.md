@@ -97,7 +97,7 @@ Bây giờ, chúng ta sẽ nhìn vào một ví dụ khác :numref:`fig_s2s-prob
 Không giống như trong :numref:`fig_s2s-prob1`, :numref:`fig_s2s-prob2` chọn từ "C", từ có xác suất có điều kiện cao thứ hai tại bước thời gian 2.
 Vì bước thời gian 3 phụ thuộc vào bước thời gian 1 và 2, mà chuỗi con đầu ra của hai bước thời gian này bị thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, nên xác suất có điều kiện của mỗi từ được sinh ra tại bước thời gian 3 cũng bị thanh đổi trong :numref:`fig_s2s-prob2`.
 Chúng tôi chọn từ "B", từ có xác suất có điều kiện cao nhất.
-Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
+Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên sẽ là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
 Xác suất có điều kiện của chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" tại bước thời gian hiện tại là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của mà chúng ta có được từ phương pháp tìm kiếm tham lam.
 Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ phương pháp tìm kiếm tham lam không phải là chuỗi tối ưu.
 <!--
