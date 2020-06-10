@@ -110,7 +110,9 @@ Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ 
 <!--
 ## Exhaustive Search
 -->
-## Vét cạn
+
+## Tìm kiếm Vét cạn
+
 <!--
 If the goal is to obtain the optimal sequence, we may consider using exhaustive search: 
 an exhaustive examination of all possible output sequences, which outputs the sequence with the highest conditional probability.
