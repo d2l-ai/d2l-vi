@@ -103,7 +103,9 @@ Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ 
 <!--
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep.  At timestep 2, the word "C", which has the second highest conditional probability, is selected.](../img/s2s-prob2.svg)
 -->
-![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại  bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
+
+![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
+
 :label:`fig_s2s-prob2`
 <!--
 ## Exhaustive Search
