@@ -42,6 +42,7 @@ For any timestep $t'$ of the output sequence, we are going to search for the wor
 
 Đầu tiên, chúng ta xem xét một phương pháp đơn giản: tìm kiếm tham lam.
 Với bất kì bước thời gian nào của chuỗi đầu ra, chúng ta sẽ tìm từ có xác suất có điều kiện từ $|\mathcal{Y}|$ số từ, với
+
 $$y_{t'} = \operatorname*{argmax}_{y \in \mathcal{Y}} P(y \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$$
 <!--
 as the output.  Once the "&lt;eos&gt;" symbol is detected, or the output sequence has reached its maximum length $T'$, the output is completed.
