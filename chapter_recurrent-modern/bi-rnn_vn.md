@@ -171,11 +171,10 @@ Indeed, HMMs benefit from knowing future data when it is available.
 Signal processing scientists distinguish between the two cases of knowing and not knowing future observations as interpolation v.s. extrapolation.
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
-
-Cần phải chú ý rằng, backward recursion có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một *learnable function*
+Cần phải chú ý rằng, backward recursion có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một *learnable function*.
 Một lần nữa, nó trông giống như một phương trình cập nhật, chỉ chạy ngược lại và không giống như những gì chúng ta biết về RNNs.
 Thật vậy, khi đó HMMs sẽ có lợi trong việc học các dữ liệu tiếp theo (nếu có).
-Người ta (các nhà khoa học chuyên về xử lí tín hiệu ấy) sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
+Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
 Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` phần Sequential Monte Carlo algorithms để biết thêm chi tiết. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -195,18 +194,17 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 *Bidirectional recurrent neural networks* add a hidden layer that passes information in a backward direction to more flexibly process such information.
 :numref:`fig_birnn` illustrates the architecture of a bidirectional recurrent neural network with a single hidden layer.
 -->
-
 Nếu chúng ta muốn một cơ chế trong các mạng RNNs mà có khả năng dự đoán (look-ahead) tương đương như HMMs thì cần phải chỉnh sửa thiết kế của các mạng truyền thống một chút.
-May mắn là, điều này là dễ dàng (trên lí thuyết là vậy ^^).
+May mắn là, điều này là dễ dàng (trên lí thuyết là vậy).
 Thay vì chỉ vận hành một chiều (từ kí tự đầu chạy thẳng đến cuối) như khi chạy một mạng RNN, ta sẽ khởi tạo một chiều nữa, lần này là từ kí tự cuối lên đầu.
 *Mạng nơ ron truy hồi hai chiều* sẽ thêm một hidden layer cho phép dữ liệu truyền về theo chiều ngược lại. Khi đó dữ liệu sẽ được xử lí linh hoạt hơn (thay vì một chiều như trong RNN truyền thống).
 Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ ron truy hồi hai chiều với 1 hidden layer.
 
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
---> Cấu trúc của mạng nơ ron truy hồi hai chiều.
+--> 
 
-![*dịch chú thích ảnh phía trên*](../img/birnn.svg)
+![*Cấu trúc của mạng nơ ron truy hồi hai chiều.*](../img/birnn.svg)
 :label:`fig_birnn`
 
 <!--
@@ -216,7 +214,6 @@ Now they are devoid of such easily accessible interpretation and we can just tre
 This transition epitomizes many of the principles guiding the design of modern deep networks: 
 first, use the type of functional dependencies of classical statistical models, and then use the models in a generic form.
 -->
-
 Trên thực tế, điều này không quá khác biệt với forward và backward recursion đã đề cập ở phần trước.
 Điểm khác biệt chính, là ở các trường hợp đã đề cập bên trên, các phương trình này có một ý nghĩa thống kê nhất định. 
 Còn ở đây thì chúng ta sẽ không tiếp cận một ý nghĩa nhất định nào, thay vào đó ta sẽ chỉ xét chúng như những khái niệm tổng quát.
@@ -435,7 +432,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Đinh Phước Lộc
 
 <!-- Phần 4 -->
 *
