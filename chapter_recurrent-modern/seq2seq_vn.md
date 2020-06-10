@@ -207,7 +207,7 @@ The dense layer will predict the confidence score for each word.
 
 Khi lập trình bộ giải mã, chúng ta sử dụng trực tiếp trạng thái ẩn của bộ mã hoá ở bước thới gian cuối cùng làm trạng thái ẩn ban đầu của bộ giải mã.
 Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số nút ẩn.
-Các bước tính toán lan truyền xuôi trong mô hình LSTM của bộ giải mã tương tự như trong bộ mã hoá.
+Các bước tính toán lượt truyền xuôi trong mô hình LSTM của bộ giải mã tương tự như trong bộ mã hoá.
 Điểm khác biệt duy nhất là có thêm một tầng kết nối dày đặc với kích thước bằng kích thước của bộ từ vựng được đặt ở sau các tầng LSTM.
 Tầng này sẽ dự đoán độ tin cậy cho mỗi từ.
 
