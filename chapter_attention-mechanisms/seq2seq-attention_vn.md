@@ -172,8 +172,8 @@ As we can see from the result, since the sequences in the training dataset are r
 Due to the computational overhead of both the encoder's and the decoder's attention layers, this model is much slower than the seq2seq model without attention.
 -->
 
-Giống như ở :numref:`sec_seq2seq_training`, ta hãy thử một mô hình nhỏ bằng cách sử dụng cùng những siêu tham số huấn luyện và mất mát trong huấn luyện (*training loss*).
-Như ta có thể thấy từ kết quả, do các chuỗi trong tập huẩn luyện khá ngắn, việc thêm tầng tập trung vào mô hình không dẫn tới cải thiện đáng kể.
+Giống như ở phần :numref:`sec_seq2seq_training`, ta hãy thử một mô hình nhỏ bằng cách sử dụng cùng những siêu tham số huấn luyện và mất mát trong huấn luyện (*training loss*).
+Từ kết quả ta có thể thấy, do các chuỗi trong tập huẩn luyện khá ngắn, việc thêm tầng tập trung vào mô hình không tạo ra được cải thiện đáng kể.
 Do chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và giải mã, mô hình này hoạt động chậm hơn nhiều so với seq2seq không có tầng tập trung.
 
 
