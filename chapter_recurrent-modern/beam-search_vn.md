@@ -11,7 +11,8 @@
 In :numref:`sec_seq2seq`, we discussed how to train an encoder-decoder with input and output sequences that are both of variable length.
 In this section, we are going to introduce how to use the encoder-decoder to predict sequences of variable length.
 -->
-Trong :numref:`sec_seq2seq`, chúng ta đã thảo luận về làm thế nào để huấn luyện mô hình mã hóa - giải mã với đầu vào và đầu ra có độ dài thay đổi.
+
+Trong :numref:`sec_seq2seq`, chúng ta đã thảo luận cách huấn luyện mô hình mã hóa - giải mã với đầu vào và đầu ra có độ dài thay đổi.
 Trong phần này, chúng tôi sẽ đưa ra cách sử dụng mã hóa - giải mã để dự đoán chuỗi có độ dài thay đổi.
 <!--
 As in :numref:`sec_machine_translation`, when preparing to train the dataset, we normally attach a special symbol "&lt;eos&gt;" after each sentence to indicate the termination of the sequence.
