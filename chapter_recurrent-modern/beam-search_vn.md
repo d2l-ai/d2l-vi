@@ -257,7 +257,7 @@ Beam search strikes a balance between computational overhead and search quality 
 -->
 
 Ở đây, $L$ là độ dài của chuỗi ứng viên cuối cùng và $\alpha$ thường được đặt bằng 0.75.
-$L^\alpha$ trong mẫu số là hình phạt lên điểm cộng logarit cho các chuỗi dài hơn ở trên.
+$L^\alpha$ trong mẫu số là lượng phạt lên tổng logarit cho các chuỗi dài hơn ở trên.
 Chi phí tính toán $\mathcal{O}(k\left|\mathcal{Y}\right|T')$ của tìm kiếm chùm có thể được ước lượng thông qua phân tích.
 Nó nằm trong khoảng giữa chi phí tính toán của tìm kiếm tham lam và tìm kiếm vét cạn.
 Ngoài ra, tìm kiếm tham lam có thể được coi là tìm kiếm chùm với kích thước chùm bằng 1.
