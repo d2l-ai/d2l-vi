@@ -17,7 +17,14 @@ This paper declares that when perceiving a stimulus, features are registered ear
 The theory has been one of the most influential psychological models of human visual attention.
 -->
 
-*dịch đoạn phía trên*
+Ngoài lề một chút, nghiên cứu về sự tập tập trung là một lĩnh vực rộng lớn với chiều dài lịch sử trong ngành thần kinh học nhận thức.
+Sự tập trung vào một tiêu điểm và sự tập trung của nhận thức là bản chất đằng sau của tập trung, điều này cho phép chúng ta ưu tiên tri giác của mình để giải quyết các công việc một cách hiệu quả.
+Kết quả là chúng ta không xử lý toàn bộ những thông tin thu được từ các giác quan.
+Tại một thời điểm, chúng ta chỉ tiếp nhận một lượng nhỏ thông tin từ môi trường.
+Trong ngành thần kinh học nhận thức, tồn tại một vài dạng tập trung ví dụ tập trung có chọn lọc, tập trung ngầm, và tập trung về không gian.
+Lý thuyết về tập trung khơi gợi nguồn cảm hứng trong lĩnh vực học sâu gần đây đó là *thuyết kết hợp đặc trưng* trong cơ chế tập trung có chọn lọc được phát triển bởi Anne Treisman và Garry Gelade trong :cite:`Treisman.Gelade.1980` vào năm 1980.
+Bài báo này ..
+
 
 <!--
 However, we will not indulge in too much theory of attention in neuroscience, but rather focus on applying the attention idea in deep learning,
