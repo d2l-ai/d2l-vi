@@ -71,7 +71,7 @@ Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách đưa 
 - **the encoder outputs of all timesteps**: they are used as the attention layer's memory with identical keys and values;
 -->
 
-- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung với các cặp khoá - trị số không thay đổi;
+- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung có cùng các khoá và giá trị;
 
 <!--
 - **the hidden state of the encoder's final timestep**: it is used as the initial decoder's hidden state;
@@ -83,7 +83,7 @@ Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách đưa 
 - **the encoder valid length**: so the attention layer will not consider the padding tokens with in the encoder outputs.
 -->
 
-- **chiều dài chuẩn của bộ mã hoá**: để tầng tập trung có thể bỏ qua những padding tokens đi kèm với đầu ra của bộ mã hoá.
+- **độ dài hợp lệ của bộ mã hoá**: để tầng tập trung có thể bỏ qua những token đệm được thêm vào đầu ra của bộ mã hoá.
 
 <!--
 At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer.
@@ -94,7 +94,7 @@ the attention output explicitly selects the encoder outputs based on `enc_valid_
 
 Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN.
-Mặc dù trạng thái ẩn của tầng RNN cũng bao gồm lịch sử thông tin từ bộ giải mã, đầu ra của tầng tập trung chọn từ các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách chi tiết nhằm loại bỏ những thông tin không liên quan.
+Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách tường minh nhằm loại bỏ những thông tin không liên quan.
 
 <!--
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
@@ -146,7 +146,7 @@ As a result, we get the same decoder output shape, but the state structure is ch
 
 Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
 Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong phần :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
-Do vậy, ta thu được bộ giải mã với cùng kích thước, nhưng khác về cấu trúc trạng thái.
+Kết quả, ta thu được đầu ra của bộ giải mã có cùng kích thước nhưng khác về cấu trúc trạng thái.
 
 
 ```{.python .input  n=3}
