@@ -35,7 +35,7 @@ $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, with $\mat
 Given a query $\mathbf{q} \in \mathbb R^{d_q}$, the attention layer returns an output $\mathbf{o} \in \mathbb R^{d_v}$ with the same shape as the value.
 -->
 
-Cơ chế *tập trung* có thể coi là phương pháp gộp được khái quát hoá với hiệu chỉnh độ chệch trên từng vector đầu vào.
+Cơ chế *tập trung* có thể coi là khái quát hóa của phép gộp với hiệu chỉnh độ chệch trên từng đầu vào.
 Tâm điểm của cơ chế tập trung là tầng tập trung. <!--gọi tập trung không nghe hơi tối nghĩa-->
 Vector đầu vào của tầng tập trung được gọi ngắn gọn là *truy vấn* (*query*).
 Với mỗi truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp vector khoá-giá trị được mã hoá trong tầng tập trung này. 
