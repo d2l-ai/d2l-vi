@@ -89,9 +89,9 @@ Different choices of the score function lead to different attention layers.
 Below, we introduce two commonly used attention layers.
 Before diving into the implementation, we first express two operators to get you up and running: a masked version of the softmax operator `masked_softmax` and a specialized dot operator `batched_dot`.
 -->
-Cách lựa chọn hàm tính điểm dẫn khác nhau tạo ra các tầng tập trung khác nhau.
-Dưới đây, chúng ta sẽ trình bày hai tầng tập trung thường được sử dụng.
-Đầu tiên chúng ta sẽ giới thiệu hai toán tử cần thiết để giúp bạn có thể lập trình được hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
+Cách lựa chọn hàm tính điểm khác nhau tạo ra các tầng tập trung khác nhau.
+Chúng tôi sẽ trình bày hai tầng tập trung thường được sử dụng dưới đây.
+Đầu tiên chúng tôi giới thiệu hai toán tử mà bạn sẽ cần khi lập trình được hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
 
 
 ```{.python .input  n=1}
@@ -111,7 +111,7 @@ Let us implement the `masked_softmax` function.
 Toán tử softmax có mặt nạ nhận đầu vào là một tensor 3 chiều và cho phép chúng ta có thể lọc ra một số phần tử bằng cách xác định độ dài hợp lệ cho chiều cuối cùng. (Tham khảo :numref:`sec_machine_translation` về định nghĩa của độ dài hợp lệ).
 Do đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$.
 
-Chúng ta hãy lập trình hàm `masked_softmax` như sau.
+Chúng ta lập trình hàm `masked_softmax` như sau.
 
 
 ```{.python .input  n=6}
