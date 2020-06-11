@@ -291,7 +291,7 @@ Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và ch�
 2. We used language models to generate sentences in :numref:`sec_rnn_scratch`. Which kind of search does this output use? Can you improve it?
 -->
 
-1. Ta có thể coi một tìm kiếm vét cạn như một tìm kiếm chùm với kích thước chùm đặc biệt không? Tại sao?
+1. Ta có thể coi tìm kiếm vét cạn là tìm kiếm chùm với kích thước chùm đặc biệt không? Tại sao?
 2. Ta đã sử dụng các mô hình ngôn ngữ để tạo các câu trong :numref:`sec_rnn_scratch`. Các mô hình này đã sử dụng phương pháp tìm kiếm đầu ra nào? Hãy cải thiện các phương pháp đó.
 
 
