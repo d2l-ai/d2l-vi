@@ -20,7 +20,7 @@ Trong các chương trước, ta đã đề cập đến các kiến trúc mạn
 * **CNNs** are easy to parallelize at a layer but cannot capture the variable-length sequential dependency very well.
 -->
 
-* Các mạng **CNN** có thể được song song hóa dễ dàng ở một tầng nhưng không thể học tốt được sự phụ thuộc chuỗi có độ dài thay đổi.
+* Các mạng **CNN** có thể được thực hiện song song dễ dàng ở một tầng nhưng không thể học tốt ở các chuỗi có độ dài thay đổi.
 
 <!--
 * **RNNs** are able to capture the long-range, variable-length sequential information, but suffer from inability to parallelize within a sequence.
