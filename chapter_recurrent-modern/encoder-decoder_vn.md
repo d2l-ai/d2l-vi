@@ -106,7 +106,7 @@ During computation, it first computes encoder outputs to initialize the decoder 
 
 Mô hình mã hoá - giải mã bao gồm một bộ mã hoá và một bộ giải mã.
 Chúng ta lập trình phương thức lan truyền xuôi cho quá trình huấn luyện.
-Mô hình cần cả đầu vào cho bộ mã hoá và đầu vào cho bộ giải mã cùng với các đối số bổ sung tuỳ chọn.
+Mô hình cần cả đầu vào cho bộ mã hoá và đầu vào cho bộ giải mã cùng với các đối số bổ sung không bắt buộc.
 Trong quá trình tính toán, đầu tiên mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái giải mã, sau đó trả về đầu ra của bộ giải mã.
 
 
