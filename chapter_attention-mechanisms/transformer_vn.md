@@ -740,14 +740,16 @@ class TransformerDecoder(d2l.Decoder):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
+
 
 <!--
 Finally, we can build an encoder-decoder model with the Transformer architecture.
 Similar to the seq2seq with attention model in :numref:`sec_seq2seq_attention`, we use the following hyperparameters: two Transformer blocks with both the embedding size and the block output size to be $32$. In addition, we use $4$ heads, and set the hidden size to be twice larger than the output size.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta có thể xây dựng một mô hình mã hóa - giải mã với kiến ​​trúc Transformer.
+Tương tự như mô hình seq2seq áp dụng cơ chế tập trung trong :numref:`sec_seq2seq_attention`, chúng ta sử dụng các siêu tham số sau: hai khối Transformer có kích thước embedding và kích thước đầu ra là $32$. Bên cạnh đó, chúng ta sử dụng $4$ đầu trong tầng tập trung, và đặt kích thước ẩn bằng hai lần kích thước đầu ra.
 
 
 ```{.python .input  n=19}
@@ -771,13 +773,16 @@ d2l.train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 As we can see from the training time and accuracy, compared with the seq2seq model with attention model, Transformer runs faster per epoch, and converges faster at the beginning.
 -->
 
-*dịch đoạn phía trên*
+Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trong mỗi epoch và hội tụ nhanh hơn ở giai đoạn ban đầu so với mô hình seq2seq áp dụng cơ chế tập trung.
+Như chúng ta có thể nhìn thấy từ thời gian huấn luyện và chính xác, so với mô hình seq2seq với mô hình quan tâm, Transformer chạy nhanh hơn mỗi thời đại, và hội tụ nhanh hơn lúc đầu.
+
 
 <!--
 We can use the trained Transformer to translate some simple sentences.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể sử dụng Transformer đã được huấn luyện để dịch một số câu đơn giản dưới đây.
+
 
 
 ```{.python .input  n=20}
@@ -785,6 +790,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
     print(sentence + ' => ' + d2l.predict_s2s_ch9(
         model, sentence, src_vocab, tgt_vocab, num_steps, ctx))
 ```
+Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
 <!--
 ## Summary
@@ -800,7 +806,11 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * Positional encoding is the only place that adds positional information to the Transformer model.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình Transformer dựa trên kiến ​​trúc mã hóa - giải mã.
+* Tầng tập trung đa đầu gồm có $h$ tầng tập trung song song.
+* Mạng truyền xuôi theo vị trí gồm hai tầng kết nối đầy đủ được áp dụng trên chiều cuối cùng.
+* Chuẩn hoá theo tầng khác với chuẩn hoá theo batch đó là chuẩn hoá trên chiều cuối cùng (chiều đặc trưng) thay vì chiều đầu tiên (kích thước batch).
+* Biểu diễn vị trí là cách duy nhất đưa vào mô hình Transformer thông tin về vị trí trong chuỗi.
 
 
 <!--
@@ -815,7 +825,10 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 3. Compare layer normalization and batch normalization, when shall we apply which?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thử huấn luyện với số epoch lớn hơn và so sánh mất mát giữa mô hình seq2seq và mô hình Transformer.
+2. Bạn hãy thử giải thích vai trò của biểu diễn vị trí đối với Transformer?
+4. So sánh chuẩn hoá theo tầng và chuẩn hoá theo batch, khi nào chúng ta áp dụng một trong hai?
+
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
@@ -862,4 +875,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 8 -->
-*
+* Nguyễn Văn Quang
