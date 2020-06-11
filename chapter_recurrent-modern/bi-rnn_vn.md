@@ -215,7 +215,7 @@ first, use the type of functional dependencies of classical statistical models, 
 ### Definition
 -->
 
-### *dịch tiêu đề phía trên*
+### *dịch tiêu đề phía trên* 
 
 <!--
 Bidirectional RNNs were introduced by :cite:`Schuster.Paliwal.1997`.
