@@ -5,7 +5,8 @@
 # Deep Recurrent Neural Networks
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng Nơ-ron Truy Hồi Sâu
+
 
 :label:`sec_deep_rnn`
 
@@ -19,7 +20,13 @@ Within RNNs this is a bit trickier, since we first need to decide how and where 
 Our discussion below focuses primarily on LSTMs, but it applies to other sequence models, too.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay, chúng ta mới chỉ thảo luận về các mạng nơ-ron truy hồi với duy nhất một tầng ẩn đơn hướng.
+Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý.
+Đây không phải là một vấn đề lớn miễn là ta vẫn có đủ độ linh hoạt để mô hình hóa các loại tương tác khác nhau.
+Tuy nhiên, đây là một thách thức với các mạng đơn tầng.
+Trong trường hợp của perceptron, chúng ta giải quyết vấn đề này bằng cách đưa thêm nhiều tầng vào mạng.
+Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào.
+Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác.
 
 <!--
 * We could add extra nonlinearity to the gating mechanisms. 
@@ -33,7 +40,14 @@ In particular, data might be relevant at different levels of the stack.
 For instance, we might want to keep high-level data about financial market conditions (bear or bull market) available, whereas at a lower level we only record shorter-term temporal dynamics.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể bổ sung thêm các hàm phi tuyến vào các cơ chế cổng.
+Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perceptron.
+Cách này không làm thay đổi *cơ chế* của mạng LSTM mà chỉ làm nó phức tạp hơn.
+Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái tổng quát nào đó về cách các mô hình tự hồi quy biến ẩn hoạt động.
+* Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
+Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp từ nhiều tầng.
+Cụ thể là các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
+Ví dụ, chúng ta có thể muốn lưu dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
 
 <!--
 Beyond all this abstract discussion it is probably easiest to understand the family of models we are interested in by reviewing :numref:`fig_deep_rnn`.
@@ -41,13 +55,15 @@ It describes a deep recurrent neural network with $L$ hidden layers.
 Each hidden state is continuously passed to both the next timestep of the current layer and the current timestep of the next layer.
 -->
 
-*dịch đoạn phía trên*
+Ngoài cuộc thảo luận khá trừu tượng trên, để hiểu được lớp các mô hình chúng ta đang quan tâm một cách dễ dàng nhất, thì chúng ta nên xem lại :numref:`fig_deep_rnn`.
+Hình trên mô tả một mạng nơ-ron truy hồi sâu với $L$ tầng ẩn.
+Mỗi trạng thái ẩn liên tục được truyền tới bước thời gian kế tiếp ở tầng hiện tại và tới bước thời gian hiện tại ở tầng kế tiếp.
 
 <!--
 ![ Architecture of a deep recurrent neural network. ](../img/deep-rnn.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/deep-rnn.svg)
+![Kiến trúc của một mạng nơ-ron truy hồi sâu.](../img/deep-rnn.svg)
 :label:`fig_deep_rnn`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -219,7 +235,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 *
