@@ -353,14 +353,14 @@ loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 :label:`sec_seq2seq_training`
 
 <!--
 During training, if the target sequence has length $n$, we feed the first $n-1$ tokens into the decoder as inputs, and the last $n-1$ tokens are used as ground truth label.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
 
 
 ```{.python .input  n=11}
@@ -398,8 +398,8 @@ Next, we create a model instance and set hyper-parameters.
 Then, we can train the model.
 -->
 
-*dịch đoạn phía trên*
-
+Tiếp theo, ta tạo ra một thực thể mô hình và đặt các siêu tham số.
+Sau đó, ta có thể huấn luyện mô hình.
 
 ```{.python .input  n=15}
 embed_size, num_hiddens, num_layers, dropout = 32, 32, 2, 0.0
@@ -420,7 +420,7 @@ train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 ## Predicting
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 <!--
 Here we implement the simplest method, greedy search, to generate an output sequence.
@@ -428,13 +428,15 @@ As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we feed the 
 But the input token for a later timestep is the predicted token from the previous timestep.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo một chuỗi đầu ra.
+Như được minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta đưa cùng token "&lt;bos&gt;" vào bộ giải mã giống như quá trình huấn luyện tại bước thời gian 0.
+Nhưng token đầu vào cho bước thời gian sau đó sẽ là token được dự đoán từ bước thời gian trước.
 
 <!--
 ![Sequence to sequence model predicting with greedy search](../img/seq2seq_predict.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/seq2seq_predict.svg)
+![Quá trình dự đoán của mô hình chuỗi sang chuỗi với tìm kiếm tham lam](../img/seq2seq_predict.svg)
 :label:`fig_seq2seq_predict`
 
 
@@ -468,7 +470,7 @@ def predict_s2s_ch9(model, src_sentence, src_vocab, tgt_vocab, num_steps,
 Try several examples:
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ thử một vài ví dụ:
 
 
 ```{.python .input  n=17}
@@ -489,7 +491,8 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * We use multiple LSTM layers for both the encoder and the decoder.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình chuỗi sang chuỗi (_sequence to sequence_ - seq2seq) dựa trên kiến trúc mã hóa-giải mã để tạo một chuỗi đầu ra từ chuỗi đầu vào.
+* Ta sử dụng nhiều tầng LSTM cho cả bộ mã hóa và bộ giải mã.
 
 
 <!--
@@ -504,7 +507,9 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 3. If we do not use the `SequenceMask` in the loss function, what may happen?
 -->
 
-*dịch đoạn phía trên*
+1. Nêu một vài ứng dụng khác của seq2seq bên cạnh dịch máy nơ-ron.
+2. Điều gì sẽ xảy ra nếu chuỗi đầu vào trong ví dụ của phần này dài hơn?
+3. Điều gì có thể xảy ra nếu ta không sử dụng `SequenceMask` trong hàm mất mát?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -543,4 +548,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
