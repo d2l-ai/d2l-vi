@@ -50,6 +50,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Blackbox dev set        | tập phát triển Blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box            | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast               | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
+| beam search             | tìm kiếm beam                  |                                              |
 
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
