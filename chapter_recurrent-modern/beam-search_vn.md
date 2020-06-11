@@ -165,7 +165,7 @@ và loại bỏ tất cả các chuỗi sau nó để thu được một tập c
 ![The beam search process. The beam size is 2 and the maximum length of the output sequence is 3. The candidate output sequences are $A$, $C$, $AB$, $CE$, $ABD$, and $CED$. ](../img/beam-search.svg)
 -->
 
-![Quá trình tìm kiếm chùm. Kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3. Các chuỗi đầu ra tiềm năng là $A$, $C$, $AB$, $CE$, $ABD$, và $CED$.](../img/beam-search.svg)
+![Quá trình tìm kiếm chùm. Kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3. Các chuỗi đầu ra ứng viên là $A$, $C$, $AB$, $CE$, $ABD$, và $CED$.](../img/beam-search.svg)
 :label:`fig_beam-search`
 
 
