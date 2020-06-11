@@ -515,7 +515,7 @@ As shown in the code, for both of the attention model and the positional FFN mod
 This is due to the nature of the residual block, as we need to add these outputs back to the original value during "add and norm".
 -->
 Sau khi nắm được các thành phần thiết yếu của Transformer, chúng ta hãy cùng xây dựng một khối mã hoá cho Transformer.
-Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí (FFN), và hai khối kết nối "cộng và chuẩn hoá" (_add and norm_).
+Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi (FFN) theo vị trí, và hai khối kết nối "cộng và chuẩn hoá" (_add and norm_).
 Từ mã nguồn, ta thấy cả tầng tập trung và mạng FFN theo vị trí trong trong khối `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
 Điều này là do bản chất của khối phần dư khi chúng ta cộng các đầu ra này với giá trị ban đầu bằng khối "cộng và chuẩn hoá".
 
@@ -545,7 +545,7 @@ In our toy example below,  `num_hiddens` $= 24$, `ffn_num_hiddens` $=48$, `num_h
 -->
 
 Nhờ kết nối phần dư trên, khối mã hoá này sẽ không thay đổi kích thước đầu vào.
-Có nghĩa là giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng.
+Có nghĩa là giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng của đầu vào.
 Trong mô hình đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$, và `dropout` $= 0.5$.
 
 
