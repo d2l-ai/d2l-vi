@@ -245,8 +245,8 @@ As a result, we obtain 6 candidates output sequences: (1) $A$; (2) $C$; (3) $A$,
 In the end, we will get the set of final candidate output sequences based on these 6 sequences.
 -->
 
-Kết quả là, ta thu được 6 chuỗi đầu ra tiềm năng: (1) $A$; (2) $C$; (3) $A$, $B$; (4) $C$, $E$; (5) $A$, $B$, $D$; và (6) $C$, $E$, $D$.
-Cuối cùng, ta sẽ có một tập các chuỗi đầu ra tiềm năng cuối cùng dựa trên 6 chuỗi này.
+Kết quả là, ta thu được 6 chuỗi đầu ra ứng viên: (1) $A$; (2) $C$; (3) $A$, $B$; (4) $C$, $E$; (5) $A$, $B$, $D$; và (6) $C$, $E$, $D$.
+Cuối cùng, ta sẽ có một tập các chuỗi đầu ra ứng viên cuối cùng dựa trên 6 chuỗi này.
 
 <!--
 In the set of final candidate output sequences, we will take the sequence with the highest score as the output sequence from those below:
