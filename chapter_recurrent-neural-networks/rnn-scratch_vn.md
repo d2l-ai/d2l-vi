@@ -409,7 +409,7 @@ Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use 
 
 Khi thực hiện lấy mẫu tuần tự, ta chỉ khởi tạo trạng thái ẩn khi bắt đầu mỗi epoch.
 Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ trong minibatch hiện tại nên ta có thể sử dụng trực tiếp trạng thái ẩn hiện tại cho minibatch tiếp theo, chỉ cần tách gradient để tính riêng cho mỗi minibatch.
-Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần khởi tạo trạng thái ẩn cho mỗi vòng lặp vì mỗi mẫu được lấy ra ở vị trí ngẫu nhiên.
+Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần tái khởi tạo trạng thái ẩn cho mỗi vòng lặp vì mỗi mẫu được lấy ra ở vị trí ngẫu nhiên.
 Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử dụng `updater` để tổng quát hoá cả trường hợp lập trình súc tích với Gluon và lập trình từ đầu.
 
 
