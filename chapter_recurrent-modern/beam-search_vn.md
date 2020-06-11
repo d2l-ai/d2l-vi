@@ -154,11 +154,11 @@ and discard all the subsequences after it to obtain a set of final candidate out
 
 *Tìm kiếm chùm* (_beam search_) là một thuật toán cải tiến dựa trên tìm kiếm tham lam.
 Nó có một siêu tham số $k$ được gọi là *kích thước chùm* (_beam size_).
-Tại bước thời gian 1, ta chọn ra $k$ từ có xác suất có điều kiện cao nhất là từ đầu tiên của $k$ chuỗi đầu ra tiềm năng.
-Đối với mỗi bước thời gian tiếp theo, dựa trên $k$ chuỗi đầu ra tiềm năng từ bước thời gian trước đó, ta sẽ chọn $k$ chuỗi đầu ra với xác suất có điều kiện cao nhất trong tổng số $k\left|\mathcal{Y}\right|$ khả năng.
-Đây sẽ là các chuỗi đầu ra tiềm năng cho bước thời gian đó.
-Cuối cùng, ta sẽ lọc ra các chuỗi có chứa ký tự đặc biệt "&lt;eos&gt;" từ các chuỗi đầu ra tiềm năng của mỗi bước thời gian
-và loại bỏ tất cả các chuỗi sau nó để thu được một tập các chuỗi đầu ra tiềm năng cuối cùng.
+Tại bước thời gian 1, ta chọn ra $k$ từ có xác suất có điều kiện cao nhất là từ đầu tiên của $k$ chuỗi đầu ra ứng viên.
+Đối với mỗi bước thời gian tiếp theo, dựa trên $k$ chuỗi đầu ra ứng viên từ bước thời gian trước đó, ta sẽ chọn $k$ chuỗi đầu ra với xác suất có điều kiện cao nhất trong tổng số $k\left|\mathcal{Y}\right|$ khả năng.
+Đây sẽ là các chuỗi đầu ra ứng viên cho bước thời gian đó.
+Cuối cùng, ta sẽ lọc ra các chuỗi có chứa ký tự đặc biệt "&lt;eos&gt;" từ các chuỗi đầu ra ứng viên của mỗi bước thời gian
+và loại bỏ tất cả các chuỗi sau nó để thu được một tập các chuỗi đầu ra ứng viên cuối cùng.
 
 
 <!--
