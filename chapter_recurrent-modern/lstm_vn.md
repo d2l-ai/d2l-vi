@@ -440,7 +440,9 @@ Sau này ta sẽ gặp các mô hình thay thế như *Transformer* có thể đ
 * LSTMs can cope with vanishing and exploding gradients.
 -->
 
-*dịch đoạn phía trên*
+* LSTM có ba loại cổng để kiểm soát luồng thông tin: cổng đầu vào, cổng quên và cổng đầu ra.
+* Đầu ra tầng ẩn của LSTM bao gồm các trạng thái ẩn và các đơn vị nhớ. Chỉ các trạng thái ẩn được truyền tới tầng đầu ra. Các đơn vị nhớ hoàn toàn được sử dụng nội bộ trong tầng.
+* LSTM có thể đối phó với vấn đề tiêu biến và bùng nổ gradient.
 
 
 <!--
@@ -458,7 +460,13 @@ why does the hidden state need to use the $\tanh$ function again to ensure that 
 5. Implement an LSTM for time series prediction rather than character sequence prediction.
 -->
 
-*dịch đoạn phía trên*
+
+1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, độ rối rắm và đầu ra.
+2. Cần thay đổi mô hình như thế nào để sinh ra các từ hoàn chỉnh thay vì các chuỗi ký tự?
+3. So sánh chi phí tính toán của GRU, LSTM và RNN thông thường với cùng một chiều ẩn. Đặc biệt chú ý đến chi phí huấn luyện và dự đoán.
+4. Dù các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
+tại sao trạng thái ẩn vẫn phải sử dụng tiếp hàm $\tanh$ để đảm bảo rằng phạm vi giá trị đầu ra nằm trong khoảng từ $-1$ đến $1$?
+5. Lập trình một mô hình LSTM để dự đoán chuỗi thời gian thay vì dự đoán chuỗi ký tự.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -500,4 +508,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
