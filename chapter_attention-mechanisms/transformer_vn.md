@@ -413,7 +413,7 @@ Unlike the recurrent layer, both the multi-head attention layer and the position
 This feature enables us to parallelize the computation, but it fails to model the sequential information for a given sequence.
 To better capture the sequential information, the Transformer model uses the *positional encoding* to maintain the positional information of the input sequence.
 -->
-Không giống như tầng truy hồi, cả tầng tập trung đa đầu và 	mạng truyền xuôi theo vị trí tính toán đầu ra cho từng đầu vào của chuỗi một cách độc lập.
+Không giống như tầng truy hồi, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí tính toán đầu ra cho từng đầu vào của chuỗi một cách độc lập.
 Điều này cho phép chúng ta song song hoá được phép tính toán nhưng không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
 Để nắm bắt các thông tin tuần tự hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
@@ -489,7 +489,7 @@ The $5^{\mathrm{th}}$ and $6^{\mathrm{th}}$ dimensions have a lower frequency.
 -->
 
 Bây giờ chúng ta hãy kiểm tra lớp `PositionalEncoding` ở trên bằng mô hình đơn giản cho 4 chiều.
-Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng có giá trị offset khác.
+Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng khác giá trị offset.
 Chiều thứ 5 và 6 có tần số thấp hơn.
 
 
