@@ -256,7 +256,7 @@ In addition, greedy search can be treated as a beam search with a beam size of 1
 Beam search strikes a balance between computational overhead and search quality using a flexible beam size of $k$.
 -->
 
-Ở đây, $L$ là độ dài của chuỗi tiềm năng cuối cùng và $\alpha$ thường được đặt bằng 0.75.
+Ở đây, $L$ là độ dài của chuỗi ứng viên cuối cùng và $\alpha$ thường được đặt bằng 0.75.
 $L^\alpha$ trong mẫu số là hình phạt lên điểm cộng logarit cho các chuỗi dài hơn ở trên.
 Chi phí tính toán $\mathcal{O}(k\left|\mathcal{Y}\right|T')$ của tìm kiếm chùm có thể được ước lượng thông qua phân tích.
 Nó nằm trong khoảng giữa chi phí tính toán của tìm kiếm tham lam và tìm kiếm vét cạn.
