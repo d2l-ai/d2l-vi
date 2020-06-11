@@ -264,7 +264,7 @@ out.shape, len(state), state[0].shape, state[1].shape
 ## The Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Hàm Mất mát
 
 <!--
 For each timestep, the decoder outputs a vocabulary-size confidence score vector to predict words.
@@ -272,7 +272,9 @@ Similar to language modeling, we can apply softmax to obtain the probabilities a
 Note that we padded the target sentences to make them have the same length, but we do not need to compute the loss on the padding symbols.
 -->
 
-*dịch đoạn phía trên*
+Tại mỗi bước thời gian, bộ giải mã tạo ra một vector điểm tin cậy có kích thước bằng bộ từ vựng để dự đoán các từ.
+Tương tự như việc mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
+Lưu ý rằng ta đã đệm các câu đích để làm cho chúng có độ dài bằng nhau, nhưng ta không cần tính mất mát trên các ký tự đệm.
 
 <!--
 To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`.
@@ -280,7 +282,9 @@ It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1
 If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
-*dịch đoạn phía trên*
+Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
+Nó có thể được chỉ định để gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
+Nếu chiều thứ hai được chọn, với đầu vào là một vector có độ dài hợp lệ `len` và một mảng hai chiều `X`, toán tử này sẽ đặt `X[i, len[i]:] = 0` với mọi $i$.
 
 ```{.python .input  n=7}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -292,7 +296,8 @@ Apply to $n$-dim tensor $X$, it sets `X[i, len[i]:, :, ..., :] = 0`.
 In addition, we can specify the filling value such as $-1$ as shown below.
 -->
 
-*dịch đoạn phía trên*
+Áp dụng vào một tensor $n$-chiều $X$, nó sẽ đặt `X[i, len[i]:, :, ..., :] = 0`.
+Ta cũng có thể đặt một giá trị điền khác, ví dụ $-1$, như dưới đây.
 
 ```{.python .input  n=8}
 X = np.ones((2, 3, 4))
@@ -306,7 +311,11 @@ Then we can just use a zero weight for each example we would like to remove.
 So our customized loss function accepts an additional `valid_len` argument to ignore some failing elements in each sequence.
 -->
 
-*dịch đoạn phía trên*
+
+Bây giờ ta có thể lập trình phiên bản có mặt nạ của hàm mất mát entropy chéo softmax.
+Lưu ý rằng hàm mất mát Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
+Để loại bỏ một vài mẫu nhất định, ta có thể đặt trọng số cho chúng bằng 0.
+Vì vậy, hàm mất mát tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
 
 
 ```{.python .input  n=9}
@@ -327,7 +336,8 @@ For a sanity check, we create identical three sequences, keep 4 elements for the
 Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
-*dịch đoạn phía trên*
+Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
+Khi đó, giá trị mất mát của chuỗi đầu tiên phải lớn gấp 2 lần so với chuỗi thứ hai, còn giá trị mất mát của chuỗi cuối cùng phải bằng 0.
 
 
 ```{.python .input  n=10}
@@ -529,7 +539,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Phạm Minh Đức
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 5 -->
 *
