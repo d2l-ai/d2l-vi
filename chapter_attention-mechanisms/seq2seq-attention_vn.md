@@ -5,7 +5,7 @@
 # Sequence to Sequence with Attention Mechanisms
 -->
 
-# Chuỗi sang chuỗi áp dụng Cơ chế tập trung
+# Chuỗi sang Chuỗi áp dụng Cơ chế Tập trung
 :label:`sec_seq2seq_attention`
 
 <!--
@@ -17,18 +17,18 @@ The output of the attention model is viewed as the context information, and such
 Finally, we feed the concatenation into the decoder.
 -->
 
-Trong phần này, chúng tôi áp dụng cơ chế tập trung cho mô hình chuỗi sang chuỗi (seq2seq) như đã giới thiệu trong phần :numref:`sec_seq2seq` để tổng hợp lại một cách rõ ràng các trạng thái và trọng số.
-Hình :numref:`fig_s2s_attention` mô tả cấu trúc của mô hình nhằm mã hoá và giải mã tại mỗi bước thời gian $t$.
+Trong phần này, chúng ta thêm vào mô hình chuỗi sang chuỗi (seq2seq) cơ chế tập trung như đã giới thiệu trong phần :numref:`sec_seq2seq` để gộp các trạng thái theo trọng số tương ứng một cách tường minh.
+Hình :numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hoá và giải mã tại bước thời gian $t$.
 Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
 Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm truy vấn.
-Đầu ra của mô hình tập trung có thể được hiểu là thông tin về ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
+Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
 Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải mã.
 
 <!--
 ![The second timestep in decoding for the sequence to sequence model with attention mechanism.](../img/seq2seq_attention.svg)
 -->
 
-![Bước thời gian thứ 2 trong giải mã mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung](../img/seq2seq_attention.svg)
+![Quá trình giải mã tại bước thời gian thứ 2 trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung.](../img/seq2seq_attention.svg)
 :label:`fig_s2s_attention`
 
 
@@ -36,13 +36,13 @@ Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải
 To illustrate the overall architecture of seq2seq with attention model, the layer structure of its encoder and decoder is shown in :numref:`fig_s2s_attention_details`.
 -->
 
-Để minh hoạ cho cấu trúc chung của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc các tầng của bộ mã hoá và giải mã được mô tả trong hình :numref:`fig_s2s_attention_details`.
+Để minh hoạ kiến trúc tổng thể của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc tầng của bộ mã hoá và bộ giải mã được mô tả trong hình :numref:`fig_s2s_attention_details`.
 
 <!--
 ![The layers in the sequence to sequence model with attention mechanism.](../img/seq2seq-attention-details.svg)
 -->
 
-![Các tầng trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung](../img/seq2seq-attention-details.svg)
+![Các tầng trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung.](../img/seq2seq-attention-details.svg)
 :label:`fig_s2s_attention_details`
 
 ```{.python .input  n=1}
@@ -257,6 +257,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Đỗ Trường Giang
++ *Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 *
