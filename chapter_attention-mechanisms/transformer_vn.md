@@ -405,29 +405,34 @@ add_norm(np.ones((2, 3, 4)), np.ones((2, 3, 4))).shape
 ## Positional Encoding
 -->
 
-## *dịch tiêu đề phía trên*
+## Biểu diễn Vị trí
+
 
 <!--
 Unlike the recurrent layer, both the multi-head attention layer and the position-wise feed-forward network compute the output of each item in the sequence independently.
 This feature enables us to parallelize the computation, but it fails to model the sequential information for a given sequence.
 To better capture the sequential information, the Transformer model uses the *positional encoding* to maintain the positional information of the input sequence.
 -->
+Không giống như tầng truy hồi, cả tầng tập trung đa đầu và 	mạng truyền xuôi theo vị trí tính toán đầu ra cho từng đầu vào của chuỗi một cách độc lập.
+Điều này cho phép chúng ta song song hoá được phép tính toán nhưng không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
+Để nắm bắt các thông tin tuần tự hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
-*dịch đoạn phía trên*
 
 <!--
 To explain, assume that $X\in\mathbb R^{l\times d}$ is the embedding of an example, where $l$ is the sequence length and $d$ is the embedding size.
 This positional encoding layer encodes X's position $P\in\mathbb R^{l\times d}$ and outputs $P+X$.
 -->
+Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
+Tầng biểu diễn vị trí mã hoá vị trí của X thành $P\in\mathbb R^{l\times d}$ và có đầu ra là $P+X$.
 
-*dịch đoạn phía trên*
 
 <!--
 The position $P$ is a 2-D matrix, where $i$ refers to the order in the sentence, and $j$ refers to the position along the embedding vector dimension.
 In this way, each value in the origin sequence is then maintained using the equations below:
 -->
 
-*dịch đoạn phía trên*
+Biểu diễn vị trí $P$ là ma trận 2 chiều, trong đó $i$ biểu diễn thứ tự trong câu, và $j$ biểu diễn vị trí dọc trên chiều vector embedding.
+Bằng cách này, mỗi thông tin vị trí trong chuỗi nguồn được biểu biễn bởi hai phương trình dưới đây:
 
 
 $$P_{i, 2j} = \sin(i/10000^{2j/d}),$$
@@ -439,21 +444,22 @@ $$\quad P_{i, 2j+1} = \cos(i/10000^{2j/d}),$$
 for $i=0,\ldots, l-1$ and $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
 -->
 
-*dịch đoạn phía trên*
+với $i=0,\ldots, l-1$ và $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
+
 
 
 <!--
 :numref:`fig_positional_encoding` illustrates the positional encoding.
 -->
 
-*dịch đoạn phía trên*
+:numref: `fig_positional_encoding` minh họa biểu diễn vị trí $P$ của $X$.
 
 
 <!--
 ![Positional encoding.](../img/positional_encoding.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/positional_encoding.svg)
+![Biểu diễn vị trí.](../img/positional_encoding.svg)
 :label:`fig_positional_encoding`
 
 
@@ -482,7 +488,9 @@ As we can see, the $4^{\mathrm{th}}$ dimension has the same frequency as the $5^
 The $5^{\mathrm{th}}$ and $6^{\mathrm{th}}$ dimensions have a lower frequency.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy kiểm tra lớp `PositionalEncoding` ở trên bằng mô hình đơn giản cho 4 chiều.
+Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng có giá trị offset khác.
+Chiều thứ 5 và 6 có tần số thấp hơn.
 
 
 ```{.python .input  n=11}
@@ -853,7 +861,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 5 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 *
