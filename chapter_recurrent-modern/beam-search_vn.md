@@ -252,7 +252,7 @@ Cuối cùng, ta sẽ có một tập các chuỗi đầu ra ứng viên cuối 
 In the set of final candidate output sequences, we will take the sequence with the highest score as the output sequence from those below:
 -->
 
-Trong tập các chuỗi đầu ra tiềm năng cuối cùng, ta sẽ lấy chuỗi có điểm số cao nhất làm chuỗi đầu ra với điểm số cho mỗi chuỗi được tính như sau:
+Trong tập các chuỗi đầu ra ứng viên cuối cùng, ta sẽ lấy chuỗi có điểm số cao nhất làm chuỗi đầu ra với điểm số cho mỗi chuỗi được tính như sau:
 
 
 $$ \frac{1}{L^\alpha} \log P(y_1, \ldots, y_{L}) = \frac{1}{L^\alpha} \sum_{t'=1}^L \log P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}),$$
