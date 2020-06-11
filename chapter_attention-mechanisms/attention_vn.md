@@ -89,7 +89,7 @@ Different choices of the score function lead to different attention layers.
 Below, we introduce two commonly used attention layers.
 Before diving into the implementation, we first express two operators to get you up and running: a masked version of the softmax operator `masked_softmax` and a specialized dot operator `batched_dot`.
 -->
-Cách lựa chọn hàm tính điểm khác nhau tạo ra các tầng tập trung khác nhau.
+Cách lựa chọn hàm tính điểm khác nhau sẽ tạo ra các tầng tập trung khác nhau.
 Chúng tôi sẽ trình bày hai tầng tập trung thường được sử dụng dưới đây.
 Đầu tiên chúng tôi giới thiệu hai toán tử mà bạn sẽ cần khi lập trình được hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
 
