@@ -605,7 +605,8 @@ encoder(np.ones((2, 100)), valid_len).shape
 ## Decoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Giả mã
+
 
 <!--
 The Transformer decoder block looks similar to the Transformer encoder block.
@@ -615,20 +616,24 @@ Similar to the Transformer encoder block, the  Transformer decoder block employs
 i.e., the residual connections and the layer normalization to connect each of the sub-layers.
 -->
 
-*dịch đoạn phía trên*
+Khối giải mã Transformer tương tự như khối mã hoá Transformer.
+Tuy nhiên, bên cạnh hai tầng con (tầng tập trung đa đầu và mạng biểu diễn vị trí), khối giải mã Transformer còn chứa tầng con thứ ba, ở đây cơ chế tập trung trên đầu ra của bộ mã hoá được áp dụng.
+Tương tự như khối mã hóa Transformer, khối giải mã Transformer cũng sử dụng tầng "cộng và chuẩn hoá", gồm có kết nối phần dư và chuẩn hoá theo tầng được thêm vào sau mỗi tầng con.
 
 <!--
 To be specific, at timestep $t$, assume that $\mathbf x_t$ is the current input, i.e., the query.
 As illustrated in :numref:`fig_self_attention_predict`, the keys and values of the self-attention layer consist of the current query with all the past queries $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, tại bước thời gian $t$, giả sử đầu vào là truy vấn $\mathbf x_t$.
+Như minh họa trong :numref:`fig_self_attention_predict`, các khoá và giá trị của tầng tập trung gồm có truy vấn ở bước thời gian hiện tại và tất cả các truy vấn ở các bước thời gian trước $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
+
 
 <!--
 ![Predict at timestep $t$ for a self-attention layer.](../img/self-attention-predict.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/self-attention-predict.svg)
+![Dự đoán ở bước thời gian $t$ của một tầng tập trung.](../img/self-attention-predict.svg)
 :label:`fig_self_attention_predict`
 
 <!--
@@ -637,7 +642,9 @@ It results in an different behavior from prediction.
 Thus, during prediction we can eliminate the unnecessary information by specifying the valid length to be $t$ for the $t^\textrm{th}$ query.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình huấn luyện, đầu ra của truy vấn $t$ có thể quan sát được tất cả các cặp khóa - giá trị trước đó.
+Nó dẫn đến những kết quả khác nhau khi dự đoán.
+Vì thế, trong lúc dự đoán chúng ta có thể loại bỏ những thông tin không cần thiết bằng cách xác định rõ độ dài hợp lệ $t$ cho truy vấn thứ $t$.
 
 
 ```{.python .input  n=16}
@@ -682,7 +689,9 @@ class DecoderBlock(nn.Block):
 Similar to the Transformer encoder block, `num_hiddens` should be equal to the last dimension size of $X$.
 -->
 
-*dịch đoạn phía trên*
+
+Tương tự khối mã hóa Transformer, `num_hiddens` bằng với kích thước chiều cuối cùng của $X$.
+
 
 ```{.python .input  n=17}
 decoder_blk = DecoderBlock(24, 48, 8, 0.5, 0)
@@ -696,14 +705,17 @@ decoder_blk(X, state)[0].shape
 The construction of the entire Transformer decoder is identical to the Transformer encoder, except for the additional dense layer to obtain the output confidence scores.
 -->
 
-*dịch đoạn phía trên*
+Lập trình bộ giải mã Transformer đầy đủ tương tự như với bộ mã hoá Transformer, ngoại trừ tầng kết nối đầy đủ được thêm vào để thu được các giá trị đầu ra.
+
 
 <!--
 Let us implement the Transformer decoder `TransformerDecoder`.
 Besides the regular hyperparameters such as the `vocab_size` and `num_hiddens`, the Transformer decoder also needs the Transformer encoder's outputs `enc_outputs` and `env_valid_len`.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy cùng lập trình bộ giải mã Transformer `TransformerDecoder`.
+Bên cạnh `vocab_size` và `num_hiddens` như mọi khi, bộ giải mã Transformer có thêm những siêu tham số khác như kích thước đầu ra của bộ mã hoá Transformer `enc_outputs` và kích thước độ dài hợp lệ `env_valid_len`.
+
 
 
 ```{.python .input  n=18}
@@ -859,7 +871,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 7 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 8 -->
 *
