@@ -69,7 +69,7 @@ $$\mathbf{b} = \mathrm{softmax}(\mathbf{a})\quad \text{, where }\quad
 Finally, the output is a weighted sum of the values:
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, đầu ra của tầng là tổng trọng số của các giá trị:
 
 
 $$\mathbf o = \sum_{i=1}^n b_i \mathbf v_i.$$
@@ -79,7 +79,7 @@ $$\mathbf o = \sum_{i=1}^n b_i \mathbf v_i.$$
 ![The attention output is a weighted sum of the values.](../img/attention_output.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/attention_output.svg)
+![Đầu ra của tầng tập trung là tổng trọng số của các giá trị.](../img/attention_output.svg)
 :label:`fig_attention_output`
 
 
@@ -89,8 +89,9 @@ Different choices of the score function lead to different attention layers.
 Below, we introduce two commonly used attention layers.
 Before diving into the implementation, we first express two operators to get you up and running: a masked version of the softmax operator `masked_softmax` and a specialized dot operator `batched_dot`.
 -->
-
-*dịch đoạn phía trên*
+Cách lựa chọn hàm tính điểm dẫn khác nhau tạo ra các tầng tập trung khác nhau.
+Dưới đây, chúng ta sẽ trình bày hai tầng tập trung thường được sử dụng.
+Đầu tiên chúng ta sẽ giới thiệu hai toán tử cần thiết để giúp bạn có thể lập trình được hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
 
 
 ```{.python .input  n=1}
@@ -107,7 +108,10 @@ As a result, any value outside the valid length will be masked as $0$.
 Let us implement the `masked_softmax` function.
 -->
 
-*dịch đoạn phía trên*
+Toán tử softmax có mặt nạ nhận đầu vào là một tensor 3 chiều và cho phép chúng ta có thể lọc ra một số phần tử bằng cách xác định độ dài hợp lệ cho chiều cuối cùng. (Tham khảo :numref:`sec_machine_translation` về định nghĩa của độ dài hợp lệ).
+Do đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$.
+
+Chúng ta hãy lập trình hàm `masked_softmax` như sau.
 
 
 ```{.python .input  n=6}
@@ -134,7 +138,9 @@ In addition, we specify that the valid length equals to 2 for the first example,
 Then, as we can see from the following outputs, the values outside valid lengths are masked as zero.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cách hàm trên hoạt động, chúng ta hãy khởi tạo hai ma trận đầu vào kích thước là $2 \times 4$.
+Bên cạnh đó, chúng ta sẽ gán độ dài hợp lệ cho mẫu thứ nhất là 2 và mẫu thứ hai là 3.
+Từ đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$ như đầu ra dưới đây.
 
 
 ```{.python .input  n=5}
@@ -146,7 +152,8 @@ Moreover, the second operator `batched_dot` takes two inputs $X$ and $Y$ with sh
 To be specific, it computes $b$ dot products for $i= \{1,\ldots, b\}$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Ngoài ra, toán tử thứ hai `batched_dot` nhận hai đầu vào là $X$ và $Y$ có kích thước lần lượt là $(b, n, m)$ và $(b, m, k)$, và trả về đầu ra có kích thước là $(b, n, k)$.
+Cụ thể, toán tử này tính $b$ tích vô hướng cho từng $i= \{1,\ldots, b\}$ như sau:
 
 
 $$Z[i,:,:] = X[i,:,:]  Y[i,:,:].$$
@@ -369,7 +376,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 *
