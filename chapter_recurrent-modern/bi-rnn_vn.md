@@ -16,7 +16,7 @@ While this is a typical scenario, it is not the only one we might encounter.
 To illustrate the issue, consider the following three tasks of filling in the blanks in a text:
 -->
 Cho đến nay ta giả định mục tiêu là để mô hình hoá bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ.
-Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta gặp phải.
+Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta có thể gặp.
 Để minh họa cho vấn đề này, hãy xem xét ba tác vụ điền vào chỗ trống dưới đây:
 
 
