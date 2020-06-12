@@ -303,10 +303,10 @@ A good language model is able to predict with high accuracy tokens that what we 
 Consider the following continuations of the phrase "It is raining", as proposed by different language models:
 -->
 
-Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi. 
-Một cách đó là kiểm tra độ ngạc nhiên của văn bản. 
-Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây. 
-Hãy xem xét các phần tiếp theo của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
+Cuối cùng, hãy thảo luận về cách đo lường chất lượng của mô hình chuỗi. 
+Một cách để làm việc này là kiểm tra mức độ gây ngạc nhiên của văn bản. 
+Một mô hình ngôn ngữ tốt có thể dự đoán chính xác các token tiếp theo. 
+Hãy xem xét các cách điền tiếp vào câu "Trời đang mưa" sau, được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
 <!--
 1. "It is raining outside"
@@ -330,11 +330,11 @@ Last, example 3 indicates a poorly trained model that does not fit data properly
 
 Về chất lượng, ví dụ 1 rõ ràng là tốt nhất. 
 Các từ được sắp xếp hợp lý và mạch lạc về mặt logic. 
-Mặc dù nó có thể không phản ánh chính xác hoàn toàn mặt ngữ nghĩa của các từ theo sau ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn), 
-mô hình vẫn có thể nắm bắt loại từ của chúng. 
-Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa. 
-Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được sự tương quan giữa các từ ở một mức độ nhất định. 
-Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu. 
+Mặc dù nó có thể không phản ánh chính xác hoàn toàn mặt ngữ nghĩa của các từ theo sau ("ở San Francisco" và "vào mùa đông" cũng là các phần mở rộng hoàn toàn hợp lý), 
+mô hình vẫn có thể nắm bắt những từ nghe khá phù hợp. 
+Ví dụ 2 thì tệ hơn đáng kể, mô hình này đã tạo ra một phần mở rộng vô nghĩa. 
+Tuy nhiên, ít nhất mô hình đã viết đúng chính tả và học được phần nào sự tương quan giữa các từ. 
+Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không khớp được dữ liệu. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -350,9 +350,9 @@ a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Pri
 
 Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi. 
 Thật không may, đây là một con số khó để hiểu và so sánh. 
-Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài, 
+Xét cho cùng, các chuỗi ngắn có khả năng xuất hiện cao hơn các chuỗi dài, 
 do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ cho kết quả thấp hơn nhiều so với tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
-Thứ còn thiếu là sự tương đương của một phép tính trung bình. 
+Thứ còn thiếu là một phép tính tương đương với phép trung bình. 
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -363,9 +363,9 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`. 
+Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm về nó trong :numref:`sec_information_theory`. 
 Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại. 
-Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$. 
+Số lượng bit tối thiểu cần thiết là $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$. 
 Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp. 
 Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng. 
 
@@ -377,9 +377,9 @@ For historical reasons, scientists in natural language processing prefer to use 
 In a nutshell, it is the exponential of the above:
 -->
 
-Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được. 
-Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là tốc độ bit (_bitrate_). 
-Tóm lại, nó là luỹ thừa của biểu thức trên:
+Điều này giúp ta so sánh được chất lượng mô hình trên các tài liệu có độ dài khác nhau. 
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) thay vì tốc độ bit (_bitrate_). 
+Nói ngắn gọn, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
 
@@ -391,9 +391,9 @@ Let us look at a number of cases:
 -->
 
 Giá trị này có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn thực tế mà ta có khi quyết định chọn từ nào là từ tiếp theo. 
-Lưu ý rằng độ rối rắm khái quát lên hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax một cách tự nhiên (:numref:`sec_softmax`). 
-Đó là, chỉ với một khác biệt duy nhất trong ký hiệu, cái này trở thành luỹ thừa của cái kia.
-Chúng ta hãy xem xét một số trường hợp:
+Lưu ý rằng độ rối rắm khái quát hóa một cách tự nhiên ý tưởng của hàm mất mát entropy chéo định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`). 
+Điều này có nghĩa là khi xét một ký hiệu duy nhất, độ rối rắm chính là lũy thừa của entropy chéo.
+Hãy cùng xem xét một số trường hợp:
 
 <!--
 * In the best case scenario, the model always estimates the probability of the next symbol as $1$. In this case the perplexity of the model is $1$.
@@ -402,10 +402,10 @@ Chúng ta hãy xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong tình huống này, độ rối rắm của mô hình là $1$. 
-* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của ký hiệu tiếp theo là $1$. Khi đó độ rối rắm của mô hình là $1$. 
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của nhãn là 0. Khi đó độ rối rắm là vô hạn.
 * Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
-* Trong thực tế, nếu chúng ta lưu trữ chuỗi không nén, đây là cách tốt nhất ta có thể làm để mã hóa nó. Vì vậy, nó trở thành mức giới hạn trên mà bất kỳ mô hình nào cũng phải đáp ứng với mức độ rối rắm thấp hơn.
+* Thực chất, nếu chúng ta lưu trữ chuỗi không nén, đây là cách tốt nhất có thể để mã hóa chúng. Vì vậy, nó cho ta một cận trên mà bất kỳ mô hình nào cũng phải thỏa mãn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
