@@ -152,7 +152,7 @@ $$\begin{aligned}
 We can thus write the *backward recursion* as
 -->
 
-Từ đó, chúng ta có thể viết lại *đệ quy ngược* như sau
+Từ đó, chúng ta có thể viết *đệ quy ngược* như sau
 
 
 $$\rho_{t-1}(h_{t-1})= \sum_{h_{t}} p(h_{t} \mid h_{t-1}) p(x_{t} \mid h_{t}) \rho_{t}(h_{t}),$$
