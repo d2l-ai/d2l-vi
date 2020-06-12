@@ -23,7 +23,7 @@ All the subsequences after the special symbol "&lt;eos&gt;" in these output sequ
 Besides, we still denote the context vector as $\mathbf{c}$, which encodes information of all the hidden states from the input.
 -->
 
-Như trong :numref:`sec_machine_translation`, khi chuẩn bị huấn luyện dữ liệu, chúng ta thường thêm vào kí hiệu đặc biệt "&lt;eos&gt;" sau mỗi câu để biểu thị sự kết thúc của câu.
+Như trong :numref:`sec_machine_translation`, khi chuẩn bị dữ liệu huấn luyện, chúng ta thường thêm kí hiệu đặc biệt "&lt;eos&gt;" vào sau mỗi câu để biểu thị sự kết thúc của câu.
 Chúng ta sẽ tiếp tục sử dụng ký hiệu toán học trên trong phần thảo luận ở dưới đây.
 Để thuận tiện, giả sử rằng đầu ra của bộ giải mã là một chuỗi văn bản.
 Gọi kích thước của bộ từ điển ở đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
