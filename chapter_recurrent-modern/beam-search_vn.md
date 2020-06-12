@@ -25,7 +25,7 @@ Besides, we still denote the context vector as $\mathbf{c}$, which encodes infor
 
 Như trong :numref:`sec_machine_translation`, khi chuẩn bị huấn luyện dữ liệu, chúng ta thường thêm vào kí hiệu đặc biệt "&lt;eos&gt;" sau mỗi câu để biểu thị sự kết thúc của câu.
 Chúng ta sẽ tiếp tục sử dụng ký hiệu toán học trên. Để thuận tiện, giả sử rằng đầu ra của bộ giải mã là một chuỗi kí tự.
-Gọi kích thước đầu ra của bộ từ điển đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
+Gọi kích thước của bộ từ điển ở đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
 Có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ loại chuỗi đầu ra có thể có.
 Tất những chuỗi con sau kí tự đặc biệt "&lt;eos&gt;" trong những chuỗi đầu ra sẽ bị bỏ đi.
 Bên cạnh đó, ta ký hiệu vector ngữ cảnh mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào là $\mathbf{c}$.
