@@ -65,7 +65,7 @@ The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
 Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$.
 Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$.
-Mô hình đồ thị được sử dụng mà mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
+Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
 
 
 <!--
