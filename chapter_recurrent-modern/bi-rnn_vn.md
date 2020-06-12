@@ -215,7 +215,7 @@ first, use the type of functional dependencies of classical statistical models, 
 ### Definition
 -->
 
-### *dịch tiêu đề phía trên* 
+### Định nghĩa
 
 <!--
 Bidirectional RNNs were introduced by :cite:`Schuster.Paliwal.1997`.
@@ -224,8 +224,8 @@ Let us look at the specifics of such a network.
 -->
 
 Các mạng nơ-ron truy hồi hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
-Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` để biết về thảo luận chi tiết của các kiến trúc khác nhau.
-Còn giờ ta hãy đi vào chi tiết mạng này.
+Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` về những thảo luận chi tiết của các kiến trúc khác nhau.
+Còn giờ ta hãy đi vào chi tiết của một mạng như vậy.
 
 <!--
 For a given timestep $t$, the minibatch input is $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (number of examples: $n$, number of inputs: $d$) and the ßßhidden layer activation function is $\phi$.
@@ -263,8 +263,8 @@ In deep bidirectional RNNs, the information is passed on as *input* to the next 
 Last, the output layer computes the output $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (number of outputs: $q$):
 -->
 
-Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và đưa nó đến tầng đầu ra.
-Trong các mạng nơ-ron truy hồi sâu hai chiều, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
+Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và truyền nó đến tầng đầu ra.
+Trong các mạng nơ-ron truy hồi hai chiều sâu, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
 Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau:
 
 
