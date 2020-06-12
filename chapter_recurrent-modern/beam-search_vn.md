@@ -77,7 +77,7 @@ The conditional probability of this output sequence is $0.5\times0.4\times0.4\ti
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep, respectively.  At each timestep, greedy search selects the word with the highest conditional probability. ](../img/s2s-prob1.svg)
 -->
 
-![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại mỗi bước thời gian, tìm kiếm tham lam sẽ chọn từ có xác suất cao nhất.](../img/s2s-prob1.svg)
+![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại từng thời gian tương ứng. Tại mỗi bước thời gian, phương pháp tìm kiếm tham lam sẽ chọn từ có xác suất cao nhất.](../img/s2s-prob1.svg)
 :label:`fig_s2s-prob1`
 
 
