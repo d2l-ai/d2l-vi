@@ -34,7 +34,7 @@ In this chapter, we will provide you with some intuition about how to transform 
 -->
 
 Tuy nhiên, chúng ta sẽ không đi sâu vào thuyết tập trung trong ngành thần kinh học mà sẽ tìm hiểu cách áp dụng ý tưởng về cơ chế tập trung trong học sâu. Ở đây, cơ chế tập trung có thể coi là khái quát hoá của phép gộp với hiệu chỉnh độ chệch trên giá trị đầu vào.
-Trong chương này, chúng tôi sẽ cung cấp cho bạn kiến thức để biến ý tưởng về cơ chế tập trung thành các mô hình toán học cụ thể và lập trình chúng.
+Trong chương này, chúng tôi sẽ cung cấp cho bạn kiến thức để biến ý tưởng về cơ chế tập trung thành các mô hình toán học cụ thể có thể hoạt động được.
 
 ```toc
 :maxdepth: 2
