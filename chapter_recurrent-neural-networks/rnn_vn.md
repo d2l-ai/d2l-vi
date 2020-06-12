@@ -210,7 +210,7 @@ Therefore, the number of RNN model parameters does not grow as the number of tim
 -->
 
 Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
-Lưu ý rằng RNN luôn sử dùng cùng tham số mô hình cho dù tính toán ở các bước thời gian khác nhau. 
+Lưu ý rằng RNN luôn sử dùng cùng một bộ tham số mô hình cho dù tính toán ở các bước thời gian khác nhau. 
 Vì thế, việc tăng số bước thời gian không làm tăng lượng tham số mô hình của RNN. 
 
 <!--
@@ -224,11 +224,11 @@ What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully
 -->
 
 :numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề. 
-Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, ta có thể coi việc tính toán trạng thái ẩn tương tự như việc tính toán trong một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
+Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, ta có thể coi nó như đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
 Đầu ra của tầng kết nối đầy đủ chính là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$. 
 Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, cùng với hệ số điều chỉnh $\mathbf{b}_h$. 
 Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$ được sử dụng để tính trạng thái ẩn $\mathbf{H}_{t+1}$ tại bước thời gian kế tiếp $t+1$. 
-Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$. 
+Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra $\mathbf{O}_t$, một tầng kết nối đầy đủ, ở bước thời gian hiện tại. 
 
 <!--
 ![An RNN with a hidden state. ](../img/rnn.svg)
@@ -266,8 +266,8 @@ Vì dùng từ thường dễ hiểu hơn dùng chữ, nên các từ sẽ đư�
 Đặt kích thước minibatch là 1, với chuỗi văn bản là phần đầu của tập dữ liệu: "the time machine by H. G. Wells". 
 :numref:`fig_rnn_train` minh họa cách ước lượng từ tiếp theo dựa trên từ hiện tại và các từ trước đó. 
 Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian, 
-và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
-Do việc tính toán truy hồi của trạng thái ẩn trong tầng ẩn, đầu ra của bước thời gian thứ 3, 
+sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
+Do trạng thái ẩn trong tầng ẩn được tính toán truy hồi, đầu ra của bước thời gian thứ 3, 
 $\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine". 
 Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", giá trị mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
 phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" tại bước thời gian này. 
