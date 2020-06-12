@@ -39,7 +39,7 @@ For instance, to do well in named entity recognition (e.g., to recognize whether
 To get some inspiration for addressing the problem let us take a detour to graphical models.
 -->
 Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "đang".
-Rõ ràng phần kết thúc của (nếu có) mang thông tin quan trọng về việc nên chọn từ nào.
+Rõ ràng phần kết (nếu có) của câu mang thông tin quan trọng về từ nên chọn.
 Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này.
 Chẳng hạn như để nhận dạng thực thể có tên (ví dụ: phân biệt từ "Bảy" đề cập đến "ông Bảy" hay là số bảy) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
 Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên.
