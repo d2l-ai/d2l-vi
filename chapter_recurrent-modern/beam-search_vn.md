@@ -47,7 +47,7 @@ $$y_{t'} = \operatorname*{argmax}_{y \in \mathcal{Y}} P(y \mid y_1, \ldots, y_{t
 <!--
 as the output.  Once the "&lt;eos&gt;" symbol is detected, or the output sequence has reached its maximum length $T'$, the output is completed.
 -->
-làm đầu ra. Một khi gặp kí tự "&lt;eos&gt;", hoặc chuỗi đầu ra đạt chiều dài tối đa $T'$ của nó, kết quả đầu ra được hoàn thành.
+Một khi gặp kí tự "&lt;eos&gt;" hoặc chuỗi đầu ra đạt chiều dài tối đa $T'$, kết quả đầu ra được hoàn thành.
 <!--
 As we mentioned in our discussion of the decoder, the conditional probability of generating an output sequence based on the input sequence is 
 $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
