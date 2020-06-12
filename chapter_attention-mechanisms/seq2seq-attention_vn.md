@@ -63,7 +63,7 @@ We add an MLP attention layer (`MLPAttention`) which has the same hidden size as
 Then we initialize the state of the decoder by passing three items from the encoder:
 -->
 
-Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong phần :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
+Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
 Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
 Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
