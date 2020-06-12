@@ -68,7 +68,7 @@ The conditional probability of this output sequence is $0.5\times0.4\times0.4\ti
 -->
 Xem xét ví dụ bên dưới.
 Giả sử chúng ta có bốn từ "A", "B", "C", và "&lt;eos&gt;" trong từ điển đầu ra.
-Bốn con số dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` biểu diễn xác suất có điều kiện của việc tạo ra "A", "B", "C", và "&lt;eos&gt;" tại mỗi bước thời gian.
+Bốn con số dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` biểu diễn xác suất có điều kiện của việc tạo ra "A", "B", "C", và "&lt;eos&gt;" tương ứng với bước thời gian đó.
 Tại mỗi bước thời gian, tìm kiếm tham lam chọn từ có xác suất có điều kiện cao nhất.
 Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" được tạo ra như trong :numref:`fig_s2s-prob1`.
 Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\times0.4\times0.6 = 0.048$.
