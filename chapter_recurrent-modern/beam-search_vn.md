@@ -129,7 +129,7 @@ For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we only need to evaluate $1
 Mặc dù chúng ta có thể sử dụng thuật toán tìm kiếm vét cạn để tìm chuỗi tối ưu, nhưng chi phí tính toán của nó $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ là quá cao.
 Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta cần kiểm tra $10000^{10} = 10^{40}$ chuỗi.
 Điều này gần như là bất khả thi.
-Chi phí tính toán của tìm kiếm tham lam là $\mathcal{O}(\left|\mathcal{Y}\right|T')$, ít hơn chi phí của phương pháp vét cạn.
+Chi phí tính toán của tìm kiếm tham lam là $\mathcal{O}(\left|\mathcal{Y}\right|T')$, thường là ít hơn cả chi phí cho phần phụ trợ ban đầu của phương pháp vét cạn.
 Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta chỉ cần kiểm tra $10000\times10=1\times10^5$ chuỗi.
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
