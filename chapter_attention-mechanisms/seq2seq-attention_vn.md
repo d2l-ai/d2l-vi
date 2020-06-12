@@ -65,7 +65,7 @@ Then we initialize the state of the decoder by passing three items from the enco
 
 Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong phần :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
 Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
-Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách đưa vào ba tham số từ bộ mã hoá:
+Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
 <!--
 - **the encoder outputs of all timesteps**: they are used as the attention layer's memory with identical keys and values;
@@ -100,7 +100,7 @@ Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ 
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
 -->
 
-Hãy cùng lập trình hàm `Seq2SeqAttentionDecoder` và xem xét sự khác biết của nó so với bộ giải mã trong seq2seq ở phần :numref:`sec_seq2seq_decoder`.
+Hãy cùng lập trình bộ giải mã `Seq2SeqAttentionDecoder` và xem xét sự khác biệt của nó so với bộ giải mã trong mô hình seq2seq ở :numref:`sec_seq2seq_decoder`.
 
 
 ```{.python .input  n=2}
@@ -145,7 +145,7 @@ As a result, we get the same decoder output shape, but the state structure is ch
 -->
 
 Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
-Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong phần :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
+Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
 Kết quả, ta thu được đầu ra của bộ giải mã có cùng kích thước nhưng khác về cấu trúc trạng thái.
 
 
