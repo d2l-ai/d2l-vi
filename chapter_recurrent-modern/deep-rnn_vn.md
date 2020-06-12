@@ -201,8 +201,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng chúng ta đã thảo luận ở :numref:`sec_rnn_scratch`.
 2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình.
-3. Hãy tăng dữ liệu huấn luyện từ nhiều cuốn sách. 
-3. Tăng dữ liệu huấn luyện bao gồm nhiều cuốn sách. Hãy xem bạn có thể giảm độ hỗn loạn tới mức nào?
+3. Tăng dữ liệu huấn luyện lên gồm nhiều cuốn sách. Hãy xem bạn có thể giảm độ hỗn loạn tới mức nào?
 4. Hãy thử kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản. Tại sao cách này lại là một ý tưởng hay? Hay cách này có vấn đề gì?
 
 
