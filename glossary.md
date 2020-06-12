@@ -347,7 +347,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | quadratic             | toàn phương           | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic form        | dạng toàn phương      | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic programming | quy hoạch toàn phương |                                              |
-| query                 | truy vấn              |                                              |
+| query                 | (câu) truy vấn              |                                              |
 
 ## R
 | English                           | Tiếng Việt                                | Thảo luận tại                                |
