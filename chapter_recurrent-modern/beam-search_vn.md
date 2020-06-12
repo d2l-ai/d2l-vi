@@ -99,7 +99,7 @@ Không giống như trong :numref:`fig_s2s-prob1`, :numref:`fig_s2s-prob2` chọ
 Vì bước thời gian 3 phụ thuộc vào bước thời gian 1 và 2, mà chuỗi con đầu ra của hai bước thời gian này được thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, nên xác suất có điều kiện của mỗi từ được sinh ra tại bước thời gian 3 cũng thay đổi trong :numref:`fig_s2s-prob2`.
 Chúng ta chọn "B", từ có xác suất có điều kiện cao nhất.
 Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên sẽ là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
-Xác suất có điều kiện của chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" tại bước thời gian hiện tại là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của mà chúng ta có được từ phương pháp tìm kiếm tham lam.
+Xác suất có điều kiện của chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" tại bước thời gian hiện tại là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của chuỗi được sinh ra dựa trên phương pháp tìm kiếm tham lam.
 Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ phương pháp tìm kiếm tham lam không phải là chuỗi tối ưu.
 <!--
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep.  At timestep 2, the word "C", which has the second highest conditional probability, is selected.](../img/s2s-prob2.svg)
