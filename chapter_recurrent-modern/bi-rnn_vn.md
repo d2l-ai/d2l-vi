@@ -43,14 +43,17 @@ To get some inspiration for addressing the problem let us take a detour to graph
 ## Dynamic Programming
 -->
 
-## *dịch tiêu đề phía trên*
+## Quy hoạch Động
+
 
 <!--
 This section serves to illustrate the dynamic programming problem.
 The specific technical details do not matter for understanding the deep learning counterpart but they help in motivating why one might use deep learning and why one might pick specific architectures.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động.
+Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
+
 
 <!--
 If we want to solve the problem using graphical models we could for instance design a latent variable model as follows.
@@ -59,20 +62,25 @@ Moreover, the transitions $h_t \to h_{t+1}$ are given by some state transition p
 The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 -->
 
-*dịch đoạn phía trên*
+Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
+Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$.
+Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$.
+Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
+
 
 <!--
 ![ Hidden Markov Model. ](../img/hmm.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/hmm.svg)
+![Mô hình Markov ẩn.](../img/hmm.svg)
 :label:`fig_hmm`
 
 <!--
 Thus, for a sequence of $T$ observations we have the following joint probability distribution over observed and hidden states:
 -->
 
-*dịch đoạn phía trên*
+Như vậy, với chuỗi có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn và các quan sát như sau:
+
 
 $$p(x, h) = p(h_1) p(x_1 \mid h_1) \prod_{t=2}^T p(h_t \mid h_{t-1}) p(x_t \mid h_t).$$
 
@@ -85,8 +93,12 @@ To see how it works, consider summing over the first two hidden variable $h_1$ a
 This yields:
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ giả sử chúng ta đã có tất cả các quan sát $x_i$ ngoại trừ một vài quan sát $x_j$, mục tiêu là tính xác suất $p(x_j \mid x^{-j})$, trong đó $x^{-j} = (x_1, x_2, \ldots, x_{j-1})$.
+Để thực hiện điều này, chúng ta cần tính tổng xác suất trên tất cả các khả năng có thể của $h = (h_1, \ldots, h_T)$.
+Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm vụ bất khả thi.
+May mắn thay có một phương pháp rất hiệu quả cho bài toán trên, đó là quy hoạch động. 
+Để hiểu hơn về phương pháp này, hãy xem xét tổng của hai biến ẩn đầu tiên $h_1$ và $h_2$.
+Ta có:
 
 $$\begin{aligned}
     p(x) & = \sum_{h_1, \ldots, h_T} p(x_1, \ldots, x_T; h_1, \ldots, h_T) \\
@@ -104,7 +116,7 @@ $$\begin{aligned}
 In general we have the *forward recursion* as
 -->
 
-*dịch đoạn phía trên*
+Cơ bản, chúng ta có công thức *đệ quy xuôi* như sau:
 
 
 $$\pi_{t+1}(h_{t+1}) = \sum_{h_t} \pi_t(h_t) p(x_t \mid h_t) p(h_{t+1} \mid h_t).$$
@@ -118,7 +130,10 @@ Entirely analogously to the forward recursion, we can also start a backward recu
 This yields:
 -->
 
-*dịch đoạn phía trên*
+Phép đệ quy được khởi tạo với $\pi_1(h_1) = p(h_1)$.
+Nói chung, công thức đệ quy có thể được viết lại là $\pi_{t+1} = f(\pi_t, x_t)$, trong đó $f$ là một hàm chứa tham số được học.
+Trông rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN.
+Tương tự, chúng ta có thể tính *đệ quy ngược* như sau:
 
 
 $$\begin{aligned}
@@ -137,7 +152,7 @@ $$\begin{aligned}
 We can thus write the *backward recursion* as
 -->
 
-*dịch đoạn phía trên*
+Từ đó, chúng ta có thể viết *đệ quy ngược* như sau
 
 
 $$\rho_{t-1}(h_{t-1})= \sum_{h_{t}} p(h_{t} \mid h_{t-1}) p(x_{t} \mid h_{t}) \rho_{t}(h_{t}),$$
@@ -416,7 +431,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 *
