@@ -559,7 +559,7 @@ Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể m�
 
 1. Chỉ ra rằng mỗi biễu diễn one-hot tương đương với một embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
-    * Bạn có thể giảm độ rối rắm xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
+    * Bạn có thể giảm perplexity xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
     * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
