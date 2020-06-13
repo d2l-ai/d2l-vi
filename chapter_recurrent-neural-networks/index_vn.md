@@ -13,7 +13,7 @@ its content of something that would look much like the background of a test patt
 -->
 
 Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector tổng quát và hình ảnh.
-Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy (_regularity property_) của hình ảnh.
+Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy (*regularity property*) của hình ảnh.
 Nói cách khác, nếu ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các khuôn mẫu kiểm tra (*test pattern*) hay thấy trong truyền hình analog, và rất khó để suy luận về nội dung của chúng.
 
 <!--
@@ -79,3 +79,7 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Phạm Minh Đức
+* Nguyễn Văn Cường

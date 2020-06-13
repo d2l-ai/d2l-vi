@@ -60,7 +60,7 @@ For now, suffice it to say that multiple layers simply amount to the output of o
 
 Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
 Phương thức này trả về một trạng thái ban đầu cho mỗi phần tử trong minibatch, có kích thước là (số tầng ẩn, kích thước batch, số nút ẩn).
-Số tầng ẩn mặc định là 1. 
+Số tầng ẩn mặc định là 1.
 Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
 Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
 
@@ -153,7 +153,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Compared with the last section, this model achieves comparable perplexity, albeit within a shorter period of time, due to the code being more optimized.
 -->
 
-So với phần trước, mô hình này đạt được độ rối rắm tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
+So với phần trước, mô hình này đạt được perplexity tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
 
 <!--
 ## Summary
@@ -215,17 +215,8 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc

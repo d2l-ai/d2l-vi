@@ -59,7 +59,7 @@ Tương tự, một thuật toán tóm tắt tài liệu nên phân biệt đư�
 ## Estimating a Language Model
 -->
 
-## Ước tính một mô hình ngôn ngữ
+## Ước tính một Mô hình Ngôn ngữ
 
 <!--
 The obvious question is how we should model a document, or even a sequence of words.
@@ -144,9 +144,9 @@ Một kỹ thuật phổ biến là làm mượt Laplace (*Laplace smoothing*).
 Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm như sau
 
 $$\begin{aligned}
-\t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
-\t\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
-\t\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
+\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
+\hat{p}(w' \mid w) & = \frac{n(w, w') + \epsilon_2 \hat{p}(w')}{n(w) + \epsilon_2}, \\
+\hat{p}(w'' \mid w',w) & = \frac{n(w, w',w'') + \epsilon_3 \hat{p}(w',w'')}{n(w, w') + \epsilon_3}.
 \end{aligned}$$
 
 
@@ -224,7 +224,7 @@ Sau đây, chúng ta sẽ tìm hiểu cách thiết kế các mô hình tốt h�
 ## Natural Language Statistics
 -->
 
-## Thống kê ngôn ngữ tự nhiên
+## Thống kê Ngôn ngữ Tự nhiên
 
 <!--
 Let us see how this works on real data.
@@ -233,6 +233,7 @@ We construct a vocabulary based on the time machine data similar to :numref:`sec
 
 Hãy cùng xem mô hình hoạt động thế nào trên dữ liệu thực tế.
 Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu "cỗ máy thời gian" tương tự như ở :numref:`sec_text_preprocessing` và in ra $10$ từ có tần suất xuất hiện cao nhất.
+
 
 ```{.python .input  n=1}
 import d2l
@@ -244,6 +245,7 @@ tokens = d2l.tokenize(d2l.read_time_machine())
 vocab = d2l.Vocab(tokens)
 print(vocab.token_freqs[:10])
 ```
+
 
 <!--
 As we can see, the most popular words are actually quite boring to look at.
@@ -261,11 +263,13 @@ Tuy nhiên, rõ ràng là tần số của từ suy giảm khá nhanh.
 Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $ 1/5 $ lần so với từ phổ biến nhất.
 Để hiểu rõ hơn, chúng ta sẽ vẽ đồ thị tần số của từ.
 
+
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
 d2l.plot(freqs, xlabel='token: x', ylabel='frequency: n(x)',
          xscale='log', yscale='log')
 ```
+
 
 <!--
 We are on to something quite fundamental here: the word frequency decays rapidly in a well defined way.
@@ -275,10 +279,12 @@ This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27
 
 Chúng ta đang tiến gần tới một đặc điểm cơ bản: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
 Ngoại trừ bốn từ đầu tiên ('the', 'i', 'and', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
-Theo đó các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), tức là tần suất xuất hiện của từ được xác định bởi
+Theo đó các từ tuân theo định luật [Zipf](https://en.wikipedia.org/wiki/Zipf's_law), tức là tần suất xuất hiện của từ được xác định bởi
+
 
 $$n(x) \propto (x + c)^{-\alpha} \text{ và~do~đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
+
 
 <!--
 This should already give us pause if we want to model words by count statistics and smoothing.
@@ -292,12 +298,14 @@ Rốt cuộc, chúng ta sẽ ước tính quá cao những từ có tần suất
 Vậy còn các tổ hợp từ khác như 2-gram, 3-gram và nhiều hơn thì sao?
 Hãy xem liệu tần số của bigram có tương tự như unigram hay không.
 
+
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
     line[:-1], line[1:])] for line in tokens]
 bigram_vocab = d2l.Vocab(bigram_tokens)
 print(bigram_vocab.token_freqs[:10])
 ```
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -437,6 +445,7 @@ Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý đ�
 Hai minibatch ngẫu nhiên liên tiếp không nhất thiết phải liền kề nhau trong chuỗi góc.
 Mục tiêu của ta là dự đoán phần tử tiếp theo dựa trên các phần tử đã thấy cho đến hiện tại, do đó nhãn của một mẫu chính là mẫu đó dịch chuyển sang phải một phần tử.
 
+
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
 def seq_data_iter_random(corpus, batch_size, num_steps):
@@ -460,6 +469,7 @@ def seq_data_iter_random(corpus, batch_size, num_steps):
         Y = [data(j + 1) for j in batch_indices]
         yield np.array(X), np.array(Y)
 ```
+
 
 <!--
 Let us generate an artificial sequence from 0 to 30.
@@ -531,6 +541,7 @@ Now we wrap the above two sampling functions to a class so that we can use it as
 
 Hãy gộp hai hàm lấy mẫu theo hai cách trên vào một lớp để duyệt dữ liệu trong Gluon ở các phần sau.
 
+
 ```{.python .input}
 # Saved in the d2l package for later use
 class SeqDataLoader:
@@ -546,6 +557,7 @@ class SeqDataLoader:
     def __iter__(self):
         return self.data_iter_fn(self.corpus, self.batch_size, self.num_steps)
 ```
+
 
 <!--
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
@@ -623,16 +635,6 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
@@ -642,3 +644,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 * Phạm Hồng Vinh
 * Nguyễn Cảnh Thướng
+* Phạm Minh Đức
