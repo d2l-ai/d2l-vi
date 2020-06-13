@@ -48,7 +48,7 @@ Với mỗi truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung tr�
 ![The attention layer returns an output based on the input query and its memory.](../img/attention.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/attention.svg)
+![*dịch chú thích ảnh phía trên*](../img/attention.svg) 
 :label:`fig_attention`
 
 
