@@ -26,6 +26,7 @@ chapter_multilayer-perceptrons/index_vn
 chapter_deep-learning-computation/index_vn
 chapter_convolutional-neural-networks/index_vn
 chapter_convolutional-modern/index_vn
+chapter_recurrent-neural-networks/index_vn
 ```
 
 ```toc
