@@ -305,7 +305,7 @@ Hence, gradients will have a very long dependency chain.
 -->
 
 Tệ hơn, RNN hai chiều cũng cực kỳ chậm.
-Những lý do chính cho điều này là vì chúng đòi hỏi lan truyền xuôi và lan truyền ngược, và lan truyền ngược phụ thuộc vào kết quả của lan truyền xuôi.
+Những lý do chính cho điều này là vì chúng cần cả lượt truyền xuôi và lượt truyền ngược, và lượt truyền ngược thì phụ thuộc vào kết quả của lượt truyền xuôi.
 Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài.
 
 
@@ -315,7 +315,7 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu, token chú thích (ví dụ: đối với nhận dạng thực thể có tên) hoặc mã hóa chuỗi số lượng lớn tại một bước trong đường ống xử lý chuỗi (ví dụ: đối với dịch máy).
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu,  chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy).
 Tóm lại, sử dụng cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
