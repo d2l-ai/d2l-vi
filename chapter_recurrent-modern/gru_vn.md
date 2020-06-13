@@ -426,9 +426,9 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. What happens if you implement only parts of a GRU? That is, implement a recurrent cell that only has a reset gate. Likewise, implement a recurrent cell only with an update gate.
 -->
 
-1. Hãy so sánh thời gian chạy, độ hỗn độn, và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU` với nhau.
+1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU` với nhau.
 2. Giả sử rằng chúng ta chỉ muốn sử dụng các đầu vào cho bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t> t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
-3. Điều chỉnh các siêu tham số, quan sát và phân tích tác động của điều chỉnh này tới thời gian chạy, độ hỗn độn, và các lời bài hát.
+3. Điều chỉnh các siêu tham số, quan sát và phân tích tác động của điều chỉnh này tới thời gian chạy, perplexity và các lời bài hát.
 4. Điều gì xảy ra nếu bạn chỉ lập trình một phần của khối GRU? Đó là, lập trình một khối truy hồi mà chỉ có một cổng xoá. Tương tự như vậy, lập trình một khối truy hồi chỉ với một cổng cập nhật.
 
 
