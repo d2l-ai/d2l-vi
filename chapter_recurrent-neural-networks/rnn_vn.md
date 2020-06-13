@@ -378,7 +378,7 @@ In a nutshell, it is the exponential of the above:
 -->
 
 Điều này giúp ta so sánh được chất lượng mô hình trên các tài liệu có độ dài khác nhau. 
-Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) thay vì tốc độ bit (_bitrate_). 
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *perplexity* thay vì tốc độ bit (_bitrate_). 
 Nói ngắn gọn, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
@@ -402,7 +402,7 @@ Hãy cùng xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của ký hiệu tiếp theo là $1$. Khi đó độ rối rắm của mô hình là $1$. 
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của ký hiệu tiếp theo là $1$. Khi đó perplexity của mô hình là $1$. 
 * Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của nhãn là 0. Khi đó độ rối rắm là vô hạn.
 * Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
 * Thực chất, nếu chúng ta lưu trữ chuỗi không nén, đây là cách tốt nhất có thể để mã hóa chúng. Vì vậy, nó cho ta một cận trên mà bất kỳ mô hình nào cũng phải thỏa mãn.
