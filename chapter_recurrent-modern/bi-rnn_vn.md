@@ -179,7 +179,11 @@ It is a very special instance of the :cite:`Aji.McEliece.2000` proposed in 2000 
 Combining both forward and backward pass, we are able to compute
 -->
 
-*dịch đoạn phía trên*
+khi khởi tạo $\rho_T(h_T) = 1$.
+Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì tăng theo cấp luỹ thừa. 
+Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ họa.
+Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000. 
+Kết hợp cả biểu thức xuôi và ngược ta có thể tính được
 
 
 $$p(x_j \mid x_{-j}) \propto \sum_{h_j} \pi_j(h_j) \rho_j(h_j) p(x_j \mid h_j).$$
@@ -192,8 +196,11 @@ Indeed, HMMs benefit from knowing future data when it is available.
 Signal processing scientists distinguish between the two cases of knowing and not knowing future observations as interpolation v.s. extrapolation.
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
-
-*dịch đoạn phía trên*
+Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học.
+Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.
+Thật vậy, HMMs sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
+Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
+Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` về các thuật toán Monte Carlo tuần tự để biết thêm chi tiết. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -203,7 +210,7 @@ See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001
 ## Bidirectional Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình hai chiều
 
 <!--
 If we want to have a mechanism in RNNs that offers comparable look-ahead ability as in HMMs, we need to modify the recurrent net design that we have seen so far.
@@ -212,14 +219,17 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 *Bidirectional recurrent neural networks* add a hidden layer that passes information in a backward direction to more flexibly process such information.
 :numref:`fig_birnn` illustrates the architecture of a bidirectional recurrent neural network with a single hidden layer.
 -->
-
-*dịch đoạn phía trên*
+Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa thiết kế của các mạng truy hồi truyền thống một chút.
+May mắn là, điều này khá đơn giản về mặt khái niệm.
+Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối,  ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu.
+*Mạng nơ ron truy hồi hai chiều* sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống.
+Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron truy hồi hai chiều với 1 tầng ẩn.
 
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
--->
+--> 
 
-![*dịch chú thích ảnh phía trên*](../img/birnn.svg)
+![*Cấu trúc của mạng nơ ron truy hồi hai chiều.*](../img/birnn.svg)
 :label:`fig_birnn`
 
 <!--
@@ -229,8 +239,11 @@ Now they are devoid of such easily accessible interpretation and we can just tre
 This transition epitomizes many of the principles guiding the design of modern deep networks: 
 first, use the type of functional dependencies of classical statistical models, and then use the models in a generic form.
 -->
-
-*dịch đoạn phía trên*
+Trên thực tế, điều này không quá khác biệt với phép đệ quy xuôi và ngược mà ta đã đề cập ở phần trước.
+Điểm khác biệt chính là trước đây các phương trình này có một ý nghĩa thống kê nhất định. 
+Còn bây giờ thì chúng không còn mang một ý nghĩa dễ hiểu nào nhất định, thay vào đó ta sẽ chỉ xét chúng như những hàm tổng quát.
+Quá trình chuyển đổi này là điển hình cho nhiều nguyên tắc thiết kế các mạng học sâu hiện đại:
+đầu tiên, sử dụng các dạng quan hệ phụ thuộc hàm của các mô hình thống kê cổ điển, sau đó sử dụng các mô hình này dưới dạng tổng quát.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -447,7 +460,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Đinh Phước Lộc
 
 <!-- Phần 4 -->
 *
