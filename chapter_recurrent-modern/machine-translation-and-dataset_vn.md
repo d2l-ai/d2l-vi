@@ -5,7 +5,7 @@
 # Machine Translation and the Dataset
 -->
 
-# *dịch tiêu đề phía trên*
+# Dịch Máy và Tập dữ liệu
 :label:`sec_machine_translation`
 
 <!--
@@ -13,7 +13,8 @@ So far we see how to use recurrent neural networks for language models, in which
 Now let us have a look at a different application, machine translation, whose predict output is no longer a single token, but a list of tokens.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay ta đã thấy cách sử dụng các mạng nơ-ron truy hồi cho các mô hình ngôn ngữ, trong đó ta dự đoán token tiếp theo khi đã biết tất cả các token trước đó trong bài viết.
+Bây giờ chúng ta sẽ xem xét một ứng dụng khác, với đầu ra dự đoán không còn là một token duy nhất mà là một chuỗi các token.
 
 <!--
 Machine translation (MT) refers to the automatic translation of a segment of text from one language to another.
@@ -25,7 +26,12 @@ Therefore, the data preprocessing for machine translation data is different to t
 This section is dedicated to demonstrate how to pre-process such a dataset and then load into a set of minibatches.
 -->
 
-*dịch đoạn phía trên*
+Dịch máy (_Machine translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
+Giải quyết bài toán này với các mạng nơ-ron thường được gọi là dịch máy nơ-ron (_neural machine translation_ - NMT).
+So với các mô hình ngôn ngữ (:numref:`sec_language_model`), trong đó kho ngữ liệu chỉ chứa một ngôn ngữ duy nhất, bộ dữ liệu dịch máy có ít nhất hai ngôn ngữ, ngôn ngữ nguồn và ngôn ngữ đích.
+Ngoài ra, mỗi câu trong ngôn ngữ nguồn được ánh xạ tới bản dịch tương ứng trong ngôn ngữ đích.
+Do đó, cách tiền xử lý dữ liệu dịch máy sẽ khác so với dữ liệu của mô hình ngôn ngữ.
+Phần này được dành riêng để trình bày cách tiền xử lý và nạp một tập dữ liệu như vậy vào các minibatch.
 
 
 ```{.python .input  n=1}
@@ -39,14 +45,15 @@ npx.set_np()
 ## Reading and Preprocessing the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc và Tiền Xử lý Dữ liệu
 
 <!--
 We first download a dataset that contains a set of English sentences with the corresponding French translations.
 As can be seen that each line contains an English sentence with its French translation, which are separated by a `TAB`.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên ta tải xuống bộ dữ liệu có chứa một tập các câu tiếng Anh cùng với các bản dịch tiếng Pháp tương ứng.
+Ta có thể thấy mỗi dòng chứa một câu tiếng Anh cùng với bản dịch tiếng Pháp tương ứng, được phân chia bằng một ký tự `TAB`.
 
 
 ```{.python .input  n=2}
@@ -68,7 +75,7 @@ print(raw_text[0:106])
 We perform several preprocessing steps on the raw text data, including ignoring cases, replacing UTF-8 non-breaking space with space, and adding space between words and punctuation marks.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ thực hiện một số bước tiền xử lý trên dữ liệu văn bản thô, bao gồm chuyển đổi tất cả ký tự sang chữ thường, thay thế các ký tự khoảng trắng không ngắt (*non-breaking space*) UTF-8 bằng dấu cách, thêm dấu cách vào giữa các từ và các dấu câu.
 
 ```{.python .input  n=3}
 # Saved in the d2l package for later use
@@ -93,7 +100,7 @@ print(text[0:95])
 ## Tokenization
 -->
 
-## *dịch tiêu đề phía trên*
+## Token hóa
 
 <!--
 Different to using character tokens in :numref:`sec_language_model`, here a token is either a word or a punctuation mark.
@@ -102,7 +109,10 @@ Each one is a list of token list, with `source[i]` is the $i^\mathrm{th}$ senten
 To make the latter training faster, we sample the first `num_examples` sentences pairs.
 -->
 
-*dịch đoạn phía trên*
+Khác với việc sử dụng token trong :numref:`sec_language_model`, ở đây token là một từ hoặc dấu câu.
+Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` và `target`.
+Mỗi đầu ra là một danh sách các token, với `source [i]` là câu thứ $i$ trong ngôn ngữ nguồn và `target [i]` là câu thứ $i$ trong ngôn ngữ đích.
+Để việc huấn luyện sau này nhanh hơn, chúng ta sẽ lấy mẫu `num_examples` cặp câu đầu tiên.
 
 
 ```{.python .input  n=4}
@@ -127,7 +137,8 @@ We visualize the histogram of the number of tokens per sentence in the following
 As can be seen, a sentence in average contains 5 tokens, and most of the sentences have less than 10 tokens.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là biểu đồ tần suất của số lượng token cho mỗi câu.
+Có thể thấy, trung bình một câu chứa 5 token và hầu hết các câu có ít hơn 10 token.
 
 ```{.python .input  n=5}
 d2l.set_figsize((3.5, 2.5))
@@ -140,7 +151,7 @@ d2l.plt.legend(loc='upper right');
 ## Vocabulary
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Từ vựng
 
 <!--
 Since the tokens in the source language could be different to the ones in the target language, we need to build a vocabulary for each of them.
@@ -149,7 +160,10 @@ Here we map every token that appears less than 3 times into the &lt;unk&gt; toke
 In addition, we need other special tokens such as padding and sentence beginnings.
 -->
 
-*dịch đoạn phía trên*
+Vì các token trong ngôn ngữ nguồn có thể khác với các token trong ngôn ngữ đích, ta cần xây dựng một bộ từ vựng cho mỗi ngôn ngữ.
+Do ta đang sử dụng các từ thay vì các ký tự để làm token, kích thước bộ từ vựng sẽ lớn hơn đáng kể.
+Ở đây ta sẽ ánh xạ mọi token xuất hiện ít hơn 3 lần vào token &lt;unk&gt; :numref:`sec_text_preprocessing`.
+Ngoài ra, ta cần các token đặc biệt khác như phần đệm hay phần bắt đầu câu.
 
 ```{.python .input  n=6}
 src_vocab = d2l.Vocab(source, min_freq=3,
@@ -161,7 +175,7 @@ len(src_vocab)
 ## Loading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Dữ liệu
 
 <!--
 In language models, each example is a `num_steps` length sequence from the corpus, which may be a segment of a sentence, or span over multiple sentences.
@@ -169,15 +183,17 @@ In machine translation, an example should contain a pair of source sentence and 
 These sentences might have different lengths, while we need same length examples to form a minibatch.
 -->
 
-*dịch đoạn phía trên*
+Trong các mô hình ngôn ngữ, mỗi mẫu là một chuỗi có độ dài `num_steps` từ kho ngữ liệu, có thể là một phân đoạn của một câu hoặc trải dài trên nhiều câu.
+Trong dịch máy, một mẫu bao gồm một cặp câu nguồn và câu đích.
+Những câu này có thể có độ dài khác nhau, trong khi đó ta cần các mẫu có cùng độ dài để tạo thành một minibatch.
 
 <!--
 One way to solve this problem is that if a sentence is longer than `num_steps`, we trim its length, otherwise pad with a special &lt;pad&gt; token to meet the length.
 Therefore we could transform any sentence to a fixed length.
 -->
 
-*dịch đoạn phía trên*
-
+Một cách để giải quyết vấn đề này là nếu một câu dài hơn `num_steps`, ta sẽ cắt bớt độ dài của nó, ngược lại nếu một câu ngắn hơn `num_steps`, thì ta sẽ đệm với một token đặc biệt &lt;pad&gt; để đáp ứng độ dài.
+Do vậy, với cách trên, chúng ta có thể chuyển bất cứ câu nào về cùng một độ dài cố định.
 
 ```{.python .input  n=7}
 # Saved in the d2l package for later use
@@ -200,8 +216,9 @@ We also record the length of each sentence without the padding tokens, called *v
 In addition, we add the special “&lt;bos&gt;” and “&lt;eos&gt;” tokens to the target sentences so that our model will know the signals for starting and ending predicting.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta có thể chuyển đổi một danh sách các câu thành một mảng chỉ số có kích thước `(num_example, num_steps)`.
+Ta cũng ghi lại độ dài của mỗi câu khi không có token đệm, còn được gọi là *độ dài hợp lệ*. Thông tin này có thể được sử dụng bởi một số mô hình.
+Ngoài ra, ta sẽ thêm các token đặc biệt “&lt;bos&gt;” và “&lt;eos&gt;” vào các câu đích để mô hình biết được các tín hiệu để bắt đầu và kết thúc dự đoán.
 
 ```{.python .input  n=8}
 # Saved in the d2l package for later use
@@ -220,19 +237,19 @@ def build_array(lines, vocab, num_steps, is_source):
 Then we can construct minibatches based on these arrays.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta có thể xây dựng các minibatch dựa trên các mảng này.
 
 <!--
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề phía trên*
+## Kết hợp Tất cả lại
 
 <!--
 Finally, we define the function `load_data_nmt` to return the data iterator with the vocabularies for source language and target language.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta sẽ định nghĩa hàm `load_data_nmt` để trả về iterator cho dữ liệu cùng với các bộ từ vựng cho ngôn ngữ nguồn và ngôn ngữ đích.
 
 
 ```{.python .input  n=9}
@@ -257,7 +274,7 @@ def load_data_nmt(batch_size, num_steps, num_examples=1000):
 Let us read the first batch.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ đọc vào batch đầu tiên.
 
 
 ```{.python .input  n=10}
@@ -281,7 +298,8 @@ for X, X_vlen, Y, Y_vlen in train_iter:
 * We read, preprocess, and tokenize the datasets from both source language and target language.
 -->
 
-*dịch đoạn phía trên*
+* Dịch máy (_machine translation_ - MT) đề cập đến việc dịch tự động một đoạn văn bản từ ngôn ngữ này sang ngôn ngữ khác.
+* Ta đọc, tiền xử lý và token hóa bộ dữ liệu từ cả ngôn ngữ nguồn và ngôn ngữ đích.
 
 
 <!--
@@ -294,7 +312,7 @@ for X, X_vlen, Y, Y_vlen in train_iter:
 Find a machine translation dataset online and process it.
 -->
 
-*dịch đoạn phía trên*
+Tìm và xử lý một bộ dữ liệu dịch máy.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC =================================== -->
@@ -318,10 +336,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Duy Du
+* Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
-*
+* Nguyễn Duy Du
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du

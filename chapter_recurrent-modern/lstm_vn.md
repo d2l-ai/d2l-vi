@@ -5,7 +5,7 @@
 # Long Short Term Memory (LSTM)
 -->
 
-# *dịch tiêu đề phía trên*
+# Bộ nhớ Ngắn hạn Dài (LSTM)
 :label:`sec_lstm`
 
 <!--
@@ -16,7 +16,10 @@ Gated Recurrent Unit (GRU).
 Interestingly, LSTM's design is slightly more complex than GRU but predates GRU by almost two decades.
 -->
 
-*dịch đoạn phía trên*
+Thách thức đối với việc lưu trữ những thông tin dài hạn và bỏ qua đầu vào ngắn hạn trong các mô hình biến ẩn đã tồn tại trong một thời gian dài.
+Một trong những phương pháp tiếp cận sớm nhất giải quyết vấn đề này là LSTM :cite:`Hochreiter.Schmidhuber.1997`.
+Nó có nhiều tính chất tương tự Nút Truy hồi có Cổng (GRU).
+Điều thú vị là thiết kế LSTM phức tạp hơn GRU một chút nhưng xuất hiện trước GRU gần hai thập kỷ.
 
 <!--
 Arguably it is inspired by logic gates of a computer.
@@ -30,13 +33,21 @@ The motivation for such a design is the same as before, namely to be able to dec
 Let us see how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Có thể cho rằng thiết kế này được lấy cảm hứng từ các cổng logic trong máy tính.
+Để kiểm soát một ô nhớ chúng ta cần một số cổng.
+Một cổng để đọc các thông tin từ ô nhớ đó (trái với việc đọc từ các ô khác).
+Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (*output gate*).
+Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào ô nhớ.
+Chúng ta gọi cổng này là *cổng đầu vào* (*input gate*).
+Cuối cùng, chúng ta cần một cơ chế để thiết lập lại nội dung chứa trong ô nhớ, được chi phối bởi một *cổng quên* (*forget gate*).
+Động lực của thiết kế trên cũng tương tự như trước đây, đó là đưa ra quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
+Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực tế.
 
 <!--
 ## Gated Memory Cells
 -->
 
-## *dịch tiêu đề phía trên*
+## Các Ô Nhớ có Cổng
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
@@ -44,7 +55,10 @@ In addition to that we will introduce the memory cell that has the same shape as
 Strictly speaking this is just a fancy version of a hidden state, engineered to record additional information.
 -->
 
-*dịch đoạn phía trên*
+Ba cổng được giới thiệu trong LSTM đó là: cổng đầu vào, cổng quên, và cổng đầu ra.
+Bên cạnh đó chúng ta sẽ giới thiệu ô nhớ có kích thước giống như trạng thái ẩn.
+Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -54,7 +68,7 @@ Strictly speaking this is just a fancy version of a hidden state, engineered to 
 ### Input Gates, Forget Gates, and Output Gates
 -->
 
-### *dịch tiêu đề phía trên*
+### Cổng Đầu vào, Cổng Quên, và Cổng Đầu ra
 
 <!--
 Just like with GRUs, the data feeding into the LSTM gates is the input at the current timestep $\mathbf{X}_t$ and the hidden state of the previous timestep $\mathbf{H}_{t-1}$.
@@ -62,13 +76,15 @@ These inputs are processed by a fully connected layer and a sigmoid activation f
 As a result, the three gates all output values in the range of $[0, 1]$. :numref:`lstm_0` illustrates the data flow for the input, forget, and output gates.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào $\mathbf{X}_t$ ở bước thời gian hiện tại và trạng thái ẩn $\mathbf{H}_{t-1}$ ở bước thời gian trước đó.
+Những đầu vào này được xử lý bởi một tầng kết nối đầy đủ và một hàm kích hoạt sigmoid để tính toán các giá trị của các cổng đầu vào, cổng quên, và cổng đầu ra.
+Kết quả là, tất cả các giá trị đầu ra tại ba cổng đều nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
 
 <!--
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_0.svg)
+![Các phép tính tại cổng đầu vào, cổng quên và cổng đầu ra trong một đơn vị LSTM. ](../img/lstm_0.svg)
 :label:`lstm_0`
 
 <!--
@@ -79,8 +95,11 @@ the forget gate is $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, and the output ga
 They are calculated as follows:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và kích thước đầu vào là $d$.
+Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian trước đó là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
+Vì thế, các cổng được định nghĩa như sau: cổng đầu vào là $\mathbf{I}_t \in \mathbb{R}^{n \times h}$,
+cổng quên là $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, và cổng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
+Chúng được tính như sau:
 
 $$
 \begin{aligned}
@@ -96,14 +115,14 @@ where $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d \time
 are weight parameters and $\mathbf{b}_i, \mathbf{b}_f, \mathbf{b}_o \in \mathbb{R}^{1 \times h}$ are bias parameters.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hi}, \mathbf{W}_{hf}, \mathbf{W}_{ho} \in \mathbb{R}^{h \times h}$ là các trọng số và $\mathbf{b}_i, \mathbf{b}_f, \mathbf{b}_o \in \mathbb{R}^{1 \times h}$ là các hệ số điều chỉnh.
 
 
 <!--
 ### Candidate Memory Cell
 -->
 
-### *dịch tiêu đề phía trên*
+### Ô Ký ức Tiềm năng
 
 <!--
 Next we design the memory cell.
@@ -112,7 +131,10 @@ Its computation is similar to the three gates described above, but using a $\tan
 This leads to the following equation at timestep $t$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ thiết kế một ô nhớ.
+Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô ký ức *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
+Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
 
 $$\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c).$$
@@ -122,19 +144,19 @@ $$\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{
 Here $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\mathbf{W}_{hc} \in \mathbb{R}^{h \times h}$ are weight parameters and $\mathbf{b}_c \in \mathbb{R}^{1 \times h}$ is a bias parameter.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hc} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{b}_c \in \mathbb{R}^{1 \times h}$ là một hệ số điều chỉnh.
 
 <!--
 A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 -->
 
-*dịch đoạn phía trên*
+Ô ký ức tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
 
 <!--
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_1.svg)
+![Các phép tính toán trong ô ký ức tiềm năng của LSTM. ](../img/lstm_1.svg)
 :label:`lstm_1`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -146,7 +168,7 @@ A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 ### Memory Cell
 -->
 
-### *dịch tiêu đề phía trên*
+### Ô Nhớ
 
 <!--
 In GRUs, we had a single mechanism to govern input and forgetting.
@@ -155,7 +177,9 @@ and the forget parameter $\mathbf{F}_t$ which addresses how much of the old memo
 Using the same pointwise multiplication trick as before, we arrive at the following update equation.
 -->
 
-*dịch đoạn phía trên*
+Trong GRU, chúng ta có một cơ chế duy nhất để quản lý cả đầu vào và quá trình quên.
+Trong LSTM, chúng ta có hai tham số, $\mathbf{I}_t$ điều chỉnh lượng dữ liệu mới cần lấy vào là bao nhiêu thông qua $\tilde{\mathbf{C}}_t$ và tham số quên $\mathbf{F}_t$ chỉ định nội dung cũ cần giữ lại trong ô nhớ $\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$ là bao nhiêu.
+Sử dụng cùng một cách tính nhân theo từng điểm (_pointwise_) như trước đây, chúng ta đi đến phương trình cập nhật như sau.
 
 
 $$\mathbf{C}_t = \mathbf{F}_t \odot \mathbf{C}_{t-1} + \mathbf{I}_t \odot \tilde{\mathbf{C}}_t.$$
@@ -167,13 +191,15 @@ This design was introduced to alleviate the vanishing gradient problem and to be
 We thus arrive at the flow diagram in :numref:`lstm_2`.
 -->
 
-*dịch đoạn phía trên*
+Nếu giá trị ở cổng quên luôn xấp xỉ bằng $1$ và cổng đầu vào luôn xấp xỉ bằng $0$, thì giá trị ô nhớ trong quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại qua thời gian và truyền tới bước thời gian hiện tại.
+Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt các phụ thuộc dài hạn cho chuỗi thời gian tốt hơn.
+Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
 <!--
 ![Computation of memory cells in an LSTM. Here, the multiplication is carried out elementwise. ](../img/lstm_2.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_2.svg)
+![Các phép tính toán trong ô nhớ của LSTM. Ở đây, ta sử dụng phép nhân trên từng phần tử.](../img/lstm_2.svg)
 
 :label:`lstm_2`
 
@@ -182,7 +208,7 @@ We thus arrive at the flow diagram in :numref:`lstm_2`.
 ### Hidden States
 -->
 
-### *dịch tiêu đề phía trên*
+### Các Trạng thái Ẩn
 
 <!--
 Last, we need to define how to compute the hidden state $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
@@ -194,7 +220,13 @@ whereas for output $0$ we retain all the information only within the memory cell
 :numref:`lstm_3` has a graphical illustration of the data flow.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta cần phải xác định cách tính trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
+Đây là nơi các cổng đầu ra được sử dụng.
+Trong LSTM, đây chỉ đơn giản là một phiên bản hàm kích hoạt $\tanh$ có cổng trong ô nhớ.
+Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
+Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
+Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
+:numref:`lstm_3` minh họa các luồng chảy của dữ liệu.
 
 
 $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
@@ -204,7 +236,7 @@ $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
 ![Computation of the hidden state. Multiplication is elementwise. ](../img/lstm_3.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/lstm_3.svg)
+![Các phép tính của trạng thái ẩn. Phép tính nhân được thực hiện trên từng phần tử.](../img/lstm_3.svg)
 :label:`lstm_3`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -215,14 +247,15 @@ $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
 
 <!--
 Now let us implement an LSTM from scratch.
 As same as the experiments in the previous sections, we first load data of *The Time Machine*.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta sẽ lập trình một LSTM từ đầu.
+Giống như các thử nghiệm trong các phần trước, đầu tiên ta sẽ nạp tập dữ liệu *The Time Machine*.
 
 ```{.python .input  n=1}
 import d2l
@@ -238,7 +271,7 @@ train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
 ### Initializing Model Parameters
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi tạo Tham số Mô hình
 
 <!--
 Next we need to define and initialize the model parameters.
@@ -246,7 +279,9 @@ As previously, the hyperparameter `num_hiddens` defines the number of hidden uni
 We initialize weights following a Gaussian distribution with $0.01$ standard deviation, and we set the biases to $0$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo ta cần định nghĩa và khởi tạo các tham số mô hình.
+Cũng giống như trước đây, siêu tham số `num_hiddens` định nghĩa số lượng các nút ẩn.
+Ta sẽ khởi tạo các trọng số theo phân phối Gauss với độ lệch chuẩn bằng $0.01$ và đặt các hệ số điều chỉnh bằng $0$.
 
 
 ```{.python .input  n=2}
@@ -284,14 +319,15 @@ def get_lstm_params(vocab_size, num_hiddens, ctx):
 ### Defining the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Mô hình
 
 <!--
 In the initialization function, the hidden state of the LSTM needs to return an additional memory cell with a value of $0$ and a shape of (batch size, number of hidden units).
 Hence we get the following state initialization.
 -->
 
-*dịch đoạn phía trên*
+Trong hàm khởi tạo, trạng thái ẩn của LSTM cần trả về thêm một ô nhớ có giá trị bằng $0$ và kích thước bằng (kích thước batch, số lượng các nút ẩn).
+Do đó ta có hàm khởi tạo trạng thái sau đây.
 
 ```{.python .input  n=3}
 def init_lstm_state(batch_size, num_hiddens, ctx):
@@ -305,7 +341,9 @@ Note that only the hidden state is passed to the output layer.
 The memory cells $\mathbf{C}_t$ do not participate in the output computation directly.
 -->
 
-*dịch đoạn phía trên*
+Mô hình thực sự được định nghĩa giống như những gì ta đã thảo luận trước đây: nó có ba cổng và một ô nhớ phụ.
+Lưu ý rằng chỉ có trạng thái ẩn được truyền tới tầng đầu ra.
+Các ô nhớ $\mathbf{C}_t$ không tham gia trực tiếp vào việc tính toán đầu ra.
 
 
 ```{.python .input  n=4}
@@ -334,13 +372,13 @@ def lstm(inputs, state, params):
 ### Training and Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Dự đoán
 
 <!--
 Let us train an LSTM as same as what we did in :numref:`sec_gru`, by calling the `RNNModelScratch` function as introduced in :numref:`sec_rnn_scratch`.
 -->
 
-*dịch đoạn phía trên*
+Như đã từng làm trong :numref:`sec_gru`, ta sẽ huấn luyện một LSTM bằng cách gọi hàm `RNNModelScratch` đã được giới thiệu ở :numref:`sec_rnn_scratch`.
 
 ```{.python .input  n=9}
 vocab_size, num_hiddens, ctx = len(vocab), 256, d2l.try_gpu()
@@ -354,7 +392,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình súc tích
 
 <!--
 In Gluon, we can directly call the `LSTM` class in the `rnn` module.
@@ -362,7 +400,9 @@ This encapsulates all the configuration details that we made explicit above.
 The code is significantly faster as it uses compiled operators rather than Python for many details that we spelled out in detail before.
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, ta có thể gọi trực tiếp lớp `LSTM` trong mô-đun `rnn`.
+Lớp này gói gọn tất cả các chi tiết cấu hình mà ta đã lập trình một cách chi tiết ở trên.
+Mã nguồn sẽ chạy nhanh hơn đáng kể vì nó sử dụng các toán tử được biên dịch thay vì các toán tử Python cho nhiều tính toán mà ta đã nêu ra một cách chi tiết trước đây.
 
 ```{.python .input  n=10}
 lstm_layer = rnn.LSTM(num_hiddens)
@@ -378,7 +418,11 @@ However, training LSTMs and other sequence models (such as GRU) are quite costly
 Later we will encounter alternative models such as Transformers that can be used in some cases.
 -->
 
-*dịch đoạn phía trên*
+Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng việc huấn luyện và thực thi các mô hình này là khá tốn kém do có kích thước trạng thái ẩn lớn hơn.
+LSTM là nguyên mẫu điển hình của một mô hình tự hồi quy biến tiềm ẩn có cơ chế kiểm soát trạng thái phức tạp.
+Nhiều biến thể đã được đề xuất qua từng năm, ví dụ như các kiến trúc đa tầng, các kết nối thặng dư hay các kiểu điều chuẩn khác nhau.
+Tuy nhiên, việc huấn luyện LSTM và các mô hình chuỗi khác (như GRU) là khá tốn kém do sự phụ thuộc dài hạn của chuỗi.
+Sau này ta sẽ gặp các mô hình thay thế như *Transformer* có thể được sử dụng trong một số trường hợp.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -396,7 +440,9 @@ Later we will encounter alternative models such as Transformers that can be used
 * LSTMs can cope with vanishing and exploding gradients.
 -->
 
-*dịch đoạn phía trên*
+* LSTM có ba loại cổng để kiểm soát luồng thông tin: cổng đầu vào, cổng quên và cổng đầu ra.
+* Đầu ra tầng ẩn của LSTM bao gồm các trạng thái ẩn và các đơn vị nhớ. Chỉ các trạng thái ẩn được truyền tới tầng đầu ra. Các đơn vị nhớ hoàn toàn được sử dụng nội bộ trong tầng.
+* LSTM có thể đối phó với vấn đề tiêu biến và bùng nổ gradient.
 
 
 <!--
@@ -414,7 +460,13 @@ why does the hidden state need to use the $\tanh$ function again to ensure that 
 5. Implement an LSTM for time series prediction rather than character sequence prediction.
 -->
 
-*dịch đoạn phía trên*
+
+1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, độ rối rắm và đầu ra.
+2. Cần thay đổi mô hình như thế nào để sinh ra các từ hoàn chỉnh thay vì các chuỗi ký tự?
+3. So sánh chi phí tính toán của GRU, LSTM và RNN thông thường với cùng một chiều ẩn. Đặc biệt chú ý đến chi phí huấn luyện và dự đoán.
+4. Dù các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
+tại sao trạng thái ẩn vẫn phải sử dụng tiếp hàm $\tanh$ để đảm bảo rằng phạm vi giá trị đầu ra nằm trong khoảng từ $-1$ đến $1$?
+5. Lập trình một mô hình LSTM để dự đoán chuỗi thời gian thay vì dự đoán chuỗi ký tự.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -438,19 +490,24 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
-
+* Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 5 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 6 -->
-*
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức

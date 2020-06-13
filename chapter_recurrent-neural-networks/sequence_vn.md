@@ -17,6 +17,7 @@ People's opinions on movies can change quite significantly over time.
 In fact, psychologists even have names for some of the effects:
 -->
 
+
 Hãy tưởng tượng rằng bạn đang xem phim trên Netflix.
 Là một người dùng Netflix tốt, bạn quyết định đánh giá từng bộ phim một cách cẩn thận.
 Xét cho cùng, bạn muốn xem thêm nhiều bộ phim hay phải không?
@@ -37,15 +38,15 @@ the expectations that the next movie is equally good or better are high, hence e
 * Some movies become cult movies, because they were almost comically bad. *Plan 9 from Outer Space* and *Troll 2* achieved a high degree of notoriety for this reason.
 -->
 
-* [Hiệu ứng mỏ neo] (https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
-Ví dụ như sau khi thắng giải Oscar, xếp hạng của bộ phim đó sẽ tăng lên, mặc dù nó vẫn là cùng một bộ phim.
+* [Hiệu ứng mỏ neo](https://en.wikipedia.org/wiki/Anchoring): dựa trên ý kiến của người khác.
+Ví dụ, xếp hạng của một bộ phim sẽ tăng lên sau khi nó thắng giải Oscar, mặc dù đoàn làm phim này không có bất kỳ tác động nào về mặt quảng bá đến bộ phim.
 Hiệu ứng này kéo dài trong vòng một vài tháng cho đến khi giải thưởng bị lãng quên.
 :cite:`Wu.Ahmed.Beutel.ea.2017` chỉ ra rằng hiệu ứng này tăng chỉ số xếp hạng thêm hơn nửa điểm.
-* [Hiệu ứng vòng xoáy khoái lạc] (https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
-Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc hay hơn sẽ trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
+* [Hiệu ứng vòng xoáy khoái lạc](https://en.wikipedia.org/wiki/Hedonic_treadmill): con người nhanh chóng thích nghi để chấp nhận một tình huống tốt hơn (hoặc xấu đi) như một điều bình thường mới.
+Chẳng hạn, sau khi xem nhiều bộ phim hay, sự kỳ vọng rằng bộ phim tiếp theo sẽ hay tương đương hoặc thậm chí phải hay hơn trở nên khá cao, do đó ngay cả một bộ phim trung bình cũng có thể bị coi là một bộ phim tồi.
 * Tính thời vụ: rất ít khán giả thích xem một bộ phim về ông già Noel vào tháng 8.
 * Trong một số trường hợp, các bộ phim trở nên không được ưa chuộng do những hành động sai trái của các đạo diễn hoặc diễn viên tham gia vào quá trình sản xuất phim.
-* Một số phim trở nên đình đám vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
+* Một số phim trở thành "phim cult" vì chúng gần như tệ đến mức phát cười. *Plan 9 from Outer Space* và *Troll 2* là hai ví dụ nổi tiếng.
 
 <!--
 In short, ratings are anything but stationary.
@@ -53,8 +54,8 @@ Using temporal dynamics helped :cite:`Koren.2009` to recommend movies more accur
 But it is not just about movies.
 -->
 
-Nói tóm lại, thứ bậc xếp hạng là không cố định.
-Sử dụng kỹ thuật thời gian động đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
+Tóm lại, thứ bậc xếp hạng không hề cố định.
+Sử dụng các động lực dựa trên thời gian đã giúp :cite:`Koren.2009` đề xuất phim chính xác hơn.
 Tuy nhiên, vấn đề không chỉ là về phim ảnh.
 
 <!--
@@ -73,9 +74,9 @@ In fact, earthquakes are spatiotemporally correlated, i.e., the aftershocks typi
 -->
 
 * Nhiều người dùng có thói quen rất đặc biệt liên quan tới thời gian mở ứng dụng.
-Chẳng hạn, học sinh sử dụng các ứng dụng truyền thông xã hội nhiều hơn hẳn sau giờ học.
+Chẳng hạn, học sinh sử dụng các ứng dụng mạng xã hội nhiều hơn hẳn sau giờ học.
 Các ứng dụng giao dịch chứng khoán được sử dụng nhiều khi thị trường mở cửa.
-* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai chỉ là vấn đề ước tính một con số.
+* Việc dự đoán giá cổ phiếu ngày mai khó hơn nhiều so với việc dự đoán giá cổ phiếu bị bỏ lỡ ngày hôm qua, mặc dù cả hai đều là bài toán ước tính một con số.
 Rốt cuộc, nhìn lại quá khứ dễ hơn nhiều so với dự đoán tương lai.
 Trong thống kê, bài toán đầu tiên được gọi là *ngoại suy* và bài toán sau được gọi là *nội suy*.
 * Âm nhạc, giọng nói, văn bản, phim ảnh, bước đi, v.v ... đều có tính chất tuần tự.
@@ -83,7 +84,7 @@ Nếu chúng ta hoán vị chúng, chúng sẽ không còn nhiều ý nghĩa.
 Dòng tiêu đề *chó cắn người* ít gây ngạc nhiên hơn nhiều so với *người cắn chó*, mặc dù các từ giống hệt nhau.
 * Các trận động đất có mối tương quan mạnh mẽ, tức sau một trận động đất lớn, rất có thể sẽ có một số dư chấn nhỏ hơn và xác suất xảy ra dư chấn cao hơn nhiều so với trường hợp trận động đất lớn không xảy ra trước đó.
 Trên thực tế, các trận động đất có mối tương quan về mặt không-thời gian, tức các dư chấn thường xảy ra trong một khoảng thời gian ngắn và ở gần nhau.
-* Con người tương tác với nhau theo một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
+* Con người tương tác với nhau một cách tuần tự, điều này có thể được thấy trong các cuộc tranh cãi trên Twitter, các điệu nhảy và các cuộc tranh luận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -100,12 +101,14 @@ In short, we need statistical tools and new deep neural networks architectures t
 To keep things simple, we use the stock price illustrated in :numref:`fig_ftse100` as an example.
 -->
 
-Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
+
+Tóm lại, ta cần các công cụ thống kê và các kiến trúc mạng nơ-ron sâu mới để xử lý dữ liệu chuỗi.
 Để đơn giản hóa mọi việc, ta sẽ sử dụng giá cổ phiếu được minh họa trong :numref:`fig_ftse100` để làm ví dụ.
 
 <!--
 ![FTSE 100 index over 30 years](../img/ftse100.png)
 -->
+
 
 ![Giá cổ phiếu FTSE 100 trong vòng 30 năm](../img/ftse100.png)
 :width:`400px`
@@ -115,6 +118,7 @@ Nói tóm lại, ta cần các công cụ thống kê và các kiến trúc mạ
 Let us denote the prices by $x_t \geq 0$, i.e., at time $t \in \mathbb{N}$ we observe price $x_t$.
 For a trader to do well in the stock market on day $t$ he should want to predict $x_t$ via
 -->
+
 
 Ta sẽ gọi giá cổ phiếu là $x_t \geq 0$, tức tại thời điểm $t \in \mathbb{N}$ ta thấy giá cổ phiếu bằng $x_t$.
 Để có thể kiếm lời trên thị trường chứng khoán vào ngày $t$, một nhà giao dịch sẽ muốn dự đoán $x_t$ thông qua
@@ -139,7 +143,7 @@ In a nutshell it boils down to two strategies:
 Chỉ có một vấn đề lớn ở đây, đó là số lượng đầu vào, $x_{t-1}, \ldots, x_1$ thay đổi tùy thuộc vào $t$.
 Cụ thể, số lượng đầu vào sẽ tăng cùng với lượng dữ liệu thu được và ta sẽ cần một phép tính xấp xỉ để làm cho giải pháp này khả thi về mặt tính toán.
 Phần lớn nội dung tiếp theo trong chương này sẽ xoay quanh việc làm thế nào để ước lượng $p(x_t \mid x_{t-1}, \ldots, x_1)$ một cách hiệu quả.
-Tóm lại, ta có hai chiến lược:
+Nói ngắn gọn, ta có hai chiến lược:
 
 <!--
 1. Assume that the potentially rather long sequence $x_{t-1}, \ldots, x_1$ is not really necessary. 
@@ -157,7 +161,7 @@ LSTMs and GRUs are examples of this.
 Trong trường hợp này, ta có thể hài lòng với một khoảng thời gian $\tau$ và chỉ sử dụng các quan sát $x_{t-1}, \ldots, x_{t-\tau}$.
 Lợi ích trước mắt là bây giờ số lượng đối số luôn bằng nhau, ít nhất là với $t > \tau$.
 Điều này sẽ cho phép ta huấn luyện một mạng sâu như được đề cập ở bên trên.
-Các mô hình như vậy được gọi là các mô hình *tự hồi quy*, vì chúng thực sự tự thực hiện hồi quy trên chính nó.
+Các mô hình như vậy được gọi là các mô hình *tự hồi quy* (_autoregressive_), vì chúng tự thực hiện hồi quy trên chính mình.
 2. Một chiến lược khác, được minh họa trong :numref:`fig_sequence-model`, là giữ một giá trị $h_t$ để tóm tắt các quan sát trong quá khứ, đồng thời cập nhật $h_t$ bên cạnh việc dự đoán $\hat{x}_t$.
 Kết quả là mô hình sẽ ước tính $x_t$ với $\hat{x}_t = p(x_t \mid x_{t-1}, h_{t})$ và cập nhật $h_t = g(h_{t-1}, x_{t-1})$.
 Do $h_t$ không bao giờ được quan sát nên các mô hình này còn được gọi là các *mô hình tự hồi quy tiềm ẩn* (_latent autoregressive model_).
@@ -185,12 +189,12 @@ Regardless of what we do, we will thus get an estimate of the entire time series
 -->
 
 Cả hai trường hợp đều đặt ra câu hỏi về cách tạo ra dữ liệu huấn luyện.
-Người ta thường sử dụng các quan sát quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
+Người ta thường sử dụng các quan sát từ quá khứ cho đến hiện tại để dự đoán các quan sát xảy ra trong tương lai.
 Rõ ràng chúng ta không thể trông đợi thời gian sẽ đứng yên.
-Tuy nhiên, một giả định phổ biến là trong khi các giá trị cụ thể của $x_t$ có thể thay đổi, thì ít nhất động lực của chuỗi thời gian sẽ không đổi.
-Điều này khá hợp lý, vì động lực thay đổi thì không thể dự đoán được bằng cách sử dụng dữ liệu mà chúng ta có.
+Tuy nhiên, một giả định phổ biến là: tuy các giá trị cụ thể của $x_t$ có thể thay đổi, ít ra động lực của chuỗi thời gian sẽ không đổi.
+Điều này khá hợp lý, vì nếu động lực thay đổi thì ta sẽ không thể dự đoán được nó bằng cách sử dụng dữ liệu mà ta đang có.
 Các nhà thống kê gọi các động lực không thay đổi này là *cố định* (*stationary*).
-Do đó, bất kể làm gì, chúng ta cũng sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
+Dù có làm gì đi chăng nữa, chúng ta vẫn sẽ tìm được ước lượng của toàn bộ chuỗi thời gian thông qua
 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}, \ldots, x_1).$$
@@ -200,8 +204,8 @@ Note that the above considerations still hold if we deal with discrete objects, 
 The only difference is that in such a situation we need to use a classifier rather than a regressor to estimate $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 -->
 
-Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ, thay vì số.
-Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ phân loại thay cho một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
+Lưu ý rằng các xem xét trên vẫn đúng trong trường hợp chúng ta làm việc với các đối tượng rời rạc, chẳng hạn như từ ngữ thay vì số.
+Sự khác biệt duy nhất trong trường hợp này là chúng ta cần sử dụng một bộ phân loại thay vì một bộ hồi quy để ước lượng $p(x_t \mid  x_{t-1}, \ldots, x_1)$.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -219,10 +223,9 @@ Whenever this approximation is accurate we say that the sequence satisfies a *Ma
 In particular, if $\tau = 1$, we have a *first order* Markov model and $p(x)$ is given by
 -->
 
-Nhắc lại phép xấp xỉ trong một mô hình tự hồi quy, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$.
-Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn điều kiện *Markov*.
-Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc một* và $p(x)$ như sau
-
+Nhắc lại phép xấp xỉ trong một mô hình tự hồi quy, chúng ta chỉ sử dụng $(x_{t-1}, \ldots, x_{t-\tau})$ thay vì $(x_{t-1}, \ldots, x_1)$ để ước lượng $x_t$. 
+Bất cứ khi nào phép xấp xỉ này là chính xác, chúng ta nói rằng chuỗi thỏa mãn *điều kiện Markov*. 
+Cụ thể, nếu $\tau = 1$, chúng ta có mô hình Markov *bậc một* và $p(x)$ như sau 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=1}^T p(x_t \mid x_{t-1}).$$
 
@@ -231,9 +234,8 @@ Such models are particularly nice whenever $x_t$ assumes only a discrete value, 
 For instance, we can compute $p(x_{t+1} \mid x_{t-1})$ efficiently using the fact that we only need to take into account a very short history of past observations:
 -->
 
-Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ được giả định có giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
-Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách chỉ sử dụng các quan sát trong một khoảng thời gian ngắn trong quá khứ:
-
+Các mô hình như trên rất hữu dụng bất cứ khi nào $x_t$ chỉ là các giá trị rời rạc, vì trong trường hợp này, quy hoạch động có thể được sử dụng để tính toán chính xác các giá trị theo chuỗi.
+Ví dụ, chúng ta có thể tính toán $p(x_{t+1} \mid x_{t-1})$ một cách hiệu quả bằng cách chỉ sử dụng các quan sát trong một khoảng thời gian ngắn tại quá khứ:
 
 $$p(x_{t+1} \mid x_{t-1}) = \sum_{x_t} p(x_{t+1} \mid x_t) p(x_t \mid x_{t-1}).$$
 
@@ -243,8 +245,8 @@ Going into details of dynamic programming is beyond the scope of this section, b
 Control and reinforcement learning algorithms use such tools extensively.
 -->
 
-Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong: numref: `sec_bi_rnn`.
-Các công cụ trên được sử dụng rất phổ biến trong các thuật toán điều khiển và học tăng cường.
+Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong :numref: `sec_bi_rnn`. 
+Các công cụ trên được sử dụng rất phổ biến trong các thuật toán điều khiển và học tăng cường. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -261,8 +263,8 @@ In principle, there is nothing wrong with unfolding $p(x_1, \ldots, x_T)$ in rev
 After all, by conditioning we can always write it via
 -->
 
-Về nguyên tắc, không có gì sai cả khi trải $p(x_1, \ldots, x_T)$ ra theo thứ tự ngược lại.
-Bằng cách đặt điều kiện như vậy, chúng ta luôn có thể viết chúng như sau
+Về nguyên tắc, không có gì sai khi trải (*unfolding*) $p(x_1, \ldots, x_T)$ theo thứ tự ngược lại. 
+Bằng cách đặt điều kiện như vậy, chúng ta luôn có thể viết chúng như sau 
 
 $$p(x_1, \ldots, x_T) = \prod_{t=T}^1 p(x_t \mid x_{t+1}, \ldots, x_T).$$
 
@@ -279,16 +281,16 @@ For more on this topic see e.g., the book by :cite:`Peters.Janzing.Scholkopf.201
 We are barely scratching the surface of it.
 -->
 
-Trên thực tế, nếu có một mô hình Markov, chúng ta cũng có thể thu được một phân phối xác suất có điều kiện ngược.
-Tuy nhiên trong nhiều trường hợp, tự nhiên dữ liệu có tồn tại một trật tự nhất định, cụ thể là luôn tiến về phía trước theo thời gian.
-Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ.
-Do đó, nếu chúng ta thay đổi $x_t$, thì có thể ảnh hưởng đến những gì xảy ra với $x_{t+1}$ trong tương lai, nhưng không ảnh hưởng tới quá khứ ở chiều ngược lại.
-Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi.
-Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$.
-Ví dụ: bài báo :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi đó, điều ngược lại không đúng. 
-Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo hướng đi tới hơn.
+Trên thực tế, nếu có một mô hình Markov, chúng ta cũng có thể thu được một phân phối xác suất có điều kiện ngược. 
+Tuy nhiên trong nhiều trường hợp vẫn tồn tại một trật tự tự nhiên cho dữ liệu, cụ thể đó là chiều thuận theo thời gian. 
+Rõ ràng là các sự kiện trong tương lai không thể ảnh hưởng đến quá khứ. 
+Do đó, nếu thay đổi $x_t$ thì ta có thể ảnh hưởng đến những gì xảy ra tại $x_{t+1}$ trong tương lai, nhưng lại không thể ảnh hưởng tới quá khứ theo chiều ngược lại. 
+Nếu chúng ta thay đổi $x_t$, phân phối trên các sự kiện trong quá khứ sẽ không thay đổi. 
+Do đó, việc giải thích $p(x_{t+1} \mid x_t)$ sẽ đơn giản hơn là $p(x_t \mid x_{t+1})$. 
+Ví dụ: :cite:`Hoyer.Janzing.Mooij.ea.2009` chỉ ra rằng trong một số trường hợp chúng ta có thể tìm $x_{t+1} = f(x_t) + \epsilon$ khi có thêm nhiễu, trong khi điều ngược lại thì không đúng. 
+Đây là một tin tuyệt vời vì chúng ta thường quan tâm tới việc ước lượng theo chiều thuận hơn. 
 Để tìm hiểu thêm về chủ đề này, có thể tìm đọc cuốn sách :cite:`Peters.Janzing.Scholkopf.2017`.
-Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này.
+Chúng ta sẽ chỉ tìm hiểu sơ qua trong phần này. 
 
 <!--
 ## A Toy Example
@@ -302,9 +304,9 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử minh hoạ bằng lập trình.
-Đầu tiên, hãy sinh một vài dữ liệu như sau.
-Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm với chút nhiễu.
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh hoạ. 
+Đầu tiên, hãy khởi tạo một vài dữ liệu như sau. 
+Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm một chút nhiễu. 
 
 
 ```{.python .input}
@@ -332,14 +334,14 @@ A few layers of a fully connected network, ReLU activation and $\ell_2$ loss.
 Since much of the modeling is identical to the previous sections when we built regression estimators in Gluon, we will not delve into much detail.
 -->
 
-Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn được sử dụng để huấn luyện mạng.
-Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$.
-Để ý kĩ, có thể thấy rằng chúng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng không có đủ $\tau$ điểm dữ liệu trong quá khứ.
-Một cách đơn giản để khắc phục điều này là loại bỏ vài phần tử đó, đặc biệt nếu chuỗi thời gian rất dài.
-Một cách khác là đệm giá trị 0 vào chuỗi thời gian.
-Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước.
-Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$.
-Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này.
+Tiếp theo, chúng ta cần biến chuỗi thời gian này thành các đặc trưng và nhãn có thể được sử dụng để huấn luyện mạng. 
+Dựa trên kích thước embedding $\tau$, chúng ta ánh xạ dữ liệu thành các cặp $y_t = x_t$ và $\mathbf{z}_t = (x_{t-1}, \ldots, x_{t-\tau})$. 
+Để ý kĩ, có thể thấy rằng ta sẽ mất $\tau$ điểm dữ liệu đầu tiên, vì chúng ta không có đủ $\tau$ điểm dữ liệu trong quá khứ để làm đặc trưng cho chúng.
+Một cách đơn giản để khắc phục điều này, đặc biệt là khi chuỗi thời gian rất dài, là loại bỏ đi số ít các phần tử đó. 
+Một cách khác là đệm giá trị 0 vào chuỗi thời gian. 
+Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước. 
+Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$. 
+Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
 
 
 ```{.python .input}
@@ -371,7 +373,7 @@ loss = gluon.loss.L2Loss()
 Now we are ready to train.
 -->
 
-Bây giờ chúng ta đã sẵn sàng huấn luyện.
+Bây giờ chúng ta đã sẵn sàng để huấn luyện. 
 
 ```{.python .input}
 def train_net(net, train_iter, loss, epochs, lr):
@@ -410,9 +412,9 @@ Let us see what this means in practice.
 The first thing to check is how well the model is able to predict what happens in the next timestep.
 -->
 
-Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt.
-Hãy cùng xác nhận điều này trên thực tế.
-Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán về những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào.
+Vì cả hai giá trị mất mát trên tập huấn luyện và kiểm tra đều nhỏ, chúng ta kỳ vọng mô hình trên sẽ hoạt động tốt. 
+Hãy cùng xác nhận điều này trên thực tế. 
+Điều đầu tiên cần kiểm tra là mô hình có thể dự đoán những gì sẽ xảy ra trong bước thời gian kế tiếp tốt như thế nào. 
 
 ```{.python .input}
 estimates = net(features)
@@ -427,10 +429,10 @@ There is just one little problem to this: if we observe data only until timestep
 Instead, we need to work our way forward one step at a time:
 -->
 
-Kết quả khá tốt như những gì chúng ta mong đợi.
-Thậm chí với hơn 600 mẫu quan sát phép ước lượng vẫn trông khá tin cậy.
-Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tại các bước thời gian sau đó.
-Thay vào đó, chúng ta cần tiến lên từng bước một:
+Kết quả khá tốt, đúng như những gì chúng ta mong đợi. 
+Thậm chí sau hơn 600 mẫu quan sát, phép ước lượng vẫn trông khá tin cậy. 
+Chỉ có một chút vấn đề: nếu chúng ta quan sát dữ liệu tới bước thời gian thứ 600, chúng ta không thể hy vọng sẽ nhận được nhãn gốc cho tất cả các dự đoán tương lai. 
+Thay vào đó, chúng ta cần tiến lên từng bước một: 
 
 
 $$\begin{aligned}
@@ -445,8 +447,8 @@ In other words, we will have to use our own predictions to make future predictio
 Let us see how well this goes.
 -->
 
-Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán của mình để đưa ra dự đoán trong tương lai.
-Chúng ta hãy xem cách này có ổn không.
+Nói cách khác, chúng ta sẽ phải sử dụng những dự đoán của mình để đưa ra dự đoán trong tương lai. 
+Hãy cùng xem cách này có ổn không.
 
 
 ```{.python .input}
@@ -473,16 +475,16 @@ For instance, weather forecasts for the next 24 hours tend to be pretty accurate
 We will discuss methods for improving this throughout this chapter and beyond.
 -->
 
-Ví dụ trên cho thấy, cách này thất bại khá thảm hại.
-Các giá trị ước lượng rất nhanh chóng suy giảm thành một hằng số chỉ sau một vài bước.
-Tại sao thuật toán trên hoạt động tệ đến thế?
-Suy cho cùng, lý do là trên thực tế các sai số dự đoán chồng chất qua các bước thời gian.
+Ví dụ trên cho thấy, cách này đã thất bại thảm hại. 
+Các giá trị ước lượng rất nhanh chóng suy giảm thành một hằng số chỉ sau một vài bước. 
+Tại sao thuật toán trên hoạt động tệ đến thế? 
+Suy cho cùng, lý do là trên thực tế các sai số dự đoán bị chồng chất qua các bước thời gian.
 Cụ thể, sau bước thời gian 1 chúng ta có nhận được sai số $\epsilon_1 = \bar\epsilon$.
-Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo.
-Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng.
-Đây là một hiện tượng khá phổ biến.
-Ví dụ, dự báo thời tiết trong 24 giờ tới có xu hướng khá chính xác nhưng độ chính xác giảm đi nhanh chóng cho những dự báo xa hơn thế.
-Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo.
+Tiếp theo, *đầu vào* cho bước thời gian 2 bị nhiễu loạn bởi $\epsilon_1$, do đó chúng ta nhận được sai số dự đoán $\epsilon_2 = \bar\epsilon + L \epsilon_1$. Tương tự như thế cho các bước thời gian tiếp theo. 
+Sai số có thể phân kỳ khá nhanh khỏi các quan sát đúng. 
+Đây là một hiện tượng phổ biến. 
+Ví dụ, dự báo thời tiết trong 24 giờ tới có độ chính xác khá cao nhưng nó giảm đi nhanh chóng với những dự báo xa hơn quãng thời gian đó. 
+Chúng ta sẽ thảo luận về các phương pháp để cải thiện vấn đề trên trong chương này và những chương tiếp theo. 
 
 <!--
 Let us verify this observation by computing the $k$-step predictions on the entire sequence.
@@ -510,8 +512,8 @@ This clearly illustrates how the quality of the estimates changes as we try to p
 While the 8-step predictions are still pretty good, anything beyond that is pretty useless.
 -->
 
-Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai.
-Trong khi những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó thì hoàn toàn vô dụng.
+Điều này minh họa rõ ràng chất lượng của các ước lượng thay đổi như thế nào khi chúng ta cố gắng dự đoán xa hơn trong tương lai. 
+Mặc dù những dự đoán có độ dài là 8 bước vẫn còn khá tốt, bất cứ kết quả dự đoán nào vượt ra ngoài khoảng đó thì khá là vô dụng.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -532,12 +534,12 @@ Consequently, if you have a time series, always respect the temporal order of th
 * For causal models (e.g., time going forward), estimating the forward direction is typically a lot easier than the reverse direction.
 -->
 
-* Các mô hình chuỗi thường yêu cầu các công cụ thống kê chuyên biệt để dự đoán và ước lượng.
-Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến ẩn.
-* Các sai số tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán các bước thời gian xa hơn.
+* Các mô hình chuỗi thường yêu cầu các công cụ thống kê chuyên biệt để ước lượng.
+Hai lựa chọn phổ biến đó là các mô hình tự hồi quy và mô hình tự hồi quy biến tiềm ẩn. 
+* Sai số bị tích lũy và chất lượng của phép ước lượng suy giảm đáng kể khi mô hình dự đoán các bước thời gian xa hơn. 
 * Khó khăn trong phép nội suy và ngoại suy khá khác biệt.
-Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luôn để ý trình tự thời gian của dữ liệu khi huấn luyện, hay nói cách khác, không bao giờ huấn luyện trên dữ liệu thuộc về bước thời gian trong tương lai.
-* Đối với các mô hình nhân quả (ví dụ, ở đó thời gian đi về phía trước), ước lượng theo chiều xuôi thường dễ dàng hơn rất nhiều so với chiều ngược lại.
+Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luôn để ý trình tự thời gian của dữ liệu khi huấn luyện, hay nói cách khác, không bao giờ huấn luyện trên dữ liệu thuộc về bước thời gian trong tương lai. 
+* Đối với các mô hình nhân quả (ví dụ, ở đó thời gian đi về phía trước), ước lượng theo chiều xuôi thường dễ dàng hơn rất nhiều so với chiều ngược lại. 
 
 
 
@@ -559,13 +561,13 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
 -->
 
 1. Hãy cải thiện mô hình nói trên bằng cách
-    * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bạn thực sự cần bao nhiêu mẫu quan sát?
-    * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân.
-    * Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao?
-    * Thay đổi cấu trúc mạng nơ-ron và xem những gì sẽ xảy ra.
-2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm?
-3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào?
-4. Hãy cho một ví dụ khi một mô hình tự hồi quy ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
+    * Kết hợp nhiều hơn 4 mẫu quan sát trong quá khứ? Bao nhiêu mẫu quan sát là thực sự cần thiết? 
+    * Bạn sẽ cần bao nhiêu mẫu nếu dữ liệu không có nhiễu? Gợi ý: bạn có thể viết $\sin$ và $\cos$ dưới dạng phương trình vi phân. 
+    * Có thể kết hợp các đặc trưng cũ hơn trong khi đảm bảo tổng số đặc trưng là không đổi không? Điều này có cải thiện độ chính xác không? Tại sao? 
+    * Thay đổi cấu trúc mạng nơ-ron và quan sát tác động của nó. 
+2. Nếu một nhà đầu tư muốn tìm một mã chứng khoán tốt để mua. Cô ta sẽ nhìn vào lợi nhuận trong quá khứ để quyết định mã nào có khả năng sinh lời. Điều gì có thể khiến chiến lược này trở thành sai lầm? 
+3. Liệu có thể áp dụng quan hệ nhân quả cho dữ liệu văn bản được không? Nếu có thì ở mức độ nào? 
+4. Hãy cho một ví dụ khi mô hình tự hồi quy tiềm ẩn có thể cần được dùng để nắm bắt động lực của dữ liệu.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -595,7 +597,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 2 -->
-*
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang

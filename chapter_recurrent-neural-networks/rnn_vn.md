@@ -16,10 +16,10 @@ However, the number of model parameters would also increase exponentially with i
 Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is preferable to use a *latent variable model* in which we have
 -->
 
-:numref:`sec_language_model` giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t$ chỉ phụ thuộc vào $n-1$ từ trước đó.
-Nếu muốn kiểm tra ảnh hưởng có thể có của các từ phía trước $t-(n-1)$ đến từ $x_t$, ta phải tăng $n$.
-Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị của từ điển $V$.
-Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn khi sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
+:numref:`sec_language_model` đã giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t$ chỉ phụ thuộc vào $n-1$ từ trước đó.
+Nếu muốn kiểm tra ảnh hưởng có thể có của các từ ở trước vị trí $t-(n-1)$ đến từ $x_t$, ta cần phải tăng $n$.
+Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị với một từ điển $V$ nào đó.
+Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn nếu ta sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
 
 $$p(x_t \mid x_{t-1}, \ldots, x_1) \approx p(x_t \mid x_{t-1}, h_{t}).$$
 
@@ -29,7 +29,7 @@ A latent variable is also called as *hidden variable*, *hidden state* or *hidden
 The hidden state at time $t$ could be computed based on both input $x_{t}$ and hidden state $h_{t-1}$, that is
 -->
 
-$h_t$ còn được gọi là *biến tiềm ẩn* và nó lưu trữ thông tin của chuỗi.
+$h_t$ được gọi là *biến tiềm ẩn* và nó lưu trữ thông tin của chuỗi.
 Biến tiềm ẩn còn được gọi là *biến ẩn* (*hidden variable*), *trạng thái ẩn* (*hidden state*) hay *biến trạng thái ẩn* (*hidden state variable*).
 Trạng thái ẩn tại thời điểm $t$ có thể được tính dựa trên cả đầu vào $x_{t}$ và trạng thái ẩn $h_{t-1}$ như sau 
 
@@ -42,10 +42,10 @@ We discussed this in :numref:`sec_sequence`.
 But it could potentially makes both computation and storage expensive.
 -->
 
-Với một hàm $f$ đủ mạnh, mô hình biến trạng thái tiềm ẩn không phải là một sự ước lượng.
+Với một hàm $f$ đủ mạnh, mô hình biến tiềm ẩn không phải là một phép xấp xỉ.
 Sau cùng, $h_t$ có thể chỉ đơn thuần lưu lại tất cả dữ liệu đã quan sát được cho đến thời điểm hiện tại.
 Điều này đã được thảo luận tại :numref:`sec_sequence`.
-Tuy nhiên điều này có thể sẽ làm việc tính toán và lưu trữ trở nên nặng nề.
+Tuy nhiên nó có thể khiến cho việc tính toán và lưu trữ trở nên nặng nề.
 
 
 <!--
@@ -59,10 +59,10 @@ In this sense they have much in common with latent variable models in statistics
 
 Chú ý rằng ta cũng sử dụng $h$ để kí hiệu số lượng nút ẩn trong một tầng ẩn.
 Tầng ẩn và trạng thái ẩn là hai khái niệm rất khác nhau.
-Tầng ẩn, như đã đề cập, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
+Tầng ẩn, như đã được giải thích, là các tầng không thể nhìn thấy trong quá trình đi từ đầu vào đến đầu ra.
 Trạng thái ẩn, về mặt kỹ thuật là *đầu vào* của một bước tính toán tại một thời điểm xác định.
 Chúng chỉ có thể được tính dựa vào dữ liệu tại các vòng lặp trước đó.
-Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê như mô hình phân cụm hoặc mô hình chủ đề (*topic model*), với các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
+Về điểm này, trạng thái ẩn giống với các mô hình biến tiềm ẩn trong thống kê như mô hình phân cụm hoặc mô hình chủ đề (*topic model*), trong đó các cụm tác động đến đầu ra nhưng không thể quan sát trực tiếp.
 
 <!--
 Recurrent neural networks are neural networks with hidden states.
@@ -89,7 +89,8 @@ Let the hidden layer's activation function be $\phi$.
 Hence, the hidden layer's output $\mathbf{H} \in \mathbb{R}^{n \times h}$ is calculated as
 -->
 
-Ta sẽ xem xét một perception đa tầng với một tầng ẩn duy nhất.
+
+Xét một perception đa tầng với một tầng ẩn duy nhất.
 Giả sử ta có một minibatch $\mathbf{X} \in \mathbb{R}^{n \times d}$ với $n$ mẫu và $d$ đầu vào.
 Gọi hàm kích hoạt của tầng ẩn là $\phi$.
 Khi đó, đầu ra của tầng ẩn $\mathbf{H} \in \mathbb{R}^{n \times h}$ được tính như sau
@@ -103,12 +104,14 @@ $$\mathbf{H} = \phi(\mathbf{X} \mathbf{W}_{xh} + \mathbf{b}_h).$$
 Here, we have the weight parameter $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$, bias parameter $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, and the number of hidden units $h$, for the hidden layer.
 -->
 
+
 Trong đó, $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$ là tham số trọng số, $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$ là hệ số điều chỉnh và $h$ là số nút ẩn của tầng ẩn.
 
 <!--
 The hidden variable $\mathbf{H}$ is used as the input of the output layer.
 The output layer is given by
 -->
+
 
 Biến ẩn $\mathbf{H}$ được sử dụng làm đầu vào của tầng đầu ra.
 Tầng đầu ra được tính toán bởi
@@ -122,15 +125,15 @@ If it is a classification problem, we can use $\text{softmax}(\mathbf{O})$ to co
 -->
 
 Trong đó $\mathbf{O} \in \mathbb{R}^{n \times q}$ là biến đầu ra, $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ là tham số trọng số và $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là hệ số điều chỉnh của tầng đầu ra.
-Nếu bài toán là phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của tầng đầu ra.
+Nếu đang giải quyết bài toán phân loại, ta có thể sử dụng $\text{softmax}(\mathbf{O})$ để tính phân phối xác suất của các lớp đầu ra.
 
 <!--
 This is entirely analogous to the regression problem we solved previously in :numref:`sec_sequence`, hence we omit details.
 Suffice it to say that we can pick $(x_t, x_{t-1})$ pairs at random and estimate the parameters $\mathbf{W}$ and $\mathbf{b}$ of our network via autograd and stochastic gradient descent.
 -->
 
-Do vấn đề này hoàn toàn tương tự với bài toán hồi quy đã từng được giải quyết trong :numref:`sec_sequence`, ta sẽ bỏ qua các chi tiết ở đây.
-Chỉ cần nói thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước tính các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
+Do bài toán này hoàn toàn tương tự với bài toán hồi quy được giải quyết trong :numref:`sec_sequence`, ta sẽ bỏ qua các chi tiết ở đây.
+Và chỉ cần biết thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1})$ một cách ngẫu nhiên và ước lượng các tham số $\mathbf{W}$ và $\mathbf{b}$ của mạng thông qua phép vi phân tự động và hạ gradient ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -158,13 +161,13 @@ to describe how to use the hidden variable of the previous timestep in the curre
 Specifically, the calculation of the hidden variable of the current timestep is determined by the input of the current timestep together with the hidden variable of the previous timestep:
 -->
 
-Vấn đề sẽ hoàn toàn khác đi nếu ta sử dụng các trạng thái ẩn.
-Hãy xem xét cấu trúc này một cách chi tiết hơn.
-Nhớ rằng ta thường gọi vòng lặp $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng thời điểm $t$ trong mạng nơ-ron truy hồi lại đề cập đến các bước trong một vòng lặp.
-Giả sử ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
-Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi.
-Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
-Cụ thể, biến ẩn của bước thời gian hiện tại được tính toán bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó:
+Vấn đề sẽ khác đi hoàn toàn nếu ta sử dụng các trạng thái ẩn. 
+Hãy xem xét cấu trúc này một cách chi tiết hơn. 
+Chúng ta thường gọi vòng lặp thứ $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng trong mạng nơ-ron truy hồi, thời điểm $t$ lại tương ứng với các bước trong một vòng lặp. 
+Giả sử trong một vòng lặp ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$. 
+Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn tại bước thời gian $t$ của chuỗi. 
+Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại. 
+Cụ thể, biến ẩn của bước thời gian hiện tại được xác định bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó: 
 
 
 $$\mathbf{H}_t = \phi(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1} \mathbf{W}_{hh}  + \mathbf{b}_h).$$
@@ -179,10 +182,11 @@ Since the hidden state uses the same definition of the previous timestep in the 
 the computation of the equation above is recurrent, hence the name recurrent neural network (RNN).
 -->
 
-So với :eqref:`rnn_h_without_state`, ở đây ta đã thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$.
-Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron.
-Do đó, một biến ẩn như vậy được gọi là một *trạng thái ẩn* (_hidden state_).
-Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại nên tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
+So với :eqref:`rnn_h_without_state`, phương trình này có thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$. 
+Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã lưu lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron. 
+Vì vậy, một biến ẩn còn được gọi là một *trạng thái ẩn* (_hidden state_). 
+Vì trạng thái ẩn ở bước thời gian hiện tại và trước đó đều có cùng định nghĩa, phương trình trên được tính toán theo phương pháp truy hồi. 
+Và đây cũng là lý do dẫn đến cái tên mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN). 
 
 <!--
 There are many different RNN construction methods.
@@ -190,9 +194,9 @@ RNNs with a hidden state defined by the equation above are very common.
 For timestep $t$, the output of the output layer is similar to the computation in the multilayer perceptron:
 -->
 
-Có nhiều phương pháp khác nhau để xây dựng RNN.
-Trong đó, RNN với trạng thái ẩn được định nghĩa bởi phương trình bên trên là rất phổ biến.
-Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng:
+Có rất nhiều phương pháp xây dựng RNN.
+Trong số đó, phổ biến nhất là RNN có trạng thái ẩn như định nghĩa ở phương trình trên.
+Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng: 
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -206,8 +210,8 @@ Therefore, the number of RNN model parameters does not grow as the number of tim
 -->
 
 Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
-Điều đáng nói là ngay cả đối với các bước thời gian khác nhau thì RNN vẫn luôn sử dụng cùng các tham số mô hình.
-Do đó, số lượng tham số mô hình RNN sẽ không tăng ngay cả khi số lượng bước thời gian tăng lên.
+Lưu ý rằng RNN luôn sử dùng cùng một bộ tham số mô hình cho dù tính toán ở các bước thời gian khác nhau. 
+Vì thế, việc tăng số bước thời gian không làm tăng lượng tham số mô hình của RNN. 
 
 <!--
 :numref:`fig_rnn` shows the computational logic of an RNN at three adjacent timesteps.
@@ -219,12 +223,12 @@ The hidden state of the current timestep $t$, $\mathbf{H}_t$, will participate i
 What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully connected output layer of the current timestep.
 -->
 
-:numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề.
-Tại bước thời gian $t$, tính toán của trạng thái ẩn có thể được coi là một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$ sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó.
-Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$.
-Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, có hệ số điều chỉnh là $\mathbf{b}_h$.
-Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
-Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$.
+:numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề. 
+Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, ta có thể coi nó như đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
+Đầu ra của tầng kết nối đầy đủ chính là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$. 
+Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, cùng với hệ số điều chỉnh $\mathbf{b}_h$. 
+Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$ được sử dụng để tính trạng thái ẩn $\mathbf{H}_{t+1}$ tại bước thời gian kế tiếp $t+1$. 
+Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra $\mathbf{O}_t$, một tầng kết nối đầy đủ, ở bước thời gian hiện tại. 
 
 <!--
 ![An RNN with a hidden state. ](../img/rnn.svg)
@@ -242,7 +246,7 @@ Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra k�
 ## Steps in a Language Model
 -->
 
-## Từng bước trong một Mô hình Ngôn ngữ
+## Các bước trong một Mô hình Ngôn ngữ
 
 <!--
 Now we illustrate how RNNs can be used to build a language model.
@@ -257,16 +261,16 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-Bây giờ chúng ta minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
-Để đơn giản, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
-Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu, "the time machine by H. G. Wells".
-:numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó.
-Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian,
-và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
-Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3,
-$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
-Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào
-phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này.
+Bây giờ hãy cùng xem cách xây dựng mô hình ngôn ngữ bằng RNN.
+Vì dùng từ thường dễ hiểu hơn dùng chữ, nên các từ sẽ được dùng làm đầu vào trong ví dụ đơn giản này.  
+Đặt kích thước minibatch là 1, với chuỗi văn bản là phần đầu của tập dữ liệu: "the time machine by H. G. Wells". 
+:numref:`fig_rnn_train` minh họa cách ước lượng từ tiếp theo dựa trên từ hiện tại và các từ trước đó. 
+Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian, 
+sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
+Do trạng thái ẩn trong tầng ẩn được tính toán truy hồi, đầu ra của bước thời gian thứ 3, 
+$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine". 
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", giá trị mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" tại bước thời gian này. 
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
@@ -280,8 +284,8 @@ In practice, each word is presented by a $d$ dimensional vector, and we use a ba
 Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix, which is identical to what we discussed before.
 -->
 
-Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và chúng ta sử dụng kích thước batch $n>1$.
-Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây.
+Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và kích thước batch thường là $n>1$.
+Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 

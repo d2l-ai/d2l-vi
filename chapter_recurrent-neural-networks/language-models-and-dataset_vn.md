@@ -17,9 +17,9 @@ then, in the discrete time series, $x_t$($1 \leq t \leq T$) can be considered as
 Given such a sequence, the goal of a language model is to estimate the probability
 -->
 
-Trong phần :numref:`sec_text_preprocessing`, chúng ta biết cách để ánh xạ dữ liệu văn bản sang token, và những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
-Giả sử những token trong một văn bản có độ dài $T$ lần lượt là $x_1, x_2, \ldots, x_T$, thì trong chuỗi thời gian rời rạc này, $x_t$($1 \leq t \leq T$) có thể được coi là đầu ra hoặc là nhãn của bước thời gian $t$.
-Khi đã có được một chuỗi như trên, mục tiêu của một mô hình ngôn ngữ là nhằm để ước tính xác suất sau
+:numref:`sec_text_preprocessing` đã trình bày cách ánh xạ dữ liệu văn bản sang token, những token này có thể được xem như một chuỗi thời gian của các quan sát rời rạc.
+Giả sử văn bản độ dài $T$ có dãy token là $x_1, x_2, \ldots, x_T$, thì $x_t$($1 \leq t \leq T$) có thể coi là đầu ra (hoặc nhãn) tại bước thời gian $t$.
+Khi đã có chuỗi thời gian trên, mục tiêu của mô hình ngôn ngữ là ước tính xác suất của 
 
 $$p(x_1, x_2, \ldots, x_T).$$
 
@@ -31,11 +31,11 @@ Furthermore, it would be sufficient for generating a meaningful dialog, simply b
 Clearly we are still very far from designing such a system, since it would need to *understand* the text rather than just generate grammatically sensible content.
 -->
 
-Mô hình ngôn ngữ thì vô cùng hữu dụng. 
-Chẳng hạn, một mô hình ngôn ngữ lý tưởng sẽ có thể tự tạo ra văn bản tự nhiên, chỉ đơn giản bằng cách lựa chọn ra một từ tại một thời điểm theo biểu thức $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
-Không giống như việc những con khỉ gõ phím, tất cả văn bản được sinh ra từ mô hình như thế này sẽ giống với ngôn ngữ tự nhiên, chẳng hạn như là văn bản tiếng anh.
-Hơn nữa, mô hình sẽ đủ khả năng để tạo một đoạn hội thoại có ý nghĩa, chỉ đơn giản bằng việc đặt điều kiện phụ thuộc trên các đoạn hội thoại trước đó.
-Trên thực tế, chúng ta vẫn còn khoảng cách rất xa để có thể thiết kế được một hệ thống giống như vậy, vì việc này sẽ cần mô hình phải *hiểu* được văn bản hơn là chỉ tạo ra nội dung phù hợp về mặt ngữ pháp.
+Mô hình ngôn ngữ vô cùng hữu dụng. 
+Chẳng hạn, một mô hình lý tưởng có thể tự tạo ra văn bản tự nhiên, chỉ bằng cách chọn một từ $w_t$ tại thời điểm $t$ với $w_t \sim p(w_t \mid w_{t-1}, \ldots, w_1)$.
+Khác hoàn toàn với việc chỉ gõ phím ngẫu nhiên như trong định lý con khỉ vô hạn (*infinite monkey theorem*), văn bản được sinh ra từ mô hình này giống ngôn ngữ tự nhiên, giống tiếng Anh chẳng hạn.
+Hơn nữa, mô hình đủ khả năng tạo ra một đoạn hội thoại có ý nghĩa mà chỉ cần dựa vào đoạn hội thoại trước đó.
+Trên thực tế, còn rất xa để thiết kế được hệ thống như vậy, vì mô hình sẽ cần *hiểu* văn bản hơn là chỉ tạo ra nội dung đúng ngữ pháp.
 
 <!--
 Nonetheless language models are of great service even in their limited form.
@@ -45,10 +45,10 @@ Likewise, in a document summarization algorithm it is worth while knowing that "
 or that "I want to eat grandma" is a rather disturbing statement, whereas "I want to eat, grandma" is much more benign.
 -->
 
-Tuy nhiên, những mô hình ngôn ngữ như thế này vẫn rất hữu dụng ngay cả khi chúng vẫn còn rất hạn chế.
-Chẳng hạn, cụm từ  “nhận dạng giọng nói” và “nhân gian giông tố” khi nghe phát âm thì có vẻ rất giống nhau.
-Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng sự mơ hồ này thì dễ dàng được giải quyết thông qua một mô hình ngôn ngữ mà sẽ loại bỏ ngay phương án thứ hai vì cụm từ này mang ý nghĩa quá kì lạ.
-Tương tự như vậy, một thuật toán tóm tắt tài liệu nên biết được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với câu “người cắn chó”, hoặc là câu “Cháu muốn ăn bà ngoại" nghe khá là kinh dị trong khi câu “Cháu muốn ăn, bà ngoại" thì lại mang ý nghĩa vô hại hơn nhiều.
+Tuy nhiên, mô hình ngôn ngữ vẫn rất hữu dụng ngay cả khi còn hạn chế.
+Chẳng hạn, cụm từ “nhận dạng giọng nói” và “nhân gian rộng lối” có phát âm khá giống nhau.
+Điều này có thể gây ra sự mơ hồ trong việc nhận dạng giọng nói, nhưng có thể dễ dàng được giải quyết với một mô hình ngôn ngữ. Mô hình sẽ loại bỏ ngay phương án thứ hai do mang ý nghĩa kì lạ.
+Tương tự, một thuật toán tóm tắt tài liệu nên phân biệt được rằng câu “chó cắn người" xuất hiện thường xuyên hơn nhiều so với “người cắn chó”, hay như “Cháu muốn ăn bà ngoại" nghe khá kinh dị trong khi “Cháu muốn ăn, bà ngoại" lại là bình thường.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -67,9 +67,9 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-Câu hỏi rõ ràng ở đây là làm thế nào để mô hình hoá một tài liệu, hay thậm chí là một chuỗi các từ.
-Chúng ta có thể xem lại cách phân tích chúng ta đã áp dụng lên những mô hình chuỗi ở phần trước.
-Hãy bắt đầu bằng việc áp dụng những quy tắc xác suất cơ bản sau:
+Làm thế nào để mô hình hoá một tài liệu hay thậm chí là một chuỗi các từ?
+Ta có thể sử dụng cách phân tích đã dùng trong mô hình chuỗi ở phần trước.
+Bắt đầu bằng việc áp dụng quy tắc xác suất cơ bản sau:
 
 $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t-1}).$$
 
@@ -77,15 +77,13 @@ $$p(w_1, w_2, \ldots, w_T) = p(w_1) \prod_{t=2}^T p(w_t  \mid  w_1, \ldots, w_{t
 For example, the probability of a text sequence containing four tokens consisting of words and punctuation would be given as:
 -->
 
-Ví dụ: xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu sẽ được tính như sau:
+Ví dụ, xác suất của chuỗi văn bản chứa bốn token bao gồm các từ và dấu chấm câu được tính như sau:
 
 <!--
 $$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 -->
 
-
-$$p(\mathrm{Thống}, \mathrm{kê}, \mathrm{vui} \mathrm{.}) =  p(\mathrm{Thống}) p(\mathrm{kê}  \mid  \mathrm{Thống}) p(\mathrm{vui}  \mid  \mathrm{Thống}, \mathrm{kê}) p(\mathrm{.}  \mid  \mathrm{Thống}, \mathrm{kê}, \mathrm{vui}).$$
-
+$$p(\mathrm{Statistics}, \mathrm{is}, \mathrm{fun}, \mathrm{.}) =  p(\mathrm{Statistics}) p(\mathrm{is}  \mid  \mathrm{Statistics}) p(\mathrm{fun}  \mid  \mathrm{Statistics}, \mathrm{is}) p(\mathrm{.}  \mid  \mathrm{Statistics}, \mathrm{is}, \mathrm{fun}).$$
 
 
 <!--
@@ -94,10 +92,10 @@ Here, we assume that the training dataset is a large text corpus, such as all Wi
 The probability of words can be calculated from the relative word frequency of a given word in the training dataset.
 -->
 
-Để mà tính toán mô hình ngôn ngữ, chúng ta cần tính xác suất của từng từ trong đoạn văn bản và xác suất có điều kiện của một từ dựa trên một vài từ xuất hiện trước đó. 
+Để tính toán mô hình ngôn ngữ, ta cần tính xác suất các từ và xác suất có điều kiện của một từ khi đã có vài từ trước đó. 
 Đây chính là các tham số của mô hình ngôn ngữ.
-Ở đây, chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục của Wikipedia, [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg) hoặc tất cả văn bản được đăng trên web.
-Xác suất riêng lẻ của từng từ có thể được tính bằng tần số xuất hiện tương đối của từ đó trong tập dữ liệu huấn luyện.
+Ở đây chúng ta giả định rằng, tập dữ liệu huấn luyện là một kho ngữ liệu lớn, chẳng hạn như là tất cả các mục trong Wikipedia của [Dự án Gutenberg](https://en.wikipedia.org/wiki/Project_Gutenberg), hoặc tất cả văn bản được đăng trên mạng.
+Xác suất riêng lẻ của từng từ có thể tính bằng tần suất của từ đó trong tập dữ liệu huấn luyện.
 
 <!--
 For example, $p(\mathrm{Statistics})$ can be calculated as the probability of any sentence starting with the word "statistics".
@@ -106,12 +104,12 @@ This works fairly well, particularly for frequent words.
 Moving on, we could attempt to estimate
 -->
 
-Ví dụ: $p(\mathrm{Thống})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu với từ “Thống”.
-Một cách tiếp cận ít chính xác hơn sẽ là đếm tất cả các lần xuất hiện của từ ”thống”, và chia nó cho tổng số từ trong kho dữ liệu văn bản.
-Cách làm này hoạt động khá hiệu quả, đặc biệt là cho các từ thường xuyên xuất hiện. 
-Tiếp theo, chúng ta có thể thử ước tính 
+Ví dụ, $p(\mathrm{Statistics})$ có thể được tính là xác suất của bất kỳ câu nào bắt đầu bằng “statistics”.
+Một cách thiếu chính xác hơn là đếm tất cả số lần xuất hiện của ”statistics” và chia số lần đó cho tổng số từ trong kho ngữ liệu văn bản.
+Cách làm này khá hiệu quả, đặc biệt là với các từ xuất hiện thường xuyên. 
+Tiếp theo, ta tính 
 
-$$\hat{p}(\mathrm{kê} \mid \mathrm{Thống}) = \frac{n(\mathrm{Thống~kê})}{n(\mathrm{Thống})}.$$
+$$\hat{p}(\mathrm{is} \mid \mathrm{Statistics}) = \frac{n(\mathrm{Statistics, is})}{n(\mathrm{Statistics})}.$$
 
 <!--
 Here $n(w)$ and $n(w, w')$ are the number of occurrences of singletons and pairs of words respectively.
@@ -123,13 +121,13 @@ Unless we provide some solution to give such word combinations nonzero weight, w
 If the dataset is small or if the words are very rare, we might not find even a single one of them.
 -->
 
-Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của những từ đơn và những cặp từ ghép.
-Thật không may, việc ước tính xác suất của một cặp từ có phần khó khăn hơn, bởi vì sự xuất hiện của cặp từ “thống kê” là hiếm khi xảy ra hơn.
-Đặc biệt, với một vài từ ghép bất thường, rất khó để tìm đủ số lần xuất hiện của những từ ghép này để có được một ước tính chính xác.
-Mọi thứ trở nên tệ hơn đối với các từ ghép có ba chữ trở lên.
-Sẽ có nhiều từ ghép ba chữ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
-Trừ khi chúng ta nghĩ ra một số giải pháp để cho các tổ hợp từ như vậy có được trọng số khác không, nếu không, chúng ta sẽ không thể sử dụng chúng như một mô hình ngôn ngữ.
-Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể sẽ không tìm thấy ngay cả dù chỉ là một lần xuất hiện của tổ hợp từ ấy.
+Ở đây $n(w)$ và $n(w, w')$ lần lượt là số lần xuất hiện của các từ đơn và cặp từ ghép.
+Đáng tiếc là việc ước tính xác suất của một cặp từ thường khó khăn hơn, bởi vì sự xuất hiện của cặp từ “Statistics is” hiếm khi xảy ra hơn.
+Đặc biệt, với các cụm từ ít đi cùng nhau, rất khó tìm đủ số lần xuất hiện để ước tính chính xác. 
+Mọi thứ thậm chí sẽ khó hơn đối với các cụm ba từ trở lên.
+Sẽ có nhiều cụm ba từ hợp lý mà hầu như không hề xuất hiện trong tập dữ liệu.
+Trừ khi có giải pháp để đánh trọng số khác không cho các tổ hợp từ đó, nếu không sẽ không thể sử dụng chúng trong một mô hình ngôn ngữ.
+Nếu kích thước tập dữ liệu nhỏ hoặc nếu các từ rất hiếm, chúng ta thậm chí có thể không tìm thấy nổi một lần xuất hiện của các tổ hợp từ đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -142,9 +140,8 @@ We already encountered this in our discussion of naive Bayes in :numref:`sec_nai
 This helps with singletons, e.g., via
 -->
 
-Một chiến thuật phổ biến là thực hiện một kỹ thuật làm mượt Laplace.
-Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong phần :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm. 
-Điều này được thực hiện bằng việc thêm các hệ số đơn, ví dụ: thông qua
+Một kỹ thuật phổ biến là làm mượt Laplace (*Laplace smoothing*).
+Chúng ta đã biết kỹ thuật này khi thảo luận về Naive Bayes trong :numref:`sec_naive_bayes`, với giải pháp là cộng thêm một hằng số nhỏ vào tất cả các số đếm như sau
 
 $$\begin{aligned}
 \t\hat{p}(w) & = \frac{n(w) + \epsilon_1/m}{n + \epsilon_1}, \\
@@ -165,16 +162,16 @@ It is quite difficult to adjust such models to additional contexts, whereas, dee
 Last, long word sequences are almost certain to be novel, hence a model that simply counts the frequency of previously seen word sequences is bound to perform poorly there.
 -->
 
-Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ chúng ta sử dụng ước tính của một chuỗi ngắn hơn làm phần bổ sung cho chuỗi dài hơn.
-Thêm nữa, $m$ là tổng số từ trong tập văn bản.
+Ở đây các hệ số $\epsilon_i > 0$ xác định mức độ ảnh hưởng của chuỗi ngắn hơn khi ước tính chuỗi dài hơn,
+$m$ là tổng số từ trong tập văn bản.
 Công thức trên là một biến thể khá nguyên thủy của kỹ thuật làm mượt Kneser-Ney và Bayesian phi tham số.
-Xem tài liệu :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết về cách thực hiện việc này.
-Thật không may, các mô hình như thế này sẽ rất nhanh chóng trở nên bất kham vì những lý do sau.
+Xem :cite:`Wood.Gasthaus.Archambeau.ea.2011` để biết thêm chi tiết.
+Thật không may, các mô hình như vậy là bất khả thi vì những lý do sau.
 Đầu tiên, chúng ta cần lưu trữ tất cả các số đếm. 
-Thứ hai, điều này hoàn toàn bỏ qua ý nghĩa của các từ.
+Thứ hai, các mô hình hoàn toàn bỏ qua ý nghĩa của các từ.
 Chẳng hạn, danh từ *“mèo”(“cat")* và tính từ *“thuộc về mèo”(“feline”)* nên xuất hiện trong các ngữ cảnh có liên quan đến nhau.
-Rất khó để điều chỉnh thêm vào các mô hình như vậy các ngữ cảnh bổ trợ, trong khi đó, các mô hình ngôn ngữ dựa trên học sâu rất phù hợp để thực hiện các điều này.
-Cuối cùng, các chuỗi từ dài gần như chắc chắn là sẽ mang tính mới lạ, do đó với một mô hình chỉ đơn giản là đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém trong trường hợp này.
+Rất khó để thêm các ngữ cảnh bổ trợ vào các mô hình đó, trong khi các mô hình ngôn ngữ dựa trên học sâu hoàn toàn có thể làm được.
+Cuối cùng, các chuỗi từ dài gần như hoàn toàn mới lạ, do đó một mô hình chỉ đơn giản đếm tần số của các chuỗi từ đã thấy trước đó sẽ hoạt động rất kém.
 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -196,12 +193,12 @@ Higher orders correspond to longer dependencies.
 This leads to a number of approximations that we could apply to model a sequence:
 -->
 
-Trước khi chúng ta thảo luận về các giải pháp liên quan đến học sâu, chúng ta cần có thêm một số thuật ngữ và khái niệm.
-Hãy nhớ lại cuộc thảo luận của chúng ta về mô hình Markov ở phần trước. 
-Chúng ta hãy áp dụng mô hình này để mô hình hóa ngôn ngữ. 
-Một phân phối trên các chuỗi thỏa mãn thuộc tính của mô hình Markov bậc nhất nếu $p(w_{t+1} \mid w_t, \ldots, w_1) = p(w_{t+1} \mid w_t)$.
-Những bậc cao hơn sẽ tương ứng với những chuỗi phụ thuộc dài hơn. 
-Điều này dẫn đến một lượt các phép xấp xỉ mà chúng ta có thể áp dụng để mô hình hóa một chuỗi:
+Trước khi thảo luận các giải pháp sử dụng học sâu, chúng ta sẽ giải thích một số thuật ngữ và khái niệm.
+Hãy nhớ lại mô hình Markov đề cập ở phần trước,
+và áp dụng để mô hình hóa ngôn ngữ. 
+Một phân phối trên các chuỗi thỏa mãn điều kiện Markov bậc nhất nếu $p(w_{t+1} \mid w_t, \ldots, w_1) = p(w_{t+1} \mid w_t)$.
+Những bậc cao hơn tương ứng với những chuỗi phụ thuộc dài hơn. 
+Do đó chúng ta có thể áp dụng các phép xấp xỉ để mô hình hóa một chuỗi:
 
 $$
 \begin{aligned}
@@ -216,8 +213,8 @@ The probability formulae that involve one, two, and three variables are typicall
 In the following, we will learn how to design better models.
 -->
 
-Các công thức xác suất liên quan đến một, hai và ba biến thường được gọi lần lượt là các mô hình unigram, bigram và trigram.
-Sau đây, chúng ta sẽ học cách thiết kế các mô hình tốt hơn.
+Các công thức xác suất liên quan đến một, hai và ba biến được gọi là các mô hình unigram, bigram và trigram.
+Sau đây, chúng ta sẽ tìm hiểu cách thiết kế các mô hình tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -234,8 +231,8 @@ Let us see how this works on real data.
 We construct a vocabulary based on the time machine data similar to :numref:`sec_text_preprocessing` and print the top $10$ most frequent words.
 -->
 
-Hãy cùng nhau xem mô hình hoạt động như thế nào trên dữ liệu thực tế.
-Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu có tên là 'máy thời gian' tương tự như ở phần :numref:`sec_text_preprocessing` và trả ra kết quả $10$ từ có tần suất xuất hiện cao nhất.
+Hãy cùng xem mô hình hoạt động thế nào trên dữ liệu thực tế.
+Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu "cỗ máy thời gian" tương tự như ở :numref:`sec_text_preprocessing` và in ra $10$ từ có tần suất xuất hiện cao nhất.
 
 ```{.python .input  n=1}
 import d2l
@@ -257,12 +254,12 @@ The $10^{\mathrm{th}}$ most frequent word is less than $1/5$ as common as the mo
 To get a better idea we plot the graph of the word frequency.
 -->
 
-Như chúng ta có thể thấy, những từ phổ biến nhất không có gì đáng để xem xét kĩ.
-Các từ này thường được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng được lọc ra.
-Mặc dù nói như vậy, nhưng không có nghĩa là không sử dụng những từ này vì dù sao chúng vẫn mang một ý nghĩa nhất định.
-Tuy nhiên, một điều khá rõ ràng là tần số của từ suy giảm khá là nhanh.
-Từ phổ biến thứ $10$ thì xuất hiện ít hơn $ 1/5 $ lần so với từ phổ biến nhất.
-Để nắm bắt được ý tưởng này rõ hơn, chúng ta vẽ đồ thị tần số của từ.
+Có thể thấy những từ xuất hiện nhiều nhất không có gì đáng chú ý.
+Các từ này được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng thường được lọc ra.
+Dù vậy, những từ này vẫn có nghĩa và ta vẫn sẽ sử dụng chúng.
+Tuy nhiên, rõ ràng là tần số của từ suy giảm khá nhanh.
+Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $ 1/5 $ lần so với từ phổ biến nhất.
+Để hiểu rõ hơn, chúng ta sẽ vẽ đồ thị tần số của từ.
 
 ```{.python .input  n=2}
 freqs = [freq for token, freq in vocab.token_freqs]
@@ -276,11 +273,11 @@ After dealing with the first four words as exceptions ('the', 'i', 'and', 'of'),
 This means that words satisfy [Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) which states that the item frequency is given by
 -->
 
-Chúng ta đang tiến tới gần một phát hiện nền tảng ở đây: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
-Sau khi xử lý bốn từ đầu tiên ('the', 'i', 'and', 'of') như là các ngoại lệ, tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
-Điều này có nghĩa là từ ngữ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law) mà có phát biểu rằng tần suất xuất hiện sẽ được xác định bởi
+Chúng ta đang tiến gần tới một đặc điểm cơ bản: tần số của từ suy giảm nhanh chóng theo một cách được xác định rõ.
+Ngoại trừ bốn từ đầu tiên ('the', 'i', 'and', 'of'), tất cả các từ còn lại đi theo một đường thẳng trên biểu đồ thang log.
+Theo đó các từ tuân theo định luật [Zipf] (https://en.wikipedia.org/wiki/Zipf%27s_law), tức là tần suất xuất hiện của từ được xác định bởi
 
-$$n(x) \propto (x + c)^{-\alpha} \text{ và do đó }
+$$n(x) \propto (x + c)^{-\alpha} \text{ và~do~đó }
 \log n(x) = -\alpha \log (x+c) + \mathrm{const.}$$
 
 <!--
@@ -289,10 +286,11 @@ After all, we will significantly overestimate the frequency of the tail, also kn
 But what about the other word combinations (such as bigrams, trigrams, and beyond)?
 Let us see whether the bigram frequency behaves in the same manner as the unigram frequency.
 -->
-Điều này đã làm chúng ta cần phải suy nghĩ lại nếu chúng ta muốn mô hình hóa các từ bằng các số liệu thống kê đếm và kỹ thuật làm mượt.
-Rốt cuộc, chúng ta sẽ ước tính quá cao tần số của phần đuôi, còn được biết như là những từ có tần suất xuất hiện thấp.
-Vậy còn các tổ hợp từ khác thì sẽ ra sao (như cặp đôi - _bigram_, cặp ba - _trigram_, và hơn thế nữa)?
-Chúng ta hãy xem liệu tần xuất của bigram có cùng biểu hiện tương tự như tần suất của unigram hay không.
+
+Điều này khiến chúng ta cần suy nghĩ kĩ khi mô hình hóa các từ bằng cách đếm và kỹ thuật làm mượt.
+Rốt cuộc, chúng ta sẽ ước tính quá cao những từ có tần suất xuất hiện thấp.
+Vậy còn các tổ hợp từ khác như 2-gram, 3-gram và nhiều hơn thì sao?
+Hãy xem liệu tần số của bigram có tương tự như unigram hay không.
 
 ```{.python .input  n=3}
 bigram_tokens = [[pair for pair in zip(
@@ -311,9 +309,9 @@ Out of the 10 most frequent word pairs, 9 are composed of stop words and only on
 Furthermore, let us see whether the trigram frequency behaves in the same manner.
 -->
 
-Có hai điều đáng chú ý ở đây.
-9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách---từ "the time".
-Hơn nữa, chúng ta hãy xem liệu tần xuất trigram có hoạt động theo cách tương tự hay không.
+Có một điều đáng chú ý ở đây.
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách --- cặp từ "the time".
+Hãy xem tần số của trigram có tương tự hay không.
 
 
 ```{.python .input  n=4}
@@ -327,7 +325,7 @@ print(trigram_vocab.token_freqs[:10])
 Last, let us visualize the token frequency among these three gram models: unigrams, bigrams, and trigrams.
 -->
 
-Cuối cùng, chúng ta hãy quan sát biểu đồ tần xuất token trong các mô hình gram sau: 1-gram (*unigram*), 2-gram (*bigram*), và 3-gram (*trigram*).
+Cuối cùng, hãy quan sát biểu đồ tần số token của các mô hình: unigram, bigram, và trigram.
 
 
 ```{.python .input  n=5}
@@ -346,11 +344,11 @@ This gives us hope that there is quite a lot of structure in language.
 Third, many n-grams occur very rarely, which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use deep learning based models.
 -->
 
-Biểu đồ này khá thú vị bởi một vài lý do.
-Thứ nhất, ngoài các từ unigram, các chuỗi của các từ cũng xuất hiện theo định luật Zipf, mặc dù với một số mũ thấp hơn, tùy thuộc vào chiều dài chuỗi.
-Thứ hai, số lượng các n-gram duy nhất không phải là lớn.
-Điều này cho chúng ta hy vọng về số lượng lớn các cấu trúc trong ngôn ngữ.
-Thứ ba, rất nhiều n-gram hiếm khi tồn tại, khiến cho phép làm mịn Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng mô hình học sâu.
+Có vài điều khá thú vị ở biểu đồ này.
+Thứ nhất, ngoài unigram, các cụm từ cũng tuân theo định luật Zipf, với số mũ thấp hơn tùy vào chiều dài cụm từ.
+Thứ hai, số lượng các n-gram độc nhất là không nhiều.
+Điều này có thể liên quan đến số lượng lớn các cấu trúc trong ngôn ngữ.
+Thứ ba, rất nhiều n-gram hiếm khi xuất hiện, khiến phép làm mượt Laplace không thích hợp để xây dựng mô hình ngôn ngữ. Thay vào đó, chúng ta sẽ sử dụng các mô hình học sâu.
 
 
 <!--
@@ -368,19 +366,18 @@ We did so in a rather ad-hoc manner when we introduced in :numref:`sec_sequence`
 Let us formalize this a bit.
 -->
 
-Trước khi giới thiệu các mô hình này, hãy giả sử ta sử dụng mạng nơ-ron để huấn luyện một mô hình ngôn ngữ.
-Câu hỏi là làm thế nào để đọc các mini-batch của các mẫu và nhãn của chúng một cách ngẫu nhiên.
-Do bản chất tuần tự của dữ liệu chuỗi, chúng ta cần giải quyết các vấn đề khi thực hiện xử lý nó .
-Điều này đã được giới thiệu một cách khá đặc biệt trong :numref:`sec_sequence`.
-Hãy hợp thức hóa bước này một chút.
+Giả sử cần sử dụng mạng nơ-ron để huấn luyện mô hình ngôn ngữ.
+Với tính chất tuần tự của dữ liệu chuỗi, làm thế nào để đọc ngẫu nhiên các mini-batch gồm các mẫu và nhãn?
+Ví dụ đơn giản trong :numref:`sec_sequence` đã giới thiệu một cách thực hiện.
+Hãy tổng quát hóa cách làm này một chút.
 
 <!--
 In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtain 5-grams in a sentence, here a token is a character.
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-Trong :numref: `fig_timemachine_5gram`, ta đã biểu diễn bằng nhiều cách để chia 1 một câu thành các 5-gram, ở đây mỗi token là một ký tự.
-Lưu ý rằng chúng ta có khá nhiều tự do vì có thể chọn một phần bù tùy ý.
+:numref: `fig_timemachine_5gram`, biểu diễn các cách để chia một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+Ta có thể chọn tùy ý độ dời ở vị trí bắt đầu.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -406,14 +403,13 @@ Instead we can use a simple trick to get both *coverage* and *randomness*: use a
 We describe how to accomplish this for both random sampling and sequential partitioning strategies below.
 -->
 
-Do vậy, chúng ta nên chọn giá trị nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
-Nhưng nếu chúng ta chọn tất cả các giá trị độ dời, chúng ta sẽ thu được dữ liệu khá dư thừa do sự chồng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
-Việc chỉ chọn một tập hợp ngẫu nhiên các vị trí ban đầu cũng không tốt vì nó không đảm bảo sẽ bao quát đồng đều cả mảng.
-Ví dụ, nếu chúng ta lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
-Điều này có nghĩa là chúng ta không thể kỳ vọng vào sự bao quát đồng đều nếu dùng cách này.
-Ngay cả khi hoán vị ngẫu nhiên một tập tất cả các giá trị độ dời cũng không bảo đảm hoàn toàn.
-Thay vào đó chúng ta có thể sử dụng một thủ thuật đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
-Chúng tôi sẽ mô tả cách thực hiện điều này trong cả phép lấy mẫu ngẫu nhiên và phép phân tách chuỗi dưới đây.
+Chúng ta nên chọn giá trị độ dời nào? Trong thực tế, tất cả các giá trị đó đều tốt như nhau.
+Nhưng nếu chọn tất cả các giá trị độ dời, dữ liệu sẽ khá dư thừa do trùng lặp lẫn nhau, đặc biệt trong trường hợp các chuỗi rất dài.
+Việc chỉ chọn một tập ngẫu nhiên các vị trí đầu cũng không tốt vì không đảm bảo sẽ bao quát đồng đều cả mảng.
+Ví dụ, nếu lấy ngẫu nhiên có hoàn lại $n$ phần tử từ một tập có $n$ phần tử, xác suất một phần tử cụ thể không được chọn là $(1-1/n)^n \to e^{-1}​$.
+Nghĩa là ta không thể kỳ vọng vào sự bao quát đồng đều, ngay cả khi hoán vị ngẫu nhiên một tập giá trị độ dời.
+Thay vào đó, có thể sử dụng một cách đơn giản để có được cả tính *bao quát* và tính *ngẫu nhiên*, đó là: chọn một độ dời ngẫu nhiên, sau đó sử dụng tuần tự các giá trị tiếp theo.
+Điều này được mô tả trong phép lấy mẫu ngẫu nhiên và phép phân tách tuần tự dưới đây.
 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -435,13 +431,11 @@ The positions of two adjacent random minibatches on the original sequence are no
 The target is to predict the next character based on what we have seen so far, hence the labels are the original sequence, shifted by one character.
 -->
 
-Đoạn mã sau sinh ngẫu nhiên từng minibatch dữ liệu một.
-Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch và `num_steps` biểu thị chiều dài của chuỗi (hoặc số bước thời gian nếu chúng ta có một chuỗi thời gian) trong mỗi mẫu.
+Đoạn mã sau tạo ngẫu nhiên một minibatch dữ liệu.
+Ở đây, kích thước batch `batch_size` biểu thị số mẫu trong mỗi minibatch, `num_steps` biểu thị chiều dài mỗi mẫu (là số bước thời gian trong trường hợp chuỗi thời gian).
 Trong phép lấy mẫu ngẫu nhiên, mỗi mẫu là một chuỗi tùy ý được lấy ra từ chuỗi gốc.
-Vị trí của hai minibatch ngẫu nhiên liên tiếp trên chuỗi ban đầu không nhất thiết phải liền kề với nhau.
-Mục tiêu của ta là dự đoán ký tự tiếp theo dựa trên những ký tự chúng ta đã thấy cho đến hiện tại, do đó nhãn chính là chuỗi ban đầu được dịch chuyển đi một ký tự.
-
-
+Hai minibatch ngẫu nhiên liên tiếp không nhất thiết phải liền kề nhau trong chuỗi góc.
+Mục tiêu của ta là dự đoán phần tử tiếp theo dựa trên các phần tử đã thấy cho đến hiện tại, do đó nhãn của một mẫu chính là mẫu đó dịch chuyển sang phải một phần tử.
 
 ```{.python .input  n=1}
 # Saved in the d2l package for later use
@@ -474,10 +468,9 @@ This means that depending on the offset we can generate between 4 and 5 $(x, y)$
 With a minibatch size of 2, we only get 2 minibatches.
 -->
 
-Hãy cùng sinh một chuỗi từ 0 tới 30.
-Chúng ta giả định rằng kích thước batch là 2 và số lượng bước thời gian là 6.
-Điều này có nghĩa là tùy thuộc vào độ dời, chúng ta có thể sinh từ 4 tới 5 cặp $(x, y)$.
-Với kích thước minibatch bằng 2, chúng ta chỉ thu được 2 minibatch.
+Hãy tạo ra một chuỗi từ 0 đến 29, rồi sinh các minibatch từ chuỗi đó với kích thước batch là 2 và số bước thời gian là 6.
+Nghĩa là tùy vào độ dời, ta có thể sinh tối đa 4 hoặc 5 cặp $(x, y)$.
+Với kích thước batch bằng 2, ta thu được 2 minibatch.
 
 
 ```{.python .input  n=6}
@@ -494,16 +487,13 @@ for X, Y in seq_data_iter_random(my_seq, batch_size=2, num_steps=6):
 ### Sequential Partitioning
 -->
 
-### Phân vùng Tuần tự
-
+### Phân tách Tuần tự
 
 <!--
 In addition to random sampling of the original sequence, we can also make the positions of two adjacent random minibatches adjacent in the original sequence.
 -->
 
-Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm cho vị trí của hai minibatch ngẫu nhiên liền kề thực sự liền kề nhau trong chuỗi gốc.
-
-
+Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm hai minibatch ngẫu nhiên liên tiếp có vị trí liền kề nhau trong chuỗi gốc.
 
 ```{.python .input  n=7}
 # Saved in the d2l package for later use
@@ -527,10 +517,8 @@ Using the same settings, print input `X` and label `Y` for each minibatch of exa
 The positions of two adjacent minibatches on the original sequence are adjacent.
 -->
 
-Sử dụng các giá trị cài đặt tương tự như ở trên, hãy cũng in đầu vào `X` và nhãn `Y` cho mỗi minibatch được lấy mẫu ngẫu nhiên.
-Các vị trí của hai minibatch liền kề trên chuỗi ban đầu cũng liền kề nhau.
-
-
+Sử dụng các đối số như ở trên, ta sẽ in đầu vào `X` và nhãn `Y` cho mỗi minibatch sau khi phân tách tuần tự.
+Hai minibatch liên tiếp sẽ có vị trí trên chuỗi ban đầu liền kề nhau.
 
 ```{.python .input  n=8}
 for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
@@ -541,9 +529,7 @@ for X, Y in seq_data_iter_consecutive(my_seq, batch_size=2, num_steps=6):
 Now we wrap the above two sampling functions to a class so that we can use it as a Gluon data iterator later.
 -->
 
-Bây giờ chúng ta hãy gộp hai hàm lấy mẫu trên vào một lớp để chúng ta có thể sử dụng nó như là một iterator dữ liệu Gluon trong các phần sau.
-
-
+Hãy gộp hai hàm lấy mẫu theo hai cách trên vào một lớp để duyệt dữ liệu trong Gluon ở các phần sau.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -565,8 +551,7 @@ class SeqDataLoader:
 Last, we define a function `load_data_time_machine` that returns both the data iterator and the vocabulary, so we can use it similarly as other functions with `load_data` prefix.
 -->
 
-Cuối cùng, chúng ta sẽ viết một hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để có thể sử dụng nó tương tự như các hàm khác với tiền tố `load_data`.
-
+Cuối cùng, ta sẽ viết hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để sử dụng như các hàm `load_data` khác.
 
 ```{.python .input}
 # Saved in the d2l package for later use
@@ -593,14 +578,13 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 * Given the overall document length, it is usually acceptable to be slightly wasteful with the documents and discard half-empty minibatches.
 -->
 
-* Mô hình ngôn ngữ là công nghệ thiết yếu trong xử lý ngôn ngữ tự nhiên.
-* $n$-grams là một mô hình tiện lợi để xử lý các chuỗi dài bằng cách cắt giảm tính phụ thuộc.
-* Các chuỗi dài thường gặp vấn đề khi chúng rất hiếm hoặc không bao giờ xuất hiện.
-* Định luật Zipf kiểm soát các phân phối từ không chỉ ở 1-gram mà còn ở các $n$-gram khác.
-* Có rất nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện của chúng lại không đủ cao để áp dụng được phương pháp làm mượt Laplace trong việc xử lý các tổ hợp từ hiếm hơn.
-* Giải pháp chủ yếu cho bài toán phân tách chuỗi đó là chọn giữa các chuỗi liên tiếp và ngẫu nhiên.
-* Căn cứ vào độ dài của toàn bộ tài liệu, ta thường có thể lãng phí một chút và loại bỏ các minibatch rỗng một nửa.
-
+* Mô hình ngôn ngữ là một kĩ thuật quan trọng trong xử lý ngôn ngữ tự nhiên.
+* $n$-gram là một mô hình khá tốt để xử lý các chuỗi dài bằng cách cắt giảm số phụ thuộc.
+* Vấn đề của các chuỗi dài là chúng rất hiếm hoặc thậm chí không bao giờ xuất hiện.
+* Định luật Zipf không chỉ mô tả phân phối từ 1-gram mà còn cả các $n$-gram khác.
+* Có nhiều cấu trúc trong ngôn ngữ nhưng tần suất xuất hiện lại không đủ cao, để xử lý các tổ hợp từ hiếm ta sử dụng làm mượt Laplace.
+* Hai giải pháp chủ yếu cho bài toán phân tách chuỗi là lấy mẫu ngẫu nhiên và phân tách tuần tự.
+* Nếu tài liệu đủ dài, việc lãng phí một chút và loại bỏ các minibatch rỗng một nửa là điều chấp nhận được.
 
 <!--
 ## Exercises
@@ -620,16 +604,15 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 7. If we want a sequence example to be a complete sentence, what kinds of problems does this introduce in minibatch sampling? Why would we want to do this anyway?
 -->
 
-1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần suất từ và tần suất nhiều từ liền kề?
-2. Hãy xem lại các ước lượng xác suất được làm mượt. Tại sao chúng lại không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
+1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần số của từ đơn và cụm từ liền kề?
+2. Hãy xem lại các ước lượng xác suất đã qua làm mượt. Tại sao chúng không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
 3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
 4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
-5. Bạn có thể nghĩ ra các phương pháp lấy mẫu cho minibatch khác không?
-6. Tại sao việc lấy một giá trị offset ngẫu nhiên lại là một ý tưởng hay?
-    * Liệu nó có thực sự dẫn đến phân phối đều hoàn hảo cho các chuỗi dữ liệu văn bản không?
-    * Bạn phải làm gì để có được một phân phối đều hơn? 
-7. Nếu chúng ta muốn có một mẫu chuỗi là một câu hoàn chỉnh, những vấn đề gì sẽ nảy sinh khi lấy mẫu minibatch? Mà tại sao ta lại muốn thực hiện việc này?
-
+5. Hãy thử tìm các cách lấy mẫu minibatch khác.
+6. Tại sao việc lấy giá trị độ dời ngẫu nhiên lại là một ý tưởng hay?
+    * Liệu việc đó có làm các chuỗi dữ liệu văn bản tuân theo phân phối đều một cách hoàn hảo không?
+    * Phải làm gì để có phân phối đều hơn?
+7. Những vấn đề gì sẽ nảy sinh khi lấy mẫu minibatch từ một câu hoàn chỉnh? Có lợi ích gì khi lấy mẫu một câu hoàn chỉnh?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -652,23 +635,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
 * Đinh Đắc
-
-<!-- Phần 2 -->
-* Đinh Đắc
-
-<!-- Phần 3 -->
-*
-
-<!-- Phần 4 -->
-* Đinh Đắc
-
-<!-- Phần 5 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 7 -->
-* Nguyễn Văn Quang
+* Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng

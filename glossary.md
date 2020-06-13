@@ -34,7 +34,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                 | Tiếng Việt                     | Thảo luận tại                                |
 |-------------------------|--------------------------------|----------------------------------------------|
 | background noise        | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
-| back-propagation        | lan truyền ngược               |                                              |
+| backpropagation         | lan truyền ngược               |                                              |
+| backpropagation through time        | lan truyền ngược qua thời gian              |                                              |
 | backward pass           | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
 | bandit                  | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                   | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
@@ -149,6 +150,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature             | đặc trưng            |                                              |
 | feature extraction  | trích xuất đặc trưng |                                              |
 | feature map (CNN)   | ánh xạ đặc trưng     |                                              |
+| feed-forward network (FNN)   | mạng truyền xuôi     |                                              |
 | filter (CNN)        | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                 | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle     | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
@@ -175,6 +177,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | gradient clipping              | gọt gradient                      |                                                                                            |
 | gradient descent               | hạ gradient                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxW](https://git.io/JvQxW) |
 | graphical model                | mô hình đồ thị                    |                                                                                            |
+| greedy search                  | tìm kiếm tham lam                 |                                                                                            |
+| greedy algorithm               | thuật toán tham lam               |                                                                                            |
 | ground truth                   | nhãn gốc                          | [https://git.io/JvQxl](https://git.io/JvQxl)                                               |
 | growth rate                    | tốc độ tăng trưởng                |                                                                                            |
 
@@ -218,6 +222,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK)                                               |
 | kernel                  | hạt nhân                 | [https://git.io/Jfe1I](https://git.io/Jfe1I), [https://git.io/Jf0vK](https://git.io/Jf0vK) |
+| key                     | khoá                     |                |
 
 
 ## L
@@ -271,11 +276,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | multitask learning           | học đa nhiệm                  | [https://git.io/JvohQ](https://git.io/JvohQ) |
+| multi-head attention layer          | tầng tập trung đa đầu                  |  |
+| masked multi-head attention layer    | tầng tập trung đa đầu có mặt nạ        |  |
 
 ## N
 | English                           | Tiếng Việt                        | Thảo luận tại                                                                              |
 |-----------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
-| named entity                      | danh từ riêng                     | [https://git.io/JvojG](https://git.io/JvojG)                                               |
+| named entity                      | thực thể có tên                   | [https://git.io/JvojG](https://git.io/JvojG)                                               |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
@@ -316,7 +323,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
 | perceptron                         | perceptron                 | [https://git.io/JvohC](https://git.io/JvohC) |
 | performance                        | chất lượng                 | [https://git.io/JvQx4](https://git.io/JvQx4) |
-| perplexity (metric)                | độ rối rắm                 |  |
+| perplexity (metric)                | perplexity                 |  [https://git.io/Jf9KY](https://git.io/Jf9KY)  |
 | perturbation                       | nhiễu                      | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | plateau (danh từ)                  | vùng nằm ngang             |                                              |
 | plateau (động từ)                  | nằm ngang                  |                                              |
@@ -332,6 +339,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | probability theory                 | lý thuyết xác suất         |                                              |
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| position-wise feed-forward network           | mạng truyền xuôi theo vị trí                |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
@@ -339,6 +347,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | quadratic             | toàn phương           | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic form        | dạng toàn phương      | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic programming | quy hoạch toàn phương |                                              |
+| query                 | (câu) truy vấn              |                                              |
 
 ## R
 | English                           | Tiếng Việt                                | Thảo luận tại                                |
@@ -377,6 +386,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sentiment classification        | phân loại cảm xúc        |                                              |
 | sequence learning               | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence            | chuỗi sang chuỗi         |                                              |
+| sequential partitioning         | phân tách tuần tự        |                                              |
 | sensitivity                     | độ nhạy                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | shape (trong Đại số Tuyến tính) | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn) |
 | significance test               | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
@@ -424,9 +434,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transition layer           | tầng chuyển tiếp                  |                                              |
 | true negative              | âm tính thật                      |                                              |
 | true positive              | dương tính thật                   |                                              |
+| truncated backpropagation through time  | lan truyền ngược qua thời gian bị cắt xén |                                              |
 | tune parameters            | điều chỉnh tham số                |                                              |
 | two-sided test             | kiểm định hai phía                | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | two-tailed test            | kiểm định hai đuôi                | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| transformer            | transformer                |  |
 
 ## U
 | English                  | Tiếng Việt                | Thảo luận tại                                |
@@ -444,6 +456,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | vanishing gradient          | tiêu biến gradient | [https://git.io/JvohI](https://git.io/JvohI) |
 | variance (bias as variance) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
 | vector                      | vector             |                                              |
+| value                       | giá trị            |                                              |
 
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |

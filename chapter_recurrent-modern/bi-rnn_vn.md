@@ -5,7 +5,8 @@
 # Bidirectional Recurrent Neural Networks
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng Nơ-ron Truy hồi Hai chiều
+
 :label:`sec_bi_rnn`
 
 
@@ -14,8 +15,10 @@ So far we assumed that our goal is to model the next word given what we have see
 While this is a typical scenario, it is not the only one we might encounter.
 To illustrate the issue, consider the following three tasks of filling in the blanks in a text:
 -->
+Cho đến nay ta giả định mục tiêu là để mô hình hoá bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ.
+Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta có thể gặp.
+Để minh họa cho vấn đề này, hãy xem xét ba tác vụ điền vào chỗ trống dưới đây:
 
-*dịch đoạn phía trên*
 
 <!--
 1. `I am _____`
@@ -23,7 +26,10 @@ To illustrate the issue, consider the following three tasks of filling in the bl
 3. `I am _____ very hungry, I could eat half a pig.`
 -->
 
-*dịch đoạn phía trên*
+1. `Tôi _____`
+2. `Tôi _____ đói lắm.`
+3. `Tôi _____ đói lắm, tôi có thể ăn một nửa con lợn.`
+
 
 <!--
 Depending on the amount of information available, we might fill the blanks with very different words such as "happy", "not", and "very".
@@ -32,8 +38,12 @@ A sequence model that is incapable of taking advantage of this will perform poor
 For instance, to do well in named entity recognition (e.g., to recognize whether "Green" refers to "Mr. Green" or to the color) longer-range context is equally vital.
 To get some inspiration for addressing the problem let us take a detour to graphical models.
 -->
+Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "đang".
+Rõ ràng phần kết (nếu có) của câu mang thông tin quan trọng về từ nên chọn.
+Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này.
+Chẳng hạn như để nhận dạng thực thể có tên (ví dụ: phân biệt từ "Bảy" đề cập đến "ông Bảy" hay là số bảy) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
+Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên.
 
-*dịch đoạn phía trên*
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -43,14 +53,17 @@ To get some inspiration for addressing the problem let us take a detour to graph
 ## Dynamic Programming
 -->
 
-## *dịch tiêu đề phía trên*
+## Quy hoạch Động
+
 
 <!--
 This section serves to illustrate the dynamic programming problem.
 The specific technical details do not matter for understanding the deep learning counterpart but they help in motivating why one might use deep learning and why one might pick specific architectures.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động.
+Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
+
 
 <!--
 If we want to solve the problem using graphical models we could for instance design a latent variable model as follows.
@@ -59,20 +72,25 @@ Moreover, the transitions $h_t \to h_{t+1}$ are given by some state transition p
 The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 -->
 
-*dịch đoạn phía trên*
+Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
+Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$.
+Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$.
+Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
+
 
 <!--
 ![ Hidden Markov Model. ](../img/hmm.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/hmm.svg)
+![Mô hình Markov ẩn.](../img/hmm.svg)
 :label:`fig_hmm`
 
 <!--
 Thus, for a sequence of $T$ observations we have the following joint probability distribution over observed and hidden states:
 -->
 
-*dịch đoạn phía trên*
+Như vậy, với chuỗi có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn và các quan sát như sau:
+
 
 $$p(x, h) = p(h_1) p(x_1 \mid h_1) \prod_{t=2}^T p(h_t \mid h_{t-1}) p(x_t \mid h_t).$$
 
@@ -85,8 +103,12 @@ To see how it works, consider summing over the first two hidden variable $h_1$ a
 This yields:
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ giả sử chúng ta đã có tất cả các quan sát $x_i$ ngoại trừ một vài quan sát $x_j$, mục tiêu là tính xác suất $p(x_j \mid x^{-j})$, trong đó $x^{-j} = (x_1, x_2, \ldots, x_{j-1})$.
+Để thực hiện điều này, chúng ta cần tính tổng xác suất trên tất cả các khả năng có thể của $h = (h_1, \ldots, h_T)$.
+Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm vụ bất khả thi.
+May mắn thay có một phương pháp rất hiệu quả cho bài toán trên, đó là quy hoạch động. 
+Để hiểu hơn về phương pháp này, hãy xem xét tổng của hai biến ẩn đầu tiên $h_1$ và $h_2$.
+Ta có:
 
 $$\begin{aligned}
     p(x) & = \sum_{h_1, \ldots, h_T} p(x_1, \ldots, x_T; h_1, \ldots, h_T) \\
@@ -104,7 +126,7 @@ $$\begin{aligned}
 In general we have the *forward recursion* as
 -->
 
-*dịch đoạn phía trên*
+Cơ bản, chúng ta có công thức *đệ quy xuôi* như sau:
 
 
 $$\pi_{t+1}(h_{t+1}) = \sum_{h_t} \pi_t(h_t) p(x_t \mid h_t) p(h_{t+1} \mid h_t).$$
@@ -118,7 +140,10 @@ Entirely analogously to the forward recursion, we can also start a backward recu
 This yields:
 -->
 
-*dịch đoạn phía trên*
+Phép đệ quy được khởi tạo với $\pi_1(h_1) = p(h_1)$.
+Nói chung, công thức đệ quy có thể được viết lại là $\pi_{t+1} = f(\pi_t, x_t)$, trong đó $f$ là một hàm chứa tham số được học.
+Trông rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN.
+Tương tự, chúng ta có thể tính *đệ quy ngược* như sau:
 
 
 $$\begin{aligned}
@@ -137,7 +162,7 @@ $$\begin{aligned}
 We can thus write the *backward recursion* as
 -->
 
-*dịch đoạn phía trên*
+Từ đó, chúng ta có thể viết *đệ quy ngược* như sau
 
 
 $$\rho_{t-1}(h_{t-1})= \sum_{h_{t}} p(h_{t} \mid h_{t-1}) p(x_{t} \mid h_{t}) \rho_{t}(h_{t}),$$
@@ -154,7 +179,11 @@ It is a very special instance of the :cite:`Aji.McEliece.2000` proposed in 2000 
 Combining both forward and backward pass, we are able to compute
 -->
 
-*dịch đoạn phía trên*
+khi khởi tạo $\rho_T(h_T) = 1$.
+Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì tăng theo cấp luỹ thừa. 
+Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ họa.
+Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000. 
+Kết hợp cả biểu thức xuôi và ngược ta có thể tính được
 
 
 $$p(x_j \mid x_{-j}) \propto \sum_{h_j} \pi_j(h_j) \rho_j(h_j) p(x_j \mid h_j).$$
@@ -167,8 +196,11 @@ Indeed, HMMs benefit from knowing future data when it is available.
 Signal processing scientists distinguish between the two cases of knowing and not knowing future observations as interpolation v.s. extrapolation.
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
-
-*dịch đoạn phía trên*
+Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học.
+Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.
+Thật vậy, HMMs sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
+Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
+Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` về các thuật toán Monte Carlo tuần tự để biết thêm chi tiết. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -178,7 +210,7 @@ See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001
 ## Bidirectional Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình hai chiều
 
 <!--
 If we want to have a mechanism in RNNs that offers comparable look-ahead ability as in HMMs, we need to modify the recurrent net design that we have seen so far.
@@ -187,14 +219,17 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 *Bidirectional recurrent neural networks* add a hidden layer that passes information in a backward direction to more flexibly process such information.
 :numref:`fig_birnn` illustrates the architecture of a bidirectional recurrent neural network with a single hidden layer.
 -->
-
-*dịch đoạn phía trên*
+Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa thiết kế của các mạng truy hồi truyền thống một chút.
+May mắn là, điều này khá đơn giản về mặt khái niệm.
+Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối,  ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu.
+*Mạng nơ ron truy hồi hai chiều* sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống.
+Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron truy hồi hai chiều với 1 tầng ẩn.
 
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
--->
+--> 
 
-![*dịch chú thích ảnh phía trên*](../img/birnn.svg)
+![*Cấu trúc của mạng nơ ron truy hồi hai chiều.*](../img/birnn.svg)
 :label:`fig_birnn`
 
 <!--
@@ -204,8 +239,11 @@ Now they are devoid of such easily accessible interpretation and we can just tre
 This transition epitomizes many of the principles guiding the design of modern deep networks: 
 first, use the type of functional dependencies of classical statistical models, and then use the models in a generic form.
 -->
-
-*dịch đoạn phía trên*
+Trên thực tế, điều này không quá khác biệt với phép đệ quy xuôi và ngược mà ta đã đề cập ở phần trước.
+Điểm khác biệt chính là trước đây các phương trình này có một ý nghĩa thống kê nhất định. 
+Còn bây giờ thì chúng không còn mang một ý nghĩa dễ hiểu nào nhất định, thay vào đó ta sẽ chỉ xét chúng như những hàm tổng quát.
+Quá trình chuyển đổi này là điển hình cho nhiều nguyên tắc thiết kế các mạng học sâu hiện đại:
+đầu tiên, sử dụng các dạng quan hệ phụ thuộc hàm của các mô hình thống kê cổ điển, sau đó sử dụng các mô hình này dưới dạng tổng quát.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -215,7 +253,7 @@ first, use the type of functional dependencies of classical statistical models, 
 ### Definition
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa
 
 <!--
 Bidirectional RNNs were introduced by :cite:`Schuster.Paliwal.1997`.
@@ -223,7 +261,9 @@ For a detailed discussion of the various architectures see also the paper by :ci
 Let us look at the specifics of such a network.
 -->
 
-*dịch đoạn phía trên*
+Các mạng nơ-ron truy hồi hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
+Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` về những thảo luận chi tiết của các kiến trúc khác nhau.
+Còn giờ ta hãy đi vào chi tiết của một mạng như vậy.
 
 <!--
 For a given timestep $t$, the minibatch input is $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (number of examples: $n$, number of inputs: $d$) and the ßßhidden layer activation function is $\phi$.
@@ -233,8 +273,10 @@ Here $h$ indicates the number of hidden units.
 We compute the forward and backward hidden state updates as follows:
 -->
 
-*dịch đoạn phía trên*
-
+Cho một bước thời gian $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ ($n$ là số lượng mẫu, $d$ là số lượng đầu vào) và hàm kích hoạt của tầng ẩn là $\phi$.
+Trong kiến thúc hai chiều, ta giả định rằng trạng thái ẩn xuôi và ngược của bước thời gian này lần lượt là $\overrightarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$ và $\overleftarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$.
+$h$ ở đây chỉ số lượng nút ẩn.
+Chúng ta tính toán việc cập nhật trạng thái ẩn xuôi và ngược như sau:
 
 $$
 \begin{aligned}
@@ -250,7 +292,7 @@ $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \m
 are all model parameters.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, các trọng số $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \mathbb{R}^{h \times h}, \mathbf{W}_{xh}^{(b)} \in \mathbb{R}^{d \times h}, \text{ và } \mathbf{W}_{hh}^{(b)} \in \mathbb{R}^{h \times h}$ và các độ chệch $\mathbf{b}_h^{(f)} \in \mathbb{R}^{1 \times h} \text{ và } \mathbf{b}_h^{(b)} \in \mathbb{R}^{1 \times h}$ đều là tham số mô hình.
 
 <!--
 Then we concatenate the forward and backward hidden states $\overrightarrow{\mathbf{H}}_t$ and $\overleftarrow{\mathbf{H}}_t$ 
@@ -259,7 +301,9 @@ In deep bidirectional RNNs, the information is passed on as *input* to the next 
 Last, the output layer computes the output $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (number of outputs: $q$):
 -->
 
-*dịch đoạn phía trên*
+Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và truyền nó đến tầng đầu ra.
+Trong các mạng nơ-ron truy hồi hai chiều sâu, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
+Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau:
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -270,8 +314,8 @@ Here, the weight parameter $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ and th
 The two directions can have different numbers of hidden units.
 -->
 
-*dịch đoạn phía trên*
-
+Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra.
+Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -413,16 +457,22 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
-*
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-*
+* Đinh Phước Lộc
 
 <!-- Phần 4 -->
-*
+* Võ Tấn Phát
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
+* Nguyễn Thanh Hòa
 
 <!-- Phần 5 -->
 *

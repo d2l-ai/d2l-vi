@@ -14,9 +14,9 @@ It is based on a character-level recurrent neural network trained on H. G. Wells
 As before, we start by reading the dataset first, which is introduced in :numref:`sec_language_model`.
 -->
 
-Trong phần này, ta xây dựng từ đầu một mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
-Mô hình này dựa trên một mạng nơ-ron truy hồi cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
-Như thường lệ, ta bắt đầu bằng cách đọc tập dữ liệu trước, được giới thiệu tại :numref:`sec_language_model`.
+Trong phần này, ta lập trình từ đầu mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
+Mô hình này dựa trên mạng nơ-ron truy hồi ở cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
+Cũng như trước, ta bắt đầu với việc đọc tập dữ liệu được đề cập trong :numref:`sec_language_model`.
 
 
 ```{.python .input  n=14}
@@ -43,10 +43,10 @@ We often present each token as a more expressive feature vector.
 The easiest representation is called *one-hot encoding*.
 -->
 
-Hãy nhớ rằng mỗi token được trình bày dưới dạng một chỉ số (_numerical index_) trong `train_iter`.
-Cho trực tiếp các chỉ số này vào mạng nơ-ron có thể khiến việc học thêm khó khăn.
-Thay vào đó, chúng ta thường biểu diễn mỗi token như một vector đặc trưng chứa nhiều hàm ý hơn.
-Cách biểu diễn đơn giản nhất được gọi là *biểu diễn one-hot*.
+Lưu ý rằng mỗi token được biểu diễn bằng một chỉ số (_numerical index_) trong `train_iter`.
+Đưa trực tiếp các chỉ số này vào mạng nơ-ron sẽ gây khó khăn cho việc học.
+Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang mhiều thông tin hơn.
+Cách đơn giản nhất là sử dụng *biểu diễn one-hot* (_one-hot encoding_).
 
 <!--
 In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
@@ -55,10 +55,10 @@ This vector is the one-hot vector of the original token.
 The one-hot vectors with indices 0 and 2 are shown below.
 -->
 
-Tóm lại, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử rằng số lượng token khác nhau trong từ vựng là $N$ (`len(vocab)`) và các chỉ số token nằm trong khoảng từ 0 đến $N-1$ .
-Nếu chỉ số của token là số nguyên $i$, thì chúng ta tạo một vector $\mathbf{e}_i$ chứa các phần tử 0 với độ dài $N$ và đặt phần tử 1 ở vị trí $i$.
-Vector này là vector one-hot của token gốc.
-Các vector one-hot với các chỉ số 0 và 2 được hiển thị bên dưới.
+Nói ngắn gọn, ta ánh xạ mỗi chỉ số thành một vector đơn vị khác nhau: giả sử số token không trùng lặp trong bộ từ vựng là $N$ (`len(vocab)`) và chỉ số của chúng nằm trong khoảng từ 0 đến $N-1$.
+Với token chỉ số $i$, ta tạo một vector $\mathbf{e}_i$ độ dài $N$ có các phần tử bằng 0, trừ phần tử ở vị trí $i$ bằng 1. 
+Vector này là vector one-hot của token.
+Các vector one-hot với các chỉ số 0 và 2 được minh họa phía dưới.
 
 ```{.python .input  n=21}
 npx.one_hot(np.array([0, 2]), len(vocab))
@@ -70,10 +70,9 @@ The `one_hot` function transforms such a minibatch into a 3-D tensor with the la
 We often transpose the input so that we will obtain a (timestep, batch size, vocabulary size) output that fits into a sequence model easier.
 -->
 
-<!-- Revise phase 2 cần xem xét thêm có nên dịch batch size, timestep, vocabulary size hay không? -->
-Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (batch size, timestep).
-Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước cuối cùng bằng với kích thước từ vựng.
-Chúng ta thường chuyển vị đầu vào để có được (timestep, batch size, vocabulary size) tại đầu ra phù hợp hơn với mô hình chuỗi.
+Kích thước minibatch mà chúng ta lấy mẫu mỗi lần là (kích thước batch, bước thời gian).
+Hàm `one_hot` biến đổi một minibatch như vậy thành một tensor 3 chiều với kích thước chiều cuối cùng bằng kích thước bộ từ vựng.
+Chúng ta thường chuyển vị đầu vào để có đầu ra với kích thước (bước thời gian, kích thước batch, kích thước bộ từ vựng), phù hợp hơn để đưa vào mô hình chuỗi.
 
 
 ```{.python .input  n=18}
@@ -96,8 +95,8 @@ Next, we initialize the model parameters for a RNN model.
 The number of hidden units `num_hiddens` is a tunable parameter.
 -->
 
-Tiếp theo, chúng tôi khởi tạo các tham số mô hình cho một mô hình RNN.
-Số lượng nút ẩn `num_hiddens` là một tham số có thể điều chỉnh.
+Tiếp theo, ta khởi tạo các tham số cho mô hình RNN.
+Số nút ẩn `num_hiddens` là tham số có thể điều chỉnh.
 
 
 ```{.python .input  n=19}
@@ -132,9 +131,9 @@ It returns an `ndarray` filled with 0 and with a shape of (batch size, number of
 Using tuples makes it easier to handle situations where the hidden state contains multiple variables (e.g., when combining multiple layers in an RNN where each layer requires initializing).
 -->
 
-Đầu tiên, chúng ta cần một hàm `init_rnn_state` để trả về trạng thái ẩn khi khởi tạo.
-Nó trả về một `ndarray` chứa giá trị 0 và có kích thước là (kích thước batch, số nút ẩn).
-Sử dụng tuple giúp ta dễ dàng xử lý các tình huống trong đó trạng thái ẩn chứa nhiều biến (ví dụ: khi ta cần khởi tạo nhiều tầng được kết hợp trong RNN).
+Đầu tiên, chúng ta khởi tạo trạng thái ẩn bằng hàm `init_rnn_state`.
+Hàm này trả về tuple gồm một `ndarray` chứa giá trị 0 và có kích thước là (kích thước batch, số nút ẩn).
+Trả về tuple giúp ta dễ dàng xử lý các tình huống khi trạng thái ẩn chứa nhiều biến (ví dụ: khi ta cần khởi tạo nhiều tầng được kết hợp trong RNN).
 
 
 ```{.python .input  n=20}
@@ -148,10 +147,9 @@ The activation function here uses the $\tanh$ function.
 As described in :numref:`sec_mlp`, the mean value of the $\tanh$ function is 0, when the elements are evenly distributed over the real numbers.
 -->
 
-Hàm `rnn` sau đây định nghĩa cách tính trạng thái ẩn và đầu ra trong bước thời gian.
-Hàm kích hoạt ở đây là hàm $\tanh$.
-Như được mô tả trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên trục số thực.
-
+Hàm `rnn` sau định nghĩa cách tính toán trạng thái ẩn và đầu ra tại một bước thời gian.
+Hàm kích hoạt ở đây là $\tanh$.
+Như đã đề cập trong :numref:`sec_mlp`, giá trị trung bình của hàm $\tanh$ là 0, khi các phần tử được phân bổ đều trên trục số thực.
 
 ```{.python .input  n=6}
 def rnn(inputs, state, params):
@@ -170,7 +168,7 @@ def rnn(inputs, state, params):
 Now we have all functions defined, next we create a class to wrap these functions and store parameters.
 -->
 
-Sau khi đã định nghĩa tất cả các hàm, tiếp theo chúng ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
+Sau khi đã định nghĩa tất cả các hàm, ta tạo một lớp để bao các hàm này lại và lưu trữ các tham số.
 
 
 ```{.python .input}
@@ -196,7 +194,7 @@ class RNNModelScratch:
 Let us do a sanity check whether inputs and outputs have the correct dimensions, e.g., to ensure that the dimensionality of the hidden state has not changed.
 -->
 
-Hãy kiểm tra sơ qua xem liệu đầu vào và đầu ra có số chiều đúng hay không, ví dụ, để đảm bảo rằng chiều của trạng thái ẩn không thay đổi.
+Hãy kiểm tra nhanh chiều của đầu vào và đầu ra, và xem chiều của trạng thái ẩn có thay đổi hay không.
 
 ```{.python .input}
 num_hiddens, ctx = 512, d2l.try_gpu()
@@ -211,7 +209,7 @@ Y.shape, len(new_state), new_state[0].shape
 We can see that the output shape is (number steps $\times$ batch size, vocabulary size), while the hidden state shape remains the same, i.e., (batch size, number of hidden units).
 -->
 
-Chúng ta có thể thấy rằng kích thước đầu ra là (số bước $\times$ kích thước batch, kích thước từ vựng), trong khi kích thước trạng thái ẩn vẫn giữ nguyên, tức là (kích thước batch, số nút ẩn).
+Có thể thấy kích thước đầu ra là (số bước $\times$ kích thước batch, kích thước bộ từ vựng), trong khi kích thước trạng thái ẩn vẫn giữ nguyên là (kích thước batch, số nút ẩn).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -234,10 +232,9 @@ For the beginning of the sequence, we only update the hidden state.
 After that we begin generating new characters and emitting them.
 -->
 
-Trước tiên cần giải thích về hàm dự đoán để chúng ta có thể thường xuyên kiểm tra trong quá trình huấn luyện.
-Hàm này dự đoán các ký tự `num_predicts` tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
-Để bắt đầu chuỗi, ta cập nhật chỉ trạng thái ẩn.
-Sau đó, ta bắt đầu tạo ra các ký tự mới và ban hành chúng.
+Trước tiên chúng ta giải thích hàm dự đoán thường xuyên được dùng để kiểm tra trong quá trình huấn luyện.
+Hàm này dự đoán `num_predicts` ký tự tiếp theo dựa trên `prefix` (một chuỗi chứa một vài ký tự).
+Ở các ký tự đầu tiên trong chuỗi, ta chỉ cập nhật trạng thái ẩn rồi sau đó mới bắt đầu tạo ra các ký tự mới.
 
 
 ```{.python .input}
@@ -263,9 +260,9 @@ Given that we did not train the network, it will generate nonsensical prediction
 We initialize it with the sequence `traveller ` and have it generate 10 additional characters.
 -->
 
-Ta kiểm tra hàm `predict_rnn` trước tiên.
-Vì mạng không được huấn luyện, nó sẽ tạo ra các dự đoán vô nghĩa.
-Ta khởi tạo mạng với chuỗi `traveller` và để nó tạo thêm 10 ký tự.
+Ta chạy thử hàm `predict_ch8` trước.
+Lúc này đầu ra sẽ là các dự đoán vô nghĩa do mạng chưa được huấn luyện.
+Ta khởi tạo mạng với chuỗi `traveller` và cho nó tạo ra thêm 10 ký tự.
 
 
 ```{.python .input  n=9}
@@ -276,7 +273,7 @@ predict_ch8('time traveller ', 10, model, vocab, ctx)
 ## Gradient Clipping
 -->
 
-## Cắt bớt Gradient
+## Gọt Gradient
 
 <!--
 For a sequence of length $T$, we compute the gradients over these $T$ timesteps in an iteration, which results in a chain of matrix-products with length $\mathcal{O}(T)$ during backpropagating.
@@ -284,18 +281,17 @@ As mentioned in :numref:`sec_numerical_stability`, it might result in numerical 
 Therefore, RNN models often need extra help to stabilize the training.
 -->
 
-Đối với chuỗi có độ dài $T$, ta tính toán gradient theo các bước thời gian $T$ này trong một vòng lặp, dẫn đến một dây chuyền các tích ma trận có độ dài $\mathcal{O}(T)$ trong quá trình lan truyền ngược.
-Như đã đề cập trong :numref:`sec_numerical_stability`, việc này có thể dẫn đến mất ổn định số, ví dụ: các gradient có thể phát nổ hoặc biến mất, khi $T$ lớn.
-Do đó, các mô hình RNN thường cần thêm trợ giúp để ổn định việc huấn luyện.
+Với chuỗi độ dài $T$, trong một vòng lặp lan truyền ngược ta tính toán gradient qua $T$ bước thời gian, dẫn đến một chuỗi các tích của ma trận có độ phức tạp $\mathcal{O}(T)$.
+Như đã đề cập trong :numref:`sec_numerical_stability`, khi $T$ lớn việc này có thể dẫn đến mất ổn định số học, biểu hiện qua hiện tượng bùng nổ hoặc tiêu biến gradient.
+Do đó, các mô hình RNN thường cần một chút hỗ trợ để ổn định việc huấn luyện.
 
 <!--
 Recall that when solving an optimization problem, we take update steps for the weights $\mathbf{w}$ in the general direction of the negative gradient $\mathbf{g}_t$ on a minibatch, 
 say $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Let us further assume that the objective is well behaved, i.e., it is Lipschitz continuous with constant $L$, i.e.,
 -->
 
-Hãy nhớ lại rằng khi giải quyết vấn đề tối ưu hóa, ta thực hiện các bước cập nhật cho các trọng số $\mathbf{w}$ theo hướng chung của gradient âm $\mathbf{g}_t$ trên một minibatch,
-ở đây là $\mathbf{w} - \eta \cdot \mathbf{g}_t$. Giả định rằng mục tiêu được xử lý tốt, khi đó hàm Lipschitz liên tục với biến $L$, tức là:
-
+Nhớ lại rằng khi giải quyết vấn đề tối ưu, ta thực hiện cập nhật trọng số $\mathbf{w}$ ngược hướng gradient $\mathbf{g}_t$ trên một minibatch, theo công thức $\mathbf{w} - \eta \cdot \mathbf{g}_t$. 
+Giả sử hàm mục tiêu là hàm liên tục Lipschitz với hằng số $L$, tức:
 
 $$|l(\mathbf{w}) - l(\mathbf{w}')| \leq L \|\mathbf{w} - \mathbf{w}'\|.$$
 
@@ -309,9 +305,9 @@ This is both a curse and a blessing.
 A curse since it limits the speed of making progress, whereas a blessing since it limits the extent to which things can go wrong if we move in the wrong direction.
 -->
 
-Trong trường hợp này, ta có thể giả định một cách an toàn rằng bằng cách cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
-Đây là cả một lời nguyền và một phước lành.
-Một lời nguyền là vì nó giới hạn tốc độ tiến bộ, trong khi việc nó là một phước lành là bởi nó hạn chế mức độ sai lệnh trong trường hợp chúng ta đi sai hướng.
+Trong trường hợp này, có thể nói khi cập nhật vector trọng số theo $\eta \cdot \mathbf{g}_t$, sự thay đổi sẽ không lớn hơn $L \eta \|\mathbf{g}_t\|$.
+Điều này vừa có lợi vừa có hại.
+Có hại ở chỗ tốc độ tối ưu bị giới hạn, có lợi ở chỗ mức độ sai lệch khi tối ưu sai hướng cũng bị hạn chế.
 
 <!--
 Sometimes the gradients can be quite large and the optimization algorithm may fail to converge.
@@ -321,11 +317,10 @@ In this case such an approach may appear entirely unwarranted.
 One alternative is to clip the gradients by projecting them back to a ball of a given radius, say $\theta$ via
 -->
 
-Đôi khi gradient có thể khá lớn và thuật toán tối ưu có thể không hội tụ.
-Ta có thể giải quyết vấn đề này bằng cách giảm tốc độ học $\eta$ hoặc bằng một số thủ thuật bậc cao khác.
-Nhưng điều gì sẽ xảy ra nếu chúng ta hiếm khi nhận được gradient lớn?
-Trong trường hợp này, cách tiếp cận như vậy không được bảo đảm hoàn toàn.
-Một cách khác là cắt bớt các gradient bằng cách chiếu chúng trở lại một quả cầu với bán kính $\theta$ thông qua:
+Đôi khi gradient có thể khá lớn và do đó thuật toán tối ưu không hội tụ.
+Vấn đề này có thể được giải quyết bằng cách giảm tốc độ học $\eta$ hoặc sử dụng một số thủ thuật liên quan tới đạo hàm bậc cao hơn.
+Nhưng nếu gradient hiếm khi đạt giá trị lớn, cách giải quyết như vậy không đảm bảo hội tụ hoàn toàn.
+Một cách khác là gọt gradient (*gradient clipping*) bằng cách chiếu gradient lên mặt cầu bán kính $\theta$ qua công thức:
 
 $$\mathbf{g} \leftarrow \min\left(1, \frac{\theta}{\|\mathbf{g}\|}\right) \mathbf{g}.$$
 
@@ -337,19 +332,17 @@ Gradient clipping provides a quick fix to the gradient exploding.
 While it does not entirely solve the problem, it is one of the many techniques to alleviate it.
 -->
 
-Bằng cách làm như vậy, ta biết rằng chuẩn độ dốc không bao giờ vượt quá $\theta$ và độ dốc được cập nhật hoàn toàn phù hợp với hướng ban đầu $\mathbf{g}$.
-Nó cũng có tác dụng phụ tích cực là hạn chế ảnh hưởng của bất kỳ minibatch nào (và bên trong nó là bất kỳ mẫu nào) có thể tác động lên các vector trọng số.
-Điều này mang lại một độ mạnh mẽ nhất định cho mô hình.
-Cắt bớt gradient là một phương án sửa chữa nhanh chóng cho vấn đề phát nổ gradient.
-Mặc dù nó không hoàn toàn giải quyết vấn đề, nhưng là một trong nhiều kỹ thuật để giảm bớt vấn đề đó.
+Như vậy chuẩn của gradient sẽ không vượt quá $\theta$ và gradient sau khi gọt sẽ cùng hướng gradient $\mathbf{g}$ ban đầu.
+Gọt gradient có tác dụng phụ tích cực là hạn chế ảnh hưởng quá lớn của bất kỳ minibatch nào (hoặc bất kỳ mẫu nào) lên các trọng số, làm cho mô hình ổn định hơn.
+Dù không giải quyết được hoàn toàn vấn đề, đây là một kỹ thuật đơn giản để làm giảm nhẹ vấn đề bùng nổ gradient.
 
 <!--
 Below we define a function to clip the gradients of a model that is either a `RNNModelScratch` instance or a Gluon model.
 Also note that we compute the gradient norm over all parameters.
 -->
 
-Dưới đây, chúng tôi định nghĩa một hàm để cắt bớt các gradient của mô hình là một thực thể `RNNModelScratch` hoặc một mô hình Gluon.
-Cũng lưu ý rằng chúng tôi tính toán trung bình gradient trên tất cả các tham số.
+Dưới đây, ta định nghĩa hàm gọt gradient, dùng cho cả mô hình lập trình từ đầu `RNNModelScratch` và mô hình tạo bằng Gluon.
+Lưu ý rằng ta tính chuẩn của gradient trên tất cả các tham số.
 
 
 ```{.python .input  n=10}
@@ -384,8 +377,8 @@ Let us first define the function to train the model on one data epoch.
 It differs from the models training of :numref:`sec_softmax_scratch` in three places:
 -->
 
-Trước tiên, ta sẽ định nghĩa hàm huấn luyện mô hình trên một epoch dữ liệu.
-Quá trình huấn luyện ở đây sẽ khác với :numref:`sec_softmax_scratch` ở ba điểm:
+Trước tiên, ta định nghĩa hàm huấn luyện trên một epoch dữ liệu.
+Quá trình huấn luyện ở đây khác với :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
@@ -394,11 +387,10 @@ This ensures that the model does not diverge even when gradients blow up at some
 3. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
 -->
 
-1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
-2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
-Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm độ lớn của bước cập nhật một cách hiệu quả.
-3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
-
+1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu ngẫu nhiên và phân tách tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
+2. Ta gọt gradient trước khi cập nhật tham số mô hình.
+Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm biên độ của bước cập nhật một cách hiệu quả.
+3. Ta sử dụng perplexity để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
 
 <!--
 When the consecutive sampling is used, we initialize the hidden state at the beginning of each epoch.
@@ -408,10 +400,10 @@ When using the random sampling, we need to re-initialize the hidden state for ea
 Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
 -->
 
-Khi thực hiện lấy mẫu liên tục, ta sẽ khởi tạo trạng thái ẩn ở đầu mỗi epoch.
-Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để có thể tính toán gradient trong từng minibatch.
-Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần khởi tạo lại trạng thái ẩn cho mỗi lần lặp vì mỗi mẫu được lấy ra với một vị trí ngẫu nhiên.
-Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sẽ sử dụng một hàm `updater` tổng quát, hàm này có thể là một trình huấn luyện Gluon hoặc được lập trình từ đầu.
+Khi thực hiện lấy mẫu tuần tự, ta chỉ khởi tạo trạng thái ẩn khi bắt đầu mỗi epoch.
+Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ trong minibatch hiện tại nên ta có thể sử dụng trực tiếp trạng thái ẩn hiện tại cho minibatch tiếp theo, chỉ cần tách gradient để tính riêng cho mỗi minibatch.
+Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần tái khởi tạo trạng thái ẩn cho mỗi vòng lặp vì mỗi mẫu được lấy ra ở vị trí ngẫu nhiên.
+Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử dụng đối số `updater` để tổng quát hoá cả trường hợp lập trình súc tích với Gluon và lập trình từ đầu.
 
 
 ```{.python .input}
@@ -443,7 +435,7 @@ def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
 The training function again supports either we implement the model from scratch or using Gluon.
 -->
 
-Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon hoặc mô hình được ta lập trình từ đầu.
+Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon và mô hình lập trình từ đầu.
 
 
 ```{.python .input  n=11}
@@ -489,8 +481,8 @@ Now we can train a model.
 Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
 -->
 
-Bây giờ thì ta có thể huấn luyện mô hình.
-Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
+Bây giờ ta có thể huấn luyện mô hình.
+Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
@@ -502,7 +494,7 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Finally let us check the results to use a random sampling iterator.
 -->
 
-Cuối cùng, ta sẽ kiểm tra kết quả khi sử dụng một iterator để lấy mẫu ngẫu nhiên.
+Cuối cùng, ta kiểm tra kết quả khi lấy mẫu ngẫu nhiên.
 
 
 ```{.python .input}
@@ -513,9 +505,8 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
 While implementing the above RNN model from scratch is instructive, it is not convenient. In the next section we will see how to improve significantly on the current model and how to make it faster and easier to implement.
 -->
 
-Mặc dù ta đã học được nhiều từ việc lập trình mô hình RNN từ đầu nhưng cách làm này không thực sự tiện lợi lắm. 
-Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể và cách làm nó nhanh và dễ lập trình hơn.
-
+Mặc dù học được nhiều điều từ việc lập trình từ đầu nhưng cách làm này không thực sự tiện lợi. 
+Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể mô hình hiện tại, nhanh và dễ lập trình hơn.
 
 <!--
 ## Summary
@@ -533,11 +524,11 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 -->
 
 * Mô hình chuỗi cần khởi tạo trạng thái cho quá trình huấn luyện.
-* Giữa các mô hình chuỗi, ta cần đảm bảo tách các gradient, để chắc chắn rằng phép vi phân tự động không lan truyền các ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
+* Giữa các mô hình chuỗi, ta cần đảm bảo tách gradient để chắc chắn rằng phép tính vi phân tự động không ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
 * Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
-* Gọt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
-* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
-* Phân vùng tuần tự thường dẫn đến các mô hình tốt hơn.
+* Gọt gradient có thể hạn chế sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
+* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau, được tính bằng trung bình lũy thừa của mất mát entropy chéo.
+* Phân tách tuần tự cho kết quả mô hình tốt hơn.
 
 <!--
 ## Exercises
@@ -559,17 +550,17 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 7. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
 -->
 
-1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
+1. Chỉ ra rằng mỗi biễu diễn one-hot tương đương với một embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
-    * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
+    * Bạn có thể giảm perplexity xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
     * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
-    * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
-4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không thực hiện gọt gradient?
-5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
-6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
-7. Chứng minh rằng độ rối rắm là nghịch đảo của trung bình điều hòa của xác suất từ có điều kiện.
+    * Điều chỉnh để mô hình ưu tiên các đầu ra có khả năng cao hơn, ví dụ, bằng cách lấy mẫu sử dụng $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
+4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn phần này mà không gọt gradient?
+5. Thay đổi phép lấy mẫu phân tách tuần tự để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
+6. Thay hàm kích hoạt bằng ReLU và thực hiện lại các thử nghiệm.
+7. Chứng minh rằng perplexity là nghịch đảo trung bình điều hòa (*harmonic mean*) của xác suất có điều kiện của từ.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -592,24 +583,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
 * Trần Yến Thy
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-
-<!-- Phần 5 -->
+* Nguyễn Lê Quang Nhật
 * Nguyễn Duy Du
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng

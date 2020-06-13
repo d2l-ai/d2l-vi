@@ -29,3 +29,4 @@ build/
 tests/temp_output.md
 
 d2l_env/
+.idea
