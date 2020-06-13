@@ -294,7 +294,7 @@ Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma tr�
 ## Perplexity
 -->
 
-## Độ Rối rắm
+## Perplexity
 
 <!--
 Last, let us discuss about how to measure the sequence model quality.
