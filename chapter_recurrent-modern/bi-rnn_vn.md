@@ -253,7 +253,7 @@ Quá trình chuyển đổi này là điển hình cho nhiều nguyên tắc thi
 ### Definition
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa
 
 <!--
 Bidirectional RNNs were introduced by :cite:`Schuster.Paliwal.1997`.
@@ -261,7 +261,9 @@ For a detailed discussion of the various architectures see also the paper by :ci
 Let us look at the specifics of such a network.
 -->
 
-*dịch đoạn phía trên*
+Các mạng nơ-ron truy hồi hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
+Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` về những thảo luận chi tiết của các kiến trúc khác nhau.
+Còn giờ ta hãy đi vào chi tiết của một mạng như vậy.
 
 <!--
 For a given timestep $t$, the minibatch input is $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (number of examples: $n$, number of inputs: $d$) and the ßßhidden layer activation function is $\phi$.
@@ -271,8 +273,10 @@ Here $h$ indicates the number of hidden units.
 We compute the forward and backward hidden state updates as follows:
 -->
 
-*dịch đoạn phía trên*
-
+Cho một bước thời gian $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ ($n$ là số lượng mẫu, $d$ là số lượng đầu vào) và hàm kích hoạt của tầng ẩn là $\phi$.
+Trong kiến thúc hai chiều, ta giả định rằng trạng thái ẩn xuôi và ngược của bước thời gian này lần lượt là $\overrightarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$ và $\overleftarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$.
+$h$ ở đây chỉ số lượng nút ẩn.
+Chúng ta tính toán việc cập nhật trạng thái ẩn xuôi và ngược như sau:
 
 $$
 \begin{aligned}
@@ -288,7 +292,7 @@ $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \m
 are all model parameters.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, các trọng số $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \mathbb{R}^{h \times h}, \mathbf{W}_{xh}^{(b)} \in \mathbb{R}^{d \times h}, \text{ và } \mathbf{W}_{hh}^{(b)} \in \mathbb{R}^{h \times h}$ và các độ chệch $\mathbf{b}_h^{(f)} \in \mathbb{R}^{1 \times h} \text{ và } \mathbf{b}_h^{(b)} \in \mathbb{R}^{1 \times h}$ đều là tham số mô hình.
 
 <!--
 Then we concatenate the forward and backward hidden states $\overrightarrow{\mathbf{H}}_t$ and $\overleftarrow{\mathbf{H}}_t$ 
@@ -297,7 +301,9 @@ In deep bidirectional RNNs, the information is passed on as *input* to the next 
 Last, the output layer computes the output $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (number of outputs: $q$):
 -->
 
-*dịch đoạn phía trên*
+Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và truyền nó đến tầng đầu ra.
+Trong các mạng nơ-ron truy hồi hai chiều sâu, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
+Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau:
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -308,8 +314,8 @@ Here, the weight parameter $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ and th
 The two directions can have different numbers of hidden units.
 -->
 
-*dịch đoạn phía trên*
-
+Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra.
+Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -463,7 +469,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đinh Phước Lộc
 
 <!-- Phần 4 -->
-*
+* Võ Tấn Phát
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
+* Nguyễn Thanh Hòa
 
 <!-- Phần 5 -->
 *
