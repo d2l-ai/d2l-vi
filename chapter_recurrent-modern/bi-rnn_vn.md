@@ -322,7 +322,7 @@ In short, handle with care!
 ### Training a Bidirectional RNN for the Wrong Application
 -->
 
-### Huấn luyện mạng RNN hai chiều không phù hợp với ứng dụng
+### Huấn luyện Mạng RNN Hai chiều cho Ứng dụng không Phù hợp
 
 <!--
 If we were to ignore all advice regarding the fact that bidirectional LSTMs use past and future data and simply apply it to language models, we will get estimates with acceptable perplexity.
@@ -331,7 +331,7 @@ Despite reasonable perplexity, it only generates gibberish even after many itera
 We include the code below as a cautionary example against using them in the wrong context.
 -->
 
-Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến thực tế rằng các LSTM hai chiều sử dụng dữ liệu trong quá khứ và tương lai và chỉ biết áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được ước tính với độ rối rắm chấp nhận được.
+Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến việc các LSTM hai chiều sử dụng cả dữ liệu trong quá khứ và tương lai, và cứ áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được các ước tính với độ rối rắm chấp nhận được.
 Tuy nhiên, khả năng dự đoán các biểu tượng trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây.
 Mặc dù có sự lúng túng hợp lý, nó chỉ tạo ra sự vô nghĩa ngay cả sau nhiều lần lặp lại.
 Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng sai bối cảnh.
@@ -362,7 +362,7 @@ For a discussion of more effective uses of bidirectional models, please see the 
 -->
 
 Đầu ra rõ ràng là không tốt vì những lý do trên.
-Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem phân loại tình cảm trong: numref: `sec_sentiment_rnn`.
+Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem bài toán phân loại tình cảm trong: numref: `sec_sentiment_rnn`.
 
 <!--
 ## Summary
@@ -379,7 +379,7 @@ For a discussion of more effective uses of bidirectional models, please see the 
 
 * Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian đó.
 * Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ thị.
-* RNN hai chiều chủ yếu hữu ích cho việc nhúng chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
+* RNN hai chiều chủ yếu hữu ích cho việc tạo embedding chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
 * RNN hai chiều rất tốn kém để huấn luyện do chuỗi gradient dài.
 
 <!--
