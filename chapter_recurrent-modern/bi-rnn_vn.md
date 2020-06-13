@@ -294,7 +294,7 @@ During test time we only have past data and thus poor accuracy (we will illustra
 Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
 Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt).
 Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
-Rốt cuộc, chúng ta không thể biết biểu tượng phía sau biểu tượng đang cần dự đoán.
+Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán.
 Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại.
 Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới).
 
