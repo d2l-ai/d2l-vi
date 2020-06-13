@@ -457,36 +457,13 @@ Chúng ta hãy xem xét một số trường hợp:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
-<!-- Phần 2 -->
-* Nguyễn Duy Du
-
-<!-- Phần 3 -->
 * Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
+* Phạm Minh Đức
 * Trần Yến Thy
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Lê Khắc Hồng Phúc
+* Nguyễn Cảnh Thướng

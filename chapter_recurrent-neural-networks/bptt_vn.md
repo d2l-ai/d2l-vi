@@ -5,7 +5,7 @@
 # Backpropagation Through Time
 -->
 
-# Lan Truyền Ngược Qua Thời Gian
+# Lan truyền Ngược qua Thời gian
 :label:`sec_bptt`
 
 <!--
@@ -68,7 +68,7 @@ Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì sẽ xảy r
 ## A Simplified Recurrent Network
 -->
 
-## Mạng Truy Hồi Giản Thể
+## Mạng Truy hồi Giản thể
 
 <!--
 We start with a simplified model of how an RNN works.
@@ -144,7 +144,7 @@ Now let us apply :eqref:`eq_bptt_at` with
 -->
 
 
-Bây giờ chúng ta áp dụng :eqref: `eq_bptt_at` với
+Bây giờ chúng ta áp dụng :eqref:`eq_bptt_at` với
 
 
 $$a_t = \partial_{w_h}h_{t},$$
@@ -220,7 +220,7 @@ Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo
 Điều này dẫn tới một phép *xấp xỉ* của gradient, đơn giản bằng cách kết thúc tổng trên tại $\partial_w h_{t-\tau}$.
 Do đó lỗi xấp xỉ là $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
 Trong thực tế, chiến lược này hoạt động khá tốt.
-Phương pháp này thường được gọi là BPTT (*backpropagation through time* -- lan truyền ngược qua thời gian) bị cắt xén.
+Phương pháp này thường được gọi là BPTT (*backpropagation through time* --- lan truyền ngược qua thời gian) bị cắt xén.
 Một trong những hệ quả của phương pháp này là mô hình sẽ tập trung chủ yếu vào ảnh hưởng ngắn hạn thay vì dài hạn.
 Đây thực sự là điều mà chúng ta *mong muốn*, vì nó hướng sự ước lượng tới các mô hình đơn giản và ổn định hơn.
 
@@ -290,7 +290,7 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 ## The Computational Graph
 -->
 
-## Đồ thị tính toán
+## Đồ thị Tính toán
 
 <!--
 In order to visualize the dependencies between model variables and parameters during computation in a recurrent neural network, 
@@ -367,7 +367,7 @@ We begin with
 -->
 
 Sự phụ thuộc vào $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ thì khó khăn hơn một chút vì cần sử dụng quy tắc dây chuyền khi tính toán đạo hàm.
-Ta bắt đầu với
+Ta sẽ bắt đầu với
 
 
 $$\begin{aligned}
@@ -479,37 +479,10 @@ Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
 * Nguyễn Văn Cường
 * Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-<!-- Phần 6 -->
-* Nguyễn Văn Cường
+* Phạm Hồng Vinh

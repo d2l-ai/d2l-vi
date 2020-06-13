@@ -50,7 +50,7 @@ The following function reads the dataset into a list of sentences, each sentence
 Here we ignore punctuation and capitalization.
 -->
 
-Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian (*Time Machine*)] (http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells. 
+Để bắt đầu chúng ta nạp dữ liệu văn bản từ cuốn sách [Cỗ máy Thời gian (*Time Machine*)](http://www.gutenberg.org/ebooks/35) của tác giả H. G. Wells. 
 Đây là một kho ngữ liệu khá nhỏ chỉ hơn $30.000$ từ, nhưng nó đủ tốt cho mục đích minh họa. 
 Nhiều bộ dữ liệu trên thực tế chứa hàng tỷ từ. 
 Hàm sau đây đọc dữ liệu thành một danh sách các câu, mỗi câu là một chuỗi. 
@@ -253,7 +253,7 @@ len(corpus), len(vocab)
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
 -->
 
-* Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá chúng thành các từ hoặc ký tự, và sau đó ánh xạ chúng thành các chỉ số tương ứng.
+Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá chúng thành các từ hoặc ký tự, và sau đó ánh xạ chúng thành các chỉ số tương ứng.
 
 
 
@@ -283,24 +283,10 @@ Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câ
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
