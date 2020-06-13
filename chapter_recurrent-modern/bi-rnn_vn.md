@@ -52,7 +52,7 @@ The specific technical details do not matter for understanding the deep learning
 -->
 
 Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động.
-Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
+Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
 
 
 <!--
