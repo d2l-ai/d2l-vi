@@ -377,8 +377,8 @@ Let us first define the function to train the model on one data epoch.
 It differs from the models training of :numref:`sec_softmax_scratch` in three places:
 -->
 
-Trước tiên, ta sẽ định nghĩa hàm huấn luyện mô hình trên một epoch dữ liệu.
-Quá trình huấn luyện ở đây sẽ khác với :numref:`sec_softmax_scratch` ở ba điểm:
+Trước tiên, ta định nghĩa hàm huấn luyện trên một epoch dữ liệu.
+Quá trình huấn luyện ở đây khác với :numref:`sec_softmax_scratch` ở ba điểm:
 
 <!--
 1. Different sampling methods for sequential data (independent sampling and sequential partitioning) will result in differences in the initialization of hidden states.
@@ -387,11 +387,10 @@ This ensures that the model does not diverge even when gradients blow up at some
 3. We use perplexity to evaluate the model. This ensures that sequences of different length are comparable.
 -->
 
-1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu độc lập và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
-2. Ta gọt gradient trước khi cập nhật các tham số mô hình.
-Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm độ lớn của bước cập nhật một cách hiệu quả.
-3. Ta sử dụng độ rối rắm để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
-
+1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu ngẫu nhiên và phân tách tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
+2. Ta gọt gradient trước khi cập nhật tham số mô hình.
+Việc này đảm bảo rằng mô hình sẽ không phân kỳ ngay cả khi gradient bùng nổ tại một thời điểm nào đó trong quá trình huấn luyện, đồng thời tự động giảm biên độ của bước cập nhật một cách hiệu quả.
+3. Ta sử dụng perplexity để đánh giá mô hình. Phương pháp này đảm bảo rằng các chuỗi có độ dài khác nhau có thể so sánh được.
 
 <!--
 When the consecutive sampling is used, we initialize the hidden state at the beginning of each epoch.
@@ -401,10 +400,10 @@ When using the random sampling, we need to re-initialize the hidden state for ea
 Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use generalized `updater`, which could be either a Gluon trainer or a scratched implementation.
 -->
 
-Khi thực hiện lấy mẫu liên tục, ta sẽ khởi tạo trạng thái ẩn ở đầu mỗi epoch.
-Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ hiện tại nên minibatch tiếp theo có thể sử dụng trực tiếp trạng thái ẩn hiện tại, ta chỉ tách gradient để có thể tính toán gradient trong từng minibatch.
-Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần khởi tạo lại trạng thái ẩn cho mỗi lần lặp vì mỗi mẫu được lấy ra với một vị trí ngẫu nhiên.
-Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sẽ sử dụng một hàm `updater` tổng quát, hàm này có thể là một trình huấn luyện Gluon hoặc được lập trình từ đầu.
+Khi thực hiện lấy mẫu tuần tự, ta chỉ khởi tạo trạng thái ẩn khi bắt đầu mỗi epoch.
+Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ trong minibatch hiện tại nên ta có thể sử dụng trực tiếp trạng thái ẩn hiện tại cho minibatch tiếp theo, chỉ cần tách gradient để tính riêng cho mỗi minibatch.
+Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần tái khởi tạo trạng thái ẩn cho mỗi vòng lặp vì mỗi mẫu được lấy ra ở vị trí ngẫu nhiên.
+Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử dụng đối số `updater` để tổng quát hoá cả trường hợp lập trình súc tích với Gluon và lập trình từ đầu.
 
 
 ```{.python .input}
@@ -436,7 +435,7 @@ def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
 The training function again supports either we implement the model from scratch or using Gluon.
 -->
 
-Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon hoặc mô hình được ta lập trình từ đầu.
+Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon và mô hình lập trình từ đầu.
 
 
 ```{.python .input  n=11}
@@ -482,8 +481,8 @@ Now we can train a model.
 Since we only use $10,000$ tokens in the dataset, the model needs more epochs to converge.
 -->
 
-Bây giờ thì ta có thể huấn luyện mô hình.
-Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này sẽ cần nhiều epoch hơn để hội tụ.
+Bây giờ ta có thể huấn luyện mô hình.
+Do chỉ sử dụng $10.000$ token trong tập dữ liệu, mô hình này cần nhiều epoch hơn để hội tụ.
 
 
 ```{.python .input}
@@ -495,7 +494,7 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Finally let us check the results to use a random sampling iterator.
 -->
 
-Cuối cùng, ta sẽ kiểm tra kết quả khi sử dụng một iterator để lấy mẫu ngẫu nhiên.
+Cuối cùng, ta kiểm tra kết quả khi lấy mẫu ngẫu nhiên.
 
 
 ```{.python .input}
@@ -506,9 +505,8 @@ train_ch8(model, train_iter, vocab, lr, num_epochs, ctx, use_random_iter=True)
 While implementing the above RNN model from scratch is instructive, it is not convenient. In the next section we will see how to improve significantly on the current model and how to make it faster and easier to implement.
 -->
 
-Mặc dù ta đã học được nhiều từ việc lập trình mô hình RNN từ đầu nhưng cách làm này không thực sự tiện lợi lắm. 
-Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại một cách đáng kể và cách làm nó nhanh và dễ lập trình hơn.
-
+Mặc dù học được nhiều điều từ việc lập trình từ đầu nhưng cách làm này không thực sự tiện lợi. 
+Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể mô hình hiện tại, nhanh và dễ lập trình hơn.
 
 <!--
 ## Summary
@@ -526,11 +524,11 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 -->
 
 * Mô hình chuỗi cần khởi tạo trạng thái cho quá trình huấn luyện.
-* Giữa các mô hình chuỗi, ta cần đảm bảo tách các gradient, để chắc chắn rằng phép vi phân tự động không lan truyền các ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
+* Giữa các mô hình chuỗi, ta cần đảm bảo tách gradient để chắc chắn rằng phép tính vi phân tự động không ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
 * Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
-* Gọt gradient có thể ngăn sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
-* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau. Nó là trung bình lũy thừa của mất mát entropy chéo.
-* Phân vùng tuần tự thường dẫn đến các mô hình tốt hơn.
+* Gọt gradient có thể hạn chế sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
+* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau, được tính bằng trung bình lũy thừa của mất mát entropy chéo.
+* Phân tách tuần tự cho kết quả mô hình tốt hơn.
 
 <!--
 ## Exercises
@@ -552,17 +550,17 @@ Trong phần tiếp theo, ta sẽ xem cách cải thiện mô hình hiện tại
 7. Prove that the perplexity is the inverse of the harmonic mean of the conditional word probabilities.
 -->
 
-1. Chứng minh rằng biễu diễn one-hot tương đương với việc chọn một embedding khác nhau cho từng đối tượng.
+1. Chỉ ra rằng mỗi biễu diễn one-hot tương đương với một embedding khác nhau cho từng đối tượng.
 2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
-    * Bạn có thể giảm nó xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv
+    * Bạn có thể giảm perplexity xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
     * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
-    * Điều chỉnh mô hình để ưu tiên các đầu ra có khả năng cao hơn, ví dụ: bằng cách lấy mẫu từ $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
-4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn trong phần này mà không thực hiện gọt gradient?
-5. Thay đổi phép lấy mẫu liền kề để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
-6. Thay thế hàm kích hoạt được sử dụng trong phần này bằng ReLU và thực hiện lại các thử nghiệm.
-7. Chứng minh rằng độ rối rắm là nghịch đảo của trung bình điều hòa của xác suất từ có điều kiện.
+    * Điều chỉnh để mô hình ưu tiên các đầu ra có khả năng cao hơn, ví dụ, bằng cách lấy mẫu sử dụng $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
+4. Điều gì sẽ xảy ra nếu ta chạy mã nguồn phần này mà không gọt gradient?
+5. Thay đổi phép lấy mẫu phân tách tuần tự để các trạng thái ẩn không bị tách khỏi đồ thị tính toán. Thời gian chạy và độ chính xác có thay đổi không?
+6. Thay hàm kích hoạt bằng ReLU và thực hiện lại các thử nghiệm.
+7. Chứng minh rằng perplexity là nghịch đảo trung bình điều hòa (*harmonic mean*) của xác suất có điều kiện của từ.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -585,24 +583,11 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
 * Trần Yến Thy
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-
-<!-- Phần 5 -->
+* Nguyễn Lê Quang Nhật
 * Nguyễn Duy Du
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng
