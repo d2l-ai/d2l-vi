@@ -264,7 +264,7 @@ In *multilayer perceptron attention*, we project both query and keys into $\math
 Assume that the learnable weights are $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$, and $\mathbf v\in\mathbb R^{h}$. Then the score function is defined by
 -->
 
-Trong *perceptron đa tầng tập trung*, chúng ta chiếu cả query và các key vào $\mathbb R^{h}$ bằng các tham số trọng số có thể học được.
+Trong cơ chế *tập trung perceptron đa tầng*, chúng ta chiếu cả câu truy vấn và các khoá lên $\mathbb R^{h}$ bằng các tham số trọng số có được học.
 Giả định rằng các trọng số có thể học được là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và  $\mathbf v\in\mathbb R^{h}$.Hàm tính điểm số sẽ được định nghĩa như sau
 
 
