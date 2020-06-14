@@ -257,7 +257,7 @@ To address such an issue, we may resort to the multilayer perceptron attention.
 ## Multilayer Perceptron Attention
 -->
 
-## Perceptron đa tầng tập trung
+## Tập trung Perceptron Đa tầng
 
 <!--
 In *multilayer perceptron attention*, we project both query and keys into $\mathbb R^{h}$ by learnable weights parameters.
