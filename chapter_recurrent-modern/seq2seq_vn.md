@@ -100,7 +100,7 @@ The input for the encoder is a batch of sequences, which is 2-D tensor with shap
 The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
 -->
 Bây giờ chúng ta hãy lập trình bộ mã hoá của mô hình seq2seq.
-Ở đây chúng ta sẽ sử dụng một tầng embedding để chuyển đổi chỉ số từ của ngôn ngữ đầu vào thành vector đặc trưng tương ứng.
+Ở đây chúng ta sẽ sử dụng một tầng embedding từ để lấy vector đặc trưng tương ứng với chỉ số từ của ngôn ngữ đầu vào.
 Những vector đặc trưng này sẽ được truyền vào một mạng LSTM đa tầng.
 Đầu vào cho bộ mã hoá là batch gồm các chuỗi là các tensor 2 chiều có kích thước (kích thước batch, độ dài chuỗi).
 Bộ mã hoá trả về cả đầu ra của LSTM gồm các trạng thái ẩn của tất cả các bước thời gian, cũng như trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
@@ -139,7 +139,8 @@ If long short-term memory is used, the `state` list will also contain another el
 
 Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch 4 cùng số bước thời gian 7.
 Ta sẽ giả định rằng số lượng tầng ẩn của đơn vị LSTM là 2 và số nút ẩn là 16.
-Kích thước của trạng thái ẩn đa tầng trong nút truy hồi có cổng ở bước thời gian cuối cùng là (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
+Đầu ra của bộ mã hoá sau khi thực hiện phép tính xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
+Trạng thái ẩn đa tầng trong nút truy hồi có cổng ở bước thời gian cuối cùng có kích thước là (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 Trong nút truy hồi có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn.
 Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ. 
 
@@ -158,7 +159,7 @@ Since an LSTM is used, the `state` list will contain both the hidden state and t
 However, if a GRU is used, the `state` list will contain only one element---the hidden state in the final timestep with shape (number of hidden layers, batch size, number of hidden units).
 -->
 
-Khi LSTM được sử dụng, danh sách `state` sẽ chứa cả trạng thái ẩn và ô nhớ với cùng kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
+Vì LSTM đang được sử dụng, danh sách `state` sẽ chứa cả trạng thái ẩn và ô nhớ với cùng kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 Tuy nhiên, nếu GRU được sử dụng thì danh sách `state` sẽ chỉ chứa trạng thái ẩn của bước thời gian cuối cùng với kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
 
 ```{.python .input  n=4}
