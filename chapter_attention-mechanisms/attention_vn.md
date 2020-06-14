@@ -167,7 +167,7 @@ npx.batch_dot(np.ones((2, 1, 3)), np.ones((2, 3, 2)))
 ## Dot Product Attention
 -->
 
-## *dịch tiêu đề phía trên* 
+## Tập trung Tích Vô hướng
 
 <!--
 Equipped with the above two operators: `masked_softmax` and `batched_dot`, let us dive into the details of two widely used attentions layers.
