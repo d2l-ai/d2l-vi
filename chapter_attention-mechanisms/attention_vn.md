@@ -332,7 +332,7 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 * Two commonly used attention models are dot product attention and multilayer perceptron attention.
 -->
 
-* Tầng tập trung lựa chọn trước tiếp các thông tin liên quan.
+* Tầng tập trung lựa chọn các thông tin liên quan một cách tường minh.
 * Ký ức của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần với các giá trị của các khoá giống với câu truy vấn.
 * Hai mô hình tập trung được sử dụng phổ biến là Tích vô hướng tập trung và Perceptron đa tầng tập trung.
 
