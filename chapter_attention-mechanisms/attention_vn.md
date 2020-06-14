@@ -254,7 +254,7 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân query và key lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng của chúng.
+Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
 Trong khi đó, query và key có thể không có cùng số chiều.
 Để giải quyết vấn đề này, chúng ta có thể trông cậy đến perceptron đa tầng tập trung.
 
