@@ -177,7 +177,7 @@ In other words,
 -->
 
 Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết của hai loại tầng tập trung được sử dụng phổ biến.
-Loại đầu tiên là *Tích vô hướng tập trung*: nó giả định rằng query có cùng số chiều với key, gọi là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Loại đầu tiên là *Tập trung Tích vô hướng*: nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
 Tích vô hướng tập trung tính điểm số bằng một tích vô hướng giữa query và key, sau đó chia cho $\sqrt{d}$ để tối thiểu các ảnh hưởng không liên quan của chiều $d$ trong các điểm số.
 Nói cách khác,
 
