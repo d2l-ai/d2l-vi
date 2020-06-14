@@ -6,7 +6,6 @@
 -->
 
 # Mô hình Ngôn ngữ và Tập dữ liệu
-
 :label:`sec_language_model`
 
 
@@ -67,7 +66,7 @@ We can take recourse to the analysis we applied to sequence models in the previo
 Let us start by applying basic probability rules:
 -->
 
-Làm thế nào để mô hình hoá một tài liệu hay thậm chí là một chuỗi các từ?
+Làm thế nào để mô hình hóa một tài liệu hay thậm chí là một chuỗi các từ?
 Ta có thể sử dụng cách phân tích đã dùng trong mô hình chuỗi ở phần trước.
 Bắt đầu bằng việc áp dụng quy tắc xác suất cơ bản sau:
 
@@ -257,10 +256,10 @@ To get a better idea we plot the graph of the word frequency.
 -->
 
 Có thể thấy những từ xuất hiện nhiều nhất không có gì đáng chú ý.
-Các từ này được gọi là [từ dừng](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng thường được lọc ra.
+Các từ này được gọi là [từ dừng (*stop words*)](https://en.wikipedia.org/wiki/Stop_words) và vì thế chúng thường được lọc ra.
 Dù vậy, những từ này vẫn có nghĩa và ta vẫn sẽ sử dụng chúng.
 Tuy nhiên, rõ ràng là tần số của từ suy giảm khá nhanh.
-Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $ 1/5 $ lần so với từ phổ biến nhất.
+Từ phổ biến thứ $10$ xuất hiện ít hơn, chỉ bằng $1/5$ lần so với từ phổ biến nhất.
 Để hiểu rõ hơn, chúng ta sẽ vẽ đồ thị tần số của từ.
 
 
@@ -318,7 +317,7 @@ Furthermore, let us see whether the trigram frequency behaves in the same manner
 -->
 
 Có một điều đáng chú ý ở đây.
-9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng (*stop words*) và chỉ có một là liên quan đến cuốn sách --- cặp từ "the time".
+9 trong số 10 cặp từ thường xuyên xuất hiện là các từ dừng và chỉ có một là liên quan đến cuốn sách --- cặp từ "the time".
 Hãy xem tần số của trigram có tương tự hay không.
 
 
@@ -384,7 +383,7 @@ In :numref:`fig_timemachine_5gram`, we visualized several possible ways to obtai
 Note that we have quite some freedom since we could pick an arbitrary offset.
 -->
 
-:numref: `fig_timemachine_5gram`, biểu diễn các cách để chia một câu thành các 5-gram, ở đây mỗi token là một ký tự.
+:numref:`fig_timemachine_5gram`, biểu diễn các cách để chia một câu thành các 5-gram, ở đây mỗi token là một ký tự.
 Ta có thể chọn tùy ý độ dời ở vị trí bắt đầu.
 
 
@@ -618,7 +617,7 @@ def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
 
 1. Giả sử có $100.000$ từ trong tập dữ liệu huấn luyện. Mô hình 4-gram cần phải lưu trữ bao nhiêu tần số của từ đơn và cụm từ liền kề?
 2. Hãy xem lại các ước lượng xác suất đã qua làm mượt. Tại sao chúng không chính xác? Gợi ý: chúng ta đang xử lý một chuỗi liền kề chứ không phải riêng lẻ.
-3. Bạn sẽ mô hình hoá một cuộc đối thoại như thế nào?
+3. Bạn sẽ mô hình hóa một cuộc đối thoại như thế nào?
 4. Hãy ước tính luỹ thừa của định luật Zipf cho 1-gram, 2-gram, và 3-gram.
 5. Hãy thử tìm các cách lấy mẫu minibatch khác.
 6. Tại sao việc lấy giá trị độ dời ngẫu nhiên lại là một ý tưởng hay?

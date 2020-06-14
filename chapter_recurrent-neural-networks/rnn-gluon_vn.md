@@ -61,7 +61,7 @@ For now, suffice it to say that multiple layers simply amount to the output of o
 Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
 Phương thức này trả về một trạng thái ban đầu cho mỗi phần tử trong minibatch, có kích thước là (số tầng ẩn, kích thước batch, số nút ẩn).
 Số tầng ẩn mặc định là 1.
-Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
+Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào --- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
 Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
 
 ```{.python .input  n=37}

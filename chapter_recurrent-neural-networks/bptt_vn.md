@@ -79,7 +79,7 @@ In addition, $w_h$ and $w_o$ indicate the weights of hidden states and the outpu
 As a result, the hidden states and outputs at each timesteps can be explained as
 -->
 
-Hãy bắt đầu với một mô hình đơn giản về cách mạng RNN hoạt động.
+Hãy bắt đầu với một mô hình đơn giản về cách mà mạng RNN hoạt động.
 Mô hình này bỏ qua các chi tiết cụ thể của trạng thái ẩn và cách trạng thái này được cập nhật.
 Những chi tiết này không quan trọng đối với việc phân tích dưới đây mà chỉ khiến các ký hiệu trở nên lộn xộn và phức tạp quá mức.
 Trong mô hình đơn giản này, chúng ta ký hiệu $h_t$ là trạng thái ẩn, $x_t$ là đầu vào, và $o_t$ là đầu ra tại bước thời gian $t$.
@@ -123,7 +123,7 @@ The first and the second part of the derivative is easy to compute.
 The third part $\partial_{w_h} h_t$ is where things get tricky, since we need to compute the effect of the parameters on $h_t$.
 -->
 
-Ta có thể tính phần đầu tiên và phần thứ hai của đạo hàm môt cách dễ dàng.
+Ta có thể tính phần đầu tiên và phần thứ hai của đạo hàm một cách dễ dàng.
 Phần thứ ba $\partial_{w_h} h_t$ khiến mọi thứ trở nên khó khăn, vì chúng ta cần phải tính toán ảnh hưởng của các tham số tới $h_t$.
 
 
@@ -277,8 +277,9 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 * The third row is the full BPTT that leads to a computationally infeasible expression.
 -->
 
-:numref:`fig_truncated_bptt` minh hoạ ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*.
-* Dòng đầu tiên biểu diễn sự cắt xén ngẫu nhiên, chia văn bản thành các phần có độ dài biến thiên. 
+:numref:`fig_truncated_bptt` minh họa ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*:
+
+* Dòng đầu tiên biểu diễn sự cắt xén ngẫu nhiên, chia văn bản thành các phần có độ dài biến thiên.
 * Dòng thứ hai biểu diễn BPTT bị cắt xén đều, chia văn bản thành các phần có độ dài bằng nhau.
 * Dòng thứ ba là BPTT đầy đủ, dẫn đến một biểu thức không khả thi về mặt tính toán.
 
@@ -300,7 +301,7 @@ the hidden state of the last timestep $\mathbf{h}_2$, and the input of the curre
 -->
 
 
-Để minh hoạ trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
+Để minh họa trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
 Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mathbf{h}_3$, phụ thuộc vào các tham số $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ của mô hình, trạng thái ẩn ở bước thời gian trước đó $\mathbf{h}_2$, và đầu vào ở bước thời gian hiện tại $\mathbf{x}_3$.
 
 <!--
@@ -423,7 +424,7 @@ Ta có thể rút ra nhiều điều từ biểu thức phức tạp này.
 Đầu tiên, việc lưu lại các kết quả trung gian, tức các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$, là rất hữu ích.
 Thứ hai, ví dụ tuyến tính này dù đơn giản nhưng đã làm lộ ra một vấn đề chủ chốt của các mô hình chuỗi dài: ta có thể phải làm việc với các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
-Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
+Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hóa quá mức các chi tiết không liên quan trong quá khứ. 
 Một cách giải quyết vấn đề này là cắt xén các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
 Sau này ở :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
 Khi lập trình, ta cắt xén các số hạng bằng cách *tách rời* gradient sau một số lượng bước nhất định.
