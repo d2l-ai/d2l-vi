@@ -5,7 +5,7 @@
 # Convexity
 -->
 
-# *dịch tiêu đề phía trên*
+# Tính lồi
 :label:`sec_convexity`
 
 <!--
@@ -16,25 +16,29 @@ Furthermore, even though the optimization problems in deep learning are generall
 This can lead to exciting new optimization variants such as :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 -->
 
-*dịch đoạn phía trên*
+Tính lồi đóng một vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
+Điều này phần lớn là do thực tế rằng các thuật toán thuộc bối cảnh này sẽ dễ phân tích và kiểm tra hơn.
+Nói cách khác, nếu thuật toán hoạt động kém ngay cả trong môi trường lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong môi trường khác.
+Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần là không lồi, chúng lại thường thể hiện một số tính chất lồi gần các cực tiểu cục bộ.
+Điều này dẫn đến các biến thể tối ưu hóa thú vị mới như :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 
 <!--
 ## Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Căn bản
 
 <!--
 Let us begin with the basics.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy bắt đầu với các căn bản trước.
 
 <!--
 ### Sets
 -->
 
-### *dịch tiêu đề phía trên*
+### Tập hợp
 
 <!--
 Sets are the basis of convexity.
@@ -42,10 +46,12 @@ Simply put, a set $X$ in a vector space is convex if for any $a, b \in X$ the li
 In mathematical terms this means that for all $\lambda \in [0, 1]$ we have
 -->
 
-*dịch đoạn phía trên*
+Tập hợp là các cơ sở của tính lồi.
+Nói một cách đơn giản, một tập hợp $X$ trong không gian vector là lồi nếu với bất kì $a, b \in X$, đoạn thẳng nối $a$ và $b$ cũng thuộc $X$.
+Theo các thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
 
 
-$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{ whenever } a, b \in X.$$
+$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{ bất cứ khi nào } a, b \in X.$$
 
 
 <!--
@@ -55,13 +61,16 @@ The first set is not convex since there are line segments that are not contained
 The other two sets suffer no such problem.
 -->
 
-*dịch đoạn phía trên*
+Nghe có vẻ hơi trừu tượng nhỉ.
+Hãy xem qua bức ảnh :numref:`fig_pacman`.
+Tập hợp đầu tiên là không lồi do tồn tại các đoạn thẳng không nằm trong tập hợp.
+Hai tập hợp còn lại thì không gặp vấn đề như vậy.
 
 <!--
 ![Three shapes, the left one is nonconvex, the others are convex](../img/pacman.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/pacman.svg)
+![Ba hình dạng, hình bên trái là không lồi, hai hình còn lại là lồi](../img/pacman.svg)
 :label:`fig_pacman`
 
 <!--
@@ -73,30 +82,39 @@ To see this, consider any $a, b \in X \cap Y$. Since $X$ and $Y$ are convex, the
 Given that, they also need to be contained in $X \cap Y$, thus proving our first theorem.
 -->
 
-*dịch đoạn phía trên*
+Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn làm gì đó với chúng.
+Trong trường hợp này, chúng ta có thể nhìn vào hợp và giao ở :numref:`fig_convex_intersect`.
+Giả sử $X$ và $Y$ là các tập hợp lồi.
+Thì $X \cap Y$ cũng sẽ lồi.
+Để thấy được điều này, giả sử rằng bất kì  $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, đường thẳng chứa $a$ và $b$ sẽ thuộc trong cả $X$ và $Y$.
+Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh được định lý đầu tiên của chúng ta.
 
 <!--
 ![The intersection between two convex sets is convex](../img/convex-intersect.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/convex-intersect.svg)
+![Giao giữa hai tập hợp lồi cũng là lồi](../img/convex-intersect.svg)
 :label:`fig_convex_intersect`
 
 <!--
 We can strengthen this result with little effort: given convex sets $X_i$, their intersection $\cap_{i} X_i$ is convex.
 To see that the converse is not true, consider two disjoint sets $X \cap Y = \emptyset$.
-Now pick $a \in X$ and $b \in Y$.
+Now pick $a \in X$ và $b \in Y$.
 The line segment in :numref:`fig_nonconvex` connecting $a$ and $b$ needs to contain some part that is neither in $X$ nor $Y$, since we assumed that $X \cap Y = \emptyset$.
 Hence the line segment is not in $X \cup Y$ either, thus proving that in general unions of convex sets need not be convex.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể cố thêm một chút nữa để củng cố kết quả này: Cho các tập hợp lồi $X_i$, giao của chúng $\cap_{i} X_i$ là lồi.
+Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau  $X \cap Y = \emptyset$.
+Giờ ta chọn ra $a \in X$ và $b \in Y$.
+Đường thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
+Do đó đoạn thẳng cũng không thuộc $X \cup Y$, từ đó chứng minh rằng: về tổng quát, hợp của các tập hợp lồi không nhất thiết phải lồi.
 
 <!--
 ![The union of two convex sets need not be convex](../img/nonconvex.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/nonconvex.svg)
+![Hợp của hai tập hợp lồi không nhất thiết phải lồi](../img/nonconvex.svg)
 :label:`fig_nonconvex`
 
 <!--
@@ -105,7 +123,9 @@ For instance $\mathbb{R}^d$ is a convex set (after all, the line between any two
 In some cases we work with variables of bounded length, such as balls of radius $r$ as defined by $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ and } \|\mathbf{x}\|_2 \leq r\}$.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, các vấn đề trong học sâu đều được định nghĩa trong các miền lồi.
+Ví dụ $\mathbb{R}^d$ là tập hợp lồi (xét cho cùng, đoạn thẳng giữa hai điểm bất kỳ thuộc $\mathbb{R}^d$ sẽ thuộc $\mathbb{R}^d$).
+Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có độ dài cố định, ví dụ như các quả banh có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -694,7 +714,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 2 -->
 * 
