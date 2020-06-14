@@ -398,6 +398,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | standard deviation              | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | state-of-the-art                | tân tiến nhất            |                                              |
 | stationary point                | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
+| statistical inference           | suy luận thống kê        |                                              |
 | statistical power               | năng lực thống kê        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
