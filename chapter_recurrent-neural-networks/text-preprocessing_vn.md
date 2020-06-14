@@ -6,7 +6,6 @@
 -->
 
 # Tiền Xử lý Dữ liệu Văn bản
-
 :label:`sec_text_preprocessing`
 
 <!--
@@ -253,7 +252,7 @@ len(corpus), len(vocab)
 * We preprocessed the documents by tokenizing them into words or characters and then mapping into indices.
 -->
 
-Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hoá chúng thành các từ hoặc ký tự, và sau đó ánh xạ chúng thành các chỉ số tương ứng.
+Chúng ta đã tiền xử lý các tài liệu văn bản bằng cách token hóa chúng thành các từ hoặc ký tự, và sau đó ánh xạ chúng thành các chỉ số tương ứng.
 
 
 
@@ -269,9 +268,9 @@ It varies for different languages.
 Try to find another 3 commonly used methods to tokenize sentences.
 -->
 
-Token hoá là một bước tiền xử lý quan trọng. 
+Token hóa là một bước tiền xử lý quan trọng. 
 Mỗi ngôn ngữ có đều có các cách làm khác nhau. 
-Hãy thử tìm thêm 3 phương pháp thường dùng để token hoá các câu. 
+Hãy thử tìm thêm 3 phương pháp thường dùng để token hóa các câu. 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->

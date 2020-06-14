@@ -304,7 +304,7 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh hoạ. 
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh họa. 
 Đầu tiên, hãy khởi tạo một vài dữ liệu như sau. 
 Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm một chút nhiễu. 
 
@@ -341,7 +341,7 @@ Một cách đơn giản để khắc phục điều này, đặc biệt là khi
 Một cách khác là đệm giá trị 0 vào chuỗi thời gian. 
 Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước. 
 Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$. 
-Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
+Do việc mô hình hóa phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
 
 
 ```{.python .input}
