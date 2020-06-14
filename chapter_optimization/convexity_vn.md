@@ -115,14 +115,14 @@ In some cases we work with variables of bounded length, such as balls of radius 
 ### Functions
 -->
 
-### *dịch tiêu đề phía trên*
-
+### Hàm số
 <!--
 Now that we have convex sets we can introduce convex functions $f$.
 Given a convex set $X$ a function defined on it $f: X \to \mathbb{R}$ is convex if for all $x, x' \in X$ and for all $\lambda \in [0, 1]$ we have
 -->
 
-*dịch đoạn phía trên*
+Sau khi có được các tập hợp lồi, chúng ta sẽ giới thiệu tiếp về các hàm số lồi $f$.
+Cho một tập hợp lồi $X$, một hàm số được định nghĩa là thuộc nó $f: X \to \mathbb{R}$ sẽ lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
 
 
 $$\lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
@@ -133,7 +133,8 @@ To illustrate this let us plot a few functions and check which ones satisfy the 
 We need to import a few  libraries.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cho điều này, chúng ta sẽ vẽ ra một vài hàm số và kiểm tra xem hàm số nào thỏa mãn yêu cầu.
+Chúng ta sẽ cần phải nhập một vài gói thư viện.
 
 
 ```{.python .input  n=1}
@@ -149,7 +150,7 @@ npx.set_np()
 Let us define a few functions, both convex and nonconvex.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy định nghĩa một vài hàm số, cả lồi lẫn không lồi.
 
 
 ```{.python .input}
@@ -178,20 +179,23 @@ Otherwise the outcome of $f(\lambda x + (1-\lambda) x')$ might not be well defin
 Convex functions have a number of desirable properties.
 -->
 
-*dịch đoạn phía trên*
+Như đã đoán trước, hàm cos là không lồi, trong khi hàm parabol và hàm số mũ thì lồi.
+Lưu ý, yêu cầu nói rằng $X$ cần phải là tập hợp lồi để có ý nghĩa.
+Nếu không, kết quả của $f(\lambda x + (1-\lambda) x')$ sẽ không được định nghĩa rõ.
+Các hàm lồi có một số tính chất mong muốn sau.
 
 <!--
 ### Jensen's Inequality
 -->
 
-### *dịch tiêu đề phía trên*
-
+### Bất đẳng thức Jensen
 <!--
 One of the most useful tools is Jensen's inequality.
 It amounts to a generalization of the definition of convexity:
 -->
 
-*dịch đoạn phía trên*
+Một trong những công cụ hữu dụng nhất là bất đẳng thức Jensen.
+Nó tương đương với tổng quát hóa của định nghĩa về tính lồi:
 
 
 $$\begin{aligned}
@@ -207,15 +211,18 @@ In other words, the expectation of a convex function is larger than the convex f
 To prove the first inequality we repeatedly apply the definition of convexity to one term in the sum at a time.
 The expectation can be proven by taking the limit over finite segments.
 -->
-
-*dịch đoạn phía trên*
+với $\alpha_i$ là các số thực không âm mà $\sum_i \alpha_i = 1$.
+Nói cách khác, kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng.
+Để chứng minh bất đẳng thức đầu tiên này, chúng ta tuần tự áp dụng định nghĩa của tính lồi vào các số hạng của tổng.
+Kỳ vọng có thể được chứng minh bằng cách lấy giới hạn trên các đoạn hữu hạn.
 
 <!--
 One of the common applications of Jensen's inequality is with regard to the log-likelihood of partially observed random variables.
 That is, we use
 -->
 
-*dịch đoạn phía trên*
+Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến hợp lý log của các biến ngẫu nhiên quan sát được một phần.
+Đó là sử dụng
 
 
 $$E_{y \sim P(y)}[-\log P(x \mid y)] \geq -\log P(x).$$
@@ -228,28 +235,31 @@ Here $y$ is typically the unobserved random variable, $P(y)$ is the best guess o
 For instance, in clustering $y$ might be the cluster labels and $P(x \mid y)$ is the generative model when applying cluster labels.
 -->
 
-*dịch đoạn phía trên*
-
+Điều này xảy ra vì  $\int P(y) P(x \mid y) dy = P(x)$.
+Nó được sử dụng trong những phương pháp biến phân.
+$y$ ở đây là thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về cách nó có thể phân phối và $P(x)$ là phân phối tích phân theo $y$.
+Ví dụ, trong phân cụm $y$ có thể là các nhãn cụm và  $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
 
 <!--
 ## Properties
 -->
 
-## *dịch tiêu đề phía trên*
+## Các tính chất
 
 <!--
 Convex functions have a few useful properties.
 We describe them as follows.
 -->
 
-*dịch đoạn phía trên*
+Các hàm lồi có một vài tính chất hữu ích.
+Chúng ta sẽ miêu tả chúng như sau.
 
 
 <!--
 ### No Local Minima
 -->
 
-### *dịch tiêu đề phía trên*
+### Không có cực tiểu cục bộ
 
 <!--
 In particular, convex functions do not have local minima.
@@ -258,7 +268,10 @@ Since $x$ is only a local minimum there has to be another $x' \in X$ for which $
 However, by convexity the function values on the entire *line* $\lambda x + (1-\lambda) x'$ have to be less than $f(x')$ since for $\lambda \in [0, 1)$
 -->
 
-*dịch đoạn phía trên*
+Cụ thể là các hàm lồi không có cực tiểu cục bộ.
+Ta hãy giả định điều ngược lại và chứng minh nó sai nhé. Nếu  $x \in X$ là cực tiểu cục bộ thì sẽ tồn tại một vài lân cận của $x$ mà $f(x)$ là giá trị nhỏ nhất.
+Vì $x$ là cực tiểu cục bộ nhỏ nhất nên sẽ không có một $x' \in X$ nào khác mà $f(x') < f(x)$.
+Tuy nhiên, theo tính lồi, các giá trị hàm số trên toàn bộ *đường thẳng* $\lambda x + (1-\lambda) x'$ phải nhỏ hơn $f(x')$ với $\lambda \in [0, 1)$ 
 
 
 $$f(x) > \lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
@@ -270,7 +283,9 @@ For instance, the function $f(x) = (x+1) (x-1)^2$ has a local minimum for $x=1$.
 However, it is not a global minimum.
 -->
 
-*dịch đoạn phía trên*
+Điều này mâu thuẫn với giả định rằng $f(x)$ là cực tiểu cục bộ.
+Ví dụ, hàm $f(x) = (x+1) (x-1)^2$ có cực tiểu cục bộ với $x=1$.
+Tuy nhiên nó không phải là cực tiểu toàn cục.
 
 
 ```{.python .input}
@@ -291,7 +306,12 @@ Conversely, the function $f(x) = \exp(x)$ does not attain a minimum value on $\m
 For $x \to -\infty$ it asymptotes to $0$, however there is no $x$ for which $f(x) = 0$.
 -->
 
-*dịch đoạn phía trên*
+Lập luận "các hàm lồi không có cực tiểu cục bộ" rất tiện lợi.
+Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
+Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
+Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
+Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị tối thiểu trên $\mathbb{R}$.
+Với  $x \to -\infty$, nó sẽ tiệm cận với $0$, tuy nhiên không tồn tại $x$ mà $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
