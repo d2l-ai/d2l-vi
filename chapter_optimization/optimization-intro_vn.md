@@ -79,16 +79,21 @@ annotate('expected risk', (1.1, -1.05), (0.95, -0.5))
 ## Optimization Challenges in Deep Learning
 -->
 
-# *dịch tiêu đề phía trên*
+# Những thử thách của Tối ưu trong Học sâu
 
 <!--
 In this chapter, we are going to focus specifically on the performance of the optimization algorithm in minimizing the objective function, rather than a model's generalization error.
 In :numref:`sec_linear_regression` we distinguished between analytical solutions and numerical solutions in optimization problems.
-In deep learning, most objective functions are complicated and do not have analytical solutions. Instead, we must use numerical optimization algorithms.
+In deep learning, most objective functions are complicated and do not have analytical solutions.
+Instead, we must use numerical optimization algorithms.
 The optimization algorithms below all fall into this category.
 -->
 
-*dịch đoạn phía trên*
+Ở chương này, ta sẽ chỉ tập trung vào chất lượng của thuật toán tối ưu trong việc tối thiểu hàm mục tiêu, thay vì lỗi khái quát của mô hình.
+Trong :numref:`sec_linear_regression`, ta đã phân biệt giữa nghiệm theo công thức và nghiệm xấp xỉ trong các bài toán tối ưu.
+Trong học sâu, đa số các hàm mục tiêu khá phức tạp và không tồn tại nghiệm theo công thức.
+Thay vào đó, ta phải dùng các thuật toán tối ưu xấp xỉ.
+Các thuật toán tối ưu ở dưới được liệt vào loại này.
 
 <!--
 There are many challenges in deep learning optimization.
@@ -96,26 +101,29 @@ Some of the most vexing ones are local minima, saddle points and vanishing gradi
 Let us have a look at a few of them.
 -->
 
-*dịch đoạn phía trên*
+Có vô kể thách thức đối với tối ưu trong học sâu.
+Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một số thách thức gây đau đầu hơn cả.
+Hãy cùng tìm hiểu về các vấn đề này.
 
 <!--
 ### Local Minima
 -->
 
-# *dịch tiêu đề phía trên*
+# Các vùng Cực tiểu
 
 <!--
 For the objective function $f(x)$, if the value of $f(x)$ at $x$ is smaller than the values of $f(x)$ at any other points in the vicinity of $x$, then $f(x)$ could be a local minimum.
 If the value of $f(x)$ at $x$ is the minimum of the objective function over the entire domain, then $f(x)$ is the global minimum.
 -->
 
-*dịch đoạn phía trên*
+Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một cực tiểu.
+Nếu giá trị của $f(x)$ tại $x$ là nhỏ nhất của hàm mục tiêu trên toàn tập xác định thì $f(x)$ là giá trị nhỏ nhất.
 
 <!--
 For example, given the function
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, cho hàm
 
 $$f(x) = x \cdot \text{cos}(\pi x) \text{ for } -1.0 \leq x \leq 2.0,$$
 
@@ -124,7 +132,7 @@ $$f(x) = x \cdot \text{cos}(\pi x) \text{ for } -1.0 \leq x \leq 2.0,$$
 we can approximate the local minimum and global minimum of this function.
 -->
 
-*dịch đoạn phía trên*
+ta có thể xấp xỉ cực tiểu và giá trị nhỏ nhất của hàm này.
 
 
 ```{.python .input  n=3}
@@ -137,13 +145,16 @@ annotate('global minimum', (1.1, -0.95), (0.6, 0.8))
 
 <!--
 The objective function of deep learning models usually has many local optima.
-When the numerical solution of an optimization problem is near the local optimum, the numerical solution obtained by the final iteration may only minimize the objective function locally, 
+When the numerical solution of an optimization problem is near the local optimum, the numerical solution obtained by the final iteration may only minimize the objective function locally,
 rather than globally, as the gradient of the objective function's solutions approaches or becomes zero.
 Only some degree of noise might knock the parameter out of the local minimum.
 In fact, this is one of the beneficial properties of stochastic gradient descent where the natural variation of gradients over minibatches is able to dislodge the parameters from local minima.
 -->
 
-*dịch đoạn phía trên*
+Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực tiểu.
+Khi nghiệm xấp xỉ của một bài toán tối ưu được tính bởi vòng lặp cuối cùng của thuật toán và có giá trị gần bằng cực tiểu, nghiệm này có khả năng chỉ là giá trị nhỏ nhất của hàm mục tiêu trong vùng lân cận, không phải toàn cục, do gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
+Ở một mức độ nhiễu nhất thì thì mới có thể đưa tham số ra khỏi vùng cực tiểu.
+Trong thực tế, đây là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến đổi tự nhiên của gradient đối với từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
