@@ -278,7 +278,7 @@ In this hidden layer, the activation function is $\tanh$ and no bias is applied.
 Now let us implement the multilayer perceptron attention.
 -->
 
-Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối tiếp key và value với nhau trong không gian đặc trưng và đưa chúng vào perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
+Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
 Trong tầng ẩn này, hàm kích hoạt là $tanh$, không có dùng độ chệch.
 Giờ ta hãy khởi tạo perceptron đa tầng tập trung nhé.
 
