@@ -16,7 +16,7 @@ By tradition and convention most optimization algorithms are concerned with *min
 If we ever need to maximize an objective there is a simple solution: just flip the sign on the objective.
 -->
 
-Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và học sâu, cũng như những khó khăn trong việc áp dụng các thuật toán tối ưu trong học sâu.
+Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và học sâu, cũng như những thử thách trong việc áp dụng các thuật toán tối ưu trong học sâu.
 Đối với một bài toán trong học sâu, chúng ta thường định nghĩa hàm mất mát đầu tiên.
 Sau đó ta có thể sử dụng một thuật toán tối ưu nào đó nhằm tối thiểu hoá hàm mất mát mà ta vừa định nghĩa.
 Trong tối ưu, hàm mất mát thường được xem là hàm mục tiêu của bài toán tối ưu.
