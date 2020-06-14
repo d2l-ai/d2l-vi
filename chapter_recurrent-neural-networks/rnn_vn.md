@@ -392,7 +392,7 @@ Let us look at a number of cases:
 -->
 
 Giá trị này có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn thực tế mà ta có khi quyết định chọn từ nào là từ tiếp theo. 
-Lưu ý rằng độ rối rắm khái quát hóa một cách tự nhiên ý tưởng của hàm mất mát entropy chéo định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`). 
+Lưu ý rằng perplexity khái quát hóa một cách tự nhiên ý tưởng của hàm mất mát entropy chéo định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`). 
 Điều này có nghĩa là khi xét một ký hiệu duy nhất, perplexity chính là lũy thừa của entropy chéo.
 Hãy cùng xem xét một số trường hợp:
 
