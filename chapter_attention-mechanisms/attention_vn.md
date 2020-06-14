@@ -203,7 +203,7 @@ With :eqref:`eq_alpha_QK`, we can implement the dot product attention layer `Dot
 In addition, for regularization we also use a dropout layer.
 -->
 
-Với :eqref:`eq_alpha_QK`, chúng ta có thể khởi tạo tầng tích vô hướng tập trung `DotProductAttention` hỗ trợ một batch các query và các cặp key-value.
+Với :eqref:`eq_alpha_QK`, chúng ta có xây dựng tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khoá-giá trị.
 Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
 
 ```{.python .input  n=5}
