@@ -256,7 +256,7 @@ To address such an issue, we may resort to the multilayer perceptron attention.
 
 Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
 Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
-Để giải quyết vấn đề này, chúng ta có thể trông cậy đến perceptron đa tầng tập trung.
+Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
