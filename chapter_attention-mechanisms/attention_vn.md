@@ -347,7 +347,7 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 What are the advantages and disadvantages for dot product attention and multilayer perceptron attention, respectively?
 -->
 
-Ưu và khuyết điểm của Tích vô hướng tập trung và Perceptron đa tầng tập trung là gì?
+Ưu và khuyết điểm của tầng tập trung tích vô hướng và tập trung perceptron đa tầng là gì?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
