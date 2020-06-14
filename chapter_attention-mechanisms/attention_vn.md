@@ -312,7 +312,7 @@ As we can see below, despite `MLPAttention` containing an additional MLP model, 
 -->
 
 Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng cùng một đầu vào như ở ví dụ trước đó.
-Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình ML, chúng ta vẫn thu được đầu ra tương tự với `DotProductAttention`.
+Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự với `DotProductAttention`.
 
 ```{.python .input  n=8}
 atten = MLPAttention(units=8, dropout=0.1)
