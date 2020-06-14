@@ -255,7 +255,7 @@ Ví dụ, giả trử ta muốn tối thiểu hàm $f(x) = \tanh(x)$ và ta bắ
 Như ta có thể thấy, gradient của $f$ gần với 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
-Đây hoá ra là lý do tại sao huẩn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU được ra mắt.
+Đây hoá ra là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU được ra mắt.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
