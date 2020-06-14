@@ -12,7 +12,9 @@ Indeed, anyone content with treating optimization as a black box device to minim
 with the knowledge that there exists an array of incantations of such a procedure (with names such as "Adam", "NAG", or "SGD").
 -->
 
-*dịch đoạn phía trên*
+Độc giả theo dõi tuần tự đến chương này của cuốn sách hẳn đã sử dụng nhiều thuật toán tối ưu tiên tiến để huấn luyện các mô hình học sâu. 
+Chúng là công cụ cho phép ta liên tục cập nhật các tham số của mô hình và cực tiểu hóa giá trị hàm mất mát khi đánh giá trên tập huấn luyện. 
+Sự thật là có nhiều người hài lòng với việc coi các thuật toán tối ưu như một hộp đen ma thuật (với các câu thần chú như "Adam", "NAG", hoặc "SGD") có tác dụng cực tiểu hóa hàm mục tiêu.
 
 <!--
 To do well, however, some deeper knowledge is required.
@@ -23,7 +25,11 @@ On the other hand, understanding the principles of different optimization algori
 to tune the hyperparameters in a targeted manner to improve the performance of deep learning models.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, để làm tốt, ta cần các kiến thức sâu hơn. 
+Các thuật toán tối ưu rất quan trọng trong học sâu. 
+Một mặt, việc huấn luyện một mô hình học sâu phức tạp có thể mất hàng giờ, hàng ngày, thậm chí hàng tuần. 
+Hoạt động của thuật toán tối ưu trực tiếp ảnh hưởng đến hiệu quả và tốc độ huấn luyện. 
+Mặt khác, việc hiểu rõ nguyên lý của các thuật toán tối ưu khác nhau và vai trò của các tham số của chúng sẽ giúp ta điều chỉnh các siêu tham số một cách có chủ đích nhằm cải thiện hiệu suất của mô hình.
 
 <!--
 In this chapter, we explore common deep learning optimization algorithms in depth.
@@ -32,7 +38,9 @@ Nonetheless, the design and analysis of algorithms in the context of convex prob
 It is for that reason that this section includes a primer on convex optimization and the proof for a very simple stochastic gradient descent algorithm on a convex objective function.
 -->
 
-*dịch đoạn phía trên*
+Chương này đề cập sâu hơn đến các thuật toán tối ưu học sâu. Hầu hết tất cả các vấn đề tối ưu xuất hiện trong học sâu là không lồi. 
+Tuy nhiên, việc thiết kế và phân tích các thuật toán giải quyết bài toán tối ưu lồi rất hữu ích, điều này đã được kiểm chứng. 
+Do vậy, phần này tập trung vào tối ưu lồi và một thuật toán hạ gradient ngẫu nhiên (stochastic gradient descent) đơn giản áp dụng cho hàm mục tiêu lồi.
 
 ```toc
 :maxdepth: 2
@@ -54,4 +62,4 @@ lr-scheduler_vn
 Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
-* 
+* Nguyễn Văn Cường
