@@ -333,7 +333,7 @@ We include the code below as a cautionary example against using them in the wron
 
 Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến việc các LSTM hai chiều sử dụng cả dữ liệu trong quá khứ và tương lai, và cứ áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được các ước tính với độ rối rắm chấp nhận được.
 Tuy nhiên, khả năng dự đoán các biểu tượng trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây.
-Mặc dù có sự lúng túng hợp lý, nó chỉ tạo ra sự vô nghĩa ngay cả sau nhiều lần lặp lại.
+Mặc dù đạt được mức perplexity hợp lý, nó chỉ sỉnh ra các chuỗi vô nghĩa ngay cả sau nhiều lần lặp lại.
 Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng sai bối cảnh.
 
 
@@ -398,7 +398,7 @@ For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we comput
 1. Nếu các hướng khác nhau sử dụng số nút ẩn khác nhau, kích thước của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
 2. Thiết kế một mạng nơ-ron truy hồi hai chiều với nhiều tầng ẩn.
 3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng RNN hai chiều.
-Gợi ý: sử dụng RNN để nhúng từng từ và sau đó tổng hợp (trung bình) tất cả các đầu ra đã được nhúng trước khi gửi đầu ra vào MLP cho việc phân loại.
+Gợi ý: sử dụng RNN để tạo từng embedding từ và sau đó tổng hợp (lấy trung bình) tất cả các embedding thành một đầu ra trước khi đưa chúng vào mô hình MLP để phân loại.
 Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ rồi sử dụng để phân loại cảm xúc.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
