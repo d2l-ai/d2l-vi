@@ -20,6 +20,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | adversarial learning                  | học đối kháng             | [https://git.io/JvQxt](https://git.io/JvQxt) |
 | agent                                 | tác nhân                  |                                              |
 | algorithm's performance               | chất lượng thuật toán     |                                              |
+| analytical solution                   | nghiệm theo công thức     |
 | avoidable bias                        | độ chệch tránh được       |                                              |
 | argument (programming)                | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
@@ -295,6 +296,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
+| numerical solution                | nghiệm xấp xỉ                     |                                                                                           |
 
 ## O
 | English                | Tiếng Việt         | Thảo luận tại                                |
