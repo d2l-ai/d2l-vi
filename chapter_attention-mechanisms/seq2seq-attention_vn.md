@@ -17,10 +17,10 @@ The output of the attention model is viewed as the context information, and such
 Finally, we feed the concatenation into the decoder.
 -->
 
-Trong phần này, chúng ta thêm vào mô hình chuỗi sang chuỗi (seq2seq) cơ chế tập trung như đã giới thiệu trong :numref:`sec_seq2seq` để gộp các trạng thái theo trọng số tương ứng một cách tường minh.
+Trong phần này, chúng ta thêm cơ chế tập trung vào mô hình chuỗi sang chuỗi (seq2seq) giới thiệu trong :numref:`sec_seq2seq` để gộp các trạng thái theo trọng số tương ứng một cách tường minh.
 :numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hoá và giải mã tại bước thời gian $t$.
 Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
-Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm truy vấn.
+Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm câu truy vấn.
 Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
 Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải mã.
 
