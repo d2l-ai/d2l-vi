@@ -324,7 +324,7 @@ Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
 ### Computational Cost and Applications
 -->
 
-### *dịch tiêu đề phía trên*
+### Chi phí Tính toán và Ứng dụng
 
 <!--
 One of the key features of a bidirectional RNN is that information from both ends of the sequence is used to estimate the output.
@@ -335,7 +335,12 @@ Hence, if we were to use a bidirectional RNN naively we would not get a very goo
 During test time we only have past data and thus poor accuracy (we will illustrate this in an experiment below).
 -->
 
-*dịch đoạn phía trên*
+Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
+Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt).
+Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
+Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán.
+Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại.
+Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới).
 
 <!--
 To add insult to injury, bidirectional RNNs are also exceedingly slow.
@@ -343,7 +348,9 @@ The main reasons for this are that they require both a forward and a backward pa
 Hence, gradients will have a very long dependency chain.
 -->
 
-*dịch đoạn phía trên*
+Tệ hơn, RNN hai chiều cũng cực kỳ chậm.
+Những lý do chính cho điều này là vì chúng cần cả lượt truyền xuôi và lượt truyền ngược, và lượt truyền ngược thì phụ thuộc vào kết quả của lượt truyền xuôi.
+Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài.
 
 
 <!--
@@ -352,7 +359,8 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu,  chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy).
+Tóm lại, sử dụng cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -475,7 +483,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Thanh Hòa
 
 <!-- Phần 5 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 6 -->
 *
