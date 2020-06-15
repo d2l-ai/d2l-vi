@@ -279,7 +279,7 @@ Now let us implement the multilayer perceptron attention.
 -->
 
 Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
-Trong tầng ẩn này, hàm kích hoạt là $tanh$, không có dùng độ chệch.
+Trong tầng ẩn này, hàm kích hoạt là $tanh$ và hệ số điều chỉnh không được sử dụng.
 Giờ ta hãy khởi tạo perceptron đa tầng tập trung nhé.
 
 
