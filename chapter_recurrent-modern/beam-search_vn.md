@@ -82,7 +82,7 @@ Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\ti
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep, respectively.  At each timestep, greedy search selects the word with the highest conditional probability. ](../img/s2s-prob1.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/s2s-prob1.svg)
+![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại từng thời gian tương ứng. Tại mỗi bước thời gian, phương pháp tìm kiếm tham lam sẽ chọn từ có xác suất cao nhất.](../img/s2s-prob1.svg)
 :label:`fig_s2s-prob1`
 
 
@@ -99,29 +99,31 @@ which is higher than the conditional probability of the output sequence obtained
 Therefore, the output sequence "A", "B", "C", and "&lt;eos&gt;" obtained by the greedy search is not an optimal sequence.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, chúng ta sẽ xét một ví dụ khác trong :numref:`fig_s2s-prob2`.
+Không giống như trong :numref:`fig_s2s-prob1`, :numref:`fig_s2s-prob2` chọn từ "C", từ có xác suất có điều kiện cao thứ hai tại bước thời gian 2.
+Vì bước thời gian 3 phụ thuộc vào bước thời gian 1 và 2, mà chuỗi con đầu ra của hai bước thời gian này được thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, nên xác suất có điều kiện của mỗi từ được sinh ra tại bước thời gian 3 cũng thay đổi trong :numref:`fig_s2s-prob2`.
+Chúng ta chọn "B", từ có xác suất có điều kiện cao nhất.
+Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên sẽ là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
+Xác suất có điều kiện của chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" tại bước thời gian hiện tại là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của chuỗi được sinh ra dựa trên phương pháp tìm kiếm tham lam.
+Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ phương pháp tìm kiếm tham lam không phải là chuỗi tối ưu.
 <!--
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep.  At timestep 2, the word "C", which has the second highest conditional probability, is selected.](../img/s2s-prob2.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/s2s-prob2.svg)
+![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
+
 :label:`fig_s2s-prob2`
-
-
 <!--
 ## Exhaustive Search
 -->
 
-## *dịch tiêu đề phía trên*
+## Tìm kiếm Vét cạn
 
 <!--
 If the goal is to obtain the optimal sequence, we may consider using exhaustive search: 
 an exhaustive examination of all possible output sequences, which outputs the sequence with the highest conditional probability.
 -->
-
-*dịch đoạn phía trên*
-
+Nếu mục tiêu là tìm được chuỗi tối ưu, chúng ta có thể xem xét giải thuật vét cạn: kiểm tra tất cả những chuỗi đầu ra có thể, kết quả cần tìm là chuỗi có xác suất có điều kiện cao nhất.
 <!--
 Although we can use an exhaustive search to obtain the optimal sequence, its computational overhead $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ is likely to be excessively high.
 For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we will need to evaluate $10000^{10} = 10^{40}$ sequences.
@@ -129,9 +131,11 @@ This is next to impossible to complete.
 The computational overhead of greedy search is $\mathcal{O}(\left|\mathcal{Y}\right|T')$, which is usually significantly less than the computational overhead of an exhaustive search.
 For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we only need to evaluate $10000\times10=1\times10^5$ sequences.
 -->
-
-*dịch đoạn phía trên*
-
+Mặc dù chúng ta có thể sử dụng thuật toán tìm kiếm vét cạn để tìm chuỗi tối ưu, nhưng chi phí tính toán của nó $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ là quá cao.
+Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta cần kiểm tra $10000^{10} = 10^{40}$ chuỗi.
+Điều này gần như là bất khả thi.
+Chi phí tính toán của tìm kiếm tham lam là $\mathcal{O}(\left|\mathcal{Y}\right|T')$, thường là ít hơn cả chi phí cho phần phụ trợ ban đầu của phương pháp vét cạn.
+Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta chỉ cần kiểm tra $10000\times10=1\times10^5$ chuỗi.
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
@@ -340,7 +344,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyên Đình Nam
 
 <!-- Phần 2 -->
-*
+* Nguyễn Đình Nam
 
 <!-- Phần 3 -->
 * Nguyễn Duy Du
