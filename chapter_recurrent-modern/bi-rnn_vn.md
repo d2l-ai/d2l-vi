@@ -374,7 +374,7 @@ Tóm lại, sử dụng cẩn thận!
 ### Training a Bidirectional RNN for the Wrong Application
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện Mạng RNN Hai chiều cho Ứng dụng không Phù hợp
 
 <!--
 If we were to ignore all advice regarding the fact that bidirectional LSTMs use past and future data and simply apply it to language models, we will get estimates with acceptable perplexity.
@@ -383,7 +383,10 @@ Despite reasonable perplexity, it only generates gibberish even after many itera
 We include the code below as a cautionary example against using them in the wrong context.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến việc các LSTM hai chiều sử dụng cả dữ liệu trong quá khứ và tương lai, và cứ áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được các ước tính với độ rối rắm chấp nhận được.
+Tuy nhiên, khả năng dự đoán các biểu tượng trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây.
+Mặc dù đạt được mức perplexity hợp lý, nó chỉ sỉnh ra các chuỗi vô nghĩa ngay cả sau nhiều lần lặp lại.
+Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng sai bối cảnh.
 
 
 ```{.python .input}
@@ -410,7 +413,8 @@ The output is clearly unsatisfactory for the reasons described above.
 For a discussion of more effective uses of bidirectional models, please see the sentiment classification in :numref:`sec_sentiment_rnn`.
 -->
 
-*dịch đoạn phía trên*
+Đầu ra rõ ràng là không tốt vì những lý do trên.
+Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem bài toán phân loại tình cảm trong: numref: `sec_sentiment_rnn`.
 
 <!--
 ## Summary
@@ -425,7 +429,10 @@ For a discussion of more effective uses of bidirectional models, please see the 
 * Bidirectional RNNs are very costly to train due to long gradient chains.
 -->
 
-*dịch đoạn phía trên*
+* Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian đó.
+* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ thị.
+* RNN hai chiều chủ yếu hữu ích cho việc tạo embedding chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
+* RNN hai chiều rất tốn kém để huấn luyện do chuỗi gradient dài.
 
 <!--
 ## Exercises
@@ -440,8 +447,11 @@ For a discussion of more effective uses of bidirectional models, please see the 
 Hint: use the RNN to embed each word and then aggregate (average) all embedded outputs before sending the output into an MLP for classification. 
 For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we compute $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ first and then use the latter for sentiment classification.
 -->
-
-*dịch đoạn phía trên*
+1. Nếu các hướng khác nhau sử dụng số nút ẩn khác nhau, kích thước của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
+2. Thiết kế một mạng nơ-ron truy hồi hai chiều với nhiều tầng ẩn.
+3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng RNN hai chiều.
+Gợi ý: sử dụng RNN để tạo từng embedding từ và sau đó tổng hợp (lấy trung bình) tất cả các embedding thành một đầu ra trước khi đưa chúng vào mô hình MLP để phân loại.
+Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ rồi sử dụng để phân loại cảm xúc.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -486,4 +496,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Yến Thy
 
 <!-- Phần 6 -->
-*
+* Trần Yến Thy
