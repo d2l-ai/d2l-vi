@@ -22,7 +22,7 @@ Trong phần này, chúng ta thêm cơ chế tập trung vào mô hình chuỗi 
 Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
 Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm câu truy vấn.
 Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
-Cuối cùng, ta đưa ghép chuỗi vừa được ghép nối vào bộ giải mã.
+Cuối cùng, ta đưa ghép chuỗi trên vào bộ giải mã.
 
 <!--
 ![The second timestep in decoding for the sequence to sequence model with attention mechanism.](../img/seq2seq_attention.svg)
