@@ -5,7 +5,7 @@
 # Encoder-Decoder Architecture
 -->
 
-# *dịch tiêu đề phía trên*
+# Kiến trúc Mã hoá - Giải mã
 
 <!--
 The *encoder-decoder architecture* is a neural network design pattern.
@@ -16,33 +16,37 @@ In machine translation, the encoder transforms a source sentence, e.g., "Hello w
 The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
-*dịch đoạn phía trên*
-
+*Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
+Như trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã.
+Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
+Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
+Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector, mà có thể nắm bắt được thông tin ngữ nghĩa của câu đó.
+Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang ngôn ngữ đích, ví dụ sang tiếng Pháp "Bonjour le monde.".
 <!--
 ![The encoder-decoder architecture.](../img/encoder-decoder.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/encoder-decoder.svg)
+![Kiến trúc mã hoá - giải mã](../img/encoder-decoder.svg)
 :label:`fig_encoder_decoder`
 
 <!--
 In this section, we will show an interface to implement this encoder-decoder architecture.
 -->
 
-*dịch đoạn phía trên*
+Phần này sẽ trình bày một giao diện để lập trình kiến trúc mã hoá - giải mã.
 
 
 <!--
 ## Encoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ mã hoá
 
 <!--
 The encoder is a normal neural network that takes inputs, e.g., a source sentence, to return outputs.
 -->
 
-*dịch đoạn phía trên*
+Bộ mã hoá là một mạng nơ-ron thông thường nhận đầu vào, ví dụ như một câu nguồn, để trả về đầu ra.
 
 ```{.python .input  n=2}
 from mxnet.gluon import nn
@@ -61,7 +65,7 @@ class Encoder(nn.Block):
 ## Decoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ giải mã
 
 <!--
 The decoder has an additional method `init_state` to parse the outputs of the encoder with possible additional information,
@@ -70,7 +74,9 @@ In the forward method, the decoder takes both inputs, e.g., a target sentence an
 It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
-*dịch đoạn phía trên*
+Bộ giải mã có một phương thức bổ sung gọi là `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin có thể được bổ sung, ví dụ như độ dài hợp lệ của đầu vào, để đưa ra trạng thái mà nó cần.
+Trong lan truyền xuôi, bộ giải mã nhận hai đầu vào, ví dụ như một câu đích và trạng thái.
+Nó trả về đầu ra với trạng thái có khả năng đã được thay đổi nếu bộ mã hoá chứa các tầng nơ-ron truy hồi (*RNN*).
 
 
 ```{.python .input  n=3}
@@ -179,7 +185,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Thanh Hoà
 
 <!-- Phần 2 -->
 * Nguyễn Thanh Hoà
