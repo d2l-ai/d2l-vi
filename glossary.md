@@ -340,6 +340,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | position-wise feed-forward network           | mạng truyền xuôi theo vị trí                |  |
+| positional encoding                | biểu diễn vị trí           |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
