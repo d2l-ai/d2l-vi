@@ -172,7 +172,7 @@ As we can see from the result, since the sequences in the training dataset are r
 Due to the computational overhead of both the encoder's and the decoder's attention layers, this model is much slower than the seq2seq model without attention.
 -->
 
-Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng các siêu tham số huấn luyện và hàm mất mát trên tập huấn luyện như :numref:`sec_seq2seq_training`.
+Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng các siêu tham số và hàm mất mát để huấn luyện như :numref:`sec_seq2seq_training`.
 Từ kết quả, ta thấy tầng tập trung được thêm vào mô hình không tạo ra cải thiện đáng kể nào do các chuỗi trong tập huấn luyện khá ngắn.
 Do chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và bộ giải mã, mô hình này hoạt động chậm hơn nhiều so với mô hình seq2seq không có tầng tập trung.
 
@@ -216,7 +216,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 * Mô hình seq2seq áp dụng cơ chế tập trung thêm một tầng tập trung vào mô hình seq2seq ban đầu.
-* Bộ giải mã của mô hình seq2seq với cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng,  độ dài hợp lệ của bộ mã hoá.
+* Bộ giải mã của mô hình seq2seq với cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hoá.
 
 <!--
 ## Exercises
