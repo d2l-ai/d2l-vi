@@ -230,7 +230,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 1. So sánh `Seq2SeqAttentionDecoder` và `Seq2seqDecoder` bằng cách sử dụng cùng tham số và kiểm tra các mất mát.
-2. Bạn hãy thử suy nghĩ liệu có trường hợp nào mà `Seq2SeqAttentionDecoder` vượt trội hơn so với `Seq2seqDecoder`?
+2. Bạn hãy thử suy nghĩ liệu có trường hợp nào mà `Seq2SeqAttentionDecoder` vượt trội hơn `Seq2seqDecoder`?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC =================================== -->
