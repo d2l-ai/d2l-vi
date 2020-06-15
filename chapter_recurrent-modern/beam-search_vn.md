@@ -139,7 +139,7 @@ For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we only need to evaluate $1
 ## Beam Search
 -->
 
-## *dịch tiêu đề phía trên*
+## Tìm kiếm Chùm
 
 <!--
 *Beam search* is an improved algorithm based on greedy search.
@@ -152,14 +152,20 @@ Finally, we will filter out the sequences containing the special symbol "&lt;eos
 and discard all the subsequences after it to obtain a set of final candidate output sequences.
 -->
 
-*dịch đoạn phía trên*
+*Tìm kiếm chùm* (_beam search_) là một thuật toán cải tiến dựa trên tìm kiếm tham lam.
+Nó có một siêu tham số $k$ được gọi là *kích thước chùm* (_beam size_).
+Tại bước thời gian 1, ta chọn ra $k$ từ có xác suất có điều kiện cao nhất là từ đầu tiên của $k$ chuỗi đầu ra ứng viên.
+Đối với mỗi bước thời gian tiếp theo, dựa trên $k$ chuỗi đầu ra ứng viên từ bước thời gian trước đó, ta sẽ chọn $k$ chuỗi đầu ra với xác suất có điều kiện cao nhất trong tổng số $k\left|\mathcal{Y}\right|$ khả năng.
+Đây sẽ là các chuỗi đầu ra ứng viên cho bước thời gian đó.
+Cuối cùng, ta sẽ lọc ra các chuỗi có chứa ký tự đặc biệt "&lt;eos&gt;" từ các chuỗi đầu ra ứng viên của mỗi bước thời gian
+và loại bỏ tất cả các chuỗi sau nó để thu được một tập các chuỗi đầu ra ứng viên cuối cùng.
 
 
 <!--
 ![The beam search process. The beam size is 2 and the maximum length of the output sequence is 3. The candidate output sequences are $A$, $C$, $AB$, $CE$, $ABD$, and $CED$. ](../img/beam-search.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/beam-search.svg)
+![Quá trình tìm kiếm chùm. Kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3. Các chuỗi đầu ra ứng viên là $A$, $C$, $AB$, $CE$, $ABD$, và $CED$.](../img/beam-search.svg)
 :label:`fig_beam-search`
 
 
@@ -171,7 +177,11 @@ At timestep 1 of the output sequence, suppose the words with the highest conditi
 At timestep 2, for all $y_2 \in \mathcal{Y},$ we compute
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_beam-search` minh họa quá trình tìm kiếm chùm bằng một ví dụ.
+Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm từ : $\mathcal{Y} = \{A, B, C, D, E\}$ và một trong số chúng là ký tự đặc biệt “&lt;eos&gt;”.
+Đặt kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3.
+Tại bước thời gian 1 của chuỗi đầu ra, giả sử các từ có xác suất có điều kiện $P(y_1 \mid \mathbf{c})$ cao nhất là $A$ và $C$.
+Tại bước thời gian 2, với mọi $y_2 \in \mathcal{Y},$ ta tính
 
 
 $$P(A, y_2 \mid \mathbf{c}) = P(A \mid \mathbf{c})P(y_2 \mid A, \mathbf{c})$$
@@ -190,17 +200,19 @@ $$P(C, y_2 \mid \mathbf{c}) = P(C \mid \mathbf{c})P(y_2 \mid C, \mathbf{c}),$$
 and pick the largest two among these 10 values, say
 -->
 
-*dịch đoạn phía trên*
+và chọn hai giá trị cao nhất trong 10 giá trị này, giả sử đó là
 
-
+<!--
 $$P(A, B \mid \mathbf{c}) \text{  and  } P(C, E \mid \mathbf{c}).$$
+-->
 
+$$P(A, B \mid \mathbf{c}) \text{  và  } P(C, E \mid \mathbf{c}).$$
 
 <!--
 Then at timestep 3, for all $y_3 \in \mathcal{Y}$, we compute
 -->
 
-*dịch đoạn phía trên*
+Sau đó, tại bước thời gian 3, với mọi $y_3 \in \mathcal{Y}$, ta tính
 
 
 $$P(A, B, y_3 \mid \mathbf{c}) = P(A, B \mid \mathbf{c})P(y_3 \mid A, B, \mathbf{c})$$
@@ -210,7 +222,7 @@ $$P(A, B, y_3 \mid \mathbf{c}) = P(A, B \mid \mathbf{c})P(y_3 \mid A, B, \mathbf
 and
 -->
 
-*dịch đoạn phía trên*
+và
 
 
 $$P(C, E, y_3 \mid \mathbf{c}) = P(C, E \mid \mathbf{c})P(y_3 \mid C, E, \mathbf{c}),$$
@@ -220,24 +232,27 @@ $$P(C, E, y_3 \mid \mathbf{c}) = P(C, E \mid \mathbf{c})P(y_3 \mid C, E, \mathbf
 and pick the largest two among these 10 values, say
 -->
 
-*dịch đoạn phía trên*
+và chọn hai giá trị cao nhất trong số 10 giá trị này, giả sử đó là
 
-
+<!--
 $$P(A, B, D \mid \mathbf{c}) \text{  and  } P(C, E, D \mid  \mathbf{c}).$$
+-->
 
+$$P(A, B, D \mid \mathbf{c}) \text{  và  } P(C, E, D \mid  \mathbf{c}).$$
 
 <!--
 As a result, we obtain 6 candidates output sequences: (1) $A$; (2) $C$; (3) $A$, $B$; (4) $C$, $E$; (5) $A$, $B$, $D$; and (6) $C$, $E$, $D$.
 In the end, we will get the set of final candidate output sequences based on these 6 sequences.
 -->
 
-*dịch đoạn phía trên*
+Kết quả là, ta thu được 6 chuỗi đầu ra ứng viên: (1) $A$; (2) $C$; (3) $A$, $B$; (4) $C$, $E$; (5) $A$, $B$, $D$; và (6) $C$, $E$, $D$.
+Cuối cùng, ta sẽ có một tập các chuỗi đầu ra ứng viên cuối cùng dựa trên 6 chuỗi này.
 
 <!--
 In the set of final candidate output sequences, we will take the sequence with the highest score as the output sequence from those below:
 -->
 
-*dịch đoạn phía trên*
+Trong tập các chuỗi đầu ra ứng viên cuối cùng, ta sẽ lấy chuỗi có điểm số cao nhất làm chuỗi đầu ra với điểm số cho mỗi chuỗi được tính như sau:
 
 
 $$ \frac{1}{L^\alpha} \log P(y_1, \ldots, y_{L}) = \frac{1}{L^\alpha} \sum_{t'=1}^L \log P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}),$$
@@ -315,7 +330,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Nguyễn Duy Du
 
 <!-- Phần 4 -->
 *
