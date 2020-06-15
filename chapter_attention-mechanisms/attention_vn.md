@@ -265,7 +265,7 @@ Assume that the learnable weights are $\mathbf W_k\in\mathbb R^{h\times d_k}$, $
 -->
 
 Trong cơ chế *tập trung perceptron đa tầng*, chúng ta chiếu cả câu truy vấn và các khoá lên $\mathbb R^{h}$ bằng các tham số trọng số có được học.
-Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và  $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm số sẽ được định nghĩa như sau
+Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm số sẽ được định nghĩa như sau
 
 
 $$\alpha(\mathbf k, \mathbf q) = \mathbf v^\top \text{tanh}(\mathbf W_k \mathbf k + \mathbf W_q\mathbf q).$$
