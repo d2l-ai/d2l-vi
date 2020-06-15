@@ -5,7 +5,7 @@
 # Sequence to Sequence with Attention Mechanisms
 -->
 
-# *dịch tiêu đề phía trên*
+# Chuỗi sang Chuỗi áp dụng Cơ chế Tập trung
 :label:`sec_seq2seq_attention`
 
 <!--
@@ -17,13 +17,18 @@ The output of the attention model is viewed as the context information, and such
 Finally, we feed the concatenation into the decoder.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta thêm cơ chế tập trung vào mô hình chuỗi sang chuỗi (seq2seq) giới thiệu trong :numref:`sec_seq2seq` để gộp các trạng thái theo trọng số tương ứng một cách tường minh.
+:numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hoá và giải mã tại bước thời gian $t$.
+Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
+Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm câu truy vấn.
+Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
+Cuối cùng, ta đưa ghép chuỗi trên vào bộ giải mã.
 
 <!--
 ![The second timestep in decoding for the sequence to sequence model with attention mechanism.](../img/seq2seq_attention.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/seq2seq_attention.svg)
+![Quá trình giải mã tại bước thời gian thứ 2 trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung.](../img/seq2seq_attention.svg)
 :label:`fig_s2s_attention`
 
 
@@ -31,13 +36,13 @@ Finally, we feed the concatenation into the decoder.
 To illustrate the overall architecture of seq2seq with attention model, the layer structure of its encoder and decoder is shown in :numref:`fig_s2s_attention_details`.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ kiến trúc tổng thể của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc tầng của bộ mã hoá và bộ giải mã được mô tả trong :numref:`fig_s2s_attention_details`.
 
 <!--
 ![The layers in the sequence to sequence model with attention mechanism.](../img/seq2seq-attention-details.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/seq2seq-attention-details.svg)
+![Các tầng trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung.](../img/seq2seq-attention-details.svg)
 :label:`fig_s2s_attention_details`
 
 ```{.python .input  n=1}
@@ -251,8 +256,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
-
+* Đỗ Trường Giang
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 <!-- Phần 2 -->
 *
 
