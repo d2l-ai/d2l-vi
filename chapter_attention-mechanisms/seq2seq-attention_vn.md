@@ -92,7 +92,7 @@ Although the RNN layer hidden state also contains history information from decod
 the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
-Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm truy vấn cho tầng tập trung.
+Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN.
 Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách tường minh nhằm loại bỏ những thông tin không liên quan.
 
@@ -145,7 +145,7 @@ As a result, we get the same decoder output shape, but the state structure is ch
 -->
 
 Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
-Để đảm bảo tính nhất quán với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
+Để nhất quán khi so sánh với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
 Kết quả, ta thu được đầu ra của bộ giải mã có cùng kích thước nhưng khác về cấu trúc trạng thái.
 
 
@@ -262,5 +262,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Quang
+* Nguyễn Văn Cường
 <!-- Phần 3 -->
 *
