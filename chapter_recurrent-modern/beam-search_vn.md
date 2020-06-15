@@ -271,7 +271,12 @@ In addition, greedy search can be treated as a beam search with a beam size of 1
 Beam search strikes a balance between computational overhead and search quality using a flexible beam size of $k$.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, $L$ là độ dài của chuỗi ứng viên cuối cùng và $\alpha$ thường được đặt bằng 0.75.
+$L^\alpha$ trong mẫu số là lượng phạt lên tổng logarit cho các chuỗi dài hơn ở trên.
+Chi phí tính toán $\mathcal{O}(k\left|\mathcal{Y}\right|T')$ của tìm kiếm chùm có thể được ước lượng thông qua phân tích.
+Nó nằm trong khoảng giữa chi phí tính toán của tìm kiếm tham lam và tìm kiếm vét cạn.
+Ngoài ra, tìm kiếm tham lam có thể được coi là tìm kiếm chùm với kích thước chùm bằng 1.
+Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và chất lượng tìm kiếm bằng cách sử dụng kích thước chùm $k$ linh hoạt.
 
 
 <!--
@@ -285,7 +290,9 @@ Beam search strikes a balance between computational overhead and search quality 
 * Beam search strikes a balance between computational overhead and search quality using a flexible beam size.
 -->
 
-*dịch đoạn phía trên*
+
+* Các phương pháp dự đoán chuỗi có độ dài thay đổi bao gồm tìm kiếm tham lam, tìm kiếm vét cạn và tìm kiếm chùm.
+* Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và chất lượng tìm kiếm bằng cách sử dụng kích thước chùm linh hoạt.
 
 
 <!--
@@ -299,7 +306,8 @@ Beam search strikes a balance between computational overhead and search quality 
 2. We used language models to generate sentences in :numref:`sec_rnn_scratch`. Which kind of search does this output use? Can you improve it?
 -->
 
-*dịch đoạn phía trên*
+1. Ta có thể coi tìm kiếm vét cạn là tìm kiếm chùm với kích thước chùm đặc biệt không? Tại sao?
+2. Ta đã sử dụng các mô hình ngôn ngữ để tạo các câu trong :numref:`sec_rnn_scratch`. Các mô hình này đã sử dụng phương pháp tìm kiếm đầu ra nào? Hãy cải thiện các phương pháp đó.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -333,4 +341,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 4 -->
-*
+* Nguyễn Duy Du
