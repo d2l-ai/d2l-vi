@@ -46,7 +46,7 @@ We  compare Transformer and seq2seq  side-by-side in :numref:`fig_transformer`.
 -->
 
 Tương tự như mô hình seq2seq trong :numref:`sec_seq2seq`, Transformer cũng dựa trên kiến trúc mã hóa-giải mã.
-Tuy nhiên, nó thay thế các lớp truy hồi trong seq2seq bằng các lớp *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua các *biểu diễn vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
+Tuy nhiên, nó thay thế các lớp truy hồi trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua các *biểu diễn vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
 Ta so sánh Transformer và seq2seq trong :numref:`fig_transformer`.
 
 <!--
