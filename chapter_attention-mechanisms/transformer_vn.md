@@ -80,12 +80,12 @@ are processed by two "add and norm" layer that contains a residual structure and
 3. **Position encoding**: since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
 -->
 
-1. **Khối biến áp**: một lớp lặp lại trong seq2seq được thay thế bằng *Khối biến áp*.
-Khối này chứa một lớp *chú ý nhiều đầu* và một mạng có hai lớp *mạng chuyển tiếp nguồn cấp dữ liệu* cho bộ mã hóa.
-Đối với bộ giải mã, một lớp chú ý nhiều đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
-2. **Thêm và định mức**: đầu vào và đầu ra của cả lớp chú ý nhiều đầu hoặc mạng chuyển tiếp nguồn cấp dữ liệu theo vị trí,
-được xử lý bởi hai lớp "thêm và định mức" có chứa cấu trúc còn lại và *tầng chuẩn hóa*.
-3. **Mã hóa vị trí**: do lớp tự chú ý không phân biệt thứ tự mục trong một chuỗi, nên một lớp mã hóa vị trí được sử dụng để thêm thông tin tuần tự vào từng mục trình tự.
+1. **Khối biến áp**: một tầng truy hồi trong seq2seq được thay thế bằng *Khối biến áp*.
+Khối này chứa một tầng *tập trung đa đầu* và một mạng có hai lớp *mạng truyền xuôi theo vị trí* cho bộ mã hóa.
+Đối với bộ giải mã, một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
+2. **Thêm và chuẩn**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí,
+được xử lý bởi hai tầng "thêm và định mức" có chứa cấu trúc còn lại và tầng *chuẩn hóa tầng*.
+3. **Mã hóa vị trí**: do tầng tự tập trung không phân biệt thứ tự mục trong một chuỗi, nên một tầng mã hóa vị trí được sử dụng để thêm thông tin tuần tự vào từng mục trình tự.
 
 
 <!--
@@ -106,7 +106,7 @@ npx.set_np()
 ## Multi-Head Attention
 -->
 
-## Chú ý nhiều đầu
+## Tập trung Đa đầu
 
 <!--
 Before the discussion of the *multi-head attention* layer, let us quick express the *self-attention* architecture.
@@ -115,10 +115,10 @@ As we illustrate in :numref:`fig_self_attention`, self-attention outputs a same-
 Compared with a recurrent layer, output items of a self-attention layer can be computed in parallel and, therefore, it is easy to obtain a highly-efficient implementation.
 -->
 
-Trước khi thảo luận về lớp *chú ý nhiều đầu*, chúng ta hãy nhanh chóng thể hiện kiến trúc *tự chú ý*.
-Mô hình tự chú ý là một mô hình chú ý bình thường, với truy vấn, khóa và giá trị của nó được sao chép giống hệt nhau từ mỗi mục của các đầu vào tuần tự.
-Như chúng tôi minh họa trong :numref:`fig_self_attention`, tự chú ý xuất ra một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
-So với lớp lặp lại, các mục đầu ra của lớp tự chú ý có thể được tính toán song song và do đó, dễ dàng có được việc triển khai hiệu quả cao.
+Trước khi thảo luận về tầng *tập trung đa đầu*, chúng ta hãy nhanh chóng thể hiện kiến trúc *tự tập trung*.
+Mô hình tự tập trung là một mô hình tập trung bình thường, với truy vấn, khóa và giá trị của nó được sao chép giống hệt nhau từ mỗi mục của các đầu vào tuần tự.
+Như chúng tôi minh họa trong :numref:`fig_self_attention`, tự tập trung xuất ra một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
+So với lớp lặp lại, các mục đầu ra của tầng tự tập trung có thể được tính toán song song và do đó, dễ dàng có được việc triển khai hiệu quả cao.
 
 <!--
 ![Self-attention architecture.](../img/self-attention.svg)
@@ -134,16 +134,16 @@ For each head, before feeding into the attention layer, we project the queries, 
 The outputs of these $h$ attention heads are concatenated and then processed by a final dense layer.
 -->
 
-Lớp *chú ý nhiều đầu* bao gồm các lớp tự chú ý song song $h$, mỗi lớp được gọi là *đầu*.
-Đối với mỗi đầu, trước khi đưa vào lớp chú ý, chúng tôi chiếu các truy vấn, khóa và giá trị với ba lớp dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$, và $p_v$,
-Đầu ra của các đầu chú ý $h$ này được nối và sau đó được xử lý bởi một lớp dày đặc cuối cùng.
+Tầng *tập trung đa đầu* bao gồm $h$ các tầng tự tập trung song song, mỗi tầng được gọi là *đầu*.
+Đối với mỗi đầu, trước khi đưa vào lớp tập trung, chúng tôi chiếu các truy vấn, khóa và giá trị với ba lớp dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$, và $p_v$,
+Đầu ra của các đầu chú ý $h$ này được nối và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
 
 
 <!--
 ![Multi-head attention](../img/multi-head-attention.svg)
 -->
 
-![Chú ý đa đầu](../img/multi-head-attention.svg)
+![Tập trung đa đầu](../img/multi-head-attention.svg)
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
