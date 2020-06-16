@@ -114,7 +114,7 @@ Do đó đoạn thẳng cũng không  trong $X \cup Y$, từ đó mệnh đề "
 ![The union of two convex sets need not be convex](../img/nonconvex.svg)
 -->
 
-![Hợp của hai tập hợp lồi không nhất thiết phải lồi](../img/nonconvex.svg)
+![Hợp của hai tập lồi không nhất thiết phải lồi](../img/nonconvex.svg)
 :label:`fig_nonconvex`
 
 <!--
