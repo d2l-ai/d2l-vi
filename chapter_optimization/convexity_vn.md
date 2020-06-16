@@ -104,7 +104,7 @@ The line segment in :numref:`fig_nonconvex` connecting $a$ and $b$ needs to cont
 Hence the line segment is not in $X \cup Y$ either, thus proving that in general unions of convex sets need not be convex.
 -->
 
-Chúng ta có thể cố thêm một chút nữa để củng cố kết quả này: Cho các tập hợp lồi $X_i$, giao của chúng $\cap_{i} X_i$ là lồi.
+Chúng ta củng cố kết quả thêm một chút với mệnh đề: giao của các tập lồi $X_i$ là một tập lồi $\cap_{i} X_i$.
 Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau  $X \cap Y = \emptyset$.
 Giờ ta chọn ra $a \in X$ và $b \in Y$.
 Đường thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
