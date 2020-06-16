@@ -99,7 +99,7 @@ Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh đ
 <!--
 We can strengthen this result with little effort: given convex sets $X_i$, their intersection $\cap_{i} X_i$ is convex.
 To see that the converse is not true, consider two disjoint sets $X \cap Y = \emptyset$.
-Now pick $a \in X$ và $b \in Y$.
+Now pick $a \in X$ and $b \in Y$.
 The line segment in :numref:`fig_nonconvex` connecting $a$ and $b$ needs to contain some part that is neither in $X$ nor $Y$, since we assumed that $X \cap Y = \emptyset$.
 Hence the line segment is not in $X \cup Y$ either, thus proving that in general unions of convex sets need not be convex.
 -->
