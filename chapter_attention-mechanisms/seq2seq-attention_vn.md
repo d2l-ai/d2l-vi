@@ -175,7 +175,7 @@ out.shape, len(state), state[0].shape, len(state[1]), state[1][0].shape
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 <!--
 Similar to :numref:`sec_seq2seq_training`, we try a toy model by applying the same training hyperparameters and the same training loss.
@@ -183,7 +183,9 @@ As we can see from the result, since the sequences in the training dataset are r
 Due to the computational overhead of both the encoder's and the decoder's attention layers, this model is much slower than the seq2seq model without attention.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng các siêu tham số và hàm mất mát để huấn luyện như :numref:`sec_seq2seq_training`.
+Từ kết quả, ta thấy tầng tập trung được thêm vào mô hình không tạo ra cải thiện đáng kể nào do các chuỗi trong tập huấn luyện khá ngắn.
+Do chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và bộ giải mã, mô hình này hoạt động chậm hơn nhiều so với mô hình seq2seq không có tầng tập trung.
 
 
 ```{.python .input  n=5}
@@ -204,7 +206,7 @@ d2l.train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 Last, we predict several sample examples.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta thử dự đoán một vài mẫu dưới đây.
 
 
 ```{.python .input  n=6}
@@ -224,7 +226,8 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * The decoder of the seq2seq with attention model passes three items from the encoder: the encoder outputs of all timesteps, the hidden state of the encoder's final timestep, and the encoder valid length.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình seq2seq áp dụng cơ chế tập trung thêm một tầng tập trung vào mô hình seq2seq ban đầu.
+* Bộ giải mã của mô hình seq2seq với cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hoá.
 
 <!--
 ## Exercises
@@ -237,7 +240,8 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 2. Can you think of any use cases where `Seq2SeqAttentionDecoder` will outperform `Seq2seqDecoder`?
 -->
 
-*dịch đoạn phía trên*
+1. So sánh `Seq2SeqAttentionDecoder` và `Seq2seqDecoder` bằng cách sử dụng cùng tham số và kiểm tra các mất mát.
+2. Bạn hãy thử suy nghĩ liệu có trường hợp nào mà `Seq2SeqAttentionDecoder` vượt trội hơn `Seq2seqDecoder`?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC =================================== -->
@@ -271,4 +275,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 <!-- Phần 3 -->
-*
+* Đỗ Trường Giang
+* Nguyễn Văn Quang
