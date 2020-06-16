@@ -107,7 +107,7 @@ Hence the line segment is not in $X \cup Y$ either, thus proving that in general
 Chúng ta củng cố kết quả thêm một chút với mệnh đề: giao của các tập lồi $X_i$ là một tập lồi $\cap_{i} X_i$.
 Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau  $X \cap Y = \emptyset$.
 Giờ ta chọn ra $a \in X$ và $b \in Y$.
-Đường thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
+Đoạn thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
 Do đó đoạn thẳng cũng không thuộc $X \cup Y$, từ đó chứng minh rằng: về tổng quát, hợp của các tập hợp lồi không nhất thiết phải lồi.
 
 <!--
