@@ -26,7 +26,7 @@ Trong các chương trước, ta đã đề cập đến các kiến trúc mạn
 * **RNNs** are able to capture the long-range, variable-length sequential information, but suffer from inability to parallelize within a sequence.
 -->
 
-*  Các mạng **RNN** có khả năng học thông tin của các chuỗi dài,  chuỗi có độ dài thông tin thay đổi, nhưng không có khả năng thực hiện song song trong một chuỗi.
+*  Các mạng **RNN** có khả năng học được thông tin khoảng dài trong chuỗi có độ dài thay đổi, nhưng không có khả năng thực hiện song song trong một chuỗi.
 
 <!--
 To combine the advantages from both CNNs and RNNs, :cite:`Vaswani.Shazeer.Parmar.ea.2017` designed a novel architecture using the attention mechanism.
