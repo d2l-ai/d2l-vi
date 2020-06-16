@@ -57,7 +57,8 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 
 Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
 Đầu ra của khối cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
-Các chuỗi embedding mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã và các đầu ra cuối cùng thu được bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối cuối cùng.
+Tương tự, các embedding của chuỗi mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã. 
+Ta thu được các đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối cuối cùng.
 
 <!--
 ![The Transformer architecture.](../img/transformer.svg)
