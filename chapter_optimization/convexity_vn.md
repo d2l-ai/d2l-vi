@@ -51,7 +51,7 @@ Nói một cách đơn giản, một tập hợp $X$ trong không gian vector l�
 Theo các thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
 
 
-$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{ bất cứ khi nào } a, b \in X.$$
+$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{với mọi} a, b \in X.$$
 
 
 <!--
