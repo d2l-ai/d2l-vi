@@ -17,7 +17,7 @@ This paper declares that when perceiving a stimulus, features are registered ear
 The theory has been one of the most influential psychological models of human visual attention.
 -->
 
-Nghiên cứu về sự tập tập trung là một lĩnh vực rộng lớn với chiều dài lịch sử trong ngành thần kinh học nhận thức.
+Tản mạn một chút về lịch sử, sự tập trung là một lĩnh vực nghiên cứu rộng lớn và lâu đời trong ngành thần kinh học nhận thức.
 Bản chất của thuyết tập trung là sự tập trung vào một tiêu điểm hay sự tập trung của nhận thức, điều này cho phép chúng ta ưu tiên tri giác của mình để giải quyết các công việc một cách hiệu quả. <!-- Nguyên bản: Focalization, concentration of consciousness are. Hơi confused chỗ này "to be" thì chia số nhiều mà lại dùng dấy phảy? Không hiểu hai cụm danh từ đó tương đương nhau hay khác nhau nữa :-( Reviewer consider đoạn này nhé ;) -->
 Kết quả là chúng ta không xử lý toàn bộ những thông tin thu được từ các giác quan.
 Tại một thời điểm, chúng ta chỉ tiếp nhận một lượng nhỏ thông tin từ môi trường.
