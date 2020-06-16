@@ -60,7 +60,7 @@ npx.set_np()
 ## Decoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ giải mã
 
 <!--
 Since the encoder of seq2seq with attention mechanisms is the same as `Seq2SeqEncoder` in :numref:`sec_seq2seq`, we will just focus on the decoder.
@@ -68,40 +68,44 @@ We add an MLP attention layer (`MLPAttention`) which has the same hidden size as
 Then we initialize the state of the decoder by passing three items from the encoder:
 -->
 
-*dịch đoạn phía trên*
+Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
+Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
+Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
 <!--
 - **the encoder outputs of all timesteps**: they are used as the attention layer's memory with identical keys and values;
 -->
 
-*dịch đoạn phía trên*
+- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung có cùng các khoá và giá trị;
 
 <!--
 - **the hidden state of the encoder's final timestep**: it is used as the initial decoder's hidden state;
 -->
 
-*dịch đoạn phía trên*
+- **trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng**: được sử dụng làm trạng thái ẩn ban đầu của bộ giải mã;
 
 <!--
 - **the encoder valid length**: so the attention layer will not consider the padding tokens with in the encoder outputs.
 -->
 
-*dịch đoạn phía trên*
+- **độ dài hợp lệ của bộ mã hoá**: để tầng tập trung có thể bỏ qua những token đệm có trong đầu ra của bộ mã hoá.
 
 <!--
 At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer.
 The attention model's output is then concatenated with the input embedding vector to feed into the RNN layer.
-Although the RNN layer hidden state also contains history information from decoder, 
+Although the RNN layer hidden state also contains history information from decoder,
 the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
-*dịch đoạn phía trên*
+Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng trạng thái ẩn của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
+Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN.
+Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách tường minh nhằm loại bỏ những thông tin không liên quan.
 
 <!--
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng lập trình bộ giải mã `Seq2SeqAttentionDecoder` và xem xét sự khác biệt của nó so với bộ giải mã trong mô hình seq2seq ở :numref:`sec_seq2seq_decoder`.
 
 
 ```{.python .input  n=2}
@@ -145,7 +149,9 @@ To be consistent with the model without attention in :numref:`sec_seq2seq`, we u
 As a result, we get the same decoder output shape, but the state structure is changed.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
+Để nhất quán khi so sánh với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
+Kết quả, ta thu được đầu ra của bộ giải mã có cùng kích thước nhưng khác về cấu trúc trạng thái.
 
 
 ```{.python .input  n=3}
@@ -260,7 +266,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 <!-- Phần 2 -->
-*
-
+* Đỗ Trường Giang
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
 <!-- Phần 3 -->
 *
