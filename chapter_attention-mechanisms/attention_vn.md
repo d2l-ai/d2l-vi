@@ -167,7 +167,7 @@ npx.batch_dot(np.ones((2, 1, 3)), np.ones((2, 3, 2)))
 ## Dot Product Attention
 -->
 
-## *dịch tiêu đề phía trên*
+## Tầng Tập trung Tích Vô hướng
 
 <!--
 Equipped with the above two operators: `masked_softmax` and `batched_dot`, let us dive into the details of two widely used attentions layers.
@@ -176,7 +176,10 @@ The dot product attention computes the scores by a dot product between the query
 In other words,
 -->
 
-*dịch đoạn phía trên*
+Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết của hai loại tầng tập trung được sử dụng phổ biến.
+Loại đầu tiên là *Tập trung Tích vô hướng*: nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Tầng tập trung tích vô hướng sẽ tính điểm bằng một tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
+Nói cách khác,
 
 
 $$\alpha(\mathbf q, \mathbf k) = \langle \mathbf q, \mathbf k \rangle /\sqrt{d}.$$
@@ -187,7 +190,8 @@ Beyond the single-dimensional queries and keys, we can always generalize them to
 Assume that $\mathbf Q\in\mathbb R^{m\times d}$ contains $m$ queries and $\mathbf K\in\mathbb R^{n\times d}$ has all the $n$ keys. We can compute all $mn$ scores by
 -->
 
-*dịch đoạn phía trên*
+Mở rộng ra khỏi các câu truy vấn và khoá một chiều, chúng ta luôn có thể tổng quát hóa chúng lên thành các giá trị truy vấn và khoá đa chiều.
+Giả định rằng $\mathbf Q\in\mathbb R^{m\times d}$ chứa $m$ câu truy vấn và $\mathbf K\in\mathbb R^{n\times d}$ chứa toàn bộ $n$ khóa. Chúng ta có thể tính toàn bộ $mn$ điểm số như sau
 
 
 $$\alpha(\mathbf Q, \mathbf K) = \mathbf Q \mathbf K^\top /\sqrt{d}.$$
@@ -199,8 +203,8 @@ With :eqref:`eq_alpha_QK`, we can implement the dot product attention layer `Dot
 In addition, for regularization we also use a dropout layer.
 -->
 
-*dịch đoạn phía trên*
-
+Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khoá-giá trị.
+Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -229,7 +233,10 @@ Via the `valid_len` argument, we specify that we will check the first $2$ key-va
 Therefore, even though both batches have the same query and key-value pairs, we obtain different outputs.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
+Đầu tiên, tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
+Thông qua đối số `valid_len`, chúng ta chỉ ra rằng mình sẽ kiểm tra $2$ cặp khoá-giá trị đầu tiên cho batch đầu tiên và $6$ cặp khoá-giá trị đầu tiên cho batch thứ hai.
+Do đó, mặc dù cả hai batch có cùng số câu truy vấn và số cặp khoá-giá trị, chúng ta sẽ thu được các đầu ra khác nhau.
 
 
 ```{.python .input  n=6}
@@ -247,7 +254,9 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-*dịch đoạn phía trên*
+Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
+Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
+Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -372,7 +381,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 *
 
 <!-- Phần 3 -->
-*
+* Võ Tấn Phát
 
 <!-- Phần 4 -->
 *
