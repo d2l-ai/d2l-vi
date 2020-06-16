@@ -107,7 +107,10 @@ As a result, any value outside the valid length will be masked as $0$.
 Let us implement the `masked_softmax` function.
 -->
 
-*dịch đoạn phía trên*
+Lý thuyết về tập trung khơi gợi nguồn cảm hứng trong lĩnh vực học sâu gần đây đó là *thuyết kết hợp đặc trưng* trong cơ chế tập trung có chọn lọc được phát triển bởi Anne Treisman và Garry Gelade trong :cite:`Treisman.Gelade.1980` vào năm 1980.
+Bài báo này 
+Bài viết này tuyên bố rằng khi nhận thấy một kích thích, các tính năng được đăng ký sớm, tự động và song song, trong khi các đối tượng được xác định riêng biệt và ở giai đoạn sau trong quá trình xử lý.
+Lý thuyết này là một trong những mô hình tâm lý có ảnh hưởng nhất đối với sự chú ý thị giác của con người.
 
 
 ```{.python .input  n=6}
