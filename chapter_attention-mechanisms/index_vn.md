@@ -18,7 +18,7 @@ The theory has been one of the most influential psychological models of human vi
 -->
 
 Tản mạn một chút về lịch sử, sự tập trung là một lĩnh vực nghiên cứu rộng lớn và lâu đời trong ngành thần kinh học nhận thức.
-Bản chất của thuyết tập trung là sự tập trung vào một tiêu điểm hay sự tập trung của nhận thức, điều này cho phép chúng ta ưu tiên tri giác của mình để giải quyết các công việc một cách hiệu quả. <!-- Nguyên bản: Focalization, concentration of consciousness are. Hơi confused chỗ này "to be" thì chia số nhiều mà lại dùng dấy phảy? Không hiểu hai cụm danh từ đó tương đương nhau hay khác nhau nữa :-( Reviewer consider đoạn này nhé ;) -->
+Trọng tâm của lĩnh vực là sự tập trung nhận thức vào một vài đặc điểm nào đó, điều này cho phép chúng ta ưu tiên tri giác của mình để giải quyết các công việc một cách hiệu quả.
 Kết quả là chúng ta không xử lý toàn bộ những thông tin thu được từ các giác quan.
 Tại một thời điểm, chúng ta chỉ tiếp nhận một lượng nhỏ thông tin từ môi trường.
 Trong ngành thần kinh học nhận thức, tồn tại một vài dạng tập trung ví dụ cơ chế tập trung có chọn lọc, tập trung ngầm, và tập trung về không gian.
