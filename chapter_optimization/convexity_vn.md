@@ -108,7 +108,7 @@ Chúng ta củng cố kết quả thêm một chút với mệnh đề: giao c�
 Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau  $X \cap Y = \emptyset$.
 Giờ ta chọn ra $a \in X$ và $b \in Y$.
 Đoạn thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
-Do đó đoạn thẳng cũng không thuộc $X \cup Y$, từ đó chứng minh rằng: về tổng quát, hợp của các tập hợp lồi không nhất thiết phải lồi.
+Do đó đoạn thẳng cũng không  trong $X \cup Y$, từ đó mệnh đề "hợp của các tập lồi nói chung không nhất thiết phải lồi" được chứng minh.
 
 <!--
 ![The union of two convex sets need not be convex](../img/nonconvex.svg)
