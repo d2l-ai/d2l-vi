@@ -123,7 +123,7 @@ For instance $\mathbb{R}^d$ is a convex set (after all, the line between any two
 In some cases we work with variables of bounded length, such as balls of radius $r$ as defined by $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ and } \|\mathbf{x}\|_2 \leq r\}$.
 -->
 
-Thông thường, các vấn đề trong học sâu đều được định nghĩa trong các miền lồi.
+Thông thường, các bài toán trong học sâu đều được định nghĩa trong các miền lồi.
 Ví dụ $\mathbb{R}^d$ là tập hợp lồi (xét cho cùng, đoạn thẳng giữa hai điểm bất kỳ thuộc $\mathbb{R}^d$ sẽ thuộc $\mathbb{R}^d$).
 Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có độ dài cố định, ví dụ như các quả banh có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
 
