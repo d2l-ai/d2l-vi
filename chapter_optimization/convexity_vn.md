@@ -93,7 +93,7 @@ Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh đ
 ![The intersection between two convex sets is convex](../img/convex-intersect.svg)
 -->
 
-![Giao giữa hai tập hợp lồi cũng là lồi](../img/convex-intersect.svg)
+![Giao giữa hai tập lồi là một tập lồi](../img/convex-intersect.svg)
 :label:`fig_convex_intersect`
 
 <!--
