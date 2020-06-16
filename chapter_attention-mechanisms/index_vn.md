@@ -23,7 +23,7 @@ Kết quả là chúng ta không xử lý toàn bộ những thông tin thu đư
 Tại một thời điểm, chúng ta chỉ tiếp nhận một lượng nhỏ thông tin từ môi trường.
 Trong ngành thần kinh học nhận thức, tồn tại một vài dạng tập trung ví dụ cơ chế tập trung có chọn lọc, tập trung ngầm, và tập trung về không gian.
 Thuyết tập trung khơi gợi nguồn cảm hứng trong lĩnh vực học sâu gần đây đó là *thuyết kết hợp đặc trưng* trong cơ chế tập trung có chọn lọc được phát triển bởi Anne Treisman và Garry Gelade trong :cite:`Treisman.Gelade.1980` vào năm 1980.
-Bài báo này phát biểu rằng khi chúng ta tiếp nhận một luồng kích thích, đầu tiên tất cả các tín hiệu sẽ được ghi lại tự động và đồng thời trong khi các sự vật sẽ được xác định riêng biệt ở pha tiếp theo trong quá trình xử lý. <!--feature dịch là đặc trưng nghe k xuôi bằng tín hiệu trong neuroscience: ý kiến cá nhân-->
+Bài báo này phát biểu rằng khi có kích thích thị giác, đầu tiên ta tiếp nhận các đặc trưng một cách tự động và đồng thời, trong khi các sự vật sẽ được xác định riêng biệt ở pha tiếp theo trong quá trình xử lý. <!--feature dịch là đặc trưng nghe k xuôi bằng tín hiệu trong neuroscience: ý kiến cá nhân-->
 Lý thuyết này trở thành một trong những mô hình tâm lý có ảnh hưởng nhất về cơ chế tập trung thị giác của con người.
 
 
