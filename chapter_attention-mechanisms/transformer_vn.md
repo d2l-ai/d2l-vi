@@ -35,7 +35,7 @@ As a result, Transformer leads to a compatible model with significantly shorter 
 -->
 
 Để kết hợp các lợi thế từ cả CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
-Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi truy hồi với sự tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
+Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi truy hồi với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
 Kết quả là Transformer tạo ra một mô hình thích hợp với thời gian huấn luyện ngắn hơn đáng kể.
 
 <!--
