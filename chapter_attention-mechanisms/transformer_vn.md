@@ -55,7 +55,7 @@ The outputs of the last block are then used as attention memory for the decoder.
 The target sequence embeddings are similarly fed into $n$ repeated blocks in the decoder, and the final outputs are obtained by applying a dense layer with vocabulary size to the last block's outputs.
 -->
 
-Nhìn chung, hai mô hình này là tương tự nhau: các chuỗi embedding nguồn được đưa vào $n$ khối lặp lại.
+Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
 Đầu ra của khối cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
 Các chuỗi embedding mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã và các đầu ra cuối cùng thu được bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối cuối cùng.
 
