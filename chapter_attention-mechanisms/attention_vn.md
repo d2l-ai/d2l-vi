@@ -153,7 +153,7 @@ To be specific, it computes $b$ dot products for $i= \{1,\ldots, b\}$, i.e.,
 -->
 
 Ngoài ra, toán tử thứ hai `batched_dot` nhận hai đầu vào là $X$ và $Y$ có kích thước lần lượt là $(b, n, m)$ và $(b, m, k)$, và trả về đầu ra có kích thước là $(b, n, k)$.
-Cụ thể, toán tử này tính $b$ tích vô hướng cho từng $i= \{1,\ldots, b\}$ như sau:
+Cụ thể, toán tử này tính $b$ tích vô hướng với $i= \{1,\ldots, b\}$ như sau:
 
 
 $$Z[i,:,:] = X[i,:,:]  Y[i,:,:].$$
