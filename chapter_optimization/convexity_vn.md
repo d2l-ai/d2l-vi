@@ -311,7 +311,7 @@ Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng t
 Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
 Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị tối thiểu trên $\mathbb{R}$.
-Với  $x \to -\infty$, nó sẽ tiệm cận với $0$, tuy nhiên không tồn tại $x$ mà $f(x) = 0$.
+Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại $x$ mà tại đó $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
