@@ -281,7 +281,10 @@ Last let $\mathbf{w}^*$ be the minimizer (we assume that it exists within the do
 In this case we can track the distance between the current parameter $\mathbf{w}_t$ and the risk minimizer $\mathbf{w}^*$ and see whether it improves over time:
 -->
 
-*dịch đoạn phía trên*
+là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát với tham số $\mathbf{w}$.
+Ta ký hiệu $\mathbf{w}^*$ là nghiệm của tham số tại điểm cực tiểu (_minimizer_) với giả định tồn tại nghiệm cực tiểu trong miền $\mathbf{w}$ xác định.
+
+Trong trường hợp này, chúng ta lưu khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
 
 
 $$\begin{aligned}
@@ -297,7 +300,8 @@ $$
 The gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ can be bounded from above by some Lipschitz constant $L$, hence we have that
 -->
 
-*dịch đoạn phía trên*
+Gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ có biên trên là một hằng số Lipschitz $L$, do đó ta có 
+
 
 
 $$\eta_t^2 \|\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})\|^2 \leq \eta_t^2 L^2.$$
@@ -309,8 +313,10 @@ In fact, for any specific sequence of steps the distance might well increase, de
 Hence we need to bound the inner product. By convexity we have that
 -->
 
-*dịch đoạn phía trên*
+Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào trong *miền kỳ vọng*.
 
+Trong thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều đặn phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
+Do đó, chúng tần xác định biên cho tích nhân trong. Từ tính chất lồi, ta có
 
 $$
 l(\mathbf{x}_t, \mathbf{w}^*) \geq l(\mathbf{x}_t, \mathbf{w}_t) + \left\langle \mathbf{w}^* - \mathbf{w}_t, \partial_{\mathbf{w}} l(\mathbf{x}_t, \mathbf{w}_t) \right\rangle.
@@ -321,7 +327,7 @@ $$
 Using both inequalities and plugging it into the above we obtain a bound on the distance between parameters at time $t+1$ as follows:
 -->
 
-*dịch đoạn phía trên*
+Kết hợp hai bất đẳng thức trên, chúng ta tìm được biên cho khoảng giữa tham số tại bước $t+1$ như sau:
 
 
 $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \geq 2 \eta_t (l(\mathbf{x}_t, \mathbf{w}_t) - l(\mathbf{x}_t, \mathbf{w}^*)) - \eta_t^2 L^2.$$
@@ -331,14 +337,15 @@ $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \g
 This means that we make progress as long as the expected difference between current loss and the optimal loss outweighs $\eta_t L^2$.
 Since the former is bound to converge to $0$ it follows that the learning rate $\eta_t$ also needs to vanish.
 -->
-
-*dịch đoạn phía trên*
+Điều này có nghĩa quá trình học vẫn đang cải thiện khi hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu lớn hơn $\eta_t L^2$.
+Để hàm mất mát hiện tại chắc chắn hội tụ về $0$, tốc độ học $\eta_t$ cũng cần phải giảm dần. <!--tiêu biến???-->
 
 <!--
 Next we take expectations over this expression. This yields
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo chúng ta hãy tính giá trị kỳ vọng cho biểu thức trên như sau
+
 
 
 $$E_{\mathbf{w}_t}\left[\|\mathbf{w}_{t} - \mathbf{w}^*\|^2\right] - E_{\mathbf{w}_{t+1}\mid \mathbf{w}_t}\left[\|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2\right] \geq 2 \eta_t [E[R[\mathbf{w}_t]] - R^*] -  \eta_t^2 L^2.$$
@@ -349,7 +356,8 @@ The last step involves summing over the inequalities for $t \in \{t, \ldots, T\}
 Since the sum telescopes and by dropping the lower term we obtain
 -->
 
-*dịch đoạn phía trên*
+Ở bước cuối cùng, ta tính tổng các bất đẳng thức trên cho mọi $t \in \{t, \ldots, T\}$. 
+Do tổng thu được sẽ khuếch đại kết quả và bỏ qua các hạng tử thấp hơn ta có
 
 
 $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}_t]] - R^*] - L^2 \sum_{t=1}^T \eta_t^2.$$
@@ -359,7 +367,8 @@ $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}
 Note that we exploited that $\mathbf{w}_0$ is given and thus the expectation can be dropped. Last define
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta khai thác từ $\mathbf{w}_0$ cho trước và bỏ qua giá trị kỳ vọng. Cuối cùng, ta định nghĩa
+
 
 
 $$\bar{\mathbf{w}} := \frac{\sum_{t=1}^T \eta_t \mathbf{w}_t}{\sum_{t=1}^T \eta_t}.$$
@@ -369,7 +378,7 @@ $$\bar{\mathbf{w}} := \frac{\sum_{t=1}^T \eta_t \mathbf{w}_t}{\sum_{t=1}^T \eta_
 Then by convexity it follows that
 -->
 
-*dịch đoạn phía trên*
+Từ đó, theo tính chất lồi, ta có
 
 
 $$\sum_t \eta_t E[R[\mathbf{w}_t]] \geq \sum \eta_t \cdot \left[E[\bar{\mathbf{w}}]\right].$$
@@ -379,7 +388,8 @@ $$\sum_t \eta_t E[R[\mathbf{w}_t]] \geq \sum \eta_t \cdot \left[E[\bar{\mathbf{w
 Plugging this into the above inequality yields the bound
 -->
 
-*dịch đoạn phía trên*
+Thay bất đẳng thức vào bất đẳng thức ở trên, ta tìm được biên
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -542,7 +552,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * 
