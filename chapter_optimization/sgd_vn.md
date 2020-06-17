@@ -129,20 +129,29 @@ On the other hand, if we pick it too large, we will not get a good solution, as 
 The only way to resolve these conflicting goals is to reduce the learning rate *dynamically* as optimization progresses.
 -->
 
-*dịch đoạn phía trên*
+Như có thể thấy, quỹ đạo của các biến trong SGD dao động hơn nhiều so với trong hạ gradient trong phần trước.
+Điều này là do tính chất ngẫu nhiên của gradient.
+Đó là, ngay cả khi đến gần mức tối thiểu, ta vẫn phải chịu sự không chắc chắn được chèn vào bởi gradient tức thời thông qua $\eta \nabla f_i(\mathbf{x})$.
+Ngay cả sau 50 bước, chất lượng vẫn không quá tốt.
+Thậm chí tệ hơn, nó sẽ không cải thiện sau các bước bổ sung (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng lớn hơn các bước để tự mình xác nhận điều này).
+Ta chỉ còn lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
+Tuy nhiên, nếu chọn một giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển có ý nghĩa nào ở những bước đầu.
+Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không có được một giải pháp tốt, như đã thấy ở trên.
+Cách duy nhất để giải quyết các mục tiêu mâu thuẫn này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
 
 <!--
 This is also the reason for adding a learning rate function `lr` into the `sgd` step function.
 In the example above any functionality for learning rate scheduling lies dormant as we set the associated `lr` function to be constant, i.e., `lr = (lambda: 1)`.
 -->
 
-*dịch đoạn phía trên*
+Đây cũng là lý do để thêm hàm tốc độ học `lr` vào hàm bước `sgd`.
+Trong ví dụ trên, mọi chức năng lập lịch cho tốc độ học đều không được áp dụng khi ta đặt hàm `lr` bằng một hằng số, tức là, `lr = (lambda: 1)`.
 
 <!--
 ## Dynamic Learning Rate
 -->
 
-## *dịch tiêu đề phía trên*
+## Tốc độ học Linh hoạt
 
 <!--
 Replacing $\eta$ with a time-dependent learning rate $\eta(t)$ adds to the complexity of controlling convergence of an optimization algorithm.
@@ -152,14 +161,18 @@ If we decrease it too slowly, we waste too much time on optimization.
 There are a few basic strategies that are used in adjusting $\eta$ over time (we will discuss more advanced strategies in a later chapter):
 -->
 
-*dịch đoạn phía trên*
+Thay thế $\eta$ bằng tốc độ học phụ thuộc vào thời gian $\eta(t)$ làm việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
+Cụ thể, ta sẽ cần phải tìm ra một giá trị phân rã $\ eta$ hợp lý.
+Nếu giảm quá nhanh, quá trình tối ưu hóa sẽ ngừng sớm.
+Nếu giảm quá chậm, ta sẽ lãng phí quá nhiều thời gian cho việc tối ưu hóa.
+Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\ eta$ theo thời gian (ta sẽ thảo luận về các chiến lược nâng cao hơn trong chương sau):
 
 
 $$
 \begin{aligned}
-    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{piecewise~constant} \\
-    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{exponential} \\
-    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{polynomial}
+    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{ngắt đoạn~hằng số} \\
+    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{lũy thừa} \\
+    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{đa thức}
 \end{aligned}
 $$
 <!-- dịch piecewise~constant, exponential và polynomial -->
@@ -175,7 +188,13 @@ In the case of convex optimization there are a number of proofs which show that 
 Let us see what this looks like in practice.
 -->
 
-*dịch đoạn phía trên*
+Trong kịch bản đầu tiên, ta giảm tốc độ học tập, ví dụ, bất cứ khi nào tiến trình tối ưu hóa bị đình trệ.
+Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
+Ngoài ra, ta có thể giảm mạnh hơn nhiều bằng sự phân rã theo cấp số nhân.
+Thật không may, điều này dẫn đến việc dừng sớm trước khi thuật toán được hội tụ.
+Một lựa chọn phổ biến là phân rã đa thức với $\alpha = 0.5$.
+Trong trường hợp tối ưu hóa lồi, có một số bằng chứng cho thấy tốc độ này cho kết quả tốt.
+Ta sẽ xem nó hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=4}
@@ -536,7 +555,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Duy Du
 
 <!-- Phần 3 -->
 * 
