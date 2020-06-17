@@ -108,7 +108,7 @@ As a result, any value outside the valid length will be masked as $0$.
 Let us implement the `masked_softmax` function.
 -->
 
-Toán tử softmax có mặt nạ nhận đầu vào là một tensor 3 chiều và cho phép chúng ta có thể lọc ra một số phần tử bằng cách xác định độ dài hợp lệ cho chiều cuối cùng. (Tham khảo :numref:`sec_machine_translation` về định nghĩa của độ dài hợp lệ).
+Toán tử softmax có mặt nạ nhận đầu vào là một tensor 3 chiều và cho phép ta lọc ra một số phần tử bằng cách xác định độ dài hợp lệ cho chiều cuối cùng. (Tham khảo :numref:`sec_machine_translation` về định nghĩa của độ dài hợp lệ).
 Do đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$.
 
 Chúng ta lập trình hàm `masked_softmax` như sau.
