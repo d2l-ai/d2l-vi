@@ -41,7 +41,7 @@ Tâm điểm của cơ chế tập trung là tầng tập trung.
 Với mỗi truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp vector khoá-giá trị được mã hoá trong tầng tập trung này. 
 Cụ thể, giả sử bộ nhớ chứa $n$ cặp vector khoá-giá trị,
 $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, với $\mathbf{k}_i \in \mathbb R^{d_k}$, $\mathbf{v}_i \in \mathbb R^{d_v}$.
-Với mỗi truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung trả về đầu ra $\mathbf{o} \in \mathbb R^{d_v}$ cùng kích thước giống vector giá trị.
+Với mỗi vector truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung trả về đầu ra $\mathbf{o} \in \mathbb R^{d_v}$ cùng kích thước với vector giá trị.
 
 
 <!--
