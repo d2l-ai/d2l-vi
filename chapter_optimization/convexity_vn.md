@@ -222,7 +222,7 @@ That is, we use
 -->
 
 Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến log hợp lý của các biến ngẫu nhiên quan sát được một phần.
-Đó là sử dụng
+Ta có
 
 
 $$E_{y \sim P(y)}[-\log P(x \mid y)] \geq -\log P(x).$$
