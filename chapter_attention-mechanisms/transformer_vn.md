@@ -605,7 +605,7 @@ encoder(np.ones((2, 100)), valid_len).shape
 ## Decoder
 -->
 
-## Bộ Giả mã
+## Bộ Giải mã
 
 
 <!--
