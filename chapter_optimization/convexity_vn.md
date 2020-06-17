@@ -221,7 +221,7 @@ One of the common applications of Jensen's inequality is with regard to the log-
 That is, we use
 -->
 
-Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến hợp lý log của các biến ngẫu nhiên quan sát được một phần.
+Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến log hợp lý của các biến ngẫu nhiên quan sát được một phần.
 Đó là sử dụng
 
 
