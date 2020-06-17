@@ -38,7 +38,7 @@ Nonetheless, the design and analysis of algorithms in the context of convex prob
 It is for that reason that this section includes a primer on convex optimization and the proof for a very simple stochastic gradient descent algorithm on a convex objective function.
 -->
 
-Chương này đề cập sâu hơn đến các thuật toán tối ưu học sâu. Hầu hết tất cả các vấn đề tối ưu xuất hiện trong học sâu là không lồi. 
+Chương này đề cập sâu hơn đến các thuật toán tối ưu học sâu. Hầu hết tất cả các vấn đề tối ưu xuất hiện trong học sâu là không lồi (*nonconvex*). 
 Tuy nhiên, việc thiết kế và phân tích các thuật toán giải quyết bài toán tối ưu lồi rất hữu ích, điều này đã được kiểm chứng. 
 Do vậy, phần này tập trung vào tối ưu lồi và một thuật toán hạ gradient ngẫu nhiên (stochastic gradient descent) đơn giản áp dụng cho hàm mục tiêu lồi.
 
