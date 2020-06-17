@@ -85,7 +85,7 @@ Given that, they also need to be contained in $X \cap Y$, thus proving our first
 Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn có thể làm gì đó với chúng.
 Trong trường hợp này, chúng ta có thể nhìn vào hợp và giao của hai tập trong :numref:`fig_convex_intersect`.
 Giả sử $X$ và $Y$ là các tập hợp lồi thì $X \cap Y$ cũng sẽ lồi.
-Để thấy được điều này, giả sử rằng bất kì  $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, đường thẳng chứa $a$ và $b$ sẽ thuộc trong cả $X$ và $Y$.
+Để thấy được điều này, hãy xét bất kì $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, khi đó đoạn thẳng nối $a$ và $b$ sẽ thuộc trong cả $X$ và $Y$.
 Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh được định lý đầu tiên của chúng ta.
 
 <!--
