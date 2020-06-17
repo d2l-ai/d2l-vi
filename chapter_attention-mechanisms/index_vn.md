@@ -33,7 +33,8 @@ where attention can be seen as a generalized pooling method with bias alignment 
 In this chapter, we will provide you with some intuition about how to transform the attention idea to the concrete mathematics models, and make them work.
 -->
 
-Tuy nhiên, chúng ta sẽ không đi sâu vào thuyết tập trung trong ngành thần kinh học mà sẽ tìm hiểu cách áp dụng ý tưởng về cơ chế tập trung trong học sâu. Ở đây, cơ chế tập trung có thể coi là khái quát hoá của phép gộp với hiệu chỉnh độ chệch trên giá trị đầu vào.
+Tuy nhiên, chúng ta sẽ không đi sâu vào thuyết tập trung trong ngành thần kinh học mà sẽ tìm hiểu cách áp dụng ý tưởng của cơ chế chú ý, tập trung vào học sâu.
+Ở đây, cơ chế tập trung có thể coi là khái quát hoá của phép gộp, với từng trọng số trên mỗi giá trị đầu vào.
 Trong chương này, chúng tôi giúp bạn hình dung cách biến ý tưởng về cơ chế tập trung thành các mô hình toán học cụ thể có thể hoạt động được.
 
 ```toc
