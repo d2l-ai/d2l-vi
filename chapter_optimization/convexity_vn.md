@@ -306,7 +306,7 @@ Conversely, the function $f(x) = \exp(x)$ does not attain a minimum value on $\m
 For $x \to -\infty$ it asymptotes to $0$, however there is no $x$ for which $f(x) = 0$.
 -->
 
-Lập luận "các hàm lồi không có cực tiểu cục bộ" rất tiện lợi.
+Tính chất "các hàm lồi không có cực tiểu cục bộ" rất tiện lợi.
 Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
 Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
