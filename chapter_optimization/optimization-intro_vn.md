@@ -79,7 +79,7 @@ annotate('expected risk', (1.1, -1.05), (0.95, -0.5))
 ## Optimization Challenges in Deep Learning
 -->
 
-# Những thử thách của Tối ưu trong Học sâu
+# Thách thức Tối ưu trong Học sâu
 
 <!--
 In this chapter, we are going to focus specifically on the performance of the optimization algorithm in minimizing the objective function, rather than a model's generalization error.
@@ -116,8 +116,8 @@ For the objective function $f(x)$, if the value of $f(x)$ at $x$ is smaller than
 If the value of $f(x)$ at $x$ is the minimum of the objective function over the entire domain, then $f(x)$ is the global minimum.
 -->
 
-Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một cực tiểu.
-Nếu giá trị của $f(x)$ tại $x$ là nhỏ nhất của hàm mục tiêu trên toàn tập xác định thì $f(x)$ là giá trị nhỏ nhất.
+Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một cực tiểu (*local minima*).
+Nếu giá trị của $f(x)$ tại $x$ là nhỏ nhất của hàm mục tiêu trên toàn tập xác định thì $f(x)$ là giá trị nhỏ nhất (*global minima*).
 
 <!--
 For example, given the function
@@ -152,8 +152,8 @@ In fact, this is one of the beneficial properties of stochastic gradient descent
 -->
 
 Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực tiểu.
-Khi nghiệm xấp xỉ của một bài toán tối ưu được tính bởi vòng lặp cuối cùng của thuật toán và có giá trị gần bằng cực tiểu, nghiệm này có khả năng chỉ là giá trị nhỏ nhất của hàm mục tiêu trong vùng lân cận, không phải toàn cục, do gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
-Ở một mức độ nhiễu nhất thì thì mới có thể đưa tham số ra khỏi vùng cực tiểu.
+Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, nghiệm xấp xỉ tính được từ vòng lặp cuối cùng của thuật toán có thể chỉ đang tối thiểu hàm mục tiêu cục bộ chứ không phải toàn cục, do lúc này gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
+Chỉ với một mức độ nhiễu nhất định thì mới có thể đánh văng tham số ra khỏi vùng cực tiểu.
 Trong thực tế, đây là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến đổi tự nhiên của gradient đối với từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
