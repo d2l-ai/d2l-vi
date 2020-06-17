@@ -460,6 +460,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | validation set              | tập kiểm định      | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | vanishing gradient          | tiêu biến gradient | [https://git.io/JvohI](https://git.io/JvohI) |
 | variance (bias as variance) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
+| variational                 | biến phân         |  |
 | vector                      | vector             |                                              |
 | value                       | giá trị            |                                              |
 
