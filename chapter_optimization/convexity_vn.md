@@ -82,7 +82,7 @@ To see this, consider any $a, b \in X \cap Y$. Since $X$ and $Y$ are convex, the
 Given that, they also need to be contained in $X \cap Y$, thus proving our first theorem.
 -->
 
-Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn làm gì đó với chúng.
+Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn có thể làm gì đó với chúng.
 Trong trường hợp này, chúng ta có thể nhìn vào hợp và giao của hai tập trong :numref:`fig_convex_intersect`.
 Giả sử $X$ và $Y$ là các tập hợp lồi.
 Thì $X \cap Y$ cũng sẽ lồi.
