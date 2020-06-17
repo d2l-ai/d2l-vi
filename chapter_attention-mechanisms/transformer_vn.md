@@ -810,7 +810,7 @@ Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truy�
 * Tầng tập trung đa đầu gồm có $h$ tầng tập trung song song.
 * Mạng truyền xuôi theo vị trí gồm hai tầng kết nối đầy đủ được áp dụng trên chiều cuối cùng.
 * Chuẩn hoá theo tầng khác với chuẩn hoá theo batch đó là chuẩn hoá trên chiều cuối cùng (chiều đặc trưng) thay vì chiều đầu tiên (kích thước batch).
-* Biểu diễn vị trí là cách duy nhất đưa vào mô hình Transformer thông tin về vị trí trong chuỗi.
+* Biểu diễn vị trí là nơi duy nhất thông tin vị trí trong chuỗi được đưa vào mô hình Transformer.
 
 
 <!--
