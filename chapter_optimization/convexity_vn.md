@@ -46,7 +46,7 @@ Simply put, a set $X$ in a vector space is convex if for any $a, b \in X$ the li
 In mathematical terms this means that for all $\lambda \in [0, 1]$ we have
 -->
 
-Tập hợp là các cơ sở của tính lồi.
+Các tập hợp là cơ sở của tính lồi.
 Nói một cách đơn giản, một tập hợp $X$ trong không gian vector là lồi nếu với bất kì $a, b \in X$, đoạn thẳng nối $a$ và $b$ cũng thuộc $X$.
 Theo các thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
 
