@@ -270,7 +270,7 @@ However, by convexity the function values on the entire *line* $\lambda x + (1-\
 
 Cụ thể là các hàm lồi không có cực tiểu cục bộ.
 Ta hãy giả định điều ngược lại và chứng minh nó sai nhé. Nếu  $x \in X$ là cực tiểu cục bộ thì sẽ tồn tại một vài lân cận của $x$ mà $f(x)$ là giá trị nhỏ nhất.
-Vì $x$ là cực tiểu cục bộ nhỏ nhất nên sẽ không có một $x' \in X$ nào khác mà $f(x') < f(x)$.
+Vì $x$ chỉ là cực tiểu cục bộ nên phải tồn tại một $x' \in X$ nào khác mà $f(x') < f(x)$.
 Tuy nhiên, theo tính lồi, các giá trị hàm số trên toàn bộ *đường thẳng* $\lambda x + (1-\lambda) x'$ phải nhỏ hơn $f(x')$ với $\lambda \in [0, 1)$ 
 
 
