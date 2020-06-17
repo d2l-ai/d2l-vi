@@ -489,7 +489,7 @@ The $5^{\mathrm{th}}$ and $6^{\mathrm{th}}$ dimensions have a lower frequency.
 -->
 
 Bây giờ chúng ta hãy kiểm tra lớp `PositionalEncoding` ở trên bằng mô hình đơn giản cho 4 chiều.
-Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng khác giá trị offset.
+Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng khác giá trị độ dời.
 Chiều thứ 5 và 6 có tần số thấp hơn.
 
 
