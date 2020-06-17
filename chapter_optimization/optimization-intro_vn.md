@@ -219,7 +219,7 @@ We assume that the input of a function is a $k$-dimensional vector and its outpu
 The solution of the function could be a local minimum, a local maximum, or a saddle point at a position where the function gradient is zero:
 -->
 
-Ta giả sử đầu vào của hàm là một vector $k$ chiều và đầu ra của nó là một số vô hướng; do đó ma trận Hessian của nó có $k$ giá trị riêng (xem thêm tại :numref:`sec_geometry-linear-algebraic-ops`).
+Ta giả sử đầu vào của hàm là một vector $k$ chiều và đầu ra của nó là một số vô hướng; do đó ma trận Hessian của nó có $k$ trị riêng (xem thêm tại :numref:`sec_geometry-linear-algebraic-ops`).
 Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc một điểm yên ngựa tại vị trí mà gradient của hàm bằng 0.
 
 <!--
@@ -228,9 +228,9 @@ Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc 
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.
 -->
 
-* Khi các giá trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm.
-* Khi các giá trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều âm, ta có một cực đại của hàm.
-* Khi các giá trị riêng của ma trận Hessian tại vị trí gradient bằng 0 mang cả giá trị âm lẫn dương, ta có một điểm yên ngựa của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều âm, ta có một cực đại của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 mang cả giá trị âm lẫn dương, ta có một điểm yên ngựa của hàm.
 
 <!--
 For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high.
@@ -241,10 +241,10 @@ Sadly, though, most deep learning problems do not fall into this category.
 Nonetheless it is a great tool to study optimization algorithms.
 -->
 
-Đối với bài toán trong không gian nhiều chiều, tỉ lệ mà một số giá trị riêng âm là khá cao.
+Đối với bài toán trong không gian nhiều chiều, khả năng mà có một vài trị riêng âm là khá cao.
 Do đó các điểm yên ngựa có khả năng xuất hiện cao hơn các cực tiểu.
-Ta sẽ thảo luận một số ngoại lệ của vấn đề  này ở phần tới khi giới thiệu đến tính lồi.
-Nói tóm lại, các hàm lồi là hàm mà các giá trị riêng của ma trận Hessian không bao giờ âm.
+Ta sẽ thảo luận một số ngoại lệ của vấn đề này ở phần tới khi giới thiệu đến tính lồi.
+Nói tóm lại, các hàm lồi là hàm mà các trị riêng của ma trận Hessian không bao giờ âm.
 Tuy nhiên, thật tiếc rằng đa số bài toán học sâu đều không thuộc loại này.
 Dù sao thì đây cũng là một công cụ tốt để học về các thuật toán tối ưu.
 
