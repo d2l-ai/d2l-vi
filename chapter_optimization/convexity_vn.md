@@ -122,7 +122,7 @@ Given a convex set $X$ a function defined on it $f: X \to \mathbb{R}$ is convex 
 -->
 
 Sau khi có được các tập hợp lồi, chúng ta sẽ giới thiệu tiếp về các hàm số lồi $f$.
-Cho một tập hợp lồi $X$, một hàm số được định nghĩa là thuộc nó $f: X \to \mathbb{R}$ sẽ lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
+Cho một tập hợp lồi $X$, một hàm số được định nghĩa trên đó $f: X \to \mathbb{R}$ sẽ lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
 
 
 $$\lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
