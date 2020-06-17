@@ -238,7 +238,7 @@ For instance, in clustering $y$ might be the cluster labels and $P(x \mid y)$ is
 Điều này xảy ra vì $\int P(y) P(x \mid y) dy = P(x)$.
 Nó được sử dụng trong những phương pháp biến phân.
 $y$ ở đây là thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về phân phối của nó và $P(x)$ là phân phối đã được lấy tích phân theo $y$.
-Ví dụ, trong phân cụm $y$ có thể là các nhãn cụm và  $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
+Ví dụ, trong phân cụm $y$ có thể là các nhãn cụm và $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
 
 <!--
 ## Properties
