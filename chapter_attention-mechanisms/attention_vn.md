@@ -140,7 +140,7 @@ Then, as we can see from the following outputs, the values outside valid lengths
 
 Để minh họa cách hàm trên hoạt động, chúng ta hãy khởi tạo hai ma trận đầu vào kích thước là $2 \times 4$.
 Bên cạnh đó, chúng ta sẽ gán độ dài hợp lệ cho mẫu thứ nhất là 2 và mẫu thứ hai là 3.
-Từ đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$ như đầu ra dưới đây.
+Từ đó, những giá trị đầu ra nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$ như dưới đây.
 
 
 ```{.python .input  n=5}
