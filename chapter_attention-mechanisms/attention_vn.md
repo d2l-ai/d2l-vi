@@ -91,7 +91,7 @@ Before diving into the implementation, we first express two operators to get you
 -->
 Cách lựa chọn hàm tính điểm khác nhau sẽ tạo ra các tầng tập trung khác nhau.
 Chúng tôi sẽ trình bày hai tầng tập trung thường được sử dụng dưới đây.
-Đầu tiên chúng tôi giới thiệu hai toán tử mà bạn sẽ cần khi lập trình được hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
+Đầu tiên chúng tôi giới thiệu hai toán tử cần thiết để lập trình hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
 
 
 ```{.python .input  n=1}
