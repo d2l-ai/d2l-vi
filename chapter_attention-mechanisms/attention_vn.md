@@ -36,7 +36,7 @@ Given a query $\mathbf{q} \in \mathbb R^{d_q}$, the attention layer returns an o
 -->
 
 Cơ chế *tập trung* có thể coi là phép gộp tổng quát với đầu vào có trọng số khác nhau.
-Tâm điểm của cơ chế tập trung là tầng tập trung.
+Thành phần cốt lõi của cơ chế tập trung là tầng tập trung.
 Đầu vào của tầng tập trung được gọi ngắn gọn là *truy vấn* (*query*).
 Với mỗi truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp vector khoá-giá trị được mã hoá trong tầng tập trung này. 
 Cụ thể, giả sử bộ nhớ chứa $n$ cặp vector khoá-giá trị,
