@@ -633,7 +633,7 @@ Như minh họa trong :numref:`fig_self_attention_predict`, các khoá và giá 
 ![Predict at timestep $t$ for a self-attention layer.](../img/self-attention-predict.svg)
 -->
 
-![Dự đoán ở bước thời gian $t$ của một tầng tập trung.](../img/self-attention-predict.svg)
+![Dự đoán ở bước thời gian $t$ của một tầng tự tập trung.](../img/self-attention-predict.svg)
 :label:`fig_self_attention_predict`
 
 <!--
