@@ -617,7 +617,7 @@ i.e., the residual connections and the layer normalization to connect each of th
 -->
 
 Khối giải mã Transformer tương tự như khối mã hoá Transformer.
-Tuy nhiên, bên cạnh hai tầng con (tầng tập trung đa đầu và mạng biểu diễn vị trí), khối giải mã Transformer còn chứa tầng con thứ ba, ở đây cơ chế tập trung trên đầu ra của bộ mã hoá được áp dụng.
+Tuy nhiên, bên cạnh hai tầng con (tầng tập trung đa đầu và mạng biểu diễn vị trí), khối giải mã Transformer còn chứa tầng con thứ ba áp dụng cơ chế tập trung lên đầu ra của bộ mã hoá.
 Tương tự như khối mã hóa Transformer, khối giải mã Transformer cũng sử dụng tầng "cộng và chuẩn hoá", gồm có kết nối phần dư và chuẩn hoá theo tầng được thêm vào sau mỗi tầng con.
 
 <!--
