@@ -235,7 +235,7 @@ Here $y$ is typically the unobserved random variable, $P(y)$ is the best guess o
 For instance, in clustering $y$ might be the cluster labels and $P(x \mid y)$ is the generative model when applying cluster labels.
 -->
 
-Điều này xảy ra vì  $\int P(y) P(x \mid y) dy = P(x)$.
+Điều này xảy ra vì $\int P(y) P(x \mid y) dy = P(x)$.
 Nó được sử dụng trong những phương pháp biến phân.
 $y$ ở đây là thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về cách nó có thể phân phối và $P(x)$ là phân phối tích phân theo $y$.
 Ví dụ, trong phân cụm $y$ có thể là các nhãn cụm và  $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
