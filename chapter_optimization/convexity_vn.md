@@ -17,7 +17,7 @@ This can lead to exciting new optimization variants such as :cite:`Izmailov.Podo
 -->
 
 Tính lồi đóng một vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
-Điều này phần lớn là do thực tế rằng các thuật toán thuộc bối cảnh này sẽ dễ phân tích và kiểm tra hơn.
+Điều này phần lớn là do các thuật toán sẽ dễ phân tích và kiểm tra hơn trong trường hợp này.
 Nói cách khác, nếu thuật toán hoạt động kém ngay cả trong môi trường lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong môi trường khác.
 Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần là không lồi, chúng lại thường thể hiện một số tính chất lồi gần các cực tiểu cục bộ.
 Điều này dẫn đến các biến thể tối ưu hóa thú vị mới như :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
