@@ -221,7 +221,7 @@ The gating variable $\mathbf{Z}_t$ can be used for this purpose, simply by takin
 This leads to the final update equation for the GRU.
 -->
 
-Tiếp theo ta kết hợp hiệu ứng của cổng cập nhật $\mathbf{Z}_t$, như trong :numref:`fig_gru_3`.
+Tiếp theo ta sẽ kết hợp hiệu ứng của cổng cập nhật $\mathbf{Z}_t$ như trong :numref:`fig_gru_3`.
 Điều này xác định mức độ trạng thái mới $\mathbf{H}_t$ sẽ giống trạng thái cũ $\mathbf{H}_{t-1}$ và mức độ trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$ được sử dụng.
 Biến cổng (_gating variable_) $\mathbf{Z}_t$ được sử dụng cho mục đích này, bằng cách áp dụng tổ hợp lồi giữa trạng thái cũ và trạng thái tiềm năng.
 Ta có phương trình cập nhật cuối cùng cho GRU.
