@@ -185,7 +185,7 @@ Assume that the multi-head attention contain the number heads `num_heads` $=h$, 
 In addition, since the multi-head attention keeps the same dimensionality between its input and its output, we have the output feature size $d_o =$ `num_hiddens` as well.
 -->
 
-Bây giờ chúng ta có thể lập trình tập trung đa đầu.
+Bây giờ chúng ta có thể lập trình tầng tập trung đa đầu.
 Giả sử rằng tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
 Ngoài ra, do tập trung đa đầu giữ nguyên số chiều giữa đầu vào và đầu ra, ta cũng có kích thước đặc trưng đầu ra là $d_o =$ `num_hiddens`.
 
