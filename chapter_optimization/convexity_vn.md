@@ -527,7 +527,7 @@ Ta hãy bỏ qua phần phần diễn giải chứng minh của hàm số Lagran
 Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa:
 
 
-$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ where } \alpha_i \geq 0.$$
+$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ với } \alpha_i \geq 0.$$
 <!-- dịch where -->
 
 
