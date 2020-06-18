@@ -562,7 +562,7 @@ Adjusting the value of $\lambda$ allows us to vary the size of $\mathbf{w}$.
 Thực tế, chúng ta đã dùng thủ thuật này suốt.
 Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`.
 Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng $\mathbf{w}$ không phát triển quá lớn.
-Bằng cách sử dụng góc nhìn tối ưu hóa bị ràng buộc, chúng ta có thể thấy rằng nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với một vài bán kính $r$.
+Bằng cách sử dụng góc nhìn tối ưu hóa bị ràng buộc, chúng ta có thể thấy rằng nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với bán kính $r$ nào đó.
 Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi kích thước của $\mathbf{w}$.
 
 <!--
