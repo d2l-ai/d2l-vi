@@ -373,7 +373,7 @@ All we need to do is check whether $\partial_x^2 f(x) \succeq 0$, i.e., whether 
 For instance, the function $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ is convex since $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, i.e., its derivative is the identity matrix.
 -->
 
-Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, nó sẽ rất dễ để kiểm tra về tính lồi.
+Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản.
 Tất cả những gì chúng ta cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không.
 Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị.
 
