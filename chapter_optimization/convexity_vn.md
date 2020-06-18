@@ -388,7 +388,7 @@ Hence back to the scalar case.
 Điều đầu tiên để nhận ra là chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều.
 Xét cho cùng, chúng ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$.
 Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$.
-Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương. Ví dụ, mỗi khi toàn bộ giá trị riêng của nó lớn hơn hoặc bằng không.
+Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không.
 Do đó quay về lại trường hợp vô hướng.
 
 <!--
