@@ -647,7 +647,7 @@ Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient n
 * Projections map to points in the (convex) set closest to the original point.
 -->
 
-* Giao của các tập lồi là lồi. Hợp của các tập lồi không buộc phải là lồi.
+* Giao của các tập lồi là lồi. Hợp của các tập lồi không bắt buộc phải là lồi.
 * Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen).
 * Hàm khả vi hai lần là lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các giá trị riêng không âm ở mọi nơi.
 * Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực hành, ta chỉ việc thêm cho chúng một mức phạt vào hàm mục tiêu.
