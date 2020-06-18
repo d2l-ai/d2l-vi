@@ -475,6 +475,7 @@ Nó cho phép ta giải quyết các bài toán dưới dạng:
 $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{ subject to } & c_i(\mathbf{x}) \leq 0 \text{ for all } i \in \{1, \ldots, N\}.
 \end{aligned}$$
+-->
 <!-- dịch for all, subject to và minimize -->
 
 $$\begin{aligned} \mathop{\mathrm{tối thiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
