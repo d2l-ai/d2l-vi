@@ -599,7 +599,7 @@ $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
 This turns out to be a *projection* of $g$ onto the ball of radius $c$. More generally, a projection on a (convex) set $X$ is defined as
 -->
 
-Điều này hóa ra là một *phép chiếu* của $g$ trên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là
+Điều này hóa ra là một *phép chiếu* của $g$ lên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là
 
 
 $$\mathrm{Proj}_X(\mathbf{x}) = \mathop{\mathrm{argmin}}_{\mathbf{x}' \in X} \|\mathbf{x} - \mathbf{x}'\|_2.$$
