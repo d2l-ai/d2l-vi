@@ -469,7 +469,7 @@ That is, it allows us to solve problems of the form:
 -->
 
 Một trong những tính chất hay ho của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả.
-Nó khiến chúng ta giải quyết các bài toán dưới dạng:
+Nó cho phép ta giải quyết các bài toán dưới dạng:
 
 
 $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
