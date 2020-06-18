@@ -229,7 +229,7 @@ Khi lập trình, ta sử dụng trực tiếp trạng thái ẩn của bộ mã
 Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số nút ẩn.
 Các bước tính toán lượt truyền xuôi trong bộ giải mã gần giống trong bộ mã hoá.
 Điểm khác biệt duy nhất là có thêm một tầng kết nối dày đặc với kích thước bằng kích thước bộ từ vựng được đặt ở sau các tầng LSTM.
-Tầng này sẽ dự đoán độ tin cậy cho mỗi từ.
+Tầng này sẽ dự đoán điểm tin cậy cho mỗi từ.
 
 
 ```{.python .input  n=5}
