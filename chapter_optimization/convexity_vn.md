@@ -395,7 +395,7 @@ Do đó quay về lại trường hợp vô hướng.
 To see that $f''(x) \geq 0$ for convex functions we use the fact that
 -->
 
-Để biết $f''(x) \geq 0$ đối với các hàm lồi, ta dùng lập luận
+Để thấy tại sao $f''(x) \geq 0$ đối với các hàm lồi, ta dùng lập luận
 
 
 $$\frac{1}{2} f(x + \epsilon) + \frac{1}{2} f(x - \epsilon) \geq f\left(\frac{x + \epsilon}{2} + \frac{x - \epsilon}{2}\right) = f(x).$$
