@@ -523,7 +523,7 @@ Skipping over the derivation of the Lagrange function $L$ (see e.g., the book by
 the above reasoning can be expressed via the following saddlepoint optimization problem:
 -->
 
-Ta hãy bỏ qua phần đạo hàm của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`).
+Ta hãy bỏ qua phần phần diễn giải chứng minh của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`).
 Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa:
 
 
