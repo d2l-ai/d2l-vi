@@ -383,7 +383,7 @@ In addition, we apply dropout on $Y$ for regularization.
 Bây giờ chúng ta hãy cùng lập trình khối kết nối `AddNorm`.
 `AddNorm` chấp nhận hai đầu vào $X$ và $Y$.
 Chúng ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng FFN theo vị trí.
-Ngoài ra, chúng tôi áp dụng dropout trên $Y$ để điều chuẩn.
+Ngoài ra, ta cũng sẽ áp dụng dropout trên $Y$ để điều chuẩn.
 
 
 ```{.python .input  n=8}
