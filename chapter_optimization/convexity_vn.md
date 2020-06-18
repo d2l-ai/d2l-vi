@@ -405,7 +405,7 @@ $$\frac{1}{2} f(x + \epsilon) + \frac{1}{2} f(x - \epsilon) \geq f\left(\frac{x 
 Since the second derivative is given by the limit over finite differences it follows that
 -->
 
-Vì đạo hàm bậc hai được đưa ra bởi giới hạn trên sai phân giới hạn, nó dẫn tới
+Vì đạo hàm bậc hai được đưa ra bởi giới hạn trên sai phân hữu hạn, nó dẫn tới
 
 
 $$f''(x) = \lim_{\epsilon \to 0} \frac{f(x+\epsilon) + f(x - \epsilon) - 2f(x)}{\epsilon^2} \geq 0.$$
