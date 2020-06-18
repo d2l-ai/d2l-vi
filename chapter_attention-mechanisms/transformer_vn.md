@@ -774,7 +774,6 @@ As we can see from the training time and accuracy, compared with the seq2seq mod
 -->
 
 Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trong mỗi epoch và hội tụ nhanh hơn ở giai đoạn ban đầu so với mô hình seq2seq áp dụng cơ chế tập trung.
-Như chúng ta có thể nhìn thấy từ thời gian huấn luyện và độ chính xác, so với mô hình seq2seq có tập trung, Transformer chạy nhanh hơn trên mỗi epoch và cũng hội tụ nhanh hơn lúc ban đầu.
 
 
 <!--
