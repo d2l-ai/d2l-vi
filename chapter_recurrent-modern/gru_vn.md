@@ -81,7 +81,7 @@ We discuss this in detail below.
 Sự khác biệt chính giữa RNN thông thường và GRU là GRU hỗ trợ việc kiểm soát trạng thái ẩn.
 Điều này có nghĩa là ta có các cơ chế được học để quyết định khi nào nên cập nhật và khi nào nên xóa trạng thái ẩn.
 Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, mô hình sẽ học để không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
-Tương tự như vậy, ta sẽ học để bỏ qua những quan sát tạm thời không liên quan, cũng như để xóa trạng thái ẩn khi cần.
+Tương tự, mô hình sẽ học cách bỏ qua những quan sát tạm thời không liên quan, cũng như cách xóa trạng thái ẩn khi cần thiết.
 Dưới đây ta sẽ thảo luận chi tiết vấn đề này.
 
 <!--
