@@ -417,7 +417,7 @@ Let $a < x < b$ be three points in $\mathbb{R}$.
 We use the mean value theorem to express
 -->
 
-Để biết rằng điều ngược lại là đúng, chúng ta dùng lập luận rằng $f'' \geq 0$ ngụ ý rằng $f'$ là một hàm tăng đơn điệu.
+Để chứng minh điều ngược lại cũng đúng, chúng ta dùng lập luận rằng $f'' \geq 0$ ngụ ý rằng $f'$ là một hàm tăng đơn điệu.
 Cho $a < x < b$ là ba điểm thuộc $\mathbb{R}$.
 Chúng ta sử dụng định lý giá trị trung bình để biểu diễn
 
