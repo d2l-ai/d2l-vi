@@ -294,10 +294,10 @@ Since the same two dense layers are used for each position item in the sequence,
 Indeed, it is equivalent to applying two $1 \times 1$ convolution layers.
 -->
 
-Một thành phần quan trọng khác trong Khối Transformer được gọi là *mạng truyền xuôi theo vị trí (FFN)*.
-Nó chấp nhận đầu vào $3$ chiều với kích thước (kích thước batch, độ dài chuỗi, kích thước đặc trưng).
-FFN theo vị trí bao gồm hai tầng dày đặc áp dụng cho kích thước cuối cùng.
-Vì hai tầng dày đặc giống nhau được sử dụng cho từng mục vị trí trong chuỗi, chúng tôi gọi nó là *theo vị trí*.
+Một thành phần quan trọng khác trong Khối Transformer được gọi là *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network -- FFN*).
+Nó chấp nhận đầu vào $3$ chiều với kích thước là (kích thước batch, độ dài chuỗi, kích thước đặc trưng).
+FFN theo vị trí bao gồm hai tầng dày đặc áp dụng trên chiều sau cùng.
+Vì cùng hai tầng dày đặc này được sử dụng cho từng mục vị trí trong chuỗi, chúng ta gọi nó là *theo vị trí*.
 Thật vậy, nó tương đương với việc áp dụng hai tầng tích chập $1 \times 1$ .
 
 <!--
@@ -324,8 +324,8 @@ Similar to the multi-head attention, the position-wise feed-forward network will
 In addition, if two items in the input sequence are identical, the according outputs will be identical as well.
 -->
 
-Tương tự như sự tập trung đa đầu, mạng truyền xuôi theo vị trí sẽ chỉ thay đổi kích thước kích thước cuối cùng của đầu vào --- kích thước đặc trưng.
-Ngoài ra, nếu hai mục trong chuỗi đầu vào giống hệt nhau, thì các đầu ra theo cũng sẽ giống hệt nhau.
+Tương tự như tầng tập trung đa đầu, mạng truyền xuôi theo vị trí sẽ chỉ thay đổi kích thước của chiều cuối cùng của đầu vào --- tức kích thước đặc trưng.
+Ngoài ra, nếu hai mục trong chuỗi đầu vào giống hệt nhau, thì các đầu ra theo đó cũng sẽ giống hệt nhau.
 
 ```{.python .input  n=6}
 ffn = PositionWiseFFN(4, 8)
@@ -337,7 +337,7 @@ ffn(np.ones((2, 3, 4)))[0]
 ## Add and Norm
 -->
 
-## Thêm và Trung bình
+## Cộng và Chuẩn
 
 <!--
 Besides the above two components in the Transformer block, the "add and norm" within the block also plays a key role to connect the inputs and outputs of other layers smoothly.
@@ -347,10 +347,10 @@ One difference is that the mean and variances for the layer normalization are ca
 Layer normalization prevents the range of values in the layers from changing too much, which allows faster training and better generalization ability.
 -->
 
-Bên cạnh hai thành phần trên trong khối Transformer, "thêm và định mức" trong khối cũng đóng vai trò chính để kết nối đầu vào và đầu ra của các lớp khác một cách trơn tru.
-Để giải thích, chúng tôi thêm một tầng cấu trúc phần dư và *tầng chuẩn hóa* sau cả lớp tập trung đa đầu và mạng FFN theo vị trí.
-*Chuẩn hóa tầng* tương tự như chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
-Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa được tính dọc theo chiều cuối cùng, ví dụ `X.mean(axis=-1)` thay vì kích thước batch đầu tiên, ví dụ: `X.mean(axis=0)` .
+Bên cạnh hai thành phần trên trong khối Transformer, khối "cộng và chuẩn" cũng đóng vai trò thiết yếu để kết nối đầu vào và đầu ra của các lớp khác một cách trơn tru.
+Giải thích rõ hơn, ta thêm một cấu trúc phần dư và tầng *chuẩn hóa theo tầng* sau cả lớp tập trung đa đầu và mạng FFN theo vị trí.
+*Chuẩn hóa theo tầng* tương tự như chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
+Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa được tính dọc theo chiều cuối cùng, tức `X.mean(axis=-1)`, thay vì theo chiều batch đầu tiên như `X.mean(axis=0)` .
 Chuẩn hóa tầng ngăn không cho phạm vi giá trị trong các tầng thay đổi quá nhiều, điều này cho phép huấn luyện nhanh hơn và khả năng khái quát hóa tốt hơn.
 
 <!--
@@ -380,10 +380,10 @@ We can deem $X$ as the original input in the residual network, and $Y$ as the ou
 In addition, we apply dropout on $Y$ for regularization.
 -->
 
-Bây giờ chúng ta hãy lập trình khối kết nối `AddNorm` cùng nhau.
+Bây giờ chúng ta hãy cùng lập trình khối kết nối `AddNorm`.
 `AddNorm` chấp nhận hai đầu vào $X$ và $Y$.
 Chúng ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng FFN theo vị trí.
-Ngoài ra, chúng tôi áp dụng dropout trên $Y$ để chuẩn hóa.
+Ngoài ra, chúng tôi áp dụng dropout trên $Y$ để điều chuẩn.
 
 
 ```{.python .input  n=8}
@@ -402,7 +402,7 @@ class AddNorm(nn.Block):
 Due to the residual connection, $X$ and $Y$ should have the same shape.
 -->
 
-Do kết nối phần dư, $X$ và $Y$ sẽ có kích thước giống nhau.
+Do có kết nối phần dư, $X$ và $Y$ sẽ có kích thước giống nhau.
 
 ```{.python .input  n=9}
 add_norm = AddNorm(0.5)
