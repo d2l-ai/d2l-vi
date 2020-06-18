@@ -621,7 +621,7 @@ Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$.
 Ở đó ta có hai tập lồi, một hình tròn và một hình thoi.
 Các điểm nằm bên trong tập (vàng) giữ nguyên không đổi.
 Các điểm nằm bên ngoài tập (đen) được ánh xạ tới điểm gần nhất bên trong tập (đỏ).
-Trong khi với các khối cầu $\ell_2$, điều này để lại một hướng không đổi, đây không cần phải là một trường hợp tổng quát, vì ta có thể thấy được điều tương tự trong trường hợp của hình thoi.
+Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này không nhất thiết vẫn đúng trong trường hợp tổng quát, như có thể thấy được trong trường hợp của hình thoi.
 
 <!--
 ![Convex Projections](../img/projections.svg)
