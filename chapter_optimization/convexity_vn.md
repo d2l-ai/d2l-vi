@@ -450,7 +450,7 @@ We omit a more formal derivation in favor of a graph below.
 -->
 
 Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi.
-Ta sẽ bỏ qua việc tính đạo hàm một cách chỉnh chu bằng đồ thị bên dưới.
+Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới.
 
 
 ```{.python .input}
