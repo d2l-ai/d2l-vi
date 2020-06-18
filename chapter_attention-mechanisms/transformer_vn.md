@@ -133,7 +133,7 @@ For each head, before feeding into the attention layer, we project the queries, 
 The outputs of these $h$ attention heads are concatenated and then processed by a final dense layer.
 -->
 
-Tầng *tập trung đa đầu* bao gồm $h$ tầng tự tập trung song song, mỗi tầng được gọi là *đầu*.
+Tầng *tập trung đa đầu* bao gồm $h$ tầng tự tập trung song song, mỗi tầng được gọi là một *đầu*.
 Tại mỗi đầu, trước khi đưa vào tầng tập trung, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
 Đầu ra của $h$ đầu tập trung này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
 
