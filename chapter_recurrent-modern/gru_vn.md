@@ -162,7 +162,7 @@ We begin by integrating the reset gate with a regular latent state updating mech
 In a conventional RNN, we would have an hidden state update of the form
 -->
 
-Ta bắt đầu bằng cách tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
+Ta bắt đầu bằng việc tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
 Trong RNN thông thường, ta cập nhật trạng thái ẩn theo công thức
 
 
