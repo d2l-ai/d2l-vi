@@ -294,8 +294,8 @@ Note that we padded the target sentences to make them have the same length, but 
 -->
 
 Tại mỗi bước thời gian, bộ giải mã tạo ra một vector điểm tin cậy có kích thước bằng bộ từ vựng để dự đoán các từ.
-Tương tự như việc mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
-Lưu ý rằng ta đã đệm các câu đích để làm cho chúng có độ dài bằng nhau, nhưng ta không cần tính mất mát trên các ký tự đệm.
+Tương tự như trong mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
+Lưu ý rằng ta đã đệm các câu đích để chúng có cùng độ dài, nhưng không cần tính mất mát trên các ký tự đệm này.
 
 <!--
 To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`.
@@ -303,9 +303,9 @@ It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1
 If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
-Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
-Nó có thể được chỉ định để gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
-Nếu chiều thứ hai được chọn, với đầu vào là một vector có độ dài hợp lệ `len` và một mảng hai chiều `X`, toán tử này sẽ đặt `X[i, len[i]:] = 0` với mọi $i$.
+Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử gọi là `SequenceMask`.
+Nó có thể gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
+Nếu chiều thứ hai được chọn, với đầu vào là mảng hai chiều `X` và vector độ dài hợp lệ `len`, toán tử này sẽ gán `X[i, len[i]:] = 0` với mọi $i$.
 
 ```{.python .input  n=7}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -317,8 +317,8 @@ Apply to $n$-dim tensor $X$, it sets `X[i, len[i]:, :, ..., :] = 0`.
 In addition, we can specify the filling value such as $-1$ as shown below.
 -->
 
-Áp dụng vào một tensor $n$-chiều $X$, nó sẽ đặt `X[i, len[i]:, :, ..., :] = 0`.
-Ta cũng có thể đặt một giá trị điền khác, ví dụ $-1$, như dưới đây.
+Áp dụng vào tensor $n$-chiều $X$, toán tử sẽ gán `X[i, len[i]:, :, ..., :] = 0`.
+Ta cũng có thể đặt giá trị mặt nạ khác, ví dụ như $-1$ dưới đây.
 
 ```{.python .input  n=8}
 X = np.ones((2, 3, 4))
@@ -334,9 +334,9 @@ So our customized loss function accepts an additional `valid_len` argument to ig
 
 
 Bây giờ ta có thể lập trình phiên bản có mặt nạ của hàm mất mát entropy chéo softmax.
-Lưu ý rằng hàm mất mát Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
+Lưu ý rằng hàm mất mát trong Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
 Để loại bỏ một vài mẫu nhất định, ta có thể đặt trọng số cho chúng bằng 0.
-Vì vậy, hàm mất mát tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
+Vì vậy, hàm mất mát có mặt nạ sẽ có thêm đối số `valid_len` cho toán tử `SequenceMask` để gán giá trị 0 cho trọng số của các mẫu ta muốn loại bỏ.
 
 
 ```{.python .input  n=9}
@@ -357,7 +357,7 @@ For a sanity check, we create identical three sequences, keep 4 elements for the
 Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
-Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
+Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng.
 Khi đó, giá trị mất mát của chuỗi đầu tiên phải lớn gấp 2 lần so với chuỗi thứ hai, còn giá trị mất mát của chuỗi cuối cùng phải bằng 0.
 
 
@@ -381,7 +381,7 @@ loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 During training, if the target sequence has length $n$, we feed the first $n-1$ tokens into the decoder as inputs, and the last $n-1$ tokens are used as ground truth label.
 -->
 
-Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
+Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên làm đầu vào bộ giải mã, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
 
 
 ```{.python .input  n=11}
@@ -419,8 +419,7 @@ Next, we create a model instance and set hyper-parameters.
 Then, we can train the model.
 -->
 
-Tiếp theo, ta tạo ra một thực thể mô hình và đặt các siêu tham số.
-Sau đó, ta có thể huấn luyện mô hình.
+Tiếp theo, ta tạo một thực thể của mô hình, đặt các siêu tham số rồi huấn luyện.
 
 ```{.python .input  n=15}
 embed_size, num_hiddens, num_layers, dropout = 32, 32, 2, 0.0
@@ -449,15 +448,15 @@ As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we feed the 
 But the input token for a later timestep is the predicted token from the previous timestep.
 -->
 
-Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo một chuỗi đầu ra.
-Như được minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta đưa cùng token "&lt;bos&gt;" vào bộ giải mã giống như quá trình huấn luyện tại bước thời gian 0.
-Nhưng token đầu vào cho bước thời gian sau đó sẽ là token được dự đoán từ bước thời gian trước.
+Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo chuỗi đầu ra.
+Như minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta cũng đưa token bắt đầu câu "&lt;bos&gt;" vào bộ giải mã tại bước thời gian 0 giống quá trình huấn luyện. <!--hm lạ nhỉ hàm huấn luyện `train_s2s_ch9` phía trên không thấy chỗ nào có <bos> cả. -->
+Token đầu vào cho các bước thời gian sau sẽ là token được dự đoán từ bước thời gian trước nó.
 
 <!--
 ![Sequence to sequence model predicting with greedy search](../img/seq2seq_predict.svg)
 -->
 
-![Quá trình dự đoán của mô hình chuỗi sang chuỗi với tìm kiếm tham lam](../img/seq2seq_predict.svg)
+![Quá trình dự đoán của mô hình chuỗi sang chuỗi sử dụng tìm kiếm tham lam](../img/seq2seq_predict.svg)
 :label:`fig_seq2seq_predict`
 
 
@@ -528,9 +527,9 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 3. If we do not use the `SequenceMask` in the loss function, what may happen?
 -->
 
-1. Nêu một vài ứng dụng khác của seq2seq bên cạnh dịch máy nơ-ron.
-2. Điều gì sẽ xảy ra nếu chuỗi đầu vào trong ví dụ của phần này dài hơn?
-3. Điều gì có thể xảy ra nếu ta không sử dụng `SequenceMask` trong hàm mất mát?
+1. Nêu một vài ứng dụng khác của seq2seq ngoài dịch máy.
+2. Nếu chuỗi đầu vào trong các ví dụ trên dài hơn thì sao?
+3. Điều gì có thể xảy ra nếu không sử dụng `SequenceMask` trong hàm mất mát?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -554,19 +553,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
+* Phạm Minh Đức
+* Nguyễn Duy Du
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-* Phạm Minh Đức
-<!-- Phần 4 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
