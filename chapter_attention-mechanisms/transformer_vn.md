@@ -69,7 +69,7 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 On the flip side, Transformer differs from the seq2seq with attention model in the following:
 -->
 
-Mặt khác, Transformer khác với seq2seq với mô hình chú ý như sau:
+Mặt khác, Transformer khác với mô hình seq2seq áp dụng cơ chế tập trung như sau:
 
 <!--
 1. **Transformer block**: a recurrent layer in seq2seq is replaced by a *Transformer block*. 
@@ -80,19 +80,18 @@ are processed by two "add and norm" layer that contains a residual structure and
 3. **Position encoding**: since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
 -->
 
-1. **Khối biến áp**: một tầng truy hồi trong seq2seq được thay thế bằng *Khối biến áp*.
-Khối này chứa một tầng *tập trung đa đầu* và một mạng có hai lớp *mạng truyền xuôi theo vị trí* cho bộ mã hóa.
-Đối với bộ giải mã, một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
-2. **Thêm và chuẩn**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí,
-được xử lý bởi hai tầng "thêm và định mức" có chứa cấu trúc còn lại và tầng *chuẩn hóa tầng*.
-3. **Mã hóa vị trí**: do tầng tự tập trung không phân biệt thứ tự mục trong một chuỗi, nên một tầng mã hóa vị trí được sử dụng để thêm thông tin tuần tự vào từng mục trình tự.
+1. **Khối Transformer**: một tầng truy hồi trong seq2seq được thay bằng một *Khối Transformer*.
+Khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* hai tầng trong bộ mã hóa.
+Đối với bộ giải mã, thêm một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
+2. **Cộng và chuẩn**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và điều chuẩn" gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng*.
+3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự mục trong một chuỗi, nên một tầng mã hóa vị trí được sử dụng để thêm thông tin thứ tự vào từng mục trong chuỗi.
 
 
 <!--
 In the rest of this section, we will equip you with each new component introduced by Transformer, and get you up and running to construct a machine translation model.
 -->
 
-Trong phần còn lại của phần này, chúng tôi sẽ trang bị cho bạn từng thành phần mới được giới thiệu bởi Transformer và giúp bạn bắt đầu và chạy để xây dựng mô hình dịch máy.
+Trong phần còn lại, chúng tôi sẽ trang bị cho bạn từng thành phần mới được giới thiệu trong Transformer để giúp bạn có thể bắt đầu xây dựng một mô hình dịch máy.
 
 ```{.python .input  n=1}
 import d2l
@@ -115,16 +114,16 @@ As we illustrate in :numref:`fig_self_attention`, self-attention outputs a same-
 Compared with a recurrent layer, output items of a self-attention layer can be computed in parallel and, therefore, it is easy to obtain a highly-efficient implementation.
 -->
 
-Trước khi thảo luận về tầng *tập trung đa đầu*, chúng ta hãy nhanh chóng thể hiện kiến trúc *tự tập trung*.
-Mô hình tự tập trung là một mô hình tập trung bình thường, với truy vấn, khóa và giá trị của nó được sao chép giống hệt nhau từ mỗi mục của các đầu vào tuần tự.
-Như chúng tôi minh họa trong :numref:`fig_self_attention`, tự tập trung xuất ra một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
-So với lớp lặp lại, các mục đầu ra của tầng tự tập trung có thể được tính toán song song và do đó, dễ dàng có được việc triển khai hiệu quả cao.
+Trước khi thảo luận về tầng *tập trung đa đầu*, hãy cùng giải thích nhanh qua về kiến trúc *tự tập trung*.
+Cũng giống như một mô hình tập trung bình thường, mô hình tự tập trung có câu truy vấn, khóa và giá trị nhưng chúng được sao chép giống hệt nhau tại mỗi vị trí trong chuỗi đầu vào.
+Như chúng tôi minh họa trong :numref:`fig_self_attention`, tầng tự tập trung trả về một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
+So với tầng truy hồi, các mục đầu ra của tầng tự tập trung có thể được tính toán song song, và do đó dễ dàng có thể xây dựng các đoạn mã hiệu năng cao.
 
 <!--
 ![Self-attention architecture.](../img/self-attention.svg)
 -->
 
-![Kiến trúc self-attention](../img/self-attention.svg)
+![Kiến trúc tự tập trung.](../img/self-attention.svg)
 :label:`fig_self_attention`
 
 
@@ -134,9 +133,9 @@ For each head, before feeding into the attention layer, we project the queries, 
 The outputs of these $h$ attention heads are concatenated and then processed by a final dense layer.
 -->
 
-Tầng *tập trung đa đầu* bao gồm $h$ các tầng tự tập trung song song, mỗi tầng được gọi là *đầu*.
-Đối với mỗi đầu, trước khi đưa vào lớp tập trung, chúng tôi chiếu các truy vấn, khóa và giá trị với ba lớp dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$, và $p_v$,
-Đầu ra của các đầu chú ý $h$ này được nối và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
+Tầng *tập trung đa đầu* bao gồm $h$ tầng tự tập trung song song, mỗi tầng được gọi là *đầu*.
+Tại mỗi đầu, trước khi đưa vào tầng tập trung, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
+Đầu ra của $h$ đầu tập trung này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
 
 
 <!--
@@ -855,6 +854,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 *
