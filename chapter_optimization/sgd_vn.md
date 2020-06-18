@@ -399,9 +399,9 @@ Now let us analyze some choices for $\eta_t$.
 -->
 
 Trong đó $r^2 := \|\mathbf{w}_0 - \mathbf{w}^*\|^2$ là khoảng cách giới hạn giữa giá trị khởi tạo của các tham số và kết quả cuối cùng.
-Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách giữa giá trị ban đầu với giá trị tối ưu $r$.
-Chú ý rằng giới hạn trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$.
-Kí hiệu trên là do $\bar{\mathbf{w}}$ chính là bước tối ưu được làm mượt.
+Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách giữa giá trị ban đầu so với giá trị tối ưu $r$.
+Chú ý rằng giới hạn ở trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$.
+Kí hiệu này là do $\bar{\mathbf{w}}$ chính là bước tối ưu được làm mượt.
 Hãy cùng phân tích một số cách lựa chọn $\eta_t$.
 
 <!--
@@ -414,12 +414,12 @@ Whenever we want to have a good solution for *any* time $T$ we can pick $\eta = 
 This costs us an extra logarithmic factor and it leads to an upper bound of the form $\mathcal{O}(\log T / \sqrt{T})$.
 -->
 
-* **Thời điểm kết thúc xác định**.
-Với mỗi $r, L$ và $T$ xác định ở bất cứ thời điểm nào ta có thể chọn $\eta = r/L \sqrt{T}$.
-Biểu thức trên dẫn tới giới hạn trên $r L (1 + 1/T)/2\sqrt{T} < rL/\sqrt{T}$.
+* **Thời điểm xác định**.
+Với mỗi $r, L$ và $T$ xác định ta có thể chọn $\eta = r/L \sqrt{T}$.
+Biểu thức này dẫn tới giới hạn trên $r L (1 + 1/T)/2\sqrt{T} < rL/\sqrt{T}$.
 Có nghĩa là hàm hội tụ với tốc độ $\mathcal{O}(1/\sqrt{T})$ đến nghiệm tối ưu.
-* **Thời điểm kết thúc chưa xác định**.
-Bất cứ khi nào ta muốn một nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
+* **Thời điểm chưa xác định**.
+Khi ta muốn một nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
 Cách làm trên tốn thêm một thừa số logarit, dẫn tới giới hạn trên có dạng $\mathcal{O}(\log T / \sqrt{T})$.
 
 <!--
@@ -429,10 +429,10 @@ we can design even more rapidly converging optimization schedules.
 In fact, an exponential decay in $\eta$ leads to a bound of the form $\mathcal{O}(\log T / T)$.
 -->
 
-Chú ý rằng đối với những hàm mất mát lồi rõ rệt
+Chú ý rằng đối với những hàm mất mát lồi tuyệt đối
 $l(\mathbf{x}, \mathbf{w}') \geq l(\mathbf{x}, \mathbf{w}) + \langle \mathbf{w}'-\mathbf{w}, \partial_\mathbf{w} l(\mathbf{x}, \mathbf{w}) \rangle + \frac{\lambda}{2} \|\mathbf{w}-\mathbf{w}'\|^2$
 ta có thể thiết kế tiến trình tối ưu nhằm tăng tốc độ hội tụ nhanh hơn nữa.
-Trong thực tế, sự suy giảm theo cấp số mũ của $\eta$ dẫn đến giới hạn có dạng $\mathcal{O}(\log T / T)$.
+Thực tế, sự suy giảm theo cấp số mũ của $\eta$ dẫn đến giới hạn có dạng $\mathcal{O}(\log T / T)$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
