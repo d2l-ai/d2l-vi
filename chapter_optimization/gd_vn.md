@@ -316,7 +316,9 @@ We can see that after 20 steps the value of $\mathbf{x}$ approaches its minimum 
 Progress is fairly well-behaved albeit rather slow.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ quan sát quỹ đạo của biến tối ưu hóa $\mathbf{x}$ với tốc độ học $\eta = 0.1$.
+Chúng ta có thể thấy rằng sau 20 bước, giá trị $\mathbf{x}$ đã đạt cực tiểu tại $[0, 0]$.
+Quá trình khá tốt mặc dù hơi chậm.
 
 
 ```{.python .input  n=15}
@@ -339,7 +341,7 @@ show_trace_2d(f, train_2d(gd))
 ## Adaptive Methods
 -->
 
-## *dịch đoạn phía trên*
+## Các phương pháp thích nghi
 
 <!--
 As we could see in :numref:`section_gd-learningrate`, getting the learning rate $\eta$ "just right" is tricky.
@@ -351,21 +353,26 @@ While these methods cannot be applied to deep learning directly due to the compu
 they provide useful intuition into how to design advanced optimization algorithms that mimic many of the desirable properties of the algorithms outlined below.
 -->
 
-*dịch đoạn phía trên*
-
+Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn tốc độ học $\eta$ "vừa đủ" rất khó.
+Nếu chọn giá trị quá nhỏ, chúng ta sẽ không thấy sự tiến bộ.
+Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất thậm chí nó sẽ phân kỳ.
+Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước?
+Các phương pháp bậc hai không chỉ nhìn vào giá trị và gradient của hàm mục tiêu mà nó còn nhìn vào "độ cong" của hàm, từ đó có thể trợ giúp trong trường hợp này.
+Trong khi những phương pháp này không thể được áp dụng vào học sâu một cách trực tiếp do chi phí tính toán lớn, chúng lại đưa ra những trực giác hữu ích trong việc làm sao để thiết kế các thuật toán tối ưu hóa tiến bộ, thứ có thể bắt chước nhiều tính chất đáng mong muốn của các thuật toán được chỉ ra dưới đây.
 
 <!--
 ### Newton's Method
 -->
 
-### *dịch đoạn phía trên*
+### Phương pháp Newton
 
 <!--
 Reviewing the Taylor expansion of $f$ there is no need to stop after the first term.
 In fact, we can write it as 
 -->
 
-*dịch đoạn phía trên*
+Xem lại mở rộng Taylor của $f$, ta không cần phải dừng ngay sau số hạng đầu tiên.
+Trên thực tế, ta có thể viết lại như sau
 
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \frac{1}{2} \mathbf{\epsilon}^\top \nabla \nabla^\top f(\mathbf{x}) \mathbf{\epsilon} + \mathcal{O}(\|\mathbf{\epsilon}\|^3).$$
@@ -380,17 +387,23 @@ Furthermore it may be too expensive to compute via backprop as we would need to 
 For now let us ignore such considerations and look at what algorithm we'd get. 
 -->
 
-*dịch đoạn phía trên*
+Để tránh việc kí hiệu vướng víu, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
+Đây là ma trận $d \times d$. Với số $d$ nhỏ và các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
+Nhưng với các mạng sâu, mặc khác, $H_f$ có thể cực lớn, do chi phí lưu trữ $\mathcal{O}(d^2)$ giá trị.
+Hơn nữa nó có thể quá tốn chi phí tính toán thông qua việc lan truyền ngược khi chúng ta muốn áp dụng việc này vào đồ thị gọi lan truyền ngược.
+Hiện tại ta hãy bỏ qua những điểm lưu ý đó và nhìn vào thuật toán mà ta có được.
+
 
 <!--
 After all, the minimum of $f$ satisfies $\nabla f(\mathbf{x}) = 0$.
 Taking derivatives of :eqref:`gd-hot-taylor` with regard to $\mathbf{\epsilon}$ and ignoring higher order terms we arrive at 
 -->
 
-*dịch đoạn phía trên*
+Suy cho cùng, cực tiểu của $f$ sẽ thỏa $\nabla f(\mathbf{x}) = 0$.
+Lấy các đạo hàm của :eqref:`gd-hot-taylor` theo  $\mathbf{\epsilon}$ và bỏ qua các số hạng bậc cao ta thu được
 
 
-$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ and hence } 
+$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và do đó } 
 \mathbf{\epsilon} = -H_f^{-1} \nabla f(\mathbf{x}).$$
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -677,7 +690,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 5 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 6 -->
 * 
