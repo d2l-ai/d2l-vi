@@ -305,7 +305,7 @@ For $x \to -\infty$ it asymptotes to $0$, however there is no $x$ for which $f(x
 ### Convex Functions and Sets
 -->
 
-### Các hàm số lồi và tập hợp
+### Hàm số và Tập hợp Lồi
 
 <!--
 Convex functions define convex sets as *below-sets*.
