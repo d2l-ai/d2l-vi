@@ -35,7 +35,7 @@ In this case it would be nice to have a means of *resetting* our internal state 
 * Ta có thể gặp tình huống mà những quan sát xuất hiện sớm có ảnh hưởng lớn đến việc dự đoán toàn bộ những quan sát trong tương lai.
 Xét một ví dụ có chút cường điệu, trong đó quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu là kiểm tra xem liệu giá trị tổng kiểm đó có đúng hay không tại cuối chuỗi.
 Trong trường hợp này, ảnh hưởng của token đầu tiên là tối quan trọng.
-Do đó ta muốn có cơ chế  để lưu trữ những thông tin ban đầu quan trọng trong *ô nhớ*.
+Do đó ta muốn có cơ chế để lưu trữ những thông tin ban đầu quan trọng trong *ô nhớ*.
 Nếu không, ta phải gán một giá trị gradient cực lớn cho quan sát ban đầu, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
 * Một tình huống khác là một vài ký hiệu không chứa thông tin phù hợp.
 Ví dụ, khi phân tích một trang web, ta có thể gặp các mã HTML không giúp ích gì cho việc xác định thông tin được truyền tải.
