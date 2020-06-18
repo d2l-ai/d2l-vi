@@ -36,7 +36,7 @@ recurrent neural networks and modern practices for such sequence to sequence lea
 -->
 
 Trên thực tế, phần lớn các bài toán học chuỗi như nhận dạng giọng nói tự động, chuyển đổi văn bản thành giọng nói và dịch máy, đều có đầu vào và đầu ra là các chuỗi với chiều dài bất kì.
-Cuối cùng, ta sẽ lấy ví dụ bài toán dịch máy để giới thiệu kiến trúc mã hóa - giải mã (*encoder-decoder*) dựa trên mạng nơ-ron truy hồi cùng các kĩ thuật hiện đại để giải quyết bài toán học từ chuỗi sang chuỗi.
+Cuối cùng, ta sẽ lấy ví dụ bài toán dịch máy để giới thiệu kiến trúc mã hóa - giải mã (*encoder-decoder*) dựa trên mạng nơ-ron truy hồi cùng các kỹ thuật hiện đại để giải quyết bài toán học từ chuỗi sang chuỗi.
 
 ```toc
 :maxdepth: 2
