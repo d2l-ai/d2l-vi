@@ -249,7 +249,7 @@ Nếu các giá trị trong cổng cập nhật $\mathbf{Z}_t$ bằng $1$, chún
 Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, tương đương với việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc.
 Ngược lại, nếu $\mathbf{Z}_t$ gần giá trị $0$, trạng thái ẩn $\mathbf{H}_t$ sẽ gần với trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$.
 Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và nắm bắt tốt hơn sự phụ thuộc xa trong chuỗi thời gian.
-Nói tóm lại, các mạng GRU có hai tính chất nổi bật như sau:
+Nói tóm lại, các mạng GRU có hai tính chất nổi bật sau:
 
 <!--
 * Reset gates help capture short-term dependencies in time series.
