@@ -651,7 +651,7 @@ Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient n
 * Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen).
 * Hàm khả vi hai lần là lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi.
 * Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực hành, ta chỉ việc thêm cho chúng một mức phạt vào hàm mục tiêu.
-* Các phép chiếu ánh xạ đến các điểm trong tập (lồi) tới gần điểm gốc nhất.
+* Các phép chiếu ánh xạ đến các điểm trong tập (lồi) mà nằm gần điểm gốc nhất.
 
 <!--
 ## Exercises
