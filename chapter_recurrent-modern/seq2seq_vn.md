@@ -259,7 +259,7 @@ class Seq2SeqDecoder(d2l.Decoder):
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
-Ta tạo bộ giải mã với cùngcác siêu tham số như ở bộ mã hoá.
+Ta tạo bộ giải mã với cùng các siêu tham số như ở bộ mã hoá.
 Có thể thấy kích thước đầu ra được thay đổi thành (kích thước batch, độ dài chuỗi, kích thước bộ từ vựng).
 
 
