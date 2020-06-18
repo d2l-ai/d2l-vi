@@ -56,7 +56,7 @@ Nhiều phương pháp đã được đề xuất để giải quyết những v
 Một trong những phương pháp ra đời sớm nhất là Bộ nhớ ngắn hạn dài (*Long Short Term Memory - LSTM*) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
 Nút Truy hồi có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường có chất lượng tương đương và tính toán nhanh hơn đáng kể.
 Tham khảo :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
-Trong chương này, ta sẽ bắt đầu với GRU do đơn giản hơn.
+Trong chương này, ta sẽ bắt đầu với GRU do nó đơn giản hơn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
