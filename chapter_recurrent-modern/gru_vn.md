@@ -109,7 +109,7 @@ The output is given by a fully connected layer with a sigmoid as its activation 
 -->
 
 Ta bắt đầu bằng việc thiết kế các cổng tạo ra các biến này.
-:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào là bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{H}_{t-1}$.
+:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào ở bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn ở bước thời gian trước đó $\mathbf{H}_{t-1}$.
 Đầu ra được tạo bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
 
 <!--
