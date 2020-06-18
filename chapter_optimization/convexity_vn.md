@@ -571,7 +571,7 @@ In practice this turns out to be much more robust than exact satisfaction.
 Furthermore, for nonconvex problems many of the properties that make the exact approach so appealing in the convex case (e.g., optimality) no longer hold.
 -->
 
-Nhìn chung, thêm các mức phạt vào là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ.
+Nhìn chung, thêm các lượng phạt vào là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ.
 Trong thực tế, điều này trở nên vững chắc hơn rất nhiều khi so với thỏa mãn chuẩn xác.
 Hơn nữa, với các bài toán không lồi, nhiều tính chất khiến hướng tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) sẽ không còn.
 
