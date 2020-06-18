@@ -149,7 +149,7 @@ and $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Therefore, the output for e
 -->
 
 Giả sử rằng chiều cho truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
-Sau đó, với mỗi đầu $i=1,\ldots, h$, chúng ta có thể đào tạo các tham số có thể học được
+Khi đó, tại mỗi đầu $i=1,\ldots, h$, chúng ta có thể học các tham số 
 $\mathbf W_q^{(i)}\in\mathbb R^{p_q\times d_q}$,
 $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
 và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra cho mỗi đầu là
@@ -171,9 +171,9 @@ The weights of this dense layer can be denoted by $\mathbf W_o\in\mathbb R^{d_o\
 As a result, the multi-head attention output will be
 -->
 
-Sau đó, đầu ra có độ dài $p_v$ từ mỗi đầu tập trung trong số $h$ các đầu được nối với nhau thành đầu ra có độ dài $h p_v$, sau đó được chuyển qua tầng dày đặc cuối cùng với các nút ẩn $d_o$.
+Sau đó, đầu ra có độ dài $p_v$ từ mỗi đầu tập trung trong số $h$ các đầu được nối với nhau thành đầu ra có độ dài $h p_v$, sau đó được chuyển qua tầng dày đặc cuối cùng với $d_o$ nút ẩn.
 Các trọng số của tầng dày đặc này có thể được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
-Do đó, đầu ra tập trung đa đầu sẽ là
+Do đó, đầu ra tại tầng tập trung đa đầu sẽ là
 
 
 $$\mathbf o = \mathbf W_o \begin{bmatrix}\mathbf o^{(1)}\\\vdots\\\mathbf o^{(h)}\end{bmatrix}.$$
@@ -186,8 +186,8 @@ In addition, since the multi-head attention keeps the same dimensionality betwee
 -->
 
 Bây giờ chúng ta có thể lập trình tập trung đa đầu.
-Giả sử rằng tập trung đa đầu chứa các đầu số `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ giống nhau cho các lớp dày đặc của truy vấn, khóa và giá trị.
-Ngoài ra, do tập trung đa đầu giữ cùng một chiều giữa đầu vào và đầu ra của nó, chúng tôi cũng có kích thước đặc trưng đầu ra $d_o =$ `num_hiddens`.
+Giả sử rằng tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
+Ngoài ra, do tập trung đa đầu giữ nguyên số chiều giữa đầu vào và đầu ra, ta cũng có kích thước đặc trưng đầu ra là $d_o =$ `num_hiddens`.
 
 
 ```{.python .input  n=2}
@@ -236,7 +236,7 @@ class MultiHeadAttention(nn.Block):
 Here are the definitions of the transpose functions `transpose_qkv` and `transpose_output`, which are the inverse of each other.
 -->
 
-Dưới đây là các định nghĩa của các hàm chuyển vị `transpose_qkv` và` transposeDefput`, là các nghịch đảo của nhau.
+Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và` transposeDefput` là nghịch đảo của nhau.
 
 
 ```{.python .input  n=3}
@@ -269,8 +269,8 @@ Let us test the `MultiHeadAttention` model in the a toy example. Create a multi-
 the output will share the same batch size and sequence length as the input, but the last dimension will be equal to the `num_hiddens` $= 100$.
 -->
 
-Hãy để chúng tôi kiểm tra mô hình `MultiHeadAttention` trong ví dụ về đồ chơi. Tạo ra một tập trung đa đầu với kích thước ẩn $d_o = 100$,
-đầu ra sẽ chia sẻ cùng kích thước batch và độ dài chuỗi như đầu vào, nhưng kích thước cuối cùng sẽ bằng với `num_hiddens` $= 100$.
+Hãy cùng kiểm tra mô hình `MultiHeadAttention` qua một ví dụ đơn giản. Tạo ra một tập trung đa đầu với kích thước ẩn $d_o = 100$,
+đầu ra sẽ chia sẻ cùng kích thước batch và độ dài chuỗi với đầu vào, nhưng chiều cuối cùng sẽ có kích thước bằng với `num_hiddens` $= 100$.
 
 
 ```{.python .input  n=4}
