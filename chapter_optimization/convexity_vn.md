@@ -682,7 +682,7 @@ Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient n
 3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi.
 4. Hãy chứng minh rằng chuẩn hóa của hàm softmax là lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$.
 5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$.
-6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một vài ma trận $\mathbf{M}$.
+6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó.
 7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một vài $\xi \in [0, \epsilon]$.
 8. Cho vector $\mathbf{w} \in \mathbb{R}^d$ với $\|\mathbf{w}\|_1 > 1$, hãy tính phép chiếu lên khối cầu đơn vị $\ell_1$.
     * Như một bước trung gian viết ra mục tiêu bị phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$.
