@@ -539,7 +539,7 @@ For our purposes it is sufficient to know that the saddlepoint of $L$ is where t
 ### Penalties
 -->
 
-### Các mức phạt
+### Lượng phạt
 
 <!--
 One way of satisfying constrained optimization problems at least approximately is to adapt the Lagrange function $L$.
