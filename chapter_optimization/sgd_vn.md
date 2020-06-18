@@ -442,7 +442,7 @@ In particular, for a finite sample size we simply argued that the discrete distr
 -->
 
 Tới phần này, ta đi khá nhanh và mơ hồ khi bàn luận về hạ gradient ngẫu nhiên.
-Ta thừa nhận rằng ta lấy ra các đối tượng $x_i$, đặc trưng bởi nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
+Ta thừa nhận rằng ta lấy các đối tượng $x_i$, đặc trưng bởi nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
 Cụ thể, với kích thước mẫu hữu hạn, dễ dàng chỉ ra rằng ta có thể áp dụng SGD lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
 
 <!--
@@ -460,8 +460,9 @@ Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào ph�
 Hoá ra cách làm đó ở phần này khá chính đáng (xem phần bài tập để cùng thảo luận chi tiết).
 Phiền hà hơn nữa là ở tất cả các cuộc thảo luận trước, ta không hề làm thế.
 Thay vào đó ta chỉ lặp qua tất cả các đối tượng đúng một lần.
-Để có thể hiểu được tại sao quá trình trên được ưa thích, hãy thử xét trường hợp ngược lại, ấy là khi ta lấy $n$ mẫu từ một phân phối rời rạc có hoàn lại.
-Xác suất chọn ngẫu nhiên được phần tử $i$ là $N^{-1}$. Do đó xác suất để chọn ít nhất một lần là
+Để có thể hiểu được tại sao quá trình trên được ưa chuộng, hãy thử xét trường hợp ngược lại khi ta lấy $n$ mẫu từ một phân phối rời rạc có hoàn lại.
+Xác suất chọn ngẫu nhiên được phần tử $i$ là $N^{-1}$.
+Do đó xác suất để chọn ít nhất một lần là
 
 
 $$P(\mathrm{choose~} i) = 1 - P(\mathrm{omit~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
@@ -476,9 +477,9 @@ Last note that repeated passes through the dataset traverse it in a *different* 
 -->
 
 Chứng minh tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng một lần là ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
-Điều này làm tăng phương sai và giảm hiệu quả của dữ liệu so với lấy mẫu không hoàn lại.
+Điều này gây tăng phương sai và giảm hiệu quả của dữ liệu so với lấy mẫu không hoàn lại.
 Do đó trong thực tế, ta thực hiện phương pháp không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
-Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu sẽ theo một thứ tự *khác* ngẫu nhiên.
+Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu, ta sẽ quét theo một thứ tự *khác* ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
