@@ -165,7 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
 |--------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
-| gated recurrent unit           | nút truy hồi có cổng      | |
+| gated recurrent unit           | nút hồi tiếp có cổng      | |
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | Gaussian noise                 | nhiễu Gauss                       |                                                                                            |
 | generalization error           | lỗi khái quát                     | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
@@ -360,7 +360,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                            | recall                                    |                                              |
 | receptive field (CNN)             | vùng tiếp nhận                            | [https://git.io/Jftwh](https://git.io/Jftwh) |
 | recognition                       | nhận dạng                                 |                                              |
-| recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
+| recurrent neural network          | mạng nơ-ron hồi tiếp                     |                                              |
 | rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | regressor                         | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
 | regularization                    | điều chuẩn                                |                                              |
