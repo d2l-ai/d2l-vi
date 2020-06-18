@@ -461,7 +461,7 @@ d2l.annotate('x', (-0.5, f(-0.5)), (-1.5, f(-0.5)))
 ## Constraints
 -->
 
-## Các ràng buộc
+## Ràng buộc
 
 <!--
 One of the nice properties of convex optimization is that it allows us to handle constraints efficiently.
