@@ -312,7 +312,7 @@ Convex functions define convex sets as *below-sets*.
 They are defined as
 -->
 
-Các hàm số lồi định nghĩa các tập hợp lồi như sau:
+Các hàm số lồi định nghĩa các tập hợp lồi là các *tập-dưới* (*below-sets*) như sau:
 
 
 $$S_b := \{x | x \in X \text{ and } f(x) \leq b\}.$$
