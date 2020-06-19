@@ -402,7 +402,7 @@ The code is significantly faster as it uses compiled operators rather than Pytho
 
 Trong Gluon, ta có thể gọi trực tiếp lớp `LSTM` trong mô-đun `rnn`.
 Lớp này gói gọn tất cả các chi tiết cấu hình mà ta đã lập trình một cách chi tiết ở trên.
-Mã nguồn sẽ chạy nhanh hơn đáng kể vì nó sử dụng các toán tử được biên dịch thay vì các toán tử Python cho nhiều tính toán mà ta đã nêu ra một cách chi tiết trước đây.
+Mã nguồn sẽ chạy nhanh hơn đáng kể vì nó sử dụng các toán tử đã được biên dịch thay vì các toán tử Python cho nhiều phép tính mà ta đã lập trình trước đây.
 
 ```{.python .input  n=10}
 lstm_layer = rnn.LSTM(num_hiddens)
@@ -420,7 +420,7 @@ Later we will encounter alternative models such as Transformers that can be used
 
 Trong nhiều trường hợp, các mô hình LSTM hoạt động tốt hơn một chút so với các mô hình GRU nhưng việc huấn luyện và thực thi các mô hình này là khá tốn kém do có kích thước trạng thái ẩn lớn hơn.
 LSTM là nguyên mẫu điển hình của một mô hình tự hồi quy biến tiềm ẩn có cơ chế kiểm soát trạng thái phức tạp.
-Nhiều biến thể đã được đề xuất qua từng năm, ví dụ như các kiến trúc đa tầng, các kết nối thặng dư hay các kiểu điều chuẩn khác nhau.
+Nhiều biến thể đã được đề xuất qua từng năm, ví dụ như các kiến trúc đa tầng, các kết nối phần dư hay các kiểu điều chuẩn khác nhau.
 Tuy nhiên, việc huấn luyện LSTM và các mô hình chuỗi khác (như GRU) là khá tốn kém do sự phụ thuộc dài hạn của chuỗi.
 Sau này ta sẽ gặp các mô hình thay thế như *Transformer* có thể được sử dụng trong một số trường hợp.
 
@@ -441,7 +441,7 @@ Sau này ta sẽ gặp các mô hình thay thế như *Transformer* có thể đ
 -->
 
 * LSTM có ba loại cổng để kiểm soát luồng thông tin: cổng đầu vào, cổng quên và cổng đầu ra.
-* Đầu ra tầng ẩn của LSTM bao gồm các trạng thái ẩn và các đơn vị nhớ. Chỉ các trạng thái ẩn được truyền tới tầng đầu ra. Các đơn vị nhớ hoàn toàn được sử dụng nội bộ trong tầng.
+* Đầu ra tầng ẩn của LSTM bao gồm các trạng thái ẩn và các ô nhớ. Chỉ các trạng thái ẩn là được truyền tới tầng đầu ra. Các ô nhớ hoàn toàn được sử dụng nội bộ trong tầng.
 * LSTM có thể đối phó với vấn đề tiêu biến và bùng nổ gradient.
 
 
@@ -461,10 +461,10 @@ why does the hidden state need to use the $\tanh$ function again to ensure that 
 -->
 
 
-1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, độ rối rắm và đầu ra.
+1. Thay đổi các siêu tham số. Quan sát và phân tích tác động đến thời gian chạy, perplexity và đầu ra.
 2. Cần thay đổi mô hình như thế nào để sinh ra các từ hoàn chỉnh thay vì các chuỗi ký tự?
 3. So sánh chi phí tính toán của GRU, LSTM và RNN thông thường với cùng một chiều ẩn. Đặc biệt chú ý đến chi phí huấn luyện và dự đoán.
-4. Dù các đơn vị ký ức tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
+4. Dù các ô nhớ tiềm năng đã đảm bảo rằng phạm vi giá trị nằm trong khoảng từ $-1$ đến $1$ bằng cách sử dụng hàm $\tanh$,
 tại sao trạng thái ẩn vẫn phải sử dụng tiếp hàm $\tanh$ để đảm bảo rằng phạm vi giá trị đầu ra nằm trong khoảng từ $-1$ đến $1$?
 5. Lập trình một mô hình LSTM để dự đoán chuỗi thời gian thay vì dự đoán chuỗi ký tự.
 
@@ -489,25 +489,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
-* Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
-<!-- Phần 4 -->
 * Nguyễn Duy Du
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Lê Khắc Hồng Phúc
 * Phạm Minh Đức
+* Phạm Hồng Vinh
