@@ -180,7 +180,8 @@ model = d2l.RNNModel(lstm_layer, len(vocab))
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
+
 
 <!--
 The actual invocation logic is identical to before.
@@ -188,7 +189,9 @@ The only difference is that we now instantiate two layers with LSTMs.
 This rather more complex architecture and the large number of epochs slow down training considerably.
 -->
 
-*dịch đoạn phía trên*
+Quá trình huấn luyện tương tự như trước đây.
+Sự khác biệt duy nhất là bây giờ chúng ta khởi tạo mô hình với hai tầng LSTM.
+Kiến trúc mô hình sẽ phức tạp hơn và quá trình huấn luyện sẽ chậm hơn đáng kể với nhiều epoch.
 
 
 ```{.python .input  n=8}
@@ -207,8 +210,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * There exist many different flavors of deep RNNs, such as LSTMs, GRUs, or regular RNNs. Conveniently these models are all available as parts of the `rnn` module in Gluon.
 * Initialization of the models requires care. Overall, deep RNNs require considerable amount of work (such as learning rate and clipping) to ensure proper convergence.
 -->
+* Trong các mạng nơ-ron truy hồi sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở cùng tầng và truyền tới bước thời gian hiện tại ở tầng kế tiếp.
+* Có nhiều lựa chọn khác nhau cho mạng RNN sâu, ví dụ LSTM, GRU hoặc là RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon.
+* Chúng ta cần chú ý tới việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học sẽ hội tụ.
 
-*dịch đoạn phía trên*
 
 <!--
 ## Exercises
@@ -223,7 +228,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. Would you want to combine sources of different authors when modeling text? Why is this a good idea? What could go wrong?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng chúng ta đã thảo luận ở :numref:`sec_rnn_scratch`.
+2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình.
+3. Tăng dữ liệu huấn luyện lên gồm nhiều cuốn sách. Hãy xem bạn có thể giảm độ hỗn loạn tới mức nào?
+4. Hãy thử kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản. Tại sao cách này lại là một ý tưởng hay? Hay cách này có vấn đề gì?
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -255,4 +264,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-*
+* Nguyễn Văn Quang
