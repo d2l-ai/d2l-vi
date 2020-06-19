@@ -153,7 +153,7 @@ If long short-term memory is used, the `state` list will also contain another el
 Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch 4 cùng số bước thời gian (độ dài chuỗi) 7.
 Giả sử đơn vị LSTM có 2 tầng ẩn và 16 nút ẩn.
 Đầu ra của bộ mã hoá sau khi thực hiện lượt truyền xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
-Nếu mạng nơ-ron truy hồi của bộ mã hoá là nút truy hồi có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn với kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+Nếu mạng nơ-ron hồi tiếp của bộ mã hoá là nút hồi tiếp có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn với kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
 Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ với cùng kích thước. 
 
 ```{.python .input  n=3}
