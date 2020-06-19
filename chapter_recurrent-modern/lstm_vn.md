@@ -16,17 +16,17 @@ Gated Recurrent Unit (GRU).
 Interestingly, LSTM's design is slightly more complex than GRU but predates GRU by almost two decades.
 -->
 
-Thách thức đối với việc lưu trữ những thông tin dài hạn và bỏ qua đầu vào ngắn hạn trong các mô hình biến ẩn đã tồn tại trong một thời gian dài.
-Một trong những phương pháp tiếp cận sớm nhất giải quyết vấn đề này là LSTM :cite:`Hochreiter.Schmidhuber.1997`.
-Nó có nhiều tính chất tương tự Nút Truy hồi có Cổng (GRU).
-Điều thú vị là thiết kế LSTM phức tạp hơn GRU một chút nhưng xuất hiện trước GRU gần hai thập kỷ.
+Thách thức đối với việc lưu trữ những thông tin dài hạn và bỏ qua đầu vào ngắn hạn trong các mô hình biến tiềm ẩn đã tồn tại trong một thời gian dài.
+Một trong những phương pháp tiếp cận sớm nhất để giải quyết vấn đề này là LSTM :cite:`Hochreiter.Schmidhuber.1997`.
+Nó có nhiều tính chất tương tự Nút Hồi tiếp có Cổng (GRU).
+Điều thú vị là thiết kế LSTM phức tạp hơn GRU một chút nhưng đã xuất hiện trước GRU gần hai thập kỷ.
 
 <!--
 Arguably it is inspired by logic gates of a computer.
 To control a memory cell we need a number of gates.
 One gate is needed to read out the entries from the cell (as opposed to reading any other cell).
 We will refer to this as the *output* gate.
-A second gate is needed to decide when to read data into the cell.
+A second gate is needed to decide when to read <!--read ?--> data into the cell.
 We refer to this as the *input* gate.
 Last, we need a mechanism to reset the contents of the cell, governed by a *forget* gate.
 The motivation for such a design is the same as before, namely to be able to decide when to remember and when to ignore inputs in the latent state via a dedicated mechanism.
@@ -34,10 +34,10 @@ Let us see how this works in practice.
 -->
 
 Có thể cho rằng thiết kế này được lấy cảm hứng từ các cổng logic trong máy tính.
-Để kiểm soát một ô nhớ chúng ta cần một số cổng.
+Để kiểm soát một ô nhớ chúng ta cần một số các cổng.
 Một cổng để đọc các thông tin từ ô nhớ đó (trái với việc đọc từ các ô khác).
 Chúng ta sẽ đề cập đến cổng này này như là *cổng đầu ra* (*output gate*).
-Một cổng thứ hai để quyết định khi nào cần đọc dữ liệu vào ô nhớ.
+Một cổng thứ hai để quyết định khi nào cần ghi dữ liệu vào ô nhớ.
 Chúng ta gọi cổng này là *cổng đầu vào* (*input gate*).
 Cuối cùng, chúng ta cần một cơ chế để thiết lập lại nội dung chứa trong ô nhớ, được chi phối bởi một *cổng quên* (*forget gate*).
 Động lực của thiết kế trên cũng tương tự như trước đây, đó là đưa ra quyết định khi nào cần nhớ và khi nào nên bỏ qua đầu vào trong trạng thái tiềm ẩn thông qua một cơ chế chuyên dụng.
@@ -47,7 +47,7 @@ Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực
 ## Gated Memory Cells
 -->
 
-## Các Ô Nhớ có Cổng
+## Ô nhớ được kiểm soát
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
@@ -56,7 +56,7 @@ Strictly speaking this is just a fancy version of a hidden state, engineered to 
 -->
 
 Ba cổng được giới thiệu trong LSTM đó là: cổng đầu vào, cổng quên, và cổng đầu ra.
-Bên cạnh đó chúng ta sẽ giới thiệu ô nhớ có kích thước giống như trạng thái ẩn.
+Bên cạnh đó chúng ta sẽ giới thiệu một ô nhớ có kích thước giống với trạng thái ẩn.
 Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái ẩn, được thiết kế để ghi lại các thông tin bổ sung.
 
 
@@ -76,7 +76,7 @@ These inputs are processed by a fully connected layer and a sigmoid activation f
 As a result, the three gates all output values in the range of $[0, 1]$. :numref:`lstm_0` illustrates the data flow for the input, forget, and output gates.
 -->
 
-Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào $\mathbf{X}_t$ ở bước thời gian hiện tại và trạng thái ẩn $\mathbf{H}_{t-1}$ ở bước thời gian trước đó.
+Tương tự như với GRU, dữ liệu được đưa vào các cổng LSTM là đầu vào ở bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn ở bước thời gian trước đó $\mathbf{H}_{t-1}$.
 Những đầu vào này được xử lý bởi một tầng kết nối đầy đủ và một hàm kích hoạt sigmoid để tính toán các giá trị của các cổng đầu vào, cổng quên, và cổng đầu ra.
 Kết quả là, tất cả các giá trị đầu ra tại ba cổng đều nằm trong khoảng $[0, 1]$. :numref:`lstm_0` minh hoạ luồng dữ liệu cho các cổng đầu vào, cổng quên, và cổng đầu ra.
 
@@ -99,7 +99,7 @@ Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích t
 Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian trước đó là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
 Vì thế, các cổng được định nghĩa như sau: cổng đầu vào là $\mathbf{I}_t \in \mathbb{R}^{n \times h}$,
 cổng quên là $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, và cổng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
-Chúng được tính như sau:
+Chúng được tính như sau: 
 
 $$
 \begin{aligned}
@@ -122,7 +122,7 @@ trong đó $\mathbf{W}_{xi}, \mathbf{W}_{xf}, \mathbf{W}_{xo} \in \mathbb{R}^{d 
 ### Candidate Memory Cell
 -->
 
-### Ô Ký ức Tiềm năng
+### Ô nhớ Tiềm năng
 
 <!--
 Next we design the memory cell.
@@ -132,7 +132,7 @@ This leads to the following equation at timestep $t$.
 -->
 
 Tiếp theo, chúng ta sẽ thiết kế một ô nhớ.
-Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô ký ức *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
 Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, nhưng sử dụng một hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
 Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
@@ -150,13 +150,13 @@ Here $\mathbf{W}_{xc} \in \mathbb{R}^{d \times h}$ and $\mathbf{W}_{hc} \in \mat
 A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 -->
 
-Ô ký ức tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
+Ô nhớ tiềm năng được mô tả ngắn gọn trong :numref:`lstm_1`.
 
 <!--
 ![Computation of candidate memory cells in LSTM. ](../img/lstm_1.svg)
 -->
 
-![Các phép tính toán trong ô ký ức tiềm năng của LSTM. ](../img/lstm_1.svg)
+![Các phép tính toán trong ô nhớ tiềm năng của LSTM. ](../img/lstm_1.svg)
 :label:`lstm_1`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -177,9 +177,9 @@ and the forget parameter $\mathbf{F}_t$ which addresses how much of the old memo
 Using the same pointwise multiplication trick as before, we arrive at the following update equation.
 -->
 
-Trong GRU, chúng ta có một cơ chế duy nhất để quản lý cả đầu vào và quá trình quên.
+Trong GRU, chúng ta chỉ có một cơ chế duy nhất để quản lý cả việc nhớ và quên.
 Trong LSTM, chúng ta có hai tham số, $\mathbf{I}_t$ điều chỉnh lượng dữ liệu mới cần lấy vào là bao nhiêu thông qua $\tilde{\mathbf{C}}_t$ và tham số quên $\mathbf{F}_t$ chỉ định nội dung cũ cần giữ lại trong ô nhớ $\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$ là bao nhiêu.
-Sử dụng cùng một cách tính nhân theo từng điểm (_pointwise_) như trước đây, chúng ta đi đến phương trình cập nhật như sau.
+Sử dụng cùng một phép nhân theo từng điểm (_pointwise_) như trước đây, chúng ta đi đến phương trình cập nhật như sau.
 
 
 $$\mathbf{C}_t = \mathbf{F}_t \odot \mathbf{C}_{t-1} + \mathbf{I}_t \odot \tilde{\mathbf{C}}_t.$$
@@ -192,7 +192,7 @@ We thus arrive at the flow diagram in :numref:`lstm_2`.
 -->
 
 Nếu giá trị ở cổng quên luôn xấp xỉ bằng $1$ và cổng đầu vào luôn xấp xỉ bằng $0$, thì giá trị ô nhớ trong quá khứ $\mathbf{C}_{t-1}$ sẽ được lưu lại qua thời gian và truyền tới bước thời gian hiện tại.
-Thiết kế này đã được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt các phụ thuộc dài hạn cho chuỗi thời gian tốt hơn.
+Thiết kế này được giới thiệu nhằm giảm bớt vấn đề tiêu biến gradient cũng như nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian tốt hơn.
 Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
 <!--
@@ -221,8 +221,8 @@ whereas for output $0$ we retain all the information only within the memory cell
 -->
 
 Cuối cùng, chúng ta cần phải xác định cách tính trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times h}$.
-Đây là nơi các cổng đầu ra được sử dụng.
-Trong LSTM, đây chỉ đơn giản là một phiên bản hàm kích hoạt $\tanh$ có cổng trong ô nhớ.
+Đây là nơi cổng đầu ra được sử dụng.
+Trong LSTM, đây chỉ đơn giản là một phiên bản có kiểm soát của hàm kích hoạt $\tanh$ trong ô nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
 Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
 Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
