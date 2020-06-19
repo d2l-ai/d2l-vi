@@ -5,7 +5,7 @@
 # Optimization and Deep Learning
 -->
 
-# *dịch tiêu đề phía trên*
+# Tối ưu và Học sâu
 
 <!--
 In this section, we will discuss the relationship between optimization and deep learning as well as the challenges of using optimization in deep learning.
@@ -16,14 +16,19 @@ By tradition and convention most optimization algorithms are concerned with *min
 If we ever need to maximize an objective there is a simple solution: just flip the sign on the objective.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và học sâu, cũng như những thách thức khi áp dụng các thuật toán tối ưu trong học sâu.
+Đối với một bài toán trong học sâu, chúng ta thường định nghĩa hàm mất mát đầu tiên.
+Sau đó ta có thể sử dụng một thuật toán tối ưu nào đó nhằm cực tiểu hoá hàm mất mát đó.
+Trong tối ưu, hàm mất mát thường được xem là hàm mục tiêu của bài toán tối ưu.
+Theo định nghĩa, đa số các hàm tối ưu thường quan tâm đến *cực tiểu hoá*.
+Tuy nhiên, nếu ta cần cực đại hoá một hàm mục tiêu nào đó, có một cách khá đơn giản: chỉ cần đổi dấu hàm mục tiêu.
 
 
 <!--
 ## Optimization and Estimation
 -->
 
-## *dịch tiêu đề phía trên*
+## Tối ưu và Ước lượng
 
 <!--
 Although optimization provides a way to minimize the loss function for deep learning, in essence, the goals of optimization and deep learning are fundamentally different.
@@ -36,7 +41,14 @@ To accomplish the latter we need to pay attention to overfitting in addition to 
 We begin by importing a few libraries with a function to annotate in a figure.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, về bản chất, mục đích của tối ưu và học sâu là khác nhau.
+Mối quan tâm của tối ưu chủ yếu nằm ở việc cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là việc tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
+Trong :numref:`sec_model_selection`, ta thảo luận chi tiết về sự khác nhau giữa các mục đích trên.
+Ví dụ, lỗi huấn luyện và lỗi khái quát nhìn chung là khác nhau. 
+Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyên nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
+Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) là giảm thiểu lỗi khái quát.
+Để thực hiện được điều này, ta cần chú ý đến hiện tượng quá khớp bên cạnh việc sử dụng thuật toán tối ưu nhằm giảm thiểu lỗi huấn luyện.
+Hãy bắt đầu bằng việc nhập một số thư viện với hàm để chú thích cho các hình đồ thị dưới đây.
 
 
 ```{.python .input  n=1}
@@ -57,7 +69,8 @@ The graph below illustrates the issue in some more detail.
 Since we have only a finite amount of data the minimum of the training error may be at a different location than the minimum of the expected error (or of the test error).
 -->
 
-*dịch đoạn phía trên*
+Đồ thị phía dưới mô tả chi tiết hơn về vấn đề nêu trên.
+Do ta chỉ có một lượng dữ liệu giới hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (hay lỗi trên tập kiểm tra).
 
 
 ```{.python .input  n=2}
@@ -323,8 +336,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
-
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Quang
 <!-- Phần 2 -->
 * 
 
