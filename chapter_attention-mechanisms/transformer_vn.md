@@ -865,7 +865,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Nguyễn Văn Quang
-7
 <!-- Phần 7 -->
 *
 
