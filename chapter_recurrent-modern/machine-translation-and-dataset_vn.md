@@ -14,7 +14,7 @@ Now let us have a look at a different application, machine translation, whose pr
 -->
 
 Đến nay ta đã thấy cách sử dụng mạng nơ-ron truy hồi cho các mô hình ngôn ngữ, mà ở đó ta dự đoán token tiếp theo khi biết tất cả token trước đó.
-Bây giờ ta sẽ xem xét một ứng dụng khác để dự đoán một chuỗi token thay vì một token đơn lẻ.
+Bây giờ ta sẽ xem xét một ứng dụng khác để dự đoán một chuỗi token thay vì chỉ một token đơn lẻ.
 
 <!--
 Machine translation (MT) refers to the automatic translation of a segment of text from one language to another.
