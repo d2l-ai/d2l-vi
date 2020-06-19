@@ -16,7 +16,7 @@ The hidden state of the encoder is used directly to initialize the decoder hidde
 -->
 
 Mô hình chuỗi sang chuỗi (*Sequence to Sequence -- seq2seq*) dựa trên kiến trúc mã hóa - giải mã để sinh ra chuỗi đầu ra từ chuỗi đầu vào như minh họa trong :numref:`fig_seq2seq`.
-Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron truy hồi (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
+Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron hồi tiếp (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
 Trạng thái ẩn của bộ giải mã được khởi tạo trực tiếp từ trạng thái ẩn của bộ mã hoá, giúp truyền thông tin từ bộ mã hoá tới bộ giải mã.
 
 <!--
