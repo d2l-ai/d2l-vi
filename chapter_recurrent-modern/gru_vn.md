@@ -39,7 +39,7 @@ Do đó ta muốn có cơ chế để lưu trữ những thông tin ban đầu q
 Nếu không, ta sẽ phải gán một giá trị gradient cực lớn cho quan sát ban đầu vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
 * Một tình huống khác là khi một vài ký hiệu không chứa thông tin phù hợp.
 Ví dụ, khi phân tích một trang web, ta có thể gặp các mã HTML không giúp ích gì cho việc xác định thông tin được truyền tải.
-Do đó, ta cũng muốn có cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
+Do đó, ta cũng muốn có cơ chế để *bỏ qua những ký hiệu như vậy* trong các biểu diễn trạng thái tiềm ẩn.
 * Ta cũng có thể gặp những khoảng ngắt giữa các phần trong một chuỗi.
 Ví dụ như những phần chuyển tiếp giữa các chương của một quyển sách, hay biến động giá cổ phiếu giữa hai thời điểm đóng cửa phiên giao dịch trước và mở cửa phiên tiếp theo. <!-- ví dụ này chuẩn nghĩa `khoảng ngắt` hơn -->
 Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về giá trị ban đầu.
