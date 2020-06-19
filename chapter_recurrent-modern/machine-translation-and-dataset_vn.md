@@ -110,7 +110,7 @@ To make the latter training faster, we sample the first `num_examples` sentences
 -->
 
 Khác với việc sử dụng ký tự làm token trong :numref:`sec_language_model`, ở đây một token là một từ hoặc dấu câu.
-Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` và `target` là hai danh sách token, với `source [i]` là câu thứ $i$ trong ngôn ngữ nguồn và `target [i]` là câu thứ $i$ trong ngôn ngữ đích.
+Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` và `target` là hai danh sách chứa các danh sách token, với `source [i]` là câu thứ $i$ trong ngôn ngữ nguồn và `target [i]` là câu thứ $i$ trong ngôn ngữ đích.
 Để việc huấn luyện sau này nhanh hơn, chúng ta chỉ lấy mẫu `num_examples` cặp câu đầu tiên.
 
 
