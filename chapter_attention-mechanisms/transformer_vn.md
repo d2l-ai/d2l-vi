@@ -552,7 +552,8 @@ d2l.plot(np.arange(100), Y[0, :, 4:8].T, figsize=(6, 2.5),
 ## Encoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Mã hoá
+
 
 <!--
 Armed with all the essential components of Transformer, let us first build a Transformer encoder block.
@@ -560,8 +561,10 @@ This encoder contains a multi-head attention layer, a position-wise feed-forward
 As shown in the code, for both of the attention model and the positional FFN model in the `EncoderBlock`, their outputs' dimension are equal to the `num_hiddens`.
 This is due to the nature of the residual block, as we need to add these outputs back to the original value during "add and norm".
 -->
-
-*dịch đoạn phía trên*
+Sau khi nắm được các thành phần thiết yếu của Transformer, chúng ta hãy cùng xây dựng một khối mã hoá cho Transformer.
+Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí, và hai khối kết nối "cộng và chuẩn hoá".
+Từ mã nguồn, ta thấy cả tầng tập trung và mạng FFN theo vị trí trong trong khối `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
+Điều này là do bản chất của khối phần dư khi chúng ta cộng các đầu ra này với giá trị ban đầu bằng khối "cộng và chuẩn hoá".
 
 
 ```{.python .input  n=12}
@@ -588,7 +591,9 @@ It means that the `num_hiddens` argument should be equal to the input size of th
 In our toy example below,  `num_hiddens` $= 24$, `ffn_num_hiddens` $=48$, `num_heads` $= 8$, and `dropout` $= 0.5$.
 -->
 
-*dịch đoạn phía trên*
+Nhờ kết nối phần dư trên, khối mã hoá này sẽ không thay đổi kích thước đầu vào.
+Có nghĩa là giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng của đầu vào.
+Trong mô hình đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$, và `dropout` $= 0.5$.
 
 
 ```{.python .input  n=13}
@@ -604,8 +609,10 @@ With the Transformer encoder, $n$ blocks of `EncoderBlock` stack up one after an
 Because of the residual connection, the embedding layer size $d$ is same as the Transformer block output size.
 Also note that we multiply the embedding output by $\sqrt{d}$ to prevent its values from being too small.
 -->
-
-*dịch đoạn phía trên*
+Bây giờ chúng ta hãy lập trình một bộ mã hoá Transformer đầy đủ.
+Với bộ mã hóa Transformer, $n$ khối `EncoderBlock` được xếp chồng lên nhau.
+Nhờ có kết nối phần dư, kích thước tầng embedding và đầu ra khối Transformer là $d$.
+Cũng lưu ý rằng chúng ta nhân đầu ra của embedding với $\sqrt{d}$ để tránh trường hợp giá trị này quá nhỏ.
 
 
 ```{.python .input  n=14}
@@ -635,7 +642,8 @@ Let us create an encoder with two stacked Transformer encoder blocks, whose hype
 Similar to the previous toy example's parameters, we add two more parameters `vocab_size` to be $200$ and `num_layers` to be $2$ here.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy tạo một bộ mã hoá với hai khối mã hoá Transformer có siêu tham số giống như phần trước.
+Tương tự như ví dụ trên, chúng ta sử dụng hai tham số `vocab_size` bằng $200$ và `num_layers` bằng $2$.
 
 
 ```{.python .input  n=15}
@@ -929,8 +937,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 6 -->
-*
-
+* Nguyễn Văn Quang
 <!-- Phần 7 -->
 * Nguyễn Văn Quang
 
