@@ -182,7 +182,7 @@ In machine translation, an example should contain a pair of source sentence and 
 These sentences might have different lengths, while we need same length examples to form a minibatch.
 -->
 
-Trong các mô hình ngôn ngữ, mỗi mẫu là một chuỗi có độ dài `num_steps` từ kho ngữ liệu, có thể là một phân đoạn của một câu hoặc trải dài trên nhiều câu.
+Trong các mô hình ngôn ngữ, mỗi mẫu là một chuỗi có độ dài `num_steps` từ kho ngữ liệu, mà có thể là một phân đoạn của một câu hoặc trải dài trên nhiều câu.
 Trong dịch máy, một mẫu bao gồm một cặp câu nguồn và câu đích.
 Những câu này có thể có độ dài khác nhau, trong khi đó ta cần các mẫu có cùng độ dài để tạo minibatch.
 
