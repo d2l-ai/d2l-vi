@@ -13,7 +13,7 @@ So far we see how to use recurrent neural networks for language models, in which
 Now let us have a look at a different application, machine translation, whose predict output is no longer a single token, but a list of tokens.
 -->
 
-Đến nay ta đã thấy cách sử dụng mạng nơ-ron truy hồi cho các mô hình ngôn ngữ, mà ở đó ta dự đoán token tiếp theo khi biết tất cả token trước đó.
+Đến nay ta đã thấy cách sử dụng mạng nơ-ron hồi tiếp cho các mô hình ngôn ngữ, mà ở đó ta dự đoán token tiếp theo khi biết tất cả token trước đó.
 Bây giờ ta sẽ xem xét một ứng dụng khác để dự đoán một chuỗi token thay vì chỉ một token đơn lẻ.
 
 <!--
