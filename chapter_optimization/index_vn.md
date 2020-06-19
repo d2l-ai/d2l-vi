@@ -26,7 +26,7 @@ to tune the hyperparameters in a targeted manner to improve the performance of d
 -->
 
 Tuy nhiên, để làm tốt, ta cần các kiến thức sâu hơn. 
-Các thuật toán tối ưu rất quan trọng trong học sâu. 
+Các giải thuật tối ưu rất quan trọng trong học sâu. 
 Một mặt, việc huấn luyện một mô hình học sâu phức tạp có thể mất hàng giờ, hàng ngày, thậm chí hàng tuần. 
 Hoạt động của thuật toán tối ưu trực tiếp ảnh hưởng đến hiệu quả và tốc độ huấn luyện. 
 Mặt khác, việc hiểu rõ nguyên lý của các thuật toán tối ưu khác nhau và vai trò của các tham số của chúng sẽ giúp ta điều chỉnh các siêu tham số một cách có chủ đích nhằm cải thiện hiệu suất của mô hình.
