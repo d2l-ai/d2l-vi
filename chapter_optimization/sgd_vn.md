@@ -12,7 +12,7 @@
 In this section, we are going to introduce the basic principles of stochastic gradient descent.
 -->
 
-Trong phần này ta sẽ giới thiệu các nguyên tắc cơ bản của hạ gradient ngẫu nhiên.
+Trong phần này chúng tôi sẽ giới thiệu các nguyên tắc cơ bản của hạ gradient ngẫu nhiên.
 
 ```{.python .input  n=2}
 %matplotlib inline
@@ -33,8 +33,8 @@ In deep learning, the objective function is usually the average of the loss func
 We assume that $f_i(\mathbf{x})$ is the loss function of the training dataset with $n$ examples, an index of $i$, and parameter vector of $\mathbf{x}$, then we have the objective function
 -->
 
-Trong học sâu, hàm mục tiêu thường là trung bình của các hàm mất mát cho mỗi mẫu trong tập huấn luyện.
-Giả sử rằng $f_i(\mathbf{x})$ là hàm mất mát của tập huấn luyện với $n$ mẫu, với chỉ số $i$ và vector tham số $\mathbf{x}$, thì ta có hàm mục tiêu
+Trong học sâu, hàm mục tiêu thường là trung bình của các hàm mất mát cho từng mẫu trong tập huấn luyện.
+Giả sử rằng $f_i(\mathbf{x})$ là hàm mất mát của tập huấn luyện có $n$ mẫu, với $i$ là chỉ số mẫu và vector tham số $\mathbf{x}$, thì ta có hàm mục tiêu
 
 
 $$f(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n f_i(\mathbf{x}).$$
@@ -55,7 +55,7 @@ If gradient descent is used, the computing cost for each independent variable it
 Therefore, when the model training dataset is large, the cost of gradient descent for each iteration will be very high.
 -->
 
-Nếu hạ gradient được sử dụng, chi phí tính toán cho mỗi biến lặp độc lập là $\mathcal{O}(n)$ sẽ tăng một cách tuyến tính với $n$.
+Nếu hạ gradient được sử dụng, chi phí tính toán cho mỗi vòng lặp độc lập là $\mathcal{O}(n)$ sẽ tăng một cách tuyến tính với $n$.
 
 <!--
 Stochastic gradient descent (SGD) reduces computational cost at each iteration.
@@ -63,9 +63,8 @@ At each iteration of stochastic gradient descent, we uniformly sample an index $
 and compute the gradient $\nabla f_i(\mathbf{x})$ to update $\mathbf{x}$:
 -->
 
-Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) làm giảm chi phí tính toán ở mỗi vòng lặp.
-Ở mỗi vòng lặp của hạ gradient ngẫu nhiên, ta lấy mẫu đều một chỉ số $i\in\{1,\ldots, n\}$ cho các mẫu dữ liệu một cách ngẫu nhiên,
-và tính toán gradient $\nabla f_i(\mathbf{x})$ để cập nhật $\mathbf{x}$:
+Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) sẽ giảm chi phí tính toán ở mỗi vòng lặp.
+Ở mỗi vòng lặp của thuật toán này, ta lấy ngẫu nhiên một mẫu dữ liệu có chỉ số $i\in\{1,\ldots, n\}$, và tính gradient $\nabla f_i(\mathbf{x})$ để cập nhật $\mathbf{x}$:
 
 
 $$\mathbf{x} \leftarrow \mathbf{x} - \eta \nabla f_i(\mathbf{x}).$$
@@ -78,6 +77,8 @@ We should mention that the stochastic gradient $\nabla f_i(\mathbf{x})$ is the u
 -->
 
 Ở đây, $\eta$ là tốc độ học.
+Ta có thể thấy rằng chi phí tính toán cho mỗi vòng lặp giảm từ $\mathcal{O}(n)$ của hạ gradient xuống còn hằng số $\mathcal{O}(1)$.
+Nên nhớ rằng gradient ngẫu nhiên $\nabla f_i(\mathbf{x})$ là một ước lượng không thiên vị của gradient $\nabla f(\mathbf{x})$.
 
 
 $$\mathbb{E}_i \nabla f_i(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n \nabla f_i(\mathbf{x}) = \nabla f(\mathbf{x}).$$
@@ -87,13 +88,13 @@ $$\mathbb{E}_i \nabla f_i(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n \nabla f_i(\m
 This means that, on average, the stochastic gradient is a good estimate of the gradient.
 -->
 
-Điều đó có nghĩa là, tính trung bình, gradient ngẫu nhiên là một ước lượng tốt của gradient.
+Do đó, tính trung bình thì gradient ngẫu nhiên là một ước lượng tốt của gradient.
 
 <!--
 Now, we will compare it to gradient descent by adding random noise with a mean of 0 to the gradient to simulate a SGD.
 -->
 
-Bây giờ, ta sẽ so sánh nó với hạ gradient bằng cách thêm vào nhiễu ngẫu nhiên với trung bình bằng một vào gradient để mô phỏng một SGD.
+Bây giờ, ta sẽ so sánh với hạ gradient bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient để mô phỏng một SGD.
 
 
 ```{.python .input  n=3}
