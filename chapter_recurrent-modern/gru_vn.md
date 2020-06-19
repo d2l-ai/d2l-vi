@@ -5,7 +5,7 @@
 # Gated Recurrent Units (GRU)
 -->
 
-# Nút Truy hồi có Cổng (GRU)
+# Nút Hồi tiếp có Cổng (GRU)
 :label:`sec_gru`
 
 <!--
@@ -14,7 +14,7 @@ In particular we found that long products of matrices can lead to vanishing or d
 Let us briefly think about what such gradient anomalies mean in practice:
 -->
 
-Trong phần trước, chúng ta đã thảo luận cách tính gradient trong mạng nơ-ron truy hồi.
+Trong phần trước, chúng ta đã thảo luận cách tính gradient trong mạng nơ-ron hồi tiếp.
 Cụ thể ta đã biết rằng tích của một chuỗi dài các ma trận có thể dẫn đến việc gradient tiêu biến hoặc bùng nổ.
 Hãy điểm qua các tình huống thực tế thể hiện rõ hai bất thường đó:
 
@@ -54,7 +54,7 @@ Due to its simplicity, let us start with the GRU.
 
 Nhiều phương pháp đã được đề xuất để giải quyết những vấn đề trên.
 Một trong những phương pháp ra đời sớm nhất là Bộ nhớ ngắn hạn dài (*Long Short Term Memory - LSTM*) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
-Nút Truy hồi có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường có chất lượng tương đương và tính toán nhanh hơn đáng kể.
+Nút Hồi tiếp có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường có chất lượng tương đương và tính toán nhanh hơn đáng kể.
 Tham khảo :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
 Trong chương này, ta sẽ bắt đầu với GRU do nó đơn giản hơn.
 
