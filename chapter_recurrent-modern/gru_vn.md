@@ -479,7 +479,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU`.
 2. Giả sử ta chỉ muốn sử dụng đầu vào tại bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t > t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
-3. Quan sát và phân tích tác động tới thời gian chạy, perplexity và các lời bài hát khi điều chỉnh các siêu tham số.
+3. Quan sát và phân tích tác động tới thời gian chạy, perplexity và các câu được sinh ra khi điều chỉnh các siêu tham số.
 4. Điều gì xảy ra khi lập trình GRU chỉ có cổng xoá và khi chỉ có cổng cập nhật.
 
 
