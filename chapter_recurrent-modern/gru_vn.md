@@ -145,7 +145,7 @@ We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform inpu
 -->
 
 Ở đây, $\mathbf{W}_{xr}, \mathbf{W}_{xz} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{b}_r, \mathbf{b}_z \in \mathbb{R}^{1 \times h}$ là các hệ số điều chỉnh.
-Ta sẽ sử dụng hàm sigmoid (như trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào sao cho chúng nằm trong khoảng $(0, 1)$.
+Ta sẽ sử dụng hàm sigmoid (như trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào nằm trong khoảng $(0, 1)$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
