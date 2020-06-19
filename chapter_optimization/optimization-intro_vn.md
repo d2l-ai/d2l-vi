@@ -255,7 +255,7 @@ Ví dụ, giả sử ta muốn tối thiểu hàm $f(x) = \tanh(x)$ và ta bắt
 Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
-Đây hoá ra là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU được ra mắt.
+Đây hoá ra là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi xuất hiện hàm kích hoạt ReLU.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
@@ -308,11 +308,11 @@ Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is
 -->
 
 1. Xét một mạng perceptron đa tầng đơn giản với một tầng ẩn $d$ chiều và một đầu ra duy nhất.
-Chỉ ra rằng bất kì cực tiểu nào cũng có ít nhất $d!$ nghiệm tương đương, vận hành giống nhau.
+Chỉ ra rằng bất kì cực tiểu nào cũng có tương ứng ít nhất $d!$ nghiệm khiến mạng vận hành giống nhau.
 2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
 Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem ví dụ :cite:`Wigner.1958` để biết thêm chi tiết).
     * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng.
-    Hay, với mọi vector riêng $\mathbf{v}$, xác suất giá trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
+    Hay, với mọi vector riêng $\mathbf{v}$, xác suất trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
     * Tại sao điều trên *không* ám chỉ $P(\lambda > 0) = 0.5$?
 3. Liệu còn thử thách nào tối ưu trong học sâu mà bạn có thể nghĩ tới?
 4. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
