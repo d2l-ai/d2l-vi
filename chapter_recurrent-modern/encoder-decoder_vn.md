@@ -5,7 +5,7 @@
 # Encoder-Decoder Architecture
 -->
 
-# *dịch tiêu đề phía trên*
+# Kiến trúc Mã hoá - Giải mã
 
 <!--
 The *encoder-decoder architecture* is a neural network design pattern.
@@ -16,33 +16,37 @@ In machine translation, the encoder transforms a source sentence, e.g., "Hello w
 The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
-*dịch đoạn phía trên*
-
+*Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
+Như trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã.
+Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
+Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
+Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector, mà có thể nắm bắt được thông tin ngữ nghĩa của câu đó.
+Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang ngôn ngữ đích, ví dụ sang tiếng Pháp "Bonjour le monde.".
 <!--
 ![The encoder-decoder architecture.](../img/encoder-decoder.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/encoder-decoder.svg)
+![Kiến trúc mã hoá - giải mã](../img/encoder-decoder.svg)
 :label:`fig_encoder_decoder`
 
 <!--
 In this section, we will show an interface to implement this encoder-decoder architecture.
 -->
 
-*dịch đoạn phía trên*
+Phần này sẽ trình bày một giao diện để lập trình kiến trúc mã hoá - giải mã.
 
 
 <!--
 ## Encoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ mã hoá
 
 <!--
 The encoder is a normal neural network that takes inputs, e.g., a source sentence, to return outputs.
 -->
 
-*dịch đoạn phía trên*
+Bộ mã hoá là một mạng nơ-ron thông thường nhận đầu vào, ví dụ như một câu nguồn, để trả về đầu ra.
 
 ```{.python .input  n=2}
 from mxnet.gluon import nn
@@ -61,7 +65,7 @@ class Encoder(nn.Block):
 ## Decoder
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ giải mã
 
 <!--
 The decoder has an additional method `init_state` to parse the outputs of the encoder with possible additional information,
@@ -70,7 +74,9 @@ In the forward method, the decoder takes both inputs, e.g., a target sentence an
 It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
-*dịch đoạn phía trên*
+Bộ giải mã có một phương thức bổ sung gọi là `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin có thể được bổ sung, ví dụ như độ dài hợp lệ của đầu vào, để đưa ra trạng thái mà nó cần.
+Trong lan truyền xuôi, bộ giải mã nhận hai đầu vào, ví dụ như một câu đích và trạng thái.
+Nó trả về đầu ra với trạng thái có khả năng đã được thay đổi nếu bộ mã hoá chứa các tầng nơ-ron truy hồi (*RNN*).
 
 
 ```{.python .input  n=3}
@@ -95,7 +101,7 @@ class Decoder(nn.Block):
 ## Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 <!--
 The encoder-decoder model contains both an encoder and a decoder.
@@ -104,7 +110,10 @@ It takes both encoder inputs and decoder inputs, with optional additional argume
 During computation, it first computes encoder outputs to initialize the decoder state, and then returns the decoder outputs.
 -->
 
-*dịch đoạn phía trên*
+Mô hình mã hoá - giải mã bao gồm một bộ mã hoá và một bộ giải mã.
+Chúng ta lập trình phương thức truyền xuôi cho quá trình huấn luyện.
+Mô hình cần cả đầu vào cho bộ mã hoá và đầu vào cho bộ giải mã cùng với các đối số bổ sung không bắt buộc.
+Trong quá trình tính toán, đầu tiên mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái giải mã, sau đó trả về đầu ra của bộ giải mã.
 
 
 ```{.python .input  n=4}
@@ -126,7 +135,7 @@ class EncoderDecoder(nn.Block):
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * An encoder-decoder architecture is a neural network design pattern mainly in natural language processing.
@@ -134,21 +143,24 @@ class EncoderDecoder(nn.Block):
 * An decoder is a network (usually the same network structure as encoder) that takes the feature vector from the encoder, and gives the best closest match to the actual input or intended output.
 -->
 
-*dịch đoạn phía trên*
+* Kiến trúc mã hoá - giải mã là một khuôn mẫu thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
+* Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron truy hồi - RNN, vân vân, ...) nhận đầu vào và trả về một ánh xạ đặc trưng, một vector hay một tensor.
+* Bộ giải mã là một mạng (thường giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quả gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Besides machine translation, can you think of another application scenarios where an encoder-decoder architecture can fit?
 2. Can you design a deep encoder-decoder architecture?
 -->
 
-*dịch đoạn phía trên*
+1. Ngoài dịch máy, bạn còn biết thêm những ứng dụng nào khác của kiến trúc mã hoá - giải mã không?
+2. Bạn có thể thiết kế một kiến trúc mã hoá - giải mã sâu không?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -173,7 +185,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* Nguyễn Thanh Hoà
 
 <!-- Phần 2 -->
-*
+* Nguyễn Thanh Hoà

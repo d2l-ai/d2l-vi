@@ -129,7 +129,7 @@ $$x_t \sim p(x_t \mid x_{t-1}, \ldots, x_1).$$
 ### Autoregressive Models
 -->
 
-### Mô hình tự hồi quy
+### Mô hình Tự hồi quy
 
 <!--
 In order to achieve this, our trader could use a regressor such as the one we trained in :numref:`sec_linear_gluon`.
@@ -245,7 +245,7 @@ Going into details of dynamic programming is beyond the scope of this section, b
 Control and reinforcement learning algorithms use such tools extensively.
 -->
 
-Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong :numref: `sec_bi_rnn`. 
+Chi tiết về quy hoạch động nằm ngoài phạm vi của phần này, nhưng chúng tôi sẽ giới thiệu nó trong :numref:`sec_bi_rnn`. 
 Các công cụ trên được sử dụng rất phổ biến trong các thuật toán điều khiển và học tăng cường. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -256,7 +256,7 @@ Các công cụ trên được sử dụng rất phổ biến trong các thuật
 ### Causality
 -->
 
-### Quan hệ nhân quả
+### Quan hệ Nhân quả
 
 <!--
 In principle, there is nothing wrong with unfolding $p(x_1, \ldots, x_T)$ in reverse order.
@@ -304,7 +304,7 @@ Let us begin by generating some data.
 To keep things simple we generate our time series by using a sine function with some additive noise.
 -->
 
-Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh hoạ. 
+Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử lập trình minh họa. 
 Đầu tiên, hãy khởi tạo một vài dữ liệu như sau. 
 Để đơn giản, chúng ta tạo chuỗi thời gian bằng cách sử dụng hàm sin cộng thêm một chút nhiễu. 
 
@@ -341,7 +341,7 @@ Một cách đơn giản để khắc phục điều này, đặc biệt là khi
 Một cách khác là đệm giá trị 0 vào chuỗi thời gian. 
 Mã nguồn dưới đây về cơ bản là giống hệt với mã nguồn huấn luyện trong các phần trước. 
 Chúng tôi cố gắng giữ cho kiến trúc đơn giản với vài tầng kết nối đầy đủ, hàm kích hoạt ReLU và hàm mất mát $\ell_2$. 
-Do việc mô hình hoá phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
+Do việc mô hình hóa phần lớn là giống với khi ta xây dựng các bộ ước lượng hồi quy viết bằng Gluon trong các phần trước, nên chúng ta sẽ không đi sâu vào chi tiết trong phần này. 
 
 
 ```{.python .input}
@@ -579,38 +579,13 @@ Do đó, nếu bạn có một kiểu dữ liệu chuỗi thời gian, hãy luô
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
 * Nguyễn Cảnh Thướng
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
+* Phạm Hồng Vinh

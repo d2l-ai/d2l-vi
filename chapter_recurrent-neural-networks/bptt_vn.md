@@ -5,7 +5,7 @@
 # Backpropagation Through Time
 -->
 
-# Lan Truyền Ngược Qua Thời Gian
+# Lan truyền Ngược qua Thời gian
 :label:`sec_bptt`
 
 <!--
@@ -68,7 +68,7 @@ Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì sẽ xảy r
 ## A Simplified Recurrent Network
 -->
 
-## Mạng Truy Hồi Giản Thể
+## Mạng Truy hồi Giản thể
 
 <!--
 We start with a simplified model of how an RNN works.
@@ -79,7 +79,7 @@ In addition, $w_h$ and $w_o$ indicate the weights of hidden states and the outpu
 As a result, the hidden states and outputs at each timesteps can be explained as
 -->
 
-Hãy bắt đầu với một mô hình đơn giản về cách mạng RNN hoạt động.
+Hãy bắt đầu với một mô hình đơn giản về cách mà mạng RNN hoạt động.
 Mô hình này bỏ qua các chi tiết cụ thể của trạng thái ẩn và cách trạng thái này được cập nhật.
 Những chi tiết này không quan trọng đối với việc phân tích dưới đây mà chỉ khiến các ký hiệu trở nên lộn xộn và phức tạp quá mức.
 Trong mô hình đơn giản này, chúng ta ký hiệu $h_t$ là trạng thái ẩn, $x_t$ là đầu vào, và $o_t$ là đầu ra tại bước thời gian $t$.
@@ -123,7 +123,7 @@ The first and the second part of the derivative is easy to compute.
 The third part $\partial_{w_h} h_t$ is where things get tricky, since we need to compute the effect of the parameters on $h_t$.
 -->
 
-Ta có thể tính phần đầu tiên và phần thứ hai của đạo hàm môt cách dễ dàng.
+Ta có thể tính phần đầu tiên và phần thứ hai của đạo hàm một cách dễ dàng.
 Phần thứ ba $\partial_{w_h} h_t$ khiến mọi thứ trở nên khó khăn, vì chúng ta cần phải tính toán ảnh hưởng của các tham số tới $h_t$.
 
 
@@ -144,7 +144,7 @@ Now let us apply :eqref:`eq_bptt_at` with
 -->
 
 
-Bây giờ chúng ta áp dụng :eqref: `eq_bptt_at` với
+Bây giờ chúng ta áp dụng :eqref:`eq_bptt_at` với
 
 
 $$a_t = \partial_{w_h}h_{t},$$
@@ -220,7 +220,7 @@ Cho đến giây phút hiện tại, đây là những gì chúng ta đã thảo
 Điều này dẫn tới một phép *xấp xỉ* của gradient, đơn giản bằng cách kết thúc tổng trên tại $\partial_w h_{t-\tau}$.
 Do đó lỗi xấp xỉ là $\partial_h f(x_t, h_{t-1}, w) \partial_w h_{t-1}$ (nhân với tích của gradient liên quan đến $\partial_h f$).
 Trong thực tế, chiến lược này hoạt động khá tốt.
-Phương pháp này thường được gọi là BPTT (*backpropagation through time* -- lan truyền ngược qua thời gian) bị cắt xén.
+Phương pháp này thường được gọi là BPTT (*backpropagation through time* --- lan truyền ngược qua thời gian) bị cắt xén.
 Một trong những hệ quả của phương pháp này là mô hình sẽ tập trung chủ yếu vào ảnh hưởng ngắn hạn thay vì dài hạn.
 Đây thực sự là điều mà chúng ta *mong muốn*, vì nó hướng sự ước lượng tới các mô hình đơn giản và ổn định hơn.
 
@@ -277,8 +277,9 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 * The third row is the full BPTT that leads to a computationally infeasible expression.
 -->
 
-:numref:`fig_truncated_bptt` minh hoạ ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*.
-* Dòng đầu tiên biểu diễn sự cắt xén ngẫu nhiên, chia văn bản thành các phần có độ dài biến thiên. 
+:numref:`fig_truncated_bptt` minh họa ba trường hợp trên khi phân tích một số từ đầu tiên trong *Cỗ máy Thời gian*:
+
+* Dòng đầu tiên biểu diễn sự cắt xén ngẫu nhiên, chia văn bản thành các phần có độ dài biến thiên.
 * Dòng thứ hai biểu diễn BPTT bị cắt xén đều, chia văn bản thành các phần có độ dài bằng nhau.
 * Dòng thứ ba là BPTT đầy đủ, dẫn đến một biểu thức không khả thi về mặt tính toán.
 
@@ -290,7 +291,7 @@ Do đó, BPTT có một hiệu ứng điều chuẩn nhỏ mà có thể có íc
 ## The Computational Graph
 -->
 
-## Đồ thị tính toán
+## Đồ thị Tính toán
 
 <!--
 In order to visualize the dependencies between model variables and parameters during computation in a recurrent neural network, 
@@ -300,7 +301,7 @@ the hidden state of the last timestep $\mathbf{h}_2$, and the input of the curre
 -->
 
 
-Để minh hoạ trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
+Để minh họa trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
 Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mathbf{h}_3$, phụ thuộc vào các tham số $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ của mô hình, trạng thái ẩn ở bước thời gian trước đó $\mathbf{h}_2$, và đầu vào ở bước thời gian hiện tại $\mathbf{x}_3$.
 
 <!--
@@ -367,7 +368,7 @@ We begin with
 -->
 
 Sự phụ thuộc vào $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ thì khó khăn hơn một chút vì cần sử dụng quy tắc dây chuyền khi tính toán đạo hàm.
-Ta bắt đầu với
+Ta sẽ bắt đầu với
 
 
 $$\begin{aligned}
@@ -423,7 +424,7 @@ Ta có thể rút ra nhiều điều từ biểu thức phức tạp này.
 Đầu tiên, việc lưu lại các kết quả trung gian, tức các luỹ thừa của $\mathbf{W}_{hh}$ khi tính các số hạng của hàm mất mát $L$, là rất hữu ích.
 Thứ hai, ví dụ tuyến tính này dù đơn giản nhưng đã làm lộ ra một vấn đề chủ chốt của các mô hình chuỗi dài: ta có thể phải làm việc với các luỹ thừa rất lớn của $\mathbf{W}_{hh}^j$.
 Trong đó, khi $j$ lớn, các trị riêng nhỏ hơn $1$ sẽ tiêu biến, còn các trị riêng lớn hơn $1$ sẽ phân kì.
-Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hoá quá mức các chi tiết không liên quan trong quá khứ. 
+Các mô hình này không có tính ổn định số học, dẫn đến việc chúng quan trọng hóa quá mức các chi tiết không liên quan trong quá khứ. 
 Một cách giải quyết vấn đề này là cắt xén các số hạng trong tổng ở một mức độ thuận tiện cho việc tính toán.
 Sau này ở :numref:`chap_modern_rnn`, ta sẽ thấy cách các mô hình chuỗi phức tạp như LSTM giải quyết vấn đề này tốt hơn.
 Khi lập trình, ta cắt xén các số hạng bằng cách *tách rời* gradient sau một số lượng bước nhất định.
@@ -479,37 +480,10 @@ Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
 * Nguyễn Văn Cường
 * Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-<!-- Phần 6 -->
-* Nguyễn Văn Cường
+* Phạm Hồng Vinh

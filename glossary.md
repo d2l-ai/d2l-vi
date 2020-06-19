@@ -20,6 +20,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | adversarial learning                  | học đối kháng             | [https://git.io/JvQxt](https://git.io/JvQxt) |
 | agent                                 | tác nhân                  |                                              |
 | algorithm's performance               | chất lượng thuật toán     |                                              |
+| analytical solution                   | nghiệm theo công thức     |
 | avoidable bias                        | độ chệch tránh được       |                                              |
 | argument (programming)                | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
@@ -50,6 +51,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Blackbox dev set        | tập phát triển Blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box            | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast               | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
+| beam search             | tìm kiếm chùm                  | [https://git.io/Jf9Nl](https://git.io/Jf9Nl) |
 
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
@@ -222,6 +224,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | k-fold cross validation | kiểm định chéo gập k-lần | [https://git.io/JvQxK](https://git.io/JvQxK)                                               |
 | kernel                  | hạt nhân                 | [https://git.io/Jfe1I](https://git.io/Jfe1I), [https://git.io/Jf0vK](https://git.io/Jf0vK) |
+| key                     | khoá                     |                |
 
 
 ## L
@@ -294,6 +297,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
+| numerical solution                | nghiệm xấp xỉ                     |                                                                                           |
 
 ## O
 | English                | Tiếng Việt         | Thảo luận tại                                |
@@ -322,7 +326,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | penalty                            | lượng phạt                 | [https://git.io/JvQAP](https://git.io/JvQAP) |
 | perceptron                         | perceptron                 | [https://git.io/JvohC](https://git.io/JvohC) |
 | performance                        | chất lượng                 | [https://git.io/JvQx4](https://git.io/JvQx4) |
-| perplexity (metric)                | độ rối rắm                 |  |
+| perplexity (metric)                | perplexity                 |  [https://git.io/Jf9KY](https://git.io/Jf9KY)  |
 | perturbation                       | nhiễu                      | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | plateau (danh từ)                  | vùng nằm ngang             |                                              |
 | plateau (động từ)                  | nằm ngang                  |                                              |
@@ -339,6 +343,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | position-wise feed-forward network           | mạng truyền xuôi theo vị trí                |  |
+| positional encoding                | biểu diễn vị trí           |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
@@ -346,6 +351,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | quadratic             | toàn phương           | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic form        | dạng toàn phương      | [https://git.io/JvohV](https://git.io/JvohV) |
 | quadratic programming | quy hoạch toàn phương |                                              |
+| query                 | (câu) truy vấn              |                                              |
 
 ## R
 | English                           | Tiếng Việt                                | Thảo luận tại                                |
@@ -369,8 +375,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | running time                      | thời gian chạy                            |                                              |
 | region of rejection               | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | relative loss                     | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
-| reset gate                        | cổng xóa                        |                     
-   |
+| reparameterization                | tái tham số hoá                     |                                              |
+| reset gate                        | cổng xóa                                  |                                              |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại                                |
@@ -396,6 +402,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | standard deviation              | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | state-of-the-art                | tân tiến nhất            |                                              |
 | stationary point                | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
+| statistical inference           | suy luận thống kê        |                                              |
 | statistical power               | năng lực thống kê        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
@@ -453,7 +460,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | validation set              | tập kiểm định      | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | vanishing gradient          | tiêu biến gradient | [https://git.io/JvohI](https://git.io/JvohI) |
 | variance (bias as variance) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
+| variational                 | biến phân         |  |
 | vector                      | vector             |                                              |
+| value                       | giá trị            |                                              |
 
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |

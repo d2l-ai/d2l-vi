@@ -19,7 +19,7 @@ Hence, rather than modeling $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$ it is prefe
 :numref:`sec_language_model` đã giới thiệu mô hình $n$-gram, trong đó xác suất có điều kiện của từ $x_t$ tại vị trí $t$ chỉ phụ thuộc vào $n-1$ từ trước đó.
 Nếu muốn kiểm tra ảnh hưởng có thể có của các từ ở trước vị trí $t-(n-1)$ đến từ $x_t$, ta cần phải tăng $n$.
 Tuy nhiên, cùng với đó số lượng tham số của mô hình cũng sẽ tăng lên theo hàm mũ, vì ta cần lưu $|V|^n$ giá trị với một từ điển $V$ nào đó.
-Do đó, thay vì mô hình hoá $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn nếu ta sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
+Do đó, thay vì mô hình hóa $p(x_t \mid x_{t-1}, \ldots, x_{t-n+1})$, sẽ tốt hơn nếu ta sử dụng *mô hình biến tiềm ẩn* (*latent variable model*), trong đó
 
 $$p(x_t \mid x_{t-1}, \ldots, x_1) \approx p(x_t \mid x_{t-1}, h_{t}).$$
 
@@ -161,13 +161,13 @@ to describe how to use the hidden variable of the previous timestep in the curre
 Specifically, the calculation of the hidden variable of the current timestep is determined by the input of the current timestep together with the hidden variable of the previous timestep:
 -->
 
-Vấn đề sẽ hoàn toàn khác đi nếu ta sử dụng các trạng thái ẩn.
-Hãy xem xét cấu trúc này một cách chi tiết hơn.
-Nhớ rằng ta thường gọi vòng lặp $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng thời điểm $t$ trong mạng nơ-ron truy hồi lại đề cập đến các bước trong một vòng lặp.
-Giả sử ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$, trong một vòng lặp.
-Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn của bước thời gian $t$ của chuỗi.
-Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại.
-Cụ thể, biến ẩn của bước thời gian hiện tại được tính toán bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó:
+Vấn đề sẽ khác đi hoàn toàn nếu ta sử dụng các trạng thái ẩn. 
+Hãy xem xét cấu trúc này một cách chi tiết hơn. 
+Chúng ta thường gọi vòng lặp thứ $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng trong mạng nơ-ron truy hồi, thời điểm $t$ lại tương ứng với các bước trong một vòng lặp. 
+Giả sử trong một vòng lặp ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$. 
+Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn tại bước thời gian $t$ của chuỗi. 
+Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại. 
+Cụ thể, biến ẩn của bước thời gian hiện tại được xác định bởi đầu vào của bước thời gian hiện tại cùng với biến ẩn của bước thời gian trước đó: 
 
 
 $$\mathbf{H}_t = \phi(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1} \mathbf{W}_{hh}  + \mathbf{b}_h).$$
@@ -182,10 +182,11 @@ Since the hidden state uses the same definition of the previous timestep in the 
 the computation of the equation above is recurrent, hence the name recurrent neural network (RNN).
 -->
 
-So với :eqref:`rnn_h_without_state`, ở đây ta đã thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$.
-Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã tổng hợp và giữ lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron.
-Do đó, một biến ẩn như vậy được gọi là một *trạng thái ẩn* (_hidden state_).
-Vì trạng thái ẩn sử dụng cùng định nghĩa với bước thời gian trước đó ở trong bước thời gian hiện tại nên tính toán của phương trình trên là truy hồi, do đó kiến trúc này được đặt tên là mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN).
+So với :eqref:`rnn_h_without_state`, phương trình này có thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$. 
+Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã lưu lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron. 
+Vì vậy, một biến ẩn còn được gọi là một *trạng thái ẩn* (_hidden state_). 
+Vì trạng thái ẩn ở bước thời gian hiện tại và trước đó đều có cùng định nghĩa, phương trình trên được tính toán theo phương pháp truy hồi. 
+Và đây cũng là lý do dẫn đến cái tên mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN). 
 
 <!--
 There are many different RNN construction methods.
@@ -193,9 +194,9 @@ RNNs with a hidden state defined by the equation above are very common.
 For timestep $t$, the output of the output layer is similar to the computation in the multilayer perceptron:
 -->
 
-Có nhiều phương pháp khác nhau để xây dựng RNN.
-Trong đó, RNN với trạng thái ẩn được định nghĩa bởi phương trình bên trên là rất phổ biến.
-Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng:
+Có rất nhiều phương pháp xây dựng RNN.
+Trong số đó, phổ biến nhất là RNN có trạng thái ẩn như định nghĩa ở phương trình trên.
+Tại bước thời gian $t$, tầng đầu ra trả về kết quả tính toán tương tự như trong perceptron đa tầng: 
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -209,8 +210,8 @@ Therefore, the number of RNN model parameters does not grow as the number of tim
 -->
 
 Các tham số trong mô hình RNN bao gồm trọng số $\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ của tầng ẩn với hệ số điều chỉnh $\mathbf{b}_h \in \mathbb{R}^{1 \times h}$, và trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{h \times q}$ của tầng đầu ra với hệ số điều chỉnh $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$.
-Điều đáng nói là ngay cả đối với các bước thời gian khác nhau thì RNN vẫn luôn sử dụng cùng các tham số mô hình.
-Do đó, số lượng tham số mô hình RNN sẽ không tăng ngay cả khi số lượng bước thời gian tăng lên.
+Lưu ý rằng RNN luôn sử dùng cùng một bộ tham số mô hình cho dù tính toán ở các bước thời gian khác nhau. 
+Vì thế, việc tăng số bước thời gian không làm tăng lượng tham số mô hình của RNN. 
 
 <!--
 :numref:`fig_rnn` shows the computational logic of an RNN at three adjacent timesteps.
@@ -222,12 +223,12 @@ The hidden state of the current timestep $t$, $\mathbf{H}_t$, will participate i
 What is more, $\mathbf{H}_t$ will become the input for $\mathbf{O}_t$, the fully connected output layer of the current timestep.
 -->
 
-:numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề.
-Tại bước thời gian $t$, tính toán của trạng thái ẩn có thể được coi là một đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$ sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó.
-Đầu ra của tầng kết nối đầy đủ là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$.
-Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, có hệ số điều chỉnh là $\mathbf{b}_h$.
-Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$, sẽ tham gia vào tính toán trạng thái ẩn $\mathbf{H}_{t+1}$ của bước thời gian tiếp theo $t+1$.
-Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra kết nối đầy đủ ở bước thời gian hiện tại $\mathbf{O}_t$.
+:numref:`fig_rnn` minh họa logic tính toán của một RNN tại ba bước thời gian liền kề. 
+Tại bước thời gian $t$, sau khi nối đầu vào $\mathbf{X}_t$ với trạng thái ẩn $\mathbf{H}_{t-1}$ tại bước thời gian trước đó, ta có thể coi nó như đầu vào của một tầng kết nối đầy đủ với hàm kích hoạt $\phi$.  
+Đầu ra của tầng kết nối đầy đủ chính là trạng thái ẩn ở bước thời gian hiện tại $\mathbf{H}_t$. 
+Tham số mô hình ở bước thời gian hiện tại là $\mathbf{W}_{xh}$ nối với $\mathbf{W}_{hh}$, cùng với hệ số điều chỉnh $\mathbf{b}_h$. 
+Trạng thái ẩn ở bước thời gian hiện tại $t$, $\mathbf{H}_t$ được sử dụng để tính trạng thái ẩn $\mathbf{H}_{t+1}$ tại bước thời gian kế tiếp $t+1$. 
+Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra $\mathbf{O}_t$, một tầng kết nối đầy đủ, ở bước thời gian hiện tại. 
 
 <!--
 ![An RNN with a hidden state. ](../img/rnn.svg)
@@ -245,7 +246,7 @@ Hơn nữa, $\mathbf{H}_t$ sẽ trở thành đầu vào cho tầng đầu ra k�
 ## Steps in a Language Model
 -->
 
-## Từng bước trong một Mô hình Ngôn ngữ
+## Các bước trong một Mô hình Ngôn ngữ
 
 <!--
 Now we illustrate how RNNs can be used to build a language model.
@@ -260,16 +261,16 @@ Since the next word of the sequence in the training data is "by", the loss of ti
 the probability distribution of the next word generated based on the feature sequence "the", "time", "machine" and the label "by" of this timestep.
 -->
 
-Bây giờ chúng ta minh họa cách RNN có thể được sử dụng để xây dựng mô hình ngôn ngữ.
-Để đơn giản, chúng tôi sử dụng các từ thay vì các ký tự làm đầu vào, vì từ dễ hiểu hơn.
-Đặt kích thước minibatch là 1, chuỗi văn bản là phần đầu của tập dữ liệu, "the time machine by H. G. Wells".
-:numref:`fig_rnn_train` minh họa cách ước đoán từ tiếp theo dựa trên các từ hiện tại và trước đó.
-Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian,
-và sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn.
-Do tính toán lặp lại của trạng thái ẩn trong lớp ẩn, đầu ra của bước thời gian thứ 3,
-$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine".
-Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", nên mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào
-phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" của bước thời gian này.
+Bây giờ hãy cùng xem cách xây dựng mô hình ngôn ngữ bằng RNN.
+Vì dùng từ thường dễ hiểu hơn dùng chữ, nên các từ sẽ được dùng làm đầu vào trong ví dụ đơn giản này.  
+Đặt kích thước minibatch là 1, với chuỗi văn bản là phần đầu của tập dữ liệu: "the time machine by H. G. Wells". 
+:numref:`fig_rnn_train` minh họa cách ước lượng từ tiếp theo dựa trên từ hiện tại và các từ trước đó. 
+Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian, 
+sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
+Do trạng thái ẩn trong tầng ẩn được tính toán truy hồi, đầu ra của bước thời gian thứ 3, 
+$\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine". 
+Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", giá trị mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
+phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" tại bước thời gian này. 
 
 <!--
 ![Word-level RNN language model. The input and label sequences are `the time machine by H.` and `time machine by H. G.` respectively. ](../img/rnn-train.svg)
@@ -283,8 +284,8 @@ In practice, each word is presented by a $d$ dimensional vector, and we use a ba
 Therefore, the input $\mathbf X_t$ at timestep $t$ will be a $n\times d$ matrix, which is identical to what we discussed before.
 -->
 
-Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và chúng ta sử dụng kích thước batch $n>1$.
-Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây.
+Trong thực tế, mỗi từ được biểu diễn bởi một vector $d$ chiều và kích thước batch thường là $n>1$.
+Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma trận $n\times d$, giống hệt với những gì chúng ta đã thảo luận trước đây. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -294,7 +295,7 @@ Do đó, đầu vào $\mathbf X_t$ tại bước thời gian $t$ sẽ là ma tr�
 ## Perplexity
 -->
 
-## Độ Rối rắm
+## Perplexity
 
 <!--
 Last, let us discuss about how to measure the sequence model quality.
@@ -303,10 +304,10 @@ A good language model is able to predict with high accuracy tokens that what we 
 Consider the following continuations of the phrase "It is raining", as proposed by different language models:
 -->
 
-Cuối cùng, chúng ta hãy thảo luận về cách đo lường chất lượng mô hình chuỗi.
-Một cách làm là ta kiểm tra độ ngạc nhiên của văn bản.
-Một mô hình ngôn ngữ tốt có thể dự đoán các token với độ chính xác cao mà chúng ta sẽ thấy sau đây.
-Hãy xem xét các phần tiếp theo của cụm từ "Trời đang mưa", được đề xuất bởi các mô hình ngôn ngữ khác nhau:
+Cuối cùng, hãy thảo luận về cách đo lường chất lượng của mô hình chuỗi. 
+Một cách để làm việc này là kiểm tra mức độ gây ngạc nhiên của văn bản. 
+Một mô hình ngôn ngữ tốt có thể dự đoán chính xác các token tiếp theo. 
+Hãy xem xét các cách điền tiếp vào câu "Trời đang mưa" sau, được đề xuất bởi các mô hình ngôn ngữ khác nhau:
 
 <!--
 1. "It is raining outside"
@@ -328,13 +329,13 @@ Nonetheless, at least the model has learned how to spell words and some degree o
 Last, example 3 indicates a poorly trained model that does not fit data properly.
 -->
 
-Về chất lượng, ví dụ 1 rõ ràng là tốt nhất.
-Các từ là hợp lý và mạch lạc về mặt logic.
-Mặc dù nó có thể không phản ánh từ nào nên theo sau một cách chính xác về mặt ngữ nghĩa  ("ở San Francisco" và "vào mùa đông" sẽ là phần mở rộng hợp lý hơn),
-mô hình vẫn có thể nắm bắt loại từ nào nên theo sau.
-Ví dụ 2 tệ hơn đáng kể bằng cách tạo ra một phần mở rộng vô nghĩa.
-Tuy nhiên, ít nhất mô hình đã viết đúng các từ và học được một số mức độ tương quan giữa các từ.
-Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không phù hợp với dữ liệu.
+Về chất lượng, ví dụ 1 rõ ràng là tốt nhất. 
+Các từ được sắp xếp hợp lý và mạch lạc về mặt logic. 
+Mặc dù nó có thể không phản ánh chính xác hoàn toàn mặt ngữ nghĩa của các từ theo sau ("ở San Francisco" và "vào mùa đông" cũng là các phần mở rộng hoàn toàn hợp lý), 
+mô hình vẫn có thể nắm bắt những từ nghe khá phù hợp. 
+Ví dụ 2 thì tệ hơn đáng kể, mô hình này đã nối dài câu ra theo cách vô nghĩa. 
+Tuy nhiên, ít nhất mô hình đã viết đúng chính tả và học được phần nào sự tương quan giữa các từ. 
+Cuối cùng, ví dụ 3 là một mô hình được huấn luyện kém, không khớp được dữ liệu. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -348,11 +349,11 @@ hence evaluating the model on Tolstoy's magnum opus ["War and Peace"](https://ww
 a much smaller likelihood than, say, on Saint-Exupery's novella ["The Little Prince"](https://en.wikipedia.org/wiki/The_Little_Prince). What is missing is the equivalent of an average.
 -->
 
-Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính $p(w)$, tức là khả năng xuất hiện của chuỗi.
-Thật không may, đây là một con số khó để hiểu và so sánh.
-Xét cho cùng, các chuỗi ngắn hơn có nhiều khả năng xuất hiện hơn các chuỗi dài,
-do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ có khả năng nhỏ hơn nhiều so với, giả sử như, trên tiểu thuyết ["Hoàng tử bé"] (https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
-Thứ còn thiếu là một phép tính trung bình theo cách nào đó.
+Chúng ta có thể đo lường chất lượng của mô hình bằng cách tính xác suất $p(w)$, tức độ hợp lý của một chuỗi $w$. 
+Thật không may, đây là một con số khó để hiểu và so sánh. 
+Xét cho cùng, các chuỗi ngắn có khả năng xuất hiện cao hơn các chuỗi dài, 
+do đó việc đánh giá mô hình trên kiệt tác ["Chiến tranh và Hòa bình"](https://www.gutenberg.org/files/2600/2600-h/2600-h.htm) của Tolstoy chắc chắn sẽ cho kết quả thấp hơn nhiều so với tiểu thuyết ["Hoàng tử bé"](https://en.wikipedia.org/wiki/The_Little_Prince) của Saint-Exupery. 
+Thứ còn thiếu ở đây là một cách tính trung bình qua độ dài chuỗi. 
 
 <!--
 Information theory comes handy here and we will introduce more in :numref:`sec_information_theory`.
@@ -363,11 +364,11 @@ Thus, it should allow us to spend very few bits on compressing the sequence.
 So we can measure it by the average number of bits that we need to spend.
 -->
 
-Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm trong :numref:`sec_information_theory`.
-Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại.
-Số lượng bit tối thiểu cần thiết được cho bởi $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$.
-Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp.
-Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng.
+Lý thuyết thông tin rất có ích trong trường hợp này và chúng tôi sẽ giới thiệu thêm về nó trong :numref:`sec_information_theory`. 
+Nếu chúng ta muốn nén văn bản, ta có thể yêu cầu ước lượng ký hiệu tiếp theo với bộ ký hiệu hiện tại. 
+Số lượng bit tối thiểu cần thiết là $-\log_2 p(x_t \mid x_{t-1}, \ldots, x_1)$. 
+Một mô hình ngôn ngữ tốt sẽ cho phép chúng ta dự đoán từ tiếp theo một cách khá chính xác và do đó số bit cần thiết để nén chuỗi là rất thấp. 
+Vì vậy, ta có thể đo lường mô hình ngôn ngữ bằng số bit trung bình cần sử dụng. 
 
 $$\frac{1}{n} \sum_{t=1}^n -\log p(x_t \mid x_{t-1}, \ldots, x_1).$$
 
@@ -377,9 +378,9 @@ For historical reasons, scientists in natural language processing prefer to use 
 In a nutshell, it is the exponential of the above:
 -->
 
-Điều này làm cho hiệu suất trên các tài liệu có độ dài khác nhau có thể so sánh được.
-Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *độ rối rắm* (_perplexity_) hơn là tốc độ bit (_bitrate_).
-Tóm lại, nó là luỹ thừa của biểu thức trên:
+Điều này giúp ta so sánh được chất lượng mô hình trên các tài liệu có độ dài khác nhau. 
+Vì lý do lịch sử, các nhà khoa học xử lý ngôn ngữ tự nhiên thích sử dụng một đại lượng gọi là *perplexity* (*độ rối rắm, hỗn độn*) thay vì *bitrate* (_tốc độ bit_). 
+Nói ngắn gọn, nó là luỹ thừa của biểu thức trên:
 
 $$\mathrm{PPL} := \exp\left(-\frac{1}{n} \sum_{t=1}^n \log p(x_t \mid x_{t-1}, \ldots, x_1)\right).$$
 
@@ -390,10 +391,10 @@ That is, for a single symbol both definitions are identical bar the fact that on
 Let us look at a number of cases:
 -->
 
-Nó có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn mà ta có khi quyết định chọn từ nào là từ tiếp theo.
-Lưu ý rằng độ rối rắm khái quát lên hàm mất mát entropy chéo được định nghĩa ở phần hồi quy softmax một cách tự nhiên(:numref:`sec_softmax`).
-Khi chỉ có một ký hiệu duy nhất cả hai định nghĩa giống hệt nhau, chỉ khác chi tiết rằng cái này là luỹ thừa của cái kia.
-Chúng ta hãy xem xét một số trường hợp:
+Giá trị này có thể được hiểu rõ nhất như là trung bình điều hòa của số lựa chọn thực tế mà ta có khi quyết định chọn từ nào là từ tiếp theo. 
+Lưu ý rằng perplexity khái quát hóa một cách tự nhiên ý tưởng của hàm mất mát entropy chéo định nghĩa ở phần hồi quy softmax (:numref:`sec_softmax`). 
+Điều này có nghĩa là khi xét một ký hiệu duy nhất, perplexity chính là lũy thừa của entropy chéo.
+Hãy cùng xem xét một số trường hợp:
 
 <!--
 * In the best case scenario, the model always estimates the probability of the next symbol as $1$. In this case the perplexity of the model is $1$.
@@ -402,10 +403,10 @@ Chúng ta hãy xem xét một số trường hợp:
 * In fact, if we were to store the sequence without any compression, this would be the best we could do to encode it. Hence, this provides a nontrivial upper bound that any model must satisfy.
 -->
 
-* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của biểu tượng tiếp theo là $1$. Trong trường hợp này, độ rối rắm của mô hình là $1$.
-* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của loại nhãn là 0. Trong tình huống này, độ rối rắm là vô hạn.
-* Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, độ rối rắm bằng kích thước của từ điển `len(vocab)`.
-* Trong thực tế, nếu chúng ta lưu trữ chuỗi mà không hề nén, đây là cách tốt nhất chúng ta có thể làm để mã hóa nó. Do đó, đây sẽ là mức giới hạn trên mà bất kỳ mô hình nào cũng phải thoả mãn có độ rối rắm thấp hơn.
+* Trong trường hợp tốt nhất, mô hình luôn ước tính xác suất của ký hiệu tiếp theo là $1$. Khi đó perplexity của mô hình là $1$. 
+* Trong trường hợp xấu nhất, mô hình luôn dự đoán xác suất của nhãn là 0. Khi đó perplexity là vô hạn.
+* Tại mức nền, mô hình dự đoán một phân phối đều trên tất cả các token. Trong trường hợp này, perplexity bằng với kích thước của từ điển `len(vocab)`.
+* Thực chất, nếu chúng ta lưu trữ chuỗi không nén, đây là cách tốt nhất có thể để mã hóa chúng. Vì vậy, nó cho ta một cận trên mà bất kỳ mô hình nào cũng phải thỏa mãn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -424,10 +425,10 @@ Chúng ta hãy xem xét một số trường hợp:
 * We can create language models using a character-level RNN.
 -->
 
-* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN).
-* Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại.
-* Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng.
-* Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự.
+* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN). 
+* Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại. 
+* Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng. 
+* Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự. 
 
 <!--
 ## Exercises
@@ -442,10 +443,10 @@ Chúng ta hãy xem xét một số trường hợp:
 4. What are some of the problems associated with the simple sequence model described above?
 -->
 
-1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều?
-2. Thử thiết kế một ánh xạ trong đó các trạng thái ẩn của RNN là chính xác (không chỉ là xấp xỉ). Gợi ý: nếu có một số lượng từ hữu hạn thì sao?
-3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài?
-4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì?
+1. Nếu sử dụng RNN để dự đoán ký tự tiếp theo trong chuỗi văn bản thì ta sẽ cần đầu ra có bao nhiêu chiều? 
+2. Thử thiết kế một ánh xạ trong đó các trạng thái ẩn của RNN là chính xác (không chỉ là xấp xỉ). Gợi ý: nếu có một số lượng từ hữu hạn thì sao? 
+3. Điều gì xảy ra với gradient nếu ta thực hiện phép lan truyền ngược qua một chuỗi dài? 
+4. Một số vấn đề liên quan đến mô hình chuỗi đơn giản được mô tả bên trên là gì? 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -456,36 +457,13 @@ Chúng ta hãy xem xét một số trường hợp:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
-<!-- Phần 2 -->
-* Nguyễn Duy Du
-
-<!-- Phần 3 -->
 * Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
+* Phạm Minh Đức
 * Trần Yến Thy
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 6 -->
-* Nguyễn Duy Du
-* Lê Khắc Hồng Phúc
+* Nguyễn Cảnh Thướng
