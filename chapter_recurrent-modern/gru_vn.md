@@ -181,7 +181,7 @@ This leads to the following *candidate hidden state* (it is a *candidate* since 
 Điều này về cơ bản giống với những gì đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng hàm $\tanh$ để đảm bảo rằng các giá trị trạng thái ẩn nằm trong khoảng $(-1, 1)$.
 Nếu muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
 Nếu các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, kết quả sẽ giống RNN thông thường.
-Nếu tất cả các phần tử của cổng xóa $\mathbf{R}_t$ gần với $0$, ta sẽ có Perceptron đa tầng với $\mathbf{X}_t$ làm đầu vào.
+Nếu tất cả các phần tử của cổng xóa $\mathbf{R}_t$ gần với $0$, trạng thái ẩn sẽ là đầu ra của một perceptron đa tầng với đầu vào là $\mathbf{X}_t$.
 Bất kỳ trạng thái ẩn nào tồn tại trước đó đều được đặt lại về giá trị mặc định.
 Điều này dẫn đến *trạng thái ẩn tiềm năng* sau đây (chỉ là *tiềm năng* vì ta vẫn cần kết hợp thêm đầu ra của cổng cập nhật).
 
