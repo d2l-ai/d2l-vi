@@ -5,7 +5,8 @@
 # Gradient Descent
 -->
 
-# *dịch đoạn phía trên*
+# Hạ Gradient
+
 :label:`sec_gd`
 
 <!--
@@ -19,13 +20,22 @@ Likewise, preconditioning is a common technique in gradient descent and carries 
 Let us start with a simple special case.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient.
+Nội dung cần thiết sẽ được trình bày ngắn gọn.
+Tham khảo :cite:`Boyd.Vandenberghe.2004` để có cái nhìn sâu sắc về bài toán tối ưu lồi. 
+Mặc dù phần dưới đây rất hiếm khi được áp dụng trực tiếp trong học sâu, nhưng kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
+Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn.
+Hiện tượng này có thể quan sát được trong thuật toán hạ gradient.
+Tương tự, tiền điều kiện là một kỹ thuật phổ biến trong thuật toán hạ gradient và được áp dụng trong các thuật toán tân tiến hơn.
+Chúng ta hãy bắt đầu với một trường hợp đặc biệt đơn giản.
+
 
 <!--
 ## Gradient Descent in One Dimension
 -->
 
-## *dịch đoạn phía trên*
+## Hạ Gradient theo Một Chiều 
+
 
 <!--
 Gradient descent in one dimension is an excellent example to explain why the gradient descent algorithm may reduce the value of the objective function.
@@ -33,7 +43,10 @@ Consider some continuously differentiable real-valued function $f: \mathbb{R} \r
 Using a Taylor expansion (:numref:`sec_single_variable_calculus`) we obtain that 
 -->
 
-*dịch đoạn phía trên*
+Hạ gradient theo một chiều là ví dụ tuyệt vời để giải thích tại sao thuật toán hạ gradient có giảm giá trị hàm mục tiêu.
+Hãy xem xét một hàm giá trị thực vi phân liên tục $f: \mathbb{R} \rightarrow \mathbb{R}$.
+Áp dụng khai triển Taylor (:numref:`sec_single_variable_calculus`), ta có
+
 
 
 $$f(x + \epsilon) = f(x) + \epsilon f'(x) + \mathcal{O}(\epsilon^2).$$
@@ -47,8 +60,10 @@ To keep things simple we pick a fixed step size $\eta > 0$ and choose $\epsilon 
 Plugging this into the Taylor expansion above we get
 -->
 
-*dịch đoạn phía trên*
-
+Trong đó xấp xỉ bậc nhất $f(x+\epsilon)$ được cho bởi giá trị hàm $f(x)$ và đạo hàm bậc nhất $f'(x)$ tại $x$.
+Không hợp lý khi giả sử rằng di chuyển theo hướng ngược chiều gradient với $\epsilon$ nhỏ sẽ làm suy giảm giá trị $f$.
+Để đơn giản, ta chọn sải bước cập nhật (tốc độ học) $\eta > 0$ cố định và chọn $\epsilon = -\eta f'(x)$.
+Thay biểu thức này vào khai triển Taylor ở trên, ta thu được
 
 $$f(x - \eta f'(x)) = f(x) - \eta f'^2(x) + \mathcal{O}(\eta^2 f'^2(x)).$$
 
@@ -59,8 +74,9 @@ Moreover, we can always choose $\eta$ small enough for the higher order terms to
 Hence we arrive at
 -->
 
-*dịch đoạn phía trên*
-
+Nếu đạo hàm $f'(x) \neq 0$ không tiêu biến, cập nhật sẽ được thực hiện do $\eta f'^2(x)>0$. 
+Hơn nữa, chúng ta luôn có thể chọn $\eta$ đủ nhỏ để các hạng tử bậc cao hơn không đóng góp trong phép cập nhật.
+Do đó, ta có 
 
 $$f(x - \eta f'(x)) \lessapprox f(x).$$
 
@@ -665,7 +681,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
