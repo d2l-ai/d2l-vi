@@ -98,7 +98,7 @@ Likewise, an update variable would allow us to control how much of the new state
 -->
 
 Đầu tiên ta giới thiệu cổng xóa và cổng cập nhật.
-Ta thiết kế chúng thành các vector có các phần tử trong khoảng $(0, 1)$ để có thể thực hiện các tổ hợp lồi.
+Ta thiết kế chúng thành các vector có các phần tử trong khoảng $(0, 1)$ để có thể biểu diễn các tổ hợp lồi.
 Chẳng hạn, một biến xóa cho phép kiểm soát bao nhiêu phần của trạng thái trước đây được giữ lại.
 Tương tự, một biến cập nhật cho phép kiểm soát bao nhiêu phần của trạng thái mới sẽ giống trạng thái cũ.
 
