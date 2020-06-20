@@ -636,7 +636,7 @@ In this case we project $\mathbf{w}$ onto an $\ell_1$ ball (the latter is a gene
 -->
 
 Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa.
-Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (khối cầu sau là phiên bản tổng quát của hình thoi ở hình minh họa phía trên).
+Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (là phiên bản tổng quát của hình thoi ở hình minh họa phía trên).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
