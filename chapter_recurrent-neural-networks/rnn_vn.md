@@ -5,7 +5,7 @@
 # Recurrent Neural Networks
 -->
 
-# Mạng nơ-ron Truy hồi
+# Mạng nơ-ron Hồi tiếp
 :label:`sec_plain_rnn`
 
 
@@ -69,7 +69,7 @@ Recurrent neural networks are neural networks with hidden states.
 Before introducing this model, let us first revisit the multi-layer perceptron introduced in :numref:`sec_mlp`.
 -->
 
-Mạng nơ-ron truy hồi là mạng nơ-ron với các trạng thái ẩn.
+Mạng nơ-ron hồi tiếp là mạng nơ-ron với các trạng thái ẩn.
 Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa tầng tại :numref:`sec_mlp`.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -80,7 +80,7 @@ Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa t�
 ## Recurrent Networks Without Hidden States
 -->
 
-## Mạng Truy hồi không có Trạng thái ẩn
+## Mạng Hồi tiếp không có Trạng thái ẩn
 
 <!--
 Let us take a look at a multilayer perceptron with a single hidden layer.
@@ -147,7 +147,7 @@ Và chỉ cần biết thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1
 ## Recurrent Networks with Hidden States
 -->
 
-## Mạng Truy hồi có Trạng thái ẩn
+## Mạng Hồi tiếp có Trạng thái ẩn
 
 <!--
 Matters are entirely different when we have hidden states.
@@ -163,7 +163,7 @@ Specifically, the calculation of the hidden variable of the current timestep is 
 
 Vấn đề sẽ khác đi hoàn toàn nếu ta sử dụng các trạng thái ẩn. 
 Hãy xem xét cấu trúc này một cách chi tiết hơn. 
-Chúng ta thường gọi vòng lặp thứ $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng trong mạng nơ-ron truy hồi, thời điểm $t$ lại tương ứng với các bước trong một vòng lặp. 
+Chúng ta thường gọi vòng lặp thứ $t$ là thời điểm $t$ trong thuật toán tối ưu, nhưng trong mạng nơ-ron hồi tiếp, thời điểm $t$ lại tương ứng với các bước trong một vòng lặp. 
 Giả sử trong một vòng lặp ta có $\mathbf{X}_t \in \mathbb{R}^{n \times d}$, $t=1,\ldots, T$. 
 Và $\mathbf{H}_t \in \mathbb{R}^{n \times h}$ là biến ẩn tại bước thời gian $t$ của chuỗi. 
 Khác với perceptron đa tầng, ở đây ta lưu biến ẩn $\mathbf{H}_{t-1}$ từ bước thời gian trước đó và dùng thêm một tham số trọng số mới $\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$ để mô tả việc sử dụng biến ẩn của bước thời gian trước đó trong bước thời gian hiện tại. 
@@ -185,8 +185,8 @@ the computation of the equation above is recurrent, hence the name recurrent neu
 So với :eqref:`rnn_h_without_state`, phương trình này có thêm $\mathbf{H}_{t-1} \mathbf{W}_{hh}$. 
 Từ mối quan hệ giữa các biến ẩn $\mathbf{H}_t$ và $\mathbf{H}_{t-1}$ của các bước thời gian liền kề, ta biết rằng chúng đã lưu lại thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại, giống như trạng thái hay bộ nhớ hiện thời của mạng nơ-ron. 
 Vì vậy, một biến ẩn còn được gọi là một *trạng thái ẩn* (_hidden state_). 
-Vì trạng thái ẩn ở bước thời gian hiện tại và trước đó đều có cùng định nghĩa, phương trình trên được tính toán theo phương pháp truy hồi. 
-Và đây cũng là lý do dẫn đến cái tên mạng nơ-ron truy hồi (*Recurrent Neural Network* - RNN). 
+Vì trạng thái ẩn ở bước thời gian hiện tại và trước đó đều có cùng định nghĩa, phương trình trên được tính toán theo phương pháp hồi tiếp. 
+Và đây cũng là lý do dẫn đến cái tên mạng nơ-ron hồi tiếp (*Recurrent Neural Network* - RNN). 
 
 <!--
 There are many different RNN construction methods.
@@ -267,7 +267,7 @@ Vì dùng từ thường dễ hiểu hơn dùng chữ, nên các từ sẽ đư�
 :numref:`fig_rnn_train` minh họa cách ước lượng từ tiếp theo dựa trên từ hiện tại và các từ trước đó. 
 Trong quá trình huấn luyện, chúng ta áp dụng softmax cho đầu ra tại mỗi bước thời gian, 
 sau đó sử dụng hàm mất mát entropy chéo để tính toán sai số giữa kết quả và nhãn. 
-Do trạng thái ẩn trong tầng ẩn được tính toán truy hồi, đầu ra của bước thời gian thứ 3, 
+Do trạng thái ẩn trong tầng ẩn được tính toán hồi tiếp, đầu ra của bước thời gian thứ 3, 
 $\mathbf{O}_3$, được xác định bởi chuỗi các từ "the", "time" và "machine". 
 Vì từ tiếp theo của chuỗi trong dữ liệu huấn luyện là "by", giá trị mất mát tại bước thời gian thứ 3 sẽ phụ thuộc vào 
 phân phối xác suất của từ tiếp theo được tạo dựa trên chuỗi đặc trưng "the", "time", "machine" và nhãn "by" tại bước thời gian này. 
@@ -425,7 +425,7 @@ Hãy cùng xem xét một số trường hợp:
 * We can create language models using a character-level RNN.
 -->
 
-* Một mạng sử dụng tính toán truy hồi được gọi là mạng nơ-ron truy hồi (RNN). 
+* Một mạng sử dụng tính toán hồi tiếp được gọi là mạng nơ-ron hồi tiếp (RNN). 
 * Trạng thái ẩn của RNN có thể tổng hợp được thông tin lịch sử của chuỗi cho tới bước thời gian hiện tại. 
 * Số lượng tham số của mô hình RNN không tăng khi số lượng bước thời gian tăng. 
 * Ta có thể tạo các mô hình ngôn ngữ sử dụng một RNN ở cấp độ ký tự. 

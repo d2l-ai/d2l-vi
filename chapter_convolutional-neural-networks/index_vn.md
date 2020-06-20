@@ -43,7 +43,7 @@ Some clever adaptations of CNNs have also brought them to bear on graph-structur
 Theo cách hiểu thông dụng, thiết kế của mạng *ConvNets* đã vay mượn rất nhiều ý tưởng từ ngành sinh học, lý thuyết nhóm và lượng rất nhiều những thí nghiệm nhỏ lẻ khác.
 Bên cạnh hiệu năng cao trên số lượng mẫu cần thiết để đạt được đủ độ chính xác, các mạng nơ-ron tích chập thường có hiệu quả tính toán hơn, bởi đòi hỏi ít tham số hơn và dễ thực thi song song trên nhiều GPU hơn các kiến trúc mạng dày đặc.  
 Do đó, các mạng CNN sẽ được áp dụng bất cứ khi nào có thể, và chúng đã nhanh chóng trở thành một công cụ quan trọng đáng tin cậy thậm chí với các tác vụ liên quan tới cấu trúc tuần tự một chiều, 
-như là xử lý âm thanh, văn bản, và phân tích dữ liệu chuỗi thời gian (*time series analysis*), mà ở đó các mạng nơ-rơn truy hồi vốn thường được sử dụng. 
+như là xử lý âm thanh, văn bản, và phân tích dữ liệu chuỗi thời gian (*time series analysis*), mà ở đó các mạng nơ-rơn hồi tiếp vốn thường được sử dụng. 
 Với một số điều chỉnh khôn khéo, ta còn có thể dùng mạng CNN cho dữ liệu có cấu trúc đồ thị và hệ thống đề xuất. 
 
 <!--

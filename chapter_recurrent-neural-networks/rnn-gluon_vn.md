@@ -5,7 +5,7 @@
 # Concise Implementation of Recurrent Neural Networks
 -->
 
-# Lập trình súc tích Mạng nơ-ron Truy hồi
+# Lập trình súc tích Mạng nơ-ron Hồi tiếp
 :label:`sec_rnn_gluon`
 
 <!--
@@ -14,7 +14,7 @@ This section will show how to implement the same language model more efficiently
 We begin as before by reading the "Time Machine" corpus.
 -->
 
-Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
+Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron hồi tiếp từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
 Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ nhưng hiệu quả hơn bằng các hàm của Gluon.
 Như trước, ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
@@ -39,8 +39,8 @@ Gluon's `rnn` module provides a recurrent neural network implementation (beyond 
 We construct the recurrent neural network layer `rnn_layer` with a single hidden layer and 256 hidden units, and initialize the weights.
 -->
 
-Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron truy hồi (cùng với các mô hình chuỗi khác).
-Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn có 256 nút rồi khởi tạo các trọng số.
+Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron hồi tiếp (cùng với các mô hình chuỗi khác).
+Ta xây dựng tầng hồi tiếp `rnn_layer` với một tầng ẩn có 256 nút rồi khởi tạo các trọng số.
 
 
 ```{.python .input  n=26}
@@ -94,8 +94,8 @@ Note that `rnn_layer` only contains the hidden recurrent layers, we need to crea
 While in the previous section, we have the output layer within the `rnn` block.
 -->
 
-Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
-Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
+Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron hồi tiếp hoàn chỉnh.
+Chú ý rằng `rnn_layer` chỉ chứa các tầng hồi tiếp ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
@@ -167,7 +167,7 @@ So với phần trước, mô hình này đạt được perplexity tương đư
 * As before, the computational graph needs to be detached from previous steps for reasons of efficiency.
 -->
 
-* Mô-đun `rnn` của Gluon đã lập trình sẵn tầng mạng nơ-ron truy hồi.
+* Mô-đun `rnn` của Gluon đã lập trình sẵn tầng mạng nơ-ron hồi tiếp.
 * Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không bao gồm tính toán tại tầng đầu ra.
 * Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 

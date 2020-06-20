@@ -31,7 +31,7 @@ After all, we are still merely applying the chain rule to compute gradients.
 Nonetheless, it is worth while reviewing backpropagation (:numref:`sec_backprop`) again.
 -->
 
-Chúng ta đã thấy một vài hậu quả của bùng nổ gradient khi lập trình mạng nơ-ron truy hồi (:numref:`sec_rnn_scratch`).
+Chúng ta đã thấy một vài hậu quả của bùng nổ gradient khi lập trình mạng nơ-ron hồi tiếp (:numref:`sec_rnn_scratch`).
 Cụ thể, nếu bạn đã làm xong bài tập ở phần đó, bạn sẽ thấy rằng việc gọt gradient đóng vai trò rất quan trọng để đảm bảo mô hình hội tụ.
 Để có cái nhìn rõ hơn về vấn đề này, trong phần này chúng ta sẽ xem xét cách tính gradient cho các mô hình chuỗi.
 Lưu ý rằng, về mặt khái niệm thì không có gì mới ở đây.
@@ -50,9 +50,9 @@ This is a process fraught with computational and statistical uncertainty.
 In the following we will elucidate what happens and how to address this in practice.
 -->
 
-Lượt truyền xuôi trong mạng nơ-ron truy hồi tương đối đơn giản.
-*Lan truyền ngược qua thời gian* thực chất là một ứng dụng cụ thể của lan truyền ngược trong mạng nơ-ron truy hồi.
-Nó đòi hỏi chúng ta mở rộng mạng nơ-ron truy hồi theo từng bước thời gian một để thu được sự phụ thuộc giữa các biến mô hình và các tham số.
+Lượt truyền xuôi trong mạng nơ-ron hồi tiếp tương đối đơn giản.
+*Lan truyền ngược qua thời gian* thực chất là một ứng dụng cụ thể của lan truyền ngược trong mạng nơ-ron hồi tiếp.
+Nó đòi hỏi chúng ta mở rộng mạng nơ-ron hồi tiếp theo từng bước thời gian một để thu được sự phụ thuộc giữa các biến mô hình và các tham số.
 Sau đó, dựa trên quy tắc dây chuyền, chúng ta áp dụng lan truyền ngược để tính toán và lưu các giá trị gradient.
 Vì chuỗi có thể khá dài nên sự phụ thuộc trong chuỗi cũng có thể rất dài.
 Ví dụ, đối với một chuỗi gồm 1000 ký tự, ký tự đầu tiên có thể ảnh hưởng đáng kể tới ký tự ở vị trí 1000.
@@ -68,7 +68,7 @@ Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì sẽ xảy r
 ## A Simplified Recurrent Network
 -->
 
-## Mạng Truy hồi Giản thể
+## Mạng Hồi tiếp Giản thể
 
 <!--
 We start with a simplified model of how an RNN works.
@@ -301,14 +301,14 @@ the hidden state of the last timestep $\mathbf{h}_2$, and the input of the curre
 -->
 
 
-Để minh họa trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron truy hồi, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
+Để minh họa trực quan sự phụ thuộc giữa các biến và tham số mô hình trong suốt quá trình tính toán của mạng nơ-ron hồi tiếp, ta có thể vẽ đồ thị tính toán của mô hình, như trong :numref:`fig_rnn_bptt`.
 Ví dụ, việc tính toán trạng thái ẩn ở bước thời gian 3, $\mathbf{h}_3$, phụ thuộc vào các tham số $\mathbf{W}_{hx}$ và $\mathbf{W}_{hh}$ của mô hình, trạng thái ẩn ở bước thời gian trước đó $\mathbf{h}_2$, và đầu vào ở bước thời gian hiện tại $\mathbf{x}_3$.
 
 <!--
 ![ Computational dependencies for a recurrent neural network model with three timesteps. Boxes represent variables (not shaded) or parameters (shaded) and circles represent operators. ](../img/rnn-bptt.svg)
 -->
 
-![Sự phụ thuộc về mặt tính toán của mạng nơ-ron truy hồi với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
+![Sự phụ thuộc về mặt tính toán của mạng nơ-ron hồi tiếp với ba bước thời gian. Ô vuông tượng trưng cho các biến (không tô đậm) hoặc các tham số (tô đậm), hình tròn tượng trưng cho các phép toán.](../img/rnn-bptt.svg)
 :label:`fig_rnn_bptt`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -468,8 +468,8 @@ Formalize this statement.
 Không làm mất tính tổng quát, ta giả sử chúng được sắp xếp theo thứ tự tăng dần $\lambda_i \leq \lambda_{i+1}$.
 Chứng minh rằng $\mathbf{M}^k$ có các trị riêng là $\lambda_i^k$.
 2. Chứng minh rằng với vector bất kì $\mathbf{x} \in \mathbb{R}^n$, xác suất cao là $\mathbf{M}^k \mathbf{x}$ sẽ xấp xỉ vector trị riêng lớn nhất $\mathbf{v}_n$ của $\mathbf{M}$.
-3. Kết quả trên có ý nghĩa như thế nào khi tính gradient của mạng nơ-ron truy hồi?
-4. Ngoài gọt gradient, có phương pháp nào để xử lý bùng nổ gradient trong mạng nơ-ron truy hồi không?
+3. Kết quả trên có ý nghĩa như thế nào khi tính gradient của mạng nơ-ron hồi tiếp?
+4. Ngoài gọt gradient, có phương pháp nào để xử lý bùng nổ gradient trong mạng nơ-ron hồi tiếp không?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
