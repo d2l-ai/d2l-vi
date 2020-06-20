@@ -637,7 +637,7 @@ In the following we will see how gradient descent and stochastic gradient descen
 -->
 
 Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy các thuật toán tối ưu hóa và giúp chúng ta hiểu chúng một cách chi tiết.
-Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient ngẫu nhiên có thể được suy ra một cách phù hợp.
+Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient ngẫu nhiên có thể được suy ra từ đó.
 
 <!--
 * Intersections of convex sets are convex. Unions are not.
