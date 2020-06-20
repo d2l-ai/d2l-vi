@@ -5,7 +5,7 @@
 # Implementation of Recurrent Neural Networks from Scratch
 -->
 
-# Lập trình Mạng nơ-ron Truy hồi từ đầu
+# Lập trình Mạng nơ-ron Hồi tiếp từ đầu
 :label:`sec_rnn_scratch`
 
 <!--

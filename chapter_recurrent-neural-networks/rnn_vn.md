@@ -5,7 +5,7 @@
 # Recurrent Neural Networks
 -->
 
-# Mạng nơ-ron Truy hồi
+# Mạng nơ-ron Hồi tiếp
 :label:`sec_plain_rnn`
 
 
@@ -80,7 +80,7 @@ Trước khi tìm hiểu mô hình này, hãy cùng xem lại perceptron đa t�
 ## Recurrent Networks Without Hidden States
 -->
 
-## Mạng Truy hồi không có Trạng thái ẩn
+## Mạng Hồi tiếp không có Trạng thái ẩn
 
 <!--
 Let us take a look at a multilayer perceptron with a single hidden layer.
@@ -147,7 +147,7 @@ Và chỉ cần biết thêm rằng ta có thể chọn các cặp $(x_t, x_{t-1
 ## Recurrent Networks with Hidden States
 -->
 
-## Mạng Truy hồi có Trạng thái ẩn
+## Mạng Hồi tiếp có Trạng thái ẩn
 
 <!--
 Matters are entirely different when we have hidden states.

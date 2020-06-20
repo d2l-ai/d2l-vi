@@ -68,7 +68,7 @@ Trong phần tiếp theo chúng ta sẽ làm sáng tỏ những gì sẽ xảy r
 ## A Simplified Recurrent Network
 -->
 
-## Mạng Truy hồi Giản thể
+## Mạng Hồi tiếp Giản thể
 
 <!--
 We start with a simplified model of how an RNN works.

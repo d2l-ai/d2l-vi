@@ -5,7 +5,7 @@
 # Concise Implementation of Recurrent Neural Networks
 -->
 
-# Lập trình súc tích Mạng nơ-ron Truy hồi
+# Lập trình súc tích Mạng nơ-ron Hồi tiếp
 :label:`sec_rnn_gluon`
 
 <!--

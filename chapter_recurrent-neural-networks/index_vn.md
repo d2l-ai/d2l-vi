@@ -2,7 +2,7 @@
 # Recurrent Neural Networks
 -->
 
-# Mạng nơ-ron Truy hồi
+# Mạng nơ-ron Hồi tiếp
 :label:`chap_rnn`
 
 <!--
