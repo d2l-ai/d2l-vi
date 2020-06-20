@@ -540,7 +540,7 @@ There is a rich body of literature explaining how to arrive at the function $L(\
 For our purposes it is sufficient to know that the saddlepoint of $L$ is where the original constrained optimization problem is solved optimally.
 -->
 
-Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange*, chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
+Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
 Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
 Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
 Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *tối đa hóa* $L$ theo $\alpha$ và đồng thời *tối thiểu hóa* nó theo $\mathbf{x}$.
