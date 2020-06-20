@@ -121,7 +121,6 @@ Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ 
 -->
 
 ![Dưới mỗi bước thời gian là xác suất có điều kiện của "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
-
 :label:`fig_s2s-prob2`
 
 <!--
