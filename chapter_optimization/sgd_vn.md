@@ -206,7 +206,7 @@ Như kỳ vọng, giá trị phương sai của các tham số giảm đáng k�
 Tuy nhiên, cách này có thể không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
 Thậm chí sau 1000 bước lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
 Trên thực tế, thuật toán này không hội tụ được.
-Mặt khác, nếu ta sử dụng biến suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương số bước lặp, thì có thể thuật toán sẽ hội tụ.
+Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương số bước lặp, có thể thuật toán sẽ hội tụ.
 
 ```{.python .input  n=5}
 def polynomial():
