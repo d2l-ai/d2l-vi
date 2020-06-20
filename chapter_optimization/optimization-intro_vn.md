@@ -281,8 +281,7 @@ Dù sao thì đây cũng là một công cụ tốt để học về các thuậ
 ### Vanishing Gradients
 -->
 
-# *dịch tiêu đề phía trên*
-
+# Tiêu biến Gradient
 <!--
 Probably the most insidious problem to encounter are vanishing gradients.
 For instance, assume that we want to minimize the function $f(x) = \tanh(x)$ and we happen to get started at $x = 4$.
@@ -292,7 +291,12 @@ Consequently optimization will get stuck for a long time before we make progress
 This turns out to be one of the reasons that training deep learning models was quite tricky prior to the introduction of the ReLU activation function.
 -->
 
-*dịch đoạn phía trên*
+Có lẽ vấn đế quỷ quyệt nhất mà ta phải đối mặt là tiêu biến gradient.
+Ví dụ, giả sử ta muốn tối thiểu hàm $f(x) = \tanh(x)$ và ta bắt đầu tại $x = 4$.
+Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
+Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
+Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
+Đây hoá ra là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi xuất hiện hàm kích hoạt ReLU.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
@@ -308,7 +312,10 @@ Furthermore, it is not really necessary to find *the* best solution.
 Local optima or even approximate solutions thereof are still very useful.
 -->
 
-*dịch đoạn phía trên*
+Tối ưu trong học sâu mang đầy thử thách.
+May mắn thay, có một lượng lớn các thuật toán hoạt động tốt và dễ sử dụng ngay cả đối với người mới bắt đầu.
+Hơn nữa, việc tìm kiếm giải pháp tốt *nhất* là không thực sự cần thiết.
+Các cực tiểu và ngay cả nghiệm xấp xỉ của nó cũng rất hữu dụng.
 
 ## Tóm tắt
 
@@ -319,7 +326,10 @@ Local optima or even approximate solutions thereof are still very useful.
 * Vanishing gradients can cause optimization to stall. Often a reparameterization of the problem helps. Good initialization of the parameters can be beneficial, too.
 -->
 
-*dịch đoạn phía trên*
+* Tối thiểu lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để tối thiểu lỗi ta mong muốn.
+* Các bài toán tối ưu thường có nhiều vùng cực tiểu.
+* Bài toán còn có thể có nhiều điểm yên ngựa hơn nữa, do các bài toán thường không có tính lồi.
+* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) sẽ giúp ích. Việc khởi tạo tốt tập tham số cũng có thể có ích.
 
 
 ## Bài tập
@@ -338,7 +348,17 @@ Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is
     * Can you exploit this effect also for optimization algorithms?
 -->
 
-*dịch đoạn phía trên*
+1. Xét một mạng perceptron đa tầng đơn giản với một tầng ẩn $d$ chiều và một đầu ra duy nhất.
+Chỉ ra rằng bất kì cực tiểu nào cũng có tương ứng ít nhất $d!$ nghiệm khiến mạng vận hành giống nhau.
+2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
+Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem ví dụ :cite:`Wigner.1958` để biết thêm chi tiết).
+    * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng.
+    Hay, với mọi vector riêng $\mathbf{v}$, xác suất trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
+    * Tại sao điều trên *không* ám chỉ $P(\lambda > 0) = 0.5$?
+3. Liệu còn thử thách nào tối ưu trong học sâu mà bạn có thể nghĩ tới?
+4. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
+    * Tại sao điều này lại khó khăn đến vậy?
+    * Bạn có thể tận dụng kết quả trên cho các thuật toán tối ưu?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -374,4 +394,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
