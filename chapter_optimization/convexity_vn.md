@@ -480,21 +480,26 @@ d2l.annotate('x', (-0.5, f(-0.5)), (-1.5, f(-0.5)))
 ## Constraints
 -->
 
-## *dịch tiêu đề phía trên*
+## Ràng buộc
 
 <!--
 One of the nice properties of convex optimization is that it allows us to handle constraints efficiently.
 That is, it allows us to solve problems of the form:
 -->
 
-*dịch đoạn phía trên*
+Một trong những tính chất hay ho của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả.
+Nó cho phép ta giải quyết các bài toán dưới dạng:
 
-
+<!--
 $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{ subject to } & c_i(\mathbf{x}) \leq 0 \text{ for all } i \in \{1, \ldots, N\}.
 \end{aligned}$$
+-->
 <!-- dịch for all, subject to và minimize -->
 
+$$\begin{aligned} \mathop{\mathrm{tối thiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+    \text{ theo } & c_i(\mathbf{x}) \leq 0 \text{ với mọi } i \in \{1, \ldots, N\}.
+\end{aligned}$$
 
 <!--
 Here $f$ is the objective and the functions $c_i$ are constraint functions.
@@ -504,13 +509,17 @@ If a second constraint is $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$, th
 Satisfying both constraints simultaneously amounts to selecting a slice of a ball as the constraint set.
 -->
 
-*dịch đoạn phía trên*
+$f$ ở đây là mục tiêu và các hàm $c_i$ là các hàm số ràng buộc.
+Hãy xem nó xử lý thế nào trong trường hợp $c_1(\mathbf{x}) = \|\mathbf{x}\|_2 - 1$ nhé.
+Ở trường hợp này, các tham số $\mathbf{x}$ bị ràng buộc vào khối cầu đơn vị.
+Nếu ràng buộc thứ hai là $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$ thì điều này ứng với mọi $\mathbf{x}$ nằm trên nửa khoảng.
+Đáp ứng đồng thời hai ràng buộc này nghĩa là chọn ra một lát cắt của khối cầu làm tập hợp ràng buộc.
 
 <!--
 ### Lagrange Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm số Lagrange
 
 <!--
 In general, solving a constrained optimization problem is difficult.
@@ -521,17 +530,23 @@ In short, the gradient of the objective function (i.e., gravity) will be offset 
  Note that any constraint that is not active (i.e., the ball does not touch the wall) will not be able to exert any force on the ball.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là khó khăn.
+Có một cách để giải quyết bắt nguồn từ vật lý theo một trực giác khá đơn giản.
+Hãy tưởng tượng có một quả banh bên trong một chiếc hộp.
+Quả banh sẽ lăn đến nơi thấp nhất và trọng lực sẽ cân bằng với lực nâng của các cạnh hộp tác động lên quả banh.
+Tóm lại, gradient của hàm mục tiêu (ở đây là trọng lực) sẽ được bù lại bởi gradient của hàm ràng buộc (cần phải nằm trong chiếc hộp, bị các bức tưởng "đẩy lại").
+Lưu ý rằng bất kỳ ràng buộc nào không kích hoạt (quả banh không đụng đến bức tường) thì sẽ không thể tác động bất kỳ một lực nào lên quả banh.
 
 <!--
 Skipping over the derivation of the Lagrange function $L$ (see e.g., the book by Boyd and Vandenberghe for details :cite:`Boyd.Vandenberghe.2004`) 
 the above reasoning can be expressed via the following saddlepoint optimization problem:
 -->
 
-*dịch đoạn phía trên*
+Ta hãy bỏ qua phần phần diễn giải chứng minh của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`).
+Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa:
 
 
-$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ where } \alpha_i \geq 0.$$
+$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ với } \alpha_i \geq 0.$$
 <!-- dịch where -->
 
 
@@ -544,7 +559,13 @@ There is a rich body of literature explaining how to arrive at the function $L(\
 For our purposes it is sufficient to know that the saddlepoint of $L$ is where the original constrained optimization problem is solved optimally.
 -->
 
-*dịch đoạn phía trên*
+Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
+Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
+Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *tối đa hóa* $L$ theo $\alpha$ và đồng thời *tối thiểu hóa* nó theo $\mathbf{x}$.
+Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
+Đối với mục đích của chúng ta, chúng ta chỉ cần biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -724,7 +745,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 5 -->
 * 
