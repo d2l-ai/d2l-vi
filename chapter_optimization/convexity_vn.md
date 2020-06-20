@@ -512,7 +512,7 @@ In short, the gradient of the objective function (i.e., gravity) will be offset 
 -->
 
 Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là khó khăn.
-Có một cách để giải quyết nó bắt nguồn từ vật lý với một trực giác khá đơn giản.
+Có một cách để giải quyết bắt nguồn từ vật lý theo một trực giác khá đơn giản.
 Hãy tưởng tượng có một quả banh bên trong một chiếc hộp.
 Quả banh sẽ lăn đến nơi thấp nhất và trọng lực sẽ cân bằng với lực nâng của các cạnh hộp tác động lên quả banh.
 Tóm lại, gradient của hàm mục tiêu (ở đây là trọng lực) sẽ được bù lại bởi gradient của hàm ràng buộc (cần phải nằm trong chiếc hộp, bị các bức tưởng "đẩy lại").
