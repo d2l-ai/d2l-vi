@@ -292,8 +292,8 @@ We begin by reading *The Time Machine* corpus that we used in :numref:`sec_rnn_s
 The code for reading the dataset is given below:
 -->
 
-Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian* mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
-Mã nguồn để đọc dữ liệu được cho dưới đây:
+Chúng ta bắt đầu bằng việc đọc kho ngữ liệu *Cỗ máy Thời gian* đã sử dụng trong :numref:`sec_rnn_scratch`.
+Dưới đây là mã nguồn đọc dữ liệu:
 
 ```{.python .input  n=1}
 import d2l
@@ -319,11 +319,11 @@ We instantiate all weights and biases relating to the update gate, the reset gat
 Subsequently, we attach gradients to all the parameters.
 -->
 
-Bước tiếp theo là để khởi tạo các tham số mô hình.
-Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
-Siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
-Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
-Sau đó, chúng ta gắn gradient cho tất cả các tham số.
+Bước tiếp theo là khởi tạo các tham số mô hình.
+Ta khởi tạo các giá trị trọng số theo phân phối Gauss với phương sai $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
+Siêu tham số `num_hiddens` xác định số lượng đơn vị ẩn.
+Ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh của cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
+Sau đó, gắn gradient cho tất cả các tham số.
 
 
 ```{.python .input  n=2}
@@ -362,8 +362,8 @@ Now we will define the hidden state initialization function `init_gru_state`.
 Just like the `init_rnn_state` function defined in :numref:`sec_rnn_scratch`, this function returns an `ndarray` with a shape (batch size, number of hidden units) whose values are all zeros.
 -->
 
-Bây giờ chúng ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
-Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
+Bây giờ ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
+Cũng giống như hàm `init_rnn_state` trong :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` chứa các giá trị bằng không với kích thước (kích thước batch, số đơn vị ẩn).
 
 
 ```{.python .input  n=3}
@@ -376,8 +376,8 @@ Now we are ready to define the GRU model.
 Its structure is the same as the basic RNN cell, except that the update equations are more complex.
 -->
 
-Bây giờ chúng ta đã sẵn sàng để định nghĩa mô hình GRU.
-Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng với phương trình cập nhật phức tạp hơn.
+Giờ ta có thể định nghĩa mô hình GRU.
+Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng có phương trình cập nhật phức tạp hơn.
 
 
 ```{.python .input  n=4}
@@ -406,8 +406,8 @@ Training and prediction work in exactly the same manner as before.
 After training for one epoch, the perplexity and the output sentence will be like the following.
 -->
 
-Việc huấn luyện và dự đoán hoạt động theo cách tương tự như trước đây.
-Sau khi huấn luyện cho một epoch, độ hỗn độn (_perplexity_) và câu đầu ra sẽ giống dưới đây.
+Việc huấn luyện và dự đoán cũng được thực hiện tương tự như với RNN.
+Sau khi huấn luyện một epoch, ta thu được perplexity và câu đầu ra như sau.
 
 
 ```{.python .input  n=3}
@@ -434,9 +434,9 @@ This encapsulates all the configuration detail that we made explicit above.
 The code is significantly faster as it uses compiled operators rather than Python for many details that we spelled out in detail before.
 -->
 
-Trong Gluon, chúng ta có thể trực tiếp gọi lớp `GRU` trong mô-đun `rnn`.
-Mô-đun này đóng gói tất cả các chi tiết cấu hình mà chúng ta đã thực hiện tường minh ở trên.
-Mã này nhanh hơn đáng kể vì nó sử dụng các toán tử đã được biên dịch chứ không phải là các toán tử thuần Python cho nhiều chi tiết mà chúng ta nêu ra ở trên.
+Trong Gluon, ta có thể trực tiếp gọi lớp `GRU` trong mô-đun `rnn`.
+Mô-đun này đóng gói tất cả các cấu hình đã thực hiện tường minh ở trên.
+Đoạn mã này nhanh hơn đáng kể do sử dụng các toán tử được biên dịch chứ không phải thuần Python như trên.
 
 
 ```{.python .input  n=9}
@@ -458,10 +458,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed.
 -->
 
-* Các mạng nơ-ron truy hồi có cổng nắm bắt tốt hơn các phụ thuộc có khoảng cách bước thời gian lớn trong chuỗi thời gian.
-* Cổng xoá giúp ích trong việc nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
-* Cổng cập nhật giúp ích trong việc nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
-* Các mạng GRU chứa các khối RNN cơ bản như là một trường hợp đặc biệt khi mà cổng xoá được bật lên. Chúng có thể bỏ qua các chuỗi khi cần.
+* Các mạng nơ-ron hồi tiếp có cổng nắm bắt các phụ thuộc xa trong chuỗi thời gian tốt hơn.
+* Cổng xoá giúp nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng cập nhật giúp nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
+* Trường hợp đặc biệt khi cổng xoá được kích hoạt, GRU trở thành RNN cơ bản. Chúng cũng có thể bỏ qua các các thành phần trong chuỗi khi cần.
 
 
 <!--
@@ -477,10 +477,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. What happens if you implement only parts of a GRU? That is, implement a recurrent cell that only has a reset gate. Likewise, implement a recurrent cell only with an update gate.
 -->
 
-1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU` với nhau.
-2. Giả sử rằng chúng ta chỉ muốn sử dụng các đầu vào cho bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t> t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
-3. Điều chỉnh các siêu tham số, quan sát và phân tích tác động của điều chỉnh này tới thời gian chạy, perplexity và các lời bài hát.
-4. Điều gì xảy ra nếu bạn chỉ lập trình một phần của khối GRU? Đó là, lập trình một khối truy hồi mà chỉ có một cổng xoá. Tương tự như vậy, lập trình một khối truy hồi chỉ với một cổng cập nhật.
+1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU`.
+2. Giả sử ta chỉ muốn sử dụng đầu vào tại bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t > t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
+3. Quan sát và phân tích tác động tới thời gian chạy, perplexity và các câu được sinh ra khi điều chỉnh các siêu tham số.
+4. Điều gì xảy ra khi GRU được lập trình chỉ có cổng xoá hay chỉ có cổng cập nhật?
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -504,22 +504,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
 * Võ Tấn Phát
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
 * Nguyễn Duy Du
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
-
-<!-- Phần 4 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
+* Phạm Minh Đức
