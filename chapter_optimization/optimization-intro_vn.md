@@ -181,7 +181,7 @@ Trong thực tế, đây là một trong những tính chất có lợi của h�
 ### Saddle Points
 -->
 
-# *dịch tiêu đề phía trên*
+# Các điểm Yên ngựa
 
 <!--
 Besides local minima, saddle points are another reason for gradients to vanish.
@@ -191,7 +191,11 @@ Its first and second derivative vanish for $x=0$.
 Optimization might stall at the point, even though it is not a minimum.
 -->
 
-*dịch đoạn phía trên*
+Ngoài các vùng cực tiểu, các điểm yên ngựa cũng là lý do gây ra tiêu biến gradient.
+Một [điểm yên ngựa](https://en.wikipedia.org/wiki/Saddle_point) là bất cứ điểm nào mà tất cả gradient của một hàm bị tiêu biến, nhưng tại đó không phải là một cực tiểu hay giá trị nhỏ nhất.
+Xét hàm $f(x) = x^3$.
+Đạo hàm bậc một và bậc hai của hàm này tiêu biến tại $x=0$.
+Tối ưu có thể bị ngưng trệ tại điểm này, cho dù nó không phải là một cực tiểu.
 
 
 ```{.python .input  n=4}
@@ -209,7 +213,11 @@ This is a maximum with respect to $y$ and a minimum with respect to $x$.
 Moreover, it *looks* like a saddle, which is where this mathematical property got its name.
 -->
 
-*dịch đoạn phía trên*
+Các điểm yên ngựa trong không gian nhiều chiều còn quỷ quyệt hơn nhiều, như ví dụ ở dưới.
+Xét hàm $f(x, y) = x^2 - y^2$.
+Hàm này tồn tại một điểm yên ngựa tại $(0, 0)$.
+Đây là một điểm cực đại nếu xét theo $y$, cực tiểu nếu xét theo $x$.
+Hơn nữa, nó *nhìn* giống như một cái yên ngựa, khởi nguồn tên gọi của tính chất toán học này.
 
 
 ```{.python .input  n=5}
@@ -235,7 +243,8 @@ We assume that the input of a function is a $k$-dimensional vector and its outpu
 The solution of the function could be a local minimum, a local maximum, or a saddle point at a position where the function gradient is zero:
 -->
 
-*dịch đoạn phía trên*
+Ta giả sử đầu vào của hàm là một vector $k$ chiều và đầu ra của nó là một số vô hướng; do đó ma trận Hessian của nó có $k$ trị riêng (xem thêm tại :numref:`sec_geometry-linear-algebraic-ops`).
+Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc một điểm yên ngựa tại vị trí mà gradient của hàm bằng 0.
 
 <!--
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are all positive, we have a local minimum for the function.
@@ -243,7 +252,9 @@ The solution of the function could be a local minimum, a local maximum, or a sad
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.
 -->
 
-*dịch đoạn phía trên*
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều âm, ta có một cực đại của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 mang cả giá trị âm lẫn dương, ta có một điểm yên ngựa của hàm.
 
 <!--
 For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high.
@@ -254,7 +265,13 @@ Sadly, though, most deep learning problems do not fall into this category.
 Nonetheless it is a great tool to study optimization algorithms.
 -->
 
-*dịch đoạn phía trên*
+Đối với bài toán trong không gian nhiều chiều, khả năng mà có một vài trị riêng âm là khá cao.
+Do đó các điểm yên ngựa có khả năng xuất hiện cao hơn các cực tiểu.
+Ta sẽ thảo luận một số ngoại lệ của vấn đề này ở phần tới khi giới thiệu đến tính lồi.
+Nói tóm lại, các hàm lồi là hàm mà các trị riêng của ma trận Hessian không bao giờ âm.
+Tuy nhiên, thật tiếc rằng đa số bài toán học sâu đều không thuộc loại này.
+Dù sao thì đây cũng là một công cụ tốt để học về các thuật toán tối ưu.
+
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -354,7 +371,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 <!-- Phần 3 -->
-* 
-
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 <!-- Phần 4 -->
 * 
