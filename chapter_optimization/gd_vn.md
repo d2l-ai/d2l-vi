@@ -22,7 +22,7 @@ Let us start with a simple special case.
 
 Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient.
 Nội dung cần thiết sẽ được trình bày ngắn gọn.
-Tham khảo :cite:`Boyd.Vandenberghe.2004` để có cái nhìn sâu sắc về bài toán tối ưu lồi. 
+Tham khảo :cite:`Boyd.Vandenberghe.2004` để có cái nhìn sâu sắc h về bài toán tối ưu lồi. 
 Mặc dù phần dưới đây rất hiếm khi được áp dụng trực tiếp trong học sâu, nhưng kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
 Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn.
 Hiện tượng này có thể quan sát được trong thuật toán hạ gradient.
