@@ -158,7 +158,8 @@ show_trace(res)
 ### Learning Rate
 -->
 
-### *dịch đoạn phía trên*
+### Tốc độ học
+
 :label:`section_gd-learningrate`
 
 <!--
@@ -168,7 +169,10 @@ To show what happens in such a case, consider the progress in the same optimizat
 As we can see, even after 10 steps we are still very far from the optimal solution.
 -->
 
-*dịch đoạn phía trên*
+Tốc độ học $\eta$ có thể được thiết lập bởi các người dùng.
+Nếu ta sử dụng tốc độ học quá nhỏ thì $x$ sẽ được cập nhật rất chậm, đòi hỏi số bước cập nhật nhiều hơn để thu được nghiệm tốt hơn.
+Để minh hoạ những gì xảy ra trong trường hợp này, ta hãy xem xét quá trình học trong cùng bài toán tối ưu với $\eta = 0.05$.
+Như chúng ta có thể thấy, ngay cả sau 10 bước cập nhật mà chúng ta vẫn còn rất xa nghiệm tối ưu.
 
 
 ```{.python .input  n=6}
@@ -183,7 +187,11 @@ In this case, we cannot guarantee that the iteration of $x$ will be able to lowe
 For example, when we set the learning rate to $\eta=1.1$, $x$ overshoots the optimal solution $x=0$ and gradually diverges.
 -->
 
-*dịch đoạn phía trên*
+Ngược lại, nếu chúng ta sử dụng một tốc độ học cao ngất ngưởng, giá trị $\left|\eta f'(x)\right|$ có thể rất lớn trong phương trình khai triển Taylỏ bậc nhất.
+Cụ thể, giá trị của hạng tử $\mathcal{O}(\eta^2 f'^2(x))$ trong :eqref: `gd-taylor` có thể đáng kể.
+Trong trường hợp này, chúng ta không thể đảm bảo rằng cập nhật của $x$ sẽ có thể làm suy giảm giá trị của $f(x)$.
+Ví dụ, khi chúng ta thiết lập tốc độ học $\eta=1.1$, $x$ sẽ lệch rất xa so với nghiệm tối ưu $x=0$ và dần dần phân kì.
+
 
 
 ```{.python .input  n=7}
@@ -195,7 +203,8 @@ show_trace(gd(1.1))
 ### Local Minima
 -->
 
-### *dịch đoạn phía trên*
+### Cực Tiểu Địa phương
+
 
 <!--
 To illustrate what happens for nonconvex functions consider the case of $f(x) = x \cdot \cos c x$.
@@ -204,7 +213,11 @@ Depending on our choice of learning rate and depending on how well conditioned t
 The example below illustrates how an (unrealistically) high learning rate will lead to a poor local minimum.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa quá trình học các hàm không lồi, ta xem xét trường hợp $f(x) = x \cdot \cos c x$.
+Những hàm này có vô số cực tiểu địa phương.
+Tùy thuộc vào tốc độ học chúng ta chọn và bài toán được điều kiện tốt như thế nào, chúng ta có thu được một trong rất nhiều nghiệm.
+
+Ví dụ dưới đây minh họa việc thiết lập tốc độ học quá cao (không thực tế) sẽ dẫn đến điểm cực tiểu địa phương xấu.
 
 
 ```{.python .input}
@@ -671,7 +684,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * 
