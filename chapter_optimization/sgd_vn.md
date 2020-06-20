@@ -257,7 +257,7 @@ it is possible to minimize them in a small number of steps while decreasing the 
 Unfortunately this case never really occurs in deep learning and we are left with a much more slowly decreasing rate in practice.
 -->
 
-Phần dưới đây chủ yếu phục vụ để truyền đạt vấn đề này trực quan hơn dù không bắt buộc.
+Phần này là phần không bắt buộc và chủ yếu giúp mang lại cái nhìn trực quan hơn về bài toán.
 Chúng ta giới hạn lời giải dưới đây bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
 Cũng có những cách chứng minh nâng cao hơn, ví dụ như khi hàm mục tiêu được định nghĩa tốt.
 :cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có biên dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với số ít bước lặp trong khi giảm tốc độ học chẳng hạn như $\eta(t) = \eta_0/(\beta t + 1)$.
