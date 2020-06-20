@@ -112,7 +112,7 @@ During computation, it first computes encoder outputs to initialize the decoder 
 -->
 
 Mô hình mã hoá - giải mã bao gồm một bộ mã hoá và một bộ giải mã.
-Chúng ta lập trình phương thức lan truyền xuôi cho quá trình huấn luyện.
+Chúng ta lập trình phương thức truyền xuôi cho quá trình huấn luyện.
 Phương thức này nhận cả đầu vào bộ mã hoá và đầu vào bộ giải mã cùng các đối số bổ sung không bắt buộc.
 Mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái bộ giải mã, sau đó trả về đầu ra của bộ giải mã.
 
