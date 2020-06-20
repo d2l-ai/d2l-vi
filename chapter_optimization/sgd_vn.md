@@ -230,7 +230,7 @@ For general nonconvex problems it is very difficult to obtain meaningful converg
 For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) of Tibshirani 2015.
 -->
 
-Có nhiều lựa chọn khác nhau trong việc thiết lập tốc độ học. 
+Vẫn còn có rất nhiều lựa chọn khác cho cách thiết lập tốc độ học. 
 Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
 Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
 Chúng ta có vô vàn lựa chọn khác nhau cho các biểu thiết lập tốc độ học (_schedule_) như vậy.
