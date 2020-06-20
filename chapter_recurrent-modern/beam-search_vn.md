@@ -13,7 +13,8 @@ In this section, we are going to introduce how to use the encoder-decoder to pre
 -->
 
 Trong :numref:`sec_seq2seq`, chúng ta đã thảo luận cách huấn luyện mô hình mã hóa - giải mã với đầu vào và đầu ra có độ dài thay đổi.
-Trong phần này, chúng tôi sẽ đưa ra cách sử dụng bộ mã hóa - bộ giải mã để dự đoán chuỗi có độ dài thay đổi.
+Phần này giới thiệu cách sử dụng mô hình để dự đoán đầu ra là chuỗi có độ dài thay đổi.
+
 <!--
 As in :numref:`sec_machine_translation`, when preparing to train the dataset, we normally attach a special symbol "&lt;eos&gt;" after each sentence to indicate the termination of the sequence.
 We will continue to use this mathematical symbol in the discussion below. For ease of discussion, we assume that the output of the decoder is a sequence of text.
@@ -23,13 +24,14 @@ All the subsequences after the special symbol "&lt;eos&gt;" in these output sequ
 Besides, we still denote the context vector as $\mathbf{c}$, which encodes information of all the hidden states from the input.
 -->
 
-Như trong :numref:`sec_machine_translation`, khi chuẩn bị dữ liệu huấn luyện, chúng ta thường thêm kí hiệu đặc biệt "&lt;eos&gt;" vào sau mỗi câu để biểu thị sự kết thúc của câu.
-Chúng ta sẽ tiếp tục sử dụng ký hiệu toán học trên trong phần thảo luận ở dưới đây.
+Trong :numref:`sec_machine_translation`, khi chuẩn bị dữ liệu huấn luyện, ta thường thêm ký hiệu kết thúc câu "&lt;eos&gt;" vào sau mỗi câu.
+Ta sẽ tiếp tục sử dụng ký hiệu trên trong phần này.
 Để thuận tiện, giả sử rằng đầu ra của bộ giải mã là một chuỗi văn bản.
-Gọi kích thước của bộ từ điển ở đầu ra $\mathcal{Y}$ (chứa kí tự đặc biệt "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
-Có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ loại chuỗi đầu ra có thể có.
-Tất những chuỗi con sau kí tự đặc biệt "&lt;eos&gt;" trong những chuỗi đầu ra sẽ bị bỏ đi.
-Bên cạnh đó, ta ký hiệu vector ngữ cảnh mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào là $\mathbf{c}$.
+Gọi kích thước của bộ từ điển đầu ra $\mathcal{Y}$ (chứa tất cả các từ có thể xuất hiện ở chuỗi đầu ra, bao gồm cả "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
+Như vậy có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ chuỗi đầu ra có thể được sinh ra.
+Tất những chuỗi con nằm phía sau "&lt;eos&gt;" trong chuỗi đầu ra sẽ bị lược bỏ.
+Bên cạnh đó, ta ký hiệu $\mathbf{c}$ là vector ngữ cảnh mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào.
+
 <!--
 ## Greedy Search
 -->
@@ -41,24 +43,29 @@ First, we will take a look at a simple solution: greedy search.
 For any timestep $t'$ of the output sequence, we are going to search for the word with the highest conditional probability from $|\mathcal{Y}|$ numbers of words, with
 -->
 
-Đầu tiên, chúng ta xem xét một phương pháp đơn giản: tìm kiếm tham lam.
-Tại mỗi bước thời gian $t'$ của chuỗi đầu ra, chúng ta chọn đầu ra là từ có xác suất có điều kiện cao nhất trong $|\mathcal{Y}|$ từ như sau:
+Đầu tiên, hãy xem xét một phương pháp đơn giản: tìm kiếm tham lam.
+Tại mỗi bước thời gian $t'$ của chuỗi đầu ra, ta chọn từ có xác suất có điều kiện cao nhất trong $|\mathcal{Y}|$ từ làm đầu ra như sau:
 
 $$y_{t'} = \operatorname*{argmax}_{y \in \mathcal{Y}} P(y \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$$
+
 <!--
 as the output.  Once the "&lt;eos&gt;" symbol is detected, or the output sequence has reached its maximum length $T'$, the output is completed.
 -->
-Một khi gặp kí tự "&lt;eos&gt;" hoặc chuỗi đầu ra đạt chiều dài tối đa $T'$, kết quả đầu ra được hoàn thành.
+
+Khi gặp "&lt;eos&gt;" hoặc khi chuỗi đầu ra đạt chiều dài tối đa $T'$, ta kết thúc việc dự đoán.
+
 <!--
 As we mentioned in our discussion of the decoder, the conditional probability of generating an output sequence based on the input sequence is 
 $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 We will take the output sequence with the highest conditional probability as the optimal sequence.
 The main problem with greedy search is that there is no guarantee that the optimal sequence will be obtained.
 -->
-Như đã đề cập trong phần thảo luận của bộ giải mã, xác suất có điều kiện của một chuỗi đầu ra được sinh từ chuỗi đầu vào là 
+
+Như đã đề cập khi thảo luận về bộ giải mã, xác suất có điều kiện của một chuỗi đầu ra được sinh từ chuỗi đầu vào là 
 $\prod_{t'=1}^{T'} P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c})$.
 Chuỗi đầu ra tối ưu là chuỗi có xác suất có điều kiện cao nhất.
-Vấn đề lớn nhất của phương pháp tìm kiếm tham lam chính là không đảm bảo sẽ tìm được chuỗi tối ưu.
+Vấn đề lớn nhất của tìm kiếm tham lam là không đảm bảo chuỗi tìm được là chuỗi tối ưu.
+
 <!--
 Take a look at the example below.
 We assume that there are four words "A", "B", "C", and "&lt;eos&gt;" in the output dictionary.
@@ -67,12 +74,13 @@ At each timestep, greedy search selects the word with the highest conditional pr
 Therefore, the output sequence "A", "B", "C", and "&lt;eos&gt;" will be generated in :numref:`fig_s2s-prob1`.
 The conditional probability of this output sequence is $0.5\times0.4\times0.4\times0.6 = 0.048$.
 -->
-Xem xét ví dụ bên dưới.
-Giả sử chúng ta có bốn từ "A", "B", "C", và "&lt;eos&gt;" trong từ điển đầu ra.
-Bốn con số dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` biểu diễn xác suất có điều kiện của việc tạo ra "A", "B", "C", và "&lt;eos&gt;" tương ứng với bước thời gian đó.
+
+Xét ví dụ dưới đây.
+Giả sử ta có bốn từ "A", "B", "C", và "&lt;eos&gt;" trong từ điển đầu ra.
+Bốn giá trị dưới mỗi bước thời gian trong :numref:`fig_s2s-prob1` là xác suất có điều kiện của "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó.
 Tại mỗi bước thời gian, tìm kiếm tham lam chọn từ có xác suất có điều kiện cao nhất.
 Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" được tạo ra như trong :numref:`fig_s2s-prob1`.
-Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\times0.4\times0.6 = 0.048$.
+Xác suất có điều kiện của cả chuỗi đầu ra này là $0.5\times0.4\times0.4\times0.6 = 0.048$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -82,7 +90,7 @@ Xác suất có điều kiện của chuỗi đầu ra này là $0.5\times0.4\ti
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep, respectively.  At each timestep, greedy search selects the word with the highest conditional probability. ](../img/s2s-prob1.svg)
 -->
 
-![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại từng thời gian tương ứng. Tại mỗi bước thời gian, phương pháp tìm kiếm tham lam sẽ chọn từ có xác suất cao nhất.](../img/s2s-prob1.svg)
+![Dưới mỗi bước thời gian là xác suất có điều kiện của "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại mỗi bước thời gian, phương pháp tìm kiếm tham lam sẽ chọn từ có xác suất cao nhất.](../img/s2s-prob1.svg)
 :label:`fig_s2s-prob1`
 
 
@@ -99,20 +107,23 @@ which is higher than the conditional probability of the output sequence obtained
 Therefore, the output sequence "A", "B", "C", and "&lt;eos&gt;" obtained by the greedy search is not an optimal sequence.
 -->
 
-Bây giờ, chúng ta sẽ xét một ví dụ khác trong :numref:`fig_s2s-prob2`.
-Không giống như trong :numref:`fig_s2s-prob1`, :numref:`fig_s2s-prob2` chọn từ "C", từ có xác suất có điều kiện cao thứ hai tại bước thời gian 2.
-Vì bước thời gian 3 phụ thuộc vào bước thời gian 1 và 2, mà chuỗi con đầu ra của hai bước thời gian này được thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, nên xác suất có điều kiện của mỗi từ được sinh ra tại bước thời gian 3 cũng thay đổi trong :numref:`fig_s2s-prob2`.
+Bây giờ, hãy xét một ví dụ khác trong :numref:`fig_s2s-prob2`.
+Khác với :numref:`fig_s2s-prob1`, tại bước thời gian 2 ta chọn "C", từ có xác suất có điều kiện cao thứ hai.
+Vì bước thời gian 3 phụ thuộc vào bước thời gian 1 và 2, mà chuỗi con đầu ra tại hai bước thời gian này thay đổi từ "A" và "B" trong :numref:`fig_s2s-prob1` thành "A" và "C" trong :numref:`fig_s2s-prob2`, nên xác suất có điều kiện của các từ tại bước thời gian 3 cũng thay đổi.
 Chúng ta chọn "B", từ có xác suất có điều kiện cao nhất.
-Bây giờ, những chuỗi con đầu ra của bước thời gian 4 dựa trên 3 bước thời gian đầu tiên sẽ là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
-Xác suất có điều kiện của chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" tại bước thời gian hiện tại là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của chuỗi được sinh ra dựa trên phương pháp tìm kiếm tham lam.
-Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ phương pháp tìm kiếm tham lam không phải là chuỗi tối ưu.
+Bây giờ, chuỗi con đầu ra trước bước thời gian 4 là "A", "C", và "B", khác với "A", "B", và "C" trong :numref:`fig_s2s-prob1`.
+Do đó xác suất có điều kiện của các từ tại bước thời gian 4 cũng thay đổi.
+Vẫn chọn từ có xác suất cao nhất tại bước thời gian này là "&lt;eos&gt;", ta có xác suất có điều kiện của cả chuỗi đầu ra "A", "C", "B", và "&lt;eos&gt;" là $0.5\times0.3\times0.6\times0.6=0.054$, cao hơn xác suất của chuỗi được sinh ra dựa trên phương pháp tìm kiếm tham lam.
+Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ phương pháp tìm kiếm tham lam không phải chuỗi tối ưu.
+
 <!--
 ![The four numbers under each timestep represent the conditional probabilities of generating "A", "B", "C", and "&lt;eos&gt;" at that timestep.  At timestep 2, the word "C", which has the second highest conditional probability, is selected.](../img/s2s-prob2.svg)
 -->
 
-![Bốn số nằm dưới mỗi bước thời gian biểu diễn xác suất có điều kiện tạo ra "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
+![Dưới mỗi bước thời gian là xác suất có điều kiện của "A", "B", "C", và "&lt;eos&gt;" tại bước thời gian đó. Tại bước thời gian 2, từ "C" được chọn có xác suất có điều kiện cao thứ hai.](../img/s2s-prob2.svg)
 
 :label:`fig_s2s-prob2`
+
 <!--
 ## Exhaustive Search
 -->
@@ -123,7 +134,9 @@ Vì vậy, chuỗi đầu ra "A", "B", "C", và "&lt;eos&gt;" có được từ 
 If the goal is to obtain the optimal sequence, we may consider using exhaustive search: 
 an exhaustive examination of all possible output sequences, which outputs the sequence with the highest conditional probability.
 -->
-Nếu mục tiêu là tìm được chuỗi tối ưu, chúng ta có thể xem xét giải thuật vét cạn: kiểm tra tất cả những chuỗi đầu ra có thể, kết quả cần tìm là chuỗi có xác suất có điều kiện cao nhất.
+
+Nếu mục tiêu là tìm được chuỗi tối ưu, ta có thể xem xét giải thuật vét cạn: kiểm tra tất cả những chuỗi đầu ra có thể, trả kết quả là chuỗi có xác suất có điều kiện cao nhất.
+
 <!--
 Although we can use an exhaustive search to obtain the optimal sequence, its computational overhead $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ is likely to be excessively high.
 For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we will need to evaluate $10000^{10} = 10^{40}$ sequences.
@@ -131,11 +144,13 @@ This is next to impossible to complete.
 The computational overhead of greedy search is $\mathcal{O}(\left|\mathcal{Y}\right|T')$, which is usually significantly less than the computational overhead of an exhaustive search.
 For example, when $|\mathcal{Y}|=10000$ and $T'=10$, we only need to evaluate $10000\times10=1\times10^5$ sequences.
 -->
+
 Mặc dù chúng ta có thể sử dụng thuật toán tìm kiếm vét cạn để tìm chuỗi tối ưu, nhưng chi phí tính toán của nó $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ là quá cao.
 Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta cần kiểm tra $10000^{10} = 10^{40}$ chuỗi.
 Điều này gần như là bất khả thi.
-Chi phí tính toán của tìm kiếm tham lam là $\mathcal{O}(\left|\mathcal{Y}\right|T')$, thường là ít hơn cả chi phí cho phần phụ trợ ban đầu của phương pháp vét cạn.
+Chi phí tính toán của tìm kiếm tham lam là $\mathcal{O}(\left|\mathcal{Y}\right|T')$, ít hơn nhiều so với vét cạn.
 Ví dụ, khi $|\mathcal{Y}|=10000$ và $T'=10$, chúng ta chỉ cần kiểm tra $10000\times10=1\times10^5$ chuỗi.
+
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
