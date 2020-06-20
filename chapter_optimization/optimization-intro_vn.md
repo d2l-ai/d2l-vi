@@ -298,7 +298,7 @@ Các cực tiểu và ngay cả nghiệm xấp xỉ của nó cũng rất hữu 
 Show that for any local minimum there are at least $d!$ equivalent solutions that behave identically.
 2. Assume that we have a symmetric random matrix $\mathbf{M}$ where the entries $M_{ij} = M_{ji}$ are each drawn from some probability distribution $p_{ij}$.
 Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is symmetric (see e.g., :cite:`Wigner.1958` for details).
-    * Prove that the distribution over eigenvalues is also symmetric.
+    * Prove that the distribution over eigenvalues is also symmetric. 
     That is, for any eigenvector $\mathbf{v}$ the probability that the associated eigenvalue $\lambda$ satisfies $P(\lambda > 0) = P(\lambda < 0)$.
     * Why does the above *not* imply $P(\lambda > 0) = 0.5$?
 3. What other challenges involved in deep learning optimization can you think of?
