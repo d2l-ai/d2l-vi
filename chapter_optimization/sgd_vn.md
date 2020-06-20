@@ -269,7 +269,7 @@ Thật không may, trường hợp này không xảy ra trong học sâu và tro
 Consider the case where
 -->
 
-Hãy xem xét trường hợp mà ở đó
+Hãy xem xét trường hợp trong đó
 
 
 $$\mathbf{w}_{t+1} = \mathbf{w}_{t} - \eta_t \partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w}).$$
