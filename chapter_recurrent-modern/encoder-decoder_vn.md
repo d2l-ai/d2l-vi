@@ -75,7 +75,7 @@ In the forward method, the decoder takes both inputs, e.g., a target sentence an
 It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
-Bộ giải mã có thêm phương thức `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin bổ sung nếu có, như độ dài hợp lệ của đầu vào, để đưa ra trạng thái mà cần thiết.
+Bộ giải mã có thêm phương thức `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin bổ sung nếu có, như độ dài hợp lệ của đầu vào, để đưa ra trạng thái cần thiết.
 Trong lan truyền xuôi, bộ giải mã nhận hai đầu vào, ví dụ như một câu đích và trạng thái.
 Nó trả về đầu ra với trạng thái nhiều khả năng đã thay đổi nếu bộ mã hoá chứa các tầng RNN.
 
