@@ -231,10 +231,9 @@ For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~r
 -->
 
 Có nhiều lựa chọn khác nhau trong việc thiết lập tốc độ học. 
-Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này.
+Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
 Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
 Chúng ta có vô vàn lựa chọn khác nhau cho các biểu thiết lập tốc độ học (_schedule_) như vậy.
-
 Bây giờ, chúng ta hãy tập trung vào biểu thiết lập tốc độ học mà từ đó có thể rút ra một phân tích lý thuyết toàn diện về tốc độ học trong điều kiện lồi.
 Với bài toán không lồi tổng quát, rất khó để đạt được đảm bảo hội tụ có ý nghĩa, vì nói chung các bài toán tối ưu phi tuyến tính không lồi đều thuộc dạng NP-hard.
 Để tìm hiểu thêm, tham khảo các ví dụ trong tập [bài giảng] (https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
@@ -262,8 +261,8 @@ Phần dưới đây chủ yếu phục vụ để truyền đạt vấn đề n
 Chúng ta giới hạn lời giải dưới đây bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
 Cũng có những lời giải chứng minh cao cấp khác, ví dụ, khi hàm mục tiêu được tối ưu hóa tốt.
 
-:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có biên dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với ít bước lặp khi mà tốc độ học luôn giảm theo $\eta(t) = \eta_0/(\beta t + 1)$.
-Thật không may, trường hợp này không xảy ra trong học sâu và trong thực tế ta giá trị mất mát giảm với tốc độ chậm hơn rất nhiều.
+:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có biên dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với số ít bước lặp trong khi giảm tốc độ học chẳng hạn như $\eta(t) = \eta_0/(\beta t + 1)$.
+Thật không may, trường hợp này không xảy ra trong học sâu và trong thực tế thường giá trị của hàm mục tiêu giảm với tốc độ chậm hơn rất nhiều.
 
 <!--
 Consider the case where
