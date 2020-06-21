@@ -160,7 +160,7 @@ In addition, we need other special tokens such as padding and sentence beginning
 -->
 
 Vì các token trong ngôn ngữ nguồn có thể khác với các token trong ngôn ngữ đích, ta cần xây dựng một bộ từ vựng cho mỗi ngôn ngữ.
-Do ta đang sử dụng từ để làm token chứ không dùng ký tự, kích thước bộ từ vựng sẽ lớn hơn đáng kể.
+Do ta đang sử dụng các từ để làm token chứ không dùng ký tự, kích thước bộ từ vựng sẽ lớn hơn đáng kể.
 Ở đây ta sẽ ánh xạ mọi token xuất hiện ít hơn 3 lần vào token &lt;unk&gt; như trong :numref:`sec_text_preprocessing`.
 Ngoài ra, ta cần các token đặc biệt khác như token đệm &lt;pad&gt;, hay token bắt đầu câu &lt;bos&gt;.
 
