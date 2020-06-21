@@ -113,7 +113,7 @@ The input for the encoder is a batch of sequences, which is 2-D tensor with shap
 The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
 -->
 Bây giờ hãy lập trình bộ mã hoá của mô hình seq2seq.
-Ta sử dụng một tầng embedding từ để lấy vector đặc trưng tương ứng với chỉ số từ trong ngôn ngữ nguồn.
+Ta sử dụng một tầng embedding từ ngữ để lấy vector đặc trưng tương ứng với chỉ số từ trong ngôn ngữ nguồn.
 Những vector đặc trưng này sẽ được truyền vào một mạng LSTM đa tầng.
 Batch đầu vào của bộ mã hoá là tensor 2 chiều có kích thước là (kích thước batch, độ dài chuỗi), với số lượng chuỗi bằng kích thước batch.
 Bộ mã hoá trả về cả đầu ra của LSTM, gồm các trạng thái ẩn của tất cả các bước thời gian, cùng với trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
