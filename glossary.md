@@ -470,4 +470,5 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------------------------|-------------------|----------------------------------------------|
 | weight decay                              | suy giảm trọng số | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | well-behaved function (analytic function) | hàm khả vi vô hạn | [https://git.io/JvojL](https://git.io/JvojL) |
+| whitening data                            | tẩy dữ liệu       |                                              |
 | wrapper function (trong lập trình)        | hàm wrapper       | [https://git.io/Jvohm](https://git.io/Jvohm) |
