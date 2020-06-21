@@ -283,7 +283,6 @@ In this case we can track the distance between the current parameter $\mathbf{w}
 
 là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát với tham số $\mathbf{w}$.
 Ta ký hiệu $\mathbf{w}^*$ là nghiệm của tham số tại điểm cực tiểu (_minimizer_) với giả định tồn tại nghiệm cực tiểu trong miền $\mathbf{w}$ xác định.
-
 Trong trường hợp này, chúng ta lưu khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
 
 
