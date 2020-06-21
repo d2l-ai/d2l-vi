@@ -56,6 +56,7 @@ Therefore, when the model training dataset is large, the cost of gradient descen
 -->
 
 Nếu hạ gradient được sử dụng, chi phí tính toán cho mỗi vòng lặp độc lập là $\mathcal{O}(n)$, tăng một cách tuyến tính với $n$.
+Do đó, với tập huấn luyện lớn, chi phí của hạ gradient cho mỗi vòng lặp sẽ cao.
 
 <!--
 Stochastic gradient descent (SGD) reduces computational cost at each iteration.
