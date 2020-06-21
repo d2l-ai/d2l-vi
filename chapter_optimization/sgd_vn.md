@@ -190,7 +190,7 @@ Let us see what this looks like in practice.
 
 Trong trường hợp đầu tiên, ta giảm tốc độ học bất cứ khi nào tiến trình tối ưu bị đình trệ.
 Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
-Ngoài ra, ta có thể giảm mạnh hơn nhiều bằng cách áp dụng suy giảm theo cấp số nhân.
+Ngoài ra, ta có thể tăng mức độ suy giảm bằng cách áp dụng suy giảm theo lũy thừa.
 Thật không may, cách này dẫn đến việc dừng sớm trước khi thuật toán hội tụ.
 Một lựa chọn phổ biến khác là suy giảm đa thức với $\alpha = 0.5$.
 Trong trường hợp tối ưu lồi, có một số chứng minh cho thấy giá trị này cho kết quả tốt.
