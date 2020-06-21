@@ -78,7 +78,7 @@ We should mention that the stochastic gradient $\nabla f_i(\mathbf{x})$ is the u
 
 Ở đây, $\eta$ là tốc độ học.
 Ta có thể thấy rằng chi phí tính toán cho mỗi vòng lặp giảm từ $\mathcal{O}(n)$ của hạ gradient xuống còn hằng số $\mathcal{O}(1)$.
-Nên nhớ rằng gradient ngẫu nhiên $\nabla f_i(\mathbf{x})$ là một ước lượng không thiên vị của gradient $\nabla f(\mathbf{x})$.
+Nên nhớ rằng gradient ngẫu nhiên $\nabla f_i(\mathbf{x})$ là một ước lượng không thiên lệch của gradient $\nabla f(\mathbf{x})$.
 
 
 $$\mathbb{E}_i \nabla f_i(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n \nabla f_i(\mathbf{x}) = \nabla f(\mathbf{x}).$$
