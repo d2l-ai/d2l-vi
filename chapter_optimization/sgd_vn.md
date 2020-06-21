@@ -188,7 +188,7 @@ In the case of convex optimization there are a number of proofs which show that 
 Let us see what this looks like in practice.
 -->
 
-Trong trường hợp đầu tiên, ta giảm tốc độ học, ví dụ bất cứ khi nào tiến trình tối ưu bị đình trệ.
+Trong trường hợp đầu tiên, ta giảm tốc độ học bất cứ khi nào tiến trình tối ưu bị đình trệ.
 Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
 Ngoài ra, ta có thể giảm mạnh hơn nhiều bằng cách áp dụng suy giảm theo cấp số nhân.
 Thật không may, cách này dẫn đến việc dừng sớm trước khi thuật toán hội tụ.
