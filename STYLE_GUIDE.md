@@ -12,7 +12,6 @@
     * Be consistent in the structure of each section
         * Summary
         * Exercises
-        * Scan the QR Code to Access Discussions
         * References (if any)
 * Quotes
     * Use double quotes
@@ -37,7 +36,7 @@
         * hyperparameter vs parameter
         * mini-batch stochastic gradient descent vs stochastic gradient descent
     * List
-        * https://github.com/mli/gluon-tutorials-zh/blob/master/TERMINOLOGY.md
+        * https://github.com/aivivn/d2l-vn/blob/master/glossary.md
 
 ## Math
 
