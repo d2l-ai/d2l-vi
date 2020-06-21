@@ -162,7 +162,7 @@ There are a few basic strategies that are used in adjusting $\eta$ over time (we
 -->
 
 Thay thế $\eta$ bằng tốc độ học phụ thuộc vào thời gian $\eta(t)$ sẽ khiến việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
-Cụ thể là, ta sẽ cần phải tìm ra một giá trị suy giảm $\eta$  hợp lý.
+Cụ thể, ta sẽ cần phải tìm ra mức độ suy giảm $\eta$ hợp lý.
 Nếu giảm quá nhanh, quá trình tối ưu hóa sẽ ngừng sớm.
 Nếu giảm quá chậm, ta sẽ lãng phí rất nhiều thời gian cho việc tối ưu hóa.
 Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\eta$ theo thời gian (ta sẽ thảo luận về các chiến lược nâng cao hơn trong chương sau):
