@@ -26,7 +26,7 @@ npx.set_np()
 ## Stochastic Gradient Updates
 -->
 
-## Cập nhật Hạ Gradient Ngẫu nhiên
+## Bước Cập nhật trong Hạ Gradient Ngẫu nhiên
 
 <!--
 In deep learning, the objective function is usually the average of the loss functions for each example in the training dataset.
