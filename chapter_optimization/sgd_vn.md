@@ -136,7 +136,7 @@ Thậm chí sau 50 bước thì chất lượng vẫn không tốt lắm.
 Tệ hơn, nó vẫn sẽ không cải thiện nếu ta thực hiện thêm nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
 Ta chỉ còn một lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
 Tuy nhiên, nếu chọn một giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển đáng kể nào ở những bước đầu tiên.
-Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không có được một giải pháp tốt, như đã thấy ở trên.
+Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không thu được nghiệm tốt, như đã thấy ở trên.
 Cách duy nhất để giải quyết các xung đột mục tiêu này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
 
 <!--
