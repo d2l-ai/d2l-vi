@@ -16,7 +16,7 @@ In machine translation, the encoder transforms a source sentence, e.g., "Hello w
 The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
-*Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
+*Kiến trúc mã hoá - giải mã* (*encoder-decoder architecture*) là một khuôn mẫu thiết kế mạng nơ-ron.
 Kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã, có thể thấy trong :numref:`fig_encoder_decoder`
 Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái chứa vài tensor.
 Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
@@ -75,7 +75,7 @@ In the forward method, the decoder takes both inputs, e.g., a target sentence an
 It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
-Bộ giải mã có thêm phương thức `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin bổ sung nếu có, như độ dài hợp lệ của đầu vào, để đưa ra trạng thái cần thiết.
+Bộ giải mã có thêm phương thức `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin bổ sung (nếu có), như độ dài hợp lệ của đầu vào, để đưa ra trạng thái cần thiết.
 Trong lan truyền xuôi, bộ giải mã nhận hai đầu vào, ví dụ như một câu đích và trạng thái.
 Nó trả về đầu ra với trạng thái nhiều khả năng đã thay đổi nếu bộ mã hoá chứa các tầng RNN.
 
