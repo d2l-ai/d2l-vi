@@ -63,7 +63,7 @@ At each iteration of stochastic gradient descent, we uniformly sample an index $
 and compute the gradient $\nabla f_i(\mathbf{x})$ to update $\mathbf{x}$:
 -->
 
-Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) sẽ giảm chi phí tính toán ở mỗi vòng lặp.
+Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) giúp giảm chi phí tính toán ở mỗi vòng lặp.
 Ở mỗi vòng lặp của thuật toán này, ta lấy ngẫu nhiên một mẫu dữ liệu có chỉ số $i\in\{1,\ldots, n\}$, và tính gradient $\nabla f_i(\mathbf{x})$ để cập nhật $\mathbf{x}$:
 
 
