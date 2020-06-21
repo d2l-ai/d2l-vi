@@ -44,7 +44,7 @@ Các tầng trong bộ mã hóa và bộ giải mã được minh họa trong :n
 In this section we will explain and implement the seq2seq model to train on the machine translation dataset.
 -->
 
-Trong phần này chúng ta sẽ giải thích và lập trình mô hình seq2seq để huấn luyện trên bộ dữ liệu dịch máy.
+Trong phần này chúng ta sẽ tìm hiểu và lập trình mô hình seq2seq để huấn luyện trên bộ dữ liệu dịch máy.
 
 
 ```{.python .input  n=1}
