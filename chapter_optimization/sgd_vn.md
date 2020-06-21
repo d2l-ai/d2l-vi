@@ -194,7 +194,7 @@ Ngoài ra, ta có thể tăng mức độ suy giảm bằng cách áp dụng suy
 Thật không may, phương pháp này dẫn đến việc dừng tối ưu quá sớm trước khi thuật toán hội tụ.
 Một lựa chọn phổ biến khác là suy giảm đa thức với $\alpha = 0.5$.
 Trong trường hợp tối ưu lồi, có một số chứng minh cho thấy giá trị này cho kết quả tốt.
-Ta sẽ xem nó hoạt động như thế nào trong thực tế.
+Hãy cùng xem nó hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=4}
