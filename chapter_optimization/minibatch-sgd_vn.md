@@ -147,7 +147,7 @@ timer.stop()
 A faster strategy is to perform column-wise assignment.
 -->
 
-*dịch đoạn phía trên*
+Chiến lược nhanh hơn chính là thực hiện phép nhân theo từng cột.
 
 
 ```{.python .input  n=3}
@@ -165,7 +165,8 @@ Last, the most effective manner is to perform the entire operation in one block.
 Let us see what the respective speed of the operations is.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, cách hiệu quả nhất là thực hiện toàn bộ phép nhân trong một khối.
+Hãy thử xem tốc độ tương ứng của phép nhân là bao nhiêu.
 
 
 ```{.python .input  n=4}
@@ -189,7 +190,7 @@ print("Performance in Gigaflops: element {:.3f}, \
 ## Minibatches
 -->
 
-## *dịch tiêu đề phía trên*
+## Minibatche
 
 :label:`sec_minibatches`
 
@@ -202,7 +203,12 @@ This applies both to evaluating a network when applied to data (often referred t
 That is, this applies whenever we perform $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ where
 -->
 
-*dịch đoạn phía trên*
+Ở các phần trước ta cho rằng việc đọc dữ liệu theo *minibatch* thay vì từng điểm dữ liệu một để cập nhật các tham số là điều hiển nhiên.
+Giờ ta sẽ khẳng định lại điều này một cách ngắn gọn.
+Xử lý từng điểm dữ liệu một đòi hỏi ta phải thực hiện rất nhiều phép nhân ma trận với vector (hay ngay cả vector với vector).
+Điều này khá tốn kém và đồng thời phải chịu cả tổng chi phí khá lớn do framework học sâu ở tầng dưới.
+Vấn đề này xảy ra ở cả lúc ước lượng một mạng khi áp dụng dữ liệu vào (thường được gọi là suy luận) và khi tính toán gradient để cập nhật các tham số.
+Tức là vấn đề xảy ra mỗi khi ta thực hiện $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ trong đó
 
 
 $$\mathbf{g}_t = \partial_{\mathbf{w}} f(\mathbf{x}_{t}, \mathbf{w})$$
@@ -213,7 +219,8 @@ We can increase the *computational* efficiency of this operation by applying it 
 That is, we replace the gradient $\mathbf{g}_t$ over a single observation by one over a small batch
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tăng hiệu suất *tính toán* của phép toán này bằng cách áp dụng vào dữ liệu theo từng minibatch.
+Tức là ta thay thế gradient $\mathbf{g}_t$ trên một điểm dữ liệu duy nhất bằng gradient đó trên một batch nhỏ.
 
 
 $$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w})$$
@@ -227,7 +234,10 @@ Since the minibatch gradient is composed of $b := |\mathcal{B}_t|$ independent g
 This, by itself, is a good thing, since it means that the updates are more reliably aligned with the full gradient.
 -->
 
-*dịch đoạn phía trên*
+Hãy thử xem phương pháp trên tác động thế nào đến tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
+Mặt khác, phương sai giảm một cách đáng kể.
+Do gradient của minibatch bao gồm các gradient $b := |\mathcal{B}_t|$ độc lập được lấy trung bình, độ lệch chuẩn của nó giảm đi $b^{-\frac{1}{2}}$ lần.
+Bản thân điều này là tốt do nó có nghĩa là việc cập nhật trở nên đáng tin cậy hơn so với việc lấy gradient toàn bộ tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -564,7 +574,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
 * 
