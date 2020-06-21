@@ -174,7 +174,7 @@ len(src_vocab)
 ## Loading the Dataset
 -->
 
-## Đọc Dữ liệu
+## Nạp Dữ liệu
 
 <!--
 In language models, each example is a `num_steps` length sequence from the corpus, which may be a segment of a sentence, or span over multiple sentences.
