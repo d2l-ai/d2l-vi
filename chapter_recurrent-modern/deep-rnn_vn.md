@@ -114,7 +114,7 @@ In particular, we can pick a regular RNN, a GRU, or an LSTM to implement the mod
 -->
 
 Giống như perceptron đa tầng, số tầng ẩn $L$ và số đơn vị ẩn $h$ được coi là các siêu tham số.
-Đặc biệt, chúng ta có thể chọn một kiến trúc RNN, GRU, hoặc LSTM tiêu biểu để xây dựng mô hình.
+Đặc biệt, chúng ta có thể chọn một kiến trúc RNN, GRU, hoặc LSTM thông thường để xây dựng mô hình.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
