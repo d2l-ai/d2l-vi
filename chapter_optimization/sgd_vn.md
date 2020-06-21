@@ -316,7 +316,7 @@ Hence we need to bound the inner product. By convexity we have that
 Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào trong *miền kỳ vọng*.
 
 Trong thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều đặn phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
-Do đó, chúng tần xác định biên cho tích nhân trong. Từ tính chất lồi, ta có
+Do đó, chúng ta cần xác định biên cho tích nhân trong. Từ tính chất lồi, ta có
 
 $$
 l(\mathbf{x}_t, \mathbf{w}^*) \geq l(\mathbf{x}_t, \mathbf{w}_t) + \left\langle \mathbf{w}^* - \mathbf{w}_t, \partial_{\mathbf{w}} l(\mathbf{x}_t, \mathbf{w}_t) \right\rangle.
