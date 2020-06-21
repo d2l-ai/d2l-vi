@@ -599,7 +599,7 @@ Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mat
 ### Penalties
 -->
 
-### *dịch tiêu đề phía trên*
+### Lượng phạt
 
 <!--
 One way of satisfying constrained optimization problems at least approximately is to adapt the Lagrange function $L$.
@@ -607,7 +607,9 @@ Rather than satisfying $c_i(\mathbf{x}) \leq 0$ we simply add $\alpha_i c_i(\mat
 This ensures that the constraints will not be violated too badly.
 -->
 
-*dịch đoạn phía trên*
+Có một cách để thỏa mãn các bài toán tối ưu hóa bị ràng buộc một cách xấp xỉ là phỏng theo hàm Lagrange $L$. 
+Thay vì thỏa mãn $c_i(\mathbf{x}) \leq 0$, chúng ta chỉ cần thêm $\alpha_i c_i(\mathbf{x})$ vào hàm mục tiêu $f(x)$.
+Điều này sẽ đảm bảo rằng các ràng buộc không bị vi phạm quá mức.
 
 <!--
 In fact, we have been using this trick all along.
@@ -617,7 +619,11 @@ Using the constrained optimization point of view we can see that this will ensur
 Adjusting the value of $\lambda$ allows us to vary the size of $\mathbf{w}$.
 -->
 
-*dịch đoạn phía trên*
+Thực tế, chúng ta đã dùng thủ thuật này suốt.
+Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`.
+Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng $\mathbf{w}$ không phát triển quá lớn.
+Bằng cách sử dụng góc nhìn tối ưu hóa bị ràng buộc, chúng ta có thể thấy rằng nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với bán kính $r$ nào đó.
+Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi độ lớn của $\mathbf{w}$.
 
 <!--
 In general, adding penalties is a good way of ensuring approximate constraint satisfaction.
@@ -625,13 +631,15 @@ In practice this turns out to be much more robust than exact satisfaction.
 Furthermore, for nonconvex problems many of the properties that make the exact approach so appealing in the convex case (e.g., optimality) no longer hold.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, thêm các lượng phạt vào là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ.
+Trong thực tế, điều này hoá ra ổn định hơn rất nhiều khi so với việc thỏa mãn chuẩn xác.
+Hơn nữa, với các bài toán không lồi, nhiều tính chất khiến hướng tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) không còn đảm bảo.
 
 <!--
 ### Projections
 -->
 
-### *dịch tiêu đề phía trên*
+### Các phép chiếu
 
 <!--
 An alternative strategy for satisfying constraints are projections.
@@ -639,7 +647,9 @@ Again, we encountered them before, e.g., when dealing with gradient clipping in 
 There we ensured that a gradient has length bounded by $c$ via
 -->
 
-*dịch đoạn phía trên*
+Một chiến lược thay thế để thỏa mãn các ràng buộc là các phép chiếu.
+Hơn nữa, chúng ta đã gặp chúng trước đây, ví dụ, khi giải quyết việc gọt gradient ở :numref:`sec_rnn_scratch`.
+Ở phần đó chúng ta đã đảm bảo rằng gradient có độ dài ràng buộc bởi $c$ thông qua
 
 
 $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
@@ -649,7 +659,7 @@ $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
 This turns out to be a *projection* of $g$ onto the ball of radius $c$. More generally, a projection on a (convex) set $X$ is defined as
 -->
 
-*dịch đoạn phía trên*
+Điều này hóa ra là một *phép chiếu* của $g$ lên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là
 
 
 $$\mathrm{Proj}_X(\mathbf{x}) = \mathop{\mathrm{argmin}}_{\mathbf{x}' \in X} \|\mathbf{x} - \mathbf{x}'\|_2.$$
@@ -665,13 +675,19 @@ Points outside the set (black) are mapped to the closest point inside the set (r
 While for $\ell_2$ balls this leaves the direction unchanged, this need not be the case in general, as can be seen in the case of the diamond.
 -->
 
-*dịch đoạn phía trên*
+Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$.
+Điều này nghe có vẻ hơi trừu tượng.
+:numref:`fig_projections` sẽ giải thích nó một cách rõ ràng hơn.
+Ở đó ta có hai tập lồi, một hình tròn và một hình thoi.
+Các điểm nằm bên trong tập (màu vàng) giữ nguyên không đổi.
+Các điểm nằm bên ngoài tập (màu đen) được ánh xạ tới điểm gần nhất bên trong tập (màu đỏ).
+Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này không nhất thiết vẫn đúng trong trường hợp tổng quát, như có thể thấy được trong trường hợp của hình thoi.
 
 <!--
 ![Convex Projections](../img/projections.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/projections.svg)
+![Các phép chiếu lồi](../img/projections.svg)
 :label:`fig_projections`
 
 <!--
@@ -679,7 +695,8 @@ One of the uses for convex projections is to compute sparse weight vectors.
 In this case we project $\mathbf{w}$ onto an $\ell_1$ ball (the latter is a generalized version of the diamond in the picture above).
 -->
 
-*dịch đoạn phía trên*
+Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa.
+Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (là phiên bản tổng quát của hình thoi ở hình minh họa phía trên).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -785,7 +802,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Võ Tấn Phát
 
 <!-- Phần 5 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 6 -->
 * Võ Tấn Phát
