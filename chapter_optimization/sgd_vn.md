@@ -327,7 +327,7 @@ $$
 Using both inequalities and plugging it into the above we obtain a bound on the distance between parameters at time $t+1$ as follows:
 -->
 
-Kết hợp hai bất đẳng thức trên, chúng ta tìm được biên cho khoảng giữa tham số tại bước $t+1$ như sau:
+Kết hợp hai bất đẳng thức trên, chúng ta tìm được biên cho khoảng cách giữa các tham số tại bước $t+1$ như sau:
 
 
 $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \geq 2 \eta_t (l(\mathbf{x}_t, \mathbf{w}_t) - l(\mathbf{x}_t, \mathbf{w}^*)) - \eta_t^2 L^2.$$
