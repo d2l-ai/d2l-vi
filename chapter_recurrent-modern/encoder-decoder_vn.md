@@ -16,12 +16,13 @@ In machine translation, the encoder transforms a source sentence, e.g., "Hello w
 The decoder then uses this state to generate the translated target sentence, e.g., "Bonjour le monde.".
 -->
 
-*Kiến trúc mã hoá - giải mã* là một khuôn mẫu thiết kế mạng nơ-ron.
-Như trình bày trong :numref:`fig_encoder_decoder`, kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã.
-Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái, trạng thái thường chứa vài tensor.
+*Kiến trúc mã hoá - giải mã* (*encoder-decoder architecture*) là một khuôn mẫu thiết kế mạng nơ-ron.
+Kiến trúc này có 2 phần: bộ mã hoá và bộ giải mã, có thể thấy trong :numref:`fig_encoder_decoder`
+Bộ mã hoá đóng vai trò mã hoá đầu vào thành trạng thái chứa vài tensor.
 Tiếp đó, trạng thái được truyền vào bộ giải mã để sinh đầu ra.
-Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector, mà có thể nắm bắt được thông tin ngữ nghĩa của câu đó.
+Trong dịch máy, bộ mã hoá biến đổi một câu nguồn, ví dụ như "Hello world.", thành trạng thái, chẳng hạn là một vector chứa thông tin ngữ nghĩa của câu đó.
 Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang ngôn ngữ đích, ví dụ sang tiếng Pháp "Bonjour le monde.".
+
 <!--
 ![The encoder-decoder architecture.](../img/encoder-decoder.svg)
 -->
@@ -33,7 +34,7 @@ Sau đó bộ giải mã sử dụng trạng thái này để dịch câu sang n
 In this section, we will show an interface to implement this encoder-decoder architecture.
 -->
 
-Phần này sẽ trình bày một giao diện để lập trình kiến trúc mã hoá - giải mã.
+Phần này trình bày một giao diện (*interface*) để lập trình kiến trúc mã hoá - giải mã.
 
 
 <!--
@@ -46,7 +47,7 @@ Phần này sẽ trình bày một giao diện để lập trình kiến trúc m
 The encoder is a normal neural network that takes inputs, e.g., a source sentence, to return outputs.
 -->
 
-Bộ mã hoá là một mạng nơ-ron thông thường nhận đầu vào, ví dụ như một câu nguồn, để trả về đầu ra.
+Bộ mã hoá là một mạng nơ-ron thông thường, nhận đầu vào, ví dụ như một câu nguồn, và trả về đầu ra.
 
 ```{.python .input  n=2}
 from mxnet.gluon import nn
@@ -74,9 +75,9 @@ In the forward method, the decoder takes both inputs, e.g., a target sentence an
 It returns outputs, with potentially modified state if the encoder contains RNN layers.
 -->
 
-Bộ giải mã có một phương thức bổ sung gọi là `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin có thể được bổ sung, ví dụ như độ dài hợp lệ của đầu vào, để đưa ra trạng thái mà nó cần.
+Bộ giải mã có thêm phương thức `init_state` nhằm phân tích đầu ra của bộ mã hoá với những thông tin bổ sung (nếu có), như độ dài hợp lệ của đầu vào, để đưa ra trạng thái cần thiết.
 Trong lan truyền xuôi, bộ giải mã nhận hai đầu vào, ví dụ như một câu đích và trạng thái.
-Nó trả về đầu ra với trạng thái có khả năng đã được thay đổi nếu bộ mã hoá chứa các tầng nơ-ron truy hồi (*RNN*).
+Nó trả về đầu ra với trạng thái nhiều khả năng đã thay đổi nếu bộ mã hoá chứa các tầng RNN.
 
 
 ```{.python .input  n=3}
@@ -112,8 +113,8 @@ During computation, it first computes encoder outputs to initialize the decoder 
 
 Mô hình mã hoá - giải mã bao gồm một bộ mã hoá và một bộ giải mã.
 Chúng ta lập trình phương thức truyền xuôi cho quá trình huấn luyện.
-Mô hình cần cả đầu vào cho bộ mã hoá và đầu vào cho bộ giải mã cùng với các đối số bổ sung không bắt buộc.
-Trong quá trình tính toán, đầu tiên mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái giải mã, sau đó trả về đầu ra của bộ giải mã.
+Phương thức này nhận cả đầu vào bộ mã hoá và đầu vào bộ giải mã cùng các đối số bổ sung không bắt buộc.
+Mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái bộ giải mã, sau đó trả về đầu ra của bộ giải mã.
 
 
 ```{.python .input  n=4}
@@ -144,8 +145,8 @@ class EncoderDecoder(nn.Block):
 -->
 
 * Kiến trúc mã hoá - giải mã là một khuôn mẫu thiết kế mạng nơ-ron chủ yếu được sử dụng trong xử lý ngôn ngữ tự nhiên.
-* Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron truy hồi - RNN, vân vân, ...) nhận đầu vào và trả về một ánh xạ đặc trưng, một vector hay một tensor.
-* Bộ giải mã là một mạng (thường giống với kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quả gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
+* Bộ mã hoá là một mạng (kết nối đầy đủ - FC, nơ-ron tích chập - CNN, nơ-ron hồi tiếp - RNN, ...) nhận đầu vào và trả về một ánh xạ đặc trưng là một vector hay một tensor.
+* Bộ giải mã là một mạng (thường giống kiến trúc mạng của bộ mã hoá) nhận vector đặc trưng từ bộ mã hoá và đưa ra kết quả gần khớp nhất với đầu vào thực tế hoặc đầu ra mong muốn.
 
 
 <!--
@@ -184,8 +185,6 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Thanh Hoà
-
-<!-- Phần 2 -->
-* Nguyễn Thanh Hoà
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
