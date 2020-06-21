@@ -551,7 +551,7 @@ It comes down to ensuring that $f$ does not have any "surprising" properties in 
 ### Preconditioning
 -->
 
-### *dịch đoạn phía trên*
+### Tiền đề
 
 <!--
 Quite unsurprisingly computing and storing the full Hessian is very expensive.
@@ -562,8 +562,12 @@ Moreover, estimates for the main diagonal elements are what drives some of the i
 This leads to update algorithms of the form
 -->
 
-*dịch đoạn phía trên*
-
+Không có gì ngạc nhiên khi việc tính toán và lưu trữ toàn bộ ma trận Hessian là rất tốn kém.
+Do đó ta cần tìm kiếm một phương pháp thay thế.
+Một cách để cải thiện vấn đề này là tránh việc tính toán toàn bộ ma trận Hessian, chỉ tính toán trên các giá trị thuộc đường chéo.
+Mặc dù cách trên không tốt bằng phương pháp Newton hoàn chỉnh nhưng vẫn tốt hơn nhiều so với không dùng qua.
+Hơn nữa, ước lượng các giá trị đường chéo chính chính là thứ thúc đẩy sự đổi mới trong các thuật toán tối ưu hóa hạ gradient ngẫu nhiên.
+Nó khiến các thuật toán cập nhật có dạng
 
 $$\mathbf{x} \leftarrow \mathbf{x} - \eta \mathrm{diag}(H_f)^{-1} \nabla \mathbf{x}.$$
 
@@ -575,13 +579,16 @@ Using preconditioning removes this.
 Effectively preconditioning with gradient descent amounts to selecting a different learning rate for each coordinate. 
 -->
 
-*dịch đoạn phía trên*
+Để thấy tại sao điều này có thể là một ý tưởng tốt, ta ví dụ có hai biến số biểu thị chiều cao, một biến với đơn vị mm, biến còn lại với đơn vị km.
+Giả định rằng với cả hai thang đo tự nhiên tính bằng mét, chúng ta đều có sự sai khớp lớn trong việc tham số hóa.
+Sử dụng tiền đề sẽ xóa bỏ điều này.
+Tiền đề hiệu quả cùng hạ gradient có ý nghĩa giúp chọn ra các tốc độ học khác nhau cho từng trục tọa độ.
 
 <!--
 ### Gradient Descent with Line Search
 -->
 
-### *dịch đoạn phía trên*
+### Hạ gradient cùng tìm kiếm đường thẳng
 
 <!--
 One of the key problems in gradient descent was that we might overshoot the goal or make insufficient progress.
@@ -589,7 +596,9 @@ A simple fix for the problem is to use line search in conjunction with gradient 
 That is, we use the direction given by $\nabla f(\mathbf{x})$ and then perform binary search as to which step length $\eta$ minimizes $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$. 
 -->
 
-*dịch đoạn phía trên*
+Một trong những vấn đề chính của hạ gradient là chúng ta có thể vượt lố khỏi mục tiêu hoặc không đạt đủ sự tiến bộ.
+Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường thẳng kết hợp với hạ gradient.
+Chúng ta sử dụng hướng được cho bởi $\nabla f(\mathbf{x})$ và sau đó dùng tìm kiếm nhị phân để tìm ra độ dài bước $\eta$ có thể cực tiểu hóa $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$.
 
 <!--
 This algorithm converges rapidly (for an analysis and proof see e.g., :cite:`Boyd.Vandenberghe.2004`).
@@ -597,7 +606,9 @@ However, for the purpose of deep learning this is not quite so feasible, since e
 This is way too costly to accomplish. 
 -->
 
-*dịch đoạn phía trên*
+Thuật toán này sẽ hội tụ nhanh chóng (xem phân tích và chứng minh ở :cite:`Boyd.Vandenberghe.2004`).
+Tuy nhiên, đối với mục đích của học sâu thì nó không quá khả thi do mỗi bước của tìm kiếm đường thẳng sẽ yêu cầu chúng ta ước lượng hàm mục tiêu trên toàn bộ tập dữ liệu.
+Điều này quá tốn kém để có thể thực hiện.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -686,7 +697,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 8 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 9 -->
 * 
