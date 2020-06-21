@@ -5,7 +5,7 @@
 # Bidirectional Recurrent Neural Networks
 -->
 
-# Mạng Nơ-ron Truy hồi Hai chiều
+# Mạng Nơ-ron Hồi tiếp Hai chiều
 
 :label:`sec_bi_rnn`
 
@@ -15,9 +15,9 @@ So far we assumed that our goal is to model the next word given what we have see
 While this is a typical scenario, it is not the only one we might encounter.
 To illustrate the issue, consider the following three tasks of filling in the blanks in a text:
 -->
-Cho đến nay ta giả định mục tiêu là để mô hình hoá bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ.
-Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta có thể gặp.
-Để minh họa cho vấn đề này, hãy xem xét ba tác vụ điền vào chỗ trống dưới đây:
+Cho đến nay ta giả định mục tiêu là để mô hình hoá bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ. 
+Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta có thể gặp. 
+Để minh họa cho vấn đề này, hãy xem xét ba tác vụ điền vào chỗ trống dưới đây: 
 
 
 <!--
@@ -39,10 +39,10 @@ For instance, to do well in named entity recognition (e.g., to recognize whether
 To get some inspiration for addressing the problem let us take a detour to graphical models.
 -->
 Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "đang".
-Rõ ràng phần kết (nếu có) của câu mang thông tin quan trọng về từ nên chọn.
-Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này.
+Rõ ràng phần kết (nếu có) của câu mang thông tin quan trọng ảnh hưởng lớn đến việc chọn từ. 
+Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này. 
 Chẳng hạn như để nhận dạng thực thể có tên (ví dụ: phân biệt từ "Bảy" đề cập đến "ông Bảy" hay là số bảy) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
-Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên.
+Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên. 
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -61,8 +61,8 @@ This section serves to illustrate the dynamic programming problem.
 The specific technical details do not matter for understanding the deep learning counterpart but they help in motivating why one might use deep learning and why one might pick specific architectures.
 -->
 
-Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động.
-Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn.
+Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động. 
+Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn. 
 
 
 <!--
@@ -72,10 +72,10 @@ Moreover, the transitions $h_t \to h_{t+1}$ are given by some state transition p
 The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 -->
 
-Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây.
-Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$.
-Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$.
-Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ HMM) như trong :numref:`fig_hmm`.
+Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây. 
+Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$. 
+Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$. 
+Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ - HMM) như trong :numref:`fig_hmm`. 
 
 
 <!--
@@ -89,7 +89,7 @@ Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ 
 Thus, for a sequence of $T$ observations we have the following joint probability distribution over observed and hidden states:
 -->
 
-Như vậy, với chuỗi có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn và các quan sát như sau:
+Như vậy, với chuỗi có $T$ quan sát, chúng ta có phân phối xác suất kết hợp của các trạng thái ẩn và các quan sát như sau: 
 
 
 $$p(x, h) = p(h_1) p(x_1 \mid h_1) \prod_{t=2}^T p(h_t \mid h_{t-1}) p(x_t \mid h_t).$$
@@ -104,9 +104,9 @@ This yields:
 -->
 
 Bây giờ giả sử chúng ta đã có tất cả các quan sát $x_i$ ngoại trừ một vài quan sát $x_j$, mục tiêu là tính xác suất $p(x_j \mid x^{-j})$, trong đó $x^{-j} = (x_1, x_2, \ldots, x_{j-1})$.
-Để thực hiện điều này, chúng ta cần tính tổng xác suất trên tất cả các khả năng có thể của $h = (h_1, \ldots, h_T)$.
-Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm vụ bất khả thi.
-May mắn thay có một phương pháp rất hiệu quả cho bài toán trên, đó là quy hoạch động. 
+Để thực hiện điều này, chúng ta cần tính tổng xác suất trên tất cả các khả năng có thể của $h = (h_1, \ldots, h_T)$. 
+Trong trường hợp $h_i$ nhận $k$ giá trị khác nhau, chúng ta cần tính tổng của $k^T$ số hạng - đây là một nhiệm vụ bất khả thi. 
+May mắn thay có một phương pháp rất hiệu quả cho bài toán trên, đó là quy hoạch động.  
 Để hiểu hơn về phương pháp này, hãy xem xét tổng của hai biến ẩn đầu tiên $h_1$ và $h_2$.
 Ta có:
 
@@ -140,10 +140,10 @@ Entirely analogously to the forward recursion, we can also start a backward recu
 This yields:
 -->
 
-Phép đệ quy được khởi tạo với $\pi_1(h_1) = p(h_1)$.
-Nói chung, công thức đệ quy có thể được viết lại là $\pi_{t+1} = f(\pi_t, x_t)$, trong đó $f$ là một hàm chứa tham số được học.
-Trông rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN.
-Tương tự, chúng ta có thể tính *đệ quy ngược* như sau:
+Phép đệ quy được khởi tạo với $\pi_1(h_1) = p(h_1)$. 
+Nói chung, công thức đệ quy có thể được viết lại là $\pi_{t+1} = f(\pi_t, x_t)$, trong đó $f$ là một hàm được học. 
+Trông rất giống với phương trình cập nhật trong các mô hình biến ẩn mà chúng ta đã thảo luận trong phần RNN. 
+Tương tự, chúng ta có thể tính *đệ quy ngược* như sau: 
 
 
 $$\begin{aligned}
@@ -162,7 +162,7 @@ $$\begin{aligned}
 We can thus write the *backward recursion* as
 -->
 
-Từ đó, chúng ta có thể viết *đệ quy ngược* như sau
+Từ đó, chúng ta có thể viết *đệ quy ngược* như sau: 
 
 
 $$\rho_{t-1}(h_{t-1})= \sum_{h_{t}} p(h_{t} \mid h_{t-1}) p(x_{t} \mid h_{t}) \rho_{t}(h_{t}),$$
@@ -179,11 +179,11 @@ It is a very special instance of the :cite:`Aji.McEliece.2000` proposed in 2000 
 Combining both forward and backward pass, we are able to compute
 -->
 
-khi khởi tạo $\rho_T(h_T) = 1$.
-Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì tăng theo cấp luỹ thừa. 
-Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ họa.
-Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000. 
-Kết hợp cả biểu thức xuôi và ngược ta có thể tính được
+khi khởi tạo $\rho_T(h_T) = 1$. 
+Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì luỹ thừa. 
+Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ họa. 
+Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000.  
+Kết hợp cả biểu thức xuôi và ngược ta có thể tính được: 
 
 
 $$p(x_j \mid x_{-j}) \propto \sum_{h_j} \pi_j(h_j) \rho_j(h_j) p(x_j \mid h_j).$$
@@ -196,10 +196,10 @@ Indeed, HMMs benefit from knowing future data when it is available.
 Signal processing scientists distinguish between the two cases of knowing and not knowing future observations as interpolation v.s. extrapolation.
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
-Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học.
-Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.
+Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học. 
+Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.  
 Thật vậy, HMMs sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
-Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy.
+Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy. 
 Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` về các thuật toán Monte Carlo tuần tự để biết thêm chi tiết. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -478,7 +478,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
-
+* Nguyễn Lê Quang Nhật
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
