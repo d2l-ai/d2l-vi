@@ -241,7 +241,11 @@ To illustrate the savings let us have a look at some code.
 In it we perform the same matrix-matrix multiplication, but this time broken up into "minibatches" of 64 columns at a time.
 -->
 
-*dịch đoạn phía trên*
+Ý trên có thể hiểu theo một cách khờ khạo rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
+Tiếc rằng đến một mức nào đó, phương sai sẽ giảm đến cực tiểu trong khi chi phí tính toán lại tăng tuyến tính.
+Do đó trong thực tế, ta chọn minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn vừa đủ để đưa vào bộ nhớ của GPU.
+Để minh hoạ cho quá trình lưu trữ, hãy xem đoạn mã nguồn dưới đây.
+Trong đó ta vẫn thực hiện phép nhân ma trận với ma trận, tuy nhiên lần này ta tách thành từng minibatch 64 cột một.
 
 
 ```{.python .input}
@@ -261,13 +265,17 @@ As we increase the latter, the variance decreases and with it the benefit of the
 See e.g., :cite:`Ioffe.2017` for details on how to rescale and compute the appropriate terms.
 -->
 
-*dịch đoạn phía trên*
+Ở đây ta có thể thấy quá trình tính toán trong minibatch về cơ bản là có hiệu suất bằng với phép nhân trên toàn ma trận.
+Lưu ý thứ tự thực hiện.
+Trong :numref:`sec_batch_norm` ta sử dụng một loại điều chuẩn phụ thuộc chặt chẽ vào phương sai của minibatch.
+Khi ta tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của xâm nhập nhiễu (*noise-injection*) cũng giảm theo do chuẩn hóa theo batch.
+Đọc :cite:`Ioffe.2017` để xem thêm chi tiết về cách chuyển đổi giá trị và tính các số hạng phù hợp.
 
 <!--
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Tập dữ liệu
 
 <!--
 Let us have a look at how minibatches are efficiently generated from data.
@@ -276,7 +284,10 @@ For convenience we only use the first $1,500$ examples.
 The data is whitened for preprocessing, i.e., we remove the mean and rescale the variance to $1$ per coordinate.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả.
+Trong đoạn mã nguồn dưới ta sử dụng tập dữ liệu được phát triển bởi NASA để kiểm tra [tiếng ồn từ các máy bay khác nhau](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise) để so sánh các thuật toán tối ưu này.
+Để thuận tiện ta chỉ sử dụng $1,500$ ví dụ đầu tiên.
+Tập dữ liệu được tẩy (*whiten*) để xử lý, tức là với mỗi toạ độ ta trừ đi giá trị trung bình và chuyển đổi giá trị phương sai về $1$.
 
 
 ```{.python .input  n=1}
