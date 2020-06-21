@@ -145,7 +145,7 @@ In the example above any functionality for learning rate scheduling lies dormant
 -->
 
 Đây cũng là lý do cho việc thêm hàm tốc độ học `lr` vào hàm bước `sgd`.
-Trong ví dụ trên, mọi chức năng lập lịch cho tốc độ học sẽ không được kích hoạt nếu ta đặt hàm `lr` bằng một hằng số, tức là `lr = (lambda: 1)`.
+Trong ví dụ trên, chức năng định thời tốc độ học không được kích hoạt vì ta đặt hàm `lr` bằng một hằng số, tức `lr = (lambda: 1)`.
 
 <!--
 ## Dynamic Learning Rate
