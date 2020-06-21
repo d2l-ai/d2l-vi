@@ -147,7 +147,7 @@ timer.stop()
 A faster strategy is to perform column-wise assignment.
 -->
 
-Chiến lược nhanh hơn chính là thực hiện phép nhân theo từng cột.
+Có một chiến lược nhanh hơn chính là thực hiện phép nhân theo từng cột.
 
 
 ```{.python .input  n=3}
@@ -166,7 +166,7 @@ Let us see what the respective speed of the operations is.
 -->
 
 Cuối cùng, cách hiệu quả nhất là thực hiện toàn bộ phép nhân trong một khối.
-Hãy thử xem tốc độ tương ứng của phép nhân là bao nhiêu.
+Hãy thử xem tốc độ tương ứng của phương pháp này là bao nhiêu.
 
 
 ```{.python .input  n=4}
@@ -190,7 +190,7 @@ print("Performance in Gigaflops: element {:.3f}, \
 ## Minibatches
 -->
 
-## Minibatche
+## Minibatch
 
 :label:`sec_minibatches`
 
@@ -234,7 +234,7 @@ Since the minibatch gradient is composed of $b := |\mathcal{B}_t|$ independent g
 This, by itself, is a good thing, since it means that the updates are more reliably aligned with the full gradient.
 -->
 
-Hãy thử xem phương pháp trên tác động thế nào đến tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
+Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
 Mặt khác, phương sai giảm một cách đáng kể.
 Do gradient của minibatch bao gồm các gradient $b := |\mathcal{B}_t|$ độc lập được lấy trung bình, độ lệch chuẩn của nó giảm đi $b^{-\frac{1}{2}}$ lần.
 Bản thân điều này là tốt do nó có nghĩa là việc cập nhật trở nên đáng tin cậy hơn so với việc lấy gradient toàn bộ tập dữ liệu.
