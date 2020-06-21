@@ -71,8 +71,8 @@ We have a number of options for calculating $\mathbf{A}$.
 For instance we could try the following:
 -->
 
-Có một cách để giảm bớt những rằng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
-Đây *chính là* động lực thúc đẩy đằng sau phương pháp batching trong học sâu.
+Có một cách để giảm bớt những rằng buộc trên, đó là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
+Đây *chính là* động lực đằng sau thúc đẩy việc sử dụng batch trong học sâu.
 Để đơn giản hoá vấn đề, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
 Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn.
 Ta có thể thử một số ví dụ sau:
@@ -85,8 +85,8 @@ Likewise we could compute $\mathbf{A}$ one row $\mathbf{A}_{i,:}$ at a time.
 4. We could break $\mathbf{B}$ and $\mathbf{C}$ into smaller block matrices and compute $\mathbf{A}$ one block at a time.
 -->
 
-1. Ta có thể tính $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, nói cách khác, ta có thể tính từng phần tử của nó thông qua tích vô hướng.
-2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, nói cách khác, ta có thể tính theo từng cột một.
+1. Ta có thể tính $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, tức là tính theo từng phần tử của nó thông qua tích vô hướng.
+2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, tức là tính theo từng cột một.
 Tương tự, ta có thể tính $\mathbf{A}$ theo từng hàng $\mathbf{A}_{i,:}$ một.
 3. Ta đơn giản có thể tính $\mathbf{A} = \mathbf{B} \mathbf{C}$.
 4. Ta có thể chia $\mathbf{B}$ và $\mathbf{C}$ thành nhiều khối ma trận nhỏ hơn và tính $\mathbf{A}$ từng khối một.
@@ -104,14 +104,15 @@ Optimized libraries take care of this for us.
 Let us have a look at how efficient these operations are in practice.
 -->
 
-Nếu ta thực hiện cách đầu tiên, ta cần phải sao chép một cột và một hàng vào CPU mỗi lần ta tính phần tử $\mathbf{A}_{ij}$..
+Nếu ta thực hiện cách đầu tiên, ta cần phải sao chép một cột và một hàng vào CPU mỗi lần ta tính phần tử $\mathbf{A}_{ij}$.
 Tệ hơn nữa, do các phần tử của ma trận lần lượt thẳng hàng với nhau, ta bắt buộc phải truy cập nhiều vùng nhớ rời nhau của một trong hai vector khi ta đọc chúng từ bộ nhớ.
 Cách thứ hai được ưa chuộng hơn nhiều.
-Trong đó, ta có thể giữ vector cột $\mathbf{C}_{:,j}$ trong vùng nhớ đệm của CPU trong khi ta tiếp tục quét qua $B$.
+Theo cách này, ta có thể giữ vector cột $\mathbf{C}_{:,j}$ trong vùng nhớ đệm của CPU trong khi ta tiếp tục quét qua $B$.
 Cách này chia đôi băng thông cần thiết của bộ nhớ, do đó truy cập nhanh hơn.
-Đương nhiên cách số 3 là trường hợp đáng ao ước nhất.
+Đương nhiên cách số ba là trường hợp đáng ao ước nhất.
 Đáng tiếc rằng đa số ma trận quá lớn để có thể đưa vào vùng nhớ đệm (dù sao thì đây cũng chính là điều ta đang thảo luận).
-Tuy nhiên, cách số 4 cho ta một phương pháp thay thế thiết thực: ta có thể đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
+Tuy nhiên, cách số bốn cho ta một phương pháp thay thế thiết thực: ta có thể đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
+Các thư viện đã được tối ưu sẽ thực hiện việc này giúp chúng ta.
 Hãy xem xét hiệu suất của từng phương pháp trong thực tế.
 
 <!--
