@@ -88,7 +88,7 @@ $$\mathbb{E}_i \nabla f_i(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n \nabla f_i(\m
 This means that, on average, the stochastic gradient is a good estimate of the gradient.
 -->
 
-Do đó, tính trung bình thì gradient ngẫu nhiên là một ước lượng tốt của gradient.
+Do đó, về trung bình, gradient ngẫu nhiên là một ước lượng tốt của gradient.
 
 <!--
 Now, we will compare it to gradient descent by adding random noise with a mean of 0 to the gradient to simulate a SGD.
