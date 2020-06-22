@@ -20,6 +20,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | adversarial learning                  | học đối kháng             | [https://git.io/JvQxt](https://git.io/JvQxt) |
 | agent                                 | tác nhân                  |                                              |
 | algorithm's performance               | chất lượng thuật toán     |                                              |
+| analytical solution                   | nghiệm theo công thức     |
 | avoidable bias                        | độ chệch tránh được       |                                              |
 | argument (programming)                | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
@@ -50,12 +51,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | Blackbox dev set        | tập phát triển Blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box            | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast               | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
+| beam search             | tìm kiếm chùm                  | [https://git.io/Jf9Nl](https://git.io/Jf9Nl) |
 
 ## C
 | English                             | Tiếng Việt             | Thảo luận tại                                |
 |-------------------------------------|------------------------|----------------------------------------------|
 | candidate hidden state              | trạng thái ẩn tiềm năng |                                              |
-| candidate memory                    | ký ức tiềm năng        |                                              |
+| candidate memory                    | ô nhớ tiềm năng        |                                              |
 | categorical variable                | biến hạng mục          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category (trong bài toán phân loại) | lớp                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | causality                           | quan hệ nhân quả       |                                              |
@@ -163,7 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
 |--------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
-| gated recurrent unit           | nút truy hồi có cổng      | |
+| gated recurrent unit           | nút hồi tiếp có cổng      | |
 | Gaussian distribution          | phân phối Gauss (phân phối chuẩn) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | Gaussian noise                 | nhiễu Gauss                       |                                                                                            |
 | generalization error           | lỗi khái quát                     | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
@@ -295,6 +297,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
+| numerical solution                | nghiệm xấp xỉ                     |                                                                                           |
 
 ## O
 | English                | Tiếng Việt         | Thảo luận tại                                |
@@ -340,6 +343,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | population                         | tổng thể                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                   | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | position-wise feed-forward network           | mạng truyền xuôi theo vị trí                |  |
+| positional encoding                | biểu diễn vị trí           |  |
 
 ## Q
 | English               | Tiếng Việt            | Thảo luận tại                                |
@@ -356,7 +360,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recall                            | recall                                    |                                              |
 | receptive field (CNN)             | vùng tiếp nhận                            | [https://git.io/Jftwh](https://git.io/Jftwh) |
 | recognition                       | nhận dạng                                 |                                              |
-| recurrent neural network          | mạng nơ-ron truy hồi                      |                                              |
+| recurrent neural network          | mạng nơ-ron hồi tiếp                     |                                              |
 | rectified linear unit (ReLU)      | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | regressor                         | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
 | regularization                    | điều chuẩn                                |                                              |
@@ -371,8 +375,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | running time                      | thời gian chạy                            |                                              |
 | region of rejection               | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | relative loss                     | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
-| reset gate                        | cổng xóa                        |                     
-   |
+| reparameterization                | tái tham số hoá                     |                                              |
+| reset gate                        | cổng xóa                                  |                                              |
 
 ## S
 | English                         | Tiếng Việt               | Thảo luận tại                                |
@@ -398,6 +402,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | standard deviation              | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | state-of-the-art                | tân tiến nhất            |                                              |
 | stationary point                | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
+| statistical inference           | suy luận thống kê        |                                              |
 | statistical power               | năng lực thống kê        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | statistical significance        | ý nghĩa thống kê         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | statistical significant         | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
@@ -455,7 +460,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | validation set              | tập kiểm định      | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | vanishing gradient          | tiêu biến gradient | [https://git.io/JvohI](https://git.io/JvohI) |
 | variance (bias as variance) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
+| variational                 | biến phân         |  |
 | vector                      | vector             |                                              |
+| vectorization               | vector hoá         |                                              |
 | value                       | giá trị            |                                              |
 
 ## W

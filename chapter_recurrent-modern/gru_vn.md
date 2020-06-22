@@ -5,7 +5,7 @@
 # Gated Recurrent Units (GRU)
 -->
 
-# Nút Truy hồi có Cổng (GRU)
+# Nút Hồi tiếp có Cổng (GRU)
 :label:`sec_gru`
 
 <!--
@@ -14,9 +14,9 @@ In particular we found that long products of matrices can lead to vanishing or d
 Let us briefly think about what such gradient anomalies mean in practice:
 -->
 
-Trong phần trước, chúng ta đã thảo luận về cách gradient được tính toán trong mạng nơ-ron truy hồi.
-Cụ thể ta đã phát hiện rằng tích của một chuỗi dài các ma trận có thể dẫn đến việc gradient tiêu biến hoặc bùng nổ.
-Bây giờ hãy suy nghĩ nhanh về ý nghĩa của những gradient bất thường như vậy trong thực tế:
+Trong phần trước, chúng ta đã thảo luận cách tính gradient trong mạng nơ-ron hồi tiếp.
+Cụ thể ta đã biết rằng tích của một chuỗi dài các ma trận có thể dẫn đến việc gradient tiêu biến hoặc bùng nổ.
+Hãy điểm qua các tình huống thực tế thể hiện rõ hai bất thường đó:
 
 <!--
 * We might encounter a situation where an early observation is highly significant for predicting all future observations.
@@ -32,17 +32,17 @@ For instance, there might be a transition between chapters in a book, or a trans
 In this case it would be nice to have a means of *resetting* our internal state representation.
 -->
 
-* Chúng ta có thể gặp phải tình huống mà những quan sát xuất hiện sớm có ảnh hưởng đáng kể đến việc dự doán toàn bộ những quan sát ở tương lai.
-Xét một ví dụ hơi không thực tế, trong đó ta có quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu ở đây là phân biệt liệu giá trị tổng kiểm đó có đúng hay không tại cuối chuỗi.
+* Ta có thể gặp tình huống mà những quan sát xuất hiện sớm có ảnh hưởng lớn đến việc dự đoán toàn bộ những quan sát trong tương lai.
+Xét một ví dụ có chút cường điệu, trong đó quan sát đầu tiên chứa giá trị tổng kiểm (_checksum_) và mục tiêu là kiểm tra xem liệu giá trị tổng kiểm đó có đúng hay không tại cuối chuỗi.
 Trong trường hợp này, ảnh hưởng của token đầu tiên là tối quan trọng.
-Chúng ta muốn có một vài cơ chế cho việc lưu trữ những thông tin ban đầu quan trọng trong *ô nhớ*.
-Nếu không có cơ chế như vậy, ta phải gán một giá trị gradient cực lớn cho quan sát này, vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
-* Chúng ta có thể gặp phải tình huống mà một vài ký hiệu không chứa thông tin phù hợp.
-Ví dụ, khi phân tích một trang web, có thể sẽ có mã HTML phụ trợ không liên quan đến mục tiêu xác định thông tin được truyền tải trên trang web.
-Chúng ta sẽ muốn có một số cơ chế để *bỏ qua những ký hiệu như vậy* trong việc biểu diễn trạng thái tiềm ẩn.
-* Chúng ta có thể gặp phải tình huống trong đó tồn tại những khoảng ngắt giữa các phần của một chuỗi.
-Ví dụ, có thể sẽ có những đoạn chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
-Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về trạng thái ban đầu.
+Do đó ta muốn có cơ chế để lưu trữ những thông tin quan trọng ban đầu trong *ô nhớ*.
+Nếu không, ta sẽ phải gán một giá trị gradient cực lớn cho quan sát ban đầu vì nó ảnh hưởng đến toàn bộ các quan sát tiếp theo.
+* Một tình huống khác là khi một vài ký hiệu không chứa thông tin phù hợp.
+Ví dụ, khi phân tích một trang web, ta có thể gặp các mã HTML không giúp ích gì cho việc xác định thông tin được truyền tải.
+Do đó, ta cũng muốn có cơ chế để *bỏ qua những ký hiệu như vậy* trong các biểu diễn trạng thái tiềm ẩn.
+* Ta cũng có thể gặp những khoảng ngắt giữa các phần trong một chuỗi.
+Ví dụ như những phần chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến xu hướng giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
+Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về giá trị ban đầu.
 
 <!--
 A number of methods have been proposed to address this.
@@ -52,11 +52,11 @@ See also :cite:`Chung.Gulcehre.Cho.ea.2014` for more details.
 Due to its simplicity, let us start with the GRU.
 -->
 
-Nhiều phương pháp đã được đề xuất để giải quyết những vấn đề này.
-Một trong những phương pháp sớm nhất chính là Bộ nhớ ngắn hạn dài (Long Short Term Memory - LSTM) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
-Nút Truy hồi có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường mang lại chất lượng tương đương và nhanh hơn đáng kể về mặt tính toán.
-Hãy đọc :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
-Do GRU đơn giản hơn nên chúng ta sẽ bắt đầu với nó trước.
+Nhiều phương pháp đã được đề xuất để giải quyết những vấn đề trên.
+Một trong những phương pháp ra đời sớm nhất là Bộ nhớ ngắn hạn dài (*Long Short Term Memory - LSTM*) :cite:`Hochreiter.Schmidhuber.1997`, sẽ được thảo luận ở :numref:`sec_lstm`.
+Nút Hồi tiếp có Cổng (*Gated Recurrent Unit - GRU*) :cite:`Cho.Van-Merrienboer.Bahdanau.ea.2014` là một biến thể gọn hơn của LSTM, thường có chất lượng tương đương và tính toán nhanh hơn đáng kể.
+Tham khảo :cite:`Chung.Gulcehre.Cho.ea.2014` để biết thêm chi tiết.
+Trong chương này, ta sẽ bắt đầu với GRU do nó đơn giản hơn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -79,12 +79,10 @@ We discuss this in detail below.
 -->
 
 Sự khác biệt chính giữa RNN thông thường và GRU là GRU hỗ trợ việc kiểm soát trạng thái ẩn.
-Điều này có nghĩa là ta có các cơ chế chuyên dụng để quyết định khi nào nên cập nhật và khi nào nên xóa trạng thái ẩn.
-Các cơ chế này được học để giải quyết các vấn đề được đề cập ở bên trên.
-Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, ta sẽ học để không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
-Tương tự như vậy, ta sẽ học để bỏ qua những quan sát tạm thời không liên quan.
-Cuối cùng, ta sẽ học để xóa trạng thái tiềm ẩn bất cứ khi nào cần thiết.
-Ta sẽ thảo luận vấn đề này một cách chi tiết dưới đây.
+Điều này có nghĩa là ta có các cơ chế được học để quyết định khi nào nên cập nhật và khi nào nên xóa trạng thái ẩn.
+Ví dụ, nếu ký tự đầu tiên có mức độ quan trọng cao, mô hình sẽ học để không cập nhật trạng thái ẩn sau lần quan sát đầu tiên.
+Tương tự, mô hình sẽ học cách bỏ qua những quan sát tạm thời không liên quan, cũng như cách xóa trạng thái ẩn khi cần thiết.
+Dưới đây ta sẽ thảo luận chi tiết vấn đề này.
 
 <!--
 ### Reset Gates and Update Gates
@@ -99,10 +97,10 @@ For instance, a reset variable would allow us to control how much of the previou
 Likewise, an update variable would allow us to control how much of the new state is just a copy of the old state.
 -->
 
-Điều đầu tiên ta cần giới thiệu là cổng xóa và cổng cập nhật.
-Ta thiết kế chúng thành các vector với mỗi phần tử có giá trị trong khoảng $(0, 1)$ để ta có thể thực hiện các tổ hợp lồi.
-Chẳng hạn, một biến xóa sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái trước đây mà ta muốn ghi nhớ.
-Tương tự, một biến cập nhật sẽ cho phép ta kiểm soát bao nhiêu phần của trạng thái mới sẽ chỉ là một bản sao của trạng thái cũ.
+Đầu tiên ta giới thiệu cổng xóa và cổng cập nhật.
+Ta thiết kế chúng thành các vector có các phần tử trong khoảng $(0, 1)$ để có thể biểu diễn các tổ hợp lồi.
+Chẳng hạn, một biến xóa cho phép kiểm soát bao nhiêu phần của trạng thái trước đây được giữ lại.
+Tương tự, một biến cập nhật cho phép kiểm soát bao nhiêu phần của trạng thái mới sẽ giống trạng thái cũ.
 
 <!--
 We begin by engineering gates to generate these variables.
@@ -110,9 +108,9 @@ We begin by engineering gates to generate these variables.
 The output is given by a fully connected layer with a sigmoid as its activation function.
 -->
 
-Ta bắt đầu bằng việc thiết kế các cổng để tạo ra các biến này.
-:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào là bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{H}_{t-1}$.
-Đầu ra được tạo ra bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
+Ta bắt đầu bằng việc thiết kế các cổng tạo ra các biến này.
+:numref:`fig_gru_1` minh họa các đầu vào cho cả cổng xóa và cổng cập nhật trong GRU, với đầu vào ở bước thời gian hiện tại $\mathbf{X}_t$ và trạng thái ẩn ở bước thời gian trước đó $\mathbf{H}_{t-1}$.
+Đầu ra được tạo bởi một tầng kết nối đầy đủ với hàm kích hoạt sigmoid.
 
 <!--
 ![ Reset and update gate in a GRU. ](../img/gru_1.svg)
@@ -128,7 +126,7 @@ and the hidden state of the last timestep is $\mathbf{H}_{t-1} \in \mathbb{R}^{n
 Then, the reset gate $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ and update gate $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ are computed as follows:
 -->
 
-Với một bước thời gian nhất định $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn của bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), thì cổng xoá $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
+Tại bước thời gian $t$, với đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn ở bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), cổng xoá $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
 
 
 $$
@@ -147,7 +145,7 @@ We use a sigmoid function (as introduced in :numref:`sec_mlp`) to transform inpu
 -->
 
 Ở đây, $\mathbf{W}_{xr}, \mathbf{W}_{xz} \in \mathbb{R}^{d \times h}$ và $\mathbf{W}_{hr}, \mathbf{W}_{hz} \in \mathbb{R}^{h \times h}$ là các tham số trọng số và $\mathbf{b}_r, \mathbf{b}_z \in \mathbb{R}^{1 \times h}$ là các hệ số điều chỉnh.
-Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào thành các giá trị trong khoảng $(0, 1)$.
+Ta sẽ sử dụng hàm sigmoid (như trong :numref:`sec_mlp`) để biến đổi các giá trị đầu vào nằm trong khoảng $(0, 1)$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -157,15 +155,15 @@ Ta sẽ sử dụng hàm sigmoid (như được giới thiệu trong :numref:`se
 ### Reset Gates in Action
 -->
 
-### Cổng Xóa
+### Hoạt động của Cổng Xóa
 
 <!--
 We begin by integrating the reset gate with a regular latent state updating mechanism.
 In a conventional RNN, we would have an hidden state update of the form
 -->
 
-Ta bắt đầu bằng cách tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
-Trong một RNN thông thường, ta sẽ cập nhật trạng thái ẩn bằng công thức
+Ta bắt đầu bằng việc tích hợp cổng xóa với một cơ chế cập nhật trạng thái tiềm ẩn thông thường.
+Trong RNN thông thường, ta cập nhật trạng thái ẩn theo công thức
 
 
 $$\mathbf{H}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1}\mathbf{W}_{hh} + \mathbf{b}_h).$$
@@ -180,12 +178,12 @@ Any pre-existing hidden state is thus reset to defaults.
 This leads to the following *candidate hidden state* (it is a *candidate* since we still need to incorporate the action of the update gate).
 -->
 
-Điều này về cơ bản giống với những gì ta đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng hàm $\tanh$ để đảm bảo rằng các giá trị trạng thái ẩn nằm trong khoảng $(-1, 1)$.
+Điều này về cơ bản giống với những gì đã thảo luận ở phần trước, mặc dù có thêm tính phi tuyến dưới dạng hàm $\tanh$ để đảm bảo rằng các giá trị trạng thái ẩn nằm trong khoảng $(-1, 1)$.
 Nếu muốn giảm ảnh hưởng của các trạng thái trước đó, ta có thể nhân $\mathbf{H}_{t-1}$ với $\mathbf{R}_t$ theo từng phần tử.
-Bất cứ khi nào các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, kết quả sẽ giống RNN thông thường.
-Đối với tất cả các phần tử của cổng xóa $\mathbf{R}_t$ có giá trị gần với $0$, trạng thái ẩn sẽ là kết quả của MLP với $\mathbf{X}_t$ làm đầu vào.
+Nếu các phần tử trong cổng xóa $\mathbf{R}_t$ có giá trị gần với $1$, kết quả sẽ giống RNN thông thường.
+Nếu tất cả các phần tử của cổng xóa $\mathbf{R}_t$ gần với $0$, trạng thái ẩn sẽ là đầu ra của một perceptron đa tầng với đầu vào là $\mathbf{X}_t$.
 Bất kỳ trạng thái ẩn nào tồn tại trước đó đều được đặt lại về giá trị mặc định.
-Điều này dẫn đến *trạng thái ẩn tiềm năng* sau đây (nó là *tiềm năng* vì ta vẫn cần kết hợp đầu ra của cổng cập nhật).
+Tại đây nó được gọi là *trạng thái ẩn tiềm năng*, và chỉ là *tiềm năng* vì ta vẫn cần kết hợp thêm đầu ra của cổng cập nhật.
 
 
 $$\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t \odot \mathbf{H}_{t-1}\right) \mathbf{W}_{hh} + \mathbf{b}_h).$$
@@ -203,7 +201,7 @@ Ký hiệu $\odot$ biểu thị phép nhân theo từng phần tử giữa các 
 ![ Candidate hidden state computation in a GRU. The multiplication is carried out elementwise. ](../img/gru_2.svg)
 -->
 
-![Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được tính theo từng phần tử.](../img/gru_2.svg)
+![Tính toán của trạng thái ẩn tiềm năng trong một GRU. Phép nhân được thực hiện theo phần tử.](../img/gru_2.svg)
 :label:`fig_gru_2`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -214,7 +212,7 @@ Ký hiệu $\odot$ biểu thị phép nhân theo từng phần tử giữa các 
 ### Update Gates in Action
 -->
 
-### Cổng Cập nhật
+### Hoạt động của Cổng Cập nhật
 
 <!--
 Next we need to incorporate the effect of the update gate $\mathbf{Z}_t$, as shown in :numref:`fig_gru_3`.
@@ -223,10 +221,10 @@ The gating variable $\mathbf{Z}_t$ can be used for this purpose, simply by takin
 This leads to the final update equation for the GRU.
 -->
 
-Tiếp đến chúng ta cần kết hợp hiệu ứng của cổng cập nhật $\mathbf{Z}_t$, như trong :numref:`fig_gru_3`.
-Điều này xác định mức độ trạng thái mới $\mathbf{H}_t$ giống trạng thái cũ $\mathbf{H}_{t-1}$ và mức độ trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$ được sử dụng.
-Biến cổng (_gating variable_) $\mathbf{Z}_t$ được sử dụng cho mục đích này, chỉ đơn giản bằng cách áp dụng tổ hợp lồi theo từng phần tử giữa trạng thái cũ và trạng thái tiềm năng.
-Điều này dẫn đến phương trình cập nhật cuối cùng cho GRU.
+Tiếp theo ta sẽ kết hợp hiệu ứng của cổng cập nhật $\mathbf{Z}_t$ như trong :numref:`fig_gru_3`.
+Cổng này xác định mức độ giống nhau giữa trạng thái mới $\mathbf{H}_t$ và trạng thái cũ $\mathbf{H}_{t-1}$, cũng như mức độ trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$ được sử dụng.
+Biến cổng (_gating variable_) $\mathbf{Z}_t$ được sử dụng cho mục đích này, bằng cách áp dụng tổ hợp lồi giữa trạng thái cũ và trạng thái tiềm năng.
+Ta có phương trình cập nhật cuối cùng cho GRU.
 
 
 $$\mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \tilde{\mathbf{H}}_t.$$
@@ -247,11 +245,11 @@ These designs can help us cope with the vanishing gradient problem in RNNs and b
 In summary, GRUs have the following two distinguishing features:
 -->
 
-Bất cứ khi nào cổng cập nhật $\mathbf{Z}_t$ gần tới giá trị $1$, chúng ta chỉ đơn giản là giữ lại trạng thái cũ.
-Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, dẫn đến việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc một cách hiệu quả.
-Ngược lại, bất cứ khi nào $\mathbf{Z}_t$ gần tới giá trị $0$, trạng thái tiềm ẩn $\mathbf{H}_t$ tiến gần tới trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$.
-Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và bắt được những phụ thuộc có khoảng cách bước thời gian lớn trong chuỗi thời gian tốt hơn.
-Nói tóm lại, các mạng GRU có hai tính chất nổi bật như sau:
+Nếu các giá trị trong cổng cập nhật $\mathbf{Z}_t$ bằng $1$, chúng ta chỉ đơn giản giữ lại trạng thái cũ.
+Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, tương đương với việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc.
+Ngược lại, nếu $\mathbf{Z}_t$ gần giá trị $0$, trạng thái ẩn $\mathbf{H}_t$ sẽ gần với trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$.
+Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và nắm bắt tốt hơn sự phụ thuộc xa trong chuỗi thời gian.
+Nói tóm lại, các mạng GRU có hai tính chất nổi bật sau:
 
 <!--
 * Reset gates help capture short-term dependencies in time series.
@@ -271,7 +269,7 @@ Nói tóm lại, các mạng GRU có hai tính chất nổi bật như sau:
 To gain a better understanding of the model, let us implement a GRU from scratch.
 -->
 
-Để có cái nhìn rõ nét hơn về mô hình, chúng ta hãy lập trình một mô hình GRU từ đầu.
+Để hiểu rõ hơn, hãy lập trình mô hình GRU từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -292,8 +290,8 @@ We begin by reading *The Time Machine* corpus that we used in :numref:`sec_rnn_s
 The code for reading the dataset is given below:
 -->
 
-Chúng ta bắt đầu bằng cách đọc kho ngữ liệu *Cỗ máy Thời gian* mà chúng ta đã sử dụng trong :numref:`sec_rnn_scratch`.
-Mã nguồn để đọc dữ liệu được cho dưới đây:
+Chúng ta bắt đầu bằng việc đọc kho ngữ liệu *Cỗ máy Thời gian* đã sử dụng trong :numref:`sec_rnn_scratch`.
+Dưới đây là mã nguồn đọc dữ liệu:
 
 ```{.python .input  n=1}
 import d2l
@@ -319,11 +317,11 @@ We instantiate all weights and biases relating to the update gate, the reset gat
 Subsequently, we attach gradients to all the parameters.
 -->
 
-Bước tiếp theo là để khởi tạo các tham số mô hình.
-Chúng ta khởi tạo giá trị của các trọng số từ phân phối Gauss với phương sai là $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
-Siêu tham số `num_hiddens` xác định số lượng các đơn vị ẩn.
-Chúng ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh ​​liên quan đến cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
-Sau đó, chúng ta gắn gradient cho tất cả các tham số.
+Bước tiếp theo là khởi tạo các tham số mô hình.
+Ta khởi tạo các giá trị trọng số theo phân phối Gauss với phương sai $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
+Siêu tham số `num_hiddens` xác định số lượng đơn vị ẩn.
+Ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh của cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
+Sau đó, gắn gradient cho tất cả các tham số.
 
 
 ```{.python .input  n=2}
@@ -362,8 +360,8 @@ Now we will define the hidden state initialization function `init_gru_state`.
 Just like the `init_rnn_state` function defined in :numref:`sec_rnn_scratch`, this function returns an `ndarray` with a shape (batch size, number of hidden units) whose values are all zeros.
 -->
 
-Bây giờ chúng ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
-Cũng giống như hàm `init_rnn_state` được định nghĩa tại :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` với kích thước là (kích thước batch, số lượng đơn vị ẩn) có giá trị bằng không.
+Bây giờ ta sẽ định nghĩa hàm khởi tạo trạng thái ẩn `init_gru_state`.
+Cũng giống như hàm `init_rnn_state` trong :numref:`sec_rnn_scratch`, hàm này trả về một mảng `ndarray` chứa các giá trị bằng không với kích thước (kích thước batch, số đơn vị ẩn).
 
 
 ```{.python .input  n=3}
@@ -376,8 +374,8 @@ Now we are ready to define the GRU model.
 Its structure is the same as the basic RNN cell, except that the update equations are more complex.
 -->
 
-Bây giờ chúng ta đã sẵn sàng để định nghĩa mô hình GRU.
-Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng với phương trình cập nhật phức tạp hơn.
+Giờ ta có thể định nghĩa mô hình GRU.
+Cấu trúc GRU cũng giống một khối RNN cơ bản nhưng có phương trình cập nhật phức tạp hơn.
 
 
 ```{.python .input  n=4}
@@ -406,8 +404,8 @@ Training and prediction work in exactly the same manner as before.
 After training for one epoch, the perplexity and the output sentence will be like the following.
 -->
 
-Việc huấn luyện và dự đoán hoạt động theo cách tương tự như trước đây.
-Sau khi huấn luyện cho một epoch, độ hỗn độn (_perplexity_) và câu đầu ra sẽ giống dưới đây.
+Việc huấn luyện và dự đoán cũng được thực hiện tương tự như với RNN.
+Sau khi huấn luyện một epoch, ta thu được perplexity và câu đầu ra như sau.
 
 
 ```{.python .input  n=3}
@@ -426,7 +424,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình Súc tích
 
 <!--
 In Gluon, we can directly call the `GRU` class in the `rnn` module.
@@ -434,7 +432,9 @@ This encapsulates all the configuration detail that we made explicit above.
 The code is significantly faster as it uses compiled operators rather than Python for many details that we spelled out in detail before.
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, ta có thể trực tiếp gọi lớp `GRU` trong mô-đun `rnn`.
+Mô-đun này đóng gói tất cả các cấu hình đã thực hiện tường minh ở trên.
+Đoạn mã này nhanh hơn đáng kể do sử dụng các toán tử được biên dịch chứ không phải thuần Python như trên.
 
 
 ```{.python .input  n=9}
@@ -456,7 +456,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * GRUs contain basic RNNs as their extreme case whenever the reset gate is switched on. They can ignore sequences as needed.
 -->
 
-*dịch đoạn phía trên*
+* Các mạng nơ-ron hồi tiếp có cổng nắm bắt các phụ thuộc xa trong chuỗi thời gian tốt hơn.
+* Cổng xoá giúp nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng cập nhật giúp nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
+* Trường hợp đặc biệt khi cổng xoá được kích hoạt, GRU trở thành RNN cơ bản. Chúng cũng có thể bỏ qua các các thành phần trong chuỗi khi cần.
 
 
 <!--
@@ -472,7 +475,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. What happens if you implement only parts of a GRU? That is, implement a recurrent cell that only has a reset gate. Likewise, implement a recurrent cell only with an update gate.
 -->
 
-*dịch đoạn phía trên*
+1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU`.
+2. Giả sử ta chỉ muốn sử dụng đầu vào tại bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t > t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
+3. Quan sát và phân tích tác động tới thời gian chạy, perplexity và các câu được sinh ra khi điều chỉnh các siêu tham số.
+4. Điều gì xảy ra khi GRU được lập trình chỉ có cổng xoá hay chỉ có cổng cập nhật?
+
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -495,22 +502,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Cường
 * Võ Tấn Phát
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
 * Nguyễn Duy Du
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Nguyễn Duy Du
-
-<!-- Phần 4 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-*
+* Phạm Minh Đức

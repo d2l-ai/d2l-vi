@@ -2,7 +2,7 @@
 # Recurrent Neural Networks
 -->
 
-# Mạng nơ-ron Truy hồi
+# Mạng nơ-ron Hồi tiếp
 :label:`chap_rnn`
 
 <!--
@@ -13,7 +13,7 @@ its content of something that would look much like the background of a test patt
 -->
 
 Cho đến nay, chúng ta đã gặp hai loại dữ liệu: các vector tổng quát và hình ảnh.
-Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy (_regularity property_) của hình ảnh.
+Với dữ liệu hình ảnh, ta đã thiết kế các tầng chuyên biệt nhằm tận dụng tính chính quy (*regularity property*) của hình ảnh.
 Nói cách khác, nếu ta hoán vị các điểm ảnh trong một ảnh, ta sẽ thu được một bức ảnh trông giống như các khuôn mẫu kiểm tra (*test pattern*) hay thấy trong truyền hình analog, và rất khó để suy luận về nội dung của chúng.
 
 <!--
@@ -47,7 +47,7 @@ In short, while convolutional neural networks can efficiently process spatial in
 These networks introduce state variables to store past information, and then determine the current outputs, together with the current inputs.
 -->
 
-Tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả thông tin trên chiều không gian, thì các mạng nơ-ron truy hồi được thiết kế để xử lý thông tin tuần tự tốt hơn.
+Tóm lại, trong khi các mạng nơ-ron tích chập có thể xử lý hiệu quả thông tin trên chiều không gian, thì các mạng nơ-ron hồi tiếp được thiết kế để xử lý thông tin tuần tự tốt hơn.
 Các mạng này sử dụng các biến trạng thái để lưu trữ thông tin trong quá khứ, sau đó dựa vào chúng và các đầu vào hiện tại để xác định các đầu ra hiện tại.
 
 <!--
@@ -57,10 +57,10 @@ After a more formal review of sequence data we discuss basic concepts of a langu
 Next, we describe the gradient calculation method in recurrent neural networks to explore problems that may be encountered in recurrent neural network training.
 -->
 
-Ở chương này, đa phần những ví dụ đề cập đến các mạng truy hồi đều dựa trên dữ liệu văn bản.
+Ở chương này, đa phần những ví dụ đề cập đến các mạng hồi tiếp đều dựa trên dữ liệu văn bản.
 Vì vậy, chúng ta sẽ cùng đào sâu tìm hiểu những mô hình ngôn ngữ.
-Sau khi tìm hiểu về dữ liệu chuỗi, ta sẽ thảo luận các khái niệm cơ bản của mô hình ngôn ngữ để làm bàn đạp cho việc thiết kế các mạng nơ-ron truy hồi.
-Cuối cùng, ta sẽ tiến hành mô tả phương pháp tính toán gradient trong các mạng nơ-ron truy hồi để từ đó hiểu rõ hơn các vấn đề có thể gặp phải trong quá trình huấn luyện.
+Sau khi tìm hiểu về dữ liệu chuỗi, ta sẽ thảo luận các khái niệm cơ bản của mô hình ngôn ngữ để làm bàn đạp cho việc thiết kế các mạng nơ-ron hồi tiếp.
+Cuối cùng, ta sẽ tiến hành mô tả phương pháp tính toán gradient trong các mạng nơ-ron hồi tiếp để từ đó hiểu rõ hơn các vấn đề có thể gặp phải trong quá trình huấn luyện.
 
 ```toc
 :maxdepth: 2
@@ -79,3 +79,7 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Phạm Minh Đức
+* Nguyễn Văn Cường

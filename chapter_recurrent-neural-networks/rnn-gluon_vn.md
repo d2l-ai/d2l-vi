@@ -5,7 +5,7 @@
 # Concise Implementation of Recurrent Neural Networks
 -->
 
-# Lập trình súc tích Mạng nơ-ron Truy hồi
+# Lập trình súc tích Mạng nơ-ron Hồi tiếp
 :label:`sec_rnn_gluon`
 
 <!--
@@ -14,7 +14,7 @@ This section will show how to implement the same language model more efficiently
 We begin as before by reading the "Time Machine" corpus.
 -->
 
-Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron truy hồi từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
+Dù :numref:`sec_rnn_scratch` đã mô tả cách lập trình mạng nơ-ron hồi tiếp từ đầu một cách chi tiết, tuy nhiên cách làm này không được nhanh và thuận tiện.
 Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn ngữ nhưng hiệu quả hơn bằng các hàm của Gluon.
 Như trước, ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
@@ -39,8 +39,8 @@ Gluon's `rnn` module provides a recurrent neural network implementation (beyond 
 We construct the recurrent neural network layer `rnn_layer` with a single hidden layer and 256 hidden units, and initialize the weights.
 -->
 
-Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron truy hồi (cùng với các mô hình chuỗi khác).
-Ta xây dựng tầng truy hồi `rnn_layer` với một tầng ẩn có 256 nút rồi khởi tạo các trọng số.
+Mô-đun `rnn` của Gluon đã lập trình sẵn mạng nơ-ron hồi tiếp (cùng với các mô hình chuỗi khác).
+Ta xây dựng tầng hồi tiếp `rnn_layer` với một tầng ẩn có 256 nút rồi khởi tạo các trọng số.
 
 
 ```{.python .input  n=26}
@@ -60,8 +60,8 @@ For now, suffice it to say that multiple layers simply amount to the output of o
 
 Việc khởi tạo trạng thái cũng khá đơn giản, chỉ cần gọi phương thức `rnn_layer.begin_state(batch_size)`.
 Phương thức này trả về một trạng thái ban đầu cho mỗi phần tử trong minibatch, có kích thước là (số tầng ẩn, kích thước batch, số nút ẩn).
-Số tầng ẩn mặc định là 1. 
-Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào -- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
+Số tầng ẩn mặc định là 1.
+Thực ra ta chưa thảo luận việc mạng có nhiều tầng sẽ như thế nào --- điều này sẽ được đề cập ở :numref:`sec_deep_rnn`.
 Tạm thời, có thể nói rằng trong mạng nhiều tầng, đầu ra của một RNN sẽ là đầu vào của RNN tiếp theo.
 
 ```{.python .input  n=37}
@@ -94,8 +94,8 @@ Note that `rnn_layer` only contains the hidden recurrent layers, we need to crea
 While in the previous section, we have the output layer within the `rnn` block.
 -->
 
-Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron truy hồi hoàn chỉnh.
-Chú ý rằng `rnn_layer` chỉ chứa các tầng truy hồi ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
+Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằng cách kế thừa lớp `Block` để xây dựng mạng nơ-ron hồi tiếp hoàn chỉnh.
+Chú ý rằng `rnn_layer` chỉ chứa các tầng hồi tiếp ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
 # Saved in the d2l package for later use
@@ -153,7 +153,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 Compared with the last section, this model achieves comparable perplexity, albeit within a shorter period of time, due to the code being more optimized.
 -->
 
-So với phần trước, mô hình này đạt được độ rối rắm tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
+So với phần trước, mô hình này đạt được perplexity tương đương, nhưng thời gian huấn luyện tốt hơn do các đoạn mã được tối ưu hơn.
 
 <!--
 ## Summary
@@ -167,7 +167,7 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 * As before, the computational graph needs to be detached from previous steps for reasons of efficiency.
 -->
 
-* Mô-đun `rnn` của Gluon đã lập trình sẵn tầng mạng nơ-ron truy hồi.
+* Mô-đun `rnn` của Gluon đã lập trình sẵn tầng mạng nơ-ron hồi tiếp.
 * Mỗi thực thể của `nn.RNN` trả về đầu ra và trạng thái ẩn sau lượt truyền xuôi. Lượt truyền xuôi này không bao gồm tính toán tại tầng đầu ra.
 * Như trước, đồ thị tính toán cần được tách khỏi các bước trước đó để đảm bảo hiệu năng.
 
@@ -215,17 +215,8 @@ So với phần trước, mô hình này đạt được độ rối rắm tươ
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc

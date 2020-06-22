@@ -5,7 +5,7 @@
 # Convexity
 -->
 
-# *dịch tiêu đề phía trên*
+# Tính lồi
 :label:`sec_convexity`
 
 <!--
@@ -16,25 +16,29 @@ Furthermore, even though the optimization problems in deep learning are generall
 This can lead to exciting new optimization variants such as :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 -->
 
-*dịch đoạn phía trên*
+Tính lồi đóng một vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
+Điều này phần lớn là do các thuật toán sẽ dễ phân tích và kiểm tra hơn trong trường hợp này.
+Nói cách khác, nếu thuật toán hoạt động kém ngay cả trong môi trường lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong môi trường khác.
+Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần là không lồi, chúng lại thường thể hiện một số tính chất lồi gần các cực tiểu.
+Điều này dẫn đến các biến thể tối ưu hóa thú vị mới như :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 
 <!--
 ## Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Căn bản
 
 <!--
 Let us begin with the basics.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy bắt đầu với các căn bản trước.
 
 <!--
 ### Sets
 -->
 
-### *dịch tiêu đề phía trên*
+### Tập hợp
 
 <!--
 Sets are the basis of convexity.
@@ -42,10 +46,12 @@ Simply put, a set $X$ in a vector space is convex if for any $a, b \in X$ the li
 In mathematical terms this means that for all $\lambda \in [0, 1]$ we have
 -->
 
-*dịch đoạn phía trên*
+Các tập hợp là cơ sở của tính lồi.
+Nói một cách đơn giản, một tập hợp $X$ trong không gian vector là lồi nếu với bất kì $a, b \in X$, đoạn thẳng nối $a$ và $b$ cũng thuộc $X$.
+Theo các thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
 
 
-$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{ whenever } a, b \in X.$$
+$$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{với mọi} a, b \in X.$$
 
 
 <!--
@@ -55,13 +61,16 @@ The first set is not convex since there are line segments that are not contained
 The other two sets suffer no such problem.
 -->
 
-*dịch đoạn phía trên*
+Nghe có vẻ hơi trừu tượng nhỉ.
+Hãy xem qua bức ảnh :numref:`fig_pacman`.
+Tập hợp đầu tiên là không lồi do tồn tại các đoạn thẳng không nằm trong tập hợp.
+Hai tập hợp còn lại thì không gặp vấn đề như vậy.
 
 <!--
 ![Three shapes, the left one is nonconvex, the others are convex](../img/pacman.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/pacman.svg)
+![Ba hình dạng, hình bên trái là không lồi, hai hình còn lại là lồi](../img/pacman.svg)
 :label:`fig_pacman`
 
 <!--
@@ -73,13 +82,17 @@ To see this, consider any $a, b \in X \cap Y$. Since $X$ and $Y$ are convex, the
 Given that, they also need to be contained in $X \cap Y$, thus proving our first theorem.
 -->
 
-*dịch đoạn phía trên*
+Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn có thể làm gì đó với chúng.
+Trong trường hợp này, chúng ta có thể nhìn vào hợp và giao của hai tập trong :numref:`fig_convex_intersect`.
+Giả sử $X$ và $Y$ là các tập hợp lồi thì $X \cap Y$ cũng sẽ lồi.
+Để thấy được điều này, hãy xét bất kì $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, khi đó đoạn thẳng nối $a$ và $b$ sẽ thuộc trong cả $X$ và $Y$.
+Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh được định lý đầu tiên của chúng ta.
 
 <!--
 ![The intersection between two convex sets is convex](../img/convex-intersect.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/convex-intersect.svg)
+![Giao giữa hai tập lồi là một tập lồi](../img/convex-intersect.svg)
 :label:`fig_convex_intersect`
 
 <!--
@@ -90,13 +103,17 @@ The line segment in :numref:`fig_nonconvex` connecting $a$ and $b$ needs to cont
 Hence the line segment is not in $X \cup Y$ either, thus proving that in general unions of convex sets need not be convex.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta củng cố kết quả thêm một chút với mệnh đề: giao của các tập lồi $X_i$ là một tập lồi $\cap_{i} X_i$.
+Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau $X \cap Y = \emptyset$.
+Giờ ta chọn ra $a \in X$ và $b \in Y$.
+Đoạn thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
+Do đó đoạn thẳng cũng không nằm trong $X \cup Y$, từ đó chứng minh mệnh đề "hợp của các tập lồi nói chung không nhất thiết phải lồi".
 
 <!--
 ![The union of two convex sets need not be convex](../img/nonconvex.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/nonconvex.svg)
+![Hợp của hai tập lồi không nhất thiết phải lồi](../img/nonconvex.svg)
 :label:`fig_nonconvex`
 
 <!--
@@ -105,7 +122,9 @@ For instance $\mathbb{R}^d$ is a convex set (after all, the line between any two
 In some cases we work with variables of bounded length, such as balls of radius $r$ as defined by $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ and } \|\mathbf{x}\|_2 \leq r\}$.
 -->
 
-*dịch đoạn phía trên*
+Thông thường, các bài toán trong học sâu đều được định nghĩa trong các miền lồi.
+Ví dụ $\mathbb{R}^d$ là tập lồi (xét cho cùng, đoạn thẳng giữa hai điểm bất kỳ thuộc $\mathbb{R}^d$ sẽ thuộc $\mathbb{R}^d$).
+Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có biên, ví dụ như các khối cầu có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -115,14 +134,14 @@ In some cases we work with variables of bounded length, such as balls of radius 
 ### Functions
 -->
 
-### *dịch tiêu đề phía trên*
-
+### Hàm số
 <!--
 Now that we have convex sets we can introduce convex functions $f$.
 Given a convex set $X$ a function defined on it $f: X \to \mathbb{R}$ is convex if for all $x, x' \in X$ and for all $\lambda \in [0, 1]$ we have
 -->
 
-*dịch đoạn phía trên*
+Sau khi có được các tập hợp lồi, chúng ta sẽ giới thiệu tiếp về các hàm số lồi $f$.
+Cho một tập hợp lồi $X$, một hàm số được định nghĩa trên đó $f: X \to \mathbb{R}$ sẽ lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
 
 
 $$\lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
@@ -133,7 +152,8 @@ To illustrate this let us plot a few functions and check which ones satisfy the 
 We need to import a few  libraries.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa cho điều này, chúng ta sẽ vẽ ra một vài hàm số và kiểm tra xem hàm số nào thỏa mãn yêu cầu.
+Chúng ta sẽ cần phải nhập một vài gói thư viện.
 
 
 ```{.python .input  n=1}
@@ -149,7 +169,7 @@ npx.set_np()
 Let us define a few functions, both convex and nonconvex.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy định nghĩa một vài hàm số, cả lồi lẫn không lồi.
 
 
 ```{.python .input}
@@ -178,20 +198,23 @@ Otherwise the outcome of $f(\lambda x + (1-\lambda) x')$ might not be well defin
 Convex functions have a number of desirable properties.
 -->
 
-*dịch đoạn phía trên*
+Như đã đoán trước, hàm cos là không lồi, trong khi hàm parabol và hàm số mũ thì lồi.
+Lưu ý, yêu cầu nói rằng $X$ cần phải là tập hợp lồi để có ý nghĩa.
+Nếu không, kết quả của $f(\lambda x + (1-\lambda) x')$ sẽ không được định nghĩa rõ.
+Các hàm lồi có một số tính chất mong muốn sau.
 
 <!--
 ### Jensen's Inequality
 -->
 
-### *dịch tiêu đề phía trên*
-
+### Bất đẳng thức Jensen
 <!--
 One of the most useful tools is Jensen's inequality.
 It amounts to a generalization of the definition of convexity:
 -->
 
-*dịch đoạn phía trên*
+Một trong những công cụ hữu dụng nhất là bất đẳng thức Jensen.
+Nó tương đương với tổng quát hóa của định nghĩa về tính lồi:
 
 
 $$\begin{aligned}
@@ -207,15 +230,18 @@ In other words, the expectation of a convex function is larger than the convex f
 To prove the first inequality we repeatedly apply the definition of convexity to one term in the sum at a time.
 The expectation can be proven by taking the limit over finite segments.
 -->
-
-*dịch đoạn phía trên*
+với $\alpha_i$ là các số thực không âm mà $\sum_i \alpha_i = 1$.
+Nói cách khác, kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng.
+Để chứng minh bất đẳng thức đầu tiên này, chúng ta tuần tự áp dụng định nghĩa của tính lồi vào các số hạng của tổng.
+Kỳ vọng có thể được chứng minh bằng cách lấy giới hạn trên các đoạn hữu hạn.
 
 <!--
 One of the common applications of Jensen's inequality is with regard to the log-likelihood of partially observed random variables.
 That is, we use
 -->
 
-*dịch đoạn phía trên*
+Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến log hợp lý của các biến ngẫu nhiên quan sát được một phần.
+Ta có
 
 
 $$E_{y \sim P(y)}[-\log P(x \mid y)] \geq -\log P(x).$$
@@ -228,28 +254,31 @@ Here $y$ is typically the unobserved random variable, $P(y)$ is the best guess o
 For instance, in clustering $y$ might be the cluster labels and $P(x \mid y)$ is the generative model when applying cluster labels.
 -->
 
-*dịch đoạn phía trên*
-
+Điều này xảy ra vì $\int P(y) P(x \mid y) dy = P(x)$.
+Nó được sử dụng trong những phương pháp biến phân.
+$y$ ở đây là thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về phân phối của nó và $P(x)$ là phân phối đã được lấy tích phân theo $y$.
+Ví dụ, phân cụm $y$ có thể là nhãn cụm và $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
 
 <!--
 ## Properties
 -->
 
-## *dịch tiêu đề phía trên*
+## Các tính chất
 
 <!--
 Convex functions have a few useful properties.
 We describe them as follows.
 -->
 
-*dịch đoạn phía trên*
+Các hàm lồi có một vài tính chất hữu ích.
+Chúng được trình bày như sau.
 
 
 <!--
 ### No Local Minima
 -->
 
-### *dịch tiêu đề phía trên*
+### Không có cực tiểu cục bộ
 
 <!--
 In particular, convex functions do not have local minima.
@@ -258,7 +287,10 @@ Since $x$ is only a local minimum there has to be another $x' \in X$ for which $
 However, by convexity the function values on the entire *line* $\lambda x + (1-\lambda) x'$ have to be less than $f(x')$ since for $\lambda \in [0, 1)$
 -->
 
-*dịch đoạn phía trên*
+Cụ thể là các hàm lồi không có cực tiểu cục bộ.
+Ta hãy giả định điều ngược lại và chứng minh nó sai nhé. Nếu  $x \in X$ là cực tiểu cục bộ thì sẽ tồn tại một vài lân cận của $x$ mà $f(x)$ là giá trị nhỏ nhất.
+Vì $x$ chỉ là cực tiểu cục bộ nên phải tồn tại một $x' \in X$ nào khác mà $f(x') < f(x)$.
+Tuy nhiên, theo tính lồi, các giá trị hàm số trên toàn bộ *đường thẳng* $\lambda x + (1-\lambda) x'$ phải nhỏ hơn $f(x')$ với $\lambda \in [0, 1)$ 
 
 
 $$f(x) > \lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
@@ -270,7 +302,9 @@ For instance, the function $f(x) = (x+1) (x-1)^2$ has a local minimum for $x=1$.
 However, it is not a global minimum.
 -->
 
-*dịch đoạn phía trên*
+Điều này mâu thuẫn với giả định rằng $f(x)$ là cực tiểu cục bộ.
+Ví dụ, hàm $f(x) = (x+1) (x-1)^2$ có cực tiểu cục bộ với $x=1$.
+Tuy nhiên nó không phải là cực tiểu toàn cục.
 
 
 ```{.python .input}
@@ -291,7 +325,12 @@ Conversely, the function $f(x) = \exp(x)$ does not attain a minimum value on $\m
 For $x \to -\infty$ it asymptotes to $0$, however there is no $x$ for which $f(x) = 0$.
 -->
 
-*dịch đoạn phía trên*
+Tính chất "các hàm lồi không có cực tiểu cục bộ" rất tiện lợi.
+Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
+Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
+Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
+Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị tối thiểu trên $\mathbb{R}$.
+Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại $x$ mà tại đó $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -461,21 +500,26 @@ d2l.annotate('x', (-0.5, f(-0.5)), (-1.5, f(-0.5)))
 ## Constraints
 -->
 
-## *dịch tiêu đề phía trên*
+## Ràng buộc
 
 <!--
 One of the nice properties of convex optimization is that it allows us to handle constraints efficiently.
 That is, it allows us to solve problems of the form:
 -->
 
-*dịch đoạn phía trên*
+Một trong những tính chất hay ho của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả.
+Nó cho phép ta giải quyết các bài toán dưới dạng:
 
-
+<!--
 $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{ subject to } & c_i(\mathbf{x}) \leq 0 \text{ for all } i \in \{1, \ldots, N\}.
 \end{aligned}$$
+-->
 <!-- dịch for all, subject to và minimize -->
 
+$$\begin{aligned} \mathop{\mathrm{tối thiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+    \text{ theo } & c_i(\mathbf{x}) \leq 0 \text{ với mọi } i \in \{1, \ldots, N\}.
+\end{aligned}$$
 
 <!--
 Here $f$ is the objective and the functions $c_i$ are constraint functions.
@@ -485,13 +529,17 @@ If a second constraint is $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$, th
 Satisfying both constraints simultaneously amounts to selecting a slice of a ball as the constraint set.
 -->
 
-*dịch đoạn phía trên*
+$f$ ở đây là mục tiêu và các hàm $c_i$ là các hàm số ràng buộc.
+Hãy xem nó xử lý thế nào trong trường hợp $c_1(\mathbf{x}) = \|\mathbf{x}\|_2 - 1$ nhé.
+Ở trường hợp này, các tham số $\mathbf{x}$ bị ràng buộc vào khối cầu đơn vị.
+Nếu ràng buộc thứ hai là $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$ thì điều này ứng với mọi $\mathbf{x}$ nằm trên nửa khoảng.
+Đáp ứng đồng thời hai ràng buộc này nghĩa là chọn ra một lát cắt của khối cầu làm tập hợp ràng buộc.
 
 <!--
 ### Lagrange Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm số Lagrange
 
 <!--
 In general, solving a constrained optimization problem is difficult.
@@ -502,17 +550,23 @@ In short, the gradient of the objective function (i.e., gravity) will be offset 
  Note that any constraint that is not active (i.e., the ball does not touch the wall) will not be able to exert any force on the ball.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là khó khăn.
+Có một cách để giải quyết bắt nguồn từ vật lý theo một trực giác khá đơn giản.
+Hãy tưởng tượng có một quả banh bên trong một chiếc hộp.
+Quả banh sẽ lăn đến nơi thấp nhất và trọng lực sẽ cân bằng với lực nâng của các cạnh hộp tác động lên quả banh.
+Tóm lại, gradient của hàm mục tiêu (ở đây là trọng lực) sẽ được bù lại bởi gradient của hàm ràng buộc (cần phải nằm trong chiếc hộp, bị các bức tưởng "đẩy lại").
+Lưu ý rằng bất kỳ ràng buộc nào không kích hoạt (quả banh không đụng đến bức tường) thì sẽ không thể tác động bất kỳ một lực nào lên quả banh.
 
 <!--
 Skipping over the derivation of the Lagrange function $L$ (see e.g., the book by Boyd and Vandenberghe for details :cite:`Boyd.Vandenberghe.2004`) 
 the above reasoning can be expressed via the following saddlepoint optimization problem:
 -->
 
-*dịch đoạn phía trên*
+Ta hãy bỏ qua phần phần diễn giải chứng minh của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`).
+Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa:
 
 
-$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ where } \alpha_i \geq 0.$$
+$$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ với } \alpha_i \geq 0.$$
 <!-- dịch where -->
 
 
@@ -525,7 +579,13 @@ There is a rich body of literature explaining how to arrive at the function $L(\
 For our purposes it is sufficient to know that the saddlepoint of $L$ is where the original constrained optimization problem is solved optimally.
 -->
 
-*dịch đoạn phía trên*
+Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
+Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
+Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *tối đa hóa* $L$ theo $\alpha$ và đồng thời *tối thiểu hóa* nó theo $\mathbf{x}$.
+Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
+Đối với mục đích của chúng ta, chúng ta chỉ cần biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -539,7 +599,7 @@ For our purposes it is sufficient to know that the saddlepoint of $L$ is where t
 ### Penalties
 -->
 
-### *dịch tiêu đề phía trên*
+### Lượng phạt
 
 <!--
 One way of satisfying constrained optimization problems at least approximately is to adapt the Lagrange function $L$.
@@ -547,7 +607,9 @@ Rather than satisfying $c_i(\mathbf{x}) \leq 0$ we simply add $\alpha_i c_i(\mat
 This ensures that the constraints will not be violated too badly.
 -->
 
-*dịch đoạn phía trên*
+Có một cách để thỏa mãn các bài toán tối ưu hóa bị ràng buộc một cách xấp xỉ là phỏng theo hàm Lagrange $L$. 
+Thay vì thỏa mãn $c_i(\mathbf{x}) \leq 0$, chúng ta chỉ cần thêm $\alpha_i c_i(\mathbf{x})$ vào hàm mục tiêu $f(x)$.
+Điều này sẽ đảm bảo rằng các ràng buộc không bị vi phạm quá mức.
 
 <!--
 In fact, we have been using this trick all along.
@@ -557,7 +619,11 @@ Using the constrained optimization point of view we can see that this will ensur
 Adjusting the value of $\lambda$ allows us to vary the size of $\mathbf{w}$.
 -->
 
-*dịch đoạn phía trên*
+Thực tế, chúng ta đã dùng thủ thuật này suốt.
+Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`.
+Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng $\mathbf{w}$ không phát triển quá lớn.
+Bằng cách sử dụng góc nhìn tối ưu hóa bị ràng buộc, chúng ta có thể thấy rằng nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với bán kính $r$ nào đó.
+Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi độ lớn của $\mathbf{w}$.
 
 <!--
 In general, adding penalties is a good way of ensuring approximate constraint satisfaction.
@@ -565,13 +631,15 @@ In practice this turns out to be much more robust than exact satisfaction.
 Furthermore, for nonconvex problems many of the properties that make the exact approach so appealing in the convex case (e.g., optimality) no longer hold.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, thêm các lượng phạt vào là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ.
+Trong thực tế, điều này hoá ra ổn định hơn rất nhiều khi so với việc thỏa mãn chuẩn xác.
+Hơn nữa, với các bài toán không lồi, nhiều tính chất khiến hướng tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) không còn đảm bảo.
 
 <!--
 ### Projections
 -->
 
-### *dịch tiêu đề phía trên*
+### Các phép chiếu
 
 <!--
 An alternative strategy for satisfying constraints are projections.
@@ -579,7 +647,9 @@ Again, we encountered them before, e.g., when dealing with gradient clipping in 
 There we ensured that a gradient has length bounded by $c$ via
 -->
 
-*dịch đoạn phía trên*
+Một chiến lược thay thế để thỏa mãn các ràng buộc là các phép chiếu.
+Hơn nữa, chúng ta đã gặp chúng trước đây, ví dụ, khi giải quyết việc gọt gradient ở :numref:`sec_rnn_scratch`.
+Ở phần đó chúng ta đã đảm bảo rằng gradient có độ dài ràng buộc bởi $c$ thông qua
 
 
 $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
@@ -589,7 +659,7 @@ $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
 This turns out to be a *projection* of $g$ onto the ball of radius $c$. More generally, a projection on a (convex) set $X$ is defined as
 -->
 
-*dịch đoạn phía trên*
+Điều này hóa ra là một *phép chiếu* của $g$ lên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là
 
 
 $$\mathrm{Proj}_X(\mathbf{x}) = \mathop{\mathrm{argmin}}_{\mathbf{x}' \in X} \|\mathbf{x} - \mathbf{x}'\|_2.$$
@@ -605,13 +675,19 @@ Points outside the set (black) are mapped to the closest point inside the set (r
 While for $\ell_2$ balls this leaves the direction unchanged, this need not be the case in general, as can be seen in the case of the diamond.
 -->
 
-*dịch đoạn phía trên*
+Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$.
+Điều này nghe có vẻ hơi trừu tượng.
+:numref:`fig_projections` sẽ giải thích nó một cách rõ ràng hơn.
+Ở đó ta có hai tập lồi, một hình tròn và một hình thoi.
+Các điểm nằm bên trong tập (màu vàng) giữ nguyên không đổi.
+Các điểm nằm bên ngoài tập (màu đen) được ánh xạ tới điểm gần nhất bên trong tập (màu đỏ).
+Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này không nhất thiết vẫn đúng trong trường hợp tổng quát, như có thể thấy được trong trường hợp của hình thoi.
 
 <!--
 ![Convex Projections](../img/projections.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/projections.svg)
+![Các phép chiếu lồi](../img/projections.svg)
 :label:`fig_projections`
 
 <!--
@@ -619,7 +695,8 @@ One of the uses for convex projections is to compute sparse weight vectors.
 In this case we project $\mathbf{w}$ onto an $\ell_1$ ball (the latter is a generalized version of the diamond in the picture above).
 -->
 
-*dịch đoạn phía trên*
+Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa.
+Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (là phiên bản tổng quát của hình thoi ở hình minh họa phía trên).
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -636,7 +713,8 @@ In the context of deep learning the main purpose of convex functions is to motiv
 In the following we will see how gradient descent and stochastic gradient descent can be derived accordingly.
 -->
 
-*dịch đoạn phía trên*
+Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy các thuật toán tối ưu hóa và giúp chúng ta hiểu chúng một cách chi tiết.
+Phần tiếp theo chúng ta sẽ thấy cách hạ gradient và hạ gradient ngẫu nhiên có thể được suy ra từ đó.
 
 <!--
 * Intersections of convex sets are convex. Unions are not.
@@ -646,7 +724,11 @@ In the following we will see how gradient descent and stochastic gradient descen
 * Projections map to points in the (convex) set closest to the original point.
 -->
 
-*dịch đoạn phía trên*
+* Giao của các tập lồi là lồi. Hợp của các tập lồi không bắt buộc phải là lồi.
+* Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen).
+* Hàm khả vi hai lần là lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi.
+* Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực hành, ta chỉ việc thêm cho chúng một mức phạt vào hàm mục tiêu.
+* Các phép chiếu ánh xạ đến các điểm trong tập (lồi) mà nằm gần điểm gốc nhất.
 
 <!--
 ## Exercises
@@ -670,8 +752,20 @@ In the following we will see how gradient descent and stochastic gradient descen
 9. Given a convex set $X$ and two vectors $\mathbf{x}$ and $\mathbf{y}$ prove that projections never increase distances, i.e., $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$.
 -->
 
-*dịch đoạn phía trên*
-
+1. Giả sử chúng ta chỉ muốn xác minh độ lồi của tập hợp bằng cách vẽ mọi đoạn thẳng giữa các điểm bên trong tập hợp và kiểm tra liệu các đoạn thẳng có nằm trong tập hợp đó hay không.
+    * Hãy chứng mình rằng ta chỉ cần kiểm tra các điểm ở biên là đủ.
+    * Hãy chứng minh rằng ta chỉ cần kiểm tra các đỉnh của tập hợp là đủ.
+2. Ký hiệu khối cầu có bán kính $r$ sử dụng chuẩn $p$ là $B_p[r] := \{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_p \leq r\}$. Hãy chứng minh rằng  $B_p[r]$ là lồi với mọi $p \geq 1$.
+3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi.
+4. Hãy chứng minh rằng chuẩn hóa của hàm softmax là lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$.
+5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$.
+6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó.
+7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một vài $\xi \in [0, \epsilon]$.
+8. Cho vector $\mathbf{w} \in \mathbb{R}^d$ với $\|\mathbf{w}\|_1 > 1$, hãy tính phép chiếu lên khối cầu đơn vị $\ell_1$.
+    * Như một bước trung gian viết ra mục tiêu bị phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$.
+    * Bạn có thể tìm ra giá trị 'chính xác' của $\lambda$ mà không cần đoán mò?
+9. Cho tập lồi $X$ và hai vector $\mathbf{x}$, $\mathbf{y}$, hãy chứng minh rằng các phép chiếu không bao giờ làm tăng khoảng cách, ví dụ, $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$.
+    
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -694,19 +788,21 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Võ Tấn Phát
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 3 -->
 * 
 
 <!-- Phần 4 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 5 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 6 -->
-* 
+* Võ Tấn Phát

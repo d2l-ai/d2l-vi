@@ -324,7 +324,7 @@ Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
 ### Computational Cost and Applications
 -->
 
-### *dịch tiêu đề phía trên*
+### Chi phí Tính toán và Ứng dụng
 
 <!--
 One of the key features of a bidirectional RNN is that information from both ends of the sequence is used to estimate the output.
@@ -335,7 +335,12 @@ Hence, if we were to use a bidirectional RNN naively we would not get a very goo
 During test time we only have past data and thus poor accuracy (we will illustrate this in an experiment below).
 -->
 
-*dịch đoạn phía trên*
+Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
+Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt).
+Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
+Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán.
+Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại.
+Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới).
 
 <!--
 To add insult to injury, bidirectional RNNs are also exceedingly slow.
@@ -343,7 +348,9 @@ The main reasons for this are that they require both a forward and a backward pa
 Hence, gradients will have a very long dependency chain.
 -->
 
-*dịch đoạn phía trên*
+Tệ hơn, RNN hai chiều cũng cực kỳ chậm.
+Những lý do chính cho điều này là vì chúng cần cả lượt truyền xuôi và lượt truyền ngược, và lượt truyền ngược thì phụ thuộc vào kết quả của lượt truyền xuôi.
+Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài.
 
 
 <!--
@@ -352,7 +359,8 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu,  chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy).
+Tóm lại, sử dụng cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -366,7 +374,7 @@ In short, handle with care!
 ### Training a Bidirectional RNN for the Wrong Application
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện Mạng RNN Hai chiều cho Ứng dụng không Phù hợp
 
 <!--
 If we were to ignore all advice regarding the fact that bidirectional LSTMs use past and future data and simply apply it to language models, we will get estimates with acceptable perplexity.
@@ -375,7 +383,10 @@ Despite reasonable perplexity, it only generates gibberish even after many itera
 We include the code below as a cautionary example against using them in the wrong context.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta bỏ qua tất cả các lời khuyên liên quan đến việc các LSTM hai chiều sử dụng cả dữ liệu trong quá khứ và tương lai, và cứ áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được các ước tính với độ rối rắm chấp nhận được.
+Tuy nhiên, khả năng dự đoán các biểu tượng trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây.
+Mặc dù đạt được mức perplexity hợp lý, nó chỉ sỉnh ra các chuỗi vô nghĩa ngay cả sau nhiều lần lặp lại.
+Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng sai bối cảnh.
 
 
 ```{.python .input}
@@ -402,7 +413,8 @@ The output is clearly unsatisfactory for the reasons described above.
 For a discussion of more effective uses of bidirectional models, please see the sentiment classification in :numref:`sec_sentiment_rnn`.
 -->
 
-*dịch đoạn phía trên*
+Đầu ra rõ ràng là không tốt vì những lý do trên.
+Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem bài toán phân loại tình cảm trong: numref: `sec_sentiment_rnn`.
 
 <!--
 ## Summary
@@ -417,7 +429,10 @@ For a discussion of more effective uses of bidirectional models, please see the 
 * Bidirectional RNNs are very costly to train due to long gradient chains.
 -->
 
-*dịch đoạn phía trên*
+* Trong các mạng nơ-ron truy hồi hai chiều, trạng thái ẩn cho mỗi bước thời gian được xác định đồng thời bởi dữ liệu trước và sau bước thời gian đó.
+* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ thị.
+* RNN hai chiều chủ yếu hữu ích cho việc tạo embedding chuỗi và ước tính các quan sát được đưa ra trong bối cảnh hai chiều.
+* RNN hai chiều rất tốn kém để huấn luyện do chuỗi gradient dài.
 
 <!--
 ## Exercises
@@ -432,8 +447,11 @@ For a discussion of more effective uses of bidirectional models, please see the 
 Hint: use the RNN to embed each word and then aggregate (average) all embedded outputs before sending the output into an MLP for classification. 
 For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we compute $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ first and then use the latter for sentiment classification.
 -->
-
-*dịch đoạn phía trên*
+1. Nếu các hướng khác nhau sử dụng số nút ẩn khác nhau, kích thước của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
+2. Thiết kế một mạng nơ-ron truy hồi hai chiều với nhiều tầng ẩn.
+3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng RNN hai chiều.
+Gợi ý: sử dụng RNN để tạo từng embedding từ và sau đó tổng hợp (lấy trung bình) tất cả các embedding thành một đầu ra trước khi đưa chúng vào mô hình MLP để phân loại.
+Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ rồi sử dụng để phân loại cảm xúc.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -475,7 +493,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Thanh Hòa
 
 <!-- Phần 5 -->
-*
+* Trần Yến Thy
 
 <!-- Phần 6 -->
-*
+* Trần Yến Thy

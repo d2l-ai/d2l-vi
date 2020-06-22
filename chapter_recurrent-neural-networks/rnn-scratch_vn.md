@@ -5,7 +5,7 @@
 # Implementation of Recurrent Neural Networks from Scratch
 -->
 
-# Lập trình Mạng nơ-ron Truy hồi từ đầu
+# Lập trình Mạng nơ-ron Hồi tiếp từ đầu
 :label:`sec_rnn_scratch`
 
 <!--
@@ -15,7 +15,7 @@ As before, we start by reading the dataset first, which is introduced in :numref
 -->
 
 Trong phần này, ta lập trình từ đầu mô hình ngôn ngữ được giới thiệu trong :numref:`chap_rnn`.
-Mô hình này dựa trên mạng nơ-ron truy hồi ở cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
+Mô hình này dựa trên mạng nơ-ron hồi tiếp ở cấp độ ký tự (_character-level_) được huấn luyện trên tiểu thuyết *The Time Machine* (*Cỗ máy thời gian*) của H. G. Wells.
 Cũng như trước, ta bắt đầu với việc đọc tập dữ liệu được đề cập trong :numref:`sec_language_model`.
 
 
@@ -43,10 +43,10 @@ We often present each token as a more expressive feature vector.
 The easiest representation is called *one-hot encoding*.
 -->
 
-Lưu ý rằng mỗi token được biểu diễn bằng một chỉ số (_numerical index_) trong `train_iter`.
+Lưu ý rằng mỗi token được biểu diễn bằng một chỉ số (*numerical index*) trong `train_iter`.
 Đưa trực tiếp các chỉ số này vào mạng nơ-ron sẽ gây khó khăn cho việc học.
-Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang mhiều thông tin hơn.
-Cách đơn giản nhất là sử dụng *biểu diễn one-hot* (_one-hot encoding_).
+Do đó, mỗi token thường được biểu diễn dưới dạng một vector đặc trưng mang nhiều thông tin hơn.
+Cách đơn giản nhất là sử dụng *biểu diễn one-hot* (*one-hot encoding*).
 
 <!--
 In a nutshell, we map each index to a different unit vector: assume that the number of different tokens in the vocabulary is $N$ (the `len(vocab)`) and the token indices range from 0 to $N-1$.
@@ -403,7 +403,7 @@ Same as the `train_epoch_ch3` function in :numref:`sec_softmax_scratch`, we use 
 Khi thực hiện lấy mẫu tuần tự, ta chỉ khởi tạo trạng thái ẩn khi bắt đầu mỗi epoch.
 Vì mẫu thứ $i^\mathrm{th}$ trong minibatch tiếp theo liền kề với mẫu thứ $i^\mathrm{th}$ trong minibatch hiện tại nên ta có thể sử dụng trực tiếp trạng thái ẩn hiện tại cho minibatch tiếp theo, chỉ cần tách gradient để tính riêng cho mỗi minibatch.
 Còn khi thực hiện lấy mẫu ngẫu nhiên, ta cần tái khởi tạo trạng thái ẩn cho mỗi vòng lặp vì mỗi mẫu được lấy ra ở vị trí ngẫu nhiên.
-Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử dụng đối số `updater` để tổng quát hoá cả trường hợp lập trình súc tích với Gluon và lập trình từ đầu.
+Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử dụng đối số `updater` để tổng quát hóa cả trường hợp lập trình súc tích với Gluon và lập trình từ đầu.
 
 
 ```{.python .input}
@@ -527,7 +527,7 @@ Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể m�
 * Giữa các mô hình chuỗi, ta cần đảm bảo tách gradient để chắc chắn rằng phép tính vi phân tự động không ảnh hưởng ra ngoài phạm vi mẫu hiện tại.
 * Mô hình ngôn ngữ RNN đơn giản bao gồm một bộ mã hóa, một mô hình RNN và một bộ giải mã.
 * Gọt gradient có thể hạn chế sự bùng nổ gradient nhưng không thể khắc phục được vấn đề tiêu biến gradient.
-* Độ rối rắm đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau, được tính bằng trung bình lũy thừa của mất mát entropy chéo.
+* Perplexity đánh giá chất lượng mô hình trên các chuỗi có độ dài khác nhau, được tính bằng trung bình lũy thừa của mất mát entropy chéo.
 * Phân tách tuần tự cho kết quả mô hình tốt hơn.
 
 <!--
@@ -551,9 +551,9 @@ Trong phần tiếp theo, ta sẽ tìm hiểu cách cải thiện đáng kể m�
 -->
 
 1. Chỉ ra rằng mỗi biễu diễn one-hot tương đương với một embedding khác nhau cho từng đối tượng.
-2. Điều chỉnh các siêu tham số để cải thiện độ rối rắm.
+2. Điều chỉnh các siêu tham số để cải thiện perplexity.
     * Bạn có thể giảm perplexity xuống bao nhiêu? Hãy thay đổi embedding, số nút ẩn, tốc độ học, vv.
-    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds] (http://www.gutenberg.org/ebooks/36).
+    * Mô hình này sẽ hoạt động tốt đến đâu trên các cuốn sách khác của H. G. Wells, ví dụ như [The War of the Worlds](http://www.gutenberg.org/ebooks/36).
 3. Thay đổi hàm dự đoán bằng việc lấy mẫu thay vì chọn ký tự tiếp theo là ký tự có khả năng cao nhất.
     * Điều gì sẽ xảy ra?
     * Điều chỉnh để mô hình ưu tiên các đầu ra có khả năng cao hơn, ví dụ, bằng cách lấy mẫu sử dụng $q(w_t \mid w_{t-1}, \ldots, w_1) \propto p^\alpha(w_t \mid w_{t-1}, \ldots, w_1)$ với $\alpha > 1$.
