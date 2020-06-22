@@ -431,7 +431,7 @@ In fact, an exponential decay in $\eta$ leads to a bound of the form $\mathcal{O
 
 Chú ý rằng đối với những hàm mất mát lồi tuyệt đối
 $l(\mathbf{x}, \mathbf{w}') \geq l(\mathbf{x}, \mathbf{w}) + \langle \mathbf{w}'-\mathbf{w}, \partial_\mathbf{w} l(\mathbf{x}, \mathbf{w}) \rangle + \frac{\lambda}{2} \|\mathbf{w}-\mathbf{w}'\|^2$
-ta có thể thiết kế tiến trình tối ưu nhằm tăng tốc độ hội tụ nhanh hơn nữa.
+ta có thể thiết kế quy trình tối ưu nhằm tăng tốc độ hội tụ nhanh hơn nữa.
 Thực tế, sự suy giảm theo cấp số mũ của $\eta$ dẫn đến giới hạn có dạng $\mathcal{O}(\log T / T)$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
