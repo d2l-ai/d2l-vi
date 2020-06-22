@@ -15,7 +15,7 @@ with illustrations using the same language modeling problem as introduced in :nu
 Mặc dù đã biết về các kiến thức cơ bản của mạng nơ-ron hồi tiếp, chúng vẫn chưa đủ để ta giải quyết các bài toán học chuỗi hiện nay.
 Ví dụ như RNN có hiện tượng bất ổn số học khi tính gradient, do đó các mạng nơ-ron hồi tiếp có cổng được sử dụng phổ biến hơn nhiều trong thực tiễn.
 Chúng ta bắt đầu chương này bằng việc giới thiệu hai cấu trúc mạng phổ biến: nút hồi tiếp có cổng (*gated recurrent unit - GRU*) và bộ nhớ ngắn hạn dài (*long short term memory - LSTM*).
-Chúng cũng sẽ được áp dụng minh họa lên cùng bài toán mô hình hóa ngôn ngữ đã được giới thiệu ở :numref:`chap_rnn`.
+Chúng cũng sẽ được áp dụng minh họa trong cùng bài toán mô hình hóa ngôn ngữ đã được giới thiệu ở :numref:`chap_rnn`.
 
 <!--
 Furthermore, we will modify recurrent neural networks with a single undirectional hidden layer.
@@ -36,7 +36,7 @@ recurrent neural networks and modern practices for such sequence to sequence lea
 -->
 
 Trên thực tế, phần lớn các bài toán học chuỗi như nhận dạng giọng nói tự động, chuyển đổi văn bản thành giọng nói và dịch máy, đều có đầu vào và đầu ra là các chuỗi với chiều dài bất kì.
-Cuối cùng, ta sẽ lấy ví dụ bài toán dịch máy để giới thiệu kiến trúc mã hóa - giải mã (*encoder-decoder*) dựa trên mạng nơ-ron hồi tiếp cùng các kỹ thuật hiện đại để giải quyết bài toán học từ chuỗi sang chuỗi.
+Cuối cùng, ta sẽ lấy bài toán dịch máy làm ví dụ để giới thiệu kiến trúc mã hóa - giải mã (*encoder-decoder*) dựa trên mạng nơ-ron hồi tiếp cùng các kỹ thuật hiện đại để giải quyết bài toán học từ chuỗi sang chuỗi.
 
 ```toc
 :maxdepth: 2
