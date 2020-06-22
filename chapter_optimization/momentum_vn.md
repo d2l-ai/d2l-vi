@@ -379,14 +379,15 @@ train_momentum(0.005, 0.9)
 ### Concise Implementation
 -->
 
-### *dịch tiêu đề phía trên*
+### Cách lập trình ngắn gọn
 
 <!--
 There is very little to do in Gluon since the standard `sgd` solver already had momentum built in.
 Setting matching parameters yields a very similar trajectory.
 -->
 
-*dịch đoạn phía trên*
+Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã có sẵn động lượng tích hợp.
+Thiết lập các tham số phù hợp mang lại một quỹ đạo rất giống nhau.
 
 
 ```{.python .input  n=9}
@@ -399,26 +400,28 @@ d2l.train_gluon_ch11('sgd', {'learning_rate': 0.005, 'momentum': 0.9},
 ## Theoretical Analysis
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân tích lý thuyết
 
 <!--
 So far the 2D example of $f(x) = 0.1 x_1^2 + 2 x_2^2$ seemed rather contrived.
 We will now see that this is actually quite representative of the types of problem one might encounter, at least in the case of minimizing convex quadratic objective functions.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay, ví dụ 2D về $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như khá giả tạo.
+Bây giờ chúng ta sẽ thấy rằng điều này thực sự khá tiêu biểu cho các loại vấn đề mà người ta có thể gặp phải, ít nhất là trong trường hợp giảm thiểu các hàm mục tiêu bậc hai lồi.
+
 
 <!--
 ### Quadratic Convex Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm lồi bậc hai
 
 <!--
 Consider the function
 -->
 
-*dịch đoạn phía trên*
+Xem xét hàm số 
 
 
 $$h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b.$$
@@ -431,7 +434,10 @@ this has a minimizer at $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ with minimu
 Hence we can rewrite $h$ as
 -->
 
-*dịch đoạn phía trên*
+Đây là một hàm bậc hai tổng quát.
+Đối với các ma trận bán nguyệt dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có giá trị riêng dương
+cái này có cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị tối thiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Do đó chúng ta có thể viết lại $h$ như
 
 
 $$h(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})^\top \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c}) + b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}.$$
@@ -443,7 +449,9 @@ That is, it is given by the distance between $\mathbf{x}$ and the minimizer, mul
 Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 -->
 
-*dịch đoạn phía trên*
+Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
+Nghĩa là, nó được cho bởi khoảng cách giữa $\mathbf{x}$ và cực tiểu, nhân với $\mathbf{Q}$.
+Do đó, động lượng là sự tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
 Since $\mathbf{Q}$ is positive definite it can be decomposed into its eigensystem via 
@@ -451,7 +459,8 @@ $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ for an orthogonal
 This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ to obtain a much simplified expression:
 -->
 
-*dịch đoạn phía trên*
+Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ phương trình riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của giá trị riêng dương.
+Điều này cho phép chúng tôi thực hiện thay đổi các biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hóa đi rất nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
