@@ -512,7 +512,7 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 5. Assume that $f(x) = x^2 (1 + \sin x)$. How many local minima does $f$ have? Can you change $f$ in such a way that to minimize it one needs to evaluate all local minima?
 -->
 
-1. Hãy thử nghiệm với nhiều tốc độ học khác nhau trong SGD và với nhiều số vòng lặp khác nhau.
+1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với nhiều số vòng lặp khác nhau.
 Cụ thể, hãy vẽ biểu đồ khoảng cách từ nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
 2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân bố chuẩn.
     * Xuất phát từ kì vọng và phương sai của phân phối cho $\mathbf{x}$.
