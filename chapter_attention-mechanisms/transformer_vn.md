@@ -13,20 +13,20 @@ In previous chapters, we have covered major neural network architectures such as
 Let us recap their pros and cons:
 -->
 
-Trong các chương trước, ta đã đề cập đến các kiến trúc mạng nơ-ron quan trọng như mạng nơ-ron tích chập (CNN) và mạng nơ-ron truy hồi (RNN).
-Ưu nhược điểm của các kiến trúc mạng này có thể được tóm tắt như sau:
+Trong các chương trước, ta đã đề cập đến các kiến trúc mạng nơ-ron quan trọng như mạng nơ-ron tích chập (CNN) và mạng nơ-ron hồi tiếp (RNN).
+Ưu nhược điểm của hai kiến trúc mạng này có thể được tóm tắt như sau:
 
 <!--
 * **CNNs** are easy to parallelize at a layer but cannot capture the variable-length sequential dependency very well.
 -->
 
-* Các mạng **CNN** có thể được thực hiện song song dễ dàng ở một tầng nhưng không thể học tốt các mối quan hệ phụ thuộc ở các chuỗi có độ dài thay đổi.
+* Các mạng **CNN** có thể được thực hiện song song dễ dàng ở một tầng nhưng không có khả năng nắm bắt các phụ thuộc chuỗi có độ dài thay đổi.
 
 <!--
 * **RNNs** are able to capture the long-range, variable-length sequential information, but suffer from inability to parallelize within a sequence.
 -->
 
-*  Các mạng **RNN** có khả năng học được thông tin khoảng dài trong chuỗi có độ dài thay đổi, nhưng không có khả năng thực hiện song song trong một chuỗi.
+*  Các mạng **RNN** có khả năng học được các phụ thuộc chuỗi xa và có độ dài thay đổi, nhưng không thể thực hiện song song trong một chuỗi.
 
 <!--
 To combine the advantages from both CNNs and RNNs, :cite:`Vaswani.Shazeer.Parmar.ea.2017` designed a novel architecture using the attention mechanism.
@@ -34,9 +34,9 @@ This architecture, which is called as *Transformer*, achieves parallelization by
 As a result, Transformer leads to a compatible model with significantly shorter training time.
 -->
 
-Để kết hợp các lợi thế từ cả CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
-Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi truy hồi với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
-Kết quả là Transformer tạo ra một mô hình thích hợp với thời gian huấn luyện ngắn hơn đáng kể.
+Để kết hợp các ưu điểm của CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
+Kiến trúc này gọi là *Transformer*, song song hóa bằng cách học chuỗi hồi tiếp với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
+Kết quả tạo ra một mô hình tương thích, với thời gian huấn luyện ngắn hơn đáng kể.
 
 <!--
 Similar to the seq2seq model in :numref:`sec_seq2seq`, Transformer is also based on the encoder-decoder architecture.
@@ -46,8 +46,8 @@ We  compare Transformer and seq2seq  side-by-side in :numref:`fig_transformer`.
 -->
 
 Tương tự như mô hình seq2seq trong :numref:`sec_seq2seq`, Transformer cũng dựa trên kiến trúc mã hóa-giải mã.
-Tuy nhiên, nó thay thế các lớp truy hồi trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua các *biểu diễn vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
-Ta so sánh Transformer và seq2seq trong :numref:`fig_transformer`.
+Tuy nhiên, nó thay thế các lớp hồi tiếp trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua *biểu diễn vị trí* (*positional encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
+:numref:`fig_transformer` so sánh cấu trúc của Transformer và seq2seq.
 
 <!--
 Overall, these two models are similar to each other: the source sequence embeddings are fed into $n$ repeated blocks.
@@ -56,9 +56,9 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 -->
 
 Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
-Đầu ra của khối cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
-Tương tự, các embedding của chuỗi mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã. 
-Ta thu được các đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối cuối cùng.
+Đầu ra của khối mã hoá cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
+Tương tự, các embedding của chuỗi đích được đưa vào $n$ khối lặp lại trong bộ giải mã. 
+Ta thu được đầu ra cuối cùng bằng cách áp dụng một tầng kết nối đầy đủ có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối giải mã cuối cùng.
 
 <!--
 ![The Transformer architecture.](../img/transformer.svg)
@@ -77,7 +77,7 @@ Ta thu được các đầu ra cuối cùng bằng cách áp dụng một tầng
 On the flip side, Transformer differs from the seq2seq with attention model in the following:
 -->
 
-Mặt khác, Transformer khác với mô hình seq2seq áp dụng cơ chế tập trung như sau:
+Mặt khác, Transformer khác với mô hình seq2seq sử dụng cơ chế tập trung như sau:
 
 <!--
 1. **Transformer block**: a recurrent layer in seq2seq is replaced by a *Transformer block*. 
@@ -88,18 +88,18 @@ are processed by two "add and norm" layer that contains a residual structure and
 3. **Position encoding**: since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
 -->
 
-1. **Khối Transformer**: một tầng truy hồi trong seq2seq được thay bằng một *Khối Transformer*.
-Khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* hai tầng trong bộ mã hóa.
+1. **Khối Transformer**: một tầng hồi tiếp trong seq2seq được thay bằng một *Khối Transformer*.
+Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng kết nối đầy đủ. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
 Đối với bộ giải mã, thêm một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
-2. **Cộng và chuẩn**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và điều chuẩn" gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng*.
-3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự mục trong một chuỗi, nên một tầng mã hóa vị trí được sử dụng để thêm thông tin thứ tự vào từng mục trong chuỗi.
+2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*). <!-- `norm` chỗ này là viết tắt của `normalization` chứ không phải `norm` trong linear algebra. -->
+3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên ta sử dụng một tầng để biểu diễn vị trí từng phần tử trong chuỗi.
 
 
 <!--
 In the rest of this section, we will equip you with each new component introduced by Transformer, and get you up and running to construct a machine translation model.
 -->
 
-Trong phần còn lại, chúng tôi sẽ trang bị cho bạn từng thành phần mới được giới thiệu trong Transformer để giúp bạn có thể bắt đầu xây dựng một mô hình dịch máy.
+Tiếp theo, chúng ta sẽ tìm hiểu từng thành phần trong Transformer để có thể xây dựng một mô hình dịch máy.
 
 ```{.python .input  n=1}
 import d2l
