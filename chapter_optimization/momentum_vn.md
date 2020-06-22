@@ -260,7 +260,7 @@ Let us look at what leaky averaging actually does to the updates.
 ### Effective Sample Weight
 -->
 
-### *dịch tiêu đề phía trên*
+### Trọng số mẫu hiệu quả
 
 <!--
 Recall that $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
@@ -270,7 +270,11 @@ These are two benefits in one.
 To illustrate how weighting behaves for different choices of $\beta$ consider the diagram below.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại rằng  $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
+Trong giới hạn, các số hạng thêm cộng dồn thành $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
+Nói cách khác, thay vì thực hiện một bước có kích thước $\eta$ trong GD hoặc SGD, chúng tôi thực hiện một bước có kích thước $$\frac{\eta}{1-\beta}$ đồng thời, xử lý rất nhiều khả năng hành vi hướng xuống tốt hơn.
+Đây là hai lợi ích trong một.
+Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
 
 
 ```{.python .input}
@@ -291,20 +295,21 @@ d2l.plt.legend();
 ## Practical Experiments
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thực nghiệm
 
 <!--
 Let us see how momentum works in practice, i.e., when used within the context of a proper optimizer.
 For this we need a somewhat more scalable implementation.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xem động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của trình tối ưu hóa phù hợp.
+Đối với điều này, chúng tôi cần một cách lập trình có khả năng mở rộng hơn một chút.
 
 <!--
 ### Implementation from Scratch
 -->
 
-### *dịch tiêu đề phía trên*
+### Lập trình từ đầu
 
 <!--
 Compared with (minibatch) SGD the momentum method needs to maintain a set of  auxiliary variables, i.e., velocity.
@@ -312,8 +317,9 @@ It has the same shape as the gradients (and variables of the optimization proble
 In the implementation below we call these variables `states`.
 -->
 
-*dịch đoạn phía trên*
-
+So với SGD (minibatch), phương pháp động lượng cần duy trì một tập hợp các biến phụ trợ, tức là vận tốc.
+Nó có hình dạng giống như độ dốc (và các biến của vấn đề tối ưu hóa).
+Trong phần thực hiện bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
 
 ```{.python .input  n=13}
 def init_momentum_states(feature_dim):
@@ -332,7 +338,7 @@ def sgd_momentum(params, states, hyperparams):
 Let us see how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem điều này hoạt động như thế nào trong thực nghiệm. 
 
 
 ```{.python .input  n=15}
@@ -351,7 +357,8 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-*dịch đoạn phía trên*
+Khi chúng tôi tăng siêu tham số động lượng `momentum` lên 0,9, nó sẽ có kích thước mẫu hiệu quả lớn hơn đáng kể là $\frac{1}{1 - 0.9} = 10$.
+Chúng tôi giảm tỷ lệ học tập xuống còn $0.01$ để kiểm soát các vấn đề.
 
 
 ```{.python .input  n=8}
@@ -364,7 +371,9 @@ Reducing the learning rate further addresses any issue of non-smooth optimizatio
 Setting it to $0.005$ yields good convergence properties.
 -->
 
-*dịch đoạn phía trên*
+Giảm tỷ lệ học tập tiếp tục giải quyết bất kỳ vấn đề tối ưu hóa không trơn tru.
+Đặt nó thành $0,005$ mang lại các đặc tính hội tụ tốt.
+
 
 
 ```{.python .input}
