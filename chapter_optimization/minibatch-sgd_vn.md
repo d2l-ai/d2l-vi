@@ -268,7 +268,7 @@ See e.g., :cite:`Ioffe.2017` for details on how to rescale and compute the appro
 Ở đây ta có thể thấy quá trình tính toán trong minibatch về cơ bản là có hiệu suất bằng với phép nhân trên toàn ma trận.
 Lưu ý thứ tự thực hiện.
 Trong :numref:`sec_batch_norm` ta sử dụng một loại điều chuẩn phụ thuộc chặt chẽ vào phương sai của minibatch.
-Khi ta tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của xâm nhập nhiễu (*noise-injection*) cũng giảm theo do chuẩn hóa theo batch.
+Khi ta tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của việc thêm nhiễu (*noise-injection*) cũng giảm theo do chuẩn hóa theo batch.
 Đọc :cite:`Ioffe.2017` để xem thêm chi tiết về cách chuyển đổi giá trị và tính các số hạng phù hợp.
 
 <!--
@@ -287,7 +287,7 @@ The data is whitened for preprocessing, i.e., we remove the mean and rescale the
 Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả.
 Trong đoạn mã nguồn dưới ta sử dụng tập dữ liệu được phát triển bởi NASA để kiểm tra [tiếng ồn từ các máy bay khác nhau](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise) để so sánh các thuật toán tối ưu này.
 Để thuận tiện ta chỉ sử dụng $1,500$ ví dụ đầu tiên.
-Tập dữ liệu được tẩy (*whiten*) để xử lý, tức là với mỗi toạ độ ta trừ đi giá trị trung bình và chuyển đổi giá trị phương sai về $1$.
+Tập dữ liệu được tẩy trắng (*whitened data*) để xử lý, tức là với mỗi toạ độ ta trừ đi giá trị trung bình và chuyển đổi giá trị phương sai về $1$.
 
 
 ```{.python .input  n=1}
