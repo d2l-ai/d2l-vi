@@ -88,7 +88,10 @@ This allows us to realize most of the benefits of averaging over a batch without
 We will revisit this averaging procedure in more detail later.
 -->
 
-*dịch đoạn phía trên*
+Gía trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ chó một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
+Việc thay thế gradient mới này không còn trỏ về hướng đi xuống dốc nhất trong một trường cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
+Điều này cho phép chúng ta nhận ra hầu hết lợi ích của việc tính toán trung bình theo batch mà không phải tốn chi phí tính toán gradients.
+Chúng ta sẽ xem xét lại quy trình lấy trung bình một các cụ thể hơn ở những phần sau.
 
 <!--
 The above reasoning formed the basis for what is now known as *accelerated* gradient methods, such as gradients with momentum.
@@ -98,7 +101,11 @@ Furthermore, they allow us to average over subsequent gradients to obtain more s
 Indeed, the aspect of acceleration even for noise-free convex problems is one of the key reasons why momentum works and why it works so well.
 -->
 
-*dịch đoạn phía trên*
+Lý do trên đã hình thành cơ sở cho phương pháp gradient *tăng tốc*, chẳng hạn như gradient với động lượng.
+Một lợi ích bổ sung là có thể hiệu quả hơn rất nhiền trong các trường hợp bài toán tối ưu bị điều hoá gặp các điều kiện bất lợi (ví dụ: khi một vài hướng làm quá trình chậm hơn rất nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
+Hơn nữa, cách này cho phép chúng ta tính trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
+Thật vậy, việc tăng tốc ngay cả đối với bài toán hàm lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
+
 
 <!--
 As one would expect, due to its efficacy momentum is a well-studied subject in optimization for deep learning and beyond.
@@ -109,7 +116,12 @@ Momentum in deep learning has been known to be beneficial for a long time.
 See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
-*dịch đoạn phía trên*
+Như mong muốn, do động lượng là một chủ để đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
+[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
+Động lượng được đề xuất bởi :cite:`Polyak.1964`.
+:cite:`Nesterov.2018` đã có một thảo luận lý thuyết chi tiết trong tối ưu hoá lồi.
+Động lượng trong học sâu đã được biết đến từ lâu vì hiệu quả của nó.
+Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -625,7 +637,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 3 -->
 * 
