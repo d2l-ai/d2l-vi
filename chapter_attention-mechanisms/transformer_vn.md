@@ -58,7 +58,7 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
 Đầu ra của khối mã hoá cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
 Tương tự, các embedding của chuỗi đích được đưa vào $n$ khối lặp lại trong bộ giải mã. 
-Ta thu được đầu ra cuối cùng bằng cách áp dụng một tầng kết nối đầy đủ có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối giải mã cuối cùng.
+Ta thu được đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối giải mã cuối cùng.
 
 <!--
 ![The Transformer architecture.](../img/transformer.svg)
@@ -89,7 +89,7 @@ are processed by two "add and norm" layer that contains a residual structure and
 -->
 
 1. **Khối Transformer**: một tầng hồi tiếp trong seq2seq được thay bằng một *Khối Transformer*.
-Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng kết nối đầy đủ. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
+Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
 Đối với bộ giải mã, thêm một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
 2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*). <!-- `norm` chỗ này là viết tắt của `normalization` chứ không phải `norm` trong linear algebra. -->
 3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên ta sử dụng một tầng để biểu diễn vị trí từng phần tử trong chuỗi.
@@ -122,10 +122,10 @@ As we illustrate in :numref:`fig_self_attention`, self-attention outputs a same-
 Compared with a recurrent layer, output items of a self-attention layer can be computed in parallel and, therefore, it is easy to obtain a highly-efficient implementation.
 -->
 
-Trước khi thảo luận về tầng *tập trung đa đầu*, hãy cùng giải thích nhanh qua về kiến trúc *tự tập trung*.
-Cũng giống như một mô hình tập trung bình thường, mô hình tự tập trung có câu truy vấn, khóa và giá trị nhưng chúng được sao chép giống hệt nhau tại mỗi vị trí trong chuỗi đầu vào.
-Như chúng tôi minh họa trong :numref:`fig_self_attention`, tầng tự tập trung trả về một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
-So với tầng truy hồi, các mục đầu ra của tầng tự tập trung có thể được tính toán song song, và do đó dễ dàng có thể xây dựng các đoạn mã hiệu năng cao.
+Trước khi thảo luận về tầng *tập trung đa đầu*, hãy cùng tìm hiểu qua về kiến trúc *tự tập trung*.
+Giống như các mô hình tập trung bình thường, mô hình tự tập trung cũng có câu truy vấn, khóa và giá trị nhưng chúng được sao chép từ các phần tử trong chuỗi đầu vào.
+Như minh họa trong :numref:`fig_self_attention`, tầng tự tập trung trả về một đầu ra tuần tự có cùng độ dài với đầu vào.
+So với tầng hồi tiếp, các phần tử đầu ra của tầng tự tập trung có thể được tính toán song song, do đó dễ dàng xây dựng các đoạn mã tốc độ cao.
 
 <!--
 ![Self-attention architecture.](../img/self-attention.svg)
@@ -141,9 +141,9 @@ For each head, before feeding into the attention layer, we project the queries, 
 The outputs of these $h$ attention heads are concatenated and then processed by a final dense layer.
 -->
 
-Tầng *tập trung đa đầu* bao gồm $h$ tầng tự tập trung song song, mỗi tầng được gọi là một *đầu*.
-Tại mỗi đầu, trước khi đưa vào tầng tập trung, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
-Đầu ra của $h$ đầu tập trung này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
+Tầng *tập trung đa đầu* bao gồm $h$ *đầu* là các tầng tự tập trung song song.
+Trước khi đưa vào mỗi đầu, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
+Đầu ra của $h$ đầu này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
 
 
 <!--
@@ -165,11 +165,11 @@ $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
 and $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Therefore, the output for each head is
 -->
 
-Giả sử rằng chiều cho truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
-Khi đó, tại mỗi đầu $i=1,\ldots, h$, chúng ta có thể học các tham số 
+Giả sử chiều của câu truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
+Khi đó, tại mỗi đầu $i=1,\ldots, h$, ta có thể học các tham số 
 $\mathbf W_q^{(i)}\in\mathbb R^{p_q\times d_q}$,
 $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
-và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra cho mỗi đầu là
+và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra tại mỗi đầu là
 
 
 $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{(i)}\mathbf k,\mathbf W_v^{(i)}\mathbf v),$$
@@ -179,7 +179,7 @@ $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{
 where $\textrm{attention}$ can be any attention layer, such as the `DotProductAttention` and `MLPAttention` as we introduced in :numref:`sec_attention`.
 -->
 
-trong đó $\textrm{attention}$ có thể là bất kỳ tầng tập trung nào, chẳng hạn như `DotProductAttention` và` MLPAttention` như chúng tôi đã giới thiệu trong :numref:`sec_attention`.
+trong đó $\textrm{attention}$ có thể là bất kỳ tầng tập trung nào, chẳng hạn như `DotProductAttention` và` MLPAttention` trong :numref:`sec_attention`.
 
 
 <!--
@@ -188,9 +188,9 @@ The weights of this dense layer can be denoted by $\mathbf W_o\in\mathbb R^{d_o\
 As a result, the multi-head attention output will be
 -->
 
-Sau đó, đầu ra có độ dài $p_v$ từ mỗi đầu tập trung trong số $h$ các đầu được nối với nhau thành đầu ra có độ dài $h p_v$, sau đó được chuyển qua tầng dày đặc cuối cùng với $d_o$ nút ẩn.
-Các trọng số của tầng dày đặc này có thể được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
-Do đó, đầu ra tại tầng tập trung đa đầu sẽ là
+Sau đó, $h$ đầu ra độ dài $p_v$ tại mỗi đầu được nối với nhau thành đầu ra có độ dài $h p_v$, rồi được đưa vào tầng dày đặc cuối cùng với $d_o$ nút ẩn.
+Các trọng số của tầng dày đặc này được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
+Do đó, đầu ra cuối cùng của tầng tập trung đa đầu sẽ là
 
 
 $$\mathbf o = \mathbf W_o \begin{bmatrix}\mathbf o^{(1)}\\\vdots\\\mathbf o^{(h)}\end{bmatrix}.$$
@@ -203,8 +203,8 @@ In addition, since the multi-head attention keeps the same dimensionality betwee
 -->
 
 Bây giờ chúng ta có thể lập trình tầng tập trung đa đầu.
-Giả sử rằng tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
-Ngoài ra, do tập trung đa đầu giữ nguyên số chiều giữa đầu vào và đầu ra, ta cũng có kích thước đặc trưng đầu ra là $d_o =$ `num_hiddens`.
+Giả sử tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
+Ngoài ra, do tập trung đa đầu giữ nguyên số chiều đầu vào, kích thước đặc trưng đầu ra cũng là $d_o =$ `num_hiddens`.
 
 
 ```{.python .input  n=2}
@@ -253,7 +253,7 @@ class MultiHeadAttention(nn.Block):
 Here are the definitions of the transpose functions `transpose_qkv` and `transpose_output`, which are the inverse of each other.
 -->
 
-Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và` transposeDefput` là nghịch đảo của nhau.
+Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và` transpose_output` là nghịch đảo của nhau.
 
 
 ```{.python .input  n=3}
@@ -286,8 +286,7 @@ Let us test the `MultiHeadAttention` model in the a toy example. Create a multi-
 the output will share the same batch size and sequence length as the input, but the last dimension will be equal to the `num_hiddens` $= 100$.
 -->
 
-Hãy cùng kiểm tra mô hình `MultiHeadAttention` qua một ví dụ đơn giản. Tạo ra một tập trung đa đầu với kích thước ẩn $d_o = 100$,
-đầu ra sẽ chia sẻ cùng kích thước batch và độ dài chuỗi với đầu vào, nhưng chiều cuối cùng sẽ có kích thước bằng với `num_hiddens` $= 100$.
+Hãy cùng kiểm tra mô hình `MultiHeadAttention` qua một ví dụ đơn giản. Tạo ra tập trung đa đầu với kích thước ẩn $d_o = 100$, đầu ra sẽ có cùng kích thước batch và độ dài chuỗi với đầu vào, nhưng có kích thước chiều cuối cùng bằng `num_hiddens` $= 100$.
 
 
 ```{.python .input  n=4}
