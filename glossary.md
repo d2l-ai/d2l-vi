@@ -265,13 +265,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | marginalization              | phép biên hóa                 | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (computer vision)       | mặt nạ                        | |
 | max pooling                  | gộp cực đại                   | [https://git.io/JfGi6](https://git.io/JfGi6) |
-| maximize | cực đại hóa | |
+| maximize (in optimization) | cực đại hóa | |
 | maximum likelihood estimator | bộ ước lượng hợp lý cực đại   |                                              |
 | mean squared error (MSE)     | trung bình bình phương sai số | [https://git.io/Jvojr](https://git.io/Jvojr) |
 | memory cell                  | ô nhớ                 |                                              |
 | metric                       | phép đo                       |                                              |
 | minibatch                    | minibatch                     | [https://git.io/JvojE](https://git.io/JvojE) |
-| minimize | cực tiểu hóa | |
+| minimize (in optimization) | cực tiểu hóa | |
 | misclassified                | bị phân loại nhầm             |                                              |
 | mislabeled                   | bị gán nhãn nhầm              |                                              |
 | model                        | mô hình                       |                                              |
