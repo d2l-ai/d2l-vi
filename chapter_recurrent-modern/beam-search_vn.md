@@ -29,7 +29,7 @@ Ta sẽ tiếp tục sử dụng ký hiệu trên trong phần này.
 Để thuận tiện, giả sử rằng đầu ra của bộ giải mã là một chuỗi văn bản.
 Gọi kích thước của bộ từ điển đầu ra $\mathcal{Y}$ (chứa tất cả các từ có thể xuất hiện ở chuỗi đầu ra, bao gồm cả "&lt;eos&gt;") là $\left|\mathcal{Y}\right|$, và chiều dài tối đa của chuỗi đầu ra là $T'$.
 Như vậy có tổng cộng $\mathcal{O}(\left|\mathcal{Y}\right|^{T'})$ chuỗi đầu ra có thể được sinh ra.
-Tất những chuỗi con nằm phía sau "&lt;eos&gt;" trong chuỗi đầu ra sẽ bị lược bỏ.
+Tất cả những chuỗi con nằm phía sau "&lt;eos&gt;" trong chuỗi đầu ra sẽ bị lược bỏ.
 Bên cạnh đó, ta ký hiệu $\mathbf{c}$ là vector ngữ cảnh mã hóa thông tin của tất cả trạng thái ẩn từ đầu vào.
 
 <!--
