@@ -561,10 +561,11 @@ This encoder contains a multi-head attention layer, a position-wise feed-forward
 As shown in the code, for both of the attention model and the positional FFN model in the `EncoderBlock`, their outputs' dimension are equal to the `num_hiddens`.
 This is due to the nature of the residual block, as we need to add these outputs back to the original value during "add and norm".
 -->
-Sau khi nắm được các thành phần thiết yếu của Transformer, chúng ta hãy cùng xây dựng một khối mã hoá cho Transformer.
+
+Với các thành phần thiết yếu trên, hãy xây dựng bộ mã hoá cho Transformer.
 Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí, và hai khối kết nối "cộng và chuẩn hoá".
-Từ mã nguồn, ta thấy cả tầng tập trung và mạng FFN theo vị trí trong trong khối `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
-Điều này là do bản chất của khối phần dư khi chúng ta cộng các đầu ra này với giá trị ban đầu bằng khối "cộng và chuẩn hoá".
+Trong mã nguồn, có thể thấy cả tầng tập trung và mạng truyền xuôi theo vị trí trong `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
+Điều này là do kết nối phần dư trong quá trình "cộng và chuẩn hoá", khi ta cần cộng đầu ra của hai khối này với giá trị đầu vào của chúng.
 
 
 ```{.python .input  n=12}
@@ -591,9 +592,9 @@ It means that the `num_hiddens` argument should be equal to the input size of th
 In our toy example below,  `num_hiddens` $= 24$, `ffn_num_hiddens` $=48$, `num_heads` $= 8$, and `dropout` $= 0.5$.
 -->
 
-Nhờ kết nối phần dư trên, khối mã hoá này sẽ không thay đổi kích thước đầu vào.
+Nhờ kết nối phần dư, khối mã hoá sẽ không thay đổi kích thước đầu vào.
 Có nghĩa là giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng của đầu vào.
-Trong mô hình đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$, và `dropout` $= 0.5$.
+Trong ví dụ đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$, và `dropout` $= 0.5$.
 
 
 ```{.python .input  n=13}
@@ -609,10 +610,11 @@ With the Transformer encoder, $n$ blocks of `EncoderBlock` stack up one after an
 Because of the residual connection, the embedding layer size $d$ is same as the Transformer block output size.
 Also note that we multiply the embedding output by $\sqrt{d}$ to prevent its values from being too small.
 -->
-Bây giờ chúng ta hãy lập trình một bộ mã hoá Transformer đầy đủ.
-Với bộ mã hóa Transformer, $n$ khối `EncoderBlock` được xếp chồng lên nhau.
-Nhờ có kết nối phần dư, kích thước tầng embedding và đầu ra khối Transformer là $d$.
-Cũng lưu ý rằng chúng ta nhân đầu ra của embedding với $\sqrt{d}$ để tránh trường hợp giá trị này quá nhỏ.
+
+Bây giờ hãy lập trình bộ mã hoá đầy đủ của Transformer.
+Trong bộ mã hóa, $n$ khối `EncoderBlock` được xếp chồng lên nhau.
+Nhờ có kết nối phần dư, kích thước tầng embedding và đầu ra khối Transformer đều là $d$.
+Cũng lưu ý rằng ta nhân các embedding với $\sqrt{d}$ để tránh trường hợp giá trị này quá nhỏ.
 
 
 ```{.python .input  n=14}
@@ -642,8 +644,8 @@ Let us create an encoder with two stacked Transformer encoder blocks, whose hype
 Similar to the previous toy example's parameters, we add two more parameters `vocab_size` to be $200$ and `num_layers` to be $2$ here.
 -->
 
-Chúng ta hãy tạo một bộ mã hoá với hai khối mã hoá Transformer có siêu tham số giống như phần trước.
-Tương tự như ví dụ trên, chúng ta sử dụng hai tham số `vocab_size` bằng $200$ và `num_layers` bằng $2$.
+Hãy tạo một bộ mã hoá với hai khối mã hoá Transformer với siêu tham số như ví dụ trên.
+Ngoài ra, ta đặt hai tham số `vocab_size` bằng $200$ và `num_layers` bằng $2$.
 
 
 ```{.python .input  n=15}
@@ -671,7 +673,7 @@ Similar to the Transformer encoder block, the  Transformer decoder block employs
 i.e., the residual connections and the layer normalization to connect each of the sub-layers.
 -->
 
-Khối giải mã Transformer tương tự như khối mã hoá Transformer.
+Khối giải mã của Transformer tương tự như khối mã hoá.
 Tuy nhiên, bên cạnh hai tầng con (tầng tập trung đa đầu và mạng biểu diễn vị trí), khối giải mã Transformer còn chứa tầng con thứ ba áp dụng cơ chế tập trung lên đầu ra của bộ mã hoá.
 Tương tự như khối mã hóa Transformer, khối giải mã Transformer cũng sử dụng tầng "cộng và chuẩn hoá", gồm có kết nối phần dư và chuẩn hoá theo tầng được thêm vào sau mỗi tầng con.
 
@@ -918,28 +920,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Duy Du
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-
-<!-- Phần 5 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-<!-- Phần 7 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 8 -->
-* Nguyễn Văn Quang
+* Nguyễn Văn Cường
