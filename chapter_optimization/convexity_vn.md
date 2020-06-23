@@ -329,7 +329,7 @@ Tính chất "các hàm lồi không có cực tiểu cục bộ" rất tiện l
 Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
 Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
-Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị tối thiểu trên $\mathbb{R}$.
+Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị nhỏ nhất trên $\mathbb{R}$.
 Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại $x$ mà tại đó $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -517,7 +517,7 @@ $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
 -->
 <!-- dịch for all, subject to và minimize -->
 
-$$\begin{aligned} \mathop{\mathrm{tối thiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+$$\begin{aligned} \mathop{\mathrm{cực tiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{ theo } & c_i(\mathbf{x}) \leq 0 \text{ với mọi } i \in \{1, \ldots, N\}.
 \end{aligned}$$
 
@@ -582,7 +582,7 @@ For our purposes it is sufficient to know that the saddlepoint of $L$ is where t
 Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
 Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
 Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
-Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *tối đa hóa* $L$ theo $\alpha$ và đồng thời *tối thiểu hóa* nó theo $\mathbf{x}$.
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$.
 Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
 Đối với mục đích của chúng ta, chúng ta chỉ cần biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
 

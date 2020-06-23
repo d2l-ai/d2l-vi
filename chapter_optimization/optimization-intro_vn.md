@@ -102,7 +102,7 @@ Instead, we must use numerical optimization algorithms.
 The optimization algorithms below all fall into this category.
 -->
 
-Ở chương này, ta sẽ chỉ tập trung vào chất lượng của thuật toán tối ưu trong việc tối thiểu hàm mục tiêu, thay vì lỗi khái quát của mô hình.
+Ở chương này, ta sẽ chỉ tập trung vào chất lượng của thuật toán tối ưu trong việc cực tiểu hóa hàm mục tiêu, thay vì lỗi khái quát của mô hình.
 Trong :numref:`sec_linear_regression`, ta đã phân biệt giữa nghiệm theo công thức và nghiệm xấp xỉ trong các bài toán tối ưu.
 Trong học sâu, đa số các hàm mục tiêu khá phức tạp và không tồn tại nghiệm theo công thức.
 Thay vào đó, ta phải dùng các thuật toán tối ưu xấp xỉ.
@@ -165,7 +165,7 @@ In fact, this is one of the beneficial properties of stochastic gradient descent
 -->
 
 Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực tiểu.
-Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, nghiệm xấp xỉ tính được từ vòng lặp cuối cùng của thuật toán có thể chỉ đang tối thiểu hàm mục tiêu cục bộ chứ không phải toàn cục, do lúc này gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
+Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, nghiệm xấp xỉ tính được từ vòng lặp cuối cùng của thuật toán có thể chỉ đang cực tiểu hóa hàm mục tiêu cục bộ chứ không phải toàn cục, do lúc này gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
 Chỉ với một mức độ nhiễu nhất định thì mới có thể đánh văng tham số ra khỏi vùng cực tiểu.
 Trong thực tế, đây là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến đổi tự nhiên của gradient đối với từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
@@ -292,7 +292,7 @@ This turns out to be one of the reasons that training deep learning models was q
 -->
 
 Có lẽ vấn đế quỷ quyệt nhất mà ta phải đối mặt là tiêu biến gradient.
-Ví dụ, giả sử ta muốn tối thiểu hàm $f(x) = \tanh(x)$ và ta bắt đầu tại $x = 4$.
+Ví dụ, giả sử ta muốn cực tiểu hóa hàm $f(x) = \tanh(x)$ và ta bắt đầu tại $x = 4$.
 Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
@@ -326,7 +326,7 @@ Các cực tiểu và ngay cả nghiệm xấp xỉ của nó cũng rất hữu 
 * Vanishing gradients can cause optimization to stall. Often a reparameterization of the problem helps. Good initialization of the parameters can be beneficial, too.
 -->
 
-* Tối thiểu lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để tối thiểu lỗi ta mong muốn.
+* Cực tiểu hóa lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để cực tiểu hóa lỗi ta mong muốn.
 * Các bài toán tối ưu thường có nhiều vùng cực tiểu.
 * Bài toán còn có thể có nhiều điểm yên ngựa hơn nữa, do các bài toán thường không có tính lồi.
 * Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) sẽ giúp ích. Việc khởi tạo tốt tập tham số cũng có thể có ích.

@@ -127,7 +127,7 @@ will not alter the parameters' value.
 
 Sau khi đã tính toán gradient theo biến `x`, ta có thể truy cập nó thông qua thuộc tính `grad`.
 Để an toàn, `x.grad` được khởi tạo là một mảng chứa các giá trị không.
-Điều này hợp lý vì trong học sâu, việc lấy gradient thường là để cập nhật các tham số bằng cách cộng (hoặc trừ) gradient của một hàm để tối đa (hoặc tối thiểu) hóa hàm đó.
+Điều này hợp lý vì trong học sâu, việc lấy gradient thường là để cập nhật các tham số bằng cách cộng (hoặc trừ) gradient của một hàm để cực đại (hoặc cực tiểu) hóa hàm đó.
 Bằng cách khởi tạo gradient bằng mảng chứa giá trị không, ta đảm bảo rằng bất kỳ cập nhật vô tình nào trước khi gradient được tính toán sẽ không làm thay đổi giá trị các tham số. 
 
 ```{.python .input  n=4}

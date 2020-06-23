@@ -813,7 +813,7 @@ In later chapters, we will continue to discuss overfitting problems and methods 
 * We should choose an appropriately complex model and avoid using insufficient training samples.
 -->
 
-* Bởi vì lỗi khái quát không thể được ước lượng dựa trên lỗi huấn luyện, nên việc chỉ đơn thuần tối thiểu hóa lỗi huấn luyện sẽ không nhất thiết đồng nghĩa với việc tối thiểu hóa lỗi khái quát.
+* Bởi vì lỗi khái quát không thể được ước lượng dựa trên lỗi huấn luyện, nên việc chỉ đơn thuần cực tiểu hóa lỗi huấn luyện sẽ không nhất thiết đồng nghĩa với việc cực tiểu hóa lỗi khái quát.
 Các mô hình học máy cần phải được bảo vệ khỏi việc quá khớp để giảm thiểu lỗi khái quát.
 * Một tập kiểm định có thể được sử dụng cho việc lựa chọn mô hình (với điều kiện là tập này không được sử dụng quá nhiều).
 * Dưới khớp có nghĩa là mô hình không có khả năng giảm lỗi huấn luyện, còn quá khớp là kết quả của việc lỗi huấn luyện của mô hình thấp hơn nhiều so với lỗi kiểm tra. 

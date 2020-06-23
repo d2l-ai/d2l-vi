@@ -19,7 +19,7 @@ we can launch our exploration of deep neural networks, the comparatively rich cl
 -->
 
 Trong chương trước, chúng tôi đã giới thiệu hồi quy softmax (:numref:`sec_softmax`), cách lập trình giải thuật này từ đầu (:numref:`sec_softmax_scratch`), sử dụng nó trong gluon (:numref:`sec_softmax_gluon`), và huấn luyện các bộ phân loại để nhận diện 10 lớp quần áo khác nhau từ các bức ảnh có độ phân giải thấp. 
-Cùng với đó, chúng ta đã học cách xử lý dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và tối thiểu hoá nó theo các tham số mô hình. 
+Cùng với đó, chúng ta đã học cách xử lý dữ liệu, ép buộc các giá trị đầu ra tạo thành một phân phối xác suất hợp lệ (thông qua hàm `softmax`), áp dụng một hàm mất mát phù hợp và cực tiểu hoá nó theo các tham số mô hình. 
 Bây giờ, sau khi đã thành thạo các cơ chế nêu trên trong ngữ cảnh của những mô hình tuyến tính đơn giản, chúng ta có thể bắt đầu khám phá trọng tâm của cuốn sách này: lớp mô hình phong phú của các mạng nơ-ron sâu.
 
 <!--
@@ -567,7 +567,7 @@ And as we saw with the sigmoid function, as the input moves away from 0 in eithe
 -->
 
 Đạo hàm của hàm tanh được vẽ như sau.
-Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị tối đa là 1.
+Khi đầu vào có giá trị gần bằng 0, đạo hàm của hàm tanh tiến tới giá trị lớn nhất là 1.
 Tương tự như hàm sigmoid, khi đầu vào phân kỳ từ 0 theo bất kỳ hướng nào, đạo hàm của hàm tanh sẽ tiến đến 0.
 
 ```{.python .input  n=13}
