@@ -276,6 +276,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | mislabeled                   | bị gán nhãn nhầm              |                                              |
 | model                        | mô hình                       |                                              |
 | model capacity               | năng lực mô hình              | [https://git.io/JvQA5](https://git.io/JvQA5) |
+| model family                 | nhóm mô hình                  |                                              |
 | module                       | mô-đun                        |                                              |
 | multi-armed bandit           | máy đánh bạc đa cần           | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
