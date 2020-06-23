@@ -165,7 +165,7 @@ and discard all the subsequences after it to obtain a set of final candidate out
 Nó có một siêu tham số $k$ gọi là *kích thước chùm* (_beam size_).
 Tại bước thời gian 1, ta chọn $k$ từ có xác suất có điều kiện cao nhất để bắt đầu $k$ chuỗi đầu ra ứng viên.
 Tại các bước thời gian tiếp theo, dựa trên $k$ chuỗi đầu ra ứng viên từ bước thời gian trước đó, ta tính và chọn $k$ chuỗi có xác suất có điều kiện cao nhất trong tổng số $k\left|\mathcal{Y}\right|$ khả năng.
-Đây là các chuỗi đầu ra ứng viên cho bước thời gian đó.
+Đây sẽ là các chuỗi đầu ra ứng viên cho bước thời gian đó.
 Cuối cùng, ta lọc ra các chuỗi có chứa "&lt;eos&gt;" từ các chuỗi đầu ra ứng viên tại mỗi bước thời gian
 và loại bỏ tất cả các chuỗi sau ký tự đó để thu được tập các chuỗi đầu ra ứng viên cuối cùng.
 
