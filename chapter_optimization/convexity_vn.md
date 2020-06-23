@@ -423,8 +423,8 @@ Chúng ta sử dụng định lý giá trị trung bình để biểu diễn
 
 
 $$\begin{aligned}
-f(x) - f(a) & = (x-a) f'(\alpha) \text{ for some } \alpha \in [a, x] \text{ and } \\ 
-f(b) - f(x) & = (b-x) f'(\beta) \text{ for some } \beta \in [x, b].
+f(x) - f(a) & = (x-a) f'(\alpha) \text{ for some } \alpha \in [a, x] \text{ and } \\  
+f(b) - f(x) & = (b-x) f'(\beta) \text{ for some } \beta \in [x, b]. 
 \end{aligned}$$ 
 <!-- dịch for some-->
 
