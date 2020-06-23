@@ -68,6 +68,7 @@ Nói đúng hơn đây chỉ là phiên bản đặc biệt của trạng thái 
 ### Input Gates, Forget Gates, and Output Gates
 -->
 
+
 ### Cổng Đầu vào, Cổng Quên, và Cổng Đầu ra
 
 <!--
@@ -84,6 +85,7 @@ Kết quả là, tất cả các giá trị đầu ra tại ba cổng đều n�
 ![Calculation of input, forget, and output gates in an LSTM. ](../img/lstm_0.svg)
 -->
 
+
 ![Các phép tính tại cổng đầu vào, cổng quên và cổng đầu ra trong một đơn vị LSTM. ](../img/lstm_0.svg)
 :label:`lstm_0`
 
@@ -94,6 +96,7 @@ Correspondingly, the gates are defined as follows: the input gate is $\mathbf{I}
 the forget gate is $\mathbf{F}_t \in \mathbb{R}^{n \times h}$, and the output gate is $\mathbf{O}_t \in \mathbb{R}^{n \times h}$.
 They are calculated as follows:
 -->
+
 
 Chúng ta giả sử rằng có $h$ đơn vị ẩn, mỗi minibatch có kích thước $n$, và kích thước đầu vào là $d$.
 Như vậy, đầu vào là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ và trạng thái ẩn của bước thời gian trước đó là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$.
@@ -199,6 +202,7 @@ Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 ![Computation of memory cells in an LSTM. Here, the multiplication is carried out elementwise. ](../img/lstm_2.svg)
 -->
 
+
 ![Các phép tính toán trong ô nhớ của LSTM. Ở đây, ta sử dụng phép nhân trên từng phần tử.](../img/lstm_2.svg)
 
 :label:`lstm_2`
@@ -227,6 +231,7 @@ Trong LSTM, đây chỉ đơn giản là một phiên bản có kiểm soát c�
 Bất cứ khi nào giá trị của cổng đầu ra là $1$, chúng ta cho tất cả thông tin bộ nhớ qua hàm dự đoán một cách hiệu quả.
 Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
 :numref:`lstm_3` minh họa các luồng chảy của dữ liệu.
+
 
 
 $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
