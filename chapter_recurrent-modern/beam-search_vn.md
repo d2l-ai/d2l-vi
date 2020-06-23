@@ -36,7 +36,7 @@ Bên cạnh đó, ta ký hiệu $\mathbf{c}$ là vector ngữ cảnh mã hóa th
 ## Greedy Search
 -->
 
-## Tìm kiếm tham lam
+## Tìm kiếm Tham lam
 
 <!--
 First, we will take a look at a simple solution: greedy search.
