@@ -337,10 +337,10 @@ The level sets are correspondingly nonconvex.
 In fact, they are typically composed of disjoint sets.
 -->
 
-Hãy nhìn vào hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới.
+Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới.
 Nó rõ ràng là không lồi.
 Các tập mức tương ứng cũng không lồi.
-Thực tế, chúng thường thường cầu thành từ các tập hợp rời rạc.
+Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc.
 
 ```{.python .input}
 x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
