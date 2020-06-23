@@ -134,20 +134,29 @@ On the other hand, if we pick it too large, we will not get a good solution, as 
 The only way to resolve these conflicting goals is to reduce the learning rate *dynamically* as optimization progresses.
 -->
 
-*dịch đoạn phía trên*
+Như có thể thấy, quỹ đạo của các biến trong SGD dao động mạnh hơn so với trong hạ gradient ở phần trước.
+Điều này là do bản chất ngẫu nhiên của gradient.
+Tức là, ngay cả khi tới gần giá trị nhỏ nhất, ta vẫn gặp phải sự bất định gây ra bởi gradient tức thời thông qua $\eta \nabla f_i(\mathbf{x})$.
+Thậm chí sau 50 bước thì chất lượng vẫn không tốt lắm.
+Tệ hơn, nó vẫn sẽ không cải thiện nếu ta thực hiện thêm nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
+Ta chỉ còn một lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
+Tuy nhiên, nếu chọn một giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển đáng kể nào ở những bước đầu tiên.
+Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không thu được nghiệm tốt, như đã thấy ở trên.
+Cách duy nhất để giải quyết hai mục tiêu xung đột lẫn nhau này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
 
 <!--
 This is also the reason for adding a learning rate function `lr` into the `sgd` step function.
 In the example above any functionality for learning rate scheduling lies dormant as we set the associated `lr` function to be constant, i.e., `lr = (lambda: 1)`.
 -->
 
-*dịch đoạn phía trên*
+Đây cũng là lý do cho việc thêm hàm tốc độ học `lr` vào hàm bước `sgd`.
+Trong ví dụ trên, chức năng định thời tốc độ học không được kích hoạt vì ta đặt hàm `lr` bằng một hằng số, tức `lr = (lambda: 1)`.
 
 <!--
 ## Dynamic Learning Rate
 -->
 
-## *dịch tiêu đề phía trên*
+## Tốc độ học Linh hoạt
 
 <!--
 Replacing $\eta$ with a time-dependent learning rate $\eta(t)$ adds to the complexity of controlling convergence of an optimization algorithm.
@@ -157,18 +166,22 @@ If we decrease it too slowly, we waste too much time on optimization.
 There are a few basic strategies that are used in adjusting $\eta$ over time (we will discuss more advanced strategies in a later chapter):
 -->
 
-*dịch đoạn phía trên*
+Thay thế $\eta$ bằng tốc độ học phụ thuộc vào thời gian $\eta(t)$ sẽ khiến việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
+Cụ thể, ta sẽ cần phải tìm ra mức độ suy giảm $\eta$ hợp lý.
+Nếu giảm quá nhanh, quá trình tối ưu hóa sẽ ngừng quá sớm.
+Nếu giảm quá chậm, ta sẽ lãng phí rất nhiều thời gian cho việc tối ưu hóa.
+Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\eta$ theo thời gian (ta sẽ thảo luận về các chiến lược nâng cao hơn trong chương sau):
 
 
 $$
 \begin{aligned}
-    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{piecewise~constant} \\
-    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{exponential} \\
-    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{polynomial}
+    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{hằng số từng khúc} \\
+    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{lũy thừa} \\
+    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{đa thức}
 \end{aligned}
 $$
 <!-- dịch piecewise~constant, exponential và polynomial -->
-
+<!-- Bạn nào review dịch giúp mình cụm piecewise~constant nhé, mình không tìm được bản dịch tiếng Việt cho cụm này. Many thanks! -->
 
 <!--
 In the first scenario we decrease the learning rate, e.g., whenever progress in optimization has stalled.
@@ -180,7 +193,13 @@ In the case of convex optimization there are a number of proofs which show that 
 Let us see what this looks like in practice.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp đầu tiên, ta giảm tốc độ học bất cứ khi nào tiến trình tối ưu bị đình trệ.
+Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
+Ngoài ra, ta có thể tăng mức độ suy giảm bằng cách áp dụng suy giảm theo lũy thừa.
+Thật không may, phương pháp này dẫn đến việc dừng tối ưu quá sớm trước khi thuật toán hội tụ.
+Một lựa chọn phổ biến khác là suy giảm đa thức với $\alpha = 0.5$.
+Trong trường hợp tối ưu lồi, có một số chứng minh cho thấy giá trị này cho kết quả tốt.
+Hãy cùng xem nó hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=4}
@@ -550,7 +569,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 * 
