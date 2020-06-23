@@ -385,7 +385,7 @@ Let us call both of them and see the difference in the example below.
 -->
 
 MXNet có cả `LayerNorm` và `BatchNorm` được lập trình trong khối `nn`.
-Hãy thử khai báo cả hai và xem sự khác biệt qua ví dụ dưới đây.
+Hãy cùng xem sự khác biệt giữa chúng qua ví dụ dưới đây.
 
 
 ```{.python .input  n=7}
@@ -406,10 +406,10 @@ We can deem $X$ as the original input in the residual network, and $Y$ as the ou
 In addition, we apply dropout on $Y$ for regularization.
 -->
 
-Bây giờ chúng ta hãy cùng lập trình khối kết nối `AddNorm`.
-`AddNorm` chấp nhận hai đầu vào $X$ và $Y$.
-Chúng ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng FFN theo vị trí.
-Ngoài ra, ta cũng sẽ áp dụng dropout trên $Y$ để điều chuẩn.
+Bây giờ hãy cùng lập trình khối `AddNorm`.
+`AddNorm` nhận hai đầu vào $X$ và $Y$.
+Ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí.
+Ngoài ra, ta cũng sẽ áp dụng dropout lên $Y$ để điều chuẩn.
 
 
 ```{.python .input  n=8}
@@ -452,26 +452,26 @@ Unlike the recurrent layer, both the multi-head attention layer and the position
 This feature enables us to parallelize the computation, but it fails to model the sequential information for a given sequence.
 To better capture the sequential information, the Transformer model uses the *positional encoding* to maintain the positional information of the input sequence.
 -->
-Không giống như tầng truy hồi, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí tính toán đầu ra cho từng đầu vào của chuỗi một cách độc lập.
-Điều này cho phép chúng ta song song hoá được công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
-Để nắm bắt các thông tin tuần tự hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
+Không giống như tầng hồi tiếp, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí tính toán đầu ra cho từng phần tử trong chuỗi một cách độc lập.
+Điều này cho phép song song hoá công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
+Để nắm bắt các thông tin tuần tự một cách hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
 <!--
 To explain, assume that $X\in\mathbb R^{l\times d}$ is the embedding of an example, where $l$ is the sequence length and $d$ is the embedding size.
 This positional encoding layer encodes X's position $P\in\mathbb R^{l\times d}$ and outputs $P+X$.
 -->
-Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
-Tầng biểu diễn vị trí mã hoá vị trí của X thành $P\in\mathbb R^{l\times d}$ và có đầu ra là $P+X$.
 
+Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
+Tầng biểu diễn vị trí sẽ mã hoá vị trí $P\in\mathbb R^{l\times d}$ của X và trả về đầu ra $P+X$.
 
 <!--
 The position $P$ is a 2-D matrix, where $i$ refers to the order in the sentence, and $j$ refers to the position along the embedding vector dimension.
 In this way, each value in the origin sequence is then maintained using the equations below:
 -->
 
-Biểu diễn vị trí $P$ là ma trận 2 chiều, trong đó $i$ biểu diễn thứ tự trong câu, và $j$ biểu diễn vị trí dọc trên chiều vector embedding.
-Bằng cách này, mỗi thông tin vị trí trong chuỗi nguồn được biểu biễn bởi hai phương trình dưới đây:
+Vị trí $P$ là ma trận 2 chiều, trong đó $i$ là thứ tự trong câu, $j$ là vị trí trên chiều embedding.
+Bằng cách này, mỗi vị trí trong chuỗi nguồn được biểu biễn bởi hai phương trình dưới đây:
 
 
 $$P_{i, 2j} = \sin(i/10000^{2j/d}),$$
@@ -491,7 +491,7 @@ với $i=0,\ldots, l-1$ và $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
 :numref:`fig_positional_encoding` illustrates the positional encoding.
 -->
 
-:numref: `fig_positional_encoding` minh họa biểu diễn vị trí $P$ của $X$.
+:numref: `fig_positional_encoding` minh họa biểu diễn vị trí.
 
 
 <!--
@@ -527,8 +527,8 @@ As we can see, the $4^{\mathrm{th}}$ dimension has the same frequency as the $5^
 The $5^{\mathrm{th}}$ and $6^{\mathrm{th}}$ dimensions have a lower frequency.
 -->
 
-Bây giờ chúng ta hãy kiểm tra lớp `PositionalEncoding` ở trên bằng mô hình đơn giản cho 4 chiều.
-Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng khác giá trị độ dời.
+Bây giờ chúng ta kiểm tra lớp `PositionalEncoding` ở trên bằng một mô hình đơn giản cho 4 chiều.
+Có thể thấy, chiều thứ 4 và chiều thứ 5 có cùng tần số nhưng khác độ dời.
 Chiều thứ 5 và 6 có tần số thấp hơn.
 
 
