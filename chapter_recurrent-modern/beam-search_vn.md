@@ -186,7 +186,7 @@ At timestep 1 of the output sequence, suppose the words with the highest conditi
 At timestep 2, for all $y_2 \in \mathcal{Y},$ we compute
 -->
 
-:numref:`fig_beam-search` minh họa một ví dụ quá trình tìm kiếm chùm.
+:numref:`fig_beam-search` minh họa một ví dụ cho quá trình tìm kiếm chùm.
 Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm từ : $\mathcal{Y} = \{A, B, C, D, E\}$ và một trong số chúng là ký hiệu đặc biệt “&lt;eos&gt;”.
 Đặt kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3.
 Tại bước thời gian 1 của chuỗi đầu ra, giả sử các từ có xác suất có điều kiện $P(y_1 \mid \mathbf{c})$ cao nhất là $A$ và $C$.
