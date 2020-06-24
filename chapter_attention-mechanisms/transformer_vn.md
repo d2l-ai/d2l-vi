@@ -673,17 +673,17 @@ Similar to the Transformer encoder block, the  Transformer decoder block employs
 i.e., the residual connections and the layer normalization to connect each of the sub-layers.
 -->
 
-Khối giải mã của Transformer tương tự như khối mã hoá.
-Tuy nhiên, bên cạnh hai tầng con (tầng tập trung đa đầu và mạng biểu diễn vị trí), khối giải mã Transformer còn chứa tầng con thứ ba áp dụng cơ chế tập trung lên đầu ra của bộ mã hoá.
-Tương tự như khối mã hóa Transformer, khối giải mã Transformer cũng sử dụng tầng "cộng và chuẩn hoá", gồm có kết nối phần dư và chuẩn hoá theo tầng được thêm vào sau mỗi tầng con.
+Khối giải mã của Transformer gần tương tự như khối mã hoá.
+Tuy nhiên, bên cạnh hai tầng con (tập trung đa đầu và biểu diễn vị trí), khối giải mã còn chứa tầng tập trung đa đầu áp dụng lên đầu ra của bộ mã hoá.
+Các tầng con được kết nối bằng tầng "cộng và chuẩn hoá", gồm kết nối phần dư và chuẩn hoá theo tầng.
 
 <!--
 To be specific, at timestep $t$, assume that $\mathbf x_t$ is the current input, i.e., the query.
 As illustrated in :numref:`fig_self_attention_predict`, the keys and values of the self-attention layer consist of the current query with all the past queries $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
 -->
 
-Cụ thể, tại bước thời gian $t$, giả sử đầu vào là truy vấn $\mathbf x_t$.
-Như minh họa trong :numref:`fig_self_attention_predict`, các khoá và giá trị của tầng tập trung gồm có truy vấn ở bước thời gian hiện tại và tất cả các truy vấn ở các bước thời gian trước $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
+Cụ thể, tại bước thời gian $t$, giả sử đầu vào hiện tại là câu truy vấn $\mathbf x_t$.
+Như minh họa trong :numref:`fig_self_attention_predict`, các khoá và giá trị của tầng tập trung gồm có câu truy vấn ở bước thời gian hiện tại và tất cả các câu truy vấn ở các bước thời gian trước $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
 
 
 <!--
@@ -699,9 +699,9 @@ It results in an different behavior from prediction.
 Thus, during prediction we can eliminate the unnecessary information by specifying the valid length to be $t$ for the $t^\textrm{th}$ query.
 -->
 
-Trong quá trình huấn luyện, đầu ra của truy vấn $t$ có thể quan sát được tất cả các cặp khóa - giá trị trước đó.
-Nó dẫn đến những kết quả khác nhau khi dự đoán.
-Vì thế, trong lúc dự đoán chúng ta có thể loại bỏ những thông tin không cần thiết bằng cách xác định rõ độ dài hợp lệ $t$ cho truy vấn thứ $t$.
+Trong quá trình huấn luyện, đầu ra của câu truy vấn $t$ có thể quan sát được tất cả các cặp khóa - giá trị trước đó.
+Điều này dẫn đến những kết quả khác nhau khi dự đoán.
+Vì thế, trong lúc dự đoán chúng ta có thể loại bỏ những thông tin không cần thiết bằng cách xác định rõ độ dài hợp lệ là $t$ cho câu truy vấn thứ $t$.
 
 
 ```{.python .input  n=16}
@@ -746,9 +746,7 @@ class DecoderBlock(nn.Block):
 Similar to the Transformer encoder block, `num_hiddens` should be equal to the last dimension size of $X$.
 -->
 
-
-Tương tự khối mã hóa Transformer, `num_hiddens` bằng với kích thước chiều cuối cùng của $X$.
-
+Tương tự như khối mã hóa của Transformer, `num_hiddens` của khối giải mã bằng với kích thước chiều cuối cùng của $X$.
 
 ```{.python .input  n=17}
 decoder_blk = DecoderBlock(24, 48, 8, 0.5, 0)
@@ -762,17 +760,15 @@ decoder_blk(X, state)[0].shape
 The construction of the entire Transformer decoder is identical to the Transformer encoder, except for the additional dense layer to obtain the output confidence scores.
 -->
 
-Lập trình bộ giải mã Transformer đầy đủ tương tự như với bộ mã hoá Transformer, ngoại trừ tầng kết nối đầy đủ được thêm vào để thu được các giá trị đầu ra.
-
+Lập trình bộ giải mã đầy đủ của Transformer tương tự như bộ mã hoá, ngoại trừ tầng kết nối đầy đủ được thêm vào để tính điểm tin cậy của đầu ra.
 
 <!--
 Let us implement the Transformer decoder `TransformerDecoder`.
 Besides the regular hyperparameters such as the `vocab_size` and `num_hiddens`, the Transformer decoder also needs the Transformer encoder's outputs `enc_outputs` and `env_valid_len`.
 -->
 
-Chúng ta hãy cùng lập trình bộ giải mã Transformer `TransformerDecoder`.
-Bên cạnh `vocab_size` và `num_hiddens` như mọi khi, bộ giải mã Transformer có thêm những siêu tham số khác như kích thước đầu ra của bộ mã hoá Transformer `enc_outputs` và kích thước độ dài hợp lệ `env_valid_len`.
-
+Hãy lập trình bộ giải mã đầy đủ `TransformerDecoder`.
+Ngoài các siêu tham số thường gặp như `vocab_size` và `num_hiddens`, bộ giải mã nhận thêm kích thước đầu ra của bộ mã hoá `enc_outputs` và độ dài hợp lệ `env_valid_len`.
 
 
 ```{.python .input  n=18}
@@ -811,14 +807,13 @@ class TransformerDecoder(d2l.Decoder):
 
 ## Huấn luyện
 
-
 <!--
 Finally, we can build an encoder-decoder model with the Transformer architecture.
 Similar to the seq2seq with attention model in :numref:`sec_seq2seq_attention`, we use the following hyperparameters: two Transformer blocks with both the embedding size and the block output size to be $32$. In addition, we use $4$ heads, and set the hidden size to be twice larger than the output size.
 -->
 
 Cuối cùng, chúng ta có thể xây dựng một mô hình mã hóa - giải mã với kiến ​​trúc Transformer.
-Tương tự như mô hình seq2seq áp dụng cơ chế tập trung trong :numref:`sec_seq2seq_attention`, chúng ta sử dụng các siêu tham số sau: hai khối Transformer có kích thước embedding và kích thước đầu ra là $32$. Bên cạnh đó, chúng ta sử dụng $4$ đầu trong tầng tập trung, và đặt kích thước ẩn bằng hai lần kích thước đầu ra.
+Tương tự như mô hình seq2seq áp dụng cơ chế tập trung trong :numref:`sec_seq2seq_attention`, chúng ta sử dụng các siêu tham số sau: hai khối Transformer có kích thước embedding và kích thước đầu ra đều là $32$. Bên cạnh đó, chúng ta sử dụng $4$ đầu trong tầng tập trung, và đặt kích thước ẩn bằng hai lần kích thước đầu ra.
 
 
 ```{.python .input  n=19}
@@ -842,16 +837,13 @@ d2l.train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 As we can see from the training time and accuracy, compared with the seq2seq model with attention model, Transformer runs faster per epoch, and converges faster at the beginning.
 -->
 
-Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trong mỗi epoch và hội tụ nhanh hơn ở giai đoạn ban đầu so với mô hình seq2seq áp dụng cơ chế tập trung.
-
+Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trong và hội tụ nhanh hơn ở giai đoạn đầu so với seq2seq áp dụng cơ chế tập trung.
 
 <!--
 We can use the trained Transformer to translate some simple sentences.
 -->
 
 Chúng ta có thể sử dụng Transformer đã được huấn luyện để dịch một số câu đơn giản dưới đây.
-
-
 
 ```{.python .input  n=20}
 for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
@@ -876,8 +868,8 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * Mô hình Transformer dựa trên kiến ​​trúc mã hóa - giải mã.
 * Tầng tập trung đa đầu gồm có $h$ tầng tập trung song song.
 * Mạng truyền xuôi theo vị trí gồm hai tầng kết nối đầy đủ được áp dụng trên chiều cuối cùng.
-* Chuẩn hoá theo tầng thực hiện chuẩn hoá trên chiều cuối cùng (chiều đặc trưng), khác với chuẩn hoá theo batch thực hiện trên chiều đầu tiên (kích thước batch).
-* Biểu diễn vị trí là nơi duy nhất thông tin vị trí trong chuỗi được đưa vào mô hình Transformer.
+* Chuẩn hoá theo tầng thực hiện trên chiều cuối cùng (chiều đặc trưng), khác với chuẩn hoá theo batch thực hiện trên chiều đầu tiên (kích thước batch).
+* Biểu diễn vị trí là nơi duy nhất đưa thông tin vị trí trong chuỗi vào mô hình Transformer.
 
 
 <!--
@@ -892,10 +884,9 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 3. Compare layer normalization and batch normalization, when shall we apply which?
 -->
 
-1. Hãy thử huấn luyện với số epoch lớn hơn và so sánh mất mát giữa mô hình seq2seq và mô hình Transformer.
-2. Bạn hãy thử giải thích vai trò của biểu diễn vị trí đối với Transformer?
-4. So sánh chuẩn hoá theo tầng và chuẩn hoá theo batch, khi nào chúng ta áp dụng một trong hai?
-
+1. Hãy thử huấn luyện với nhiều epoch hơn và so sánh mất mát giữa seq2seq và Transformer.
+2. Biểu diễn vị trí có thể có lợi ích gì khác không?
+4. So sánh chuẩn hoá theo tầng và chuẩn hoá theo batch và trường hợp áp dụng?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
