@@ -21,11 +21,11 @@ Our discussion below focuses primarily on LSTMs, but it applies to other sequenc
 -->
 
 Cho đến nay, chúng ta mới chỉ thảo luận về các mạng nơ-ron hồi tiếp với duy nhất một tầng ẩn đơn hướng. 
-Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý. 
+Trong đó, cách các biến tiềm ẩn và các quan sát tương tác với nhau còn khá khá tuỳ ý. 
 Đây không phải là một vấn đề lớn miễn là ta vẫn có đủ độ linh hoạt để mô hình hóa các loại tương tác khác nhau. 
-Tuy nhiên, đây là một thách thức với các mạng đơn tầng.
+Tuy nhiên, với các mạng đơn tầng lại là một thách thức .
 Trong trường hợp của perceptron, chúng ta giải quyết vấn đề này bằng cách đưa thêm nhiều tầng vào mạng.
-Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào. 
+Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm tính phi tuyến vào mạng ở đâu và như thế nào. 
 Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác. 
 
 <!--
@@ -40,12 +40,12 @@ In particular, data might be relevant at different levels of the stack.
 For instance, we might want to keep high-level data about financial market conditions (bear or bull market) available, whereas at a lower level we only record shorter-term temporal dynamics.
 -->
 
-* Chúng ta có thể bổ sung thêm các hàm phi tuyến vào các cơ chế cổng.
+* Chúng ta có thể bổ sung thêm tính phi tuyến vào các cơ chế cổng.
 Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perceptron.
-Cách này không làm thay đổi *cơ chế* của mạng LSTM, ngược lại, làm cho nó phức tạp hơn.
-Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái tổng quát nào đó về cách hoạt động của các mô hình tự hồi quy biến tiềm ẩn. 
+Cách này không làm thay đổi *cơ chế* của mạng LSTM, ngược lại, còn làm cho nó tinh xảo hơn.
+Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái phổ quát nào đó về cách hoạt động của các mô hình tự hồi quy biến tiềm ẩn. 
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
-Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp các tầng đơn giản.
+Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp giữa các tầng đơn giản.
 Đặc biệt là, các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
 Ví dụ, chúng ta có thể muốn lưu dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) ở tầng cao hơn, trong khi đó chỉ ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn. 
 
@@ -55,7 +55,7 @@ It describes a deep recurrent neural network with $L$ hidden layers.
 Each hidden state is continuously passed to both the next timestep of the current layer and the current timestep of the next layer.
 -->
 
-Ngoài cuộc thảo luận khá trừu tượng trên, để hiểu được các nhóm mô hình chúng ta đang quan tâm một cách dễ dàng nhất, thì chúng ta nên xem lại :numref:`fig_deep_rnn`. 
+Ngoài những thứ khá trừu tượng trên, để hiểu được các nhóm mô hình chúng ta đang thảo luận một cách dễ dàng nhất, chúng ta nên xem lại :numref:`fig_deep_rnn`. 
 Hình trên mô tả một mạng nơ-ron hồi tiếp sâu với $L$ tầng ẩn. 
 Mỗi trạng thái ẩn liên tục được truyền tới bước thời gian kế tiếp ở tầng hiện tại và tới bước thời gian hiện tại ở tầng kế tiếp. 
 
@@ -87,7 +87,7 @@ For all subsequent layers, the hidden state of the previous layer is used in its
 
 Tại bước thời gian $t$, giả sử rằng chúng ta có một minibatch $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$ ). 
 Trạng thái ẩn của tầng ẩn $\ell$ ($\ell=1,\ldots, T$) là $\mathbf{H}_t^{(\ell)}  \in \mathbb{R}^{n \times h}$ (số đơn vị ẩn: $h$), 
-biến tầng ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ . 
+biến tầng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ . 
 Chúng ta tính toán trạng thái ẩn của tầng đầu tiên như trước đây, sử dụng đầu vào là $\mathbf{X}_t$. 
 Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng thay cho $\mathbf{X}_t$. 
 
@@ -114,7 +114,7 @@ In particular, we can pick a regular RNN, a GRU, or an LSTM to implement the mod
 -->
 
 Giống như perceptron đa tầng, số tầng ẩn $L$ và số đơn vị ẩn $h$ được coi là các siêu tham số.
-Đặc biệt, chúng ta có thể chọn một kiến trúc RNN, GRU, hoặc LSTM thông thường để xây dựng mô hình.
+Đặc biệt, chúng ta có thể chọn một trong các kiến trúc RNN, GRU, hoặc LSTM thông thường để xây dựng mô hình.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
