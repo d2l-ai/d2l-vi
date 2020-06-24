@@ -222,7 +222,7 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa một chút thiết kế của các mạng hồi tiếp truyền thống. 
 May mắn là, điều này khá đơn giản về mặt khái niệm. 
 Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối, ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu. 
-*Mạng nơ ron hồi tiếp hai chiều* sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống. 
+*Mạng nơ ron hồi tiếp hai chiều* (*Bidirectional recurrent neural network*) sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống. 
 Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron hồi tiếp hai chiều với 1 tầng ẩn.  
 
 <!--
@@ -336,7 +336,7 @@ During test time we only have past data and thus poor accuracy (we will illustra
 -->
 
 Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra. 
-Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt). 
+Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (như để làm mượt). 
 Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
 Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán. 
 Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại. 
