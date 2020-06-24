@@ -72,7 +72,7 @@ Moreover, the transitions $h_t \to h_{t+1}$ are given by some state transition p
 The graphical model is then a Hidden Markov Model (HMM) as in :numref:`fig_hmm`.
 -->
 
-Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến ẩn như ví dụ sau đây. 
+Nếu muốn giải quyết bài toán bằng mô hình đồ thị thì chúng ta có thể thiết kế một mô hình biến tiềm ẩn như ví dụ sau đây. 
 Giả sử tồn tại biến tiềm ẩn $h_t$ quyết định giá trị quan sát $x_t$ qua xác suất $p(x_t \mid h_t)$. 
 Hơn nữa, quá trình chuyển đổi $h_t \to h_{t+1}$ được cho bởi xác suất chuyển trạng thái $p(h_t+1 \mid h_{t})$. 
 Mô hình đồ thị khi đó là mô hình Markov ẩn (_Hidden Markov Model_ - HMM) như trong :numref:`fig_hmm`. 
@@ -181,7 +181,7 @@ Combining both forward and backward pass, we are able to compute
 
 khi khởi tạo $\rho_T(h_T) = 1$. 
 Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì luỹ thừa. 
-Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ họa. 
+Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ thị. 
 Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000.  
 Kết hợp cả biểu thức xuôi và ngược ta có thể tính được: 
 
@@ -199,7 +199,7 @@ See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001
 Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học. 
 Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.  
 Thật vậy, HMMs sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
-Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết và không biết trước các kết quả tiếp theo thành nội suy và ngoại suy. 
+Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết trước và không biết trước các kết quả trong tương lai thành nội suy và ngoại suy. 
 Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` về các thuật toán Monte Carlo tuần tự để biết thêm chi tiết. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
