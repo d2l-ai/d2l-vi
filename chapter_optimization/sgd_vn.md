@@ -442,7 +442,7 @@ In particular, for a finite sample size we simply argued that the discrete distr
 -->
 
 Tới phần này, ta đi khá nhanh và mơ hồ khi bàn luận về hạ gradient ngẫu nhiên.
-Ta thừa nhận rằng ta lấy các đối tượng $x_i$, đặc trưng bởi nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
+Ta thừa nhận rằng ta lấy các đối tượng $x_i$, thường là cùng với nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
 Cụ thể, với kích thước mẫu hữu hạn, dễ dàng chỉ ra rằng ta có thể áp dụng SGD lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
 
 <!--
