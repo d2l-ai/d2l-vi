@@ -489,7 +489,7 @@ namely to reduce the learning rate progressively, albeit not too quickly.
 -->
 
 * Đối với các bài toán lồi, ta có thể chứng minh rằng với tốc độ học trong một khoảng rộng, Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu.
-* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích nhằm tiến tới tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
+* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích nhằm tiến tới bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
 * Nhiều vấn đề xuất hiện khi tốc độ học quá lớn hoặc quá nhỏ. Trong thực tế, ta chỉ có thể tìm được tốc độ học thích hợp sau nhiều lần thử nghiệm.
 * Khi kích thước tập huấn luyện tăng, chi phí tính toán cho mỗi lần lặp của hạ gradient cũng tăng theo, do đó SGD được ưa chuộng hơn trong trường hợp này.
 * Trong SGD, không có sự đảm bảo tính tối ưu đối với các trường hợp không lồi do số cực tiểu cần phải kiểm tra có thể lên đến cấp số nhân.
@@ -514,7 +514,7 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 
 1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với nhiều số vòng lặp khác nhau.
 Cụ thể, hãy vẽ biểu đồ khoảng cách từ nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
-2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân bố chuẩn.
+2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
     * Xuất phát từ kì vọng và phương sai của phân phối cho $\mathbf{x}$.
     * Chỉ ra rằng tính chất này nhìn chung có thể áp dụng cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ for $Q \succeq 0$.
 3. So sánh sự hội tụ của SGD khi lấy mẫu từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ không hoàn lại và khi lấy mẫu có hoàn lại.
