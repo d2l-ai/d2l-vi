@@ -567,7 +567,7 @@ Do đó ta cần tìm kiếm một phương pháp thay thế.
 Một cách để cải thiện vấn đề này là tránh việc tính toán toàn bộ ma trận Hessian, chỉ tính toán trên các giá trị thuộc đường chéo.
 Mặc dù cách trên không tốt bằng phương pháp Newton hoàn chỉnh nhưng vẫn tốt hơn nhiều so với không dùng qua.
 Hơn nữa, ước lượng các giá trị đường chéo chính chính là thứ thúc đẩy sự đổi mới trong các thuật toán tối ưu hóa hạ gradient ngẫu nhiên.
-Nó khiến các thuật toán cập nhật có dạng
+Thuật toán cập nhật sẽ có dạng
 
 $$\mathbf{x} \leftarrow \mathbf{x} - \eta \mathrm{diag}(H_f)^{-1} \nabla \mathbf{x}.$$
 
