@@ -580,7 +580,7 @@ Effectively preconditioning with gradient descent amounts to selecting a differe
 -->
 
 Để thấy tại sao điều này có thể là một ý tưởng tốt, ta ví dụ có hai biến số biểu thị chiều cao, một biến với đơn vị mm, biến còn lại với đơn vị km.
-Giả định rằng với cả hai thang đo tự nhiên tính bằng mét, chúng ta đều có sự sai khớp lớn trong việc tham số hóa.
+Với cả hai đơn vị đo, khi quy đổi ra mét, chúng ta đều có sự sai lệch lớn trong việc tham số hóa.
 Sử dụng tiền đề sẽ xóa bỏ điều này.
 Tiền đề hiệu quả cùng hạ gradient có ý nghĩa giúp chọn ra các tốc độ học khác nhau cho từng trục tọa độ.
 
