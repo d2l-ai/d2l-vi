@@ -391,7 +391,7 @@ For now let us ignore such considerations and look at what algorithm we'd get.
 Đây là ma trận $d \times d$. Với số $d$ nhỏ và các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
 Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$.
 Hơn nữa nó có thể quá tốn chi phí tính toán thông qua việc lan truyền ngược khi chúng ta muốn áp dụng việc này vào đồ thị gọi lan truyền ngược.
-Hiện tại ta hãy bỏ qua những điểm lưu ý đó và nhìn vào thuật toán mà ta có được.
+Tạm thời hãy bỏ qua những lưu ý đó và nhìn vào thuật toán mà ta có được.
 
 
 <!--
