@@ -4,7 +4,7 @@
 Trong những năm gần đây, học sâu là một trong các lĩnh vực được quan tâm nhiều nhất trong các trường Đại học cũng như các Công ty Công nghệ.
 Ngày càng nhiều các diễn đàn liên quan đến học máy và học sâu với lượng thành viên và chủ đề trao đổi ngày một tăng. 
 Một trong các diễn đàn tiếng Việt nổi bật nhất là [Forum Machine Learning cơ bản](https://www.facebook.com/groups/machinelearningcoban/) và 
-[Diễn đàn Machine Learning cơ bản](https://forum.machinelearningcoban.com/) với hơn 41 ngàn thành viên và hàng chục chủ đề mới mỗi ngày.
+[Diễn đàn Machine Learning cơ bản](https://forum.machinelearningcoban.com/) với hơn 43.800 thành viên và hàng chục chủ đề mới mỗi ngày.
 
 Qua các diễn đàn đó, chúng tôi nhận ra rằng nhu cầu tìm hiểu lĩnh vực này ngày một tăng trong khi lượng tài liệu tiếng Việt còn rất hạn chế.
 Đặc biệt, các tài liệu tiếng Việt còn chưa nhất quán trong cách dịch, khiến độc giả bối rối trước quá nhiều thông tin nhưng
@@ -23,13 +23,12 @@ Cuốn này hội tụ đủ các yếu tố: có giải thích toán dễ hiể
 cập nhật đầy đủ những khía cạnh của học sâu, và quan trọng nhất là không đòi hỏi bản quyền để dịch. 
 Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi cuốn sách sắp được phổ biến rộng rãi hơn nữa.
 
-Hiện cuốn sách vẫn đang được thực hiện và sắp ra mắt phiên bản 0.7.0. Nhóm tác giả có lời khuyên chúng tôi có thể dịch bản 0.7.0 này ở branch
-[numpy2](https://github.com/d2l-ai/d2l-en/tree/numpy2) và có thể cập nhật khi cuốn sách được xuất bản. 
+Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản 0.8.0 mới nhất. 
 Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
-chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết.
+chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Trong tương lai, chúng tôi có thể cập nhật thêm thư viện `Pytorch` cho bản dịch này.
 
-Để có thể thực hiện dịch dự án dịch cuốn sách hơn 800 trang này, chúng tôi rất cần sự chung tay của cộng đồng. 
-Mọi sự đóng góp đều đáng quý và sẽ được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. 
+Để có thể thực hiện dự án dịch cuốn sách gần 1.000 trang này, chúng tôi rất cần sự chung tay từ cộng đồng. 
+Mọi sự đóng góp đều đáng trân quý và được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. 
 Và sau đó nó có thể trở thành giáo trình trong các trường đại học. 
 Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Việt Nam trong danh sách này:
 
@@ -49,11 +48,11 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Convolutional Neural Networks (**Đã hoàn thành**)
 * Modern Convolutional Neural Networks (**Đã hoàn thành**)
 * Recurrent Neural Networks (**Đã hoàn thành**)
-* Modern Recurrent Neural Networks (*Đang tiến hành*)
-* Attention Mechanisms (*Đang tiến hành*)
+* Modern Recurrent Neural Networks (**Đã hoàn thành**)
+* Attention Mechanisms (**Đã hoàn thành**)
 * Optimization Algorithms (*Đang tiến hành*)
-* Computational Performance
-* Computer Vision
+* Computational Performance (*Đang tiến hành*)
+* Computer Vision (*Đang tiến hành*)
 * Natural Language Processing: Pretraining
 * Natural Language Processing: Applications
 * Recommender Systems
@@ -66,22 +65,11 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 
 Nội dung cuốn sách này rất phong phú và có nhiều bài tập ở cuối mỗi phần. Các
 bạn có thể tham gia thảo luận nội dung và bài tập của cuốn sách
-[tại đây](https://forum.machinelearningcoban.com/c/d2l).
+**[tại đây](https://forum.machinelearningcoban.com/c/d2l)**.
 
 ### Hướng dẫn đóng góp
 
-Những việc bạn có thể làm để đóng góp vào dự án:
-
-* Tham gia dịch thông qua các Pull Request
-* Tham gia review các Pull Request
-* Hỗ trợ kỹ thuật
-* Sửa các lỗi chính tả, ngữ pháp, những điểm chưa nhất quán trong cách dịch
-* Star GitHub repo của dự án
-* Chia sẻ dự án tới nhiều người hơn
-
-Bạn có thể tham gia thảo luận tại [Slack của nhóm dịch](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform?usp=sf_link) hoặc đóng góp trực tiếp trên [GitHub repo](https://github.com/aivivn/d2l-vn).
-
-Dưới đây là chi tiết về ba việc quan trọng nhất:
+Chúng tôi mời bạn tham khảo hướng dẫn chi tiết **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)**.
 
 #### Dịch
 Nếu bạn đã quen với GitHub, bạn có thể tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/). Cách này yêu cầu người đóng góp tạo một forked repo rồi tạo pull request từ forked repo đó. Sẽ có thể phức tạp với các bạn chưa quen với GitHub.
@@ -98,23 +86,5 @@ Khi Review, bạn có thể đề xuất thay đổi cách dịch mỗi dòng tr
 ![img](https://user-images.githubusercontent.com/19977/58752991-f39d0880-846c-11e9-8c03-c7aded86ee9b.png)
 
 Nếu bạn có những phản hồi hữu ích, tên của bạn sẽ được tác giả chính của Pull Request đó điền vào cuối file mục "Những người thực hiện".
-
-#### Hỗ trợ kỹ thuật
-Để phục vụ cho việc dịch trên quy mô lớn, nhóm dịch cần một số bạn hỗ trợ kỹ thuật cho một số việc dưới đây:
-
-* Lấy các bản gốc từ [bản tiếng Anh](https://github.com/d2l-ai/d2l-en/tree/numpy2). Vì bản này tác giả vẫn cập nhật nên dịch đến đâu chúng ta sẽ cập nhật đến đó.
-
-* Tự động thêm comment vào các bản gốc (`<!--` và `-->`) để các phần này không hiển thị trên [trang web chính](https://d2l.aivivn.com/). Phần thêm này có thể được thực hiện tự động bằng cách chạy:
-```
-python3 utils.py --convert <path_to_file>.md
-```
-và tạo ra file `<path_to_file>_vn.md`.
-
-* Chia các file lớn thành các mục nhỏ như trong [ví dụ này](https://github.com/aivivn/d2l-vn/blame/master/chapter_preface/index_vn.md). Phần này cần thực hiện bằng tay. Mỗi phần trong file nên bao gồm những mục cụ thể, không bắt đầu và kết thúc giữa chừng của một mục.
-
-* Dịch các chữ trong hình vẽ theo Bảng thuật ngữ. Sẵn sàng đổi các bản dịch này nếu
-Bảng thuật ngữ thay đổi
-
-* Hỗ trợ quản lý project trên github, slack và diễn đàn.
 
 **Lưu ý:** Chỉ bắt đầu thực hiện công việc nếu đã có một issue tương ứng được tạo. Nếu bạn thấy một việc cần thiết, hãy tạo issue và thảo luận trước khi thực hiện. Tránh việc dẫm lên chân nhau.
