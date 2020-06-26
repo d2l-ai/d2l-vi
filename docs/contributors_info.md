@@ -46,3 +46,7 @@
 | 42. | [namndtth](https://github.com/namndtth)                         | Nguyễn Đình Nam                |
 | 43. | [dacdinh147](https://github.com/dacdinh147)                     | Đinh Đắc                       |
 | 44. | [davidnvq](https://github.com/davidnvq)                         | Nguyễn Văn Quang               |
+| 45. | [nguyenhoa93](https://github.com/nguyenhoa93)                   | Nguyễn Thanh Hòa               |
+| 46. | [tamio96](https://github.com/tamio96)                           | Võ Tấn Phát                    |
+| 47. | [trgiang99](https://github.com/trgiang99)                       | Đỗ Trường Giang                |
+| 48. | [luke-dinh](https://github.com/luke-dinh)                       | Đinh Phước Lộc                 |
