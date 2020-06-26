@@ -357,7 +357,7 @@ Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn t�
 Nếu chọn giá trị quá nhỏ, chúng ta sẽ không thấy sự tiến bộ.
 Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất thậm chí nó sẽ phân kỳ.
 Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước?
-Các phương pháp bậc hai không chỉ nhìn vào giá trị và gradient của hàm mục tiêu mà nó còn nhìn vào "độ cong" của hàm, từ đó có thể trợ giúp trong trường hợp này.
+Các phương pháp bậc hai không chỉ dựa vào giá trị và gradient của hàm mục tiêu mà còn dựa vào "độ cong" của hàm, từ đó có thể điều chỉnh tốc độ học.
 Trong khi những phương pháp này không thể được áp dụng vào học sâu một cách trực tiếp do chi phí tính toán lớn, chúng lại đưa ra những trực giác hữu ích trong việc làm sao để thiết kế các thuật toán tối ưu hóa tiến bộ, thứ có thể bắt chước nhiều tính chất đáng mong muốn của các thuật toán được chỉ ra dưới đây.
 
 <!--
