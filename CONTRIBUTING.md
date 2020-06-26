@@ -1,13 +1,22 @@
 # Hướng dẫn Đóng góp cho Dự án
 
+Cảm ơn bạn đã tham gia hỗ trợ dự án. Dưới đây là hướng dẫn chi tiết về cách mà bạn có thể đóng góp cho dự án, mời bạn xem kỹ nội dung này nhé.
 
-## Hướng dẫn dịch trực tiếp trên trình duyệt
+## Tổng quan
+Cuốn sách này được chia thành nhiều tập tin, mỗi tập tin như vậy chúng tôi tiến hành chia nhỏ ra thành từng phần nhằm giảm tải công việc lên từng cá nhân đóng góp, hỗ trợ cho việc dịch thuật và phản biện từng phần nội dung không lấy đi quá nhiều thời gian của một thành viên khi tham gia đóng góp.
 
-Cuốn sách này được chia thành nhiều tập tin, mỗi tập tin như vậy chúng tôi chia nhỏ ra thành từng phần nhằm giúp cho việc dịch thuật và phản biện nội dung không lấy đi quá nhiều thời gian của một thành viên khi tham gia đóng góp. 
+**Tôi có thể đóng góp cho dự án này như thế nào?**
+* Tham gia dịch thuật thông qua các Pull Request (Khuyến khích).
+* Tham gia phản biện (review) các Pull Request.
+* Hỗ trợ kỹ thuật.
+* Sửa các lỗi chính tả trong bản thảo.
+* Đề xuất chỉnh sửa về ngữ pháp, những điểm chưa nhất quán trong cách dịch.
+* Star github repo của dự án.
+* Chia sẻ dự án tới nhiều người hơn.
 
-Các bước dịch như sau:
+## Tôi nên bắt đầu dịch thuật như thế nào?
 
-## Tôi nên bắt đầu như thế nào?
+Dưới đây là hướng dẫn những việc cần làm khi tham gia quá trình dịch thuật.
 
 ### Bước 1: Tìm và đăng ký phần cần dịch
 Bạn cần tìm đến **[tab issue](https://github.com/aivivn/d2l-vn/issues)**, những Issue chưa có người nhận dịch được đánh dấu bằng nhãn `status: help wanted`. Trước khi thực hiện việc dịch thuật phần nội dung được chỉ định trong Issue, bạn cần để lại comment vào trong issue đó và cc @duythanhvn (khuyến khích) hoặc @tiepvuspu để chúng tôi assign cho bạn.
@@ -17,40 +26,44 @@ Bạn cần tìm đến **[tab issue](https://github.com/aivivn/d2l-vn/issues)**
 
 **Lưu ý:** Bạn chỉ nên bắt đầu việc dịch thuật khi bạn đã được assign vào issue mà mình đã nhận. Chúng tôi ưu tiên bạn bắt đầu với những phần có hai nhãn: `status: help wanted` và `status: phase 1`.
 
-### Bước 3: Tìm file tương ứng
-Sau khi vào file tương ứng, ở ví dụ này là [chapter_appendix_math/single-variable-calculus_vn.md](https://github.com/aivivn/d2l-vn/blob/master/chapter_appendix_math/single-variable-calculus_vn.md), bạn click vào nút "Edit" hình chiếc bút chì để bắt đầu tìm phần cần dịch.
-![](./docs/translation-guide/step03.png)
+### Bước 2: Xem qua phần nội dung cần dịch
+Tại mỗi Issue, chúng tôi đều để một đường dẫn đến phần nội dung bạn cần dịch cùng với hướng dẫn cách bạn có thể tương tác với tập tin, bạn hãy xem qua để nắm rõ giới hạn nội dung.
 
-### Bước 4: Tìm phần tương ứng
-Mỗi phần được bắt đầu bởi dòng:
-```
-<!-- ===================== Bắt đầu dịch Phần x ==================== -->
-```
-như trong hình:
+Sau khi vào tập tin tương ứng, bạn nhấn vào nút "Edit" hình chiếc bút chì để bắt đầu tìm và dịch phần đã nhận.
 
-![](./docs/translation-guide/step04.png)
-chúng ta cần dịch từ sau dòng này đến trước dòng
-```
-<!-- ===================== Kết thúc dịch Phần x ==================== -->
-```
-tương ứng.
+![](./docs/translation-guide/web-step-02.png)
 
-### Bước 5: Bắt đầu dịch
-Khi dịch, bạn tìm các dòng dạng:
+### Bước 3: Tiến hành dịch thuật
+Để bắt đầu dịch thuật, bạn tìm đến phần các dòng hướng dẫn như:
+
 ```
 ## *dịch tiêu đề phía trên*
-
+hoặc
 *dịch đoạn phía trên*
 ```
-và chỉ chỉnh sửa các dòng này.
+Hãy chỉ chỉnh sửa nội dung từ dòng này.
 
-**Một vài quy tắc dịch:**
-* Không dịch các danh từ riêng
-* Trong một đoạn, mỗi câu dịch nên để riêng một dòng (xem dòng 268, 269, 270 trong hình ví dụ ở **Bước 4**).
+**Một vài lưu ý khi dịch thuật:**
+* Bạn chỉ chỉnh sửa những dòng như hướng dẫn phía trên, các nội dung gốc thì giữ nguyên.
+* Không dịch các danh từ riêng.
+* Trong một đoạn nội dung, mỗi câu dịch nên để riêng một dòng.
 * Không dịch code.
+* Đảm bảo giữ nguyên format của nội dung.
 * Không nhất thiết phải dừng từng từ từng câu nhưng phải dịch đúng ý.
 * Các thuật ngữ cần được dịch một cách nhất quán.
-* Nếu một thuật ngữ chưa có trong bảng thuật ngữ, bạn có thể đề xuất một cách dịch bằng cách tạo một PR mới.
+* Nếu một thuật ngữ chưa có trong bảng thuật ngữ, bạn có thể đề xuất một cách dịch bằng cách tạo một PR mới và trình bày quan điểm.
+* 
+
+**Lưu ý về format nội dung:**
+* Các phần in nghiêng, in đậm.
+* Tiêu đề (số lượng dấu `#` đầu dòng).
+* Bảng biểu, chú thích cho bảng (dòng phía trên mỗi bảng bắt đầu bằng dấu `:`).
+* Dịch các từ trong hình vẽ nếu cần. Các dòng có hình có dạng: `![caption](path)`.
+* Dịch các chú thích hình vẽ (thay các cụm `*dịch chú thích ảnh phía trên*` bằng bản dịch tiếng Việt).
+* Không dịch các phần code (nằm giữa hai dấu `````).
+* Copy các công thức toán từ bản gốc (các đoạn có `$`).
+* Giữ các dòng gán nhãn (bắt đầu với `:label:`).
+* Không tự thêm bớt các dòng trắng.
 
 Nếu đây là lần đầu tiên bạn đóng góp vào file này, bạn cần kéo xuống cuối file và điền tên mình vào mục "Những người thực hiện" và mục tương ứng. Mục này nhằm ghi nhận đóng góp của bạn.
 
@@ -61,7 +74,7 @@ Nếu đây là lần đầu tiên bạn đóng góp vào file này, bạn cần
 Sau khi dịch lần đầu xong phần của mình, bạn cần kéo xuống cuối trang để "Commit changes". Trước khi click vào nút "Commit changes", bạn cần đặt tiêu đề cho commit, cũng là tiêu đề cho Pull Request bạn sắp tạo. Tiêu đề này giống với tiêu đề trong Issue bạn nhận ban đầu (chỉ cần copy paste là được).
 
 
-![](./docs/translation-guide/step06.png)
+![](./docs/translation-guide/web-step-06.png)
 Click "Commit changes".
 
 ### Bước 7: Tạo Pull Request
@@ -84,7 +97,7 @@ Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đ
 
 Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
 
-![](./docs/translation-guide/step08.png)
+![](./docs/translation-guide/web-step-05.png)
 
 ### Sau khi đã nộp Pull Request
 Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số bình luận/gợi ý từ các reviewer. **Việc này là hoàn toàn bình thường**, những người làm việc trong nhóm này thường có rất nhiều góp ý xây dựng giúp bản dịch được trọn vẹn và nhất quán với các phần khác. Họ sẽ gợi ý bạn cách sửa, bạn có thể chấp nhận gợi ý hoặc phản hồi lại các phản hồi đó.
@@ -93,11 +106,6 @@ Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số b
 Cuối cùng, nếu bạn thấy phần phản hồi nào hữu ích, bạn có thể điền tên user tương ứng vào dưới tên bạn ở mục "Những người thực hiện". Cả người dịch và người review đều xứng đáng được ghi công.
 
 Nếu bạn chưa biết tên đầy đủ của những người đóng góp, bạn có thể xem danh sách Contributors **[tại đây](./docs/contributors_info.md)**. Nếu bạn chưa thấy tên mình tại đây, hãy tạo một Issue mới để được bổ sung.
-
-Cảm ơn đóng góp của bạn.
-
-Thân mến,<br/>
-Nhóm dịch thuật Machine Learning Cơ Bản
 
 ## Tôi đang trong quá trình hoàn thiện bản dịch của mình
 
@@ -113,13 +121,23 @@ Hiện tại, chúng tôi hy vọng bạn sẽ hoàn thành phần dịch trễ 
 <details>
 <summary>Tôi tiếp nhận những phản hồi từ nhóm phản biện như thế nào?</summary>
 
+Khi phần nội dung của bạn được đưa lên Pull request, nhóm phản biện sẽ có những thành viên vào và đưa ra những gợi ý, đề xuất chỉnh sửa giúp cho nội dung của bạn đúng hơn về mặt nội dung, mượt hơn về mặt hành văn.
 
+Nếu bạn đồng tình với đề xuất của người phản biện, bạn hãy Commit suggestion để thay đổi nội dung; nếu bạn chưa đồng tình với đề xuất, vui lòng phản hồi lại để có giải pháp tốt nhất cho nội dung.
+</details>
+<details>
+<summary>Tôi muốn hỗ trợ kỹ thuật?</summary>
+
+Bạn vui lòng liên hệ @duythanhvn thông qua Github issue hoặc Slack để thảo luận thêm.
 </details>
 <details>
 <summary></summary>
 
 </details>
-<details>
-<summary></summary>
 
-</details>
+Nếu bạn có bất kỳ câu hỏi nào trong quá trình tham gia dự án, vui lòng tạo một Issue mới và tag @duythanhvn hoặc liên hệ qua Slack để nhận được hỗ trợ từ dự án.
+
+Cảm ơn đóng góp của bạn.
+
+Thân mến,<br/>
+Nhóm dịch thuật Machine Learning Cơ Bản
