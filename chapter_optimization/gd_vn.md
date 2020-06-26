@@ -390,7 +390,7 @@ For now let us ignore such considerations and look at what algorithm we'd get.
 Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
 Đây là ma trận kích thước $d \times d$. Với $d$ nhỏ và trong các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
 Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$.
-Hơn nữa nó có thể quá tốn chi phí tính toán thông qua việc lan truyền ngược khi chúng ta muốn áp dụng việc này vào đồ thị gọi lan truyền ngược.
+Hơn nữa nó có thể tốn quá nhiều chi phí tính toán khi áp dụng vào lan truyền ngược.
 Tạm thời hãy bỏ qua những lưu ý đó và nhìn vào thuật toán mà ta có được.
 
 
