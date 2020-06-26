@@ -200,9 +200,9 @@ The dot product attention computes the scores by a dot product between the query
 In other words,
 -->
 
-Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết của hai loại tầng tập trung được sử dụng phổ biến.
-Loại đầu tiên là *Tập trung Tích vô hướng*: nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
-Tầng tập trung tích vô hướng sẽ tính điểm bằng một tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
+Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết hai loại tầng tập trung được sử dụng phổ biến.
+Loại đầu tiên là *tập trung tích vô hướng* (_dot product attention_): nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Tầng tập trung tích vô hướng sẽ tính điểm bằng cách lấy tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
 Nói cách khác,
 
 
@@ -214,7 +214,7 @@ Beyond the single-dimensional queries and keys, we can always generalize them to
 Assume that $\mathbf Q\in\mathbb R^{m\times d}$ contains $m$ queries and $\mathbf K\in\mathbb R^{n\times d}$ has all the $n$ keys. We can compute all $mn$ scores by
 -->
 
-Mở rộng ra khỏi các câu truy vấn và khoá một chiều, chúng ta luôn có thể tổng quát hóa chúng lên thành các giá trị truy vấn và khoá đa chiều.
+Mở rộng ra từ các câu truy vấn và khoá một chiều, chúng ta luôn có thể tổng quát hóa chúng lên thành các giá trị truy vấn và khoá đa chiều.
 Giả định rằng $\mathbf Q\in\mathbb R^{m\times d}$ chứa $m$ câu truy vấn và $\mathbf K\in\mathbb R^{n\times d}$ chứa toàn bộ $n$ khóa. Chúng ta có thể tính toàn bộ $mn$ điểm số như sau
 
 
@@ -278,7 +278,7 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
+Như đã thấy ở trên, tập trung tích vô hướng chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
 Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
 Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
@@ -297,8 +297,8 @@ In *multilayer perceptron attention*, we project both query and keys into $\math
 Assume that the learnable weights are $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$, and $\mathbf v\in\mathbb R^{h}$. Then the score function is defined by
 -->
 
-Trong cơ chế *tập trung perceptron đa tầng*, chúng ta chiếu cả câu truy vấn và các khoá lên $\mathbb R^{h}$ bằng các tham số trọng số có được học.
-Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm số sẽ được định nghĩa như sau
+Trong cơ chế *tập trung perceptron đa tầng* (_multilayer perceptron attention_), chúng ta chiếu cả câu truy vấn và các khoá lên $\mathbb R^{h}$ bằng các tham số trọng số được học.
+Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm sẽ được định nghĩa như sau
 
 
 $$\alpha(\mathbf k, \mathbf q) = \mathbf v^\top \text{tanh}(\mathbf W_k \mathbf k + \mathbf W_q\mathbf q).$$
@@ -311,9 +311,9 @@ In this hidden layer, the activation function is $\tanh$ and no bias is applied.
 Now let us implement the multilayer perceptron attention.
 -->
 
-Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
-Trong tầng ẩn này, hàm kích hoạt là $tanh$ và hệ số điều chỉnh không được sử dụng.
-Giờ ta hãy khởi tạo perceptron đa tầng tập trung nhé.
+Một cách trực quan, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
+Trong tầng ẩn này, hàm kích hoạt là $tanh$ và không có hệ số điều chỉnh.
+Giờ ta hãy lập trình một tầng tập trung perceptron đa tầng.
 
 
 ```{.python .input  n=7}
@@ -345,7 +345,7 @@ As we can see below, despite `MLPAttention` containing an additional MLP model, 
 -->
 
 Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng cùng một đầu vào như ở ví dụ trước đó.
-Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự với `DotProductAttention`.
+Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự `DotProductAttention`.
 
 ```{.python .input  n=8}
 atten = MLPAttention(units=8, dropout=0.1)
@@ -365,9 +365,9 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 * Two commonly used attention models are dot product attention and multilayer perceptron attention.
 -->
 
-* Tầng tập trung lựa chọn các thông tin liên quan một cách tường minh.
-* Ký ức của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần với các giá trị của các khoá giống với câu truy vấn.
-* Hai mô hình tập trung được sử dụng phổ biến là Tập trung Tích vô hướng và Tập trung Perceptron đa tầng.
+* Tầng tập trung lựa chọn một cách tường minh các thông tin liên quan.
+* Ký ức của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần các giá trị có khoá giống với câu truy vấn.
+* Hai mô hình tập trung được sử dụng phổ biến là tập trung tích vô hướng và tập trung perceptron đa tầng.
 
 
 <!--
@@ -404,16 +404,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Nguyễn Cảnh Thướng
 * Nguyễn Văn Cường 
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
 * Võ Tấn Phát
-
-<!-- Phần 4 -->
-* Võ Tấn Phát   
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh
