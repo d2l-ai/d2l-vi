@@ -34,7 +34,7 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 
 ![Danh sách các trường đại học sử dụng cuốn sách này](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
 
-#### Trình tự dịch
+### Trình tự dịch
 Đây cũng là các nội dung được đề cập trong cuốn sách:
 
 * Preface (**Đã hoàn thành**)
@@ -61,7 +61,7 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Appendix: Tools for Deep Learning
 * References
 
-#### Diễn đàn
+### Diễn đàn
 
 Nội dung cuốn sách này rất phong phú và có nhiều bài tập ở cuối mỗi phần. Các
 bạn có thể tham gia thảo luận nội dung và bài tập của cuốn sách
@@ -71,20 +71,14 @@ bạn có thể tham gia thảo luận nội dung và bài tập của cuốn s�
 
 Chúng tôi mời bạn tham khảo hướng dẫn chi tiết **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)**.
 
-#### Dịch
-Nếu bạn đã quen với GitHub, bạn có thể tham khảo cách [đóng góp vào một dự án GitHub](https://codetot.net/contribute-github/). Cách này yêu cầu người đóng góp tạo một forked repo rồi tạo pull request từ forked repo đó. Sẽ có thể phức tạp với các bạn chưa quen với GitHub.
+## Những câu hỏi thường gặp
+<details>
+<summary>Cuốn sách này có bản song ngữ hay không?</summary>
 
-Ngoài ra, có một cách đơn giản hơn mà bạn có thể trực tiếp dịch trên trình duyệt mà không cần cài đặt Git hay fork repo này về GitHub của bạn, như trong [hướng dẫn tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)
+Không, chúng tôi không có kế hoạch này cho cuốn sách này.
+</details>
+<details>
+<summary>Cuốn sách này có bản PDF hay không?</summary>
 
-Tất nhiên bạn vẫn cần tạo một GitHub account để làm việc này.
-
-#### Review
-
-Chọn một Pull Request trong [danh sách này](https://github.com/aivivn/d2l-vn/pulls) và bắt đầu review.
-
-Khi Review, bạn có thể đề xuất thay đổi cách dịch mỗi dòng trực tiếp như trong hình dưới đây:
-![img](https://user-images.githubusercontent.com/19977/58752991-f39d0880-846c-11e9-8c03-c7aded86ee9b.png)
-
-Nếu bạn có những phản hồi hữu ích, tên của bạn sẽ được tác giả chính của Pull Request đó điền vào cuối file mục "Những người thực hiện".
-
-**Lưu ý:** Chỉ bắt đầu thực hiện công việc nếu đã có một issue tương ứng được tạo. Nếu bạn thấy một việc cần thiết, hãy tạo issue và thảo luận trước khi thực hiện. Tránh việc dẫm lên chân nhau.
+Có, chúng tôi sẽ có bản PDF sau khi toàn bộ nội dung cuốn sách này được hoàn thiện.
+</details>

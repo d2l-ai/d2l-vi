@@ -5,8 +5,11 @@ Cảm ơn bạn đã tham gia hỗ trợ dự án. Dưới đây là hướng d�
 ## Tổng quan
 Cuốn sách này được chia thành nhiều tập tin, mỗi tập tin như vậy chúng tôi tiến hành chia nhỏ ra thành từng phần nhằm giảm tải công việc lên từng cá nhân đóng góp, hỗ trợ cho việc dịch thuật và phản biện từng phần nội dung không lấy đi quá nhiều thời gian của một thành viên khi tham gia đóng góp.
 
-Chúng tôi chia dự án dịch thuật này ra làm nhiều giai đoạn xử lý, trong đó phần nội dung dịch thuật có hai giai đoạn chính mà chúng tôi gán nhãn là `phase 1` và `phase 2` mà bạn có thể gặp khi xem qua Github Issues của dự án.
+Chúng tôi chia dự án dịch thuật này ra làm nhiều giai đoạn xử lý, trong đó phần nội dung dịch thuật có hai giai đoạn chính mà chúng tôi gán nhãn là `phase 1` và `phase 2` và bạn có thể gặp khi xem qua Github Issues của dự án.
+* **Giai đoạn 1:** Giai đoạn này chúng tôi dịch nội dung thô lần đầu tiên, mục tiêu là đảm bảo rằng nội dung được dịch sát với bản gốc nhất về ngữ nghĩa và cách hiểu về nội dung.
+* **Giai đoạn 2:** Ở giai đoạn tiếp theo, chúng tôi tiến hành hiệu đính lại nội dung; mục tiêu là trau chuốt hơn về ngôn từ, tính xuyên suốt của nội dung, cách diễn đạt và hành văn.
 
+Với mỗi thành viên tham gia hiện tại, chúng tôi ưu tiên bạn bắt đầu với những phần ở giai đoạn 1 hơn. Với giai đoạn 2, chúng tôi sẽ có sự điều động riêng. 
 
 **Tôi có thể đóng góp cho dự án này như thế nào?**
 * Tham gia dịch thuật thông qua các Pull Request (Khuyến khích).
@@ -67,21 +70,16 @@ Hãy chỉ chỉnh sửa nội dung từ dòng này.
 * Giữ các dòng gán nhãn (bắt đầu với `:label:`, `:fig:`, `:section:` hoặc những dạng tương tự).
 * Không tự ý thêm bớt các dòng trắng.
 
-### Bước 4: Commit changes
-Sau khi dịch lần đầu xong phần của mình, bạn cần kéo xuống cuối trang để "Commit changes". Trước khi click vào nút "Commit changes", bạn cần đặt tiêu đề cho commit, cũng là tiêu đề cho Pull Request bạn sắp tạo. Tiêu đề này giống với tiêu đề trong Issue bạn nhận ban đầu (chỉ cần copy paste là được).
+### Bước 4: Mở Pull request
+Sau khi hoàn thiện phần dịch của mình, bạn cần kéo xuống cuối trang để tiến hành đưa nội dung này lên kho chứa. Như hình minh hoạ ở phía dưới, bạn cần đặt tên cho commit này; bạn chỉ cần lấy tên của issue bạn đã nhận và dán vào đây là được.
 
+Sau đó, bạn hãy nhấn vào **Propose changes** hoặc **Commit changes**.
 
-![](./docs/translation-guide/web-step-06.png)
-Click "Commit changes".
+![](./docs/translation-guide/web-step-03.png)
 
-### Bước 7: Tạo Pull Request
-Sau khi click "Commit changes", trang tạo Pull Request sẽ tự động mở ra. Bạn chỉ cần điền số issue tương ứng, trong ví dụ này là 393, vào sau cụm "Close#" như trong hình. Lưu ý không có dấu cách giữa `#` và số issue. Việc này sẽ giúp issue tự động được đóng sau khi Pull Request này được merged.
+Sau khi bạn đã chọn commit, trang tạo Pull request sẽ tự động mở ra. Bạn cần điền số issue tương ứng vào Pull request checklist, sau cụm `Close #` như hình ở bước 5. Chọn **Create pull request**.
 
-![](./docs/translation-guide/step07.png)
-
-Click "Create pull request".
-
-Trong trường hợp bạn chưa hoàn thành nội dung cần dịch, hoặc nội dung này bạn mong muốn tự chỉnh sửa để hoàn thiện hơn, bạn hãy lựa chọn tạo một "Draft Pull Request" theo hướng dẫn ở hình dưới.
+Trong trường hợp bạn chưa hoàn thành nội dung cần dịch, hoặc nội dung này bạn mong muốn tự chỉnh sửa để hoàn thiện hơn, bạn hãy lựa chọn tạo một **Draft Pull Request** theo hướng dẫn ở hình dưới.
 
 ![](./docs/translation-guide/draft-pull-requests.png)
 
@@ -89,40 +87,44 @@ Sau khi hoàn thiện nội dung, bạn có thể chọn **Ready for review** đ
 
 ![](./docs/translation-guide/draft-pull-requests-ready.png)
 
-### Bước 8: Kiểm tra checklist
-Cuối cùng, bạn kiểm tra checklist và click vào các ô tương ứng đã hoàn thành như hình dưới đây.
+### Bước 5: Kiểm tra checklist
+Bạn hãy kiểm tra qua nội dung một lần nữa xem Pull request của mình đã thoả mãn các đầu mục mà checklist đưa ra hay chưa. Nếu chưa, bạn hãy cập nhật; nếu rồi, bạn hãy chọn vào những ô tương ứng đã hoàn thành như hình dưới đây.
 
-Trong ví dụ này, phần đã nhận chưa được dịch trọn vẹn nên chưa có dấu tick.
-
-![](./docs/translation-guide/web-step-05.png)
-
-### Sau khi đã nộp Pull Request
-Nếu là lần đầu nộp Pull Request, bạn sẽ nhận được vô số bình luận/gợi ý từ các reviewer. **Việc này là hoàn toàn bình thường**, những người làm việc trong nhóm này thường có rất nhiều góp ý xây dựng giúp bản dịch được trọn vẹn và nhất quán với các phần khác. Họ sẽ gợi ý bạn cách sửa, bạn có thể chấp nhận gợi ý hoặc phản hồi lại các phản hồi đó.
-
-### Sau khi Pull Request được approve
-Cuối cùng, nếu bạn thấy phần phản hồi nào hữu ích, bạn có thể điền tên user tương ứng vào dưới tên bạn ở mục "Những người thực hiện". Cả người dịch và người review đều xứng đáng được ghi công.
-
-Nếu bạn chưa biết tên đầy đủ của những người đóng góp, bạn có thể xem danh sách Contributors **[tại đây](./docs/contributors_info.md)**. Nếu bạn chưa thấy tên mình tại đây, hãy tạo một Issue mới để được bổ sung.
-
-## Tôi đã có kinh nghiệm làm việc với Github
-Thật tuyệt vời, bạn có thể bắt đầu nhanh hơn vào phần nội dung của cuốn sách mà không mất nhiều thời gian để làm quen lại với Github.
-
-Trong trường hợp bạn đã có một vài kinh nghiệm trong việc sử dụng Git, chúng tôi gợi ý bạn xem qua **[hướng dẫn đóng góp vào một dự án Github](https://codetot.net/contribute-github/)** một cách kỹ thuật hơn.
-
-Chúng tôi cũng có một số gợi ý về phần mềm để bạn có được hiệu quả cao nhất:
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Github Desktop](https://desktop.github.com/)
-* [Git for Windows, macOS & Linux](https://git-scm.com/download/)
-
-Một số plugins chuyên dụng cho VS Code bạn có thể sử dụng trong dự án gồm:
-* [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
-* [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-* [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+![](./docs/translation-guide/web-step-04.png)
 
 ## Tôi có thể tham gia phản biện (review) như thế nào?
 
+Đầu tiên, bạn truy cập vào tab **[Pull request](https://github.com/aivivn/d2l-vn/pulls)**, chọn một PR và kiểm tra xem nội dung này đã sẵn sàng để review hay chưa.
+
+![](./docs/translation-guide/rv-step-01.png)
+> Ở hình này, icon đầu tiên của mỗi phần có sự khác biệt; màu xanh lá cây biểu thị cho PR đã sẵn sàng review, màu xám là bản nháp. Một điểm khác nữa là ở bản nháp thì sẽ được gán nhãn WIP (Work in progress).
+
+Nếu PR đã sẵn sàng review, bạn hãy truy cập vào tab `File changed` để xem toàn bộ nội dung.
+
+![](./docs/translation-guide/faq-file-changed.png)
+
+Ở mỗi dòng nội dung, bạn hãy sử dụng tính năng **Insert a suggestion** để gợi ý chỉnh sửa. Sau gợi ý đó, nhấn chọn **Start a review**. Chúng tôi không khuyến khích sử dụng tính năng **A single comment** nếu như bạn có trên 2 gợi ý dành cho phần nội dung đó.
+
+![](./docs/translation-guide/rv-step-02.png)
+
+Sau khi bạn đã review qua hết lượt nội dung từng dòng một, hãy chọn **Review changes** và làm theo hướng dẫn trong hình phía dưới.
+
+![](./docs/translation-guide/rv-step-03.png)
+
 ## Những vấn đề thường gặp
 
+<details>
+<summary>Quy trình làm việc của một thành viên sẽ như thế nào?</summary>
+
+Chúng tôi gợi ý một quy trình làm việc tuần tự với người dịch thuật như sau:
+1. Bạn nhận một Issue mới về dịch (Bạn được nhận khi bạn được assign, chưa assign là chưa nhận), bạn nên nhận những Issue đã được chúng tôi public trước đó, thường là nằm dưới cùng trong danh sách các Issue có gán nhãn `status: help wanted`.
+
+2. Bạn thực hiện dịch và đẩy một Pull request lên dự án để được review. Một PR được xem là sẵn sàng review khi bạn chọn Create pull request để mở một PR, nếu bạn chưa sẵn sàng review cho PR này, hãy chọn Draft Pull Request để mở PR.
+
+3. Khi bạn nhận được review từ các thành viên trong nhóm thì bạn giúp mình xem qua để solve các phản hồi bạn đồng ý, thảo luận các phản hồi chưa đồng ý. Điểm chính khi bạn có nhiều hơn 2 PR đang ở trên dự án thì ưu tiên của bạn là xử lý những PR được mở trước đó, sau đó mới đến những phần dịch mới.
+
+Bạn luôn có thể nhận thêm phần dịch, tuy nhiên hãy làm tuần tự để đảm bảo rằng phần PR đã lên luôn được up-to-date, tránh việc có nhiều thành viên vào review và quá nhiều ý kiến thì phần cập nhật sẽ bị sót (chất lượng review sẽ giảm).
+</details>
 <details>
 <summary>Tôi có bao nhiêu thời gian để hoàn thành phần dịch mình đã nhận?</summary>
 
@@ -145,6 +147,8 @@ Sau khi hoàn tất việc kiểm tra, phản hồi thì bạn chọn ở nút `
 
 ![](./docs/translation-guide/faq-commit-suggestions.png)
 
+Riêng về vấn đề trao đổi, thảo luận với người phản biện, chúng tôi đề xuất bạn ít nhất để lại một reaction đối với những gợi ý mà họ để lại; điều này giúp cho người phản biện và chúng tôi biết bạn đã xem nội dung hay chưa, có đồng tình hay không.
+
 </details>
 <details>
 <summary>Tôi muốn hỗ trợ kỹ thuật?</summary>
@@ -152,34 +156,26 @@ Sau khi hoàn tất việc kiểm tra, phản hồi thì bạn chọn ở nút `
 Bạn vui lòng liên hệ @duythanhvn thông qua Github issue hoặc Slack để thảo luận thêm.
 </details>
 <details>
-<summary>Tôi đang trong quá trình hoàn thiện bản dịch của mình</summary>
+<summary>Tôi đã có kinh nghiệm làm việc với Github</summary>
 
-Trong trường hợp bạn chưa hoàn thành nội dung cần dịch nhưng bạn cần tạo Pull request để lưu trữ commit mình vừa chỉnh sửa, hoặc nội dung này bạn mong muốn tự chỉnh sửa để hoàn thiện hơn, chúng tôi gợi ý bạn sử dụng tính năng tạo bản nháp (Draft Pull request) theo hướng dẫn ở hình phía dưới.
+Thật tuyệt vời, bạn có thể bắt đầu nhanh hơn vào phần nội dung của cuốn sách mà không mất nhiều thời gian để làm quen lại với Github.
+
+Trong trường hợp bạn đã có một vài kinh nghiệm trong việc sử dụng Git, chúng tôi gợi ý bạn xem qua **[hướng dẫn đóng góp vào một dự án Github](https://codetot.net/contribute-github/)** một cách kỹ thuật hơn.
+
+Chúng tôi cũng có một số gợi ý về phần mềm để bạn có được hiệu quả cao nhất:
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Github Desktop](https://desktop.github.com/)
+* [Git for Windows, macOS & Linux](https://git-scm.com/download/)
+
+Một số plugins chuyên dụng cho VS Code bạn có thể sử dụng trong dự án gồm:
+* [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+* [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+* [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 </details>
 <details>
 <summary>Tôi có thể merge PR của mình không?</summary>
 
 Không, chúng tôi khuyến khích các thành viên tham gia dự án chỉ nên tập trung vào phần dịch thuật và trao đổi dịch thuật mà thôi (kể cả khi bạn đã được thêm vào nhóm Collaborators). Nhóm điều phối sẽ kiểm tra các PR và tiến hành merge khi đã đạt yêu cầu.
-</details>
-<details>
-<summary></summary>
-
-</details>
-
-## Những câu hỏi thường gặp
-<details>
-<summary>Cuốn sách này có bản song ngữ hay không?</summary>
-
-Không, chúng tôi không có kế hoạch này cho cuốn sách này.
-</details>
-<details>
-<summary>Cuốn sách này có bản PDF hay không?</summary>
-
-Có, chúng tôi sẽ có bản PDF sau khi toàn bộ nội dung cuốn sách này được hoàn thiện.
-</details>
-<details>
-<summary></summary>
-
 </details>
 
 
