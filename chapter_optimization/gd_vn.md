@@ -451,7 +451,7 @@ That is a fatal flaw of the algorithm.
 Let us see what happens in practice.
 -->
 
-Giờ hãy xem điều gì xảy ra khi chúng ta có một hàm *không lồi*, ví dụ như $f(x) = x \cos(c x)$.
+Giờ hãy xem điều gì xảy ra với một hàm *không lồi*, ví dụ như $f(x) = x \cos(c x)$.
 Sau tất cả, hãy lưu ý rằng trong phương pháp Newton, chúng ta cuối cùng sẽ phải chia cho ma trận Hessian.
 Điều này nghĩa là nếu đạo hàm bậc hai là *âm* thì chúng ta phải đi theo hướng *tăng* $f$.
 Đó là khiếm khuyết chết người của thuật toán.
