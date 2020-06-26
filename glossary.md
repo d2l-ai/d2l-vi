@@ -427,6 +427,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                    | Tiếng Việt                        | Thảo luận tại                                |
 |----------------------------|-----------------------------------|----------------------------------------------|
 | target data / distribution | dữ liệu / phân phối mục tiêu      | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| Taylor expansion           | khai triển Taylor                 |                                              |
 | tensor contraction         | phép co tensor                    | [https://git.io/JvojX](https://git.io/JvojX) |
 | test set                   | tập kiểm tra                      |                                              |
 | test set performance       | chất lượng trên tập kiểm tra      |                                              |
