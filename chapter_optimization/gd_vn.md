@@ -502,7 +502,7 @@ We only analyze the convergence rate for convex and three times differentiable $
 The multivariate proof is a straightforward extension of the argument below and omitted since it doesn't help us much in terms of intuition. 
 -->
 
-Chúng ta sẽ chỉ phân tích tỷ lệ hội tụ đối với hàm $f$ lồi và khả vi ba lần, đây là hàm số mà đạo hàm bậc hai tại cực tiểu $x^*$ của nó sẽ khác không ($f''(x^*) > 0$).
+Chúng ta sẽ chỉ phân tích tốc độ hội tụ đối với hàm $f$ lồi và khả vi ba lần, đây là hàm số có đạo hàm bậc hai tại cực tiểu $x^*$ khác không ($f''(x^*) > 0$).
 
 <!--
 Denote by $x_k$ the value of $x$ at the $k$-th iteration and let $e_k := x_k - x^*$ be the distance from optimality.
