@@ -387,7 +387,7 @@ Furthermore it may be too expensive to compute via backprop as we would need to 
 For now let us ignore such considerations and look at what algorithm we'd get. 
 -->
 
-Để tránh việc kí hiệu vướng víu, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
+Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
 Đây là ma trận $d \times d$. Với số $d$ nhỏ và các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
 Nhưng với các mạng sâu, mặc khác, $H_f$ có thể cực lớn, do chi phí lưu trữ $\mathcal{O}(d^2)$ giá trị.
 Hơn nữa nó có thể quá tốn chi phí tính toán thông qua việc lan truyền ngược khi chúng ta muốn áp dụng việc này vào đồ thị gọi lan truyền ngược.
