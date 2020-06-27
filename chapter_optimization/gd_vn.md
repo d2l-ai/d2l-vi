@@ -73,7 +73,7 @@ $$f(x - \eta f'(x)) \lessapprox f(x).$$
 This means that, if we use
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là, nếu chúng ta áp dụng
 
 
 $$x \leftarrow x - \eta f'(x)$$
@@ -85,7 +85,9 @@ Therefore, in gradient descent we first choose an initial value $x$ and a consta
 for example, when the magnitude of the gradient $|f'(x)|$ is small enough or the number of iterations has reached a certain value.
 -->
 
-*dịch đoạn phía trên*
+để cập nhật $x$, giá trị của hàm $f(x)$ có thể giảm.
+Do đó, trong thuật toán hạ gradient, đầu tiên chúng ta chọn giá trị khởi tạo cho $x$ và hằng số $\eta > 0$, từ đó cập nhật giá trị $x$ liên tục cho tới khi gặp điều kiện dừng, ví dụ, khi độ lớn của gradient $|f'(x)|$ đủ nhỏ hoặc số lần cập nhật tới một ngưỡng nào đó.
+
 
 <!--
 For simplicity we choose the objective function $f(x)=x^2$ to illustrate how to implement gradient descent.
@@ -93,8 +95,9 @@ Although we know that $x=0$ is the solution to minimize $f(x)$, we still use thi
 As always, we begin by importing all required modules.
 -->
 
-*dịch đoạn phía trên*
-
+Để đơn giản chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách cài đặt thuật toán hạ gradient.
+Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm để cực tiểu hóa $f(x)$.
+Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết.
 
 ```{.python .input  n=3}
 %matplotlib inline
@@ -115,7 +118,8 @@ Next, we use $x=10$ as the initial value and assume $\eta=0.2$.
 Using gradient descent to iterate $x$ for 10 times we can see that, eventually, the value of $x$ approaches the optimal solution.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sử dụng $x=10$ là giá trị khởi tạo và giả sử $\eta=0.2$.
+Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
 
 
 ```{.python .input  n=4}
@@ -136,7 +140,7 @@ res = gd(0.2)
 The progress of optimizing over $x$ can be plotted as follows.
 -->
 
-*dịch đoạn phía trên*
+Đồ thị quá trình tối ưu hóa theo $x$ được vẽ như sau.
 
 
 ```{.python .input  n=5}
@@ -681,7 +685,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * 
