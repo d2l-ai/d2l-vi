@@ -46,6 +46,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | bias (bias as variance) | độ chệch                       | [https://git.io/JvQxO](https://git.io/JvQxO) |
 | bias-variance tradeoff  | đánh đổi độ chệch - phương sai | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | bias (tham số mô hình)  | hệ số điều chỉnh               | [https://git.io/Jvopx](https://git.io/Jvopx) |
+| bidirectional recurrent neural network | mạng nơ-ron hồi tiếp hai chiều | [https://git.io/JJeal](https://git.io/JJeal) |
 | big data                | big data                       |                                              |
 | binomial distribution   | phân phối nhị thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | Blackbox dev set        | tập phát triển Blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
