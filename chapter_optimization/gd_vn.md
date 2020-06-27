@@ -371,7 +371,7 @@ Reviewing the Taylor expansion of $f$ there is no need to stop after the first t
 In fact, we can write it as 
 -->
 
-Xem lại mở rộng Taylor của $f$, ta không cần phải dừng ngay sau số hạng đầu tiên.
+Trong khai triển Taylor của $f$, ta không cần phải dừng ngay sau số hạng đầu tiên.
 Trên thực tế, ta có thể viết lại như sau
 
 
