@@ -226,8 +226,11 @@ Indeed, the algorithm fails to converge at all.
 On the other hand, if we use a polynomial decay where the learning rate decays with the inverse square root of the number of steps convergence is good.
 -->
 
-*dịch đoạn phía trên*
-
+Như kỳ vọng, giá trị phương sai của các tham số giảm đáng kể.
+Tuy nhiên, cách này có thể không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
+Thậm chí sau 1000 bước lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
+Trên thực tế, thuật toán này không hội tụ được.
+Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương số bước lặp, có thể thuật toán sẽ hội tụ.
 
 ```{.python .input  n=5}
 def polynomial():
@@ -251,7 +254,13 @@ For general nonconvex problems it is very difficult to obtain meaningful converg
 For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) of Tibshirani 2015.
 -->
 
-*dịch đoạn phía trên*
+Vẫn còn có rất nhiều lựa chọn khác cho cách thiết lập tốc độ học. 
+Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
+Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
+Chúng ta có vô vàn lựa chọn khác nhau cho cách định thời (_schedule_) tốc độ học như vậy.
+Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể sử dụng các phép phân tích lý thuyết như là trong điều kiện lồi.
+Với bài toán không lồi tổng quát, rất khó để suy được các đảm bảo ý nghĩa cho việc hội tụ, vì nói chung các bài toán tối ưu phi tuyến tính không lồi đều thuộc dạng NP-hard.
+Để tìm hiểu thêm, tham khảo các ví dụ trong tập [bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -261,7 +270,7 @@ For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~r
 ## Convergence Analysis for Convex Objectives
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân tích Hội tụ cho các Mục tiêu Lồi
 
 <!--
 The following is optional and primarily serves to convey more intuition about the problem.
@@ -272,13 +281,17 @@ it is possible to minimize them in a small number of steps while decreasing the 
 Unfortunately this case never really occurs in deep learning and we are left with a much more slowly decreasing rate in practice.
 -->
 
-*dịch đoạn phía trên*
+Phần này là phần không bắt buộc và chủ yếu giúp mang lại cái nhìn trực quan hơn về bài toán.
+Chúng ta giới hạn lời giải dưới đây bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
+Cũng có những cách chứng minh nâng cao hơn, ví dụ như khi hàm mục tiêu được định nghĩa tốt.
+:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có cận dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với một số lượng nhỏ bước lặp trong khi giảm tốc độ học, ví dụ như theo $\eta(t) = \eta_0/(\beta t + 1)$.
+Thật không may, trường hợp này không xảy ra trong học sâu và trong thực tế thường giá trị của hàm mục tiêu giảm với tốc độ chậm hơn rất nhiều.
 
 <!--
 Consider the case where
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét trường hợp trong đó
 
 
 $$\mathbf{w}_{t+1} = \mathbf{w}_{t} - \eta_t \partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w}).$$
@@ -289,7 +302,8 @@ In particular, assume that $\mathbf{x}_t$ is drawn from some distribution $P(\ma
 Last denote by
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, ta giả sử rằng $\mathbf{x}_t$ được lấy từ một phân phối $P(\mathbf{x})$ và $l(\mathbf{x}, \mathbf{w})$ là hàm lồi trong $\mathbf{w}$ với mọi $\mathbf{x}$.
+Cuối cùng, ta ký hiệu
 
 
 $$R(\mathbf{w}) = E_{\mathbf{x} \sim P}[l(\mathbf{x}, \mathbf{w})]$$
@@ -609,7 +623,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
