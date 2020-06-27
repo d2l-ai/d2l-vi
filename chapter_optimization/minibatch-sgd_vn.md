@@ -303,7 +303,6 @@ def get_data_ch11(batch_size=10, n=1500):
 
 ## Lập trình từ đầu
 
-
 <!--
 Recall the minibatch SGD implementation from :numref:`sec_linear_scratch`.
 In the following we provide a slightly more general implementation.
