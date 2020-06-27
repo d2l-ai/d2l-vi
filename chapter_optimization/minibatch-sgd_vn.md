@@ -521,7 +521,12 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 * In general, minibatch SGD is faster than SGD and gradient descent for convergence to a smaller risk, when measured in terms of clock time.  
 -->
 
-*dịch đoạn phía trên*
+* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn do giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
+* Tồn tại sự cân nhắc lựa chọn giữa hiệu quả thống kê từ SGD và hiệu quả tính toán từ việc xử lý các batch dữ liệu với kích thước lớn tại một thời điểm.
+* Thuật toán hạ gradient ngẫu nhiên theo minibatch mang đến điều tốt nhất của cả hai lựa chọn trên: hiệu quả tính toán và thống kê.
+* Trong thuật toán SGD theo minibatch chúng ta xử lý các batch dữ liệu thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi quan sát được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
+* Suy giảm tốc độ trong quá trình huấn luyện được khuyến khích sử dụng.
+* Nói chung, thuật toán SGD theo minibatch nhanh hơn so với thuật toán SGD và hạ descent về tốc độ hội tụ tới điểm giá trị mất mát nhỏ hơn khi đo thời gian đồng hồ (_clock time_).
 
 
 ## Bài tập
@@ -534,7 +539,11 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 How does the behavior of SGD, minibatch SGD and that of gradient descent change?
 -->
 
-*dịch đoạn phía trên*
+1. Sửa đổi kích thước batch và tốc độ học và quan sát tốc độ suy giảm giá trị của hàm mục tiêu và thời gian cần thiết trong mỗi epoch.
+2. Đọc thêm tài liệu MXNet và sử dụng lớp `Trainer`  với hàm `set_learning_rate` để giảm tốc độ học của SGD theo minibatch bằng 1/10 giá trị trước đó sau mỗi epoch.
+3. Hãy so sánh SGD theo minibatch với một biến thể mà *chọn mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
+4. Một ác thần sao chép bộ dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát xảy ra hai lần và dữ liệu của bạn bằng hai lần kích thước ban đầu của nó, nhưng không ai nói với bạn biết).
+Cách hoạt động của thuật toán SGD, SGD theo minibatch và thuật toán hạ gradient sẽ thay đổi như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -576,4 +585,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Quang
