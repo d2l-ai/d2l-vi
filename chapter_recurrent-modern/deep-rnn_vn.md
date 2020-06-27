@@ -135,11 +135,11 @@ In fact, the only difference is that we specify the number of layers explicitly 
 Let us begin by importing the appropriate modules and loading data.
 -->
 
-May mắn thay nhiều chi tiết hỗ trợ cần thiết để lập trình một kiến trúc RNN đa tầng đã có sẵn trong Gluon.
-Để đơn giản, chúng ta chỉ minh họa việc lập trình bằng cách sử dụng những mã nguồn tích hợp sẵn.
-Mã nguồn dưới đây rất giống những gì chúng ta sử dụng trước đây cho mạng LSTM.
-Trong thực tế, sự khác biệt duy nhất là chúng ta xác định số lượng các tầng một cách rõ ràng thay vì chọn mặc định là một tầng duy nhất.
-Chúng ta hãy bắt đầu bằng cách nhập các mô-đun thích hợp và đọc dữ liệu.
+May mắn thay nhiều chi tiết hỗ trợ cần thiết để lập trình một kiến trúc RNN đa tầng đã có sẵn trong Gluon. 
+Để đơn giản, chúng ta chỉ minh họa việc lập trình bằng cách sử dụng những chức năng được tích hợp sẵn. 
+Mã nguồn dưới đây rất giống đoạn mã mà ta sử dụng cho mạng LSTM trước đây. 
+Trong thực tế, sự khác biệt duy nhất là chúng ta chỉ định số lượng các tầng một cách tường minh thay vì chọn mặc định là một tầng duy nhất. 
+Hãy bắt đầu bằng cách nhập các mô-đun thích hợp và nạp dữ liệu. 
 
 
 ```{.python .input  n=17}
@@ -160,10 +160,10 @@ The number of hidden units is still 256.
 The only difference is that we now select a nontrivial number of layers `num_layers = 2`.
 -->
 
-Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước.
-Chúng ta sử dụng cùng số lượng đầu vào và đầu ra với số lượng token không trùng lặp là `vocab_size`.
-Số lượng nút ẩn vẫn là 256.
-Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`.
+Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước. 
+Chúng ta sử dụng cùng số lượng đầu vào và đầu ra bởi ta có các token không trùng lặp nhau, ở đây là `vocab_size`.
+Số lượng nút ẩn vẫn là 256. 
+Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`. 
 
 
 ```{.python .input  n=22}
@@ -189,9 +189,9 @@ The only difference is that we now instantiate two layers with LSTMs.
 This rather more complex architecture and the large number of epochs slow down training considerably.
 -->
 
-Quá trình huấn luyện tương tự như trước đây.
-Sự khác biệt duy nhất là bây giờ chúng ta khởi tạo mô hình với hai tầng LSTM.
-Kiến trúc mô hình sẽ phức tạp hơn và quá trình huấn luyện sẽ chậm hơn đáng kể với nhiều epoch.
+Quá trình huấn luyện tương tự như trước đây. 
+Sự khác biệt duy nhất là bây giờ chúng ta khởi tạo mô hình với hai tầng LSTM. 
+Quá trình huấn luyện sẽ chậm hơn đáng kể do kiến trúc mô hình phức tạp hơn và số lượng epoch lớn.
 
 
 ```{.python .input  n=8}
@@ -210,9 +210,9 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * There exist many different flavors of deep RNNs, such as LSTMs, GRUs, or regular RNNs. Conveniently these models are all available as parts of the `rnn` module in Gluon.
 * Initialization of the models requires care. Overall, deep RNNs require considerable amount of work (such as learning rate and clipping) to ensure proper convergence.
 -->
-* Trong các mạng nơ-ron truy hồi sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở cùng tầng và truyền tới bước thời gian hiện tại ở tầng kế tiếp.
-* Có nhiều lựa chọn khác nhau cho mạng RNN sâu, ví dụ LSTM, GRU hoặc là RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon.
-* Chúng ta cần chú ý tới việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học sẽ hội tụ.
+* Trong các mạng nơ-ron hồi tiếp sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở tầng hiện tại và truyền tới bước thời gian hiện tại ở tầng kế tiếp. 
+* Có nhiều phiên bản khác nhau của mạng RNN sâu, ví dụ như LSTM, GRU hoặc RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon. 
+* Chúng ta cần phải cẩn thận trong việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học hội tụ một cách hợp lý.
 
 
 <!--
@@ -228,10 +228,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. Would you want to combine sources of different authors when modeling text? Why is this a good idea? What could go wrong?
 -->
 
-1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng chúng ta đã thảo luận ở :numref:`sec_rnn_scratch`.
-2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình.
-3. Tăng dữ liệu huấn luyện lên gồm nhiều cuốn sách. Hãy xem bạn có thể giảm độ hỗn loạn tới mức nào?
-4. Hãy thử kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản. Tại sao cách này lại là một ý tưởng hay? Hay cách này có vấn đề gì?
+1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng mà ta đã thảo luận ở :numref:`sec_rnn_scratch`. 
+2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình. 
+3. Tăng dữ liệu huấn luyện bằng việc thêm nhiều cuốn sách. Bạn có thể giảm perplexity tới mức nào? 
+4. Có nên kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản hay không?. Tại sao việc này lại là một ý tưởng hay? Vấn đề gì có thể xảy ra ở đây? 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -259,6 +259,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 <!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
