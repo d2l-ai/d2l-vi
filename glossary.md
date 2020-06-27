@@ -343,6 +343,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | positive sample/example            | mẫu dương                  |                                              |
 | posterior                          | hậu nghiệm                 | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision                          | precision                  |                                              |
+| preconditioning                    | tiền điều kiện             |                                              |
 | principal component analysis (PCA) | phân tích thành phần chính | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                              | tiên nghiệm                | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | probability theory                 | lý thuyết xác suất         |                                              |
