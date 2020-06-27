@@ -406,7 +406,7 @@ Last, when the batch size equals 100, we use minibatch SGD for optimization.
 The time required per epoch is longer than the time needed for SGD and the time for batch gradient descent.
 -->
 
-Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD minibatch để tối ưu hóa.
+Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD theo minibatch để tối ưu hóa.
 Thời gian cần thiết cho mỗi epoch lâu hơn thời gian chạy của thuật toán SGD và thuật toán hạ gradient theo từng batch.
 
 
@@ -438,7 +438,7 @@ A minibatch size 10 is more efficient than SGD; a minibatch size 100 even outper
 Cuối cùng, chúng ta so sánh tương quan thời gian và giá trị mất mát trong bốn thí nghiệm trên.
 Như có thể thấy, mặc dù SGD hội tụ nhanh hơn GD về số mẫu được xử lý,
 nhưng SGD tốn nhiều thời gian hơn để đạt được cùng giá trị mất mát như GD vì thuật toán này tính toán gradient trên từng mẫu một.
-Thuật toán SGD minibatch có thể cân bằng giữa tốc độ hội tụ và hiệu quả tính toán.
+Thuật toán SGD theo minibatch có thể cân bằng giữa tốc độ hội tụ và hiệu quả tính toán.
 Với kích thước minibatch bằng 10, thuật toán này hiệu quả hơn SGD; và với kích thước minibatch bằng 100, thời gian chạy của thuật toán này thậm chí nhanh hơn GD.
 
 
