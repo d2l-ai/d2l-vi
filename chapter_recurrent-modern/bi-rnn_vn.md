@@ -219,17 +219,17 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 *Bidirectional recurrent neural networks* add a hidden layer that passes information in a backward direction to more flexibly process such information.
 :numref:`fig_birnn` illustrates the architecture of a bidirectional recurrent neural network with a single hidden layer.
 -->
-Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa thiết kế của các mạng truy hồi truyền thống một chút.
-May mắn là, điều này khá đơn giản về mặt khái niệm.
-Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối,  ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu.
-*Mạng nơ ron truy hồi hai chiều* sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống.
-Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron truy hồi hai chiều với 1 tầng ẩn.
+Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa một chút thiết kế của các mạng hồi tiếp truyền thống. 
+May mắn là, điều này khá đơn giản về mặt khái niệm. 
+Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối, ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu. 
+*Mạng nơ ron hồi tiếp hai chiều* (*Bidirectional recurrent neural network*) sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống. 
+Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron hồi tiếp hai chiều với 1 tầng ẩn.  
 
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
 --> 
 
-![*Cấu trúc của mạng nơ ron truy hồi hai chiều.*](../img/birnn.svg)
+![*Cấu trúc của mạng nơ ron hồi tiếp hai chiều.*](../img/birnn.svg)
 :label:`fig_birnn`
 
 <!--
@@ -261,9 +261,9 @@ For a detailed discussion of the various architectures see also the paper by :ci
 Let us look at the specifics of such a network.
 -->
 
-Các mạng nơ-ron truy hồi hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
-Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` về những thảo luận chi tiết của các kiến trúc khác nhau.
-Còn giờ ta hãy đi vào chi tiết của một mạng như vậy.
+Các mạng nơ-ron hồi tiếp hai chiều đã được giới thiệu bởi :cite:`Schuster.Paliwal.1997`.
+Ta có thể xem thêm :cite:`Graves.Schmidhuber.2005` về những thảo luận chi tiết của các kiến trúc khác nhau. 
+Còn giờ ta hãy đi vào chi tiết của một mạng như vậy. 
 
 <!--
 For a given timestep $t$, the minibatch input is $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (number of examples: $n$, number of inputs: $d$) and the ßßhidden layer activation function is $\phi$.
@@ -274,9 +274,9 @@ We compute the forward and backward hidden state updates as follows:
 -->
 
 Cho một bước thời gian $t$, đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ ($n$ là số lượng mẫu, $d$ là số lượng đầu vào) và hàm kích hoạt của tầng ẩn là $\phi$.
-Trong kiến thúc hai chiều, ta giả định rằng trạng thái ẩn xuôi và ngược của bước thời gian này lần lượt là $\overrightarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$ và $\overleftarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$.
-$h$ ở đây chỉ số lượng nút ẩn.
-Chúng ta tính toán việc cập nhật trạng thái ẩn xuôi và ngược như sau:
+Trong kiến thúc hai chiều, ta giả định rằng trạng thái ẩn xuôi và ngược của bước thời gian này lần lượt là $\overrightarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$ và $\overleftarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}$. 
+$h$ ở đây chỉ số lượng nút ẩn. 
+Chúng ta tính toán việc cập nhật xuôi và ngược của trạng thái ẩn như sau: 
 
 $$
 \begin{aligned}
@@ -292,7 +292,7 @@ $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \m
 are all model parameters.
 -->
 
-Ở đây, các trọng số $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \mathbb{R}^{h \times h}, \mathbf{W}_{xh}^{(b)} \in \mathbb{R}^{d \times h}, \text{ và } \mathbf{W}_{hh}^{(b)} \in \mathbb{R}^{h \times h}$ và các độ chệch $\mathbf{b}_h^{(f)} \in \mathbb{R}^{1 \times h} \text{ và } \mathbf{b}_h^{(b)} \in \mathbb{R}^{1 \times h}$ đều là tham số mô hình.
+Ở đây, các trọng số $\mathbf{W}_{xh}^{(f)} \in \mathbb{R}^{d \times h}, \mathbf{W}_{hh}^{(f)} \in \mathbb{R}^{h \times h}, \mathbf{W}_{xh}^{(b)} \in \mathbb{R}^{d \times h}, \text{ và } \mathbf{W}_{hh}^{(b)} \in \mathbb{R}^{h \times h}$ và các độ chệch $\mathbf{b}_h^{(f)} \in \mathbb{R}^{1 \times h} \text{ và } \mathbf{b}_h^{(b)} \in \mathbb{R}^{1 \times h}$ đều là tham số mô hình. 
 
 <!--
 Then we concatenate the forward and backward hidden states $\overrightarrow{\mathbf{H}}_t$ and $\overleftarrow{\mathbf{H}}_t$ 
@@ -301,9 +301,9 @@ In deep bidirectional RNNs, the information is passed on as *input* to the next 
 Last, the output layer computes the output $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (number of outputs: $q$):
 -->
 
-Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và truyền nó đến tầng đầu ra.
-Trong các mạng nơ-ron truy hồi hai chiều sâu, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều tiếp theo.
-Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau:
+Sau đó, chúng ta nối các trạng thái ẩn xuôi và ngược ($\overrightarrow{\mathbf{H}}_t$, $\overleftarrow{\mathbf{H}}_t$) để thu được trạng thái ẩn $\mathbf{H}_t \in \mathbb{R}^{n \times 2h}$ và truyền nó đến tầng đầu ra. 
+Trong các mạng nơ-ron hồi tiếp hai chiều sâu, thông tin được truyền đi như là *đầu vào* cho tầng hai chiều (_bidirectional layer_) tiếp theo. 
+Cuối cùng, tầng đầu ra sẽ tính toán đầu ra $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ ($q$ là số lượng đầu ra) như sau: 
 
 
 $$\mathbf{O}_t = \mathbf{H}_t \mathbf{W}_{hq} + \mathbf{b}_q.$$
@@ -314,8 +314,8 @@ Here, the weight parameter $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ and th
 The two directions can have different numbers of hidden units.
 -->
 
-Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra.
-Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau.
+Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra. 
+Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau. 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -335,12 +335,12 @@ Hence, if we were to use a bidirectional RNN naively we would not get a very goo
 During test time we only have past data and thus poor accuracy (we will illustrate this in an experiment below).
 -->
 
-Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
-Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (một kịch bản làm mượt).
+Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra. 
+Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (như để làm mượt). 
 Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
-Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán.
-Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại.
-Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới).
+Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán. 
+Do đó, nếu chúng ta sử dụng RNN hai chiều một cách ngây thơ, chúng ta sẽ không có được độ chính xác đủ tốt: trong quá trình huấn luyện, chúng ta có cả dữ liệu quá khứ và tương lai để ước tính hiện tại. 
+Trong quá trình dự đoán, chúng ta chỉ có dữ liệu trong quá khứ và do đó kết quả dự đoán có độ chính xác kém (điều này được minh họa trong thí nghiệm bên dưới). 
 
 <!--
 To add insult to injury, bidirectional RNNs are also exceedingly slow.
@@ -349,8 +349,8 @@ Hence, gradients will have a very long dependency chain.
 -->
 
 Tệ hơn, RNN hai chiều cũng cực kỳ chậm.
-Những lý do chính cho điều này là vì chúng cần cả lượt truyền xuôi và lượt truyền ngược, và lượt truyền ngược thì phụ thuộc vào kết quả của lượt truyền xuôi.
-Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài.
+Những lý do chính cho điều này là vì chúng cần cả lượt truyền xuôi và lượt truyền ngược, và lượt truyền ngược thì phụ thuộc vào kết quả của lượt truyền xuôi. 
+Do đó, gradient sẽ có một chuỗi phụ thuộc rất dài. 
 
 
 <!--
@@ -359,8 +359,8 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu,  chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy).
-Tóm lại, sử dụng cẩn thận!
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu, chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy). 
+Tóm lại, hãy sử dụng nó một cách cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
