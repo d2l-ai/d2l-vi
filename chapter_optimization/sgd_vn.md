@@ -443,7 +443,7 @@ In particular, for a finite sample size we simply argued that the discrete distr
 
 Tới phần này, ta đi khá nhanh và mơ hồ khi bàn luận về hạ gradient ngẫu nhiên.
 Ta thừa nhận rằng ta lấy các đối tượng $x_i$, thường là cùng với nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
-Cụ thể, với kích thước mẫu hữu hạn, dễ dàng chỉ ra rằng ta có thể áp dụng SGD lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
+Cụ thể, với kích thước mẫu hữu hạn, ta chỉ đang đơn giản lập luận rằng SGD có thể dễ dàng được áp dụng lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
 
 <!--
 However, this is not really what we did.
@@ -456,7 +456,7 @@ The probability of choosing an element $i$ at random is $N^{-1}$. Thus to choose
 -->
 
 Tuy nhiên, đó thực ra không phải là cách mà ta đã làm.
-Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào phép hạ gradient tất định, giả sử rằng ta có các cặp giá trị $(x_i, y_i)$.
+Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào phép hạ gradient tất định, tức ta giả sử rằng đang có các cặp giá trị $(x_i, y_i)$.
 Hoá ra cách làm đó ở phần này khá chính đáng (xem phần bài tập để cùng thảo luận chi tiết).
 Phiền hà hơn nữa là ở tất cả các cuộc thảo luận trước, ta không hề làm thế.
 Thay vào đó ta chỉ lặp qua tất cả các đối tượng đúng một lần.
@@ -465,7 +465,7 @@ Xác suất chọn ngẫu nhiên được phần tử $i$ là $N^{-1}$.
 Do đó xác suất để chọn ít nhất một lần là
 
 
-$$P(\mathrm{choose~} i) = 1 - P(\mathrm{omit~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
+$$P(\mathrm{Chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
 <!-- cân nhắc dịch -->
 
 
@@ -477,9 +477,9 @@ Last note that repeated passes through the dataset traverse it in a *different* 
 -->
 
 Chứng minh tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng một lần là ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
-Điều này gây tăng phương sai và giảm hiệu quả của dữ liệu so với lấy mẫu không hoàn lại.
+Điều này gây tăng phương sai và giảm hiệu quả sử dụng dữ liệu so với lấy mẫu không hoàn lại.
 Do đó trong thực tế, ta thực hiện phương pháp không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
-Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu, ta sẽ quét theo một thứ tự *khác* ngẫu nhiên.
+Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu, ta sẽ quét theo một thứ tự ngẫu nhiên *khác*.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -561,6 +561,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 6 -->
 * Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 7 -->
 * 
