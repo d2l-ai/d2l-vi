@@ -488,7 +488,7 @@ namely to reduce the learning rate progressively, albeit not too quickly.
 * Optimality guarantees for SGD are in general not available in nonconvex cases since the number of local minima that require checking might well be exponential.
 -->
 
-* Đối với các bài toán lồi, ta có thể chứng minh rằng với tốc độ học trong một khoảng rộng, Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu.
+* Đối với các bài toán lồi, ta có thể chứng minh rằng Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu cho nhiều tốc độ học khác nhau.
 * Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích nhằm tiến tới bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
 * Nhiều vấn đề xuất hiện khi tốc độ học quá lớn hoặc quá nhỏ. Trong thực tế, ta chỉ có thể tìm được tốc độ học thích hợp sau nhiều lần thử nghiệm.
 * Khi kích thước tập huấn luyện tăng, chi phí tính toán cho mỗi lần lặp của hạ gradient cũng tăng theo, do đó SGD được ưa chuộng hơn trong trường hợp này.
@@ -519,7 +519,7 @@ Cụ thể, hãy vẽ biểu đồ khoảng cách tới nghiệm tối ưu $(0, 
     * Chỉ ra rằng tính chất này nhìn chung có thể áp dụng cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ for $Q \succeq 0$.
 3. So sánh sự hội tụ của SGD khi lấy mẫu không hoàn lại từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ và khi lấy mẫu có hoàn lại.
 4. Bạn sẽ thay đổi chương trình SGD thế nào nếu như một số gradient (hoặc một số toạ độ liên kết với nó) liên tục lớn hơn so với tất cả các gradient khác?
-5. Giả sử rằng $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Bạn có thể thay đổi $f$ theo cách nào để giảm thiểu yêu cầu ước lượng tất cả các cực tiểu?
+5. Giả sử rằng $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Thay đổi hàm số sao cho để cực tiểu hóa giá trị hàm $f$, ta cần xét tất cả các điểm cực tiểu?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
