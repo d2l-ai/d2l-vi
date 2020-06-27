@@ -401,7 +401,7 @@ Now let us analyze some choices for $\eta_t$.
 Trong đó $r^2 := \|\mathbf{w}_0 - \mathbf{w}^*\|^2$ là khoảng cách giới hạn giữa giá trị khởi tạo của các tham số và kết quả cuối cùng.
 Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách giữa giá trị ban đầu so với giá trị tối ưu $r$.
 Chú ý rằng giới hạn ở trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$.
-Kí hiệu này là do $\bar{\mathbf{w}}$ chính là bước tối ưu được làm mượt.
+Kí hiệu này là do $\bar{\mathbf{w}}$ chính là quỹ đạo tối ưu được làm mượt.
 Hãy cùng phân tích một số cách lựa chọn $\eta_t$.
 
 <!--
