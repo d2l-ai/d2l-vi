@@ -18,7 +18,7 @@ The theory has been one of the most influential psychological models of human vi
 -->
 
 Tản mạn một chút về lịch sử, sự tập trung là một lĩnh vực nghiên cứu rộng lớn và lâu đời trong ngành thần kinh học nhận thức.
-Trọng tâm có thể hiểu rằng sự tập trung của ý thức chính là bản chất của của sự chú ý, điều này cho phép chúng ta (loài người) ưu tiên tri giác của mình để giải quyết hiệu quả những sự kiện xoay quanh mình.
+Trọng tâm ở đây có thể hiểu rằng sự tập trung của ý thức chính là bản chất của của sự chú ý, điều này cho phép chúng ta (loài người) ưu tiên tri giác của mình để giải quyết hiệu quả những sự kiện xoay quanh mình.
 Kết quả là ta không xử lý toàn bộ những thông tin thu được từ các giác quan.
 Tại một thời điểm, chúng ta chỉ có thể tiếp nhận một lượng nhỏ thông tin từ môi trường.
 Trong ngành thần kinh học nhận thức, tồn tại một vài dạng tập trung ví dụ cơ chế tập trung có chọn lọc, tập trung ngầm, và tập trung về không gian.
