@@ -96,7 +96,7 @@ As always, we begin by importing all required modules.
 -->
 
 Để đơn giản chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách cài đặt thuật toán hạ gradient.
-Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm cực tiểu của $f(x)$.
+Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm để cực tiểu hóa $f(x)$.
 Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết.
 
 ```{.python .input  n=3}
