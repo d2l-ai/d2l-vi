@@ -253,7 +253,7 @@ In particular, we have that
 -->
 
 Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi theo $x_i$ của $f$ tại $\mathbf{x}$.
-Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển xấp xỉ Taylor tương ứng cho các hàm đa biến.
+Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển Taylor tương ứng cho các hàm đa biến.
 Cụ thể, ta có
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \mathcal{O}(\|\mathbf{\epsilon}\|^2).$$
