@@ -118,7 +118,7 @@ Next, we use $x=10$ as the initial value and assume $\eta=0.2$.
 Using gradient descent to iterate $x$ for 10 times we can see that, eventually, the value of $x$ approaches the optimal solution.
 -->
 
-Tiếp theo, chúng ta sử dụng $x=10$ 10 là giá trị khởi tạo và giả sử $\eta=0.2$.
+Tiếp theo, chúng ta sử dụng $x=10$ là giá trị khởi tạo và giả sử $\eta=0.2$.
 Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
 
 
