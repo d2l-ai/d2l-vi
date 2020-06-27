@@ -34,7 +34,7 @@ Chúng ta hãy bắt đầu với một trường hợp đặc biệt đơn gi�
 ## Gradient Descent in One Dimension
 -->
 
-## Hạ Gradient theo Một Chiều 
+## Hạ Gradient trong Một Chiều 
 
 
 <!--
@@ -43,7 +43,7 @@ Consider some continuously differentiable real-valued function $f: \mathbb{R} \r
 Using a Taylor expansion (:numref:`sec_single_variable_calculus`) we obtain that 
 -->
 
-Hạ gradient theo một chiều là ví dụ tuyệt vời để giải thích tại sao thuật toán hạ gradient có thể giảm giá trị hàm mục tiêu.
+Hạ gradient trong một chiều là ví dụ tuyệt vời để giải thích tại sao thuật toán hạ gradient có thể giảm giá trị hàm mục tiêu.
 Hãy xem xét một hàm số thực khả vi liên tục $f: \mathbb{R} \rightarrow \mathbb{R}$.
 Áp dụng khai triển Taylor (:numref:`sec_single_variable_calculus`), ta có
 
