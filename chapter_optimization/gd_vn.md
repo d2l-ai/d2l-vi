@@ -203,7 +203,7 @@ show_trace(gd(1.1))
 ### Local Minima
 -->
 
-### Cực Tiểu Địa phương
+### Cực Tiểu
 
 
 <!--
