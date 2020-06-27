@@ -47,7 +47,7 @@ Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực
 ## Gated Memory Cells
 -->
 
-## Ô nhớ được kiểm soát
+## Các Ô Nhớ có Cổng
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
