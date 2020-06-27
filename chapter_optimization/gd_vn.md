@@ -215,7 +215,7 @@ The example below illustrates how an (unrealistically) high learning rate will l
 
 Để minh họa quá trình học các hàm không lồi, ta xem xét trường hợp $f(x) = x \cdot \cos c x$.
 Những hàm này có vô số cực tiểu.
-Tùy thuộc vào tốc độ học chúng ta chọn và bài toán được điều kiện tốt như thế nào, chúng ta thu được một trong  số rất nhiều nghiệm.
+Tùy thuộc vào tốc độ học được chọn và điều kiện của bài toán, chúng ta có thể thu được một trong  số rất nhiều nghiệm.
 Ví dụ dưới đây minh họa việc thiết lập tốc độ học quá cao (không thực tế) sẽ dẫn đến điểm cực tiểu địa phương xấu.
 
 
