@@ -234,7 +234,7 @@ Vẫn còn có rất nhiều lựa chọn khác cho cách thiết lập tốc đ
 Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
 Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
 Chúng ta có vô vàn lựa chọn khác nhau cho cách định thời (_schedule_) tốc độ học như vậy.
-Bây giờ, chúng ta hãy tập trung vào biểu thiết lập tốc độ học mà ta có thể phân tích lý thuyết toàn diện về tốc độ học trong điều kiện lồi.
+Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể sử dụng các phép phân tích lý thuyết như là trong điều kiện lồi.
 Với bài toán không lồi tổng quát, rất khó để đạt được đảm bảo hội tụ có ý nghĩa, vì nói chung các bài toán tối ưu phi tuyến tính không lồi đều thuộc dạng NP-hard.
 Để tìm hiểu thêm, tham khảo các ví dụ trong tập [bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
