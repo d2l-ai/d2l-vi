@@ -242,8 +242,7 @@ It is a vector consisting of $d$ partial derivatives:
 
 Bây giờ chúng ta đã có trực quan tốt hơn về trường hợp đơn biến, ta hãy xem xét trường hợp trong đó $\mathbf{x} \in \mathbb{R}^d$.
 Cụ thể, hàm mục tiêu $f: \mathbb{R}^d \to \mathbb{R}$ ánh xạ các vector tới các giá trị vô hướng. 
-Gradient tương ứng cũng là đa biến.
-Gradient này là một vector gồm $d$ đạo hàm riêng:
+Gradient tương ứng cũng là đa biến, là một vector gồm $d$ đạo hàm riêng:
 
 $$\nabla f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_d}\bigg]^\top.$$
 
@@ -253,8 +252,8 @@ As before in the univariate case we can use the corresponding Taylor approximati
 In particular, we have that 
 -->
 
-Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi của $f$ tại $\mathbf{x}$ theo đầu vào là $x_i$.
-Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển xấp xỉ Taylor tương ứng cho các hàm đa biến để lấy thêm ý tưởng và hiểu thêm về những gì ta nên làm.
+Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi theo $x_i$ của $f$ tại $\mathbf{x}$.
+Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển xấp xỉ Taylor tương ứng cho các hàm đa biến.
 Cụ thể, ta có
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \mathcal{O}(\|\mathbf{\epsilon}\|^2).$$
@@ -266,7 +265,7 @@ In other words, up to second order terms in $\mathbf{\epsilon}$ the direction of
 Choosing a suitable learning rate $\eta > 0$ yields the prototypical gradient descent algorithm:
 -->
 
-Nói cách khác, từ hạng tử bậc hai trở đi trong $\mathbf{\epsilon}$ theo chiều giảm dốc nhất được cho bởi gradient âm $-\nabla f(\mathbf{x})$.
+Nói cách khác, chiều giảm mạnh nhất được cho bởi gradient âm $-\nabla f(\mathbf{x})$, các hạng tử từ bậc hai trở lên trong $\mathbf{\epsilon}$ có thể bỏ qua.
 Chọn một tốc độ học phù hợp $\eta > 0$, ta được thuật toán hạ gradient nguyên bản dưới đây:
 
 
@@ -283,9 +282,9 @@ The second helper visualizes the trajectory of $\mathbf{x}$.
 -->
 
 Để xem thuật toán hoạt động như thế nào trong thực tế, ta hãy xây dựng một hàm mục tiêu 
-$f(\mathbf{x})=x_1^2+2x_2^2$ với vector hai chiều $\mathbf{x} = [x_1, x_2]^\top$ là đầu vào và đầu ra là một số vô hướng.
+$f(\mathbf{x})=x_1^2+2x_2^2$ với đầu vào là vector hai chiều $\mathbf{x} = [x_1, x_2]^\top$ và đầu ra là một số vô hướng.
 Gradient được cho bởi $\nabla f(\mathbf{x}) = [2x_1, 4x_2]^\top$.
-Ta sẽ quan sát đường đi $\mathbf{x}$ được sinh bởi thuật toán hạ gradient bắt đầu từ vị trí $[-5, -2]$.
+Ta sẽ quan sát đường đi của $\mathbf{x}$ được sinh bởi thuật toán hạ gradient bắt đầu từ vị trí $[-5, -2]$.
 Chúng ta cần thêm hai hàm hỗ trợ.
 Hàm đầu tiên là hàm cập nhật và được sử dụng $20$ lần cho giá trị khởi tạo ban đầu.
 Hàm thứ hai là hàm vẽ biểu đồ đường đi của $\mathbf{x}$.
