@@ -301,7 +301,8 @@ def get_data_ch11(batch_size=10, n=1500):
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
+
 
 <!--
 Recall the minibatch SGD implementation from :numref:`sec_linear_scratch`.
@@ -311,7 +312,12 @@ Specifically, we add the status input `states` and place the hyperparameter in d
 In addition, we will average the loss of each minibatch example in the training function, so the gradient in the optimization algorithm does not need to be divided by the batch size.
 -->
 
-*dịch đoạn phía trên*
+
+Hãy nhớ lại cách lập trình SGD minibatch từ :numref:`sec_linear_scratch`.
+Trong phần tiếp theo, chúng tôi sẽ trình bày cách lập trình tổng quát hơn một chút.
+Để thuận tiện, chúng ta sử dụng cách gọi hàm tương tự như các thuật toán tối ưu khác sẽ được giới thiệu sau trong chương này.
+Cụ thể, chúng ta thêm trạng thái đầu vào `states` và đặt siêu tham số trong `hyperparams` có kiểu dữ liệu diciontary.
+Bên cạnh đó, chúng ta sẽ tính giá trị trung bình của hàm mất mát của từng mẫu minibatch trong hàm huấn luyện, từ đó chúng ta không cần phải chia gradient cho kích thước batch trong thuật toán tối ưu nữa.
 
 
 ```{.python .input  n=2}
@@ -326,7 +332,9 @@ Next, we implement a generic training function to facilitate the use of the othe
 It initializes a linear regression model and can be used to train the model with minibatch SGD and other algorithms introduced subsequently.
 -->
 
-*dịch đoạn phía trên*
+
+Tiếp theo, chúng ta lập trình một hàm huấn luyện tổng quát để tạo điều kiện cho việc sử dụng các thuật toán tối ưu khác sẽ giới thiệu sau trong chương này.
+Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với thuật toán SGD minibatch và các thuật toán khác được giới thiệu sau đó.
 
 
 ```{.python .input  n=3}
@@ -368,7 +376,12 @@ There is little progress.
 In fact, after 6 steps progress stalls.
 -->
 
-*dịch đoạn phía trên*
+
+Chúng ta hãy xem cách thuật toán hạ gradient trên từng batch diễn ra như thế nào.
+Điều này có thể đạt được bằng cách thiết lập kích thước minibatch bằng 1500 (cụ thể, bằng tổng số mẫu).
+Kết quả là các tham số mô hình được cập nhật một lần duy nhất cho từng epoch.
+Không có tiến độ học đáng kể nào.
+Trong thực tế, việc học vẫn dậm chân tại chỗ sau 6 bước lặp.
 
 
 ```{.python .input  n=4}
@@ -390,7 +403,13 @@ Although both the procedures processed 1500 examples within one epoch, SGD consu
 This is because SGD updated the parameters more frequently and since it is less efficient to process single observations one at a time.
 -->
 
-*dịch đoạn phía trên*
+Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu hóa.
+Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (với giá trị nhỏ).
+Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
+Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
+Như chúng ta có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
+Mặc dù cả hai thủ tục xử lý 1500 mẫu trong một epoch, thuật toán SGD tốn thời gian hơn thuật toán hạ gradient trong thí nghiệm trên.
+Điều này là do SGD cập nhật các tham số thường xuyên hơn và kém hiệu quả trong việc xử lý riêng lẻ từng mẫu quan sát một.
 
 
 ```{.python .input  n=5}
@@ -570,7 +589,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 * 
