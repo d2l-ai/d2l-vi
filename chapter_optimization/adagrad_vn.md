@@ -71,7 +71,7 @@ But this hides some of the additional benefits inherent in Adagrad that are best
 ## Preconditioning
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiền điều kiện
 
 <!--
 Convex optimization problems are good for analyzing the characteristics of algorithms.
@@ -79,14 +79,16 @@ After all, for most nonconvex problems it is difficult to derive meaningful theo
 Let us look at the problem of minimizing $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 -->
 
-*dịch đoạn phía trên*
+Các bài toán tối ưu lồi có giá trị trong việc phân tích đặc tính của các thuật toán.
+Suy cho cùng, đa số các bài toán không lồi đều khó có thể tìm được chứng minh có giá trị theo lý thuyết, nhưng thường dựa vào *trực giác* và *nhận thức* (*insight*).
+Xét bài toán cực tiểu hoá $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 
 <!--
 As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in terms of its eigendecomposition 
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-*dịch đoạn phía trên*
+Như ta thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm đưa bài toán về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
@@ -99,7 +101,9 @@ and minimum value $-\frac{1}{2} \bar{\mathbf{c}}^\top \boldsymbol{\Lambda}^{-1} 
 This is much easier to compute since $\boldsymbol{\Lambda}$ is a diagonal matrix containing the eigenvalues of $\mathbf{Q}$.
 -->
 
-*dịch đoạn phía trên*
+Ở đây ta sử dụng $\mathbf{x} = \mathbf{U} \mathbf{x}$ và theo đó $\mathbf{c} = \mathbf{U} \mathbf{c}$.
+Bài toán sau khi được biến đổi có các cực tiểu $\bar{\mathbf{x}} = -\boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}}$ và giá trị nhỏ nhất $-\frac{1}{2} \bar{\mathbf{c}}^\top \boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}} + b$.
+Việc tính toán trở nên dễ dàng hơn nhiều do $\boldsymbol{\Lambda}$ là một ma trận đường chéo chứa các trị riêng của $\mathbf{Q}$.
 
 <!--
 If we perturb $\mathbf{c}$ slightly we would hope to find only slight changes in the minimizer of $f$.
@@ -110,7 +114,12 @@ Conversely, for small $\boldsymbol{\Lambda}_i$ changes in $\bar{x}_i$ can be dra
 The ratio between the largest and the smallest eigenvalue is called the condition number of an optimization problem.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các cực tiểu của $f$ cũng chỉ thay đổi một chút.
+Đáng tiếc thay, điều đó lại không xảy ra.
+Mặc dù thay đổi $\mathbf{c}$ một chút thì $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các cực tiểu của $f$ lại không như vậy (tương ứng với cực tiểu của $\bar{f}$).
+Mỗi khi các trị riêng $\boldsymbol{\Lambda}_i$ mang giá trị lớn, ta sẽ thấy $\bar{x}_i$ và cực tiểu của $f$ thay đổi khá nhỏ.
+Ngược lại, với $\boldsymbol{\Lambda}_i$ nhỏ, sự thay đổi $\bar{x}_i$ có thể khá đột ngột.
+Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là tỉ số điều kiện (*condition number*) của bài toán tối ưu.
 
 
 $$\kappa = \frac{\boldsymbol{\Lambda}_1}{\boldsymbol{\Lambda}_d}.$$
