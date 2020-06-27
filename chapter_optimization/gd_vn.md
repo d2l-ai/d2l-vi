@@ -97,7 +97,6 @@ As always, we begin by importing all required modules.
 
 Để đơn giản chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách cài đặt thuật toán hạ gradient.
 Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm cực tiểu của $f(x)$.
-
 Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết.
 
 ```{.python .input  n=3}
@@ -120,7 +119,7 @@ Using gradient descent to iterate $x$ for 10 times we can see that, eventually, 
 -->
 
 Tiếp theo, chúng ta sử dụng $x=10$ 10 là giá trị khởi tạo và giả sử $\eta=0.2$.
-Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 lần, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
+Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
 
 
 ```{.python .input  n=4}
@@ -141,7 +140,7 @@ res = gd(0.2)
 The progress of optimizing over $x$ can be plotted as follows.
 -->
 
-Đồ thị quá trình tối ưu hóa biến $x$ được vẽ như sau.
+Đồ thị quá trình tối ưu hóa theo $x$ được vẽ như sau.
 
 
 ```{.python .input  n=5}
