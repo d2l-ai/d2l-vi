@@ -403,7 +403,7 @@ Suy cho cùng, cực tiểu của $f$ sẽ thỏa $\nabla f(\mathbf{x}) = 0$.
 Lấy các đạo hàm của :eqref:`gd-hot-taylor` theo  $\mathbf{\epsilon}$ và bỏ qua các số hạng bậc cao ta thu được
 
 
-$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và ~do~đó } 
+$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và~do~đó } 
 \mathbf{\epsilon} = -H_f^{-1} \nabla f(\mathbf{x}).$$
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
