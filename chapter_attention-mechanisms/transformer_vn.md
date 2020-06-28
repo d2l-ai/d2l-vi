@@ -253,7 +253,7 @@ class MultiHeadAttention(nn.Block):
 Here are the definitions of the transpose functions `transpose_qkv` and `transpose_output`, which are the inverse of each other.
 -->
 
-Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và` transpose_output` là nghịch đảo của nhau.
+Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và `transpose_output`. Hai hàm này là nghịch đảo của nhau.
 
 
 ```{.python .input  n=3}
