@@ -280,6 +280,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | model capacity               | năng lực mô hình              | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | model family                 | nhóm mô hình                  |                                              |
 | module                       | mô-đun                        |                                              |
+| momentum                     | động lượng                    |                                              |
+| moment                       | mô-men                        |                                              |
 | multi-armed bandit           | máy đánh bạc đa cần           | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | multi-class classification   | phân loại đa lớp              | [https://git.io/Jvoj0](https://git.io/Jvoj0) |
 | multinominal distribution    | phân phối đa thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
