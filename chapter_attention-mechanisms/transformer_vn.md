@@ -204,7 +204,7 @@ In addition, since the multi-head attention keeps the same dimensionality betwee
 
 Bây giờ chúng ta có thể lập trình tầng tập trung đa đầu.
 Giả sử tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
-Ngoài ra, do tập trung đa đầu giữ nguyên số chiều đầu vào, kích thước đặc trưng đầu ra cũng là $d_o =$ `num_hiddens`.
+Ngoài ra, do tầng tập trung đa đầu giữ nguyên kích thước chiều đầu vào, kích thước đặc trưng đầu ra cũng là $d_o =$ `num_hiddens`.
 
 
 ```{.python .input  n=2}
