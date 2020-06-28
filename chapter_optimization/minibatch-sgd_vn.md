@@ -51,7 +51,7 @@ Suffice it to say, the processor is capable of performing many more operations t
 -->
 
 Vấn đề trở nên nhạy cảm hơn đối với trường hợp GPU đơn hay ngay cả CPU đơn.
-Những thiết bị này có nhiều loại bộ nhớ, đôi khi còn có nhiều loại đơn vị tính toán khác nhau và băng thông liên kết khác nhau giữa chúng.
+Những thiết bị này có nhiều loại bộ nhớ, thường có nhiều loại đơn vị thực hiện tính toán và giới hạn băng thông giữa các đơn vị này cũng khác nhau.
 Ví dụ, một CPU có số lượng nhỏ thanh ghi và bộ nhớ đệm L1, L2 và trong một số trường hợp có cả L3 (phần bộ nhớ được phân phối giữa các lõi khác nhau của vi xử lý).
 Các bộ nhớ đệm đang tăng dần về kích thước và độ trễ (và cùng với đó là giảm băng thông).
 Nói đến đây là đủ để thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với giao diện bộ nhớ chính có thể cung cấp.
@@ -75,7 +75,7 @@ Mặt khác, với một vi xử lý máy chủ trung bình, băng thông có l�
 Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: đầu tiên, giao diện bộ nhớ thường rộng 64 bit hoặc hơn (ví dụ như trên GPU lên đến 384 bit), 
 do đó việc đọc một byte duy nhất vẫn sẽ phải chịu chi phí giống như truy cập một khoảng bộ nhớ rộng hơn.
 * Tổng chi phí cho lần truy cập đầu tiên là khá đáng kể trong khi truy cập liên tiếp thường hao tổn ít (thường được gọi là đọc hàng loạt).
-Có rất nhiều điều cần phải chú ý đến, ví dụ như lưu trữ khi ta có nhiều điểm truy cập cuối (*sockets*), nhiều chiplet và các cấu trúc khác.
+Có rất nhiều điều cần phải chú ý đến, ví dụ như lưu trữ đệm khi ta có nhiều điểm truy cập cuối (*sockets*), nhiều chiplet và các cấu trúc khác.
  Việc thảo luận chi tiết vấn đề trên nằm ngoài phạm vi của phần này.
 Bạn có thể đọc [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để hiểu sâu hơn về các vấn đề trên.
 
