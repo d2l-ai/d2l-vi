@@ -187,7 +187,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(gd_2d))
 ### The Momentum Method
 -->
 
-### *dịch tiêu đề phía trên*
+### Phương pháp Động lượng
 
 <!--
 The momentum method allows us to solve the gradient descent problem described above.
@@ -197,7 +197,11 @@ Conversely, in the $x_2$ direction where gradients oscillate, an aggregate gradi
 Using $\mathbf{v}_t$ instead of the gradient $\mathbf{g}_t$ yields the following update equations:
 -->
 
-*dịch đoạn phía trên*
+Phương pháp động lượng cho phép chúng ta giải quyết bài toán hạ gradient mô tả ở trên.
+Nhìn vào các vết tối ưu trên, chúng ta có thể tưởng tượng trực quan rằng tính trung bình gradient trên các lần lặp trước sẽ hoạt động tốt.
+Sau cùng, cách này sẽ tổng hợp gradient theo hướng $x_1$, từ đó tăng khoảng các gradient được bao hàm với từng bước.
+Ngược lại, gradient dao động theo hướng $x_2$, từ đó gradient tổng hợp sẽ làm giảm kích thước bước do dao động triệt các giá trị lẫn nhau.
+Sử dụng $\mathbf{v}_t$ thay vì gradient $\mathbf{g}_t$, ta có các phương trình cập nhật sau:
 
 
 $$
@@ -213,7 +217,8 @@ Note that for $\beta = 0$ we recover regular gradient descent.
 Before delving deeper into the mathematical properties let us have a quick look at how the algorithm behaves in practice.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng với $\beta = 0$, phương pháp trở thành thuật toán hạ gradient thông thường.
+Trước khi nghiên cứu sâu hơn các tính chất toán học, chúng ta hãy nhìn lướt qua cách thuật toán  này hoạt động trong thực tế.
 
 
 ```{.python .input  n=5}
@@ -234,7 +239,10 @@ Halving it to $\beta = 0.25$ leads to a trajectory that barely converges at all.
 Nonetheless, it is a lot better than without momentum (when the solution diverges).
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta có thể thấy, ngay cả với tốc độ học tương tự như trước đó, động lượng vẫn hội tụ tốt.
+Chúng ta hãy xem điều gì sẽ xảy ra khi chúng ta giảm tham số động lượng.
+Giảm một nửa giá trị động lượng $\beta = 0.25$ dẫn đến một quỹ đạo mà rất khó hội tụ.
+Tuy nhiên, điều này vẫn tốt hơn rất nhiều so với trường hợp không sử dụng động lượng (khi nghiệm phân kì).
 
 
 ```{.python .input  n=11}
@@ -250,7 +258,10 @@ Last, for convenience we initialize $\mathbf{v}_0 = 0$ at time $t=0$.
 Let us look at what leaky averaging actually does to the updates.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
+Thay đổi duy nhất trong trường hợp đó là chúng ta sẽ thay thế các gradient $\mathbf{g}_{t, t-1}$ bằng $\mathbf{g}_t$.
+Cuối cùng, để thuận tiện chúng ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
+Chúng ta hãy nhìn xem phép trung bình rò (leaky) thực sự làm gì ở các cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -631,7 +642,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * 
