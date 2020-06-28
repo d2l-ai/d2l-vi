@@ -188,7 +188,7 @@ The weights of this dense layer can be denoted by $\mathbf W_o\in\mathbb R^{d_o\
 As a result, the multi-head attention output will be
 -->
 
-Sau đó, $h$ đầu ra độ dài $p_v$ tại mỗi đầu được nối với nhau thành đầu ra có độ dài $h p_v$, rồi được đưa vào tầng dày đặc cuối cùng với $d_o$ nút ẩn.
+Sau đó, $h$ đầu ra với độ dài $p_v$ tại mỗi đầu được nối với nhau thành đầu ra có độ dài $h p_v$, rồi được đưa vào tầng dày đặc cuối cùng với $d_o$ nút ẩn.
 Các trọng số của tầng dày đặc này được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
 Do đó, đầu ra cuối cùng của tầng tập trung đa đầu sẽ là
 
