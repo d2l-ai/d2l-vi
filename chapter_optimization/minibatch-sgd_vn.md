@@ -71,11 +71,11 @@ We have a number of options for calculating $\mathbf{A}$.
 For instance we could try the following:
 -->
 
-Có một cách để giảm bớt những rằng buộc trên, đó là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
+Cách để giảm bớt những ràng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
 Đây *chính là* động lực đằng sau thúc đẩy việc sử dụng batch trong học sâu.
 Để đơn giản hoá vấn đề, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
 Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn.
-Ta có thể thử một số ví dụ sau:
+Ta có thể thử một số cách sau:
 
 <!--
 1. We could compute $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, i.e., we could compute it element-wise by means of dot products.
@@ -85,7 +85,7 @@ Likewise we could compute $\mathbf{A}$ one row $\mathbf{A}_{i,:}$ at a time.
 4. We could break $\mathbf{B}$ and $\mathbf{C}$ into smaller block matrices and compute $\mathbf{A}$ one block at a time.
 -->
 
-1. Ta có thể tính $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, tức là tính theo từng phần tử của nó thông qua tích vô hướng.
+1. Ta có thể tính $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, tức là tính từng phần tử bằng tích vô hướng.
 2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, tức là tính theo từng cột một.
 Tương tự, ta có thể tính $\mathbf{A}$ theo từng hàng $\mathbf{A}_{i,:}$ một.
 3. Ta đơn giản có thể tính $\mathbf{A} = \mathbf{B} \mathbf{C}$.
@@ -104,14 +104,14 @@ Optimized libraries take care of this for us.
 Let us have a look at how efficient these operations are in practice.
 -->
 
-Nếu ta thực hiện cách đầu tiên, ta cần phải sao chép một cột và một hàng vào CPU mỗi lần ta tính phần tử $\mathbf{A}_{ij}$.
-Tệ hơn nữa, do các phần tử của ma trận lần lượt thẳng hàng với nhau, ta bắt buộc phải truy cập nhiều vùng nhớ rời nhau của một trong hai vector khi ta đọc chúng từ bộ nhớ.
+Nếu sử dụng cách đầu tiên, ta cần sao chép một vector cột và một vector hàng vào CPU cho mỗi lần tính phần tử $\mathbf{A}_{ij}$.
+Tệ hơn nữa, do lần lượt duyệt qua từng các phần tử của ma trận, ta buộc phải truy cập nhiều lần vùng nhớ của một trong hai vector khi đọc chúng từ bộ nhớ.
 Cách thứ hai được ưa chuộng hơn nhiều.
 Theo cách này, ta có thể giữ vector cột $\mathbf{C}_{:,j}$ trong vùng nhớ đệm của CPU trong khi ta tiếp tục quét qua $B$.
 Cách này chia đôi băng thông cần thiết của bộ nhớ, do đó truy cập nhanh hơn.
-Đương nhiên cách số ba là trường hợp đáng ao ước nhất.
+Đương nhiên cách thứ ba là tốt nhất.
 Đáng tiếc rằng đa số ma trận quá lớn để có thể đưa vào vùng nhớ đệm (dù sao thì đây cũng chính là điều ta đang thảo luận).
-Tuy nhiên, cách số bốn cho ta một phương pháp thay thế thiết thực: ta có thể đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
+Tuy nhiên, cách thứ tư cho ta một phương pháp thay thế thiết thực: đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
 Các thư viện đã được tối ưu sẽ thực hiện việc này giúp chúng ta.
 Hãy xem xét hiệu suất của từng phương pháp trong thực tế.
 
@@ -122,7 +122,7 @@ Such overhead can be quite detrimental.
 In short, it is highly advisable to use vectorization (and matrices) whenever possible.
 -->
 
-Ngoại trừ hiệu suất tính toán, tổng chi phí do Python gây ra và do chính framework học sâu cũng đáng để cân nhắc.
+Ngoài hiệu suất tính toán, tổng chi phí do Python gây ra và do chính framework học sâu cũng đáng để cân nhắc.
 Nên nhớ rằng mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet engine để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
 Chi phí đó có thể khá bất lợi.
 Ngắn gọn, nên áp dụng vector hoá (và ma trận) bất cứ khi nào có thể.
