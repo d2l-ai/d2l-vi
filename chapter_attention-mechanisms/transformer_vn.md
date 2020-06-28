@@ -90,7 +90,7 @@ are processed by two "add and norm" layer that contains a residual structure and
 
 1. **Khối Transformer**: một tầng hồi tiếp trong seq2seq được thay bằng một *Khối Transformer*.
 Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
-Đối với bộ giải mã, thêm một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
+Đối với bộ giải mã, khối này có thêm một tầng tập trung đa đầu khác để nhận vào trạng thái bộ mã hóa.
 2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*). <!-- `norm` chỗ này là viết tắt của `normalization` chứ không phải `norm` trong linear algebra. -->
 3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên ta sử dụng một tầng để biểu diễn vị trí từng phần tử trong chuỗi.
 
