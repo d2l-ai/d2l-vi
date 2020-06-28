@@ -207,7 +207,7 @@ That is, this applies whenever we perform $\mathbf{w} \leftarrow \mathbf{w} - \e
 Giờ ta sẽ khẳng định lại điều này một cách ngắn gọn.
 Xử lý từng điểm dữ liệu một đòi hỏi ta phải thực hiện rất nhiều phép nhân ma trận với vector (hay ngay cả vector với vector).
 Điều này khá tốn kém và đồng thời phải chịu cả tổng chi phí khá lớn do framework học sâu ở tầng dưới.
-Vấn đề này xảy ra ở cả lúc ước lượng một mạng khi áp dụng dữ liệu vào (thường được gọi là suy luận) và khi tính toán gradient để cập nhật các tham số.
+Vấn đề này xảy ra ở cả lúc đánh giá một mạng khi áp dụng dữ liệu vào (thường được gọi là suy luận) và khi tính toán gradient để cập nhật các tham số.
 Tức là vấn đề xảy ra mỗi khi ta thực hiện $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ trong đó
 
 
@@ -219,7 +219,7 @@ We can increase the *computational* efficiency of this operation by applying it 
 That is, we replace the gradient $\mathbf{g}_t$ over a single observation by one over a small batch
 -->
 
-Ta có thể tăng hiệu suất *tính toán* của phép toán này bằng cách áp dụng vào dữ liệu theo từng minibatch.
+Ta có thể tăng hiệu suất *tính toán* của phép toán này bằng cách áp dụng vào từng minibatch dữ liệu.
 Tức là ta thay thế gradient $\mathbf{g}_t$ trên một điểm dữ liệu duy nhất bằng gradient đó trên một batch nhỏ.
 
 
@@ -236,8 +236,8 @@ This, by itself, is a good thing, since it means that the updates are more relia
 
 Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
 Mặt khác, phương sai giảm một cách đáng kể.
-Do gradient của minibatch bao gồm các gradient $b := |\mathcal{B}_t|$ độc lập được lấy trung bình, độ lệch chuẩn của nó giảm đi $b^{-\frac{1}{2}}$ lần.
-Bản thân điều này là tốt do nó có nghĩa là việc cập nhật trở nên đáng tin cậy hơn so với việc lấy gradient toàn bộ tập dữ liệu.
+Do gradient của minibatch bao gồm các gradient $b := |\mathcal{B}_t|$ độc lập được lấy trung bình, độ lệch chuẩn của nó giảm đi theo hệ số $b^{-\frac{1}{2}}$.
+Đây là một điều tốt, cách cập nhật này có độ tin cậy gần bằng việc lấy gradient toàn bộ tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
