@@ -36,7 +36,7 @@ As a result, Transformer leads to a compatible model with significantly shorter 
 
 Để kết hợp các ưu điểm của CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
 Kiến trúc này gọi là *Transformer*, song song hóa bằng cách học chuỗi hồi tiếp với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
-Kết quả tạo ra một mô hình tương thích, với thời gian huấn luyện ngắn hơn đáng kể.
+Kết quả là ta có một mô hình tương thích với thời gian huấn luyện ngắn hơn đáng kể.
 
 <!--
 Similar to the seq2seq model in :numref:`sec_seq2seq`, Transformer is also based on the encoder-decoder architecture.
