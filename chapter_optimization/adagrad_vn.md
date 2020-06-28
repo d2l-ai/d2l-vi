@@ -43,7 +43,7 @@ whereas for infrequent features we are still short of observing them sufficientl
 In other words, the learning rate either decreases too quickly for frequent features or too slowly for infrequent ones.
 -->
 
-Các tham số liên quan đến các đặc trưng hiếm chỉ được cập nhật khi những đặc trưng này xảy ra.
+Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xảy ra.
 Đối với tốc độ học giảm dần, ta có thể gặp phải trường hợp các tham số của những đặc trưng phổ biến hội tụ khá nhanh đến giá trị tối ưu,
 trong khi đối với các đặc trưng thưa, ta không có đủ số lượng dữ liệu thích đáng để xác định giá trị tối ưu của chúng.
 Nói một cách khác, tốc độ học giảm quá nhanh đối với các đặc trưng phổ biến và quá chậm đối với các đặc trưng hiếm.
@@ -62,7 +62,7 @@ Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta
 Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
 Công thức này khá dễ để lập trình và phí tổn hao không đáng kể.
 Tuy nhiên, nó lại thất bại khi dữ liệu không hẳn là thưa thớt mà gradient thường nhỏ và chỉ hiếm khi lớn.
-Xét cho cùng, ta khó có thể phân biệt rõ ràng giữa thứ đủ điều kiện để được coi là một đặc trưng được quan sát hay không.
+Xét cho cùng, ta khó có thể phân biệt rõ ràng liệu một thứ có đủ điều kiện để được coi là một đặc trưng được quan sát hay không.
 
 <!--
 Adagrad by :cite:`Duchi.Hazan.Singer.2011` addresses this by replacing the rather crude counter $s(i, t)$ by an aggregate of the squares of previously observed gradients.
@@ -80,7 +80,7 @@ Việc này đem lại hai lợi ích: trước tiên ta không cần phải quy
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
 Các toạ độ mà thường ứng với các giá trị gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
 Phương pháp này trong thực tế đưa ra một thủ tục tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các vấn đề liên quan.
-Nhưng nó lại che giấu một vài lợi ích khác vốn thuộc về Adagrad mà có thể được hiểu rõ nhất khi đặt vào bối cảnh có các điều kiện có trước.
+Nhưng nó lại che giấu một vài lợi ích khác vốn thuộc về Adagrad mà có thể được hiểu rõ nhất khi ta xét đến bối cảnh tiền điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -438,7 +438,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
