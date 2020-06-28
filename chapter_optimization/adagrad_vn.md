@@ -88,7 +88,7 @@ As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in t
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-Như ta thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm đưa bài toán về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
+Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm đưa bài toán về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
@@ -119,7 +119,7 @@ Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các cực t
 Mặc dù thay đổi $\mathbf{c}$ một chút thì $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các cực tiểu của $f$ lại không như vậy (tương ứng với cực tiểu của $\bar{f}$).
 Mỗi khi các trị riêng $\boldsymbol{\Lambda}_i$ mang giá trị lớn, ta sẽ thấy $\bar{x}_i$ và cực tiểu của $f$ thay đổi khá nhỏ.
 Ngược lại, với $\boldsymbol{\Lambda}_i$ nhỏ, sự thay đổi $\bar{x}_i$ có thể khá đột ngột.
-Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là tỉ số điều kiện (*condition number*) của bài toán tối ưu.
+Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là hệ số điều kiện (*condition number*) của bài toán tối ưu.
 
 
 $$\kappa = \frac{\boldsymbol{\Lambda}_1}{\boldsymbol{\Lambda}_d}.$$
@@ -431,7 +431,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
