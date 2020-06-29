@@ -1,5 +1,5 @@
 <!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
+<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
 
 <!--
 # Automatic Parallelism
@@ -40,6 +40,9 @@ from mxnet import np, npx
 npx.set_np()
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Parallel Computation on CPUs and GPUs
@@ -110,6 +113,10 @@ both CPU and GPU devices without the need for sophisticated code on behalf of th
 *dịch đoạn phía trên*
 
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ## Parallel Computation and Communication
 -->
@@ -169,6 +176,9 @@ Fortunately, the system can copy `y[i-1]` while computing `y[i]` to reduce the t
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 We conclude with an illustration of the computational graph and its dependencies for a simple two-layer MLP when training on a CPU and two GPUs, as depicted in :numref:`fig_twogpu`.
@@ -211,6 +221,8 @@ This is where it is advantageous to have a graph based compute backend for optim
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+<!-- ========================================= REVISE - KẾT THÚC ===================================-->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2382)
@@ -235,10 +247,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
-
-<!-- Phần 5 -->
-* 
-
-<!-- Phần 6 -->
 * 

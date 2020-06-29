@@ -84,6 +84,10 @@ Hence it is ony possible to parallelize operations that do not depend on each ot
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
 As shown in :numref:`fig_frontends`, users can write MXNet programs in various frontend languages, such as Python, R, Scala and C++.
 Regardless of the front-end programming language used, the execution of MXNet programs occurs primarily in the back-end of C++ implementations.
@@ -144,6 +148,9 @@ Thus, there is little impact on the program’s overall performance, regardless 
 ![*dịch chú thích ảnh phía trên*](../img/threading.svg)
 :label:`fig_threading`
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Barriers and Blockers
@@ -202,6 +209,10 @@ with d2l.Benchmark('scalar conversion'):
     b.sum().item()
 ```
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
 ## Improving Computation
 -->
@@ -254,6 +265,13 @@ since the front-end does not have to wait for the back-end to return computation
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Improving Memory Footprint
@@ -331,6 +349,9 @@ for X, y in data_iter():
 loss(y, net(X)).wait_to_read()
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 To ensure that we do not overflow the task buffer on the backend we insert a `wait_to_read` call for the loss function at the end of each loop.
@@ -385,6 +406,10 @@ While this didn't cause any issues in the toy example above, it might well have 
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
+
 
 ## Tóm tắt
 
@@ -412,6 +437,8 @@ While this didn't cause any issues in the toy example above, it might well have 
 *dịch đoạn phía trên*
 
 
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2381)
@@ -442,4 +469,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
+* 
+
+<!-- Phần 7 -->
 * 

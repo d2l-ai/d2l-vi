@@ -1,5 +1,5 @@
 <!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
+<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
 
 <!--
 # Concise Implementation for Multiple GPUs
@@ -117,6 +117,9 @@ x_shards = gluon.utils.split_and_load(x, ctx)
 net(x_shards[0]), net(x_shards[1])
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 Once data passes through the network, the corresponding parameters are initialized *on the device the data passed through*.
@@ -227,6 +230,9 @@ def train(num_gpus, batch_size, lr):
           f'on {str(ctx)}')
 ```
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Experiments
@@ -284,6 +290,10 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 *dịch đoạn phía trên*
 
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+<!-- ========================================= REVISE - KẾT THÚC ===================================-->
+
+
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2384)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -304,13 +314,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
-
-<!-- Phần 4 -->
-* 
-
-<!-- Phần 5 -->
-* 
-
-<!-- Phần 6 -->
 * 

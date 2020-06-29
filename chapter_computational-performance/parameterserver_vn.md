@@ -49,6 +49,11 @@ The key aspect in it is that the aggregation of gradients occurs on GPU0 before 
 ![*dịch chú thích ảnh phía trên*](../img/ps.svg)
 :label:`fig_parameterserver`
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
+
 <!--
 In retrospect, the decision to aggregate on GPU0 seems rather ad-hoc.
 After all, we might just as well aggregate on the CPU.
@@ -114,6 +119,10 @@ See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horov
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
 <!--
 ## Ring Synchronization
 -->
@@ -170,6 +179,10 @@ This is quite an astonishing result.
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
 <!--
 ![Ring synchronization across 4 nodes. Each node starts transmitting parts of gradients to its left neighbor until the assembled gradient can be found in its right neighbor.](../img/ringsync.svg)
 -->
@@ -186,6 +199,10 @@ The only difference is that the synchronization path is somewhat more elaborate 
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Multi-Machine Training
@@ -222,6 +239,10 @@ Hence we need to *synchronize* them if we want to use synchronous distributed op
 
 ![*dịch chú thích ảnh phía trên*](../img/ps-multimachine.svg)
 :label:`fig_ps_multimachine`
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 Each of these operations seems rather straightforward.
@@ -274,6 +295,10 @@ Furthermore, note that this operation is independent between blocks $i$ pertaini
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
+
 <!--
 This allows us to define the following two operations: push, which accumulates gradients, and pull, which retrieves aggregate gradients.
 Since we have many different sets of gradients (after all, we have many layers), we need to index the gradients with a key $i$.
@@ -297,6 +322,10 @@ In the next section we will experiment with such a (key,value) store in practice
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 <!--
 ## Summary
@@ -329,6 +358,9 @@ In the next section we will experiment with such a (key,value) store in practice
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 
 ## Thảo luận
@@ -364,13 +396,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 7 -->
-* 
-
-<!-- Phần 8 -->
-* 
-
-<!-- Phần 9 -->
-* 
-
-<!-- Phần 10 -->
 * 

@@ -47,6 +47,10 @@ In a nutshell, we have a number of choices, given a minibatch of training data t
 ![*dịch chú thích ảnh phía trên*](../img/alexnet-original.svg)
 :label:`fig_alexnet_original`
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 
 <!--
 * We could partition the network layers across multiple GPUs. 
@@ -95,6 +99,10 @@ We focus on data parallelism in what follows.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Data Parallelism
@@ -149,6 +157,11 @@ npx.set_np()
 ```
 
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
+
+
 <!--
 ## A Toy Network
 -->
@@ -198,6 +211,9 @@ def lenet(X, params):
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ```
 
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Data Synchronization
@@ -270,6 +286,10 @@ print('before allreduce:\n', data[0], '\n', data[1])
 allreduce(data)
 print('after allreduce:\n', data[0], '\n', data[1])
 ```
+
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Distributing Data
@@ -382,6 +402,9 @@ def train(num_gpus, batch_size, lr):
           f'on {str(ctx_list)}')
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Experiment
@@ -444,6 +467,9 @@ Data parallelism is the simplest strategy.
 
 *dịch đoạn phía trên*
 
+
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/2383)

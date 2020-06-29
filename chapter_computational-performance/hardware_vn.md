@@ -46,6 +46,10 @@ such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 ![*dịch chú thích ảnh phía trên*](../img/latencynumbers.png)
 :label:`fig_latencynumbers`
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
+
 <!--
 ## Computers
 -->
@@ -100,6 +104,11 @@ Let us have a look at the various components in more detail.
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+
 <!--
 ## Memory
 -->
@@ -147,6 +156,9 @@ Curious readers are encouraged to review a lecture on DRAMs such as the one by [
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 GPU memory is subject to even higher bandwidth requirements since they have many more processing elements than CPUs.
@@ -166,6 +178,10 @@ They only matter when tuning GPU kernels for high throughput.
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Storage
@@ -192,6 +208,9 @@ One of their many downsides are their typically catastrophic failure modes and t
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 To understand the latter, consider the fact that HDDs spin at around 7,200 RPM.
@@ -246,6 +265,10 @@ We recommend that the user increase the provisioned number of IOPs whenever late
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## CPUs
@@ -308,6 +331,10 @@ For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perf
 ![*dịch chú thích ảnh phía trên*](../img/a77.svg)
 :label:`fig_cortexa77`
 
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
+
 
 <!--
 This means that efficient programs might be able to perform more than one instruction per clock cycle, *provided that* they can be carried out independently.
@@ -354,6 +381,13 @@ For instance, NVIDIA's RTX 2080 Ti has 4,352 CUDA cores, each of which is capabl
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Cache
@@ -421,6 +455,11 @@ This is one more reason for why there is a practical limit to cache sizes (besid
 :label:`fig_falsesharing`
 
 
+<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
+
+
 <!--
 ## GPUs and other Accelerators
 -->
@@ -474,6 +513,10 @@ Each Streaming Multiprocessor (SM) consists of four such blocks.
 ![*dịch chú thích ảnh phía trên*](../img/turing_processing_block.png)
 :width:`150px`
 :label:`fig_turing_processing_block`
+
+<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
 
 
 <!--
@@ -529,6 +572,14 @@ See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 10 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 11 ===================== -->
+
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Networks and Buses
 -->
@@ -576,6 +627,10 @@ We recommend to use [NCCL](https://github.com/NVIDIA/nccl) to achieve high data 
 -->
 
 *dịch đoạn phía trên*
+
+<!-- ===================== Kết thúc dịch Phần 11 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 12 ===================== -->
 
 
 ## Tóm tắt
@@ -657,6 +712,10 @@ who maintains an updated version of the numbers as a [GitHub Gist](https://gist.
 *dịch bảng phía trên*
 :label:`table_latency_numbers`
 
+<!-- ===================== Kết thúc dịch Phần 12 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 13 ===================== -->
+
 <!--
 :Latency Numbers for NVIDIA Tesla GPUs.
 -->
@@ -703,6 +762,10 @@ Is there a difference between the inner and outer tracks?
 *dịch đoạn phía trên*
 
 
+<!-- ===================== Kết thúc dịch Phần 13 ===================== -->
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
+
+
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/5320)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -732,4 +795,25 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
+* 
+
+<!-- Phần 7 -->
+* 
+
+<!-- Phần 8 -->
+* 
+
+<!-- Phần 9 -->
+* 
+
+<!-- Phần 10 -->
+* 
+
+<!-- Phần 11 -->
+* 
+
+<!-- Phần 12 -->
+* 
+
+<!-- Phần 13 -->
 * 
