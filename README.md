@@ -1,8 +1,9 @@
-<img src="static/logo-with-text-vi.png" width=35% align="center" />
+[<img src="static/logo-with-text-vi.png" />](https://d2l.aivivn.com/)
 
-# Dự án dịch sách ["Dive into Deep Learning"](https://www.d2l.ai/)
+## Dự án dịch sách "Dive into Deep Learning"
 
-Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
+Cuốn sách này được dịch và đăng tải tại https://d2l.aivivn.com/.<br/>
+Bản tiếng Anh: https://www.d2l.ai/
 
 ## Hướng dẫn đóng góp vào dự án
 Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
@@ -13,19 +14,10 @@ Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 ## Bảng thuật ngữ
 Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
-## Thứ tự dịch
+---
 
-Với các mục con (2.1, 2.2, ...)
-* [x] Đã dịch xong
-* [-] Đang dịch 
-* [ ] Chưa bắt đầu
+## Mục lục
 
-Với các chương (2., 3., ...)
-* [ ] Chưa revise
-* [-] Đang revise
-* [x] Đã revise xong.
-
-### Mục lục
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
 * [x] [Cài đặt](chapter_install/index_vn.md)
 * [x] [Ký hiệu](chapter_notation/index_vn.md)
@@ -102,19 +94,19 @@ Với các chương (2., 3., ...)
     * [x] 10.3. [Kiến trúc Transformer](chapter_attention-mechanisms/transformer_vn.md)
 * [ ] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
     * [x] 11.1. [Tối ưu và Học sâu](chapter_optimization/optimization-intro_vn.md)
-    * [-] 11.2. [Tính lồi](chapter_optimization/convexity_vn.md)
-    * [-] 11.3. [Hạ Gradient](chapter_optimization/gd_vn.md)
-    * [-] 11.4. [Hạ Gradient Ngẫu nhiên](chapter_optimization/sgd_vn.md)
-    * [-] 11.5. [Minibatch Stochastic Gradient Descent](chapter_optimization/minibatch-sgd_vn.md)
-    * [-] 11.6. [Momentum](chapter_optimization/momentum_vn.md)
+    * [x] 11.2. [Tính lồi](chapter_optimization/convexity_vn.md)
+    * [x] 11.3. [Hạ Gradient](chapter_optimization/gd_vn.md)
+    * [x] 11.4. [Hạ Gradient Ngẫu nhiên](chapter_optimization/sgd_vn.md)
+    * [-] 11.5. [Hạ Gradient Ngẫu nhiên theo Minibatch](chapter_optimization/minibatch-sgd_vn.md)
+    * [-] 11.6. [Động lượng](chapter_optimization/momentum_vn.md)
     * [-] 11.7. [Adagrad](chapter_optimization/adagrad_vn.md)
     * [-] 11.8. [RMSProp](chapter_optimization/rmsprop_vn.md)
     * [-] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
     * [-] 11.10. [Adam](chapter_optimization/adam_vn.md)
     * [-] 11.11. [Learning Rate Scheduling](chapter_optimization/lr-scheduler_vn.md)
 * [ ] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
-    * [ ] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
-    * [ ] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
+    * [-] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
+    * [-] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
     * [ ] 12.3. [Automatic Parallelism](chapter_computational-performance/auto-parallelism_vn.md)
     * [ ] 12.4. [Hardware](chapter_computational-performance/hardware_vn.md)
     * [ ] 12.5. [Training on Multiple GPUs](chapter_computational-performance/multiple-gpus_vn.md)
