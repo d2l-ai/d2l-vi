@@ -92,7 +92,7 @@ are processed by two "add and norm" layer that contains a residual structure and
 Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
 Đối với bộ giải mã, khối này có thêm một tầng tập trung đa đầu khác để nhận vào trạng thái bộ mã hóa.
 2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*).
-3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên ta sử dụng một tầng để biểu diễn vị trí từng phần tử trong chuỗi.
+3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên tầng biễu diễn vị trí được sử dụng để thêm thông tin vị trí vào từng phần tử trong chuỗi.
 
 
 <!--
