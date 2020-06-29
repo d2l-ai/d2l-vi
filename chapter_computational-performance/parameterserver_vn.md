@@ -1,5 +1,5 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
+<!-- ===================== Bắt đầu dịch Phần  ==================== -->
+<!-- ========================================= REVISE PHẦN  - BẮT ĐẦU =================================== -->
 
 <!--
 # Parameter Servers
@@ -10,17 +10,17 @@
 
 <!--
 As we move from single GPUs to multiple GPUs and then to multiple servers containing multiple GPUs, 
-possibly all spread out across multiple racks and network switches our algorithms for distributed and parallel training need to become much more sophisticated. 
+possibly all spread out across multiple racks and network switches our algorithms for distributed and parallel training need to become much more sophisticated.
 Details matter since different interconnects have very different bandwidth 
-(e.g. NVLink can offer up to 100GB/s across 6 links in an appropriate setting, PCIe 3.0 16x lanes offer 16GB/s while even high speed 100 GbE Ethernet only amounts to 10GB/s). 
-At the same time it's unreasonable to expect that a statistical modeler be an expert in networking and systems.
+(e.g., NVLink can offer up to 100GB/s across 6 links in an appropriate setting, PCIe 3.0 16x lanes offer 16GB/s while even high speed 100 GbE Ethernet only amounts to 10GB/s).
+At the same time it is unreasonable to expect that a statistical modeler be an expert in networking and systems.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-The core idea of the parameter server was introduced in :cite:`Smola.Narayanamurthy.2010` in the context of distributed latent variable models. 
-A description of the push and pull semantics then followed in :cite:`Ahmed.Aly.Gonzalez.ea.2012` and a description of the system and an open source library followed in :cite:`Li.Andersen.Park.ea.2014`. 
+The core idea of the parameter server was introduced in :cite:`Smola.Narayanamurthy.2010` in the context of distributed latent variable models.
+A description of the push and pull semantics then followed in :cite:`Ahmed.Aly.Gonzalez.ea.2012` and a description of the system and an open source library followed in :cite:`Li.Andersen.Park.ea.2014`.
 In the following we will motivate the components needed for efficiency.
 -->
 
@@ -33,52 +33,47 @@ In the following we will motivate the components needed for efficiency.
 ## *dịch tiêu đề phía trên*
 
 <!--
-Let's review the data parallel training approach to distributed training. 
-We will use this to the exclusion of all others in this section since it's significantly simpler to implement in practice. 
-There are virtually no use cases (besides deep learning on graphs) where any other strategy for parallelism is preferred since GPUs have plenty of memory nowadays. 
-:numref:`fig_parameterserver` describes the variant of data parallelism that we implemented in the previous section. 
+Let us review the data parallel training approach to distributed training.
+We will use this to the exclusion of all others in this section since it is significantly simpler to implement in practice.
+There are virtually no use cases (besides deep learning on graphs) where any other strategy for parallelism is preferred since GPUs have plenty of memory nowadays.
+:numref:`fig_parameterserver` describes the variant of data parallelism that we implemented in the previous section.
 The key aspect in it is that the aggregation of gradients occurs on GPU0 before the updated parameters are rebroadcast to all GPUs.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-![Left: single GPU training; Right: a variant of multi-GPU training. 
-It proceeds as follows. (1) we compute loss and gradient, (2) all gradients are aggregated on one GPU, 
-(3) parameter update happens and the parameters are re-distributed to all GPUs.](../img/ps.svg)
+![Left: single GPU training; Right: a variant of multi-GPU training. It proceeds as follows. (1) we compute loss and gradient, (2) all gradients are aggregated on one GPU, (3) parameter update happens and the parameters are re-distributed to all GPUs.](../img/ps.svg)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/ps.svg)
 :label:`fig_parameterserver`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 <!--
-In retrospect, the decision to aggregate on GPU0 seems rather ad-hoc. 
-After all, we might just as well aggregate on the CPU. 
-In fact, we could even decide to aggregate some of the parameters on one GPU and some others on another. 
-Provided that the optimization algorithm supports this, there's no real reason for why we couldn't. 
-For instance, if we have four parameter vectors $\mathbf{v}_1, \ldots \mathbf{v}_4$ with associated gradients $\mathbf{g}_1, \ldots \mathbf{g}_4$ we could aggregate the gradients on one GPU each.
+In retrospect, the decision to aggregate on GPU0 seems rather ad-hoc.
+After all, we might just as well aggregate on the CPU.
+In fact, we could even decide to aggregate some of the parameters on one GPU and some others on another.
+Provided that the optimization algorithm supports this, there is no real reason for why we could not.
+For instance, if we have four parameter vectors $\mathbf{v}_1, \ldots, \mathbf{v}_4$ with associated gradients $\mathbf{g}_1, \ldots, \mathbf{g}_4$ we could aggregate the gradients on one GPU each.
 -->
 
 *dịch đoạn phía trên*
 
-$$\mathbf{g}_{i} = \sum_{j \in \mathrm{GPUs}} \mathbf{g}_{ij}$$
+
+$$\mathbf{g}_{i} = \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ij}$$
+
 
 <!--
-This reasoning seems arbitrary and frivolous. 
-After all, the math is the same throughout. 
-However, we are dealing with real physical hardware where different buses have different bandwidth as discussed in :numref:`sec_hardware`. 
-Consider a real 4-way GPU server as described in :numref:`fig_bw_hierarchy`. 
-If it's particularly well connected, it might have a 100 GbE network card. 
-More typical numbers are in the 1-10 GbE range with an effective bandwidth of 100MB/s to 1GB/s. 
-Since the CPUs have too few PCIe lanes to connect to all GPUs directly (e.g. consumer grade Intel CPUs have 24 lanes) 
-we need a [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches). 
-The bandwidth from the CPU on a 16x Gen3 link is 16GB/s. 
-This is also the speed at which *each* of the GPUs is connected to the switch. 
-This means that it's more effective to communicate between the
+This reasoning seems arbitrary and frivolous.
+After all, the math is the same throughout.
+However, we are dealing with real physical hardware where different buses have different bandwidth as discussed in :numref:`sec_hardware`.
+Consider a real 4-way GPU server as described in :numref:`fig_bw_hierarchy`.
+If it is particularly well connected, it might have a 100 GbE network card.
+More typical numbers are in the 1-10 GbE range with an effective bandwidth of 100MB/s to 1GB/s.
+Since the CPUs have too few PCIe lanes to connect to all GPUs directly 
+(e.g., consumer grade Intel CPUs have 24 lanes) we need a [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
+The bandwidth from the CPU on a 16x Gen3 link is 16GB/s.
+This is also the speed at which *each* of the GPUs is connected to the switch. This means that it is more effective to communicate between the
 -->
 
 *dịch đoạn phía trên*
@@ -91,14 +86,14 @@ This means that it's more effective to communicate between the
 :label:`fig_bw_hierarchy`
 
 <!--
-For the sake of the argument let's assume that the gradients 'weigh' 160MB. 
-In this case it takes 30ms to send the gradients from all 3 remaining GPUs to the fourth one (each transfer takes 10ms = 160MB / 16 GB/s). 
+For the sake of the argument let us assume that the gradients 'weigh' 160MB.
+In this case it takes 30ms to send the gradients from all 3 remaining GPUs to the fourth one (each transfer takes 10ms = 160MB / 16 GB/s).
 Add another 30ms to transmit the weight vectors back we arrive at a total of 60ms.
-If we send all data to the CPU we incur a penalty of 40ms since *each* of the four GPUs needs to send the data to the CPU, yielding a total of 80ms. 
-Lastly assume that we are able to split the gradients into 4 parts of 40MB each. 
-Now we can aggregate each of the parts on a different GPU *simultaneously* since the PCIe switch offers a full-bandwidth operation between all links. 
-Instead of 30ms this takes 7.5ms, yielding a total of 15ms for a synchronization operation. 
-In short, depending on how we synchronize parameters the same operation can take anywhere from 15ms to 80ms. 
+If we send all data to the CPU we incur a penalty of 40ms since *each* of the four GPUs needs to send the data to the CPU, yielding a total of 80ms.
+Lastly assume that we are able to split the gradients into 4 parts of 40MB each.
+Now we can aggregate each of the parts on a different GPU *simultaneously* since the PCIe switch offers a full-bandwidth operation between all links.
+Instead of 30ms this takes 7.5ms, yielding a total of 15ms for a synchronization operation.
+In short, depending on how we synchronize parameters the same operation can take anywhere from 15ms to 80ms.
 :numref:`fig_ps_distributed` depicts the different strategies for exchanging parameters.
 -->
 
@@ -111,21 +106,13 @@ In short, depending on how we synchronize parameters the same operation can take
 ![*dịch chú thích ảnh phía trên*](../img/ps-distributed.svg)
 :label:`fig_ps_distributed`
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
 <!--
-Note that we have yet another tool at our disposal when it comes to improving performance: in a deep network it takes some time to compute all gradients from the top to the bottom. 
-We can begin synchronizing gradients for some parameter groups even while we're still busy computing them for others (the technical details for that are somewhat involved). 
-See e.g. :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horovod](https://github.com/horovod/horovod).
+Note that we have yet another tool at our disposal when it comes to improving performance: in a deep network it takes some time to compute all gradients from the top to the bottom.
+We can begin synchronizing gradients for some parameter groups even while we are still busy computing them for others (the technical details for that are somewhat involved).
+See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horovod](https://github.com/horovod/horovod).
 -->
 
 *dịch đoạn phía trên*
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Ring Synchronization
@@ -134,12 +121,12 @@ See e.g. :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horovo
 ## *dịch tiêu đề phía trên*
 
 <!--
-When it comes to synchronization on modern deep learning hardware we often encounter significantly bespoke network connectivity. 
-For instance, the AWS P3.16xlarge and NVIDIA DGX-2 instances share the connectivity structure of :numref:`fig_nvlink`. 
-Each GPU connects to a host CPU via a PCIe link which operates at best at 16 GB/s. 
-Additionally each GPU also has 6 NVLink connections, each of which is capable of transferring 300 Gbit/s bidirectionally. 
-This amounts to around 18 GB/s per link per direction. 
-In short, the aggregate NVLink bandwidth is significantly higher than the PCIe bandwidth. 
+When it comes to synchronization on modern deep learning hardware we often encounter significantly bespoke network connectivity.
+For instance, the AWS P3.16xlarge and NVIDIA DGX-2 instances share the connectivity structure of :numref:`fig_nvlink`.
+Each GPU connects to a host CPU via a PCIe link which operates at best at 16 GB/s.
+Additionally each GPU also has 6 NVLink connections, each of which is capable of transferring 300 Gbit/s bidirectionally.
+This amounts to around 18 GB/s per link per direction.
+In short, the aggregate NVLink bandwidth is significantly higher than the PCIe bandwidth.
 The question is how to use it most efficiently.
 -->
 
@@ -153,8 +140,8 @@ The question is how to use it most efficiently.
 :label:`fig_nvlink`
 
 <!--
-It turns out :cite:`Wang.Li.Liberty.ea.2018` that the optimal synchronization strategy is to decompose the network into two rings and to use them to synchronize data directly. 
-:numref:`fig_nvlink_twoloop` illustrates that the network can be decomposed into one ring (1-2-3-4-5-6-7-8-1) with double NVLink bandwidth and into one (1-4-6-3-5-8-2-7-1) with regular bandwidth. 
+It turns out :cite:`Wang.Li.Liberty.ea.2018` that the optimal synchronization strategy is to decompose the network into two rings and to use them to synchronize data directly.
+:numref:`fig_nvlink_twoloop` illustrates that the network can be decomposed into one ring (1-2-3-4-5-6-7-8-1) with double NVLink bandwidth and into one (1-4-6-3-5-8-2-7-1) with regular bandwidth.
 Designing an efficient synchronization protocol in this case is nontrivial.
 -->
 
@@ -167,21 +154,18 @@ Designing an efficient synchronization protocol in this case is nontrivial.
 ![*dịch chú thích ảnh phía trên*](../img/nvlink-twoloop.svg)
 :label:`fig_nvlink_twoloop`
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
 <!--
-Consider the following thought experiment: given a ring of $n$ compute nodes (or GPUs) we can send gradients from the first to the second node. 
-There it is added to the local gradient and sent on to the third node, and so on. 
-After $n-1$ steps the aggregate gradient can be found in the last-visited node. 
-That is, the time to aggregate gradients grows linearly with the number of nodes. 
-But if we do this the algorithm is quite inefficient. 
-After all, at any time there's only one of the nodes communicating. 
-What if we broke the gradients into $n$ chunks and started synchronizing chunk $i$ starting at node $i$. 
-Since each chunk is of site $1/n$ the total time is now $(n-1)/n \approx 1$. 
-In other words, the time spent to aggregate gradients *does not grow* as we increase the size of the ring. 
-This is quite an astonishing result. :numref:`fig_ringsync` illustrates the sequence of steps on $n=4$ nodes.
+Consider the following thought experiment: given a ring of $n$ compute nodes (or GPUs) we can send gradients from the first to the second node.
+There it is added to the local gradient and sent on to the third node, and so on.
+After $n-1$ steps the aggregate gradient can be found in the last-visited node.
+That is, the time to aggregate gradients grows linearly with the number of nodes.
+But if we do this the algorithm is quite inefficient.
+After all, at any time there is only one of the nodes communicating.
+What if we broke the gradients into $n$ chunks and started synchronizing chunk $i$ starting at node $i$.
+Since each chunk is of site $1/n$ the total time is now $(n-1)/n \approx 1$.
+In other words, the time spent to aggregate gradients *does not grow* as we increase the size of the ring.
+This is quite an astonishing result.
+:numref:`fig_ringsync` illustrates the sequence of steps on $n=4$ nodes.
 -->
 
 *dịch đoạn phía trên*
@@ -194,20 +178,14 @@ This is quite an astonishing result. :numref:`fig_ringsync` illustrates the sequ
 :label:`fig_ringsync`
 
 <!--
-If we use the same example of synchronizing 160MB across 8 V100 GPUs 
-we arrive at approximately $2 \cdot 160 \mathrm{MB} / (3 \cdot 18 \mathrm{GB/s}) \approx 6 \mathrm{ms}$ 
-This is quite a bit better than using the PCIe bus, even though we are now using 8 GPUs. 
-Note that in practice these numbers are quite a bit worse, since deep learning frameworks often fail to assemble communication into large burst transfers. 
-Moreover, timing is critical.
-Note that there is a common misconception that ring synchronization is fundamentally different from other synchronization algorithms. 
+If we use the same example of synchronizing 160MB across 8 V100 GPUs we arrive at approximately $2 \cdot 160 \mathrm{MB} / (3 \cdot 18 \mathrm{GB/s}) \approx 6 \mathrm{ms}$.
+This is quite a bit better than using the PCIe bus, even though we are now using 8 GPUs.
+Note that in practice these numbers are quite a bit worse, since deep learning frameworks often fail to assemble communication into large burst transfers. Moreover, timing is critical.
+Note that there is a common misconception that ring synchronization is fundamentally different from other synchronization algorithms.
 The only difference is that the synchronization path is somewhat more elaborate when compared to a simple tree.
 -->
 
 *dịch đoạn phía trên*
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Multi-Machine Training
@@ -217,21 +195,17 @@ The only difference is that the synchronization path is somewhat more elaborate 
 
 <!--
 Distributed training on multiple machines adds a further challenge: 
-we need to communicate with servers that are only connected across a comparatively lower bandwidth fabric which can be over an order of magnitude slower in some cases. S
-ynchronization across devices is tricky. After all, different machines running training code will have subtly different speed. 
-Hence we need to *synchronize* them if we want to use synchronous distributed optimization. 
+we need to communicate with servers that are only connected across a comparatively lower bandwidth fabric which can be over an order of magnitude slower in some cases.
+Synchronization across devices is tricky.
+After all, different machines running training code will have subtly different speed.
+Hence we need to *synchronize* them if we want to use synchronous distributed optimization.
 :numref:`fig_ps_multimachine` illustrates how distributed parallel training occurs.
 -->
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
 <!--
-1. A (different) batch of data is read on each machine, split across multiple GPUs and transferred to GPU memory. 
-There predictions and gradients are computed on each GPU batch separately.
+1. A (different) batch of data is read on each machine, split across multiple GPUs and transferred to GPU memory. There predictions and gradients are computed on each GPU batch separately.
 2. The gradients from all local GPUs are aggregated on one GPU (or alternatively parts of it are aggregated over different GPUs.
 3. The gradients are sent to the CPU.
 4. The CPU sends the gradients to a central parameter server which aggregates all the gradients.
@@ -250,15 +224,17 @@ There predictions and gradients are computed on each GPU batch separately.
 :label:`fig_ps_multimachine`
 
 <!--
-Each of these operations seems rather straightforward. And, indeed, they can be carried out efficiently *within* a single machine. 
-Once we look at multiple machines, though, we can see that the central parameter server becomes the bottleneck. 
-After all, the bandwidth per server is limited, hence for $m$ workers the time it takes to send all gradients to the server is $O(m)$. 
-We can break through this barrier by increasing the number of servers to $n$. 
-At this point each server only needs to store $O(1/n)$ of the parameters, hence the total time for updates and optimization becomes $O(m/n)$. 
-Matching both numbers yields constant scaling regardless of how many workers we are dealing with. 
-In practice we use the *same* machines both as workers and as servers. 
-:numref:`fig_ps_multips` illustrates the design. See also :cite:`Li.Andersen.Park.ea.2014` for details. 
-In particular, ensuring that multiple machines work without unreasonable delays is nontrivial. 
+Each of these operations seems rather straightforward.
+And, indeed, they can be carried out efficiently *within* a single machine.
+Once we look at multiple machines, though, we can see that the central parameter server becomes the bottleneck.
+After all, the bandwidth per server is limited, hence for $m$ workers the time it takes to send all gradients to the server is $O(m)$.
+We can break through this barrier by increasing the number of servers to $n$.
+At this point each server only needs to store $O(1/n)$ of the parameters, hence the total time for updates and optimization becomes $O(m/n)$.
+Matching both numbers yields constant scaling regardless of how many workers we are dealing with.
+In practice we use the *same* machines both as workers and as servers.
+:numref:`fig_ps_multips` illustrates the design.
+See also :cite:`Li.Andersen.Park.ea.2014` for details.
+In particular, ensuring that multiple machines work without unreasonable delays is nontrivial.
 We omit details on barriers and will only briefly touch on synchronous and asynchronous updates below.
 -->
 
@@ -271,14 +247,6 @@ We omit details on barriers and will only briefly touch on synchronous and async
 ![*dịch chú thích ảnh phía trên*](../img/ps-multips.svg)
 :label:`fig_ps_multips`
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
-
 <!--
 ## (key,value) Stores
 -->
@@ -286,68 +254,58 @@ We omit details on barriers and will only briefly touch on synchronous and async
 ## *dịch tiêu đề phía trên*
 
 <!--
-Implementing the steps required for distributed multi-GPU training in practice is nontrivial. 
-In particular, given the many different choices that we might encounter. 
-This is why it pays to use a common abstraction, namely that of a (key,value) store with redefined update semantics. 
+Implementing the steps required for distributed multi-GPU training in practice is nontrivial.
+In particular, given the many different choices that we might encounter.
+This is why it pays to use a common abstraction, namely that of a (key,value) store with redefined update semantics.
 Across many servers and many GPUs the gradient computation can be defined as
 -->
 
 *dịch đoạn phía trên*
 
-$$\mathbf{g}_{i} = \sum_{k \in \mathrm{workers}} \sum_{j \in \mathrm{GPUs}} \mathbf{g}_{ijk}.$$
+
+$$\mathbf{g}_{i} = \sum_{k \in \mathrm{workers}} \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ijk}.$$
 
 <!--
-The key aspect in this operation is that it is a *commutative reduction*, that is, it turns many vectors into one and the order in which the operation is applied doesn't matter. 
-This is great for our purposes since we don't (need to) have fine grained control over when which gradient is received. 
-Note that it's possible for us to perform the reduction stagewise. 
+The key aspect in this operation is that it is a *commutative reduction*, that is, it turns many vectors into one and the order in which the operation is applied does not matter.
+This is great for our purposes since we do not (need to) have fine grained control over when which gradient is received.
+Note that it is possible for us to perform the reduction stagewise.
 Furthermore, note that this operation is independent between blocks $i$ pertaining to different parameters (and gradients).
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-This allows us to define the following two operations: push, which accumulates gradients, and pull, which retrieves aggregate gradients. 
-Since we have many different sets of gradients (after all, we have many layers), we need to index the gradients with a key $i$. 
-This similarity to (key,value) stores, such as the one introduced in Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` is not by coincidence. 
+This allows us to define the following two operations: push, which accumulates gradients, and pull, which retrieves aggregate gradients.
+Since we have many different sets of gradients (after all, we have many layers), we need to index the gradients with a key $i$.
+This similarity to (key,value) stores, such as the one introduced in Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` is not by coincidence.
 They, too, satisfy many similar characteristics, in particular when it comes to distributing the parameters across multiple servers.
 -->
 
 *dịch đoạn phía trên*
 
 <!--
-* **push(key, value)** sends a particular gradient (the value) from a worker to a common storage. 
-There the parameter is aggregated, e.g. by summing it up.
-* **pull(key, value)** retrieves an aggregate parameter from common storage, e.g. after combining the gradients from all workers.
+* **push(key, value)** sends a particular gradient (the value) from a worker to a common storage. There the parameter is aggregated, e.g., by summing it up.
+* **pull(key, value)** retrieves an aggregate parameter from common storage, e.g., after combining the gradients from all workers.
 -->
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
-
 <!--
-By hiding all the complexity about synchronization behind a simple push and pull operation 
-we can decouple the concerns of the statistical modeler who wants to be able to express optimization in simple terms 
-and the systems engineer who needs to deal with the complexity inherent in distributed synchronization. 
+By hiding all the complexity about synchronization behind a simple push and pull operation we can decouple the concerns of the statistical modeler 
+who wants to be able to express optimization in simple terms and the systems engineer who needs to deal with the complexity inherent in distributed synchronization.
 In the next section we will experiment with such a (key,value) store in practice.
 -->
 
 *dịch đoạn phía trên*
 
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================-->
-
 <!--
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
-* Synchronization needs to be highly adaptive to specific network infrastructure and connectivity within a server. 
-This can make a significant difference to the time it takes to synchronize.
+* Synchronization needs to be highly adaptive to specific network infrastructure and connectivity within a server. This can make a significant difference to the time it takes to synchronize.
 * Ring-synchronization can be optimal for P3 and DGX-2 servers. For others possibly not so much.
 * A hierarchical synchronization strategy works well when adding multiple parameter servers for increased bandwidth.
 * Asynchronous communication (while computation is still ongoing) can improve performance.
@@ -359,10 +317,10 @@ This can make a significant difference to the time it takes to synchronize.
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
-1. Can you increase the ring synchronization even further? Hint - you can send messages in both directions.
+1. Can you increase the ring synchronization even further? Hint: you can send messages in both directions.
 2. Fully asynchronous. Some delays permitted?
 3. Fault tolerance. How? What if we lose a server? Is this a problem?
 4. Checkpointing
@@ -372,47 +330,47 @@ This can make a significant difference to the time it takes to synchronize.
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/5319)
--->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.mxnet.io/t/5319)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-### Những người thực hiện
+## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
 hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
 
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
+Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-*
+* 
 
 <!-- Phần 2 -->
-*
+* 
 
 <!-- Phần 3 -->
-*
+* 
 
 <!-- Phần 4 -->
-*
+* 
 
 <!-- Phần 5 -->
-*
+* 
 
 <!-- Phần 6 -->
-*
+* 
 
 <!-- Phần 7 -->
-*
+* 
+
+<!-- Phần 8 -->
+* 
+
+<!-- Phần 9 -->
+* 
+
+<!-- Phần 10 -->
+* 

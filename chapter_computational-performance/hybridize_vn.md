@@ -9,7 +9,7 @@
 :label:`sec_hybridize`
 
 <!--
-So far, this book has focused on imperative programming, which makes use of statements such as `print`, `+` or `if` to change a program’s state. 
+So far, this book has focused on imperative programming, which makes use of statements such as `print`, `+` or `if` to change a program’s state.
 Consider the following example of a simple imperative program.
 -->
 
@@ -101,7 +101,7 @@ Secondly, a compiler might optimize and rewrite the above code into `print((1 + 
 This is possible since a compiler gets to see the full code before turning it into machine instructions. 
 For instance, it can release memory (or never allocate it) whenever a variable is no longer needed. 
 Or it can transform the code entirely into an equivalent piece. 
-To get a better idea consider the following simulation of imperative programming (it's Python after all) below.
+To get a better idea consider the following simulation of imperative programming (it is Python after all) below.
 -->
 
 Quy trình trên cho phép chúng ta tối ưu hóa chương trình một cách đáng kể.
@@ -111,6 +111,7 @@ Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn 
 Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
 Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python).
+
 
 ```{.python .input  n=2}
 def add_():
@@ -136,6 +137,7 @@ print(prog)
 y = compile(prog, '', 'exec')
 exec(y)
 ```
+
 
 <!--
 The differences between imperative (interpreted) programming and symbolic programming are as follows:
@@ -172,7 +174,7 @@ Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch t
 
 <!--
 Historically most deep learning frameworks choose between an imperative or a symbolic approach. 
-For example, Theano,  TensorFlow (inspired by the latter), Keras and CNTK formulate models symbolically. 
+For example, Theano, TensorFlow (inspired by the latter), Keras and CNTK formulate models symbolically. 
 Conversely Chainer and PyTorch take an imperative approach. 
 An imperative mode was added TensorFlow 2.0 (via Eiger) and Keras in later revisions. 
 When designing Gluon, developers considered whether it would be possible to combine the benefits of both programming models. 
@@ -215,7 +217,7 @@ Chúng tôi sẽ minh hoạ lợi ích của việc này ở ví dụ bên dư�
 <!--
 The easiest way to get a feel for how hybridization works is to consider deep networks with multiple layers. 
 Conventionally the Python interpreter will need to execute the code for all layers to generate an instruction that can then be forwarded to a CPU or a GPU. 
-For a single (fast) compute device this doesn't cause any major issues. 
+For a single (fast) compute device this does not cause any major issues. 
 On the other hand, if we use an advanced 8-GPU server such as an AWS P3dn.24xlarge instance Python will struggle to keep all GPUs busy. 
 The single-threaded Python interpreter becomes the bottleneck here. 
 Let's see how we can address this for significant parts of the code by replacing `Sequential` by `HybridSequential`. We begin by defining a simple MLP.
@@ -224,14 +226,14 @@ Let's see how we can address this for significant parts of the code by replacing
 *dịch đoạn phía trên*
 
 ```{.python .input  n=3}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn
 npx.set_np()
 
 # factory for networks
 def get_net():
-    net = nn.HybridSequential()
+    net = nn.HybridSequential()  
     net.add(nn.Dense(256, activation='relu'),
             nn.Dense(128, activation='relu'),
             nn.Dense(2))
@@ -258,7 +260,7 @@ net(x)
 <!--
 This seems almost too good to be true: simply designate a block to be `HybridSequential`, write the same code as before and invoke `hybridize`. 
 Once this happens the network is optimized (we will benchmark the performance below). 
-Unfortunately this doesn't work magically for every layer. 
+Unfortunately this does not work magically for every layer. 
 That said, the blocks provided by Gluon are by default subclasses of `HybridBlock` and thus hybridizable. 
 A layer will not be optimized if it inherits from the `Block` instead.
 -->
@@ -288,17 +290,17 @@ It will come handy throughout the chapter as we set out to measure (and improve)
 *dịch đoạn phía trên*
 
 ```{.python .input}
-# Saved in the d2l package for later use
-class benchmark:
-    def __init__(self, description = 'Done in %.4f sec'):
+#@save
+class Benchmark:    
+    def __init__(self, description='Done'):
         self.description = description
-
+        
     def __enter__(self):
         self.timer = d2l.Timer()
         return self
 
     def __exit__(self, *args):
-        print(self.description % self.timer.stop())
+        print(f'{self.description}: {self.timer.stop():.4f} sec')
 ```
 
 <!--
@@ -309,12 +311,12 @@ Now we can invoke the network twice, once with and once without hybridization.
 
 ```{.python .input  n=5}
 net = get_net()
-with benchmark('Without hybridization: %.4f sec'):
+with Benchmark('Without hybridization'):
     for i in range(1000): net(x)
     npx.waitall()
 
 net.hybridize()
-with benchmark('With    hybridization: %.4f sec'):
+with Benchmark('With hybridization'):
     for i in range(1000): net(x)
     npx.waitall()
 ```
@@ -386,6 +388,7 @@ We will illustrate how to design more general models and also how compilation wi
 -->
 
 *dịch đoạn phía trên*
+
 
 ```{.python .input  n=8}
 class HybridNet(nn.HybridBlock):
@@ -485,7 +488,7 @@ The benefit can range from small percentage points to more than twice the speed,
 <!--
 1. Design a network using the `HybridConcurrent` class. Alternatively look at :ref:`sec_googlenet` for a network to compose.
 2. Add `x.asnumpy()` to the first line of the `hybrid_forward` function of the HybridNet class in this section. Execute the code and observe the errors you encounter. Why do they happen?
-3. What happens if we add control flow, i.e. the Python statements `if` and `for` in the `hybrid_forward` function?
+3. What happens if we add control flow, i.e., the Python statements `if` and `for` in the `hybrid_forward` function?
 4. Review the models that interest you in the previous chapters and use the HybridBlock class or HybridSequential class to implement them.
 -->
 
@@ -510,29 +513,22 @@ Bản dịch trong trang này được thực hiện bởi:
 <!--
 Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
 hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
+Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Tâm
-
-<!-- Phần 2 -->
-* Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-*
+* 
 
 <!-- Phần 4 -->
-*
+* 
 
 <!-- Phần 5 -->
-*
+* 
 
 <!-- Phần 6 -->
-*
+* 
