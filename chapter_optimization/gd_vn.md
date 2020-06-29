@@ -482,8 +482,8 @@ Having second order information allows us to be cautious whenever the curvature 
 Let us see how this works with a slightly smaller learning rate, say $\eta = 0.5$. As we can see, we have quite an efficient algorithm.
 -->
 
-Điều nay sai một cách ngoạn mục.
-Làm sao ta có thể sửa chửa nó đây? Có một cách có thể "sửa" ma trận Hessian là thay bằng giá trị tuyệt đối của nó.
+Điều này sai một cách ngoạn mục.
+Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó.
 Một chiến lược khác là đưa tốc độ học trở lại.
 Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn.
 Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng.
