@@ -414,7 +414,7 @@ Let us see what happens in other problems.
 Với $f(x) = \frac{1}{2} x^2$ ta có $\nabla f(x) = x$ và $H_f = 1$.
 Do đó với $x$ bất kỳ, ta đều thu được $\epsilon = -x$.
 Nói cách khác, một bước đơn lẻ là đã đủ để hội tụ một cách hoàn hảo mà không cần bất kỳ tinh chỉnh nào!
-Chúng ta khá may mắn ở đây vì mở rộng Tayler đã chính xác.
+Chúng ta khá may mắn ở đây vì khai triển Taylor không cần xấp xỉ.
 Hãy xem thử điều gì sẽ xảy ra với các bài toán khác nhé.
 
 ```{.python .input}
