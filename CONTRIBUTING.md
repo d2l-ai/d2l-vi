@@ -156,7 +156,7 @@ Riêng về vấn đề trao đổi, thảo luận với người phản biện,
 Bạn vui lòng liên hệ @duythanhvn thông qua Github issue hoặc Slack để thảo luận thêm.
 </details>
 <details>
-<summary>Tôi đã có kinh nghiệm làm việc với Github</summary>
+<summary>Tôi đã có kinh nghiệm làm việc với Github.</summary>
 
 Thật tuyệt vời, bạn có thể bắt đầu nhanh hơn vào phần nội dung của cuốn sách mà không mất nhiều thời gian để làm quen lại với Github.
 
@@ -176,6 +176,15 @@ Một số plugins chuyên dụng cho VS Code bạn có thể sử dụng trong 
 <summary>Tôi có thể merge PR của mình không?</summary>
 
 Không, chúng tôi khuyến khích các thành viên tham gia dự án chỉ nên tập trung vào phần dịch thuật và trao đổi dịch thuật mà thôi (kể cả khi bạn đã được thêm vào nhóm Collaborators). Nhóm điều phối sẽ kiểm tra các PR và tiến hành merge khi đã đạt yêu cầu.
+</details>
+<details>
+<summary>Phần tôi dịch trông không giống bản gốc ở website d2l.ai?</summary>
+
+Chúng tôi khuyến khích bạn khi dịch thì bám sát vào nội dung chúng tôi đã cung cấp trong tập tin, mọi sự thay đổi và cập nhật chúng tôi sẽ có hành động cụ thể sau. 
+
+Điều này đặc biệt lưu ý vì ở bản tiếng Anh, nhóm tác giả luôn có những cập nhật lớn nhỏ; ở bản tiếng Việt này chúng tôi sẽ chủ động kiểm tra và có những phản ứng phù hợp, đôi khi sự thay đổi của bản gốc không ảnh hưởng đến nội dung hiện thời, chúng tôi cũng không có chủ trương cập nhật.
+
+Vì vậy, bạn hãy dịch dựa trên nội dung mà nhóm đã cung cấp trong tập tin nhé.
 </details>
 
 
