@@ -274,6 +274,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | metric                       | phép đo                       |                                              |
 | minibatch                    | minibatch                     | [https://git.io/JvojE](https://git.io/JvojE) |
 | minimize (in optimization) | cực tiểu hóa | |
+| minimizer                    | nghiệm cực tiểu               |                                              |
 | misclassified                | bị phân loại nhầm             |                                              |
 | mislabeled                   | bị gán nhãn nhầm              |                                              |
 | model                        | mô hình                       |                                              |
