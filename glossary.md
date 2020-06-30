@@ -240,6 +240,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | learning algorithm                 | thuật toán học                 |                                              |
 | learning rate                      | tốc độ học                     |                                              |
 | learning rate schedule | định thời tốc độ học | |
+| line search                        | tìm kiếm đường                 |                                              |
 | linear                             | tuyến tính                     | [https://git.io/JvohV](https://git.io/JvohV) |
 | linear algebra                     | đại số tuyến tính              |                                              |
 | linear dependence                  | phụ thuộc tuyến tính           | [https://git.io/JvKet](https://git.io/JvKet) |
