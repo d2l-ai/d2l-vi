@@ -80,7 +80,7 @@ Let us look at the problem of minimizing $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}
 -->
 
 Các bài toán tối ưu lồi có giá trị trong việc phân tích đặc tính của các thuật toán.
-Suy cho cùng, đa số các bài toán không lồi đều khó có thể tìm được chứng minh có giá trị theo lý thuyết, nhưng thường dựa vào *trực giác* và *nhận thức* (*insight*).
+Suy cho cùng, đa số các bài toán không lồi khó có thể tìm được các chứng minh có giá trị theo lý thuyết, thay vào đó chúng thường dựa vào *trực giác* và *nhận thức* (*insight*).
 Xét bài toán cực tiểu hoá $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 
 <!--
@@ -88,7 +88,7 @@ As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in t
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm đưa bài toán về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
+Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
@@ -432,6 +432,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
 * 
