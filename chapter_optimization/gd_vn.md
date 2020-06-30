@@ -545,6 +545,10 @@ It comes down to ensuring that $f$ does not have any "surprising" properties in 
 -->
 
 Bên cạnh đó, các nhà nghiên cứu tối ưu hóa gọi đây là hội tụ *tuyến tính*, còn điều kiện $e_{k+1} \leq \alpha e_k$ được gọi là tốc độ hội tụ *không đổi*.
+Lưu ý rằng phân tích này đi kèm với một số cảnh báo: Chúng ta không thực sự biết rằng khi nào mình sẽ tiến tới được vùng hội tụ nhanh.
+Thay vào đó, chúng ta chỉ biết rằng một khi đến được đó, việc hội tụ sẽ xảy ra rất nhanh chóng.
+Thêm nữa, điều này yêu cầu $f$ được xử lý tốt ở các đạo hàm bậc cao.
+Nó đảm bảo rằng $f$ sẽ không có bất cứ một tính chất "bất ngờ" nào về cách nó có thể thay đổi giá trị.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
