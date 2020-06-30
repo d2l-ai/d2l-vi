@@ -5,7 +5,6 @@
 -->
 
 # RMSProp
-
 :label:`sec_rmsprop`
 
 <!--
