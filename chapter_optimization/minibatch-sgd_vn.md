@@ -541,7 +541,7 @@ How does the behavior of SGD, minibatch SGD and that of gradient descent change?
 
 1. Sửa đổi kích thước batch và tốc độ học và quan sát tốc độ suy giảm giá trị của hàm mục tiêu và thời gian cần thiết trong mỗi epoch.
 2. Đọc thêm tài liệu MXNet và sử dụng lớp `Trainer`  với hàm `set_learning_rate` để giảm tốc độ học của SGD theo minibatch bằng 1/10 giá trị trước đó sau mỗi epoch.
-3. Hãy so sánh SGD theo minibatch với một biến thể mà *chọn mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
+3. Hãy so sánh SGD theo minibatch với một biến thể *lấy mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
 4. Một ác thần sao chép bộ dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát xảy ra hai lần và dữ liệu của bạn bằng hai lần kích thước ban đầu của nó, nhưng không ai nói với bạn biết).
 Cách hoạt động của thuật toán SGD, SGD theo minibatch và thuật toán hạ gradient sẽ thay đổi như thế nào?
 
