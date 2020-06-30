@@ -22,7 +22,7 @@ Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một đ�
 Mỗi cách có mặt hạn chế riêng của nó.
 Hạ Gradient có *hiệu suất dữ liệu* (*data efficient*) thấp khi dữ liệu tương đồng với nhau.
 Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computationally efficient*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
-Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, đó chính là phương pháp mà ta sử dụng ở các ví dụ thảo luận từ trước tới nay.
+Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, đó chính là phương pháp mà ta sử dụng ở các ví dụ đã thảo luận từ trước tới nay.
 
 <!--
 ## Vectorization and Caches
@@ -40,7 +40,7 @@ With 8 GPUs per server and 16 servers we already arrive at a minibatch size of 1
 Trọng tâm của quyết định sử dụng minibatch là hiệu suất tính toán.
 Để dễ hiểu, ta xét trường hợp tính toán song song giữa nhiều GPU và giữa nhiều máy chủ.
 Trong trường hợp này ta cần đưa ít nhất một ảnh vào mỗi GPU.
-Với 8 GPU mỗi máy chủ và 16 máy chủ, ta đã có minibatch đạt kích thước 128.
+Với 16 máy chủ và 8 GPU mỗi máy, ta đã có minibatch đạt kích thước 128.
 
 <!--
 Things are a bit more subtle when it comes to single GPUs or even CPUs.
