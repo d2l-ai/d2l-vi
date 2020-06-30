@@ -455,7 +455,7 @@ $$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và~do~đó }
 That is, we need to invert the Hessian $H_f$ as part of the optimization problem.
 -->
 
-*dịch đoạn phía trên*
+Nghĩa là, ta cần phải nghịch đảo ma trận Hessian $H_f$ như một phần của bài toán tối ưu hóa.
 
 <!--
 For $f(x) = \frac{1}{2} x^2$ we have $\nabla f(x) = x$ and $H_f = 1$.
@@ -465,8 +465,11 @@ Alas, we got a bit lucky here since the Taylor expansion was exact.
 Let us see what happens in other problems.
 -->
 
-*dịch đoạn phía trên*
-
+Với $f(x) = \frac{1}{2} x^2$ ta có $\nabla f(x) = x$ và $H_f = 1$.
+Do đó với $x$ bất kỳ, ta đều thu được $\epsilon = -x$.
+Nói cách khác, một bước đơn lẻ là đã đủ để hội tụ một cách hoàn hảo mà không cần bất kỳ tinh chỉnh nào!
+Chúng ta khá may mắn ở đây vì khai triển Taylor không cần xấp xỉ.
+Hãy xem thử điều gì sẽ xảy ra với các bài toán khác nhé.
 
 ```{.python .input}
 c = 0.5
@@ -502,8 +505,11 @@ That is a fatal flaw of the algorithm.
 Let us see what happens in practice.
 -->
 
-*dịch đoạn phía trên*
-
+Giờ hãy xem điều gì xảy ra với một hàm *không lồi*, ví dụ như $f(x) = x \cos(c x)$.
+Sau tất cả, hãy lưu ý rằng trong phương pháp Newton, chúng ta cuối cùng sẽ phải chia cho ma trận Hessian.
+Điều này nghĩa là nếu đạo hàm bậc hai là *âm* thì chúng ta phải đi theo hướng *tăng* $f$.
+Đó là khiếm khuyết chết người của thuật toán.
+Hãy xem điều gì sẽ xảy ra trong thực tế nào.
 
 ```{.python .input}
 c = 0.15 * np.pi
@@ -530,7 +536,12 @@ Having second order information allows us to be cautious whenever the curvature 
 Let us see how this works with a slightly smaller learning rate, say $\eta = 0.5$. As we can see, we have quite an efficient algorithm.
 -->
 
-*dịch đoạn phía trên*
+Điều này sai một cách ngoạn mục.
+Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó.
+Một chiến lược khác là đưa tốc độ học trở lại.
+Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn.
+Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng.
+Hãy xem nó hoạt động như thế nào với một tốc độ học khá nhỏ, $\eta = 0.5$ chả hạn. Như ta có thể thấy, chúng ta có một thuật toán khá hiệu quả.
 
 
 ```{.python .input}
@@ -734,7 +745,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Võ Tấn Phát
 
 <!-- Phần 6 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 7 -->
 * 
