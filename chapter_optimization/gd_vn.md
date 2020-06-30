@@ -618,12 +618,12 @@ This is way too costly to accomplish.
 * Beware of using Newton's method without any adjustments for nonconvex problems. 
 -->
 
-* Các tốc độ học rất quan trọng. Quá lớn sẽ khiến phân kỳ, quá nhỏ sẽ không thu được sự tiến bộ nào.
+* Tốc độ học rất quan trọng. Quá lớn sẽ khiến việc tối ưu hóa phân kỳ, quá nhỏ sẽ không thu được sự tiến bộ nào.
 * Hạ gradient có thể bị kẹt tại cực tiểu cục bộ.
 * Trong bài toán nhiều chiều, tinh chỉnh việc học tốc độ học sẽ phức tạp.
 * Tiền đề có thể giúp trong việc tinh chỉnh thang đo.
-* Phương pháp Newton nhanh hơn rất nhiều *một khi* nó bắt đầu hoạt động một cách đúng đắn trong các bài toán lồi.
-* Hãy cẩn trọng trong việc dùng phương pháp Newton mà không có bất kỳ một tinh chỉnh nào cho các bài toán không lồi.
+* Phương pháp Newton nhanh hơn rất nhiều *một khi* hoạt động trên bài toán lồi phù hợp.
+* Hãy cẩn trọng trong việc dùng phương pháp Newton cho các bài toán không lồi mà không tinh chỉnh.
 
 <!--
 ## Exercises
@@ -645,17 +645,17 @@ This is way too costly to accomplish.
 5. Apply the algorithm above to a number of objective functions (convex or not). What happens if you rotate coordinates by $45$ degrees?
 -->
 
-1. Hãy thí nghiệm với các tốc độ học, hàm mục tiêu khác nhau cho việc hạ gradient.
-2. Khởi tạo tìm kiếm đường thẳng để tối thiểu hóa hàm lồi trong khoảng $[a, b]$.
+1. Hãy thử các tốc độ học, hàm mục tiêu khác nhau cho hạ gradient.
+2. Khởi tạo tìm kiếm đường để cực tiểu hóa hàm lồi trong khoảng $[a, b]$.
     * Bạn có cần đạo hàm để tìm kiếm nhị phân không, ví dụ, để quyết định xem sẽ chọn $[a, (a+b)/2]$ hay $[(a+b)/2, b]$?
     * Tốc độ hội tụ của thuật toán nhanh chậm thế nào?
     * Hãy khởi tạo thuật toán và áp dụng nó để cực tiểu hóa $\log (\exp(x) + \exp(-2*x -3))$.
-3. Thiế kế một hàm mục tiêu thuộc $\mathbb{R}^2$ mà việc hạ gradient rất chậm. Gợi ý: chuyển đổi giá trị các trục tọa độ một cách khác nhau.
+3. Thiết kế một hàm mục tiêu thuộc $\mathbb{R}^2$ mà việc hạ gradient rất chậm. Gợi ý: sử dụng trục tọa độ có thang đo khác nhau.
 4. Khởi tạo một phiên bản nhỏ gọn của phương pháp Newton sử dụng tiền đề:
     * Dùng ma trận đường chéo Hessian làm tiền đề.
-    * Sử dụng các giá trị tuyệt đối của nó thay vì các giá trị thực sự (có lẽ là có dấu).
+    * Sử dụng các giá trị tuyệt đối của nó thay vì các giá trị có dấu.
     * Áp dụng điều này cho bài toán phía trên.
-5. Áp dụng thuật toán phía trên với một số các hàm mục tiêu (lồi lẫn không lồi). Điều gì sẽ xảy ra nếu bạn xoay các tọa độ một góc $45$ độ?
+5. Áp dụng thuật toán phía trên cho các hàm mục tiêu (lồi lẫn không lồi). Điều gì sẽ xảy ra nếu xoay các trục tọa độ một góc $45$ độ?
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
