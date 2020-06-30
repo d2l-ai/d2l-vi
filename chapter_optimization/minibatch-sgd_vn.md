@@ -314,7 +314,7 @@ In addition, we will average the loss of each minibatch example in the training 
 Hãy nhớ lại cách lập trình SGD minibatch từ :numref:`sec_linear_scratch`.
 Trong phần tiếp theo, chúng tôi sẽ trình bày cách lập trình tổng quát hơn một chút.
 Để thuận tiện, chúng ta sử dụng cách gọi hàm tương tự như các thuật toán tối ưu khác sẽ được giới thiệu sau trong chương này.
-Cụ thể, chúng ta thêm trạng thái đầu vào `states` và đặt siêu tham số trong `hyperparams` có kiểu dữ liệu diciontary.
+Cụ thể, chúng ta thêm trạng thái đầu vào `states` và đặt siêu tham số trong từ điển `hyperparams`.
 Bên cạnh đó, chúng ta sẽ tính giá trị trung bình của hàm mất mát của từng mẫu minibatch trong hàm huấn luyện, từ đó chúng ta không cần phải chia gradient cho kích thước batch trong thuật toán tối ưu nữa.
 
 
