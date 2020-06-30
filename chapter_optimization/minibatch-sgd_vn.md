@@ -404,7 +404,7 @@ Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để
 Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
 Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
 Như chúng ta có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
-Mặc dù cả hai thủ tục xử lý 1500 mẫu trong một epoch, thuật toán SGD tốn thời gian hơn thuật toán hạ gradient trong thí nghiệm trên.
+Mặc dù cả hai thuật toán cùng xử lý 1500 mẫu trong một epoch, thuật toán SGD tốn thời gian hơn thuật toán hạ gradient trong thí nghiệm trên.
 Điều này là do SGD cập nhật các tham số thường xuyên hơn và kém hiệu quả trong việc xử lý riêng lẻ từng mẫu quan sát một.
 
 
