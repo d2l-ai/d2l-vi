@@ -13,7 +13,7 @@ While this is generally appropriate for convex problems, it might not be ideal f
 Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
-Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học giảm tại một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$ một cách hiệu quả.
+Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$ một cách hiệu quả.
 Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những những bài toán không lồi, chẳng hạn những vấn đề gặp phải trong tập sâu.
 Tuy vậy, khả năng thay đổi theo toạ độ của Adagrad là rất mong muốn như một điều kiện tiên quyết (_preconditioner_).
 
