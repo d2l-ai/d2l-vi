@@ -407,7 +407,7 @@ The time required per epoch is longer than the time needed for SGD and the time 
 -->
 
 Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD theo minibatch để tối ưu hóa.
-Thời gian cần thiết cho mỗi epoch lâu hơn thời gian chạy của thuật toán SGD và thuật toán hạ gradient theo từng batch.
+Thời gian cần thiết cho mỗi epoch ngắn hơn thời gian chạy của thuật toán SGD và thuật toán hạ gradient theo toàn bộ batch.
 
 
 ```{.python .input  n=6}
