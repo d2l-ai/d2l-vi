@@ -12,7 +12,7 @@
 Let us begin by considering learning problems with features that occur infrequently.
 -->
 
-Để khởi động, hãy cùng xem xét các bài toán học với các đặc trưng hiếm khi xảy ra.
+Để khởi động, hãy cùng xem xét các bài toán với những đặc trưng hiếm khi xảy ra.
 
 <!--
 ## Sparse Features and Learning Rates
@@ -61,8 +61,8 @@ Một mẹo để khắc phục vấn đề này là đếm số lần ta gặp 
 Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta_0}{\sqrt{t + c}}$ ta có thể sử dụng $\eta_i = \frac{\eta_0}{\sqrt{s(i, t) + c}}$.
 Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
 Công thức này khá dễ để lập trình và phí tổn hao không đáng kể.
-Tuy nhiên, nó lại thất bại khi dữ liệu không hẳn là thưa thớt mà gradient thường nhỏ và chỉ hiếm khi lớn.
-Xét cho cùng, ta khó có thể phân biệt rõ ràng liệu một thứ có đủ điều kiện để được coi là một đặc trưng được quan sát hay không.
+Tuy nhiên, cách này thất bại trong trường hợp dù đặc trưng không thưa thớt, nhưng lại có gradient nhỏ và hiếm khi đạt giá trị lớn.
+Xét cho cùng, ta khó có thể phân biệt rõ ràng liệu một đặc trưng có đủ điều kiện để được quan sát hay không.
 
 <!--
 Adagrad by :cite:`Duchi.Hazan.Singer.2011` addresses this by replacing the rather crude counter $s(i, t)$ by an aggregate of the squares of previously observed gradients.
@@ -78,9 +78,9 @@ Adagrad bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn đề này b�
 Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x})\right)^2$ làm công cụ để điều chỉnh tốc độ học.
 Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient đủ lớn.
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
-Các toạ độ mà thường ứng với các giá trị gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
+Các toạ độ thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
 Phương pháp này trong thực tế đưa ra một thủ tục tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các vấn đề liên quan.
-Nhưng nó lại che giấu một vài lợi ích khác vốn thuộc về Adagrad mà có thể được hiểu rõ nhất khi ta xét đến bối cảnh tiền điều kiện.
+Tuy nhiên, vẫn còn đang ẩn giấu một vài lợi ích vốn có khác của Adagrad mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
