@@ -551,7 +551,7 @@ It comes down to ensuring that $f$ does not have any "surprising" properties in 
 ### Preconditioning
 -->
 
-### Tiền đề
+### Tiền Điều kiện
 
 <!--
 Quite unsurprisingly computing and storing the full Hessian is very expensive.
@@ -564,8 +564,8 @@ This leads to update algorithms of the form
 
 Không có gì ngạc nhiên khi việc tính toán và lưu trữ toàn bộ ma trận Hessian là rất tốn kém.
 Do đó ta cần tìm kiếm một phương pháp thay thế.
-Một cách để cải thiện vấn đề này là tránh việc tính toán toàn bộ ma trận Hessian, chỉ tính toán trên các giá trị thuộc đường chéo.
-Mặc dù cách trên không tốt bằng phương pháp Newton hoàn chỉnh nhưng vẫn tốt hơn nhiều so với không dùng qua.
+Một cách để cải thiện vấn đề này là tránh tính toán toàn bộ ma trận Hessian, chỉ tính toán các giá trị thuộc *đường chéo*.
+Mặc dù cách trên không tốt bằng phương pháp Newton hoàn chỉnh nhưng vẫn tốt hơn nhiều so với không sử dụng.
 Hơn nữa, ước lượng các giá trị đường chéo chính chính là thứ thúc đẩy sự đổi mới trong các thuật toán tối ưu hóa hạ gradient ngẫu nhiên.
 Thuật toán cập nhật sẽ có dạng
 
@@ -581,7 +581,7 @@ Effectively preconditioning with gradient descent amounts to selecting a differe
 
 Để thấy tại sao điều này có thể là một ý tưởng tốt, ta ví dụ có hai biến số biểu thị chiều cao, một biến với đơn vị mm, biến còn lại với đơn vị km.
 Với cả hai đơn vị đo, khi quy đổi ra mét, chúng ta đều có sự sai lệch lớn trong việc tham số hóa.
-Sử dụng tiền đề sẽ xóa bỏ điều này.
+Sử dụng tiền đề sẽ loại bỏ điều này.
 Tiền đề hiệu quả cùng hạ gradient có ý nghĩa giúp chọn ra các tốc độ học khác nhau cho từng trục tọa độ.
 
 <!--
@@ -596,8 +596,8 @@ A simple fix for the problem is to use line search in conjunction with gradient 
 That is, we use the direction given by $\nabla f(\mathbf{x})$ and then perform binary search as to which step length $\eta$ minimizes $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$. 
 -->
 
-Một trong những vấn đề chính của hạ gradient là chúng ta có thể vượt lố khỏi mục tiêu hoặc không đạt đủ sự tiến bộ.
-Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường thẳng kết hợp với hạ gradient.
+Một trong những vấn đề chính của hạ gradient là chúng ta có thể vượt quá khỏi mục tiêu hoặc không đạt đủ sự tiến bộ.
+Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường kết hợp với hạ gradient.
 Chúng ta sử dụng hướng được cho bởi $\nabla f(\mathbf{x})$ và sau đó dùng tìm kiếm nhị phân để tìm ra độ dài bước $\eta$ có thể cực tiểu hóa $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$.
 
 <!--
