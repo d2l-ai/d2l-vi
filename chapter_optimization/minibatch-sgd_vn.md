@@ -331,7 +331,7 @@ It initializes a linear regression model and can be used to train the model with
 -->
 
 Tiếp theo, chúng ta lập trình một hàm huấn luyện tổng quát sử dụng cho cả các thuật toán tối ưu khác được giới thiệu sau trong chương này.
-Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với thuật toán SGD minibatch và các thuật toán khác được giới thiệu sau đó.
+Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với thuật toán hạ gradient ngẫu nhiên theo minibatch và các thuật toán khác.
 
 
 ```{.python .input  n=3}
