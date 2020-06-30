@@ -197,14 +197,15 @@ We refer the reader to :cite:`Duchi.Hazan.Singer.2011` for details.
 ## The Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán
 
 <!--
 Let us formalize the discussion from above.
 We use the variable $\mathbf{s}_t$ to accumulate past gradient variance as follows.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng chính thức hoá phần thảo luận ở trên.
+Ta sử dụng biến $\mathbf{s}_t$ để tính tổng phương sai của các gradient trước như sau.
 
 
 $$\begin{aligned}
@@ -223,14 +224,19 @@ As before $\eta$ is the learning rate and $\epsilon$ is an additive constant tha
 Last, we initialize $\mathbf{s}_0 = \mathbf{0}$.
 -->
 
-*dịch đoạn phía trên*
+Ở đây các phép toán được thực hiện theo từng toạ độ.
+Nghĩa là, $\mathbf{v}^2$ có các phần tử $v_i^2$.
+Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$.
+Như phần trên $\eta$ là tốc độ học và $\epsilon$ là hệ số phụ nhằm đảm bảo rằng ta không bị lỗi chia cho $0$.
+Cuối cùng, ta khởi tạo $\mathbf{s}_0 = \mathbf{0}$.
 
 <!--
 Just like in the case of momentum we need to keep track of an auxiliary variable, in this case to allow for an individual learning rate per coordinate.
 This does not increase the cost of Adagrad significantly relative to SGD, simply since the main cost is typically to compute $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ and its derivative.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như trường hợp sử dụng động lượng (*momentum*), ta cần phải theo dõi các biến bổ trợ, ở đây là để mỗi toạ độ có một tốc độ học độc lập.
+Việc làm này không làm cho chi phí của Adagrad tăng đáng kể so với SGD, đơn giản là gì chi phí chính thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -242,7 +248,13 @@ For now let us see how it behaves in a quadratic convex problem.
 We use the same problem as before:
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng tổng bình phương các gradient trong $\mathbf{s}_t$ có nghĩa là $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
+Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù ta điều chỉnh theo từng toạ độ một.
+Đối với các bài toán lồi, việc này là hoàn toàn thích hợp.
+Tuy nhiên trong học sâu, có lẽ ta muốn giảm dần tốc độ học chậm hơn một chút.
+Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận ở các phần tới.
+Còn bây giờ hãy cùng xét cách thức hoạt động của Adagrad trong một bài toán lồi bậc hai.
+Ta vẫn giữ nguyên bài toán như cũ:
 
 
 $$f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2.$$
@@ -254,7 +266,9 @@ As we can see, the iterative trajectory of the independent variable is smoother.
 However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate continuously decays, so the independent variable does not move as much during later stages of iteration.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức là $\eta = 0.4$.
+Như ta thấy, quỹ đạo lặp của các biến độc lập mượt hơn nhiều.
+Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy hao khiến cho các biến độc lập không thay đổi nhiều ở giai đoạn sau của vòng lặp.
 
 
 ```{.python .input  n=6}
@@ -286,7 +300,9 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta tăng tốc độ học lên $2$, động thái của quá trình học trở nên tốt hơn nhiều.
+Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
+
 
 
 ```{.python .input  n=10}
@@ -428,7 +444,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
 * 
