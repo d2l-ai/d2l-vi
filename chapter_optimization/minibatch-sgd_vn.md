@@ -374,7 +374,7 @@ In fact, after 6 steps progress stalls.
 -->
 
 Chúng ta hãy xem cách thuật toán hạ gradient trên toàn bộ batch diễn ra như thế nào.
-Điều này có thể đạt được bằng cách thiết lập kích thước minibatch bằng 1500 (cụ thể, bằng tổng số mẫu).
+Điều này có thể đạt được bằng cách thiết lập kích thước minibatch bằng 1500 (chính là tổng số mẫu).
 Kết quả là các tham số mô hình được cập nhật một lần duy nhất cho từng epoch.
 Không có tiến bộ đáng kể nào.
 Trong thực tế, việc học vẫn dậm chân tại chỗ sau 6 bước lặp.
