@@ -13,20 +13,20 @@ In previous chapters, we have covered major neural network architectures such as
 Let us recap their pros and cons:
 -->
 
-Trong các chương trước, ta đã đề cập đến các kiến trúc mạng nơ-ron quan trọng như mạng nơ-ron tích chập (CNN) và mạng nơ-ron truy hồi (RNN).
-Ưu nhược điểm của các kiến trúc mạng này có thể được tóm tắt như sau:
+Trong các chương trước, ta đã đề cập đến các kiến trúc mạng nơ-ron quan trọng như mạng nơ-ron tích chập (CNN) và mạng nơ-ron hồi tiếp (RNN).
+Ưu nhược điểm của hai kiến trúc mạng này có thể được tóm tắt như sau:
 
 <!--
 * **CNNs** are easy to parallelize at a layer but cannot capture the variable-length sequential dependency very well.
 -->
 
-* Các mạng **CNN** có thể được thực hiện song song dễ dàng ở một tầng nhưng không thể học tốt các mối quan hệ phụ thuộc ở các chuỗi có độ dài thay đổi.
+* Các mạng **CNN** có thể dễ dàng được thực hiện song song ở một tầng nhưng không có khả năng nắm bắt các phụ thuộc chuỗi có độ dài biến thiên.
 
 <!--
 * **RNNs** are able to capture the long-range, variable-length sequential information, but suffer from inability to parallelize within a sequence.
 -->
 
-*  Các mạng **RNN** có khả năng học được thông tin khoảng dài trong chuỗi có độ dài thay đổi, nhưng không có khả năng thực hiện song song trong một chuỗi.
+*  Các mạng **RNN** có khả năng nắm bắt các thông tin cách xa nhau trong chuỗi có độ dài biến thiên, nhưng không thể thực hiện song song trong một chuỗi.
 
 <!--
 To combine the advantages from both CNNs and RNNs, :cite:`Vaswani.Shazeer.Parmar.ea.2017` designed a novel architecture using the attention mechanism.
@@ -34,9 +34,9 @@ This architecture, which is called as *Transformer*, achieves parallelization by
 As a result, Transformer leads to a compatible model with significantly shorter training time.
 -->
 
-Để kết hợp các lợi thế từ cả CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
-Kiến trúc này, được gọi là *Transformer*, đạt được sự song song hóa bằng cách học chuỗi truy hồi với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
-Kết quả là Transformer tạo ra một mô hình thích hợp với thời gian huấn luyện ngắn hơn đáng kể.
+Để kết hợp các ưu điểm của CNN và RNN, :cite:`Vaswani.Shazeer.Parmar.ea.2017` đã thiết kế một kiến trúc mới bằng cách sử dụng cơ chế tập trung.
+Kiến trúc này gọi là *Transformer*, song song hóa bằng cách học chuỗi hồi tiếp với cơ chế tập trung, đồng thời mã hóa vị trí của từng phần tử trong chuỗi.
+Kết quả là ta có một mô hình tương thích với thời gian huấn luyện ngắn hơn đáng kể.
 
 <!--
 Similar to the seq2seq model in :numref:`sec_seq2seq`, Transformer is also based on the encoder-decoder architecture.
@@ -46,8 +46,8 @@ We  compare Transformer and seq2seq  side-by-side in :numref:`fig_transformer`.
 -->
 
 Tương tự như mô hình seq2seq trong :numref:`sec_seq2seq`, Transformer cũng dựa trên kiến trúc mã hóa-giải mã.
-Tuy nhiên, nó thay thế các lớp truy hồi trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua các *biểu diễn vị trí* (*position encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
-Ta so sánh Transformer và seq2seq trong :numref:`fig_transformer`.
+Tuy nhiên, nó thay thế các tầng hồi tiếp trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua *biểu diễn vị trí* (*positional encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
+:numref:`fig_transformer` so sánh cấu trúc của Transformer và seq2seq.
 
 <!--
 Overall, these two models are similar to each other: the source sequence embeddings are fed into $n$ repeated blocks.
@@ -56,9 +56,9 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 -->
 
 Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
-Đầu ra của khối cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
-Tương tự, các embedding của chuỗi mục tiêu được đưa vào $n$ khối lặp lại trong bộ giải mã. 
-Ta thu được các đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối cuối cùng.
+Đầu ra của khối mã hoá cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
+Tương tự, các embedding của chuỗi đích được đưa vào $n$ khối lặp lại trong bộ giải mã. 
+Ta thu được đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối giải mã cuối cùng.
 
 <!--
 ![The Transformer architecture.](../img/transformer.svg)
@@ -77,7 +77,7 @@ Ta thu được các đầu ra cuối cùng bằng cách áp dụng một tầng
 On the flip side, Transformer differs from the seq2seq with attention model in the following:
 -->
 
-Mặt khác, Transformer khác với mô hình seq2seq áp dụng cơ chế tập trung như sau:
+Mặt khác, Transformer khác với mô hình seq2seq sử dụng cơ chế tập trung như sau:
 
 <!--
 1. **Transformer block**: a recurrent layer in seq2seq is replaced by a *Transformer block*. 
@@ -88,18 +88,18 @@ are processed by two "add and norm" layer that contains a residual structure and
 3. **Position encoding**: since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
 -->
 
-1. **Khối Transformer**: một tầng truy hồi trong seq2seq được thay bằng một *Khối Transformer*.
-Khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* hai tầng trong bộ mã hóa.
-Đối với bộ giải mã, thêm một tầng tập trung đa đầu khác được sử dụng để lấy trạng thái bộ mã hóa.
-2. **Cộng và chuẩn**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và điều chuẩn" gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng*.
-3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự mục trong một chuỗi, nên một tầng mã hóa vị trí được sử dụng để thêm thông tin thứ tự vào từng mục trong chuỗi.
+1. **Khối Transformer**: một tầng hồi tiếp trong seq2seq được thay bằng một *Khối Transformer*.
+Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
+Đối với bộ giải mã, khối này có thêm một tầng tập trung đa đầu khác để nhận vào trạng thái bộ mã hóa.
+2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*).
+3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên tầng biễu diễn vị trí được sử dụng để thêm thông tin vị trí vào từng phần tử trong chuỗi.
 
 
 <!--
 In the rest of this section, we will equip you with each new component introduced by Transformer, and get you up and running to construct a machine translation model.
 -->
 
-Trong phần còn lại, chúng tôi sẽ trang bị cho bạn từng thành phần mới được giới thiệu trong Transformer để giúp bạn có thể bắt đầu xây dựng một mô hình dịch máy.
+Tiếp theo, chúng ta sẽ tìm hiểu từng thành phần trong Transformer để có thể xây dựng một mô hình dịch máy.
 
 ```{.python .input  n=1}
 import d2l
@@ -122,10 +122,10 @@ As we illustrate in :numref:`fig_self_attention`, self-attention outputs a same-
 Compared with a recurrent layer, output items of a self-attention layer can be computed in parallel and, therefore, it is easy to obtain a highly-efficient implementation.
 -->
 
-Trước khi thảo luận về tầng *tập trung đa đầu*, hãy cùng giải thích nhanh qua về kiến trúc *tự tập trung*.
-Cũng giống như một mô hình tập trung bình thường, mô hình tự tập trung có câu truy vấn, khóa và giá trị nhưng chúng được sao chép giống hệt nhau tại mỗi vị trí trong chuỗi đầu vào.
-Như chúng tôi minh họa trong :numref:`fig_self_attention`, tầng tự tập trung trả về một đầu ra tuần tự có cùng độ dài cho mỗi mục đầu vào.
-So với tầng truy hồi, các mục đầu ra của tầng tự tập trung có thể được tính toán song song, và do đó dễ dàng có thể xây dựng các đoạn mã hiệu năng cao.
+Trước khi thảo luận về tầng *tập trung đa đầu*, hãy cùng tìm hiểu qua về kiến trúc *tự tập trung*.
+Giống như các mô hình tập trung bình thường, mô hình tự tập trung cũng có câu truy vấn, khóa và giá trị nhưng chúng được sao chép từ các phần tử trong chuỗi đầu vào.
+Như minh họa trong :numref:`fig_self_attention`, tầng tự tập trung trả về một đầu ra tuần tự có cùng độ dài với đầu vào.
+So với tầng hồi tiếp, các phần tử đầu ra của tầng tự tập trung có thể được tính toán song song, do đó việc xây dựng các đoạn mã tốc độ cao khá dễ dàng.
 
 <!--
 ![Self-attention architecture.](../img/self-attention.svg)
@@ -141,9 +141,9 @@ For each head, before feeding into the attention layer, we project the queries, 
 The outputs of these $h$ attention heads are concatenated and then processed by a final dense layer.
 -->
 
-Tầng *tập trung đa đầu* bao gồm $h$ tầng tự tập trung song song, mỗi tầng được gọi là một *đầu*.
-Tại mỗi đầu, trước khi đưa vào tầng tập trung, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
-Đầu ra của $h$ đầu tập trung này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
+Tầng *tập trung đa đầu* bao gồm $h$ *đầu* là các tầng tự tập trung song song.
+Trước khi đưa vào mỗi đầu, ta chiếu các câu truy vấn, khóa và giá trị qua ba tầng dày đặc với kích thước ẩn lần lượt là $p_q$, $p_k$ và $p_v$.
+Đầu ra của $h$ đầu này được nối lại và sau đó được xử lý bởi một tầng dày đặc cuối cùng.
 
 
 <!--
@@ -165,11 +165,11 @@ $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
 and $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Therefore, the output for each head is
 -->
 
-Giả sử rằng chiều cho truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
-Khi đó, tại mỗi đầu $i=1,\ldots, h$, chúng ta có thể học các tham số 
+Giả sử chiều của câu truy vấn, khóa và giá trị lần lượt là $d_q$, $d_k$ và $d_v$.
+Khi đó, tại mỗi đầu $i=1,\ldots, h$, ta có thể học các tham số 
 $\mathbf W_q^{(i)}\in\mathbb R^{p_q\times d_q}$,
 $\mathbf W_k^{(i)}\in\mathbb R^{p_k\times d_k}$,
-và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra cho mỗi đầu là
+và $\mathbf W_v^{(i)}\in\mathbb R^{p_v\times d_v}$. Do đó, đầu ra tại mỗi đầu là
 
 
 $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{(i)}\mathbf k,\mathbf W_v^{(i)}\mathbf v),$$
@@ -179,7 +179,7 @@ $$\mathbf o^{(i)} = \textrm{attention}(\mathbf W_q^{(i)}\mathbf q, \mathbf W_k^{
 where $\textrm{attention}$ can be any attention layer, such as the `DotProductAttention` and `MLPAttention` as we introduced in :numref:`sec_attention`.
 -->
 
-trong đó $\textrm{attention}$ có thể là bất kỳ tầng tập trung nào, chẳng hạn như `DotProductAttention` và` MLPAttention` như chúng tôi đã giới thiệu trong :numref:`sec_attention`.
+trong đó $\textrm{attention}$ có thể là bất kỳ tầng tập trung nào, chẳng hạn như `DotProductAttention` và` MLPAttention` trong :numref:`sec_attention`.
 
 
 <!--
@@ -188,9 +188,9 @@ The weights of this dense layer can be denoted by $\mathbf W_o\in\mathbb R^{d_o\
 As a result, the multi-head attention output will be
 -->
 
-Sau đó, đầu ra có độ dài $p_v$ từ mỗi đầu tập trung trong số $h$ các đầu được nối với nhau thành đầu ra có độ dài $h p_v$, sau đó được chuyển qua tầng dày đặc cuối cùng với $d_o$ nút ẩn.
-Các trọng số của tầng dày đặc này có thể được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
-Do đó, đầu ra tại tầng tập trung đa đầu sẽ là
+Sau đó, $h$ đầu ra với độ dài $p_v$ tại mỗi đầu được nối với nhau thành đầu ra có độ dài $h p_v$, rồi được đưa vào tầng dày đặc cuối cùng với $d_o$ nút ẩn.
+Các trọng số của tầng dày đặc này được ký hiệu là $\mathbf W_o\in\mathbb R^{d_o\times h p_v}$.
+Do đó, đầu ra cuối cùng của tầng tập trung đa đầu sẽ là
 
 
 $$\mathbf o = \mathbf W_o \begin{bmatrix}\mathbf o^{(1)}\\\vdots\\\mathbf o^{(h)}\end{bmatrix}.$$
@@ -203,8 +203,8 @@ In addition, since the multi-head attention keeps the same dimensionality betwee
 -->
 
 Bây giờ chúng ta có thể lập trình tầng tập trung đa đầu.
-Giả sử rằng tầng tập trung đa đầu có số đầu là `num_heads` $=h$, kích thước ẩn `num_hiddens` $=p_q=p_k=p_v$ của tầng dày đặc là giống nhau cho câu truy vấn, khóa và giá trị.
-Ngoài ra, do tập trung đa đầu giữ nguyên số chiều giữa đầu vào và đầu ra, ta cũng có kích thước đặc trưng đầu ra là $d_o =$ `num_hiddens`.
+Giả sử tầng tập trung đa đầu có số đầu là `num_heads` $=h$ và các tầng dày đặc cho câu truy vấn, khóa và giá trị có kích thước ẩn giống nhau `num_hiddens` $=p_q=p_k=p_v$.
+Ngoài ra, do tầng tập trung đa đầu giữ nguyên kích thước chiều đầu vào, kích thước đặc trưng đầu ra cũng là $d_o =$ `num_hiddens`.
 
 
 ```{.python .input  n=2}
@@ -253,7 +253,7 @@ class MultiHeadAttention(nn.Block):
 Here are the definitions of the transpose functions `transpose_qkv` and `transpose_output`, which are the inverse of each other.
 -->
 
-Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và` transposeDefput` là nghịch đảo của nhau.
+Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` và `transpose_output`. Hai hàm này là nghịch đảo của nhau.
 
 
 ```{.python .input  n=3}
@@ -286,8 +286,7 @@ Let us test the `MultiHeadAttention` model in the a toy example. Create a multi-
 the output will share the same batch size and sequence length as the input, but the last dimension will be equal to the `num_hiddens` $= 100$.
 -->
 
-Hãy cùng kiểm tra mô hình `MultiHeadAttention` qua một ví dụ đơn giản. Tạo ra một tập trung đa đầu với kích thước ẩn $d_o = 100$,
-đầu ra sẽ chia sẻ cùng kích thước batch và độ dài chuỗi với đầu vào, nhưng chiều cuối cùng sẽ có kích thước bằng với `num_hiddens` $= 100$.
+Hãy cùng kiểm tra mô hình `MultiHeadAttention` qua một ví dụ đơn giản. Tạo một tầng tập trung đa đầu với kích thước ẩn $d_o = 100$, đầu ra sẽ có cùng kích thước batch và độ dài chuỗi với đầu vào, nhưng có kích thước chiều cuối cùng bằng `num_hiddens` $= 100$.
 
 
 ```{.python .input  n=4}
