@@ -72,7 +72,7 @@ For instance we could try the following:
 -->
 
 Cách để giảm bớt những ràng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
-Đây *chính là* động lực đằng sau thúc đẩy việc sử dụng batch trong học sâu.
+Đây *chính là* động lực đằng sau việc sử dụng batch trong học sâu.
 Để đơn giản hoá vấn đề, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
 Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn.
 Ta có thể thử một số cách sau:
@@ -125,7 +125,7 @@ In short, it is highly advisable to use vectorization (and matrices) whenever po
 Ngoài hiệu suất tính toán, tổng chi phí do Python gây ra và do chính framework học sâu cũng đáng để cân nhắc.
 Nên nhớ rằng mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet engine để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
 Chi phí đó có thể khá bất lợi.
-Ngắn gọn, nên áp dụng vector hoá (và ma trận) bất cứ khi nào có thể.
+Nói ngắn gọn, nên áp dụng vector hoá (và ma trận) bất cứ khi nào có thể.
 
 
 ```{.python .input  n=1}
