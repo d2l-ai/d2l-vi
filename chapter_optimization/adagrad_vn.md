@@ -102,7 +102,7 @@ This is much easier to compute since $\boldsymbol{\Lambda}$ is a diagonal matrix
 -->
 
 Ở đây ta sử dụng $\mathbf{x} = \mathbf{U} \mathbf{x}$ và theo đó $\mathbf{c} = \mathbf{U} \mathbf{c}$.
-Bài toán sau khi được biến đổi có các cực tiểu $\bar{\mathbf{x}} = -\boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}}$ và giá trị nhỏ nhất $-\frac{1}{2} \bar{\mathbf{c}}^\top \boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}} + b$.
+Bài toán sau khi được biến đổi có các nghiệm cực tiểu (*minimizer*) $\bar{\mathbf{x}} = -\boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}}$ và giá trị nhỏ nhất $-\frac{1}{2} \bar{\mathbf{c}}^\top \boldsymbol{\Lambda}^{-1} \bar{\mathbf{c}} + b$.
 Việc tính toán trở nên dễ dàng hơn nhiều do $\boldsymbol{\Lambda}$ là một ma trận đường chéo chứa các trị riêng của $\mathbf{Q}$.
 
 <!--
@@ -114,9 +114,9 @@ Conversely, for small $\boldsymbol{\Lambda}_i$ changes in $\bar{x}_i$ can be dra
 The ratio between the largest and the smallest eigenvalue is called the condition number of an optimization problem.
 -->
 
-Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các cực tiểu của $f$ cũng chỉ thay đổi một chút.
+Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các nghiệm cực tiểu của $f$ cũng chỉ thay đổi một chút.
 Đáng tiếc thay, điều đó lại không xảy ra.
-Mặc dù thay đổi $\mathbf{c}$ một chút thì $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các cực tiểu của $f$ lại không như vậy (tương ứng với cực tiểu của $\bar{f}$).
+Mặc dù thay đổi $\mathbf{c}$ một chút thì $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các nghiệm cực tiểu của $f$ lại không như vậy (tương ứng với nghiệm cực tiểu của $\bar{f}$).
 Mỗi khi các trị riêng $\boldsymbol{\Lambda}_i$ mang giá trị lớn, ta sẽ thấy $\bar{x}_i$ và cực tiểu của $f$ thay đổi khá nhỏ.
 Ngược lại, với $\boldsymbol{\Lambda}_i$ nhỏ, sự thay đổi $\bar{x}_i$ có thể khá đột ngột.
 Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là hệ số điều kiện (*condition number*) của bài toán tối ưu.
