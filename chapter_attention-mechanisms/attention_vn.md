@@ -229,7 +229,7 @@ In addition, for regularization we also use a dropout layer.
 
 
 Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khoá-giá trị.
-Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
+Ngoài ra, chúng ta cũng dùng thêm một tầng dropout để điều chuẩn.
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -259,9 +259,9 @@ Therefore, even though both batches have the same query and key-value pairs, we 
 -->
 
 
-Ta hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
-Đầu tiên, tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
-Thông qua đối số `valid_len`, chúng ta chỉ ra rằng mình sẽ kiểm tra $2$ cặp khoá-giá trị đầu tiên cho batch đầu tiên và $6$ cặp khoá-giá trị đầu tiên cho batch thứ hai.
+Hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
+Đầu tiên ta tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
+Thông qua đối số `valid_len`, ta chỉ định rằng ta sẽ kiểm tra $2$ cặp khoá-giá trị đầu tiên cho batch đầu tiên và $6$ cặp cho batch thứ hai.
 Do đó, mặc dù cả hai batch có cùng số câu truy vấn và số cặp khoá-giá trị, chúng ta sẽ thu được các đầu ra khác nhau. 
 
 
@@ -280,7 +280,7 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-Như đã thấy ở trên, tập trung tích vô hướng chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
+Như đã thấy ở trên, tập trung tích vô hướng chỉ đơn thuần nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó thu được những điểm tương đồng giữa chúng.
 Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
 Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
@@ -313,9 +313,9 @@ In this hidden layer, the activation function is $\tanh$ and no bias is applied.
 Now let us implement the multilayer perceptron attention.
 -->
 
-Một cách trực quan, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
+Một cách trực quan, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước là $h$ và tầng đầu ra với kích thước là $1$.
 Trong tầng ẩn này, hàm kích hoạt là $tanh$ và không có hệ số điều chỉnh.
-Giờ ta hãy lập trình một tầng tập trung perceptron đa tầng.
+Giờ hãy lập trình một tầng tập trung perceptron đa tầng.
 
 
 ```{.python .input  n=7}
@@ -346,7 +346,7 @@ To test the above `MLPAttention` class, we use the same inputs as in the previou
 As we can see below, despite `MLPAttention` containing an additional MLP model, we obtain the same outputs as for `DotProductAttention`.
 -->
 
-Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng cùng một đầu vào như ở ví dụ trước đó.
+Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng lại đầu vào ở ví dụ đơn giản trước.
 Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự `DotProductAttention`.
 
 ```{.python .input  n=8}
@@ -368,7 +368,7 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 -->
 
 * Tầng tập trung lựa chọn một cách tường minh các thông tin liên quan.
-* Ký ức của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần các giá trị có khoá giống với câu truy vấn.
+* Ô nhớ của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần các giá trị có khoá giống với câu truy vấn.
 * Hai mô hình tập trung được sử dụng phổ biến là tập trung tích vô hướng và tập trung perceptron đa tầng.
 
 
