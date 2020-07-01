@@ -373,7 +373,7 @@ One difference is that the mean and variances for the layer normalization are ca
 Layer normalization prevents the range of values in the layers from changing too much, which allows faster training and better generalization ability.
 -->
 
-Trong kiến trúc Transformer, tầng "cộng và chuẩn hoá" cũng đóng vai trò thiết yếu để kết nối đầu vào và đầu ra của các tầng khác một cách trơn tru.
+Trong kiến trúc Transformer, tầng "cộng và chuẩn hoá" cũng đóng vai trò thiết yếu trong việc kết nối đầu vào và đầu ra của các tầng khác một cách trơn tru.
 Cụ thể, ta thêm một cấu trúc phần dư và tầng *chuẩn hóa theo tầng* sau tầng tập trung đa đầu và mạng truyền xuôi theo vị trí.
 *Chuẩn hóa theo tầng* khá giống với chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
 Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa này được tính theo chiều cuối cùng, tức `X.mean(axis=-1)`, thay vì theo chiều đầu tiên (theo batch) `X.mean(axis=0)` .
