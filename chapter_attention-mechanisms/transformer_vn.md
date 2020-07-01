@@ -760,7 +760,7 @@ decoder_blk(X, state)[0].shape
 The construction of the entire Transformer decoder is identical to the Transformer encoder, except for the additional dense layer to obtain the output confidence scores.
 -->
 
-Lập trình bộ giải mã đầy đủ của Transformer tương tự như bộ mã hoá, ngoại trừ tầng kết nối đầy đủ được thêm vào để tính điểm tin cậy của đầu ra.
+Bộ giải mã hoàn chỉnh của Transformer được lập trình tương tự như bộ mã hoá, ngoại trừ chi tiết tầng kết nối đầy đủ được thêm vào để tính điểm tin cậy của đầu ra.
 
 <!--
 Let us implement the Transformer decoder `TransformerDecoder`.
