@@ -471,7 +471,7 @@ In this way, each value in the origin sequence is then maintained using the equa
 -->
 
 Vị trí $P$ là ma trận 2 chiều, trong đó $i$ là thứ tự trong câu, $j$ là vị trí trên chiều embedding.
-Bằng cách này, mỗi vị trí trong chuỗi nguồn được biểu biễn bởi hai phương trình dưới đây:
+Bằng cách này, mỗi vị trí trong chuỗi ban đầu được biểu biễn bởi hai phương trình dưới đây:
 
 
 $$P_{i, 2j} = \sin(i/10000^{2j/d}),$$
