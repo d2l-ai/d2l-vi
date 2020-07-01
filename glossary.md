@@ -236,6 +236,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | latent variable                    | biến tiềm ẩn                   |                                              |
 | layer                              | tầng                           |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
+| leaky                              | rò rỉ         | |
 | learning curve                     | đồ thị quá trình học           | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | learning algorithm                 | thuật toán học                 |                                              |
 | learning rate                      | tốc độ học                     |                                              |
