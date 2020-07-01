@@ -323,7 +323,7 @@ Indeed, it is equivalent to applying two $1 \times 1$ convolution layers.
 Một thành phần quan trọng khác trong Khối Transformer là *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*).
 Nó chấp nhận đầu vào $3$ chiều với kích thước là (kích thước batch, độ dài chuỗi, kích thước đặc trưng).
 Mạng truyền xuôi theo vị trí bao gồm hai tầng dày đặc áp dụng trên chiều cuối cùng của đầu vào.
-Vì hai tầng dày đặc này cùng được sử dụng cho từng vị trí trong chuỗi, nên ta gọi là *theo vị trí*.
+Vì hai tầng dày đặc này cùng được sử dụng cho từng vị trí trong chuỗi, nên ta gọi là mạng truyền xuôi *theo vị trí*.
 Cách làm này tương đương với việc áp dụng hai tầng tích chập $1 \times 1$ .
 
 <!--
