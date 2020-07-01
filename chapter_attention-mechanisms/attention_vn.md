@@ -227,6 +227,7 @@ With :eqref:`eq_alpha_QK`, we can implement the dot product attention layer `Dot
 In addition, for regularization we also use a dropout layer.
 -->
 
+
 Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khoá-giá trị.
 Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
 
@@ -256,6 +257,7 @@ First, create two batches, where each batch has one query and 10 key-value pairs
 Via the `valid_len` argument, we specify that we will check the first $2$ key-value pairs for the first batch and $6$ for the second one.
 Therefore, even though both batches have the same query and key-value pairs, we obtain different outputs.
 -->
+
 
 Ta hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
 Đầu tiên, tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
