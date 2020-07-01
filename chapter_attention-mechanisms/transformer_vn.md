@@ -837,7 +837,7 @@ d2l.train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 As we can see from the training time and accuracy, compared with the seq2seq model with attention model, Transformer runs faster per epoch, and converges faster at the beginning.
 -->
 
-Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trong và hội tụ nhanh hơn ở giai đoạn đầu so với seq2seq áp dụng cơ chế tập trung.
+Dựa trên thời gian huấn luyện và độ chính xác, ta thấy Transformer chạy nhanh hơn trên mỗi epoch và hội tụ nhanh hơn ở giai đoạn đầu so với seq2seq áp dụng cơ chế tập trung.
 
 <!--
 We can use the trained Transformer to translate some simple sentences.
