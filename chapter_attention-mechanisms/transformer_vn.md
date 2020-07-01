@@ -594,7 +594,7 @@ In our toy example below,  `num_hiddens` $= 24$, `ffn_num_hiddens` $=48$, `num_h
 
 Nhờ kết nối phần dư, khối mã hoá sẽ không thay đổi kích thước đầu vào.
 Nói cách khác, giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng của đầu vào.
-Trong ví dụ đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$, và `dropout` $= 0.5$.
+Trong ví dụ đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$ và `dropout` $= 0.5$.
 
 
 ```{.python .input  n=13}
