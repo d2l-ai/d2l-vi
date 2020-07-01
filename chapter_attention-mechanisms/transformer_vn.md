@@ -768,7 +768,7 @@ Besides the regular hyperparameters such as the `vocab_size` and `num_hiddens`, 
 -->
 
 Hãy lập trình bộ giải mã đầy đủ `TransformerDecoder`.
-Ngoài các siêu tham số thường gặp như `vocab_size` và `num_hiddens`, bộ giải mã nhận thêm kích thước đầu ra của bộ mã hoá `enc_outputs` và độ dài hợp lệ `env_valid_len`.
+Ngoài các siêu tham số thường gặp như `vocab_size` và `num_hiddens`, bộ giải mã cần thêm kích thước đầu ra của bộ mã hoá `enc_outputs` và độ dài hợp lệ `env_valid_len`.
 
 
 ```{.python .input  n=18}
