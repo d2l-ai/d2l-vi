@@ -813,7 +813,7 @@ Similar to the seq2seq with attention model in :numref:`sec_seq2seq_attention`, 
 -->
 
 Cuối cùng, chúng ta có thể xây dựng một mô hình mã hóa - giải mã với kiến ​​trúc Transformer.
-Tương tự như mô hình seq2seq áp dụng cơ chế tập trung trong :numref:`sec_seq2seq_attention`, chúng ta sử dụng các siêu tham số sau: hai khối Transformer có kích thước embedding và kích thước đầu ra đều là $32$. Bên cạnh đó, chúng ta sử dụng $4$ đầu trong tầng tập trung, và đặt kích thước ẩn bằng hai lần kích thước đầu ra.
+Tương tự như mô hình seq2seq áp dụng cơ chế tập trung trong :numref:`sec_seq2seq_attention`, chúng ta sử dụng các siêu tham số sau: hai khối Transformer có kích thước embedding và kích thước đầu ra đều là $32$. Bên cạnh đó, chúng ta sử dụng $4$ đầu trong tầng tập trung và đặt kích thước ẩn bằng hai lần kích thước đầu ra.
 
 
 ```{.python .input  n=19}
