@@ -196,7 +196,7 @@ A thorough analysis is beyond the scope of this section (it would be several pag
 We refer the reader to :cite:`Duchi.Hazan.Singer.2011` for details.
 -->
 
-trong đó $\bar{\mathbf{x}}_0$ là cực tiểu của $\bar{f}$.
+trong đó $\bar{\mathbf{x}}_0$ là nghiệm cực tiểu của $\bar{f}$.
 Do đó độ lớn của gradient phụ thuộc vào cả $\boldsymbol{\Lambda}$ và khoảng cách đến điểm tối ưu.
 Nếu $\bar{\mathbf{x}} - \bar{\mathbf{x}}_0$ không đổi thì đây chính là tất cả ta cần tính.
 Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ thoả mãn.
