@@ -470,7 +470,7 @@ The position $P$ is a 2-D matrix, where $i$ refers to the order in the sentence,
 In this way, each value in the origin sequence is then maintained using the equations below:
 -->
 
-Vị trí $P$ là ma trận 2 chiều, trong đó $i$ là thứ tự trong câu, $j$ là vị trí trên chiều embedding.
+Vị trí $P$ là ma trận 2 chiều, trong đó $i$ là thứ tự trong câu, $j$ là vị trí theo chiều embedding.
 Bằng cách này, mỗi vị trí trong chuỗi ban đầu được biểu biễn bởi hai phương trình dưới đây:
 
 
