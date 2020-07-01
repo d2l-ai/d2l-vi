@@ -351,7 +351,7 @@ In addition, if two items in the input sequence are identical, the according out
 -->
 
 Tương tự như tầng tập trung đa đầu, mạng truyền xuôi theo vị trí sẽ chỉ thay đổi kích thước chiều cuối cùng của đầu vào --- tức kích thước của đặc trưng.
-Ngoài ra, nếu hai phần tử trong chuỗi đầu vào giống hệt nhau, thì các đầu ra theo đó cũng sẽ giống hệt nhau.
+Ngoài ra, nếu hai phần tử trong chuỗi đầu vào giống hệt nhau, thì hai đầu ra tương ứng cũng sẽ giống hệt nhau.
 
 ```{.python .input  n=6}
 ffn = PositionWiseFFN(4, 8)
