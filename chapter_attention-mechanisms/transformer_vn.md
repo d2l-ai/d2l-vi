@@ -746,7 +746,7 @@ class DecoderBlock(nn.Block):
 Similar to the Transformer encoder block, `num_hiddens` should be equal to the last dimension size of $X$.
 -->
 
-Tương tự như khối mã hóa của Transformer, `num_hiddens` của khối giải mã bằng với kích thước chiều cuối cùng của $X$.
+Tương tự như khối mã hóa của Transformer, `num_hiddens` của khối giải mã phải bằng với kích thước chiều cuối cùng của $X$.
 
 ```{.python .input  n=17}
 decoder_blk = DecoderBlock(24, 48, 8, 0.5, 0)
