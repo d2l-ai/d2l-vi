@@ -453,7 +453,7 @@ This feature enables us to parallelize the computation, but it fails to model th
 To better capture the sequential information, the Transformer model uses the *positional encoding* to maintain the positional information of the input sequence.
 -->
 
-Không giống như tầng hồi tiếp, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí tính toán đầu ra cho từng phần tử trong chuỗi một cách độc lập.
+Không giống như tầng hồi tiếp, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí đều tính toán đầu ra cho từng phần tử trong chuỗi một cách độc lập.
 Điều này cho phép song song hoá công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
 Để nắm bắt các thông tin tuần tự một cách hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
