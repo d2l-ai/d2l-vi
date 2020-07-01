@@ -675,7 +675,7 @@ i.e., the residual connections and the layer normalization to connect each of th
 
 Khối giải mã của Transformer gần tương tự như khối mã hoá.
 Tuy nhiên, bên cạnh hai tầng con (tập trung đa đầu và biểu diễn vị trí), khối giải mã còn chứa tầng tập trung đa đầu áp dụng lên đầu ra của bộ mã hoá.
-Các tầng con được kết nối bằng tầng "cộng và chuẩn hoá", gồm kết nối phần dư và chuẩn hoá theo tầng.
+Các tầng con này cũng được kết nối bằng các tầng "cộng và chuẩn hoá", gồm kết nối phần dư và chuẩn hoá theo tầng.
 
 <!--
 To be specific, at timestep $t$, assume that $\mathbf x_t$ is the current input, i.e., the query.
