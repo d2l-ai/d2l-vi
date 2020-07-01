@@ -267,7 +267,7 @@ However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate c
 -->
 
 Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức là $\eta = 0.4$.
-Như ta thấy, quỹ đạo lặp của các biến độc lập mượt hơn nhiều.
+Ta có thể thấy quỹ đạo lặp của các biến độc lập mượt hơn nhiều.
 Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy hao khiến cho các biến độc lập không thay đổi nhiều ở giai đoạn sau của vòng lặp.
 
 
@@ -300,7 +300,7 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-Nếu ta tăng tốc độ học lên $2$, động thái của quá trình học trở nên tốt hơn nhiều.
+Nếu tăng tốc độ học lên $2$ ta có thể thấy quá trình học vận hành tốt hơn nhiều.
 Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
 
 
