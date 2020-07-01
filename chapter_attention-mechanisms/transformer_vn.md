@@ -563,7 +563,7 @@ This is due to the nature of the residual block, as we need to add these outputs
 -->
 
 Với các thành phần thiết yếu trên, hãy xây dựng bộ mã hoá cho Transformer.
-Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí, và hai khối kết nối "cộng và chuẩn hoá".
+Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí và hai khối kết nối "cộng và chuẩn hoá".
 Trong mã nguồn, có thể thấy cả tầng tập trung và mạng truyền xuôi theo vị trí trong `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
 Điều này là do kết nối phần dư trong quá trình "cộng và chuẩn hoá", khi ta cần cộng đầu ra của hai khối này với giá trị đầu vào của chúng.
 
