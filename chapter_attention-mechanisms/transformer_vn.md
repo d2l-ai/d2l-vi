@@ -701,7 +701,7 @@ Thus, during prediction we can eliminate the unnecessary information by specifyi
 
 Trong quá trình huấn luyện, đầu ra của câu truy vấn $t$ có thể quan sát được tất cả các cặp khóa - giá trị trước đó.
 Điều này dẫn đến hai cách hoạt động khác nhau của mạng khi huấn luyện và dự đoán.
-Vì thế, trong lúc dự đoán chúng ta có thể loại bỏ những thông tin không cần thiết bằng cách xác định rõ độ dài hợp lệ là $t$ cho câu truy vấn thứ $t$.
+Vì thế, trong lúc dự đoán chúng ta có thể loại bỏ những thông tin không cần thiết bằng cách chỉ định độ dài hợp lệ là $t$ cho câu truy vấn thứ $t$.
 
 
 ```{.python .input  n=16}
