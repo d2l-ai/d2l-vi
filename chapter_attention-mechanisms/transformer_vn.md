@@ -885,7 +885,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 1. Hãy thử huấn luyện với nhiều epoch hơn và so sánh mất mát giữa seq2seq và Transformer.
-2. Biểu diễn vị trí có thể có lợi ích gì khác không?
+2. Biểu diễn vị trí còn có lợi ích gì khác không?
 4. So sánh chuẩn hoá theo tầng và chuẩn hoá theo batch và trường hợp áp dụng?
 
 
