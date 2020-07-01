@@ -613,7 +613,7 @@ Also note that we multiply the embedding output by $\sqrt{d}$ to prevent its val
 
 Bây giờ hãy lập trình bộ mã hoá của Transformer hoàn chỉnh.
 Trong bộ mã hóa, $n$ khối `EncoderBlock` được xếp chồng lên nhau.
-Nhờ có kết nối phần dư, kích thước tầng embedding và đầu ra khối Transformer đều là $d$.
+Nhờ có kết nối phần dư, tầng embedding và đầu ra khối Transformer đều có kích thước là $d$.
 Cũng lưu ý rằng ta nhân các embedding với $\sqrt{d}$ để tránh trường hợp giá trị này quá nhỏ.
 
 
