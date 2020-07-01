@@ -5,7 +5,7 @@
 # Minibatch Stochastic Gradient Descent
 -->
 
-# *dịch tiêu đề phía trên*
+# Hạ Gradient Ngẫu nhiên theo Minibatch
 :label:`sec_minibatch_sgd`
 
 <!--
@@ -17,13 +17,18 @@ Stochastic Gradient Descent is not particularly *computationally efficient* sinc
 This suggests that there might be a happy medium, and in fact, that's what we have been using so far in the examples we discussed.
 -->
 
-*dịch đoạn phía trên*
+Đến phần này, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính toán gradient và cập nhật từng tham số một.
+Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
+Mỗi cách có mặt hạn chế riêng của nó.
+Hạ Gradient có *hiệu suất dữ liệu* (*data efficient*) thấp khi dữ liệu tương đồng với nhau.
+Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computationally efficient*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
+Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, đó chính là phương pháp mà ta sử dụng ở các ví dụ đã thảo luận từ trước tới nay.
 
 <!--
 ## Vectorization and Caches
 -->
 
-## *dịch tiêu đề phía trên*
+## Vector Hoá và Vùng nhớ đệm
 
 <!--
 At the heart of the decision to use minibatches is computational efficiency.
@@ -32,7 +37,10 @@ In this case we need to send at least one image to each GPU.
 With 8 GPUs per server and 16 servers we already arrive at a minibatch size of 128.
 -->
 
-*dịch đoạn phía trên*
+Trọng tâm của quyết định sử dụng minibatch là hiệu suất tính toán.
+Để dễ hiểu, ta xét trường hợp tính toán song song giữa nhiều GPU và giữa nhiều máy chủ.
+Trong trường hợp này ta cần đưa ít nhất một ảnh vào mỗi GPU.
+Với 16 máy chủ và 8 GPU mỗi máy, ta đã có minibatch đạt kích thước 128.
 
 <!--
 Things are a bit more subtle when it comes to single GPUs or even CPUs.
@@ -42,7 +50,11 @@ These caches are of increasing size and latency (and at the same time they are o
 Suffice it to say, the processor is capable of performing many more operations than what the main memory interface is able to provide.
 -->
 
-*dịch đoạn phía trên*
+Vấn đề trở nên nhạy cảm hơn đối với trường hợp GPU đơn hay ngay cả CPU đơn.
+Những thiết bị này có nhiều loại bộ nhớ, thường có nhiều loại đơn vị thực hiện tính toán và giới hạn băng thông giữa các đơn vị này cũng khác nhau.
+Ví dụ, một CPU có số lượng nhỏ thanh ghi và bộ nhớ đệm L1, L2 và trong một số trường hợp có cả L3 (phần bộ nhớ được phân phối giữa các lõi khác nhau của vi xử lý).
+Các bộ nhớ đệm đang tăng dần về kích thước và độ trễ (và cùng với đó là giảm băng thông).
+Nói đến đây là đủ để thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với giao diện bộ nhớ chính có thể cung cấp.
 
 <!--
 * A 2GHz CPU with 16 cores and AVX-512 vectorization can process up to $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ bytes per second. 
@@ -57,7 +69,15 @@ A detailed discussion of this is beyond the scope of this section.
 See e.g., this [Wikipedia article](https://en.wikipedia.org/wiki/Cache_hierarchy) for a more in-depth discussion.
 -->
 
-*dịch đoạn phía trên*
+* Một CPU tốc độ 2GHz với 16 lõi và phép vector hoá AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
+Khả năng của GPU dễ dàng vượt qua con số này hàng trăm lần.
+Mặt khác, với một vi xử lý máy chủ trung bình, băng thông có lẽ không vượt quá 100 GB/s, tức là chưa bằng một phần mười lượng yêu cầu để giữ cho bộ xử lý hoạt động.
+Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: đầu tiên, giao diện bộ nhớ thường rộng 64 bit hoặc hơn (ví dụ như trên GPU lên đến 384 bit), 
+do đó việc đọc một byte duy nhất vẫn sẽ phải chịu chi phí giống như truy cập một khoảng bộ nhớ rộng hơn.
+* Tổng chi phí cho lần truy cập đầu tiên là khá đáng kể trong khi truy cập liên tiếp thường hao tổn ít (thường được gọi là đọc hàng loạt).
+Có rất nhiều điều cần phải chú ý đến, ví dụ như lưu trữ đệm khi ta có nhiều điểm truy cập cuối (*sockets*), nhiều chiplet và các cấu trúc khác.
+ Việc thảo luận chi tiết vấn đề trên nằm ngoài phạm vi của phần này.
+Bạn có thể đọc [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để hiểu sâu hơn về các vấn đề trên.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -558,7 +578,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
