@@ -886,7 +886,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 1. Hãy thử huấn luyện với nhiều epoch hơn và so sánh mất mát giữa seq2seq và Transformer.
 2. Biểu diễn vị trí còn có lợi ích gì khác không?
-4. So sánh chuẩn hoá theo tầng và chuẩn hoá theo batch và trường hợp áp dụng?
+3. So sánh chuẩn hoá theo tầng với chuẩn hoá theo batch. Khi nào nên sử dụng một trong hai tầng chuẩn hóa thay vì tầng còn lại?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
