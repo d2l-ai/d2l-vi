@@ -560,21 +560,22 @@ show_trace(newton(0.5))
 ### Convergence Analysis
 -->
 
-### *dịch đoạn phía trên*
+### Phân tích hội tụ
 
 <!--
 We only analyze the convergence rate for convex and three times differentiable $f$, where at its minimum $x^*$ the second derivative is nonzero, i.e., where $f''(x^*) > 0$.
 The multivariate proof is a straightforward extension of the argument below and omitted since it doesn't help us much in terms of intuition. 
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ chỉ phân tích tốc độ hội tụ đối với hàm $f$ lồi và khả vi ba lần, đây là hàm số có đạo hàm bậc hai tại cực tiểu $x^*$ khác không ($f''(x^*) > 0$).
 
 <!--
 Denote by $x_k$ the value of $x$ at the $k$-th iteration and let $e_k := x_k - x^*$ be the distance from optimality.
 By Taylor series expansion we have that the condition $f'(x^*) = 0$ can be written as
 -->
 
-*dịch đoạn phía trên*
+Đặt $x_k$ là giá trị của $x$ tại vòng lặp thứ $k$ và $e_k := x_k - x^*$ là khoảng cách đến điểm tối ưu.
+Theo khai triển Taylor, điều kiện $f'(x^*) = 0$ được viết lại thành
 
 
 $$0 = f'(x_k - e_k) = f'(x_k) - e_k f''(x_k) + \frac{1}{2} e_k^2 f'''(\xi_k).$$
@@ -585,7 +586,8 @@ This holds for some $\xi_k \in [x_k - e_k, x_k]$. Recall that we have the update
 Dividing the above expansion by $f''(x_k)$ yields
 -->
 
-*dịch đoạn phía trên*
+Điều này đúng với một vài $\xi_k \in [x_k - e_k, x_k]$. Hãy nhớ rằng chúng ta có công thức cập nhật $x_{k+1} = x_k - f'(x_k) / f''(x_k)$.
+Chia khai triển Taylor ở trên cho $f''(x_k)$, ta thu được
 
 
 $$e_k - f'(x_k) / f''(x_k) = \frac{1}{2} e_k^2 f'''(\xi_k) / f''(x_k).$$ 
@@ -596,7 +598,8 @@ Plugging in the update equations leads to the following bound $e_{k+1} \leq e_k^
 Consequently, whenever we are in a region of bounded $f'''(\xi_k) / f''(x_k) \leq c$, we have a quadratically decreasing error $e_{k+1} \leq c e_k^2$. 
 -->
 
-*dịch đoạn phía trên*
+Thay vào phương trình cập nhật sẽ dẫn đến ràng buộc $e_{k+1} \leq e_k^2 f'''(\xi_k) / f'(x_k)$.
+Do đó, khi nằm trong miền ràng buộc $f'''(\xi_k) / f''(x_k) \leq c$, ta sẽ có sai số giảm theo bình phương $e_{k+1} \leq c e_k^2$.
 
 <!--
 As an aside, optimization researchers call this *linear* convergence, whereas a condition such as $e_{k+1} \leq \alpha e_k$ would be called a *constant* rate of convergence. 
@@ -606,7 +609,11 @@ Second, this requires that $f$ is well-behaved up to higher order derivatives.
 It comes down to ensuring that $f$ does not have any "surprising" properties in terms of how it might change its values. 
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh đó, các nhà nghiên cứu tối ưu hóa gọi đây là hội tụ *tuyến tính*, còn điều kiện $e_{k+1} \leq \alpha e_k$ được gọi là tốc độ hội tụ *không đổi*.
+Lưu ý rằng phân tích này đi kèm với một số cảnh báo: Chúng ta không thực sự biết rằng khi nào mình sẽ tiến tới được vùng hội tụ nhanh.
+Thay vào đó, chúng ta chỉ biết rằng một khi đến được đó, việc hội tụ sẽ xảy ra rất nhanh chóng.
+Thêm nữa, điều này yêu cầu $f$ được xử lý tốt ở các đạo hàm bậc cao.
+Nó đảm bảo rằng $f$ sẽ không có bất cứ một tính chất "bất ngờ" nào về cách nó có thể thay đổi giá trị.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -774,7 +781,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Võ Tấn Phát
 
 <!-- Phần 7 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 8 -->
 * Võ Tấn Phát
