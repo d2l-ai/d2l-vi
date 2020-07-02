@@ -118,8 +118,7 @@ See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 
 Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
 [Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
-Động lượng được đề xuất bởi :cite:`Polyak.1964`.
-:cite:`Nesterov.2018` đã có một thảo luận học thuật chi tiết trong tối ưu hoá lồi.
+Động lượng được đề xuất bởi :cite:`Polyak.1964` và :cite:`Nesterov.2018` đã có một thảo luận học thuật chi tiết trong ngữ cảnh tối ưu hoá lồi.
 Động lượng trong học sâu đã được biết đến từ lâu vì lợi ích mà nó mang lại.
 Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm chi tiết.
 
