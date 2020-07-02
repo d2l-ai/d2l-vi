@@ -18,7 +18,7 @@ The attention mechanism, however, makes this selection explicit.
 -->
 
 Trong :numref:`sec_seq2seq`, chúng ta dùng mạng hồi tiếp để mã hóa thông tin của chuỗi nguồn đầu vào thành trạng thái ẩn và truyền nó tới bộ giải mã để sinh chuỗi đích.
-Một token trong chuỗi đích có thể liên quan mật thiết tới một hay nhiều token thay vì toàn bộ token trong chuỗi nguồn.
+Một token trong chuỗi đích có thể chỉ liên quan mật thiết tới một vài token chứ không nhất thiết là toàn bộ token trong chuỗi nguồn.
 Ví dụ, khi dịch "Hello world." thành "Bonjour le monde.", từ "Bonjour" ánh xạ tới từ "Hello" và từ "monde" ánh xạ tới từ "world". 
 Trong mô hình seq2seq, bộ giải mã có thể ngầm chọn thông tin tương ứng từ trạng thái ẩn được truyền đến từ bộ mã hoá.
 Tuy nhiên, cơ chế tập trung (_attention mechanism_) thực hiện phép chọn này một cách tường minh.
@@ -107,7 +107,7 @@ Below, we introduce two commonly used attention layers.
 Before diving into the implementation, we first express two operators to get you up and running: a masked version of the softmax operator `masked_softmax` and a specialized dot operator `batched_dot`.
 -->
 Cách lựa chọn hàm tính điểm khác nhau sẽ tạo ra các tầng tập trung khác nhau.
-Chúng tôi sẽ trình bày hai tầng tập trung thường được sử dụng dưới đây.
+Ở dưới đây chúng tôi sẽ trình bày hai tầng tập trung thường hay được sử dụng.
 Đầu tiên chúng tôi giới thiệu hai toán tử cần thiết để lập trình hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng chuyên biệt theo batch `batched_dot`.
 
 
