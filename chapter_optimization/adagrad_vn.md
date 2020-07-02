@@ -302,7 +302,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(adagrad_2d))
 ## Implementation from Scratch
 -->
 
-## Lập trình lại từ đầu
+## Lập trình từ đầu
 
 <!--
 Just like the momentum method, Adagrad needs to maintain a state variable of the same shape as the parameters.
@@ -344,13 +344,13 @@ d2l.train_ch11(adagrad, init_adagrad_states(feature_dim),
 ## Concise Implementation
 -->
 
-## Cách lập trình Ngắn gọn
+## Lập trình Súc tích
 
 <!--
 Using the `Trainer` instance of the algorithm `adagrad`, we can invoke the Adagrad algorithm in Gluon.
 -->
 
-Sử dụng đối tượng `Trainer` trong thuật toán `adagrad`, ta có thể gọi đến thuật toán Adagrad trong Gluon.
+Sử dụng đối tượng `Trainer` trong thuật toán `adagrad`, ta có thể gọi thuật toán Adagrad trong Gluon.
 
 
 ```{.python .input  n=5}
@@ -374,11 +374,11 @@ d2l.train_gluon_ch11('adagrad', {'learning_rate': 0.1}, data_iter)
 -->
 
 * Adagrad liên tục giảm giá trị của tốc độ học theo từng toạ độ.
-* Thuật toán sử dụng độ lớn của gradient như một phương thức để điều chỉnh tiến độ thực hiện - các toạ độ với gradient lớn được cân bằng bởi tốc độ học nhỏ.
-* Ta thường không thể tính toán chính xác được đạo hàm bậc hai trong các bài toán học sâu do hạn chế về bộ nhớ và khả năng tính toán. Gradient có thể trở thành một biến đại diện hữu ích.
+* Thuật toán sử dụng độ lớn của gradient như một phương thức để điều chỉnh tiến độ học - các toạ độ với gradient lớn được cân bằng bởi tốc độ học nhỏ.
+* Tính chính xác đạo hàm bậc hai thường không khả thi trong các bài toán học sâu do hạn chế về bộ nhớ và khả năng tính toán. Gradient có thể trở thành một biến đại diện hữu ích.
 * Nếu bài toán tối ưu có cấu trúc không được đồng đều, Adagrad có thể làm giảm bớt sự biến dạng đó.
-* Adagrad thường khá hiệu quả đối với các đặc trưng thưa, khi việc giảm tốc độ học cần phải chậm lại tại các thời điểm đặc trưng đó hiếm khi xảy ra.
-* Trong các bài toán học sâu, Adagrad đôi khi làm giảm tốc độ học quá mạnh. Ta sẽ thảo luận các chiến lược nhằm hạn chế vấn đề này trong ngữ cảnh :numref:`sec_adam`.
+* Adagrad thường khá hiệu quả đối với các đặc trưng thưa, trong đó tốc độ học cần giảm chậm hơn cho các tham số hiếm khi xảy ra.
+* Trong các bài toán học sâu, Adagrad đôi khi làm giảm tốc độ học quá mạnh. Ta sẽ thảo luận các chiến lược nhằm giảm bớt vấn đề này trong ngữ cảnh :numref:`sec_adam`.
 
 <!--
 ## Exercises
@@ -401,12 +401,12 @@ a matrix $\mathbf{M}$ satisfy $|\lambda_i - \mathbf{M}_{jj}| \leq \sum_{k \neq j
 1. Chứng minh rằng một ma trận trực giao $\mathbf{U}$ và một vector $\mathbf{c}$ thoả mãn điều kiện: $\|\mathbf{c} - \mathbf{\delta}\|_2 = \|\mathbf{U} \mathbf{c} - \mathbf{U} \mathbf{\delta}\|_2$.
 Tại sao biểu thức trên lại biểu thị rằng độ nhiễu loạn không thay đổi khi biến đổi trực giao các biến?
 2. Thử áp dụng Adagrad đối với $f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2$ và đối với hàm mục tiêu được quay 45 độ,
-tức là $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Adagrad có vận hành khác đi hay không?
+tức là $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Adagrad có hoạt động khác đi hay không?
 3. Chứng minh [Định lý Gerschgorin](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem), định lý phát biểu rằng với các trị riêng $\lambda_i$ của
 ma trận $\mathbf{M}$, tồn tại $j$ thoả mãn $|\lambda_i - \mathbf{M}_{jj}| \leq \sum_{k \neq j} |\mathbf{M}_{jk}|$.
 4. Từ định lý Gerschgorin, ta có thể chỉ ra điều gì về các trị riêng của ma trận đường chéo tiền điều kiện (*diagonally preconditioned matrix*) $\mathrm{diag}^{-\frac{1}{2}}(\mathbf{M}) \mathbf{M} \mathrm{diag}^{-\frac{1}{2}}(\mathbf{M})$?
 5. Hãy thử áp dụng Adagrad cho một mạng thực sự sâu như :numref:`sec_lenet` khi sử dụng Fashion MNIST.
-6. Bạn sẽ thay đổi Adagrad như thế nào để tốc độ học không còn bị suy hao quá mạnh?
+6. Bạn sẽ thay đổi Adagrad như thế nào để tốc độ học không suy giảm quá mạnh?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
