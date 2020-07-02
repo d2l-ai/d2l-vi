@@ -16,7 +16,7 @@ If we are too lenient, we fail to converge to a good enough solution since noise
 -->
 
 Trong :numref:`sec_sgd` chúng ta đã ôn tập về kỹ thuật hạ gradient ngẫu nhiên, ví dụ như tối ưu hoá khi chỉ có một biến thể gây nhiễu gradient.
-Cụ thể, cần chú ý với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt của tác nhân gây nhiễu.
+Cụ thể, với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt tác nhân gây nhiễu.
 Nếu gradient giảm quá nhanh, việc hội tụ sẽ bị chững lại.
 Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ tốt sẽ khó xảy ra bởi vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
