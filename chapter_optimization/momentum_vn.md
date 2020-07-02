@@ -199,7 +199,7 @@ Using $\mathbf{v}_t$ instead of the gradient $\mathbf{g}_t$ yields the following
 
 Phương pháp động lượng cho phép chúng ta giải quyết bài toán hạ gradient mô tả ở trên.
 Nhìn vào các vết tối ưu trên, chúng ta có thể tưởng tượng trực quan rằng trung bình gradient của các bước trước sẽ hoạt động tốt.
-Sau cùng, cách này sẽ tính tổng các gradient theo hướng $x_1$, từ đó tăng khoảng các gradient được bao hàm với từng bước.
+Sau cùng, với chiều $x_1$ các gradient là cùng hướng, cách làm này sẽ đơn thuần lấy tổng, từ đó tăng khoảng cách di chuyển ở từng bước.
 Ngược lại, gradient dao động mạnh theo hướng $x_2$, từ đó kết hợp các gradient sẽ làm giảm kích thước bước do dao động triệt tiêu lẫn nhau.
 Sử dụng $\mathbf{v}_t$ thay vì gradient $\mathbf{g}_t$, ta có các phương trình cập nhật sau:
 
