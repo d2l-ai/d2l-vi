@@ -203,6 +203,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                    | Tiếng Việt                   | Thảo luận tại                                |
 |----------------------------|------------------------------|----------------------------------------------|
+| ill-conditioned    |  (có) điều kiện xấu    |                                              |
 | implement                  | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | implementation             | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
 | implicit feedback          | phản hồi gián tiếp           |                                              |
