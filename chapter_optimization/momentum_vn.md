@@ -240,7 +240,7 @@ Nonetheless, it is a lot better than without momentum (when the solution diverge
 -->
 
 Như chúng ta có thể thấy, ngay cả với tc độ học tương tự nốhư trước đó, động lượng vẫn hội tụ tốt.
-Chúng ta hãy xem điều gì sẽ xảy ra khi chúng ta giảm tham số động lượng.
+Chúng ta hãy xem điều gì sẽ xảy ra khi giảm tham số động lượng.
 Giảm một nửa giá trị động lượng $\beta = 0.25$ sẽ dẫn đến một quỹ đạo mà rất khó hội tụ.
 Tuy nhiên, điều này vẫn tốt hơn rất nhiều so với trường hợp không sử dụng động lượng (khi nghiệm phân kì).
 
