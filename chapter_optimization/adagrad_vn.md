@@ -227,7 +227,7 @@ Last, we initialize $\mathbf{s}_0 = \mathbf{0}$.
 Ở đây các phép toán được thực hiện theo từng toạ độ.
 Nghĩa là, $\mathbf{v}^2$ có các phần tử $v_i^2$.
 Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$.
-Như phần trên $\eta$ là tốc độ học và $\epsilon$ là hệ số phụ nhằm đảm bảo rằng ta không bị lỗi chia cho $0$.
+Như phần trước $\eta$ là tốc độ học và $\epsilon$ là hệ số phụ nhằm đảm bảo rằng ta không bị lỗi chia cho $0$.
 Cuối cùng, ta khởi tạo $\mathbf{s}_0 = \mathbf{0}$.
 
 <!--
@@ -236,7 +236,7 @@ This does not increase the cost of Adagrad significantly relative to SGD, simply
 -->
 
 Tương tự như trường hợp sử dụng động lượng (*momentum*), ta cần phải theo dõi các biến bổ trợ, ở đây là để mỗi toạ độ có một tốc độ học độc lập.
-Việc làm này không làm cho chi phí của Adagrad tăng đáng kể so với SGD, đơn giản là gì chi phí chính thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
+Cách này không tăng đáng kể chi phí của Adagrad so với SGD, đơn giản là do chi phí chính yếu  thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -268,7 +268,7 @@ However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate c
 
 Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức là $\eta = 0.4$.
 Ta có thể thấy quỹ đạo lặp của các biến độc lập mượt hơn nhiều.
-Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy hao khiến cho các biến độc lập không thay đổi nhiều ở giai đoạn sau của vòng lặp.
+Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy giảm khiến cho các biến độc lập không thay đổi nhiều ở các giai đoạn về sau của vòng lặp.
 
 
 ```{.python .input  n=6}
@@ -300,7 +300,7 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-Nếu tăng tốc độ học lên $2$ ta có thể thấy quá trình học vận hành tốt hơn nhiều.
+Nếu tăng tốc độ học lên $2$ ta có thể thấy quá trình học tốt hơn nhiều.
 Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
 
 
