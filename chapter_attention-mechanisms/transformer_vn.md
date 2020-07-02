@@ -868,7 +868,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * Mô hình Transformer dựa trên kiến ​​trúc mã hóa - giải mã.
 * Tầng tập trung đa đầu gồm có $h$ tầng tập trung song song.
 * Mạng truyền xuôi theo vị trí gồm hai tầng kết nối đầy đủ được áp dụng trên chiều cuối cùng.
-* Chuẩn hoá theo tầng thực hiện trên chiều cuối cùng (chiều đặc trưng), khác với chuẩn hoá theo batch thực hiện trên chiều đầu tiên (kích thước batch).
+* Chuẩn hoá theo tầng được áp dụng trên chiều cuối cùng (chiều đặc trưng), thay vì chiều đầu tiên (kích thước batch) như ở chuẩn hoá theo batch.
 * Biểu diễn vị trí là nơi duy nhất đưa thông tin vị trí trong chuỗi vào mô hình Transformer.
 
 
