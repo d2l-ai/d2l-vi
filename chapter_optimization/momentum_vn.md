@@ -88,7 +88,7 @@ This allows us to realize most of the benefits of averaging over a batch without
 We will revisit this averaging procedure in more detail later.
 -->
 
-Gía trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ có một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
+Giá trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ có một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
 Gradient mới này không còn trỏ về hướng đi dốc nhất trong một trường cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
 Điều này cho phép chúng ta nhận ra hầu hết lợi ích của việc tính toán trung bình theo batch mà không phải tốn chi phí tính toán gradients.
 Chúng ta sẽ xem xét lại quy trình lấy trung bình một cách cụ thể hơn ở những phần sau.
