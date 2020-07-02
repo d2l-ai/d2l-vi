@@ -319,17 +319,17 @@ Since the same two dense layers are used for each position item in the sequence,
 Indeed, it is equivalent to applying two $1 \times 1$ convolution layers.
 -->
 
-Một thành phần quan trọng khác trong Khối Transformer được gọi là *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network -- FFN*).
+Một thành phần quan trọng khác trong Khối Transformer là *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*).
 Nó chấp nhận đầu vào $3$ chiều với kích thước là (kích thước batch, độ dài chuỗi, kích thước đặc trưng).
-FFN theo vị trí bao gồm hai tầng dày đặc áp dụng trên chiều sau cùng.
-Vì cùng hai tầng dày đặc này được sử dụng cho từng mục vị trí trong chuỗi, chúng ta gọi nó là *theo vị trí*.
-Thật vậy, nó tương đương với việc áp dụng hai tầng tích chập $1 \times 1$ .
+Mạng truyền xuôi theo vị trí bao gồm hai tầng dày đặc áp dụng trên chiều cuối cùng của đầu vào.
+Vì hai tầng dày đặc này cùng được sử dụng cho từng vị trí trong chuỗi, nên ta gọi là mạng truyền xuôi *theo vị trí*.
+Cách làm này tương đương với việc áp dụng hai tầng tích chập $1 \times 1$ .
 
 <!--
 Below, the `PositionWiseFFN` shows how to implement a position-wise FFN with two dense layers of hidden size `ffn_num_hiddens` and `pw_num_outputs`, respectively.
 -->
 
-Bên dưới, `PositionWiseFFN` chỉ ra cách lập trình FFN theo vị trí với hai tầng dày đặc có kích thước ẩn `ffn_num_hiddens` và `pw_numDefputs`, lần lượt tương ứng.
+Lớp `PositionWiseFFN` dưới đây lập trình mạng truyền xuôi theo vị trí với hai tầng dày đặc có kích thước ẩn lần lượt là `ffn_num_hiddens` và `pw_num_outputs`.
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -349,8 +349,8 @@ Similar to the multi-head attention, the position-wise feed-forward network will
 In addition, if two items in the input sequence are identical, the according outputs will be identical as well.
 -->
 
-Tương tự như tầng tập trung đa đầu, mạng truyền xuôi theo vị trí sẽ chỉ thay đổi kích thước của chiều cuối cùng của đầu vào --- tức kích thước đặc trưng.
-Ngoài ra, nếu hai mục trong chuỗi đầu vào giống hệt nhau, thì các đầu ra theo đó cũng sẽ giống hệt nhau.
+Tương tự như tầng tập trung đa đầu, mạng truyền xuôi theo vị trí sẽ chỉ thay đổi kích thước chiều cuối cùng của đầu vào --- tức kích thước của đặc trưng.
+Ngoài ra, nếu hai phần tử trong chuỗi đầu vào giống hệt nhau, thì hai đầu ra tương ứng cũng sẽ giống hệt nhau.
 
 ```{.python .input  n=6}
 ffn = PositionWiseFFN(4, 8)
@@ -362,7 +362,7 @@ ffn(np.ones((2, 3, 4)))[0]
 ## Add and Norm
 -->
 
-## Cộng và Chuẩn
+## Cộng và Chuẩn hoá
 
 <!--
 Besides the above two components in the Transformer block, the "add and norm" within the block also plays a key role to connect the inputs and outputs of other layers smoothly.
@@ -372,11 +372,11 @@ One difference is that the mean and variances for the layer normalization are ca
 Layer normalization prevents the range of values in the layers from changing too much, which allows faster training and better generalization ability.
 -->
 
-Bên cạnh hai thành phần trên trong khối Transformer, khối "cộng và chuẩn" cũng đóng vai trò thiết yếu để kết nối đầu vào và đầu ra của các lớp khác một cách trơn tru.
-Giải thích rõ hơn, ta thêm một cấu trúc phần dư và tầng *chuẩn hóa theo tầng* sau cả lớp tập trung đa đầu và mạng FFN theo vị trí.
-*Chuẩn hóa theo tầng* tương tự như chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
-Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa được tính dọc theo chiều cuối cùng, tức `X.mean(axis=-1)`, thay vì theo chiều batch đầu tiên như `X.mean(axis=0)` .
-Chuẩn hóa tầng ngăn không cho phạm vi giá trị trong các tầng thay đổi quá nhiều, điều này cho phép huấn luyện nhanh hơn và khả năng khái quát hóa tốt hơn.
+Trong kiến trúc Transformer, tầng "cộng và chuẩn hoá" cũng đóng vai trò thiết yếu trong việc kết nối đầu vào và đầu ra của các tầng khác một cách trơn tru.
+Cụ thể, ta thêm một cấu trúc phần dư và tầng *chuẩn hóa theo tầng* sau tầng tập trung đa đầu và mạng truyền xuôi theo vị trí.
+*Chuẩn hóa theo tầng* khá giống với chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
+Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa này được tính theo chiều cuối cùng, tức `X.mean(axis=-1)`, thay vì theo chiều đầu tiên (theo batch) `X.mean(axis=0)` .
+Chuẩn hóa tầng ngăn không cho phạm vi giá trị trong các tầng thay đổi quá nhiều, giúp huấn luyện nhanh hơn và khái quát hóa tốt hơn.
 
 <!--
 MXNet has both `LayerNorm` and `BatchNorm` implemented within the `nn` block.
@@ -384,7 +384,7 @@ Let us call both of them and see the difference in the example below.
 -->
 
 MXNet có cả `LayerNorm` và `BatchNorm` được lập trình trong khối `nn`.
-Chúng ta hãy gọi cả hai và xem sự khác biệt trong ví dụ dưới đây.
+Hãy cùng xem sự khác biệt giữa chúng qua ví dụ dưới đây.
 
 
 ```{.python .input  n=7}
@@ -405,10 +405,10 @@ We can deem $X$ as the original input in the residual network, and $Y$ as the ou
 In addition, we apply dropout on $Y$ for regularization.
 -->
 
-Bây giờ chúng ta hãy cùng lập trình khối kết nối `AddNorm`.
-`AddNorm` chấp nhận hai đầu vào $X$ và $Y$.
-Chúng ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng FFN theo vị trí.
-Ngoài ra, ta cũng sẽ áp dụng dropout trên $Y$ để điều chuẩn.
+Bây giờ hãy cùng lập trình khối `AddNorm`.
+`AddNorm` nhận hai đầu vào $X$ và $Y$.
+Ta có thể coi $X$ là đầu vào ban đầu trong mạng phần dư và $Y$ là đầu ra từ tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí.
+Ngoài ra, ta cũng sẽ áp dụng dropout lên $Y$ để điều chuẩn.
 
 
 ```{.python .input  n=8}
@@ -451,26 +451,26 @@ Unlike the recurrent layer, both the multi-head attention layer and the position
 This feature enables us to parallelize the computation, but it fails to model the sequential information for a given sequence.
 To better capture the sequential information, the Transformer model uses the *positional encoding* to maintain the positional information of the input sequence.
 -->
-Không giống như tầng truy hồi, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí tính toán đầu ra cho từng đầu vào của chuỗi một cách độc lập.
-Điều này cho phép chúng ta song song hoá được công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
-Để nắm bắt các thông tin tuần tự hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
+Không giống như tầng hồi tiếp, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí đều tính toán đầu ra cho từng phần tử trong chuỗi một cách độc lập.
+Điều này cho phép song song hoá công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
+Để nắm bắt các thông tin tuần tự một cách hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
 <!--
 To explain, assume that $X\in\mathbb R^{l\times d}$ is the embedding of an example, where $l$ is the sequence length and $d$ is the embedding size.
 This positional encoding layer encodes X's position $P\in\mathbb R^{l\times d}$ and outputs $P+X$.
 -->
-Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
-Tầng biểu diễn vị trí mã hoá vị trí của X thành $P\in\mathbb R^{l\times d}$ và có đầu ra là $P+X$.
 
+Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
+Tầng biểu diễn vị trí sẽ mã hoá vị trí $P\in\mathbb R^{l\times d}$ của X và trả về đầu ra $P+X$.
 
 <!--
 The position $P$ is a 2-D matrix, where $i$ refers to the order in the sentence, and $j$ refers to the position along the embedding vector dimension.
 In this way, each value in the origin sequence is then maintained using the equations below:
 -->
 
-Biểu diễn vị trí $P$ là ma trận 2 chiều, trong đó $i$ biểu diễn thứ tự trong câu, và $j$ biểu diễn vị trí dọc trên chiều vector embedding.
-Bằng cách này, mỗi thông tin vị trí trong chuỗi nguồn được biểu biễn bởi hai phương trình dưới đây:
+Vị trí $P$ là ma trận 2 chiều, trong đó $i$ là thứ tự trong câu, $j$ là vị trí theo chiều embedding.
+Bằng cách này, mỗi vị trí trong chuỗi ban đầu được biểu biễn bởi hai phương trình dưới đây:
 
 
 $$P_{i, 2j} = \sin(i/10000^{2j/d}),$$
@@ -490,7 +490,7 @@ với $i=0,\ldots, l-1$ và $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
 :numref:`fig_positional_encoding` illustrates the positional encoding.
 -->
 
-:numref: `fig_positional_encoding` minh họa biểu diễn vị trí $P$ của $X$.
+:numref:`fig_positional_encoding` minh họa biểu diễn vị trí.
 
 
 <!--
@@ -526,9 +526,8 @@ As we can see, the $4^{\mathrm{th}}$ dimension has the same frequency as the $5^
 The $5^{\mathrm{th}}$ and $6^{\mathrm{th}}$ dimensions have a lower frequency.
 -->
 
-Bây giờ chúng ta hãy kiểm tra lớp `PositionalEncoding` ở trên bằng mô hình đơn giản cho 4 chiều.
-Như chúng ta có thể thấy, chiều thứ 4 có cùng tần số giống chiều thứ 5 nhưng khác giá trị độ dời.
-Chiều thứ 5 và 6 có tần số thấp hơn.
+Bây giờ chúng ta kiểm tra lớp `PositionalEncoding` ở trên bằng một mô hình đơn giản cho 4 chiều.
+Có thể thấy, chiều thứ 4 và chiều thứ 5 có cùng tần số nhưng khác độ dời, còn chiều thứ 6 và 7 có tần số thấp hơn.
 
 
 ```{.python .input  n=11}
