@@ -491,7 +491,7 @@ với $i=0,\ldots, l-1$ và $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
 :numref:`fig_positional_encoding` illustrates the positional encoding.
 -->
 
-:numref: `fig_positional_encoding` minh họa biểu diễn vị trí.
+:numref:`fig_positional_encoding` minh họa biểu diễn vị trí.
 
 
 <!--
