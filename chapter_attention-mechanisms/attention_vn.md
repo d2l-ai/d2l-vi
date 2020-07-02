@@ -202,7 +202,7 @@ In other words,
 
 Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết hai loại tầng tập trung được sử dụng phổ biến.
 Loại đầu tiên là *tập trung tích vô hướng* (_dot product attention_): nó giả định rằng câu truy vấn có cùng kích thước chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
-Tầng tập trung tích vô hướng sẽ tính điểm bằng cách lấy tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
+Tầng tập trung tích vô hướng sẽ tính điểm bằng cách lấy tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để giảm thiểu ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
 Nói cách khác,
 
 
