@@ -116,7 +116,7 @@ Momentum in deep learning has been known to be beneficial for a long time.
 See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
-Như mong muốn, do động lượng là một chủ để đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
+Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
 [Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
 Động lượng được đề xuất bởi :cite:`Polyak.1964`.
 :cite:`Nesterov.2018` đã có một thảo luận lý thuyết chi tiết trong tối ưu hoá lồi.
