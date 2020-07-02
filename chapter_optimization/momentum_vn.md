@@ -131,7 +131,7 @@ Recall that in :numref:`sec_gd` we used $f(\mathbf{x}) = x_1^2 + 2 x_2^2$, i.e.,
 We distort this function further by stretching it out in the $x_1$ direction via
 -->
 
-Để hiểu hơn về các tính chất hình học của phương pháp động lượng, chúng ta hãy ôn lại thuật toán hạ gradient với hàm mục tiêu phức tạp hơn.
+Để hiểu hơn về các tính chất hình học của phương pháp động lượng, chúng ta hãy ôn lại thuật toán hạ gradient với hàm mục tiêu khó chịu hơn.
 Hãy nhớ lại trong :numref:`sec_gd` chúng ta sử dụng $f(\mathbf{x}) = x_1^2 + 2 x_2^2$ là hàm mục tiêu dạng elip méo.
 Chúng ta sẽ sửa đổi hàm này một chút để kéo dài hình dạng theo hướng $x_1$ như sau:
 
