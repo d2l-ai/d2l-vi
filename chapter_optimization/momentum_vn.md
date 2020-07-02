@@ -218,7 +218,7 @@ Before delving deeper into the mathematical properties let us have a quick look 
 -->
 
 Lưu ý rằng với $\beta = 0$, phương pháp này trở thành thuật toán hạ gradient thông thường.
-Trước khi nghiên cứu sâu hơn các tính chất toán học, chúng ta hãy nhìn lướt qua cách thuật toán  này hoạt động trong thực tế.
+Trước khi nghiên cứu sâu hơn các tính chất toán học, chúng ta hãy nhìn lướt qua cách thuật toán này hoạt động trong thực tế.
 
 
 ```{.python .input  n=5}
