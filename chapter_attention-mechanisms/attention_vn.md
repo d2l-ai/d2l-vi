@@ -262,7 +262,7 @@ Therefore, even though both batches have the same query and key-value pairs, we 
 Hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
 Đầu tiên ta tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
 Thông qua đối số `valid_len`, ta chỉ định rằng ta sẽ kiểm tra $2$ cặp khoá-giá trị đầu tiên cho batch đầu tiên và $6$ cặp cho batch thứ hai.
-Do đó, mặc dù cả hai batch có cùng số câu truy vấn và số cặp khoá-giá trị, chúng ta sẽ thu được các đầu ra khác nhau. 
+Do đó, mặc dù cả hai batch đều có cùng câu truy vấn và các cặp khoá-giá trị, chúng ta sẽ thu được các đầu ra khác nhau.
 
 
 ```{.python .input  n=6}
