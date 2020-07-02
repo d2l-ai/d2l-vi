@@ -145,7 +145,7 @@ Let us see what happens when we perform gradient descent as before on this new f
 We pick a learning rate of $0.4$.
 -->
 
-Như trước đây, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *khá* phẳng theo hướng $x_1$.
+Như trước đây, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *rất* phẳng theo hướng $x_1$.
 Chúng ta hãy xem điều gì sẽ xảy ra khi thực hiện hạ gradient tương tự như trước trên hàm mới định nghĩa.
 Chúng ta đặt tốc độ học bằng $0.4$.
 
