@@ -43,7 +43,7 @@ The previous section saw us discussing minibatch SGD as a means for accelerating
 It also had the nice side-effect that averaging gradients reduced the amount of variance.
 -->
 
-Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên minibatch như một cách để tăng tốc độ tính toán.
+Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
 Đồng thời, kỹ thuật này cũng có một "tác dụng phụ" tốt đó là lấy trung bình gradients giúp giảm phương sai.
 
 
