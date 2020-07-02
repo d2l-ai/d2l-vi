@@ -201,7 +201,7 @@ In other words,
 -->
 
 Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết hai loại tầng tập trung được sử dụng phổ biến.
-Loại đầu tiên là *tập trung tích vô hướng* (_dot product attention_): nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Loại đầu tiên là *tập trung tích vô hướng* (_dot product attention_): nó giả định rằng câu truy vấn có cùng kích thước chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
 Tầng tập trung tích vô hướng sẽ tính điểm bằng cách lấy tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
 Nói cách khác,
 
@@ -281,7 +281,7 @@ To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
 Như đã thấy ở trên, tập trung tích vô hướng chỉ đơn thuần nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó thu được những điểm tương đồng giữa chúng.
-Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
+Tuy nhiên, câu truy vấn và khoá có thể không có cùng kích thước chiều.
 Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
