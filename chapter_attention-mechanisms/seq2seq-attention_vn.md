@@ -68,7 +68,7 @@ Then we initialize the state of the decoder by passing three items from the enco
 -->
 
 Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
-Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã. 
+Ta thêm tầng tập trung MLP (`MLPAttention`) có cùng kích thước ẩn với tầng LSTM trong bộ giải mã. 
 Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
 <!--
@@ -96,7 +96,7 @@ Although the RNN layer hidden state also contains history information from decod
 the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
-Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng trạng thái ẩn của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
+Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN. 
 Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá một cách tường minh dựa vào `enc_valid_len`nhằm loại bỏ những thông tin không liên quan.
 
