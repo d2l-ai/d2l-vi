@@ -2,8 +2,8 @@
 
 ## Dự án dịch sách "Dive into Deep Learning"
 
-Cuốn sách này được dịch và đăng tải tại https://d2l.aivivn.com/.<br/>
-Bản tiếng Anh: https://www.d2l.ai/
+* Bản tiếng Việt: https://d2l.aivivn.com/
+* Bản tiếng Anh: https://www.d2l.ai/
 
 ## Hướng dẫn đóng góp vào dự án
 Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
@@ -12,9 +12,7 @@ Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
-
----
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
 ## Mục lục
 
@@ -92,7 +90,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[gl
     * [x] 10.1. [Cơ chế Tập trung](chapter_attention-mechanisms/attention_vn.md)
     * [x] 10.2. [Chuỗi sang Chuỗi áp dụng Cơ chế Tập trung](chapter_attention-mechanisms/seq2seq-attention_vn.md)
     * [x] 10.3. [Kiến trúc Transformer](chapter_attention-mechanisms/transformer_vn.md)
-* [ ] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
+* [-] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
     * [x] 11.1. [Tối ưu và Học sâu](chapter_optimization/optimization-intro_vn.md)
     * [x] 11.2. [Tính lồi](chapter_optimization/convexity_vn.md)
     * [x] 11.3. [Hạ Gradient](chapter_optimization/gd_vn.md)

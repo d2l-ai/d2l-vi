@@ -18,8 +18,8 @@ Finally, we feed the concatenation into the decoder.
 -->
 
 Trong phần này, chúng ta thêm cơ chế tập trung vào mô hình chuỗi sang chuỗi (seq2seq) giới thiệu trong :numref:`sec_seq2seq` để gộp các trạng thái theo trọng số tương ứng một cách tường minh.
-:numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hoá và giải mã tại bước thời gian $t$.
-Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
+:numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hóa và giải mã tại bước thời gian $t$.
+Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hóa đã được học---đầu ra của bộ mã hóa tại từng bước thời gian.
 Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm câu truy vấn.
 Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$ và kết quả được đưa vào bộ giải mã.
 
@@ -35,7 +35,7 @@ Trong quá trình giải mã, đầu ra của bộ giải mã tại bước th�
 To illustrate the overall architecture of seq2seq with attention model, the layer structure of its encoder and decoder is shown in :numref:`fig_s2s_attention_details`.
 -->
 
-Để minh hoạ kiến trúc tổng thể của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc tầng của bộ mã hoá và bộ giải mã được mô tả trong :numref:`fig_s2s_attention_details`.
+Để minh họa kiến trúc tổng thể của mô hình seq2seq áp dụng cơ chế tập trung, cấu trúc tầng của bộ mã hóa và bộ giải mã được mô tả trong :numref:`fig_s2s_attention_details`.
 
 <!--
 ![The layers in the sequence to sequence model with attention mechanism.](../img/seq2seq-attention-details.svg)
@@ -43,6 +43,8 @@ To illustrate the overall architecture of seq2seq with attention model, the laye
 
 ![Các tầng trong mô hình chuỗi sang chuỗi áp dụng cơ chế tập trung.](../img/seq2seq-attention-details.svg)
 :label:`fig_s2s_attention_details`
+
+
 
 ```{.python .input  n=1}
 import d2l
@@ -59,7 +61,7 @@ npx.set_np()
 ## Decoder
 -->
 
-## Bộ giải mã
+## Bộ Giải mã
 
 <!--
 Since the encoder of seq2seq with attention mechanisms is the same as `Seq2SeqEncoder` in :numref:`sec_seq2seq`, we will just focus on the decoder.
@@ -67,27 +69,27 @@ We add an MLP attention layer (`MLPAttention`) which has the same hidden size as
 Then we initialize the state of the decoder by passing three items from the encoder:
 -->
 
-Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
+Do bộ mã hóa của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hóa của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
 Ta thêm tầng tập trung MLP (`MLPAttention`) có cùng kích thước ẩn với tầng LSTM trong bộ giải mã. 
-Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
+Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hóa:
 
 <!--
 - **the encoder outputs of all timesteps**: they are used as the attention layer's memory with identical keys and values;
 -->
 
-- **đầu ra của bộ mã hoá tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung có cùng các khoá và giá trị;
+- **Đầu ra của bộ mã hóa tại tất cả các bước thời gian**: được sử dụng như bộ nhớ của tầng tập trung có cùng các khóa và giá trị;
 
 <!--
 - **the hidden state of the encoder's final timestep**: it is used as the initial decoder's hidden state;
 -->
 
-- **trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng**: được sử dụng làm trạng thái ẩn ban đầu của bộ giải mã;
+- **Trạng thái ẩn của bộ mã hóa tại bước thời gian cuối cùng**: được sử dụng làm trạng thái ẩn ban đầu của bộ giải mã;
 
 <!--
 - **the encoder valid length**: so the attention layer will not consider the padding tokens with in the encoder outputs.
 -->
 
-- **độ dài hợp lệ của bộ mã hoá**: để tầng tập trung có thể bỏ qua những token đệm có trong đầu ra của bộ mã hoá.
+- **Độ dài hợp lệ của bộ mã hóa**: để tầng tập trung có thể bỏ qua những token đệm có trong đầu ra của bộ mã hóa.
 
 <!--
 At each timestep of the decoding, we use the output of the decoder's last RNN layer as the query for the attention layer.
@@ -98,7 +100,7 @@ the attention output explicitly selects the encoder outputs based on `enc_valid_
 
 Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN. 
-Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá một cách tường minh dựa vào `enc_valid_len`nhằm loại bỏ những thông tin không liên quan.
+Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hóa một cách tường minh dựa vào `enc_valid_len`nhằm loại bỏ những thông tin không liên quan.
 
 <!--
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
@@ -184,7 +186,7 @@ Due to the computational overhead of both the encoder's and the decoder's attent
 
 Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng một bộ siêu tham số và hàm mất mát để huấn luyện như :numref:`sec_seq2seq_training`.
 Từ kết quả, ta thấy tầng tập trung được thêm vào mô hình không tạo ra cải thiện đáng kể nào do các chuỗi trong tập huấn luyện khá ngắn.
-Bởi chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và bộ giải mã, mô hình này hoạt động chậm hơn nhiều so với mô hình seq2seq không áp dụng tập trung.
+Bởi chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hóa và bộ giải mã, mô hình này họat động chậm hơn nhiều so với mô hình seq2seq không áp dụng tập trung.
 
 
 ```{.python .input  n=5}
@@ -226,7 +228,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 * Mô hình seq2seq áp dụng cơ chế tập trung thêm một tầng tập trung vào mô hình seq2seq ban đầu.
-* Bộ giải mã của mô hình seq2seq áp dụng cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hoá.
+* Bộ giải mã của mô hình seq2seq áp dụng cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hóa: đầu ra của bộ mã hóa tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hóa tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hóa.
 
 <!--
 ## Exercises
@@ -252,16 +254,6 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang

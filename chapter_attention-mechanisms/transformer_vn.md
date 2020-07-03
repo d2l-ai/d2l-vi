@@ -47,7 +47,7 @@ We  compare Transformer and seq2seq  side-by-side in :numref:`fig_transformer`.
 
 Tương tự như mô hình seq2seq trong :numref:`sec_seq2seq`, Transformer cũng dựa trên kiến trúc mã hóa-giải mã.
 Tuy nhiên, nó thay thế các tầng hồi tiếp trong seq2seq bằng các tầng *tập trung đa đầu* (*multi-head attention*), kết hợp thông tin vị trí thông qua *biểu diễn vị trí* (*positional encoding*) và áp dụng *chuẩn hóa tầng* (*layer normalization*).
-:numref:`fig_transformer` so sánh cấu trúc của Transformer và seq2seq.
+:numref:`fig_transformer` sẽ so sánh cấu trúc của Transformer và seq2seq.
 
 <!--
 Overall, these two models are similar to each other: the source sequence embeddings are fed into $n$ repeated blocks.
@@ -56,7 +56,7 @@ The target sequence embeddings are similarly fed into $n$ repeated blocks in the
 -->
 
 Nhìn chung, hai mô hình này khá giống nhau: các embedding của chuỗi nguồn được đưa vào $n$ khối lặp lại.
-Đầu ra của khối mã hoá cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
+Đầu ra của khối mã hóa cuối cùng sau đó được sử dụng làm bộ nhớ tập trung cho bộ giải mã.
 Tương tự, các embedding của chuỗi đích được đưa vào $n$ khối lặp lại trong bộ giải mã. 
 Ta thu được đầu ra cuối cùng bằng cách áp dụng một tầng dày đặc có kích thước bằng kích thước bộ từ vựng lên các đầu ra của khối giải mã cuối cùng.
 
@@ -89,9 +89,9 @@ are processed by two "add and norm" layer that contains a residual structure and
 -->
 
 1. **Khối Transformer**: một tầng hồi tiếp trong seq2seq được thay bằng một *Khối Transformer*.
-Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc. <!-- trong hình `../img/transformer.svg` chỉ có 1 PositionWiseFNN, và trong đoạn code L335-L346 thì `two layers` là 2 Dense layers -->
+Với bộ mã hóa, khối này chứa một tầng *tập trung đa đầu* và một *mạng truyền xuôi theo vị trí* (*position-wise feed-forward network*) gồm hai tầng dày đặc.
 Đối với bộ giải mã, khối này có thêm một tầng tập trung đa đầu khác để nhận vào trạng thái bộ mã hóa.
-2. **Cộng và chuẩn hoá**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hoá" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*).
+2. **Cộng và chuẩn hóa**: đầu vào và đầu ra của cả tầng tập trung đa đầu hoặc mạng truyền xuôi theo vị trí được xử lý bởi hai tầng "cộng và chuẩn hóa" bao gồm cấu trúc phần dư và tầng *chuẩn hóa theo tầng* (*layer normalization*).
 3. **Biễu diễn vị trí**: do tầng tự tập trung không phân biệt thứ tự phần tử trong một chuỗi, nên tầng biễu diễn vị trí được sử dụng để thêm thông tin vị trí vào từng phần tử trong chuỗi.
 
 
@@ -309,7 +309,7 @@ cell(X, X, X, valid_len).shape
 ## Position-wise Feed-Forward Networks
 -->
 
-## Mạng truyền xuôi theo vị trí
+## Mạng truyền Xuôi theo Vị trí
 
 <!--
 Another key component in the Transformer block is called *position-wise feed-forward network (FFN)*.
@@ -323,7 +323,7 @@ Một thành phần quan trọng khác trong Khối Transformer là *mạng truy
 Nó chấp nhận đầu vào $3$ chiều với kích thước là (kích thước batch, độ dài chuỗi, kích thước đặc trưng).
 Mạng truyền xuôi theo vị trí bao gồm hai tầng dày đặc áp dụng trên chiều cuối cùng của đầu vào.
 Vì hai tầng dày đặc này cùng được sử dụng cho từng vị trí trong chuỗi, nên ta gọi là mạng truyền xuôi *theo vị trí*.
-Cách làm này tương đương với việc áp dụng hai tầng tích chập $1 \times 1$ .
+Cách làm này tương đương với việc áp dụng hai tầng tích chập $1 \times 1$.
 
 <!--
 Below, the `PositionWiseFFN` shows how to implement a position-wise FFN with two dense layers of hidden size `ffn_num_hiddens` and `pw_num_outputs`, respectively.
@@ -362,7 +362,7 @@ ffn(np.ones((2, 3, 4)))[0]
 ## Add and Norm
 -->
 
-## Cộng và Chuẩn hoá
+## Cộng và Chuẩn hóa
 
 <!--
 Besides the above two components in the Transformer block, the "add and norm" within the block also plays a key role to connect the inputs and outputs of other layers smoothly.
@@ -372,7 +372,7 @@ One difference is that the mean and variances for the layer normalization are ca
 Layer normalization prevents the range of values in the layers from changing too much, which allows faster training and better generalization ability.
 -->
 
-Trong kiến trúc Transformer, tầng "cộng và chuẩn hoá" cũng đóng vai trò thiết yếu trong việc kết nối đầu vào và đầu ra của các tầng khác một cách trơn tru.
+Trong kiến trúc Transformer, tầng "cộng và chuẩn hóa" cũng đóng vai trò thiết yếu trong việc kết nối đầu vào và đầu ra của các tầng khác một cách trơn tru.
 Cụ thể, ta thêm một cấu trúc phần dư và tầng *chuẩn hóa theo tầng* sau tầng tập trung đa đầu và mạng truyền xuôi theo vị trí.
 *Chuẩn hóa theo tầng* khá giống với chuẩn hóa theo batch trong :numref:`sec_batch_norm`.
 Một điểm khác biệt là giá trị trung bình và phương sai của tầng chuẩn hóa này được tính theo chiều cuối cùng, tức `X.mean(axis=-1)`, thay vì theo chiều đầu tiên (theo batch) `X.mean(axis=0)` .
@@ -453,7 +453,7 @@ To better capture the sequential information, the Transformer model uses the *po
 -->
 
 Không giống như tầng hồi tiếp, cả tầng tập trung đa đầu và mạng truyền xuôi theo vị trí đều tính toán đầu ra cho từng phần tử trong chuỗi một cách độc lập.
-Điều này cho phép song song hoá công việc tính toán nhưng lại không mô hình hoá được thông tin tuần tự trong chuỗi đầu vào.
+Điều này cho phép song song hóa công việc tính toán nhưng lại không mô hình hóa được thông tin tuần tự trong chuỗi đầu vào.
 Để nắm bắt các thông tin tuần tự một cách hiệu quả, mô hình Transformer sử dụng *biểu diễn vị trí* (_positional encoding_) để duy trì thông tin vị trí của chuỗi đầu vào. 
 
 <!--
@@ -462,7 +462,7 @@ This positional encoding layer encodes X's position $P\in\mathbb R^{l\times d}$ 
 -->
 
 Cụ thể, giả sử $X\in\mathbb R^{l\times d}$ là embedding của mẫu đầu vào, trong đó $l$ là độ dài chuỗi và $d$ là kích thước embedding.
-Tầng biểu diễn vị trí sẽ mã hoá vị trí $P\in\mathbb R^{l\times d}$ của X và trả về đầu ra $P+X$.
+Tầng biểu diễn vị trí sẽ mã hóa vị trí $P\in\mathbb R^{l\times d}$ của X và trả về đầu ra $P+X$.
 
 <!--
 The position $P$ is a 2-D matrix, where $i$ refers to the order in the sentence, and $j$ refers to the position along the embedding vector dimension.
@@ -550,7 +550,7 @@ d2l.plot(np.arange(100), Y[0, :, 4:8].T, figsize=(6, 2.5),
 ## Encoder
 -->
 
-## Bộ Mã hoá
+## Bộ Mã hóa
 
 
 <!--
@@ -560,10 +560,10 @@ As shown in the code, for both of the attention model and the positional FFN mod
 This is due to the nature of the residual block, as we need to add these outputs back to the original value during "add and norm".
 -->
 
-Với các thành phần thiết yếu trên, hãy xây dựng bộ mã hoá cho Transformer.
-Bộ mã hoá này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí và hai khối kết nối "cộng và chuẩn hoá".
+Với các thành phần thiết yếu trên, hãy xây dựng bộ mã hóa cho Transformer.
+Bộ mã hóa này chứa một tầng tập trung đa đầu, một mạng truyền xuôi theo vị trí và hai khối kết nối "cộng và chuẩn hóa".
 Trong mã nguồn, có thể thấy cả tầng tập trung và mạng truyền xuôi theo vị trí trong `EncoderBlock` đều có đầu ra với kích thước là `num_hiddens`.
-Điều này là do kết nối phần dư trong quá trình "cộng và chuẩn hoá", khi ta cần cộng đầu ra của hai khối này với giá trị đầu vào của chúng.
+Điều này là do kết nối phần dư trong quá trình "cộng và chuẩn hóa", khi ta cần cộng đầu ra của hai khối này với giá trị đầu vào của chúng.
 
 
 ```{.python .input  n=12}
@@ -590,7 +590,7 @@ It means that the `num_hiddens` argument should be equal to the input size of th
 In our toy example below,  `num_hiddens` $= 24$, `ffn_num_hiddens` $=48$, `num_heads` $= 8$, and `dropout` $= 0.5$.
 -->
 
-Nhờ kết nối phần dư, khối mã hoá sẽ không thay đổi kích thước đầu vào.
+Nhờ kết nối phần dư, khối mã hóa sẽ không thay đổi kích thước đầu vào.
 Nói cách khác, giá trị `num_hiddens` phải bằng kích thước chiều cuối cùng của đầu vào.
 Trong ví dụ đơn giản dưới đây, `num_hiddens` $= 24$,`ffn_num_hiddens` $=48$, `num_heads` $= 8$ và `dropout` $= 0.5$.
 
@@ -609,7 +609,7 @@ Because of the residual connection, the embedding layer size $d$ is same as the 
 Also note that we multiply the embedding output by $\sqrt{d}$ to prevent its values from being too small.
 -->
 
-Bây giờ hãy lập trình bộ mã hoá của Transformer hoàn chỉnh.
+Bây giờ hãy lập trình bộ mã hóa của Transformer hoàn chỉnh.
 Trong bộ mã hóa, $n$ khối `EncoderBlock` được xếp chồng lên nhau.
 Nhờ có kết nối phần dư, tầng embedding và đầu ra khối Transformer đều có kích thước là $d$.
 Cũng lưu ý rằng ta nhân các embedding với $\sqrt{d}$ để tránh trường hợp giá trị này quá nhỏ.
@@ -642,7 +642,7 @@ Let us create an encoder with two stacked Transformer encoder blocks, whose hype
 Similar to the previous toy example's parameters, we add two more parameters `vocab_size` to be $200$ and `num_layers` to be $2$ here.
 -->
 
-Hãy tạo một bộ mã hoá với hai khối mã hoá Transformer với siêu tham số như ví dụ trên.
+Hãy tạo một bộ mã hóa với hai khối mã hóa Transformer với siêu tham số như ví dụ trên.
 Ngoài ra, ta đặt hai tham số `vocab_size` bằng $200$ và `num_layers` bằng $2$.
 
 
@@ -671,9 +671,9 @@ Similar to the Transformer encoder block, the  Transformer decoder block employs
 i.e., the residual connections and the layer normalization to connect each of the sub-layers.
 -->
 
-Khối giải mã của Transformer gần tương tự như khối mã hoá.
-Tuy nhiên, bên cạnh hai tầng con (tập trung đa đầu và biểu diễn vị trí), khối giải mã còn chứa tầng tập trung đa đầu áp dụng lên đầu ra của bộ mã hoá.
-Các tầng con này cũng được kết nối bằng các tầng "cộng và chuẩn hoá", gồm kết nối phần dư và chuẩn hoá theo tầng.
+Khối giải mã của Transformer gần tương tự như khối mã hóa.
+Tuy nhiên, bên cạnh hai tầng con (tập trung đa đầu và biểu diễn vị trí), khối giải mã còn chứa tầng tập trung đa đầu áp dụng lên đầu ra của bộ mã hóa.
+Các tầng con này cũng được kết nối bằng các tầng "cộng và chuẩn hóa", gồm kết nối phần dư và chuẩn hóa theo tầng.
 
 <!--
 To be specific, at timestep $t$, assume that $\mathbf x_t$ is the current input, i.e., the query.
@@ -681,7 +681,7 @@ As illustrated in :numref:`fig_self_attention_predict`, the keys and values of t
 -->
 
 Cụ thể, tại bước thời gian $t$, giả sử đầu vào hiện tại là câu truy vấn $\mathbf x_t$.
-Như minh họa trong :numref:`fig_self_attention_predict`, các khoá và giá trị của tầng tập trung gồm có câu truy vấn ở bước thời gian hiện tại và tất cả các câu truy vấn ở các bước thời gian trước $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
+Như minh họa trong :numref:`fig_self_attention_predict`, các khóa và giá trị của tầng tập trung gồm có câu truy vấn ở bước thời gian hiện tại và tất cả các câu truy vấn ở các bước thời gian trước $\mathbf x_1, \ldots, \mathbf x_{t-1}$.
 
 
 <!--
@@ -758,7 +758,7 @@ decoder_blk(X, state)[0].shape
 The construction of the entire Transformer decoder is identical to the Transformer encoder, except for the additional dense layer to obtain the output confidence scores.
 -->
 
-Bộ giải mã hoàn chỉnh của Transformer được lập trình tương tự như bộ mã hoá, ngoại trừ chi tiết tầng kết nối đầy đủ được thêm vào để tính điểm tin cậy của đầu ra.
+Bộ giải mã hoàn chỉnh của Transformer được lập trình tương tự như bộ mã hóa, ngoại trừ chi tiết tầng kết nối đầy đủ được thêm vào để tính điểm tin cậy của đầu ra.
 
 <!--
 Let us implement the Transformer decoder `TransformerDecoder`.
@@ -766,7 +766,7 @@ Besides the regular hyperparameters such as the `vocab_size` and `num_hiddens`, 
 -->
 
 Hãy lập trình bộ giải mã đầy đủ `TransformerDecoder`.
-Ngoài các siêu tham số thường gặp như `vocab_size` và `num_hiddens`, bộ giải mã cần thêm kích thước đầu ra của bộ mã hoá `enc_outputs` và độ dài hợp lệ `env_valid_len`.
+Ngoài các siêu tham số thường gặp như `vocab_size` và `num_hiddens`, bộ giải mã cần thêm kích thước đầu ra của bộ mã hóa `enc_outputs` và độ dài hợp lệ `env_valid_len`.
 
 
 ```{.python .input  n=18}
@@ -866,7 +866,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 * Mô hình Transformer dựa trên kiến ​​trúc mã hóa - giải mã.
 * Tầng tập trung đa đầu gồm có $h$ tầng tập trung song song.
 * Mạng truyền xuôi theo vị trí gồm hai tầng kết nối đầy đủ được áp dụng trên chiều cuối cùng.
-* Chuẩn hoá theo tầng được áp dụng trên chiều cuối cùng (chiều đặc trưng), thay vì chiều đầu tiên (kích thước batch) như ở chuẩn hoá theo batch.
+* Chuẩn hóa theo tầng được áp dụng trên chiều cuối cùng (chiều đặc trưng), thay vì chiều đầu tiên (kích thước batch) như ở chuẩn hóa theo batch.
 * Biểu diễn vị trí là nơi duy nhất đưa thông tin vị trí trong chuỗi vào mô hình Transformer.
 
 
@@ -884,7 +884,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 1. Hãy thử huấn luyện với nhiều epoch hơn và so sánh mất mát giữa seq2seq và Transformer.
 2. Biểu diễn vị trí còn có lợi ích gì khác không?
-3. So sánh chuẩn hoá theo tầng với chuẩn hoá theo batch. Khi nào nên sử dụng một trong hai tầng chuẩn hóa thay vì tầng còn lại?
+3. So sánh chuẩn hóa theo tầng với chuẩn hóa theo batch. Khi nào nên sử dụng một trong hai tầng chuẩn hóa thay vì tầng còn lại?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
@@ -897,16 +897,6 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Duy Du
@@ -916,3 +906,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
+* Nguyễn Cảnh Thướng
