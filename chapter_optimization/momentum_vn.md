@@ -261,7 +261,7 @@ Let us look at what leaky averaging actually does to the updates.
 Lưu ý rằng chúng ta có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
 Thay đổi duy nhất trong trường hợp đó là chúng ta sẽ thay thế các gradient $\mathbf{g}_{t, t-1}$ bằng $\mathbf{g}_t$.
 Cuối cùng, để thuận tiện chúng ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
-Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm gì ở các cập nhật.
+Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm gì ở các phiên cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
