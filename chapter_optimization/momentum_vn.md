@@ -435,8 +435,8 @@ Hence we can rewrite $h$ as
 -->
 
 Đây là một hàm bậc hai tổng quát.
-Đối với các ma trận bán nguyệt dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có giá trị riêng dương
-cái này có cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị tối thiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Đối với các ma trận bán xác định dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có trị riêng dương
+nó có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị tối thiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
 Do đó chúng ta có thể viết lại $h$ như
 
 
@@ -459,8 +459,8 @@ $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ for an orthogonal
 This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ to obtain a much simplified expression:
 -->
 
-Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ phương trình riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của giá trị riêng dương.
-Điều này cho phép chúng tôi thực hiện thay đổi các biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hóa đi rất nhiều:
+Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ phương trình riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
+Điều này cho phép chúng tôi thực hiện thay đổi các biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
