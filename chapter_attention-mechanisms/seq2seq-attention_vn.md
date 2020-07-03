@@ -21,8 +21,7 @@ Trong phần này, chúng ta thêm cơ chế tập trung vào mô hình chuỗi 
 :numref:`fig_s2s_attention` mô tả kiến trúc mô hình thực hiện mã hoá và giải mã tại bước thời gian $t$.
 Bộ nhớ của tầng tập trung ở đây bao gồm tất cả thông tin mà bộ mã hoá đã được học---đầu ra của bộ mã hoá tại từng bước thời gian.
 Trong quá trình giải mã, đầu ra của bộ giải mã tại bước thời gian trước đó $t-1$ được sử dụng làm câu truy vấn.
-Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$.
-Cuối cùng, ta đưa ghép chuỗi trên vào bộ giải mã.
+Đầu ra của mô hình tập trung có thể được hiểu là thông tin ngữ cảnh của chuỗi, phần ngữ cảnh này được ghép nối với đầu vào của bộ giải mã $D_t$ và kết quả được đưa vào bộ giải mã.
 
 <!--
 ![The second timestep in decoding for the sequence to sequence model with attention mechanism.](../img/seq2seq_attention.svg)
@@ -69,7 +68,7 @@ Then we initialize the state of the decoder by passing three items from the enco
 -->
 
 Do bộ mã hoá của mô hình seq2seq áp dụng cơ chế tập trung giống với bộ mã hoá của `Seq2SeqEncoder` trong :numref:`sec_seq2seq` nên ở phần này, chúng ta sẽ chỉ tập trung vào bộ giải mã.
-Ta thêm tầng tập trung MLP (`MLPAttention`) với kích thước ẩn giống với tầng LSTM trong bộ giải mã.
+Ta thêm tầng tập trung MLP (`MLPAttention`) có cùng kích thước ẩn với tầng LSTM trong bộ giải mã. 
 Sau đó ta khởi tạo trạng thái của bộ giải mã bằng cách truyền vào ba đầu ra thu được từ bộ mã hoá:
 
 <!--
@@ -97,9 +96,9 @@ Although the RNN layer hidden state also contains history information from decod
 the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
-Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng trạng thái ẩn của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
-Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN.
-Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá dựa vào `enc_valid_len` một cách tường minh nhằm loại bỏ những thông tin không liên quan.
+Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
+Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN. 
+Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hoá một cách tường minh dựa vào `enc_valid_len`nhằm loại bỏ những thông tin không liên quan.
 
 <!--
 Let us implement the `Seq2SeqAttentionDecoder`, and see how it differs from the decoder in seq2seq from :numref:`sec_seq2seq_decoder`.
@@ -149,7 +148,7 @@ To be consistent with the model without attention in :numref:`sec_seq2seq`, we u
 As a result, we get the same decoder output shape, but the state structure is changed.
 -->
 
-Giờ ta có thể kiểm tra mô hình seq2seq áp dụng cơ chế tập trung.
+Giờ ta có thể chạy thử mô hình seq2seq áp dụng cơ chế tập trung.
 Để nhất quán khi so sánh với mô hình không áp dụng cơ chế tập trung trong :numref:`sec_seq2seq`, những siêu tham số `vocab_size`, `embed_size`, `num_hiddens`, và `num_layers` sẽ được giữ nguyên.
 Kết quả, ta thu được đầu ra của bộ giải mã có cùng kích thước nhưng khác về cấu trúc trạng thái.
 
@@ -183,9 +182,9 @@ As we can see from the result, since the sequences in the training dataset are r
 Due to the computational overhead of both the encoder's and the decoder's attention layers, this model is much slower than the seq2seq model without attention.
 -->
 
-Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng các siêu tham số và hàm mất mát để huấn luyện như :numref:`sec_seq2seq_training`.
+Chúng ta hãy xây dựng một mô hình đơn giản sử dụng cùng một bộ siêu tham số và hàm mất mát để huấn luyện như :numref:`sec_seq2seq_training`.
 Từ kết quả, ta thấy tầng tập trung được thêm vào mô hình không tạo ra cải thiện đáng kể nào do các chuỗi trong tập huấn luyện khá ngắn.
-Do chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và bộ giải mã, mô hình này hoạt động chậm hơn nhiều so với mô hình seq2seq không có tầng tập trung.
+Bởi chi phí tính toán tốn thêm từ các tầng tập trung trong bộ mã hoá và bộ giải mã, mô hình này hoạt động chậm hơn nhiều so với mô hình seq2seq không áp dụng tập trung.
 
 
 ```{.python .input  n=5}
@@ -206,7 +205,7 @@ d2l.train_s2s_ch9(model, train_iter, lr, num_epochs, ctx)
 Last, we predict several sample examples.
 -->
 
-Cuối cùng, ta thử dự đoán một vài mẫu dưới đây.
+Cuối cùng, ta hãy thử dự đoán một vài mẫu dưới đây.
 
 
 ```{.python .input  n=6}
@@ -227,7 +226,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 -->
 
 * Mô hình seq2seq áp dụng cơ chế tập trung thêm một tầng tập trung vào mô hình seq2seq ban đầu.
-* Bộ giải mã của mô hình seq2seq với cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hoá.
+* Bộ giải mã của mô hình seq2seq áp dụng cơ chế tập trung được truyền vào ba đầu ra từ bộ mã hoá: đầu ra của bộ mã hoá tại tất cả các bước thời gian, trạng thái ẩn của bộ mã hoá tại bước thời gian cuối cùng, độ dài hợp lệ của bộ mã hoá.
 
 <!--
 ## Exercises
@@ -240,7 +239,7 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 2. Can you think of any use cases where `Seq2SeqAttentionDecoder` will outperform `Seq2seqDecoder`?
 -->
 
-1. So sánh `Seq2SeqAttentionDecoder` và `Seq2seqDecoder` bằng cách sử dụng cùng tham số và kiểm tra các mất mát.
+1. So sánh `Seq2SeqAttentionDecoder` và `Seq2seqDecoder` bằng cách sử dụng cùng bộ tham số và kiểm tra giá trị hàm mất mát.
 2. Bạn hãy thử suy nghĩ liệu có trường hợp nào mà `Seq2SeqAttentionDecoder` vượt trội hơn `Seq2seqDecoder`?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -265,15 +264,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Quang
+* Phạm Hồng Vinh
