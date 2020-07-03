@@ -42,7 +42,7 @@ Ví dụ, khi phân tích một trang web, ta có thể gặp các mã HTML khô
 Do đó, ta cũng muốn có cơ chế để *bỏ qua những ký hiệu như vậy* trong các biểu diễn trạng thái tiềm ẩn.
 * Ta cũng có thể gặp những khoảng ngắt giữa các phần trong một chuỗi.
 Ví dụ như những phần chuyển tiếp giữa các chương của một quyển sách, hay chuyển biến xu hướng giữa thị trường giá lên và thị trường giá xuống trong chứng khoán.
-Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xoá* hay *đặt lại* các biểu diễn trạng thái ẩn về giá trị ban đầu.
+Trong trường hợp này, sẽ tốt hơn nếu có một cách để *xóa* hay *đặt lại* các biểu diễn trạng thái ẩn về giá trị ban đầu.
 
 <!--
 A number of methods have been proposed to address this.
@@ -66,7 +66,7 @@ Trong chương này, ta sẽ bắt đầu với GRU do nó đơn giản hơn.
 ## Gating the Hidden State
 -->
 
-## Kiểm soát Trạng thái ẩn
+## Kiểm soát Trạng thái Ẩn
 
 <!--
 The key distinction between regular RNNs and GRUs is that the latter support gating of the hidden state.
@@ -88,7 +88,7 @@ Dưới đây ta sẽ thảo luận chi tiết vấn đề này.
 ### Reset Gates and Update Gates
 -->
 
-### Cổng Xóa và Cổng Cập Nhật
+### Cổng Xóa và Cổng Cập nhật
 
 <!--
 The first thing we need to introduce are reset and update gates.
@@ -126,7 +126,7 @@ and the hidden state of the last timestep is $\mathbf{H}_{t-1} \in \mathbb{R}^{n
 Then, the reset gate $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ and update gate $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ are computed as follows:
 -->
 
-Tại bước thời gian $t$, với đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn ở bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), cổng xoá $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
+Tại bước thời gian $t$, với đầu vào minibatch là $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$) và trạng thái ẩn ở bước thời gian gần nhất là $\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$ (số lượng trạng thái ẩn: $h$), cổng xóa $\mathbf{R}_t \in \mathbb{R}^{n \times h}$ và cổng cập nhật $\mathbf{Z}_t \in \mathbb{R}^{n \times h}$ được tính như sau:
 
 
 $$
@@ -249,14 +249,14 @@ Nếu các giá trị trong cổng cập nhật $\mathbf{Z}_t$ bằng $1$, chún
 Trong trường hợp này, thông tin từ $\mathbf{X}_t$ về cơ bản được bỏ qua, tương đương với việc bỏ qua bước thời gian $t$ trong chuỗi phụ thuộc.
 Ngược lại, nếu $\mathbf{Z}_t$ gần giá trị $0$, trạng thái ẩn $\mathbf{H}_t$ sẽ gần với trạng thái ẩn tiềm năng $\tilde{\mathbf{H}}_t$.
 Những thiết kế trên có thể giúp chúng ta giải quyết vấn đề tiêu biến gradient trong các mạng RNN và nắm bắt tốt hơn sự phụ thuộc xa trong chuỗi thời gian.
-Nói tóm lại, các mạng GRU có hai tính chất nổi bật sau:
+Tóm lại, các mạng GRU có hai tính chất nổi bật sau:
 
 <!--
 * Reset gates help capture short-term dependencies in time series.
 * Update gates help capture long-term dependencies in time series.
 -->
 
-* Cổng xoá giúp nắm bắt các phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng xóa giúp nắm bắt các phụ thuộc ngắn hạn trong chuỗi thời gian.
 * Cổng cập nhật giúp nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
 
 <!--
@@ -320,7 +320,7 @@ Subsequently, we attach gradients to all the parameters.
 Bước tiếp theo là khởi tạo các tham số mô hình.
 Ta khởi tạo các giá trị trọng số theo phân phối Gauss với phương sai $0.01$ và thiết lập các hệ số điều chỉnh bằng $0$.
 Siêu tham số `num_hiddens` xác định số lượng đơn vị ẩn.
-Ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh của cổng cập nhật, cổng xoá, và các trạng thái ẩn tiềm năng.
+Ta khởi tạo tất cả các trọng số và các hệ số điều chỉnh của cổng cập nhật, cổng xóa, và các trạng thái ẩn tiềm năng.
 Sau đó, gắn gradient cho tất cả các tham số.
 
 
@@ -457,9 +457,9 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 -->
 
 * Các mạng nơ-ron hồi tiếp có cổng nắm bắt các phụ thuộc xa trong chuỗi thời gian tốt hơn.
-* Cổng xoá giúp nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
+* Cổng xóa giúp nắm bắt phụ thuộc ngắn hạn trong chuỗi thời gian.
 * Cổng cập nhật giúp nắm bắt các phụ thuộc dài hạn trong chuỗi thời gian.
-* Trường hợp đặc biệt khi cổng xoá được kích hoạt, GRU trở thành RNN cơ bản. Chúng cũng có thể bỏ qua các các thành phần trong chuỗi khi cần.
+* Trường hợp đặc biệt khi cổng xóa được kích hoạt, GRU trở thành RNN cơ bản. Chúng cũng có thể bỏ qua các các thành phần trong chuỗi khi cần.
 
 
 <!--
@@ -476,9 +476,9 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 -->
 
 1. Hãy so sánh thời gian chạy, perplexity và các chuỗi đầu ra của `rnn.RNN` và `rnn.GRU`.
-2. Giả sử ta chỉ muốn sử dụng đầu vào tại bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t > t'$. Hãy xác định các giá trị tốt nhất cho cổng xoá và cổng cập nhật tại mỗi bước thời gian?
+2. Giả sử ta chỉ muốn sử dụng đầu vào tại bước thời gian $t'$ để dự đoán đầu ra tại bước thời gian $t > t'$. Hãy xác định các giá trị tốt nhất cho cổng xóa và cổng cập nhật tại mỗi bước thời gian?
 3. Quan sát và phân tích tác động tới thời gian chạy, perplexity và các câu được sinh ra khi điều chỉnh các siêu tham số.
-4. Điều gì xảy ra khi GRU được lập trình chỉ có cổng xoá hay chỉ có cổng cập nhật?
+4. Điều gì xảy ra khi GRU được lập trình chỉ có cổng xóa hay chỉ có cổng cập nhật?
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -490,16 +490,6 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
@@ -508,3 +498,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 * Nguyễn Văn Quang
 * Phạm Minh Đức
+* Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng

@@ -49,6 +49,7 @@ The encoder is a normal neural network that takes inputs, e.g., a source sentenc
 
 Bộ mã hoá là một mạng nơ-ron thông thường, nhận đầu vào, ví dụ như một câu nguồn, và trả về đầu ra.
 
+
 ```{.python .input  n=2}
 from mxnet.gluon import nn
 
@@ -163,6 +164,7 @@ class EncoderDecoder(nn.Block):
 1. Ngoài dịch máy, bạn còn biết thêm những ứng dụng nào khác của kiến trúc mã hoá - giải mã không?
 2. Bạn có thể thiết kế một kiến trúc mã hoá - giải mã sâu không?
 
+
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
 
@@ -173,18 +175,9 @@ class EncoderDecoder(nn.Block):
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-* Nguyễn Thanh Hoà
+* Nguyễn Thanh Hòa
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
+* Phạm Hồng Vinh
