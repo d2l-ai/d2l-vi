@@ -386,8 +386,8 @@ There is very little to do in Gluon since the standard `sgd` solver already had 
 Setting matching parameters yields a very similar trajectory.
 -->
 
-Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã có sẵn động lượng tích hợp.
-Thiết lập các tham số phù hợp mang lại một quỹ đạo rất giống nhau.
+Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã tích hợp sẵn động lượng.
+Thiết lập các tham số phù hợp mang lại một quỹ đạo rất giống khi lập trình từ đầu.
 
 
 ```{.python .input  n=9}
@@ -436,8 +436,8 @@ Hence we can rewrite $h$ as
 
 Đây là một hàm bậc hai tổng quát.
 Đối với các ma trận bán xác định dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có trị riêng dương
-nó có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị tối thiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
-Do đó chúng ta có thể viết lại $h$ như
+nó có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị cực tiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Do đó chúng ta có thể viết lại $h$ như sau
 
 
 $$h(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})^\top \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c}) + b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}.$$
@@ -450,7 +450,7 @@ Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\m
 -->
 
 Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
-Nghĩa là, nó được cho bởi khoảng cách giữa $\mathbf{x}$ và cực tiểu, nhân với $\mathbf{Q}$.
+Nghĩa là, nó được cho bởi khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu, nhân với $\mathbf{Q}$.
 Do đó, động lượng là sự tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
@@ -460,7 +460,7 @@ This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z}
 -->
 
 Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ phương trình riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
-Điều này cho phép chúng tôi thực hiện thay đổi các biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
+Điều này cho phép chúng ta đổi biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
