@@ -260,7 +260,7 @@ Let us look at what leaky averaging actually does to the updates.
 ### Effective Sample Weight
 -->
 
-### Trọng số mẫu hiệu quả
+### Trọng số mẫu thực sự
 
 <!--
 Recall that $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
@@ -270,9 +270,9 @@ These are two benefits in one.
 To illustrate how weighting behaves for different choices of $\beta$ consider the diagram below.
 -->
 
-Hãy nhớ lại rằng  $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
-Trong giới hạn, các số hạng thêm cộng dồn thành $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
-Nói cách khác, thay vì thực hiện một bước có kích thước $\eta$ trong GD hoặc SGD, chúng tôi thực hiện một bước có kích thước $$\frac{\eta}{1-\beta}$ đồng thời, xử lý rất nhiều khả năng hành vi hướng xuống tốt hơn.
+Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
+Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
+Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng tốt hơn.
 Đây là hai lợi ích trong một.
 Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
 
@@ -302,8 +302,8 @@ Let us see how momentum works in practice, i.e., when used within the context of
 For this we need a somewhat more scalable implementation.
 -->
 
-Chúng ta hãy xem động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của trình tối ưu hóa phù hợp.
-Đối với điều này, chúng tôi cần một cách lập trình có khả năng mở rộng hơn một chút.
+Chúng ta hãy xem động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
+Để làm điều này, chúng ta cần một cách lập trình có khả năng mở rộng hơn một chút.
 
 <!--
 ### Implementation from Scratch
@@ -318,8 +318,8 @@ In the implementation below we call these variables `states`.
 -->
 
 So với SGD (minibatch), phương pháp động lượng cần duy trì một tập hợp các biến phụ trợ, tức là vận tốc.
-Nó có hình dạng giống như độ dốc (và các biến của vấn đề tối ưu hóa).
-Trong phần thực hiện bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
+Nó có kích thước giống gradient (và các biến khác trong bài toán tối ưu hóa).
+Trong phần lập trình bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
 
 ```{.python .input  n=13}
 def init_momentum_states(feature_dim):
@@ -338,7 +338,7 @@ def sgd_momentum(params, states, hyperparams):
 Let us see how this works in practice.
 -->
 
-Ta hãy xem điều này hoạt động như thế nào trong thực nghiệm. 
+Ta hãy xem điều này hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=15}
@@ -357,8 +357,8 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-Khi chúng tôi tăng siêu tham số động lượng `momentum` lên 0,9, nó sẽ có kích thước mẫu hiệu quả lớn hơn đáng kể là $\frac{1}{1 - 0.9} = 10$.
-Chúng tôi giảm tỷ lệ học tập xuống còn $0.01$ để kiểm soát các vấn đề.
+Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu thực tế sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
+Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ để kiểm soát các vấn đề.
 
 
 ```{.python .input  n=8}
@@ -371,7 +371,7 @@ Reducing the learning rate further addresses any issue of non-smooth optimizatio
 Setting it to $0.005$ yields good convergence properties.
 -->
 
-Giảm tỷ lệ học tập tiếp tục giải quyết bất kỳ vấn đề tối ưu hóa không trơn tru.
+Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề nào của bài toán tối ưu không trơn tru.
 Đặt nó thành $0,005$ mang lại các đặc tính hội tụ tốt.
 
 
