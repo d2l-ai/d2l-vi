@@ -272,7 +272,7 @@ To illustrate how weighting behaves for different choices of $\beta$ consider th
 
 Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
 Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
-Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng tốt hơn.
+Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng ổn định hơn.
 Đây là hai lợi ích trong một.
 Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
 
@@ -302,8 +302,8 @@ Let us see how momentum works in practice, i.e., when used within the context of
 For this we need a somewhat more scalable implementation.
 -->
 
-Chúng ta hãy xem động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
-Để làm điều này, chúng ta cần một cách lập trình có khả năng mở rộng hơn một chút.
+Chúng ta hãy xem phương pháp động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
+Để làm điều này, chúng ta cần một phương pháp lập trình giúp mở rộng dễ dàng hơn.
 
 <!--
 ### Implementation from Scratch
@@ -358,7 +358,7 @@ We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
 Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu thực tế sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
-Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ để kiểm soát các vấn đề.
+Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ dễ dàng kiểm soát độ hội tụ.
 
 
 ```{.python .input  n=8}
