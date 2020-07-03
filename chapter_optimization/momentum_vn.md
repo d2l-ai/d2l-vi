@@ -58,7 +58,7 @@ One option to accomplish this task is to replace the gradient computation by a "
 -->
 
 Ở đây chúng ta dùng $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ để giúp ký hiệu được đơn giản.
-Tác động giảm phương sai rất có lợi cho chúng ta, thậm chí hơn cả việc lấy trung bình gradient trên từng minibatch.
+Sẽ rất tốt nếu ta có khả năng tận dụng được lợi ích từ việc giảm phương sai bên cạnh cách lấy trung bình gradient trên từng minibatch.
 Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
 
 
