@@ -20,6 +20,8 @@ Với mỗi thành viên tham gia hiện tại, chúng tôi ưu tiên bạn bắ
 * Star github repo của dự án.
 * Chia sẻ dự án tới nhiều người hơn.
 
+---
+
 ## Tôi nên bắt đầu dịch thuật như thế nào?
 
 Dưới đây là hướng dẫn những việc cần làm khi tham gia quá trình dịch thuật một cách cơ bản nhất.
@@ -92,6 +94,8 @@ Bạn hãy kiểm tra qua nội dung một lần nữa xem Pull request của m�
 
 ![](./docs/translation-guide/web-step-04.png)
 
+---
+
 ## Tôi có thể tham gia phản biện (review) như thế nào?
 
 Đầu tiên, bạn truy cập vào tab **[Pull request](https://github.com/aivivn/d2l-vn/pulls)**, chọn một PR và kiểm tra xem nội dung này đã sẵn sàng để review hay chưa.
@@ -110,6 +114,8 @@ Nếu PR đã sẵn sàng review, bạn hãy truy cập vào tab `File changed` 
 Sau khi bạn đã review qua hết lượt nội dung từng dòng một, hãy chọn **Review changes** và làm theo hướng dẫn trong hình phía dưới.
 
 ![](./docs/translation-guide/rv-step-03.png)
+
+---
 
 ## Những vấn đề thường gặp
 
@@ -187,6 +193,7 @@ Chúng tôi khuyến khích bạn khi dịch thì bám sát vào nội dung chú
 Vì vậy, bạn hãy dịch dựa trên nội dung mà nhóm đã cung cấp trong tập tin nhé.
 </details>
 
+---
 
 Nếu bạn có bất kỳ câu hỏi nào trong quá trình tham gia dự án, vui lòng tạo một Issue mới và tag @duythanhvn hoặc liên hệ qua Slack để nhận được hỗ trợ từ dự án.
 

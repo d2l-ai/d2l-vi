@@ -51,3 +51,6 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường

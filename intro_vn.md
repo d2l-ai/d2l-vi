@@ -71,14 +71,9 @@ bạn có thể tham gia thảo luận nội dung và bài tập của cuốn s�
 
 Chúng tôi mời bạn tham khảo hướng dẫn chi tiết **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)**.
 
-## Những câu hỏi thường gặp
-<details>
-<summary>Cuốn sách này có bản song ngữ hay không?</summary>
+### Những câu hỏi thường gặp
+**Hỏi:** Cuốn sách này có bản song ngữ hay không?<br/>
+**Đáp:** Không, chúng tôi không có kế hoạch này cho cuốn sách này.
 
-Không, chúng tôi không có kế hoạch này cho cuốn sách này.
-</details>
-<details>
-<summary>Cuốn sách này có bản PDF hay không?</summary>
-
-Có, chúng tôi sẽ có bản PDF sau khi toàn bộ nội dung cuốn sách này được hoàn thiện.
-</details>
+**Hỏi:** Cuốn sách này có bản PDF hay không?<br/>
+**Đáp:** Có, chúng tôi sẽ có bản PDF sau khi toàn bộ nội dung cuốn sách này được hoàn thiện.
