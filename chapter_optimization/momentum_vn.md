@@ -177,7 +177,7 @@ Convergence in the $x_1$ direction improves but the overall solution quality is 
 
 Ta thấy, gradient theo hướng $x_2$ có giá trị *lớn hơn nhiều* và thay đổi nhanh hơn nhiều so với gradient theo hướng ngang $x_1$.
 Vì thế, chúng ta bị mắc kẹt giữa hai lựa chọn không mong muốn: Nếu chọn tốc độ học nhỏ, các nghiệm sẽ không phân kỳ theo hướng $x_2$
-nhưng chúng ta sẽ rơi vào các điểm yên ngựa với tốc độ hội tụ chậm theo hướng $x_1$.
+nhưng tốc độ hội tụ sẽ chậm theo hướng $x_1$.
 Ngược lại, với một tốc độ học lớn mô hình sẽ hội tụ nhanh chóng theo hướng $x_1$ nhưng phân kỳ theo hướng $x_2$.
 Ví dụ dưới đây minh họa những gì xảy ra khi tăng nhẹ tốc độ học từ $0.4$ đến $0.6$.
 Hội tụ theo hướng $x_1$ cải thiện nhưng kết quả cuối cùng tệ hơn rất nhiều.
