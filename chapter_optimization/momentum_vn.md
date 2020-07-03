@@ -30,7 +30,7 @@ Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ t�
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
 -->
 
-Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả, đặc biệt cho một số loại bài toán tối ưu cụ thể phổ biến trong thực tế.
+Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả hơn, cụ thể là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
 
 <!--
 ### Leaky Averages
