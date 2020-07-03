@@ -5,9 +5,7 @@
 # Deep Recurrent Neural Networks
 -->
 
-# Mạng Nơ-ron Hồi Tiếp Sâu
-
-
+# Mạng Nơ-ron Hồi tiếp Sâu
 :label:`sec_deep_rnn`
 
 <!--
@@ -210,6 +208,8 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * There exist many different flavors of deep RNNs, such as LSTMs, GRUs, or regular RNNs. Conveniently these models are all available as parts of the `rnn` module in Gluon.
 * Initialization of the models requires care. Overall, deep RNNs require considerable amount of work (such as learning rate and clipping) to ensure proper convergence.
 -->
+
+
 * Trong các mạng nơ-ron hồi tiếp sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở tầng hiện tại và truyền tới bước thời gian hiện tại ở tầng kế tiếp. 
 * Có nhiều phiên bản khác nhau của mạng RNN sâu, ví dụ như LSTM, GRU hoặc RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon. 
 * Chúng ta cần phải cẩn thận trong việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học hội tụ một cách hợp lý.
@@ -244,25 +244,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
+* Phạm Minh Đức

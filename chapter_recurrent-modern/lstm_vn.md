@@ -26,7 +26,7 @@ Arguably it is inspired by logic gates of a computer.
 To control a memory cell we need a number of gates.
 One gate is needed to read out the entries from the cell (as opposed to reading any other cell).
 We will refer to this as the *output* gate.
-A second gate is needed to decide when to read <!--read ?--> data into the cell.
+A second gate is needed to decide when to read data into the cell.
 We refer to this as the *input* gate.
 Last, we need a mechanism to reset the contents of the cell, governed by a *forget* gate.
 The motivation for such a design is the same as before, namely to be able to decide when to remember and when to ignore inputs in the latent state via a dedicated mechanism.
@@ -47,7 +47,7 @@ Chúng ta hãy xem thiết kế này hoạt động như thế nào trong thực
 ## Gated Memory Cells
 -->
 
-## Các Ô Nhớ có Cổng
+## Các Ô nhớ có Cổng
 
 <!--
 Three gates are introduced in LSTMs: the input gate, the forget gate, and the output gate.
@@ -135,7 +135,7 @@ This leads to the following equation at timestep $t$.
 -->
 
 Tiếp theo, chúng ta sẽ thiết kế một ô nhớ.
-Vì chúng ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
+Vì ta vẫn chưa chỉ định tác động của các cổng khác nhau, nên đầu tiên ta sẽ giới thiệu ô nhớ *tiềm năng*  $\tilde{\mathbf{C}}_t \in \mathbb{R}^{n \times h}$.
 Các phép tính toán cũng tương tự như ba cổng mô tả ở trên, ngoài trừ việc ở đây ta sử dụng hàm kích hoạt $\tanh$ với miền giá trị nằm trong khoảng $[-1, 1]$.
 Điều này dẫn đến phương trình sau tại bước thời gian $t$.
 
@@ -171,7 +171,7 @@ A quick illustration of the candidate memory cell is shown in :numref:`lstm_1`.
 ### Memory Cell
 -->
 
-### Ô Nhớ
+### Ô nhớ
 
 <!--
 In GRUs, we had a single mechanism to govern input and forgetting.
@@ -204,7 +204,6 @@ Do đó chúng ta có sơ đồ luồng trong :numref:`lstm_2`.
 
 
 ![Các phép tính toán trong ô nhớ của LSTM. Ở đây, ta sử dụng phép nhân theo từng phần tử.](../img/lstm_2.svg)
-
 :label:`lstm_2`
 
 
@@ -229,7 +228,7 @@ Cuối cùng, chúng ta cần phải xác định cách tính trạng thái ẩn
 Trong LSTM, đây chỉ đơn giản là một phiên bản có kiểm soát của hàm kích hoạt $\tanh$ trong ô nhớ.
 Điều này đảm bảo rằng các giá trị của $\mathbf{H}_t$ luôn nằm trong khoảng $(-1, 1)$.
 Bất cứ khi nào giá trị của cổng đầu ra là $1$, thực chất chúng ta đang đưa toàn bộ thông tin trong ô nhớ tới bộ dự đoán.
-Ngược lại khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
+Ngược lại, khi giá trị của cổng đầu ra là $0$, chúng ta giữ lại tất cả các thông tin trong ô nhớ và không xử lý gì thêm.
 :numref:`lstm_3` minh họa các luồng dữ liệu.
 
 
@@ -252,7 +251,7 @@ $$\mathbf{H}_t = \mathbf{O}_t \odot \tanh(\mathbf{C}_t).$$
 ## Implementation from Scratch
 -->
 
-## Lập trình từ đầu
+## Lập trình Từ đầu
 
 <!--
 Now let us implement an LSTM from scratch.
@@ -397,7 +396,7 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 ## Concise Implementation
 -->
 
-## Lập trình súc tích
+## Lập trình Súc tích
 
 <!--
 In Gluon, we can directly call the `LSTM` class in the `rnn` module.
@@ -482,16 +481,6 @@ tại sao trạng thái ẩn vẫn phải sử dụng tiếp hàm $\tanh$ để 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
