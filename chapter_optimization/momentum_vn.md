@@ -596,7 +596,14 @@ It also suggests that in general large values of $\beta$ are desirable.
 Further details require a fair amount of technical detail and we suggest that the interested reader consult the original publications.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sử dụng $\mathbf{R}$ kích thước $2 \times 2$ để biểu diễn ma trận chi phối hội tụ.
+Sau $t$ bước thì lựa chọn ban đầu $[v_0, x_0]$ trở thành $\mathbf{R}(\ beta, \eta, \lambda)^t [v_0, x_0]$.
+Do đó, các trị riêng của $\mathbf{R}$ sẽ quyết định tốc độ hội tụ.
+Xem hình ảnh động tại [Distill post](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
+Có thể chỉ ra rằng phương pháp động lượng hội tụ với $0 < \eta \lambda < 2 + 2 \beta$.
+Khoảng tham số khả thi lớn hơn khi so sánh với $0 < \eta \lambda <2$ của hạ gradient.
+Nó cũng gợi ý rằng nhìn chung ta mong muốn $\beta$ có giá trị lớn.
+Thông tin chi tiết hơn đòi hỏi nền tảng kiến thức sâu hơn, bạn đọc quan tâm có thể tham khảo các bài báo gốc.
 
 <!--
 ## Summary
@@ -613,7 +620,12 @@ Further details require a fair amount of technical detail and we suggest that th
 * Implementation is quite straightforward but it requires us to store an additional state vector (momentum $\mathbf{v}$).
 -->
 
-*dịch đoạn phía trên*
+* Phương pháp động lượng thay thế gradient bằng trung bình rò rỉ của gradient trong quá khứ. Điều này tăng tốc độ hội tụ đáng kể.
+* Phương pháp này có thể sử dụng cho cả hạ gradient không nhiễu và hạ gradient ngẫu nhiên (có nhiễu). 
+* Phương pháp động lượng ngăn chặn việc tối ưu hóa bị dừng, điều nhiều khả năng xảy ra đối với hạ gradient ngẫu nhiên.
+* Số lượng gradient thực sự là $\frac{1}{1-\beta}$, tính từ tổng trọng số suy giảm theo hàm mũ của dữ liệu trong quá khứ.
+* Trong trường hợp các bài toán bậc hai lồi, điều này có thể được phân tích chi tiết một cách tường minh.
+* Việc lập trình khá đơn giản nhưng nó yêu cầu lưu trữ thêm một vector trạng thái (động lượng $\mathbf{v}$).
 
 <!--
 ## Exercises
@@ -629,7 +641,11 @@ Plot how the values of $x$ decrease for the initialization $x_i = 1$.
 4. What changes when we perform SGD with momentum? What happens when we use mini-batch SGD with momentum? Experiment with the parameters?
 -->
 
-*dịch đoạn phía trên*
+1. Sử dụng các kết hợp khác của siêu tham số động lượng và tốc độ học, quan sát và phân tích các kết quả thí nghiệm khác nhau.
+2. Hãy thử GD và phương pháp động lượng cho một bài toán bậc hai trong đó có nhiều trị riêng, ví dụ: $f(x) = \frac{1}{2} \sum_i \lambda_i x_i^2$, e.g., $\lambda_i = 2^{-i}$.
+Vẽ đồ thị biểu diễn sự giảm xuống của $x$ khi khởi tạo $x_i = 1$.
+3. Lấy giá trị và nghiệm cực tiểu cho $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
+4. Điều gì thay đổi khi chúng ta thực hiện SGD và SGD theo mini-batch với phương pháp động lượng? Thử nghiệm với các tham số.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -676,4 +692,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 8 -->
-* 
+* Trần Yến Thy
