@@ -450,7 +450,7 @@ Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\m
 -->
 
 Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
-Nghĩa là, khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu, nhân với $\mathbf{Q}$.
+Nghĩa là bằng khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu nhân với $\mathbf{Q}$.
 Do đó, động lượng là tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
