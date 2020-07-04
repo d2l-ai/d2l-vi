@@ -129,7 +129,7 @@ Last, the explicit learning rate $\eta$ allows us to control the step length to 
 ## Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình
 
 <!--
 Implementing Adam from scratch is not very daunting.
@@ -137,7 +137,9 @@ For convenience we store the timestep counter $t$ in the `hyperparams` dictionar
 Beyond that all is straightforward.
 -->
 
-*dịch đoạn phía trên*
+Lập trình Adam từ đầu không quá khó khăn.
+Để thuận tiện, chúng ta lưu trữ các biến đếm bước thời gian $t$ trong từ điển `hyperparams`.
+Ngoài điều đó ra, mọi thứ khác khá đơn giản.
 
 
 ```{.python .input  n=2}
@@ -168,7 +170,8 @@ We are ready to use Adam to train the model.
 We use a learning rate of $\eta = 0.01$.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã sẵn sàng sử dụng Adam để huấn luyện mô hình.
+Chúng ta sử dụng tốc độ học $\eta = 0.01$.
 
 
 ```{.python .input  n=5}
@@ -183,7 +186,8 @@ A more concise implementation is straightforward since `adam` is one of the algo
 Hence we only need to pass configuration parameters for an implementation in Gluon.
 -->
 
-*dịch đoạn phía trên*
+Một cách lập trình súc tích hơn là gọi trực tiếp vì `adam` là một trong những thuật toán được cung cấp sẵn trong thư viện tối ưu `trainer` của Gluon.
+Do đó ta chỉ cần truyền các tham số cấu hình để lập trình trong Gluon.
 
 
 ```{.python .input  n=11}
@@ -195,7 +199,8 @@ d2l.train_gluon_ch11('adam', {'learning_rate': 0.01}, data_iter)
 ## Yogi
 -->
 
-## *dịch tiêu đề phía trên*
+## Yogi
+
 
 <!--
 One of the problems of Adam is that it can fail to converge even in convex settings when the second moment estimate in $\mathbf{s}_t$ blows up.
@@ -203,7 +208,9 @@ As a fix :cite:`Zaheer.Reddi.Sachan.ea.2018` proposed a refined update (and init
 To understand what's going on, let us rewrite the Adam update as follows:
 -->
 
-*dịch đoạn phía trên*
+Một trong những vấn đề của Adam là nó có thể không hội tụ ngay cả trong các điều kiện lồi khi ước lượng mô-men bậc hai trong $\mathbf{s}_t$ tăng bùng nổ.
+:cite:`Zaheer.Reddi.Sachan.ea.2018` đề xuất một bản vá với một cập nhật (và khởi tạo) được làm mịn cho $\mathbf{s}_t$.
+Để hiểu rõ hơn, chúng ta hãy viết lại phép cập nhật Adam như sau:
 
 
 $$\mathbf{s}_t \leftarrow \mathbf{s}_{t-1} + (1 - \beta_2) \left(\mathbf{g}_t^2 - \mathbf{s}_{t-1}\right).$$
@@ -216,7 +223,10 @@ Now the magnitude of the update no longer depends on the amount of deviation.
 This yields the Yogi updates
 -->
 
-*dịch đoạn phía trên*
+Khi phương sai của $\mathbf{g}_t^2$ có giá trị lớn hay các cập nhật là thưa, có thể $\mathbf{s}_t$ sẽ quên các giá trị trước đó quá nhanh.
+Một cách giải quyết vấn đề trên đó là thay $\mathbf{g}_t^2 - \mathbf{s}_{t-1}$ bằng $\mathbf{g}_t^2 \odot \mathop{\mathrm{sgn}}(\mathbf{g}_t^2 - \mathbf{s}_{t-1})$.
+Bây giờ, độ lớn của cập nhật không còn phụ thuộc vào giá trị độ lệch.
+Từ đó ta có các cập nhật Yogi sau:
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -312,7 +322,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * 
