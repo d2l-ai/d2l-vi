@@ -134,7 +134,7 @@ Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm c
 ### An Ill-conditioned Problem
 -->
 
-### *dịch tiêu đề phía trên*
+### Bài toán với Điều kiện Xấu
 
 <!--
 To get a better understanding of the geometric properties of the momentum method we revisit gradient descent, albeit with a significantly less pleasant objective function.
@@ -142,7 +142,9 @@ Recall that in :numref:`sec_gd` we used $f(\mathbf{x}) = x_1^2 + 2 x_2^2$, i.e.,
 We distort this function further by stretching it out in the $x_1$ direction via
 -->
 
-*dịch đoạn phía trên*
+Để hiểu hơn về các tính chất hình học của phương pháp động lượng, chúng ta hãy ôn lại thuật toán hạ gradient với hàm mục tiêu khó chịu hơn.
+Hãy nhớ lại trong :numref:`sec_gd` chúng ta sử dụng $f(\mathbf{x}) = x_1^2 + 2 x_2^2$ là hàm mục tiêu dạng elip.
+Chúng ta sẽ sửa đổi hàm này một chút để kéo dài thêm hình dạng theo hướng $x_1$ như sau:
 
 
 $$f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2.$$
@@ -154,7 +156,9 @@ Let us see what happens when we perform gradient descent as before on this new f
 We pick a learning rate of $0.4$.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *rất* phẳng theo hướng $x_1$.
+Chúng ta hãy xem điều gì sẽ xảy ra khi thực hiện hạ gradient tương tự như trước trên hàm mới định nghĩa.
+Chúng ta đặt tốc độ học bằng $0.4$.
 
 
 ```{.python .input  n=3}
@@ -182,7 +186,12 @@ The example below illustrates what happens even after a slight increase in learn
 Convergence in the $x_1$ direction improves but the overall solution quality is much worse.
 -->
 
-*dịch đoạn phía trên*
+Ta thấy, gradient theo hướng $x_2$ có giá trị *lớn hơn nhiều* và thay đổi nhanh hơn nhiều so với gradient theo hướng ngang $x_1$.
+Vì thế, chúng ta bị mắc kẹt giữa hai lựa chọn không mong muốn: Nếu chọn tốc độ học nhỏ, các nghiệm sẽ không phân kỳ theo hướng $x_2$
+nhưng tốc độ hội tụ sẽ chậm theo hướng $x_1$.
+Ngược lại, với một tốc độ học lớn mô hình sẽ hội tụ nhanh chóng theo hướng $x_1$ nhưng phân kỳ theo hướng $x_2$.
+Ví dụ dưới đây minh họa những gì xảy ra khi tăng nhẹ tốc độ học từ $0.4$ đến $0.6$.
+Hội tụ theo hướng $x_1$ cải thiện nhưng kết quả cuối cùng tệ hơn rất nhiều.
 
 
 ```{.python .input  n=4}
@@ -650,7 +659,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Thanh Hoà
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
