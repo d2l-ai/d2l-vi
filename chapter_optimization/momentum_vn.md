@@ -291,7 +291,7 @@ Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm g
 ### Effective Sample Weight
 -->
 
-### *dịch tiêu đề phía trên*
+### Trọng số mẫu thực sự
 
 <!--
 Recall that $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
@@ -301,7 +301,11 @@ These are two benefits in one.
 To illustrate how weighting behaves for different choices of $\beta$ consider the diagram below.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
+Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
+Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng ổn định hơn.
+Đây là hai lợi ích trong một.
+Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
 
 
 ```{.python .input}
@@ -322,20 +326,21 @@ d2l.plt.legend();
 ## Practical Experiments
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thực nghiệm
 
 <!--
 Let us see how momentum works in practice, i.e., when used within the context of a proper optimizer.
 For this we need a somewhat more scalable implementation.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xem phương pháp động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
+Để làm điều này, chúng ta cần một phương pháp lập trình giúp mở rộng dễ dàng hơn.
 
 <!--
 ### Implementation from Scratch
 -->
 
-### *dịch tiêu đề phía trên*
+### Lập trình từ đầu
 
 <!--
 Compared with (minibatch) SGD the momentum method needs to maintain a set of  auxiliary variables, i.e., velocity.
@@ -343,8 +348,9 @@ It has the same shape as the gradients (and variables of the optimization proble
 In the implementation below we call these variables `states`.
 -->
 
-*dịch đoạn phía trên*
-
+So với SGD (minibatch), phương pháp động lượng cần duy trì một tập hợp các biến phụ trợ, tức là vận tốc.
+Nó có kích thước giống gradient (và các biến khác trong bài toán tối ưu hóa).
+Trong phần lập trình bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
 
 ```{.python .input  n=13}
 def init_momentum_states(feature_dim):
@@ -363,7 +369,7 @@ def sgd_momentum(params, states, hyperparams):
 Let us see how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem điều này hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=15}
@@ -382,7 +388,8 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-*dịch đoạn phía trên*
+Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu thực tế sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
+Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ dễ dàng kiểm soát độ hội tụ.
 
 
 ```{.python .input  n=8}
@@ -395,7 +402,9 @@ Reducing the learning rate further addresses any issue of non-smooth optimizatio
 Setting it to $0.005$ yields good convergence properties.
 -->
 
-*dịch đoạn phía trên*
+Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề nào của bài toán tối ưu không trơn tru.
+Đặt nó thành $0,005$ mang lại các đặc tính hội tụ tốt.
+
 
 
 ```{.python .input}
@@ -683,7 +692,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 5 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 6 -->
 * 
