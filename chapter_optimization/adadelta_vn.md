@@ -5,7 +5,8 @@
 # Adadelta
 -->
 
-# *dịch tiêu đề phía trên*
+# Adadelta
+
 :label:`sec_adadelta`
 
 <!--
@@ -16,13 +17,19 @@ The algorithm was proposed in :cite:`Zeiler.2012`.
 It is fairly straightforward, given the discussion of previous algorithms so far.
 -->
 
-*dịch đoạn phía trên*
+Adadelta là một biến thể khác của AdaGrad.
+Điểm khác biệt chính đó là thuật toán này giảm tốc độ học một lượng thay đổi theo toạ độ.
+Hơn nữa, theo quy ước nó được biết đến như một thuật toán không sử dụng tốc độ học vì nó thực hiện phép điều chỉnh cho thay đổi trong tương lai dựa trên lượng thay đổi của chính nó.
+Thuật toán này được đề xuất trong :cite:`Zeiler.2012`.
+Nó khá đơn giản dựa trên những thảo luận về các thuật toán trước đây.
+
 
 <!--
 ## The Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán
+
 
 <!--
 In a nutshell Adadelta uses two state variables, $\mathbf{s}_t$ to store a leaky average of the second moment of the gradient 
@@ -32,7 +39,13 @@ Note that we use the original notation and naming of the authors for compatibili
 The parameter du jour is $\rho$. We obtain the following leaky updates:
 -->
 
-*dịch đoạn phía trên*
+Tóm lại, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
+và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai các thay đổi của các tham số trong mô hình.
+Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và cách lập trình
+(Không có lý do nào khác để ta phải sử dụng các biến kí hiệu La Mã khác cho tham số được sử dụng với cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta).
+Tham số di chuyển động (_du jour_) là $\rho$. <!--k hiểu sao lại có từ du jour này, dịch ra là du ký :)) mình thấy $rho$ ở đây giống như tham số trong moving average, mà cái này dịch là trung bình động. nên tạm dịch vậy :-? -->
+Chúng ta có được các cập nhật rò rỉ sau:
+
 
 
 $$\begin{aligned}
@@ -51,7 +64,11 @@ In practice we can implement this algorithm without the need to use additional t
 As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avoiding zero step size or infinite variance. Typically we set this to $\eta = 10^{-5}$.
 -->
 
-*dịch đoạn phía trên*
+Điểm khác biệt so với trước là ta thực hiện các cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị bằng cách lấy tỷ lệ giữa trung bình bình phương tốc độ thay đổi và trung bình mô-men bậc hai của gradient.
+Sử dụng $\mathbf{g}_t'$ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
+Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
+Như trước đây $\eta$ là tham số đảm bảo kết quả xấp xỉ không tầm thường, ví dụ, tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\eta = 10^{-5}$.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -171,7 +188,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
