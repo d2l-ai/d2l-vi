@@ -61,13 +61,13 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 ## Implementation
 -->
 
-## *dịch tiêu đề phía trên*
+## Thực hiện
 
 <!--
 Adadelta needs to maintain two state variables for each variable, $\mathbf{s}_t$ and $\Delta\mathbf{x}_t$. This yields the following implementation.
 -->
 
-*dịch đoạn phía trên*
+Thuật toán Adadelta cần duy trì hai biến trạng thái cho từng biến $\mathbf{s}_t$ và $\Delta\mathbf{x}_t$. Do đó ta lập trình như sau.
 
 
 ```{.python .input  n=11}
@@ -96,7 +96,7 @@ def adadelta(params, states, hyperparams):
 Choosing $\rho = 0.9$ amounts to a half-life time of 10 for each parameter update. This tends to work quite well. We get the following behavior.
 -->
 
-*dịch đoạn phía trên*
+Chọn $\rho = 0.9$ bằng thời gian một nửa chu kỳ bán rã của 10 cho mỗi lần cập nhật tham số. Cách này thường hoạt động khá tốt. Hoạt động của thuật toán thu được như sau.
 
 
 ```{.python .input  n=12}
@@ -110,7 +110,7 @@ d2l.train_ch11(adadelta, init_adadelta_states(feature_dim),
 For a concise implementation we simply use the `adadelta` algorithm from the `Trainer` class. This yields the following one-liner for a much more compact invocation.
 -->
 
-*dịch đoạn phía trên*
+Để lập trình súc tích, ta chỉ đơn giản sử dụng thuật toán `adadelta` trực tiếp từ lớp `Trainer`. Nhờ vậy mà thuật toán được gọi chỉ với một dòng lệnh khá ngắn gọn. 
 
 
 ```{.python .input  n=9}
@@ -130,7 +130,9 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 * Adadelta uses leaky averages to keep a running estimate of the appropriate statistics.
 -->
 
-*dịch đoạn phía trên*
+* Adadelta không sử dụng tham số tốc độ học. Thay vào đó, nó sử dụng tốc độ thay đổi của chính các tham số của nó để điều chỉnh tốc độ học.
+* Adadelta cần sử dụng hai biến trạng thái để lưu trữ các mô-men bậc hai của gradient và của thay đổi trong các tham số.
+* Adadelta sử dụng trung bình rò rỉ để lưu ước lượng thống kê động thích hợp.
 
 <!--
 ## Exercises
@@ -145,7 +147,10 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 4. Compare Adadelta to Adagrad and RMS prop to discuss their convergence behavior.
 -->
 
-*dịch đoạn phía trên*
+1. Điều gì xảy ra khi điều chỉnh giá trị của $\rho$?
+2. Hãy lập trình thuật toán trên mà không cần dùng biến $\mathbf{g}_t'$. Giải thích tại sao đây có thể là một ý tưởng tốt?
+3. Adadelta có thực sự không cần tốc độ học? Bạn đọc có thể chỉ ra các bài toán tối ưu mà không thoả mãn Adadelta?
+4. Hãy so sánh Adadelta với Adagrad và RMSprop để thảo luận về sự hội tụ của từng thuật toán.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC =================================== -->
@@ -174,4 +179,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
