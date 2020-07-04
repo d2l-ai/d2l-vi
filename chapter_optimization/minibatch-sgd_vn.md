@@ -439,7 +439,7 @@ Cuối cùng, chúng ta so sánh tương quan thời gian và giá trị mất m
 Như có thể thấy, mặc dù SGD hội tụ nhanh hơn GD về số mẫu được xử lý,
 nhưng SGD tốn nhiều thời gian hơn để đạt được cùng giá trị mất mát như GD vì thuật toán này tính toán gradient trên từng mẫu một.
 Thuật toán SGD theo minibatch có thể cân bằng giữa tốc độ hội tụ và hiệu quả tính toán.
-Với kích thước minibatch bằng 10, thuật toán này hiệu quả hơn SGD; và với kích thước minibatch bằng 100, thời gian chạy của thuật toán này thậm chí nhanh hơn GD.
+Với kích thước minibatch bằng 10, thuật toán này hiệu quả hơn SGD; và với kích thước minibatch bằng 100, thời gian chạy của thuật toán này thậm chí nhanh hơn cả GD.
 
 
 ```{.python .input  n=8}
