@@ -5,7 +5,7 @@
 # Momentum
 -->
 
-# *dịch tiêu đề phía trên*
+# Động lượng
 :label:`sec_momentum`
 
 <!--
@@ -15,33 +15,36 @@ If we decrease it too rapidly, convergence stalls.
 If we are too lenient, we fail to converge to a good enough solution since noise keeps on driving us away from optimality.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_sgd` chúng ta đã ôn tập về kỹ thuật hạ gradient ngẫu nhiên, là khi tối ưu hoá mà chỉ có thể sử dụng một dạng gradient có nhiễu.
+Cụ thể, với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt tác nhân gây nhiễu.
+Nếu gradient giảm quá nhanh, việc hội tụ sẽ bị chững lại.
+Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ tốt sẽ khó xảy ra bởi vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
 <!--
 ## Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Kiến thức cơ bản
 
 <!--
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả hơn, cụ thể là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
 
 <!--
 ### Leaky Averages
 -->
 
-### *dịch tiêu đề phía trên*
+### Giá trị trung bình rò rỉ
 
 <!--
 The previous section saw us discussing minibatch SGD as a means for accelerating computation.
 It also had the nice side-effect that averaging gradients reduced the amount of variance.
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
+Đồng thời, kỹ thuật lấy trung bình gradients này cũng có một "tác dụng phụ" tốt đó là giúp giảm phương sai.
 
 
 $$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} \mathbf{g}_{i, t-1}.
@@ -54,7 +57,9 @@ It would be nice if we could benefit from the effect of variance reduction even 
 One option to accomplish this task is to replace the gradient computation by a "leaky average":
 -->
 
-*dịch đoạn phía trên*
+Ở đây chúng ta dùng $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ để giúp ký hiệu được đơn giản.
+Sẽ rất tốt nếu ta có khả năng tận dụng được lợi ích từ việc giảm phương sai bên cạnh cách lấy trung bình gradient trên từng minibatch.
+Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
 
 
 $$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + \mathbf{g}_{t, t-1}$$
@@ -67,7 +72,10 @@ It accumulates past gradients similar to how a heavy ball rolling down the objec
 To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively into
 -->
 
-*dịch đoạn phía trên*
+với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời một cách hiệu quả bằng một giá trị được lấy trung bình trên các gradient trước đó.
+$\mathbf{v}$ đực gọi là *động lượng*.
+Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ điểm bắt đầu lăn tới điểm hiện tại.
+Để thấy rõ hơn những gì đang diễn ra, chúng ta hãy mở rộng $\mathbf{v}_t$ một cách đệ quy thành
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -678,7 +686,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 2 -->
 * Nguyễn Thanh Hoà
