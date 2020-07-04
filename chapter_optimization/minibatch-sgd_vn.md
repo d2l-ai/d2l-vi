@@ -311,7 +311,7 @@ Specifically, we add the status input `states` and place the hyperparameter in d
 In addition, we will average the loss of each minibatch example in the training function, so the gradient in the optimization algorithm does not need to be divided by the batch size.
 -->
 
-Hãy nhớ lại cách lập trình SGD minibatch từ :numref:`sec_linear_scratch`.
+Hãy nhớ lại cách lập trình SGD theo minibatch từ :numref:`sec_linear_scratch`.
 Trong phần tiếp theo, chúng tôi sẽ trình bày cách lập trình tổng quát hơn một chút.
 Để thuận tiện, hàm lập trình SGD và các thuật toán tối ưu khác được giới thiệu sau trong chương này sẽ có danh sách tham số giống nhau.
 Cụ thể, chúng ta thêm trạng thái đầu vào `states` và đặt siêu tham số trong từ điển `hyperparams`.
