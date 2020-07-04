@@ -614,7 +614,7 @@ Plot how the values of $x$ decrease for the initialization $x_i = 1$.
 2. Hãy thử GD và phương pháp động lượng cho một bài toán bậc hai trong đó có nhiều trị riêng, ví dụ: $f(x) = \frac{1}{2} \sum_i \lambda_i x_i^2$, e.g., $\lambda_i = 2^{-i}$.
 Vẽ đồ thị biểu diễn sự giảm xuống của $x$ khi khởi tạo $x_i = 1$.
 3. Lấy giá trị và nghiệm cực tiểu cho $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
-4. Điều gì thay đổi khi chúng ta thực hiện SGD và SGD theo mini-batch với phương pháp động lượng? Thử nghiệm với cùng tham số.
+4. Điều gì thay đổi khi chúng ta thực hiện SGD và SGD theo mini-batch với phương pháp động lượng? Thử nghiệm với các tham số.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
