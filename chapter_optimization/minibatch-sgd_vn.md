@@ -400,7 +400,7 @@ This is because SGD updated the parameters more frequently and since it is less 
 -->
 
 Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu hóa.
-Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (với giá trị nhỏ).
+Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
 Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
 Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
 Như chúng ta có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
