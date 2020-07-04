@@ -74,8 +74,8 @@ Chúng tôi mời bạn tham khảo hướng dẫn chi tiết **[tại đây](ht
 ### Những câu hỏi thường gặp
 **Hỏi:** Cuốn sách này có bản song ngữ hay không?
 
-**Đáp:** Không, chúng tôi không có kế hoạch này cho cuốn sách này.
+**Đáp:** Không, chúng tôi không có kế hoạch thực hiện bản song ngữ cho cuốn sách này.
 
 **Hỏi:** Cuốn sách này có bản PDF hay không?
 
-**Đáp:** Có, chúng tôi sẽ có bản PDF sau khi toàn bộ nội dung cuốn sách này được hoàn thiện.
+**Đáp:** Có, chúng tôi sẽ có bản PDF sau khi đã hoàn thiện toàn bộ nội dung cuốn sách này.
