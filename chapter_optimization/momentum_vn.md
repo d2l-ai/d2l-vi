@@ -379,15 +379,15 @@ train_momentum(0.005, 0.9)
 ### Concise Implementation
 -->
 
-### Cách lập trình ngắn gọn
+### Cách lập trình súc tích
 
 <!--
 There is very little to do in Gluon since the standard `sgd` solver already had momentum built in.
 Setting matching parameters yields a very similar trajectory.
 -->
 
-Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã tích hợp sẵn động lượng.
-Thiết lập các tham số phù hợp mang lại một quỹ đạo rất giống khi lập trình từ đầu.
+Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã tích hợp sẵn phương pháp động lượng.
+Cùng một thiết lập tham số mang lại một quỹ đạo rất giống khi lập trình từ đầu.
 
 
 ```{.python .input  n=9}
@@ -407,8 +407,8 @@ So far the 2D example of $f(x) = 0.1 x_1^2 + 2 x_2^2$ seemed rather contrived.
 We will now see that this is actually quite representative of the types of problem one might encounter, at least in the case of minimizing convex quadratic objective functions.
 -->
 
-Cho đến nay, ví dụ 2D về $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như khá giả tạo.
-Bây giờ chúng ta sẽ thấy rằng điều này thực sự khá tiêu biểu cho các loại vấn đề mà người ta có thể gặp phải, ít nhất là trong trường hợp giảm thiểu các hàm mục tiêu bậc hai lồi.
+Cho đến nay, ví dụ 2D về $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như khá không thực.
+Bây giờ chúng ta sẽ thấy rằng điều này thực ra khá tiêu biểu cho các loại vấn đề mà ta có thể gặp phải, ít nhất là trong trường hợp cực tiểu hóa các hàm mục tiêu bậc hai lồi.
 
 
 <!--
@@ -421,7 +421,7 @@ Bây giờ chúng ta sẽ thấy rằng điều này thực sự khá tiêu bi�
 Consider the function
 -->
 
-Xem xét hàm số 
+Xét hàm số 
 
 
 $$h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b.$$
@@ -450,8 +450,8 @@ Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\m
 -->
 
 Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
-Nghĩa là, nó được cho bởi khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu, nhân với $\mathbf{Q}$.
-Do đó, động lượng là sự tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
+Nghĩa là, khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu, nhân với $\mathbf{Q}$.
+Do đó, động lượng là tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
 Since $\mathbf{Q}$ is positive definite it can be decomposed into its eigensystem via 
@@ -459,7 +459,7 @@ $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ for an orthogonal
 This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ to obtain a much simplified expression:
 -->
 
-Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ phương trình riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
+Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
 Điều này cho phép chúng ta đổi biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
