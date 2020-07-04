@@ -330,7 +330,7 @@ Next, we implement a generic training function to facilitate the use of the othe
 It initializes a linear regression model and can be used to train the model with minibatch SGD and other algorithms introduced subsequently.
 -->
 
-Tiếp theo, chúng ta lập trình một hàm huấn luyện tổng quát sử dụng cho cả các thuật toán tối ưu khác được giới thiệu sau trong chương này.
+Tiếp theo, chúng ta lập trình một hàm huấn luyện tổng quát, sử dụng được cho cả các thuật toán tối ưu khác được giới thiệu sau trong chương này.
 Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với thuật toán hạ gradient ngẫu nhiên theo minibatch và các thuật toán khác.
 
 
