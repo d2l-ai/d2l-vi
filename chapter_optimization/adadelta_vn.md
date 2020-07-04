@@ -6,7 +6,6 @@
 -->
 
 # Adadelta
-
 :label:`sec_adadelta`
 
 <!--
@@ -22,7 +21,6 @@ Adadelta là một biến thể khác của AdaGrad.
 Hơn nữa, theo quy ước nó được biết đến như một thuật toán không sử dụng tốc độ học vì nó thực hiện phép điều chỉnh cho thay đổi trong tương lai dựa trên lượng thay đổi của chính nó.
 Thuật toán này được đề xuất trong :cite:`Zeiler.2012`.
 Nó khá đơn giản dựa trên những thảo luận về các thuật toán trước đây.
-
 
 <!--
 ## The Algorithm
@@ -47,7 +45,6 @@ Tham số di chuyển động (_du jour_) là $\rho$. <!--k hiểu sao lại có
 Chúng ta có được các cập nhật rò rỉ sau:
 
 
-
 $$\begin{aligned}
     \mathbf{s}_t & = \rho \mathbf{s}_{t-1} + (1 - \rho) \mathbf{g}_t^2, \\
     \mathbf{g}_t' & = \sqrt{\frac{\Delta\mathbf{x}_{t-1} + \epsilon}{\mathbf{s}_t + \epsilon}} \odot \mathbf{g}_t, \\
@@ -68,7 +65,6 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 Sử dụng $\mathbf{g}_t'$ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
 Như trước đây $\eta$ là tham số đảm bảo kết quả xấp xỉ không tầm thường, ví dụ, tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\eta = 10^{-5}$.
-
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
