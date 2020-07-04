@@ -376,7 +376,7 @@ In fact, after 6 steps progress stalls.
 Hãy cùng quan sát quá trình tối ưu hóa của thuật toán hạ gradient theo toàn bộ batch.
 Điều này có thể đạt được bằng cách thiết lập kích thước minibatch bằng 1500 (chính là tổng số mẫu).
 Kết quả là các tham số mô hình được cập nhật một lần duy nhất cho từng epoch.
-Không có tiến bộ đáng kể nào.
+Có thể thấy không hề có tiến triển đáng kể.
 Trong thực tế, việc tối ưu vẫn dậm chân tại chỗ sau 6 epoch.
 
 
