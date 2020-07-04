@@ -20,6 +20,8 @@ Với mỗi thành viên tham gia hiện tại, chúng tôi ưu tiên bạn bắ
 * Star github repo của dự án.
 * Chia sẻ dự án tới nhiều người hơn.
 
+---
+
 ## Tôi nên bắt đầu dịch thuật như thế nào?
 
 Dưới đây là hướng dẫn những việc cần làm khi tham gia quá trình dịch thuật một cách cơ bản nhất.
@@ -92,6 +94,8 @@ Bạn hãy kiểm tra qua nội dung một lần nữa xem Pull request của m�
 
 ![](./docs/translation-guide/web-step-04.png)
 
+---
+
 ## Tôi có thể tham gia phản biện (review) như thế nào?
 
 Đầu tiên, bạn truy cập vào tab **[Pull request](https://github.com/aivivn/d2l-vn/pulls)**, chọn một PR và kiểm tra xem nội dung này đã sẵn sàng để review hay chưa.
@@ -110,6 +114,8 @@ Nếu PR đã sẵn sàng review, bạn hãy truy cập vào tab `File changed` 
 Sau khi bạn đã review qua hết lượt nội dung từng dòng một, hãy chọn **Review changes** và làm theo hướng dẫn trong hình phía dưới.
 
 ![](./docs/translation-guide/rv-step-03.png)
+
+---
 
 ## Những vấn đề thường gặp
 
@@ -156,7 +162,7 @@ Riêng về vấn đề trao đổi, thảo luận với người phản biện,
 Bạn vui lòng liên hệ @duythanhvn thông qua Github issue hoặc Slack để thảo luận thêm.
 </details>
 <details>
-<summary>Tôi đã có kinh nghiệm làm việc với Github</summary>
+<summary>Tôi đã có kinh nghiệm làm việc với Github.</summary>
 
 Thật tuyệt vời, bạn có thể bắt đầu nhanh hơn vào phần nội dung của cuốn sách mà không mất nhiều thời gian để làm quen lại với Github.
 
@@ -177,7 +183,17 @@ Một số plugins chuyên dụng cho VS Code bạn có thể sử dụng trong 
 
 Không, chúng tôi khuyến khích các thành viên tham gia dự án chỉ nên tập trung vào phần dịch thuật và trao đổi dịch thuật mà thôi (kể cả khi bạn đã được thêm vào nhóm Collaborators). Nhóm điều phối sẽ kiểm tra các PR và tiến hành merge khi đã đạt yêu cầu.
 </details>
+<details>
+<summary>Phần tôi dịch trông không giống bản gốc ở website d2l.ai?</summary>
 
+Chúng tôi khuyến khích bạn khi dịch thì bám sát vào nội dung chúng tôi đã cung cấp trong tập tin, mọi sự thay đổi và cập nhật chúng tôi sẽ có hành động cụ thể sau. 
+
+Điều này đặc biệt lưu ý vì ở bản tiếng Anh, nhóm tác giả luôn có những cập nhật lớn nhỏ; ở bản tiếng Việt này chúng tôi sẽ chủ động kiểm tra và có những phản ứng phù hợp, đôi khi sự thay đổi của bản gốc không ảnh hưởng đến nội dung hiện thời, chúng tôi cũng không có chủ trương cập nhật.
+
+Vì vậy, bạn hãy dịch dựa trên nội dung mà nhóm đã cung cấp trong tập tin nhé.
+</details>
+
+---
 
 Nếu bạn có bất kỳ câu hỏi nào trong quá trình tham gia dự án, vui lòng tạo một Issue mới và tag @duythanhvn hoặc liên hệ qua Slack để nhận được hỗ trợ từ dự án.
 

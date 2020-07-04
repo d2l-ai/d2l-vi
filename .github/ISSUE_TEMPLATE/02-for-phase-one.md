@@ -13,4 +13,4 @@ Phần cần dịch:
 - [Dịch trực tiếp trên website](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md).
 - Sau khi nhấn vào phần cần dịch ở trên, hãy chọn **Normal view** và làm theo hướng dẫn ở trên để có thể bắt đầu dịch.
 
-![](https://raw.githubusercontent.com/aivivn/d2l-vn/master/translation_team/normal-view.png)
+![](https://raw.githubusercontent.com/aivivn/d2l-vn/master/docs/translation-guide/normal-view.png)

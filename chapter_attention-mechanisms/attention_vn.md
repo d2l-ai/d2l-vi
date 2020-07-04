@@ -6,7 +6,6 @@
 -->
 
 # Cơ chế Tập trung
-
 :label:`sec_attention`
 
 <!--
@@ -17,11 +16,11 @@ In the seq2seq model, the decoder may implicitly select the corresponding inform
 The attention mechanism, however, makes this selection explicit.
 -->
 
-Trong :numref:`sec_seq2seq`, chúng ta mã hóa thông tin đầu vào của chuỗi nguồn thành trạng thái ẩn sinh bởi mạng truy hồi và truyền tới bộ giải mã để sinh chuỗi đích.
-Token trong chuỗi đích có thể liên quan mật thiết tới một hay nhiều token thay vì toàn bộ token trong chuỗi nguồn.
+Trong :numref:`sec_seq2seq`, chúng ta dùng mạng hồi tiếp để mã hóa thông tin của chuỗi nguồn đầu vào thành trạng thái ẩn và truyền nó tới bộ giải mã để sinh chuỗi đích.
+Một token trong chuỗi đích có thể chỉ liên quan mật thiết tới một vài token chứ không nhất thiết là toàn bộ token trong chuỗi nguồn.
 Ví dụ, khi dịch "Hello world." thành "Bonjour le monde.", từ "Bonjour" ánh xạ tới từ "Hello" và từ "monde" ánh xạ tới từ "world". 
-Trong mô hình seq2seq, bộ giải mã có thể ngầm chọn thông tin tương ứng từ trạng thái ẩn được truyền đến từ bộ mã hoá.
-Tuy nhiên cơ chế tập trung (_attention mechanism_) thực hiện phép chọn này một cách tường minh.
+Trong mô hình seq2seq, bộ giải mã có thể ngầm chọn thông tin tương ứng từ trạng thái ẩn được truyền đến từ bộ mã hóa.
+Tuy nhiên, cơ chế tập trung (_attention mechanism_) thực hiện phép chọn này một cách tường minh.
 
 
 
@@ -35,13 +34,13 @@ $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, with $\mat
 Given a query $\mathbf{q} \in \mathbb R^{d_q}$, the attention layer returns an output $\mathbf{o} \in \mathbb R^{d_v}$ with the same shape as the value.
 -->
 
-Cơ chế *tập trung* có thể coi là phép gộp tổng quát với đầu vào có trọng số khác nhau.
+Cơ chế *tập trung* có thể được coi là phép gộp tổng quát. Nó gộp đầu vào dựa trên các trọng số khác nhau.
 Thành phần cốt lõi của cơ chế tập trung là tầng tập trung.
-Đầu vào của tầng tập trung được gọi ngắn gọn là *truy vấn* (*query*).
-Với mỗi truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp vector khoá-giá trị được mã hoá trong tầng tập trung này. 
-Cụ thể, giả sử bộ nhớ chứa $n$ cặp vector khoá-giá trị,
+Đầu vào của tầng tập trung được gọi ngắn gọn là *câu truy vấn* (*query*).
+Với mỗi câu truy vấn, tầng tập trung trả về đầu ra dựa trên bộ nhớ là tập các cặp khóa-giá trị được mã hóa trong tầng tập trung này. 
+Cụ thể, giả sử bộ nhớ chứa $n$ cặp vector khóa-giá trị,
 $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, với $\mathbf{k}_i \in \mathbb R^{d_k}$, $\mathbf{v}_i \in \mathbb R^{d_v}$.
-Với mỗi vector truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung trả về đầu ra $\mathbf{o} \in \mathbb R^{d_v}$ cùng kích thước với vector giá trị.
+Với mỗi vector truy vấn $\mathbf{q} \in \mathbb R^{d_q}$, tầng tập trung trả về đầu ra $\mathbf{o} \in \mathbb R^{d_v}$ có cùng kích thước với vector giá trị.
 
 
 <!--
@@ -59,8 +58,8 @@ Then for each key $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{
 -->
 
 Chi tiết về cơ chế tập trung được minh họa trong :numref:`fig_attention_output`.
-Để tính toán đầu ra của tầng tập trung, chúng ta sử dụng hàm tính điểm $\alpha$ để đo độ tương tự giữa câu truy vấn và các khoá.
-Sau đó, với mỗi khoá $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, ta tính điểm trọng số $a_1, \ldots, a_n$ như sau:
+Để tính toán đầu ra của tầng tập trung, chúng ta sử dụng hàm tính điểm $\alpha$ để đo độ tương đồng giữa câu truy vấn và các khóa.
+Sau đó, với mỗi khóa $(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_n, \mathbf{v}_n)$, ta tính điểm $a_1, \ldots, a_n$ như sau:
 
 
 
@@ -107,8 +106,8 @@ Below, we introduce two commonly used attention layers.
 Before diving into the implementation, we first express two operators to get you up and running: a masked version of the softmax operator `masked_softmax` and a specialized dot operator `batched_dot`.
 -->
 Cách lựa chọn hàm tính điểm khác nhau sẽ tạo ra các tầng tập trung khác nhau.
-Chúng tôi sẽ trình bày hai tầng tập trung thường được sử dụng dưới đây.
-Đầu tiên chúng tôi giới thiệu hai toán tử cần thiết để lập trình hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng đặc biệt theo batch `batched_dot`.
+Ở dưới đây chúng tôi sẽ trình bày hai tầng tập trung thường hay được sử dụng.
+Đầu tiên chúng tôi giới thiệu hai toán tử cần thiết để lập trình hai tầng này: toán tử softmax có mặt nạ `masked_softmax` và toán tử tích vô hướng chuyên biệt theo batch `batched_dot`.
 
 
 ```{.python .input  n=1}
@@ -127,7 +126,6 @@ Let us implement the `masked_softmax` function.
 
 Toán tử softmax có mặt nạ nhận đầu vào là một tensor 3 chiều và cho phép ta lọc ra một số phần tử bằng cách xác định độ dài hợp lệ cho chiều cuối cùng. (Tham khảo :numref:`sec_machine_translation` về định nghĩa của độ dài hợp lệ).
 Do đó, những giá trị nằm ngoài độ dài hợp lệ sẽ được gán bằng $0$.
-
 Chúng ta lập trình hàm `masked_softmax` như sau.
 
 
@@ -200,9 +198,9 @@ The dot product attention computes the scores by a dot product between the query
 In other words,
 -->
 
-Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết của hai loại tầng tập trung được sử dụng phổ biến.
-Loại đầu tiên là *Tập trung Tích vô hướng*: nó giả định rằng câu truy vấn có cùng số chiều với khoá, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
-Tầng tập trung tích vô hướng sẽ tính điểm bằng một tích vô hướng giữa câu truy vấn và khoá, sau đó chia cho $\sqrt{d}$ để tối thiểu hóa các ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
+Với hai toán tử `masked_softmax` và `batched_dot` ở trên, chúng ta sẽ đi vào chi tiết hai loại tầng tập trung được sử dụng phổ biến.
+Loại đầu tiên là *tập trung tích vô hướng* (_dot product attention_): nó giả định rằng câu truy vấn có cùng kích thước chiều với khóa, cụ thể là $\mathbf q, \mathbf k_i \in\mathbb R^d$ với mọi $i$.
+Tầng tập trung tích vô hướng sẽ tính điểm bằng cách lấy tích vô hướng giữa câu truy vấn và khóa, sau đó chia cho $\sqrt{d}$ để giảm thiểu ảnh hưởng không liên quan của số chiều $d$ lên điểm số.
 Nói cách khác,
 
 
@@ -214,7 +212,7 @@ Beyond the single-dimensional queries and keys, we can always generalize them to
 Assume that $\mathbf Q\in\mathbb R^{m\times d}$ contains $m$ queries and $\mathbf K\in\mathbb R^{n\times d}$ has all the $n$ keys. We can compute all $mn$ scores by
 -->
 
-Mở rộng ra khỏi các câu truy vấn và khoá một chiều, chúng ta luôn có thể tổng quát hóa chúng lên thành các giá trị truy vấn và khoá đa chiều.
+Mở rộng ra từ các câu truy vấn và khóa một chiều, chúng ta luôn có thể tổng quát hóa chúng lên thành các giá trị truy vấn và khóa đa chiều.
 Giả định rằng $\mathbf Q\in\mathbb R^{m\times d}$ chứa $m$ câu truy vấn và $\mathbf K\in\mathbb R^{n\times d}$ chứa toàn bộ $n$ khóa. Chúng ta có thể tính toàn bộ $mn$ điểm số như sau
 
 
@@ -227,8 +225,9 @@ With :eqref:`eq_alpha_QK`, we can implement the dot product attention layer `Dot
 In addition, for regularization we also use a dropout layer.
 -->
 
-Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khoá-giá trị.
-Ngoài ra, để điều chuẩn, chúng ta cũng dùng thêm tầng dropout.
+
+Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung tích vô hướng `DotProductAttention` hỗ trợ một batch các câu truy vấn và các cặp khóa-giá trị.
+Ngoài ra, chúng ta cũng dùng thêm một tầng dropout để điều chuẩn.
 
 ```{.python .input  n=5}
 # Saved in the d2l package for later use
@@ -257,10 +256,11 @@ Via the `valid_len` argument, we specify that we will check the first $2$ key-va
 Therefore, even though both batches have the same query and key-value pairs, we obtain different outputs.
 -->
 
-Ta hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
-Đầu tiên, tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khoá-giá trị.
-Thông qua đối số `valid_len`, chúng ta chỉ ra rằng mình sẽ kiểm tra $2$ cặp khoá-giá trị đầu tiên cho batch đầu tiên và $6$ cặp khoá-giá trị đầu tiên cho batch thứ hai.
-Do đó, mặc dù cả hai batch có cùng số câu truy vấn và số cặp khoá-giá trị, chúng ta sẽ thu được các đầu ra khác nhau.
+
+Hãy kiểm tra lớp `DotProductAttention` với một ví dụ nhỏ sau.
+Đầu tiên ta tạo 2 batch, mỗi batch có 1 câu truy vấn và 10 cặp khóa-giá trị.
+Thông qua đối số `valid_len`, ta chỉ định rằng ta sẽ kiểm tra $2$ cặp khóa-giá trị đầu tiên cho batch đầu tiên và $6$ cặp cho batch thứ hai.
+Do đó, mặc dù cả hai batch đều có cùng câu truy vấn và các cặp khóa-giá trị, chúng ta sẽ thu được các đầu ra khác nhau.
 
 
 ```{.python .input  n=6}
@@ -278,8 +278,8 @@ Whereas, the query and key may not be of the same dimension.
 To address such an issue, we may resort to the multilayer perceptron attention.
 -->
 
-Như đã thấy ở trên, tích vô hướng tập trung chỉ đơn giản là nhân câu truy vấn và khoá lại với nhau, hi vọng rằng từ đó sẽ rút ra được những điểm tương đồng giữa chúng.
-Trong khi đó, câu truy vấn và khoá có thể không có cùng số chiều.
+Như đã thấy ở trên, tập trung tích vô hướng chỉ đơn thuần nhân câu truy vấn và khóa lại với nhau, hi vọng rằng từ đó thu được những điểm tương đồng giữa chúng.
+Tuy nhiên, câu truy vấn và khóa có thể không có cùng kích thước chiều.
 Để giải quyết vấn đề này, chúng ta cần nhờ đến cơ chế tập trung perceptron đa tầng.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -297,8 +297,8 @@ In *multilayer perceptron attention*, we project both query and keys into $\math
 Assume that the learnable weights are $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$, and $\mathbf v\in\mathbb R^{h}$. Then the score function is defined by
 -->
 
-Trong cơ chế *tập trung perceptron đa tầng*, chúng ta chiếu cả câu truy vấn và các khoá lên $\mathbb R^{h}$ bằng các tham số trọng số có được học.
-Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm số sẽ được định nghĩa như sau
+Trong cơ chế *tập trung perceptron đa tầng* (_multilayer perceptron attention_), chúng ta chiếu cả câu truy vấn và các khóa lên $\mathbb R^{h}$ bằng các tham số trọng số được học.
+Giả định rằng các trọng số được học là $\mathbf W_k\in\mathbb R^{h\times d_k}$, $\mathbf W_q\in\mathbb R^{h\times d_q}$ và $\mathbf v\in\mathbb R^{h}$. Hàm tính điểm sẽ được định nghĩa như sau
 
 
 $$\alpha(\mathbf k, \mathbf q) = \mathbf v^\top \text{tanh}(\mathbf W_k \mathbf k + \mathbf W_q\mathbf q).$$
@@ -311,9 +311,9 @@ In this hidden layer, the activation function is $\tanh$ and no bias is applied.
 Now let us implement the multilayer perceptron attention.
 -->
 
-Bằng trực giác, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khoá và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước tầng ẩn $h$ và kích thước tầng đầu ra là $1$.
-Trong tầng ẩn này, hàm kích hoạt là $tanh$ và hệ số điều chỉnh không được sử dụng.
-Giờ ta hãy khởi tạo perceptron đa tầng tập trung nhé.
+Một cách trực quan, ta có thể tưởng tượng $\mathbf W_k \mathbf k + \mathbf W_q\mathbf q$ chính là việc nối khóa và giá trị lại với nhau theo chiều đặc trưng và đưa chúng qua perceptron có một tầng ẩn với kích thước là $h$ và tầng đầu ra với kích thước là $1$.
+Trong tầng ẩn này, hàm kích hoạt là $tanh$ và không có hệ số điều chỉnh.
+Giờ hãy lập trình một tầng tập trung perceptron đa tầng.
 
 
 ```{.python .input  n=7}
@@ -344,8 +344,9 @@ To test the above `MLPAttention` class, we use the same inputs as in the previou
 As we can see below, despite `MLPAttention` containing an additional MLP model, we obtain the same outputs as for `DotProductAttention`.
 -->
 
-Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng cùng một đầu vào như ở ví dụ trước đó.
-Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự với `DotProductAttention`.
+Để kiểm tra lớp `MLPAttention` phía trên, chúng ta sẽ sử dụng lại đầu vào ở ví dụ đơn giản trước.
+Như ta thấy ở dưới, mặc dù `MLPAttention` chứa thêm một mô hình MLP, chúng ta vẫn thu được đầu ra tương tự `DotProductAttention`.
+
 
 ```{.python .input  n=8}
 atten = MLPAttention(units=8, dropout=0.1)
@@ -365,9 +366,9 @@ atten(np.ones((2, 1, 2)), keys, values, np.array([2, 6]))
 * Two commonly used attention models are dot product attention and multilayer perceptron attention.
 -->
 
-* Tầng tập trung lựa chọn các thông tin liên quan một cách tường minh.
-* Ký ức của tầng tập trung chứa các cặp khoá-giá trị, do đó đầu ra của nó gần với các giá trị của các khoá giống với câu truy vấn.
-* Hai mô hình tập trung được sử dụng phổ biến là Tập trung Tích vô hướng và Tập trung Perceptron đa tầng.
+* Tầng tập trung lựa chọn một cách tường minh các thông tin liên quan.
+* Ô nhớ của tầng tập trung chứa các cặp khóa-giá trị, do đó đầu ra của nó gần các giá trị có khóa giống với câu truy vấn.
+* Hai mô hình tập trung được sử dụng phổ biến là tập trung tích vô hướng và tập trung perceptron đa tầng.
 
 
 <!--
@@ -392,28 +393,12 @@ What are the advantages and disadvantages for dot product attention and multilay
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Nguyễn Cảnh Thướng
 * Nguyễn Văn Cường 
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
 * Võ Tấn Phát
-
-<!-- Phần 4 -->
-* Võ Tấn Phát   
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh

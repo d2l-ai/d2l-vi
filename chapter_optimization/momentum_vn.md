@@ -88,7 +88,10 @@ This allows us to realize most of the benefits of averaging over a batch without
 We will revisit this averaging procedure in more detail later.
 -->
 
-*dịch đoạn phía trên*
+Giá trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ có một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
+Gradient mới này không còn trỏ về hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
+Điều này cho phép chúng ta nhận được hầu hết lợi ích của việc tính toán trung bình theo batch mà không phải tốn chi phí tính toán gradients theo cả batch.
+Chúng ta sẽ xem xét lại quy trình lấy trung bình một cách cụ thể hơn ở những phần sau.
 
 <!--
 The above reasoning formed the basis for what is now known as *accelerated* gradient methods, such as gradients with momentum.
@@ -98,7 +101,11 @@ Furthermore, they allow us to average over subsequent gradients to obtain more s
 Indeed, the aspect of acceleration even for noise-free convex problems is one of the key reasons why momentum works and why it works so well.
 -->
 
-*dịch đoạn phía trên*
+Các lập luận là cơ sở đã hình thành nên các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
+Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình chậm hơn rất nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
+Hơn nữa, cách này cho phép chúng ta tính trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
+Thật vậy, việc tăng tốc ngay cả đối với bài toán hàm lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
+
 
 <!--
 As one would expect, due to its efficacy momentum is a well-studied subject in optimization for deep learning and beyond.
@@ -109,7 +116,11 @@ Momentum in deep learning has been known to be beneficial for a long time.
 See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
-*dịch đoạn phía trên*
+Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
+[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
+Động lượng được đề xuất bởi :cite:`Polyak.1964` và :cite:`Nesterov.2018` đã có một thảo luận học thuật chi tiết trong ngữ cảnh tối ưu hoá lồi.
+Động lượng trong học sâu đã được biết đến từ lâu vì lợi ích mà nó mang lại.
+Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -123,7 +134,7 @@ See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 ### An Ill-conditioned Problem
 -->
 
-### *dịch tiêu đề phía trên*
+### Bài toán với Điều kiện Xấu
 
 <!--
 To get a better understanding of the geometric properties of the momentum method we revisit gradient descent, albeit with a significantly less pleasant objective function.
@@ -131,7 +142,9 @@ Recall that in :numref:`sec_gd` we used $f(\mathbf{x}) = x_1^2 + 2 x_2^2$, i.e.,
 We distort this function further by stretching it out in the $x_1$ direction via
 -->
 
-*dịch đoạn phía trên*
+Để hiểu hơn về các tính chất hình học của phương pháp động lượng, chúng ta hãy ôn lại thuật toán hạ gradient với hàm mục tiêu khó chịu hơn.
+Hãy nhớ lại trong :numref:`sec_gd` chúng ta sử dụng $f(\mathbf{x}) = x_1^2 + 2 x_2^2$ là hàm mục tiêu dạng elip.
+Chúng ta sẽ sửa đổi hàm này một chút để kéo dài thêm hình dạng theo hướng $x_1$ như sau:
 
 
 $$f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2.$$
@@ -143,7 +156,9 @@ Let us see what happens when we perform gradient descent as before on this new f
 We pick a learning rate of $0.4$.
 -->
 
-*dịch đoạn phía trên*
+Như trước đây, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *rất* phẳng theo hướng $x_1$.
+Chúng ta hãy xem điều gì sẽ xảy ra khi thực hiện hạ gradient tương tự như trước trên hàm mới định nghĩa.
+Chúng ta đặt tốc độ học bằng $0.4$.
 
 
 ```{.python .input  n=3}
@@ -171,7 +186,12 @@ The example below illustrates what happens even after a slight increase in learn
 Convergence in the $x_1$ direction improves but the overall solution quality is much worse.
 -->
 
-*dịch đoạn phía trên*
+Ta thấy, gradient theo hướng $x_2$ có giá trị *lớn hơn nhiều* và thay đổi nhanh hơn nhiều so với gradient theo hướng ngang $x_1$.
+Vì thế, chúng ta bị mắc kẹt giữa hai lựa chọn không mong muốn: Nếu chọn tốc độ học nhỏ, các nghiệm sẽ không phân kỳ theo hướng $x_2$
+nhưng tốc độ hội tụ sẽ chậm theo hướng $x_1$.
+Ngược lại, với một tốc độ học lớn mô hình sẽ hội tụ nhanh chóng theo hướng $x_1$ nhưng phân kỳ theo hướng $x_2$.
+Ví dụ dưới đây minh họa những gì xảy ra khi tăng nhẹ tốc độ học từ $0.4$ đến $0.6$.
+Hội tụ theo hướng $x_1$ cải thiện nhưng kết quả cuối cùng tệ hơn rất nhiều.
 
 
 ```{.python .input  n=4}
@@ -187,7 +207,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(gd_2d))
 ### The Momentum Method
 -->
 
-### *dịch tiêu đề phía trên*
+### Phương pháp Động lượng
 
 <!--
 The momentum method allows us to solve the gradient descent problem described above.
@@ -197,7 +217,11 @@ Conversely, in the $x_2$ direction where gradients oscillate, an aggregate gradi
 Using $\mathbf{v}_t$ instead of the gradient $\mathbf{g}_t$ yields the following update equations:
 -->
 
-*dịch đoạn phía trên*
+Phương pháp động lượng cho phép chúng ta giải quyết bài toán hạ gradient mô tả ở trên.
+Nhìn vào các vết tối ưu trên, chúng ta có thể tưởng tượng trực quan rằng sẽ tốt hơn nếu lấy trung bình gradient của các bước trước.
+Sau cùng, với chiều $x_1$ các gradient là cùng hướng, cách làm này sẽ đơn thuần lấy tổng, từ đó tăng khoảng cách di chuyển ở từng bước.
+Ngược lại, gradient dao động mạnh theo hướng $x_2$, từ đó kết hợp các gradient sẽ làm giảm kích thước bước do dao động triệt tiêu lẫn nhau.
+Sử dụng $\mathbf{v}_t$ thay vì gradient $\mathbf{g}_t$, ta có các phương trình cập nhật sau:
 
 
 $$
@@ -213,7 +237,8 @@ Note that for $\beta = 0$ we recover regular gradient descent.
 Before delving deeper into the mathematical properties let us have a quick look at how the algorithm behaves in practice.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng với $\beta = 0$, phương pháp này trở thành thuật toán hạ gradient thông thường.
+Trước khi nghiên cứu sâu hơn các tính chất toán học, chúng ta hãy nhìn lướt qua cách thuật toán này hoạt động trong thực tế.
 
 
 ```{.python .input  n=5}
@@ -234,7 +259,10 @@ Halving it to $\beta = 0.25$ leads to a trajectory that barely converges at all.
 Nonetheless, it is a lot better than without momentum (when the solution diverges).
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta có thể thấy, ngay cả với tốc độ học tương tự như trước đó, phương pháp động lượng vẫn hội tụ tốt.
+Chúng ta hãy xem điều gì sẽ xảy ra khi giảm tham số động lượng.
+Giảm một nửa giá trị động lượng $\beta = 0.25$ sẽ dẫn đến một quỹ đạo mà rất khó hội tụ.
+Tuy nhiên, điều này vẫn tốt hơn rất nhiều so với trường hợp không sử dụng động lượng (khi nghiệm phân kì).
 
 
 ```{.python .input  n=11}
@@ -250,7 +278,10 @@ Last, for convenience we initialize $\mathbf{v}_0 = 0$ at time $t=0$.
 Let us look at what leaky averaging actually does to the updates.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
+Thay đổi duy nhất trong trường hợp đó là chúng ta sẽ thay thế các gradient $\mathbf{g}_{t, t-1}$ bằng $\mathbf{g}_t$.
+Cuối cùng, để thuận tiện chúng ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
+Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm gì ở các phiên cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -625,13 +656,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * 

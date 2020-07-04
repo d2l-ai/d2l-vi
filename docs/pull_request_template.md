@@ -10,7 +10,7 @@
      
 * [ ] Trong một đoạn văn, mỗi câu văn đã được viết trong một dòng, giữa các dòng không có dòng trắng. Markdown sẽ coi những dòng liền nhau không có dòng trắng là một đoạn văn. Việc này giúp công đoạn review được thuận tiện hơn. Bạn đã kiểm tra rằng mỗi đoạn văn đã nằm một dòng?
 
-* [ ] Điền tên của bạn vào mục "Những người thực hiện" ở cuối file.
+* [ ] Điền tên đầy đủ của bạn vào mục **Những người thực hiện** ở cuối tập tin.
 
 * [ ] Điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md)**.
 

@@ -201,7 +201,7 @@ At timestep 2, for all $y_2 \in \mathcal{Y},$ we compute
 -->
 
 :numref:`fig_beam-search` minh họa một ví dụ cho quá trình tìm kiếm chùm.
-Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm từ : $\mathcal{Y} = \{A, B, C, D, E\}$ và một trong số chúng là ký hiệu đặc biệt “&lt;eos&gt;”.
+Giả sử bộ từ vựng của chuỗi đầu ra chỉ chứa năm từ: $\mathcal{Y} = \{A, B, C, D, E\}$ và một trong số chúng là ký hiệu đặc biệt “&lt;eos&gt;”.
 Đặt kích thước chùm bằng 2 và độ dài tối đa của chuỗi đầu ra bằng 3.
 Tại bước thời gian 1 của chuỗi đầu ra, giả sử các từ có xác suất có điều kiện $P(y_1 \mid \mathbf{c})$ cao nhất là $A$ và $C$.
 Tại bước thời gian 2, với mọi $y_2 \in \mathcal{Y},$ ta tính
@@ -343,16 +343,6 @@ Tìm kiếm chùm tạo ra sự cân bằng giữa chi phí tính toán và ch�
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Đình Nam

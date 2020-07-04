@@ -15,7 +15,8 @@ So far we assumed that our goal is to model the next word given what we have see
 While this is a typical scenario, it is not the only one we might encounter.
 To illustrate the issue, consider the following three tasks of filling in the blanks in a text:
 -->
-Cho đến nay ta giả định mục tiêu là để mô hình hoá bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ. 
+
+Cho đến nay ta giả định mục tiêu là để mô hình hóa bước thời gian kế tiếp dựa trên những thông tin trước đó, điển hình như chuỗi thời gian hay một mô hình ngôn ngữ. 
 Tuy nhiên, đây không phải là trường hợp duy nhất chúng ta có thể gặp. 
 Để minh họa cho vấn đề này, hãy xem xét ba tác vụ điền vào chỗ trống dưới đây: 
 
@@ -38,10 +39,11 @@ A sequence model that is incapable of taking advantage of this will perform poor
 For instance, to do well in named entity recognition (e.g., to recognize whether "Green" refers to "Mr. Green" or to the color) longer-range context is equally vital.
 To get some inspiration for addressing the problem let us take a detour to graphical models.
 -->
+
 Tuỳ thuộc vào số lượng thông tin có sẵn, chúng ta có thể điền vào chỗ trống với các từ khác nhau như "hạnh phúc", "không", và "đang".
 Rõ ràng phần kết (nếu có) của câu mang thông tin quan trọng ảnh hưởng lớn đến việc chọn từ. 
 Một mô hình chuỗi sẽ thực hiện các tác vụ liên quan kém hiệu quả nếu nó không khai thác tốt được đặc điểm này. 
-Chẳng hạn như để nhận dạng thực thể có tên (ví dụ: phân biệt từ "Bảy" đề cập đến "ông Bảy" hay là số bảy) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
+Chẳng hạn, để nhận dạng thực thể có tên (ví dụ: phân biệt từ "Bảy" đề cập đến "ông Bảy" hay là số bảy) một cách hiệu quả, ngữ cảnh khoảng dài cũng không kém phần quan trọng.
 Chúng ta sẽ dành một chút thời gian tìm hiểu các mô hình đồ thị để tìm nguồn cảm hứng giải quyết bài toán trên. 
 
 
@@ -62,7 +64,7 @@ The specific technical details do not matter for understanding the deep learning
 -->
 
 Trong phần này, chúng ta sẽ tìm hiểu bài toán quy hoạch động. 
-Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kĩ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn. 
+Không cần thiết phải hiểu chi tiết về quy hoạch động để hiểu kỹ thuật tương ứng trong học sâu nhưng chúng góp phần giải thích lý do tại sao học sâu được sử dụng và tại sao một vài kiến trúc mạng nhất định lại được lựa chọn. 
 
 
 <!--
@@ -181,8 +183,8 @@ Combining both forward and backward pass, we are able to compute
 
 khi khởi tạo $\rho_T(h_T) = 1$. 
 Hai biểu thức đệ quy này cho phép ta tính tổng trên tất cả $T$ biến trong khoảng $(h_1, \ldots, h_T)$ với thời gian $\mathcal{O}(kT)$ tăng tuyến tính thay vì luỹ thừa. 
-Đây là một trong những điểm mạnh của kĩ thuật suy luận xác suất với các mô hình đồ thị. 
-Đây là một trường hợp đặc biệt của kĩ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000.  
+Đây là một trong những điểm mạnh của kỹ thuật suy luận xác suất với các mô hình đồ thị. 
+Đây là một trường hợp đặc biệt của kỹ thuật được trình bày trong :cite:`Aji.McEliece.2000` bởi Aji và McEliece vào năm 2000.  
 Kết hợp cả biểu thức xuôi và ngược ta có thể tính được: 
 
 
@@ -196,9 +198,10 @@ Indeed, HMMs benefit from knowing future data when it is available.
 Signal processing scientists distinguish between the two cases of knowing and not knowing future observations as interpolation v.s. extrapolation.
 See the introductory chapter of the book by :cite:`Doucet.De-Freitas.Gordon.2001` on sequential Monte Carlo algorithms for more details.
 -->
+
 Cần phải chú ý rằng khi suy rộng ra, biểu thức đệ quy ngược có thể được viết dưới dạng $\rho_{t-1} = g(\rho_t, x_t)$, trong đó $g$ là một hàm số được học. 
-Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNNs.  
-Thật vậy, HMMs sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
+Một lần nữa, nó trông giống như một phương trình cập nhật chỉ chạy ngược lại, không giống như những gì chúng ta thấy ở RNN.  
+Thật vậy, HMM sẽ có lợi từ việc học các dữ liệu trong tương lai (nếu có thể).
 Các nhà khoa học chuyên về xử lí tín hiệu sẽ tách biệt 2 trường hợp biết trước và không biết trước các kết quả trong tương lai thành nội suy và ngoại suy. 
 Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-Freitas.Gordon.2001` về các thuật toán Monte Carlo tuần tự để biết thêm chi tiết. 
 
@@ -210,7 +213,7 @@ Ta có thể tham khảo chương giới thiệu của cuốn :cite:`Doucet.De-F
 ## Bidirectional Model
 -->
 
-## Mô hình hai chiều
+## Mô hình Hai chiều
 
 <!--
 If we want to have a mechanism in RNNs that offers comparable look-ahead ability as in HMMs, we need to modify the recurrent net design that we have seen so far.
@@ -219,11 +222,12 @@ Instead of running an RNN only in the forward mode starting from the first symbo
 *Bidirectional recurrent neural networks* add a hidden layer that passes information in a backward direction to more flexibly process such information.
 :numref:`fig_birnn` illustrates the architecture of a bidirectional recurrent neural network with a single hidden layer.
 -->
+
 Nếu chúng ta muốn mạng RNN có một cơ chế nhìn trước giống như HMM thì ta cần phải chỉnh sửa một chút thiết kế của các mạng hồi tiếp truyền thống. 
 May mắn là, điều này khá đơn giản về mặt khái niệm. 
 Thay vì chỉ vận hành một RNN chạy từ kí tự đầu đến cuối, ta sẽ khởi tạo một RNN nữa chạy từ kí tự cuối lên đầu. 
 *Mạng nơ ron hồi tiếp hai chiều* (*Bidirectional recurrent neural network*) sẽ thêm một tầng ẩn cho phép xử lý dữ liệu theo chiều ngược lại một cách linh hoạt hơn so với RNN truyền thống. 
-Hình :numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron hồi tiếp hai chiều với 1 tầng ẩn.  
+:numref:`fig_birnn` mô tả cấu trúc của mạng nơ-ron hồi tiếp hai chiều với một tầng ẩn.  
 
 <!--
 ![ Architecture of a bidirectional recurrent neural network. ](../img/birnn.svg)
@@ -239,6 +243,7 @@ Now they are devoid of such easily accessible interpretation and we can just tre
 This transition epitomizes many of the principles guiding the design of modern deep networks: 
 first, use the type of functional dependencies of classical statistical models, and then use the models in a generic form.
 -->
+
 Trên thực tế, điều này không quá khác biệt với phép đệ quy xuôi và ngược mà ta đã đề cập ở phần trước.
 Điểm khác biệt chính là trước đây các phương trình này có một ý nghĩa thống kê nhất định. 
 Còn bây giờ thì chúng không còn mang một ý nghĩa dễ hiểu nào nhất định, thay vào đó ta sẽ chỉ xét chúng như những hàm tổng quát.
@@ -316,6 +321,8 @@ The two directions can have different numbers of hidden units.
 
 Ở đây, trọng số $\mathbf{W}_{hq} \in \mathbb{R}^{2h \times q}$ và độ chệch $\mathbf{b}_q \in \mathbb{R}^{1 \times q}$ là các tham số mô hình của tầng đầu ra. 
 Hai chiều ngược và xuôi có thể có số nút ẩn khác nhau. 
+
+
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -335,7 +342,7 @@ Hence, if we were to use a bidirectional RNN naively we would not get a very goo
 During test time we only have past data and thus poor accuracy (we will illustrate this in an experiment below).
 -->
 
-Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra. 
+Một trong những tính năng chính của RNN hai chiều là thông tin từ cả hai đầu của chuỗi được sử dụng để ước lượng kết quả đầu ra.
 Chúng ta sử dụng thông tin từ các quan sát trong tương lai và quá khứ để dự đoán hiện tại (như để làm mượt). 
 Trong trường hợp mô hình ngôn ngữ, đây không hẳn là điều chúng ta muốn.
 Rốt cuộc, chúng ta không thể biết biểu tượng tiếp sau biểu tượng đang cần dự đoán. 
@@ -359,7 +366,8 @@ In practice bidirectional layers are used very sparingly and only for a narrow s
 In short, handle with care!
 -->
 
-Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu, chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy). 
+Trong thực tế, các tầng hai chiều được sử dụng rất ít và chỉ dành cho một số ít ứng dụng, chẳng hạn như điền từ còn thiếu, 
+chú thích token (ví dụ cho nhận dạng thực thể có tên) hoặc mã hóa nguyên chuỗi tại một bước trong pipeline xử lý chuỗi (ví dụ trong dịch máy). 
 Tóm lại, hãy sử dụng nó một cách cẩn thận!
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -385,7 +393,7 @@ We include the code below as a cautionary example against using them in the wron
 
 Nếu chúng ta bỏ qua tất cả các lời khuyên về việc LSTM hai chiều sử dụng cả dữ liệu trong quá khứ và tương lai, và cứ áp dụng nó cho các mô hình ngôn ngữ, chúng ta sẽ có được các ước lượng với perplexity chấp nhận được.
 Tuy nhiên, khả năng dự đoán các ký tự trong tương lai của mô hình bị tổn hại nghiêm trọng như minh họa trong ví dụ dưới đây. 
-Mặc dù đạt được mức perplexity hợp lý, nó chỉ sỉnh ra các chuỗi vô nghĩa ngay cả sau nhiều vòng lặp. 
+Mặc dù đạt được mức perplexity hợp lý, nó chỉ sinh ra các chuỗi vô nghĩa ngay cả sau nhiều vòng lặp. 
 Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh báo về việc sử dụng chúng ở sai bối cảnh. 
 
 
@@ -414,7 +422,7 @@ For a discussion of more effective uses of bidirectional models, please see the 
 -->
 
 Đầu ra rõ ràng không hề tốt vì những lý do trên. 
-Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem bài toán phân loại cảm xúc trong: numref: `sec_sentiment_rnn`. 
+Để thảo luận về việc sử dụng hiệu quả hơn các mô hình hai chiều, vui lòng xem bài toán phân loại cảm xúc trong :numref:`sec_sentiment_rnn`. 
 
 <!--
 ## Summary
@@ -430,7 +438,7 @@ For a discussion of more effective uses of bidirectional models, please see the 
 -->
 
 * Trong các mạng nơ-ron hồi tiếp hai chiều, trạng thái ẩn tại mỗi bước thời gian được xác định đồng thời bởi dữ liệu ở trước và sau bước thời gian đó. 
-* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi-ngược trong các mô hình đồ thị. 
+* Các RNN hai chiều có sự tương đồng đáng kinh ngạc với thuật toán xuôi–ngược trong các mô hình đồ thị. 
 * RNN hai chiều chủ yếu hữu ích cho việc tạo embedding chuỗi và việc ước lượng dữ liệu quan sát được khi biết bối cảnh hai chiều. 
 * Việc huấn luyện RNN hai chiều rất tốn kém do các chuỗi gradient dài. 
 
@@ -447,11 +455,14 @@ For a discussion of more effective uses of bidirectional models, please see the 
 Hint: use the RNN to embed each word and then aggregate (average) all embedded outputs before sending the output into an MLP for classification. 
 For instance, if we have $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, we compute $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ first and then use the latter for sentiment classification.
 -->
+
+
 1. Nếu các hướng khác nhau sử dụng số nút ẩn khác nhau, kích thước của $\mathbf{H}_t$ sẽ thay đổi như thế nào?
 2. Thiết kế một mạng nơ-ron hồi tiếp hai chiều với nhiều tầng ẩn. 
 3. Lập trình thuật toán phân loại chuỗi bằng cách sử dụng các RNN hai chiều. 
-Gợi ý: sử dụng RNN để tạo embedding cho từng từ và sau đó tổng hợp (lấy trung bình) tất cả các embedding đầu ra trước khi đưa chúng vào mô hình MLP để phân loại.
+**Gợi ý:** sử dụng RNN để tạo embedding cho từng từ và sau đó tổng hợp (lấy trung bình) tất cả các embedding đầu ra trước khi đưa chúng vào mô hình MLP để phân loại.
 Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$, ta sẽ tính $\bar{\mathbf{o}} = \frac{1}{3} \sum_i \mathbf{o}_i$ trước rồi sử dụng nó để phân loại cảm xúc.
+
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -462,38 +473,14 @@ Chẳng hạn, nếu chúng ta có $(\mathbf{o}_1, \mathbf{o}_2, \mathbf{o}_3)$,
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
 * Đinh Phước Lộc
-
-<!-- Phần 4 -->
 * Võ Tấn Phát
-* Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
 * Nguyễn Thanh Hòa
-
-<!-- Phần 5 -->
 * Trần Yến Thy
-
-<!-- Phần 6 -->
-* Trần Yến Thy
+* Phạm Hồng Vinh

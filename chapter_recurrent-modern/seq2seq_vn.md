@@ -16,8 +16,8 @@ The hidden state of the encoder is used directly to initialize the decoder hidde
 -->
 
 Mô hình chuỗi sang chuỗi (*Sequence to Sequence -- seq2seq*) dựa trên kiến trúc mã hóa - giải mã để sinh ra chuỗi đầu ra từ chuỗi đầu vào như minh họa trong :numref:`fig_seq2seq`.
-Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron hồi tiếp (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
-Trạng thái ẩn của bộ giải mã được khởi tạo trực tiếp từ trạng thái ẩn của bộ mã hoá, giúp truyền thông tin từ bộ mã hoá tới bộ giải mã.
+Cả bộ mã hóa và bộ giải mã sử dụng mạng nơ-ron hồi tiếp (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
+Trạng thái ẩn của bộ giải mã được khởi tạo trực tiếp từ trạng thái ẩn của bộ mã hóa, giúp truyền thông tin từ bộ mã hóa tới bộ giải mã.
 
 <!--
 ![The sequence to sequence model architecture.](../img/seq2seq.svg)
@@ -37,7 +37,7 @@ Các tầng trong bộ mã hóa và bộ giải mã được minh họa trong :n
 ![Layers in the encoder and the decoder.](../img/seq2seq-details.svg)
 -->
 
-![Các tầng trong bộ mã hoá và bộ giải mã.](../img/seq2seq-details.svg)
+![Các tầng trong bộ mã hóa và bộ giải mã.](../img/seq2seq-details.svg)
 :label:`fig_seq2seq_details`
 
 <!--
@@ -58,7 +58,7 @@ npx.set_np()
 ## Encoder
 -->
 
-## Bộ Mã hoá
+## Bộ Mã hóa
 
 
 <!--
@@ -69,11 +69,12 @@ At timestep $t$, the RNN will have two vectors as the input: the feature vector 
 Let us denote the transformation of the RNN's hidden states by a function $f$:
 -->
 
-Nhắc lại rằng bộ mã hoá của mô hình seq2seq mã hoá thông tin của các chuỗi đầu vào với độ dài khác nhau thành một vector ngữ cảnh $\mathbf{c}$.
-Ta thường sử dụng các tầng RNN trong bộ mã hoá.
+Nhắc lại rằng bộ mã hóa của mô hình seq2seq mã hóa thông tin của các chuỗi đầu vào với độ dài khác nhau thành một vector ngữ cảnh $\mathbf{c}$.
+Ta thường sử dụng các tầng RNN trong bộ mã hóa.
 Giả sử có một chuỗi đầu vào $x_1, \ldots, x_T$, trong đó $x_t$ là từ thứ $\mathrm{t}$.
 Tại bước thời gian $t$, mô hình RNN sẽ có hai vector đầu vào: vector đặc trưng $\mathbf{x}_t$ của $x_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{h}_{t-1}$.
 Ta ký hiệu phép chuyển đổi của các trạng thái ẩn trong RNN bằng hàm $f$:
+
 
 $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 
@@ -81,7 +82,7 @@ $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 Next, the encoder captures information of all the hidden states and encodes it into the context vector $\mathbf{c}$ with a function $q$:
 -->
 
-Tiếp theo, bộ mã hoá nắm bắt thông tin của tất cả các trạng thái ẩn và mã hoá chúng thành vector ngữ cảnh $\mathbf{c}$ bằng hàm $q$:
+Tiếp theo, bộ mã hóa nắm bắt thông tin của tất cả các trạng thái ẩn và mã hóa chúng thành vector ngữ cảnh $\mathbf{c}$ bằng hàm $q$:
 
 $$\mathbf{c} = q (\mathbf{h}_1, \ldots, \mathbf{h}_T).$$
 
@@ -97,8 +98,8 @@ So far what we describe above is a unidirectional RNN, where each timestep's hid
 We can also use other forms of RNNs such as GRUs, LSTMs, and bidirectional RNNs to encode the sequential input.
 -->
 
-Cho đến nay ta mới mô tả bộ mã hoá sử dụng mạng RNN một chiều, ở đó trạng thái ẩn của mỗi bước thời gian chỉ phụ thuộc vào các bước thời gian trước.
-Ta cũng có thể sử dụng các dạng RNN khác nhau như GRU, LSTM, hay RNN hai chiều để mã hoá chuỗi đầu vào.
+Cho đến nay ta mới mô tả bộ mã hóa sử dụng mạng RNN một chiều, ở đó trạng thái ẩn của mỗi bước thời gian chỉ phụ thuộc vào các bước thời gian trước.
+Ta cũng có thể sử dụng các dạng RNN khác nhau như GRU, LSTM, hay RNN hai chiều để mã hóa chuỗi đầu vào.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -112,11 +113,13 @@ Those feature vectors will be fed to a multi-layer LSTM.
 The input for the encoder is a batch of sequences, which is 2-D tensor with shape (batch size, sequence length).
 The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
 -->
-Bây giờ hãy lập trình bộ mã hoá của mô hình seq2seq.
+
+
+Bây giờ hãy lập trình bộ mã hóa của mô hình seq2seq.
 Ta sử dụng một tầng embedding từ ngữ để lấy vector đặc trưng tương ứng với chỉ số từ trong ngôn ngữ nguồn.
 Những vector đặc trưng này sẽ được truyền vào một mạng LSTM đa tầng.
-Batch đầu vào của bộ mã hoá là tensor 2 chiều có kích thước là (kích thước batch, độ dài chuỗi), với số lượng chuỗi bằng kích thước batch.
-Bộ mã hoá trả về cả đầu ra của LSTM, gồm các trạng thái ẩn của tất cả các bước thời gian, cùng với trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
+Batch đầu vào của bộ mã hóa là tensor 2 chiều có kích thước là (kích thước batch, độ dài chuỗi), với số lượng chuỗi bằng kích thước batch.
+Bộ mã hóa trả về cả đầu ra của LSTM, gồm các trạng thái ẩn của tất cả các bước thời gian, cùng với trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
 
 
 ```{.python .input  n=2}
@@ -152,9 +155,10 @@ If long short-term memory is used, the `state` list will also contain another el
 
 Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch bằng 4 cùng số bước thời gian (độ dài chuỗi) bằng 7.
 Giả sử nút LSTM có 2 tầng ẩn và 16 nút ẩn.
-Đầu ra của bộ mã hoá sau khi thực hiện lượt truyền xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
-Nếu mạng nơ-ron hồi tiếp của bộ mã hoá là nút hồi tiếp có cổng (GRU), danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn với kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+Đầu ra của bộ mã hóa sau khi thực hiện lượt truyền xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
+Nếu mạng nơ-ron hồi tiếp của bộ mã hóa là nút hồi tiếp có cổng (GRU), danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn với kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
 Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ với cùng kích thước. 
+
 
 ```{.python .input  n=3}
 encoder = Seq2SeqEncoder(vocab_size=10, embed_size=8, num_hiddens=16,
@@ -195,7 +199,7 @@ Suppose that the given outputs in the training set are $y_1, \ldots, y_{T'}$.
 At each timestep $t'$, the conditional probability of output $y_{t'}$ will depend on the previous output sequence $y_1, \ldots, y_{t'-1}$ and the context vector $\mathbf{c}$, i.e.,
 -->
 
-Như đã giới thiệu, vector ngữ cảnh $\mathbf{c}$ mã hoá thông tin của toàn bộ chuỗi đầu vào $x_1, \ldots, x_T$.
+Như đã giới thiệu, vector ngữ cảnh $\mathbf{c}$ mã hóa thông tin của toàn bộ chuỗi đầu vào $x_1, \ldots, x_T$.
 Giả sử đầu ra của tập huấn luyện là $y_1, \ldots, y_{T'}$.
 Tại mỗi bước thời gian $t'$, xác suất có điều kiện của đầu ra $y_{t'}$ sẽ phụ thuộc vào đầu ra trước đó $y_1, \ldots, y_{t'-1}$ và vector ngữ cảnh $\mathbf{c}$, tức
 
@@ -225,9 +229,9 @@ The only difference is that we add a dense layer after the LSTM layers, where th
 The dense layer will predict the confidence score for each word.
 -->
 
-Khi lập trình, ta sử dụng trực tiếp trạng thái ẩn của bộ mã hoá ở bước thời gian cuối cùng để khởi tạo trạng thái ẩn của bộ giải mã.
-Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số nút ẩn.
-Các bước tính toán lượt truyền xuôi trong bộ giải mã gần giống trong bộ mã hoá.
+Khi lập trình, ta sử dụng trực tiếp trạng thái ẩn của bộ mã hóa ở bước thời gian cuối cùng để khởi tạo trạng thái ẩn của bộ giải mã.
+Điều này đòi hỏi bộ mã hóa và bộ giải mã phải có cùng số tầng và số nút ẩn.
+Các bước tính toán lượt truyền xuôi trong bộ giải mã gần giống trong bộ mã hóa.
 Điểm khác biệt duy nhất là có thêm một tầng kết nối dày đặc với kích thước bằng kích thước bộ từ vựng được đặt ở sau các tầng LSTM.
 Tầng này sẽ dự đoán điểm tin cậy cho mỗi từ.
 
@@ -259,7 +263,7 @@ class Seq2SeqDecoder(d2l.Decoder):
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
-Ta tạo bộ giải mã với cùng các siêu tham số như ở bộ mã hoá.
+Ta tạo bộ giải mã với cùng các siêu tham số như ở bộ mã hóa.
 Có thể thấy kích thước đầu ra được thay đổi thành (kích thước batch, độ dài chuỗi, kích thước bộ từ vựng).
 
 
@@ -305,6 +309,7 @@ If the second one is chosen, given a valid length vector `len` and 2-dim input `
 Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử gọi là `SequenceMask`.
 Nó có thể gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
 Nếu chiều thứ hai được chọn, với đầu vào là mảng hai chiều `X` và vector độ dài hợp lệ `len`, toán tử này sẽ gán `X[i, len[i]:] = 0` với mọi $i$.
+
 
 ```{.python .input  n=7}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -448,7 +453,7 @@ But the input token for a later timestep is the predicted token from the previou
 -->
 
 Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo chuỗi đầu ra.
-Như minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta cũng đưa token bắt đầu câu "&lt;bos&gt;" vào bộ giải mã tại bước thời gian 0 giống quá trình huấn luyện. <!--hm lạ nhỉ hàm huấn luyện `train_s2s_ch9` phía trên không thấy chỗ nào có <bos> cả. -->
+Như minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta cũng đưa token bắt đầu câu "&lt;bos&gt;" vào bộ giải mã tại bước thời gian 0 giống quá trình huấn luyện.
 Token đầu vào cho các bước thời gian sau sẽ là token được dự đoán từ bước thời gian trước nó.
 
 <!--
@@ -540,16 +545,6 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
