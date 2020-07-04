@@ -521,7 +521,7 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 * In general, minibatch SGD is faster than SGD and gradient descent for convergence to a smaller risk, when measured in terms of clock time.  
 -->
 
-* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn do giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
+* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
 * Tồn tại sự đánh đổi giữa hiệu quả thống kê của SGD và hiệu quả tính toán từ việc xử lý các batch dữ liệu kích thước lớn tại một thời điểm.
 * Thuật toán hạ gradient ngẫu nhiên theo minibatch mang đến điều tốt nhất của cả hai lựa chọn trên: hiệu quả tính toán và thống kê.
 * Trong thuật toán SGD theo minibatch chúng ta xử lý các batch dữ liệu thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi quan sát được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
