@@ -354,6 +354,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | principal component analysis (PCA) | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                              | tiên nghiệm                  | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | probability theory                 | lý thuyết xác suất           |                                              |
+| proxy (in statistics)              | biến đại diện                |                                              |
 | population                         | tổng thể                     | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | p-value                            | trị số p                     | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | position-wise feed-forward network | mạng truyền xuôi theo vị trí |                                              |
