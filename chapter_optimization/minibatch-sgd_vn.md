@@ -525,7 +525,7 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 * Tồn tại sự đánh đổi giữa hiệu quả thống kê của SGD và hiệu quả tính toán từ việc xử lý các batch dữ liệu kích thước lớn tại một thời điểm.
 * Thuật toán hạ gradient ngẫu nhiên theo minibatch mang đến điều tốt nhất của cả hai lựa chọn trên: hiệu quả tính toán và thống kê.
 * Trong thuật toán SGD theo minibatch chúng ta xử lý các batch dữ liệu thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi quan sát được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
-* Suy giảm tốc độ trong quá trình huấn luyện được khuyến khích sử dụng.
+* Suy giảm tốc độ học trong quá trình huấn luyện được khuyến khích sử dụng.
 * Nói chung, thuật toán SGD theo minibatch nhanh hơn thuật toán SGD và GD về thời gian hội tụ.
 
 
