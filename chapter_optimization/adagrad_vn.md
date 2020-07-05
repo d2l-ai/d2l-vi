@@ -5,20 +5,20 @@
 # Adagrad
 -->
 
-# *dịch tiêu đề phía trên*
+# Adagrad
 :label:`sec_adagrad`
 
 <!--
 Let us begin by considering learning problems with features that occur infrequently.
 -->
 
-*dịch đoạn phía trên*
+Để khởi động, hãy cùng xem xét các bài toán với những đặc trưng xuất hiện không thường xuyên.
 
 <!--
 ## Sparse Features and Learning Rates
 -->
 
-## *dịch tiêu đề phía trên*
+## Đặc trưng Thưa và Tốc độ Học
 
 <!--
 Imagine that we are training a language model.
@@ -29,7 +29,12 @@ However, it is also common in other areas such as computational advertising and 
 After all, there are many things that are of interest only for a small number of people.
 -->
 
-*dịch đoạn phía trên*
+Hãy tưởng tượng ta đang huấn luyện một mô hình ngôn ngữ.
+Để đạt độ chính xác cao ta thường muốn giảm dần tốc độ học trong quá trình huấn luyện, thường là với tỉ lệ $\mathcal{O}(t^{-\frac{1}{2}})$ hoặc chậm hơn.
+Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xuất hiện.
+Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*.
+Tuy nhiên, đây cũng là vấn đề thường gặp trong nhiều mảng khác như quảng cáo điện toán (*computational advertising*) và lọc cộng tác (*collaborative filtering*).
+Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm người chú ý đến.
 
 <!--
 Parameters associated with infrequent features only receive meaningful updates whenever these features occur.
@@ -38,7 +43,10 @@ whereas for infrequent features we are still short of observing them sufficientl
 In other words, the learning rate either decreases too quickly for frequent features or too slowly for infrequent ones.
 -->
 
-*dịch đoạn phía trên*
+Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xuất hiện.
+Đối với tốc độ học giảm dần, ta có thể gặp phải trường hợp các tham số của những đặc trưng phổ biến hội tụ khá nhanh đến giá trị tối ưu,
+trong khi đối với các đặc trưng thưa, ta không có đủ số lượng dữ liệu thích đáng để xác định giá trị tối ưu của chúng.
+Nói một cách khác, tốc độ học giảm quá nhanh đối với các đặc trưng phổ biến và quá chậm đối với các đặc trưng hiếm.
 
 <!--
 A possible hack to redress this issue would be to count the number of times we see a particular feature and to use this as a clock for adjusting learning rates.
@@ -49,7 +57,12 @@ However, it fails whenever we do not quite have sparsity but rather just data wh
 After all, it is unclear where one would draw the line between something that qualifies as an observed feature or not.
 -->
 
-*dịch đoạn phía trên*
+Một mẹo để khắc phục vấn đề này là đếm số lần ta gặp một đặc trưng nhất định và sử dụng nó để điều chỉnh tốc độ học.
+Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta_0}{\sqrt{t + c}}$ ta có thể sử dụng $\eta_i = \frac{\eta_0}{\sqrt{s(i, t) + c}}$.
+Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
+Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức.
+Tuy nhiên, cách này thất bại trong trường hợp khi đặc trưng không hẳn là thưa, chỉ là có gradient nhỏ và hiếm khi đạt giá trị lớn.
+Xét cho cùng, ta khó có thể phân biệt rõ ràng khi nào thì có thể xem một đặc trưng là đã được quan sát hay chưa.
 
 <!--
 Adagrad by :cite:`Duchi.Hazan.Singer.2011` addresses this by replacing the rather crude counter $s(i, t)$ by an aggregate of the squares of previously observed gradients.
@@ -61,7 +74,13 @@ In practice this leads to a very effective optimization procedure for computatio
 But this hides some of the additional benefits inherent in Adagrad that are best understood in the context of preconditioning.
 -->
 
-*dịch đoạn phía trên*
+Adagrad bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn đề này bằng cách thay đổi bộ đếm thô $s(i, t)$ bởi tổng bình phương của tất cả các gradient được quan sát trước đó.
+Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x})\right)^2$ làm công cụ để điều chỉnh tốc độ học.
+Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient đủ lớn.
+Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
+Các toạ độ thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
+Phương pháp này trong thực tế đưa ra một quy trình tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các bài toán liên quan.
+Tuy nhiên, Adagrad vẫn còn ẩn chứa một vài lợi ích khác mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -419,7 +438,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 2 -->
 * 
