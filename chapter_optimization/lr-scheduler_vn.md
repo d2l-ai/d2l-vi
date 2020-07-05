@@ -273,7 +273,7 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 -->
 
 Cách khắc phục trên cũng có thể được thực hiện bằng một định thời có sẵn trong MXNet thông qua đối tượng `lr_scheduler.FactorScheduler`.
-Giải pháp này cần ít tham số hơn, ví dụ gồm có khoảng thời gian làm nóng (_warmup period_), phương thức làm nóng (_warmup mode_), số bước cập nhật tối đa, v.v.
+Giải pháp này cần ít tham số hơn, ví dụ gồm có chu kỳ khởi động (_warmup period_), phương thức khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
 Ở các phần tiếp theo, chúng ta sẽ sử dụng các định thời tốc độ học thích hợp và còn ở đây sẽ giải thích cách thức hoạt động của chúng.
 Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
 
@@ -314,8 +314,8 @@ Then (and only then) do we decrease the rate such as to obtain a higher quality 
 The example below shows how this can produce ever slightly better solutions.
 -->
 
-Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo từng khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán đạt tới điểm ổn định theo nghĩa về phân phối của các vector trọng số.
-Sau đó (và chỉ sau đó) chúng ta mới giảm tốc độ học để đạt được biến đại diện cho điểm cực tiểu chất lượng hơn.
+Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo từng khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán có phân phối của các vector trọng số đạt tới điểm ổn định theo nghĩa.
+Khi và chỉ khi đạt được trạng thái đó, chúng ta mới giảm tốc độ học để đạt được biến đại diện cho điểm cực tiểu chất lượng hơn.
 Ví dụ dưới đây cho ta thấy cách phương pháp này giúp tìm được nghiệm tốt hơn đôi chút.
 
 
