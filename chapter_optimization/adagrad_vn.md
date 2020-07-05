@@ -79,8 +79,8 @@ After all, for most nonconvex problems it is difficult to derive meaningful theo
 Let us look at the problem of minimizing $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 -->
 
-Các bài toán tối ưu lồi có giá trị trong việc phân tích đặc tính của các thuật toán.
-Suy cho cùng, đa số các bài toán không lồi khó có thể tìm được các chứng minh có giá trị theo lý thuyết, thay vào đó chúng thường dựa vào *trực giác* và *nhận thức* (*insight*).
+Các bài toán tối ưu lồi rất phù hợp để phân tích đặc tính của các thuật toán.
+Suy cho cùng, với đa số các bài toán không lồi ta khó có thể tìm được các chứng minh lý thuyết có giá trị, tuy nhiên các *trực giác* và *ý nghĩa hàm chứa* từ các bài toán tối ưu lồi vẫn có thể áp dụng được.
 Xét bài toán cực tiểu hoá $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 
 <!--
