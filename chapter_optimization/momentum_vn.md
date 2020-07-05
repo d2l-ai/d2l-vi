@@ -524,7 +524,9 @@ Since $\mathbf{O}$ is only an orthogonal matrix this does not perturb the gradie
 Expressed in terms of $\mathbf{z}$ gradient descent becomes
 -->
 
-*dịch đoạn phía trên*
+Ở đây $c' = b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Vì $\mathbf{O}$ chỉ là một ma trận trực giao nên điều này không làm nhiễu các gradient theo một cách có ý nghĩa.
+Biểu diễn theo $\mathbf{z}$, hạ gradient sẽ trở thành
 
 
 $$\mathbf{z}_t = \mathbf{z}_{t-1} - \boldsymbol{\Lambda} \mathbf{z}_{t-1} = (\mathbf{I} - \boldsymbol{\Lambda}) \mathbf{z}_{t-1}.$$
@@ -536,7 +538,9 @@ That is, when expressed in terms of the eigensystem of $\mathbf{Q}$ the optimiza
 This also holds for momentum.
 -->
 
-*dịch đoạn phía trên*
+Một điểm quan trọng trong biểu thức này là hạ gradient *không trộn lẫn* các không gian riêng khác nhau.
+Nghĩa là, khi được biểu diễn dưới dạng hệ riêng của $\mathbf{Q}$, việc tối ưu hóa được thực hiện theo từng trục tọa độ.
+Điều này cũng đúng với phương pháp động lượng.
 
 
 $$\begin{aligned}
@@ -551,7 +555,7 @@ In doing this we just proved the following theorem: Gradient Descent with and wi
 into coordinate-wise optimization in the direction of the eigenvectors of the quadratic matrix.
 -->
 
-*dịch đoạn phía trên*
+Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm bậc hai lồi có thể được phân tích thành bài toán tối ưu hóa theo từng trục tọa độ và theo hướng các vector riêng của ma trận bậc hai.
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -561,13 +565,13 @@ into coordinate-wise optimization in the direction of the eigenvectors of the qu
 ### Scalar Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm vô hướng
 
 <!--
 Given the above result let us see what happens when we minimize the function $f(x) = \frac{\lambda}{2} x^2$. For gradient descent we have
 -->
 
-*dịch đoạn phía trên*
+Với kết quả trên hãy xem điều gì xảy ra khi cực tiểu hóa hàm $f(x) = \frac{\lambda}{2} x^2$. Đối với hạ gradient, ta có
 
 
 $$x_{t+1} = x_t - \eta \lambda x_t = (1 - \eta \lambda) x_t.$$
@@ -579,7 +583,9 @@ This shows how the rate of convergence improves initially as we increase the lea
 Beyond that things diverge and for $\eta \lambda > 2$ the optimization problem diverges.
 -->
 
-*dịch đoạn phía trên*
+Với $|1 - \eta \lambda| < 1$ việc tối ưu này hội tụ theo hàm mũ vì sau $t$ bước ta có $x_t = (1 - \eta \lambda)^t x_0$.
+Điều này cho thấy cách tốc độ hội tụ được cải thiện lúc bắt đầu khi tăng tốc độ học $\eta$ cho đến khi $\eta \lambda = 1$.
+Vượt qua giá trị đó, khi $\eta \lambda > 2$, bài toán tối ưu hóa sẽ phân kỳ.
 
 
 ```{.python .input}
@@ -598,8 +604,8 @@ d2l.plt.legend();
 To analyze convergence in the case of momentum we begin by rewriting the update equations in terms of two scalars: one for $x$ and one for the momentum $v$. This yields:
 -->
 
-*dịch đoạn phía trên*
-
+Để phân tích sự hội tụ khi sử dụng động lượng, chúng ta bắt đầu với việc viết lại các phương trình cập nhật theo hai số vô hướng: một cho $x$ và một cho động lượng $v$.
+Ta sẽ có:
 
 $$
 \begin{bmatrix} v_{t+1} \\ x_{t+1} \end{bmatrix} =
@@ -715,7 +721,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Trần Yến Thy
 
 <!-- Phần 7 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 8 -->
 * Trần Yến Thy
