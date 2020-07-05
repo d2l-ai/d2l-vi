@@ -483,7 +483,7 @@ This also holds for momentum.
 
 Một điểm quan trọng trong biểu thức này là hạ gradient *không trộn lẫn* các không gian riêng khác nhau.
 Nghĩa là, khi được biểu diễn dưới dạng hệ riêng của $\mathbf{Q}$, việc tối ưu hóa được thực hiện theo từng trục tọa độ.
-Điều này cũng đúng với momentum.
+Điều này cũng đúng với phương pháp động lượng.
 
 
 $$\begin{aligned}
@@ -498,7 +498,7 @@ In doing this we just proved the following theorem: Gradient Descent with and wi
 into coordinate-wise optimization in the direction of the eigenvectors of the quadratic matrix.
 -->
 
-Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm bậc hai lồi có thể được phân tích thành bài toán tối ưu hóa theo từng tọa độ và theo hướng các vector riêng của ma trận bậc hai.
+Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm bậc hai lồi có thể được phân tích thành bài toán tối ưu hóa theo từng trục tọa độ và theo hướng các vector riêng của ma trận bậc hai.
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -528,7 +528,7 @@ Beyond that things diverge and for $\eta \lambda > 2$ the optimization problem d
 
 Với $|1 - \eta \lambda| < 1$ việc tối ưu này hội tụ theo hàm mũ vì sau $t$ bước ta có $x_t = (1 - \eta \lambda)^t x_0$.
 Điều này cho thấy cách tốc độ hội tụ được cải thiện lúc bắt đầu khi tăng tốc độ học $\eta$ cho đến khi $\eta \lambda = 1$.
-Vượt qua giá trị đó, khi $\eta \lambda > 2$, vấn đề tối ưu hóa sẽ phân kỳ.
+Vượt qua giá trị đó, khi $\eta \lambda > 2$, bài toán tối ưu hóa sẽ phân kỳ.
 
 
 ```{.python .input}
