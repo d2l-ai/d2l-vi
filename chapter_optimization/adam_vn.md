@@ -231,7 +231,8 @@ The authors furthermore advise to initialize the momentum on a larger initial ba
 We omit the details since they are not material to the discussion and since even without this convergence remains pretty good.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, các tác giả khuyên nên khởi tạo động lượng trên một batch ban đầu có kích thước lớn hơn thay vì ước lượng ban đầu theo điểm.
+Chúng ta bỏ qua các chi tiết vì chúng không cần thiết cho thảo luận, thậm chí quá trình hội tụ vẫn diễn ra khá tốt ngay cả khi không có áp dụng những chi tiết này.
 
 
 ```{.python .input}
@@ -267,7 +268,12 @@ They can be amended by using larger minibatches or by switching to an improved e
 Yogi offers such an alternative.
 -->
 
-*dịch đoạn phía trên*
+* Adam kết hợp các kỹ thuật của nhiều thuật toán tối ưu thành một quy tắc cập nhật khá mạnh mẽ.
+* Được đề xuất dựa trên RMSProp, Adam cũng sử dụng kỹ thuật EWMA cho gradient ngẫu nhiên theo minibatch
+* Adam sử dụng phép hiệu chỉnh độ chệch (_bias correction_) để điều chỉnh cho trường hợp khởi động chậm khi ước lượng động lượng mà mô-men bậc hai.
+* Đối với gradient có phương sai đáng kể, chúng ta có thể gặp phải những vấn đề liên quan tới hội tụ.
+Những vấn đề này có thể được khắc phục bằng cách sử dụng các minibatch có kích thước lớn hơn hoặc bằng cách thay đổi thành một ước lượng được cải tiến cho $\mathbf{s}_t$.
+Yogi cung cấp một giải pháp cho những vấn đề như vậy.
 
 <!--
 ## Exercises
@@ -282,7 +288,10 @@ Yogi offers such an alternative.
 4. Try to construct a case for which Adam diverges and Yogi converges?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy điều chỉnh tốc độ học, quan sát và phân tích kết quả thực nghiệm.
+2. Bạn có thể viết lại các cập nhật cho động lượng và mô-men bậc hai sao cho cách này không cần thực hiện phép hiệu chỉnh độ chệch (_bias correction_)?
+3. Tại sao ta cần phải giảm tốc độ học $\eta$ khi quá trình hội tụ diễn ra?
+4. Hãy liệt kê một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -315,5 +324,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
-
+* Nguyễn Văn Quang
