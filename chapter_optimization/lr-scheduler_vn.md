@@ -238,7 +238,6 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 
 ### Định thời Thừa số
 
-
 <!--
 One alternative to a polynomial decay would be a multiplicative one, that is $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ for $\alpha \in (0, 1)$.
 To prevent the learning rate from decaying beyond a reasonable lower bound the update equation is often modified to $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
@@ -246,7 +245,6 @@ To prevent the learning rate from decaying beyond a reasonable lower bound the u
 
 Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân,$\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ với $\alpha \in (0, 1)$.
 Để tránh trường hợp tốc độ học suy giảm thấp hơn cả biên chặn dưới, phương trình cập nhật thường được sửa lại thành $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
-
 
 
 ```{.python .input}
@@ -277,7 +275,6 @@ Giải pháp này cần ít tham số hơn, ví dụ gồm có chu kỳ khởi �
 Ở các phần tiếp theo, chúng ta sẽ sử dụng các định thời tốc độ học thích hợp và còn ở đây sẽ giải thích cách thức hoạt động của chúng.
 Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
 
-
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
 <!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
@@ -288,7 +285,6 @@ Như minh họa, khá đơn giản để xây dựng một định thời của 
 
 ### Định thời Đa Thừa số
 
-
 <!--
 A common strategy for training deep networks is to keep the learning rate piecewise constant and to decrease it by a given amount every so often.
 That is, given a set of times when to decrease the rate, such as $s = \{5, 10, 20\}$ decrease $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ whenever $t \in s$.
@@ -298,7 +294,6 @@ Assuming that the values are halved at each step we can implement this as follow
 Một chiến lược chung để huấn luyện các mạng nơ-ron sâu là giữ cho tốc độ học không đổi theo từng khoảng và thường xuyên giảm tốc độ học đi một lượng cho trước sau mỗi khoảng.
 Cụ thể, với một tập giá trị các bước thời gian từ đó ta giảm tốc độ học, ví dụ như với $s = \{5, 10, 20\}$, ta giảm $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ khi $t \in s$.
 Giả sử rằng tốc độ học được giảm một nửa tại mỗi bước thời gian trên, ta có thể lập trình như sau.
-
 
 
 ```{.python .input}
