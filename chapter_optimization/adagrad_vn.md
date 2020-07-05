@@ -163,7 +163,7 @@ For instance, the cases we discussed previously, this would entirely eliminate t
 
 Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
 Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện.
-Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề một cách dễ dàng do các bài toán đều mang dạng hình học có các cạnh song song với trục toạ độ (*axis aligned*).
+Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học có các cạnh song song với trục toạ độ (*axis aligned*).
 
 <!--
 Unfortunately we face yet another problem: in deep learning we typically do not even have access to the second derivative of the objective function: 
@@ -201,7 +201,7 @@ Do đó độ lớn của gradient phụ thuộc vào cả $\boldsymbol{\Lambda}
 Nếu $\bar{\mathbf{x}} - \bar{\mathbf{x}}_0$ không đổi thì đây chính là tất cả các giá trị ta cần tính.
 Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ thoả mãn.
 Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu.
-Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện có cùng tỉ lệ với ma trận Hessian.
+Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện cho độ lớn của ma trận Hessian.
 Việc phân tích chi tiết nằm ngoài phạm vi của phần này (có thể lên đến nhiều trang).
 Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
 
