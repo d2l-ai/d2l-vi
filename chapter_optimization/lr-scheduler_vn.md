@@ -320,7 +320,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Cosine Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Cô-sin
 
 <!--
 A rather perplexing heuristic was proposed by :cite:`Loshchilov.Hutter.2016`.
@@ -329,7 +329,9 @@ that we might want to "refine" the solution in the end using a very small learni
 This results in a cosine-like schedule with the following functional form for learning rates in the range $t \in [0, T]$.
 -->
 
-*dịch đoạn phía trên*
+Một phương pháp khá phức tạp dựa thực nghiệm được đề xuất bởi :cite:`Loshchilov.Hutter.2016`.
+Phương pháp dựa trên quan sát rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu và hơn nữa ta muốn làm mịn nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học nhỏ.
+Từ đó ta thu được một định thời giống cô-sin với tốc độ học trong khoảng $t \in [0, T]$ có công thức như sau.
 
 
 $$\eta_t = \eta_T + \frac{\eta_0 - \eta_T}{2} \left(1 + \cos(\pi t/T)\right)$$
@@ -341,7 +343,9 @@ Furthermore, for $t > T$ we simply pin the value to $\eta_T$ without increasing 
 In the following example, we set the max update step $T = 20$.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $\eta_0$ là tốc độ học ban đầu, $\eta_T$ được tốc độ học đích tại thời điểm $T$.
+Hơn nữa, với $t > T$ ta không tăng giá trị tốc độ học mà đơn giản gán nó bằng $\eta_T$.
+Trong ví dụ sau, chúng ta thiết lập số bước cập nhật tối đa $T = 20$.
 
 
 ```{.python .input}
@@ -356,7 +360,8 @@ In the context of computer vision this schedule *can* lead to improved results.
 Note, though, that such improvements are not guaranteed (as can be seen below).
 -->
 
-*dịch đoạn phía trên*
+Trong ngữ cảnh thị giác máy, định thời này *có thể* cải thiện kết quả thu được.
+Tuy nhiên, chú ý rằng những cải thiện này không chắc chắn được đảm đảo (có thể thấy qua ví dụ dưới đây).
 
 
 ```{.python .input}
@@ -497,7 +502,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 * 
