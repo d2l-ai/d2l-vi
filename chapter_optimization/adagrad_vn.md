@@ -204,8 +204,8 @@ Let us formalize the discussion from above.
 We use the variable $\mathbf{s}_t$ to accumulate past gradient variance as follows.
 -->
 
-Hãy cùng chính thức hoá phần thảo luận ở trên.
-Ta sử dụng biến $\mathbf{s}_t$ để tính tổng phương sai của các gradient trước như sau.
+Hãy cùng hình thức hoá phần thảo luận ở trên.
+Ta sử dụng biến $\mathbf{s}_t$ để tích luỹ phương sai của các gradient trước như sau:
 
 
 $$\begin{aligned}
@@ -227,7 +227,7 @@ Last, we initialize $\mathbf{s}_0 = \mathbf{0}$.
 Ở đây các phép toán được thực hiện theo từng toạ độ.
 Nghĩa là, $\mathbf{v}^2$ có các phần tử $v_i^2$.
 Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$.
-Như phần trước $\eta$ là tốc độ học và $\epsilon$ là hệ số phụ nhằm đảm bảo rằng ta không bị lỗi chia cho $0$.
+Như phần trước $\eta$ là tốc độ học và $\epsilon$ là hằng số cộng thêm đảm bảo rằng ta không bị lỗi chia cho $0$.
 Cuối cùng, ta khởi tạo $\mathbf{s}_0 = \mathbf{0}$.
 
 <!--
@@ -235,7 +235,7 @@ Just like in the case of momentum we need to keep track of an auxiliary variable
 This does not increase the cost of Adagrad significantly relative to SGD, simply since the main cost is typically to compute $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ and its derivative.
 -->
 
-Tương tự như trường hợp sử dụng động lượng (*momentum*), ta cần phải theo dõi các biến bổ trợ, ở đây là để mỗi toạ độ có một tốc độ học độc lập.
+Tương tự như trường hợp sử dụng động lượng (*momentum*), ở đây ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
 Cách này không tăng đáng kể chi phí của Adagrad so với SGD, đơn giản là do chi phí chính yếu  thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
 
 <!--
@@ -249,8 +249,8 @@ We use the same problem as before:
 -->
 
 Chú ý rằng tổng bình phương các gradient trong $\mathbf{s}_t$ có nghĩa là $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
-Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù ta điều chỉnh theo từng toạ độ một.
-Đối với các bài toán lồi, việc này là hoàn toàn thích hợp.
+Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
+Đối với các bài toán lồi, như vậy là hoàn toàn đủ.
 Tuy nhiên trong học sâu, có lẽ ta muốn giảm dần tốc độ học chậm hơn một chút.
 Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận ở các phần tới.
 Còn bây giờ hãy cùng xét cách thức hoạt động của Adagrad trong một bài toán lồi bậc hai.
@@ -267,7 +267,7 @@ However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate c
 -->
 
 Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức là $\eta = 0.4$.
-Ta có thể thấy quỹ đạo lặp của các biến độc lập mượt hơn nhiều.
+Ta có thể thấy quỹ đạo lặp của biến độc lập mượt hơn nhiều.
 Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy giảm khiến cho các biến độc lập không thay đổi nhiều ở các giai đoạn về sau của vòng lặp.
 
 
