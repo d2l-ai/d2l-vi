@@ -12,7 +12,7 @@
 Let us begin by considering learning problems with features that occur infrequently.
 -->
 
-Để khởi động, hãy cùng xem xét các bài toán với những đặc trưng hiếm khi xảy ra.
+Để khởi động, hãy cùng xem xét các bài toán với những đặc trưng xuất hiện không thường xuyên.
 
 <!--
 ## Sparse Features and Learning Rates
@@ -31,7 +31,7 @@ After all, there are many things that are of interest only for a small number of
 
 Hãy tưởng tượng ta đang huấn luyện một mô hình ngôn ngữ.
 Để đạt độ chính xác cao ta thường muốn giảm dần tốc độ học trong quá trình huấn luyện, thường là với tỉ lệ $\mathcal{O}(t^{-\frac{1}{2}})$ hoặc chậm hơn.
-Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xảy ra.
+Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xuất hiện.
 Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*.
 Tuy nhiên, đây cũng là vấn đề thường gặp trong nhiều mảng khác như quảng cáo điện toán (*computational advertising*) và lọc cộng tác (*collaborative filtering*).
 Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm người chú ý đến.
@@ -43,7 +43,7 @@ whereas for infrequent features we are still short of observing them sufficientl
 In other words, the learning rate either decreases too quickly for frequent features or too slowly for infrequent ones.
 -->
 
-Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xảy ra.
+Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xuất hiện.
 Đối với tốc độ học giảm dần, ta có thể gặp phải trường hợp các tham số của những đặc trưng phổ biến hội tụ khá nhanh đến giá trị tối ưu,
 trong khi đối với các đặc trưng thưa, ta không có đủ số lượng dữ liệu thích đáng để xác định giá trị tối ưu của chúng.
 Nói một cách khác, tốc độ học giảm quá nhanh đối với các đặc trưng phổ biến và quá chậm đối với các đặc trưng hiếm.
@@ -60,9 +60,9 @@ After all, it is unclear where one would draw the line between something that qu
 Một mẹo để khắc phục vấn đề này là đếm số lần ta gặp một đặc trưng nhất định và sử dụng nó để điều chỉnh tốc độ học.
 Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta_0}{\sqrt{t + c}}$ ta có thể sử dụng $\eta_i = \frac{\eta_0}{\sqrt{s(i, t) + c}}$.
 Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
-Công thức này khá dễ để lập trình và phí tổn hao không đáng kể.
-Tuy nhiên, cách này thất bại trong trường hợp dù đặc trưng không thưa thớt, nhưng lại có gradient nhỏ và hiếm khi đạt giá trị lớn.
-Xét cho cùng, ta khó có thể phân biệt rõ ràng liệu một đặc trưng có đủ điều kiện để được quan sát hay không.
+Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức.
+Tuy nhiên, cách này thất bại trong trường hợp khi đặc trưng không hẳn là thưa, chỉ là có gradient nhỏ và hiếm khi đạt giá trị lớn.
+Xét cho cùng, ta khó có thể phân biệt rõ ràng khi nào thì có thể xem một đặc trưng là đã được quan sát hay chưa.
 
 <!--
 Adagrad by :cite:`Duchi.Hazan.Singer.2011` addresses this by replacing the rather crude counter $s(i, t)$ by an aggregate of the squares of previously observed gradients.
@@ -79,8 +79,8 @@ Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x}
 Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient đủ lớn.
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
 Các toạ độ thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
-Phương pháp này trong thực tế đưa ra một thủ tục tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các vấn đề liên quan.
-Tuy nhiên, vẫn còn đang ẩn giấu một vài lợi ích vốn có khác của Adagrad mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
+Phương pháp này trong thực tế đưa ra một quy trình tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các bài toán liên quan.
+Tuy nhiên, Adagrad vẫn còn ẩn chứa một vài lợi ích khác mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
