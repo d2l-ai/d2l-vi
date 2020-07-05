@@ -62,7 +62,7 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 -->
 
 Điểm khác biệt so với trước là ta thực hiện các cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị bằng cách lấy tỷ lệ giữa trung bình bình phương tốc độ thay đổi và trung bình mô-men bậc hai của gradient.
-Sử dụng $\mathbf{g}_t'$ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
+Sử dụng $\mathbf{g}_t'$ chỉ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
 Như trước đây $\eta$ là tham số đảm bảo kết quả xấp xỉ không tầm thường, ví dụ, tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\eta = 10^{-5}$.
 
