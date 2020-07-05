@@ -236,14 +236,17 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 ### Factor Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Thừa số
+
 
 <!--
 One alternative to a polynomial decay would be a multiplicative one, that is $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ for $\alpha \in (0, 1)$.
 To prevent the learning rate from decaying beyond a reasonable lower bound the update equation is often modified to $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 -->
 
-*dịch đoạn phía trên*
+Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân,$\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ với $\alpha \in (0, 1)$.
+Để tránh trường hợp tốc độ học suy giảm thấp hơn cả biên chặn dưới, phương trình cập nhật thường được sửa lại thành $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
+
 
 
 ```{.python .input}
@@ -269,7 +272,11 @@ Going forward we will use the built-in schedulers as appropriate and only explai
 As illustrated, it is fairly straightforward to build your own scheduler if needed.
 -->
 
-*dịch đoạn phía trên*
+Cách khắc phục trên cũng có thể được thực hiện bằng một định thời có sẵn trong MXNet thông qua đối tượng `lr_scheduler.FactorScheduler`.
+Giải pháp này cần ít tham số hơn, ví dụ gồm có khoảng thời gian làm nóng (_warmup period_), phương thức làm nóng (_warmup mode_), số bước cập nhật tối đa, v.v.
+Ở các phần tiếp theo, chúng ta sẽ sử dụng các định thời tốc độ học thích hợp và còn ở đây sẽ giải thích cách thức hoạt động của chúng.
+Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
+
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -279,7 +286,8 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 ### Multi Factor Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Đa Thừa số
+
 
 <!--
 A common strategy for training deep networks is to keep the learning rate piecewise constant and to decrease it by a given amount every so often.
@@ -287,7 +295,10 @@ That is, given a set of times when to decrease the rate, such as $s = \{5, 10, 2
 Assuming that the values are halved at each step we can implement this as follows.
 -->
 
-*dịch đoạn phía trên*
+Một chiến lược chung để huấn luyện các mạng nơ-ron sâu là giữ cho tốc độ học không đổi theo từng khoảng và thường xuyên giảm tốc độ học đi một lượng cho trước sau mỗi khoảng.
+Cụ thể, với một tập giá trị các bước thời gian từ đó ta giảm tốc độ học, ví dụ như với $s = \{5, 10, 20\}$, ta giảm $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ khi $t \in s$.
+Giả sử rằng tốc độ học được giảm một nửa tại mỗi bước thời gian trên, ta có thể lập trình như sau.
+
 
 
 ```{.python .input}
@@ -303,7 +314,9 @@ Then (and only then) do we decrease the rate such as to obtain a higher quality 
 The example below shows how this can produce ever slightly better solutions.
 -->
 
-*dịch đoạn phía trên*
+Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo từng khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán đạt tới điểm ổn định theo nghĩa về phân phối của các vector trọng số.
+Sau đó (và chỉ sau đó) chúng ta mới giảm tốc độ học để đạt được biến đại diện cho điểm cực tiểu chất lượng hơn.
+Ví dụ dưới đây cho ta thấy cách phương pháp này giúp tìm được nghiệm tốt hơn đôi chút.
 
 
 ```{.python .input}
@@ -494,7 +507,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * 
