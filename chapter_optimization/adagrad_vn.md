@@ -160,7 +160,14 @@ Alas, this is a rather impractical suggestion.
 Computing eigenvalues and eigenvectors is in general *much more* expensive than solving the actual problem.
 -->
 
-*dịch đoạn phía trên*
+Nếu hệ số điều kiện $\kappa$ lớn, việc giải bài toán tối ưu trở nên khá khó khăn.
+Ta cần đảm bảo việc lựa chọn phù hợp một khoảng động lớn các giá trị.
+Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ: liệu ta có thể "cố định" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng có giá trị bằng $1$.
+Biến đổi này khá đơn giản theo lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm chuyển đổi giá trị của bài toán 
+từ $\mathbf{x}$ sang $\mathbf{z} := \boldsymbol{\Lambda}^{\frac{1}{2}} \mathbf{U} \mathbf{x}$.
+Trong hệ toạ độ mới, $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$ có thể được đơn giản hoá thành $\|\mathbf{z}\|^2$.
+Tệ thay, hướng giải quyết này không thực tế chút nào.
+Việc tính toán các trị riêng và các vector riêng thường tốn kém hơn *rất nhiều* so với việc tìm lời giải cho bài toán thực tế.
 
 <!--
 While computing eigenvalues exactly might be expensive, guessing them and computing them even somewhat approximately may already be a lot better than not doing anything at all.
@@ -168,7 +175,9 @@ In particular, we could use the diagonal entries of $\mathbf{Q}$ and rescale it 
 This is *much* cheaper than computing eigenvalues.
 -->
 
-*dịch đoạn phía trên*
+Trong khi việc tính toán chính xác các trị riêng có thể có chi phí cao, việc ước chừng và tính toán xấp xỉ chúng đã là tốt hơn nhiều so với không làm gì cả.
+Trong thực tế, ta có thể sử dụng các phần tử trên đường chéo của $\mathbf{Q}$ và chuyển đổi giá trị chúng sao cho phù hợp.
+Việc này có chi phí tính toán thấp hơn *nhiều* so với tính các trị riêng.
 
 
 $$\tilde{\mathbf{Q}} = \mathrm{diag}^{-\frac{1}{2}}(\mathbf{Q}) \mathbf{Q} \mathrm{diag}^{-\frac{1}{2}}(\mathbf{Q}).$$
@@ -180,7 +189,9 @@ In most cases this simplifies the condition number considerably.
 For instance, the cases we discussed previously, this would entirely eliminate the problem at hand since the problem is axis aligned.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
+Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện.
+Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học có các cạnh song song với trục toạ độ (*axis aligned*).
 
 <!--
 Unfortunately we face yet another problem: in deep learning we typically do not even have access to the second derivative of the objective function: 
@@ -188,13 +199,15 @@ for $\mathbf{x} \in \mathbb{R}^d$ the second derivative even on a minibatch may 
 The ingenious idea of Adagrad is to use a proxy for that elusive diagonal of the Hessian that is both relatively cheap to compute and effective---the magnitude of the gradient itself.
 -->
 
-*dịch đoạn phía trên*
+Đáng tiếc rằng ta phải tiếp tục đối mặt với một vấn đề khác: trong học sâu, ta thường không tính được ngay cả đạo hàm bậc hai của hàm mục tiêu.
+Đối với $\mathbf{x} \in \mathbb{R}^d$, đạo hàm bậc hai thậm chí với một minibatch có thể yêu cầu không gian và độ phức tạp lên đến $\mathcal{O}(d^2)$ để tính toán, do đó khiến cho vấn đề không thể thực hiện được trong thực tế.
+Sự khéo léo của Adagrad nằm ở việc sử dụng một biến đại diện (*proxy*) để tính toán đường chéo của ma trận Hessian một cách hiệu quả và đơn giản--đó là độ lớn của chính gradient.
 
 <!--
 In order to see why this works, let us look at $\bar{f}(\bar{\mathbf{x}})$. We have that
 -->
 
-*dịch đoạn phía trên*
+Để tìm hiểu tại sao cách này lại có hiệu quả, hãy cùng xét $\bar{f}(\bar{\mathbf{x}})$. Ta có
 
 
 $$\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}}) = \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}} = \boldsymbol{\Lambda} \left(\bar{\mathbf{x}} - \bar{\mathbf{x}}_0\right),$$
@@ -211,7 +224,14 @@ A thorough analysis is beyond the scope of this section (it would be several pag
 We refer the reader to :cite:`Duchi.Hazan.Singer.2011` for details.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\bar{\mathbf{x}}_0$ là nghiệm cực tiểu của $\bar{f}$.
+Do đó độ lớn của gradient phụ thuộc vào cả $\boldsymbol{\Lambda}$ và khoảng cách đến điểm tối ưu.
+Nếu $\bar{\mathbf{x}} - \bar{\mathbf{x}}_0$ không đổi thì đây chính là tất cả các giá trị ta cần tính.
+Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ thoả mãn.
+Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu.
+Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện cho độ lớn của ma trận Hessian.
+Việc phân tích chi tiết nằm ngoài phạm vi của phần này (có thể lên đến nhiều trang).
+Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -457,7 +477,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * 
