@@ -604,7 +604,12 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 * In general, minibatch SGD is faster than SGD and gradient descent for convergence to a smaller risk, when measured in terms of clock time.  
 -->
 
-*dịch đoạn phía trên*
+* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
+* Tồn tại sự đánh đổi giữa hiệu quả về mặt thống kê của SGD và hiệu quả tính toán của việc xử lý các batch dữ liệu kích thước lớn cùng một lúc.
+* Thuật toán hạ gradient ngẫu nhiên theo minibatch kết hợp cả hai lợi ích trên: hiệu quả tính toán và thống kê.
+* Trong thuật toán SGD theo minibatch chúng ta xử lý các batch dữ liệu thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi quan sát được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
+* Suy giảm tốc độ học trong quá trình huấn luyện được khuyến khích sử dụng.
+* Nói chung, thuật toán SGD theo minibatch nhanh hơn thuật toán SGD và GD về thời gian hội tụ.
 
 
 ## Bài tập
@@ -617,7 +622,11 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 How does the behavior of SGD, minibatch SGD and that of gradient descent change?
 -->
 
-*dịch đoạn phía trên*
+1. Sửa đổi kích thước batch và tốc độ học, quan sát tốc độ suy giảm giá trị của hàm mục tiêu và thời gian cho mỗi epoch.
+2. Đọc thêm tài liệu MXNet và sử dụng lớp `Trainer`  với hàm `set_learning_rate` để giảm tốc độ học của SGD theo minibatch bằng 1/10 giá trị trước đó sau mỗi epoch.
+3. Hãy so sánh SGD theo minibatch với một biến thể *lấy mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
+4. Một ác thần đã sao chép tập dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát bị lặp lại hai lần và kích thước tập dữ liệu tăng gấp đôi so với ban đầu, nhưng không ai nói với bạn biết).
+Cách hoạt động của các thuật toán hạ gradient, SGD và SGD theo minibatch sẽ thay đổi như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -664,4 +673,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Quang
