@@ -482,7 +482,8 @@ Last, when the batch size equals 100, we use minibatch SGD for optimization.
 The time required per epoch is longer than the time needed for SGD and the time for batch gradient descent.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD theo minibatch để tối ưu hóa.
+Thời gian cần thiết cho mỗi epoch ngắn hơn thời gian chạy của thuật toán SGD và thuật toán hạ gradient theo toàn bộ batch.
 
 
 ```{.python .input  n=6}
@@ -494,7 +495,7 @@ mini1_res = train_sgd(.4, 100)
 Reducing the batch size to 10, the time for each epoch increases because the workload for each batch is less efficient to execute.
 -->
 
-*dịch đoạn phía trên*
+Giảm kích thước batch bằng 10, thời gian cho mỗi epoch tăng vì thực hiện tính toán trên từng batch kém hiệu quả hơn.
 
 
 ```{.python .input  n=7}
@@ -510,7 +511,11 @@ Minibatch SGD is able to trade-off the convergence speed and computation efficie
 A minibatch size 10 is more efficient than SGD; a minibatch size 100 even outperforms GD in terms of runtime.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta so sánh tương quan thời gian và giá trị mất mát trong bốn thí nghiệm trên.
+Như có thể thấy, mặc dù SGD hội tụ nhanh hơn GD về số mẫu được xử lý,
+nhưng SGD tốn nhiều thời gian hơn để đạt được cùng giá trị mất mát như GD vì thuật toán này tính toán gradient trên từng mẫu một.
+Thuật toán SGD theo minibatch có thể cân bằng giữa tốc độ hội tụ và hiệu quả tính toán.
+Với kích thước minibatch bằng 10, thuật toán này hiệu quả hơn SGD; và với kích thước minibatch bằng 100, thời gian chạy của thuật toán này thậm chí nhanh hơn cả GD.
 
 
 ```{.python .input  n=8}
@@ -529,7 +534,7 @@ d2l.plt.gca().set_xscale('log')
 ## Concise Implementation
 -->
 
-## *dịch đoạn phía trên*
+## Lập trình Súc tích
 
 
 <!--
@@ -538,7 +543,9 @@ This is used to implement a generic training function.
 We will use this throughout the current chapter.
 -->
 
-*dịch đoạn phía trên*
+Trong Gluon, chúng ta có thể sử dụng lớp `Trainer` để gọi các thuật toán tối ưu.
+Cách này được sử dụng để lập trình một hàm huấn luyện tổng quát.
+Chúng ta sẽ sử dụng hàm này trong các phần tiếp theo của chương.
 
 
 ```{.python .input  n=9}
@@ -573,7 +580,7 @@ def train_gluon_ch11(tr_name, hyperparams, data_iter, num_epochs=2):
 Using Gluon to repeat the last experiment shows identical behavior.
 -->
 
-*dịch đoạn phía trên*
+Lặp lại thí nghiệm cuối cùng bằng Gluon cho kết quả tương tự như trên.
 
 
 ```{.python .input  n=10}
@@ -654,7 +661,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Nguyễn Minh Đức
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 7 -->
 * 
