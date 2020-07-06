@@ -235,8 +235,8 @@ Just like in the case of momentum we need to keep track of an auxiliary variable
 This does not increase the cost of Adagrad significantly relative to SGD, simply since the main cost is typically to compute $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ and its derivative.
 -->
 
-Tương tự như trường hợp sử dụng động lượng (*momentum*), ở đây ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
-Cách này không tăng đáng kể chi phí của Adagrad so với SGD, đơn giản là do chi phí chính yếu  thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
+Tương tự như trường hợp sử dụng động lượng, ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
+Cách này không làm tăng chi phí của Adagrad so với SGD, đơn giản là chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -248,7 +248,7 @@ For now let us see how it behaves in a quadratic convex problem.
 We use the same problem as before:
 -->
 
-Chú ý rằng tổng bình phương các gradient trong $\mathbf{s}_t$ có nghĩa là $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
+Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu rằng $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
 Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
 Đối với các bài toán lồi, như vậy là hoàn toàn đủ.
 Tuy nhiên trong học sâu, có lẽ ta muốn giảm dần tốc độ học chậm hơn một chút.
@@ -266,7 +266,7 @@ As we can see, the iterative trajectory of the independent variable is smoother.
 However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate continuously decays, so the independent variable does not move as much during later stages of iteration.
 -->
 
-Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức là $\eta = 0.4$.
+Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức $\eta = 0.4$.
 Ta có thể thấy quỹ đạo lặp của biến độc lập mượt hơn nhiều.
 Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy giảm khiến cho các biến độc lập không thay đổi nhiều ở các giai đoạn về sau của vòng lặp.
 
@@ -300,7 +300,7 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-Nếu tăng tốc độ học lên $2$ ta có thể thấy quá trình học tốt hơn nhiều.
+Nếu tăng tốc độ học lên $2$, ta có thể thấy quá trình học tốt hơn nhiều.
 Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
 
 
