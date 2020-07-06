@@ -245,14 +245,15 @@ Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết 
 ## The Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán
 
 <!--
 Let us formalize the discussion from above.
 We use the variable $\mathbf{s}_t$ to accumulate past gradient variance as follows.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng hình thức hoá phần thảo luận ở trên.
+Ta sử dụng biến $\mathbf{s}_t$ để tích luỹ phương sai của các gradient trước như sau:
 
 
 $$\begin{aligned}
@@ -271,14 +272,19 @@ As before $\eta$ is the learning rate and $\epsilon$ is an additive constant tha
 Last, we initialize $\mathbf{s}_0 = \mathbf{0}$.
 -->
 
-*dịch đoạn phía trên*
+Ở đây các phép toán được thực hiện theo từng toạ độ.
+Nghĩa là, $\mathbf{v}^2$ có các phần tử $v_i^2$.
+Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$.
+Như phần trước $\eta$ là tốc độ học và $\epsilon$ là hằng số cộng thêm đảm bảo rằng ta không bị lỗi chia cho $0$.
+Cuối cùng, ta khởi tạo $\mathbf{s}_0 = \mathbf{0}$.
 
 <!--
 Just like in the case of momentum we need to keep track of an auxiliary variable, in this case to allow for an individual learning rate per coordinate.
 This does not increase the cost of Adagrad significantly relative to SGD, simply since the main cost is typically to compute $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ and its derivative.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như trường hợp sử dụng động lượng, ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
+Cách này không làm tăng chi phí của Adagrad so với SGD, đơn giản là chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -290,7 +296,13 @@ For now let us see how it behaves in a quadratic convex problem.
 We use the same problem as before:
 -->
 
-*dịch đoạn phía trên*
+Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu rằng $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
+Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
+Đối với các bài toán lồi, như vậy là hoàn toàn đủ.
+Tuy nhiên trong học sâu, có lẽ ta muốn giảm dần tốc độ học chậm hơn một chút.
+Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận ở các phần tới.
+Còn bây giờ hãy cùng xét cách thức hoạt động của Adagrad trong một bài toán lồi bậc hai.
+Ta vẫn giữ nguyên bài toán như cũ:
 
 
 $$f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2.$$
@@ -302,7 +314,9 @@ As we can see, the iterative trajectory of the independent variable is smoother.
 However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate continuously decays, so the independent variable does not move as much during later stages of iteration.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức $\eta = 0.4$.
+Ta có thể thấy quỹ đạo lặp của biến độc lập mượt hơn nhiều.
+Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy giảm khiến cho các biến độc lập không thay đổi nhiều ở các giai đoạn về sau của vòng lặp.
 
 
 ```{.python .input  n=6}
@@ -334,7 +348,9 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-*dịch đoạn phía trên*
+Nếu tăng tốc độ học lên $2$, ta có thể thấy quá trình học tốt hơn nhiều.
+Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
+
 
 
 ```{.python .input  n=10}
@@ -495,7 +511,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Đoàn Võ Duy Thanh
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
