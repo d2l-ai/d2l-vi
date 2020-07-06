@@ -5,7 +5,7 @@
 # Asynchronous Computation
 -->
 
-# *dịch tiêu đề phía trên*
+# Tính toán Bất đồng bộ
 :label:`sec_async`
 
 <!--
@@ -19,7 +19,15 @@ This allows us to reduce memory overhead and increase processor utilization.
 We begin by importing the necessary libraries.
 -->
 
-*dịch đoạn phía trên*
+Máy tính ngày nay là các hệ thống song song, bao gồm nhiều lõi CPU (mỗi lõi thường có nhiều luồng),
+mỗi GPU chứa nhiều thành phần xử lý và mỗi máy thường bao gồm nhiều GPU.
+Nói ngắn gọn, ta có thể xử lý nhiều việc cùng một lúc, thường trên nhiều thiết bị khác nhau.
+Tiếc thay Python không phải là một ngôn ngữ tốt để viết mã tính toán song song và bất đồng bộ khi không có sự trợ giúp từ bên ngoài.
+Xét cho cùng, Python là ngôn ngữ đơn luồng, và có lẽ trong tương lai sẽ không có gì thay đổi.
+Các framework học sâu như MXNet và TensorFlow tận dụng mô hình lập trình bất đồng bộ để cải thiện hiệu năng (PyTorch sử dụng tính năng định thời của chính Python, dẫn tới việc đánh đổi hiệu năng).
+Do đó, hiểu cách lập trình bất đồng bộ hoạt động giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các thành phần tương hỗ.
+Việc này cho phép ta giảm tổng chi phí và tăng khả năng sử dụng khối xử lý.
+Ta bắt đầu bằng việc nhập các thư viện cần thiết.
 
 
 ```{.python .input  n=1}
@@ -34,14 +42,15 @@ npx.set_np()
 ## Asynchrony via Backend
 -->
 
-## *dịch tiêu đề phía trên*
+## Bất đồng bộ bằng Bộ xử lý nền
 
 <!--
 For a warmup consider the following toy problem - we want to generate a random matrix and multiply it.
 Let us do that both in NumPy and in MXNet NP to see the difference.
 -->
 
-*dịch đoạn phía trên*
+Để khởi động, hãy cùng xét một bài toán nhỏ - ta muốn sinh ra một ma trận ngẫu nhiên và nhân nó lên nhiều lần.
+Hãy thực hiện trên cả Numpy và trên MXNet NP để xem xét sự khác nhau.
 
 
 ```{.python .input  n=2}
@@ -64,7 +73,10 @@ Since both are executed on the same processor something else must be going on.
 Forcing MXNet to finish all computation prior to returning shows what happened previously: computation is being executed by the backend while the frontend returns control to Python.
 -->
 
-*dịch đoạn phía trên*
+Kết quả trên được sắp xếp theo tốc độ.
+Ít nhất có vẻ là như vậy.
+Do cả hai thư viện đều được thực hiện trên một bộ xử lý, chắc hẳn phải có gì đó ảnh hướng đến kết quả.
+Nếu bắt buộc MXNet phải hoàn thành toàn bộ tính toán trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi bộ xử lý nền (*backend*) trong khi bộ xử lý trước (*frontend*) trả lại quyền điều khiển cho Python.
 
 ```{.python .input  n=3}
 with d2l.Benchmark():
@@ -82,7 +94,10 @@ Note that for this to work the backend must be able to keep track of the depende
 Hence it is ony possible to parallelize operations that do not depend on each other.
 -->
 
-*dịch đoạn phía trên*
+Nói chung, MXNet có bộ xử lý trước cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như một bộ xử lý nền được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
+Bộ xử lý nền có các luồng xử lý riêng liên tục tập hợp và thực hiện các tác vụ trong hàng đợi.
+Chú ý rằng, bộ xử lý nền cần có khả năng theo dõi các thành phần giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
+Do đó ta chỉ có thể song song hoá các thao tác không phụ thuộc lẫn nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
