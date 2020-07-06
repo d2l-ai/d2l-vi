@@ -501,9 +501,9 @@ We posited that we draw instances $x_i$, typically with labels $y_i$ from some d
 In particular, for a finite sample size we simply argued that the discrete distribution $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$ allows us to perform SGD over it.
 -->
 
-Tới phần này, ta đi khá nhanh và mơ hồ khi bàn luận về hạ gradient ngẫu nhiên.
-Ta thừa nhận rằng ta lấy các đối tượng $x_i$, thường là cùng với nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
-Cụ thể, với kích thước mẫu hữu hạn, ta chỉ đang đơn giản lập luận rằng SGD có thể dễ dàng được áp dụng lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
+Tới phần này, ta đi khá nhanh và chưa chặt chẽ khi thảo luận về hạ gradient ngẫu nhiên.
+Ta ngầm định lấy các đối tượng $x_i$, thường là cùng với nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
+Cụ thể, với kích thước mẫu hữu hạn, ta đơn giản lập luận rằng phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$ cho phép áp dụng SGD.
 
 <!--
 However, this is not really what we did.
@@ -515,19 +515,16 @@ To see why this is preferable consider the converse, namely that we are sampling
 The probability of choosing an element $i$ at random is $N^{-1}$. Thus to choose it at least once is
 -->
 
-Tuy nhiên, đó thực ra không phải là cách mà ta đã làm.
-Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào phép hạ gradient tất định, tức ta giả sử rằng đang có các cặp giá trị $(x_i, y_i)$.
-Hoá ra cách làm đó ở phần này khá chính đáng (xem phần bài tập để cùng thảo luận chi tiết).
-Phiền hà hơn nữa là ở tất cả các cuộc thảo luận trước, ta không hề làm thế.
-Thay vào đó ta chỉ lặp qua tất cả các đối tượng đúng một lần.
-Để có thể hiểu được tại sao quá trình trên được ưa chuộng, hãy thử xét trường hợp ngược lại khi ta lấy $n$ mẫu từ một phân phối rời rạc có hoàn lại.
-Xác suất chọn ngẫu nhiên được phần tử $i$ là $N^{-1}$.
-Do đó xác suất để chọn ít nhất một lần là
-
+Tuy nhiên, đó thực ra không phải là cách ta đã làm.
+Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào gradient không ngẫu nhiên, tức giả sử đang có sẵn các cặp giá trị $(x_i, y_i)$.
+Hoá ra cách làm đó khá hợp lý (xem phần bài tập để thảo luận chi tiết).
+Vấn đề là ở tất cả các thảo luận trước, ta không hề làm thế.
+Thay vào đó ta duyệt qua tất cả các đối tượng đúng một lần.
+Để hiểu tại sao quá trình này được ưa chuộng, hãy xét trường hợp ngược lại khi ta lấy có hoàn lại $N$ mẫu từ một phân phối rời rạc.
+Xác suất phần tử $i$ được chọn ngẫu nhiên là $N^{-1}$.
+Do đó xác suất chọn $i$ ít nhất một lần là
 
 $$P(\mathrm{Chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
-<!-- cân nhắc dịch -->
-
 
 <!--
 A similar reasoning shows that the probability of picking a sample exactly once is given by ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
@@ -536,10 +533,10 @@ Hence, in practice we perform the latter (and this is the default choice through
 Last note that repeated passes through the dataset traverse it in a *different* random order.
 -->
 
-Chứng minh tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng một lần là ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
+Tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng một lần là ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
 Điều này gây tăng phương sai và giảm hiệu quả sử dụng dữ liệu so với lấy mẫu không hoàn lại.
-Do đó trong thực tế, ta thực hiện phương pháp không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
-Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu, ta sẽ quét theo một thứ tự ngẫu nhiên *khác*.
+Do đó trong thực tế, ta thực hiện lấy mẫu không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
+Điều cuối cùng cần chú ý là mỗi lần duyệt lại tập dữ liệu, ta sẽ duyệt theo một thứ tự ngẫu nhiên *khác*.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -560,11 +557,11 @@ namely to reduce the learning rate progressively, albeit not too quickly.
 * Optimality guarantees for SGD are in general not available in nonconvex cases since the number of local minima that require checking might well be exponential.
 -->
 
-* Đối với các bài toán lồi, ta có thể chứng minh rằng Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu cho nhiều tốc độ học khác nhau.
-* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích nhằm tiến tới bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
+* Đối với các bài toán lồi, ta có thể chứng minh rằng Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu với nhiều tốc độ học khác nhau.
+* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích để tiếp cận bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
 * Nhiều vấn đề xuất hiện khi tốc độ học quá lớn hoặc quá nhỏ. Trong thực tế, ta chỉ có thể tìm được tốc độ học thích hợp sau nhiều lần thử nghiệm.
 * Khi kích thước tập huấn luyện tăng, chi phí tính toán cho mỗi lần lặp của hạ gradient cũng tăng theo, do đó SGD được ưa chuộng hơn trong trường hợp này.
-* Trong SGD, không có sự đảm bảo tính tối ưu đối với các trường hợp không lồi do số cực tiểu cần phải kiểm tra có thể tăng theo cấp số nhân.
+* Trong SGD, không có sự đảm bảo tối ưu đối với các trường hợp không lồi do số cực tiểu cần phải kiểm tra có thể tăng theo cấp số nhân.
 
 
 <!--
@@ -584,14 +581,14 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 5. Assume that $f(x) = x^2 (1 + \sin x)$. How many local minima does $f$ have? Can you change $f$ in such a way that to minimize it one needs to evaluate all local minima?
 -->
 
-1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với nhiều số vòng lặp khác nhau.
+1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với số vòng lặp khác nhau.
 Cụ thể, hãy vẽ biểu đồ khoảng cách tới nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
 2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
-    * Suy ra kì vọng và phương sai cho phân phối theo $\mathbf{x}$.
-    * Chỉ ra rằng tính chất này nhìn chung có thể áp dụng cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ for $Q \succeq 0$.
+    * Suy ra kì vọng và phương sai của $\mathbf{x}$.
+    * Chỉ ra rằng tính chất này có thể áp dụng tổng quát cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ với $Q \succeq 0$.
 3. So sánh sự hội tụ của SGD khi lấy mẫu không hoàn lại từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ và khi lấy mẫu có hoàn lại.
-4. Bạn sẽ thay đổi chương trình SGD thế nào nếu như một số gradient (hoặc một số toạ độ liên kết với nó) liên tục lớn hơn so với tất cả các gradient khác?
-5. Giả sử rằng $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Thay đổi hàm số sao cho để cực tiểu hóa giá trị hàm $f$, ta cần xét tất cả các điểm cực tiểu?
+4. Bạn sẽ thay đổi SGD thế nào nếu như một số gradient (hoặc một số toạ độ liên kết với nó) liên tục lớn hơn tất cả các gradient khác?
+5. Giả sử $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Thay đổi hàm $f$ sao cho để cực tiểu hóa giá trị hàm này, ta cần xét tất cả các điểm cực tiểu?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -615,29 +612,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Duy Du
-
-<!-- Phần 2 -->
 * Nguyễn Duy Du
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
 * Nguyễn Văn Quang
-* Phạm Minh Đức
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 5 -->
-* Đỗ Trường Giang
-
-<!-- Phần 6 -->
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 7 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-* Phạm Hồng Vinh
+* Nguyễn Văn Cường
