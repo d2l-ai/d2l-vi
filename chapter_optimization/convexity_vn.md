@@ -16,9 +16,9 @@ Furthermore, even though the optimization problems in deep learning are generall
 This can lead to exciting new optimization variants such as :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 -->
 
-Tính lồi đóng một vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
-Điều này phần lớn là do các thuật toán sẽ dễ phân tích và kiểm tra hơn trong trường hợp này.
-Nói cách khác, nếu thuật toán hoạt động kém ngay cả trong môi trường lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong môi trường khác.
+Tính lồi đóng vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
+Điều này phần lớn là do tính lồi giúp việc phân tích và kiểm tra thuật toán trở nên dễ dàng hơn. 
+Nói cách khác, nếu thuật toán hoạt động kém ngay cả khi có tính lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong trường hợp khác.
 Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần là không lồi, chúng lại thường thể hiện một số tính chất lồi gần các cực tiểu.
 Điều này dẫn đến các biến thể tối ưu hóa thú vị mới như :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
 
@@ -26,13 +26,13 @@ Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần
 ## Basics
 -->
 
-## Căn bản
+## Kiến thức căn bản
 
 <!--
 Let us begin with the basics.
 -->
 
-Chúng ta hãy bắt đầu với các căn bản trước.
+Chúng ta hãy bắt đầu với các kiến thức căn bản trước.
 
 <!--
 ### Sets
@@ -46,9 +46,9 @@ Simply put, a set $X$ in a vector space is convex if for any $a, b \in X$ the li
 In mathematical terms this means that for all $\lambda \in [0, 1]$ we have
 -->
 
-Các tập hợp là cơ sở của tính lồi.
+Tập hợp là nền tảng của tính lồi.
 Nói một cách đơn giản, một tập hợp $X$ trong không gian vector là lồi nếu với bất kì $a, b \in X$, đoạn thẳng nối $a$ và $b$ cũng thuộc $X$.
-Theo các thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
+Theo thuật ngữ toán học, điều này có nghĩa là với mọi $\lambda \in [0, 1]$, ta có
 
 
 $$\lambda \cdot a + (1-\lambda) \cdot b \in X \text{với mọi} a, b \in X.$$
@@ -61,7 +61,7 @@ The first set is not convex since there are line segments that are not contained
 The other two sets suffer no such problem.
 -->
 
-Nghe có vẻ hơi trừu tượng nhỉ.
+Điều này nghe có vẻ hơi trừu tượng.
 Hãy xem qua bức ảnh :numref:`fig_pacman`.
 Tập hợp đầu tiên là không lồi do tồn tại các đoạn thẳng không nằm trong tập hợp.
 Hai tập hợp còn lại thì không gặp vấn đề như vậy.
@@ -83,16 +83,16 @@ Given that, they also need to be contained in $X \cap Y$, thus proving our first
 -->
 
 Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn có thể làm gì đó với chúng.
-Trong trường hợp này, chúng ta có thể nhìn vào hợp và giao của hai tập trong :numref:`fig_convex_intersect`.
-Giả sử $X$ và $Y$ là các tập hợp lồi thì $X \cap Y$ cũng sẽ lồi.
-Để thấy được điều này, hãy xét bất kì $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, khi đó đoạn thẳng nối $a$ và $b$ sẽ thuộc trong cả $X$ và $Y$.
+Trong trường hợp này, chúng ta có thể nhìn vào phép hợp và phép giao trong :numref:`fig_convex_intersect`.
+Giả sử $X$ và $Y$ là các tập hợp lồi, khi đó $X \cap Y$ cũng sẽ lồi.
+Để thấy được điều này, hãy xét bất kì $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, khi đó đoạn thẳng nối $a$ và $b$ sẽ nằm trong cả $X$ và $Y$.
 Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh được định lý đầu tiên của chúng ta.
 
 <!--
 ![The intersection between two convex sets is convex](../img/convex-intersect.svg)
 -->
 
-![Giao giữa hai tập lồi là một tập lồi](../img/convex-intersect.svg)
+![Giao của hai tập lồi là một tập lồi](../img/convex-intersect.svg)
 :label:`fig_convex_intersect`
 
 <!--
@@ -103,17 +103,17 @@ The line segment in :numref:`fig_nonconvex` connecting $a$ and $b$ needs to cont
 Hence the line segment is not in $X \cup Y$ either, thus proving that in general unions of convex sets need not be convex.
 -->
 
-Chúng ta củng cố kết quả thêm một chút với mệnh đề: giao của các tập lồi $X_i$ là một tập lồi $\cap_{i} X_i$.
+Ta sẽ củng cố kết quả này thêm một chút với mệnh đề: giao của các tập lồi $X_i$ là một tập lồi $\cap_{i} X_i$.
 Để thấy rằng điều ngược lại là không đúng, hãy xem xét hai tập hợp không giao nhau $X \cap Y = \emptyset$.
 Giờ ta chọn ra $a \in X$ và $b \in Y$.
-Đoạn thẳng trong :numref:`fig_nonconvex` nối $a$ và $b$ sẽ chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
-Do đó đoạn thẳng cũng không nằm trong $X \cup Y$, từ đó chứng minh mệnh đề "hợp của các tập lồi nói chung không nhất thiết phải lồi".
+Đoạn thẳng nối $a$ và $b$ trong :numref:`fig_nonconvex` chứa một vài phần không thuộc cả $X$ và $Y$, vì chúng ta đã giả định rằng $X \cap Y = \emptyset$.
+Do đó đoạn thẳng này cũng không nằm trong $X \cup Y$, từ đó chứng minh rằng hợp của các tập lồi nói chung không nhất thiết phải là tập lồi.
 
 <!--
 ![The union of two convex sets need not be convex](../img/nonconvex.svg)
 -->
 
-![Hợp của hai tập lồi không nhất thiết phải lồi](../img/nonconvex.svg)
+![Hợp của hai tập lồi không nhất thiết phải là tập lồi](../img/nonconvex.svg)
 :label:`fig_nonconvex`
 
 <!--
@@ -123,8 +123,8 @@ In some cases we work with variables of bounded length, such as balls of radius 
 -->
 
 Thông thường, các bài toán trong học sâu đều được định nghĩa trong các miền lồi.
-Ví dụ $\mathbb{R}^d$ là tập lồi (xét cho cùng, đoạn thẳng giữa hai điểm bất kỳ thuộc $\mathbb{R}^d$ sẽ thuộc $\mathbb{R}^d$).
-Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có biên, ví dụ như các khối cầu có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
+Ví dụ $\mathbb{R}^d$ là tập lồi (xét cho cùng, đoạn thẳng nối hai điểm bất kỳ thuộc $\mathbb{R}^d$ vẫn thuộc $\mathbb{R}^d$).
+Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có biên, ví dụ như khối cầu có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -140,8 +140,8 @@ Now that we have convex sets we can introduce convex functions $f$.
 Given a convex set $X$ a function defined on it $f: X \to \mathbb{R}$ is convex if for all $x, x' \in X$ and for all $\lambda \in [0, 1]$ we have
 -->
 
-Sau khi có được các tập hợp lồi, chúng ta sẽ giới thiệu tiếp về các hàm số lồi $f$.
-Cho một tập hợp lồi $X$, một hàm số được định nghĩa trên đó $f: X \to \mathbb{R}$ sẽ lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
+Giờ ta đã biết về tập hợp lồi, ta sẽ làm việc tiếp với các hàm số lồi $f$.
+Cho một tập hợp lồi $X$, một hàm số được định nghĩa trên tập đó $f: X \to \mathbb{R}$ là hàm lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
 
 
 $$\lambda f(x) + (1-\lambda) f(x') \geq f(\lambda x + (1-\lambda) x').$$
@@ -152,7 +152,7 @@ To illustrate this let us plot a few functions and check which ones satisfy the 
 We need to import a few  libraries.
 -->
 
-Để minh họa cho điều này, chúng ta sẽ vẽ ra một vài hàm số và kiểm tra xem hàm số nào thỏa mãn yêu cầu.
+Để minh họa cho điều này, chúng ta sẽ vẽ đồ thị của một vài hàm số và kiểm tra xem hàm số nào thỏa mãn điều kiện trên.
 Chúng ta sẽ cần phải nhập một vài gói thư viện.
 
 
@@ -169,7 +169,7 @@ npx.set_np()
 Let us define a few functions, both convex and nonconvex.
 -->
 
-Ta hãy định nghĩa một vài hàm số, cả lồi lẫn không lồi.
+Hãy định nghĩa một vài hàm số, cả lồi lẫn không lồi.
 
 
 ```{.python .input}
@@ -198,8 +198,8 @@ Otherwise the outcome of $f(\lambda x + (1-\lambda) x')$ might not be well defin
 Convex functions have a number of desirable properties.
 -->
 
-Như đã đoán trước, hàm cos là không lồi, trong khi hàm parabol và hàm số mũ thì lồi.
-Lưu ý, yêu cầu nói rằng $X$ cần phải là tập hợp lồi để có ý nghĩa.
+Như dự đoán, hàm cos là hàm không lồi, trong khi hàm parabol và hàm số mũ là hàm lồi.
+Lưu ý rằng để điều kiện trên có ý nghĩa thì $X$ cần phải là tập hợp lồi.
 Nếu không, kết quả của $f(\lambda x + (1-\lambda) x')$ sẽ không được định nghĩa rõ.
 Các hàm lồi có một số tính chất mong muốn sau.
 
@@ -214,7 +214,7 @@ It amounts to a generalization of the definition of convexity:
 -->
 
 Một trong những công cụ hữu dụng nhất là bất đẳng thức Jensen.
-Nó tương đương với tổng quát hóa của định nghĩa về tính lồi:
+Nó là sự tổng quát hóa của định nghĩa về tính lồi:
 
 
 $$\begin{aligned}
@@ -230,17 +230,17 @@ In other words, the expectation of a convex function is larger than the convex f
 To prove the first inequality we repeatedly apply the definition of convexity to one term in the sum at a time.
 The expectation can be proven by taking the limit over finite segments.
 -->
-với $\alpha_i$ là các số thực không âm mà $\sum_i \alpha_i = 1$.
+với $\alpha_i$ là các số thực không âm sao cho $\sum_i \alpha_i = 1$.
 Nói cách khác, kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng.
-Để chứng minh bất đẳng thức đầu tiên này, chúng ta tuần tự áp dụng định nghĩa của tính lồi vào các số hạng của tổng.
-Kỳ vọng có thể được chứng minh bằng cách lấy giới hạn trên các đoạn hữu hạn.
+Để chứng minh bất đẳng thức đầu tiên này, chúng ta áp dụng định nghĩa của tính lồi cho từng số hạng của tổng.
+Kỳ vọng có thể được chứng minh bằng cách tính giới hạn trên các đoạn hữu hạn.
 
 <!--
 One of the common applications of Jensen's inequality is with regard to the log-likelihood of partially observed random variables.
 That is, we use
 -->
 
-Một trong các ứng dụng thông thường của bất đẳng thức Jensen có liên quan đến log hợp lý của các biến ngẫu nhiên quan sát được một phần.
+Một trong các ứng dụng phổ biến của bất đẳng thức Jensen liên quan đến log hợp lý của các biến ngẫu nhiên quan sát được một phần.
 Ta có
 
 
@@ -256,29 +256,27 @@ For instance, in clustering $y$ might be the cluster labels and $P(x \mid y)$ is
 
 Điều này xảy ra vì $\int P(y) P(x \mid y) dy = P(x)$.
 Nó được sử dụng trong những phương pháp biến phân.
-$y$ ở đây là thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về phân phối của nó và $P(x)$ là phân phối đã được lấy tích phân theo $y$.
-Ví dụ, phân cụm $y$ có thể là nhãn cụm và $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
+$y$ ở đây thường là một biến ngẫu nhiên không quan sát được, $P(y)$ là dự đoán tốt nhất về phân phối của nó và $P(x)$ là phân phối đã được lấy tích phân theo $y$.
+Ví dụ như trong bài toán phân cụm, $y$ có thể là nhãn cụm và $P(x \mid y)$ là mô hình sinh khi áp dụng các nhãn cụm.
 
 <!--
 ## Properties
 -->
 
-## Các tính chất
+## Tính chất
 
 <!--
 Convex functions have a few useful properties.
 We describe them as follows.
 -->
 
-Các hàm lồi có một vài tính chất hữu ích.
-Chúng được trình bày như sau.
-
+Các hàm lồi có một vài tính chất hữu ích dưới đây.
 
 <!--
 ### No Local Minima
 -->
 
-### Không có cực tiểu cục bộ
+### Không có Cực tiểu Cục bộ
 
 <!--
 In particular, convex functions do not have local minima.
@@ -287,8 +285,8 @@ Since $x$ is only a local minimum there has to be another $x' \in X$ for which $
 However, by convexity the function values on the entire *line* $\lambda x + (1-\lambda) x'$ have to be less than $f(x')$ since for $\lambda \in [0, 1)$
 -->
 
-Cụ thể là các hàm lồi không có cực tiểu cục bộ.
-Ta hãy giả định điều ngược lại và chứng minh nó sai nhé. Nếu  $x \in X$ là cực tiểu cục bộ thì sẽ tồn tại một vài lân cận của $x$ mà $f(x)$ là giá trị nhỏ nhất.
+Cụ thể, các hàm lồi không có cực tiểu cục bộ.
+Hãy giả định điều ngược lại là đúng và chứng minh nó sai. Nếu $x \in X$ là cực tiểu cục bộ thì sẽ tồn tại một vùng lân cận nào đó của $x$ mà $f(x)$ là giá trị nhỏ nhất.
 Vì $x$ chỉ là cực tiểu cục bộ nên phải tồn tại một $x' \in X$ nào khác mà $f(x') < f(x)$.
 Tuy nhiên, theo tính lồi, các giá trị hàm số trên toàn bộ *đường thẳng* $\lambda x + (1-\lambda) x'$ phải nhỏ hơn $f(x')$ với $\lambda \in [0, 1)$ 
 
@@ -303,8 +301,8 @@ However, it is not a global minimum.
 -->
 
 Điều này mâu thuẫn với giả định rằng $f(x)$ là cực tiểu cục bộ.
-Ví dụ, hàm $f(x) = (x+1) (x-1)^2$ có cực tiểu cục bộ với $x=1$.
-Tuy nhiên nó không phải là cực tiểu toàn cục.
+Ví dụ, hàm $f(x) = (x+1) (x-1)^2$ có cực tiểu cục bộ tại $x=1$.
+Tuy nhiên nó lại không phải là cực tiểu toàn cục.
 
 
 ```{.python .input}
@@ -326,11 +324,11 @@ For $x \to -\infty$ it asymptotes to $0$, however there is no $x$ for which $f(x
 -->
 
 Tính chất "các hàm lồi không có cực tiểu cục bộ" rất tiện lợi.
-Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
-Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
+Điều này có nghĩa là ta sẽ không bao giờ "mắc kẹt" khi cực tiểu hóa các hàm số.
+Dù vậy, hãy lưu ý rằng điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
-Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị nhỏ nhất trên $\mathbb{R}$.
-Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại $x$ mà tại đó $f(x) = 0$.
+Ngược lại, hàm $f(x) = \exp(x)$ không có giá trị nhỏ nhất trên $\mathbb{R}$.
+Với $x \to -\infty$ nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại giá trị $x$ mà tại đó $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
