@@ -373,7 +373,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Warmup
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuẩn bị
 
 <!--
 In some cases initializing the parameters is not sufficient to guarantee a good solution.
@@ -383,15 +383,18 @@ Unfortunately this means that progress is slow.
 Conversely, a large learning rate initially leads to divergence.
 -->
 
-*dịch đoạn phía trên*
+Trong một số trường hợp, khởi tạo tham số không đảm bảo sẽ có kết quả tốt. Đặc biệt dối với các mạng phức tạp, nó làm việc tối ưu hóa không ổn định. 
+Chúng ta có thể giải quyết việc này bằng cách chọn tốc độ học đủ nhỏ để ngăn phân kỳ vào lúc bắt đầu. Tuy nhiên, tiến trình học sẽ chậm hơn. 
+Ngược lại, tốc độ học lớn lúc đầu cũng gây ra phân kỳ.
 
 <!--
 A rather simple fix for this dilemma is to use a warmup period during which the learning rate *increases* to its initial maximum and to cool down the rate until the end of the optimization process.
 For simplicity one typically uses a linear increase for this purpose.
 This leads to a schedule of the form indicated below.
 -->
-
-*dịch đoạn phía trên*
+Một giải pháp đơn giản cho nan đề trên dùng phép khởi động (warmup) trong suốt thời gian từ khi tốc độ học *tăng* tới giá trị lớn nhất rồi giảm xuống cuối quá trình tối ưu. 
+Để đơn giản, ta có thể dụng hàm tăng tuyến tính cho để làm chuyện này. 
+Hàm này là một bộ điều khiển có dạng như ở dưới.
 
 
 ```{.python .input}
@@ -405,8 +408,7 @@ d2l.plot(np.arange(num_epochs), [scheduler(t) for t in range(num_epochs)])
 Note that the network converges better initially (in particular observe the performance during the first 5 epochs).
 -->
 
-*dịch đoạn phía trên*
-
+Lưu ý rằng vào lúc đầu, mạng hội tụ tốt hơn (trong một số thử nghiệm, khả năng của mạng tăng suốt 5 epoch đầu tiên).
 
 ```{.python .input}
 trainer = gluon.Trainer(net.collect_params(), 'sgd',
@@ -422,7 +424,10 @@ In particular they find that a warmup phase limits the amount of divergence of p
 This makes intuitively sense since we would expect significant divergence due to random initialization in those parts of the network that take the most time to make progress in the beginning.
 -->
 
-*dịch đoạn phía trên*
+Phép khởi động có thể dụng trong bất kỳ bộ điều khiển nào (không chỉ là cosine).
+Để biết chi tiết thảo luận về điều khiển tốc độ học hay nhiều nhiều thí nghiệm hơn, có thể coi thêm ở :cite:`Gotmare.Keskar.Xiong.ea.2018`.
+Đáng chú ý là họ thấy rằng kỳ khởi động làm giảm lượng phân kì của tham số trong các mạng rất sâu. 
+Điều này quả đúng với cảm quan con người bởi vì chúng ta thấy rằng phân kỳ mạnh là do khởi tạo tham số ngẫu nhiền ở những phần mạng học lâu nhất vào lúc đầu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -485,7 +490,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Hoang Van-Tien
 
 <!-- Phần 2 -->
 * 
