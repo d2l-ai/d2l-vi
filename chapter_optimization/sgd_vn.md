@@ -270,7 +270,7 @@ Với bài toán không lồi tổng quát, rất khó để suy được các �
 ## Convergence Analysis for Convex Objectives
 -->
 
-## Phân tích Hội tụ cho các Mục tiêu Lồi
+## Phân tích Hội tụ cho Hàm mục tiêu Lồi
 
 <!--
 The following is optional and primarily serves to convey more intuition about the problem.
@@ -281,17 +281,17 @@ it is possible to minimize them in a small number of steps while decreasing the 
 Unfortunately this case never really occurs in deep learning and we are left with a much more slowly decreasing rate in practice.
 -->
 
-Phần này là phần không bắt buộc và chủ yếu giúp mang lại cái nhìn trực quan hơn về bài toán.
-Chúng ta giới hạn lời giải dưới đây bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
+Đây là phần đọc thêm để mang lại cái nhìn trực quan hơn về bài toán, 
+giới hạn bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
 Cũng có những cách chứng minh nâng cao hơn, ví dụ như khi hàm mục tiêu được định nghĩa tốt.
-:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có cận dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với một số lượng nhỏ bước lặp trong khi giảm tốc độ học, ví dụ như theo $\eta(t) = \eta_0/(\beta t + 1)$.
-Thật không may, trường hợp này không xảy ra trong học sâu và trong thực tế thường giá trị của hàm mục tiêu giảm với tốc độ chậm hơn rất nhiều.
+:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có cận dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với một số lượng nhỏ bước lặp trong khi giảm tốc độ học, theo $\eta(t) = \eta_0/(\beta t + 1)$ chẳng hạn.
+Thật không may, trường hợp này không xảy ra trong học sâu, trên thực tế mức độ giảm tốc độ học chậm hơn rất nhiều.
 
 <!--
 Consider the case where
 -->
 
-Hãy xem xét trường hợp trong đó
+Xét trường hợp
 
 
 $$\mathbf{w}_{t+1} = \mathbf{w}_{t} - \eta_t \partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w}).$$
@@ -302,7 +302,7 @@ In particular, assume that $\mathbf{x}_t$ is drawn from some distribution $P(\ma
 Last denote by
 -->
 
-Cụ thể, ta giả sử rằng $\mathbf{x}_t$ được lấy từ một phân phối $P(\mathbf{x})$ và $l(\mathbf{x}, \mathbf{w})$ là hàm lồi trong $\mathbf{w}$ với mọi $\mathbf{x}$.
+Cụ thể, ta giả sử $\mathbf{x}_t$ được lấy từ phân phối $P(\mathbf{x})$ và $l(\mathbf{x}, \mathbf{w})$ là hàm lồi theo biến $\mathbf{w}$ với mọi $\mathbf{x}$.
 Cuối cùng, ta ký hiệu
 
 
@@ -319,9 +319,9 @@ Last let $\mathbf{w}^*$ be the minimizer (we assume that it exists within the do
 In this case we can track the distance between the current parameter $\mathbf{w}_t$ and the risk minimizer $\mathbf{w}^*$ and see whether it improves over time:
 -->
 
-là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát với tham số $\mathbf{w}$.
-Ta ký hiệu $\mathbf{w}^*$ là nghiệm của tham số tại điểm cực tiểu (_minimizer_) với giả định tồn tại nghiệm cực tiểu trong miền $\mathbf{w}$ xác định.
-Trong trường hợp này, chúng ta lưu khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
+là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát theo $\mathbf{w}$.
+Ta ký hiệu $\mathbf{w}^*$ là nghiệm tại cực tiểu (_minimizer_) với giả định giá trị này tồn tại trong miền xác định.
+Trong trường hợp này, chúng ta lần theo khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
 
 
 $$\begin{aligned}
@@ -332,13 +332,11 @@ $$\begin{aligned}
 $$
 
 
-
 <!--
 The gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ can be bounded from above by some Lipschitz constant $L$, hence we have that
 -->
 
-Gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ có biên trên là một hằng số Lipschitz $L$, do đó ta có 
-
+Gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ có cận trên là một hằng số Lipschitz $L$, do đó ta có 
 
 
 $$\eta_t^2 \|\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})\|^2 \leq \eta_t^2 L^2.$$
@@ -351,9 +349,8 @@ Hence we need to bound the inner product. By convexity we have that
 -->
 
 Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào trong *miền kỳ vọng*.
-
-Trong thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều đặn phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
-Do đó, chúng ta cần xác định biên cho tích nhân trong. Từ tính chất lồi, ta có
+Thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều, phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
+Do đó cần xác định biên cho tích vô hướng. Từ tính chất lồi, ta có
 
 $$
 l(\mathbf{x}_t, \mathbf{w}^*) \geq l(\mathbf{x}_t, \mathbf{w}_t) + \left\langle \mathbf{w}^* - \mathbf{w}_t, \partial_{\mathbf{w}} l(\mathbf{x}_t, \mathbf{w}_t) \right\rangle.
@@ -364,7 +361,7 @@ $$
 Using both inequalities and plugging it into the above we obtain a bound on the distance between parameters at time $t+1$ as follows:
 -->
 
-Kết hợp hai bất đẳng thức trên, chúng ta tìm được biên cho khoảng cách giữa các tham số tại bước $t+1$ như sau:
+Kết hợp hai bất đẳng thức trên, ta tìm được biên cho khoảng cách giữa các tham số tại bước $t+1$ như sau:
 
 
 $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \geq 2 \eta_t (l(\mathbf{x}_t, \mathbf{w}_t) - l(\mathbf{x}_t, \mathbf{w}^*)) - \eta_t^2 L^2.$$
@@ -374,15 +371,15 @@ $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \g
 This means that we make progress as long as the expected difference between current loss and the optimal loss outweighs $\eta_t L^2$.
 Since the former is bound to converge to $0$ it follows that the learning rate $\eta_t$ also needs to vanish.
 -->
-Điều này có nghĩa quá trình học vẫn đang cải thiện khi hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu lớn hơn $\eta_t L^2$.
-Để hàm mất mát hiện tại đảm bảo hội tụ về $0$, tốc độ học $\eta_t$ cũng cần phải giảm dần.
+
+Điều này có nghĩa quá trình học vẫn sẽ cải thiện khi hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu vẫn lớn hơn $\eta_t L^2$.
+Để đảm bảo hàm mất mát hội tụ về $0$, tốc độ học $\eta_t$ cũng cần phải giảm dần.
 
 <!--
 Next we take expectations over this expression. This yields
 -->
 
-Tiếp theo chúng ta hãy tính giá trị kỳ vọng cho biểu thức trên như sau
-
+Tiếp theo chúng ta tính giá trị kỳ vọng cho biểu thức trên
 
 
 $$E_{\mathbf{w}_t}\left[\|\mathbf{w}_{t} - \mathbf{w}^*\|^2\right] - E_{\mathbf{w}_{t+1}\mid \mathbf{w}_t}\left[\|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2\right] \geq 2 \eta_t [E[R[\mathbf{w}_t]] - R^*] -  \eta_t^2 L^2.$$
@@ -394,7 +391,7 @@ Since the sum telescopes and by dropping the lower term we obtain
 -->
 
 Ở bước cuối cùng, ta tính tổng các bất đẳng thức trên cho mọi $t \in \{t, \ldots, T\}$. 
-Do tổng thu được sẽ khuếch đại kết quả và bỏ qua các hạng tử thấp hơn ta có
+Rút gọn tổng và bỏ qua các hạng tử thấp hơn, ta có
 
 
 $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}_t]] - R^*] - L^2 \sum_{t=1}^T \eta_t^2.$$
@@ -404,12 +401,9 @@ $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}
 Note that we exploited that $\mathbf{w}_0$ is given and thus the expectation can be dropped. Last define
 -->
 
-Lưu ý rằng chúng ta khai thác từ $\mathbf{w}_0$ cho trước và bỏ qua giá trị kỳ vọng. Cuối cùng, ta định nghĩa
-
-
+Lưu ý rằng ta tận dụng $\mathbf{w}_0$ cho trước và do đó có thể bỏ qua giá trị kỳ vọng. Cuối cùng, ta định nghĩa
 
 $$\bar{\mathbf{w}} := \frac{\sum_{t=1}^T \eta_t \mathbf{w}_t}{\sum_{t=1}^T \eta_t}.$$
-
 
 <!--
 Then by convexity it follows that
@@ -425,7 +419,7 @@ $$\sum_t \eta_t E[R[\mathbf{w}_t]] \geq \sum \eta_t \cdot \left[E[\bar{\mathbf{w
 Plugging this into the above inequality yields the bound
 -->
 
-Thay bất đẳng thức vào bất đẳng thức ở trên, ta tìm được biên
+Thay vào bất đẳng thức ở trên, ta tìm được cận
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -446,9 +440,8 @@ Now let us analyze some choices for $\eta_t$.
 -->
 
 Trong đó $r^2 := \|\mathbf{w}_0 - \mathbf{w}^*\|^2$ là khoảng cách giới hạn giữa giá trị khởi tạo của các tham số và kết quả cuối cùng.
-Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách giữa giá trị ban đầu so với giá trị tối ưu $r$.
-Chú ý rằng giới hạn ở trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$.
-Kí hiệu này là do $\bar{\mathbf{w}}$ chính là quỹ đạo tối ưu được làm mượt.
+Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách $r$ giữa giá trị ban đầu so với giá trị tối ưu.
+Chú ý rằng giới hạn ở trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$ do $\bar{\mathbf{w}}$ là quỹ đạo tối ưu được làm mượt.
 Hãy cùng phân tích một số cách lựa chọn $\eta_t$.
 
 <!--
@@ -466,7 +459,7 @@ Với mỗi $r, L$ và $T$ xác định ta có thể chọn $\eta = r/L \sqrt{T}
 Biểu thức này dẫn tới giới hạn trên $r L (1 + 1/T)/2\sqrt{T} < rL/\sqrt{T}$.
 Có nghĩa là hàm hội tụ với tốc độ $\mathcal{O}(1/\sqrt{T})$ đến nghiệm tối ưu.
 * **Thời điểm chưa xác định**.
-Khi ta muốn một nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
+Khi muốn nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
 Cách làm trên tốn thêm một thừa số logarit, dẫn tới giới hạn trên có dạng $\mathcal{O}(\log T / \sqrt{T})$.
 
 <!--
