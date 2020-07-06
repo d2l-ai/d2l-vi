@@ -245,7 +245,7 @@ $$L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} 
 When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
 -->
 
-Khi huấn luyện mô hình, ta muốn tìm các tham số ($\mathbf{w}^*, b^*$) sao cho tổng độ mất mát trên toàn bộ các mẫu huấn luyện được tối thiểu hóa:
+Khi huấn luyện mô hình, ta muốn tìm các tham số ($\mathbf{w}^*, b^*$) sao cho tổng độ mất mát trên toàn bộ các mẫu huấn luyện được cực tiểu hóa:
 
 $$\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).$$
 
@@ -274,7 +274,7 @@ Because this expression has a quadratic form, it is convex, and so long as the p
 Hóa ra hồi quy tuyến tính chỉ là một bài toán tối ưu hóa đơn giản.
 Khác với hầu hết các mô hình được giới thiệu trong cuốn sách này, hồi quy tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản, cho một nghiệm tối ưu toàn cục.
 Để bắt đầu, chúng ta có thể gộp hệ số điều chỉnh $b$ vào tham số $\mathbf{w}$ bằng cách thêm một cột toàn $1$ vào ma trận dữ liệu. 
-Khi đó bài toán dự đoán trở thành bài toán tối thiểu hóa $||\mathbf{y} - X\mathbf{w}||$. 
+Khi đó bài toán dự đoán trở thành bài toán cực tiểu hóa $||\mathbf{y} - X\mathbf{w}||$. 
 Bởi vì biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một hàm số lồi chặt. 
 
 <!--
@@ -418,7 +418,7 @@ although the algorithm converges slowly towards a local minimum it cannot achiev
 -->
 
 Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một tiêu chí dừng khác), ta sẽ ghi lại các tham số mô hình đã được ước lượng, ký hiệu là $\hat{\mathbf{w}}, \hat{b}$ (ký hiệu "mũ" thường thể hiện các giá trị ước lượng).
-Lưu ý rằng ngay cả khi hàm số thực sự tuyến tính và không có nhiễu, các tham số này sẽ không tối thiểu hóa được hàm mất mát.
+Lưu ý rằng ngay cả khi hàm số thực sự tuyến tính và không có nhiễu, các tham số này sẽ không cực tiểu hóa được hàm mất mát.
 Mặc dù thuật toán dần dần hội tụ đến một điểm cực tiểu, nó vẫn không thể tới chính xác được cực tiểu đó với số bước hữu hạn.
 
 <!--
@@ -431,7 +431,7 @@ We return to these topics throughout the book.
 
 Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó chỉ có một cực tiểu (toàn cục).
 Tuy nhiên, đối với các mô hình phức tạp hơn, như mạng sâu, mặt của hàm mất mát sẽ có nhiều cực tiểu.
-May mắn thay, vì một lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm ra các tham số tối thiểu hóa hàm mất mát *trên dữ liệu huấn luyện*.
+May mắn thay, vì một lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm ra các tham số cực tiểu hóa hàm mất mát *trên dữ liệu huấn luyện*.
 Nhiệm vụ khó khăn hơn là tìm ra các tham số dẫn đến giá trị mất mát thấp trên dữ liệu mà mô hình chưa từng thấy trước đây, một thử thách được gọi là *sự khái quát hóa*.
 Chúng ta sẽ gặp lại chủ đề này xuyên suốt cuốn sách.
 
@@ -683,7 +683,7 @@ $$p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma
 Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
 -->
 
-Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những giá trị giúp tối đa hóa *sự hợp lý* của toàn bộ tập dữ liệu:
+Dựa vào *nguyên lý hợp lý cực đại*, giá trị tốt nhất của $b$ và $\mathbf{w}$ là những giá trị giúp cực đại hóa *sự hợp lý* của toàn bộ tập dữ liệu:
 
 $$P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).$$
 
@@ -696,9 +696,9 @@ Working out the math gives us:
 -->
 
 Bộ ước lượng được chọn theo *nguyên lý hợp lý cực đại* được gọi là *bộ ước lượng hợp lý cực đại* (*Maximum Likelihood Estimators* -- MLE). 
-Dù việc tối đa hóa tích của nhiều hàm mũ trông có vẻ khó khăn, chúng ta có thể khiến mọi thứ đơn giản hơn nhiều mà không làm thay đổi mục tiêu ban đầu bằng cách tối đa hóa log của hàm hợp lý.
-Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán tối thiểu hóa thay vì tối đa hóa. 
-Do đó chúng ta có thể tối thiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì thêm. 
+Dù việc cực đại hóa tích của nhiều hàm mũ trông có vẻ khó khăn, chúng ta có thể khiến mọi thứ đơn giản hơn nhiều mà không làm thay đổi mục tiêu ban đầu bằng cách cực đại hóa log của hàm hợp lý.
+Vì lý do lịch sử, các bài toán tối ưu thường được biểu diễn dưới dạng bài toán cực tiểu hóa thay vì cực đại hóa. 
+Do đó chúng ta có thể cực tiểu hóa *hàm đối log hợp lý* (*Negative Log-Likelihood - NLL*) $-\log p(\mathbf y|\mathbf X)$ mà không cần thay đổi gì thêm. 
 Kết nối các công thức trên, ta có: 
 
 $$-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.$$
@@ -719,7 +719,7 @@ Giờ ta chỉ cần thêm một giả định nữa: $\sigma$ là một hằng 
 Do đó, ta có thể bỏ qua số hạng đầu tiên bởi nó không phụ thuộc vào $\mathbf{w}$ hoặc $b$.
 Còn số hạng thứ hai thì giống hệt hàm bình phương sai số đã được giới thiệu ở trên, nhưng được nhân thêm với hằng số $\frac{1}{\sigma^2}$.
 May mắn thay, nghiệm không phụ thuộc vào $\sigma$.
-Điều này dẫn tới việc tối thiểu hóa bình phương sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình tuyến tính dưới giả định có nhiễu cộng Gauss.
+Điều này dẫn tới việc cực tiểu hóa bình phương sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình tuyến tính dưới giả định có nhiễu cộng Gauss.
 
 <!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
 
@@ -867,7 +867,7 @@ Tương tự, cảm hứng trong học sâu hiện nay chủ yếu đến từ n
 
 * Nguyên liệu của một mô hình học máy bao gồm dữ liệu huấn luyện, một hàm mất mát, một thuật toán tối ưu, và tất nhiên là cả chính mô hình đó.
 * Vector hóa giúp mọi thứ trở nên dễ hiểu hơn (về mặt toán học) và nhanh hơn (về mặt lập trình).
-* Tối thiểu hóa hàm mục tiêu và thực hiện tối đa hóa hàm hợp lý có ý nghĩa giống nhau.
+* Cực tiểu hóa hàm mục tiêu và thực hiện phương pháp hợp lý cực đại có ý nghĩa giống nhau.
 * Các mô hình tuyến tính cũng là các mạng nơ-ron.
 
 <!-- ===================== Kết thúc dịch Phần 17 ===================== -->
@@ -897,7 +897,7 @@ To keep things simple, you can omit the bias $b$ from the problem (we can do thi
     What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
 -->
 
-1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của ta là đi tìm một hằng số $b$ để tối thiểu hóa $\sum_i (x_i - b)^2$.
+1. Giả sử ta có dữ liệu $x_1, \ldots, x_n \in \mathbb{R}$. Mục tiêu của ta là đi tìm một hằng số $b$ để cực tiểu hóa $\sum_i (x_i - b)^2$.
     * Tìm một công thức nghiệm cho giá trị tối ưu của $b$.
     * Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối chuẩn?
 2. Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính với bình phương sai số.

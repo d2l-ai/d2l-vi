@@ -329,7 +329,7 @@ Tính chất "các hàm lồi không có cực tiểu cục bộ" rất tiện l
 Nó có nghĩa rằng nếu chúng ta tối tiểu hóa các hàm số, chúng ta sẽ không thể bị "mắc kẹt".
 Dù vậy, hãy lưu ý rằng, điều này không có nghĩa là hàm số không thể có nhiều hơn một cực tiểu toàn cục, hoặc liệu hàm số có tồn tại cực tiểu toàn cục hay không.
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
-Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị tối thiểu trên $\mathbb{R}$.
+Ngược lại, hàm $f(x) = \exp(x)$ không chứa giá trị nhỏ nhất trên $\mathbb{R}$.
 Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại $x$ mà tại đó $f(x) = 0$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -344,14 +344,14 @@ Với $x \to -\infty$, nó sẽ tiệm cận tới $0$, tuy nhiên không tồn 
 ### Convex Functions and Sets
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm số và Tập hợp Lồi
 
 <!--
 Convex functions define convex sets as *below-sets*.
 They are defined as
 -->
 
-*dịch đoạn phía trên*
+Các hàm số lồi định nghĩa các tập hợp lồi là các *tập-dưới* (*below-sets*) như sau:
 
 
 $$S_b := \{x | x \in X \text{ and } f(x) \leq b\}.$$
@@ -364,7 +364,10 @@ Remember that for any $x, x' \in S_b$ we need to show that $\lambda x + (1-\lamb
 But this follows directly from the definition of convexity since $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$.
 -->
 
-*dịch đoạn phía trên*
+<!-- mình không dịch câu này vì nó lặp đi lặp lại-->
+Ta hãy chứng minh nó một cách vắn tắt.
+Hãy nhớ rằng với mọi $x, x' \in S_b$, ta cần phải chứng minh rằng $\lambda x + (1-\lambda) x' \in S_b$ với mọi $\lambda \in [0, 1]$.
+Nhưng điều này lại trực tiếp tuân theo định nghĩa về tính lồi vì $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$.
 
 <!--
 Have a look at the function $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ below.
@@ -373,8 +376,10 @@ The level sets are correspondingly nonconvex.
 In fact, they are typically composed of disjoint sets.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới.
+Nó rõ ràng là không lồi.
+Các tập mức tương ứng cũng không lồi.
+Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc.
 
 ```{.python .input}
 x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
@@ -399,7 +404,7 @@ for func in [d2l.plt.xticks, d2l.plt.yticks, ax.set_zticks]:
 ### Derivatives and Convexity
 -->
 
-### *dịch tiêu đề phía trên*
+### Đạo hàm và tính lồi
 
 <!--
 Whenever the second derivative of a function exists it is very easy to check for convexity.
@@ -407,7 +412,9 @@ All we need to do is check whether $\partial_x^2 f(x) \succeq 0$, i.e., whether 
 For instance, the function $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ is convex since $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, i.e., its derivative is the identity matrix.
 -->
 
-*dịch đoạn phía trên*
+Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản.
+Tất cả những gì chúng ta cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không.
+Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị.
 
 <!--
 The first thing to realize is that we only need to prove this property for one-dimensional functions.
@@ -417,13 +424,17 @@ In particular, $g'' \geq 0$ for all $\mathbf{v}$ whenever the Hessian of $f$ is 
 Hence back to the scalar case.
 -->
 
-*dịch đoạn phía trên*
+Điều đầu tiên để nhận ra là chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều.
+Xét cho cùng, chúng ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$.
+Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$.
+Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không.
+Do đó quay về lại trường hợp vô hướng.
 
 <!--
 To see that $f''(x) \geq 0$ for convex functions we use the fact that
 -->
 
-*dịch đoạn phía trên*
+Để thấy tại sao $f''(x) \geq 0$ đối với các hàm lồi, ta dùng lập luận
 
 
 $$\frac{1}{2} f(x + \epsilon) + \frac{1}{2} f(x - \epsilon) \geq f\left(\frac{x + \epsilon}{2} + \frac{x - \epsilon}{2}\right) = f(x).$$
@@ -433,7 +444,7 @@ $$\frac{1}{2} f(x + \epsilon) + \frac{1}{2} f(x - \epsilon) \geq f\left(\frac{x 
 Since the second derivative is given by the limit over finite differences it follows that
 -->
 
-*dịch đoạn phía trên*
+Vì đạo hàm bậc hai được đưa ra bởi giới hạn trên sai phân hữu hạn, nó dẫn tới
 
 
 $$f''(x) = \lim_{\epsilon \to 0} \frac{f(x+\epsilon) + f(x - \epsilon) - 2f(x)}{\epsilon^2} \geq 0.$$
@@ -445,21 +456,22 @@ Let $a < x < b$ be three points in $\mathbb{R}$.
 We use the mean value theorem to express
 -->
 
-*dịch đoạn phía trên*
+Để chứng minh điều ngược lại cũng đúng, chúng ta dùng lập luận rằng $f'' \geq 0$ ngụ ý rằng $f'$ là một hàm tăng đơn điệu.
+Cho $a < x < b$ là ba điểm thuộc $\mathbb{R}$.
+Chúng ta sử dụng định lý giá trị trung bình để biểu diễn
 
 
 $$\begin{aligned}
-f(x) - f(a) & = (x-a) f'(\alpha) \text{ for some } \alpha \in [a, x] \text{ and } \\ 
-f(b) - f(x) & = (b-x) f'(\beta) \text{ for some } \beta \in [x, b].
+f(x) - f(a) & = (x-a) f'(\alpha) \text{ với } \alpha \in [a, x] \text{ và } \\  
+f(b) - f(x) & = (b-x) f'(\beta) \text{ với } \beta \in [x, b]. 
 \end{aligned}$$ 
-<!-- dịch for some-->
 
 
 <!--
 By monotonicity $f'(\beta) \geq f'(\alpha)$, hence
 -->
 
-*dịch đoạn phía trên*
+Từ tính chất đơn điệu $f'(\beta) \geq f'(\alpha)$, ta có
 
 
 $$\begin{aligned}
@@ -475,7 +487,8 @@ By geometry it follows that $f(x)$ is below the line connecting $f(a)$ and $f(b)
 We omit a more formal derivation in favor of a graph below.
 -->
 
-*dịch đoạn phía trên*
+Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi.
+Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới.
 
 
 ```{.python .input}
@@ -517,7 +530,7 @@ $$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
 -->
 <!-- dịch for all, subject to và minimize -->
 
-$$\begin{aligned} \mathop{\mathrm{tối thiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+$$\begin{aligned} \mathop{\mathrm{cực tiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{ theo } & c_i(\mathbf{x}) \leq 0 \text{ với mọi } i \in \{1, \ldots, N\}.
 \end{aligned}$$
 
@@ -582,7 +595,7 @@ For our purposes it is sufficient to know that the saddlepoint of $L$ is where t
 Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
 Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
 Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
-Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *tối đa hóa* $L$ theo $\alpha$ và đồng thời *tối thiểu hóa* nó theo $\mathbf{x}$.
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$.
 Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
 Đối với mục đích của chúng ta, chúng ta chỉ cần biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
 
@@ -796,7 +809,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Võ Tấn Phát
 
 <!-- Phần 3 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 4 -->
 * Võ Tấn Phát

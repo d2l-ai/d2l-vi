@@ -5,9 +5,7 @@
 # Deep Recurrent Neural Networks
 -->
 
-# Mạng Nơ-ron Truy Hồi Sâu
-
-
+# Mạng Nơ-ron Hồi tiếp Sâu
 :label:`sec_deep_rnn`
 
 <!--
@@ -20,13 +18,13 @@ Within RNNs this is a bit trickier, since we first need to decide how and where 
 Our discussion below focuses primarily on LSTMs, but it applies to other sequence models, too.
 -->
 
-Cho đến nay, chúng ta mới chỉ thảo luận về các mạng nơ-ron truy hồi với duy nhất một tầng ẩn đơn hướng.
-Trong đó, hình thái cụ thể về cách các biến ẩn và các quan sát tương tác với nhau khá tuỳ ý.
-Đây không phải là một vấn đề lớn miễn là ta vẫn có đủ độ linh hoạt để mô hình hóa các loại tương tác khác nhau.
-Tuy nhiên, đây là một thách thức với các mạng đơn tầng.
+Cho đến nay, chúng ta mới chỉ thảo luận về các mạng nơ-ron hồi tiếp với duy nhất một tầng ẩn đơn hướng. 
+Trong đó, cách các biến tiềm ẩn và các quan sát tương tác với nhau còn khá khá tuỳ ý. 
+Đây không phải là một vấn đề lớn miễn là ta vẫn có đủ độ linh hoạt để mô hình hóa các loại tương tác khác nhau. 
+Tuy nhiên, đây lại là một thách thức với các mạng đơn tầng.
 Trong trường hợp của perceptron, chúng ta giải quyết vấn đề này bằng cách đưa thêm nhiều tầng vào mạng.
-Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm các hàm phi tuyến vào mạng ở đâu và như thế nào.
-Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác.
+Cách này hơi phức tạp một chút với trường hợp của mạng RNN, vì đầu tiên chúng ta cần phải quyết định thêm tính phi tuyến vào mạng ở đâu và như thế nào. 
+Thảo luận dưới đây tập trung chủ yếu vào LSTM, nhưng cũng có thể áp dụng cho các mô hình chuỗi khác. 
 
 <!--
 * We could add extra nonlinearity to the gating mechanisms. 
@@ -40,14 +38,14 @@ In particular, data might be relevant at different levels of the stack.
 For instance, we might want to keep high-level data about financial market conditions (bear or bull market) available, whereas at a lower level we only record shorter-term temporal dynamics.
 -->
 
-* Chúng ta có thể bổ sung thêm các hàm phi tuyến vào các cơ chế cổng.
+* Chúng ta có thể bổ sung thêm tính phi tuyến vào các cơ chế cổng.
 Nghĩa là, thay vì sử dụng một tầng perceptron duy nhất, chúng ta có thể sử dụng nhiều tầng perceptron.
-Cách này không làm thay đổi *cơ chế* của mạng LSTM mà chỉ làm nó phức tạp hơn.
-Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái tổng quát nào đó về cách các mô hình tự hồi quy biến ẩn hoạt động.
+Cách này không làm thay đổi *cơ chế* của mạng LSTM, ngược lại, còn làm cho nó tinh xảo hơn.
+Điều này chỉ có lợi nếu chúng ta tin rằng cơ chế LSTM biểu diễn một hình thái phổ quát nào đó về cách hoạt động của các mô hình tự hồi quy biến tiềm ẩn. 
 * Chúng ta có thể chồng nhiều tầng LSTM lên nhau.
-Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp từ nhiều tầng.
-Cụ thể là các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
-Ví dụ, chúng ta có thể muốn lưu dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) ở tầng cao hơn, trong khi đó chúng ta chỉ muốn ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn.
+Cách này tạo ra một cơ chế linh hoạt hơn nhờ vào sự kết hợp giữa các tầng đơn giản.
+Đặc biệt là, các đặc tính liên quan của dữ liệu có thể được biểu diễn ở các tầng khác nhau.
+Ví dụ, chúng ta có thể muốn lưu dữ liệu về tình hình thị trường tài chính (thị trường giá lên hay giá xuống) ở tầng cao hơn, trong khi đó chỉ ghi lại động lực thời hạn ngắn hơn ở một tầng thấp hơn. 
 
 <!--
 Beyond all this abstract discussion it is probably easiest to understand the family of models we are interested in by reviewing :numref:`fig_deep_rnn`.
@@ -55,15 +53,15 @@ It describes a deep recurrent neural network with $L$ hidden layers.
 Each hidden state is continuously passed to both the next timestep of the current layer and the current timestep of the next layer.
 -->
 
-Ngoài cuộc thảo luận khá trừu tượng trên, để hiểu được lớp các mô hình chúng ta đang quan tâm một cách dễ dàng nhất, thì chúng ta nên xem lại :numref:`fig_deep_rnn`.
-Hình trên mô tả một mạng nơ-ron truy hồi sâu với $L$ tầng ẩn.
-Mỗi trạng thái ẩn liên tục được truyền tới bước thời gian kế tiếp ở tầng hiện tại và tới bước thời gian hiện tại ở tầng kế tiếp.
+Ngoài những thứ khá trừu tượng trên, để hiểu được các nhóm mô hình chúng ta đang thảo luận một cách dễ dàng nhất, chúng ta nên xem lại :numref:`fig_deep_rnn`. 
+Hình trên mô tả một mạng nơ-ron hồi tiếp sâu với $L$ tầng ẩn. 
+Mỗi trạng thái ẩn liên tục được truyền tới bước thời gian kế tiếp ở tầng hiện tại và tới bước thời gian hiện tại ở tầng kế tiếp. 
 
 <!--
 ![ Architecture of a deep recurrent neural network. ](../img/deep-rnn.svg)
 -->
 
-![Kiến trúc của một mạng nơ-ron truy hồi sâu.](../img/deep-rnn.svg)
+![Kiến trúc của một mạng nơ-ron hồi tiếp sâu.](../img/deep-rnn.svg)
 :label:`fig_deep_rnn`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -85,11 +83,11 @@ We compute the hidden state of layer $1$ as before, using $\mathbf{X}_t$ as inpu
 For all subsequent layers, the hidden state of the previous layer is used in its place.
 -->
 
-Tại bước thời gian $t$, giả sử rằng chúng ta có một minibatch $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$ ).
-Trạng thái ẩn của tầng ẩn $\ell$ ($\ell=1,\ldots, T$) là $\mathbf{H}_t^{(\ell)}  \in \mathbb{R}^{n \times h}$ (số đơn vị ẩn: $h$),
-biến tầng ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ .
-Chúng ta tính toán trạng thái ẩn của tầng đầu tiên như trước đây, sử dụng đầu vào là $\mathbf{X}_t$.
-Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng thay cho $\mathbf{X}_t$.
+Tại bước thời gian $t$, giả sử rằng chúng ta có một minibatch $\mathbf{X}_t \in \mathbb{R}^{n \times d}$ (số lượng mẫu: $n$, số lượng đầu vào: $d$).
+Trạng thái ẩn của tầng ẩn $\ell$ ($\ell=1,\ldots, T$) là $\mathbf{H}_t^{(\ell)}  \in \mathbb{R}^{n \times h}$ (số đơn vị ẩn: $h$), 
+biến tầng đầu ra là $\mathbf{O}_t \in \mathbb{R}^{n \times q}$ (số lượng đầu ra: $q$) và một hàm kích hoạt tầng ẩn $f_l$ cho tầng $l$ . 
+Chúng ta tính toán trạng thái ẩn của tầng đầu tiên như trước đây, sử dụng đầu vào là $\mathbf{X}_t$. 
+Đối với tất cả các tầng tiếp theo, trạng thái ẩn của tầng trước được sử dụng thay cho $\mathbf{X}_t$. 
 
 $$\begin{aligned}
 \mathbf{H}_t^{(1)} & = f_1\left(\mathbf{X}_t, \mathbf{H}_{t-1}^{(1)}\right), \\
@@ -102,8 +100,8 @@ Finally, the output layer is only based on the hidden state of hidden layer $L$.
 We use the output function $g$ to address this:
 -->
 
-Cuối cùng, tầng đầu ra chỉ dựa trên trạng thái ẩn của tầng ẩn $L$.
-Chúng ta sử dụng một hàm đầu ra $g$ để xử lý trạng thái này:
+Cuối cùng, tầng đầu ra chỉ dựa trên trạng thái ẩn của tầng ẩn $L$. 
+Chúng ta sử dụng một hàm đầu ra $g$ để xử lý trạng thái này: 
 
 $$\mathbf{O}_t = g \left(\mathbf{H}_t^{(L)}\right).$$
 
@@ -114,7 +112,7 @@ In particular, we can pick a regular RNN, a GRU, or an LSTM to implement the mod
 -->
 
 Giống như perceptron đa tầng, số tầng ẩn $L$ và số đơn vị ẩn $h$ được coi là các siêu tham số.
-Đặc biệt, chúng ta có thể chọn một kiến trúc RNN cơ bản, GRU, hoặc LSTM để lập trình mô hình.
+Đặc biệt, chúng ta có thể chọn một trong các kiến trúc RNN, GRU, hoặc LSTM thông thường để xây dựng mô hình.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -135,11 +133,11 @@ In fact, the only difference is that we specify the number of layers explicitly 
 Let us begin by importing the appropriate modules and loading data.
 -->
 
-May mắn thay nhiều chi tiết hỗ trợ cần thiết để lập trình một kiến trúc RNN đa tầng đã có sẵn trong Gluon.
-Để đơn giản, chúng ta chỉ minh họa việc lập trình bằng cách sử dụng những mã nguồn tích hợp sẵn.
-Mã nguồn dưới đây rất giống những gì chúng ta sử dụng trước đây cho mạng LSTM.
-Trong thực tế, sự khác biệt duy nhất là chúng ta xác định số lượng các tầng một cách rõ ràng thay vì chọn mặc định là một tầng duy nhất.
-Chúng ta hãy bắt đầu bằng cách nhập các mô-đun thích hợp và đọc dữ liệu.
+May mắn thay nhiều chi tiết hỗ trợ cần thiết để lập trình một kiến trúc RNN đa tầng đã có sẵn trong Gluon. 
+Để đơn giản, chúng ta chỉ minh họa việc lập trình bằng cách sử dụng những chức năng được tích hợp sẵn. 
+Mã nguồn dưới đây rất giống đoạn mã mà ta sử dụng cho mạng LSTM trước đây. 
+Trong thực tế, sự khác biệt duy nhất là chúng ta chỉ định số lượng các tầng một cách tường minh thay vì chọn mặc định là một tầng duy nhất. 
+Hãy bắt đầu bằng cách nhập các mô-đun thích hợp và nạp dữ liệu. 
 
 
 ```{.python .input  n=17}
@@ -160,10 +158,10 @@ The number of hidden units is still 256.
 The only difference is that we now select a nontrivial number of layers `num_layers = 2`.
 -->
 
-Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước.
-Chúng ta sử dụng cùng số lượng đầu vào và đầu ra với số lượng token không trùng lặp là `vocab_size`.
-Số lượng nút ẩn vẫn là 256.
-Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`.
+Các quyết định liên quan tới kiến ​​trúc mạng (ví dụ như lựa chọn các tham số) rất giống với những phần trước. 
+Chúng ta sử dụng cùng số lượng đầu vào và đầu ra bởi ta có các token không trùng lặp nhau, ở đây là `vocab_size`.
+Số lượng nút ẩn vẫn là 256. 
+Sự khác biệt duy nhất là bây giờ chúng ta sẽ chọn một giá trị lớn hơn 1 cho số tầng `num_layers = 2`. 
 
 
 ```{.python .input  n=22}
@@ -189,9 +187,9 @@ The only difference is that we now instantiate two layers with LSTMs.
 This rather more complex architecture and the large number of epochs slow down training considerably.
 -->
 
-Quá trình huấn luyện tương tự như trước đây.
-Sự khác biệt duy nhất là bây giờ chúng ta khởi tạo mô hình với hai tầng LSTM.
-Kiến trúc mô hình sẽ phức tạp hơn và quá trình huấn luyện sẽ chậm hơn đáng kể với nhiều epoch.
+Quá trình huấn luyện tương tự như trước đây. 
+Sự khác biệt duy nhất là bây giờ chúng ta khởi tạo mô hình với hai tầng LSTM. 
+Quá trình huấn luyện sẽ chậm hơn đáng kể do kiến trúc mô hình phức tạp hơn và số lượng epoch lớn.
 
 
 ```{.python .input  n=8}
@@ -210,9 +208,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 * There exist many different flavors of deep RNNs, such as LSTMs, GRUs, or regular RNNs. Conveniently these models are all available as parts of the `rnn` module in Gluon.
 * Initialization of the models requires care. Overall, deep RNNs require considerable amount of work (such as learning rate and clipping) to ensure proper convergence.
 -->
-* Trong các mạng nơ-ron truy hồi sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở cùng tầng và truyền tới bước thời gian hiện tại ở tầng kế tiếp.
-* Có nhiều lựa chọn khác nhau cho mạng RNN sâu, ví dụ LSTM, GRU hoặc là RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon.
-* Chúng ta cần chú ý tới việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học sẽ hội tụ.
+
+
+* Trong các mạng nơ-ron hồi tiếp sâu, thông tin trạng thái ẩn được truyền tới bước thời gian kế tiếp ở tầng hiện tại và truyền tới bước thời gian hiện tại ở tầng kế tiếp. 
+* Có nhiều phiên bản khác nhau của mạng RNN sâu, ví dụ như LSTM, GRU hoặc RNN thông thường. Những mô hình này được lập trình sẵn trong mô-đun `rnn` của Gluon. 
+* Chúng ta cần phải cẩn thận trong việc khởi tạo mô hình. Nhìn chung, các mạng RNN sâu thường đòi hỏi khá nhiều công sức (ví dụ như việc chọn tốc độ học hay việc gọt gradient) để đảm bảo quá trình học hội tụ một cách hợp lý.
 
 
 <!--
@@ -228,10 +228,10 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 4. Would you want to combine sources of different authors when modeling text? Why is this a good idea? What could go wrong?
 -->
 
-1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng chúng ta đã thảo luận ở :numref:`sec_rnn_scratch`.
-2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình.
-3. Tăng dữ liệu huấn luyện lên gồm nhiều cuốn sách. Hãy xem bạn có thể giảm độ hỗn loạn tới mức nào?
-4. Hãy thử kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản. Tại sao cách này lại là một ý tưởng hay? Hay cách này có vấn đề gì?
+1. Hãy lập trình một mạng RNN hai tầng từ đầu sử dụng mã nguồn cho mạng một tầng mà ta đã thảo luận ở :numref:`sec_rnn_scratch`. 
+2. Hãy thay thế khối LSTM bằng khối GRU và so sánh độ chính xác của mô hình. 
+3. Tăng dữ liệu huấn luyện bằng việc thêm nhiều cuốn sách. Bạn có thể giảm perplexity tới mức nào? 
+4. Có nên kết hợp nhiều nguồn sách từ các tác giả khác nhau khi mô hình hoá dữ liệu văn bản hay không?. Tại sao việc này lại là một ý tưởng hay? Vấn đề gì có thể xảy ra ở đây? 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -244,24 +244,11 @@ d2l.train_ch8(model, train_iter, vocab, lr, num_epochs, ctx)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
+* Phạm Minh Đức

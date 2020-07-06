@@ -134,20 +134,29 @@ On the other hand, if we pick it too large, we will not get a good solution, as 
 The only way to resolve these conflicting goals is to reduce the learning rate *dynamically* as optimization progresses.
 -->
 
-*dịch đoạn phía trên*
+Như có thể thấy, quỹ đạo của các biến trong SGD dao động mạnh hơn so với trong hạ gradient ở phần trước.
+Điều này là do bản chất ngẫu nhiên của gradient.
+Tức là, ngay cả khi tới gần giá trị nhỏ nhất, ta vẫn gặp phải sự bất định gây ra bởi gradient tức thời thông qua $\eta \nabla f_i(\mathbf{x})$.
+Thậm chí sau 50 bước thì chất lượng vẫn không tốt lắm.
+Tệ hơn, nó vẫn sẽ không cải thiện nếu ta thực hiện thêm nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
+Ta chỉ còn một lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
+Tuy nhiên, nếu chọn một giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển đáng kể nào ở những bước đầu tiên.
+Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không thu được nghiệm tốt, như đã thấy ở trên.
+Cách duy nhất để giải quyết hai mục tiêu xung đột lẫn nhau này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
 
 <!--
 This is also the reason for adding a learning rate function `lr` into the `sgd` step function.
 In the example above any functionality for learning rate scheduling lies dormant as we set the associated `lr` function to be constant, i.e., `lr = (lambda: 1)`.
 -->
 
-*dịch đoạn phía trên*
+Đây cũng là lý do cho việc thêm hàm tốc độ học `lr` vào hàm bước `sgd`.
+Trong ví dụ trên, chức năng định thời tốc độ học không được kích hoạt vì ta đặt hàm `lr` bằng một hằng số, tức `lr = (lambda: 1)`.
 
 <!--
 ## Dynamic Learning Rate
 -->
 
-## *dịch tiêu đề phía trên*
+## Tốc độ học Linh hoạt
 
 <!--
 Replacing $\eta$ with a time-dependent learning rate $\eta(t)$ adds to the complexity of controlling convergence of an optimization algorithm.
@@ -157,18 +166,22 @@ If we decrease it too slowly, we waste too much time on optimization.
 There are a few basic strategies that are used in adjusting $\eta$ over time (we will discuss more advanced strategies in a later chapter):
 -->
 
-*dịch đoạn phía trên*
+Thay thế $\eta$ bằng tốc độ học phụ thuộc vào thời gian $\eta(t)$ sẽ khiến việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
+Cụ thể, ta sẽ cần phải tìm ra mức độ suy giảm $\eta$ hợp lý.
+Nếu giảm quá nhanh, quá trình tối ưu hóa sẽ ngừng quá sớm.
+Nếu giảm quá chậm, ta sẽ lãng phí rất nhiều thời gian cho việc tối ưu hóa.
+Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\eta$ theo thời gian (ta sẽ thảo luận về các chiến lược nâng cao hơn trong chương sau):
 
 
 $$
 \begin{aligned}
-    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{piecewise~constant} \\
-    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{exponential} \\
-    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{polynomial}
+    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{hằng số từng khúc} \\
+    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{lũy thừa} \\
+    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{đa thức}
 \end{aligned}
 $$
 <!-- dịch piecewise~constant, exponential và polynomial -->
-
+<!-- Bạn nào review dịch giúp mình cụm piecewise~constant nhé, mình không tìm được bản dịch tiếng Việt cho cụm này. Many thanks! -->
 
 <!--
 In the first scenario we decrease the learning rate, e.g., whenever progress in optimization has stalled.
@@ -180,7 +193,13 @@ In the case of convex optimization there are a number of proofs which show that 
 Let us see what this looks like in practice.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp đầu tiên, ta giảm tốc độ học bất cứ khi nào tiến trình tối ưu bị đình trệ.
+Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
+Ngoài ra, ta có thể tăng mức độ suy giảm bằng cách áp dụng suy giảm theo lũy thừa.
+Thật không may, phương pháp này dẫn đến việc dừng tối ưu quá sớm trước khi thuật toán hội tụ.
+Một lựa chọn phổ biến khác là suy giảm đa thức với $\alpha = 0.5$.
+Trong trường hợp tối ưu lồi, có một số chứng minh cho thấy giá trị này cho kết quả tốt.
+Hãy cùng xem nó hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=4}
@@ -207,8 +226,11 @@ Indeed, the algorithm fails to converge at all.
 On the other hand, if we use a polynomial decay where the learning rate decays with the inverse square root of the number of steps convergence is good.
 -->
 
-*dịch đoạn phía trên*
-
+Như kỳ vọng, giá trị phương sai của các tham số giảm đáng kể.
+Tuy nhiên, cách này có thể không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
+Thậm chí sau 1000 bước lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
+Trên thực tế, thuật toán này không hội tụ được.
+Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương số bước lặp, có thể thuật toán sẽ hội tụ.
 
 ```{.python .input  n=5}
 def polynomial():
@@ -232,7 +254,13 @@ For general nonconvex problems it is very difficult to obtain meaningful converg
 For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) of Tibshirani 2015.
 -->
 
-*dịch đoạn phía trên*
+Vẫn còn có rất nhiều lựa chọn khác cho cách thiết lập tốc độ học. 
+Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
+Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
+Chúng ta có vô vàn lựa chọn khác nhau cho cách định thời (_schedule_) tốc độ học như vậy.
+Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể sử dụng các phép phân tích lý thuyết như là trong điều kiện lồi.
+Với bài toán không lồi tổng quát, rất khó để suy được các đảm bảo ý nghĩa cho việc hội tụ, vì nói chung các bài toán tối ưu phi tuyến tính không lồi đều thuộc dạng NP-hard.
+Để tìm hiểu thêm, tham khảo các ví dụ trong tập [bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -242,7 +270,7 @@ For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~r
 ## Convergence Analysis for Convex Objectives
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân tích Hội tụ cho các Mục tiêu Lồi
 
 <!--
 The following is optional and primarily serves to convey more intuition about the problem.
@@ -253,13 +281,17 @@ it is possible to minimize them in a small number of steps while decreasing the 
 Unfortunately this case never really occurs in deep learning and we are left with a much more slowly decreasing rate in practice.
 -->
 
-*dịch đoạn phía trên*
+Phần này là phần không bắt buộc và chủ yếu giúp mang lại cái nhìn trực quan hơn về bài toán.
+Chúng ta giới hạn lời giải dưới đây bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
+Cũng có những cách chứng minh nâng cao hơn, ví dụ như khi hàm mục tiêu được định nghĩa tốt.
+:cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có cận dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với một số lượng nhỏ bước lặp trong khi giảm tốc độ học, ví dụ như theo $\eta(t) = \eta_0/(\beta t + 1)$.
+Thật không may, trường hợp này không xảy ra trong học sâu và trong thực tế thường giá trị của hàm mục tiêu giảm với tốc độ chậm hơn rất nhiều.
 
 <!--
 Consider the case where
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét trường hợp trong đó
 
 
 $$\mathbf{w}_{t+1} = \mathbf{w}_{t} - \eta_t \partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w}).$$
@@ -270,7 +302,8 @@ In particular, assume that $\mathbf{x}_t$ is drawn from some distribution $P(\ma
 Last denote by
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, ta giả sử rằng $\mathbf{x}_t$ được lấy từ một phân phối $P(\mathbf{x})$ và $l(\mathbf{x}, \mathbf{w})$ là hàm lồi trong $\mathbf{w}$ với mọi $\mathbf{x}$.
+Cuối cùng, ta ký hiệu
 
 
 $$R(\mathbf{w}) = E_{\mathbf{x} \sim P}[l(\mathbf{x}, \mathbf{w})]$$
@@ -286,7 +319,9 @@ Last let $\mathbf{w}^*$ be the minimizer (we assume that it exists within the do
 In this case we can track the distance between the current parameter $\mathbf{w}_t$ and the risk minimizer $\mathbf{w}^*$ and see whether it improves over time:
 -->
 
-*dịch đoạn phía trên*
+là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát với tham số $\mathbf{w}$.
+Ta ký hiệu $\mathbf{w}^*$ là nghiệm của tham số tại điểm cực tiểu (_minimizer_) với giả định tồn tại nghiệm cực tiểu trong miền $\mathbf{w}$ xác định.
+Trong trường hợp này, chúng ta lưu khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
 
 
 $$\begin{aligned}
@@ -302,7 +337,8 @@ $$
 The gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ can be bounded from above by some Lipschitz constant $L$, hence we have that
 -->
 
-*dịch đoạn phía trên*
+Gradient $\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})$ có biên trên là một hằng số Lipschitz $L$, do đó ta có 
+
 
 
 $$\eta_t^2 \|\partial_\mathbf{w} l(\mathbf{x}_t, \mathbf{w})\|^2 \leq \eta_t^2 L^2.$$
@@ -314,8 +350,10 @@ In fact, for any specific sequence of steps the distance might well increase, de
 Hence we need to bound the inner product. By convexity we have that
 -->
 
-*dịch đoạn phía trên*
+Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào trong *miền kỳ vọng*.
 
+Trong thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều đặn phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
+Do đó, chúng ta cần xác định biên cho tích nhân trong. Từ tính chất lồi, ta có
 
 $$
 l(\mathbf{x}_t, \mathbf{w}^*) \geq l(\mathbf{x}_t, \mathbf{w}_t) + \left\langle \mathbf{w}^* - \mathbf{w}_t, \partial_{\mathbf{w}} l(\mathbf{x}_t, \mathbf{w}_t) \right\rangle.
@@ -326,7 +364,7 @@ $$
 Using both inequalities and plugging it into the above we obtain a bound on the distance between parameters at time $t+1$ as follows:
 -->
 
-*dịch đoạn phía trên*
+Kết hợp hai bất đẳng thức trên, chúng ta tìm được biên cho khoảng cách giữa các tham số tại bước $t+1$ như sau:
 
 
 $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \geq 2 \eta_t (l(\mathbf{x}_t, \mathbf{w}_t) - l(\mathbf{x}_t, \mathbf{w}^*)) - \eta_t^2 L^2.$$
@@ -336,14 +374,15 @@ $$\|\mathbf{w}_{t} - \mathbf{w}^*\|^2 - \|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2 \g
 This means that we make progress as long as the expected difference between current loss and the optimal loss outweighs $\eta_t L^2$.
 Since the former is bound to converge to $0$ it follows that the learning rate $\eta_t$ also needs to vanish.
 -->
-
-*dịch đoạn phía trên*
+Điều này có nghĩa quá trình học vẫn đang cải thiện khi hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu lớn hơn $\eta_t L^2$.
+Để hàm mất mát hiện tại đảm bảo hội tụ về $0$, tốc độ học $\eta_t$ cũng cần phải giảm dần.
 
 <!--
 Next we take expectations over this expression. This yields
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo chúng ta hãy tính giá trị kỳ vọng cho biểu thức trên như sau
+
 
 
 $$E_{\mathbf{w}_t}\left[\|\mathbf{w}_{t} - \mathbf{w}^*\|^2\right] - E_{\mathbf{w}_{t+1}\mid \mathbf{w}_t}\left[\|\mathbf{w}_{t+1} - \mathbf{w}^*\|^2\right] \geq 2 \eta_t [E[R[\mathbf{w}_t]] - R^*] -  \eta_t^2 L^2.$$
@@ -354,7 +393,8 @@ The last step involves summing over the inequalities for $t \in \{t, \ldots, T\}
 Since the sum telescopes and by dropping the lower term we obtain
 -->
 
-*dịch đoạn phía trên*
+Ở bước cuối cùng, ta tính tổng các bất đẳng thức trên cho mọi $t \in \{t, \ldots, T\}$. 
+Do tổng thu được sẽ khuếch đại kết quả và bỏ qua các hạng tử thấp hơn ta có
 
 
 $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}_t]] - R^*] - L^2 \sum_{t=1}^T \eta_t^2.$$
@@ -364,7 +404,8 @@ $$\|\mathbf{w}_{0} - \mathbf{w}^*\|^2 \geq 2 \sum_{t=1}^T \eta_t [E[R[\mathbf{w}
 Note that we exploited that $\mathbf{w}_0$ is given and thus the expectation can be dropped. Last define
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng chúng ta khai thác từ $\mathbf{w}_0$ cho trước và bỏ qua giá trị kỳ vọng. Cuối cùng, ta định nghĩa
+
 
 
 $$\bar{\mathbf{w}} := \frac{\sum_{t=1}^T \eta_t \mathbf{w}_t}{\sum_{t=1}^T \eta_t}.$$
@@ -374,7 +415,7 @@ $$\bar{\mathbf{w}} := \frac{\sum_{t=1}^T \eta_t \mathbf{w}_t}{\sum_{t=1}^T \eta_
 Then by convexity it follows that
 -->
 
-*dịch đoạn phía trên*
+Từ đó, theo tính chất lồi, ta có
 
 
 $$\sum_t \eta_t E[R[\mathbf{w}_t]] \geq \sum \eta_t \cdot \left[E[\bar{\mathbf{w}}]\right].$$
@@ -384,7 +425,8 @@ $$\sum_t \eta_t E[R[\mathbf{w}_t]] \geq \sum \eta_t \cdot \left[E[\bar{\mathbf{w
 Plugging this into the above inequality yields the bound
 -->
 
-*dịch đoạn phía trên*
+Thay bất đẳng thức vào bất đẳng thức ở trên, ta tìm được biên
+
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -403,7 +445,11 @@ This is the case since $\bar{\mathbf{w}}$ is a smoothed version of the optimizat
 Now let us analyze some choices for $\eta_t$.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $r^2 := \|\mathbf{w}_0 - \mathbf{w}^*\|^2$ là khoảng cách giới hạn giữa giá trị khởi tạo của các tham số và kết quả cuối cùng.
+Nói tóm lại, tốc độ hội tụ phụ thuộc vào tốc độ thay đổi của hàm mất mát thông qua hằng số Lipschitz $L$ và khoảng cách giữa giá trị ban đầu so với giá trị tối ưu $r$.
+Chú ý rằng giới hạn ở trên được kí hiệu bởi $\bar{\mathbf{w}}$ thay vì $\mathbf{w}_T$.
+Kí hiệu này là do $\bar{\mathbf{w}}$ chính là quỹ đạo tối ưu được làm mượt.
+Hãy cùng phân tích một số cách lựa chọn $\eta_t$.
 
 <!--
 * **Known Time Horizon**. 
@@ -415,7 +461,13 @@ Whenever we want to have a good solution for *any* time $T$ we can pick $\eta = 
 This costs us an extra logarithmic factor and it leads to an upper bound of the form $\mathcal{O}(\log T / \sqrt{T})$.
 -->
 
-*dịch đoạn phía trên*
+* **Thời điểm xác định**.
+Với mỗi $r, L$ và $T$ xác định ta có thể chọn $\eta = r/L \sqrt{T}$.
+Biểu thức này dẫn tới giới hạn trên $r L (1 + 1/T)/2\sqrt{T} < rL/\sqrt{T}$.
+Có nghĩa là hàm hội tụ với tốc độ $\mathcal{O}(1/\sqrt{T})$ đến nghiệm tối ưu.
+* **Thời điểm chưa xác định**.
+Khi ta muốn một nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
+Cách làm trên tốn thêm một thừa số logarit, dẫn tới giới hạn trên có dạng $\mathcal{O}(\log T / \sqrt{T})$.
 
 <!--
 Note that for strongly convex losses 
@@ -424,7 +476,10 @@ we can design even more rapidly converging optimization schedules.
 In fact, an exponential decay in $\eta$ leads to a bound of the form $\mathcal{O}(\log T / T)$.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng đối với những hàm mất mát lồi tuyệt đối
+$l(\mathbf{x}, \mathbf{w}') \geq l(\mathbf{x}, \mathbf{w}) + \langle \mathbf{w}'-\mathbf{w}, \partial_\mathbf{w} l(\mathbf{x}, \mathbf{w}) \rangle + \frac{\lambda}{2} \|\mathbf{w}-\mathbf{w}'\|^2$
+ta có thể thiết kế quy trình tối ưu nhằm tăng tốc độ hội tụ nhanh hơn nữa.
+Thực tế, sự suy giảm theo cấp số mũ của $\eta$ dẫn đến giới hạn có dạng $\mathcal{O}(\log T / T)$.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -438,7 +493,7 @@ In fact, an exponential decay in $\eta$ leads to a bound of the form $\mathcal{O
 ## Stochastic Gradients and Finite Samples
 -->
 
-## *dịch tiêu đề phía trên*
+## Gradient ngẫu nhiên và Mẫu hữu hạn
 
 <!--
 So far we have played a bit fast and loose when it comes to talking about stochastic gradient descent.
@@ -446,7 +501,9 @@ We posited that we draw instances $x_i$, typically with labels $y_i$ from some d
 In particular, for a finite sample size we simply argued that the discrete distribution $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$ allows us to perform SGD over it.
 -->
 
-*dịch đoạn phía trên*
+Tới phần này, ta đi khá nhanh và mơ hồ khi bàn luận về hạ gradient ngẫu nhiên.
+Ta thừa nhận rằng ta lấy các đối tượng $x_i$, thường là cùng với nhãn $y_i$ từ phân phối $p(x, y)$ nào đó và sử dụng chúng để cập nhật các trọng số $w$ theo cách nào đó.
+Cụ thể, với kích thước mẫu hữu hạn, ta chỉ đang đơn giản lập luận rằng SGD có thể dễ dàng được áp dụng lên phân phối rời rạc $p(x, y) = \frac{1}{n} \sum_{i=1}^n \delta_{x_i}(x) \delta_{y_i}(y)$.
 
 <!--
 However, this is not really what we did.
@@ -458,10 +515,17 @@ To see why this is preferable consider the converse, namely that we are sampling
 The probability of choosing an element $i$ at random is $N^{-1}$. Thus to choose it at least once is
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, đó thực ra không phải là cách mà ta đã làm.
+Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào phép hạ gradient tất định, tức ta giả sử rằng đang có các cặp giá trị $(x_i, y_i)$.
+Hoá ra cách làm đó ở phần này khá chính đáng (xem phần bài tập để cùng thảo luận chi tiết).
+Phiền hà hơn nữa là ở tất cả các cuộc thảo luận trước, ta không hề làm thế.
+Thay vào đó ta chỉ lặp qua tất cả các đối tượng đúng một lần.
+Để có thể hiểu được tại sao quá trình trên được ưa chuộng, hãy thử xét trường hợp ngược lại khi ta lấy $n$ mẫu từ một phân phối rời rạc có hoàn lại.
+Xác suất chọn ngẫu nhiên được phần tử $i$ là $N^{-1}$.
+Do đó xác suất để chọn ít nhất một lần là
 
 
-$$P(\mathrm{choose~} i) = 1 - P(\mathrm{omit~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
+$$P(\mathrm{Chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
 <!-- cân nhắc dịch -->
 
 
@@ -472,7 +536,10 @@ Hence, in practice we perform the latter (and this is the default choice through
 Last note that repeated passes through the dataset traverse it in a *different* random order.
 -->
 
-*dịch đoạn phía trên*
+Chứng minh tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng một lần là ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
+Điều này gây tăng phương sai và giảm hiệu quả sử dụng dữ liệu so với lấy mẫu không hoàn lại.
+Do đó trong thực tế, ta thực hiện phương pháp không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
+Điều cuối cùng mà ta cần chú ý là mỗi lần quét lại tập dữ liệu, ta sẽ quét theo một thứ tự ngẫu nhiên *khác*.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -493,7 +560,11 @@ namely to reduce the learning rate progressively, albeit not too quickly.
 * Optimality guarantees for SGD are in general not available in nonconvex cases since the number of local minima that require checking might well be exponential.
 -->
 
-*dịch đoạn phía trên*
+* Đối với các bài toán lồi, ta có thể chứng minh rằng Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu cho nhiều tốc độ học khác nhau.
+* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích nhằm tiến tới bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
+* Nhiều vấn đề xuất hiện khi tốc độ học quá lớn hoặc quá nhỏ. Trong thực tế, ta chỉ có thể tìm được tốc độ học thích hợp sau nhiều lần thử nghiệm.
+* Khi kích thước tập huấn luyện tăng, chi phí tính toán cho mỗi lần lặp của hạ gradient cũng tăng theo, do đó SGD được ưa chuộng hơn trong trường hợp này.
+* Trong SGD, không có sự đảm bảo tính tối ưu đối với các trường hợp không lồi do số cực tiểu cần phải kiểm tra có thể tăng theo cấp số nhân.
 
 
 <!--
@@ -513,7 +584,14 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 5. Assume that $f(x) = x^2 (1 + \sin x)$. How many local minima does $f$ have? Can you change $f$ in such a way that to minimize it one needs to evaluate all local minima?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với nhiều số vòng lặp khác nhau.
+Cụ thể, hãy vẽ biểu đồ khoảng cách tới nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
+2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
+    * Suy ra kì vọng và phương sai cho phân phối theo $\mathbf{x}$.
+    * Chỉ ra rằng tính chất này nhìn chung có thể áp dụng cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ for $Q \succeq 0$.
+3. So sánh sự hội tụ của SGD khi lấy mẫu không hoàn lại từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ và khi lấy mẫu có hoàn lại.
+4. Bạn sẽ thay đổi chương trình SGD thế nào nếu như một số gradient (hoặc một số toạ độ liên kết với nó) liên tục lớn hơn so với tất cả các gradient khác?
+5. Giả sử rằng $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Thay đổi hàm số sao cho để cực tiểu hóa giá trị hàm $f$, ta cần xét tất cả các điểm cực tiểu?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -541,19 +619,25 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Duy Du
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Duy Du
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh

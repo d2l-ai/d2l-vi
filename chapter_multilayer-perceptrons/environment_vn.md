@@ -491,7 +491,7 @@ Here's a prototypical algorithm for that purpose which uses an unlabeled trainin
 -->
 
 Vì vậy, có hai bài toán cần được giải quyết: đầu tiên là bài toán phân biệt giữa dữ liệu được lấy ra từ hai phân phối,
-và sau đó là bài toán tối thiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
+và sau đó là bài toán cực tiểu hóa với trọng số cho các mẫu được đánh lại với $\beta$, ví dụ như thông qua các gradient đầu.
 Dưới đây là một thuật toán nguyên mẫu để giải quyết hai bài toán trên. Thuật toán này sử dụng tập huấn luyện không được gán nhãn $X$ và tập kiểm tra $Z$:
 
 <!--
@@ -590,7 +590,7 @@ Hoá ra là dưới các giả định đơn giản --- chẳng hạn như bộ 
 Nếu bộ phân loại đã khá chính xác ngay từ đầu thì ma trận nhầm lẫn C là khả nghịch và ta có nghiệm $q(y) = C^{-1} \mu_y$.
 Ở đây ta đang lạm dụng kí hiệu một chút khi sử dụng $q(y)$ để kí hiệu vector tần suất nhãn. 
 Vì ta quan sát được nhãn trên dữ liệu gốc, nên có thể dễ dàng ước lượng phân phối $p(y)$. 
-Sau đó với bất kì mẫu huấn luyện $i$ với nhãn $y$, ta có thể lấy tỉ lệ ước lượng $\hat{q}(y)/\hat{p}(y)$ để tính trọng số $w_i$ và đưa vào thuật toán tối thiểu rủi ro có trọng số được mô tả ở trên. 
+Sau đó với bất kì mẫu huấn luyện $i$ với nhãn $y$, ta có thể lấy tỉ lệ ước lượng $\hat{q}(y)/\hat{p}(y)$ để tính trọng số $w_i$ và đưa vào thuật toán cực tiểu hóa rủi ro có trọng số được mô tả ở trên. 
 
 
 <!--
@@ -769,7 +769,7 @@ Should what news someone is exposed to be determined by which Facebook pages the
 These are just a few among the many profound ethical dilemmas that you might encounter in a career in machine learning.
 -->
 
-Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần tối thiểu hàm đối log hợp lý hay tối đa hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
+Cuối cùng, cần ghi nhớ một điều quan trọng sau đây: khi triển khai một hệ thống học máy, bạn không chỉ đơn thuần cực tiểu hóa hàm đối log hợp lý hay cực đại hóa độ chính xác mà còn đang tự động hóa một quy trình quyết định nào đó.
 Thường thì những hệ thống được tự động hóa việc ra quyết định mà chúng ta triển khai có thể sẽ gây ra những hậu quả cho những ai chịu ảnh hưởng bởi quyết định của nó.
 Nếu chúng ta triển khai một hệ thống chẩn đoán y khoa, ta cần biết hệ thống này sẽ hoạt động và không hoạt động với những ai.
 Bỏ qua những rủi ro có thể lường trước được để chạy theo phúc lợi của một bộ phận dân số sẽ đi ngược lại những nguyên tắc đạo đức cơ bản.

@@ -41,7 +41,7 @@ This function is extraordinarily complex, encoding the performance of all possib
 Thus, in practice, we often start by initializing our weights *randomly*, and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
 -->
 
-Đây là một hàm số cực kì phức tạp, là dạng tổng quát của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, do vậy gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để tối thiểu hoá mất mát.
+Đây là một hàm số cực kì phức tạp, là dạng tổng quát của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, do vậy gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
 Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và đi từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--

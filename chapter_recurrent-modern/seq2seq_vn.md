@@ -15,9 +15,9 @@ Both the encoder and the decoder use recurrent neural networks (RNNs) to handle 
 The hidden state of the encoder is used directly to initialize the decoder hidden state to pass information from the encoder to the decoder.
 -->
 
-Mô hình chuỗi sang chuỗi (*Sequence to Sequence -- seq2seq*) dựa trên kiến trúc mã hóa - giải mã để sinh ra một chuỗi từ chuỗi đầu vào như minh họa trong :numref:`fig_seq2seq`.
-Cả bộ mã hoá và bộ giải mã sử dụng mạng nơ-ron truy hồi (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
-Trạng thái ẩn của bộ mã hóa được trực tiếp sử dụng để khởi tạo trạng thái ẩn của bộ giải mã để truyền thông tin từ bộ mã hoá tới bộ giải mã.
+Mô hình chuỗi sang chuỗi (*Sequence to Sequence -- seq2seq*) dựa trên kiến trúc mã hóa - giải mã để sinh ra chuỗi đầu ra từ chuỗi đầu vào như minh họa trong :numref:`fig_seq2seq`.
+Cả bộ mã hóa và bộ giải mã sử dụng mạng nơ-ron hồi tiếp (RNN) để xử lý các chuỗi đầu vào với độ dài khác nhau.
+Trạng thái ẩn của bộ giải mã được khởi tạo trực tiếp từ trạng thái ẩn của bộ mã hóa, giúp truyền thông tin từ bộ mã hóa tới bộ giải mã.
 
 <!--
 ![The sequence to sequence model architecture.](../img/seq2seq.svg)
@@ -37,14 +37,14 @@ Các tầng trong bộ mã hóa và bộ giải mã được minh họa trong :n
 ![Layers in the encoder and the decoder.](../img/seq2seq-details.svg)
 -->
 
-![Các tầng trong bộ mã hoá và bộ giải mã.](../img/seq2seq-details.svg)
+![Các tầng trong bộ mã hóa và bộ giải mã.](../img/seq2seq-details.svg)
 :label:`fig_seq2seq_details`
 
 <!--
 In this section we will explain and implement the seq2seq model to train on the machine translation dataset.
 -->
 
-Trong phần này chúng ta sẽ giới thiệu và lập trình các mô hình seq2seq để huấn luyện trên bộ dữ liệu dịch máy.
+Trong phần này chúng ta sẽ tìm hiểu và lập trình mô hình seq2seq để huấn luyện trên bộ dữ liệu dịch máy.
 
 
 ```{.python .input  n=1}
@@ -58,7 +58,7 @@ npx.set_np()
 ## Encoder
 -->
 
-## Bộ Mã hoá
+## Bộ Mã hóa
 
 
 <!--
@@ -69,11 +69,12 @@ At timestep $t$, the RNN will have two vectors as the input: the feature vector 
 Let us denote the transformation of the RNN's hidden states by a function $f$:
 -->
 
-Nhắc lại rằng bộ mã hoá của mô hình seq2seq chuyển đổi các chuỗi đầu vào với độ dài khác nhau thành một vector ngữ cảnh $\mathbf{c}$ có độ dài không đổi bằng cách mã hoá thông tin chuỗi thành vector $\mathbf{c}$.
-Chúng ta thường sử dụng các tầng RNN trong bộ mã hoá.
-Giả sử chúng ta có một chuỗi đầu vào $x_1, \ldots, x_T$, trong đó $x_t$ là từ thứ $\mathrm{t}$.
+Nhắc lại rằng bộ mã hóa của mô hình seq2seq mã hóa thông tin của các chuỗi đầu vào với độ dài khác nhau thành một vector ngữ cảnh $\mathbf{c}$.
+Ta thường sử dụng các tầng RNN trong bộ mã hóa.
+Giả sử có một chuỗi đầu vào $x_1, \ldots, x_T$, trong đó $x_t$ là từ thứ $\mathrm{t}$.
 Tại bước thời gian $t$, mô hình RNN sẽ có hai vector đầu vào: vector đặc trưng $\mathbf{x}_t$ của $x_t$ và trạng thái ẩn của bước thời gian trước đó $\mathbf{h}_{t-1}$.
-Chúng ta ký hiệu phép chuyển đổi của các trạng thái ẩn trong RNN bằng hàm $f$:
+Ta ký hiệu phép chuyển đổi của các trạng thái ẩn trong RNN bằng hàm $f$:
+
 
 $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 
@@ -81,7 +82,7 @@ $$\mathbf{h}_t = f (\mathbf{x}_t, \mathbf{h}_{t-1}).$$
 Next, the encoder captures information of all the hidden states and encodes it into the context vector $\mathbf{c}$ with a function $q$:
 -->
 
-Tiếp theo, bộ mã hoá nắm bắt thông tin của tất cả các trạng thái ẩn và mã hoá chúng thành một vector ngữ cảnh $\mathbf{c}$ với hàm $q$:
+Tiếp theo, bộ mã hóa nắm bắt thông tin của tất cả các trạng thái ẩn và mã hóa chúng thành vector ngữ cảnh $\mathbf{c}$ bằng hàm $q$:
 
 $$\mathbf{c} = q (\mathbf{h}_1, \ldots, \mathbf{h}_T).$$
 
@@ -97,8 +98,8 @@ So far what we describe above is a unidirectional RNN, where each timestep's hid
 We can also use other forms of RNNs such as GRUs, LSTMs, and bidirectional RNNs to encode the sequential input.
 -->
 
-Cho đến nay những gì chúng ta mô tả ở trên đều là mạng RNN một chiều, ở đó trạng thái ẩn của mỗi bước thời gian chỉ phụ thuộc vào các bước thời gian trước.
-Chúng ta cũng có thể sử dụng các dạng RNN khác nhau như GRU, LSTM, hay là RNN hai chiều để mã hoá chuỗi đầu vào.
+Cho đến nay ta mới mô tả bộ mã hóa sử dụng mạng RNN một chiều, ở đó trạng thái ẩn của mỗi bước thời gian chỉ phụ thuộc vào các bước thời gian trước.
+Ta cũng có thể sử dụng các dạng RNN khác nhau như GRU, LSTM, hay RNN hai chiều để mã hóa chuỗi đầu vào.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -112,11 +113,13 @@ Those feature vectors will be fed to a multi-layer LSTM.
 The input for the encoder is a batch of sequences, which is 2-D tensor with shape (batch size, sequence length).
 The encoder returns both the LSTM outputs, i.e., hidden states of all the timesteps, as well as the hidden state and the memory cell of the final timestep.
 -->
-Bây giờ chúng ta hãy lập trình bộ mã hoá của mô hình seq2seq.
-Ở đây chúng ta sẽ sử dụng một tầng embedding từ để lấy vector đặc trưng tương ứng với chỉ số từ của ngôn ngữ đầu vào.
+
+
+Bây giờ hãy lập trình bộ mã hóa của mô hình seq2seq.
+Ta sử dụng một tầng embedding từ ngữ để lấy vector đặc trưng tương ứng với chỉ số từ trong ngôn ngữ nguồn.
 Những vector đặc trưng này sẽ được truyền vào một mạng LSTM đa tầng.
-Đầu vào cho bộ mã hoá là batch gồm các chuỗi là các tensor 2 chiều có kích thước (kích thước batch, độ dài chuỗi).
-Bộ mã hoá trả về cả đầu ra của LSTM gồm các trạng thái ẩn của tất cả các bước thời gian, cũng như trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
+Batch đầu vào của bộ mã hóa là tensor 2 chiều có kích thước là (kích thước batch, độ dài chuỗi), với số lượng chuỗi bằng kích thước batch.
+Bộ mã hóa trả về cả đầu ra của LSTM, gồm các trạng thái ẩn của tất cả các bước thời gian, cùng với trạng thái ẩn và ô nhớ ở bước thời gian cuối cùng.
 
 
 ```{.python .input  n=2}
@@ -150,12 +153,12 @@ For the gated recurrent unit, the `state` list contains only one element, which 
 If long short-term memory is used, the `state` list will also contain another element, which is the memory cell.
 -->
 
-Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch 4 cùng số bước thời gian 7.
-Ta sẽ giả định rằng số lượng tầng ẩn của đơn vị LSTM là 2 và số nút ẩn là 16.
-Đầu ra của bộ mã hoá sau khi thực hiện phép tính xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
-Trạng thái ẩn đa tầng trong nút truy hồi có cổng ở bước thời gian cuối cùng có kích thước là (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
-Trong nút truy hồi có cổng, danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn.
-Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ. 
+Tiếp theo, chúng ta sẽ tạo một minibatch đầu vào dạng chuỗi với kích thước batch bằng 4 cùng số bước thời gian (độ dài chuỗi) bằng 7.
+Giả sử nút LSTM có 2 tầng ẩn và 16 nút ẩn.
+Đầu ra của bộ mã hóa sau khi thực hiện lượt truyền xuôi trên đầu vào có kích thước là (số bước thời gian, kích thước batch, số nút ẩn).
+Nếu mạng nơ-ron hồi tiếp của bộ mã hóa là nút hồi tiếp có cổng (GRU), danh sách `state` chỉ chứa một phần tử, đó là trạng thái ẩn với kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+Nếu LSTM được sử dụng thì danh sách `state` sẽ chứa thêm một phần tử khác, đó là ô nhớ với cùng kích thước. 
+
 
 ```{.python .input  n=3}
 encoder = Seq2SeqEncoder(vocab_size=10, embed_size=8, num_hiddens=16,
@@ -172,8 +175,8 @@ Since an LSTM is used, the `state` list will contain both the hidden state and t
 However, if a GRU is used, the `state` list will contain only one element---the hidden state in the final timestep with shape (number of hidden layers, batch size, number of hidden units).
 -->
 
-Vì LSTM đang được sử dụng, danh sách `state` sẽ chứa cả trạng thái ẩn và ô nhớ với cùng kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
-Tuy nhiên, nếu GRU được sử dụng thì danh sách `state` sẽ chỉ chứa trạng thái ẩn của bước thời gian cuối cùng với kích thước (số lượng tầng ẩn, kích thước batch, số lượng nút ẩn).
+Trong trường hợp này, vì LSTM đang được sử dụng, danh sách `state` sẽ chứa cả trạng thái ẩn và ô nhớ với cùng kích thước (số tầng ẩn, kích thước batch, số nút ẩn).
+
 
 ```{.python .input  n=4}
 len(state), state[0].shape, state[1].shape
@@ -196,9 +199,9 @@ Suppose that the given outputs in the training set are $y_1, \ldots, y_{T'}$.
 At each timestep $t'$, the conditional probability of output $y_{t'}$ will depend on the previous output sequence $y_1, \ldots, y_{t'-1}$ and the context vector $\mathbf{c}$, i.e.,
 -->
 
-Như đã giới thiệu, vector ngữ cảnh $\mathbf{c}$ mã hoá thông tin của toàn bộ chuỗi đầu vào $x_1, \ldots, x_T$.
+Như đã giới thiệu, vector ngữ cảnh $\mathbf{c}$ mã hóa thông tin của toàn bộ chuỗi đầu vào $x_1, \ldots, x_T$.
 Giả sử đầu ra của tập huấn luyện là $y_1, \ldots, y_{T'}$.
-Tại mỗi thời điểm $t'$, xác suất có điều kiện của đầu ra $y_{t'}$ sẽ phụ thuộc vào đầu ra trước đó $y_1, \ldots, y_{t'-1}$ và vector ngữ cảnh $\mathbf{c}$, tức
+Tại mỗi bước thời gian $t'$, xác suất có điều kiện của đầu ra $y_{t'}$ sẽ phụ thuộc vào đầu ra trước đó $y_1, \ldots, y_{t'-1}$ và vector ngữ cảnh $\mathbf{c}$, tức
 
 
 $$P(y_{t'} \mid y_1, \ldots, y_{t'-1}, \mathbf{c}).$$
@@ -210,9 +213,9 @@ the feature vector $\mathbf{y}_{t'-1}$ of $y_{t'-1}$, the context vector $\mathb
 Let us denote the transformation of the RNN's hidden states within the decoder by a function $g$:
 -->
 
-Do đó, chúng ta có thể sử dụng một mạng RNN khác như một bộ giải mã.
-Tại mỗi thời điểm $t'$, bộ giải mã cập nhật trạng thái ẩn của nó thông qua ba đầu vào: vector đặc trưng $\mathbf{y}_{t'-1}$ của $y_{t'-1}$, vector ngữ cảnh $\mathbf{c}$ và trạng thái ẩn tại bước thời gian trước đó $\mathbf{s}_{t'-1}$.
-Hàm $g$ biểu diễn quá trình biến đổi trạng thái ẩn của mạng RNN trong bộ giải mã:
+Do đó, chúng ta có thể sử dụng một mạng RNN khác trong bộ giải mã.
+Tại mỗi bước thời gian $t'$, bộ giải mã cập nhật trạng thái ẩn của nó thông qua ba đầu vào: vector đặc trưng $\mathbf{y}_{t'-1}$ của $y_{t'-1}$, vector ngữ cảnh $\mathbf{c}$ và trạng thái ẩn tại bước thời gian trước đó $\mathbf{s}_{t'-1}$.
+Hàm $g$ dưới đây biểu diễn quá trình biến đổi trạng thái ẩn của mạng RNN trong bộ giải mã:
 
 
 $$\mathbf{s}_{t'} = g(\mathbf{y}_{t'-1}, \mathbf{c}, \mathbf{s}_{t'-1}).$$
@@ -226,11 +229,11 @@ The only difference is that we add a dense layer after the LSTM layers, where th
 The dense layer will predict the confidence score for each word.
 -->
 
-Khi lập trình bộ giải mã, chúng ta sử dụng trực tiếp trạng thái ẩn của bộ mã hoá ở bước thới gian cuối cùng làm trạng thái ẩn ban đầu của bộ giải mã.
-Điều này đòi hỏi bộ mã hoá và bộ giải mã phải có cùng số tầng và số nút ẩn.
-Các bước tính toán lượt truyền xuôi trong mô hình LSTM của bộ giải mã tương tự như trong bộ mã hoá.
-Điểm khác biệt duy nhất là có thêm một tầng kết nối dày đặc với kích thước bằng kích thước của bộ từ vựng được đặt ở sau các tầng LSTM.
-Tầng này sẽ dự đoán độ tin cậy cho mỗi từ.
+Khi lập trình, ta sử dụng trực tiếp trạng thái ẩn của bộ mã hóa ở bước thời gian cuối cùng để khởi tạo trạng thái ẩn của bộ giải mã.
+Điều này đòi hỏi bộ mã hóa và bộ giải mã phải có cùng số tầng và số nút ẩn.
+Các bước tính toán lượt truyền xuôi trong bộ giải mã gần giống trong bộ mã hóa.
+Điểm khác biệt duy nhất là có thêm một tầng kết nối dày đặc với kích thước bằng kích thước bộ từ vựng được đặt ở sau các tầng LSTM.
+Tầng này sẽ dự đoán điểm tin cậy cho mỗi từ.
 
 
 ```{.python .input  n=5}
@@ -260,8 +263,8 @@ class Seq2SeqDecoder(d2l.Decoder):
 We create a decoder with the same hyper-parameters as the encoder. As we can see, the output shape is changed to (batch size, the sequence length, vocabulary size).
 -->
 
-Bộ giải mã được tạo ra với các siêu tham số giống như ở bộ mã hoá.
-Ta có thể thấy kích thước đầu ra được thay đổi thành (kích thước batch, độ dài chuỗi, kích thước bộ từ vựng).
+Ta tạo bộ giải mã với cùng các siêu tham số như ở bộ mã hóa.
+Có thể thấy kích thước đầu ra được thay đổi thành (kích thước batch, độ dài chuỗi, kích thước bộ từ vựng).
 
 
 ```{.python .input  n=6}
@@ -294,8 +297,8 @@ Note that we padded the target sentences to make them have the same length, but 
 -->
 
 Tại mỗi bước thời gian, bộ giải mã tạo ra một vector điểm tin cậy có kích thước bằng bộ từ vựng để dự đoán các từ.
-Tương tự như việc mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
-Lưu ý rằng ta đã đệm các câu đích để làm cho chúng có độ dài bằng nhau, nhưng ta không cần tính mất mát trên các ký tự đệm.
+Tương tự như trong mô hình hóa ngôn ngữ, ta có thể áp dụng softmax để tính xác suất và sau đó sử dụng hàm mất mát entropy chéo để tính mất mát.
+Lưu ý rằng ta đã đệm các câu đích để chúng có cùng độ dài, nhưng không cần tính mất mát trên các ký tự đệm này.
 
 <!--
 To implement the loss function that filters out some entries, we will use an operator called `SequenceMask`.
@@ -303,9 +306,10 @@ It can specify to mask the first dimension (`axis=0`) or the second one (`axis=1
 If the second one is chosen, given a valid length vector `len` and 2-dim input `X`, this operator sets `X[i, len[i]:] = 0` for all $i$'s.
 -->
 
-Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử được gọi là `SequenceMask`.
-Nó có thể được chỉ định để gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
-Nếu chiều thứ hai được chọn, với đầu vào là một vector có độ dài hợp lệ `len` và một mảng hai chiều `X`, toán tử này sẽ đặt `X[i, len[i]:] = 0` với mọi $i$.
+Để lập trình hàm mất mát có khả năng lọc ra một số phần tử, ta sẽ sử dụng một toán tử gọi là `SequenceMask`.
+Nó có thể gán mặt nạ cho chiều thứ nhất (`axis=0`) hoặc thứ hai (`axis=1`).
+Nếu chiều thứ hai được chọn, với đầu vào là mảng hai chiều `X` và vector độ dài hợp lệ `len`, toán tử này sẽ gán `X[i, len[i]:] = 0` với mọi $i$.
+
 
 ```{.python .input  n=7}
 X = np.array([[1, 2, 3], [4, 5, 6]])
@@ -317,8 +321,8 @@ Apply to $n$-dim tensor $X$, it sets `X[i, len[i]:, :, ..., :] = 0`.
 In addition, we can specify the filling value such as $-1$ as shown below.
 -->
 
-Áp dụng vào một tensor $n$-chiều $X$, nó sẽ đặt `X[i, len[i]:, :, ..., :] = 0`.
-Ta cũng có thể đặt một giá trị điền khác, ví dụ $-1$, như dưới đây.
+Áp dụng vào tensor $n$-chiều $X$, toán tử sẽ gán `X[i, len[i]:, :, ..., :] = 0`.
+Ta cũng có thể đặt giá trị mặt nạ khác, ví dụ như $-1$ dưới đây.
 
 ```{.python .input  n=8}
 X = np.ones((2, 3, 4))
@@ -334,9 +338,9 @@ So our customized loss function accepts an additional `valid_len` argument to ig
 
 
 Bây giờ ta có thể lập trình phiên bản có mặt nạ của hàm mất mát entropy chéo softmax.
-Lưu ý rằng hàm mất mát Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
+Lưu ý rằng hàm mất mát trong Gluon cho phép đặt trọng số cho mỗi mẫu, theo mặc định thì giá trị này bằng 1.
 Để loại bỏ một vài mẫu nhất định, ta có thể đặt trọng số cho chúng bằng 0.
-Vì vậy, hàm mất mát tùy chỉnh của ta sẽ chấp nhận thêm một đối số `valid_len` để bỏ qua một số phần tử trong mỗi chuỗi.
+Vì vậy, hàm mất mát có mặt nạ sẽ có thêm đối số `valid_len` cho toán tử `SequenceMask` để gán giá trị 0 cho trọng số của các mẫu ta muốn loại bỏ.
 
 
 ```{.python .input  n=9}
@@ -357,7 +361,7 @@ For a sanity check, we create identical three sequences, keep 4 elements for the
 Then the first example loss should be 2 times larger than the second one, and the last loss should be 0.
 -->
 
-Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng. <!-- Bạn nào review gợi ý giúp mình cụm "For a sanity check" nhé. Many thanks! -->
+Để kiểm tra sơ bộ, ta tạo ba chuỗi giống hệt nhau, giữ 4 phần tử cho chuỗi thứ nhất, 2 phần tử cho chuỗi thứ hai và không phần tử nào cho chuỗi cuối cùng.
 Khi đó, giá trị mất mát của chuỗi đầu tiên phải lớn gấp 2 lần so với chuỗi thứ hai, còn giá trị mất mát của chuỗi cuối cùng phải bằng 0.
 
 
@@ -381,7 +385,7 @@ loss(np.ones((3, 4, 10)), np.ones((3, 4)), np.array([4, 2, 0]))
 During training, if the target sequence has length $n$, we feed the first $n-1$ tokens into the decoder as inputs, and the last $n-1$ tokens are used as ground truth label.
 -->
 
-Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên vào bộ giải mã làm đầu vào, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
+Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta sẽ đưa $n-1$ token đầu tiên làm đầu vào bộ giải mã, còn $n-1$ token cuối cùng sẽ được sử dụng làm nhãn gốc.
 
 
 ```{.python .input  n=11}
@@ -419,8 +423,7 @@ Next, we create a model instance and set hyper-parameters.
 Then, we can train the model.
 -->
 
-Tiếp theo, ta tạo ra một thực thể mô hình và đặt các siêu tham số.
-Sau đó, ta có thể huấn luyện mô hình.
+Tiếp theo, ta tạo một thực thể của mô hình, đặt các siêu tham số rồi huấn luyện.
 
 ```{.python .input  n=15}
 embed_size, num_hiddens, num_layers, dropout = 32, 32, 2, 0.0
@@ -449,15 +452,15 @@ As illustrated in :numref:`fig_seq2seq_predict`, during predicting, we feed the 
 But the input token for a later timestep is the predicted token from the previous timestep.
 -->
 
-Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo một chuỗi đầu ra.
-Như được minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta đưa cùng token "&lt;bos&gt;" vào bộ giải mã giống như quá trình huấn luyện tại bước thời gian 0.
-Nhưng token đầu vào cho bước thời gian sau đó sẽ là token được dự đoán từ bước thời gian trước.
+Ở đây, ta lập trình phương pháp đơn giản nhất có tên gọi *tìm kiếm tham lam* (_greedy search_), để tạo chuỗi đầu ra.
+Như minh họa trong :numref:`fig_seq2seq_predict`, trong quá trình dự đoán, ta cũng đưa token bắt đầu câu "&lt;bos&gt;" vào bộ giải mã tại bước thời gian 0 giống quá trình huấn luyện.
+Token đầu vào cho các bước thời gian sau sẽ là token được dự đoán từ bước thời gian trước nó.
 
 <!--
 ![Sequence to sequence model predicting with greedy search](../img/seq2seq_predict.svg)
 -->
 
-![Quá trình dự đoán của mô hình chuỗi sang chuỗi với tìm kiếm tham lam](../img/seq2seq_predict.svg)
+![Quá trình dự đoán của mô hình chuỗi sang chuỗi sử dụng tìm kiếm tham lam](../img/seq2seq_predict.svg)
 :label:`fig_seq2seq_predict`
 
 
@@ -528,9 +531,9 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 3. If we do not use the `SequenceMask` in the loss function, what may happen?
 -->
 
-1. Nêu một vài ứng dụng khác của seq2seq bên cạnh dịch máy nơ-ron.
-2. Điều gì sẽ xảy ra nếu chuỗi đầu vào trong ví dụ của phần này dài hơn?
-3. Điều gì có thể xảy ra nếu ta không sử dụng `SequenceMask` trong hàm mất mát?
+1. Nêu một vài ứng dụng khác của seq2seq ngoài dịch máy.
+2. Nếu chuỗi đầu vào trong các ví dụ trên dài hơn thì sao?
+3. Điều gì có thể xảy ra nếu không sử dụng `SequenceMask` trong hàm mất mát?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -542,31 +545,12 @@ for sentence in ['Go .', 'Wow !', "I'm OK .", 'I won !']:
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
+* Phạm Minh Đức
+* Nguyễn Duy Du
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-* Phạm Minh Đức
-<!-- Phần 4 -->
-* Nguyễn Duy Du
-* Phạm Minh Đức
-
-<!-- Phần 5 -->
-* Nguyễn Duy Du

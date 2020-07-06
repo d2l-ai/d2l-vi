@@ -11,7 +11,7 @@
 
 intro_vn
 chapter_preface/index_vn
-chapter_install/install_vn
+chapter_install/index_vn
 chapter_notation/index_vn
 ```
 
@@ -27,6 +27,8 @@ chapter_deep-learning-computation/index_vn
 chapter_convolutional-neural-networks/index_vn
 chapter_convolutional-modern/index_vn
 chapter_recurrent-neural-networks/index_vn
+chapter_recurrent-modern/index_vn
+chapter_attention-mechanisms/index_vn
 ```
 
 ```toc

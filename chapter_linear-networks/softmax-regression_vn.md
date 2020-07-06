@@ -598,7 +598,7 @@ This is simply the difference between the cross-entropy and the entropy, i.e., t
 -->
 
 Có lẽ cách thông dụng nhất để đo lường khoảng cách giữa hai phân phối là tính toán *phân kỳ Kullback Leibler* $D(p\|q)$.
-Phân kỳ Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị tối thiểu không thể giảm được mà nó có thể nhận:
+Phân kỳ Kullback Leibler đơn giản là sự khác nhau giữa entropy chéo và entropy, có nghĩa là giá trị entropy chéo bổ sung phát sinh so với giá trị nhỏ nhất không thể giảm được mà nó có thể nhận:
 
 $$
 D(p\|q) = H(p, q) - H[p] = \sum_j p(j) \log \frac{p(j)}{q(j)}.
@@ -617,7 +617,7 @@ In short, we can think of the cross-entropy classification objective in two ways
 and (ii) as minimizing our surprise (and thus the number of bits) required to communicate the labels.
 -->
 
-Tóm lại, chúng ta có thể nghĩ đến mục tiêu của phân loại entropy chéo theo hai hướng: (i) tối đa hóa khả năng xảy ra của dữ liệu được quan sát;
+Tóm lại, chúng ta có thể nghĩ đến mục tiêu của phân loại entropy chéo theo hai hướng: (i) cực đại hóa khả năng xảy ra của dữ liệu được quan sát;
 và (ii) giảm thiểu sự ngạc nhiên của ta (cũng như số lượng các bit) cần thiết để truyền đạt các nhãn.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->

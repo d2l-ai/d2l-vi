@@ -219,6 +219,7 @@ Bây giờ ta có thể chuyển đổi danh sách các câu thành mảng chỉ
 Ta cũng ghi lại độ dài của mỗi câu khi không có token đệm, được gọi là *độ dài hợp lệ - valid length*. Thông tin này có thể được sử dụng bởi một số mô hình.
 Ngoài ra, ta sẽ thêm các token đặc biệt “&lt;bos&gt;” và “&lt;eos&gt;” vào các câu đích để mô hình biết thời điểm bắt đầu và kết thúc dự đoán.
 
+
 ```{.python .input  n=8}
 # Saved in the d2l package for later use
 def build_array(lines, vocab, num_steps, is_source):
@@ -322,16 +323,6 @@ Tìm và xử lý một bộ dữ liệu dịch máy.
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Duy Du
@@ -339,3 +330,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
+* Phạm Hồng Vinh

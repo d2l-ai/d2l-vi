@@ -1,30 +1,21 @@
-# Dự án dịch sách ["Dive into Deep Learning"](https://www.d2l.ai/)
+[<img src="static/logo-with-text-vi.png" />](https://d2l.aivivn.com/)
 
-Cuốn sách này được dịch và đăng tại https://d2l.aivivn.com/.
+## Dự án dịch sách "Dive into Deep Learning"
+
+* Bản tiếng Việt: https://d2l.aivivn.com/
+* Bản tiếng Anh: https://www.d2l.ai/
 
 ## Hướng dẫn đóng góp vào dự án
-* [Hướng dẫn dịch trực tiếp trên trình duyệt](CONTRIBUTING.md).
-* [Hướng dẫn đóng góp chung](https://d2l.aivivn.com/intro_vn.html#huong-dan-dong-gop).
+Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 
 ## Tham gia vào Slack của nhóm Dịch thuật
 Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch tại **[glossary.md](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
-## Thứ tự dịch
+## Mục lục
 
-Với các mục con (2.1, 2.2, ...)
-* [x] Đã dịch xong
-* [-] Đang dịch 
-* [ ] Chưa bắt đầu
-
-Với các chương (2., 3., ...)
-* [ ] Chưa revise
-* [-] Đang revise
-* [x] Đã revise xong.
-
-### Mục lục
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
 * [x] [Cài đặt](chapter_install/index_vn.md)
 * [x] [Ký hiệu](chapter_notation/index_vn.md)
@@ -78,47 +69,47 @@ Với các chương (2., 3., ...)
     * [x] 7.5. [Chuẩn hoá theo Batch](chapter_convolutional-modern/batch-norm_vn.md)
     * [x] 7.6. [Mạng Phần dư (ResNet)](chapter_convolutional-modern/resnet_vn.md)
     * [x] 7.7. [Mạng Tích chập Kết nối Dày đặc (DenseNet)](chapter_convolutional-modern/densenet_vn.md)
-* [ ] 8. [Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/index_vn.md)
-    * [x] 8.1. [Sequence Models](chapter_recurrent-neural-networks/sequence_vn.md)
-    * [x] 8.2. [Text Preprocessing](chapter_recurrent-neural-networks/text-preprocessing_vn.md)
-    * [-] 8.3. [Language Models and the Dataset](chapter_recurrent-neural-networks/language-models-and-dataset_vn.md)
-    * [-] 8.4. [Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/rnn_vn.md)
-    * [-] 8.5. [Lập trình Mạng nơ-ron Truy hồi từ đầu](chapter_recurrent-neural-networks/rnn-scratch_vn.md)
-    * [-] 8.6. [Cách lập trình súc tích Mạng nơ-ron Truy hồi](chapter_recurrent-neural-networks/rnn-gluon_vn.md)
-    * [-] 8.7. [Backpropagation Through Time](chapter_recurrent-neural-networks/bptt_vn.md)
-* [ ] 9. [Mạng Truy hồi Hiện đại](chapter_recurrent-modern/index_vn.md)
-    * [-] 9.1. [Gated Recurrent Units (GRU)](chapter_recurrent-modern/gru_vn.md)
-    * [-] 9.2. [Long Short Term Memory (LSTM)](chapter_recurrent-modern/lstm_vn.md)
-    * [-] 9.3. [Deep Recurrent Neural Networks](chapter_recurrent-modern/deep-rnn_vn.md)
-    * [-] 9.4. [Bidirectional Recurrent Neural Networks](chapter_recurrent-modern/bi-rnn_vn.md)
-    * [-] 9.5. [Machine Translation and the Dataset](chapter_recurrent-modern/machine-translation-and-dataset_vn.md)
-    * [ ] 9.6. [Encoder-Decoder Architecture](chapter_recurrent-modern/encoder-decoder_vn.md)
-    * [ ] 9.7. [Sequence to Sequence](chapter_recurrent-modern/seq2seq_vn.md)
-    * [ ] 9.8. [Beam Search](chapter_recurrent-modern/beam-search_vn.md)
-* [ ] 10. [Cơ chế Tập trung](chapter_attention-mechanisms/index_vn.md)
-    * [ ] 10.1. [Attention Mechanisms](chapter_attention-mechanisms/attention_vn.md)
-    * [ ] 10.2. [Sequence to Sequence with Attention Mechanisms](chapter_attention-mechanisms/seq2seq-attention_vn.md)
-    * [ ] 10.3. [Transformer](chapter_attention-mechanisms/transformer_vn.md)
-* [ ] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
-    * [ ] 11.1. [Optimization and Deep Learning](chapter_optimization/optimization-intro_vn.md)
-    * [ ] 11.2. [Convexity](chapter_optimization/convexity_vn.md)
-    * [ ] 11.3. [Gradient Descent](chapter_optimization/gd_vn.md)
-    * [ ] 11.4. [Stochastic Gradient Descent](chapter_optimization/sgd_vn.md)
-    * [ ] 11.5. [Minibatch Stochastic Gradient Descent](chapter_optimization/minibatch-sgd_vn.md)
-    * [ ] 11.6. [Momentum](chapter_optimization/momentum_vn.md)
-    * [ ] 11.6. [Adagrad](chapter_optimization/adagrad_vn.md)
-    * [ ] 11.8. [RMSProp](chapter_optimization/rmsprop_vn.md)
-    * [ ] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
-    * [ ] 11.10. [Adam](chapter_optimization/adam_vn.md)
-    * [ ] 11.11. [Learning Rate Scheduling](chapter_optimization/lr-scheduler_vn.md)
+* [x] 8. [Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/index_vn.md)
+    * [x] 8.1. [Mô hình chuỗi](chapter_recurrent-neural-networks/sequence_vn.md)
+    * [x] 8.2. [Tiền Xử lý Dữ liệu Văn bản](chapter_recurrent-neural-networks/text-preprocessing_vn.md)
+    * [x] 8.3. [Mô hình Ngôn ngữ và Tập dữ liệu](chapter_recurrent-neural-networks/language-models-and-dataset_vn.md)
+    * [x] 8.4. [Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/rnn_vn.md)
+    * [x] 8.5. [Lập trình Mạng nơ-ron Hồi tiếp từ đầu](chapter_recurrent-neural-networks/rnn-scratch_vn.md)
+    * [x] 8.6. [Cách lập trình súc tích Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/rnn-gluon_vn.md)
+    * [x] 8.7. [Lan truyền Ngược qua Thời gian](chapter_recurrent-neural-networks/bptt_vn.md)
+* [x] 9. [Mạng Hồi tiếp Hiện đại](chapter_recurrent-modern/index_vn.md)
+    * [x] 9.1. [Nút Hồi tiếp có Cổng (GRU)](chapter_recurrent-modern/gru_vn.md)
+    * [x] 9.2. [Bộ nhớ Ngắn hạn Dài (LSTM)](chapter_recurrent-modern/lstm_vn.md)
+    * [x] 9.3. [Mạng nơ-ron Hồi tiếp sâu](chapter_recurrent-modern/deep-rnn_vn.md)
+    * [x] 9.4. [Mạng Nơ-ron Hồi tiếp Hai chiều](chapter_recurrent-modern/bi-rnn_vn.md)
+    * [x] 9.5. [Dịch Máy và Tập dữ liệu](chapter_recurrent-modern/machine-translation-and-dataset_vn.md)
+    * [x] 9.6. [Kiến trúc Mã hóa - Giải mã](chapter_recurrent-modern/encoder-decoder_vn.md)
+    * [x] 9.7. [Chuỗi sang Chuỗi](chapter_recurrent-modern/seq2seq_vn.md)
+    * [x] 9.8. [Tìm kiếm Chùm](chapter_recurrent-modern/beam-search_vn.md)
+* [x] 10. [Cơ chế Tập trung](chapter_attention-mechanisms/index_vn.md)
+    * [x] 10.1. [Cơ chế Tập trung](chapter_attention-mechanisms/attention_vn.md)
+    * [x] 10.2. [Chuỗi sang Chuỗi áp dụng Cơ chế Tập trung](chapter_attention-mechanisms/seq2seq-attention_vn.md)
+    * [x] 10.3. [Kiến trúc Transformer](chapter_attention-mechanisms/transformer_vn.md)
+* [-] 11. [Thuật toán Tối ưu](chapter_optimization/index_vn.md)
+    * [x] 11.1. [Tối ưu và Học sâu](chapter_optimization/optimization-intro_vn.md)
+    * [x] 11.2. [Tính lồi](chapter_optimization/convexity_vn.md)
+    * [x] 11.3. [Hạ Gradient](chapter_optimization/gd_vn.md)
+    * [x] 11.4. [Hạ Gradient Ngẫu nhiên](chapter_optimization/sgd_vn.md)
+    * [-] 11.5. [Hạ Gradient Ngẫu nhiên theo Minibatch](chapter_optimization/minibatch-sgd_vn.md)
+    * [-] 11.6. [Động lượng](chapter_optimization/momentum_vn.md)
+    * [-] 11.7. [Adagrad](chapter_optimization/adagrad_vn.md)
+    * [-] 11.8. [RMSProp](chapter_optimization/rmsprop_vn.md)
+    * [-] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
+    * [-] 11.10. [Adam](chapter_optimization/adam_vn.md)
+    * [-] 11.11. [Learning Rate Scheduling](chapter_optimization/lr-scheduler_vn.md)
 * [ ] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
-    * [ ] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
-    * [ ] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
+    * [-] 12.1. [Compilers and Interpreters](chapter_computational-performance/hybridize_vn.md)
+    * [-] 12.2. [Asynchronous Computation](chapter_computational-performance/async-computation_vn.md)
     * [ ] 12.3. [Automatic Parallelism](chapter_computational-performance/auto-parallelism_vn.md)
     * [ ] 12.4. [Hardware](chapter_computational-performance/hardware_vn.md)
     * [ ] 12.5. [Training on Multiple GPUs](chapter_computational-performance/multiple-gpus_vn.md)
     * [ ] 12.6. [Concise Implementation for Multiple GPUs](chapter_computational-performance/multiple-gpus-gluon_vn.md)
-    * [ ] 12.6. [Parameter Servers](chapter_computational-performance/parameterserver_vn.md)
+    * [ ] 12.7. [Parameter Servers](chapter_computational-performance/parameterserver_vn.md)
 * [ ] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
     * [ ] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
     * [ ] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)

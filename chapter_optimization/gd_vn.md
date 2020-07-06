@@ -5,7 +5,8 @@
 # Gradient Descent
 -->
 
-# *dịch đoạn phía trên*
+# Hạ Gradient
+
 :label:`sec_gd`
 
 <!--
@@ -19,13 +20,22 @@ Likewise, preconditioning is a common technique in gradient descent and carries 
 Let us start with a simple special case.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient.
+Nội dung cần thiết sẽ được trình bày ngắn gọn.
+Tham khảo :cite:`Boyd.Vandenberghe.2004` để có góc nhìn sâu về bài toán tối ưu lồi. 
+Mặc dù phần dưới đây rất hiếm khi được áp dụng trực tiếp trong học sâu, nhưng kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
+Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn.
+Hiện tượng này có thể quan sát được trong thuật toán hạ gradient.
+Tương tự, tiền điều kiện (*preconditioning*) là một kỹ thuật phổ biến trong thuật toán hạ gradient và được áp dụng trong các thuật toán tân tiến hơn.
+Chúng ta hãy bắt đầu với một trường hợp đặc biệt đơn giản.
+
 
 <!--
 ## Gradient Descent in One Dimension
 -->
 
-## *dịch đoạn phía trên*
+## Hạ Gradient trong Một Chiều 
+
 
 <!--
 Gradient descent in one dimension is an excellent example to explain why the gradient descent algorithm may reduce the value of the objective function.
@@ -33,7 +43,10 @@ Consider some continuously differentiable real-valued function $f: \mathbb{R} \r
 Using a Taylor expansion (:numref:`sec_single_variable_calculus`) we obtain that 
 -->
 
-*dịch đoạn phía trên*
+Hạ gradient trong một chiều là ví dụ tuyệt vời để giải thích tại sao thuật toán hạ gradient có thể giảm giá trị hàm mục tiêu.
+Hãy xem xét một hàm số thực khả vi liên tục $f: \mathbb{R} \rightarrow \mathbb{R}$.
+Áp dụng khai triển Taylor (:numref:`sec_single_variable_calculus`), ta có
+
 
 
 $$f(x + \epsilon) = f(x) + \epsilon f'(x) + \mathcal{O}(\epsilon^2).$$
@@ -47,8 +60,10 @@ To keep things simple we pick a fixed step size $\eta > 0$ and choose $\epsilon 
 Plugging this into the Taylor expansion above we get
 -->
 
-*dịch đoạn phía trên*
-
+Trong đó xấp xỉ bậc nhất $f(x+\epsilon)$ được cho bởi giá trị hàm $f(x)$ và đạo hàm bậc nhất $f'(x)$ tại $x$.
+Có lý khi giả sử rằng di chuyển theo hướng ngược chiều gradient với $\epsilon$ nhỏ sẽ làm suy giảm giá trị $f$.
+Để đơn giản, ta cố định sải bước cập nhật (tốc độ học) $\eta > 0$ và chọn $\epsilon = -\eta f'(x)$.
+Thay biểu thức này vào khai triển Taylor ở trên, ta thu được
 
 $$f(x - \eta f'(x)) = f(x) - \eta f'^2(x) + \mathcal{O}(\eta^2 f'^2(x)).$$
 
@@ -59,8 +74,9 @@ Moreover, we can always choose $\eta$ small enough for the higher order terms to
 Hence we arrive at
 -->
 
-*dịch đoạn phía trên*
-
+Nếu đạo hàm $f'(x) \neq 0$ không tiêu biến, cập nhật sẽ được thực hiện do $\eta f'^2(x)>0$. 
+Hơn nữa, chúng ta luôn có thể chọn $\eta$ đủ nhỏ để loại bỏ các hạng tử bậc cao hơn trong phép cập nhật.
+Do đó, ta có 
 
 $$f(x - \eta f'(x)) \lessapprox f(x).$$
 
@@ -73,7 +89,7 @@ $$f(x - \eta f'(x)) \lessapprox f(x).$$
 This means that, if we use
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là, nếu chúng ta áp dụng
 
 
 $$x \leftarrow x - \eta f'(x)$$
@@ -85,7 +101,9 @@ Therefore, in gradient descent we first choose an initial value $x$ and a consta
 for example, when the magnitude of the gradient $|f'(x)|$ is small enough or the number of iterations has reached a certain value.
 -->
 
-*dịch đoạn phía trên*
+để cập nhật $x$, giá trị của hàm $f(x)$ có thể giảm.
+Do đó, trong thuật toán hạ gradient, đầu tiên chúng ta chọn giá trị khởi tạo cho $x$ và hằng số $\eta > 0$, từ đó cập nhật giá trị $x$ liên tục cho tới khi gặp điều kiện dừng, ví dụ, khi độ lớn của gradient $|f'(x)|$ đủ nhỏ hoặc số lần cập nhật tới một ngưỡng nào đó.
+
 
 <!--
 For simplicity we choose the objective function $f(x)=x^2$ to illustrate how to implement gradient descent.
@@ -93,8 +111,9 @@ Although we know that $x=0$ is the solution to minimize $f(x)$, we still use thi
 As always, we begin by importing all required modules.
 -->
 
-*dịch đoạn phía trên*
-
+Để đơn giản chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách cài đặt thuật toán hạ gradient.
+Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm để cực tiểu hóa $f(x)$.
+Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết.
 
 ```{.python .input  n=3}
 %matplotlib inline
@@ -115,7 +134,8 @@ Next, we use $x=10$ as the initial value and assume $\eta=0.2$.
 Using gradient descent to iterate $x$ for 10 times we can see that, eventually, the value of $x$ approaches the optimal solution.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sử dụng $x=10$ là giá trị khởi tạo và giả sử $\eta=0.2$.
+Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
 
 
 ```{.python .input  n=4}
@@ -136,7 +156,7 @@ res = gd(0.2)
 The progress of optimizing over $x$ can be plotted as follows.
 -->
 
-*dịch đoạn phía trên*
+Đồ thị quá trình tối ưu hóa theo $x$ được vẽ như sau.
 
 
 ```{.python .input  n=5}
@@ -158,7 +178,8 @@ show_trace(res)
 ### Learning Rate
 -->
 
-### *dịch đoạn phía trên*
+### Tốc độ học
+
 :label:`section_gd-learningrate`
 
 <!--
@@ -168,7 +189,10 @@ To show what happens in such a case, consider the progress in the same optimizat
 As we can see, even after 10 steps we are still very far from the optimal solution.
 -->
 
-*dịch đoạn phía trên*
+Tốc độ học $\eta$ có thể được thiết lập khi thiết kế thuật toán.
+Nếu ta sử dụng tốc độ học quá nhỏ thì $x$ sẽ được cập nhật rất chậm, đòi hỏi số bước cập nhật nhiều hơn để thu được nghiệm tốt hơn.
+Để minh hoạ, hãy xem xét quá trình học trong cùng bài toán tối ưu với $\eta = 0.05$.
+Như chúng ta có thể thấy, ngay cả sau 10 bước cập nhật mà chúng ta vẫn còn rất xa nghiệm tối ưu.
 
 
 ```{.python .input  n=6}
@@ -183,7 +207,11 @@ In this case, we cannot guarantee that the iteration of $x$ will be able to lowe
 For example, when we set the learning rate to $\eta=1.1$, $x$ overshoots the optimal solution $x=0$ and gradually diverges.
 -->
 
-*dịch đoạn phía trên*
+Ngược lại, nếu chúng ta sử dụng tốc độ học quá cao, giá trị $\left|\eta f'(x)\right|$ có thể rất lớn trong khai triển Taylor bậc nhất.
+Khi đó, không thể bỏ qua giá trị của hạng tử $\mathcal{O}(\eta^2 f'^2(x))$ trong :eqref: `gd-taylor`.
+Trong trường hợp này, chúng ta không thể đảm bảo rằng cập nhật của $x$ sẽ có thể làm suy giảm giá trị của $f(x)$.
+Ví dụ, khi chúng ta thiết lập tốc độ học $\eta=1.1$, $x$ sẽ lệch rất xa so với nghiệm tối ưu $x=0$ và dần dần phân kì.
+
 
 
 ```{.python .input  n=7}
@@ -195,7 +223,8 @@ show_trace(gd(1.1))
 ### Local Minima
 -->
 
-### *dịch đoạn phía trên*
+### Cực Tiểu
+
 
 <!--
 To illustrate what happens for nonconvex functions consider the case of $f(x) = x \cdot \cos c x$.
@@ -204,7 +233,10 @@ Depending on our choice of learning rate and depending on how well conditioned t
 The example below illustrates how an (unrealistically) high learning rate will lead to a poor local minimum.
 -->
 
-*dịch đoạn phía trên*
+Để minh họa quá trình học các hàm không lồi, ta xem xét trường hợp $f(x) = x \cdot \cos c x$.
+Những hàm này có vô số cực tiểu.
+Tùy thuộc vào tốc độ học được chọn và điều kiện của bài toán, chúng ta có thể thu được một trong  số rất nhiều nghiệm.
+Ví dụ dưới đây minh họa việc thiết lập tốc độ học quá cao (không thực tế) sẽ dẫn đến điểm cực tiểu địa phương xấu.
 
 
 ```{.python .input}
@@ -231,7 +263,8 @@ show_trace(gd(2))
 ## Multivariate Gradient Descent
 -->
 
-## *dịch đoạn phía trên*
+## Hạ Gradient Đa biến
+
 
 <!--
 Now that we have a better intuition of the univariate case, let us consider the situation where $\mathbf{x} \in \mathbb{R}^d$.
@@ -239,11 +272,11 @@ That is, the objective function $f: \mathbb{R}^d \to \mathbb{R}$ maps vectors in
 It is a vector consisting of $d$ partial derivatives:
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ chúng ta đã có trực quan tốt hơn về trường hợp đơn biến, ta hãy xem xét trường hợp trong đó $\mathbf{x} \in \mathbb{R}^d$.
+Cụ thể, hàm mục tiêu $f: \mathbb{R}^d \to \mathbb{R}$ ánh xạ các vector tới các giá trị vô hướng. 
+Gradient tương ứng cũng là đa biến, là một vector gồm $d$ đạo hàm riêng:
 
 $$\nabla f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_d}\bigg]^\top.$$
-
 
 <!--
 Each partial derivative element $\partial f(\mathbf{x})/\partial x_i$ in the gradient indicates the rate of change of $f$ at $\mathbf{x}$ with respect to the input $x_i$.
@@ -251,8 +284,9 @@ As before in the univariate case we can use the corresponding Taylor approximati
 In particular, we have that 
 -->
 
-*dịch đoạn phía trên*
-
+Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi theo $x_i$ của $f$ tại $\mathbf{x}$.
+Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển Taylor tương ứng cho các hàm đa biến.
+Cụ thể, ta có
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \mathcal{O}(\|\mathbf{\epsilon}\|^2).$$
 :eqlabel:`gd-multi-taylor`
@@ -263,7 +297,8 @@ In other words, up to second order terms in $\mathbf{\epsilon}$ the direction of
 Choosing a suitable learning rate $\eta > 0$ yields the prototypical gradient descent algorithm:
 -->
 
-*dịch đoạn phía trên*
+Nói cách khác, chiều giảm mạnh nhất được cho bởi gradient âm $-\nabla f(\mathbf{x})$, các hạng tử từ bậc hai trở lên trong $\mathbf{\epsilon}$ có thể bỏ qua.
+Chọn một tốc độ học phù hợp $\eta > 0$, ta được thuật toán hạ gradient nguyên bản dưới đây:
 
 
 $\mathbf{x} \leftarrow \mathbf{x} - \eta \nabla f(\mathbf{x}).$
@@ -278,7 +313,13 @@ The first uses an update function and applies it $20$ times to the initial value
 The second helper visualizes the trajectory of $\mathbf{x}$.
 -->
 
-*dịch đoạn phía trên*
+Để xem thuật toán hoạt động như thế nào trong thực tế, ta hãy xây dựng một hàm mục tiêu 
+$f(\mathbf{x})=x_1^2+2x_2^2$ với đầu vào là vector hai chiều $\mathbf{x} = [x_1, x_2]^\top$ và đầu ra là một số vô hướng.
+Gradient được cho bởi $\nabla f(\mathbf{x}) = [2x_1, 4x_2]^\top$.
+Ta sẽ quan sát đường đi của $\mathbf{x}$ được sinh bởi thuật toán hạ gradient bắt đầu từ vị trí $[-5, -2]$.
+Chúng ta cần thêm hai hàm hỗ trợ.
+Hàm đầu tiên là hàm cập nhật và được sử dụng $20$ lần cho giá trị khởi tạo ban đầu.
+Hàm thứ hai là hàm vẽ biểu đồ đường đi của $\mathbf{x}$.
 
 
 ```{.python .input  n=1}
@@ -316,7 +357,9 @@ We can see that after 20 steps the value of $\mathbf{x}$ approaches its minimum 
 Progress is fairly well-behaved albeit rather slow.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ quan sát quỹ đạo của biến tối ưu hóa $\mathbf{x}$ với tốc độ học $\eta = 0.1$.
+Chúng ta có thể thấy rằng sau 20 bước, giá trị $\mathbf{x}$ đã đạt cực tiểu tại $[0, 0]$.
+Quá trình khá tốt mặc dù hơi chậm.
 
 
 ```{.python .input  n=15}
@@ -339,7 +382,7 @@ show_trace_2d(f, train_2d(gd))
 ## Adaptive Methods
 -->
 
-## *dịch đoạn phía trên*
+## Các phương pháp thích nghi
 
 <!--
 As we could see in :numref:`section_gd-learningrate`, getting the learning rate $\eta$ "just right" is tricky.
@@ -351,21 +394,26 @@ While these methods cannot be applied to deep learning directly due to the compu
 they provide useful intuition into how to design advanced optimization algorithms that mimic many of the desirable properties of the algorithms outlined below.
 -->
 
-*dịch đoạn phía trên*
-
+Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn tốc độ học $\eta$ "vừa đủ" rất khó.
+Nếu chọn giá trị quá nhỏ, chúng ta sẽ không thấy sự tiến bộ.
+Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất thậm chí nó sẽ phân kỳ.
+Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước?
+Các phương pháp bậc hai không chỉ dựa vào giá trị và gradient của hàm mục tiêu mà còn dựa vào "độ cong" của hàm, từ đó có thể điều chỉnh tốc độ học.
+Dù những phương pháp này không thể áp dụng vào học sâu một cách trực tiếp do chi phí tính toán lớn, chúng đem đến những gợi ý hữu ích để thiết kế các thuật toán tối ưu cao cấp hơn, mang nhiều tính chất mong muốn của các thuật toán dưới đây.
 
 <!--
 ### Newton's Method
 -->
 
-### *dịch đoạn phía trên*
+### Phương pháp Newton
 
 <!--
 Reviewing the Taylor expansion of $f$ there is no need to stop after the first term.
 In fact, we can write it as 
 -->
 
-*dịch đoạn phía trên*
+Trong khai triển Taylor của $f$, ta không cần phải dừng ngay sau số hạng đầu tiên.
+Trên thực tế, ta có thể viết lại như sau
 
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \frac{1}{2} \mathbf{\epsilon}^\top \nabla \nabla^\top f(\mathbf{x}) \mathbf{\epsilon} + \mathcal{O}(\|\mathbf{\epsilon}\|^3).$$
@@ -380,17 +428,23 @@ Furthermore it may be too expensive to compute via backprop as we would need to 
 For now let us ignore such considerations and look at what algorithm we'd get. 
 -->
 
-*dịch đoạn phía trên*
+Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
+Đây là ma trận kích thước $d \times d$. Với $d$ nhỏ và trong các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
+Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$.
+Hơn nữa nó có thể tốn quá nhiều chi phí tính toán khi áp dụng vào lan truyền ngược.
+Tạm thời hãy bỏ qua những lưu ý đó và nhìn vào thuật toán mà ta có được.
+
 
 <!--
 After all, the minimum of $f$ satisfies $\nabla f(\mathbf{x}) = 0$.
 Taking derivatives of :eqref:`gd-hot-taylor` with regard to $\mathbf{\epsilon}$ and ignoring higher order terms we arrive at 
 -->
 
-*dịch đoạn phía trên*
+Suy cho cùng, cực tiểu của $f$ sẽ thỏa $\nabla f(\mathbf{x}) = 0$.
+Lấy các đạo hàm của :eqref:`gd-hot-taylor` theo  $\mathbf{\epsilon}$ và bỏ qua các số hạng bậc cao ta thu được
 
 
-$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ and hence } 
+$$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và~do~đó } 
 \mathbf{\epsilon} = -H_f^{-1} \nabla f(\mathbf{x}).$$
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -401,7 +455,7 @@ $$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ and hence }
 That is, we need to invert the Hessian $H_f$ as part of the optimization problem.
 -->
 
-*dịch đoạn phía trên*
+Nghĩa là, ta cần phải nghịch đảo ma trận Hessian $H_f$ như một phần của bài toán tối ưu hóa.
 
 <!--
 For $f(x) = \frac{1}{2} x^2$ we have $\nabla f(x) = x$ and $H_f = 1$.
@@ -411,8 +465,11 @@ Alas, we got a bit lucky here since the Taylor expansion was exact.
 Let us see what happens in other problems.
 -->
 
-*dịch đoạn phía trên*
-
+Với $f(x) = \frac{1}{2} x^2$ ta có $\nabla f(x) = x$ và $H_f = 1$.
+Do đó với $x$ bất kỳ, ta đều thu được $\epsilon = -x$.
+Nói cách khác, một bước đơn lẻ là đã đủ để hội tụ một cách hoàn hảo mà không cần bất kỳ tinh chỉnh nào!
+Chúng ta khá may mắn ở đây vì khai triển Taylor không cần xấp xỉ.
+Hãy xem thử điều gì sẽ xảy ra với các bài toán khác nhé.
 
 ```{.python .input}
 c = 0.5
@@ -448,8 +505,11 @@ That is a fatal flaw of the algorithm.
 Let us see what happens in practice.
 -->
 
-*dịch đoạn phía trên*
-
+Giờ hãy xem điều gì xảy ra với một hàm *không lồi*, ví dụ như $f(x) = x \cos(c x)$.
+Sau tất cả, hãy lưu ý rằng trong phương pháp Newton, chúng ta cuối cùng sẽ phải chia cho ma trận Hessian.
+Điều này nghĩa là nếu đạo hàm bậc hai là *âm* thì chúng ta phải đi theo hướng *tăng* $f$.
+Đó là khiếm khuyết chết người của thuật toán.
+Hãy xem điều gì sẽ xảy ra trong thực tế nào.
 
 ```{.python .input}
 c = 0.15 * np.pi
@@ -476,7 +536,12 @@ Having second order information allows us to be cautious whenever the curvature 
 Let us see how this works with a slightly smaller learning rate, say $\eta = 0.5$. As we can see, we have quite an efficient algorithm.
 -->
 
-*dịch đoạn phía trên*
+Điều này sai một cách ngoạn mục.
+Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó.
+Một chiến lược khác là đưa tốc độ học trở lại.
+Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn.
+Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng.
+Hãy xem nó hoạt động như thế nào với một tốc độ học khá nhỏ, $\eta = 0.5$ chả hạn. Như ta có thể thấy, chúng ta có một thuật toán khá hiệu quả.
 
 
 ```{.python .input}
@@ -495,21 +560,22 @@ show_trace(newton(0.5))
 ### Convergence Analysis
 -->
 
-### *dịch đoạn phía trên*
+### Phân tích hội tụ
 
 <!--
 We only analyze the convergence rate for convex and three times differentiable $f$, where at its minimum $x^*$ the second derivative is nonzero, i.e., where $f''(x^*) > 0$.
 The multivariate proof is a straightforward extension of the argument below and omitted since it doesn't help us much in terms of intuition. 
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ chỉ phân tích tốc độ hội tụ đối với hàm $f$ lồi và khả vi ba lần, đây là hàm số có đạo hàm bậc hai tại cực tiểu $x^*$ khác không ($f''(x^*) > 0$).
 
 <!--
 Denote by $x_k$ the value of $x$ at the $k$-th iteration and let $e_k := x_k - x^*$ be the distance from optimality.
 By Taylor series expansion we have that the condition $f'(x^*) = 0$ can be written as
 -->
 
-*dịch đoạn phía trên*
+Đặt $x_k$ là giá trị của $x$ tại vòng lặp thứ $k$ và $e_k := x_k - x^*$ là khoảng cách đến điểm tối ưu.
+Theo khai triển Taylor, điều kiện $f'(x^*) = 0$ được viết lại thành
 
 
 $$0 = f'(x_k - e_k) = f'(x_k) - e_k f''(x_k) + \frac{1}{2} e_k^2 f'''(\xi_k).$$
@@ -520,7 +586,8 @@ This holds for some $\xi_k \in [x_k - e_k, x_k]$. Recall that we have the update
 Dividing the above expansion by $f''(x_k)$ yields
 -->
 
-*dịch đoạn phía trên*
+Điều này đúng với một vài $\xi_k \in [x_k - e_k, x_k]$. Hãy nhớ rằng chúng ta có công thức cập nhật $x_{k+1} = x_k - f'(x_k) / f''(x_k)$.
+Chia khai triển Taylor ở trên cho $f''(x_k)$, ta thu được
 
 
 $$e_k - f'(x_k) / f''(x_k) = \frac{1}{2} e_k^2 f'''(\xi_k) / f''(x_k).$$ 
@@ -531,7 +598,8 @@ Plugging in the update equations leads to the following bound $e_{k+1} \leq e_k^
 Consequently, whenever we are in a region of bounded $f'''(\xi_k) / f''(x_k) \leq c$, we have a quadratically decreasing error $e_{k+1} \leq c e_k^2$. 
 -->
 
-*dịch đoạn phía trên*
+Thay vào phương trình cập nhật sẽ dẫn đến ràng buộc $e_{k+1} \leq e_k^2 f'''(\xi_k) / f'(x_k)$.
+Do đó, khi nằm trong miền ràng buộc $f'''(\xi_k) / f''(x_k) \leq c$, ta sẽ có sai số giảm theo bình phương $e_{k+1} \leq c e_k^2$.
 
 <!--
 As an aside, optimization researchers call this *linear* convergence, whereas a condition such as $e_{k+1} \leq \alpha e_k$ would be called a *constant* rate of convergence. 
@@ -541,7 +609,11 @@ Second, this requires that $f$ is well-behaved up to higher order derivatives.
 It comes down to ensuring that $f$ does not have any "surprising" properties in terms of how it might change its values. 
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh đó, các nhà nghiên cứu tối ưu hóa gọi đây là hội tụ *tuyến tính*, còn điều kiện $e_{k+1} \leq \alpha e_k$ được gọi là tốc độ hội tụ *không đổi*.
+Lưu ý rằng phân tích này đi kèm với một số cảnh báo: Chúng ta không thực sự biết rằng khi nào mình sẽ tiến tới được vùng hội tụ nhanh.
+Thay vào đó, chúng ta chỉ biết rằng một khi đến được đó, việc hội tụ sẽ xảy ra rất nhanh chóng.
+Thêm nữa, điều này yêu cầu $f$ được xử lý tốt ở các đạo hàm bậc cao.
+Nó đảm bảo rằng $f$ sẽ không có bất cứ một tính chất "bất ngờ" nào về cách nó có thể thay đổi giá trị.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -551,7 +623,7 @@ It comes down to ensuring that $f$ does not have any "surprising" properties in 
 ### Preconditioning
 -->
 
-### *dịch đoạn phía trên*
+### Tiền Điều kiện
 
 <!--
 Quite unsurprisingly computing and storing the full Hessian is very expensive.
@@ -562,8 +634,12 @@ Moreover, estimates for the main diagonal elements are what drives some of the i
 This leads to update algorithms of the form
 -->
 
-*dịch đoạn phía trên*
-
+Không có gì ngạc nhiên khi việc tính toán và lưu trữ toàn bộ ma trận Hessian là rất tốn kém.
+Do đó ta cần tìm kiếm một phương pháp thay thế.
+Một cách để cải thiện vấn đề này là tránh tính toán toàn bộ ma trận Hessian, chỉ tính toán các giá trị thuộc *đường chéo*.
+Mặc dù cách trên không tốt bằng phương pháp Newton hoàn chỉnh nhưng vẫn tốt hơn nhiều so với không sử dụng.
+Hơn nữa, ước lượng các giá trị đường chéo chính chính là thứ thúc đẩy sự đổi mới trong các thuật toán tối ưu hóa hạ gradient ngẫu nhiên.
+Thuật toán cập nhật sẽ có dạng
 
 $$\mathbf{x} \leftarrow \mathbf{x} - \eta \mathrm{diag}(H_f)^{-1} \nabla \mathbf{x}.$$
 
@@ -575,13 +651,16 @@ Using preconditioning removes this.
 Effectively preconditioning with gradient descent amounts to selecting a different learning rate for each coordinate. 
 -->
 
-*dịch đoạn phía trên*
+Để thấy tại sao điều này có thể là một ý tưởng tốt, ta ví dụ có hai biến số biểu thị chiều cao, một biến với đơn vị mm, biến còn lại với đơn vị km.
+Với cả hai đơn vị đo, khi quy đổi ra mét, chúng ta đều có sự sai lệch lớn trong việc tham số hóa.
+Sử dụng tiền đề sẽ loại bỏ điều này.
+Tiền đề hiệu quả cùng hạ gradient có ý nghĩa giúp chọn ra các tốc độ học khác nhau cho từng trục tọa độ.
 
 <!--
 ### Gradient Descent with Line Search
 -->
 
-### *dịch đoạn phía trên*
+### Hạ gradient cùng tìm kiếm đường thẳng
 
 <!--
 One of the key problems in gradient descent was that we might overshoot the goal or make insufficient progress.
@@ -589,7 +668,9 @@ A simple fix for the problem is to use line search in conjunction with gradient 
 That is, we use the direction given by $\nabla f(\mathbf{x})$ and then perform binary search as to which step length $\eta$ minimizes $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$. 
 -->
 
-*dịch đoạn phía trên*
+Một trong những vấn đề chính của hạ gradient là chúng ta có thể vượt quá khỏi mục tiêu hoặc không đạt đủ sự tiến bộ.
+Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường kết hợp với hạ gradient.
+Chúng ta sử dụng hướng được cho bởi $\nabla f(\mathbf{x})$ và sau đó dùng tìm kiếm nhị phân để tìm ra độ dài bước $\eta$ có thể cực tiểu hóa $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$.
 
 <!--
 This algorithm converges rapidly (for an analysis and proof see e.g., :cite:`Boyd.Vandenberghe.2004`).
@@ -597,7 +678,9 @@ However, for the purpose of deep learning this is not quite so feasible, since e
 This is way too costly to accomplish. 
 -->
 
-*dịch đoạn phía trên*
+Thuật toán này sẽ hội tụ nhanh chóng (xem phân tích và chứng minh ở :cite:`Boyd.Vandenberghe.2004`).
+Tuy nhiên, đối với mục đích của học sâu thì nó không quá khả thi do mỗi bước của tìm kiếm đường thẳng sẽ yêu cầu chúng ta ước lượng hàm mục tiêu trên toàn bộ tập dữ liệu.
+Điều này quá tốn kém để có thể thực hiện.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -607,7 +690,7 @@ This is way too costly to accomplish.
 ## Summary
 -->
 
-## *dịch đoạn phía trên*
+## Tổng kết
 
 <!--
 * Learning rates matter. Too large and we diverge, too small and we do not make progress.
@@ -618,13 +701,18 @@ This is way too costly to accomplish.
 * Beware of using Newton's method without any adjustments for nonconvex problems. 
 -->
 
-*dịch đoạn phía trên*
+* Tốc độ học rất quan trọng. Quá lớn sẽ khiến việc tối ưu hóa phân kỳ, quá nhỏ sẽ không thu được sự tiến bộ nào.
+* Hạ gradient có thể bị kẹt tại cực tiểu cục bộ.
+* Trong bài toán nhiều chiều, tinh chỉnh việc học tốc độ học sẽ phức tạp.
+* Tiền đề có thể giúp trong việc tinh chỉnh thang đo.
+* Phương pháp Newton nhanh hơn rất nhiều *một khi* hoạt động trên bài toán lồi phù hợp.
+* Hãy cẩn trọng trong việc dùng phương pháp Newton cho các bài toán không lồi mà không tinh chỉnh.
 
 <!--
 ## Exercises
 -->
 
-## *dịch đoạn phía trên*
+## Bài tập
 
 <!--
 1. Experiment with different learning rates and objective functions for gradient descent.
@@ -640,7 +728,17 @@ This is way too costly to accomplish.
 5. Apply the algorithm above to a number of objective functions (convex or not). What happens if you rotate coordinates by $45$ degrees?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thử các tốc độ học, hàm mục tiêu khác nhau cho hạ gradient.
+2. Khởi tạo tìm kiếm đường để cực tiểu hóa hàm lồi trong khoảng $[a, b]$.
+    * Bạn có cần đạo hàm để tìm kiếm nhị phân không, ví dụ, để quyết định xem sẽ chọn $[a, (a+b)/2]$ hay $[(a+b)/2, b]$?
+    * Tốc độ hội tụ của thuật toán nhanh chậm thế nào?
+    * Hãy khởi tạo thuật toán và áp dụng nó để cực tiểu hóa $\log (\exp(x) + \exp(-2*x -3))$.
+3. Thiết kế một hàm mục tiêu thuộc $\mathbb{R}^2$ mà việc hạ gradient rất chậm. Gợi ý: sử dụng trục tọa độ có thang đo khác nhau.
+4. Khởi tạo một phiên bản nhỏ gọn của phương pháp Newton sử dụng tiền đề:
+    * Dùng ma trận đường chéo Hessian làm tiền đề.
+    * Sử dụng các giá trị tuyệt đối của nó thay vì các giá trị có dấu.
+    * Áp dụng điều này cho bài toán phía trên.
+5. Áp dụng thuật toán phía trên cho các hàm mục tiêu (lồi lẫn không lồi). Điều gì sẽ xảy ra nếu xoay các trục tọa độ một góc $45$ độ?
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -665,28 +763,28 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 6 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 7 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 8 -->
-* 
+* Võ Tấn Phát
 
 <!-- Phần 9 -->
-* 
+* Võ Tấn Phát

@@ -64,7 +64,7 @@ beyond the exact set of data points used to train them.
 -->
 
 Trong học sâu, chúng ta *huấn luyện* các mô hình, cập nhật chúng liên tục để chúng ngày càng tốt hơn khi học với nhiều dữ liệu hơn.
-Thông thường, trở nên tốt hơn tương đương với tối thiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
+Thông thường, trở nên tốt hơn tương đương với cực tiểu hoá một *hàm mất mát*, một điểm số sẽ trả lời câu hỏi "mô hình của ta đang *tệ* tới mức nào?"
 Câu hỏi này lắt léo hơn ta tưởng nhiều.
 Mục đích cuối cùng mà ta muốn là mô hình sẽ hoạt động tốt trên dữ liệu mà nó chưa từng nhìn thấy. <!-- người dịch tự sửa -->
 Nhưng chúng ta chỉ có thể khớp mô hình trên dữ liệu mà ta đang có thể thấy.
