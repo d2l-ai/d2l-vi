@@ -26,7 +26,7 @@ npx.set_np()
 ## Stochastic Gradient Updates
 -->
 
-## Bước Cập nhật trong Hạ Gradient Ngẫu nhiên
+## Cập nhật Gradient Ngẫu nhiên
 
 <!--
 In deep learning, the objective function is usually the average of the loss functions for each example in the training dataset.
@@ -34,7 +34,7 @@ We assume that $f_i(\mathbf{x})$ is the loss function of the training dataset wi
 -->
 
 Trong học sâu, hàm mục tiêu thường là trung bình của các hàm mất mát cho từng mẫu trong tập huấn luyện.
-Giả sử rằng $f_i(\mathbf{x})$ là hàm mất mát của tập huấn luyện có $n$ mẫu, với $i$ là chỉ số mẫu và vector tham số $\mathbf{x}$, thì ta có hàm mục tiêu
+Giả sử tập huấn luyện có $n$ mẫu, $f_i(\mathbf{x})$ là hàm mất mát của mẫu thứ $i$, và vector tham số là $\mathbf{x}$. Ta có hàm mục tiêu
 
 
 $$f(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n f_i(\mathbf{x}).$$
@@ -55,8 +55,8 @@ If gradient descent is used, the computing cost for each independent variable it
 Therefore, when the model training dataset is large, the cost of gradient descent for each iteration will be very high.
 -->
 
-Nếu hạ gradient được sử dụng, chi phí tính toán cho mỗi vòng lặp độc lập là $\mathcal{O}(n)$, tăng một cách tuyến tính với $n$.
-Do đó, với tập huấn luyện lớn, chi phí của hạ gradient cho mỗi vòng lặp sẽ cao.
+Nếu hạ gradient được sử dụng, chi phí tính toán cho mỗi vòng lặp độc lập là $\mathcal{O}(n)$, tăng tuyến tính với $n$.
+Do đó, với tập huấn luyện lớn, chi phí của hạ gradient cho mỗi vòng lặp sẽ rất cao.
 
 <!--
 Stochastic gradient descent (SGD) reduces computational cost at each iteration.
@@ -65,7 +65,7 @@ and compute the gradient $\nabla f_i(\mathbf{x})$ to update $\mathbf{x}$:
 -->
 
 Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) giúp giảm chi phí tính toán ở mỗi vòng lặp.
-Ở mỗi vòng lặp của thuật toán này, ta lấy ngẫu nhiên một mẫu dữ liệu có chỉ số $i\in\{1,\ldots, n\}$, và tính gradient $\nabla f_i(\mathbf{x})$ để cập nhật $\mathbf{x}$:
+Ở mỗi vòng lặp, ta lấy ngẫu nhiên một mẫu dữ liệu có chỉ số $i\in\{1,\ldots, n\}$ theo phân phối đều, và chỉ cập nhật $\mathbf{x}$ bằng gradient $\nabla f_i(\mathbf{x})$:
 
 
 $$\mathbf{x} \leftarrow \mathbf{x} - \eta \nabla f_i(\mathbf{x}).$$
@@ -79,7 +79,7 @@ We should mention that the stochastic gradient $\nabla f_i(\mathbf{x})$ is the u
 
 Ở đây, $\eta$ là tốc độ học.
 Ta có thể thấy rằng chi phí tính toán cho mỗi vòng lặp giảm từ $\mathcal{O}(n)$ của hạ gradient xuống còn hằng số $\mathcal{O}(1)$.
-Nên nhớ rằng gradient ngẫu nhiên $\nabla f_i(\mathbf{x})$ là một ước lượng không thiên lệch của gradient $\nabla f(\mathbf{x})$.
+Nên nhớ rằng gradient ngẫu nhiên $\nabla f_i(\mathbf{x})$ là một ước lượng không thiên lệch (*unbiased*) của gradient $\nabla f(\mathbf{x})$.
 
 
 $$\mathbb{E}_i \nabla f_i(\mathbf{x}) = \frac{1}{n} \sum_{i = 1}^n \nabla f_i(\mathbf{x}) = \nabla f(\mathbf{x}).$$
@@ -95,7 +95,7 @@ Do đó, về trung bình, gradient ngẫu nhiên là một ước lượng tố
 Now, we will compare it to gradient descent by adding random noise with a mean of 0 to the gradient to simulate a SGD.
 -->
 
-Bây giờ, ta sẽ so sánh với hạ gradient bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient để mô phỏng một SGD.
+Bây giờ, ta sẽ so sánh với hạ gradient bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient trong SGD.
 
 
 ```{.python .input  n=3}
@@ -134,15 +134,15 @@ On the other hand, if we pick it too large, we will not get a good solution, as 
 The only way to resolve these conflicting goals is to reduce the learning rate *dynamically* as optimization progresses.
 -->
 
-Như có thể thấy, quỹ đạo của các biến trong SGD dao động mạnh hơn so với trong hạ gradient ở phần trước.
+Như có thể thấy, quỹ đạo của các biến trong SGD dao động mạnh hơn hạ gradient ở phần trước.
 Điều này là do bản chất ngẫu nhiên của gradient.
-Tức là, ngay cả khi tới gần giá trị nhỏ nhất, ta vẫn gặp phải sự bất định gây ra bởi gradient tức thời thông qua $\eta \nabla f_i(\mathbf{x})$.
+Tức là, ngay cả khi tới gần giá trị nhỏ nhất, ta vẫn gặp phải sự bất định gây ra bởi gradient ngẫu nhiên $\eta \nabla f_i(\mathbf{x})$.
 Thậm chí sau 50 bước thì chất lượng vẫn không tốt lắm.
-Tệ hơn, nó vẫn sẽ không cải thiện nếu ta thực hiện thêm nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
+Tệ hơn, nó vẫn sẽ không cải thiện với nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
 Ta chỉ còn một lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
-Tuy nhiên, nếu chọn một giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển đáng kể nào ở những bước đầu tiên.
-Mặt khác, nếu chọn một giá trị quá lớn, ta sẽ không thu được nghiệm tốt, như đã thấy ở trên.
-Cách duy nhất để giải quyết hai mục tiêu xung đột lẫn nhau này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
+Tuy nhiên, nếu chọn giá trị quá nhỏ, ta sẽ không đạt được bất kỳ tiến triển đáng kể nào ở những bước đầu tiên.
+Mặt khác, nếu chọn giá trị quá lớn, ta sẽ không thu được nghiệm tốt, như đã thấy ở trên.
+Cách duy nhất để giải quyết hai mục tiêu xung đột này là giảm tốc độ học *một cách linh hoạt* trong quá trình tối ưu.
 
 <!--
 This is also the reason for adding a learning rate function `lr` into the `sgd` step function.
@@ -150,7 +150,7 @@ In the example above any functionality for learning rate scheduling lies dormant
 -->
 
 Đây cũng là lý do cho việc thêm hàm tốc độ học `lr` vào hàm bước `sgd`.
-Trong ví dụ trên, chức năng định thời tốc độ học không được kích hoạt vì ta đặt hàm `lr` bằng một hằng số, tức `lr = (lambda: 1)`.
+Trong ví dụ trên, chức năng định thời tốc độ học (*learning rate scheduling*) không được kích hoạt vì ta đặt hàm `lr` bằng một hằng số, tức `lr = (lambda: 1)`.
 
 <!--
 ## Dynamic Learning Rate
@@ -166,22 +166,21 @@ If we decrease it too slowly, we waste too much time on optimization.
 There are a few basic strategies that are used in adjusting $\eta$ over time (we will discuss more advanced strategies in a later chapter):
 -->
 
-Thay thế $\eta$ bằng tốc độ học phụ thuộc vào thời gian $\eta(t)$ sẽ khiến việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
-Cụ thể, ta sẽ cần phải tìm ra mức độ suy giảm $\eta$ hợp lý.
-Nếu giảm quá nhanh, quá trình tối ưu hóa sẽ ngừng quá sớm.
-Nếu giảm quá chậm, ta sẽ lãng phí rất nhiều thời gian cho việc tối ưu hóa.
-Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\eta$ theo thời gian (ta sẽ thảo luận về các chiến lược nâng cao hơn trong chương sau):
+Thay thế $\eta$ bằng tốc độ học phụ thuộc thời gian $\eta(t)$ sẽ khiến việc kiểm soát sự hội tụ của thuật toán tối ưu trở nên phức tạp hơn.
+Cụ thể, ta cần tìm ra mức độ suy giảm $\eta$ hợp lý.
+Nếu giảm quá nhanh, quá trình tối ưu sẽ ngừng quá sớm.
+Nếu giảm quá chậm, ta sẽ lãng phí rất nhiều thời gian cho việc tối ưu.
+Có một vài chiến lược cơ bản được sử dụng để điều chỉnh $\eta$ theo thời gian (ta sẽ thảo luận về các chiến lược cao cấp hơn trong chương sau):
 
 
 $$
 \begin{aligned}
-    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{hằng số từng khúc} \\
+    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{hằng số theo khúc} \\
     \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{lũy thừa} \\
     \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{đa thức}
 \end{aligned}
 $$
 <!-- dịch piecewise~constant, exponential và polynomial -->
-<!-- Bạn nào review dịch giúp mình cụm piecewise~constant nhé, mình không tìm được bản dịch tiếng Việt cho cụm này. Many thanks! -->
 
 <!--
 In the first scenario we decrease the learning rate, e.g., whenever progress in optimization has stalled.
@@ -195,10 +194,10 @@ Let us see what this looks like in practice.
 
 Trong trường hợp đầu tiên, ta giảm tốc độ học bất cứ khi nào tiến trình tối ưu bị đình trệ.
 Đây là một chiến lược phổ biến để huấn luyện các mạng sâu.
-Ngoài ra, ta có thể tăng mức độ suy giảm bằng cách áp dụng suy giảm theo lũy thừa.
+Ngoài ra, ta có thể làm giảm tốc độ học nhanh hơn bằng suy giảm theo lũy thừa.
 Thật không may, phương pháp này dẫn đến việc dừng tối ưu quá sớm trước khi thuật toán hội tụ.
 Một lựa chọn phổ biến khác là suy giảm đa thức với $\alpha = 0.5$.
-Trong trường hợp tối ưu lồi, có một số chứng minh cho thấy giá trị này cho kết quả tốt.
+Trong trường hợp tối ưu lồi, có các chứng minh cho thấy giá trị này cho kết quả tốt.
 Hãy cùng xem nó hoạt động như thế nào trong thực tế.
 
 
@@ -226,11 +225,11 @@ Indeed, the algorithm fails to converge at all.
 On the other hand, if we use a polynomial decay where the learning rate decays with the inverse square root of the number of steps convergence is good.
 -->
 
-Như kỳ vọng, giá trị phương sai của các tham số giảm đáng kể.
-Tuy nhiên, cách này có thể không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
-Thậm chí sau 1000 bước lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
+Như dự đoán, giá trị phương sai của các tham số giảm đáng kể.
+Tuy nhiên, suy giảm lũy thừa không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
+Thậm chí sau 1000 vòng lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
 Trên thực tế, thuật toán này không hội tụ được.
-Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương số bước lặp, có thể thuật toán sẽ hội tụ.
+Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương thời gian, thuật toán hội tụ tốt. <!-- chỗ này bản gốc có gì đó sai sai, `ctr` trong code là thời gian chứ nhỉ, số bước là `steps=50` đâu liên quan. -->
 
 ```{.python .input  n=5}
 def polynomial():
@@ -254,13 +253,13 @@ For general nonconvex problems it is very difficult to obtain meaningful converg
 For a survey see e.g., the excellent [lecture notes](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) of Tibshirani 2015.
 -->
 
-Vẫn còn có rất nhiều lựa chọn khác cho cách thiết lập tốc độ học. 
-Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm dần giá trị của siêu tham số này với tốc độ chậm hơn.
+Vẫn còn có rất nhiều lựa chọn khác để thiết lập tốc độ học. 
+Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm nhưng với tốc độ chậm hơn.
 Ta cũng có thể thiết lập tốc độ học với giá trị lớn nhỏ thay đổi luân phiên.
-Chúng ta có vô vàn lựa chọn khác nhau cho cách định thời (_schedule_) tốc độ học như vậy.
-Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể sử dụng các phép phân tích lý thuyết như là trong điều kiện lồi.
-Với bài toán không lồi tổng quát, rất khó để suy được các đảm bảo ý nghĩa cho việc hội tụ, vì nói chung các bài toán tối ưu phi tuyến tính không lồi đều thuộc dạng NP-hard.
-Để tìm hiểu thêm, tham khảo các ví dụ trong tập [bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
+Có rất nhiều cách khác nhau để định thời tốc độ học.
+Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể phân tích lý thuyết, ví dụ như trong điều kiện lồi.
+Với bài toán không lồi tổng quát, rất khó thu được sự đảm bảo hội tụ có ý nghĩa, vì nói chung các bài toán tối ưu phi tuyến không lồi đều thuộc dạng NP-hard.
+Để tìm hiểu thêm, tham khảo các ví dụ trong [tập bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
