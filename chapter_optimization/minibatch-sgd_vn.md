@@ -17,12 +17,12 @@ Stochastic Gradient Descent is not particularly *computationally efficient* sinc
 This suggests that there might be a happy medium, and in fact, that's what we have been using so far in the examples we discussed.
 -->
 
-Đến phần này, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính toán gradient và cập nhật từng tham số một.
+Đến giờ, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính toán gradient và cập nhật từng tham số một.
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
-Mỗi cách có mặt hạn chế riêng của nó.
-Hạ Gradient có *hiệu suất dữ liệu* (*data efficient*) thấp khi dữ liệu tương đồng với nhau.
-Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computationally efficient*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
-Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, đó chính là phương pháp mà ta sử dụng ở các ví dụ đã thảo luận từ trước tới nay.
+Mỗi cách có mặt hạn chế riêng.
+Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đồng với nhau. <!-- dịch ra TV là danh từ nên mình chuyển từ gốc sang danh từ. -->
+Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
+Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, ta đã sử dụng phương pháp đó trong các ví dụ đã thảo luận.
 
 <!--
 ## Vectorization and Caches
@@ -37,10 +37,10 @@ In this case we need to send at least one image to each GPU.
 With 8 GPUs per server and 16 servers we already arrive at a minibatch size of 128.
 -->
 
-Trọng tâm của quyết định sử dụng minibatch là hiệu suất tính toán.
+Lý do sử dụng minibatch chủ yếu là vì hiệu suất tính toán.
 Để dễ hiểu, ta xét trường hợp tính toán song song giữa nhiều GPU và giữa nhiều máy chủ.
 Trong trường hợp này ta cần đưa ít nhất một ảnh vào mỗi GPU.
-Với 16 máy chủ và 8 GPU mỗi máy, ta đã có minibatch đạt kích thước 128.
+Với 16 máy chủ và 8 GPU mỗi máy, ta có minibatch kích thước 128.
 
 <!--
 Things are a bit more subtle when it comes to single GPUs or even CPUs.
@@ -50,11 +50,11 @@ These caches are of increasing size and latency (and at the same time they are o
 Suffice it to say, the processor is capable of performing many more operations than what the main memory interface is able to provide.
 -->
 
-Vấn đề trở nên nhạy cảm hơn đối với trường hợp GPU đơn hay ngay cả CPU đơn.
+Vấn đề trở nên nhạy cảm hơn đối với GPU đơn hay ngay cả CPU đơn.
 Những thiết bị này có nhiều loại bộ nhớ, thường có nhiều loại đơn vị thực hiện tính toán và giới hạn băng thông giữa các đơn vị này cũng khác nhau.
-Ví dụ, một CPU có số lượng nhỏ thanh ghi và bộ nhớ đệm L1, L2 và trong một số trường hợp có cả L3 (phần bộ nhớ được phân phối giữa các lõi khác nhau của vi xử lý).
+Ví dụ, một CPU có số lượng ít thanh ghi, bộ nhớ đệm L1, L2 và trong một số trường hợp có cả L3 (phần bộ nhớ được phân phối giữa các lõi của vi xử lý).
 Các bộ nhớ đệm đang tăng dần về kích thước và độ trễ (và cùng với đó là giảm băng thông).
-Nói đến đây là đủ để thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với giao diện bộ nhớ chính có thể cung cấp.
+Nói vậy đủ thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với giao diện bộ nhớ chính (*main memory interface*) có thể cung cấp.
 
 <!--
 * A 2GHz CPU with 16 cores and AVX-512 vectorization can process up to $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ bytes per second. 
@@ -70,14 +70,15 @@ See e.g., this [Wikipedia article](https://en.wikipedia.org/wiki/Cache_hierarchy
 -->
 
 * Một CPU tốc độ 2GHz với 16 lõi và phép vector hoá AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
-Khả năng của GPU dễ dàng vượt qua con số này hàng trăm lần.
-Mặt khác, với một vi xử lý máy chủ trung bình, băng thông có lẽ không vượt quá 100 GB/s, tức là chưa bằng một phần mười lượng yêu cầu để giữ cho bộ xử lý hoạt động.
-Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: đầu tiên, giao diện bộ nhớ thường rộng 64 bit hoặc hơn (ví dụ như trên GPU lên đến 384 bit), 
+Khả năng của GPU dễ dàng vượt qua con số này cả trăm lần.
+Mặt khác, trong vi xử lý của máy chủ cỡ trung bình, băng thông có lẽ không vượt quá 100 GB/s, tức là chưa bằng một phần mười băng thông yêu cầu để đưa dữ liệu vào bộ xử lý.
+Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: 
+đầu tiên, giao diện bộ nhớ thường rộng 64 bit hoặc hơn (ví dụ như trên GPU lên đến 384 bit), 
 do đó việc đọc một byte duy nhất vẫn sẽ phải chịu chi phí giống như truy cập một khoảng bộ nhớ rộng hơn.
-* Tổng chi phí cho lần truy cập đầu tiên là khá đáng kể trong khi truy cập liên tiếp thường hao tổn ít (thường được gọi là đọc hàng loạt).
-Có rất nhiều điều cần phải chú ý đến, ví dụ như lưu trữ đệm khi ta có nhiều điểm truy cập cuối (*sockets*), nhiều chiplet và các cấu trúc khác.
- Việc thảo luận chi tiết vấn đề trên nằm ngoài phạm vi của phần này.
-Bạn có thể đọc [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để hiểu sâu hơn về các vấn đề trên.
+* Tổng chi phí cho lần truy cập đầu tiên là khá lớn, trong khi truy cập liên tiếp thường hao tổn ít (thường được gọi là đọc hàng loạt).
+Có rất nhiều điều cần lưu ý, ví dụ như lưu trữ đệm khi ta có nhiều điểm truy cập cuối (*sockets*), nhiều chiplet và các cấu trúc khác.
+Việc thảo luận chi tiết vấn đề trên nằm ngoài phạm vi của phần này.
+Bạn có thể tham khảo [bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để hiểu sâu hơn.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -93,9 +94,8 @@ For instance we could try the following:
 
 Cách để giảm bớt những ràng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
 Đây *chính là* động lực đằng sau việc sử dụng batch trong học sâu.
-Để đơn giản hoá vấn đề, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
-Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn.
-Ta có thể thử một số cách sau:
+Để đơn giản, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
+Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn, ví dụ như:
 
 <!--
 1. We could compute $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, i.e., we could compute it element-wise by means of dot products.
@@ -106,10 +106,10 @@ Likewise we could compute $\mathbf{A}$ one row $\mathbf{A}_{i,:}$ at a time.
 -->
 
 1. Ta có thể tính $\mathbf{A}_{ij} = \mathbf{B}_{i,:} \mathbf{C}_{:,j}^\top$, tức là tính từng phần tử bằng tích vô hướng.
-2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, tức là tính theo từng cột một.
-Tương tự, ta có thể tính $\mathbf{A}$ theo từng hàng $\mathbf{A}_{i,:}$ một.
+2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, tức là tính theo từng cột.
+Tương tự, ta có thể tính $\mathbf{A}$ theo từng hàng $\mathbf{A}_{i,:}$.
 3. Ta đơn giản có thể tính $\mathbf{A} = \mathbf{B} \mathbf{C}$.
-4. Ta có thể chia $\mathbf{B}$ và $\mathbf{C}$ thành nhiều khối ma trận nhỏ hơn và tính $\mathbf{A}$ từng khối một.
+4. Ta có thể chia $\mathbf{B}$ và $\mathbf{C}$ thành nhiều khối ma trận nhỏ hơn và tính $\mathbf{A}$ một khối tại một thời điểm.
 
 <!--
 If we follow the first option, we will need to copy one row and one column vector into the CPU each time we want to compute an element $\mathbf{A}_{ij}$.
@@ -125,13 +125,13 @@ Let us have a look at how efficient these operations are in practice.
 -->
 
 Nếu sử dụng cách đầu tiên, ta cần sao chép một vector cột và một vector hàng vào CPU cho mỗi lần tính phần tử $\mathbf{A}_{ij}$.
-Tệ hơn nữa, do lần lượt duyệt qua từng các phần tử của ma trận, ta buộc phải truy cập nhiều lần vùng nhớ của một trong hai vector khi đọc chúng từ bộ nhớ.
-Cách thứ hai được ưa chuộng hơn nhiều.
+Tệ hơn nữa, do lần lượt duyệt theo hàng hoặc cột qua từng phần tử của ma trận, ta buộc phải truy cập nhiều lần vùng nhớ của một trong hai vector khi đọc chúng từ bộ nhớ.
+Cách thứ hai tốt hơn nhiều.
 Theo cách này, ta có thể giữ vector cột $\mathbf{C}_{:,j}$ trong vùng nhớ đệm của CPU trong khi ta tiếp tục quét qua $B$.
-Cách này chia đôi băng thông cần thiết của bộ nhớ, do đó truy cập nhanh hơn.
+Cách này chỉ cần nửa băng thông cần thiết của bộ nhớ, do đó truy cập nhanh hơn.
 Đương nhiên cách thứ ba là tốt nhất.
-Đáng tiếc rằng đa số ma trận quá lớn để có thể đưa vào vùng nhớ đệm (dù sao thì đây cũng chính là điều ta đang thảo luận).
-Tuy nhiên, cách thứ tư cho ta một phương pháp thay thế thiết thực: đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
+Đáng tiếc rằng đa số ma trận quá lớn để có thể đưa vào vùng nhớ đệm (dù sao đây cũng chính là điều ta đang thảo luận).
+Cách thứ tư là một phương pháp thay thế khá tốt: đưa các khối của ma trận vào vùng nhớ đệm và thực hiện phép nhân cục bộ.
 Các thư viện đã được tối ưu sẽ thực hiện việc này giúp chúng ta.
 Hãy xem xét hiệu suất của từng phương pháp trong thực tế.
 
@@ -142,8 +142,8 @@ Such overhead can be quite detrimental.
 In short, it is highly advisable to use vectorization (and matrices) whenever possible.
 -->
 
-Ngoài hiệu suất tính toán, tổng chi phí do Python gây ra và do chính framework học sâu cũng đáng để cân nhắc.
-Nên nhớ rằng mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet engine để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
+Ngoài hiệu suất tính toán, tổng chi phí do Python và framework học sâu gây ra cũng đáng cân nhắc.
+Mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
 Chi phí đó có thể khá bất lợi.
 Nói ngắn gọn, nên áp dụng vector hoá (và ma trận) bất cứ khi nào có thể.
 
@@ -166,7 +166,7 @@ C = np.random.normal(0, 1, (256, 256))
 Element-wise assignment simply iterates over all rows and columns of $\mathbf{B}$ and $\mathbf{C}$ respectively to assign the value to $\mathbf{A}$.
 -->
 
-Phép nhân theo từng phần tử một chỉ đơn giản là lặp qua tất cả các hàng và cột của $\mathbf{B}$ và $\mathbf{C}$ theo thứ tự rồi gán kết quả cho $\mathbf{A}$.
+Phép nhân theo từng phần tử chỉ đơn giản là lặp qua tất cả các hàng và cột của $\mathbf{B}$ và $\mathbf{C}$ theo thứ tự rồi gán kết quả cho $\mathbf{A}$.
 
 
 ```{.python .input  n=2}
@@ -187,7 +187,7 @@ timer.stop()
 A faster strategy is to perform column-wise assignment.
 -->
 
-Có một chiến lược nhanh hơn chính là thực hiện phép nhân theo từng cột.
+Một cách nhanh hơn là nhân theo từng cột.
 
 
 ```{.python .input  n=3}
