@@ -217,7 +217,7 @@ with d2l.Benchmark('scalar conversion'):
 ## Improving Computation
 -->
 
-## *dịch tiêu đề phía trên*
+## Cải thiện khả năng Tính toán
 
 <!--
 On a heavily multithreaded system (even regular laptops have 4 threads or more and on multi-socket servers this number can exceed 256) the overhead of scheduling operations can become significant.
@@ -226,7 +226,11 @@ To illustrate the benefit of doing this let us see what happens if we increment 
 We simulate synchronous execution by inserting a `wait_to_read()` barrier in between each addition.
 -->
 
-*dịch đoạn phía trên*
+Trên một hệ thống đa luồng lớn (ngay cả laptop cũng có 4 luồng hoặc hơn, và trên các máy trạm đa điểm cuối (*multi-socket server*), số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
+Đây là lý do tại sao quá trình tính toán và định thời xảy ra bất đồng bộ và song song rất được ưa chuộng.
+Để minh hoạ cho lợi ích của việc này, hãy cùng xem nếu ta cộng 1 vào một biến nhiều lần một cách liên tục hoặc bất đồng bộ, chuyện gì sẽ xảy ra.
+Ta mô phỏng quá trình thực thi đồng bộ bằng cách chèn một lớp cản `wait_to_read()` giữa mỗi phép cộng.
+
 
 
 ```{.python .input  n=9}
@@ -246,7 +250,7 @@ with d2l.Benchmark('asynchronous'):
 A slightly simplified interaction between the Python front-end thread and the C++ back-end thread can be summarized as follows:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tổng kết ngắn gọn lại tương tác giữa luồng front-end Python và luồng back-end C++ như sau:
 
 <!--
 1. The front-end orders the back-end to insert the calculation task `y = x + 1` into the queue.
@@ -254,7 +258,9 @@ A slightly simplified interaction between the Python front-end thread and the C+
 3. The back-end then returns the computation results to the front-end.
 -->
 
-*dịch đoạn phía trên*
+1. Front-end ra lệnh cho back-end đưa tác vụ tính `y = x + 1` vào hàng chờ.
+2. Back-end sau đó nhận các tác vụ tính toán từ hàng chờ và thực hiện các phép tính.
+3. Back-end trả về kết quả tính toán cho front-end.
 
 <!--
 Assume that the durations of these three stages are $t_1, t_2$ and $t_3$, respectively.
@@ -263,7 +269,10 @@ If asynchronous programming is used, the total time taken to perform 1000 comput
 since the front-end does not have to wait for the back-end to return computation results for each loop.
 -->
 
-*dịch đoạn phía trên*
+Giả sử khoảng thời gian của từng giai đoạn trên lần lượt là $t_1, t_2$ và $t_3$.
+Nếu ta không áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính xấp xỉ bằng $1000 (t_1+ t_2 + t_3)$.
+Nếu ta áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính có thể giảm xuống $t_1 + 1000 t_2 + t_3$ (giả sử $1000 t_2 > 999t_1$),
+do front-end không cần phải chờ back-end trả về kết quả tính toán ở mỗi vòng lặp.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -463,7 +472,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
 * 
