@@ -223,7 +223,7 @@ Now the magnitude of the update no longer depends on the amount of deviation.
 This yields the Yogi updates
 -->
 
-Khi phương sai của $\mathbf{g}_t^2$ có giá trị lớn hay các cập nhật là thưa, có thể $\mathbf{s}_t$ sẽ quên các giá trị trước đó quá nhanh.
+Khi $\mathbf{g}_t^2$ có phương sai lớn hay các cập nhật là thưa, có thể $\mathbf{s}_t$ sẽ quên các giá trị quá khứ quá nhanh.
 Một cách giải quyết vấn đề trên đó là thay $\mathbf{g}_t^2 - \mathbf{s}_{t-1}$ bằng $\mathbf{g}_t^2 \odot \mathop{\mathrm{sgn}}(\mathbf{g}_t^2 - \mathbf{s}_{t-1})$.
 Bây giờ, độ lớn của cập nhật không còn phụ thuộc vào giá trị độ lệch.
 Từ đó ta có các cập nhật Yogi sau:
