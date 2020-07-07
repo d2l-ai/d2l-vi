@@ -257,7 +257,7 @@ Vẫn còn có rất nhiều lựa chọn khác để thiết lập tốc độ 
 Ví dụ, ta có thể bắt đầu với tốc độ học nhỏ, sau đó tăng nhanh rồi tiếp tục giảm nhưng với tốc độ chậm hơn.
 Ta cũng có thể thiết lập tốc độ học tăng và giảm luân phiên.
 Có rất nhiều cách khác nhau để định thời tốc độ học.
-Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học mà ta có thể phân tích lý thuyết, ví dụ như trong điều kiện lồi.
+Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học trong điều kiện lồi mà ta có thể phân tích lý thuyết.
 Với bài toán không lồi tổng quát, rất khó thu được sự đảm bảo hội tụ có ý nghĩa, vì nói chung các bài toán tối ưu phi tuyến không lồi đều thuộc dạng NP-hard.
 Để tìm hiểu thêm, tham khảo các ví dụ trong [tập bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
