@@ -409,7 +409,7 @@ d2l.plot(np.arange(num_epochs), [scheduler(t) for t in range(num_epochs)])
 Note that the network converges better initially (in particular observe the performance during the first 5 epochs).
 -->
 
-Lưu ý rằng vào lúc đầu, mạng hội tụ tốt hơn (trong một số thử nghiệm, khả năng của mạng tăng suốt 5 epoch đầu tiên).
+Có thể thấy rằng ban đầu, mạng hội tụ tốt hơn (cụ thể, hãy quan sát quá trình tối ưu trong 5 epoch đầu tiên).
 
 ```{.python .input}
 trainer = gluon.Trainer(net.collect_params(), 'sgd',
