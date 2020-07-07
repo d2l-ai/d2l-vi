@@ -136,7 +136,7 @@ The only way to resolve these conflicting goals is to reduce the learning rate *
 
 Như có thể thấy, quỹ đạo của các biến trong SGD dao động mạnh hơn hạ gradient ở phần trước.
 Điều này là do bản chất ngẫu nhiên của gradient.
-Tức là, ngay cả khi tới gần giá trị nhỏ nhất, ta vẫn gặp phải sự bất định gây ra bởi gradient ngẫu nhiên $\eta \nabla f_i(\mathbf{x})$.
+Tức là, ngay cả khi tới gần giá trị cực tiểu, ta vẫn gặp phải sự bất định gây ra bởi gradient ngẫu nhiên $\eta \nabla f_i(\mathbf{x})$.
 Thậm chí sau 50 bước thì chất lượng vẫn không tốt lắm.
 Tệ hơn, nó vẫn sẽ không cải thiện với nhiều bước hơn (chúng tôi khuyến khích bạn đọc thử nghiệm với số lượng bước lớn hơn để tự xác nhận điều này).
 Ta chỉ còn một lựa chọn duy nhất --- thay đổi tốc độ học $\eta$.
