@@ -70,12 +70,12 @@ This can be addressed by using the fact that $\sum_{i=0}^t \beta^i = \frac{1 - \
 Correspondingly the normalized state variables are given by
 -->
 
-Ở đây $\beta_1$ và $\beta_2$ là các tham trọng số không âm.
+Ở đây $\beta_1$ và $\beta_2$ là các tham số trọng số không âm.
 Các lựa chọn phổ biến cho chúng là $\beta_1 = 0.9$ và $\beta_2 = 0.999$.
-Đó là, ước tính phương sai di chuyển *chậm hơn nhiều* so với thời hạn.
-Lưu ý rằng nếu ta khởi tạo $\mathbf{v}_0 = \mathbf{s}_0 = 0$ ban đầu ta có một lượng độ chệch đáng kể đối với các giá trị nhỏ hơn.
-Điều này có thể được giải quyết bằng cách sử dụng thực tế là $\sum_{i=0}^t \beta^i = \frac{1 - \beta^t}{1 - \beta}$ để chuẩn hóa lại các số hạng.
-Tương ứng các biến trạng thái chuẩn hóa được đưa ra bởi
+Đó là, ước lượng phương sai di chuyển *chậm hơn nhiều* so với hạng tử động lượng.
+Lưu ý rằng nếu ta khởi tạo $\mathbf{v}_0 = \mathbf{s}_0 = 0$ ta có một lượng độ chệch đáng kể đối với các giá trị nhỏ hơn.
+Điều này có thể được giải quyết bằng cách sử dụng $\sum_{i=0}^t \beta^i = \frac{1 - \beta^t}{1 - \beta}$ để chuẩn hóa lại các số hạng.
+Các biến trạng thái tương ứng được chuẩn hóa bởi
 
 
 $$\hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1 - \beta_1^t} \text{ and } \hat{\mathbf{s}}_t = \frac{\mathbf{s}_t}{1 - \beta_2^t}.$$
@@ -86,8 +86,8 @@ Armed with the proper estimates we can now write out the update equations.
 First, we rescale the gradient in a manner very much akin to that of RMSProp to obtain
 -->
 
-Được trang bị các ước lượng thích hợp, bây giờ chúng ta có thể viết ra các phương trình cập nhật.
-Đầu tiên, chúng tôi điều chỉnh lại độ dốc theo cách rất giống với RMSProp để có được
+Với các ước lượng thích hợp, bây giờ chúng ta có thể viết ra các phương trình cập nhật.
+Đầu tiên, chúng ta điều chỉnh lại gradient tương tự như RMSProp để có được
 
 
 $$\mathbf{g}_t' = \frac{\eta \hat{\mathbf{v}}_t}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}.$$
@@ -100,18 +100,18 @@ The former works arguably slightly better in practice, hence the deviation from 
 Typically we pick $\epsilon = 10^{-6}$ for a good trade-off between numerical stability and fidelity.
 -->
 
-Không giống như RMSProp, bản cập nhật của chúng tôi sử dụng động lượng $\hat{\mathbf{v}}_t$ thay vì chính gradient.
-Hơn nữa, có một sự khác biệt nhỏ về mặt thẩm mỹ khi việc thay đổi kích thước xảy ra bằng cách sử dụng $\frac{1}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}$ instead of $\frac{1}{\sqrt{\hat{\mathbf{s}}_t + \epsilon}}$.
-Các công trình trước đây được cho là tốt hơn một chút trong thực tế, do đó độ lệch chuẩn so với RMSProp.
-Thông thường, chúng tôi chọn $\epsilon = 10^{-6}$ để có sự đánh đổi tốt giữa tính ổn định số và độ trung thực.
+Không giống như RMSProp, các cập nhật sử dụng động lượng $\hat{\mathbf{v}}_t$ thay vì chính gradient.
+Hơn nữa, có một sự khác biệt nhỏ về mặt thẩm mỹ khi thực hiện phép chuyển đổi bằng cách sử dụng $\frac{1}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}$ instead of $\frac{1}{\sqrt{\hat{\mathbf{s}}_t + \epsilon}}$.
+Trong thực tế, cách trước đó hoạt động tốt hơn một chút, dẫn đến một phiên bản khác so với RMSProp.
+Thông thường, ta chọn $\epsilon = 10^{-6}$ để cân bằng giữa tính ổn định và độ tin cậy.
 
 <!--
 Now we have all the pieces in place to compute updates.
 This is slightly anticlimactic and we have a simple update of the form
 -->
 
-Bây giờ chúng tôi có tất cả các phần tại chỗ để tính toán cập nhật.
-Điều này hơi gây khó chịu và chúng tôi có một bản cập nhật đơn giản của dạng
+Bây giờ chúng ta sẽ tổng hợp tất cả các phần trên lại để tính toán cập nhật.
+Điều này hơi tẻ nhạt một chút và ta có một bản cập nhật đơn giản như sau
 
 
 $$\mathbf{x}_t \leftarrow \mathbf{x}_{t-1} - \mathbf{g}_t'.$$
@@ -125,11 +125,11 @@ Second, the combination of both terms is pretty straightforward, given RMSProp.
 Last, the explicit learning rate $\eta$ allows us to control the step length to address issues of convergence.
 -->
 
-Xem xét thiết kế của Adam cảm hứng của nó là rõ ràng.
-Động lượng và tỷ lệ được hiển thị rõ ràng trong các biến trạng thái.
-Định nghĩa khá đặc biệt của chúng buộc chúng ta phải đưa ra các số hạng debias (điều này có thể được sửa chữa bằng một điều kiện khởi tạo và cập nhật hơi khác).
-Thứ hai, sự kết hợp của cả hai thuật ngữ khá đơn giản, được đưa ra RMSProp.
-Cuối cùng, tỷ lệ học tập rõ ràng $\eta$ cho phép chúng tôi kiểm soát độ dài bước để giải quyết các vấn đề về hội tụ.
+Khi xem xét thiết kế của Adam, ta thấy rõ nguồn cảm hứng của thuật toán.
+Động lượng và tỷ lệ chuyển đổi được biểu thị rõ ràng trong các biến trạng thái.
+Định nghĩa khá đặc biệt của chúng dẫn đến các số hạng debias (điều này có thể được khắc phục bằng một phép khởi tạo và điều kiện cập nhật hơi khác một chút).
+Thứ hai, sự kết hợp của cả hai hạng tử khá đơn giản, dựa trên RMSProp.
+Cuối cùng, tốc độ học tường minh $\eta$ cho phép ta kiểm soát độ dài bước cập nhật để giải quyết các vấn đề về hội tụ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -330,4 +330,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * 
-
