@@ -425,7 +425,7 @@ In particular they find that a warmup phase limits the amount of divergence of p
 This makes intuitively sense since we would expect significant divergence due to random initialization in those parts of the network that take the most time to make progress in the beginning.
 -->
 
-Phép khởi động có thể dụng trong bất kỳ bộ điều khiển nào (không chỉ là cosine).
+Phép khởi động có thể sử dụng trong bất kỳ bộ định thời nào (không chỉ là cosine).
 Để biết chi tiết thảo luận về điều khiển tốc độ học hay nhiều nhiều thí nghiệm hơn, có thể coi thêm ở :cite:`Gotmare.Keskar.Xiong.ea.2018`.
 Đáng chú ý là họ thấy rằng kỳ khởi động làm giảm lượng phân kì của tham số trong các mạng rất sâu. 
 Điều này quả đúng với cảm quan con người bởi vì chúng ta thấy rằng phân kỳ mạnh là do khởi tạo tham số ngẫu nhiền ở những phần mạng học lâu nhất vào lúc đầu.
