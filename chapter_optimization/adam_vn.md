@@ -209,7 +209,7 @@ To understand what's going on, let us rewrite the Adam update as follows:
 -->
 
 Một trong những vấn đề của Adam là nó có thể không hội tụ ngay cả trong các điều kiện lồi khi ước lượng mô-men bậc hai trong $\mathbf{s}_t$ tăng bùng nổ.
-:cite:`Zaheer.Reddi.Sachan.ea.2018` đề xuất một bản vá với một cập nhật (và khởi tạo) được làm mịn cho $\mathbf{s}_t$.
+:cite:`Zaheer.Reddi.Sachan.ea.2018` đề xuất làm mịn việc cập nhật (và khởi tạo) $\mathbf{s}_t$.
 Để hiểu rõ hơn, chúng ta hãy viết lại phép cập nhật Adam như sau:
 
 
