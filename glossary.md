@@ -484,6 +484,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |
 |-------------------------------------------|-------------------|----------------------------------------------|
+| warmup (in learning rate scheduling)       | khởi động     | [https://git.io/JJIT5](https://git.io/JJIT5) |
 | weight decay                              | suy giảm trọng số | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | well-behaved function (analytic function) | hàm khả vi vô hạn | [https://git.io/JvojL](https://git.io/JvojL) |
 | whitening data                            | tẩy trắng dữ liệu |                                              |
