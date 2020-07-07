@@ -95,7 +95,7 @@ Do đó, trên trung bình, gradient ngẫu nhiên là một ước lượng gra
 Now, we will compare it to gradient descent by adding random noise with a mean of 0 to the gradient to simulate a SGD.
 -->
 
-Bây giờ, ta sẽ so sánh với hạ gradient bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient trong SGD.
+Bây giờ, ta mô phỏng hạ gradient ngẫu nhiên bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient và so sánh với phương pháp hạ gradient.
 
 
 ```{.python .input  n=3}
