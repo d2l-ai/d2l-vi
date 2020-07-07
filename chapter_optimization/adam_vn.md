@@ -13,8 +13,8 @@ In the discussions leading up to this section we encountered a number of techniq
 Let us recap them in detail here:
 -->
 
-Trong các cuộc thảo luận dẫn đến phần này, chúng tôi đã gặp một số kỹ thuật để tối ưu hóa hiệu quả.
-Hãy để chúng tôi tóm tắt chúng chi tiết ở đây:
+Trong các thảo luận dẫn đến phần này, chúng ta đã làm quen với một số kỹ thuật để tối ưu hóa hiệu quả.
+Chúng ta hãy tóm tắt chi tiết những kỹ thuật này ở đây:
 
 <!--
 * We saw that :numref:`sec_sgd` is more effective than Gradient Descent when solving optimization problems, e.g., due to its inherent resilience to redundant data.
@@ -25,12 +25,12 @@ This is the key to efficient multi-machine, multi-GPU and overall parallel proce
 * :numref:`sec_rmsprop` decoupled per-coordinate scaling from a learning rate adjustment.
 -->
 
-* Chúng tôi thấy rằng :numref:`sec_sgd` hiệu quả hơn Gradient Descent khi giải quyết các vấn đề tối ưu hóa, ví dụ, do khả năng phục hồi vốn có của nó đối với dữ liệu dư thừa.
-* Chúng tôi thấy rằng :numref:`sec_minibatch_sgd` mang lại hiệu quả bổ sung đáng kể phát sinh từ quá trình vector hóa, sử dụng các bộ quan sát lớn hơn trong một minibatch.
-Đây là chìa khóa để xử lý đa máy hiệu quả, đa GPU và xử lý song song tổng thể.
-* :numref:`sec_momentum` đã thêm một cơ chế để tổng hợp lịch sử của các gradient quá khứ để tăng tốc độ hội tụ.
-* :numref:`sec_adagrad` được sử dụng chia tỷ lệ theo tọa độ để cho phép một điều kiện tiên quyết tính toán hiệu quả.
-* :numref:`sec_rmsprop` tách rời tỷ lệ trên mỗi tọa độ từ một điều chỉnh tốc độ học tập.
+* Chúng ta thấy rằng :numref:`sec_sgd` hiệu quả hơn thuật toán hạ gradient khi giải các bài toán tối ưu như bởi tính co giãn vốn có của thuật toán với dữ liệu dư thừa.
+* Chúng ta thấy rằng :numref:`sec_minibatch_sgd` mang lại thêm tính hiệu quả đáng kể từ phép vector hóa, với nhiều mẫu quan sát hơn trong một minibatch.
+Đây là chìa khóa để xử lý tính toán song song trên nhiều GPU và nhiều máy một cách hiệu quả.
+* :numref:`sec_momentum` bổ sung cơ chế tích luỹ các gradient quá khứ để quá trình hội tụ diễn ra nhanh hơn.
+* :numref:`sec_adagrad` sử dụng phép chuyển đổi tỷ lệ theo tọa độ để cho phép một điều kiện tiên quyết tính toán hiệu quả.
+* :numref:`sec_rmsprop` tách rời phép chuyển đổi theo tỷ lệ trên mỗi tọa độ ra khỏi phép điều chỉnh tốc độ học.
 
 <!--
 Adam :cite:`Kingma.Ba.2014` combines all these techniques into one efficient learning algorithm.
@@ -41,12 +41,12 @@ In a follow-up work :cite:`Zaheer.Reddi.Sachan.ea.2018` proposed a hotfix to Ada
 More on this later. For now let us review the Adam algorithm.
 -->
 
-Adam :cite:`Kingma.Ba.2014` kết hợp tất cả các kỹ thuật này thành một thuật toán học tập hiệu quả.
-Như mong đợi, đây là một thuật toán đã trở nên khá phổ biến vì là một trong những thuật toán tối ưu hóa mạnh mẽ và hiệu quả hơn để sử dụng trong học  sâu.
-Nó không phải là không có vấn đề, dường như vậy.
-Cụ thể , :cite:`Reddi.Kale.Kumar.2019` cho thấy có những tình huống mà Adam có thể chuyển hướng do kiểm soát phương sai kém.
-Trong một công việc tiếp theo :cite:`Zaheer.Reddi.Sachan.ea.2018` đã đề xuất một hotfix cho Adam, được gọi là Yogi giải quyết các vấn đề này.
-Thêm về điều này sau. Bây giờ chúng ta hãy xem lại thuật toán Adam.
+Adam :cite:`Kingma.Ba.2014` kết hợp tất cả các kỹ thuật này thành một thuật toán học hiệu quả.
+Như kỳ vọng, đây là một trong những thuật toán tối ưu mạnh mẽ và hiệu quả  được sử dụng phổ biến trong học  sâu.
+Tuy nhiên, nó không phải là không có vấn đề.
+Cụ thể , :cite:`Reddi.Kale.Kumar.2019` cho thấy có những trường hợp mà Adam có thể phân kỳ do kiểm soát phương sai kém.
+Trong một nghiên cứu sau đó :cite:`Zaheer.Reddi.Sachan.ea.2018` đã đề xuất một bản vá nhanh cho Adam, với tên gọi là Yogi, để giải quyết các vấn đề này.
+Chi tiết về bản vá này sẽ được đề cập sau. Bây giờ chúng ta hãy xem lại thuật toán Adam.
 
 <!--
 ## The Algorithm
@@ -60,9 +60,9 @@ to obtain an estimate of both the momentum and also the second moment of the gra
 That is, it uses the state variables
 -->
 
-Một trong những thành phần chính của Adam là nó sử dụng các đường trung bình di chuyển theo cấp số nhân (còn được gọi là trung bình rò rỉ)
-để có được ước tính của cả động lượng và thời điểm thứ hai của độ dốc.
-Đó là, nó sử dụng các biến trạng thái
+Một trong những thành phần chính của Adam là nó sử dụng các trung bình động theo trọng số bậc luỹ thừa (còn được gọi là trung bình rò rỉ)
+để ước lượng cả động lượng và mô-men bậc hai  của gradient.
+Cụ thể, nó sử dụng các biến trạng thái
 
 $$\begin{aligned}
     \mathbf{v}_t & \leftarrow \beta_1 \mathbf{v}_{t-1} + (1 - \beta_1) \mathbf{g}_t, \\
@@ -328,4 +328,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * 
-
