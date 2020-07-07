@@ -4,7 +4,7 @@
 # RMSProp
 -->
 
-# *dịch tiêu đề phía trên*
+# RMSProp
 :label:`sec_rmsprop`
 
 <!--
@@ -13,7 +13,9 @@ While this is generally appropriate for convex problems, it might not be ideal f
 Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
-*dịch đoạn phía trên*
+Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$ một cách hiệu quả.
+Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những bài toán không lồi, chẳng hạn những bài toán gặp phải trong học sâu.
+Tuy vậy, khả năng thích ứng theo toạ độ của Adagrad là rất tuyệt vời cho một bộ tiền điều kiện (_preconditioner_).
 
 <!--
 :cite:`Tieleman.Hinton.2012` proposed the RMSProp algorithm as a simple fix to decouple rate scheduling from coordinate-adaptive learning rates.
@@ -21,7 +23,9 @@ The issue is that Adagrad accumulates the squares of the gradient $\mathbf{g}_t$
 As a result $\mathbf{s}_t$ keeps on growing without bound due to the lack of normalization, essentially linarly as the algorithm converges.
 -->
 
-*dịch đoạn phía trên*
+:cite:`Tieleman.Hinton.2012` đề xuất thuật toán RMSProp như một bản vá đơn giản để tách rời tốc độ định thời ra khỏi tốc độ học thay đổi theo toạ độ (_coordinate-adaptive_).
+Vấn đề ở đây là Adagrad cộng dồn tổng bình phương của gradient $\mathbf{g}_t$ vào vector trạng thái $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$.
+Kết quả là, do không có phép chuẩn hoá, $\mathbf{s}_t$ vẫn tiếp tục tăng tuyến tính không ngừng trong quá trình hội tụ của thuật toán.
 
 <!--
 One way of fixing this problem would be to use $\mathbf{s}_t / t$.
@@ -31,7 +35,11 @@ An alternative is to use a leaky average in the same way we used in the momentum
 Keeping all other parts unchanged yields RMSProp.
 -->
 
-*dịch đoạn phía trên*
+Vấn đề này có thể được giải quyết bằng cách sử dụng $\mathbf{s}_t / t$.
+Đối với các phân phối hợp lý của $\mathbf{g}_t$, thuật toán sẽ hội tụ.
+Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi giới hạn bắt đầu ảnh hưởng, vì thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị.
+Một cách khác là sử dụng trung bình rò rỉ tương tự như trong phương pháp động lượng, tức là $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ cho các tham số $\gamma > 0$.
+Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -245,7 +253,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
