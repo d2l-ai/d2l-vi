@@ -24,7 +24,7 @@ As a result $\mathbf{s}_t$ keeps on growing without bound due to the lack of nor
 -->
 
 :cite:`Tieleman.Hinton.2012` đề xuất thuật toán RMSProp như một bản vá đơn giản để tách rời tốc độ định thời ra khỏi tốc độ học thay đổi theo toạ độ (_coordinate-adaptive_).
-Vấn đề ở đây là Adagrad tính tổng bình phương của các gradient $\mathbf{g}_t$ được lưu trong vector trạng thái $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$.
+Vấn đề ở đây là Adagrad cộng dồn tổng bình phương của gradient $\mathbf{g}_t$ vào vector trạng thái $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$.
 Kết quả là, do không có phép chuẩn hoá, $\mathbf{s}_t$ vẫn tiếp tục tăng tuyến tính không ngừng trong quá trình hội tụ của thuật toán.
 
 <!--
