@@ -184,7 +184,7 @@ Since RMSProp is a rather popular algorithm it is also available in the `Trainer
 All we need to do is instantiate it using an algorithm named `rmsprop`, assigning $\gamma$ to the parameter `gamma1`.
 -->
 
-Do RMSProp là thuật toán khá phổ biến, nên nó cũng được tích hợp sẵn trong thực thể `Trainer`.
+Do RMSProp là thuật toán khá phổ biến, nó cũng được tích hợp sẵn trong thực thể `Trainer`.
 Những gì ta cần phải làm là khởi tạo thuật toán có tên là `rmsprop`, với $\gamma$ được gán cho tham số `gamma1`.
 
 
@@ -208,7 +208,7 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 -->
 
 * Thuật toán RMSProp rất giống với Adagrad ở chỗ cả hai đều sử dụng bình phương của gradient để chuyển đổi hệ số.
-* RMSProp có điểm chung với phương pháp động lượng là đều sử dụng trung bình rò rỉ. Tuy nhiên, RMSProp sử dụng kỹ thuật này để điều chỉnh tiền điều kiện theo hệ số.
+* RMSProp có điểm chung với phương pháp động lượng là chúng đều sử dụng trung bình rò rỉ. Tuy nhiên, RMSProp sử dụng kỹ thuật này để điều chỉnh tiền điều kiện theo hệ số.
 * Trong thực tế, tốc độ học cần được định thời bởi người lập trình. 
 * Hệ số $\gamma$ xác định độ dài thông tin quá khứ được sử dụng khi điều chỉnh tỉ lệ theo từng toạ độ.
 
@@ -228,7 +228,7 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 1. Điều gì sẽ xảy ra nếu ta đặt $\gamma = 1$? Giải thích tại sao?
 2. Biến đổi bài toán tối ưu thành cực tiểu hoá $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Sự hội tụ sẽ diễn ra như thế nào?
 3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các cách điều chỉnh tốc độ học khác nhau.
-4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu tiến triển không? Hãy cho biết độ nhạy của RMSProp với điều chỉnh này?
+4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu tiến triển không? Hãy cho biết độ nhạy của RMSProp với việc điều chỉnh này?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
