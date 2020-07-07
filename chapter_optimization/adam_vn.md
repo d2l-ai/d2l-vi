@@ -186,7 +186,7 @@ A more concise implementation is straightforward since `adam` is one of the algo
 Hence we only need to pass configuration parameters for an implementation in Gluon.
 -->
 
-Một cách lập trình súc tích hơn là gọi trực tiếp vì `adam` là một trong những thuật toán được cung cấp sẵn trong thư viện tối ưu `trainer` của Gluon.
+Cách lập trình súc tích hơn là gọi trực tiếp `adam` được cung cấp sẵn trong thư viện tối ưu `trainer` của Gluon.
 Do đó ta chỉ cần truyền các tham số cấu hình để lập trình trong Gluon.
 
 
