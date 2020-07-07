@@ -427,7 +427,7 @@ This makes intuitively sense since we would expect significant divergence due to
 
 Phép khởi động có thể sử dụng trong bất kỳ bộ định thời nào (không chỉ là cosine).
 Để biết thêm chi tiết thảo luận và các thí nghiệm về định thời tốc độ học, có thể đọc thêm :cite:`Gotmare.Keskar.Xiong.ea.2018`.
-Đáng chú ý là họ thấy rằng kỳ khởi động làm giảm lượng phân kì của tham số trong các mạng rất sâu. 
+Đáng chú ý là các tác giả thấy rằng quá trình khởi động làm giảm lượng phân kì của tham số trong các mạng rất sâu. 
 Điều này hợp lý về trực giác, vì ta thấy rằng phân kỳ mạnh là do khởi tạo tham số ngẫu nhiên ở những phần mạng học lâu nhất vào lúc đầu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
