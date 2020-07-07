@@ -386,7 +386,7 @@ Conversely, a large learning rate initially leads to divergence.
 Trong một số trường hợp, khởi tạo tham số không đảm bảo sẽ có kết quả tốt. 
 Đặc biệt đối với các mạng phức tạp, nó có thể làm việc tối ưu hóa không ổn định. 
 Chúng ta có thể giải quyết việc này bằng cách chọn tốc độ học đủ nhỏ để ngăn phân kỳ vào lúc bắt đầu. Tuy nhiên, tiến trình học sẽ chậm hơn. 
-Ngược lại, tốc độ học lớn lúc đầu cũng gây ra phân kỳ.
+Ngược lại, tốc độ học lớn ban đầu cũng gây ra phân kỳ.```
 
 <!--
 A rather simple fix for this dilemma is to use a warmup period during which the learning rate *increases* to its initial maximum and to cool down the rate until the end of the optimization process.
