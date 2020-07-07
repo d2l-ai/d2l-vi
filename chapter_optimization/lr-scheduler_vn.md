@@ -373,7 +373,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Warmup
 -->
 
-### Chuẩn bị
+### Khởi động
 
 <!--
 In some cases initializing the parameters is not sufficient to guarantee a good solution.
