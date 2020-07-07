@@ -184,7 +184,7 @@ Since RMSProp is a rather popular algorithm it is also available in the `Trainer
 All we need to do is instantiate it using an algorithm named `rmsprop`, assigning $\gamma$ to the parameter `gamma1`.
 -->
 
-Do RMSProp là thuật toán khá phổ biến, nên nó cũng được tích hợp sẵn sẵn trong đối tượng `Trainer`.
+Do RMSProp là thuật toán khá phổ biến, nên nó cũng được tích hợp sẵn trong thực thể `Trainer`.
 Những gì ta cần phải làm là khởi tạo thuật toán có tên là `rmsprop`, với $\gamma$ được gán cho tham số `gamma1`.
 
 
