@@ -393,7 +393,7 @@ A rather simple fix for this dilemma is to use a warmup period during which the 
 For simplicity one typically uses a linear increase for this purpose.
 This leads to a schedule of the form indicated below.
 -->
-Một giải pháp đơn giản cho vấn đề trên là dùng quá trình khởi động (warmup) vào khoảng thời gian tốc độ học tăng tới giá trị lớn nhất rồi giảm dần tới khi kết thúc quá trình tối ưu.
+Một giải pháp đơn giản cho vấn đề trên là dùng quá trình khởi động (*warmup*), trong thời gian đó tốc độ học *tăng* tới giá trị lớn nhất, sau đó giảm dần tới khi kết thúc quá trình tối ưu.
 Để đơn giản, ta có thể dụng hàm tăng tuyến tính để khởi động. 
 Kết quả là ta có một bộ định thời dưới đây.
 
