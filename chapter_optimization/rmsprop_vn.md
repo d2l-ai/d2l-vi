@@ -228,7 +228,7 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 1. Điều gì sẽ xảy ra nếu ta đặt $\gamma = 1$? Giải thích tại sao?
 2. Biến đổi bài toán tối ưu thành cực tiểu hoá $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Sự hội tụ sẽ diễn ra như thế nào?
 3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các cách điều chỉnh tốc độ học khác nhau.
-4. Bạn có muốn điều chỉnh $\gamma$ như các tiến bộ tối ưu hóa? Hãy cho biết độ nhạy của RMSProp với điều chỉnh này?
+4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu tiến triển không? Hãy cho biết độ nhạy của RMSProp với điều chỉnh này?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
