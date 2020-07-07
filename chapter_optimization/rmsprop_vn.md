@@ -37,7 +37,7 @@ Keeping all other parts unchanged yields RMSProp.
 
 Vấn đề này có thể được giải quyết bằng cách sử dụng $\mathbf{s}_t / t$.
 Đối với các phân phối có ý nghĩa của $\mathbf{g}_t$, thuật toán sẽ hội tụ.
-Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi giới hạn bắt đầu hoạt động có ý nghĩa vì thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị.
+Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi giới hạn bắt đầu ảnh hưởng, vì thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị.
 Một cách khác là sử dụng trung bình rò rỉ tương tự như trong phương pháp động lượng, tức là $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ cho các tham số $\gamma > 0$.
 Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp.
 
