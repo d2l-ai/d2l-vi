@@ -84,7 +84,7 @@ Let us visualize the weights for the past 40 timesteps for various choices of $\
 -->
 
 Tương tự như :numref:`sec_momentum`, ta có $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
-Do đó, tổng trọng số được chuẩn hóa bằng $1$ với thời gian một nửa chu kỳ bán rã của một quan sát của $\gamma^{-1}$.
+Do đó, tổng trọng số được chuẩn hóa bằng $1$ và chu kỳ bán rã của một quan sát là $\gamma^{-1}$.
 Hãy cùng minh họa trực quan các trọng số này trong vòng 40 bước thời gian trước đó với các giá trị $\gamma$ khác nhau.
 
 
