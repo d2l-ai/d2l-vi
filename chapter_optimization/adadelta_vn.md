@@ -40,7 +40,7 @@ The parameter du jour is $\rho$. We obtain the following leaky updates:
 Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
 và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai các thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và cách lập trình
-(không có lý do nào để sử dụng các kí hiệu La Mã cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta).
+(không có lý do nào để sử dụng các kí hiệu La Mã khác cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta).
 Tham số suy giảm là $\rho$. <!-- note for reviser: $rho$ trong bài báo gốc là `decay rate` -->
 Chúng ta có được các cập nhật rò rỉ sau:
 
@@ -64,7 +64,7 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 Điểm khác biệt so với trước là ta thực hiện các cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị bằng cách lấy căn bậc hai tỷ lệ giữa trung bình bình phương của tốc độ thay đổi và trung bình mô-men bậc hai của gradient.
 Sử dụng $\mathbf{g}_t'$ chỉ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
-Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ không tầm thường, ví dụ, tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\epsilon = 10^{-5}$.
+Như trước đây $\epsilon$ là tham số đảm bảo ta sẽ thu được kết quả xấp xỉ ý nghĩa, tức để tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\epsilon = 10^{-5}$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
