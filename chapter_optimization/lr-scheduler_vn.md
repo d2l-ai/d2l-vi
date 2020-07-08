@@ -444,7 +444,7 @@ Essentially this ensures that we converge efficiently to a suitable solution and
 different choices of optimization algorithms and learning rate scheduling can lead to rather different amounts of generalization and overfitting on the test set (for the same amount of training error).
 -->
 
-* Giảm tốc độ học trong huấn luyện có mang tới cải thiện trong độ chính xác và (phức tạp nhất) giảm tính quá khớp của mô hình.
+* Giảm tốc độ học trong huấn luyện có thể cải thiện độ chính xác và giảm tính quá khớp của mô hình.
 * Một cách rất hiệu quả trong thực tế đó là giảm tốc độ học theo khoảng bất cứ khi nào quá trình tối ưu không có tiến bộ đáng kể (_plateau_).
 Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ hội tụ đến nghiệm phù hợp và chỉ sau đó mới giảm phương sai vốn có của các tham số bằng cách giảm tốc độ học.
 * Định thời cô-sin khá phổ biến trong các bài toán thị giác máy. Xem ví dụ [GluonCV](http://gluon-cv.mxnet.io) để biết thêm chi tiết về định thời này.
