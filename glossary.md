@@ -467,7 +467,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | unavoidable bias         | độ chệch không tránh được |                                              |
 | underfit                 | dưới khớp                 | [https://git.io/JvQxY](https://git.io/JvQxY) |
 | underflow (numerical)    | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
-| unit (trong mạng nơ-ron) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
+| unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning    | học không giám sát        |                                              |
 
 ## V
