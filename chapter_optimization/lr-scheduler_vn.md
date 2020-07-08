@@ -243,7 +243,7 @@ One alternative to a polynomial decay would be a multiplicative one, that is $\e
 To prevent the learning rate from decaying beyond a reasonable lower bound the update equation is often modified to $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 -->
 
-Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân,$\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ với $\alpha \in (0, 1)$.
+Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân $\alpha \in (0, 1)$, lúc này $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$.
 Để tránh trường hợp tốc độ học suy giảm thấp hơn cả biên chặn dưới, phương trình cập nhật thường được sửa lại thành $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 
 
