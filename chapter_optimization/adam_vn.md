@@ -25,12 +25,12 @@ This is the key to efficient multi-machine, multi-GPU and overall parallel proce
 * :numref:`sec_rmsprop` decoupled per-coordinate scaling from a learning rate adjustment.
 -->
 
-* Chúng ta thấy rằng :numref:`sec_sgd` hiệu quả hơn thuật toán hạ gradient khi giải các bài toán tối ưu do nó chịu ít ảnh hưởng xấu gây ra bởi dữ liệu dư thừa.
-* Chúng ta thấy rằng :numref:`sec_minibatch_sgd` mang lại hiệu quả đáng kể nhờ việc vector hóa, tức xử lý nhiều mẫu quan sát hơn trong một minibatch.
+* Chúng ta thấy rằng SGD trong :numref:`sec_sgd` hiệu quả hơn hạ gradient khi giải các bài toán tối ưu do nó chịu ít ảnh hưởng xấu gây ra bởi dữ liệu dư thừa.
+* Chúng ta thấy rằng minibatch SGD trong :numref:`sec_minibatch_sgd` mang lại hiệu quả đáng kể nhờ việc vector hóa, tức xử lý nhiều mẫu quan sát hơn trong một minibatch.
 Đây là chìa khóa để xử lý dữ liệu song song trên nhiều GPU và nhiều máy tính một cách hiệu quả.
-* :numref:`sec_momentum` bổ sung cơ chế gộp các gradient quá khứ, giúp quá trình hội tụ diễn ra nhanh hơn.
-* :numref:`sec_adagrad` sử dụng phép chuyển đổi giá trị theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán.
-* :numref:`sec_rmsprop` tách rời phép chuyển đổi giá trị theo từng tọa độ và phép điều chỉnh tốc độ học.
+* Phương pháp động lượng trong :numref:`sec_momentum` bổ sung cơ chế gộp các gradient quá khứ, giúp quá trình hội tụ diễn ra nhanh hơn.
+* Adagrad trong :numref:`sec_adagrad` sử dụng phép chuyển đổi giá trị theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán.
+* RMSprop trong :numref:`sec_rmsprop` tách rời phép chuyển đổi giá trị theo từng tọa độ và phép điều chỉnh tốc độ học.
 
 <!--
 Adam :cite:`Kingma.Ba.2014` combines all these techniques into one efficient learning algorithm.
@@ -60,7 +60,7 @@ to obtain an estimate of both the momentum and also the second moment of the gra
 That is, it uses the state variables
 -->
 
-Một trong những thành phần chính của Adam là các trung bình động theo trọng số bậc luỹ thừa (hay còn được gọi là trung bình rò rỉ)
+Một trong những thành phần chính của Adam là các trung bình động trọng số mũ (hay còn được gọi là trung bình rò rỉ)
 để ước lượng cả động lượng và mô-men bậc hai của gradient.
 Cụ thể, nó sử dụng các biến trạng thái
 
