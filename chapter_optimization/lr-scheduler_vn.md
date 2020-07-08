@@ -271,7 +271,7 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 -->
 
 Cách trên cũng có thể được thực hiện bằng một bộ định thời có sẵn trong MXNet `lr_scheduler.FactorScheduler`.
-Giải pháp này cần ít tham số hơn, ví dụ gồm có chu kỳ khởi động (_warmup period_), phương thức khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
+Cách này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (_warmup period_), chế độ khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
 Ở các phần tiếp theo, chúng ta sẽ sử dụng các định thời tốc độ học thích hợp và còn ở đây sẽ giải thích cách thức hoạt động của chúng.
 Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
 
