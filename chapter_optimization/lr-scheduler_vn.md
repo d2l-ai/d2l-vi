@@ -233,7 +233,7 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 
 Vì không đủ khả năng xem xét toàn bộ các loại bộ định thời tốc độ học, chúng tôi cố gắng để đưa ra một bản tóm lược khái quát về các chiến lược phổ biến dưới đây.
 Những lựa chọn thông thường là các bộ định thời suy giảm theo hàm đa thức và hàm hằng số cục bộ. 
-Xa hơn nữa, các bộ định thời tốc độ học hàm cosine được nhận thấy là làm việc tốt trên thực nghiệm đối với một số bài toán.
+Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cosine làm việc tốt đối với một số bài toán.
 Sau cùng, với một số bài toán sẽ có lợi khi ta từ từ nâng dần tốc độ học cho bộ tối ưu trước khi sử dụng các tốc độ học lớn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
