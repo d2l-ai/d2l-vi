@@ -40,7 +40,7 @@ The parameter du jour is $\rho$. We obtain the following leaky updates:
 Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
 và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai các thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và cách lập trình
-(Không có lý do nào khác để ta phải sử dụng các biến kí hiệu La Mã khác cho tham số được sử dụng với cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta).
+(không có lý do nào để sử dụng các kí hiệu La Mã cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta).
 Tham số suy giảm là $\rho$. <!--k hiểu sao lại có từ du jour này, dịch ra là du ký :)) mình thấy $rho$ ở đây giống như tham số trong moving average, mà cái này dịch là trung bình động. nên tạm dịch vậy :-? -->
 Chúng ta có được các cập nhật rò rỉ sau:
 
