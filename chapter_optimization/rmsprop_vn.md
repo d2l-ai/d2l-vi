@@ -169,7 +169,7 @@ That is, $\mathbf{s}$ aggregates on average over the past $1/(1-\gamma) = 10$ ob
 -->
 
 Chúng ta khởi tạo tốc độ học ban đầu bằng 0.01 và trọng số $\gamma$ bằng 0.9.
-Trong đó, $\mathbf{s}$ là tổng trung bình $1/(1-\gamma) = 10$ quan sát của bình phương gradient trong quá khứ.
+Nghĩa là, $\mathbf{s}$ là tổng trung bình của $1/(1-\gamma) = 10$ bình phương gradient trong quá khứ.
 
 
 ```{.python .input  n=24}
