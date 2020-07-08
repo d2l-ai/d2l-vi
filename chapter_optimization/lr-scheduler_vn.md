@@ -320,7 +320,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Cosine Scheduler
 -->
 
-### Định thời Côsin
+### Định thời Cô-sin
 
 <!--
 A rather perplexing heuristic was proposed by :cite:`Loshchilov.Hutter.2016`.
