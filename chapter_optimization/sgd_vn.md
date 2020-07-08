@@ -372,7 +372,7 @@ This means that we make progress as long as the expected difference between curr
 Since the former is bound to converge to $0$ it follows that the learning rate $\eta_t$ also needs to vanish.
 -->
 
-Điều này có nghĩa quá trình học vẫn sẽ cải thiện khi hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu vẫn lớn hơn $\eta_t L^2$.
+Điều này có nghĩa quá trình học vẫn sẽ cải thiện miễn là hiệu số giữa hàm mất mát hiện tại và giá trị mất mát tối ưu vẫn lớn hơn $\eta_t L^2$.
 Để đảm bảo hàm mất mát hội tụ về $0$, tốc độ học $\eta_t$ cũng cần phải giảm dần.
 
 <!--
