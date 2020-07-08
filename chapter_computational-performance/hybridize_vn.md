@@ -387,7 +387,9 @@ Note, though that hybridization can affect model flexibility, in particular in t
 We will illustrate how to design more general models and also how compilation will remove spurious Python elements.
 -->
 
-*dịch đoạn phía trên*
+Như phía trước chúng ta đã chứng minh, mô hình này có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn sau khi thực hiện gọi phương thức `hybridize`. 
+Lưu ý là mặc dù vậy, sự lai hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng. 
+Chúng ta sẽ minh họa việc làm thế nào để thiết kế các mô hình tổng quát hơn cũng như làm thế nào biên dịch sẽ loại bỏ các nhân tố có tính hình thức trong Phython. 
 
 
 ```{.python .input  n=8}
@@ -413,7 +415,11 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-*dịch đoạn phía trên*
+Đoạn chương trình ở trên thực hiện một mạng đơn với 4 đơn vị ẩn và 2 đầu ra. 
+`hybrid_foward` lấy thêm một biến số  - khối `F`.
+Điều này là cần thiết vì tùy vào chương trình có được lai hóa hay không, nó sẽ sử dụng một thư viện hơi khác (`ndarray` hoặc `symbol`) để xử lý.
+Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNET xác định biến số đầu vào một cách tự động. 
+Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các biến số đầu vào như một phần của chương trình gọi hàm. 
 
 ```{.python .input  n=9}
 net = HybridNet()
@@ -427,7 +433,8 @@ Repeating the forward computation will lead to the same output (we omit details)
 Now let's see what happens if we invoke the `hybridize` method.
 -->
 
-*dịch đoạn phía trên*
+Thực hiện lặp lại việc tính toán lan truyền thuận sẽ đưa tới cùng kết quả (ta bỏ qua chi tiết).
+Bây giờ ta hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
 
 ```{.python .input  n=10}
 net.hybridize()
@@ -440,7 +447,9 @@ Moreover, even though the input is of `ndarray` type, the data flowing through t
 Repeating the function call leads to a surprising outcome:
 -->
 
-*dịch đoạn phía trên*
+Thay vì sử dụng `ndarray` ta lúc này sử dụng mô-đun `symbol` cho `F`.
+Thêm vào đó, thậm chí với đầu vào thuộc kiểu `ndarray`, luồng dữ liệu qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
+Thực hiện lặp lại gọi hàm `net` dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
 net(x)
@@ -457,7 +466,14 @@ Nonetheless, compilation of models is worth the effort whenever speed matters.
 The benefit can range from small percentage points to more than twice the speed, depending on the complexity of the model, the speed of the CPU and the speed and number of GPUs.
 -->
 
-*dịch đoạn phía trên*
+Điều này khá khác biệt so với những gì ta đã thấy trước đó.
+Tất cả các lệnh in, như định nghĩa trong `hybrid_forward` bị bỏ qua.
+Thật vậy, sau khi lai ghép hóa, việc thực thi lệnh `net(x)` không còn có bất kỳ liên hệ nào nữa với trình thông dịch của Python.
+Điều này có nghĩa rằng bất cứ một đoạn chương trình hình thức nào của Python sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
+Và như thế, MXNet gọi trực tiếp phần phụ trợ trên nền C++. 
+Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử gộp như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
+Tuy nhiên, việc biên dịch các mô hình này đáng để thực hiện bất khi nào vấn đề tốc độ cần quan tâm.
+Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPUs.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -528,7 +544,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 6 -->
 * 
