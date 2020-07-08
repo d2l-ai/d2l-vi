@@ -178,7 +178,7 @@ class SquareRootScheduler:
 Let us plot its behavior over a range of values.
 -->
 
-Chúng ta hãy thực hiện vẽ hành vi của bộ định thời trên dải các giá trị của nó. 
+Chúng ta hãy vẽ hành vi của bộ định thời trên một dải giá trị. 
 
 
 ```{.python .input}
