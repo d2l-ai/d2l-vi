@@ -349,7 +349,7 @@ Hence we need to bound the inner product. By convexity we have that
 -->
 
 Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào trong *miền kỳ vọng*.
-Thực tế, với chuỗi các bước bất kỳ, khoảng cách này có thể tăng đều, phụ thuộc vào giá trị bất kỳ của $\mathbf{x}_t$.
+Thực tế, với chuỗi các bước bất kỳ, khoảng cách này cũng có thể thể tăng lên, tuỳ thuộc vào giá trị của $\mathbf{x}_t$ mà ta gặp phải.
 Do đó cần xác định biên cho tích vô hướng. Từ tính chất lồi, ta có
 
 $$
