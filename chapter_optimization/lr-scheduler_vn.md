@@ -309,7 +309,7 @@ Then (and only then) do we decrease the rate such as to obtain a higher quality 
 The example below shows how this can produce ever slightly better solutions.
 -->
 
-Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo từng khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán có phân phối của các vector trọng số đạt tới điểm ổn định theo nghĩa.
+Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán đạt tới điểm ổn định về phân phối của các vector trọng số.
 Khi và chỉ khi đạt được trạng thái đó, chúng ta mới giảm tốc độ học để đạt được biến đại diện cho điểm cực tiểu chất lượng hơn.
 Ví dụ dưới đây cho ta thấy cách phương pháp này giúp tìm được nghiệm tốt hơn đôi chút.
 
