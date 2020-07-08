@@ -360,7 +360,7 @@ In the context of computer vision this schedule *can* lead to improved results.
 Note, though, that such improvements are not guaranteed (as can be seen below).
 -->
 
-Trong ngữ cảnh thị giác máy, định thời này *có thể* cải thiện kết quả thu được.
+Trong ngữ cảnh thị giác máy tính, cách định thời này *có thể* cải thiện kết quả thu được.
 Tuy nhiên, chú ý rằng những cải thiện này không chắc chắn được đảm đảo (có thể thấy qua ví dụ dưới đây).
 
 
