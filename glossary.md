@@ -50,7 +50,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | bidirectional recurrent neural network | mạng nơ-ron hồi tiếp hai chiều | [https://git.io/JJeal](https://git.io/JJeal) |
 | big data                               | big data                       |                                              |
 | binomial distribution                  | phân phối nhị thức             | [https://git.io/JvohQ](https://git.io/JvohQ) |
-| blackbox dev set                       | tập phát triển Blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
+| blackbox dev set                       | tập phát triển blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box                           | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast                              | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
 
