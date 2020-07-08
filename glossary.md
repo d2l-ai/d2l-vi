@@ -340,7 +340,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | penalty                            | lượng phạt                   | [https://git.io/JvQAP](https://git.io/JvQAP) |
 | perceptron                         | perceptron                   | [https://git.io/JvohC](https://git.io/JvohC) |
 | performance                        | chất lượng                   | [https://git.io/JvQx4](https://git.io/JvQx4) |
-| perplexity (in information theory) | perplexity                   | [https://git.io/Jf9KY](https://git.io/Jf9KY) |
+| perplexity (metric in NLP)         | perplexity                   | [https://git.io/Jf9KY](https://git.io/Jf9KY) |
 | perturbation                       | nhiễu                        | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | pipeline                           | pipeline                     | [https://git.io/JvQxG](https://git.io/JvQxG) |
 | pixel                              | điểm ảnh                     |                                              |
@@ -462,13 +462,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | two-tailed test                        | kiểm định hai đuôi                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 
 ## U
-| English                  | Tiếng Việt                | Thảo luận tại                                |
-|--------------------------|---------------------------|----------------------------------------------|
-| unavoidable bias         | độ chệch không tránh được |                                              |
-| underfit                 | dưới khớp                 | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| underflow (numerical)    | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
+| English                   | Tiếng Việt                | Thảo luận tại                                |
+|---------------------------|---------------------------|----------------------------------------------|
+| unavoidable bias          | độ chệch không tránh được |                                              |
+| underfit                  | dưới khớp                 | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| underflow (numerical)     | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
-| unsupervised learning    | học không giám sát        |                                              |
+| unsupervised learning     | học không giám sát        |                                              |
 
 ## V
 | English                    | Tiếng Việt         | Thảo luận tại                                |
