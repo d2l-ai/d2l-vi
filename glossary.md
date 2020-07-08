@@ -143,7 +143,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | exploding gradient           | bùng nổ gradient           |                                              |
 | exponential distribution     | phân phối mũ               | [https://git.io/JvohC](https://git.io/JvohC) |
 | expression (in math)         | biểu thức (toán học)       | [https://git.io/Jvojk](https://git.io/Jvojk) |
-| eyeball dev set              | tập phát triển Eyeball     | [https://git.io/JvQx3](https://git.io/JvQx3) |
+| eyeball dev set              | tập phát triển eyeball     | [https://git.io/JvQx3](https://git.io/JvQx3) |
 
 ## F
 | English                    | Tiếng Việt           | Thảo luận tại                                |
@@ -257,7 +257,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | locality                           | tính cục bộ                    |                                              |
 | log-likelihood function            | hàm log hợp lý                 | [https://git.io/Jvopx](https://git.io/Jvopx) |
 | logistic regression                | hồi quy logistic               |                                              |
-| logit (trong softmax)              | logit                          | [https://git.io/JvohR](https://git.io/JvohR) |
+| logit (softmax)              | logit                          | [https://git.io/JvohR](https://git.io/JvohR) |
 | loss function                      | hàm mất mát                    | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | loss landscape                     | cảnh quan mất mát              |                                              |
 | loss surface                       | bề mặt mất mát                 |                                              |
