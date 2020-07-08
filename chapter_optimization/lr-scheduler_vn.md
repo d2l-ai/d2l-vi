@@ -292,7 +292,7 @@ Assuming that the values are halved at each step we can implement this as follow
 -->
 
 Một chiến lược chung để huấn luyện các mạng nơ-ron sâu là giữ cho tốc độ học không đổi theo từng khoảng và thường xuyên giảm tốc độ học đi một lượng cho trước sau mỗi khoảng.
-Cụ thể, với một tập giá trị các bước thời gian từ đó ta giảm tốc độ học, ví dụ như với $s = \{5, 10, 20\}$, ta giảm $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ khi $t \in s$.
+Cụ thể, với một tập thời điểm giảm tốc độ học, ví dụ như với $s = \{15, 30\}$, ta giảm $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ khi $t \in s$.
 Giả sử rằng tốc độ học được giảm một nửa tại mỗi bước thời gian trên, ta có thể lập trình như sau.
 
 
