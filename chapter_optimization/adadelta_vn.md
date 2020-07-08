@@ -17,7 +17,7 @@ It is fairly straightforward, given the discussion of previous algorithms so far
 -->
 
 Adadelta là một biến thể khác của AdaGrad.
-Điểm khác biệt chính là Adadelta giảm tốc độ học một lượng thay đổi theo toạ độ.
+Điểm khác biệt chính là Adadelta giảm mức độ thay đổi của tốc độ học theo toạ độ.
 Hơn nữa, Adadelta thường được biết đến là thuật toán không sử dụng tốc độ học vì nó dựa trên chính lượng thay đổi hiện tại để căn chỉnh lượng thay đổi trong tương lai.
 Thuật toán Adadelta được đề xuất trong :cite:`Zeiler.2012`.
 Nó khá đơn giản dựa trên những thảo luận về các thuật toán trước đây.
