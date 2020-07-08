@@ -61,7 +61,7 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 ## Implementation
 -->
 
-## Thực hiện
+## Lập trình
 
 <!--
 Adadelta needs to maintain two state variables for each variable, $\mathbf{s}_t$ and $\Delta\mathbf{x}_t$. This yields the following implementation.
