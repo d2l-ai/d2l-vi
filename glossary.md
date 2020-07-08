@@ -87,6 +87,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | convolutional neural network        | mạng nơ-ron tích chập   |                                              |
 | corpus                              | kho ngữ liệu            |                                              |
 | correlation coefficient             | hệ số tương quan        |                                              |
+| cosine                              | cosin                   |                                              |
 | cost function                       | hàm chi phí             | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                           | hiệp biến               | [https://git.io/JvohK](https://git.io/JvohK) |
 | cross correlation                   | tương quan chéo         |                                              |
