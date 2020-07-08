@@ -34,6 +34,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## B
 | English                                | Tiếng Việt                     | Thảo luận tại                                |
 |----------------------------------------|--------------------------------|----------------------------------------------|
+| backend                                | back-end                   |                                              |
 | background noise                       | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
 | backpropagation                        | lan truyền ngược               |                                              |
 | backpropagation through time           | lan truyền ngược qua thời gian |                                              |
@@ -55,6 +56,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | broadcast                              | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
 
 ## C
+
 | English                         | Tiếng Việt              | Thảo luận tại                                |
 |---------------------------------|-------------------------|----------------------------------------------|
 | (strictly) convex function      | hàm lồi (chặt)          | [https://git.io/JvohV](https://git.io/JvohV) |
@@ -86,6 +88,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | convolutional neural network    | mạng nơ-ron tích chập   |                                              |
 | corpus                          | kho ngữ liệu            |                                              |
 | correlation coefficient         | hệ số tương quan        |                                              |
+| cosine                          | cô-sin                  |                                              |
 | cost function                   | hàm chi phí             | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                       | hiệp biến               | [https://git.io/JvohK](https://git.io/JvohK) |
 | cross correlation               | tương quan chéo         |                                              |
@@ -119,31 +122,32 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | dropout                   | dropout                         |                                              |
 
 ## E
-| English                      | Tiếng Việt                 | Thảo luận tại                                |
-|------------------------------|----------------------------|----------------------------------------------|
-| early stopping               | dừng sớm                   |                                              |
-| edge (in computer vision)    | biên                       | [https://git.io/JfGiw](https://git.io/JfGiw) |
-| edge detector                | bộ phát hiện biên          | [https://git.io/JfGiw](https://git.io/JfGiw) |
-| effect size                  | hệ số ảnh hưởng            | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| eigen-decomposition          | phân tích trị riêng        |                                              |
-| eigenvalue                   | trị riêng                  |                                              |
-| eigenvector                  | vector riêng               |                                              |
-| elementwise                  | (theo) từng phần tử        | [https://git.io/Jvojn](https://git.io/Jvojn) |
-| embedding                    | embedding                  | [https://git.io/JvKeY](https://git.io/JvKeY) |
-| encoder-decoder architecture | kiến trúc mã hóa - giải mã |                                              |
-| end-to-end                   | đầu-cuối                   | [https://git.io/JvQxG](https://git.io/JvQxG) |
-| epoch (in training)          | epoch (khi huấn luyện)     | [https://git.io/Jvoha](https://git.io/Jvoha) |
-| error analysis               | phân tích lỗi              |                                              |
-| error rate                   | tỉ lệ lỗi                  |                                              |
-| estimator                    | bộ ước lượng               |                                              |
-| evaluation metric            | phép đánh giá              |                                              |
-| example                      | mẫu                        |                                              |
-| expectation                  | kỳ vọng                    | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| explicit feedback            | phản hồi trực tiếp         | [https://git.io/JvKee](https://git.io/JvKee) |
-| exploding gradient           | bùng nổ gradient           |                                              |
-| exponential distribution     | phân phối mũ               | [https://git.io/JvohC](https://git.io/JvohC) |
-| expression (in math)         | biểu thức (toán học)       | [https://git.io/Jvojk](https://git.io/Jvojk) |
-| eyeball dev set              | tập phát triển eyeball     | [https://git.io/JvQx3](https://git.io/JvQx3) |
+| English                             | Tiếng Việt                  | Thảo luận tại                                |
+|-------------------------------------|-----------------------------|----------------------------------------------|
+| early stopping                      | dừng sớm                    |                                              |
+| edge (in computer vision)           | biên                        | [https://git.io/JfGiw](https://git.io/JfGiw) |
+| edge detector                       | bộ phát hiện biên           | [https://git.io/JfGiw](https://git.io/JfGiw) |
+| effect size                         | hệ số ảnh hưởng             | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| eigen-decomposition                 | phân tích trị riêng         |                                              |
+| eigenvalue                          | trị riêng                   |                                              |
+| eigenvector                         | vector riêng                |                                              |
+| elementwise                         | (theo) từng phần tử         | [https://git.io/Jvojn](https://git.io/Jvojn) |
+| embedding                           | embedding                   | [https://git.io/JvKeY](https://git.io/JvKeY) |
+| encoder-decoder architecture        | kiến trúc mã hóa - giải mã  |                                              |
+| end-to-end                          | đầu-cuối                    | [https://git.io/JvQxG](https://git.io/JvQxG) |
+| epoch (in training)                 | epoch (khi huấn luyện)      | [https://git.io/Jvoha](https://git.io/Jvoha) |
+| error analysis                      | phân tích lỗi               |                                              |
+| error rate                          | tỉ lệ lỗi                   |                                              |
+| estimator                           | bộ ước lượng                |                                              |
+| evaluation metric                   | phép đánh giá               |                                              |
+| example                             | mẫu                         |                                              |
+| expectation                         | kỳ vọng                     | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| explicit feedback                   | phản hồi trực tiếp          | [https://git.io/JvKee](https://git.io/JvKee) |
+| exploding gradient                  | bùng nổ gradient            |                                              |
+| exponential distribution            | phân phối mũ                | [https://git.io/JvohC](https://git.io/JvohC) |
+| expression (in math)                | biểu thức (toán học)        | [https://git.io/Jvojk](https://git.io/Jvojk) |
+| eyeball dev set                     | tập phát triển eyeball      | [https://git.io/JvQx3](https://git.io/JvQx3) |
+| exponential weighted moving average | trung bình động trọng số mũ |                                              |
 
 ## F
 | English                    | Tiếng Việt           | Thảo luận tại                                |
@@ -161,6 +165,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | flatten                    | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
 | forward pass               | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework                  | framework            |                                              |
+| frontend                   | front-end      |                                              |
 | functional analysis        | giải tích hàm        |                                              |
 | fully-connected            | kết nối đầy đủ       | [https://git.io/JvohR](https://git.io/JvohR) |
 
