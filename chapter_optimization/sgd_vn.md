@@ -457,7 +457,7 @@ This costs us an extra logarithmic factor and it leads to an upper bound of the 
 * **Thời điểm xác định**.
 Với mỗi $r, L$ và $T$ xác định ta có thể chọn $\eta = r/L \sqrt{T}$.
 Biểu thức này dẫn tới giới hạn trên $r L (1 + 1/T)/2\sqrt{T} < rL/\sqrt{T}$.
-Có nghĩa là hàm hội tụ với tốc độ $\mathcal{O}(1/\sqrt{T})$ đến nghiệm tối ưu.
+Điều này nghĩa là hàm sẽ hội tụ đến nghiệm tối ưu với tốc độ $\mathcal{O}(1/\sqrt{T})$.
 * **Thời điểm chưa xác định**.
 Khi muốn nghiệm tốt cho *bất kì* thời điểm $T$ nào, ta có thể chọn $\eta = \mathcal{O}(1/\sqrt{T})$.
 Cách làm trên tốn thêm một thừa số logarit, dẫn tới giới hạn trên có dạng $\mathcal{O}(\log T / \sqrt{T})$.
