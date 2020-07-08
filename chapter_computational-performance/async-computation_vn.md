@@ -97,18 +97,18 @@ Note that for this to work the backend must be able to keep track of the depende
 That is, it is not possible to parallelize operations that depend on each other.
 -->
 
-Như ở :numref:`fig_frontends`, người dùng có thể viết chương trình MXNet bằng nhiều ngôn ngữ frontend như Python, R, Scala và C++.
-Dù sử dụng ngôn ngữ frontend nào, chương trình MXNet chủ yếu thực thi trên bộ xử lý nền lập trình bằng C++.
-Các thao tác đưa ra bởi ngôn ngữ frontend được truyền vào bộ xử lý nền để thực thi.
-Bộ xử lý nền tự quản lý các luồng xử lý bằng việc liên tục tập hợp và thực thi các tác vụ trong hàng đợi.
-Chú ý rằng, bộ xử lý nền cần phải có khả năng theo dõi quan hệ phụ thuộc giữa các bước trong đồ thị tính toán để có thể hoạt động.
+Như ở :numref:`fig_frontends`, người dùng có thể viết chương trình MXNet bằng nhiều ngôn ngữ front-end như Python, R, Scala và C++.
+Dù sử dụng ngôn ngữ front-end nào, chương trình MXNet chủ yếu thực thi trên back-end lập trình bằng C++.
+Các thao tác đưa ra bởi ngôn ngữ front-end được truyền vào back-end để thực thi.
+Back-end tự quản lý các luồng xử lý bằng việc liên tục tập hợp và thực thi các tác vụ trong hàng đợi.
+Chú ý rằng, back-end cần phải có khả năng theo dõi quan hệ phụ thuộc giữa các bước trong đồ thị tính toán để có thể hoạt động.
 Nghĩa là ta không thể song song hoá các thao tác phụ thuộc lẫn nhau.
 
 <!--
 ![Programming Frontends.](../img/frontends.png)
 -->
 
-![Lập trình Bộ xử lý trước](../img/frontends.png)
+![Lập trình Front-end](../img/frontends.png)
 :width:`300px`
 :label:`fig_frontends`
 
@@ -145,17 +145,17 @@ Thus, there is little impact on the program’s overall performance, regardless 
 -->
 
 Đoạn mã trên được mô tả trong :numref:`fig_asyncgraph`.
-Mỗi khi luồng xử lý trước của Python thực thi một trong ba câu lệnh đầu tiên, tác vụ đó chỉ đơn giản là được đưa vào hàng chờ của bộ xử lý nền.
-Khi kết quả của câu lệnh cuối cùng cần được in ra, luồng xử lý trước của Python sẽ chờ luồng xử lý nền C++ tính toán xong kết quả của biến `z`.
-Lợi ích của thiết kế này nằm ở việc luồng xử lý trước của Python không cần phải đích thân thực hiện việc tính toán.
+Mỗi khi luồng front-end của Python thực thi một trong ba câu lệnh đầu tiên, tác vụ đó chỉ đơn giản là được đưa vào hàng chờ của back-end.
+Khi kết quả của câu lệnh cuối cùng cần được in ra, luồng front-end của Python sẽ chờ luồng xử lý nền C++ tính toán xong kết quả của biến `z`.
+Lợi ích của thiết kế này nằm ở việc luồng front-end Python không cần phải đích thân thực hiện việc tính toán.
 Hơn nữa nếu bỏ qua hiệu năng của Python, thiết kế này không ảnh hưởng nhiều đến hiệu năng chung của chương trình.
-:numref:`fig_threading` mô tả cách bộ xử lý trước và nền tương tác với nhau.
+:numref:`fig_threading` mô tả cách front-end và back-end tương tác với nhau.
 
 <!--
 ![Frontend and Backend.](../img/threading.svg)
 -->
 
-![Bộ xử lý trước và Bộ xử lý nền](../img/threading.svg)
+![Front-end và Back-end](../img/threading.svg)
 :label:`fig_threading`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
