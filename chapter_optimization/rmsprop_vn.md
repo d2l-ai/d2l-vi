@@ -65,7 +65,7 @@ Expanding the definition of $\mathbf{s}_t$ yields
 
 
 Hằng số $\epsilon > 0$ thường được đặt bằng $10^{-6}$ để đảm bảo rằng chúng ta sẽ không gặp vấn đề chia cho 0 hoặc kích thước bước quá lớn.
-Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép chuyển đổi được áp dụng trên cơ sở cho từng tọa độ.
+Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép chuyển đổi được áp dụng cho từng tọa độ.
 Về mặt trung bình rò rỉ, chúng ta có thể áp dụng các lập luận tương tự như trước trong phương pháp động lượng.
 Khai triển định nghĩa $\mathbf{s}_t$ ta có
 
