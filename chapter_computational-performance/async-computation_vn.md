@@ -21,8 +21,8 @@ We begin by importing the necessary libraries.
 
 Máy tính ngày nay là các hệ thống song song, bao gồm nhiều lõi CPU (mỗi lõi thường có nhiều luồng),
 mỗi GPU chứa nhiều thành phần xử lý và mỗi máy thường bao gồm nhiều GPU.
-Nói ngắn gọn, ta có thể xử lý nhiều việc cùng một lúc, thường trên nhiều thiết bị khác nhau.
-Tiếc thay Python không phải là một ngôn ngữ tốt để viết mã tính toán song song và bất đồng bộ khi không có sự trợ giúp từ bên ngoài.
+Nói ngắn gọn, ta có thể xử lý nhiều việc cùng một lúc, trên nhiều thiết bị khác nhau.
+Tiếc thay, Python không phải là một ngôn ngữ phù hợp để viết mã tính toán song song và bất đồng bộ khi không có sự trợ giúp từ bên ngoài.
 Xét cho cùng, Python là ngôn ngữ đơn luồng, và có lẽ trong tương lai sẽ không có gì thay đổi.
 Các framework học sâu như MXNet và TensorFlow tận dụng mô hình lập trình bất đồng bộ để cải thiện hiệu năng (PyTorch sử dụng tính năng định thời của chính Python, dẫn tới việc đánh đổi hiệu năng).
 Do đó, hiểu cách lập trình bất đồng bộ hoạt động giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các quan hệ phụ thuộc tương hỗ.
@@ -42,7 +42,7 @@ npx.set_np()
 ## Asynchrony via Backend
 -->
 
-## Bất đồng bộ bằng Back-end
+## Bất đồng bộ qua Back-end
 
 <!--
 For a warmup consider the following toy problem - we want to generate a random matrix and multiply it.
@@ -94,7 +94,7 @@ Note that for this to work the backend must be able to keep track of the depende
 Hence it is ony possible to parallelize operations that do not depend on each other.
 -->
 
-Nói chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
+Nhìn chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
 Back-end có các luồng xử lý riêng liên tục tập hợp và thực hiện các tác vụ trong hàng đợi.
 Chú ý rằng, back-end cần có khả năng theo dõi quan hệ phụ thuộc giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
 Do đó ta chỉ có thể song song hoá các thao tác không phụ thuộc lẫn nhau.
