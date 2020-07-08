@@ -61,7 +61,7 @@ In practice we can implement this algorithm without the need to use additional t
 As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avoiding zero step size or infinite variance. Typically we set this to $\eta = 10^{-5}$.
 -->
 
-Điểm khác biệt so với trước là ta thực hiện các cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị. Giá trị gradient được chuyển đổi bằng tỷ lệ giữa trung bình bình phương của tốc độ thay đổi và trung bình mô-men bậc hai của gradient.
+Điểm khác biệt so với trước là ta thực hiện các cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị bằng cách lấy căn bậc hai tỷ lệ giữa trung bình bình phương của tốc độ thay đổi và trung bình mô-men bậc hai của gradient.
 Sử dụng $\mathbf{g}_t'$ chỉ đơn thuần với mục đích thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
 Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ không tầm thường, ví dụ, tránh kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường, chúng ta đặt $\epsilon = 10^{-5}$.
