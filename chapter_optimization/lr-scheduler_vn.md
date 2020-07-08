@@ -467,7 +467,7 @@ Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ h�
 
 1. Hãy thí nghiệm về cách hoạt động của thuật toán tối ưu với một tốc độ học cố định cho trước. Hãy cho biết mô hình tốt nhất mà bạn có thể có được theo cách này?
 2. Quá trình hội tụ thay đổi như thế nào nếu bạn thay đổi lũy thừa giảm trong tốc độ học? Để thuận tiện, hãy sử dụng `PolyScheduler`.
-3. Hãy áp dụng định thời cô-sin cho nhiều bài toán thị giác máy, ví dụ, huấn luyện trên tập ImageNet. Hãy chỉ ra những ảnh hưởng của phương pháp này tới chất lượng của mô hình thu được so với các định thời khác.
+3. Hãy áp dụng định thời cô-sin cho nhiều bài toán thị giác máy tính, ví dụ, huấn luyện trên tập ImageNet. Hãy chỉ ra những ảnh hưởng của phương pháp này tới chất lượng của mô hình thu được so với các định thời khác.
 4. Quá trình khởi động nên kéo dài bao lâu?
 5. Bạn có thể liên hệ tối ưu hoá và phép lấy mẫu được không? Hãy bắt đầu bằng cách sử dụng kết quả từ  :cite:`Welling.Teh.2011` về động lực học Langevin của Gradient ngẫu nghiên (_Stochastic Gradient Langevin Dynamics_).
 
