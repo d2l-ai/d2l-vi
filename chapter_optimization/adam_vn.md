@@ -232,7 +232,7 @@ We omit the details since they are not material to the discussion and since even
 -->
 
 Hơn nữa, các tác giả khuyên nên khởi tạo động lượng trên một batch ban đầu có kích thước lớn hơn thay vì ước lượng ban đầu theo điểm.
-Chúng ta bỏ qua các chi tiết vì chúng không cần thiết cho thảo luận, thậm chí quá trình hội tụ vẫn diễn ra khá tốt ngay cả khi không có áp dụng những chi tiết này.
+Chúng ta không đi sâu vào điểm này, vì quá trình hội tụ vẫn diễn ra khá tốt ngay cả khi không áp dụng chúng.
 
 
 ```{.python .input}
@@ -325,4 +325,3 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
