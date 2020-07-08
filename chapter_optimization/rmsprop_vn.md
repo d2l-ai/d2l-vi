@@ -49,13 +49,13 @@ Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp.
 ## The Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán
 
 <!--
 Let us write out the equations in detail.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy viết các phương trình ra một cách chi tiết.
 
 
 $$\begin{aligned}
@@ -71,8 +71,11 @@ In terms of leaky averages we can apply the same reasoning as previously applied
 Expanding the definition of $\mathbf{s}_t$ yields
 -->
 
-*dịch đoạn phía trên*
 
+Hằng số $\epsilon > 0$ thường được đặt bằng $10^{-6}$ để đảm bảo rằng chúng ta sẽ không gặp vấn đề chia cho 0 hoặc kích thước bước quá lớn.
+Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép chuyển đổi được áp dụng cho từng tọa độ.
+Về mặt trung bình rò rỉ, chúng ta có thể áp dụng các lập luận tương tự như trước trong phương pháp động lượng.
+Khai triển định nghĩa $\mathbf{s}_t$ ta có
 
 $$
 \begin{aligned}
@@ -88,7 +91,9 @@ Hence the sum of weights is normalized to $1$ with a half-life time of an observ
 Let us visualize the weights for the past 40 timesteps for various choices of $\gamma$.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như :numref:`sec_momentum`, ta có $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
+Do đó, tổng trọng số được chuẩn hóa bằng $1$ và chu kỳ bán rã của một quan sát là $\gamma^{-1}$.
+Hãy cùng minh họa trực quan các trọng số này trong vòng 40 bước thời gian trước đó với các giá trị $\gamma$ khác nhau.
 
 
 ```{.python .input  n=1}
@@ -112,7 +117,7 @@ d2l.plt.xlabel('time');
 ## Implementation from Scratch
 -->
 
-## *dịch tiêu đề phía trên*
+## Lập trình từ đầu
 
 <!--
 As before we use the quadratic function $f(\mathbf{x})=0.1x_1^2+2x_2^2$ to observe the trajectory of RMSProp.
@@ -121,8 +126,10 @@ the variables moved only very slowly in the later stages of the algorithm since 
 Since $\eta$ is controlled separately this does not happen with RMSProp.
 -->
 
-*dịch đoạn phía trên*
-
+Như trước đây, chúng ta sử dụng hàm bậc hai $f(\mathbf{x})=0.1x_1^2+2x_2^2$ để quan sát quỹ đạo của RMSProp.
+Nhớ lại trong :numref:`sec_adagrad`, khi chúng ta sử dụng Adagrad với tốc độ học bằng 0.4,
+các biến di chuyển rất chậm trong các giai đoạn sau của thuật toán do tốc độ học giảm quá nhanh.
+Do $\eta$ được kiểm soát riêng biệt, nên điều này không xảy ra với RMSProp.
 
 ```{.python .input}
 def rmsprop_2d(x1, x2, s1, s2):
@@ -146,7 +153,8 @@ Next, we implement RMSProp to be used in a deep network.
 This is equally straightforward.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta hãy lập trình thuật toán RMSProp được sử dụng trong một mạng nơ-ron sâu.
+Cách lập trình không quá phức tạp.
 
 
 ```{.python .input  n=22}
@@ -168,7 +176,8 @@ We set the initial learning rate to 0.01 and the weighting term $\gamma$ to 0.9.
 That is, $\mathbf{s}$ aggregates on average over the past $1/(1-\gamma) = 10$ observations of the square gradient.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta khởi tạo tốc độ học ban đầu bằng 0.01 và trọng số $\gamma$ bằng 0.9.
+Nghĩa là, $\mathbf{s}$ là tổng trung bình của $1/(1-\gamma) = 10$ bình phương gradient trong quá khứ.
 
 
 ```{.python .input  n=24}
@@ -263,7 +272,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
