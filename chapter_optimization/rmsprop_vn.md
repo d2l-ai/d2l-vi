@@ -83,7 +83,7 @@ Hence the sum of weights is normalized to $1$ with a half-life time of an observ
 Let us visualize the weights for the past 40 timesteps for various choices of $\gamma$.
 -->
 
-Tương tự như :numref:`sec_momentum`, chúng ta sử dụng $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
+Tương tự như :numref:`sec_momentum`, ta có $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
 Do đó, tổng trọng số được chuẩn hóa bằng $1$ với thời gian một nửa chu kỳ bán rã của một quan sát của $\gamma^{-1}$.
 Chúng ta hãy hình dung các trọng số này cho 40 bước thời gian trước đó với các lựa chọn $\gamma$ khác nhau.
 
