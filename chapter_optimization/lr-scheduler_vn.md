@@ -448,7 +448,7 @@ different choices of optimization algorithms and learning rate scheduling can le
 * Một cách rất hiệu quả trong thực tế đó là giảm tốc độ học theo khoảng bất cứ khi nào quá trình tối ưu không có tiến bộ đáng kể (_plateau_).
 Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ hội tụ đến nghiệm phù hợp và chỉ sau đó mới giảm phương sai vốn có của các tham số bằng cách giảm tốc độ học.
 * Định thời cô-sin khá phổ biến trong các bài toán thị giác máy. Xem ví dụ [GluonCV](http://gluon-cv.mxnet.io) để biết thêm chi tiết về định thời này.
-* Chu kỳ khởi động trước quá trình tối ưu có thể tránh trường hợp phân kỳ.
+* Quá trình khởi động trước khi tối ưu có thể giúp tránh phân kỳ.
 * Tối ưu hóa phục vụ nhiều mục đích trong việc học sâu. Bên cạnh việc cực tiểu hoá hàm mục tiêu trên tập huấn luyện, các thuật toán tối và các định thời tốc độ học khác nhau có thể mang lại những thay đổi khác nhau trong việc khái quát hoá và tính quá khớp trên tập kiểm tra (đối với cùng một giá trị lỗi trên tập huấn luyện).
 
 <!--
