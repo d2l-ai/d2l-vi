@@ -277,7 +277,7 @@ since the front-end does not have to wait for the back-end to return computation
 ## Improving Memory Footprint
 -->
 
-## *dịch tiêu đề phía trên*
+## Cải thiện Vùng phủ bộ nhớ
 
 <!--
 Imagine a situation where we keep on inserting operations into the backend by executing Python code on the frontend.
@@ -288,7 +288,12 @@ Given a finite amount of memory available on GPUs (and even on CPUs) this can le
 Some readers might have noticed that previous training routines made use of synchronization methods such as `item` or even `asnumpy`.
 -->
 
-*dịch đoạn phía trên*
+Hãy thử tưởng tượng trường hợp ta liên tục thêm các thao tác vào back-end bằng cách thực thi mã Python trên front-end.
+Ví dụ, trong một khoảng thời gian ngắn, front-end liên tục thêm vào một lượng lớn minibatch các tác vụ.
+Xét cho cùng, công việc trên có thể hoàn thành nhanh chóng nếu không có phép tính nào thực sự diễn ra trên Python.
+Nếu tất cả tác vụ trên có thể bắt đầu nhanh chóng trong cùng một lúc thì có thể dẫn đến dung lượng bộ nhớ sử dụng tăng đột ngột.
+Do dung lượng bộ nhớ có sẵn trên GPU (và ngay cả CPU) là có hạn, việc trên có thể gây ra sự tranh chấp tài nguyên hoặc thậm chí có thể gây hỏng chương trình.
+Vài bạn đọc có lẽ đã nhận ra rằng ở các quy trình huấn luyện trước, ta áp dụng phương pháp đồng bộ hoá như `item` hay ngay cả `asnumpy`.
 
 <!--
 We recommend to use these operations carefully, e.g., for each minibatch, such as to balance computational efficiency and memory footprint.
@@ -296,7 +301,9 @@ To illustrate what happens let us implement a simple training loop for a deep ne
 Below is the mock data generator and deep network.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi khuyến nghị nên sử dụng các thao tác này một cách cẩn thận, ví dụ như đối với tứng minibatch, sao cho cân bằng giữa hiệu năng tính toán và vùng phủ bộ nhớ (*memory footprint*).
+Để mô tả cho quá trình trên, hãy cùng lập trình một vòng lặp huấn luyện đơn giản cho mạng học sâu, đo lượng bộ nhớ tiêu hao và đo thời gian.
+Dưới đây là hàm sinh dữ liệu giả và mạng sâu giả.
 
 
 ```{.python .input  n=10}
@@ -324,7 +331,8 @@ Next we need a tool to measure the memory footprint of our code. We use a relati
 For a much more detailed analysis of what is going on here use e.g., Nvidia's [Nsight](https://developer.nvidia.com/nsight-compute-2019_5) or Intel's [vTune](https://software.intel.com/en-us/vtune).
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta cần công cụ để đo vùng phủ bộ nhớ của đoạn mã trên. Để có thể xây dựng công cụ này, ta sử dụng một câu lệnh nguyên thuỷ `ps` (chú ý rằng đoạn lệnh dưới chỉ chạy trên Linux và MacOS).
+Để phân tích chi tiết về cách hoạt động của đoạn mã trên, bạn có thể sử dụng [Nsight](https://developer.nvidia.com/nsight-compute-2019_5) của Nvidia hoặc [vTune](https://software.intel.com/en-us/vtune) của Intel.
 
 
 ```{.python .input  n=12}
@@ -340,7 +348,9 @@ Otherwise it would be tricky to see what the additional memory consumption is.
 See :numref:`sec_deferred_init` for further details related to initialization.
 -->
 
-*dịch đoạn phía trên*
+Trước khi bắt đầu kiểm tra, ta cần khởi tạo các tham số của mạng và xử lý một batch.
+Nếu không, việc kiểm tra dung lượng bộ nhớ sử dụng thêm là khá rắc rối.
+Bạn có thể đọc :numref:`sec_deferred_init` để hiểu rõ chi tiết việc khởi tạo.
 
 
 ```{.python .input  n=13}
