@@ -14,7 +14,7 @@ Let us recap them in detail here:
 -->
 
 Trong các thảo luận dẫn đến phần này, chúng ta đã làm quen với một số kỹ thuật để tối ưu hóa hiệu quả.
-Chúng ta hãy tóm tắt chi tiết những kỹ thuật này ở đây:
+Hãy cùng tóm tắt chi tiết những kỹ thuật này ở đây:
 
 <!--
 * We saw that :numref:`sec_sgd` is more effective than Gradient Descent when solving optimization problems, e.g., due to its inherent resilience to redundant data.
@@ -25,12 +25,12 @@ This is the key to efficient multi-machine, multi-GPU and overall parallel proce
 * :numref:`sec_rmsprop` decoupled per-coordinate scaling from a learning rate adjustment.
 -->
 
-* Chúng ta thấy rằng :numref:`sec_sgd` hiệu quả hơn thuật toán hạ gradient khi giải các bài toán tối ưu như bởi tính co giãn vốn có của thuật toán với dữ liệu dư thừa.
-* Chúng ta thấy rằng :numref:`sec_minibatch_sgd` mang lại thêm tính hiệu quả đáng kể từ phép vector hóa, với nhiều mẫu quan sát hơn trong một minibatch.
-Đây là chìa khóa để xử lý tính toán song song trên nhiều GPU và nhiều máy một cách hiệu quả.
-* :numref:`sec_momentum` bổ sung cơ chế tích luỹ các gradient quá khứ để quá trình hội tụ diễn ra nhanh hơn.
-* :numref:`sec_adagrad` sử dụng phép chuyển đổi tỷ lệ theo tọa độ để cho phép một điều kiện tiên quyết tính toán hiệu quả.
-* :numref:`sec_rmsprop` tách rời phép chuyển đổi theo tỷ lệ trên mỗi tọa độ ra khỏi phép điều chỉnh tốc độ học.
+* Chúng ta thấy rằng :numref:`sec_sgd` hiệu quả hơn thuật toán hạ gradient khi giải các bài toán tối ưu do nó chịu ít ảnh hưởng xấu gây ra bởi dữ liệu dư thừa.
+* Chúng ta thấy rằng :numref:`sec_minibatch_sgd` mang lại hiệu quả đáng kể nhờ việc vector hóa, tức xử lý nhiều mẫu quan sát hơn trong một minibatch.
+Đây là chìa khóa để xử lý dữ liệu song song trên nhiều GPU và nhiều máy tính một cách hiệu quả.
+* :numref:`sec_momentum` bổ sung cơ chế gộp các gradient quá khứ, giúp quá trình hội tụ diễn ra nhanh hơn.
+* :numref:`sec_adagrad` sử dụng phép chuyển đổi giá trị theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán.
+* :numref:`sec_rmsprop` tách rời phép chuyển đổi giá trị theo từng tọa độ và phép điều chỉnh tốc độ học.
 
 <!--
 Adam :cite:`Kingma.Ba.2014` combines all these techniques into one efficient learning algorithm.
@@ -41,12 +41,12 @@ In a follow-up work :cite:`Zaheer.Reddi.Sachan.ea.2018` proposed a hotfix to Ada
 More on this later. For now let us review the Adam algorithm.
 -->
 
-Adam :cite:`Kingma.Ba.2014` kết hợp tất cả các kỹ thuật này thành một thuật toán học hiệu quả.
-Như kỳ vọng, đây là một trong những thuật toán tối ưu mạnh mẽ và hiệu quả  được sử dụng phổ biến trong học  sâu.
-Tuy nhiên, nó không phải là không có vấn đề.
-Cụ thể , :cite:`Reddi.Kale.Kumar.2019` cho thấy có những trường hợp mà Adam có thể phân kỳ do kiểm soát phương sai kém.
-Trong một nghiên cứu sau đó :cite:`Zaheer.Reddi.Sachan.ea.2018` đã đề xuất một bản vá nhanh cho Adam, với tên gọi là Yogi, để giải quyết các vấn đề này.
-Chi tiết về bản vá này sẽ được đề cập sau. Bây giờ chúng ta hãy xem lại thuật toán Adam.
+Adam :cite:`Kingma.Ba.2014` kết hợp tất cả các kỹ thuật trên thành một thuật toán học hiệu quả.
+Như kỳ vọng, đây là một trong những thuật toán tối ưu mạnh mẽ và hiệu quả được sử dụng phổ biến trong học sâu.
+Tuy nhiên nó cũng có một vài điểm yếu.
+Cụ thể, :cite:`Reddi.Kale.Kumar.2019` đã chỉ ra những trường hợp mà Adam có thể phân kỳ do việc kiểm soát phương sai kém.
+Trong một nghiên cứu sau đó, :cite:`Zaheer.Reddi.Sachan.ea.2018` đã đề xuất Yogi, một bản vá nhanh cho Adam để giải quyết các vấn đề này.
+Chi tiết về bản vá này sẽ được đề cập sau, còn bây giờ hãy xem xét thuật toán Adam.
 
 <!--
 ## The Algorithm
@@ -60,8 +60,8 @@ to obtain an estimate of both the momentum and also the second moment of the gra
 That is, it uses the state variables
 -->
 
-Một trong những thành phần chính của Adam là nó sử dụng các trung bình động theo trọng số bậc luỹ thừa (còn được gọi là trung bình rò rỉ)
-để ước lượng cả động lượng và mô-men bậc hai  của gradient.
+Một trong những thành phần chính của Adam là các trung bình động theo trọng số bậc luỹ thừa (hay còn được gọi là trung bình rò rỉ)
+để ước lượng cả động lượng và mô-men bậc hai của gradient.
 Cụ thể, nó sử dụng các biến trạng thái
 
 $$\begin{aligned}
