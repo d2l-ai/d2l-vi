@@ -192,7 +192,7 @@ Now let us see how this plays out for training on Fashion-MNIST.
 We simply provide the scheduler as an additional argument to the training algorithm.
 -->
 
-Lúc này chúng ta hãy cùng nhau xem điều này thể hiện vai trò thế nào trong việc huấn luyện trên Fashion-MNIST.
+Giờ hãy xem bộ định thời này hoạt động thế nào khi huấn luyện trên Fashion-MNIST.
 Chúng ta đơn giản cấp một bộ định thời như một biến số bổ sung vào giải thuật huấn luyện.
 
 
