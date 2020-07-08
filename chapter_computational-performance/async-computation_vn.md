@@ -42,7 +42,7 @@ npx.set_np()
 ## Asynchrony via Backend
 -->
 
-## Bất đồng bộ bằng Bộ xử lý nền
+## Bất đồng bộ bằng Back-end
 
 <!--
 For a warmup consider the following toy problem - we want to generate a random matrix and multiply it.
@@ -76,7 +76,7 @@ Forcing MXNet to finish all computation prior to returning shows what happened p
 Kết quả trên được sắp xếp theo tốc độ.
 Ít nhất có vẻ là như vậy.
 Do cả hai thư viện đều được thực hiện trên một bộ xử lý, chắc hẳn phải có gì đó ảnh hướng đến kết quả.
-Nếu bắt buộc MXNet phải hoàn thành toàn bộ tính toán trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi bộ xử lý nền (*backend*) trong khi bộ xử lý trước (*frontend*) trả lại quyền điều khiển cho Python.
+Nếu bắt buộc MXNet phải hoàn thành toàn bộ tính toán trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi back-end trong khi front-end trả lại quyền điều khiển cho Python.
 
 ```{.python .input  n=3}
 with d2l.Benchmark():
@@ -94,9 +94,9 @@ Note that for this to work the backend must be able to keep track of the depende
 Hence it is ony possible to parallelize operations that do not depend on each other.
 -->
 
-Nói chung, MXNet có bộ xử lý trước cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như một bộ xử lý nền được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
-Bộ xử lý nền có các luồng xử lý riêng liên tục tập hợp và thực hiện các tác vụ trong hàng đợi.
-Chú ý rằng, bộ xử lý nền cần có khả năng theo dõi quan hệ phụ thuộc giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
+Nói chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
+Back-end có các luồng xử lý riêng liên tục tập hợp và thực hiện các tác vụ trong hàng đợi.
+Chú ý rằng, back-end cần có khả năng theo dõi quan hệ phụ thuộc giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
 Do đó ta chỉ có thể song song hoá các thao tác không phụ thuộc lẫn nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
