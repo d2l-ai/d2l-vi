@@ -212,7 +212,7 @@ There is some argument that a smaller stepsize will lead to parameters that are 
 However, this does not explain the phenomenon entirely since we do not really stop early but simply reduce the learning rate gently.
 -->
 
-Phương pháp này làm việc tốt hơn một chút so với trước. Có hai điều nổi bật: đường cong huấn luyện khá mượt mà hơn so với trước. 
+Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Có hai điều nổi bật: đồ thị quá trình học mượt hơn. 
 Thứ hai là nó ít bị quá khớp hơn. 
 Không may là không có lời giải thích ổn thỏa cho câu hỏi liên quan tới việc tại sao những chiến thuật như vậy lại dẫn đến giảm việc quá khớp về mặt lý thuyết. 
 Có một số nhận định rằng với một kích thước bước nhỏ hơn sẽ đưa tới các tham số gần tới giá trị không hơn và do đó đơn giản hơn.
