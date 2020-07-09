@@ -196,7 +196,7 @@ class SquareRootScheduler:
 Let us plot its behavior over a range of values.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy vẽ hành vi của bộ định thời trên một dải giá trị. 
 
 
 ```{.python .input}
@@ -210,7 +210,8 @@ Now let us see how this plays out for training on Fashion-MNIST.
 We simply provide the scheduler as an additional argument to the training algorithm.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy xem bộ định thời này hoạt động thế nào khi huấn luyện trên Fashion-MNIST.
+Chúng ta đơn giản đưa bộ định thời vào giải thuật huấn luyện như một đối số bổ sung.
 
 
 ```{.python .input}
@@ -229,13 +230,16 @@ There is some argument that a smaller stepsize will lead to parameters that are 
 However, this does not explain the phenomenon entirely since we do not really stop early but simply reduce the learning rate gently.
 -->
 
-*dịch đoạn phía trên*
+Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Nổi bật hơn là đồ thị quá trình học mượt hơn và ít quá khớp hơn.
+Không may là chưa có lời giải thích ổn thỏa nào cho câu hỏi liên quan tới việc tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết.
+Có một số nhận định rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
+Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này vì chúng ta thật sự không hề dừng giải thuật sớm mà đơn giản chỉ giảm từ từ tốc độ học. 
 
 <!--
 ## Policies
 -->
 
-## *dịch tiêu đề phía trên*
+## Những chính sách
 
 <!--
 While we cannot possibly cover the entire variety of learning rate schedulers, we attempt to give a brief overview of popular policies below.
@@ -244,7 +248,10 @@ Beyond that, cosine learning rate schedules have been found to work well empiric
 Lastly, on some problems it is beneficial to warm up the optimizer prior to using large learning rates.
 -->
 
-*dịch đoạn phía trên*
+Vì không đủ khả năng xem xét toàn bộ các loại bộ định thời tốc độ học, chúng tôi cố gắng để đưa ra một bản tóm lược khái quát về các chiến lược phổ biến dưới đây.
+Những lựa chọn thông thường là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng. 
+Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cô-sin làm việc tốt đối với một số bài toán.
+Sau cùng, với một số bài toán sẽ có lợi khi ta từ từ nâng dần tốc độ học cho bộ tối ưu trước khi sử dụng các tốc độ học lớn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -531,14 +538,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* Hoang Van-Tien
 * Trần Yến Thy
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
@@ -549,7 +555,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 6 -->
-* 
+* Hoang Van-Tien
 
 <!-- Phần 7 -->
 * Nguyễn Văn Quang
