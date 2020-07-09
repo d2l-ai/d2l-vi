@@ -212,9 +212,8 @@ There is some argument that a smaller stepsize will lead to parameters that are 
 However, this does not explain the phenomenon entirely since we do not really stop early but simply reduce the learning rate gently.
 -->
 
-Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Có hai điều nổi bật: đồ thị quá trình học mượt hơn. 
-Thứ hai là ít quá khớp hơn. 
-Không may là không có lời giải thích ổn thỏa cho câu hỏi liên quan tới việc tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết. 
+Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Nổi bật hơn là đồ thị quá trình học mượt hơn và ít quá khớp hơn.
+Không may là chưa có lời giải thích ổn thỏa nào cho câu hỏi liên quan tới việc tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết.
 Có một số nhận định rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
 Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này vì chúng ta thật sự không hề dừng giải thuật sớm mà đơn giản chỉ giảm từ từ tốc độ học. 
 
@@ -222,7 +221,7 @@ Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này v
 ## Policies
 -->
 
-## Các chính sách
+## Những chính sách
 
 <!--
 While we cannot possibly cover the entire variety of learning rate schedulers, we attempt to give a brief overview of popular policies below.
@@ -233,7 +232,7 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 
 Vì không đủ khả năng xem xét toàn bộ các loại bộ định thời tốc độ học, chúng tôi cố gắng để đưa ra một bản tóm lược khái quát về các chiến lược phổ biến dưới đây.
 Những lựa chọn thông thường là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng. 
-Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cosine làm việc tốt đối với một số bài toán.
+Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cô-sin làm việc tốt đối với một số bài toán.
 Sau cùng, với một số bài toán sẽ có lợi khi ta từ từ nâng dần tốc độ học cho bộ tối ưu trước khi sử dụng các tốc độ học lớn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
