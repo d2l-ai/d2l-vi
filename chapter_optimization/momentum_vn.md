@@ -15,10 +15,10 @@ If we decrease it too rapidly, convergence stalls.
 If we are too lenient, we fail to converge to a good enough solution since noise keeps on driving us away from optimality.
 -->
 
-Trong :numref:`sec_sgd` chúng ta đã ôn tập về kỹ thuật hạ gradient ngẫu nhiên, là khi tối ưu hoá mà chỉ có thể sử dụng một dạng gradient có nhiễu.
-Cụ thể, với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt tác nhân gây nhiễu.
-Nếu gradient giảm quá nhanh, việc hội tụ sẽ bị chững lại.
-Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ tốt sẽ khó xảy ra bởi vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
+Trong :numref:`sec_sgd` chúng ta đã thảo luận cách hoạt động của hạ gradient ngẫu nhiên, chỉ sử dụng một mẫu gradient có nhiễu cho việc tối ưu.
+Cụ thể, khi có nhiễu ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học.
+Nếu gradient giảm quá nhanh, việc hội tụ sẽ ngừng trệ.
+Nếu gradient giảm chậm, sẽ khó hội tụ tại một kết quả đủ tốt vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
 <!--
 ## Basics
@@ -30,7 +30,7 @@ Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ t�
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
 -->
 
-Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả hơn, cụ thể là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
+Trong phần này, ta sẽ cùng khám phá những thuật toán tối ưu hiệu quả hơn, đặc biệt là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
 
 <!--
 ### Leaky Averages
@@ -41,24 +41,25 @@ Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán t�
 <!--
 The previous section saw us discussing minibatch SGD as a means for accelerating computation.
 It also had the nice side-effect that averaging gradients reduced the amount of variance.
+The minibatch SGD can be calculated by:
 -->
 
-Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
-Đồng thời, kỹ thuật lấy trung bình gradients này cũng có một "tác dụng phụ" tốt đó là giúp giảm phương sai.
+Trong phần trước, ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
+Đồng thời, kỹ thuật này cũng có một tác dụng phụ tốt là giúp giảm phương sai.
 
 
-$$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} \mathbf{g}_{i, t-1}.
-$$
+$$\mathbf{g}{t, t-1} = \partial{\mathbf{w}} \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} f(\mathbf{x}{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} \mathbf{h}{i, t-1}. $$
 
+<!-- sửa công thức từ PR gốc https://github.com/d2l-ai/d2l-en/pull/1104 -->
 
 <!--
-Here we used $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ to keep the notation simple.
+To keep the notation simple, here we used $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ as the SGD for sample $i$ using the weights updated at time $t-1$.
 It would be nice if we could benefit from the effect of variance reduction even beyond averaging gradients on a mini-batch.
 One option to accomplish this task is to replace the gradient computation by a "leaky average":
 -->
 
-Ở đây chúng ta dùng $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ để giúp ký hiệu được đơn giản.
-Sẽ rất tốt nếu ta có khả năng tận dụng được lợi ích từ việc giảm phương sai bên cạnh cách lấy trung bình gradient trên từng minibatch.
+Ở đây để đơn giản ký hiệu, ta đặt $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ là gradient của mẫu $i$ với trọng số tại bước thời gian $t-1$.
+Sẽ rất tốt nếu ta có thể tận dụng hơn nữa lợi ích từ việc giảm phương sai, tốt hơn cách lấy trung bình gradient trên minibatch.
 Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
 
 
@@ -73,9 +74,9 @@ To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively
 -->
 
 với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời một cách hiệu quả bằng một giá trị được lấy trung bình trên các gradient trước đó.
-$\mathbf{v}$ đực gọi là *động lượng*.
-Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ điểm bắt đầu lăn tới điểm hiện tại.
-Để thấy rõ hơn những gì đang diễn ra, chúng ta hãy mở rộng $\mathbf{v}_t$ một cách đệ quy thành
+$\mathbf{v}$ đực gọi là *động lượng (momentum)*.
+Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ lúc bắt đầu.
+Để hiểu rõ hơn, hãy mở rộng đệ quy $\mathbf{v}_t$ thành
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
