@@ -76,7 +76,7 @@ To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively
 với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời một cách hiệu quả bằng một giá trị được lấy trung bình trên các gradient trước đó.
 $\mathbf{v}$ đực gọi là *động lượng (momentum)*.
 Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ lúc bắt đầu.
-Để hiểu rõ hơn, hãy mở rộng đệ quy $\mathbf{v}_t$ thành
+Để hiểu rõ hơn, hãy khai triển đệ quy $\mathbf{v}_t$ thành
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -97,10 +97,10 @@ This allows us to realize most of the benefits of averaging over a batch without
 We will revisit this averaging procedure in more detail later.
 -->
 
-Giá trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ có một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
-Gradient mới này không còn trỏ về hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
-Điều này cho phép chúng ta nhận được hầu hết lợi ích của việc tính toán trung bình theo batch mà không phải tốn chi phí tính toán gradients theo cả batch.
-Chúng ta sẽ xem xét lại quy trình lấy trung bình một cách cụ thể hơn ở những phần sau.
+Khi $\beta$ lớn ta lấy trung bình trong khoảng rộng, trong khi đó nếu $\beta$ nhỏ phương pháp này sẽ không khác nhiều so với phương pháp gradient.
+Gradient mới này không còn có hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
+Điều này giúp chúng ta nhận ra hầu hết lợi ích của việc tính trung bình theo batch mà không cần tốn chi phí tính toán gradients trên batch.
+Chúng ta sẽ xem xét cụ thể hơn quy trình lấy trung bình ở những phần sau.
 
 <!--
 The above reasoning formed the basis for what is now known as *accelerated* gradient methods, such as gradients with momentum.
@@ -110,10 +110,10 @@ Furthermore, they allow us to average over subsequent gradients to obtain more s
 Indeed, the aspect of acceleration even for noise-free convex problems is one of the key reasons why momentum works and why it works so well.
 -->
 
-Các lập luận là cơ sở đã hình thành nên các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
-Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình chậm hơn rất nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
-Hơn nữa, cách này cho phép chúng ta tính trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
-Thật vậy, việc tăng tốc ngay cả đối với bài toán hàm lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
+Các lập luận trên là cơ sở hình thành các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
+Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình tối ưu chậm hơn nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
+Hơn nữa, cách này cho phép lấy trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
+Thật vậy, việc tăng tốc ngay cả đối với bài toán lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
 
 
 <!--
@@ -126,10 +126,11 @@ See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
 Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
-[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
-Động lượng được đề xuất bởi :cite:`Polyak.1964` và :cite:`Nesterov.2018` đã có một thảo luận học thuật chi tiết trong ngữ cảnh tối ưu hoá lồi.
+[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` cung cấp phân tích chuyên sâu và minh hoạ sinh động về động lượng.
+Động lượng được đề xuất bởi :cite:`Polyak.1964`.
+:cite:`Nesterov.2018` có một thảo luận chi tiết về lý thuyết động lượng trong ngữ cảnh tối ưu hoá lồi.
 Động lượng trong học sâu đã được biết đến từ lâu vì lợi ích mà nó mang lại.
-Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm chi tiết.
+Tham khảo :cite:`Sutskever.Martens.Dahl.ea.2013` để biết thêm chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
