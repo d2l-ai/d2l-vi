@@ -214,7 +214,7 @@ However, this does not explain the phenomenon entirely since we do not really st
 
 Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Có hai điều nổi bật: đồ thị quá trình học mượt hơn. 
 Thứ hai là ít quá khớp hơn. 
-Không may là không có lời giải thích ổn thỏa cho câu hỏi liên quan tới việc tại sao những chiến thuật như vậy lại dẫn đến giảm việc quá khớp về mặt lý thuyết. 
+Không may là không có lời giải thích ổn thỏa cho câu hỏi liên quan tới việc tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết. 
 Có một số nhận định rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
 Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này vì chúng ta thật sự không hề dừng giải thuật sớm mà đơn giản chỉ giảm từ từ tốc độ học. 
 
