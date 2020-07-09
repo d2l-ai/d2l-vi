@@ -138,7 +138,7 @@ Beyond that all is straightforward.
 -->
 
 Lập trình Adam từ đầu không quá khó khăn.
-Để thuận tiện, chúng ta lưu trữ các biến đếm bước thời gian $t$ trong từ điển `hyperparams`.
+Để thuận tiện, chúng ta lưu trữ biến đếm bước thời gian $t$ trong từ điển `hyperparams`.
 Ngoài điều đó ra, mọi thứ khác khá đơn giản.
 
 
