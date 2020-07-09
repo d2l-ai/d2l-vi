@@ -361,7 +361,7 @@ Note that a (possibly more elegant) alternative would have been to track the los
 
 Để đảm bảo bộ nhớ đệm tác vụ không bị tràn, ta chèn phương thức `wait_to_read` vào back-end cho hàm mất mát ở cuối mỗi vòng lặp.
 Điều này buộc một lượt truyền xuôi phải hoàn thành trước khi lượt truyền xuối tiếp theo được bắt đầu.
-Chú ý rằng có một phương án thay thế (có lẽ là thanh nhã hơn) là theo dõi lượng mất mát ở biến số nguyên và buộc đi qua một lớp cản qua việc gọi phương thức `call`.
+Chú ý rằng có một phương án thay thế khác (có lẽ là thanh nhã hơn) là theo dõi lượng mất mát ở biến số nguyên và buộc đi qua một lớp cản (*barrier*) qua việc gọi phương thức `call`.
 
 
 ```{.python .input  n=14}
@@ -384,7 +384,7 @@ Moreover, memory footprint only increases slightly.
 Now let us see what happens if we drop the barrier at the end of each minibatch.
 -->
 
-Như ta có thể thấy, thời gian của từng minibatch khá đều so với tổng thời gian chạy của đoạn mã tối ưu.
+Như ta có thể thấy, thời gian thực hiện từng minibatch khá đều so với tổng thời gian chạy của đoạn mã tối ưu.
 Hơn nữa, vùng phủ bộ nhớ tăng không đáng kể.
 Giờ hãy cùng xem chuyện gì sẽ xảy ra nếu ta bỏ lớp chặn ở cuối mỗi minibatch.
 
