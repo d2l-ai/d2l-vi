@@ -52,14 +52,14 @@ Các bước lớn khi bắt đầu có thể không có lợi, đặc biệt v�
 Các hướng cập nhật ban đầu cũng có thể khá vô nghĩa.
 * Cuối cùng, có một số biến thể tối ưu hóa thực hiện điều chỉnh tốc độ học tập theo chu kỳ.
 Điều này nằm ngoài phạm vi của chương hiện tại.
-Chúng tôi khuyên người đọc nên xem xét chi tiết trong :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ làm thế nào để có được các giải pháp tốt hơn bằng cách lấy trung bình toàn bộ *đường* của các tham số.
+Chúng tôi khuyên người đọc nên xem xét chi tiết trong :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ: làm thế nào để có được các giải pháp tốt hơn bằng cách lấy trung bình toàn bộ *đường* của các tham số.
 
 <!--
 Given the fact that there is a lot of detail needed to manage learning rates, most deep learning frameworks have tools to deal with this automatically.
 In the current chapter we will review the effects that different schedules have on accuracy and also show how this can be managed efficiently via a *learning rate scheduler*.
 -->
 
-Thực tế là có nhiều chi tiết cần để quản lý tốc độ học, hầu hết các framework học sâu đều có các công cụ để giải quyết điều này tự động.
+Thực tế là có nhiều chi tiết cần để có thể quản lý tốc độ học, hầu hết các framework học sâu đều có các công cụ để giải quyết điều này tự động.
 Trong chương hiện tại ta sẽ xem xét lại các hiệu ứng với mỗi định thời khác nhau ảnh hưởng lên độ chính xác cũng như cho thấy cách mà điều này có thể được quản lý một cách hiệu quả thông qua một *định thời tốc độ học*.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
