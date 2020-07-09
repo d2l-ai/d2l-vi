@@ -291,7 +291,7 @@ Yogi cung cấp một giải pháp như vậy cho $\mathbf{s}_t$.
 1. Hãy điều chỉnh tốc độ học, quan sát và phân tích kết quả thực nghiệm.
 2. Bạn có thể viết lại các phương trình cập nhật cho động lượng và mô-men bậc hai mà không cần thực hiện phép hiệu chỉnh độ chệch (_bias correction_) không?
 3. Tại sao ta cần phải giảm tốc độ học $\eta$ khi quá trình hội tụ diễn ra?
-4. Hãy liệt kê một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ?
+4. Hãy nghĩ một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
