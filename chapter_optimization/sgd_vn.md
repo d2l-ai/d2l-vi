@@ -524,7 +524,7 @@ Thay vào đó ta duyệt qua tất cả các đối tượng đúng một lần
 Xác suất phần tử $i$ được chọn ngẫu nhiên là $N^{-1}$.
 Do đó xác suất chọn $i$ ít nhất một lần là
 
-$$P(\mathrm{Chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
+$$P(\mathrm{chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
 
 <!--
 A similar reasoning shows that the probability of picking a sample exactly once is given by ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
