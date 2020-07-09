@@ -236,14 +236,15 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 ### Factor Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Thừa số
 
 <!--
 One alternative to a polynomial decay would be a multiplicative one, that is $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ for $\alpha \in (0, 1)$.
 To prevent the learning rate from decaying beyond a reasonable lower bound the update equation is often modified to $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 -->
 
-*dịch đoạn phía trên*
+Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân $\alpha \in (0, 1)$, lúc này $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$.
+Để tránh trường hợp tốc độ học suy giảm thấp hơn cả biên chặn dưới, phương trình cập nhật thường được sửa lại thành $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 
 
 ```{.python .input}
@@ -269,7 +270,10 @@ Going forward we will use the built-in schedulers as appropriate and only explai
 As illustrated, it is fairly straightforward to build your own scheduler if needed.
 -->
 
-*dịch đoạn phía trên*
+Cách trên cũng có thể được thực hiện bằng một bộ định thời có sẵn trong MXNet `lr_scheduler.FactorScheduler`.
+Cách này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (_warmup period_), chế độ khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
+Ở các phần tiếp theo, chúng ta sẽ sử dụng các bộ định thời tốc độ học được lập trình sẵn, ở đây chỉ giải thích cách thức hoạt động của chúng.
+Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -279,7 +283,7 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 ### Multi Factor Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Đa Thừa số
 
 <!--
 A common strategy for training deep networks is to keep the learning rate piecewise constant and to decrease it by a given amount every so often.
@@ -287,7 +291,9 @@ That is, given a set of times when to decrease the rate, such as $s = \{5, 10, 2
 Assuming that the values are halved at each step we can implement this as follows.
 -->
 
-*dịch đoạn phía trên*
+Một chiến lược chung để huấn luyện các mạng nơ-ron sâu là giữ cho tốc độ học không đổi theo từng khoảng và thường xuyên giảm tốc độ học đi một lượng cho trước sau mỗi khoảng.
+Cụ thể, với một tập thời điểm giảm tốc độ học, ví dụ như với $s = \{15, 30\}$, ta giảm $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$ khi $t \in s$.
+Giả sử rằng tốc độ học được giảm một nửa tại mỗi bước thời gian trên, ta có thể lập trình như sau.
 
 
 ```{.python .input}
@@ -303,7 +309,9 @@ Then (and only then) do we decrease the rate such as to obtain a higher quality 
 The example below shows how this can produce ever slightly better solutions.
 -->
 
-*dịch đoạn phía trên*
+Ý tưởng trực quan đằng sau định thời tốc độ học không đổi theo khoảng đó là phương pháp này cho phép quá trình tối ưu xảy ra cho tới khi thuật toán đạt tới điểm ổn định về phân phối của các vector trọng số.
+Khi và chỉ khi đạt được trạng thái đó, chúng ta mới giảm tốc độ học hướng tới điểm cực tiểu chất lượng hơn.
+Ví dụ dưới đây cho ta thấy cách phương pháp này giúp tìm được nghiệm tốt hơn đôi chút.
 
 
 ```{.python .input}
@@ -320,7 +328,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Cosine Scheduler
 -->
 
-### *dịch tiêu đề phía trên*
+### Định thời Cô-sin
 
 <!--
 A rather perplexing heuristic was proposed by :cite:`Loshchilov.Hutter.2016`.
@@ -329,7 +337,9 @@ that we might want to "refine" the solution in the end using a very small learni
 This results in a cosine-like schedule with the following functional form for learning rates in the range $t \in [0, T]$.
 -->
 
-*dịch đoạn phía trên*
+Đây là một phương pháp khá phức tạp dựa trên thực nghiệm được đề xuất bởi :cite:`Loshchilov.Hutter.2016`.
+Phương pháp dựa trên quan sát rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu và hơn nữa ta muốn làm mịn nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học rất nhỏ.
+Từ đó ta thu được một định thời giống cô-sin với tốc độ học trong khoảng $t \in [0, T]$ có công thức như sau.
 
 
 $$\eta_t = \eta_T + \frac{\eta_0 - \eta_T}{2} \left(1 + \cos(\pi t/T)\right)$$
@@ -341,7 +351,9 @@ Furthermore, for $t > T$ we simply pin the value to $\eta_T$ without increasing 
 In the following example, we set the max update step $T = 20$.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $\eta_0$ là tốc độ học ban đầu, $\eta_T$ được tốc độ học đích tại thời điểm $T$.
+Hơn nữa, với $t > T$ ta không tăng giá trị tốc độ học mà đơn giản gán nó bằng $\eta_T$.
+Trong ví dụ sau, chúng ta thiết lập số bước cập nhật tối đa $T = 20$.
 
 
 ```{.python .input}
@@ -356,7 +368,8 @@ In the context of computer vision this schedule *can* lead to improved results.
 Note, though, that such improvements are not guaranteed (as can be seen below).
 -->
 
-*dịch đoạn phía trên*
+Trong ngữ cảnh thị giác máy tính, cách định thời này *có thể* cải thiện kết quả thu được.
+Tuy nhiên, chú ý rằng những cải thiện này không chắc chắn được đảm đảo (có thể thấy qua ví dụ dưới đây).
 
 
 ```{.python .input}
@@ -373,7 +386,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ### Warmup
 -->
 
-### *dịch tiêu đề phía trên*
+### Khởi động
 
 <!--
 In some cases initializing the parameters is not sufficient to guarantee a good solution.
@@ -383,15 +396,19 @@ Unfortunately this means that progress is slow.
 Conversely, a large learning rate initially leads to divergence.
 -->
 
-*dịch đoạn phía trên*
+Trong một số trường hợp, khởi tạo tham số không đảm bảo sẽ có kết quả tốt. 
+Đặc biệt đối với các mạng phức tạp, nó có thể làm việc tối ưu hóa không ổn định. 
+Chúng ta có thể giải quyết việc này bằng cách chọn tốc độ học đủ nhỏ để ngăn phân kỳ vào lúc bắt đầu. Tuy nhiên, tiến trình học sẽ chậm hơn. 
+Ngược lại, tốc độ học lớn ban đầu cũng gây ra phân kỳ.
 
 <!--
 A rather simple fix for this dilemma is to use a warmup period during which the learning rate *increases* to its initial maximum and to cool down the rate until the end of the optimization process.
 For simplicity one typically uses a linear increase for this purpose.
 This leads to a schedule of the form indicated below.
 -->
-
-*dịch đoạn phía trên*
+Một giải pháp đơn giản cho vấn đề trên là dùng quá trình khởi động (*warmup*), trong thời gian đó tốc độ học *tăng* tới giá trị lớn nhất, sau đó giảm dần tới khi kết thúc quá trình tối ưu.
+Để đơn giản, ta có thể dụng hàm tăng tuyến tính để khởi động. 
+Kết quả là ta có một bộ định thời dưới đây.
 
 
 ```{.python .input}
@@ -405,8 +422,7 @@ d2l.plot(np.arange(num_epochs), [scheduler(t) for t in range(num_epochs)])
 Note that the network converges better initially (in particular observe the performance during the first 5 epochs).
 -->
 
-*dịch đoạn phía trên*
-
+Có thể thấy rằng ban đầu, mạng hội tụ tốt hơn (cụ thể, hãy quan sát quá trình tối ưu trong 5 epoch đầu tiên).
 
 ```{.python .input}
 trainer = gluon.Trainer(net.collect_params(), 'sgd',
@@ -422,7 +438,10 @@ In particular they find that a warmup phase limits the amount of divergence of p
 This makes intuitively sense since we would expect significant divergence due to random initialization in those parts of the network that take the most time to make progress in the beginning.
 -->
 
-*dịch đoạn phía trên*
+Phép khởi động có thể sử dụng trong bất kỳ bộ định thời nào (không chỉ là cosine).
+Để biết thêm chi tiết thảo luận và các thí nghiệm về định thời tốc độ học, có thể đọc thêm :cite:`Gotmare.Keskar.Xiong.ea.2018`.
+Đáng chú ý là các tác giả thấy rằng quá trình khởi động làm giảm lượng phân kì của tham số trong các mạng rất sâu. 
+Điều này hợp lý về trực giác, vì ta thấy rằng phân kỳ mạnh là do khởi tạo tham số ngẫu nhiên ở những phần mạng học lâu nhất vào lúc đầu.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -444,7 +463,12 @@ Essentially this ensures that we converge efficiently to a suitable solution and
 different choices of optimization algorithms and learning rate scheduling can lead to rather different amounts of generalization and overfitting on the test set (for the same amount of training error).
 -->
 
-*dịch đoạn phía trên*
+* Giảm tốc độ học trong huấn luyện có thể cải thiện độ chính xác và giảm tính quá khớp của mô hình.
+* Một cách rất hiệu quả trong thực tế đó là giảm tốc độ học theo khoảng bất cứ khi nào quá trình tối ưu không có tiến bộ đáng kể (_plateau_).
+Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ hội tụ đến nghiệm phù hợp và chỉ sau đó mới giảm phương sai vốn có của các tham số bằng cách giảm tốc độ học.
+* Định thời cô-sin khá phổ biến trong các bài toán thị giác máy tính. Xem ví dụ [GluonCV](http://gluon-cv.mxnet.io) để biết thêm chi tiết về định thời này.
+* Quá trình khởi động trước khi tối ưu có thể giúp tránh phân kỳ.
+* Tối ưu hóa phục vụ nhiều mục đích trong việc học sâu. Bên cạnh việc cực tiểu hoá hàm mục tiêu trên tập huấn luyện, các thuật toán tối ưu và các định thời tốc độ học khác nhau có thể thay đổi tính khái quát hoá và tính quá khớp trên tập kiểm tra (đối với cùng một giá trị lỗi trên tập huấn luyện).
 
 <!--
 ## Exercises
@@ -460,7 +484,11 @@ different choices of optimization algorithms and learning rate scheduling can le
 5. Can you connect optimization and sampling? Start by using results from :cite:`Welling.Teh.2011` on Stochastic Gradient Langevin Dynamics.
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thí nghiệm về cách hoạt động của thuật toán tối ưu với một tốc độ học cố định cho trước. Hãy cho biết mô hình tốt nhất mà bạn có thể có được theo cách này?
+2. Quá trình hội tụ thay đổi như thế nào nếu bạn thay đổi lũy thừa giảm trong tốc độ học? Để thuận tiện, hãy sử dụng `PolyScheduler`.
+3. Hãy áp dụng định thời cô-sin cho nhiều bài toán thị giác máy tính, ví dụ, huấn luyện trên tập ImageNet. Hãy chỉ ra những ảnh hưởng của phương pháp này tới chất lượng của mô hình thu được so với các định thời khác.
+4. Quá trình khởi động nên kéo dài bao lâu?
+5. Bạn có thể liên hệ tối ưu hoá và phép lấy mẫu được không? Hãy bắt đầu bằng cách sử dụng kết quả từ  :cite:`Welling.Teh.2011` về động lực học Langevin của Gradient ngẫu nghiên (_Stochastic Gradient Langevin Dynamics_).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -485,7 +513,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Hoang Van-Tien
 
 <!-- Phần 2 -->
 * 
@@ -494,13 +522,15 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
+
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 6 -->
 * 
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Quang

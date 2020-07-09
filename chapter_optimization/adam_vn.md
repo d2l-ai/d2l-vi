@@ -5,7 +5,7 @@
 # Adam
 -->
 
-# *dịch tiêu đề phía trên*
+# Adam
 :label:`sec_adam`
 
 <!--
@@ -13,7 +13,8 @@ In the discussions leading up to this section we encountered a number of techniq
 Let us recap them in detail here:
 -->
 
-*dịch đoạn phía trên*
+Trong các thảo luận dẫn đến phần này, chúng ta đã làm quen với một số kỹ thuật để tối ưu hóa hiệu quả.
+Hãy cùng tóm tắt chi tiết những kỹ thuật này ở đây:
 
 <!--
 * We saw that :numref:`sec_sgd` is more effective than Gradient Descent when solving optimization problems, e.g., due to its inherent resilience to redundant data.
@@ -24,7 +25,12 @@ This is the key to efficient multi-machine, multi-GPU and overall parallel proce
 * :numref:`sec_rmsprop` decoupled per-coordinate scaling from a learning rate adjustment.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta thấy rằng SGD trong :numref:`sec_sgd` hiệu quả hơn hạ gradient khi giải các bài toán tối ưu do nó chịu ít ảnh hưởng xấu gây ra bởi dữ liệu dư thừa.
+* Chúng ta thấy rằng minibatch SGD trong :numref:`sec_minibatch_sgd` mang lại hiệu quả đáng kể nhờ việc vector hóa, tức xử lý nhiều mẫu quan sát hơn trong một minibatch.
+Đây là chìa khóa để xử lý dữ liệu song song trên nhiều GPU và nhiều máy tính một cách hiệu quả.
+* Phương pháp động lượng trong :numref:`sec_momentum` bổ sung cơ chế gộp các gradient quá khứ, giúp quá trình hội tụ diễn ra nhanh hơn.
+* Adagrad trong :numref:`sec_adagrad` sử dụng phép chuyển đổi giá trị theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán.
+* RMSprop trong :numref:`sec_rmsprop` tách rời phép chuyển đổi giá trị theo từng tọa độ và phép điều chỉnh tốc độ học.
 
 <!--
 Adam :cite:`Kingma.Ba.2014` combines all these techniques into one efficient learning algorithm.
@@ -35,13 +41,18 @@ In a follow-up work :cite:`Zaheer.Reddi.Sachan.ea.2018` proposed a hotfix to Ada
 More on this later. For now let us review the Adam algorithm.
 -->
 
-*dịch đoạn phía trên*
+Adam :cite:`Kingma.Ba.2014` kết hợp tất cả các kỹ thuật trên thành một thuật toán học hiệu quả.
+Như kỳ vọng, đây là một trong những thuật toán tối ưu mạnh mẽ và hiệu quả được sử dụng phổ biến trong học sâu.
+Tuy nhiên nó cũng có một vài điểm yếu.
+Cụ thể, :cite:`Reddi.Kale.Kumar.2019` đã chỉ ra những trường hợp mà Adam có thể phân kỳ do việc kiểm soát phương sai kém.
+Trong một nghiên cứu sau đó, :cite:`Zaheer.Reddi.Sachan.ea.2018` đã đề xuất Yogi, một bản vá nhanh cho Adam để giải quyết các vấn đề này.
+Chi tiết về bản vá này sẽ được đề cập sau, còn bây giờ hãy xem xét thuật toán Adam.
 
 <!--
 ## The Algorithm
 -->
 
-## *dịch tiêu đề phía trên*
+## Thuật toán
 
 <!--
 One of the key components of Adam is that it uses exponential weighted moving averages (also known as leaky averaging) 
@@ -49,8 +60,9 @@ to obtain an estimate of both the momentum and also the second moment of the gra
 That is, it uses the state variables
 -->
 
-*dịch đoạn phía trên*
-
+Một trong những thành phần chính của Adam là các trung bình động trọng số mũ (hay còn được gọi là trung bình rò rỉ)
+để ước lượng cả động lượng và mô-men bậc hai của gradient.
+Cụ thể, nó sử dụng các biến trạng thái
 
 $$\begin{aligned}
     \mathbf{v}_t & \leftarrow \beta_1 \mathbf{v}_{t-1} + (1 - \beta_1) \mathbf{g}_t, \\
@@ -70,7 +82,12 @@ This can be addressed by using the fact that $\sum_{i=0}^t \beta^i = \frac{1 - \
 Correspondingly the normalized state variables are given by
 -->
 
-*dịch đoạn phía trên*
+Ở đây $\beta_1$ và $\beta_2$ là các tham số trọng số không âm.
+Các lựa chọn phổ biến cho chúng là $\beta_1 = 0.9$ và $\beta_2 = 0.999$.
+Điều này có nghĩa là ước lượng phương sai di chuyển *chậm hơn nhiều* so với số hạng động lượng.
+Lưu ý rằng nếu ta khởi tạo $\mathbf{v}_0 = \mathbf{s}_0 = 0$, ban đầu thuật toán sẽ chệch đáng kể về các giá trị nhỏ hơn.
+Vấn đề này có thể được giải quyết bằng cách sử dụng $\sum_{i=0}^t \beta^i = \frac{1 - \beta^t}{1 - \beta}$ để chuẩn hóa lại các số hạng.
+Tương tự, các biến trạng thái được chuẩn hóa như sau
 
 
 $$\hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1 - \beta_1^t} \text{ and } \hat{\mathbf{s}}_t = \frac{\mathbf{s}_t}{1 - \beta_2^t}.$$
@@ -81,7 +98,8 @@ Armed with the proper estimates we can now write out the update equations.
 First, we rescale the gradient in a manner very much akin to that of RMSProp to obtain
 -->
 
-*dịch đoạn phía trên*
+Với các ước lượng thích hợp, bây giờ chúng ta có thể viết ra các phương trình cập nhật.
+Đầu tiên, chúng ta điều chỉnh lại giá trị gradient, tương tự như ở RMSProp để có được
 
 
 $$\mathbf{g}_t' = \frac{\eta \hat{\mathbf{v}}_t}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}.$$
@@ -94,14 +112,18 @@ The former works arguably slightly better in practice, hence the deviation from 
 Typically we pick $\epsilon = 10^{-6}$ for a good trade-off between numerical stability and fidelity.
 -->
 
-*dịch đoạn phía trên*
+Không giống như RMSProp, phương trình cập nhật sử dụng động lượng $\hat{\mathbf{v}}_t$ thay vì gradient.
+Hơn nữa, có một sự khác biệt nhỏ về mặt thẩm mỹ: phép chuyển đổi được thực hiện bằng cách sử dụng $\frac{1}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}$ thay vì $\frac{1}{\sqrt{\hat{\mathbf{s}}_t + \epsilon}}$.
+Trong thực tế, cách đầu tiên hoạt động tốt hơn một chút, dẫn đến một phiên bản khác của RMSProp.
+Thông thường, ta chọn $\epsilon = 10^{-6}$ để cân bằng giữa tính ổn định số học và độ chính xác.
 
 <!--
 Now we have all the pieces in place to compute updates.
 This is slightly anticlimactic and we have a simple update of the form
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta sẽ tổng hợp lại tất cả các điều trên để tính toán bước cập nhật.
+Có thể bạn sẽ thấy hơi tụt hứng một chút vì thực ra nó khá đơn giản
 
 
 $$\mathbf{x}_t \leftarrow \mathbf{x}_{t-1} - \mathbf{g}_t'.$$
@@ -115,7 +137,11 @@ Second, the combination of both terms is pretty straightforward, given RMSProp.
 Last, the explicit learning rate $\eta$ allows us to control the step length to address issues of convergence.
 -->
 
-*dịch đoạn phía trên*
+Khi xem xét thiết kế của Adam, ta thấy rõ nguồn cảm hứng của thuật toán.
+Động lượng và khoảng giá trị được thể hiện rõ ràng trong các biến trạng thái.
+Định nghĩa khá kì lạ của chúng đòi hỏi ta phải giảm độ chệch của các số hạng bằng cách sử dụng phép khởi tạo và điều kiện cập nhật hơi khác một chút.
+Thứ hai, việc kết hợp của cả hai số hạng trên khá đơn giản, dựa trên RMSProp.
+Cuối cùng, tốc độ học tường minh $\eta$ cho phép ta kiểm soát độ dài bước cập nhật để giải quyết các vấn đề về hội tụ.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -315,10 +341,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 3 -->
 * 
