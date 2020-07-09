@@ -5,7 +5,7 @@
 # Momentum
 -->
 
-# *dịch tiêu đề phía trên*
+# Động lượng
 :label:`sec_momentum`
 
 <!--
@@ -15,33 +15,36 @@ If we decrease it too rapidly, convergence stalls.
 If we are too lenient, we fail to converge to a good enough solution since noise keeps on driving us away from optimality.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_sgd` chúng ta đã ôn tập về kỹ thuật hạ gradient ngẫu nhiên, là khi tối ưu hoá mà chỉ có thể sử dụng một dạng gradient có nhiễu.
+Cụ thể, với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt tác nhân gây nhiễu.
+Nếu gradient giảm quá nhanh, việc hội tụ sẽ bị chững lại.
+Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ tốt sẽ khó xảy ra bởi vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
 <!--
 ## Basics
 -->
 
-## *dịch tiêu đề phía trên*
+## Kiến thức cơ bản
 
 <!--
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả hơn, cụ thể là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
 
 <!--
 ### Leaky Averages
 -->
 
-### *dịch tiêu đề phía trên*
+### Giá trị trung bình rò rỉ
 
 <!--
 The previous section saw us discussing minibatch SGD as a means for accelerating computation.
 It also had the nice side-effect that averaging gradients reduced the amount of variance.
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
+Đồng thời, kỹ thuật lấy trung bình gradients này cũng có một "tác dụng phụ" tốt đó là giúp giảm phương sai.
 
 
 $$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} \mathbf{g}_{i, t-1}.
@@ -54,7 +57,9 @@ It would be nice if we could benefit from the effect of variance reduction even 
 One option to accomplish this task is to replace the gradient computation by a "leaky average":
 -->
 
-*dịch đoạn phía trên*
+Ở đây chúng ta dùng $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ để giúp ký hiệu được đơn giản.
+Sẽ rất tốt nếu ta có khả năng tận dụng được lợi ích từ việc giảm phương sai bên cạnh cách lấy trung bình gradient trên từng minibatch.
+Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
 
 
 $$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + \mathbf{g}_{t, t-1}$$
@@ -67,7 +72,10 @@ It accumulates past gradients similar to how a heavy ball rolling down the objec
 To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively into
 -->
 
-*dịch đoạn phía trên*
+với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời một cách hiệu quả bằng một giá trị được lấy trung bình trên các gradient trước đó.
+$\mathbf{v}$ đực gọi là *động lượng*.
+Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ điểm bắt đầu lăn tới điểm hiện tại.
+Để thấy rõ hơn những gì đang diễn ra, chúng ta hãy mở rộng $\mathbf{v}_t$ một cách đệ quy thành
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -291,7 +299,7 @@ Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm g
 ### Effective Sample Weight
 -->
 
-### *dịch tiêu đề phía trên*
+### Trọng số mẫu thực sự
 
 <!--
 Recall that $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
@@ -301,7 +309,11 @@ These are two benefits in one.
 To illustrate how weighting behaves for different choices of $\beta$ consider the diagram below.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
+Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
+Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng ổn định hơn.
+Đây là hai lợi ích trong một.
+Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
 
 
 ```{.python .input}
@@ -322,20 +334,21 @@ d2l.plt.legend();
 ## Practical Experiments
 -->
 
-## *dịch tiêu đề phía trên*
+## Các thực nghiệm
 
 <!--
 Let us see how momentum works in practice, i.e., when used within the context of a proper optimizer.
 For this we need a somewhat more scalable implementation.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xem phương pháp động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
+Để làm điều này, chúng ta cần một phương pháp lập trình giúp mở rộng dễ dàng hơn.
 
 <!--
 ### Implementation from Scratch
 -->
 
-### *dịch tiêu đề phía trên*
+### Lập trình từ đầu
 
 <!--
 Compared with (minibatch) SGD the momentum method needs to maintain a set of  auxiliary variables, i.e., velocity.
@@ -343,8 +356,9 @@ It has the same shape as the gradients (and variables of the optimization proble
 In the implementation below we call these variables `states`.
 -->
 
-*dịch đoạn phía trên*
-
+So với SGD (minibatch), phương pháp động lượng cần duy trì một tập hợp các biến phụ trợ, tức là vận tốc.
+Nó có kích thước giống gradient (và các biến khác trong bài toán tối ưu hóa).
+Trong phần lập trình bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
 
 ```{.python .input  n=13}
 def init_momentum_states(feature_dim):
@@ -363,7 +377,7 @@ def sgd_momentum(params, states, hyperparams):
 Let us see how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem điều này hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=15}
@@ -382,7 +396,8 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-*dịch đoạn phía trên*
+Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu thực tế sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
+Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ dễ dàng kiểm soát độ hội tụ.
 
 
 ```{.python .input  n=8}
@@ -395,7 +410,9 @@ Reducing the learning rate further addresses any issue of non-smooth optimizatio
 Setting it to $0.005$ yields good convergence properties.
 -->
 
-*dịch đoạn phía trên*
+Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề nào của bài toán tối ưu không trơn tru.
+Đặt nó thành $0,005$ mang lại các đặc tính hội tụ tốt.
+
 
 
 ```{.python .input}
@@ -410,14 +427,15 @@ train_momentum(0.005, 0.9)
 ### Concise Implementation
 -->
 
-### *dịch tiêu đề phía trên*
+### Cách lập trình súc tích
 
 <!--
 There is very little to do in Gluon since the standard `sgd` solver already had momentum built in.
 Setting matching parameters yields a very similar trajectory.
 -->
 
-*dịch đoạn phía trên*
+Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã tích hợp sẵn phương pháp động lượng.
+Cùng một thiết lập tham số mang lại một quỹ đạo rất giống khi lập trình từ đầu.
 
 
 ```{.python .input  n=9}
@@ -430,26 +448,28 @@ d2l.train_gluon_ch11('sgd', {'learning_rate': 0.005, 'momentum': 0.9},
 ## Theoretical Analysis
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân tích lý thuyết
 
 <!--
 So far the 2D example of $f(x) = 0.1 x_1^2 + 2 x_2^2$ seemed rather contrived.
 We will now see that this is actually quite representative of the types of problem one might encounter, at least in the case of minimizing convex quadratic objective functions.
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay, ví dụ 2D về $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như khá không thực.
+Bây giờ chúng ta sẽ thấy rằng điều này thực ra khá tiêu biểu cho các loại vấn đề mà ta có thể gặp phải, ít nhất là trong trường hợp cực tiểu hóa các hàm mục tiêu bậc hai lồi.
+
 
 <!--
 ### Quadratic Convex Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm lồi bậc hai
 
 <!--
 Consider the function
 -->
 
-*dịch đoạn phía trên*
+Xét hàm số 
 
 
 $$h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b.$$
@@ -462,7 +482,10 @@ this has a minimizer at $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ with minimu
 Hence we can rewrite $h$ as
 -->
 
-*dịch đoạn phía trên*
+Đây là một hàm bậc hai tổng quát.
+Đối với các ma trận bán xác định dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có trị riêng dương
+nó có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị cực tiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Do đó chúng ta có thể viết lại $h$ như sau
 
 
 $$h(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})^\top \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c}) + b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}.$$
@@ -474,7 +497,9 @@ That is, it is given by the distance between $\mathbf{x}$ and the minimizer, mul
 Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 -->
 
-*dịch đoạn phía trên*
+Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
+Nghĩa là bằng khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu nhân với $\mathbf{Q}$.
+Do đó, động lượng là tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
 Since $\mathbf{Q}$ is positive definite it can be decomposed into its eigensystem via 
@@ -482,7 +507,8 @@ $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ for an orthogonal
 This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ to obtain a much simplified expression:
 -->
 
-*dịch đoạn phía trên*
+Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
+Điều này cho phép chúng ta đổi biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -498,7 +524,9 @@ Since $\mathbf{O}$ is only an orthogonal matrix this does not perturb the gradie
 Expressed in terms of $\mathbf{z}$ gradient descent becomes
 -->
 
-*dịch đoạn phía trên*
+Ở đây $c' = b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
+Vì $\mathbf{O}$ chỉ là một ma trận trực giao nên điều này không làm nhiễu các gradient theo một cách có ý nghĩa.
+Biểu diễn theo $\mathbf{z}$, hạ gradient sẽ trở thành
 
 
 $$\mathbf{z}_t = \mathbf{z}_{t-1} - \boldsymbol{\Lambda} \mathbf{z}_{t-1} = (\mathbf{I} - \boldsymbol{\Lambda}) \mathbf{z}_{t-1}.$$
@@ -510,7 +538,9 @@ That is, when expressed in terms of the eigensystem of $\mathbf{Q}$ the optimiza
 This also holds for momentum.
 -->
 
-*dịch đoạn phía trên*
+Một điểm quan trọng trong biểu thức này là hạ gradient *không trộn lẫn* các không gian riêng khác nhau.
+Nghĩa là, khi được biểu diễn dưới dạng hệ riêng của $\mathbf{Q}$, việc tối ưu hóa được thực hiện theo từng trục tọa độ.
+Điều này cũng đúng với phương pháp động lượng.
 
 
 $$\begin{aligned}
@@ -525,7 +555,7 @@ In doing this we just proved the following theorem: Gradient Descent with and wi
 into coordinate-wise optimization in the direction of the eigenvectors of the quadratic matrix.
 -->
 
-*dịch đoạn phía trên*
+Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm bậc hai lồi có thể được phân tích thành bài toán tối ưu hóa theo từng trục tọa độ và theo hướng các vector riêng của ma trận bậc hai.
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -535,13 +565,13 @@ into coordinate-wise optimization in the direction of the eigenvectors of the qu
 ### Scalar Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm vô hướng
 
 <!--
 Given the above result let us see what happens when we minimize the function $f(x) = \frac{\lambda}{2} x^2$. For gradient descent we have
 -->
 
-*dịch đoạn phía trên*
+Với kết quả trên hãy xem điều gì xảy ra khi cực tiểu hóa hàm $f(x) = \frac{\lambda}{2} x^2$. Đối với hạ gradient, ta có
 
 
 $$x_{t+1} = x_t - \eta \lambda x_t = (1 - \eta \lambda) x_t.$$
@@ -553,7 +583,9 @@ This shows how the rate of convergence improves initially as we increase the lea
 Beyond that things diverge and for $\eta \lambda > 2$ the optimization problem diverges.
 -->
 
-*dịch đoạn phía trên*
+Với $|1 - \eta \lambda| < 1$ việc tối ưu này hội tụ theo hàm mũ vì sau $t$ bước ta có $x_t = (1 - \eta \lambda)^t x_0$.
+Điều này cho thấy cách tốc độ hội tụ được cải thiện lúc bắt đầu khi tăng tốc độ học $\eta$ cho đến khi $\eta \lambda = 1$.
+Vượt qua giá trị đó, khi $\eta \lambda > 2$, bài toán tối ưu hóa sẽ phân kỳ.
 
 
 ```{.python .input}
@@ -572,8 +604,8 @@ d2l.plt.legend();
 To analyze convergence in the case of momentum we begin by rewriting the update equations in terms of two scalars: one for $x$ and one for the momentum $v$. This yields:
 -->
 
-*dịch đoạn phía trên*
-
+Để phân tích sự hội tụ khi sử dụng động lượng, chúng ta bắt đầu với việc viết lại các phương trình cập nhật theo hai số vô hướng: một cho $x$ và một cho động lượng $v$.
+Ta sẽ có:
 
 $$
 \begin{bmatrix} v_{t+1} \\ x_{t+1} \end{bmatrix} =
@@ -596,7 +628,14 @@ It also suggests that in general large values of $\beta$ are desirable.
 Further details require a fair amount of technical detail and we suggest that the interested reader consult the original publications.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sử dụng $\mathbf{R}$ kích thước $2 \times 2$ để biểu diễn ma trận chi phối hội tụ.
+Sau $t$ bước thì lựa chọn ban đầu $[v_0, x_0]$ trở thành $\mathbf{R}(\ beta, \eta, \lambda)^t [v_0, x_0]$.
+Do đó, các trị riêng của $\mathbf{R}$ sẽ quyết định tốc độ hội tụ.
+Xem hình ảnh động tại [Distill post](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
+Có thể chỉ ra rằng phương pháp động lượng hội tụ với $0 < \eta \lambda < 2 + 2 \beta$.
+Khoảng tham số khả thi lớn hơn khi so sánh với $0 < \eta \lambda <2$ của hạ gradient.
+Nó cũng gợi ý rằng nhìn chung ta mong muốn $\beta$ có giá trị lớn.
+Thông tin chi tiết hơn đòi hỏi nền tảng kiến thức sâu hơn, bạn đọc quan tâm có thể tham khảo các bài báo gốc.
 
 <!--
 ## Summary
@@ -613,7 +652,12 @@ Further details require a fair amount of technical detail and we suggest that th
 * Implementation is quite straightforward but it requires us to store an additional state vector (momentum $\mathbf{v}$).
 -->
 
-*dịch đoạn phía trên*
+* Phương pháp động lượng thay thế gradient bằng trung bình rò rỉ của gradient trong quá khứ. Điều này tăng tốc độ hội tụ đáng kể.
+* Phương pháp này có thể sử dụng cho cả hạ gradient không nhiễu và hạ gradient ngẫu nhiên (có nhiễu). 
+* Phương pháp động lượng ngăn chặn việc tối ưu hóa bị dừng, điều nhiều khả năng xảy ra đối với hạ gradient ngẫu nhiên.
+* Số lượng gradient thực sự là $\frac{1}{1-\beta}$, tính từ tổng trọng số suy giảm theo hàm mũ của dữ liệu trong quá khứ.
+* Trong trường hợp các bài toán bậc hai lồi, điều này có thể được phân tích chi tiết một cách tường minh.
+* Việc lập trình khá đơn giản nhưng nó yêu cầu lưu trữ thêm một vector trạng thái (động lượng $\mathbf{v}$).
 
 <!--
 ## Exercises
@@ -629,7 +673,11 @@ Plot how the values of $x$ decrease for the initialization $x_i = 1$.
 4. What changes when we perform SGD with momentum? What happens when we use mini-batch SGD with momentum? Experiment with the parameters?
 -->
 
-*dịch đoạn phía trên*
+1. Sử dụng các kết hợp khác của siêu tham số động lượng và tốc độ học, quan sát và phân tích các kết quả thí nghiệm khác nhau.
+2. Hãy thử GD và phương pháp động lượng cho một bài toán bậc hai trong đó có nhiều trị riêng, ví dụ: $f(x) = \frac{1}{2} \sum_i \lambda_i x_i^2$, e.g., $\lambda_i = 2^{-i}$.
+Vẽ đồ thị biểu diễn sự giảm xuống của $x$ khi khởi tạo $x_i = 1$.
+3. Lấy giá trị và nghiệm cực tiểu cho $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
+4. Điều gì thay đổi khi chúng ta thực hiện SGD và SGD theo mini-batch với phương pháp động lượng? Thử nghiệm với các tham số.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -653,7 +701,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 2 -->
 * Nguyễn Thanh Hoà
@@ -667,13 +715,13 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 5 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 6 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 7 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 8 -->
-* 
+* Trần Yến Thy
