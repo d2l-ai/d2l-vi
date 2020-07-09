@@ -558,7 +558,7 @@ namely to reduce the learning rate progressively, albeit not too quickly.
 -->
 
 * Đối với các bài toán lồi, ta có thể chứng minh rằng Hạ Gradient Ngẫu nhiên sẽ hội tụ về nghiệm tối ưu với nhiều tốc độ học khác nhau.
-* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích để tiếp cận bài toán tối ưu, ấy là giảm dần tốc độ học, dù không quá nhanh.
+* Trường hợp trên thường không xảy ra trong học sâu. Tuy nhiên việc phân tích các bài toán lồi cho ta kiến thức hữu ích để tiếp cận bài toán tối ưu, đó là giảm dần tốc độ học, dù không quá nhanh.
 * Nhiều vấn đề xuất hiện khi tốc độ học quá lớn hoặc quá nhỏ. Trong thực tế, ta chỉ có thể tìm được tốc độ học thích hợp sau nhiều lần thử nghiệm.
 * Khi kích thước tập huấn luyện tăng, chi phí tính toán cho mỗi lần lặp của hạ gradient cũng tăng theo, do đó SGD được ưa chuộng hơn trong trường hợp này.
 * Trong SGD, không có sự đảm bảo tối ưu đối với các trường hợp không lồi do số cực tiểu cần phải kiểm tra có thể tăng theo cấp số nhân.
