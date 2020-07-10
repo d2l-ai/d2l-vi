@@ -268,7 +268,7 @@ Nonetheless it is a great tool to study optimization algorithms.
 Do đó các điểm yên ngựa có khả năng xuất hiện cao hơn các cực tiểu.
 Ta sẽ thảo luận một số ngoại lệ của vấn đề này ở phần tới khi giới thiệu đến tính lồi.
 Nói ngắn gọn, các hàm lồi là hàm có các trị riêng của ma trận Hessian không bao giờ âm.
-Tuy nhiên, thật tiếc rằng đa số bài toán học sâu đều không thuộc loại này.
+Nhưng không may, đa số bài toán học sâu đều không thuộc loại này.
 Dù sao thì đây cũng là một công cụ tốt để học về các thuật toán tối ưu.
 
 
