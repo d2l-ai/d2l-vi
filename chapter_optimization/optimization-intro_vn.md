@@ -69,7 +69,7 @@ Since we have only a finite amount of data the minimum of the training error may
 -->
 
 Đồ thị phía dưới mô tả chi tiết hơn về vấn đề trên.
-Do ta chỉ có một lượng dữ liệu giới hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (lỗi trên tập kiểm tra).
+Do ta chỉ có một lượng dữ liệu hữu hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (lỗi trên tập kiểm tra).
 
 
 ```{.python .input  n=2}
