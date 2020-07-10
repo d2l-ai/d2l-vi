@@ -45,7 +45,7 @@ Mối quan tâm của tối ưu chủ yếu là cực tiểu hoá một mục ti
 Trong :numref:`sec_model_selection`, ta đã thảo luận chi tiết về sự khác biệt giữa các mục đích trên.
 Ví dụ, nhìn chung lỗi huấn luyện và lỗi khái quát là hai thứ khác nhau. 
 Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyện nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
-Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) là giảm thiểu lỗi khái quát.
+Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) và học sâu nói riêng là giảm thiểu lỗi khái quát.
 Để thực hiện điều này, bên cạnh việc giảm thiểu lỗi huấn luyện, ta cần chú ý đến hiện tượng quá khớp.
 Hãy bắt đầu bằng việc nhập một số thư viện và hàm để đưa chú thích vào đồ thị.
 
