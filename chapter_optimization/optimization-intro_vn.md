@@ -296,7 +296,7 @@ Ví dụ, giả sử ta muốn cực tiểu hóa hàm $f(x) = \tanh(x)$ và ta b
 Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
-Đây hoá ra lại là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
+Đây hoá ra lại là lý do tại sao việc huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
