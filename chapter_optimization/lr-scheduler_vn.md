@@ -14,8 +14,8 @@ Nonetheless, adjusting the learning rate is often just as important as the actua
 There are a number of aspects to consider:
 -->
 
-Cho đến nay ta tập trung chủ yếu vào tối ưu hóa *thuật toán* để biết cách cập nhật các vector trọng số thay vì tập trung vào *tốc độ* mà tại đó các vector ấy đang được cập nhật.
-Tuy nhiên, thường thì điều chỉnh tốc độ học tập cũng quan trọng như thuật toán thật.
+Cho đến nay ta tập trung chủ yếu vào *thuật toán* tối ưu ở cách cập nhật các vector trọng số thay vì *tốc độ* cập nhật các vector đó.
+Tuy nhiên, thường thì điều chỉnh tốc độ học cũng quan trọng như thuật toán.
 Có một vài khía cạnh để chúng ta xem xét:
 
 <!--
@@ -37,30 +37,30 @@ This is beyond the scope of the current chapter.
 We recommend the reader to review details in :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, e.g., how to obtain better solutions by averaging over an entire *path* of parameters.
 -->
 
-* Vấn đề quan trọng rõ ràng nhất là *độ lớn* của tốc độ học.
-Nếu nó quá lớn thì tối ưu hóa phân kỳ, nếu nó quá nhỏ thì nó mất quá nhiều thời gian để huấn luyện hoặc cuối cùng ta có một kết quả gần tối ưu.
-Trước đây ta đã thấy rằng số điều kiện của vấn đề rất quan trọng (xem ví dụ :numref:`sec_momentum` để biết thêm chi tiết).
+* Vấn đề rõ nhất là *độ lớn* của tốc độ học.
+Nếu nó quá lớn thì tối ưu hóa phân kỳ, nếu nó quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc cuối cùng ta có một kết quả không tốt.
+Trước đây ta đã thấy rằng số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
 Theo trực giác, nó là tỷ lệ của sự thay đổi theo hướng ít nhạy cảm nhất so với hướng nhạy cảm nhất.
 * Thứ hai, tốc độ suy giảm cũng quan trọng tương đương.
-Nếu tốc độ học còn lớn, ta chỉ có thể là chạy xung quanh cực tiểu và do đó không đạt được tối ưu.
-:numref:`sec_minibatch_sgd` đã thảo luận chi tiết về vấn đề này và chúng tôi đã phân tích các đảm bảo hiệu suất trong :numref:`sec_sgd`. 
-Nói tóm lại, chúng tôi muốn suy giảm tốc độ, nhưng có lẽ chậm hơn $\mathcal{O}(t^{-\frac{1}{2}})$ thì sẽ là một lựa chọn tốt cho các bài toán hàm lồi.
+Nếu tốc độ học còn lớn, ta có thể chỉ chạy xung quanh cực tiểu và do đó không đạt được nghiệm tối ưu.
+:numref:`sec_minibatch_sgd` đã thảo luận một số chi tiết về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. 
+Nói tóm lại, chúng ta muốn suy giảm tốc độ hội tụ, có thể chậm hơn $\mathcal{O}(t^{-\frac{1}{2}})$, một lựa chọn tốt cho các bài toán hàm lồi.
 * Một khía cạnh khác cũng quan trọng không kém là *khởi tạo*.
-Điều này liên quan đến cả cách thức các tham số được đặt (xem lại :numref:`sec_numerical_stability` để biết thêm chi tiết) và cả cách chúng phát triển ở lúc đầu.
-Điều này diễn ra dưới biệt danh *khởi động*, tức là, chúng ta bắt đầu tiến tới giải pháp ban đầu nhanh như thế nào.
-Các bước lớn khi bắt đầu có thể không có lợi, đặc biệt vì bộ tham số ban đầu là ngẫu nhiên.
-Các hướng cập nhật ban đầu cũng có thể khá vô nghĩa.
-* Cuối cùng, có một số biến thể tối ưu hóa thực hiện điều chỉnh tốc độ học tập theo chu kỳ.
+Điều này liên quan đến cả cách thức các tham số được đặt (xem lại :numref:`sec_numerical_stability`) và cả cách chúng thay đổi ban đầu.
+Có thể gọi đây là *khởi động (warmup)*, tức ta bắt đầu tối ưu nhanh như thế nào.
+Bước tối ưu lớn khi bắt đầu có thể không có lợi, cụ thể vì bộ tham số ban đầu là ngẫu nhiên.
+Các hướng cập nhật ban đầu cũng có thể không quan trọng.
+* Cuối cùng, có một số biến thể tối ưu hóa thực hiện điều chỉnh tốc độ học theo chu kỳ.
 Điều này nằm ngoài phạm vi của chương hiện tại.
-Chúng tôi khuyên người đọc nên xem xét chi tiết trong :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ: làm thế nào để có được các giải pháp tốt hơn bằng cách lấy trung bình toàn bộ *đường* của các tham số.
+Độc giả có thể đọc thêm tại :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ về làm thế nào để có các giải pháp tốt hơn bằng cách lấy trung bình trên toàn bộ *đường đi* của các tham số.
 
 <!--
 Given the fact that there is a lot of detail needed to manage learning rates, most deep learning frameworks have tools to deal with this automatically.
 In the current chapter we will review the effects that different schedules have on accuracy and also show how this can be managed efficiently via a *learning rate scheduler*.
 -->
 
-Thực tế là có nhiều chi tiết cần để có thể quản lý tốc độ học, hầu hết các framework học sâu đều có các công cụ để giải quyết điều này tự động.
-Trong chương hiện tại ta sẽ xem xét lại các hiệu ứng với mỗi định thời khác nhau ảnh hưởng lên độ chính xác cũng như cho thấy cách mà điều này có thể được quản lý một cách hiệu quả thông qua một *định thời tốc độ học*.
+Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ giải quyết điều này tự động.
+Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khác nhau lên độ chính xác, cũng như xem cách quản lý hiệu quả tốc độ học thông qua một *bộ định thời tốc độ học*.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
