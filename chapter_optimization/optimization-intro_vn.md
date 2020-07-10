@@ -353,7 +353,7 @@ Chỉ ra rằng bất kì cực tiểu nào cũng có ít nhất $d!$ nghiệm t
 2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, trong đó mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
 Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem :cite:`Wigner.1958` để biết thêm chi tiết).
     * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng,
-    Hay, với mọi vector riêng $\mathbf{v}$, trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
+    tức với mọi vector riêng $\mathbf{v}$, trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
     * Tại sao điều trên *không* có nghĩa là $P(\lambda > 0) = 0.5$?
 3. Liệu còn thử thách tối ưu nào trong học sâu không?
 4. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
