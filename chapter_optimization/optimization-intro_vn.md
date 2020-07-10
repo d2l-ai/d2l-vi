@@ -114,7 +114,7 @@ Let us have a look at a few of them.
 -->
 
 Có rất nhiều thách thức đối với tối ưu trong học sâu.
-Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một trong số các vấn đề gây đau đầu hơn cả.
+Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một số vấn đề gây đau đầu hơn cả.
 Hãy cùng tìm hiểu về các vấn đề này.
 
 <!--
