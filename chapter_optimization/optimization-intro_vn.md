@@ -313,7 +313,7 @@ Local optima or even approximate solutions thereof are still very useful.
 -->
 
 Tối ưu trong học sâu mang đầy thử thách.
-May mắn thay, có một lượng các thuật toán hoạt động tốt và dễ sử dụng ngay cả đối với người mới bắt đầu.
+May mắn thay, có khá nhiều thuật toán hoạt động tốt và dễ sử dụng ngay cả đối với người mới bắt đầu.
 Hơn nữa, việc tìm kiếm giải pháp tốt *nhất* là không thật cần thiết.
 Các cực tiểu và ngay cả nghiệm xấp xỉ cũng rất hữu dụng.
 
