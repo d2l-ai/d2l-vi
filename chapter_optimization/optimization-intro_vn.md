@@ -349,7 +349,7 @@ Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is
 -->
 
 1. Xét một mạng perceptron đa tầng đơn giản với một tầng ẩn $d$ chiều và một đầu ra duy nhất.
-Chỉ ra rằng bất kì cực tiểu nào cũng có tương ứng ít nhất $d!$ nghiệm khiến mạng vận hành giống nhau.
+Chỉ ra rằng bất kì cực tiểu nào cũng có ít nhất $d!$ nghiệm tương đương khiến mạng vận hành giống nhau.
 2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, trong đó mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
 Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem :cite:`Wigner.1958` để biết thêm chi tiết).
     * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng.
