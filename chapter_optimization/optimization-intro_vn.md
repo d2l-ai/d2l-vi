@@ -269,7 +269,7 @@ Do đó các điểm yên ngựa có khả năng xuất hiện cao hơn các c�
 Ta sẽ thảo luận một số ngoại lệ của vấn đề này ở phần tới khi giới thiệu đến tính lồi.
 Nói ngắn gọn, các hàm lồi là hàm có các trị riêng của ma trận Hessian không bao giờ âm.
 Nhưng không may, đa số bài toán học sâu đều không thuộc loại này.
-Dù sao thì đây cũng là một công cụ tốt để học về các thuật toán tối ưu.
+Dù sao thì tính lồi vẫn là một công cụ tốt để học về các thuật toán tối ưu.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
