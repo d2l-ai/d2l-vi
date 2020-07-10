@@ -60,7 +60,7 @@ One option to accomplish this task is to replace the gradient computation by a "
 
 Ở đây để đơn giản ký hiệu, ta đặt $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ là gradient của mẫu $i$ với trọng số tại bước thời gian $t-1$.
 Sẽ rất tốt nếu ta có thể tận dụng hơn nữa lợi ích từ việc giảm phương sai, hơn là chỉ lấy trung bình gradient trên minibatch.
-Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
+Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ" (*leaky average*): 
 
 
 $$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + \mathbf{g}_{t, t-1}$$
