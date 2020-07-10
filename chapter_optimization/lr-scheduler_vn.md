@@ -5,7 +5,7 @@
 # Learning Rate Scheduling
 -->
 
-# *dịch tiêu đề phía trên*
+# Định thời Tốc độ Học 
 :label:`sec_scheduler`
 
 <!--
@@ -14,7 +14,9 @@ Nonetheless, adjusting the learning rate is often just as important as the actua
 There are a number of aspects to consider:
 -->
 
-*dịch đoạn phía trên*
+Cho đến nay ta tập trung chủ yếu vào *thuật toán* tối ưu ở cách cập nhật các vector trọng số thay vì *tốc độ* cập nhật các vector đó.
+Tuy nhiên, thường thì điều chỉnh tốc độ học cũng quan trọng như thuật toán.
+Có một vài khía cạnh để chúng ta xem xét:
 
 <!--
 * Most obviously the *magnitude* of the learning rate matters. 
@@ -35,14 +37,30 @@ This is beyond the scope of the current chapter.
 We recommend the reader to review details in :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, e.g., how to obtain better solutions by averaging over an entire *path* of parameters.
 -->
 
-*dịch đoạn phía trên*
+* Vấn đề rõ nhất là *độ lớn* của tốc độ học.
+Nếu quá lớn thì tối ưu phân kỳ, nếu quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc kết quả cuối cùng không đủ tốt.
+Trước đây ta đã thấy rằng số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
+Theo trực giác, nó là tỷ lệ giữa mức độ thay đổi theo hướng ít nhạy cảm nhất và hướng nhạy cảm nhất.
+* Thứ hai, tốc độ suy giảm cũng quan trọng tương đương.
+Nếu tốc độ học còn lớn, ta có thể chỉ chạy xung quanh cực tiểu và do đó không đạt được nghiệm tối ưu.
+:numref:`sec_minibatch_sgd` đã thảo luận một số chi tiết về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. 
+Nói tóm lại, chúng ta muốn suy giảm tốc độ hội tụ, có thể chậm hơn $\mathcal{O}(t^{-\frac{1}{2}})$, một lựa chọn tốt cho các bài toán hàm lồi.
+* Một khía cạnh khác cũng quan trọng không kém là *khởi tạo*.
+Điều này liên quan đến cả cách thức các tham số được đặt (xem lại :numref:`sec_numerical_stability`) và cả cách chúng thay đổi ban đầu.
+Có thể gọi đây là *khởi động (warmup)*, tức ta bắt đầu tối ưu nhanh như thế nào.
+Bước tối ưu lớn khi bắt đầu có thể không có lợi, cụ thể vì bộ tham số ban đầu là ngẫu nhiên.
+Các hướng cập nhật ban đầu cũng có thể không quan trọng.
+* Cuối cùng, có một số biến thể tối ưu hóa thực hiện điều chỉnh tốc độ học theo chu kỳ.
+Điều này nằm ngoài phạm vi của chương hiện tại.
+Độc giả có thể đọc thêm tại :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ về làm thế nào để có các giải pháp tốt hơn bằng cách lấy trung bình trên toàn bộ *đường đi* của các tham số.
 
 <!--
 Given the fact that there is a lot of detail needed to manage learning rates, most deep learning frameworks have tools to deal with this automatically.
 In the current chapter we will review the effects that different schedules have on accuracy and also show how this can be managed efficiently via a *learning rate scheduler*.
 -->
 
-*dịch đoạn phía trên*
+Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ tự động giải quyết điều này.
+Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khác nhau lên độ chính xác, cũng như xem cách quản lý hiệu quả tốc độ học thông qua một *bộ định thời tốc độ học*.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -520,7 +538,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* Hoang Van-Tien
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
@@ -537,7 +556,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 
 <!-- Phần 6 -->
-* 
+* Hoang Van-Tien
 
 <!-- Phần 7 -->
 * Nguyễn Văn Quang
