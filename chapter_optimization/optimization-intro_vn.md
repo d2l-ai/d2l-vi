@@ -102,7 +102,7 @@ The optimization algorithms below all fall into this category.
 -->
 
 Ở chương này, ta sẽ chỉ tập trung vào chất lượng của thuật toán tối ưu trong việc cực tiểu hóa hàm mục tiêu, thay vì lỗi khái quát của mô hình.
-Trong :numref:`sec_linear_regression`, ta đã phân biệt giữa nghiệm giải tích và nghiệm xấp xỉ trong các bài toán tối ưu.
+Trong :numref:`sec_linear_regression`, ta đã phân biệt giữa nghiệm theo công thức và nghiệm xấp xỉ trong các bài toán tối ưu.
 Trong học sâu, đa số các hàm mục tiêu khá phức tạp và không tính được nghiệm giải tích.
 Thay vào đó, ta phải dùng các thuật toán tối ưu xấp xỉ.
 Các thuật toán tối ưu dưới đây được liệt vào loại này.
