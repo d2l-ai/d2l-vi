@@ -164,7 +164,7 @@ In fact, this is one of the beneficial properties of stochastic gradient descent
 -->
 
 Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực trị.
-Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, gradient của hàm mục tiêu tại nghiệm này gần hoặc bằng 0, tuy nhiên nghiệm này có thể chỉ đang cực tiểu hóa hàm mục tiêu cục bộ chứ không phải toàn cục.
+Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, gradient của hàm mục tiêu tại nghiệm này gần hoặc bằng 0, tuy nhiên nghiệm này có thể chỉ đang cực tiểu hóa hàm mục tiêu một cách cục bộ chứ không phải toàn cục.
 Chỉ với một mức độ nhiễu nhất định thì mới có thể đẩy tham số ra khỏi vùng cực tiểu.
 Trên thực tế, nhiễu là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến động của gradient trên toàn minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
