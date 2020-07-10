@@ -20,7 +20,7 @@ Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và h�
 Đối với một bài toán học sâu, đầu tiên chúng ta thường định nghĩa hàm mất mát, 
 sau đó sử dụng một thuật toán tối ưu nhằm cực tiểu hoá hàm mất mát đó.
 Trong tối ưu, hàm mất mát thường được xem là hàm mục tiêu của bài toán tối ưu.
-Thông thường, đa số các hàm tối ưu thường quan tâm đến *cực tiểu hoá*.
+Thông thường, đa số các thuật toán tối ưu thường giải quyết bài toán *cực tiểu hoá*.
 Tuy nhiên, nếu ta cần cực đại hoá, có một cách khá đơn giản là đổi dấu hàm mục tiêu.
 
 <!--
