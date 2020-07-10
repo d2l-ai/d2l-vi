@@ -38,9 +38,9 @@ We recommend the reader to review details in :cite:`Izmailov.Podoprikhin.Garipov
 -->
 
 * Vấn đề rõ nhất là *độ lớn* của tốc độ học.
-Nếu nó quá lớn thì tối ưu hóa phân kỳ, nếu nó quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc cuối cùng ta có một kết quả không tốt.
+Nếu quá lớn thì tối ưu phân kỳ, nếu quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc kết quả cuối cùng không đủ tốt.
 Trước đây ta đã thấy rằng số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
-Theo trực giác, nó là tỷ lệ của sự thay đổi theo hướng ít nhạy cảm nhất so với hướng nhạy cảm nhất.
+Theo trực giác, nó là tỷ lệ giữa mức độ thay đổi theo hướng ít nhạy cảm nhất và hướng nhạy cảm nhất.
 * Thứ hai, tốc độ suy giảm cũng quan trọng tương đương.
 Nếu tốc độ học còn lớn, ta có thể chỉ chạy xung quanh cực tiểu và do đó không đạt được nghiệm tối ưu.
 :numref:`sec_minibatch_sgd` đã thảo luận một số chi tiết về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. 
@@ -59,7 +59,7 @@ Given the fact that there is a lot of detail needed to manage learning rates, mo
 In the current chapter we will review the effects that different schedules have on accuracy and also show how this can be managed efficiently via a *learning rate scheduler*.
 -->
 
-Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ giải quyết điều này tự động.
+Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ tự động giải quyết điều này.
 Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khác nhau lên độ chính xác, cũng như xem cách quản lý hiệu quả tốc độ học thông qua một *bộ định thời tốc độ học*.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
