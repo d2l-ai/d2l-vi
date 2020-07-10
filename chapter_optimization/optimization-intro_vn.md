@@ -251,7 +251,7 @@ Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc 
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.
 -->
 
-* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm.
+* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm. 
 * Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều âm, ta có một cực đại của hàm.
 * Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 mang cả giá trị âm lẫn dương, ta có một điểm yên ngựa của hàm.
 
