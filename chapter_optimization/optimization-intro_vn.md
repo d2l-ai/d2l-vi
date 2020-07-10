@@ -129,7 +129,7 @@ If the value of $f(x)$ at $x$ is the minimum of the objective function over the 
 -->
 
 Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một *cực tiểu* (*local minimum*).
-Nếu giá trị của $f(x)$ tại $x$ là nhỏ nhất của hàm mục tiêu trên toàn tập xác định thì $f(x)$ là *giá trị nhỏ nhất* (*global minimum*).
+Nếu giá trị của hàm mục tiêu $f(x)$ tại $x$ là nhỏ nhất trên toàn tập xác định thì $f(x)$ là *giá trị nhỏ nhất* (*global minimum*).
 
 <!--
 For example, given the function
