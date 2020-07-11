@@ -166,7 +166,7 @@ C = np.random.normal(0, 1, (256, 256))
 Element-wise assignment simply iterates over all rows and columns of $\mathbf{B}$ and $\mathbf{C}$ respectively to assign the value to $\mathbf{A}$.
 -->
 
-Phép nhân theo từng phần tử chỉ đơn giản là lặp qua tất cả các hàng và cột của $\mathbf{B}$ và $\mathbf{C}$ theo thứ tự rồi gán kết quả cho $\mathbf{A}$.
+Phép nhân theo từng phần tử chỉ đơn giản là duyệt qua tất cả các hàng và cột của $\mathbf{B}$ và $\mathbf{C}$ theo thứ tự rồi gán kết quả cho $\mathbf{A}$.
 
 
 ```{.python .input  n=2}
