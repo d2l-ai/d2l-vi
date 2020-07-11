@@ -113,7 +113,7 @@ Some of the most vexing ones are local minima, saddle points and vanishing gradi
 Let us have a look at a few of them.
 -->
 
-Có rất nhiều thách thức đối với tối ưu trong học sâu.
+Có rất nhiều thách thức về tối ưu trong học sâu.
 Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một số vấn đề gây đau đầu hơn cả.
 Hãy cùng tìm hiểu về các vấn đề này.
 
