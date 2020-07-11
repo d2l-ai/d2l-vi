@@ -17,12 +17,11 @@ If we ever need to maximize an objective there is a simple solution: just flip t
 -->
 
 Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và học sâu, cũng như những thách thức khi áp dụng các thuật toán tối ưu trong học sâu.
-Đối với một bài toán trong học sâu, chúng ta thường định nghĩa hàm mất mát đầu tiên.
-Sau đó ta có thể sử dụng một thuật toán tối ưu nào đó nhằm cực tiểu hoá hàm mất mát đó.
-Trong tối ưu, hàm mất mát thường được xem là hàm mục tiêu của bài toán tối ưu.
-Theo định nghĩa, đa số các hàm tối ưu thường quan tâm đến *cực tiểu hoá*.
-Tuy nhiên, nếu ta cần cực đại hoá một hàm mục tiêu nào đó, có một cách khá đơn giản: chỉ cần đổi dấu hàm mục tiêu.
-
+Đối với một bài toán học sâu, đầu tiên chúng ta thường định nghĩa hàm mất mát, 
+sau đó sử dụng một thuật toán tối ưu nhằm cực tiểu hoá hàm mất mát đó.
+Hàm mất mát trong học sâu thường được xem là hàm mục tiêu của bài toán tối ưu.
+Thông thường, đa số các thuật toán tối ưu thường giải quyết bài toán *cực tiểu hoá*.
+Tuy nhiên, nếu ta cần cực đại hoá, có một cách khá đơn giản là đổi dấu hàm mục tiêu.
 
 <!--
 ## Optimization and Estimation
@@ -41,14 +40,14 @@ To accomplish the latter we need to pay attention to overfitting in addition to 
 We begin by importing a few libraries with a function to annotate in a figure.
 -->
 
-Mặc dù tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, về bản chất, mục đích của tối ưu và học sâu là khác nhau.
-Mối quan tâm của tối ưu chủ yếu nằm ở việc cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là việc tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
-Trong :numref:`sec_model_selection`, ta thảo luận chi tiết về sự khác nhau giữa các mục đích trên.
-Ví dụ, lỗi huấn luyện và lỗi khái quát nhìn chung là khác nhau. 
-Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyên nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
-Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) là giảm thiểu lỗi khái quát.
-Để thực hiện được điều này, ta cần chú ý đến hiện tượng quá khớp bên cạnh việc sử dụng thuật toán tối ưu nhằm giảm thiểu lỗi huấn luyện.
-Hãy bắt đầu bằng việc nhập một số thư viện với hàm để chú thích cho các hình đồ thị dưới đây.
+Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
+Mối quan tâm của tối ưu chủ yếu là cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
+Trong :numref:`sec_model_selection`, ta đã thảo luận chi tiết về sự khác biệt giữa các mục đích trên.
+Chẳng hạn như là sự khác biệt giữa lỗi huấn luyện và lỗi khái quát.
+Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyện nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
+Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) và học sâu nói riêng là giảm thiểu lỗi khái quát.
+Để thực hiện điều này, bên cạnh việc giảm thiểu lỗi huấn luyện, ta cần chú ý đến hiện tượng quá khớp.
+Hãy bắt đầu bằng việc nhập một số thư viện và hàm để đưa chú thích vào đồ thị.
 
 
 ```{.python .input  n=1}
@@ -69,8 +68,8 @@ The graph below illustrates the issue in some more detail.
 Since we have only a finite amount of data the minimum of the training error may be at a different location than the minimum of the expected error (or of the test error).
 -->
 
-Đồ thị phía dưới mô tả chi tiết hơn về vấn đề nêu trên.
-Do ta chỉ có một lượng dữ liệu giới hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (hay lỗi trên tập kiểm tra).
+Đồ thị phía dưới mô tả chi tiết hơn về vấn đề trên.
+Do ta chỉ có một lượng dữ liệu hữu hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (lỗi trên tập kiểm tra).
 
 
 ```{.python .input  n=2}
@@ -92,7 +91,7 @@ annotate('expected risk', (1.1, -1.05), (0.95, -0.5))
 ## Optimization Challenges in Deep Learning
 -->
 
-# Thách thức Tối ưu trong Học sâu
+# Các Thách thức của Tối ưu trong Học sâu
 
 <!--
 In this chapter, we are going to focus specifically on the performance of the optimization algorithm in minimizing the objective function, rather than a model's generalization error.
@@ -104,9 +103,9 @@ The optimization algorithms below all fall into this category.
 
 Ở chương này, ta sẽ chỉ tập trung vào chất lượng của thuật toán tối ưu trong việc cực tiểu hóa hàm mục tiêu, thay vì lỗi khái quát của mô hình.
 Trong :numref:`sec_linear_regression`, ta đã phân biệt giữa nghiệm theo công thức và nghiệm xấp xỉ trong các bài toán tối ưu.
-Trong học sâu, đa số các hàm mục tiêu khá phức tạp và không tồn tại nghiệm theo công thức.
+Trong học sâu, đa số các hàm mục tiêu khá phức tạp và không tính được nghiệm theo công thức.
 Thay vào đó, ta phải dùng các thuật toán tối ưu xấp xỉ.
-Các thuật toán tối ưu ở dưới được liệt vào loại này.
+Các thuật toán tối ưu dưới đây được liệt vào loại này.
 
 <!--
 There are many challenges in deep learning optimization.
@@ -114,8 +113,8 @@ Some of the most vexing ones are local minima, saddle points and vanishing gradi
 Let us have a look at a few of them.
 -->
 
-Có vô kể thách thức đối với tối ưu trong học sâu.
-Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một số thách thức gây đau đầu hơn cả.
+Có rất nhiều thách thức về tối ưu trong học sâu.
+Các điểm cực tiểu, điểm yên ngựa, tiêu biến gradient là một số vấn đề gây đau đầu hơn cả.
 Hãy cùng tìm hiểu về các vấn đề này.
 
 <!--
@@ -129,8 +128,8 @@ For the objective function $f(x)$, if the value of $f(x)$ at $x$ is smaller than
 If the value of $f(x)$ at $x$ is the minimum of the objective function over the entire domain, then $f(x)$ is the global minimum.
 -->
 
-Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một *cực tiểu* (*local minima*).
-Nếu giá trị của $f(x)$ tại $x$ là nhỏ nhất của hàm mục tiêu trên toàn tập xác định thì $f(x)$ là *giá trị nhỏ nhất* (*global minima*).
+Cho hàm mục tiêu $f(x)$, nếu giá trị của $f(x)$ tại $x$ nhỏ hơn các giá trị khác của $f(x)$ tại lân cận của $x$ thì $f(x)$ có thể là một *cực tiểu* (*local minimum*).
+Nếu giá trị của hàm mục tiêu $f(x)$ tại $x$ là nhỏ nhất trên toàn tập xác định thì $f(x)$ là *giá trị nhỏ nhất* (*global minimum*).
 
 <!--
 For example, given the function
@@ -145,7 +144,7 @@ $$f(x) = x \cdot \text{cos}(\pi x) \text{ for } -1.0 \leq x \leq 2.0,$$
 we can approximate the local minimum and global minimum of this function.
 -->
 
-ta có thể xấp xỉ cực tiểu và giá trị nhỏ nhất của hàm này.
+ta có thể tính xấp xỉ cực tiểu và giá trị nhỏ nhất của hàm này.
 
 
 ```{.python .input  n=3}
@@ -164,10 +163,10 @@ Only some degree of noise might knock the parameter out of the local minimum.
 In fact, this is one of the beneficial properties of stochastic gradient descent where the natural variation of gradients over minibatches is able to dislodge the parameters from local minima.
 -->
 
-Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực tiểu.
-Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, nghiệm xấp xỉ tính được từ vòng lặp cuối cùng của thuật toán có thể chỉ đang cực tiểu hóa hàm mục tiêu cục bộ chứ không phải toàn cục, do lúc này gradient của các nghiệm của hàm mục tiêu tiệm cận hoặc đạt giá trị 0.
-Chỉ với một mức độ nhiễu nhất định thì mới có thể đánh văng tham số ra khỏi vùng cực tiểu.
-Trong thực tế, đây là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến đổi tự nhiên của gradient đối với từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
+Hàm mục tiêu trong các mô hình học sâu thường có nhiều vùng cực trị.
+Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá trị cực tiểu, gradient của hàm mục tiêu tại nghiệm này gần hoặc bằng 0, tuy nhiên nghiệm này có thể chỉ đang cực tiểu hóa hàm mục tiêu một cách cục bộ chứ không phải toàn cục.
+Chỉ với một mức độ nhiễu nhất định thì mới có thể đẩy tham số ra khỏi vùng cực tiểu.
+Trên thực tế, nhiễu là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến động của gradient qua từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
