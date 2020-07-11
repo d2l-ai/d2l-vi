@@ -329,7 +329,7 @@ Các cực tiểu và ngay cả nghiệm xấp xỉ cũng đã rất hữu dụn
 * Cực tiểu hóa lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để cực tiểu hóa lỗi khái quát.
 * Các bài toán tối ưu thường có nhiều vùng cực tiểu.
 * Và do các bài toán thường không có tính lồi, số lượng điểm yên ngựa thậm chí có thể nhiều hơn.
-* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) sẽ giúp ích. Việc khởi tạo tham số tốt cũng có thể có ích.
+* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) và khởi tạo tham số cẩn thận cũng sẽ giúp ích.
 
 
 ## Bài tập
