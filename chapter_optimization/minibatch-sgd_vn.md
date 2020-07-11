@@ -125,7 +125,7 @@ Let us have a look at how efficient these operations are in practice.
 -->
 
 Nếu sử dụng cách đầu tiên, ta cần sao chép một vector cột và một vector hàng vào CPU cho mỗi lần tính phần tử $\mathbf{A}_{ij}$.
-Tệ hơn nữa, do lần lượt duyệt theo hàng hoặc cột qua từng phần tử của ma trận, ta buộc phải truy cập nhiều lần vùng nhớ của một trong hai vector khi đọc chúng từ bộ nhớ.
+Tệ hơn nữa, do các phần tử của ma trận được lưu thành một dãy liên tục dưới bộ nhớ, ta buộc phải truy cập nhiều vùng nhớ rời rạc khi đọc một trong hai vector từ bộ nhớ.
 Cách thứ hai tốt hơn nhiều.
 Theo cách này, ta có thể giữ vector cột $\mathbf{C}_{:,j}$ trong vùng nhớ đệm của CPU trong khi ta tiếp tục quét qua $B$.
 Cách này chỉ cần nửa băng thông cần thiết của bộ nhớ, do đó truy cập nhanh hơn.
