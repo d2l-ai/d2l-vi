@@ -17,7 +17,7 @@ Stochastic Gradient Descent is not particularly *computationally efficient* sinc
 This suggests that there might be a happy medium, and in fact, that's what we have been using so far in the examples we discussed.
 -->
 
-Đến giờ, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính toán gradient và cập nhật từng tham số một.
+Đến giờ, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: tại mỗi lượt :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính gradient và cập nhật tham số.
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
 Mỗi cách có mặt hạn chế riêng.
 Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đồng với nhau. <!-- dịch ra TV là danh từ nên mình chuyển từ gốc sang danh từ. -->
