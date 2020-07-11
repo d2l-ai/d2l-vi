@@ -216,7 +216,7 @@ Các điểm yên ngựa trong không gian nhiều chiều còn khó chịu hơn
 Xét hàm $f(x, y) = x^2 - y^2$.
 Hàm này tồn tại một điểm yên ngựa tại $(0, 0)$.
 Đây là một điểm cực đại theo $y$ và là điểm cực tiểu theo $x$.
-Hơn nữa, nó *nhìn* giống một cái yên ngựa, khởi nguồn tên gọi của tính chất toán học này.
+Tên gọi của tính chất toán học này bắt nguồn từ chính việc đồ thị tại đó có hình dạng giống một cái yên ngựa.
 
 
 ```{.python .input  n=5}
