@@ -316,7 +316,7 @@ See e.g., :cite:`Ioffe.2017` for details on how to rescale and compute the appro
 -->
 
 Có thể thấy quá trình tính toán trên minibatch về cơ bản có hiệu suất gần bằng thực hiện trên toàn ma trận.
-Lưu ý thứ tự thực hiện.
+Tuy nhiên, cần lưu ý rằng
 Trong :numref:`sec_batch_norm` ta sử dụng một loại điều chuẩn phụ thuộc chặt chẽ vào phương sai của minibatch.
 Khi tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của việc thêm nhiễu (*noise-injection*) cũng giảm theo do chuẩn hóa theo batch.
 Đọc :cite:`Ioffe.2017` để biết chi tiết cách chuyển đổi giá trị và tính các số hạng phù hợp.
