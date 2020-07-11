@@ -351,8 +351,7 @@ Convex functions define convex sets as *below-sets*.
 They are defined as
 -->
 
-Các hàm số lồi định nghĩa các tập hợp lồi là các *tập-dưới* (*below-sets*) như sau:
-
+Các hàm số lồi định nghĩa các tập hợp lồi là các *tập-dưới* (*below-sets*) như sau: 
 
 $$S_b := \{x | x \in X \text{ and } f(x) \leq b\}.$$
 
@@ -366,8 +365,8 @@ But this follows directly from the definition of convexity since $f(\lambda x + 
 
 <!-- mình không dịch câu này vì nó lặp đi lặp lại-->
 Ta hãy chứng minh nó một cách vắn tắt.
-Hãy nhớ rằng với mọi $x, x' \in S_b$, ta cần phải chứng minh rằng $\lambda x + (1-\lambda) x' \in S_b$ với mọi $\lambda \in [0, 1]$.
-Nhưng điều này lại trực tiếp tuân theo định nghĩa về tính lồi vì $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$.
+Hãy nhớ rằng với mọi $x, x' \in S_b$, ta cần chứng minh $\lambda x + (1-\lambda) x' \in S_b$ với mọi $\lambda \in [0, 1]$. 
+Nhưng điều này lại trực tiếp tuân theo định nghĩa về tính lồi vì $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$. 
 
 <!--
 Have a look at the function $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ below.
@@ -376,10 +375,10 @@ The level sets are correspondingly nonconvex.
 In fact, they are typically composed of disjoint sets.
 -->
 
-Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới.
-Nó rõ ràng là không lồi.
-Các tập mức tương ứng cũng không lồi.
-Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc.
+Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới. 
+Nó rõ ràng là không lồi. 
+Các tập mức tương ứng cũng không lồi. 
+Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc. 
 
 ```{.python .input}
 x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
@@ -412,9 +411,9 @@ All we need to do is check whether $\partial_x^2 f(x) \succeq 0$, i.e., whether 
 For instance, the function $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ is convex since $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, i.e., its derivative is the identity matrix.
 -->
 
-Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản.
-Tất cả những gì chúng ta cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không.
-Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị.
+Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản. 
+Tất cả những gì cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không. 
+Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị. 
 
 <!--
 The first thing to realize is that we only need to prove this property for one-dimensional functions.
@@ -424,17 +423,17 @@ In particular, $g'' \geq 0$ for all $\mathbf{v}$ whenever the Hessian of $f$ is 
 Hence back to the scalar case.
 -->
 
-Điều đầu tiên để nhận ra là chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều.
-Xét cho cùng, chúng ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$.
-Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$.
-Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không.
-Do đó quay về lại trường hợp vô hướng.
+Có thể nhận ra rằng chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều. 
+Xét cho cùng, ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$. 
+Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$. 
+Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không. 
+Do đó quay về lại trường hợp vô hướng. 
 
 <!--
 To see that $f''(x) \geq 0$ for convex functions we use the fact that
 -->
 
-Để thấy tại sao $f''(x) \geq 0$ đối với các hàm lồi, ta dùng lập luận
+Để thấy tại sao $f''(x) \geq 0$ đối với các hàm lồi, ta dùng lập luận 
 
 
 $$\frac{1}{2} f(x + \epsilon) + \frac{1}{2} f(x - \epsilon) \geq f\left(\frac{x + \epsilon}{2} + \frac{x - \epsilon}{2}\right) = f(x).$$
@@ -456,9 +455,9 @@ Let $a < x < b$ be three points in $\mathbb{R}$.
 We use the mean value theorem to express
 -->
 
-Để chứng minh điều ngược lại cũng đúng, chúng ta dùng lập luận rằng $f'' \geq 0$ ngụ ý rằng $f'$ là một hàm tăng đơn điệu.
+Để chứng minh điều ngược lại, ta dùng lập luận rằng $f'' \geq 0$ ngụ ý rằng $f'$ là một hàm tăng đơn điệu. 
 Cho $a < x < b$ là ba điểm thuộc $\mathbb{R}$.
-Chúng ta sử dụng định lý giá trị trung bình để biểu diễn
+Chúng ta sử dụng định lý giá trị trung bình để biểu diễn 
 
 
 $$\begin{aligned}
@@ -471,8 +470,7 @@ f(b) - f(x) & = (b-x) f'(\beta) \text{ với } \beta \in [x, b].
 By monotonicity $f'(\beta) \geq f'(\alpha)$, hence
 -->
 
-Từ tính chất đơn điệu $f'(\beta) \geq f'(\alpha)$, ta có
-
+Từ tính chất đơn điệu $f'(\beta) \geq f'(\alpha)$, ta có 
 
 $$\begin{aligned}
     f(b) - f(a) & = f(b) - f(x) + f(x) - f(a) \\
@@ -487,8 +485,8 @@ By geometry it follows that $f(x)$ is below the line connecting $f(a)$ and $f(b)
 We omit a more formal derivation in favor of a graph below.
 -->
 
-Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi.
-Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới.
+Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi. 
+Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới. 
 
 
 ```{.python .input}
@@ -520,7 +518,7 @@ One of the nice properties of convex optimization is that it allows us to handle
 That is, it allows us to solve problems of the form:
 -->
 
-Một trong những tính chất hay ho của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả.
+Một trong những tính chất hữu ích của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả. 
 Nó cho phép ta giải quyết các bài toán dưới dạng:
 
 <!--
@@ -542,11 +540,11 @@ If a second constraint is $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$, th
 Satisfying both constraints simultaneously amounts to selecting a slice of a ball as the constraint set.
 -->
 
-$f$ ở đây là mục tiêu và các hàm $c_i$ là các hàm số ràng buộc.
-Hãy xem nó xử lý thế nào trong trường hợp $c_1(\mathbf{x}) = \|\mathbf{x}\|_2 - 1$ nhé.
-Ở trường hợp này, các tham số $\mathbf{x}$ bị ràng buộc vào khối cầu đơn vị.
-Nếu ràng buộc thứ hai là $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$ thì điều này ứng với mọi $\mathbf{x}$ nằm trên nửa khoảng.
-Đáp ứng đồng thời hai ràng buộc này nghĩa là chọn ra một lát cắt của khối cầu làm tập hợp ràng buộc.
+$f$ ở đây là mục tiêu và các hàm $c_i$ là các hàm số ràng buộc. 
+Hãy xem nó xử lý thế nào trong trường hợp $c_1(\mathbf{x}) = \|\mathbf{x}\|_2 - 1$. 
+Ở trường hợp này, các tham số $\mathbf{x}$ bị ràng buộc vào khối cầu đơn vị. 
+Nếu ràng buộc thứ hai là $c_2(\mathbf{x}) = \mathbf{v}^\top \mathbf{x} + b$ thì điều này ứng với mọi $\mathbf{x}$ nằm trên nửa khoảng. 
+Đáp ứng đồng thời hai ràng buộc này nghĩa là chọn ra một lát cắt của khối cầu làm tập hợp ràng buộc. 
 
 <!--
 ### Lagrange Function
@@ -563,20 +561,20 @@ In short, the gradient of the objective function (i.e., gravity) will be offset 
  Note that any constraint that is not active (i.e., the ball does not touch the wall) will not be able to exert any force on the ball.
 -->
 
-Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là khó khăn.
-Có một cách để giải quyết bắt nguồn từ vật lý theo một trực giác khá đơn giản.
-Hãy tưởng tượng có một quả banh bên trong một chiếc hộp.
-Quả banh sẽ lăn đến nơi thấp nhất và trọng lực sẽ cân bằng với lực nâng của các cạnh hộp tác động lên quả banh.
-Tóm lại, gradient của hàm mục tiêu (ở đây là trọng lực) sẽ được bù lại bởi gradient của hàm ràng buộc (cần phải nằm trong chiếc hộp, bị các bức tưởng "đẩy lại").
-Lưu ý rằng bất kỳ ràng buộc nào không kích hoạt (quả banh không đụng đến bức tường) thì sẽ không thể tác động bất kỳ một lực nào lên quả banh.
+Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là tương đối khó khăn. 
+Có một cách giải quyết bắt nguồn từ vật lý dựa trên một trực giác khá đơn giản. 
+Hãy tưởng tượng có một quả banh bên trong một chiếc hộp. 
+Quả banh sẽ lăn đến nơi thấp nhất và trọng lực sẽ cân bằng với lực nâng của các cạnh hộp tác động lên quả banh. 
+Tóm lại, gradient của hàm mục tiêu (ở đây là trọng lực) sẽ được bù lại bởi gradient của hàm ràng buộc (cần phải nằm trong chiếc hộp, bị các bức tưởng "đẩy lại"). 
+Lưu ý rằng bất kỳ ràng buộc nào không kích hoạt (quả banh không đụng đến bức tường) thì sẽ không có bất kỳ một lực tác động nào lên quả banh.
 
 <!--
 Skipping over the derivation of the Lagrange function $L$ (see e.g., the book by Boyd and Vandenberghe for details :cite:`Boyd.Vandenberghe.2004`) 
 the above reasoning can be expressed via the following saddlepoint optimization problem:
 -->
 
-Ta hãy bỏ qua phần phần diễn giải chứng minh của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`).
-Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa:
+Ta hãy bỏ qua phần diễn giải chứng minh của hàm số Lagrange $L$ (Xem sách của Boyd và Vandenberghe về vấn đề này :cite:`Boyd.Vandenberghe.2004`). 
+Lý luận bên trên có thể được mô tả thông qua bài toán tối ưu hóa điểm yên ngựa: 
 
 
 $$L(\mathbf{x},\alpha) = f(\mathbf{x}) + \sum_i \alpha_i c_i(\mathbf{x}) \text{ với } \alpha_i \geq 0.$$
@@ -592,12 +590,12 @@ There is a rich body of literature explaining how to arrive at the function $L(\
 For our purposes it is sufficient to know that the saddlepoint of $L$ is where the original constrained optimization problem is solved optimally.
 -->
 
-Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
-Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
-Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
-Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$.
-Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
-Đối với mục đích của chúng ta, chúng ta chỉ cần biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
+Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng. 
+Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$. 
+Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$. 
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$. 
+Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$. 
+Đối với mục đích của chúng ta, sẽ là đủ khi biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu. 
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -804,6 +802,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Võ Tấn Phát
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Võ Tấn Phát
