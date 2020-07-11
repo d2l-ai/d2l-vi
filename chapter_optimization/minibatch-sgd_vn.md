@@ -109,7 +109,7 @@ Likewise we could compute $\mathbf{A}$ one row $\mathbf{A}_{i,:}$ at a time.
 2. Ta có thể tính $\mathbf{A}_{:,j} = \mathbf{B} \mathbf{C}_{:,j}^\top$, tức là tính theo từng cột.
 Tương tự, ta có thể tính $\mathbf{A}$ theo từng hàng $\mathbf{A}_{i,:}$.
 3. Ta đơn giản có thể tính $\mathbf{A} = \mathbf{B} \mathbf{C}$.
-4. Ta có thể chia $\mathbf{B}$ và $\mathbf{C}$ thành nhiều khối ma trận nhỏ hơn và tính $\mathbf{A}$ một khối tại một thời điểm.
+4. Ta có thể chia $\mathbf{B}$ và $\mathbf{C}$ thành nhiều khối ma trận nhỏ hơn và tính $\mathbf{A}$ theo từng khối một.
 
 <!--
 If we follow the first option, we will need to copy one row and one column vector into the CPU each time we want to compute an element $\mathbf{A}_{ij}$.
