@@ -274,7 +274,7 @@ Since the minibatch gradient is composed of $b := |\mathcal{B}_t|$ independent g
 This, by itself, is a good thing, since it means that the updates are more reliably aligned with the full gradient.
 -->
 
-Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
+Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient là không đổi.
 Mặt khác, phương sai giảm một cách đáng kể.
 Do gradient của minibatch là trung bình của $b := |\mathcal{B}_t|$ gradient độc lập, độ lệch chuẩn của nó giảm đi theo hệ số $b^{-\frac{1}{2}}$.
 Đây là một điều tốt, cách cập nhật này có độ tin cậy gần bằng việc lấy gradient trên toàn bộ tập dữ liệu.
