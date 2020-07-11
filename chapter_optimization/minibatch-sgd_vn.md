@@ -291,7 +291,7 @@ To illustrate the savings let us have a look at some code.
 In it we perform the same matrix-matrix multiplication, but this time broken up into "minibatches" of 64 columns at a time.
 -->
 
-Ý trên có thể hiểu một cách ngây thơ rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
+Từ ý trên, ta sẽ nhanh chóng cho rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
 Tiếc rằng đến một mức độ nào đó, độ lệch chuẩn sẽ giảm không đáng kể so với chi phí tính toán tăng tuyến tính.
 Do đó trong thực tế, ta chọn minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn vừa đủ để đưa vào bộ nhớ của GPU.
 Để minh hoạ quá trình lưu trữ, hãy xem đoạn mã nguồn dưới đây.
