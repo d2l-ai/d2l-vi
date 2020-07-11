@@ -272,9 +272,9 @@ That is, the objective function $f: \mathbb{R}^d \to \mathbb{R}$ maps vectors in
 It is a vector consisting of $d$ partial derivatives:
 -->
 
-Bây giờ chúng ta đã có trực quan tốt hơn về trường hợp đơn biến, ta hãy xem xét trường hợp trong đó $\mathbf{x} \in \mathbb{R}^d$.
+Bây giờ chúng ta đã có trực quan tốt hơn về trường hợp đơn biến, ta hãy xem xét trường hợp trong đó $\mathbf{x} \in \mathbb{R}^d$. 
 Cụ thể, hàm mục tiêu $f: \mathbb{R}^d \to \mathbb{R}$ ánh xạ các vector tới các giá trị vô hướng. 
-Gradient tương ứng cũng là đa biến, là một vector gồm $d$ đạo hàm riêng:
+Gradient tương ứng cũng là đa biến, là một vector gồm $d$ đạo hàm riêng: 
 
 $$\nabla f(\mathbf{x}) = \bigg[\frac{\partial f(\mathbf{x})}{\partial x_1}, \frac{\partial f(\mathbf{x})}{\partial x_2}, \ldots, \frac{\partial f(\mathbf{x})}{\partial x_d}\bigg]^\top.$$
 
@@ -284,9 +284,9 @@ As before in the univariate case we can use the corresponding Taylor approximati
 In particular, we have that 
 -->
 
-Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi theo $x_i$ của $f$ tại $\mathbf{x}$.
-Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển Taylor tương ứng cho các hàm đa biến.
-Cụ thể, ta có
+Mỗi đạo hàm riêng $\partial f(\mathbf{x})/\partial x_i$ trong gradient biểu diễn tốc độ thay đổi theo $x_i$ của $f$ tại $\mathbf{x}$. 
+Như trong trường hợp đơn biến giới thiệu ở phần trước, ta sử dụng khai triển Taylor tương ứng cho các hàm đa biến. 
+Cụ thể, ta có 
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \mathcal{O}(\|\mathbf{\epsilon}\|^2).$$
 :eqlabel:`gd-multi-taylor`
@@ -297,8 +297,8 @@ In other words, up to second order terms in $\mathbf{\epsilon}$ the direction of
 Choosing a suitable learning rate $\eta > 0$ yields the prototypical gradient descent algorithm:
 -->
 
-Nói cách khác, chiều giảm mạnh nhất được cho bởi gradient âm $-\nabla f(\mathbf{x})$, các hạng tử từ bậc hai trở lên trong $\mathbf{\epsilon}$ có thể bỏ qua.
-Chọn một tốc độ học phù hợp $\eta > 0$, ta được thuật toán hạ gradient nguyên bản dưới đây:
+Nói cách khác, chiều giảm mạnh nhất được cho bởi gradient âm $-\nabla f(\mathbf{x})$, các hạng tử từ bậc hai trở lên trong $\mathbf{\epsilon}$ có thể bỏ qua. 
+Chọn một tốc độ học phù hợp $\eta > 0$, ta được thuật toán hạ gradient nguyên bản dưới đây: 
 
 
 $\mathbf{x} \leftarrow \mathbf{x} - \eta \nabla f(\mathbf{x}).$
@@ -313,13 +313,13 @@ The first uses an update function and applies it $20$ times to the initial value
 The second helper visualizes the trajectory of $\mathbf{x}$.
 -->
 
-Để xem thuật toán hoạt động như thế nào trong thực tế, ta hãy xây dựng một hàm mục tiêu 
-$f(\mathbf{x})=x_1^2+2x_2^2$ với đầu vào là vector hai chiều $\mathbf{x} = [x_1, x_2]^\top$ và đầu ra là một số vô hướng.
-Gradient được cho bởi $\nabla f(\mathbf{x}) = [2x_1, 4x_2]^\top$.
-Ta sẽ quan sát đường đi của $\mathbf{x}$ được sinh bởi thuật toán hạ gradient bắt đầu từ vị trí $[-5, -2]$.
-Chúng ta cần thêm hai hàm hỗ trợ.
-Hàm đầu tiên là hàm cập nhật và được sử dụng $20$ lần cho giá trị khởi tạo ban đầu.
-Hàm thứ hai là hàm vẽ biểu đồ đường đi của $\mathbf{x}$.
+Để xem thuật toán hoạt động như thế nào trong thực tế, ta hãy xây dựng một hàm mục tiêu  
+$f(\mathbf{x})=x_1^2+2x_2^2$ với đầu vào là vector hai chiều $\mathbf{x} = [x_1, x_2]^\top$ và đầu ra là một số vô hướng. 
+Gradient được cho bởi $\nabla f(\mathbf{x}) = [2x_1, 4x_2]^\top$. 
+Ta sẽ quan sát đường đi của $\mathbf{x}$ được sinh bởi thuật toán hạ gradient bắt đầu từ vị trí $[-5, -2]$. 
+Chúng ta cần thêm hai hàm hỗ trợ. 
+Hàm đầu tiên là hàm cập nhật và được sử dụng $20$ lần cho giá trị khởi tạo ban đầu. 
+Hàm thứ hai là hàm vẽ biểu đồ đường đi của $\mathbf{x}$. 
 
 
 ```{.python .input  n=1}
@@ -357,9 +357,9 @@ We can see that after 20 steps the value of $\mathbf{x}$ approaches its minimum 
 Progress is fairly well-behaved albeit rather slow.
 -->
 
-Tiếp theo, chúng ta sẽ quan sát quỹ đạo của biến tối ưu hóa $\mathbf{x}$ với tốc độ học $\eta = 0.1$.
-Chúng ta có thể thấy rằng sau 20 bước, giá trị $\mathbf{x}$ đã đạt cực tiểu tại $[0, 0]$.
-Quá trình khá tốt mặc dù hơi chậm.
+Tiếp theo, chúng ta sẽ quan sát quỹ đạo của biến tối ưu hóa $\mathbf{x}$ với tốc độ học $\eta = 0.1$. 
+Chúng ta có thể thấy rằng sau 20 bước, giá trị $\mathbf{x}$ đã đạt cực tiểu tại $[0, 0]$. 
+Quá trình khá tốt mặc dù hơi chậm. 
 
 
 ```{.python .input  n=15}
@@ -394,12 +394,12 @@ While these methods cannot be applied to deep learning directly due to the compu
 they provide useful intuition into how to design advanced optimization algorithms that mimic many of the desirable properties of the algorithms outlined below.
 -->
 
-Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn tốc độ học $\eta$ "vừa đủ" rất khó.
-Nếu chọn giá trị quá nhỏ, chúng ta sẽ không thấy sự tiến bộ.
-Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất thậm chí nó sẽ phân kỳ.
-Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước?
-Các phương pháp bậc hai không chỉ dựa vào giá trị và gradient của hàm mục tiêu mà còn dựa vào "độ cong" của hàm, từ đó có thể điều chỉnh tốc độ học.
-Dù những phương pháp này không thể áp dụng vào học sâu một cách trực tiếp do chi phí tính toán lớn, chúng đem đến những gợi ý hữu ích để thiết kế các thuật toán tối ưu cao cấp hơn, mang nhiều tính chất mong muốn của các thuật toán dưới đây.
+Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn tốc độ học $\eta$ "vừa đủ" rất khó.  
+Nếu chọn giá trị quá nhỏ, chúng ta sẽ không có sự tiến triển. 
+Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất, thậm chí sẽ phân kỳ.
+Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước? 
+Các phương pháp bậc hai không chỉ dựa vào giá trị và gradient của hàm mục tiêu mà còn dựa vào "độ cong" của hàm, từ đó có thể điều chỉnh tốc độ học. 
+Dù những phương pháp này không thể áp dụng vào học sâu một cách trực tiếp do chi phí tính toán lớn, chúng đem đến những gợi ý hữu ích để thiết kế các thuật toán tối ưu cao cấp hơn, mang nhiều tính chất mong muốn dựa trên các thuật toán dưới đây. 
 
 <!--
 ### Newton's Method
@@ -413,7 +413,7 @@ In fact, we can write it as
 -->
 
 Trong khai triển Taylor của $f$, ta không cần phải dừng ngay sau số hạng đầu tiên.
-Trên thực tế, ta có thể viết lại như sau
+Trên thực tế, ta có thể viết lại như sau 
 
 
 $$f(\mathbf{x} + \mathbf{\epsilon}) = f(\mathbf{x}) + \mathbf{\epsilon}^\top \nabla f(\mathbf{x}) + \frac{1}{2} \mathbf{\epsilon}^\top \nabla \nabla^\top f(\mathbf{x}) \mathbf{\epsilon} + \mathcal{O}(\|\mathbf{\epsilon}\|^3).$$
@@ -428,10 +428,10 @@ Furthermore it may be too expensive to compute via backprop as we would need to 
 For now let us ignore such considerations and look at what algorithm we'd get. 
 -->
 
-Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$.
-Đây là ma trận kích thước $d \times d$. Với $d$ nhỏ và trong các bài toán đơn giản, ta sẽ dễ tính được $H_f$.
-Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$.
-Hơn nữa nó có thể tốn quá nhiều chi phí tính toán khi áp dụng vào lan truyền ngược.
+Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$. 
+Đây là ma trận kích thước $d \times d$. Với $d$ nhỏ và trong các bài toán đơn giản, ta sẽ dễ tính được $H_f$. 
+Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$. 
+Hơn nữa việc tính toán lan truyền ngược có thể đòi hỏi rất nhiều chi phí tính toán.
 Tạm thời hãy bỏ qua những lưu ý đó và nhìn vào thuật toán mà ta có được.
 
 
@@ -440,8 +440,8 @@ After all, the minimum of $f$ satisfies $\nabla f(\mathbf{x}) = 0$.
 Taking derivatives of :eqref:`gd-hot-taylor` with regard to $\mathbf{\epsilon}$ and ignoring higher order terms we arrive at 
 -->
 
-Suy cho cùng, cực tiểu của $f$ sẽ thỏa $\nabla f(\mathbf{x}) = 0$.
-Lấy các đạo hàm của :eqref:`gd-hot-taylor` theo  $\mathbf{\epsilon}$ và bỏ qua các số hạng bậc cao ta thu được
+Suy cho cùng, cực tiểu của $f$ sẽ thỏa $\nabla f(\mathbf{x}) = 0$. 
+Lấy các đạo hàm của :eqref:`gd-hot-taylor` theo  $\mathbf{\epsilon}$ và bỏ qua các số hạng bậc cao ta thu được 
 
 
 $$\nabla f(\mathbf{x}) + H_f \mathbf{\epsilon} = 0 \text{ và~do~đó } 
@@ -465,11 +465,11 @@ Alas, we got a bit lucky here since the Taylor expansion was exact.
 Let us see what happens in other problems.
 -->
 
-Với $f(x) = \frac{1}{2} x^2$ ta có $\nabla f(x) = x$ và $H_f = 1$.
-Do đó với $x$ bất kỳ, ta đều thu được $\epsilon = -x$.
-Nói cách khác, một bước đơn lẻ là đã đủ để hội tụ một cách hoàn hảo mà không cần bất kỳ tinh chỉnh nào!
-Chúng ta khá may mắn ở đây vì khai triển Taylor không cần xấp xỉ.
-Hãy xem thử điều gì sẽ xảy ra với các bài toán khác nhé.
+Với $f(x) = \frac{1}{2} x^2$ ta có $\nabla f(x) = x$ và $H_f = 1$. 
+Do đó với $x$ bất kỳ, ta đều thu được $\epsilon = -x$. 
+Nói cách khác, một bước đơn lẻ là đã đủ để hội tụ một cách hoàn hảo mà không cần bất kỳ tinh chỉnh nào! 
+Chúng ta khá may mắn ở đây vì khai triển Taylor không cần xấp xỉ. 
+Hãy xem thử điều gì sẽ xảy ra với các bài toán khác. 
 
 ```{.python .input}
 c = 0.5
@@ -506,10 +506,10 @@ Let us see what happens in practice.
 -->
 
 Giờ hãy xem điều gì xảy ra với một hàm *không lồi*, ví dụ như $f(x) = x \cos(c x)$.
-Sau tất cả, hãy lưu ý rằng trong phương pháp Newton, chúng ta cuối cùng sẽ phải chia cho ma trận Hessian.
+Sau tất cả, hãy lưu ý rằng trong phương pháp Newton, chúng ta cuối cùng sẽ phải chia cho ma trận Hessian. 
 Điều này nghĩa là nếu đạo hàm bậc hai là *âm* thì chúng ta phải đi theo hướng *tăng* $f$.
-Đó là khiếm khuyết chết người của thuật toán.
-Hãy xem điều gì sẽ xảy ra trong thực tế nào.
+Đó là khiếm khuyết chết người của thuật toán này. 
+Hãy xem điều gì sẽ xảy ra trong thực tế.
 
 ```{.python .input}
 c = 0.15 * np.pi
@@ -536,12 +536,12 @@ Having second order information allows us to be cautious whenever the curvature 
 Let us see how this works with a slightly smaller learning rate, say $\eta = 0.5$. As we can see, we have quite an efficient algorithm.
 -->
 
-Điều này sai một cách ngoạn mục.
-Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó.
-Một chiến lược khác là đưa tốc độ học trở lại.
-Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn.
-Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng.
-Hãy xem nó hoạt động như thế nào với một tốc độ học khá nhỏ, $\eta = 0.5$ chả hạn. Như ta có thể thấy, chúng ta có một thuật toán khá hiệu quả.
+Kết quả trả về là cực kỳ sai.
+Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó. 
+Một chiến lược khác là đưa tốc độ học trở lại. 
+Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn. 
+Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng. 
+Hãy xem nó hoạt động như thế nào với một tốc độ học khá nhỏ, $\eta = 0.5$ chẳng hạn. Như ta có thể thấy, chúng ta có một thuật toán khá hiệu quả.
 
 
 ```{.python .input}
