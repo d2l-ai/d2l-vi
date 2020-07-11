@@ -571,7 +571,7 @@ Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Ha�
 Given the above result let us see what happens when we minimize the function $f(x) = \frac{\lambda}{2} x^2$. For gradient descent we have
 -->
 
-Với kết quả trên hãy xem điều gì xảy ra khi cực tiểu hóa hàm $f(x) = \frac{\lambda}{2} x^2$. Đối với hạ gradient, ta có
+Với kết quả trên hãy xem điều gì xảy ra khi cực tiểu hóa hàm $f(x) = \frac{\lambda}{2} x^2$. Ta có hạ gradient
 
 
 $$x_{t+1} = x_t - \eta \lambda x_t = (1 - \eta \lambda) x_t.$$
@@ -583,9 +583,9 @@ This shows how the rate of convergence improves initially as we increase the lea
 Beyond that things diverge and for $\eta \lambda > 2$ the optimization problem diverges.
 -->
 
-Với $|1 - \eta \lambda| < 1$ việc tối ưu này hội tụ theo hàm mũ vì sau $t$ bước ta có $x_t = (1 - \eta \lambda)^t x_0$.
-Điều này cho thấy cách tốc độ hội tụ được cải thiện lúc bắt đầu khi tăng tốc độ học $\eta$ cho đến khi $\eta \lambda = 1$.
-Vượt qua giá trị đó, khi $\eta \lambda > 2$, bài toán tối ưu hóa sẽ phân kỳ.
+Với $|1 - \eta \lambda| < 1$, sau $t$ bước ta có $x_t = (1 - \eta \lambda)^t x_0$, do đó tốc độ hội tụ sẽ theo hàm mũ.
+Tốc độ hội tụ sẽ tăng khi tăng tốc độ học $\eta$ cho đến khi $\eta \lambda = 1$.
+Khi $\eta \lambda > 2$, bài toán tối ưu sẽ phân kỳ.
 
 
 ```{.python .input}
@@ -604,8 +604,8 @@ d2l.plt.legend();
 To analyze convergence in the case of momentum we begin by rewriting the update equations in terms of two scalars: one for $x$ and one for the momentum $v$. This yields:
 -->
 
-Để phân tích sự hội tụ khi sử dụng động lượng, chúng ta bắt đầu với việc viết lại các phương trình cập nhật theo hai số vô hướng: một cho $x$ và một cho động lượng $v$.
-Ta sẽ có:
+Để phân tích hội tụ khi sử dụng động lượng, ta viết lại các phương trình cập nhật theo hai số vô hướng: $x$ và động lượng $v$.
+Ta có:
 
 $$
 \begin{bmatrix} v_{t+1} \\ x_{t+1} \end{bmatrix} =
@@ -628,14 +628,14 @@ It also suggests that in general large values of $\beta$ are desirable.
 Further details require a fair amount of technical detail and we suggest that the interested reader consult the original publications.
 -->
 
-Chúng ta sử dụng $\mathbf{R}$ kích thước $2 \times 2$ để biểu diễn ma trận chi phối hội tụ.
-Sau $t$ bước thì lựa chọn ban đầu $[v_0, x_0]$ trở thành $\mathbf{R}(\ beta, \eta, \lambda)^t [v_0, x_0]$.
+Ta ký hiệu $\mathbf{R}$ là ma trận chi phối hội tụ, kích thước $2 \times 2$.
+Sau $t$ bước thì giá trị ban đầu $[v_0, x_0]$ sẽ là $\mathbf{R}(\ beta, \eta, \lambda)^t [v_0, x_0]$.
 Do đó, các trị riêng của $\mathbf{R}$ sẽ quyết định tốc độ hội tụ.
-Xem hình ảnh động tại [Distill post](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
-Có thể chỉ ra rằng phương pháp động lượng hội tụ với $0 < \eta \lambda < 2 + 2 \beta$.
-Khoảng tham số khả thi lớn hơn khi so sánh với $0 < \eta \lambda <2$ của hạ gradient.
-Nó cũng gợi ý rằng nhìn chung ta mong muốn $\beta$ có giá trị lớn.
-Thông tin chi tiết hơn đòi hỏi nền tảng kiến thức sâu hơn, bạn đọc quan tâm có thể tham khảo các bài báo gốc.
+Độc giả có thể xem hình ảnh động tại [Distill post](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc thêm :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
+Có thể chỉ ra rằng phương pháp động lượng hội tụ với $0 < \eta \lambda < 2 + 2 \beta$,
+có khoảng tham số khả thi lớn hơn khoảng $0 < \eta \lambda <2$ của hạ gradient.
+Điều này cũng gợi ý rằng nhìn chung ta mong muốn $\beta$ có giá trị lớn.
+Chi tiết kỹ thuật đòi hỏi nền tảng kiến thức sâu hơn, bạn đọc quan tâm có thể tham khảo các bài báo gốc.
 
 <!--
 ## Summary
@@ -652,12 +652,12 @@ Thông tin chi tiết hơn đòi hỏi nền tảng kiến thức sâu hơn, b�
 * Implementation is quite straightforward but it requires us to store an additional state vector (momentum $\mathbf{v}$).
 -->
 
-* Phương pháp động lượng thay thế gradient bằng trung bình rò rỉ của gradient trong quá khứ. Điều này tăng tốc độ hội tụ đáng kể.
+* Phương pháp động lượng thay thế gradient bằng trung bình rò rỉ của các gradient trong quá khứ, giúp tăng tốc độ hội tụ đáng kể.
 * Phương pháp này có thể sử dụng cho cả hạ gradient không nhiễu và hạ gradient ngẫu nhiên (có nhiễu). 
-* Phương pháp động lượng ngăn chặn việc tối ưu hóa bị dừng, điều nhiều khả năng xảy ra đối với hạ gradient ngẫu nhiên.
-* Số lượng gradient thực sự là $\frac{1}{1-\beta}$, tính từ tổng trọng số suy giảm theo hàm mũ của dữ liệu trong quá khứ.
-* Trong trường hợp các bài toán bậc hai lồi, điều này có thể được phân tích chi tiết một cách tường minh.
-* Việc lập trình khá đơn giản nhưng nó yêu cầu lưu trữ thêm một vector trạng thái (động lượng $\mathbf{v}$).
+* Phương pháp động lượng giúp tránh việc tối ưu bị ngưng trệ, điều nhiều khả năng xảy ra đối với hạ gradient ngẫu nhiên.
+* Số lượng gradient hiệu dụng là $\frac{1}{1-\beta}$, được tính bằng giới hạn của tổng cấp số nhân.
+* Trong trường hợp các bài toán lồi bậc hai, hạ gradient (có và không có động lượng) có thể được phân tích chi tiết một cách tường minh.
+* Việc lập trình khá đơn giản nhưng cần lưu trữ thêm một vector trạng thái (động lượng $\mathbf{v}$).
 
 <!--
 ## Exercises
@@ -673,11 +673,11 @@ Plot how the values of $x$ decrease for the initialization $x_i = 1$.
 4. What changes when we perform SGD with momentum? What happens when we use mini-batch SGD with momentum? Experiment with the parameters?
 -->
 
-1. Sử dụng các kết hợp khác của siêu tham số động lượng và tốc độ học, quan sát và phân tích các kết quả thí nghiệm khác nhau.
-2. Hãy thử GD và phương pháp động lượng cho một bài toán bậc hai trong đó có nhiều trị riêng, ví dụ: $f(x) = \frac{1}{2} \sum_i \lambda_i x_i^2$, e.g., $\lambda_i = 2^{-i}$.
-Vẽ đồ thị biểu diễn sự giảm xuống của $x$ khi khởi tạo $x_i = 1$.
-3. Lấy giá trị và nghiệm cực tiểu cho $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
-4. Điều gì thay đổi khi chúng ta thực hiện SGD và SGD theo mini-batch với phương pháp động lượng? Thử nghiệm với các tham số.
+1. Quan sát và phân tích kết quả khi sử dụng các tổ hợp động lượng và tốc độ học khác nhau.
+2. Hãy thử dùng hạ gradient có động lượng cho bài toán bậc hai có nhiều trị riêng, ví dụ: $f(x) = \frac{1}{2} \sum_i \lambda_i x_i^2$, e.g., $\lambda_i = 2^{-i}$.
+Vẽ đồ thị biểu diễn sự giảm của $x$ khi khởi tạo $x_i = 1$.
+3. Tính giá trị và nghiệm cực tiểu của $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
+4. Điều gì thay đổi khi ta thực hiện SGD và SGD theo minibatch có động lượng? Thử nghiệm với các tham số.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
@@ -700,28 +700,10 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Thanh Hoà
-
-<!-- Phần 2 -->
-* Nguyễn Thanh Hoà
-
-<!-- Phần 3 -->
 * Nguyễn Văn Quang
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-
-<!-- Phần 6 -->
-* Trần Yến Thy
-
-<!-- Phần 7 -->
-* Trần Yến Thy
-
-<!-- Phần 8 -->
-* Trần Yến Thy
