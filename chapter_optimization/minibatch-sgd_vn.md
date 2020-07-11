@@ -20,7 +20,7 @@ This suggests that there might be a happy medium, and in fact, that's what we ha
 Đến giờ, ta đã tiếp xúc với hai thái cực trong các phương pháp học dựa theo gradient: tại mỗi lượt :numref:`sec_gd` sử dụng toàn bộ tập dữ liệu để tính gradient và cập nhật tham số.
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
 Mỗi phương pháp đều có mặt hạn chế riêng.
-Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đồng với nhau. <!-- dịch ra TV là danh từ nên mình chuyển từ gốc sang danh từ. -->
+Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đối giống nhau.
 Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
 Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, ta đã sử dụng phương pháp đó trong các ví dụ đã thảo luận.
 
