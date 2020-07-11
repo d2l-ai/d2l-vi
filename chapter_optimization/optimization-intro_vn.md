@@ -190,11 +190,10 @@ Its first and second derivative vanish for $x=0$.
 Optimization might stall at the point, even though it is not a minimum.
 -->
 
-Ngoài các vùng cực tiểu, các điểm yên ngựa cũng là lý do gây ra tiêu biến gradient.
-Một [điểm yên ngựa](https://en.wikipedia.org/wiki/Saddle_point) là bất cứ điểm nào mà tất cả gradient của một hàm bị tiêu biến, nhưng tại đó không phải là một cực tiểu hay giá trị nhỏ nhất.
-Xét hàm $f(x) = x^3$.
-Đạo hàm bậc một và bậc hai của hàm này tiêu biến tại $x=0$.
-Tối ưu có thể bị ngưng trệ tại điểm này, cho dù nó không phải là một cực tiểu.
+Ngoài các vùng cực tiểu, các điểm yên ngựa cũng có gradient bằng 0.
+Một [điểm yên ngựa](https://en.wikipedia.org/wiki/Saddle_point) là bất cứ điểm nào mà tất cả gradient của một hàm bằng 0, nhưng đó không phải là một điểm cực tiểu hay giá trị nhỏ nhất.
+Xét hàm $f(x) = x^3$, đạo hàm bậc một và bậc hai của hàm này bằng 0 tại điểm $x=0$.
+Việc tối ưu có thể bị ngưng trệ tại điểm này, cho dù đó không phải là điểm cực tiểu.
 
 
 ```{.python .input  n=4}
@@ -212,11 +211,11 @@ This is a maximum with respect to $y$ and a minimum with respect to $x$.
 Moreover, it *looks* like a saddle, which is where this mathematical property got its name.
 -->
 
-Các điểm yên ngựa trong không gian nhiều chiều còn quỷ quyệt hơn nhiều, như ví dụ ở dưới.
+Các điểm yên ngựa trong không gian nhiều chiều còn khó chịu hơn nhiều, như ví dụ dưới đây.
 Xét hàm $f(x, y) = x^2 - y^2$.
 Hàm này tồn tại một điểm yên ngựa tại $(0, 0)$.
-Đây là một điểm cực đại nếu xét theo $y$, cực tiểu nếu xét theo $x$.
-Hơn nữa, nó *nhìn* giống như một cái yên ngựa, khởi nguồn tên gọi của tính chất toán học này.
+Đây là một điểm cực đại theo $y$ và là điểm cực tiểu theo $x$.
+Tên gọi của tính chất toán học này bắt nguồn từ chính việc đồ thị tại đó có hình dạng giống một cái yên ngựa.
 
 
 ```{.python .input  n=5}
@@ -242,7 +241,7 @@ We assume that the input of a function is a $k$-dimensional vector and its outpu
 The solution of the function could be a local minimum, a local maximum, or a saddle point at a position where the function gradient is zero:
 -->
 
-Ta giả sử đầu vào của hàm là một vector $k$ chiều và đầu ra của nó là một số vô hướng; do đó ma trận Hessian của nó có $k$ trị riêng (xem thêm tại :numref:`sec_geometry-linear-algebraic-ops`).
+Giả sử đầu vào của một hàm là một vector $k$ chiều và đầu ra là một số vô hướng; do đó ma trận Hessian của nó có $k$ trị riêng (xem thêm tại :numref:`sec_geometry-linear-algebraic-ops`).
 Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc một điểm yên ngựa tại vị trí mà gradient của hàm bằng 0.
 
 <!--
@@ -251,9 +250,9 @@ Nghiệm của hàm này có thể là một cực tiểu, cực đại, hoặc 
 * When the eigenvalues of the function's Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.
 -->
 
-* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều dương, ta có một cực tiểu của hàm.
-* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 đều âm, ta có một cực đại của hàm.
-* Khi các trị riêng của ma trận Hessian tại vị trí gradient bằng 0 mang cả giá trị âm lẫn dương, ta có một điểm yên ngựa của hàm.
+* Điểm cực tiểu là vị trí mà ở đó gradient bằng 0 và các trị riêng của ma trận Hessian đều dương.
+* Điểm cực đại là vị trí mà ở đó graident bằng 0 và các trị riêng của ma trận Hessian đều âm.
+* Điểm yên ngựa là vị trí mà ở đó gradient bằng 0 và các trị riêng của ma trận Hessian mang cả giá trị âm lẫn dương.
 
 <!--
 For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high.
@@ -264,12 +263,12 @@ Sadly, though, most deep learning problems do not fall into this category.
 Nonetheless it is a great tool to study optimization algorithms.
 -->
 
-Đối với bài toán trong không gian nhiều chiều, khả năng mà có một vài trị riêng âm là khá cao.
+Đối với bài toán trong không gian nhiều chiều, khả năng có một vài trị riêng âm là khá cao.
 Do đó các điểm yên ngựa có khả năng xuất hiện cao hơn các cực tiểu.
 Ta sẽ thảo luận một số ngoại lệ của vấn đề này ở phần tới khi giới thiệu đến tính lồi.
-Nói tóm lại, các hàm lồi là hàm mà các trị riêng của ma trận Hessian không bao giờ âm.
-Tuy nhiên, thật tiếc rằng đa số bài toán học sâu đều không thuộc loại này.
-Dù sao thì đây cũng là một công cụ tốt để học về các thuật toán tối ưu.
+Nói ngắn gọn, các hàm lồi là hàm có các trị riêng của ma trận Hessian không bao giờ âm.
+Nhưng không may, đa số bài toán học sâu đều không thuộc loại này.
+Dù sao thì tính lồi vẫn là một công cụ tốt để học về các thuật toán tối ưu.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -281,6 +280,7 @@ Dù sao thì đây cũng là một công cụ tốt để học về các thuậ
 -->
 
 # Tiêu biến Gradient
+
 <!--
 Probably the most insidious problem to encounter are vanishing gradients.
 For instance, assume that we want to minimize the function $f(x) = \tanh(x)$ and we happen to get started at $x = 4$.
@@ -290,12 +290,12 @@ Consequently optimization will get stuck for a long time before we make progress
 This turns out to be one of the reasons that training deep learning models was quite tricky prior to the introduction of the ReLU activation function.
 -->
 
-Có lẽ vấn đế quỷ quyệt nhất mà ta phải đối mặt là tiêu biến gradient.
+Có lẽ vấn đế khó chịu nhất mà ta phải đối mặt là tiêu biến gradient.
 Ví dụ, giả sử ta muốn cực tiểu hóa hàm $f(x) = \tanh(x)$ và ta bắt đầu tại $x = 4$.
 Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
-Đây hoá ra là lý do tại sao huấn luyện các mô hình học sâu khá khó khăn trước khi xuất hiện hàm kích hoạt ReLU.
+Đây hoá ra lại là lý do tại sao việc huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
 
 ```{.python .input  n=6}
 x = np.arange(-2.0, 5.0, 0.01)
@@ -312,9 +312,9 @@ Local optima or even approximate solutions thereof are still very useful.
 -->
 
 Tối ưu trong học sâu mang đầy thử thách.
-May mắn thay, có một lượng lớn các thuật toán hoạt động tốt và dễ sử dụng ngay cả đối với người mới bắt đầu.
-Hơn nữa, việc tìm kiếm giải pháp tốt *nhất* là không thực sự cần thiết.
-Các cực tiểu và ngay cả nghiệm xấp xỉ của nó cũng rất hữu dụng.
+May mắn thay, có khá nhiều thuật toán hoạt động tốt và dễ sử dụng ngay cả đối với người mới bắt đầu.
+Hơn nữa, việc tìm kiếm giải pháp tốt *nhất* là không thật cần thiết.
+Các cực tiểu và ngay cả nghiệm xấp xỉ cũng đã rất hữu dụng rồi.
 
 ## Tóm tắt
 
@@ -325,10 +325,10 @@ Các cực tiểu và ngay cả nghiệm xấp xỉ của nó cũng rất hữu 
 * Vanishing gradients can cause optimization to stall. Often a reparameterization of the problem helps. Good initialization of the parameters can be beneficial, too.
 -->
 
-* Cực tiểu hóa lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để cực tiểu hóa lỗi ta mong muốn.
+* Cực tiểu hóa lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để cực tiểu hóa lỗi khái quát.
 * Các bài toán tối ưu thường có nhiều vùng cực tiểu.
-* Bài toán còn có thể có nhiều điểm yên ngựa hơn nữa, do các bài toán thường không có tính lồi.
-* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) sẽ giúp ích. Việc khởi tạo tốt tập tham số cũng có thể có ích.
+* Và do các bài toán thường không có tính lồi, số lượng điểm yên ngựa thậm chí có thể nhiều hơn.
+* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) và khởi tạo tham số cẩn thận cũng sẽ giúp ích.
 
 
 ## Bài tập
@@ -348,16 +348,16 @@ Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is
 -->
 
 1. Xét một mạng perceptron đa tầng đơn giản với một tầng ẩn $d$ chiều và một đầu ra duy nhất.
-Chỉ ra rằng bất kì cực tiểu nào cũng có tương ứng ít nhất $d!$ nghiệm khiến mạng vận hành giống nhau.
-2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
-Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem ví dụ :cite:`Wigner.1958` để biết thêm chi tiết).
-    * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng.
-    Hay, với mọi vector riêng $\mathbf{v}$, xác suất trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
-    * Tại sao điều trên *không* ám chỉ $P(\lambda > 0) = 0.5$?
-3. Liệu còn thử thách nào tối ưu trong học sâu mà bạn có thể nghĩ tới?
+Chỉ ra rằng bất kì cực tiểu nào cũng có ít nhất $d!$ nghiệm tương đương khiến mạng vận hành giống nhau.
+2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, trong đó mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
+Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem :cite:`Wigner.1958` để biết thêm chi tiết).
+    * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng,
+    tức với mọi vector riêng $\mathbf{v}$, trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
+    * Tại sao điều trên *không* có nghĩa là $P(\lambda > 0) = 0.5$?
+3. Liệu còn thử thách tối ưu nào trong học sâu không?
 4. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
-    * Tại sao điều này lại khó khăn đến vậy?
-    * Bạn có thể tận dụng kết quả trên cho các thuật toán tối ưu?
+    * Tại sao điều này lại khó khăn?
+    * Hãy vận dụng kết quả trên vào các thuật toán tối ưu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -382,16 +382,8 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Quang
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Nguyễn Văn Cường
