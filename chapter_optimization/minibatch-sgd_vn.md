@@ -293,7 +293,7 @@ In it we perform the same matrix-matrix multiplication, but this time broken up 
 
 Từ ý trên, ta sẽ nhanh chóng cho rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
 Tiếc rằng đến một mức độ nào đó, độ lệch chuẩn sẽ giảm không đáng kể so với chi phí tính toán tăng tuyến tính.
-Do đó trong thực tế, ta chọn minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn vừa đủ để đưa vào bộ nhớ của GPU.
+Do đó trong thực tế, ta sẽ chọn kích thước minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn đủ để đưa vào bộ nhớ của GPU.
 Để minh hoạ quá trình lưu trữ này, hãy xem đoạn mã nguồn dưới đây.
 Trong đó ta vẫn thực hiện phép nhân ma trận với ma trận, tuy nhiên lần này ta tách thành từng minibatch 64 cột.
 
