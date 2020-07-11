@@ -92,7 +92,7 @@ We have a number of options for calculating $\mathbf{A}$.
 For instance we could try the following:
 -->
 
-Cách để giảm bớt những ràng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) của các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
+Cách để giảm bớt những ràng buộc trên là sử dụng hệ thống cấp bậc (*hierarchy*) các vùng nhớ đệm trong CPU, các vùng nhớ này đủ nhanh để có thể cung cấp dữ liệu cho vi xử lý.
 Đây *chính là* động lực đằng sau việc sử dụng batch trong học sâu.
 Để đơn giản, xét phép nhân hai ma trận $\mathbf{A} = \mathbf{B}\mathbf{C}$.
 Để tính $\mathbf{A}$ ta có khá nhiều lựa chọn, ví dụ như:
