@@ -282,7 +282,7 @@ Unfortunately this case never really occurs in deep learning and we are left wit
 -->
 
 Đây là phần đọc thêm để mang lại cái nhìn trực quan hơn về bài toán, 
-giới hạn bằng một trong những cách chứng minh đơn giản nhất được trình bày trong :cite:`Nesterov.Vial.2000`.
+giới hạn lại trong một cách chứng minh đơn giản được trình bày trong :cite:`Nesterov.Vial.2000`.
 Cũng có những cách chứng minh nâng cao hơn, ví dụ như khi hàm mục tiêu được định nghĩa tốt.
 :cite: `Hazan.Rakhlin.Bartlett.2008` chỉ ra rằng với các hàm lồi chặt, cụ thể là các hàm có cận dưới là $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$, ta có thể cực tiểu hóa chúng chỉ với một số lượng nhỏ bước lặp trong khi giảm tốc độ học theo $\eta(t) = \eta_0/(\beta t + 1)$.
 Thật không may, trường hợp này không xảy ra trong học sâu, trên thực tế mức độ giảm tốc độ học chậm hơn rất nhiều.
