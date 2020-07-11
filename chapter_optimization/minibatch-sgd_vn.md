@@ -334,7 +334,7 @@ For convenience we only use the first $1,500$ examples.
 The data is whitened for preprocessing, i.e., we remove the mean and rescale the variance to $1$ per coordinate.
 -->
 
-Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả.
+Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả như thế nào.
 Trong đoạn mã nguồn dưới ta sử dụng tập dữ liệu được phát triển bởi NASA để kiểm tra [tiếng ồn từ các máy bay khác nhau](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise) để so sánh các thuật toán tối ưu.
 Để thuận tiện ta chỉ sử dụng $1,500$ ví dụ đầu tiên.
 Tập dữ liệu được tẩy trắng (*whitened*) để xử lý, tức là với mỗi toạ độ ta trừ đi giá trị trung bình và chuyển đổi giá trị phương sai về $1$.
