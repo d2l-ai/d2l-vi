@@ -350,7 +350,7 @@ Hence we need to bound the inner product. By convexity we have that
 
 Điều chúng ta thực sự quan tâm là khoảng cách giữa $\mathbf{w}_t$ và $\mathbf{w}^*$ thay đổi như thế nào *theo kỳ vọng*.
 Thực tế, với chuỗi các bước bất kỳ, khoảng cách này cũng có thể thể tăng lên, tuỳ thuộc vào giá trị của $\mathbf{x}_t$ mà ta gặp phải.
-Do đó cần xác định biên cho tích vô hướng. Từ tính chất lồi, ta có
+Do đó cần xác định cận cho tích vô hướng. Từ tính chất lồi, ta có
 
 $$
 l(\mathbf{x}_t, \mathbf{w}^*) \geq l(\mathbf{x}_t, \mathbf{w}_t) + \left\langle \mathbf{w}^* - \mathbf{w}_t, \partial_{\mathbf{w}} l(\mathbf{x}_t, \mathbf{w}_t) \right\rangle.
