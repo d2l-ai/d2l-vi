@@ -40,7 +40,7 @@ To accomplish the latter we need to pay attention to overfitting in addition to 
 We begin by importing a few libraries with a function to annotate in a figure.
 -->
 
-Mặc dù tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng về bản chất, mục đích của tối ưu và học sâu là khác nhau.
+Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
 Mối quan tâm của tối ưu chủ yếu là cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
 Trong :numref:`sec_model_selection`, ta đã thảo luận chi tiết về sự khác biệt giữa các mục đích trên.
 Ví dụ, nhìn chung lỗi huấn luyện và lỗi khái quát là hai thứ khác nhau. 
