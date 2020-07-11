@@ -494,7 +494,7 @@ mini1_res = train_sgd(.4, 100)
 Reducing the batch size to 10, the time for each epoch increases because the workload for each batch is less efficient to execute.
 -->
 
-Giảm kích thước batch bằng 10, thời gian cho mỗi epoch tăng vì khối lượng tính toán trên mỗi batch nhỏ, thực thi kém hiệu quả hơn.
+Giảm kích thước batch bằng 10, thời gian cho mỗi epoch tăng vì thực thi tính toán trên mỗi batch kém hiệu quả hơn.
 
 ```{.python .input  n=7}
 mini2_res = train_sgd(.05, 10)
