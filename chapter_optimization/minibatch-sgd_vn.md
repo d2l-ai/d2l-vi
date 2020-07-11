@@ -54,7 +54,7 @@ Vấn đề trở nên nhạy cảm hơn đối với GPU đơn hay ngay cả CP
 Những thiết bị này có nhiều loại bộ nhớ, thường có nhiều loại đơn vị thực hiện tính toán và giới hạn băng thông giữa các đơn vị này cũng khác nhau.
 Ví dụ, một CPU có số lượng ít thanh ghi, bộ nhớ đệm L1, L2 và trong một số trường hợp có cả L3 (phần bộ nhớ được phân phối giữa các lõi của vi xử lý).
 Các bộ nhớ đệm đang tăng dần về kích thước và độ trễ (và cùng với đó là giảm băng thông).
-Nói vậy đủ thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với giao diện bộ nhớ chính (*main memory interface*) có thể cung cấp.
+Nói vậy đủ thấy rằng vi xử lý có khả năng thực hiện nhiều tác vụ hơn so với những gì mà giao diện bộ nhớ chính (*main memory interface*) có thể cung cấp.
 
 <!--
 * A 2GHz CPU with 16 cores and AVX-512 vectorization can process up to $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ bytes per second. 
