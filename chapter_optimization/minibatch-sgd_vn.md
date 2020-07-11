@@ -544,7 +544,7 @@ We will use this throughout the current chapter.
 -->
 
 Trong Gluon, chúng ta có thể sử dụng lớp `Trainer` để gọi các thuật toán tối ưu.
-Cách này được sử dụng để lập trình một hàm huấn luyện tổng quát.
+Cách này được sử dụng để có thể lập trình một hàm huấn luyện tổng quát.
 Chúng ta sẽ sử dụng hàm này xuyên suốt các phần tiếp theo của chương.
 
 
