@@ -145,7 +145,7 @@ In short, it is highly advisable to use vectorization (and matrices) whenever po
 Ngoài hiệu suất tính toán, chi phí tính toán phụ trợ đến từ Python và framework học sâu cũng đáng cân nhắc.
 Mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
 Chi phí đó có thể khá bất lợi.
-Nói ngắn gọn, nên áp dụng vector hoá (và ma trận) bất cứ khi nào có thể.
+Nói ngắn gọn, nên áp dụng vector (và ma trận) hoá bất cứ khi nào có thể.
 
 
 ```{.python .input  n=1}
