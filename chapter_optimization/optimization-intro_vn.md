@@ -43,7 +43,7 @@ We begin by importing a few libraries with a function to annotate in a figure.
 Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
 Mối quan tâm của tối ưu chủ yếu là cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
 Trong :numref:`sec_model_selection`, ta đã thảo luận chi tiết về sự khác biệt giữa các mục đích trên.
-Ví dụ, nhìn chung lỗi huấn luyện và lỗi khái quát là hai thứ khác nhau. 
+Chẳng hạn như là sự khác biệt giữa lỗi huấn luyện và lỗi khái quát.
 Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyện nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
 Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) và học sâu nói riêng là giảm thiểu lỗi khái quát.
 Để thực hiện điều này, bên cạnh việc giảm thiểu lỗi huấn luyện, ta cần chú ý đến hiện tượng quá khớp.
