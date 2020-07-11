@@ -21,7 +21,7 @@ This suggests that there might be a happy medium, and in fact, that's what we ha
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
 Mỗi phương pháp đều có mặt hạn chế riêng.
 Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đối giống nhau.
-Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không thể khai thác hết khả năng của vector hoá.
+Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không được khai thác hết khả năng vector hoá.
 Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, ta đã sử dụng phương pháp đó trong các ví dụ đã thảo luận.
 
 <!--
