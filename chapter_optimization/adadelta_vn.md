@@ -16,12 +16,11 @@ The algorithm was proposed in :cite:`Zeiler.2012`.
 It is fairly straightforward, given the discussion of previous algorithms so far.
 -->
 
-
 Adadelta là một biến thể khác của AdaGrad.
 Điểm khác biệt chính là Adadelta giảm mức độ thay đổi của tốc độ học theo toạ độ.
 Hơn nữa, Adadelta thường được biết đến là thuật toán không sử dụng tốc độ học vì nó dựa trên chính lượng thay đổi hiện tại để căn chỉnh lượng thay đổi trong tương lai.
 Thuật toán Adadelta được đề xuất trong :cite:`Zeiler.2012`.
-Nó khá đơn giản nếu đã biết các thuật toán được thảo luận trước đây.
+Nó cũng khá đơn giản nếu bạn đã biết các thuật toán được thảo luận trước đây.
 
 <!--
 ## The Algorithm
@@ -39,7 +38,7 @@ The parameter du jour is $\rho$. We obtain the following leaky updates:
 -->
 
 Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
-và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai lượng thay đổi của các tham số trong mô hình.
+và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của lượng thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và các cách lập trình,
 chứ không có lý do nào để sử dụng các kí hiệu La Mã khác cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta.
 Tham số suy giảm là $\rho$. Chúng ta có được các bước cập nhật rò rỉ sau:
@@ -159,7 +158,6 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 3. Is Adadelta really learning rate free? Could you find optimization problems that break Adadelta?
 4. Compare Adadelta to Adagrad and RMS prop to discuss their convergence behavior.
 -->
-
 
 1. Điều gì xảy ra khi điều chỉnh giá trị của $\rho$?
 2. Hãy lập trình thuật toán trên mà không cần dùng biến $\mathbf{g}_t'$. Giải thích tại sao đây có thể là một ý tưởng tốt?
