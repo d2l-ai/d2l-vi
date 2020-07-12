@@ -70,7 +70,7 @@ Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khá
 ## Toy Problem
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài toán Đơn giản
 
 <!--
 We begin with a toy problem that is cheap enough to compute easily, yet sufficiently nontrivial to illustrate some of the key aspects.
@@ -80,7 +80,11 @@ Since most of the code is standard we just introduce the basics without further 
 See :numref:`chap_cnn` for a refresher as needed.
 -->
 
-*dịch đoạn phía trên*
+Hãy bắt đầu với một ví dụ đơn giản với ít chi phí tính toán nhưng đủ để minh họa một vài điểm quan trọng sau.
+Do vậy, ta chọn một phiên bản được hiện đại hoá của LeNet (thay thế hàm kích hoạt `sigmoid` bằng `relu` và hàm gộp trung bình bằng hàm gộp cực đại) và áp dụng trên tập dữ liệu Fashion-MNIST.
+Hơn nữa, để có hiệu năng tốt, ta lai hoá mạng.
+Vì hầu hết mã nguồn tương tự như trước, chúng ta chỉ giới thiệu những thứ cơ bản mà không thảo luận chi tiết hơn nữa.
+Xem :numref:`chap_cnn` để biết thêm chi tiết nếu cần thiết.
 
 
 ```{.python .input}
@@ -138,7 +142,9 @@ Note how the training accuracy keeps on increasing while progress in terms of te
 The gap between both curves indicates overfitting.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy xem điều gì sẽ xảy ra khi ta gọi thuật toán với các thiết lập mặc định, chẳng hạn tốc độ học bằng $0.3$ và huấn luyện với $30$ bước lặp.
+Lưu ý rằng độ chính xác trên tập huấn luyện vẫn tiếp tục tăng trong khi độ chính xác trên tập kiểm tra không tăng thêm khi tới một giá trị nào đó.
+Khoảng cách giữa hai đường cong cho thấy độ quá khớp của thuật toán.
 
 
 ```{.python .input}
@@ -153,7 +159,7 @@ train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ## Schedulers
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ Định thời
 
 <!--
 One way of adjusting the learning rate is to set it explicitly at each step.
@@ -161,7 +167,9 @@ This is conveniently achieved by the `set_learning_rate` method.
 We could adjust it downward after every epoch (or even after every minibatch), e.g., in a dynamic manner in response to how optimization is progressing.
 -->
 
-*dịch đoạn phía trên*
+Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học tường minh ở mỗi bước lặp.
+Điều này có thể đạt được bằng hàm `set_learning_rate`.
+Ta có thể  hạ giá trị tốc độ học xuống sau mỗi epoch (hay thậm chí sau mỗi minibatch) như là một cách phản hồi khi quá trình tối ưu đang diễn ra.
 
 
 ```{.python .input}
@@ -176,7 +184,9 @@ When invoked with the number of updates it returns the appropriate value of the 
 Let us define a simple one that sets the learning rate to $\eta = \eta_0 (t + 1)^{-\frac{1}{2}}$.
 -->
 
-*dịch đoạn phía trên*
+Tổng quát hơn, ta muốn định nghĩa một bộ định thời.
+Khi được gọi bằng cách truyền số bước cập nhật, bộ định thời trả về giá trị tương ứng của tốc độ học.
+Ta hãy định nghĩa một bộ định thời đơn giản có tốc độ học $\eta = \eta_0 (t + 1)^{-\frac{1}{2}}$.
 
 
 ```{.python .input}
@@ -542,7 +552,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
