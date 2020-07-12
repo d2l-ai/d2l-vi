@@ -544,8 +544,8 @@ We will use this throughout the current chapter.
 -->
 
 Trong Gluon, chúng ta có thể sử dụng lớp `Trainer` để gọi các thuật toán tối ưu.
-Cách này được sử dụng để lập trình một hàm huấn luyện tổng quát.
-Chúng ta sẽ sử dụng hàm này trong các phần tiếp theo của chương.
+Cách này được sử dụng để có thể lập trình một hàm huấn luyện tổng quát.
+Chúng ta sẽ sử dụng hàm này xuyên suốt các phần tiếp theo của chương.
 
 
 ```{.python .input  n=9}
@@ -580,7 +580,7 @@ def train_gluon_ch11(tr_name, hyperparams, data_iter, num_epochs=2):
 Using Gluon to repeat the last experiment shows identical behavior.
 -->
 
-Lặp lại thí nghiệm cuối cùng bằng Gluon cho kết quả tương tự như trên.
+Lặp lại thí nghiệm với kích thước batch bằng 10 sử dụng Gluon cho kết quả tương tự như trên.
 
 
 ```{.python .input  n=10}
@@ -606,10 +606,10 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 
 * Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
 * Tồn tại sự đánh đổi giữa hiệu quả về mặt thống kê của SGD và hiệu quả tính toán của việc xử lý các batch dữ liệu kích thước lớn cùng một lúc.
-* Thuật toán hạ gradient ngẫu nhiên theo minibatch kết hợp cả hai lợi ích trên: hiệu quả tính toán và thống kê.
-* Trong thuật toán SGD theo minibatch chúng ta xử lý các batch dữ liệu thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi quan sát được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
+* Thuật toán SGD theo minibatch kết hợp cả hai lợi ích trên: hiệu quả tính toán và thống kê.
+* Trong thuật toán đó ta xử lý các batch thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi mẫu được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
 * Suy giảm tốc độ học trong quá trình huấn luyện được khuyến khích sử dụng.
-* Nói chung, thuật toán SGD theo minibatch nhanh hơn thuật toán SGD và GD về thời gian hội tụ.
+* Nhìn chung, SGD theo minibatch nhanh hơn SGD và hạ gradient về thời gian hội tụ.
 
 
 ## Bài tập
@@ -623,9 +623,9 @@ How does the behavior of SGD, minibatch SGD and that of gradient descent change?
 -->
 
 1. Sửa đổi kích thước batch và tốc độ học, quan sát tốc độ suy giảm giá trị của hàm mục tiêu và thời gian cho mỗi epoch.
-2. Đọc thêm tài liệu MXNet và sử dụng lớp `Trainer`  với hàm `set_learning_rate` để giảm tốc độ học của SGD theo minibatch bằng 1/10 giá trị trước đó sau mỗi epoch.
-3. Hãy so sánh SGD theo minibatch với một biến thể *lấy mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
-4. Một ác thần đã sao chép tập dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát bị lặp lại hai lần và kích thước tập dữ liệu tăng gấp đôi so với ban đầu, nhưng không ai nói với bạn biết).
+2. Đọc thêm tài liệu MXNet và sử dụng hàm `set_learning_rate` của lớp `Trainer` để giảm tốc độ học của SGD theo minibatch bằng 1/10 giá trị trước đó sau mỗi epoch.
+3. Hãy so sánh SGD theo minibatch sử dụng một biến thể *lấy mẫu có hoàn lại* từ tập huấn luyện. Điều gì sẽ xảy ra?
+4. Một ác thần đã sao chép tập dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát bị lặp lại hai lần và kích thước tập dữ liệu tăng gấp đôi so với ban đầu).
 Cách hoạt động của các thuật toán hạ gradient, SGD và SGD theo minibatch sẽ thay đổi như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -649,28 +649,9 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 5 -->
 * Nguyễn Văn Quang
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
-* Nguyễn Minh Đức
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 7 -->
-* Nguyễn Văn Quang
