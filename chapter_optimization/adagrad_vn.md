@@ -32,9 +32,9 @@ After all, there are many things that are of interest only for a small number of
 Hãy tưởng tượng ta đang huấn luyện một mô hình ngôn ngữ.
 Để đạt độ chính xác cao ta thường muốn giảm dần tốc độ học trong quá trình huấn luyện, thường là với tỉ lệ $\mathcal{O}(t^{-\frac{1}{2}})$ hoặc chậm hơn.
 Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xuất hiện.
-Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*.
+Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*. 
 Tuy nhiên, đây cũng là vấn đề thường gặp trong nhiều mảng khác như quảng cáo điện toán (*computational advertising*) và lọc cộng tác (*collaborative filtering*).
-Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm người chú ý đến.
+Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm người nhỏ chú ý đến.
 
 <!--
 Parameters associated with infrequent features only receive meaningful updates whenever these features occur.
@@ -46,7 +46,7 @@ In other words, the learning rate either decreases too quickly for frequent feat
 Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xuất hiện.
 Đối với tốc độ học giảm dần, ta có thể gặp phải trường hợp các tham số của những đặc trưng phổ biến hội tụ khá nhanh đến giá trị tối ưu,
 trong khi đối với các đặc trưng thưa, ta không có đủ số lượng dữ liệu thích đáng để xác định giá trị tối ưu của chúng.
-Nói một cách khác, tốc độ học giảm quá nhanh đối với các đặc trưng phổ biến và quá chậm đối với các đặc trưng hiếm.
+Nói một cách khác, tốc độ học hoặc là giảm quá chậm đối với các đặc trưng phổ biến hoặc là quá nhanh đối với các đặc trưng hiếm.
 
 <!--
 A possible hack to redress this issue would be to count the number of times we see a particular feature and to use this as a clock for adjusting learning rates.
@@ -60,9 +60,9 @@ After all, it is unclear where one would draw the line between something that qu
 Một mẹo để khắc phục vấn đề này là đếm số lần ta gặp một đặc trưng nhất định và sử dụng nó để điều chỉnh tốc độ học.
 Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta_0}{\sqrt{t + c}}$ ta có thể sử dụng $\eta_i = \frac{\eta_0}{\sqrt{s(i, t) + c}}$.
 Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
-Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức.
+Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức. 
 Tuy nhiên, cách này thất bại trong trường hợp khi đặc trưng không hẳn là thưa, chỉ là có gradient nhỏ và hiếm khi đạt giá trị lớn.
-Xét cho cùng, ta khó có thể phân biệt rõ ràng khi nào thì có thể xem một đặc trưng là đã được quan sát hay chưa.
+Xét cho cùng, ta khó có thể phân định rõ ràng khi nào thì một đặc trưng là đã được quan sát hay chưa.
 
 <!--
 Adagrad by :cite:`Duchi.Hazan.Singer.2011` addresses this by replacing the rather crude counter $s(i, t)$ by an aggregate of the squares of previously observed gradients.
@@ -74,11 +74,11 @@ In practice this leads to a very effective optimization procedure for computatio
 But this hides some of the additional benefits inherent in Adagrad that are best understood in the context of preconditioning.
 -->
 
-Adagrad bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn đề này bằng cách thay đổi bộ đếm thô $s(i, t)$ bởi tổng bình phương của tất cả các gradient được quan sát trước đó.
+Adagrad đề xuất bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn đề này bằng cách thay đổi bộ đếm thô $s(i, t)$ bởi tổng bình phương của tất cả các gradient được quan sát trước đó.
 Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x})\right)^2$ làm công cụ để điều chỉnh tốc độ học.
-Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient đủ lớn.
+Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient được coi là đủ lớn.
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
-Các toạ độ thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các toạ độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
+Các trục thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các trục khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
 Phương pháp này trong thực tế đưa ra một quy trình tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các bài toán liên quan.
 Tuy nhiên, Adagrad vẫn còn ẩn chứa một vài lợi ích khác mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
@@ -99,7 +99,7 @@ Let us look at the problem of minimizing $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}
 -->
 
 Các bài toán tối ưu lồi rất phù hợp để phân tích đặc tính của các thuật toán.
-Suy cho cùng, với đa số các bài toán không lồi ta khó có thể tìm được các chứng minh lý thuyết có giá trị, tuy nhiên các *trực giác* và *ý nghĩa hàm chứa* từ các bài toán tối ưu lồi vẫn có thể áp dụng được.
+Suy cho cùng, với đa số các bài toán không lồi ta khó có thể tìm được các chứng minh lý thuyết vững chắc. Tuy nhiên, *trực giác* và *ý nghĩa hàm chứa* suy ra từ các bài toán tối ưu lồi vẫn có thể được áp dụng.
 Xét bài toán cực tiểu hoá $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 
 <!--
@@ -107,7 +107,7 @@ As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in t
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phương pháp phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể giải từng toạ độ một:
+Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phép phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể kiếm lời giải cho từng trục một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
@@ -133,11 +133,11 @@ Conversely, for small $\boldsymbol{\Lambda}_i$ changes in $\bar{x}_i$ can be dra
 The ratio between the largest and the smallest eigenvalue is called the condition number of an optimization problem.
 -->
 
-Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các nghiệm cực tiểu của $f$ cũng chỉ thay đổi một chút.
+Nếu ta làm nhiễu $\mathbf{c}$ một chút, ta sẽ mong rằng các nghiệm cực tiểu của $f$ cũng chỉ thay đổi không đáng kể.
 Đáng tiếc thay, điều đó lại không xảy ra.
-Mặc dù thay đổi $\mathbf{c}$ một chút thì $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các nghiệm cực tiểu của $f$ lại không như vậy (tương ứng với nghiệm cực tiểu của $\bar{f}$).
+Mặc dù thay đổi $\mathbf{c}$ một chút dẫn đến $\bar{\mathbf{c}}$ cũng thay đổi một lượng tương ứng, các nghiệm cực tiểu của $f$ (cũng như $\bar{f}$) lại không như vậy.
 Mỗi khi các trị riêng $\boldsymbol{\Lambda}_i$ mang giá trị lớn, ta sẽ thấy $\bar{x}_i$ và cực tiểu của $f$ thay đổi khá nhỏ.
-Ngược lại, với $\boldsymbol{\Lambda}_i$ nhỏ, sự thay đổi $\bar{x}_i$ có thể khá đột ngột.
+Ngược lại, với $\boldsymbol{\Lambda}_i$ nhỏ, sự thay đổi $\bar{x}_i$ có thể là đáng kể.
 Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là hệ số điều kiện (*condition number*) của bài toán tối ưu.
 
 
@@ -160,10 +160,10 @@ Alas, this is a rather impractical suggestion.
 Computing eigenvalues and eigenvectors is in general *much more* expensive than solving the actual problem.
 -->
 
-Nếu hệ số điều kiện $\kappa$ lớn, việc giải bài toán tối ưu trở nên khá khó khăn.
+Nếu hệ số điều kiện $\kappa$ lớn, việc giải bài toán tối ưu một cách chính xác trở nên khá khó khăn.
 Ta cần đảm bảo việc lựa chọn phù hợp một khoảng động lớn các giá trị.
-Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ: liệu ta có thể "cố định" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng có giá trị bằng $1$.
-Biến đổi này khá đơn giản theo lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm chuyển đổi giá trị của bài toán 
+Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ rằng: liệu ta có thể "cố định" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng đều có giá trị bằng $1$.
+Điều này khá đơn giản trên lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm tái tỉ lệ bài toán 
 từ $\mathbf{x}$ sang $\mathbf{z} := \boldsymbol{\Lambda}^{\frac{1}{2}} \mathbf{U} \mathbf{x}$.
 Trong hệ toạ độ mới, $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$ có thể được đơn giản hoá thành $\|\mathbf{z}\|^2$.
 Tệ thay, hướng giải quyết này không thực tế chút nào.
@@ -176,7 +176,7 @@ This is *much* cheaper than computing eigenvalues.
 -->
 
 Trong khi việc tính toán chính xác các trị riêng có thể có chi phí cao, việc ước chừng và tính toán xấp xỉ chúng đã là tốt hơn nhiều so với không làm gì cả.
-Trong thực tế, ta có thể sử dụng các phần tử trên đường chéo của $\mathbf{Q}$ và chuyển đổi giá trị chúng sao cho phù hợp.
+Trong thực tế, ta có thể sử dụng các phần tử trên đường chéo của $\mathbf{Q}$ và tái tỉ lệ chúng một cách tương ứng.
 Việc này có chi phí tính toán thấp hơn *nhiều* so với tính các trị riêng.
 
 
@@ -190,7 +190,7 @@ For instance, the cases we discussed previously, this would entirely eliminate t
 -->
 
 Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
-Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện.
+Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện. 
 Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học có các cạnh song song với trục toạ độ (*axis aligned*).
 
 <!--
