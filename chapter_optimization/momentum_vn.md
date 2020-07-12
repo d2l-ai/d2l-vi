@@ -604,7 +604,7 @@ d2l.plt.legend();
 To analyze convergence in the case of momentum we begin by rewriting the update equations in terms of two scalars: one for $x$ and one for the momentum $v$. This yields:
 -->
 
-Để phân tích hội tụ khi sử dụng động lượng, ta viết lại các phương trình cập nhật theo hai số vô hướng: $x$ và động lượng $v$.
+Để phân tích tính hội tụ khi sử dụng động lượng, ta viết lại các phương trình cập nhật theo hai số vô hướng: $x$ và động lượng $v$.
 Ta có:
 
 $$
