@@ -150,7 +150,7 @@ Recall that in :numref:`sec_gd` we used $f(\mathbf{x}) = x_1^2 + 2 x_2^2$, i.e.,
 We distort this function further by stretching it out in the $x_1$ direction via
 -->
 
-Để hiểu hơn về các tính chất hình học của phương pháp động lượng, hãy ôn lại thuật toán hạ gradient với hàm mục tiêu khó chịu hơn.
+Để hiểu hơn về các tính chất hình học của phương pháp động lượng, hãy ôn lại thuật toán hạ gradient sử dụng hàm mục tiêu khó chịu hơn.
 Trong :numref:`sec_gd` ta sử dụng hàm mục tiêu dạng elip $f(\mathbf{x}) = x_1^2 + 2 x_2^2$.
 Ta sẽ sửa hàm này một chút để kéo dãn thêm theo hướng $x_1$ như sau:
 
