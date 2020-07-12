@@ -48,14 +48,14 @@ npx.set_np()
 ## Parallel Computation on CPUs and GPUs
 -->
 
-## *dịch tiêu đề phía trên*
+## Tính toán song song trên CPU và GPU
 
 <!--
 Let us start by defining a reference workload to test - the `run` function below performs 10 matrix-matrix multiplications 
 on the device of our choosing using data allocated into two variables, `x_cpu` and `x_gpu`.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy bắt đầu bằng việc định nghĩa một workload tham khảo để kiểm thử - chức năng `run` dưới đây biểu diễn 10 phép nhân ma trận trên thiết bị mà chúng ta lựa chọn sử dụng các dữ liệu đổ vào hai biến, `x_cpu` và `x_gpu`.
 
 
 ```{.python .input}
@@ -72,8 +72,8 @@ Now we apply the function to the data.
 To ensure that caching does not play a role in the results we warm up the devices by performing a single pass on each of them prior to measuring.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta áp dụng hàm vào dữ liệu.
+Để chắc chắn rằng caching không tham gia vào kết quả ta khởi động các thiết bị bằng việc biểu diễn một việc chuyền đơn vào từng biến một trước khi đo lường.
 
 ```{.python .input}
 run(x_cpu)  # Warm-up both devices
@@ -94,7 +94,7 @@ with d2l.Benchmark('GPU time'):
 If we remove the `waitall()` between both tasks the system is free to parallelize computation on both devices automatically.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta bỏ `waitall()` giữa hai tác vụ thì hệ thống được tự do song song tính toán trên cả hai thiết bị một cách tự động.
 
 
 ```{.python .input}
@@ -110,7 +110,7 @@ In the above case the total execution time is less than the sum of its parts, si
 both CPU and GPU devices without the need for sophisticated code on behalf of the user. 
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp phía trên thời gian thi hành tác vụ thì ít hơn tổng của các thành phần, bởi vì MXNet tự động định thời tính toán trên cả thiết bị CPU và GPU mà không cần phải làm mã giả tinh vi thay cho người dùng.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
