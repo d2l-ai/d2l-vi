@@ -396,7 +396,7 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu hiệu dụng sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
+Khi tăng siêu tham số động lượng `momentum` lên 0.9, kích thước mẫu hiệu dụng sẽ tăng lên đáng kể thành $\frac{1}{1 - 0.9} = 10$.
 Ta giảm tốc độ học xuống còn $0,01$ để kiểm soát vấn đề.
 
 
