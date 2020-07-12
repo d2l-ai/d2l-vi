@@ -15,10 +15,10 @@ If we decrease it too rapidly, convergence stalls.
 If we are too lenient, we fail to converge to a good enough solution since noise keeps on driving us away from optimality.
 -->
 
-Trong :numref:`sec_sgd` chúng ta đã ôn tập về kỹ thuật hạ gradient ngẫu nhiên, là khi tối ưu hoá mà chỉ có thể sử dụng một dạng gradient có nhiễu.
-Cụ thể, với gradient nhiễu chúng ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học khi có mặt tác nhân gây nhiễu.
-Nếu gradient giảm quá nhanh, việc hội tụ sẽ bị chững lại.
-Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ tốt sẽ khó xảy ra bởi vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
+Trong :numref:`sec_sgd` chúng ta đã thảo luận cách hoạt động của hạ gradient ngẫu nhiên, chỉ sử dụng một mẫu gradient có nhiễu cho việc tối ưu.
+Cụ thể, khi có nhiễu ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học.
+Nếu ta giảm tốc độ học quá nhanh, việc hội tụ sẽ ngưng trệ.
+Nếu tốc độ học giảm chậm, sẽ khó hội tụ tại một kết quả đủ tốt vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
 <!--
 ## Basics
@@ -30,7 +30,7 @@ Nếu gradient giảm chậm, việc hội tụ tại một kết quả đủ t�
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
 -->
 
-Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán tối ưu hiệu quả hơn, cụ thể là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
+Trong phần này, ta sẽ cùng khám phá những thuật toán tối ưu hiệu quả hơn, đặc biệt là cho một số dạng bài toán tối ưu phổ biến trong thực tế.
 
 <!--
 ### Leaky Averages
@@ -41,25 +41,26 @@ Trong phần này, chúng ta sẽ cùng nhau khám phá những thuật toán t�
 <!--
 The previous section saw us discussing minibatch SGD as a means for accelerating computation.
 It also had the nice side-effect that averaging gradients reduced the amount of variance.
+The minibatch SGD can be calculated by:
 -->
 
-Trong phần trước, chúng ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
-Đồng thời, kỹ thuật lấy trung bình gradients này cũng có một "tác dụng phụ" tốt đó là giúp giảm phương sai.
+Trong phần trước, ta đã thảo luận về hạ gradient ngẫu nhiên theo minibatch như một cách để tăng tốc độ tính toán.
+Đồng thời, kỹ thuật này cũng có một tác dụng phụ tốt là giúp giảm phương sai.
 
 
-$$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} \mathbf{g}_{i, t-1}.
-$$
+$$\mathbf{g}{t, t-1} = \partial{\mathbf{w}} \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} f(\mathbf{x}{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} \mathbf{h}{i, t-1}. $$
 
+<!-- sửa công thức từ PR gốc https://github.com/d2l-ai/d2l-en/pull/1104 -->
 
 <!--
-Here we used $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ to keep the notation simple.
+To keep the notation simple, here we used $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ as the SGD for sample $i$ using the weights updated at time $t-1$.
 It would be nice if we could benefit from the effect of variance reduction even beyond averaging gradients on a mini-batch.
 One option to accomplish this task is to replace the gradient computation by a "leaky average":
 -->
 
-Ở đây chúng ta dùng $\mathbf{g}_{ii} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_t)$ để giúp ký hiệu được đơn giản.
-Sẽ rất tốt nếu ta có khả năng tận dụng được lợi ích từ việc giảm phương sai bên cạnh cách lấy trung bình gradient trên từng minibatch.
-Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ": 
+Ở đây để đơn giản ký hiệu, ta đặt $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ là gradient của mẫu $i$ với trọng số tại bước thời gian $t-1$.
+Sẽ rất tốt nếu ta có thể tận dụng hơn nữa lợi ích từ việc giảm phương sai, hơn là chỉ lấy trung bình gradient trên minibatch.
+Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ" (*leaky average*): 
 
 
 $$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + \mathbf{g}_{t, t-1}$$
@@ -72,10 +73,10 @@ It accumulates past gradients similar to how a heavy ball rolling down the objec
 To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively into
 -->
 
-với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời một cách hiệu quả bằng một giá trị được lấy trung bình trên các gradient trước đó.
-$\mathbf{v}$ đực gọi là *động lượng*.
-Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ điểm bắt đầu lăn tới điểm hiện tại.
-Để thấy rõ hơn những gì đang diễn ra, chúng ta hãy mở rộng $\mathbf{v}_t$ một cách đệ quy thành
+với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời bằng một giá trị được lấy trung bình trên các gradient trước đó.
+$\mathbf{v}$ được gọi là *động lượng (momentum)*.
+Động lượng tích luỹ các gradient trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động lên nó từ lúc bắt đầu.
+Để hiểu rõ hơn, hãy khai triển đệ quy $\mathbf{v}_t$ thành
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -96,10 +97,10 @@ This allows us to realize most of the benefits of averaging over a batch without
 We will revisit this averaging procedure in more detail later.
 -->
 
-Giá trị $\beta$ lớn tương ứng với trung bình trong khoảng rộng, trong khi đó giá trị $\beta$ nhỏ có nghĩa là chỉ có một chút chỉnh sửa nhẹ so với phương pháp gradient bình thường.
-Gradient mới này không còn trỏ về hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
-Điều này cho phép chúng ta nhận được hầu hết lợi ích của việc tính toán trung bình theo batch mà không phải tốn chi phí tính toán gradients theo cả batch.
-Chúng ta sẽ xem xét lại quy trình lấy trung bình một cách cụ thể hơn ở những phần sau.
+Khi $\beta$ lớn đồng nghĩa với việc lấy trung bình trong một khoảng rộng, trong khi đó nếu $\beta$ nhỏ phương pháp này sẽ không khác nhiều so với hạ gradient thông thường.
+Gradient mới này không còn có hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
+Điều này giúp chúng ta nhận thêm lợi ích của việc tính trung bình theo batch mà không cần tốn chi phí tính toán gradients trên batch.
+Chúng ta sẽ xem xét cụ thể hơn quy trình lấy trung bình ở những phần sau.
 
 <!--
 The above reasoning formed the basis for what is now known as *accelerated* gradient methods, such as gradients with momentum.
@@ -109,10 +110,10 @@ Furthermore, they allow us to average over subsequent gradients to obtain more s
 Indeed, the aspect of acceleration even for noise-free convex problems is one of the key reasons why momentum works and why it works so well.
 -->
 
-Các lập luận là cơ sở đã hình thành nên các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
-Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình chậm hơn rất nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
-Hơn nữa, cách này cho phép chúng ta tính trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
-Thật vậy, việc tăng tốc ngay cả đối với bài toán hàm lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
+Các lập luận trên là cơ sở hình thành các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
+Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình tối ưu chậm hơn nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
+Hơn nữa, cách này cho phép lấy trung bình các gradient liền kề để đạt được hướng đi xuống ổn định hơn.
+Thật vậy, việc tăng tốc ngay cả đối với bài toán lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
 
 
 <!--
@@ -125,10 +126,11 @@ See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
 Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
-[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` có một phân tích chuyên sâu và minh hoạ sinh động về vấn đề này.
-Động lượng được đề xuất bởi :cite:`Polyak.1964` và :cite:`Nesterov.2018` đã có một thảo luận học thuật chi tiết trong ngữ cảnh tối ưu hoá lồi.
+[Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` cung cấp phân tích chuyên sâu và minh hoạ sinh động về phương pháp động lượng.
+Động lượng được đề xuất bởi :cite:`Polyak.1964`.
+:cite:`Nesterov.2018` có một thảo luận chi tiết về lý thuyết động lượng trong ngữ cảnh tối ưu hoá lồi.
 Động lượng trong học sâu đã được biết đến từ lâu vì lợi ích mà nó mang lại.
-Xem thảo luận của :cite:`Sutskever.Martens.Dahl.ea.2013` để có thêm chi tiết.
+Tham khảo :cite:`Sutskever.Martens.Dahl.ea.2013` để biết thêm chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
