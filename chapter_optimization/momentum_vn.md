@@ -17,7 +17,7 @@ If we are too lenient, we fail to converge to a good enough solution since noise
 
 Trong :numref:`sec_sgd` chúng ta đã thảo luận cách hoạt động của hạ gradient ngẫu nhiên, chỉ sử dụng một mẫu gradient có nhiễu cho việc tối ưu.
 Cụ thể, khi có nhiễu ta cần cực kỳ cẩn trọng trong việc chọn tốc độ học.
-Nếu gradient giảm quá nhanh, việc hội tụ sẽ ngừng trệ.
+Nếu ta giảm tốc độ học quá nhanh, việc hội tụ sẽ ngưng trệ.
 Nếu gradient giảm chậm, sẽ khó hội tụ tại một kết quả đủ tốt vì nhiễu sẽ đẩy điểm hội tụ ra xa điểm tối ưu.
 
 <!--
