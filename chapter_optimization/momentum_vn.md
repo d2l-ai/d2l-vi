@@ -411,7 +411,7 @@ Setting it to $0.005$ yields good convergence properties.
 -->
 
 Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề tối ưu không trơn tru nào.
-Giảm còn $0,005$ đem lại các đặc tính hội tụ tốt.
+Giảm còn $0.005$ đem lại các đặc tính hội tụ tốt.
 
 
 ```{.python .input}
