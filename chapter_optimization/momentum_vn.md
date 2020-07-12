@@ -99,7 +99,7 @@ We will revisit this averaging procedure in more detail later.
 
 Khi $\beta$ lớn đồng nghĩa với việc lấy trung bình trong một khoảng rộng, trong khi đó nếu $\beta$ nhỏ phương pháp này sẽ không khác nhiều so với hạ gradient thông thường.
 Gradient mới này không còn có hướng đi dốc nhất trong từng trường hợp cụ thể nữa mà thay vào đó đi theo hướng trung bình có trọng số của các gradient trước đó.
-Điều này giúp chúng ta nhận thêm lợi ích của việc tính trung bình theo batch mà không cần tốn chi phí tính toán gradients trên batch. <!-- câu này hơi khó hiểu, mn góp ý với -->
+Điều này giúp chúng ta nhận thêm lợi ích của việc tính trung bình theo batch mà không cần tốn chi phí tính toán gradients trên batch.
 Chúng ta sẽ xem xét cụ thể hơn quy trình lấy trung bình ở những phần sau.
 
 <!--
