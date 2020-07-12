@@ -112,7 +112,7 @@ Indeed, the aspect of acceleration even for noise-free convex problems is one of
 
 Các lập luận trên là cơ sở hình thành các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
 Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình tối ưu chậm hơn nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
-Hơn nữa, cách này cho phép lấy trung bình các gradient liên tiếp để đạt được hướng đi xuống ổn định hơn.
+Hơn nữa, cách này cho phép lấy trung bình các gradient liền kề để đạt được hướng đi xuống ổn định hơn.
 Thật vậy, việc tăng tốc ngay cả đối với bài toán lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
 
 
