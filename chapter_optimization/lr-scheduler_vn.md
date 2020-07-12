@@ -82,7 +82,7 @@ See :numref:`chap_cnn` for a refresher as needed.
 
 Hãy bắt đầu với một ví dụ đơn giản với ít chi phí tính toán nhưng đủ để minh họa một vài điểm cốt lõi.
 Ta sử dụng LeNet cải tiến (thay thế hàm kích hoạt `sigmoid` bằng `relu` và hàm gộp trung bình bằng hàm gộp cực đại) và áp dụng trên tập dữ liệu Fashion-MNIST.
-Hơn nữa, để có hiệu năng tốt, ta lai hoá mạng.
+Hơn nữa, để có hiệu năng tốt, ta hybrid hoá mạng.
 Vì hầu hết mã nguồn tương tự như trước, ta sẽ không thảo luận chi tiết.
 Xem lại :numref:`chap_cnn` để biết thêm chi tiết nếu cần.
 
@@ -167,7 +167,7 @@ This is conveniently achieved by the `set_learning_rate` method.
 We could adjust it downward after every epoch (or even after every minibatch), e.g., in a dynamic manner in response to how optimization is progressing.
 -->
 
-Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học tường minh ở mỗi bước lặp.
+Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học một cách tường minh ở mỗi bước lặp.
 Điều này có thể đạt được bằng phương thức `set_learning_rate`.
 Ta có thể hạ giá trị tốc độ học xuống sau mỗi epoch (hay thậm chí sau mỗi minibatch) như là một cách phản hồi khi quá trình tối ưu đang diễn ra.
 
