@@ -669,7 +669,7 @@ That is, we use the direction given by $\nabla f(\mathbf{x})$ and then perform b
 -->
 
 Một trong những vấn đề chính của hạ gradient là chúng ta có thể vượt quá khỏi mục tiêu hoặc không đạt đủ sự tiến bộ. 
-Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường (_line search_) kết hợp với hạ gradient.  
+Có một cách khắc phục đơn giản cho vấn đề này là sử dụng tìm kiếm đường thẳng (_line search_) kết hợp với hạ gradient.  
 Chúng ta sử dụng hướng được cho bởi $\nabla f(\mathbf{x})$ và sau đó dùng tìm kiếm nhị phân để tìm ra độ dài bước $\eta$ có thể cực tiểu hóa $f(\mathbf{x} - \eta \nabla f(\mathbf{x}))$. 
 
 <!--
@@ -729,7 +729,7 @@ Tuy nhiên, đối với mục đích của học sâu thì nó không thực s�
 -->
 
 1. Hãy thử các tốc độ học, hàm mục tiêu khác nhau cho hạ gradient. 
-2. Khởi tạo tìm kiếm đường để cực tiểu hóa hàm lồi trong khoảng $[a, b]$. 
+2. Khởi tạo tìm kiếm đường thẳng để cực tiểu hóa hàm lồi trong khoảng $[a, b]$. 
     * Bạn có cần đạo hàm để tìm kiếm nhị phân không, ví dụ, để quyết định xem sẽ chọn $[a, (a+b)/2]$ hay $[(a+b)/2, b]$? 
     * Tốc độ hội tụ của thuật toán nhanh chậm thế nào? 
     * Hãy khởi tạo thuật toán và áp dụng nó để cực tiểu hóa $\log (\exp(x) + \exp(-2*x -3))$. 
