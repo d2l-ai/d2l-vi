@@ -338,15 +338,15 @@ d2l.plt.legend();
 ## Practical Experiments
 -->
 
-## Các thực nghiệm
+## Thực nghiệm
 
 <!--
 Let us see how momentum works in practice, i.e., when used within the context of a proper optimizer.
 For this we need a somewhat more scalable implementation.
 -->
 
-Chúng ta hãy xem phương pháp động lượng hoạt động như thế nào trong thực tế, tức là, khi được sử dụng trong bối cảnh của một bộ tối ưu hóa đích thực.
-Để làm điều này, chúng ta cần một phương pháp lập trình giúp mở rộng dễ dàng hơn.
+Hãy xem động lượng hoạt động như thế nào trong thực tế, khi được sử dụng cùng một bộ tối ưu.
+Để làm điều này, ta cần các đoạn mã dễ mở rộng hơn.
 
 <!--
 ### Implementation from Scratch
@@ -360,9 +360,9 @@ It has the same shape as the gradients (and variables of the optimization proble
 In the implementation below we call these variables `states`.
 -->
 
-So với SGD (minibatch), phương pháp động lượng cần duy trì một tập hợp các biến phụ trợ, tức là vận tốc.
-Nó có kích thước giống gradient (và các biến khác trong bài toán tối ưu hóa).
-Trong phần lập trình bên dưới, chúng ta gọi các biến này là `states` (các trạng thái).
+So với SGD hoặc SGD theo minibatch, phương pháp động lượng cần duy trì các biến phụ trợ, chính là vận tốc.
+Nó có kích thước giống gradient (và các biến khác trong bài toán tối ưu).
+Trong đoạn mã bên dưới, ta gọi các biến vận tốc này là `states`.
 
 ```{.python .input  n=13}
 def init_momentum_states(feature_dim):
@@ -381,7 +381,7 @@ def sgd_momentum(params, states, hyperparams):
 Let us see how this works in practice.
 -->
 
-Ta hãy xem điều này hoạt động như thế nào trong thực tế.
+Hãy xem đoạn mã hoạt động như thế nào trong thực tế.
 
 
 ```{.python .input  n=15}
@@ -400,8 +400,8 @@ When we increase the momentum hyperparameter `momentum` to 0.9, it amounts to a 
 We reduce the learning rate slightly to $0.01$ to keep matters under control.
 -->
 
-Khi tăng siêu tham số động lượng `momentum` lên 0,9, kích thước mẫu thực tế sẽ tăng lên đáng kể thành $\frac{1}{1 - 0,9} = 10$.
-Chúng tôi giảm tỷ lệ học tập xuống còn $0,01$ dễ dàng kiểm soát độ hội tụ.
+Khi tăng siêu tham số động lượng `momentum` lên 0.9, kích thước mẫu hiệu dụng sẽ tăng lên đáng kể thành $\frac{1}{1 - 0.9} = 10$.
+Ta giảm tốc độ học xuống còn $0.01$ để kiểm soát vấn đề.
 
 
 ```{.python .input  n=8}
@@ -414,9 +414,8 @@ Reducing the learning rate further addresses any issue of non-smooth optimizatio
 Setting it to $0.005$ yields good convergence properties.
 -->
 
-Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề nào của bài toán tối ưu không trơn tru.
-Đặt nó thành $0,005$ mang lại các đặc tính hội tụ tốt.
-
+Tiếp tục giảm tốc độ học sẽ giải quyết bất kỳ vấn đề tối ưu không trơn tru nào.
+Giảm còn $0.005$ đem lại các đặc tính hội tụ tốt.
 
 
 ```{.python .input}
@@ -431,15 +430,15 @@ train_momentum(0.005, 0.9)
 ### Concise Implementation
 -->
 
-### Cách lập trình súc tích
+### Lập trình súc tích
 
 <!--
 There is very little to do in Gluon since the standard `sgd` solver already had momentum built in.
 Setting matching parameters yields a very similar trajectory.
 -->
 
-Có rất ít việc phải làm ở Gluon vì bộ giải `sgd` tiêu chuẩn đã tích hợp sẵn phương pháp động lượng.
-Cùng một thiết lập tham số mang lại một quỹ đạo rất giống khi lập trình từ đầu.
+Rất đơn giản nếu sử dụng Gluon vì bộ tối ưu `sgd` tiêu chuẩn đã tích hợp sẵn phương pháp động lượng.
+Với cùng các tham số, ta có quỹ đạo rất giống khi lập trình từ đầu.
 
 
 ```{.python .input  n=9}
@@ -459,8 +458,8 @@ So far the 2D example of $f(x) = 0.1 x_1^2 + 2 x_2^2$ seemed rather contrived.
 We will now see that this is actually quite representative of the types of problem one might encounter, at least in the case of minimizing convex quadratic objective functions.
 -->
 
-Cho đến nay, ví dụ 2D về $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như khá không thực.
-Bây giờ chúng ta sẽ thấy rằng điều này thực ra khá tiêu biểu cho các loại vấn đề mà ta có thể gặp phải, ít nhất là trong trường hợp cực tiểu hóa các hàm mục tiêu bậc hai lồi.
+Cho đến nay, ví dụ hai chiều $f(x) = 0.1 x_1^2 + 2 x_2^2$ dường như không thực tế cho lắm.
+Thực tế, hàm này khá tiêu biểu cho các dạng bài toán có thể gặp phải, ít nhất trong trường hợp cực tiểu hóa các hàm mục tiêu lồi bậc hai.
 
 
 <!--
@@ -487,9 +486,9 @@ Hence we can rewrite $h$ as
 -->
 
 Đây là một hàm bậc hai tổng quát.
-Đối với các ma trận bán xác định dương $\mathbf{Q} \succ 0$, tức là, đối với các ma trận có trị riêng dương
-nó có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị cực tiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
-Do đó chúng ta có thể viết lại $h$ như sau
+Với ma trận xác định dương $\mathbf{Q} \succ 0$, tức ma trận có trị riêng dương, <!-- chỗ này phải là `positive definite` thì trị riêng mới dương và có nghịch đảo -->
+hàm có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị cực tiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$. 
+Do đó ta có thể viết lại $h$ như sau
 
 
 $$h(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})^\top \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c}) + b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}.$$
@@ -501,9 +500,9 @@ That is, it is given by the distance between $\mathbf{x}$ and the minimizer, mul
 Consequently also the momentum  is a linear combination of terms $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 -->
 
-Gradient được cho bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
+Gradient được tính bởi $\partial_{\mathbf{x}} f(\mathbf{x}) = \mathbf{Q} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$.
 Nghĩa là bằng khoảng cách giữa $\mathbf{x}$ và nghiệm cực tiểu nhân với $\mathbf{Q}$.
-Do đó, động lượng là tổ hợp tuyến tính của các số hạng $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
+Do đó, động lượng cũng là tổ hợp tuyến tính của $\mathbf{Q} (\mathbf{x}_t - \mathbf{Q}^{-1} \mathbf{c})$.
 
 <!--
 Since $\mathbf{Q}$ is positive definite it can be decomposed into its eigensystem via 
@@ -511,8 +510,8 @@ $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ for an orthogonal
 This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ to obtain a much simplified expression:
 -->
 
-Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$ cho ma trận trực giao (xoay vòng) $\mathbf{O}$ và ma trận đường chéo $\boldsymbol{\Lambda}$ của các trị riêng dương.
-Điều này cho phép chúng ta đổi biến từ $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có được biểu thức đơn giản hơn rất nhiều:
+Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$, với $\mathbf{O}$ là ma trận trực giao (xoay vòng) và $\boldsymbol{\Lambda}$ là ma trận đường chéo của các trị riêng dương.
+Điều này cho phép ta đổi biến $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có biểu thức đơn giản hơn nhiều:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -529,8 +528,8 @@ Expressed in terms of $\mathbf{z}$ gradient descent becomes
 -->
 
 Ở đây $c' = b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
-Vì $\mathbf{O}$ chỉ là một ma trận trực giao nên điều này không làm nhiễu các gradient theo một cách có ý nghĩa.
-Biểu diễn theo $\mathbf{z}$, hạ gradient sẽ trở thành
+Vì $\mathbf{O}$ chỉ là một ma trận trực giao nên điều này không làm nhiễu các gradient một cách có ý nghĩa.
+Biểu diễn theo $\mathbf{z}$, ta có hạ gradient
 
 
 $$\mathbf{z}_t = \mathbf{z}_{t-1} - \boldsymbol{\Lambda} \mathbf{z}_{t-1} = (\mathbf{I} - \boldsymbol{\Lambda}) \mathbf{z}_{t-1}.$$
@@ -543,7 +542,7 @@ This also holds for momentum.
 -->
 
 Một điểm quan trọng trong biểu thức này là hạ gradient *không trộn lẫn* các không gian riêng khác nhau.
-Nghĩa là, khi được biểu diễn dưới dạng hệ riêng của $\mathbf{Q}$, việc tối ưu hóa được thực hiện theo từng trục tọa độ.
+Nghĩa là, khi được biểu diễn dưới dạng hệ riêng của $\mathbf{Q}$, việc tối ưu được thực hiện theo từng trục tọa độ.
 Điều này cũng đúng với phương pháp động lượng.
 
 
@@ -559,7 +558,7 @@ In doing this we just proved the following theorem: Gradient Descent with and wi
 into coordinate-wise optimization in the direction of the eigenvectors of the quadratic matrix.
 -->
 
-Khi thực hiện điều này, chúng ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm bậc hai lồi có thể được phân tích thành bài toán tối ưu hóa theo từng trục tọa độ và theo hướng các vector riêng của ma trận bậc hai.
+Khi thực hiện điều này, ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm lồi bậc hai có thể được phân tích thành bài toán tối ưu theo hướng các vector riêng của ma trận bậc hai theo từng trục tọa độ.
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
