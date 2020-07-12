@@ -75,7 +75,7 @@ To see what is happening in more detail let us expand $\mathbf{v}_t$ recursively
 
 với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời bằng một giá trị được lấy trung bình trên các gradient trước đó.
 $\mathbf{v}$ được gọi là *động lượng (momentum)*.
-Động lượng tích luỹ các gradients trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động từ lúc bắt đầu.
+Động lượng tích luỹ các gradient trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động lên nó từ lúc bắt đầu.
 Để hiểu rõ hơn, hãy khai triển đệ quy $\mathbf{v}_t$ thành
 
 
