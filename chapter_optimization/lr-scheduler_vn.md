@@ -169,7 +169,7 @@ We could adjust it downward after every epoch (or even after every minibatch), e
 
 Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học tường minh ở mỗi bước lặp.
 Điều này có thể đạt được bằng hàm `set_learning_rate`.
-Ta có thể  hạ giá trị tốc độ học xuống sau mỗi epoch (hay thậm chí sau mỗi minibatch) như là một cách phản hồi khi quá trình tối ưu đang diễn ra.
+Ta có thể hạ giá trị tốc độ học xuống sau mỗi epoch (hay thậm chí sau mỗi minibatch) như là một cách phản hồi khi quá trình tối ưu đang diễn ra.
 
 
 ```{.python .input}
