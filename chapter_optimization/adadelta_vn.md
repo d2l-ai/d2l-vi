@@ -41,7 +41,8 @@ Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$
 và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của lượng thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và các cách lập trình,
 chứ không có lý do nào để sử dụng các kí hiệu La Mã khác cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta.
-Tham số suy giảm là $\rho$. Chúng ta có được các bước cập nhật rò rỉ sau:
+Tham số suy giảm là $\rho$.
+Chúng ta có được các bước cập nhật rò rỉ sau:
 
 
 $$\begin{aligned}
