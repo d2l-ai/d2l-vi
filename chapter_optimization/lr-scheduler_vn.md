@@ -70,7 +70,7 @@ Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khá
 ## Toy Problem
 -->
 
-## Bài toán Đơn giản
+## Ví dụ Đơn giản
 
 <!--
 We begin with a toy problem that is cheap enough to compute easily, yet sufficiently nontrivial to illustrate some of the key aspects.
