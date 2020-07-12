@@ -150,9 +150,9 @@ Recall that in :numref:`sec_gd` we used $f(\mathbf{x}) = x_1^2 + 2 x_2^2$, i.e.,
 We distort this function further by stretching it out in the $x_1$ direction via
 -->
 
-Để hiểu hơn về các tính chất hình học của phương pháp động lượng, chúng ta hãy ôn lại thuật toán hạ gradient với hàm mục tiêu khó chịu hơn.
-Hãy nhớ lại trong :numref:`sec_gd` chúng ta sử dụng $f(\mathbf{x}) = x_1^2 + 2 x_2^2$ là hàm mục tiêu dạng elip.
-Chúng ta sẽ sửa đổi hàm này một chút để kéo dài thêm hình dạng theo hướng $x_1$ như sau:
+Để hiểu hơn về các tính chất hình học của phương pháp động lượng, hãy ôn lại thuật toán hạ gradient sử dụng hàm mục tiêu khó chịu hơn.
+Trong :numref:`sec_gd` ta sử dụng hàm mục tiêu dạng elip $f(\mathbf{x}) = x_1^2 + 2 x_2^2$.
+Ta sẽ sửa hàm này một chút để kéo dãn thêm theo hướng $x_1$ như sau:
 
 
 $$f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2.$$
@@ -164,9 +164,9 @@ Let us see what happens when we perform gradient descent as before on this new f
 We pick a learning rate of $0.4$.
 -->
 
-Như trước đây, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *rất* phẳng theo hướng $x_1$.
-Chúng ta hãy xem điều gì sẽ xảy ra khi thực hiện hạ gradient tương tự như trước trên hàm mới định nghĩa.
-Chúng ta đặt tốc độ học bằng $0.4$.
+Cũng như trước, $f$ đạt cực tiểu tại điểm $(0, 0)$. Hàm này *rất* phẳng theo hướng $x_1$.
+Hãy xem điều gì sẽ xảy ra khi thực hiện hạ gradient tương tự như trước trên hàm mới định nghĩa.
+Ta đặt tốc độ học bằng $0.4$.
 
 
 ```{.python .input  n=3}
@@ -194,12 +194,12 @@ The example below illustrates what happens even after a slight increase in learn
 Convergence in the $x_1$ direction improves but the overall solution quality is much worse.
 -->
 
-Ta thấy, gradient theo hướng $x_2$ có giá trị *lớn hơn nhiều* và thay đổi nhanh hơn nhiều so với gradient theo hướng ngang $x_1$.
-Vì thế, chúng ta bị mắc kẹt giữa hai lựa chọn không mong muốn: Nếu chọn tốc độ học nhỏ, các nghiệm sẽ không phân kỳ theo hướng $x_2$
-nhưng tốc độ hội tụ sẽ chậm theo hướng $x_1$.
-Ngược lại, với một tốc độ học lớn mô hình sẽ hội tụ nhanh chóng theo hướng $x_1$ nhưng phân kỳ theo hướng $x_2$.
-Ví dụ dưới đây minh họa những gì xảy ra khi tăng nhẹ tốc độ học từ $0.4$ đến $0.6$.
-Hội tụ theo hướng $x_1$ cải thiện nhưng kết quả cuối cùng tệ hơn rất nhiều.
+Có thể thấy gradient theo hướng $x_2$ có giá trị *lớn hơn nhiều* và thay đổi nhanh hơn nhiều so với gradient theo hướng ngang $x_1$.
+Vì thế, chúng ta bị mắc kẹt giữa hai lựa chọn không mong muốn: 
+Nếu chọn tốc độ học nhỏ, các nghiệm sẽ không phân kỳ theo hướng $x_2$, nhưng tốc độ hội tụ sẽ chậm theo hướng $x_1$.
+Ngược lại, với tốc độ học lớn mô hình sẽ hội tụ nhanh theo hướng $x_1$ nhưng phân kỳ theo hướng $x_2$.
+Ví dụ dưới đây minh họa kết quả khi tăng nhẹ tốc độ học từ $0.4$ lên $0.6$.
+Sự hội tụ theo hướng $x_1$ được cải thiện nhưng kết quả cuối cùng tệ hơn rất nhiều.
 
 
 ```{.python .input  n=4}
@@ -225,10 +225,10 @@ Conversely, in the $x_2$ direction where gradients oscillate, an aggregate gradi
 Using $\mathbf{v}_t$ instead of the gradient $\mathbf{g}_t$ yields the following update equations:
 -->
 
-Phương pháp động lượng cho phép chúng ta giải quyết bài toán hạ gradient mô tả ở trên.
-Nhìn vào các vết tối ưu trên, chúng ta có thể tưởng tượng trực quan rằng sẽ tốt hơn nếu lấy trung bình gradient của các bước trước.
-Sau cùng, với chiều $x_1$ các gradient là cùng hướng, cách làm này sẽ đơn thuần lấy tổng, từ đó tăng khoảng cách di chuyển ở từng bước.
-Ngược lại, gradient dao động mạnh theo hướng $x_2$, từ đó kết hợp các gradient sẽ làm giảm kích thước bước do dao động triệt tiêu lẫn nhau.
+Phương pháp động lượng cho phép chúng ta giải quyết vấn đề với hạ gradient mô tả ở trên.
+Nhìn vào các vết tối ưu trên, có thể thấy sẽ tốt hơn nếu lấy trung bình gradient trong quá khứ.
+Ở chiều $x_1$ các gradient là cùng hướng, cách làm này sẽ đơn thuần lấy tổng độ lớn, từ đó tăng khoảng cách di chuyển ở từng bước.
+Ngược lại, gradient dao động mạnh theo hướng $x_2$, do đó kết hợp các gradient sẽ làm giảm kích thước bước do dao động triệt tiêu lẫn nhau.
 Sử dụng $\mathbf{v}_t$ thay vì gradient $\mathbf{g}_t$, ta có các phương trình cập nhật sau:
 
 
@@ -245,8 +245,8 @@ Note that for $\beta = 0$ we recover regular gradient descent.
 Before delving deeper into the mathematical properties let us have a quick look at how the algorithm behaves in practice.
 -->
 
-Lưu ý rằng với $\beta = 0$, phương pháp này trở thành thuật toán hạ gradient thông thường.
-Trước khi nghiên cứu sâu hơn các tính chất toán học, chúng ta hãy nhìn lướt qua cách thuật toán này hoạt động trong thực tế.
+Với $\beta = 0$, phương pháp này tương đương với thuật toán hạ gradient thông thường.
+Trước khi đi sâu hơn vào các tính chất toán học, hãy xem thuật toán này hoạt động như thế nào.
 
 
 ```{.python .input  n=5}
@@ -267,10 +267,10 @@ Halving it to $\beta = 0.25$ leads to a trajectory that barely converges at all.
 Nonetheless, it is a lot better than without momentum (when the solution diverges).
 -->
 
-Như chúng ta có thể thấy, ngay cả với tốc độ học tương tự như trước đó, phương pháp động lượng vẫn hội tụ tốt.
-Chúng ta hãy xem điều gì sẽ xảy ra khi giảm tham số động lượng.
-Giảm một nửa giá trị động lượng $\beta = 0.25$ sẽ dẫn đến một quỹ đạo mà rất khó hội tụ.
-Tuy nhiên, điều này vẫn tốt hơn rất nhiều so với trường hợp không sử dụng động lượng (khi nghiệm phân kì).
+Có thể thấy, ngay cả với tốc độ học như trước, phương pháp động lượng vẫn hội tụ tốt.
+Giờ hãy xem điều gì xảy ra khi giảm tham số động lượng.
+Giảm một nửa động lượng $\beta = 0.25$ dẫn đến một quỹ đạo chưa thật sự hội tụ.
+Tuy nhiên, kết quả đó vẫn tốt hơn rất nhiều so với khi không sử dụng động lượng (nghiệm phân kỳ).
 
 
 ```{.python .input  n=11}
@@ -286,10 +286,10 @@ Last, for convenience we initialize $\mathbf{v}_0 = 0$ at time $t=0$.
 Let us look at what leaky averaging actually does to the updates.
 -->
 
-Lưu ý rằng chúng ta có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
-Thay đổi duy nhất trong trường hợp đó là chúng ta sẽ thay thế các gradient $\mathbf{g}_{t, t-1}$ bằng $\mathbf{g}_t$.
-Cuối cùng, để thuận tiện chúng ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
-Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm gì ở các phiên cập nhật.
+Ta cũng có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
+Thay đổi duy nhất trong trường hợp đó là các gradient $\mathbf{g}_{t, t-1}$ được thay bằng $\mathbf{g}_t$. <!-- không hiểu sao lại bỏ `t-1`, ai thông não giúp với. -->
+Cuối cùng, để thuận tiện ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
+Hãy xem phép trung bình rò rỉ thực sự làm gì khi cập nhật.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -299,7 +299,7 @@ Chúng ta hãy xem phép trung bình rò rỉ (leaky average) thực sự làm g
 ### Effective Sample Weight
 -->
 
-### Trọng số mẫu thực sự
+### Trọng số mẫu hiệu dụng
 
 <!--
 Recall that $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
@@ -311,20 +311,22 @@ To illustrate how weighting behaves for different choices of $\beta$ consider th
 
 Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
 Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
-Nói cách khác, thay vì thực hiện bước có kích thước $\eta$ trong GD hoặc SGD, ta thực hiện bước có kích thước $$\frac{\eta}{1-\beta}$, đồng thời hướng hạ gradient nhiều khả năng cũng ổn định hơn.
+Nói cách khác, thay vì kích thước bước $\eta$ trong GD hoặc SGD, ta thực hiện bước dài hơn $$\frac{\eta}{1-\beta}$, đồng thời hướng giảm gradient nhiều khả năng cũng tốt hơn.
 Đây là hai lợi ích trong một.
-Để minh họa cách trọng số thực hiện cho các lựa chọn khác nhau của $\beta$, hãy xem xét sơ đồ bên dưới.
+Để minh họa ảnh hưởng của trọng số với các giá trị $\beta$ khác nhau, hãy xem minh họa dưới đây.
 
 
 ```{.python .input}
-gammas = [0.95, 0.9, 0.6, 0]
-d2l.set_figsize((3.5, 2.5))
-for gamma in gammas:
+d2l.set_figsize()
+betas = [0.95, 0.9, 0.6, 0]
+for beta in betas:
     x = np.arange(40).asnumpy()
-    d2l.plt.plot(x, gamma ** x, label='gamma = %.2f' % gamma)
+    d2l.plt.plot(x, beta ** x, label=f'beta = {beta:.2f}')
 d2l.plt.xlabel('time')
 d2l.plt.legend();
 ```
+
+<!-- đổi gamma -> beta theo PR https://github.com/d2l-ai/d2l-en/pull/1100/files -->
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
