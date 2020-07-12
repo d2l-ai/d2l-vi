@@ -395,7 +395,7 @@ they provide useful intuition into how to design advanced optimization algorithm
 -->
 
 Như chúng ta có thể thấy ở :numref:`section_gd-learningrate`, chọn tốc độ học $\eta$ "vừa đủ" rất khó.  
-Nếu chọn giá trị quá nhỏ, chúng ta sẽ không có sự tiến triển. 
+Nếu chọn giá trị quá nhỏ, chúng ta sẽ không có tiến triển. 
 Nếu chọn giá trị quá lớn, nghiệm sẽ dao động và trong trường hợp tệ nhất, thậm chí sẽ phân kỳ.
 Sẽ ra sao nếu chúng ta có thể chọn $\eta$ một cách tự động, hoặc giả như loại bỏ được việc chọn kích thước bước? 
 Các phương pháp bậc hai không chỉ dựa vào giá trị và gradient của hàm mục tiêu mà còn dựa vào "độ cong" của hàm, từ đó có thể điều chỉnh tốc độ học. 
@@ -428,7 +428,7 @@ Furthermore it may be too expensive to compute via backprop as we would need to 
 For now let us ignore such considerations and look at what algorithm we'd get. 
 -->
 
-Để tránh các kí hiệu cồng kềnh, ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$. 
+Để tránh việc kí hiệu quá nhiều , ta định nghĩa $H_f := \nabla \nabla^\top f(\mathbf{x})$ là *ma trận Hessian* của $f$. 
 Đây là ma trận kích thước $d \times d$. Với $d$ nhỏ và trong các bài toán đơn giản, ta sẽ dễ tính được $H_f$. 
 Nhưng với các mạng sâu, kích thước của $H_f$ có thể cực lớn, do chi phí lưu trữ bậc hai $\mathcal{O}(d^2)$. 
 Hơn nữa việc tính toán lan truyền ngược có thể đòi hỏi rất nhiều chi phí tính toán.
@@ -539,8 +539,8 @@ Let us see how this works with a slightly smaller learning rate, say $\eta = 0.5
 Kết quả trả về là cực kỳ sai.
 Có một cách khắc phục là "sửa" ma trận Hessian bằng cách lấy giá trị tuyệt đối của nó. 
 Một chiến lược khác là đưa tốc độ học trở lại. 
-Điều này có vẻ sẽ phá hỏng mục tiêu nhưng không hẳn. 
-Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và tốn các bước dài hơn mỗi khi hàm mục tiêu phẳng. 
+Điều này có vẻ sẽ phá hỏng mục tiêu ban đầu nhưng không hẳn. 
+Có được thông tin bậc hai sẽ cho phép chúng ta thận trọng bất cứ khi nào độ cong trở nên lớn và cho phép thực hiện các bước dài hơn mỗi khi hàm mục tiêu phẳng. 
 Hãy xem nó hoạt động như thế nào với một tốc độ học khá nhỏ, $\eta = 0.5$ chẳng hạn. Như ta có thể thấy, chúng ta có một thuật toán khá hiệu quả.
 
 
