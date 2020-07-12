@@ -83,7 +83,7 @@ See :numref:`chap_cnn` for a refresher as needed.
 Hãy bắt đầu với một ví dụ đơn giản với ít chi phí tính toán nhưng đủ để minh họa một vài điểm cốt lõi.
 Ta sử dụng LeNet cải tiến (thay thế hàm kích hoạt `sigmoid` bằng `relu` và hàm gộp trung bình bằng hàm gộp cực đại) và áp dụng trên tập dữ liệu Fashion-MNIST.
 Hơn nữa, để có hiệu năng tốt, ta lai hoá mạng.
-Vì hầu hết mã nguồn tương tự như trước, chúng ta chỉ giới thiệu những thứ cơ bản mà không thảo luận chi tiết hơn nữa.
+Vì hầu hết mã nguồn tương tự như trước, ta sẽ không thảo luận chi tiết.
 Xem lại :numref:`chap_cnn` để biết thêm chi tiết nếu cần.
 
 
