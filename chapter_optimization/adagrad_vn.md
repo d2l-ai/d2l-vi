@@ -78,7 +78,7 @@ Adagrad đề xuất bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn 
 Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x})\right)^2$ làm công cụ để điều chỉnh tốc độ học.
 Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient được coi là đủ lớn.
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
-Các trục thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các trục khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
+Các tọa độ thường xuyên có gradient lớn bị giảm đi đáng kể, trong khi các tọa độ khác với gradient nhỏ được xử lý nhẹ nhàng hơn nhiều.
 Phương pháp này trong thực tế đưa ra một quy trình tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các bài toán liên quan.
 Tuy nhiên, Adagrad vẫn còn ẩn chứa một vài lợi ích khác mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
@@ -107,7 +107,7 @@ As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in t
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phép phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể kiếm lời giải cho từng trục một:
+Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phép phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể kiếm lời giải cho từng tọa độ một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
