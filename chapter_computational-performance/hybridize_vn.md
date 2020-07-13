@@ -279,7 +279,7 @@ A layer will not be optimized if it inherits from the `Block` instead.
 ### Acceleration by Hybridization
 -->
 
-### Tăng tốc bởi Hybrid hoá
+### Tăng tốc bởi Phép Hybrid hoá
 
 <!--
 To demonstrate the performance improvement gained by compilation we compare the time needed to evaluate `net(x)` before and after hybridization. 
@@ -287,7 +287,7 @@ Let's define a function to measure this time first.
 It will come handy throughout the chapter as we set out to measure (and improve) performance.
 -->
 
-Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau quá trình hybrid hoá.
+Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau phép  hybrid hoá.
 Đầu tiên, ta hãy định nghĩa một hàm để đo thời gian trên.
 Sẽ rất thuận tiện trong suốt chương này khi chúng ta đo (và cải thiện) hiệu năng.
 
@@ -309,7 +309,7 @@ class Benchmark:
 Now we can invoke the network twice, once with and once without hybridization.
 -->
 
-Bây giờ ta có thể gọi mạng hai lần, áp dụng hoặc không áp dụng cách hybrid hoá.
+Bây giờ ta có thể gọi mạng hai lần tương ứng với việc áp dụng hoặc không áp dụng phép hybrid hoá.
 
 ```{.python .input  n=5}
 net = get_net()
